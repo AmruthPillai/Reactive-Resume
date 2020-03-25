@@ -2,8 +2,9 @@
 
 # Reactive Resume
 
-A one-of-a-kind resume builder that's not out to get your data.  
-Completely secure, customizable, portable, ad-free, open-source and free forever. Try it out today!
+A one-of-a-kind resume builder that keeps your privacy in mind.  
+Completely secure, customizable, portable, open-source and free forever.  
+Try it out today!
 
 **Visit https://rx-resume.web.app to build your own resume!**
 
