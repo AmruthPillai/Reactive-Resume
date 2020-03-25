@@ -12,7 +12,7 @@ const ExtrasTab = ({ data, onChange }) => {
 
   return (
     <>
-      <div className="grid grid-cols-6 items-center">
+      <div className="mb-6 grid grid-cols-6 items-center">
         <div className="col-span-1">
           <Checkbox
             checked={data.extras.enable}
@@ -41,6 +41,7 @@ const ExtrasTab = ({ data, onChange }) => {
           last={index === data.extras.items.length - 1}
         />
       ))}
+
       <AddItem dispatch={dispatch} />
     </>
   );
@@ -57,6 +58,8 @@ const AddItem = ({ dispatch }) => {
   const onChange = (key, value) => setItem(items => set({ ...items }, key, value));
 
   const addItem = () => {
+    if (item.key === '' || item.value === '') return;
+
     dispatch({
       type: 'add_item',
       payload: {
@@ -75,7 +78,7 @@ const AddItem = ({ dispatch }) => {
   };
 
   return (
-    <div className="border border-gray-200 rounded p-5">
+    <div className="my-4 border border-gray-200 rounded p-5">
       <div
         className="flex justify-between items-center cursor-pointer"
         onClick={() => setOpen(!isOpen)}
@@ -87,6 +90,7 @@ const AddItem = ({ dispatch }) => {
       <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
         <TextField
           label="Key"
+          className="mb-6"
           placeholder="Date of Birth"
           value={item.key}
           onChange={v => onChange('key', v)}
@@ -94,6 +98,7 @@ const AddItem = ({ dispatch }) => {
 
         <TextField
           label="Value"
+          className="mb-6"
           placeholder="6th August 1995"
           value={item.value}
           onChange={v => onChange('value', v)}
@@ -102,7 +107,7 @@ const AddItem = ({ dispatch }) => {
         <button
           type="button"
           onClick={addItem}
-          className="mt-4 bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-5 rounded"
+          className="bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-5 rounded"
         >
           <div className="flex items-center">
             <i className="material-icons mr-2 font-bold text-base">add</i>
@@ -158,6 +163,7 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
       <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
         <TextField
           label="Key"
+          className="mb-6"
           placeholder="Date of Birth"
           value={item.key}
           onChange={v => onChange(`${identifier}.key`, v)}
@@ -165,6 +171,7 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
 
         <TextField
           label="Value"
+          className="mb-6"
           placeholder="6th August 1995"
           value={item.value}
           onChange={v => onChange(`${identifier}.value`, v)}

@@ -18,17 +18,14 @@ body {
     bottom: 0;
   }
 
+  #tabs {
+    scroll-behavior: smooth;
+  }
+
   #tabs::-webkit-scrollbar {
     width: 0px;
+    height: 0px;
     background: transparent; /* make scrollbar transparent */
-  }
-
-  #tabs li:first-child {
-    padding-left: 1.5em;
-  }
-
-  #tabs li:last-child {
-    padding-right: 1.5em;
   }
 
   #page {

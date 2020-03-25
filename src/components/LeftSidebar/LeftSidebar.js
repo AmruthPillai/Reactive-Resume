@@ -27,7 +27,7 @@ const LeftSidebar = () => {
   const { state, dispatch } = context;
   const { data } = state;
 
-  const [currentTab, setCurrentTab] = useState('Objective');
+  const [currentTab, setCurrentTab] = useState('Profile');
   const onChange = (key, value) => {
     dispatch({
       type: 'on_input',

@@ -13,7 +13,7 @@ const WorkTab = ({ data, onChange }) => {
 
   return (
     <>
-      <div className="grid grid-cols-6 items-center">
+      <div className="mb-6 grid grid-cols-6 items-center">
         <div className="col-span-1">
           <Checkbox checked={data.work.enable} onChange={v => onChange('data.work.enable', v)} />
         </div>
@@ -39,6 +39,7 @@ const WorkTab = ({ data, onChange }) => {
           last={index === data.work.items.length - 1}
         />
       ))}
+
       <AddItem dispatch={dispatch} />
     </>
   );
@@ -58,6 +59,8 @@ const AddItem = ({ dispatch }) => {
   const onChange = (key, value) => setItem(set({ ...item }, key, value));
 
   const addItem = () => {
+    if (item.title === '' || item.role === '') return;
+
     dispatch({
       type: 'add_item',
       payload: {
@@ -79,7 +82,7 @@ const AddItem = ({ dispatch }) => {
   };
 
   return (
-    <div className="border border-gray-200 rounded p-5">
+    <div className="my-4 border border-gray-200 rounded p-5">
       <div
         className="flex justify-between items-center cursor-pointer"
         onClick={() => setOpen(!isOpen)}
@@ -91,6 +94,7 @@ const AddItem = ({ dispatch }) => {
       <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
         <TextField
           label="Name"
+          className="mb-6"
           placeholder="Amazon US"
           value={item.title}
           onChange={v => onChange('title', v)}
@@ -98,6 +102,7 @@ const AddItem = ({ dispatch }) => {
 
         <TextField
           label="Role"
+          className="mb-6"
           placeholder="Frontend Web Developer"
           value={item.role}
           onChange={v => onChange('role', v)}
@@ -106,6 +111,7 @@ const AddItem = ({ dispatch }) => {
         <div className="grid grid-cols-2 col-gap-4">
           <TextField
             label="Start Date"
+            className="mb-6"
             placeholder="March 2018"
             value={item.start}
             onChange={v => onChange('start', v)}
@@ -113,6 +119,7 @@ const AddItem = ({ dispatch }) => {
 
           <TextField
             label="End Date"
+            className="mb-6"
             placeholder="current"
             value={item.end}
             onChange={v => onChange('end', v)}
@@ -121,6 +128,7 @@ const AddItem = ({ dispatch }) => {
 
         <TextArea
           rows="5"
+          className="mb-6"
           label="Description"
           placeholder="You can write about what you specialized in while working at the company and what projects you were a part of."
           value={item.description}
@@ -130,7 +138,7 @@ const AddItem = ({ dispatch }) => {
         <button
           type="button"
           onClick={addItem}
-          className="mt-4 bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-5 rounded"
+          className="bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-5 rounded"
         >
           <div className="flex items-center">
             <i className="material-icons mr-2 font-bold text-base">add</i>
@@ -186,6 +194,7 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
       <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
         <TextField
           label="Name"
+          className="mb-6"
           placeholder="Amazon US"
           value={item.title}
           onChange={v => onChange(`${identifier}.title`, v)}
@@ -193,6 +202,7 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
 
         <TextField
           label="Role"
+          className="mb-6"
           placeholder="Frontend Web Developer"
           value={item.role}
           onChange={v => onChange(`${identifier}.role`, v)}
@@ -201,6 +211,7 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
         <div className="grid grid-cols-2 col-gap-4">
           <TextField
             label="Start Date"
+            className="mb-6"
             placeholder="March 2018"
             value={item.start}
             onChange={v => onChange(`${identifier}.start`, v)}
@@ -208,6 +219,7 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
 
           <TextField
             label="End Date"
+            className="mb-6"
             placeholder="current"
             value={item.end}
             onChange={v => onChange(`${identifier}.end`, v)}
@@ -216,13 +228,14 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
 
         <TextArea
           rows="5"
+          className="mb-6"
           label="Description"
           placeholder="You can write about what you specialized in while working at the company and what projects you were a part of."
           value={item.description}
           onChange={v => onChange(`${identifier}.description`, v)}
         />
 
-        <div className="mt-6 flex justify-between">
+        <div className="flex justify-between">
           <button
             type="button"
             onClick={deleteItem}

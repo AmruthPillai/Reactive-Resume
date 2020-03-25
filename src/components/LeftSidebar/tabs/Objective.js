@@ -6,7 +6,7 @@ import Checkbox from '../../../shared/Checkbox';
 const ObjectiveTab = ({ data, onChange }) => {
   return (
     <div>
-      <div className="grid grid-cols-6 items-center">
+      <div className="mb-6 grid grid-cols-6 items-center">
         <div className="col-span-1">
           <Checkbox
             checked={data.objective.enable}
@@ -26,6 +26,7 @@ const ObjectiveTab = ({ data, onChange }) => {
 
       <TextArea
         rows="15"
+        className="mb-6"
         label="Objective"
         placeholder="Looking for a challenging role in a reputable organization to utilize my technical, database, and management skills for the growth of the organization as well as to enhance my knowledge about new and emerging trends in the IT sector."
         value={data.objective.body}

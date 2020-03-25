@@ -10,7 +10,7 @@ const SkillsTab = ({ data, onChange }) => {
 
   return (
     <>
-      <div className="grid grid-cols-6 items-center">
+      <div className="my-6 grid grid-cols-6 items-center">
         <div className="col-span-1">
           <Checkbox
             checked={data.skills.enable}
@@ -31,6 +31,7 @@ const SkillsTab = ({ data, onChange }) => {
       {data.skills.items.map((x, index) => (
         <Item item={x} key={x} index={index} onChange={onChange} dispatch={dispatch} />
       ))}
+
       <AddItem dispatch={dispatch} />
     </>
   );
@@ -41,6 +42,8 @@ const AddItem = ({ dispatch }) => {
   const [item, setItem] = useState('');
 
   const addItem = () => {
+    if (item === '') return;
+
     dispatch({
       type: 'add_item',
       payload: {
@@ -54,7 +57,7 @@ const AddItem = ({ dispatch }) => {
   };
 
   return (
-    <div className="mt-4 border border-gray-200 rounded p-5">
+    <div className="my-4 border border-gray-200 rounded p-5">
       <div
         className="flex justify-between items-center cursor-pointer"
         onClick={() => setOpen(!isOpen)}
@@ -64,7 +67,7 @@ const AddItem = ({ dispatch }) => {
       </div>
 
       <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
-        <div className="mt-4 grid grid-cols-4 col-gap-4">
+        <div className="grid grid-cols-4 col-gap-4">
           <div className="col-span-3">
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -103,7 +106,7 @@ const Item = ({ item, index, onChange, dispatch }) => {
     });
 
   return (
-    <div className="mt-4 grid grid-cols-6">
+    <div className="my-4 grid grid-cols-6">
       <div className="col-span-5">
         <input
           className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"

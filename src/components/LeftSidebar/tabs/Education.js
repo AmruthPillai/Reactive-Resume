@@ -13,7 +13,7 @@ const EducationTab = ({ data, onChange }) => {
 
   return (
     <>
-      <div className="grid grid-cols-6 items-center">
+      <div className="mb-6 grid grid-cols-6 items-center">
         <div className="col-span-1">
           <Checkbox
             checked={data.education.enable}
@@ -62,6 +62,8 @@ const AddItem = ({ dispatch }) => {
   const onChange = (key, value) => setItem(set({ ...item }, key, value));
 
   const addItem = () => {
+    if (item.name === '' || item.major === '') return;
+
     dispatch({
       type: 'add_item',
       payload: {
@@ -84,7 +86,7 @@ const AddItem = ({ dispatch }) => {
   };
 
   return (
-    <div className="border border-gray-200 rounded p-5">
+    <div className="my-4 border border-gray-200 rounded p-5">
       <div
         className="flex justify-between items-center cursor-pointer"
         onClick={() => setOpen(!isOpen)}
@@ -96,6 +98,7 @@ const AddItem = ({ dispatch }) => {
       <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
         <TextField
           label="Name"
+          className="mb-6"
           placeholder="Harvard University"
           value={item.name}
           onChange={v => onChange('name', v)}
@@ -103,6 +106,7 @@ const AddItem = ({ dispatch }) => {
 
         <TextField
           label="Major"
+          className="mb-6"
           placeholder="Masters in Computer Science"
           value={item.major}
           onChange={v => onChange('major', v)}
@@ -110,6 +114,7 @@ const AddItem = ({ dispatch }) => {
 
         <TextField
           label="Grade"
+          className="mb-6"
           placeholder="7.2 CGPA"
           value={item.grade}
           onChange={v => onChange('grade', v)}
@@ -118,6 +123,7 @@ const AddItem = ({ dispatch }) => {
         <div className="grid grid-cols-2 col-gap-4">
           <TextField
             label="Start Date"
+            className="mb-6"
             placeholder="March 2018"
             value={item.start}
             onChange={v => onChange('start', v)}
@@ -125,6 +131,7 @@ const AddItem = ({ dispatch }) => {
 
           <TextField
             label="End Date"
+            className="mb-6"
             placeholder="May 2020"
             value={item.end}
             onChange={v => onChange('end', v)}
@@ -133,6 +140,7 @@ const AddItem = ({ dispatch }) => {
 
         <TextArea
           rows="5"
+          className="mb-6"
           label="Description"
           placeholder="You can write about projects or special credit classes that you took while studying at this school."
           value={item.description}
@@ -142,7 +150,7 @@ const AddItem = ({ dispatch }) => {
         <button
           type="button"
           onClick={addItem}
-          className="mt-4 bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-5 rounded"
+          className="bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-5 rounded"
         >
           <div className="flex items-center">
             <i className="material-icons mr-2 font-bold text-base">add</i>
@@ -198,6 +206,7 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
       <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
         <TextField
           label="Name"
+          className="mb-6"
           placeholder="Harvard University"
           value={item.name}
           onChange={v => onChange(`${identifier}.name`, v)}
@@ -205,6 +214,7 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
 
         <TextField
           label="Major"
+          className="mb-6"
           placeholder="Masters in Computer Science"
           value={item.major}
           onChange={v => onChange(`${identifier}.major`, v)}
@@ -212,6 +222,7 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
 
         <TextField
           label="Grade"
+          className="mb-6"
           placeholder="7.2 CGPA"
           value={item.grade}
           onChange={v => onChange(`${identifier}.grade`, v)}
@@ -220,6 +231,7 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
         <div className="grid grid-cols-2 col-gap-4">
           <TextField
             label="Start Date"
+            className="mb-6"
             placeholder="March 2018"
             value={item.start}
             onChange={v => onChange(`${identifier}.start`, v)}
@@ -227,6 +239,7 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
 
           <TextField
             label="End Date"
+            className="mb-6"
             placeholder="May 2020"
             value={item.end}
             onChange={v => onChange(`${identifier}.end`, v)}
@@ -235,13 +248,14 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
 
         <TextArea
           rows="5"
+          className="mb-6"
           label="Description"
           placeholder="You can write about projects or special credit classes that you took while studying at this school."
           value={item.description}
           onChange={v => onChange(`${identifier}.description`, v)}
         />
 
-        <div className="mt-6 flex justify-between">
+        <div className="flex justify-between">
           <button
             type="button"
             onClick={deleteItem}

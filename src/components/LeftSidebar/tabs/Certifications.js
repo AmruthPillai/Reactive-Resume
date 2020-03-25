@@ -12,7 +12,7 @@ const CertificationsTab = ({ data, onChange }) => {
 
   return (
     <>
-      <div className="grid grid-cols-6 items-center">
+      <div className="my-6 grid grid-cols-6 items-center">
         <div className="col-span-1">
           <Checkbox
             checked={data.certifications.enable}
@@ -41,6 +41,7 @@ const CertificationsTab = ({ data, onChange }) => {
           last={index === data.certifications.items.length - 1}
         />
       ))}
+
       <AddItem dispatch={dispatch} />
     </>
   );
@@ -57,6 +58,8 @@ const AddItem = ({ dispatch }) => {
   const onChange = (key, value) => setItem(set({ ...item }, key, value));
 
   const addItem = () => {
+    if (item.title === '') return;
+
     dispatch({
       type: 'add_item',
       payload: {
@@ -75,7 +78,7 @@ const AddItem = ({ dispatch }) => {
   };
 
   return (
-    <div className="border border-gray-200 rounded p-5">
+    <div className="my-4 border border-gray-200 rounded p-5">
       <div
         className="flex justify-between items-center cursor-pointer"
         onClick={() => setOpen(!isOpen)}
@@ -87,6 +90,7 @@ const AddItem = ({ dispatch }) => {
       <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
         <TextField
           label="Title"
+          className="mb-6"
           placeholder="Android Development Nanodegree"
           value={item.title}
           onChange={v => onChange('title', v)}
@@ -94,6 +98,7 @@ const AddItem = ({ dispatch }) => {
 
         <TextField
           label="Subtitle"
+          className="mb-6"
           placeholder="Udacity"
           value={item.subtitle}
           onChange={v => onChange('subtitle', v)}
@@ -102,7 +107,7 @@ const AddItem = ({ dispatch }) => {
         <button
           type="button"
           onClick={addItem}
-          className="mt-4 bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-5 rounded"
+          className="bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-5 rounded"
         >
           <div className="flex items-center">
             <i className="material-icons mr-2 font-bold text-base">add</i>
@@ -158,6 +163,7 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
       <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
         <TextField
           label="Title"
+          className="mb-6"
           placeholder="Android Development Nanodegree"
           value={item.title}
           onChange={v => onChange(`${identifier}.title`, v)}
@@ -165,12 +171,13 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
 
         <TextField
           label="Subtitle"
+          className="mb-6"
           placeholder="Udacity"
           value={item.subtitle}
           onChange={v => onChange(`${identifier}.subtitle`, v)}
         />
 
-        <div className="mt-6 flex justify-between">
+        <div className="flex justify-between">
           <button
             type="button"
             onClick={deleteItem}
