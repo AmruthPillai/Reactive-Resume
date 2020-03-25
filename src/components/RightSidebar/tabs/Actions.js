@@ -10,6 +10,7 @@ const ActionsTab = ({ data, theme, dispatch }) => {
     fr.addEventListener('load', () => {
       const importedObject = JSON.parse(fr.result);
       dispatch({ type: 'import_data', payload: importedObject });
+      dispatch({ type: 'save_data' });
     });
     fr.readAsText(event.target.files[0]);
   };
@@ -25,6 +26,7 @@ const ActionsTab = ({ data, theme, dispatch }) => {
 
   const resetEverything = () => {
     dispatch({ type: 'reset' });
+    dispatch({ type: 'save_data' });
   };
 
   return (
@@ -117,6 +119,24 @@ const ActionsTab = ({ data, theme, dispatch }) => {
           </div>
         </button>
       </div>
+
+      <hr className="my-6" />
+
+      <p className="text-xs font-gray-600 text-center">
+        Reactive Resume is a project by{' '}
+        <a
+          className="hover:underline"
+          href="https://www.amruthpillai.com/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <strong>Amruth Pillai</strong>
+        </a>{' '}
+        in hopes of allowing anyone to make beautiful resumes and get equal job opportunities.
+        <br />
+        <br />
+        Thank you for using Reactive Resume!
+      </p>
     </div>
   );
 };

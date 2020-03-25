@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 
 import AppContext from '../../context/AppContext';
 import TabBar from '../../shared/TabBar';
@@ -28,7 +28,7 @@ const LeftSidebar = () => {
   const { data } = state;
 
   const [currentTab, setCurrentTab] = useState('Profile');
-  const onChange = (key, value) =>
+  const onChange = (key, value) => {
     dispatch({
       type: 'on_input',
       payload: {
@@ -37,10 +37,8 @@ const LeftSidebar = () => {
       },
     });
 
-  // TODO: Remove this in production environment
-  useEffect(() => {
-    dispatch({ type: 'populate_starter' });
-  }, [dispatch]);
+    dispatch({ type: 'save_data' });
+  };
 
   const renderTabs = () => {
     switch (currentTab) {

@@ -96,6 +96,9 @@ const reducer = (state, { type, payload }) => {
       return set({ ...state }, `data.${payload.key}.items`, items);
     case 'on_input':
       return set({ ...state }, payload.key, payload.value);
+    case 'save_data':
+      localStorage.setItem('state', JSON.stringify(state));
+      return state;
     case 'import_data':
       return {
         ...state,

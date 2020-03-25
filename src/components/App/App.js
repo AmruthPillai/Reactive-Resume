@@ -1,20 +1,20 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import React, { useEffect, useContext } from 'react';
 
 import Onyx from '../../templates/onyx';
 import LeftSidebar from '../LeftSidebar/LeftSidebar';
 import RightSidebar from '../RightSidebar/RightSidebar';
-
-toast.configure({
-  autoClose: 3000,
-  closeButton: false,
-  hideProgressBar: true,
-  position: toast.POSITION.BOTTOM_RIGHT,
-});
+import AppContext from '../../context/AppContext';
 
 const App = () => {
+  const context = useContext(AppContext);
+  const { dispatch } = context;
+
+  useEffect(() => {
+    const state = JSON.parse(localStorage.getItem('state'));
+    dispatch({ type: 'import_data', payload: state });
+  }, [dispatch]);
+
   return (
     <div className="h-screen overflow-hidden grid grid-cols-5 items-center">
       <LeftSidebar />

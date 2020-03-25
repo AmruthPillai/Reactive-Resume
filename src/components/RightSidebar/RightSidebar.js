@@ -14,8 +14,8 @@ const RightSidebar = () => {
   const { state, dispatch } = context;
   const { data, theme } = state;
 
-  const [currentTab, setCurrentTab] = useState('Actions');
-  const onChange = (key, value) =>
+  const [currentTab, setCurrentTab] = useState('Layout');
+  const onChange = (key, value) => {
     dispatch({
       type: 'on_input',
       payload: {
@@ -23,6 +23,9 @@ const RightSidebar = () => {
         value,
       },
     });
+
+    dispatch({ type: 'save_data' });
+  };
 
   const renderTabs = () => {
     switch (currentTab) {
