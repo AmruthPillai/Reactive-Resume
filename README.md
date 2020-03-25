@@ -1,68 +1,46 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="https://i.imgur.com/4eps4gP.png" alt="Reactive Resume" width="256px"  height="256px"/>
 
-## Available Scripts
+# Reactive Resume
 
-In the project directory, you can run:
+A one-of-a-kind resume builder that's not out to get your data.  
+Completely secure, customizable, portable, ad-free, open-source and free forever. Try it out today!
 
-### `npm start`
+**Visit https://rx-resume.web.app to build your own resume!**
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## What's so special about it?
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+* **Secure:** It is completely secure, as in, your information never leaves the browser. It is build with web techologies (HTML5 Local Storage API) that allow for data to be stored locally and quickly.
+* **Offline:** The app is a PWA and also has no connection to any servers, thus keeping it completely offline. It survives refreshes and can be exported/imported through JSON.
+* **Customizable:** Choose your own fonts, play with the colors, pick any layout by simply enabling/disabling sections. A simple and easy to use interface that helps you get a resume in no time!
+* **Templates:** I've been continuously designing new templates and will be releasing new ones as I have the time. Please support development by using the app and leaving a like/comment or sharing it with your peers.
+* **Portable:** Your information can be exported to JSON and imported back into the application from anywhere, all you need is your JSON file. This makes it easy to update your resume, just upload your file (or have it preloaded from local storage), edit the resume and download it again or print it as PDF.
+* **Minimalistic Design:** As a designer, I felt I had to put this over the top of all other features. It was built with minimalism and minimal interaction in mind. It looks clean, is simple to use and I only hope to make the process more streamlined through your inputs and feedback.
+* **Progressive Web App:** The web app is responsive, which means you can edit your resume on your phone as well and even install it as an app, if you're on Android/Chrome. The app is quick to load and would work even if your internet has been disconnected.
+* **No Ads, Open Source and Free:** As with all my projects, I made the app only to help others, so it will always remain free and I would not be monetizing on it at any point. But if you do feel generous, I'm open to donations :)
 
-### `npm test`
+## What did you use to build this?
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* [ReactJS](https://reactjs.org/) + Hooks 🎉
+* [Tailwind CSS](https://tailwindcss.com/)
+* [Google Fonts](https://fonts.google.com/)
+* [Material Icons](https://material.io/resources/icons/)
+* [PostCSS](https://postcss.org/)
+* [PurgeCSS](https://purgecss.com/)
 
-### `npm run build`
+## How does it look?
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src="https://i.imgur.com/8tALotC.png" alt="Desktop Screenshot of Reactive Resume" />
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## How can I contribute?
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Right now, I don't have much avenues for easy contribution. If you are well versed with React + Tailwind CSS, you can design a few templates yourself. Otherwise, the best way you can contribute is to **star the repository**, **share the app with your friends** and if possible, **leave some feedback on the app** so that I can better improve it.
 
-### `npm run eject`
+## Why did you make this free?
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+A lot of people have asked me for help in designing their resumes as I have made mine. I just wanted an easier way to generate resumes and have it easy to update cause updating a resume is always the uphill task. Once I thought of the idea, it was only a matter of time to design and develop the app. I am a big supporter of the open source development movement, as I have been directly benefitted by so many other projects that developers have shared. So needless to say, this project is completely open-source and free as well :)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Hope you enjoyed using the app, please let me know if you found it helpful.
+You can reach me on my website: https://www.amruthpillai.com/
+or my email: im.amruth@gmail.com
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Thank you!
