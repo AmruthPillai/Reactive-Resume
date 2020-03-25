@@ -19,6 +19,10 @@ Try it out today!
 * **Progressive Web App:** The web app is responsive, which means you can edit your resume on your phone as well and even install it as an app, if you're on Android/Chrome. The app is quick to load and would work even if your internet has been disconnected.
 * **No Ads, Open Source and Free:** As with all my projects, I made the app only to help others, so it will always remain free and I would not be monetizing on it at any point. But if you do feel generous, I'm open to donations :)
 
+<p align="center">
+  <img src="https://i.imgur.com/6gDAIu0.png" alt="Reactive Resume Thumbnail" width="600px" />
+</p>
+
 ## What did you use to build this?
 
 * [ReactJS](https://reactjs.org/) + Hooks 🎉
