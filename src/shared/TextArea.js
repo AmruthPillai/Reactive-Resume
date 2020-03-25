@@ -1,7 +1,7 @@
 import React from 'react';
 
-const TextArea = ({ label, placeholder, value, onChange, rows = 5 }) => (
-  <div className="my-4 w-full flex flex-col">
+const TextArea = ({ label, placeholder, value, onChange, className, rows = 5 }) => (
+  <div className={`w-full flex flex-col ${className}`}>
     <label className="uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">
       {label}
     </label>

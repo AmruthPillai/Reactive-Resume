@@ -1,6 +1,8 @@
 import React, { useState, useContext } from 'react';
 
 import AppContext from '../../../context/AppContext';
+import Checkbox from '../../../shared/Checkbox';
+import TextField from '../../../shared/TextField';
 
 const SkillsTab = ({ data, onChange }) => {
   const context = useContext(AppContext);
@@ -8,6 +10,24 @@ const SkillsTab = ({ data, onChange }) => {
 
   return (
     <>
+      <div className="grid grid-cols-6 items-center">
+        <div className="col-span-1">
+          <Checkbox
+            checked={data.skills.enable}
+            onChange={v => onChange('data.skills.enable', v)}
+          />
+        </div>
+        <div className="col-span-5">
+          <TextField
+            placeholder="Heading"
+            value={data.skills.heading}
+            onChange={v => onChange('data.skills.heading', v)}
+          />
+        </div>
+      </div>
+
+      <hr className="my-6" />
+
       {data.skills.items.map((x, index) => (
         <Item item={x} key={x} index={index} onChange={onChange} dispatch={dispatch} />
       ))}

@@ -26,30 +26,37 @@ const initialState = {
       email: '',
     },
     objective: {
+      enable: false,
       heading: 'Objective',
       body: '',
     },
     work: {
+      enable: false,
       heading: 'Work Experience',
       items: [],
     },
     education: {
+      enable: false,
       heading: 'Education',
       items: [],
     },
     awards: {
+      enable: false,
       heading: 'Honors & Awards',
       items: [],
     },
     certifications: {
+      enable: false,
       heading: 'Certifications',
       items: [],
     },
     skills: {
+      enable: false,
       heading: 'Skills & Hobbies',
       items: [],
     },
     extras: {
+      enable: false,
       heading: 'Personal Information',
       items: [],
     },

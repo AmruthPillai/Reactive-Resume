@@ -1,9 +1,29 @@
 import React from 'react';
 import TextArea from '../../../shared/TextArea';
+import TextField from '../../../shared/TextField';
+import Checkbox from '../../../shared/Checkbox';
 
 const ObjectiveTab = ({ data, onChange }) => {
   return (
     <div>
+      <div className="grid grid-cols-6 items-center">
+        <div className="col-span-1">
+          <Checkbox
+            checked={data.objective.enable}
+            onChange={v => onChange('data.objective.enable', v)}
+          />
+        </div>
+        <div className="col-span-5">
+          <TextField
+            placeholder="Heading"
+            value={data.objective.heading}
+            onChange={v => onChange('data.objective.heading', v)}
+          />
+        </div>
+      </div>
+
+      <hr className="my-6" />
+
       <TextArea
         rows="15"
         label="Objective"

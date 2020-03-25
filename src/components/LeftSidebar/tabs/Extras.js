@@ -4,6 +4,7 @@ import set from 'lodash/set';
 
 import TextField from '../../../shared/TextField';
 import AppContext from '../../../context/AppContext';
+import Checkbox from '../../../shared/Checkbox';
 
 const ExtrasTab = ({ data, onChange }) => {
   const context = useContext(AppContext);
@@ -11,6 +12,24 @@ const ExtrasTab = ({ data, onChange }) => {
 
   return (
     <>
+      <div className="grid grid-cols-6 items-center">
+        <div className="col-span-1">
+          <Checkbox
+            checked={data.extras.enable}
+            onChange={v => onChange('data.extras.enable', v)}
+          />
+        </div>
+        <div className="col-span-5">
+          <TextField
+            placeholder="Heading"
+            value={data.extras.heading}
+            onChange={v => onChange('data.extras.heading', v)}
+          />
+        </div>
+      </div>
+
+      <hr className="my-6" />
+
       {data.extras.items.map((x, index) => (
         <Item
           item={x}

@@ -4,6 +4,7 @@ import TextField from '../../../shared/TextField';
 const ProfileTab = ({ data, onChange }) => (
   <div>
     <TextField
+      className="mb-4"
       label="Photo URL"
       placeholder="https://i.imgur.com/..."
       value={data.profile.photo}
@@ -12,6 +13,7 @@ const ProfileTab = ({ data, onChange }) => (
 
     <div className="grid grid-cols-2 col-gap-4">
       <TextField
+        className="mb-4"
         label="First Name"
         placeholder="Jane"
         value={data.profile.firstName}
@@ -19,6 +21,7 @@ const ProfileTab = ({ data, onChange }) => (
       />
 
       <TextField
+        className="mb-4"
         label="Last Name"
         placeholder="Doe"
         value={data.profile.lastName}
@@ -27,6 +30,7 @@ const ProfileTab = ({ data, onChange }) => (
     </div>
 
     <TextField
+      className="mb-4"
       label="Subtitle"
       placeholder="Full Stack Web Developer"
       value={data.profile.subtitle}
@@ -36,6 +40,7 @@ const ProfileTab = ({ data, onChange }) => (
     <hr className="my-6" />
 
     <TextField
+      className="mb-4"
       label="Address Line 1"
       placeholder="Palladium Complex"
       value={data.profile.address.line1}
@@ -43,6 +48,7 @@ const ProfileTab = ({ data, onChange }) => (
     />
 
     <TextField
+      className="mb-4"
       label="Address Line 2"
       placeholder="140 E 14th St"
       value={data.profile.address.line2}
@@ -50,6 +56,7 @@ const ProfileTab = ({ data, onChange }) => (
     />
 
     <TextField
+      className="mb-4"
       label="Address Line 3"
       placeholder="New York, NY 10003 USA"
       value={data.profile.address.line3}
@@ -59,6 +66,7 @@ const ProfileTab = ({ data, onChange }) => (
     <hr className="my-6" />
 
     <TextField
+      className="mb-4"
       label="Phone Number"
       placeholder="+1 541 754 3010"
       value={data.profile.phone}
@@ -66,6 +74,7 @@ const ProfileTab = ({ data, onChange }) => (
     />
 
     <TextField
+      className="mb-4"
       label="Website"
       placeholder="google.com"
       value={data.profile.website}
@@ -73,6 +82,7 @@ const ProfileTab = ({ data, onChange }) => (
     />
 
     <TextField
+      className="mb-4"
       label="Email Address"
       placeholder="john.doe@example.com"
       value={data.profile.email}

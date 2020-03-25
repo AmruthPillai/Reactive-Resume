@@ -5,6 +5,7 @@ import set from 'lodash/set';
 import TextField from '../../../shared/TextField';
 import TextArea from '../../../shared/TextArea';
 import AppContext from '../../../context/AppContext';
+import Checkbox from '../../../shared/Checkbox';
 
 const EducationTab = ({ data, onChange }) => {
   const context = useContext(AppContext);
@@ -12,6 +13,24 @@ const EducationTab = ({ data, onChange }) => {
 
   return (
     <>
+      <div className="grid grid-cols-6 items-center">
+        <div className="col-span-1">
+          <Checkbox
+            checked={data.education.enable}
+            onChange={v => onChange('data.education.enable', v)}
+          />
+        </div>
+        <div className="col-span-5">
+          <TextField
+            placeholder="Heading"
+            value={data.education.heading}
+            onChange={v => onChange('data.education.heading', v)}
+          />
+        </div>
+      </div>
+
+      <hr className="my-6" />
+
       {data.education.items.map((x, index) => (
         <Item
           item={x}

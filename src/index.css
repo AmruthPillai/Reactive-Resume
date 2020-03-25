@@ -8,6 +8,10 @@ body {
 }
 
 @media screen {
+  input:checked + i.material-icons {
+    display: block;
+  }
+
   #sidebar {
     top: 0;
     left: 0;

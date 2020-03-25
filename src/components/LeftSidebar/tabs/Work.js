@@ -5,6 +5,7 @@ import set from 'lodash/set';
 import TextField from '../../../shared/TextField';
 import TextArea from '../../../shared/TextArea';
 import AppContext from '../../../context/AppContext';
+import Checkbox from '../../../shared/Checkbox';
 
 const WorkTab = ({ data, onChange }) => {
   const context = useContext(AppContext);
@@ -12,6 +13,21 @@ const WorkTab = ({ data, onChange }) => {
 
   return (
     <>
+      <div className="grid grid-cols-6 items-center">
+        <div className="col-span-1">
+          <Checkbox checked={data.work.enable} onChange={v => onChange('data.work.enable', v)} />
+        </div>
+        <div className="col-span-5">
+          <TextField
+            placeholder="Heading"
+            value={data.work.heading}
+            onChange={v => onChange('data.work.heading', v)}
+          />
+        </div>
+      </div>
+
+      <hr className="my-6" />
+
       {data.work.items.map((x, index) => (
         <Item
           item={x}
