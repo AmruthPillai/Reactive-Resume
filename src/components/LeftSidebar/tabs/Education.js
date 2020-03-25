@@ -42,6 +42,7 @@ const EducationTab = ({ data, onChange }) => {
           last={index === data.education.items.length - 1}
         />
       ))}
+
       <AddItem dispatch={dispatch} />
     </>
   );

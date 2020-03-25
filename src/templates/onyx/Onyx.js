@@ -11,7 +11,7 @@ const Onyx = () => {
       style={{
         fontFamily: theme.font.family,
         backgroundColor: theme.colors.background,
-        color: theme.colors.body,
+        color: theme.colors.primary,
       }}
     >
       <div className="grid grid-cols-4 items-center">
@@ -181,7 +181,10 @@ const Onyx = () => {
               <span
                 key={x}
                 className="text-xs rounded-full px-3 py-1 font-medium my-2 mr-2"
-                style={{ backgroundColor: theme.colors.body, color: theme.colors.background }}
+                style={{
+                  backgroundColor: theme.colors.primary,
+                  color: theme.colors.background,
+                }}
               >
                 {x}
               </span>

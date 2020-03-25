@@ -62,13 +62,14 @@ const initialState = {
     },
   },
   theme: {
+    layout: 'Onyx',
     font: {
       family: '',
     },
     colors: {
       background: '',
+      primary: '',
       accent: '',
-      body: '',
     },
   },
 };
@@ -95,6 +96,12 @@ const reducer = (state, { type, payload }) => {
       return set({ ...state }, `data.${payload.key}.items`, items);
     case 'on_input':
       return set({ ...state }, payload.key, payload.value);
+    case 'import_data':
+      return {
+        ...state,
+        data: payload.data,
+        theme: payload.theme,
+      };
     case 'populate_starter':
       return {
         ...state,

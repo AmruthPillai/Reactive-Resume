@@ -17,7 +17,7 @@ const TabBar = ({ tabs, currentTab, setCurrentTab }) => {
   };
 
   return (
-    <div className="my-6 mx-4 flex items-center">
+    <div className="mx-4 mb-6 flex items-center">
       <div
         className="flex mr-1 cursor-pointer select-none text-gray-600 hover:text-gray-800"
         onClick={() => scrollBy(-100)}

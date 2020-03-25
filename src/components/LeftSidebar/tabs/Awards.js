@@ -41,6 +41,7 @@ const AwardsTab = ({ data, onChange }) => {
           last={index === data.awards.items.length - 1}
         />
       ))}
+
       <AddItem dispatch={dispatch} />
     </>
   );

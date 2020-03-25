@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 
+import AppContext from '../../context/AppContext';
 import TabBar from '../../shared/TabBar';
 import ProfileTab from './tabs/Profile';
 import ObjectiveTab from './tabs/Objective';
 import WorkTab from './tabs/Work';
-import AppContext from '../../context/AppContext';
 import EducationTab from './tabs/Education';
 import AwardsTab from './tabs/Awards';
 import CertificationsTab from './tabs/Certifications';
@@ -28,7 +28,7 @@ const LeftSidebar = () => {
   const { data } = state;
 
   const [currentTab, setCurrentTab] = useState('Profile');
-  const onChange = (key, value) => {
+  const onChange = (key, value) =>
     dispatch({
       type: 'on_input',
       payload: {
@@ -36,8 +36,8 @@ const LeftSidebar = () => {
         value,
       },
     });
-  };
 
+  // TODO: Remove this in production environment
   useEffect(() => {
     dispatch({ type: 'populate_starter' });
   }, [dispatch]);
@@ -66,9 +66,12 @@ const LeftSidebar = () => {
   };
 
   return (
-    <div id="leftSidebar" className="h-screen bg-white col-span-1 shadow-2xl overflow-y-scroll">
+    <div
+      id="leftSidebar"
+      className="z-10 py-6 h-screen bg-white col-span-1 shadow-2xl overflow-y-scroll"
+    >
       <TabBar tabs={tabs} currentTab={currentTab} setCurrentTab={setCurrentTab} />
-      <div className="px-6 pb-6">{renderTabs()}</div>
+      <div className="px-6">{renderTabs()}</div>
     </div>
   );
 };

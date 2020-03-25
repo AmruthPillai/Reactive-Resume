@@ -1,23 +1,31 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-import Onyx from '../../templates/onyx/Onyx';
+import Onyx from '../../templates/onyx';
 import LeftSidebar from '../LeftSidebar/LeftSidebar';
+import RightSidebar from '../RightSidebar/RightSidebar';
+
+toast.configure({
+  autoClose: 3000,
+  closeButton: false,
+  hideProgressBar: true,
+  position: toast.POSITION.BOTTOM_RIGHT,
+});
 
 const App = () => {
   return (
-    <div className="grid grid-cols-5 items-center">
+    <div className="h-screen overflow-hidden grid grid-cols-5 items-center">
       <LeftSidebar />
 
-      <div className="col-span-3">
-        <div id="page" className="p-12 my-auto mx-auto shadow-2xl">
+      <div className="z-0 h-screen col-span-3 flex justify-center items-center overflow-scroll">
+        <div id="page" className="p-10 my-auto shadow-2xl overflow-scroll">
           <Onyx />
         </div>
       </div>
 
-      <div id="rightSidebar" className="h-screen bg-white col-span-1 shadow-2xl overflow-scroll">
-        This is the right sidebar
-      </div>
+      <RightSidebar />
     </div>
   );
 };
