@@ -16,12 +16,15 @@
   },
   "scripts": {
     "css": "postcss src/assets/tailwind/tailwind.src.css -o src/assets/tailwind/tailwind.css",
+    "css:prod": "postcss src/assets/tailwind/tailwind.src.css -o src/assets/tailwind/tailwind.css --env production",
     "prestart": "npm run css",
     "start": "react-scripts start",
-    "prebuild": "npm run css",
-    "build": "react-scripts build",
+    "prebuild": "npm run css:prod",
+    "build": "NODE_ENV=production react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "firebase deploy"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.1.0",
     "autoprefixer": "^9.7.5",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
