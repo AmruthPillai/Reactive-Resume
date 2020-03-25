@@ -56,7 +56,7 @@ const ColorsTab = ({ theme, onChange }) => {
 
       <hr className="my-6" />
 
-      <div className="my-6 grid grid-cols-6 items-end">
+      {/* <div className="my-6 grid grid-cols-6 items-end">
         <div
           className="rounded-full w-8 h-8 mb-2 border-2"
           style={{ backgroundColor: theme.colors.background }}
@@ -70,7 +70,7 @@ const ColorsTab = ({ theme, onChange }) => {
             onChange={v => onChange('theme.colors.background', v)}
           />
         </div>
-      </div>
+      </div> */}
 
       <div className="my-6 grid grid-cols-6 items-end">
         <div

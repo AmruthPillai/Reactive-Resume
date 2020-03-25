@@ -5,15 +5,28 @@ import Onyx from '../../templates/onyx';
 import LeftSidebar from '../LeftSidebar/LeftSidebar';
 import RightSidebar from '../RightSidebar/RightSidebar';
 import AppContext from '../../context/AppContext';
+import Pikachu from '../../templates/pikachu/Pikachu';
 
 const App = () => {
   const context = useContext(AppContext);
-  const { dispatch } = context;
+  const { state, dispatch } = context;
+  const { theme } = state;
 
   useEffect(() => {
-    const state = JSON.parse(localStorage.getItem('state'));
-    dispatch({ type: 'import_data', payload: state });
+    const storedState = JSON.parse(localStorage.getItem('state'));
+    dispatch({ type: 'import_data', payload: storedState });
   }, [dispatch]);
+
+  const renderTemplate = () => {
+    switch (theme.layout) {
+      case 'Onyx':
+        return <Onyx />;
+      case 'Pikachu':
+        return <Pikachu />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <div className="h-screen overflow-hidden grid grid-cols-5 items-center">
@@ -21,7 +34,7 @@ const App = () => {
 
       <div className="z-0 h-screen col-span-3 flex justify-center items-center overflow-scroll">
         <div id="page" className="p-10 my-auto shadow-2xl overflow-scroll">
-          <Onyx />
+          {renderTemplate()}
         </div>
       </div>
 

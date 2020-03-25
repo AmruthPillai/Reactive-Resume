@@ -57,7 +57,6 @@ body {
   body,
   body * {
     -webkit-print-color-adjust: exact;
-    background-color: white;
     visibility: hidden;
   }
 
@@ -67,6 +66,7 @@ body {
   }
 
   #page {
+    background-color: white;
     width: 21cm;
     height: 29.7cm;
     margin: 0;

@@ -67,9 +67,9 @@ const initialState = {
       family: '',
     },
     colors: {
-      background: '',
-      primary: '',
-      accent: '',
+      background: '#ffffff',
+      primary: '#212121',
+      accent: '#f44336',
     },
   },
 };
@@ -100,6 +100,7 @@ const reducer = (state, { type, payload }) => {
       localStorage.setItem('state', JSON.stringify(state));
       return state;
     case 'import_data':
+      if (payload === null) return initialState;
       return {
         ...state,
         data: payload.data,

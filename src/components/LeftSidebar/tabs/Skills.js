@@ -53,7 +53,6 @@ const AddItem = ({ dispatch }) => {
     });
 
     setItem('');
-    setOpen(false);
   };
 
   return (

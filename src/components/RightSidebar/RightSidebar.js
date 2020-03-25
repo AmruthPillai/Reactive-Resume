@@ -30,7 +30,7 @@ const RightSidebar = () => {
   const renderTabs = () => {
     switch (currentTab) {
       case 'Layout':
-        return <LayoutTab theme={theme} />;
+        return <LayoutTab theme={theme} onChange={onChange} />;
       case 'Colors':
         return <ColorsTab theme={theme} onChange={onChange} />;
       case 'Fonts':
