@@ -11,6 +11,7 @@ Try it out today!
 ## Do you have a demo?
 
 Why yes, I do! Click the thumbnail below to watch the app in action.
+
 [![Demo Video of Reactive Resume](http://img.youtube.com/vi/4OM0LEPzDO8/0.jpg)](http://www.youtube.com/watch?v=4OM0LEPzDO8 "Reactive Resume")
 
 ## What's so special about it?
@@ -49,6 +50,23 @@ Why yes, I do! Click the thumbnail below to watch the app in action.
 ## How can I contribute?
 
 Right now, I don't have many avenues for quick and easy contribution. If you are well versed in React + Tailwind CSS, you can design a few templates yourself. Otherwise, the best way you can contribute is to **star the repository**, **share the app with your friends**, and if possible, **leave some feedback on the app** so that I can better improve it.
+
+## How do I run the project source?
+
+I'm glad you asked :) Here is a step-by-step procedure on getting you started with installation and deployment of the application.
+
+1. Download & Install Node.js (https://nodejs.org/), make sure you can run `npm` in the command line
+2. `git clone https://github.com/AmruthPillai/Reactive-Resume.git`
+3. `cd Reactive-Resume`
+4. `npm install`
+5. `npm start` - to start the development server
+5. `npm run build` - to build a production version of the app
+
+## Changelog
+
+- Fixed Issue #2
+- Added Markdown Support in Descriptions
+- Added Gengar Template
 
 ## Why did you make this free?
 
