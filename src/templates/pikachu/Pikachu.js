@@ -28,7 +28,7 @@ const Pikachu = () => {
 
   const ContactItem = ({ icon, value }) =>
     value && (
-      <div className="flex items-center my-3">
+      <div className="flex items-center my-3 break-all">
         <span className="material-icons text-lg mr-2" style={{ color: theme.colors.accent }}>
           {icon}
         </span>
