@@ -16,8 +16,8 @@
     "uuid": "^7.0.2"
   },
   "scripts": {
-    "css": "postcss src/assets/tailwind/tailwind.src.css -o src/assets/tailwind/tailwind.css",
-    "css:prod": "postcss src/assets/tailwind/tailwind.src.css -o src/assets/tailwind/tailwind.css --env production",
+    "css": "./node_modules/postcss-cli/bin/postcss src/assets/tailwind/tailwind.src.css -o src/assets/tailwind/tailwind.css",
+    "css:prod": "./node_modules/postcss-cli/bin/postcss src/assets/tailwind/tailwind.src.css -o src/assets/tailwind/tailwind.css --env production",
     "prestart": "npm run css",
     "start": "react-scripts start",
     "prebuild": "npm run css:prod",
