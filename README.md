@@ -8,6 +8,11 @@ Try it out today!
 
 **Visit https://rx-resume.web.app to build your resume!**
 
+## Do you have a demo?
+
+Why yes, I do! Click the thumbnail below to watch the app in action.
+[![Demo Video of Reactive Resume](http://img.youtube.com/vi/4OM0LEPzDO8/0.jpg)](http://www.youtube.com/watch?v=4OM0LEPzDO8 "Reactive Resume")
+
 ## What's so special about it?
 
 * **Secure:** It is entirely secure, as in, your information never leaves the browser, powered by web technologies (HTML5 Local Storage API) that allow for data to be stored locally and quickly.
