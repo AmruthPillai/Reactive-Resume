@@ -26,7 +26,7 @@ const ObjectiveTab = ({ data, onChange }) => {
 
       <TextArea
         rows="15"
-        className="mb-6"
+        className="mb-4"
         label="Objective"
         placeholder="Looking for a challenging role in a reputable organization to utilize my technical, database, and management skills for the growth of the organization as well as to enhance my knowledge about new and emerging trends in the IT sector."
         value={data.objective.body}

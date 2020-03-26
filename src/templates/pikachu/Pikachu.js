@@ -1,4 +1,6 @@
 import React, { useContext } from 'react';
+import ReactMarkdown from 'react-markdown';
+
 import AppContext from '../../context/AppContext';
 
 const Pikachu = () => {
@@ -6,7 +8,12 @@ const Pikachu = () => {
   const { state } = context;
   const { data, theme } = state;
 
-  const Photo = () => <img className="rounded-full object-cover" src={data.profile.photo} alt="" />;
+  const Photo = () =>
+    data.profile.photo !== '' && (
+      <div className="self-center col-span-3">
+        <img className="rounded-full object-cover" src={data.profile.photo} alt="" />
+      </div>
+    );
 
   const Header = () => (
     <div
@@ -21,22 +28,22 @@ const Pikachu = () => {
 
         <hr className="my-4 opacity-50" />
 
-        <div className="text-sm">{data.objective.body}</div>
+        <ReactMarkdown className="text-sm" source={data.objective.body} />
       </div>
     </div>
   );
 
   const ContactItem = ({ icon, value }) =>
     value && (
-      <div className="flex items-center my-3 break-all">
+      <div className="flex items-center my-3">
         <span className="material-icons text-lg mr-2" style={{ color: theme.colors.accent }}>
           {icon}
         </span>
-        <span className="font-medium">{value}</span>
+        <span className="font-medium break-all">{value}</span>
       </div>
     );
 
-  const SectionHeading = ({ title }) => (
+  const Heading = ({ title }) => (
     <div
       className="mb-2 border-b-2 pb-1 font-bold uppercase tracking-wide text-sm"
       style={{ color: theme.colors.accent, borderColor: theme.colors.accent }}
@@ -54,12 +61,27 @@ const Pikachu = () => {
     </span>
   );
 
+  const Skills = () => (
+    <div>
+      <Heading title={data.skills.heading} />
+      <div className="flex flex-col mb-6">{data.skills.items.map(SkillItem)}</div>
+    </div>
+  );
+
   const ExtraItem = x => (
     <div key={x.key} className="text-sm my-1">
       <h6 className="text-xs font-bold">{x.key}</h6>
       <h6 className="">{x.value}</h6>
     </div>
   );
+
+  const Extras = () =>
+    data.extras.enable && (
+      <div>
+        <Heading title={data.extras.heading} />
+        <div className="flex flex-col">{data.extras.items.map(ExtraItem)}</div>
+      </div>
+    );
 
   const WorkItem = x => (
     <div key={x.title} className="mb-3">
@@ -72,9 +94,17 @@ const Pikachu = () => {
           ({x.start} - {x.end})
         </span>
       </div>
-      <p className="mt-2 text-sm">{x.description}</p>
+      <ReactMarkdown className="mt-2 text-sm" source={x.description} />
     </div>
   );
+
+  const Work = () =>
+    data.work.enable && (
+      <div>
+        <Heading title={data.work.heading} />
+        <div className="flex flex-col mb-4">{data.work.items.map(WorkItem)}</div>
+      </div>
+    );
 
   const EducationItem = x => (
     <div key={x.name} className="mb-3">
@@ -92,16 +122,49 @@ const Pikachu = () => {
           </span>
         </div>
       </div>
-      <p className="mt-2 text-sm">{x.description}</p>
+      <ReactMarkdown className="mt-2 text-sm" source={x.description} />
     </div>
   );
 
-  const AwardCertificationItem = x => (
+  const Education = () =>
+    data.education.enable && (
+      <div>
+        <Heading title={data.education.heading} />
+        <div className="flex flex-col mb-4">{data.education.items.map(EducationItem)}</div>
+      </div>
+    );
+
+  const AwardItem = x => (
     <div key={x.title} className="mb-3">
       <h6 className="font-semibold">{x.title}</h6>
       <p className="text-xs">{x.subtitle}</p>
+      <ReactMarkdown className="mt-2 text-sm" source={x.description} />
     </div>
   );
+
+  const Awards = () =>
+    data.awards.enable && (
+      <div>
+        <Heading title={data.awards.heading} />
+        <div className="flex flex-col mb-2">{data.awards.items.map(AwardItem)}</div>
+      </div>
+    );
+
+  const CertificationItem = x => (
+    <div key={x.title} className="mb-3">
+      <h6 className="font-semibold">{x.title}</h6>
+      <p className="text-xs">{x.subtitle}</p>
+      <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+    </div>
+  );
+
+  const Certifications = () =>
+    data.certifications.enable && (
+      <div>
+        <Heading title={data.certifications.heading} />
+        <div className="flex flex-col mb-2">{data.certifications.items.map(CertificationItem)}</div>
+      </div>
+    );
 
   return (
     <div
@@ -111,18 +174,14 @@ const Pikachu = () => {
         color: theme.colors.primary,
       }}
     >
-      <div className="grid grid-cols-8 col-gap-6 row-gap-8">
-        {data.profile.photo !== '' && (
-          <div className="self-center col-span-2">
-            <Photo />
-          </div>
-        )}
+      <div className="grid grid-cols-12 col-gap-6 row-gap-8">
+        <Photo />
 
-        <div className={`${data.profile.photo !== '' ? 'col-span-6' : 'col-span-8'}`}>
+        <div className={`${data.profile.photo !== '' ? 'col-span-9' : 'col-span-12'}`}>
           <Header />
         </div>
 
-        <div className="col-span-2">
+        <div className="col-span-3 overflow-hidden">
           <div className="text-sm mb-6">
             <ContactItem icon="phone" value={data.profile.phone} />
             <ContactItem icon="language" value={data.profile.website} />
@@ -130,53 +189,15 @@ const Pikachu = () => {
             <ContactItem icon="location_on" value={data.profile.address.line3} />
           </div>
 
-          {data.skills.enable && (
-            <div>
-              <SectionHeading title={data.skills.heading} />
-              <div className="flex flex-col mb-6">{data.skills.items.map(SkillItem)}</div>
-            </div>
-          )}
-
-          {data.extras.enable && (
-            <div>
-              <SectionHeading title={data.extras.heading} />
-              <div className="flex flex-col">{data.extras.items.map(ExtraItem)}</div>
-            </div>
-          )}
+          <Skills />
+          <Extras />
         </div>
 
-        <div className="col-span-6">
-          {data.work.enable && (
-            <div>
-              <SectionHeading title={data.work.heading} />
-              <div className="flex flex-col mb-4">{data.work.items.map(WorkItem)}</div>
-            </div>
-          )}
-
-          {data.education.enable && (
-            <div>
-              <SectionHeading title={data.education.heading} />
-              <div className="flex flex-col mb-4">{data.education.items.map(EducationItem)}</div>
-            </div>
-          )}
-
-          {data.awards.enable && (
-            <div>
-              <SectionHeading title={data.awards.heading} />
-              <div className="flex flex-col mb-4">
-                {data.awards.items.map(AwardCertificationItem)}
-              </div>
-            </div>
-          )}
-
-          {data.certifications.enable && (
-            <div>
-              <SectionHeading title={data.certifications.heading} />
-              <div className="flex flex-col mb-4">
-                {data.certifications.items.map(AwardCertificationItem)}
-              </div>
-            </div>
-          )}
+        <div className="col-span-9">
+          <Work />
+          <Education />
+          <Awards />
+          <Certifications />
         </div>
       </div>
     </div>

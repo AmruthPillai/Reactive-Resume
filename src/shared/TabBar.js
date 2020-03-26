@@ -28,13 +28,13 @@ const TabBar = ({ tabs, currentTab, setCurrentTab }) => {
       <ul id="tabs" ref={tabsRef} className="flex overflow-x-scroll">
         {tabs.map(tab =>
           currentTab === tab ? (
-            <li key={tab} className="mx-1">
+            <li key={tab} className="mx-1 list-none">
               <div className="whitespace-no-wrap bg-gray-700 text-white rounded-md text-sm py-2 px-6 font-medium">
                 {tab}
               </div>
             </li>
           ) : (
-            <li key={tab} className="mx-1">
+            <li key={tab} className="mx-1 list-none">
               <div
                 className="bg-white whitespace-no-wrap rounded-md cursor-pointer text-sm py-2 px-6 font-medium hover:bg-gray-200"
                 onClick={() => setCurrentTab(tab)}
