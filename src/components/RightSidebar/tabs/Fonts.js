@@ -1,4 +1,5 @@
 import React from 'react';
+import TextField from '../../../shared/TextField';
 
 const fontOptions = [
   'Lato',
@@ -28,6 +29,17 @@ const FontsTab = ({ theme, onChange }) => {
           {x}
         </div>
       ))}
+
+      <TextField
+        label="Font Family"
+        placeholder="Avenir Next"
+        value={theme.font.family}
+        onChange={v => onChange('theme.font.family', v)}
+      />
+      <p className="text-gray-600 text-sm">
+        You can use any font that is installed on your system as well. Just enter the name of the
+        font family here and the browser would load it up for you.
+      </p>
     </div>
   );
 };
