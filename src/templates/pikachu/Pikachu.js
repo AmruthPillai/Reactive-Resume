@@ -83,7 +83,7 @@ const Pikachu = () => {
           <h6 className="font-semibold">{x.name}</h6>
           <p className="text-xs">{x.major}</p>
         </div>
-        <div className="flex flex-col items-end">
+        <div className="flex flex-col text-right items-end">
           <span className="text-sm font-bold" style={{ color: theme.colors.accent }}>
             {x.grade}
           </span>
@@ -112,11 +112,13 @@ const Pikachu = () => {
       }}
     >
       <div className="grid grid-cols-8 col-gap-6 row-gap-8">
-        <div className="self-center col-span-2">
-          <Photo />
-        </div>
+        {data.profile.photo !== '' && (
+          <div className="self-center col-span-2">
+            <Photo />
+          </div>
+        )}
 
-        <div className="col-span-6">
+        <div className={`${data.profile.photo !== '' ? 'col-span-6' : 'col-span-8'}`}>
           <Header />
         </div>
 

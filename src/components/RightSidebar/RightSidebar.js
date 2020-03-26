@@ -2,19 +2,19 @@ import React, { useState, useContext } from 'react';
 
 import AppContext from '../../context/AppContext';
 import TabBar from '../../shared/TabBar';
-import LayoutTab from './tabs/Layout';
+import TemplatesTab from './tabs/Templates';
 import ColorsTab from './tabs/Colors';
 import FontsTab from './tabs/Fonts';
 import ActionsTab from './tabs/Actions';
 
-const tabs = ['Layout', 'Colors', 'Fonts', 'Actions'];
+const tabs = ['Templates', 'Colors', 'Fonts', 'Actions'];
 
 const RightSidebar = () => {
   const context = useContext(AppContext);
   const { state, dispatch } = context;
   const { data, theme } = state;
 
-  const [currentTab, setCurrentTab] = useState('Layout');
+  const [currentTab, setCurrentTab] = useState('Templates');
   const onChange = (key, value) => {
     dispatch({
       type: 'on_input',
@@ -29,8 +29,8 @@ const RightSidebar = () => {
 
   const renderTabs = () => {
     switch (currentTab) {
-      case 'Layout':
-        return <LayoutTab theme={theme} onChange={onChange} />;
+      case 'Templates':
+        return <TemplatesTab theme={theme} onChange={onChange} />;
       case 'Colors':
         return <ColorsTab theme={theme} onChange={onChange} />;
       case 'Fonts':

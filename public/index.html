@@ -34,9 +34,24 @@
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
 
-  <script src="/__/firebase/7.12.0/firebase-app.js"></script>
-  <script src="/__/firebase/7.12.0/firebase-analytics.js"></script>
-  <script src="/__/firebase/init.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-analytics.js"></script>
+
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyCfC075KJNwsMWDTm6k8QCtWno48okM7wY",
+      authDomain: "rx-resume.firebaseapp.com",
+      databaseURL: "https://rx-resume.firebaseio.com",
+      projectId: "rx-resume",
+      storageBucket: "rx-resume.appspot.com",
+      messagingSenderId: "493152774539",
+      appId: "1:493152774539:web:ecaa1222f5e1bcf8fb678e",
+      measurementId: "G-83G3Y6DPJ6"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
 </body>
 
 </html>
