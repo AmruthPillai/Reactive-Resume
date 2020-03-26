@@ -18,6 +18,11 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+li {
+  list-style: disc;
+  list-style-position: inside !important;
+}
+
 @media screen {
   input:checked + i.material-icons {
     display: block;

@@ -1,4 +1,6 @@
 import React, { useContext } from 'react';
+import ReactMarkdown from 'react-markdown';
+
 import AppContext from '../../context/AppContext';
 import { hexToRgb } from '../../utils';
 
@@ -8,6 +10,25 @@ const Gengar = () => {
   const { data, theme } = state;
 
   const { r, g, b } = hexToRgb(theme.colors.accent);
+
+  const Photo = () =>
+    data.profile.photo !== '' && (
+      <img
+        className="w-24 h-24 rounded-full mr-4 object-cover border-4"
+        style={{
+          borderColor: theme.colors.background,
+        }}
+        src={data.profile.photo}
+        alt="Resume Photograph"
+      />
+    );
+
+  const FullName = () => (
+    <div>
+      <h1 className="text-3xl font-bold">{data.profile.firstName}</h1>
+      <h1 className="text-3xl font-bold">{data.profile.lastName}</h1>
+    </div>
+  );
 
   const ContactItem = ({ icon, value }) =>
     value && (
@@ -31,11 +52,27 @@ const Gengar = () => {
     <h6 className="font-bold text-xs uppercase tracking-wide mb-2">{title}</h6>
   );
 
+  const Objective = () =>
+    data.objective.enable && (
+      <div className="h-full flex flex-col justify-center items-start">
+        <Heading title={data.objective.heading} />
+        <ReactMarkdown className="text-sm" source={data.objective.body} />
+      </div>
+    );
+
   const SkillItem = x => (
     <li key={x} className="text-sm py-1">
       {x}
     </li>
   );
+
+  const Skills = () =>
+    data.skills.enable && (
+      <div className="mb-8">
+        <Heading title={data.skills.heading} />
+        <ul>{data.skills.items.map(SkillItem)}</ul>
+      </div>
+    );
 
   const EducationItem = x => (
     <div key={x.name} className="mb-3">
@@ -59,14 +96,45 @@ const Gengar = () => {
           </span>
         </div>
       </div>
-      <p className="mt-2 text-sm">{x.description}</p>
+      <ReactMarkdown className="mt-2 text-sm" source={x.description} />
     </div>
   );
 
-  const AwardCertificationItem = x => (
+  const Education = () =>
+    data.education.enable && (
+      <div className="mb-8">
+        <Heading title={data.education.heading} />
+        {data.education.items.map(EducationItem)}
+      </div>
+    );
+
+  const CertificationItem = x => (
     <div key={x.title} className="mb-3">
       <h6 className="font-semibold">{x.title}</h6>
       <p className="text-xs">{x.subtitle}</p>
+      <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+    </div>
+  );
+
+  const Certifications = () => (
+    <div className="mb-8">
+      <Heading title={data.certifications.heading} />
+      {data.certifications.items.map(CertificationItem)}
+    </div>
+  );
+
+  const AwardItem = x => (
+    <div key={x.title} className="mb-3">
+      <h6 className="font-semibold">{x.title}</h6>
+      <p className="text-xs">{x.subtitle}</p>
+      <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+    </div>
+  );
+
+  const Awards = () => (
+    <div className="mb-8">
+      <Heading title={data.awards.heading} />
+      {data.awards.items.map(AwardItem)}
     </div>
   );
 
@@ -81,9 +149,34 @@ const Gengar = () => {
           ({x.start} - {x.end})
         </span>
       </div>
-      <p className="mt-2 text-sm">{x.description}</p>
+      <ReactMarkdown className="mt-2 text-sm" source={x.description} />
     </div>
   );
+
+  const Work = () =>
+    data.work.enable && (
+      <div className="mb-8">
+        <Heading title={data.work.heading} />
+        {data.work.items.map(WorkItem)}
+      </div>
+    );
+
+  const ExtraItem = x => (
+    <tr key={x.key}>
+      <td className="border font-medium px-4 py-2 text-sm">{x.key}</td>
+      <td className="border px-4 py-2 text-sm">{x.value}</td>
+    </tr>
+  );
+
+  const Extras = () =>
+    data.extras.enable && (
+      <div>
+        <Heading title={data.extras.heading} />
+        <table className="table-auto">
+          <tbody>{data.extras.items.map(ExtraItem)}</tbody>
+        </table>
+      </div>
+    );
 
   return (
     <div
@@ -99,20 +192,8 @@ const Gengar = () => {
           style={{ backgroundColor: theme.colors.accent, color: theme.colors.background }}
         >
           <div className="flex items-center">
-            {data.profile.photo !== '' && (
-              <img
-                className="w-24 h-24 rounded-full mr-4 object-cover border-4"
-                style={{
-                  borderColor: theme.colors.background,
-                }}
-                src={data.profile.photo}
-                alt="Resume Photograph"
-              />
-            )}
-            <div>
-              <h1 className="text-3xl font-bold">{data.profile.firstName}</h1>
-              <h1 className="text-3xl font-bold">{data.profile.lastName}</h1>
-            </div>
+            <Photo />
+            <FullName />
           </div>
 
           <hr className="w-1/4 my-5 opacity-50" />
@@ -127,70 +208,23 @@ const Gengar = () => {
           className="col-span-3 px-6 py-8"
           style={{ backgroundColor: `rgba(${r}, ${g}, ${b}, 0.1)` }}
         >
-          {data.objective.enable && (
-            <div className="h-full flex flex-col justify-center items-start">
-              <Heading title={data.objective.heading} />
-              <p className="text-sm whitespace-pre-wrap">{data.objective.body}</p>
-            </div>
-          )}
+          <Objective />
         </div>
 
         <div
           className="col-span-2 px-6 py-8"
           style={{ backgroundColor: `rgba(${r}, ${g}, ${b}, 0.1)` }}
         >
-          {data.skills.enable && (
-            <div className="mb-8">
-              <Heading title={data.skills.heading} />
-              <ul className="list-disc ml-5">{data.skills.items.map(SkillItem)}</ul>
-            </div>
-          )}
+          <Skills />
+          <Education />
 
-          {data.education.enable && (
-            <div className="mb-8">
-              <Heading title={data.education.heading} />
-              {data.education.items.map(EducationItem)}
-            </div>
-          )}
-
-          {data.certifications.enable && (
-            <div className="mb-8">
-              <Heading title={data.certifications.heading} />
-              {data.certifications.items.map(AwardCertificationItem)}
-            </div>
-          )}
+          <Certifications />
         </div>
 
         <div className="col-span-3 px-6 py-8">
-          {data.work.enable && (
-            <div className="mb-8">
-              <Heading title={data.work.heading} />
-              {data.work.items.map(WorkItem)}
-            </div>
-          )}
-
-          {data.awards.enable && (
-            <div className="mb-8">
-              <Heading title={data.awards.heading} />
-              {data.awards.items.map(AwardCertificationItem)}
-            </div>
-          )}
-
-          {data.extras.enable && (
-            <div>
-              <Heading title={data.extras.heading} />
-              <table className="table-auto">
-                <tbody>
-                  {data.extras.items.map(x => (
-                    <tr key={x.key}>
-                      <td className="border font-medium px-4 py-2 text-sm">{x.key}</td>
-                      <td className="border px-4 py-2 text-sm">{x.value}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
+          <Work />
+          <Awards />
+          <Extras />
         </div>
       </div>
     </div>

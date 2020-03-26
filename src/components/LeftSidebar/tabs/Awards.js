@@ -5,6 +5,7 @@ import set from 'lodash/set';
 import TextField from '../../../shared/TextField';
 import AppContext from '../../../context/AppContext';
 import Checkbox from '../../../shared/Checkbox';
+import TextArea from '../../../shared/TextArea';
 
 const AwardsTab = ({ data, onChange }) => {
   const context = useContext(AppContext);
@@ -53,6 +54,7 @@ const AddItem = ({ dispatch }) => {
     id: uuidv4(),
     title: '',
     subtitle: '',
+    description: '',
   });
 
   const onChange = (key, value) => setItem(set({ ...item }, key, value));
@@ -72,6 +74,7 @@ const AddItem = ({ dispatch }) => {
       id: uuidv4(),
       title: '',
       subtitle: '',
+      description: '',
     });
 
     setOpen(false);
@@ -102,6 +105,13 @@ const AddItem = ({ dispatch }) => {
           placeholder="First Place, International Level"
           value={item.subtitle}
           onChange={v => onChange('subtitle', v)}
+        />
+
+        <TextArea
+          label="Description"
+          className="mb-6"
+          value={item.description}
+          onChange={v => onChange('description', v)}
         />
 
         <button
@@ -175,6 +185,13 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
           placeholder="First Place, International Level"
           value={item.subtitle}
           onChange={v => onChange(`${identifier}.subtitle`, v)}
+        />
+
+        <TextArea
+          label="Description"
+          className="mb-6"
+          value={item.description}
+          onChange={v => onChange(`${identifier}.description`, v)}
         />
 
         <div className="flex justify-between">
