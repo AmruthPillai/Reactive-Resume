@@ -95,7 +95,7 @@ const Gengar = () => {
     >
       <div className="grid grid-cols-5">
         <div
-          className="col-span-2 px-6 py-8"
+          className="col-span-2 px-6 py-8 break-all"
           style={{ backgroundColor: theme.colors.accent, color: theme.colors.background }}
         >
           <div className="flex items-center">

@@ -37,7 +37,7 @@ const Onyx = () => {
             </div>
           </div>
         </div>
-        <div className="col-span-1 text-xs">
+        <div className="col-span-1 text-xs break-all">
           {data.profile.phone && (
             <div className="flex items-center my-3">
               <span className="material-icons text-lg mr-2" style={{ color: theme.colors.accent }}>
