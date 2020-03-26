@@ -1,8 +1,9 @@
 import React from 'react';
 import Onyx, { Image as OnyxPreview } from '../../../templates/onyx';
 import Pikachu, { Image as PikachuPreview } from '../../../templates/pikachu';
+import Gengar, { Image as GengarPreview } from '../../../templates/gengar';
 
-const layouts = [
+const templates = [
   {
     name: 'Onyx',
     component: Onyx,
@@ -13,12 +14,17 @@ const layouts = [
     component: Pikachu,
     preview: PikachuPreview,
   },
+  {
+    name: 'Gengar',
+    component: Gengar,
+    preview: GengarPreview,
+  },
 ];
 
-const LayoutTab = ({ theme, onChange }) => {
+const TemplatesTab = ({ theme, onChange }) => {
   return (
     <div className="grid grid-cols-2 gap-6">
-      {layouts.map(x => (
+      {templates.map(x => (
         <div key={x.name} className="text-center" onClick={() => onChange('theme.layout', x.name)}>
           <img
             className={`rounded cursor-pointer object-cover border shadow hover:shadow-md ${
@@ -36,4 +42,4 @@ const LayoutTab = ({ theme, onChange }) => {
   );
 };
 
-export default LayoutTab;
+export default TemplatesTab;

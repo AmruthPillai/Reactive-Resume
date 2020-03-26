@@ -83,7 +83,7 @@ const Pikachu = () => {
           <h6 className="font-semibold">{x.name}</h6>
           <p className="text-xs">{x.major}</p>
         </div>
-        <div className="flex flex-col items-end">
+        <div className="flex flex-col text-right items-end">
           <span className="text-sm font-bold" style={{ color: theme.colors.accent }}>
             {x.grade}
           </span>

@@ -1,11 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useContext } from 'react';
 
-import Onyx from '../../templates/onyx';
 import LeftSidebar from '../LeftSidebar/LeftSidebar';
 import RightSidebar from '../RightSidebar/RightSidebar';
 import AppContext from '../../context/AppContext';
+
+// Resume Templates
+import Onyx from '../../templates/onyx';
 import Pikachu from '../../templates/pikachu/Pikachu';
+import Gengar from '../../templates/gengar/Gengar';
 
 const App = () => {
   const context = useContext(AppContext);
@@ -23,6 +26,8 @@ const App = () => {
         return <Onyx />;
       case 'Pikachu':
         return <Pikachu />;
+      case 'Gengar':
+        return <Gengar />;
       default:
         return null;
     }
