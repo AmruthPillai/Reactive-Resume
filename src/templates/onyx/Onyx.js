@@ -39,7 +39,7 @@ const Onyx = () => {
         <span className="material-icons text-lg mr-2" style={{ color: theme.colors.accent }}>
           {icon}
         </span>
-        <span className="font-medium">{value}</span>
+        <span className="font-medium break-all">{value}</span>
       </div>
     );
 

@@ -44,7 +44,7 @@ const Gengar = () => {
             {icon}
           </i>
         </div>
-        <span className="text-sm font-medium">{value}</span>
+        <span className="text-sm font-medium break-all">{value}</span>
       </div>
     );
 
