@@ -38,7 +38,7 @@ const App = () => {
       <LeftSidebar />
 
       <div className="z-0 h-screen col-span-3 flex justify-center items-center overflow-scroll">
-        <div id="page" className="p-10 my-auto shadow-2xl overflow-scroll">
+        <div id="page" className="p-10 my-auto shadow-2xl">
           {renderTemplate()}
         </div>
       </div>
