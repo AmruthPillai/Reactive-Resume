@@ -39,8 +39,7 @@ Try it out today!
 | | Feature | Cards | |
 | :---: | :---: | :---: | :---: |
 | <img src="https://i.imgur.com/jbTuaPA.png" alt="Tailor Made Templates" width="200px" /> | <img src="https://i.imgur.com/vPGMbAa.png" alt="Custom Color Options" width="200px" /> | <img src="https://i.imgur.com/7lO6WQr.png" alt="Custom Font Picker" width="200px" /> | <img src="https://i.imgur.com/8X1vdWf.png" alt="Exhaustive Sections" width="200px" /> |
-| <img src="https://i.imgur.com/R5vtxQ5.png" alt="Personalized in Every Way" width="200px" /> | <img src="https://i.imgur.com/EfdxUL7.png" alt="Quick Resume Updates" width="200px" /> | <img src="https://i.imgur.com/oQ6L1sM.png" alt="Save as PDF or Print Directly" width="200px" /> | <img src="https://i.imgur.com/u4DXkA9.png" alt="Secure, Offline & Portable" width="200px" />
-</div> |
+| <img src="https://i.imgur.com/R5vtxQ5.png" alt="Personalized in Every Way" width="200px" /> | <img src="https://i.imgur.com/EfdxUL7.png" alt="Quick Resume Updates" width="200px" /> | <img src="https://i.imgur.com/oQ6L1sM.png" alt="Save as PDF or Print Directly" width="200px" /> | <img src="https://i.imgur.com/u4DXkA9.png" alt="Secure, Offline & Portable" width="200px" /> |
 
 ## How can I contribute?
 
