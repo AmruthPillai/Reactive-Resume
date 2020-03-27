@@ -10,6 +10,8 @@ import AwardsTab from './tabs/Awards';
 import CertificationsTab from './tabs/Certifications';
 import SkillsTab from './tabs/Skills';
 import ExtrasTab from './tabs/Extras';
+import LanguagesTab from './tabs/Languages';
+import ReferencesTab from './tabs/References';
 
 const tabs = [
   'Profile',
@@ -19,6 +21,8 @@ const tabs = [
   'Awards',
   'Certifications',
   'Skills',
+  'Languages',
+  'References',
   'Extras',
 ];
 
@@ -27,7 +31,7 @@ const LeftSidebar = () => {
   const { state, dispatch } = context;
   const { data } = state;
 
-  const [currentTab, setCurrentTab] = useState('Profile');
+  const [currentTab, setCurrentTab] = useState('Languages');
   const onChange = (key, value) => {
     dispatch({
       type: 'on_input',
@@ -56,6 +60,10 @@ const LeftSidebar = () => {
         return <CertificationsTab data={data} onChange={onChange} />;
       case 'Skills':
         return <SkillsTab data={data} onChange={onChange} />;
+      case 'Languages':
+        return <LanguagesTab data={data} onChange={onChange} />;
+      case 'References':
+        return <ReferencesTab data={data} onChange={onChange} />;
       case 'Extras':
         return <ExtrasTab data={data} onChange={onChange} />;
       default:

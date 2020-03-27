@@ -1,51 +1,71 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import set from 'lodash/set';
 
 import TextField from '../../../shared/TextField';
 import AppContext from '../../../context/AppContext';
 import Checkbox from '../../../shared/Checkbox';
-import TextArea from '../../../shared/TextArea';
+import Counter from '../../../shared/Counter';
 import { addItem, deleteItem, moveItemUp, moveItemDown } from '../../../utils';
 
-const CertificationsTab = ({ data, onChange }) => {
+const LanguagesTab = ({ data, onChange }) => {
   const context = useContext(AppContext);
   const { dispatch } = context;
 
+  useEffect(() => {
+    if (!('languages' in data)) {
+      dispatch({
+        type: 'migrate_section',
+        payload: {
+          key: 'languages',
+          value: {
+            enable: false,
+            heading: 'Languages',
+            items: [],
+          },
+        },
+      });
+
+      dispatch({ type: 'save_data' });
+    }
+  }, [data, dispatch]);
+
   return (
-    <>
-      <div className="my-6 grid grid-cols-6 items-center">
-        <div className="col-span-1">
-          <Checkbox
-            checked={data.certifications.enable}
-            onChange={v => onChange('data.certifications.enable', v)}
-          />
+    'languages' in data && (
+      <>
+        <div className="mb-6 grid grid-cols-6 items-center">
+          <div className="col-span-1">
+            <Checkbox
+              checked={data.languages.enable}
+              onChange={v => onChange('data.languages.enable', v)}
+            />
+          </div>
+          <div className="col-span-5">
+            <TextField
+              placeholder="Heading"
+              value={data.languages.heading}
+              onChange={v => onChange('data.languages.heading', v)}
+            />
+          </div>
         </div>
-        <div className="col-span-5">
-          <TextField
-            placeholder="Heading"
-            value={data.certifications.heading}
-            onChange={v => onChange('data.certifications.heading', v)}
+
+        <hr className="my-6" />
+
+        {data.languages.items.map((x, index) => (
+          <Item
+            item={x}
+            key={x.id}
+            index={index}
+            onChange={onChange}
+            dispatch={dispatch}
+            first={index === 0}
+            last={index === data.languages.items.length - 1}
           />
-        </div>
-      </div>
+        ))}
 
-      <hr className="my-6" />
-
-      {data.certifications.items.map((x, index) => (
-        <Item
-          item={x}
-          key={x.id}
-          index={index}
-          onChange={onChange}
-          dispatch={dispatch}
-          first={index === 0}
-          last={index === data.certifications.items.length - 1}
-        />
-      ))}
-
-      <AddItem dispatch={dispatch} />
-    </>
+        <AddItem dispatch={dispatch} />
+      </>
+    )
   );
 };
 
@@ -53,23 +73,21 @@ const AddItem = ({ dispatch }) => {
   const [isOpen, setOpen] = useState(false);
   const [item, setItem] = useState({
     id: uuidv4(),
-    title: '',
-    subtitle: '',
-    description: '',
+    key: '',
+    value: 1,
   });
 
-  const onChange = (key, value) => setItem(set({ ...item }, key, value));
+  const onChange = (key, value) => setItem(items => set({ ...items }, key, value));
 
   const onSubmit = () => {
-    if (item.title === '') return;
+    if (item.key === '') return;
 
-    addItem(dispatch, 'certifications', item);
+    addItem(dispatch, 'languages', item);
 
     setItem({
       id: uuidv4(),
-      title: '',
-      subtitle: '',
-      description: '',
+      key: '',
+      value: 1,
     });
 
     setOpen(false);
@@ -81,32 +99,25 @@ const AddItem = ({ dispatch }) => {
         className="flex justify-between items-center cursor-pointer"
         onClick={() => setOpen(!isOpen)}
       >
-        <h6 className="text-sm font-medium">Add Certification</h6>
+        <h6 className="text-sm font-medium">Add Language</h6>
         <i className="material-icons">{isOpen ? 'expand_less' : 'expand_more'}</i>
       </div>
 
       <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
         <TextField
-          label="Title"
+          label="Key"
           className="mb-6"
-          placeholder="Android Development Nanodegree"
-          value={item.title}
-          onChange={v => onChange('title', v)}
+          placeholder="Dothraki"
+          value={item.key}
+          onChange={v => onChange('key', v)}
         />
 
-        <TextField
-          label="Subtitle"
+        <Counter
+          label="Rating"
           className="mb-6"
-          placeholder="Udacity"
-          value={item.subtitle}
-          onChange={v => onChange('subtitle', v)}
-        />
-
-        <TextArea
-          label="Description"
-          className="mb-6"
-          value={item.description}
-          onChange={v => onChange('description', v)}
+          value={item.value}
+          onDecrement={() => item.value > 1 && onChange('value', item.value - 1)}
+          onIncrement={() => item.value < 5 && onChange('value', item.value + 1)}
         />
 
         <button
@@ -126,7 +137,7 @@ const AddItem = ({ dispatch }) => {
 
 const Item = ({ item, index, onChange, dispatch, first, last }) => {
   const [isOpen, setOpen] = useState(false);
-  const identifier = `data.certifications.items[${index}]`;
+  const identifier = `data.languages.items[${index}]`;
 
   return (
     <div className="my-4 border border-gray-200 rounded p-5">
@@ -134,38 +145,31 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
         className="flex justify-between items-center cursor-pointer"
         onClick={() => setOpen(!isOpen)}
       >
-        <h6 className="text-sm font-medium">{item.title}</h6>
+        <h6 className="text-sm font-medium">{item.key}</h6>
         <i className="material-icons">{isOpen ? 'expand_less' : 'expand_more'}</i>
       </div>
 
       <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
         <TextField
-          label="Title"
+          label="Name"
           className="mb-6"
-          placeholder="Android Development Nanodegree"
-          value={item.title}
-          onChange={v => onChange(`${identifier}.title`, v)}
+          placeholder="Dothraki"
+          value={item.key}
+          onChange={v => onChange(`${identifier}.key`, v)}
         />
 
-        <TextField
-          label="Subtitle"
+        <Counter
+          label="Rating"
           className="mb-6"
-          placeholder="Udacity"
-          value={item.subtitle}
-          onChange={v => onChange(`${identifier}.subtitle`, v)}
+          value={item.value}
+          onDecrement={() => item.value > 1 && onChange(`${identifier}.value`, item.value - 1)}
+          onIncrement={() => item.value < 5 && onChange(`${identifier}.value`, item.value + 1)}
         />
 
-        <TextArea
-          label="Description"
-          className="mb-6"
-          value={item.description}
-          onChange={v => onChange(`${identifier}.description`, v)}
-        />
-
-        <div className="flex justify-between">
+        <div className="mt-6 flex justify-between">
           <button
             type="button"
-            onClick={() => deleteItem(dispatch, 'certifications', item)}
+            onClick={() => deleteItem(dispatch, 'languages', item)}
             className="bg-red-600 hover:bg-red-700 text-white text-sm font-medium py-2 px-5 rounded"
           >
             <div className="flex items-center">
@@ -178,7 +182,7 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
             {!first && (
               <button
                 type="button"
-                onClick={() => moveItemUp(dispatch, 'certifications', item)}
+                onClick={() => moveItemUp(dispatch, 'languages', item)}
                 className="bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-4 rounded mr-2"
               >
                 <div className="flex items-center">
@@ -190,7 +194,7 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
             {!last && (
               <button
                 type="button"
-                onClick={() => moveItemDown(dispatch, 'certifications', item)}
+                onClick={() => moveItemDown(dispatch, 'languages', item)}
                 className="bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-4 rounded"
               >
                 <div className="flex items-center">
@@ -205,4 +209,4 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
   );
 };
 
-export default CertificationsTab;
+export default LanguagesTab;

@@ -40,4 +40,54 @@ const copyToClipboard = text => {
   return successful;
 };
 
-export { move, hexToRgb, copyToClipboard };
+const saveData = dispatch => dispatch({ type: 'save_data' });
+
+const addItem = (dispatch, key, value) => {
+  dispatch({
+    type: 'add_item',
+    payload: {
+      key,
+      value,
+    },
+  });
+
+  saveData(dispatch);
+};
+
+const deleteItem = (dispatch, key, value) => {
+  dispatch({
+    type: 'delete_item',
+    payload: {
+      key,
+      value,
+    },
+  });
+
+  saveData(dispatch);
+};
+
+const moveItemUp = (dispatch, key, value) => {
+  dispatch({
+    type: 'move_item_up',
+    payload: {
+      key,
+      value,
+    },
+  });
+
+  saveData(dispatch);
+};
+
+const moveItemDown = (dispatch, key, value) => {
+  dispatch({
+    type: 'move_item_down',
+    payload: {
+      key,
+      value,
+    },
+  });
+
+  saveData(dispatch);
+};
+
+export { move, hexToRgb, copyToClipboard, saveData, addItem, deleteItem, moveItemUp, moveItemDown };

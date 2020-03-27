@@ -24,6 +24,24 @@ li {
 }
 
 @media screen {
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  input:focus {
+    outline: none !important;
+  }
+
+  button:focus {
+    outline: none !important;
+  }
+
   input:checked + i.material-icons {
     display: block;
   }
@@ -36,12 +54,14 @@ li {
 
   #tabs {
     scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   #tabs::-webkit-scrollbar {
     width: 0px;
     height: 0px;
-    background: transparent; /* make scrollbar transparent */
+    background: transparent;
   }
 
   #page {
