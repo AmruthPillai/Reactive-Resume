@@ -2,7 +2,7 @@
 
 # Reactive Resume
 
-A one-of-a-kind resume builder that keeps your privacy in mind,  
+A one-of-a-kind resume builder that keeps your privacy in mind,
 completely secure, customizable, portable, open-source, and free forever.
 Try it out today!
 
@@ -66,6 +66,7 @@ I'm glad you asked :) Here is a step-by-step procedure on getting you started wi
 
 ## What's changed since the release?
 
+- Added Castform Template ([Preview](https://i.imgur.com/an0op8f.png))
 - Added Entry Animation to App
 - Added Languages & References Section
 - Updated Templates
@@ -78,8 +79,8 @@ I'm glad you asked :) Here is a step-by-step procedure on getting you started wi
 
 A lot of people have asked me for help in designing their resumes as I have made mine. I just wanted a more natural way to generate resumes and have it easy to update cause updating a resume is always the uphill task. Once I thought of the idea, it was only a matter of time to design and develop the app. I am a big supporter of the open-source development movement as I have been directly benefitted by so many other projects that developers have shared. So needless to say, this project is entirely open-source and free as well :)
 
-Hope you enjoyed using the app, please let me know if you found it helpful.  
-You can reach me on my website: https://www.amruthpillai.com/  
+Hope you enjoyed using the app, please let me know if you found it helpful.
+You can reach me on my website: https://www.amruthpillai.com/
 or by email: im.amruth@gmail.com
 
 Thank you!
