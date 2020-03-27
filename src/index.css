@@ -17,7 +17,7 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-li {
+ul {
   list-style: disc;
   list-style-position: inside !important;
 }
@@ -66,8 +66,8 @@ li {
   #page {
     width: 21cm;
     height: 29.7cm;
-    zoom: 0.8;
     padding: 2.5em;
+    zoom: 0.8;
     overflow: scroll;
     background-color: white;
   }
@@ -94,9 +94,9 @@ li {
   }
 
   #page {
+    width: 21cm;
+    height: 29.7cm;
     background-color: white;
-    margin: 0;
-    padding: 0;
     box-shadow: none;
     position: absolute;
     left: 0;
