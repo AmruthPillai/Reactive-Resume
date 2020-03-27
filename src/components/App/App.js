@@ -40,7 +40,7 @@ const App = () => {
       <div className="z-0 h-screen col-span-3 flex justify-center items-center overflow-scroll">
         <div
           id="page"
-          className="animated fadeIn p-10 my-auto shadow-2xl"
+          className="animated fadeIn my-auto shadow-2xl"
           style={{ animationDelay: '500ms' }}
         >
           {renderTemplate()}

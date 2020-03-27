@@ -67,6 +67,7 @@ li {
     width: 21cm;
     height: 29.7cm;
     zoom: 0.8;
+    padding: 2.5em;
     overflow: scroll;
     background-color: white;
   }
@@ -74,7 +75,7 @@ li {
 
 @page {
   size: A4;
-  margin: 0;
+  margin: 2.5em;
 }
 
 @media print {
@@ -82,19 +83,20 @@ li {
   body,
   body * {
     -webkit-print-color-adjust: exact;
+    color-adjust: exact;
     visibility: hidden;
   }
 
   #page,
   #page * {
+    page-break-inside: avoid;
     visibility: visible;
   }
 
   #page {
     background-color: white;
-    width: 21cm;
-    height: 29.7cm;
     margin: 0;
+    padding: 0;
     box-shadow: none;
     position: absolute;
     left: 0;

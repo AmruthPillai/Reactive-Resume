@@ -11,7 +11,11 @@ const Pikachu = () => {
   const Photo = () =>
     data.profile.photo !== '' && (
       <div className="self-center col-span-4">
-        <img className="h-48 rounded-full mx-auto object-cover" src={data.profile.photo} alt="" />
+        <img
+          className="w-48 h-48 rounded-full mx-auto object-cover"
+          src={data.profile.photo}
+          alt=""
+        />
       </div>
     );
 
