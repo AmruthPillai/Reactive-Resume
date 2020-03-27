@@ -102,7 +102,7 @@ const Gengar = () => {
 
   const Education = () =>
     data.education.enable && (
-      <div className="mb-8">
+      <div className="mb-6">
         <Heading title={data.education.heading} />
         {data.education.items.map(EducationItem)}
       </div>
@@ -118,7 +118,7 @@ const Gengar = () => {
 
   const Certifications = () =>
     data.certifications.enable && (
-      <div className="mb-8">
+      <div className="mb-6">
         <Heading title={data.certifications.heading} />
         {data.certifications.items.map(CertificationItem)}
       </div>
@@ -134,7 +134,7 @@ const Gengar = () => {
 
   const Awards = () =>
     data.awards.enable && (
-      <div className="mb-8">
+      <div className="mb-6">
         <Heading title={data.awards.heading} />
         {data.awards.items.map(AwardItem)}
       </div>
@@ -175,7 +175,7 @@ const Gengar = () => {
 
   const Work = () =>
     data.work.enable && (
-      <div className="mb-8">
+      <div className="mb-6">
         <Heading title={data.work.heading} />
         {data.work.items.map(WorkItem)}
       </div>
