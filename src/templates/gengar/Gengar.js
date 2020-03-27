@@ -54,7 +54,7 @@ const Gengar = () => {
 
   const Objective = () =>
     data.objective.enable && (
-      <div className="h-full flex flex-col justify-center items-start">
+      <div className="flex flex-col justify-center items-start mb-6">
         <Heading title={data.objective.heading} />
         <ReactMarkdown className="text-sm" source={data.objective.body} />
       </div>
@@ -68,7 +68,7 @@ const Gengar = () => {
 
   const Skills = () =>
     data.skills.enable && (
-      <div className="mb-8">
+      <div className="mb-6">
         <Heading title={data.skills.heading} />
         <ul>{data.skills.items.map(SkillItem)}</ul>
       </div>
@@ -102,7 +102,7 @@ const Gengar = () => {
 
   const Education = () =>
     data.education.enable && (
-      <div className="mb-8">
+      <div className="mb-6">
         <Heading title={data.education.heading} />
         {data.education.items.map(EducationItem)}
       </div>
@@ -118,7 +118,7 @@ const Gengar = () => {
 
   const Certifications = () =>
     data.certifications.enable && (
-      <div className="mb-8">
+      <div className="mb-6">
         <Heading title={data.certifications.heading} />
         {data.certifications.items.map(CertificationItem)}
       </div>
@@ -134,9 +134,27 @@ const Gengar = () => {
 
   const Awards = () =>
     data.awards.enable && (
-      <div className="mb-8">
+      <div className="mb-6">
         <Heading title={data.awards.heading} />
         {data.awards.items.map(AwardItem)}
+      </div>
+    );
+
+  const ReferenceItem = x => (
+    <div key={x.id} className="flex flex-col">
+      <h6 className="text-sm font-medium">{x.name}</h6>
+      <span className="text-xs">{x.position}</span>
+      <span className="text-xs">{x.phone}</span>
+      <span className="text-xs">{x.email}</span>
+      <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+    </div>
+  );
+
+  const References = () =>
+    data.references.enable && (
+      <div>
+        <Heading title={data.references.heading} />
+        <div className="grid grid-cols-2 gap-6">{data.references.items.map(ReferenceItem)}</div>
       </div>
     );
 
@@ -157,26 +175,45 @@ const Gengar = () => {
 
   const Work = () =>
     data.work.enable && (
-      <div className="mb-8">
+      <div className="mb-6">
         <Heading title={data.work.heading} />
         {data.work.items.map(WorkItem)}
       </div>
     );
 
+  const LanguageItem = x => (
+    <div key={x.id} className="grid grid-cols-2 items-center py-2">
+      <h6 className="text-sm font-medium">{x.key}</h6>
+      <div className="flex">
+        {Array.from(Array(x.value)).map((_, i) => (
+          <i key={i} className="material-icons text-lg" style={{ color: theme.colors.accent }}>
+            star
+          </i>
+        ))}
+      </div>
+    </div>
+  );
+
+  const Languages = () =>
+    data.languages.enable && (
+      <div>
+        <Heading title={data.languages.heading} />
+        <div className="mb-6">{data.languages.items.map(LanguageItem)}</div>
+      </div>
+    );
+
   const ExtraItem = x => (
-    <tr key={x.key}>
-      <td className="border font-medium px-4 py-2 text-sm">{x.key}</td>
-      <td className="border px-4 py-2 text-sm">{x.value}</td>
-    </tr>
+    <div key={x.key} className="text-sm my-1">
+      <h6 className="text-xs font-bold">{x.key}</h6>
+      <h6>{x.value}</h6>
+    </div>
   );
 
   const Extras = () =>
     data.extras.enable && (
       <div>
         <Heading title={data.extras.heading} />
-        <table className="table-auto">
-          <tbody>{data.extras.items.map(ExtraItem)}</tbody>
-        </table>
+        <div className="grid grid-cols-2">{data.extras.items.map(ExtraItem)}</div>
       </div>
     );
 
@@ -188,9 +225,9 @@ const Gengar = () => {
         color: theme.colors.primary,
       }}
     >
-      <div className="grid grid-cols-5">
+      <div className="grid grid-cols-12">
         <div
-          className="col-span-2 px-6 py-8"
+          className="col-span-4 px-6 py-8"
           style={{ backgroundColor: theme.colors.accent, color: theme.colors.background }}
         >
           <div className="flex items-center">
@@ -207,26 +244,31 @@ const Gengar = () => {
         </div>
 
         <div
-          className="col-span-3 px-6 py-8"
+          className="col-span-8 px-6 py-8"
           style={{ backgroundColor: `rgba(${r}, ${g}, ${b}, 0.1)` }}
         >
           <Objective />
+          <Extras />
         </div>
 
         <div
-          className="col-span-2 px-6 py-8"
+          className="col-span-4 px-6 py-8"
           style={{ backgroundColor: `rgba(${r}, ${g}, ${b}, 0.1)` }}
         >
           <Skills />
+          <Languages />
           <Education />
-
-          <Certifications />
         </div>
 
-        <div className="col-span-3 px-6 py-8">
+        <div className="col-span-8 px-6 py-8">
           <Work />
-          <Awards />
-          <Extras />
+
+          <div className="grid grid-cols-2 gap-6">
+            <Awards />
+            <Certifications />
+          </div>
+
+          <References />
         </div>
       </div>
     </div>

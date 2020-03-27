@@ -159,6 +159,45 @@ const Onyx = () => {
       </div>
     );
 
+  const LanguageItem = x => (
+    <div key={x.id} className="grid grid-cols-2 items-center py-2">
+      <h6 className="text-sm font-medium">{x.key}</h6>
+      <div className="flex">
+        {Array.from(Array(x.value)).map((_, i) => (
+          <i key={i} className="material-icons text-lg" style={{ color: theme.colors.accent }}>
+            star
+          </i>
+        ))}
+      </div>
+    </div>
+  );
+
+  const Languages = () =>
+    data.languages.enable && (
+      <div>
+        <Heading title={data.languages.heading} />
+        <div className="w-3/4">{data.languages.items.map(LanguageItem)}</div>
+      </div>
+    );
+
+  const ReferenceItem = x => (
+    <div key={x.id} className="flex flex-col">
+      <h6 className="text-sm font-medium">{x.name}</h6>
+      <span className="text-xs">{x.position}</span>
+      <span className="text-xs">{x.phone}</span>
+      <span className="text-xs">{x.email}</span>
+      <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+    </div>
+  );
+
+  const References = () =>
+    data.references.enable && (
+      <div>
+        <Heading title={data.references.heading} />
+        <div className="grid grid-cols-3 gap-6">{data.references.items.map(ReferenceItem)}</div>
+      </div>
+    );
+
   const ExtraItem = x => (
     <tr key={x.key}>
       <td className="border font-medium px-4 py-2 text-sm">{x.key}</td>
@@ -203,12 +242,17 @@ const Onyx = () => {
       <Work />
       <Education />
 
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 gap-6">
         <Awards />
         <Certifications />
       </div>
 
-      <Skills />
+      <div className="grid grid-cols-2 gap-6">
+        <Skills />
+        <Languages />
+      </div>
+
+      <References />
       <Extras />
     </div>
   );

@@ -10,6 +10,8 @@ import AwardsTab from './tabs/Awards';
 import CertificationsTab from './tabs/Certifications';
 import SkillsTab from './tabs/Skills';
 import ExtrasTab from './tabs/Extras';
+import LanguagesTab from './tabs/Languages';
+import ReferencesTab from './tabs/References';
 
 const tabs = [
   'Profile',
@@ -19,6 +21,8 @@ const tabs = [
   'Awards',
   'Certifications',
   'Skills',
+  'Languages',
+  'References',
   'Extras',
 ];
 
@@ -56,6 +60,10 @@ const LeftSidebar = () => {
         return <CertificationsTab data={data} onChange={onChange} />;
       case 'Skills':
         return <SkillsTab data={data} onChange={onChange} />;
+      case 'Languages':
+        return <LanguagesTab data={data} onChange={onChange} />;
+      case 'References':
+        return <ReferencesTab data={data} onChange={onChange} />;
       case 'Extras':
         return <ExtrasTab data={data} onChange={onChange} />;
       default:
@@ -66,7 +74,7 @@ const LeftSidebar = () => {
   return (
     <div
       id="leftSidebar"
-      className="z-10 py-6 h-screen bg-white col-span-1 shadow-2xl overflow-y-scroll"
+      className="animated slideInLeft z-10 py-6 h-screen bg-white col-span-1 shadow-2xl overflow-y-scroll"
     >
       <TabBar tabs={tabs} currentTab={currentTab} setCurrentTab={setCurrentTab} />
       <div className="px-6">{renderTabs()}</div>

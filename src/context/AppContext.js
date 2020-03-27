@@ -55,6 +55,16 @@ const initialState = {
       heading: 'Skills & Hobbies',
       items: [],
     },
+    languages: {
+      enable: false,
+      heading: 'Languages',
+      items: [],
+    },
+    references: {
+      enable: false,
+      heading: 'References',
+      items: [],
+    },
     extras: {
       enable: false,
       heading: 'Personal Information',
@@ -78,6 +88,8 @@ const reducer = (state, { type, payload }) => {
   let items;
 
   switch (type) {
+    case 'migrate_section':
+      return set({ ...state }, `data.${payload.key}`, payload.value);
     case 'add_item':
       items = get({ ...state }, `data.${payload.key}.items`, []);
       items.push(payload.value);

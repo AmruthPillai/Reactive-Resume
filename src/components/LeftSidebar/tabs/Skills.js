@@ -3,6 +3,7 @@ import React, { useState, useContext } from 'react';
 import AppContext from '../../../context/AppContext';
 import Checkbox from '../../../shared/Checkbox';
 import TextField from '../../../shared/TextField';
+import { addItem, deleteItem } from '../../../utils';
 
 const SkillsTab = ({ data, onChange }) => {
   const context = useContext(AppContext);
@@ -29,7 +30,7 @@ const SkillsTab = ({ data, onChange }) => {
       <hr className="my-6" />
 
       {data.skills.items.map((x, index) => (
-        <Item item={x} key={x} index={index} onChange={onChange} dispatch={dispatch} />
+        <Item item={x} key={index} index={index} onChange={onChange} dispatch={dispatch} />
       ))}
 
       <AddItem dispatch={dispatch} />
@@ -41,16 +42,10 @@ const AddItem = ({ dispatch }) => {
   const [isOpen, setOpen] = useState(false);
   const [item, setItem] = useState('');
 
-  const addItem = () => {
+  const add = () => {
     if (item === '') return;
 
-    dispatch({
-      type: 'add_item',
-      payload: {
-        key: 'skills',
-        value: item,
-      },
-    });
+    addItem(dispatch, 'skills', item);
 
     setItem('');
   };
@@ -79,7 +74,7 @@ const AddItem = ({ dispatch }) => {
 
           <button
             type="button"
-            onClick={addItem}
+            onClick={add}
             className="col-span-1 bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium rounded"
           >
             <div className="flex justify-center items-center">
@@ -95,15 +90,6 @@ const AddItem = ({ dispatch }) => {
 const Item = ({ item, index, onChange, dispatch }) => {
   const identifier = `data.skills.items[${index}]`;
 
-  const deleteItem = () =>
-    dispatch({
-      type: 'delete_item',
-      payload: {
-        key: 'skills',
-        value: item,
-      },
-    });
-
   return (
     <div className="my-4 grid grid-cols-6">
       <div className="col-span-5">
@@ -118,7 +104,7 @@ const Item = ({ item, index, onChange, dispatch }) => {
 
       <button
         type="button"
-        onClick={deleteItem}
+        onClick={() => deleteItem(dispatch, 'skills', item)}
         className="col-span-1 text-gray-600 hover:text-red-600 text-sm font-medium"
       >
         <div className="flex justify-end items-center">

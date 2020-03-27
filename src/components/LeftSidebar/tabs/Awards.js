@@ -6,6 +6,7 @@ import TextField from '../../../shared/TextField';
 import AppContext from '../../../context/AppContext';
 import Checkbox from '../../../shared/Checkbox';
 import TextArea from '../../../shared/TextArea';
+import { addItem, deleteItem, moveItemUp, moveItemDown } from '../../../utils';
 
 const AwardsTab = ({ data, onChange }) => {
   const context = useContext(AppContext);
@@ -59,16 +60,10 @@ const AddItem = ({ dispatch }) => {
 
   const onChange = (key, value) => setItem(set({ ...item }, key, value));
 
-  const addItem = () => {
+  const onSubmit = () => {
     if (item.title === '') return;
 
-    dispatch({
-      type: 'add_item',
-      payload: {
-        key: 'awards',
-        value: item,
-      },
-    });
+    addItem(dispatch, 'awards', item);
 
     setItem({
       id: uuidv4(),
@@ -116,7 +111,7 @@ const AddItem = ({ dispatch }) => {
 
         <button
           type="button"
-          onClick={addItem}
+          onClick={onSubmit}
           className="bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-5 rounded"
         >
           <div className="flex items-center">
@@ -132,33 +127,6 @@ const AddItem = ({ dispatch }) => {
 const Item = ({ item, index, onChange, dispatch, first, last }) => {
   const [isOpen, setOpen] = useState(false);
   const identifier = `data.awards.items[${index}]`;
-
-  const deleteItem = () =>
-    dispatch({
-      type: 'delete_item',
-      payload: {
-        key: 'awards',
-        value: item,
-      },
-    });
-
-  const moveItemUp = () =>
-    dispatch({
-      type: 'move_item_up',
-      payload: {
-        key: 'awards',
-        value: item,
-      },
-    });
-
-  const moveItemDown = () =>
-    dispatch({
-      type: 'move_item_down',
-      payload: {
-        key: 'awards',
-        value: item,
-      },
-    });
 
   return (
     <div className="my-4 border border-gray-200 rounded p-5">
@@ -197,7 +165,7 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
         <div className="flex justify-between">
           <button
             type="button"
-            onClick={deleteItem}
+            onClick={() => deleteItem(dispatch, 'awards', item)}
             className="bg-red-600 hover:bg-red-700 text-white text-sm font-medium py-2 px-5 rounded"
           >
             <div className="flex items-center">
@@ -210,7 +178,7 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
             {!first && (
               <button
                 type="button"
-                onClick={moveItemUp}
+                onClick={() => moveItemUp(dispatch, 'awards', item)}
                 className="bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-4 rounded mr-2"
               >
                 <div className="flex items-center">
@@ -222,7 +190,7 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
             {!last && (
               <button
                 type="button"
-                onClick={moveItemDown}
+                onClick={() => moveItemDown(dispatch, 'awards', item)}
                 className="bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-4 rounded"
               >
                 <div className="flex items-center">

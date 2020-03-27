@@ -3,11 +3,10 @@ import TextField from '../../../shared/TextField';
 
 const fontOptions = [
   'Lato',
-  'Merriweather',
   'Montserrat',
+  'Nunito',
   'Open Sans',
   'Raleway',
-  'Roboto',
   'Rubik',
   'Source Sans Pro',
   'Titillium Web',
