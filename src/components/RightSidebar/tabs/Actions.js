@@ -24,6 +24,11 @@ const ActionsTab = ({ data, theme, dispatch }) => {
     dlAnchor.click();
   };
 
+  const loadDummyData = () => {
+    dispatch({ type: 'load_dummy_data' });
+    dispatch({ type: 'save_data' });
+  };
+
   const resetEverything = () => {
     dispatch({ type: 'reset' });
     dispatch({ type: 'save_data' });
@@ -88,11 +93,33 @@ const ActionsTab = ({ data, theme, dispatch }) => {
         <button
           type="button"
           onClick={() => window.print()}
-          className="mt-4 w-1/2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-5 rounded"
+          className="mt-4 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-5 rounded"
         >
           <div className="flex justify-center items-center">
             <i className="material-icons mr-2 font-bold text-base">print</i>
             <span className="text-sm">Print</span>
+          </div>
+        </button>
+      </div>
+
+      <hr className="my-6" />
+
+      <div className="shadow text-center p-5">
+        <h6 className="font-bold text-sm mb-2">Load Dummy Data</h6>
+
+        <div className="text-sm">
+          Unclear on what to do with a fresh blank page? Load some dummy data with pre-populated
+          values to see how a resume should look and you can start editing from there.
+        </div>
+
+        <button
+          type="button"
+          onClick={loadDummyData}
+          className="mt-4 bg-green-600 hover:bg-green-700 text-white text-sm font-medium py-2 px-5 rounded"
+        >
+          <div className="flex justify-center items-center">
+            <i className="material-icons mr-2 font-bold text-base">flight_takeoff</i>
+            <span className="text-sm">Populate Data</span>
           </div>
         </button>
       </div>
@@ -111,7 +138,7 @@ const ActionsTab = ({ data, theme, dispatch }) => {
         <button
           type="button"
           onClick={resetEverything}
-          className="mt-4 w-1/2 bg-red-600 hover:bg-red-700 text-white text-sm font-medium py-2 px-5 rounded"
+          className="mt-4 bg-red-600 hover:bg-red-700 text-white text-sm font-medium py-2 px-5 rounded"
         >
           <div className="flex justify-center items-center">
             <i className="material-icons mr-2 font-bold text-base">refresh</i>

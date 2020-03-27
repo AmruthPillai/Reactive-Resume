@@ -4,8 +4,7 @@ import get from 'lodash/get';
 import set from 'lodash/set';
 import remove from 'lodash/remove';
 
-import initialData from '../assets/starter/data.json';
-import initialTheme from '../assets/starter/theme.json';
+import dummyData from '../assets/dummy/data.json';
 import { move } from '../utils';
 
 const initialState = {
@@ -118,11 +117,10 @@ const reducer = (state, { type, payload }) => {
         data: payload.data,
         theme: payload.theme,
       };
-    case 'populate_starter':
+    case 'load_dummy_data':
       return {
         ...state,
-        data: initialData,
-        theme: initialTheme,
+        ...dummyData,
       };
     case 'reset':
       return initialState;
