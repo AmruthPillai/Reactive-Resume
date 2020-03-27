@@ -2,6 +2,7 @@ import React from 'react';
 import Onyx, { Image as OnyxPreview } from '../../../templates/onyx';
 import Pikachu, { Image as PikachuPreview } from '../../../templates/pikachu';
 import Gengar, { Image as GengarPreview } from '../../../templates/gengar';
+import Castform, { Image as CastformPreview } from '../../../templates/castform';
 
 const templates = [
   {
@@ -18,6 +19,11 @@ const templates = [
     name: 'Gengar',
     component: Gengar,
     preview: GengarPreview,
+  },
+  {
+    name: 'Castform',
+    component: Castform,
+    preview: CastformPreview,
   },
 ];
 

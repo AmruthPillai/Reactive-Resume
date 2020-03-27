@@ -7,8 +7,9 @@ import AppContext from '../../context/AppContext';
 
 // Resume Templates
 import Onyx from '../../templates/onyx';
-import Pikachu from '../../templates/pikachu/Pikachu';
-import Gengar from '../../templates/gengar/Gengar';
+import Pikachu from '../../templates/pikachu';
+import Gengar from '../../templates/gengar';
+import Castform from '../../templates/castform';
 
 const App = () => {
   const context = useContext(AppContext);
@@ -28,6 +29,8 @@ const App = () => {
         return <Pikachu />;
       case 'Gengar':
         return <Gengar />;
+      case 'Castform':
+        return <Castform />;
       default:
         return null;
     }
