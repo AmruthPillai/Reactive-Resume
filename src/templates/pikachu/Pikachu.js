@@ -37,13 +37,15 @@ const Pikachu = () => {
     </div>
   );
 
-  const ContactItem = ({ icon, value }) =>
+  const ContactItem = ({ icon, value, link = '#' }) =>
     value && (
       <div className="flex items-center my-3">
         <span className="material-icons text-lg mr-2" style={{ color: theme.colors.accent }}>
           {icon}
         </span>
-        <span className="font-medium break-all">{value}</span>
+        <a href={link}>
+          <span className="font-medium break-all">{value}</span>
+        </a>
       </div>
     );
 
@@ -227,14 +229,27 @@ const Pikachu = () => {
 
         <div className="col-span-4 overflow-hidden">
           <div className="text-sm mb-6">
-            <ContactItem icon="phone" value={data.profile.phone} />
-            <ContactItem icon="language" value={data.profile.website} />
-            <ContactItem icon="alternate_email" value={data.profile.email} />
+            <ContactItem
+              icon="phone"
+              value={data.profile.phone}
+              link={`tel:${data.profile.phone}`}
+            />
+            <ContactItem
+              icon="language"
+              value={data.profile.website}
+              link={`http://${data.profile.website}`}
+            />
+            <ContactItem
+              icon="alternate_email"
+              value={data.profile.email}
+              link={`mailto:${data.profile.email}`}
+            />
             <ContactItem icon="location_on" value={data.profile.address.line3} />
           </div>
 
           <Skills />
           <Languages />
+          <Certifications />
           <Extras />
         </div>
 
@@ -242,7 +257,6 @@ const Pikachu = () => {
           <Work />
           <Education />
           <Awards />
-          <Certifications />
           <References />
         </div>
       </div>

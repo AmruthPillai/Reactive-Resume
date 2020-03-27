@@ -30,7 +30,7 @@ const Gengar = () => {
     </div>
   );
 
-  const ContactItem = ({ icon, value }) =>
+  const ContactItem = ({ icon, value, link = '#' }) =>
     value && (
       <div className="flex items-center mb-3">
         <div
@@ -44,7 +44,9 @@ const Gengar = () => {
             {icon}
           </i>
         </div>
-        <span className="text-sm font-medium break-all">{value}</span>
+        <a href={link}>
+          <span className="text-sm font-medium break-all">{value}</span>
+        </a>
       </div>
     );
 
@@ -237,9 +239,17 @@ const Gengar = () => {
 
           <hr className="w-1/4 my-5 opacity-50" />
 
-          <ContactItem icon="phone" value={data.profile.phone} />
-          <ContactItem icon="alternate_email" value={data.profile.email} />
-          <ContactItem icon="language" value={data.profile.website} />
+          <ContactItem icon="phone" value={data.profile.phone} link={`tel:${data.profile.phone}`} />
+          <ContactItem
+            icon="alternate_email"
+            value={data.profile.email}
+            link={`mailto:${data.profile.email}`}
+          />
+          <ContactItem
+            icon="language"
+            value={data.profile.website}
+            link={`http://${data.profile.website}`}
+          />
           <ContactItem icon="location_on" value={data.profile.address.line3} />
         </div>
 
@@ -258,16 +268,12 @@ const Gengar = () => {
           <Skills />
           <Languages />
           <Education />
+          <Certifications />
         </div>
 
         <div className="col-span-8 px-6 py-8">
           <Work />
-
-          <div className="grid grid-cols-2 gap-6">
-            <Awards />
-            <Certifications />
-          </div>
-
+          <Awards />
           <References />
         </div>
       </div>
