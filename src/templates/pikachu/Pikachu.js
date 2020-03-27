@@ -68,19 +68,6 @@ const Pikachu = () => {
     </div>
   );
 
-  const LanguageItem = x => (
-    <div key={x.id} className="grid grid-cols-2 items-center py-2">
-      <h6 className="text-sm font-medium">{x.key}</h6>
-      <div className="flex">
-        {Array.from(Array(x.value)).map((_, i) => (
-          <i key={i} className="material-icons text-lg" style={{ color: theme.colors.accent }}>
-            star
-          </i>
-        ))}
-      </div>
-    </div>
-  );
-
   const ReferenceItem = x => (
     <div key={x.id} className="flex flex-col">
       <h6 className="text-sm font-medium">{x.name}</h6>
@@ -98,6 +85,19 @@ const Pikachu = () => {
         <div className="grid grid-cols-2 gap-6">{data.references.items.map(ReferenceItem)}</div>
       </div>
     );
+
+  const LanguageItem = x => (
+    <div key={x.id} className="grid grid-cols-2 items-center py-2">
+      <h6 className="text-sm font-medium">{x.key}</h6>
+      <div className="flex">
+        {Array.from(Array(x.value)).map((_, i) => (
+          <i key={i} className="material-icons text-lg" style={{ color: theme.colors.accent }}>
+            star
+          </i>
+        ))}
+      </div>
+    </div>
+  );
 
   const Languages = () =>
     data.languages.enable && (
