@@ -16,14 +16,16 @@ Why yes, I do! Click the thumbnail below to watch the app in action.
 
 ## What's so special about it?
 
-* **Secure:** It is entirely secure, as in, your information never leaves the browser, powered by web technologies (HTML5 Local Storage API) that allow for data to be stored locally and quickly.
-* **Offline:** The app is a PWA and also has no connection to any servers, thus keeping it entirely offline. It survives refreshes, disconnections, and can also be exported or imported through JSON.
-* **Customizable:** Choose your fonts, play with the colors, pick any layout by merely enabling/disabling sections. A simple and easy to use interface that helps you get a resume in no time!
-* **Templates:** I've been continuously designing new templates and will be releasing new ones as I have the time. Please support development by using the app and leaving a like/comment or sharing it with your peers.
-* **Portable:** Your information can be exported to JSON and imported back into the application from anywhere, all you need is your JSON file. This feature makes it easy to update your resume, upload your file (or have it preloaded from local storage), edit the resume and download it again or print it as PDF.
-* **Minimalistic Design:** As a designer, I felt I had to put this over the top of all other features. Built with minimalism and minimal interaction in mind, it looks clean, is simple to use, and I only hope to make the process more streamlined through your inputs and feedback.
-* **Progressive Web App:** The web app is responsive, which means you can edit your resume on your phone as well and even install it as an app if you're on Android/Chrome. The app is quick to load and would also work if your internet is disconnected.
-* **No Ads, Open Source, and Free:** As with all my projects, I made the app only to help others, so it will always remain free, and I would not be monetizing on it at any point. But if you do feel generous, I'm open to donations :)
+| Feature | Description |
+| ------- | ----------- |
+| **Secure** | It is entirely secure, as in, your information never leaves the browser, powered by web technologies (HTML5 Local Storage API) that allow for data to be stored locally and quickly. |
+| **Offline** | The app is a PWA and also has no connection to any servers, thus keeping it entirely offline. It survives refreshes, disconnections, and can also be exported or imported through JSON. |
+| **Customizable** | Choose your fonts, play with the colors, pick any layout by merely enabling/disabling sections. A simple and easy to use interface that helps you get a resume in no time! |
+| **Templates** | I've been continuously designing new templates and will be releasing new ones as I have the time. Please support development by using the app and leaving a like/comment or sharing it with your peers. |
+| **Portable** | Your information can be exported to JSON and imported back into the application from anywhere, all you need is your JSON file. This feature makes it easy to update your resume, upload your file (or have it preloaded from local storage), edit the resume and download it again or print it as PDF. |
+| **Minimalistic Design** | As a designer, I felt I had to put this over the top of all other features. Built with minimalism and minimal interaction in mind, it looks clean, is simple to use, and I only hope to make the process more streamlined through your inputs and feedback. |
+| **Progressive Web App** | The web app is responsive, which means you can edit your resume on your phone as well and even install it as an app if you're on Android/Chrome. The app is quick to load and would also work if your internet is disconnected. |
+| **No Ads, Open Source, and Free** | As with all my projects, I made the app only to help others, so it will always remain free, and I would not be monetizing on it at any point. But if you do feel generous, I'm open to donations :) |
 
 <p align="center">
   <img src="https://i.imgur.com/INN0f2Y.png" alt="Reactive Resume Thumbnail" width="600px" />
@@ -62,9 +64,9 @@ I'm glad you asked :) Here is a step-by-step procedure on getting you started wi
 5. `npm start` - to start the development server
 5. `npm run build` - to build a production version of the app
 
-## Changelog
+## What's changed since the release?
 
-- Fixed Issue #2
+- Fixed [Issue #2](https://github.com/AmruthPillai/Reactive-Resume/issues/2)
 - Added Markdown Support in Descriptions
 - Added Gengar Template
 
