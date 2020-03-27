@@ -61,12 +61,13 @@ const Pikachu = () => {
     </span>
   );
 
-  const Skills = () => (
-    <div>
-      <Heading title={data.skills.heading} />
-      <div className="flex flex-col mb-6">{data.skills.items.map(SkillItem)}</div>
-    </div>
-  );
+  const Skills = () =>
+    data.skills.enable && (
+      <div>
+        <Heading title={data.skills.heading} />
+        <div className="flex flex-col mb-6">{data.skills.items.map(SkillItem)}</div>
+      </div>
+    );
 
   const ReferenceItem = x => (
     <div key={x.id} className="flex flex-col">
