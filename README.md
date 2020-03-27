@@ -66,6 +66,10 @@ I'm glad you asked :) Here is a step-by-step procedure on getting you started wi
 
 ## What's changed since the release?
 
+- Added Entry Animation to App
+- Added Languages & References Section
+- Updated Templates
+- Added Nunito Font
 - Fixed [Issue #2](https://github.com/AmruthPillai/Reactive-Resume/issues/2)
 - Added Markdown Support in Descriptions
 - Added Gengar Template
