@@ -116,12 +116,13 @@ const Gengar = () => {
     </div>
   );
 
-  const Certifications = () => (
-    <div className="mb-8">
-      <Heading title={data.certifications.heading} />
-      {data.certifications.items.map(CertificationItem)}
-    </div>
-  );
+  const Certifications = () =>
+    data.certifications.enable && (
+      <div className="mb-8">
+        <Heading title={data.certifications.heading} />
+        {data.certifications.items.map(CertificationItem)}
+      </div>
+    );
 
   const AwardItem = x => (
     <div key={x.title} className="mb-3">
@@ -131,12 +132,13 @@ const Gengar = () => {
     </div>
   );
 
-  const Awards = () => (
-    <div className="mb-8">
-      <Heading title={data.awards.heading} />
-      {data.awards.items.map(AwardItem)}
-    </div>
-  );
+  const Awards = () =>
+    data.awards.enable && (
+      <div className="mb-8">
+        <Heading title={data.awards.heading} />
+        {data.awards.items.map(AwardItem)}
+      </div>
+    );
 
   const WorkItem = x => (
     <div key={x.title} className="mb-3">
