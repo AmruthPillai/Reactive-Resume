@@ -10,14 +10,14 @@ const Pikachu = () => {
 
   const Photo = () =>
     data.profile.photo !== '' && (
-      <div className="self-center col-span-3">
-        <img className="rounded-full object-cover" src={data.profile.photo} alt="" />
+      <div className="self-center col-span-4">
+        <img className="h-48 rounded-full mx-auto object-cover" src={data.profile.photo} alt="" />
       </div>
     );
 
   const Header = () => (
     <div
-      className="rounded flex flex-col justify-center"
+      className="h-48 rounded flex flex-col justify-center"
       style={{ backgroundColor: theme.colors.accent, color: theme.colors.background }}
     >
       <div className="flex flex-col justify-center mx-8 my-6">
@@ -68,6 +68,45 @@ const Pikachu = () => {
     </div>
   );
 
+  const LanguageItem = x => (
+    <div key={x.id} className="grid grid-cols-2 items-center py-2">
+      <h6 className="text-sm font-medium">{x.key}</h6>
+      <div className="flex">
+        {Array.from(Array(x.value)).map((_, i) => (
+          <i key={i} className="material-icons text-lg" style={{ color: theme.colors.accent }}>
+            star
+          </i>
+        ))}
+      </div>
+    </div>
+  );
+
+  const ReferenceItem = x => (
+    <div key={x.id} className="flex flex-col">
+      <h6 className="text-sm font-medium">{x.name}</h6>
+      <span className="text-xs">{x.position}</span>
+      <span className="text-xs">{x.phone}</span>
+      <span className="text-xs">{x.email}</span>
+      <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+    </div>
+  );
+
+  const References = () =>
+    data.references.enable && (
+      <div>
+        <Heading title={data.references.heading} />
+        <div className="grid grid-cols-2 gap-6">{data.references.items.map(ReferenceItem)}</div>
+      </div>
+    );
+
+  const Languages = () =>
+    data.languages.enable && (
+      <div>
+        <Heading title={data.languages.heading} />
+        <div className="mb-6">{data.languages.items.map(LanguageItem)}</div>
+      </div>
+    );
+
   const ExtraItem = x => (
     <div key={x.key} className="text-sm my-1">
       <h6 className="text-xs font-bold">{x.key}</h6>
@@ -79,7 +118,7 @@ const Pikachu = () => {
     data.extras.enable && (
       <div>
         <Heading title={data.extras.heading} />
-        <div className="flex flex-col">{data.extras.items.map(ExtraItem)}</div>
+        <div className="flex flex-col mb-6">{data.extras.items.map(ExtraItem)}</div>
       </div>
     );
 
@@ -177,11 +216,11 @@ const Pikachu = () => {
       <div className="grid grid-cols-12 col-gap-6 row-gap-8">
         <Photo />
 
-        <div className={`${data.profile.photo !== '' ? 'col-span-9' : 'col-span-12'}`}>
+        <div className={`${data.profile.photo !== '' ? 'col-span-8' : 'col-span-12'}`}>
           <Header />
         </div>
 
-        <div className="col-span-3 overflow-hidden">
+        <div className="col-span-4 overflow-hidden">
           <div className="text-sm mb-6">
             <ContactItem icon="phone" value={data.profile.phone} />
             <ContactItem icon="language" value={data.profile.website} />
@@ -190,14 +229,16 @@ const Pikachu = () => {
           </div>
 
           <Skills />
+          <Languages />
           <Extras />
         </div>
 
-        <div className="col-span-9">
+        <div className="col-span-8">
           <Work />
           <Education />
           <Awards />
           <Certifications />
+          <References />
         </div>
       </div>
     </div>
