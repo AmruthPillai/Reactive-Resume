@@ -17,9 +17,10 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-ul {
+ul li {
   list-style: disc;
-  list-style-position: inside !important;
+  margin-left: 1em;
+  padding: 0;
 }
 
 @media screen {
