@@ -9,7 +9,7 @@ const Gengar = () => {
   const { state } = context;
   const { data, theme } = state;
 
-  const { r, g, b } = hexToRgb(theme.colors.accent);
+  const { r, g, b } = hexToRgb(theme.colors.accent) || {};
 
   const Photo = () =>
     data.profile.photo !== '' && (
