@@ -55,6 +55,7 @@ const Gengar = () => {
   );
 
   const Objective = () =>
+    data.objective &&
     data.objective.enable && (
       <div className="flex flex-col justify-center items-start mb-6">
         <Heading title={data.objective.heading} />
@@ -69,6 +70,7 @@ const Gengar = () => {
   );
 
   const Skills = () =>
+    data.skills &&
     data.skills.enable && (
       <div className="mb-6">
         <Heading title={data.skills.heading} />
@@ -103,6 +105,7 @@ const Gengar = () => {
   );
 
   const Education = () =>
+    data.education &&
     data.education.enable && (
       <div className="mb-6">
         <Heading title={data.education.heading} />
@@ -119,6 +122,7 @@ const Gengar = () => {
   );
 
   const Certifications = () =>
+    data.certifications &&
     data.certifications.enable && (
       <div className="mb-6">
         <Heading title={data.certifications.heading} />
@@ -135,6 +139,7 @@ const Gengar = () => {
   );
 
   const Awards = () =>
+    data.awards &&
     data.awards.enable && (
       <div className="mb-6">
         <Heading title={data.awards.heading} />
@@ -153,6 +158,7 @@ const Gengar = () => {
   );
 
   const References = () =>
+    data.references &&
     data.references.enable && (
       <div>
         <Heading title={data.references.heading} />
@@ -176,6 +182,7 @@ const Gengar = () => {
   );
 
   const Work = () =>
+    data.work &&
     data.work.enable && (
       <div className="mb-6">
         <Heading title={data.work.heading} />
@@ -197,6 +204,7 @@ const Gengar = () => {
   );
 
   const Languages = () =>
+    data.languages &&
     data.languages.enable && (
       <div>
         <Heading title={data.languages.heading} />
@@ -212,6 +220,7 @@ const Gengar = () => {
   );
 
   const Extras = () =>
+    data.extras &&
     data.extras.enable && (
       <div>
         <Heading title={data.extras.heading} />

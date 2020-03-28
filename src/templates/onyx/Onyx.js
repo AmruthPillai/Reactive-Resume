@@ -52,6 +52,7 @@ const Onyx = () => {
   );
 
   const Objective = () =>
+    data.objective &&
     data.objective.enable && (
       <div>
         <Heading title={data.objective.heading} />
@@ -75,6 +76,7 @@ const Onyx = () => {
   );
 
   const Work = () =>
+    data.work &&
     data.work.enable && (
       <div>
         <Heading title={data.work.heading} />
@@ -101,6 +103,7 @@ const Onyx = () => {
   );
 
   const Education = () =>
+    data.education &&
     data.education.enable && (
       <div>
         <Heading title={data.education.heading} />
@@ -117,6 +120,7 @@ const Onyx = () => {
   );
 
   const Awards = () =>
+    data.awards &&
     data.awards.enable && (
       <div>
         <Heading title={data.awards.heading} />
@@ -133,6 +137,7 @@ const Onyx = () => {
   );
 
   const Certifications = () =>
+    data.certifications &&
     data.certifications.enable && (
       <div>
         <Heading title={data.certifications.heading} />
@@ -154,6 +159,7 @@ const Onyx = () => {
   );
 
   const Skills = () =>
+    data.skills &&
     data.skills.enable && (
       <div>
         <Heading title={data.skills.heading} />
@@ -175,6 +181,7 @@ const Onyx = () => {
   );
 
   const Languages = () =>
+    data.languages &&
     data.languages.enable && (
       <div>
         <Heading title={data.languages.heading} />
@@ -193,6 +200,7 @@ const Onyx = () => {
   );
 
   const References = () =>
+    data.references &&
     data.references.enable && (
       <div>
         <Heading title={data.references.heading} />
@@ -208,6 +216,7 @@ const Onyx = () => {
   );
 
   const Extras = () =>
+    data.extras &&
     data.extras.enable && (
       <div>
         <Heading title={data.extras.heading} />

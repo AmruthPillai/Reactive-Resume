@@ -70,6 +70,7 @@ const Castform = () => {
   );
 
   const Skills = () =>
+    data.skills &&
     data.skills.enable && (
       <div>
         <Heading title="Skills" />
@@ -78,7 +79,7 @@ const Castform = () => {
     );
 
   const Objective = () =>
-    data.objective.enable && <p className="m-5 text-sm">{data.objective.body}</p>;
+    data.objective && data.objective.enable && <p className="m-5 text-sm">{data.objective.body}</p>;
 
   const WorkItem = x => (
     <div key={x.title} className="my-3 px-5">
@@ -96,6 +97,7 @@ const Castform = () => {
   );
 
   const Work = () =>
+    data.work &&
     data.work.enable && (
       <div>
         <Heading light title={data.work.heading} />
@@ -114,6 +116,7 @@ const Castform = () => {
   );
 
   const References = () =>
+    data.references &&
     data.references.enable && (
       <div>
         <Heading light title={data.references.heading} />
@@ -145,6 +148,7 @@ const Castform = () => {
   );
 
   const Languages = () =>
+    data.languages &&
     data.languages.enable && (
       <div>
         <Heading title={data.languages.heading} />
@@ -171,6 +175,7 @@ const Castform = () => {
   );
 
   const Education = () =>
+    data.education &&
     data.education.enable && (
       <div>
         <Heading light title={data.education.heading} />
@@ -187,6 +192,7 @@ const Castform = () => {
   );
 
   const Awards = () =>
+    data.awards &&
     data.awards.enable && (
       <div>
         <Heading light title={data.awards.heading} />
@@ -203,6 +209,7 @@ const Castform = () => {
   );
 
   const Certifications = () =>
+    data.certifications &&
     data.certifications.enable && (
       <div>
         <Heading title={data.certifications.heading} />
@@ -218,6 +225,7 @@ const Castform = () => {
   );
 
   const Extras = () =>
+    data.extras &&
     data.extras.enable && (
       <div>
         <Heading title={data.extras.heading} />
