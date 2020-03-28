@@ -91,7 +91,9 @@ const Pikachu = () => {
     data.references.enable && (
       <div>
         <Heading title={data.references.heading} />
-        <div className="grid grid-cols-2 gap-6">{data.references.items.map(ReferenceItem)}</div>
+        <div className="grid grid-cols-2 gap-6">
+          {data.references.items.filter(x => x.enable).map(ReferenceItem)}
+        </div>
       </div>
     );
 
@@ -113,7 +115,7 @@ const Pikachu = () => {
     data.languages.enable && (
       <div>
         <Heading title={data.languages.heading} />
-        <div className="mb-6">{data.languages.items.map(LanguageItem)}</div>
+        <div className="mb-6">{data.languages.items.filter(x => x.enable).map(LanguageItem)}</div>
       </div>
     );
 
@@ -129,7 +131,9 @@ const Pikachu = () => {
     data.extras.enable && (
       <div>
         <Heading title={data.extras.heading} />
-        <div className="flex flex-col mb-6">{data.extras.items.map(ExtraItem)}</div>
+        <div className="flex flex-col mb-6">
+          {data.extras.items.filter(x => x.enable).map(ExtraItem)}
+        </div>
       </div>
     );
 
@@ -153,7 +157,9 @@ const Pikachu = () => {
     data.work.enable && (
       <div>
         <Heading title={data.work.heading} />
-        <div className="flex flex-col mb-4">{data.work.items.map(WorkItem)}</div>
+        <div className="flex flex-col mb-4">
+          {data.work.items.filter(x => x.enable).map(WorkItem)}
+        </div>
       </div>
     );
 
@@ -182,7 +188,9 @@ const Pikachu = () => {
     data.education.enable && (
       <div>
         <Heading title={data.education.heading} />
-        <div className="flex flex-col mb-4">{data.education.items.map(EducationItem)}</div>
+        <div className="flex flex-col mb-4">
+          {data.education.items.filter(x => x.enable).map(EducationItem)}
+        </div>
       </div>
     );
 
@@ -199,7 +207,9 @@ const Pikachu = () => {
     data.awards.enable && (
       <div>
         <Heading title={data.awards.heading} />
-        <div className="flex flex-col mb-2">{data.awards.items.map(AwardItem)}</div>
+        <div className="flex flex-col mb-2">
+          {data.awards.items.filter(x => x.enable).map(AwardItem)}
+        </div>
       </div>
     );
 
@@ -216,7 +226,9 @@ const Pikachu = () => {
     data.certifications.enable && (
       <div>
         <Heading title={data.certifications.heading} />
-        <div className="flex flex-col mb-2">{data.certifications.items.map(CertificationItem)}</div>
+        <div className="flex flex-col mb-2">
+          {data.certifications.items.filter(x => x.enable).map(CertificationItem)}
+        </div>
       </div>
     );
 

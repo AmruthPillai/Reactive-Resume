@@ -80,7 +80,7 @@ const Onyx = () => {
     data.work.enable && (
       <div>
         <Heading title={data.work.heading} />
-        {data.work.items.map(WorkItem)}
+        {data.work.items.filter(x => x.enable).map(WorkItem)}
       </div>
     );
 
@@ -107,7 +107,7 @@ const Onyx = () => {
     data.education.enable && (
       <div>
         <Heading title={data.education.heading} />
-        {data.education.items.map(EducationItem)}
+        {data.education.items.filter(x => x.enable).map(EducationItem)}
       </div>
     );
 
@@ -124,7 +124,7 @@ const Onyx = () => {
     data.awards.enable && (
       <div>
         <Heading title={data.awards.heading} />
-        {data.awards.items.map(AwardItem)}
+        {data.awards.items.filter(x => x.enable).map(AwardItem)}
       </div>
     );
 
@@ -141,7 +141,7 @@ const Onyx = () => {
     data.certifications.enable && (
       <div>
         <Heading title={data.certifications.heading} />
-        {data.certifications.items.map(CertificationItem)}
+        {data.certifications.items.filter(x => x.enable).map(CertificationItem)}
       </div>
     );
 
@@ -185,7 +185,7 @@ const Onyx = () => {
     data.languages.enable && (
       <div>
         <Heading title={data.languages.heading} />
-        <div className="w-3/4">{data.languages.items.map(LanguageItem)}</div>
+        <div className="w-3/4">{data.languages.items.filter(x => x.enable).map(LanguageItem)}</div>
       </div>
     );
 
@@ -204,7 +204,9 @@ const Onyx = () => {
     data.references.enable && (
       <div>
         <Heading title={data.references.heading} />
-        <div className="grid grid-cols-3 gap-6">{data.references.items.map(ReferenceItem)}</div>
+        <div className="grid grid-cols-3 gap-6">
+          {data.references.items.filter(x => x.enable).map(ReferenceItem)}
+        </div>
       </div>
     );
 
@@ -221,7 +223,7 @@ const Onyx = () => {
       <div>
         <Heading title={data.extras.heading} />
         <table className="w-2/3 table-auto">
-          <tbody>{data.extras.items.map(ExtraItem)}</tbody>
+          <tbody>{data.extras.items.filter(x => x.enable).map(ExtraItem)}</tbody>
         </table>
       </div>
     );

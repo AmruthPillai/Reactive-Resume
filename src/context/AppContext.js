@@ -113,12 +113,12 @@ const reducer = (state, { type, payload }) => {
     case 'import_data':
       if (payload === null) return initialState;
 
-      for(const section of Object.keys(initialState.data)){
-        if(!(section in payload.data)){
+      for (const section of Object.keys(initialState.data)) {
+        if (!(section in payload.data)) {
           payload.data[section] = initialState.data[section];
         }
       }
-      
+
       return {
         ...state,
         data: payload.data,

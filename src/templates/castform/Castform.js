@@ -116,7 +116,7 @@ const Castform = () => {
     data.work.enable && (
       <div>
         <Heading light title={data.work.heading} />
-        {data.work.items.map(WorkItem)}
+        {data.work.items.filter(x => x.enable).map(WorkItem)}
       </div>
     );
 
@@ -136,7 +136,7 @@ const Castform = () => {
       <div>
         <Heading light title={data.references.heading} />
         <div className="grid grid-cols-2 gap-6 px-5">
-          {data.references.items.map(ReferenceItem)}
+          {data.references.items.filter(x => x.enable).map(ReferenceItem)}
         </div>
       </div>
     );
@@ -167,7 +167,9 @@ const Castform = () => {
     data.languages.enable && (
       <div>
         <Heading title={data.languages.heading} />
-        <div className="px-5 mb-6">{data.languages.items.map(LanguageItem)}</div>
+        <div className="px-5 mb-6">
+          {data.languages.items.filter(x => x.enable).map(LanguageItem)}
+        </div>
       </div>
     );
 
@@ -194,7 +196,7 @@ const Castform = () => {
     data.education.enable && (
       <div>
         <Heading light title={data.education.heading} />
-        {data.education.items.map(EducationItem)}
+        {data.education.items.filter(x => x.enable).map(EducationItem)}
       </div>
     );
 
@@ -211,7 +213,7 @@ const Castform = () => {
     data.awards.enable && (
       <div>
         <Heading light title={data.awards.heading} />
-        {data.awards.items.map(AwardItem)}
+        {data.awards.items.filter(x => x.enable).map(AwardItem)}
       </div>
     );
 
@@ -228,7 +230,7 @@ const Castform = () => {
     data.certifications.enable && (
       <div>
         <Heading title={data.certifications.heading} />
-        {data.certifications.items.map(CertificationItem)}
+        {data.certifications.items.filter(x => x.enable).map(CertificationItem)}
       </div>
     );
 
@@ -244,7 +246,7 @@ const Castform = () => {
     data.extras.enable && (
       <div>
         <Heading title={data.extras.heading} />
-        {data.extras.items.map(ExtraItem)}
+        {data.extras.items.filter(x => x.enable).map(ExtraItem)}
       </div>
     );
 
