@@ -8,6 +8,21 @@ const Castform = () => {
   const { state } = context;
   const { data, theme } = state;
 
+  const Photo = () =>
+    data.profile.photo !== '' && (
+      <div className="mt-5 ml-5">
+        <img
+          className="w-32 h-32 rounded-full"
+          style={{
+            borderWidth: 6,
+            borderColor: theme.colors.background,
+          }}
+          src={data.profile.photo}
+          alt="Profile Photograph"
+        />
+      </div>
+    );
+
   const PersonalInformation = () => (
     <div className="pt-5 px-5">
       <h1 className="text-2xl font-bold">
@@ -249,17 +264,7 @@ const Castform = () => {
             backgroundColor: theme.colors.accent,
           }}
         >
-          <div className="mt-5 ml-5">
-            <img
-              className="w-32 h-32 rounded-full"
-              style={{
-                borderWidth: 6,
-                borderColor: theme.colors.background,
-              }}
-              src={data.profile.photo}
-              alt="Profile Photograph"
-            />
-          </div>
+          <Photo />
           <PersonalInformation />
           <ContactInformation />
           <Skills />
