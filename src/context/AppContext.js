@@ -1,4 +1,3 @@
-/* eslint-disable no-case-declarations */
 import React, { createContext, useReducer } from 'react';
 import get from 'lodash/get';
 import set from 'lodash/set';
