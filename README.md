@@ -8,6 +8,13 @@ Try it out today!
 
 **Visit https://rx-resume.web.app to build your resume!**
 
+![Build and Deploy](https://github.com/AmruthPillai/Reactive-Resume/workflows/Build%20and%20Deploy/badge.svg)
+![Dependencies](https://david-dm.org/AmruthPillai/Reactive-Resume.svg)
+[![Code Style](https://badgen.net/badge/code%20style/airbnb/ff5a5f?icon=airbnb)](https://github.com/airbnb/javascript)
+![GitHub last commit](https://img.shields.io/github/last-commit/AmruthPillai/Reactive-Resume)
+![GitHub](https://img.shields.io/github/license/AmruthPillai/Reactive-Resume)
+![Uptime Robot status](https://img.shields.io/uptimerobot/status/m784631082-7c9a2e95377145a9cbaadc18)
+
 ## Do you have a demo?
 
 Why yes, I do! Click the thumbnail below to watch the app in action.
