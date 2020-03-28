@@ -6,15 +6,16 @@ import TemplatesTab from './tabs/Templates';
 import ColorsTab from './tabs/Colors';
 import FontsTab from './tabs/Fonts';
 import ActionsTab from './tabs/Actions';
+import AboutTab from './tabs/About';
 
-const tabs = ['Templates', 'Colors', 'Fonts', 'Actions'];
+const tabs = ['Templates', 'Colors', 'Fonts', 'Actions', 'About'];
 
 const RightSidebar = () => {
   const context = useContext(AppContext);
   const { state, dispatch } = context;
   const { data, theme } = state;
 
-  const [currentTab, setCurrentTab] = useState('Templates');
+  const [currentTab, setCurrentTab] = useState('About');
   const onChange = (key, value) => {
     dispatch({
       type: 'on_input',
@@ -37,6 +38,8 @@ const RightSidebar = () => {
         return <FontsTab theme={theme} onChange={onChange} />;
       case 'Actions':
         return <ActionsTab data={data} theme={theme} dispatch={dispatch} />;
+      case 'About':
+        return <AboutTab />;
       default:
         return null;
     }

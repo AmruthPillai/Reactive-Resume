@@ -146,24 +146,6 @@ const ActionsTab = ({ data, theme, dispatch }) => {
           </div>
         </button>
       </div>
-
-      <hr className="my-6" />
-
-      <p className="text-xs font-gray-600 text-center">
-        Reactive Resume is a project by{' '}
-        <a
-          className="hover:underline"
-          href="https://www.amruthpillai.com/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <strong>Amruth Pillai</strong>
-        </a>{' '}
-        in hopes of allowing anyone to make beautiful resumes and get equal job opportunities.
-        <br />
-        <br />
-        Thank you for using Reactive Resume!
-      </p>
     </div>
   );
 };
