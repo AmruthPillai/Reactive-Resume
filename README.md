@@ -15,6 +15,14 @@ Try it out today!
 ![GitHub](https://img.shields.io/github/license/AmruthPillai/Reactive-Resume)
 ![Uptime Robot status](https://img.shields.io/uptimerobot/status/m784631082-7c9a2e95377145a9cbaadc18)
 
+## I'd like to donate, how do I do that?
+
+I've been getting close to my limit on hosting at Firebase and I would like to sustain this for as long as possible. Please sponsor the project, as little as possible, so that it would keep the website running. Please reach out to me on my email (given below) if you would like to donate.
+
+<img src="https://i.imgur.com/EF0CaLH.png" width="400px" /> 
+
+Thank you so much :)
+
 ## Do you have a demo?
 
 Why yes, I do! Click the thumbnail below to watch the app in action.
