@@ -79,6 +79,12 @@ I'm glad you asked :) Here is a step-by-step procedure on getting you started wi
 5. `npm start` - to start the development server
 5. `npm run build` - to build a production version of the app
 
+## How do I deploy the project myself
+
+One way is to use the following ["Deploy to Netlify" button](https://www.netlify.com/blog/2016/11/29/introducing-the-deploy-to-netlify-button/)
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/AmruthPillai/Reactive-Resume)
+
 ## What's changed since the release?
 
 - Added Castform Template ([Preview](https://i.imgur.com/an0op8f.png))
