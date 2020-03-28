@@ -15,7 +15,7 @@ const RightSidebar = () => {
   const { state, dispatch } = context;
   const { data, theme } = state;
 
-  const [currentTab, setCurrentTab] = useState('About');
+  const [currentTab, setCurrentTab] = useState('Templates');
   const onChange = (key, value) => {
     dispatch({
       type: 'on_input',
