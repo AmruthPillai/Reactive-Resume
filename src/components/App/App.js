@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, Suspense } from 'react';
 
 import LeftSidebar from '../LeftSidebar/LeftSidebar';
 import RightSidebar from '../RightSidebar/RightSidebar';
@@ -37,21 +37,23 @@ const App = () => {
   };
 
   return (
-    <div className="h-screen overflow-hidden grid grid-cols-5 items-center">
-      <LeftSidebar />
+    <Suspense fallback="Loading...">
+      <div className="h-screen overflow-hidden grid grid-cols-5 items-center">
+        <LeftSidebar />
 
-      <div className="z-0 h-screen col-span-3 flex justify-center items-center overflow-scroll">
-        <div
-          id="page"
-          className="animated fadeIn my-auto shadow-2xl"
-          style={{ animationDelay: '500ms' }}
-        >
-          {renderTemplate()}
+        <div className="z-0 h-screen col-span-3 flex justify-center items-center overflow-scroll">
+          <div
+            id="page"
+            className="animated fadeIn my-auto shadow-2xl"
+            style={{ animationDelay: '500ms' }}
+          >
+            {renderTemplate()}
+          </div>
         </div>
-      </div>
 
-      <RightSidebar />
-    </div>
+        <RightSidebar />
+      </div>
+    </Suspense>
   );
 };
 

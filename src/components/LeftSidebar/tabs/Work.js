@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import { v4 as uuidv4 } from 'uuid';
 import set from 'lodash/set';
 
@@ -8,8 +9,10 @@ import AppContext from '../../../context/AppContext';
 import Checkbox from '../../../shared/Checkbox';
 import { addItem, deleteItem, moveItemUp, moveItemDown } from '../../../utils';
 import ItemActions from '../../../shared/ItemActions';
+import AddItemButton from '../../../shared/AddItemButton';
 
 const WorkTab = ({ data, onChange }) => {
+  const { t } = useTranslation(['leftSidebar', 'app']);
   const context = useContext(AppContext);
   const { dispatch } = context;
 
@@ -21,7 +24,7 @@ const WorkTab = ({ data, onChange }) => {
         </div>
         <div className="col-span-5">
           <TextField
-            placeholder="Heading"
+            placeholder={t('app:heading.placeholder')}
             value={data.work.heading}
             onChange={v => onChange('data.work.heading', v)}
           />
@@ -32,22 +35,75 @@ const WorkTab = ({ data, onChange }) => {
 
       {data.work.items.map((x, index) => (
         <Item
-          item={x}
-          key={x.id}
-          index={index}
-          onChange={onChange}
           dispatch={dispatch}
           first={index === 0}
+          index={index}
+          item={x}
+          key={x.id}
           last={index === data.work.items.length - 1}
+          onChange={onChange}
         />
       ))}
 
-      <AddItem dispatch={dispatch} />
+      <AddItem heading={data.work.heading} dispatch={dispatch} />
     </>
   );
 };
 
-const AddItem = ({ dispatch }) => {
+const Form = ({ item, onChange, identifier = '' }) => {
+  const { t } = useTranslation(['leftSidebar', 'app']);
+
+  return (
+    <div>
+      <TextField
+        className="mb-6"
+        label={t('work.name.label')}
+        placeholder={t('work.name.placeholder')}
+        value={item.title}
+        onChange={v => onChange(`${identifier}title`, v)}
+      />
+
+      <TextField
+        className="mb-6"
+        label={t('work.role.label')}
+        placeholder={t('work.role.placeholder')}
+        value={item.role}
+        onChange={v => onChange(`${identifier}role`, v)}
+      />
+
+      <div className="grid grid-cols-2 col-gap-4">
+        <TextField
+          className="mb-6"
+          label={t('app:item.startDate.label')}
+          placeholder={t('app:item.startDate.placeholder')}
+          value={item.start}
+          onChange={v => onChange(`${identifier}start`, v)}
+        />
+
+        <TextField
+          className="mb-6"
+          label={t('app:item.endDate.label')}
+          placeholder={t('app:item.endDate.placeholder')}
+          value={item.end}
+          onChange={v => onChange(`${identifier}end`, v)}
+        />
+      </div>
+
+      <TextArea
+        rows="5"
+        className="mb-6"
+        label={t('work.description.label')}
+        placeholder={t('work.description.placeholder')}
+        value={item.description}
+        onChange={v => onChange(`${identifier}description`, v)}
+      />
+    </div>
+  );
+};
+
+const AddItem = ({ heading, dispatch }) => {
+  const { t } = useTranslation('app');
+
   const [isOpen, setOpen] = useState(false);
   const [item, setItem] = useState({
     id: uuidv4(),
@@ -85,64 +141,13 @@ const AddItem = ({ dispatch }) => {
         className="flex justify-between items-center cursor-pointer"
         onClick={() => setOpen(!isOpen)}
       >
-        <h6 className="text-sm font-medium">Add Work Experience</h6>
+        <h6 className="text-sm font-medium">{t('item.addHeading', { heading })}</h6>
         <i className="material-icons">{isOpen ? 'expand_less' : 'expand_more'}</i>
       </div>
 
       <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
-        <TextField
-          label="Name"
-          className="mb-6"
-          placeholder="Amazon US"
-          value={item.title}
-          onChange={v => onChange('title', v)}
-        />
-
-        <TextField
-          label="Role"
-          className="mb-6"
-          placeholder="Frontend Web Developer"
-          value={item.role}
-          onChange={v => onChange('role', v)}
-        />
-
-        <div className="grid grid-cols-2 col-gap-4">
-          <TextField
-            label="Start Date"
-            className="mb-6"
-            placeholder="March 2018"
-            value={item.start}
-            onChange={v => onChange('start', v)}
-          />
-
-          <TextField
-            label="End Date"
-            className="mb-6"
-            placeholder="current"
-            value={item.end}
-            onChange={v => onChange('end', v)}
-          />
-        </div>
-
-        <TextArea
-          rows="5"
-          className="mb-6"
-          label="Description"
-          placeholder="You can write about what you specialized in while working at the company and what projects you were a part of."
-          value={item.description}
-          onChange={v => onChange('description', v)}
-        />
-
-        <button
-          type="button"
-          onClick={onSubmit}
-          className="bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-5 rounded"
-        >
-          <div className="flex items-center">
-            <i className="material-icons mr-2 font-bold text-base">add</i>
-            <span className="text-sm">Add</span>
-          </div>
-        </button>
+        <Form item={item} onChange={onChange} />
+        <AddItemButton onSubmit={onSubmit} />
       </div>
     </div>
   );
@@ -150,7 +155,7 @@ const AddItem = ({ dispatch }) => {
 
 const Item = ({ item, index, onChange, dispatch, first, last }) => {
   const [isOpen, setOpen] = useState(false);
-  const identifier = `data.work.items[${index}]`;
+  const identifier = `data.work.items[${index}].`;
 
   return (
     <div className="my-4 border border-gray-200 rounded p-5">
@@ -163,60 +168,19 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
       </div>
 
       <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
-        <TextField
-          label="Name"
-          className="mb-6"
-          placeholder="Amazon US"
-          value={item.title}
-          onChange={v => onChange(`${identifier}.title`, v)}
-        />
-
-        <TextField
-          label="Role"
-          className="mb-6"
-          placeholder="Frontend Web Developer"
-          value={item.role}
-          onChange={v => onChange(`${identifier}.role`, v)}
-        />
-
-        <div className="grid grid-cols-2 col-gap-4">
-          <TextField
-            label="Start Date"
-            className="mb-6"
-            placeholder="March 2018"
-            value={item.start}
-            onChange={v => onChange(`${identifier}.start`, v)}
-          />
-
-          <TextField
-            label="End Date"
-            className="mb-6"
-            placeholder="current"
-            value={item.end}
-            onChange={v => onChange(`${identifier}.end`, v)}
-          />
-        </div>
-
-        <TextArea
-          rows="5"
-          className="mb-6"
-          label="Description"
-          placeholder="You can write about what you specialized in while working at the company and what projects you were a part of."
-          value={item.description}
-          onChange={v => onChange(`${identifier}.description`, v)}
-        />
+        <Form item={item} onChange={onChange} identifier={identifier} />
 
         <ItemActions
-          item={item}
-          onChange={onChange}
-          type="work"
-          identifier={identifier}
-          dispatch={dispatch}
           deleteItem={deleteItem}
+          dispatch={dispatch}
           first={first}
-          moveItemUp={moveItemUp}
+          identifier={identifier}
+          item={item}
           last={last}
           moveItemDown={moveItemDown}
+          moveItemUp={moveItemUp}
+          onChange={onChange}
+          type="work"
         />
       </div>
     </div>

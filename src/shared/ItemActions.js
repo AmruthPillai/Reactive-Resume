@@ -2,16 +2,16 @@ import React from 'react';
 import Checkbox from './Checkbox';
 
 const ItemActions = ({
-  item,
-  onChange,
-  type,
-  identifier,
-  dispatch,
   deleteItem,
+  dispatch,
   first,
-  moveItemUp,
+  identifier,
+  item,
   last,
   moveItemDown,
+  moveItemUp,
+  onChange,
+  type,
 }) => {
   return (
     <div className="flex justify-between">
@@ -20,7 +20,7 @@ const ItemActions = ({
           size="2.25rem"
           checked={item.enable}
           onChange={v => {
-            onChange(`${identifier}.enable`, v);
+            onChange(`${identifier}enable`, v);
           }}
         />
 
