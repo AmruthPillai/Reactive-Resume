@@ -4,6 +4,30 @@ const AboutTab = () => {
   return (
     <div>
       <div className="shadow text-center p-5">
+        <h6 className="font-bold text-sm mb-2">Documentation</h6>
+
+        <div className="text-sm">
+          Want to know more about the app? Wouldn&apos;t it be nice if there was a guide to setting
+          it up on your local machine? Need information on how to contribute to the project? Look no
+          further, there&apos;s a comprehensive documentation made just for you.
+        </div>
+
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://docs.rxresu.me/"
+          className="mt-4 bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-5 rounded"
+        >
+          <div className="flex justify-center items-center">
+            <i className="material-icons mr-2 font-bold text-base">description</i>
+            <span className="text-sm">Documentation</span>
+          </div>
+        </a>
+      </div>
+
+      <hr className="my-5" />
+
+      <div className="shadow text-center p-5">
         <h6 className="font-bold text-sm mb-2">Bug? Feature Request?</h6>
 
         <div className="text-sm">
@@ -17,7 +41,7 @@ const AboutTab = () => {
             target="_blank"
             rel="noopener noreferrer"
             href="https://github.com/AmruthPillai/Reactive-Resume/issues/new"
-            className="flex justify-center mt-4 bg-red-600 hover:bg-red-700 text-white text-sm font-medium py-2 px-5 rounded"
+            className="mt-4 bg-red-600 hover:bg-red-700 text-white text-sm font-medium py-2 px-5 rounded"
           >
             <div className="flex justify-center items-center">
               <i className="material-icons mr-2 font-bold text-base">bug_report</i>
@@ -29,7 +53,7 @@ const AboutTab = () => {
             target="_blank"
             rel="noopener noreferrer"
             href="mailto:im.amruth@gmail.com?subject=Feature Request/Reporting a Bug in Reactive Resume: "
-            className="flex justify-center mt-4 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-5 rounded"
+            className="mt-4 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-5 rounded"
           >
             <div className="flex justify-center items-center">
               <i className="material-icons mr-2 font-bold text-base">email</i>
@@ -53,7 +77,7 @@ const AboutTab = () => {
           target="_blank"
           rel="noopener noreferrer"
           href="https://github.com/AmruthPillai/Reactive-Resume"
-          className="flex justify-center mt-4 bg-green-600 hover:bg-green-700 text-white text-sm font-medium py-2 px-5 rounded"
+          className="mt-4 bg-green-600 hover:bg-green-700 text-white text-sm font-medium py-2 px-5 rounded"
         >
           <div className="flex justify-center items-center">
             <i className="material-icons mr-2 font-bold text-base">code</i>
@@ -77,7 +101,7 @@ const AboutTab = () => {
           target="_blank"
           rel="noopener noreferrer"
           href="https://github.com/AmruthPillai/Reactive-Resume/blob/master/LICENSE"
-          className="flex justify-center mt-4 bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-5 rounded"
+          className="mt-4 bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-5 rounded"
         >
           <div className="flex justify-center items-center">
             <i className="material-icons mr-2 font-bold text-base">policy</i>
