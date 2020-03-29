@@ -10,6 +10,7 @@ import Checkbox from '../../../shared/Checkbox';
 import { addItem } from '../../../utils';
 import ItemActions from '../../../shared/ItemActions';
 import AddItemButton from '../../../shared/AddItemButton';
+import ItemHeading from '../../../shared/ItemHeading';
 
 const WorkTab = ({ data, onChange }) => {
   const { t } = useTranslation('app');
@@ -102,8 +103,6 @@ const Form = ({ item, onChange, identifier = '' }) => {
 };
 
 const AddItem = ({ heading, dispatch }) => {
-  const { t } = useTranslation('app');
-
   const [isOpen, setOpen] = useState(false);
   const [item, setItem] = useState({
     id: uuidv4(),
@@ -137,16 +136,11 @@ const AddItem = ({ heading, dispatch }) => {
 
   return (
     <div className="my-4 border border-gray-200 rounded p-5">
-      <div
-        className="flex justify-between items-center cursor-pointer"
-        onClick={() => setOpen(!isOpen)}
-      >
-        <h6 className="text-sm font-medium">{t('item.addHeading', { heading })}</h6>
-        <i className="material-icons">{isOpen ? 'expand_less' : 'expand_more'}</i>
-      </div>
+      <ItemHeading heading={heading} setOpen={setOpen} isOpen={isOpen} />
 
       <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
         <Form item={item} onChange={onChange} />
+
         <AddItemButton onSubmit={onSubmit} />
       </div>
     </div>
@@ -159,13 +153,7 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
 
   return (
     <div className="my-4 border border-gray-200 rounded p-5">
-      <div
-        className="flex justify-between items-center cursor-pointer"
-        onClick={() => setOpen(!isOpen)}
-      >
-        <h6 className="ml-2 text-sm font-medium">{item.title}</h6>
-        <i className="material-icons">{isOpen ? 'expand_less' : 'expand_more'}</i>
-      </div>
+      <ItemHeading title={item.title} setOpen={setOpen} isOpen={isOpen} />
 
       <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
         <Form item={item} onChange={onChange} identifier={identifier} />
