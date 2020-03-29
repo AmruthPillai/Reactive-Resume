@@ -6,6 +6,7 @@ import TextField from '../../../shared/TextField';
 import AppContext from '../../../context/AppContext';
 import Checkbox from '../../../shared/Checkbox';
 import { addItem, deleteItem, moveItemUp, moveItemDown } from '../../../utils';
+import ItemActions from '../../../shared/ItemActions';
 
 const ExtrasTab = ({ data, onChange }) => {
   const context = useContext(AppContext);
@@ -52,6 +53,7 @@ const AddItem = ({ dispatch }) => {
   const [isOpen, setOpen] = useState(false);
   const [item, setItem] = useState({
     id: uuidv4(),
+    enable: true,
     key: '',
     value: '',
   });
@@ -65,6 +67,7 @@ const AddItem = ({ dispatch }) => {
 
     setItem({
       id: uuidv4(),
+      enable: true,
       key: '',
       value: '',
     });
@@ -145,44 +148,18 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
           onChange={v => onChange(`${identifier}.value`, v)}
         />
 
-        <div className="mt-6 flex justify-between">
-          <button
-            type="button"
-            onClick={() => deleteItem(dispatch, 'extras', item)}
-            className="bg-red-600 hover:bg-red-700 text-white text-sm font-medium py-2 px-5 rounded"
-          >
-            <div className="flex items-center">
-              <i className="material-icons mr-2 font-bold text-base">delete</i>
-              <span className="text-sm">Delete</span>
-            </div>
-          </button>
-
-          <div className="flex">
-            {!first && (
-              <button
-                type="button"
-                onClick={() => moveItemUp(dispatch, 'extras', item)}
-                className="bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-4 rounded mr-2"
-              >
-                <div className="flex items-center">
-                  <i className="material-icons font-bold text-base">arrow_upward</i>
-                </div>
-              </button>
-            )}
-
-            {!last && (
-              <button
-                type="button"
-                onClick={() => moveItemDown(dispatch, 'extras', item)}
-                className="bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-4 rounded"
-              >
-                <div className="flex items-center">
-                  <i className="material-icons font-bold text-base">arrow_downward</i>
-                </div>
-              </button>
-            )}
-          </div>
-        </div>
+        <ItemActions
+          item={item}
+          onChange={onChange}
+          type="extras"
+          identifier={identifier}
+          dispatch={dispatch}
+          deleteItem={deleteItem}
+          first={first}
+          moveItemUp={moveItemUp}
+          last={last}
+          moveItemDown={moveItemDown}
+        />
       </div>
     </div>
   );

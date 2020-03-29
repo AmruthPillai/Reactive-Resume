@@ -7,6 +7,7 @@ import TextArea from '../../../shared/TextArea';
 import AppContext from '../../../context/AppContext';
 import Checkbox from '../../../shared/Checkbox';
 import { addItem, deleteItem, moveItemUp, moveItemDown } from '../../../utils';
+import ItemActions from '../../../shared/ItemActions';
 
 const WorkTab = ({ data, onChange }) => {
   const context = useContext(AppContext);
@@ -50,6 +51,7 @@ const AddItem = ({ dispatch }) => {
   const [isOpen, setOpen] = useState(false);
   const [item, setItem] = useState({
     id: uuidv4(),
+    enable: true,
     title: '',
     role: '',
     start: '',
@@ -66,6 +68,7 @@ const AddItem = ({ dispatch }) => {
 
     setItem({
       id: uuidv4(),
+      enable: true,
       title: '',
       role: '',
       start: '',
@@ -155,7 +158,7 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
         className="flex justify-between items-center cursor-pointer"
         onClick={() => setOpen(!isOpen)}
       >
-        <h6 className="text-sm font-medium">{item.title}</h6>
+        <h6 className="ml-2 text-sm font-medium">{item.title}</h6>
         <i className="material-icons">{isOpen ? 'expand_less' : 'expand_more'}</i>
       </div>
 
@@ -203,44 +206,18 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
           onChange={v => onChange(`${identifier}.description`, v)}
         />
 
-        <div className="flex justify-between">
-          <button
-            type="button"
-            onClick={() => deleteItem(dispatch, 'work', item)}
-            className="bg-red-600 hover:bg-red-700 text-white text-sm font-medium py-2 px-5 rounded"
-          >
-            <div className="flex items-center">
-              <i className="material-icons mr-2 font-bold text-base">delete</i>
-              <span className="text-sm">Delete</span>
-            </div>
-          </button>
-
-          <div className="flex">
-            {!first && (
-              <button
-                type="button"
-                onClick={() => moveItemUp(dispatch, 'work', item)}
-                className="bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-4 rounded mr-2"
-              >
-                <div className="flex items-center">
-                  <i className="material-icons font-bold text-base">arrow_upward</i>
-                </div>
-              </button>
-            )}
-
-            {!last && (
-              <button
-                type="button"
-                onClick={() => moveItemDown(dispatch, 'work', item)}
-                className="bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-4 rounded"
-              >
-                <div className="flex items-center">
-                  <i className="material-icons font-bold text-base">arrow_downward</i>
-                </div>
-              </button>
-            )}
-          </div>
-        </div>
+        <ItemActions
+          item={item}
+          onChange={onChange}
+          type="work"
+          identifier={identifier}
+          dispatch={dispatch}
+          deleteItem={deleteItem}
+          first={first}
+          moveItemUp={moveItemUp}
+          last={last}
+          moveItemDown={moveItemDown}
+        />
       </div>
     </div>
   );

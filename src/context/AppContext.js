@@ -1,4 +1,3 @@
-/* eslint-disable no-case-declarations */
 import React, { createContext, useReducer } from 'react';
 import get from 'lodash/get';
 import set from 'lodash/set';
@@ -112,6 +111,13 @@ const reducer = (state, { type, payload }) => {
       return state;
     case 'import_data':
       if (payload === null) return initialState;
+
+      for (const section of Object.keys(initialState.data)) {
+        if (!(section in payload.data)) {
+          payload.data[section] = initialState.data[section];
+        }
+      }
+
       return {
         ...state,
         data: payload.data,

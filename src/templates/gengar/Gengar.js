@@ -9,7 +9,7 @@ const Gengar = () => {
   const { state } = context;
   const { data, theme } = state;
 
-  const { r, g, b } = hexToRgb(theme.colors.accent);
+  const { r, g, b } = hexToRgb(theme.colors.accent) || {};
 
   const Photo = () =>
     data.profile.photo !== '' && (
@@ -109,7 +109,7 @@ const Gengar = () => {
     data.education.enable && (
       <div className="mb-6">
         <Heading title={data.education.heading} />
-        {data.education.items.map(EducationItem)}
+        {data.education.items.filter(x => x.enable).map(EducationItem)}
       </div>
     );
 
@@ -126,7 +126,7 @@ const Gengar = () => {
     data.certifications.enable && (
       <div className="mb-6">
         <Heading title={data.certifications.heading} />
-        {data.certifications.items.map(CertificationItem)}
+        {data.certifications.items.filter(x => x.enable).map(CertificationItem)}
       </div>
     );
 
@@ -143,7 +143,7 @@ const Gengar = () => {
     data.awards.enable && (
       <div className="mb-6">
         <Heading title={data.awards.heading} />
-        {data.awards.items.map(AwardItem)}
+        {data.awards.items.filter(x => x.enable).map(AwardItem)}
       </div>
     );
 
@@ -162,7 +162,9 @@ const Gengar = () => {
     data.references.enable && (
       <div>
         <Heading title={data.references.heading} />
-        <div className="grid grid-cols-2 gap-6">{data.references.items.map(ReferenceItem)}</div>
+        <div className="grid grid-cols-2 gap-6">
+          {data.references.items.filter(x => x.enable).map(ReferenceItem)}
+        </div>
       </div>
     );
 
@@ -186,7 +188,7 @@ const Gengar = () => {
     data.work.enable && (
       <div className="mb-6">
         <Heading title={data.work.heading} />
-        {data.work.items.map(WorkItem)}
+        {data.work.items.filter(x => x.enable).map(WorkItem)}
       </div>
     );
 
@@ -208,7 +210,7 @@ const Gengar = () => {
     data.languages.enable && (
       <div>
         <Heading title={data.languages.heading} />
-        <div className="mb-6">{data.languages.items.map(LanguageItem)}</div>
+        <div className="mb-6">{data.languages.items.filter(x => x.enable).map(LanguageItem)}</div>
       </div>
     );
 
@@ -224,7 +226,9 @@ const Gengar = () => {
     data.extras.enable && (
       <div>
         <Heading title={data.extras.heading} />
-        <div className="grid grid-cols-2">{data.extras.items.map(ExtraItem)}</div>
+        <div className="grid grid-cols-2">
+          {data.extras.items.filter(x => x.enable).map(ExtraItem)}
+        </div>
       </div>
     );
 
