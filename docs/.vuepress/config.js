@@ -9,6 +9,6 @@ module.exports = {
       { text: 'Home', link: '/' },
       { text: 'Go to App', link: 'https://rxresu.me/' },
     ],
-    sidebar: ['/', '/features/', '/built-with/'],
+    sidebar: ['/', '/features/', '/technology/', '/contributing/'],
   },
 };
