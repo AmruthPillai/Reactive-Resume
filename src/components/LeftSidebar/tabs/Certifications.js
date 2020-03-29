@@ -129,7 +129,7 @@ const AddItem = ({ heading, dispatch }) => {
 
 const Item = ({ item, index, onChange, dispatch, first, last }) => {
   const [isOpen, setOpen] = useState(false);
-  const identifier = `data.certifications.items[${index}]`;
+  const identifier = `data.certifications.items[${index}].`;
 
   return (
     <div className="my-4 border border-gray-200 rounded p-5">

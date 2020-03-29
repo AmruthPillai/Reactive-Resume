@@ -31,7 +31,7 @@ const LeftSidebar = () => {
   const { state, dispatch } = context;
   const { data } = state;
 
-  const [currentTab, setCurrentTab] = useState('Awards');
+  const [currentTab, setCurrentTab] = useState('Skills');
   const onChange = (key, value) => {
     dispatch({
       type: 'on_input',

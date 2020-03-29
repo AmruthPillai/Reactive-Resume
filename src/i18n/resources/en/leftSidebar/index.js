@@ -4,6 +4,7 @@ import work from './work.json';
 import education from './education.json';
 import awards from './awards.json';
 import certifications from './certifications.json';
+import skills from './skills.json';
 
 export default {
   profile,
@@ -12,4 +13,5 @@ export default {
   education,
   awards,
   certifications,
+  skills,
 };

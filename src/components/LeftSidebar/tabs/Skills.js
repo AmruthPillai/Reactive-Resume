@@ -1,11 +1,14 @@
 import React, { useState, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import AppContext from '../../../context/AppContext';
 import Checkbox from '../../../shared/Checkbox';
 import TextField from '../../../shared/TextField';
 import { addItem, deleteItem } from '../../../utils';
+import ItemHeading from '../../../shared/ItemHeading';
 
 const SkillsTab = ({ data, onChange }) => {
+  const { t } = useTranslation();
   const context = useContext(AppContext);
   const { dispatch } = context;
 
@@ -20,7 +23,7 @@ const SkillsTab = ({ data, onChange }) => {
         </div>
         <div className="col-span-5">
           <TextField
-            placeholder="Heading"
+            placeholder={t('heading.placeholder')}
             value={data.skills.heading}
             onChange={v => onChange('data.skills.heading', v)}
           />
@@ -33,12 +36,26 @@ const SkillsTab = ({ data, onChange }) => {
         <Item item={x} key={index} index={index} onChange={onChange} dispatch={dispatch} />
       ))}
 
-      <AddItem dispatch={dispatch} />
+      <AddItem heading={data.skills.heading} dispatch={dispatch} />
     </>
   );
 };
 
-const AddItem = ({ dispatch }) => {
+const Form = ({ item, onChange }) => {
+  const { t } = useTranslation('leftSidebar');
+
+  return (
+    <input
+      className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+      placeholder={t('skills.item.placeholder')}
+      value={item}
+      onChange={e => onChange(e.target.value)}
+      type="text"
+    />
+  );
+};
+
+const AddItem = ({ heading, dispatch }) => {
   const [isOpen, setOpen] = useState(false);
   const [item, setItem] = useState('');
 
@@ -52,33 +69,21 @@ const AddItem = ({ dispatch }) => {
 
   return (
     <div className="my-4 border border-gray-200 rounded p-5">
-      <div
-        className="flex justify-between items-center cursor-pointer"
-        onClick={() => setOpen(!isOpen)}
-      >
-        <h6 className="text-sm font-medium">Add Skill</h6>
-        <i className="material-icons">{isOpen ? 'expand_less' : 'expand_more'}</i>
-      </div>
+      <ItemHeading heading={heading} setOpen={setOpen} isOpen={isOpen} />
 
       <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
-        <div className="grid grid-cols-4 col-gap-4">
+        <div className="grid grid-cols-4 gap-4">
           <div className="col-span-3">
-            <input
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              placeholder="Cooking"
-              value={item}
-              onChange={e => setItem(e.target.value)}
-              type="text"
-            />
+            <Form item={item} onChange={setItem} />
           </div>
 
           <button
             type="button"
             onClick={add}
-            className="col-span-1 bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium rounded"
+            className="col-span-1 bg-gray-600 hover:bg-gray-700 text-sm font-medium rounded"
           >
             <div className="flex justify-center items-center">
-              <i className="material-icons font-bold text-lg">add</i>
+              <i className="material-icons font-bold text-white text-lg">add</i>
             </div>
           </button>
         </div>
@@ -91,15 +96,9 @@ const Item = ({ item, index, onChange, dispatch }) => {
   const identifier = `data.skills.items[${index}]`;
 
   return (
-    <div className="my-4 grid grid-cols-6">
+    <div className="my-4 grid grid-cols-6 gap-4">
       <div className="col-span-5">
-        <input
-          className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-          placeholder="Cooking"
-          value={item}
-          onChange={e => onChange(`${identifier}`, e.target.value)}
-          type="text"
-        />
+        <Form item={item} onChange={v => onChange(identifier, v)} />
       </div>
 
       <button
