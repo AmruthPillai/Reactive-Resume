@@ -21,4 +21,12 @@ module.exports = {
     ],
     smoothScroll: true,
   },
+  plugins: [
+    [
+      '@vuepress/google-analytics',
+      {
+        ga: 'UA-161860275-1',
+      },
+    ],
+  ],
 };

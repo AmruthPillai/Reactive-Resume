@@ -11,7 +11,8 @@ All notable changes to this project will be documented in this file.
 ### March 29, 2020
 
 - Add Issue Templates in GitHub for Bug Reports and Feature Requests
-- Rewriting Documentation in VuePress
+- Revised Documentation in VuePress
+- Add Google Analytics to VuePress Documentation
 - Implement "Deploy to Netlify" button, by [hwang381](https://github.com/hwang381)
 
 ### March 28, 2020
