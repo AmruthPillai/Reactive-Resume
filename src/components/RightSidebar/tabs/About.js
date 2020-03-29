@@ -16,7 +16,7 @@ const AboutTab = () => {
           target="_blank"
           rel="noopener noreferrer"
           href="https://docs.rxresu.me/"
-          className="mt-4 bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-5 rounded"
+          className="flex justify-center items-center mt-4 bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-5 rounded"
         >
           <div className="flex justify-center items-center">
             <i className="material-icons mr-2 font-bold text-base">description</i>
@@ -77,7 +77,7 @@ const AboutTab = () => {
           target="_blank"
           rel="noopener noreferrer"
           href="https://github.com/AmruthPillai/Reactive-Resume"
-          className="mt-4 bg-green-600 hover:bg-green-700 text-white text-sm font-medium py-2 px-5 rounded"
+          className="flex justify-center items-center mt-4 bg-green-600 hover:bg-green-700 text-white text-sm font-medium py-2 px-5 rounded"
         >
           <div className="flex justify-center items-center">
             <i className="material-icons mr-2 font-bold text-base">code</i>
@@ -101,7 +101,7 @@ const AboutTab = () => {
           target="_blank"
           rel="noopener noreferrer"
           href="https://github.com/AmruthPillai/Reactive-Resume/blob/master/LICENSE"
-          className="mt-4 bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-5 rounded"
+          className="flex justify-center items-center mt-4 bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-5 rounded"
         >
           <div className="flex justify-center items-center">
             <i className="material-icons mr-2 font-bold text-base">policy</i>
