@@ -27,7 +27,7 @@
     "build": "NODE_ENV=production react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && npm run docs:build",
     "deploy": "firebase deploy",
     "predeploy:app": "npm run build",
     "deploy:app": "firebase deploy --only hosting:app",
