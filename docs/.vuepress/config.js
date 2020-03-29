@@ -12,6 +12,7 @@ module.exports = {
     sidebar: [
       '/',
       '/features/',
+      '/templates/',
       '/technology/',
       '/contributing/',
       '/building-from-source/',
