@@ -1,36 +1,22 @@
-name: Build and Deploy
+name: Build & Deploy
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
-    name: Build
+    name: Build & Deploy
     runs-on: ubuntu-latest
     steps:
       - name: Checkout GitHub Repository
         uses: actions/checkout@v2.0.0
       - name: Install Project Dependencies
         run: npm install
-      - name: Build in Production
+      - name: Build App
         run: npm run build
-      - name: Archive Production Artifact
-        uses: actions/upload-artifact@v1.0.0
-        with:
-          name: build
-          path: build
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout GitHub Repository
-        uses: actions/checkout@v2.0.0
-      - name: Download Artifact
-        uses: actions/download-artifact@v1.0.0
-        with:
-          name: build
+      - name: Build Documentation
+        run: npm run docs:build
       - name: Deploy to Firebase Hosting
         uses: w9jds/firebase-action@v1.3.0
         with:
