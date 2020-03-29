@@ -34,8 +34,12 @@ Currently, there is no translation engine in place that allows for people to eas
 
 [Vote for Translation Engine Feature ](https://github.com/AmruthPillai/Reactive-Resume/issues/18)
 
-## Code
+## Commit Code
 
 If you are a developer, and a ReactJS developer at that, then you're in demand! Take a look at the code and see how you can make it better, cause I definitely would have made a lot of mistakes. You can setup test cases or extract a particular section of code into a function to improve code reuse. All you need to do is fork the repository on GitHub, make your changes and submit a Pull Request for the same and we'll review it.
 
 [GitHub Repository ](https://github.com/AmruthPillai/Reactive-Resume)
+
+## GitHub Contributors
+
+<GitHubContributors />
