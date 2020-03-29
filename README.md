@@ -2,7 +2,7 @@
 
 # Reactive Resume
 
-![Build and Deploy](https://github.com/AmruthPillai/Reactive-Resume/workflows/Build%20and%20Deploy/badge.svg)
+![Build & Deploy](https://github.com/AmruthPillai/Reactive-Resume/workflows/Build%20&%20Deploy/badge.svg)
 ![Code Style](https://badgen.net/badge/code%20style/airbnb/ff5a5f?icon=airbnb)
 ![GitHub last commit](https://img.shields.io/github/last-commit/AmruthPillai/Reactive-Resume)
 ![GitHub](https://img.shields.io/github/license/AmruthPillai/Reactive-Resume)
