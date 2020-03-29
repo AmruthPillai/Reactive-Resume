@@ -1,18 +1,9 @@
 import React from 'react';
-import Checkbox from './Checkbox';
 
-const ItemActions = ({
-  deleteItem,
-  dispatch,
-  first,
-  identifier,
-  item,
-  last,
-  moveItemDown,
-  moveItemUp,
-  onChange,
-  type,
-}) => {
+import Checkbox from './Checkbox';
+import { deleteItem, moveItemUp, moveItemDown } from '../utils';
+
+const ItemActions = ({ dispatch, first, identifier, item, last, onChange, type }) => {
   return (
     <div className="flex justify-between">
       <div className="flex items-center">

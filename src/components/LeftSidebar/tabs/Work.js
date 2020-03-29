@@ -7,7 +7,7 @@ import TextField from '../../../shared/TextField';
 import TextArea from '../../../shared/TextArea';
 import AppContext from '../../../context/AppContext';
 import Checkbox from '../../../shared/Checkbox';
-import { addItem, deleteItem, moveItemUp, moveItemDown } from '../../../utils';
+import { addItem } from '../../../utils';
 import ItemActions from '../../../shared/ItemActions';
 import AddItemButton from '../../../shared/AddItemButton';
 
@@ -171,14 +171,11 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
         <Form item={item} onChange={onChange} identifier={identifier} />
 
         <ItemActions
-          deleteItem={deleteItem}
           dispatch={dispatch}
           first={first}
           identifier={identifier}
           item={item}
           last={last}
-          moveItemDown={moveItemDown}
-          moveItemUp={moveItemUp}
           onChange={onChange}
           type="work"
         />
