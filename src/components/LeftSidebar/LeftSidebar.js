@@ -31,7 +31,7 @@ const LeftSidebar = () => {
   const { state, dispatch } = context;
   const { data } = state;
 
-  const [currentTab, setCurrentTab] = useState('Profile');
+  const [currentTab, setCurrentTab] = useState('Education');
   const onChange = (key, value) => {
     dispatch({
       type: 'on_input',

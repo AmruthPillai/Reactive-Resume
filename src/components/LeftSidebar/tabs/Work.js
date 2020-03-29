@@ -12,7 +12,7 @@ import ItemActions from '../../../shared/ItemActions';
 import AddItemButton from '../../../shared/AddItemButton';
 
 const WorkTab = ({ data, onChange }) => {
-  const { t } = useTranslation(['leftSidebar', 'app']);
+  const { t } = useTranslation('app');
   const context = useContext(AppContext);
   const { dispatch } = context;
 
@@ -24,7 +24,7 @@ const WorkTab = ({ data, onChange }) => {
         </div>
         <div className="col-span-5">
           <TextField
-            placeholder={t('app:heading.placeholder')}
+            placeholder={t('heading.placeholder')}
             value={data.work.heading}
             onChange={v => onChange('data.work.heading', v)}
           />
@@ -92,7 +92,7 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <TextArea
         rows="5"
         className="mb-6"
-        label={t('work.description.label')}
+        label={t('app:item.description.label')}
         placeholder={t('work.description.placeholder')}
         value={item.description}
         onChange={v => onChange(`${identifier}description`, v)}
