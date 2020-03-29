@@ -7,13 +7,13 @@ import TextField from '../../../shared/TextField';
 import AppContext from '../../../context/AppContext';
 import Checkbox from '../../../shared/Checkbox';
 import TextArea from '../../../shared/TextArea';
-import { addItem, deleteItem, moveItemUp, moveItemDown } from '../../../utils';
+import { addItem } from '../../../utils';
 import ItemActions from '../../../shared/ItemActions';
 import AddItemButton from '../../../shared/AddItemButton';
 import ItemHeading from '../../../shared/ItemHeading';
 
 const AwardsTab = ({ data, onChange }) => {
-  const { t } = useTranslation('app');
+  const { t } = useTranslation();
   const context = useContext(AppContext);
   const { dispatch } = context;
 
@@ -139,16 +139,13 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
         <Form item={item} onChange={onChange} identifier={identifier} />
 
         <ItemActions
+          dispatch={dispatch}
+          first={first}
+          identifier={identifier}
           item={item}
+          last={last}
           onChange={onChange}
           type="awards"
-          identifier={identifier}
-          dispatch={dispatch}
-          deleteItem={deleteItem}
-          first={first}
-          moveItemUp={moveItemUp}
-          last={last}
-          moveItemDown={moveItemDown}
         />
       </div>
     </div>

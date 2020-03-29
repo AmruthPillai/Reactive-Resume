@@ -13,7 +13,7 @@ import AddItemButton from '../../../shared/AddItemButton';
 import ItemHeading from '../../../shared/ItemHeading';
 
 const EducationTab = ({ data, onChange }) => {
-  const { t } = useTranslation('app');
+  const { t } = useTranslation();
   const context = useContext(AppContext);
   const { dispatch } = context;
 
