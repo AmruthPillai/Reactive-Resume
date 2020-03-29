@@ -16,6 +16,7 @@ module.exports = {
       '/contributing/',
       '/building-from-source/',
       '/deployment/',
+      '/changelog/',
     ],
     smoothScroll: true,
   },
