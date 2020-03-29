@@ -49,3 +49,9 @@ PostCSS is a tool for transforming styles with JS plugins. These plugins can lin
 PurgeCSS analyzes your content and your css files. Then it matches the selectors used in your files with the one in your content files. It removes unused selectors from your css, resulting in smaller css files.
 
 [Learn more &rarr; ](https://github.com/FullHuman/purgecss)
+
+## VuePress
+
+VuePress is what made this documentation possible, with it's clean design and quick setup as well as the ability to use markdown to generate content, VuePress seemed like the best way to set up a cleaner documentation.
+
+[Learn more &rarr; ](https://vuepress.vuejs.org/)
