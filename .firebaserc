@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "rx-resume"
+  },
+  "targets": {
+    "rx-resume": {
+      "hosting": {
+        "app": [
+          "rx-resume"
+        ],
+        "docs": [
+          "docs-rx-resume"
+        ]
+      }
+    }
   }
 }

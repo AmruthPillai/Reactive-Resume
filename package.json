@@ -27,7 +27,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "firebase deploy"
+    "deploy": "firebase deploy",
+    "predeploy:app": "npm run build",
+    "deploy:app": "firebase deploy --only hosting:app",
+    "predeploy:docs": "npm run docs:build",
+    "deploy:docs": "firebase deploy --only hosting:docs"
   },
   "eslintConfig": {
     "extends": "react-app"
