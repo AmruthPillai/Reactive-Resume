@@ -30,7 +30,7 @@ Something that's missing on the app that's halting your progress from making the
 
 ## Translation
 
-For information on how to translate the app into your own language, please visit the [Translation](/translation/) section of the documentation.
+Translating the app into your language has never been easier. Thanks to [Crowdin](https://crowdin.com/), a localization management tool, anyone can translate strings without having to mess arounf with a bunch of files. For information on how to translate the app into your own language, please visit the [Translation Secion](/translation/) of the documentation.
 
 ## Commit Code
 
