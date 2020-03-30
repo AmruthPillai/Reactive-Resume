@@ -4,9 +4,10 @@
   "website": "https://rxresu.me/",
   "repository": "https://github.com/AmruthPillai/Reactive-Resume",
   "logo": "https://i.imgur.com/ugpElge.png",
-  "keywords": [
-    "react",
-    "resume",
-    "static"
-  ]
+  "buildpacks": [
+    {
+      "url": "mars/create-react-app"
+    }
+  ],
+  "keywords": ["react", "resume", "static"]
 }
