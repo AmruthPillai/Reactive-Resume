@@ -8,6 +8,10 @@ const languages = [
     code: 'en',
     name: 'English',
   },
+  {
+    code: 'hi',
+    name: 'Hindi',
+  },
 ];
 
 i18n.use(initReactI18next).init({

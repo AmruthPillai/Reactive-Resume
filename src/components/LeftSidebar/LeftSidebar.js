@@ -19,18 +19,18 @@ const LeftSidebar = () => {
   const { data } = state;
 
   const tabs = [
-    'Profile',
-    'Objective',
-    'Work Experience',
-    'Education',
-    'Awards',
-    'Certifications',
-    'Skills',
-    'Languages',
-    'References',
-    'Extras',
+    { key: 'profile', name: data.profile.heading },
+    { key: 'objective', name: data.objective.heading },
+    { key: 'work', name: data.work.heading },
+    { key: 'education', name: data.education.heading },
+    { key: 'awards', name: data.awards.heading },
+    { key: 'certifications', name: data.certifications.heading },
+    { key: 'skills', name: data.skills.heading },
+    { key: 'languages', name: data.languages.heading },
+    { key: 'references', name: data.references.heading },
+    { key: 'extras', name: data.extras.heading },
   ];
-  const [currentTab, setCurrentTab] = useState('Profile');
+  const [currentTab, setCurrentTab] = useState(tabs[0].key);
   const onChange = (key, value) => {
     dispatch({
       type: 'on_input',
@@ -45,25 +45,25 @@ const LeftSidebar = () => {
 
   const renderTabs = () => {
     switch (currentTab) {
-      case 'Profile':
+      case tabs[0].key:
         return <ProfileTab data={data} onChange={onChange} />;
-      case 'Objective':
+      case tabs[1].key:
         return <ObjectiveTab data={data} onChange={onChange} />;
-      case 'Work Experience':
+      case tabs[2].key:
         return <WorkTab data={data} onChange={onChange} />;
-      case 'Education':
+      case tabs[3].key:
         return <EducationTab data={data} onChange={onChange} />;
-      case 'Awards':
+      case tabs[4].key:
         return <AwardsTab data={data} onChange={onChange} />;
-      case 'Certifications':
+      case tabs[5].key:
         return <CertificationsTab data={data} onChange={onChange} />;
-      case 'Skills':
+      case tabs[6].key:
         return <SkillsTab data={data} onChange={onChange} />;
-      case 'Languages':
+      case tabs[7].key:
         return <LanguagesTab data={data} onChange={onChange} />;
-      case 'References':
+      case tabs[8].key:
         return <ReferencesTab data={data} onChange={onChange} />;
-      case 'Extras':
+      case tabs[9].key:
         return <ExtrasTab data={data} onChange={onChange} />;
       default:
         return null;
