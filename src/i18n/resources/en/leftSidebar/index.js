@@ -7,6 +7,7 @@ import certifications from './certifications.json';
 import skills from './skills.json';
 import languages from './languages.json';
 import references from './references.json';
+import extras from './extras.json';
 
 export default {
   profile,
@@ -18,4 +19,5 @@ export default {
   skills,
   languages,
   references,
+  extras,
 };
