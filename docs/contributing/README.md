@@ -30,9 +30,7 @@ Something that's missing on the app that's halting your progress from making the
 
 ## Translation
 
-Currently, there is no translation engine in place that allows for people to easily make translations. I'm still figuring out the most elegant way to implement this feature with minimal code and maximum reach. For now, if you would like to see this feature, please vote in the GitHub Issue linked below and if you are willing to contribute, mention in the comments of the issue which language you would like to translate to.
-
-[Vote for Translation Engine Feature ](https://github.com/AmruthPillai/Reactive-Resume/issues/18)
+For information on how to translate the app into your own language, please visit the [Translation](/translation/) section of the documentation.
 
 ## Commit Code
 

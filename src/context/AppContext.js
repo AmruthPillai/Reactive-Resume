@@ -80,6 +80,9 @@ const initialState = {
       accent: '#f44336',
     },
   },
+  settings: {
+    language: 'en',
+  },
 };
 
 const reducer = (state, { type, payload }) => {
@@ -120,8 +123,7 @@ const reducer = (state, { type, payload }) => {
 
       return {
         ...state,
-        data: payload.data,
-        theme: payload.theme,
+        ...payload,
       };
     case 'load_dummy_data':
       return {

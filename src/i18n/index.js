@@ -3,6 +3,13 @@ import { initReactI18next } from 'react-i18next';
 
 import resources from './resources';
 
+const languages = [
+  {
+    code: 'en',
+    name: 'English',
+  },
+];
+
 i18n.use(initReactI18next).init({
   lng: 'en',
   fallbackLng: 'en',
@@ -11,5 +18,7 @@ i18n.use(initReactI18next).init({
   ns: ['app', 'leftSidebar', 'rightSidebar'],
   defaultNS: 'app',
 });
+
+export { languages };
 
 export default i18n;
