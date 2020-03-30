@@ -16,8 +16,8 @@ const RightSidebar = () => {
   const { state, dispatch } = context;
   const { data, theme } = state;
 
-  const tabs = [t('templates.title'), 'Colors', 'Fonts', 'Actions', 'About'];
-  const [currentTab, setCurrentTab] = useState(t('templates.title'));
+  const tabs = [t('templates.title'), t('colors.title'), 'Fonts', 'Actions', 'About'];
+  const [currentTab, setCurrentTab] = useState(t('colors.title'));
   const onChange = (key, value) => {
     dispatch({
       type: 'on_input',
@@ -34,7 +34,7 @@ const RightSidebar = () => {
     switch (currentTab) {
       case t('templates.title'):
         return <TemplatesTab theme={theme} onChange={onChange} />;
-      case 'Colors':
+      case t('colors.title'):
         return <ColorsTab theme={theme} onChange={onChange} />;
       case 'Fonts':
         return <FontsTab theme={theme} onChange={onChange} />;
