@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import AppContext from '../../context/AppContext';
 import TabBar from '../../shared/TabBar';
@@ -8,14 +9,15 @@ import FontsTab from './tabs/Fonts';
 import ActionsTab from './tabs/Actions';
 import AboutTab from './tabs/About';
 
-const tabs = ['Templates', 'Colors', 'Fonts', 'Actions', 'About'];
-
 const RightSidebar = () => {
+  const { t } = useTranslation('rightSidebar');
+
   const context = useContext(AppContext);
   const { state, dispatch } = context;
   const { data, theme } = state;
 
-  const [currentTab, setCurrentTab] = useState('Templates');
+  const tabs = [t('templates.title'), 'Colors', 'Fonts', 'Actions', 'About'];
+  const [currentTab, setCurrentTab] = useState(t('templates.title'));
   const onChange = (key, value) => {
     dispatch({
       type: 'on_input',
@@ -30,7 +32,7 @@ const RightSidebar = () => {
 
   const renderTabs = () => {
     switch (currentTab) {
-      case 'Templates':
+      case t('templates.title'):
         return <TemplatesTab theme={theme} onChange={onChange} />;
       case 'Colors':
         return <ColorsTab theme={theme} onChange={onChange} />;

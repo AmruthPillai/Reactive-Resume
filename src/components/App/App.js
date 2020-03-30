@@ -1,15 +1,10 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useContext, Suspense } from 'react';
 
+import AppContext from '../../context/AppContext';
 import LeftSidebar from '../LeftSidebar/LeftSidebar';
 import RightSidebar from '../RightSidebar/RightSidebar';
-import AppContext from '../../context/AppContext';
 
-// Resume Templates
-import Onyx from '../../templates/onyx';
-import Pikachu from '../../templates/pikachu';
-import Gengar from '../../templates/gengar';
-import Castform from '../../templates/castform';
+import templates from '../../templates';
 
 const App = () => {
   const context = useContext(AppContext);
@@ -20,21 +15,6 @@ const App = () => {
     const storedState = JSON.parse(localStorage.getItem('state'));
     dispatch({ type: 'import_data', payload: storedState });
   }, [dispatch]);
-
-  const renderTemplate = () => {
-    switch (theme.layout) {
-      case 'Onyx':
-        return <Onyx />;
-      case 'Pikachu':
-        return <Pikachu />;
-      case 'Gengar':
-        return <Gengar />;
-      case 'Castform':
-        return <Castform />;
-      default:
-        return null;
-    }
-  };
 
   return (
     <Suspense fallback="Loading...">
@@ -47,7 +27,7 @@ const App = () => {
             className="animated fadeIn my-auto shadow-2xl"
             style={{ animationDelay: '500ms' }}
           >
-            {renderTemplate()}
+            {templates.find(x => theme.layout.toLowerCase() === x.key).component()}
           </div>
         </div>
 

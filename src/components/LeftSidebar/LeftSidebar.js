@@ -13,25 +13,24 @@ import ExtrasTab from './tabs/Extras';
 import LanguagesTab from './tabs/Languages';
 import ReferencesTab from './tabs/References';
 
-const tabs = [
-  'Profile',
-  'Objective',
-  'Work Experience',
-  'Education',
-  'Awards',
-  'Certifications',
-  'Skills',
-  'Languages',
-  'References',
-  'Extras',
-];
-
 const LeftSidebar = () => {
   const context = useContext(AppContext);
   const { state, dispatch } = context;
   const { data } = state;
 
-  const [currentTab, setCurrentTab] = useState('Extras');
+  const tabs = [
+    'Profile',
+    'Objective',
+    'Work Experience',
+    'Education',
+    'Awards',
+    'Certifications',
+    'Skills',
+    'Languages',
+    'References',
+    'Extras',
+  ];
+  const [currentTab, setCurrentTab] = useState('Profile');
   const onChange = (key, value) => {
     dispatch({
       type: 'on_input',

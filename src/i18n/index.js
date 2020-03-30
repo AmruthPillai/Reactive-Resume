@@ -8,7 +8,7 @@ i18n.use(initReactI18next).init({
   fallbackLng: 'en',
   resources,
   debug: true,
-  ns: ['app', 'leftSidebar'],
+  ns: ['app', 'leftSidebar', 'rightSidebar'],
   defaultNS: 'app',
 });
 

@@ -215,7 +215,7 @@ const Gengar = () => {
     );
 
   const ExtraItem = x => (
-    <div key={x.key} className="text-sm my-1">
+    <div key={x.id} className="text-sm my-1">
       <h6 className="text-xs font-bold">{x.key}</h6>
       <h6>{x.value}</h6>
     </div>
