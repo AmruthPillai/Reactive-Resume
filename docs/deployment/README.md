@@ -10,7 +10,7 @@ You've built the source code successfully and now you're on your way to deployin
 
 Heroku is a cloud platform that lets companies build, deliver, monitor and scale apps — we're the fastest way to go from idea to URL, bypassing all those infrastructure headaches.
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/AmruthPillai/Reactive-Resume)
 
 ## Deploying to Netlify
 
