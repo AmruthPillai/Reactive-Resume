@@ -1,8 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useRef } from 'react';
+import { useTranslation, Trans } from 'react-i18next';
 
 const ActionsTab = ({ data, theme, dispatch }) => {
+  const { t } = useTranslation('rightSidebar');
   const fileInputRef = useRef(null);
 
   const importJson = event => {
@@ -36,20 +38,14 @@ const ActionsTab = ({ data, theme, dispatch }) => {
 
   return (
     <div>
-      <div className="shadow text-center text-sm p-5">
-        Changes you make to your resume are saved automatically to your browser&apos;s local
-        storage. No data gets out, hence your information is completely secure.
-      </div>
+      <div className="shadow text-center text-sm p-5">{t('actions.disclaimer')}</div>
 
       <hr className="my-6" />
 
       <div className="shadow text-center p-5">
-        <h6 className="font-bold text-sm mb-2">Import/Export</h6>
+        <h6 className="font-bold text-sm mb-2">{t('actions.importExport.heading')}</h6>
 
-        <p className="text-sm">
-          You can import or export your data in JSON format. With this, you can edit and print your
-          resume from any device. Save this file for later use.
-        </p>
+        <p className="text-sm">{t('actions.importExport.body')}</p>
 
         <input ref={fileInputRef} type="file" className="hidden" onChange={importJson} />
         <a id="downloadAnchor" className="hidden" />
@@ -62,7 +58,7 @@ const ActionsTab = ({ data, theme, dispatch }) => {
           >
             <div className="flex justify-center items-center">
               <i className="material-icons mr-2 font-bold text-base">publish</i>
-              <span className="text-sm">Import</span>
+              <span className="text-sm">{t('actions.importExport.buttons.import')}</span>
             </div>
           </button>
 
@@ -73,7 +69,7 @@ const ActionsTab = ({ data, theme, dispatch }) => {
           >
             <div className="flex justify-center items-center">
               <i className="material-icons mr-2 font-bold text-base">get_app</i>
-              <span className="text-sm">Export</span>
+              <span className="text-sm">{t('actions.importExport.buttons.export')}</span>
             </div>
           </button>
         </div>
@@ -82,12 +78,14 @@ const ActionsTab = ({ data, theme, dispatch }) => {
       <hr className="my-6" />
 
       <div className="shadow text-center p-5">
-        <h6 className="font-bold text-sm mb-2">Print Your Resume</h6>
+        <h6 className="font-bold text-sm mb-2">{t('actions.printResume.heading')}</h6>
 
         <div className="text-sm">
-          You can simply press <pre className="inline font-bold">Cmd/Ctrl + P</pre> at any time
-          while you&apos;re in the app to print your resume, but here&apos;s a fancy button to do
-          the same thing, just &apos;cause.
+          <Trans t={t} i18nKey="actions.printResume.body">
+            You can simply press <pre className="inline font-bold">Cmd/Ctrl + P</pre> at any time
+            while you&apos;re in the app to print your resume, but here&apos;s a fancy button to do
+            the same thing, just &apos;cause.
+          </Trans>
         </div>
 
         <button
@@ -97,7 +95,7 @@ const ActionsTab = ({ data, theme, dispatch }) => {
         >
           <div className="flex justify-center items-center">
             <i className="material-icons mr-2 font-bold text-base">print</i>
-            <span className="text-sm">Print</span>
+            <span className="text-sm">{t('actions.printResume.buttons.print')}</span>
           </div>
         </button>
       </div>
@@ -105,12 +103,9 @@ const ActionsTab = ({ data, theme, dispatch }) => {
       <hr className="my-6" />
 
       <div className="shadow text-center p-5">
-        <h6 className="font-bold text-sm mb-2">Load Dummy Data</h6>
+        <h6 className="font-bold text-sm mb-2">{t('actions.loadDummyData.heading')}</h6>
 
-        <div className="text-sm">
-          Unclear on what to do with a fresh blank page? Load some dummy data with pre-populated
-          values to see how a resume should look and you can start editing from there.
-        </div>
+        <div className="text-sm">{t('actions.loadDummyData.body')}</div>
 
         <button
           type="button"
@@ -119,7 +114,7 @@ const ActionsTab = ({ data, theme, dispatch }) => {
         >
           <div className="flex justify-center items-center">
             <i className="material-icons mr-2 font-bold text-base">flight_takeoff</i>
-            <span className="text-sm">Populate Data</span>
+            <span className="text-sm">{t('actions.loadDummyData.buttons.loadData')}</span>
           </div>
         </button>
       </div>
@@ -127,13 +122,9 @@ const ActionsTab = ({ data, theme, dispatch }) => {
       <hr className="my-6" />
 
       <div className="shadow text-center p-5">
-        <h6 className="font-bold text-sm mb-2">Reset Everything!</h6>
+        <h6 className="font-bold text-sm mb-2">{t('actions.reset.heading')}</h6>
 
-        <div className="text-sm">
-          This action will reset all your data and remove backups made to your browser&apos;s local
-          storage as well, so please make sure you have exported your information before you reset
-          everything.
-        </div>
+        <div className="text-sm">{t('actions.reset.body')}</div>
 
         <button
           type="button"
@@ -142,7 +133,7 @@ const ActionsTab = ({ data, theme, dispatch }) => {
         >
           <div className="flex justify-center items-center">
             <i className="material-icons mr-2 font-bold text-base">refresh</i>
-            <span className="text-sm">Reset</span>
+            <span className="text-sm">{t('actions.reset.buttons.reset')}</span>
           </div>
         </button>
       </div>
