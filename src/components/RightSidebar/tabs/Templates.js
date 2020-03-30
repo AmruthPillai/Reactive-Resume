@@ -1,11 +1,8 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 
 import templates from '../../../templates';
 
 const TemplatesTab = ({ theme, onChange }) => {
-  const { t } = useTranslation('rightSidebar');
-
   return (
     <div className="grid grid-cols-2 gap-6">
       {templates.map(x => (
@@ -17,9 +14,9 @@ const TemplatesTab = ({ theme, onChange }) => {
                 : 'border-transparent '
             } hover:border-gray-500 cursor-pointer`}
             src={x.preview}
-            alt={t(`templates.templates.${x.key}`)}
+            alt={x.name}
           />
-          <p className="mt-1 text-sm font-medium">{t(`templates.templates.${x.key}`)}</p>
+          <p className="mt-1 text-sm font-medium">{x.name}</p>
         </div>
       ))}
     </div>

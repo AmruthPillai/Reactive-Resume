@@ -98,7 +98,7 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <TextField
         className="mb-6"
         label={t('references.phone.label')}
-        placeholder={t('references.phone.placeholder')}
+        placeholder="+1 541 754 3010"
         value={item.phone}
         onChange={v => onChange(`${identifier}phone`, v)}
       />
@@ -106,7 +106,7 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <TextField
         className="mb-6"
         label={t('references.email.label')}
-        placeholder={t('references.email.placeholder')}
+        placeholder="richard@piedpiper.com"
         value={item.email}
         onChange={v => onChange(`${identifier}email`, v)}
       />

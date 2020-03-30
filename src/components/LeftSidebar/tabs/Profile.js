@@ -11,7 +11,7 @@ const ProfileTab = ({ data, onChange }) => {
       <TextField
         className="mb-6"
         label={t('profile.photoUrl.label')}
-        placeholder={t('profile.photoUrl.placeholder')}
+        placeholder="https://i.imgur.com/..."
         value={data.profile.photo}
         onChange={v => onChange('data.profile.photo', v)}
       />
@@ -73,7 +73,7 @@ const ProfileTab = ({ data, onChange }) => {
       <TextField
         className="mb-6"
         label={t('profile.phone.label')}
-        placeholder={t('profile.phone.placeholder')}
+        placeholder="+1 541 754 3010"
         value={data.profile.phone}
         onChange={v => onChange('data.profile.phone', v)}
       />
@@ -81,7 +81,7 @@ const ProfileTab = ({ data, onChange }) => {
       <TextField
         className="mb-6"
         label={t('profile.website.label')}
-        placeholder={t('profile.website.placeholder')}
+        placeholder="google.com"
         value={data.profile.website}
         onChange={v => onChange('data.profile.website', v)}
       />
@@ -89,7 +89,7 @@ const ProfileTab = ({ data, onChange }) => {
       <TextField
         className="mb-6"
         label={t('profile.email.label')}
-        placeholder={t('profile.email.placeholder')}
+        placeholder="john.doe@example.com"
         value={data.profile.email}
         onChange={v => onChange('data.profile.email', v)}
       />

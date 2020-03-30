@@ -78,7 +78,7 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <TextField
         className="mb-6"
         label={t('education.grade.label')}
-        placeholder={t('education.grade.placeholder')}
+        placeholder="7.2 CGPA"
         value={item.grade}
         onChange={v => onChange(`${identifier}grade`, v)}
       />
