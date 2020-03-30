@@ -1,16 +1,15 @@
 import React from 'react';
+import { Trans, useTranslation } from 'react-i18next';
 
 const AboutTab = () => {
+  const { t } = useTranslation('rightSidebar');
+
   return (
     <div>
       <div className="shadow text-center p-5">
-        <h6 className="font-bold text-sm mb-2">Documentation</h6>
+        <h6 className="font-bold text-sm mb-2">{t('about.documentation.heading')}</h6>
 
-        <div className="text-sm">
-          Want to know more about the app? Wouldn&apos;t it be nice if there was a guide to setting
-          it up on your local machine? Need information on how to contribute to the project? Look no
-          further, there&apos;s a comprehensive documentation made just for you.
-        </div>
+        <div className="text-sm">{t('about.documentation.body')}</div>
 
         <a
           target="_blank"
@@ -20,7 +19,7 @@ const AboutTab = () => {
         >
           <div className="flex justify-center items-center">
             <i className="material-icons mr-2 font-bold text-base">description</i>
-            <span className="text-sm">Documentation</span>
+            <span className="text-sm">{t('about.documentation.buttons.documentation')}</span>
           </div>
         </a>
       </div>
@@ -28,13 +27,9 @@ const AboutTab = () => {
       <hr className="my-5" />
 
       <div className="shadow text-center p-5">
-        <h6 className="font-bold text-sm mb-2">Bug? Feature Request?</h6>
+        <h6 className="font-bold text-sm mb-2">{t('about.bugOrFeatureRequest.heading')}</h6>
 
-        <div className="text-sm">
-          Something halting your progress from making a resume? Found a pesky bug that just
-          won&apos;t quit? Talk about it on the GitHub Issues section, or send me and email using
-          the actions below.
-        </div>
+        <div className="text-sm">{t('about.bugOrFeatureRequest.body')}</div>
 
         <div className="grid grid-cols-1">
           <a
@@ -45,7 +40,7 @@ const AboutTab = () => {
           >
             <div className="flex justify-center items-center">
               <i className="material-icons mr-2 font-bold text-base">bug_report</i>
-              <span className="text-sm">Raise an Issue</span>
+              <span className="text-sm">{t('about.bugOrFeatureRequest.buttons.raiseIssue')}</span>
             </div>
           </a>
 
@@ -57,7 +52,7 @@ const AboutTab = () => {
           >
             <div className="flex justify-center items-center">
               <i className="material-icons mr-2 font-bold text-base">email</i>
-              <span className="text-sm">Send an Email</span>
+              <span className="text-sm">{t('about.bugOrFeatureRequest.buttons.sendEmail')}</span>
             </div>
           </a>
         </div>
@@ -66,12 +61,9 @@ const AboutTab = () => {
       <hr className="my-5" />
 
       <div className="shadow text-center p-5">
-        <h6 className="font-bold text-sm mb-2">Source Code</h6>
+        <h6 className="font-bold text-sm mb-2">{t('about.sourceCode.heading')}</h6>
 
-        <div className="text-sm">
-          Want to run the project from it&apos;s source? Are you a developer willing to contribute
-          to the open source development of this project? Click the button below.
-        </div>
+        <div className="text-sm">{t('about.sourceCode.body')}</div>
 
         <a
           target="_blank"
@@ -81,7 +73,7 @@ const AboutTab = () => {
         >
           <div className="flex justify-center items-center">
             <i className="material-icons mr-2 font-bold text-base">code</i>
-            <span className="text-sm">GitHub Repo</span>
+            <span className="text-sm">{t('about.sourceCode.buttons.githubRepo')}</span>
           </div>
         </a>
       </div>
@@ -89,13 +81,9 @@ const AboutTab = () => {
       <hr className="my-5" />
 
       <div className="shadow text-center p-5">
-        <h6 className="font-bold text-sm mb-2">License Information</h6>
+        <h6 className="font-bold text-sm mb-2">{t('about.license.heading')}</h6>
 
-        <div className="text-sm">
-          The project is governed under the MIT License, which you can read more about below.
-          Basically, you are allowed to use the project anywhere provided you give credits to the
-          original author.
-        </div>
+        <div className="text-sm">{t('about.license.body')}</div>
 
         <a
           target="_blank"
@@ -105,27 +93,27 @@ const AboutTab = () => {
         >
           <div className="flex justify-center items-center">
             <i className="material-icons mr-2 font-bold text-base">policy</i>
-            <span className="text-sm">MIT License</span>
+            <span className="text-sm">{t('about.license.buttons.mitLicense')}</span>
           </div>
         </a>
       </div>
 
       <div className="mt-5">
         <p className="text-xs font-gray-600 text-center">
-          Reactive Resume is a project by{' '}
-          <a
-            className="hover:underline"
-            href="https://www.amruthpillai.com/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <strong>Amruth Pillai</strong>
-          </a>{' '}
-          in hopes of allowing anyone to make beautiful resumes and get equal job opportunities.
-          <br />
-          <br />
-          Thank you for using Reactive Resume!
+          <Trans t={t} i18nKey="about.footer.credit">
+            Reactive Resume is a project by
+            <a
+              className="font-bold hover:underline"
+              href="https://www.amruthpillai.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Amruth Pillai
+            </a>
+            .
+          </Trans>
         </p>
+        <p className="text-xs font-gray-600 text-center">{t('about.footer.thanks')}</p>
       </div>
     </div>
   );

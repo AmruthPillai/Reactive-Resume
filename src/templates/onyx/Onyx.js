@@ -211,7 +211,7 @@ const Onyx = () => {
     );
 
   const ExtraItem = x => (
-    <tr key={x.key}>
+    <tr key={x.id}>
       <td className="border font-medium px-4 py-2 text-sm">{x.key}</td>
       <td className="border px-4 py-2 text-sm">{x.value}</td>
     </tr>

@@ -234,10 +234,10 @@ const Castform = () => {
       </div>
     );
 
-  const ExtraItem = ({ key, value }) => (
-    <div className="px-5 my-2">
-      <h6 className="text-xs font-bold">{key}</h6>
-      <div className="text-sm">{value}</div>
+  const ExtraItem = x => (
+    <div key={x.id} className="px-5 my-2">
+      <h6 className="text-xs font-bold">{x.key}</h6>
+      <div className="text-sm">{x.value}</div>
     </div>
   );
 

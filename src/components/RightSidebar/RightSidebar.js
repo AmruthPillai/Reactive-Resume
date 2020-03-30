@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import AppContext from '../../context/AppContext';
 import TabBar from '../../shared/TabBar';
@@ -7,15 +8,25 @@ import ColorsTab from './tabs/Colors';
 import FontsTab from './tabs/Fonts';
 import ActionsTab from './tabs/Actions';
 import AboutTab from './tabs/About';
-
-const tabs = ['Templates', 'Colors', 'Fonts', 'Actions', 'About'];
+import SettingsTab from './tabs/Settings';
 
 const RightSidebar = () => {
+  const { t } = useTranslation('rightSidebar');
+
   const context = useContext(AppContext);
   const { state, dispatch } = context;
-  const { data, theme } = state;
+  const { data, theme, settings } = state;
 
-  const [currentTab, setCurrentTab] = useState('Templates');
+  const tabs = [
+    t('templates.title'),
+    t('colors.title'),
+    t('fonts.title'),
+    t('actions.title'),
+    t('settings.title'),
+    t('about.title'),
+  ];
+  const [currentTab, setCurrentTab] = useState(t('settings.title'));
+
   const onChange = (key, value) => {
     dispatch({
       type: 'on_input',
@@ -30,15 +41,17 @@ const RightSidebar = () => {
 
   const renderTabs = () => {
     switch (currentTab) {
-      case 'Templates':
+      case t('templates.title'):
         return <TemplatesTab theme={theme} onChange={onChange} />;
-      case 'Colors':
+      case t('colors.title'):
         return <ColorsTab theme={theme} onChange={onChange} />;
-      case 'Fonts':
+      case t('fonts.title'):
         return <FontsTab theme={theme} onChange={onChange} />;
-      case 'Actions':
+      case t('actions.title'):
         return <ActionsTab data={data} theme={theme} dispatch={dispatch} />;
-      case 'About':
+      case t('settings.title'):
+        return <SettingsTab settings={settings} onChange={onChange} />;
+      case t('about.title'):
         return <AboutTab />;
       default:
         return null;

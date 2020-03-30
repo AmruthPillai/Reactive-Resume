@@ -1,15 +1,10 @@
-/* eslint-disable no-unused-vars */
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, Suspense } from 'react';
 
+import AppContext from '../../context/AppContext';
 import LeftSidebar from '../LeftSidebar/LeftSidebar';
 import RightSidebar from '../RightSidebar/RightSidebar';
-import AppContext from '../../context/AppContext';
 
-// Resume Templates
-import Onyx from '../../templates/onyx';
-import Pikachu from '../../templates/pikachu';
-import Gengar from '../../templates/gengar';
-import Castform from '../../templates/castform';
+import templates from '../../templates';
 
 const App = () => {
   const context = useContext(AppContext);
@@ -21,37 +16,24 @@ const App = () => {
     dispatch({ type: 'import_data', payload: storedState });
   }, [dispatch]);
 
-  const renderTemplate = () => {
-    switch (theme.layout) {
-      case 'Onyx':
-        return <Onyx />;
-      case 'Pikachu':
-        return <Pikachu />;
-      case 'Gengar':
-        return <Gengar />;
-      case 'Castform':
-        return <Castform />;
-      default:
-        return null;
-    }
-  };
-
   return (
-    <div className="h-screen overflow-hidden grid grid-cols-5 items-center">
-      <LeftSidebar />
+    <Suspense fallback="Loading...">
+      <div className="h-screen overflow-hidden grid grid-cols-5 items-center">
+        <LeftSidebar />
 
-      <div className="z-0 h-screen col-span-3 flex justify-center items-center overflow-scroll">
-        <div
-          id="page"
-          className="animated fadeIn my-auto shadow-2xl"
-          style={{ animationDelay: '500ms' }}
-        >
-          {renderTemplate()}
+        <div className="z-0 h-screen col-span-3 flex justify-center items-center overflow-scroll">
+          <div
+            id="page"
+            className="animated fadeIn my-auto shadow-2xl"
+            style={{ animationDelay: '500ms' }}
+          >
+            {templates.find(x => theme.layout.toLowerCase() === x.key).component()}
+          </div>
         </div>
-      </div>
 
-      <RightSidebar />
-    </div>
+        <RightSidebar />
+      </div>
+    </Suspense>
   );
 };
 

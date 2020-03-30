@@ -15,6 +15,7 @@ module.exports = {
       '/templates/',
       '/technology/',
       '/contributing/',
+      '/translation/',
       '/building-from-source/',
       '/deployment/',
       '/changelog/',

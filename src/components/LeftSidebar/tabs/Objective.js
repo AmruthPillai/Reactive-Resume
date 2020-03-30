@@ -1,9 +1,13 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+
 import TextArea from '../../../shared/TextArea';
 import TextField from '../../../shared/TextField';
 import Checkbox from '../../../shared/Checkbox';
 
 const ObjectiveTab = ({ data, onChange }) => {
+  const { t } = useTranslation(['leftSidebar', 'app']);
+
   return (
     <div>
       <div className="mb-6 grid grid-cols-6 items-center">
@@ -15,7 +19,7 @@ const ObjectiveTab = ({ data, onChange }) => {
         </div>
         <div className="col-span-5">
           <TextField
-            placeholder="Heading"
+            placeholder={t('app:heading.placeholder')}
             value={data.objective.heading}
             onChange={v => onChange('data.objective.heading', v)}
           />
@@ -27,8 +31,8 @@ const ObjectiveTab = ({ data, onChange }) => {
       <TextArea
         rows="15"
         className="mb-4"
-        label="Objective"
-        placeholder="Looking for a challenging role in a reputable organization to utilize my technical, database, and management skills for the growth of the organization as well as to enhance my knowledge about new and emerging trends in the IT sector."
+        label={t('objective.objective.label')}
+        placeholder={t('objective.objective.placeholder')}
         value={data.objective.body}
         onChange={v => onChange('data.objective.body', v)}
       />

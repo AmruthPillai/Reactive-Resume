@@ -1,4 +1,6 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+
 import TextField from '../../../shared/TextField';
 
 const fontOptions = [
@@ -14,6 +16,8 @@ const fontOptions = [
 ];
 
 const FontsTab = ({ theme, onChange }) => {
+  const { t } = useTranslation('rightSidebar');
+
   return (
     <div className="grid grid-cols-1 gap-6">
       {fontOptions.map(x => (
@@ -29,16 +33,17 @@ const FontsTab = ({ theme, onChange }) => {
         </div>
       ))}
 
-      <TextField
-        label="Font Family"
-        placeholder="Avenir Next"
-        value={theme.font.family}
-        onChange={v => onChange('theme.font.family', v)}
-      />
-      <p className="text-gray-600 text-sm">
-        You can use any font that is installed on your system as well. Just enter the name of the
-        font family here and the browser would load it up for you.
-      </p>
+      <div>
+        <TextField
+          className="mb-3"
+          label={t('fonts.fontFamily.label')}
+          placeholder="Avenir Next"
+          value={theme.font.family}
+          onChange={v => onChange('theme.font.family', v)}
+        />
+
+        <p className="text-gray-800 text-xs">{t('fonts.fontFamily.helpText')}</p>
+      </div>
     </div>
   );
 };
