@@ -4,15 +4,15 @@ const TabBar = ({ tabs, currentTab, setCurrentTab }) => {
   const tabsRef = useRef(null);
 
   const scrollBy = x => {
-    const index = tabs.indexOf(currentTab);
+    const index = tabs.find(tab => tab.key === currentTab);
     tabsRef.current.scrollLeft += x;
 
     if (x < 0 && index > 0) {
-      setCurrentTab(tabs[index - 1]);
+      setCurrentTab(tabs[index - 1].key);
     }
 
     if (x > 0 && index < tabs.length - 1) {
-      setCurrentTab(tabs[index + 1]);
+      setCurrentTab(tabs[index + 1].key);
     }
   };
 
@@ -27,19 +27,19 @@ const TabBar = ({ tabs, currentTab, setCurrentTab }) => {
 
       <ul id="tabs" ref={tabsRef} className="flex overflow-x-scroll">
         {tabs.map(tab =>
-          currentTab === tab ? (
-            <li key={tab} className="mx-1 list-none">
+          currentTab === tab.key ? (
+            <li key={tab.key} className="mx-1 list-none">
               <div className="whitespace-no-wrap bg-gray-700 text-white rounded-md text-sm py-2 px-6 font-medium">
-                {tab}
+                {tab.name || 'Tab'}
               </div>
             </li>
           ) : (
-            <li key={tab} className="mx-1 list-none">
+            <li key={tab.key} className="mx-1 list-none">
               <div
                 className="bg-white whitespace-no-wrap rounded-md cursor-pointer text-sm py-2 px-6 font-medium hover:bg-gray-200"
-                onClick={() => setCurrentTab(tab)}
+                onClick={() => setCurrentTab(tab.key)}
               >
-                {tab}
+                {tab.name || 'Tab'}
               </div>
             </li>
           ),

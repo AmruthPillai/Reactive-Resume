@@ -18,14 +18,32 @@ const RightSidebar = () => {
   const { data, theme, settings } = state;
 
   const tabs = [
-    t('templates.title'),
-    t('colors.title'),
-    t('fonts.title'),
-    t('actions.title'),
-    t('settings.title'),
-    t('about.title'),
+    {
+      key: 'templates',
+      name: t('templates.title'),
+    },
+    {
+      key: 'colors',
+      name: t('colors.title'),
+    },
+    {
+      key: 'fonts',
+      name: t('fonts.title'),
+    },
+    {
+      key: 'actions',
+      name: t('actions.title'),
+    },
+    {
+      key: 'settings',
+      name: t('settings.title'),
+    },
+    {
+      key: 'about',
+      name: t('about.title'),
+    },
   ];
-  const [currentTab, setCurrentTab] = useState(t('settings.title'));
+  const [currentTab, setCurrentTab] = useState(tabs[0].key);
 
   const onChange = (key, value) => {
     dispatch({
@@ -41,17 +59,17 @@ const RightSidebar = () => {
 
   const renderTabs = () => {
     switch (currentTab) {
-      case t('templates.title'):
+      case tabs[0].key:
         return <TemplatesTab theme={theme} onChange={onChange} />;
-      case t('colors.title'):
+      case tabs[1].key:
         return <ColorsTab theme={theme} onChange={onChange} />;
-      case t('fonts.title'):
+      case tabs[2].key:
         return <FontsTab theme={theme} onChange={onChange} />;
-      case t('actions.title'):
+      case tabs[3].key:
         return <ActionsTab data={data} theme={theme} dispatch={dispatch} />;
-      case t('settings.title'):
+      case tabs[4].key:
         return <SettingsTab settings={settings} onChange={onChange} />;
-      case t('about.title'):
+      case tabs[5].key:
         return <AboutTab />;
       default:
         return null;
