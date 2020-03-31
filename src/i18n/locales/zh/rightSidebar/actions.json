@@ -11,16 +11,17 @@
   },
   "printResume": {
     "heading": "打印您的简历",
-    "body": "您可以在应用程序中随时按<1>Cmd/Ctrl + P</1>打印您的简历， 但这里有一个花哨的按钮来做同样的事情，只是'导致'这样做。",
+    "body": "You can click on the button below to generate a PDF instantly. Alternatively, you can also use <1>Cmd/Ctrl + P</1> but it would have different effects.",
     "buttons": {
+      "export": "Export",
       "print": "打印"
     }
   },
-  "loadDummyData": {
-    "heading": "加载模版数据",
-    "body": "不清楚用新的空白页面做什么？ 加载一些带有预置值的虚拟数据来查看恢复的格式，您可以从那里开始编辑。",
+  "loadDemoData": {
+    "heading": "Load Demo Data",
+    "body": "Unclear on what to do with a fresh blank page? Load some demo data with prepopulated values to see how a resume should look and you can start editing from there.",
     "buttons": {
-      "loadData": "装载数据"
+      "loadData": "Load Data"
     }
   },
   "reset": {
