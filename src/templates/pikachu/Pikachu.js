@@ -234,6 +234,7 @@ const Pikachu = () => {
 
   return (
     <div
+      className="p-10"
       style={{
         fontFamily: theme.font.family,
         backgroundColor: theme.colors.background,
