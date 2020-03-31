@@ -3,7 +3,7 @@ import get from 'lodash/get';
 import set from 'lodash/set';
 import remove from 'lodash/remove';
 
-import dummyData from '../assets/dummy/data.json';
+import demoData from '../assets/demo/data.json';
 import { move } from '../utils';
 
 const initialState = {
@@ -125,15 +125,15 @@ const reducer = (state, { type, payload }) => {
         ...state,
         ...payload,
       };
-    case 'load_dummy_data':
+    case 'load_demo_data':
       return {
         ...state,
-        ...dummyData,
+        ...demoData,
       };
     case 'reset':
       return initialState;
     default:
-      throw state;
+      return state;
   }
 };
 

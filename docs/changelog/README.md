@@ -8,6 +8,18 @@ All notable changes to this project will be documented in this file.
 
 ## March 2020
 
+### March 31, 2020
+
+- Migrated to PDF Generation using `html2canvas` & `jsPDF`
+- Added Language: French
+- Added Language: Kannada
+
+### March 30, 2020
+
+- Dockerize App for Faster Development/Deployments
+- Added Translation Systems
+- Added Language: Hindi
+
 ### March 29, 2020
 
 - Add Issue Templates in GitHub for Bug Reports and Feature Requests

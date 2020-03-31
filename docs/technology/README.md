@@ -26,6 +26,18 @@ A modern JavaScript utility library delivering modularity, performance & extras.
 
 [Learn more &rarr; ](https://lodash.com/)
 
+## html2canvas
+
+The script allows you to take "screenshots" of webpages or parts of it, directly on the users browser. The screenshot is based on the DOM and as such may not be 100% accurate to the real representation as it does not make an actual screenshot, but builds the screenshot based on the information available on the page.
+
+[Learn more &rarr; ](https://github.com/niklasvh/html2canvas)
+
+## jsPDF
+
+A library to generate PDFs in JavaScript.
+
+[Learn more &rarr; ](https://github.com/MrRio/jsPDF)
+
 ## Google Fonts
 
 Google Fonts is a great repository of open type fonts that are allowed to be used on the web. Reactive Resume uses Google Fonts to load different font families and allow the user to choose which font he/she would like on their resume.
