@@ -10,7 +10,7 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 ## install and cache app dependencies
 COPY package.json /usr/src/app/package.json
 
-# install app dependencies
+## install app dependencies
 RUN npm install --silent
 
 ## start app
