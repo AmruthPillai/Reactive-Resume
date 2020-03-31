@@ -10,12 +10,8 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 ## install and cache app dependencies
 COPY package.json /usr/src/app/package.json
 
-## create user "node" and give permissions
-RUN chown -R node:node . && chmod -R 755 .
-USER node
-
 # install app dependencies
-RUN npm install
+RUN npm install --silent
 
 ## start app
 CMD ["npm", "start"]
