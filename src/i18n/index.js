@@ -9,8 +9,16 @@ const languages = [
     name: 'English',
   },
   {
+    code: 'fr',
+    name: 'French',
+  },
+  {
     code: 'hi',
     name: 'Hindi',
+  },
+  {
+    code: 'kn',
+    name: 'Kannada',
   },
 ];
 
