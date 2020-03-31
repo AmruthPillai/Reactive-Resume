@@ -10,6 +10,7 @@ title: Home
 
 ![Build & Deploy](https://github.com/AmruthPillai/Reactive-Resume/workflows/Build%20&%20Deploy/badge.svg)
 ![Code Style](https://badgen.net/badge/code%20style/airbnb/ff5a5f?icon=airbnb)
+![Docker Pulls](https://img.shields.io/docker/pulls/amruthpillai/reactive-resume)
 ![Localization](https://badges.crowdin.net/reactive-resume/localized.svg)
 ![GitHub](https://img.shields.io/github/license/AmruthPillai/Reactive-Resume)
 

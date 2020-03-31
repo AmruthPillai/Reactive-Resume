@@ -6,6 +6,32 @@ title: Deployment
 
 You've built the source code successfully and now you're on your way to deploying the app. There are some methods setup to deploy a version of the app without even having to build the source, so we'll run through all the steps here:
 
+## Docker
+
+If you are a fan of Docker as I am, you'd be happy to know that the app can be set up and running within seconds thanks to having set up both environments of Docker.
+
+If you would like to run the **development server** through Docker, which also supports hot-reloads, just run:
+
+```
+npm run docker:dev
+OR
+docker-compose -f docker-compose-dev.yml up -d --build
+```
+
+If you would like to run the **production version of the app**, powered by NGINX, just run:
+
+```
+npm run docker
+OR
+docker-compose up -d --build
+```
+
+You can also alternatively pull the image from [Docker Hub](https://hub.docker.com/r/amruthpillai/reactive-resume) where the latest image is always built from source control.
+
+```
+docker pull amruthpillai/reactive-resume
+```
+
 ## Deploying to Heroku
 
 Heroku is a cloud platform that lets companies build, deliver, monitor and scale apps — we're the fastest way to go from idea to URL, bypassing all those infrastructure headaches.

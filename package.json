@@ -43,7 +43,9 @@
     "predeploy:app": "npm run build",
     "deploy:app": "firebase deploy --only hosting:app",
     "predeploy:docs": "npm run docs:build",
-    "deploy:docs": "firebase deploy --only hosting:docs"
+    "deploy:docs": "firebase deploy --only hosting:docs",
+    "docker:dev": "docker-compose -f docker-compose-dev.yml up -d --build",
+    "docker": "docker-compose up -d --build"
   },
   "eslintConfig": {
     "extends": "react-app"
