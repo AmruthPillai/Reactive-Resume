@@ -18,7 +18,9 @@ If you are already familiar with the Crowdin platform and want to contribute you
 ### Completed Translations
 
 - English `en`
+- French `fr`
 - Hindi `hi`
+- Kannada `kn`
 
 ### Pending Translations
 
@@ -31,14 +33,12 @@ If you are already familiar with the Crowdin platform and want to contribute you
 - Danish `da`
 - Dutch `nl`
 - Finnish `fi`
-- French `fr`
 - German `de`
 - Greek `el`
 - Hebrew `he`
 - Hungarian `hu`
 - Italian `it`
 - Japanese `ja`
-- Kannada `kn`
 - Korean `ko`
 - Malayalam `ml`
 - Marathi `mr`
