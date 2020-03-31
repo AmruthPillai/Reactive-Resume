@@ -25,16 +25,14 @@ const ActionsTab = ({ data, theme, dispatch }) => {
   };
 
   const printAsPdf = () => {
-    pageElement.current.style.maxHeight = 'fit-content';
+    pageElement.current.style.display = 'table';
     pageElement.current.style.overflow = 'visible';
+
     html2canvas(pageElement.current, {
-      scale: 6,
+      scale: 5,
       useCORS: true,
       allowTaint: true,
     }).then(canvas => {
-      pageElement.current.style.maxHeight = '29.7cm';
-      pageElement.current.style.overflow = 'scroll';
-
       const image = canvas.toDataURL('image/jpeg', 1.0);
       const doc = new jsPDF('p', 'mm', 'a4');
       const pageWidth = doc.internal.pageSize.getWidth();
@@ -49,6 +47,9 @@ const ActionsTab = ({ data, theme, dispatch }) => {
 
       const marginX = (pageWidth - canvasWidth) / 2;
       const marginY = (pageHeight - canvasHeight) / 2;
+
+      pageElement.current.style.display = 'block';
+      pageElement.current.style.overflow = 'scroll';
 
       doc.addImage(image, 'JPEG', marginX, marginY, canvasWidth, canvasHeight, null, 'SLOW');
       doc.save(`RxResume_${Date.now()}.pdf`);

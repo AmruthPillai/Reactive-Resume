@@ -32,7 +32,7 @@ const App = () => {
       <div className="h-screen overflow-hidden grid grid-cols-5 items-center">
         <LeftSidebar />
 
-        <div className="z-0 h-screen col-span-3 overflow-scroll flex justify-center items-center">
+        <div className="z-0 h-screen col-span-3 flex overflow-scroll justify-center items-center">
           <div id="page" ref={pageRef} className="shadow-2xl">
             {templates.find(x => theme.layout.toLowerCase() === x.key).component()}
           </div>
