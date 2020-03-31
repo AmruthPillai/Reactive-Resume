@@ -1,9 +1,16 @@
+/* eslint-disable new-cap */
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useRef } from 'react';
+import React, { useRef, useContext } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
+import html2canvas from 'html2canvas';
+import * as jsPDF from 'jspdf';
+
+import PageContext from '../../../context/PageContext';
 
 const ActionsTab = ({ data, theme, dispatch }) => {
+  const pageContext = useContext(PageContext);
+  const { pageElement } = pageContext;
   const { t } = useTranslation('rightSidebar');
   const fileInputRef = useRef(null);
 
@@ -15,6 +22,35 @@ const ActionsTab = ({ data, theme, dispatch }) => {
       dispatch({ type: 'save_data' });
     });
     fr.readAsText(event.target.files[0]);
+  };
+
+  const printAsPdf = () => {
+    pageElement.current.style.maxHeight = 'fit-content';
+    pageElement.current.style.overflow = 'visible';
+    html2canvas(pageElement.current, {
+      useCORS: true,
+      allowTaint: true,
+    }).then(canvas => {
+      pageElement.current.style.maxHeight = '29.7cm';
+      pageElement.current.style.overflow = 'scroll';
+      const image = canvas.toDataURL('image/jpeg', 1.0);
+      const doc = new jsPDF('p', 'px', 'a4');
+      const pageWidth = doc.internal.pageSize.getWidth();
+      const pageHeight = doc.internal.pageSize.getHeight();
+
+      const widthRatio = pageWidth / canvas.width;
+      const heightRatio = pageHeight / canvas.height;
+      const ratio = widthRatio > heightRatio ? heightRatio : widthRatio;
+
+      const canvasWidth = canvas.width * ratio;
+      const canvasHeight = canvas.height * ratio;
+
+      const marginX = (pageWidth - canvasWidth) / 2;
+      const marginY = (pageHeight - canvasHeight) / 2;
+
+      doc.addImage(image, 'JPEG', marginX, marginY, canvasWidth, canvasHeight);
+      doc.output('dataurlnewwindow');
+    });
   };
 
   const exportToJson = () => {
@@ -90,7 +126,7 @@ const ActionsTab = ({ data, theme, dispatch }) => {
 
         <button
           type="button"
-          onClick={() => window.print()}
+          onClick={printAsPdf}
           className="mt-4 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-5 rounded"
         >
           <div className="flex justify-center items-center">

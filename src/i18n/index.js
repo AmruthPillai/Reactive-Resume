@@ -23,10 +23,9 @@ const languages = [
 ];
 
 i18n.use(initReactI18next).init({
+  resources,
   lng: 'en',
   fallbackLng: 'en',
-  resources,
-  debug: true,
   ns: ['app', 'leftSidebar', 'rightSidebar'],
   defaultNS: 'app',
 });

@@ -43,7 +43,7 @@ const RightSidebar = () => {
       name: t('about.title'),
     },
   ];
-  const [currentTab, setCurrentTab] = useState(tabs[0].key);
+  const [currentTab, setCurrentTab] = useState(tabs[3].key);
 
   const onChange = (key, value) => {
     dispatch({

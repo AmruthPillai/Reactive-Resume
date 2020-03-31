@@ -66,8 +66,8 @@ ul li {
 
   #page {
     width: 21cm;
-    height: 29.7cm;
-    padding: 2.5em;
+    min-height: 29.7cm;
+    max-height: 29.7cm;
     zoom: 0.8;
     overflow: scroll;
     background-color: white;
@@ -90,7 +90,6 @@ ul li {
 
   #page,
   #page * {
-    page-break-inside: avoid;
     visibility: visible;
   }
 
