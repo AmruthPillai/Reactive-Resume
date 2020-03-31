@@ -28,13 +28,15 @@ const ActionsTab = ({ data, theme, dispatch }) => {
     pageElement.current.style.maxHeight = 'fit-content';
     pageElement.current.style.overflow = 'visible';
     html2canvas(pageElement.current, {
+      scale: 6,
       useCORS: true,
       allowTaint: true,
     }).then(canvas => {
       pageElement.current.style.maxHeight = '29.7cm';
       pageElement.current.style.overflow = 'scroll';
+
       const image = canvas.toDataURL('image/jpeg', 1.0);
-      const doc = new jsPDF('p', 'px', 'a4');
+      const doc = new jsPDF('p', 'mm', 'a4');
       const pageWidth = doc.internal.pageSize.getWidth();
       const pageHeight = doc.internal.pageSize.getHeight();
 
@@ -48,8 +50,8 @@ const ActionsTab = ({ data, theme, dispatch }) => {
       const marginX = (pageWidth - canvasWidth) / 2;
       const marginY = (pageHeight - canvasHeight) / 2;
 
-      doc.addImage(image, 'JPEG', marginX, marginY, canvasWidth, canvasHeight);
-      doc.output('dataurlnewwindow');
+      doc.addImage(image, 'JPEG', marginX, marginY, canvasWidth, canvasHeight, null, 'SLOW');
+      doc.save(`RxResume_${Date.now()}.pdf`);
     });
   };
 
@@ -62,8 +64,8 @@ const ActionsTab = ({ data, theme, dispatch }) => {
     dlAnchor.click();
   };
 
-  const loadDummyData = () => {
-    dispatch({ type: 'load_dummy_data' });
+  const loadDemoData = () => {
+    dispatch({ type: 'load_demo_data' });
     dispatch({ type: 'save_data' });
   };
 
@@ -118,39 +120,52 @@ const ActionsTab = ({ data, theme, dispatch }) => {
 
         <div className="text-sm">
           <Trans t={t} i18nKey="actions.printResume.body">
-            You can simply press <pre className="inline font-bold">Cmd/Ctrl + P</pre> at any time
-            while you&apos;re in the app to print your resume, but here&apos;s a fancy button to do
-            the same thing, just &apos;cause.
+            You can click on the button below to generate a PDF instantly. Alternatively, you can
+            also use <pre className="inline font-bold">Cmd/Ctrl + P</pre> but it would have
+            different effects.
           </Trans>
         </div>
 
-        <button
-          type="button"
-          onClick={printAsPdf}
-          className="mt-4 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-5 rounded"
-        >
-          <div className="flex justify-center items-center">
-            <i className="material-icons mr-2 font-bold text-base">print</i>
-            <span className="text-sm">{t('actions.printResume.buttons.print')}</span>
-          </div>
-        </button>
+        <div className="mt-1 grid grid-cols-2 col-gap-6">
+          <button
+            type="button"
+            onClick={printAsPdf}
+            className="mt-4 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-5 rounded"
+          >
+            <div className="flex justify-center items-center">
+              <i className="material-icons mr-2 font-bold text-base">import_export</i>
+              <span className="text-sm">{t('actions.printResume.buttons.export')}</span>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            onClick={printAsPdf}
+            className="mt-4 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-5 rounded"
+          >
+            <div className="flex justify-center items-center">
+              <i className="material-icons mr-2 font-bold text-base">print</i>
+              <span className="text-sm">{t('actions.printResume.buttons.print')}</span>
+            </div>
+          </button>
+        </div>
       </div>
 
       <hr className="my-6" />
 
       <div className="shadow text-center p-5">
-        <h6 className="font-bold text-sm mb-2">{t('actions.loadDummyData.heading')}</h6>
+        <h6 className="font-bold text-sm mb-2">{t('actions.loadDemoData.heading')}</h6>
 
-        <div className="text-sm">{t('actions.loadDummyData.body')}</div>
+        <div className="text-sm">{t('actions.loadDemoData.body')}</div>
 
         <button
           type="button"
-          onClick={loadDummyData}
+          onClick={loadDemoData}
           className="mt-4 bg-green-600 hover:bg-green-700 text-white text-sm font-medium py-2 px-5 rounded"
         >
           <div className="flex justify-center items-center">
             <i className="material-icons mr-2 font-bold text-base">flight_takeoff</i>
-            <span className="text-sm">{t('actions.loadDummyData.buttons.loadData')}</span>
+            <span className="text-sm">{t('actions.loadDemoData.buttons.loadData')}</span>
           </div>
         </button>
       </div>

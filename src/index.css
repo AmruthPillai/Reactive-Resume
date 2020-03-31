@@ -68,7 +68,8 @@ ul li {
     width: 21cm;
     min-height: 29.7cm;
     max-height: 29.7cm;
-    zoom: 0.8;
+    transform: scale(0.8);
+    transform-origin: center;
     overflow: scroll;
     background-color: white;
   }
