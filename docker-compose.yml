@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  reactive-resume:
+    container_name: reactive-resume
+    build:
+      context: .
+      dockerfile: Dockerfile
+    expose:
+      - '80'
+    ports:
+      - '80:80'

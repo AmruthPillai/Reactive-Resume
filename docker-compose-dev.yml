@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  reactive-resume:
+    container_name: reactive-resume
+    tty: true
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    volumes:
+      - '.:/usr/src/app'
+      - '/usr/src/app/node_modules'
+    expose:
+      - '3001'
+    ports:
+      - '3001:3000'
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true

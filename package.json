@@ -1,22 +1,31 @@
 {
   "name": "reactive-resume",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "13.12.0",
+    "npm": "6.14.4"
+  },
   "dependencies": {
-    "@material-ui/core": "^4.9.7",
+    "@fullhuman/postcss-purgecss": "^2.1.0",
     "@testing-library/jest-dom": "^5.3.0",
-    "@testing-library/react": "^10.0.1",
-    "@testing-library/user-event": "^10.0.0",
+    "@testing-library/react": "^10.0.2",
+    "@testing-library/user-event": "^10.0.1",
+    "@vuepress/plugin-google-analytics": "^1.4.0",
+    "autoprefixer": "^9.7.5",
     "axios": "^0.19.2",
     "i18next": "^19.3.4",
     "lodash": "^4.17.15",
-    "react": "^16.13.1",
+    "postcss-cli": "^7.1.0",
     "react-dom": "^16.13.1",
     "react-i18next": "^11.3.4",
     "react-markdown": "^4.3.1",
     "react-scripts": "3.4.1",
     "react-toastify": "^5.5.0",
-    "uuid": "^7.0.2"
+    "react": "^16.13.1",
+    "tailwindcss": "^1.2.0",
+    "uuid": "^7.0.2",
+    "vuepress": "^1.4.0"
   },
   "scripts": {
     "css": "postcss src/assets/tailwind/tailwind.src.css -o src/assets/tailwind/tailwind.css",
@@ -34,7 +43,9 @@
     "predeploy:app": "npm run build",
     "deploy:app": "firebase deploy --only hosting:app",
     "predeploy:docs": "npm run docs:build",
-    "deploy:docs": "firebase deploy --only hosting:docs"
+    "deploy:docs": "firebase deploy --only hosting:docs",
+    "docker:dev": "docker-compose -f docker-compose-dev.yml up -d --build",
+    "docker": "docker-compose up -d --build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -52,19 +63,13 @@
     ]
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^2.1.0",
-    "@vuepress/plugin-google-analytics": "^1.4.0",
-    "autoprefixer": "^9.7.5",
-    "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.10.1",
-    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^3.0.0",
-    "postcss-cli": "^7.1.0",
-    "tailwindcss": "^1.2.0",
-    "vuepress": "^1.4.0"
+    "eslint-plugin-react": "^7.19.0",
+    "eslint": "^6.8.0"
   }
 }
