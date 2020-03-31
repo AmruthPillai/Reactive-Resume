@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  reactive-resume:
+    container_name: reactive-resume
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/usr/src/app'
+      - '/usr/src/app/node_modules'
+    ports:
+      - '3001:3000'
+    environment:
+      - NODE_ENV=development
