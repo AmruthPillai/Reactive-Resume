@@ -13,7 +13,6 @@ import ItemHeading from '../../../shared/ItemHeading';
 import AddItemButton from '../../../shared/AddItemButton';
 
 const ReferencesTab = ({ data, onChange }) => {
-  const { t } = useTranslation();
   const context = useContext(AppContext);
   const { dispatch } = context;
 
@@ -47,7 +46,7 @@ const ReferencesTab = ({ data, onChange }) => {
           </div>
           <div className="col-span-5">
             <TextField
-              placeholder={t('heading.placeholder')}
+              placeholder="Heading"
               value={data.references.heading}
               onChange={v => onChange('data.references.heading', v)}
             />
@@ -82,7 +81,7 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <TextField
         className="mb-6"
         label={t('references.name.label')}
-        placeholder={t('references.name.placeholder')}
+        placeholder="Richard Hendricks"
         value={item.name}
         onChange={v => onChange(`${identifier}name`, v)}
       />
@@ -90,7 +89,7 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <TextField
         className="mb-6"
         label={t('references.position.label')}
-        placeholder={t('references.position.placeholder')}
+        placeholder="CEO, Pied Piper"
         value={item.position}
         onChange={v => onChange(`${identifier}position`, v)}
       />
@@ -115,7 +114,6 @@ const Form = ({ item, onChange, identifier = '' }) => {
         rows="5"
         className="mb-6"
         label={t('app:item.description.label')}
-        placeholder={t('references.description.placeholder')}
         value={item.description}
         onChange={v => onChange(`${identifier}description`, v)}
       />

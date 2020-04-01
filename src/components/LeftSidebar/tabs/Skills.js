@@ -8,7 +8,6 @@ import { addItem, deleteItem } from '../../../utils';
 import ItemHeading from '../../../shared/ItemHeading';
 
 const SkillsTab = ({ data, onChange }) => {
-  const { t } = useTranslation();
   const context = useContext(AppContext);
   const { dispatch } = context;
 
@@ -23,7 +22,7 @@ const SkillsTab = ({ data, onChange }) => {
         </div>
         <div className="col-span-5">
           <TextField
-            placeholder={t('heading.placeholder')}
+            placeholder="Heading"
             value={data.skills.heading}
             onChange={v => onChange('data.skills.heading', v)}
           />
@@ -42,12 +41,10 @@ const SkillsTab = ({ data, onChange }) => {
 };
 
 const Form = ({ item, onChange }) => {
-  const { t } = useTranslation('leftSidebar');
-
   return (
     <input
       className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-      placeholder={t('skills.item.placeholder')}
+      placeholder="Team Building &amp; Training"
       value={item}
       onChange={e => onChange(e.target.value)}
       type="text"
