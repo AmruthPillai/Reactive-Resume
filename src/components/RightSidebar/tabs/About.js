@@ -101,7 +101,7 @@ const AboutTab = () => {
       <div className="mt-5">
         <p className="text-xs font-gray-600 text-center">
           <Trans t={t} i18nKey="about.footer.credit">
-            Reactive Resume is a project by
+            Made with Love by
             <a
               className="font-bold hover:underline"
               href="https://www.amruthpillai.com/"
@@ -110,7 +110,6 @@ const AboutTab = () => {
             >
               Amruth Pillai
             </a>
-            .
           </Trans>
         </p>
         <p className="text-xs font-gray-600 text-center">{t('about.footer.thanks')}</p>

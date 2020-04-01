@@ -13,7 +13,6 @@ import AddItemButton from '../../../shared/AddItemButton';
 import ItemHeading from '../../../shared/ItemHeading';
 
 const EducationTab = ({ data, onChange }) => {
-  const { t } = useTranslation();
   const context = useContext(AppContext);
   const { dispatch } = context;
 
@@ -28,7 +27,7 @@ const EducationTab = ({ data, onChange }) => {
         </div>
         <div className="col-span-5">
           <TextField
-            placeholder={t('heading.placeholder')}
+            placeholder="Heading"
             value={data.education.heading}
             onChange={v => onChange('data.education.heading', v)}
           />
@@ -62,7 +61,7 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <TextField
         className="mb-6"
         label={t('education.name.label')}
-        placeholder={t('education.name.placeholder')}
+        placeholder="Harvard University"
         value={item.name}
         onChange={v => onChange(`${identifier}name`, v)}
       />
@@ -70,7 +69,7 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <TextField
         className="mb-6"
         label={t('education.major.label')}
-        placeholder={t('education.major.placeholder')}
+        placeholder="Masters in Computer Science"
         value={item.major}
         onChange={v => onChange(`${identifier}major`, v)}
       />
@@ -87,7 +86,7 @@ const Form = ({ item, onChange, identifier = '' }) => {
         <TextField
           className="mb-6"
           label={t('app:item.startDate.label')}
-          placeholder={t('app:item.startDate.placeholder')}
+          placeholder="March 2018"
           value={item.start}
           onChange={v => onChange(`${identifier}start`, v)}
         />
@@ -95,7 +94,7 @@ const Form = ({ item, onChange, identifier = '' }) => {
         <TextField
           className="mb-6"
           label={t('app:item.endDate.label')}
-          placeholder={t('app:item.endDate.placeholder')}
+          placeholder="June 2022"
           value={item.end}
           onChange={v => onChange(`${identifier}end`, v)}
         />
@@ -105,7 +104,6 @@ const Form = ({ item, onChange, identifier = '' }) => {
         rows="5"
         className="mb-6"
         label={t('app:item.description.label')}
-        placeholder={t('education.description.placeholder')}
         value={item.description}
         onChange={v => onChange(`${identifier}description`, v)}
       />

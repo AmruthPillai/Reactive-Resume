@@ -4,12 +4,16 @@ const PageContext = React.createContext(null);
 const { Provider } = PageContext;
 
 const StateProvider = ({ children }) => {
-  const [pageElement, setPageElement] = useState(null);
+  const [panZoomRef, setPanZoomRef] = useState(null);
+  const [pageRef, setPageRef] = useState(null);
+
   return (
     <Provider
       value={{
-        pageElement,
-        setPageElement,
+        pageRef,
+        setPageRef,
+        panZoomRef,
+        setPanZoomRef,
       }}
     >
       {children}
