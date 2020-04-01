@@ -7,54 +7,13 @@ import html2canvas from 'html2canvas';
 import * as jsPDF from 'jspdf';
 
 import PageContext from '../../../context/PageContext';
+import { importJson } from '../../../utils';
 
 const ActionsTab = ({ data, theme, dispatch }) => {
   const pageContext = useContext(PageContext);
-  const { pageElement } = pageContext;
+  const { pageRef, panZoomRef } = pageContext;
   const { t } = useTranslation('rightSidebar');
   const fileInputRef = useRef(null);
-
-  const importJson = event => {
-    const fr = new FileReader();
-    fr.addEventListener('load', () => {
-      const importedObject = JSON.parse(fr.result);
-      dispatch({ type: 'import_data', payload: importedObject });
-      dispatch({ type: 'save_data' });
-    });
-    fr.readAsText(event.target.files[0]);
-  };
-
-  const printAsPdf = () => {
-    pageElement.current.style.display = 'table';
-    pageElement.current.style.overflow = 'visible';
-
-    html2canvas(pageElement.current, {
-      scale: 5,
-      useCORS: true,
-      allowTaint: true,
-    }).then(canvas => {
-      const image = canvas.toDataURL('image/jpeg', 1.0);
-      const doc = new jsPDF('p', 'mm', 'a4');
-      const pageWidth = doc.internal.pageSize.getWidth();
-      const pageHeight = doc.internal.pageSize.getHeight();
-
-      const widthRatio = pageWidth / canvas.width;
-      const heightRatio = pageHeight / canvas.height;
-      const ratio = widthRatio > heightRatio ? heightRatio : widthRatio;
-
-      const canvasWidth = canvas.width * ratio;
-      const canvasHeight = canvas.height * ratio;
-
-      const marginX = (pageWidth - canvasWidth) / 2;
-      const marginY = (pageHeight - canvasHeight) / 2;
-
-      pageElement.current.style.display = 'block';
-      pageElement.current.style.overflow = 'scroll';
-
-      doc.addImage(image, 'JPEG', marginX, marginY, canvasWidth, canvasHeight, null, 'SLOW');
-      doc.save(`RxResume_${Date.now()}.pdf`);
-    });
-  };
 
   const exportToJson = () => {
     const backupObj = { data, theme };
@@ -63,6 +22,39 @@ const ActionsTab = ({ data, theme, dispatch }) => {
     dlAnchor.setAttribute('href', dataStr);
     dlAnchor.setAttribute('download', `RxResumeBackup_${Date.now()}.json`);
     dlAnchor.click();
+  };
+
+  const printAsPdf = () => {
+    panZoomRef.current.autoCenter(1);
+    panZoomRef.current.reset();
+
+    setTimeout(() => {
+      html2canvas(pageRef.current, {
+        scale: 5,
+        useCORS: true,
+        allowTaint: true,
+      }).then(canvas => {
+        const image = canvas.toDataURL('image/jpeg', 1.0);
+        const doc = new jsPDF('p', 'mm', 'a4');
+        const pageWidth = doc.internal.pageSize.getWidth();
+        const pageHeight = doc.internal.pageSize.getHeight();
+
+        const widthRatio = pageWidth / canvas.width;
+        const heightRatio = pageHeight / canvas.height;
+        const ratio = widthRatio > heightRatio ? heightRatio : widthRatio;
+
+        const canvasWidth = canvas.width * ratio;
+        const canvasHeight = canvas.height * ratio;
+
+        const marginX = (pageWidth - canvasWidth) / 2;
+        const marginY = (pageHeight - canvasHeight) / 2;
+
+        panZoomRef.current.autoCenter(0.7);
+
+        doc.addImage(image, 'JPEG', marginX, marginY, canvasWidth, canvasHeight, null, 'SLOW');
+        doc.save(`RxResume_${Date.now()}.pdf`);
+      });
+    }, 250);
   };
 
   const loadDemoData = () => {
@@ -86,7 +78,12 @@ const ActionsTab = ({ data, theme, dispatch }) => {
 
         <p className="text-sm">{t('actions.importExport.body')}</p>
 
-        <input ref={fileInputRef} type="file" className="hidden" onChange={importJson} />
+        <input
+          ref={fileInputRef}
+          type="file"
+          className="hidden"
+          onChange={e => importJson(e, dispatch)}
+        />
         <a id="downloadAnchor" className="hidden" />
 
         <div className="mt-4 grid grid-cols-2 col-gap-6">

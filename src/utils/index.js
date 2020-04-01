@@ -90,4 +90,25 @@ const moveItemDown = (dispatch, key, value) => {
   saveData(dispatch);
 };
 
-export { move, hexToRgb, copyToClipboard, saveData, addItem, deleteItem, moveItemUp, moveItemDown };
+const importJson = (event, dispatch) => {
+  const fr = new FileReader();
+  fr.addEventListener('load', () => {
+    const importedObject = JSON.parse(fr.result);
+    console.log(importedObject);
+    dispatch({ type: 'import_data', payload: importedObject });
+    dispatch({ type: 'save_data' });
+  });
+  fr.readAsText(event.target.files[0]);
+};
+
+export {
+  move,
+  hexToRgb,
+  copyToClipboard,
+  saveData,
+  addItem,
+  deleteItem,
+  moveItemUp,
+  moveItemDown,
+  importJson,
+};
