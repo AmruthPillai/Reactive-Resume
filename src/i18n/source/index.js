@@ -3,7 +3,9 @@ import leftSidebar from './leftSidebar';
 import rightSidebar from './rightSidebar';
 
 export default {
-  app,
-  leftSidebar,
-  rightSidebar,
+  en: {
+    app,
+    leftSidebar,
+    rightSidebar,
+  },
 };
