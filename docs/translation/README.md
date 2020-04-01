@@ -17,6 +17,7 @@ If you are already familiar with the Crowdin platform and want to contribute you
 
 ### Completed Translations
 
+- Chinese Simplified `zh`
 - English `en`
 - French `fr`
 - Hindi `hi`
@@ -28,7 +29,6 @@ If you are already familiar with the Crowdin platform and want to contribute you
 - Arabic `ar`
 - Assamese `as`
 - Catalan `ca`
-- Chinese Simplified `zh`
 - Czech `cs`
 - Danish `da`
 - Dutch `nl`
