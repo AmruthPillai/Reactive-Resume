@@ -117,7 +117,7 @@ const Gengar = () => {
     <div key={x.title} className="mb-3">
       <h6 className="font-semibold">{x.title}</h6>
       <p className="text-xs">{x.subtitle}</p>
-      <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+      <ReactMarkdown className="mt-2 text-sm break-words" source={x.description} />
     </div>
   );
 
