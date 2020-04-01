@@ -20,7 +20,7 @@ const ProfileTab = ({ data, onChange }) => {
         <TextField
           className="mb-6"
           label={t('profile.firstName.label')}
-          placeholder={t('profile.firstName.placeholder')}
+          placeholder="Jane"
           value={data.profile.firstName}
           onChange={v => onChange('data.profile.firstName', v)}
         />
@@ -28,7 +28,7 @@ const ProfileTab = ({ data, onChange }) => {
         <TextField
           className="mb-6"
           label={t('profile.lastName.label')}
-          placeholder={t('profile.lastName.placeholder')}
+          placeholder="Doe"
           value={data.profile.lastName}
           onChange={v => onChange('data.profile.lastName', v)}
         />
@@ -37,7 +37,7 @@ const ProfileTab = ({ data, onChange }) => {
       <TextField
         className="mb-6"
         label={t('profile.subtitle.label')}
-        placeholder={t('profile.subtitle.placeholder')}
+        placeholder="Full-Stack Web Developer"
         value={data.profile.subtitle}
         onChange={v => onChange('data.profile.subtitle', v)}
       />
@@ -47,7 +47,7 @@ const ProfileTab = ({ data, onChange }) => {
       <TextField
         className="mb-6"
         label={t('profile.address.line1.label')}
-        placeholder={t('profile.address.line1.placeholder')}
+        placeholder="Palladium Complex"
         value={data.profile.address.line1}
         onChange={v => onChange('data.profile.address.line1', v)}
       />
@@ -55,7 +55,7 @@ const ProfileTab = ({ data, onChange }) => {
       <TextField
         className="mb-6"
         label={t('profile.address.line2.label')}
-        placeholder={t('profile.address.line2.placeholder')}
+        placeholder="140 E 14th St"
         value={data.profile.address.line2}
         onChange={v => onChange('data.profile.address.line2', v)}
       />
@@ -63,7 +63,7 @@ const ProfileTab = ({ data, onChange }) => {
       <TextField
         className="mb-6"
         label={t('profile.address.line3.label')}
-        placeholder={t('profile.address.line3.placeholder')}
+        placeholder="New York, NY 10003 USA"
         value={data.profile.address.line3}
         onChange={v => onChange('data.profile.address.line3', v)}
       />
@@ -81,7 +81,7 @@ const ProfileTab = ({ data, onChange }) => {
       <TextField
         className="mb-6"
         label={t('profile.website.label')}
-        placeholder="google.com"
+        placeholder="janedoe.me"
         value={data.profile.website}
         onChange={v => onChange('data.profile.website', v)}
       />
@@ -89,7 +89,7 @@ const ProfileTab = ({ data, onChange }) => {
       <TextField
         className="mb-6"
         label={t('profile.email.label')}
-        placeholder="john.doe@example.com"
+        placeholder="jane.doe@example.com"
         value={data.profile.email}
         onChange={v => onChange('data.profile.email', v)}
       />

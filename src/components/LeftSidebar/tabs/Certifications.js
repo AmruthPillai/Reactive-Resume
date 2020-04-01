@@ -13,7 +13,6 @@ import ItemHeading from '../../../shared/ItemHeading';
 import AddItemButton from '../../../shared/AddItemButton';
 
 const CertificationsTab = ({ data, onChange }) => {
-  const { t } = useTranslation();
   const context = useContext(AppContext);
   const { dispatch } = context;
 
@@ -28,7 +27,7 @@ const CertificationsTab = ({ data, onChange }) => {
         </div>
         <div className="col-span-5">
           <TextField
-            placeholder={t('heading.placeholder')}
+            placeholder="Heading"
             value={data.certifications.heading}
             onChange={v => onChange('data.certifications.heading', v)}
           />
@@ -62,7 +61,7 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <TextField
         className="mb-6"
         label={t('certifications.title.label')}
-        placeholder={t('certifications.title.placeholder')}
+        placeholder="CS50: Intro to Computer Science"
         value={item.title}
         onChange={v => onChange(`${identifier}title`, v)}
       />
@@ -70,7 +69,7 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <TextField
         className="mb-6"
         label={t('certifications.subtitle.label')}
-        placeholder={t('certifications.subtitle.placeholder')}
+        placeholder="Harvard University"
         value={item.subtitle}
         onChange={v => onChange(`${identifier}subtitle`, v)}
       />
@@ -78,7 +77,6 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <TextArea
         className="mb-6"
         label={t('app:item.description.label')}
-        placeholder={t('certifications.description.placeholder')}
         value={item.description}
         onChange={v => onChange(`${identifier}description`, v)}
       />

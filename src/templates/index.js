@@ -2,6 +2,7 @@ import Onyx, { Image as OnyxPreview } from './onyx';
 import Pikachu, { Image as PikachuPreview } from './pikachu';
 import Gengar, { Image as GengarPreview } from './gengar';
 import Castform, { Image as CastformPreview } from './castform';
+import Glalie, { Image as GlaliePreview } from './glalie';
 
 export default [
   {
@@ -27,5 +28,11 @@ export default [
     name: 'Castform',
     component: Castform,
     preview: CastformPreview,
+  },
+  {
+    key: 'glalie',
+    name: 'Glalie',
+    component: Glalie,
+    preview: GlaliePreview,
   },
 ];

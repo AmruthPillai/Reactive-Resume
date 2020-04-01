@@ -22,4 +22,8 @@ title: Templates
     <h2 id="castform"><a href="#castform" class="header-anchor">#</a> Castform</h2>
     <img src="./images/Castform.png" />
   </div>
+  <div>
+    <h2 id="glalie"><a href="#glalie" class="header-anchor">#</a> Glalie</h2>
+    <img src="./images/Glalie.png" />
+  </div>
 </div>

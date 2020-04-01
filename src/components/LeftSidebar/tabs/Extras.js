@@ -12,7 +12,6 @@ import ItemHeading from '../../../shared/ItemHeading';
 import AddItemButton from '../../../shared/AddItemButton';
 
 const ExtrasTab = ({ data, onChange }) => {
-  const { t } = useTranslation();
   const context = useContext(AppContext);
   const { dispatch } = context;
 
@@ -27,7 +26,7 @@ const ExtrasTab = ({ data, onChange }) => {
         </div>
         <div className="col-span-5">
           <TextField
-            placeholder={t('heading.placeholder')}
+            placeholder="Heading"
             value={data.extras.heading}
             onChange={v => onChange('data.extras.heading', v)}
           />
@@ -61,7 +60,7 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <TextField
         className="mb-6"
         label={t('extras.key.label')}
-        placeholder={t('extras.key.placeholder')}
+        placeholder="Date of Birth"
         value={item.key}
         onChange={v => onChange(`${identifier}key`, v)}
       />
@@ -69,7 +68,7 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <TextField
         className="mb-6"
         label={t('extras.value.label')}
-        placeholder={t('extras.value.placeholder')}
+        placeholder="6th August 1995"
         value={item.value}
         onChange={v => onChange(`${identifier}value`, v)}
       />

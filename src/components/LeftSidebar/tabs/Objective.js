@@ -6,7 +6,7 @@ import TextField from '../../../shared/TextField';
 import Checkbox from '../../../shared/Checkbox';
 
 const ObjectiveTab = ({ data, onChange }) => {
-  const { t } = useTranslation(['leftSidebar', 'app']);
+  const { t } = useTranslation('leftSidebar');
 
   return (
     <div>
@@ -19,7 +19,7 @@ const ObjectiveTab = ({ data, onChange }) => {
         </div>
         <div className="col-span-5">
           <TextField
-            placeholder={t('app:heading.placeholder')}
+            placeholder="Heading"
             value={data.objective.heading}
             onChange={v => onChange('data.objective.heading', v)}
           />
@@ -32,8 +32,8 @@ const ObjectiveTab = ({ data, onChange }) => {
         rows="15"
         className="mb-4"
         label={t('objective.objective.label')}
-        placeholder={t('objective.objective.placeholder')}
         value={data.objective.body}
+        placeholder="Looking for a challenging role in a reputable organization to utilize my technical, database, and management skills for the growth of the organization as well as to enhance my knowledge about new and emerging trends in the IT sector."
         onChange={v => onChange('data.objective.body', v)}
       />
     </div>

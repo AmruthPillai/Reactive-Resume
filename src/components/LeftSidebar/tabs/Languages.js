@@ -13,7 +13,6 @@ import AddItemButton from '../../../shared/AddItemButton';
 import ItemHeading from '../../../shared/ItemHeading';
 
 const LanguagesTab = ({ data, onChange }) => {
-  const { t } = useTranslation('app');
   const context = useContext(AppContext);
   const { dispatch } = context;
 
@@ -47,7 +46,7 @@ const LanguagesTab = ({ data, onChange }) => {
           </div>
           <div className="col-span-5">
             <TextField
-              placeholder={t('heading.placeholder')}
+              placeholder="Heading"
               value={data.languages.heading}
               onChange={v => onChange('data.languages.heading', v)}
             />
@@ -82,7 +81,7 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <TextField
         className="mb-6"
         label={t('languages.key.label')}
-        placeholder={t('languages.key.placeholder')}
+        placeholder="English"
         value={item.key}
         onChange={v => onChange(`${identifier}key`, v)}
       />
