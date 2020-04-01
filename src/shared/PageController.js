@@ -33,10 +33,6 @@ const PageController = () => {
           <i className="material-icons">save</i>
         </div>
 
-        <div className="p-3 hover:bg-gray-200 cursor-pointer flex">
-          <i className="material-icons">get_app</i>
-        </div>
-
         <div className="text-gray-400 p-3">|</div>
 
         <div className="p-3 hover:bg-gray-200 cursor-pointer flex">

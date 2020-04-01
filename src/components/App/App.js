@@ -41,7 +41,7 @@ const App = () => {
             ref={panZoomRef}
             minZoom="0.4"
             autoCenter
-            autoCenterZoomLevel={0.8}
+            autoCenterZoomLevel={0.7}
             enableBoundingBox
             boundaryRatioVertical={0.8}
             boundaryRatioHorizontal={0.8}
