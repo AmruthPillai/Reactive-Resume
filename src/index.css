@@ -8,6 +8,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
 
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
 html,
 body {
   height: 100%;
@@ -54,14 +63,6 @@ ul li {
 
   #tabs {
     scroll-behavior: smooth;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  #tabs::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
-    background: transparent;
   }
 
   #page {
