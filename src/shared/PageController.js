@@ -14,7 +14,10 @@ const PageController = () => {
   };
 
   return (
-    <div id="pageController" className="absolute z-20">
+    <div
+      id="pageController"
+      className="absolute z-20 opacity-75 hover:opacity-100 transition-all duration-150"
+    >
       <div className="px-8 border border-gray-200 rounded-full bg-white flex justify-center items-center select-none">
         <div className="p-3 hover:bg-gray-200 cursor-pointer flex" onClick={zoomIn}>
           <i className="material-icons">zoom_in</i>
