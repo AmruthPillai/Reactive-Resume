@@ -91,7 +91,7 @@ const Glalie = () => {
     data.objective.enable && (
       <div>
         <Heading title={data.objective.heading} />
-        <p className="text-sm px-4 text-justify">{data.objective.body}</p>
+        <p className="text-sm text-justify">{data.objective.body}</p>
       </div>
     );
 
@@ -236,8 +236,8 @@ const Glalie = () => {
 
   const ExtraItem = x => (
     <tr key={x.id}>
-      <td className="border font-medium px-4 py-2 text-sm">{x.key}</td>
-      <td className="border px-4 py-2 text-sm">{x.value}</td>
+      <td className="border font-medium px-4 py-2 text-xs">{x.key}</td>
+      <td className="border px-4 py-2 text-xs">{x.value}</td>
     </tr>
   );
 
@@ -246,7 +246,7 @@ const Glalie = () => {
     data.extras.enable && (
       <div>
         <Heading title={data.extras.heading} />
-        <table className="w-2/3 table-auto">
+        <table className="mt-4 w-2/3 table-auto">
           <tbody>{data.extras.items.filter(x => x.enable).map(ExtraItem)}</tbody>
         </table>
       </div>
