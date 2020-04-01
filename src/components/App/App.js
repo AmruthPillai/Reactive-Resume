@@ -39,13 +39,15 @@ const App = () => {
         <div className="relative z-0 h-screen overflow-hidden col-span-3 flex justify-center items-center">
           <PanZoom
             ref={panZoomRef}
-            enableBoundingBox
             minZoom="0.4"
-            style={{
-              outline: 'none',
-            }}
+            autoCenter
+            autoCenterZoomLevel={0.8}
+            enableBoundingBox
+            boundaryRatioVertical={0.8}
+            boundaryRatioHorizontal={0.8}
+            style={{ outline: 'none' }}
           >
-            <div id="page" ref={pageRef} className="shadow-2xl">
+            <div id="page" ref={pageRef} className="shadow-2xl break-words">
               {templates.find(x => theme.layout.toLowerCase() === x.key).component()}
             </div>
           </PanZoom>
