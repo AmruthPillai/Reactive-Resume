@@ -2,12 +2,10 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useRef, useContext } from 'react';
-import { useTranslation, Trans } from 'react-i18next';
-import html2canvas from 'html2canvas';
-import * as jsPDF from 'jspdf';
+import { useTranslation } from 'react-i18next';
 
 import PageContext from '../../../context/PageContext';
-import { importJson } from '../../../utils';
+import { importJson, saveAsPdf } from '../../../utils';
 
 const ActionsTab = ({ data, theme, dispatch }) => {
   const pageContext = useContext(PageContext);
@@ -22,39 +20,6 @@ const ActionsTab = ({ data, theme, dispatch }) => {
     dlAnchor.setAttribute('href', dataStr);
     dlAnchor.setAttribute('download', `RxResumeBackup_${Date.now()}.json`);
     dlAnchor.click();
-  };
-
-  const printAsPdf = () => {
-    panZoomRef.current.autoCenter(1);
-    panZoomRef.current.reset();
-
-    setTimeout(() => {
-      html2canvas(pageRef.current, {
-        scale: 5,
-        useCORS: true,
-        allowTaint: true,
-      }).then(canvas => {
-        const image = canvas.toDataURL('image/jpeg', 1.0);
-        const doc = new jsPDF('p', 'mm', 'a4');
-        const pageWidth = doc.internal.pageSize.getWidth();
-        const pageHeight = doc.internal.pageSize.getHeight();
-
-        const widthRatio = pageWidth / canvas.width;
-        const heightRatio = pageHeight / canvas.height;
-        const ratio = widthRatio > heightRatio ? heightRatio : widthRatio;
-
-        const canvasWidth = canvas.width * ratio;
-        const canvasHeight = canvas.height * ratio;
-
-        const marginX = (pageWidth - canvasWidth) / 2;
-        const marginY = (pageHeight - canvasHeight) / 2;
-
-        panZoomRef.current.autoCenter(0.7);
-
-        doc.addImage(image, 'JPEG', marginX, marginY, canvasWidth, canvasHeight, null, 'SLOW');
-        doc.save(`RxResume_${Date.now()}.pdf`);
-      });
-    }, 250);
   };
 
   const loadDemoData = () => {
@@ -114,39 +79,19 @@ const ActionsTab = ({ data, theme, dispatch }) => {
       <hr className="my-6" />
 
       <div className="shadow text-center p-5">
-        <h6 className="font-bold text-sm mb-2">{t('actions.printResume.heading')}</h6>
+        <h6 className="font-bold text-sm mb-2">{t('actions.downloadResume.heading')}</h6>
+        <div className="text-sm">{t('actions.downloadResume.body')}</div>
 
-        <div className="text-sm">
-          <Trans t={t} i18nKey="actions.printResume.body">
-            You can click on the button below to generate a PDF instantly. Alternatively, you can
-            also use <pre className="inline font-bold">Cmd/Ctrl + P</pre> but it would have
-            different effects.
-          </Trans>
-        </div>
-
-        <div className="mt-1 grid grid-cols-2 col-gap-6">
-          <button
-            type="button"
-            onClick={printAsPdf}
-            className="mt-4 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-5 rounded"
-          >
-            <div className="flex justify-center items-center">
-              <i className="material-icons mr-2 font-bold text-base">import_export</i>
-              <span className="text-sm">{t('actions.printResume.buttons.export')}</span>
-            </div>
-          </button>
-
-          <button
-            type="button"
-            onClick={printAsPdf}
-            className="mt-4 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-5 rounded"
-          >
-            <div className="flex justify-center items-center">
-              <i className="material-icons mr-2 font-bold text-base">print</i>
-              <span className="text-sm">{t('actions.printResume.buttons.print')}</span>
-            </div>
-          </button>
-        </div>
+        <button
+          type="button"
+          onClick={() => saveAsPdf(pageRef, panZoomRef)}
+          className="mt-4 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-5 rounded"
+        >
+          <div className="flex justify-center items-center">
+            <i className="material-icons mr-2 font-bold text-base">save</i>
+            <span className="text-sm">{t('actions.downloadResume.buttons.saveAsPdf')}</span>
+          </div>
+        </button>
       </div>
 
       <hr className="my-6" />

@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import PageContext from '../context/PageContext';
+import { saveAsPdf } from '../utils';
 
 const PageController = () => {
   const pageContext = useContext(PageContext);
-  const { panZoomRef } = pageContext;
+  const { pageRef, panZoomRef } = pageContext;
 
   const zoomIn = () => panZoomRef.current.zoomIn(2);
   const zoomOut = () => panZoomRef.current.zoomOut(2);
@@ -29,15 +30,23 @@ const PageController = () => {
 
         <div className="text-gray-400 p-3">|</div>
 
-        <div className="p-3 hover:bg-gray-200 cursor-pointer flex">
+        <div
+          className="p-3 hover:bg-gray-200 cursor-pointer flex"
+          onClick={() => saveAsPdf(pageRef, panZoomRef)}
+        >
           <i className="material-icons">save</i>
         </div>
 
         <div className="text-gray-400 p-3">|</div>
 
-        <div className="p-3 hover:bg-gray-200 cursor-pointer flex">
+        <a
+          className="p-3 hover:bg-gray-200 cursor-pointer flex"
+          href="https://docs.rxresu.me/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <i className="material-icons">help_outline</i>
-        </div>
+        </a>
       </div>
     </div>
   );

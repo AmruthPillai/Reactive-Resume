@@ -1,3 +1,7 @@
+/* eslint-disable new-cap */
+import html2canvas from 'html2canvas';
+import * as jsPDF from 'jspdf';
+
 const move = (array, element, delta) => {
   const index = array.indexOf(element);
   const newIndex = index + delta;
@@ -94,11 +98,43 @@ const importJson = (event, dispatch) => {
   const fr = new FileReader();
   fr.addEventListener('load', () => {
     const importedObject = JSON.parse(fr.result);
-    console.log(importedObject);
     dispatch({ type: 'import_data', payload: importedObject });
     dispatch({ type: 'save_data' });
   });
   fr.readAsText(event.target.files[0]);
+};
+
+const saveAsPdf = (pageRef, panZoomRef) => {
+  panZoomRef.current.autoCenter(1);
+  panZoomRef.current.reset();
+
+  setTimeout(() => {
+    html2canvas(pageRef.current, {
+      scale: 5,
+      useCORS: true,
+      allowTaint: true,
+    }).then(canvas => {
+      const image = canvas.toDataURL('image/jpeg', 1.0);
+      const doc = new jsPDF('p', 'mm', 'a4');
+      const pageWidth = doc.internal.pageSize.getWidth();
+      const pageHeight = doc.internal.pageSize.getHeight();
+
+      const widthRatio = pageWidth / canvas.width;
+      const heightRatio = pageHeight / canvas.height;
+      const ratio = widthRatio > heightRatio ? heightRatio : widthRatio;
+
+      const canvasWidth = canvas.width * ratio;
+      const canvasHeight = canvas.height * ratio;
+
+      const marginX = (pageWidth - canvasWidth) / 2;
+      const marginY = (pageHeight - canvasHeight) / 2;
+
+      panZoomRef.current.autoCenter(0.7);
+
+      doc.addImage(image, 'JPEG', marginX, marginY, canvasWidth, canvasHeight, null, 'SLOW');
+      doc.save(`RxResume_${Date.now()}.pdf`);
+    });
+  }, 250);
 };
 
 export {
@@ -111,4 +147,5 @@ export {
   moveItemUp,
   moveItemDown,
   importJson,
+  saveAsPdf,
 };
