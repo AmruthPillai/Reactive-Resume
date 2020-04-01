@@ -16,6 +16,8 @@ const TabBar = ({ tabs, currentTab, setCurrentTab }) => {
     }
   };
 
+  const wheelScrollBy = e => scrollBy(e.deltaY);
+
   return (
     <div className="mx-4 mb-6 flex items-center">
       <div
@@ -25,7 +27,7 @@ const TabBar = ({ tabs, currentTab, setCurrentTab }) => {
         <i className="material-icons">chevron_left</i>
       </div>
 
-      <ul id="tabs" ref={tabsRef} className="flex overflow-x-scroll">
+      <ul id="tabs" ref={tabsRef} className="flex overflow-x-scroll" onWheel={wheelScrollBy}>
         {tabs.map(tab =>
           currentTab === tab.key ? (
             <li key={tab.key} className="mx-1 list-none">
