@@ -88,7 +88,7 @@ const Castform = () => {
     data.skills &&
     data.skills.enable && (
       <div>
-        <Heading title="Skills" />
+        <Heading title={data.skills.heading} />
         <ul className="list-none px-5">{data.skills.items.map(SkillItem)}</ul>
       </div>
     );
