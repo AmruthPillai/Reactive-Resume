@@ -11,7 +11,7 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 COPY package.json /usr/src/app/package.json
 
 ## install app dependencies
-RUN npm install --silent
+RUN npm install
 
 ## copy files
 COPY . /usr/src/app
