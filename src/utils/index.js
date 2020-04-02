@@ -110,12 +110,17 @@ const saveAsPdf = (pageRef, panZoomRef) => {
 
   setTimeout(() => {
     html2canvas(pageRef.current, {
-      scale: 5,
+      scale: 6,
       useCORS: true,
       allowTaint: true,
     }).then(canvas => {
       const image = canvas.toDataURL('image/jpeg', 1.0);
-      const doc = new jsPDF('p', 'mm', 'a4');
+      const doc = new jsPDF({
+        orientation: 'portrait',
+        unit: 'px',
+        format: [canvas.width, canvas.height],
+      });
+
       const pageWidth = doc.internal.pageSize.getWidth();
       const pageHeight = doc.internal.pageSize.getHeight();
 
@@ -125,16 +130,15 @@ const saveAsPdf = (pageRef, panZoomRef) => {
 
       const canvasWidth = canvas.width * ratio;
       const canvasHeight = canvas.height * ratio;
-
-      const marginX = (pageWidth - canvasWidth) / 2;
-      const marginY = (pageHeight - canvasHeight) / 2;
+      // const marginX = (pageWidth - canvasWidth) / 2;
+      // const marginY = (pageHeight - canvasHeight) / 2;
 
       panZoomRef.current.autoCenter(0.7);
 
-      doc.addImage(image, 'JPEG', marginX, marginY, canvasWidth, canvasHeight, null, 'SLOW');
+      doc.addImage(image, 'JPEG', 0, 0, canvasWidth, canvasHeight, null, 'SLOW');
       doc.save(`RxResume_${Date.now()}.pdf`);
     });
-  }, 250);
+  }, 200);
 };
 
 export {
