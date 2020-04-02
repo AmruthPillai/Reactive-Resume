@@ -1,5 +1,5 @@
 ## build image
-FROM node:13.12.0-buster-slim as build
+FROM node:13.12.0-alpine as build
 
 ## set working directory
 WORKDIR /usr/src/app
@@ -9,6 +9,9 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
 ## install and cache app dependencies
 COPY package.json /usr/src/app/package.json
+
+## install git
+RUN apk add --no-cache git
 
 ## install app dependencies
 RUN npm install
