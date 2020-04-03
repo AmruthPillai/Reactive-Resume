@@ -6,6 +6,25 @@ title: Changelog
 
 All notable changes to this project will be documented in this file.
 
+## April 2020
+
+### April 3, 2020
+
+- Added Language: German
+
+### April 2, 2020
+
+- Fix type in Contributing section of Documentation
+- Fix issue where PDF was printing in A4, instead print whole page
+- Fix Castform Templates not updating when Skills Heading is updated
+
+### April 1, 2020
+
+- Designed Glalie Template
+- Added Page Controller for Quick Actions
+- Implemented `react-easy-panzoom` for Pan & Zoom abilities in the artboard
+- Added Language: Chinese
+
 ## March 2020
 
 ### March 31, 2020

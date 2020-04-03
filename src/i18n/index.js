@@ -17,6 +17,10 @@ const languages = [
     name: 'French',
   },
   {
+    code: 'de',
+    name: 'German',
+  },
+  {
     code: 'hi',
     name: 'Hindi',
   },

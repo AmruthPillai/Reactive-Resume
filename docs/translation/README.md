@@ -20,6 +20,7 @@ If you are already familiar with the Crowdin platform and want to contribute you
 - Chinese Simplified `zh`
 - English `en`
 - French `fr`
+- German `de`
 - Hindi `hi`
 - Kannada `kn`
 
@@ -33,7 +34,6 @@ If you are already familiar with the Crowdin platform and want to contribute you
 - Danish `da`
 - Dutch `nl`
 - Finnish `fi`
-- German `de`
 - Greek `el`
 - Hebrew `he`
 - Hungarian `hu`

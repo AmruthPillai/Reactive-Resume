@@ -1,34 +1,33 @@
 {
-  "title": "Actions",
-  "disclaimer": "Changes you make to your resume are saved automatically to your browser's local storage. No data gets out, hence your information is completely secure.",
+  "title": "Aktionen",
+  "disclaimer": "Änderungen, die Du an Deinem Lebenslauf vornimmst, werden automatisch im lokalen Speicher Deines Browsers gespeichert. Keine Daten werden an einen Server gesendet, daher sind Deine Informationen völlig sicher.",
   "importExport": {
     "heading": "Import/Export",
-    "body": "You can import or export your data in JSON format. With this, you can edit and print your resume from any device. Save this file for later use.",
+    "body": "Du kannst Deine Daten im JSON format importieren oder exportieren. Damit kannst Du Deinen Lebenslauf von jedem Gerät bearbeiten und ausdrucken. Speicher diese Datei für eine spätere Nutzung.",
     "buttons": {
-      "import": "Import",
+      "import": "Importieren",
       "export": "Export"
     }
   },
-  "printResume": {
-    "heading": "Print Your Resume",
-    "body": "You can click on the button below to generate a PDF instantly. Alternatively, you can also use <1>Cmd/Ctrl + P</1> but it would have different effects.",
+  "downloadResume": {
+    "heading": "Lade Dein Resume herunter",
+    "body": "Du kannst auf die Schaltfläche unten klicken, um eine PDF-Version Ihres Lebenslaufs sofort herunterzuladen. Für die besten Ergebnisse, verwende bitte die neueste Version von Google Chrome.",
     "buttons": {
-      "export": "Export",
-      "print": "Print"
+      "saveAsPdf": "Als PDF Speichern"
     }
   },
   "loadDemoData": {
-    "heading": "Load Demo Data",
-    "body": "Unclear on what to do with a fresh blank page? Load some demo data with prepopulated values to see how a resume should look and you can start editing from there.",
+    "heading": "Demo-Daten laden",
+    "body": "Unklar auf, was mit einer frischen leeren Seite zu tun ist? Lade einige Demo-Daten mit vorausgefüllten Werten, um zu sehen, wie ein Lebenslauf aussehen soll und von dort aus mit der Bearbeitung beginnen.",
     "buttons": {
-      "loadData": "Load Data"
+      "loadData": "Daten laden"
     }
   },
   "reset": {
-    "heading": "Reset Everything!",
-    "body": "This action will reset all your data and remove backups made to your browser's local storage as well, so please make sure you have exported your information before you reset everything.",
+    "heading": "Alles zurücksetzen!",
+    "body": "Diese Aktion wird alle Daten zurücksetzen und Backups aus dem lokalen Speicher des Browsers entfernen. Bitte sicherstellen, dass alle Daten exportiert sind, bevor Du alles zurücksetzt.",
     "buttons": {
-      "reset": "Reset"
+      "reset": "Zurücksetzen"
     }
   }
 }
