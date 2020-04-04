@@ -10,7 +10,7 @@ const move = (array, element, delta) => {
   array.splice(indexes[0], 2, array[indexes[1]], array[indexes[0]]);
 };
 
-const hexToRgb = hex => {
+const hexToRgb = (hex) => {
   const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
   hex = hex.replace(shorthandRegex, (m, r, g, b) => r + r + g + g + b + b);
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -23,7 +23,7 @@ const hexToRgb = hex => {
     : null;
 };
 
-const copyToClipboard = text => {
+const copyToClipboard = (text) => {
   const textArea = document.createElement('textarea');
   textArea.style.position = 'fixed';
   textArea.style.top = 0;
@@ -44,7 +44,7 @@ const copyToClipboard = text => {
   return successful;
 };
 
-const saveData = dispatch => dispatch({ type: 'save_data' });
+const saveData = (dispatch) => dispatch({ type: 'save_data' });
 
 const addItem = (dispatch, key, value) => {
   dispatch({
@@ -104,42 +104,88 @@ const importJson = (event, dispatch) => {
   fr.readAsText(event.target.files[0]);
 };
 
-const saveAsPdf = (pageRef, panZoomRef) => {
-  panZoomRef.current.autoCenter(1);
-  panZoomRef.current.reset();
+const saveAsPdf = (pageRef, panZoomRef, quality, type) =>
+  new Promise((resolve) => {
+    panZoomRef.current.autoCenter(1);
+    panZoomRef.current.reset();
 
-  setTimeout(() => {
-    html2canvas(pageRef.current, {
-      scale: 6,
-      useCORS: true,
-      allowTaint: true,
-    }).then(canvas => {
-      const image = canvas.toDataURL('image/jpeg', 1.0);
-      const doc = new jsPDF({
-        orientation: 'portrait',
-        unit: 'px',
-        format: [canvas.width, canvas.height],
+    setTimeout(() => {
+      html2canvas(pageRef.current, {
+        scale: 5,
+        useCORS: true,
+        allowTaint: true,
+      }).then((canvas) => {
+        const image = canvas.toDataURL('image/jpeg', quality / 100);
+        const doc = new jsPDF({
+          orientation: 'portrait',
+          unit: 'px',
+          format: type === 'unconstrained' ? [canvas.width, canvas.height] : 'a4',
+        });
+
+        const pageWidth = doc.internal.pageSize.getWidth();
+        const pageHeight = doc.internal.pageSize.getHeight();
+
+        const widthRatio = pageWidth / canvas.width;
+        const heightRatio = pageHeight / canvas.height;
+        const ratio = widthRatio > heightRatio ? heightRatio : widthRatio;
+
+        const canvasWidth = canvas.width * ratio;
+        const canvasHeight = canvas.height * ratio;
+
+        let marginX = 0;
+        let marginY = 0;
+
+        if (type !== 'unconstrained') {
+          marginX = (pageWidth - canvasWidth) / 2;
+          marginY = (pageHeight - canvasHeight) / 2;
+        }
+
+        doc.addImage(image, 'JPEG', marginX, marginY, canvasWidth, canvasHeight, null, 'SLOW');
+        doc.save(`RxResume_${Date.now()}.pdf`);
+        resolve();
       });
+    }, 250);
+  });
 
-      const pageWidth = doc.internal.pageSize.getWidth();
-      const pageHeight = doc.internal.pageSize.getHeight();
+const saveAsMultiPagePdf = (pageRef, panZoomRef, quality) =>
+  new Promise((resolve) => {
+    panZoomRef.current.autoCenter(1);
+    panZoomRef.current.reset();
 
-      const widthRatio = pageWidth / canvas.width;
-      const heightRatio = pageHeight / canvas.height;
-      const ratio = widthRatio > heightRatio ? heightRatio : widthRatio;
+    setTimeout(() => {
+      html2canvas(pageRef.current, {
+        scale: 5,
+        useCORS: true,
+        allowTaint: true,
+      }).then((canvas) => {
+        const image = canvas.toDataURL('image/jpeg', quality / 100);
+        const doc = new jsPDF({
+          orientation: 'portrait',
+          unit: 'px',
+          format: 'a4',
+        });
 
-      const canvasWidth = canvas.width * ratio;
-      const canvasHeight = canvas.height * ratio;
-      // const marginX = (pageWidth - canvasWidth) / 2;
-      // const marginY = (pageHeight - canvasHeight) / 2;
+        const pageHeight = doc.internal.pageSize.getHeight();
+        const canvasWidth = doc.internal.pageSize.getWidth();
+        const canvasHeight = (canvas.height * canvasWidth) / canvas.width;
+        let marginTop = 0;
+        let heightLeft = canvasHeight;
 
-      panZoomRef.current.autoCenter(0.7);
+        doc.addImage(image, 'JPEG', 0, marginTop, canvasWidth, canvasHeight);
+        heightLeft -= pageHeight;
 
-      doc.addImage(image, 'JPEG', 0, 0, canvasWidth, canvasHeight, null, 'SLOW');
-      doc.save(`RxResume_${Date.now()}.pdf`);
-    });
-  }, 200);
-};
+        while (heightLeft >= 0) {
+          marginTop = heightLeft - canvasHeight;
+          doc.addPage();
+          doc.addImage(image, 'JPEG', 0, marginTop, canvasWidth, canvasHeight);
+          heightLeft -= pageHeight;
+        }
+
+        doc.save(`RxResume_${Date.now()}.pdf`);
+        resolve();
+      });
+    }, 250);
+  });
 
 export {
   move,
@@ -152,4 +198,5 @@ export {
   moveItemDown,
   importJson,
   saveAsPdf,
+  saveAsMultiPagePdf,
 };

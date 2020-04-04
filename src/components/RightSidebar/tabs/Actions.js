@@ -1,15 +1,16 @@
 /* eslint-disable new-cap */
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
+
 import React, { useRef, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import PageContext from '../../../context/PageContext';
-import { importJson, saveAsPdf } from '../../../utils';
+import { importJson } from '../../../utils';
 
 const ActionsTab = ({ data, theme, dispatch }) => {
   const pageContext = useContext(PageContext);
-  const { pageRef, panZoomRef } = pageContext;
+  const { setPrintDialogOpen } = pageContext;
   const { t } = useTranslation('rightSidebar');
   const fileInputRef = useRef(null);
 
@@ -47,7 +48,7 @@ const ActionsTab = ({ data, theme, dispatch }) => {
           ref={fileInputRef}
           type="file"
           className="hidden"
-          onChange={e => importJson(e, dispatch)}
+          onChange={(e) => importJson(e, dispatch)}
         />
         <a id="downloadAnchor" className="hidden" />
 
@@ -84,7 +85,7 @@ const ActionsTab = ({ data, theme, dispatch }) => {
 
         <button
           type="button"
-          onClick={() => saveAsPdf(pageRef, panZoomRef)}
+          onClick={() => setPrintDialogOpen(true)}
           className="mt-4 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-5 rounded"
         >
           <div className="flex justify-center items-center">

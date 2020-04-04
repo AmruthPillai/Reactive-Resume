@@ -78,7 +78,7 @@ const Castform = () => {
     </div>
   );
 
-  const SkillItem = x => (
+  const SkillItem = (x) => (
     <li key={x} className="text-sm my-2">
       {x}
     </li>
@@ -96,7 +96,7 @@ const Castform = () => {
   const Objective = () =>
     data.objective && data.objective.enable && <p className="m-5 text-sm">{data.objective.body}</p>;
 
-  const WorkItem = x => (
+  const WorkItem = (x) => (
     <div key={x.title} className="my-3 px-5">
       <div className="flex justify-between">
         <div>
@@ -116,11 +116,11 @@ const Castform = () => {
     data.work.enable && (
       <div>
         <Heading light title={data.work.heading} />
-        {data.work.items.filter(x => x.enable).map(WorkItem)}
+        {data.work.items.filter((x) => x.enable).map(WorkItem)}
       </div>
     );
 
-  const ReferenceItem = x => (
+  const ReferenceItem = (x) => (
     <div key={x.id} className="flex flex-col">
       <h6 className="text-sm font-medium">{x.name}</h6>
       <span className="text-xs">{x.position}</span>
@@ -136,12 +136,12 @@ const Castform = () => {
       <div>
         <Heading light title={data.references.heading} />
         <div className="grid grid-cols-2 gap-6 px-5">
-          {data.references.items.filter(x => x.enable).map(ReferenceItem)}
+          {data.references.items.filter((x) => x.enable).map(ReferenceItem)}
         </div>
       </div>
     );
 
-  const LanguageItem = x => (
+  const LanguageItem = (x) => (
     <div key={x.id} className="flex flex-col my-2">
       <h6 className="text-sm font-medium mb-1">{x.key}</h6>
       <div className="relative h-5">
@@ -168,12 +168,12 @@ const Castform = () => {
       <div>
         <Heading title={data.languages.heading} />
         <div className="px-5 mb-6">
-          {data.languages.items.filter(x => x.enable).map(LanguageItem)}
+          {data.languages.items.filter((x) => x.enable).map(LanguageItem)}
         </div>
       </div>
     );
 
-  const EducationItem = x => (
+  const EducationItem = (x) => (
     <div key={x.name} className="my-3 px-5">
       <div className="flex justify-between">
         <div>
@@ -196,11 +196,11 @@ const Castform = () => {
     data.education.enable && (
       <div>
         <Heading light title={data.education.heading} />
-        {data.education.items.filter(x => x.enable).map(EducationItem)}
+        {data.education.items.filter((x) => x.enable).map(EducationItem)}
       </div>
     );
 
-  const AwardItem = x => (
+  const AwardItem = (x) => (
     <div key={x.title} className="my-3 px-5">
       <h6 className="font-semibold">{x.title}</h6>
       <p className="text-xs">{x.subtitle}</p>
@@ -213,11 +213,11 @@ const Castform = () => {
     data.awards.enable && (
       <div>
         <Heading light title={data.awards.heading} />
-        {data.awards.items.filter(x => x.enable).map(AwardItem)}
+        {data.awards.items.filter((x) => x.enable).map(AwardItem)}
       </div>
     );
 
-  const CertificationItem = x => (
+  const CertificationItem = (x) => (
     <div key={x.title} className="my-3 px-5">
       <h6 className="font-semibold">{x.title}</h6>
       <p className="text-xs">{x.subtitle}</p>
@@ -230,11 +230,11 @@ const Castform = () => {
     data.certifications.enable && (
       <div>
         <Heading title={data.certifications.heading} />
-        {data.certifications.items.filter(x => x.enable).map(CertificationItem)}
+        {data.certifications.items.filter((x) => x.enable).map(CertificationItem)}
       </div>
     );
 
-  const ExtraItem = x => (
+  const ExtraItem = (x) => (
     <div key={x.id} className="px-5 my-2">
       <h6 className="text-xs font-bold">{x.key}</h6>
       <div className="text-sm">{x.value}</div>
@@ -246,7 +246,7 @@ const Castform = () => {
     data.extras.enable && (
       <div>
         <Heading title={data.extras.heading} />
-        {data.extras.items.filter(x => x.enable).map(ExtraItem)}
+        {data.extras.items.filter((x) => x.enable).map(ExtraItem)}
       </div>
     );
 
@@ -260,7 +260,7 @@ const Castform = () => {
     >
       <div className="grid grid-cols-12">
         <div
-          className="col-span-4 rounded"
+          className="col-span-4"
           style={{
             color: theme.colors.background,
             backgroundColor: theme.colors.accent,

@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
+
 import PageContext from '../context/PageContext';
-import { saveAsPdf } from '../utils';
 
 const PageController = () => {
   const pageContext = useContext(PageContext);
-  const { pageRef, panZoomRef } = pageContext;
+  const { panZoomRef, setPrintDialogOpen } = pageContext;
 
   const zoomIn = () => panZoomRef.current.zoomIn(2);
   const zoomOut = () => panZoomRef.current.zoomOut(2);
@@ -35,7 +35,7 @@ const PageController = () => {
 
         <div
           className="p-3 hover:bg-gray-200 cursor-pointer flex"
-          onClick={() => saveAsPdf(pageRef, panZoomRef)}
+          onClick={() => setPrintDialogOpen(true)}
         >
           <i className="material-icons">save</i>
         </div>

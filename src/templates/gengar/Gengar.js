@@ -63,7 +63,7 @@ const Gengar = () => {
       </div>
     );
 
-  const SkillItem = x => (
+  const SkillItem = (x) => (
     <li key={x} className="text-sm py-1">
       {x}
     </li>
@@ -78,7 +78,7 @@ const Gengar = () => {
       </div>
     );
 
-  const EducationItem = x => (
+  const EducationItem = (x) => (
     <div key={x.name} className="mb-3">
       <div className="flex justify-between items-center">
         <div>
@@ -109,11 +109,11 @@ const Gengar = () => {
     data.education.enable && (
       <div className="mb-6">
         <Heading title={data.education.heading} />
-        {data.education.items.filter(x => x.enable).map(EducationItem)}
+        {data.education.items.filter((x) => x.enable).map(EducationItem)}
       </div>
     );
 
-  const CertificationItem = x => (
+  const CertificationItem = (x) => (
     <div key={x.title} className="mb-3">
       <h6 className="font-semibold">{x.title}</h6>
       <p className="text-xs">{x.subtitle}</p>
@@ -126,11 +126,11 @@ const Gengar = () => {
     data.certifications.enable && (
       <div className="mb-6">
         <Heading title={data.certifications.heading} />
-        {data.certifications.items.filter(x => x.enable).map(CertificationItem)}
+        {data.certifications.items.filter((x) => x.enable).map(CertificationItem)}
       </div>
     );
 
-  const AwardItem = x => (
+  const AwardItem = (x) => (
     <div key={x.title} className="mb-3">
       <h6 className="font-semibold">{x.title}</h6>
       <p className="text-xs">{x.subtitle}</p>
@@ -143,11 +143,11 @@ const Gengar = () => {
     data.awards.enable && (
       <div className="mb-6">
         <Heading title={data.awards.heading} />
-        {data.awards.items.filter(x => x.enable).map(AwardItem)}
+        {data.awards.items.filter((x) => x.enable).map(AwardItem)}
       </div>
     );
 
-  const ReferenceItem = x => (
+  const ReferenceItem = (x) => (
     <div key={x.id} className="flex flex-col">
       <h6 className="text-sm font-medium">{x.name}</h6>
       <span className="text-xs">{x.position}</span>
@@ -163,12 +163,12 @@ const Gengar = () => {
       <div>
         <Heading title={data.references.heading} />
         <div className="grid grid-cols-2 gap-6">
-          {data.references.items.filter(x => x.enable).map(ReferenceItem)}
+          {data.references.items.filter((x) => x.enable).map(ReferenceItem)}
         </div>
       </div>
     );
 
-  const WorkItem = x => (
+  const WorkItem = (x) => (
     <div key={x.title} className="mb-3">
       <div className="flex justify-between items-center">
         <div>
@@ -188,11 +188,11 @@ const Gengar = () => {
     data.work.enable && (
       <div className="mb-6">
         <Heading title={data.work.heading} />
-        {data.work.items.filter(x => x.enable).map(WorkItem)}
+        {data.work.items.filter((x) => x.enable).map(WorkItem)}
       </div>
     );
 
-  const LanguageItem = x => (
+  const LanguageItem = (x) => (
     <div key={x.id} className="grid grid-cols-2 items-center py-2">
       <h6 className="text-sm font-medium">{x.key}</h6>
       <div className="flex">
@@ -210,11 +210,11 @@ const Gengar = () => {
     data.languages.enable && (
       <div>
         <Heading title={data.languages.heading} />
-        <div className="mb-6">{data.languages.items.filter(x => x.enable).map(LanguageItem)}</div>
+        <div className="mb-6">{data.languages.items.filter((x) => x.enable).map(LanguageItem)}</div>
       </div>
     );
 
-  const ExtraItem = x => (
+  const ExtraItem = (x) => (
     <div key={x.id} className="text-sm my-1">
       <h6 className="text-xs font-bold">{x.key}</h6>
       <h6>{x.value}</h6>
@@ -227,7 +227,7 @@ const Gengar = () => {
       <div>
         <Heading title={data.extras.heading} />
         <div className="grid grid-cols-2">
-          {data.extras.items.filter(x => x.enable).map(ExtraItem)}
+          {data.extras.items.filter((x) => x.enable).map(ExtraItem)}
         </div>
       </div>
     );

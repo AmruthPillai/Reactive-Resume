@@ -10,6 +10,7 @@ import RightSidebar from '../RightSidebar/RightSidebar';
 
 import templates from '../../templates';
 import PageController from '../../shared/PageController';
+import PrintDialog from '../../shared/PrintDialog';
 
 const App = () => {
   const pageRef = useRef(null);
@@ -36,7 +37,7 @@ const App = () => {
       <div className="h-screen grid grid-cols-5 items-center">
         <LeftSidebar />
 
-        <div className="relative z-0 h-screen overflow-hidden col-span-3 flex justify-center items-center">
+        <div className="relative z-10 h-screen overflow-hidden col-span-3 flex justify-center items-center">
           <PanZoom
             ref={panZoomRef}
             minZoom="0.4"
@@ -48,7 +49,7 @@ const App = () => {
             style={{ outline: 'none' }}
           >
             <div id="page" ref={pageRef} className="shadow-2xl break-words">
-              {templates.find(x => theme.layout.toLowerCase() === x.key).component()}
+              {templates.find((x) => theme.layout.toLowerCase() === x.key).component()}
             </div>
           </PanZoom>
 
@@ -56,6 +57,8 @@ const App = () => {
         </div>
 
         <RightSidebar />
+
+        <PrintDialog />
       </div>
     </Suspense>
   );
