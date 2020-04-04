@@ -4,8 +4,9 @@ const PageContext = React.createContext(null);
 const { Provider } = PageContext;
 
 const StateProvider = ({ children }) => {
-  const [panZoomRef, setPanZoomRef] = useState(null);
   const [pageRef, setPageRef] = useState(null);
+  const [panZoomRef, setPanZoomRef] = useState(null);
+  const [isPrintDialogOpen, setPrintDialogOpen] = useState(false);
 
   return (
     <Provider
@@ -14,6 +15,8 @@ const StateProvider = ({ children }) => {
         setPageRef,
         panZoomRef,
         setPanZoomRef,
+        isPrintDialogOpen,
+        setPrintDialogOpen,
       }}
     >
       {children}

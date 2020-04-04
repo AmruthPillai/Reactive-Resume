@@ -95,7 +95,7 @@ const Glalie = () => {
       </div>
     );
 
-  const WorkItem = x => (
+  const WorkItem = (x) => (
     <div key={x.title} className="mt-3">
       <div className="flex justify-between">
         <div>
@@ -114,11 +114,11 @@ const Glalie = () => {
     data.work.enable && (
       <div>
         <Heading title={data.work.heading} />
-        {data.work.items.filter(x => x.enable).map(WorkItem)}
+        {data.work.items.filter((x) => x.enable).map(WorkItem)}
       </div>
     );
 
-  const EducationItem = x => (
+  const EducationItem = (x) => (
     <div key={x.name} className="mt-3">
       <div>
         <h6 className="font-semibold text-xs">{x.name}</h6>
@@ -137,12 +137,12 @@ const Glalie = () => {
       <div>
         <Heading title={data.education.heading} />
         <div className="grid grid-cols-2 gap-4">
-          {data.education.items.filter(x => x.enable).map(EducationItem)}
+          {data.education.items.filter((x) => x.enable).map(EducationItem)}
         </div>
       </div>
     );
 
-  const AwardItem = x => (
+  const AwardItem = (x) => (
     <div key={x.title} className="mt-3 text-left">
       <h6 className="font-semibold">{x.title}</h6>
       <p className="text-xs">{x.subtitle}</p>
@@ -155,11 +155,11 @@ const Glalie = () => {
     data.awards.enable && (
       <div>
         <Heading title={data.awards.heading} />
-        {data.awards.items.filter(x => x.enable).map(AwardItem)}
+        {data.awards.items.filter((x) => x.enable).map(AwardItem)}
       </div>
     );
 
-  const CertificationItem = x => (
+  const CertificationItem = (x) => (
     <div key={x.title} className="mt-3 text-left">
       <h6 className="font-semibold">{x.title}</h6>
       <p className="text-xs">{x.subtitle}</p>
@@ -172,11 +172,11 @@ const Glalie = () => {
     data.certifications.enable && (
       <div>
         <Heading title={data.certifications.heading} />
-        {data.certifications.items.filter(x => x.enable).map(CertificationItem)}
+        {data.certifications.items.filter((x) => x.enable).map(CertificationItem)}
       </div>
     );
 
-  const SkillItem = x => (
+  const SkillItem = (x) => (
     <li key={x} className="text-xs font-medium">
       {x}
     </li>
@@ -191,7 +191,7 @@ const Glalie = () => {
       </div>
     );
 
-  const LanguageItem = x => (
+  const LanguageItem = (x) => (
     <div key={x.id} className="grid grid-cols-2 items-center py-2">
       <h6 className="text-xs font-medium text-left">{x.key}</h6>
       <div className="flex">
@@ -209,11 +209,13 @@ const Glalie = () => {
     data.languages.enable && (
       <div>
         <Heading title={data.languages.heading} />
-        <div className="w-3/4">{data.languages.items.filter(x => x.enable).map(LanguageItem)}</div>
+        <div className="w-3/4">
+          {data.languages.items.filter((x) => x.enable).map(LanguageItem)}
+        </div>
       </div>
     );
 
-  const ReferenceItem = x => (
+  const ReferenceItem = (x) => (
     <div key={x.id} className="flex flex-col">
       <h6 className="text-sm font-medium">{x.name}</h6>
       <span className="text-xs">{x.position}</span>
@@ -229,12 +231,12 @@ const Glalie = () => {
       <div>
         <Heading title={data.references.heading} />
         <div className="grid grid-cols-3 gap-8">
-          {data.references.items.filter(x => x.enable).map(ReferenceItem)}
+          {data.references.items.filter((x) => x.enable).map(ReferenceItem)}
         </div>
       </div>
     );
 
-  const ExtraItem = x => (
+  const ExtraItem = (x) => (
     <tr key={x.id}>
       <td className="border font-medium px-4 py-2 text-xs">{x.key}</td>
       <td className="border px-4 py-2 text-xs">{x.value}</td>
@@ -247,7 +249,7 @@ const Glalie = () => {
       <div>
         <Heading title={data.extras.heading} />
         <table className="mt-4 w-2/3 table-auto">
-          <tbody>{data.extras.items.filter(x => x.enable).map(ExtraItem)}</tbody>
+          <tbody>{data.extras.items.filter((x) => x.enable).map(ExtraItem)}</tbody>
         </table>
       </div>
     );

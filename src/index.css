@@ -32,6 +32,35 @@ ul li {
   padding: 0;
 }
 
+input[type='range']::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  cursor: ew-resize;
+  background: #fff;
+  border: none;
+  box-shadow: -405px 0 0 400px #605e5c;
+  border-radius: 50%;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  cursor: ew-resize;
+  background: #fff;
+  border: none;
+  box-shadow: -405px 0 0 400px #605e5c;
+  border-radius: 50%;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 @media screen {
   input[type='number']::-webkit-inner-spin-button,
   input[type='number']::-webkit-outer-spin-button {

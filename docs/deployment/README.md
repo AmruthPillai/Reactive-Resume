@@ -44,6 +44,11 @@ Used by more than 800,000 web developers and businesses, the Netlify platform pr
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/AmruthPillai/Reactive-Resume)
 
+## Deploy to Synology NAS
+
+**NAS Hosted** has written a great tutorial on how to deploy the app on Synology NAS,  
+read more about it here: [Host your own Resume Builder on Synology using Docker](https://nashosted.com/host-your-own-resume-builder-on-synology-using-docker/)
+
 ## Deploy to Shared Hosting/VPS
 
 Here, you're kinda on your own as there are no one-click buttons to help you through, but it's a simple process. Once you've built the app, you can copy the contents of the `build` folder to your `public_html` folder and you will have the app running on your designated domain or IP address.

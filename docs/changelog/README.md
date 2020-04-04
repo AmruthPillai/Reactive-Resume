@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file.
 
 ## April 2020
 
+### April 5, 2020
+
+- Added Print Dialog to set Quality & Print Type before Exporting PDF
+
 ### April 3, 2020
 
 - Added Language: German
