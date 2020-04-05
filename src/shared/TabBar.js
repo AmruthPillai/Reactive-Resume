@@ -3,8 +3,8 @@ import React, { useRef } from 'react';
 const TabBar = ({ tabs, currentTab, setCurrentTab }) => {
   const tabsRef = useRef(null);
 
-  const scrollBy = x => {
-    const index = tabs.findIndex(tab => tab.key === currentTab);
+  const scrollBy = (x) => {
+    const index = tabs.findIndex((tab) => tab.key === currentTab);
     tabsRef.current.scrollLeft += x;
 
     if (x < 0 && index > 0) {
@@ -25,8 +25,8 @@ const TabBar = ({ tabs, currentTab, setCurrentTab }) => {
         <i className="material-icons">chevron_left</i>
       </div>
 
-      <ul id="tabs" ref={tabsRef} className="flex overflow-x-scroll">
-        {tabs.map(tab =>
+      <ul id="tabs" ref={tabsRef} className="flex overflow-x-scroll list-none">
+        {tabs.map((tab) =>
           currentTab === tab.key ? (
             <li key={tab.key} className="mx-1 list-none">
               <div className="whitespace-no-wrap bg-gray-700 text-white rounded-md text-sm py-2 px-6 font-medium">

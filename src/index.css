@@ -26,10 +26,9 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-ul li {
-  list-style: disc;
-  margin-left: 1em;
-  padding: 0;
+ul:not(.list-none) li:before {
+  content: '●';
+  padding-right: 6px;
 }
 
 input[type='range']::-moz-range-thumb {
