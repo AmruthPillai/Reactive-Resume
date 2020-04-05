@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import React, { useRef, useEffect, useContext, Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 import { PanZoom } from 'react-easy-panzoom';
@@ -11,6 +12,7 @@ import RightSidebar from '../RightSidebar/RightSidebar';
 import templates from '../../templates';
 import PageController from '../../shared/PageController';
 import PrintDialog from '../../shared/PrintDialog';
+import PanZoomAnimation from '../../shared/PanZoomAnimation';
 
 const App = () => {
   const pageRef = useRef(null);
@@ -58,6 +60,7 @@ const App = () => {
 
         <RightSidebar />
 
+        <PanZoomAnimation />
         <PrintDialog />
       </div>
     </Suspense>

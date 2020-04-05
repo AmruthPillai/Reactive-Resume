@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 ### April 5, 2020
 
 - Added Print Dialog to set Quality & Print Type before Exporting PDF
+- Added Pan-Zoom Animation to indicate the artboard is interactive
 
 ### April 3, 2020
 
