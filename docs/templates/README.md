@@ -26,4 +26,8 @@ title: Templates
     <h2 id="glalie"><a href="#glalie" class="header-anchor">#</a> Glalie</h2>
     <img src="./images/Glalie.png" />
   </div>
+  <div>
+    <h2 id="celebi"><a href="#celebi" class="header-anchor">#</a> Celebi</h2>
+    <img src="./images/Celebi.png" />
+  </div>
 </div>
