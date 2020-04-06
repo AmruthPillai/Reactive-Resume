@@ -3,6 +3,7 @@ import Pikachu, { Image as PikachuPreview } from './pikachu';
 import Gengar, { Image as GengarPreview } from './gengar';
 import Castform, { Image as CastformPreview } from './castform';
 import Glalie, { Image as GlaliePreview } from './glalie';
+import Celebi, { Image as CelebiPreview } from './celebi';
 
 export default [
   {
@@ -34,5 +35,11 @@ export default [
     name: 'Glalie',
     component: Glalie,
     preview: GlaliePreview,
+  },
+  {
+    key: 'celebi',
+    name: 'Celebi',
+    component: Celebi,
+    preview: CelebiPreview,
   },
 ];
