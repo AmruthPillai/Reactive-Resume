@@ -23,6 +23,7 @@ If you are already familiar with the Crowdin platform and want to contribute you
 - German `de`
 - Hindi `hi`
 - Kannada `kn`
+- Spanish `es`
 
 ### Pending Translations
 
@@ -48,7 +49,6 @@ If you are already familiar with the Crowdin platform and want to contribute you
 - Punjabi `pa`
 - Romanian `ro`
 - Russian `ru`
-- Spanish `es`
 - Swedish `sv`
 - Tamil `ta`
 - Turkish `tr`
