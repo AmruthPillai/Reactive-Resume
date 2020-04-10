@@ -1,25 +1,41 @@
 {
-  "heading": {
-    "placeholder": "Heading"
-  },
   "item": {
-    "add": "Add {{- heading}}",
+    "add": "Voeg {{- heading}} toe",
     "startDate": {
-      "label": "Start Date",
-      "placeholder": "March 2018"
+      "label": "Startdatum"
     },
     "endDate": {
-      "label": "End Date",
-      "placeholder": "March 2022"
+      "label": "Einddatum"
     },
     "description": {
-      "label": "Description"
+      "label": "Beschrijving"
     }
   },
   "buttons": {
     "add": {
-      "label": "Add"
+      "label": "Toevoegen"
     }
   },
-  "markdownHelpText": "You can use <1>GitHub Flavored Markdown</1> to style this section of the text."
+  "printDialog": {
+    "heading": "Download je curriculum",
+    "quality": {
+      "label": "Kwaliteit"
+    },
+    "printType": {
+      "label": "Soort",
+      "types": {
+        "unconstrained": "Geen limitaties",
+        "fitInA4": "Passend maken in A4",
+        "multiPageA4": "Multi-Pagina A4"
+      }
+    },
+    "buttons": {
+      "cancel": "Annuleren",
+      "saveAsPdf": "Opslaan als PDF"
+    }
+  },
+  "panZoomAnimation": {
+    "helpText": "Je kunt op elk moment op het artboard inzoomen om een beter zicht te krijgen op je curriculum."
+  },
+  "markdownHelpText": "U kunt <1>GitHub Flavored Markdown</1> gebruiken om dit gedeelte van de tekst op te maken."
 }
