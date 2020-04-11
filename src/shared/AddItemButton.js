@@ -1,6 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const AddItemButton = ({ onSubmit }) => {
+  const { t } = useTranslation();
+
   return (
     <div>
       <button
@@ -10,7 +13,7 @@ const AddItemButton = ({ onSubmit }) => {
       >
         <div className="flex items-center">
           <i className="material-icons mr-2 font-bold text-base">add</i>
-          <span className="text-sm">Add</span>
+          <span className="text-sm">{t('buttons.add.label')}</span>
         </div>
       </button>
     </div>
