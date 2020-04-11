@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 ## April 2020
 
+### April 11, 2020
+
+- Added Language: Danish
+- Added Language: Dutch
+- Added Language: Portuguese
+
+### April 10, 2020
+
+- Bugfix: Photo not visible in PDF export, Celebi
+
 ### April 8, 2020
 
 - Added Language: Spanish
