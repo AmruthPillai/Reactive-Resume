@@ -1,34 +1,33 @@
 {
-  "title": "Actions",
-  "disclaimer": "Changes you make to your resume are saved automatically to your browser's local storage. No data gets out, hence your information is completely secure.",
+  "title": "Handlinger",
+  "disclaimer": "Ændringer du laver i dit CV bliver automatisk gemt i din browsers lokale lager. Ingen data slipper ud, og din information derfor helt sikker.",
   "importExport": {
-    "heading": "Import/Export",
-    "body": "You can import or export your data in JSON format. With this, you can edit and print your resume from any device. Save this file for later use.",
+    "heading": "Importér/eksportér",
+    "body": "Du kan importere eller eksportere dine data i JSON format. Med dette kan du ændre og printe dit CV fra hvilken som helst enhed. Gem denne fil til senere brug.",
     "buttons": {
-      "import": "Import",
-      "export": "Export"
+      "import": "Importér",
+      "export": "Eksportér"
     }
   },
-  "printResume": {
-    "heading": "Print Your Resume",
-    "body": "You can click on the button below to generate a PDF instantly. Alternatively, you can also use <1>Cmd/Ctrl + P</1> but it would have different effects.",
+  "downloadResume": {
+    "heading": "Download dit CV.",
+    "body": "Du kan klikke på knappen herunder for at gemme en PDF version af dit CV øjeblikkeligt. For at få det bedste resultat, benyt venligst den seneste version af Google Chrome.",
     "buttons": {
-      "export": "Export",
-      "print": "Print"
+      "saveAsPdf": "Gem som PDF"
     }
   },
   "loadDemoData": {
-    "heading": "Load Demo Data",
-    "body": "Unclear on what to do with a fresh blank page? Load some demo data with prepopulated values to see how a resume should look and you can start editing from there.",
+    "heading": "Indlæs demo data",
+    "body": "Er du usikker på, hvad du skal gøre med en frisk blank side? Indlæs nogle demo data med forudfyldte værdier, se hvordan et CV ser ud og begynd dine ændringer herfra.",
     "buttons": {
-      "loadData": "Load Data"
+      "loadData": "Hent data"
     }
   },
   "reset": {
-    "heading": "Reset Everything!",
-    "body": "This action will reset all your data and remove backups made to your browser's local storage as well, so please make sure you have exported your information before you reset everything.",
+    "heading": "Nulstil alting!",
+    "body": "Denne handling vil nulstille alle dine data og vil også fjerne sikkerhedskopierne fra din browsers lokale lager, så verificer en ekstra gang, at du har eksporteret dine informationer før du nulstiller alting.",
     "buttons": {
-      "reset": "Reset"
+      "reset": "Nulstil"
     }
   }
 }
