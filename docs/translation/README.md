@@ -18,11 +18,14 @@ If you are already familiar with the Crowdin platform and want to contribute you
 ### Completed Translations
 
 - Chinese Simplified `zh`
+- Danish `da`
+- Dutch `nl`
 - English `en`
 - French `fr`
 - German `de`
 - Hindi `hi`
 - Kannada `kn`
+- Portuguese `pt`
 - Spanish `es`
 
 ### Pending Translations
@@ -32,8 +35,6 @@ If you are already familiar with the Crowdin platform and want to contribute you
 - Assamese `as`
 - Catalan `ca`
 - Czech `cs`
-- Danish `da`
-- Dutch `nl`
 - Finnish `fi`
 - Greek `el`
 - Hebrew `he`
@@ -45,7 +46,6 @@ If you are already familiar with the Crowdin platform and want to contribute you
 - Marathi `mr`
 - Norwegian `no`
 - Polish `pl`
-- Portuguese `pt`
 - Punjabi `pa`
 - Romanian `ro`
 - Russian `ru`
