@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file.
 
 ## April 2020
 
+### April 11, 2020
+
+- Added Language: Portuguese
+
 ### April 8, 2020
 
 - Added Language: Spanish
