@@ -5,12 +5,6 @@ import AppContext from '../../context/AppContext';
 import { hexToRgb } from '../../utils';
 
 const styles = {
-  image: {
-    width: '100%',
-    height: '160px',
-    objectFit: 'cover',
-    objectPosition: 'top center',
-  },
   header: {
     position: 'absolute',
     left: 0,
@@ -48,7 +42,16 @@ const Celebi = () => {
 
   const Photo = () =>
     data.profile.photo !== '' && (
-      <img src={data.profile.photo} alt="Resume Photograph" style={styles.image} />
+      <div className="relative z-40">
+        <img
+          className="w-full object-cover object-center"
+          src={data.profile.photo}
+          alt="Resume Photograph"
+          style={{
+            height: '160px',
+          }}
+        />
+      </div>
     );
 
   const Header = () => (
@@ -94,7 +97,7 @@ const Celebi = () => {
     </div>
   );
 
-  const WorkItem = (x) => (
+  const WorkItem = x => (
     <div key={x.title} className="my-3 mr-10">
       <div>
         <h6 className="font-semibold">{x.title}</h6>
@@ -111,11 +114,11 @@ const Celebi = () => {
     data.work.enable && (
       <div className="mb-6">
         <Heading title={data.work.heading} />
-        {data.work.items.filter((x) => x.enable).map(WorkItem)}
+        {data.work.items.filter(x => x.enable).map(WorkItem)}
       </div>
     );
 
-  const EducationItem = (x) => (
+  const EducationItem = x => (
     <div key={x.name} className="my-3 mr-10">
       <h6 className="font-semibold">{x.name}</h6>
       <p className="text-xs">{x.major}</p>
@@ -131,7 +134,7 @@ const Celebi = () => {
     data.education.enable && (
       <div className="mb-6">
         <Heading title={data.education.heading} />
-        {data.education.items.filter((x) => x.enable).map(EducationItem)}
+        {data.education.items.filter(x => x.enable).map(EducationItem)}
       </div>
     );
 
@@ -140,7 +143,7 @@ const Celebi = () => {
       <div className="mb-6">
         <Heading title="Skills" className="w-3/4 mx-auto" />
         <ul className="list-none text-sm">
-          {data.skills.items.map((x) => (
+          {data.skills.items.map(x => (
             <li key="x" className="my-2">
               {x}
             </li>
@@ -149,7 +152,7 @@ const Celebi = () => {
       </div>
     );
 
-  const ReferenceItem = (x) => (
+  const ReferenceItem = x => (
     <div key={x.id} className="flex flex-col">
       <h6 className="text-sm font-semibold">{x.name}</h6>
       <span className="text-sm">{x.position}</span>
@@ -165,12 +168,12 @@ const Celebi = () => {
       <div className="mb-6">
         <Heading title={data.references.heading} />
         <div className="grid grid-cols-2 col-gap-4 row-gap-2">
-          {data.references.items.filter((x) => x.enable).map(ReferenceItem)}
+          {data.references.items.filter(x => x.enable).map(ReferenceItem)}
         </div>
       </div>
     );
 
-  const LanguageItem = (x) => (
+  const LanguageItem = x => (
     <div key={x.id} className="grid grid-cols-2 items-center py-2">
       <h6 className="text-xs font-medium text-left">{x.key}</h6>
       <div className="flex">
@@ -188,11 +191,11 @@ const Celebi = () => {
     data.languages.enable && (
       <div className="w-3/4 mx-auto mb-6">
         <Heading title={data.languages.heading} />
-        <div>{data.languages.items.filter((x) => x.enable).map(LanguageItem)}</div>
+        <div>{data.languages.items.filter(x => x.enable).map(LanguageItem)}</div>
       </div>
     );
 
-  const AwardItem = (x) => (
+  const AwardItem = x => (
     <div key={x.title} className="my-2">
       <h6 className="font-semibold">{x.title}</h6>
       <p className="text-xs">{x.subtitle}</p>
@@ -205,11 +208,11 @@ const Celebi = () => {
     data.awards.enable && (
       <div className="mb-6">
         <Heading light title={data.awards.heading} />
-        {data.awards.items.filter((x) => x.enable).map(AwardItem)}
+        {data.awards.items.filter(x => x.enable).map(AwardItem)}
       </div>
     );
 
-  const CertificationItem = (x) => (
+  const CertificationItem = x => (
     <div key={x.title} className="my-2">
       <h6 className="font-semibold">{x.title}</h6>
       <p className="text-xs">{x.subtitle}</p>
@@ -222,11 +225,11 @@ const Celebi = () => {
     data.certifications.enable && (
       <div className="mb-6">
         <Heading title={data.certifications.heading} className="w-3/4 mx-auto" />
-        {data.certifications.items.filter((x) => x.enable).map(CertificationItem)}
+        {data.certifications.items.filter(x => x.enable).map(CertificationItem)}
       </div>
     );
 
-  const ExtraItem = (x) => (
+  const ExtraItem = x => (
     <div key={x.id} className="my-3">
       <h6 className="text-xs font-bold">{x.key}</h6>
       <div className="text-sm">{x.value}</div>
@@ -238,7 +241,7 @@ const Celebi = () => {
     data.extras.enable && (
       <div className="mb-6">
         <Heading title={data.extras.heading} className="w-3/4 mx-auto" />
-        {data.extras.items.filter((x) => x.enable).map(ExtraItem)}
+        {data.extras.items.filter(x => x.enable).map(ExtraItem)}
       </div>
     );
 
