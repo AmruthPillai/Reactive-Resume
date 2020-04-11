@@ -9,6 +9,14 @@ const languages = [
     name: 'Chinese',
   },
   {
+    code: 'da',
+    name: 'Danish',
+  },
+  {
+    code: 'nl',
+    name: 'Dutch',
+  },
+  {
     code: 'en',
     name: 'English',
   },
@@ -29,12 +37,12 @@ const languages = [
     name: 'Kannada',
   },
   {
-    code: 'es',
-    name: 'Spanish',
-  },
-  {
     code: 'pt',
     name: 'Portuguese',
+  },
+  {
+    code: 'es',
+    name: 'Spanish',
   },
 ];
 
