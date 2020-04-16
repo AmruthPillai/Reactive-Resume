@@ -34,7 +34,7 @@ const Celebi = () => {
 
   const Heading = ({ title, className }) => (
     <h5
-      className={`my-2 text-lg uppercase font-semibold tracking-wider pb-1 border-b-2 border-gray-800 ${className}`}
+      className={`my-2 text-md uppercase font-semibold tracking-wider pb-1 border-b-2 border-gray-800 ${className}`}
     >
       {title}
     </h5>
@@ -177,11 +177,16 @@ const Celebi = () => {
     <div key={x.id} className="grid grid-cols-2 items-center py-2">
       <h6 className="text-xs font-medium text-left">{x.key}</h6>
       <div className="flex">
-        {Array.from(Array(x.value)).map((_, i) => (
-          <i key={i} className="material-icons text-lg" style={{ color: theme.colors.accent }}>
-            star
-          </i>
-        ))}
+        {x.level && <div className="font-bold text-sm mr-2">{x.level}</div>}
+        {x.rating !== 0 && (
+          <div className="flex">
+            {Array.from(Array(x.rating)).map((_, i) => (
+              <i key={i} className="material-icons text-lg" style={{ color: theme.colors.accent }}>
+                star
+              </i>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
