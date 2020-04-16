@@ -29,6 +29,10 @@
         "multiPageA4": "Multi-Page A4"
       }
     },
+    "helpText": [
+      "This export method makes use of HTML canvas to convert the resume to an image and print it on a PDF, which means it will lose all selecting/parsing capabilities.",
+      "If that is important to you, please try printing the resume instead, using Cmd/Ctrl + P or the print button below. The result may vary as the output is browser dependent, but it is known to work best on the latest version of Google Chrome."
+    ],
     "buttons": {
       "cancel": "Cancel",
       "saveAsPdf": "Save as PDF"

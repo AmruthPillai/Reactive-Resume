@@ -1,25 +1,45 @@
 {
-  "heading": {
-    "placeholder": "Heading"
-  },
   "item": {
-    "add": "Add {{- heading}}",
+    "add": "Dodaj {{- heading}}",
     "startDate": {
-      "label": "Start Date",
-      "placeholder": "March 2018"
+      "label": "Data rozpoczęcia"
     },
     "endDate": {
-      "label": "End Date",
-      "placeholder": "March 2022"
+      "label": "Data zakończenia"
     },
     "description": {
-      "label": "Description"
+      "label": "Opis"
     }
   },
   "buttons": {
     "add": {
-      "label": "Add"
+      "label": "Dodaj"
     }
   },
-  "markdownHelpText": "You can use <1>GitHub Flavored Markdown</1> to style this section of the text."
+  "printDialog": {
+    "heading": "Pobierz swoje CV",
+    "quality": {
+      "label": "Jakość"
+    },
+    "printType": {
+      "label": "Rodzaj",
+      "types": {
+        "unconstrained": "Nieograniczony",
+        "fitInA4": "Dopasuj do A4",
+        "multiPageA4": "Wielostronne A4"
+      }
+    },
+    "helpText": [
+      "Ta metoda eksportu wykorzystuje HTML do konwersji CV jako obrazu i wydrukowania go w formacie PDF, co oznacza, że utraci on wszystkie możliwości zaznaczania / analizowania.",
+      "Jeśli jest to dla Ciebie ważne, spróbuj wydrukować CV za pomocą Ctrl + P lub przycisku drukowania poniżej. Wynik może się różnić, ponieważ wynik zależy od przeglądarki, ale wiemy, że najlepiej działa w najnowszej wersji Google Chrome."
+    ],
+    "buttons": {
+      "cancel": "Anuluj",
+      "saveAsPdf": "Zapisz jako PDF"
+    }
+  },
+  "panZoomAnimation": {
+    "helpText": "Możesz przesuwać i powiększać obszar roboczy w dowolnym momencie, aby przyjrzeć się swojemu CV."
+  },
+  "markdownHelpText": "Możesz użyć <1>GitHub Flavored Markdown</1> aby zmienić styl tej sekcji tekstu."
 }

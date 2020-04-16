@@ -51,11 +51,15 @@ const App = () => {
             style={{ outline: 'none' }}
           >
             <div id="page" ref={pageRef} className="shadow-2xl break-words">
-              {templates.find((x) => theme.layout.toLowerCase() === x.key).component()}
+              {templates.find(x => theme.layout.toLowerCase() === x.key).component()}
             </div>
           </PanZoom>
 
           <PageController />
+        </div>
+
+        <div id="printPage" className="break-words">
+          {templates.find(x => theme.layout.toLowerCase() === x.key).component()}
         </div>
 
         <RightSidebar />

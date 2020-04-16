@@ -31,7 +31,7 @@ const PrintDialog = () => {
     >
       <div
         className="centered py-8 px-12 bg-white shadow-xl rounded w-full md:w-1/3"
-        onClick={(e) => {
+        onClick={e => {
           e.stopPropagation();
           e.preventDefault();
         }}
@@ -44,7 +44,7 @@ const PrintDialog = () => {
             type="range"
             className="w-full h-4 my-2 rounded-full overflow-hidden appearance-none focus:outline-none bg-gray-400"
             value={quality}
-            onChange={(e) => setQuality(e.target.value)}
+            onChange={e => setQuality(e.target.value)}
             min="40"
             max="100"
             step="5"
@@ -58,12 +58,15 @@ const PrintDialog = () => {
           value={type}
           options={printTypes}
           onChange={setType}
-          optionItem={(x) => (
+          optionItem={x => (
             <option key={x.key} value={x.key}>
               {x.value}
             </option>
           )}
         />
+
+        <p className="my-3 text-xs text-gray-600">{t('printDialog.helpText.0')}</p>
+        <p className="my-3 text-xs text-gray-600">{t('printDialog.helpText.1')}</p>
 
         <div className="flex justify-between">
           <button
