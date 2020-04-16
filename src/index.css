@@ -129,6 +129,7 @@ input[type='range']::-webkit-slider-thumb {
   #printPage,
   #printPage * {
     visibility: visible;
+    page-break-inside: avoid;
   }
 
   #printPage {
