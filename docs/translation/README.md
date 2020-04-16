@@ -25,6 +25,7 @@ If you are already familiar with the Crowdin platform and want to contribute you
 - German `de`
 - Hindi `hi`
 - Kannada `kn`
+- Polish `pl`
 - Portuguese `pt`
 - Spanish `es`
 
@@ -45,7 +46,6 @@ If you are already familiar with the Crowdin platform and want to contribute you
 - Malayalam `ml`
 - Marathi `mr`
 - Norwegian `no`
-- Polish `pl`
 - Punjabi `pa`
 - Romanian `ro`
 - Russian `ru`

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 ## April 2020
 
+### April 16, 2020
+
+- Brought Back Browser Print Method, you can now print parseable resumes
+- Modified Templates to use ID as Key in items, instead of names
+- Added Language: Polish
+
 ### April 11, 2020
 
 - Added Language: Danish

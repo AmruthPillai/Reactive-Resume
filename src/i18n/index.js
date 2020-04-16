@@ -39,6 +39,10 @@ const languages = [
     name: 'Kannada',
   },
   {
+    code: 'pl',
+    name: 'Polish',
+  },
+  {
     code: 'pt',
     name: 'Portuguese',
   },
