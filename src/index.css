@@ -99,6 +99,10 @@ input[type='range']::-webkit-slider-thumb {
     background-color: white;
   }
 
+  #printPage {
+    display: none;
+  }
+
   #pageController {
     bottom: 25px;
   }
@@ -110,7 +114,7 @@ input[type='range']::-webkit-slider-thumb {
 
 @page {
   size: A4;
-  margin: 2.5em;
+  margin: 0;
 }
 
 @media print {
@@ -122,18 +126,17 @@ input[type='range']::-webkit-slider-thumb {
     visibility: hidden;
   }
 
-  #page,
-  #page * {
+  #printPage,
+  #printPage * {
     visibility: visible;
   }
 
-  #page {
+  #printPage {
     width: 21cm;
     height: 29.7cm;
-    background-color: white;
-    box-shadow: none;
     position: absolute;
-    left: 0;
     top: 0;
+    left: 0;
+    right: 0;
   }
 }

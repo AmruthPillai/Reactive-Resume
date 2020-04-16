@@ -98,7 +98,7 @@ const Celebi = () => {
   );
 
   const WorkItem = x => (
-    <div key={x.title} className="my-3 mr-10">
+    <div key={x.id} className="my-3 mr-10">
       <div>
         <h6 className="font-semibold">{x.title}</h6>
         <p className="text-xs text-gray-800">
@@ -119,7 +119,7 @@ const Celebi = () => {
     );
 
   const EducationItem = x => (
-    <div key={x.name} className="my-3 mr-10">
+    <div key={x.id} className="my-3 mr-10">
       <h6 className="font-semibold">{x.name}</h6>
       <p className="text-xs">{x.major}</p>
       <div className="text-xs">
@@ -196,7 +196,7 @@ const Celebi = () => {
     );
 
   const AwardItem = x => (
-    <div key={x.title} className="my-2">
+    <div key={x.id} className="my-2">
       <h6 className="font-semibold">{x.title}</h6>
       <p className="text-xs">{x.subtitle}</p>
       <ReactMarkdown className="mt-2 text-sm" source={x.description} />
@@ -213,7 +213,7 @@ const Celebi = () => {
     );
 
   const CertificationItem = x => (
-    <div key={x.title} className="my-2">
+    <div key={x.id} className="my-2">
       <h6 className="font-semibold">{x.title}</h6>
       <p className="text-xs">{x.subtitle}</p>
       <ReactMarkdown className="mt-2 text-sm" source={x.description} />

@@ -10,7 +10,7 @@ const move = (array, element, delta) => {
   array.splice(indexes[0], 2, array[indexes[1]], array[indexes[0]]);
 };
 
-const hexToRgb = (hex) => {
+const hexToRgb = hex => {
   const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
   hex = hex.replace(shorthandRegex, (m, r, g, b) => r + r + g + g + b + b);
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -23,7 +23,7 @@ const hexToRgb = (hex) => {
     : null;
 };
 
-const copyToClipboard = (text) => {
+const copyToClipboard = text => {
   const textArea = document.createElement('textarea');
   textArea.style.position = 'fixed';
   textArea.style.top = 0;
@@ -44,7 +44,7 @@ const copyToClipboard = (text) => {
   return successful;
 };
 
-const saveData = (dispatch) => dispatch({ type: 'save_data' });
+const saveData = dispatch => dispatch({ type: 'save_data' });
 
 const addItem = (dispatch, key, value) => {
   dispatch({
@@ -105,7 +105,7 @@ const importJson = (event, dispatch) => {
 };
 
 const saveAsPdf = (pageRef, panZoomRef, quality, type) =>
-  new Promise((resolve) => {
+  new Promise(resolve => {
     panZoomRef.current.autoCenter(1);
     panZoomRef.current.reset();
 
@@ -114,7 +114,7 @@ const saveAsPdf = (pageRef, panZoomRef, quality, type) =>
         scale: 5,
         useCORS: true,
         allowTaint: true,
-      }).then((canvas) => {
+      }).then(canvas => {
         const image = canvas.toDataURL('image/jpeg', quality / 100);
         const doc = new jsPDF({
           orientation: 'portrait',
@@ -148,7 +148,7 @@ const saveAsPdf = (pageRef, panZoomRef, quality, type) =>
   });
 
 const saveAsMultiPagePdf = (pageRef, panZoomRef, quality) =>
-  new Promise((resolve) => {
+  new Promise(resolve => {
     panZoomRef.current.autoCenter(1);
     panZoomRef.current.reset();
 
@@ -157,7 +157,7 @@ const saveAsMultiPagePdf = (pageRef, panZoomRef, quality) =>
         scale: 5,
         useCORS: true,
         allowTaint: true,
-      }).then((canvas) => {
+      }).then(canvas => {
         const image = canvas.toDataURL('image/jpeg', quality / 100);
         const doc = new jsPDF({
           orientation: 'portrait',

@@ -33,6 +33,10 @@ const PageController = () => {
 
         <div className="text-gray-400 p-3">|</div>
 
+        <div className="p-3 hover:bg-gray-200 cursor-pointer flex" onClick={() => window.print()}>
+          <i className="material-icons">print</i>
+        </div>
+
         <div
           className="p-3 hover:bg-gray-200 cursor-pointer flex"
           onClick={() => setPrintDialogOpen(true)}
