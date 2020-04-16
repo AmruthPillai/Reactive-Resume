@@ -1,16 +1,16 @@
-import React, { useState, useEffect, useContext } from 'react';
+import set from 'lodash/set';
+import React, { useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { v4 as uuidv4 } from 'uuid';
-import set from 'lodash/set';
 
-import TextField from '../../../shared/TextField';
 import AppContext from '../../../context/AppContext';
+import AddItemButton from '../../../shared/AddItemButton';
 import Checkbox from '../../../shared/Checkbox';
 import Counter from '../../../shared/Counter';
-import { addItem } from '../../../utils';
 import ItemActions from '../../../shared/ItemActions';
-import AddItemButton from '../../../shared/AddItemButton';
 import ItemHeading from '../../../shared/ItemHeading';
+import TextField from '../../../shared/TextField';
+import { addItem } from '../../../utils';
 
 const LanguagesTab = ({ data, onChange }) => {
   const context = useContext(AppContext);
@@ -86,12 +86,28 @@ const Form = ({ item, onChange, identifier = '' }) => {
         onChange={v => onChange(`${identifier}key`, v)}
       />
 
+      <TextField
+        className="mb-6"
+        label={t('languages.level.label')}
+        placeholder="B1"
+        value={item.level}
+        onChange={v => onChange(`${identifier}level`, v)}
+      />
+
       <Counter
         className="mb-6"
         label={t('languages.rating.label')}
-        value={item.value}
-        onDecrement={() => item.value > 1 && onChange(`${identifier}value`, item.value - 1)}
-        onIncrement={() => item.value < 5 && onChange(`${identifier}value`, item.value + 1)}
+        value={item.rating}
+        onDecrement={() =>
+          item.rating > 1
+            ? onChange(`${identifier}rating`, item.rating - 1)
+            : onChange(`${identifier}rating`, 0)
+        }
+        onIncrement={() =>
+          item.rating < 5
+            ? onChange(`${identifier}rating`, item.rating + 1)
+            : onChange(`${identifier}rating`, 0)
+        }
       />
     </div>
   );
@@ -103,7 +119,8 @@ const AddItem = ({ heading, dispatch }) => {
     id: uuidv4(),
     enable: true,
     key: '',
-    value: 1,
+    value: '',
+    rating: 1,
   });
 
   const onChange = (key, value) => setItem(items => set({ ...items }, key, value));
@@ -117,7 +134,8 @@ const AddItem = ({ heading, dispatch }) => {
       id: uuidv4(),
       enable: true,
       key: '',
-      value: 1,
+      value: '',
+      rating: 1,
     });
 
     setOpen(false);

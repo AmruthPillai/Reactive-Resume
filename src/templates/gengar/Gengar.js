@@ -25,8 +25,9 @@ const Gengar = () => {
 
   const FullName = () => (
     <div>
-      <h1 className="text-2xl font-bold">{data.profile.firstName}</h1>
-      <h1 className="text-2xl font-bold">{data.profile.lastName}</h1>
+      <h1 className="text-2xl font-bold leading-tight">{data.profile.firstName}</h1>
+      <h1 className="text-2xl font-bold leading-tight">{data.profile.lastName}</h1>
+      <div className="text-xs font-medium mt-2">{data.profile.subtitle}</div>
     </div>
   );
 
@@ -196,11 +197,16 @@ const Gengar = () => {
     <div key={x.id} className="grid grid-cols-2 items-center py-2">
       <h6 className="text-sm font-medium">{x.key}</h6>
       <div className="flex">
-        {Array.from(Array(x.value)).map((_, i) => (
-          <i key={i} className="material-icons text-lg" style={{ color: theme.colors.accent }}>
-            star
-          </i>
-        ))}
+        {x.level && <div className="font-bold text-sm mr-2">{x.level}</div>}
+        {x.rating !== 0 && (
+          <div className="flex">
+            {Array.from(Array(x.rating)).map((_, i) => (
+              <i key={i} className="material-icons text-lg" style={{ color: theme.colors.accent }}>
+                star
+              </i>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

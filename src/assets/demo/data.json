@@ -66,7 +66,7 @@
           "major": "MS in Computer Science",
           "start": "Sep 2001",
           "end": "Aug 2002",
-          "grade": "",
+          "grade": "7.2 CGPA",
           "description": "",
           "enabled": true,
           "enable": true
@@ -77,7 +77,7 @@
           "major": "BS in Computer Science",
           "start": "Sep 1997",
           "end": "Aug 2001",
-          "grade": "",
+          "grade": "8.4 CGPA",
           "description": "",
           "enabled": true,
           "enable": true
@@ -131,8 +131,8 @@
         },
         {
           "id": "97a1a8d9-3c03-47fb-93ab-e84f864ffe17",
-          "title": "DCUCI Exam",
-          "subtitle": "",
+          "title": "DCUCI 642-999",
+          "subtitle": "Cisco Systems",
           "description": "",
           "enable": true
         }
@@ -158,25 +158,32 @@
           "id": "9d34cfcb-c9f0-4d25-ab27-cf81652dd1d0",
           "key": "English (US)",
           "value": 5,
-          "enable": true
+          "enable": true,
+          "level": "",
+          "rating": 5
         },
         {
           "id": "3511a86b-7ea9-44ac-8144-6acc7f3bd54f",
           "key": "Spanish",
           "value": 4,
-          "enable": true
+          "enable": true,
+          "rating": 4
         },
         {
           "id": "d1e17542-f7cc-473a-aa0e-978765907454",
-          "key": "French",
+          "key": "Japanese",
           "value": 4,
-          "enable": true
+          "enable": true,
+          "level": "N4",
+          "rating": 2
         },
         {
           "id": "b1e8442a-7059-4c6f-8a9c-415383133b0e",
           "key": "German",
           "value": 3,
-          "enable": true
+          "enable": true,
+          "level": "B1",
+          "rating": 0
         }
       ]
     },
@@ -244,24 +251,12 @@
       ]
     },
     "data": {
-      "languages": {
-        "items": [
-          null,
-          null,
-          null,
-          null,
-          {
-            "items": []
-          }
-        ]
-      }
+      "languages": { "items": [null, null, null, null, { "items": [] }] }
     }
   },
   "theme": {
-    "layout": "Gengar",
-    "font": {
-      "family": "Montserrat"
-    },
+    "layout": "castform",
+    "font": { "family": "Montserrat" },
     "colors": {
       "background": "#ffffff",
       "primary": "#212121",

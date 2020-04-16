@@ -195,11 +195,16 @@ const Glalie = () => {
     <div key={x.id} className="grid grid-cols-2 items-center py-2">
       <h6 className="text-xs font-medium text-left">{x.key}</h6>
       <div className="flex">
-        {Array.from(Array(x.value)).map((_, i) => (
-          <i key={i} className="material-icons text-lg" style={{ color: theme.colors.accent }}>
-            star
-          </i>
-        ))}
+        {x.level && <div className="font-bold text-sm mr-2">{x.level}</div>}
+        {x.rating !== 0 && (
+          <div className="flex">
+            {Array.from(Array(x.rating)).map((_, i) => (
+              <i key={i} className="material-icons text-lg" style={{ color: theme.colors.accent }}>
+                star
+              </i>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -143,22 +143,28 @@ const Castform = () => {
 
   const LanguageItem = x => (
     <div key={x.id} className="flex flex-col my-2">
-      <h6 className="text-sm font-medium mb-1">{x.key}</h6>
-      <div className="relative h-5">
-        <div
-          className="absolute mb-1 inset-0"
-          style={{
-            backgroundColor: 'rgba(0, 0, 0, 0.25)',
-          }}
-        />
-        <div
-          className="absolute mb-1 inset-0 rounded"
-          style={{
-            width: `${x.value * 20}%`,
-            backgroundColor: 'rgba(0, 0, 0, 0.3)',
-          }}
-        />
+      <div className="flex justify-between items-center">
+        <h6 className="text-sm font-medium mb-1">{x.key}</h6>
+        {x.level !== '' && <div className="font-bold text-sm">{x.level}</div>}
       </div>
+
+      {x.rating !== 0 && (
+        <div className="relative h-5">
+          <div
+            className="absolute mb-1 inset-0"
+            style={{
+              backgroundColor: 'rgba(0, 0, 0, 0.25)',
+            }}
+          />
+          <div
+            className="absolute mb-1 inset-0 rounded"
+            style={{
+              width: `${x.rating * 20}%`,
+              backgroundColor: 'rgba(0, 0, 0, 0.3)',
+            }}
+          />
+        </div>
+      )}
     </div>
   );
 
