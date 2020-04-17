@@ -17,6 +17,7 @@ If you are already familiar with the Crowdin platform and want to contribute you
 
 ### Completed Translations
 
+- Arabic `ar`
 - Chinese Simplified `zh`
 - Danish `da`
 - Dutch `nl`
@@ -32,7 +33,6 @@ If you are already familiar with the Crowdin platform and want to contribute you
 ### Pending Translations
 
 - Afrikaans `af`
-- Arabic `ar`
 - Assamese `as`
 - Catalan `ca`
 - Czech `cs`

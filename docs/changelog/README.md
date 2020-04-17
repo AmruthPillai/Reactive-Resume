@@ -8,6 +8,11 @@ All notable changes to this project will be documented in this file.
 
 ## April 2020
 
+### April 17, 2020
+
+- Updated Dependencies across App
+- Added Language: Arabic
+
 ### April 16, 2020
 
 - Brought Back Browser Print Method, you can now print parseable resumes
