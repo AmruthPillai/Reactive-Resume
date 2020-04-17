@@ -1,25 +1,45 @@
 {
-  "heading": {
-    "placeholder": "Heading"
-  },
   "item": {
-    "add": "Add {{- heading}}",
+    "add": "إضافة {{- heading}}",
     "startDate": {
-      "label": "Start Date",
-      "placeholder": "March 2018"
+      "label": "تاريخ البدء"
     },
     "endDate": {
-      "label": "End Date",
-      "placeholder": "March 2022"
+      "label": "تاريخ الانتهاء"
     },
     "description": {
-      "label": "Description"
+      "label": "الوصف"
     }
   },
   "buttons": {
     "add": {
-      "label": "Add"
+      "label": "إضافة"
     }
   },
-  "markdownHelpText": "You can use <1>GitHub Flavored Markdown</1> to style this section of the text."
+  "printDialog": {
+    "heading": "تحميل السيرة الذاتية الخاصة بك",
+    "quality": {
+      "label": "الجودة"
+    },
+    "printType": {
+      "label": "النوع",
+      "types": {
+        "unconstrained": "غير مقيّد",
+        "fitInA4": "ملائم في A4",
+        "multiPageA4": "صفحات متعددة A4"
+      }
+    },
+    "helpText": [
+      "يستخدم فى صيغة التصدير هنا HTML canvas لتحويل السيرة الذاتية إلى صورة ثم طباعتها فى ملف pdf ، مما يعنى أنك ستفقد كل قدرات تحديد\\تحليل النص المكتوب.",
+      "إذا كان هذا مهماً بالنسبة لك، يرجى محاولة طباعة السيرة الذاتية بدلاً من ذلك باستخدام Cmd/Ctrl + P أو زر الطباعة أدناه. قد تختلف النتيجة لأن طبيعة الطباعة تعتمد على نوع المتصفح، ولكن من المعروف أنه يعمل بشكل أفضل على أحدث إصدار من Google Chrome."
+    ],
+    "buttons": {
+      "cancel": "إلغاء",
+      "saveAsPdf": "حفظ كـ pdf"
+    }
+  },
+  "panZoomAnimation": {
+    "helpText": "يمكنك تحريك وتكبير لوحة الرسم فى أى وقت لتحصل على نظرة أوضح لسيرتك الذاتية."
+  },
+  "markdownHelpText": "يمكنك استخدام <1>GitHub Flavored Markdown</1> لتصميم هذا القسم من النص."
 }

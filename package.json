@@ -10,13 +10,13 @@
     "@fullhuman/postcss-purgecss": "^2.1.2",
     "@testing-library/jest-dom": "^5.5.0",
     "@testing-library/react": "^10.0.2",
-    "@testing-library/user-event": "^10.0.1",
-    "@vuepress/plugin-google-analytics": "^1.4.0",
+    "@testing-library/user-event": "^10.0.2",
+    "@vuepress/plugin-google-analytics": "^1.4.1",
     "autoprefixer": "^9.7.6",
     "axios": "^0.19.2",
     "html2canvas": "^1.0.0-rc.5",
-    "i18next": "^19.4.1",
-    "i18next-browser-languagedetector": "^4.0.2",
+    "i18next": "^19.4.2",
+    "i18next-browser-languagedetector": "^4.1.0",
     "i18next-xhr-backend": "^3.2.2",
     "jspdf": "^1.5.3",
     "lodash": "^4.17.15",
@@ -30,7 +30,7 @@
     "react-toastify": "^5.5.0",
     "tailwindcss": "^1.2.0",
     "uuid": "^7.0.3",
-    "vuepress": "^1.4.0"
+    "vuepress": "^1.4.1"
   },
   "scripts": {
     "css": "postcss src/assets/tailwind/tailwind.src.css -o src/assets/tailwind/tailwind.css",
@@ -72,7 +72,7 @@
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-react-hooks": "^3.0.0",
     "eslint-plugin-react": "^7.19.0",
     "eslint": "^6.8.0"

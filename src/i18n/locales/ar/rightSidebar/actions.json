@@ -1,34 +1,33 @@
 {
-  "title": "Actions",
-  "disclaimer": "Changes you make to your resume are saved automatically to your browser's local storage. No data gets out, hence your information is completely secure.",
+  "title": "الاجراءت",
+  "disclaimer": "التغييرات التي تجريها على السيرة الذاتية الخاصة بك يتم حفظها تلقائيًا إلى وحدة التخزين المحلية للمتصفح. لا توجد بيانات، وبالتالي فإن المعلومات الخاصة بك آمنة تمامًا.",
   "importExport": {
-    "heading": "Import/Export",
-    "body": "You can import or export your data in JSON format. With this, you can edit and print your resume from any device. Save this file for later use.",
+    "heading": "إستيراد/تصدير",
+    "body": "يمكنك استيراد أو تصدير البيانات الخاصة بك بتنسيق JSON. لذلك ، يمكنك تعديل أو طباعة سيرتك الذاتية من أي جهاز. حفظ هذا الملف لاستخدامه لاحقاً.",
     "buttons": {
-      "import": "Import",
-      "export": "Export"
+      "import": "إستيراد",
+      "export": "تصدير"
     }
   },
-  "printResume": {
-    "heading": "Print Your Resume",
-    "body": "You can click on the button below to generate a PDF instantly. Alternatively, you can also use <1>Cmd/Ctrl + P</1> but it would have different effects.",
+  "downloadResume": {
+    "heading": "تحميل السيرة الذاتية الخاصة بك",
+    "body": "يمكنك النقر على الزر أدناه لتنزيل نسخة PDF من سيرتك الذاتية على الفور. للحصول على أفضل النتائج، يرجى استخدام أحدث إصدار من Google Chrome.",
     "buttons": {
-      "export": "Export",
-      "print": "Print"
+      "saveAsPdf": "حفظ كـ pdf"
     }
   },
   "loadDemoData": {
-    "heading": "Load Demo Data",
-    "body": "Unclear on what to do with a fresh blank page? Load some demo data with prepopulated values to see how a resume should look and you can start editing from there.",
+    "heading": "إضافة البيانات التجريبية",
+    "body": "غير واضح ما يجب فعله بصفحة جديدة فارغة؟ قم بإضافة بعض البيانات التجريبية مع قيم مسبقة لترى كيف يجب أن تبدو سيرتك الذاتية ويمكنك البدء في التعديل من هناك.",
     "buttons": {
-      "loadData": "Load Data"
+      "loadData": "تحميل-إضافة البيانات"
     }
   },
   "reset": {
-    "heading": "Reset Everything!",
-    "body": "This action will reset all your data and remove backups made to your browser's local storage as well, so please make sure you have exported your information before you reset everything.",
+    "heading": "إعادة تعيين كل شيء!",
+    "body": "سيؤدي هذا الإجراء إلى إعادة تعيين جميع بياناتك وإزالة النسخ الاحتياطية التي تم إنشاؤها على وحدة التخزين المحلية لمتصفحك أيضًا. لذا يرجى التأكد من أنك قمت بتصدير بياناتك أولاً قبل إعادة تعيين كل شيء.",
     "buttons": {
-      "reset": "Reset"
+      "reset": "إعادة تعيين"
     }
   }
 }
