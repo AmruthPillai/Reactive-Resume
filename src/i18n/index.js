@@ -54,6 +54,10 @@ const languages = [
     code: 'es',
     name: 'Spanish',
   },
+  {
+    code: 'vi',
+    name: 'Tiếng Việt'
+  }
 ];
 
 i18n
