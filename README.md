@@ -2,11 +2,11 @@
 
 # Reactive Resume
 
-![Build & Deploy](https://github.com/AmruthPillai/Reactive-Resume/workflows/Build%20&%20Deploy/badge.svg)
+[![Build & Deploy](https://github.com/AmruthPillai/Reactive-Resume/workflows/Build%20&%20Deploy/badge.svg)](https://github.com/AmruthPillai/Reactive-Resume/actions)
 ![Code Style](https://badgen.net/badge/code%20style/airbnb/ff5a5f?icon=airbnb)
-![Docker Pulls](https://img.shields.io/docker/pulls/amruthpillai/reactive-resume)
-![Localization](https://badges.crowdin.net/reactive-resume/localized.svg)
-![GitHub](https://img.shields.io/github/license/AmruthPillai/Reactive-Resume)
+[![Docker Pulls](https://img.shields.io/docker/pulls/amruthpillai/reactive-resume)](https://hub.docker.com/r/amruthpillai/reactive-resume)
+[![Localization](https://badges.crowdin.net/reactive-resume/localized.svg)](https://crowdin.com/project/reactive-resume)
+[![GitHub](https://img.shields.io/github/license/AmruthPillai/Reactive-Resume)](https://github.com/AmruthPillai/Reactive-Resume/blob/develop/LICENSE)
 
 #### A Free and Open-Source Resume Builder That Respects Your Privacy
 

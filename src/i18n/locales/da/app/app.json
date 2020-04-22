@@ -17,7 +17,7 @@
     }
   },
   "printDialog": {
-    "heading": "Download dit CV.",
+    "heading": "Download dit CV",
     "quality": {
       "label": "Kvalitet"
     },
@@ -29,6 +29,10 @@
         "multiPageA4": "Flersidet A4"
       }
     },
+    "helpText": [
+      "Denne eksportmetode bruger HTML-lærred til at konvertere CV til et billede og udskrive det på en PDF, hvilket betyder, at det mister alle muligheder for valg / analyse.",
+      "Hvis det er vigtigt for dig, kan du prøve at udskrive CV i stedet for at bruge Cmd / Ctrl + P eller udskrivningsknappen nedenfor. Resultatet kan variere, da output er browserafhængig, men det vides at fungere bedst på den nyeste version af Google Chrome."
+    ],
     "buttons": {
       "cancel": "Annullér",
       "saveAsPdf": "Gem som PDF"
