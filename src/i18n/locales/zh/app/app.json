@@ -1,45 +1,45 @@
 {
   "item": {
-    "add": "添加 {{- heading}}",
+    "add": "Adicionar {{- heading}}",
     "startDate": {
-      "label": "开始日期"
+      "label": "Data Inicial"
     },
     "endDate": {
-      "label": "结束日期"
+      "label": "Data Final"
     },
     "description": {
-      "label": "说明"
+      "label": "Descrição"
     }
   },
   "buttons": {
     "add": {
-      "label": "添加"
+      "label": "Adicionar"
     }
   },
   "printDialog": {
-    "heading": "下载简历",
+    "heading": "Baixar Curriculum",
     "quality": {
-      "label": "品质"
+      "label": "Qualidade"
     },
     "printType": {
-      "label": "类型",
+      "label": "Tipo",
       "types": {
-        "unconstrained": "不受限制",
-        "fitInA4": "适合A4",
-        "multiPageA4": "多页A4"
+        "unconstrained": "Sem restrições",
+        "fitInA4": "Ajustar a A4",
+        "multiPageA4": "Multi-páginas A4"
       }
     },
     "helpText": [
-      "此导出方法使用 HTML 画布将恢复转换为图像并打印到 PDF 上。 这意味着它将失去所有选择/解析能力。",
-      "如果这对您很重要，请尝试打印续版，而不是使用 Cmd/Ctrl + P 或下面的打印按钮。 结果可能会因为输出依赖于浏览器而有所改变，但它已知最适合最新版本的Google Chrome。"
+      "Esse método de exportação utiliza a tela HTML para converter o currículo em uma imagem e imprimi-lo em um PDF, o que significa que ele perderá todos os recursos de seleção / análise.",
+      "Se isso for importante para você, tente imprimir o currículo usando Cmd / Ctrl + P ou o botão de impressão abaixo. O resultado pode variar, pois a saída depende do navegador, mas é conhecido por funcionar melhor na versão mais recente do Google Chrome."
     ],
     "buttons": {
-      "cancel": "取消",
-      "saveAsPdf": "保存为 PDF"
+      "cancel": "Cancelar",
+      "saveAsPdf": "Salvar como PDF"
     }
   },
   "panZoomAnimation": {
-    "helpText": "您可以随时在画板上平移和缩放，以更仔细地查看简历。"
+    "helpText": "Você pode arrastar e dar zoom no quadro de trabalho a qualquer momento para ver mais detalhes do seu curriculum."
   },
-  "markdownHelpText": "你可以使用 <1>GitHub 倾向的 Markdown</1> 来美化这部分文字."
+  "markdownHelpText": "Você pode utilizar <1>GitHub Flavored Markdown</1> para estilizar esta seção."
 }
