@@ -29,6 +29,8 @@ If you are already familiar with the Crowdin platform and want to contribute you
 - Polish `pl`
 - Portuguese `pt`
 - Spanish `es`
+- Tamil `ta`
+- Vietnamese `vi`
 
 ### Pending Translations
 
@@ -50,10 +52,8 @@ If you are already familiar with the Crowdin platform and want to contribute you
 - Romanian `ro`
 - Russian `ru`
 - Swedish `sv`
-- Tamil `ta`
 - Turkish `tr`
 - Ukrainian `uk`
-- Vietnamese `vi`
 
 ::: warning
 If your language is not available in the list above, send me an email at <a href="mailto:im.amruth@gmail.com">im.amruth@gmail.com</a> with your request or raise an issue on GitHub and I'll add it on the Crowdin Platform.
