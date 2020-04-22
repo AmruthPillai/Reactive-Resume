@@ -3,23 +3,48 @@
     "placeholder": "Heading"
   },
   "item": {
-    "add": "Add {{- heading}}",
+    "add": "Thêm {{- heading}}",
     "startDate": {
-      "label": "Start Date",
+      "label": "Bắt đầu",
       "placeholder": "March 2018"
     },
     "endDate": {
-      "label": "End Date",
+      "label": "Kết thúc",
       "placeholder": "March 2022"
     },
     "description": {
-      "label": "Description"
+      "label": "Mô tả"
     }
   },
   "buttons": {
     "add": {
-      "label": "Add"
+      "label": "Thêm"
     }
   },
-  "markdownHelpText": "You can use <1>GitHub Flavored Markdown</1> to style this section of the text."
+  "printDialog": {
+    "heading": "Tải Bản trích ngang về",
+    "quality": {
+      "label": "Chất lượng"
+    },
+    "printType": {
+      "label": "Kiểu",
+      "types": {
+        "unconstrained": "Tự do",
+        "fitInA4": "Vừa trang A4",
+        "multiPageA4": "Nhiều trang A4"
+      }
+    },
+    "helpText": [
+      "Phương pháp xuất này xử dụng HTML canvas để chuyển dạng bản trích ngang thành một ảnh rồi in nó trên một PDF, điều này có nghĩa là nó sẽ mất tất cả các tính năng chọn lựa (selecting)/phân tích (parsing).",
+      "Nếu việc có các tính năng đó quan trọng đối với bạn, hãy thử in bản trích ngang, bằng phím Cmd/Ctrl + P hoặc nút in dưới đây. Kết quả có thể sai khác vì đầu ra phụ thuộc vào trình duyệt, nhưng nó sẽ hoạt động tốt nhất trên phiên bản Google Chrome mới nhất."
+    ],
+    "buttons": {
+      "cancel": "Hủy bỏ",
+      "saveAsPdf": "Lưu thành PDF"
+    }
+  },
+  "panZoomAnimation": {
+    "helpText": "Bạn có thể kéo và thu phóng bản thiết kế bất kì lúc nào để xem bản trích ngang của mình rõ hơn."
+  },
+  "markdownHelpText": "Bạn có thể dùng <1>cú pháp Markdown của GitHub</1> để tạo kiểu cho chữ ở phần này."
 }
