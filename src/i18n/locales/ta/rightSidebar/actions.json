@@ -1,34 +1,33 @@
 {
-  "title": "Actions",
-  "disclaimer": "Changes you make to your resume are saved automatically to your browser's local storage. No data gets out, hence your information is completely secure.",
+  "title": "செயல்கள்",
+  "disclaimer": "ரெசுமே இல் நீங்கள் செய்த மாற்றங்கள் உங்கள் உலாவியின் உள்ளூர் சேமிப்பகத்தில் தானாகவே சேமிக்கப்படும். தரவு எதுவும் வெளியேறவில்லை, எனவே உங்கள் தகவல் முற்றிலும் பாதுகாப்பானது.",
   "importExport": {
-    "heading": "Import/Export",
-    "body": "You can import or export your data in JSON format. With this, you can edit and print your resume from any device. Save this file for later use.",
+    "heading": "இறக்குமதி/ஏற்றுமதி",
+    "body": "உங்கள் தரவை JSON வடிவத்தில் இறக்குமதி செய்யலாம் அல்லது ஏற்றுமதி செய்யலாம். இதன் மூலம், எந்தவொரு சாதனத்திலிருந்தும் உங்கள் விண்ணப்பத்தை திருத்தலாம் மற்றும் அச்சிடலாம். பின்னர் பயன்படுத்த இந்த கோப்பை சேமிக்கவும்.",
     "buttons": {
-      "import": "Import",
-      "export": "Export"
+      "import": "இறக்குமதி",
+      "export": "ஏற்றுமதி"
     }
   },
-  "printResume": {
-    "heading": "Print Your Resume",
-    "body": "You can click on the button below to generate a PDF instantly. Alternatively, you can also use <1>Cmd/Ctrl + P</1> but it would have different effects.",
+  "downloadResume": {
+    "heading": "டவுன்லோட் ரெசுமே",
+    "body": "உங்கள் ரெசுமே PDF பதிப்பை டவுன்லோட் செய்ய கீழே உள்ள பொத்தானைக் கிளிக் செய்யலாம். சிறந்த முடிவுகளுக்கு, Google Chrome இன் சமீபத்திய பதிப்பைப் பயன்படுத்தவும்.",
     "buttons": {
-      "export": "Export",
-      "print": "Print"
+      "saveAsPdf": "PDF என சேமிக்கவும்"
     }
   },
   "loadDemoData": {
-    "heading": "Load Demo Data",
-    "body": "Unclear on what to do with a fresh blank page? Load some demo data with prepopulated values to see how a resume should look and you can start editing from there.",
+    "heading": "டெமோ தகவல்கள் ஏற்றவும்",
+    "body": "புதிய வெற்று பக்கத்துடன் என்ன செய்வது என்பது குறித்து தெளிவாக தெரியவில்லையா? ஒரு ரெசுமே எவ்வாறு இருக்க வேண்டும் என்பதைக் காண சில டெமோ தரவை முன் மதிப்பிடப்பட்ட மதிப்புகளுடன் ஏற்றவும், அங்கிருந்து திருத்தத் தொடங்கலாம்.",
     "buttons": {
-      "loadData": "Load Data"
+      "loadData": "தகவல்கள் ஏற்றவும்"
     }
   },
   "reset": {
-    "heading": "Reset Everything!",
-    "body": "This action will reset all your data and remove backups made to your browser's local storage as well, so please make sure you have exported your information before you reset everything.",
+    "heading": "எல்லாவற்றையும் மாற்றவும்!",
+    "body": "இந்த நடவடிக்கை உங்கள் எல்லா தரவையும் மீட்டமைத்து, உங்கள் உலாவியின் உள்ளூர் சேமிப்பகத்தில் செய்யப்பட்ட காப்புப்பிரதிகளையும் அகற்றும், எனவே எல்லாவற்றையும் மீட்டமைப்பதற்கு முன்பு உங்கள் தகவலை ஏற்றுமதி செய்துள்ளீர்கள் என்பதை உறுதிப்படுத்தவும்.",
     "buttons": {
-      "reset": "Reset"
+      "reset": "மாற்ற"
     }
   }
 }
