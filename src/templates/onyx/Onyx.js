@@ -256,7 +256,7 @@ const Onyx = () => {
             link={`http://${data.profile.website}`}
           />
           <ContactItem
-            icon="alternate_email"
+            icon="email"
             value={data.profile.email}
             link={`mailto:${data.profile.email}`}
           />
