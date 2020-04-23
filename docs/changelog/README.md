@@ -8,6 +8,18 @@ All notable changes to this project will be documented in this file.
 
 ## April 2020
 
+### April 23, 2020
+
+- Transfer all external resources to local, self-host everything
+- Shorten entry animation by a second
+- Optimize Images through `imgbot`
+
+### April 22, 2020
+
+- Display Original Language Name alongside English Language Name
+- Added Language: Tamil
+- Added Language: Vietnamese
+
 ### April 17, 2020
 
 - Updated Dependencies across App
