@@ -260,7 +260,7 @@ const Gengar = () => {
 
           <ContactItem icon="phone" value={data.profile.phone} link={`tel:${data.profile.phone}`} />
           <ContactItem
-            icon="alternate_email"
+            icon="email"
             value={data.profile.email}
             link={`mailto:${data.profile.email}`}
           />
