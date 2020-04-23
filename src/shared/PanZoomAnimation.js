@@ -9,7 +9,7 @@ const PanZoomAnimation = () => {
 
   useEffect(() => {
     setTimeout(() => setAnimationVisible(true), 500);
-    setTimeout(() => setAnimationVisible(false), 4500);
+    setTimeout(() => setAnimationVisible(false), 3000);
   }, []);
 
   return (
