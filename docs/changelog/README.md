@@ -10,6 +10,11 @@ All notable changes to this project will be documented in this file.
 
 ### April 23, 2020
 
+- Fix Issue with Page Controller Icon Size
+- Fix Issue with Checkbox Icon Toggle
+
+### April 23, 2020
+
 - Transfer all external resources to local, self-host everything
 - Shorten entry animation by a second
 - Optimize Images through `imgbot`
