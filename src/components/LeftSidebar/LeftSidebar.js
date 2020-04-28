@@ -30,7 +30,7 @@ const LeftSidebar = () => {
     { key: 'references', name: data.references.heading },
     { key: 'extras', name: data.extras.heading },
   ];
-  const [currentTab, setCurrentTab] = useState(tabs[0].key);
+  const [currentTab, setCurrentTab] = useState(tabs[6].key);
   const onChange = (key, value) => {
     dispatch({
       type: 'on_input',
