@@ -144,7 +144,21 @@ const Celebi = () => {
         <Heading title="Skills" className="w-3/4 mx-auto" />
         <ul className="list-none text-sm">
           {data.skills.items.map(x => (
-            <li key="x" className="my-2">
+            <li key={x} className="my-2">
+              {x}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+
+  const Hobbies = () =>
+    data.hobbies.enable && (
+      <div className="mb-6">
+        <Heading title="Hobbies" className="w-3/4 mx-auto" />
+        <ul className="list-none text-sm">
+          {data.hobbies.items.map(x => (
+            <li key={x} className="my-2">
               {x}
             </li>
           ))}
@@ -266,6 +280,7 @@ const Celebi = () => {
           <Photo />
           <Contact />
           <Skills />
+          <Hobbies />
           <Languages />
           <Certifications />
           <Extras />

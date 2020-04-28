@@ -31,10 +31,6 @@ const Glalie = () => {
     <div className="tracking-wide text-xs uppercase font-medium">{data.profile.subtitle}</div>
   );
 
-  const Divider = () => (
-    <div className="w-1/2 mx-auto my-2 border-b-2" style={{ borderColor: theme.colors.accent }} />
-  );
-
   const ContactItem = ({ title, value }) =>
     value && (
       <div className="flex flex-col">
@@ -47,14 +43,14 @@ const Glalie = () => {
 
   const ContactInformation = () => (
     <div
-      className="w-full border-2 pl-4 pr-4 pb-6"
+      className="w-full border-2 pl-4 pr-4 mb-6"
       style={{
         borderColor: theme.colors.accent,
       }}
     >
       <div
         className="inline-block relative px-4"
-        style={{ top: '-.9em', color: theme.colors.accent }}
+        style={{ top: '-.75em', color: theme.colors.accent }}
       >
         <h2 className="flex">
           <i className="material-icons">flare</i>
@@ -191,6 +187,23 @@ const Glalie = () => {
       </div>
     );
 
+  const HobbyItem = x => (
+    <li key={x} className="text-xs font-medium">
+      {x}
+    </li>
+  );
+
+  const Hobbies = () =>
+    data.hobbies &&
+    data.hobbies.enable && (
+      <div>
+        <Heading title={data.hobbies.heading} />
+        <ul className="pt-2 grid grid-cols-2 row-gap-3 text-left">
+          {data.hobbies.items.map(HobbyItem)}
+        </ul>
+      </div>
+    );
+
   const LanguageItem = x => (
     <div key={x.id} className="grid grid-cols-2 items-center py-2">
       <h6 className="text-xs font-medium text-left">{x.key}</h6>
@@ -267,33 +280,28 @@ const Glalie = () => {
     >
       <div className="grid grid-cols-12">
         <div
-          className="h-full col-span-4 p-8 grid grid-cols-1 row-gap-8 text-center"
+          className="h-full col-span-4 p-8 grid grid-cols-1 row-gap-4 text-center"
           style={{ backgroundColor: `rgba(${r}, ${g}, ${b}, 0.1)` }}
         >
-          <div className="grid grid-cols-1 row-gap-4">
+          <div className="grid grid-cols-1 gap-2">
             <Photo />
             <FullName />
             <Subtitle />
           </div>
-
-          <Divider />
           <ContactInformation />
-          <Divider />
-
           <Objective />
+          <Hobbies />
           <Languages />
           <Certifications />
         </div>
 
-        <div className="col-span-8 p-8">
-          <div className="grid grid-cols-1 row-gap-6">
-            <Work />
-            <Education />
-            <Skills />
-            <Awards />
-            <References />
-            <Extras />
-          </div>
+        <div className="col-span-8 p-8 grid grid-cols-1 row-gap-4">
+          <Work />
+          <Education />
+          <Skills />
+          <Awards />
+          <References />
+          <Extras />
         </div>
       </div>
     </div>

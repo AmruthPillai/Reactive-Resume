@@ -24,47 +24,52 @@ const initialState = {
       email: '',
     },
     objective: {
-      enable: false,
+      enable: true,
       heading: 'Objective',
       body: '',
     },
     work: {
-      enable: false,
+      enable: true,
       heading: 'Work Experience',
       items: [],
     },
     education: {
-      enable: false,
+      enable: true,
       heading: 'Education',
       items: [],
     },
     awards: {
-      enable: false,
+      enable: true,
       heading: 'Honors & Awards',
       items: [],
     },
     certifications: {
-      enable: false,
+      enable: true,
       heading: 'Certifications',
       items: [],
     },
     skills: {
-      enable: false,
-      heading: 'Skills & Hobbies',
+      enable: true,
+      heading: 'Skills',
+      items: [],
+    },
+    hobbies: {
+      enable: true,
+      heading: 'Hobbies',
       items: [],
     },
     languages: {
-      enable: false,
+      enable: true,
       heading: 'Languages',
       items: [],
     },
     references: {
-      enable: false,
+      enable: true,
       heading: 'References',
       items: [],
     },
     extras: {
-      enable: false,
+      enable: true,
       heading: 'Personal Information',
       items: [],
     },
@@ -97,7 +102,7 @@ const reducer = (state, { type, payload }) => {
       return set({ ...state }, `data.${payload.key}.items`, items);
     case 'delete_item':
       items = get({ ...state }, `data.${payload.key}.items`, []);
-      remove(items, (x) => x === payload.value);
+      remove(items, x => x === payload.value);
       return set({ ...state }, `data.${payload.key}.items`, items);
     case 'move_item_up':
       items = get({ ...state }, `data.${payload.key}.items`, []);
