@@ -12,6 +12,7 @@ import SkillsTab from './tabs/Skills';
 import ExtrasTab from './tabs/Extras';
 import LanguagesTab from './tabs/Languages';
 import ReferencesTab from './tabs/References';
+import HobbiesTab from './tabs/Hobbies';
 
 const LeftSidebar = () => {
   const context = useContext(AppContext);
@@ -26,6 +27,7 @@ const LeftSidebar = () => {
     { key: 'awards', name: data.awards.heading },
     { key: 'certifications', name: data.certifications.heading },
     { key: 'skills', name: data.skills.heading },
+    { key: 'hobbies', name: data.hobbies.heading },
     { key: 'languages', name: data.languages.heading },
     { key: 'references', name: data.references.heading },
     { key: 'extras', name: data.extras.heading },
@@ -45,25 +47,27 @@ const LeftSidebar = () => {
 
   const renderTabs = () => {
     switch (currentTab) {
-      case tabs[0].key:
+      case 'profile':
         return <ProfileTab data={data} onChange={onChange} />;
-      case tabs[1].key:
+      case 'objective':
         return <ObjectiveTab data={data} onChange={onChange} />;
-      case tabs[2].key:
+      case 'work':
         return <WorkTab data={data} onChange={onChange} />;
-      case tabs[3].key:
+      case 'education':
         return <EducationTab data={data} onChange={onChange} />;
-      case tabs[4].key:
+      case 'awards':
         return <AwardsTab data={data} onChange={onChange} />;
-      case tabs[5].key:
+      case 'certifications':
         return <CertificationsTab data={data} onChange={onChange} />;
-      case tabs[6].key:
+      case 'skills':
         return <SkillsTab data={data} onChange={onChange} />;
-      case tabs[7].key:
+      case 'hobbies':
+        return <HobbiesTab data={data} onChange={onChange} />;
+      case 'languages':
         return <LanguagesTab data={data} onChange={onChange} />;
-      case tabs[8].key:
+      case 'references':
         return <ReferencesTab data={data} onChange={onChange} />;
-      case tabs[9].key:
+      case 'extras':
         return <ExtrasTab data={data} onChange={onChange} />;
       default:
         return null;

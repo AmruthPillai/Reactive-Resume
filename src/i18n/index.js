@@ -1,5 +1,5 @@
 import i18n from 'i18next';
-import backend from 'i18next-xhr-backend';
+import backend from 'i18next-http-backend';
 import { initReactI18next } from 'react-i18next';
 import detector from 'i18next-browser-languagedetector';
 
@@ -8,56 +8,60 @@ import resources from './locales';
 const languages = [
   {
     code: 'ar',
-    name: 'Arabic',
+    name: 'Arabic (عربى)',
   },
   {
     code: 'zh',
-    name: 'Chinese',
+    name: 'Chinese (中文)',
   },
   {
     code: 'da',
-    name: 'Danish',
+    name: 'Danish (Dansk)',
   },
   {
     code: 'nl',
-    name: 'Dutch',
+    name: 'Dutch (Nederlands)',
   },
   {
     code: 'en',
-    name: 'English',
+    name: 'English (US)',
   },
   {
     code: 'fr',
-    name: 'French',
+    name: 'French (Français)',
   },
   {
     code: 'de',
-    name: 'German',
+    name: 'German (Deutsche)',
   },
   {
     code: 'hi',
-    name: 'Hindi',
+    name: 'Hindi (हिन्दी)',
   },
   {
     code: 'kn',
-    name: 'Kannada',
+    name: 'Kannada (ಕನ್ನಡ)',
   },
   {
     code: 'pl',
-    name: 'Polish',
+    name: 'Polish (Polskie)',
   },
   {
     code: 'pt',
-    name: 'Portuguese',
+    name: 'Portuguese (Português)',
   },
   {
     code: 'es',
-    name: 'Spanish',
+    name: 'Spanish (Español)',
+  },
+  {
+    code: 'ta',
+    name: 'Tamil (தமிழ்)',
   },
   {
     code: 'vi',
-    name: 'Tiếng Việt'
-  }
+    name: 'Vietnamese (Tiếng Việt)',
+  },
 ];
 
 i18n
