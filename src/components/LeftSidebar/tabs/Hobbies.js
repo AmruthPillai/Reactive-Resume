@@ -6,7 +6,7 @@ import TextField from '../../../shared/TextField';
 import { addItem, deleteItem, moveItemUp, moveItemDown } from '../../../utils';
 import ItemHeading from '../../../shared/ItemHeading';
 
-const SkillsTab = ({ data, onChange }) => {
+const HobbiesTab = ({ data, onChange }) => {
   const context = useContext(AppContext);
   const { dispatch } = context;
 
@@ -15,26 +15,26 @@ const SkillsTab = ({ data, onChange }) => {
       <div className="my-6 grid grid-cols-6 items-center">
         <div className="col-span-1">
           <Checkbox
-            checked={data.skills.enable}
-            onChange={v => onChange('data.skills.enable', v)}
+            checked={data.hobbies.enable}
+            onChange={v => onChange('data.hobbies.enable', v)}
           />
         </div>
         <div className="col-span-5">
           <TextField
             placeholder="Heading"
-            value={data.skills.heading}
-            onChange={v => onChange('data.skills.heading', v)}
+            value={data.hobbies.heading}
+            onChange={v => onChange('data.hobbies.heading', v)}
           />
         </div>
       </div>
 
       <hr className="my-6" />
 
-      {data.skills.items.map((x, index) => (
+      {data.hobbies.items.map((x, index) => (
         <Item item={x} key={index} index={index} onChange={onChange} dispatch={dispatch} />
       ))}
 
-      <AddItem heading={data.skills.heading} dispatch={dispatch} />
+      <AddItem heading={data.hobbies.heading} dispatch={dispatch} />
     </>
   );
 };
@@ -43,7 +43,7 @@ const Form = ({ item, onChange }) => {
   return (
     <input
       className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-      placeholder="Team Building &amp; Training"
+      placeholder="Beatboxing"
       value={item}
       onChange={e => onChange(e.target.value)}
       type="text"
@@ -58,7 +58,7 @@ const AddItem = ({ heading, dispatch }) => {
   const add = () => {
     if (item === '') return;
 
-    addItem(dispatch, 'skills', item);
+    addItem(dispatch, 'hobbies', item);
 
     setItem('');
   };
@@ -89,7 +89,7 @@ const AddItem = ({ heading, dispatch }) => {
 };
 
 const Item = ({ item, index, onChange, dispatch }) => {
-  const identifier = `data.skills.items[${index}]`;
+  const identifier = `data.hobbies.items[${index}]`;
 
   return (
     <div className="my-4 grid grid-cols-12">
@@ -99,7 +99,7 @@ const Item = ({ item, index, onChange, dispatch }) => {
 
       <button
         type="button"
-        onClick={() => moveItemUp(dispatch, 'skills', item)}
+        onClick={() => moveItemUp(dispatch, 'hobbies', item)}
         className="col-span-1 text-gray-600 hover:text-red-600 text-sm font-medium"
       >
         <div className="flex justify-end items-center">
@@ -109,7 +109,7 @@ const Item = ({ item, index, onChange, dispatch }) => {
 
       <button
         type="button"
-        onClick={() => moveItemDown(dispatch, 'skills', item)}
+        onClick={() => moveItemDown(dispatch, 'hobbies', item)}
         className="col-span-1 text-gray-600 hover:text-red-600 text-sm font-medium"
       >
         <div className="flex justify-end items-center">
@@ -119,7 +119,7 @@ const Item = ({ item, index, onChange, dispatch }) => {
 
       <button
         type="button"
-        onClick={() => deleteItem(dispatch, 'skills', item)}
+        onClick={() => deleteItem(dispatch, 'hobbies', item)}
         className="col-span-1 text-gray-600 hover:text-red-600 text-sm font-medium"
       >
         <div className="flex justify-end items-center">
@@ -130,4 +130,4 @@ const Item = ({ item, index, onChange, dispatch }) => {
   );
 };
 
-export default SkillsTab;
+export default HobbiesTab;

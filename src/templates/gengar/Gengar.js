@@ -79,6 +79,21 @@ const Gengar = () => {
       </div>
     );
 
+  const HobbyItem = x => (
+    <li key={x} className="text-sm py-1">
+      {x}
+    </li>
+  );
+
+  const Hobbies = () =>
+    data.hobbies &&
+    data.hobbies.enable && (
+      <div className="mb-6">
+        <Heading title={data.hobbies.heading} />
+        <ul>{data.hobbies.items.map(HobbyItem)}</ul>
+      </div>
+    );
+
   const EducationItem = x => (
     <div key={x.id} className="mb-3">
       <div className="flex justify-between items-center">
@@ -285,6 +300,7 @@ const Gengar = () => {
           style={{ backgroundColor: `rgba(${r}, ${g}, ${b}, 0.1)` }}
         >
           <Skills />
+          <Hobbies />
           <Languages />
           <Education />
           <Certifications />

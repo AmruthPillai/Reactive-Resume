@@ -93,6 +93,21 @@ const Castform = () => {
       </div>
     );
 
+  const HobbyItem = x => (
+    <li key={x} className="text-sm my-2">
+      {x}
+    </li>
+  );
+
+  const Hobbies = () =>
+    data.hobbies &&
+    data.hobbies.enable && (
+      <div>
+        <Heading title={data.hobbies.heading} />
+        <ul className="list-none px-5">{data.hobbies.items.map(HobbyItem)}</ul>
+      </div>
+    );
+
   const Objective = () =>
     data.objective && data.objective.enable && <p className="m-5 text-sm">{data.objective.body}</p>;
 
@@ -251,7 +266,7 @@ const Castform = () => {
     data.extras &&
     data.extras.enable && (
       <div>
-        <Heading title={data.extras.heading} />
+        <Heading light title={data.extras.heading} />
         {data.extras.items.filter(x => x.enable).map(ExtraItem)}
       </div>
     );
@@ -276,9 +291,9 @@ const Castform = () => {
           <PersonalInformation />
           <ContactInformation />
           <Skills />
+          <Hobbies />
           <Languages />
           <Certifications />
-          <Extras />
         </div>
         <div className="col-span-8">
           <Objective />
@@ -286,6 +301,7 @@ const Castform = () => {
           <Education />
           <Awards />
           <References />
+          <Extras />
         </div>
       </div>
     </div>

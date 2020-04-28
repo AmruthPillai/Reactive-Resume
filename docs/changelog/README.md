@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 ## April 2020
 
+### April 28, 2020
+
+- Added Feature to Reorder Skills/Hobbies
+- Added Hobbies Section to Left Sidebar
+- Updated Templates to Add Hobbies
+
 ### April 23, 2020
 
 - Fix Issue with Page Controller Icon Size

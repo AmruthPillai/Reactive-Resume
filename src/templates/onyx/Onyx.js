@@ -145,6 +145,28 @@ const Onyx = () => {
       </div>
     );
 
+  const HobbyItem = x => (
+    <span
+      key={x}
+      className="text-xs rounded-full px-3 py-1 font-medium my-2 mr-2"
+      style={{
+        backgroundColor: theme.colors.primary,
+        color: theme.colors.background,
+      }}
+    >
+      {x}
+    </span>
+  );
+
+  const Hobbies = () =>
+    data.hobbies &&
+    data.hobbies.enable && (
+      <div>
+        <Heading title={data.hobbies.heading} />
+        <div className="mt-1 flex flex-wrap">{data.hobbies.items.map(HobbyItem)}</div>
+      </div>
+    );
+
   const SkillItem = x => (
     <span
       key={x}
@@ -227,7 +249,7 @@ const Onyx = () => {
     data.extras.enable && (
       <div>
         <Heading title={data.extras.heading} />
-        <table className="w-2/3 table-auto">
+        <table className="table-auto">
           <tbody>{data.extras.items.filter(x => x.enable).map(ExtraItem)}</tbody>
         </table>
       </div>
@@ -277,11 +299,15 @@ const Onyx = () => {
 
       <div className="grid grid-cols-2 gap-6">
         <Skills />
-        <Languages />
+        <Hobbies />
       </div>
 
       <References />
-      <Extras />
+
+      <div className="grid grid-cols-2 gap-6">
+        <Extras />
+        <Languages />
+      </div>
     </div>
   );
 };
