@@ -35,8 +35,16 @@ const languages = [
     name: 'German (Deutsche)',
   },
   {
+    code: 'he',
+    name: 'Hebrew (עברית)',
+  },
+  {
     code: 'hi',
     name: 'Hindi (हिन्दी)',
+  },
+  {
+    code: 'it',
+    name: 'Italian (Italiano)',
   },
   {
     code: 'kn',

@@ -6,6 +6,14 @@ title: Changelog
 
 All notable changes to this project will be documented in this file.
 
+## May 2020
+
+### May 6, 2020
+
+- Updated translations for all languages
+- Added Language: Hebrew
+- Added Language: Italian
+
 ## April 2020
 
 ### April 28, 2020
