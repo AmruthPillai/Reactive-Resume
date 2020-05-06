@@ -24,7 +24,9 @@ If you are already familiar with the Crowdin platform and want to contribute you
 - English `en`
 - French `fr`
 - German `de`
+- Hebrew `he`
 - Hindi `hi`
+- Italian `it`
 - Kannada `kn`
 - Polish `pl`
 - Portuguese `pt`
@@ -42,7 +44,6 @@ If you are already familiar with the Crowdin platform and want to contribute you
 - Greek `el`
 - Hebrew `he`
 - Hungarian `hu`
-- Italian `it`
 - Japanese `ja`
 - Korean `ko`
 - Malayalam `ml`

@@ -1,25 +1,45 @@
 {
-  "heading": {
-    "placeholder": "Heading"
-  },
   "item": {
-    "add": "Add {{- heading}}",
+    "add": "הוסף {{- heading}}",
     "startDate": {
-      "label": "Start Date",
-      "placeholder": "March 2018"
+      "label": "תאריך התחלה"
     },
     "endDate": {
-      "label": "End Date",
-      "placeholder": "March 2022"
+      "label": "תאריך סיום"
     },
     "description": {
-      "label": "Description"
+      "label": "תיאור"
     }
   },
   "buttons": {
     "add": {
-      "label": "Add"
+      "label": "הוסף"
     }
   },
-  "markdownHelpText": "You can use <1>GitHub Flavored Markdown</1> to style this section of the text."
+  "printDialog": {
+    "heading": "הורד את קורות החיים שלך",
+    "quality": {
+      "label": "איכות"
+    },
+    "printType": {
+      "label": "סוג",
+      "types": {
+        "unconstrained": "בלתי מוגבלת",
+        "fitInA4": "מתאים ל- A4",
+        "multiPageA4": "A4 רב עמודים"
+      }
+    },
+    "helpText": [
+      "שיטת ייצוא זו עושה שימוש בקנבס HTML כדי להמיר את קורות החיים לתמונה ולהדפיסה על גבי PDF, מה שאומר שהיא תאבד את כל יכולות הבחירה / ניתוח.",
+      "אם זה חשוב לך, אנא נסה להדפיס את קורות החיים במקום זאת, באמצעות Cmd / Ctrl + P או על כפתור ההדפסה שלמטה. התוצאה עשויה להשתנות מכיוון שהפלט תלוי בדפדפן, אך ידוע שהוא פועל בצורה הטובה ביותר על הגרסה האחרונה של Google Chrome."
+    ],
+    "buttons": {
+      "cancel": "ביטול",
+      "saveAsPdf": "שמור כ-PDF"
+    }
+  },
+  "panZoomAnimation": {
+    "helpText": "אתה יכול להזיז את המשטח ולהתקרב אליו בכל עת כדי לראות מקרוב את קורות החיים שלך."
+  },
+  "markdownHelpText": "אתה יכול להשתמש ב <1> סימון בטעם GitHub בטעם </1> כדי לעצב קטע זה של הטקסט."
 }
