@@ -1,25 +1,45 @@
 {
-  "heading": {
-    "placeholder": "Heading"
-  },
   "item": {
-    "add": "Add {{- heading}}",
+    "add": "Aggiungi {{- heading}}",
     "startDate": {
-      "label": "Start Date",
-      "placeholder": "March 2018"
+      "label": "Data d'inizio"
     },
     "endDate": {
-      "label": "End Date",
-      "placeholder": "March 2022"
+      "label": "Data di fine"
     },
     "description": {
-      "label": "Description"
+      "label": "Descrizione"
     }
   },
   "buttons": {
     "add": {
-      "label": "Add"
+      "label": "Aggiungi"
     }
   },
-  "markdownHelpText": "You can use <1>GitHub Flavored Markdown</1> to style this section of the text."
+  "printDialog": {
+    "heading": "Scarica il tuo curriculum",
+    "quality": {
+      "label": "Qualità"
+    },
+    "printType": {
+      "label": "Tipo",
+      "types": {
+        "unconstrained": "Libero",
+        "fitInA4": "Adatta ad A4",
+        "multiPageA4": "Multi-Pagina A4"
+      }
+    },
+    "helpText": [
+      "Questo metodo di esportazione fa uso di HTML canvas per convertire il curriculum in un'immagine e stamparla in PDF, ciò significa che perderà tutte le capacità di selezione/analisi.",
+      "Se questo è importante per te, prova a stampare il curriculum utilizzando Cmd/Ctrl + P o il pulsante di stampa qui sotto. Il risultato può variare in quanto l'output è dipendente dal browser ma è noto che funziona meglio sull'ultima versione di Google Chrome."
+    ],
+    "buttons": {
+      "cancel": "Annulla",
+      "saveAsPdf": "Salva come PDF"
+    }
+  },
+  "panZoomAnimation": {
+    "helpText": "Puoi ruotare e ingrandire l'immagine in qualsiasi momento per dare un'occhiata più da vicino al tuo curriculum."
+  },
+  "markdownHelpText": "Puoi utilizzare <1>GitHub Flavored Markdown</1> per personalizzare questa sezione del testo."
 }
