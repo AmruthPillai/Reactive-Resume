@@ -1,34 +1,33 @@
 {
-  "title": "Actions",
-  "disclaimer": "Changes you make to your resume are saved automatically to your browser's local storage. No data gets out, hence your information is completely secure.",
+  "title": "פעולות",
+  "disclaimer": "השינויים שאתה מבצע בקורות החיים שלך נשמרים אוטומטית באחסון המקומי של הדפדפן. נתונים לא יוצאים לשום מקום, ומכאן שהמידע שלך מאובטח לחלוטין.",
   "importExport": {
-    "heading": "Import/Export",
-    "body": "You can import or export your data in JSON format. With this, you can edit and print your resume from any device. Save this file for later use.",
+    "heading": "ייבוא/ייצוא",
+    "body": "אתה יכול לייבא או לייצא את הנתונים שלך בפורמט JSON. בעזרתו תוכלו לערוך ולהדפיס את קורות החיים מכל מכשיר. שמור קובץ זה לשימוש מאוחר יותר.",
     "buttons": {
-      "import": "Import",
-      "export": "Export"
+      "import": "ייבוא",
+      "export": "ייצוא"
     }
   },
-  "printResume": {
-    "heading": "Print Your Resume",
-    "body": "You can click on the button below to generate a PDF instantly. Alternatively, you can also use <1>Cmd/Ctrl + P</1> but it would have different effects.",
+  "downloadResume": {
+    "heading": "הורד את קורות החיים שלך",
+    "body": "אתה יכול ללחוץ על הכפתור למטה כדי להוריד קורות חיים PDF של קורות החיים שלך באופן מיידי. לקבלת התוצאות הטובות ביותר, אנא השתמש בגרסה האחרונה של Google Chrome.",
     "buttons": {
-      "export": "Export",
-      "print": "Print"
+      "saveAsPdf": "שמור כ-PDF"
     }
   },
   "loadDemoData": {
-    "heading": "Load Demo Data",
-    "body": "Unclear on what to do with a fresh blank page? Load some demo data with prepopulated values to see how a resume should look and you can start editing from there.",
+    "heading": "טען נתוני דמה",
+    "body": "לא ברור לך מה לעשות עם דף ריק? טען כמה נתוני דמה עם ערכים המוגדרים מראש כדי לראות כיצד קורות החיים אמורים להיראות ותוכל להתחיל לערוך משם.",
     "buttons": {
-      "loadData": "Load Data"
+      "loadData": "טען מידע"
     }
   },
   "reset": {
-    "heading": "Reset Everything!",
-    "body": "This action will reset all your data and remove backups made to your browser's local storage as well, so please make sure you have exported your information before you reset everything.",
+    "heading": "אפס הכל",
+    "body": "פעולה זו תאפס את כל הנתונים שלך ותסיר גיבויים שנעשו גם לאחסון המקומי של הדפדפן שלך, אנא וודא שיצאת את המידע שלך לפני שתאפס את הכל.",
     "buttons": {
-      "reset": "Reset"
+      "reset": "איפוס"
     }
   }
 }
