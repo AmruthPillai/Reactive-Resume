@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file.
 
 ### May 6, 2020
 
+- Fix Demo Data not including Hobbies section
 - Updated translations for all languages
 - Added Language: Hebrew
 - Added Language: Italian
