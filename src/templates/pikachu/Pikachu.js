@@ -76,6 +76,24 @@ const Pikachu = () => {
       </div>
     );
 
+  const HobbyItem = x => (
+    <span
+      key={x}
+      className="leading-none rounded-lg text-sm font-medium bg-gray-300 py-3 my-1 px-4"
+    >
+      {x}
+    </span>
+  );
+
+  const Hobbies = () =>
+    data.hobbies &&
+    data.hobbies.enable && (
+      <div>
+        <Heading title={data.hobbies.heading} />
+        <div className="flex flex-col mb-6">{data.hobbies.items.map(HobbyItem)}</div>
+      </div>
+    );
+
   const ReferenceItem = x => (
     <div key={x.id} className="flex flex-col">
       <h6 className="text-sm font-medium">{x.name}</h6>
@@ -91,7 +109,7 @@ const Pikachu = () => {
     data.references.enable && (
       <div>
         <Heading title={data.references.heading} />
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-2 gap-2 mb-6">
           {data.references.items.filter(x => x.enable).map(ReferenceItem)}
         </div>
       </div>
@@ -136,7 +154,7 @@ const Pikachu = () => {
     data.extras.enable && (
       <div>
         <Heading title={data.extras.heading} />
-        <div className="flex flex-col mb-6">
+        <div className="grid grid-cols-2">
           {data.extras.items.filter(x => x.enable).map(ExtraItem)}
         </div>
       </div>
@@ -169,7 +187,7 @@ const Pikachu = () => {
     );
 
   const EducationItem = x => (
-    <div key={x.id} className="mb-3">
+    <div key={x.id} className="mb-2">
       <div className="flex justify-between items-center">
         <div>
           <h6 className="font-semibold">{x.name}</h6>
@@ -200,7 +218,7 @@ const Pikachu = () => {
     );
 
   const AwardItem = x => (
-    <div key={x.id} className="mb-3">
+    <div key={x.id} className="mb-2">
       <h6 className="font-semibold">{x.title}</h6>
       <p className="text-xs">{x.subtitle}</p>
       <ReactMarkdown className="mt-2 text-sm" source={x.description} />
@@ -266,7 +284,7 @@ const Pikachu = () => {
               link={`http://${data.profile.website}`}
             />
             <ContactItem
-              icon="alternate_email"
+              icon="email"
               value={data.profile.email}
               link={`mailto:${data.profile.email}`}
             />
@@ -274,9 +292,9 @@ const Pikachu = () => {
           </div>
 
           <Skills />
+          <Hobbies />
           <Languages />
           <Certifications />
-          <Extras />
         </div>
 
         <div className="col-span-8">
@@ -284,6 +302,7 @@ const Pikachu = () => {
           <Education />
           <Awards />
           <References />
+          <Extras />
         </div>
       </div>
     </div>

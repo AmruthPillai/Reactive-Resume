@@ -1,0 +1,304 @@
+/* Material Icons */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'),
+    url('../fonts/MaterialIcons/MaterialIcons-400.woff2') format('woff2'),
+    url('../fonts/MaterialIcons/MaterialIcons-400.woff') format('woff');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+
+/* Montserrat 400 */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'),
+    url('../fonts/Montserrat/Montserrat-400.woff2') format('woff2'),
+    url('../fonts/Montserrat/Montserrat-400.woff') format('woff');
+}
+
+/* Montserrat 500 */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Montserrat Medium'), local('Montserrat-Medium'),
+    url('../fonts/Montserrat/Montserrat-500.woff2') format('woff2'),
+    url('../fonts/Montserrat/Montserrat-500.woff') format('woff');
+}
+
+/* Montserrat 600 */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
+    url('../fonts/Montserrat/Montserrat-600.woff2') format('woff2'),
+    url('../fonts/Montserrat/Montserrat-600.woff') format('woff');
+}
+
+/* Montserrat 700 */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Bold'), local('Montserrat-Bold'),
+    url('../fonts/Montserrat/Montserrat-700.woff2') format('woff2'),
+    url('../fonts/Montserrat/Montserrat-700.woff') format('woff');
+}
+
+/* Lato 400 */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'),
+    url('../fonts/Lato/Lato-400.woff2') format('woff2'),
+    url('../fonts/Lato/Lato-400.woff') format('woff');
+}
+
+/* Lato 700 */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url('../fonts/Lato/Lato-700.woff2') format('woff2'),
+    url('../fonts/Lato/Lato-700.woff') format('woff');
+}
+
+/* Nunito 400 */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito Regular'), local('Nunito-Regular'),
+    url('../fonts/Nunito/Nunito-400.woff') format('woff2'),
+    url('../fonts/Nunito/Nunito-400.woff2') format('woff');
+}
+
+/* Nunito 600 */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Nunito SemiBold'), local('Nunito-SemiBold'),
+    url('../fonts/Nunito/Nunito-600.woff') format('woff2'),
+    url('../fonts/Nunito/Nunito-600.woff2') format('woff');
+}
+
+/* Nunito 700 */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito Bold'), local('Nunito-Bold'),
+    url('../fonts/Nunito/Nunito-700.woff') format('woff2'),
+    url('../fonts/Nunito/Nunito-700.woff2') format('woff');
+}
+
+/* Open Sans 400 */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+    url('../fonts/OpenSans/OpenSans-400.woff2') format('woff2'),
+    url('../fonts/OpenSans/OpenSans-400.woff') format('woff');
+}
+
+/* Open Sans 600 */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
+    url('../fonts/OpenSans/OpenSans-600.woff2') format('woff2'),
+    url('../fonts/OpenSans/OpenSans-600.woff') format('woff');
+}
+
+/* Open Sans 700 */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+    url('../fonts/OpenSans/OpenSans-700.woff2') format('woff2'),
+    url('../fonts/OpenSans/OpenSans-700.woff') format('woff');
+}
+
+/* Raleway 400 */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'),
+    url('../fonts/Raleway/Raleway-400.woff2') format('woff2'),
+    url('../fonts/Raleway/Raleway-400.woff') format('woff');
+}
+
+/* Raleway 500 */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Raleway Medium'), local('Raleway-Medium'),
+    url('../fonts/Raleway/Raleway-500.woff2') format('woff2'),
+    url('../fonts/Raleway/Raleway-500.woff') format('woff');
+}
+
+/* Raleway 600 */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Raleway SemiBold'), local('Raleway-SemiBold'),
+    url('../fonts/Raleway/Raleway-600.woff2') format('woff2'),
+    url('../fonts/Raleway/Raleway-600.woff') format('woff');
+}
+
+/* Raleway 700 */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Raleway Bold'), local('Raleway-Bold'),
+    url('../fonts/Raleway/Raleway-700.woff2') format('woff2'),
+    url('../fonts/Raleway/Raleway-700.woff') format('woff');
+}
+
+/* Rubik 400 */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Rubik'), local('Rubik-Regular'), url('../fonts/Rubik/Rubik-400.woff2') format('woff2'),
+    url('../fonts/Rubik/Rubik-400.woff') format('woff');
+}
+
+/* Rubik 500 */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Rubik Medium'), local('Rubik-Medium'),
+    url('../fonts/Rubik/Rubik-500.woff2') format('woff2'),
+    url('../fonts/Rubik/Rubik-500.woff') format('woff');
+}
+
+/* Rubik 700 */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Rubik Bold'), local('Rubik-Bold'),
+    url('../fonts/Rubik/Rubik-700.woff2') format('woff2'),
+    url('../fonts/Rubik/Rubik-700.woff') format('woff');
+}
+
+/* Source Sans Pro 400 */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'),
+    url('../fonts/SourceSansPro/SourceSansPro-400.woff2') format('woff2'),
+    url('../fonts/SourceSansPro/SourceSansPro-400.woff') format('woff');
+}
+
+/* Source Sans Pro 600 */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'),
+    url('../fonts/SourceSansPro/SourceSansPro-600.woff2') format('woff2'),
+    url('../fonts/SourceSansPro/SourceSansPro-600.woff') format('woff');
+}
+
+/* Source Sans Pro 700 */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'),
+    url('../fonts/SourceSansPro/SourceSansPro-700.woff2') format('woff2'),
+    url('../fonts/SourceSansPro/SourceSansPro-700.woff') format('woff');
+}
+
+/* Titillium Web 400 */
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Titillium Web Regular'), local('TitilliumWeb-Regular'),
+    url('../fonts/TitilliumWeb/TitilliumWeb-400.woff2') format('woff2'),
+    url('../fonts/TitilliumWeb/TitilliumWeb-400.woff') format('woff');
+}
+
+/* Titillium Web 600 */
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Titillium Web SemiBold'), local('TitilliumWeb-SemiBold'),
+    url('../fonts/TitilliumWeb/TitilliumWeb-600.woff2') format('woff2'),
+    url('../fonts/TitilliumWeb/TitilliumWeb-600.woff') format('woff');
+}
+
+/* Titillium Web 700 */
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Titillium Web Bold'), local('TitilliumWeb-Bold'),
+    url('../fonts/TitilliumWeb/TitilliumWeb-700.woff2') format('woff2'),
+    url('../fonts/TitilliumWeb/TitilliumWeb-700.woff') format('woff');
+}
+
+/* Ubuntu 400 */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu Regular'), local('Ubuntu-Regular'),
+    url('../fonts/Ubuntu/Ubuntu-400.woff2') format('woff2'),
+    url('../fonts/Ubuntu/Ubuntu-400.woff') format('woff');
+}
+
+/* Ubuntu 500 */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Ubuntu Medium'), local('Ubuntu-Medium'),
+    url('../fonts/Ubuntu/Ubuntu-500.woff2') format('woff2'),
+    url('../fonts/Ubuntu/Ubuntu-500.woff') format('woff');
+}
+
+/* Ubuntu 700 */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Ubuntu Bold'), local('Ubuntu-Bold'),
+    url('../fonts/Ubuntu/Ubuntu-700.woff2') format('woff2'),
+    url('../fonts/Ubuntu/Ubuntu-700.woff') format('woff');
+}
