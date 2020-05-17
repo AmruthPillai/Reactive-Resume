@@ -1,9 +1,12 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Checkbox from './Checkbox';
 import { deleteItem, moveItemUp, moveItemDown } from '../utils';
 
 const ItemActions = ({ dispatch, first, identifier, item, last, onChange, type }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="flex justify-between">
       <div className="flex items-center">
@@ -22,7 +25,7 @@ const ItemActions = ({ dispatch, first, identifier, item, last, onChange, type }
         >
           <div className="flex items-center">
             <i className="material-icons mr-2 font-bold text-base">delete</i>
-            <span className="text-sm">Delete</span>
+            <span className="text-sm">{t('buttons.delete.label')}</span>
           </div>
         </button>
       </div>
