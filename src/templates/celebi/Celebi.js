@@ -94,6 +94,9 @@ const Celebi = () => {
       <ContactItem label="Phone" value={data.profile.phone} />
       <ContactItem label="Email Address" value={data.profile.email} />
       <ContactItem label="Website" value={data.profile.website} />
+      <ContactItem label="GitHub" value={data.profile.github} />
+      <ContactItem label="LinkedIn" value={data.profile.linkedin} />
+
     </div>
   );
 
