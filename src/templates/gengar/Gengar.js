@@ -284,6 +284,16 @@ const Gengar = () => {
             value={data.profile.website}
             link={`http://${data.profile.website}`}
           />
+          <ContactItem
+            icon="code"
+            value={data.profile.github}
+            link={`http://www.github.com/${data.profile.github}`}
+          />
+          <ContactItem
+            icon="work"
+            value={data.profile.linkedin}
+            link={`http://www.linkedin.com/in/${data.profile.linkedin}`}
+          />
           <ContactItem icon="location_on" value={data.profile.address.line3} />
         </div>
 
