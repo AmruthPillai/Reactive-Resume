@@ -61,6 +61,9 @@ const Glalie = () => {
         <ContactItem title="Phone Number" value={data.profile.phone} />
         <ContactItem title="Email Address" value={data.profile.email} />
         <ContactItem title="Website" value={data.profile.website} />
+        <ContactItem title="GitHub" value={data.profile.github} />
+        <ContactItem title="LinkedIn" value={data.profile.linkedin} />
+
 
         <div className="flex flex-col">
           <i className="material-icons text-lg" style={{ color: theme.colors.accent }}>
