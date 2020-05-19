@@ -75,6 +75,16 @@ const Castform = () => {
         value={data.profile.website}
         link={`http://${data.profile.website}`}
       />
+      <ContactItem
+        title="GitHub"
+        value={data.profile.github}
+        link={`http://www.github.com/${data.profile.github}`}
+      />
+      <ContactItem
+        title="LinkedIn"
+        value={data.profile.linkedin}
+        link={`http://www.linkedin.com/in/${data.profile.linkedin}`}
+      />
     </div>
   );
 
