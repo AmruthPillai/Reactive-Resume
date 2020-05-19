@@ -284,6 +284,16 @@ const Pikachu = () => {
               link={`http://${data.profile.website}`}
             />
             <ContactItem
+              icon="code"
+              value={data.profile.github}
+              link={`http://github.com/${data.profile.github}`}
+            />
+            <ContactItem
+              icon="work"
+              value={data.profile.linkedin}
+              link={`http://linkedin.com/in/${data.profile.linkedin}`}
+            />
+            <ContactItem
               icon="email"
               value={data.profile.email}
               link={`mailto:${data.profile.email}`}
