@@ -21,6 +21,8 @@ const initialState = {
       },
       phone: '',
       website: '',
+      github:'',
+      linked:'',
       email: '',
     },
     objective: {
