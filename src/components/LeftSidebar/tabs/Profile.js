@@ -85,6 +85,21 @@ const ProfileTab = ({ data, onChange }) => {
         value={data.profile.website}
         onChange={v => onChange('data.profile.website', v)}
       />
+       <TextField
+        className="mb-6"
+        label={t('profile.github.label')}
+        placeholder="JaneDoe43"
+        value={data.profile.github}
+        onChange={v => onChange('data.profile.github', v)}
+      />
+          
+      <TextField
+        className="mb-6"
+        label={t('profile.linkedin.label')}
+        placeholder="JaneDoe"
+        value={data.profile.linkedin}
+        onChange={v => onChange('data.profile.linkedin', v)}
+      />
 
       <TextField
         className="mb-6"
