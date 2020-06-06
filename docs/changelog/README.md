@@ -6,6 +6,10 @@ title: Changelog
 
 All notable changes to this project will be documented in this file.
 
+## June 2020
+
+- Added Language: Russian
+
 ## May 2020
 
 ### May 6, 2020

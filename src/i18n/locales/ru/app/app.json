@@ -1,45 +1,48 @@
 {
   "item": {
-    "add": "Add {{- heading}}",
+    "add": "Добавить {{- heading}}",
     "startDate": {
-      "label": "Start Date"
+      "label": "Дата начала"
     },
     "endDate": {
-      "label": "End Date"
+      "label": "Дата окончания"
     },
     "description": {
-      "label": "Description"
+      "label": "Описание"
     }
   },
   "buttons": {
     "add": {
-      "label": "Add"
+      "label": "Добавить"
+    },
+    "delete": {
+      "label": "Удалить"
     }
   },
   "printDialog": {
-    "heading": "Download Your Resume",
+    "heading": "Скачать резюме",
     "quality": {
-      "label": "Quality"
+      "label": "Качество"
     },
     "printType": {
-      "label": "Type",
+      "label": "Тип",
       "types": {
-        "unconstrained": "Unconstrained",
-        "fitInA4": "Fit in A4",
-        "multiPageA4": "Multi-Page A4"
+        "unconstrained": "Неограниченный",
+        "fitInA4": "По размеру A4",
+        "multiPageA4": "Многостраничный A4"
       }
     },
     "helpText": [
-      "This export method makes use of HTML canvas to convert the resume to an image and print it on a PDF, which means it will lose all selecting/parsing capabilities.",
-      "If that is important to you, please try printing the resume instead, using Cmd/Ctrl + P or the print button below. The result may vary as the output is browser dependent, but it is known to work best on the latest version of Google Chrome."
+      "Этот метод экспорта использует HTML canvas для преобразования резюме в изображение и конвертацию в формат PDF, что означает, что он потеряет все возможности выбора/синтаксического анализа.",
+      "Если это важно для Вас, пожалуйста, попробуйте распечатать резюме вместо этого, используя Cmd / Ctrl + P или кнопку печати ниже. Результат может отличаться, поскольку результат зависит от браузера, но известно, что он лучше всего работает на последней версии Google Chrome."
     ],
     "buttons": {
-      "cancel": "Cancel",
-      "saveAsPdf": "Save as PDF"
+      "cancel": "Отмена",
+      "saveAsPdf": "Сохранить в PDF"
     }
   },
   "panZoomAnimation": {
-    "helpText": "You can pan and zoom around the artboard at any time to get a closer look at your resume."
+    "helpText": "Вы можете перемещать и масштабировать своё резюме чтобы поближе взглянуть на него."
   },
-  "markdownHelpText": "You can use <1>GitHub Flavored Markdown</1> to style this section of the text."
+  "markdownHelpText": "Вы можете использовать <1>GitHub Flavored Markdown</1> здесь."
 }
