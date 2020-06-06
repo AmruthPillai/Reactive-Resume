@@ -144,8 +144,8 @@ const Celebi = () => {
         <Heading title="Skills" className="w-3/4 mx-auto" />
         <ul className="list-none text-sm">
           {data.skills.items.map(x => (
-            <li key={x} className="my-2">
-              {x}
+            <li key={x.id} className="my-2">
+              {x.skill}
             </li>
           ))}
         </ul>
@@ -158,8 +158,8 @@ const Celebi = () => {
         <Heading title="Hobbies" className="w-3/4 mx-auto" />
         <ul className="list-none text-sm">
           {data.hobbies.items.map(x => (
-            <li key={x} className="my-2">
-              {x}
+            <li key={x.id} className="my-2">
+              {x.hobby}
             </li>
           ))}
         </ul>
