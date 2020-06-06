@@ -92,31 +92,32 @@ const initialState = {
 
 const reducer = (state, { type, payload }) => {
   let items;
+  const newState = JSON.parse(JSON.stringify(state));
 
   switch (type) {
     case 'migrate_section':
-      return set({ ...state }, `data.${payload.key}`, payload.value);
+      return set({ ...newState }, `data.${payload.key}`, payload.value);
     case 'add_item':
-      items = get({ ...state }, `data.${payload.key}.items`, []);
+      items = get({ ...newState }, `data.${payload.key}.items`, []);
       items.push(payload.value);
-      return set({ ...state }, `data.${payload.key}.items`, items);
+      return set({ ...newState }, `data.${payload.key}.items`, items);
     case 'delete_item':
-      items = get({ ...state }, `data.${payload.key}.items`, []);
+      items = get({ ...newState }, `data.${payload.key}.items`, []);
       remove(items, x => x === payload.value);
-      return set({ ...state }, `data.${payload.key}.items`, items);
+      return set({ ...newState }, `data.${payload.key}.items`, items);
     case 'move_item_up':
-      items = get({ ...state }, `data.${payload.key}.items`, []);
+      items = get({ ...newState }, `data.${payload.key}.items`, []);
       move(items, payload.value, -1);
-      return set({ ...state }, `data.${payload.key}.items`, items);
+      return set({ ...newState }, `data.${payload.key}.items`, items);
     case 'move_item_down':
-      items = get({ ...state }, `data.${payload.key}.items`, []);
+      items = get({ ...newState }, `data.${payload.key}.items`, []);
       move(items, payload.value, 1);
-      return set({ ...state }, `data.${payload.key}.items`, items);
+      return set({ ...newState }, `data.${payload.key}.items`, items);
     case 'on_input':
-      return set({ ...state }, payload.key, payload.value);
+      return set({ ...newState }, payload.key, payload.value);
     case 'save_data':
-      localStorage.setItem('state', JSON.stringify(state));
-      return state;
+      localStorage.setItem('state', JSON.stringify(newState));
+      return newState;
     case 'import_data':
       if (payload === null) return initialState;
 
@@ -127,18 +128,18 @@ const reducer = (state, { type, payload }) => {
       }
 
       return {
-        ...state,
+        ...newState,
         ...payload,
       };
     case 'load_demo_data':
       return {
-        ...state,
+        ...newState,
         ...demoData,
       };
     case 'reset':
       return initialState;
     default:
-      return state;
+      return newState;
   }
 };
 
