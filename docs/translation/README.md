@@ -30,6 +30,7 @@ If you are already familiar with the Crowdin platform and want to contribute you
 - Kannada `kn`
 - Polish `pl`
 - Portuguese `pt`
+- Russian `ru`
 - Spanish `es`
 - Tamil `ta`
 - Vietnamese `vi`
@@ -51,7 +52,6 @@ If you are already familiar with the Crowdin platform and want to contribute you
 - Norwegian `no`
 - Punjabi `pa`
 - Romanian `ro`
-- Russian `ru`
 - Swedish `sv`
 - Turkish `tr`
 - Ukrainian `uk`

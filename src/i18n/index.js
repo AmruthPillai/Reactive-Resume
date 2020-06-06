@@ -59,6 +59,10 @@ const languages = [
     name: 'Portuguese (Português)',
   },
   {
+    code: 'ru',
+    name: 'Russian (русский)',
+  },
+  {
     code: 'es',
     name: 'Spanish (Español)',
   },
