@@ -79,8 +79,8 @@ const Castform = () => {
   );
 
   const SkillItem = x => (
-    <li key={x} className="text-sm my-2">
-      {x}
+    <li key={x.id} className="text-sm my-2">
+      {x.skill}
     </li>
   );
 
@@ -94,8 +94,8 @@ const Castform = () => {
     );
 
   const HobbyItem = x => (
-    <li key={x} className="text-sm my-2">
-      {x}
+    <li key={x.id} className="text-sm my-2">
+      {x.hobby}
     </li>
   );
 
@@ -109,7 +109,7 @@ const Castform = () => {
     );
 
   const Objective = () =>
-    data.objective && data.objective.enable && <p className="m-5 text-sm">{data.objective.body}</p>;
+    data.objective && data.objective.enable && <ReactMarkdown className="m-5 text-sm" source={data.objective.body} />;
 
   const WorkItem = x => (
     <div key={x.id} className="my-3 px-5">

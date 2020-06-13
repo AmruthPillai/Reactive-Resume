@@ -65,8 +65,8 @@ const Gengar = () => {
     );
 
   const SkillItem = x => (
-    <li key={x} className="text-sm py-1">
-      {x}
+    <li key={x.id} className="text-sm py-1">
+      {x.skill}
     </li>
   );
 
@@ -80,8 +80,8 @@ const Gengar = () => {
     );
 
   const HobbyItem = x => (
-    <li key={x} className="text-sm py-1">
-      {x}
+    <li key={x.id} className="text-sm py-1">
+      {x.hobby}
     </li>
   );
 

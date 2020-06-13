@@ -87,7 +87,7 @@ const Glalie = () => {
     data.objective.enable && (
       <div>
         <Heading title={data.objective.heading} />
-        <p className="text-sm text-justify">{data.objective.body}</p>
+        <ReactMarkdown className="text-sm text-justify" source={data.objective.body} />
       </div>
     );
 
@@ -173,8 +173,8 @@ const Glalie = () => {
     );
 
   const SkillItem = x => (
-    <li key={x} className="text-xs font-medium">
-      {x}
+    <li key={x.id} className="text-xs font-medium">
+      {x.skill}
     </li>
   );
 
@@ -188,8 +188,8 @@ const Glalie = () => {
     );
 
   const HobbyItem = x => (
-    <li key={x} className="text-xs font-medium">
-      {x}
+    <li key={x.id} className="text-xs font-medium">
+      {x.hobby}
     </li>
   );
 
