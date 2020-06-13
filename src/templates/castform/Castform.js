@@ -79,8 +79,8 @@ const Castform = () => {
   );
 
   const SkillItem = x => (
-    <li key={x} className="text-sm my-2">
-      {x}
+    <li key={x.id} className="text-sm my-2">
+      {x.skill}
     </li>
   );
 
@@ -94,8 +94,8 @@ const Castform = () => {
     );
 
   const HobbyItem = x => (
-    <li key={x} className="text-sm my-2">
-      {x}
+    <li key={x.id} className="text-sm my-2">
+      {x.hobby}
     </li>
   );
 

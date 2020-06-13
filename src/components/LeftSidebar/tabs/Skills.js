@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 import AppContext from '../../../context/AppContext';
 import Checkbox from '../../../shared/Checkbox';
@@ -31,7 +32,7 @@ const SkillsTab = ({ data, onChange }) => {
       <hr className="my-6" />
 
       {data.skills.items.map((x, index) => (
-        <Item item={x} key={index} index={index} onChange={onChange} dispatch={dispatch} />
+        <Item item={x} key={x.id} index={index} onChange={onChange} dispatch={dispatch} />
       ))}
 
       <AddItem heading={data.skills.heading} dispatch={dispatch} />
@@ -44,7 +45,7 @@ const Form = ({ item, onChange }) => {
     <input
       className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
       placeholder="Team Building &amp; Training"
-      value={item}
+      value={item.skill}
       onChange={e => onChange(e.target.value)}
       type="text"
     />
@@ -53,14 +54,20 @@ const Form = ({ item, onChange }) => {
 
 const AddItem = ({ heading, dispatch }) => {
   const [isOpen, setOpen] = useState(false);
-  const [item, setItem] = useState('');
+  const [item, setItem] = useState({
+    id: uuidv4(),
+    skill: ''
+  });
 
   const add = () => {
-    if (item === '') return;
+    if (item.skill === '') return;
 
     addItem(dispatch, 'skills', item);
 
-    setItem('');
+    setItem({
+        id: uuidv4(),
+        skill: ''
+    });
   };
 
   return (
@@ -70,7 +77,7 @@ const AddItem = ({ heading, dispatch }) => {
       <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
         <div className="grid grid-cols-4 gap-4">
           <div className="col-span-3">
-            <Form item={item} onChange={setItem} />
+            <Form item={item} onChange={v => setItem({...item, skill: v})} />
           </div>
 
           <button
@@ -94,7 +101,7 @@ const Item = ({ item, index, onChange, dispatch }) => {
   return (
     <div className="my-4 grid grid-cols-12">
       <div className="col-span-9">
-        <Form item={item} onChange={v => onChange(identifier, v)} />
+        <Form item={item} onChange={v => onChange(identifier, {...item, skill: v})} />
       </div>
 
       <button

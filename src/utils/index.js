@@ -3,7 +3,7 @@ import html2canvas from 'html2canvas';
 import * as jsPDF from 'jspdf';
 
 const move = (array, element, delta) => {
-  const index = array.indexOf(element);
+  const index = array.findIndex(item => item.id === element.id);
   const newIndex = index + delta;
   if (newIndex < 0 || newIndex === array.length) return;
   const indexes = [index, newIndex].sort((a, b) => a - b);

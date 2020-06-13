@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 import AppContext from '../../../context/AppContext';
 import Checkbox from '../../../shared/Checkbox';
@@ -44,7 +45,7 @@ const Form = ({ item, onChange }) => {
     <input
       className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
       placeholder="Beatboxing"
-      value={item}
+      value={item.hobby}
       onChange={e => onChange(e.target.value)}
       type="text"
     />
@@ -53,14 +54,20 @@ const Form = ({ item, onChange }) => {
 
 const AddItem = ({ heading, dispatch }) => {
   const [isOpen, setOpen] = useState(false);
-  const [item, setItem] = useState('');
+  const [item, setItem] = useState({
+      id: uuidv4(),
+      hobby: ''
+  });
 
   const add = () => {
-    if (item === '') return;
+    if (item.hobby === '') return;
 
     addItem(dispatch, 'hobbies', item);
 
-    setItem('');
+    setItem({
+        id: uuidv4(),
+        hobby: ''
+    });
   };
 
   return (
@@ -70,7 +77,7 @@ const AddItem = ({ heading, dispatch }) => {
       <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
         <div className="grid grid-cols-4 gap-4">
           <div className="col-span-3">
-            <Form item={item} onChange={setItem} />
+            <Form item={item} onChange={v => setItem({...item, hobby: v})} />
           </div>
 
           <button

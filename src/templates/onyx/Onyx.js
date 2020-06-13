@@ -147,14 +147,14 @@ const Onyx = () => {
 
   const HobbyItem = x => (
     <span
-      key={x}
+      key={x.id}
       className="text-xs rounded-full px-3 py-1 font-medium my-2 mr-2"
       style={{
         backgroundColor: theme.colors.primary,
         color: theme.colors.background,
       }}
     >
-      {x}
+      {x.hobby}
     </span>
   );
 
@@ -169,14 +169,14 @@ const Onyx = () => {
 
   const SkillItem = x => (
     <span
-      key={x}
+      key={x.id}
       className="text-xs rounded-full px-3 py-1 font-medium my-2 mr-2"
       style={{
         backgroundColor: theme.colors.primary,
         color: theme.colors.background,
       }}
     >
-      {x}
+      {x.skill}
     </span>
   );
 
