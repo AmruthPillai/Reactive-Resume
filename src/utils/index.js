@@ -104,12 +104,16 @@ const importJson = (event, dispatch) => {
   fr.readAsText(event.target.files[0]);
 };
 
-const saveAsPdf = (pageRef, panZoomRef, quality, type) =>
-  new Promise(resolve => {
+let saveAsPdfTimer = null;
+const saveAsPdf = (pageRef, panZoomRef, quality, type) => {
+  if(saveAsPdfTimer){
+      return;
+  }
+  return new Promise(resolve => {
     panZoomRef.current.autoCenter(1);
     panZoomRef.current.reset();
 
-    setTimeout(() => {
+    saveAsPdfTimer = setTimeout(() => {
       html2canvas(pageRef.current, {
         scale: 5,
         useCORS: true,
@@ -142,17 +146,23 @@ const saveAsPdf = (pageRef, panZoomRef, quality, type) =>
 
         doc.addImage(image, 'JPEG', marginX, marginY, canvasWidth, canvasHeight, null, 'SLOW');
         doc.save(`RxResume_${Date.now()}.pdf`);
+        saveAsPdfTimer = null;
         resolve();
       });
     }, 250);
   });
-
-const saveAsMultiPagePdf = (pageRef, panZoomRef, quality) =>
-  new Promise(resolve => {
+}
+  
+let saveAsMultiPagePdfTimer = null;
+const saveAsMultiPagePdf = (pageRef, panZoomRef, quality) => {
+  if(saveAsMultiPagePdfTimer){
+      return;
+  }
+  return new Promise(resolve => {
     panZoomRef.current.autoCenter(1);
     panZoomRef.current.reset();
 
-    setTimeout(() => {
+    saveAsMultiPagePdfTimer = setTimeout(() => {
       html2canvas(pageRef.current, {
         scale: 5,
         useCORS: true,
@@ -182,10 +192,12 @@ const saveAsMultiPagePdf = (pageRef, panZoomRef, quality) =>
         }
 
         doc.save(`RxResume_${Date.now()}.pdf`);
+        saveAsMultiPagePdfTimer = null;
         resolve();
       });
     }, 250);
   });
+}
 
 export {
   move,
