@@ -90,7 +90,26 @@ input[type='range']::-webkit-slider-thumb {
     width: 21cm;
     min-height: 29.7cm;
     background-color: white;
+    position: relative;
   }
+
+  #pagebreak {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: -110px;
+    height: 29.7cm;
+    border-bottom: dashed 2px red;
+  }
+
+  #pagebreak:after {
+    content: "A4 page break";
+    display: block;
+    position: absolute;
+    top: 29.7cm;
+    color: red;
+    margin-top: -22px;
+}
 
   #printPage {
     display: none;
@@ -119,6 +138,10 @@ input[type='range']::-webkit-slider-thumb {
     visibility: hidden;
   }
 
+  #pagebreak {
+    display: none;
+  }
+
   #printPage,
   #printPage * {
     visibility: visible;
@@ -127,7 +150,7 @@ input[type='range']::-webkit-slider-thumb {
 
   #printPage {
     width: 21cm;
-    height: 29.7cm;
+    min-height: 29.7cm;
     position: absolute;
     top: 0;
     left: 0;

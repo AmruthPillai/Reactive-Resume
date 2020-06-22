@@ -109,11 +109,15 @@ const saveAsPdf = (pageRef, panZoomRef, quality, type) => {
   if(saveAsPdfTimer){
       return;
   }
+  // eslint-disable-next-line consistent-return
   return new Promise(resolve => {
     panZoomRef.current.autoCenter(1);
     panZoomRef.current.reset();
 
     saveAsPdfTimer = setTimeout(() => {
+      const pagebreakDiv = document.getElementById('pagebreak');
+      pagebreakDiv.classList.add("hidden");
+
       html2canvas(pageRef.current, {
         scale: 5,
         useCORS: true,
@@ -146,6 +150,9 @@ const saveAsPdf = (pageRef, panZoomRef, quality, type) => {
 
         doc.addImage(image, 'JPEG', marginX, marginY, canvasWidth, canvasHeight, null, 'SLOW');
         doc.save(`RxResume_${Date.now()}.pdf`);
+
+        pagebreakDiv.classList.remove("hidden");
+
         saveAsPdfTimer = null;
         resolve();
       });
@@ -158,6 +165,7 @@ const saveAsMultiPagePdf = (pageRef, panZoomRef, quality) => {
   if(saveAsMultiPagePdfTimer){
       return;
   }
+  // eslint-disable-next-line consistent-return
   return new Promise(resolve => {
     panZoomRef.current.autoCenter(1);
     panZoomRef.current.reset();
