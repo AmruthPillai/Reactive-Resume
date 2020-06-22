@@ -43,10 +43,10 @@ const Castform = () => {
 
   const Address = () => (
     <div className="px-5 my-2">
-      <h6 className="text-xs font-bold">Address</h6>
-      <div className="text-sm">{data.profile.address.line1}</div>
-      <div className="text-sm">{data.profile.address.line2}</div>
-      <div className="text-sm">{data.profile.address.line3}</div>
+      <h6 className="text-xs font-bold">{data.contact.address.heading}</h6>
+      <div className="text-sm">{data.contact.address.line1}</div>
+      <div className="text-sm">{data.contact.address.line2}</div>
+      <div className="text-sm">{data.contact.address.line3}</div>
     </div>
   );
 
@@ -62,18 +62,18 @@ const Castform = () => {
 
   const ContactInformation = () => (
     <div>
-      <Heading title="Contact Information" />
+      <Heading title={data.contact.heading} />
       <Address />
-      <ContactItem title="Phone" value={data.profile.phone} link={`tel:${data.profile.phone}`} />
+      <ContactItem title={data.contact.phone.heading} value={data.contact.phone.value} link={`tel:${data.contact.phone.value}`} />
       <ContactItem
-        title="Email Address"
-        value={data.profile.email}
-        link={`mailto:${data.profile.email}`}
+        title={data.contact.email.heading}
+        value={data.contact.email.value}
+        link={`mailto:${data.contact.email.value}`}
       />
       <ContactItem
-        title="Website"
-        value={data.profile.website}
-        link={`http://${data.profile.website}`}
+        title={data.contact.website.heading}
+        value={data.contact.website.value}
+        link={`http://${data.contact.website.value}`}
       />
     </div>
   );

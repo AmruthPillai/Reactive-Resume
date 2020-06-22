@@ -275,20 +275,20 @@ const Pikachu = () => {
           <div className="text-sm mb-6">
             <ContactItem
               icon="phone"
-              value={data.profile.phone}
-              link={`tel:${data.profile.phone}`}
+              value={data.contact.phone.value}
+              link={`tel:${data.contact.phone.value}`}
             />
             <ContactItem
               icon="language"
-              value={data.profile.website}
-              link={`http://${data.profile.website}`}
+              value={data.contact.website.value}
+              link={`http://${data.contact.website.value}`}
             />
             <ContactItem
               icon="email"
-              value={data.profile.email}
-              link={`mailto:${data.profile.email}`}
+              value={data.contact.email.value}
+              link={`mailto:${data.contact.email.value}`}
             />
-            <ContactItem icon="location_on" value={data.profile.address.line3} />
+            <ContactItem icon="location_on" value={data.contact.address.line3} />
           </div>
 
           <Skills />
