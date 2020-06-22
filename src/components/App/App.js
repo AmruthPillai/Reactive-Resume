@@ -52,6 +52,7 @@ const App = () => {
           >
             <div id="page" ref={pageRef} className="shadow-2xl break-words">
               {templates.find(x => theme.layout.toLowerCase() === x.key).component()}
+              <div id="pagebreak" className="pagebreak" />
             </div>
           </PanZoom>
 
