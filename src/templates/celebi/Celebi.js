@@ -84,7 +84,7 @@ const Celebi = () => {
 
   const Contact = () => (
     <div className="mb-6">
-      <Heading title={data.contact.address.heading} className="mt-8 w-3/4 mx-auto" />
+      <Heading title={data.contact.heading} className="mt-8 w-3/4 mx-auto" />
       <div className="mb-3">
         <h6 className="text-xs font-bold">{data.contact.address.heading}</h6>
         <p className="text-sm">{data.contact.address.line1}</p>
