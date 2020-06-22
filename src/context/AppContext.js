@@ -13,15 +13,28 @@ const initialState = {
       photo: '',
       firstName: '',
       lastName: '',
-      subtitle: '',
+      subtitle: ''
+    },
+    contact: {
+      heading: "Contact",
       address: {
+        heading: 'Address',
         line1: '',
         line2: '',
         line3: '',
       },
-      phone: '',
-      website: '',
-      email: '',
+      phone: {
+          heading: 'Phone',
+          value: ''
+      },
+      website: {
+        heading: 'Website',
+        value: ''
+      },
+      email: {
+        heading: 'Email address',
+        value: ''
+      }
     },
     objective: {
       enable: true,

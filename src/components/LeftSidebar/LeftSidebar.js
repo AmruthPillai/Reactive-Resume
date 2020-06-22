@@ -3,6 +3,7 @@ import React, { useState, useContext } from 'react';
 import AppContext from '../../context/AppContext';
 import TabBar from '../../shared/TabBar';
 import ProfileTab from './tabs/Profile';
+import ContactTab from './tabs/Contact';
 import ObjectiveTab from './tabs/Objective';
 import WorkTab from './tabs/Work';
 import EducationTab from './tabs/Education';
@@ -21,6 +22,7 @@ const LeftSidebar = () => {
 
   const tabs = [
     { key: 'profile', name: data.profile.heading },
+    { key: 'contact', name: data.contact.heading },
     { key: 'objective', name: data.objective.heading },
     { key: 'work', name: data.work.heading },
     { key: 'education', name: data.education.heading },
@@ -49,6 +51,8 @@ const LeftSidebar = () => {
     switch (currentTab) {
       case 'profile':
         return <ProfileTab data={data} onChange={onChange} />;
+      case 'contact':
+        return <ContactTab data={data} onChange={onChange} />;
       case 'objective':
         return <ObjectiveTab data={data} onChange={onChange} />;
       case 'work':

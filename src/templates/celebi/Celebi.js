@@ -86,14 +86,14 @@ const Celebi = () => {
     <div className="mb-6">
       <Heading title="Contact" className="mt-8 w-3/4 mx-auto" />
       <div className="mb-3">
-        <h6 className="text-xs font-bold">Address</h6>
-        <p className="text-sm">{data.profile.address.line1}</p>
-        <p className="text-sm">{data.profile.address.line2}</p>
-        <p className="text-sm">{data.profile.address.line3}</p>
+        <h6 className="text-xs font-bold">{data.contact.address.heading}</h6>
+        <p className="text-sm">{data.contact.address.line1}</p>
+        <p className="text-sm">{data.contact.address.line2}</p>
+        <p className="text-sm">{data.contact.address.line3}</p>
       </div>
-      <ContactItem label="Phone" value={data.profile.phone} />
-      <ContactItem label="Email Address" value={data.profile.email} />
-      <ContactItem label="Website" value={data.profile.website} />
+      <ContactItem label="Phone" value={data.contact.phone.value} />
+      <ContactItem label="Email Address" value={data.contact.email.value} />
+      <ContactItem label="Website" value={data.contact.website.value} />
     </div>
   );
 

@@ -58,17 +58,17 @@ const Glalie = () => {
       </div>
 
       <div className="grid grid-cols-1 row-gap-4">
-        <ContactItem title="Phone Number" value={data.profile.phone} />
-        <ContactItem title="Email Address" value={data.profile.email} />
-        <ContactItem title="Website" value={data.profile.website} />
+        <ContactItem title={data.contact.phone.heading} value={data.contact.phone.value} />
+        <ContactItem title={data.contact.email.heading} value={data.contact.email.value} />
+        <ContactItem title={data.contact.website.heading} value={data.contact.website.value} />
 
         <div className="flex flex-col">
           <i className="material-icons text-lg" style={{ color: theme.colors.accent }}>
             home
           </i>
-          <p className="text-sm">{data.profile.address.line1}</p>
-          <p className="text-sm">{data.profile.address.line2}</p>
-          <p className="text-sm">{data.profile.address.line3}</p>
+          <p className="text-sm">{data.contact.address.line1}</p>
+          <p className="text-sm">{data.contact.address.line2}</p>
+          <p className="text-sm">{data.contact.address.line3}</p>
         </div>
       </div>
     </div>

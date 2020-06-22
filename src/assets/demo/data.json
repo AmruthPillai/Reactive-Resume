@@ -5,15 +5,28 @@
       "photo": "https://i.imgur.com/Icr472Z.jpg",
       "firstName": "Nancy",
       "lastName": "Jackson",
-      "subtitle": "Customer Sales Representative",
+      "subtitle": "Customer Sales Representative"
+    },
+    "contact": {
+      "heading": "Contact",
       "address": {
+        "heading": "Address",
         "line1": "3879 Gateway Avenue",
         "line2": "Bakersfield,",
         "line3": "California, USA"
       },
-      "phone": "+1 661-808-4188",
-      "website": "nancyontheweb.com",
-      "email": "nancyjack43@gmail.com"
+      "phone": {
+        "heading": "Phone",
+        "value": "+1 661-808-4188"
+      },
+      "website": {
+        "heading": "Website",
+        "value": "nancyontheweb.com"
+      },
+      "email": {
+        "heading": "Email",
+        "value": "nancyjack43@gmail.com"
+      }
     },
     "objective": {
       "enable": true,

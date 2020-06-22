@@ -42,57 +42,6 @@ const ProfileTab = ({ data, onChange }) => {
         onChange={v => onChange('data.profile.subtitle', v)}
       />
 
-      <hr className="my-6" />
-
-      <TextField
-        className="mb-6"
-        label={t('profile.address.line1.label')}
-        placeholder="Palladium Complex"
-        value={data.profile.address.line1}
-        onChange={v => onChange('data.profile.address.line1', v)}
-      />
-
-      <TextField
-        className="mb-6"
-        label={t('profile.address.line2.label')}
-        placeholder="140 E 14th St"
-        value={data.profile.address.line2}
-        onChange={v => onChange('data.profile.address.line2', v)}
-      />
-
-      <TextField
-        className="mb-6"
-        label={t('profile.address.line3.label')}
-        placeholder="New York, NY 10003 USA"
-        value={data.profile.address.line3}
-        onChange={v => onChange('data.profile.address.line3', v)}
-      />
-
-      <hr className="my-6" />
-
-      <TextField
-        className="mb-6"
-        label={t('profile.phone.label')}
-        placeholder="+1 541 754 3010"
-        value={data.profile.phone}
-        onChange={v => onChange('data.profile.phone', v)}
-      />
-
-      <TextField
-        className="mb-6"
-        label={t('profile.website.label')}
-        placeholder="janedoe.me"
-        value={data.profile.website}
-        onChange={v => onChange('data.profile.website', v)}
-      />
-
-      <TextField
-        className="mb-6"
-        label={t('profile.email.label')}
-        placeholder="jane.doe@example.com"
-        value={data.profile.email}
-        onChange={v => onChange('data.profile.email', v)}
-      />
     </div>
   );
 };
