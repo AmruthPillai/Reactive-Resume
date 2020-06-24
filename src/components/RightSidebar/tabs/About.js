@@ -92,7 +92,7 @@ const AboutTab = () => {
           className="flex justify-center items-center mt-4 bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-5 rounded"
         >
           <div className="flex justify-center items-center">
-            <i className="material-icons mr-2 font-bold text-base">policy</i>
+            <i className="material-icons mr-2 font-bold text-base">gavel</i>
             <span className="text-sm">{t('about.license.buttons.mitLicense')}</span>
           </div>
         </a>
