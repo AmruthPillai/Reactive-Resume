@@ -10,6 +10,15 @@ const ProfileTab = ({ data, onChange }) => {
     <div>
       <TextField
         className="mb-6"
+        placeholder="Heading"
+        value={data.profile.heading}
+        onChange={v => onChange('data.profile.heading', v)}
+      />
+
+      <hr className="my-6" />
+
+      <TextField
+        className="mb-6"
         label={t('profile.photoUrl.label')}
         placeholder="https://i.imgur.com/..."
         value={data.profile.photo}
