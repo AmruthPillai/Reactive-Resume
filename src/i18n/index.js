@@ -71,6 +71,10 @@ const languages = [
     name: 'Tamil (தமிழ்)',
   },
   {
+    code: 'tr',
+    name: 'Turkish (Türkçe)',
+  },
+  {
     code: 'vi',
     name: 'Vietnamese (Tiếng Việt)',
   },
