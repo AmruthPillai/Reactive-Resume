@@ -62,7 +62,7 @@ const Castform = () => {
 
   const ContactInformation = () => (
     <div>
-      <Heading title="Contact Information" />
+      <Heading title={data.profile.heading} />
       <Address />
       <ContactItem title="Phone" value={data.profile.phone} link={`tel:${data.profile.phone}`} />
       <ContactItem
