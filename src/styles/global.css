@@ -2,6 +2,10 @@
 @import "~react-toastify/dist/ReactToastify.css";
 @import "./toastify.css";
 
+:root {
+  @apply transition-colors duration-200 ease-in-out;
+}
+
 html,
 body {
   font-size: 12px;

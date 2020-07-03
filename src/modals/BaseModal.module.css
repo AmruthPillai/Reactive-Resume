@@ -4,7 +4,7 @@
 
 .modal {
   width: min(600px, calc(100vw - 100px));
-  @apply p-8 rounded bg-white outline-none;
+  @apply p-8 rounded bg-inverse text-primary outline-none;
 }
 
 .modal .title {

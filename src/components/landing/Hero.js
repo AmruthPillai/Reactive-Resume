@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import GatsbyImage from "gatsby-image";
+import { FaGithub } from "react-icons/fa";
 import ThemeContext from "../../contexts/ThemeContext";
 import ModalContext from "../../contexts/ModalContext";
 import UserContext from "../../contexts/UserContext";
@@ -54,7 +55,8 @@ const Hero = () => {
           <Button
             outline
             className="ml-8"
-            title="Source Code"
+            title="GitHub"
+            icon={FaGithub}
             onClick={toggleDarkMode}
           />
         </div>

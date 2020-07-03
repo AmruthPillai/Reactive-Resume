@@ -4,6 +4,7 @@ import "firebase/analytics";
 import "firebase/firestore";
 import { ThemeProvider } from "./src/contexts/ThemeContext";
 
+import "./src/styles/colors.css";
 import "./src/styles/tailwind.css";
 import "./src/styles/global.css";
 import { ModalProvider } from "./src/contexts/ModalContext";

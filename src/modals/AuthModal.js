@@ -21,8 +21,8 @@ const AuthModal = () => {
 
   const loggedInAction = (
     <Fragment>
-      <Button className="mr-6" title="Go to App" onClick={handleGoToApp} />
-      <Button title="Logout" onClick={logout} />
+      <Button className="mr-6" title="Logout" onClick={logout} />
+      <Button title="Go to App" onClick={handleGoToApp} />
     </Fragment>
   );
 

@@ -11,7 +11,7 @@ const COLOR_CONFIG = {
     "--color-primary": "#f5f5f5",
     "--color-primary-dark": "#eee",
     "--color-inverse": "#212121",
-    "--color-inverse-dark": "#121212",
+    "--color-inverse-dark": "#181818",
   },
 };
 
