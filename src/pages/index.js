@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
 import GatsbyImage from "gatsby-image";
 import Button from "../components/shared/Button";
+import AuthModal from "../modals/AuthModal";
 
 const Home = ({ data }) => {
+  const [isAuthModalOpen, setAuthModalOpen] = useState(false);
+
+  const handleLogin = () => setAuthModalOpen(true);
+
   return (
     <div className="container mt-24">
       <div className="flex items-center">
@@ -19,8 +24,9 @@ const Home = ({ data }) => {
           </h2>
 
           <div className="mt-12 flex">
-            <Button text="Go to App" />
-            <Button className="ml-8" outline text="Source Code" />
+            <Button title="Login" onClick={handleLogin} />
+            <AuthModal state={[isAuthModalOpen, setAuthModalOpen]} />
+            <Button className="ml-8" outline title="Source Code" />
           </div>
         </div>
       </div>
@@ -67,7 +73,7 @@ const Feature = ({ title, children }) => {
   return (
     <div className="mt-16">
       <h3 className="text-3xl">{title}</h3>
-      <p className="mt-8 text-xl leading-loose">{children}</p>
+      <p className="mt-6 text-lg">{children}</p>
     </div>
   );
 };

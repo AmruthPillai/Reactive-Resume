@@ -18,6 +18,10 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+p {
+  @apply text-justify leading-loose;
+}
+
 a {
   @apply text-blue-600 font-medium;
 }
