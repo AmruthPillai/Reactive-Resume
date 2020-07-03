@@ -17,6 +17,7 @@ const Logo = ({ size = "256px" }) => {
 
   return (
     <GatsbyImage
+      loading="eager"
       className="shadow-md rounded"
       style={{ width: size, height: size }}
       fluid={file.childImageSharp.fluid}
