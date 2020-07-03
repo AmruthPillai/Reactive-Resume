@@ -19,9 +19,17 @@ const AuthModal = () => {
     console.log("Go to App");
   };
 
+  const getTitle = () =>
+    user ? `Welcome, ${user.displayName}` : "Who are you?";
+
+  const getMessage = () =>
+    user
+      ? `Awesome. Now that you've authenticated yourself, we can get on with the real reason you're here. Click on the Go to App button to start building your resume!`
+      : `Reactive Resume needs to know who you are so it can securely authenticate you into the app and show you only your information. Once you are in, you can start building your resume, editing it to add new skills or sharing it with the world!`;
+
   const loggedInAction = (
     <Fragment>
-      <Button className="mr-6" title="Logout" onClick={logout} />
+      <Button outline className="mr-8" title="Logout" onClick={logout} />
       <Button title="Go to App" onClick={handleGoToApp} />
     </Fragment>
   );
@@ -37,15 +45,10 @@ const AuthModal = () => {
   return (
     <BaseModal
       state={authModal}
-      title="Who are you?"
+      title={getTitle()}
       action={user ? loggedInAction : loggedOutAction}
     >
-      <p>
-        Reactive Resume needs to know who you are so it can securely
-        authenticate you into the app and show you only your information. Once
-        you are in, you can start building your resume, editing it to add new
-        skills or sharing it with the world!
-      </p>
+      <p>{getMessage()}</p>
     </BaseModal>
   );
 };

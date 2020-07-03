@@ -17,6 +17,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-lodash`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,

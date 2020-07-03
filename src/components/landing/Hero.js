@@ -1,36 +1,21 @@
 import React, { useContext } from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import GatsbyImage from "gatsby-image";
 import { FaGithub } from "react-icons/fa";
 import ThemeContext from "../../contexts/ThemeContext";
 import ModalContext from "../../contexts/ModalContext";
 import UserContext from "../../contexts/UserContext";
 import Button from "../shared/Button";
+import Logo from "../shared/Logo";
 
 const Hero = () => {
   const { user, loading } = useContext(UserContext);
   const { toggleDarkMode } = useContext(ThemeContext);
   const { authModal } = useContext(ModalContext);
-  const { file } = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "logo.png" }) {
-        childImageSharp {
-          fixed(width: 256, height: 256) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    }
-  `);
 
   const handleLogin = () => authModal.setOpen(true);
 
   return (
     <div className="flex items-center">
-      <GatsbyImage
-        className="shadow-md rounded"
-        fixed={file.childImageSharp.fixed}
-      />
+      <Logo size="256px" />
 
       <div className="ml-12">
         <h1 className="text-5xl font-bold">Reactive Resume</h1>

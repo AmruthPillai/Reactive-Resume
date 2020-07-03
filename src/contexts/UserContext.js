@@ -2,9 +2,17 @@ import React, { createContext, useState, useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import firebase from "gatsby-plugin-firebase";
 import { toast } from "react-toastify";
+import { pick } from "lodash";
+
+const defaultUser = {
+  uid: null,
+  displayName: null,
+  email: null,
+  photoURL: null,
+};
 
 const defaultState = {
-  user: null,
+  user: defaultUser,
   logout: () => {},
   loginWithGoogle: async () => {},
 };
@@ -16,7 +24,18 @@ const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    setUser(firebaseUser);
+    if (firebaseUser) {
+      const user = pick(firebaseUser, Object.keys(defaultUser));
+      setUser(user);
+
+      const addUserToDatabase = async () => {
+        const docRef = firebase.firestore().collection("users").doc(user.uid);
+        const snapshot = await docRef.get();
+        !snapshot.exists && docRef.set(user);
+      };
+
+      addUserToDatabase();
+    }
   }, [firebaseUser]);
 
   const loginWithGoogle = async () => {
@@ -31,6 +50,7 @@ const UserProvider = ({ children }) => {
 
   const logout = () => {
     firebase.auth().signOut();
+    setUser(null);
   };
 
   return (
