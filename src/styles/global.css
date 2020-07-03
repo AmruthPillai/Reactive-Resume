@@ -1,0 +1,27 @@
+:root {
+  --color-primary: #444;
+  --color-primary-dark: #333;
+  --color-inverse: #fff;
+  --color-inverse-dark: #f5f5f5;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "~react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+
+html,
+body {
+  font-size: 12px;
+  @apply text-primary;
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  @apply text-blue-600 font-medium;
+}
+
+a:hover {
+  @apply underline;
+}
