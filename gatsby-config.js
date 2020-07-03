@@ -1,8 +1,4 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
+require("dotenv").config();
 
 module.exports = {
   plugins: [
@@ -44,14 +40,14 @@ module.exports = {
       resolve: "gatsby-plugin-firebase",
       options: {
         credentials: {
-          apiKey: "AIzaSyCfC075KJNwsMWDTm6k8QCtWno48okM7wY",
-          authDomain: "rx-resume.firebaseapp.com",
-          databaseURL: "https://rx-resume.firebaseio.com",
-          projectId: "rx-resume",
-          storageBucket: "rx-resume.appspot.com",
-          messagingSenderId: "493152774539",
-          appId: "1:493152774539:web:ecaa1222f5e1bcf8fb678e",
-          measurementId: "G-83G3Y6DPJ6",
+          apiKey: process.env.FIREBASE_APIKEY,
+          authDomain: process.env.FIREBASE_AUTHDOMAIN,
+          databaseURL: process.env.FIREBASE_DATABASEURL,
+          projectId: process.env.FIREBASE_PROJECTID,
+          storageBucket: process.env.FIREBASE_STORAGEBUCKET,
+          messagingSenderId: process.env.FIREBASE_MESSAGINGSENDERID,
+          appId: process.env.FIREBASE_APPID,
+          measurementId: process.env.FIREBASE_MEASUREMENTID,
         },
       },
     },
