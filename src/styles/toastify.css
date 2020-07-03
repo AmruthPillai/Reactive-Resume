@@ -1,0 +1,12 @@
+.Toastify__toast {
+  @apply px-8 py-6 shadow-lg rounded;
+}
+
+.Toastify__toast--default {
+  @apply bg-primary text-inverse;
+}
+
+.Toastify__toast-body {
+  font-family: "Montserrat", sans-serif;
+  @apply font-medium;
+}

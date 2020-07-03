@@ -16,7 +16,7 @@ const Button = ({ title, isLoading, onClick, outline, className }) => {
     <div
       tabIndex="0"
       role="button"
-      onClick={onClick}
+      onClick={isLoading ? undefined : onClick}
       className={classes}
       onKeyDown={handleKeyDown}
     >
