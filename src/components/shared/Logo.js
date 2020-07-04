@@ -1,6 +1,8 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import cx from "classnames";
+import { graphql, useStaticQuery } from "gatsby";
 import GatsbyImage from "gatsby-image";
+import React from "react";
+import styles from "./Logo.module.css";
 
 const Logo = ({ size = "256px", className }) => {
   const { file } = useStaticQuery(graphql`
@@ -18,7 +20,7 @@ const Logo = ({ size = "256px", className }) => {
   return (
     <GatsbyImage
       loading="eager"
-      className={`rounded ${className}`}
+      className={cx(styles.logo, className)}
       style={{ width: size, height: size }}
       fluid={file.childImageSharp.fluid}
     />

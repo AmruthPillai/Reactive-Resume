@@ -1,3 +1,4 @@
+import cx from "classnames";
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import styles from "./Input.module.css";
@@ -8,13 +9,14 @@ const Input = ({
   value,
   error,
   onChange,
+  className,
   placeholder,
   type = "text",
 }) => {
   const uuid = uuidv4();
 
   return (
-    <div className={styles.container}>
+    <div className={cx(styles.container, className)}>
       <label htmlFor={uuid}>
         <span>{label}</span>
         <input

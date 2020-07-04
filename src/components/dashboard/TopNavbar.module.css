@@ -1,6 +1,7 @@
 .navbar {
   height: 65px;
-  @apply w-full shadow;
+  box-shadow: var(--bottom-shadow);
+  @apply w-full;
 }
 
 .navbar > div {

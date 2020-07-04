@@ -1,4 +1,5 @@
 import { Menu, MenuItem } from "@material-ui/core";
+import { navigate } from "gatsby";
 import moment from "moment";
 import React, { useContext, useState } from "react";
 import { MdMoreHoriz, MdOpenInNew } from "react-icons/md";
@@ -12,9 +13,7 @@ const ResumePreview = ({ resume }) => {
   const { createResumeModal } = useContext(ModalContext);
   const { deleteResume } = useContext(ResumeContext);
 
-  const handleOpen = () => {
-    console.log("Hello, World!");
-  };
+  const handleOpen = () => navigate(`/app/builder/${resume.id}`);
 
   const handleMenuClick = (event) => {
     setAnchorEl(event.currentTarget);

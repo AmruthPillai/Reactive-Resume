@@ -1,11 +1,12 @@
+import { Link, navigate } from "gatsby";
 import React, { useContext } from "react";
-import Logo from "../shared/Logo";
 import UserContext from "../../contexts/UserContext";
+import Avatar from "../shared/Avatar";
+import Logo from "../shared/Logo";
 import styles from "./TopNavbar.module.css";
-import { navigate, Link } from "gatsby";
 
 const TopNavbar = () => {
-  const { user, logout } = useContext(UserContext);
+  const { logout } = useContext(UserContext);
 
   const handleLogout = async () => {
     await logout();
@@ -27,11 +28,7 @@ const TopNavbar = () => {
             Logout
           </button>
 
-          <img
-            className="ml-8 h-12 rounded-full"
-            src={user.photoURL}
-            alt={user.displayName}
-          />
+          <Avatar className="ml-8" />
         </div>
       </div>
     </div>

@@ -1,5 +1,4 @@
 @import "~react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-@import "./toastify.css";
 
 :root {
   @apply transition-colors duration-200 ease-in-out;
@@ -22,4 +21,8 @@ a {
 
 a:hover {
   @apply underline;
+}
+
+hr {
+  @apply w-full h-1;
 }

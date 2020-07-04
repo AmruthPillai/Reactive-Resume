@@ -1,3 +1,7 @@
+.container {
+  @apply w-full;
+}
+
 .container > label {
   @apply flex flex-col;
 }
@@ -11,5 +15,5 @@
 }
 
 .container > label > input:focus {
-  @apply outline-none border-gray-500;
+  @apply outline-none border-gray-400;
 }
