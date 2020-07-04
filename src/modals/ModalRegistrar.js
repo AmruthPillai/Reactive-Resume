@@ -1,7 +1,7 @@
 import React, { Fragment, useContext } from "react";
+import ModalContext from "../contexts/ModalContext";
 import AuthModal from "./AuthModal";
 import CreateResumeModal from "./CreateResumeModal";
-import ModalContext from "../contexts/ModalContext";
 
 const ModalRegistrar = () => {
   const { createResumeModal } = useContext(ModalContext);

@@ -7,6 +7,7 @@ import UserContext from "./UserContext";
 const defaultState = {
   resumes: [],
   createResume: async () => {},
+  deleteResume: async () => {},
 };
 
 const ResumeContext = createContext(defaultState);
@@ -56,12 +57,18 @@ const ResumeProvider = ({ children }) => {
     });
   };
 
+  const deleteResume = async (resume) => {
+    const { id } = resume;
+    await firebase.firestore().collection(collectionRef).doc(id).delete();
+  };
+
   return (
     <ResumeContext.Provider
       value={{
         resumes,
         createResume,
         updateResume,
+        deleteResume,
       }}
     >
       {children}

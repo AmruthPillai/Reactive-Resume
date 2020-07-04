@@ -2,12 +2,15 @@ import { Menu, MenuItem } from "@material-ui/core";
 import moment from "moment";
 import React, { useContext, useState } from "react";
 import { MdMoreHoriz, MdOpenInNew } from "react-icons/md";
+import { toast } from "react-toastify";
 import ModalContext from "../../contexts/ModalContext";
+import ResumeContext from "../../contexts/ResumeContext";
 import styles from "./ResumePreview.module.css";
 
 const ResumePreview = ({ resume }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const { createResumeModal } = useContext(ModalContext);
+  const { deleteResume } = useContext(ResumeContext);
 
   const handleOpen = () => {
     console.log("Hello, World!");
@@ -20,6 +23,12 @@ const ResumePreview = ({ resume }) => {
   const handleRename = () => {
     createResumeModal.setOpen(true);
     createResumeModal.setData(resume);
+    setAnchorEl(null);
+  };
+
+  const handleDelete = () => {
+    deleteResume(resume);
+    toast(`${resume.name} was deleted successfully`);
     setAnchorEl(null);
   };
 
@@ -56,8 +65,7 @@ const ResumePreview = ({ resume }) => {
           onClose={handleMenuClose}
         >
           <MenuItem onClick={handleRename}>Rename</MenuItem>
-          <MenuItem onClick={handleMenuClose}>Duplicate</MenuItem>
-          <MenuItem onClick={handleMenuClose}>
+          <MenuItem onClick={handleDelete}>
             <span className="text-red-600">Delete</span>
           </MenuItem>
         </Menu>

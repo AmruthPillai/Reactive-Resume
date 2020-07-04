@@ -9,7 +9,9 @@ import { getModalText } from "../utils";
 import BaseModal from "./BaseModal";
 
 const CreateResumeSchema = Yup.object().shape({
-  name: Yup.string().min(2).required(),
+  name: Yup.string()
+    .min(5, "Please enter at least 5 characters.")
+    .required("This is a required field."),
 });
 
 const CreateResumeModal = ({ data }) => {

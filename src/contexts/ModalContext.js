@@ -17,6 +17,7 @@ const ModalContext = createContext(defaultState);
 
 const ModalProvider = ({ children }) => {
   const [authOpen, setAuthOpen] = useState(false);
+
   const [createResumeOpen, setCreateResumeOpen] = useState(false);
   const [createResumeData, setCreateResumeData] = useState(null);
 
