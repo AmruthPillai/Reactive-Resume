@@ -1,4 +1,5 @@
 import React from "react";
+import { isFunction } from "lodash";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
@@ -6,10 +7,13 @@ import { MdClose } from "react-icons/md";
 import styles from "./BaseModal.module.css";
 import Button from "../components/shared/Button";
 
-const BaseModal = ({ title, state, children, action }) => {
+const BaseModal = ({ title, state, children, action, onDestroy }) => {
   const { isOpen, setOpen } = state;
 
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false);
+    isFunction(onDestroy) && onDestroy();
+  };
 
   return (
     <Modal

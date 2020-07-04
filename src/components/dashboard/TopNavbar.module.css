@@ -1,0 +1,8 @@
+.navbar {
+  height: 65px;
+  @apply w-full shadow;
+}
+
+.navbar > div {
+  @apply h-full flex items-center justify-between;
+}

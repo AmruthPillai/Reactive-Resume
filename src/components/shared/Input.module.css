@@ -1,0 +1,15 @@
+.container > label {
+  @apply flex flex-col;
+}
+
+.container > label > span {
+  @apply mb-1 text-gray-600 font-medium text-sm uppercase;
+}
+
+.container > label > input {
+  @apply py-4 px-4 rounded bg-gray-200 border border-gray-200;
+}
+
+.container > label > input:focus {
+  @apply outline-none border-gray-500;
+}

@@ -1,5 +1,7 @@
+@import "~react-toastify/dist/ReactToastify.css";
+
 .Toastify__toast {
-  @apply px-8 py-6 shadow-lg rounded;
+  @apply px-8 py-6 shadow rounded;
 }
 
 .Toastify__toast--default {

@@ -13,6 +13,10 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: { prefixes: [`/app/*`] },
+    },
     `gatsby-plugin-lodash`,
     `gatsby-plugin-react-helmet`,
     {

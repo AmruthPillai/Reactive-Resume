@@ -17,8 +17,10 @@
     "@material-ui/core": "^4.11.0",
     "classnames": "^2.2.6",
     "firebase": "^7.15.5",
+    "formik": "^2.1.4",
     "gatsby": "^2.23.12",
     "gatsby-image": "^2.4.12",
+    "gatsby-plugin-create-client-paths": "^2.3.9",
     "gatsby-plugin-firebase": "^0.2.0-beta.4",
     "gatsby-plugin-lodash": "^3.3.9",
     "gatsby-plugin-manifest": "^2.4.17",
@@ -35,7 +37,8 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^3.10.0",
     "react-loader-spinner": "^3.1.14",
-    "react-toastify": "^6.0.8"
+    "react-toastify": "^6.0.8",
+    "uuid": "^8.2.0"
   },
   "devDependencies": {
     "prettier": "2.0.5",

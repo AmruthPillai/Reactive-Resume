@@ -13,7 +13,7 @@ const defaultUser = {
 
 const defaultState = {
   user: defaultUser,
-  logout: () => {},
+  logout: async () => {},
   loginWithGoogle: async () => {},
 };
 
@@ -24,9 +24,15 @@ const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    setUser(user);
+  }, []);
+
+  useEffect(() => {
     if (firebaseUser) {
       const user = pick(firebaseUser, Object.keys(defaultUser));
       setUser(user);
+      localStorage.setItem("user", JSON.stringify(user));
 
       const addUserToDatabase = async () => {
         const docRef = firebase.firestore().collection("users").doc(user.uid);
@@ -48,8 +54,9 @@ const UserProvider = ({ children }) => {
     }
   };
 
-  const logout = () => {
-    firebase.auth().signOut();
+  const logout = async () => {
+    await firebase.auth().signOut();
+    localStorage.removeItem("user");
     setUser(null);
   };
 
@@ -57,8 +64,8 @@ const UserProvider = ({ children }) => {
     <UserContext.Provider
       value={{
         user,
-        loading,
         logout,
+        loading,
         loginWithGoogle,
       }}
     >

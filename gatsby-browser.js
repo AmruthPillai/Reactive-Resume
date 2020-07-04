@@ -1,19 +1,29 @@
 import React from "react";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core";
 import "firebase/auth";
 import "firebase/analytics";
 import "firebase/firestore";
+import { ModalProvider } from "./src/contexts/ModalContext";
 import { ThemeProvider } from "./src/contexts/ThemeContext";
+import { UserProvider } from "./src/contexts/UserContext";
 
 import "./src/styles/colors.css";
 import "./src/styles/tailwind.css";
 import "./src/styles/global.css";
-import { ModalProvider } from "./src/contexts/ModalContext";
-import { UserProvider } from "./src/contexts/UserContext";
+
+const theme = createMuiTheme({
+  typography: {
+    fontWeightRegular: 500,
+    fontFamily: ["Montserrat", "sans-serif"].join(","),
+  },
+});
 
 export const wrapRootElement = ({ element }) => (
   <ThemeProvider>
-    <ModalProvider>
-      <UserProvider>{element}</UserProvider>
-    </ModalProvider>
+    <MuiThemeProvider theme={theme}>
+      <ModalProvider>
+        <UserProvider>{element}</UserProvider>
+      </ModalProvider>
+    </MuiThemeProvider>
   </ThemeProvider>
 );

@@ -3,6 +3,7 @@ import BaseModal from "./BaseModal";
 import Button from "../components/shared/Button";
 import ModalContext from "../contexts/ModalContext";
 import UserContext from "../contexts/UserContext";
+import { navigate } from "gatsby";
 
 const AuthModal = () => {
   const [isLoading, setLoading] = useState(false);
@@ -15,8 +16,9 @@ const AuthModal = () => {
     setLoading(false);
   };
 
-  const handleGoToApp = () => {
-    console.log("Go to App");
+  const handleGotoApp = () => {
+    navigate("/app/dashboard");
+    authModal.setOpen(false);
   };
 
   const getTitle = () =>
@@ -30,7 +32,7 @@ const AuthModal = () => {
   const loggedInAction = (
     <Fragment>
       <Button outline className="mr-8" title="Logout" onClick={logout} />
-      <Button title="Go to App" onClick={handleGoToApp} />
+      <Button title="Go to App" onClick={handleGotoApp} />
     </Fragment>
   );
 

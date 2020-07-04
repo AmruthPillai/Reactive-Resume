@@ -5,6 +5,7 @@ import ModalContext from "../../contexts/ModalContext";
 import UserContext from "../../contexts/UserContext";
 import Button from "../shared/Button";
 import Logo from "../shared/Logo";
+import { navigate } from "gatsby";
 
 const Hero = () => {
   const { user, loading } = useContext(UserContext);
@@ -13,9 +14,11 @@ const Hero = () => {
 
   const handleLogin = () => authModal.setOpen(true);
 
+  const handleGotoApp = () => navigate("/app/dashboard");
+
   return (
     <div className="flex items-center">
-      <Logo size="256px" />
+      <Logo className="shadow-lg" size="256px" />
 
       <div className="ml-12">
         <h1 className="text-5xl font-bold">Reactive Resume</h1>
@@ -27,7 +30,7 @@ const Hero = () => {
           {user ? (
             <Button
               title="Go to App"
-              onClick={handleLogin}
+              onClick={handleGotoApp}
               isLoading={loading || authModal.isOpen}
             />
           ) : (
