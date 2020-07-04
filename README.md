@@ -1,3 +1,5 @@
+### v2 is under-development, [read more](https://dev.to/amruthpillai/redesigning-reactive-resume-and-i-need-your-inputs-5ga6)
+
 <img src="https://i.imgur.com/4eps4gP.png" alt="Reactive Resume" width="256px"  height="256px"/>
 
 # Reactive Resume
