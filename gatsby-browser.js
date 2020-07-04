@@ -10,6 +10,7 @@ import { UserProvider } from "./src/contexts/UserContext";
 import "./src/styles/colors.css";
 import "./src/styles/tailwind.css";
 import "./src/styles/global.css";
+import { ResumeProvider } from "./src/contexts/ResumeContext";
 
 const theme = createMuiTheme({
   typography: {
@@ -22,7 +23,9 @@ export const wrapRootElement = ({ element }) => (
   <ThemeProvider>
     <MuiThemeProvider theme={theme}>
       <ModalProvider>
-        <UserProvider>{element}</UserProvider>
+        <UserProvider>
+          <ResumeProvider>{element}</ResumeProvider>
+        </UserProvider>
       </ModalProvider>
     </MuiThemeProvider>
   </ThemeProvider>

@@ -6,6 +6,7 @@ const Input = ({
   label,
   name,
   value,
+  error,
   onChange,
   placeholder,
   type = "text",
@@ -24,6 +25,7 @@ const Input = ({
           onChange={onChange}
           placeholder={placeholder}
         />
+        <p className="mt-1 text-red-600 text-sm">{error}</p>
       </label>
     </div>
   );

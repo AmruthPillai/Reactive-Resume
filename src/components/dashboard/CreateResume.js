@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { MdAdd } from "react-icons/md";
-import styles from "./CreateResume.module.css";
 import ModalContext from "../../contexts/ModalContext";
+import styles from "./CreateResume.module.css";
 
 const CreateResume = () => {
   const { createResumeModal } = useContext(ModalContext);

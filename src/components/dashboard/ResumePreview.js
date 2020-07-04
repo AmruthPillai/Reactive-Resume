@@ -1,18 +1,26 @@
-import React, { useState } from "react";
-import { MdMoreHoriz, MdOpenInNew } from "react-icons/md";
 import { Menu, MenuItem } from "@material-ui/core";
+import moment from "moment";
+import React, { useContext, useState } from "react";
+import { MdMoreHoriz, MdOpenInNew } from "react-icons/md";
+import ModalContext from "../../contexts/ModalContext";
 import styles from "./ResumePreview.module.css";
 
-const ResumePreview = ({ title, subtitle }) => {
+const ResumePreview = ({ resume }) => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const { createResumeModal } = useContext(ModalContext);
 
-  const handleClick = () => {
+  const handleOpen = () => {
     console.log("Hello, World!");
   };
 
   const handleMenuClick = (event) => {
-    event.stopPropagation();
     setAnchorEl(event.currentTarget);
+  };
+
+  const handleRename = () => {
+    createResumeModal.setOpen(true);
+    createResumeModal.setData(resume);
+    setAnchorEl(null);
   };
 
   const handleMenuClose = () => {
@@ -32,7 +40,7 @@ const ResumePreview = ({ title, subtitle }) => {
           color="#fff"
           size="48"
           className="cursor-pointer"
-          onClick={handleClick}
+          onClick={handleOpen}
         />
         <MdMoreHoriz
           color="#fff"
@@ -47,6 +55,7 @@ const ResumePreview = ({ title, subtitle }) => {
           open={Boolean(anchorEl)}
           onClose={handleMenuClose}
         >
+          <MenuItem onClick={handleRename}>Rename</MenuItem>
           <MenuItem onClick={handleMenuClose}>Duplicate</MenuItem>
           <MenuItem onClick={handleMenuClose}>
             <span className="text-red-600">Delete</span>
@@ -54,8 +63,12 @@ const ResumePreview = ({ title, subtitle }) => {
         </Menu>
       </div>
       <div className={styles.meta}>
-        <p>{title}</p>
-        <span>{subtitle}</span>
+        <p>{resume.name}</p>
+        {resume.updatedAt && (
+          <span>
+            Last updated {moment(resume.updatedAt.toDate()).fromNow()}
+          </span>
+        )}
       </div>
     </div>
   );

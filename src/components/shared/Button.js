@@ -3,7 +3,15 @@ import classNames from "classnames";
 import Loader from "react-loader-spinner";
 import styles from "./Button.module.css";
 
-const Button = ({ icon, title, isLoading, onClick, outline, className }) => {
+const Button = ({
+  icon,
+  title,
+  onClick,
+  outline,
+  className,
+  isLoading,
+  type = "button",
+}) => {
   const Icon = icon;
   const classes = classNames(styles.container, className, {
     [styles.outline]: outline,
@@ -12,9 +20,8 @@ const Button = ({ icon, title, isLoading, onClick, outline, className }) => {
   const handleKeyDown = () => {};
 
   return (
-    <div
-      tabIndex="0"
-      role="button"
+    <button
+      type={type}
       className={classes}
       onKeyDown={handleKeyDown}
       onClick={isLoading ? undefined : onClick}
@@ -25,7 +32,7 @@ const Button = ({ icon, title, isLoading, onClick, outline, className }) => {
       ) : (
         title
       )}
-    </div>
+    </button>
   );
 };
 

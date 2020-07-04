@@ -1,8 +1,16 @@
 import React, { createContext, useState } from "react";
 
 const defaultState = {
-  authModal: {},
-  createResumeModal: {},
+  authModal: {
+    isOpen: false,
+    setOpen: () => {},
+  },
+  createResumeModal: {
+    isOpen: false,
+    setOpen: () => {},
+    data: null,
+    setData: () => {},
+  },
 };
 
 const ModalContext = createContext(defaultState);
@@ -10,6 +18,7 @@ const ModalContext = createContext(defaultState);
 const ModalProvider = ({ children }) => {
   const [authOpen, setAuthOpen] = useState(false);
   const [createResumeOpen, setCreateResumeOpen] = useState(false);
+  const [createResumeData, setCreateResumeData] = useState(null);
 
   return (
     <ModalContext.Provider
@@ -18,6 +27,8 @@ const ModalProvider = ({ children }) => {
         createResumeModal: {
           isOpen: createResumeOpen,
           setOpen: setCreateResumeOpen,
+          data: createResumeData,
+          setData: setCreateResumeData,
         },
       }}
     >

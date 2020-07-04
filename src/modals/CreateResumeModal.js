@@ -1,33 +1,57 @@
-import React, { useContext } from "react";
 import { useFormik } from "formik";
-import BaseModal from "./BaseModal";
-import ModalContext from "../contexts/ModalContext";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import * as Yup from "yup";
 import Button from "../components/shared/Button";
 import Input from "../components/shared/Input";
+import ModalContext from "../contexts/ModalContext";
+import ResumeContext from "../contexts/ResumeContext";
+import { getModalText } from "../utils";
+import BaseModal from "./BaseModal";
 
-const CreateResumeModal = () => {
+const CreateResumeSchema = Yup.object().shape({
+  name: Yup.string().min(2).required(),
+});
+
+const CreateResumeModal = ({ data }) => {
+  const modalRef = useRef(null);
+  const [isEditMode, setEditMode] = useState(false);
   const { createResumeModal } = useContext(ModalContext);
+  const { createResume, updateResume } = useContext(ResumeContext);
+
   const formik = useFormik({
     initialValues: {
       name: "",
     },
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+    validationSchema: CreateResumeSchema,
+    onSubmit: (data) => {
+      isEditMode ? updateResume(data) : createResume(data);
+      modalRef.current.handleClose();
     },
   });
 
+  useEffect(() => {
+    data && formik.setValues(data) && setEditMode(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data]);
+
   const submitAction = (
-    <Button title="Create Resume" onClick={() => formik.handleSubmit()} />
+    <Button
+      type="submit"
+      title={getModalText(isEditMode, "Resume")}
+      onClick={() => formik.handleSubmit()}
+    />
   );
 
   const onDestroy = () => {
     formik.resetForm();
+    setEditMode(false);
   };
 
   return (
     <BaseModal
+      ref={modalRef}
       state={createResumeModal}
-      title="Create New Resume"
+      title={getModalText(isEditMode, "Resume")}
       action={submitAction}
       onDestroy={onDestroy}
     >
@@ -39,6 +63,7 @@ const CreateResumeModal = () => {
           placeholder="Full Stack Web Developer"
           onChange={formik.handleChange}
           value={formik.values.name}
+          error={formik.errors.name}
         />
       </form>
 
