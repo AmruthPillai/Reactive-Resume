@@ -5,16 +5,16 @@
 .resume > .backdrop {
   max-width: 184px;
   height: 260px;
-  @apply rounded absolute w-full bg-black shadow;
-  @apply absolute text-gray-500 flex justify-center items-center;
+  @apply rounded absolute w-full bg-black text-white shadow;
+  @apply absolute flex justify-center items-center;
 }
 
 .resume > .page {
   max-width: 184px;
   height: 260px;
-  @apply rounded absolute w-full bg-inverse;
+  @apply rounded absolute w-full bg-secondary-light;
   @apply transition-opacity duration-200 ease-in-out;
-  @apply cursor-pointer absolute text-gray-500 flex justify-center items-center;
+  @apply cursor-pointer absolute flex justify-center items-center;
 }
 
 .resume > .page:hover {

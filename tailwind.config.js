@@ -10,6 +10,7 @@ module.exports = {
         "primary-dark": "var(--color-primary-dark)",
         inverse: "var(--color-inverse)",
         "inverse-dark": "var(--color-inverse-dark)",
+        "secondary-light": "var(--color-secondary-light)",
         secondary: "var(--color-secondary)",
         "secondary-dark": "var(--color-secondary-dark)",
       },

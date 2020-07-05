@@ -11,7 +11,7 @@ const Builder = ({ id }) => {
         <div className="col-span-3">
           <LeftSidebar />
         </div>
-        <div className="col-span-5 bg-inverse-dark flex items-center justify-center">
+        <div className="h-screen overflow-scroll col-span-5 bg-inverse-dark grid items-center justify-center">
           <Artboard />
         </div>
         <div className="col-span-3">

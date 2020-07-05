@@ -1,4 +1,3 @@
-import cx from "classnames";
 import React, { useContext } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import TemplateContext from "../../../contexts/TemplateContext";
@@ -21,21 +20,18 @@ const Layout = () => {
         <DragDropContext onDragEnd={onDragEnd}>
           {blocks.map((el, ind) => (
             <Droppable key={ind} droppableId={`${ind}`}>
-              {(provided, snapshot) => (
+              {(provided) => (
                 <div
                   ref={provided.innerRef}
-                  className={cx(styles.droppable, {
-                    [styles.draggingOver]: snapshot.isDraggingOver,
-                  })}
+                  className={styles.droppable}
                   {...provided.droppableProps}
                 >
                   <div className="grid gap-3">
+                    <span className="uppercase font-semibold text-xs">
+                      Block {ind + 1}
+                    </span>
                     {el.map((item, index) => (
-                      <Draggable
-                        key={item.id}
-                        draggableId={item.id}
-                        index={index}
-                      >
+                      <Draggable key={item} draggableId={item} index={index}>
                         {(provided) => (
                           <div
                             ref={provided.innerRef}
@@ -43,7 +39,7 @@ const Layout = () => {
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
                           >
-                            {item.name}
+                            {item}
                           </div>
                         )}
                       </Draggable>

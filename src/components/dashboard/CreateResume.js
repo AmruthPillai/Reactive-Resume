@@ -13,7 +13,7 @@ const CreateResume = () => {
   return (
     <div className={styles.resume}>
       <div className={styles.backdrop}>
-        <MdAdd color="#FFF" size="48" />
+        <MdAdd size="48" />
       </div>
       <div
         tabIndex="0"
@@ -22,7 +22,7 @@ const CreateResume = () => {
         onClick={handleClick}
         onKeyDown={() => {}}
       >
-        <MdAdd color="#444" size="48" />
+        <MdAdd size="48" />
       </div>
       <div className={styles.meta}>
         <p>Create New Resume</p>

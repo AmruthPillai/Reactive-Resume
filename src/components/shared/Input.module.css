@@ -7,7 +7,7 @@
 }
 
 .container > label > span {
-  @apply mb-1 text-secondary-dark font-medium text-xs uppercase;
+  @apply mb-1 text-secondary-dark font-semibold tracking-wide text-xs uppercase;
 }
 
 .container > label > input {
@@ -19,7 +19,7 @@
 }
 
 .container > label > input:focus {
-  @apply outline-none border-secondary-dark;
+  @apply outline-none border-gray-500;
 }
 
 .container > label > p {

@@ -1,21 +1,16 @@
 import React, { useContext } from "react";
+import ResumeContext from "../../../contexts/ResumeContext";
 import TemplateContext from "../../../contexts/TemplateContext";
+import Onyx from "../../../templates/Onyx";
 import styles from "./Artboard.module.css";
 
 const Artboard = () => {
-  const { blocks } = useContext(TemplateContext);
+  const { blocks, colors } = useContext(TemplateContext);
+  const { state } = useContext(ResumeContext);
 
   return (
-    <div className={styles.container}>
-      <div className={`grid gap-8 grid-cols-${blocks.length}`}>
-        {blocks.map((block, ind) => (
-          <div key={ind} className="col-span-1">
-            {block.map((x) => (
-              <div key={x.id}>{x.name}</div>
-            ))}
-          </div>
-        ))}
-      </div>
+    <div id="artboard" className={styles.container}>
+      <Onyx data={state} layout={blocks} colors={colors} />
     </div>
   );
 };

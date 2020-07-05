@@ -1,18 +1,17 @@
+import { flatten } from "lodash";
 import React, { createContext, useState } from "react";
 
 const defaultState = {
   selected: "Pikachu",
   setSelected: () => {},
+  colors: {
+    textColor: "#212121",
+    primaryColor: "#f44336",
+    backgroundColor: "#FFFFFF",
+  },
   blocks: [
-    [
-      { id: "1", name: "Profile" },
-      { id: "2", name: "Work" },
-    ],
-    [
-      { id: "3", name: "Education" },
-      { id: "4", name: "Skills" },
-      { id: "5", name: "Hobbies" },
-    ],
+    ["profile", "work"],
+    ["education", "skills", "hobbies"],
   ],
   setBlocks: () => {},
 };
@@ -21,6 +20,7 @@ const TemplateContext = createContext(defaultState);
 
 const TemplateProvider = ({ children }) => {
   const [selected, setSelected] = useState(defaultState.selected);
+  const [colors, setColors] = useState(defaultState.colors);
   const [blocks, setBlocks] = useState(defaultState.blocks);
 
   const reorder = (list, startIndex, endIndex) => {
@@ -68,13 +68,28 @@ const TemplateProvider = ({ children }) => {
     }
   };
 
+  const setSupportedBlocks = (number) => {
+    if (number === blocks.length) return;
+
+    if (number > blocks.length) {
+      setBlocks([...blocks, []]);
+    }
+
+    if (number < blocks.length) {
+      setBlocks([flatten(blocks)]);
+    }
+  };
+
   return (
     <TemplateContext.Provider
       value={{
         selected,
         setSelected,
+        colors,
+        setColors,
         blocks,
         setBlocks,
+        setSupportedBlocks,
         onDragEnd,
       }}
     >
