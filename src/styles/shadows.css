@@ -1,6 +1,7 @@
 :root {
-  --shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04);
-  --shadow-strong: 0 0 8px 0 rgba(0, 0, 0, 0.08);
-  --left-shadow: 8px 0 8px -4px rgba(0, 0, 0, 0.04);
-  --bottom-shadow: 0 8px 8px -4px rgba(0, 0, 0, 0.04);
+  --shadow: 0 0 6px 0 rgba(0, 0, 0, 0.05);
+  --shadow-strong: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+  --left-shadow: 6px 0 6px -6px rgba(0, 0, 0, 0.05);
+  --right-shadow: -6px 0 6px -6px rgba(0, 0, 0, 0.05);
+  --bottom-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.05);
 }

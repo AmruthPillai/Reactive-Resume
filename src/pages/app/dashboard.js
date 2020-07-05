@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
-import Wrapper from "../../components/shared/Wrapper";
 import CreateResume from "../../components/dashboard/CreateResume";
 import ResumePreview from "../../components/dashboard/ResumePreview";
 import TopNavbar from "../../components/dashboard/TopNavbar";
-import ResumeContext from "../../contexts/ResumeContext";
+import Wrapper from "../../components/shared/Wrapper";
+import DashboardContext from "../../contexts/DashboardContext";
 
 const Dashboard = () => {
-  const { resumes } = useContext(ResumeContext);
+  const { resumes } = useContext(DashboardContext);
 
   return (
     <Wrapper>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
 const COLOR_CONFIG = {
   light: {
@@ -6,12 +6,16 @@ const COLOR_CONFIG = {
     "--color-primary-dark": "#333",
     "--color-inverse": "#fff",
     "--color-inverse-dark": "#f5f5f5",
+    "--color-secondary": "#edf2f7",
+    "--color-secondary-dark": "#718096",
   },
   dark: {
     "--color-primary": "#f5f5f5",
-    "--color-primary-dark": "#eee",
+    "--color-primary-dark": "#eeeeee",
     "--color-inverse": "#212121",
     "--color-inverse-dark": "#181818",
+    "--color-secondary": "#444",
+    "--color-secondary-dark": "#888",
   },
 };
 

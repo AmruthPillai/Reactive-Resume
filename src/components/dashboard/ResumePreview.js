@@ -4,14 +4,14 @@ import moment from "moment";
 import React, { useContext, useState } from "react";
 import { MdMoreHoriz, MdOpenInNew } from "react-icons/md";
 import { toast } from "react-toastify";
+import DashboardContext from "../../contexts/DashboardContext";
 import ModalContext from "../../contexts/ModalContext";
-import ResumeContext from "../../contexts/ResumeContext";
 import styles from "./ResumePreview.module.css";
 
 const ResumePreview = ({ resume }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const { createResumeModal } = useContext(ModalContext);
-  const { deleteResume } = useContext(ResumeContext);
+  const { deleteResume } = useContext(DashboardContext);
 
   const handleOpen = () => navigate(`/app/builder/${resume.id}`);
 

@@ -24,5 +24,9 @@ a:hover {
 }
 
 hr {
-  @apply w-full h-1;
+  @apply w-full border-secondary h-1;
+}
+
+section {
+  @apply grid grid-cols-1 gap-8;
 }

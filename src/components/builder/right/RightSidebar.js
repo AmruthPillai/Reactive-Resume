@@ -1,18 +1,18 @@
 import React from "react";
 import Profile from "../sections/Profile";
-import LeftNavbar from "./LeftNavbar";
-import styles from "./LeftSidebar.module.css";
+import RightNavbar from "./RightNavbar";
+import styles from "./RightSidebar.module.css";
 
-const LeftSidebar = () => {
+const RightSidebar = () => {
   return (
     <div className="flex">
-      <LeftNavbar />
-
       <div className={styles.container}>
         <Profile />
       </div>
+
+      <RightNavbar />
     </div>
   );
 };
 
-export default LeftSidebar;
+export default RightSidebar;

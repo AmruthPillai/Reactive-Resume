@@ -3,6 +3,7 @@ import "firebase/analytics";
 import "firebase/auth";
 import "firebase/firestore";
 import React from "react";
+import { DashboardProvider } from "./src/contexts/DashboardContext";
 import { ModalProvider } from "./src/contexts/ModalContext";
 import { ResumeProvider } from "./src/contexts/ResumeContext";
 import { ThemeProvider } from "./src/contexts/ThemeContext";
@@ -25,7 +26,9 @@ export const wrapRootElement = ({ element }) => (
     <MuiThemeProvider theme={theme}>
       <ModalProvider>
         <UserProvider>
-          <ResumeProvider>{element}</ResumeProvider>
+          <DashboardProvider>
+            <ResumeProvider>{element}</ResumeProvider>
+          </DashboardProvider>
         </UserProvider>
       </ModalProvider>
     </MuiThemeProvider>

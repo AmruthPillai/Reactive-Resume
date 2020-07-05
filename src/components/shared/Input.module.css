@@ -7,13 +7,21 @@
 }
 
 .container > label > span {
-  @apply mb-1 text-gray-600 font-medium text-sm uppercase;
+  @apply mb-1 text-secondary-dark font-medium text-xs uppercase;
 }
 
 .container > label > input {
-  @apply py-4 px-4 rounded bg-gray-200 border border-gray-200;
+  @apply py-3 px-4 rounded bg-secondary text-primary border border-secondary;
+}
+
+.container > label > input::placeholder {
+  @apply text-primary opacity-50;
 }
 
 .container > label > input:focus {
-  @apply outline-none border-gray-400;
+  @apply outline-none border-secondary-dark;
+}
+
+.container > label > p {
+  @apply mt-1 text-red-600 text-xs;
 }
