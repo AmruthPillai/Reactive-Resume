@@ -1,5 +1,5 @@
 import React from "react";
-import Profile from "../sections/Profile";
+import Layout from "../sections/Layout";
 import RightNavbar from "./RightNavbar";
 import styles from "./RightSidebar.module.css";
 
@@ -7,7 +7,7 @@ const RightSidebar = () => {
   return (
     <div className="flex">
       <div className={styles.container}>
-        <Profile />
+        <Layout />
       </div>
 
       <RightNavbar />

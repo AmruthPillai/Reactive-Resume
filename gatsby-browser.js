@@ -6,6 +6,7 @@ import React from "react";
 import { DashboardProvider } from "./src/contexts/DashboardContext";
 import { ModalProvider } from "./src/contexts/ModalContext";
 import { ResumeProvider } from "./src/contexts/ResumeContext";
+import { TemplateProvider } from "./src/contexts/TemplateContext";
 import { ThemeProvider } from "./src/contexts/ThemeContext";
 import { UserProvider } from "./src/contexts/UserContext";
 import "./src/styles/colors.css";
@@ -27,7 +28,9 @@ export const wrapRootElement = ({ element }) => (
       <ModalProvider>
         <UserProvider>
           <DashboardProvider>
-            <ResumeProvider>{element}</ResumeProvider>
+            <ResumeProvider>
+              <TemplateProvider>{element}</TemplateProvider>
+            </ResumeProvider>
           </DashboardProvider>
         </UserProvider>
       </ModalProvider>
