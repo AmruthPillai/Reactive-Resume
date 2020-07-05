@@ -4,14 +4,14 @@ import moment from "moment";
 import React, { useContext, useState } from "react";
 import { MdMoreHoriz, MdOpenInNew } from "react-icons/md";
 import { toast } from "react-toastify";
-import DashboardContext from "../../contexts/DashboardContext";
+import DatabaseContext from "../../contexts/DatabaseContext";
 import ModalContext from "../../contexts/ModalContext";
 import styles from "./ResumePreview.module.css";
 
 const ResumePreview = ({ resume }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const { createResumeModal } = useContext(ModalContext);
-  const { deleteResume } = useContext(DashboardContext);
+  const { deleteResume } = useContext(DatabaseContext);
 
   const handleOpen = () => navigate(`/app/builder/${resume.id}`);
 
@@ -26,7 +26,7 @@ const ResumePreview = ({ resume }) => {
   };
 
   const handleDelete = () => {
-    deleteResume(resume);
+    deleteResume(resume.id);
     toast(`${resume.name} was deleted successfully`);
     setAnchorEl(null);
   };
@@ -70,11 +70,9 @@ const ResumePreview = ({ resume }) => {
         </Menu>
       </div>
       <div className={styles.meta}>
-        <p>{resume.name}</p>
+        <span>{resume.name}</span>
         {resume.updatedAt && (
-          <span>
-            Last updated {moment(resume.updatedAt.toDate()).fromNow()}
-          </span>
+          <span>Last updated {moment(resume.updatedAtR).fromNow()}</span>
         )}
       </div>
     </div>

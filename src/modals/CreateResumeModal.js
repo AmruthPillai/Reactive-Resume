@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import * as Yup from "yup";
 import Button from "../components/shared/Button";
 import Input from "../components/shared/Input";
-import DashboardContext from "../contexts/DashboardContext";
+import DatabaseContext from "../contexts/DatabaseContext";
 import ModalContext from "../contexts/ModalContext";
 import { getModalText } from "../utils";
 import BaseModal from "./BaseModal";
@@ -18,7 +18,7 @@ const CreateResumeModal = ({ data }) => {
   const modalRef = useRef(null);
   const [isEditMode, setEditMode] = useState(false);
   const { createResumeModal } = useContext(ModalContext);
-  const { createResume, updateResume } = useContext(DashboardContext);
+  const { createResume, updateResume } = useContext(DatabaseContext);
 
   const formik = useFormik({
     initialValues: {

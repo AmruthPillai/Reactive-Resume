@@ -1,12 +1,20 @@
-import React, { useContext } from "react";
+import firebase from "gatsby-plugin-firebase";
+import React from "react";
+import { useListVals } from "react-firebase-hooks/database";
 import CreateResume from "../../components/dashboard/CreateResume";
 import ResumePreview from "../../components/dashboard/ResumePreview";
 import TopNavbar from "../../components/dashboard/TopNavbar";
+import LoadingScreen from "../../components/router/LoadingScreen";
 import Wrapper from "../../components/shared/Wrapper";
-import DashboardContext from "../../contexts/DashboardContext";
 
-const Dashboard = () => {
-  const { resumes } = useContext(DashboardContext);
+const Dashboard = ({ user }) => {
+  const [resumes, loading] = useListVals(
+    firebase.database().ref(`users/${user.uid}/resumes`)
+  );
+
+  if (loading) {
+    return <LoadingScreen />;
+  }
 
   return (
     <Wrapper>
@@ -16,11 +24,9 @@ const Dashboard = () => {
         <div className="grid grid-cols-6 gap-8">
           <CreateResume />
 
-          {resumes
-            .filter((x) => x !== null)
-            .map((x) => (
-              <ResumePreview key={x.id} resume={x} />
-            ))}
+          {resumes.map((x) => (
+            <ResumePreview key={x.id} resume={x} />
+          ))}
         </div>
       </div>
     </Wrapper>

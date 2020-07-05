@@ -1,30 +1,26 @@
 import { set } from "lodash";
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useContext, useReducer } from "react";
+import DatabaseContext from "./DatabaseContext";
 
-const initialState = {
-  id: "dafa3242-f39a-4755-bab3-be3c3ca3d190",
-  profile: {
-    photograph: "",
-    firstName: "",
-    lastName: "",
-  },
-  createdAt: "",
-  updatedAt: "",
-};
-
-const ResumeContext = createContext(initialState);
+const ResumeContext = createContext({});
 
 const ResumeProvider = ({ children }) => {
+  const { updateResume } = useContext(DatabaseContext);
+
   const [state, dispatch] = useReducer((state, { type, payload }) => {
+    let newState;
+
     switch (type) {
       case "on_input":
-        return set({ ...state }, payload.path, payload.value);
+        newState = set({ ...state }, payload.path, payload.value);
+        updateResume(newState);
+        return newState;
       case "set_data":
         return payload;
       default:
         throw new Error();
     }
-  }, initialState);
+  }, {});
 
   return (
     <ResumeContext.Provider value={{ state, dispatch }}>

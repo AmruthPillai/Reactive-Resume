@@ -1,8 +1,12 @@
-import React from "react";
-import { MdPerson } from "react-icons/md";
+import cx from "classnames";
+import React, { useContext } from "react";
+import { MdPerson, MdSync } from "react-icons/md";
+import DatabaseContext from "../../../contexts/DatabaseContext";
 import styles from "./RightNavbar.module.css";
 
 const RightNavbar = () => {
+  const { isUpdating } = useContext(DatabaseContext);
+
   return (
     <div className={styles.container}>
       <div className="grid grid-cols-1 gap-6">
@@ -11,6 +15,8 @@ const RightNavbar = () => {
           size="20px"
         />
       </div>
+
+      <MdSync size="24px" className={cx("mt-auto", { spin: isUpdating })} />
     </div>
   );
 };

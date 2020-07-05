@@ -20,7 +20,7 @@ const Input = ({
   const { state, dispatch } = useContext(ResumeContext);
 
   const inputProps = (path) => ({
-    value: get(state, path),
+    value: get(state, path) || "",
     onChange: (e) => {
       dispatch({
         type: "on_input",

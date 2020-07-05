@@ -1,8 +1,8 @@
-import React, { createContext, useState, useEffect } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
 import firebase from "gatsby-plugin-firebase";
-import { toast } from "react-toastify";
 import { pick } from "lodash";
+import React, { createContext, useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
 
 const defaultUser = {
   uid: null,
@@ -35,9 +35,9 @@ const UserProvider = ({ children }) => {
       localStorage.setItem("user", JSON.stringify(user));
 
       const addUserToDatabase = async () => {
-        const docRef = firebase.firestore().collection("users").doc(user.uid);
-        const snapshot = await docRef.get();
-        !snapshot.exists && docRef.set(user);
+        const userRef = firebase.database().ref(`users/${user.uid}`);
+        const snapshot = await userRef.once("value");
+        !snapshot.val() && userRef.set(user);
       };
 
       addUserToDatabase();
