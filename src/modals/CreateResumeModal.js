@@ -14,11 +14,24 @@ const CreateResumeSchema = Yup.object().shape({
     .required("This is a required field."),
 });
 
-const CreateResumeModal = ({ data }) => {
+const CreateResumeModal = () => {
   const modalRef = useRef(null);
+
+  const [data, setData] = useState(null);
+  const [open, setOpen] = useState(false);
   const [isEditMode, setEditMode] = useState(false);
-  const { createResumeModal } = useContext(ModalContext);
+
+  const { emitter, events } = useContext(ModalContext);
   const { createResume, updateResume } = useContext(DatabaseContext);
+
+  useEffect(() => {
+    const unbind = emitter.on(events.CREATE_RESUME_MODAL, (data) => {
+      setOpen(true);
+      setData(data);
+    });
+
+    return () => unbind();
+  }, [emitter, events]);
 
   const formik = useFormik({
     initialValues: {
@@ -47,12 +60,13 @@ const CreateResumeModal = ({ data }) => {
   const onDestroy = () => {
     formik.resetForm();
     setEditMode(false);
+    setData(null);
   };
 
   return (
     <BaseModal
       ref={modalRef}
-      state={createResumeModal}
+      state={[open, setOpen]}
       title={getModalText(isEditMode, "Resume")}
       action={submitAction}
       onDestroy={onDestroy}

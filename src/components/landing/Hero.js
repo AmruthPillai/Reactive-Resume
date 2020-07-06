@@ -1,18 +1,18 @@
+import { navigate } from "gatsby";
 import React, { useContext } from "react";
 import { FaGithub } from "react-icons/fa";
-import ThemeContext from "../../contexts/ThemeContext";
 import ModalContext from "../../contexts/ModalContext";
+import ThemeContext from "../../contexts/ThemeContext";
 import UserContext from "../../contexts/UserContext";
 import Button from "../shared/Button";
 import Logo from "../shared/Logo";
-import { navigate } from "gatsby";
 
 const Hero = () => {
+  const { emitter, events } = useContext(ModalContext);
   const { user, loading } = useContext(UserContext);
   const { toggleDarkMode } = useContext(ThemeContext);
-  const { authModal } = useContext(ModalContext);
 
-  const handleLogin = () => authModal.setOpen(true);
+  const handleLogin = () => emitter.emit(events.AUTH_MODAL);
 
   const handleGotoApp = () => navigate("/app/dashboard");
 
@@ -31,14 +31,10 @@ const Hero = () => {
             <Button
               title="Go to App"
               onClick={handleGotoApp}
-              isLoading={loading || authModal.isOpen}
+              isLoading={loading}
             />
           ) : (
-            <Button
-              title="Login"
-              onClick={handleLogin}
-              isLoading={loading || authModal.isOpen}
-            />
+            <Button title="Login" onClick={handleLogin} isLoading={loading} />
           )}
           <Button
             outline

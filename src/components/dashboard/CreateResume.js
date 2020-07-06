@@ -4,11 +4,9 @@ import ModalContext from "../../contexts/ModalContext";
 import styles from "./CreateResume.module.css";
 
 const CreateResume = () => {
-  const { createResumeModal } = useContext(ModalContext);
+  const { emitter, events } = useContext(ModalContext);
 
-  const handleClick = () => {
-    createResumeModal.setOpen(true);
-  };
+  const handleClick = () => emitter.emit(events.CREATE_RESUME_MODAL);
 
   return (
     <div className={styles.resume}>

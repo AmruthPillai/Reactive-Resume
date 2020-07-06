@@ -1,15 +1,12 @@
-import React, { Fragment, useContext } from "react";
-import ModalContext from "../contexts/ModalContext";
+import React, { Fragment } from "react";
 import AuthModal from "./AuthModal";
 import CreateResumeModal from "./CreateResumeModal";
 
 const ModalRegistrar = () => {
-  const { createResumeModal } = useContext(ModalContext);
-
   return (
     <Fragment>
       <AuthModal />
-      <CreateResumeModal data={createResumeModal.data} />
+      <CreateResumeModal />
     </Fragment>
   );
 };

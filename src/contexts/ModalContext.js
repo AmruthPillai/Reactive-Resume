@@ -1,38 +1,20 @@
-import React, { createContext, useState } from "react";
+import { createNanoEvents } from "nanoevents";
+import React, { createContext } from "react";
 
-const defaultState = {
-  authModal: {
-    isOpen: false,
-    setOpen: () => {},
-  },
-  createResumeModal: {
-    isOpen: false,
-    setOpen: () => {},
-    data: null,
-    setData: () => {},
-  },
+const events = {
+  AUTH_MODAL: "auth_modal",
+  CREATE_RESUME_MODAL: "create_resume_modal",
 };
+
+const emitter = createNanoEvents();
+
+const defaultState = { events, emitter };
 
 const ModalContext = createContext(defaultState);
 
 const ModalProvider = ({ children }) => {
-  const [authOpen, setAuthOpen] = useState(false);
-
-  const [createResumeOpen, setCreateResumeOpen] = useState(false);
-  const [createResumeData, setCreateResumeData] = useState(null);
-
   return (
-    <ModalContext.Provider
-      value={{
-        authModal: { isOpen: authOpen, setOpen: setAuthOpen },
-        createResumeModal: {
-          isOpen: createResumeOpen,
-          setOpen: setCreateResumeOpen,
-          data: createResumeData,
-          setData: setCreateResumeData,
-        },
-      }}
-    >
+    <ModalContext.Provider value={defaultState}>
       {children}
     </ModalContext.Provider>
   );

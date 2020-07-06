@@ -1,14 +1,22 @@
-import React, { useState, useContext, Fragment } from "react";
-import BaseModal from "./BaseModal";
+import { navigate } from "gatsby";
+import React, { Fragment, useContext, useEffect, useState } from "react";
 import Button from "../components/shared/Button";
 import ModalContext from "../contexts/ModalContext";
 import UserContext from "../contexts/UserContext";
-import { navigate } from "gatsby";
+import BaseModal from "./BaseModal";
 
 const AuthModal = () => {
+  const [open, setOpen] = useState(false);
   const [isLoading, setLoading] = useState(false);
-  const { authModal } = useContext(ModalContext);
+
+  const { emitter, events } = useContext(ModalContext);
   const { user, loginWithGoogle, logout } = useContext(UserContext);
+
+  useEffect(() => {
+    const unbind = emitter.on(events.AUTH_MODAL, () => setOpen(true));
+
+    return () => unbind();
+  }, [emitter, events]);
 
   const handleSignInWithGoogle = async () => {
     setLoading(true);
@@ -18,7 +26,7 @@ const AuthModal = () => {
 
   const handleGotoApp = () => {
     navigate("/app/dashboard");
-    authModal.setOpen(false);
+    setOpen(false);
   };
 
   const getTitle = () =>
@@ -46,7 +54,7 @@ const AuthModal = () => {
 
   return (
     <BaseModal
-      state={authModal}
+      state={[open, setOpen]}
       title={getTitle()}
       action={user ? loggedInAction : loggedOutAction}
     >

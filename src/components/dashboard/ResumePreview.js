@@ -10,7 +10,7 @@ import styles from "./ResumePreview.module.css";
 
 const ResumePreview = ({ resume }) => {
   const [anchorEl, setAnchorEl] = useState(null);
-  const { createResumeModal } = useContext(ModalContext);
+  const { emitter, events } = useContext(ModalContext);
   const { deleteResume } = useContext(DatabaseContext);
 
   const handleOpen = () => navigate(`/app/builder/${resume.id}`);
@@ -20,8 +20,7 @@ const ResumePreview = ({ resume }) => {
   };
 
   const handleRename = () => {
-    createResumeModal.setOpen(true);
-    createResumeModal.setData(resume);
+    emitter.emit(events.CREATE_RESUME_MODAL, resume);
     setAnchorEl(null);
   };
 

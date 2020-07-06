@@ -1,21 +1,20 @@
-import React, { forwardRef, useImperativeHandle } from "react";
-import { isFunction } from "lodash";
-import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
+import Modal from "@material-ui/core/Modal";
+import { isFunction } from "lodash";
+import React, { forwardRef, useImperativeHandle } from "react";
 import { MdClose } from "react-icons/md";
-import styles from "./BaseModal.module.css";
 import Button from "../components/shared/Button";
+import styles from "./BaseModal.module.css";
 
 const BaseModal = forwardRef(
   ({ title, state, children, action, onDestroy }, ref) => {
-    const { isOpen, setOpen, setData } = state;
+    const [open, setOpen] = state;
 
     const handleClose = () => {
       setOpen(false);
 
       setTimeout(() => {
-        isFunction(setData) && setData(null);
         isFunction(onDestroy) && onDestroy();
       }, 250);
     };
@@ -24,13 +23,13 @@ const BaseModal = forwardRef(
 
     return (
       <Modal
-        open={isOpen}
+        open={open}
         closeAfterTransition
         onClose={handleClose}
         className={styles.root}
         BackdropComponent={Backdrop}
       >
-        <Fade in={isOpen}>
+        <Fade in={open}>
           <div className={styles.modal}>
             <div className={styles.title}>
               <h2>{title}</h2>
