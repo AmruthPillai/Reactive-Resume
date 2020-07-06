@@ -1,11 +1,11 @@
 import cx from "classnames";
 import React, { useContext } from "react";
-import { MdPerson, MdSync } from "react-icons/md";
+import { MdPerson, MdSync, MdSyncDisabled } from "react-icons/md";
 import DatabaseContext from "../../../contexts/DatabaseContext";
 import styles from "./RightNavbar.module.css";
 
 const RightNavbar = () => {
-  const { isUpdating } = useContext(DatabaseContext);
+  const { isOffline, isUpdating } = useContext(DatabaseContext);
 
   return (
     <div className={styles.container}>
@@ -16,7 +16,13 @@ const RightNavbar = () => {
         />
       </div>
 
-      <MdSync size="24px" className={cx("mt-auto", { spin: isUpdating })} />
+      <div className="text-4xl mt-auto">
+        {isOffline ? (
+          <MdSyncDisabled className="text-red-600" />
+        ) : (
+          <MdSync className={cx({ spin: isUpdating })} />
+        )}
+      </div>
     </div>
   );
 };

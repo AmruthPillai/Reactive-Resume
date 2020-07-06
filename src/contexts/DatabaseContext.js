@@ -1,22 +1,33 @@
 import firebase from "gatsby-plugin-firebase";
 import { debounce } from "lodash";
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import UserContext from "./UserContext";
 
 const defaultState = {
+  isOffline: false,
   isUpdating: false,
   getResume: async () => {},
+  getResumes: async () => {},
   createResume: () => {},
   updateResume: async () => {},
+  debouncedUpdate: async () => {},
   deleteResume: () => {},
 };
 
 const DatabaseContext = createContext(defaultState);
 
 const DatabaseProvider = ({ children }) => {
+  const [isOffline, setOffline] = useState(false);
   const [isUpdating, setUpdating] = useState(false);
   const { user } = useContext(UserContext);
+
+  useEffect(() => {
+    const connectedRef = firebase.database().ref(".info/connected");
+    connectedRef.on("value", (snapshot) => {
+      snapshot.val() === true ? setOffline(false) : setOffline(true);
+    });
+  }, []);
 
   const getResume = async (id) => {
     const snapshot = await firebase
@@ -30,11 +41,25 @@ const DatabaseProvider = ({ children }) => {
     const id = uuidv4();
     const createdAt = firebase.database.ServerValue.TIMESTAMP;
 
+    let firstName = "",
+      lastName = "",
+      photograph = "";
+
+    if (!user.isAnonymous) {
+      [firstName, lastName] = user.displayName.split(" ");
+      photograph = user.photoURL;
+    }
+
     firebase
       .database()
       .ref(`users/${user.uid}/resumes/${id}`)
       .set({
         id,
+        profile: {
+          firstName,
+          lastName,
+          photograph,
+        },
         ...resume,
         createdAt,
         updatedAt: createdAt,
@@ -66,10 +91,12 @@ const DatabaseProvider = ({ children }) => {
   return (
     <DatabaseContext.Provider
       value={{
+        isOffline,
         isUpdating,
         getResume,
         createResume,
-        updateResume: debouncedUpdate,
+        updateResume,
+        debouncedUpdate,
         deleteResume,
       }}
     >

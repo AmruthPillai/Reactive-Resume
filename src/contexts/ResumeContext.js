@@ -5,7 +5,7 @@ import DatabaseContext from "./DatabaseContext";
 const ResumeContext = createContext({});
 
 const ResumeProvider = ({ children }) => {
-  const { updateResume } = useContext(DatabaseContext);
+  const { debouncedUpdate } = useContext(DatabaseContext);
 
   const [state, dispatch] = useReducer((state, { type, payload }) => {
     let newState;
@@ -13,7 +13,7 @@ const ResumeProvider = ({ children }) => {
     switch (type) {
       case "on_input":
         newState = set({ ...state }, payload.path, payload.value);
-        updateResume(newState);
+        debouncedUpdate(newState);
         return newState;
       case "set_data":
         return payload;

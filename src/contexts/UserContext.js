@@ -1,14 +1,15 @@
 import firebase from "gatsby-plugin-firebase";
 import { pick } from "lodash";
 import React, { createContext, useEffect, useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
+import useAuthState from "../hooks/useAuthState";
 
 const defaultUser = {
   uid: null,
   displayName: null,
   email: null,
   photoURL: null,
+  isAnonymous: false,
 };
 
 const defaultState = {
@@ -20,7 +21,7 @@ const defaultState = {
 const UserContext = createContext(defaultState);
 
 const UserProvider = ({ children }) => {
-  const [firebaseUser, loading] = useAuthState(firebase.auth());
+  const [firebaseUser, loading] = useAuthState(firebase);
   const [user, setUser] = useState(null);
 
   useEffect(() => {

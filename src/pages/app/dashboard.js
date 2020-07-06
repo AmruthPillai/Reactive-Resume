@@ -1,15 +1,28 @@
 import firebase from "gatsby-plugin-firebase";
-import React from "react";
-import { useListVals } from "react-firebase-hooks/database";
+import React, { useEffect, useState } from "react";
 import CreateResume from "../../components/dashboard/CreateResume";
 import ResumePreview from "../../components/dashboard/ResumePreview";
 import TopNavbar from "../../components/dashboard/TopNavbar";
 import LoadingScreen from "../../components/router/LoadingScreen";
 
 const Dashboard = ({ user }) => {
-  const [resumes, loading] = useListVals(
-    firebase.database().ref(`users/${user.uid}/resumes`)
-  );
+  const [resumes, setResumes] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    firebase
+      .database()
+      .ref(`users/${user.uid}/resumes`)
+      .on("value", (snapshot) => {
+        if (snapshot.val()) {
+          const resumes = [];
+          const data = snapshot.val();
+          Object.keys(data).forEach((key) => resumes.push(data[key]));
+          setResumes(resumes);
+          setLoading(false);
+        }
+      });
+  }, [user]);
 
   if (loading) {
     return <LoadingScreen message="Connecting to database..." />;

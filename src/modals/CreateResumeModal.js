@@ -38,8 +38,15 @@ const CreateResumeModal = () => {
       name: "",
     },
     validationSchema: CreateResumeSchema,
-    onSubmit: (data) => {
-      isEditMode ? updateResume(data) : createResume(data);
+    onSubmit: (newData) => {
+      if (isEditMode) {
+        if (data !== newData) {
+          updateResume(newData);
+        }
+      } else {
+        createResume(newData);
+      }
+
       modalRef.current.handleClose();
     },
   });
