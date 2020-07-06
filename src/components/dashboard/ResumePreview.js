@@ -72,7 +72,7 @@ const ResumePreview = ({ resume }) => {
       <div className={styles.meta}>
         <span>{resume.name}</span>
         {resume.updatedAt && (
-          <span>Last updated {moment(resume.updatedAtR).fromNow()}</span>
+          <span>Last updated {moment(resume.updatedAt).fromNow()}</span>
         )}
       </div>
     </div>

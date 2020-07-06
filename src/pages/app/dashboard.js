@@ -13,7 +13,7 @@ const Dashboard = ({ user }) => {
   );
 
   if (loading) {
-    return <LoadingScreen />;
+    return <LoadingScreen message="Connecting to database..." />;
   }
 
   return (

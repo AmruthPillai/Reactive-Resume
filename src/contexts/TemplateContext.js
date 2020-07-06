@@ -1,5 +1,6 @@
 import { flatten } from "lodash";
 import React, { createContext, useState } from "react";
+import leftSections from "../data/leftSections";
 
 const defaultState = {
   selected: "Pikachu",
@@ -9,11 +10,10 @@ const defaultState = {
     primaryColor: "#f44336",
     backgroundColor: "#FFFFFF",
   },
-  blocks: [
-    ["profile", "work"],
-    ["education", "skills", "hobbies"],
-  ],
+  blocks: [leftSections.map((x) => x.id)],
   setBlocks: () => {},
+  setFixedBlocks: () => {},
+  setSupportedBlocks: () => {},
 };
 
 const TemplateContext = createContext(defaultState);
@@ -68,6 +68,13 @@ const TemplateProvider = ({ children }) => {
     }
   };
 
+  const setFixedBlocks = (fixedBlocks) => {
+    const newBlocks = blocks.map((x) =>
+      x.filter((y) => !fixedBlocks.includes(y))
+    );
+    setBlocks(newBlocks);
+  };
+
   const setSupportedBlocks = (number) => {
     if (number === blocks.length) return;
 
@@ -83,14 +90,15 @@ const TemplateProvider = ({ children }) => {
   return (
     <TemplateContext.Provider
       value={{
-        selected,
-        setSelected,
         colors,
-        setColors,
         blocks,
+        selected,
+        setColors,
         setBlocks,
-        setSupportedBlocks,
         onDragEnd,
+        setSelected,
+        setFixedBlocks,
+        setSupportedBlocks,
       }}
     >
       {children}

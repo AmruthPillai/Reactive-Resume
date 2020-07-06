@@ -21,7 +21,7 @@ const Builder = ({ user, id }) => {
   }, [id, getResume, dispatch]);
 
   if (loading) {
-    return <LoadingScreen type="Resume" />;
+    return <LoadingScreen message="Loading Resume..." />;
   }
 
   return (

@@ -1,5 +1,5 @@
-import React from "react";
-import Profile from "../sections/Profile";
+import React, { Fragment } from "react";
+import sections from "../../../data/leftSections";
 import LeftNavbar from "./LeftNavbar";
 import styles from "./LeftSidebar.module.css";
 
@@ -9,7 +9,12 @@ const LeftSidebar = () => {
       <LeftNavbar />
 
       <div className={styles.container}>
-        <Profile />
+        {sections.map(({ id, component: Component }) => (
+          <Fragment key={id}>
+            <Component />
+            <hr />
+          </Fragment>
+        ))}
       </div>
     </div>
   );

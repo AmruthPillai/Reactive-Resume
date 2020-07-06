@@ -1,16 +1,8 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import { FaGlobeAmericas, FaPhone } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import TemplateContext from "../contexts/TemplateContext";
 
 const Onyx = ({ data, layout, colors }) => {
-  const { setSelected, setSupportedBlocks } = useContext(TemplateContext);
-
-  useEffect(() => {
-    setSelected("Onyx");
-    setSupportedBlocks(1);
-  }, [setSelected, setSupportedBlocks]);
-
   return (
     <div
       className="p-8 grid grid-cols-10 gap-4 items-center"

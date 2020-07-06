@@ -1,6 +1,5 @@
-import React from "react";
 import classNames from "classnames";
-import Loader from "react-loader-spinner";
+import React from "react";
 import styles from "./Button.module.css";
 
 const Button = ({
@@ -27,11 +26,7 @@ const Button = ({
       onClick={isLoading ? undefined : onClick}
     >
       {icon && <Icon size="14" className="mr-2" />}
-      {isLoading ? (
-        <Loader type="ThreeDots" color="#FFF" height={18} width={28} />
-      ) : (
-        title
-      )}
+      {isLoading ? "Loading..." : title}
     </button>
   );
 };

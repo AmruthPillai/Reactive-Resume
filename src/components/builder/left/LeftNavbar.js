@@ -1,8 +1,9 @@
 import { Link } from "gatsby";
 import React from "react";
-import { MdPerson } from "react-icons/md";
+import sections from "../../../data/leftSections";
 import Avatar from "../../shared/Avatar";
 import Logo from "../../shared/Logo";
+import SectionIcon from "../../shared/SectionIcon";
 import styles from "./LeftNavbar.module.css";
 
 const LeftNavbar = () => {
@@ -14,11 +15,10 @@ const LeftNavbar = () => {
 
       <hr className="my-6" />
 
-      <div className="grid grid-cols-1 gap-6">
-        <MdPerson
-          className="text-secondary-dark hover:text-primary"
-          size="20px"
-        />
+      <div className="grid grid-cols-1 gap-8">
+        {sections.map((x) => (
+          <SectionIcon key={x.id} section={x} />
+        ))}
       </div>
 
       <hr className="mt-auto my-6" />
