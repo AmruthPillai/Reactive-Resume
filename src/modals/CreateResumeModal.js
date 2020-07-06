@@ -25,6 +25,10 @@ const CreateResumeModal = () => {
   const { createResume, updateResume } = useContext(DatabaseContext);
 
   useEffect(() => {
+    console.log("called", open);
+  }, []);
+
+  useEffect(() => {
     const unbind = emitter.on(events.CREATE_RESUME_MODAL, (data) => {
       setOpen(true);
       setData(data);

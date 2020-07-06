@@ -5,7 +5,6 @@ import CreateResume from "../../components/dashboard/CreateResume";
 import ResumePreview from "../../components/dashboard/ResumePreview";
 import TopNavbar from "../../components/dashboard/TopNavbar";
 import LoadingScreen from "../../components/router/LoadingScreen";
-import Wrapper from "../../components/shared/Wrapper";
 
 const Dashboard = ({ user }) => {
   const [resumes, loading] = useListVals(
@@ -17,7 +16,7 @@ const Dashboard = ({ user }) => {
   }
 
   return (
-    <Wrapper>
+    <div>
       <TopNavbar />
 
       <div className="container mt-12">
@@ -29,7 +28,7 @@ const Dashboard = ({ user }) => {
           ))}
         </div>
       </div>
-    </Wrapper>
+    </div>
   );
 };
 
