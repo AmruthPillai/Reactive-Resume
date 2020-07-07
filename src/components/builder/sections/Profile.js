@@ -1,19 +1,45 @@
-import React from "react";
+import React, { useContext, useRef } from "react";
 import { MdFileUpload } from "react-icons/md";
+import StorageContext from "../../../contexts/StorageContext";
+import { handleKeyDown } from "../../../utils";
 import Heading from "../../shared/Heading";
 import Input from "../../shared/Input";
 import styles from "./Profile.module.css";
 
 const Profile = () => {
+  const fileInputRef = useRef(null);
+  const { uploadPhotograph } = useContext(StorageContext);
+
+  const handleIconClick = () => {
+    fileInputRef.current.click();
+  };
+
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    uploadPhotograph(file);
+  };
+
   return (
     <section>
       <Heading>Profile</Heading>
       <div className="flex items-center">
-        <div className={styles.circle}>
+        <div
+          role="button"
+          tabIndex="0"
+          className={styles.circle}
+          onClick={handleIconClick}
+          onKeyDown={(e) => handleKeyDown(e, handleIconClick)}
+        >
           <MdFileUpload size="22px" />
+          <input
+            type="file"
+            ref={fileInputRef}
+            className="hidden"
+            onChange={handleImageUpload}
+          />
         </div>
 
-        <Input label="Photograph" className="ml-6" path="profile.photograph" />
+        <Input label="Photograph" className="pl-6" path="profile.photograph" />
       </div>
 
       <div className="grid grid-cols-2 gap-6">

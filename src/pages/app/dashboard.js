@@ -1,5 +1,6 @@
 import firebase from "gatsby-plugin-firebase";
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import CreateResume from "../../components/dashboard/CreateResume";
 import ResumePreview from "../../components/dashboard/ResumePreview";
 import TopNavbar from "../../components/dashboard/TopNavbar";
@@ -10,26 +11,38 @@ const Dashboard = ({ user }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const ref = `users/${user.uid}/resumes`;
+
     firebase
       .database()
-      .ref(`users/${user.uid}/resumes`)
+      .ref(ref)
       .on("value", (snapshot) => {
         if (snapshot.val()) {
           const resumes = [];
           const data = snapshot.val();
           Object.keys(data).forEach((key) => resumes.push(data[key]));
           setResumes(resumes);
-          setLoading(false);
         }
+
+        setLoading(false);
       });
+
+    return () => {
+      firebase.database().ref(ref).off();
+    };
   }, [user]);
 
   if (loading) {
-    return <LoadingScreen message="Connecting to database..." />;
+    return <LoadingScreen />;
   }
 
   return (
     <div>
+      <Helmet>
+        <title>Dashboard | Reactive Resume</title>
+        <link rel="canonical" href="https://rxresu.me/app/dashboard" />
+      </Helmet>
+
       <TopNavbar />
 
       <div className="container mt-12">

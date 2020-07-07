@@ -1,7 +1,7 @@
 import { AiOutlineTwitter } from "react-icons/ai";
 import { MdPerson } from "react-icons/md";
 import Profile from "../components/builder/sections/Profile";
-import SocialNetwork from "../components/builder/sections/SocialNetwork";
+import Social from "../components/builder/sections/Social";
 
 export default [
   {
@@ -14,6 +14,6 @@ export default [
     id: "social",
     name: "Social Network",
     icon: AiOutlineTwitter,
-    component: SocialNetwork,
+    component: Social,
   },
 ];

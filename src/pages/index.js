@@ -1,10 +1,16 @@
 import React from "react";
-import Wrapper from "../components/shared/Wrapper";
+import { Helmet } from "react-helmet";
 import Hero from "../components/landing/Hero";
+import Wrapper from "../components/shared/Wrapper";
 
 const Home = () => {
   return (
     <Wrapper>
+      <Helmet>
+        <title>Reactive Resume</title>
+        <link rel="canonical" href="https://rxresu.me/" />
+      </Helmet>
+
       <div className="container mt-24">
         <Hero />
 

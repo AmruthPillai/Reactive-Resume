@@ -7,7 +7,7 @@ const PrivateRoute = ({ component: Component, location, ...props }) => {
   const { user, loading } = useContext(UserContext);
 
   if (loading) {
-    return <LoadingScreen message="Authenticating..." />;
+    return <LoadingScreen />;
   }
 
   if (!user) {

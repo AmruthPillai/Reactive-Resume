@@ -10,7 +10,7 @@ body {
 }
 
 p {
-  @apply text-justify leading-loose;
+  @apply leading-loose;
 }
 
 a {
@@ -39,6 +39,10 @@ section {
 
 .MuiTooltip-tooltip {
   font-size: 10px !important;
+}
+
+.MuiMenuItem-root {
+  justify-content: center !important;
 }
 
 .spin {

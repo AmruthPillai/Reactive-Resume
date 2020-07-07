@@ -6,13 +6,13 @@ import useAuthState from "../hooks/useAuthState";
 
 const defaultUser = {
   uid: null,
-  displayName: null,
   email: null,
-  photoURL: null,
+  displayName: null,
   isAnonymous: false,
 };
 
 const defaultState = {
+  loading: false,
   user: defaultUser,
   logout: async () => {},
   loginWithGoogle: async () => {},
@@ -32,8 +32,8 @@ const UserProvider = ({ children }) => {
   useEffect(() => {
     if (firebaseUser) {
       const user = pick(firebaseUser, Object.keys(defaultUser));
-      setUser(user);
       localStorage.setItem("user", JSON.stringify(user));
+      setUser(user);
 
       const addUserToDatabase = async () => {
         const userRef = firebase.database().ref(`users/${user.uid}`);

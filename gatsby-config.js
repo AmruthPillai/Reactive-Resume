@@ -2,6 +2,7 @@ require("dotenv").config();
 
 module.exports = {
   plugins: [
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
@@ -24,7 +25,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-lodash`,
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

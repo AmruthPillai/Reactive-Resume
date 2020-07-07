@@ -64,7 +64,7 @@ const ResumePreview = ({ resume }) => {
         >
           <MenuItem onClick={handleRename}>Rename</MenuItem>
           <MenuItem onClick={handleDelete}>
-            <span className="text-red-600">Delete</span>
+            <span className="text-red-600 font-medium">Delete</span>
           </MenuItem>
         </Menu>
       </div>

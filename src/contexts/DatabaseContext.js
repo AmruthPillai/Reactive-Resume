@@ -1,7 +1,6 @@
 import firebase from "gatsby-plugin-firebase";
 import { debounce } from "lodash";
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import UserContext from "./UserContext";
 
 const defaultState = {
@@ -38,27 +37,22 @@ const DatabaseProvider = ({ children }) => {
   };
 
   const createResume = (resume) => {
-    const id = uuidv4();
+    const { id } = resume;
     const createdAt = firebase.database.ServerValue.TIMESTAMP;
 
-    let firstName = "",
-      lastName = "",
-      photograph = "";
+    let firstName, lastName;
 
     if (!user.isAnonymous) {
       [firstName, lastName] = user.displayName.split(" ");
-      photograph = user.photoURL;
     }
 
     firebase
       .database()
       .ref(`users/${user.uid}/resumes/${id}`)
       .set({
-        id,
         profile: {
-          firstName,
-          lastName,
-          photograph,
+          firstName: firstName || "",
+          lastName: lastName || "",
         },
         ...resume,
         createdAt,

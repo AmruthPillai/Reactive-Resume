@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { MdAdd } from "react-icons/md";
 import ModalContext from "../../contexts/ModalContext";
+import { handleKeyDown } from "../../utils";
 import styles from "./CreateResume.module.css";
 
 const CreateResume = () => {
@@ -18,12 +19,12 @@ const CreateResume = () => {
         role="button"
         className={styles.page}
         onClick={handleClick}
-        onKeyDown={() => {}}
+        onKeyDown={(e) => handleKeyDown(e, handleClick)}
       >
         <MdAdd size="48" />
       </div>
       <div className={styles.meta}>
-        <p>Create New Resume</p>
+        <p>Create Resume</p>
       </div>
     </div>
   );

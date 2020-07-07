@@ -2,10 +2,12 @@ import { createMuiTheme, MuiThemeProvider } from "@material-ui/core";
 import "firebase/analytics";
 import "firebase/auth";
 import "firebase/database";
+import "firebase/storage";
 import React from "react";
 import { DatabaseProvider } from "./src/contexts/DatabaseContext";
 import { ModalProvider } from "./src/contexts/ModalContext";
 import { ResumeProvider } from "./src/contexts/ResumeContext";
+import { StorageProvider } from "./src/contexts/StorageContext";
 import { TemplateProvider } from "./src/contexts/TemplateContext";
 import { ThemeProvider } from "./src/contexts/ThemeContext";
 import { UserProvider } from "./src/contexts/UserContext";
@@ -29,7 +31,9 @@ export const wrapRootElement = ({ element }) => (
         <UserProvider>
           <DatabaseProvider>
             <ResumeProvider>
-              <TemplateProvider>{element}</TemplateProvider>
+              <StorageProvider>
+                <TemplateProvider>{element}</TemplateProvider>
+              </StorageProvider>
             </ResumeProvider>
           </DatabaseProvider>
         </UserProvider>

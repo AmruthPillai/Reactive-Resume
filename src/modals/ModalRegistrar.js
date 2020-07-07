@@ -1,12 +1,14 @@
 import React, { Fragment } from "react";
 import AuthModal from "./AuthModal";
-import CreateResumeModal from "./CreateResumeModal";
+import ResumeModal from "./ResumeModal";
+import SocialModal from "./sections/SocialModal";
 
 const ModalRegistrar = () => {
   return (
     <Fragment>
       <AuthModal />
-      <CreateResumeModal />
+      <ResumeModal />
+      <SocialModal />
     </Fragment>
   );
 };

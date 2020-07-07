@@ -11,6 +11,9 @@ const Input = ({
   label,
   value,
   error,
+  onBlur,
+  touched,
+  checked,
   onChange,
   className,
   placeholder,
@@ -41,11 +44,13 @@ const Input = ({
           name={name}
           type={type}
           value={value}
+          onBlur={onBlur}
+          checked={checked}
           onChange={onChange}
           placeholder={placeholder}
           {...(path && inputProps(path))}
         />
-        <p>{error}</p>
+        {touched && <p>{error}</p>}
       </label>
     </div>
   );

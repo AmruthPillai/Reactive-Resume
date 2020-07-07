@@ -4,6 +4,7 @@ import React, { createContext } from "react";
 const events = {
   AUTH_MODAL: "auth_modal",
   CREATE_RESUME_MODAL: "create_resume_modal",
+  SOCIAL_MODAL: "social_modal",
 };
 
 const emitter = createNanoEvents();
