@@ -1,8 +1,9 @@
-import { AiOutlineTwitter } from "react-icons/ai";
+import { AiFillSafetyCertificate, AiOutlineTwitter } from "react-icons/ai";
 import { FaAward } from "react-icons/fa";
 import { IoMdBriefcase, IoMdDocument } from "react-icons/io";
 import { MdPerson, MdSchool } from "react-icons/md";
 import Awards from "../components/builder/sections/Awards";
+import Certifications from "../components/builder/sections/Certifications";
 import Education from "../components/builder/sections/Education";
 import Objective from "../components/builder/sections/Objective";
 import Profile from "../components/builder/sections/Profile";
@@ -50,5 +51,12 @@ export default [
     icon: FaAward,
     component: Awards,
     event: ModalEvents.AWARD_MODAL,
+  },
+  {
+    id: "certifications",
+    name: "Certifications",
+    icon: AiFillSafetyCertificate,
+    component: Certifications,
+    event: ModalEvents.CERTIFICATION_MODAL,
   },
 ];

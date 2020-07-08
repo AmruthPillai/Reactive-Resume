@@ -1,7 +1,6 @@
 import { get } from "lodash";
 import React from "react";
 import Heading from "../../shared/Heading";
-import DoubleFieldListItem from "../lists/double/DoubleFieldListItem";
 import List from "../lists/List";
 
 const Social = ({ id, name, event, state }) => {
@@ -18,7 +17,6 @@ const Social = ({ id, name, event, state }) => {
         event={event}
         titlePath="network"
         subtitlePath="username"
-        listItemComponent={DoubleFieldListItem}
       />
     </section>
   );

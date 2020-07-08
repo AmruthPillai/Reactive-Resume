@@ -51,8 +51,8 @@ const EducationModal = () => {
     >
       {(formik) => (
         <DataModal
-          path="education.items"
           name="Education"
+          path="education.items"
           event={ModalEvents.EDUCATION_MODAL}
         >
           <div className="grid grid-cols-2 gap-8">

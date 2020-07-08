@@ -2,7 +2,6 @@ import { get } from "lodash";
 import React from "react";
 import Heading from "../../shared/Heading";
 import List from "../lists/List";
-import TripleFieldListItem from "../lists/triple/TripleFieldListItem";
 
 const Awards = ({ id, name, event, state }) => {
   const path = `${id}.items`;
@@ -19,7 +18,6 @@ const Awards = ({ id, name, event, state }) => {
         titlePath="title"
         subtitlePath="awarder"
         textPath="summary"
-        listItemComponent={TripleFieldListItem}
       />
     </section>
   );

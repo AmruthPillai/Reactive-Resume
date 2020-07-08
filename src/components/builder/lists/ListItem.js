@@ -2,12 +2,13 @@ import { Menu, MenuItem } from "@material-ui/core";
 import React, { useContext, useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { MdMoreVert } from "react-icons/md";
-import ResumeContext from "../../../../contexts/ResumeContext";
-import styles from "./DoubleFieldListItem.module.css";
+import ResumeContext from "../../../contexts/ResumeContext";
+import styles from "./ListItem.module.css";
 
-const DoubleFieldListItem = ({
+const ListItem = ({
   title,
   subtitle,
+  text,
   path,
   data,
   isFirst,
@@ -64,9 +65,16 @@ const DoubleFieldListItem = ({
 
   return (
     <div className={styles.container}>
-      <div className="flex flex-col">
+      <div className="grid">
         <span className="font-medium truncate">{title}</span>
-        <span className="mt-1 text-sm opacity-75 truncate">{subtitle}</span>
+
+        {subtitle && (
+          <span className="mt-1 text-sm opacity-75 truncate">{subtitle}</span>
+        )}
+
+        {text && (
+          <span className="w-4/5 mt-5 text-sm opacity-75 truncate">{text}</span>
+        )}
       </div>
 
       <div className={styles.menu}>
@@ -100,4 +108,4 @@ const DoubleFieldListItem = ({
   );
 };
 
-export default DoubleFieldListItem;
+export default ListItem;

@@ -6,6 +6,7 @@ import ModalContext from "../../../contexts/ModalContext";
 import Button from "../../shared/Button";
 import EmptyList from "./EmptyList";
 import styles from "./List.module.css";
+import ListItem from "./ListItem";
 
 const List = ({
   path,
@@ -17,7 +18,6 @@ const List = ({
   text,
   textPath,
   event,
-  listItemComponent: ListItemComponent,
 }) => {
   const { emitter } = useContext(ModalContext);
 
@@ -39,7 +39,7 @@ const List = ({
           <EmptyList />
         ) : (
           items.map((x, i) => (
-            <ListItemComponent
+            <ListItem
               key={x.id}
               data={x}
               path={path}

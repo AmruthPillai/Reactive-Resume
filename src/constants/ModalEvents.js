@@ -5,6 +5,7 @@ const ModalEvents = {
   WORK_MODAL: "work_modal",
   EDUCATION_MODAL: "education_modal",
   AWARD_MODAL: "award_modal",
+  CERTIFICATION_MODAL: "certification_modal",
 };
 
 export default ModalEvents;

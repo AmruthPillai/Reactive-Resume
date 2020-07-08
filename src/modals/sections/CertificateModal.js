@@ -8,19 +8,19 @@ import DataModal from "../DataModal";
 
 const initialValues = {
   title: "",
-  awarder: "",
+  issuer: "",
   date: "",
   summary: "",
 };
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required("This is a required field."),
-  awarder: Yup.string().required("This is a required field."),
+  issuer: Yup.string().required("This is a required field."),
   date: Yup.date().max(new Date()),
   summary: Yup.string(),
 });
 
-const AwardModal = () => {
+const CertificateModal = () => {
   const getFieldProps = (formik, name) => ({
     touched: get(formik, `touched.${name}`, false),
     error: get(formik, `errors.${name}`, ""),
@@ -36,22 +36,22 @@ const AwardModal = () => {
     >
       {(formik) => (
         <DataModal
-          name="Award"
-          path="awards.items"
-          event={ModalEvents.AWARD_MODAL}
+          name="Certificate"
+          path="certifications.items"
+          event={ModalEvents.CERTIFICATION_MODAL}
         >
           <div className="grid grid-cols-2 gap-8">
             <Input
               label="Title"
               className="col-span-2"
-              placeholder="Intl. Flutter Hackathon '19"
+              placeholder="CCNP"
               {...getFieldProps(formik, "title")}
             />
 
             <Input
-              label="Awarder"
-              placeholder="Google"
-              {...getFieldProps(formik, "awarder")}
+              label="Issuer"
+              placeholder="Cisco Systems"
+              {...getFieldProps(formik, "issuer")}
             />
 
             <Input
@@ -73,4 +73,4 @@ const AwardModal = () => {
   );
 };
 
-export default AwardModal;
+export default CertificateModal;
