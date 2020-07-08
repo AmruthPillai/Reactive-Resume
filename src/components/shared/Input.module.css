@@ -2,26 +2,21 @@
   @apply w-full;
 }
 
-.container > label {
-  @apply flex flex-col;
-}
-
-.container > label > span {
-  @apply mb-1 text-secondary-dark font-semibold tracking-wide text-xs uppercase;
-}
-
-.container > label > input {
+.container label input,
+.container label textarea {
   @apply py-3 px-4 rounded bg-secondary text-primary border border-secondary;
 }
 
-.container > label > input::placeholder {
+.container label input::placeholder,
+.container label textarea::placeholder {
   @apply text-primary opacity-50;
 }
 
-.container > label > input:focus {
+.container label input:focus,
+.container label textarea:focus {
   @apply outline-none border-gray-500;
 }
 
-.container > label > p {
+.container label > p {
   @apply mt-1 text-red-600 text-xs;
 }

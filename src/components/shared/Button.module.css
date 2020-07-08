@@ -7,10 +7,6 @@
   @apply bg-primary-dark;
 }
 
-.container:focus {
-  @apply outline-none;
-}
-
 .container.outline {
   @apply border border-primary bg-inverse text-primary;
 }

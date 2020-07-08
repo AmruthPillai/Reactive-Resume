@@ -29,6 +29,14 @@ section {
   @apply grid grid-cols-1 gap-8;
 }
 
+label {
+  @apply flex flex-col;
+}
+
+label > span:first-child {
+  @apply mb-1 text-secondary-dark font-semibold tracking-wide text-xs uppercase;
+}
+
 #artboard {
   color: #444;
 }

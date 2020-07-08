@@ -1,12 +1,8 @@
-.list {
-  @apply flex flex-col border border-secondary rounded;
-}
-
-.list-item {
+.container {
   @apply flex items-center justify-between border-t border-secondary px-8 py-5;
 }
 
-.list-item:first-child {
+.container:first-child {
   @apply border-t-0;
 }
 
@@ -15,7 +11,7 @@
   @apply transition-opacity duration-200 ease-in-out;
 }
 
-.list-item:hover .menu {
+.container:hover .menu {
   @apply opacity-100;
   @apply transition-opacity duration-200 ease-in-out;
 }

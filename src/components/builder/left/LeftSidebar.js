@@ -12,9 +12,9 @@ const LeftSidebar = () => {
       <LeftNavbar />
 
       <div className={styles.container}>
-        {sections.map(({ id, component: Component }) => (
+        {sections.map(({ id, name, event, component: Component }) => (
           <Fragment key={id}>
-            <Component state={state} />
+            <Component id={id} name={name} event={event} state={state} />
             <hr />
           </Fragment>
         ))}

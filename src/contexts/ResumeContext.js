@@ -21,6 +21,7 @@ const ResumeProvider = ({ children }) => {
 
       switch (type) {
         case "on_add_item":
+          delete payload.value.__temp;
           items = get(state, payload.path, []);
           newState = setWith(
             clone(state),
@@ -32,6 +33,7 @@ const ResumeProvider = ({ children }) => {
           return newState;
 
         case "on_edit_item":
+          delete payload.value.__temp;
           items = get(state, payload.path);
           index = findIndex(items, ["id", payload.value.id]);
           newState = setWith(

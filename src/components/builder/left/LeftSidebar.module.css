@@ -1,6 +1,12 @@
 .container {
   z-index: 10;
   box-shadow: var(--left-shadow);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   @apply w-full h-screen overflow-scroll p-8;
   @apply grid gap-6;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
 }

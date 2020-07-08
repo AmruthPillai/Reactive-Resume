@@ -31,7 +31,11 @@ const Layout = () => {
                       Block {ind + 1}
                     </span>
                     {el.map((item, index) => (
-                      <Draggable key={item} draggableId={item} index={index}>
+                      <Draggable
+                        key={item.id}
+                        draggableId={item.id}
+                        index={index}
+                      >
                         {(provided) => (
                           <div
                             ref={provided.innerRef}
@@ -39,7 +43,7 @@ const Layout = () => {
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
                           >
-                            {item}
+                            {item.name}
                           </div>
                         )}
                       </Draggable>

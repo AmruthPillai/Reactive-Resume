@@ -1,3 +1,4 @@
+import { useFormikContext } from "formik";
 import { isEmpty, isFunction } from "lodash";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
@@ -12,7 +13,6 @@ const DataModal = ({
   path,
   event,
   title,
-  formik,
   onEdit,
   onCreate,
   children,
@@ -25,6 +25,7 @@ const DataModal = ({
 
   const { emitter } = useContext(ModalContext);
   const { dispatch } = useContext(ResumeContext);
+  const { values, setValues, resetForm, validateForm } = useFormikContext();
 
   useEffect(() => {
     const unbind = emitter.on(event, (data) => {
@@ -36,12 +37,12 @@ const DataModal = ({
   }, [emitter, event]);
 
   useEffect(() => {
-    data && formik.setValues(data) && setEditMode(true);
+    data && setValues(data) && setEditMode(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   const onSubmit = async (newData) => {
-    if (isEmpty(await formik.validateForm(newData))) {
+    if (isEmpty(await validateForm(newData))) {
       if (isEditMode) {
         if (data !== newData) {
           isFunction(onEdit)
@@ -79,15 +80,11 @@ const DataModal = ({
     : title.create;
 
   const submitAction = (
-    <Button
-      type="submit"
-      title={getTitle}
-      onClick={() => onSubmit(formik.values)}
-    />
+    <Button type="submit" title={getTitle} onClick={() => onSubmit(values)} />
   );
 
   const onDestroy = () => {
-    formik.resetForm();
+    resetForm();
     setEditMode(false);
     setData(null);
   };

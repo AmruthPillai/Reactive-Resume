@@ -9,7 +9,7 @@ export const transformCollectionSnapshot = (snapshot, setData) => {
 };
 
 export const handleKeyDown = (event, action) => {
-  event.which === 13 && action();
+  (event.which === 13 || event.which === 32) && action();
 };
 
 export const isFileImage = (file) => {

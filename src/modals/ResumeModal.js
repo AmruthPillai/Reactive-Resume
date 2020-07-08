@@ -1,4 +1,5 @@
-import { useFormik } from "formik";
+import { Formik } from "formik";
+import { get } from "lodash";
 import React, { useContext } from "react";
 import * as Yup from "yup";
 import Input from "../components/shared/Input";
@@ -20,44 +21,45 @@ const ResumeModal = () => {
   const { events } = useContext(ModalContext);
   const { createResume, updateResume } = useContext(DatabaseContext);
 
-  const formik = useFormik({
-    initialValues,
-    validationSchema,
-  });
-
-  const getFieldProps = (name) => ({
+  const getFieldProps = (formik, name) => ({
+    touched: get(formik, `touched.${name}`, false),
+    error: get(formik, `errors.${name}`, ""),
     ...formik.getFieldProps(name),
-    error: formik.errors[name],
   });
 
   return (
-    <DataModal
-      name="Resume"
-      formik={formik}
-      title={{
-        create: "Create Resume",
-        edit: "Edit Resume",
-      }}
-      onEdit={updateResume}
-      onCreate={createResume}
-      event={events.CREATE_RESUME_MODAL}
+    <Formik
+      validateOnBlur
+      initialValues={initialValues}
+      validationSchema={validationSchema}
     >
-      <Input
-        type="text"
-        name="name"
-        label="Name"
-        className="mb-8"
-        placeholder="Full Stack Web Developer"
-        {...getFieldProps("name")}
-      />
+      {(formik) => (
+        <DataModal
+          name="Resume"
+          title={{
+            create: "Create Resume",
+            edit: "Edit Resume",
+          }}
+          onEdit={updateResume}
+          onCreate={createResume}
+          event={events.CREATE_RESUME_MODAL}
+        >
+          <Input
+            label="Name"
+            className="mb-8"
+            placeholder="Full Stack Web Developer"
+            {...getFieldProps(formik, "name")}
+          />
 
-      <p>
-        You are going to be creating a new resume from scratch, but first, let's
-        give it a name. This can be the name of the role you want to apply for,
-        or if you're making a resume for a friend, you could call it Alex's
-        Resume.
-      </p>
-    </DataModal>
+          <p>
+            You are going to be creating a new resume from scratch, but first,
+            let's give it a name. This can be the name of the role you want to
+            apply for, or if you're making a resume for a friend, you could call
+            it Alex's Resume.
+          </p>
+        </DataModal>
+      )}
+    </Formik>
   );
 };
 

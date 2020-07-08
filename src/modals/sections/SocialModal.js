@@ -1,4 +1,5 @@
-import { useFormik } from "formik";
+import { Formik } from "formik";
+import { get } from "lodash";
 import React, { useContext } from "react";
 import * as Yup from "yup";
 import Input from "../../components/shared/Input";
@@ -25,52 +26,47 @@ const validationSchema = Yup.object().shape({
 const SocialModal = () => {
   const { events } = useContext(ModalContext);
 
-  const formik = useFormik({
-    initialValues,
-    validationSchema,
-    validateOnBlur: true,
-  });
-
-  const getFieldProps = (name) => ({
+  const getFieldProps = (formik, name) => ({
+    touched: get(formik, `touched.${name}`, false),
+    error: get(formik, `errors.${name}`, ""),
     ...formik.getFieldProps(name),
-    touched: formik.touched[name],
-    error: formik.errors[name],
   });
 
   return (
-    <DataModal
-      formik={formik}
-      path="social.items"
-      name="Social Network"
-      event={events.SOCIAL_MODAL}
+    <Formik
+      validateOnBlur
+      initialValues={initialValues}
+      validationSchema={validationSchema}
     >
-      <div className="grid grid-cols-2 gap-8">
-        <Input
-          type="text"
-          name="network"
-          label="Network"
-          placeholder="Twitter"
-          {...getFieldProps("network")}
-        />
+      {(formik) => (
+        <DataModal
+          path="social.items"
+          name="Social Network"
+          event={events.SOCIAL_MODAL}
+        >
+          <div className="grid grid-cols-2 gap-8">
+            <Input
+              label="Network"
+              placeholder="Twitter"
+              {...getFieldProps(formik, "network")}
+            />
 
-        <Input
-          type="text"
-          name="username"
-          label="Username"
-          placeholder="KingOKings"
-          {...getFieldProps("username")}
-        />
+            <Input
+              label="Username"
+              placeholder="KingOKings"
+              {...getFieldProps(formik, "username")}
+            />
 
-        <Input
-          type="text"
-          name="url"
-          label="URL"
-          className="col-span-2"
-          placeholder="https://twitter.com/KingOKings"
-          {...getFieldProps("url")}
-        />
-      </div>
-    </DataModal>
+            <Input
+              label="URL"
+              className="col-span-2"
+              placeholder="https://twitter.com/KingOKings"
+              {...getFieldProps(formik, "url")}
+            />
+          </div>
+        </DataModal>
+      )}
+    </Formik>
   );
 };
 

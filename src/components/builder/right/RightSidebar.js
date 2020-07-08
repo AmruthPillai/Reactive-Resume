@@ -8,6 +8,7 @@ const RightSidebar = () => {
     <div className="flex">
       <div className={styles.container}>
         <Layout />
+        <hr />
       </div>
 
       <RightNavbar />

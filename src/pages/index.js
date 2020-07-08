@@ -33,12 +33,18 @@ const Home = () => {
 
           <Feature title="Kickstarting your career shouldn’t come at a cost.">
             There are brilliant alternatives to this app like{" "}
-            <a href="/">Novoresume</a> and <a href="/">Zety</a>, but they come
-            at a cost, mainly because of the time the developers and the
-            marketing they had to incur to make the product. This app might not
-            be better than them, but it does cater to people who are just not in
-            a position to pay hundreds of dollars to create a resume to
-            bootstrap their career.
+            <a href="/" target="blank">
+              Novoresume
+            </a>{" "}
+            and{" "}
+            <a href="/" target="blank">
+              Zety
+            </a>
+            , but they come at a cost, mainly because of the time the developers
+            and the marketing they had to incur to make the product. This app
+            might not be better than them, but it does cater to people who are
+            just not in a position to pay hundreds of dollars to create a resume
+            to bootstrap their career.
           </Feature>
         </div>
 

@@ -10,7 +10,7 @@ const defaultState = {
     primaryColor: "#f44336",
     backgroundColor: "#FFFFFF",
   },
-  blocks: [leftSections.map((x) => x.id)],
+  blocks: [leftSections],
   setBlocks: () => {},
   setFixedBlocks: () => {},
   setSupportedBlocks: () => {},
