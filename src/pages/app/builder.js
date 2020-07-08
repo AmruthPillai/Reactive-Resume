@@ -1,17 +1,17 @@
 import { navigate } from "gatsby";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import { toast } from "react-toastify";
 import Artboard from "../../components/builder/center/Artboard";
 import LeftSidebar from "../../components/builder/left/LeftSidebar";
 import RightSidebar from "../../components/builder/right/RightSidebar";
 import LoadingScreen from "../../components/router/LoadingScreen";
 import DatabaseContext from "../../contexts/DatabaseContext";
-import ResumeContext from "../../contexts/ResumeContext";
+import { useDispatch } from "../../contexts/ResumeContext";
 
 const Builder = ({ id }) => {
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
   const { getResume } = useContext(DatabaseContext);
-  const { dispatch } = useContext(ResumeContext);
 
   useEffect(() => {
     (async () => {
@@ -31,23 +31,25 @@ const Builder = ({ id }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
-  if (loading) {
-    return <LoadingScreen />;
-  }
+  return useMemo(() => {
+    if (loading) {
+      return <LoadingScreen />;
+    }
 
-  return (
-    <div className="h-screen grid grid-cols-11">
-      <div className="col-span-3">
-        <LeftSidebar />
+    return (
+      <div className="h-screen grid grid-cols-11">
+        <div className="col-span-3">
+          <LeftSidebar />
+        </div>
+        <div className="h-screen overflow-scroll col-span-5 bg-inverse-dark grid items-center justify-center">
+          <Artboard />
+        </div>
+        <div className="col-span-3">
+          <RightSidebar />
+        </div>
       </div>
-      <div className="h-screen overflow-scroll col-span-5 bg-inverse-dark grid items-center justify-center">
-        <Artboard />
-      </div>
-      <div className="col-span-3">
-        <RightSidebar />
-      </div>
-    </div>
-  );
+    );
+  }, [loading]);
 };
 
 export default Builder;

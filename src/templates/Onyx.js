@@ -21,7 +21,7 @@ const Onyx = ({ data, layout, colors }) => {
           className="text-4xl font-bold"
           style={{ color: colors.primaryColor }}
         >
-          Nancy Jackson
+          {data.profile.firstName} {data.profile.lastName}
         </h2>
         <span className="font-medium">Customer Sales Representative</span>
 

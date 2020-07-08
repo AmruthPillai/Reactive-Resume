@@ -1,8 +1,8 @@
 import { Menu, MenuItem } from "@material-ui/core";
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { MdMoreVert } from "react-icons/md";
-import ResumeContext from "../../../contexts/ResumeContext";
+import { useDispatch } from "../../../contexts/ResumeContext";
 import styles from "./ListItem.module.css";
 
 const ListItem = ({
@@ -16,7 +16,7 @@ const ListItem = ({
   onEdit,
 }) => {
   const [anchorEl, setAnchorEl] = useState(null);
-  const { dispatch } = useContext(ResumeContext);
+  const dispatch = useDispatch();
 
   const handleClick = (event) => setAnchorEl(event.currentTarget);
 

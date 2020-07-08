@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Button from "../components/shared/Button";
 import ModalContext from "../contexts/ModalContext";
-import ResumeContext from "../contexts/ResumeContext";
+import { useDispatch } from "../contexts/ResumeContext";
 import { getModalText } from "../utils";
 import BaseModal from "./BaseModal";
 
@@ -18,13 +18,13 @@ const DataModal = ({
   children,
 }) => {
   const modalRef = useRef(null);
+  const dispatch = useDispatch();
 
   const [data, setData] = useState(null);
   const [open, setOpen] = useState(false);
   const [isEditMode, setEditMode] = useState(false);
 
   const { emitter } = useContext(ModalContext);
-  const { dispatch } = useContext(ResumeContext);
   const { values, setValues, resetForm, validateForm } = useFormikContext();
 
   useEffect(() => {

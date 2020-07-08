@@ -2,7 +2,7 @@ import firebase from "gatsby-plugin-firebase";
 import React, { createContext, useContext, useRef } from "react";
 import { toast } from "react-toastify";
 import { isFileImage } from "../utils";
-import ResumeContext from "./ResumeContext";
+import { useDispatch, useSelector } from "./ResumeContext";
 import UserContext from "./UserContext";
 
 const defaultState = {
@@ -15,7 +15,9 @@ const StorageProvider = ({ children }) => {
   const toastId = useRef(null);
 
   const { user } = useContext(UserContext);
-  const { state, dispatch } = useContext(ResumeContext);
+
+  const id = useSelector((state) => state.id);
+  const dispatch = useDispatch();
 
   const uploadPhotograph = async (file) => {
     if (!isFileImage(file)) {
@@ -27,7 +29,7 @@ const StorageProvider = ({ children }) => {
 
     const uploadTask = firebase
       .storage()
-      .ref(`/users/${user.uid}/photographs/${state.id}`)
+      .ref(`/users/${user.uid}/photographs/${id}`)
       .put(file);
 
     let progress = 0;

@@ -3,6 +3,7 @@ import moment from "moment";
 import React, { useContext } from "react";
 import { MdAdd } from "react-icons/md";
 import ModalContext from "../../../contexts/ModalContext";
+import { useSelector } from "../../../contexts/ResumeContext";
 import Button from "../../shared/Button";
 import EmptyList from "./EmptyList";
 import styles from "./List.module.css";
@@ -10,7 +11,6 @@ import ListItem from "./ListItem";
 
 const List = ({
   path,
-  items,
   title,
   titlePath,
   subtitle,
@@ -19,6 +19,7 @@ const List = ({
   textPath,
   event,
 }) => {
+  const items = useSelector((state) => get(state, path, []));
   const { emitter } = useContext(ModalContext);
 
   const handleAdd = () => emitter.emit(event);

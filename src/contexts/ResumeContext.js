@@ -86,13 +86,23 @@ const ResumeProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(memoizedReducer, initialState);
 
+  const selectValue = (callback) => callback(state);
+
   return (
-    <ResumeContext.Provider value={{ state, dispatch }}>
+    <ResumeContext.Provider value={{ selectValue, dispatch }}>
       {children}
     </ResumeContext.Provider>
   );
 };
 
-export default ResumeContext;
+const useSelector = (callback) => {
+  const { selectValue } = useContext(ResumeContext);
+  return selectValue(callback);
+};
 
-export { ResumeProvider };
+const useDispatch = () => {
+  const { dispatch } = useContext(ResumeContext);
+  return dispatch;
+};
+
+export { ResumeProvider, useSelector, useDispatch };

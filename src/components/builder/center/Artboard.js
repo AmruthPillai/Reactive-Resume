@@ -1,22 +1,20 @@
 import React, { useContext } from "react";
 import { Helmet } from "react-helmet";
-import ResumeContext from "../../../contexts/ResumeContext";
+import { useSelector } from "../../../contexts/ResumeContext";
 import TemplateContext from "../../../contexts/TemplateContext";
 import Onyx from "../../../templates/Onyx";
 import styles from "./Artboard.module.css";
 
 const Artboard = () => {
   const { blocks, colors } = useContext(TemplateContext);
-  const { state } = useContext(ResumeContext);
+  const state = useSelector((state) => state),
+    { id, name } = state;
 
   return (
     <div>
       <Helmet>
-        <title>{state.name} | Reactive Resume</title>
-        <link
-          rel="canonical"
-          href={`https://rxresu.me/app/builder/${state.id}`}
-        />
+        <title>{name} | Reactive Resume</title>
+        <link rel="canonical" href={`https://rxresu.me/app/builder/${id}`} />
       </Helmet>
 
       <div id="artboard" className={styles.container}>

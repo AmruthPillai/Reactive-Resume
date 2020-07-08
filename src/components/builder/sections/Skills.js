@@ -2,16 +2,16 @@ import React from "react";
 import Heading from "../../shared/Heading";
 import List from "../lists/List";
 
-const Work = ({ id, name, event, state }) => {
+const Skills = ({ id, name, event }) => {
   const path = `${id}.items`;
 
   return (
     <section>
       <Heading>{name}</Heading>
 
-      <List path={path} event={event} titlePath="company" textPath="summary" />
+      <List path={path} event={event} titlePath="name" subtitlePath="level" />
     </section>
   );
 };
 
-export default Work;
+export default Skills;
