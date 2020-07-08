@@ -3,8 +3,8 @@ import { get } from "lodash";
 import React, { useContext } from "react";
 import * as Yup from "yup";
 import Input from "../components/shared/Input";
+import ModalEvents from "../constants/ModalEvents";
 import DatabaseContext from "../contexts/DatabaseContext";
-import ModalContext from "../contexts/ModalContext";
 import DataModal from "./DataModal";
 
 const initialValues = {
@@ -18,12 +18,12 @@ const validationSchema = Yup.object().shape({
 });
 
 const ResumeModal = () => {
-  const { events } = useContext(ModalContext);
   const { createResume, updateResume } = useContext(DatabaseContext);
 
   const getFieldProps = (formik, name) => ({
     touched: get(formik, `touched.${name}`, false),
     error: get(formik, `errors.${name}`, ""),
+    isRequired: get(validationSchema, `fields.${name}._exclusive.required`),
     ...formik.getFieldProps(name),
   });
 
@@ -42,7 +42,7 @@ const ResumeModal = () => {
           }}
           onEdit={updateResume}
           onCreate={createResume}
-          event={events.CREATE_RESUME_MODAL}
+          event={ModalEvents.CREATE_RESUME_MODAL}
         >
           <Input
             label="Name"

@@ -18,6 +18,7 @@ const Input = ({
   checked,
   onChange,
   className,
+  isRequired,
   placeholder,
   onDeleteItem,
   showDeleteItemButton,
@@ -42,7 +43,13 @@ const Input = ({
   return (
     <div className={cx(styles.container, className)}>
       <label htmlFor={uuid}>
-        <span>{label}</span>
+        <span>
+          {label}{" "}
+          {isRequired && (
+            <span className="opacity-75 font-normal lowercase">(Required)</span>
+          )}
+        </span>
+
         {type === "textarea" ? (
           <div className="flex flex-col">
             <textarea

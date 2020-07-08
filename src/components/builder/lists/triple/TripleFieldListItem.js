@@ -66,10 +66,10 @@ const TripleFieldListItem = ({
   return (
     <div className={styles.container}>
       <div className="grid">
-        <span className="font-medium">{title}</span>
-        <span className="mt-1 text-sm opacity-75">{subtitle}</span>
+        <span className="font-medium truncate">{title}</span>
+        <span className="mt-1 text-sm opacity-75 truncate">{subtitle}</span>
 
-        <span className="w-4/5 mt-6 text-sm opacity-75 truncate">{text}</span>
+        <span className="w-4/5 mt-5 text-sm opacity-75 truncate">{text}</span>
       </div>
 
       <div className={styles.menu}>

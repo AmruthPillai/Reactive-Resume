@@ -7,23 +7,20 @@ import ModalEvents from "../../constants/ModalEvents";
 import DataModal from "../DataModal";
 
 const initialValues = {
-  url: "https://",
-  network: "",
-  username: "",
+  title: "",
+  awarder: "",
+  date: "",
+  summary: "",
 };
 
 const validationSchema = Yup.object().shape({
-  network: Yup.string()
-    .min(5, "Please enter at least 5 characters.")
-    .required("This is a required field."),
-  username: Yup.string().required("This is a required field."),
-  url: Yup.string()
-    .min(5, "Please enter at least 5 characters.")
-    .required("This is a required field.")
-    .url("Must be a valid URL"),
+  title: Yup.string().required("This is a required field."),
+  awarder: Yup.string().required("This is a required field."),
+  date: Yup.date().max(new Date()),
+  summary: Yup.string(),
 });
 
-const SocialModal = () => {
+const AwardModal = () => {
   const getFieldProps = (formik, name) => ({
     touched: get(formik, `touched.${name}`, false),
     error: get(formik, `errors.${name}`, ""),
@@ -39,28 +36,35 @@ const SocialModal = () => {
     >
       {(formik) => (
         <DataModal
-          path="social.items"
-          name="Social Network"
-          event={ModalEvents.SOCIAL_MODAL}
+          path="awards.items"
+          name="Awards"
+          event={ModalEvents.AWARD_MODAL}
         >
           <div className="grid grid-cols-2 gap-8">
             <Input
-              label="Network"
-              placeholder="Twitter"
-              {...getFieldProps(formik, "network")}
-            />
-
-            <Input
-              label="Username"
-              placeholder="KingOKings"
-              {...getFieldProps(formik, "username")}
-            />
-
-            <Input
-              label="URL"
+              label="Title"
               className="col-span-2"
-              placeholder="https://twitter.com/KingOKings"
-              {...getFieldProps(formik, "url")}
+              placeholder="Intl. Flutter Hackathon '19"
+              {...getFieldProps(formik, "title")}
+            />
+
+            <Input
+              label="Awarder"
+              placeholder="Google"
+              {...getFieldProps(formik, "awarder")}
+            />
+
+            <Input
+              type="date"
+              label="Date"
+              {...getFieldProps(formik, "date")}
+            />
+
+            <Input
+              type="textarea"
+              label="Summary"
+              className="col-span-2"
+              {...getFieldProps(formik, "summary")}
             />
           </div>
         </DataModal>
@@ -69,4 +73,4 @@ const SocialModal = () => {
   );
 };
 
-export default SocialModal;
+export default AwardModal;

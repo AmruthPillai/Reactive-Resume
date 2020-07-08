@@ -65,8 +65,8 @@ const DoubleFieldListItem = ({
   return (
     <div className={styles.container}>
       <div className="flex flex-col">
-        <span className="font-medium">{title}</span>
-        <span className="mt-1 text-sm opacity-75">{subtitle}</span>
+        <span className="font-medium truncate">{title}</span>
+        <span className="mt-1 text-sm opacity-75 truncate">{subtitle}</span>
       </div>
 
       <div className={styles.menu}>

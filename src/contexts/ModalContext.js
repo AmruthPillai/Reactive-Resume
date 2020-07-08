@@ -1,17 +1,10 @@
 import { createNanoEvents } from "nanoevents";
 import React, { createContext } from "react";
-
-const MODAL_EVENTS = {
-  AUTH_MODAL: "auth_modal",
-  CREATE_RESUME_MODAL: "create_resume_modal",
-  SOCIAL_MODAL: "social_modal",
-  WORK_MODAL: "work_modal",
-  EDUCATION_MODAL: "education_modal",
-};
+import ModalEvents from "../constants/ModalEvents";
 
 const emitter = createNanoEvents();
 
-const defaultState = { events: MODAL_EVENTS, emitter };
+const defaultState = { events: ModalEvents, emitter };
 
 const ModalContext = createContext(defaultState);
 
@@ -25,4 +18,4 @@ const ModalProvider = ({ children }) => {
 
 export default ModalContext;
 
-export { ModalProvider, MODAL_EVENTS };
+export { ModalProvider };

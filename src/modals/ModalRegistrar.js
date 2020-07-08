@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import AuthModal from "./AuthModal";
 import ResumeModal from "./ResumeModal";
+import AwardModal from "./sections/AwardModal";
 import EducationModal from "./sections/EducationModal";
 import SocialModal from "./sections/SocialModal";
 import WorkModal from "./sections/WorkModal";
@@ -13,6 +14,7 @@ const ModalRegistrar = () => {
       <SocialModal />
       <WorkModal />
       <EducationModal />
+      <AwardModal />
     </Fragment>
   );
 };
