@@ -1,10 +1,10 @@
-import cx from "classnames";
-import { graphql, useStaticQuery } from "gatsby";
-import GatsbyImage from "gatsby-image";
-import React from "react";
-import styles from "./Logo.module.css";
+import cx from 'classnames';
+import { graphql, useStaticQuery } from 'gatsby';
+import GatsbyImage from 'gatsby-image';
+import React from 'react';
+import styles from './Logo.module.css';
 
-const Logo = ({ size = "256px", className }) => {
+const Logo = ({ size = '256px', className }) => {
   const { file } = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "logo.png" }) {

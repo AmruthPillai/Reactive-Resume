@@ -1,9 +1,9 @@
-import { navigate } from "gatsby";
-import React, { Fragment, useContext, useEffect, useState } from "react";
-import Button from "../components/shared/Button";
-import ModalContext from "../contexts/ModalContext";
-import UserContext from "../contexts/UserContext";
-import BaseModal from "./BaseModal";
+import { navigate } from 'gatsby';
+import React, { useContext, useEffect, useState } from 'react';
+import Button from '../components/shared/Button';
+import ModalContext from '../contexts/ModalContext';
+import UserContext from '../contexts/UserContext';
+import BaseModal from './BaseModal';
 
 const AuthModal = () => {
   const [open, setOpen] = useState(false);
@@ -25,12 +25,12 @@ const AuthModal = () => {
   };
 
   const handleGotoApp = () => {
-    navigate("/app/dashboard");
+    navigate('/app/dashboard');
     setOpen(false);
   };
 
   const getTitle = () =>
-    user ? `Welcome, ${user.displayName}` : "Who are you?";
+    user ? `Welcome, ${user.displayName}` : 'Who are you?';
 
   const getMessage = () =>
     user
@@ -38,10 +38,10 @@ const AuthModal = () => {
       : `Reactive Resume needs to know who you are so it can securely authenticate you into the app and show you only your information. Once you are in, you can start building your resume, editing it to add new skills or sharing it with the world!`;
 
   const loggedInAction = (
-    <Fragment>
+    <>
       <Button outline className="mr-8" title="Logout" onClick={logout} />
       <Button title="Go to App" onClick={handleGotoApp} />
-    </Fragment>
+    </>
   );
 
   const loggedOutAction = (

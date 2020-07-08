@@ -1,9 +1,9 @@
-import { Menu, MenuItem } from "@material-ui/core";
-import React, { useState } from "react";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { MdMoreVert } from "react-icons/md";
-import { useDispatch } from "../../../contexts/ResumeContext";
-import styles from "./ListItem.module.css";
+import { Menu, MenuItem } from '@material-ui/core';
+import React, { useState } from 'react';
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
+import { MdMoreVert } from 'react-icons/md';
+import { useDispatch } from '../../../contexts/ResumeContext';
+import styles from './ListItem.module.css';
 
 const ListItem = ({
   title,
@@ -29,7 +29,7 @@ const ListItem = ({
 
   const handleMoveUp = () => {
     dispatch({
-      type: "on_move_item_up",
+      type: 'on_move_item_up',
       payload: {
         path,
         value: data,
@@ -41,7 +41,7 @@ const ListItem = ({
 
   const handleMoveDown = () => {
     dispatch({
-      type: "on_move_item_down",
+      type: 'on_move_item_down',
       payload: {
         path,
         value: data,
@@ -53,7 +53,7 @@ const ListItem = ({
 
   const handleDelete = () => {
     dispatch({
-      type: "on_delete_item",
+      type: 'on_delete_item',
       payload: {
         path,
         value: data,

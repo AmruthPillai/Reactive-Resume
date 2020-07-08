@@ -1,7 +1,7 @@
-import React from "react";
-import Layout from "../sections/Layout";
-import RightNavbar from "./RightNavbar";
-import styles from "./RightSidebar.module.css";
+import React from 'react';
+import Layout from '../sections/Layout';
+import RightNavbar from './RightNavbar';
+import styles from './RightSidebar.module.css';
 
 const RightSidebar = () => {
   return (

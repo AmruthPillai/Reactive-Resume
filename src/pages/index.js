@@ -1,7 +1,7 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import Hero from "../components/landing/Hero";
-import Wrapper from "../components/shared/Wrapper";
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import Hero from '../components/landing/Hero';
+import Wrapper from '../components/shared/Wrapper';
 
 const Home = () => {
   return (
@@ -32,11 +32,11 @@ const Home = () => {
           </Feature>
 
           <Feature title="Kickstarting your career shouldn’t come at a cost.">
-            There are brilliant alternatives to this app like{" "}
+            There are brilliant alternatives to this app like{' '}
             <a href="/" target="blank">
               Novoresume
-            </a>{" "}
-            and{" "}
+            </a>{' '}
+            and{' '}
             <a href="/" target="blank">
               Zety
             </a>
@@ -50,7 +50,7 @@ const Home = () => {
 
         <footer className="my-24">
           <p className="font-medium text-gray-500">
-            Licensed under <a href="/">MIT</a> | Made with love by{" "}
+            Licensed under <a href="/">MIT</a> | Made with love by{' '}
             <a href="https://www.amruthpillai.com/">Amruth Pillai</a>
           </p>
         </footer>

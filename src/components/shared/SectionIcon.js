@@ -1,7 +1,7 @@
-import { Tooltip } from "@material-ui/core";
-import React from "react";
+import { Tooltip } from '@material-ui/core';
+import React from 'react';
 
-const SectionIcon = ({ section, placement = "right" }) => {
+const SectionIcon = ({ section, placement = 'right' }) => {
   const { icon: Icon, name } = section;
 
   return (

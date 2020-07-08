@@ -1,11 +1,11 @@
-import { navigate } from "gatsby";
-import React, { useContext } from "react";
-import { FaGithub } from "react-icons/fa";
-import ModalContext from "../../contexts/ModalContext";
-import ThemeContext from "../../contexts/ThemeContext";
-import UserContext from "../../contexts/UserContext";
-import Button from "../shared/Button";
-import Logo from "../shared/Logo";
+import { navigate } from 'gatsby';
+import React, { useContext } from 'react';
+import { FaGithub } from 'react-icons/fa';
+import ModalContext from '../../contexts/ModalContext';
+import ThemeContext from '../../contexts/ThemeContext';
+import UserContext from '../../contexts/UserContext';
+import Button from '../shared/Button';
+import Logo from '../shared/Logo';
 
 const Hero = () => {
   const { emitter, events } = useContext(ModalContext);
@@ -14,7 +14,7 @@ const Hero = () => {
 
   const handleLogin = () => emitter.emit(events.AUTH_MODAL);
 
-  const handleGotoApp = () => navigate("/app/dashboard");
+  const handleGotoApp = () => navigate('/app/dashboard');
 
   return (
     <div className="flex items-center">

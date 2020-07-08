@@ -1,6 +1,6 @@
-import React from "react";
-import { FaGlobeAmericas, FaPhone } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+import React from 'react';
+import { FaGlobeAmericas, FaPhone } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 
 const Onyx = ({ data, layout, colors }) => {
   return (

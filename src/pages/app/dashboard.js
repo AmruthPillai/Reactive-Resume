@@ -1,10 +1,10 @@
-import firebase from "gatsby-plugin-firebase";
-import React, { useEffect, useState } from "react";
-import { Helmet } from "react-helmet";
-import CreateResume from "../../components/dashboard/CreateResume";
-import ResumePreview from "../../components/dashboard/ResumePreview";
-import TopNavbar from "../../components/dashboard/TopNavbar";
-import LoadingScreen from "../../components/router/LoadingScreen";
+import firebase from 'gatsby-plugin-firebase';
+import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
+import CreateResume from '../../components/dashboard/CreateResume';
+import ResumePreview from '../../components/dashboard/ResumePreview';
+import TopNavbar from '../../components/dashboard/TopNavbar';
+import LoadingScreen from '../../components/router/LoadingScreen';
 
 const Dashboard = ({ user }) => {
   const [resumes, setResumes] = useState([]);
@@ -16,12 +16,12 @@ const Dashboard = ({ user }) => {
     firebase
       .database()
       .ref(ref)
-      .on("value", (snapshot) => {
+      .on('value', (snapshot) => {
         if (snapshot.val()) {
-          const resumes = [];
+          const resumesArr = [];
           const data = snapshot.val();
-          Object.keys(data).forEach((key) => resumes.push(data[key]));
-          setResumes(resumes);
+          Object.keys(data).forEach((key) => resumesArr.push(data[key]));
+          setResumes(resumesArr);
         }
 
         setLoading(false);

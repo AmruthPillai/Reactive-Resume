@@ -1,12 +1,12 @@
-import arrayMove from "array-move";
-import { clone, findIndex, get, setWith } from "lodash";
+import arrayMove from 'array-move';
+import { clone, findIndex, get, setWith } from 'lodash';
 import React, {
   createContext,
   useCallback,
   useContext,
   useReducer,
-} from "react";
-import DatabaseContext from "./DatabaseContext";
+} from 'react';
+import DatabaseContext from './DatabaseContext';
 
 const initialState = {};
 
@@ -17,71 +17,73 @@ const ResumeProvider = ({ children }) => {
 
   const memoizedReducer = useCallback(
     (state, { type, payload }) => {
-      let newState, index, items;
+      let newState;
+      let index;
+      let items;
 
       switch (type) {
-        case "on_add_item":
-          delete payload.value.__temp;
+        case 'on_add_item':
+          delete payload.value.temp;
           items = get(state, payload.path, []);
           newState = setWith(
             clone(state),
             payload.path,
             [...items, payload.value],
-            clone
+            clone,
           );
           debouncedUpdate(newState);
           return newState;
 
-        case "on_edit_item":
-          delete payload.value.__temp;
+        case 'on_edit_item':
+          delete payload.value.temp;
           items = get(state, payload.path);
-          index = findIndex(items, ["id", payload.value.id]);
+          index = findIndex(items, ['id', payload.value.id]);
           newState = setWith(
             clone(state),
             `${payload.path}[${index}]`,
             payload.value,
-            clone
+            clone,
           );
           debouncedUpdate(newState);
           return newState;
 
-        case "on_delete_item":
+        case 'on_delete_item':
           items = get(state, payload.path);
-          index = findIndex(items, ["id", payload.value.id]);
+          index = findIndex(items, ['id', payload.value.id]);
           items.splice(index, 1);
           newState = setWith(clone(state), payload.path, items, clone);
           debouncedUpdate(newState);
           return newState;
 
-        case "on_move_item_up":
+        case 'on_move_item_up':
           items = get(state, payload.path);
-          index = findIndex(items, ["id", payload.value.id]);
+          index = findIndex(items, ['id', payload.value.id]);
           items = arrayMove(items, index, index - 1);
           newState = setWith(clone(state), payload.path, items, clone);
           debouncedUpdate(newState);
           return newState;
 
-        case "on_move_item_down":
+        case 'on_move_item_down':
           items = get(state, payload.path);
-          index = findIndex(items, ["id", payload.value.id]);
+          index = findIndex(items, ['id', payload.value.id]);
           items = arrayMove(items, index, index + 1);
           newState = setWith(clone(state), payload.path, items, clone);
           debouncedUpdate(newState);
           return newState;
 
-        case "on_input":
+        case 'on_input':
           newState = setWith(clone(state), payload.path, payload.value, clone);
           debouncedUpdate(newState);
           return newState;
 
-        case "set_data":
+        case 'set_data':
           return payload;
 
         default:
           throw new Error();
       }
     },
-    [debouncedUpdate]
+    [debouncedUpdate],
   );
 
   const [state, dispatch] = useReducer(memoizedReducer, initialState);

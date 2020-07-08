@@ -1,12 +1,12 @@
-import { Menu, MenuItem } from "@material-ui/core";
-import { navigate } from "gatsby";
-import moment from "moment";
-import React, { useContext, useState } from "react";
-import { MdMoreHoriz, MdOpenInNew } from "react-icons/md";
-import { toast } from "react-toastify";
-import DatabaseContext from "../../contexts/DatabaseContext";
-import ModalContext from "../../contexts/ModalContext";
-import styles from "./ResumePreview.module.css";
+import { Menu, MenuItem } from '@material-ui/core';
+import { navigate } from 'gatsby';
+import moment from 'moment';
+import React, { useContext, useState } from 'react';
+import { MdMoreHoriz, MdOpenInNew } from 'react-icons/md';
+import { toast } from 'react-toastify';
+import DatabaseContext from '../../contexts/DatabaseContext';
+import ModalContext from '../../contexts/ModalContext';
+import styles from './ResumePreview.module.css';
 
 const ResumePreview = ({ resume }) => {
   const [anchorEl, setAnchorEl] = useState(null);

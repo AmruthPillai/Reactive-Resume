@@ -1,13 +1,13 @@
-import { get, isEmpty } from "lodash";
-import moment from "moment";
-import React, { useContext } from "react";
-import { MdAdd } from "react-icons/md";
-import ModalContext from "../../../contexts/ModalContext";
-import { useSelector } from "../../../contexts/ResumeContext";
-import Button from "../../shared/Button";
-import EmptyList from "./EmptyList";
-import styles from "./List.module.css";
-import ListItem from "./ListItem";
+import { get, isEmpty } from 'lodash';
+import moment from 'moment';
+import React, { useContext } from 'react';
+import { MdAdd } from 'react-icons/md';
+import ModalContext from '../../../contexts/ModalContext';
+import { useSelector } from '../../../contexts/ResumeContext';
+import Button from '../../shared/Button';
+import EmptyList from './EmptyList';
+import styles from './List.module.css';
+import ListItem from './ListItem';
 
 const List = ({
   path,
@@ -27,10 +27,10 @@ const List = ({
   const handleEdit = (data) => emitter.emit(event, data);
 
   const formatDateRange = (x) =>
-    `${moment(x.startDate).format("MMMM Y")} — ${
+    `${moment(x.startDate).format('MMMM Y')} — ${
       moment(x.endDate).isValid()
-        ? moment(x.endDate).format("MMMM Y")
-        : "Present"
+        ? moment(x.endDate).format('MMMM Y')
+        : 'Present'
     }`;
 
   return (
@@ -44,11 +44,11 @@ const List = ({
               key={x.id}
               data={x}
               path={path}
-              title={title || get(x, titlePath, "")}
+              title={title || get(x, titlePath, '')}
               subtitle={
-                subtitle || get(x, subtitlePath, "") || formatDateRange(x)
+                subtitle || get(x, subtitlePath, '') || formatDateRange(x)
               }
-              text={text || get(x, textPath, "")}
+              text={text || get(x, textPath, '')}
               className={styles.listItem}
               onEdit={() => handleEdit(x)}
               isFirst={i === 0}

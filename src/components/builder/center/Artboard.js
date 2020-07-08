@@ -1,14 +1,14 @@
-import React, { useContext } from "react";
-import { Helmet } from "react-helmet";
-import { useSelector } from "../../../contexts/ResumeContext";
-import TemplateContext from "../../../contexts/TemplateContext";
-import Onyx from "../../../templates/Onyx";
-import styles from "./Artboard.module.css";
+import React, { useContext } from 'react';
+import { Helmet } from 'react-helmet';
+import { useSelector } from '../../../contexts/ResumeContext';
+import TemplateContext from '../../../contexts/TemplateContext';
+import Onyx from '../../../templates/Onyx';
+import styles from './Artboard.module.css';
 
 const Artboard = () => {
   const { blocks, colors } = useContext(TemplateContext);
-  const state = useSelector((state) => state),
-    { id, name } = state;
+  const state = useSelector((s) => s);
+  const { id, name } = state;
 
   return (
     <div>

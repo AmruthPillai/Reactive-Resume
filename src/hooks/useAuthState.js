@@ -1,32 +1,32 @@
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from 'react';
 
 export default function useAuthState(firebase) {
   const [auth, setAuth] = useState(undefined);
 
   const [state, dispatch] = useReducer(
-    (state, action) => {
+    (innerState, action) => {
       switch (action.type) {
-        case "auth_state_changed":
+        case 'auth_state_changed':
           return {
-            ...state,
+            ...innerState,
             user: action.user,
             loading: false,
           };
-        case "error":
+        case 'error':
           return {
-            ...state,
+            ...innerState,
             error: action.error,
             loading: false,
           };
         default:
-          return state;
+          return innerState;
       }
     },
     {
       user: undefined,
       loading: true,
       error: undefined,
-    }
+    },
   );
 
   useEffect(() => {
@@ -38,11 +38,11 @@ export default function useAuthState(firebase) {
 
     const unsubscribe = auth.onAuthStateChanged(
       (user) => {
-        dispatch({ type: "auth_state_changed", user });
+        dispatch({ type: 'auth_state_changed', user });
       },
       (error) => {
-        dispatch({ type: "error", error });
-      }
+        dispatch({ type: 'error', error });
+      },
     );
 
     return () => {

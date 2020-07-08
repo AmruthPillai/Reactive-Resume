@@ -1,8 +1,8 @@
-import firebase from "gatsby-plugin-firebase";
-import { pick } from "lodash";
-import React, { createContext, useEffect, useState } from "react";
-import { toast } from "react-toastify";
-import useAuthState from "../hooks/useAuthState";
+import firebase from 'gatsby-plugin-firebase';
+import { pick } from 'lodash';
+import React, { createContext, useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+import useAuthState from '../hooks/useAuthState';
 
 const defaultUser = {
   uid: null,
@@ -25,20 +25,20 @@ const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"));
-    setUser(user);
+    const localUser = JSON.parse(localStorage.getItem('user'));
+    setUser(localUser);
   }, []);
 
   useEffect(() => {
     if (firebaseUser) {
-      const user = pick(firebaseUser, Object.keys(defaultUser));
-      localStorage.setItem("user", JSON.stringify(user));
-      setUser(user);
+      const remoteUser = pick(firebaseUser, Object.keys(defaultUser));
+      localStorage.setItem('user', JSON.stringify(remoteUser));
+      setUser(remoteUser);
 
       const addUserToDatabase = async () => {
-        const userRef = firebase.database().ref(`users/${user.uid}`);
-        const snapshot = await userRef.once("value");
-        !snapshot.val() && userRef.set(user);
+        const userRef = firebase.database().ref(`users/${remoteUser.uid}`);
+        const snapshot = await userRef.once('value');
+        !snapshot.val() && userRef.set(remoteUser);
       };
 
       addUserToDatabase();
@@ -57,7 +57,7 @@ const UserProvider = ({ children }) => {
 
   const logout = async () => {
     await firebase.auth().signOut();
-    localStorage.removeItem("user");
+    localStorage.removeItem('user');
     setUser(null);
   };
 

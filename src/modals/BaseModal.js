@@ -1,12 +1,12 @@
-import Backdrop from "@material-ui/core/Backdrop";
-import Fade from "@material-ui/core/Fade";
-import Modal from "@material-ui/core/Modal";
-import { isFunction } from "lodash";
-import React, { forwardRef, useImperativeHandle } from "react";
-import { MdClose } from "react-icons/md";
-import Button from "../components/shared/Button";
-import { handleKeyDown } from "../utils";
-import styles from "./BaseModal.module.css";
+import Backdrop from '@material-ui/core/Backdrop';
+import Fade from '@material-ui/core/Fade';
+import Modal from '@material-ui/core/Modal';
+import { isFunction } from 'lodash';
+import React, { forwardRef, useImperativeHandle } from 'react';
+import { MdClose } from 'react-icons/md';
+import Button from '../components/shared/Button';
+import { handleKeyDown } from '../utils';
+import styles from './BaseModal.module.css';
 
 const BaseModal = forwardRef(
   ({ title, state, children, action, onDestroy }, ref) => {
@@ -58,7 +58,7 @@ const BaseModal = forwardRef(
         </Fade>
       </Modal>
     );
-  }
+  },
 );
 
 export default BaseModal;

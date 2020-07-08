@@ -1,44 +1,44 @@
-import { Field, FieldArray, Formik } from "formik";
-import { get } from "lodash";
-import React from "react";
-import { MdAdd } from "react-icons/md";
-import * as Yup from "yup";
-import Input from "../../components/shared/Input";
-import ModalEvents from "../../constants/ModalEvents";
-import { handleKeyDown } from "../../utils";
-import DataModal from "../DataModal";
+import { Field, FieldArray, Formik } from 'formik';
+import { get } from 'lodash';
+import React from 'react';
+import { MdAdd } from 'react-icons/md';
+import * as Yup from 'yup';
+import Input from '../../components/shared/Input';
+import ModalEvents from '../../constants/ModalEvents';
+import { handleKeyDown } from '../../utils';
+import DataModal from '../DataModal';
 
 const initialValues = {
-  institution: "",
-  field: "",
-  degree: "",
-  gpa: "",
-  startDate: "",
-  endDate: "",
+  institution: '',
+  field: '',
+  degree: '',
+  gpa: '',
+  startDate: '',
+  endDate: '',
   courses: [],
-  __temp: "",
+  temp: '',
 };
 
 const validationSchema = Yup.object().shape({
-  institution: Yup.string().required("This is a required field."),
-  field: Yup.string().required("This is a required field."),
+  institution: Yup.string().required('This is a required field.'),
+  field: Yup.string().required('This is a required field.'),
   degree: Yup.string(),
   gpa: Yup.string(),
-  startDate: Yup.date().required("This is a required field."),
+  startDate: Yup.date().required('This is a required field.'),
   endDate: Yup.date().when(
-    "startDate",
+    'startDate',
     (startDate, schema) =>
       startDate &&
-      schema.min(startDate, "End Date must be later than Start Date")
+      schema.min(startDate, 'End Date must be later than Start Date'),
   ),
-  courses: Yup.array().of(Yup.string().required("This is a required field.")),
-  __temp: Yup.string().ensure(),
+  courses: Yup.array().of(Yup.string().required('This is a required field.')),
+  temp: Yup.string().ensure(),
 });
 
 const EducationModal = () => {
   const getFieldProps = (formik, name) => ({
     touched: get(formik, `touched.${name}`, false),
-    error: get(formik, `errors.${name}`, ""),
+    error: get(formik, `errors.${name}`, ''),
     isRequired: get(validationSchema, `fields.${name}._exclusive.required`),
     ...formik.getFieldProps(name),
   });
@@ -60,49 +60,48 @@ const EducationModal = () => {
               label="Institution"
               className="col-span-2"
               placeholder="Dayananda Sagar College of Engineering"
-              {...getFieldProps(formik, "institution")}
+              {...getFieldProps(formik, 'institution')}
             />
 
             <Input
               label="Field of Study"
               className="col-span-2"
               placeholder="Computer Science &amp; Engineering"
-              {...getFieldProps(formik, "field")}
+              {...getFieldProps(formik, 'field')}
             />
 
             <Input
               label="Degree Type"
               placeholder="Bachelor's Degree"
-              {...getFieldProps(formik, "degree")}
+              {...getFieldProps(formik, 'degree')}
             />
 
             <Input
               label="GPA"
               placeholder="8.8"
-              {...getFieldProps(formik, "gpa")}
+              {...getFieldProps(formik, 'gpa')}
             />
 
             <Input
               type="date"
               label="Start Date"
               placeholder="6th August 208"
-              {...getFieldProps(formik, "startDate")}
+              {...getFieldProps(formik, 'startDate')}
             />
 
             <Input
               type="date"
               label="End Date"
               placeholder="6th August 208"
-              {...getFieldProps(formik, "endDate")}
+              {...getFieldProps(formik, 'endDate')}
             />
 
             <FieldArray
               name="courses"
               render={(arrayHelpers) => {
                 const handleClickAdd = () => {
-                  formik.values.__temp &&
-                    arrayHelpers.push(formik.values.__temp);
-                  formik.setFieldValue("__temp", "");
+                  formik.values.temp && arrayHelpers.push(formik.values.temp);
+                  formik.setFieldValue('temp', '');
                 };
 
                 return (
@@ -112,7 +111,7 @@ const EducationModal = () => {
 
                       {formik.values.courses &&
                         formik.values.courses.map((x, i) => (
-                          <Field key={i} name={`courses.${i}`}>
+                          <Field key={x} name={`courses.${i}`}>
                             {({ field, meta }) => (
                               <Input
                                 className="my-1"
@@ -128,7 +127,7 @@ const EducationModal = () => {
                       <div className="flex items-center">
                         <Input
                           placeholder="Algorithms &amp; Data Structures"
-                          {...getFieldProps(formik, "__temp")}
+                          {...getFieldProps(formik, 'temp')}
                         />
                         <MdAdd
                           size="18px"

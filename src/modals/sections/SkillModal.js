@@ -1,25 +1,25 @@
-import { Formik } from "formik";
-import { get } from "lodash";
-import React from "react";
-import * as Yup from "yup";
-import Input from "../../components/shared/Input";
-import ModalEvents from "../../constants/ModalEvents";
-import DataModal from "../DataModal";
+import { Formik } from 'formik';
+import { get } from 'lodash';
+import React from 'react';
+import * as Yup from 'yup';
+import Input from '../../components/shared/Input';
+import ModalEvents from '../../constants/ModalEvents';
+import DataModal from '../DataModal';
 
 const initialValues = {
-  name: "",
-  level: "",
+  name: '',
+  level: '',
 };
 
 const validationSchema = Yup.object().shape({
-  name: Yup.string().required("This is a required field."),
-  level: Yup.string().required("This is a required field."),
+  name: Yup.string().required('This is a required field.'),
+  level: Yup.string().required('This is a required field.'),
 });
 
 const SkillModal = () => {
   const getFieldProps = (formik, name) => ({
     touched: get(formik, `touched.${name}`, false),
-    error: get(formik, `errors.${name}`, ""),
+    error: get(formik, `errors.${name}`, ''),
     isRequired: get(validationSchema, `fields.${name}._exclusive.required`),
     ...formik.getFieldProps(name),
   });
@@ -40,13 +40,13 @@ const SkillModal = () => {
             <Input
               label="Name"
               placeholder="ReactJS"
-              {...getFieldProps(formik, "name")}
+              {...getFieldProps(formik, 'name')}
             />
 
             <Input
               type="select"
               label="Level"
-              {...getFieldProps(formik, "level")}
+              {...getFieldProps(formik, 'level')}
             />
           </div>
         </DataModal>

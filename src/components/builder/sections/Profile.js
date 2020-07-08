@@ -1,7 +1,7 @@
-import React from "react";
-import Heading from "../../shared/Heading";
-import Input from "../../shared/Input";
-import PhotoUpload from "../../shared/PhotoUpload";
+import React from 'react';
+import Heading from '../../shared/Heading';
+import Input from '../../shared/Input';
+import PhotoUpload from '../../shared/PhotoUpload';
 
 const Profile = () => {
   return (

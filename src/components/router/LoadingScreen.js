@@ -1,7 +1,7 @@
-import { Fade, Modal } from "@material-ui/core";
-import React from "react";
-import { getRandomTip } from "../../data/tips";
-import Logo from "../shared/Logo";
+import { Fade, Modal } from '@material-ui/core';
+import React from 'react';
+import { getRandomTip } from '../../data/tips';
+import Logo from '../shared/Logo';
 
 const LoadingScreen = () => {
   return (

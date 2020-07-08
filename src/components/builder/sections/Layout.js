@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
-import TemplateContext from "../../../contexts/TemplateContext";
-import Heading from "../../shared/Heading";
-import styles from "./Layout.module.css";
+import React, { useContext } from 'react';
+import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
+import TemplateContext from '../../../contexts/TemplateContext';
+import Heading from '../../shared/Heading';
+import styles from './Layout.module.css';
 
 const Layout = () => {
   const { blocks, onDragEnd } = useContext(TemplateContext);
@@ -20,11 +20,11 @@ const Layout = () => {
         <DragDropContext onDragEnd={onDragEnd}>
           {blocks.map((el, ind) => (
             <Droppable key={ind} droppableId={`${ind}`}>
-              {(provided) => (
+              {(dropProvided) => (
                 <div
-                  ref={provided.innerRef}
+                  ref={dropProvided.innerRef}
                   className={styles.droppable}
-                  {...provided.droppableProps}
+                  {...dropProvided.droppableProps}
                 >
                   <div className="grid gap-3">
                     <span className="uppercase font-semibold text-xs">
@@ -36,12 +36,12 @@ const Layout = () => {
                         draggableId={item.id}
                         index={index}
                       >
-                        {(provided) => (
+                        {(dragProvided) => (
                           <div
-                            ref={provided.innerRef}
+                            ref={dragProvided.innerRef}
                             className={styles.draggable}
-                            {...provided.draggableProps}
-                            {...provided.dragHandleProps}
+                            {...dragProvided.draggableProps}
+                            {...dragProvided.dragHandleProps}
                           >
                             {item.name}
                           </div>
@@ -49,7 +49,7 @@ const Layout = () => {
                       </Draggable>
                     ))}
                   </div>
-                  {provided.placeholder}
+                  {dropProvided.placeholder}
                 </div>
               )}
             </Droppable>

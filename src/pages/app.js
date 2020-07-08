@@ -1,10 +1,10 @@
-import { Redirect, Router } from "@reach/router";
-import React from "react";
-import PrivateRoute from "../components/router/PrivateRoute";
-import Wrapper from "../components/shared/Wrapper";
-import NotFound from "./404";
-import Builder from "./app/builder";
-import Dashboard from "./app/dashboard";
+import { Redirect, Router } from '@reach/router';
+import React from 'react';
+import PrivateRoute from '../components/router/PrivateRoute';
+import Wrapper from '../components/shared/Wrapper';
+import NotFound from './404';
+import Builder from './app/builder';
+import Dashboard from './app/dashboard';
 
 const App = () => (
   <Wrapper>

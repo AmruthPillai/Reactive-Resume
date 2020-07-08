@@ -1,21 +1,21 @@
-import { Formik } from "formik";
-import { get } from "lodash";
-import React from "react";
-import * as Yup from "yup";
-import Input from "../../components/shared/Input";
-import ModalEvents from "../../constants/ModalEvents";
-import DataModal from "../DataModal";
+import { Formik } from 'formik';
+import { get } from 'lodash';
+import React from 'react';
+import * as Yup from 'yup';
+import Input from '../../components/shared/Input';
+import ModalEvents from '../../constants/ModalEvents';
+import DataModal from '../DataModal';
 
 const initialValues = {
-  title: "",
-  issuer: "",
-  date: "",
-  summary: "",
+  title: '',
+  issuer: '',
+  date: '',
+  summary: '',
 };
 
 const validationSchema = Yup.object().shape({
-  title: Yup.string().required("This is a required field."),
-  issuer: Yup.string().required("This is a required field."),
+  title: Yup.string().required('This is a required field.'),
+  issuer: Yup.string().required('This is a required field.'),
   date: Yup.date().max(new Date()),
   summary: Yup.string(),
 });
@@ -23,7 +23,7 @@ const validationSchema = Yup.object().shape({
 const CertificateModal = () => {
   const getFieldProps = (formik, name) => ({
     touched: get(formik, `touched.${name}`, false),
-    error: get(formik, `errors.${name}`, ""),
+    error: get(formik, `errors.${name}`, ''),
     isRequired: get(validationSchema, `fields.${name}._exclusive.required`),
     ...formik.getFieldProps(name),
   });
@@ -45,26 +45,26 @@ const CertificateModal = () => {
               label="Title"
               className="col-span-2"
               placeholder="CCNP"
-              {...getFieldProps(formik, "title")}
+              {...getFieldProps(formik, 'title')}
             />
 
             <Input
               label="Issuer"
               placeholder="Cisco Systems"
-              {...getFieldProps(formik, "issuer")}
+              {...getFieldProps(formik, 'issuer')}
             />
 
             <Input
               type="date"
               label="Date"
-              {...getFieldProps(formik, "date")}
+              {...getFieldProps(formik, 'date')}
             />
 
             <Input
               type="textarea"
               label="Summary"
               className="col-span-2"
-              {...getFieldProps(formik, "summary")}
+              {...getFieldProps(formik, 'summary')}
             />
           </div>
         </DataModal>

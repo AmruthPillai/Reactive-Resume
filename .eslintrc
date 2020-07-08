@@ -1,0 +1,24 @@
+{
+  "globals": {
+    "document": true,
+    "localStorage": true
+  },
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "jsx-a11y/label-has-associated-control": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "react/jsx-props-no-spreading": 0,
+    "prettier/prettier": ["error"],
+    "react/no-array-index-key": 0,
+    "react/button-has-type": 0,
+    "no-unused-expressions": 0,
+    "no-restricted-syntax": 0,
+    "no-param-reassign": 0,
+    "consistent-return": 0,
+    "no-nested-ternary": 0,
+    "react/prop-types": 0
+  }
+}

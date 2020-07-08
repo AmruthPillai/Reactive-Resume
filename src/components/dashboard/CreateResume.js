@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import { MdAdd } from "react-icons/md";
-import ModalContext from "../../contexts/ModalContext";
-import { handleKeyDown } from "../../utils";
-import styles from "./CreateResume.module.css";
+import React, { useContext } from 'react';
+import { MdAdd } from 'react-icons/md';
+import ModalContext from '../../contexts/ModalContext';
+import { handleKeyDown } from '../../utils';
+import styles from './CreateResume.module.css';
 
 const CreateResume = () => {
   const { emitter, events } = useContext(ModalContext);

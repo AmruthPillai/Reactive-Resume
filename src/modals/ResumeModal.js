@@ -1,20 +1,20 @@
-import { Formik } from "formik";
-import { get } from "lodash";
-import React, { useContext } from "react";
-import * as Yup from "yup";
-import Input from "../components/shared/Input";
-import ModalEvents from "../constants/ModalEvents";
-import DatabaseContext from "../contexts/DatabaseContext";
-import DataModal from "./DataModal";
+import { Formik } from 'formik';
+import { get } from 'lodash';
+import React, { useContext } from 'react';
+import * as Yup from 'yup';
+import Input from '../components/shared/Input';
+import ModalEvents from '../constants/ModalEvents';
+import DatabaseContext from '../contexts/DatabaseContext';
+import DataModal from './DataModal';
 
 const initialValues = {
-  name: "",
+  name: '',
 };
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
-    .min(5, "Please enter at least 5 characters.")
-    .required("This is a required field."),
+    .min(5, 'Please enter at least 5 characters.')
+    .required('This is a required field.'),
 });
 
 const ResumeModal = () => {
@@ -22,7 +22,7 @@ const ResumeModal = () => {
 
   const getFieldProps = (formik, name) => ({
     touched: get(formik, `touched.${name}`, false),
-    error: get(formik, `errors.${name}`, ""),
+    error: get(formik, `errors.${name}`, ''),
     isRequired: get(validationSchema, `fields.${name}._exclusive.required`),
     ...formik.getFieldProps(name),
   });
@@ -37,8 +37,8 @@ const ResumeModal = () => {
         <DataModal
           name="Resume"
           title={{
-            create: "Create Resume",
-            edit: "Edit Resume",
+            create: 'Create Resume',
+            edit: 'Edit Resume',
           }}
           onEdit={updateResume}
           onCreate={createResume}
@@ -48,14 +48,14 @@ const ResumeModal = () => {
             label="Name"
             className="mb-8"
             placeholder="Full Stack Web Developer"
-            {...getFieldProps(formik, "name")}
+            {...getFieldProps(formik, 'name')}
           />
 
           <p>
             You are going to be creating a new resume from scratch, but first,
-            let's give it a name. This can be the name of the role you want to
-            apply for, or if you're making a resume for a friend, you could call
-            it Alex's Resume.
+            let&apos;s give it a name. This can be the name of the role you want
+            to apply for, or if you&apos;re making a resume for a friend, you
+            could call it Alex&apos;s Resume.
           </p>
         </DataModal>
       )}

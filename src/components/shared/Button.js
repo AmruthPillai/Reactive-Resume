@@ -1,17 +1,9 @@
-import classNames from "classnames";
-import React from "react";
-import { handleKeyDown } from "../../utils";
-import styles from "./Button.module.css";
+import classNames from 'classnames';
+import React from 'react';
+import { handleKeyDown } from '../../utils';
+import styles from './Button.module.css';
 
-const Button = ({
-  icon,
-  title,
-  onClick,
-  outline,
-  className,
-  isLoading,
-  type = "button",
-}) => {
+const Button = ({ icon, title, onClick, outline, className, isLoading }) => {
   const Icon = icon;
   const classes = classNames(styles.container, className, {
     [styles.outline]: outline,
@@ -19,13 +11,12 @@ const Button = ({
 
   return (
     <button
-      type={type}
       className={classes}
       onKeyDown={(e) => handleKeyDown(e, onClick)}
       onClick={isLoading ? undefined : onClick}
     >
       {icon && <Icon size="14" className="mr-2" />}
-      {isLoading ? "Loading..." : title}
+      {isLoading ? 'Loading...' : title}
     </button>
   );
 };

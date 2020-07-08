@@ -1,8 +1,8 @@
-import React from "react";
-import Heading from "../../shared/Heading";
-import List from "../lists/List";
+import React from 'react';
+import Heading from '../../shared/Heading';
+import List from '../lists/List';
 
-const Certifications = ({ id, name, event, state }) => {
+const Certifications = ({ id, name, event }) => {
   const path = `${id}.items`;
 
   return (

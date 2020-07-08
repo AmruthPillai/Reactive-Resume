@@ -1,53 +1,65 @@
-require("dotenv").config();
+require('dotenv').config();
 
 module.exports = {
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: 'gatsby-plugin-eslint',
+      options: {
+        test: /\.js$|\.jsx$/,
+        exclude: /(node_modules|.cache|public)/,
+        stages: ['develop'],
+        options: {
+          emitWarning: true,
+          failOnError: false,
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-prefetch-google-fonts',
       options: {
         fonts: [
           {
-            family: `Montserrat`,
-            variants: [`400`, `500`, `600`, `700`],
+            family: 'Montserrat',
+            variants: ['400', '500', '600', '700'],
           },
         ],
       },
     },
     {
-      resolve: `gatsby-plugin-create-client-paths`,
-      options: { prefixes: [`/app/*`] },
+      resolve: 'gatsby-plugin-create-client-paths',
+      options: { prefixes: ['/app/*'] },
     },
     {
-      resolve: `gatsby-plugin-offline`,
+      resolve: 'gatsby-plugin-offline',
       options: {
-        precachePages: [`/`, `/app/*`],
+        precachePages: ['/', '/app/*'],
       },
     },
-    `gatsby-plugin-lodash`,
+    'gatsby-plugin-lodash',
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: `Reactive Resume`,
-        short_name: `RxResume`,
-        start_url: `/`,
-        background_color: `#FFFFFF`,
-        theme_color: `#444444`,
-        display: `standalone`,
+        name: 'Reactive Resume',
+        short_name: 'RxResume',
+        start_url: '/',
+        background_color: '#FFFFFF',
+        theme_color: '#444444',
+        display: 'standalone',
       },
     },
-    `gatsby-plugin-postcss`,
+    'gatsby-plugin-postcss',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `images`,
+        name: 'images',
         path: `${__dirname}/assets/images/`,
       },
     },
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
-      resolve: "gatsby-plugin-firebase",
+      resolve: 'gatsby-plugin-firebase',
       options: {
         credentials: {
           apiKey: process.env.FIREBASE_APIKEY,

@@ -1,6 +1,6 @@
-import React from "react";
-import Heading from "../../shared/Heading";
-import Input from "../../shared/Input";
+import React from 'react';
+import Heading from '../../shared/Heading';
+import Input from '../../shared/Input';
 
 const Objective = () => {
   return (

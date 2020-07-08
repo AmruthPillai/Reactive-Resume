@@ -1,16 +1,16 @@
-import { Link, navigate } from "gatsby";
-import React, { useContext } from "react";
-import UserContext from "../../contexts/UserContext";
-import Avatar from "../shared/Avatar";
-import Logo from "../shared/Logo";
-import styles from "./TopNavbar.module.css";
+import { Link, navigate } from 'gatsby';
+import React, { useContext } from 'react';
+import UserContext from '../../contexts/UserContext';
+import Avatar from '../shared/Avatar';
+import Logo from '../shared/Logo';
+import styles from './TopNavbar.module.css';
 
 const TopNavbar = () => {
   const { logout } = useContext(UserContext);
 
   const handleLogout = async () => {
     await logout();
-    navigate("/");
+    navigate('/');
   };
 
   return (

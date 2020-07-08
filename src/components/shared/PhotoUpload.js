@@ -1,9 +1,9 @@
-import React, { useContext, useRef } from "react";
-import { MdFileUpload } from "react-icons/md";
-import StorageContext from "../../contexts/StorageContext";
-import { handleKeyDown } from "../../utils";
-import Input from "./Input";
-import styles from "./PhotoUpload.module.css";
+import React, { useContext, useRef } from 'react';
+import { MdFileUpload } from 'react-icons/md';
+import StorageContext from '../../contexts/StorageContext';
+import { handleKeyDown } from '../../utils';
+import Input from './Input';
+import styles from './PhotoUpload.module.css';
 
 const PhotoUpload = () => {
   const fileInputRef = useRef(null);

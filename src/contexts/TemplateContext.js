@@ -1,14 +1,14 @@
-import { flatten } from "lodash";
-import React, { createContext, useState } from "react";
-import leftSections from "../data/leftSections";
+import { flatten } from 'lodash';
+import React, { createContext, useState } from 'react';
+import leftSections from '../data/leftSections';
 
 const defaultState = {
-  selected: "Pikachu",
+  selected: 'Pikachu',
   setSelected: () => {},
   colors: {
-    textColor: "#212121",
-    primaryColor: "#f44336",
-    backgroundColor: "#FFFFFF",
+    textColor: '#212121',
+    primaryColor: '#f44336',
+    backgroundColor: '#FFFFFF',
   },
   blocks: [leftSections],
   setBlocks: () => {},
@@ -60,17 +60,17 @@ const TemplateProvider = ({ children }) => {
       newState[sInd] = items;
       setBlocks(newState);
     } else {
-      const result = move(blocks[sInd], blocks[dInd], source, destination);
+      const newResult = move(blocks[sInd], blocks[dInd], source, destination);
       const newState = [...blocks];
-      newState[sInd] = result[sInd];
-      newState[dInd] = result[dInd];
+      newState[sInd] = newResult[sInd];
+      newState[dInd] = newResult[dInd];
       setBlocks(newState);
     }
   };
 
   const setFixedBlocks = (fixedBlocks) => {
     const newBlocks = blocks.map((x) =>
-      x.filter((y) => !fixedBlocks.includes(y))
+      x.filter((y) => !fixedBlocks.includes(y)),
     );
     setBlocks(newBlocks);
   };

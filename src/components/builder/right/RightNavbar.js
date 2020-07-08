@@ -1,12 +1,9 @@
-import cx from "classnames";
-import React, { useContext } from "react";
-import { MdPerson, MdSync, MdSyncDisabled } from "react-icons/md";
-import DatabaseContext from "../../../contexts/DatabaseContext";
-import styles from "./RightNavbar.module.css";
+import React from 'react';
+import { MdPerson } from 'react-icons/md';
+import styles from './RightNavbar.module.css';
+import SyncIndicator from './SyncIndicator';
 
 const RightNavbar = () => {
-  const { isOffline, isUpdating } = useContext(DatabaseContext);
-
   return (
     <div className={styles.container}>
       <div className="grid grid-cols-1 gap-6">
@@ -16,13 +13,9 @@ const RightNavbar = () => {
         />
       </div>
 
-      <div className="text-4xl mt-auto">
-        {isOffline ? (
-          <MdSyncDisabled className="text-red-600" />
-        ) : (
-          <MdSync className={cx({ spin: isUpdating })} />
-        )}
-      </div>
+      <hr className="mt-auto my-6" />
+
+      <SyncIndicator />
     </div>
   );
 };

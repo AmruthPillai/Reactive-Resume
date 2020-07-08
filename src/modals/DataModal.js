@@ -1,12 +1,12 @@
-import { useFormikContext } from "formik";
-import { isEmpty, isFunction } from "lodash";
-import React, { useContext, useEffect, useRef, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
-import Button from "../components/shared/Button";
-import ModalContext from "../contexts/ModalContext";
-import { useDispatch } from "../contexts/ResumeContext";
-import { getModalText } from "../utils";
-import BaseModal from "./BaseModal";
+import { useFormikContext } from 'formik';
+import { isEmpty, isFunction } from 'lodash';
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import Button from '../components/shared/Button';
+import ModalContext from '../contexts/ModalContext';
+import { useDispatch } from '../contexts/ResumeContext';
+import { getModalText } from '../utils';
+import BaseModal from './BaseModal';
 
 const DataModal = ({
   name,
@@ -28,9 +28,9 @@ const DataModal = ({
   const { values, setValues, resetForm, validateForm } = useFormikContext();
 
   useEffect(() => {
-    const unbind = emitter.on(event, (data) => {
+    const unbind = emitter.on(event, (payload) => {
       setOpen(true);
-      setData(data);
+      setData(payload);
     });
 
     return () => unbind();
@@ -38,7 +38,6 @@ const DataModal = ({
 
   useEffect(() => {
     data && setValues(data) && setEditMode(true);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   const onSubmit = async (newData) => {
@@ -48,7 +47,7 @@ const DataModal = ({
           isFunction(onEdit)
             ? onEdit(newData)
             : dispatch({
-                type: "on_edit_item",
+                type: 'on_edit_item',
                 payload: {
                   path,
                   value: newData,
@@ -61,7 +60,7 @@ const DataModal = ({
         isFunction(onCreate)
           ? onCreate(newData)
           : dispatch({
-              type: "on_add_item",
+              type: 'on_add_item',
               payload: {
                 path,
                 value: newData,

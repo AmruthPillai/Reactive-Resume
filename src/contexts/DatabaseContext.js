@@ -1,7 +1,7 @@
-import firebase from "gatsby-plugin-firebase";
-import { debounce } from "lodash";
-import React, { createContext, useContext, useEffect, useState } from "react";
-import UserContext from "./UserContext";
+import firebase from 'gatsby-plugin-firebase';
+import { debounce } from 'lodash';
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import UserContext from './UserContext';
 
 const defaultState = {
   isOffline: false,
@@ -22,8 +22,8 @@ const DatabaseProvider = ({ children }) => {
   const { user } = useContext(UserContext);
 
   useEffect(() => {
-    const connectedRef = firebase.database().ref(".info/connected");
-    connectedRef.on("value", (snapshot) => {
+    const connectedRef = firebase.database().ref('.info/connected');
+    connectedRef.on('value', (snapshot) => {
       snapshot.val() === true ? setOffline(false) : setOffline(true);
     });
   }, []);
@@ -32,7 +32,7 @@ const DatabaseProvider = ({ children }) => {
     const snapshot = await firebase
       .database()
       .ref(`users/${user.uid}/resumes/${id}`)
-      .once("value");
+      .once('value');
     return snapshot.val();
   };
 
@@ -40,10 +40,11 @@ const DatabaseProvider = ({ children }) => {
     const { id } = resume;
     const createdAt = firebase.database.ServerValue.TIMESTAMP;
 
-    let firstName, lastName;
+    let firstName;
+    let lastName;
 
     if (!user.isAnonymous) {
-      [firstName, lastName] = user.displayName.split(" ");
+      [firstName, lastName] = user.displayName.split(' ');
     }
 
     firebase
@@ -51,8 +52,8 @@ const DatabaseProvider = ({ children }) => {
       .ref(`users/${user.uid}/resumes/${id}`)
       .set({
         profile: {
-          firstName: firstName || "",
-          lastName: lastName || "",
+          firstName: firstName || '',
+          lastName: lastName || '',
         },
         ...resume,
         createdAt,

@@ -1,6 +1,6 @@
-import { createNanoEvents } from "nanoevents";
-import React, { createContext } from "react";
-import ModalEvents from "../constants/ModalEvents";
+import { createNanoEvents } from 'nanoevents';
+import React, { createContext } from 'react';
+import ModalEvents from '../constants/ModalEvents';
 
 const emitter = createNanoEvents();
 
