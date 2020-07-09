@@ -19,7 +19,7 @@
   height: 260px;
   @apply rounded absolute w-full bg-black;
   @apply opacity-0 transition-opacity duration-200 ease-in-out;
-  @apply absolute text-gray-500 flex flex-col justify-evenly items-center;
+  @apply absolute text-primary-500 flex flex-col justify-evenly items-center;
 }
 
 .resume > .page:hover {

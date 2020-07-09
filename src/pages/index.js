@@ -49,8 +49,10 @@ const Home = () => {
         </div>
 
         <footer className="my-24">
-          <p className="font-medium text-gray-500">
-            Licensed under <a href="/">MIT</a> | Made with love by{' '}
+          <p className="text-primary-500 opacity-75">
+            Licensed under <a href="/">MIT</a>
+            <br />
+            Made with love by{' '}
             <a href="https://www.amruthpillai.com/">Amruth Pillai</a>
           </p>
         </footer>

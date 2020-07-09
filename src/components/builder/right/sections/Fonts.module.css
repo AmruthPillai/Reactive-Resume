@@ -1,19 +1,15 @@
 .font {
-  @apply px-6 py-6 text-xl font-medium truncate text-center bg-secondary rounded shadow;
-  @apply transition-colors duration-200 ease-in-out;
+  @apply px-6 py-6 text-xl font-medium truncate text-center border border-transparent bg-primary-100 rounded;
 }
 
 .font:focus {
-  @apply outline-none bg-secondary-light;
-  @apply transition-colors duration-200 ease-in-out;
+  @apply outline-none border border-primary-400;
 }
 
 .font:hover {
-  @apply bg-secondary-light;
-  @apply transition-colors duration-200 ease-in-out;
+  @apply border border-primary-400;
 }
 
 .font.selected {
-  @apply outline-none bg-secondary-light;
-  @apply transition-colors duration-200 ease-in-out;
+  @apply outline-none border border-primary-600;
 }

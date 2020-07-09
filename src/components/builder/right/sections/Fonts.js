@@ -1,9 +1,9 @@
 import cx from 'classnames';
 import React, { memo } from 'react';
 import { useDispatch, useSelector } from '../../../../contexts/ResumeContext';
+import fonts from '../../../../data/fonts';
 import { handleKeyUp } from '../../../../utils';
 import Heading from '../../../shared/Heading';
-import fonts from '../../../../data/fonts';
 import styles from './Fonts.module.css';
 
 const Fonts = () => {

@@ -2,8 +2,9 @@ import cx from 'classnames';
 import { isFunction } from 'lodash';
 import React, { memo, useEffect, useState } from 'react';
 import { FaAngleDown } from 'react-icons/fa';
-import { MdClose } from 'react-icons/md';
+import { MdClose, MdOpenInNew } from 'react-icons/md';
 import { v4 as uuidv4 } from 'uuid';
+import { IoIosCopy } from 'react-icons/io';
 import { useDispatch, useSelector } from '../../contexts/ResumeContext';
 import { handleKeyUp } from '../../utils';
 import styles from './Input.module.css';
@@ -17,12 +18,11 @@ const Input = ({
   onBlur,
   options,
   touched,
+  onClick,
   onChange,
   className,
   isRequired,
   placeholder,
-  onDeleteItem,
-  showDeleteItemButton,
   type = 'text',
 }) => {
   const [uuid, setUuid] = useState(null);
@@ -68,12 +68,12 @@ const Input = ({
               placeholder={placeholder}
             />
 
-            {showDeleteItemButton && isFunction(onDeleteItem) && (
+            {isFunction(onClick) && (
               <MdClose
                 size="16px"
                 tabIndex="0"
-                onClick={onDeleteItem}
-                onKeyUp={(e) => handleKeyUp(e, onDeleteItem)}
+                onClick={onClick}
+                onKeyUp={(e) => handleKeyUp(e, onClick)}
                 className="absolute right-0 cursor-pointer opacity-50 hover:opacity-75 mx-4"
               />
             )}
@@ -140,6 +140,21 @@ const Input = ({
               onChange={onChange}
               placeholder={placeholder}
             />
+          </div>
+        )}
+
+        {type === 'action' && (
+          <div className={cx('relative grid items-center', styles.readOnly)}>
+            <input readOnly id={uuid} name={name} type="text" value={value} />
+
+            <div
+              tabIndex="0"
+              role="button"
+              onClick={onClick}
+              onKeyUp={(e) => handleKeyUp(e, onClick)}
+            >
+              <MdOpenInNew size="16px" />
+            </div>
           </div>
         )}
 

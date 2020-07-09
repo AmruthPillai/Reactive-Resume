@@ -1,16 +1,19 @@
 import cx from 'classnames';
-import React, { memo } from 'react';
+import React, { memo, useContext } from 'react';
 import { useDispatch, useSelector } from '../../../../contexts/ResumeContext';
 import templates from '../../../../data/templates';
 import { handleKeyUp } from '../../../../utils';
 import Heading from '../../../shared/Heading';
 import styles from './Templates.module.css';
+import ThemeContext from '../../../../contexts/ThemeContext';
 
 const Templates = () => {
   const dispatch = useDispatch();
   const template = useSelector('metadata.template');
+  const { toggleDarkMode } = useContext(ThemeContext);
 
   const handleClick = (value) => {
+    toggleDarkMode();
     dispatch({
       type: 'on_input',
       payload: {

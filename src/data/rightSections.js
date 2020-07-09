@@ -1,8 +1,9 @@
 import {
   MdColorLens,
   MdDashboard,
-  MdStyle,
   MdFontDownload,
+  MdImportExport,
+  MdStyle,
 } from 'react-icons/md';
 
 export default [
@@ -25,5 +26,10 @@ export default [
     id: 'fonts',
     name: 'Fonts',
     icon: MdFontDownload,
+  },
+  {
+    id: 'actions',
+    name: 'Actions',
+    icon: MdImportExport,
   },
 ];

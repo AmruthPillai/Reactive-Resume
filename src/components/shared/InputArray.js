@@ -21,8 +21,7 @@ const InputArray = ({ formik, schema, helpers, label, path, placeholder }) => {
               {({ field, meta }) => (
                 <Input
                   className="my-1"
-                  showDeleteItemButton
-                  onDeleteItem={() => helpers.remove(i)}
+                  onClick={() => helpers.remove(i)}
                   {...field}
                   {...meta}
                 />

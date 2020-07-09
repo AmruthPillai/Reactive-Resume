@@ -12,7 +12,7 @@
 .resume > .page {
   max-width: 184px;
   height: 260px;
-  @apply rounded absolute w-full bg-secondary-light;
+  @apply rounded absolute w-full bg-primary-100 text-primary-400;
   @apply transition-opacity duration-200 ease-in-out;
   @apply cursor-pointer absolute flex justify-center items-center;
 }

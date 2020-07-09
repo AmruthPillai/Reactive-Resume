@@ -5,25 +5,25 @@
 .container label input,
 .container label textarea,
 .container label select {
-  @apply py-3 px-4 rounded bg-secondary text-primary border border-secondary appearance-none;
+  @apply py-3 px-4 rounded text-primary-900 bg-primary-200 border border-transparent appearance-none;
 }
 
 .container label input::placeholder,
 .container label textarea::placeholder,
 .container label select::placeholder {
-  @apply text-primary opacity-50;
+  @apply opacity-50;
 }
 
 .container label input:hover,
 .container label textarea:hover,
 .container label select:hover {
-  @apply outline-none border-secondary-dark;
+  @apply outline-none border-primary-400;
 }
 
 .container label input:focus,
 .container label textarea:focus,
 .container label select:focus {
-  @apply outline-none border-primary;
+  @apply outline-none border-primary-600;
 }
 
 .container label > p {
@@ -32,9 +32,30 @@
 
 .circle {
   left: 14px;
-  @apply absolute bg-white rounded-full w-6 h-6;
+  @apply absolute bg-primary-900 rounded-full w-6 h-6;
 }
 
 div.circle + input {
   padding-left: 44px;
+}
+
+.read-only input:hover {
+  cursor: default;
+  border-color: transparent !important;
+}
+
+.read-only input:focus {
+  border-color: transparent !important;
+}
+
+.read-only div {
+  @apply absolute rounded-r top-0 right-0 bottom-0 w-20 flex justify-center items-center bg-primary-50;
+}
+
+.read-only div:hover {
+  @apply bg-primary-100;
+}
+
+.read-only div:focus {
+  @apply outline-none;
 }

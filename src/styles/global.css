@@ -1,12 +1,9 @@
-:root {
-  @apply transition-colors duration-200 ease-in-out;
-}
-
 html,
 body {
   font-size: 12px;
   font-family: "Montserrat", sans-serif;
-  @apply text-primary bg-inverse;
+  @apply text-primary-900 bg-primary-50;
+  @apply transition-colors duration-200 ease-in-out;
 }
 
 p {
@@ -22,7 +19,7 @@ a:hover {
 }
 
 hr {
-  @apply w-full border-secondary h-1;
+  @apply w-full border-primary-200 h-1;
 }
 
 section {
@@ -34,15 +31,7 @@ label {
 }
 
 label > span:first-child {
-  @apply mb-1 text-secondary-dark font-semibold tracking-wide text-xs uppercase;
-}
-
-#artboard {
-  color: #444;
-}
-
-#artboard hr {
-  border-color: #eee;
+  @apply mb-1 text-primary-500 font-semibold tracking-wide text-xs uppercase;
 }
 
 .MuiTooltip-tooltip {

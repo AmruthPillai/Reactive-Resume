@@ -7,6 +7,7 @@ import Colors from './sections/Colors';
 import Fonts from './sections/Fonts';
 import Layout from './sections/Layout';
 import Templates from './sections/Templates';
+import Actions from './sections/Actions';
 
 const getComponent = (id) => {
   switch (id) {
@@ -18,6 +19,8 @@ const getComponent = (id) => {
       return Colors;
     case 'fonts':
       return Fonts;
+    case 'actions':
+      return Actions;
     default:
       throw new Error();
   }

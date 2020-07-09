@@ -14,7 +14,7 @@ const LeftNavbar = () => (
 
     <hr className="my-6" />
 
-    <div className="grid grid-cols-1 gap-4 text-secondary-dark">
+    <div className="grid grid-cols-1 gap-4 text-primary-400">
       {sections.map((x) => (
         <SectionIcon
           key={x.id}

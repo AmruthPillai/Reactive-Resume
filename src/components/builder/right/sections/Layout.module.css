@@ -1,7 +1,7 @@
 .droppable {
-  @apply p-6 bg-secondary-light col-span-1 rounded;
+  @apply p-6 bg-primary-100 col-span-1 rounded;
 }
 
 .draggable {
-  @apply px-4 py-2 capitalize font-medium rounded bg-secondary;
+  @apply px-4 py-2 capitalize font-medium rounded bg-primary-200;
 }

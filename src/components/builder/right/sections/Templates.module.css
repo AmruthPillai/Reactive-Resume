@@ -8,12 +8,12 @@
 
 .template img {
   height: 240px;
-  @apply w-full object-cover border-2 border-transparent rounded;
+  @apply w-full object-cover border border-transparent rounded;
   @apply transition-opacity duration-200 ease-in-out;
 }
 
 .template.selected img {
-  @apply border-2 border-primary;
+  @apply border-primary-600;
 }
 
 .template:hover img {

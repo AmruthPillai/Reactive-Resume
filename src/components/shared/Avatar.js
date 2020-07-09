@@ -11,9 +11,9 @@ const Avatar = ({ className }) => {
 
   return (
     <img
-      className={cx(styles.container, className)}
       src={photoURL}
       alt={user.displayName}
+      className={cx(styles.container, className)}
     />
   );
 };

@@ -22,7 +22,7 @@ const Hero = () => {
 
       <div className="ml-12">
         <h1 className="text-5xl font-bold">Reactive Resume</h1>
-        <h2 className="mt-1 text-3xl text-gray-500">
+        <h2 className="mt-1 text-3xl text-primary-500">
           A free and open-source resume builder.
         </h2>
 
