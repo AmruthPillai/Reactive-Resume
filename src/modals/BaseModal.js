@@ -5,7 +5,7 @@ import { isFunction } from 'lodash';
 import React, { forwardRef, useImperativeHandle } from 'react';
 import { MdClose } from 'react-icons/md';
 import Button from '../components/shared/Button';
-import { handleKeyDown } from '../utils';
+import { handleKeyUp } from '../utils';
 import styles from './BaseModal.module.css';
 
 const BaseModal = forwardRef(
@@ -38,7 +38,7 @@ const BaseModal = forwardRef(
                 size="18"
                 tabIndex="0"
                 onClick={handleClose}
-                onKeyDown={(e) => handleKeyDown(e, handleClose)}
+                onKeyUp={(e) => handleKeyUp(e, handleClose)}
               />
             </div>
 

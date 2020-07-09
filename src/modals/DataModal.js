@@ -41,7 +41,7 @@ const DataModal = ({
   }, [data]);
 
   const onSubmit = async (newData) => {
-    if (isEmpty(await validateForm(newData))) {
+    if (isEmpty(await validateForm())) {
       if (isEditMode) {
         if (data !== newData) {
           isFunction(onEdit)

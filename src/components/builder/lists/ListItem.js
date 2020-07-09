@@ -64,7 +64,7 @@ const ListItem = ({
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.listItem}>
       <div className="grid">
         <span className="font-medium truncate">{title}</span>
 

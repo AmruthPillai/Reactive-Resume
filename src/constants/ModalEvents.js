@@ -7,6 +7,9 @@ const ModalEvents = {
   AWARD_MODAL: 'award_modal',
   CERTIFICATION_MODAL: 'certification_modal',
   SKILL_MODAL: 'skill_modal',
+  HOBBY_MODAL: 'hobby_modal',
+  LANGUAGE_MODAL: 'language_modal',
+  REFERENCE_MODAL: 'reference_modal',
 };
 
 export default ModalEvents;

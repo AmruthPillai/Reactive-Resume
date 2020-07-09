@@ -1,12 +1,20 @@
 import { AiFillSafetyCertificate, AiOutlineTwitter } from 'react-icons/ai';
-import { FaAward, FaTools } from 'react-icons/fa';
-import { IoMdBriefcase, IoMdDocument } from 'react-icons/io';
-import { MdPerson, MdSchool } from 'react-icons/md';
+import { BsTools } from 'react-icons/bs';
+import { FaAward, FaUserFriends } from 'react-icons/fa';
+import {
+  IoLogoGameControllerB,
+  IoMdBriefcase,
+  IoMdDocument,
+} from 'react-icons/io';
+import { MdPerson, MdSchool, MdTranslate } from 'react-icons/md';
 import Awards from '../components/builder/sections/Awards';
 import Certifications from '../components/builder/sections/Certifications';
 import Education from '../components/builder/sections/Education';
+import Hobbies from '../components/builder/sections/Hobbies';
+import Languages from '../components/builder/sections/Languages';
 import Objective from '../components/builder/sections/Objective';
 import Profile from '../components/builder/sections/Profile';
+import References from '../components/builder/sections/References';
 import Skills from '../components/builder/sections/Skills';
 import Social from '../components/builder/sections/Social';
 import Work from '../components/builder/sections/Work';
@@ -63,8 +71,29 @@ export default [
   {
     id: 'skills',
     name: 'Skills',
-    icon: FaTools,
+    icon: BsTools,
     component: Skills,
     event: ModalEvents.SKILL_MODAL,
+  },
+  {
+    id: 'hobbies',
+    name: 'Hobbies',
+    icon: IoLogoGameControllerB,
+    component: Hobbies,
+    event: ModalEvents.HOBBY_MODAL,
+  },
+  {
+    id: 'languages',
+    name: 'Languages',
+    icon: MdTranslate,
+    component: Languages,
+    event: ModalEvents.LANGUAGE_MODAL,
+  },
+  {
+    id: 'references',
+    name: 'References',
+    icon: FaUserFriends,
+    component: References,
+    event: ModalEvents.REFERENCE_MODAL,
   },
 ];

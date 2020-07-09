@@ -9,7 +9,13 @@ const Work = ({ id, name, event }) => {
     <section>
       <Heading>{name}</Heading>
 
-      <List path={path} event={event} titlePath="company" textPath="summary" />
+      <List
+        hasDate
+        path={path}
+        event={event}
+        titlePath="company"
+        textPath="summary"
+      />
     </section>
   );
 };

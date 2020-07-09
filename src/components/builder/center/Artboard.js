@@ -6,8 +6,8 @@ import Onyx from '../../../templates/Onyx';
 import styles from './Artboard.module.css';
 
 const Artboard = () => {
-  const { blocks, colors } = useContext(TemplateContext);
-  const state = useSelector((s) => s);
+  const { selected, blocks, colors } = useContext(TemplateContext);
+  const state = useSelector((store) => store);
   const { id, name } = state;
 
   return (
@@ -18,7 +18,9 @@ const Artboard = () => {
       </Helmet>
 
       <div id="artboard" className={styles.container}>
-        <Onyx data={state} layout={blocks} colors={colors} />
+        {selected === 'Onyx' && (
+          <Onyx data={state} layout={blocks} colors={colors} />
+        )}
       </div>
     </div>
   );

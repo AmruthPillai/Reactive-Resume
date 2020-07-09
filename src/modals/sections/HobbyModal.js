@@ -6,27 +6,15 @@ import ModalEvents from '../../constants/ModalEvents';
 import { getFieldProps } from '../../utils';
 import DataModal from '../DataModal';
 
-const SKILL_LEVELS = [
-  'Fundamental Awareness',
-  'Novice',
-  'Intermediate',
-  'Advanced',
-  'Expert',
-];
-
 const initialValues = {
   name: '',
-  level: SKILL_LEVELS[0],
 };
 
 const schema = Yup.object().shape({
   name: Yup.string().required('This is a required field.'),
-  level: Yup.string()
-    .oneOf(SKILL_LEVELS, 'Must be one of the options above.')
-    .required('This is a required field.'),
 });
 
-const SkillModal = () => {
+const HobbyModal = () => {
   return (
     <Formik
       validateOnBlur
@@ -35,22 +23,16 @@ const SkillModal = () => {
     >
       {(formik) => (
         <DataModal
-          name="Skill"
-          path="skills.items"
-          event={ModalEvents.SKILL_MODAL}
+          name="Hobby"
+          path="hobbies.items"
+          event={ModalEvents.HOBBY_MODAL}
         >
           <div className="grid grid-cols-2 gap-8">
             <Input
               label="Name"
-              placeholder="ReactJS"
+              placeholder="Fishing"
+              className="col-span-2"
               {...getFieldProps(formik, schema, 'name')}
-            />
-
-            <Input
-              label="Level"
-              type="dropdown"
-              options={SKILL_LEVELS}
-              {...getFieldProps(formik, schema, 'level')}
             />
           </div>
         </DataModal>
@@ -59,4 +41,4 @@ const SkillModal = () => {
   );
 };
 
-export default SkillModal;
+export default HobbyModal;

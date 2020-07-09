@@ -16,7 +16,7 @@ const LeftNavbar = () => (
 
     <div className="grid grid-cols-1 gap-8">
       {sections.map((x) => (
-        <SectionIcon key={x.id} section={x} />
+        <SectionIcon key={x.id} section={x} containerId="LeftSidebar" />
       ))}
     </div>
 

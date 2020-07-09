@@ -2,7 +2,7 @@ import React from 'react';
 import Heading from '../../shared/Heading';
 import List from '../lists/List';
 
-const Education = ({ id, name, event }) => {
+const References = ({ id, name, event }) => {
   const path = `${id}.items`;
 
   return (
@@ -10,14 +10,14 @@ const Education = ({ id, name, event }) => {
       <Heading>{name}</Heading>
 
       <List
-        hasDate
         path={path}
         event={event}
-        titlePath="institution"
-        textPath="field"
+        titlePath="name"
+        subtitlePath="position"
+        textPath="summary"
       />
     </section>
   );
 };
 
-export default Education;
+export default References;

@@ -1,17 +1,17 @@
 import { Formik } from 'formik';
-import { get } from 'lodash';
 import React, { useContext } from 'react';
 import * as Yup from 'yup';
 import Input from '../components/shared/Input';
 import ModalEvents from '../constants/ModalEvents';
 import DatabaseContext from '../contexts/DatabaseContext';
+import { getFieldProps } from '../utils';
 import DataModal from './DataModal';
 
 const initialValues = {
   name: '',
 };
 
-const validationSchema = Yup.object().shape({
+const schema = Yup.object().shape({
   name: Yup.string()
     .min(5, 'Please enter at least 5 characters.')
     .required('This is a required field.'),
@@ -20,18 +20,11 @@ const validationSchema = Yup.object().shape({
 const ResumeModal = () => {
   const { createResume, updateResume } = useContext(DatabaseContext);
 
-  const getFieldProps = (formik, name) => ({
-    touched: get(formik, `touched.${name}`, false),
-    error: get(formik, `errors.${name}`, ''),
-    isRequired: get(validationSchema, `fields.${name}._exclusive.required`),
-    ...formik.getFieldProps(name),
-  });
-
   return (
     <Formik
       validateOnBlur
       initialValues={initialValues}
-      validationSchema={validationSchema}
+      validationSchema={schema}
     >
       {(formik) => (
         <DataModal
@@ -48,7 +41,7 @@ const ResumeModal = () => {
             label="Name"
             className="mb-8"
             placeholder="Full Stack Web Developer"
-            {...getFieldProps(formik, 'name')}
+            {...getFieldProps(formik, schema, 'name')}
           />
 
           <p>

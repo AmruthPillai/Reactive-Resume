@@ -1,9 +1,9 @@
 import { Formik } from 'formik';
-import { get } from 'lodash';
 import React from 'react';
 import * as Yup from 'yup';
 import Input from '../../components/shared/Input';
 import ModalEvents from '../../constants/ModalEvents';
+import { getFieldProps } from '../../utils';
 import DataModal from '../DataModal';
 
 const initialValues = {
@@ -12,7 +12,7 @@ const initialValues = {
   username: '',
 };
 
-const validationSchema = Yup.object().shape({
+const schema = Yup.object().shape({
   network: Yup.string()
     .min(5, 'Please enter at least 5 characters.')
     .required('This is a required field.'),
@@ -24,18 +24,11 @@ const validationSchema = Yup.object().shape({
 });
 
 const SocialModal = () => {
-  const getFieldProps = (formik, name) => ({
-    touched: get(formik, `touched.${name}`, false),
-    error: get(formik, `errors.${name}`, ''),
-    isRequired: get(validationSchema, `fields.${name}._exclusive.required`),
-    ...formik.getFieldProps(name),
-  });
-
   return (
     <Formik
       validateOnBlur
       initialValues={initialValues}
-      validationSchema={validationSchema}
+      validationSchema={schema}
     >
       {(formik) => (
         <DataModal
@@ -47,20 +40,20 @@ const SocialModal = () => {
             <Input
               label="Network"
               placeholder="Twitter"
-              {...getFieldProps(formik, 'network')}
+              {...getFieldProps(formik, schema, 'network')}
             />
 
             <Input
               label="Username"
               placeholder="KingOKings"
-              {...getFieldProps(formik, 'username')}
+              {...getFieldProps(formik, schema, 'username')}
             />
 
             <Input
               label="URL"
               className="col-span-2"
               placeholder="https://twitter.com/KingOKings"
-              {...getFieldProps(formik, 'url')}
+              {...getFieldProps(formik, schema, 'url')}
             />
           </div>
         </DataModal>

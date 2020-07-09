@@ -3,7 +3,7 @@ import React, { createContext, useState } from 'react';
 import leftSections from '../data/leftSections';
 
 const defaultState = {
-  selected: 'Pikachu',
+  selected: 'Onyx',
   setSelected: () => {},
   colors: {
     textColor: '#212121',

@@ -1,11 +1,10 @@
 import { Field, FieldArray, Formik } from 'formik';
-import { get } from 'lodash';
 import React from 'react';
 import { MdAdd } from 'react-icons/md';
 import * as Yup from 'yup';
 import Input from '../../components/shared/Input';
 import ModalEvents from '../../constants/ModalEvents';
-import { handleKeyDown } from '../../utils';
+import { getFieldProps, handleKeyUp } from '../../utils';
 import DataModal from '../DataModal';
 
 const initialValues = {
@@ -19,7 +18,7 @@ const initialValues = {
   temp: '',
 };
 
-const validationSchema = Yup.object().shape({
+const schema = Yup.object().shape({
   institution: Yup.string().required('This is a required field.'),
   field: Yup.string().required('This is a required field.'),
   degree: Yup.string(),
@@ -27,27 +26,20 @@ const validationSchema = Yup.object().shape({
   startDate: Yup.date().required('This is a required field.'),
   endDate: Yup.date().when(
     'startDate',
-    (startDate, schema) =>
+    (startDate, yupSchema) =>
       startDate &&
-      schema.min(startDate, 'End Date must be later than Start Date'),
+      yupSchema.min(startDate, 'End Date must be later than Start Date'),
   ),
   courses: Yup.array().of(Yup.string().required('This is a required field.')),
   temp: Yup.string().ensure(),
 });
 
 const EducationModal = () => {
-  const getFieldProps = (formik, name) => ({
-    touched: get(formik, `touched.${name}`, false),
-    error: get(formik, `errors.${name}`, ''),
-    isRequired: get(validationSchema, `fields.${name}._exclusive.required`),
-    ...formik.getFieldProps(name),
-  });
-
   return (
     <Formik
       validateOnBlur
       initialValues={initialValues}
-      validationSchema={validationSchema}
+      validationSchema={schema}
     >
       {(formik) => (
         <DataModal
@@ -60,40 +52,40 @@ const EducationModal = () => {
               label="Institution"
               className="col-span-2"
               placeholder="Dayananda Sagar College of Engineering"
-              {...getFieldProps(formik, 'institution')}
+              {...getFieldProps(formik, schema, 'institution')}
             />
 
             <Input
               label="Field of Study"
               className="col-span-2"
               placeholder="Computer Science &amp; Engineering"
-              {...getFieldProps(formik, 'field')}
+              {...getFieldProps(formik, schema, 'field')}
             />
 
             <Input
               label="Degree Type"
               placeholder="Bachelor's Degree"
-              {...getFieldProps(formik, 'degree')}
+              {...getFieldProps(formik, schema, 'degree')}
             />
 
             <Input
               label="GPA"
               placeholder="8.8"
-              {...getFieldProps(formik, 'gpa')}
+              {...getFieldProps(formik, schema, 'gpa')}
             />
 
             <Input
               type="date"
               label="Start Date"
               placeholder="6th August 208"
-              {...getFieldProps(formik, 'startDate')}
+              {...getFieldProps(formik, schema, 'startDate')}
             />
 
             <Input
               type="date"
               label="End Date"
               placeholder="6th August 208"
-              {...getFieldProps(formik, 'endDate')}
+              {...getFieldProps(formik, schema, 'endDate')}
             />
 
             <FieldArray
@@ -127,13 +119,13 @@ const EducationModal = () => {
                       <div className="flex items-center">
                         <Input
                           placeholder="Algorithms &amp; Data Structures"
-                          {...getFieldProps(formik, 'temp')}
+                          {...getFieldProps(formik, schema, 'temp')}
                         />
                         <MdAdd
                           size="18px"
                           tabIndex="0"
                           className="mx-4 cursor-pointer opacity-50 hover:opacity-75"
-                          onKeyDown={(e) => handleKeyDown(e, handleClickAdd)}
+                          onKeyUp={(e) => handleKeyUp(e, handleClickAdd)}
                           onClick={handleClickAdd}
                         />
                       </div>

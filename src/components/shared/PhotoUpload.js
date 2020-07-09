@@ -1,7 +1,7 @@
 import React, { useContext, useRef } from 'react';
 import { MdFileUpload } from 'react-icons/md';
 import StorageContext from '../../contexts/StorageContext';
-import { handleKeyDown } from '../../utils';
+import { handleKeyUp } from '../../utils';
 import Input from './Input';
 import styles from './PhotoUpload.module.css';
 
@@ -25,7 +25,7 @@ const PhotoUpload = () => {
         tabIndex="0"
         className={styles.circle}
         onClick={handleIconClick}
-        onKeyDown={(e) => handleKeyDown(e, handleIconClick)}
+        onKeyUp={(e) => handleKeyUp(e, handleIconClick)}
       >
         <MdFileUpload size="22px" />
         <input

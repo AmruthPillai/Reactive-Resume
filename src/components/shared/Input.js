@@ -1,10 +1,11 @@
 import cx from 'classnames';
 import { get, isFunction } from 'lodash';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { FaAngleDown } from 'react-icons/fa';
 import { MdClose } from 'react-icons/md';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch, useSelector } from '../../contexts/ResumeContext';
-import { handleKeyDown } from '../../utils';
+import { handleKeyUp } from '../../utils';
 import styles from './Input.module.css';
 
 const Input = ({
@@ -14,8 +15,8 @@ const Input = ({
   error,
   value,
   onBlur,
+  options,
   touched,
-  checked,
   onChange,
   className,
   isRequired,
@@ -24,11 +25,15 @@ const Input = ({
   showDeleteItemButton,
   type = 'text',
 }) => {
-  const uuid = uuidv4();
+  const [uuid, setUuid] = useState(null);
   const stateValue = useSelector((state) => get(state, path));
   const dispatch = useDispatch();
 
-  value = value || stateValue;
+  useEffect(() => {
+    setUuid(uuidv4());
+  }, []);
+
+  value = isFunction(onChange) ? value : stateValue;
   onChange = isFunction(onChange)
     ? onChange
     : (e) => {
@@ -51,7 +56,7 @@ const Input = ({
           )}
         </span>
 
-        {type === 'text' && (
+        {(type === 'text' || type === 'date') && (
           <div className="relative grid items-center">
             <input
               id={uuid}
@@ -59,7 +64,6 @@ const Input = ({
               type={type}
               value={value}
               onBlur={onBlur}
-              checked={checked}
               onChange={onChange}
               placeholder={placeholder}
             />
@@ -69,7 +73,7 @@ const Input = ({
                 size="16px"
                 tabIndex="0"
                 onClick={onDeleteItem}
-                onKeyDown={(e) => handleKeyDown(e, onDeleteItem)}
+                onKeyUp={(e) => handleKeyUp(e, onDeleteItem)}
                 className="absolute right-0 cursor-pointer opacity-50 hover:opacity-75 mx-4"
               />
             )}
@@ -82,10 +86,8 @@ const Input = ({
               id={uuid}
               rows="4"
               name={name}
-              type={type}
               value={value}
               onBlur={onBlur}
-              checked={checked}
               onChange={onChange}
               placeholder={placeholder}
             />
@@ -101,6 +103,27 @@ const Input = ({
               </a>
               .
             </p>
+          </div>
+        )}
+
+        {type === 'dropdown' && (
+          <div className="relative grid items-center">
+            <select
+              id={uuid}
+              name={name}
+              value={value}
+              onBlur={onBlur}
+              onChange={onChange}
+            >
+              {options.map((x) => (
+                <option key={x}>{x}</option>
+              ))}
+            </select>
+
+            <FaAngleDown
+              size="16px"
+              className="absolute right-0 opacity-50 hover:opacity-75 mx-4"
+            />
           </div>
         )}
 

@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
-import { handleKeyDown } from '../../utils';
+import { handleKeyUp } from '../../utils';
 import styles from './Button.module.css';
 
 const Button = ({ icon, title, onClick, outline, className, isLoading }) => {
@@ -12,7 +12,7 @@ const Button = ({ icon, title, onClick, outline, className, isLoading }) => {
   return (
     <button
       className={classes}
-      onKeyDown={(e) => handleKeyDown(e, onClick)}
+      onKeyUp={(e) => handleKeyUp(e, onClick)}
       onClick={isLoading ? undefined : onClick}
     >
       {icon && <Icon size="14" className="mr-2" />}
