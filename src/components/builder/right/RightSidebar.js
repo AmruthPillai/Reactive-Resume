@@ -4,6 +4,7 @@ import sections from '../../../data/rightSections';
 import RightNavbar from './RightNavbar';
 import styles from './RightSidebar.module.css';
 import Colors from './sections/Colors';
+import Fonts from './sections/Fonts';
 import Layout from './sections/Layout';
 import Templates from './sections/Templates';
 
@@ -15,6 +16,8 @@ const getComponent = (id) => {
       return Layout;
     case 'colors':
       return Colors;
+    case 'fonts':
+      return Fonts;
     default:
       throw new Error();
   }

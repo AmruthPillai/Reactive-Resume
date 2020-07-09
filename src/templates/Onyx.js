@@ -4,12 +4,13 @@ import { MdEmail } from 'react-icons/md';
 
 const Onyx = ({ data }) => {
   const { profile, metadata } = data;
-  const { colors, layout } = metadata;
+  const { font, colors, layout } = metadata;
 
   return (
     <div
       className="p-8 grid grid-cols-10 gap-4 items-center"
       style={{
+        fontFamily: font,
         color: colors.text,
         backgroundColor: colors.background,
       }}

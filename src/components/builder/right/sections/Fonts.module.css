@@ -1,0 +1,19 @@
+.font {
+  @apply px-6 py-6 text-xl font-medium truncate text-center bg-secondary rounded shadow;
+  @apply transition-colors duration-200 ease-in-out;
+}
+
+.font:focus {
+  @apply outline-none bg-secondary-light;
+  @apply transition-colors duration-200 ease-in-out;
+}
+
+.font:hover {
+  @apply bg-secondary-light;
+  @apply transition-colors duration-200 ease-in-out;
+}
+
+.font.selected {
+  @apply outline-none bg-secondary-light;
+  @apply transition-colors duration-200 ease-in-out;
+}
