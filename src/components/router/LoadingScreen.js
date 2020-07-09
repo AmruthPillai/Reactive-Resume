@@ -1,5 +1,5 @@
 import { Fade, Modal } from '@material-ui/core';
-import React from 'react';
+import React, { memo } from 'react';
 import { getRandomTip } from '../../data/tips';
 import Logo from '../shared/Logo';
 
@@ -18,4 +18,4 @@ const LoadingScreen = () => {
   );
 };
 
-export default LoadingScreen;
+export default memo(LoadingScreen);

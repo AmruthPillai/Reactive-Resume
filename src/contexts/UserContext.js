@@ -1,6 +1,6 @@
 import firebase from 'gatsby-plugin-firebase';
 import { pick } from 'lodash';
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, memo, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import useAuthState from '../hooks/useAuthState';
 
@@ -77,4 +77,6 @@ const UserProvider = ({ children }) => {
 
 export default UserContext;
 
-export { UserProvider };
+const memoizedProvider = memo(UserProvider);
+
+export { memoizedProvider as UserProvider };

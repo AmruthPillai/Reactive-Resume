@@ -1,5 +1,5 @@
 import { navigate } from 'gatsby';
-import React, { useContext } from 'react';
+import React, { memo, useContext } from 'react';
 import UserContext from '../../contexts/UserContext';
 import LoadingScreen from './LoadingScreen';
 
@@ -18,4 +18,4 @@ const PrivateRoute = ({ component: Component, location, ...props }) => {
   return <Component user={user} {...props} />;
 };
 
-export default PrivateRoute;
+export default memo(PrivateRoute);

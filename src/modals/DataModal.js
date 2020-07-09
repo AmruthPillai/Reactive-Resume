@@ -1,6 +1,6 @@
 import { useFormikContext } from 'formik';
 import { isEmpty, isFunction } from 'lodash';
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { memo, useContext, useEffect, useRef, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Button from '../components/shared/Button';
 import ModalContext from '../contexts/ModalContext';
@@ -101,4 +101,4 @@ const DataModal = ({
   );
 };
 
-export default DataModal;
+export default memo(DataModal);

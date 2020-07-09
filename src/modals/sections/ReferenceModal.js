@@ -1,5 +1,5 @@
 import { Formik } from 'formik';
-import React from 'react';
+import React, { memo } from 'react';
 import * as Yup from 'yup';
 import Input from '../../components/shared/Input';
 import ModalEvents from '../../constants/ModalEvents';
@@ -73,4 +73,4 @@ const ReferenceModal = () => {
   );
 };
 
-export default ReferenceModal;
+export default memo(ReferenceModal);

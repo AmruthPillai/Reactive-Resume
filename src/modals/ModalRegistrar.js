@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import AuthModal from './AuthModal';
 import ResumeModal from './ResumeModal';
 import AwardModal from './sections/AwardModal';
@@ -29,4 +29,4 @@ const ModalRegistrar = () => {
   );
 };
 
-export default ModalRegistrar;
+export default memo(ModalRegistrar);

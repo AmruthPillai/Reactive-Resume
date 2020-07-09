@@ -1,5 +1,5 @@
 import { get, isEmpty } from 'lodash';
-import React, { useContext } from 'react';
+import React, { memo, useContext } from 'react';
 import { MdAdd } from 'react-icons/md';
 import ModalContext from '../../../contexts/ModalContext';
 import { useSelector } from '../../../contexts/ResumeContext';
@@ -64,4 +64,4 @@ const List = ({
   );
 };
 
-export default List;
+export default memo(List);

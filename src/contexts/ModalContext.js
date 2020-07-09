@@ -1,5 +1,5 @@
 import { createNanoEvents } from 'nanoevents';
-import React, { createContext } from 'react';
+import React, { createContext, memo } from 'react';
 import ModalEvents from '../constants/ModalEvents';
 
 const emitter = createNanoEvents();
@@ -18,4 +18,6 @@ const ModalProvider = ({ children }) => {
 
 export default ModalContext;
 
-export { ModalProvider };
+const memoizedProvider = memo(ModalProvider);
+
+export { memoizedProvider as ModalProvider };

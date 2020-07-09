@@ -1,5 +1,5 @@
 import { Redirect, Router } from '@reach/router';
-import React from 'react';
+import React, { memo } from 'react';
 import PrivateRoute from '../components/router/PrivateRoute';
 import Wrapper from '../components/shared/Wrapper';
 import NotFound from './404';
@@ -16,4 +16,4 @@ const App = () => (
     </Router>
   </Wrapper>
 );
-export default App;
+export default memo(App);

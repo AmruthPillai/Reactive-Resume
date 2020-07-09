@@ -1,5 +1,5 @@
 import { navigate } from 'gatsby';
-import { useEffect } from 'react';
+import { memo, useEffect } from 'react';
 
 const NotFound = () => {
   useEffect(() => {
@@ -9,4 +9,4 @@ const NotFound = () => {
   return null;
 };
 
-export default NotFound;
+export default memo(NotFound);

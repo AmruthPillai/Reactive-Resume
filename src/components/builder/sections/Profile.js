@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Heading from '../../shared/Heading';
 import Input from '../../shared/Input';
 import PhotoUpload from '../../shared/PhotoUpload';
@@ -44,4 +44,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default memo(Profile);

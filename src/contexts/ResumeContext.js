@@ -2,6 +2,7 @@ import arrayMove from 'array-move';
 import { clone, findIndex, get, setWith } from 'lodash';
 import React, {
   createContext,
+  memo,
   useCallback,
   useContext,
   useReducer,
@@ -10,10 +11,10 @@ import DatabaseContext from './DatabaseContext';
 
 const initialState = {};
 
-const ResumeContext = createContext(initialState);
+const ResumeContext = createContext({});
 
 const ResumeProvider = ({ children }) => {
-  const { debouncedUpdate } = useContext(DatabaseContext);
+  const { debouncedUpdateResume } = useContext(DatabaseContext);
 
   const memoizedReducer = useCallback(
     (state, { type, payload }) => {
@@ -31,7 +32,7 @@ const ResumeProvider = ({ children }) => {
             [...items, payload.value],
             clone,
           );
-          debouncedUpdate(newState);
+          debouncedUpdateResume(newState);
           return newState;
 
         case 'on_edit_item':
@@ -44,7 +45,7 @@ const ResumeProvider = ({ children }) => {
             payload.value,
             clone,
           );
-          debouncedUpdate(newState);
+          debouncedUpdateResume(newState);
           return newState;
 
         case 'on_delete_item':
@@ -52,7 +53,7 @@ const ResumeProvider = ({ children }) => {
           index = findIndex(items, ['id', payload.value.id]);
           items.splice(index, 1);
           newState = setWith(clone(state), payload.path, items, clone);
-          debouncedUpdate(newState);
+          debouncedUpdateResume(newState);
           return newState;
 
         case 'on_move_item_up':
@@ -60,7 +61,7 @@ const ResumeProvider = ({ children }) => {
           index = findIndex(items, ['id', payload.value.id]);
           items = arrayMove(items, index, index - 1);
           newState = setWith(clone(state), payload.path, items, clone);
-          debouncedUpdate(newState);
+          debouncedUpdateResume(newState);
           return newState;
 
         case 'on_move_item_down':
@@ -68,12 +69,12 @@ const ResumeProvider = ({ children }) => {
           index = findIndex(items, ['id', payload.value.id]);
           items = arrayMove(items, index, index + 1);
           newState = setWith(clone(state), payload.path, items, clone);
-          debouncedUpdate(newState);
+          debouncedUpdateResume(newState);
           return newState;
 
         case 'on_input':
           newState = setWith(clone(state), payload.path, payload.value, clone);
-          debouncedUpdate(newState);
+          debouncedUpdateResume(newState);
           return newState;
 
         case 'set_data':
@@ -83,7 +84,7 @@ const ResumeProvider = ({ children }) => {
           throw new Error();
       }
     },
-    [debouncedUpdate],
+    [debouncedUpdateResume],
   );
 
   const [state, dispatch] = useReducer(memoizedReducer, initialState);
@@ -107,4 +108,6 @@ const useDispatch = () => {
   return dispatch;
 };
 
-export { ResumeProvider, useSelector, useDispatch };
+const memoizedProvider = memo(ResumeProvider);
+
+export { memoizedProvider as ResumeProvider, useSelector, useDispatch };

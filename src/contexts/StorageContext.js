@@ -1,5 +1,5 @@
 import firebase from 'gatsby-plugin-firebase';
-import React, { createContext, useContext, useRef } from 'react';
+import React, { createContext, memo, useContext, useRef } from 'react';
 import { toast } from 'react-toastify';
 import { isFileImage } from '../utils';
 import { useDispatch, useSelector } from './ResumeContext';
@@ -84,4 +84,6 @@ const StorageProvider = ({ children }) => {
 
 export default StorageContext;
 
-export { StorageProvider };
+const memoizedProvider = memo(StorageProvider);
+
+export { memoizedProvider as StorageProvider };

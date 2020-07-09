@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { FaGlobeAmericas, FaPhone } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
@@ -57,4 +57,4 @@ const Onyx = ({ data, layout, colors }) => {
   );
 };
 
-export default Onyx;
+export default memo(Onyx);

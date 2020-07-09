@@ -1,5 +1,5 @@
 import { Link, navigate } from 'gatsby';
-import React, { useContext } from 'react';
+import React, { memo, useContext } from 'react';
 import UserContext from '../../contexts/UserContext';
 import Avatar from '../shared/Avatar';
 import Logo from '../shared/Logo';
@@ -35,4 +35,4 @@ const TopNavbar = () => {
   );
 };
 
-export default TopNavbar;
+export default memo(TopNavbar);

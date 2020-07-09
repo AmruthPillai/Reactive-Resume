@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react';
+import React, { memo, useContext, useRef } from 'react';
 import { MdFileUpload } from 'react-icons/md';
 import StorageContext from '../../contexts/StorageContext';
 import { handleKeyUp } from '../../utils';
@@ -47,4 +47,4 @@ const PhotoUpload = () => {
   );
 };
 
-export default PhotoUpload;
+export default memo(PhotoUpload);

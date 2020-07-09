@@ -1,7 +1,7 @@
 import cx from 'classnames';
 import { graphql, useStaticQuery } from 'gatsby';
 import GatsbyImage from 'gatsby-image';
-import React from 'react';
+import React, { memo } from 'react';
 import styles from './Logo.module.css';
 
 const Logo = ({ size = '256px', className }) => {
@@ -27,4 +27,4 @@ const Logo = ({ size = '256px', className }) => {
   );
 };
 
-export default Logo;
+export default memo(Logo);

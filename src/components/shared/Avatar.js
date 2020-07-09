@@ -1,6 +1,6 @@
 import cx from 'classnames';
 import { toUrl } from 'gatsby-source-gravatar';
-import React, { useContext, useMemo } from 'react';
+import React, { memo, useContext, useMemo } from 'react';
 import UserContext from '../../contexts/UserContext';
 import styles from './Avatar.module.css';
 
@@ -18,4 +18,4 @@ const Avatar = ({ className }) => {
   );
 };
 
-export default Avatar;
+export default memo(Avatar);

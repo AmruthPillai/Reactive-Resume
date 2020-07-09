@@ -1,11 +1,36 @@
-import React, { useContext } from 'react';
+import React, { memo } from 'react';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
-import TemplateContext from '../../../contexts/TemplateContext';
+import { useDispatch, useSelector } from '../../../contexts/MetadataContext';
+import { move, reorder } from '../../../utils';
 import Heading from '../../shared/Heading';
 import styles from './Layout.module.css';
 
 const Layout = () => {
-  const { blocks, onDragEnd } = useContext(TemplateContext);
+  const blocks = useSelector((state) => state.layout);
+  const dispatch = useDispatch();
+
+  const onDragEnd = (result) => {
+    const { source, destination } = result;
+
+    if (!destination) {
+      return;
+    }
+    const sInd = +source.droppableId;
+    const dInd = +destination.droppableId;
+
+    if (sInd === dInd) {
+      const items = reorder(blocks[sInd], source.index, destination.index);
+      const newState = [...blocks];
+      newState[sInd] = items;
+      dispatch({ type: 'set_layout', payload: newState });
+    } else {
+      const newResult = move(blocks[sInd], blocks[dInd], source, destination);
+      const newState = [...blocks];
+      newState[sInd] = newResult[sInd];
+      newState[dInd] = newResult[dInd];
+      dispatch({ type: 'set_layout', payload: newState });
+    }
+  };
 
   return (
     <section>
@@ -60,4 +85,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default memo(Layout);

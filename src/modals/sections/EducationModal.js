@@ -1,10 +1,10 @@
-import { Field, FieldArray, Formik } from 'formik';
-import React from 'react';
-import { MdAdd } from 'react-icons/md';
+import { FieldArray, Formik } from 'formik';
+import React, { memo } from 'react';
 import * as Yup from 'yup';
 import Input from '../../components/shared/Input';
+import InputArray from '../../components/shared/InputArray';
 import ModalEvents from '../../constants/ModalEvents';
-import { getFieldProps, handleKeyUp } from '../../utils';
+import { getFieldProps } from '../../utils';
 import DataModal from '../DataModal';
 
 const initialValues = {
@@ -90,49 +90,16 @@ const EducationModal = () => {
 
             <FieldArray
               name="courses"
-              render={(arrayHelpers) => {
-                const handleClickAdd = () => {
-                  formik.values.temp && arrayHelpers.push(formik.values.temp);
-                  formik.setFieldValue('temp', '');
-                };
-
-                return (
-                  <div className="col-span-2">
-                    <label>
-                      <span>Courses</span>
-
-                      {formik.values.courses &&
-                        formik.values.courses.map((x, i) => (
-                          <Field key={x} name={`courses.${i}`}>
-                            {({ field, meta }) => (
-                              <Input
-                                className="my-1"
-                                showDeleteItemButton
-                                onDeleteItem={() => arrayHelpers.remove(i)}
-                                {...field}
-                                {...meta}
-                              />
-                            )}
-                          </Field>
-                        ))}
-
-                      <div className="flex items-center">
-                        <Input
-                          placeholder="Algorithms &amp; Data Structures"
-                          {...getFieldProps(formik, schema, 'temp')}
-                        />
-                        <MdAdd
-                          size="18px"
-                          tabIndex="0"
-                          className="mx-4 cursor-pointer opacity-50 hover:opacity-75"
-                          onKeyUp={(e) => handleKeyUp(e, handleClickAdd)}
-                          onClick={handleClickAdd}
-                        />
-                      </div>
-                    </label>
-                  </div>
-                );
-              }}
+              render={(helpers) => (
+                <InputArray
+                  formik={formik}
+                  schema={schema}
+                  helpers={helpers}
+                  label="Courses"
+                  path="courses"
+                  placeholder="Data Structures &amp; Algortihms"
+                />
+              )}
             />
           </div>
         </DataModal>
@@ -141,4 +108,4 @@ const EducationModal = () => {
   );
 };
 
-export default EducationModal;
+export default memo(EducationModal);

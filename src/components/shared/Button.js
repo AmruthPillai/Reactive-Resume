@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { memo } from 'react';
 import { handleKeyUp } from '../../utils';
 import styles from './Button.module.css';
 
@@ -21,4 +21,4 @@ const Button = ({ icon, title, onClick, outline, className, isLoading }) => {
   );
 };
 
-export default Button;
+export default memo(Button);

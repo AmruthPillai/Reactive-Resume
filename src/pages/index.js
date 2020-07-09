@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Helmet } from 'react-helmet';
 import Hero from '../components/landing/Hero';
 import Wrapper from '../components/shared/Wrapper';
@@ -68,4 +68,4 @@ const Feature = ({ title, children }) => {
   );
 };
 
-export default Home;
+export default memo(Home);

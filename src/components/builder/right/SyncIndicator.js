@@ -1,5 +1,5 @@
 import cx from 'classnames';
-import React, { useContext } from 'react';
+import React, { memo, useContext } from 'react';
 import { MdSync, MdSyncDisabled } from 'react-icons/md';
 import DatabaseContext from '../../../contexts/DatabaseContext';
 
@@ -17,4 +17,4 @@ const SyncIndicator = () => {
   );
 };
 
-export default SyncIndicator;
+export default memo(SyncIndicator);

@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, memo, useEffect, useState } from 'react';
 
 const COLOR_CONFIG = {
   light: {
@@ -62,4 +62,6 @@ const ThemeProvider = ({ children }) => {
 
 export default ThemeContext;
 
-export { ThemeProvider };
+const memoizedProvider = memo(ThemeProvider);
+
+export { memoizedProvider as ThemeProvider };

@@ -1,7 +1,15 @@
 import firebase from 'gatsby-plugin-firebase';
 import { debounce } from 'lodash';
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, {
+  createContext,
+  memo,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 import UserContext from './UserContext';
+
+const DEBOUNCE_WAIT_TIME = 4000;
 
 const defaultState = {
   isOffline: false,
@@ -10,7 +18,8 @@ const defaultState = {
   getResumes: async () => {},
   createResume: () => {},
   updateResume: async () => {},
-  debouncedUpdate: async () => {},
+  debouncedUpdateResume: async () => {},
+  debouncedUpdateMetadata: async () => {},
   deleteResume: () => {},
 };
 
@@ -77,7 +86,23 @@ const DatabaseProvider = ({ children }) => {
     setUpdating(false);
   };
 
-  const debouncedUpdate = debounce(updateResume, 2000);
+  const debouncedUpdateResume = debounce(updateResume, DEBOUNCE_WAIT_TIME);
+
+  const updateMetadata = async (resumeId, metadata) => {
+    setUpdating(true);
+
+    await firebase
+      .database()
+      .ref(`users/${user.uid}/resumes/${resumeId}`)
+      .update({
+        metadata,
+        updatedAt: firebase.database.ServerValue.TIMESTAMP,
+      });
+
+    setUpdating(false);
+  };
+
+  const debouncedUpdateMetadata = debounce(updateMetadata, DEBOUNCE_WAIT_TIME);
 
   const deleteResume = (id) => {
     firebase.database().ref(`users/${user.uid}/resumes/${id}`).remove();
@@ -91,7 +116,8 @@ const DatabaseProvider = ({ children }) => {
         getResume,
         createResume,
         updateResume,
-        debouncedUpdate,
+        debouncedUpdateResume,
+        debouncedUpdateMetadata,
         deleteResume,
       }}
     >
@@ -102,4 +128,6 @@ const DatabaseProvider = ({ children }) => {
 
 export default DatabaseContext;
 
-export { DatabaseProvider };
+const memoizedProvider = memo(DatabaseProvider);
+
+export { memoizedProvider as DatabaseProvider };

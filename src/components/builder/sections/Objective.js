@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Heading from '../../shared/Heading';
 import Input from '../../shared/Input';
 
@@ -12,4 +12,4 @@ const Objective = () => {
   );
 };
 
-export default Objective;
+export default memo(Objective);

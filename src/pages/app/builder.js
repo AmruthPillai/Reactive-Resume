@@ -1,5 +1,5 @@
 import { navigate } from 'gatsby';
-import React, { useContext, useEffect, useMemo, useState } from 'react';
+import React, { memo, useContext, useEffect, useMemo, useState } from 'react';
 import { toast } from 'react-toastify';
 import Artboard from '../../components/builder/center/Artboard';
 import LeftSidebar from '../../components/builder/left/LeftSidebar';
@@ -51,4 +51,4 @@ const Builder = ({ id }) => {
   }, [loading]);
 };
 
-export default Builder;
+export default memo(Builder);

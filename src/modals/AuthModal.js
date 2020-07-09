@@ -1,5 +1,5 @@
 import { navigate } from 'gatsby';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { memo, useContext, useEffect, useState } from 'react';
 import Button from '../components/shared/Button';
 import ModalContext from '../contexts/ModalContext';
 import UserContext from '../contexts/UserContext';
@@ -63,4 +63,4 @@ const AuthModal = () => {
   );
 };
 
-export default AuthModal;
+export default memo(AuthModal);

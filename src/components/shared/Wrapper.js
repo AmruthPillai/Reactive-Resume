@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { memo, useEffect } from 'react';
 import { Slide, toast } from 'react-toastify';
 import ModalRegistrar from '../../modals/ModalRegistrar';
 
@@ -23,4 +23,4 @@ const Wrapper = ({ children }) => {
   );
 };
 
-export default Wrapper;
+export default memo(Wrapper);

@@ -1,7 +1,7 @@
 import { Menu, MenuItem } from '@material-ui/core';
 import { navigate } from 'gatsby';
 import moment from 'moment';
-import React, { useContext, useState } from 'react';
+import React, { memo, useContext, useState } from 'react';
 import { MdMoreHoriz, MdOpenInNew } from 'react-icons/md';
 import { toast } from 'react-toastify';
 import DatabaseContext from '../../contexts/DatabaseContext';
@@ -78,4 +78,4 @@ const ResumePreview = ({ resume }) => {
   );
 };
 
-export default ResumePreview;
+export default memo(ResumePreview);

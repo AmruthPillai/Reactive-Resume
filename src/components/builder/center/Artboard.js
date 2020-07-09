@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
+import React, { memo } from 'react';
 import { Helmet } from 'react-helmet';
-import { useSelector } from '../../../contexts/ResumeContext';
-import TemplateContext from '../../../contexts/TemplateContext';
+import { useSelector as useMetadataSelector } from '../../../contexts/MetadataContext';
+import { useSelector as useResumeSelector } from '../../../contexts/ResumeContext';
 import Onyx from '../../../templates/Onyx';
 import styles from './Artboard.module.css';
 
 const Artboard = () => {
-  const { selected, blocks, colors } = useContext(TemplateContext);
-  const state = useSelector((store) => store);
+  const { template, layout, colors } = useMetadataSelector((store) => store);
+  const state = useResumeSelector((store) => store);
   const { id, name } = state;
 
   return (
@@ -18,12 +18,12 @@ const Artboard = () => {
       </Helmet>
 
       <div id="artboard" className={styles.container}>
-        {selected === 'Onyx' && (
-          <Onyx data={state} layout={blocks} colors={colors} />
+        {template === 'Onyx' && (
+          <Onyx data={state} layout={layout} colors={colors} />
         )}
       </div>
     </div>
   );
 };
 
-export default Artboard;
+export default memo(Artboard);

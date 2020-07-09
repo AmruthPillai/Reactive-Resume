@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { memo, useContext } from 'react';
 import { MdAdd } from 'react-icons/md';
 import ModalContext from '../../contexts/ModalContext';
 import { handleKeyUp } from '../../utils';
@@ -30,4 +30,4 @@ const CreateResume = () => {
   );
 };
 
-export default CreateResume;
+export default memo(CreateResume);

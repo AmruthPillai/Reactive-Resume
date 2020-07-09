@@ -1,5 +1,5 @@
 import { navigate } from 'gatsby';
-import React, { useContext } from 'react';
+import React, { memo, useContext } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import ModalContext from '../../contexts/ModalContext';
 import ThemeContext from '../../contexts/ThemeContext';
@@ -49,4 +49,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default memo(Hero);

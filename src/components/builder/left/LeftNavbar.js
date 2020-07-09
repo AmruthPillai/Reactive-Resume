@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import React from 'react';
+import React, { memo } from 'react';
 import sections from '../../../data/leftSections';
 import Avatar from '../../shared/Avatar';
 import Logo from '../../shared/Logo';
@@ -26,4 +26,4 @@ const LeftNavbar = () => (
   </div>
 );
 
-export default LeftNavbar;
+export default memo(LeftNavbar);

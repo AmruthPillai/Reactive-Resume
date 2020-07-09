@@ -1,6 +1,6 @@
 import cx from 'classnames';
 import { get, isFunction } from 'lodash';
-import React, { useEffect, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import { FaAngleDown } from 'react-icons/fa';
 import { MdClose } from 'react-icons/md';
 import { v4 as uuidv4 } from 'uuid';
@@ -133,4 +133,4 @@ const Input = ({
   );
 };
 
-export default Input;
+export default memo(Input);

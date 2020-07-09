@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Heading from '../../shared/Heading';
 import List from '../lists/List';
 
@@ -20,4 +20,4 @@ const References = ({ id, name, event }) => {
   );
 };
 
-export default References;
+export default memo(References);

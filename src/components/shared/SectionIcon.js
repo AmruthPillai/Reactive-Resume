@@ -1,5 +1,5 @@
 import { Tooltip } from '@material-ui/core';
-import React from 'react';
+import React, { memo } from 'react';
 import { scroller } from 'react-scroll';
 import { handleKeyUp } from '../../utils';
 
@@ -30,4 +30,4 @@ const SectionIcon = ({ section, containerId, placement = 'right' }) => {
   );
 };
 
-export default SectionIcon;
+export default memo(SectionIcon);

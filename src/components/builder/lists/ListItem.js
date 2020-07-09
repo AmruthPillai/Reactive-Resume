@@ -1,5 +1,5 @@
 import { Menu, MenuItem } from '@material-ui/core';
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { MdMoreVert } from 'react-icons/md';
 import { useDispatch } from '../../../contexts/ResumeContext';
@@ -108,4 +108,4 @@ const ListItem = ({
   );
 };
 
-export default ListItem;
+export default memo(ListItem);
