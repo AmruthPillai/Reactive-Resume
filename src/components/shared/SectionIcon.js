@@ -1,31 +1,28 @@
 import { Tooltip } from '@material-ui/core';
-import React, { memo } from 'react';
-import { scroller } from 'react-scroll';
-import { handleKeyUp } from '../../utils';
+import React, { memo, useEffect } from 'react';
+import { Link, scrollSpy } from 'react-scroll';
 
-const SectionIcon = ({ section, containerId, placement = 'right' }) => {
+const SectionIcon = ({ section, containerId, tooltipPlacement }) => {
   const { id, name, icon: Icon } = section;
 
-  const handleClick = () => {
-    scroller.scrollTo(id, {
-      duration: 500,
-      smooth: true,
-      containerId,
-      offset: -10,
-    });
-  };
+  useEffect(() => {
+    scrollSpy.update();
+  }, []);
 
   return (
-    <Tooltip title={name} placement={placement} arrow>
-      <div
-        tabIndex="0"
-        role="button"
-        className="cursor-pointer focus:outline-none"
-        onKeyUp={(e) => handleKeyUp(e, handleClick)}
-        onClick={handleClick}
+    <Tooltip title={name} placement={tooltipPlacement} arrow>
+      <Link
+        spy
+        smooth
+        to={id}
+        offset={-18}
+        duration={500}
+        containerId={containerId}
+        activeClass="text-primary"
+        className="py-2 cursor-pointer focus:outline-none focus:text-primary hover:text-primary"
       >
-        <Icon className="text-secondary-dark hover:text-primary" size="16px" />
-      </div>
+        <Icon size="16px" />
+      </Link>
     </Tooltip>
   );
 };

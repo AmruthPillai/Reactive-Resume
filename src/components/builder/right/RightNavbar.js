@@ -7,9 +7,14 @@ import SyncIndicator from './SyncIndicator';
 const RightNavbar = () => {
   return (
     <div className={styles.container}>
-      <div className="grid grid-cols-1 gap-8">
+      <div className="grid grid-cols-1 gap-6 text-secondary-dark">
         {sections.map((x) => (
-          <SectionIcon key={x.id} section={x} containerId="RightSidebar" />
+          <SectionIcon
+            key={x.id}
+            section={x}
+            containerId="RightSidebar"
+            tooltipPlacement="left"
+          />
         ))}
       </div>
 

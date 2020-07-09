@@ -14,9 +14,14 @@ const LeftNavbar = () => (
 
     <hr className="my-6" />
 
-    <div className="grid grid-cols-1 gap-8">
+    <div className="grid grid-cols-1 gap-5 text-secondary-dark">
       {sections.map((x) => (
-        <SectionIcon key={x.id} section={x} containerId="LeftSidebar" />
+        <SectionIcon
+          key={x.id}
+          section={x}
+          containerId="LeftSidebar"
+          tooltipPlacement="right"
+        />
       ))}
     </div>
 
