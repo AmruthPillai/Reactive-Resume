@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
-import Heading from '../../shared/Heading';
-import Input from '../../shared/Input';
+import Heading from '../../../shared/Heading';
+import Input from '../../../shared/Input';
 
 const Objective = () => {
   return (

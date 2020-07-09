@@ -6,9 +6,20 @@ import ModalEvents from '../constants/ModalEvents';
 import DatabaseContext from '../contexts/DatabaseContext';
 import { getFieldProps } from '../utils';
 import DataModal from './DataModal';
+import leftSections from '../data/leftSections';
 
 const initialValues = {
   name: '',
+  metadata: {
+    template: 'onyx',
+    font: 'Montserrat',
+    layout: [leftSections.map(({ id, name }) => ({ id, name }))],
+    colors: {
+      text: '#444444',
+      primary: '#5875DB',
+      background: '#FFFFFF',
+    },
+  },
 };
 
 const schema = Yup.object().shape({

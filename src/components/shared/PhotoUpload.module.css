@@ -3,4 +3,14 @@
   height: 60px;
   flex: 0 0 60px;
   @apply flex items-center justify-center cursor-pointer bg-secondary text-secondary-dark rounded-full;
+  @apply transition-opacity duration-200 ease-in-out;
+}
+
+.circle:focus {
+  @apply outline-none;
+}
+
+.circle:hover {
+  @apply opacity-75;
+  @apply transition-opacity duration-200 ease-in-out;
 }

@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
-import Heading from '../../shared/Heading';
-import List from '../lists/List';
+import Heading from '../../../shared/Heading';
+import List from '../../lists/List';
 
-const Awards = ({ id, name, event }) => {
+const Work = ({ id, name, event }) => {
   const path = `${id}.items`;
 
   return (
@@ -10,14 +10,14 @@ const Awards = ({ id, name, event }) => {
       <Heading>{name}</Heading>
 
       <List
+        hasDate
         path={path}
         event={event}
-        titlePath="title"
-        subtitlePath="awarder"
+        titlePath="company"
         textPath="summary"
       />
     </section>
   );
 };
 
-export default memo(Awards);
+export default memo(Work);

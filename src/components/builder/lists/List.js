@@ -20,7 +20,7 @@ const List = ({
   hasDate,
   event,
 }) => {
-  const items = useSelector((state) => get(state, path, []));
+  const items = useSelector(path, []);
   const { emitter } = useContext(ModalContext);
 
   const handleAdd = () => emitter.emit(event);

@@ -82,7 +82,7 @@ const ListItem = ({
           size="18px"
           aria-haspopup="true"
           onClick={handleClick}
-          className="cursor-pointer"
+          className="cursor-context-menu"
         />
         <Menu
           keepMounted

@@ -1,12 +1,12 @@
 import React, { memo } from 'react';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
-import { useDispatch, useSelector } from '../../../contexts/MetadataContext';
-import { move, reorder } from '../../../utils';
-import Heading from '../../shared/Heading';
+import { useDispatch, useSelector } from '../../../../contexts/ResumeContext';
+import { move, reorder } from '../../../../utils';
+import Heading from '../../../shared/Heading';
 import styles from './Layout.module.css';
 
 const Layout = () => {
-  const blocks = useSelector((state) => state.layout);
+  const blocks = useSelector('metadata.layout');
   const dispatch = useDispatch();
 
   const onDragEnd = (result) => {
@@ -22,13 +22,25 @@ const Layout = () => {
       const items = reorder(blocks[sInd], source.index, destination.index);
       const newState = [...blocks];
       newState[sInd] = items;
-      dispatch({ type: 'set_layout', payload: newState });
+      dispatch({
+        type: 'on_input',
+        payload: {
+          path: 'metadata.layout',
+          value: newState,
+        },
+      });
     } else {
       const newResult = move(blocks[sInd], blocks[dInd], source, destination);
       const newState = [...blocks];
       newState[sInd] = newResult[sInd];
       newState[dInd] = newResult[dInd];
-      dispatch({ type: 'set_layout', payload: newState });
+      dispatch({
+        type: 'on_input',
+        payload: {
+          path: 'layout',
+          value: newState,
+        },
+      });
     }
   };
 
@@ -58,8 +70,8 @@ const Layout = () => {
                     {el.map((item, index) => (
                       <Draggable
                         key={item.id}
-                        draggableId={item.id}
                         index={index}
+                        draggableId={item.id}
                       >
                         {(dragProvided) => (
                           <div

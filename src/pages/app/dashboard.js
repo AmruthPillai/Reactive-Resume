@@ -1,5 +1,5 @@
 import firebase from 'gatsby-plugin-firebase';
-import React, { memo, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import CreateResume from '../../components/dashboard/CreateResume';
 import ResumePreview from '../../components/dashboard/ResumePreview';
@@ -25,6 +25,15 @@ const Dashboard = ({ user }) => {
         }
 
         setLoading(false);
+      });
+
+    firebase
+      .database()
+      .ref(ref)
+      .on('child_removed', (snapshot) => {
+        if (snapshot.val()) {
+          setResumes(resumes.filter((x) => x.id === snapshot.val().id));
+        }
       });
 
     return () => {
@@ -58,4 +67,4 @@ const Dashboard = ({ user }) => {
   );
 };
 
-export default memo(Dashboard);
+export default Dashboard;

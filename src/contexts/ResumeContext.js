@@ -1,5 +1,5 @@
 import arrayMove from 'array-move';
-import { clone, findIndex, get, setWith } from 'lodash';
+import { clone, findIndex, get, isUndefined, setWith } from 'lodash';
 import React, {
   createContext,
   memo,
@@ -7,9 +7,22 @@ import React, {
   useContext,
   useReducer,
 } from 'react';
+import leftSections from '../data/leftSections';
 import DatabaseContext from './DatabaseContext';
 
-const initialState = {};
+const initialState = {
+  name: '',
+  metadata: {
+    template: 'onyx',
+    font: 'Montserrat',
+    layout: [leftSections.map(({ id, name }) => ({ id, name }))],
+    colors: {
+      text: '#444444',
+      primary: '#5875DB',
+      background: '#FFFFFF',
+    },
+  },
+};
 
 const ResumeContext = createContext({});
 
@@ -89,18 +102,22 @@ const ResumeProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(memoizedReducer, initialState);
 
-  const selectValue = (callback) => callback(state);
-
   return (
-    <ResumeContext.Provider value={{ selectValue, dispatch }}>
+    <ResumeContext.Provider value={{ state, dispatch }}>
       {children}
     </ResumeContext.Provider>
   );
 };
 
-const useSelector = (callback) => {
-  const { selectValue } = useContext(ResumeContext);
-  return selectValue(callback);
+const useSelector = (path, fallback) => {
+  const { state } = useContext(ResumeContext);
+  let value = get(state, path);
+
+  if (isUndefined(value)) {
+    value = isUndefined(fallback) ? state : fallback;
+  }
+
+  return value;
 };
 
 const useDispatch = () => {

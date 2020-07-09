@@ -2,13 +2,16 @@ import React, { memo } from 'react';
 import { FaGlobeAmericas, FaPhone } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
-const Onyx = ({ data, layout, colors }) => {
+const Onyx = ({ data }) => {
+  const { profile, metadata } = data;
+  const { colors, layout } = metadata;
+
   return (
     <div
       className="p-8 grid grid-cols-10 gap-4 items-center"
       style={{
-        color: colors.textColor,
-        backgroundColor: colors.backgroundColor,
+        color: colors.text,
+        backgroundColor: colors.background,
       }}
     >
       <img
@@ -17,11 +20,8 @@ const Onyx = ({ data, layout, colors }) => {
         alt="Photograph"
       />
       <div className="col-span-5">
-        <h2
-          className="text-4xl font-bold"
-          style={{ color: colors.primaryColor }}
-        >
-          {data.profile.firstName} {data.profile.lastName}
+        <h2 className="text-4xl font-bold" style={{ color: colors.primary }}>
+          {profile.firstName} {profile.lastName}
         </h2>
         <span className="font-medium">Customer Sales Representative</span>
 
@@ -33,17 +33,17 @@ const Onyx = ({ data, layout, colors }) => {
       </div>
       <div className="col-span-3 grid gap-4">
         <div className="flex items-center">
-          <FaPhone size="14" style={{ color: colors.primaryColor }} />
+          <FaPhone size="14" style={{ color: colors.primary }} />
           <span className="ml-4 text-sm font-medium">+1 661-808-4188</span>
         </div>
 
         <div className="flex items-center">
-          <FaGlobeAmericas size="14" style={{ color: colors.primaryColor }} />
+          <FaGlobeAmericas size="14" style={{ color: colors.primary }} />
           <span className="ml-4 text-sm font-medium">nancyontheweb.com</span>
         </div>
 
         <div className="flex items-center">
-          <MdEmail size="14" style={{ color: colors.primaryColor }} />
+          <MdEmail size="14" style={{ color: colors.primary }} />
           <span className="ml-4 text-sm font-medium">
             nancyjack43@gmail.com
           </span>

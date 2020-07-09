@@ -1,5 +1,5 @@
 import cx from 'classnames';
-import { get, isFunction } from 'lodash';
+import { isFunction } from 'lodash';
 import React, { memo, useEffect, useState } from 'react';
 import { FaAngleDown } from 'react-icons/fa';
 import { MdClose } from 'react-icons/md';
@@ -26,14 +26,14 @@ const Input = ({
   type = 'text',
 }) => {
   const [uuid, setUuid] = useState(null);
-  const stateValue = useSelector((state) => get(state, path));
+  const stateValue = useSelector(path, '');
   const dispatch = useDispatch();
 
   useEffect(() => {
     setUuid(uuidv4());
   }, []);
 
-  value = isFunction(onChange) ? value : stateValue;
+  value = path ? stateValue : value;
   onChange = isFunction(onChange)
     ? onChange
     : (e) => {

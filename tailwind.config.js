@@ -5,6 +5,9 @@ module.exports = {
       center: true,
     },
     extend: {
+      cursor: {
+        'context-menu': 'context-menu',
+      },
       colors: {
         primary: 'var(--color-primary)',
         'primary-dark': 'var(--color-primary-dark)',

@@ -1,12 +1,15 @@
 import React, { Fragment, memo } from 'react';
 import { Element } from 'react-scroll';
 import sections from '../../../data/rightSections';
-import Layout from '../sections/Layout';
 import RightNavbar from './RightNavbar';
 import styles from './RightSidebar.module.css';
+import Layout from './sections/Layout';
+import Templates from './sections/Templates';
 
 const getComponent = (id) => {
   switch (id) {
+    case 'templates':
+      return Templates;
     case 'layout':
       return Layout;
     default:

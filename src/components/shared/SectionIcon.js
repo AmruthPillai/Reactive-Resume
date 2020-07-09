@@ -19,9 +19,9 @@ const SectionIcon = ({ section, containerId, tooltipPlacement }) => {
         duration={500}
         containerId={containerId}
         activeClass="text-primary"
-        className="py-2 cursor-pointer focus:outline-none focus:text-primary hover:text-primary"
+        className="py-2 cursor-pointer focus:outline-none focus:text-primary hover:text-primary animate__animated animate__fadeIn"
       >
-        <Icon size="16px" />
+        <Icon size="18px" />
       </Link>
     </Tooltip>
   );

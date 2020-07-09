@@ -16,7 +16,7 @@ const StorageProvider = ({ children }) => {
 
   const { user } = useContext(UserContext);
 
-  const id = useSelector((state) => state.id);
+  const id = useSelector('id');
   const dispatch = useDispatch();
 
   const uploadPhotograph = async (file) => {
