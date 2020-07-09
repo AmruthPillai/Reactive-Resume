@@ -1,4 +1,4 @@
-import { MdDashboard, MdStyle } from 'react-icons/md';
+import { MdColorLens, MdDashboard, MdStyle } from 'react-icons/md';
 
 export default [
   {
@@ -10,5 +10,10 @@ export default [
     id: 'layout',
     name: 'Layout',
     icon: MdDashboard,
+  },
+  {
+    id: 'colors',
+    name: 'Colors',
+    icon: MdColorLens,
   },
 ];

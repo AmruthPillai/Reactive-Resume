@@ -3,6 +3,7 @@ import { Element } from 'react-scroll';
 import sections from '../../../data/rightSections';
 import RightNavbar from './RightNavbar';
 import styles from './RightSidebar.module.css';
+import Colors from './sections/Colors';
 import Layout from './sections/Layout';
 import Templates from './sections/Templates';
 
@@ -12,6 +13,8 @@ const getComponent = (id) => {
       return Templates;
     case 'layout':
       return Layout;
+    case 'colors':
+      return Colors;
     default:
       throw new Error();
   }

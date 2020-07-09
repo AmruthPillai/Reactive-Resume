@@ -127,6 +127,22 @@ const Input = ({
           </div>
         )}
 
+        {type === 'color' && (
+          <div className="relative grid items-center">
+            <div className={styles.circle} style={{ backgroundColor: value }} />
+
+            <input
+              id={uuid}
+              name={name}
+              type="text"
+              value={value}
+              onBlur={onBlur}
+              onChange={onChange}
+              placeholder={placeholder}
+            />
+          </div>
+        )}
+
         {error && touched && <p>{error}</p>}
       </label>
     </div>

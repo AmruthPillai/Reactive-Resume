@@ -1,0 +1,11 @@
+.circle {
+  @apply cursor-pointer rounded-full h-6 w-6;
+}
+
+.circle:focus {
+  @apply outline-none;
+}
+
+.circle:hover {
+  @apply opacity-75;
+}

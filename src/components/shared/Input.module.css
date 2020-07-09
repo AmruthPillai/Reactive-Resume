@@ -29,3 +29,12 @@
 .container label > p {
   @apply mt-1 text-red-600 text-xs;
 }
+
+.circle {
+  left: 14px;
+  @apply absolute bg-white rounded-full w-6 h-6;
+}
+
+div.circle + input {
+  padding-left: 44px;
+}
