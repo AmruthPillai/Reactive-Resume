@@ -31,23 +31,33 @@ module.exports = {
       options: { prefixes: ['/app/*'] },
     },
     {
-      resolve: 'gatsby-plugin-offline',
-      options: {
-        precachePages: ['/', '/app/*'],
-      },
-    },
-    'gatsby-plugin-lodash',
-    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'Reactive Resume',
         short_name: 'RxResume',
-        start_url: '/',
+        description: 'A free and open-source resume builder.',
+        start_url: '/?source=pwa',
+        icon: `assets/images/logo.png`,
         background_color: '#FFFFFF',
         theme_color: '#444444',
         display: 'standalone',
+        shortcuts: [
+          {
+            name: 'Dashboard',
+            short_name: 'Dashboard',
+            description: 'View/manage all your resumes at a glance',
+            url: '/app/dashboard?source=pwa',
+          },
+        ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-offline',
+      options: {
+        precachePages: ['', '/app/*'],
+      },
+    },
+    'gatsby-plugin-lodash',
     'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-source-filesystem',

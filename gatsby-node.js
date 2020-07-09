@@ -1,14 +1,18 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
-exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
+exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
   if (stage === 'build-javascript') {
     const config = getConfig();
-    const index = config.plugins.findIndex((plugin) => {
-      return plugin.constructor.name === 'MiniCssExtractPlugin';
-    });
-    config.plugins[index] = new MiniCssExtractPlugin({
-      ignoreOrder: true,
-    });
+    const miniCssExtractPlugin = config.plugins.find(
+      (plugin) => plugin.constructor.name === 'MiniCssExtractPlugin',
+    );
+    if (miniCssExtractPlugin) {
+      miniCssExtractPlugin.options.ignoreOrder = true;
+    }
     actions.replaceWebpackConfig(config);
+  }
+
+  if (stage === 'build-html') {
+    actions.setWebpackConfig({
+      externals: [/^firebase/],
+    });
   }
 };
