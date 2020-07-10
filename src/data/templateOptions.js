@@ -1,4 +1,4 @@
-const templates = [
+const templateOptions = [
   {
     id: 'onyx',
     name: 'Onyx',
@@ -11,4 +11,4 @@ const templates = [
   },
 ];
 
-export default templates;
+export default templateOptions;

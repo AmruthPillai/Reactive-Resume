@@ -28,21 +28,20 @@ const Hero = () => {
 
         <div className="mt-12 flex">
           {user ? (
-            <Button
-              title="Go to App"
-              onClick={handleGotoApp}
-              isLoading={loading}
-            />
+            <Button onClick={handleGotoApp} isLoading={loading}>
+              Go to App
+            </Button>
           ) : (
             <Button title="Login" onClick={handleLogin} isLoading={loading} />
           )}
           <Button
             outline
             className="ml-8"
-            title="GitHub"
             icon={FaGithub}
             onClick={toggleDarkMode}
-          />
+          >
+            GitHub
+          </Button>
         </div>
       </div>
     </div>

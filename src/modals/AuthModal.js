@@ -39,23 +39,25 @@ const AuthModal = () => {
 
   const loggedInAction = (
     <>
-      <Button outline className="mr-8" title="Logout" onClick={logout} />
-      <Button title="Go to App" onClick={handleGotoApp} />
+      <Button outline className="mr-8" onClick={logout}>
+        Logout
+      </Button>
+      <Button title="" onClick={handleGotoApp}>
+        Go to App
+      </Button>
     </>
   );
 
   const loggedOutAction = (
-    <Button
-      isLoading={isLoading}
-      title="Sign in with Google"
-      onClick={handleSignInWithGoogle}
-    />
+    <Button isLoading={isLoading} onClick={handleSignInWithGoogle}>
+      Sign in with Google
+    </Button>
   );
 
   return (
     <BaseModal
-      state={[open, setOpen]}
       title={getTitle()}
+      state={[open, setOpen]}
       action={user ? loggedInAction : loggedOutAction}
     >
       <p>{getMessage()}</p>

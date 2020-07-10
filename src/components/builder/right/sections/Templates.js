@@ -1,7 +1,7 @@
 import cx from 'classnames';
 import React, { memo, useContext } from 'react';
 import { useDispatch, useSelector } from '../../../../contexts/ResumeContext';
-import templates from '../../../../data/templates';
+import templateOptions from '../../../../data/templateOptions';
 import { handleKeyUp } from '../../../../utils';
 import Heading from '../../../shared/Heading';
 import styles from './Templates.module.css';
@@ -28,7 +28,7 @@ const Templates = () => {
       <Heading>Templates</Heading>
 
       <div className="grid grid-cols-2 gap-8">
-        {templates.map((x) => (
+        {templateOptions.map((x) => (
           <div
             key={x.id}
             tabIndex="0"

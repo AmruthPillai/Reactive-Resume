@@ -9,7 +9,7 @@ import { handleKeyUp } from '../utils';
 import styles from './BaseModal.module.css';
 
 const BaseModal = forwardRef(
-  ({ title, state, children, action, onDestroy }, ref) => {
+  ({ title, state, children, action, hideActions = false, onDestroy }, ref) => {
     const [open, setOpen] = state;
 
     const handleClose = () => {
@@ -44,16 +44,15 @@ const BaseModal = forwardRef(
 
             <div className={styles.body}>{children}</div>
 
-            <div className={styles.actions}>
-              <Button
-                outline
-                title="Cancel"
-                className="mr-8"
-                onClick={handleClose}
-              />
+            {!hideActions && (
+              <div className={styles.actions}>
+                <Button outline className="mr-8" onClick={handleClose}>
+                  Cancel
+                </Button>
 
-              {action}
-            </div>
+                {action}
+              </div>
+            )}
           </div>
         </Fade>
       </Modal>

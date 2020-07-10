@@ -14,18 +14,18 @@ const DEBOUNCE_WAIT_TIME = 4000;
 const defaultState = {
   isOffline: false,
   isUpdating: false,
+  createResume: () => {},
+  deleteResume: () => {},
   getResume: async () => {},
   getResumes: async () => {},
-  createResume: () => {},
   updateResume: async () => {},
   debouncedUpdateResume: async () => {},
-  debouncedUpdateMetadata: async () => {},
-  deleteResume: () => {},
 };
 
 const DatabaseContext = createContext(defaultState);
 
 const DatabaseProvider = ({ children }) => {
+  const [resumeId, setResumeId] = useState(false);
   const [isOffline, setOffline] = useState(false);
   const [isUpdating, setUpdating] = useState(false);
   const { user } = useContext(UserContext);
@@ -38,6 +38,7 @@ const DatabaseProvider = ({ children }) => {
   }, []);
 
   const getResume = async (id) => {
+    setResumeId(id);
     const snapshot = await firebase
       .database()
       .ref(`users/${user.uid}/resumes/${id}`)
@@ -71,13 +72,11 @@ const DatabaseProvider = ({ children }) => {
   };
 
   const updateResume = async (resume) => {
-    const { id } = resume;
-
     setUpdating(true);
 
     await firebase
       .database()
-      .ref(`users/${user.uid}/resumes/${id}`)
+      .ref(`users/${user.uid}/resumes/${resumeId}`)
       .update({
         ...resume,
         updatedAt: firebase.database.ServerValue.TIMESTAMP,
@@ -87,22 +86,6 @@ const DatabaseProvider = ({ children }) => {
   };
 
   const debouncedUpdateResume = debounce(updateResume, DEBOUNCE_WAIT_TIME);
-
-  const updateMetadata = async (resumeId, metadata) => {
-    setUpdating(true);
-
-    await firebase
-      .database()
-      .ref(`users/${user.uid}/resumes/${resumeId}`)
-      .update({
-        metadata,
-        updatedAt: firebase.database.ServerValue.TIMESTAMP,
-      });
-
-    setUpdating(false);
-  };
-
-  const debouncedUpdateMetadata = debounce(updateMetadata, DEBOUNCE_WAIT_TIME);
 
   const deleteResume = (id) => {
     firebase.database().ref(`users/${user.uid}/resumes/${id}`).remove();
@@ -116,9 +99,8 @@ const DatabaseProvider = ({ children }) => {
         getResume,
         createResume,
         updateResume,
-        debouncedUpdateResume,
-        debouncedUpdateMetadata,
         deleteResume,
+        debouncedUpdateResume,
       }}
     >
       {children}

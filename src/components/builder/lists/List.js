@@ -53,13 +53,9 @@ const List = ({
         )}
       </div>
 
-      <Button
-        outline
-        icon={MdAdd}
-        title="Add New"
-        onClick={handleAdd}
-        className="mt-8 ml-auto"
-      />
+      <Button outline icon={MdAdd} onClick={handleAdd} className="mt-8 ml-auto">
+        Add New
+      </Button>
     </div>
   );
 };

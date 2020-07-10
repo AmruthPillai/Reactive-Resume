@@ -1,4 +1,4 @@
-const fonts = [
+const fontOptions = [
   'Lato',
   'Montserrat',
   'Nunito',
@@ -9,4 +9,4 @@ const fonts = [
   'Titillium Web',
 ];
 
-export default fonts;
+export default fontOptions;

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { memo } from 'react';
 import { useDispatch } from '../../../../contexts/ResumeContext';
-import colors from '../../../../data/colors';
+import colorOptions from '../../../../data/colorOptions';
 import { handleKeyUp } from '../../../../utils';
 import Heading from '../../../shared/Heading';
 import Input from '../../../shared/Input';
@@ -25,7 +25,7 @@ const Colors = () => {
       <Heading>Colors</Heading>
 
       <div className="mb-6 grid grid-cols-8 col-gap-2 row-gap-6">
-        {colors.map((color) => (
+        {colorOptions.map((color) => (
           <div
             key={color}
             tabIndex="0"

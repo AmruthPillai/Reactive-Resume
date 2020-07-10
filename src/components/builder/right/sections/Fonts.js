@@ -1,7 +1,7 @@
 import cx from 'classnames';
 import React, { memo } from 'react';
 import { useDispatch, useSelector } from '../../../../contexts/ResumeContext';
-import fonts from '../../../../data/fonts';
+import fontOptions from '../../../../data/fontOptions';
 import { handleKeyUp } from '../../../../utils';
 import Heading from '../../../shared/Heading';
 import styles from './Fonts.module.css';
@@ -25,7 +25,7 @@ const Fonts = () => {
       <Heading>Fonts</Heading>
 
       <div className="grid grid-cols-2 gap-8">
-        {fonts.map((x) => (
+        {fontOptions.map((x) => (
           <div
             key={x}
             tabIndex="0"

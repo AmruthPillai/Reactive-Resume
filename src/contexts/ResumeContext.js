@@ -90,6 +90,11 @@ const ResumeProvider = ({ children }) => {
           debouncedUpdateResume(newState);
           return newState;
 
+        case 'on_import':
+          newState = { id: state.id, ...payload };
+          debouncedUpdateResume(newState);
+          return newState;
+
         case 'set_data':
           return payload;
 

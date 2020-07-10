@@ -4,7 +4,6 @@ import React, { memo, useEffect, useState } from 'react';
 import { FaAngleDown } from 'react-icons/fa';
 import { MdClose, MdOpenInNew } from 'react-icons/md';
 import { v4 as uuidv4 } from 'uuid';
-import { IoIosCopy } from 'react-icons/io';
 import { useDispatch, useSelector } from '../../contexts/ResumeContext';
 import { handleKeyUp } from '../../utils';
 import styles from './Input.module.css';

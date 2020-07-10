@@ -3,7 +3,15 @@ import React, { memo } from 'react';
 import { handleKeyUp } from '../../utils';
 import styles from './Button.module.css';
 
-const Button = ({ icon, title, onClick, outline, className, isLoading }) => {
+const Button = ({
+  icon,
+  onClick,
+  outline,
+  children,
+  className,
+  isLoading,
+  isDelete,
+}) => {
   const Icon = icon;
 
   return (
@@ -12,10 +20,11 @@ const Button = ({ icon, title, onClick, outline, className, isLoading }) => {
       onClick={isLoading ? undefined : onClick}
       className={cx(styles.container, className, {
         [styles.outline]: outline,
+        [styles.delete]: isDelete,
       })}
     >
       {icon && <Icon size="14" className="mr-3" />}
-      {isLoading ? 'Loading...' : title}
+      {isLoading ? 'Loading...' : children}
     </button>
   );
 };

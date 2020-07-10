@@ -10,6 +10,7 @@ const ModalEvents = {
   HOBBY_MODAL: 'hobby_modal',
   LANGUAGE_MODAL: 'language_modal',
   REFERENCE_MODAL: 'reference_modal',
+  IMPORT_MODAL: 'import_modal',
 };
 
 export default ModalEvents;

@@ -79,7 +79,9 @@ const DataModal = ({
     : title.create;
 
   const submitAction = (
-    <Button type="submit" title={getTitle} onClick={() => onSubmit(values)} />
+    <Button type="submit" onClick={() => onSubmit(values)}>
+      {getTitle}
+    </Button>
   );
 
   const onDestroy = () => {
