@@ -28,7 +28,7 @@ const COLOR_CONFIG = {
 };
 
 const defaultState = {
-  darkMode: false,
+  darkMode: true,
   toggleDarkMode: () => {},
 };
 

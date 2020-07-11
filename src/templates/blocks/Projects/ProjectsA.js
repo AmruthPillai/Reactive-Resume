@@ -4,12 +4,16 @@ import ReactMarkdown from 'react-markdown';
 import PageContext from '../../../contexts/PageContext';
 import { safetyCheck } from '../../../utils';
 
-const AwardItem = (x) => (
+const ProjectItem = (x) => (
   <div key={x.id}>
     <div className="flex justify-between items-center">
       <div className="flex flex-col">
         <h6 className="font-semibold">{x.title}</h6>
-        <span className="text-xs">{x.awarder}</span>
+        {x.link && (
+          <a href={x.link} className="text-xs">
+            {x.link}
+          </a>
+        )}
       </div>
       {x.date && (
         <h6 className="text-xs font-medium">
@@ -21,15 +25,15 @@ const AwardItem = (x) => (
   </div>
 );
 
-const AwardsA = () => {
+const ProjectsA = () => {
   const { data, heading: Heading } = useContext(PageContext);
 
-  return safetyCheck(data.awards) ? (
+  return safetyCheck(data.projects) ? (
     <div>
-      <Heading>{data.awards.heading}</Heading>
-      <div className="grid gap-4">{data.awards.items.map(AwardItem)}</div>
+      <Heading>{data.projects.heading}</Heading>
+      <div className="grid gap-4">{data.projects.items.map(ProjectItem)}</div>
     </div>
   ) : null;
 };
 
-export default memo(AwardsA);
+export default memo(ProjectsA);

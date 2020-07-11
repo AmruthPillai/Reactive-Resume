@@ -65,7 +65,7 @@ const Feature = ({ title, children }) => {
   return (
     <div className="mt-16">
       <h3 className="text-3xl">{title}</h3>
-      <p className="mt-6 text-lg">{children}</p>
+      <p className="mt-6 text-lg leading-loose">{children}</p>
     </div>
   );
 };

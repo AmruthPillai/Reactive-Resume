@@ -1,8 +1,7 @@
-import { FieldArray, Formik } from 'formik';
+import { Formik } from 'formik';
 import React, { memo } from 'react';
 import * as Yup from 'yup';
 import Input from '../../components/shared/Input';
-import InputArray from '../../components/shared/InputArray';
 import ModalEvents from '../../constants/ModalEvents';
 import { getFieldProps } from '../../utils';
 import DataModal from '../DataModal';
@@ -14,8 +13,6 @@ const initialValues = {
   startDate: '',
   endDate: '',
   summary: '',
-  highlights: [],
-  temp: '',
 };
 
 const schema = Yup.object().shape({
@@ -30,10 +27,6 @@ const schema = Yup.object().shape({
       yupSchema.min(startDate, 'End Date must be later than Start Date'),
   ),
   summary: Yup.string().min(10, 'Please enter at least 10 characters.'),
-  highlights: Yup.array().of(
-    Yup.string().required('This is a required field.'),
-  ),
-  temp: Yup.string().ensure(),
 });
 
 const WorkModal = () => {
@@ -88,20 +81,6 @@ const WorkModal = () => {
               label="Summary"
               className="col-span-2"
               {...getFieldProps(formik, schema, 'summary')}
-            />
-
-            <FieldArray
-              name="highlights"
-              render={(helpers) => (
-                <InputArray
-                  formik={formik}
-                  schema={schema}
-                  helpers={helpers}
-                  label="Highlights"
-                  path="highlights"
-                  placeholder="Worked passionately in customer service in a high volume restaurant."
-                />
-              )}
             />
           </div>
         </DataModal>

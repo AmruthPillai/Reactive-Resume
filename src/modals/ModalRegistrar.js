@@ -7,6 +7,7 @@ import EducationModal from './sections/EducationModal';
 import HobbyModal from './sections/HobbyModal';
 import ImportModal from './sections/ImportModal';
 import LanguageModal from './sections/LanguageModal';
+import ProjectModal from './sections/ProjectModal';
 import ReferenceModal from './sections/ReferenceModal';
 import SkillModal from './sections/SkillModal';
 import SocialModal from './sections/SocialModal';
@@ -20,6 +21,7 @@ const ModalRegistrar = () => {
       <SocialModal />
       <WorkModal />
       <EducationModal />
+      <ProjectModal />
       <AwardModal />
       <CertificateModal />
       <SkillModal />

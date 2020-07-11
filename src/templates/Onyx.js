@@ -9,6 +9,7 @@ import Heading from './blocks/Heading/HeadingA';
 import HobbiesA from './blocks/Hobbies/HobbiesA';
 import LanguagesA from './blocks/Languages/LanguagesA';
 import ObjectiveA from './blocks/Objective/ObjectiveA';
+import ProjectsA from './blocks/Projects/ProjectsA';
 import ReferencesA from './blocks/References/ReferencesA';
 import SkillsA from './blocks/Skills/SkillsA';
 import WorkA from './blocks/Work/WorkA';
@@ -17,6 +18,7 @@ const Blocks = {
   objective: ObjectiveA,
   work: WorkA,
   education: EducationA,
+  projects: ProjectsA,
   awards: AwardsA,
   certifications: CertificationsA,
   skills: SkillsA,
@@ -35,8 +37,7 @@ const Onyx = ({ data }) => {
   return (
     <PageContext.Provider value={{ data, heading: Heading }}>
       <div
-        id="page"
-        className="p-10"
+        className="p-10 rounded"
         style={{
           fontFamily: data.metadata.font,
           color: data.metadata.colors.text,
@@ -45,12 +46,14 @@ const Onyx = ({ data }) => {
       >
         <div className="grid grid-cols-4 items-center">
           <div className="col-span-3 flex items-center">
-            <img
-              className="rounded object-cover mr-4"
-              src={data.profile.photograph}
-              alt="Resume Photograph"
-              style={{ width: '120px', height: '120px' }}
-            />
+            {data.profile.photograph && (
+              <img
+                className="rounded object-cover mr-4"
+                src={data.profile.photograph}
+                alt="Resume Photograph"
+                style={{ width: '120px', height: '120px' }}
+              />
+            )}
 
             <div>
               <h1
@@ -75,18 +78,18 @@ const Onyx = ({ data }) => {
         </div>
 
         <hr
-          className="my-6 opacity-25"
+          className="my-5 opacity-25"
           style={{ borderColor: data.metadata.colors.text }}
         />
 
-        <div className="grid grid-cols-1 col-gap-8">
+        <div className="grid gap-4">
           {data.metadata.layout[0] &&
             data.metadata.layout[0].map((x) => {
               const Component = Blocks[x];
               return Component && <Component key={x} />;
             })}
 
-          <div className="grid grid-cols-3 col-gap-8">
+          <div className="grid grid-cols-2 gap-4">
             {data.metadata.layout[1] &&
               data.metadata.layout[1].map((x) => {
                 const Component = Blocks[x];

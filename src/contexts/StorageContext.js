@@ -20,9 +20,20 @@ const StorageProvider = ({ children }) => {
   const dispatch = useDispatch();
 
   const uploadPhotograph = async (file) => {
+    if (!file) {
+      return null;
+    }
+
     if (!isFileImage(file)) {
       toast.error(
         "You tried to upload a file that was not an image. That won't look good on your resume. Please try again.",
+      );
+      return null;
+    }
+
+    if (file.size > 2097152) {
+      toast.error(
+        "Your image seems to be bigger than 2 MB. That's way too much. Maybe consider reducing it's size?",
       );
       return null;
     }

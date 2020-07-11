@@ -1,7 +1,6 @@
 import leftSections from './leftSections';
 
 const initialState = {
-  id: '',
   profile: {
     heading: 'Profile',
     photograph: '',
@@ -38,6 +37,11 @@ const initialState = {
     visible: true,
     items: [],
   },
+  projects: {
+    heading: 'Projects',
+    visible: true,
+    items: [],
+  },
   awards: {
     heading: 'Awards',
     visible: true,
@@ -68,7 +72,6 @@ const initialState = {
     visible: true,
     items: [],
   },
-  name: '',
   metadata: {
     template: 'onyx',
     font: 'Montserrat',
@@ -79,7 +82,7 @@ const initialState = {
       background: '#FFFFFF',
     },
   },
-  createdAt: new Date(),
+  public: true,
   updatedAt: new Date(),
 };
 

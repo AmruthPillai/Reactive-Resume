@@ -1,14 +1,12 @@
-import { get } from 'lodash';
+import { get, isEmpty } from 'lodash';
 import moment from 'moment';
 
 export const getModalText = (isEditMode, type) => {
   return isEditMode ? `Edit ${type}` : `Add ${type}`;
 };
 
-export const transformCollectionSnapshot = (snapshot, setData) => {
-  const data = [];
-  snapshot.forEach((doc) => data.push(doc.data()));
-  setData(data);
+export const safetyCheck = (section, path = 'items') => {
+  return !!(section && section.visible === true && !isEmpty(section[path]));
 };
 
 export const handleKeyUp = (event, action) => {

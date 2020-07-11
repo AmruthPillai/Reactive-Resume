@@ -1,34 +1,86 @@
-import React, { memo, useContext } from 'react';
-import { MdImportExport } from 'react-icons/md';
 import { clone } from 'lodash';
-import Heading from '../../../shared/Heading';
-import Button from '../../../shared/Button';
-import styles from './Actions.module.css';
-import Input from '../../../shared/Input';
+import React, { memo, useContext, useState } from 'react';
+import { MdImportExport } from 'react-icons/md';
 import ModalContext from '../../../../contexts/ModalContext';
-import { useSelector } from '../../../../contexts/ResumeContext';
+import { useDispatch, useSelector } from '../../../../contexts/ResumeContext';
+import UserContext from '../../../../contexts/UserContext';
+import Button from '../../../shared/Button';
+import Heading from '../../../shared/Heading';
+import Input from '../../../shared/Input';
+import styles from './Actions.module.css';
 
 const Actions = () => {
+  const [loadDemoText, setLoadDemoText] = useState('Load Demo Data');
+  const [resetText, setResetText] = useState('Reset Everything');
+  const [deleteText, setDeleteText] = useState('Delete Account');
+
   const state = useSelector();
+  const dispatch = useDispatch();
   const { emitter, events } = useContext(ModalContext);
+  const { deleteAccount } = useContext(UserContext);
 
   const handleImport = () => emitter.emit(events.IMPORT_MODAL);
 
   const handleExportToJson = () => {
     const backupObj = clone(state);
     delete backupObj.id;
+    delete backupObj.user;
+    delete backupObj.name;
+    delete backupObj.createdAt;
+    delete backupObj.updatedAt;
     const dataStr = `data:text/json;charset=utf-8,${encodeURIComponent(
       JSON.stringify(backupObj),
     )}`;
     const dlAnchor = document.getElementById('downloadAnchor');
     dlAnchor.setAttribute('href', dataStr);
-    dlAnchor.setAttribute('download', `RxResume_${state.id}.json`);
+    dlAnchor.setAttribute(
+      'download',
+      `RxResume_${state.id}_${Date.now()}.json`,
+    );
     dlAnchor.click();
   };
 
   const getSharableUrl = () => {
-    const shareId = state.id.split('-')[0];
+    const shareId = state.id;
     return `https://rxresu.me/r/${shareId}`;
+  };
+
+  const handleOpenLink = () => {
+    if (typeof window !== `undefined`) {
+      window && window.open(getSharableUrl());
+    }
+  };
+
+  const handleLoadDemo = () => {
+    if (loadDemoText === 'Load Demo Data') {
+      setLoadDemoText('Are you sure?');
+      return;
+    }
+
+    dispatch({ type: 'load_demo_data' });
+    setLoadDemoText('Load Demo Data');
+  };
+
+  const handleReset = () => {
+    if (resetText === 'Reset Everything') {
+      setResetText('Are you sure?');
+      return;
+    }
+
+    setResetText('Reset Everything');
+    dispatch({ type: 'reset_data' });
+  };
+
+  const handleDeleteAccount = () => {
+    if (deleteText === 'Delete Account') {
+      setDeleteText('Are you sure?');
+      return;
+    }
+
+    setDeleteText('Buh bye! :(');
+    setTimeout(() => {
+      deleteAccount();
+    }, 500);
   };
 
   return (
@@ -79,7 +131,11 @@ const Actions = () => {
         </p>
 
         <div>
-          <Input type="action" value={getSharableUrl()} onClick={() => {}} />
+          <Input
+            type="action"
+            value={getSharableUrl()}
+            onClick={handleOpenLink}
+          />
         </div>
       </div>
 
@@ -92,12 +148,25 @@ const Actions = () => {
         </p>
 
         <div className="mt-4 flex">
-          <Button>Load Demo Data</Button>
+          <Button onClick={handleLoadDemo}>{loadDemoText}</Button>
         </div>
       </div>
 
       <div className={styles.container}>
-        <h5>Delete Account</h5>
+        <h5>Reset Everything</h5>
+
+        <p className="leading-loose">
+          Feels like you made too many mistakes? No worries, clear everything
+          with just one click, but be careful if there are no backups.
+        </p>
+
+        <div className="mt-4 flex">
+          <Button onClick={handleReset}>{resetText}</Button>
+        </div>
+      </div>
+
+      <div className={styles.container}>
+        <h5>Danger Zone</h5>
 
         <p className="leading-loose">
           If you would like to delete your account and erase all your resumes,
@@ -106,7 +175,9 @@ const Actions = () => {
         </p>
 
         <div className="mt-4 flex">
-          <Button isDelete>Delete Account</Button>
+          <Button isDelete onClick={handleDeleteAccount}>
+            {deleteText}
+          </Button>
         </div>
       </div>
     </section>

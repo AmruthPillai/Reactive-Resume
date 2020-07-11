@@ -8,6 +8,7 @@ import {
   flatten,
   concat,
   times,
+  merge,
 } from 'lodash';
 import React, {
   createContext,
@@ -18,6 +19,7 @@ import React, {
 } from 'react';
 import DatabaseContext from './DatabaseContext';
 import initialState from '../data/initialState';
+import demoState from '../data/demoState.json';
 
 const ResumeContext = createContext({});
 
@@ -117,7 +119,20 @@ const ResumeProvider = ({ children }) => {
           return newState;
 
         case 'set_data':
-          return payload;
+          newState = payload;
+          debouncedUpdateResume(newState);
+          return newState;
+
+        case 'reset_data':
+          newState = merge(clone(state), initialState);
+          debouncedUpdateResume(newState);
+          return newState;
+
+        case 'load_demo_data':
+          newState = merge(clone(state), demoState);
+          newState.metadata.layout = demoState.metadata.layout;
+          debouncedUpdateResume(newState);
+          return newState;
 
         default:
           throw new Error();

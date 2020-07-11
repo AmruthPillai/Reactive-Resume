@@ -16,3 +16,12 @@ exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
     });
   }
 };
+
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage } = actions;
+
+  if (page.path.match(/^\/r/)) {
+    page.matchPath = '/r/*';
+    createPage(page);
+  }
+};

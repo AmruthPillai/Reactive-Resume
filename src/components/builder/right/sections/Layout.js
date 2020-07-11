@@ -48,7 +48,7 @@ const Layout = () => {
     <section>
       <Heading>Layout</Heading>
 
-      <p>
+      <p className="leading-loose">
         This template supports {blocks.length} blocks. You can re-order or move
         sections by dragging/dropping the section names across lists.
       </p>

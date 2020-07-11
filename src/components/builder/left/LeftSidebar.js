@@ -1,6 +1,8 @@
 import React, { Fragment, memo } from 'react';
 import { Element } from 'react-scroll';
 import sections from '../../../data/leftSections';
+import LeftNavbar from './LeftNavbar';
+import styles from './LeftSidebar.module.css';
 import Awards from './sections/Awards';
 import Certifications from './sections/Certifications';
 import Education from './sections/Education';
@@ -8,12 +10,11 @@ import Hobbies from './sections/Hobbies';
 import Languages from './sections/Languages';
 import Objective from './sections/Objective';
 import Profile from './sections/Profile';
+import Projects from './sections/Projects';
 import References from './sections/References';
 import Skills from './sections/Skills';
 import Social from './sections/Social';
 import Work from './sections/Work';
-import LeftNavbar from './LeftNavbar';
-import styles from './LeftSidebar.module.css';
 
 const getComponent = (id) => {
   switch (id) {
@@ -27,6 +28,8 @@ const getComponent = (id) => {
       return Work;
     case 'education':
       return Education;
+    case 'projects':
+      return Projects;
     case 'awards':
       return Awards;
     case 'certifications':

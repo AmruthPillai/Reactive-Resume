@@ -55,7 +55,7 @@ const ResumeModal = () => {
             {...getFieldProps(formik, schema, 'name')}
           />
 
-          <p>
+          <p className="leading-loose">
             You are going to be creating a new resume from scratch, but first,
             let&apos;s give it a name. This can be the name of the role you want
             to apply for, or if you&apos;re making a resume for a friend, you

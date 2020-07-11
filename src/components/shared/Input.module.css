@@ -1,11 +1,7 @@
-.container {
-  @apply w-full;
-}
-
 .container label input,
 .container label textarea,
 .container label select {
-  @apply py-3 px-4 rounded text-primary-900 bg-primary-200 border border-transparent appearance-none;
+  @apply w-full py-3 px-4 rounded text-primary-900 bg-primary-200 border border-transparent appearance-none;
 }
 
 .container label input::placeholder,

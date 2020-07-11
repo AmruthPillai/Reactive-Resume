@@ -1,6 +1,6 @@
 import { AiFillSafetyCertificate, AiOutlineTwitter } from 'react-icons/ai';
 import { BsTools } from 'react-icons/bs';
-import { FaAward, FaUserFriends } from 'react-icons/fa';
+import { FaAward, FaUserFriends, FaProjectDiagram } from 'react-icons/fa';
 import {
   IoLogoGameControllerB,
   IoMdBriefcase,
@@ -39,6 +39,12 @@ export default [
     name: 'Education',
     icon: MdSchool,
     event: ModalEvents.EDUCATION_MODAL,
+  },
+  {
+    id: 'projects',
+    name: 'Projects',
+    icon: FaProjectDiagram,
+    event: ModalEvents.PROJECT_MODAL,
   },
   {
     id: 'awards',

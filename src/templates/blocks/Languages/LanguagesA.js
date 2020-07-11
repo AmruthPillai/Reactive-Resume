@@ -1,20 +1,23 @@
 import React, { memo, useContext } from 'react';
 import PageContext from '../../../contexts/PageContext';
+import { safetyCheck } from '../../../utils';
 
 const LanguageItem = (x) => (
-  <div key={x.id} className="mb-2">
+  <div key={x.id} className="flex flex-col">
     <h6 className="font-semibold">{x.name}</h6>
-    <p className="text-xs">{x.fluency}</p>
+    <span className="text-xs">{x.fluency}</span>
   </div>
 );
 
 const LanguagesA = () => {
   const { data, heading: Heading } = useContext(PageContext);
 
-  return data.languages.visible && data.languages.items ? (
+  return safetyCheck(data.languages) ? (
     <div>
       <Heading>{data.languages.heading}</Heading>
-      {data.languages.items.map(LanguageItem)}
+      <div className="grid grid-cols-2 gap-2">
+        {data.languages.items.map(LanguageItem)}
+      </div>
     </div>
   ) : null;
 };

@@ -1,8 +1,7 @@
-import { FieldArray, Formik } from 'formik';
+import { Formik } from 'formik';
 import React, { memo } from 'react';
 import * as Yup from 'yup';
 import Input from '../../components/shared/Input';
-import InputArray from '../../components/shared/InputArray';
 import ModalEvents from '../../constants/ModalEvents';
 import { getFieldProps } from '../../utils';
 import DataModal from '../DataModal';
@@ -14,8 +13,7 @@ const initialValues = {
   gpa: '',
   startDate: '',
   endDate: '',
-  courses: [],
-  temp: '',
+  summary: '',
 };
 
 const schema = Yup.object().shape({
@@ -30,8 +28,7 @@ const schema = Yup.object().shape({
       startDate &&
       yupSchema.min(startDate, 'End Date must be later than Start Date'),
   ),
-  courses: Yup.array().of(Yup.string().required('This is a required field.')),
-  temp: Yup.string().ensure(),
+  summary: Yup.string().min(10, 'Please enter at least 10 characters.'),
 });
 
 const EducationModal = () => {
@@ -88,18 +85,11 @@ const EducationModal = () => {
               {...getFieldProps(formik, schema, 'endDate')}
             />
 
-            <FieldArray
-              name="courses"
-              render={(helpers) => (
-                <InputArray
-                  formik={formik}
-                  schema={schema}
-                  helpers={helpers}
-                  label="Courses"
-                  path="courses"
-                  placeholder="Data Structures &amp; Algortihms"
-                />
-              )}
+            <Input
+              type="textarea"
+              label="Summary"
+              className="col-span-2"
+              {...getFieldProps(formik, schema, 'summary')}
             />
           </div>
         </DataModal>

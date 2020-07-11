@@ -32,7 +32,9 @@ const Hero = () => {
               Go to App
             </Button>
           ) : (
-            <Button title="Login" onClick={handleLogin} isLoading={loading} />
+            <Button onClick={handleLogin} isLoading={loading}>
+              Login
+            </Button>
           )}
           <Button
             outline

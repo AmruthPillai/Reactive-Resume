@@ -1,24 +1,25 @@
 import React, { memo, useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 import PageContext from '../../../contexts/PageContext';
+import { safetyCheck } from '../../../utils';
 
 const ReferenceItem = (x) => (
-  <div key={x.id} className="mb-2">
+  <div key={x.id} className="flex flex-col">
     <h6 className="font-semibold">{x.name}</h6>
-    <p className="text-xs">{x.position}</p>
-    <p className="text-xs">{x.phone}</p>
-    <p className="text-xs">{x.email}</p>
-    <ReactMarkdown className="mt-2 text-sm" source={x.summary} />
+    <span className="text-xs">{x.position}</span>
+    <span className="text-xs">{x.phone}</span>
+    <span className="text-xs">{x.email}</span>
+    <ReactMarkdown className="markdown mt-2 text-sm" source={x.summary} />
   </div>
 );
 
 const ReferencesA = () => {
   const { data, heading: Heading } = useContext(PageContext);
 
-  return data.references.visible && data.references.items ? (
+  return safetyCheck(data.references) ? (
     <div>
       <Heading>{data.references.heading}</Heading>
-      <div className="grid grid-cols-3 col-gap-8">
+      <div className="grid grid-cols-3 gap-4">
         {data.references.items.map(ReferenceItem)}
       </div>
     </div>

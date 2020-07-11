@@ -1,3 +1,4 @@
+import { navigate } from '@reach/router';
 import firebase from 'gatsby-plugin-firebase';
 import { pick } from 'lodash';
 import React, { createContext, memo, useEffect, useState } from 'react';
@@ -16,6 +17,7 @@ const defaultState = {
   user: defaultUser,
   logout: async () => {},
   loginWithGoogle: async () => {},
+  deleteAccount: async () => {},
 };
 
 const UserContext = createContext(defaultState);
@@ -49,16 +51,33 @@ const UserProvider = ({ children }) => {
     const provider = new firebase.auth.GoogleAuthProvider();
 
     try {
-      await firebase.auth().signInWithPopup(provider);
+      return await firebase.auth().signInWithPopup(provider);
     } catch (error) {
       toast.error(error.message);
     }
   };
 
-  const logout = async () => {
-    await firebase.auth().signOut();
+  const logout = () => {
+    firebase.auth().signOut();
     localStorage.removeItem('user');
     setUser(null);
+    navigate('/');
+  };
+
+  const deleteAccount = async () => {
+    const { currentUser } = firebase.auth();
+    try {
+      await currentUser.delete();
+    } catch (e) {
+      toast.error(e.message);
+      await loginWithGoogle();
+      await currentUser.delete();
+    } finally {
+      logout();
+      toast(
+        "It's sad to see you go, but we respect your privacy. All your data has been deleted successfully. Hope to see you again soon!",
+      );
+    }
   };
 
   return (
@@ -68,6 +87,7 @@ const UserProvider = ({ children }) => {
         logout,
         loading,
         loginWithGoogle,
+        deleteAccount,
       }}
     >
       {children}

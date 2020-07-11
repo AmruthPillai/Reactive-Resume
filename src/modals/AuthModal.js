@@ -60,7 +60,7 @@ const AuthModal = () => {
       state={[open, setOpen]}
       action={user ? loggedInAction : loggedOutAction}
     >
-      <p>{getMessage()}</p>
+      <p className="leading-loose">{getMessage()}</p>
     </BaseModal>
   );
 };

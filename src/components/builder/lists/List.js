@@ -42,7 +42,11 @@ const List = ({
               subtitle={
                 subtitle ||
                 get(x, subtitlePath, '') ||
-                (hasDate && formatDateRange(x))
+                (hasDate &&
+                  formatDateRange({
+                    startDate: x.startDate,
+                    endDate: x.endDate,
+                  }))
               }
               text={text || get(x, textPath, '')}
               onEdit={() => handleEdit(x)}

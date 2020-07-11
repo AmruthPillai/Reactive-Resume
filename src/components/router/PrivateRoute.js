@@ -3,7 +3,7 @@ import React, { memo, useContext } from 'react';
 import UserContext from '../../contexts/UserContext';
 import LoadingScreen from './LoadingScreen';
 
-const PrivateRoute = ({ component: Component, location, ...props }) => {
+const PrivateRoute = ({ component: Component, ...props }) => {
   const { user, loading } = useContext(UserContext);
 
   if (loading) {

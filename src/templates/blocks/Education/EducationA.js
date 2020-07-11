@@ -1,40 +1,39 @@
 import React, { memo, useContext } from 'react';
+import ReactMarkdown from 'react-markdown';
 import PageContext from '../../../contexts/PageContext';
-import { formatDateRange } from '../../../utils';
+import { formatDateRange, safetyCheck } from '../../../utils';
 
 const EducationItem = (x) => (
-  <div key={x.id} className="mb-2">
+  <div key={x.id}>
     <div className="flex justify-between items-center">
-      <div>
+      <div className="flex flex-col">
         <h6 className="font-semibold">{x.institution}</h6>
         <span className="text-xs">
           <strong>{x.degree}</strong> {x.field}
         </span>
       </div>
       <div className="flex flex-col items-end">
-        <span className="text-xs font-medium">
-          ({formatDateRange({ startDate: x.startDate, endDate: x.endDate })})
-        </span>
-        <h6 className="text-sm font-medium">{x.gpa}</h6>
+        {x.startDate && (
+          <h6 className="text-xs font-medium">
+            ({formatDateRange({ startDate: x.startDate, endDate: x.endDate })})
+          </h6>
+        )}
+        <span className="text-sm font-medium">{x.gpa}</span>
       </div>
     </div>
-    {x.courses && (
-      <ul className="mt-2 text-sm list-disc list-inside">
-        {x.courses.map((y) => (
-          <li key={y}>{y}</li>
-        ))}
-      </ul>
-    )}
+    <ReactMarkdown className="markdown mt-2 text-sm" source={x.summary} />
   </div>
 );
 
 const EducationA = () => {
   const { data, heading: Heading } = useContext(PageContext);
 
-  return data.education.visible && data.education.items ? (
+  return safetyCheck(data.education) ? (
     <div>
       <Heading>{data.education.heading}</Heading>
-      {data.education.items.map(EducationItem)}
+      <div className="grid gap-4">
+        {data.education.items.map(EducationItem)}
+      </div>
     </div>
   ) : null;
 };

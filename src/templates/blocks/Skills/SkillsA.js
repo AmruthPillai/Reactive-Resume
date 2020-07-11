@@ -1,20 +1,23 @@
 import React, { memo, useContext } from 'react';
 import PageContext from '../../../contexts/PageContext';
+import { safetyCheck } from '../../../utils';
 
 const SkillItem = (x) => (
-  <div key={x.id} className="mb-2">
+  <div key={x.id} className="flex flex-col">
     <h6 className="font-semibold">{x.name}</h6>
-    <p className="text-xs">{x.level}</p>
+    <span className="text-xs">{x.level}</span>
   </div>
 );
 
 const SkillsA = () => {
   const { data, heading: Heading } = useContext(PageContext);
 
-  return data.skills.visible && data.skills.items ? (
+  return safetyCheck(data.skills) ? (
     <div>
       <Heading>{data.skills.heading}</Heading>
-      {data.skills.items.map(SkillItem)}
+      <div className="grid grid-cols-2 gap-2">
+        {data.skills.items.map(SkillItem)}
+      </div>
     </div>
   ) : null;
 };

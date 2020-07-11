@@ -2,6 +2,7 @@ import { get } from 'lodash';
 import React, { memo, useContext } from 'react';
 import { FaCaretRight } from 'react-icons/fa';
 import PageContext from '../../../contexts/PageContext';
+import { safetyCheck } from '../../../utils';
 import Icons from '../Icons';
 
 const ContactItem = ({ value, icon, link }) => {
@@ -9,9 +10,9 @@ const ContactItem = ({ value, icon, link }) => {
   const Icon = get(Icons, icon.toLowerCase(), FaCaretRight);
 
   return value ? (
-    <div className="flex items-center my-3">
+    <div className="flex items-center">
       <Icon
-        size="14px"
+        size="10px"
         className="mr-2"
         style={{ color: data.metadata.colors.primary }}
       />
@@ -30,7 +31,7 @@ const ContactA = () => {
   const { data } = useContext(PageContext);
 
   return (
-    <div className="col-span-1 text-xs">
+    <div className="text-xs grid gap-2">
       <ContactItem
         icon="phone"
         value={data.profile.phone}
@@ -47,18 +48,15 @@ const ContactA = () => {
         link={`mailto:${data.profile.email}`}
       />
 
-      {data.social.visible && data.social.items ? (
-        <div>
-          {data.social.items.map((x) => (
-            <ContactItem
-              key={x.id}
-              value={x.username}
-              icon={x.network}
-              link={x.url}
-            />
-          ))}
-        </div>
-      ) : null}
+      {safetyCheck(data.social) &&
+        data.social.items.map((x) => (
+          <ContactItem
+            key={x.id}
+            value={x.username}
+            icon={x.network}
+            link={x.url}
+          />
+        ))}
     </div>
   );
 };

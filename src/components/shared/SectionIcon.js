@@ -1,6 +1,7 @@
 import { Tooltip } from '@material-ui/core';
 import React, { memo, useEffect } from 'react';
 import { Link, scrollSpy } from 'react-scroll';
+import styles from './SectionIcon.module.css';
 
 const SectionIcon = ({ section, containerId, tooltipPlacement }) => {
   const { id, name, icon: Icon } = section;
@@ -19,7 +20,7 @@ const SectionIcon = ({ section, containerId, tooltipPlacement }) => {
         duration={500}
         containerId={containerId}
         activeClass="text-primary-900"
-        className="py-2 cursor-pointer focus:outline-none focus:text-primary-900 hover:text-primary-900"
+        className={styles.icon}
       >
         <Icon size="18px" />
       </Link>

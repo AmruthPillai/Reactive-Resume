@@ -1,19 +1,13 @@
 import firebase from 'gatsby-plugin-firebase';
 import { debounce } from 'lodash';
-import React, {
-  createContext,
-  memo,
-  useContext,
-  useEffect,
-  useState,
-} from 'react';
-import UserContext from './UserContext';
+import ShortUniqueId from 'short-unique-id';
+import React, { createContext, memo, useContext, useState } from 'react';
 import initialState from '../data/initialState';
+import UserContext from './UserContext';
 
 const DEBOUNCE_WAIT_TIME = 4000;
 
 const defaultState = {
-  isOffline: false,
   isUpdating: false,
   createResume: () => {},
   deleteResume: () => {},
@@ -26,28 +20,26 @@ const defaultState = {
 const DatabaseContext = createContext(defaultState);
 
 const DatabaseProvider = ({ children }) => {
-  const [resumeId, setResumeId] = useState(false);
-  const [isOffline, setOffline] = useState(false);
+  const dictionary = 'abcdefghijklmnopqrstuvwxyz1234567890'.split('');
+  const uuid = new ShortUniqueId({ dictionary });
+
   const [isUpdating, setUpdating] = useState(false);
   const { user } = useContext(UserContext);
 
-  useEffect(() => {
-    const connectedRef = firebase.database().ref('.info/connected');
-    connectedRef.on('value', (snapshot) => {
-      snapshot.val() === true ? setOffline(false) : setOffline(true);
-    });
-  }, []);
-
   const getResume = async (id) => {
-    setResumeId(id);
-    const snapshot = await firebase
-      .database()
-      .ref(`users/${user.uid}/resumes/${id}`)
-      .once('value');
-    return snapshot.val();
+    try {
+      const snapshot = await firebase
+        .database()
+        .ref(`resumes/${id}`)
+        .once('value');
+      return snapshot.val();
+    } catch (error) {
+      return null;
+    }
   };
 
-  const createResume = ({ id, name }) => {
+  const createResume = ({ name }) => {
+    const id = uuid();
     const createdAt = firebase.database.ServerValue.TIMESTAMP;
 
     let firstName;
@@ -57,21 +49,21 @@ const DatabaseProvider = ({ children }) => {
       [firstName, lastName] = user.displayName.split(' ');
     }
 
-    firebase
-      .database()
-      .ref(`users/${user.uid}/resumes/${id}`)
-      .set({
-        ...initialState,
-        id,
-        name,
-        profile: {
-          ...initialState.profile,
-          firstName: firstName || '',
-          lastName: lastName || '',
-        },
-        createdAt,
-        updatedAt: createdAt,
-      });
+    const resume = {
+      ...initialState,
+      id,
+      name,
+      user: user.uid,
+      profile: {
+        ...initialState.profile,
+        firstName: firstName || '',
+        lastName: lastName || '',
+      },
+      createdAt,
+      updatedAt: createdAt,
+    };
+
+    firebase.database().ref(`resumes/${id}`).set(resume);
   };
 
   const updateResume = async (resume) => {
@@ -79,7 +71,7 @@ const DatabaseProvider = ({ children }) => {
 
     await firebase
       .database()
-      .ref(`users/${user.uid}/resumes/${resumeId}`)
+      .ref(`resumes/${resume.id}`)
       .update({
         ...resume,
         updatedAt: firebase.database.ServerValue.TIMESTAMP,
@@ -90,14 +82,18 @@ const DatabaseProvider = ({ children }) => {
 
   const debouncedUpdateResume = debounce(updateResume, DEBOUNCE_WAIT_TIME);
 
-  const deleteResume = (id) => {
-    firebase.database().ref(`users/${user.uid}/resumes/${id}`).remove();
+  const deleteResume = async (id) => {
+    await firebase
+      .storage()
+      .ref(`/users/${user.uid}/photographs/${id}`)
+      .delete();
+
+    await firebase.database().ref(`/resumes/${id}`).remove();
   };
 
   return (
     <DatabaseContext.Provider
       value={{
-        isOffline,
         isUpdating,
         getResume,
         createResume,

@@ -1,5 +1,5 @@
 import firebase from 'gatsby-plugin-firebase';
-import React, { memo, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import CreateResume from '../../components/dashboard/CreateResume';
 import ResumePreview from '../../components/dashboard/ResumePreview';
@@ -11,11 +11,24 @@ const Dashboard = ({ user }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const ref = `users/${user.uid}/resumes`;
+    const resumesRef = 'resumes';
+    const socketRef = '/.info/connected';
 
     firebase
       .database()
-      .ref(ref)
+      .ref(socketRef)
+      .on('value', (snapshot) => {
+        if (snapshot.val()) {
+          setLoading(false);
+          firebase.database().ref(socketRef).off();
+        }
+      });
+
+    firebase
+      .database()
+      .ref(resumesRef)
+      .orderByChild('user')
+      .equalTo(user.uid)
       .on('value', (snapshot) => {
         if (snapshot.val()) {
           const resumesArr = [];
@@ -23,13 +36,13 @@ const Dashboard = ({ user }) => {
           Object.keys(data).forEach((key) => resumesArr.push(data[key]));
           setResumes(resumesArr);
         }
-
-        setLoading(false);
       });
 
     firebase
       .database()
-      .ref(ref)
+      .ref(resumesRef)
+      .orderByChild('user')
+      .equalTo(user.uid)
       .on('child_removed', (snapshot) => {
         if (snapshot.val()) {
           setResumes(resumes.filter((x) => x.id === snapshot.val().id));
@@ -37,7 +50,7 @@ const Dashboard = ({ user }) => {
       });
 
     return () => {
-      firebase.database().ref(ref).off();
+      firebase.database().ref(resumesRef).off();
     };
   }, [user]);
 
@@ -67,4 +80,4 @@ const Dashboard = ({ user }) => {
   );
 };
 
-export default memo(Dashboard);
+export default Dashboard;
