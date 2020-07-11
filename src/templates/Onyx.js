@@ -1,60 +1,107 @@
-import React, { memo } from 'react';
-import { FaGlobeAmericas, FaPhone } from 'react-icons/fa';
-import { MdEmail } from 'react-icons/md';
+import React, { memo, useEffect } from 'react';
+import PageContext from '../contexts/PageContext';
+import { useDispatch } from '../contexts/ResumeContext';
+import AwardsA from './blocks/Awards/AwardsA';
+import CertificationsA from './blocks/Certifications/CertificationsA';
+import Contact from './blocks/Contact/ContactA';
+import EducationA from './blocks/Education/EducationA';
+import Heading from './blocks/Heading/HeadingA';
+import HobbiesA from './blocks/Hobbies/HobbiesA';
+import LanguagesA from './blocks/Languages/LanguagesA';
+import ObjectiveA from './blocks/Objective/ObjectiveA';
+import ReferencesA from './blocks/References/ReferencesA';
+import SkillsA from './blocks/Skills/SkillsA';
+import WorkA from './blocks/Work/WorkA';
+
+const Blocks = {
+  objective: ObjectiveA,
+  work: WorkA,
+  education: EducationA,
+  awards: AwardsA,
+  certifications: CertificationsA,
+  skills: SkillsA,
+  hobbies: HobbiesA,
+  languages: LanguagesA,
+  references: ReferencesA,
+};
 
 const Onyx = ({ data }) => {
-  const { profile, metadata } = data;
-  const { font, colors, layout } = metadata;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: 'set_block_count', payload: 3 });
+  }, []);
 
   return (
-    <div
-      className="p-8 grid grid-cols-10 gap-4 items-center"
-      style={{
-        fontFamily: font,
-        color: colors.text,
-        backgroundColor: colors.background,
-      }}
-    >
-      <img
-        className="col-span-2 rounded"
-        src="https://i.imgur.com/Icr472Z.jpg"
-        alt="Photograph"
-      />
-      <div className="col-span-5">
-        <h2 className="text-4xl font-bold" style={{ color: colors.primary }}>
-          {profile.firstName} {profile.lastName}
-        </h2>
-        <span className="font-medium">Customer Sales Representative</span>
+    <PageContext.Provider value={{ data, heading: Heading }}>
+      <div
+        id="page"
+        className="p-10"
+        style={{
+          fontFamily: data.metadata.font,
+          color: data.metadata.colors.text,
+          backgroundColor: data.metadata.colors.background,
+        }}
+      >
+        <div className="grid grid-cols-4 items-center">
+          <div className="col-span-3 flex items-center">
+            <img
+              className="rounded object-cover mr-4"
+              src={data.profile.photograph}
+              alt="Resume Photograph"
+              style={{ width: '120px', height: '120px' }}
+            />
 
-        <div className="mt-5 flex flex-col">
-          <span>3879 Gateway Avenue,</span>
-          <span>Bakersfield,</span>
-          <span>California, USA</span>
+            <div>
+              <h1
+                className="font-bold text-4xl"
+                style={{ color: data.metadata.colors.primary }}
+              >
+                {data.profile.firstName} {data.profile.lastName}
+              </h1>
+              <h6 className="font-medium text-sm">{data.profile.subtitle}</h6>
+
+              <div className="flex flex-col mt-4 text-xs">
+                <span>{data.profile.address.line1}</span>
+                <span>{data.profile.address.line2}</span>
+                <span>
+                  {data.profile.address.city} {data.profile.address.pincode}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <Contact />
+        </div>
+
+        <hr
+          className="my-6 opacity-25"
+          style={{ borderColor: data.metadata.colors.text }}
+        />
+
+        <div className="grid grid-cols-1 col-gap-8">
+          {data.metadata.layout[0] &&
+            data.metadata.layout[0].map((x) => {
+              const Component = Blocks[x];
+              return Component && <Component key={x} />;
+            })}
+
+          <div className="grid grid-cols-3 col-gap-8">
+            {data.metadata.layout[1] &&
+              data.metadata.layout[1].map((x) => {
+                const Component = Blocks[x];
+                return Component && <Component key={x} />;
+              })}
+          </div>
+
+          {data.metadata.layout[2] &&
+            data.metadata.layout[2].map((x) => {
+              const Component = Blocks[x];
+              return Component && <Component key={x} />;
+            })}
         </div>
       </div>
-      <div className="col-span-3 grid gap-4">
-        <div className="flex items-center">
-          <FaPhone size="14" style={{ color: colors.primary }} />
-          <span className="ml-4 text-sm font-medium">+1 661-808-4188</span>
-        </div>
-
-        <div className="flex items-center">
-          <FaGlobeAmericas size="14" style={{ color: colors.primary }} />
-          <span className="ml-4 text-sm font-medium">nancyontheweb.com</span>
-        </div>
-
-        <div className="flex items-center">
-          <MdEmail size="14" style={{ color: colors.primary }} />
-          <span className="ml-4 text-sm font-medium">
-            nancyjack43@gmail.com
-          </span>
-        </div>
-      </div>
-
-      <hr className="my-2 col-span-10" />
-
-      {JSON.stringify(layout)}
-    </div>
+    </PageContext.Provider>
   );
 };
 

@@ -62,11 +62,9 @@ const StorageProvider = ({ children }) => {
           render:
             'Your photograph was uploaded successfully... and you look great!',
           progress,
-          autoClose: 5000,
+          autoClose: 2000,
           hideProgressBar: true,
         });
-
-        toastId.current = null;
       },
     );
   };

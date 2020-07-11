@@ -9,7 +9,7 @@ import DataModal from '../DataModal';
 const initialValues = {
   name: '',
   position: '',
-  contact: '',
+  phone: '',
   email: '',
   summary: '',
 };
@@ -17,7 +17,7 @@ const initialValues = {
 const schema = Yup.object().shape({
   name: Yup.string().required('This is a required field.'),
   position: Yup.string().required('This is a required field.'),
-  contact: Yup.string(),
+  phone: Yup.string(),
   email: Yup.string().email('Must be a valid email address.'),
   summary: Yup.string(),
 });
@@ -51,7 +51,7 @@ const ReferenceModal = () => {
             <Input
               label="Phone Number"
               placeholder="+1 (708) 756-6065"
-              {...getFieldProps(formik, schema, 'contact')}
+              {...getFieldProps(formik, schema, 'phone')}
             />
 
             <Input

@@ -8,6 +8,7 @@ import React, {
   useState,
 } from 'react';
 import UserContext from './UserContext';
+import initialState from '../data/initialState';
 
 const DEBOUNCE_WAIT_TIME = 4000;
 
@@ -46,8 +47,7 @@ const DatabaseProvider = ({ children }) => {
     return snapshot.val();
   };
 
-  const createResume = (resume) => {
-    const { id } = resume;
+  const createResume = ({ id, name }) => {
     const createdAt = firebase.database.ServerValue.TIMESTAMP;
 
     let firstName;
@@ -61,11 +61,14 @@ const DatabaseProvider = ({ children }) => {
       .database()
       .ref(`users/${user.uid}/resumes/${id}`)
       .set({
+        ...initialState,
+        id,
+        name,
         profile: {
+          ...initialState.profile,
           firstName: firstName || '',
           lastName: lastName || '',
         },
-        ...resume,
         createdAt,
         updatedAt: createdAt,
       });

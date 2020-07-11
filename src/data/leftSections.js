@@ -14,12 +14,14 @@ export default [
     id: 'profile',
     name: 'Profile',
     icon: MdPerson,
+    fixed: true,
   },
   {
     id: 'social',
     name: 'Social Network',
     icon: AiOutlineTwitter,
     event: ModalEvents.SOCIAL_MODAL,
+    fixed: true,
   },
   {
     id: 'objective',

@@ -20,9 +20,9 @@ export const isFileImage = (file) => {
   return file && acceptedImageTypes.includes(file.type);
 };
 
-export const formatDateRange = (x) =>
-  `${moment(x.startDate).format('MMMM Y')} — ${
-    moment(x.endDate).isValid() ? moment(x.endDate).format('MMMM Y') : 'Present'
+export const formatDateRange = ({ startDate, endDate }) =>
+  `${moment(startDate).format('MMMM Y')} — ${
+    moment(endDate).isValid() ? moment(endDate).format('MMMM Y') : 'Present'
   }`;
 
 export const getFieldProps = (formik, schema, name) => ({

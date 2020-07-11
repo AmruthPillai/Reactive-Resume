@@ -6,20 +6,16 @@ body {
   @apply transition-colors duration-200 ease-in-out;
 }
 
-p {
-  @apply leading-loose;
-}
-
-a {
-  @apply text-blue-600 font-medium;
-}
-
 a:hover {
   @apply underline;
 }
 
 hr {
   @apply w-full border-primary-200 h-1;
+}
+
+ul {
+  @apply list-disc list-inside;
 }
 
 section {
@@ -35,11 +31,11 @@ label > span:first-child {
 }
 
 .MuiTooltip-tooltip {
-  font-size: 10px !important;
+  font-size: 10px;
 }
 
 .MuiMenuItem-root {
-  justify-content: center !important;
+  justify-content: center;
 }
 
 .spin {

@@ -1,5 +1,14 @@
 import arrayMove from 'array-move';
-import { clone, findIndex, get, isUndefined, setWith } from 'lodash';
+import {
+  clone,
+  findIndex,
+  get,
+  isUndefined,
+  setWith,
+  flatten,
+  concat,
+  times,
+} from 'lodash';
 import React, {
   createContext,
   memo,
@@ -7,22 +16,8 @@ import React, {
   useContext,
   useReducer,
 } from 'react';
-import leftSections from '../data/leftSections';
 import DatabaseContext from './DatabaseContext';
-
-const initialState = {
-  name: '',
-  metadata: {
-    template: 'onyx',
-    font: 'Montserrat',
-    layout: [leftSections.map(({ id, name }) => ({ id, name }))],
-    colors: {
-      text: '#444444',
-      primary: '#5875DB',
-      background: '#FFFFFF',
-    },
-  },
-};
+import initialState from '../data/initialState';
 
 const ResumeContext = createContext({});
 
@@ -34,6 +29,8 @@ const ResumeProvider = ({ children }) => {
       let newState;
       let index;
       let items;
+      let diff;
+      let temp;
 
       switch (type) {
         case 'on_add_item':
@@ -85,6 +82,30 @@ const ResumeProvider = ({ children }) => {
           debouncedUpdateResume(newState);
           return newState;
 
+        case 'set_block_count':
+          items = get(state, 'metadata.layout');
+
+          if (items.length === payload) return state;
+
+          if (payload === 1) {
+            items = flatten(items);
+          }
+
+          if (items.length > payload) {
+            diff = items.length - payload;
+            temp = items.splice(Math.max(items.length - diff, 1));
+            items[0] = concat(items[0], flatten(temp));
+          }
+
+          if (items.length < payload) {
+            diff = payload - items.length;
+            times(diff, () => items.push([]));
+          }
+
+          newState = setWith(clone(state), 'metadata.layout', items, clone);
+          debouncedUpdateResume(newState);
+          return newState;
+
         case 'on_input':
           newState = setWith(clone(state), payload.path, payload.value, clone);
           debouncedUpdateResume(newState);
@@ -132,4 +153,9 @@ const useDispatch = () => {
 
 const memoizedProvider = memo(ResumeProvider);
 
-export { memoizedProvider as ResumeProvider, useSelector, useDispatch };
+export {
+  ResumeContext,
+  memoizedProvider as ResumeProvider,
+  useSelector,
+  useDispatch,
+};

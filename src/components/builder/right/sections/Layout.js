@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import { useDispatch, useSelector } from '../../../../contexts/ResumeContext';
 import { move, reorder } from '../../../../utils';
@@ -37,7 +37,7 @@ const Layout = () => {
       dispatch({
         type: 'on_input',
         payload: {
-          path: 'layout',
+          path: 'metadata.layout',
           value: newState,
         },
       });
@@ -68,11 +68,7 @@ const Layout = () => {
                       Block {ind + 1}
                     </span>
                     {el.map((item, index) => (
-                      <Draggable
-                        key={item.id}
-                        index={index}
-                        draggableId={item.id}
-                      >
+                      <Draggable key={item} index={index} draggableId={item}>
                         {(dragProvided) => (
                           <div
                             ref={dragProvided.innerRef}
@@ -80,7 +76,7 @@ const Layout = () => {
                             {...dragProvided.draggableProps}
                             {...dragProvided.dragHandleProps}
                           >
-                            {item.name}
+                            {item}
                           </div>
                         )}
                       </Draggable>
@@ -97,4 +93,4 @@ const Layout = () => {
   );
 };
 
-export default memo(Layout);
+export default Layout;

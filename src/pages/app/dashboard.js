@@ -1,5 +1,5 @@
 import firebase from 'gatsby-plugin-firebase';
-import React, { useEffect, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import CreateResume from '../../components/dashboard/CreateResume';
 import ResumePreview from '../../components/dashboard/ResumePreview';
@@ -67,4 +67,4 @@ const Dashboard = ({ user }) => {
   );
 };
 
-export default Dashboard;
+export default memo(Dashboard);

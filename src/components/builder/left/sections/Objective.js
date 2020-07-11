@@ -7,7 +7,7 @@ const Objective = () => {
     <section>
       <Heading>Objective</Heading>
 
-      <Input type="textarea" label="Objective" path="objective" />
+      <Input type="textarea" label="Objective" path="objective.body" />
     </section>
   );
 };

@@ -38,7 +38,7 @@ const Actions = () => {
       <div className={styles.container}>
         <h5>Import Your Resume</h5>
 
-        <p>
+        <p className="leading-loose">
           You can import your information from various sources like JSON Resume
           or your LinkedIn to autofill most of the data for your resume.
         </p>
@@ -53,7 +53,7 @@ const Actions = () => {
       <div className={styles.container}>
         <h5>Export Your Resume</h5>
 
-        <p>
+        <p className="leading-loose">
           Export your resume as a PDF to share with recruiters or a JSON that
           you will be able to import back onto this app on another computer.
         </p>
@@ -73,7 +73,7 @@ const Actions = () => {
       <div className={styles.container}>
         <h5>Share Your Resume</h5>
 
-        <p>
+        <p className="leading-loose">
           The link below will be accessible publicly if you choose to share it,
           and viewers would see the latest version of your resume at any time.
         </p>
@@ -86,7 +86,7 @@ const Actions = () => {
       <div className={styles.container}>
         <h5>Load Demo Data</h5>
 
-        <p>
+        <p className="leading-loose">
           Unclear on what to do with a fresh blank page? Load some demo data to
           see how a resume should look and you can start editing from there.
         </p>
@@ -99,7 +99,7 @@ const Actions = () => {
       <div className={styles.container}>
         <h5>Delete Account</h5>
 
-        <p>
+        <p className="leading-loose">
           If you would like to delete your account and erase all your resumes,
           it’s just one button away. Please be weary as this is an irreversible
           process.

@@ -86,6 +86,14 @@ module.exports = {
       },
     },
     'gatsby-plugin-lodash',
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
     'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-source-filesystem',
