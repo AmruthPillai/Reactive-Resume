@@ -10,6 +10,7 @@ const DEBOUNCE_WAIT_TIME = 4000;
 const defaultState = {
   isUpdating: false,
   createResume: () => {},
+  duplicateResume: () => {},
   deleteResume: () => {},
   getResume: async () => {},
   getResumes: async () => {},
@@ -66,6 +67,21 @@ const DatabaseProvider = ({ children }) => {
     firebase.database().ref(`resumes/${id}`).set(resume);
   };
 
+  const duplicateResume = (originalResume) => {
+    const id = uuid();
+    const createdAt = firebase.database.ServerValue.TIMESTAMP;
+
+    const resume = {
+      ...originalResume,
+      id,
+      name: `${originalResume.name} Copy`,
+      createdAt,
+      updatedAt: createdAt,
+    };
+
+    firebase.database().ref(`resumes/${id}`).set(resume);
+  };
+
   const updateResume = async (resume) => {
     setUpdating(true);
 
@@ -83,11 +99,6 @@ const DatabaseProvider = ({ children }) => {
   const debouncedUpdateResume = debounce(updateResume, DEBOUNCE_WAIT_TIME);
 
   const deleteResume = async (id) => {
-    await firebase
-      .storage()
-      .ref(`/users/${user.uid}/photographs/${id}`)
-      .delete();
-
     await firebase.database().ref(`/resumes/${id}`).remove();
   };
 
@@ -97,6 +108,7 @@ const DatabaseProvider = ({ children }) => {
         isUpdating,
         getResume,
         createResume,
+        duplicateResume,
         updateResume,
         deleteResume,
         debouncedUpdateResume,

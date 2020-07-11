@@ -1,5 +1,6 @@
 import { Link } from 'gatsby';
 import React, { memo } from 'react';
+import { Tooltip } from '@material-ui/core';
 import sections from '../../../data/leftSections';
 import Avatar from '../../shared/Avatar';
 import Logo from '../../shared/Logo';
@@ -8,9 +9,13 @@ import styles from './LeftNavbar.module.css';
 
 const LeftNavbar = () => (
   <div className={styles.container}>
-    <Link to="/app/dashboard">
-      <Logo size="40px" />
-    </Link>
+    <Tooltip title="Go Back to Dashboard" placement="right">
+      <div>
+        <Link to="/app/dashboard">
+          <Logo size="40px" />
+        </Link>
+      </div>
+    </Tooltip>
 
     <hr className="my-6" />
 

@@ -11,12 +11,17 @@ import styles from './ResumePreview.module.css';
 const ResumePreview = ({ resume }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const { emitter, events } = useContext(ModalContext);
-  const { deleteResume } = useContext(DatabaseContext);
+  const { duplicateResume, deleteResume } = useContext(DatabaseContext);
 
   const handleOpen = () => navigate(`/app/builder/${resume.id}`);
 
   const handleMenuClick = (event) => {
     setAnchorEl(event.currentTarget);
+  };
+
+  const handleDuplicate = () => {
+    duplicateResume(resume);
+    setAnchorEl(null);
   };
 
   const handleRename = () => {
@@ -62,6 +67,7 @@ const ResumePreview = ({ resume }) => {
           open={Boolean(anchorEl)}
           onClose={handleMenuClose}
         >
+          <MenuItem onClick={handleDuplicate}>Duplicate</MenuItem>
           <MenuItem onClick={handleRename}>Rename</MenuItem>
           <MenuItem onClick={handleDelete}>
             <span className="text-red-600 font-medium">Delete</span>
