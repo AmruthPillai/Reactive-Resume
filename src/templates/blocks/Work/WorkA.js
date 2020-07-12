@@ -11,7 +11,7 @@ const WorkItem = (x) => (
         <span className="text-xs">{x.position}</span>
       </div>
       {x.startDate && (
-        <h6 className="text-xs font-medium">
+        <h6 className="text-xs font-medium text-right">
           ({formatDateRange({ startDate: x.startDate, endDate: x.endDate })})
         </h6>
       )}

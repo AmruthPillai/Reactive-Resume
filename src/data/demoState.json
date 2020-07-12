@@ -7,14 +7,21 @@
         "date": "2019-04-01",
         "id": "6f857f2b-6312-4a0d-907d-2e17991954eb",
         "summary": "",
-        "title": "International Flutter Hackathon '19"
+        "title": "International Flutter Hackathon"
       },
       {
         "awarder": "Venturesity",
         "date": "2016-06-01",
         "id": "f6efa3f9-9741-4e36-a538-ba0d9779bc61",
         "summary": "",
-        "title": "Venturesity Banyan Hack '16"
+        "title": "Venturesity Banyan Hack"
+      },
+      {
+        "title": "Smart India Hackathon",
+        "awarder": "Govt. of India",
+        "date": "2017-04-01",
+        "summary": "",
+        "id": "89c0171a-eae9-403e-9f4c-a757fb535c2b"
       }
     ],
     "visible": true
@@ -25,16 +32,23 @@
       {
         "date": "2018-02-01",
         "id": "d2ec12bc-7876-46bc-afd4-11ae06faf3bd",
-        "issuer": "Google",
+        "issuer": "Cisco Systems",
         "summary": "",
-        "title": "Applied CS with Android"
+        "title": "CCNP"
       },
       {
         "date": "2019-06-01",
         "id": "f8312288-53ae-4504-a768-4b67aea95926",
-        "issuer": "Udemy",
+        "issuer": "VMWare",
         "summary": "",
-        "title": "Data Science & Machine Learning using Python"
+        "title": "VCP6-DCV"
+      },
+      {
+        "title": "DCUCI 642-999",
+        "issuer": "Cisco Systems",
+        "date": "2014-04-01",
+        "summary": "",
+        "id": "11107df6-5f3c-49ae-bcd4-62b8baa181a1"
       }
     ],
     "visible": true
@@ -43,23 +57,23 @@
     "heading": "Education",
     "items": [
       {
-        "degree": "Bachelor's Degree",
-        "endDate": "2018-04-01",
-        "field": "Computer Science & Engineering",
-        "gpa": "9.2",
+        "degree": "Masters",
+        "endDate": "2002-08-01",
+        "field": "Computer Science",
+        "gpa": "7.2 CGPA",
         "id": "c42e2a5a-3f0d-497e-838b-ac2019dcf045",
-        "institution": "Dayananda Sagar College of Engineering",
-        "startDate": "2015-04-01",
+        "institution": "The City College of New York, NYC, NY",
+        "startDate": "2001-09-01",
         "summary": ""
       },
       {
-        "degree": "Diploma",
-        "endDate": "2015-04-01",
+        "degree": "Bachelors",
+        "endDate": "2001-08-01",
         "field": "Computer Science",
-        "gpa": "9.8",
+        "gpa": "8.4 CGPA",
         "id": "278490a2-c327-4e83-8be8-adf913a9b36c",
-        "institution": "Dayananda Sagar Institute of Technology",
-        "startDate": "2012-04-01",
+        "institution": "University of California, Berkeley, CA",
+        "startDate": "1997-09-01",
         "summary": ""
       }
     ],
@@ -68,6 +82,8 @@
   "hobbies": {
     "heading": "Hobbies",
     "items": [
+      { "name": "Poetry", "id": "788dcf5a-78ca-4866-8397-c7a29073d9a1" },
+      { "name": "Travelling", "id": "e3523371-f50c-4348-8c5e-35fe84c0006d" },
       { "id": "92c35e3b-6cd7-4cea-b505-61347ec61b68", "name": "Photography" },
       {
         "id": "d36f2089-93a9-4f30-a425-3dd81c6b89df",
@@ -75,7 +91,7 @@
       },
       {
         "id": "d1da41a9-ae83-48fb-8047-d45ebd869a69",
-        "name": "Working on Personal Projects"
+        "name": "Developing Reactive Resume"
       }
     ],
     "visible": true
@@ -113,15 +129,26 @@
       "text": "#212121"
     },
     "font": "Open Sans",
-    "layout": [
-      ["objective", "work", "education", "projects"],
-      ["hobbies", "languages"],
-      ["skills", "certifications", "awards", "references"]
-    ],
-    "template": "onyx"
+    "layout": {
+      "onyx": [
+        ["objective", "work", "education", "projects"],
+        ["hobbies", "languages", "awards", "certifications"],
+        ["skills", "references"]
+      ],
+      "pikachu": [
+        ["skills", "languages", "hobbies", "awards", "certifications"],
+        ["work", "education", "projects", "references"]
+      ],
+      "gengar": [
+        ["objective", "skills"],
+        ["awards", "certifications", "languages", "references", "hobbies"],
+        ["work", "education", "projects"]
+      ]
+    },
+    "template": "pikachu"
   },
   "objective": {
-    "body": "I'm Amruth Pillai, and as you might have already read, I'm a designer, developer, photographer and a writer. This website was made to showcase all of what I can do and plan to do. Don't judge my writing based on this section though, this is by far my shoddiest work yet.\n&nbsp;\nI got into design because I consider myself a pseudo-perfectionist, if that's even a word? As in, I hate to see things 'not look good'. So I set out on a journey to make products that people use that 'look great', and I'm forever on that path.",
+    "body": "To obtain a job within my chosen field that will challenge me and allow me to use my education, skills and past experiences in a way that is mutually beneficial to both myself and my employer and allow for future growth and advancement.",
     "heading": "Objective",
     "visible": true
   },
@@ -137,7 +164,7 @@
     "heading": "Profile",
     "lastName": "Pillai",
     "phone": "+91 98453 36113",
-    "photograph": "https://firebasestorage.googleapis.com/v0/b/rx-resume.appspot.com/o/users%2FNriQrOfocnfTtoRIpR3qEtHNxYq1%2Fphotographs%2Fx7vvg8?alt=media&token=99df9c05-f5e1-4360-b1e8-5c13ddd8cd84",
+    "photograph": "https://i.imgur.com/2dmLSCT.jpg",
     "profile": "",
     "subtitle": "Full Stack Web Developer",
     "website": "amruthpillai.com"
@@ -181,6 +208,14 @@
         "phone": "+91 93893 34353",
         "position": "CEO at Newton Motors",
         "summary": ""
+      },
+      {
+        "name": "Lorraine Beasley",
+        "position": "Head of HR, Carson Logistics",
+        "phone": "+1 661-808-4188",
+        "email": "l.beasley@carsonlogistics.com",
+        "summary": "",
+        "id": "94e3447b-0a78-4fb7-b14d-591982d35320"
       }
     ],
     "visible": true
@@ -191,22 +226,32 @@
       {
         "id": "54e5bceb-d0e9-4f04-98d1-48a34f7cf920",
         "level": "Advanced",
-        "name": "ReactJS"
+        "name": "Customer Service Expertise"
       },
       {
         "id": "f0274f62-2252-4cc0-bf12-9e1070942c50",
-        "level": "Advanced",
-        "name": "Angular"
+        "level": "Intermediate",
+        "name": "High-Volume Call Center"
       },
       {
         "id": "689e2852-df1b-4d41-bda8-c41c88196264",
-        "level": "Advanced",
-        "name": "Flutter"
+        "level": "Intermediate",
+        "name": "Team Leader/Problem Solver"
       },
       {
         "id": "3a4f73b1-50c1-4a85-a4b0-2a55dfe5053a",
         "level": "Novice",
-        "name": "Machine Learning"
+        "name": "Call Center Management"
+      },
+      {
+        "name": "Teambuilding & Training",
+        "level": "Novice",
+        "id": "08d6c739-1465-41f7-8825-b8d94faa38d6"
+      },
+      {
+        "name": "Continuous Improvement",
+        "level": "Fundamental Awareness",
+        "id": "261b8fc3-aeec-4347-88a8-bcacb1a17aa3"
       }
     ],
     "visible": true
@@ -214,6 +259,12 @@
   "social": {
     "heading": "Social",
     "items": [
+      {
+        "url": "https://pillai.xyz/instagram",
+        "network": "Instagram",
+        "username": "AmruthPillai",
+        "id": "a832b37d-f11d-4a80-8b4d-24796e571b17"
+      },
       {
         "id": "a72107fa-a4a5-407d-9e85-39bdb9c0b11a",
         "network": "Twitter",
@@ -233,22 +284,31 @@
     "heading": "Work Experience",
     "items": [
       {
-        "company": "Postdot Technologies Pvt. Ltd.",
-        "endDate": "",
+        "company": "On Point Electronics, NYC, NY",
+        "endDate": "2018-07-01",
         "id": "d7c64937-0cb9-41b1-a3a6-0679c882fe63",
-        "position": "Full Stack Web Developer",
-        "startDate": "2020-06-08",
-        "summary": "Postman is a great tool when trying to dissect RESTful APIs made by others or test ones you have made yourself. It offers a sleek user interface with which to make HTML requests, without the hassle of writing a bunch of code just to test an API's functionality.",
-        "website": "https://postman.com"
+        "position": "Customer Service Representative",
+        "startDate": "2013-01-01",
+        "summary": "- Organized customer information and account data for business planning and customer service purposes.\n- Created excel spreadsheets to track customer data and perform intense reconciliation process.\n- Received 97% positive customer survey results.\n- Speed on calls was 10% above team average.  \n**Key Achievement:** Designed and executed an automatized system for following up with customers, increasing customer retention by 22%.",
+        "website": "https://onpoint.com"
       },
       {
-        "company": "GoDhiyo Solutions Pvt. Ltd.",
-        "endDate": "2020-04-01",
+        "company": "Excelsior Communications, NYC, NY",
+        "endDate": "2012-12-01",
         "id": "f5c5dcfe-2a60-4169-a2f1-b305355518ea",
-        "position": "Full Stack Web Developer",
-        "startDate": "2018-07-01",
-        "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi laoreet volutpat lacus, sed tempor lacus eleifend feugiat. Pellentesque molestie libero ac varius finibus. Fusce convallis, arcu sit amet lacinia vehicula, nisl justo egestas tortor.\n\n- In vestibulum eros a enim rhoncus\n- Phasellus ullamcorper magna quis est sagittis",
-        "website": "https://dhiyo.ai"
+        "position": "Customer Service Representative",
+        "startDate": "2009-10-01",
+        "summary": "- Worked as a full time customer service rep in a high volume call center.\n- Received \"Associate of the Month\" award six times.\n- Chosen as an example for other associates in trainings.  \n**Key Achievement:** Received Customer Appreciation bonus in three of four years.",
+        "website": "https://excelsior.com"
+      },
+      {
+        "company": "Pizza Hut, Newark, NJ",
+        "position": "Waiter",
+        "website": "https://pizzahut.com",
+        "startDate": "2005-08-01",
+        "endDate": "2009-09-01",
+        "summary": "- Worked passionately in customer service in a high volume restaurant.\n- Completed the FAST customer service training class.\n- Maintained a high tip average thanks to consistent customer satisfaction.",
+        "id": "dd935088-6fe7-4a4b-8ff5-7417c32d2add"
       }
     ],
     "visible": true

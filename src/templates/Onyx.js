@@ -1,11 +1,10 @@
-import React, { memo, useEffect } from 'react';
+import React, { memo } from 'react';
 import PageContext from '../contexts/PageContext';
-import { useDispatch } from '../contexts/ResumeContext';
 import AwardsA from './blocks/Awards/AwardsA';
 import CertificationsA from './blocks/Certifications/CertificationsA';
 import Contact from './blocks/Contact/ContactA';
 import EducationA from './blocks/Education/EducationA';
-import Heading from './blocks/Heading/HeadingA';
+import HeadingA from './blocks/Heading/HeadingA';
 import HobbiesA from './blocks/Hobbies/HobbiesA';
 import LanguagesA from './blocks/Languages/LanguagesA';
 import ObjectiveA from './blocks/Objective/ObjectiveA';
@@ -28,18 +27,10 @@ const Blocks = {
 };
 
 const Onyx = ({ data }) => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch({
-      type: 'set_fixed_sections',
-      payload: ['profile', 'social'],
-    });
-    dispatch({ type: 'set_block_count', payload: 3 });
-  }, []);
+  const layout = data.metadata.layout.onyx;
 
   return (
-    <PageContext.Provider value={{ data, heading: Heading }}>
+    <PageContext.Provider value={{ data, heading: HeadingA }}>
       <div
         id="page"
         className="p-10 rounded"
@@ -88,22 +79,22 @@ const Onyx = ({ data }) => {
         />
 
         <div className="grid gap-4">
-          {data.metadata.layout[0] &&
-            data.metadata.layout[0].map((x) => {
+          {layout[0] &&
+            layout[0].map((x) => {
               const Component = Blocks[x];
               return Component && <Component key={x} />;
             })}
 
           <div className="grid grid-cols-2 gap-4">
-            {data.metadata.layout[1] &&
-              data.metadata.layout[1].map((x) => {
+            {layout[1] &&
+              layout[1].map((x) => {
                 const Component = Blocks[x];
                 return Component && <Component key={x} />;
               })}
           </div>
 
-          {data.metadata.layout[2] &&
-            data.metadata.layout[2].map((x) => {
+          {layout[2] &&
+            layout[2].map((x) => {
               const Component = Blocks[x];
               return Component && <Component key={x} />;
             })}

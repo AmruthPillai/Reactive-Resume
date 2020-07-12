@@ -2,7 +2,9 @@ import React, { memo } from 'react';
 import { Helmet } from 'react-helmet';
 import { useSelector } from '../../../contexts/ResumeContext';
 import Onyx from '../../../templates/Onyx';
+import Pikachu from '../../../templates/Pikachu';
 import styles from './Artboard.module.css';
+import Gengar from '../../../templates/Gengar';
 
 const Artboard = () => {
   const state = useSelector();
@@ -18,6 +20,8 @@ const Artboard = () => {
 
       <div id="artboard" className={styles.container}>
         {template === 'onyx' && <Onyx data={state} />}
+        {template === 'pikachu' && <Pikachu data={state} />}
+        {template === 'gengar' && <Gengar data={state} />}
       </div>
     </div>
   );

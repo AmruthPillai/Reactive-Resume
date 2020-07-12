@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import { useDispatch, useSelector } from '../../../../contexts/ResumeContext';
 import { move, reorder } from '../../../../utils';
@@ -9,7 +9,8 @@ import styles from './Layout.module.css';
 const Layout = () => {
   const [resetLayoutText, setResetLayoutText] = useState('Reset Layout');
 
-  const blocks = useSelector('metadata.layout');
+  const template = useSelector('metadata.template');
+  const blocks = useSelector(`metadata.layout.${template}`, [[]]);
   const dispatch = useDispatch();
 
   const onDragEnd = (result) => {
@@ -28,7 +29,7 @@ const Layout = () => {
       dispatch({
         type: 'on_input',
         payload: {
-          path: 'metadata.layout',
+          path: `metadata.layout.${template}`,
           value: newState,
         },
       });
@@ -40,7 +41,7 @@ const Layout = () => {
       dispatch({
         type: 'on_input',
         payload: {
-          path: 'metadata.layout',
+          path: `metadata.layout.${template}`,
           value: newState,
         },
       });
@@ -110,4 +111,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default memo(Layout);

@@ -16,7 +16,7 @@ const ProjectItem = (x) => (
         )}
       </div>
       {x.date && (
-        <h6 className="text-xs font-medium">
+        <h6 className="text-xs font-medium text-right">
           {moment(x.date).format('MMMM YYYY')}
         </h6>
       )}

@@ -2,8 +2,8 @@ import firebase from 'gatsby-plugin-firebase';
 import { debounce } from 'lodash';
 import ShortUniqueId from 'short-unique-id';
 import React, { createContext, memo, useContext, useState } from 'react';
-import initialState from '../data/initialState';
 import UserContext from './UserContext';
+import initialState from '../data/initialState.json';
 
 const DEBOUNCE_WAIT_TIME = 4000;
 
@@ -68,6 +68,8 @@ const DatabaseProvider = ({ children }) => {
   };
 
   const duplicateResume = (originalResume) => {
+    console.trace();
+
     const id = uuid();
     const createdAt = firebase.database.ServerValue.TIMESTAMP;
 

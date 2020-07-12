@@ -12,9 +12,9 @@ const EducationItem = (x) => (
           <strong>{x.degree}</strong> {x.field}
         </span>
       </div>
-      <div className="flex flex-col items-end">
+      <div className="flex flex-col items-end text-right">
         {x.startDate && (
-          <h6 className="text-xs font-medium">
+          <h6 className="text-xs font-medium mb-1">
             ({formatDateRange({ startDate: x.startDate, endDate: x.endDate })})
           </h6>
         )}

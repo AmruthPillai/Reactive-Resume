@@ -1,15 +1,5 @@
 import arrayMove from 'array-move';
-import {
-  clone,
-  concat,
-  findIndex,
-  flatten,
-  get,
-  isUndefined,
-  merge,
-  setWith,
-  times,
-} from 'lodash';
+import { clone, findIndex, get, isUndefined, merge, setWith } from 'lodash';
 import React, {
   createContext,
   memo,
@@ -18,9 +8,8 @@ import React, {
   useReducer,
 } from 'react';
 import demoState from '../data/demoState.json';
-import initialState from '../data/initialState';
+import initialState from '../data/initialState.json';
 import DatabaseContext from './DatabaseContext';
-import leftSections from '../data/leftSections';
 
 const ResumeContext = createContext({});
 
@@ -32,7 +21,6 @@ const ResumeProvider = ({ children }) => {
       let newState;
       let index;
       let items;
-      let diff;
       let temp;
 
       switch (type) {
@@ -85,46 +73,15 @@ const ResumeProvider = ({ children }) => {
           debouncedUpdateResume(newState);
           return newState;
 
-        case 'set_block_count':
-          items = get(state, 'metadata.layout');
-
-          if (items.length === payload) return state;
-
-          if (payload === 1) {
-            items = flatten(items);
-          }
-
-          if (items.length > payload) {
-            diff = items.length - payload;
-            temp = items.splice(Math.max(items.length - diff, 1));
-            items[0] = concat(items[0], flatten(temp));
-          }
-
-          if (items.length < payload) {
-            diff = payload - items.length;
-            times(diff, () => items.push([]));
-          }
-
-          newState = setWith(clone(state), 'metadata.layout', items, clone);
-          debouncedUpdateResume(newState);
-          return newState;
-
-        case 'set_fixed_sections':
-          items = get(state, 'metadata.layout');
-
-          items = items.map((x) => {
-            return x.filter((y) => {
-              return !payload.includes(y);
-            });
-          });
-
-          newState = setWith(clone(state), 'metadata.layout', items, clone);
-          debouncedUpdateResume(newState);
-          return newState;
-
         case 'reset_layout':
-          items = [leftSections.filter((x) => !x.fixed).map((x) => x.id)];
-          newState = setWith(clone(state), 'metadata.layout', items, clone);
+          temp = get(state, 'metadata.template');
+          items = get(initialState, `metadata.layout.${temp}`);
+          newState = setWith(
+            clone(state),
+            `metadata.layout.${temp}`,
+            items,
+            clone,
+          );
           debouncedUpdateResume(newState);
           return newState;
 
@@ -144,7 +101,13 @@ const ResumeProvider = ({ children }) => {
           return newState;
 
         case 'reset_data':
-          newState = merge(clone(state), initialState);
+          temp = clone(state);
+          newState = initialState;
+          newState.id = temp.id;
+          newState.user = temp.user;
+          newState.name = temp.name;
+          newState.createdAt = temp.createdAt;
+          newState.updatedAt = temp.updatedAt;
           debouncedUpdateResume(newState);
           return newState;
 

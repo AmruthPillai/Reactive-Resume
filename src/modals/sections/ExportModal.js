@@ -10,6 +10,7 @@ const ExportModal = () => {
   const state = useSelector();
   const [open, setOpen] = useState(false);
   const [isLoadingSingle, setLoadingSingle] = useState(false);
+  const [isLoadingMulti, setLoadingMulti] = useState(false);
   const functionsUrl = 'http://localhost:5001/rx-resume/us-central1';
 
   const { emitter, events } = useContext(ModalContext);
@@ -26,19 +27,30 @@ const ExportModal = () => {
     }
   };
 
+  const openFile = (blob) => {
+    if (typeof window !== `undefined`) {
+      const url = window.URL.createObjectURL(blob, { oneTimeOnly: true });
+      window && window.open(url);
+      setLoadingSingle(false);
+    }
+  };
+
   const handleSinglePageDownload = async () => {
     setLoadingSingle(true);
     fetch(`${functionsUrl}/printSinglePageResume?id=${state.id}`, {
       method: 'POST',
     })
       .then((response) => response.blob())
-      .then((data) => {
-        if (typeof window !== `undefined`) {
-          const url = window.URL.createObjectURL(data, { oneTimeOnly: true });
-          window && window.open(url);
-          setLoadingSingle(false);
-        }
-      });
+      .then(openFile);
+  };
+
+  const handleMultiPageDownload = async () => {
+    setLoadingMulti(true);
+    fetch(`${functionsUrl}/printMultiPageResume?id=${state.id}`, {
+      method: 'POST',
+    })
+      .then((response) => response.blob())
+      .then(openFile);
   };
 
   const handleExportToJson = () => {
@@ -99,7 +111,13 @@ const ExportModal = () => {
             >
               Single Page Resume
             </Button>
-            <Button className="ml-8">Multi Page Resume</Button>
+            <Button
+              className="ml-8"
+              isLoading={isLoadingMulti}
+              onClick={handleMultiPageDownload}
+            >
+              Multi Page Resume
+            </Button>
           </div>
         </div>
       </div>

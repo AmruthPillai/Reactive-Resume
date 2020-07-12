@@ -6,6 +6,8 @@ import LoadingScreen from '../../components/router/LoadingScreen';
 import DatabaseContext from '../../contexts/DatabaseContext';
 import Onyx from '../../templates/Onyx';
 import styles from './view.module.css';
+import Pikachu from '../../templates/Pikachu';
+import Gengar from '../../templates/Gengar';
 
 const ResumeViewer = ({ id }) => {
   const [resume, setResume] = useState(null);
@@ -46,6 +48,8 @@ const ResumeViewer = ({ id }) => {
           style={{ backgroundColor: resume.metadata.colors.background }}
         >
           {resume.metadata.template === 'onyx' && <Onyx data={resume} />}
+          {resume.metadata.template === 'pikachu' && <Pikachu data={resume} />}
+          {resume.metadata.template === 'gengar' && <Gengar data={resume} />}
         </div>
 
         <p className={styles.footer}>
