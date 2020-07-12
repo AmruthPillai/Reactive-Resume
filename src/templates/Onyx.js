@@ -31,6 +31,10 @@ const Onyx = ({ data }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch({
+      type: 'set_fixed_sections',
+      payload: ['profile', 'social'],
+    });
     dispatch({ type: 'set_block_count', payload: 3 });
   }, []);
 

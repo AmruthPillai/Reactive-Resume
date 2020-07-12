@@ -46,6 +46,15 @@ const Home = () => {
             just not in a position to pay hundreds of dollars to create a resume
             to bootstrap their career.
           </Feature>
+
+          <Feature title="Your data is your data, none of my data.">
+            You must be thinking, if you&apos;re not paying for the product,
+            then you are the product. Or, at least your data is?{' '}
+            <strong>Well, this is the exception</strong>. Your data is your own,
+            as stated in the ridiculously simple <a href="">Privacy Policy</a>,
+            I don&apos;t do anything with the data, it just exists on a database
+            for the convinient features provided by Reactive Resume.
+          </Feature>
         </div>
 
         <footer className="my-24">

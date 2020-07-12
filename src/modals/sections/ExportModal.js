@@ -1,5 +1,6 @@
 import { clone } from 'lodash';
 import React, { memo, useContext, useEffect, useState } from 'react';
+import { FaPrint } from 'react-icons/fa';
 import Button from '../../components/shared/Button';
 import ModalContext from '../../contexts/ModalContext';
 import { useSelector } from '../../contexts/ResumeContext';
@@ -8,6 +9,8 @@ import BaseModal from '../BaseModal';
 const ExportModal = () => {
   const state = useSelector();
   const [open, setOpen] = useState(false);
+  const [isLoadingSingle, setLoadingSingle] = useState(false);
+  const functionsUrl = 'http://localhost:5001/rx-resume/us-central1';
 
   const { emitter, events } = useContext(ModalContext);
 
@@ -21,6 +24,21 @@ const ExportModal = () => {
     if (typeof window !== `undefined`) {
       window && window.print();
     }
+  };
+
+  const handleSinglePageDownload = async () => {
+    setLoadingSingle(true);
+    fetch(`${functionsUrl}/printSinglePageResume?id=${state.id}`, {
+      method: 'POST',
+    })
+      .then((response) => response.blob())
+      .then((data) => {
+        if (typeof window !== `undefined`) {
+          const url = window.URL.createObjectURL(data, { oneTimeOnly: true });
+          window && window.open(url);
+          setLoadingSingle(false);
+        }
+      });
   };
 
   const handleExportToJson = () => {
@@ -56,8 +74,8 @@ const ExportModal = () => {
           printed immediately.
         </p>
 
-        <Button className="mt-5" onClick={handleOpenPrintDialog}>
-          Open Print Dialog
+        <Button icon={FaPrint} className="mt-5" onClick={handleOpenPrintDialog}>
+          Print Resume
         </Button>
       </div>
 
@@ -73,9 +91,14 @@ const ExportModal = () => {
           as well with just one click.
         </p>
 
-        <div className="mt-5">
+        <div className="mt-5 mb-4">
           <div className="flex">
-            <Button>Single Page Resume</Button>
+            <Button
+              isLoading={isLoadingSingle}
+              onClick={handleSinglePageDownload}
+            >
+              Single Page Resume
+            </Button>
             <Button className="ml-8">Multi Page Resume</Button>
           </div>
         </div>

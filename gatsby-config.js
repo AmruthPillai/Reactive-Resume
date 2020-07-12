@@ -65,7 +65,7 @@ module.exports = {
         short_name: 'RxResume',
         description: 'A free and open-source resume builder.',
         start_url: '/?source=pwa',
-        icon: `assets/images/logo.png`,
+        icon: `static/images/logo.png`,
         background_color: '#FFFFFF',
         theme_color: '#444444',
         display: 'standalone',
@@ -99,7 +99,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/assets/images/`,
+        path: `${__dirname}/static/images/`,
       },
     },
     'gatsby-plugin-sharp',

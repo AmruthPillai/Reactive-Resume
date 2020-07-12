@@ -1,14 +1,14 @@
 import arrayMove from 'array-move';
 import {
   clone,
+  concat,
   findIndex,
+  flatten,
   get,
   isUndefined,
-  setWith,
-  flatten,
-  concat,
-  times,
   merge,
+  setWith,
+  times,
 } from 'lodash';
 import React, {
   createContext,
@@ -17,9 +17,10 @@ import React, {
   useContext,
   useReducer,
 } from 'react';
-import DatabaseContext from './DatabaseContext';
-import initialState from '../data/initialState';
 import demoState from '../data/demoState.json';
+import initialState from '../data/initialState';
+import DatabaseContext from './DatabaseContext';
+import leftSections from '../data/leftSections';
 
 const ResumeContext = createContext({});
 
@@ -104,6 +105,25 @@ const ResumeProvider = ({ children }) => {
             times(diff, () => items.push([]));
           }
 
+          newState = setWith(clone(state), 'metadata.layout', items, clone);
+          debouncedUpdateResume(newState);
+          return newState;
+
+        case 'set_fixed_sections':
+          items = get(state, 'metadata.layout');
+
+          items = items.map((x) => {
+            return x.filter((y) => {
+              return !payload.includes(y);
+            });
+          });
+
+          newState = setWith(clone(state), 'metadata.layout', items, clone);
+          debouncedUpdateResume(newState);
+          return newState;
+
+        case 'reset_layout':
+          items = [leftSections.filter((x) => !x.fixed).map((x) => x.id)];
           newState = setWith(clone(state), 'metadata.layout', items, clone);
           debouncedUpdateResume(newState);
           return newState;

@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import { useDispatch, useSelector } from '../../../../contexts/ResumeContext';
 import { move, reorder } from '../../../../utils';
+import Button from '../../../shared/Button';
 import Heading from '../../../shared/Heading';
 import styles from './Layout.module.css';
 
 const Layout = () => {
+  const [resetLayoutText, setResetLayoutText] = useState('Reset Layout');
+
   const blocks = useSelector('metadata.layout');
   const dispatch = useDispatch();
 
@@ -42,6 +45,16 @@ const Layout = () => {
         },
       });
     }
+  };
+
+  const handleResetLayout = () => {
+    if (resetLayoutText === 'Reset Layout') {
+      setResetLayoutText('Are you sure?');
+      return;
+    }
+
+    dispatch({ type: 'reset_layout' });
+    setResetLayoutText('Reset Layout');
   };
 
   return (
@@ -88,6 +101,10 @@ const Layout = () => {
             </Droppable>
           ))}
         </DragDropContext>
+      </div>
+
+      <div className="flex">
+        <Button onClick={handleResetLayout}>{resetLayoutText}</Button>
       </div>
     </section>
   );
