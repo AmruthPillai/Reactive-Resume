@@ -1,10 +1,12 @@
 import React, { memo } from 'react';
 import { Helmet } from 'react-helmet';
 import { useSelector } from '../../../contexts/ResumeContext';
+import Castform from '../../../templates/Castform';
+import Gengar from '../../../templates/Gengar';
+import Glalie from '../../../templates/Glalie';
 import Onyx from '../../../templates/Onyx';
 import Pikachu from '../../../templates/Pikachu';
 import styles from './Artboard.module.css';
-import Gengar from '../../../templates/Gengar';
 
 const Artboard = () => {
   const state = useSelector();
@@ -22,6 +24,8 @@ const Artboard = () => {
         {template === 'onyx' && <Onyx data={state} />}
         {template === 'pikachu' && <Pikachu data={state} />}
         {template === 'gengar' && <Gengar data={state} />}
+        {template === 'castform' && <Castform data={state} />}
+        {template === 'glalie' && <Glalie data={state} />}
       </div>
     </div>
   );

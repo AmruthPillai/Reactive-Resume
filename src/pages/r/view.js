@@ -1,13 +1,15 @@
-import { navigate, Link } from '@reach/router';
+import { Link, navigate } from '@reach/router';
 import React, { memo, useContext, useEffect, useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { toast } from 'react-toastify';
 import LoadingScreen from '../../components/router/LoadingScreen';
 import DatabaseContext from '../../contexts/DatabaseContext';
-import Onyx from '../../templates/Onyx';
-import styles from './view.module.css';
-import Pikachu from '../../templates/Pikachu';
+import Castform from '../../templates/Castform';
 import Gengar from '../../templates/Gengar';
+import Glalie from '../../templates/Glalie';
+import Onyx from '../../templates/Onyx';
+import Pikachu from '../../templates/Pikachu';
+import styles from './view.module.css';
 
 const ResumeViewer = ({ id }) => {
   const [resume, setResume] = useState(null);
@@ -50,6 +52,10 @@ const ResumeViewer = ({ id }) => {
           {resume.metadata.template === 'onyx' && <Onyx data={resume} />}
           {resume.metadata.template === 'pikachu' && <Pikachu data={resume} />}
           {resume.metadata.template === 'gengar' && <Gengar data={resume} />}
+          {resume.metadata.template === 'castform' && (
+            <Castform data={resume} />
+          )}
+          {resume.metadata.template === 'glalie' && <Glalie data={resume} />}
         </div>
 
         <p className={styles.footer}>

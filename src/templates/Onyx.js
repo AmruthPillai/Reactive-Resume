@@ -33,7 +33,7 @@ const Onyx = ({ data }) => {
     <PageContext.Provider value={{ data, heading: HeadingA }}>
       <div
         id="page"
-        className="p-10 rounded"
+        className="p-8 rounded"
         style={{
           fontFamily: data.metadata.font,
           color: data.metadata.colors.text,

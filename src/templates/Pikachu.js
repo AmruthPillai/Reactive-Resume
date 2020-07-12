@@ -32,7 +32,7 @@ const Pikachu = ({ data }) => {
     <PageContext.Provider value={{ data, heading: HeadingB }}>
       <div
         id="page"
-        className="p-10 rounded"
+        className="p-6 rounded"
         style={{
           fontFamily: data.metadata.font,
           color: data.metadata.colors.text,

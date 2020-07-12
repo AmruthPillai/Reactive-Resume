@@ -68,8 +68,6 @@ const DatabaseProvider = ({ children }) => {
   };
 
   const duplicateResume = (originalResume) => {
-    console.trace();
-
     const id = uuid();
     const createdAt = firebase.database.ServerValue.TIMESTAMP;
 
