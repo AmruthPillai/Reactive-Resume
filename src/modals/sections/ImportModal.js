@@ -29,7 +29,7 @@ const ImportModal = () => {
   };
 
   return (
-    <BaseModal hideActions state={[open, setOpen]} title="Import Data">
+    <BaseModal hideActions state={[open, setOpen]} title="Import Your Resume">
       <div>
         <h5 className="text-xl font-semibold mb-4">
           Import from Reactive Resume

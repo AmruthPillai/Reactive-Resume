@@ -1,8 +1,6 @@
 import { navigate } from 'gatsby';
 import React, { memo, useContext } from 'react';
-import { FaGithub } from 'react-icons/fa';
 import ModalContext from '../../contexts/ModalContext';
-import ThemeContext from '../../contexts/ThemeContext';
 import UserContext from '../../contexts/UserContext';
 import Button from '../shared/Button';
 import Logo from '../shared/Logo';
@@ -10,7 +8,6 @@ import Logo from '../shared/Logo';
 const Hero = () => {
   const { emitter, events } = useContext(ModalContext);
   const { user, loading } = useContext(UserContext);
-  const { toggleDarkMode } = useContext(ThemeContext);
 
   const handleLogin = () => emitter.emit(events.AUTH_MODAL);
 
@@ -36,14 +33,6 @@ const Hero = () => {
               Login
             </Button>
           )}
-          <Button
-            outline
-            className="ml-8"
-            icon={FaGithub}
-            onClick={toggleDarkMode}
-          >
-            GitHub
-          </Button>
         </div>
       </div>
     </div>

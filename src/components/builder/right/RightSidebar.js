@@ -8,6 +8,7 @@ import Fonts from './sections/Fonts';
 import Layout from './sections/Layout';
 import Templates from './sections/Templates';
 import Actions from './sections/Actions';
+import Settings from './sections/Settings';
 
 const getComponent = (id) => {
   switch (id) {
@@ -21,6 +22,8 @@ const getComponent = (id) => {
       return Fonts;
     case 'actions':
       return Actions;
+    case 'settings':
+      return Settings;
     default:
       throw new Error();
   }

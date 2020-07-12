@@ -1,8 +1,10 @@
-.container {
-  width: 210mm;
-  height: 297mm;
-  zoom: 0.8;
-  overflow: scroll;
-  box-shadow: var(--shadow);
-  @apply bg-white rounded;
+@media screen {
+  .container {
+    width: 210mm;
+    height: 297mm;
+    zoom: 0.8;
+    overflow: scroll;
+    box-shadow: var(--shadow);
+    @apply bg-white rounded;
+  }  
 }

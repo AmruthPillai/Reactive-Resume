@@ -9,7 +9,9 @@ const ReferenceItem = (x) => (
     <span className="text-xs">{x.position}</span>
     <span className="text-xs">{x.phone}</span>
     <span className="text-xs">{x.email}</span>
-    <ReactMarkdown className="markdown mt-2 text-sm" source={x.summary} />
+    {x.summary && (
+      <ReactMarkdown className="markdown mt-2 text-sm" source={x.summary} />
+    )}
   </div>
 );
 

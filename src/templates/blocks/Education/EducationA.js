@@ -21,7 +21,9 @@ const EducationItem = (x) => (
         <span className="text-sm font-medium">{x.gpa}</span>
       </div>
     </div>
-    <ReactMarkdown className="markdown mt-2 text-sm" source={x.summary} />
+    {x.summary && (
+      <ReactMarkdown className="markdown mt-2 text-sm" source={x.summary} />
+    )}
   </div>
 );
 

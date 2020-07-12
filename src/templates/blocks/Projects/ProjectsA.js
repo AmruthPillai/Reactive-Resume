@@ -21,7 +21,9 @@ const ProjectItem = (x) => (
         </h6>
       )}
     </div>
-    <ReactMarkdown className="markdown mt-2 text-sm" source={x.summary} />
+    {x.summary && (
+      <ReactMarkdown className="markdown mt-2 text-sm" source={x.summary} />
+    )}
   </div>
 );
 

@@ -12,6 +12,7 @@ const ModalEvents = {
   LANGUAGE_MODAL: 'language_modal',
   REFERENCE_MODAL: 'reference_modal',
   IMPORT_MODAL: 'import_modal',
+  EXPORT_MODAL: 'export_modal',
 };
 
 export default ModalEvents;

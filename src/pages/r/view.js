@@ -40,6 +40,7 @@ const ResumeViewer = ({ id }) => {
           <title>{resume.name} | Reactive Resume</title>
           <link rel="canonical" href={`https://rxresu.me/r/${id}`} />
         </Helmet>
+
         <div
           className={styles.page}
           style={{ backgroundColor: resume.metadata.colors.background }}

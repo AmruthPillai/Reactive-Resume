@@ -1,9 +1,7 @@
-import { clone } from 'lodash';
 import React, { memo, useContext, useState } from 'react';
-import { MdImportExport } from 'react-icons/md';
+import { FaFileExport, FaFileImport } from 'react-icons/fa';
 import ModalContext from '../../../../contexts/ModalContext';
 import { useDispatch, useSelector } from '../../../../contexts/ResumeContext';
-import UserContext from '../../../../contexts/UserContext';
 import Button from '../../../shared/Button';
 import Heading from '../../../shared/Heading';
 import Input from '../../../shared/Input';
@@ -12,33 +10,14 @@ import styles from './Actions.module.css';
 const Actions = () => {
   const [loadDemoText, setLoadDemoText] = useState('Load Demo Data');
   const [resetText, setResetText] = useState('Reset Everything');
-  const [deleteText, setDeleteText] = useState('Delete Account');
 
   const state = useSelector();
   const dispatch = useDispatch();
   const { emitter, events } = useContext(ModalContext);
-  const { deleteAccount } = useContext(UserContext);
 
   const handleImport = () => emitter.emit(events.IMPORT_MODAL);
 
-  const handleExportToJson = () => {
-    const backupObj = clone(state);
-    delete backupObj.id;
-    delete backupObj.user;
-    delete backupObj.name;
-    delete backupObj.createdAt;
-    delete backupObj.updatedAt;
-    const dataStr = `data:text/json;charset=utf-8,${encodeURIComponent(
-      JSON.stringify(backupObj),
-    )}`;
-    const dlAnchor = document.getElementById('downloadAnchor');
-    dlAnchor.setAttribute('href', dataStr);
-    dlAnchor.setAttribute(
-      'download',
-      `RxResume_${state.id}_${Date.now()}.json`,
-    );
-    dlAnchor.click();
-  };
+  const handleExport = () => emitter.emit(events.EXPORT_MODAL);
 
   const getSharableUrl = () => {
     const shareId = state.id;
@@ -71,18 +50,6 @@ const Actions = () => {
     dispatch({ type: 'reset_data' });
   };
 
-  const handleDeleteAccount = () => {
-    if (deleteText === 'Delete Account') {
-      setDeleteText('Are you sure?');
-      return;
-    }
-
-    setDeleteText('Buh bye! :(');
-    setTimeout(() => {
-      deleteAccount();
-    }, 500);
-  };
-
   return (
     <section>
       <Heading>Actions</Heading>
@@ -96,7 +63,7 @@ const Actions = () => {
         </p>
 
         <div className="mt-4 flex">
-          <Button icon={MdImportExport} onClick={handleImport}>
+          <Button icon={FaFileImport} onClick={handleImport}>
             Import
           </Button>
         </div>
@@ -111,15 +78,10 @@ const Actions = () => {
         </p>
 
         <div className="mt-4 flex">
-          <Button>Save as PDF</Button>
-          <Button outline className="ml-6" onClick={handleExportToJson}>
-            Export as JSON
+          <Button icon={FaFileExport} onClick={handleExport}>
+            Export
           </Button>
         </div>
-
-        <a id="downloadAnchor" className="hidden">
-          Download Exported JSON
-        </a>
       </div>
 
       <div className={styles.container}>
@@ -162,22 +124,6 @@ const Actions = () => {
 
         <div className="mt-4 flex">
           <Button onClick={handleReset}>{resetText}</Button>
-        </div>
-      </div>
-
-      <div className={styles.container}>
-        <h5>Danger Zone</h5>
-
-        <p className="leading-loose">
-          If you would like to delete your account and erase all your resumes,
-          it’s just one button away. Please be weary as this is an irreversible
-          process.
-        </p>
-
-        <div className="mt-4 flex">
-          <Button isDelete onClick={handleDeleteAccount}>
-            {deleteText}
-          </Button>
         </div>
       </div>
     </section>

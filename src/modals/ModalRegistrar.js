@@ -4,6 +4,7 @@ import ResumeModal from './ResumeModal';
 import AwardModal from './sections/AwardModal';
 import CertificateModal from './sections/CertificateModal';
 import EducationModal from './sections/EducationModal';
+import ExportModal from './sections/ExportModal';
 import HobbyModal from './sections/HobbyModal';
 import ImportModal from './sections/ImportModal';
 import LanguageModal from './sections/LanguageModal';
@@ -29,6 +30,7 @@ const ModalRegistrar = () => {
       <LanguageModal />
       <ReferenceModal />
       <ImportModal />
+      <ExportModal />
     </>
   );
 };

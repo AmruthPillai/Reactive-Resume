@@ -3,6 +3,7 @@ import {
   MdDashboard,
   MdFontDownload,
   MdImportExport,
+  MdSettings,
   MdStyle,
 } from 'react-icons/md';
 
@@ -31,5 +32,10 @@ export default [
     id: 'actions',
     name: 'Actions',
     icon: MdImportExport,
+  },
+  {
+    id: 'settings',
+    name: 'Settings',
+    icon: MdSettings,
   },
 ];
