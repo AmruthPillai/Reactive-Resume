@@ -1,26 +1,31 @@
 const functions = require('firebase-functions');
 const puppeteer = require('puppeteer');
-const cors = require('cors')({ origin: 'https://rxresume-staging.web.app' });
 
-const BASE_URL = 'https:/rxresu.me/r/';
+const BASE_URL = 'https://rxresume-staging.web.app/r/';
 
 function timeout(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-exports.printSinglePageResume = functions.https.onRequest((req, res) => {
-  if (req.method !== 'POST') {
-    return res.status(403).send('Forbidden!');
-  }
+exports.printSinglePageResume = functions.https.onCall(
+  async ({ id }, { auth }) => {
+    if (!id) {
+      throw new functions.https.HttpsError(
+        'invalid-argument',
+        'The function must be called with one arguments "id" containing the resume ID.',
+      );
+    }
 
-  if (!req.query.id) {
-    return res.status(400).send('Bad Request!');
-  }
+    if (!auth) {
+      throw new functions.https.HttpsError(
+        'failed-precondition',
+        'The function must be called while authenticated.',
+      );
+    }
 
-  async function run() {
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
-    await page.goto(BASE_URL + req.query.id);
+    await page.goto(BASE_URL + id);
     await timeout(5000);
     await page.emulateMediaType('print');
     const height = await page.evaluate(() => {
@@ -44,48 +49,36 @@ exports.printSinglePageResume = functions.https.onRequest((req, res) => {
       pageRanges: '1',
     });
     await browser.close();
-    return pdf;
-  }
+    return Buffer.from(pdf).toString('base64');
+  },
+);
 
-  return cors(req, res, async () => {
-    const pdf = await run();
-    res.set({
-      'Content-Type': 'application/pdf',
-      'Content-Length': pdf.length,
-    });
-    return res.send(pdf);
-  });
-});
+exports.printMultiPageResume = functions.https.onCall(
+  async ({ id }, { auth }) => {
+    if (!id) {
+      throw new functions.https.HttpsError(
+        'invalid-argument',
+        'The function must be called with one arguments "id" containing the resume ID.',
+      );
+    }
 
-exports.printMultiPageResume = functions.https.onRequest((req, res) => {
-  if (req.method !== 'POST') {
-    return res.status(403).send('Forbidden!');
-  }
+    if (!auth) {
+      throw new functions.https.HttpsError(
+        'failed-precondition',
+        'The function must be called while authenticated.',
+      );
+    }
 
-  if (!req.query.id) {
-    return res.status(400).send('Bad Request!');
-  }
-
-  async function run() {
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
-    await page.goto(BASE_URL + req.query.id);
+    await page.goto(BASE_URL + id);
     await timeout(5000);
     await page.emulateMediaType('print');
     const pdf = await page.pdf({
+      format: 'A4',
       printBackground: true,
-      width: `21cm`,
     });
     await browser.close();
-    return pdf;
-  }
-
-  return cors(req, res, async () => {
-    const pdf = await run();
-    res.set({
-      'Content-Type': 'application/pdf',
-      'Content-Length': pdf.length,
-    });
-    return res.send(pdf);
-  });
-});
+    return Buffer.from(pdf).toString('base64');
+  },
+);

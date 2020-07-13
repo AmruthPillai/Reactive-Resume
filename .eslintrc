@@ -1,5 +1,6 @@
 {
   "globals": {
+    "atob": true,
     "Blob": true,
     "fetch": true,
     "window": true,
@@ -24,6 +25,7 @@
     "no-param-reassign": 0,
     "consistent-return": 0,
     "no-nested-ternary": 0,
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "no-plusplus": 0
   }
 }

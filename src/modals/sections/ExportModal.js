@@ -1,9 +1,11 @@
+import firebase from 'gatsby-plugin-firebase';
 import { clone } from 'lodash';
 import React, { memo, useContext, useEffect, useState } from 'react';
 import { FaPrint } from 'react-icons/fa';
 import Button from '../../components/shared/Button';
 import ModalContext from '../../contexts/ModalContext';
 import { useSelector } from '../../contexts/ResumeContext';
+import { b64toBlob } from '../../utils';
 import BaseModal from '../BaseModal';
 
 const ExportModal = () => {
@@ -11,7 +13,6 @@ const ExportModal = () => {
   const [open, setOpen] = useState(false);
   const [isLoadingSingle, setLoadingSingle] = useState(false);
   const [isLoadingMulti, setLoadingMulti] = useState(false);
-  const functionsUrl = 'https://us-central1-rx-resume.cloudfunctions.net';
 
   const { emitter, events } = useContext(ModalContext);
 
@@ -37,20 +38,22 @@ const ExportModal = () => {
 
   const handleSinglePageDownload = async () => {
     setLoadingSingle(true);
-    fetch(`${functionsUrl}/printSinglePageResume?id=${state.id}`, {
-      method: 'POST',
-    })
-      .then((response) => response.blob())
-      .then(openFile);
+    const printSinglePageResume = firebase
+      .functions()
+      .httpsCallable('printSinglePageResume');
+    const { data } = await printSinglePageResume({ id: state.id });
+    const blob = b64toBlob(data, 'application/pdf');
+    openFile(blob);
   };
 
   const handleMultiPageDownload = async () => {
     setLoadingMulti(true);
-    fetch(`${functionsUrl}/printMultiPageResume?id=${state.id}`, {
-      method: 'POST',
-    })
-      .then((response) => response.blob())
-      .then(openFile);
+    const printMultiPageResume = firebase
+      .functions()
+      .httpsCallable('printMultiPageResume');
+    const { data } = await printMultiPageResume({ id: state.id });
+    const blob = b64toBlob(data, 'application/pdf');
+    openFile(blob);
   };
 
   const handleExportToJson = () => {

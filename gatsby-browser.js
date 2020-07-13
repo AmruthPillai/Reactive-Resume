@@ -3,6 +3,7 @@ import 'animate.css';
 import 'firebase/analytics';
 import 'firebase/auth';
 import 'firebase/database';
+import 'firebase/functions';
 import 'firebase/storage';
 import React from 'react';
 import { DatabaseProvider } from './src/contexts/DatabaseContext';
@@ -11,10 +12,10 @@ import { ResumeProvider } from './src/contexts/ResumeContext';
 import { StorageProvider } from './src/contexts/StorageContext';
 import { ThemeProvider } from './src/contexts/ThemeContext';
 import { UserProvider } from './src/contexts/UserContext';
+import './src/styles/global.css';
 import './src/styles/shadows.css';
 import './src/styles/tailwind.css';
 import './src/styles/toastify.css';
-import './src/styles/global.css';
 
 const theme = createMuiTheme({
   typography: {
