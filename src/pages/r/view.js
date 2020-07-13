@@ -10,6 +10,7 @@ import Glalie from '../../templates/Glalie';
 import Onyx from '../../templates/Onyx';
 import Pikachu from '../../templates/Pikachu';
 import styles from './view.module.css';
+import Celebi from '../../templates/Celebi';
 
 const ResumeViewer = ({ id }) => {
   const [resume, setResume] = useState(null);
@@ -56,6 +57,7 @@ const ResumeViewer = ({ id }) => {
             <Castform data={resume} />
           )}
           {resume.metadata.template === 'glalie' && <Glalie data={resume} />}
+          {resume.metadata.template === 'celebi' && <Celebi data={resume} />}
         </div>
 
         <p className={styles.footer}>

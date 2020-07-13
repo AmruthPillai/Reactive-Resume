@@ -1,11 +1,15 @@
-import React, { memo, useContext, useEffect, useState, useRef } from 'react';
 import { Tooltip } from '@material-ui/core';
-import ModalContext from '../../contexts/ModalContext';
-import BaseModal from '../BaseModal';
+import Ajv from 'ajv';
+import React, { memo, useContext, useEffect, useRef, useState } from 'react';
+import { toast } from 'react-toastify';
 import Button from '../../components/shared/Button';
+import ModalContext from '../../contexts/ModalContext';
 import { useDispatch } from '../../contexts/ResumeContext';
+import reactiveResumeSchema from '../../data/schema/reactiveResume.json';
+import BaseModal from '../BaseModal';
 
 const ImportModal = () => {
+  const ajv = new Ajv();
   const fileInputRef = useRef(null);
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
@@ -22,6 +26,11 @@ const ImportModal = () => {
     const fr = new FileReader();
     fr.addEventListener('load', () => {
       const payload = JSON.parse(fr.result);
+      const valid = ajv.validate(reactiveResumeSchema, payload);
+      if (!valid) {
+        ajv.errors.forEach((x) => toast.error(`Invalid Data: ${x.message}`));
+        return;
+      }
       dispatch({ type: 'on_import', payload });
       setOpen(false);
     });

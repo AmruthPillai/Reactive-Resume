@@ -1,4 +1,6 @@
 import cx from 'classnames';
+import { graphql, useStaticQuery } from 'gatsby';
+import GatsbyImage from 'gatsby-image';
 import React, { memo } from 'react';
 import { useDispatch, useSelector } from '../../../../contexts/ResumeContext';
 import templateOptions from '../../../../data/templateOptions';
@@ -9,6 +11,53 @@ import styles from './Templates.module.css';
 const Templates = () => {
   const dispatch = useDispatch();
   const template = useSelector('metadata.template');
+
+  const previews = useStaticQuery(graphql`
+    query {
+      onyx: file(relativePath: { eq: "templates/onyx.png" }) {
+        childImageSharp {
+          fluid(maxHeight: 400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      pikachu: file(relativePath: { eq: "templates/pikachu.png" }) {
+        childImageSharp {
+          fluid(maxHeight: 400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      gengar: file(relativePath: { eq: "templates/gengar.png" }) {
+        childImageSharp {
+          fluid(maxHeight: 400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      castform: file(relativePath: { eq: "templates/castform.png" }) {
+        childImageSharp {
+          fluid(maxHeight: 400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      glalie: file(relativePath: { eq: "templates/glalie.png" }) {
+        childImageSharp {
+          fluid(maxHeight: 400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      celebi: file(relativePath: { eq: "templates/celebi.png" }) {
+        childImageSharp {
+          fluid(maxHeight: 400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `);
 
   const handleClick = (value) => {
     dispatch({
@@ -36,7 +85,13 @@ const Templates = () => {
               [styles.selected]: template === x.id,
             })}
           >
-            <img loading="lazy" height="240px" src={x.preview} alt={x.name} />
+            <GatsbyImage
+              alt={x.name}
+              loading="eager"
+              className="w-full"
+              style={{ height: '225px' }}
+              fluid={previews[x.id].childImageSharp.fluid}
+            />
             <span>{x.name}</span>
           </div>
         ))}

@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import { Helmet } from 'react-helmet';
 import { useSelector } from '../../../contexts/ResumeContext';
 import Castform from '../../../templates/Castform';
+import Celebi from '../../../templates/Celebi';
 import Gengar from '../../../templates/Gengar';
 import Glalie from '../../../templates/Glalie';
 import Onyx from '../../../templates/Onyx';
@@ -26,6 +27,7 @@ const Artboard = () => {
         {template === 'gengar' && <Gengar data={state} />}
         {template === 'castform' && <Castform data={state} />}
         {template === 'glalie' && <Glalie data={state} />}
+        {template === 'celebi' && <Celebi data={state} />}
       </div>
     </div>
   );

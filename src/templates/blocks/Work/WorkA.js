@@ -6,7 +6,7 @@ import { formatDateRange, safetyCheck } from '../../../utils';
 const WorkItem = (x) => (
   <div key={x.id}>
     <div className="flex justify-between items-center">
-      <div className="flex flex-col">
+      <div className="flex flex-col text-left mr-2">
         <h6 className="font-semibold">{x.company}</h6>
         <span className="text-xs">{x.position}</span>
       </div>

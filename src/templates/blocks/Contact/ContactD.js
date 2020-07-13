@@ -18,7 +18,7 @@ const ContactItem = ({ value, label, link }) => {
   ) : null;
 };
 
-const ContactC = () => {
+const ContactD = () => {
   const { data } = useContext(PageContext);
 
   return (
@@ -80,4 +80,4 @@ const ContactC = () => {
   );
 };
 
-export default memo(ContactC);
+export default memo(ContactD);

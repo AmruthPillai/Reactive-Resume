@@ -68,7 +68,7 @@ const Glalie = ({ data }) => {
               backgroundColor: `rgba(${r}, ${g}, ${b}, 0.1)`,
             }}
           >
-            <div className="grid gap-6 p-6">
+            <div className="grid gap-6 text-center p-8">
               <Profile />
               <ContactD />
 
@@ -81,7 +81,7 @@ const Glalie = ({ data }) => {
           </div>
 
           <div className="col-span-8">
-            <div className="grid gap-4 p-6">
+            <div className="grid gap-4 p-8">
               {layout[1] &&
                 layout[1].map((x) => {
                   const Component = Blocks[x];

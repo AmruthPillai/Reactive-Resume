@@ -7,7 +7,7 @@ import { safetyCheck } from '../../../utils';
 const AwardItem = (x) => (
   <div key={x.id}>
     <div className="flex justify-between items-center">
-      <div className="flex flex-col">
+      <div className="flex flex-col text-left mr-2">
         <h6 className="font-semibold">{x.title}</h6>
         <span className="text-xs">{x.awarder}</span>
       </div>

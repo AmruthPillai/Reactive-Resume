@@ -91,7 +91,13 @@ const ResumeProvider = ({ children }) => {
           return newState;
 
         case 'on_import':
-          newState = { id: state.id, ...payload };
+          temp = clone(state);
+          newState = payload;
+          newState.id = temp.id;
+          newState.user = temp.user;
+          newState.name = temp.name;
+          newState.createdAt = temp.createdAt;
+          newState.updatedAt = temp.updatedAt;
           debouncedUpdateResume(newState);
           return newState;
 

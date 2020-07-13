@@ -32,14 +32,14 @@ const Pikachu = ({ data }) => {
     <PageContext.Provider value={{ data, heading: HeadingB }}>
       <div
         id="page"
-        className="p-6 rounded"
+        className="p-8 rounded"
         style={{
           fontFamily: data.metadata.font,
           color: data.metadata.colors.text,
           backgroundColor: data.metadata.colors.background,
         }}
       >
-        <div className="grid grid-cols-12 col-gap-6 row-gap-8">
+        <div className="grid grid-cols-12 gap-8">
           {data.profile.photograph && (
             <div className="self-center col-span-4">
               <img
