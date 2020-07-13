@@ -23,7 +23,9 @@ exports.printSinglePageResume = functions.https.onCall(
       );
     }
 
-    const browser = await puppeteer.launch({ headless: true });
+    const browser = await puppeteer.launch({
+      headless: true,
+    });
     const page = await browser.newPage();
     await page.goto(BASE_URL + id);
     await timeout(5000);
@@ -69,7 +71,9 @@ exports.printMultiPageResume = functions.https.onCall(
       );
     }
 
-    const browser = await puppeteer.launch({ headless: true });
+    const browser = await puppeteer.launch({
+      headless: true,
+    });
     const page = await browser.newPage();
     await page.goto(BASE_URL + id);
     await timeout(5000);
