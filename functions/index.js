@@ -24,10 +24,10 @@ exports.printSinglePageResume = functions.https.onRequest((req, res) => {
     await timeout(5000);
     await page.emulateMediaType('print');
     const height = await page.evaluate(() => {
-      var body = document.body,
-        html = document.documentElement;
+      const { body } = document;
+      const html = document.documentElement;
 
-      var height = Math.max(
+      const maxHeight = Math.max(
         body.scrollHeight,
         body.offsetHeight,
         html.clientHeight,
@@ -35,7 +35,7 @@ exports.printSinglePageResume = functions.https.onRequest((req, res) => {
         html.offsetHeight,
       );
 
-      return height;
+      return maxHeight;
     });
     const pdf = await page.pdf({
       printBackground: true,
