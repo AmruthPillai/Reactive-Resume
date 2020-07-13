@@ -11,7 +11,7 @@ const ExportModal = () => {
   const [open, setOpen] = useState(false);
   const [isLoadingSingle, setLoadingSingle] = useState(false);
   const [isLoadingMulti, setLoadingMulti] = useState(false);
-  const functionsUrl = 'https://rxresume-staging.web.app';
+  const functionsUrl = 'https://us-central1-rx-resume.cloudfunctions.net';
 
   const { emitter, events } = useContext(ModalContext);
 
