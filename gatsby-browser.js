@@ -13,6 +13,7 @@ import { StorageProvider } from './src/contexts/StorageContext';
 import { ThemeProvider } from './src/contexts/ThemeContext';
 import { UserProvider } from './src/contexts/UserContext';
 import './src/styles/global.css';
+import './src/styles/forms.css';
 import './src/styles/shadows.css';
 import './src/styles/tailwind.css';
 import './src/styles/toastify.css';

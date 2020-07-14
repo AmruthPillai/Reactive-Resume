@@ -17,6 +17,7 @@ const defaultState = {
   user: defaultUser,
   logout: async () => {},
   loginWithGoogle: async () => {},
+  loginAnonymously: async () => {},
   deleteAccount: async () => {},
 };
 
@@ -57,6 +58,14 @@ const UserProvider = ({ children }) => {
     }
   };
 
+  const loginAnonymously = async () => {
+    try {
+      return await firebase.auth().signInAnonymously();
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+
   const logout = () => {
     firebase.auth().signOut();
     localStorage.removeItem('user');
@@ -87,6 +96,7 @@ const UserProvider = ({ children }) => {
         logout,
         loading,
         loginWithGoogle,
+        loginAnonymously,
         deleteAccount,
       }}
     >

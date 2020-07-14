@@ -17,11 +17,11 @@
         "title": "Venturesity Banyan Hack"
       },
       {
-        "title": "Smart India Hackathon",
         "awarder": "Govt. of India",
         "date": "2017-04-01",
+        "id": "89c0171a-eae9-403e-9f4c-a757fb535c2b",
         "summary": "",
-        "id": "89c0171a-eae9-403e-9f4c-a757fb535c2b"
+        "title": "Smart India Hackathon"
       }
     ],
     "visible": true
@@ -44,11 +44,11 @@
         "title": "VCP6-DCV"
       },
       {
-        "title": "DCUCI 642-999",
-        "issuer": "Cisco Systems",
         "date": "2014-04-01",
+        "id": "11107df6-5f3c-49ae-bcd4-62b8baa181a1",
+        "issuer": "Cisco Systems",
         "summary": "",
-        "id": "11107df6-5f3c-49ae-bcd4-62b8baa181a1"
+        "title": "DCUCI 642-999"
       }
     ],
     "visible": true
@@ -82,8 +82,8 @@
   "hobbies": {
     "heading": "Hobbies",
     "items": [
-      { "name": "Poetry", "id": "788dcf5a-78ca-4866-8397-c7a29073d9a1" },
-      { "name": "Travelling", "id": "e3523371-f50c-4348-8c5e-35fe84c0006d" },
+      { "id": "788dcf5a-78ca-4866-8397-c7a29073d9a1", "name": "Poetry" },
+      { "id": "e3523371-f50c-4348-8c5e-35fe84c0006d", "name": "Travelling" },
       { "id": "92c35e3b-6cd7-4cea-b505-61347ec61b68", "name": "Photography" },
       {
         "id": "d36f2089-93a9-4f30-a425-3dd81c6b89df",
@@ -130,6 +130,31 @@
     },
     "font": "Open Sans",
     "layout": {
+      "castform": [
+        ["awards", "certifications", "languages", "hobbies"],
+        ["objective", "work", "education", "skills", "projects", "references"]
+      ],
+      "celebi": [
+        ["awards", "certifications", "languages", "hobbies"],
+        ["objective", "work", "education", "skills", "projects", "references"]
+      ],
+      "gengar": [
+        ["objective", "skills"],
+        ["awards", "certifications", "languages", "references", "hobbies"],
+        ["work", "education", "projects"]
+      ],
+      "glalie": [
+        ["awards", "certifications", "hobbies"],
+        [
+          "objective",
+          "work",
+          "education",
+          "skills",
+          "projects",
+          "languages",
+          "references"
+        ]
+      ],
       "onyx": [
         ["objective", "work", "education", "projects"],
         ["hobbies", "languages", "awards", "certifications"],
@@ -138,26 +163,9 @@
       "pikachu": [
         ["skills", "languages", "hobbies", "awards", "certifications"],
         ["work", "education", "projects", "references"]
-      ],
-      "gengar": [
-        ["objective", "skills"],
-        ["awards", "certifications", "languages", "references", "hobbies"],
-        ["work", "education", "projects"]
-      ],
-      "castform": [
-        ["awards", "certifications", "languages", "hobbies"],
-        ["objective", "work", "education", "skills", "projects", "references"]
-      ],
-      "glalie": [
-        ["awards", "certifications", "hobbies"],
-        ["objective", "work", "education", "skills", "projects", "languages", "references"]
-      ],
-      "celebi": [
-        ["awards", "certifications", "languages", "hobbies"],
-        ["objective", "work", "education", "skills", "projects", "references"]
       ]
     },
-    "template": "pikachu"
+    "template": "castform"
   },
   "objective": {
     "body": "To obtain a job within my chosen field that will challenge me and allow me to use my education, skills and past experiences in a way that is mutually beneficial to both myself and my employer and allow for future growth and advancement.",
@@ -222,12 +230,12 @@
         "summary": ""
       },
       {
-        "name": "Lorraine Beasley",
-        "position": "Head of HR, Carson Logistics",
-        "phone": "+1 661-808-4188",
         "email": "l.beasley@carsonlogistics.com",
-        "summary": "",
-        "id": "94e3447b-0a78-4fb7-b14d-591982d35320"
+        "id": "94e3447b-0a78-4fb7-b14d-591982d35320",
+        "name": "Lorraine Beasley",
+        "phone": "+1 661-808-4188",
+        "position": "Head of HR, Carson Logistics",
+        "summary": ""
       }
     ],
     "visible": true
@@ -256,14 +264,14 @@
         "name": "Call Center Management"
       },
       {
-        "name": "Teambuilding & Training",
+        "id": "08d6c739-1465-41f7-8825-b8d94faa38d6",
         "level": "Novice",
-        "id": "08d6c739-1465-41f7-8825-b8d94faa38d6"
+        "name": "Teambuilding & Training"
       },
       {
-        "name": "Continuous Improvement",
+        "id": "261b8fc3-aeec-4347-88a8-bcacb1a17aa3",
         "level": "Fundamental Awareness",
-        "id": "261b8fc3-aeec-4347-88a8-bcacb1a17aa3"
+        "name": "Continuous Improvement"
       }
     ],
     "visible": true
@@ -272,10 +280,10 @@
     "heading": "Social",
     "items": [
       {
-        "url": "https://pillai.xyz/instagram",
+        "id": "a832b37d-f11d-4a80-8b4d-24796e571b17",
         "network": "Instagram",
-        "username": "AmruthPillai",
-        "id": "a832b37d-f11d-4a80-8b4d-24796e571b17"
+        "url": "https://pillai.xyz/instagram",
+        "username": "AmruthPillai"
       },
       {
         "id": "a72107fa-a4a5-407d-9e85-39bdb9c0b11a",
@@ -315,12 +323,12 @@
       },
       {
         "company": "Pizza Hut, Newark, NJ",
-        "position": "Waiter",
-        "website": "https://pizzahut.com",
-        "startDate": "2005-08-01",
         "endDate": "2009-09-01",
+        "id": "dd935088-6fe7-4a4b-8ff5-7417c32d2add",
+        "position": "Waiter",
+        "startDate": "2005-08-01",
         "summary": "- Worked passionately in customer service in a high volume restaurant.\n- Completed the FAST customer service training class.\n- Maintained a high tip average thanks to consistent customer satisfaction.",
-        "id": "dd935088-6fe7-4a4b-8ff5-7417c32d2add"
+        "website": "https://pizzahut.com"
       }
     ],
     "visible": true

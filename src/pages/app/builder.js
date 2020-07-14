@@ -7,11 +7,16 @@ import RightSidebar from '../../components/builder/right/RightSidebar';
 import LoadingScreen from '../../components/router/LoadingScreen';
 import DatabaseContext from '../../contexts/DatabaseContext';
 import { useDispatch } from '../../contexts/ResumeContext';
+import Button from '../../components/shared/Button';
 
 const Builder = ({ id }) => {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
   const { getResume } = useContext(DatabaseContext);
+
+  const handleLoadDemoData = () => {
+    dispatch({ type: 'load_demo_data' });
+  };
 
   useEffect(() => {
     (async () => {
@@ -23,6 +28,21 @@ const Builder = ({ id }) => {
           `The resume you were looking for does not exist anymore... or maybe it never did?`,
         );
         return null;
+      }
+
+      if (resume.createdAt === resume.updatedAt) {
+        toast.dark(() => (
+          <div className="py-2">
+            <p className="leading-loose">
+              Not sure where to begin? Try <strong>Loading Demo Data</strong> to
+              see what Reactive Resume has to offer.
+            </p>
+
+            <Button className="mt-4" onClick={handleLoadDemoData}>
+              Load Demo Data
+            </Button>
+          </div>
+        ));
       }
 
       dispatch({ type: 'set_data', payload: resume });

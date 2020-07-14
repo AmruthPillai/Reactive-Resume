@@ -46,7 +46,7 @@ const Input = ({
       };
 
   return (
-    <div className={cx(styles.container, className)}>
+    <div className={className}>
       <label htmlFor={uuid}>
         <span>
           {label}{' '}
@@ -115,7 +115,9 @@ const Input = ({
               onChange={onChange}
             >
               {options.map((x) => (
-                <option key={x}>{x}</option>
+                <option key={x} value={x}>
+                  {x}
+                </option>
               ))}
             </select>
 

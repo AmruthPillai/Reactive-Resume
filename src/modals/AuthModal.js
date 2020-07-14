@@ -7,10 +7,13 @@ import BaseModal from './BaseModal';
 
 const AuthModal = () => {
   const [open, setOpen] = useState(false);
-  const [isLoading, setLoading] = useState(false);
+  const [isLoadingGoogle, setLoadingGoogle] = useState(false);
+  const [isLoadingAnonymous, setLoadingAnonymous] = useState(false);
 
   const { emitter, events } = useContext(ModalContext);
-  const { user, loginWithGoogle, logout } = useContext(UserContext);
+  const { user, loginWithGoogle, loginAnonymously, logout } = useContext(
+    UserContext,
+  );
 
   useEffect(() => {
     const unbind = emitter.on(events.AUTH_MODAL, () => setOpen(true));
@@ -19,9 +22,15 @@ const AuthModal = () => {
   }, [emitter, events]);
 
   const handleSignInWithGoogle = async () => {
-    setLoading(true);
+    setLoadingGoogle(true);
     await loginWithGoogle();
-    setLoading(false);
+    setLoadingGoogle(false);
+  };
+
+  const handleSignInAnonymously = async () => {
+    setLoadingAnonymous(true);
+    await loginAnonymously();
+    setLoadingAnonymous(false);
   };
 
   const handleGotoApp = () => {
@@ -30,7 +39,7 @@ const AuthModal = () => {
   };
 
   const getTitle = () =>
-    user ? `Welcome, ${user.displayName}` : 'Who are you?';
+    user ? `Welcome, ${user.displayName || 'Agent 47'}` : 'Who are you?';
 
   const getMessage = () =>
     user
@@ -49,9 +58,18 @@ const AuthModal = () => {
   );
 
   const loggedOutAction = (
-    <Button isLoading={isLoading} onClick={handleSignInWithGoogle}>
-      Sign in with Google
-    </Button>
+    <div className="flex">
+      <Button isLoading={isLoadingGoogle} onClick={handleSignInWithGoogle}>
+        Sign in with Google
+      </Button>
+      <Button
+        className="ml-8"
+        isLoading={isLoadingAnonymous}
+        onClick={handleSignInAnonymously}
+      >
+        Sign in Anonymously
+      </Button>
+    </div>
   );
 
   return (

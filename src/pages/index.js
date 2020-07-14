@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { Helmet } from 'react-helmet';
+import { Link } from '@reach/router';
 import Hero from '../components/landing/Hero';
 import Wrapper from '../components/shared/Wrapper';
 
@@ -13,6 +14,10 @@ const Home = () => {
 
       <div className="container mt-24">
         <Hero />
+
+        <div className="my-24">
+          <h4 className="text-xl uppercase font-bold mb-8">Screenshots</h4>
+        </div>
 
         <div className="pt-8">
           <Feature title="Create a resume that’s worthy of who you are.">
@@ -51,10 +56,25 @@ const Home = () => {
             You must be thinking, if you&apos;re not paying for the product,
             then you are the product. Or, at least your data is?{' '}
             <strong>Well, this is the exception</strong>. Your data is your own,
-            as stated in the ridiculously simple <a href="">Privacy Policy</a>,
-            I don&apos;t do anything with the data, it just exists on a database
-            for the convinient features provided by Reactive Resume.
+            as stated in the ridiculously simple{' '}
+            <Link to="/faq">Privacy Policy</Link>, I don&apos;t do anything with
+            the data, it just exists on a database for the convinient features
+            provided by Reactive Resume.
           </Feature>
+        </div>
+
+        <div className="my-24">
+          <h4 className="text-xl uppercase font-bold mb-8">
+            Links of Interest
+          </h4>
+          <div className="grid grid-cols-4 gap-8">
+            <Link to="/faq">Frequently Asked Questions</Link>
+            <Link to="/faq">Checkout Source Code</Link>
+            <Link to="/faq">Upvote on Product Hunt</Link>
+            <Link to="/faq">Raise an Issue on GitHub</Link>
+            <Link to="/faq">Donate to Reactive Resume</Link>
+            <Link to="/faq">Building Great Looking Resumes</Link>
+          </div>
         </div>
 
         <footer className="my-24">

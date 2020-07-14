@@ -1,31 +1,3 @@
-.container label input,
-.container label textarea,
-.container label select {
-  @apply w-full py-3 px-4 rounded text-primary-900 bg-primary-200 border border-transparent appearance-none;
-}
-
-.container label input::placeholder,
-.container label textarea::placeholder,
-.container label select::placeholder {
-  @apply opacity-50;
-}
-
-.container label input:hover,
-.container label textarea:hover,
-.container label select:hover {
-  @apply outline-none border-primary-400;
-}
-
-.container label input:focus,
-.container label textarea:focus,
-.container label select:focus {
-  @apply outline-none border-primary-600;
-}
-
-.container label > p {
-  @apply mt-1 text-red-600 text-xs;
-}
-
 .circle {
   left: 14px;
   @apply absolute bg-primary-900 rounded-full w-6 h-6;

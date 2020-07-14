@@ -18,7 +18,9 @@ const Avatar = ({ className }) => {
     handleClose();
   };
 
-  const photoURL = useMemo(() => toUrl(user.email, 'size=128'), [user.email]);
+  const photoURL = useMemo(() => toUrl(user.email || '', 'size=128&d=retro'), [
+    user.email,
+  ]);
 
   return (
     <div>
@@ -31,7 +33,7 @@ const Avatar = ({ className }) => {
       >
         <img
           src={photoURL}
-          alt={user.displayName}
+          alt={user.displayName || 'Anonymous User'}
           className={cx(styles.container, className)}
         />
       </div>

@@ -40,16 +40,18 @@ const ContactD = () => {
         <MdFlare size="20px" />
       </div>
 
-      <div>
-        <h6 className="capitalize font-semibold">Address</h6>
-        <div className="flex flex-col text-xs">
-          <span>{data.profile.address.line1}</span>
-          <span>{data.profile.address.line2}</span>
-          <span>
-            {data.profile.address.city} {data.profile.address.pincode}
-          </span>
+      {data.profile.address.line1 && (
+        <div>
+          <h6 className="capitalize font-semibold">Address</h6>
+          <div className="flex flex-col text-xs">
+            <span>{data.profile.address.line1}</span>
+            <span>{data.profile.address.line2}</span>
+            <span>
+              {data.profile.address.city} {data.profile.address.pincode}
+            </span>
+          </div>
         </div>
-      </div>
+      )}
 
       <ContactItem
         label="phone"
