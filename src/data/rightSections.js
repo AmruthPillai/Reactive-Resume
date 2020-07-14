@@ -3,6 +3,7 @@ import {
   MdDashboard,
   MdFontDownload,
   MdImportExport,
+  MdInfo,
   MdSettings,
   MdStyle,
 } from 'react-icons/md';
@@ -37,5 +38,10 @@ export default [
     id: 'settings',
     name: 'Settings',
     icon: MdSettings,
+  },
+  {
+    id: 'about',
+    name: 'About',
+    icon: MdInfo,
   },
 ];

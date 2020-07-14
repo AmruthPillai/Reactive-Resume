@@ -38,20 +38,16 @@ const ExportModal = () => {
 
   const handleSinglePageDownload = async () => {
     setLoadingSingle(true);
-    const printSinglePageResume = firebase
-      .functions()
-      .httpsCallable('printSinglePageResume');
-    const { data } = await printSinglePageResume({ id: state.id });
+    const printResume = firebase.functions().httpsCallable('printResume');
+    const { data } = await printResume({ id: state.id, type: 'single' });
     const blob = b64toBlob(data, 'application/pdf');
     openFile(blob);
   };
 
   const handleMultiPageDownload = async () => {
     setLoadingMulti(true);
-    const printMultiPageResume = firebase
-      .functions()
-      .httpsCallable('printMultiPageResume');
-    const { data } = await printMultiPageResume({ id: state.id });
+    const printResume = firebase.functions().httpsCallable('printResume');
+    const { data } = await printResume({ id: state.id, type: 'multi' });
     const blob = b64toBlob(data, 'application/pdf');
     openFile(blob);
   };

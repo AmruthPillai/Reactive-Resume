@@ -9,6 +9,7 @@ import Layout from './sections/Layout';
 import Templates from './sections/Templates';
 import Actions from './sections/Actions';
 import Settings from './sections/Settings';
+import About from './sections/About';
 
 const getComponent = (id) => {
   switch (id) {
@@ -24,6 +25,8 @@ const getComponent = (id) => {
       return Actions;
     case 'settings':
       return Settings;
+    case 'about':
+      return About;
     default:
       throw new Error();
   }
