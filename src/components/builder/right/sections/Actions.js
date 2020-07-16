@@ -28,7 +28,7 @@ const Actions = ({ name }) => {
 
   const getSharableUrl = () => {
     const shareId = state.id;
-    return `https://rxresu.me/r/${shareId}`;
+    return `https://rxresume-staging.web.app/r/${shareId}`;
   };
 
   const handleOpenLink = () => {
