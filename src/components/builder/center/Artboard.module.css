@@ -2,11 +2,21 @@
   .container {
     width: 210mm;
     height: 297mm;
-    zoom: 0.8;
-    -moz-transform: scale(0.8);
-    transform-origin: 50% 18%;
-    overflow-y: scroll;
+    zoom: 0.5;
+    overflow: scroll;
     box-shadow: var(--shadow);
-    @apply bg-white rounded;
+    @apply my-16 rounded;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .container {
+    zoom: 0.65;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    zoom: 0.8;
   }
 }

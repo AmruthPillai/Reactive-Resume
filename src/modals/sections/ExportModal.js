@@ -46,7 +46,7 @@ const ExportModal = () => {
     const { data } = await printResume({ id: state.id, type: 'multi' });
     const blob = b64toBlob(data, 'application/pdf');
     download(blob, `RxResume-${state.id}.pdf`, 'application/pdf');
-    setLoadingSingle(false);
+    setLoadingMulti(false);
   };
 
   const handleExportToJson = () => {

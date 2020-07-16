@@ -9,6 +9,7 @@ import LoadingScreen from '../../components/router/LoadingScreen';
 import DatabaseContext from '../../contexts/DatabaseContext';
 import { useDispatch } from '../../contexts/ResumeContext';
 import Button from '../../components/shared/Button';
+import styles from './builder.module.css';
 
 const Builder = ({ id }) => {
   const dispatch = useDispatch();
@@ -53,14 +54,14 @@ const Builder = ({ id }) => {
     }
 
     return (
-      <div className="h-screen grid grid-cols-11">
-        <div className="col-span-3">
+      <div className={styles.container}>
+        <div className={styles.left}>
           <LeftSidebar />
         </div>
-        <div className="col-span-5 h-screen overflow-hidden bg-primary-100 grid items-center justify-center">
+        <div className={styles.center}>
           <Artboard />
         </div>
-        <div className="col-span-3">
+        <div className={styles.right}>
           <RightSidebar />
         </div>
       </div>

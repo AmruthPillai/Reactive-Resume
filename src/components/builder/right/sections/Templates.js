@@ -89,7 +89,7 @@ const Templates = ({ name }) => {
               alt={x.name}
               loading="eager"
               className="w-full"
-              style={{ height: '225px' }}
+              style={{ height: '230px' }}
               fluid={previews[x.id].childImageSharp.fluid}
             />
             <span>{x.name}</span>

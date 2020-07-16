@@ -16,7 +16,7 @@ const Home = () => {
         <link rel="canonical" href="https://rxresume-staging.web.app/" />
       </Helmet>
 
-      <div className="container mt-24">
+      <div className="container px-8 xl:px-0 text-center md:text-left mt-24">
         <Hero />
 
         <p className="leading-loose text-lg mt-16">
@@ -71,7 +71,7 @@ const Home = () => {
           <h4 className="text-xl uppercase font-bold mb-8">
             Links of Interest
           </h4>
-          <div className="grid grid-cols-4 gap-8">
+          <div className="grid grid-cols-3 md:grid-cols-4 gap-8">
             <Link to="/faq">Frequently Asked Questions</Link>
             <a
               href="https://github.com/AmruthPillai/Reactive-Resume"
@@ -100,7 +100,7 @@ const Home = () => {
         </div>
 
         <footer className="my-24">
-          <p className="text-primary-500 opacity-75">
+          <p className="text-primary-500">
             Licensed under <a href="/">MIT</a>
             <br />
             Made with love by{' '}

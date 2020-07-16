@@ -18,12 +18,12 @@ const Hero = () => {
   const handleGotoApp = () => navigate('/app/dashboard');
 
   return (
-    <div className="flex items-center">
+    <div className="flex flex-col md:flex-row items-center">
       <Link to="/">
         <Logo className="shadow-lg" size="256px" />
       </Link>
 
-      <div className="ml-12">
+      <div className="mt-12 md:mt-0 md:ml-12">
         <div className="text-5xl font-bold">
           <TypeIt
             getBeforeInit={(instance) => {
@@ -42,13 +42,21 @@ const Hero = () => {
           {t('shared.shortDescription')}
         </h2>
 
-        <div className="mt-12 flex">
+        <div className="mt-12">
           {user ? (
-            <Button onClick={handleGotoApp} isLoading={loading}>
+            <Button
+              onClick={handleGotoApp}
+              isLoading={loading}
+              className="mx-auto md:mx-0"
+            >
               {t('landing.hero.goToApp')}
             </Button>
           ) : (
-            <Button onClick={handleLogin} isLoading={loading}>
+            <Button
+              onClick={handleLogin}
+              isLoading={loading}
+              className="mx-auto md:mx-0"
+            >
               {t('shared.buttons.login')}
             </Button>
           )}

@@ -3,7 +3,7 @@ import { isFunction } from 'lodash';
 import React, { memo, useEffect, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { FaAngleDown } from 'react-icons/fa';
-import { MdClose, MdOpenInNew } from 'react-icons/md';
+import { MdOpenInNew } from 'react-icons/md';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch, useSelector } from '../../contexts/ResumeContext';
 import { handleKeyUp } from '../../utils';
@@ -70,16 +70,6 @@ const Input = ({
               onChange={onChange}
               placeholder={placeholder}
             />
-
-            {isFunction(onClick) && (
-              <MdClose
-                size="16px"
-                tabIndex="0"
-                onClick={onClick}
-                onKeyUp={(e) => handleKeyUp(e, onClick)}
-                className="absolute right-0 cursor-pointer opacity-50 hover:opacity-75 mx-4"
-              />
-            )}
           </div>
         )}
 

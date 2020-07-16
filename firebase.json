@@ -1,51 +1,76 @@
 {
-  "hosting": [{
-    "target": "rxresume-staging",
-    "public": "public",
-    "ignore": [
-      "**/.*",
-      "firebase.json",
-      "**/node_modules/**"
-    ],
-    "headers": [
-      {
-        "source": "**/*",
-        "headers": [
-          {
-            "key": "cache-control",
-            "value": "cache-control: public, max-age=0, must-revalidate"
-          }
-        ]
-      },
-      {
-        "source": "static/**",
-        "headers": [
-          {
-            "key": "cache-control",
-            "value": "public, max-age=31536000, immutable"
-          }
-        ]
-      },
-      {
-        "source": "**/*.@(css|js)",
-        "headers": [
-          {
-            "key": "cache-control",
-            "value": "public, max-age=31536000, immutable"
-          }
-        ]
-      },
-      {
-        "source": "sw.js",
-        "headers": [
-          {
-            "key": "cache-control",
-            "value": "cache-control: public, max-age=0, must-revalidate"
-          }
-        ]
-      }
-    ]
-  }],
+  "hosting": [
+    {
+      "target": "rxresume-staging",
+      "public": "public",
+      "ignore": ["**/.*", "firebase.json", "**/node_modules/**"],
+      "headers": [
+        {
+          "source": "**/*.@(eot|otf|ttf|ttc|woff|woff2|font.css)",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ]
+        },
+        {
+          "source": "**/*.@(eot|otf|ttf|ttc|woff|woff2|font.css)",
+          "headers": [
+            {
+              "key": "cache-control",
+              "value": "max-age=604800"
+            }
+          ]
+        },
+        {
+          "source": "**/*",
+          "headers": [
+            {
+              "key": "cache-control",
+              "value": "public, max-age=0, must-revalidate"
+            }
+          ]
+        },
+        {
+          "source": "**/*.@(js|css)",
+          "headers": [
+            {
+              "key": "cache-control",
+              "value": "max-age=604800"
+            }
+          ]
+        },
+        {
+          "source": "**/*.@(jpg|jpeg|gif|png|svg)",
+          "headers": [
+            {
+              "key": "cache-control",
+              "value": "max-age=604800"
+            }
+          ]
+        },
+        {
+          "source": "sw.js",
+          "headers": [
+            {
+              "key": "cache-control",
+              "value": "public, max-age=0, must-revalidate"
+            }
+          ]
+        },
+        {
+          "source": "404.html",
+          "headers": [
+            {
+              "key": "cache-control",
+              "value": "max-age=300"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "emulators": {
     "functions": {
       "port": 5001
