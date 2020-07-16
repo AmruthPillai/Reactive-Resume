@@ -1,8 +1,12 @@
 import { get, isEmpty } from 'lodash';
 import moment from 'moment';
+import { useTranslation } from 'react-i18next';
 
 export const getModalText = (isEditMode, type) => {
-  return isEditMode ? `Edit ${type}` : `Add ${type}`;
+  const { t } = useTranslation();
+  return isEditMode
+    ? `${t('shared.buttons.edit')} ${type}`
+    : `${t('shared.buttons.add')} ${type}`;
 };
 
 export const safetyCheck = (section, path = 'items') => {
@@ -29,6 +33,11 @@ export const getFieldProps = (formik, schema, name) => ({
   isRequired: get(schema, `fields.${name}._exclusive.required`),
   ...formik.getFieldProps(name),
 });
+
+export const getUnsplashPhoto = async () => {
+  const response = await fetch('https://source.unsplash.com/featured/400x600');
+  return response.url;
+};
 
 export const hexToRgb = (hex) => {
   const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;

@@ -1,5 +1,6 @@
 import React, { memo, useContext, useState } from 'react';
 import { FaFileExport, FaFileImport } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 import ModalContext from '../../../../contexts/ModalContext';
 import { useDispatch, useSelector } from '../../../../contexts/ResumeContext';
 import Button from '../../../shared/Button';
@@ -7,9 +8,15 @@ import Heading from '../../../shared/Heading';
 import Input from '../../../shared/Input';
 import styles from './Actions.module.css';
 
-const Actions = () => {
-  const [loadDemoText, setLoadDemoText] = useState('Load Demo Data');
-  const [resetText, setResetText] = useState('Reset Everything');
+const Actions = ({ name }) => {
+  const { t } = useTranslation();
+
+  const [loadDemoText, setLoadDemoText] = useState(
+    t('builder.actions.loadDemoData.button'),
+  );
+  const [resetText, setResetText] = useState(
+    t('builder.actions.resetEverything.button'),
+  );
 
   const state = useSelector();
   const dispatch = useDispatch();
@@ -31,66 +38,57 @@ const Actions = () => {
   };
 
   const handleLoadDemo = () => {
-    if (loadDemoText === 'Load Demo Data') {
-      setLoadDemoText('Are you sure?');
+    if (loadDemoText === t('builder.actions.loadDemoData.button')) {
+      setLoadDemoText(t('shared.buttons.confirmation'));
       return;
     }
 
     dispatch({ type: 'load_demo_data' });
-    setLoadDemoText('Load Demo Data');
+    setLoadDemoText(t('builder.actions.loadDemoData.button'));
   };
 
   const handleReset = () => {
-    if (resetText === 'Reset Everything') {
-      setResetText('Are you sure?');
+    if (resetText === t('builder.actions.resetEverything.button')) {
+      setResetText(t('shared.buttons.confirmation'));
       return;
     }
 
-    setResetText('Reset Everything');
+    setResetText(t('builder.actions.resetEverything.button'));
     dispatch({ type: 'reset_data' });
   };
 
   return (
     <section>
-      <Heading>Actions</Heading>
+      <Heading>{name}</Heading>
 
       <div className={styles.container}>
-        <h5>Import Your Resume</h5>
+        <h5>{t('builder.actions.import.heading')}</h5>
 
-        <p className="leading-loose">
-          You can import your information from various sources like JSON Resume
-          or your LinkedIn to autofill most of the data for your resume.
-        </p>
+        <p className="leading-loose">{t('builder.actions.import.text')}</p>
 
         <div className="mt-4 flex">
           <Button icon={FaFileImport} onClick={handleImport}>
-            Import
+            {t('builder.actions.import.button')}
           </Button>
         </div>
       </div>
 
       <div className={styles.container}>
-        <h5>Export Your Resume</h5>
+        <h5>{t('builder.actions.export.heading')}</h5>
 
-        <p className="leading-loose">
-          Export your resume as a PDF to share with recruiters or a JSON that
-          you will be able to import back onto this app on another computer.
-        </p>
+        <p className="leading-loose">{t('builder.actions.export.text')}</p>
 
         <div className="mt-4 flex">
           <Button icon={FaFileExport} onClick={handleExport}>
-            Export
+            {t('builder.actions.export.button')}
           </Button>
         </div>
       </div>
 
       <div className={styles.container}>
-        <h5>Share Your Resume</h5>
+        <h5>{t('builder.actions.share.heading')}</h5>
 
-        <p className="leading-loose">
-          The link below will be accessible publicly if you choose to share it,
-          and viewers would see the latest version of your resume at any time.
-        </p>
+        <p className="leading-loose">{t('builder.actions.export.text')}</p>
 
         <div>
           <Input
@@ -102,11 +100,10 @@ const Actions = () => {
       </div>
 
       <div className={styles.container}>
-        <h5>Load Demo Data</h5>
+        <h5>{t('builder.actions.loadDemoData.button')}</h5>
 
         <p className="leading-loose">
-          Unclear on what to do with a fresh blank page? Load some demo data to
-          see how a resume should look and you can start editing from there.
+          {t('builder.actions.loadDemoData.text')}
         </p>
 
         <div className="mt-4 flex">
@@ -115,11 +112,10 @@ const Actions = () => {
       </div>
 
       <div className={styles.container}>
-        <h5>Reset Everything</h5>
+        <h5>{t('builder.actions.resetEverything.button')}</h5>
 
         <p className="leading-loose">
-          Feels like you made too many mistakes? No worries, clear everything
-          with just one click, but be careful if there are no backups.
+          {t('builder.actions.resetEverything.text')}
         </p>
 
         <div className="mt-4 flex">

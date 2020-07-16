@@ -1,0 +1,247 @@
+{
+  "shared": {
+    "appName": "Reactive Resume",
+    "shortDescription": "A free and open source resume builder.",
+    "forms": {
+      "name": "Name",
+      "title": "Title",
+      "subtitle": "Subtitle",
+      "required": "required",
+      "website": "Website",
+      "date": "Date",
+      "position": "Position",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "address": "Address",
+      "phone": "Phone Number",
+      "email": "Email Address",
+      "summary": "Summary",
+      "markdown": "This text block supports <1>markdown</1>.",
+      "validation": {
+        "min": "Please enter at least {{number}} characters.",
+        "dateRange": "End Date must be later than Start Date.",
+        "email": "Must be a valid email address.",
+        "required": "This is a required field.",
+        "url": "Must be a valid URL."
+      }
+    },
+    "buttons": {
+      "add": "Add",
+      "edit": "Edit",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "loading": "Loading...",
+      "confirmation": "Are you sure?",
+      "login": "Login",
+      "logout": "Logout"
+    }
+  },
+  "landing": {
+    "hero": {
+      "goToApp": "Go To App"
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "createResume": "Create Resume",
+    "editResume": "Edit Resume",
+    "lastUpdated": "Last Updated {{timestamp}}",
+    "toasts": {
+      "deleted": "{{name}} was deleted successfully"
+    },
+    "buttons": {
+      "duplicate": "Duplicate",
+      "rename": "Rename"
+    },
+    "helpText": "You are going to be creating a new resume from scratch, but first, let's give it a name. This can be the name of the role you want to apply for, or if you're making a resume for a friend, you could call it Alex's Resume."
+  },
+  "builder": {
+    "toasts": {
+      "doesNotExist": "The resume you were looking for does not exist anymore... or maybe it never did?",
+      "loadDemoData": "Not sure where to begin? Try loading demo data to see what Reactive Resume has to offer."
+    },
+    "sections": {
+      "profile": "Profile",
+      "social": "Social Network",
+      "objective": "Objective",
+      "work": "Work Experience",
+      "education": "Education",
+      "project": "Project",
+      "projects": "Projects",
+      "award": "Award",
+      "awards": "Awards",
+      "certification": "Certification",
+      "certifications": "Certifications",
+      "skill": "Skill",
+      "skills": "Skills",
+      "hobby": "Hobby",
+      "hobbies": "Hobbies",
+      "language": "Language",
+      "languages": "Languages",
+      "reference": "Reference",
+      "references": "References",
+      "templates": "Templates",
+      "layout": "Layout",
+      "colors": "Colors",
+      "fonts": "Fonts",
+      "actions": "Actions",
+      "settings": "Settings",
+      "about": "About"
+    },
+    "profile": {
+      "photograph": "Photograph",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "address": {
+        "line1": "Address Line 1",
+        "line2": "Address Line 2",
+        "city": "City",
+        "pincode": "Pincode"
+      }
+    },
+    "social": {
+      "network": "Network",
+      "username": "Username",
+      "url": "URL"
+    },
+    "work": {
+      "company": "Company"
+    },
+    "education": {
+      "institution": "Institution",
+      "field": "Field of Study",
+      "degree": "Type of Degree",
+      "gpa": "GPA"
+    },
+    "awards": {
+      "awarder": "Awarder"
+    },
+    "certifications": {
+      "issuer": "Issuer"
+    },
+    "skills": {
+      "level": "Level"
+    },
+    "languages": {
+      "fluency": "Fluency"
+    },
+    "layout": {
+      "block": "Block",
+      "reset": "Reset Layout",
+      "text": "This template supports {{count}} blocks."
+    },
+    "colors": {
+      "primary": "Primary Color",
+      "text": "Text Color",
+      "background": "Background Color"
+    },
+    "actions": {
+      "import": {
+        "heading": "Import Your Resume",
+        "text": "You can import your information from various sources like JSON Resume or your LinkedIn to autofill most of the data for your resume.",
+        "button": "Import"
+      },
+      "export": {
+        "heading": "Export Your Resume",
+        "text": "Export your resume as a PDF to share with recruiters or a JSON that you will be able to import back onto this app on another computer.",
+        "button": "Export"
+      },
+      "share": {
+        "heading": "Share Your Resume",
+        "text": "The link below will be accessible publicly if you choose to share it, and viewers would see the latest version of your resume at any time."
+      },
+      "loadDemoData": {
+        "text": "Unclear on what to do with a fresh blank page? Load some demo data to see how a resume should look and you can start editing from there.",
+        "button": "Load Demo Data"
+      },
+      "resetEverything": {
+        "text": "Feels like you made too many mistakes? No worries, clear everything with just one click, but be careful if there are no backups.",
+        "button": "Reset Everything"
+      }
+    },
+    "settings": {
+      "theme": "Theme",
+      "language": "Language",
+      "translate": "If you would like to contribute by providing translations in your language, <1>please visit this link</1>.",
+      "dangerZone": {
+        "heading": "Danger Zone",
+        "text": " If you would like to delete your account and erase all your resumes, it’s just one button away. Please be weary as this is an irreversible process.",
+        "button": "Delete Account"
+      }
+    },
+    "about": {
+      "donate": {
+        "heading": "Donate to Reactive Resume",
+        "text": "I try to do what I can, but if you found the app helpful, or you're in a better position than the others who depend on this project for their first job, <1>please consider donating as little as $5 to help keep the project alive</1> :)",
+        "button": "Buy me a Coffee!"
+      },
+      "bugFeature": {
+        "heading": "Bug? Feature Request?",
+        "text": "Something halting your progress from making a resume? Found a pesky bug that just won't quit? Talk about it on the GitHub Issues section using the actions below.",
+        "button": "Raise an Issue"
+      },
+      "appreciate": {
+        "heading": "Loved Reactive Resume?",
+        "text": "I never get tired of hearing stories of how this app helped people, and if it helped you, or you just found Reactive Resume to be an awesome tool, do let me know. You can reach out to me on my website."
+      },
+      "sourceCode": {
+        "heading": "Source Code",
+        "text": "Want to run the project from its source? Are you a developer willing to contribute to the open-source development of this project? Click the button below.",
+        "button": "GitHub Repo"
+      },
+      "footer": "Made with Love by <1>Amruth Pillai</1>"
+    },
+    "tooltips": {
+      "uploadPhotograph": "Upload Photograph",
+      "backToDashboard": "Go Back to Dashboard"
+    },
+    "emptyList": "This list is empty."
+  },
+  "modals": {
+    "auth": {
+      "whoAreYou": "Who are you?",
+      "welcome": "Welcome, {{name}}!",
+      "loggedOutText": "Reactive Resume needs to know who you are so it can securely authenticate you into the app and show you only your information. Once you are in, you can start building your resume, editing it to add new skills or sharing it with the world!",
+      "loggedInText": "Awesome. Now that you've authenticated yourself, we can get on with the real reason you're here. Click on the Go to App button to start building your resume!",
+      "buttons": {
+        "google": "Sign in with Google",
+        "anonymous": "Sign in Anonymously"
+      }
+    },
+    "import": {
+      "button": "Select File",
+      "reactiveResume": {
+        "heading": "Import from Reactive Resume",
+        "text": "Reactive Resume has it's own schema format to make the most of all the customizable capabilities it has to offer. If you'd like to import a backup of your resume made with this app, just upload the file using the button below."
+      },
+      "jsonResume": {
+        "heading": "Import from JSON Resume",
+        "text": "JSON Resume is an open standard for resume schema structure. If you are one of the many enthusiasts who have their resume ready in this format, all it takes it just one click to get started with Reactive Resume."
+      },
+      "linkedIn": {
+        "heading": "Import from LinkedIn",
+        "text": "You can import a JSON that was exported from Reactive Resume by clicking on the button below and selecting the appropriate file."
+      }
+    },
+    "export": {
+      "printDialog": {
+        "heading": "Use Browser's Print Dialog",
+        "text": "For those of you who want a quick solution, you need not look any further than your browser. All you have to do is press Ctrl/Cmd + P and open up the print dialog on your browser and get your resume printed immediately.",
+        "button": "Print Resume"
+      },
+      "downloadPDF": {
+        "heading": "Download PDF",
+        "text": "These options allow you to print a single page, unconstrained version of your resume, perfect for those who have a lot of content. Alternatively, you could download a multi-page version of your resume as well with just one click.",
+        "buttons": {
+          "single": "Single Page Resume",
+          "multi": "Multi Page Resume"
+        }
+      },
+      "jsonFormat": {
+        "heading": "Export to JSON Format",
+        "text": "You can also export your data into JSON format for safe keeping so that you can easily import it back into Reactive Resume whenever you want to edit or generate a resume.",
+        "button": "Export JSON"
+      }
+    }
+  }
+}

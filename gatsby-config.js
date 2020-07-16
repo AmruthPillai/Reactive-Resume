@@ -82,7 +82,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-offline',
       options: {
-        precachePages: ['', '/app/*'],
+        precachePages: ['', '/app/*', '/blog/*'],
       },
     },
     'gatsby-plugin-lodash',
@@ -95,6 +95,14 @@ module.exports = {
       },
     },
     'gatsby-plugin-postcss',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/articles`,
+        name: `articles`,
+      },
+    },
+    `gatsby-transformer-remark`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {

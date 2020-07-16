@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useDispatch } from '../../../../contexts/ResumeContext';
 import colorOptions from '../../../../data/colorOptions';
 import { handleKeyUp } from '../../../../utils';
@@ -7,8 +8,9 @@ import Heading from '../../../shared/Heading';
 import Input from '../../../shared/Input';
 import styles from './Colors.module.css';
 
-const Colors = () => {
+const Colors = ({ name }) => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const handleClick = (value) => {
     dispatch({
@@ -22,7 +24,7 @@ const Colors = () => {
 
   return (
     <section>
-      <Heading>Colors</Heading>
+      <Heading>{name}</Heading>
 
       <div className="mb-6 grid grid-cols-8 col-gap-2 row-gap-6">
         {colorOptions.map((color) => (
@@ -41,7 +43,7 @@ const Colors = () => {
       <Input
         type="color"
         name="primary"
-        label="Primary Color"
+        label={t('builder.colors.primary')}
         placeholder="#FF4081"
         path="metadata.colors.primary"
       />
@@ -49,7 +51,7 @@ const Colors = () => {
       <Input
         type="color"
         name="text"
-        label="Text Color"
+        label={t('builder.colors.text')}
         placeholder="#444444"
         path="metadata.colors.text"
       />
@@ -57,7 +59,7 @@ const Colors = () => {
       <Input
         type="color"
         name="background"
-        label="Background Color"
+        label={t('builder.colors.background')}
         placeholder="#FFFFFF"
         path="metadata.colors.background"
       />

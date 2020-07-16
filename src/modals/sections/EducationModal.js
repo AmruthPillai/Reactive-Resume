@@ -1,6 +1,7 @@
 import { Formik } from 'formik';
 import React, { memo } from 'react';
 import * as Yup from 'yup';
+import { useTranslation } from 'react-i18next';
 import Input from '../../components/shared/Input';
 import ModalEvents from '../../constants/ModalEvents';
 import { getFieldProps } from '../../utils';
@@ -16,22 +17,27 @@ const initialValues = {
   summary: '',
 };
 
-const schema = Yup.object().shape({
-  institution: Yup.string().required('This is a required field.'),
-  field: Yup.string().required('This is a required field.'),
-  degree: Yup.string(),
-  gpa: Yup.string(),
-  startDate: Yup.date().required('This is a required field.'),
-  endDate: Yup.date().when(
-    'startDate',
-    (startDate, yupSchema) =>
-      startDate &&
-      yupSchema.min(startDate, 'End Date must be later than Start Date'),
-  ),
-  summary: Yup.string().min(10, 'Please enter at least 10 characters.'),
-});
-
 const EducationModal = () => {
+  const { t } = useTranslation();
+
+  const schema = Yup.object().shape({
+    institution: Yup.string().required(t('shared.forms.validation.required')),
+    field: Yup.string().required(t('shared.forms.validation.required')),
+    degree: Yup.string(),
+    gpa: Yup.string(),
+    startDate: Yup.date().required(t('shared.forms.validation.required')),
+    endDate: Yup.date().when(
+      'startDate',
+      (startDate, yupSchema) =>
+        startDate &&
+        yupSchema.min(startDate, t('shared.forms.validation.dateRange')),
+    ),
+    summary: Yup.string().min(
+      10,
+      t('shared.forms.validation.min', { number: 10 }),
+    ),
+  });
+
   return (
     <Formik
       validateOnBlur
@@ -40,54 +46,54 @@ const EducationModal = () => {
     >
       {(formik) => (
         <DataModal
-          name="Education"
+          name={t('builder.sections.education')}
           path="education.items"
           event={ModalEvents.EDUCATION_MODAL}
         >
           <div className="grid grid-cols-2 gap-8">
             <Input
-              label="Institution"
+              label={t('builder.education.institution')}
               className="col-span-2"
               placeholder="Dayananda Sagar College of Engineering"
               {...getFieldProps(formik, schema, 'institution')}
             />
 
             <Input
-              label="Field of Study"
+              label={t('builder.education.field')}
               className="col-span-2"
               placeholder="Computer Science &amp; Engineering"
               {...getFieldProps(formik, schema, 'field')}
             />
 
             <Input
-              label="Degree Type"
+              label={t('builder.education.degree')}
               placeholder="Bachelor's Degree"
               {...getFieldProps(formik, schema, 'degree')}
             />
 
             <Input
-              label="GPA"
+              label={t('builder.education.gpa')}
               placeholder="8.8"
               {...getFieldProps(formik, schema, 'gpa')}
             />
 
             <Input
               type="date"
-              label="Start Date"
+              label={t('shared.forms.startDate')}
               placeholder="6th August 208"
               {...getFieldProps(formik, schema, 'startDate')}
             />
 
             <Input
               type="date"
-              label="End Date"
+              label={t('shared.forms.endDate')}
               placeholder="6th August 208"
               {...getFieldProps(formik, schema, 'endDate')}
             />
 
             <Input
               type="textarea"
-              label="Summary"
+              label={t('shared.forms.summary')}
               className="col-span-2"
               {...getFieldProps(formik, schema, 'summary')}
             />

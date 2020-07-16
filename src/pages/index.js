@@ -1,23 +1,22 @@
 import React, { memo } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from '@reach/router';
+import { useTranslation } from 'react-i18next';
 import Hero from '../components/landing/Hero';
 import Wrapper from '../components/shared/Wrapper';
 
 const Home = () => {
+  const { t } = useTranslation();
+
   return (
     <Wrapper>
       <Helmet>
-        <title>Reactive Resume</title>
+        <title>{t('shared.appName')}</title>
         <link rel="canonical" href="https://rxresu.me/" />
       </Helmet>
 
       <div className="container mt-24">
         <Hero />
-
-        <div className="my-24">
-          <h4 className="text-xl uppercase font-bold mb-8">Screenshots</h4>
-        </div>
 
         <div className="pt-8">
           <Feature title="Create a resume that’s worthy of who you are.">
@@ -37,19 +36,12 @@ const Home = () => {
           </Feature>
 
           <Feature title="Kickstarting your career shouldn’t come at a cost.">
-            There are brilliant alternatives to this app like{' '}
-            <a href="/" target="blank">
-              Novoresume
-            </a>{' '}
-            and{' '}
-            <a href="/" target="blank">
-              Zety
-            </a>
-            , but they come at a cost, mainly because of the time the developers
-            and the marketing they had to incur to make the product. This app
-            might not be better than them, but it does cater to people who are
-            just not in a position to pay hundreds of dollars to create a resume
-            to bootstrap their career.
+            There are brilliant alternatives to this app like Novoresume and
+            Zety , but they come at a cost, mainly because of the time the
+            developers and the marketing they had to incur to make the product.
+            This app might not be better than them, but it does cater to people
+            who are just not in a position to pay hundreds of dollars to create
+            a resume to bootstrap their career.
           </Feature>
 
           <Feature title="Your data is your data, none of my data.">
@@ -69,11 +61,29 @@ const Home = () => {
           </h4>
           <div className="grid grid-cols-4 gap-8">
             <Link to="/faq">Frequently Asked Questions</Link>
-            <Link to="/faq">Checkout Source Code</Link>
+            <a
+              href="https://github.com/AmruthPillai/Reactive-Resume"
+              rel="noreferrer"
+              target="_blank"
+            >
+              Check Out Source Code
+            </a>
             <Link to="/faq">Upvote on Product Hunt</Link>
-            <Link to="/faq">Raise an Issue on GitHub</Link>
-            <Link to="/faq">Donate to Reactive Resume</Link>
-            <Link to="/faq">Building Great Looking Resumes</Link>
+            <a
+              href="https://www.buymeacoffee.com/AmruthPillai"
+              rel="noreferrer"
+              target="_blank"
+            >
+              Donate to Reactive Resume
+            </a>
+            <Link to="/blog/design-beautiful-resumes">
+              Design Beautiful Resumes
+            </Link>
+            <Link to="/blog/ats-friendly-resumes">ATS-Friendly Resumes</Link>
+            <Link to="/blog/acing-video-interviews">
+              Acing Video Interviews
+            </Link>
+            <Link to="/blog/jobs-during-covid-19">Jobs During COVID-19</Link>
           </div>
         </div>
 

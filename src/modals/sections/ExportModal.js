@@ -1,6 +1,7 @@
 import firebase from 'gatsby-plugin-firebase';
 import { clone } from 'lodash';
 import React, { memo, useContext, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { FaPrint } from 'react-icons/fa';
 import Button from '../../components/shared/Button';
 import ModalContext from '../../contexts/ModalContext';
@@ -10,6 +11,7 @@ import BaseModal from '../BaseModal';
 
 const ExportModal = () => {
   const state = useSelector();
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [isLoadingSingle, setLoadingSingle] = useState(false);
   const [isLoadingMulti, setLoadingMulti] = useState(false);
@@ -72,35 +74,31 @@ const ExportModal = () => {
   };
 
   return (
-    <BaseModal hideActions state={[open, setOpen]} title="Export Your Resume">
+    <BaseModal
+      hideActions
+      state={[open, setOpen]}
+      title={t('builder.actions.export.heading')}
+    >
       <div>
         <h5 className="text-xl font-semibold mb-4">
-          Use Browser&apos;s Print Dialog
+          {t('modals.export.printDialog.heading')}
         </h5>
 
-        <p className="leading-loose">
-          For those of you who want a quick solution, you need not look any
-          further than your browser. All you have to do is press Ctrl/Cmd + P
-          and open up the print dialog on your browser and get your resume
-          printed immediately.
-        </p>
+        <p className="leading-loose">{t('modals.export.printDialog.text')}</p>
 
         <Button icon={FaPrint} className="mt-5" onClick={handleOpenPrintDialog}>
-          Print Resume
+          {t('modals.export.printDialog.button')}
         </Button>
       </div>
 
       <hr className="my-8" />
 
       <div>
-        <h5 className="text-xl font-semibold mb-4">Download PDF</h5>
+        <h5 className="text-xl font-semibold mb-4">
+          {t('modals.export.downloadPDF.heading')}
+        </h5>
 
-        <p className="leading-loose">
-          These options allow you to print a single page, unconstrained version
-          of your resume, perfect for those who have a lot of content.
-          Alternatively, you could download a multi-page version of your resume
-          as well with just one click.
-        </p>
+        <p className="leading-loose">{t('modals.export.downloadPDF.text')}</p>
 
         <div className="mt-5 mb-4">
           <div className="flex">
@@ -108,14 +106,14 @@ const ExportModal = () => {
               isLoading={isLoadingSingle}
               onClick={handleSinglePageDownload}
             >
-              Single Page Resume
+              {t('modals.export.downloadPDF.buttons.single')}
             </Button>
             <Button
               className="ml-8"
               isLoading={isLoadingMulti}
               onClick={handleMultiPageDownload}
             >
-              Multi Page Resume
+              {t('modals.export.downloadPDF.buttons.multi')}
             </Button>
           </div>
         </div>
@@ -124,18 +122,18 @@ const ExportModal = () => {
       <hr className="my-8" />
 
       <div>
-        <h5 className="text-xl font-semibold mb-4">Export to JSON Format</h5>
+        <h5 className="text-xl font-semibold mb-4">
+          {t('modals.export.jsonFormat.heading')}
+        </h5>
 
-        <p className="leading-loose">
-          You can also export your data into JSON format for safe keeping so
-          that you can easily import it back into Reactive Resume whenever you
-          want to edit or generate a resume.
-        </p>
+        <p className="leading-loose">{t('modals.export.jsonFormat.text')}</p>
 
         <div className="mt-5">
-          <Button onClick={handleExportToJson}>Export JSON</Button>
+          <Button onClick={handleExportToJson}>
+            {t('modals.export.jsonFormat.button')}
+          </Button>
           <a id="downloadAnchor" className="hidden">
-            Export JSON
+            {t('modals.export.jsonFormat.button')}
           </a>
         </div>
       </div>

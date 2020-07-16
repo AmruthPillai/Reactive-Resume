@@ -1,6 +1,7 @@
 import { Tooltip } from '@material-ui/core';
 import Ajv from 'ajv';
 import React, { memo, useContext, useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 import Button from '../../components/shared/Button';
 import ModalContext from '../../contexts/ModalContext';
@@ -10,6 +11,7 @@ import BaseModal from '../BaseModal';
 
 const ImportModal = () => {
   const ajv = new Ajv();
+  const { t } = useTranslation();
   const fileInputRef = useRef(null);
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
@@ -38,21 +40,22 @@ const ImportModal = () => {
   };
 
   return (
-    <BaseModal hideActions state={[open, setOpen]} title="Import Your Resume">
+    <BaseModal
+      hideActions
+      state={[open, setOpen]}
+      title={t('builder.actions.import.heading')}
+    >
       <div>
         <h5 className="text-xl font-semibold mb-4">
-          Import from Reactive Resume
+          {t('modals.import.reactiveResume.heading')}
         </h5>
 
-        <p>
-          Reactive Resume has it&apos;s own schema format to make the most of
-          all the customizable capabilities it has to offer. If you&apos;d like
-          to import a backup of your resume made with this app, just upload the
-          file using the button below.
+        <p className="leading-loose">
+          {t('modals.import.reactiveResume.text')}
         </p>
 
         <Button className="mt-5" onClick={() => fileInputRef.current.click()}>
-          Select File
+          {t('modals.import.button')}
         </Button>
         <input
           ref={fileInputRef}
@@ -65,18 +68,15 @@ const ImportModal = () => {
       <hr className="my-8" />
 
       <div>
-        <h5 className="text-xl font-semibold mb-4">Import from JSON Resume</h5>
+        <h5 className="text-xl font-semibold mb-4">
+          {t('modals.import.jsonResume.heading')}
+        </h5>
 
-        <p>
-          <a href="https://jsonresume.org/">JSON Resume</a> is an open standard
-          for resume schema structure. If you are one of the many enthusiasts
-          who have their resume ready in this format, all it takes it just one
-          click to get started with Reactive Resume.
-        </p>
+        <p className="leading-loose">{t('modals.import.jsonResume.text')}</p>
 
         <Tooltip title="Coming Soon" placement="right" arrow>
           <div className="mt-5 inline-block">
-            <Button className="opacity-50">Select File</Button>
+            <Button className="opacity-50">{t('modals.import.button')}</Button>
           </div>
         </Tooltip>
       </div>
@@ -84,16 +84,15 @@ const ImportModal = () => {
       <hr className="my-8" />
 
       <div>
-        <h5 className="text-xl font-semibold mb-4">Import from LinkedIn</h5>
+        <h5 className="text-xl font-semibold mb-4">
+          {t('modals.import.linkedIn.heading')}
+        </h5>
 
-        <p>
-          You can import a JSON that was exported from Reactive Resume by
-          clicking on the button below and selecting the appropriate file.
-        </p>
+        <p className="leading-loose">{t('modals.import.linkedIn.text')}</p>
 
         <Tooltip title="Coming Soon" placement="right" arrow>
           <div className="mt-5 inline-block">
-            <Button className="opacity-50">Select File</Button>
+            <Button className="opacity-50">{t('modals.import.button')}</Button>
           </div>
         </Tooltip>
       </div>

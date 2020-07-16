@@ -1,11 +1,17 @@
-import React from 'react';
-import { MdKeyboardArrowLeft } from 'react-icons/md';
 import { Link } from '@reach/router';
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { MdKeyboardArrowLeft } from 'react-icons/md';
 import Wrapper from '../components/shared/Wrapper';
 
 const FrequentlyAskedQuestions = () => {
   return (
     <Wrapper>
+      <Helmet>
+        <title>Frequently Asked Questions | Reactive Resume</title>
+        <link rel="canonical" href="https://rxresu.me/app/dashboard" />
+      </Helmet>
+
       <div className="md:w-1/2 container px-8 md:px-0 py-16 grid gap-12">
         <div className="flex items-center">
           <Link to="/">

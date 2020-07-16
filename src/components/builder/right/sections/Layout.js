@@ -1,13 +1,17 @@
 import React, { memo, useState } from 'react';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
+import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from '../../../../contexts/ResumeContext';
 import { move, reorder } from '../../../../utils';
 import Button from '../../../shared/Button';
 import Heading from '../../../shared/Heading';
 import styles from './Layout.module.css';
 
-const Layout = () => {
-  const [resetLayoutText, setResetLayoutText] = useState('Reset Layout');
+const Layout = ({ name }) => {
+  const { t } = useTranslation();
+  const [resetLayoutText, setResetLayoutText] = useState(
+    t('builder.layout.reset'),
+  );
 
   const template = useSelector('metadata.template');
   const blocks = useSelector(`metadata.layout.${template}`, [[]]);
@@ -49,22 +53,21 @@ const Layout = () => {
   };
 
   const handleResetLayout = () => {
-    if (resetLayoutText === 'Reset Layout') {
-      setResetLayoutText('Are you sure?');
+    if (resetLayoutText === t('builder.layout.reset')) {
+      setResetLayoutText(t('shared.buttons.confirmation'));
       return;
     }
 
     dispatch({ type: 'reset_layout' });
-    setResetLayoutText('Reset Layout');
+    setResetLayoutText(t('builder.layout.reset'));
   };
 
   return (
     <section>
-      <Heading>Layout</Heading>
+      <Heading>{name}</Heading>
 
       <p className="leading-loose">
-        This template supports {blocks.length} blocks. You can re-order or move
-        sections by dragging/dropping the section names across lists.
+        {t('builder.layout.text', { count: blocks.length })}
       </p>
 
       <div className={`grid gap-8 grid-cols-${blocks.length}`}>
@@ -79,7 +82,7 @@ const Layout = () => {
                 >
                   <div className="grid gap-3">
                     <span className="uppercase font-semibold text-xs">
-                      Block {ind + 1}
+                      {t('builder.layout.block')} {ind + 1}
                     </span>
                     {el.map((item, index) => (
                       <Draggable key={item} index={index} draggableId={item}>
@@ -90,7 +93,7 @@ const Layout = () => {
                             {...dragProvided.draggableProps}
                             {...dragProvided.dragHandleProps}
                           >
-                            {item}
+                            {t(`builder.sections.${item}`)}
                           </div>
                         )}
                       </Draggable>

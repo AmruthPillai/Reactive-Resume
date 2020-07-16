@@ -6,7 +6,7 @@ import { handleKeyUp } from '../../../../utils';
 import Heading from '../../../shared/Heading';
 import styles from './Fonts.module.css';
 
-const Fonts = () => {
+const Fonts = ({ name }) => {
   const dispatch = useDispatch();
   const font = useSelector('metadata.font');
 
@@ -22,7 +22,7 @@ const Fonts = () => {
 
   return (
     <section>
-      <Heading>Fonts</Heading>
+      <Heading>{name}</Heading>
 
       <div className="grid grid-cols-2 gap-8">
         {fontOptions.map((x) => (

@@ -1,5 +1,6 @@
 import { Formik } from 'formik';
 import React, { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import * as Yup from 'yup';
 import Input from '../../components/shared/Input';
 import ModalEvents from '../../constants/ModalEvents';
@@ -13,14 +14,16 @@ const initialValues = {
   summary: '',
 };
 
-const schema = Yup.object().shape({
-  title: Yup.string().required('This is a required field.'),
-  issuer: Yup.string().required('This is a required field.'),
-  date: Yup.date().max(new Date()),
-  summary: Yup.string(),
-});
-
 const CertificateModal = () => {
+  const { t } = useTranslation();
+
+  const schema = Yup.object().shape({
+    title: Yup.string().required(t('shared.forms.validation.required')),
+    issuer: Yup.string().required(t('shared.forms.validation.required')),
+    date: Yup.date().max(new Date()),
+    summary: Yup.string(),
+  });
+
   return (
     <Formik
       validateOnBlur
@@ -29,33 +32,33 @@ const CertificateModal = () => {
     >
       {(formik) => (
         <DataModal
-          name="Certificate"
+          name={t('builder.sections.certification')}
           path="certifications.items"
           event={ModalEvents.CERTIFICATION_MODAL}
         >
           <div className="grid grid-cols-2 gap-8">
             <Input
-              label="Title"
+              label={t('shared.forms.title')}
               className="col-span-2"
               placeholder="CCNP"
               {...getFieldProps(formik, schema, 'title')}
             />
 
             <Input
-              label="Issuer"
+              label={t('builder.certifications.issuer')}
               placeholder="Cisco Systems"
               {...getFieldProps(formik, schema, 'issuer')}
             />
 
             <Input
               type="date"
-              label="Date"
+              label={t('shared.forms.date')}
               {...getFieldProps(formik, schema, 'date')}
             />
 
             <Input
               type="textarea"
-              label="Summary"
+              label={t('shared.forms.summary')}
               className="col-span-2"
               {...getFieldProps(formik, schema, 'summary')}
             />

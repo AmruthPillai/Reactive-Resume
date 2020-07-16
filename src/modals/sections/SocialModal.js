@@ -1,5 +1,6 @@
 import { Formik } from 'formik';
 import React, { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import * as Yup from 'yup';
 import Input from '../../components/shared/Input';
 import ModalEvents from '../../constants/ModalEvents';
@@ -12,18 +13,20 @@ const initialValues = {
   username: '',
 };
 
-const schema = Yup.object().shape({
-  network: Yup.string()
-    .min(5, 'Please enter at least 5 characters.')
-    .required('This is a required field.'),
-  username: Yup.string().required('This is a required field.'),
-  url: Yup.string()
-    .min(5, 'Please enter at least 5 characters.')
-    .required('This is a required field.')
-    .url('Must be a valid URL'),
-});
-
 const SocialModal = () => {
+  const { t } = useTranslation();
+
+  const schema = Yup.object().shape({
+    network: Yup.string()
+      .min(5, t('shared.forms.validation.min', { number: 5 }))
+      .required(t('shared.forms.validation.required')),
+    username: Yup.string().required(t('shared.forms.validation.required')),
+    url: Yup.string()
+      .min(5, t('shared.forms.validation.min', { number: 5 }))
+      .required(t('shared.forms.validation.required'))
+      .url(t('shared.forms.validation.url')),
+  });
+
   return (
     <Formik
       validateOnBlur
@@ -33,24 +36,24 @@ const SocialModal = () => {
       {(formik) => (
         <DataModal
           path="social.items"
-          name="Social Network"
+          name={t('builder.sections.social')}
           event={ModalEvents.SOCIAL_MODAL}
         >
           <div className="grid grid-cols-2 gap-8">
             <Input
-              label="Network"
+              label={t('builder.social.network')}
               placeholder="Twitter"
               {...getFieldProps(formik, schema, 'network')}
             />
 
             <Input
-              label="Username"
+              label={t('builder.social.username')}
               placeholder="KingOKings"
               {...getFieldProps(formik, schema, 'username')}
             />
 
             <Input
-              label="URL"
+              label={t('builder.social.url')}
               className="col-span-2"
               placeholder="https://twitter.com/KingOKings"
               {...getFieldProps(formik, schema, 'url')}

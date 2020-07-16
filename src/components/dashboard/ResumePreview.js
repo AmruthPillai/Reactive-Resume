@@ -4,11 +4,13 @@ import moment from 'moment';
 import React, { useContext, useState } from 'react';
 import { MdMoreHoriz, MdOpenInNew } from 'react-icons/md';
 import { toast } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
 import DatabaseContext from '../../contexts/DatabaseContext';
 import ModalContext from '../../contexts/ModalContext';
 import styles from './ResumePreview.module.css';
 
 const ResumePreview = ({ resume }) => {
+  const { t } = useTranslation();
   const [anchorEl, setAnchorEl] = useState(null);
   const { emitter, events } = useContext(ModalContext);
   const { duplicateResume, deleteResume } = useContext(DatabaseContext);
@@ -31,7 +33,7 @@ const ResumePreview = ({ resume }) => {
 
   const handleDelete = () => {
     deleteResume(resume.id);
-    toast(`${resume.name} was deleted successfully`);
+    toast(t('dashboard.toasts.deleted', { name: resume.name }));
     setAnchorEl(null);
   };
 
@@ -42,10 +44,7 @@ const ResumePreview = ({ resume }) => {
   return (
     <div className={styles.resume}>
       <div className={styles.backdrop}>
-        <img
-          src="https://source.unsplash.com/random/210x297"
-          alt="Resume Preview"
-        />
+        <img src={resume.preview} alt={resume.name} />
       </div>
       <div className={styles.page}>
         <MdOpenInNew
@@ -67,17 +66,27 @@ const ResumePreview = ({ resume }) => {
           open={Boolean(anchorEl)}
           onClose={handleMenuClose}
         >
-          <MenuItem onClick={handleDuplicate}>Duplicate</MenuItem>
-          <MenuItem onClick={handleRename}>Rename</MenuItem>
+          <MenuItem onClick={handleDuplicate}>
+            {t('dashboard.buttons.duplicate')}
+          </MenuItem>
+          <MenuItem onClick={handleRename}>
+            {t('dashboard.buttons.rename')}
+          </MenuItem>
           <MenuItem onClick={handleDelete}>
-            <span className="text-red-600 font-medium">Delete</span>
+            <span className="text-red-600 font-medium">
+              {t('shared.buttons.delete')}
+            </span>
           </MenuItem>
         </Menu>
       </div>
       <div className={styles.meta}>
         <span>{resume.name}</span>
         {resume.updatedAt && (
-          <span>Last updated {moment(resume.updatedAt).fromNow()}</span>
+          <span>
+            {t('dashboard.lastUpdated', {
+              timestamp: moment(resume.updatedAt).fromNow(),
+            })}
+          </span>
         )}
       </div>
     </div>

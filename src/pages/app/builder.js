@@ -1,6 +1,7 @@
 import { navigate } from 'gatsby';
 import React, { memo, useContext, useEffect, useMemo, useState } from 'react';
 import { toast } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
 import Artboard from '../../components/builder/center/Artboard';
 import LeftSidebar from '../../components/builder/left/LeftSidebar';
 import RightSidebar from '../../components/builder/right/RightSidebar';
@@ -11,6 +12,7 @@ import Button from '../../components/shared/Button';
 
 const Builder = ({ id }) => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
   const [loading, setLoading] = useState(true);
   const { getResume } = useContext(DatabaseContext);
 
@@ -24,22 +26,17 @@ const Builder = ({ id }) => {
 
       if (!resume) {
         navigate('/app/dashboard');
-        toast.error(
-          `The resume you were looking for does not exist anymore... or maybe it never did?`,
-        );
+        toast.error(t('builder.toasts.doesNotExist'));
         return null;
       }
 
       if (resume.createdAt === resume.updatedAt) {
         toast.dark(() => (
           <div className="py-2">
-            <p className="leading-loose">
-              Not sure where to begin? Try <strong>Loading Demo Data</strong> to
-              see what Reactive Resume has to offer.
-            </p>
+            <p className="leading-loose">{t('builder.toasts.loadDemoData')}</p>
 
             <Button className="mt-4" onClick={handleLoadDemoData}>
-              Load Demo Data
+              {t('builder.actions.loadDemoData.button')}
             </Button>
           </div>
         ));
@@ -60,7 +57,7 @@ const Builder = ({ id }) => {
         <div className="col-span-3">
           <LeftSidebar />
         </div>
-        <div className="h-screen overflow-scroll col-span-5 bg-primary-100 grid items-center justify-center">
+        <div className="col-span-5 h-screen overflow-hidden bg-primary-100 grid items-center justify-center">
           <Artboard />
         </div>
         <div className="col-span-3">

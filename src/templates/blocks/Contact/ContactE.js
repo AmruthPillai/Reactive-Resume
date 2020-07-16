@@ -1,4 +1,5 @@
 import React, { memo, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import PageContext from '../../../contexts/PageContext';
 import { safetyCheck } from '../../../utils';
 
@@ -18,14 +19,17 @@ const ContactItem = ({ value, label, link }) => {
 };
 
 const ContactE = () => {
+  const { t } = useTranslation();
   const { data, heading: Heading } = useContext(PageContext);
 
   return (
     <div>
-      <Heading>Profile</Heading>
+      <Heading>{t('builder.sections.profile')}</Heading>
       <div className="relative w-full grid gap-2 text-xs">
         <div>
-          <h6 className="capitalize font-semibold">Address</h6>
+          <h6 className="capitalize font-semibold">
+            {t('shared.forms.address')}
+          </h6>
           <div className="flex flex-col text-xs">
             <span>{data.profile.address.line1}</span>
             <span>{data.profile.address.line2}</span>

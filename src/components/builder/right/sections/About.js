@@ -1,31 +1,25 @@
 import React, { memo } from 'react';
-import { FaCoffee, FaBug } from 'react-icons/fa';
+import { FaCoffee, FaBug, FaExternalLinkAlt } from 'react-icons/fa';
 import { MdCode } from 'react-icons/md';
+import { Trans, useTranslation } from 'react-i18next';
 import Button from '../../../shared/Button';
 import Heading from '../../../shared/Heading';
 import styles from './About.module.css';
 
-const About = () => {
+const About = ({ name }) => {
+  const { t } = useTranslation();
+
   return (
     <section>
-      <Heading>About</Heading>
+      <Heading>{name}</Heading>
 
       <div className={styles.container}>
-        <h5>Donate to Reactive Resume</h5>
+        <h5>{t('builder.about.donate.heading')}</h5>
 
         <p className="leading-loose">
-          As you know, every nook and cranny of this app is free and
-          open-source, but servers don&apos;t pay for themselves.
-        </p>
-
-        <p className="leading-loose">
-          I try to do what I can, but if you found the app helpful, or
-          you&apos;re in a better position than the others who depend on this
-          project for their first job, please consider donating{' '}
-          <span className="font-semibold">
-            as little as $5 to help keep the project alive
-          </span>{' '}
-          :)
+          <Trans t={t} i18nKey="builder.about.donate.text">
+            A<span className="font-bold">B</span>C
+          </Trans>
         </p>
 
         <div className="mt-4 flex">
@@ -34,19 +28,15 @@ const About = () => {
             rel="noreferrer"
             target="_blank"
           >
-            <Button icon={FaCoffee}>Buy me a coffee!</Button>
+            <Button icon={FaCoffee}>{t('builder.about.donate.button')}</Button>
           </a>
         </div>
       </div>
 
       <div className={styles.container}>
-        <h5>Bug? Feature Request?</h5>
+        <h5>{t('builder.about.bugFeature.heading')}</h5>
 
-        <p className="leading-loose">
-          Something halting your progress from making a resume? Found a pesky
-          bug that just won&apos;t quit? Talk about it on the GitHub Issues
-          section, or send me and email using the actions below.
-        </p>
+        <p className="leading-loose">{t('builder.about.bugFeature.text')}</p>
 
         <div className="mt-4 flex">
           <a
@@ -54,19 +44,27 @@ const About = () => {
             rel="noreferrer"
             target="_blank"
           >
-            <Button icon={FaBug}>Raise an Issue</Button>
+            <Button icon={FaBug}>{t('builder.about.bugFeature.button')}</Button>
           </a>
         </div>
       </div>
 
       <div className={styles.container}>
-        <h5>Source Code</h5>
+        <h5>{t('builder.about.appreciate.heading')}</h5>
 
-        <p className="leading-loose">
-          Want to run the project from its source? Are you a developer willing
-          to contribute to the open-source development of this project? Click
-          the button below.
-        </p>
+        <p className="leading-loose">{t('builder.about.appreciate.text')}</p>
+
+        <div className="mt-4 flex">
+          <a href="https://amruthpillai.com" rel="noreferrer" target="_blank">
+            <Button icon={FaExternalLinkAlt}>amruthpillai.com</Button>
+          </a>
+        </div>
+      </div>
+
+      <div className={styles.container}>
+        <h5>{t('builder.about.sourceCode.heading')}</h5>
+
+        <p className="leading-loose">{t('builder.about.sourceCode.text')}</p>
 
         <div className="mt-4 flex">
           <a
@@ -74,38 +72,20 @@ const About = () => {
             rel="noreferrer"
             target="_blank"
           >
-            <Button icon={MdCode}>GitHub Repo</Button>
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.container}>
-        <h5>License Information</h5>
-
-        <p className="leading-loose">
-          The project is governed under the MIT License, which you can read more
-          about below. Basically, you are allowed to use the project anywhere
-          provided you give credits to the original author.
-        </p>
-
-        <div className="mt-4 flex">
-          <a
-            href="https://github.com/AmruthPillai/Reactive-Resume/blob/master/LICENSE"
-            rel="noreferrer"
-            target="_blank"
-          >
-            <Button icon={MdCode}>MIT License</Button>
+            <Button icon={MdCode}>
+              {t('builder.about.sourceCode.button')}
+            </Button>
           </a>
         </div>
       </div>
 
       <div className="my-4 text-center opacity-50 text-sm">
-        <p>
-          Made with Love by{' '}
+        <Trans t={t} i18nKey="builder.about.footer">
+          A
           <a href="https://amruthpillai.com" rel="noreferrer" target="_blank">
-            Amruth Pillai
+            B
           </a>
-        </p>
+        </Trans>
       </div>
     </section>
   );

@@ -1,12 +1,14 @@
 import firebase from 'gatsby-plugin-firebase';
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
+import { useTranslation } from 'react-i18next';
 import CreateResume from '../../components/dashboard/CreateResume';
 import ResumePreview from '../../components/dashboard/ResumePreview';
 import TopNavbar from '../../components/dashboard/TopNavbar';
 import LoadingScreen from '../../components/router/LoadingScreen';
 
 const Dashboard = ({ user }) => {
+  const { t } = useTranslation();
   const [resumes, setResumes] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -61,7 +63,9 @@ const Dashboard = ({ user }) => {
   return (
     <div>
       <Helmet>
-        <title>Dashboard | Reactive Resume</title>
+        <title>
+          {t('dashboard.title')} | {t('shared.appName')}
+        </title>
         <link rel="canonical" href="https://rxresu.me/app/dashboard" />
       </Helmet>
 

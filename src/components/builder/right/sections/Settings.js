@@ -1,30 +1,42 @@
 import React, { memo, useContext, useState } from 'react';
 import { FaAngleDown } from 'react-icons/fa';
+import { useTranslation, Trans } from 'react-i18next';
 import UserContext from '../../../../contexts/UserContext';
 import Button from '../../../shared/Button';
 import Heading from '../../../shared/Heading';
 import styles from './Settings.module.css';
 import Input from '../../../shared/Input';
-import ThemeContext from '../../../../contexts/ThemeContext';
+import SettingsContext from '../../../../contexts/SettingsContext';
 import themeConfig from '../../../../data/themeConfig';
-import languageConfig from '../../../../data/languageConfig';
+import { languages } from '../../../../i18n';
+import { useDispatch } from '../../../../contexts/ResumeContext';
 
-const Settings = () => {
-  const [deleteText, setDeleteText] = useState('Delete Account');
+const Settings = ({ name }) => {
+  const { t } = useTranslation();
+
+  const [deleteText, setDeleteText] = useState(
+    t('builder.settings.dangerZone.button'),
+  );
+
+  const dispatch = useDispatch();
   const { deleteAccount } = useContext(UserContext);
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme, setTheme, language, setLanguage } = useContext(
+    SettingsContext,
+  );
 
   const handleChangeTheme = (e) => {
     setTheme(e.target.value);
   };
 
   const handleChangeLanguage = (e) => {
-    console.log(e.target.value);
+    const lang = e.target.value;
+    setLanguage(lang);
+    dispatch({ type: 'change_language', payload: lang });
   };
 
   const handleDeleteAccount = () => {
-    if (deleteText === 'Delete Account') {
-      setDeleteText('Are you sure?');
+    if (deleteText === t('builder.settings.dangerZone.button')) {
+      setDeleteText(t('shared.buttons.confirmation'));
       return;
     }
 
@@ -36,10 +48,10 @@ const Settings = () => {
 
   return (
     <section>
-      <Heading>Settings</Heading>
+      <Heading>{name}</Heading>
 
       <Input
-        label="Theme"
+        label={t('builder.settings.theme')}
         type="dropdown"
         options={Object.keys(themeConfig)}
         value={theme}
@@ -47,11 +59,11 @@ const Settings = () => {
       />
 
       <label>
-        <span>Language</span>
+        <span>{t('builder.settings.language')}</span>
         <div className="relative grid items-center">
-          <select onChange={handleChangeLanguage}>
-            {languageConfig.map((x) => (
-              <option key={x.key} value={x.key}>
+          <select onChange={handleChangeLanguage} value={language}>
+            {languages.map((x) => (
+              <option key={x.code} value={x.code}>
                 {x.name}
               </option>
             ))}
@@ -65,26 +77,23 @@ const Settings = () => {
       </label>
 
       <p className="text-sm leading-loose">
-        If you would like to contribute by providing translations to Reactive
-        Resume in your language,{' '}
-        <a
-          href="https://github.com/AmruthPillai/Reactive-Resume/blob/master/TRANSLATING.md"
-          rel="noreferrer"
-          target="_blank"
-        >
-          please visit this link
-        </a>
-        .
+        <Trans t={t} i18nKey="builder.settings.translate">
+          A
+          <a
+            href="https://github.com/AmruthPillai/Reactive-Resume/blob/master/TRANSLATING.md"
+            rel="noreferrer"
+            target="_blank"
+          >
+            B
+          </a>
+          C
+        </Trans>
       </p>
 
       <div className={styles.container}>
-        <h5>Danger Zone</h5>
+        <h5>{t('builder.settings.dangerZone.heading')}</h5>
 
-        <p className="leading-loose">
-          If you would like to delete your account and erase all your resumes,
-          it’s just one button away. Please be weary as this is an irreversible
-          process.
-        </p>
+        <p className="leading-loose">{t('builder.settings.dangerZone.text')}</p>
 
         <div className="mt-4 flex">
           <Button isDelete onClick={handleDeleteAccount}>

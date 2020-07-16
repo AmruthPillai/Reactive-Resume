@@ -2,6 +2,7 @@ import { Link, navigate } from '@reach/router';
 import React, { memo, useContext, useEffect, useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { toast } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
 import LoadingScreen from '../../components/router/LoadingScreen';
 import DatabaseContext from '../../contexts/DatabaseContext';
 import Castform from '../../templates/Castform';
@@ -13,6 +14,7 @@ import styles from './view.module.css';
 import Celebi from '../../templates/Celebi';
 
 const ResumeViewer = ({ id }) => {
+  const { t } = useTranslation();
   const [resume, setResume] = useState(null);
   const [loading, setLoading] = useState(true);
   const { getResume } = useContext(DatabaseContext);
@@ -42,7 +44,9 @@ const ResumeViewer = ({ id }) => {
     return (
       <div className={styles.container}>
         <Helmet>
-          <title>{resume.name} | Reactive Resume</title>
+          <title>
+            {resume.name} | {t('shared.appName')}
+          </title>
           <link rel="canonical" href={`https://rxresu.me/r/${id}`} />
         </Helmet>
 

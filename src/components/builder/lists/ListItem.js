@@ -1,5 +1,6 @@
 import { Menu, MenuItem } from '@material-ui/core';
 import React, { memo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { MdMoreVert } from 'react-icons/md';
 import { useDispatch } from '../../../contexts/ResumeContext';
@@ -15,8 +16,9 @@ const ListItem = ({
   isLast,
   onEdit,
 }) => {
-  const [anchorEl, setAnchorEl] = useState(null);
   const dispatch = useDispatch();
+  const { t } = useTranslation();
+  const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => setAnchorEl(event.currentTarget);
 
@@ -98,9 +100,11 @@ const ListItem = ({
               <IoIosArrowDown size="18px" />
             </MenuItem>
           </div>
-          <MenuItem onClick={handleEdit}>Edit</MenuItem>
+          <MenuItem onClick={handleEdit}>{t('shared.buttons.edit')}</MenuItem>
           <MenuItem onClick={handleDelete}>
-            <span className="text-red-600 font-medium">Delete</span>
+            <span className="text-red-600 font-medium">
+              {t('shared.buttons.delete')}
+            </span>
           </MenuItem>
         </Menu>
       </div>

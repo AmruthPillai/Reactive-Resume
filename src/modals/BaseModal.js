@@ -4,6 +4,7 @@ import Modal from '@material-ui/core/Modal';
 import { isFunction } from 'lodash';
 import React, { forwardRef, memo, useImperativeHandle } from 'react';
 import { MdClose } from 'react-icons/md';
+import { useTranslation } from 'react-i18next';
 import Button from '../components/shared/Button';
 import { handleKeyUp } from '../utils';
 import styles from './BaseModal.module.css';
@@ -11,6 +12,7 @@ import styles from './BaseModal.module.css';
 const BaseModal = forwardRef(
   ({ title, state, children, action, hideActions = false, onDestroy }, ref) => {
     const [open, setOpen] = state;
+    const { t } = useTranslation();
 
     const handleClose = () => {
       setOpen(false);
@@ -47,7 +49,7 @@ const BaseModal = forwardRef(
             {!hideActions && (
               <div className={styles.actions}>
                 <Button outline className="mr-8" onClick={handleClose}>
-                  Cancel
+                  {t('shared.buttons.cancel')}
                 </Button>
 
                 {action}

@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { Helmet } from 'react-helmet';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from '../../../contexts/ResumeContext';
 import Castform from '../../../templates/Castform';
 import Celebi from '../../../templates/Celebi';
@@ -11,17 +12,20 @@ import styles from './Artboard.module.css';
 
 const Artboard = () => {
   const state = useSelector();
+  const { t } = useTranslation();
   const { id, name, metadata } = state;
   const { template } = metadata;
 
   return (
-    <div>
+    <>
       <Helmet>
-        <title>{name} | Reactive Resume</title>
+        <title>
+          {name} | {t('shared.appName')}
+        </title>
         <link rel="canonical" href={`https://rxresu.me/app/builder/${id}`} />
       </Helmet>
 
-      <div id="artboard" className={styles.container}>
+      <div className={styles.container}>
         {template === 'onyx' && <Onyx data={state} />}
         {template === 'pikachu' && <Pikachu data={state} />}
         {template === 'gengar' && <Gengar data={state} />}
@@ -29,7 +33,7 @@ const Artboard = () => {
         {template === 'glalie' && <Glalie data={state} />}
         {template === 'celebi' && <Celebi data={state} />}
       </div>
-    </div>
+    </>
   );
 };
 

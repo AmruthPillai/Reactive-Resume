@@ -1,17 +1,23 @@
 import { Tooltip } from '@material-ui/core';
 import React, { memo, useEffect } from 'react';
 import { Link, scrollSpy } from 'react-scroll';
+import { useTranslation } from 'react-i18next';
 import styles from './SectionIcon.module.css';
 
 const SectionIcon = ({ section, containerId, tooltipPlacement }) => {
-  const { id, name, icon: Icon } = section;
+  const { t } = useTranslation();
+  const { id, icon: Icon } = section;
 
   useEffect(() => {
     scrollSpy.update();
   }, []);
 
   return (
-    <Tooltip title={name} placement={tooltipPlacement} arrow>
+    <Tooltip
+      title={t(`builder.sections.${id}`)}
+      placement={tooltipPlacement}
+      arrow
+    >
       <Link
         spy
         smooth

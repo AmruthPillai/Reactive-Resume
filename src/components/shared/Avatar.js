@@ -2,11 +2,13 @@ import cx from 'classnames';
 import { toUrl } from 'gatsby-source-gravatar';
 import React, { memo, useContext, useMemo, useState } from 'react';
 import { Menu, MenuItem } from '@material-ui/core';
+import { useTranslation } from 'react-i18next';
 import UserContext from '../../contexts/UserContext';
 import styles from './Avatar.module.css';
 import { handleKeyUp } from '../../utils';
 
 const Avatar = ({ className }) => {
+  const { t } = useTranslation();
   const { user, logout } = useContext(UserContext);
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -43,7 +45,7 @@ const Avatar = ({ className }) => {
         onClose={handleClose}
         open={Boolean(anchorEl)}
       >
-        <MenuItem onClick={handleLogout}>Logout</MenuItem>
+        <MenuItem onClick={handleLogout}>{t('shared.buttons.logout')}</MenuItem>
       </Menu>
     </div>
   );

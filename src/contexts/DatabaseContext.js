@@ -4,13 +4,14 @@ import ShortUniqueId from 'short-unique-id';
 import React, { createContext, memo, useContext, useState } from 'react';
 import UserContext from './UserContext';
 import initialState from '../data/initialState.json';
+import { getUnsplashPhoto } from '../utils';
 
 const DEBOUNCE_WAIT_TIME = 4000;
 
 const defaultState = {
   isUpdating: false,
-  createResume: () => {},
-  duplicateResume: () => {},
+  createResume: async () => {},
+  duplicateResume: async () => {},
   deleteResume: () => {},
   getResume: async () => {},
   getResumes: async () => {},
@@ -39,8 +40,9 @@ const DatabaseProvider = ({ children }) => {
     }
   };
 
-  const createResume = ({ name }) => {
+  const createResume = async ({ name }) => {
     const id = uuid();
+    const preview = await getUnsplashPhoto();
     const createdAt = firebase.database.ServerValue.TIMESTAMP;
 
     let firstName;
@@ -55,6 +57,7 @@ const DatabaseProvider = ({ children }) => {
       id,
       name,
       user: user.uid,
+      preview,
       profile: {
         ...initialState.profile,
         firstName: firstName || '',
@@ -67,14 +70,16 @@ const DatabaseProvider = ({ children }) => {
     firebase.database().ref(`resumes/${id}`).set(resume);
   };
 
-  const duplicateResume = (originalResume) => {
+  const duplicateResume = async (originalResume) => {
     const id = uuid();
+    const preview = await getUnsplashPhoto();
     const createdAt = firebase.database.ServerValue.TIMESTAMP;
 
     const resume = {
       ...originalResume,
       id,
       name: `${originalResume.name} Copy`,
+      preview,
       createdAt,
       updatedAt: createdAt,
     };

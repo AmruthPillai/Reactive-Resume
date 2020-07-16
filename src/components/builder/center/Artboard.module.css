@@ -3,8 +3,10 @@
     width: 210mm;
     height: 297mm;
     zoom: 0.8;
-    overflow: scroll;
+    -moz-transform: scale(0.8);
+    transform-origin: 50% 18%;
+    overflow-y: scroll;
     box-shadow: var(--shadow);
     @apply bg-white rounded;
-  }  
+  }
 }

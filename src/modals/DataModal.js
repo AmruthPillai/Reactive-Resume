@@ -2,6 +2,7 @@ import { useFormikContext } from 'formik';
 import { isEmpty, isFunction } from 'lodash';
 import React, { memo, useContext, useEffect, useRef, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { useTranslation } from 'react-i18next';
 import Button from '../components/shared/Button';
 import ModalContext from '../contexts/ModalContext';
 import { useDispatch } from '../contexts/ResumeContext';
@@ -19,9 +20,11 @@ const DataModal = ({
 }) => {
   const modalRef = useRef(null);
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const [data, setData] = useState(null);
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [isEditMode, setEditMode] = useState(false);
 
   const { emitter } = useContext(ModalContext);
@@ -41,11 +44,13 @@ const DataModal = ({
   }, [data]);
 
   const onSubmit = async (newData) => {
+    setLoading(true);
+
     if (isEmpty(await validateForm())) {
       if (isEditMode) {
         if (data !== newData) {
           isFunction(onEdit)
-            ? onEdit(newData)
+            ? await onEdit(newData)
             : dispatch({
                 type: 'on_edit_item',
                 payload: {
@@ -58,7 +63,7 @@ const DataModal = ({
         newData.id = uuidv4();
 
         isFunction(onCreate)
-          ? onCreate(newData)
+          ? await onCreate(newData)
           : dispatch({
               type: 'on_add_item',
               payload: {
@@ -68,6 +73,7 @@ const DataModal = ({
             });
       }
 
+      setLoading(false);
       modalRef.current.handleClose();
     }
   };
@@ -80,7 +86,7 @@ const DataModal = ({
 
   const submitAction = (
     <Button type="submit" onClick={() => onSubmit(values)}>
-      {getTitle}
+      {loading ? t('shared.buttons.loading') : getTitle}
     </Button>
   );
 

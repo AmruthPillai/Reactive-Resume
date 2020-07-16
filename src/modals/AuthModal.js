@@ -1,11 +1,13 @@
 import { navigate } from 'gatsby';
 import React, { memo, useContext, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Button from '../components/shared/Button';
 import ModalContext from '../contexts/ModalContext';
 import UserContext from '../contexts/UserContext';
 import BaseModal from './BaseModal';
 
 const AuthModal = () => {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [isLoadingGoogle, setLoadingGoogle] = useState(false);
   const [isLoadingAnonymous, setLoadingAnonymous] = useState(false);
@@ -39,20 +41,20 @@ const AuthModal = () => {
   };
 
   const getTitle = () =>
-    user ? `Welcome, ${user.displayName || 'Agent 47'}` : 'Who are you?';
+    user
+      ? t('modals.auth.welcome', { name: user.displayName || 'Agent 47' })
+      : t('modals.auth.whoAreYou');
 
   const getMessage = () =>
-    user
-      ? `Awesome. Now that you've authenticated yourself, we can get on with the real reason you're here. Click on the Go to App button to start building your resume!`
-      : `Reactive Resume needs to know who you are so it can securely authenticate you into the app and show you only your information. Once you are in, you can start building your resume, editing it to add new skills or sharing it with the world!`;
+    user ? t('modals.auth.loggedInText') : t('modals.auth.loggedOutText');
 
   const loggedInAction = (
     <>
       <Button outline className="mr-8" onClick={logout}>
-        Logout
+        {t('shared.buttons.logout')}
       </Button>
       <Button title="" onClick={handleGotoApp}>
-        Go to App
+        {t('landing.hero.goToApp')}
       </Button>
     </>
   );
@@ -60,14 +62,14 @@ const AuthModal = () => {
   const loggedOutAction = (
     <div className="flex">
       <Button isLoading={isLoadingGoogle} onClick={handleSignInWithGoogle}>
-        Sign in with Google
+        {t('modals.auth.buttons.google')}
       </Button>
       <Button
         className="ml-8"
         isLoading={isLoadingAnonymous}
         onClick={handleSignInAnonymously}
       >
-        Sign in Anonymously
+        {t('modals.auth.buttons.anonymous')}
       </Button>
     </div>
   );

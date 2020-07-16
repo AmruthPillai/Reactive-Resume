@@ -1,15 +1,16 @@
 import React, { Fragment, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Element } from 'react-scroll';
 import sections from '../../../data/rightSections';
 import RightNavbar from './RightNavbar';
 import styles from './RightSidebar.module.css';
+import About from './sections/About';
+import Actions from './sections/Actions';
 import Colors from './sections/Colors';
 import Fonts from './sections/Fonts';
 import Layout from './sections/Layout';
-import Templates from './sections/Templates';
-import Actions from './sections/Actions';
 import Settings from './sections/Settings';
-import About from './sections/About';
+import Templates from './sections/Templates';
 
 const getComponent = (id) => {
   switch (id) {
@@ -33,16 +34,22 @@ const getComponent = (id) => {
 };
 
 const RightSidebar = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="flex">
       <div id="RightSidebar" className={styles.container}>
-        {sections.map(({ id, name, event }) => {
+        {sections.map(({ id, event }) => {
           const Component = getComponent(id);
 
           return (
             <Fragment key={id}>
               <Element name={id}>
-                <Component id={id} name={name} event={event} />
+                <Component
+                  id={id}
+                  name={t(`builder.sections.${id}`)}
+                  event={event}
+                />
               </Element>
               <hr />
             </Fragment>

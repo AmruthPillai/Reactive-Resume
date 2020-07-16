@@ -1,5 +1,14 @@
 import arrayMove from 'array-move';
-import { clone, findIndex, get, isUndefined, merge, setWith } from 'lodash';
+import {
+  clone,
+  findIndex,
+  get,
+  isUndefined,
+  merge,
+  setWith,
+  set,
+  has,
+} from 'lodash';
 import React, {
   createContext,
   memo,
@@ -7,6 +16,7 @@ import React, {
   useContext,
   useReducer,
 } from 'react';
+import i18next from 'i18next';
 import demoState from '../data/demoState.json';
 import initialState from '../data/initialState.json';
 import DatabaseContext from './DatabaseContext';
@@ -71,6 +81,18 @@ const ResumeProvider = ({ children }) => {
           items = arrayMove(items, index, index + 1);
           newState = setWith(clone(state), payload.path, items, clone);
           debouncedUpdateResume(newState);
+          return newState;
+
+        case 'change_language':
+          newState = clone(state);
+          items = get(
+            i18next.getDataByLanguage(payload),
+            'translation.builder.sections',
+          );
+          Object.keys(items).forEach((key) => {
+            has(newState, `${key}.heading`) &&
+              set(newState, `${key}.heading`, items[key]);
+          });
           return newState;
 
         case 'reset_layout':

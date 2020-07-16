@@ -1,5 +1,6 @@
 import cx from 'classnames';
 import React, { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { handleKeyUp } from '../../utils';
 import styles from './Button.module.css';
 
@@ -12,6 +13,7 @@ const Button = ({
   isLoading,
   isDelete,
 }) => {
+  const { t } = useTranslation();
   const Icon = icon;
 
   return (
@@ -24,7 +26,7 @@ const Button = ({
       })}
     >
       {icon && <Icon size="14" className="mr-3" />}
-      {isLoading ? 'Loading...' : children}
+      {isLoading ? t('shared.buttons.loading') : children}
     </button>
   );
 };

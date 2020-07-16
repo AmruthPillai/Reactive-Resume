@@ -1,13 +1,15 @@
 import { navigate } from 'gatsby';
-import TypeIt from 'typeit-react';
 import React, { memo, useContext } from 'react';
-import { FaGithub } from 'react-icons/fa';
+import TypeIt from 'typeit-react';
+import { Link } from '@reach/router';
+import { useTranslation } from 'react-i18next';
 import ModalContext from '../../contexts/ModalContext';
 import UserContext from '../../contexts/UserContext';
 import Button from '../shared/Button';
 import Logo from '../shared/Logo';
 
 const Hero = () => {
+  const { t } = useTranslation();
   const { emitter, events } = useContext(ModalContext);
   const { user, loading } = useContext(UserContext);
 
@@ -17,10 +19,11 @@ const Hero = () => {
 
   return (
     <div className="flex items-center">
-      <Logo className="shadow-lg" size="256px" />
+      <Link to="/">
+        <Logo className="shadow-lg" size="256px" />
+      </Link>
 
       <div className="ml-12">
-        <h1 className="sr-only">Reactive Resume</h1>
         <div className="text-5xl font-bold">
           <TypeIt
             getBeforeInit={(instance) => {
@@ -36,29 +39,19 @@ const Hero = () => {
           />
         </div>
         <h2 className="mt-1 text-3xl text-primary-500">
-          A free and open-source resume builder.
+          {t('shared.shortDescription')}
         </h2>
 
         <div className="mt-12 flex">
           {user ? (
             <Button onClick={handleGotoApp} isLoading={loading}>
-              Go to App
+              {t('landing.hero.goToApp')}
             </Button>
           ) : (
             <Button onClick={handleLogin} isLoading={loading}>
-              Login
+              {t('shared.buttons.login')}
             </Button>
           )}
-
-          <a
-            href="https://github.com/AmruthPillai/Reactive-Resume"
-            rel="noreferrer"
-            target="_blank"
-          >
-            <Button outline icon={FaGithub} className="ml-8">
-              Source Code
-            </Button>
-          </a>
         </div>
       </div>
     </div>

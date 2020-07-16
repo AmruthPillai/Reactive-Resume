@@ -1,4 +1,5 @@
 import React, { memo, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import { MdFlare } from 'react-icons/md';
 import PageContext from '../../../contexts/PageContext';
 import { safetyCheck } from '../../../utils';
@@ -19,6 +20,7 @@ const ContactItem = ({ value, label, link }) => {
 };
 
 const ContactD = () => {
+  const { t } = useTranslation();
   const { data } = useContext(PageContext);
 
   return (
@@ -42,7 +44,9 @@ const ContactD = () => {
 
       {data.profile.address.line1 && (
         <div>
-          <h6 className="capitalize font-semibold">Address</h6>
+          <h6 className="capitalize font-semibold">
+            {t('shared.forms.address')}
+          </h6>
           <div className="flex flex-col text-xs">
             <span>{data.profile.address.line1}</span>
             <span>{data.profile.address.line2}</span>

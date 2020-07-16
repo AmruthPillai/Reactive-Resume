@@ -1,6 +1,7 @@
 import cx from 'classnames';
 import { isFunction } from 'lodash';
 import React, { memo, useEffect, useState } from 'react';
+import { Trans, useTranslation } from 'react-i18next';
 import { FaAngleDown } from 'react-icons/fa';
 import { MdClose, MdOpenInNew } from 'react-icons/md';
 import { v4 as uuidv4 } from 'uuid';
@@ -24,6 +25,7 @@ const Input = ({
   placeholder,
   type = 'text',
 }) => {
+  const { t } = useTranslation();
   const [uuid, setUuid] = useState(null);
   const stateValue = useSelector(path, '');
   const dispatch = useDispatch();
@@ -51,7 +53,9 @@ const Input = ({
         <span>
           {label}{' '}
           {isRequired && (
-            <span className="opacity-75 font-normal lowercase">(Required)</span>
+            <span className="opacity-75 font-normal lowercase">
+              ({t('shared.forms.required')})
+            </span>
           )}
         </span>
 
@@ -92,15 +96,17 @@ const Input = ({
             />
 
             <p className="mt-2 text-sm opacity-75">
-              This text block supports{' '}
-              <a
-                href="https://www.markdownguide.org/basic-syntax/"
-                className="text-blue-600"
-                target="blank"
-              >
-                markdown
-              </a>
-              .
+              <Trans t={t} i18nKey="shared.forms.markdown">
+                A
+                <a
+                  href="https://www.markdownguide.org/basic-syntax/"
+                  className="text-blue-600"
+                  target="blank"
+                >
+                  B
+                </a>
+                C
+              </Trans>
             </p>
           </div>
         )}
