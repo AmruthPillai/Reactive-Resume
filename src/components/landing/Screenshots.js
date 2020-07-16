@@ -11,7 +11,7 @@ const Screenshots = () => {
           fluid(maxWidth: 800) {
             ...GatsbyImageSharpFluid
           }
-          fixed(width: 360) {
+          fixed(width: 300) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -21,7 +21,7 @@ const Screenshots = () => {
           fluid(maxWidth: 800) {
             ...GatsbyImageSharpFluid
           }
-          fixed(width: 360) {
+          fixed(width: 300) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -31,7 +31,7 @@ const Screenshots = () => {
           fluid(maxWidth: 800) {
             ...GatsbyImageSharpFluid
           }
-          fixed(width: 360) {
+          fixed(width: 300) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -41,7 +41,7 @@ const Screenshots = () => {
           fluid(maxWidth: 800) {
             ...GatsbyImageSharpFluid
           }
-          fixed(width: 360) {
+          fixed(width: 300) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -51,7 +51,7 @@ const Screenshots = () => {
           fluid(maxWidth: 800) {
             ...GatsbyImageSharpFluid
           }
-          fixed(width: 360) {
+          fixed(width: 300) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -61,7 +61,7 @@ const Screenshots = () => {
           fluid(maxWidth: 800) {
             ...GatsbyImageSharpFluid
           }
-          fixed(width: 360) {
+          fixed(width: 300) {
             ...GatsbyImageSharpFixed
           }
         }

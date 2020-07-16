@@ -1,6 +1,11 @@
 require('dotenv').config();
 
 module.exports = {
+  siteMetadata: {
+    title: 'Reactive Resume',
+    siteUrl: 'https://rxresume-staging.web.app',
+    description: 'A free and open source resume builder.',
+  },
   plugins: [
     'gatsby-plugin-react-helmet',
     {
@@ -65,7 +70,7 @@ module.exports = {
         short_name: 'RxResume',
         description: 'A free and open-source resume builder.',
         start_url: '/?source=pwa',
-        icon: `static/images/logo.png`,
+        icon: 'static/images/logo.png',
         background_color: '#FFFFFF',
         theme_color: '#444444',
         display: 'standalone',
@@ -87,7 +92,7 @@ module.exports = {
     },
     'gatsby-plugin-lodash',
     {
-      resolve: `gatsby-plugin-material-ui`,
+      resolve: 'gatsby-plugin-material-ui',
       options: {
         stylesProvider: {
           injectFirst: true,
@@ -96,13 +101,13 @@ module.exports = {
     },
     'gatsby-plugin-postcss',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/articles`,
-        name: `articles`,
+        name: 'articles',
       },
     },
-    `gatsby-transformer-remark`,
+    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -127,5 +132,6 @@ module.exports = {
         },
       },
     },
+    'gatsby-plugin-sitemap',
   ],
 };
