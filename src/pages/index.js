@@ -1,9 +1,10 @@
+import { Link } from '@reach/router';
 import React, { memo } from 'react';
 import { Helmet } from 'react-helmet';
-import { Link } from '@reach/router';
 import { useTranslation } from 'react-i18next';
 import Hero from '../components/landing/Hero';
 import Wrapper from '../components/shared/Wrapper';
+import Screenshots from '../components/landing/Screenshots';
 
 const Home = () => {
   const { t } = useTranslation();
@@ -17,6 +18,17 @@ const Home = () => {
 
       <div className="container mt-24">
         <Hero />
+
+        <p className="leading-loose text-xl mt-16">
+          Reactive Resume is a free and open source resume builder that’s built
+          to make the mundane tasks of creating, updating and sharing your
+          resume as easy as 1, 2, 3. With this app, you can create multiple
+          resumes, share them with recruiters through a unique link and print as
+          PDF, all for free, no advertisements, without losing the integrity and
+          privacy of your data.
+        </p>
+
+        <Screenshots />
 
         <div className="pt-8">
           <Feature title="Create a resume that’s worthy of who you are.">

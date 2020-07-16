@@ -1,0 +1,13 @@
+.screenshot {
+  @apply shadow-xl rounded border-2 border-primary-100 ml-10;
+  @apply transition-opacity duration-200 ease-in-out;
+}
+
+.screenshot:hover {
+  @apply opacity-50;
+  @apply transition-opacity duration-200 ease-in-out;
+}
+
+.screenshot:first-child {
+  @apply ml-0;
+}

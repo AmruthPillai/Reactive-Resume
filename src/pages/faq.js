@@ -47,6 +47,8 @@ const FrequentlyAskedQuestions = () => {
             Your name and your email address is stored along with your user
             information, if you signed in with Google, and of course, all the
             information you input in your resume is also stored in the database.
+            You won&apos;t even get any marketing emails, feature updates,
+            newsletters, notification emails, nothing.
           </p>
         </div>
 
@@ -83,8 +85,26 @@ const FrequentlyAskedQuestions = () => {
             <strong>Absolutely no catch to this freebie.</strong> This project
             is just my way of giving back to the community that I&apos;ve
             learned so much from. If you&apos;d like to show your appreciation
-            however, you can follow me on my social media and let me know, or
-            donate to the app to help pay the cloud bills.
+            however, you can follow me on my social media and let me know how
+            much it helped you, or donate to help pay the cloud bills, or if you
+            are a fellow developer, you can head to GitHub and contribute to the
+            code and raising a PR.
+          </p>
+        </div>
+
+        <hr />
+
+        <div>
+          <h4 className="text-xl font-medium mb-4">
+            Is there a mobile app for Reactive Resume?
+          </h4>
+          <p className="leading-loose">
+            <strong>Not yet. But soon, maybe?</strong> One of the main
+            motivations for me to shift to a centralized database approach was
+            that I could one day build a mobile app as well that could let users
+            jump from editing on their desktops to editing on their phones. It
+            requires a lot of time, so I would not expect it any time soon, but
+            it&apos;s definitely in the pipeline.
           </p>
         </div>
       </div>
