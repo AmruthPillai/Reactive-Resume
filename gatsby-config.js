@@ -71,9 +71,21 @@ module.exports = {
         description: 'A free and open-source resume builder.',
         start_url: '/?source=pwa',
         icon: 'static/images/logo.png',
+        icon_options: {
+          purpose: 'any maskable monochrome',
+        },
         background_color: '#FFFFFF',
         theme_color: '#444444',
         display: 'standalone',
+        cache_busting_mode: 'none',
+        icons: [
+          {
+            src: 'static/icons/maskable.png',
+            sizes: '196x196',
+            type: 'image/png',
+            purpose: 'any maskable monochrome',
+          },
+        ],
         shortcuts: [
           {
             name: 'Dashboard',
@@ -87,6 +99,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-offline',
       options: {
+        workboxConfig: {
+          globPatterns: ['**/*'],
+        },
         precachePages: ['', '/app/*', '/blog/*'],
       },
     },

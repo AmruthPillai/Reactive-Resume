@@ -71,7 +71,7 @@ const Screenshots = () => {
 
   return (
     <div className="mt-24 mb-4">
-      <h4 className="text-xl uppercase font-bold mb-8">Screenshots</h4>
+      <div className="text-xl uppercase font-bold mb-8">Screenshots</div>
 
       <div className="flex w-full overflow-x-scroll">
         {Object.keys(screenshots).map((x) => (
@@ -82,7 +82,11 @@ const Screenshots = () => {
             key={screenshots[x].childImageSharp.fluid.src}
             href={screenshots[x].childImageSharp.fluid.src}
           >
-            <GatsbyImage fixed={screenshots[x].childImageSharp.fixed} />
+            <span className="sr-only">Reactive Resume Screenshot</span>
+            <GatsbyImage
+              fixed={screenshots[x].childImageSharp.fixed}
+              alt="Reactive Resume Screenshot"
+            />
           </a>
         ))}
       </div>

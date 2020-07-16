@@ -18,6 +18,7 @@ const Wrapper = ({ children }) => {
   return (
     <>
       <Helmet>
+        <html lang="en" />
         <title>Reactive Resume</title>
         <meta
           name="description"

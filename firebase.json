@@ -6,47 +6,29 @@
       "ignore": ["**/.*", "firebase.json", "**/node_modules/**"],
       "headers": [
         {
-          "source": "**/*.@(eot|otf|ttf|ttc|woff|woff2|font.css)",
-          "headers": [
-            {
-              "key": "Access-Control-Allow-Origin",
-              "value": "*"
-            }
-          ]
-        },
-        {
-          "source": "**/*.@(eot|otf|ttf|ttc|woff|woff2|font.css)",
-          "headers": [
-            {
-              "key": "cache-control",
-              "value": "max-age=604800"
-            }
-          ]
-        },
-        {
           "source": "**/*",
           "headers": [
             {
               "key": "cache-control",
-              "value": "public, max-age=0, must-revalidate"
+              "value": "cache-control: public, max-age=86400, must-revalidate"
             }
           ]
         },
         {
-          "source": "**/*.@(js|css)",
+          "source": "static/**",
           "headers": [
             {
               "key": "cache-control",
-              "value": "max-age=604800"
+              "value": "public, max-age=604800, immutable"
             }
           ]
         },
         {
-          "source": "**/*.@(jpg|jpeg|gif|png|svg)",
+          "source": "**/*.@(css|js|woff2|jpg|png)",
           "headers": [
             {
               "key": "cache-control",
-              "value": "max-age=604800"
+              "value": "public, max-age=86400, immutable"
             }
           ]
         },
@@ -55,16 +37,16 @@
           "headers": [
             {
               "key": "cache-control",
-              "value": "public, max-age=0, must-revalidate"
+              "value": "cache-control: public, max-age=86400, must-revalidate"
             }
           ]
         },
         {
-          "source": "404.html",
+          "source": "page-data/**",
           "headers": [
             {
               "key": "cache-control",
-              "value": "max-age=300"
+              "value": "cache-control: public, max-age=86400, must-revalidate"
             }
           ]
         }

@@ -68,9 +68,9 @@ const Home = () => {
         </div>
 
         <div className="my-24">
-          <h4 className="text-xl uppercase font-bold mb-8">
+          <div className="text-xl uppercase font-bold mb-8">
             Links of Interest
-          </h4>
+          </div>
           <div className="grid grid-cols-3 md:grid-cols-4 gap-8">
             <Link to="/faq">Frequently Asked Questions</Link>
             <a
@@ -115,7 +115,7 @@ const Home = () => {
 const Feature = ({ title, children }) => {
   return (
     <div className="mt-16">
-      <h3 className="text-3xl">{title}</h3>
+      <div className="text-3xl">{title}</div>
       <p className="mt-6 text-lg leading-loose">{children}</p>
     </div>
   );
