@@ -1,4 +1,5 @@
 import arrayMove from 'array-move';
+import { v4 as uuidv4 } from 'uuid';
 import {
   clone,
   findIndex,
@@ -120,6 +121,86 @@ const ResumeProvider = ({ children }) => {
           newState.name = temp.name;
           newState.createdAt = temp.createdAt;
           newState.updatedAt = temp.updatedAt;
+          debouncedUpdateResume(newState);
+          return newState;
+
+        case 'on_import_jsonresume':
+          temp = clone(state);
+          newState = initialState;
+          newState.id = temp.id;
+          newState.user = temp.user;
+          newState.name = temp.name;
+          newState.preview = temp.preview;
+          newState.createdAt = temp.createdAt;
+          newState.updatedAt = temp.updatedAt;
+          newState.profile = {
+            address: {
+              city: payload.basics.location.city,
+              line1: payload.basics.location.address,
+              line2: payload.basics.location.region,
+              pincode: payload.basics.location.postalCode,
+            },
+            email: payload.basics.email,
+            firstName: payload.basics.name,
+            phone: payload.basics.phone,
+            photograph: payload.basics.picture,
+            subtitle: payload.basics.label,
+            website: payload.basics.website,
+          };
+          newState.social.items = payload.basics.profiles.map((x) => ({
+            id: uuidv4(),
+            network: x.network,
+            username: x.username,
+            url: x.url,
+          }));
+          newState.objective.body = payload.basics.summary;
+          newState.work.items = payload.work.map((x) => ({
+            id: uuidv4(),
+            company: x.company,
+            endDate: x.endDate,
+            position: x.position,
+            startDate: x.startDate,
+            summary: x.summary,
+            website: x.website,
+          }));
+          newState.education.items =
+            payload.education &&
+            payload.education.map((x) => ({
+              id: uuidv4(),
+              degree: x.studyType,
+              endDate: x.endDate,
+              field: x.area,
+              gpa: x.gpa,
+              institution: x.institution,
+              startDate: x.startDate,
+              summary: x.courses.join('\n'),
+            }));
+          newState.awards.items = payload.awards.map((x) => ({
+            id: uuidv4(),
+            awarder: x.awarder,
+            date: x.date,
+            summary: x.summary,
+            title: x.title,
+          }));
+          newState.skills.items = payload.skills.map((x) => ({
+            id: uuidv4(),
+            level: 'Fundamental Awareness',
+            name: x.name,
+          }));
+          newState.hobbies.items = payload.interests.map((x) => ({
+            id: uuidv4(),
+            name: x.name,
+          }));
+          newState.languages.items = payload.languages.map((x) => ({
+            id: uuidv4(),
+            name: x.language,
+            fluency: x.fluency,
+          }));
+          newState.references.items = payload.references.map((x) => ({
+            id: uuidv4(),
+            name: x.name,
+            summary: x.reference,
+          }));
           debouncedUpdateResume(newState);
           return newState;
 

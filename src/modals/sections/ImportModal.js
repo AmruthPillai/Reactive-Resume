@@ -7,6 +7,7 @@ import Button from '../../components/shared/Button';
 import ModalContext from '../../contexts/ModalContext';
 import { useDispatch } from '../../contexts/ResumeContext';
 import reactiveResumeSchema from '../../data/schema/reactiveResume.json';
+import jsonResumeSchema from '../../data/schema/jsonResume.json';
 import BaseModal from '../BaseModal';
 
 const ImportModal = () => {
@@ -34,6 +35,21 @@ const ImportModal = () => {
         return;
       }
       dispatch({ type: 'on_import', payload });
+      setOpen(false);
+    });
+    fr.readAsText(event.target.files[0]);
+  };
+
+  const importJsonResume = (event) => {
+    const fr = new FileReader();
+    fr.addEventListener('load', () => {
+      const payload = JSON.parse(fr.result);
+      const valid = ajv.validate(jsonResumeSchema, payload);
+      if (!valid) {
+        ajv.errors.forEach((x) => toast.error(`Invalid Data: ${x.message}`));
+        return;
+      }
+      dispatch({ type: 'on_import_jsonresume', payload });
       setOpen(false);
     });
     fr.readAsText(event.target.files[0]);
@@ -74,11 +90,15 @@ const ImportModal = () => {
 
         <p className="leading-loose">{t('modals.import.jsonResume.text')}</p>
 
-        <Tooltip title="Coming Soon" placement="right" arrow>
-          <div className="mt-5 inline-block">
-            <Button className="opacity-50">{t('modals.import.button')}</Button>
-          </div>
-        </Tooltip>
+        <Button className="mt-5" onClick={() => fileInputRef.current.click()}>
+          {t('modals.import.button')}
+        </Button>
+        <input
+          ref={fileInputRef}
+          type="file"
+          className="hidden"
+          onChange={importJsonResume}
+        />
       </div>
 
       <hr className="my-8" />

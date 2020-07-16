@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "additionalProperties": false,
+  "$id": "http://json-schema.org/draft-04/schema#",
   "definitions": {
     "iso8601": {
       "type": "string",
@@ -9,11 +9,6 @@
     }
   },
   "properties": {
-    "$schema": {
-      "type": "string",
-      "description": "link to the version of the schema that can validate the resume",
-      "format": "uri"
-    },
     "basics": {
       "type": "object",
       "additionalProperties": true,
