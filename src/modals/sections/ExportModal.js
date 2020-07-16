@@ -1,5 +1,6 @@
 import firebase from 'gatsby-plugin-firebase';
 import { clone } from 'lodash';
+import download from 'downloadjs';
 import React, { memo, useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaPrint } from 'react-icons/fa';
@@ -30,20 +31,13 @@ const ExportModal = () => {
     }
   };
 
-  const openFile = (blob) => {
-    if (typeof window !== `undefined`) {
-      const url = window.URL.createObjectURL(blob, { oneTimeOnly: true });
-      window && window.open(url);
-      setLoadingSingle(false);
-    }
-  };
-
   const handleSinglePageDownload = async () => {
     setLoadingSingle(true);
     const printResume = firebase.functions().httpsCallable('printResume');
     const { data } = await printResume({ id: state.id, type: 'single' });
     const blob = b64toBlob(data, 'application/pdf');
-    openFile(blob);
+    download(blob, `RxResume-${state.id}.pdf`, 'application/pdf');
+    setLoadingSingle(false);
   };
 
   const handleMultiPageDownload = async () => {
@@ -51,7 +45,8 @@ const ExportModal = () => {
     const printResume = firebase.functions().httpsCallable('printResume');
     const { data } = await printResume({ id: state.id, type: 'multi' });
     const blob = b64toBlob(data, 'application/pdf');
-    openFile(blob);
+    download(blob, `RxResume-${state.id}.pdf`, 'application/pdf');
+    setLoadingSingle(false);
   };
 
   const handleExportToJson = () => {
@@ -61,16 +56,10 @@ const ExportModal = () => {
     delete backupObj.name;
     delete backupObj.createdAt;
     delete backupObj.updatedAt;
-    const dataStr = `data:text/json;charset=utf-8,${encodeURIComponent(
-      JSON.stringify(backupObj),
+    const data = `data:text/json;charset=utf-8,${encodeURIComponent(
+      JSON.stringify(backupObj, null, '\t'),
     )}`;
-    const dlAnchor = document.getElementById('downloadAnchor');
-    dlAnchor.setAttribute('href', dataStr);
-    dlAnchor.setAttribute(
-      'download',
-      `RxResume_${state.id}_${Date.now()}.json`,
-    );
-    dlAnchor.click();
+    download(data, `RxResume-${state.id}.json`, 'text/json');
   };
 
   return (

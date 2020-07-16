@@ -15,7 +15,7 @@ exports.printResume = functions.https.onCall(async ({ id, type }, { auth }) => {
     );
   }
 
-  if (!type || type !== 'single' || type !== 'multi') {
+  if (!type) {
     throw new functions.https.HttpsError(
       'invalid-argument',
       'The function must be called with argument "type" containing the type of resume.',
@@ -33,8 +33,10 @@ exports.printResume = functions.https.onCall(async ({ id, type }, { auth }) => {
     headless: true,
   });
   const page = await browser.newPage();
-  await page.goto(BASE_URL + id);
-  await timeout(5000);
+  await page.goto(BASE_URL + id, {
+    waitUntil: 'networkidle0',
+  });
+  await timeout(6000);
   await page.emulateMediaType('print');
   let pdf;
 
@@ -59,7 +61,7 @@ exports.printResume = functions.https.onCall(async ({ id, type }, { auth }) => {
       height: `${height}px`,
       pageRanges: '1',
     });
-  } else if (type === 'multi') {
+  } else {
     pdf = await page.pdf({
       format: 'A4',
       printBackground: true,
