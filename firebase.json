@@ -40,15 +40,6 @@
               "value": "cache-control: public, max-age=86400, must-revalidate"
             }
           ]
-        },
-        {
-          "source": "page-data/**",
-          "headers": [
-            {
-              "key": "cache-control",
-              "value": "cache-control: public, max-age=86400, must-revalidate"
-            }
-          ]
         }
       ]
     }

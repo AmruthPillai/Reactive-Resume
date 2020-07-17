@@ -51,6 +51,14 @@ I try to do what I can, but if you found the app helpful, or you're in a better 
 
 #### https://www.buymeacoffee.com/AmruthPillai
 
+### Changelog
+
+#### 17th July 2020
+
+- Some Bugfixes
+- Added Kannaded Translation
+- Update to v2.0.0
+
 ### Appreciation
 
 Thank you to everyone who made this project possible, including the many users who voiced their opinions, created issues and PRs to the original Reactive Resume project, and helped me along the way to make this a reality.
