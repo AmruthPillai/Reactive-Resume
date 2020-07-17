@@ -1,0 +1,35 @@
+label {
+  @apply flex flex-col;
+}
+
+label > span:first-child {
+  @apply mb-1 text-primary-600 font-semibold tracking-wide text-xs uppercase;
+}
+
+label > p {
+  @apply mt-1 text-red-600 text-xs;
+}
+
+label input,
+label textarea,
+label select {
+  @apply w-full py-3 px-4 rounded text-primary-900 bg-primary-200 border border-transparent appearance-none;
+}
+
+label input::placeholder,
+label textarea::placeholder,
+label select::placeholder {
+  @apply opacity-50;
+}
+
+label input:hover,
+label textarea:hover,
+label select:hover {
+  @apply outline-none border-primary-400;
+}
+
+label input:focus,
+label textarea:focus,
+label select:focus {
+  @apply outline-none border-primary-600;
+}

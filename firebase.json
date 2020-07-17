@@ -1,35 +1,70 @@
 {
   "hosting": [
     {
-      "target": "app",
-      "public": "build",
-      "ignore": [
-        "firebase.json",
-        "docs",
-        "**/.*",
-        "**/node_modules/**"
-      ],
-      "rewrites": [
+      "target": "rxresume",
+      "public": "public",
+      "ignore": ["**/.*", "firebase.json", "**/node_modules/**"],
+      "headers": [
         {
-          "source": "**",
-          "destination": "/index.html"
-        }
-      ]
-    },
-    {
-      "target": "docs",
-      "public": "docs/.vuepress/dist",
-      "ignore": [
-        "firebase.json",
-        "**/.*",
-        "**/node_modules/**"
-      ],
-      "rewrites": [
+          "source": "**/*",
+          "headers": [
+            {
+              "key": "cache-control",
+              "value": "cache-control: public, max-age=86400, must-revalidate"
+            }
+          ]
+        },
         {
-          "source": "**",
-          "destination": "/index.html"
+          "source": "static/**",
+          "headers": [
+            {
+              "key": "cache-control",
+              "value": "public, max-age=604800, immutable"
+            }
+          ]
+        },
+        {
+          "source": "**/*.@(css|js|woff2|jpg|png)",
+          "headers": [
+            {
+              "key": "cache-control",
+              "value": "public, max-age=86400, immutable"
+            }
+          ]
+        },
+        {
+          "source": "sw.js",
+          "headers": [
+            {
+              "key": "cache-control",
+              "value": "cache-control: public, max-age=86400, must-revalidate"
+            }
+          ]
+        },
+        {
+          "source": "page-data/**",
+          "headers": [
+            {
+              "key": "cache-control",
+              "value": "cache-control: public, max-age=86400, must-revalidate"
+            }
+          ]
         }
       ]
     }
-  ]
+  ],
+  "emulators": {
+    "functions": {
+      "port": 5001
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "ui": {
+      "enabled": true
+    }
+  },
+  "functions": {
+    "source": "functions"
+  }
 }

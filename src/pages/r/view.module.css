@@ -1,0 +1,15 @@
+@media screen {
+  .container {
+    background-color: #212121;
+    @apply col-span-5 flex flex-col items-center;
+  }
+
+  .page {
+    width: 800px;
+    @apply block my-16 rounded shadow-2xl;
+  }
+  
+  .footer {
+    @apply mb-16 text-white text-center opacity-50 leading-loose;
+  }
+}

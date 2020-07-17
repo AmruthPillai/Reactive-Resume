@@ -1,0 +1,33 @@
+.container {
+  @apply w-screen h-screen grid grid-cols-10;
+}
+
+.left {
+  @apply col-span-3;
+}
+
+.center {
+  @apply col-span-4 h-screen overflow-scroll bg-primary-100 grid justify-center items-center;
+}
+
+.right {
+  @apply col-span-3;
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    @apply grid-cols-11;
+  }
+  
+  .left {
+    @apply col-span-3;
+  }
+  
+  .center {
+    @apply col-span-5;
+  }
+  
+  .right {
+    @apply col-span-3;
+  }
+}

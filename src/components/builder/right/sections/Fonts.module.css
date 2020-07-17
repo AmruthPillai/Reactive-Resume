@@ -1,0 +1,15 @@
+.font {
+  @apply px-6 py-6 text-xl font-medium truncate text-center border border-transparent bg-primary-100 rounded;
+}
+
+.font:focus {
+  @apply outline-none border border-primary-400;
+}
+
+.font:hover {
+  @apply border border-primary-400;
+}
+
+.font.selected {
+  @apply outline-none border border-primary-600;
+}

@@ -1,0 +1,43 @@
+.container {
+  font-size: 11px;
+  padding: 6px 18px;
+  @apply relative flex items-center cursor-pointer rounded font-semibold bg-primary-900 border border-primary-900 text-primary-50;
+  @apply transition-colors duration-200 ease-in-out;
+}
+
+.container:hover {
+  @apply bg-primary-700 border-primary-700;
+  @apply transition-colors duration-200 ease-in-out;
+}
+
+.container:active {
+  top: 1px;
+}
+
+.container:focus {
+  @apply outline-none;
+}
+
+.container.outline {
+  @apply border border-primary-900 bg-transparent text-primary-900;
+}
+
+.container.outline:hover {
+  @apply bg-primary-200;
+}
+
+.container.outline:focus {
+  @apply outline-none;
+}
+
+.container.delete {
+  @apply bg-red-600 border-red-600 text-white;
+}
+
+.container.delete:hover {
+  @apply bg-red-700 border-red-700;
+}
+
+.container.delete:focus {
+  @apply outline-none;
+}

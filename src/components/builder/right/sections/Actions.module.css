@@ -1,0 +1,11 @@
+.container {
+  @apply bg-primary-100 rounded grid gap-5 p-8;
+}
+
+.container h5 {
+  @apply text-lg font-semibold;
+}
+
+.container p {
+  @apply text-sm font-medium;
+}

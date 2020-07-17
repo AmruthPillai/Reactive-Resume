@@ -1,0 +1,6 @@
+.container {
+  width: 75px;
+  z-index: 20;
+  box-shadow: var(--left-shadow);
+  @apply px-4 py-6 h-screen flex flex-col items-center;
+}

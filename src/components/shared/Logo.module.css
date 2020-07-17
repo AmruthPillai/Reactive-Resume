@@ -1,0 +1,8 @@
+.logo {
+  box-shadow: var(--shadow);
+  @apply rounded;
+}
+
+.logo:hover {
+  box-shadow: var(--shadow-strong);
+}

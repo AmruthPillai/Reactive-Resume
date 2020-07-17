@@ -1,0 +1,28 @@
+.root {
+  @apply flex items-center justify-center;
+}
+
+.modal {
+  width: min(600px, calc(100vw - 100px));
+  @apply p-8 rounded bg-primary-50 outline-none;
+}
+
+.modal .title {
+  @apply flex items-center justify-between;
+}
+
+.modal .title h2 {
+  @apply text-3xl;
+}
+
+.modal .title svg {
+  @apply cursor-pointer;
+}
+
+.modal .body {
+  @apply mt-8 mb-10;
+}
+
+.modal .actions {
+  @apply flex justify-end;
+}

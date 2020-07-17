@@ -1,0 +1,14 @@
+.screenshot {
+  filter: grayscale(100%);
+  @apply shadow-xl rounded border-2 border-primary-100 ml-10;
+  @apply transition-all duration-200 ease-in-out;
+}
+
+.screenshot:hover {
+  filter: grayscale(0%);
+  @apply transition-all duration-200 ease-in-out;
+}
+
+.screenshot:first-child {
+  @apply ml-0;
+}
