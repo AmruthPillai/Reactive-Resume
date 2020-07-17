@@ -1,0 +1,40 @@
+.resume {
+  @apply relative flex flex-col items-center;
+}
+
+.resume > .backdrop {
+  max-width: 184px;
+  height: 260px;
+  @apply rounded absolute w-full bg-black shadow;
+}
+
+.resume > .backdrop img {
+  max-width: 184px;
+  height: 260px;
+  @apply w-full object-cover rounded;
+}
+
+.resume > .page {
+  max-width: 184px;
+  height: 260px;
+  @apply rounded absolute w-full bg-black;
+  @apply opacity-0 transition-opacity duration-200 ease-in-out;
+  @apply absolute text-primary-500 flex flex-col justify-evenly items-center;
+}
+
+.resume > .page:hover {
+  @apply opacity-75 transition-opacity duration-200 ease-in-out;
+}
+
+.resume > .meta {
+  margin-top: 260px;
+  @apply flex flex-col text-center items-center;
+}
+
+.resume > .meta span:first-child {
+  @apply mt-3 font-medium leading-normal;
+}
+
+.resume > .meta span:last-child {
+  font-size: 10px;
+}

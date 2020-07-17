@@ -1,0 +1,18 @@
+{
+  "rules": {
+    "resumes": {
+      ".indexOn": "user",
+      ".read": "auth !== null && query.orderByChild === 'user' && query.equalTo === auth.uid",
+      "$rid": {
+        ".read": "data.child('public').val() === true || data.child('user').val() === auth.uid",
+        ".write": " !data.exists() || data.child('user').val() === auth.uid || (!newData.exists() && data.child('user').val() === auth.uid)"
+      }
+    },
+    "users": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid"
+      }
+    }
+  }
+}

@@ -1,0 +1,2755 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "awards": {
+        "heading": "Awards",
+        "items": [
+          {
+            "awarder": "Google",
+            "date": "2019-04-01",
+            "id": "6f857f2b-6312-4a0d-907d-2e17991954eb",
+            "summary": "",
+            "title": "International Flutter Hackathon"
+          },
+          {
+            "awarder": "Venturesity",
+            "date": "2016-06-01",
+            "id": "f6efa3f9-9741-4e36-a538-ba0d9779bc61",
+            "summary": "",
+            "title": "Venturesity Banyan Hack"
+          },
+          {
+            "title": "Smart India Hackathon",
+            "awarder": "Govt. of India",
+            "date": "2017-04-01",
+            "summary": "",
+            "id": "89c0171a-eae9-403e-9f4c-a757fb535c2b"
+          }
+        ],
+        "visible": true
+      },
+      "certifications": {
+        "heading": "Certifications",
+        "items": [
+          {
+            "date": "2018-02-01",
+            "id": "d2ec12bc-7876-46bc-afd4-11ae06faf3bd",
+            "issuer": "Cisco Systems",
+            "summary": "",
+            "title": "CCNP"
+          },
+          {
+            "date": "2019-06-01",
+            "id": "f8312288-53ae-4504-a768-4b67aea95926",
+            "issuer": "VMWare",
+            "summary": "",
+            "title": "VCP6-DCV"
+          },
+          {
+            "title": "DCUCI 642-999",
+            "issuer": "Cisco Systems",
+            "date": "2014-04-01",
+            "summary": "",
+            "id": "11107df6-5f3c-49ae-bcd4-62b8baa181a1"
+          }
+        ],
+        "visible": true
+      },
+      "education": {
+        "heading": "Education",
+        "items": [
+          {
+            "degree": "Masters",
+            "endDate": "2002-08-01",
+            "field": "Computer Science",
+            "gpa": "7.2 CGPA",
+            "id": "c42e2a5a-3f0d-497e-838b-ac2019dcf045",
+            "institution": "The City College of New York, NYC, NY",
+            "startDate": "2001-09-01",
+            "summary": ""
+          },
+          {
+            "degree": "Bachelors",
+            "endDate": "2001-08-01",
+            "field": "Computer Science",
+            "gpa": "8.4 CGPA",
+            "id": "278490a2-c327-4e83-8be8-adf913a9b36c",
+            "institution": "University of California, Berkeley, CA",
+            "startDate": "1997-09-01",
+            "summary": ""
+          }
+        ],
+        "visible": true
+      },
+      "hobbies": {
+        "heading": "Hobbies",
+        "items": [
+          {
+            "name": "Poetry",
+            "id": "788dcf5a-78ca-4866-8397-c7a29073d9a1"
+          },
+          {
+            "name": "Travelling",
+            "id": "e3523371-f50c-4348-8c5e-35fe84c0006d"
+          },
+          {
+            "id": "92c35e3b-6cd7-4cea-b505-61347ec61b68",
+            "name": "Photography"
+          },
+          {
+            "id": "d36f2089-93a9-4f30-a425-3dd81c6b89df",
+            "name": "Playing Badminton"
+          },
+          {
+            "id": "d1da41a9-ae83-48fb-8047-d45ebd869a69",
+            "name": "Developing Reactive Resume"
+          }
+        ],
+        "visible": true
+      },
+      "languages": {
+        "heading": "Languages",
+        "items": [
+          {
+            "fluency": "Very Fluent",
+            "id": "78d8cf32-84c7-431d-969b-fdf277968026",
+            "name": "English"
+          },
+          {
+            "fluency": "Native Tongue",
+            "id": "9e0bd5ed-b88d-4046-8fb9-ecba54d29924",
+            "name": "Tamil"
+          },
+          {
+            "fluency": "Native Tongue",
+            "id": "cb895aa9-c485-4bf3-a9e3-08e8f219451a",
+            "name": "Kannada"
+          },
+          {
+            "fluency": "Learning on Duolingo",
+            "id": "8fff60fc-0cd6-47e2-b64f-fb249d1af0d1",
+            "name": "German"
+          }
+        ],
+        "visible": true
+      },
+      "metadata": {
+        "colors": {
+          "background": "#FFFFFF",
+          "primary": "#009688",
+          "text": "#212121"
+        },
+        "font": "Open Sans",
+        "layout": {
+          "onyx": [
+            ["objective", "work", "education", "projects"],
+            ["hobbies", "languages", "awards", "certifications"],
+            ["skills", "references"]
+          ],
+          "pikachu": [
+            ["skills", "languages", "hobbies", "awards", "certifications"],
+            ["work", "education", "projects", "references"]
+          ],
+          "gengar": [
+            ["objective", "skills"],
+            ["awards", "certifications", "languages", "references", "hobbies"],
+            ["work", "education", "projects"]
+          ],
+          "castform": [
+            ["awards", "certifications", "languages", "hobbies"],
+            [
+              "objective",
+              "work",
+              "education",
+              "skills",
+              "projects",
+              "references"
+            ]
+          ],
+          "glalie": [
+            ["awards", "certifications", "hobbies"],
+            [
+              "objective",
+              "work",
+              "education",
+              "skills",
+              "projects",
+              "languages",
+              "references"
+            ]
+          ],
+          "celebi": [
+            ["awards", "certifications", "languages", "hobbies"],
+            [
+              "objective",
+              "work",
+              "education",
+              "skills",
+              "projects",
+              "references"
+            ]
+          ]
+        },
+        "template": "pikachu"
+      },
+      "objective": {
+        "body": "To obtain a job within my chosen field that will challenge me and allow me to use my education, skills and past experiences in a way that is mutually beneficial to both myself and my employer and allow for future growth and advancement.",
+        "heading": "Objective",
+        "visible": true
+      },
+      "profile": {
+        "address": {
+          "city": "Bangalore, India -",
+          "line1": "#5/A, Banashankari Nivas,",
+          "line2": "Brindavan Layout, Subramanyapura,",
+          "pincode": "560061"
+        },
+        "email": "hello@amruthpillai.com",
+        "firstName": "Amruth",
+        "heading": "Profile",
+        "lastName": "Pillai",
+        "phone": "+91 98453 36113",
+        "photograph": "https://i.imgur.com/2dmLSCT.jpg",
+        "profile": "",
+        "subtitle": "Full Stack Web Developer",
+        "website": "amruthpillai.com"
+      },
+      "projects": {
+        "heading": "Projects",
+        "items": [
+          {
+            "date": "2020-07-01",
+            "id": "c768dcca-90f5-4242-a608-6759b4f667fb",
+            "link": "https://github.com/AmruthPillai/Reactive-Resume",
+            "summary": "Reactive Resume, a free and open-source resume builder that works for you. A few of the important features that make it awesome are minimalistic UI/UX, extensive customizability, portability, regularly updated templates, etc.\n\nFor more information, check out [rxresu.me](https://github.com/AmruthPillai/Reactive-Resume)",
+            "title": "Reactive Resume"
+          },
+          {
+            "date": "2020-04-01",
+            "id": "6ca600b1-c21f-4d7b-8431-f7144d537dd3",
+            "link": "https://amruthpillai.com",
+            "summary": "Resume on the Web has been a project that I've been focused on since the early 2014s. I didn't want my information to be displayed on just a sheet of paper that only HRs or Talent Scouts had the privilege of reading, I wanted it to be accessible to everyone. And that's how this project was conceptualized.",
+            "title": "Resume on the Web"
+          }
+        ],
+        "visible": true
+      },
+      "public": true,
+      "references": {
+        "heading": "References",
+        "items": [
+          {
+            "email": "willywonka@goldenticket.com",
+            "id": "168339fd-3c4b-4f2f-bd3a-ef184be81700",
+            "name": "Willy Wonka",
+            "phone": "+1 (802) 234-2398",
+            "position": "CEO at Chocolate Factory",
+            "summary": ""
+          },
+          {
+            "email": "elanmusk@nottesla.com",
+            "id": "350465b9-9989-43cc-b97e-4115b8980304",
+            "name": "Elangovan Musk",
+            "phone": "+91 93893 34353",
+            "position": "CEO at Newton Motors",
+            "summary": ""
+          },
+          {
+            "name": "Lorraine Beasley",
+            "position": "Head of HR, Carson Logistics",
+            "phone": "+1 661-808-4188",
+            "email": "l.beasley@carsonlogistics.com",
+            "summary": "",
+            "id": "94e3447b-0a78-4fb7-b14d-591982d35320"
+          }
+        ],
+        "visible": true
+      },
+      "skills": {
+        "heading": "Skills",
+        "items": [
+          {
+            "id": "54e5bceb-d0e9-4f04-98d1-48a34f7cf920",
+            "level": "Advanced",
+            "name": "Customer Service Expertise"
+          },
+          {
+            "id": "f0274f62-2252-4cc0-bf12-9e1070942c50",
+            "level": "Intermediate",
+            "name": "High-Volume Call Center"
+          },
+          {
+            "id": "689e2852-df1b-4d41-bda8-c41c88196264",
+            "level": "Intermediate",
+            "name": "Team Leader/Problem Solver"
+          },
+          {
+            "id": "3a4f73b1-50c1-4a85-a4b0-2a55dfe5053a",
+            "level": "Novice",
+            "name": "Call Center Management"
+          },
+          {
+            "name": "Teambuilding & Training",
+            "level": "Novice",
+            "id": "08d6c739-1465-41f7-8825-b8d94faa38d6"
+          },
+          {
+            "name": "Continuous Improvement",
+            "level": "Fundamental Awareness",
+            "id": "261b8fc3-aeec-4347-88a8-bcacb1a17aa3"
+          }
+        ],
+        "visible": true
+      },
+      "social": {
+        "heading": "Social",
+        "items": [
+          {
+            "url": "https://pillai.xyz/instagram",
+            "network": "Instagram",
+            "username": "AmruthPillai",
+            "id": "a832b37d-f11d-4a80-8b4d-24796e571b17"
+          },
+          {
+            "id": "a72107fa-a4a5-407d-9e85-39bdb9c0b11a",
+            "network": "Twitter",
+            "url": "https://pillai.xyz/twitter",
+            "username": "KingOKings"
+          },
+          {
+            "id": "1dd46fdd-b3a3-4786-89ce-2e77c0823aba",
+            "network": "LinkedIn",
+            "url": "https://pillai.xyz/linkedin",
+            "username": "AmruthPillai"
+          }
+        ],
+        "visible": true
+      },
+      "work": {
+        "heading": "Work Experience",
+        "items": [
+          {
+            "company": "On Point Electronics, NYC, NY",
+            "endDate": "2018-07-01",
+            "id": "d7c64937-0cb9-41b1-a3a6-0679c882fe63",
+            "position": "Customer Service Representative",
+            "startDate": "2013-01-01",
+            "summary": "- Organized customer information and account data for business planning and customer service purposes.\n- Created excel spreadsheets to track customer data and perform intense reconciliation process.\n- Received 97% positive customer survey results.\n- Speed on calls was 10% above team average.  \n**Key Achievement:** Designed and executed an automatized system for following up with customers, increasing customer retention by 22%.",
+            "website": "https://onpoint.com"
+          },
+          {
+            "company": "Excelsior Communications, NYC, NY",
+            "endDate": "2012-12-01",
+            "id": "f5c5dcfe-2a60-4169-a2f1-b305355518ea",
+            "position": "Customer Service Representative",
+            "startDate": "2009-10-01",
+            "summary": "- Worked as a full time customer service rep in a high volume call center.\n- Received \"Associate of the Month\" award six times.\n- Chosen as an example for other associates in trainings.  \n**Key Achievement:** Received Customer Appreciation bonus in three of four years.",
+            "website": "https://excelsior.com"
+          },
+          {
+            "company": "Pizza Hut, Newark, NJ",
+            "position": "Waiter",
+            "website": "https://pizzahut.com",
+            "startDate": "2005-08-01",
+            "endDate": "2009-09-01",
+            "summary": "- Worked passionately in customer service in a high volume restaurant.\n- Completed the FAST customer service training class.\n- Maintained a high tip average thanks to consistent customer satisfaction.",
+            "id": "dd935088-6fe7-4a4b-8ff5-7417c32d2add"
+          }
+        ],
+        "visible": true
+      }
+    }
+  ],
+  "required": [
+    "awards",
+    "certifications",
+    "education",
+    "hobbies",
+    "languages",
+    "metadata",
+    "objective",
+    "profile",
+    "projects",
+    "public",
+    "references",
+    "skills",
+    "social",
+    "work"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "awards": {
+      "$id": "#/properties/awards",
+      "type": "object",
+      "title": "The awards schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "heading": "Awards",
+          "items": [
+            {
+              "awarder": "Google",
+              "date": "2019-04-01",
+              "id": "6f857f2b-6312-4a0d-907d-2e17991954eb",
+              "summary": "",
+              "title": "International Flutter Hackathon"
+            },
+            {
+              "awarder": "Venturesity",
+              "date": "2016-06-01",
+              "id": "f6efa3f9-9741-4e36-a538-ba0d9779bc61",
+              "summary": "",
+              "title": "Venturesity Banyan Hack"
+            },
+            {
+              "title": "Smart India Hackathon",
+              "awarder": "Govt. of India",
+              "date": "2017-04-01",
+              "summary": "",
+              "id": "89c0171a-eae9-403e-9f4c-a757fb535c2b"
+            }
+          ],
+          "visible": true
+        }
+      ],
+      "required": ["heading", "items", "visible"],
+      "additionalProperties": true,
+      "properties": {
+        "heading": {
+          "$id": "#/properties/awards/properties/heading",
+          "type": "string",
+          "title": "The heading schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["Awards"]
+        },
+        "items": {
+          "$id": "#/properties/awards/properties/items",
+          "type": "array",
+          "title": "The items schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": [],
+          "examples": [
+            [
+              {
+                "awarder": "Google",
+                "date": "2019-04-01",
+                "id": "6f857f2b-6312-4a0d-907d-2e17991954eb",
+                "summary": "",
+                "title": "International Flutter Hackathon"
+              },
+              {
+                "awarder": "Venturesity",
+                "date": "2016-06-01",
+                "id": "f6efa3f9-9741-4e36-a538-ba0d9779bc61",
+                "summary": "",
+                "title": "Venturesity Banyan Hack"
+              }
+            ]
+          ],
+          "additionalItems": true,
+          "items": {
+            "anyOf": [
+              {
+                "$id": "#/properties/awards/properties/items/items/anyOf/0",
+                "type": "object",
+                "title": "The first anyOf schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                  {
+                    "awarder": "Google",
+                    "date": "2019-04-01",
+                    "id": "6f857f2b-6312-4a0d-907d-2e17991954eb",
+                    "summary": "",
+                    "title": "International Flutter Hackathon"
+                  }
+                ],
+                "required": ["awarder", "date", "id", "summary", "title"],
+                "additionalProperties": true,
+                "properties": {
+                  "awarder": {
+                    "$id": "#/properties/awards/properties/items/items/anyOf/0/properties/awarder",
+                    "type": "string",
+                    "title": "The awarder schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["Google"]
+                  },
+                  "date": {
+                    "$id": "#/properties/awards/properties/items/items/anyOf/0/properties/date",
+                    "type": "string",
+                    "title": "The date schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["2019-04-01"]
+                  },
+                  "id": {
+                    "$id": "#/properties/awards/properties/items/items/anyOf/0/properties/id",
+                    "type": "string",
+                    "title": "The id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["6f857f2b-6312-4a0d-907d-2e17991954eb"]
+                  },
+                  "summary": {
+                    "$id": "#/properties/awards/properties/items/items/anyOf/0/properties/summary",
+                    "type": "string",
+                    "title": "The summary schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [""]
+                  },
+                  "title": {
+                    "$id": "#/properties/awards/properties/items/items/anyOf/0/properties/title",
+                    "type": "string",
+                    "title": "The title schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["International Flutter Hackathon"]
+                  }
+                }
+              }
+            ],
+            "$id": "#/properties/awards/properties/items/items"
+          }
+        },
+        "visible": {
+          "$id": "#/properties/awards/properties/visible",
+          "type": "boolean",
+          "title": "The visible schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": false,
+          "examples": [true]
+        }
+      }
+    },
+    "certifications": {
+      "$id": "#/properties/certifications",
+      "type": "object",
+      "title": "The certifications schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "heading": "Certifications",
+          "items": [
+            {
+              "date": "2018-02-01",
+              "id": "d2ec12bc-7876-46bc-afd4-11ae06faf3bd",
+              "issuer": "Cisco Systems",
+              "summary": "",
+              "title": "CCNP"
+            },
+            {
+              "date": "2019-06-01",
+              "id": "f8312288-53ae-4504-a768-4b67aea95926",
+              "issuer": "VMWare",
+              "summary": "",
+              "title": "VCP6-DCV"
+            },
+            {
+              "title": "DCUCI 642-999",
+              "issuer": "Cisco Systems",
+              "date": "2014-04-01",
+              "summary": "",
+              "id": "11107df6-5f3c-49ae-bcd4-62b8baa181a1"
+            }
+          ],
+          "visible": true
+        }
+      ],
+      "required": ["heading", "items", "visible"],
+      "additionalProperties": true,
+      "properties": {
+        "heading": {
+          "$id": "#/properties/certifications/properties/heading",
+          "type": "string",
+          "title": "The heading schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["Certifications"]
+        },
+        "items": {
+          "$id": "#/properties/certifications/properties/items",
+          "type": "array",
+          "title": "The items schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": [],
+          "examples": [
+            [
+              {
+                "date": "2018-02-01",
+                "id": "d2ec12bc-7876-46bc-afd4-11ae06faf3bd",
+                "issuer": "Cisco Systems",
+                "summary": "",
+                "title": "CCNP"
+              },
+              {
+                "date": "2019-06-01",
+                "id": "f8312288-53ae-4504-a768-4b67aea95926",
+                "issuer": "VMWare",
+                "summary": "",
+                "title": "VCP6-DCV"
+              }
+            ]
+          ],
+          "additionalItems": true,
+          "items": {
+            "anyOf": [
+              {
+                "$id": "#/properties/certifications/properties/items/items/anyOf/0",
+                "type": "object",
+                "title": "The first anyOf schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                  {
+                    "date": "2018-02-01",
+                    "id": "d2ec12bc-7876-46bc-afd4-11ae06faf3bd",
+                    "issuer": "Cisco Systems",
+                    "summary": "",
+                    "title": "CCNP"
+                  }
+                ],
+                "required": ["date", "id", "issuer", "summary", "title"],
+                "additionalProperties": true,
+                "properties": {
+                  "date": {
+                    "$id": "#/properties/certifications/properties/items/items/anyOf/0/properties/date",
+                    "type": "string",
+                    "title": "The date schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["2018-02-01"]
+                  },
+                  "id": {
+                    "$id": "#/properties/certifications/properties/items/items/anyOf/0/properties/id",
+                    "type": "string",
+                    "title": "The id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["d2ec12bc-7876-46bc-afd4-11ae06faf3bd"]
+                  },
+                  "issuer": {
+                    "$id": "#/properties/certifications/properties/items/items/anyOf/0/properties/issuer",
+                    "type": "string",
+                    "title": "The issuer schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["Cisco Systems"]
+                  },
+                  "summary": {
+                    "$id": "#/properties/certifications/properties/items/items/anyOf/0/properties/summary",
+                    "type": "string",
+                    "title": "The summary schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [""]
+                  },
+                  "title": {
+                    "$id": "#/properties/certifications/properties/items/items/anyOf/0/properties/title",
+                    "type": "string",
+                    "title": "The title schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["CCNP"]
+                  }
+                }
+              }
+            ],
+            "$id": "#/properties/certifications/properties/items/items"
+          }
+        },
+        "visible": {
+          "$id": "#/properties/certifications/properties/visible",
+          "type": "boolean",
+          "title": "The visible schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": false,
+          "examples": [true]
+        }
+      }
+    },
+    "education": {
+      "$id": "#/properties/education",
+      "type": "object",
+      "title": "The education schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "heading": "Education",
+          "items": [
+            {
+              "degree": "Masters",
+              "endDate": "2002-08-01",
+              "field": "Computer Science",
+              "gpa": "7.2 CGPA",
+              "id": "c42e2a5a-3f0d-497e-838b-ac2019dcf045",
+              "institution": "The City College of New York, NYC, NY",
+              "startDate": "2001-09-01",
+              "summary": ""
+            },
+            {
+              "degree": "Bachelors",
+              "endDate": "2001-08-01",
+              "field": "Computer Science",
+              "gpa": "8.4 CGPA",
+              "id": "278490a2-c327-4e83-8be8-adf913a9b36c",
+              "institution": "University of California, Berkeley, CA",
+              "startDate": "1997-09-01",
+              "summary": ""
+            }
+          ],
+          "visible": true
+        }
+      ],
+      "required": ["heading", "items", "visible"],
+      "additionalProperties": true,
+      "properties": {
+        "heading": {
+          "$id": "#/properties/education/properties/heading",
+          "type": "string",
+          "title": "The heading schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["Education"]
+        },
+        "items": {
+          "$id": "#/properties/education/properties/items",
+          "type": "array",
+          "title": "The items schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": [],
+          "examples": [
+            [
+              {
+                "degree": "Masters",
+                "endDate": "2002-08-01",
+                "field": "Computer Science",
+                "gpa": "7.2 CGPA",
+                "id": "c42e2a5a-3f0d-497e-838b-ac2019dcf045",
+                "institution": "The City College of New York, NYC, NY",
+                "startDate": "2001-09-01",
+                "summary": ""
+              },
+              {
+                "degree": "Bachelors",
+                "endDate": "2001-08-01",
+                "field": "Computer Science",
+                "gpa": "8.4 CGPA",
+                "id": "278490a2-c327-4e83-8be8-adf913a9b36c",
+                "institution": "University of California, Berkeley, CA",
+                "startDate": "1997-09-01",
+                "summary": ""
+              }
+            ]
+          ],
+          "additionalItems": true,
+          "items": {
+            "anyOf": [
+              {
+                "$id": "#/properties/education/properties/items/items/anyOf/0",
+                "type": "object",
+                "title": "The first anyOf schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                  {
+                    "degree": "Masters",
+                    "endDate": "2002-08-01",
+                    "field": "Computer Science",
+                    "gpa": "7.2 CGPA",
+                    "id": "c42e2a5a-3f0d-497e-838b-ac2019dcf045",
+                    "institution": "The City College of New York, NYC, NY",
+                    "startDate": "2001-09-01",
+                    "summary": ""
+                  }
+                ],
+                "required": [
+                  "degree",
+                  "endDate",
+                  "field",
+                  "gpa",
+                  "id",
+                  "institution",
+                  "startDate",
+                  "summary"
+                ],
+                "additionalProperties": true,
+                "properties": {
+                  "degree": {
+                    "$id": "#/properties/education/properties/items/items/anyOf/0/properties/degree",
+                    "type": "string",
+                    "title": "The degree schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["Masters"]
+                  },
+                  "endDate": {
+                    "$id": "#/properties/education/properties/items/items/anyOf/0/properties/endDate",
+                    "type": "string",
+                    "title": "The endDate schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["2002-08-01"]
+                  },
+                  "field": {
+                    "$id": "#/properties/education/properties/items/items/anyOf/0/properties/field",
+                    "type": "string",
+                    "title": "The field schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["Computer Science"]
+                  },
+                  "gpa": {
+                    "$id": "#/properties/education/properties/items/items/anyOf/0/properties/gpa",
+                    "type": "string",
+                    "title": "The gpa schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["7.2 CGPA"]
+                  },
+                  "id": {
+                    "$id": "#/properties/education/properties/items/items/anyOf/0/properties/id",
+                    "type": "string",
+                    "title": "The id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["c42e2a5a-3f0d-497e-838b-ac2019dcf045"]
+                  },
+                  "institution": {
+                    "$id": "#/properties/education/properties/items/items/anyOf/0/properties/institution",
+                    "type": "string",
+                    "title": "The institution schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["The City College of New York, NYC, NY"]
+                  },
+                  "startDate": {
+                    "$id": "#/properties/education/properties/items/items/anyOf/0/properties/startDate",
+                    "type": "string",
+                    "title": "The startDate schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["2001-09-01"]
+                  },
+                  "summary": {
+                    "$id": "#/properties/education/properties/items/items/anyOf/0/properties/summary",
+                    "type": "string",
+                    "title": "The summary schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [""]
+                  }
+                }
+              }
+            ],
+            "$id": "#/properties/education/properties/items/items"
+          }
+        },
+        "visible": {
+          "$id": "#/properties/education/properties/visible",
+          "type": "boolean",
+          "title": "The visible schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": false,
+          "examples": [true]
+        }
+      }
+    },
+    "hobbies": {
+      "$id": "#/properties/hobbies",
+      "type": "object",
+      "title": "The hobbies schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "heading": "Hobbies",
+          "items": [
+            {
+              "name": "Poetry",
+              "id": "788dcf5a-78ca-4866-8397-c7a29073d9a1"
+            },
+            {
+              "name": "Travelling",
+              "id": "e3523371-f50c-4348-8c5e-35fe84c0006d"
+            },
+            {
+              "id": "92c35e3b-6cd7-4cea-b505-61347ec61b68",
+              "name": "Photography"
+            },
+            {
+              "id": "d36f2089-93a9-4f30-a425-3dd81c6b89df",
+              "name": "Playing Badminton"
+            },
+            {
+              "id": "d1da41a9-ae83-48fb-8047-d45ebd869a69",
+              "name": "Developing Reactive Resume"
+            }
+          ],
+          "visible": true
+        }
+      ],
+      "required": ["heading", "items", "visible"],
+      "additionalProperties": true,
+      "properties": {
+        "heading": {
+          "$id": "#/properties/hobbies/properties/heading",
+          "type": "string",
+          "title": "The heading schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["Hobbies"]
+        },
+        "items": {
+          "$id": "#/properties/hobbies/properties/items",
+          "type": "array",
+          "title": "The items schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": [],
+          "examples": [
+            [
+              {
+                "name": "Poetry",
+                "id": "788dcf5a-78ca-4866-8397-c7a29073d9a1"
+              },
+              {
+                "name": "Travelling",
+                "id": "e3523371-f50c-4348-8c5e-35fe84c0006d"
+              }
+            ]
+          ],
+          "additionalItems": true,
+          "items": {
+            "anyOf": [
+              {
+                "$id": "#/properties/hobbies/properties/items/items/anyOf/0",
+                "type": "object",
+                "title": "The first anyOf schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                  {
+                    "name": "Poetry",
+                    "id": "788dcf5a-78ca-4866-8397-c7a29073d9a1"
+                  }
+                ],
+                "required": ["name", "id"],
+                "additionalProperties": true,
+                "properties": {
+                  "name": {
+                    "$id": "#/properties/hobbies/properties/items/items/anyOf/0/properties/name",
+                    "type": "string",
+                    "title": "The name schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["Poetry"]
+                  },
+                  "id": {
+                    "$id": "#/properties/hobbies/properties/items/items/anyOf/0/properties/id",
+                    "type": "string",
+                    "title": "The id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["788dcf5a-78ca-4866-8397-c7a29073d9a1"]
+                  }
+                }
+              }
+            ],
+            "$id": "#/properties/hobbies/properties/items/items"
+          }
+        },
+        "visible": {
+          "$id": "#/properties/hobbies/properties/visible",
+          "type": "boolean",
+          "title": "The visible schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": false,
+          "examples": [true]
+        }
+      }
+    },
+    "languages": {
+      "$id": "#/properties/languages",
+      "type": "object",
+      "title": "The languages schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "heading": "Languages",
+          "items": [
+            {
+              "fluency": "Very Fluent",
+              "id": "78d8cf32-84c7-431d-969b-fdf277968026",
+              "name": "English"
+            },
+            {
+              "fluency": "Native Tongue",
+              "id": "9e0bd5ed-b88d-4046-8fb9-ecba54d29924",
+              "name": "Tamil"
+            },
+            {
+              "fluency": "Native Tongue",
+              "id": "cb895aa9-c485-4bf3-a9e3-08e8f219451a",
+              "name": "Kannada"
+            },
+            {
+              "fluency": "Learning on Duolingo",
+              "id": "8fff60fc-0cd6-47e2-b64f-fb249d1af0d1",
+              "name": "German"
+            }
+          ],
+          "visible": true
+        }
+      ],
+      "required": ["heading", "items", "visible"],
+      "additionalProperties": true,
+      "properties": {
+        "heading": {
+          "$id": "#/properties/languages/properties/heading",
+          "type": "string",
+          "title": "The heading schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["Languages"]
+        },
+        "items": {
+          "$id": "#/properties/languages/properties/items",
+          "type": "array",
+          "title": "The items schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": [],
+          "examples": [
+            [
+              {
+                "fluency": "Very Fluent",
+                "id": "78d8cf32-84c7-431d-969b-fdf277968026",
+                "name": "English"
+              },
+              {
+                "fluency": "Native Tongue",
+                "id": "9e0bd5ed-b88d-4046-8fb9-ecba54d29924",
+                "name": "Tamil"
+              }
+            ]
+          ],
+          "additionalItems": true,
+          "items": {
+            "anyOf": [
+              {
+                "$id": "#/properties/languages/properties/items/items/anyOf/0",
+                "type": "object",
+                "title": "The first anyOf schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                  {
+                    "fluency": "Very Fluent",
+                    "id": "78d8cf32-84c7-431d-969b-fdf277968026",
+                    "name": "English"
+                  }
+                ],
+                "required": ["fluency", "id", "name"],
+                "additionalProperties": true,
+                "properties": {
+                  "fluency": {
+                    "$id": "#/properties/languages/properties/items/items/anyOf/0/properties/fluency",
+                    "type": "string",
+                    "title": "The fluency schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["Very Fluent"]
+                  },
+                  "id": {
+                    "$id": "#/properties/languages/properties/items/items/anyOf/0/properties/id",
+                    "type": "string",
+                    "title": "The id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["78d8cf32-84c7-431d-969b-fdf277968026"]
+                  },
+                  "name": {
+                    "$id": "#/properties/languages/properties/items/items/anyOf/0/properties/name",
+                    "type": "string",
+                    "title": "The name schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["English"]
+                  }
+                }
+              }
+            ],
+            "$id": "#/properties/languages/properties/items/items"
+          }
+        },
+        "visible": {
+          "$id": "#/properties/languages/properties/visible",
+          "type": "boolean",
+          "title": "The visible schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": false,
+          "examples": [true]
+        }
+      }
+    },
+    "metadata": {
+      "$id": "#/properties/metadata",
+      "type": "object",
+      "title": "The metadata schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "colors": {
+            "background": "#FFFFFF",
+            "primary": "#009688",
+            "text": "#212121"
+          },
+          "font": "Open Sans",
+          "layout": {
+            "onyx": [
+              ["objective", "work", "education", "projects"],
+              ["hobbies", "languages", "awards", "certifications"],
+              ["skills", "references"]
+            ],
+            "pikachu": [
+              ["skills", "languages", "hobbies", "awards", "certifications"],
+              ["work", "education", "projects", "references"]
+            ],
+            "gengar": [
+              ["objective", "skills"],
+              [
+                "awards",
+                "certifications",
+                "languages",
+                "references",
+                "hobbies"
+              ],
+              ["work", "education", "projects"]
+            ],
+            "castform": [
+              ["awards", "certifications", "languages", "hobbies"],
+              [
+                "objective",
+                "work",
+                "education",
+                "skills",
+                "projects",
+                "references"
+              ]
+            ],
+            "glalie": [
+              ["awards", "certifications", "hobbies"],
+              [
+                "objective",
+                "work",
+                "education",
+                "skills",
+                "projects",
+                "languages",
+                "references"
+              ]
+            ],
+            "celebi": [
+              ["awards", "certifications", "languages", "hobbies"],
+              [
+                "objective",
+                "work",
+                "education",
+                "skills",
+                "projects",
+                "references"
+              ]
+            ]
+          },
+          "template": "pikachu"
+        }
+      ],
+      "required": ["colors", "font", "layout", "template"],
+      "additionalProperties": true,
+      "properties": {
+        "colors": {
+          "$id": "#/properties/metadata/properties/colors",
+          "type": "object",
+          "title": "The colors schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": {},
+          "examples": [
+            {
+              "background": "#FFFFFF",
+              "primary": "#009688",
+              "text": "#212121"
+            }
+          ],
+          "required": ["background", "primary", "text"],
+          "additionalProperties": true,
+          "properties": {
+            "background": {
+              "$id": "#/properties/metadata/properties/colors/properties/background",
+              "type": "string",
+              "title": "The background schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": ["#FFFFFF"]
+            },
+            "primary": {
+              "$id": "#/properties/metadata/properties/colors/properties/primary",
+              "type": "string",
+              "title": "The primary schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": ["#009688"]
+            },
+            "text": {
+              "$id": "#/properties/metadata/properties/colors/properties/text",
+              "type": "string",
+              "title": "The text schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": ["#212121"]
+            }
+          }
+        },
+        "font": {
+          "$id": "#/properties/metadata/properties/font",
+          "type": "string",
+          "title": "The font schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["Open Sans"]
+        },
+        "layout": {
+          "$id": "#/properties/metadata/properties/layout",
+          "type": "object",
+          "title": "The layout schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": {},
+          "examples": [
+            {
+              "onyx": [
+                ["objective", "work", "education", "projects"],
+                ["hobbies", "languages", "awards", "certifications"],
+                ["skills", "references"]
+              ],
+              "pikachu": [
+                ["skills", "languages", "hobbies", "awards", "certifications"],
+                ["work", "education", "projects", "references"]
+              ],
+              "gengar": [
+                ["objective", "skills"],
+                [
+                  "awards",
+                  "certifications",
+                  "languages",
+                  "references",
+                  "hobbies"
+                ],
+                ["work", "education", "projects"]
+              ],
+              "castform": [
+                ["awards", "certifications", "languages", "hobbies"],
+                [
+                  "objective",
+                  "work",
+                  "education",
+                  "skills",
+                  "projects",
+                  "references"
+                ]
+              ],
+              "glalie": [
+                ["awards", "certifications", "hobbies"],
+                [
+                  "objective",
+                  "work",
+                  "education",
+                  "skills",
+                  "projects",
+                  "languages",
+                  "references"
+                ]
+              ],
+              "celebi": [
+                ["awards", "certifications", "languages", "hobbies"],
+                [
+                  "objective",
+                  "work",
+                  "education",
+                  "skills",
+                  "projects",
+                  "references"
+                ]
+              ]
+            }
+          ],
+          "required": [
+            "onyx",
+            "pikachu",
+            "gengar",
+            "castform",
+            "glalie",
+            "celebi"
+          ],
+          "additionalProperties": true,
+          "properties": {
+            "onyx": {
+              "$id": "#/properties/metadata/properties/layout/properties/onyx",
+              "type": "array",
+              "title": "The onyx schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": [],
+              "examples": [
+                [
+                  ["objective", "work", "education", "projects"],
+                  ["hobbies", "languages", "awards", "certifications"]
+                ]
+              ],
+              "additionalItems": true,
+              "items": {
+                "anyOf": [
+                  {
+                    "$id": "#/properties/metadata/properties/layout/properties/onyx/items/anyOf/0",
+                    "type": "array",
+                    "title": "The first anyOf schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [["objective", "work"]],
+                    "additionalItems": true,
+                    "items": {
+                      "anyOf": [
+                        {
+                          "$id": "#/properties/metadata/properties/layout/properties/onyx/items/anyOf/0/items/anyOf/0",
+                          "type": "string",
+                          "title": "The first anyOf schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": ["objective", "work"]
+                        }
+                      ],
+                      "$id": "#/properties/metadata/properties/layout/properties/onyx/items/anyOf/0/items"
+                    }
+                  },
+                  {
+                    "$id": "#/properties/metadata/properties/layout/properties/onyx/items/anyOf/1",
+                    "type": "array",
+                    "title": "The second anyOf schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [["hobbies", "languages"]],
+                    "additionalItems": true,
+                    "items": {
+                      "anyOf": [
+                        {
+                          "$id": "#/properties/metadata/properties/layout/properties/onyx/items/anyOf/1/items/anyOf/0",
+                          "type": "string",
+                          "title": "The first anyOf schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": ["hobbies", "languages"]
+                        }
+                      ],
+                      "$id": "#/properties/metadata/properties/layout/properties/onyx/items/anyOf/1/items"
+                    }
+                  },
+                  {
+                    "$id": "#/properties/metadata/properties/layout/properties/onyx/items/anyOf/2",
+                    "type": "array",
+                    "title": "The third anyOf schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [["skills", "references"]],
+                    "additionalItems": true,
+                    "items": {
+                      "anyOf": [
+                        {
+                          "$id": "#/properties/metadata/properties/layout/properties/onyx/items/anyOf/2/items/anyOf/0",
+                          "type": "string",
+                          "title": "The first anyOf schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": ["skills", "references"]
+                        }
+                      ],
+                      "$id": "#/properties/metadata/properties/layout/properties/onyx/items/anyOf/2/items"
+                    }
+                  }
+                ],
+                "$id": "#/properties/metadata/properties/layout/properties/onyx/items"
+              }
+            },
+            "pikachu": {
+              "$id": "#/properties/metadata/properties/layout/properties/pikachu",
+              "type": "array",
+              "title": "The pikachu schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": [],
+              "examples": [
+                [
+                  [
+                    "skills",
+                    "languages",
+                    "hobbies",
+                    "awards",
+                    "certifications"
+                  ],
+                  ["work", "education", "projects", "references"]
+                ]
+              ],
+              "additionalItems": true,
+              "items": {
+                "anyOf": [
+                  {
+                    "$id": "#/properties/metadata/properties/layout/properties/pikachu/items/anyOf/0",
+                    "type": "array",
+                    "title": "The first anyOf schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [["skills", "languages"]],
+                    "additionalItems": true,
+                    "items": {
+                      "anyOf": [
+                        {
+                          "$id": "#/properties/metadata/properties/layout/properties/pikachu/items/anyOf/0/items/anyOf/0",
+                          "type": "string",
+                          "title": "The first anyOf schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": ["skills", "languages"]
+                        }
+                      ],
+                      "$id": "#/properties/metadata/properties/layout/properties/pikachu/items/anyOf/0/items"
+                    }
+                  },
+                  {
+                    "$id": "#/properties/metadata/properties/layout/properties/pikachu/items/anyOf/1",
+                    "type": "array",
+                    "title": "The second anyOf schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [["work", "education"]],
+                    "additionalItems": true,
+                    "items": {
+                      "anyOf": [
+                        {
+                          "$id": "#/properties/metadata/properties/layout/properties/pikachu/items/anyOf/1/items/anyOf/0",
+                          "type": "string",
+                          "title": "The first anyOf schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": ["work", "education"]
+                        }
+                      ],
+                      "$id": "#/properties/metadata/properties/layout/properties/pikachu/items/anyOf/1/items"
+                    }
+                  }
+                ],
+                "$id": "#/properties/metadata/properties/layout/properties/pikachu/items"
+              }
+            },
+            "gengar": {
+              "$id": "#/properties/metadata/properties/layout/properties/gengar",
+              "type": "array",
+              "title": "The gengar schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": [],
+              "examples": [
+                [
+                  ["objective", "skills"],
+                  [
+                    "awards",
+                    "certifications",
+                    "languages",
+                    "references",
+                    "hobbies"
+                  ]
+                ]
+              ],
+              "additionalItems": true,
+              "items": {
+                "anyOf": [
+                  {
+                    "$id": "#/properties/metadata/properties/layout/properties/gengar/items/anyOf/0",
+                    "type": "array",
+                    "title": "The first anyOf schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [["objective", "skills"]],
+                    "additionalItems": true,
+                    "items": {
+                      "anyOf": [
+                        {
+                          "$id": "#/properties/metadata/properties/layout/properties/gengar/items/anyOf/0/items/anyOf/0",
+                          "type": "string",
+                          "title": "The first anyOf schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": ["objective", "skills"]
+                        }
+                      ],
+                      "$id": "#/properties/metadata/properties/layout/properties/gengar/items/anyOf/0/items"
+                    }
+                  },
+                  {
+                    "$id": "#/properties/metadata/properties/layout/properties/gengar/items/anyOf/1",
+                    "type": "array",
+                    "title": "The second anyOf schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [["awards", "certifications"]],
+                    "additionalItems": true,
+                    "items": {
+                      "anyOf": [
+                        {
+                          "$id": "#/properties/metadata/properties/layout/properties/gengar/items/anyOf/1/items/anyOf/0",
+                          "type": "string",
+                          "title": "The first anyOf schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": ["awards", "certifications"]
+                        }
+                      ],
+                      "$id": "#/properties/metadata/properties/layout/properties/gengar/items/anyOf/1/items"
+                    }
+                  },
+                  {
+                    "$id": "#/properties/metadata/properties/layout/properties/gengar/items/anyOf/2",
+                    "type": "array",
+                    "title": "The third anyOf schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [["work", "education"]],
+                    "additionalItems": true,
+                    "items": {
+                      "anyOf": [
+                        {
+                          "$id": "#/properties/metadata/properties/layout/properties/gengar/items/anyOf/2/items/anyOf/0",
+                          "type": "string",
+                          "title": "The first anyOf schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": ["work", "education"]
+                        }
+                      ],
+                      "$id": "#/properties/metadata/properties/layout/properties/gengar/items/anyOf/2/items"
+                    }
+                  }
+                ],
+                "$id": "#/properties/metadata/properties/layout/properties/gengar/items"
+              }
+            },
+            "castform": {
+              "$id": "#/properties/metadata/properties/layout/properties/castform",
+              "type": "array",
+              "title": "The castform schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": [],
+              "examples": [
+                [
+                  ["awards", "certifications", "languages", "hobbies"],
+                  [
+                    "objective",
+                    "work",
+                    "education",
+                    "skills",
+                    "projects",
+                    "references"
+                  ]
+                ]
+              ],
+              "additionalItems": true,
+              "items": {
+                "anyOf": [
+                  {
+                    "$id": "#/properties/metadata/properties/layout/properties/castform/items/anyOf/0",
+                    "type": "array",
+                    "title": "The first anyOf schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [["awards", "certifications"]],
+                    "additionalItems": true,
+                    "items": {
+                      "anyOf": [
+                        {
+                          "$id": "#/properties/metadata/properties/layout/properties/castform/items/anyOf/0/items/anyOf/0",
+                          "type": "string",
+                          "title": "The first anyOf schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": ["awards", "certifications"]
+                        }
+                      ],
+                      "$id": "#/properties/metadata/properties/layout/properties/castform/items/anyOf/0/items"
+                    }
+                  },
+                  {
+                    "$id": "#/properties/metadata/properties/layout/properties/castform/items/anyOf/1",
+                    "type": "array",
+                    "title": "The second anyOf schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [["objective", "work"]],
+                    "additionalItems": true,
+                    "items": {
+                      "anyOf": [
+                        {
+                          "$id": "#/properties/metadata/properties/layout/properties/castform/items/anyOf/1/items/anyOf/0",
+                          "type": "string",
+                          "title": "The first anyOf schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": ["objective", "work"]
+                        }
+                      ],
+                      "$id": "#/properties/metadata/properties/layout/properties/castform/items/anyOf/1/items"
+                    }
+                  }
+                ],
+                "$id": "#/properties/metadata/properties/layout/properties/castform/items"
+              }
+            },
+            "glalie": {
+              "$id": "#/properties/metadata/properties/layout/properties/glalie",
+              "type": "array",
+              "title": "The glalie schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": [],
+              "examples": [
+                [
+                  ["awards", "certifications", "hobbies"],
+                  [
+                    "objective",
+                    "work",
+                    "education",
+                    "skills",
+                    "projects",
+                    "languages",
+                    "references"
+                  ]
+                ]
+              ],
+              "additionalItems": true,
+              "items": {
+                "anyOf": [
+                  {
+                    "$id": "#/properties/metadata/properties/layout/properties/glalie/items/anyOf/0",
+                    "type": "array",
+                    "title": "The first anyOf schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [["awards", "certifications"]],
+                    "additionalItems": true,
+                    "items": {
+                      "anyOf": [
+                        {
+                          "$id": "#/properties/metadata/properties/layout/properties/glalie/items/anyOf/0/items/anyOf/0",
+                          "type": "string",
+                          "title": "The first anyOf schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": ["awards", "certifications"]
+                        }
+                      ],
+                      "$id": "#/properties/metadata/properties/layout/properties/glalie/items/anyOf/0/items"
+                    }
+                  },
+                  {
+                    "$id": "#/properties/metadata/properties/layout/properties/glalie/items/anyOf/1",
+                    "type": "array",
+                    "title": "The second anyOf schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [["objective", "work"]],
+                    "additionalItems": true,
+                    "items": {
+                      "anyOf": [
+                        {
+                          "$id": "#/properties/metadata/properties/layout/properties/glalie/items/anyOf/1/items/anyOf/0",
+                          "type": "string",
+                          "title": "The first anyOf schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": ["objective", "work"]
+                        }
+                      ],
+                      "$id": "#/properties/metadata/properties/layout/properties/glalie/items/anyOf/1/items"
+                    }
+                  }
+                ],
+                "$id": "#/properties/metadata/properties/layout/properties/glalie/items"
+              }
+            },
+            "celebi": {
+              "$id": "#/properties/metadata/properties/layout/properties/celebi",
+              "type": "array",
+              "title": "The celebi schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": [],
+              "examples": [
+                [
+                  ["awards", "certifications", "languages", "hobbies"],
+                  [
+                    "objective",
+                    "work",
+                    "education",
+                    "skills",
+                    "projects",
+                    "references"
+                  ]
+                ]
+              ],
+              "additionalItems": true,
+              "items": {
+                "anyOf": [
+                  {
+                    "$id": "#/properties/metadata/properties/layout/properties/celebi/items/anyOf/0",
+                    "type": "array",
+                    "title": "The first anyOf schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [["awards", "certifications"]],
+                    "additionalItems": true,
+                    "items": {
+                      "anyOf": [
+                        {
+                          "$id": "#/properties/metadata/properties/layout/properties/celebi/items/anyOf/0/items/anyOf/0",
+                          "type": "string",
+                          "title": "The first anyOf schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": ["awards", "certifications"]
+                        }
+                      ],
+                      "$id": "#/properties/metadata/properties/layout/properties/celebi/items/anyOf/0/items"
+                    }
+                  },
+                  {
+                    "$id": "#/properties/metadata/properties/layout/properties/celebi/items/anyOf/1",
+                    "type": "array",
+                    "title": "The second anyOf schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [["objective", "work"]],
+                    "additionalItems": true,
+                    "items": {
+                      "anyOf": [
+                        {
+                          "$id": "#/properties/metadata/properties/layout/properties/celebi/items/anyOf/1/items/anyOf/0",
+                          "type": "string",
+                          "title": "The first anyOf schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": ["objective", "work"]
+                        }
+                      ],
+                      "$id": "#/properties/metadata/properties/layout/properties/celebi/items/anyOf/1/items"
+                    }
+                  }
+                ],
+                "$id": "#/properties/metadata/properties/layout/properties/celebi/items"
+              }
+            }
+          }
+        },
+        "template": {
+          "$id": "#/properties/metadata/properties/template",
+          "type": "string",
+          "title": "The template schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["pikachu"]
+        }
+      }
+    },
+    "objective": {
+      "$id": "#/properties/objective",
+      "type": "object",
+      "title": "The objective schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "body": "To obtain a job within my chosen field that will challenge me and allow me to use my education, skills and past experiences in a way that is mutually beneficial to both myself and my employer and allow for future growth and advancement.",
+          "heading": "Objective",
+          "visible": true
+        }
+      ],
+      "required": ["body", "heading", "visible"],
+      "additionalProperties": true,
+      "properties": {
+        "body": {
+          "$id": "#/properties/objective/properties/body",
+          "type": "string",
+          "title": "The body schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "To obtain a job within my chosen field that will challenge me and allow me to use my education, skills and past experiences in a way that is mutually beneficial to both myself and my employer and allow for future growth and advancement."
+          ]
+        },
+        "heading": {
+          "$id": "#/properties/objective/properties/heading",
+          "type": "string",
+          "title": "The heading schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["Objective"]
+        },
+        "visible": {
+          "$id": "#/properties/objective/properties/visible",
+          "type": "boolean",
+          "title": "The visible schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": false,
+          "examples": [true]
+        }
+      }
+    },
+    "profile": {
+      "$id": "#/properties/profile",
+      "type": "object",
+      "title": "The profile schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "address": {
+            "city": "Bangalore, India -",
+            "line1": "#5/A, Banashankari Nivas,",
+            "line2": "Brindavan Layout, Subramanyapura,",
+            "pincode": "560061"
+          },
+          "email": "hello@amruthpillai.com",
+          "firstName": "Amruth",
+          "heading": "Profile",
+          "lastName": "Pillai",
+          "phone": "+91 98453 36113",
+          "photograph": "https://i.imgur.com/2dmLSCT.jpg",
+          "profile": "",
+          "subtitle": "Full Stack Web Developer",
+          "website": "amruthpillai.com"
+        }
+      ],
+      "required": [
+        "address",
+        "email",
+        "firstName",
+        "heading",
+        "lastName",
+        "phone",
+        "photograph",
+        "profile",
+        "subtitle",
+        "website"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "address": {
+          "$id": "#/properties/profile/properties/address",
+          "type": "object",
+          "title": "The address schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": {},
+          "examples": [
+            {
+              "city": "Bangalore, India -",
+              "line1": "#5/A, Banashankari Nivas,",
+              "line2": "Brindavan Layout, Subramanyapura,",
+              "pincode": "560061"
+            }
+          ],
+          "required": ["city", "line1", "line2", "pincode"],
+          "additionalProperties": true,
+          "properties": {
+            "city": {
+              "$id": "#/properties/profile/properties/address/properties/city",
+              "type": "string",
+              "title": "The city schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": ["Bangalore, India -"]
+            },
+            "line1": {
+              "$id": "#/properties/profile/properties/address/properties/line1",
+              "type": "string",
+              "title": "The line1 schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": ["#5/A, Banashankari Nivas,"]
+            },
+            "line2": {
+              "$id": "#/properties/profile/properties/address/properties/line2",
+              "type": "string",
+              "title": "The line2 schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": ["Brindavan Layout, Subramanyapura,"]
+            },
+            "pincode": {
+              "$id": "#/properties/profile/properties/address/properties/pincode",
+              "type": "string",
+              "title": "The pincode schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": ["560061"]
+            }
+          }
+        },
+        "email": {
+          "$id": "#/properties/profile/properties/email",
+          "type": "string",
+          "title": "The email schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["hello@amruthpillai.com"]
+        },
+        "firstName": {
+          "$id": "#/properties/profile/properties/firstName",
+          "type": "string",
+          "title": "The firstName schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["Amruth"]
+        },
+        "heading": {
+          "$id": "#/properties/profile/properties/heading",
+          "type": "string",
+          "title": "The heading schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["Profile"]
+        },
+        "lastName": {
+          "$id": "#/properties/profile/properties/lastName",
+          "type": "string",
+          "title": "The lastName schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["Pillai"]
+        },
+        "phone": {
+          "$id": "#/properties/profile/properties/phone",
+          "type": "string",
+          "title": "The phone schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["+91 98453 36113"]
+        },
+        "photograph": {
+          "$id": "#/properties/profile/properties/photograph",
+          "type": "string",
+          "title": "The photograph schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["https://i.imgur.com/2dmLSCT.jpg"]
+        },
+        "profile": {
+          "$id": "#/properties/profile/properties/profile",
+          "type": "string",
+          "title": "The profile schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [""]
+        },
+        "subtitle": {
+          "$id": "#/properties/profile/properties/subtitle",
+          "type": "string",
+          "title": "The subtitle schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["Full Stack Web Developer"]
+        },
+        "website": {
+          "$id": "#/properties/profile/properties/website",
+          "type": "string",
+          "title": "The website schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["amruthpillai.com"]
+        }
+      }
+    },
+    "projects": {
+      "$id": "#/properties/projects",
+      "type": "object",
+      "title": "The projects schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "heading": "Projects",
+          "items": [
+            {
+              "date": "2020-07-01",
+              "id": "c768dcca-90f5-4242-a608-6759b4f667fb",
+              "link": "https://github.com/AmruthPillai/Reactive-Resume",
+              "summary": "Reactive Resume, a free and open-source resume builder that works for you. A few of the important features that make it awesome are minimalistic UI/UX, extensive customizability, portability, regularly updated templates, etc.\n\nFor more information, check out [rxresu.me](https://github.com/AmruthPillai/Reactive-Resume)",
+              "title": "Reactive Resume"
+            },
+            {
+              "date": "2020-04-01",
+              "id": "6ca600b1-c21f-4d7b-8431-f7144d537dd3",
+              "link": "https://amruthpillai.com",
+              "summary": "Resume on the Web has been a project that I've been focused on since the early 2014s. I didn't want my information to be displayed on just a sheet of paper that only HRs or Talent Scouts had the privilege of reading, I wanted it to be accessible to everyone. And that's how this project was conceptualized.",
+              "title": "Resume on the Web"
+            }
+          ],
+          "visible": true
+        }
+      ],
+      "required": ["heading", "items", "visible"],
+      "additionalProperties": true,
+      "properties": {
+        "heading": {
+          "$id": "#/properties/projects/properties/heading",
+          "type": "string",
+          "title": "The heading schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["Projects"]
+        },
+        "items": {
+          "$id": "#/properties/projects/properties/items",
+          "type": "array",
+          "title": "The items schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": [],
+          "examples": [
+            [
+              {
+                "date": "2020-07-01",
+                "id": "c768dcca-90f5-4242-a608-6759b4f667fb",
+                "link": "https://github.com/AmruthPillai/Reactive-Resume",
+                "summary": "Reactive Resume, a free and open-source resume builder that works for you. A few of the important features that make it awesome are minimalistic UI/UX, extensive customizability, portability, regularly updated templates, etc.\n\nFor more information, check out [rxresu.me](https://github.com/AmruthPillai/Reactive-Resume)",
+                "title": "Reactive Resume"
+              },
+              {
+                "date": "2020-04-01",
+                "id": "6ca600b1-c21f-4d7b-8431-f7144d537dd3",
+                "link": "https://amruthpillai.com",
+                "summary": "Resume on the Web has been a project that I've been focused on since the early 2014s. I didn't want my information to be displayed on just a sheet of paper that only HRs or Talent Scouts had the privilege of reading, I wanted it to be accessible to everyone. And that's how this project was conceptualized.",
+                "title": "Resume on the Web"
+              }
+            ]
+          ],
+          "additionalItems": true,
+          "items": {
+            "anyOf": [
+              {
+                "$id": "#/properties/projects/properties/items/items/anyOf/0",
+                "type": "object",
+                "title": "The first anyOf schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                  {
+                    "date": "2020-07-01",
+                    "id": "c768dcca-90f5-4242-a608-6759b4f667fb",
+                    "link": "https://github.com/AmruthPillai/Reactive-Resume",
+                    "summary": "Reactive Resume, a free and open-source resume builder that works for you. A few of the important features that make it awesome are minimalistic UI/UX, extensive customizability, portability, regularly updated templates, etc.\n\nFor more information, check out [rxresu.me](https://github.com/AmruthPillai/Reactive-Resume)",
+                    "title": "Reactive Resume"
+                  }
+                ],
+                "required": ["date", "id", "link", "summary", "title"],
+                "additionalProperties": true,
+                "properties": {
+                  "date": {
+                    "$id": "#/properties/projects/properties/items/items/anyOf/0/properties/date",
+                    "type": "string",
+                    "title": "The date schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["2020-07-01"]
+                  },
+                  "id": {
+                    "$id": "#/properties/projects/properties/items/items/anyOf/0/properties/id",
+                    "type": "string",
+                    "title": "The id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["c768dcca-90f5-4242-a608-6759b4f667fb"]
+                  },
+                  "link": {
+                    "$id": "#/properties/projects/properties/items/items/anyOf/0/properties/link",
+                    "type": "string",
+                    "title": "The link schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                      "https://github.com/AmruthPillai/Reactive-Resume"
+                    ]
+                  },
+                  "summary": {
+                    "$id": "#/properties/projects/properties/items/items/anyOf/0/properties/summary",
+                    "type": "string",
+                    "title": "The summary schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                      "Reactive Resume, a free and open-source resume builder that works for you. A few of the important features that make it awesome are minimalistic UI/UX, extensive customizability, portability, regularly updated templates, etc.\n\nFor more information, check out [rxresu.me](https://github.com/AmruthPillai/Reactive-Resume)"
+                    ]
+                  },
+                  "title": {
+                    "$id": "#/properties/projects/properties/items/items/anyOf/0/properties/title",
+                    "type": "string",
+                    "title": "The title schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["Reactive Resume"]
+                  }
+                }
+              }
+            ],
+            "$id": "#/properties/projects/properties/items/items"
+          }
+        },
+        "visible": {
+          "$id": "#/properties/projects/properties/visible",
+          "type": "boolean",
+          "title": "The visible schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": false,
+          "examples": [true]
+        }
+      }
+    },
+    "public": {
+      "$id": "#/properties/public",
+      "type": "boolean",
+      "title": "The public schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": false,
+      "examples": [true]
+    },
+    "references": {
+      "$id": "#/properties/references",
+      "type": "object",
+      "title": "The references schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "heading": "References",
+          "items": [
+            {
+              "email": "willywonka@goldenticket.com",
+              "id": "168339fd-3c4b-4f2f-bd3a-ef184be81700",
+              "name": "Willy Wonka",
+              "phone": "+1 (802) 234-2398",
+              "position": "CEO at Chocolate Factory",
+              "summary": ""
+            },
+            {
+              "email": "elanmusk@nottesla.com",
+              "id": "350465b9-9989-43cc-b97e-4115b8980304",
+              "name": "Elangovan Musk",
+              "phone": "+91 93893 34353",
+              "position": "CEO at Newton Motors",
+              "summary": ""
+            },
+            {
+              "name": "Lorraine Beasley",
+              "position": "Head of HR, Carson Logistics",
+              "phone": "+1 661-808-4188",
+              "email": "l.beasley@carsonlogistics.com",
+              "summary": "",
+              "id": "94e3447b-0a78-4fb7-b14d-591982d35320"
+            }
+          ],
+          "visible": true
+        }
+      ],
+      "required": ["heading", "items", "visible"],
+      "additionalProperties": true,
+      "properties": {
+        "heading": {
+          "$id": "#/properties/references/properties/heading",
+          "type": "string",
+          "title": "The heading schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["References"]
+        },
+        "items": {
+          "$id": "#/properties/references/properties/items",
+          "type": "array",
+          "title": "The items schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": [],
+          "examples": [
+            [
+              {
+                "email": "willywonka@goldenticket.com",
+                "id": "168339fd-3c4b-4f2f-bd3a-ef184be81700",
+                "name": "Willy Wonka",
+                "phone": "+1 (802) 234-2398",
+                "position": "CEO at Chocolate Factory",
+                "summary": ""
+              },
+              {
+                "email": "elanmusk@nottesla.com",
+                "id": "350465b9-9989-43cc-b97e-4115b8980304",
+                "name": "Elangovan Musk",
+                "phone": "+91 93893 34353",
+                "position": "CEO at Newton Motors",
+                "summary": ""
+              }
+            ]
+          ],
+          "additionalItems": true,
+          "items": {
+            "anyOf": [
+              {
+                "$id": "#/properties/references/properties/items/items/anyOf/0",
+                "type": "object",
+                "title": "The first anyOf schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                  {
+                    "email": "willywonka@goldenticket.com",
+                    "id": "168339fd-3c4b-4f2f-bd3a-ef184be81700",
+                    "name": "Willy Wonka",
+                    "phone": "+1 (802) 234-2398",
+                    "position": "CEO at Chocolate Factory",
+                    "summary": ""
+                  }
+                ],
+                "required": [
+                  "email",
+                  "id",
+                  "name",
+                  "phone",
+                  "position",
+                  "summary"
+                ],
+                "additionalProperties": true,
+                "properties": {
+                  "email": {
+                    "$id": "#/properties/references/properties/items/items/anyOf/0/properties/email",
+                    "type": "string",
+                    "title": "The email schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["willywonka@goldenticket.com"]
+                  },
+                  "id": {
+                    "$id": "#/properties/references/properties/items/items/anyOf/0/properties/id",
+                    "type": "string",
+                    "title": "The id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["168339fd-3c4b-4f2f-bd3a-ef184be81700"]
+                  },
+                  "name": {
+                    "$id": "#/properties/references/properties/items/items/anyOf/0/properties/name",
+                    "type": "string",
+                    "title": "The name schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["Willy Wonka"]
+                  },
+                  "phone": {
+                    "$id": "#/properties/references/properties/items/items/anyOf/0/properties/phone",
+                    "type": "string",
+                    "title": "The phone schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["+1 (802) 234-2398"]
+                  },
+                  "position": {
+                    "$id": "#/properties/references/properties/items/items/anyOf/0/properties/position",
+                    "type": "string",
+                    "title": "The position schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["CEO at Chocolate Factory"]
+                  },
+                  "summary": {
+                    "$id": "#/properties/references/properties/items/items/anyOf/0/properties/summary",
+                    "type": "string",
+                    "title": "The summary schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [""]
+                  }
+                }
+              }
+            ],
+            "$id": "#/properties/references/properties/items/items"
+          }
+        },
+        "visible": {
+          "$id": "#/properties/references/properties/visible",
+          "type": "boolean",
+          "title": "The visible schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": false,
+          "examples": [true]
+        }
+      }
+    },
+    "skills": {
+      "$id": "#/properties/skills",
+      "type": "object",
+      "title": "The skills schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "heading": "Skills",
+          "items": [
+            {
+              "id": "54e5bceb-d0e9-4f04-98d1-48a34f7cf920",
+              "level": "Advanced",
+              "name": "Customer Service Expertise"
+            },
+            {
+              "id": "f0274f62-2252-4cc0-bf12-9e1070942c50",
+              "level": "Intermediate",
+              "name": "High-Volume Call Center"
+            },
+            {
+              "id": "689e2852-df1b-4d41-bda8-c41c88196264",
+              "level": "Intermediate",
+              "name": "Team Leader/Problem Solver"
+            },
+            {
+              "id": "3a4f73b1-50c1-4a85-a4b0-2a55dfe5053a",
+              "level": "Novice",
+              "name": "Call Center Management"
+            },
+            {
+              "name": "Teambuilding & Training",
+              "level": "Novice",
+              "id": "08d6c739-1465-41f7-8825-b8d94faa38d6"
+            },
+            {
+              "name": "Continuous Improvement",
+              "level": "Fundamental Awareness",
+              "id": "261b8fc3-aeec-4347-88a8-bcacb1a17aa3"
+            }
+          ],
+          "visible": true
+        }
+      ],
+      "required": ["heading", "items", "visible"],
+      "additionalProperties": true,
+      "properties": {
+        "heading": {
+          "$id": "#/properties/skills/properties/heading",
+          "type": "string",
+          "title": "The heading schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["Skills"]
+        },
+        "items": {
+          "$id": "#/properties/skills/properties/items",
+          "type": "array",
+          "title": "The items schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": [],
+          "examples": [
+            [
+              {
+                "id": "54e5bceb-d0e9-4f04-98d1-48a34f7cf920",
+                "level": "Advanced",
+                "name": "Customer Service Expertise"
+              },
+              {
+                "id": "f0274f62-2252-4cc0-bf12-9e1070942c50",
+                "level": "Intermediate",
+                "name": "High-Volume Call Center"
+              }
+            ]
+          ],
+          "additionalItems": true,
+          "items": {
+            "anyOf": [
+              {
+                "$id": "#/properties/skills/properties/items/items/anyOf/0",
+                "type": "object",
+                "title": "The first anyOf schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                  {
+                    "id": "54e5bceb-d0e9-4f04-98d1-48a34f7cf920",
+                    "level": "Advanced",
+                    "name": "Customer Service Expertise"
+                  }
+                ],
+                "required": ["id", "level", "name"],
+                "additionalProperties": true,
+                "properties": {
+                  "id": {
+                    "$id": "#/properties/skills/properties/items/items/anyOf/0/properties/id",
+                    "type": "string",
+                    "title": "The id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["54e5bceb-d0e9-4f04-98d1-48a34f7cf920"]
+                  },
+                  "level": {
+                    "$id": "#/properties/skills/properties/items/items/anyOf/0/properties/level",
+                    "type": "string",
+                    "title": "The level schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["Advanced"]
+                  },
+                  "name": {
+                    "$id": "#/properties/skills/properties/items/items/anyOf/0/properties/name",
+                    "type": "string",
+                    "title": "The name schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["Customer Service Expertise"]
+                  }
+                }
+              }
+            ],
+            "$id": "#/properties/skills/properties/items/items"
+          }
+        },
+        "visible": {
+          "$id": "#/properties/skills/properties/visible",
+          "type": "boolean",
+          "title": "The visible schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": false,
+          "examples": [true]
+        }
+      }
+    },
+    "social": {
+      "$id": "#/properties/social",
+      "type": "object",
+      "title": "The social schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "heading": "Social",
+          "items": [
+            {
+              "url": "https://pillai.xyz/instagram",
+              "network": "Instagram",
+              "username": "AmruthPillai",
+              "id": "a832b37d-f11d-4a80-8b4d-24796e571b17"
+            },
+            {
+              "id": "a72107fa-a4a5-407d-9e85-39bdb9c0b11a",
+              "network": "Twitter",
+              "url": "https://pillai.xyz/twitter",
+              "username": "KingOKings"
+            },
+            {
+              "id": "1dd46fdd-b3a3-4786-89ce-2e77c0823aba",
+              "network": "LinkedIn",
+              "url": "https://pillai.xyz/linkedin",
+              "username": "AmruthPillai"
+            }
+          ],
+          "visible": true
+        }
+      ],
+      "required": ["heading", "items", "visible"],
+      "additionalProperties": true,
+      "properties": {
+        "heading": {
+          "$id": "#/properties/social/properties/heading",
+          "type": "string",
+          "title": "The heading schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["Social"]
+        },
+        "items": {
+          "$id": "#/properties/social/properties/items",
+          "type": "array",
+          "title": "The items schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": [],
+          "examples": [
+            [
+              {
+                "url": "https://pillai.xyz/instagram",
+                "network": "Instagram",
+                "username": "AmruthPillai",
+                "id": "a832b37d-f11d-4a80-8b4d-24796e571b17"
+              },
+              {
+                "id": "a72107fa-a4a5-407d-9e85-39bdb9c0b11a",
+                "network": "Twitter",
+                "url": "https://pillai.xyz/twitter",
+                "username": "KingOKings"
+              }
+            ]
+          ],
+          "additionalItems": true,
+          "items": {
+            "anyOf": [
+              {
+                "$id": "#/properties/social/properties/items/items/anyOf/0",
+                "type": "object",
+                "title": "The first anyOf schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                  {
+                    "url": "https://pillai.xyz/instagram",
+                    "network": "Instagram",
+                    "username": "AmruthPillai",
+                    "id": "a832b37d-f11d-4a80-8b4d-24796e571b17"
+                  }
+                ],
+                "required": ["url", "network", "username", "id"],
+                "additionalProperties": true,
+                "properties": {
+                  "url": {
+                    "$id": "#/properties/social/properties/items/items/anyOf/0/properties/url",
+                    "type": "string",
+                    "title": "The url schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["https://pillai.xyz/instagram"]
+                  },
+                  "network": {
+                    "$id": "#/properties/social/properties/items/items/anyOf/0/properties/network",
+                    "type": "string",
+                    "title": "The network schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["Instagram"]
+                  },
+                  "username": {
+                    "$id": "#/properties/social/properties/items/items/anyOf/0/properties/username",
+                    "type": "string",
+                    "title": "The username schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["AmruthPillai"]
+                  },
+                  "id": {
+                    "$id": "#/properties/social/properties/items/items/anyOf/0/properties/id",
+                    "type": "string",
+                    "title": "The id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["a832b37d-f11d-4a80-8b4d-24796e571b17"]
+                  }
+                }
+              }
+            ],
+            "$id": "#/properties/social/properties/items/items"
+          }
+        },
+        "visible": {
+          "$id": "#/properties/social/properties/visible",
+          "type": "boolean",
+          "title": "The visible schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": false,
+          "examples": [true]
+        }
+      }
+    },
+    "work": {
+      "$id": "#/properties/work",
+      "type": "object",
+      "title": "The work schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "heading": "Work Experience",
+          "items": [
+            {
+              "company": "On Point Electronics, NYC, NY",
+              "endDate": "2018-07-01",
+              "id": "d7c64937-0cb9-41b1-a3a6-0679c882fe63",
+              "position": "Customer Service Representative",
+              "startDate": "2013-01-01",
+              "summary": "- Organized customer information and account data for business planning and customer service purposes.\n- Created excel spreadsheets to track customer data and perform intense reconciliation process.\n- Received 97% positive customer survey results.\n- Speed on calls was 10% above team average.  \n**Key Achievement:** Designed and executed an automatized system for following up with customers, increasing customer retention by 22%.",
+              "website": "https://onpoint.com"
+            },
+            {
+              "company": "Excelsior Communications, NYC, NY",
+              "endDate": "2012-12-01",
+              "id": "f5c5dcfe-2a60-4169-a2f1-b305355518ea",
+              "position": "Customer Service Representative",
+              "startDate": "2009-10-01",
+              "summary": "- Worked as a full time customer service rep in a high volume call center.\n- Received \"Associate of the Month\" award six times.\n- Chosen as an example for other associates in trainings.  \n**Key Achievement:** Received Customer Appreciation bonus in three of four years.",
+              "website": "https://excelsior.com"
+            },
+            {
+              "company": "Pizza Hut, Newark, NJ",
+              "position": "Waiter",
+              "website": "https://pizzahut.com",
+              "startDate": "2005-08-01",
+              "endDate": "2009-09-01",
+              "summary": "- Worked passionately in customer service in a high volume restaurant.\n- Completed the FAST customer service training class.\n- Maintained a high tip average thanks to consistent customer satisfaction.",
+              "id": "dd935088-6fe7-4a4b-8ff5-7417c32d2add"
+            }
+          ],
+          "visible": true
+        }
+      ],
+      "required": ["heading", "items", "visible"],
+      "additionalProperties": true,
+      "properties": {
+        "heading": {
+          "$id": "#/properties/work/properties/heading",
+          "type": "string",
+          "title": "The heading schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["Work Experience"]
+        },
+        "items": {
+          "$id": "#/properties/work/properties/items",
+          "type": "array",
+          "title": "The items schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": [],
+          "examples": [
+            [
+              {
+                "company": "On Point Electronics, NYC, NY",
+                "endDate": "2018-07-01",
+                "id": "d7c64937-0cb9-41b1-a3a6-0679c882fe63",
+                "position": "Customer Service Representative",
+                "startDate": "2013-01-01",
+                "summary": "- Organized customer information and account data for business planning and customer service purposes.\n- Created excel spreadsheets to track customer data and perform intense reconciliation process.\n- Received 97% positive customer survey results.\n- Speed on calls was 10% above team average.  \n**Key Achievement:** Designed and executed an automatized system for following up with customers, increasing customer retention by 22%.",
+                "website": "https://onpoint.com"
+              },
+              {
+                "company": "Excelsior Communications, NYC, NY",
+                "endDate": "2012-12-01",
+                "id": "f5c5dcfe-2a60-4169-a2f1-b305355518ea",
+                "position": "Customer Service Representative",
+                "startDate": "2009-10-01",
+                "summary": "- Worked as a full time customer service rep in a high volume call center.\n- Received \"Associate of the Month\" award six times.\n- Chosen as an example for other associates in trainings.  \n**Key Achievement:** Received Customer Appreciation bonus in three of four years.",
+                "website": "https://excelsior.com"
+              }
+            ]
+          ],
+          "additionalItems": true,
+          "items": {
+            "anyOf": [
+              {
+                "$id": "#/properties/work/properties/items/items/anyOf/0",
+                "type": "object",
+                "title": "The first anyOf schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                  {
+                    "company": "On Point Electronics, NYC, NY",
+                    "endDate": "2018-07-01",
+                    "id": "d7c64937-0cb9-41b1-a3a6-0679c882fe63",
+                    "position": "Customer Service Representative",
+                    "startDate": "2013-01-01",
+                    "summary": "- Organized customer information and account data for business planning and customer service purposes.\n- Created excel spreadsheets to track customer data and perform intense reconciliation process.\n- Received 97% positive customer survey results.\n- Speed on calls was 10% above team average.  \n**Key Achievement:** Designed and executed an automatized system for following up with customers, increasing customer retention by 22%.",
+                    "website": "https://onpoint.com"
+                  }
+                ],
+                "required": [
+                  "company",
+                  "endDate",
+                  "id",
+                  "position",
+                  "startDate",
+                  "summary",
+                  "website"
+                ],
+                "additionalProperties": true,
+                "properties": {
+                  "company": {
+                    "$id": "#/properties/work/properties/items/items/anyOf/0/properties/company",
+                    "type": "string",
+                    "title": "The company schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["On Point Electronics, NYC, NY"]
+                  },
+                  "endDate": {
+                    "$id": "#/properties/work/properties/items/items/anyOf/0/properties/endDate",
+                    "type": "string",
+                    "title": "The endDate schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["2018-07-01"]
+                  },
+                  "id": {
+                    "$id": "#/properties/work/properties/items/items/anyOf/0/properties/id",
+                    "type": "string",
+                    "title": "The id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["d7c64937-0cb9-41b1-a3a6-0679c882fe63"]
+                  },
+                  "position": {
+                    "$id": "#/properties/work/properties/items/items/anyOf/0/properties/position",
+                    "type": "string",
+                    "title": "The position schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["Customer Service Representative"]
+                  },
+                  "startDate": {
+                    "$id": "#/properties/work/properties/items/items/anyOf/0/properties/startDate",
+                    "type": "string",
+                    "title": "The startDate schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["2013-01-01"]
+                  },
+                  "summary": {
+                    "$id": "#/properties/work/properties/items/items/anyOf/0/properties/summary",
+                    "type": "string",
+                    "title": "The summary schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                      "- Organized customer information and account data for business planning and customer service purposes.\n- Created excel spreadsheets to track customer data and perform intense reconciliation process.\n- Received 97% positive customer survey results.\n- Speed on calls was 10% above team average.  \n**Key Achievement:** Designed and executed an automatized system for following up with customers, increasing customer retention by 22%."
+                    ]
+                  },
+                  "website": {
+                    "$id": "#/properties/work/properties/items/items/anyOf/0/properties/website",
+                    "type": "string",
+                    "title": "The website schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": ["https://onpoint.com"]
+                  }
+                }
+              }
+            ],
+            "$id": "#/properties/work/properties/items/items"
+          }
+        },
+        "visible": {
+          "$id": "#/properties/work/properties/visible",
+          "type": "boolean",
+          "title": "The visible schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": false,
+          "examples": [true]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.icon {
+  @apply py-2 cursor-pointer;
+}
+
+.icon:focus {
+  @apply outline-none text-primary-900;
+}
+
+.icon:hover {
+  @apply text-primary-900;
+}

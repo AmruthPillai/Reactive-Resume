@@ -1,0 +1,26 @@
+.template {
+  @apply w-full rounded flex flex-col items-center;
+}
+
+.template:focus {
+  @apply outline-none;
+}
+
+.template img {
+  height: 240px;
+  @apply w-full object-cover border border-transparent rounded;
+  @apply transition-opacity duration-200 ease-in-out;
+}
+
+.template.selected img {
+  @apply border-primary-600;
+}
+
+.template:hover img {
+  @apply cursor-pointer opacity-75;
+  @apply transition-opacity duration-200 ease-in-out;
+}
+
+.template span {
+  @apply mt-1 text-center text-sm font-semibold;
+}

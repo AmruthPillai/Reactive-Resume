@@ -1,0 +1,78 @@
+html,
+body {
+  font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+  @apply text-primary-900 bg-primary-50;
+  @apply transition-colors duration-200 ease-in-out;
+}
+
+a {
+  @apply font-semibold;
+}
+
+a:hover {
+  @apply underline;
+}
+
+hr {
+  @apply w-full border-primary-200 h-1;
+}
+
+ul {
+  @apply list-disc list-inside;
+}
+
+section {
+  @apply grid grid-cols-1 gap-8;
+}
+
+.MuiTooltip-tooltip {
+  font-size: 10px;
+}
+
+.MuiMenuItem-root {
+  justify-content: center;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}w
+
+.markdown {
+  @apply leading-relaxed whitespace-pre-wrap;
+}
+
+@page {
+  margin: 0;
+}
+
+@media print {
+  html,
+  body,
+  body * {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    visibility: hidden;
+  }
+
+  #page,
+  #page * {
+    visibility: visible;
+  }
+
+  #page {
+    width: 21cm;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    zoom: 1;
+    box-shadow: none;
+  }
+}

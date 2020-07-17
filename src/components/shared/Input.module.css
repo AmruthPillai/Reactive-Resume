@@ -1,0 +1,29 @@
+.circle {
+  left: 14px;
+  @apply absolute bg-primary-900 rounded-full w-6 h-6;
+}
+
+div.circle + input {
+  padding-left: 44px;
+}
+
+.read-only input:hover {
+  cursor: default;
+  border-color: transparent !important;
+}
+
+.read-only input:focus {
+  border-color: transparent !important;
+}
+
+.read-only div {
+  @apply absolute rounded-r top-0 right-0 bottom-0 w-20 flex justify-center items-center bg-primary-50;
+}
+
+.read-only div:hover {
+  @apply bg-primary-100;
+}
+
+.read-only div:focus {
+  @apply outline-none;
+}

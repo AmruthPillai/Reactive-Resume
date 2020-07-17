@@ -1,16 +1,45 @@
-/* eslint-disable new-cap */
-import html2canvas from 'html2canvas';
-import * as jsPDF from 'jspdf';
+import { get, isEmpty } from 'lodash';
+import moment from 'moment';
+import { useTranslation } from 'react-i18next';
 
-const move = (array, element, delta) => {
-  const index = array.findIndex(item => item.id === element.id);
-  const newIndex = index + delta;
-  if (newIndex < 0 || newIndex === array.length) return;
-  const indexes = [index, newIndex].sort((a, b) => a - b);
-  array.splice(indexes[0], 2, array[indexes[1]], array[indexes[0]]);
+export const getModalText = (isEditMode, type) => {
+  const { t } = useTranslation();
+  return isEditMode
+    ? `${t('shared.buttons.edit')} ${type}`
+    : `${t('shared.buttons.add')} ${type}`;
 };
 
-const hexToRgb = hex => {
+export const safetyCheck = (section, path = 'items') => {
+  return !!(section && section.visible === true && !isEmpty(section[path]));
+};
+
+export const handleKeyUp = (event, action) => {
+  (event.which === 13 || event.which === 32) && action();
+};
+
+export const isFileImage = (file) => {
+  const acceptedImageTypes = ['image/jpeg', 'image/png'];
+  return file && acceptedImageTypes.includes(file.type);
+};
+
+export const formatDateRange = ({ startDate, endDate }) =>
+  `${moment(startDate).format('MMMM Y')} — ${
+    moment(endDate).isValid() ? moment(endDate).format('MMMM Y') : 'Present'
+  }`;
+
+export const getFieldProps = (formik, schema, name) => ({
+  touched: get(formik, `touched.${name}`, false),
+  error: get(formik, `errors.${name}`, ''),
+  isRequired: get(schema, `fields.${name}._exclusive.required`),
+  ...formik.getFieldProps(name),
+});
+
+export const getUnsplashPhoto = async () => {
+  const response = await fetch('https://source.unsplash.com/featured/400x600');
+  return response.url;
+};
+
+export const hexToRgb = (hex) => {
   const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
   hex = hex.replace(shorthandRegex, (m, r, g, b) => r + r + g + g + b + b);
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -23,192 +52,49 @@ const hexToRgb = hex => {
     : null;
 };
 
-const copyToClipboard = text => {
-  const textArea = document.createElement('textarea');
-  textArea.style.position = 'fixed';
-  textArea.style.top = 0;
-  textArea.style.left = 0;
-  textArea.style.width = '2em';
-  textArea.style.height = '2em';
-  textArea.style.padding = 0;
-  textArea.style.border = 'none';
-  textArea.style.outline = 'none';
-  textArea.style.boxShadow = 'none';
-  textArea.style.background = 'transparent';
-  textArea.value = text;
-  document.body.appendChild(textArea);
-  textArea.focus();
-  textArea.select();
-  const successful = document.execCommand('copy');
-  document.body.removeChild(textArea);
-  return successful;
+export const reorder = (list, startIndex, endIndex) => {
+  const result = Array.from(list);
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
+
+  return result;
 };
 
-const saveData = dispatch => dispatch({ type: 'save_data' });
+export const move = (
+  source,
+  destination,
+  droppableSource,
+  droppableDestination,
+) => {
+  const sourceClone = Array.from(source);
+  const destClone = Array.from(destination);
+  const [removed] = sourceClone.splice(droppableSource.index, 1);
 
-const addItem = (dispatch, key, value) => {
-  dispatch({
-    type: 'add_item',
-    payload: {
-      key,
-      value,
-    },
-  });
+  destClone.splice(droppableDestination.index, 0, removed);
 
-  saveData(dispatch);
+  const result = {};
+  result[droppableSource.droppableId] = sourceClone;
+  result[droppableDestination.droppableId] = destClone;
+
+  return result;
 };
 
-const deleteItem = (dispatch, key, value) => {
-  dispatch({
-    type: 'delete_item',
-    payload: {
-      key,
-      value,
-    },
-  });
+export const b64toBlob = (b64Data, contentType = '', sliceSize = 512) => {
+  const byteCharacters = atob(b64Data);
+  const byteArrays = [];
 
-  saveData(dispatch);
-};
+  for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+    const slice = byteCharacters.slice(offset, offset + sliceSize);
 
-const moveItemUp = (dispatch, key, value) => {
-  dispatch({
-    type: 'move_item_up',
-    payload: {
-      key,
-      value,
-    },
-  });
+    const byteNumbers = new Array(slice.length);
+    for (let i = 0; i < slice.length; i++) {
+      byteNumbers[i] = slice.charCodeAt(i);
+    }
 
-  saveData(dispatch);
-};
-
-const moveItemDown = (dispatch, key, value) => {
-  dispatch({
-    type: 'move_item_down',
-    payload: {
-      key,
-      value,
-    },
-  });
-
-  saveData(dispatch);
-};
-
-const importJson = (event, dispatch) => {
-  const fr = new FileReader();
-  fr.addEventListener('load', () => {
-    const importedObject = JSON.parse(fr.result);
-    dispatch({ type: 'import_data', payload: importedObject });
-    dispatch({ type: 'save_data' });
-  });
-  fr.readAsText(event.target.files[0]);
-};
-
-let saveAsPdfTimer = null;
-const saveAsPdf = (pageRef, panZoomRef, quality, type) => {
-  if(saveAsPdfTimer){
-      return;
+    const byteArray = new Uint8Array(byteNumbers);
+    byteArrays.push(byteArray);
   }
-  return new Promise(resolve => {
-    panZoomRef.current.autoCenter(1);
-    panZoomRef.current.reset();
 
-    saveAsPdfTimer = setTimeout(() => {
-      html2canvas(pageRef.current, {
-        scale: 5,
-        useCORS: true,
-        allowTaint: true,
-      }).then(canvas => {
-        const image = canvas.toDataURL('image/jpeg', quality / 100);
-        const doc = new jsPDF({
-          orientation: 'portrait',
-          unit: 'px',
-          format: type === 'unconstrained' ? [canvas.width, canvas.height] : 'a4',
-        });
-
-        const pageWidth = doc.internal.pageSize.getWidth();
-        const pageHeight = doc.internal.pageSize.getHeight();
-
-        const widthRatio = pageWidth / canvas.width;
-        const heightRatio = pageHeight / canvas.height;
-        const ratio = widthRatio > heightRatio ? heightRatio : widthRatio;
-
-        const canvasWidth = canvas.width * ratio;
-        const canvasHeight = canvas.height * ratio;
-
-        let marginX = 0;
-        let marginY = 0;
-
-        if (type !== 'unconstrained') {
-          marginX = (pageWidth - canvasWidth) / 2;
-          marginY = (pageHeight - canvasHeight) / 2;
-        }
-
-        doc.addImage(image, 'JPEG', marginX, marginY, canvasWidth, canvasHeight, null, 'SLOW');
-        doc.save(`RxResume_${Date.now()}.pdf`);
-        saveAsPdfTimer = null;
-        resolve();
-      });
-    }, 250);
-  });
-}
-  
-let saveAsMultiPagePdfTimer = null;
-const saveAsMultiPagePdf = (pageRef, panZoomRef, quality) => {
-  if(saveAsMultiPagePdfTimer){
-      return;
-  }
-  return new Promise(resolve => {
-    panZoomRef.current.autoCenter(1);
-    panZoomRef.current.reset();
-
-    saveAsMultiPagePdfTimer = setTimeout(() => {
-      html2canvas(pageRef.current, {
-        scale: 5,
-        useCORS: true,
-        allowTaint: true,
-      }).then(canvas => {
-        const image = canvas.toDataURL('image/jpeg', quality / 100);
-        const doc = new jsPDF({
-          orientation: 'portrait',
-          unit: 'px',
-          format: 'a4',
-        });
-
-        const pageHeight = doc.internal.pageSize.getHeight();
-        const canvasWidth = doc.internal.pageSize.getWidth();
-        const canvasHeight = (canvas.height * canvasWidth) / canvas.width;
-        let marginTop = 0;
-        let heightLeft = canvasHeight;
-
-        doc.addImage(image, 'JPEG', 0, marginTop, canvasWidth, canvasHeight);
-        heightLeft -= pageHeight;
-
-        while (heightLeft >= 0) {
-          marginTop = heightLeft - canvasHeight;
-          doc.addPage();
-          doc.addImage(image, 'JPEG', 0, marginTop, canvasWidth, canvasHeight);
-          heightLeft -= pageHeight;
-        }
-
-        doc.save(`RxResume_${Date.now()}.pdf`);
-        saveAsMultiPagePdfTimer = null;
-        resolve();
-      });
-    }, 250);
-  });
-}
-
-export {
-  move,
-  hexToRgb,
-  copyToClipboard,
-  saveData,
-  addItem,
-  deleteItem,
-  moveItemUp,
-  moveItemDown,
-  importJson,
-  saveAsPdf,
-  saveAsMultiPagePdf,
+  const blob = new Blob(byteArrays, { type: contentType });
+  return blob;
 };

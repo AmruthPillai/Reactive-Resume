@@ -1,17 +1,69 @@
-### v2 is under-development, [read more](https://dev.to/amruthpillai/redesigning-reactive-resume-and-i-need-your-inputs-5ga6)
+<img src="https://rxresu.me/images/logo.png" width="256px" />
 
-<img src="https://i.imgur.com/4eps4gP.png" alt="Reactive Resume" width="256px"  height="256px"/>
+## A free and open source resume builder.
 
-# Reactive Resume
-
-[![Build & Deploy](https://github.com/AmruthPillai/Reactive-Resume/workflows/Build%20&%20Deploy/badge.svg)](https://github.com/AmruthPillai/Reactive-Resume/actions)
-![Code Style](https://badgen.net/badge/code%20style/airbnb/ff5a5f?icon=airbnb)
-[![Docker Pulls](https://img.shields.io/docker/pulls/amruthpillai/reactive-resume)](https://hub.docker.com/r/amruthpillai/reactive-resume)
-[![Localization](https://badges.crowdin.net/reactive-resume/localized.svg)](https://crowdin.com/project/reactive-resume)
 [![GitHub](https://img.shields.io/github/license/AmruthPillai/Reactive-Resume)](https://github.com/AmruthPillai/Reactive-Resume/blob/develop/LICENSE)
 
-#### A Free and Open-Source Resume Builder That Respects Your Privacy
+### [Go to App](https://rxresu.me/)
 
-Welcome to the front page of **Reactive Resume**, a free and open-source Resume Builder web app that focuses on one thing, **Privacy**. And also few other important features such as minimalistic UI/UX, customizability, portability, regularly updated templates, etc. But the important thing is that, your personal data is yours alone.
+### What is this app all about?
 
-### [Go to App](https://rxresu.me/) | [Documentation](https://docs.rxresu.me/)
+Reactive Resume is a free and open source resume builder that’s built to make the mundane tasks of creating, updating and sharing your resume as easy as 1, 2, 3. With this app, you can create multiple resumes, share them with recruiters through a unique link and print as PDF, all for free, no advertisements, without losing the integrity and privacy of your data.
+
+You have complete control over what goes into your resume, how it looks, what colors, what templates, even the layout in which sections placed. Want a dark mode resume? It’s as easy as editing 3 values and you’re done. You don’t need to wait to see your changes either. Everything you type, everything you change, appears immediately on your resume and gets updated in real time.
+
+### Features
+
+- Manage multiple resumes with one account
+- Sync your data across devices
+- Sign in with Google, or sign in anonymously just to test the app
+- Send your resume to others with a unique sharable link
+- Choose from 6 vibrant templates and more coming soon
+- Structure sections and change layouts the way you want to
+- Mix and match colors to any degree, even a dark mode resume?
+- Pick from a variety of crisp and clear fonts
+- Easy to translate to your own language
+- Import your existing [JSON Resume](https://jsonresume.org/) in one click
+- No advertisements, no data sharing, no marketing emails
+- **Everything is free, and there’s no catch!**
+
+### Screenshots
+
+<img src="https://rxresu.me/images/screenshots/screen-1.png" width="400px" />
+&nbsp;
+<img src="https://rxresu.me/images/screenshots/screen-3.png" width="400px" />
+&nbsp;
+<img src="https://rxresu.me/images/screenshots/screen-5.png" width="400px" />
+
+### Tech Stack
+
+- GatsbyJS
+- GraphQL
+- Firebase
+- Lodash
+- Ajv
+
+### Translation
+
+To translate the app, just fork the repository, go to `src/i18n/locales` and duplicate the `en.json` file to a new file `your-lang-code.json` and translate all of the strings inside. It's a simple process that would take just a few minutes, and by contributing, your name could also be added down below as a contributor!
+
+#### Languages Currently Supported
+
+- English
+- Kannada (ಕನ್ನಡ) (by @AmruthPillai)
+
+### Donation
+
+I try to do what I can, but if you found the app helpful, or you're in a better position than the others who depend on this project for their first job, please consider donating as little as $5 to help keep the project alive :)
+
+#### https://www.buymeacoffee.com/AmruthPillai
+
+### Appreciation
+
+Thank you to everyone who made this project possible, including the many users who voiced their opinions, created issues and PRs to the original Reactive Resume project, and helped me along the way to make this a reality. I hope I find your support in this version too! :)
+
+---
+
+![](https://media.giphy.com/media/sp685iuIEGuys/source.gif)
+
+###### Made with Love by [Amruth Pillai](https://amruthpillai.com/)
