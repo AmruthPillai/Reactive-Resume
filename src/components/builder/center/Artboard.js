@@ -22,10 +22,7 @@ const Artboard = () => {
         <title>
           {name} | {t('shared.appName')}
         </title>
-        <link
-          rel="canonical"
-          href={`https://rxresume-staging.web.app/app/builder/${id}`}
-        />
+        <link rel="canonical" href={`https://rxresu.me/app/builder/${id}`} />
       </Helmet>
 
       <div className={styles.container}>

@@ -66,10 +66,7 @@ const Dashboard = ({ user }) => {
         <title>
           {t('dashboard.title')} | {t('shared.appName')}
         </title>
-        <link
-          rel="canonical"
-          href="https://rxresume-staging.web.app/app/dashboard"
-        />
+        <link rel="canonical" href="https://rxresu.me/app/dashboard" />
       </Helmet>
 
       <TopNavbar />

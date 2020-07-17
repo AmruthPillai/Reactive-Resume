@@ -9,10 +9,7 @@ const FrequentlyAskedQuestions = () => {
     <Wrapper>
       <Helmet>
         <title>Frequently Asked Questions | Reactive Resume</title>
-        <link
-          rel="canonical"
-          href="https://rxresume-staging.web.app/app/dashboard"
-        />
+        <link rel="canonical" href="https://rxresu.me/app/dashboard" />
       </Helmet>
 
       <div className="md:w-1/2 container px-8 md:px-0 py-16 grid gap-12">

@@ -13,7 +13,7 @@ const Home = () => {
     <Wrapper>
       <Helmet>
         <title>{t('shared.appName')}</title>
-        <link rel="canonical" href="https://rxresume-staging.web.app/" />
+        <link rel="canonical" href="https://rxresu.me/" />
       </Helmet>
 
       <div className="container px-8 xl:px-0 text-center md:text-left mt-24">

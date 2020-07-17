@@ -3,7 +3,7 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: 'Reactive Resume',
-    siteUrl: 'https://rxresume-staging.web.app',
+    siteUrl: 'https://rxresu.me',
     description: 'A free and open source resume builder.',
   },
   plugins: [

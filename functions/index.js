@@ -1,7 +1,7 @@
 const functions = require('firebase-functions');
 const puppeteer = require('puppeteer');
 
-const BASE_URL = 'https://rxresume-staging.web.app/r/';
+const BASE_URL = 'https://rxresu.me/r/';
 
 function timeout(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));

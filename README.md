@@ -1,4 +1,4 @@
-<img src="https://rxresume-staging.web.app/images/logo.png" width="256px" />
+<img src="https://rxresu.me/images/logo.png" width="256px" />
 
 ## A free and open source resume builder.
 
@@ -29,11 +29,11 @@ You have complete control over what goes into your resume, how it looks, what co
 
 ### Screenshots
 
-<img src="https://rxresume-staging.web.app/images/screenshots/screen-1.png" width="400px" />
+<img src="https://rxresu.me/images/screenshots/screen-1.png" width="400px" />
 &nbsp;
-<img src="https://rxresume-staging.web.app/images/screenshots/screen-3.png" width="400px" />
+<img src="https://rxresu.me/images/screenshots/screen-3.png" width="400px" />
 &nbsp;
-<img src="https://rxresume-staging.web.app/images/screenshots/screen-5.png" width="400px" />
+<img src="https://rxresu.me/images/screenshots/screen-5.png" width="400px" />
 
 ### Tech Stack
 

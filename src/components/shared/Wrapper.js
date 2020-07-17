@@ -24,8 +24,8 @@ const Wrapper = ({ children }) => {
           name="description"
           content="A free and open source resume builder that’s built to make the mundane tasks of creating, updating and sharing your resume as easy as 1, 2, 3."
         />
-        <link rel="canonical" href="https://rxresume-staging.web.app" />
-        <meta property="og:url" content="https://rxresume-staging.web.app" />
+        <link rel="canonical" href="https://rxresu.me" />
+        <meta property="og:url" content="https://rxresu.me" />
         <meta property="og:type" content="website" />
         <meta
           property="og:description"
