@@ -80,7 +80,7 @@ const Settings = ({ id }) => {
         <Trans t={t} i18nKey="builder.settings.translate">
           A
           <a
-            href="https://github.com/AmruthPillai/Reactive-Resume/blob/master/TRANSLATING.md"
+            href="https://github.com/AmruthPillai/Reactive-Resume#translation"
             rel="noreferrer"
             target="_blank"
           >
