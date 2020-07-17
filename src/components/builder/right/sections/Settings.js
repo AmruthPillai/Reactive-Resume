@@ -11,7 +11,7 @@ import themeConfig from '../../../../data/themeConfig';
 import { languages } from '../../../../i18n';
 import { useDispatch } from '../../../../contexts/ResumeContext';
 
-const Settings = ({ name }) => {
+const Settings = ({ id }) => {
   const { t } = useTranslation();
 
   const [deleteText, setDeleteText] = useState(
@@ -48,7 +48,7 @@ const Settings = ({ name }) => {
 
   return (
     <section>
-      <Heading>{name}</Heading>
+      <Heading id={id} />
 
       <Input
         label={t('builder.settings.theme')}

@@ -4,12 +4,18 @@ import Heading from '../../../shared/Heading';
 import Input from '../../../shared/Input';
 import PhotoUpload from '../../../shared/PhotoUpload';
 
-const Profile = ({ name }) => {
+const Profile = ({ id }) => {
   const { t } = useTranslation();
 
   return (
     <section>
-      <Heading>{name}</Heading>
+      <Heading id={id} />
+
+      <Input
+        name="heading"
+        label={t('builder.sections.heading')}
+        path={`${id}.heading`}
+      />
 
       <PhotoUpload />
 

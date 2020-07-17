@@ -10,6 +10,7 @@ import styles from './LeftNavbar.module.css';
 
 const LeftNavbar = () => {
   const { t } = useTranslation();
+
   return (
     <div className={styles.container}>
       <Tooltip title={t('builder.tooltips.backToDashboard')} placement="right">

@@ -75,7 +75,7 @@ const Castform = ({ data }) => {
               <Profile />
 
               <div>
-                <HeadingD>Profile</HeadingD>
+                <HeadingD>{data.profile.heading}</HeadingD>
                 <ContactC />
               </div>
 

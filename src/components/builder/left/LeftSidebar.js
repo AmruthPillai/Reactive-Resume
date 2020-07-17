@@ -1,6 +1,5 @@
 import React, { Fragment, memo } from 'react';
 import { Element } from 'react-scroll';
-import { useTranslation } from 'react-i18next';
 import sections from '../../../data/leftSections';
 import LeftNavbar from './LeftNavbar';
 import styles from './LeftSidebar.module.css';
@@ -48,30 +47,26 @@ const getComponent = (id) => {
   }
 };
 
-const LeftSidebar = () => {
-  const { t } = useTranslation();
+const SidebarSection = ({ id, event }) => {
+  const Component = getComponent(id);
 
+  return (
+    <Fragment key={id}>
+      <Element name={id}>
+        <Component id={id} event={event} />
+      </Element>
+      <hr />
+    </Fragment>
+  );
+};
+
+const LeftSidebar = () => {
   return (
     <div className="flex">
       <LeftNavbar />
 
       <div id="LeftSidebar" className={styles.container}>
-        {sections.map(({ id, event }) => {
-          const Component = getComponent(id);
-
-          return (
-            <Fragment key={id}>
-              <Element name={id}>
-                <Component
-                  id={id}
-                  name={t(`builder.sections.${id}`)}
-                  event={event}
-                />
-              </Element>
-              <hr />
-            </Fragment>
-          );
-        })}
+        {sections.map(SidebarSection)}
       </div>
     </div>
   );

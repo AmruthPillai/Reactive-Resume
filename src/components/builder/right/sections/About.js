@@ -6,12 +6,12 @@ import Button from '../../../shared/Button';
 import Heading from '../../../shared/Heading';
 import styles from './About.module.css';
 
-const About = ({ name }) => {
+const About = ({ id }) => {
   const { t } = useTranslation();
 
   return (
     <section>
-      <Heading>{name}</Heading>
+      <Heading id={id} />
 
       <div className={styles.container}>
         <h5>{t('builder.about.donate.heading')}</h5>

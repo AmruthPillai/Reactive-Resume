@@ -8,7 +8,7 @@ import { handleKeyUp } from '../../../../utils';
 import Heading from '../../../shared/Heading';
 import styles from './Templates.module.css';
 
-const Templates = ({ name }) => {
+const Templates = ({ id }) => {
   const dispatch = useDispatch();
   const template = useSelector('metadata.template');
 
@@ -71,7 +71,7 @@ const Templates = ({ name }) => {
 
   return (
     <section>
-      <Heading>{name}</Heading>
+      <Heading id={id} />
 
       <div className="grid grid-cols-2 gap-8">
         {templateOptions.map((x) => (

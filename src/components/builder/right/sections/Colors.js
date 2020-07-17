@@ -8,7 +8,7 @@ import Heading from '../../../shared/Heading';
 import Input from '../../../shared/Input';
 import styles from './Colors.module.css';
 
-const Colors = ({ name }) => {
+const Colors = ({ id }) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
@@ -24,7 +24,7 @@ const Colors = ({ name }) => {
 
   return (
     <section>
-      <Heading>{name}</Heading>
+      <Heading id={id} />
 
       <div className="mb-6 grid grid-cols-8 col-gap-2 row-gap-6">
         {colorOptions.map((color) => (

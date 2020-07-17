@@ -71,9 +71,6 @@ module.exports = {
         description: 'A free and open-source resume builder.',
         start_url: '/?source=pwa',
         icon: 'static/images/logo.png',
-        icon_options: {
-          purpose: 'any maskable monochrome',
-        },
         background_color: '#FFFFFF',
         theme_color: '#444444',
         display: 'standalone',
@@ -83,7 +80,7 @@ module.exports = {
             src: 'static/icons/maskable.png',
             sizes: '196x196',
             type: 'image/png',
-            purpose: 'any maskable monochrome',
+            purpose: 'any maskable',
           },
         ],
         shortcuts: [

@@ -7,7 +7,7 @@ import Button from '../../../shared/Button';
 import Heading from '../../../shared/Heading';
 import styles from './Layout.module.css';
 
-const Layout = ({ name }) => {
+const Layout = ({ id }) => {
   const { t } = useTranslation();
   const [resetLayoutText, setResetLayoutText] = useState(
     t('builder.layout.reset'),
@@ -64,7 +64,7 @@ const Layout = ({ name }) => {
 
   return (
     <section>
-      <Heading>{name}</Heading>
+      <Heading id={id} />
 
       <p className="leading-loose">
         {t('builder.layout.text', { count: blocks.length })}

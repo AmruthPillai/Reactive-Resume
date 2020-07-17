@@ -3,12 +3,18 @@ import { useTranslation } from 'react-i18next';
 import Heading from '../../../shared/Heading';
 import Input from '../../../shared/Input';
 
-const Objective = ({ name }) => {
+const Objective = ({ id }) => {
   const { t } = useTranslation();
 
   return (
     <section>
-      <Heading>{name}</Heading>
+      <Heading id={id} />
+
+      <Input
+        name="heading"
+        label={t('builder.sections.heading')}
+        path={`${id}.heading`}
+      />
 
       <Input
         type="textarea"

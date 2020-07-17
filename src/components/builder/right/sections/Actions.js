@@ -8,7 +8,7 @@ import Heading from '../../../shared/Heading';
 import Input from '../../../shared/Input';
 import styles from './Actions.module.css';
 
-const Actions = ({ name }) => {
+const Actions = ({ id }) => {
   const { t } = useTranslation();
 
   const [loadDemoText, setLoadDemoText] = useState(
@@ -59,7 +59,7 @@ const Actions = ({ name }) => {
 
   return (
     <section>
-      <Heading>{name}</Heading>
+      <Heading id={id} />
 
       <div className={styles.container}>
         <h5>{t('builder.actions.import.heading')}</h5>
