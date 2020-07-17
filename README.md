@@ -1,4 +1,4 @@
-<img src="https://rxresu.me/images/logo.png" width="256px" />
+<img src="https://raw.githubusercontent.com/AmruthPillai/Reactive-Resume/develop/static/images/logo.png" width="256px" />
 
 ## A free and open source resume builder.
 
@@ -20,6 +20,7 @@ You have complete control over what goes into your resume, how it looks, what co
 - Send your resume to others with a unique sharable link
 - Choose from 6 vibrant templates and more coming soon
 - Structure sections and change layouts the way you want to
+- Rename sections according to your language/industry
 - Mix and match colors to any degree, even a dark mode resume?
 - Pick from a variety of crisp and clear fonts
 - Easy to translate to your own language
@@ -29,19 +30,11 @@ You have complete control over what goes into your resume, how it looks, what co
 
 ### Screenshots
 
-<img src="https://rxresu.me/images/screenshots/screen-1.png" width="400px" />
+<img src="https://raw.githubusercontent.com/AmruthPillai/Reactive-Resume/develop/static/images/screenshots/screen-1.png" width="400px" />
 &nbsp;
-<img src="https://rxresu.me/images/screenshots/screen-3.png" width="400px" />
+<img src="https://raw.githubusercontent.com/AmruthPillai/Reactive-Resume/develop/static/images/screenshots/screen-3.png" width="400px" />
 &nbsp;
-<img src="https://rxresu.me/images/screenshots/screen-5.png" width="400px" />
-
-### Tech Stack
-
-- GatsbyJS
-- GraphQL
-- Firebase
-- Lodash
-- Ajv
+<img src="https://raw.githubusercontent.com/AmruthPillai/Reactive-Resume/develop/static/images/screenshots/screen-5.png" width="400px" />
 
 ### Translation
 
@@ -50,7 +43,7 @@ To translate the app, just fork the repository, go to `src/i18n/locales` and dup
 #### Languages Currently Supported
 
 - English
-- Kannada (ಕನ್ನಡ) (by @AmruthPillai)
+- Kannada (ಕನ್ನಡ)
 
 ### Donation
 
@@ -60,10 +53,10 @@ I try to do what I can, but if you found the app helpful, or you're in a better 
 
 ### Appreciation
 
-Thank you to everyone who made this project possible, including the many users who voiced their opinions, created issues and PRs to the original Reactive Resume project, and helped me along the way to make this a reality. I hope I find your support in this version too! :)
+Thank you to everyone who made this project possible, including the many users who voiced their opinions, created issues and PRs to the original Reactive Resume project, and helped me along the way to make this a reality.
 
 ---
 
-![](https://media.giphy.com/media/sp685iuIEGuys/source.gif)
+![The Great Gatsby](https://camo.githubusercontent.com/a615c7e1ef9a850f5427cdc153186763305bb853/68747470733a2f2f692e696d6775722e636f6d2f4472386a3569762e676966)
 
 ###### Made with Love by [Amruth Pillai](https://amruthpillai.com/)
