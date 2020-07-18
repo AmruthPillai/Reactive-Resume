@@ -88,7 +88,7 @@ I try to do what I can, but if you found the app helpful, or you're in a better 
 
 ##### Financial Supporters that help Reactive Resume thrive:
 
-- Leon Yuan
+- Leon Yuan ([@LeonY1](https://github.com/LeonY1))
 
 ### Changelog
 
