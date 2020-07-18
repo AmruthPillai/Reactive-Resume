@@ -38,12 +38,47 @@ You have complete control over what goes into your resume, how it looks, what co
 
 ### Translation
 
-To translate the app, just fork the repository, go to `src/i18n/locales` and duplicate the `en.json` file to a new file `your-lang-code.json` and translate all of the strings inside. It's a simple process that would take just a few minutes, and by contributing, your name could also be added down below as a contributor!
+To translate the app, just fork the repository, go to `src/i18n/locales` and duplicate the `en.json` file to a new file `your-lang-code.json` and translate all of the strings inside. It's a simple process that would take just a few minutes, and by contributing, your name could also be added down below as a contributor.
+
+For those of you familiar with the Crowdin Platform, you could do that too and just head to http://crowdin.com/project/reactive-resume/ to translate the app over there. They have a great interface that helps you navigate through various strings and manage translations.
 
 #### Languages Currently Supported
 
 - English
 - Kannada (ಕನ್ನಡ)
+
+### Building from Source
+
+Want to run your own instance of Reactive Resume? You are very much free to do so. The requirements to build from source are:
+- NodeJS/NPM
+- A Firebase Project
+
+1. First, clone this project repository
+```
+git clone https://github.com/AmruthPillai/Reactive-Resume.git
+cd Reactive-Resume
+```
+
+2. Run npm install to install dependencies for the project
+```
+npm install
+```
+
+3. Create a `.env` file and fill it with your Firebase credentials
+```
+FIREBASE_APIKEY=""
+FIREBASE_APPID=""
+FIREBASE_AUTHDOMAIN=""
+FIREBASE_DATABASEURL=""
+FIREBASE_MEASUREMENTID=""
+FIREBASE_MESSAGINGSENDERID=""
+FIREBASE_PROJECTID=""
+FIREBASE_STORAGEBUCKET=""
+```
+
+4. Run `npm run start` to run the development server or `npm run build` to build the production app.
+
+And that's it! 🎉
 
 ### Donation
 
