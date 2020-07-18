@@ -46,6 +46,7 @@ For those of you familiar with the Crowdin Platform, you could do that too and j
 
 - English
 - Kannada (ಕನ್ನಡ)
+- Spanish (Español) (by [@jrgonzalezrios](https://github.com/jrgonzalezrios))
 
 ### Building from Source
 

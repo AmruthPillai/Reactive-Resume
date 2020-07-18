@@ -11,6 +11,10 @@ const languages = [
     code: 'kn',
     name: 'Kannada (ಕನ್ನಡ)',
   },
+  {
+    code: 'es',
+    name: 'Spanish (Español)',
+  },
 ];
 
 i18n.use(initReactI18next).init({

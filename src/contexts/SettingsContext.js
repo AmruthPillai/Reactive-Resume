@@ -1,5 +1,4 @@
 import i18next from 'i18next';
-import moment from 'moment';
 import React, { createContext, memo, useEffect, useState } from 'react';
 import themeConfig from '../data/themeConfig';
 
@@ -35,7 +34,6 @@ const SettingsProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem('language', language);
     i18next.changeLanguage(language);
-    moment.locale(language);
   }, [language]);
 
   return (
