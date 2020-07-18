@@ -88,7 +88,7 @@ const Actions = ({ id }) => {
       <div className={styles.container}>
         <h5>{t('builder.actions.share.heading')}</h5>
 
-        <p className="leading-loose">{t('builder.actions.export.text')}</p>
+        <p className="leading-loose">{t('builder.actions.share.text')}</p>
 
         <div>
           <Input
