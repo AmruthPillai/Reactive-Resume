@@ -1,0 +1,249 @@
+{
+  "shared": {
+    "appName": "Reactive Resume",
+    "shortDescription": "Un generador de curriculum vitae gratis y de código abierto.",
+    "forms": {
+      "name": "Nombre",
+      "title": "Título",
+      "subtitle": "Subtítulo",
+      "required": "requerido",
+      "website": "Sitio Web",
+      "date": "Fecha",
+      "position": "Puesto de trabajo",
+      "startDate": "Fecha de inicio",
+      "endDate": "Fecha de finalización",
+      "address": "Dirección",
+      "phone": "Número de teléfono",
+      "email": "Dirección de correo electrónico",
+      "summary": "Resumen",
+      "markdown": "Este bloque de texto soporta <1>markdown</1>.",
+      "validation": {
+        "min": "Por favor, introduce al menos {{number}} caracteres.",
+        "dateRange": "Fecha de finalización debe ser posterior a la fecha de inicio.",
+        "email": "Debe ser una cuenta de correo electrónico válida.",
+        "required": "Este es un campo obligatorio.",
+        "url": "Debe ser una URL válida."
+      }
+    },
+    "buttons": {
+      "add": "Agregar",
+      "edit": "Editar",
+      "cancel": "Cancelar",
+      "delete": "Eliminar",
+      "loading": "Cargando...",
+      "confirmation": "¿Estás seguro(a)?",
+      "login": "Ingresar",
+      "logout": "Cerrar sesión"
+    }
+  },
+  "landing": {
+    "hero": {
+      "goToApp": "Ir a la app"
+    }
+  },
+  "dashboard": {
+    "title": "Panel de Control",
+    "createResume": "Crear currículum",
+    "editResume": "Editar currículum",
+    "lastUpdated": "Última actualización {{timestamp}}",
+    "toasts": {
+      "deleted": "{{name}} fue eliminado correctamente"
+    },
+    "buttons": {
+      "duplicate": "Duplicar",
+      "rename": "Renombrar"
+    },
+    "helpText": "Vas a crear un nuevo currículum desde cero, pero primero, vamos a darle un nombre. Este puede ser el nombre del rol al que quieres solicitarlo, o si estás haciendo un currículum vitae para un amigo, puedes llamarlo Currículum de Alex."
+  },
+  "builder": {
+    "toasts": {
+      "formErrors": "Puede que necesite rellenar todos los campos requeridos antes de enviar este formulario.",
+      "doesNotExist": "El currículo que buscaba ya no existe, o ¿tal vez nunca existió?",
+      "loadDemoData": "¿No estás seguro de dónde empezar? Intenta cargar datos de demostración para ver lo que Reactive Resume tiene para ofrecer."
+    },
+    "sections": {
+      "heading": "Encabezado",
+      "profile": "Mi Perfil",
+      "social": "Red social",
+      "objective": "Objetivo",
+      "work": "Experiencia De Trabajo",
+      "education": "Educación",
+      "project": "Proyecto",
+      "projects": "Proyectos",
+      "award": "Premio",
+      "awards": "Premios",
+      "certification": "Certificación",
+      "certifications": "Certificaciones",
+      "skill": "Habilidad",
+      "skills": "Habilidades",
+      "hobby": "Pasatiempo",
+      "hobbies": "Pasatiempos",
+      "language": "Lenguaje",
+      "languages": "Lenguajes",
+      "reference": "Referencia",
+      "references": "Referencias",
+      "templates": "Plantillas",
+      "layout": "Estilo",
+      "colors": "Colores",
+      "fonts": "Tipografías",
+      "actions": "Acciones",
+      "settings": "Preferencias",
+      "about": "Acerca de"
+    },
+    "profile": {
+      "photograph": "Fotografía",
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "address": {
+        "line1": "Domicilio - Línea 1",
+        "line2": "Dirección - Línea 2",
+        "city": "Ciudad",
+        "pincode": "Código Pin"
+      }
+    },
+    "social": {
+      "network": "Red",
+      "username": "Nombre de usario",
+      "url": "URL"
+    },
+    "work": {
+      "company": "Compañía"
+    },
+    "education": {
+      "institution": "Institución",
+      "field": "Campo de Estudio",
+      "degree": "Tipo de Grado",
+      "gpa": "GPA"
+    },
+    "awards": {
+      "awarder": "Adjudicador"
+    },
+    "certifications": {
+      "issuer": "Emisor"
+    },
+    "skills": {
+      "level": "Nivel"
+    },
+    "languages": {
+      "fluency": "Fluidez"
+    },
+    "layout": {
+      "block": "Bloque",
+      "reset": "Restablecer Diseño",
+      "text": "Esta plantilla soporta {{count}} bloques."
+    },
+    "colors": {
+      "primary": "Color principal",
+      "text": "Color del texto",
+      "background": "Color del fondo"
+    },
+    "actions": {
+      "import": {
+        "heading": "Importa tu Resumen",
+        "text": "Puede importar su información de varias fuentes como JSON Resume o su LinkedIn para autorrellenar la mayor parte de los datos de su currículum.",
+        "button": "Importar"
+      },
+      "export": {
+        "heading": "Exporta tu Resume",
+        "text": "Exportar su currículum como PDF para compartir con los reclutadores o un JSON que podrá importar de nuevo a esta aplicación en otro equipo.",
+        "button": "Exportar"
+      },
+      "share": {
+        "heading": "Comparte tu Resumen",
+        "text": "El enlace de abajo será accesible públicamente si usted decide compartirlo, y los espectadores verían la última versión de su currículum en cualquier momento."
+      },
+      "loadDemoData": {
+        "text": "¿No está claro qué hacer con una página en blanco nueva? Carga algunos datos de demostración para ver cómo debería verse un currículum vitae y puedes empezar a editar desde allí.",
+        "button": "Cargar datos de demostración"
+      },
+      "resetEverything": {
+        "text": "¿Piensas que has hecho demasiados errores? No te preocupes, restablece todo con un solo clic, pero ten cuidado si no hay copias de seguridad.",
+        "button": "Restablecer Todo"
+      }
+    },
+    "settings": {
+      "theme": "Tema",
+      "language": "Lenguaje",
+      "translate": "Si quieres contribuir proporcionando traducciones en tu idioma, <1>por favor visita este enlace</1>.",
+      "dangerZone": {
+        "heading": "Zona de Peligro",
+        "text": "Si deseas eliminar tu cuenta y borrar todos sus currículos, está a sólo un botón de distancia. Por favor, ten cuidado, ya que este es un proceso irreversible.",
+        "button": "Eliminar Cuenta"
+      }
+    },
+    "about": {
+      "donate": {
+        "heading": "Donar a Reactive Resume",
+        "text": "Intento hacer lo que puedo, pero si encuentras la aplicación útil, o estás en una mejor posición que los demás que dependen de este proyecto para su primer trabajo, <1>por favor considera donar tan solo $5 para ayudar a mantener vivo el proyecto</1> :)",
+        "button": "Cómprame un café!"
+      },
+      "bugFeature": {
+        "heading": "¿Errores? ¿Solicitud de características?",
+        "text": "¿Algo que detiene su progreso de hacer un currículum? Encontró un error molesto que no se cerrará? Hable sobre ello en la sección de incidencias de GitHub usando las siguientes acciones.",
+        "button": "Votar por un problema"
+      },
+      "appreciate": {
+        "heading": "¿Te ha gustado Reactive Resume?",
+        "text": "Nunca me canso de escuchar historias de cómo esta aplicación ayudó a la gente, y si te ayudó, o acabas de encontrar Reactive Resume como una herramienta increíble, dejame saber. Puedes comunicarte conmigo en mi sitio web."
+      },
+      "sourceCode": {
+        "heading": "Código Fuente",
+        "text": "¿Quieres ejecutar el proyecto desde su fuente? ¿Eres un desarrollador dispuesto a contribuir al desarrollo de código abierto de este proyecto? Haz clic en el botón de abajo.",
+        "button": "Repositorio de GitHub"
+      },
+      "footer": "Hecho con amor por <1>Amruth Pillai</1>"
+    },
+    "tooltips": {
+      "uploadPhotograph": "Subir Fotografía",
+      "backToDashboard": "Volver al Panel de control"
+    },
+    "emptyList": "Esta lista esta vacia."
+  },
+  "modals": {
+    "auth": {
+      "whoAreYou": "¿Quién eres?",
+      "welcome": "Bienvenido, {{name}}!",
+      "loggedOutText": "Reactive Resume necesita saber quién eres para que pueda autenticarte de forma segura en la aplicación y mostrarte sólo tu información. Una vez que estés, puedes comenzar a construir tu currículum, editarlo para agregar nuevas habilidades o compartirlo con el mundo!",
+      "loggedInText": "Impresionante. Ahora que te has autenticado, podemos continuar con la verdadera razón por la que estás aquí. ¡Haz clic en el botón Ir a la aplicación para comenzar a construir tu currículum!",
+      "buttons": {
+        "google": "Iniciar sesión con Google",
+        "anonymous": "Iniciar sesión anónimamente"
+      }
+    },
+    "import": {
+      "button": "Seleccionar archivo",
+      "reactiveResume": {
+        "heading": "Importar desde Reactive Resume",
+        "text": "Reactive Resume tiene su propio formato de esquema para aprovechar al máximo todas las capacidades personalizables que tiene para ofrecer. Si quieres importar una copia de seguridad de tu currículum hecho con esta aplicación, simplemente sube el archivo usando el botón de abajo."
+      },
+      "jsonResume": {
+        "heading": "Importar desde JSON Resume",
+        "text": "JSON Resume es un estándar abierto para la estructura de esquema reanudado. Si usted es uno de los muchos entusiastas que tienen su currículum listo en este formato, todo lo que se necesita con un solo clic para empezar con Reactive Resume."
+      },
+      "linkedIn": {
+        "heading": "Importar desde LinkedIn",
+        "text": "Puede importar un JSON que fue exportado desde Reactive Resume haciendo clic en el botón de abajo y seleccionando el archivo apropiado."
+      }
+    },
+    "export": {
+      "printDialog": {
+        "heading": "Usar diálogo de impresión del navegador",
+        "text": "Para aquellos de ustedes que desean una solución rápida, no es necesario que busque más allá de su navegador. Todo lo que tiene que hacer es presionar Ctrl/Cmd + P y abrir el diálogo de impresión en su navegador y imprimir su currículum vitae inmediatamente.",
+        "button": "Imprimir Resume"
+      },
+      "downloadPDF": {
+        "heading": "Descargar PDF",
+        "text": "Estas opciones le permiten imprimir una sola página, versión sin restricciones de su currículum vitae, perfecta para aquellos que tienen mucho contenido. Alternativamente, puede descargar una versión de varias páginas de su currículum con un solo clic.",
+        "buttons": {
+          "single": "Resume en una sola página",
+          "multi": "Resume en varias páginas"
+        }
+      },
+      "jsonFormat": {
+        "heading": "Exportar a formato JSON",
+        "text": "También puede exportar sus datos a formato JSON para su mantenimiento seguro de manera que pueda importarlos fácilmente a Reactive Resume cuando quiera editar o generar un currículum.",
+        "button": "Exportar a JSON"
+      }
+    }
+  }
+}
