@@ -3,6 +3,7 @@ import { isEmpty, isFunction } from 'lodash';
 import React, { memo, useContext, useEffect, useRef, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useTranslation } from 'react-i18next';
+import { toast } from 'react-toastify';
 import Button from '../components/shared/Button';
 import ModalContext from '../contexts/ModalContext';
 import { useDispatch } from '../contexts/ResumeContext';
@@ -46,7 +47,9 @@ const DataModal = ({
   const onSubmit = async (newData) => {
     setLoading(true);
 
-    if (isEmpty(await validateForm())) {
+    const errors = await validateForm();
+
+    if (isEmpty(errors)) {
       if (isEditMode) {
         if (data !== newData) {
           isFunction(onEdit)
@@ -75,6 +78,9 @@ const DataModal = ({
 
       setLoading(false);
       modalRef.current.handleClose();
+    } else {
+      toast.error(t('builder.toasts.formErrors'));
+      setLoading(false);
     }
   };
 
