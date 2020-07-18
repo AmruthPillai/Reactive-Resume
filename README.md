@@ -42,7 +42,7 @@ To translate the app, just fork the repository, go to `src/i18n/locales` and dup
 
 For those of you familiar with the Crowdin Platform, you could do that too and just head to http://crowdin.com/project/reactive-resume/ to translate the app over there. They have a great interface that helps you navigate through various strings and manage translations.
 
-#### Languages Currently Supported
+##### Languages Currently Supported
 
 - English
 - Kannada (ಕನ್ನಡ)
@@ -85,6 +85,10 @@ And that's it! 🎉
 I try to do what I can, but if you found the app helpful, or you're in a better position than the others who depend on this project for their first job, please consider donating as little as $5 to help keep the project alive :)
 
 #### https://www.buymeacoffee.com/AmruthPillai
+
+##### Financial Supporters that help Reactive Resume thrive:
+
+- Leon Yuan
 
 ### Changelog
 
