@@ -48,7 +48,7 @@ const Celebi = ({ data }) => {
       backgroundColor: `rgba(${r}, ${g}, ${b}, 0.1)`,
     },
     rightSection: {
-      top: '160px',
+      marginTop: '160px',
     },
   };
 

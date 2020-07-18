@@ -8,60 +8,50 @@ const Screenshots = () => {
     query {
       screen1: file(relativePath: { eq: "screenshots/screen-1.png" }) {
         childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid
+          original {
+            src
           }
-          fixed(width: 300) {
+          fixed(width: 320) {
             ...GatsbyImageSharpFixed
           }
         }
       }
       screen2: file(relativePath: { eq: "screenshots/screen-2.png" }) {
         childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid
+          original {
+            src
           }
-          fixed(width: 300) {
+          fixed(width: 320) {
             ...GatsbyImageSharpFixed
           }
         }
       }
       screen3: file(relativePath: { eq: "screenshots/screen-3.png" }) {
         childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid
+          original {
+            src
           }
-          fixed(width: 300) {
+          fixed(width: 320) {
             ...GatsbyImageSharpFixed
           }
         }
       }
       screen4: file(relativePath: { eq: "screenshots/screen-4.png" }) {
         childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid
+          original {
+            src
           }
-          fixed(width: 300) {
+          fixed(width: 320) {
             ...GatsbyImageSharpFixed
           }
         }
       }
       screen5: file(relativePath: { eq: "screenshots/screen-5.png" }) {
         childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid
+          original {
+            src
           }
-          fixed(width: 300) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      screen6: file(relativePath: { eq: "screenshots/screen-6.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid
-          }
-          fixed(width: 300) {
+          fixed(width: 320) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -79,8 +69,8 @@ const Screenshots = () => {
             target="_blank"
             rel="noreferrer"
             className={styles.screenshot}
-            key={screenshots[x].childImageSharp.fluid.src}
-            href={screenshots[x].childImageSharp.fluid.src}
+            key={screenshots[x].childImageSharp.original.src}
+            href={screenshots[x].childImageSharp.original.src}
           >
             <span className="sr-only">Reactive Resume Screenshot</span>
             <GatsbyImage

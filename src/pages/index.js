@@ -2,9 +2,13 @@ import { Link } from '@reach/router';
 import React, { memo } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
+import { FaUserSecret } from 'react-icons/fa';
+import { GiWalkingBoot } from 'react-icons/gi';
+import { IoIosRocket } from 'react-icons/io';
+import { RiRefreshLine } from 'react-icons/ri';
 import Hero from '../components/landing/Hero';
-import Wrapper from '../components/shared/Wrapper';
 import Screenshots from '../components/landing/Screenshots';
+import Wrapper from '../components/shared/Wrapper';
 
 const Home = () => {
   const { t } = useTranslation();
@@ -30,8 +34,11 @@ const Home = () => {
 
         <Screenshots />
 
-        <div className="pt-8">
-          <Feature title="Create a resume that’s worthy of who you are.">
+        <div className="pt-8 grid lg:grid-cols-2 lg:col-gap-10">
+          <Feature
+            icon={IoIosRocket}
+            title="Create a resume that’s worthy of who you are."
+          >
             Keep up with the latest trends in resume design without having to
             start from scratch. With new templates being designed every week and
             having made it that easy to design your own templates and submit
@@ -39,7 +46,10 @@ const Home = () => {
             friend’s resume again.
           </Feature>
 
-          <Feature title="Updating your resume shouldn’t be a chore.">
+          <Feature
+            icon={RiRefreshLine}
+            title="Updating your resume shouldn’t be a chore."
+          >
             The biggest problem I’ve faced was when I had to update my resume
             when I learned a new skill or found a new job. The ever-shifting
             layouts and inconsistency with design over a number of years made it
@@ -47,7 +57,10 @@ const Home = () => {
             easy as few clicks.
           </Feature>
 
-          <Feature title="Kickstarting your career shouldn’t come at a cost.">
+          <Feature
+            icon={GiWalkingBoot}
+            title="Kickstarting your career shouldn’t come at a cost."
+          >
             There are brilliant alternatives to this app like Novoresume and
             Zety , but they come at a cost, mainly because of the time the
             developers and the marketing they had to incur to make the product.
@@ -56,7 +69,10 @@ const Home = () => {
             a resume to bootstrap their career.
           </Feature>
 
-          <Feature title="Your data is your data, none of my data.">
+          <Feature
+            icon={FaUserSecret}
+            title="Your data is your data, none of my data."
+          >
             You must be thinking, if you&apos;re not paying for the product,
             then you are the product. Or, at least your data is?{' '}
             <strong>Well, this is the exception</strong>. Your data is your own,
@@ -112,10 +128,13 @@ const Home = () => {
   );
 };
 
-const Feature = ({ title, children }) => {
+const Feature = ({ icon: Icon, title, children }) => {
   return (
     <div className="mt-16">
-      <div className="text-3xl">{title}</div>
+      <div className="flex items-center">
+        <Icon size="18px" className="text-primary-900 mr-4" />
+        <div className="text-3xl">{title}</div>
+      </div>
       <p className="mt-6 text-lg leading-loose">{children}</p>
     </div>
   );

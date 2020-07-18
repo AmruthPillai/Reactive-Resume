@@ -48,6 +48,11 @@ section {
   @apply leading-relaxed whitespace-pre-wrap;
 }
 
+.markdown ul {
+  list-style: disc;
+  list-style-position: inside;
+}
+
 @page {
   margin: 0;
 }
