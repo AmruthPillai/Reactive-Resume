@@ -1,0 +1,249 @@
+{
+  "shared": {
+    "appName": "Reactive Resume",
+    "shortDescription": "Ücretsiz ve açık kaynak CV oluşturucu.",
+    "forms": {
+      "name": "Ad",
+      "title": "Başlık",
+      "subtitle": "Alt Başlık",
+      "required": "Gerekli",
+      "website": "Web Sitesi",
+      "date": "Tarih",
+      "position": "Pozisyon",
+      "startDate": "Başlangıç Tarihi",
+      "endDate": "Bitiş Tarihi",
+      "address": "Adres",
+      "phone": "Telefon Numarası",
+      "email": "Email Adresi",
+      "summary": "Özet",
+      "markdown": "Bu yazı alanı <1>markdown</1> destekliyor.",
+      "validation": {
+        "min": "Lütfen en az {{number}} karakter giriniz.",
+        "dateRange": "Bitiş Tarihi, Başlangıç Tarihi'nden sonra olmalıdır.",
+        "email": "Geçerli bir email adresi olmak zorundadır.",
+        "required": "Zorunlu alan.",
+        "url": "Geçerli bir URL olmalıdır."
+      }
+    },
+    "buttons": {
+      "add": "Ekle",
+      "edit": "Düzenle",
+      "cancel": "İptal",
+      "delete": "Sil",
+      "loading": "Yükleniyor...",
+      "confirmation": "Emin misiniz?",
+      "login": "Giriş",
+      "logout": "Çıkış"
+    }
+  },
+  "landing": {
+    "hero": {
+      "goToApp": "Uygulamaya Git"
+    }
+  },
+  "dashboard": {
+    "title": "Panel",
+    "createResume": "CV Oluştur",
+    "editResume": "CV Düzenle",
+    "lastUpdated": "Son Güncelleme {{timestamp}}",
+    "toasts": {
+      "deleted": "{{name}} başarılı bir şekilde silindi"
+    },
+    "buttons": {
+      "duplicate": "Çoğalt",
+      "rename": "Yeniden Adlandır"
+    },
+    "helpText": "En baştan yeni bir CV oluşturuyor olacaksınız, ama öncelikle CV'nize bir isim verin. Bu isim başvurmak istediğiniz pozisyonla ilgili olabilir, veya bir arkadaşınız için CV oluşturuyorsanız, Ali'nin CV'si diyebilirsiniz."
+  },
+  "builder": {
+    "toasts": {
+      "formErrors": "Formu göndermeden önce bütün gerekli alanları doldurmanız gerekebilir.",
+      "doesNotExist": "Aradığınız CV artık mevcut değil... Ya da hiç olmadı?",
+      "loadDemoData": "Nereden başlayacağınızı bilmiyor musunuz? Demo veri yüklemeyi deneyin ve Reactive Resume'nin sunduklarına bakın."
+    },
+    "sections": {
+      "heading": "Başlık",
+      "profile": "Profil",
+      "social": "Sosyal Ağ",
+      "objective": "Amaç",
+      "work": "İş Tecrübesi",
+      "education": "Eğitim",
+      "project": "Proje",
+      "projects": "Projeler",
+      "award": "Ödül",
+      "awards": "Ödüller",
+      "certification": "Sertifika",
+      "certifications": "Sertifikalar",
+      "skill": "Yetenek",
+      "skills": "Yetenekler",
+      "hobby": "Hobi",
+      "hobbies": "Hobiler",
+      "language": "Dil",
+      "languages": "Diller",
+      "reference": "Referans",
+      "references": "Referanslar",
+      "templates": "Şablonlar",
+      "layout": "Düzen",
+      "colors": "Renkler",
+      "fonts": "Fontlar",
+      "actions": "Eylemler",
+      "settings": "Ayarlar",
+      "about": "Hakkında"
+    },
+    "profile": {
+      "photograph": "Fotoğraf",
+      "firstName": "Ad",
+      "lastName": "Soyad",
+      "address": {
+        "line1": "Adres Satırı 1",
+        "line2": "Adres Satırı 2",
+        "city": "Şehir",
+        "pincode": "Posta Kodu"
+      }
+    },
+    "social": {
+      "network": "Ağ",
+      "username": "Kullanıcı Adı",
+      "url": "URL"
+    },
+    "work": {
+      "company": "Şirket"
+    },
+    "education": {
+      "institution": "Kurum",
+      "field": "Alan",
+      "degree": "Diploma Türü",
+      "gpa": "GPA"
+    },
+    "awards": {
+      "awarder": "Ödülü Veren"
+    },
+    "certifications": {
+      "issuer": "Sertifika veren"
+    },
+    "skills": {
+      "level": "Düzey"
+    },
+    "languages": {
+      "fluency": "Akıcılık"
+    },
+    "layout": {
+      "block": "Alan",
+      "reset": "Düzeni Sıfırla",
+      "text": "Bu şablon {{count}} alanı destekliyor."
+    },
+    "colors": {
+      "primary": "Ana Renk",
+      "text": "Yazı Rengi",
+      "background": "Arkaplan Rengi"
+    },
+    "actions": {
+      "import": {
+        "heading": "CV'nizi İçeri Aktarın",
+        "text": "Bilgilerinizi JSON Resume ya da LinkedIn gibi çeşitli kaynaklardan içeri aktararak CV'nizdeki verilerin çoğunu otomatik olarak doldurabilirsiniz.",
+        "button": "İçeri Aktar"
+      },
+      "export": {
+        "heading": "CV'nizi Dışarı Aktarın",
+        "text": "CV'nizi işverenlerle paylaşmak üzere PDF olarak, ya da başka bir bilgisayarda bu uygulamada kullanmak üzere JSON olarak dışarı aktarın.",
+        "button": "Dışarı Aktar"
+      },
+      "share": {
+        "heading": "CV'nizi Paylaşın",
+        "text": "Aşağıdaki linki paylaşmayı seçtiğiniz takdirde açıkça ulaşılabilir olacaktır ve görüntüleyenler CV'nizin en son versiyonuna her hangi bir zamanda ulaşabilecektir."
+      },
+      "loadDemoData": {
+        "text": "Yeni boş bir sayfa ile ne yapacağınızı bilemiyor musunuz? Bir CV'nin nasıl görünmesi gerektiğini görmek için demo veri yükleyin ve sonrasında düzenlemeye başlayın.",
+        "button": "Demo Veri Yükle"
+      },
+      "resetEverything": {
+        "text": "Çok fazla hata yaptığınızı mı düşünüyorsunuz? Endişelenmeyin, her şeyi tek bir tık ile temizleyebilirsiniz, fakat yedeklemeniz yoksa dikkatli olun.",
+        "button": "Her Şeyi Sıfırla"
+      }
+    },
+    "settings": {
+      "theme": "Tema",
+      "language": "Dil",
+      "translate": "Kendi dilinizde çeviri sağlayarak katkıda bulunmak isterseniz, <1>lütfen bu linki ziyaret edin</1>.",
+      "dangerZone": {
+        "heading": "Tehlike Bölgesi",
+        "text": "Eğer hesabınızı ve tüm CV'lerinizi silmek istiyorsanız sadece bir buton uzağınızda. Bu geri döndürülemez bir işlem olduğundan, lütfen dikkatli olun.",
+        "button": "Hesabı Sil"
+      }
+    },
+    "about": {
+      "donate": {
+        "heading": "Reactive Resume'ye Bağış Yap",
+        "text": "Elimden geleni yapmaya çalışıyorum, fakat uygulamayı yararlı bulduysanız, ya da ilk işleri için bu uygulamaya ihtiyaç duyan diğerlerinden daha iyi bir durumdaysanız, <1>lütfen uygulamayı hayatta tutmak için 5$ gibi ufak bir meblağ bağışlamayı gözden geçirin</1> :)",
+        "button": "Bana kahve ısmarlayın!"
+      },
+      "bugFeature": {
+        "heading": "Bug? Özellik İsteği?",
+        "text": "CV oluşturma sürecinizi aksatan bir şey mi var? Sinir bozucu bir bug mı buldunuz? Aşağıdaki eylemleri kullanarak GitHub Issues kısmında bundan bahsedin.",
+        "button": "Sorun Bildir"
+      },
+      "appreciate": {
+        "heading": "Reactive Resume'yi Sevdiniz Mi?",
+        "text": "Bu uygulamanın insanlara nasıl yardımcı olduğu hakkında hikayeler duymaktan sıkılmıyorum, ya da sadece Reactive Resume'nin ne kadar etkileyici bir uygulama olduğunu bana söylemek istiyorsanız, haberim olsun. Bana web sitemden ulaşabilirsiniz."
+      },
+      "sourceCode": {
+        "heading": "Kaynak Kodu",
+        "text": "Projeyi kaynağından mı çalıştırmak istiyorsunuz? Bu projenin açık kaynak gelişimine katkı yapmak isteyen bir geliştirici misiniz? Aşağıdaki butona tıklayın",
+        "button": "GitHub Repo"
+      },
+      "footer": "<1>Amruth Pillai</1> tarafından sevgi ile yapıldı."
+    },
+    "tooltips": {
+      "uploadPhotograph": "Fotoğraf Yükle",
+      "backToDashboard": "Panele Dön"
+    },
+    "emptyList": "Bu liste boş."
+  },
+  "modals": {
+    "auth": {
+      "whoAreYou": "Siz kimsiniz?",
+      "welcome": "Hoşgeldin, {{name}}!",
+      "loggedOutText": "Reactive Resume'nin kimliğinizi doğrulaması ve size sadece sizin bilgilerini gösterebilmesi için kim olduğunuzu bilmesi gerekiyor. Giriş yaptığınızda CV'nizi oluşturmaya, yeni yetenekler eklemek üzere düzenlemeye ya da onu dünya ile paylaşmaya başlayabilirsiniz!",
+      "loggedInText": "Harika. Artık kimliğinizi doğruladığınıza göre, asıl burada olma sebebinize gelebiliriz. CV'nizi oluşturmaya başlamak için Uygulamaya Git butonuna tıklayın!",
+      "buttons": {
+        "google": "Google ile Giriş Yap",
+        "anonymous": "Anonim Olarak Giriş Yap"
+      }
+    },
+    "import": {
+      "button": "Dosya Seç",
+      "reactiveResume": {
+        "heading": "Reactive Resume'den İçeri Aktar",
+        "text": "Reactive Resume'nin, sunduğu tüm kişiselleştirilebilir kabiliyetlerden en iyi şekilde faydalanabilmek için kendi şema formatı vardır. Eğer bu uygulama ile yapılmış bir CV'nizin yedeğini içeri aktarmak isterseniz, aşağıdaki butona tıklayarak dosyayı yükleyin."
+      },
+      "jsonResume": {
+        "heading": "JSON Resume'den İçeri Aktar",
+        "text": "JSON Resume bir CV şema yapısı açık standartıdır. Eğer siz de CV'si bu formatta hazır olan birçok kişiden biriyseniz, Reactive Resume ile işe koyulmak için tek yapmanız gereken bir tıklamadır."
+      },
+      "linkedIn": {
+        "heading": "LinkedIn'den İçeri Aktar",
+        "text": "Reactive Resume'den dışarı aktarılmış bir JSON dosyasını içeri aktarmak için aşağıdaki butona tıklayarak uygun dosyayı seçebilirsiniz."
+      }
+    },
+    "export": {
+      "printDialog": {
+        "heading": "Tarayıcının Yazdır Penceresini Kullan",
+        "text": "Hızlı bir çözüm arayanların tarayıcılarından daha fazlasına ihtiyacı yok. Tek yapmanız gereken Ctrl/Cmd + P klavye kısayolu ile tarayıcınızda Yazdır penceresini açmak ve anında CV'nizi yazdırmak.",
+        "button": "CV Yazdır"
+      },
+      "downloadPDF": {
+        "heading": "PDF İndir",
+        "text": "Bu seçenekler, tek bir sayfa olarak CV'nizin eksiksiz bir versiyonunu yazdırmanıza olanak sağlar. Fazla içeriği olanlar için mükemmel. Alternatif olarak, bir tık ile CV'nizin çok sayfalı bir versiyonunu da indirebilirsiniz.",
+        "buttons": {
+          "single": "Tek Sayfa CV",
+          "multi": "Çok Sayfalı CV"
+        }
+      },
+      "jsonFormat": {
+        "heading": "JSON Formatında Dışarı Aktar",
+        "text": "Verilerinizi JSON formatında dışarı aktararak saklayabilir, dilediğiniz zaman yine Reactive Resume'de içeri aktararak kolayca düzenleme yapabilir, ya da yeni CV oluşturabilirsiniz.",
+        "button": "JSON Dışa Aktar"
+      }
+    }
+  }
+}
