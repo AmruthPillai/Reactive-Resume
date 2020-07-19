@@ -8,20 +8,24 @@ const languages = [
     name: 'English (US)',
   },
   {
-    code: 'kn',
-    name: 'Kannada (ಕನ್ನಡ)',
+    code: 'fi',
+    name: 'Finnish (Suomalainen)',
   },
   {
-    code: 'es',
-    name: 'Spanish (Español)',
+    code: 'fr',
+    name: 'French (Français)',
+  },
+  {
+    code: 'kn',
+    name: 'Kannada (ಕನ್ನಡ)',
   },
   {
     code: 'ptBr',
     name: 'Portuguese (Brazilian)',
   },
   {
-    code: 'fi',
-    name: 'Finnish (Suomalainen)',
+    code: 'es',
+    name: 'Spanish (Español)',
   },
 ];
 
