@@ -15,6 +15,10 @@ const languages = [
     code: 'es',
     name: 'Spanish (Español)',
   },
+  {
+    code: 'ptBr',
+    name: 'Portuguese (Brazilian)',
+  },
 ];
 
 i18n.use(initReactI18next).init({
