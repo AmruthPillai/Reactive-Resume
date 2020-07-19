@@ -1,7 +1,7 @@
 {
   "shared": {
     "appName": "Reactive Resume",
-    "shortDescription": "Fabrication de CV en ligne, libre et gratuit",
+    "shortDescription": "Création de CV en ligne, libre et gratuit",
     "forms": {
       "name": "Nom",
       "title": "Titre",
@@ -96,7 +96,7 @@
       "lastName": "Nom",
       "address": {
         "line1": "Adresse (ligne 1)",
-        "line2": "Address (ligne 2)",
+        "line2": "Adresse (ligne 2)",
         "city": "Commune",
         "pincode": "Code postal"
       }
@@ -140,35 +140,35 @@
     "actions": {
       "import": {
         "heading": "Importer votre CV",
-        "text": "You can import your information from various sources like JSON Resume or your LinkedIn to autofill most of the data for your resume.",
+        "text": "Vous pouvez importer de sources diverses comme JSONResume ou LinkedIn, pour remplir automatiquement la plupart des champs.",
         "button": "Importer"
       },
       "export": {
         "heading": "Exporter votre CV",
-        "text": "Export your resume as a PDF to share with recruiters or a JSON that you will be able to import back onto this app on another computer.",
+        "text": "Exporter le CV en PDF afin de le partager avec les recruteurs, ou en un fichier JSON afin de l'importer à nouveau ici ou sur un autre ordinateur.",
         "button": "Exporter"
       },
       "share": {
         "heading": "Partager votre CV",
-        "text": "The link below will be accessible publicly if you choose to share it, and viewers would see the latest version of your resume at any time."
+        "text": "Le lien ci-dessous sera accessible publiquement si vous le partagez et pointera en permanence vers la dernière version de votre CV."
       },
       "loadDemoData": {
-        "text": "Unclear on what to do with a fresh blank page? Load some demo data to see how a resume should look and you can start editing from there.",
-        "button": "Load Demo Data"
+        "text": "Vous ne savez pas quoi faire avec cette page blanche ? Chargez une démo pour voir à quoi le CV peut ressembler, et éditez-le à partir de là.",
+        "button": "Charger une démo"
       },
       "resetEverything": {
-        "text": "Feels like you made too many mistakes? No worries, clear everything with just one click, but be careful if there are no backups.",
-        "button": "Reset Everything"
+        "text": "Vous avez fait trop d'erreurs ? Pas d'inquiétude, supprimez tout avec un seul clic. Attention, il n'y a pas de sauvegarde.",
+        "button": "Remise à zéro"
       }
     },
     "settings": {
-      "theme": "Theme",
-      "language": "Language",
+      "theme": "Thème",
+      "language": "Langue",
       "translate": "If you would like to contribute by providing translations in your language, <1>please visit this link</1>.",
       "dangerZone": {
-        "heading": "Danger Zone",
-        "text": "If you would like to delete your account and erase all your resumes, it’s just one button away. Please be wary as this is an irreversible process.",
-        "button": "Delete Account"
+        "heading": "Danger",
+        "text": "Pour supprimer votre compte et tous vos CV en un seul clic. Attention, c'est irréversible.",
+        "button": "Supprimer le compte"
       }
     },
     "about": {
@@ -194,31 +194,31 @@
       "footer": "Made with Love by <1>Amruth Pillai</1>"
     },
     "tooltips": {
-      "uploadPhotograph": "Upload Photograph",
-      "backToDashboard": "Go Back to Dashboard"
+      "uploadPhotograph": "Télécharger une photo",
+      "backToDashboard": "Revenir au tableau de bord"
     },
-    "emptyList": "This list is empty."
+    "emptyList": "Cette liste est vide."
   },
   "modals": {
     "auth": {
-      "whoAreYou": "Who are you?",
-      "welcome": "Welcome, {{name}}!",
-      "loggedOutText": "Reactive Resume needs to know who you are so it can securely authenticate you into the app and show you only your information. Once you are in, you can start building your resume, editing it to add new skills or sharing it with the world!",
-      "loggedInText": "Awesome. Now that you've authenticated yourself, we can get on with the real reason you're here. Click on the Go to App button to start building your resume!",
+      "whoAreYou": "Qui êtes-vous ?",
+      "welcome": "Bienvenue, {{name}}!",
+      "loggedOutText": "Reactive Resume souhaite vous connaître afin de vous authentifier pour sécuriser vos informations. Une fois connecté, vous pouvez éditer votre CV, ajouter des nouveaux items, et le partager avec qui vous voulez !",
+      "loggedInText": "Parfait. Maintenant que vous ̂êtes authentifié, vous pouvez commencer à créer votre CV. Cliquez sur le bouton Go To App pour commencer !",
       "buttons": {
-        "google": "Sign in with Google",
-        "anonymous": "Sign in Anonymously"
+        "google": "Se connecter avec Google",
+        "anonymous": "Se connecter de manière anonynme"
       }
     },
     "import": {
       "button": "Select File",
       "reactiveResume": {
-        "heading": "Import from Reactive Resume",
-        "text": "Reactive Resume has it's own schema format to make the most of all the customizable capabilities it has to offer. If you'd like to import a backup of your resume made with this app, just upload the file using the button below."
+        "heading": "Importer depuis Reactive Resume",
+        "text": "Reactive Resume a son propre format pour tirer profit au maximum de ses possibilités. Vous pouvez importer un fichier au format Reactive Resume avec le bouton ci-dessous."
       },
       "jsonResume": {
-        "heading": "Import from JSON Resume",
-        "text": "JSON Resume is an open standard for resume schema structure. If you are one of the many enthusiasts who have their resume ready in this format, all it takes it just one click to get started with Reactive Resume."
+        "heading": "Importer depuis JSON Resume",
+        "text": "JSON Resume est un format ouvert de structure de CV. Si vous l'utilisez, vous pouvez importer votre CV en un seul clic."
       },
       "linkedIn": {
         "heading": "Import from LinkedIn",
@@ -227,21 +227,21 @@
     },
     "export": {
       "printDialog": {
-        "heading": "Use Browser's Print Dialog",
-        "text": "For those of you who want a quick solution, you need not look any further than your browser. All you have to do is press Ctrl/Cmd + P and open up the print dialog on your browser and get your resume printed immediately.",
-        "button": "Print Resume"
+        "heading": "Boîte de dialogue d'impression du navigateur",
+        "text": "Une solution rapide : imprimer via votre navigateur en tapant Ctrl/Cmd+P.",
+        "button": "Imprimer CV"
       },
       "downloadPDF": {
-        "heading": "Download PDF",
-        "text": "These options allow you to print a single page, unconstrained version of your resume, perfect for those who have a lot of content. Alternatively, you could download a multi-page version of your resume as well with just one click.",
+        "heading": "Télécharger PDF",
+        "text": "Ces options permettent de télécharger un CV d'une seule page et non-résumé, parfait si vous avez beaucoup de contenu. Alternativment, vous pouvez aussi télécharger une version en plusieurs pages en un seul clic.",
         "buttons": {
-          "single": "Single Page Resume",
-          "multi": "Multi Page Resume"
+          "single": "CV en une seule page",
+          "multi": "CV en plusieurs pages"
         }
       },
       "jsonFormat": {
-        "heading": "Export to JSON Format",
-        "text": "You can also export your data into JSON format for safe keeping so that you can easily import it back into Reactive Resume whenever you want to edit or generate a resume.",
+        "heading": "Exporter au format JSON",
+        "text": "Vous pouvez aussi exporter vos données au format JSON afin de les conserver et pouvoir les importer à nouveau plus tard.",
         "button": "Export JSON"
       }
     }
