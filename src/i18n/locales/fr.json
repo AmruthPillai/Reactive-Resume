@@ -38,7 +38,7 @@
   },
   "landing": {
     "hero": {
-      "goToApp": "Go To App"
+      "goToApp": "Aller à l'App"
     }
   },
   "dashboard": {
@@ -59,7 +59,7 @@
     "toasts": {
       "formErrors": "Il se peut que vous deviez remplir tous les champs requis avant de soumettre ce formulaire",
       "doesNotExist": "Le CV recherché n'existe plus (ou pas ?)",
-      "loadDemoData": "Not sure where to begin? Try loading demo data to see what Reactive Resume has to offer."
+      "loadDemoData": "Vous ne savez pas où commencer? Essayez de charger les données de démonstration pour voir ce que Reactive Resume a à offrir."
     },
     "sections": {
       "heading": "En-t̂ête",
@@ -76,14 +76,14 @@
       "certifications": "Certifications",
       "skill": "Compétence",
       "skills": "Compétences",
-      "hobby": "Hobby",
-      "hobbies": "Hobbies",
+      "hobby": "Loisir",
+      "hobbies": "Passe-temps",
       "language": "Langue",
       "languages": "Langues",
       "reference": "Référence",
       "references": "Références",
-      "templates": "Templates",
-      "layout": "Layout",
+      "templates": "Modèles",
+      "layout": "Disposition",
       "colors": "Couleurs",
       "fonts": "Polices",
       "actions": "Actions",
@@ -128,14 +128,14 @@
       "fluency": "Aisance"
     },
     "layout": {
-      "block": "Block",
-      "reset": "Reset Layout",
-      "text": "This template supports {{count}} blocks."
+      "block": "Bloquer",
+      "reset": "Réinitialiser la Disposition",
+      "text": "Ce modèle prend en charge {{count}} blocs."
     },
     "colors": {
-      "primary": "Primary Color",
-      "text": "Text Color",
-      "background": "Background Color"
+      "primary": "Couleur primaire",
+      "text": "Couleur du texte",
+      "background": "Couleur de l'arrière plan"
     },
     "actions": {
       "import": {
@@ -164,7 +164,7 @@
     "settings": {
       "theme": "Thème",
       "language": "Langue",
-      "translate": "If you would like to contribute by providing translations in your language, <1>please visit this link</1>.",
+      "translate": "Si vous souhaitez contribuer en fournissant des traductions dans votre langue, <1>veuillez consulter ce lien</1>.",
       "dangerZone": {
         "heading": "Danger",
         "text": "Pour supprimer votre compte et tous vos CV en un seul clic. Attention, c'est irréversible.",
@@ -178,20 +178,20 @@
         "button": "Me payer un café !"
       },
       "bugFeature": {
-        "heading": "Bug? Feature Request?",
+        "heading": "Punaise? Demande de fonctionnalité?",
         "text": "Quelque chose vous bloque ? Un bug ? Vous pouvez en parler sur GitHub via le lien ci-dessous",
-        "button": "Raise an Issue"
+        "button": "Soulever une question"
       },
       "appreciate": {
         "heading": "Vous avez aimé Reactive Resume?",
         "text": "Je ne me lasse pas d'entendre vos anecdotes sur Reactive Resume. S'il vous a aidé, ou simplement si vous l'appréciez, vous pouvez me le faire savoir en me contactant sur mon site web."
       },
       "sourceCode": {
-        "heading": "Source Code",
-        "text": "Want to run the project from its source? Are you a developer willing to contribute to the open-source development of this project? Click the button below.",
-        "button": "GitHub Repo"
+        "heading": "Code source",
+        "text": "Vous souhaitez exécuter le projet depuis sa source? Êtes-vous un développeur prêt à contribuer au développement open-source de ce projet? Cliquez sur le bouton ci-dessous.",
+        "button": "Répertoire GitHub"
       },
-      "footer": "Made with Love by <1>Amruth Pillai</1>"
+      "footer": "Fabriqué avec amour par <1>Amruth Pillai</1>"
     },
     "tooltips": {
       "uploadPhotograph": "Télécharger une photo",
@@ -211,7 +211,7 @@
       }
     },
     "import": {
-      "button": "Select File",
+      "button": "Selectioner Fichier",
       "reactiveResume": {
         "heading": "Importer depuis Reactive Resume",
         "text": "Reactive Resume a son propre format pour tirer profit au maximum de ses possibilités. Vous pouvez importer un fichier au format Reactive Resume avec le bouton ci-dessous."
@@ -242,7 +242,7 @@
       "jsonFormat": {
         "heading": "Exporter au format JSON",
         "text": "Vous pouvez aussi exporter vos données au format JSON afin de les conserver et pouvoir les importer à nouveau plus tard.",
-        "button": "Export JSON"
+        "button": "Exportation de JSON"
       }
     }
   }
