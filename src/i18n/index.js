@@ -19,6 +19,10 @@ const languages = [
     code: 'ptBr',
     name: 'Portuguese (Brazilian)',
   },
+  {
+    code: 'fi',
+    name: 'Finnish (Suomalainen)',
+  },
 ];
 
 i18n.use(initReactI18next).init({
