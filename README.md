@@ -99,7 +99,7 @@ I try to do what I can, but if you found the app helpful, or you're in a better 
 #### 17th July 2020
 
 - Some Bugfixes
-- Added Kannaded Translation
+- Added Kannada Translation
 - Update to v2.0.0
 
 ### Appreciation
