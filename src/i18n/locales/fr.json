@@ -1,7 +1,7 @@
 {
   "shared": {
     "appName": "Reactive Resume",
-    "shortDescription": "Création de CV en ligne, libre et gratuit",
+    "shortDescription": "Création de CV en ligne – libre et gratuit",
     "forms": {
       "name": "Nom",
       "title": "Titre",
@@ -16,10 +16,10 @@
       "phone": "Numéro de téléphone",
       "email": "Adresse e-mail",
       "summary": "Résumé",
-      "markdown": "Ce bloc de texte supporte le <1>markdown</1>.",
+      "markdown": "Ce bloc de texte est compatible avec <1>markdown</1>.",
       "validation": {
         "min": "Merci d'entrer au minimum {{number}} caractères.",
-        "dateRange": "La date de fin doit être plus tard que la date de début",
+        "dateRange": "La date de fin doit être postérieure à la date de départ",
         "email": "L'adresse e-mail doit être valide.",
         "required": "Ce champ est requis.",
         "url": "L'URL doit être valide."
