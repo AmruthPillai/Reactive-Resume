@@ -1,6 +1,5 @@
 .container {
   z-index: 10;
-  box-shadow: var(--left-shadow);
   @apply w-full h-screen overflow-scroll p-8;
   @apply grid gap-8;
 }

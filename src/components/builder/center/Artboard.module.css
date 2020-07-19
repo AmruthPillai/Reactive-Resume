@@ -1,22 +1,9 @@
 @media screen {
   .container {
-    width: 210mm;
-    height: 297mm;
-    zoom: 0.5;
+    width: 794px;
+    min-height: 1122px;
     overflow: scroll;
     box-shadow: var(--shadow);
     @apply my-16 bg-white rounded;
-  }
-}
-
-@media screen and (min-width: 1366px) {
-  .container {
-    zoom: 0.65;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .container {
-    zoom: 0.8;
   }
 }
