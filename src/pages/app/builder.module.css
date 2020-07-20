@@ -1,33 +1,19 @@
 .container {
-  @apply w-screen h-screen grid grid-cols-10;
+  @apply relative h-screen w-screen overflow-hidden flex items-start justify-center;
 }
 
 .left {
-  @apply col-span-3;
+  width: calc(100vw / 4);
+  box-shadow: var(--left-shadow);
+  @apply bg-primary-50 absolute top-0 bottom-0 left-0 z-10;
 }
 
 .center {
-  @apply col-span-4 h-screen overflow-scroll bg-primary-100 grid justify-center items-center;
+  @apply relative z-0 h-screen overflow-scroll;
 }
 
 .right {
-  @apply col-span-3;
-}
-
-@media screen and (min-width: 1440px) {
-  .container {
-    @apply grid-cols-11;
-  }
-  
-  .left {
-    @apply col-span-3;
-  }
-  
-  .center {
-    @apply col-span-5;
-  }
-  
-  .right {
-    @apply col-span-3;
-  }
+  width: calc(100vw / 4);
+  box-shadow: var(--right-shadow);
+  @apply bg-primary-50 absolute top-0 bottom-0 right-0 z-10;
 }

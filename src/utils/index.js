@@ -1,5 +1,5 @@
 import { get, isEmpty } from 'lodash';
-import moment from 'moment';
+import moment from 'moment/min/moment-with-locales';
 import { useTranslation } from 'react-i18next';
 
 export const getModalText = (isEditMode, type) => {
@@ -22,10 +22,19 @@ export const isFileImage = (file) => {
   return file && acceptedImageTypes.includes(file.type);
 };
 
-export const formatDateRange = ({ startDate, endDate }) =>
-  `${moment(startDate).format('MMMM Y')} — ${
-    moment(endDate).isValid() ? moment(endDate).format('MMMM Y') : 'Present'
-  }`;
+export const formatDateRange = ({ startDate, endDate }) => {
+  const { i18n } = useTranslation();
+
+  const start = `${moment(startDate)
+    .locale(i18n.language.substr(0, 2))
+    .format('MMMM Y')}`;
+
+  const end = moment(endDate).isValid()
+    ? `${moment(endDate).locale(i18n.language.substr(0, 2)).format('MMMM Y')}`
+    : 'Present';
+
+  return `${start} - ${end}`;
+};
 
 export const getFieldProps = (formik, schema, name) => ({
   touched: get(formik, `touched.${name}`, false),

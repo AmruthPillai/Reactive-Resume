@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from '../../../contexts/ResumeContext';
@@ -13,8 +13,13 @@ import styles from './Artboard.module.css';
 const Artboard = () => {
   const state = useSelector();
   const { t } = useTranslation();
+  const [width, setWidth] = useState(0);
   const { id, name, metadata } = state;
   const { template } = metadata;
+
+  useEffect(() => {
+    setWidth(typeof window !== `undefined` && window && window.innerWidth);
+  }, [typeof window !== `undefined` && window && window.innerWidth]);
 
   return (
     <>
@@ -25,7 +30,12 @@ const Artboard = () => {
         <link rel="canonical" href={`https://rxresu.me/app/builder/${id}`} />
       </Helmet>
 
-      <div className={styles.container}>
+      <div
+        className={styles.container}
+        style={{
+          transform: `scale(${width / 1680})`,
+        }}
+      >
         {template === 'onyx' && <Onyx data={state} />}
         {template === 'pikachu' && <Pikachu data={state} />}
         {template === 'gengar' && <Gengar data={state} />}

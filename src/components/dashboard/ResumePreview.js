@@ -1,16 +1,16 @@
 import { Menu, MenuItem } from '@material-ui/core';
 import { navigate } from 'gatsby';
-import moment from 'moment';
+import moment from 'moment/min/moment-with-locales';
 import React, { useContext, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { MdMoreHoriz, MdOpenInNew } from 'react-icons/md';
 import { toast } from 'react-toastify';
-import { useTranslation } from 'react-i18next';
 import DatabaseContext from '../../contexts/DatabaseContext';
 import ModalContext from '../../contexts/ModalContext';
 import styles from './ResumePreview.module.css';
 
 const ResumePreview = ({ resume }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [anchorEl, setAnchorEl] = useState(null);
   const { emitter, events } = useContext(ModalContext);
   const { duplicateResume, deleteResume } = useContext(DatabaseContext);
@@ -84,7 +84,9 @@ const ResumePreview = ({ resume }) => {
         {resume.updatedAt && (
           <span>
             {t('dashboard.lastUpdated', {
-              timestamp: moment(resume.updatedAt).fromNow(),
+              timestamp: moment(resume.updatedAt)
+                .locale(i18n.language.substr(0, 2))
+                .fromNow(),
             })}
           </span>
         )}
