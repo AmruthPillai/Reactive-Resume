@@ -50,7 +50,8 @@ For those of you familiar with the Crowdin Platform, you could do that too and j
 - French (Français) (by [MeisterLLD](https://github.com/MeisterLLD))
 - Kannada (ಕನ್ನಡ)
 - Portuguese (Brazilian) (by [Felipe CG](https://github.com/felcg))
-- Spanish (Español) (by [@jrgonzalezrios](https://github.com/jrgonzalezrios))
+- Spanish (Español) (by [jrgonzalezrios](https://github.com/jrgonzalezrios))
+- Turkish (Türkçe) (by [Emirhan Avcı](https://github.com/AtlasFontaine))
 
 ### Building from Source
 
