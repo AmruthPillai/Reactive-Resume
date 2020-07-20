@@ -31,6 +31,10 @@ const languages = [
     code: 'tr',
     name: 'Turkish (Türkçe)',
   },
+  {
+    code: 'nl',
+    name: 'Dutch (Nederlands)',
+  },
 ];
 
 i18n.use(initReactI18next).init({

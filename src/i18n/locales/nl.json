@@ -1,0 +1,249 @@
+{
+  "shared": {
+    "appName": "Reactive Resume",
+    "shortDescription": "Een gratis en open source resume builder.",
+    "forms": {
+      "name": "Naam",
+      "title": "Titel",
+      "subtitle": "Ondertitel",
+      "required": "vereist",
+      "website": "Website",
+      "date": "Datum",
+      "position": "Functie",
+      "startDate": "Startdatum",
+      "endDate": "Einddatum",
+      "address": "Adres",
+      "phone": "Telefoonnummer",
+      "email": "E-mailadres",
+      "summary": "Samenvatting",
+      "markdown": "Dit tekstblok ondersteunt <1>markdown</1>.",
+      "validation": {
+        "min": "Je wachtwoord moet uit minimaal {number} tekens bestaan",
+        "dateRange": "Einddatum moet na het startdatum plaats vinden",
+        "email": "Dit moet een geldig e-mailadres zijn.",
+        "required": "Dit is een verplicht veld.",
+        "url": "Moet een geldige URL zijn"
+      }
+    },
+    "buttons": {
+      "add": "Toevoegen",
+      "edit": "Bewerken",
+      "cancel": "Annuleren",
+      "delete": "Verwijderen",
+      "loading": "Bezig met laden...",
+      "confirmation": "Weet je het zeker?",
+      "login": "Login",
+      "logout": "Uitloggen"
+    }
+  },
+  "landing": {
+    "hero": {
+      "goToApp": "Ga naar de app"
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "createResume": "CV aanmaken",
+    "editResume": "CV bewerken",
+    "lastUpdated": "Laatst bijgewerkt op {{timestamp}}",
+    "toasts": {
+      "deleted": "{{name}} is succesvol verwijderd "
+    },
+    "buttons": {
+      "duplicate": "Dupliceer",
+      "rename": "Naam Wijzigen"
+    },
+    "helpText": "U gaat een nieuw CV aanmaken vanaf het begin, maar laten we het eerst een naam geven. Dit kan de naam van de rol zijn die u wilt aanvragen, of als je een hervatting maakt voor een vriend, kun je het het Hervatten van Alex' noemen."
+  },
+  "builder": {
+    "toasts": {
+      "formErrors": "U moet u alle verplichte velden invullen voordat u dit formulier indient.",
+      "doesNotExist": "De CV die u zocht bestaat niet meer... of misschien nooit?",
+      "loadDemoData": "Niet zeker waar te beginnen? Probeer de demogegevens te laden om te zien wat Reactive Resume te bieden heeft."
+    },
+    "sections": {
+      "heading": "Titel",
+      "profile": "Profiel",
+      "social": "Sociale netwerken",
+      "objective": "Doelstelling",
+      "work": "Werkervaring",
+      "education": "Opleiding",
+      "project": "Project",
+      "projects": "Projecten",
+      "award": "Prijs",
+      "awards": "Prijzen",
+      "certification": "Certificaten",
+      "certifications": "Certificaten",
+      "skill": "Vaardigheid",
+      "skills": "Vaardigheden",
+      "hobby": "Hobby's",
+      "hobbies": "Hobby 's",
+      "language": "Taal:",
+      "languages": "Talen",
+      "reference": "Referentie",
+      "references": "Referenties",
+      "templates": "Templates",
+      "layout": "Layout",
+      "colors": "Kleuren",
+      "fonts": "Lettertypes",
+      "actions": "Acties",
+      "settings": "Instellingen",
+      "about": "Over"
+    },
+    "profile": {
+      "photograph": "foto",
+      "firstName": "Voornaam",
+      "lastName": "Achternaam",
+      "address": {
+        "line1": "Adresveld 1",
+        "line2": "Adresveld 2",
+        "city": "Stad",
+        "pincode": "PIN-code"
+      }
+    },
+    "social": {
+      "network": "Netwerk",
+      "username": "Gebruikersnaam",
+      "url": "URL"
+    },
+    "work": {
+      "company": "Bedrijf"
+    },
+    "education": {
+      "institution": "Instelling",
+      "field": "Type onderwijs",
+      "degree": "Type diploma",
+      "gpa": "GPA"
+    },
+    "awards": {
+      "awarder": "Toegekend"
+    },
+    "certifications": {
+      "issuer": "Verstrekker"
+    },
+    "skills": {
+      "level": "Niveau"
+    },
+    "languages": {
+      "fluency": "Vloeiigheid"
+    },
+    "layout": {
+      "block": "Blok",
+      "reset": "Herstel lay-out",
+      "text": "Deze template ondersteunt {{count}} blokken."
+    },
+    "colors": {
+      "primary": "Hoofdkleur",
+      "text": "Tekst Kleur",
+      "background": "Achtergrondkleur"
+    },
+    "actions": {
+      "import": {
+        "heading": "Je CV importeren",
+        "text": "U kunt uw gegevens importeren uit verschillende bronnen zoals JSON CV of uw LinkedIn om de meeste gegevens automatisch in te vullen voor uw CV.",
+        "button": "Importeer"
+      },
+      "export": {
+        "heading": "Exporteer uw CV",
+        "text": "Uw CV als een PDF exporteren om te delen met recruiters of een JSON die u terug kunt importeren naar deze app op een andere computer.",
+        "button": "Exporteren"
+      },
+      "share": {
+        "heading": "Deel uw CV",
+        "text": "De link hieronder is publiekelijk toegankelijk als u deze wilt delen, en kijkers zouden de laatste versie van uw CV op elk gewenst moment zien."
+      },
+      "loadDemoData": {
+        "text": "Onduidelijk op wat te doen met een verse lege pagina? Laad wat demogegevens om te zien hoe een hervatting eruit zou moeten zien en je kunt daar beginnen met bewerken.",
+        "button": "Laad Demo gegevens"
+      },
+      "resetEverything": {
+        "text": "Veel fouten gemaakt? Geen zorgen, verwijder alles met slechts één klik, maar pas op als er geen backups zijn.",
+        "button": "Verwijder alles?"
+      }
+    },
+    "settings": {
+      "theme": "Thema",
+      "language": "Taal:",
+      "translate": "Als u wilt bijdragen door vertalingen in uw taal aan te bieden, <1>, bezoek dan deze link</1>.",
+      "dangerZone": {
+        "heading": "Gevaren zone",
+        "text": "Als u uw account wilt verwijderen en al uw CV's wilt wissen, is het slechts één knop weg. Wees voorzichtig omdat dit een onomkeerbaar proces is.",
+        "button": "Account Verwijderen"
+      }
+    },
+    "about": {
+      "donate": {
+        "heading": "Doneer aan Reactiv Resume",
+        "text": "Ik probeer te doen wat ik kan, maar als je de app nuttig hebt gevonden of je bent in een betere positie dan anderen die voor hun eerste baan van dit project afhankelijk zijn <1>Overweeg om slechts $5 te doneren om het project in leven te houden</1> :)",
+        "button": "Koop een kopje koffie voor mij!"
+      },
+      "bugFeature": {
+        "heading": "Functieaanvraag",
+        "text": "Iets dat je voortgang verhindert om te hervatten of te hervatten? Heb je een vervelende bug gevonden die gewoon niet zal stoppen? Praat erover op de GitHub Issues sectie met behulp van de onderstaande acties.",
+        "button": "Breng een probleem op"
+      },
+      "appreciate": {
+        "heading": "Vind je Reactive Resume leuk?",
+        "text": "Ik hoor vaak hoe deze app mensen heeft geholpen en als het je hielp, of je hebt net Reactive Resume om een geweldig hulpmiddel te zijn, laat het me weten. U kunt mij bereiken op mijn website."
+      },
+      "sourceCode": {
+        "heading": "Broncode",
+        "text": "Wil je het project uitvoeren vanuit de bron? Bent u een ontwikkelaar die bereid is bij te dragen aan de open-source ontwikkeling van dit project? Klik op de knop hieronder.",
+        "button": "GitHub Repo"
+      },
+      "footer": "Gemaakt met liefde door <1>Amruth Pillai</1>"
+    },
+    "tooltips": {
+      "uploadPhotograph": "Foto Uploaden",
+      "backToDashboard": "Ga terug na dashboard"
+    },
+    "emptyList": "Deze lijst is leeg."
+  },
+  "modals": {
+    "auth": {
+      "whoAreYou": "Wie bent u?",
+      "welcome": "Welkom, {name}!",
+      "loggedOutText": "Reactieve Hervat moet weten wie je bent, zodat het je veilig kan verifiëren in de app en je alleen je informatie kan tonen. Zodra je lid bent, kun je beginnen met het bouwen van je rego, het bewerken om nieuwe vaardigheden toe te voegen of deze te delen met de wereld!",
+      "loggedInText": "Geweldig. Nu u zichzelf hebt geverifieerd, kunnen we doorgaan met de echte reden dat u hier bent. Klik op de knop Ga naar de App om uw hervat!",
+      "buttons": {
+        "google": "Log in met Google+",
+        "anonymous": "Anoniem inloggen"
+      }
+    },
+    "import": {
+      "button": "Bestand selecteren",
+      "reactiveResume": {
+        "heading": "Importeren van Reactive Resume",
+        "text": "Reactive Resume heeft zijn eigen schemaformaat om zo veel mogelijk van alle aanpasbare mogelijkheden te maken. Als u een reservekopie van uw CV met deze app wilt importeren, upload dan gewoon het bestand met de knop hieronder."
+      },
+      "jsonResume": {
+        "heading": "Importeren uit JSON CV",
+        "text": "JSON CV is een open standaard voor de hervatting van de schemastructuur. Als je een van de vele enthousiastelingen bent die hun hervatten in deze vorm klaar hebben, Er is maar één klik nodig om met het Reactieve Hervatten te beginnen."
+      },
+      "linkedIn": {
+        "heading": "Geïmporteerd via LinkedIn op",
+        "text": "U kunt een JSON importeren die is geëxporteerd van Reactive Resume door op de knop hieronder te klikken en het juiste bestand te selecteren."
+      }
+    },
+    "export": {
+      "printDialog": {
+        "heading": "Gebruik Browser's Print Dialoog",
+        "text": "Voor degenen onder u die een snelle oplossing willen, hoef je niet verder te kijken dan je browser. Je hoeft alleen maar op Ctrl/Cmd + P te drukken om het afdrukdialoogvenster in je browser te openen en je CV direct te laten printen.",
+        "button": "CV afdrukken"
+      },
+      "downloadPDF": {
+        "heading": "Download PDF",
+        "text": "Met deze opties kunt u een enkele pagina printen, zonder beperkingen, versie van uw resume, perfect voor degenen die veel inhoud hebben. U kunt ook een multi-pagina-versie van uw CV downloaden met slechts één klik.",
+        "buttons": {
+          "single": "Één pagina CV",
+          "multi": "Meerdere pagina's CV"
+        }
+      },
+      "jsonFormat": {
+        "heading": "Exporteren naar JSON-formaat",
+        "text": "U kunt uw gegevens ook exporteren in JSON formaat voor het veilig bewaren, zodat u deze gemakkelijk terug kunt importeren in Reactive Resume wanneer u wilt bewerken of een hervatten.",
+        "button": "JSON exporteren"
+      }
+    }
+  }
+}
