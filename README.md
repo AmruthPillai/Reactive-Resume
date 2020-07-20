@@ -92,9 +92,10 @@ I try to do what I can, but if you found the app helpful, or you're in a better 
 
 #### https://www.buymeacoffee.com/AmruthPillai
 
-##### Financial Supporters that help Reactive Resume thrive:
+##### Contributors who have donated to Reactive Resume:
 
 - Leon Yuan ([@LeonY1](https://github.com/LeonY1))
+- Benjamin Benni ([@Sensaze](https://twitter.com/Sensaze))
 
 ### Changelog
 
