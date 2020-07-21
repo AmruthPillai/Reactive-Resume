@@ -1,0 +1,249 @@
+{
+  "shared": {
+    "appName": "Reactive Resume",
+    "shortDescription": "En gratis og open source løsning til at opbygge et resume.",
+    "forms": {
+      "name": "Navn",
+      "title": "Titel",
+      "subtitle": "Undertitel",
+      "required": "påkrævet",
+      "website": "Hjemmeside",
+      "date": "Dato",
+      "position": "Stilling",
+      "startDate": "Startdato",
+      "endDate": "Slutdato",
+      "address": "Adresse",
+      "phone": "Telefonnummer",
+      "email": "E-mailadresse",
+      "summary": "Opsummering",
+      "markdown": "Dette tekstfelt understøtter <1>markdown</1>.",
+      "validation": {
+        "min": "Indtast venligst mindst {{number}} tegn.",
+        "dateRange": "Slutdato skal være senere end startdato.",
+        "email": "Dette skal være en gyldig mailadresse.",
+        "required": "Dette er et obligatorisk felt.",
+        "url": "Skal være en korrekt URL."
+      }
+    },
+    "buttons": {
+      "add": "Tilføj",
+      "edit": "Rediger",
+      "cancel": "Annuller",
+      "delete": "Slet",
+      "loading": "Indlæser...",
+      "confirmation": "Er du sikker?",
+      "login": "Log ind",
+      "logout": "Log af"
+    }
+  },
+  "landing": {
+    "hero": {
+      "goToApp": "Gå til app"
+    }
+  },
+  "dashboard": {
+    "title": "Betjeningspanel",
+    "createResume": "Opret resume",
+    "editResume": "Rediger resume",
+    "lastUpdated": "Sidst opdateret {{timestamp}}",
+    "toasts": {
+      "deleted": "{{name}} blev slettet med succes"
+    },
+    "buttons": {
+      "duplicate": "Duplikér",
+      "rename": "Omdøb"
+    },
+    "helpText": "Du er ved at oprette et nyt resume fra begyndelsen, men lad os først give det et navn. Det kan være navnet på den stilling du vil søge, eller hvis du laver et resume for en ven, så kan du kalde det Anders' resume."
+  },
+  "builder": {
+    "toasts": {
+      "formErrors": "Du skal udfylde alle de obligatoriske felter før du indsender denne formular.",
+      "doesNotExist": "Det resumer du kigger efter findes ikke længere... eller måske fandtes det aldrig?",
+      "loadDemoData": "Er du i tvivl om hvor du skal begynde? Prøv at indlæse demo data for at se hvad Reactive Resume har at tilbyde."
+    },
+    "sections": {
+      "heading": "Overskrift",
+      "profile": "Profil",
+      "social": "Sociale netværk",
+      "objective": "Mål",
+      "work": "Erfaring",
+      "education": "Uddannelse",
+      "project": "Projekt",
+      "projects": "Projekter",
+      "award": "Præmier",
+      "awards": "Præmier",
+      "certification": "Certificering",
+      "certifications": "Certificeringer",
+      "skill": "Evne",
+      "skills": "Evner",
+      "hobby": "Hobby",
+      "hobbies": "Hobbyer",
+      "language": "Sprog",
+      "languages": "Sprog",
+      "reference": "Reference",
+      "references": "Referencer",
+      "templates": "Skabeloner",
+      "layout": "Layout",
+      "colors": "Farver",
+      "fonts": "Skrifttyper",
+      "actions": "Handlinger",
+      "settings": "Indstillinger",
+      "about": "Om"
+    },
+    "profile": {
+      "photograph": "Fotografi",
+      "firstName": "Fornavn",
+      "lastName": "Efternavn",
+      "address": {
+        "line1": "Adresse linie 1",
+        "line2": "Adresse linie 2",
+        "city": "By",
+        "pincode": "Postnummer"
+      }
+    },
+    "social": {
+      "network": "Tjeneste",
+      "username": "Brugernavn",
+      "url": "Webadresse"
+    },
+    "work": {
+      "company": "Virksomhed"
+    },
+    "education": {
+      "institution": "Institution",
+      "field": "Studieretning",
+      "degree": "Uddannelsesgrad",
+      "gpa": "Karaktergennemsnit"
+    },
+    "awards": {
+      "awarder": "Udsteder"
+    },
+    "certifications": {
+      "issuer": "Udsteder"
+    },
+    "skills": {
+      "level": "Niveau"
+    },
+    "languages": {
+      "fluency": "Udtryksevne"
+    },
+    "layout": {
+      "block": "Rubrik",
+      "reset": "Nulstil udseende",
+      "text": "Denne skabelon understøtter {{count}} rubrikker."
+    },
+    "colors": {
+      "primary": "Primær farve",
+      "text": "Tekstfarve",
+      "background": "Baggrundsfarve"
+    },
+    "actions": {
+      "import": {
+        "heading": "Importer dit resume",
+        "text": "Du kan importere dine informationer fra forskellige kilder som JSON resume eller din LinkedIn profil for at automatisk udfylde de fleste data i det resume.",
+        "button": "Importér"
+      },
+      "export": {
+        "heading": "Exportér dit resume",
+        "text": "Eksportér dit resume som PDF for at dele det med headhuntere eller som JSON som gør det muligt at importere det tilbage i denne applikation på en anden computer.",
+        "button": "Eksportér"
+      },
+      "share": {
+        "heading": "Del dit resumé",
+        "text": "Linket herunder vil være offentlig tilgængelig, hvis du deler det, og de besøgende vil altid se den seneste version af de resume."
+      },
+      "loadDemoData": {
+        "text": "Er du i tvivl om, hvad du skal gøre med en blank side? Indlæs nogle demo data, og se hvordan et resume kan se ud og du kan begynde at redigere herfra.",
+        "button": "Indlæs demo data"
+      },
+      "resetEverything": {
+        "text": "Føler du, at du har lavet for mange fejl? Ingen grund til bekymringer, ryd alt med blot et klik, men pas på hvis du ikke har en kopi.",
+        "button": "Nulstil alt"
+      }
+    },
+    "settings": {
+      "theme": "Tema",
+      "language": "Sprog",
+      "translate": "Hvis du ønsker at bidrage ved at oversætte til dit eget sprog, <1>så besøg denne side</1>.",
+      "dangerZone": {
+        "heading": "Farezone",
+        "text": "Hvis du ønsker at nedlægge din konto og slette alle dine resuméer, så er det kun et klik væk. Vær opmærksom på, at denne handling ikke kan fortrydes.",
+        "button": "Slet konto"
+      }
+    },
+    "about": {
+      "donate": {
+        "heading": "Donér til Reactive Resume",
+        "text": "Jeg forsøger at gøre hvad jeg kan, men hvis du synes at denne app hjælper dig, eller at du er i en bedre position end andre som er afhængige af denne app for at få deres første job, så <1>overvej venligst at donere så lidt som $5 for at hjælpe med holde projektet i live</1> :-)",
+        "button": "Giv mig en kop kaffe!"
+      },
+      "bugFeature": {
+        "heading": "Fejl? Ønsker til en ny funktion?",
+        "text": "Er der noget som hindrer dig i at komme videre med dit resume? Har du fundet en dum fejl som ikke vil forsvinde? Fortæl om det på GitHub i issues-sektionen via at bruge handlingerne herunder.",
+        "button": "Rejse et issue"
+      },
+      "appreciate": {
+        "heading": "Elsker du Reactive Resume?",
+        "text": "Jeg bliver aldrig træt af at høre historier om, hvordan denne app har hjulpet folk, og hvis det har hjulpet dig eller du blot synes at Reactive Resume er et fantastisk værktøj, så vil jeg gerne vide det. Du kan tage fat i mig via min hjemmeside."
+      },
+      "sourceCode": {
+        "heading": "Kildekode",
+        "text": "Ønsker du at køre projektet fra kildekoden? Er du udvikler som ønsker at bidrage til open source udviklingen af dette projekt? Klik på knappen herunder.",
+        "button": "GitHub Repo"
+      },
+      "footer": "Lavet med kærlighed af <1>Amruth Pillai</1>"
+    },
+    "tooltips": {
+      "uploadPhotograph": "Upload fotografi",
+      "backToDashboard": "Tilbage til panel"
+    },
+    "emptyList": "Denne liste er tom."
+  },
+  "modals": {
+    "auth": {
+      "whoAreYou": "Hvem er du?",
+      "welcome": "Velkommen {{name}}!",
+      "loggedOutText": "Reactive Resume skal vide hvem du er, så vi på sikker vis kan verificere dig i app'en og kun vise dig din information. Når du er inde, kan du begynde at bygge dit resume, redigere det for at tilføje nye evner eller dele det med verden!",
+      "loggedInText": "Sådan. Nu hvor du har verificeret dig selv, kan vi komme videre med den virkelige grund till at du er her. Klik på Gå til App knappen for at påbegynde dit resume!",
+      "buttons": {
+        "google": "Log ind med Google",
+        "anonymous": "Log ind anonymt"
+      }
+    },
+    "import": {
+      "button": "Vælg fil",
+      "reactiveResume": {
+        "heading": "Importér fra Reactive Resume",
+        "text": "Reactive Resume har sit eget Schema format for at udnytte alle de muligheder som der tilbydes. Hvis du ønsker at importere en backup af dit resume som er lavet med denne app, så upload filen med knappen herunder."
+      },
+      "jsonResume": {
+        "heading": "Importér fra JSON Resume",
+        "text": "JSON Resume er en åben standard for resume schema struktur. Hvis du er en af de mange entusiaster som har deres resume klar i dette format, kræver det kun et enkelt klik at begynde med Reactive Resume."
+      },
+      "linkedIn": {
+        "heading": "Importér fra LinkedIn",
+        "text": "Du kan importere JSON som er eksporteret fra Reactive Resume ved at klikke på knappen herunder og vælge filen."
+      }
+    },
+    "export": {
+      "printDialog": {
+        "heading": "Brug browserens print dialogboks",
+        "text": "For dem af jer som ønsker en hurtig løsning, så skal du ikke brugere mere end din browser. Alt hvad du skal gøre er, at trykke Ctrl/Cmd + P og åbne en print dialogboks i browseren og straks printe dit resume.",
+        "button": "Print resume"
+      },
+      "downloadPDF": {
+        "heading": "Download PDF",
+        "text": "Det er muligt at printe en én-sidet og ubegrænset version af dit resume, perfekt for dem som har meget indhold. Alternativt kan du downloade en fler-sidet version af dit resume med et enkelt klik.",
+        "buttons": {
+          "single": "Én-sidet resume",
+          "multi": "Fler-sidet resume"
+        }
+      },
+      "jsonFormat": {
+        "heading": "Eksportér til JSON formatet",
+        "text": "Du kan også eksportere dine data i JSON format for at opbevare dem sikker, så du nemt kan genimportere dem i Reactive Resume når du ønsker at ændre eller generere et resume.",
+        "button": "Eksportér JSON"
+      }
+    }
+  }
+}
