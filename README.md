@@ -45,9 +45,12 @@ For those of you familiar with the Crowdin Platform, you could do that too and j
 
 ##### Languages Currently Supported
 
+- Danish (Dansk) (by [RazziaDK](https://crowdin.com/profile/RazziaDK))
+- Dutch (Nederlands) (by [Imad Youssoufi](https://github.com/2imad))
 - English
 - Finnish (Suomalainen) (by Ari Pikkarainen)
 - French (Français) (by [MeisterLLD](https://github.com/MeisterLLD))
+- German (Deutsche) (by [Kryptand](https://crowdin.com/profile/Kryptand))
 - Kannada (ಕನ್ನಡ)
 - Portuguese (Brazilian) (by [Felipe CG](https://github.com/felcg))
 - Spanish (Español) (by [jrgonzalezrios](https://github.com/jrgonzalezrios))

@@ -1,10 +1,8 @@
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
-import Modal from '@material-ui/core/Modal';
+import { Backdrop, Fade, Modal } from '@material-ui/core';
 import { isFunction } from 'lodash';
 import React, { forwardRef, memo, useImperativeHandle } from 'react';
-import { MdClose } from 'react-icons/md';
 import { useTranslation } from 'react-i18next';
+import { MdClose } from 'react-icons/md';
 import Button from '../components/shared/Button';
 import { handleKeyUp } from '../utils';
 import styles from './BaseModal.module.css';

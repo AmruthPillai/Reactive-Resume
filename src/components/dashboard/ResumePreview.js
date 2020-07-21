@@ -1,10 +1,10 @@
 import { Menu, MenuItem } from '@material-ui/core';
 import { navigate } from 'gatsby';
-import moment from 'moment/min/moment-with-locales';
 import React, { useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MdMoreHoriz, MdOpenInNew } from 'react-icons/md';
 import { toast } from 'react-toastify';
+import dayjs from 'dayjs';
 import DatabaseContext from '../../contexts/DatabaseContext';
 import ModalContext from '../../contexts/ModalContext';
 import styles from './ResumePreview.module.css';
@@ -84,7 +84,7 @@ const ResumePreview = ({ resume }) => {
         {resume.updatedAt && (
           <span>
             {t('dashboard.lastUpdated', {
-              timestamp: moment(resume.updatedAt)
+              timestamp: dayjs(resume.updatedAt)
                 .locale(i18n.language.substr(0, 2))
                 .fromNow(),
             })}

@@ -1,7 +1,6 @@
+import { Link } from '@reach/router';
 import { navigate } from 'gatsby';
 import React, { memo, useContext } from 'react';
-import TypeIt from 'typeit-react';
-import { Link } from '@reach/router';
 import { useTranslation } from 'react-i18next';
 import ModalContext from '../../contexts/ModalContext';
 import UserContext from '../../contexts/UserContext';
@@ -25,20 +24,7 @@ const Hero = () => {
       </Link>
 
       <div className="mt-12 md:mt-0 md:ml-12">
-        <div className="text-5xl font-bold">
-          <TypeIt
-            getBeforeInit={(instance) => {
-              return instance
-                .type('Creative Resume')
-                .pause(500)
-                .move(-11)
-                .delete(4)
-                .pause(250)
-                .type('Reac')
-                .move('END');
-            }}
-          />
-        </div>
+        <h1 className="text-5xl font-bold">{t('shared.appName')}</h1>
         <h2 className="mt-1 text-3xl text-primary-500">
           {t('shared.shortDescription')}
         </h2>

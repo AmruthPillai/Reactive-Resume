@@ -2,8 +2,7 @@ import { Link } from '@reach/router';
 import React, { memo } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { FaUserSecret } from 'react-icons/fa';
-import { GiWalkingBoot } from 'react-icons/gi';
+import { FaUserSecret, FaWalking } from 'react-icons/fa';
 import { IoIosRocket } from 'react-icons/io';
 import { RiRefreshLine } from 'react-icons/ri';
 import Hero from '../components/landing/Hero';
@@ -58,7 +57,7 @@ const Home = () => {
           </Feature>
 
           <Feature
-            icon={GiWalkingBoot}
+            icon={FaWalking}
             title="Kickstarting your career shouldn’t come at a cost."
           >
             There are brilliant alternatives to this app like Novoresume and

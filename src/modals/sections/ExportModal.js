@@ -1,6 +1,6 @@
+import download from 'downloadjs';
 import firebase from 'gatsby-plugin-firebase';
 import { clone } from 'lodash';
-import download from 'downloadjs';
 import React, { memo, useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaPrint } from 'react-icons/fa';

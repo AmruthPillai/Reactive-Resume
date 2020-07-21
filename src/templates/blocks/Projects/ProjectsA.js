@@ -1,4 +1,4 @@
-import moment from 'moment/min/moment-with-locales';
+import dayjs from 'dayjs';
 import React, { memo, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import ReactMarkdown from 'react-markdown';
@@ -21,7 +21,7 @@ const ProjectItem = (x) => {
         </div>
         {x.date && (
           <h6 className="text-xs font-medium text-right">
-            {moment(x.date)
+            {dayjs(x.date)
               .locale(i18n.language.substr(0, 2))
               .format('MMMM YYYY')}
           </h6>

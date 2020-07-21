@@ -1,5 +1,5 @@
+import dayjs from 'dayjs';
 import { get, isEmpty } from 'lodash';
-import moment from 'moment/min/moment-with-locales';
 import { useTranslation } from 'react-i18next';
 
 export const getModalText = (isEditMode, type) => {
@@ -25,12 +25,12 @@ export const isFileImage = (file) => {
 export const formatDateRange = ({ startDate, endDate }) => {
   const { i18n } = useTranslation();
 
-  const start = `${moment(startDate)
+  const start = `${dayjs(startDate)
     .locale(i18n.language.substr(0, 2))
-    .format('MMMM Y')}`;
+    .format('MMMM YYYY')}`;
 
-  const end = moment(endDate).isValid()
-    ? `${moment(endDate).locale(i18n.language.substr(0, 2)).format('MMMM Y')}`
+  const end = dayjs(endDate).isValid()
+    ? `${dayjs(endDate).locale(i18n.language.substr(0, 2)).format('MMMM YYYY')}`
     : 'Present';
 
   return `${start} - ${end}`;

@@ -4,6 +4,14 @@ import resources from './locales';
 
 const languages = [
   {
+    code: 'da',
+    name: 'Danish (Dansk)',
+  },
+  {
+    code: 'nl',
+    name: 'Dutch (Nederlands)',
+  },
+  {
     code: 'en',
     name: 'English (US)',
   },
@@ -14,6 +22,10 @@ const languages = [
   {
     code: 'fr',
     name: 'French (Français)',
+  },
+  {
+    code: 'de',
+    name: 'German (Deutsche)',
   },
   {
     code: 'kn',
@@ -30,10 +42,6 @@ const languages = [
   {
     code: 'tr',
     name: 'Turkish (Türkçe)',
-  },
-  {
-    code: 'nl',
-    name: 'Dutch (Nederlands)',
   },
 ];
 

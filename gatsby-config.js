@@ -5,7 +5,7 @@ module.exports = {
     title: 'Reactive Resume',
     siteUrl: 'https://rxresu.me',
     description: 'A free and open source resume builder.',
-    version: '2.0.3',
+    version: '2.0.4',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -21,6 +21,20 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Reactive Resume',
+        short_name: 'Reactive Resume',
+        start_url: '/',
+        background_color: '#212121',
+        icon: `static/images/logo.png`,
+        orientation: 'landscape',
+        theme_color: '#212121',
+        display: 'standalone',
+      },
+    },
+    'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-prefetch-google-fonts',
       options: {
@@ -65,46 +79,6 @@ module.exports = {
       options: { prefixes: ['/app/*'] },
     },
     {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: 'Reactive Resume',
-        short_name: 'RxResume',
-        description: 'A free and open-source resume builder.',
-        start_url: '/?source=pwa',
-        icon: 'static/images/logo.png',
-        background_color: '#FFFFFF',
-        theme_color: '#444444',
-        display: 'standalone',
-        cache_busting_mode: 'none',
-        icons: [
-          {
-            src: 'static/icons/maskable.png',
-            sizes: '196x196',
-            type: 'image/png',
-            purpose: 'any maskable',
-          },
-        ],
-        shortcuts: [
-          {
-            name: 'Dashboard',
-            short_name: 'Dashboard',
-            description: 'View/manage all your resumes at a glance',
-            url: '/app/dashboard?source=pwa',
-          },
-        ],
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-offline',
-      options: {
-        workboxConfig: {
-          globPatterns: ['**/*'],
-        },
-        precachePages: ['', '/app/*', '/blog/*'],
-      },
-    },
-    'gatsby-plugin-lodash',
-    {
       resolve: 'gatsby-plugin-material-ui',
       options: {
         stylesProvider: {
@@ -116,8 +90,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/articles`,
         name: 'articles',
+        path: `${__dirname}/src/articles`,
       },
     },
     'gatsby-transformer-remark',
