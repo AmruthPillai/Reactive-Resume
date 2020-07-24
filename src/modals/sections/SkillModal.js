@@ -7,17 +7,9 @@ import ModalEvents from '../../constants/ModalEvents';
 import { getFieldProps } from '../../utils';
 import DataModal from '../DataModal';
 
-const SKILL_LEVELS = [
-  'Fundamental Awareness',
-  'Novice',
-  'Intermediate',
-  'Advanced',
-  'Expert',
-];
-
 const initialValues = {
   name: '',
-  level: SKILL_LEVELS[0],
+  level: '',
 };
 
 const SkillModal = () => {
@@ -25,9 +17,7 @@ const SkillModal = () => {
 
   const schema = Yup.object().shape({
     name: Yup.string().required(t('shared.forms.validation.required')),
-    level: Yup.string()
-      .oneOf(SKILL_LEVELS)
-      .required(t('shared.forms.validation.required')),
+    level: Yup.string().required(t('shared.forms.validation.required')),
   });
 
   return (
@@ -51,8 +41,7 @@ const SkillModal = () => {
 
             <Input
               label={t('builder.skills.level')}
-              type="dropdown"
-              options={SKILL_LEVELS}
+              placeholder="Fundamental Awareness"
               {...getFieldProps(formik, schema, 'level')}
             />
           </div>
