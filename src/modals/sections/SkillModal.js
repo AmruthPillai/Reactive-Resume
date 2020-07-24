@@ -41,7 +41,7 @@ const SkillModal = () => {
 
             <Input
               label={t('builder.skills.level')}
-              placeholder="Fundamental Awareness"
+              placeholder="Novice"
               {...getFieldProps(formik, schema, 'level')}
             />
           </div>

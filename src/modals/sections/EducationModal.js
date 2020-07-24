@@ -25,7 +25,7 @@ const EducationModal = () => {
     field: Yup.string().required(t('shared.forms.validation.required')),
     degree: Yup.string(),
     gpa: Yup.string(),
-    startDate: Yup.date().required(t('shared.forms.validation.required')),
+    startDate: Yup.date(),
     endDate: Yup.date().when(
       'startDate',
       (startDate, yupSchema) =>

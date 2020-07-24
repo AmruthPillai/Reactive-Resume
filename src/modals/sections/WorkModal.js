@@ -10,7 +10,7 @@ import DataModal from '../DataModal';
 const initialValues = {
   company: '',
   position: '',
-  website: 'https://',
+  website: '',
   startDate: '',
   endDate: '',
   summary: '',
@@ -23,7 +23,7 @@ const WorkModal = () => {
     company: Yup.string().required(t('shared.forms.validation.required')),
     position: Yup.string().required(t('shared.forms.validation.required')),
     website: Yup.string().url(t('shared.forms.validation.url')),
-    startDate: Yup.date().required(t('shared.forms.validation.required')),
+    startDate: Yup.date(),
     endDate: Yup.date().when(
       'startDate',
       (startDate, yupSchema) =>
@@ -64,7 +64,7 @@ const WorkModal = () => {
 
             <Input
               label={t('shared.forms.website')}
-              placeholder="https://example.com/"
+              placeholder="https://"
               {...getFieldProps(formik, schema, 'website')}
             />
 

@@ -75,12 +75,17 @@ const UserProvider = ({ children }) => {
 
   const deleteAccount = async () => {
     const { currentUser } = firebase.auth();
+    const deleteUser = firebase.functions().httpsCallable('deleteUser');
+    deleteUser();
+
     try {
+      deleteUser();
       await currentUser.delete();
     } catch (e) {
-      toast.error(e.message);
-      await loginWithGoogle();
-      await currentUser.delete();
+      if (e.code === 'auth/requires-recent-login') {
+        await loginWithGoogle();
+        await currentUser.delete();
+      }
     } finally {
       logout();
       toast(

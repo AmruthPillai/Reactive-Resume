@@ -57,6 +57,7 @@ const Castform = ({ data }) => {
         id="page"
         className="rounded"
         style={{
+          fontSize: 14,
           fontFamily: data.metadata.font,
           color: data.metadata.colors.text,
           backgroundColor: data.metadata.colors.background,

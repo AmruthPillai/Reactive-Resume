@@ -8,7 +8,7 @@ import { getFieldProps } from '../../utils';
 import DataModal from '../DataModal';
 
 const initialValues = {
-  url: 'https://',
+  url: '',
   network: '',
   username: '',
 };
@@ -55,7 +55,7 @@ const SocialModal = () => {
             <Input
               label={t('builder.social.url')}
               className="col-span-2"
-              placeholder="https://twitter.com/KingOKings"
+              placeholder="https://"
               {...getFieldProps(formik, schema, 'url')}
             />
           </div>

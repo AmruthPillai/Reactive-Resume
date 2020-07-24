@@ -22,15 +22,13 @@ export const isFileImage = (file) => {
   return file && acceptedImageTypes.includes(file.type);
 };
 
-export const formatDateRange = ({ startDate, endDate }) => {
-  const { i18n } = useTranslation();
-
+export const formatDateRange = ({ startDate, endDate, language }) => {
   const start = `${dayjs(startDate)
-    .locale(i18n.language.substr(0, 2))
+    .locale(language.substr(0, 2))
     .format('MMMM YYYY')}`;
 
   const end = dayjs(endDate).isValid()
-    ? `${dayjs(endDate).locale(i18n.language.substr(0, 2)).format('MMMM YYYY')}`
+    ? `${dayjs(endDate).locale(language.substr(0, 2)).format('MMMM YYYY')}`
     : 'Present';
 
   return `${start} - ${end}`;

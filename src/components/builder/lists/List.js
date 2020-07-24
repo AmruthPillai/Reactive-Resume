@@ -1,5 +1,6 @@
 import { get, isEmpty } from 'lodash';
 import React, { memo, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import { MdAdd } from 'react-icons/md';
 import ModalContext from '../../../contexts/ModalContext';
 import { useSelector } from '../../../contexts/ResumeContext';
@@ -20,6 +21,7 @@ const List = ({
   hasDate,
   event,
 }) => {
+  const { i18n } = useTranslation();
   const items = useSelector(path, []);
   const { emitter } = useContext(ModalContext);
 
@@ -46,6 +48,7 @@ const List = ({
                   formatDateRange({
                     startDate: x.startDate,
                     endDate: x.endDate,
+                    language: i18n.language,
                   }))
               }
               text={text || get(x, textPath, '')}

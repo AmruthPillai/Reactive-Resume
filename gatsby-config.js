@@ -5,7 +5,7 @@ module.exports = {
     title: 'Reactive Resume',
     siteUrl: 'https://rxresu.me',
     description: 'A free and open source resume builder.',
-    version: '2.0.4',
+    version: '2.1.0',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -13,7 +13,7 @@ module.exports = {
       resolve: 'gatsby-plugin-eslint',
       options: {
         test: /\.js$|\.jsx$/,
-        exclude: /(node_modules|.cache|public)/,
+        exclude: /(node_modules|.cache|public|_this_is_virtual_fs_path_)/,
         stages: ['develop'],
         options: {
           emitWarning: true,
