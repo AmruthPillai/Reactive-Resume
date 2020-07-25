@@ -28,6 +28,10 @@ const languages = [
     name: 'German (Deutsche)',
   },
   {
+    code: 'ja',
+    name: 'Japanese (日本人)',
+  },
+  {
     code: 'kn',
     name: 'Kannada (ಕನ್ನಡ)',
   },
