@@ -47,7 +47,7 @@ const ContactE = () => {
         <ContactItem
           label="website"
           value={data.profile.website}
-          link={`http://${data.profile.website}`}
+          link={data.profile.website}
         />
         <ContactItem
           label="email"
