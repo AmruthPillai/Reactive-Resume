@@ -4,7 +4,6 @@ import 'firebase/analytics';
 import 'firebase/auth';
 import 'firebase/database';
 import 'firebase/functions';
-import 'firebase/storage';
 import React from 'react';
 import { DatabaseProvider } from './src/contexts/DatabaseContext';
 import { ModalProvider } from './src/contexts/ModalContext';

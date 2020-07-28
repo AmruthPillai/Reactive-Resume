@@ -1,11 +1,9 @@
-import dayjs from 'dayjs';
 import React, { memo, useContext } from 'react';
-import { useTranslation } from 'react-i18next';
 import ReactMarkdown from 'react-markdown';
 import PageContext from '../../../contexts/PageContext';
-import { safetyCheck } from '../../../utils';
+import { formatDate, safetyCheck } from '../../../utils';
 
-const CertificationItem = ({ item, i18n }) => (
+const CertificationItem = ({ item, language }) => (
   <div>
     <div className="flex justify-between items-center">
       <div className="flex flex-col text-left mr-2">
@@ -14,9 +12,7 @@ const CertificationItem = ({ item, i18n }) => (
       </div>
       {item.date && (
         <h6 className="text-xs font-medium text-right">
-          {dayjs(item.date)
-            .locale(i18n.language.substr(0, 2))
-            .format('MMMM YYYY')}
+          {formatDate({ date: item.date, language })}
         </h6>
       )}
     </div>
@@ -27,7 +23,6 @@ const CertificationItem = ({ item, i18n }) => (
 );
 
 const CertificationsA = () => {
-  const { i18n } = useTranslation();
   const { data, heading: Heading } = useContext(PageContext);
 
   return safetyCheck(data.certifications) ? (
@@ -35,7 +30,11 @@ const CertificationsA = () => {
       <Heading>{data.certifications.heading}</Heading>
       <div className="grid gap-4">
         {data.certifications.items.map((x) => (
-          <CertificationItem key={x.id} item={x} i18n={i18n} />
+          <CertificationItem
+            key={x.id}
+            item={x}
+            language={data.metadata.language}
+          />
         ))}
       </div>
     </div>

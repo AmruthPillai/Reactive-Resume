@@ -22,7 +22,11 @@ export const isFileImage = (file) => {
   return file && acceptedImageTypes.includes(file.type);
 };
 
-export const formatDateRange = ({ startDate, endDate, language }) => {
+export const formatDate = ({ date, language = 'en' }) => {
+  return dayjs(date).locale(language.substr(0, 2)).format('MMMM YYYY');
+};
+
+export const formatDateRange = ({ startDate, endDate, language = 'en' }) => {
   const start = `${dayjs(startDate)
     .locale(language.substr(0, 2))
     .format('MMMM YYYY')}`;

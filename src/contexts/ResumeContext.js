@@ -85,7 +85,7 @@ const ResumeProvider = ({ children }) => {
           return newState;
 
         case 'change_language':
-          newState = clone(state);
+          newState = set(clone(state), 'metadata.language', payload);
           items = get(
             i18next.getDataByLanguage(payload),
             'translation.builder.sections',
@@ -94,6 +94,7 @@ const ResumeProvider = ({ children }) => {
             has(newState, `${key}.heading`) &&
               set(newState, `${key}.heading`, items[key]);
           });
+          debouncedUpdateResume(newState);
           return newState;
 
         case 'reset_layout':
