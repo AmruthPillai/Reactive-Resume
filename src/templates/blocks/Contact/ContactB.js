@@ -1,5 +1,6 @@
 import { get } from 'lodash';
 import React, { memo, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import { FaCaretRight } from 'react-icons/fa';
 import PageContext from '../../../contexts/PageContext';
 import { safetyCheck } from '../../../utils';
@@ -28,22 +29,23 @@ const ContactItem = ({ value, icon, link }) => {
 };
 
 const ContactA = () => {
+  const { t } = useTranslation();
   const { data } = useContext(PageContext);
 
   return (
     <div className="text-xs grid gap-2">
       <ContactItem
-        icon="phone"
+        label={t('shared.forms.phone')}
         value={data.profile.phone}
         link={`tel:${data.profile.phone}`}
       />
       <ContactItem
-        icon="website"
+        label={t('shared.forms.website')}
         value={data.profile.website}
         link={data.profile.website}
       />
       <ContactItem
-        icon="email"
+        label={t('shared.forms.email')}
         value={data.profile.email}
         link={`mailto:${data.profile.email}`}
       />

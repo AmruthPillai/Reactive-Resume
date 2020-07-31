@@ -40,17 +40,17 @@ const ContactC = () => {
       )}
 
       <ContactItem
-        label="phone"
+        label={t('shared.forms.phone')}
         value={data.profile.phone}
         link={`tel:${data.profile.phone}`}
       />
       <ContactItem
-        label="website"
+        label={t('shared.forms.website')}
         value={data.profile.website}
         link={data.profile.website}
       />
       <ContactItem
-        label="email"
+        label={t('shared.forms.email')}
         value={data.profile.email}
         link={`mailto:${data.profile.email}`}
       />

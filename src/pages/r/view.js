@@ -14,7 +14,7 @@ import styles from './view.module.css';
 import Celebi from '../../templates/Celebi';
 
 const ResumeViewer = ({ id }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [resume, setResume] = useState(null);
   const [loading, setLoading] = useState(true);
   const { getResume } = useContext(DatabaseContext);
@@ -32,6 +32,7 @@ const ResumeViewer = ({ id }) => {
       }
 
       setResume(data);
+      i18n.changeLanguage(data.metadata.language || 'en');
       return setLoading(false);
     })();
   }, [id]);

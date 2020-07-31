@@ -1,19 +1,15 @@
 import { Tooltip } from '@material-ui/core';
-import Ajv from 'ajv';
 import React, { memo, useContext, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { toast } from 'react-toastify';
 import Button from '../../components/shared/Button';
 import ModalContext from '../../contexts/ModalContext';
 import { useDispatch } from '../../contexts/ResumeContext';
-import reactiveResumeSchema from '../../data/schema/reactiveResume.json';
-import jsonResumeSchema from '../../data/schema/jsonResume.json';
 import BaseModal from '../BaseModal';
 
 const ImportModal = () => {
-  const ajv = new Ajv();
   const { t } = useTranslation();
-  const fileInputRef = useRef(null);
+  const reactiveResumeFileInputRef = useRef(null);
+  const jsonResumeFileInputRef = useRef(null);
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
 
@@ -29,11 +25,6 @@ const ImportModal = () => {
     const fr = new FileReader();
     fr.addEventListener('load', () => {
       const payload = JSON.parse(fr.result);
-      const valid = ajv.validate(reactiveResumeSchema, payload);
-      if (!valid) {
-        ajv.errors.forEach((x) => toast.error(`Invalid Data: ${x.message}`));
-        return;
-      }
       dispatch({ type: 'on_import', payload });
       setOpen(false);
     });
@@ -44,11 +35,6 @@ const ImportModal = () => {
     const fr = new FileReader();
     fr.addEventListener('load', () => {
       const payload = JSON.parse(fr.result);
-      const valid = ajv.validate(jsonResumeSchema, payload);
-      if (!valid) {
-        ajv.errors.forEach((x) => toast.error(`Invalid Data: ${x.message}`));
-        return;
-      }
       dispatch({ type: 'on_import_jsonresume', payload });
       setOpen(false);
     });
@@ -70,11 +56,14 @@ const ImportModal = () => {
           {t('modals.import.reactiveResume.text')}
         </p>
 
-        <Button className="mt-5" onClick={() => fileInputRef.current.click()}>
+        <Button
+          className="mt-5"
+          onClick={() => reactiveResumeFileInputRef.current.click()}
+        >
           {t('modals.import.button')}
         </Button>
         <input
-          ref={fileInputRef}
+          ref={reactiveResumeFileInputRef}
           type="file"
           className="hidden"
           onChange={importReactiveResumeJson}
@@ -90,11 +79,14 @@ const ImportModal = () => {
 
         <p className="leading-loose">{t('modals.import.jsonResume.text')}</p>
 
-        <Button className="mt-5" onClick={() => fileInputRef.current.click()}>
+        <Button
+          className="mt-5"
+          onClick={() => jsonResumeFileInputRef.current.click()}
+        >
           {t('modals.import.button')}
         </Button>
         <input
-          ref={fileInputRef}
+          ref={jsonResumeFileInputRef}
           type="file"
           className="hidden"
           onChange={importJsonResume}
