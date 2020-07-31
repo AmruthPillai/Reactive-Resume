@@ -12,10 +12,6 @@ const languages = [
     name: 'Danish (Dansk)',
   },
   {
-    code: 'no',
-    name: 'Norwegian (Norsk)',
-  },
-  {
     code: 'nl',
     name: 'Dutch (Nederlands)',
   },
@@ -42,6 +38,10 @@ const languages = [
   {
     code: 'kn',
     name: 'Kannada (ಕನ್ನಡ)',
+  },
+  {
+    code: 'nb',
+    name: 'Norwegian (Norsk)',
   },
   {
     code: 'ptBr',

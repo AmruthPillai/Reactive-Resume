@@ -54,6 +54,7 @@ For those of you familiar with the Crowdin Platform, you could do that too and j
 - German (Deutsche) (by [Kryptand](https://crowdin.com/profile/Kryptand))
 - Japanese (日本人) (by [a-thug](https://crowdin.com/profile/a-thug))
 - Kannada (ಕನ್ನಡ)
+- Norwegian (Norsk) (by [rubjo](https://github.com/rubjo))
 - Portuguese (Brazilian) (by [Felipe CG](https://github.com/felcg))
 - Spanish (Español) (by [jrgonzalezrios](https://github.com/jrgonzalezrios))
 - Turkish (Türkçe) (by [Emirhan Avcı](https://github.com/AtlasFontaine))
