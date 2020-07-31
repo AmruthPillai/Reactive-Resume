@@ -45,6 +45,7 @@ For those of you familiar with the Crowdin Platform, you could do that too and j
 
 ##### Languages Currently Supported
 
+- Arabic (عربى) (by [Ahmad Khatab](https://github.com/A7madXatab))
 - Danish (Dansk) (by [RazziaDK](https://crowdin.com/profile/RazziaDK))
 - Dutch (Nederlands) (by [Imad Youssoufi](https://github.com/2imad))
 - English
