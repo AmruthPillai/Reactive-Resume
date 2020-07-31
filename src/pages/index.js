@@ -77,7 +77,7 @@ const Home = () => {
             <strong>Well, this is the exception</strong>. Your data is your own,
             as stated in the ridiculously simple{' '}
             <Link to="/faq">Privacy Policy</Link>, I don&apos;t do anything with
-            the data, it just exists on a database for the convinient features
+            the data, it just exists on a database for the convenient features
             provided by Reactive Resume.
           </Feature>
         </div>

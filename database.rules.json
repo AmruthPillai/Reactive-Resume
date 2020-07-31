@@ -9,6 +9,7 @@
       }
     },
     "users": {
+      ".indexOn": "isAnonymous",
       "$uid": {
         ".read": "$uid === auth.uid",
         ".write": "$uid === auth.uid"

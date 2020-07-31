@@ -5,7 +5,7 @@ module.exports = {
     title: 'Reactive Resume',
     siteUrl: 'https://rxresu.me',
     description: 'A free and open source resume builder.',
-    version: '2.1.0',
+    version: '2.1.1',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -34,7 +34,7 @@ module.exports = {
         display: 'standalone',
       },
     },
-    'gatsby-plugin-offline',
+    'gatsby-plugin-remove-serviceworker',
     {
       resolve: 'gatsby-plugin-prefetch-google-fonts',
       options: {

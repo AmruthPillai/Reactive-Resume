@@ -1,10 +1,9 @@
 import React, { memo, useContext } from 'react';
-import { useTranslation } from 'react-i18next';
 import ReactMarkdown from 'react-markdown';
 import PageContext from '../../../contexts/PageContext';
 import { formatDateRange, safetyCheck } from '../../../utils';
 
-const EducationItem = ({ item, i18n }) => (
+const EducationItem = ({ item, language }) => (
   <div>
     <div className="flex justify-between items-center">
       <div className="flex flex-col text-left mr-2">
@@ -20,7 +19,7 @@ const EducationItem = ({ item, i18n }) => (
             {formatDateRange({
               startDate: item.startDate,
               endDate: item.endDate,
-              language: i18n.language,
+              language,
             })}
             )
           </h6>
@@ -35,7 +34,6 @@ const EducationItem = ({ item, i18n }) => (
 );
 
 const EducationA = () => {
-  const { i18n } = useTranslation();
   const { data, heading: Heading } = useContext(PageContext);
 
   return safetyCheck(data.education) ? (
@@ -43,7 +41,11 @@ const EducationA = () => {
       <Heading>{data.education.heading}</Heading>
       <div className="grid gap-4">
         {data.education.items.map((x) => (
-          <EducationItem key={x.id} item={x} i18n={i18n} />
+          <EducationItem
+            key={x.id}
+            item={x}
+            language={data.metadata.language}
+          />
         ))}
       </div>
     </div>
