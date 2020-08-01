@@ -8,7 +8,7 @@ import Icons from '../Icons';
 
 const ContactItem = ({ value, icon, link }) => {
   const { data } = useContext(PageContext);
-  const Icon = get(Icons, icon.toLowerCase(), FaCaretRight);
+  const Icon = get(Icons, icon && icon.toLowerCase(), FaCaretRight);
 
   return value ? (
     <div className="flex items-center">
@@ -28,7 +28,7 @@ const ContactItem = ({ value, icon, link }) => {
   ) : null;
 };
 
-const ContactA = () => {
+const ContactB = () => {
   const { t } = useTranslation();
   const { data } = useContext(PageContext);
 
@@ -63,4 +63,4 @@ const ContactA = () => {
   );
 };
 
-export default memo(ContactA);
+export default memo(ContactB);
