@@ -34,6 +34,7 @@ const Artboard = () => {
         className={styles.container}
         style={{
           transform: `scale(${width / 1680})`,
+          transformOrigin: `${width / 1680 > 1.0 ? `top left` : ``}`,
         }}
       >
         {template === 'onyx' && <Onyx data={state} />}
