@@ -102,7 +102,7 @@ I try to do what I can, but if you found the app helpful, or you're in a better 
 
 - Leon Yuan ([@LeonY1](https://github.com/LeonY1))
 - Benjamin Benni ([@Sensaze](https://twitter.com/Sensaze))
-- Anonymoys Donor
+- Anonymous Donor
 - Kathy Reid ([@KathyReid](https://github.com/KathyReid))
 
 ### Changelog
