@@ -50,7 +50,8 @@ section {
 
 .markdown ul {
   list-style: disc;
-  list-style-position: inside;
+  list-style-position: outside;
+  padding-left: 1.5em;
 }
 
 @page {
