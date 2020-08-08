@@ -27,13 +27,14 @@ export const formatDate = ({ date, language = 'en' }) => {
 };
 
 export const formatDateRange = ({ startDate, endDate, language = 'en' }) => {
+  const { t } = useTranslation();
   const start = `${dayjs(startDate)
     .locale(language.substr(0, 2))
     .format('MMMM YYYY')}`;
 
   const end = dayjs(endDate).isValid()
     ? `${dayjs(endDate).locale(language.substr(0, 2)).format('MMMM YYYY')}`
-    : 'Present';
+    : t('shared.forms.present');
 
   return `${start} - ${end}`;
 };
