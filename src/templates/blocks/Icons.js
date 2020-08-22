@@ -6,6 +6,7 @@ import {
   FaGithub,
   FaDribbble,
   FaInstagram,
+  FaGitlab,
 } from 'react-icons/fa';
 import { MdPhone, MdEmail } from 'react-icons/md';
 
@@ -19,6 +20,7 @@ const Icons = {
   github: FaGithub,
   dribbble: FaDribbble,
   instagram: FaInstagram,
+  gitlab: FaGitlab,
 };
 
 export default Icons;
