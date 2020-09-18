@@ -37,16 +37,19 @@ const ContactB = () => {
       <ContactItem
         label={t('shared.forms.phone')}
         value={data.profile.phone}
+        icon="phone"
         link={`tel:${data.profile.phone}`}
       />
       <ContactItem
         label={t('shared.forms.website')}
         value={data.profile.website}
+        icon="website"
         link={data.profile.website}
       />
       <ContactItem
         label={t('shared.forms.email')}
         value={data.profile.email}
+        icon="email"
         link={`mailto:${data.profile.email}`}
       />
 
