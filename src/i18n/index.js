@@ -4,6 +4,10 @@ import resources from './locales';
 
 const languages = [
   {
+    code: 'zh',
+    name: 'Chinese Simplified (简体中文)',
+  },
+  {
     code: 'ar',
     name: 'Arabic (عربى)',
   },

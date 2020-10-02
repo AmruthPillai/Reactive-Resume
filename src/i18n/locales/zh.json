@@ -1,0 +1,250 @@
+{
+  "shared": {
+    "appName": "Reactive Resume",
+    "shortDescription": "一个免费的开源简历生成器",
+    "forms": {
+      "name": "姓名",
+      "title": "标题",
+      "subtitle": "副标题",
+      "required": "必填",
+      "website": "网站",
+      "date": "日期",
+      "present": "至今",
+      "position": "职务",
+      "startDate": "开始日期",
+      "endDate": "结束日期",
+      "address": "地址",
+      "phone": "电话",
+      "email": "邮箱",
+      "summary": "概要",
+      "markdown": "文本框支持 <1>markdown</1> 语法",
+      "validation": {
+        "min": "请输入至少 {{number}} 个字符",
+        "dateRange": "结束时间必须晚于开始时间",
+        "email": "请输入合法的邮箱地址",
+        "required": "该项必填",
+        "url": "请输入合法的网址"
+      }
+    },
+    "buttons": {
+      "add": "添加",
+      "edit": "编辑",
+      "cancel": "撤销",
+      "delete": "删除",
+      "loading": "加载中...",
+      "confirmation": "确定吗？",
+      "login": "登录",
+      "logout": "退出"
+    }
+  },
+  "landing": {
+    "hero": {
+      "goToApp": "前往应用"
+    }
+  },
+  "dashboard": {
+    "title": "操作台",
+    "createResume": "创建简历",
+    "editResume": "编辑简历",
+    "lastUpdated": "最近更新于 {{timestamp}}",
+    "toasts": {
+      "deleted": "{{name}} 已成功删除"
+    },
+    "buttons": {
+      "duplicate": "复制",
+      "rename": "重命名"
+    },
+    "helpText": "我们将从头开始创建一份新的简历。首先，让我们给它起个名字。它可以是您想申请的职位的名称，或者如果您是帮朋友在写简历，您可以将它命名为《小明的简历》。"
+  },
+  "builder": {
+    "toasts": {
+      "formErrors": "在提交此表单之前，您可能需要填写所有必需的字段。",
+      "doesNotExist": "您要找的简历已经不存在了。。。也可能它从来就没有存在过？",
+      "loadDemoData": "不知道怎么开始创作一份简历吗？试试加载演示数据，看看 Reactive Resume 为您提供的示例。"
+    },
+    "sections": {
+      "heading": "标题",
+      "profile": "简介",
+      "social": "社交网络",
+      "objective": "求职原因",
+      "work": "工作经历",
+      "education": "教育背景",
+      "project": "项目经历",
+      "projects": "项目经历",
+      "award": "奖项",
+      "awards": "奖项",
+      "certification": "证书",
+      "certifications": "证书",
+      "skill": "技能",
+      "skills": "技能",
+      "hobby": "爱好",
+      "hobbies": "爱好",
+      "language": "语言",
+      "languages": "语言",
+      "reference": "参考",
+      "references": "参考",
+      "templates": "模板",
+      "layout": "布局",
+      "colors": "颜色",
+      "fonts": "字体",
+      "actions": "操作",
+      "settings": "设置",
+      "about": "关于"
+    },
+    "profile": {
+      "photograph": "照片",
+      "firstName": "姓",
+      "lastName": "名",
+      "address": {
+        "line1": "地址（第一行）",
+        "line2": "地址（第二行）",
+        "city": "城市",
+        "pincode": "邮编"
+      }
+    },
+    "social": {
+      "network": "网站",
+      "username": "用户名",
+      "url": "网址"
+    },
+    "work": {
+      "company": "公司"
+    },
+    "education": {
+      "institution": "所在机构",
+      "field": "研究领域",
+      "degree": "学位类型",
+      "gpa": "GPA"
+    },
+    "awards": {
+      "awarder": "颁奖机构"
+    },
+    "certifications": {
+      "issuer": "发放单位"
+    },
+    "skills": {
+      "level": "技能等级"
+    },
+    "languages": {
+      "fluency": "流利程度"
+    },
+    "layout": {
+      "block": "区块",
+      "reset": "重置布局",
+      "text": "本模板支持 {{count}} 种布局"
+    },
+    "colors": {
+      "primary": "主色彩",
+      "text": "文字颜色",
+      "background": "背景色"
+    },
+    "actions": {
+      "import": {
+        "heading": "导入简历",
+        "text": "您可以从各种来源（如 JSON Resume、LinkedIn 等）中导入信息来自动填充简历上需要的大部分数据",
+        "button": "导入"
+      },
+      "export": {
+        "heading": "导出简历",
+        "text": "将您的简历导出为PDF格式以便分享给招聘者，或导出为 JSON 格式以便能应用于其他计算机上。",
+        "button": "导出"
+      },
+      "share": {
+        "heading": "分享简历",
+        "text": "如果您选择公开下面的链接，任何人都可以方便的查看到您最新版本的简历。"
+      },
+      "loadDemoData": {
+        "text": "不清楚如何处理新的空白页？加载一些演示数据，看看简历应该是什么样子的，然后您就可以开始编辑了。",
+        "button": "加载示例数据"
+      },
+      "resetEverything": {
+        "text": "感觉有太多错误？别担心，只需单击一下即可清除所有内容，但请注意先备份。",
+        "button": "重置简历"
+      }
+    },
+    "settings": {
+      "theme": "主题",
+      "language": "语言",
+      "translate": "如果您希望贡献您所用语言的翻译，<1>请访问此链接</1>",
+      "dangerZone": {
+        "heading": "危险操作",
+        "text": "如果您想删除您的帐户并删除所有简历，只需单击一个按钮即可。请注意删除操作不可恢复。",
+        "button": "删除帐户"
+      }
+    },
+    "about": {
+      "donate": {
+        "heading": "捐赠给 Reactive Resume",
+        "text": "但是如果您觉得这个项目很有用，或者您比其他依靠这个项目来申请第一份工作的人过得更好，<1>请考虑捐赠5美元来帮助我们维持这个项目</1>：）",
+        "button": "送我一杯咖啡"
+      },
+      "bugFeature": {
+        "heading": "发现了Bug? 想要新的功能?",
+        "text": "无论是写简历的过程中遇到了什么阻碍还是发现了什么难以解决的BUG，都可以点击下面的按钮在 GitHub 上给我们提一个 Issue。",
+        "button": "提交一个 Issue"
+      },
+      "appreciate": {
+        "heading": "喜欢 Reactive Resume 吗？",
+        "text": "我特别喜欢听到这个项目帮助到了别人，如果它帮到了你，或者你刚刚发现它是一个很棒的工具，一定要告诉我。你可以在我的网站上联系我。"
+      },
+      "sourceCode": {
+        "heading": "源代码",
+        "text": "要从源代码运行项目吗？或者您准备为这个项目的开源开发做出贡献？单击下面的按钮即可。",
+        "button": "GitHub 仓库"
+      },
+      "footer": "用爱发电 by <1>Amruth Pillai</1>"
+    },
+    "tooltips": {
+      "uploadPhotograph": "上传照片",
+      "backToDashboard": "回到操作台"
+    },
+    "emptyList": "列表为空"
+  },
+  "modals": {
+    "auth": {
+      "whoAreYou": "你是谁？",
+      "welcome": "{{name}}，欢迎您！",
+      "loggedOutText": "Reactive Resume 需要知道您是谁，这样它才能安全地在应用程序中验证您的身份，并且只向您显示您的信息。您成功登录后，就可以开始建设您的简历，编辑它或者与世界分享它了！",
+      "loggedInText": "太棒了，您已经证明了您的身份。单击“转到应用程序”按钮，开始创建您的简历吧！",
+      "buttons": {
+        "google": "使用 Google 账号登录",
+        "anonymous": "匿名登录"
+      }
+    },
+    "import": {
+      "button": "选择文件",
+      "reactiveResume": {
+        "heading": "从 Reactive Resume 导入",
+        "text": "Reactive Resume 有自己的协议格式，可以充分利用它提供的所有可定制功能。如果要导入使用 Reactive Resume 制作的简历备份，只需使用下面的按钮上传该文件。"
+      },
+      "jsonResume": {
+        "heading": "从 JSON 简历导入",
+        "text": "JSON Resume 是简历结构的一套开源标准。如果您是以这种格式准备好了简历，只需单击一下即可开始使用 Reactive Resume。"
+      },
+      "linkedIn": {
+        "heading": "从 LinkedIn 导入",
+        "text": "您可以通过单击下面的按钮并选择适当的文件格式来导入从 LinkedIn 导出的 JSON 文件。"
+      }
+    },
+    "export": {
+      "printDialog": {
+        "heading": "使用浏览器的打印对话框",
+        "text": "对于那些想要一个快速解决方案的人来说，只需使用浏览器就可以了。您只需按下 Ctrl/Cmd+P，即可在浏览器上打开打印对话框，立即打印您的简历。",
+        "button": "打印简历"
+      },
+      "downloadPDF": {
+        "heading": "导出为 PDF",
+        "text": "这些选项允许您导出一页不受版本限制的简历，非常适合简历内容很丰富的人。您也可以将简历导出为多页的 PDF，同样仅需点击一下。",
+        "buttons": {
+          "single": "单页简历",
+          "multi": "多页简历"
+        }
+      },
+      "jsonFormat": {
+        "heading": "导出为 JSON",
+        "text": "您还可以将数据导出为 JSON 格式以便安全保存，您可以在需要编辑或生成简历时轻松地将其导入到 Reactive Resume 中。",
+        "button": "导出 JSON"
+      }
+    }
+  }
+}
