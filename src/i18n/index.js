@@ -4,12 +4,12 @@ import resources from './locales';
 
 const languages = [
   {
-    code: 'zh',
-    name: 'Chinese Simplified (简体中文)',
-  },
-  {
     code: 'ar',
     name: 'Arabic (عربى)',
+  },
+  {
+    code: 'zh',
+    name: 'Chinese Simplified (简体中文)',
   },
   {
     code: 'da',
@@ -50,6 +50,10 @@ const languages = [
   {
     code: 'ptBr',
     name: 'Portuguese (Brazilian)',
+  },
+  {
+    code: 'ptPt',
+    name: 'Portuguese (Portugal)',
   },
   {
     code: 'es',

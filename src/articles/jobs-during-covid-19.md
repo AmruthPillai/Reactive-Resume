@@ -1,7 +1,7 @@
 ---
-slug: "/blog/jobs-during-covid-19"
-date: "2020-07-16"
-title: "Jobs During COVID-19"
+slug: '/blog/jobs-during-covid-19'
+date: '2020-07-16'
+title: 'Jobs During COVID-19'
 ---
 
 As companies move to remote work to fight the coronavirus pandemic and an increasing number of workers are being laid off or furloughed, you might be wondering if you should continue to send out resumes or just assume that no one is hiring for the foreseeable future. It’s true that economists are predicting a recession, but career experts say it’s best to keep networking and applying, provided you change your approach a bit to acknowledge these are uncertain times.
@@ -35,4 +35,3 @@ Job seekers often jump at the first available opportunity or go into their searc
 #### 6. Boost Your Skills
 
 Now is the perfect time to work on bolstering your qualifications, Moser says. Analyze job descriptions by listing each required skill and experience. Then consider whether you have that exact skill, if you have the skill but haven’t used it in a few years, or if you’re lacking the skill entirely. Use that information to determine what you need to brush up on to make yourself an even better candidate when the job market picks up again.
-

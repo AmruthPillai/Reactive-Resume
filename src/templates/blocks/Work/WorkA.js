@@ -16,17 +16,23 @@ const WorkItem = ({ item, language }) => {
         {item.startDate && (
           <h6 className="text-xs font-medium text-right">
             (
-            {formatDateRange({
-              startDate: item.startDate,
-              endDate: item.endDate,
-              language,
-            }, t)}
+            {formatDateRange(
+              {
+                startDate: item.startDate,
+                endDate: item.endDate,
+                language,
+              },
+              t,
+            )}
             )
           </h6>
         )}
       </div>
       {item.summary && (
-        <ReactMarkdown className="markdown mt-2 text-sm" source={item.summary} />
+        <ReactMarkdown
+          className="markdown mt-2 text-sm"
+          source={item.summary}
+        />
       )}
     </div>
   );

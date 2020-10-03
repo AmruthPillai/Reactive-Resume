@@ -1,7 +1,7 @@
 ---
-slug: "/blog/ats-friendly-resumes"
-date: "2020-07-14"
-title: "ATS-Friendly Resumes"
+slug: '/blog/ats-friendly-resumes'
+date: '2020-07-14'
+title: 'ATS-Friendly Resumes'
 ---
 
 An ATS (Applicant Tracking System) is software used by companies to help them quickly evaluate potential candidates for any given job opening.
@@ -42,5 +42,4 @@ Most ATS software is programmed to read more common typefaces. Using an unusual 
 
 #### 6. Save your resume as the proper file type
 
-PDFs  are the preferred file format for most companies today, and are easily understood by any modern applicant tracking system.
-
+PDFs are the preferred file format for most companies today, and are easily understood by any modern applicant tracking system.

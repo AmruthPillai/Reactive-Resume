@@ -19,11 +19,14 @@ const EducationItem = ({ item, language }) => {
           {item.startDate && (
             <h6 className="text-xs font-medium mb-1">
               (
-              {formatDateRange({
-                startDate: item.startDate,
-                endDate: item.endDate,
-                language,
-              }, t)}
+              {formatDateRange(
+                {
+                  startDate: item.startDate,
+                  endDate: item.endDate,
+                  language,
+                },
+                t,
+              )}
               )
             </h6>
           )}
@@ -31,7 +34,10 @@ const EducationItem = ({ item, language }) => {
         </div>
       </div>
       {item.summary && (
-        <ReactMarkdown className="markdown mt-2 text-sm" source={item.summary} />
+        <ReactMarkdown
+          className="markdown mt-2 text-sm"
+          source={item.summary}
+        />
       )}
     </div>
   );

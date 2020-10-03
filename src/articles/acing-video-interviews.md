@@ -1,7 +1,7 @@
 ---
-slug: "/blog/acing-video-interviews"
-date: "2020-07-15"
-title: "Acing Video Interviews"
+slug: '/blog/acing-video-interviews'
+date: '2020-07-15'
+title: 'Acing Video Interviews'
 ---
 
 Today, as in-person interviewing has had to cease or slow due to restrictions during the Covid-19 pandemic, thousands of professionals are now needing to learn how to effectively interview in a new way using online platforms, such as Zoom, GoToMeeting and others.
@@ -11,7 +11,7 @@ Here are 10 helpful tips for making the best impression you can in your video in
 
 While so many of us are now working remotely and using Zoom or other platforms for our meetings, we’ve grown more accustomed to seeing people in their home settings, and noticing their home décor, pets, family members, and other aspects of their personal life in the background.
 
-For an interview, it’s fine to be in your home or living room but try to present whatever people see as neutral and professional as possible. You want to let yourself and your words, conversation and experience speak most powerfully about your qualifications and suitability for the job.  And you want to avoid the chance that your interviewer will be distracted by what’s behind you, or perhaps have a negative reaction to any personal items (such as a plate of food behind you or a messy room) in your home.
+For an interview, it’s fine to be in your home or living room but try to present whatever people see as neutral and professional as possible. You want to let yourself and your words, conversation and experience speak most powerfully about your qualifications and suitability for the job. And you want to avoid the chance that your interviewer will be distracted by what’s behind you, or perhaps have a negative reaction to any personal items (such as a plate of food behind you or a messy room) in your home.
 
 #### Select professional attire
 
