@@ -1,3 +1,4 @@
+import zh from './zh.json';
 import ar from './ar.json';
 import da from './da.json';
 import de from './de.json';
@@ -13,6 +14,7 @@ import ptBr from './pt-br.json';
 import tr from './tr.json';
 
 export default {
+  zh: { translation: zh },
   ar: { translation: ar },
   da: { translation: da },
   de: { translation: de },
