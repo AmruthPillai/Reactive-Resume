@@ -21,7 +21,7 @@ const List = ({
   hasDate,
   event,
 }) => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const items = useSelector(path, []);
   const { emitter } = useContext(ModalContext);
 
@@ -49,7 +49,7 @@ const List = ({
                     startDate: x.startDate,
                     endDate: x.endDate,
                     language: i18n.language,
-                  }))
+                  }, t))
               }
               text={text || get(x, textPath, '')}
               onEdit={() => handleEdit(x)}
