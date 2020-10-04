@@ -26,7 +26,7 @@ const Colors = ({ id }) => {
     <section>
       <Heading id={id} />
 
-      <div className="mb-6 grid grid-cols-8 col-gap-2 row-gap-6">
+      <div className="mb-6 grid grid-cols-8 gap-x-2 gap-y-6">
         {colorOptions.map((color) => (
           <div
             key={color}

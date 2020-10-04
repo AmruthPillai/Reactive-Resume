@@ -33,7 +33,7 @@ const Home = () => {
 
         <Screenshots />
 
-        <div className="pt-8 grid lg:grid-cols-2 lg:col-gap-10">
+        <div className="pt-8 grid lg:grid-cols-2 lg:gap-x-10">
           <Feature
             icon={IoIosRocket}
             title="Create a resume that’s worthy of who you are."

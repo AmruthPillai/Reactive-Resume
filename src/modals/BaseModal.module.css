@@ -4,6 +4,7 @@
 
 .modal {
   width: min(600px, calc(100vw - 100px));
+
   @apply p-8 rounded bg-primary-50 outline-none;
 }
 

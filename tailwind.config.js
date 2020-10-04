@@ -1,5 +1,8 @@
 module.exports = {
-  purge: ['./src/**/*.js'],
+  future: {
+    purgeLayersByDefault: true,
+    removeDeprecatedGapUtilities: true,
+  },
   theme: {
     container: {
       center: true,
