@@ -1,53 +1,13 @@
 {
-  "hosting": [
-    {
-      "target": "rxresume",
-      "public": "public",
-      "ignore": [
-        "**/.*",
-        "firebase.json",
-        "**/node_modules/**"
-      ],
-      "headers": [
-        {
-          "source": "**/*",
-          "headers": [
-            {
-              "key": "cache-control",
-              "value": "cache-control: public, max-age=86400, must-revalidate"
-            }
-          ]
-        },
-        {
-          "source": "static/**",
-          "headers": [
-            {
-              "key": "cache-control",
-              "value": "public, max-age=604800, immutable"
-            }
-          ]
-        },
-        {
-          "source": "**/*.@(css|js|woff2|jpg|png)",
-          "headers": [
-            {
-              "key": "cache-control",
-              "value": "public, max-age=86400, immutable"
-            }
-          ]
-        },
-        {
-          "source": "sw.js",
-          "headers": [
-            {
-              "key": "cache-control",
-              "value": "cache-control: public, max-age=86400, must-revalidate"
-            }
-          ]
-        }
-      ]
-    }
-  ],
+  "hosting": {
+    "target": "rxresume",
+    "public": "./public",
+    "ignore": [
+      "**/.*",
+      "firebase.json",
+      "**/node_modules/**"
+    ]
+  },
   "emulators": {
     "functions": {
       "port": 5001
