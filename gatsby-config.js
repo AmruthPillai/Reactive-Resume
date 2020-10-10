@@ -5,7 +5,7 @@ module.exports = {
     title: 'Reactive Resume',
     siteUrl: 'https://rxresu.me',
     description: 'A free and open source resume builder.',
-    version: '2.1.4',
+    version: '2.2.0',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

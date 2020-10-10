@@ -36,6 +36,14 @@ const languages = [
     name: 'German (Deutsche)',
   },
   {
+    code: 'hi',
+    name: 'Hindi (हिंदी)',
+  },
+  {
+    code: 'it',
+    name: 'Italian (Italiano)',
+  },
+  {
     code: 'ja',
     name: 'Japanese (日本人)',
   },
@@ -48,6 +56,10 @@ const languages = [
     name: 'Norwegian (Norsk)',
   },
   {
+    code: 'pl',
+    name: 'Polish (Polskie)',
+  },
+  {
     code: 'ptBr',
     name: 'Portuguese (Brazilian)',
   },
@@ -56,8 +68,16 @@ const languages = [
     name: 'Portuguese (Portugal)',
   },
   {
+    code: 'ru',
+    name: 'Russian (русский)',
+  },
+  {
     code: 'es',
     name: 'Spanish (Español)',
+  },
+  {
+    code: 'sv',
+    name: 'Swedish (Svenska)',
   },
   {
     code: 'tr',

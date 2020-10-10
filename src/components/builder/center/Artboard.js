@@ -31,6 +31,7 @@ const Artboard = () => {
       </Helmet>
 
       <div
+        id="page"
         className={styles.container}
         style={{
           transform: `scale(${width / 1680})`,
