@@ -38,6 +38,13 @@ const Profile = ({ id }) => {
         path="profile.subtitle"
       />
 
+      <Input
+        type="date"
+        name="birthDate"
+        label={t('builder.profile.birthDate')}
+        path="profile.birthDate"
+      />
+
       <hr />
 
       <Input

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import PageContext from '../contexts/PageContext';
 import AwardsA from './blocks/Awards/AwardsA';
 import CertificationsA from './blocks/Certifications/CertificationsA';
@@ -12,6 +13,7 @@ import ProjectsA from './blocks/Projects/ProjectsA';
 import ReferencesA from './blocks/References/ReferencesA';
 import SkillsA from './blocks/Skills/SkillsA';
 import WorkA from './blocks/Work/WorkA';
+import { formatDate } from '../utils';
 
 const Blocks = {
   objective: ObjectiveA,
@@ -26,7 +28,8 @@ const Blocks = {
   references: ReferencesA,
 };
 
-const Castform = ({ data }) => {
+const Castform = ({ data, language }) => {
+  const { t } = useTranslation();
   const layout = data.metadata.layout.castform;
 
   const Photo = () =>
@@ -49,6 +52,19 @@ const Castform = ({ data }) => {
       </h1>
       <h5>{data.profile.subtitle}</h5>
     </div>
+  );
+
+  const BirthDate = () => (
+    data.profile.birthDate && (
+      <div className="text-xs">
+        <h6 className="capitalize font-semibold">
+          {t('builder.profile.birthDate')}
+        </h6>
+        <div>
+          <span>{formatDate({ date: data.profile.birthDate, language, includeDay: true })}</span>
+        </div>
+      </div>
+    )
   );
 
   return (
@@ -76,7 +92,10 @@ const Castform = ({ data }) => {
 
               <div>
                 <HeadingD>{data.profile.heading}</HeadingD>
-                <ContactC />
+                <div className="grid gap-4">
+                  <BirthDate />
+                  <ContactC />
+                </div>
               </div>
 
               {layout[0] &&

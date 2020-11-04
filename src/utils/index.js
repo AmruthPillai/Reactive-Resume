@@ -20,8 +20,11 @@ export const isFileImage = (file) => {
   return file && acceptedImageTypes.includes(file.type);
 };
 
-export const formatDate = ({ date, language = 'en' }) => {
-  return dayjs(date).locale(language.substr(0, 2)).format('MMMM YYYY');
+export const formatDate = ({ date, language = 'en', includeDay = false }) => {
+  const monthYearTemplate = 'MMMM YYYY';
+  const template = includeDay ? 'DD ' + monthYearTemplate : monthYearTemplate;
+
+  return dayjs(date).locale(language.substr(0, 2)).format(template);
 };
 
 export const formatDateRange = ({ startDate, endDate, language = 'en' }, t) => {
