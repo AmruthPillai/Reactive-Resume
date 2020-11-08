@@ -54,18 +54,22 @@ const Castform = ({ data, language }) => {
     </div>
   );
 
-  const BirthDate = () => (
-    data.profile.birthDate && (
-      <div className="text-xs">
-        <h6 className="capitalize font-semibold">
-          {t('builder.profile.birthDate')}
-        </h6>
-        <div>
-          <span>{formatDate({ date: data.profile.birthDate, language, includeDay: true })}</span>
+  const BirthDate = () => {
+    if (data.profile.birthDate) {
+      return (
+        <div className="text-xs">
+          <h6 className="capitalize font-semibold">
+            {t('builder.profile.birthDate')}
+          </h6>
+          <div>
+            <span>{formatDate({ date: data.profile.birthDate, language, includeDay: true })}</span>
+          </div>
         </div>
-      </div>
-    )
-  );
+      );
+    }
+
+    return null;
+  }
 
   return (
     <PageContext.Provider value={{ data, heading: HeadingD }}>
