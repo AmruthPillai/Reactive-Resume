@@ -17,12 +17,12 @@ const ProjectItem = ({ item, language }) => {
             </a>
           )}
         </div>
-        {(item.startDate || item.date) && (
+        {item.date && (
             <h6 className="text-xs font-medium text-right">
               (
               {formatDateRange(
                 {
-                  startDate: item.startDate? item.startDate : item.date,
+                  startDate: item.date,
                   endDate: item.endDate,
                   language,
                 },

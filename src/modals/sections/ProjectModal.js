@@ -54,7 +54,7 @@ const ProjectModal = () => {
               type="date"
               label={t('shared.forms.startDate')}
               placeholder="6th August 208"
-              {...getFieldProps(formik, schema, 'startDate')}
+              {...getFieldProps(formik, schema, 'date')}
             />
 
             <Input
