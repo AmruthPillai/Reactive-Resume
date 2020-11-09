@@ -1,5 +1,4 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import PageContext from '../contexts/PageContext';
 import AwardsA from './blocks/Awards/AwardsA';
 import CertificationsA from './blocks/Certifications/CertificationsA';
@@ -13,7 +12,7 @@ import ProjectsA from './blocks/Projects/ProjectsA';
 import ReferencesA from './blocks/References/ReferencesA';
 import SkillsA from './blocks/Skills/SkillsA';
 import WorkA from './blocks/Work/WorkA';
-import { formatDate } from '../utils';
+import BirthDateA from './blocks/BirthDate/BirthDateA'
 
 const Blocks = {
   objective: ObjectiveA,
@@ -28,8 +27,7 @@ const Blocks = {
   references: ReferencesA,
 };
 
-const Castform = ({ data, language }) => {
-  const { t } = useTranslation();
+const Castform = ({ data }) => {
   const layout = data.metadata.layout.castform;
 
   const Photo = () =>
@@ -53,23 +51,6 @@ const Castform = ({ data, language }) => {
       <h5>{data.profile.subtitle}</h5>
     </div>
   );
-
-  const BirthDate = () => {
-    if (data.profile.birthDate) {
-      return (
-        <div className="text-xs">
-          <h6 className="capitalize font-semibold">
-            {t('builder.profile.birthDate')}
-          </h6>
-          <div>
-            <span>{formatDate({ date: data.profile.birthDate, language, includeDay: true })}</span>
-          </div>
-        </div>
-      );
-    }
-
-    return null;
-  }
 
   return (
     <PageContext.Provider value={{ data, heading: HeadingD }}>
@@ -97,7 +78,7 @@ const Castform = ({ data, language }) => {
               <div>
                 <HeadingD>{data.profile.heading}</HeadingD>
                 <div className="grid gap-4">
-                  <BirthDate />
+                  <BirthDateA />
                   <ContactC />
                 </div>
               </div>
