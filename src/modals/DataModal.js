@@ -85,7 +85,7 @@ const DataModal = ({
   };
 
   const getTitle = isEmpty(title)
-    ? getModalText(isEditMode, name)
+    ? getModalText(isEditMode, name, t)
     : isEditMode
     ? title.edit
     : title.create;

@@ -7,7 +7,8 @@ import {
   FaDribbble,
   FaInstagram,
   FaStackOverflow,
-  FaBehance
+  FaBehance,
+  FaGitlab
 } from 'react-icons/fa';
 import { MdPhone, MdEmail } from 'react-icons/md';
 
@@ -23,6 +24,7 @@ const Icons = {
   instagram: FaInstagram,
   stackoverflow: FaStackOverflow,
   behance: FaBehance,
+  gitlab: FaGitlab
 };
 
 export default Icons;

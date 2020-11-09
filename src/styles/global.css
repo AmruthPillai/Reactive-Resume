@@ -2,6 +2,7 @@ html,
 body {
   font-size: 12px;
   font-family: 'Montserrat', sans-serif;
+
   @apply text-primary-900 bg-primary-50;
   @apply transition-colors duration-200 ease-in-out;
 }
@@ -42,7 +43,7 @@ section {
   100% {
     transform: rotate(360deg);
   }
-}w
+}
 
 .markdown {
   @apply leading-relaxed whitespace-pre-wrap;

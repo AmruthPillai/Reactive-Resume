@@ -15,7 +15,7 @@ const SkillsA = () => {
   return safetyCheck(data.skills) ? (
     <div>
       <Heading>{data.skills.heading}</Heading>
-      <div className="grid grid-cols-2 row-gap-2 col-gap-4">
+      <div className="grid grid-cols-2 gap-y-2 gap-x-4">
         {data.skills.items.map(SkillItem)}
       </div>
     </div>

@@ -5,6 +5,7 @@
 .left {
   width: calc(100vw / 4);
   box-shadow: var(--left-shadow);
+
   @apply bg-primary-50 absolute top-0 bottom-0 left-0 z-10;
 }
 
@@ -15,5 +16,6 @@
 .right {
   width: calc(100vw / 4);
   box-shadow: var(--right-shadow);
+
   @apply bg-primary-50 absolute top-0 bottom-0 right-0 z-10;
 }

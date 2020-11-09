@@ -1,7 +1,7 @@
 ---
-slug: "/blog/design-beautiful-resumes"
-date: "2020-07-13"
-title: "Designing Beautiful Resumes"
+slug: '/blog/design-beautiful-resumes'
+date: '2020-07-13'
+title: 'Designing Beautiful Resumes'
 ---
 
 Follow these 16 pro tips to help your design resume stand out from the crowd.

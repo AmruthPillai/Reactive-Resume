@@ -1,9 +1,7 @@
 import dayjs from 'dayjs';
 import { get, isEmpty } from 'lodash';
-import { useTranslation } from 'react-i18next';
 
-export const getModalText = (isEditMode, type) => {
-  const { t } = useTranslation();
+export const getModalText = (isEditMode, type, t) => {
   return isEditMode
     ? `${t('shared.buttons.edit')} ${type}`
     : `${t('shared.buttons.add')} ${type}`;
@@ -26,8 +24,7 @@ export const formatDate = ({ date, language = 'en' }) => {
   return dayjs(date).locale(language.substr(0, 2)).format('MMMM YYYY');
 };
 
-export const formatDateRange = ({ startDate, endDate, language = 'en' }) => {
-  const { t } = useTranslation();
+export const formatDateRange = ({ startDate, endDate, language = 'en' }, t) => {
   const start = `${dayjs(startDate)
     .locale(language.substr(0, 2))
     .format('MMMM YYYY')}`;

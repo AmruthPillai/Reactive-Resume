@@ -1,0 +1,251 @@
+{
+  "shared": {
+    "appName": "Reactive Resume",
+    "shortDescription": "En gratis och öppen källkod återuppbyggare.",
+    "forms": {
+      "name": "Namn",
+      "title": "Titel",
+      "subtitle": "Undertitel",
+      "required": "obligatoriskt",
+      "website": "Webbplats",
+      "date": "Datum",
+      "present": "Närvarande",
+      "position": "Position",
+      "startDate": "Startdatum",
+      "endDate": "Slutdatum",
+      "address": "Adress",
+      "phone": "Telefonnummer",
+      "email": "E-postadress",
+      "summary": "Sammanfattning",
+      "markdown": "Detta textblock stöder <1> markdown </1>.",
+      "validation": {
+        "min": "Ange minst {{number}} tecken.",
+        "dateRange": "Slutdatum måste vara senare än startdatum.",
+        "email": "Måste vara en giltig e-postadress.",
+        "required": "Detta är ett obligatoriskt fält.",
+        "url": "Måste vara en giltig URL."
+      }
+    },
+    "buttons": {
+      "add": "Lägg till",
+      "edit": "Redigera",
+      "cancel": "Avbryt",
+      "delete": "Ta bort",
+      "loading": "Laddar...",
+      "confirmation": "Är du säker?",
+      "login": "Logga in",
+      "logout": "Logga ut"
+    }
+  },
+  "landing": {
+    "hero": {
+      "goToApp": "Gå till app"
+    }
+  },
+  "dashboard": {
+    "title": "Översikt",
+    "createResume": "Skapa CV",
+    "editResume": "Redigera CV",
+    "lastUpdated": "Senast uppdaterad {{timestamp}}",
+    "toasts": {
+      "deleted": "{{name}} har raderats"
+    },
+    "buttons": {
+      "duplicate": "Duplicera",
+      "rename": "Ändra Namn"
+    },
+    "helpText": "Du kommer att skapa ett nytt CV från början, men först låt oss ge det ett namn. Detta kan vara namnet på den roll du ansöker om, eller om du gör ett CV för en vän, kan du kalla det Alex CV."
+  },
+  "builder": {
+    "toasts": {
+      "formErrors": "Du kan behöva fylla i alla obligatoriska fält innan du skickar in detta formulär.",
+      "doesNotExist": "CVet du letade efter finns inte längre ... eller kanske gjorde det aldrig?",
+      "loadDemoData": "Är du osäker på var du ska börja? Prova att ladda demodata för att se vad Reactive Resume har att erbjuda.",
+      "printError": "Molnfunktionen stöter på vissa problem, försök igen senare eller använd webbläsarens utskriftsfunktion."
+    },
+    "sections": {
+      "heading": "Rubrik",
+      "profile": "Profil",
+      "social": "Sociala nätverk",
+      "objective": "Mål",
+      "work": "Arbetslivserfarenhet",
+      "education": "Utbildning",
+      "project": "Projekt",
+      "projects": "Projekt",
+      "award": "Tilldela",
+      "awards": "Utmärkelser",
+      "certification": "Certifiering",
+      "certifications": "Certifieringar",
+      "skill": "Färdighet",
+      "skills": "Färdigheter",
+      "hobby": "Hobby",
+      "hobbies": "Hobbys",
+      "language": "Språk",
+      "languages": "Språk",
+      "reference": "Referens",
+      "references": "Referenser",
+      "templates": "Mallar",
+      "layout": "Utseende",
+      "colors": "Färger",
+      "fonts": "Teckensnitt",
+      "actions": "Åtgärder",
+      "settings": "Inställningar",
+      "about": "Om"
+    },
+    "profile": {
+      "photograph": "Fotografi",
+      "firstName": "Förnamn",
+      "lastName": "Efternamn",
+      "address": {
+        "line1": "Addressrad 1",
+        "line2": "Addressrad 2",
+        "city": "Stad",
+        "pincode": "Postnummer"
+      }
+    },
+    "social": {
+      "network": "Nätverk",
+      "username": "Användarnamn",
+      "url": "URL"
+    },
+    "work": {
+      "company": "Företag"
+    },
+    "education": {
+      "institution": "Institution",
+      "field": "Studieområde",
+      "degree": "Typ av examen",
+      "gpa": "GPA"
+    },
+    "awards": {
+      "awarder": "Prisutdelare"
+    },
+    "certifications": {
+      "issuer": "Utgivare"
+    },
+    "skills": {
+      "level": "Nivå"
+    },
+    "languages": {
+      "fluency": "Flytande"
+    },
+    "layout": {
+      "block": "Blockera",
+      "reset": "Återställ layout",
+      "text": "Denna mall stöder {{count}} block."
+    },
+    "colors": {
+      "primary": "Grundfärg",
+      "text": "Textfärg",
+      "background": "Bakgrundsfärg"
+    },
+    "actions": {
+      "import": {
+        "heading": "Importera ditt CV",
+        "text": "Du kan importera dina uppgifter från olika källor som JSON Resume eller din LinkedIn för att automatiskt fylla ut de flesta av uppgifterna till ditt CV.",
+        "button": "Importera"
+      },
+      "export": {
+        "heading": "Exportera ditt CV",
+        "text": "Exportera ditt CV som en PDF för att dela med rekryterare eller en JSON som du kommer att kunna importera tillbaka till den här appen på en annan dator.",
+        "button": "Exportera"
+      },
+      "share": {
+        "heading": "Dela ditt CV",
+        "text": "Länken nedan kommer att vara tillgänglig offentligt om du väljer att dela den och tittarna kan se den senaste versionen av ditt CV när som helst."
+      },
+      "loadDemoData": {
+        "text": "Oklart vad du ska göra med en ny tom sida? Ladda in demodata för att se hur ett CV ska se ut och du kan börja redigera därifrån.",
+        "button": "Ladda demoinformation"
+      },
+      "resetEverything": {
+        "text": "Känns som att du gjorde för många misstag? Inga bekymmer, rensa allt med bara ett klick, men var försiktig om det inte finns några säkerhetskopior.",
+        "button": "Återställ allt"
+      }
+    },
+    "settings": {
+      "theme": "Tema",
+      "language": "Språk",
+      "translate": "Om du vill bidra genom att tillhandahålla översättningar på ditt språk <1> besök den här länken </1>.",
+      "dangerZone": {
+        "heading": "Högrisksområde",
+        "text": "Om du vill radera ditt konto och radera alla dina CV är det bara en knapp borta. Var försiktig eftersom det här är en oåterkallelig process.",
+        "button": "Ta bort konto"
+      }
+    },
+    "about": {
+      "donate": {
+        "heading": "Donera till Reactive Resume",
+        "text": "Jag försöker göra vad jag kan, men om du tyckte att appen var till hjälp, eller om du har en bättre position än de andra som är beroende av det här projektet för sitt första jobb, <1> överväga att donera så lite som $ 5 för att hjälpa projektet levande </1> :)",
+        "button": "Köp mig en kaffe!"
+      },
+      "bugFeature": {
+        "heading": "Buggar? Funktionsförslag?",
+        "text": "Något som hindrar dina framsteg från att göra ett CV? Hittade ett irriterande fel som bara inte slutar? Prata om det i avsnittet GitHub-problem med hjälp av åtgärderna nedan.",
+        "button": "Rapportera ett problem"
+      },
+      "appreciate": {
+        "heading": "Gillar du Reactive Resume?",
+        "text": "Jag blir aldrig trött på att höra historier om hur den här appen hjälpte människor, och om det hjälpte dig, eller om du bara tyckte att Reactive Resume var ett fantastiskt verktyg, låt mig veta. Du kan kontakta mig på min webbplats."
+      },
+      "sourceCode": {
+        "heading": "Källkod",
+        "text": "Vill du köra projektet från dess källa? Är du en utvecklare villig att bidra till öppen källkodsutveckling av detta projekt? Klicka på knappen nedan.",
+        "button": "GitHub Repo"
+      },
+      "footer": "Skapad med kärlek av <1>Amruth Pillai</1>"
+    },
+    "tooltips": {
+      "uploadPhotograph": "Ladda upp bild",
+      "backToDashboard": "Gå tillbaka till översikten"
+    },
+    "emptyList": "Denna lista är tom."
+  },
+  "modals": {
+    "auth": {
+      "whoAreYou": "Vem är du?",
+      "welcome": "Välkommen, {{name}}!",
+      "loggedOutText": "Reactive Resume behöver veta vem du är så att det säkert kan autentisera dig i appen och bara visa din information. När du är inne kan du börja bygga ditt CV, redigera det för att lägga till nya färdigheter eller dela det med världen!",
+      "loggedInText": "Grymt bra. Nu när du har autentiserat dig själv kan vi fortsätta med den verkliga anledningen till att du är här. Klicka på knappen Gå till app för att börja bygga ditt CV!",
+      "buttons": {
+        "google": "Logga in med Google",
+        "anonymous": "Logga in anonymt"
+      }
+    },
+    "import": {
+      "button": "Välj fil",
+      "reactiveResume": {
+        "heading": "Importera från Reactive Resume",
+        "text": "Reactive Resume har sitt eget schemaformat för att få ut det mesta av alla anpassningsbara funktioner som det har att erbjuda. Om du vill importera en säkerhetskopia av ditt CV med den här appen, laddar du bara upp filen med knappen nedan."
+      },
+      "jsonResume": {
+        "heading": "Importera från Reactive Resume",
+        "text": "JSON Resume är en öppen standard för CV-schemastruktur. Om du är en av många entusiaster som har sitt CV klart i det här formatet, krävs det bara ett klick för att komma igång med Reactive Resume."
+      },
+      "linkedIn": {
+        "heading": "Importera från LinkedIn",
+        "text": "Du kan importera en JSON som exporterades från LinkedIn genom att klicka på knappen nedan och välja lämplig fil."
+      }
+    },
+    "export": {
+      "printDialog": {
+        "heading": "Använd webbläsarens utskriftsdialog",
+        "text": "För dig som vill ha en snabb lösning behöver du inte leta längre än din webbläsare. Allt du behöver göra är att trycka på Ctrl / Cmd + P och öppna utskriftsdialogrutan i din webbläsare och få ditt CV att skrivas ut direkt.",
+        "button": "Skriv ut CV"
+      },
+      "downloadPDF": {
+        "heading": "Ladda ner PDF",
+        "text": "Med dessa alternativ kan du skriva ut en enstaka sida, obegränsad version av ditt CV, perfekt för dem som har mycket innehåll. Alternativt kan du ladda ner en flersidig version av ditt CV också med bara ett klick.",
+        "buttons": {
+          "single": "Ensidig CV",
+          "multi": "Flersidig CV"
+        }
+      },
+      "jsonFormat": {
+        "heading": "Exportera till JSON-format",
+        "text": "Du kan också exportera dina data till JSON-format för säker förvaring så att du enkelt kan importera den tillbaka till Reactive Resume när du vill redigera eller generera ett CV.",
+        "button": "Exportera JSON"
+      }
+    }
+  }
+}

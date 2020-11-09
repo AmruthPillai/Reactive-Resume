@@ -1,6 +1,7 @@
 .container {
   font-size: 11px;
   padding: 6px 18px;
+
   @apply relative flex items-center cursor-pointer rounded font-semibold bg-primary-900 border border-primary-900 text-primary-50;
   @apply transition-colors duration-200 ease-in-out;
 }

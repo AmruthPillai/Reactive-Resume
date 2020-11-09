@@ -2,7 +2,7 @@
 
 ## A free and open source resume builder.
 
-[![Crowdin](https://badges.crowdin.net/reactive-resume/localized.svg)](https://crowdin.com/project/reactive-resume) 
+[![Crowdin](https://badges.crowdin.net/reactive-resume/localized.svg)](https://crowdin.com/project/reactive-resume)
 [![GitHub](https://img.shields.io/github/license/AmruthPillai/Reactive-Resume)](https://github.com/AmruthPillai/Reactive-Resume/blob/develop/LICENSE)
 
 ### [Go to App](https://rxresu.me/)
@@ -45,38 +45,51 @@ For those of you familiar with the Crowdin Platform, you could do that too and j
 
 ##### Languages Currently Supported
 
-- Arabic (عربى) (by [Ahmad Khatab](https://github.com/A7madXatab))
-- Danish (Dansk) (by [RazziaDK](https://crowdin.com/profile/RazziaDK))
-- Dutch (Nederlands) (by [Imad Youssoufi](https://github.com/2imad))
-- English
-- Finnish (Suomalainen) (by Ari Pikkarainen)
-- French (Français) (by [MeisterLLD](https://github.com/MeisterLLD))
-- German (Deutsche) (by [Kryptand](https://crowdin.com/profile/Kryptand))
-- Japanese (日本人) (by [a-thug](https://crowdin.com/profile/a-thug))
+- Arabic (عربى)
+- Chinese Simplified (简体中文)
+- Danish (Dansk)
+- Dutch (Nederlands)
+- English (US)
+- Finnish (Suomalainen)
+- French (Français)
+- German (Deutsche)
+- Hindi (हिंदी)
+- Italian (Italiano)
+- Japanese (日本人)
 - Kannada (ಕನ್ನಡ)
-- Norwegian (Norsk) (by [rubjo](https://github.com/rubjo))
-- Portuguese (Brazilian) (by [Felipe CG](https://github.com/felcg))
-- Spanish (Español) (by [jrgonzalezrios](https://github.com/jrgonzalezrios))
-- Turkish (Türkçe) (by [Emirhan Avcı](https://github.com/AtlasFontaine))
+- Norwegian (Norsk)
+- Polish (Polskie)
+- Portuguese (Brazilian)
+- Portuguese (Portugal)
+- Russian (русский)
+- Spanish (Español)
+- Swedish (Svenska)
+- Turkish (Türkçe)
+
+Thank you to all the amazing people who have contributed to Reactive Resume by translating it into their native language.
 
 ### Building from Source
 
 Want to run your own instance of Reactive Resume? You are very much free to do so. The requirements to build from source are:
+
 - NodeJS/NPM
 - A Firebase Project
 
 1. First, clone this project repository
+
 ```
 git clone https://github.com/AmruthPillai/Reactive-Resume.git
 cd Reactive-Resume
 ```
 
 2. Run npm install to install dependencies for the project
+
 ```
 npm install
 ```
 
 3. Create a `.env` file and fill it with your Firebase credentials
+
 ```
 FIREBASE_APIKEY=""
 FIREBASE_APPID=""
@@ -94,16 +107,11 @@ And that's it! 🎉
 
 ### Donation
 
-I try to do what I can, but if you found the app helpful, or you're in a better position than the others who depend on this project for their first job, please consider donating as little as $5 to help keep the project alive :)
+I try to do what I can, but if you found the app helpful, or you're in a better position than the others who depend on this project for their first job, please consider donating as little as \$5 to help keep the project alive :)
 
 #### https://www.buymeacoffee.com/AmruthPillai
 
-##### Contributors who have donated to Reactive Resume:
-
-- Leon Yuan ([@LeonY1](https://github.com/LeonY1))
-- Benjamin Benni ([@Sensaze](https://twitter.com/Sensaze))
-- Anonymous Donor
-- Kathy Reid ([@KathyReid](https://github.com/KathyReid))
+![Please buy me a coffee](https://i.imgur.com/x7g6kvF.png)
 
 ### Appreciation
 
