@@ -13,6 +13,7 @@ import ProjectsA from './blocks/Projects/ProjectsA';
 import ReferencesB from './blocks/References/ReferencesB';
 import SkillsA from './blocks/Skills/SkillsA';
 import WorkA from './blocks/Work/WorkA';
+import BirthDateC from './blocks/BirthDate/BirthDateC'
 
 const Blocks = {
   objective: ObjectiveA,
@@ -84,7 +85,10 @@ const Gengar = ({ data }) => {
               style={{ borderColor: data.metadata.colors.background }}
             />
 
-            <ContactB />
+            <div className="grid gap-4">
+              <BirthDateC />
+              <ContactB />
+            </div>
           </div>
 
           <div
