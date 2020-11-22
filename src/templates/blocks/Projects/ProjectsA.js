@@ -1,30 +1,43 @@
 import React, { memo, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import ReactMarkdown from 'react-markdown';
 import PageContext from '../../../contexts/PageContext';
-import { formatDate, safetyCheck } from '../../../utils';
+import { formatDateRange, safetyCheck } from '../../../utils';
 
-const ProjectItem = ({ item, language }) => (
-  <div>
-    <div className="flex justify-between items-center">
-      <div className="flex flex-col text-left mr-2">
-        <h6 className="font-semibold">{item.title}</h6>
-        {item.link && (
-          <a href={item.link} className="text-xs">
-            {item.link}
-          </a>
-        )}
+const ProjectItem = ({ item, language }) => {
+  const { t } = useTranslation();
+  return (
+    <div>
+      <div className="flex justify-between items-center">
+        <div className="flex flex-col text-left mr-2">
+          <h6 className="font-semibold">{item.title}</h6>
+          {item.link && (
+            <a href={item.link} className="text-xs">
+              {item.link}
+            </a>
+          )}
+        </div>
+        {item.date && (
+            <h6 className="text-xs font-medium text-right">
+              (
+              {formatDateRange(
+                {
+                  startDate: item.date,
+                  endDate: item.endDate,
+                  language,
+                },
+                t,
+              )}
+              )
+            </h6>
+          )}
       </div>
-      {item.date && (
-        <h6 className="text-xs font-medium text-right">
-          {formatDate({ date: item.date, language })}
-        </h6>
+      {item.summary && (
+        <ReactMarkdown className="markdown mt-2 text-sm" source={item.summary} />
       )}
     </div>
-    {item.summary && (
-      <ReactMarkdown className="markdown mt-2 text-sm" source={item.summary} />
-    )}
-  </div>
-);
+  );
+};
 
 const ProjectsA = () => {
   const { data, heading: Heading } = useContext(PageContext);
