@@ -12,6 +12,7 @@ import ProjectsA from './blocks/Projects/ProjectsA';
 import ReferencesA from './blocks/References/ReferencesA';
 import SkillsA from './blocks/Skills/SkillsA';
 import WorkA from './blocks/Work/WorkA';
+import BirthDateA from './blocks/BirthDate/BirthDateA'
 
 const Blocks = {
   objective: ObjectiveA,
@@ -76,7 +77,10 @@ const Castform = ({ data }) => {
 
               <div>
                 <HeadingD>{data.profile.heading}</HeadingD>
-                <ContactC />
+                <div className="grid gap-4">
+                  <BirthDateA />
+                  <ContactC />
+                </div>
               </div>
 
               {layout[0] &&

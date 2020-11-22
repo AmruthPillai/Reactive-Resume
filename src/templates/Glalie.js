@@ -13,6 +13,7 @@ import ProjectsA from './blocks/Projects/ProjectsA';
 import ReferencesA from './blocks/References/ReferencesA';
 import SkillsA from './blocks/Skills/SkillsA';
 import WorkA from './blocks/Work/WorkA';
+import BirthDateA from './blocks/BirthDate/BirthDateA'
 
 const Blocks = {
   objective: ObjectiveA,
@@ -70,7 +71,11 @@ const Glalie = ({ data }) => {
           >
             <div className="grid gap-6 text-center p-8">
               <Profile />
-              <ContactD />
+
+              <div className="grid">
+                <BirthDateA />
+                <ContactD />
+              </div>
 
               {layout[0] &&
                 layout[0].map((x) => {
