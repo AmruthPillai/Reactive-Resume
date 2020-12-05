@@ -1,12 +1,12 @@
 import React, { memo, useContext } from 'react';
-import PageContext from '../../../contexts/PageContext';
 import { get } from 'lodash';
+import PageContext from '../../../contexts/PageContext';
 import Icons from '../Icons';
 import { formatDate } from '../../../utils';
 
 const BirthDateB = () => {
   const { data } = useContext(PageContext);
-  const Icon = get(Icons, "birthdaycake");
+  const Icon = get(Icons, 'birthdaycake');
 
   if (data.profile.birthDate) {
     return (
@@ -16,12 +16,18 @@ const BirthDateB = () => {
           className="mr-2"
           style={{ color: data.metadata.colors.primary }}
         />
-        <span className="font-medium break-all">{formatDate({ date: data.profile.birthDate, language: data.metadata.language, includeDay: true })}</span>
+        <span className="font-medium break-all">
+          {formatDate({
+            date: data.profile.birthDate,
+            language: data.metadata.language,
+            includeDay: true,
+          })}
+        </span>
       </div>
     );
   }
 
   return null;
-}
+};
 
 export default memo(BirthDateB);

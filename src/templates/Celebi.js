@@ -14,7 +14,7 @@ import ProjectsA from './blocks/Projects/ProjectsA';
 import ReferencesA from './blocks/References/ReferencesA';
 import SkillsA from './blocks/Skills/SkillsA';
 import WorkA from './blocks/Work/WorkA';
-import BirthDateA from './blocks/BirthDate/BirthDateA'
+import BirthDateA from './blocks/BirthDate/BirthDateA';
 
 const Blocks = {
   objective: ObjectiveA,
@@ -86,7 +86,6 @@ const Celebi = ({ data }) => {
   return (
     <PageContext.Provider value={{ data, heading: HeadingE }}>
       <div
-        id="page"
         className="relative rounded"
         style={{
           fontFamily: data.metadata.font,

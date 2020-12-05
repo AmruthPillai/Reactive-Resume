@@ -21,8 +21,7 @@ export const isFileImage = (file) => {
 };
 
 export const formatDate = ({ date, language = 'en', includeDay = false }) => {
-  const monthYearTemplate = 'MMMM YYYY';
-  const template = includeDay ? 'DD ' + monthYearTemplate : monthYearTemplate;
+  const template = includeDay ? 'DD MMMM YYYY' : 'MMMM YYYY';
 
   return dayjs(date).locale(language.substr(0, 2)).format(template);
 };

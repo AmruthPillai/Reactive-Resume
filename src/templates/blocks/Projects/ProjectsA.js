@@ -18,22 +18,25 @@ const ProjectItem = ({ item, language }) => {
           )}
         </div>
         {item.date && (
-            <h6 className="text-xs font-medium text-right">
-              (
-              {formatDateRange(
-                {
-                  startDate: item.date,
-                  endDate: item.endDate,
-                  language,
-                },
-                t,
-              )}
-              )
-            </h6>
-          )}
+          <h6 className="text-xs font-medium text-right">
+            (
+            {formatDateRange(
+              {
+                startDate: item.date,
+                endDate: item.endDate,
+                language,
+              },
+              t,
+            )}
+            )
+          </h6>
+        )}
       </div>
       {item.summary && (
-        <ReactMarkdown className="markdown mt-2 text-sm" source={item.summary} />
+        <ReactMarkdown
+          className="markdown mt-2 text-sm"
+          source={item.summary}
+        />
       )}
     </div>
   );

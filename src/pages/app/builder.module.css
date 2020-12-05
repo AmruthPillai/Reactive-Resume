@@ -10,7 +10,9 @@
 }
 
 .center {
-  @apply relative z-0 h-screen overflow-scroll;
+  width: calc(100vw / 2);
+
+  @apply relative z-0 h-screen overflow-scroll flex flex-col justify-items-center;
 }
 
 .right {

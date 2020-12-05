@@ -1,10 +1,11 @@
 @media screen {
   .container {
     width: 210mm;
-    min-height: 297mm;
+    height: 297mm;
     overflow: scroll;
+    margin: 2rem auto;
     box-shadow: var(--shadow);
 
-    @apply my-16 bg-white rounded;
+    @apply bg-white rounded;
   }
 }

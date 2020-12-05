@@ -13,7 +13,7 @@ import ProjectsA from './blocks/Projects/ProjectsA';
 import ReferencesA from './blocks/References/ReferencesA';
 import SkillsA from './blocks/Skills/SkillsA';
 import WorkA from './blocks/Work/WorkA';
-import BirthDateA from './blocks/BirthDate/BirthDateA'
+import BirthDateA from './blocks/BirthDate/BirthDateA';
 
 const Blocks = {
   objective: ObjectiveA,
@@ -54,7 +54,6 @@ const Glalie = ({ data }) => {
   return (
     <PageContext.Provider value={{ data, heading: HeadingB }}>
       <div
-        id="page"
         className="rounded"
         style={{
           fontFamily: data.metadata.font,
