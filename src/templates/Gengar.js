@@ -13,7 +13,7 @@ import ProjectsA from './blocks/Projects/ProjectsA';
 import ReferencesB from './blocks/References/ReferencesB';
 import SkillsA from './blocks/Skills/SkillsA';
 import WorkA from './blocks/Work/WorkA';
-import BirthDateC from './blocks/BirthDate/BirthDateC'
+import BirthDateC from './blocks/BirthDate/BirthDateC';
 
 const Blocks = {
   objective: ObjectiveA,
@@ -59,7 +59,6 @@ const Gengar = ({ data }) => {
   return (
     <PageContext.Provider value={{ data, heading: HeadingC }}>
       <div
-        id="page"
         className="rounded"
         style={{
           fontFamily: data.metadata.font,
@@ -80,14 +79,28 @@ const Gengar = ({ data }) => {
               <Profile />
             </div>
 
+            <div className="flex flex-col mt-4 text-xs">
+              <h6 className="font-bold text-xs uppercase tracking-wide mb-1">
+                Address
+              </h6>
+              <span>{data.profile.address.line1}</span>
+              <span>{data.profile.address.line2}</span>
+              <span>
+                {data.profile.address.city} {data.profile.address.pincode}
+              </span>
+            </div>
+
             <hr
               className="w-1/4 my-5 opacity-25"
               style={{ borderColor: data.metadata.colors.background }}
             />
 
             <div className="grid gap-4">
-              <BirthDateC />
+              <h6 className="font-bold text-xs uppercase tracking-wide mb-1">
+                Contacts
+              </h6>
               <ContactB />
+              <BirthDateC />
             </div>
           </div>
 

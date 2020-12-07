@@ -12,7 +12,7 @@ import ProjectsA from './blocks/Projects/ProjectsA';
 import ReferencesA from './blocks/References/ReferencesA';
 import SkillsA from './blocks/Skills/SkillsA';
 import WorkA from './blocks/Work/WorkA';
-import BirthDateB from './blocks/BirthDate/BirthDateB'
+import BirthDateB from './blocks/BirthDate/BirthDateB';
 
 const Blocks = {
   work: WorkA,
@@ -32,7 +32,6 @@ const Pikachu = ({ data }) => {
   return (
     <PageContext.Provider value={{ data, heading: HeadingB }}>
       <div
-        id="page"
         className="p-8 rounded"
         style={{
           fontFamily: data.metadata.font,

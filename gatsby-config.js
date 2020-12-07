@@ -5,7 +5,7 @@ module.exports = {
     title: 'Reactive Resume',
     siteUrl: 'https://rxresu.me',
     description: 'A free and open source resume builder.',
-    version: '2.2.1',
+    version: '2.3',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -36,42 +36,44 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     {
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
+      resolve: 'gatsby-plugin-webfonts',
       options: {
-        fonts: [
-          {
-            family: 'Lato',
-            variants: ['400', '700'],
-          },
-          {
-            family: 'Montserrat',
-            variants: ['400', '500', '600', '700'],
-          },
-          {
-            family: 'Nunito',
-            variants: ['400', '600', '700'],
-          },
-          {
-            family: 'Open Sans',
-            variants: ['400', '600', '700'],
-          },
-          {
-            family: 'Raleway',
-            variants: ['400', '500', '700'],
-          },
-          {
-            family: 'Rubik',
-            variants: ['400', '500', '700'],
-          },
-          {
-            family: 'Source Sans Pro',
-            variants: ['400', '600', '700'],
-          },
-          {
-            family: 'Titillium Web',
-            variants: ['400', '600', '700'],
-          },
-        ],
+        fonts: {
+          google: [
+            {
+              family: 'Lato',
+              variants: ['400', '700'],
+            },
+            {
+              family: 'Montserrat',
+              variants: ['400', '500', '600', '700'],
+            },
+            {
+              family: 'Nunito',
+              variants: ['400', '600', '700'],
+            },
+            {
+              family: 'Open Sans',
+              variants: ['400', '600', '700'],
+            },
+            {
+              family: 'Raleway',
+              variants: ['400', '500', '700'],
+            },
+            {
+              family: 'Rubik',
+              variants: ['400', '500', '700'],
+            },
+            {
+              family: 'Source Sans Pro',
+              variants: ['400', '600', '700'],
+            },
+            {
+              family: 'Titillium Web',
+              variants: ['400', '600', '700'],
+            },
+          ],
+        },
       },
     },
     {

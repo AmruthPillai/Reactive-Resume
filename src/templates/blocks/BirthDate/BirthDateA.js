@@ -14,13 +14,19 @@ const BirthDateA = () => {
           {t('builder.profile.birthDate')}
         </h6>
         <div>
-          <span>{formatDate({ date: data.profile.birthDate, language: data.metadata.language, includeDay: true })}</span>
+          <span>
+            {formatDate({
+              date: data.profile.birthDate,
+              language: data.metadata.language,
+              includeDay: true,
+            })}
+          </span>
         </div>
       </div>
     );
   }
 
   return null;
-}
+};
 
 export default memo(BirthDateA);

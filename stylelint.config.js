@@ -13,6 +13,7 @@ module.exports = {
         ],
       },
     ],
+    'font-family-no-missing-generic-family-keyword': null,
     'declaration-block-trailing-semicolon': null,
     'no-descending-specificity': null,
   },
