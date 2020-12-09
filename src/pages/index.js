@@ -127,16 +127,14 @@ const Home = () => {
   );
 };
 
-const Feature = ({ icon: Icon, title, children }) => {
-  return (
-    <div className="mt-16">
-      <div className="flex items-center">
-        <Icon size="18px" className="text-primary-900 mr-4" />
-        <div className="text-3xl">{title}</div>
-      </div>
-      <p className="mt-6 text-lg leading-loose">{children}</p>
+const Feature = ({ icon: Icon, title, children }) => (
+  <div className="mt-16">
+    <div className="flex items-center">
+      <Icon size="18px" className="text-primary-900 mr-4" />
+      <div className="text-3xl">{title}</div>
     </div>
-  );
-};
+    <p className="mt-6 text-lg leading-loose">{children}</p>
+  </div>
+);
 
 export default memo(Home);

@@ -83,6 +83,10 @@ const languages = [
     code: 'tr',
     name: 'Turkish (Türkçe)',
   },
+  {
+    code: 'uk',
+    name: 'Ukrainian (Українська)',
+  },
 ];
 
 i18n.use(initReactI18next).init({

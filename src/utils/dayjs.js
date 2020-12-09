@@ -15,6 +15,7 @@ import 'dayjs/locale/nl';
 import 'dayjs/locale/pl';
 import 'dayjs/locale/pt';
 import 'dayjs/locale/tr';
+import 'dayjs/locale/uk';
 import relativeTime from 'dayjs/plugin/relativeTime';
 
 dayjs.extend(relativeTime);

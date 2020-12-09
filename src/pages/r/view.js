@@ -52,7 +52,6 @@ const ResumeViewer = ({ id }) => {
         </Helmet>
 
         <div
-          id="page"
           className={styles.page}
           style={{ backgroundColor: resume.metadata.colors.background }}
         >

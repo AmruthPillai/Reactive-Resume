@@ -59,6 +59,7 @@ const Gengar = ({ data }) => {
   return (
     <PageContext.Provider value={{ data, heading: HeadingC }}>
       <div
+        id="page"
         className="rounded"
         style={{
           fontFamily: data.metadata.font,

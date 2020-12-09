@@ -4,8 +4,8 @@ import { MdFlare } from 'react-icons/md';
 import PageContext from '../../../contexts/PageContext';
 import { safetyCheck } from '../../../utils';
 
-const ContactItem = ({ value, label, link }) => {
-  return value ? (
+const ContactItem = ({ value, label, link }) =>
+  value ? (
     <div className="flex flex-col">
       <h6 className="capitalize font-semibold">{label}</h6>
       {link ? (
@@ -17,7 +17,6 @@ const ContactItem = ({ value, label, link }) => {
       )}
     </div>
   ) : null;
-};
 
 const ContactD = () => {
   const { t } = useTranslation();

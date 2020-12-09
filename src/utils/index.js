@@ -1,15 +1,13 @@
 import dayjs from 'dayjs';
 import { get, isEmpty } from 'lodash';
 
-export const getModalText = (isEditMode, type, t) => {
-  return isEditMode
+export const getModalText = (isEditMode, type, t) =>
+  isEditMode
     ? `${t('shared.buttons.edit')} ${type}`
     : `${t('shared.buttons.add')} ${type}`;
-};
 
-export const safetyCheck = (section, path = 'items') => {
-  return !!(section && section.visible === true && !isEmpty(section[path]));
-};
+export const safetyCheck = (section, path = 'items') =>
+  !!(section && section.visible === true && !isEmpty(section[path]));
 
 export const handleKeyUp = (event, action) => {
   (event.which === 13 || event.which === 32) && action();

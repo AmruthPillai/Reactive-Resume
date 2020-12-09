@@ -14,25 +14,23 @@ import SkillModal from './sections/SkillModal';
 import SocialModal from './sections/SocialModal';
 import WorkModal from './sections/WorkModal';
 
-const ModalRegistrar = () => {
-  return (
-    <>
-      <AuthModal />
-      <ResumeModal />
-      <SocialModal />
-      <WorkModal />
-      <EducationModal />
-      <ProjectModal />
-      <AwardModal />
-      <CertificateModal />
-      <SkillModal />
-      <HobbyModal />
-      <LanguageModal />
-      <ReferenceModal />
-      <ImportModal />
-      <ExportModal />
-    </>
-  );
-};
+const ModalRegistrar = () => (
+  <>
+    <AuthModal />
+    <ResumeModal />
+    <SocialModal />
+    <WorkModal />
+    <EducationModal />
+    <ProjectModal />
+    <AwardModal />
+    <CertificateModal />
+    <SkillModal />
+    <HobbyModal />
+    <LanguageModal />
+    <ReferenceModal />
+    <ImportModal />
+    <ExportModal />
+  </>
+);
 
 export default memo(ModalRegistrar);

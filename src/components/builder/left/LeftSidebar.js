@@ -60,16 +60,14 @@ const SidebarSection = ({ id, event }) => {
   );
 };
 
-const LeftSidebar = () => {
-  return (
-    <div className="flex">
-      <LeftNavbar />
+const LeftSidebar = () => (
+  <div className="flex">
+    <LeftNavbar />
 
-      <div id="LeftSidebar" className={styles.container}>
-        {sections.map(SidebarSection)}
-      </div>
+    <div id="LeftSidebar" className={styles.container}>
+      {sections.map(SidebarSection)}
     </div>
-  );
-};
+  </div>
+);
 
 export default memo(LeftSidebar);

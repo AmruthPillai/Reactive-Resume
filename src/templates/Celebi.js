@@ -86,6 +86,7 @@ const Celebi = ({ data }) => {
   return (
     <PageContext.Provider value={{ data, heading: HeadingE }}>
       <div
+        id="page"
         className="relative rounded"
         style={{
           fontFamily: data.metadata.font,
