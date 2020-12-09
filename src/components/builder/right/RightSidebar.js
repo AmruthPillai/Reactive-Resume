@@ -45,16 +45,14 @@ const SidebarSection = ({ id, event }) => {
   );
 };
 
-const RightSidebar = () => {
-  return (
-    <div className="flex">
-      <div id="RightSidebar" className={styles.container}>
-        {sections.map(SidebarSection)}
-      </div>
-
-      <RightNavbar />
+const RightSidebar = () => (
+  <div className="flex">
+    <div id="RightSidebar" className={styles.container}>
+      {sections.map(SidebarSection)}
     </div>
-  );
-};
+
+    <RightNavbar />
+  </div>
+);
 
 export default memo(RightSidebar);

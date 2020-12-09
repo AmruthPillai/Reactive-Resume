@@ -17,6 +17,7 @@ import ptPt from './pt-pt.json';
 import ru from './ru.json';
 import sv from './sv.json';
 import tr from './tr.json';
+import uk from './uk.json';
 import zh from './zh.json';
 
 export default {
@@ -39,5 +40,6 @@ export default {
   ru: { translation: ru },
   sv: { translation: sv },
   tr: { translation: tr },
+  uk: { translation: uk },
   zh: { translation: zh },
 };

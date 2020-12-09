@@ -54,6 +54,7 @@ const Glalie = ({ data }) => {
   return (
     <PageContext.Provider value={{ data, heading: HeadingB }}>
       <div
+        id="page"
         className="rounded"
         style={{
           fontFamily: data.metadata.font,
