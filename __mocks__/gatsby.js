@@ -11,5 +11,25 @@ module.exports = {
     }),
   ),
   StaticQuery: jest.fn(),
-  useStaticQuery: jest.fn(),
+  useStaticQuery: jest.fn().mockReturnValue({
+    site: {
+      siteMetadata: {
+        title: '',
+        description: '',
+        author: '',
+        siteUrl: '',
+      },
+    },
+    file: {
+      childImageSharp: {
+        fluid(maxWidth = 512) {
+          base64;
+          aspectRatio;
+          src;
+          srcSet;
+          sizes;
+        },
+      },
+    },
+  }),
 };
