@@ -1,4 +1,4 @@
-import { createContext, memo, useState } from 'react';
+import React, { createContext, memo, useState } from 'react';
 
 const defaultState = {
   __resumes: [],
@@ -15,7 +15,7 @@ const defaultState = {
 const DatabaseContext = createContext(defaultState);
 
 const DatabaseProvider = ({ children }) => {
-  const [__resumes] = useState([]);
+  const [__resumes] = useState([{ id: 'ab1c2d' }]);
 
   const [isUpdating] = useState(false);
 
