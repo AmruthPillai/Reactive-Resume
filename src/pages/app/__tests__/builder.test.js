@@ -13,7 +13,7 @@ afterEach(cleanup);
 it('renders correctly', () => {
   const resumeId = 'ab1c2d';
   //const resumes = [{ id: resumeId }];
-  //DatabaseContext.__setResumes(resumes);
+  //DatabaseContext.Provider.__resumes = resumes;
 
   const { container } = render(<Builder id={resumeId} />);
 
