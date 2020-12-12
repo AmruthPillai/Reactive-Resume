@@ -1,6 +1,11 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 
+import {
+  __useDemoResume as firebaseMockUseDemoResume,
+  __getResumeId as firebaseMockGetResumeId,
+} from 'gatsby-plugin-firebase';
+
 import { UserProvider } from '../../../contexts/UserContext';
 import { DatabaseProvider } from '../../../contexts/DatabaseContext';
 import { ResumeProvider } from '../../../contexts/ResumeContext';
@@ -11,7 +16,8 @@ import Builder from '../builder';
 afterEach(cleanup);
 
 it('renders correctly', () => {
-  const resumeId = 'ab1c2d';
+  firebaseMockUseDemoResume(true);
+  const resumeId = firebaseMockGetResumeId();
 
   const container = render(
     <UserProvider>
