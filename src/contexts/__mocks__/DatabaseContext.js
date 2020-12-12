@@ -1,7 +1,12 @@
 import React, { createContext, memo, useState } from 'react';
 
+let resumes = [];
+
+const __setResumes = (value) => {
+  resumes = value;
+};
+
 const defaultState = {
-  __resumes: [],
   isUpdating: false,
   createResume: async () => {},
   duplicateResume: async () => {},
@@ -15,13 +20,11 @@ const defaultState = {
 const DatabaseContext = createContext(defaultState);
 
 const DatabaseProvider = ({ children }) => {
-  const [__resumes] = useState([{ id: 'ab1c2d' }]);
-
   const [isUpdating] = useState(false);
 
   const getResume = async (id) => {
     try {
-      const resume = await __resumes.find((resume) => {
+      const resume = await resumes.find((resume) => {
         return resume.id === id;
       });
 
@@ -44,7 +47,6 @@ const DatabaseProvider = ({ children }) => {
   return (
     <DatabaseContext.Provider
       value={{
-        __resumes,
         isUpdating,
         getResume,
         createResume,
@@ -64,3 +66,5 @@ export default DatabaseContext;
 const memoizedProvider = memo(DatabaseProvider);
 
 export { memoizedProvider as DatabaseProvider };
+
+export { __setResumes };
