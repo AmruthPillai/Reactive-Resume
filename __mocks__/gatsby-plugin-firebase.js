@@ -1,10 +1,10 @@
 import demoResume from '../src/data/demoState.json';
 import emptyResume from '../src/data/initialState.json';
 
-let resumesDictionary = {};
+const resumesDictionary = {};
 let useDemoResume = false;
 
-const init = () => {
+const __init = () => {
   resumesDictionary['demore'] = demoResume;
   resumesDictionary['mtre01'] = emptyResume;
 
@@ -20,8 +20,10 @@ const init = () => {
   }
 };
 
-const getResume = () => {
-  return useDemoResume ? demoResume : emptyResume;
+const __getResume = () => {
+  return useDemoResume
+    ? resumesDictionary['demore']
+    : resumesDictionary['mtre01'];
 };
 
 const __useDemoResume = (value) => {
@@ -29,18 +31,14 @@ const __useDemoResume = (value) => {
 };
 
 const __getResumeId = () => {
-  return getResume().id;
+  return __getResume().id;
 };
 
-init();
-
-module.exports = {
-  __useDemoResume: __useDemoResume,
-  __getResumeId: __getResumeId,
+export default {
   database: jest.fn().mockReturnValue({
     ref: jest.fn().mockReturnValue({
       once: jest.fn().mockResolvedValue({
-        val: jest.fn().mockReturnValue(getResume()),
+        val: jest.fn().mockReturnValue(__getResume()),
       }),
     }),
   }),
@@ -48,3 +46,5 @@ module.exports = {
     onAuthStateChanged: jest.fn(),
   }),
 };
+
+export { __init, __useDemoResume, __getResumeId };

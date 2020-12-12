@@ -2,6 +2,7 @@ import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 
 import {
+  __init as firebaseMockInit,
   __useDemoResume as firebaseMockUseDemoResume,
   __getResumeId as firebaseMockGetResumeId,
 } from 'gatsby-plugin-firebase';
@@ -12,6 +13,10 @@ import { ResumeProvider } from '../../../contexts/ResumeContext';
 import { StorageProvider } from '../../../contexts/StorageContext';
 
 import Builder from '../builder';
+
+beforeEach(() => {
+  firebaseMockInit();
+});
 
 afterEach(cleanup);
 
