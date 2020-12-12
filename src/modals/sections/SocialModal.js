@@ -23,8 +23,7 @@ const SocialModal = () => {
     username: Yup.string().required(t('shared.forms.validation.required')),
     url: Yup.string()
       .min(5, t('shared.forms.validation.min', { number: 5 }))
-      .required(t('shared.forms.validation.required'))
-      .url(t('shared.forms.validation.url')),
+      .required(t('shared.forms.validation.required')),
   });
 
   return (

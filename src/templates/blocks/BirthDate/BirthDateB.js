@@ -6,7 +6,7 @@ import { formatDate } from '../../../utils';
 
 const BirthDateB = () => {
   const { data } = useContext(PageContext);
-  const Icon = get(Icons, 'birthdaycake');
+  const Icon = get(Icons, 'birthday');
 
   if (data.profile.birthDate) {
     return (
