@@ -61,6 +61,11 @@ section {
 
 @media print {
   html,
+  body {
+    background-color: white;
+  }
+
+  html,
   body,
   body * {
     -webkit-print-color-adjust: exact;
@@ -75,6 +80,7 @@ section {
 
   #page {
     width: 21cm;
+    min-height: 29.7cm;
     position: absolute;
     text-align: start;
     top: 0;
