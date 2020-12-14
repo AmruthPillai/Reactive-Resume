@@ -20,7 +20,7 @@ beforeEach(() => {
 
 afterEach(cleanup);
 
-it('renders correctly', () => {
+it('renders correctly', async () => {
   firebaseMockUseDemoResume(true);
   const resumeId = firebaseMockGetResumeId();
 

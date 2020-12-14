@@ -1,12 +1,19 @@
-import demoResume from '../src/data/demoState.json';
-import emptyResume from '../src/data/initialState.json';
+import path from 'path';
+import fs from 'fs';
 
-const resumesDictionary = {};
+const demoResumeId = 'demore';
+const emptyResumeId = 'mtre01';
+let resumesDictionary = {};
 let useDemoResume = false;
 
 const __init = () => {
-  resumesDictionary['demore'] = demoResume;
-  resumesDictionary['mtre01'] = emptyResume;
+  resumesDictionary = {};
+  useDemoResume = false;
+
+  const demoResume = __readFile('../src/data/demoState.json');
+  resumesDictionary[demoResumeId] = demoResume;
+  const emptyResume = __readFile('../src/data/initialState.json');
+  resumesDictionary[emptyResumeId] = emptyResume;
 
   for (var key in resumesDictionary) {
     const resume = resumesDictionary[key];
@@ -20,10 +27,17 @@ const __init = () => {
   }
 };
 
+const __readFile = (fileRelativePath) => {
+  const fileAbsolutePath = path.resolve(__dirname, fileRelativePath);
+  const fileBuffer = fs.readFileSync(fileAbsolutePath);
+  const fileData = JSON.parse(fileBuffer);
+  return fileData;
+};
+
 const __getResume = () => {
   return useDemoResume
-    ? resumesDictionary['demore']
-    : resumesDictionary['mtre01'];
+    ? resumesDictionary[demoResumeId]
+    : resumesDictionary[emptyResumeId];
 };
 
 const __useDemoResume = (value) => {
@@ -38,7 +52,9 @@ export default {
   database: jest.fn().mockReturnValue({
     ref: jest.fn().mockReturnValue({
       once: jest.fn().mockResolvedValue({
-        val: jest.fn().mockReturnValue(__getResume()),
+        val: jest.fn().mockImplementation(() => {
+          return __getResume();
+        }),
       }),
     }),
   }),
