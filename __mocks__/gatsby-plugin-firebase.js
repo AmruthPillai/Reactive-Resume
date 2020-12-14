@@ -59,7 +59,7 @@ export default {
     }),
   }),
   auth: jest.fn().mockReturnValue({
-    onAuthStateChanged: jest.fn(),
+    onAuthStateChanged: jest.fn().mockReturnValue(jest.fn()),
   }),
 };
 
