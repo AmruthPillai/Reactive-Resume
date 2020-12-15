@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 
-import {
+import firebase, {
   __init as firebaseMockInit,
   __useDemoResume as firebaseMockUseDemoResume,
   __getResumeId as firebaseMockGetResumeId,
@@ -35,6 +35,8 @@ it('renders correctly', async () => {
       </DatabaseProvider>
     </UserProvider>,
   );
+
+  await firebase.auth().signInAnonymously();
 
   expect(container).toBeTruthy();
   //expect(container).toBeInTheDocument();

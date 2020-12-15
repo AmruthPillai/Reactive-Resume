@@ -6,9 +6,16 @@ const emptyResumeId = 'mtre01';
 let resumesDictionary = {};
 let useDemoResume = false;
 
+let onAuthStateChangedObservers = [];
+const testUser = {
+  displayName: 'Test User',
+  email: 'noemail@noemail.com',
+};
+
 const __init = () => {
   resumesDictionary = {};
   useDemoResume = false;
+  onAuthStateChangedObservers = [];
 
   const demoResume = __readFile('../src/data/demoState.json');
   resumesDictionary[demoResumeId] = demoResume;
@@ -48,18 +55,34 @@ const __getResumeId = () => {
   return __getResume().id;
 };
 
+const onAuthStateChanged = (observer) => {
+  onAuthStateChangedObservers.push(observer);
+
+  return () => {
+    onAuthStateChangedObservers = onAuthStateChangedObservers.filter(
+      (observer) => observer !== observer,
+    );
+  };
+};
+
+const signInAnonymously = async () => {
+  onAuthStateChangedObservers.forEach((observer) => observer(testUser));
+
+  var result = await Promise.resolve(testUser);
+  return result;
+};
+
 export default {
   database: jest.fn().mockReturnValue({
     ref: jest.fn().mockReturnValue({
       once: jest.fn().mockResolvedValue({
-        val: jest.fn().mockImplementation(() => {
-          return __getResume();
-        }),
+        val: jest.fn(__getResume),
       }),
     }),
   }),
   auth: jest.fn().mockReturnValue({
-    onAuthStateChanged: jest.fn().mockReturnValue(jest.fn()),
+    onAuthStateChanged: onAuthStateChanged,
+    signInAnonymously: signInAnonymously,
   }),
 };
 
