@@ -1,11 +1,7 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { act, render, cleanup } from '@testing-library/react';
 
-import firebase, {
-  __init as firebaseMockInit,
-  __useDemoResume as firebaseMockUseDemoResume,
-  __getResumeId as firebaseMockGetResumeId,
-} from 'gatsby-plugin-firebase';
+import firebaseMock from 'gatsby-plugin-firebase';
 
 import { UserProvider } from '../../../contexts/UserContext';
 import { DatabaseProvider } from '../../../contexts/DatabaseContext';
@@ -15,29 +11,34 @@ import { StorageProvider } from '../../../contexts/StorageContext';
 import Builder from '../builder';
 
 beforeEach(() => {
-  firebaseMockInit();
+  firebaseMock.auth().__init();
+  firebaseMock.database().__init();
 });
 
 afterEach(cleanup);
 
 it('renders correctly', async () => {
-  firebaseMockUseDemoResume(true);
-  const resumeId = firebaseMockGetResumeId();
+  firebaseMock.database().__useDemoResume(true);
+  const resume = firebaseMock.database().__getResume();
 
-  const container = render(
+  const element = (
     <UserProvider>
       <DatabaseProvider>
         <ResumeProvider>
           <StorageProvider>
-            <Builder id={resumeId} />
+            <Builder id={resume.id} />
           </StorageProvider>
         </ResumeProvider>
       </DatabaseProvider>
-    </UserProvider>,
+    </UserProvider>
   );
+  let container = null;
 
-  await firebase.auth().signInAnonymously();
+  act(() => {
+    container = render(element);
+  });
+
+  await firebaseMock.auth().signInAnonymously();
 
   expect(container).toBeTruthy();
-  //expect(container).toBeInTheDocument();
 });
