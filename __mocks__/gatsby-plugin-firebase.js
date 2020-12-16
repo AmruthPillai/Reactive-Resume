@@ -1,16 +1,16 @@
 import path from 'path';
 import fs from 'fs';
 
+const testUser = {
+  email: 'test.user@noemail.com',
+  name: 'Test User',
+  uid: 'testuser123',
+};
 let onAuthStateChangedObservers = [];
 let resumesDictionary = {};
 let useDemoResume = false;
 
 const auth = () => {
-  const testUser = {
-    displayName: 'Test User',
-    email: 'noemail@noemail.com',
-  };
-
   const __init = () => {
     onAuthStateChangedObservers = [];
   };
@@ -56,6 +56,8 @@ const database = () => {
       const resume = resumesDictionary[key];
 
       resume.id = key;
+      resume.name = `Test Resume ${key}`;
+      resume.user = testUser.uid;
 
       let date = new Date('December 15, 2020 11:20:25');
       resume.updatedAt = date.valueOf();
