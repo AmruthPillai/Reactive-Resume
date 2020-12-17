@@ -125,10 +125,29 @@ const database = () => {
       return Promise.resolve();
     };
 
+    const update = async (value) => {
+      console.log('update');
+      console.log(value);
+      if (resumesPath) {
+        if (value === null) {
+          delete __resumesDictionary[databaseLocationId];
+        } else {
+          __resumesDictionary[databaseLocationId] = value;
+        }
+      }
+
+      return Promise.resolve();
+    };
+
     return {
       once,
       set,
+      update,
     };
+  };
+
+  const ServerValue = {
+    TIMESTAMP: Date.now(),
   };
 
   return {
@@ -136,6 +155,7 @@ const database = () => {
     __emptyResumeId,
     __init,
     ref,
+    ServerValue,
   };
 };
 
