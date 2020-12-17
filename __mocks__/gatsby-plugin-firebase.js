@@ -1,34 +1,33 @@
 import path from 'path';
 import fs from 'fs';
 
-const testUser = {
+const __testUser = {
   email: 'test.user@noemail.com',
   name: 'Test User',
   uid: 'testuser123',
 };
-let onAuthStateChangedObservers = [];
-let resumesDictionary = {};
-let useDemoResume = false;
+let __onAuthStateChangedObservers = [];
+let __resumesDictionary = {};
 
 const auth = () => {
   const __init = () => {
-    onAuthStateChangedObservers = [];
+    __onAuthStateChangedObservers = [];
   };
 
   const onAuthStateChanged = (observer) => {
-    onAuthStateChangedObservers.push(observer);
+    __onAuthStateChangedObservers.push(observer);
 
     return () => {
-      onAuthStateChangedObservers = onAuthStateChangedObservers.filter(
+      __onAuthStateChangedObservers = __onAuthStateChangedObservers.filter(
         (observer) => observer !== observer,
       );
     };
   };
 
   const signInAnonymously = async () => {
-    onAuthStateChangedObservers.forEach((observer) => observer(testUser));
+    __onAuthStateChangedObservers.forEach((observer) => observer(__testUser));
 
-    var result = await Promise.resolve(testUser);
+    var result = await Promise.resolve(__testUser);
     return result;
   };
 
@@ -40,24 +39,23 @@ const auth = () => {
 };
 
 const database = () => {
-  const demoResumeId = 'demore';
-  const emptyResumeId = 'mtre01';
+  const __demoResumeId = 'demore';
+  const __emptyResumeId = 'mtre01';
 
   const __init = () => {
-    resumesDictionary = {};
-    useDemoResume = false;
+    __resumesDictionary = {};
 
     const demoResume = __readFile('../src/data/demoState.json');
-    resumesDictionary[demoResumeId] = demoResume;
+    __resumesDictionary[__demoResumeId] = demoResume;
     const emptyResume = __readFile('../src/data/initialState.json');
-    resumesDictionary[emptyResumeId] = emptyResume;
+    __resumesDictionary[__emptyResumeId] = emptyResume;
 
-    for (var key in resumesDictionary) {
-      const resume = resumesDictionary[key];
+    for (var key in __resumesDictionary) {
+      const resume = __resumesDictionary[key];
 
       resume.id = key;
       resume.name = `Test Resume ${key}`;
-      resume.user = testUser.uid;
+      resume.user = __testUser.uid;
 
       let date = new Date('December 15, 2020 11:20:25');
       resume.updatedAt = date.valueOf();
@@ -73,25 +71,71 @@ const database = () => {
     return fileData;
   };
 
-  const __getResume = () => {
-    return useDemoResume
-      ? resumesDictionary[demoResumeId]
-      : resumesDictionary[emptyResumeId];
-  };
+  const ref = (path) => {
+    if (!path) {
+      throw new Error('Not implemented.');
+    }
 
-  const __useDemoResume = (value) => {
-    useDemoResume = value;
+    const resumesPath = path.startsWith('resumes/');
+    const usersPath = path.startsWith('users/');
+    if (!resumesPath && !usersPath) {
+      throw new Error('Unknown Reference path.');
+    }
+
+    const databaseLocationId = path.substring(path.indexOf('/') + 1);
+    if (!databaseLocationId) {
+      throw new Error('Unknown database location id.');
+    }
+
+    const once = async (eventType) => {
+      if (!eventType) {
+        throw new Error('Event type must be provided.');
+      }
+
+      if (eventType !== 'value') {
+        throw new Error('Unknown event type.');
+      }
+
+      const val = () => {
+        if (resumesPath) {
+          return __resumesDictionary[databaseLocationId]
+            ? __resumesDictionary[databaseLocationId]
+            : null;
+        }
+
+        if (usersPath) {
+          return __testUser;
+        }
+
+        return null;
+      };
+
+      return Promise.resolve({ val });
+    };
+
+    const set = (value) => {
+      if (resumesPath) {
+        if (value === null) {
+          delete __resumesDictionary[databaseLocationId];
+        } else {
+          __resumesDictionary[databaseLocationId] = value;
+        }
+      }
+
+      return Promise.resolve();
+    };
+
+    return {
+      once,
+      set,
+    };
   };
 
   return {
+    __demoResumeId,
+    __emptyResumeId,
     __init,
-    __getResume,
-    __useDemoResume,
-    ref: jest.fn().mockReturnValue({
-      once: jest.fn().mockResolvedValue({
-        val: jest.fn(__getResume),
-      }),
-    }),
+    ref,
   };
 };
 

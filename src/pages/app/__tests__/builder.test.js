@@ -9,8 +9,6 @@ import { ResumeProvider } from '../../../contexts/ResumeContext';
 import { StorageProvider } from '../../../contexts/StorageContext';
 import Builder from '../builder';
 
-let resume = null;
-
 beforeEach(() => {
   firebaseMock.auth().__init();
   firebaseMock.database().__init();
@@ -19,10 +17,15 @@ beforeEach(() => {
 afterEach(cleanup);
 
 describe('builder', () => {
+  let resumeId = null;
+  let resume = null;
+
   describe('with demo resume', () => {
     beforeEach(async () => {
-      firebaseMock.database().__useDemoResume(true);
-      resume = firebaseMock.database().__getResume();
+      resumeId = firebaseMock.database().__demoResumeId;
+      resume = (
+        await firebaseMock.database().ref(`resumes/${resumeId}`).once('value')
+      ).val();
 
       render(
         <UserProvider>
@@ -59,8 +62,10 @@ describe('builder', () => {
 
   describe('with empty resume', () => {
     beforeEach(async () => {
-      firebaseMock.database().__useDemoResume(false);
-      resume = firebaseMock.database().__getResume();
+      resumeId = firebaseMock.database().__emptyResumeId;
+      resume = (
+        await firebaseMock.database().ref(`resumes/${resumeId}`).once('value')
+      ).val();
 
       render(
         <UserProvider>
