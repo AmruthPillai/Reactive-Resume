@@ -136,72 +136,86 @@ const ResumeProvider = ({ children }) => {
           newState.updatedAt = temp.updatedAt;
           newState.profile = {
             address: {
-              city: payload.basics.location.city,
-              line1: payload.basics.location.address,
-              line2: payload.basics.location.region,
-              pincode: payload.basics.location.postalCode,
+              city: get(payload, 'basics.location.city'),
+              line1: get(payload, 'basics.location.address'),
+              line2: get(payload, 'basics.location.region'),
+              pincode: get(payload, 'basics.location.postalCode'),
             },
-            email: payload.basics.email,
-            firstName: payload.basics.name,
-            phone: payload.basics.phone,
-            photograph: payload.basics.picture,
-            subtitle: payload.basics.label,
-            website: payload.basics.website,
+            email: get(payload, 'basics.email'),
+            firstName: get(payload, 'basics.name'),
+            phone: get(payload, 'basics.phone'),
+            photograph: get(payload, 'basics.picture'),
+            subtitle: get(payload, 'basics.label'),
+            website: get(payload, 'basics.website'),
           };
-          newState.social.items = payload.basics.profiles.map((x) => ({
-            id: uuidv4(),
-            network: x.network,
-            username: x.username,
-            url: x.url,
-          }));
-          newState.objective.body = payload.basics.summary;
-          newState.work.items = payload.work.map((x) => ({
-            id: uuidv4(),
-            company: x.company,
-            endDate: x.endDate,
-            position: x.position,
-            startDate: x.startDate,
-            summary: x.summary,
-            website: x.website,
-          }));
-          newState.education.items =
-            payload.education &&
-            payload.education.map((x) => ({
-              id: uuidv4(),
-              degree: x.studyType,
-              endDate: x.endDate,
-              field: x.area,
-              gpa: x.gpa,
-              institution: x.institution,
-              startDate: x.startDate,
-              summary: x.courses.join('\n'),
-            }));
-          newState.awards.items = payload.awards.map((x) => ({
-            id: uuidv4(),
-            awarder: x.awarder,
-            date: x.date,
-            summary: x.summary,
-            title: x.title,
-          }));
-          newState.skills.items = payload.skills.map((x) => ({
-            id: uuidv4(),
-            level: 'Fundamental Awareness',
-            name: x.name,
-          }));
-          newState.hobbies.items = payload.interests.map((x) => ({
-            id: uuidv4(),
-            name: x.name,
-          }));
-          newState.languages.items = payload.languages.map((x) => ({
-            id: uuidv4(),
-            name: x.language,
-            fluency: x.fluency,
-          }));
-          newState.references.items = payload.references.map((x) => ({
-            id: uuidv4(),
-            name: x.name,
-            summary: x.reference,
-          }));
+          newState.social.items = get(payload, 'basics.profiles')
+            ? payload.basics.profiles.map((x) => ({
+                id: uuidv4(),
+                network: x.network,
+                username: x.username,
+                url: x.url,
+              }))
+            : [];
+          newState.objective.body = get(payload, 'basics.summary');
+          newState.work.items = payload.work
+            ? payload.work.map((x) => ({
+                id: uuidv4(),
+                company: x.company,
+                endDate: x.endDate,
+                position: x.position,
+                startDate: x.startDate,
+                summary: x.summary,
+                website: x.website,
+              }))
+            : [];
+          newState.education.items = payload.education
+            ? payload.education.map((x) => ({
+                id: uuidv4(),
+                degree: x.studyType,
+                endDate: x.endDate,
+                field: x.area,
+                gpa: x.gpa,
+                institution: x.institution,
+                startDate: x.startDate,
+                summary: x.courses.join('\n'),
+              }))
+            : [];
+          newState.awards.items = payload.awards
+            ? payload.awards.map((x) => ({
+                id: uuidv4(),
+                awarder: x.awarder,
+                date: x.date,
+                summary: x.summary,
+                title: x.title,
+              }))
+            : [];
+          newState.skills.items = payload.skills
+            ? payload.skills.map((x) => ({
+                id: uuidv4(),
+                level: 'Fundamental Awareness',
+                name: x.name,
+              }))
+            : [];
+          newState.hobbies.items = payload.interests
+            ? payload.interests.map((x) => ({
+                id: uuidv4(),
+                name: x.name,
+              }))
+            : [];
+          newState.languages.items = payload.languages
+            ? payload.languages.map((x) => ({
+                id: uuidv4(),
+                name: x.language,
+                fluency: x.fluency,
+              }))
+            : [];
+          newState.references.items = payload.references
+            ? payload.references.map((x) => ({
+                id: uuidv4(),
+                name: x.name,
+                summary: x.reference,
+              }))
+            : [];
           debouncedUpdateResume(newState);
           return newState;
 
@@ -216,6 +230,7 @@ const ResumeProvider = ({ children }) => {
           newState.id = temp.id;
           newState.user = temp.user;
           newState.name = temp.name;
+          newState.preview = temp.preview;
           newState.createdAt = temp.createdAt;
           newState.updatedAt = temp.updatedAt;
           debouncedUpdateResume(newState);
