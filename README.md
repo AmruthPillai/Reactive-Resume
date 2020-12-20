@@ -58,6 +58,7 @@ For those of you familiar with the Crowdin Platform, you could do that too and j
 - Japanese (日本人)
 - Kannada (ಕನ್ನಡ)
 - Norwegian (Norsk)
+- Persian (Farsi)
 - Polish (Polskie)
 - Portuguese (Brazilian)
 - Portuguese (Portugal)
@@ -65,6 +66,7 @@ For those of you familiar with the Crowdin Platform, you could do that too and j
 - Spanish (Español)
 - Swedish (Svenska)
 - Turkish (Türkçe)
+- Ukrainian (Українська)
 
 Thank you to all the amazing people who have contributed to Reactive Resume by translating it into their native language.
 

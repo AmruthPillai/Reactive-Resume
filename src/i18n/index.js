@@ -56,6 +56,10 @@ const languages = [
     name: 'Norwegian (Norsk)',
   },
   {
+    code: 'fa',
+    name: 'Persian (Farsi)',
+  },
+  {
     code: 'pl',
     name: 'Polish (Polskie)',
   },
