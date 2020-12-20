@@ -69,28 +69,44 @@ describe('builder', () => {
 
   describe('updates data', () => {
     it('when input value is changed', async () => {
+      /*
+      const newInputValue = 'test street 123';
+      resume.profile.address.line1 = newInputValue;
+      const ref = firebaseMock.database().ref(`resumes/${resumeId}`);
+      const firebaseMockUpdateFunction = jest.spyOn(ref, 'update');
+
+      await ref.update({
+        ...resume,
+        updatedAt: firebaseMock.database().ServerValue.TIMESTAMP,
+      });
+
+      await waitFor(() =>
+        expect(firebaseMockUpdateFunction).toHaveBeenCalledTimes(1),
+      );
+      const firebaseMockUpdateFunctionCallArgument =
+        firebaseMockUpdateFunction.mock.calls[0][0];
+      expect(firebaseMockUpdateFunctionCallArgument.id).toBe(resume.id);
+      expect(firebaseMockUpdateFunctionCallArgument.profile.address.line1).toBe(newInputValue);
+      */
+
       const input = screen.getByLabelText(new RegExp('address line 1', 'i'));
       const newInputValue = 'test street 123';
-      const spy = jest.spyOn(
-        firebaseMock.database().ref(`resumes/${resumeId}`),
-        'update',
-      );
+      const ref = firebaseMock.database().ref(`resumes/${resumeId}`);
+      const firebaseMockUpdateFunction = jest.spyOn(ref, 'update');
 
       fireEvent.change(input, { target: { value: newInputValue } });
 
       expect(input.value).toBe(newInputValue);
 
-      await waitFor(() => expect(spy).toHaveBeenCalledTimes(1), {
-        timeout: 4000,
-      });
-      //const promise = spy.mock.results[0].value;
-      //await spy();
-      //expect(spy).toHaveBeenCalledTimes(1);
-
-      resume = (
-        await firebaseMock.database().ref(`resumes/${resumeId}`).once('value')
-      ).val();
-      expect(resume.profile.address.line1).toBe(newInputValue);
+      await waitFor(() =>
+        expect(firebaseMockUpdateFunction).toHaveBeenCalledTimes(1),
+      );
+      const firebaseMockUpdateFunctionCallArgument =
+        firebaseMockUpdateFunction.mock.calls[0][0];
+      expect(firebaseMockUpdateFunctionCallArgument.id).toBe(resume.id);
+      expect(firebaseMockUpdateFunctionCallArgument.profile.address.line1).toBe(
+        newInputValue,
+      );
     });
   });
 });

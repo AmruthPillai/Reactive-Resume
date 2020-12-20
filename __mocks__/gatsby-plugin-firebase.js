@@ -126,8 +126,6 @@ const database = () => {
     };
 
     const update = async (value) => {
-      console.log('update');
-      console.log(value);
       if (resumesPath) {
         if (value === null) {
           delete __resumesDictionary[databaseLocationId];
