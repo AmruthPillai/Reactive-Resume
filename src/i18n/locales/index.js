@@ -3,6 +3,7 @@ import da from './da.json';
 import de from './de.json';
 import en from './en.json';
 import es from './es.json';
+import fa from './fa.json';
 import fi from './fi.json';
 import fr from './fr.json';
 import hi from './hi.json';
@@ -26,6 +27,7 @@ export default {
   de: { translation: de },
   en: { translation: en },
   es: { translation: es },
+  fa: { translation: fa },
   fi: { translation: fi },
   fr: { translation: fr },
   hi: { translation: hi },

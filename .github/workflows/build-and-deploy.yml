@@ -1,0 +1,33 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+        env:
+          FIREBASE_APIKEY: ${{ secrets.FIREBASE_APIKEY }}
+          FIREBASE_APPID: ${{ secrets.FIREBASE_APPID }}
+          FIREBASE_AUTHDOMAIN: ${{ secrets.FIREBASE_AUTHDOMAIN }}
+          FIREBASE_DATABASEURL: ${{ secrets.FIREBASE_DATABASEURL }}
+          FIREBASE_MEASUREMENTID: ${{ secrets.FIREBASE_MEASUREMENTID }}
+          FIREBASE_MESSAGINGSENDERID: ${{ secrets.FIREBASE_MESSAGINGSENDERID }}
+          FIREBASE_PROJECTID: ${{ secrets.FIREBASE_PROJECTID }}
+          FIREBASE_STORAGEBUCKET: ${{ secrets.FIREBASE_STORAGEBUCKET }}
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
