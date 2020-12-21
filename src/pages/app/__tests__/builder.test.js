@@ -74,6 +74,7 @@ describe('builder', () => {
       resume.profile.address.line1 = newInputValue;
       const ref = firebaseMock.database().ref(`resumes/${resumeId}`);
       const firebaseMockUpdateFunction = jest.spyOn(ref, 'update');
+      const now = Date.now();
 
       await ref.update({
         ...resume,
@@ -87,25 +88,28 @@ describe('builder', () => {
         firebaseMockUpdateFunction.mock.calls[0][0];
       expect(firebaseMockUpdateFunctionCallArgument.id).toBe(resume.id);
       expect(firebaseMockUpdateFunctionCallArgument.profile.address.line1).toBe(newInputValue);
+      expect(firebaseMockUpdateFunctionCallArgument.updatedAt).toBeGreaterThanOrEqual(now);
       */
 
       const input = screen.getByLabelText(new RegExp('address line 1', 'i'));
       const newInputValue = 'test street 123';
-      const ref = firebaseMock.database().ref(`resumes/${resumeId}`);
-      const firebaseMockUpdateFunction = jest.spyOn(ref, 'update');
+      const now = Date.now();
 
       fireEvent.change(input, { target: { value: newInputValue } });
 
       expect(input.value).toBe(newInputValue);
 
-      await waitFor(() =>
-        expect(firebaseMockUpdateFunction).toHaveBeenCalledTimes(1),
-      );
-      const firebaseMockUpdateFunctionCallArgument =
-        firebaseMockUpdateFunction.mock.calls[0][0];
-      expect(firebaseMockUpdateFunctionCallArgument.id).toBe(resume.id);
-      expect(firebaseMockUpdateFunctionCallArgument.profile.address.line1).toBe(
+      const databaseRef = firebaseMock.database().ref(`resumes/${resume.id}`);
+      await waitFor(() => expect(databaseRef.__updateCalls.length).toBe(1), {
+        timeout: 4000,
+      });
+      const databaseRefUpdateCallArgument = databaseRef.__updateCalls[0];
+      expect(databaseRefUpdateCallArgument.id).toBe(resume.id);
+      expect(databaseRefUpdateCallArgument.profile.address.line1).toBe(
         newInputValue,
+      );
+      expect(databaseRefUpdateCallArgument.updatedAt).toBeGreaterThanOrEqual(
+        now,
       );
     });
   });

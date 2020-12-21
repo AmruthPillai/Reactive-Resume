@@ -8,6 +8,7 @@ const __testUser = {
 };
 let __onAuthStateChangedObservers = [];
 let __resumesDictionary = {};
+let __databaseRefUpdateCalls = [];
 
 const auth = () => {
   const __init = () => {
@@ -44,6 +45,7 @@ const database = () => {
 
   const __init = () => {
     __resumesDictionary = {};
+    __databaseRefUpdateCalls = [];
 
     const demoResume = __readFile('../src/data/demoState.json');
     __resumesDictionary[__demoResumeId] = demoResume;
@@ -134,6 +136,8 @@ const database = () => {
         }
       }
 
+      __databaseRefUpdateCalls.push(value);
+
       return Promise.resolve();
     };
 
@@ -141,6 +145,7 @@ const database = () => {
       once,
       set,
       update,
+      __updateCalls: __databaseRefUpdateCalls,
     };
   };
 
