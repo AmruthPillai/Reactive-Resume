@@ -157,9 +157,12 @@ const database = () => {
   };
 };
 
-database.ServerValue = {
-  TIMESTAMP: Date.now(),
-};
+database.ServerValue = {};
+Object.defineProperty(database.ServerValue, 'TIMESTAMP', {
+  get() {
+    return new Date().getTime();
+  },
+});
 
 export default class firebase {
   static auth = auth;

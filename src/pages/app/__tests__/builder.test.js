@@ -78,7 +78,7 @@ describe('builder', () => {
 
       await ref.update({
         ...resume,
-        updatedAt: firebaseMock.database().ServerValue.TIMESTAMP,
+        updatedAt: firebaseMock.database.ServerValue.TIMESTAMP,
       });
 
       await waitFor(() =>
