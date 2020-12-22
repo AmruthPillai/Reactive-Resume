@@ -124,7 +124,7 @@ const database = () => {
         }
       }
 
-      return Promise.resolve();
+      return Promise.resolve(true);
     };
 
     const update = async (value) => {
@@ -138,7 +138,7 @@ const database = () => {
 
       __databaseRefUpdateCalls.push(value);
 
-      return Promise.resolve();
+      return Promise.resolve(true);
     };
 
     return {
@@ -149,20 +149,20 @@ const database = () => {
     };
   };
 
-  const ServerValue = {
-    TIMESTAMP: Date.now(),
-  };
-
   return {
     __demoResumeId,
     __emptyResumeId,
     __init,
     ref,
-    ServerValue,
   };
 };
 
-export default {
-  auth,
-  database,
+database.ServerValue = {
+  TIMESTAMP: Date.now(),
 };
+
+export default class firebase {
+  static auth = auth;
+
+  static database = database;
+}
