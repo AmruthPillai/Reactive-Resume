@@ -82,32 +82,6 @@ describe('builder', () => {
 
   describe('updates data', () => {
     it('when input value is changed', async () => {
-      /*
-      const newInputValue = 'test street 123';
-      resume.profile.address.line1 = newInputValue;
-      const now = new Date().getTime();
-
-      await FirebaseStub.database()
-        .ref(`resumes/${resumeId}`)
-        .update({
-          ...resume,
-          updatedAt: FirebaseStub.database.ServerValue.TIMESTAMP,
-        });
-
-      await waitFor(() => expect(mockUpdateFunction).toHaveBeenCalledTimes(1), {
-        timeout: DebounceWaitTime,
-      });
-      const mockUpdateFunctionCallArgument =
-        mockUpdateFunction.mock.calls[0][0];
-      expect(mockUpdateFunctionCallArgument.id).toBe(resume.id);
-      expect(mockUpdateFunctionCallArgument.profile.address.line1).toBe(
-        newInputValue,
-      );
-      expect(mockUpdateFunctionCallArgument.updatedAt).toBeGreaterThanOrEqual(
-        now,
-      );
-      */
-
       const input = screen.getByLabelText(new RegExp('address line 1', 'i'));
       const newInputValue = 'test street 123';
       const now = new Date().getTime();
