@@ -48,38 +48,87 @@ class Auth {
   }
 }
 
-class DataSnapshot {
-  #eventType = '';
-  #reference = null;
+class Database {
+  static testUser = {
+    email: 'test.user@noemail.com',
+    name: 'Test User',
+    uid: 'testuser123',
+  };
+  static resumesPath = 'resumes';
+  static usersPath = 'users';
+  static #instance = undefined;
+  #uuid = '';
+  #data = {};
+  #references = {};
 
-  constructor(eventType, reference) {
-    if (!eventType) {
-      throw new Error('eventType must be provided.');
-    } else if (typeof eventType !== 'string') {
-      throw new Error('eventType should be a string.');
+  constructor() {
+    if (Database.#instance) {
+      return Database.#instance;
     }
 
-    this.#eventType = eventType;
+    Database.#instance = this;
 
-    if (!reference) {
-      throw new Error('reference must be provided.');
-    } else if (!(reference instanceof Reference)) {
-      throw new Error('reference must be an instance of the Reference class.');
-    }
-
-    this.#reference = reference;
+    this.#uuid = uuidv4();
   }
 
-  get eventType() {
-    return this.#eventType;
+  get testUser() {
+    return Database.testUser;
   }
 
-  val() {
-    if (this.eventType === 'value') {
-      return this.#reference.getData();
+  get demoResumeId() {
+    return 'demore';
+  }
+  get emptyResumeId() {
+    return 'mtre01';
+  }
+
+  get uuid() {
+    return this.#uuid;
+  }
+
+  static readFile(fileRelativePath) {
+    const fileAbsolutePath = path.resolve(__dirname, fileRelativePath);
+    const fileBuffer = fs.readFileSync(fileAbsolutePath);
+    const fileData = JSON.parse(fileBuffer);
+    return fileData;
+  }
+
+  initializeData() {
+    const resumes = {};
+    const demoResume = Database.readFile('../src/data/demoState.json');
+    resumes[this.demoResumeId] = demoResume;
+    const emptyResume = Database.readFile('../src/data/initialState.json');
+    resumes[this.emptyResumeId] = emptyResume;
+
+    for (var key in resumes) {
+      const resume = resumes[key];
+
+      resume.id = key;
+      resume.name = `Test Resume ${key}`;
+      resume.user = this.testUser.uid;
+
+      let date = new Date('December 15, 2020 11:20:25');
+      resume.updatedAt = date.valueOf();
+      date.setMonth(date.getMonth() - 2);
+      resume.createdAt = date.valueOf();
     }
 
-    return undefined;
+    this.#data[Database.resumesPath] = resumes;
+
+    const users = {};
+    users[this.testUser.uid] = this.testUser;
+    this.#data[Database.usersPath] = users;
+  }
+
+  ref(path) {
+    const newRef = new Reference(path, () => this.#data);
+    const existingRef = this.#references[newRef.path];
+    if (existingRef) {
+      return existingRef;
+    }
+
+    this.#references[newRef.path] = newRef;
+    return newRef;
   }
 }
 
@@ -170,136 +219,70 @@ class Reference {
   async update(value) {
     return Promise.resolve(true);
   }
+
+  /*
+  const update = async (value) => {
+    if (resumesPath) {
+      if (value === null) {
+        delete __resumesDictionary[databaseLocationId];
+      } else {
+        __resumesDictionary[databaseLocationId] = value;
+      }
+    }
+
+    return Promise.resolve(true);
+  };
+
+  const set = (value) => {
+    if (resumesPath) {
+      if (value === null) {
+        delete __resumesDictionary[databaseLocationId];
+      } else {
+        __resumesDictionary[databaseLocationId] = value;
+      }
+    }
+
+    return Promise.resolve(true);
+  };
+  */
 }
 
-class Database {
-  static testUser = {
-    email: 'test.user@noemail.com',
-    name: 'Test User',
-    uid: 'testuser123',
-  };
-  static resumesPath = 'resumes';
-  static usersPath = 'users';
-  static #instance = undefined;
-  #uuid = '';
-  #data = {};
-  #references = {};
+class DataSnapshot {
+  #eventType = '';
+  #reference = null;
 
-  constructor() {
-    if (Database.#instance) {
-      return Database.#instance;
+  constructor(eventType, reference) {
+    if (!eventType) {
+      throw new Error('eventType must be provided.');
+    } else if (typeof eventType !== 'string') {
+      throw new Error('eventType should be a string.');
     }
 
-    Database.#instance = this;
+    this.#eventType = eventType;
 
-    this.#uuid = uuidv4();
-  }
-
-  get testUser() {
-    return Database.testUser;
-  }
-
-  get demoResumeId() {
-    return 'demore';
-  }
-  get emptyResumeId() {
-    return 'mtre01';
-  }
-
-  get uuid() {
-    return this.#uuid;
-  }
-
-  static readFile(fileRelativePath) {
-    const fileAbsolutePath = path.resolve(__dirname, fileRelativePath);
-    const fileBuffer = fs.readFileSync(fileAbsolutePath);
-    const fileData = JSON.parse(fileBuffer);
-    return fileData;
-  }
-
-  initializeData() {
-    const resumes = {};
-    const demoResume = Database.readFile('../src/data/demoState.json');
-    resumes[this.demoResumeId] = demoResume;
-    const emptyResume = Database.readFile('../src/data/initialState.json');
-    resumes[this.emptyResumeId] = emptyResume;
-
-    for (var key in resumes) {
-      const resume = resumes[key];
-
-      resume.id = key;
-      resume.name = `Test Resume ${key}`;
-      resume.user = this.testUser.uid;
-
-      let date = new Date('December 15, 2020 11:20:25');
-      resume.updatedAt = date.valueOf();
-      date.setMonth(date.getMonth() - 2);
-      resume.createdAt = date.valueOf();
+    if (!reference) {
+      throw new Error('reference must be provided.');
+    } else if (!(reference instanceof Reference)) {
+      throw new Error('reference must be an instance of the Reference class.');
     }
 
-    this.#data[Database.resumesPath] = resumes;
-
-    const users = {};
-    users[this.testUser.uid] = this.testUser;
-    this.#data[Database.usersPath] = users;
+    this.#reference = reference;
   }
 
-  ref(path) {
-    const newRef = new Reference(path, () => this.#data);
-    const existingRef = this.#references[newRef.path];
-    if (existingRef) {
-      return existingRef;
+  get eventType() {
+    return this.#eventType;
+  }
+
+  val() {
+    if (this.eventType === 'value') {
+      return this.#reference.getData();
     }
 
-    this.#references[newRef.path] = newRef;
-    return newRef;
+    return undefined;
   }
 }
 
-/*
-const database = () => {
-  const ref = (path) => {
-    const set = (value) => {
-      if (resumesPath) {
-        if (value === null) {
-          delete __resumesDictionary[databaseLocationId];
-        } else {
-          __resumesDictionary[databaseLocationId] = value;
-        }
-      }
-
-      return Promise.resolve(true);
-    };
-
-    const update = async (value) => {
-      if (resumesPath) {
-        if (value === null) {
-          delete __resumesDictionary[databaseLocationId];
-        } else {
-          __resumesDictionary[databaseLocationId] = value;
-        }
-      }
-
-      return Promise.resolve(true);
-    };
-
-    return {
-      once,
-      set,
-      update,
-    };
-  };
-
-  return {
-    __demoResumeId,
-    __emptyResumeId,
-    __init,
-    ref,
-  };
-};
-*/
-
-class FirebaseMock {
+class FirebaseStub {
   static auth() {
     return new Auth();
   }
@@ -309,11 +292,11 @@ class FirebaseMock {
   }
 }
 
-FirebaseMock.database.ServerValue = {};
-Object.defineProperty(FirebaseMock.database.ServerValue, 'TIMESTAMP', {
+FirebaseStub.database.ServerValue = {};
+Object.defineProperty(FirebaseStub.database.ServerValue, 'TIMESTAMP', {
   get() {
     return new Date().getTime();
   },
 });
 
-export default FirebaseMock;
+export default FirebaseStub;

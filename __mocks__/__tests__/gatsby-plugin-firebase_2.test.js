@@ -1,9 +1,9 @@
-import FirebaseMock from '../gatsby-plugin-firebase_2';
+import FirebaseStub from '../gatsby-plugin-firebase_2';
 
 describe('database', () => {
   it('reuses existing Database instance', () => {
-    const database1 = FirebaseMock.database();
-    const database2 = FirebaseMock.database();
+    const database1 = FirebaseStub.database();
+    const database2 = FirebaseStub.database();
 
     expect(database1.uuid).toBeTruthy();
     expect(database2.uuid).toBeTruthy();
@@ -11,8 +11,8 @@ describe('database', () => {
   });
 
   it('reuses existing Reference instance', () => {
-    const ref1 = FirebaseMock.database().ref('resumes/123');
-    const ref2 = FirebaseMock.database().ref('resumes/123');
+    const ref1 = FirebaseStub.database().ref('resumes/123');
+    const ref2 = FirebaseStub.database().ref('resumes/123');
 
     expect(ref1.uuid).toBeTruthy();
     expect(ref2.uuid).toBeTruthy();
@@ -21,7 +21,7 @@ describe('database', () => {
 
   it('ServerValue.TIMESTAMP returns current time in milliseconds', () => {
     const now = new Date().getTime();
-    const timestamp = FirebaseMock.database.ServerValue.TIMESTAMP;
+    const timestamp = FirebaseStub.database.ServerValue.TIMESTAMP;
 
     expect(timestamp).toBeTruthy();
     expect(timestamp).toBeGreaterThanOrEqual(now);
@@ -30,12 +30,12 @@ describe('database', () => {
   it("can spy on Reference 'update' function", async () => {
     const referencePath = 'resumes/123456';
     const functionSpy = jest.spyOn(
-      FirebaseMock.database().ref(referencePath),
+      FirebaseStub.database().ref(referencePath),
       'update',
     );
     const updateArgument = 'test value 123';
 
-    await FirebaseMock.database().ref(referencePath).update(updateArgument);
+    await FirebaseStub.database().ref(referencePath).update(updateArgument);
 
     expect(functionSpy).toHaveBeenCalledTimes(1);
     const functionCallArgument = functionSpy.mock.calls[0][0];
@@ -44,73 +44,73 @@ describe('database', () => {
   });
 
   it('initializing data sets up resumes and users', async () => {
-    FirebaseMock.database().initializeData();
+    FirebaseStub.database().initializeData();
 
-    const resumesRef = FirebaseMock.database().ref('resumes');
+    const resumesRef = FirebaseStub.database().ref('resumes');
     const resumesDataSnapshot = await resumesRef.once('value');
     const resumes = resumesDataSnapshot.val();
     expect(resumes).toBeTruthy();
     expect(Object.keys(resumes).length).toEqual(2);
-    const demoResume = resumes[FirebaseMock.database().demoResumeId];
+    const demoResume = resumes[FirebaseStub.database().demoResumeId];
     expect(demoResume).toBeTruthy();
-    expect(demoResume.id).toEqual(FirebaseMock.database().demoResumeId);
-    const emptyResume = resumes[FirebaseMock.database().emptyResumeId];
+    expect(demoResume.id).toEqual(FirebaseStub.database().demoResumeId);
+    const emptyResume = resumes[FirebaseStub.database().emptyResumeId];
     expect(emptyResume).toBeTruthy();
-    expect(emptyResume.id).toEqual(FirebaseMock.database().emptyResumeId);
+    expect(emptyResume.id).toEqual(FirebaseStub.database().emptyResumeId);
 
-    const usersRef = FirebaseMock.database().ref('users');
+    const usersRef = FirebaseStub.database().ref('users');
     const usersDataSnapshot = await usersRef.once('value');
     const users = usersDataSnapshot.val();
     expect(users).toBeTruthy();
     expect(Object.keys(users).length).toEqual(1);
-    const testUser = users[FirebaseMock.database().testUser.uid];
+    const testUser = users[FirebaseStub.database().testUser.uid];
     expect(testUser).toBeTruthy();
-    expect(testUser.uid).toEqual(FirebaseMock.database().testUser.uid);
+    expect(testUser.uid).toEqual(FirebaseStub.database().testUser.uid);
   });
 
   it('retrieves resume if it exists', async () => {
-    FirebaseMock.database().initializeData();
+    FirebaseStub.database().initializeData();
 
     const resume = (
-      await FirebaseMock.database()
-        .ref(`resumes/${FirebaseMock.database().demoResumeId}`)
+      await FirebaseStub.database()
+        .ref(`resumes/${FirebaseStub.database().demoResumeId}`)
         .once('value')
     ).val();
 
     expect(resume).toBeTruthy();
-    expect(resume.id).toEqual(FirebaseMock.database().demoResumeId);
+    expect(resume.id).toEqual(FirebaseStub.database().demoResumeId);
   });
 
   it('retrieves null if resume does not exist', async () => {
-    FirebaseMock.database().initializeData();
+    FirebaseStub.database().initializeData();
     const resumeId = 'invalidResumeId';
 
     const resume = (
-      await FirebaseMock.database().ref(`resumes/${resumeId}`).once('value')
+      await FirebaseStub.database().ref(`resumes/${resumeId}`).once('value')
     ).val();
 
     expect(resume).toBeNull();
   });
 
   it('retrieves user if it exists', async () => {
-    FirebaseMock.database().initializeData();
+    FirebaseStub.database().initializeData();
 
     const user = (
-      await FirebaseMock.database()
-        .ref(`users/${FirebaseMock.database().testUser.uid}`)
+      await FirebaseStub.database()
+        .ref(`users/${FirebaseStub.database().testUser.uid}`)
         .once('value')
     ).val();
 
     expect(user).toBeTruthy();
-    expect(user.uid).toEqual(FirebaseMock.database().testUser.uid);
+    expect(user.uid).toEqual(FirebaseStub.database().testUser.uid);
   });
 
   it('retrieves null if user does not exist', async () => {
-    FirebaseMock.database().initializeData();
+    FirebaseStub.database().initializeData();
     const userId = 'invalidUserId';
 
     const user = (
-      await FirebaseMock.database().ref(`users/${userId}`).once('value')
+      await FirebaseStub.database().ref(`users/${userId}`).once('value')
     ).val();
 
     expect(user).toBeNull();
@@ -119,12 +119,12 @@ describe('database', () => {
 
 describe('auth', () => {
   beforeEach(() => {
-    FirebaseMock.auth().clearOnAuthStateChangedObservers();
+    FirebaseStub.auth().clearOnAuthStateChangedObservers();
   });
 
   it('reuses existing Auth instance', () => {
-    const auth1 = FirebaseMock.auth();
-    const auth2 = FirebaseMock.auth();
+    const auth1 = FirebaseStub.auth();
+    const auth2 = FirebaseStub.auth();
 
     expect(auth1.uuid).toBeTruthy();
     expect(auth2.uuid).toBeTruthy();
@@ -132,16 +132,16 @@ describe('auth', () => {
   });
 
   it('returns test user when signing in anonymously', async () => {
-    const user = await FirebaseMock.auth().signInAnonymously();
+    const user = await FirebaseStub.auth().signInAnonymously();
 
     expect(user).toBeTruthy();
-    expect(user).toEqual(FirebaseMock.database().testUser);
+    expect(user).toEqual(FirebaseStub.database().testUser);
   });
 
   it('calls onAuthStateChanged observer with test user when signing in anonymously', async () => {
     let user = null;
     let error = null;
-    FirebaseMock.auth().onAuthStateChanged(
+    FirebaseStub.auth().onAuthStateChanged(
       (_user) => {
         user = _user;
       },
@@ -150,24 +150,24 @@ describe('auth', () => {
       },
     );
 
-    await FirebaseMock.auth().signInAnonymously();
+    await FirebaseStub.auth().signInAnonymously();
 
     expect(user).toBeTruthy();
-    expect(user).toEqual(FirebaseMock.database().testUser);
+    expect(user).toEqual(FirebaseStub.database().testUser);
     expect(error).toBeNull();
   });
 
   it('onAuthStateChanged unsubscribe removes observer', () => {
     const observer = () => {};
-    const unsubscribe = FirebaseMock.auth().onAuthStateChanged(observer);
+    const unsubscribe = FirebaseStub.auth().onAuthStateChanged(observer);
     expect(unsubscribe).toBeTruthy();
-    expect(FirebaseMock.auth().onAuthStateChangedObservers.length).toEqual(1);
-    expect(FirebaseMock.auth().onAuthStateChangedObservers[0]).toEqual(
+    expect(FirebaseStub.auth().onAuthStateChangedObservers.length).toEqual(1);
+    expect(FirebaseStub.auth().onAuthStateChangedObservers[0]).toEqual(
       observer,
     );
 
     unsubscribe();
 
-    expect(FirebaseMock.auth().onAuthStateChangedObservers.length).toEqual(0);
+    expect(FirebaseStub.auth().onAuthStateChangedObservers.length).toEqual(0);
   });
 });
