@@ -2,6 +2,52 @@ import path from 'path';
 import fs from 'fs';
 import { v4 as uuidv4 } from 'uuid';
 
+class Auth {
+  static #instance = undefined;
+  #uuid = '';
+  #onAuthStateChangedObservers = [];
+
+  constructor() {
+    if (Auth.#instance) {
+      return Auth.#instance;
+    }
+
+    Auth.#instance = this;
+
+    this.#uuid = uuidv4();
+  }
+
+  get uuid() {
+    return this.#uuid;
+  }
+
+  get onAuthStateChangedObservers() {
+    return this.#onAuthStateChangedObservers;
+  }
+
+  clearOnAuthStateChangedObservers() {
+    this.#onAuthStateChangedObservers = [];
+  }
+
+  onAuthStateChanged(observer) {
+    this.#onAuthStateChangedObservers.push(observer);
+
+    return () => {
+      this.#onAuthStateChangedObservers = this.#onAuthStateChangedObservers.filter(
+        (observer) => observer !== observer,
+      );
+    };
+  }
+
+  async signInAnonymously() {
+    this.#onAuthStateChangedObservers.forEach((observer) =>
+      observer(Database.testUser),
+    );
+
+    return Promise.resolve(Database.testUser);
+  }
+}
+
 class DataSnapshot {
   #eventType = '';
   #reference = null;
@@ -127,6 +173,11 @@ class Reference {
 }
 
 class Database {
+  static testUser = {
+    email: 'test.user@noemail.com',
+    name: 'Test User',
+    uid: 'testuser123',
+  };
   static resumesPath = 'resumes';
   static usersPath = 'users';
   static #instance = undefined;
@@ -145,11 +196,7 @@ class Database {
   }
 
   get testUser() {
-    return {
-      email: 'test.user@noemail.com',
-      name: 'Test User',
-      uid: 'testuser123',
-    };
+    return Database.testUser;
   }
 
   get demoResumeId() {
@@ -253,6 +300,10 @@ const database = () => {
 */
 
 class FirebaseMock {
+  static auth() {
+    return new Auth();
+  }
+
   static database() {
     return new Database();
   }

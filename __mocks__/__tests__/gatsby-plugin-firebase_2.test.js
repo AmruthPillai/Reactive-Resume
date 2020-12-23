@@ -76,6 +76,7 @@ describe('database', () => {
         .ref(`resumes/${FirebaseMock.database().demoResumeId}`)
         .once('value')
     ).val();
+
     expect(resume).toBeTruthy();
     expect(resume.id).toEqual(FirebaseMock.database().demoResumeId);
   });
@@ -87,6 +88,7 @@ describe('database', () => {
     const resume = (
       await FirebaseMock.database().ref(`resumes/${resumeId}`).once('value')
     ).val();
+
     expect(resume).toBeNull();
   });
 
@@ -98,6 +100,7 @@ describe('database', () => {
         .ref(`users/${FirebaseMock.database().testUser.uid}`)
         .once('value')
     ).val();
+
     expect(user).toBeTruthy();
     expect(user.uid).toEqual(FirebaseMock.database().testUser.uid);
   });
@@ -109,6 +112,62 @@ describe('database', () => {
     const user = (
       await FirebaseMock.database().ref(`users/${userId}`).once('value')
     ).val();
+
     expect(user).toBeNull();
+  });
+});
+
+describe('auth', () => {
+  beforeEach(() => {
+    FirebaseMock.auth().clearOnAuthStateChangedObservers();
+  });
+
+  it('reuses existing Auth instance', () => {
+    const auth1 = FirebaseMock.auth();
+    const auth2 = FirebaseMock.auth();
+
+    expect(auth1.uuid).toBeTruthy();
+    expect(auth2.uuid).toBeTruthy();
+    expect(auth1.uuid).toEqual(auth2.uuid);
+  });
+
+  it('returns test user when signing in anonymously', async () => {
+    const user = await FirebaseMock.auth().signInAnonymously();
+
+    expect(user).toBeTruthy();
+    expect(user).toEqual(FirebaseMock.database().testUser);
+  });
+
+  it('calls onAuthStateChanged observer with test user when signing in anonymously', async () => {
+    let user = null;
+    let error = null;
+    FirebaseMock.auth().onAuthStateChanged(
+      (_user) => {
+        user = _user;
+      },
+      (_error) => {
+        error = _error;
+      },
+    );
+
+    await FirebaseMock.auth().signInAnonymously();
+
+    expect(user).toBeTruthy();
+    expect(user).toEqual(FirebaseMock.database().testUser);
+    expect(error).toBeNull();
+  });
+
+  it('onAuthStateChanged unsubscribe removes observer', () => {
+    const observer = () => {};
+    const unsubscribe = FirebaseMock.auth().onAuthStateChanged(observer);
+    expect(unsubscribe).toBeTruthy();
+    expect(FirebaseMock.auth().onAuthStateChangedObservers.length).toEqual(1);
+    expect(FirebaseMock.auth().onAuthStateChangedObservers[0]).toEqual(
+      observer,
+    );
+
+    unsubscribe();
+
+    expect(FirebaseMock.auth().onAuthStateChangedObservers.length).toEqual(0);
   });
 });
