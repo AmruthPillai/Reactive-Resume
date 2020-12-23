@@ -220,31 +220,9 @@ class Reference {
     return Promise.resolve(true);
   }
 
-  /*
-  const update = async (value) => {
-    if (resumesPath) {
-      if (value === null) {
-        delete __resumesDictionary[databaseLocationId];
-      } else {
-        __resumesDictionary[databaseLocationId] = value;
-      }
-    }
-
+  async set(value) {
     return Promise.resolve(true);
-  };
-
-  const set = (value) => {
-    if (resumesPath) {
-      if (value === null) {
-        delete __resumesDictionary[databaseLocationId];
-      } else {
-        __resumesDictionary[databaseLocationId] = value;
-      }
-    }
-
-    return Promise.resolve(true);
-  };
-  */
+  }
 }
 
 class DataSnapshot {
