@@ -118,7 +118,7 @@ describe('database', () => {
 });
 
 describe('auth', () => {
-  beforeEach(() => {
+  afterEach(() => {
     FirebaseStub.auth().clearOnAuthStateChangedObservers();
   });
 
