@@ -85,10 +85,6 @@ describe('builder', () => {
       /*
       const newInputValue = 'test street 123';
       resume.profile.address.line1 = newInputValue;
-      const mockUpdateFunction = jest.spyOn(
-        FirebaseStub.database().ref(`resumes/${resumeId}`),
-        'update',
-      );
       const now = new Date().getTime();
 
       await FirebaseStub.database()
@@ -98,7 +94,9 @@ describe('builder', () => {
           updatedAt: FirebaseStub.database.ServerValue.TIMESTAMP,
         });
 
-      await waitFor(() => expect(mockUpdateFunction).toHaveBeenCalledTimes(1));
+      await waitFor(() => expect(mockUpdateFunction).toHaveBeenCalledTimes(1), {
+        timeout: DebounceWaitTime,
+      });
       const mockUpdateFunctionCallArgument =
         mockUpdateFunction.mock.calls[0][0];
       expect(mockUpdateFunctionCallArgument.id).toBe(resume.id);
