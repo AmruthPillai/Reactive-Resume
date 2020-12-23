@@ -128,4 +128,7 @@ export default DatabaseContext;
 
 const memoizedProvider = memo(DatabaseProvider);
 
-export { memoizedProvider as DatabaseProvider };
+export {
+  memoizedProvider as DatabaseProvider,
+  DEBOUNCE_WAIT_TIME as DebounceWaitTime,
+};

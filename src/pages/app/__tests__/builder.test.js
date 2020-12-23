@@ -11,7 +11,10 @@ import {
 import FirebaseStub from 'gatsby-plugin-firebase';
 
 import { UserProvider } from '../../../contexts/UserContext';
-import { DatabaseProvider } from '../../../contexts/DatabaseContext';
+import {
+  DatabaseProvider,
+  DebounceWaitTime,
+} from '../../../contexts/DatabaseContext';
 import { ResumeProvider } from '../../../contexts/ResumeContext';
 import { StorageProvider } from '../../../contexts/StorageContext';
 import Builder from '../builder';
@@ -25,14 +28,20 @@ afterEach(cleanup);
 describe('builder', () => {
   let resumeId = null;
   let resume = null;
+  let mockUpdateFunction = null;
+  let container = null;
 
   beforeEach(async () => {
     resumeId = FirebaseStub.database().demoResumeId;
     resume = (
       await FirebaseStub.database().ref(`resumes/${resumeId}`).once('value')
     ).val();
+    mockUpdateFunction = jest.spyOn(
+      FirebaseStub.database().ref(`resumes/${resumeId}`),
+      'update',
+    );
 
-    render(
+    container = render(
       <UserProvider>
         <DatabaseProvider>
           <ResumeProvider>
@@ -47,6 +56,11 @@ describe('builder', () => {
     await act(async () => {
       await FirebaseStub.auth().signInAnonymously();
     });
+
+    await waitFor(() => expect(mockUpdateFunction).toHaveBeenCalledTimes(1), {
+      timeout: DebounceWaitTime,
+    });
+    mockUpdateFunction.mockClear();
   });
 
   describe('renders', () => {
@@ -98,10 +112,6 @@ describe('builder', () => {
 
       const input = screen.getByLabelText(new RegExp('address line 1', 'i'));
       const newInputValue = 'test street 123';
-      const mockUpdateFunction = jest.spyOn(
-        FirebaseStub.database().ref(`resumes/${resumeId}`),
-        'update',
-      );
       const now = new Date().getTime();
 
       fireEvent.change(input, { target: { value: newInputValue } });
@@ -109,7 +119,7 @@ describe('builder', () => {
       expect(input.value).toBe(newInputValue);
 
       await waitFor(() => expect(mockUpdateFunction).toHaveBeenCalledTimes(1), {
-        timeout: 4000,
+        timeout: DebounceWaitTime,
       });
       const mockUpdateFunctionCallArgument =
         mockUpdateFunction.mock.calls[0][0];
