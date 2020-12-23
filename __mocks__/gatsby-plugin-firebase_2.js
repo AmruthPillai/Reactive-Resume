@@ -2,20 +2,64 @@ import path from 'path';
 import fs from 'fs';
 import { v4 as uuidv4 } from 'uuid';
 
-class Reference {
-  #path = '';
-  #uuid = '';
+class DataSnapshot {
+  #eventType = '';
+  #reference = null;
 
-  constructor(path) {
-    if (typeof path === 'undefined' || path === null) {
-      this.#path = '.';
-    } else if (typeof path !== 'string') {
-      throw new Error('path should be a string.');
-    } else {
-      this.#path = path;
+  constructor(eventType, reference) {
+    if (!eventType) {
+      throw new Error('eventType must be provided.');
+    } else if (typeof eventType !== 'string') {
+      throw new Error('eventType should be a string.');
     }
 
+    this.#eventType = eventType;
+
+    if (!reference) {
+      throw new Error('reference must be provided.');
+    } else if (!(reference instanceof Reference)) {
+      throw new Error('reference must be an instance of the Reference class.');
+    }
+
+    this.#reference = reference;
+  }
+
+  get eventType() {
+    return this.#eventType;
+  }
+
+  val() {
+    if (this.eventType === 'value') {
+      return this.#reference.getData();
+    }
+
+    return undefined;
+  }
+}
+
+class Reference {
+  #rootPath = '.';
+  #path = '';
+  #uuid = '';
+  #dataSnapshots = {};
+  #getDatabaseData = () => null;
+
+  constructor(path, getDatabaseData) {
+    if (typeof path === 'undefined' || path === null) {
+      this.#path = this.#rootPath;
+    } else if (typeof path !== 'string') {
+      throw new Error('path should be a string.');
+    }
+
+    if (!getDatabaseData) {
+      throw new Error('getDatabaseData must be provided.');
+    } else if (typeof getDatabaseData !== 'function') {
+      throw new Error('getDatabaseData should be a function.');
+    }
+
+    this.#path = path;
     this.#uuid = uuidv4();
+    this.#getDatabaseData = getDatabaseData;
   }
 
   get path() {
@@ -26,17 +70,65 @@ class Reference {
     return this.#uuid;
   }
 
+  getData() {
+    const databaseData = this.#getDatabaseData();
+
+    if (!databaseData) {
+      return null;
+    }
+
+    if (this.#path === this.#rootPath) {
+      return databaseData;
+    }
+
+    if (
+      this.#path === Database.resumesPath ||
+      this.#path === Database.usersPath
+    ) {
+      return this.#path in databaseData ? databaseData[this.#path] : null;
+    }
+
+    if (
+      this.#path.startsWith(`${Database.resumesPath}/`) ||
+      this.#path.startsWith(`${Database.usersPath}/`)
+    ) {
+      const databaseLocationId = this.#path.substring(
+        this.#path.indexOf('/') + 1,
+      );
+      if (!databaseLocationId) {
+        throw new Error('Unknown database location id.');
+      }
+
+      const pathWithoutId = this.#path.substring(0, this.#path.indexOf('/'));
+      if (pathWithoutId in databaseData) {
+        return databaseLocationId in databaseData[pathWithoutId]
+          ? databaseData[pathWithoutId][databaseLocationId]
+          : null;
+      }
+    }
+
+    return null;
+  }
+
+  async once(eventType) {
+    const newDataSnapshot = new DataSnapshot(eventType, this);
+    const existingDataSnapshot = this.#dataSnapshots[newDataSnapshot.eventType];
+    if (existingDataSnapshot) {
+      return Promise.resolve(existingDataSnapshot);
+    }
+
+    this.#dataSnapshots[newDataSnapshot.eventType] = newDataSnapshot;
+    return Promise.resolve(newDataSnapshot);
+  }
+
   async update(value) {
     return Promise.resolve(true);
   }
 }
 
 class Database {
-  static testUser = {
-    email: 'test.user@noemail.com',
-    name: 'Test User',
-    uid: 'testuser123',
-  };
+  static resumesPath = 'resumes';
+  static usersPath = 'users';
   static #instance = undefined;
   #uuid = '';
   #data = {};
@@ -52,6 +144,14 @@ class Database {
     this.#uuid = uuidv4();
   }
 
+  get testUser() {
+    return {
+      email: 'test.user@noemail.com',
+      name: 'Test User',
+      uid: 'testuser123',
+    };
+  }
+
   get demoResumeId() {
     return 'demore';
   }
@@ -63,11 +163,18 @@ class Database {
     return this.#uuid;
   }
 
-  initData() {
+  static readFile(fileRelativePath) {
+    const fileAbsolutePath = path.resolve(__dirname, fileRelativePath);
+    const fileBuffer = fs.readFileSync(fileAbsolutePath);
+    const fileData = JSON.parse(fileBuffer);
+    return fileData;
+  }
+
+  initializeData() {
     const resumes = {};
-    const demoResume = readFile('../src/data/demoState.json');
+    const demoResume = Database.readFile('../src/data/demoState.json');
     resumes[this.demoResumeId] = demoResume;
-    const emptyResume = readFile('../src/data/initialState.json');
+    const emptyResume = Database.readFile('../src/data/initialState.json');
     resumes[this.emptyResumeId] = emptyResume;
 
     for (var key in resumes) {
@@ -75,7 +182,7 @@ class Database {
 
       resume.id = key;
       resume.name = `Test Resume ${key}`;
-      resume.user = Database.testUser.uid;
+      resume.user = this.testUser.uid;
 
       let date = new Date('December 15, 2020 11:20:25');
       resume.updatedAt = date.valueOf();
@@ -83,18 +190,15 @@ class Database {
       resume.createdAt = date.valueOf();
     }
 
-    this.#data['resumes'] = resumes;
-  }
+    this.#data[Database.resumesPath] = resumes;
 
-  readFile(fileRelativePath) {
-    const fileAbsolutePath = path.resolve(__dirname, fileRelativePath);
-    const fileBuffer = fs.readFileSync(fileAbsolutePath);
-    const fileData = JSON.parse(fileBuffer);
-    return fileData;
+    const users = {};
+    users[this.testUser.uid] = this.testUser;
+    this.#data[Database.usersPath] = users;
   }
 
   ref(path) {
-    const newRef = new Reference(path);
+    const newRef = new Reference(path, () => this.#data);
     const existingRef = this.#references[newRef.path];
     if (existingRef) {
       return existingRef;
@@ -108,47 +212,6 @@ class Database {
 /*
 const database = () => {
   const ref = (path) => {
-    if (!path) {
-      throw new Error('Not implemented.');
-    }
-
-    const resumesPath = path.startsWith('resumes/');
-    const usersPath = path.startsWith('users/');
-    if (!resumesPath && !usersPath) {
-      throw new Error('Unknown Reference path.');
-    }
-
-    const databaseLocationId = path.substring(path.indexOf('/') + 1);
-    if (!databaseLocationId) {
-      throw new Error('Unknown database location id.');
-    }
-
-    const once = async (eventType) => {
-      if (!eventType) {
-        throw new Error('Event type must be provided.');
-      }
-
-      if (eventType !== 'value') {
-        throw new Error('Unknown event type.');
-      }
-
-      const val = () => {
-        if (resumesPath) {
-          return __resumesDictionary[databaseLocationId]
-            ? __resumesDictionary[databaseLocationId]
-            : null;
-        }
-
-        if (usersPath) {
-          return __testUser;
-        }
-
-        return null;
-      };
-
-      return Promise.resolve({ val });
-    };
-
     const set = (value) => {
       if (resumesPath) {
         if (value === null) {
@@ -170,8 +233,6 @@ const database = () => {
         }
       }
 
-      __databaseRefUpdateCalls.push(value);
-
       return Promise.resolve(true);
     };
 
@@ -179,7 +240,6 @@ const database = () => {
       once,
       set,
       update,
-      __updateCalls: __databaseRefUpdateCalls,
     };
   };
 
@@ -190,13 +250,6 @@ const database = () => {
     ref,
   };
 };
-
-database.ServerValue = {};
-Object.defineProperty(database.ServerValue, 'TIMESTAMP', {
-  get() {
-    return new Date().getTime();
-  },
-});
 */
 
 class FirebaseMock {

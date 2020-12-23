@@ -1,7 +1,7 @@
 import FirebaseMock from '../gatsby-plugin-firebase_2';
 
 describe('database', () => {
-  it('reuses existing Database instance', async () => {
+  it('reuses existing Database instance', () => {
     const database1 = FirebaseMock.database();
     const database2 = FirebaseMock.database();
 
@@ -10,7 +10,7 @@ describe('database', () => {
     expect(database1.uuid).toEqual(database2.uuid);
   });
 
-  it('reuses existing Reference instance', async () => {
+  it('reuses existing Reference instance', () => {
     const ref1 = FirebaseMock.database().ref('resumes/123');
     const ref2 = FirebaseMock.database().ref('resumes/123');
 
@@ -19,7 +19,7 @@ describe('database', () => {
     expect(ref1.uuid).toEqual(ref2.uuid);
   });
 
-  it('ServerValue.TIMESTAMP returns current time in milliseconds', async () => {
+  it('ServerValue.TIMESTAMP returns current time in milliseconds', () => {
     const now = new Date().getTime();
     const timestamp = FirebaseMock.database.ServerValue.TIMESTAMP;
 
@@ -41,5 +41,74 @@ describe('database', () => {
     const functionCallArgument = functionSpy.mock.calls[0][0];
     expect(functionCallArgument).toBeTruthy();
     expect(functionCallArgument).toEqual(updateArgument);
+  });
+
+  it('initializing data sets up resumes and users', async () => {
+    FirebaseMock.database().initializeData();
+
+    const resumesRef = FirebaseMock.database().ref('resumes');
+    const resumesDataSnapshot = await resumesRef.once('value');
+    const resumes = resumesDataSnapshot.val();
+    expect(resumes).toBeTruthy();
+    expect(Object.keys(resumes).length).toEqual(2);
+    const demoResume = resumes[FirebaseMock.database().demoResumeId];
+    expect(demoResume).toBeTruthy();
+    expect(demoResume.id).toEqual(FirebaseMock.database().demoResumeId);
+    const emptyResume = resumes[FirebaseMock.database().emptyResumeId];
+    expect(emptyResume).toBeTruthy();
+    expect(emptyResume.id).toEqual(FirebaseMock.database().emptyResumeId);
+
+    const usersRef = FirebaseMock.database().ref('users');
+    const usersDataSnapshot = await usersRef.once('value');
+    const users = usersDataSnapshot.val();
+    expect(users).toBeTruthy();
+    expect(Object.keys(users).length).toEqual(1);
+    const testUser = users[FirebaseMock.database().testUser.uid];
+    expect(testUser).toBeTruthy();
+    expect(testUser.uid).toEqual(FirebaseMock.database().testUser.uid);
+  });
+
+  it('retrieves resume if it exists', async () => {
+    FirebaseMock.database().initializeData();
+
+    const resume = (
+      await FirebaseMock.database()
+        .ref(`resumes/${FirebaseMock.database().demoResumeId}`)
+        .once('value')
+    ).val();
+    expect(resume).toBeTruthy();
+    expect(resume.id).toEqual(FirebaseMock.database().demoResumeId);
+  });
+
+  it('retrieves null if resume does not exist', async () => {
+    FirebaseMock.database().initializeData();
+    const resumeId = 'invalidResumeId';
+
+    const resume = (
+      await FirebaseMock.database().ref(`resumes/${resumeId}`).once('value')
+    ).val();
+    expect(resume).toBeNull();
+  });
+
+  it('retrieves user if it exists', async () => {
+    FirebaseMock.database().initializeData();
+
+    const user = (
+      await FirebaseMock.database()
+        .ref(`users/${FirebaseMock.database().testUser.uid}`)
+        .once('value')
+    ).val();
+    expect(user).toBeTruthy();
+    expect(user.uid).toEqual(FirebaseMock.database().testUser.uid);
+  });
+
+  it('retrieves null if user does not exist', async () => {
+    FirebaseMock.database().initializeData();
+    const userId = 'invalidUserId';
+
+    const user = (
+      await FirebaseMock.database().ref(`users/${userId}`).once('value')
+    ).val();
+    expect(user).toBeNull();
   });
 });
