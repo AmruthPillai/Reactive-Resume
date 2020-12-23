@@ -1,9 +1,9 @@
 import { cleanup, waitFor } from '@testing-library/react';
 
-import firebaseMock from 'gatsby-plugin-firebase';
+import FirebaseStub from 'gatsby-plugin-firebase';
 
 beforeEach(() => {
-  firebaseMock.database().__init();
+  FirebaseStub.database().initializeData();
 });
 
 afterEach(cleanup);
@@ -13,9 +13,9 @@ describe('builder', () => {
   let resume = null;
 
   beforeEach(async () => {
-    resumeId = firebaseMock.database().__demoResumeId;
+    resumeId = FirebaseStub.database().demoResumeId;
     resume = (
-      await firebaseMock.database().ref(`resumes/${resumeId}`).once('value')
+      await FirebaseStub.database().ref(`resumes/${resumeId}`).once('value')
     ).val();
   });
 
@@ -23,17 +23,19 @@ describe('builder', () => {
     const now = new Date().getTime();
     const newInputValue = 'test street 123';
     resume.profile.address.line1 = newInputValue;
-    const ref = firebaseMock.database().ref(`resumes/${resumeId}`);
-    const functionSpy = jest.spyOn(ref, 'update');
+    const functionSpy = jest.spyOn(
+      FirebaseStub.database().ref(`resumes/${resumeId}`),
+      'update',
+    );
 
-    await ref.update({
-      ...resume,
-      updatedAt: firebaseMock.database.ServerValue.TIMESTAMP,
-    });
+    await FirebaseStub.database()
+      .ref(`resumes/${resumeId}`)
+      .update({
+        ...resume,
+        updatedAt: FirebaseStub.database.ServerValue.TIMESTAMP,
+      });
 
-    await waitFor(() => expect(functionSpy).toHaveBeenCalledTimes(1), {
-      timeout: 4000,
-    });
+    await waitFor(() => expect(functionSpy).toHaveBeenCalledTimes(1));
     const functionCallArgument = functionSpy.mock.calls[0][0];
     expect(functionCallArgument.id).toBe(resume.id);
     expect(functionCallArgument.profile.address.line1).toBe(newInputValue);

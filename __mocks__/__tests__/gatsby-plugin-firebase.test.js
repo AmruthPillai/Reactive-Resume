@@ -1,4 +1,4 @@
-import FirebaseStub from '../gatsby-plugin-firebase_2';
+import FirebaseStub from '../gatsby-plugin-firebase';
 
 describe('database', () => {
   it('reuses existing Database instance', () => {
