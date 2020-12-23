@@ -8,7 +8,7 @@ import {
   waitFor,
 } from '@testing-library/react';
 
-import firebaseMock from 'gatsby-plugin-firebase';
+import FirebaseStub from 'gatsby-plugin-firebase';
 
 import { UserProvider } from '../../../contexts/UserContext';
 import { DatabaseProvider } from '../../../contexts/DatabaseContext';
@@ -17,8 +17,7 @@ import { StorageProvider } from '../../../contexts/StorageContext';
 import Builder from '../builder';
 
 beforeEach(() => {
-  firebaseMock.auth().__init();
-  firebaseMock.database().__init();
+  FirebaseStub.database().initializeData();
 });
 
 afterEach(cleanup);
@@ -28,9 +27,9 @@ describe('builder', () => {
   let resume = null;
 
   beforeEach(async () => {
-    resumeId = firebaseMock.database().__demoResumeId;
+    resumeId = FirebaseStub.database().demoResumeId;
     resume = (
-      await firebaseMock.database().ref(`resumes/${resumeId}`).once('value')
+      await FirebaseStub.database().ref(`resumes/${resumeId}`).once('value')
     ).val();
 
     render(
@@ -46,7 +45,7 @@ describe('builder', () => {
     );
 
     await act(async () => {
-      await firebaseMock.auth().signInAnonymously();
+      await FirebaseStub.auth().signInAnonymously();
     });
   });
 
@@ -72,43 +71,53 @@ describe('builder', () => {
       /*
       const newInputValue = 'test street 123';
       resume.profile.address.line1 = newInputValue;
-      const ref = firebaseMock.database().ref(`resumes/${resumeId}`);
-      const firebaseMockUpdateFunction = jest.spyOn(ref, 'update');
-      const now = Date.now();
-
-      await ref.update({
-        ...resume,
-        updatedAt: firebaseMock.database.ServerValue.TIMESTAMP,
-      });
-
-      await waitFor(() =>
-        expect(firebaseMockUpdateFunction).toHaveBeenCalledTimes(1),
+      const mockUpdateFunction = jest.spyOn(
+        FirebaseStub.database().ref(`resumes/${resumeId}`),
+        'update',
       );
-      const firebaseMockUpdateFunctionCallArgument =
-        firebaseMockUpdateFunction.mock.calls[0][0];
-      expect(firebaseMockUpdateFunctionCallArgument.id).toBe(resume.id);
-      expect(firebaseMockUpdateFunctionCallArgument.profile.address.line1).toBe(newInputValue);
-      expect(firebaseMockUpdateFunctionCallArgument.updatedAt).toBeGreaterThanOrEqual(now);
+      const now = new Date().getTime();
+
+      await FirebaseStub.database()
+        .ref(`resumes/${resumeId}`)
+        .update({
+          ...resume,
+          updatedAt: FirebaseStub.database.ServerValue.TIMESTAMP,
+        });
+
+      await waitFor(() => expect(mockUpdateFunction).toHaveBeenCalledTimes(1));
+      const mockUpdateFunctionCallArgument =
+        mockUpdateFunction.mock.calls[0][0];
+      expect(mockUpdateFunctionCallArgument.id).toBe(resume.id);
+      expect(mockUpdateFunctionCallArgument.profile.address.line1).toBe(
+        newInputValue,
+      );
+      expect(mockUpdateFunctionCallArgument.updatedAt).toBeGreaterThanOrEqual(
+        now,
+      );
       */
 
       const input = screen.getByLabelText(new RegExp('address line 1', 'i'));
       const newInputValue = 'test street 123';
-      const now = Date.now();
+      const mockUpdateFunction = jest.spyOn(
+        FirebaseStub.database().ref(`resumes/${resumeId}`),
+        'update',
+      );
+      const now = new Date().getTime();
 
       fireEvent.change(input, { target: { value: newInputValue } });
 
       expect(input.value).toBe(newInputValue);
 
-      const databaseRef = firebaseMock.database().ref(`resumes/${resume.id}`);
-      await waitFor(() => expect(databaseRef.__updateCalls.length).toBe(1), {
+      await waitFor(() => expect(mockUpdateFunction).toHaveBeenCalledTimes(1), {
         timeout: 4000,
       });
-      const databaseRefUpdateCallArgument = databaseRef.__updateCalls[0];
-      expect(databaseRefUpdateCallArgument.id).toBe(resume.id);
-      expect(databaseRefUpdateCallArgument.profile.address.line1).toBe(
+      const mockUpdateFunctionCallArgument =
+        mockUpdateFunction.mock.calls[0][0];
+      expect(mockUpdateFunctionCallArgument.id).toBe(resume.id);
+      expect(mockUpdateFunctionCallArgument.profile.address.line1).toBe(
         newInputValue,
       );
-      expect(databaseRefUpdateCallArgument.updatedAt).toBeGreaterThanOrEqual(
+      expect(mockUpdateFunctionCallArgument.updatedAt).toBeGreaterThanOrEqual(
         now,
       );
     });
