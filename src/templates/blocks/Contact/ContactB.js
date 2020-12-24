@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { FaCaretRight } from 'react-icons/fa';
 import PageContext from '../../../contexts/PageContext';
 import { safetyCheck } from '../../../utils';
+import BirthDateC from '../BirthDate/BirthDateC';
 import Icons from '../Icons';
 
 const ContactItem = ({ value, icon, link }) => {
@@ -52,6 +53,8 @@ const ContactB = () => {
         icon="email"
         link={`mailto:${data.profile.email}`}
       />
+
+      <BirthDateC />
 
       {safetyCheck(data.social) &&
         data.social.items.map((x) => (

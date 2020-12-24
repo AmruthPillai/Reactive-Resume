@@ -2,7 +2,8 @@ import React, { memo, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MdFlare } from 'react-icons/md';
 import PageContext from '../../../contexts/PageContext';
-import { safetyCheck } from '../../../utils';
+import { hasAddress, safetyCheck } from '../../../utils';
+import BirthDateA from '../BirthDate/BirthDateA';
 
 const ContactItem = ({ value, label, link }) =>
   value ? (
@@ -41,7 +42,7 @@ const ContactD = () => {
         <MdFlare size="20px" />
       </div>
 
-      {data.profile.address.line1 && (
+      {hasAddress(data.profile.address) && (
         <div>
           <h6 className="capitalize font-semibold">
             {t('shared.forms.address')}
@@ -71,6 +72,8 @@ const ContactD = () => {
         value={data.profile.email}
         link={`mailto:${data.profile.email}`}
       />
+
+      <BirthDateA />
 
       {safetyCheck(data.social) &&
         data.social.items.map((x) => (
