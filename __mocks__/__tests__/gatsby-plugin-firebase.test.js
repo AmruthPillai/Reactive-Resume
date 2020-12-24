@@ -1,5 +1,60 @@
 import FirebaseStub from '../gatsby-plugin-firebase';
 
+describe('auth', () => {
+  afterEach(() => {
+    FirebaseStub.auth().dispose();
+  });
+
+  it('reuses existing Auth instance', () => {
+    const auth1 = FirebaseStub.auth();
+    const auth2 = FirebaseStub.auth();
+
+    expect(auth1.uuid).toBeTruthy();
+    expect(auth2.uuid).toBeTruthy();
+    expect(auth1.uuid).toEqual(auth2.uuid);
+  });
+
+  it('returns anonymous user when signing in anonymously', async () => {
+    const user = await FirebaseStub.auth().signInAnonymously();
+
+    expect(user).toBeTruthy();
+    expect(user).toEqual(FirebaseStub.auth().anonymousUser);
+  });
+
+  it('calls onAuthStateChanged observer with anonymous user when signing in anonymously', async () => {
+    let user = null;
+    let error = null;
+    FirebaseStub.auth().onAuthStateChanged(
+      (_user) => {
+        user = _user;
+      },
+      (_error) => {
+        error = _error;
+      },
+    );
+
+    await FirebaseStub.auth().signInAnonymously();
+
+    expect(user).toBeTruthy();
+    expect(user).toEqual(FirebaseStub.auth().anonymousUser);
+    expect(error).toBeNull();
+  });
+
+  it('onAuthStateChanged unsubscribe removes observer', () => {
+    const observer = () => {};
+    const unsubscribe = FirebaseStub.auth().onAuthStateChanged(observer);
+    expect(unsubscribe).toBeTruthy();
+    expect(FirebaseStub.auth().onAuthStateChangedObservers.length).toEqual(1);
+    expect(FirebaseStub.auth().onAuthStateChangedObservers[0]).toEqual(
+      observer,
+    );
+
+    unsubscribe();
+
+    expect(FirebaseStub.auth().onAuthStateChangedObservers.length).toEqual(0);
+  });
+});
+
 describe('database', () => {
   it('reuses existing Database instance', () => {
     const database1 = FirebaseStub.database();
@@ -63,9 +118,9 @@ describe('database', () => {
     const users = usersDataSnapshot.val();
     expect(users).toBeTruthy();
     expect(Object.keys(users).length).toEqual(1);
-    const testUser = users[FirebaseStub.database().testUser.uid];
-    expect(testUser).toBeTruthy();
-    expect(testUser.uid).toEqual(FirebaseStub.database().testUser.uid);
+    const anonymousUser = users[FirebaseStub.database().anonymousUser.uid];
+    expect(anonymousUser).toBeTruthy();
+    expect(anonymousUser).toEqual(FirebaseStub.database().anonymousUser);
   });
 
   it('retrieves resume if it exists', async () => {
@@ -97,12 +152,12 @@ describe('database', () => {
 
     const user = (
       await FirebaseStub.database()
-        .ref(`users/${FirebaseStub.database().testUser.uid}`)
+        .ref(`users/${FirebaseStub.database().anonymousUser.uid}`)
         .once('value')
     ).val();
 
     expect(user).toBeTruthy();
-    expect(user.uid).toEqual(FirebaseStub.database().testUser.uid);
+    expect(user).toEqual(FirebaseStub.database().anonymousUser);
   });
 
   it('retrieves null if user does not exist', async () => {
@@ -114,60 +169,5 @@ describe('database', () => {
     ).val();
 
     expect(user).toBeNull();
-  });
-});
-
-describe('auth', () => {
-  afterEach(() => {
-    FirebaseStub.auth().clearOnAuthStateChangedObservers();
-  });
-
-  it('reuses existing Auth instance', () => {
-    const auth1 = FirebaseStub.auth();
-    const auth2 = FirebaseStub.auth();
-
-    expect(auth1.uuid).toBeTruthy();
-    expect(auth2.uuid).toBeTruthy();
-    expect(auth1.uuid).toEqual(auth2.uuid);
-  });
-
-  it('returns test user when signing in anonymously', async () => {
-    const user = await FirebaseStub.auth().signInAnonymously();
-
-    expect(user).toBeTruthy();
-    expect(user).toEqual(FirebaseStub.database().testUser);
-  });
-
-  it('calls onAuthStateChanged observer with test user when signing in anonymously', async () => {
-    let user = null;
-    let error = null;
-    FirebaseStub.auth().onAuthStateChanged(
-      (_user) => {
-        user = _user;
-      },
-      (_error) => {
-        error = _error;
-      },
-    );
-
-    await FirebaseStub.auth().signInAnonymously();
-
-    expect(user).toBeTruthy();
-    expect(user).toEqual(FirebaseStub.database().testUser);
-    expect(error).toBeNull();
-  });
-
-  it('onAuthStateChanged unsubscribe removes observer', () => {
-    const observer = () => {};
-    const unsubscribe = FirebaseStub.auth().onAuthStateChanged(observer);
-    expect(unsubscribe).toBeTruthy();
-    expect(FirebaseStub.auth().onAuthStateChangedObservers.length).toEqual(1);
-    expect(FirebaseStub.auth().onAuthStateChangedObservers[0]).toEqual(
-      observer,
-    );
-
-    unsubscribe();
-
-    expect(FirebaseStub.auth().onAuthStateChangedObservers.length).toEqual(0);
   });
 });

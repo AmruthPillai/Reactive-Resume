@@ -4,6 +4,13 @@ import { v4 as uuidv4 } from 'uuid';
 
 class Auth {
   static #instance = undefined;
+  static anonymousUser = {
+    displayName: 'Anonymous User 1',
+    email: 'anonymous.user@noemail.com',
+    isAnonymous: true,
+    name: 'Anonymous 1',
+    uid: 'anonym123',
+  };
   #uuid = '';
   #onAuthStateChangedObservers = [];
 
@@ -25,7 +32,11 @@ class Auth {
     return this.#onAuthStateChangedObservers;
   }
 
-  clearOnAuthStateChangedObservers() {
+  get anonymousUser() {
+    return Auth.anonymousUser;
+  }
+
+  dispose() {
     this.#onAuthStateChangedObservers = [];
   }
 
@@ -41,25 +52,21 @@ class Auth {
 
   async signInAnonymously() {
     this.#onAuthStateChangedObservers.forEach((observer) =>
-      observer(Database.testUser),
+      observer(this.anonymousUser),
     );
 
-    return Promise.resolve(Database.testUser);
+    return Promise.resolve(this.anonymousUser);
   }
 }
 
 class Database {
-  static testUser = {
-    email: 'test.user@noemail.com',
-    name: 'Test User',
-    uid: 'testuser123',
-  };
   static resumesPath = 'resumes';
   static usersPath = 'users';
   static #instance = undefined;
   #uuid = '';
   #data = {};
   #references = {};
+  #anonymousUser = undefined;
 
   constructor() {
     if (Database.#instance) {
@@ -69,10 +76,14 @@ class Database {
     Database.#instance = this;
 
     this.#uuid = uuidv4();
+    this.#anonymousUser = {
+      uid: Auth.anonymousUser.uid,
+      isAnonymous: Auth.anonymousUser.isAnonymous,
+    };
   }
 
-  get testUser() {
-    return Database.testUser;
+  get anonymousUser() {
+    return this.#anonymousUser;
   }
 
   get demoResumeId() {
@@ -105,7 +116,7 @@ class Database {
 
       resume.id = key;
       resume.name = `Test Resume ${key}`;
-      resume.user = this.testUser.uid;
+      resume.user = this.anonymousUser.uid;
 
       let date = new Date('December 15, 2020 11:20:25');
       resume.updatedAt = date.valueOf();
@@ -116,7 +127,7 @@ class Database {
     this.#data[Database.resumesPath] = resumes;
 
     const users = {};
-    users[this.testUser.uid] = this.testUser;
+    users[this.anonymousUser.uid] = this.anonymousUser;
     this.#data[Database.usersPath] = users;
   }
 
