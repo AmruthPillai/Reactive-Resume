@@ -1,6 +1,7 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import PageContext from '../contexts/PageContext';
-import { hexToRgb } from '../utils';
+import { hasAddress, hexToRgb } from '../utils';
 import AwardsA from './blocks/Awards/AwardsA';
 import CertificationsA from './blocks/Certifications/CertificationsA';
 import ContactB from './blocks/Contact/ContactB';
@@ -13,7 +14,6 @@ import ProjectsA from './blocks/Projects/ProjectsA';
 import ReferencesB from './blocks/References/ReferencesB';
 import SkillsA from './blocks/Skills/SkillsA';
 import WorkA from './blocks/Work/WorkA';
-import BirthDateC from './blocks/BirthDate/BirthDateC';
 
 const Blocks = {
   objective: ObjectiveA,
@@ -29,6 +29,7 @@ const Blocks = {
 };
 
 const Gengar = ({ data }) => {
+  const { t } = useTranslation();
   const layout = data.metadata.layout.gengar;
   const { r, g, b } = hexToRgb(data.metadata.colors.primary) || {};
 
@@ -80,29 +81,28 @@ const Gengar = ({ data }) => {
               <Profile />
             </div>
 
-            <div className="flex flex-col mt-4 text-xs">
-              <h6 className="font-bold text-xs uppercase tracking-wide mb-1">
-                Address
-              </h6>
-              <span>{data.profile.address.line1}</span>
-              <span>{data.profile.address.line2}</span>
-              <span>
-                {data.profile.address.city} {data.profile.address.pincode}
-              </span>
-            </div>
+            {hasAddress(data.profile.address) && (
+              <div className="flex flex-col mt-4 text-xs">
+                <h6 className="font-bold text-xs uppercase tracking-wide mb-1">
+                  {t('shared.forms.address')}
+                </h6>
+                <span>{data.profile.address.line1}</span>
+                <span>{data.profile.address.line2}</span>
+                <span>
+                  {data.profile.address.city} {data.profile.address.pincode}
+                </span>
+              </div>
+            )}
 
             <hr
               className="w-1/4 my-5 opacity-25"
               style={{ borderColor: data.metadata.colors.background }}
             />
 
-            <div className="grid gap-4">
-              <h6 className="font-bold text-xs uppercase tracking-wide mb-1">
-                Contacts
-              </h6>
-              <ContactB />
-              <BirthDateC />
-            </div>
+            <h6 className="font-bold text-xs uppercase tracking-wide mb-2">
+              Contact
+            </h6>
+            <ContactB />
           </div>
 
           <div

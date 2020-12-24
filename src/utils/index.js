@@ -48,6 +48,9 @@ export const getUnsplashPhoto = async () => {
   return response.url;
 };
 
+export const hasAddress = (address) =>
+  !!address.line1 || !!address.line2 || !!address.city || !!address.pincode;
+
 export const hexToRgb = (hex) => {
   const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
   hex = hex.replace(shorthandRegex, (m, r, g, b) => r + r + g + g + b + b);

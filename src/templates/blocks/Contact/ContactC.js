@@ -1,7 +1,8 @@
 import React, { memo, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import PageContext from '../../../contexts/PageContext';
-import { safetyCheck } from '../../../utils';
+import { hasAddress, safetyCheck } from '../../../utils';
+import BirthDateA from '../BirthDate/BirthDateA';
 
 const ContactItem = ({ value, label, link }) =>
   value ? (
@@ -23,7 +24,7 @@ const ContactC = () => {
 
   return (
     <div className="text-xs grid gap-2">
-      {data.profile.address.line1 && (
+      {hasAddress(data.profile.address) && (
         <div>
           <h6 className="capitalize font-semibold">
             {t('shared.forms.address')}
@@ -53,6 +54,8 @@ const ContactC = () => {
         value={data.profile.email}
         link={`mailto:${data.profile.email}`}
       />
+
+      <BirthDateA />
 
       {safetyCheck(data.social) &&
         data.social.items.map((x) => (

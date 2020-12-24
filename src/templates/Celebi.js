@@ -14,7 +14,6 @@ import ProjectsA from './blocks/Projects/ProjectsA';
 import ReferencesA from './blocks/References/ReferencesA';
 import SkillsA from './blocks/Skills/SkillsA';
 import WorkA from './blocks/Work/WorkA';
-import BirthDateA from './blocks/BirthDate/BirthDateA';
 
 const Blocks = {
   objective: ObjectiveA,
@@ -102,7 +101,6 @@ const Celebi = ({ data }) => {
               <div>
                 <HeadingE>{t('builder.sections.profile')}</HeadingE>
                 <div className="relative w-full grid gap-4 text-xs">
-                  <BirthDateA />
                   <ContactC />
                 </div>
               </div>

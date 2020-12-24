@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import PageContext from '../contexts/PageContext';
 import AwardsA from './blocks/Awards/AwardsA';
 import CertificationsA from './blocks/Certifications/CertificationsA';
@@ -12,7 +13,7 @@ import ProjectsA from './blocks/Projects/ProjectsA';
 import ReferencesA from './blocks/References/ReferencesA';
 import SkillsA from './blocks/Skills/SkillsA';
 import WorkA from './blocks/Work/WorkA';
-import BirthDateB from './blocks/BirthDate/BirthDateB';
+import { hasAddress } from '../utils';
 
 const Blocks = {
   objective: ObjectiveA,
@@ -28,6 +29,7 @@ const Blocks = {
 };
 
 const Onyx = ({ data }) => {
+  const { t } = useTranslation();
   const layout = data.metadata.layout.onyx;
 
   return (
@@ -61,20 +63,22 @@ const Onyx = ({ data }) => {
               </h1>
               <h6 className="font-medium text-sm">{data.profile.subtitle}</h6>
 
-              <div className="flex flex-col mt-4 text-xs">
-                <span>{data.profile.address.line1}</span>
-                <span>{data.profile.address.line2}</span>
-                <span>
-                  {data.profile.address.city} {data.profile.address.pincode}
-                </span>
-              </div>
+              {hasAddress(data.profile.address) && (
+                <div className="flex flex-col mt-4 text-xs">
+                  <h6 className="font-bold text-xs uppercase tracking-wide mb-1">
+                    {t('shared.forms.address')}
+                  </h6>
+                  <span>{data.profile.address.line1}</span>
+                  <span>{data.profile.address.line2}</span>
+                  <span>
+                    {data.profile.address.city} {data.profile.address.pincode}
+                  </span>
+                </div>
+              )}
             </div>
           </div>
 
-          <div className="grid gap-4">
-            <BirthDateB />
-            <Contact />
-          </div>
+          <Contact />
         </div>
 
         <hr
