@@ -26,6 +26,7 @@ beforeEach(() => {
 afterEach(cleanup);
 
 describe('builder', () => {
+  const resumesPath = FirebaseStub.database().resumesPath;
   let resumeId = null;
   let resume = null;
   let mockUpdateFunction = null;
@@ -34,10 +35,12 @@ describe('builder', () => {
   beforeEach(async () => {
     resumeId = FirebaseStub.database().demoResumeId;
     resume = (
-      await FirebaseStub.database().ref(`resumes/${resumeId}`).once('value')
+      await FirebaseStub.database()
+        .ref(`${resumesPath}/${resumeId}`)
+        .once('value')
     ).val();
     mockUpdateFunction = jest.spyOn(
-      FirebaseStub.database().ref(`resumes/${resumeId}`),
+      FirebaseStub.database().ref(`${resumesPath}/${resumeId}`),
       'update',
     );
 

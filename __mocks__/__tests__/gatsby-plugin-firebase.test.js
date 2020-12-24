@@ -1,173 +1,182 @@
 import FirebaseStub from '../gatsby-plugin-firebase';
 
-describe('auth', () => {
-  afterEach(() => {
-    FirebaseStub.auth().dispose();
+describe('FirebaseStub', () => {
+  const resumesPath = FirebaseStub.database().resumesPath;
+  const usersPath = FirebaseStub.database().usersPath;
+
+  describe('auth', () => {
+    afterEach(() => {
+      FirebaseStub.auth().dispose();
+    });
+
+    it('reuses existing Auth instance', () => {
+      const auth1 = FirebaseStub.auth();
+      const auth2 = FirebaseStub.auth();
+
+      expect(auth1.uuid).toBeTruthy();
+      expect(auth2.uuid).toBeTruthy();
+      expect(auth1.uuid).toEqual(auth2.uuid);
+    });
+
+    it('returns anonymous user when signing in anonymously', async () => {
+      const user = await FirebaseStub.auth().signInAnonymously();
+
+      expect(user).toBeTruthy();
+      expect(user).toEqual(FirebaseStub.auth().anonymousUser);
+    });
+
+    it('calls onAuthStateChanged observer with anonymous user when signing in anonymously', async () => {
+      let user = null;
+      let error = null;
+      FirebaseStub.auth().onAuthStateChanged(
+        (_user) => {
+          user = _user;
+        },
+        (_error) => {
+          error = _error;
+        },
+      );
+
+      await FirebaseStub.auth().signInAnonymously();
+
+      expect(user).toBeTruthy();
+      expect(user).toEqual(FirebaseStub.auth().anonymousUser);
+      expect(error).toBeNull();
+    });
+
+    it('onAuthStateChanged unsubscribe removes observer', () => {
+      const observer = () => {};
+      const unsubscribe = FirebaseStub.auth().onAuthStateChanged(observer);
+      expect(unsubscribe).toBeTruthy();
+      expect(FirebaseStub.auth().onAuthStateChangedObservers.length).toEqual(1);
+      expect(FirebaseStub.auth().onAuthStateChangedObservers[0]).toEqual(
+        observer,
+      );
+
+      unsubscribe();
+
+      expect(FirebaseStub.auth().onAuthStateChangedObservers.length).toEqual(0);
+    });
   });
 
-  it('reuses existing Auth instance', () => {
-    const auth1 = FirebaseStub.auth();
-    const auth2 = FirebaseStub.auth();
+  describe('database', () => {
+    it('reuses existing Database instance', () => {
+      const database1 = FirebaseStub.database();
+      const database2 = FirebaseStub.database();
 
-    expect(auth1.uuid).toBeTruthy();
-    expect(auth2.uuid).toBeTruthy();
-    expect(auth1.uuid).toEqual(auth2.uuid);
-  });
+      expect(database1.uuid).toBeTruthy();
+      expect(database2.uuid).toBeTruthy();
+      expect(database1.uuid).toEqual(database2.uuid);
+    });
 
-  it('returns anonymous user when signing in anonymously', async () => {
-    const user = await FirebaseStub.auth().signInAnonymously();
+    it('reuses existing Reference instance', () => {
+      const ref1 = FirebaseStub.database().ref(`${resumesPath}/123`);
+      const ref2 = FirebaseStub.database().ref(`${resumesPath}/123`);
 
-    expect(user).toBeTruthy();
-    expect(user).toEqual(FirebaseStub.auth().anonymousUser);
-  });
+      expect(ref1.uuid).toBeTruthy();
+      expect(ref2.uuid).toBeTruthy();
+      expect(ref1.uuid).toEqual(ref2.uuid);
+    });
 
-  it('calls onAuthStateChanged observer with anonymous user when signing in anonymously', async () => {
-    let user = null;
-    let error = null;
-    FirebaseStub.auth().onAuthStateChanged(
-      (_user) => {
-        user = _user;
-      },
-      (_error) => {
-        error = _error;
-      },
-    );
+    it('ServerValue.TIMESTAMP returns current time in milliseconds', () => {
+      const now = new Date().getTime();
+      const timestamp = FirebaseStub.database.ServerValue.TIMESTAMP;
 
-    await FirebaseStub.auth().signInAnonymously();
+      expect(timestamp).toBeTruthy();
+      expect(timestamp).toBeGreaterThanOrEqual(now);
+    });
 
-    expect(user).toBeTruthy();
-    expect(user).toEqual(FirebaseStub.auth().anonymousUser);
-    expect(error).toBeNull();
-  });
+    it("can spy on Reference 'update' function", async () => {
+      const referencePath = `${resumesPath}/123456`;
+      const functionSpy = jest.spyOn(
+        FirebaseStub.database().ref(referencePath),
+        'update',
+      );
+      const updateArgument = 'test value 123';
 
-  it('onAuthStateChanged unsubscribe removes observer', () => {
-    const observer = () => {};
-    const unsubscribe = FirebaseStub.auth().onAuthStateChanged(observer);
-    expect(unsubscribe).toBeTruthy();
-    expect(FirebaseStub.auth().onAuthStateChangedObservers.length).toEqual(1);
-    expect(FirebaseStub.auth().onAuthStateChangedObservers[0]).toEqual(
-      observer,
-    );
+      await FirebaseStub.database().ref(referencePath).update(updateArgument);
 
-    unsubscribe();
+      expect(functionSpy).toHaveBeenCalledTimes(1);
+      const functionCallArgument = functionSpy.mock.calls[0][0];
+      expect(functionCallArgument).toBeTruthy();
+      expect(functionCallArgument).toEqual(updateArgument);
+    });
 
-    expect(FirebaseStub.auth().onAuthStateChangedObservers.length).toEqual(0);
-  });
-});
+    it('initializing data sets up resumes and users', async () => {
+      FirebaseStub.database().initializeData();
 
-describe('database', () => {
-  it('reuses existing Database instance', () => {
-    const database1 = FirebaseStub.database();
-    const database2 = FirebaseStub.database();
+      const resumesRef = FirebaseStub.database().ref(resumesPath);
+      const resumesDataSnapshot = await resumesRef.once('value');
+      const resumes = resumesDataSnapshot.val();
+      expect(resumes).toBeTruthy();
+      expect(Object.keys(resumes).length).toEqual(2);
+      const demoResume = resumes[FirebaseStub.database().demoResumeId];
+      expect(demoResume).toBeTruthy();
+      expect(demoResume.id).toEqual(FirebaseStub.database().demoResumeId);
+      const emptyResume = resumes[FirebaseStub.database().emptyResumeId];
+      expect(emptyResume).toBeTruthy();
+      expect(emptyResume.id).toEqual(FirebaseStub.database().emptyResumeId);
 
-    expect(database1.uuid).toBeTruthy();
-    expect(database2.uuid).toBeTruthy();
-    expect(database1.uuid).toEqual(database2.uuid);
-  });
+      const usersRef = FirebaseStub.database().ref(usersPath);
+      const usersDataSnapshot = await usersRef.once('value');
+      const users = usersDataSnapshot.val();
+      expect(users).toBeTruthy();
+      expect(Object.keys(users).length).toEqual(1);
+      const anonymousUser = users[FirebaseStub.database().anonymousUser.uid];
+      expect(anonymousUser).toBeTruthy();
+      expect(anonymousUser).toEqual(FirebaseStub.database().anonymousUser);
+    });
 
-  it('reuses existing Reference instance', () => {
-    const ref1 = FirebaseStub.database().ref('resumes/123');
-    const ref2 = FirebaseStub.database().ref('resumes/123');
+    it('retrieves resume if it exists', async () => {
+      FirebaseStub.database().initializeData();
 
-    expect(ref1.uuid).toBeTruthy();
-    expect(ref2.uuid).toBeTruthy();
-    expect(ref1.uuid).toEqual(ref2.uuid);
-  });
+      const resume = (
+        await FirebaseStub.database()
+          .ref(`${resumesPath}/${FirebaseStub.database().demoResumeId}`)
+          .once('value')
+      ).val();
 
-  it('ServerValue.TIMESTAMP returns current time in milliseconds', () => {
-    const now = new Date().getTime();
-    const timestamp = FirebaseStub.database.ServerValue.TIMESTAMP;
+      expect(resume).toBeTruthy();
+      expect(resume.id).toEqual(FirebaseStub.database().demoResumeId);
+    });
 
-    expect(timestamp).toBeTruthy();
-    expect(timestamp).toBeGreaterThanOrEqual(now);
-  });
+    it('retrieves null if resume does not exist', async () => {
+      FirebaseStub.database().initializeData();
+      const resumeId = 'invalidResumeId';
 
-  it("can spy on Reference 'update' function", async () => {
-    const referencePath = 'resumes/123456';
-    const functionSpy = jest.spyOn(
-      FirebaseStub.database().ref(referencePath),
-      'update',
-    );
-    const updateArgument = 'test value 123';
+      const resume = (
+        await FirebaseStub.database()
+          .ref(`${resumesPath}/${resumeId}`)
+          .once('value')
+      ).val();
 
-    await FirebaseStub.database().ref(referencePath).update(updateArgument);
+      expect(resume).toBeNull();
+    });
 
-    expect(functionSpy).toHaveBeenCalledTimes(1);
-    const functionCallArgument = functionSpy.mock.calls[0][0];
-    expect(functionCallArgument).toBeTruthy();
-    expect(functionCallArgument).toEqual(updateArgument);
-  });
+    it('retrieves user if it exists', async () => {
+      FirebaseStub.database().initializeData();
 
-  it('initializing data sets up resumes and users', async () => {
-    FirebaseStub.database().initializeData();
+      const user = (
+        await FirebaseStub.database()
+          .ref(`${usersPath}/${FirebaseStub.database().anonymousUser.uid}`)
+          .once('value')
+      ).val();
 
-    const resumesRef = FirebaseStub.database().ref('resumes');
-    const resumesDataSnapshot = await resumesRef.once('value');
-    const resumes = resumesDataSnapshot.val();
-    expect(resumes).toBeTruthy();
-    expect(Object.keys(resumes).length).toEqual(2);
-    const demoResume = resumes[FirebaseStub.database().demoResumeId];
-    expect(demoResume).toBeTruthy();
-    expect(demoResume.id).toEqual(FirebaseStub.database().demoResumeId);
-    const emptyResume = resumes[FirebaseStub.database().emptyResumeId];
-    expect(emptyResume).toBeTruthy();
-    expect(emptyResume.id).toEqual(FirebaseStub.database().emptyResumeId);
+      expect(user).toBeTruthy();
+      expect(user).toEqual(FirebaseStub.database().anonymousUser);
+    });
 
-    const usersRef = FirebaseStub.database().ref('users');
-    const usersDataSnapshot = await usersRef.once('value');
-    const users = usersDataSnapshot.val();
-    expect(users).toBeTruthy();
-    expect(Object.keys(users).length).toEqual(1);
-    const anonymousUser = users[FirebaseStub.database().anonymousUser.uid];
-    expect(anonymousUser).toBeTruthy();
-    expect(anonymousUser).toEqual(FirebaseStub.database().anonymousUser);
-  });
+    it('retrieves null if user does not exist', async () => {
+      FirebaseStub.database().initializeData();
+      const userId = 'invalidUserId';
 
-  it('retrieves resume if it exists', async () => {
-    FirebaseStub.database().initializeData();
+      const user = (
+        await FirebaseStub.database()
+          .ref(`${usersPath}/${userId}`)
+          .once('value')
+      ).val();
 
-    const resume = (
-      await FirebaseStub.database()
-        .ref(`resumes/${FirebaseStub.database().demoResumeId}`)
-        .once('value')
-    ).val();
-
-    expect(resume).toBeTruthy();
-    expect(resume.id).toEqual(FirebaseStub.database().demoResumeId);
-  });
-
-  it('retrieves null if resume does not exist', async () => {
-    FirebaseStub.database().initializeData();
-    const resumeId = 'invalidResumeId';
-
-    const resume = (
-      await FirebaseStub.database().ref(`resumes/${resumeId}`).once('value')
-    ).val();
-
-    expect(resume).toBeNull();
-  });
-
-  it('retrieves user if it exists', async () => {
-    FirebaseStub.database().initializeData();
-
-    const user = (
-      await FirebaseStub.database()
-        .ref(`users/${FirebaseStub.database().anonymousUser.uid}`)
-        .once('value')
-    ).val();
-
-    expect(user).toBeTruthy();
-    expect(user).toEqual(FirebaseStub.database().anonymousUser);
-  });
-
-  it('retrieves null if user does not exist', async () => {
-    FirebaseStub.database().initializeData();
-    const userId = 'invalidUserId';
-
-    const user = (
-      await FirebaseStub.database().ref(`users/${userId}`).once('value')
-    ).val();
-
-    expect(user).toBeNull();
+      expect(user).toBeNull();
+    });
   });
 });

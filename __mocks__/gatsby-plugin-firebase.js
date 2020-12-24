@@ -60,13 +60,13 @@ class Auth {
 }
 
 class Database {
-  static resumesPath = 'resumes';
-  static usersPath = 'users';
   static #instance = undefined;
   #uuid = '';
   #data = {};
   #references = {};
   #anonymousUser = undefined;
+  #demoResumeId = 'demore';
+  #emptyResumeId = 'mtre01';
 
   constructor() {
     if (Database.#instance) {
@@ -82,15 +82,23 @@ class Database {
     };
   }
 
+  get resumesPath() {
+    return Reference.resumesPath;
+  }
+
+  get usersPath() {
+    return Reference.usersPath;
+  }
+
   get anonymousUser() {
     return this.#anonymousUser;
   }
 
   get demoResumeId() {
-    return 'demore';
+    return this.#demoResumeId;
   }
   get emptyResumeId() {
-    return 'mtre01';
+    return this.#emptyResumeId;
   }
 
   get uuid() {
@@ -124,11 +132,11 @@ class Database {
       resume.createdAt = date.valueOf();
     }
 
-    this.#data[Database.resumesPath] = resumes;
+    this.#data[this.resumesPath] = resumes;
 
     const users = {};
     users[this.anonymousUser.uid] = this.anonymousUser;
-    this.#data[Database.usersPath] = users;
+    this.#data[this.usersPath] = users;
   }
 
   ref(path) {
@@ -144,6 +152,8 @@ class Database {
 }
 
 class Reference {
+  static resumesPath = 'resumes';
+  static usersPath = 'users';
   #rootPath = '.';
   #path = '';
   #uuid = '';
@@ -188,15 +198,15 @@ class Reference {
     }
 
     if (
-      this.#path === Database.resumesPath ||
-      this.#path === Database.usersPath
+      this.#path === Reference.resumesPath ||
+      this.#path === Reference.usersPath
     ) {
       return this.#path in databaseData ? databaseData[this.#path] : null;
     }
 
     if (
-      this.#path.startsWith(`${Database.resumesPath}/`) ||
-      this.#path.startsWith(`${Database.usersPath}/`)
+      this.#path.startsWith(`${Reference.resumesPath}/`) ||
+      this.#path.startsWith(`${Reference.usersPath}/`)
     ) {
       const databaseLocationId = this.#path.substring(
         this.#path.indexOf('/') + 1,
