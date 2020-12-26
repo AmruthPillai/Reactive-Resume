@@ -10,7 +10,7 @@ const EducationItem = ({ item, language }) => {
     <div>
       <div className="flex justify-between items-center">
         <div className="flex flex-col text-left mr-2">
-          <h6 className="font-semibold">{item.institution}</h6>
+          <h6 className="font-semibold text-sm">{item.institution}</h6>
           <span className="text-xs">
             <strong>{item.degree}</strong> {item.field}
           </span>

@@ -5,7 +5,7 @@ import { safetyCheck } from '../../../utils';
 
 const ReferenceItem = (x) => (
   <div key={x.id} className="flex flex-col">
-    <h6 className="font-semibold">{x.name}</h6>
+    <h6 className="font-semibold text-sm">{x.name}</h6>
     <span className="text-xs">{x.position}</span>
     <span className="text-xs">{x.phone}</span>
     <span className="text-xs">{x.email}</span>
