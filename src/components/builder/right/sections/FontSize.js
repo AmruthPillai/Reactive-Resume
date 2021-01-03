@@ -59,6 +59,7 @@ const FontSizes = ({ id }) => {
         type="range"
         onChange={onChange}
         defaultValue={fontScale}
+        className="rounded-lg overflow-hidden appearance-none bg-gray-400 h-4 w-full"
       />
     </section>
   );
