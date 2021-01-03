@@ -6,6 +6,7 @@ import {
   MdInfo,
   MdSettings,
   MdStyle,
+  MdFormatSize,
 } from 'react-icons/md';
 
 export default [
@@ -24,6 +25,10 @@ export default [
   {
     id: 'fonts',
     icon: MdFontDownload,
+  },
+  {
+    id: 'font-sizes',
+    icon: MdFormatSize,
   },
   {
     id: 'actions',

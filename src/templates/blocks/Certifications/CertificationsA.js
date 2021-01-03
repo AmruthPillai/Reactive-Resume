@@ -7,7 +7,7 @@ const CertificationItem = ({ item, language }) => (
   <div>
     <div className="flex justify-between items-center">
       <div className="flex flex-col text-left mr-2">
-        <h6 className="font-semibold">{item.title}</h6>
+        <h6 className="font-semibold text-sm">{item.title}</h6>
         <span className="text-xs">{item.issuer}</span>
       </div>
       {item.date && (

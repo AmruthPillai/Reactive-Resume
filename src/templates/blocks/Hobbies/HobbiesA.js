@@ -4,7 +4,7 @@ import { safetyCheck } from '../../../utils';
 
 const HobbyA = (x) => (
   <div key={x.id}>
-    <h6 className="font-semibold">{x.name}</h6>
+    <h6 className="font-semibold text-sm">{x.name}</h6>
   </div>
 );
 
