@@ -1,4 +1,4 @@
-const fontSizeVarsDefault = {
+const fontSizeOptions = {
   '--text-xs-size': 0.75,
   '--text-sm-size': 0.875,
   '--text-lg-size': 1.125,
@@ -15,4 +15,4 @@ const fontSizeVarsDefault = {
   '--text-4xl-line-height': 2.5,
 };
 
-export default fontSizeVarsDefault;
+export default fontSizeOptions;
