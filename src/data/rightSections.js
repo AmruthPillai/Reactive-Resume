@@ -27,7 +27,7 @@ export default [
     icon: MdFontDownload,
   },
   {
-    id: 'font-sizes',
+    id: 'font-size',
     icon: MdFormatSize,
   },
   {
