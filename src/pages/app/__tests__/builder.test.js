@@ -25,7 +25,7 @@ beforeEach(() => {
 
 afterEach(cleanup);
 
-describe('builder', () => {
+describe('Builder', () => {
   const resumesPath = FirebaseStub.database().resumesPath;
   let resumeId = null;
   let resume = null;
@@ -92,6 +92,36 @@ describe('builder', () => {
       fireEvent.change(input, { target: { value: newInputValue } });
 
       expect(input.value).toBe(newInputValue);
+
+      await waitFor(() => expect(mockUpdateFunction).toHaveBeenCalledTimes(1), {
+        timeout: DebounceWaitTime,
+      });
+      const mockUpdateFunctionCallArgument =
+        mockUpdateFunction.mock.calls[0][0];
+      expect(mockUpdateFunctionCallArgument.id).toBe(resume.id);
+      expect(mockUpdateFunctionCallArgument.profile.address.line1).toBe(
+        newInputValue,
+      );
+      expect(mockUpdateFunctionCallArgument.updatedAt).toBeGreaterThanOrEqual(
+        now,
+      );
+    });
+  });
+
+  describe('settings', () => {
+    it('allow to change the language', async () => {
+      const languageSelectElement = screen.getByLabelText('Language');
+      console.log(languageSelectElement.value);
+      fireEvent.change(languageSelectElement, { target: { value: 'it' } });
+      console.log(languageSelectElement.value);
+      expect(languageSelectElement).toHaveValue('it');
+
+      expect(
+        screen.getByLabelText(new RegExp('date of birth', 'i')),
+      ).toBeInTheDocument();
+      expect(
+        screen.getByLabelText(new RegExp('data di nascita', 'i')),
+      ).toBeInTheDocument();
 
       await waitFor(() => expect(mockUpdateFunction).toHaveBeenCalledTimes(1), {
         timeout: DebounceWaitTime,

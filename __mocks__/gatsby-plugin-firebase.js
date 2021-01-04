@@ -115,11 +115,19 @@ class Database {
 
   initializeData() {
     const resumes = {};
+
     const demoStateResume = Database.readFile('../src/data/demoState.json');
+    let date = new Date('December 15, 2020 11:20:25');
+    demoStateResume.updatedAt = date.valueOf();
+    date.setMonth(date.getMonth() - 2);
+    demoStateResume.createdAt = date.valueOf();
     resumes[this.demoStateResumeId] = demoStateResume;
+
     const initialStateResume = Database.readFile(
       '../src/data/initialState.json',
     );
+    initialStateResume.updatedAt = date.valueOf();
+    initialStateResume.createdAt = date.valueOf();
     resumes[this.initialStateResumeId] = initialStateResume;
 
     for (var key in resumes) {
@@ -128,11 +136,6 @@ class Database {
       resume.id = key;
       resume.name = `Test Resume ${key}`;
       resume.user = this.anonymousUser.uid;
-
-      let date = new Date('December 15, 2020 11:20:25');
-      resume.updatedAt = date.valueOf();
-      date.setMonth(date.getMonth() - 2);
-      resume.createdAt = date.valueOf();
     }
 
     this.#data[this.resumesPath] = resumes;
