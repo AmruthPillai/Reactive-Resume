@@ -110,12 +110,18 @@ describe('FirebaseStub', () => {
       const resumes = resumesDataSnapshot.val();
       expect(resumes).toBeTruthy();
       expect(Object.keys(resumes).length).toEqual(2);
-      const demoResume = resumes[FirebaseStub.database().demoResumeId];
-      expect(demoResume).toBeTruthy();
-      expect(demoResume.id).toEqual(FirebaseStub.database().demoResumeId);
-      const emptyResume = resumes[FirebaseStub.database().emptyResumeId];
-      expect(emptyResume).toBeTruthy();
-      expect(emptyResume.id).toEqual(FirebaseStub.database().emptyResumeId);
+      const demoStateResume =
+        resumes[FirebaseStub.database().demoStateResumeId];
+      expect(demoStateResume).toBeTruthy();
+      expect(demoStateResume.id).toEqual(
+        FirebaseStub.database().demoStateResumeId,
+      );
+      const initialStateResume =
+        resumes[FirebaseStub.database().initialStateResumeId];
+      expect(initialStateResume).toBeTruthy();
+      expect(initialStateResume.id).toEqual(
+        FirebaseStub.database().initialStateResumeId,
+      );
 
       const usersRef = FirebaseStub.database().ref(usersPath);
       const usersDataSnapshot = await usersRef.once('value');
@@ -132,12 +138,12 @@ describe('FirebaseStub', () => {
 
       const resume = (
         await FirebaseStub.database()
-          .ref(`${resumesPath}/${FirebaseStub.database().demoResumeId}`)
+          .ref(`${resumesPath}/${FirebaseStub.database().demoStateResumeId}`)
           .once('value')
       ).val();
 
       expect(resume).toBeTruthy();
-      expect(resume.id).toEqual(FirebaseStub.database().demoResumeId);
+      expect(resume.id).toEqual(FirebaseStub.database().demoStateResumeId);
     });
 
     it('retrieves null if resume does not exist', async () => {

@@ -65,8 +65,8 @@ class Database {
   #data = {};
   #references = {};
   #anonymousUser = undefined;
-  #demoResumeId = 'demore';
-  #emptyResumeId = 'mtre01';
+  #demoStateResumeId = 'demost';
+  #initialStateResumeId = 'initst';
 
   constructor() {
     if (Database.#instance) {
@@ -94,11 +94,12 @@ class Database {
     return this.#anonymousUser;
   }
 
-  get demoResumeId() {
-    return this.#demoResumeId;
+  get demoStateResumeId() {
+    return this.#demoStateResumeId;
   }
-  get emptyResumeId() {
-    return this.#emptyResumeId;
+
+  get initialStateResumeId() {
+    return this.#initialStateResumeId;
   }
 
   get uuid() {
@@ -114,10 +115,12 @@ class Database {
 
   initializeData() {
     const resumes = {};
-    const demoResume = Database.readFile('../src/data/demoState.json');
-    resumes[this.demoResumeId] = demoResume;
-    const emptyResume = Database.readFile('../src/data/initialState.json');
-    resumes[this.emptyResumeId] = emptyResume;
+    const demoStateResume = Database.readFile('../src/data/demoState.json');
+    resumes[this.demoStateResumeId] = demoStateResume;
+    const initialStateResume = Database.readFile(
+      '../src/data/initialState.json',
+    );
+    resumes[this.initialStateResumeId] = initialStateResume;
 
     for (var key in resumes) {
       const resume = resumes[key];
