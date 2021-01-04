@@ -1,4 +1,22 @@
 module.exports = {
+  testRegex: '/*.test.js$',
+  collectCoverage: true,
+  collectCoverageFrom: [
+    '**/*.{js,jsx}',
+    '!\\.cache/**',
+    '!node_modules/**',
+    '!public/**',
+  ],
+  coverageReporters: ['lcov'],
+  coverageDirectory: 'test-coverage',
+  coverageThreshold: {
+    global: {
+      branches: 0,
+      functions: 0,
+      lines: 0,
+      statements: 0,
+    },
+  },
   transform: {
     '^.+\\.jsx?$': `<rootDir>/jest-preprocess.js`,
   },
