@@ -10,6 +10,7 @@ import Fonts from './sections/Fonts';
 import Layout from './sections/Layout';
 import Settings from './sections/Settings';
 import Templates from './sections/Templates';
+import FontSize from './sections/FontSize';
 
 const getComponent = (id) => {
   switch (id) {
@@ -27,6 +28,8 @@ const getComponent = (id) => {
       return Settings;
     case 'about':
       return About;
+    case 'font-size':
+      return FontSize;
     default:
       throw new Error();
   }

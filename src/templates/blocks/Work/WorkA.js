@@ -10,7 +10,7 @@ const WorkItem = ({ item, language }) => {
     <div>
       <div className="flex justify-between items-center">
         <div className="flex flex-col text-left mr-2">
-          <h6 className="font-semibold">{item.company}</h6>
+          <h6 className="font-semibold text-sm">{item.company}</h6>
           <span className="text-xs">{item.position}</span>
         </div>
         {item.startDate && (

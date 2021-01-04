@@ -55,6 +55,13 @@ section {
   padding-left: 1.5em;
 }
 
+input[type="range"]::-webkit-slider-thumb {
+  cursor: ew-resize;
+  box-shadow: -405px 0 0 400px #605e5c;
+
+  @apply w-4 h-4 bg-white rounded-full appearance-none;
+}
+
 @page {
   margin: 0;
 }
