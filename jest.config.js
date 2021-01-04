@@ -6,8 +6,8 @@ module.exports = {
     '!\\.cache/**',
     '!node_modules/**',
     '!public/**',
+    '!test-coverage/**',
   ],
-  coverageReporters: ['lcov'],
   coverageDirectory: 'test-coverage',
   coverageThreshold: {
     global: {
@@ -17,6 +17,7 @@ module.exports = {
       statements: 0,
     },
   },
+  verbose: true,
   transform: {
     '^.+\\.jsx?$': `<rootDir>/jest-preprocess.js`,
   },
