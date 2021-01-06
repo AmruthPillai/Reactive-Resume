@@ -160,11 +160,14 @@ class Database {
 class Reference {
   static resumesPath = 'resumes';
   static usersPath = 'users';
+  static connectedPath = '/.info/connected';
   #rootPath = '.';
   #path = '';
   #uuid = '';
   #dataSnapshots = {};
   #getDatabaseData = () => null;
+  #orderByChildPath = '';
+  #equalToValue = '';
 
   constructor(path, getDatabaseData) {
     if (typeof path === 'undefined' || path === null) {
@@ -232,6 +235,24 @@ class Reference {
     return null;
   }
 
+  off() {}
+
+  on(eventType, callback) {
+    if (eventType !== 'value') {
+      return;
+    }
+
+    let snapshot = new DataSnapshot(eventType, this, null);
+
+    if (this.#path === Reference.connectedPath) {
+      snapshot = new DataSnapshot(eventType, this, true);
+    } else if (this.#path === Reference.resumesPath) {
+      snapshot = new DataSnapshot(eventType, this);
+    }
+
+    callback(snapshot);
+  }
+
   async once(eventType) {
     const newDataSnapshot = new DataSnapshot(eventType, this);
     const existingDataSnapshot = this.#dataSnapshots[newDataSnapshot.eventType];
@@ -241,6 +262,16 @@ class Reference {
 
     this.#dataSnapshots[newDataSnapshot.eventType] = newDataSnapshot;
     return Promise.resolve(newDataSnapshot);
+  }
+
+  orderByChild(path) {
+    this.#orderByChildPath = path;
+    return this;
+  }
+
+  equalTo(value) {
+    this.#equalToValue = value;
+    return this;
   }
 
   async update(value) {
@@ -255,8 +286,9 @@ class Reference {
 class DataSnapshot {
   #eventType = '';
   #reference = null;
+  #value = undefined;
 
-  constructor(eventType, reference) {
+  constructor(eventType, reference, value = undefined) {
     if (!eventType) {
       throw new Error('eventType must be provided.');
     } else if (typeof eventType !== 'string') {
@@ -272,15 +304,23 @@ class DataSnapshot {
     }
 
     this.#reference = reference;
+
+    this.#value = value;
   }
 
   get eventType() {
     return this.#eventType;
   }
 
+  get value() {
+    return this.#value;
+  }
+
   val() {
     if (this.eventType === 'value') {
-      return this.#reference.getData();
+      return typeof this.value !== 'undefined'
+        ? this.value
+        : this.#reference.getData();
     }
 
     return undefined;

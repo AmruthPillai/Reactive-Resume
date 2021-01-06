@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   act,
-  cleanup,
   fireEvent,
   render,
   screen,
@@ -24,8 +23,6 @@ import Builder from '../builder';
 beforeEach(() => {
   FirebaseStub.database().initializeData();
 });
-
-afterEach(cleanup);
 
 describe('Builder', () => {
   const resumesPath = FirebaseStub.database().resumesPath;

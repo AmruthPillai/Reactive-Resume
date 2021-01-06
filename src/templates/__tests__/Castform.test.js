@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import FirebaseStub from 'gatsby-plugin-firebase';
 
 import '../../i18n/index';
@@ -18,8 +18,6 @@ describe('Castform', () => {
         .once('value')
     ).val();
   });
-
-  afterEach(cleanup);
 
   it('renders correctly', () => {
     const { container } = render(<Castform data={resume} />);
