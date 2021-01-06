@@ -10,6 +10,8 @@ import {
 
 import FirebaseStub from 'gatsby-plugin-firebase';
 
+import { SettingsProvider } from '../../../contexts/SettingsContext';
+import { ModalProvider } from '../../../contexts/ModalContext';
 import { UserProvider } from '../../../contexts/UserContext';
 import {
   DatabaseProvider,
@@ -45,15 +47,19 @@ describe('Builder', () => {
     );
 
     container = render(
-      <UserProvider>
-        <DatabaseProvider>
-          <ResumeProvider>
-            <StorageProvider>
-              <Builder id={resume.id} />
-            </StorageProvider>
-          </ResumeProvider>
-        </DatabaseProvider>
-      </UserProvider>,
+      <SettingsProvider>
+        <ModalProvider>
+          <UserProvider>
+            <DatabaseProvider>
+              <ResumeProvider>
+                <StorageProvider>
+                  <Builder id={resume.id} />
+                </StorageProvider>
+              </ResumeProvider>
+            </DatabaseProvider>
+          </UserProvider>
+        </ModalProvider>
+      </SettingsProvider>,
     );
 
     await act(async () => {
@@ -111,14 +117,18 @@ describe('Builder', () => {
   describe('settings', () => {
     it('allow to change the language', async () => {
       const languageSelectElement = screen.getByLabelText('Language');
-      console.log(languageSelectElement.value);
-      fireEvent.change(languageSelectElement, { target: { value: 'it' } });
-      console.log(languageSelectElement.value);
-      expect(languageSelectElement).toHaveValue('it');
+      const newLanguage = 'it';
+      const now = new Date().getTime();
+
+      fireEvent.change(languageSelectElement, {
+        target: { value: newLanguage },
+      });
+
+      expect(languageSelectElement).toHaveValue(newLanguage);
 
       expect(
-        screen.getByLabelText(new RegExp('date of birth', 'i')),
-      ).toBeInTheDocument();
+        screen.queryByLabelText(new RegExp('date of birth', 'i')),
+      ).toBeNull();
       expect(
         screen.getByLabelText(new RegExp('data di nascita', 'i')),
       ).toBeInTheDocument();
@@ -129,8 +139,8 @@ describe('Builder', () => {
       const mockUpdateFunctionCallArgument =
         mockUpdateFunction.mock.calls[0][0];
       expect(mockUpdateFunctionCallArgument.id).toBe(resume.id);
-      expect(mockUpdateFunctionCallArgument.profile.address.line1).toBe(
-        newInputValue,
+      expect(mockUpdateFunctionCallArgument.metadata.language).toBe(
+        newLanguage,
       );
       expect(mockUpdateFunctionCallArgument.updatedAt).toBeGreaterThanOrEqual(
         now,
