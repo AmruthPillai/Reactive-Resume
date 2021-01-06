@@ -241,11 +241,23 @@ class Reference {
       return databaseData;
     }
 
+    let data = null;
     if (
       this.#path === Reference.resumesPath ||
       this.#path === Reference.usersPath
     ) {
-      return this.#path in databaseData ? databaseData[this.#path] : null;
+      data = this.#path in databaseData ? databaseData[this.#path] : null;
+
+      if (data && this.#orderByChildPath && this.#equalToValue) {
+        return Object.fromEntries(
+          Object.entries(data).filter(
+            ([key, value]) =>
+              value[this.#orderByChildPath] === this.#equalToValue,
+          ),
+        );
+      }
+
+      return data;
     }
 
     if (

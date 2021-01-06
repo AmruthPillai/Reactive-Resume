@@ -217,11 +217,11 @@ describe('FirebaseStub', () => {
     });
 
     it('triggers callback with resumes when listening for data changes on the resumes reference path', async () => {
-      let snapshotValue = null;
       const resumesDataSnapshot = await FirebaseStub.database()
         .ref(resumesPath)
         .once('value');
       const resumes = resumesDataSnapshot.val();
+      let snapshotValue = null;
 
       FirebaseStub.database()
         .ref(resumesPath)
@@ -230,6 +230,23 @@ describe('FirebaseStub', () => {
         });
 
       expect(snapshotValue).toEqual(resumes);
+    });
+
+    it('can filter resumes by user', async () => {
+      let snapshotValue = null;
+
+      FirebaseStub.database()
+        .ref(resumesPath)
+        .orderByChild('user')
+        .equalTo(FirebaseStub.database().anonymousUser1.uid)
+        .on('value', (snapshot) => {
+          snapshotValue = snapshot.val();
+        });
+
+      expect(Object.keys(snapshotValue).length).toEqual(2);
+      Object.values(snapshotValue).forEach((resume) =>
+        expect(resume.user).toEqual(FirebaseStub.database().anonymousUser1.uid),
+      );
     });
   });
 });

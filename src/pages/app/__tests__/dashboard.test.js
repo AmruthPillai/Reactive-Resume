@@ -31,7 +31,7 @@ describe('Dashboard', () => {
         .once('value')
     ).val();
     expect(resumes).toBeTruthy();
-    expect(Object.keys(resumes).length).toEqual(3);
+    expect(Object.keys(resumes).length).not.toEqual(0);
 
     container = render(
       <SettingsProvider>
@@ -60,14 +60,15 @@ describe('Dashboard', () => {
     });
 
     it('preview of user resumes', async () => {
+      expect(Object.keys(resumes).length).toEqual(2);
+
+      expect(Object.values(resumes)[0].user).toEqual(user.uid);
       expect(
         screen.getByText(new RegExp(Object.values(resumes)[0].name)),
       ).toBeInTheDocument();
+      expect(Object.values(resumes)[1].user).toEqual(user.uid);
       expect(
         screen.getByText(new RegExp(Object.values(resumes)[1].name)),
-      ).toBeInTheDocument();
-      expect(
-        screen.getByText(new RegExp(Object.values(resumes)[2].name)),
       ).toBeInTheDocument();
     });
   });
