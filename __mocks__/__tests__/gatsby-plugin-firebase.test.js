@@ -3,6 +3,7 @@ import FirebaseStub from '../gatsby-plugin-firebase';
 describe('FirebaseStub', () => {
   const resumesPath = FirebaseStub.database().resumesPath;
   const usersPath = FirebaseStub.database().usersPath;
+  const connectedPath = FirebaseStub.database().connectedPath;
 
   describe('auth', () => {
     afterEach(() => {
@@ -18,14 +19,14 @@ describe('FirebaseStub', () => {
       expect(auth1.uuid).toEqual(auth2.uuid);
     });
 
-    it('returns anonymous user when signing in anonymously', async () => {
+    it('returns anonymous user 1 when signing in anonymously', async () => {
       const user = await FirebaseStub.auth().signInAnonymously();
 
       expect(user).toBeTruthy();
-      expect(user).toEqual(FirebaseStub.auth().anonymousUser);
+      expect(user).toEqual(FirebaseStub.auth().anonymousUser1);
     });
 
-    it('calls onAuthStateChanged observer with anonymous user when signing in anonymously', async () => {
+    it('calls onAuthStateChanged observer with anonymous user 1 when signing in anonymously', async () => {
       let user = null;
       let error = null;
       FirebaseStub.auth().onAuthStateChanged(
@@ -40,7 +41,7 @@ describe('FirebaseStub', () => {
       await FirebaseStub.auth().signInAnonymously();
 
       expect(user).toBeTruthy();
-      expect(user).toEqual(FirebaseStub.auth().anonymousUser);
+      expect(user).toEqual(FirebaseStub.auth().anonymousUser1);
       expect(error).toBeNull();
     });
 
@@ -109,12 +110,24 @@ describe('FirebaseStub', () => {
       const resumesDataSnapshot = await resumesRef.once('value');
       const resumes = resumesDataSnapshot.val();
       expect(resumes).toBeTruthy();
-      expect(Object.keys(resumes).length).toEqual(2);
-      const demoStateResume =
-        resumes[FirebaseStub.database().demoStateResumeId];
-      expect(demoStateResume).toBeTruthy();
-      expect(demoStateResume.id).toEqual(
-        FirebaseStub.database().demoStateResumeId,
+      expect(Object.keys(resumes).length).toEqual(3);
+      const demoStateResume1 =
+        resumes[FirebaseStub.database().demoStateResume1Id];
+      expect(demoStateResume1).toBeTruthy();
+      expect(demoStateResume1.id).toEqual(
+        FirebaseStub.database().demoStateResume1Id,
+      );
+      expect(demoStateResume1.user).toEqual(
+        FirebaseStub.database().anonymousUser1.uid,
+      );
+      const demoStateResume2 =
+        resumes[FirebaseStub.database().demoStateResume2Id];
+      expect(demoStateResume2).toBeTruthy();
+      expect(demoStateResume2.id).toEqual(
+        FirebaseStub.database().demoStateResume2Id,
+      );
+      expect(demoStateResume2.user).toEqual(
+        FirebaseStub.database().anonymousUser2.uid,
       );
       const initialStateResume =
         resumes[FirebaseStub.database().initialStateResumeId];
@@ -122,15 +135,21 @@ describe('FirebaseStub', () => {
       expect(initialStateResume.id).toEqual(
         FirebaseStub.database().initialStateResumeId,
       );
+      expect(initialStateResume.user).toEqual(
+        FirebaseStub.database().anonymousUser1.uid,
+      );
 
       const usersRef = FirebaseStub.database().ref(usersPath);
       const usersDataSnapshot = await usersRef.once('value');
       const users = usersDataSnapshot.val();
       expect(users).toBeTruthy();
-      expect(Object.keys(users).length).toEqual(1);
-      const anonymousUser = users[FirebaseStub.database().anonymousUser.uid];
-      expect(anonymousUser).toBeTruthy();
-      expect(anonymousUser).toEqual(FirebaseStub.database().anonymousUser);
+      expect(Object.keys(users).length).toEqual(2);
+      const anonymousUser1 = users[FirebaseStub.database().anonymousUser1.uid];
+      expect(anonymousUser1).toBeTruthy();
+      expect(anonymousUser1).toEqual(FirebaseStub.database().anonymousUser1);
+      const anonymousUser2 = users[FirebaseStub.database().anonymousUser2.uid];
+      expect(anonymousUser2).toBeTruthy();
+      expect(anonymousUser2).toEqual(FirebaseStub.database().anonymousUser2);
     });
 
     it('retrieves resume if it exists', async () => {
@@ -138,12 +157,12 @@ describe('FirebaseStub', () => {
 
       const resume = (
         await FirebaseStub.database()
-          .ref(`${resumesPath}/${FirebaseStub.database().demoStateResumeId}`)
+          .ref(`${resumesPath}/${FirebaseStub.database().demoStateResume1Id}`)
           .once('value')
       ).val();
 
       expect(resume).toBeTruthy();
-      expect(resume.id).toEqual(FirebaseStub.database().demoStateResumeId);
+      expect(resume.id).toEqual(FirebaseStub.database().demoStateResume1Id);
     });
 
     it('retrieves null if resume does not exist', async () => {
@@ -164,12 +183,12 @@ describe('FirebaseStub', () => {
 
       const user = (
         await FirebaseStub.database()
-          .ref(`${usersPath}/${FirebaseStub.database().anonymousUser.uid}`)
+          .ref(`${usersPath}/${FirebaseStub.database().anonymousUser1.uid}`)
           .once('value')
       ).val();
 
       expect(user).toBeTruthy();
-      expect(user).toEqual(FirebaseStub.database().anonymousUser);
+      expect(user).toEqual(FirebaseStub.database().anonymousUser1);
     });
 
     it('retrieves null if user does not exist', async () => {
@@ -183,6 +202,34 @@ describe('FirebaseStub', () => {
       ).val();
 
       expect(user).toBeNull();
+    });
+
+    it('triggers callback with true when listening for data changes on the connected reference path', async () => {
+      let snapshotValue = null;
+
+      FirebaseStub.database()
+        .ref(connectedPath)
+        .on('value', (snapshot) => {
+          snapshotValue = snapshot.val();
+        });
+
+      expect(snapshotValue).toBe(true);
+    });
+
+    it('triggers callback with resumes when listening for data changes on the resumes reference path', async () => {
+      let snapshotValue = null;
+      const resumesDataSnapshot = await FirebaseStub.database()
+        .ref(resumesPath)
+        .once('value');
+      const resumes = resumesDataSnapshot.val();
+
+      FirebaseStub.database()
+        .ref(resumesPath)
+        .on('value', (snapshot) => {
+          snapshotValue = snapshot.val();
+        });
+
+      expect(snapshotValue).toEqual(resumes);
     });
   });
 });

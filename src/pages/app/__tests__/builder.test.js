@@ -32,7 +32,7 @@ describe('Builder', () => {
   let container = null;
 
   beforeEach(async () => {
-    resumeId = FirebaseStub.database().demoStateResumeId;
+    resumeId = FirebaseStub.database().demoStateResume1Id;
     resume = (
       await FirebaseStub.database()
         .ref(`${resumesPath}/${resumeId}`)

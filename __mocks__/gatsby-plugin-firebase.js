@@ -4,12 +4,19 @@ import { v4 as uuidv4 } from 'uuid';
 
 class Auth {
   static #instance = undefined;
-  static anonymousUser = {
+  static anonymousUser1 = {
     displayName: 'Anonymous User 1',
-    email: 'anonymous.user@noemail.com',
+    email: 'anonymous1@noemail.com',
     isAnonymous: true,
     name: 'Anonymous 1',
     uid: 'anonym123',
+  };
+  static anonymousUser2 = {
+    displayName: 'Anonymous User 2',
+    email: 'anonymous2@noemail.com',
+    isAnonymous: true,
+    name: 'Anonymous 2',
+    uid: 'anonym456',
   };
   #uuid = '';
   #onAuthStateChangedObservers = [];
@@ -32,8 +39,12 @@ class Auth {
     return this.#onAuthStateChangedObservers;
   }
 
-  get anonymousUser() {
-    return Auth.anonymousUser;
+  get anonymousUser1() {
+    return Auth.anonymousUser1;
+  }
+
+  get anonymousUser2() {
+    return Auth.anonymousUser2;
   }
 
   dispose() {
@@ -51,11 +62,11 @@ class Auth {
   }
 
   async signInAnonymously() {
-    this.#onAuthStateChangedObservers.forEach((observer) =>
-      observer(this.anonymousUser),
-    );
+    const user = this.anonymousUser1;
 
-    return Promise.resolve(this.anonymousUser);
+    this.#onAuthStateChangedObservers.forEach((observer) => observer(user));
+
+    return Promise.resolve(user);
   }
 }
 
@@ -64,8 +75,10 @@ class Database {
   #uuid = '';
   #data = {};
   #references = {};
-  #anonymousUser = undefined;
-  #demoStateResumeId = 'demost';
+  #anonymousUser1 = undefined;
+  #anonymousUser2 = undefined;
+  #demoStateResume1Id = 'demo_1';
+  #demoStateResume2Id = 'demo_2';
   #initialStateResumeId = 'initst';
 
   constructor() {
@@ -76,9 +89,13 @@ class Database {
     Database.#instance = this;
 
     this.#uuid = uuidv4();
-    this.#anonymousUser = {
-      uid: Auth.anonymousUser.uid,
-      isAnonymous: Auth.anonymousUser.isAnonymous,
+    this.#anonymousUser1 = {
+      uid: Auth.anonymousUser1.uid,
+      isAnonymous: Auth.anonymousUser1.isAnonymous,
+    };
+    this.#anonymousUser2 = {
+      uid: Auth.anonymousUser2.uid,
+      isAnonymous: Auth.anonymousUser2.isAnonymous,
     };
   }
 
@@ -90,12 +107,24 @@ class Database {
     return Reference.usersPath;
   }
 
-  get anonymousUser() {
-    return this.#anonymousUser;
+  get connectedPath() {
+    return Reference.connectedPath;
   }
 
-  get demoStateResumeId() {
-    return this.#demoStateResumeId;
+  get anonymousUser1() {
+    return this.#anonymousUser1;
+  }
+
+  get anonymousUser2() {
+    return this.#anonymousUser2;
+  }
+
+  get demoStateResume1Id() {
+    return this.#demoStateResume1Id;
+  }
+
+  get demoStateResume2Id() {
+    return this.#demoStateResume2Id;
   }
 
   get initialStateResumeId() {
@@ -116,18 +145,24 @@ class Database {
   initializeData() {
     const resumes = {};
 
-    const demoStateResume = Database.readFile('../src/data/demoState.json');
+    const demoStateResume1 = Database.readFile('../src/data/demoState.json');
     let date = new Date('December 15, 2020 11:20:25');
-    demoStateResume.updatedAt = date.valueOf();
+    demoStateResume1.updatedAt = date.valueOf();
     date.setMonth(date.getMonth() - 2);
-    demoStateResume.createdAt = date.valueOf();
-    resumes[this.demoStateResumeId] = demoStateResume;
+    demoStateResume1.createdAt = date.valueOf();
+    demoStateResume1.user = this.anonymousUser1.uid;
+    resumes[this.demoStateResume1Id] = demoStateResume1;
+
+    const demoStateResume2 = JSON.parse(JSON.stringify(demoStateResume1));
+    demoStateResume2.user = this.anonymousUser2.uid;
+    resumes[this.demoStateResume2Id] = demoStateResume2;
 
     const initialStateResume = Database.readFile(
       '../src/data/initialState.json',
     );
     initialStateResume.updatedAt = date.valueOf();
     initialStateResume.createdAt = date.valueOf();
+    initialStateResume.user = this.anonymousUser1.uid;
     resumes[this.initialStateResumeId] = initialStateResume;
 
     for (var key in resumes) {
@@ -135,13 +170,13 @@ class Database {
 
       resume.id = key;
       resume.name = `Test Resume ${key}`;
-      resume.user = this.anonymousUser.uid;
     }
 
     this.#data[this.resumesPath] = resumes;
 
     const users = {};
-    users[this.anonymousUser.uid] = this.anonymousUser;
+    users[this.anonymousUser1.uid] = this.anonymousUser1;
+    users[this.anonymousUser2.uid] = this.anonymousUser2;
     this.#data[this.usersPath] = users;
   }
 
