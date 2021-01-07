@@ -1,9 +1,9 @@
-import FirebaseStub from '../gatsby-plugin-firebase';
+import FirebaseStub, { AuthConstants } from '../gatsby-plugin-firebase';
 
 describe('FirebaseStub', () => {
-  const resumesPath = FirebaseStub.database().resumesPath;
-  const usersPath = FirebaseStub.database().usersPath;
-  const connectedPath = FirebaseStub.database().connectedPath;
+  const { resumesPath } = FirebaseStub.database();
+  const { usersPath } = FirebaseStub.database();
+  const { connectedPath } = FirebaseStub.database();
 
   describe('auth', () => {
     afterEach(() => {
@@ -23,7 +23,7 @@ describe('FirebaseStub', () => {
       const user = await FirebaseStub.auth().signInAnonymously();
 
       expect(user).toBeTruthy();
-      expect(user).toEqual(FirebaseStub.auth().anonymousUser1);
+      expect(user).toEqual(AuthConstants.anonymousUser1);
     });
 
     it('calls onAuthStateChanged observer with anonymous user 1 when signing in anonymously', async () => {
@@ -41,7 +41,7 @@ describe('FirebaseStub', () => {
       await FirebaseStub.auth().signInAnonymously();
 
       expect(user).toBeTruthy();
-      expect(user).toEqual(FirebaseStub.auth().anonymousUser1);
+      expect(user).toEqual(AuthConstants.anonymousUser1);
       expect(error).toBeNull();
     });
 

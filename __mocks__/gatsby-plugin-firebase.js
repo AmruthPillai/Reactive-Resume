@@ -2,22 +2,10 @@ import path from 'path';
 import fs from 'fs';
 import { v4 as uuidv4 } from 'uuid';
 
+import { AuthConstants } from './gatsby-plugin-firebase/constants';
+
 class Auth {
   static #instance = undefined;
-  static anonymousUser1 = {
-    displayName: 'Anonymous User 1',
-    email: 'anonymous1@noemail.com',
-    isAnonymous: true,
-    name: 'Anonymous 1',
-    uid: 'anonym123',
-  };
-  static anonymousUser2 = {
-    displayName: 'Anonymous User 2',
-    email: 'anonymous2@noemail.com',
-    isAnonymous: true,
-    name: 'Anonymous 2',
-    uid: 'anonym456',
-  };
   #uuid = '';
   #onAuthStateChangedObservers = [];
 
@@ -39,14 +27,6 @@ class Auth {
     return this.#onAuthStateChangedObservers;
   }
 
-  get anonymousUser1() {
-    return Auth.anonymousUser1;
-  }
-
-  get anonymousUser2() {
-    return Auth.anonymousUser2;
-  }
-
   dispose() {
     this.#onAuthStateChangedObservers = [];
   }
@@ -62,7 +42,7 @@ class Auth {
   }
 
   async signInAnonymously() {
-    const user = this.anonymousUser1;
+    const user = AuthConstants.anonymousUser1;
 
     this.#onAuthStateChangedObservers.forEach((observer) => observer(user));
 
@@ -90,12 +70,12 @@ class Database {
 
     this.#uuid = uuidv4();
     this.#anonymousUser1 = {
-      uid: Auth.anonymousUser1.uid,
-      isAnonymous: Auth.anonymousUser1.isAnonymous,
+      uid: AuthConstants.anonymousUser1.uid,
+      isAnonymous: AuthConstants.anonymousUser1.isAnonymous,
     };
     this.#anonymousUser2 = {
-      uid: Auth.anonymousUser2.uid,
-      isAnonymous: Auth.anonymousUser2.isAnonymous,
+      uid: AuthConstants.anonymousUser2.uid,
+      isAnonymous: AuthConstants.anonymousUser2.isAnonymous,
     };
   }
 
@@ -392,3 +372,4 @@ Object.defineProperty(FirebaseStub.database.ServerValue, 'TIMESTAMP', {
 });
 
 export default FirebaseStub;
+export { AuthConstants };
