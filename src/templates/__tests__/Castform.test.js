@@ -10,11 +10,10 @@ describe('Castform', () => {
 
   beforeEach(async () => {
     FirebaseStub.database().initializeData();
-    const { resumesPath } = FirebaseStub.database();
     const resumeId = DatabaseConstants.initialStateResumeId;
     resume = (
       await FirebaseStub.database()
-        .ref(`${resumesPath}/${resumeId}`)
+        .ref(`${DatabaseConstants.resumesPath}/${resumeId}`)
         .once('value')
     ).val();
   });

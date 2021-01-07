@@ -4,10 +4,6 @@ import FirebaseStub, {
 } from '../gatsby-plugin-firebase';
 
 describe('FirebaseStub', () => {
-  const { resumesPath } = FirebaseStub.database();
-  const { usersPath } = FirebaseStub.database();
-  const { connectedPath } = FirebaseStub.database();
-
   describe('auth', () => {
     afterEach(() => {
       FirebaseStub.auth().dispose();
@@ -74,8 +70,12 @@ describe('FirebaseStub', () => {
     });
 
     it('reuses existing Reference instance', () => {
-      const ref1 = FirebaseStub.database().ref(`${resumesPath}/123`);
-      const ref2 = FirebaseStub.database().ref(`${resumesPath}/123`);
+      const ref1 = FirebaseStub.database().ref(
+        `${DatabaseConstants.resumesPath}/123`,
+      );
+      const ref2 = FirebaseStub.database().ref(
+        `${DatabaseConstants.resumesPath}/123`,
+      );
 
       expect(ref1.uuid).toBeTruthy();
       expect(ref2.uuid).toBeTruthy();
@@ -91,7 +91,7 @@ describe('FirebaseStub', () => {
     });
 
     it("can spy on Reference 'update' function", async () => {
-      const referencePath = `${resumesPath}/123456`;
+      const referencePath = `${DatabaseConstants.resumesPath}/123456`;
       const functionSpy = jest.spyOn(
         FirebaseStub.database().ref(referencePath),
         'update',
@@ -109,7 +109,9 @@ describe('FirebaseStub', () => {
     it('initializing data sets up resumes and users', async () => {
       FirebaseStub.database().initializeData();
 
-      const resumesRef = FirebaseStub.database().ref(resumesPath);
+      const resumesRef = FirebaseStub.database().ref(
+        DatabaseConstants.resumesPath,
+      );
       const resumesDataSnapshot = await resumesRef.once('value');
       const resumes = resumesDataSnapshot.val();
       expect(resumes).toBeTruthy();
@@ -136,7 +138,7 @@ describe('FirebaseStub', () => {
         FirebaseStub.database().anonymousUser1.uid,
       );
 
-      const usersRef = FirebaseStub.database().ref(usersPath);
+      const usersRef = FirebaseStub.database().ref(DatabaseConstants.usersPath);
       const usersDataSnapshot = await usersRef.once('value');
       const users = usersDataSnapshot.val();
       expect(users).toBeTruthy();
@@ -154,7 +156,9 @@ describe('FirebaseStub', () => {
 
       const resume = (
         await FirebaseStub.database()
-          .ref(`${resumesPath}/${DatabaseConstants.demoStateResume1Id}`)
+          .ref(
+            `${DatabaseConstants.resumesPath}/${DatabaseConstants.demoStateResume1Id}`,
+          )
           .once('value')
       ).val();
 
@@ -168,7 +172,7 @@ describe('FirebaseStub', () => {
 
       const resume = (
         await FirebaseStub.database()
-          .ref(`${resumesPath}/${resumeId}`)
+          .ref(`${DatabaseConstants.resumesPath}/${resumeId}`)
           .once('value')
       ).val();
 
@@ -180,7 +184,11 @@ describe('FirebaseStub', () => {
 
       const user = (
         await FirebaseStub.database()
-          .ref(`${usersPath}/${FirebaseStub.database().anonymousUser1.uid}`)
+          .ref(
+            `${DatabaseConstants.usersPath}/${
+              FirebaseStub.database().anonymousUser1.uid
+            }`,
+          )
           .once('value')
       ).val();
 
@@ -194,7 +202,7 @@ describe('FirebaseStub', () => {
 
       const user = (
         await FirebaseStub.database()
-          .ref(`${usersPath}/${userId}`)
+          .ref(`${DatabaseConstants.usersPath}/${userId}`)
           .once('value')
       ).val();
 
@@ -205,7 +213,7 @@ describe('FirebaseStub', () => {
       let snapshotValue = null;
 
       FirebaseStub.database()
-        .ref(connectedPath)
+        .ref(DatabaseConstants.connectedPath)
         .on('value', (snapshot) => {
           snapshotValue = snapshot.val();
         });
@@ -215,13 +223,13 @@ describe('FirebaseStub', () => {
 
     it('triggers callback with resumes when listening for data changes on the resumes reference path', async () => {
       const resumesDataSnapshot = await FirebaseStub.database()
-        .ref(resumesPath)
+        .ref(DatabaseConstants.resumesPath)
         .once('value');
       const resumes = resumesDataSnapshot.val();
       let snapshotValue = null;
 
       FirebaseStub.database()
-        .ref(resumesPath)
+        .ref(DatabaseConstants.resumesPath)
         .on('value', (snapshot) => {
           snapshotValue = snapshot.val();
         });
@@ -233,7 +241,7 @@ describe('FirebaseStub', () => {
       let snapshotValue = null;
 
       FirebaseStub.database()
-        .ref(resumesPath)
+        .ref(DatabaseConstants.resumesPath)
         .orderByChild('user')
         .equalTo(FirebaseStub.database().anonymousUser1.uid)
         .on('value', (snapshot) => {

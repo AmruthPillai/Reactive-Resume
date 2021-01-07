@@ -25,7 +25,6 @@ beforeEach(() => {
 });
 
 describe('Builder', () => {
-  const { resumesPath } = FirebaseStub.database();
   let resumeId = null;
   let resume = null;
   let mockUpdateFunction = null;
@@ -34,11 +33,13 @@ describe('Builder', () => {
     resumeId = DatabaseConstants.demoStateResume1Id;
     resume = (
       await FirebaseStub.database()
-        .ref(`${resumesPath}/${resumeId}`)
+        .ref(`${DatabaseConstants.resumesPath}/${resumeId}`)
         .once('value')
     ).val();
     mockUpdateFunction = jest.spyOn(
-      FirebaseStub.database().ref(`${resumesPath}/${resumeId}`),
+      FirebaseStub.database().ref(
+        `${DatabaseConstants.resumesPath}/${resumeId}`,
+      ),
       'update',
     );
 

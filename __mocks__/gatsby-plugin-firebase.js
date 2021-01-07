@@ -79,18 +79,6 @@ class Database {
     };
   }
 
-  get resumesPath() {
-    return Reference.resumesPath;
-  }
-
-  get usersPath() {
-    return Reference.usersPath;
-  }
-
-  get connectedPath() {
-    return Reference.connectedPath;
-  }
-
   get anonymousUser1() {
     return this.#anonymousUser1;
   }
@@ -140,12 +128,12 @@ class Database {
       resume.name = `Test Resume ${key}`;
     }
 
-    this.#data[this.resumesPath] = resumes;
+    this.#data[DatabaseConstants.resumesPath] = resumes;
 
     const users = {};
     users[this.anonymousUser1.uid] = this.anonymousUser1;
     users[this.anonymousUser2.uid] = this.anonymousUser2;
-    this.#data[this.usersPath] = users;
+    this.#data[DatabaseConstants.usersPath] = users;
   }
 
   ref(path) {
@@ -161,9 +149,6 @@ class Database {
 }
 
 class Reference {
-  static resumesPath = 'resumes';
-  static usersPath = 'users';
-  static connectedPath = '/.info/connected';
   #rootPath = '.';
   #path = '';
   #uuid = '';
@@ -211,8 +196,8 @@ class Reference {
 
     let data = null;
     if (
-      this.#path === Reference.resumesPath ||
-      this.#path === Reference.usersPath
+      this.#path === DatabaseConstants.resumesPath ||
+      this.#path === DatabaseConstants.usersPath
     ) {
       data = this.#path in databaseData ? databaseData[this.#path] : null;
 
@@ -229,8 +214,8 @@ class Reference {
     }
 
     if (
-      this.#path.startsWith(`${Reference.resumesPath}/`) ||
-      this.#path.startsWith(`${Reference.usersPath}/`)
+      this.#path.startsWith(`${DatabaseConstants.resumesPath}/`) ||
+      this.#path.startsWith(`${DatabaseConstants.usersPath}/`)
     ) {
       const databaseLocationId = this.#path.substring(
         this.#path.indexOf('/') + 1,
@@ -259,9 +244,9 @@ class Reference {
 
     let snapshot = new DataSnapshot(eventType, this, null);
 
-    if (this.#path === Reference.connectedPath) {
+    if (this.#path === DatabaseConstants.connectedPath) {
       snapshot = new DataSnapshot(eventType, this, true);
-    } else if (this.#path === Reference.resumesPath) {
+    } else if (this.#path === DatabaseConstants.resumesPath) {
       snapshot = new DataSnapshot(eventType, this);
     }
 

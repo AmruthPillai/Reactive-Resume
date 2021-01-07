@@ -1,7 +1,7 @@
 import React from 'react';
 import { act, render, screen } from '@testing-library/react';
 
-import FirebaseStub from 'gatsby-plugin-firebase';
+import FirebaseStub, { DatabaseConstants } from 'gatsby-plugin-firebase';
 
 import '../../../i18n/index';
 import { SettingsProvider } from '../../../contexts/SettingsContext';
@@ -17,14 +17,13 @@ beforeEach(() => {
 });
 
 describe('Dashboard', () => {
-  const { resumesPath } = FirebaseStub.database();
   let resumes = null;
   const user = FirebaseStub.database().anonymousUser1;
 
   beforeEach(async () => {
     resumes = (
       await FirebaseStub.database()
-        .ref(resumesPath)
+        .ref(DatabaseConstants.resumesPath)
         .orderByChild('user')
         .equalTo(user.uid)
         .once('value')
