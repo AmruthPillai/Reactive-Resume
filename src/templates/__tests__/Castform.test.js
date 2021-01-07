@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import FirebaseStub from 'gatsby-plugin-firebase';
+import FirebaseStub, { DatabaseConstants } from 'gatsby-plugin-firebase';
 
 import '../../i18n/index';
 import Castform from '../Castform';
@@ -10,8 +10,8 @@ describe('Castform', () => {
 
   beforeEach(async () => {
     FirebaseStub.database().initializeData();
-    const resumesPath = FirebaseStub.database().resumesPath;
-    const resumeId = FirebaseStub.database().initialStateResumeId;
+    const { resumesPath } = FirebaseStub.database();
+    const resumeId = DatabaseConstants.initialStateResumeId;
     resume = (
       await FirebaseStub.database()
         .ref(`${resumesPath}/${resumeId}`)
@@ -32,7 +32,7 @@ describe('Castform', () => {
     it('is not shown if not provided', () => {
       const { queryByText } = render(<Castform data={resume} />);
 
-      expect(queryByText(birthDateLabelMatcher)).toBe(null);
+      expect(queryByText(birthDateLabelMatcher)).toBeNull();
     });
 
     it('is shown if provided', () => {

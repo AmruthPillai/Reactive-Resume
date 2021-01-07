@@ -7,7 +7,7 @@ import {
   waitFor,
 } from '@testing-library/react';
 
-import FirebaseStub from 'gatsby-plugin-firebase';
+import FirebaseStub, { DatabaseConstants } from 'gatsby-plugin-firebase';
 
 import { SettingsProvider } from '../../../contexts/SettingsContext';
 import { ModalProvider } from '../../../contexts/ModalContext';
@@ -25,14 +25,13 @@ beforeEach(() => {
 });
 
 describe('Builder', () => {
-  const resumesPath = FirebaseStub.database().resumesPath;
+  const { resumesPath } = FirebaseStub.database();
   let resumeId = null;
   let resume = null;
   let mockUpdateFunction = null;
-  let container = null;
 
   beforeEach(async () => {
-    resumeId = FirebaseStub.database().demoStateResume1Id;
+    resumeId = DatabaseConstants.demoStateResume1Id;
     resume = (
       await FirebaseStub.database()
         .ref(`${resumesPath}/${resumeId}`)
@@ -43,7 +42,7 @@ describe('Builder', () => {
       'update',
     );
 
-    container = render(
+    render(
       <SettingsProvider>
         <ModalProvider>
           <UserProvider>

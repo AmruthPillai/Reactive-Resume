@@ -17,10 +17,9 @@ beforeEach(() => {
 });
 
 describe('Dashboard', () => {
-  const resumesPath = FirebaseStub.database().resumesPath;
+  const { resumesPath } = FirebaseStub.database();
   let resumes = null;
-  let user = FirebaseStub.database().anonymousUser1;
-  let container = null;
+  const user = FirebaseStub.database().anonymousUser1;
 
   beforeEach(async () => {
     resumes = (
@@ -30,10 +29,8 @@ describe('Dashboard', () => {
         .equalTo(user.uid)
         .once('value')
     ).val();
-    expect(resumes).toBeTruthy();
-    expect(Object.keys(resumes).length).not.toEqual(0);
 
-    container = render(
+    render(
       <SettingsProvider>
         <ModalProvider>
           <UserProvider>
@@ -60,7 +57,7 @@ describe('Dashboard', () => {
     });
 
     it('preview of user resumes', async () => {
-      expect(Object.keys(resumes).length).toEqual(2);
+      expect(Object.keys(resumes)).toHaveLength(2);
 
       expect(Object.values(resumes)[0].user).toEqual(user.uid);
       expect(

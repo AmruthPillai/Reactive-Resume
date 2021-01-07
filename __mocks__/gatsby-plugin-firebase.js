@@ -2,7 +2,10 @@ import path from 'path';
 import fs from 'fs';
 import { v4 as uuidv4 } from 'uuid';
 
-import { AuthConstants } from './gatsby-plugin-firebase/constants';
+import {
+  AuthConstants,
+  DatabaseConstants,
+} from './gatsby-plugin-firebase/constants';
 
 class Auth {
   static #instance = undefined;
@@ -57,9 +60,6 @@ class Database {
   #references = {};
   #anonymousUser1 = undefined;
   #anonymousUser2 = undefined;
-  #demoStateResume1Id = 'demo_1';
-  #demoStateResume2Id = 'demo_2';
-  #initialStateResumeId = 'initst';
 
   constructor() {
     if (Database.#instance) {
@@ -99,18 +99,6 @@ class Database {
     return this.#anonymousUser2;
   }
 
-  get demoStateResume1Id() {
-    return this.#demoStateResume1Id;
-  }
-
-  get demoStateResume2Id() {
-    return this.#demoStateResume2Id;
-  }
-
-  get initialStateResumeId() {
-    return this.#initialStateResumeId;
-  }
-
   get uuid() {
     return this.#uuid;
   }
@@ -131,11 +119,11 @@ class Database {
     date.setMonth(date.getMonth() - 2);
     demoStateResume1.createdAt = date.valueOf();
     demoStateResume1.user = this.anonymousUser1.uid;
-    resumes[this.demoStateResume1Id] = demoStateResume1;
+    resumes[DatabaseConstants.demoStateResume1Id] = demoStateResume1;
 
     const demoStateResume2 = JSON.parse(JSON.stringify(demoStateResume1));
     demoStateResume2.user = this.anonymousUser2.uid;
-    resumes[this.demoStateResume2Id] = demoStateResume2;
+    resumes[DatabaseConstants.demoStateResume2Id] = demoStateResume2;
 
     const initialStateResume = Database.readFile(
       '../src/data/initialState.json',
@@ -143,7 +131,7 @@ class Database {
     initialStateResume.updatedAt = date.valueOf();
     initialStateResume.createdAt = date.valueOf();
     initialStateResume.user = this.anonymousUser1.uid;
-    resumes[this.initialStateResumeId] = initialStateResume;
+    resumes[DatabaseConstants.initialStateResumeId] = initialStateResume;
 
     for (var key in resumes) {
       const resume = resumes[key];
@@ -372,4 +360,4 @@ Object.defineProperty(FirebaseStub.database.ServerValue, 'TIMESTAMP', {
 });
 
 export default FirebaseStub;
-export { AuthConstants };
+export { AuthConstants, DatabaseConstants };
