@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
-import { AuthConstants } from './constants';
+import { AuthConstants } from '../constants';
 
 class Auth {
   static #instance = undefined;

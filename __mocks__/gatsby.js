@@ -1,4 +1,5 @@
 import React from 'react';
+
 const Gatsby = jest.requireActual('gatsby');
 
 const fluidImageShapes = [
@@ -75,5 +76,5 @@ module.exports = {
       href: to,
     }),
   ),
-  useStaticQuery: useStaticQuery,
+  useStaticQuery,
 };
