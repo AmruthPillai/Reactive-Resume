@@ -12,6 +12,8 @@ import Onyx from '../../templates/Onyx';
 import Pikachu from '../../templates/Pikachu';
 import styles from './view.module.css';
 import Celebi from '../../templates/Celebi';
+import fontSizeOptions from '../../data/fontSizeOptions';
+import { scaler } from '../../utils';
 
 const ResumeViewer = ({ id }) => {
   const { t, i18n } = useTranslation();
@@ -33,6 +35,14 @@ const ResumeViewer = ({ id }) => {
 
       setResume(data);
       i18n.changeLanguage(data.metadata.language || 'en');
+
+      for (const [key, sizeDefault] of Object.entries(fontSizeOptions)) {
+        document.documentElement.style.setProperty(
+          key,
+          `${scaler(data.metadata.fontSize) * sizeDefault}rem`,
+        );
+      }
+
       return setLoading(false);
     })();
   }, [id]);
