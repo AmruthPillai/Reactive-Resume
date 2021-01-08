@@ -18,7 +18,7 @@ beforeEach(() => {
 
 describe('Dashboard', () => {
   let resumes = null;
-  const user = FirebaseStub.database().anonymousUser1;
+  const user = DatabaseConstants.user1;
 
   beforeEach(async () => {
     resumes = (

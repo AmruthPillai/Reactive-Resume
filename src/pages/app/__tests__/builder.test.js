@@ -63,7 +63,7 @@ describe('Builder', () => {
       await FirebaseStub.auth().signInAnonymously();
     });
 
-    await waitFor(() => expect(mockUpdateFunction).toHaveBeenCalledTimes(1), {
+    await waitFor(() => mockUpdateFunction.mock.calls[0][0], {
       timeout: DebounceWaitTime,
     });
     mockUpdateFunction.mockClear();

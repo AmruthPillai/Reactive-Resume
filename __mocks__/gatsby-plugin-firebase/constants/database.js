@@ -1,9 +1,21 @@
+import AuthConstants from './auth';
+
 const resumesPath = 'resumes';
 const usersPath = 'users';
 const connectedPath = '/.info/connected';
+
 const demoStateResume1Id = 'demo_1';
 const demoStateResume2Id = 'demo_2';
 const initialStateResumeId = 'initst';
+
+const user1 = {
+  uid: AuthConstants.anonymousUser1.uid,
+  isAnonymous: AuthConstants.anonymousUser1.isAnonymous,
+};
+const user2 = {
+  uid: AuthConstants.anonymousUser2.uid,
+  isAnonymous: AuthConstants.anonymousUser2.isAnonymous,
+};
 
 class Database {
   static get resumesPath() {
@@ -28,6 +40,14 @@ class Database {
 
   static get initialStateResumeId() {
     return initialStateResumeId;
+  }
+
+  static get user1() {
+    return user1;
+  }
+
+  static get user2() {
+    return user2;
   }
 }
 

@@ -1,9 +1,7 @@
 import Auth from './gatsby-plugin-firebase/auth/auth';
 import Database from './gatsby-plugin-firebase/database/database';
-import {
-  AuthConstants,
-  DatabaseConstants,
-} from './gatsby-plugin-firebase/constants';
+import AuthConstants from './gatsby-plugin-firebase/constants/auth';
+import DatabaseConstants from './gatsby-plugin-firebase/constants/database';
 
 class FirebaseStub {
   static auth() {
@@ -11,7 +9,7 @@ class FirebaseStub {
   }
 
   static database() {
-    return new Database();
+    return Database.instance;
   }
 }
 
