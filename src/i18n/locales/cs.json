@@ -1,0 +1,253 @@
+{
+  "shared": {
+    "appName": "Reactive Resume",
+    "shortDescription": "Svobodný a open source životopis online.",
+    "forms": {
+      "name": "Jméno",
+      "title": "Název",
+      "subtitle": "Podtitul",
+      "required": "požadované",
+      "website": "Webová stránka",
+      "date": "Datum",
+      "present": "Současnost",
+      "position": "Pozice",
+      "startDate": "Počáteční datum",
+      "endDate": "Datum ukončení",
+      "address": "Adresa",
+      "phone": "Telefonní číslo",
+      "email": "E-mailová adresa",
+      "summary": "Shrnutí",
+      "markdown": "Tento textový blok podporuje <1>markdown</1>.",
+      "validation": {
+        "min": "Zadejte alespoň {{number}} znaků.",
+        "dateRange": "Koncové datum musí být pozdější než počáteční datum.",
+        "email": "Musí obsahovat platnou emailovou adresu.",
+        "required": "Toto pole je povinné.",
+        "url": "Musí být platná URL adresa."
+      }
+    },
+    "buttons": {
+      "add": "Přidat",
+      "edit": "Upravit",
+      "cancel": "Zrušit",
+      "delete": "Odstranit",
+      "loading": "Načítání...",
+      "confirmation": "Opravdu?",
+      "login": "Přihlásit se",
+      "logout": "Odhlásit se"
+    }
+  },
+  "landing": {
+    "hero": {
+      "goToApp": "Přejít do aplikace"
+    }
+  },
+  "dashboard": {
+    "title": "Hlavní nabídka",
+    "createResume": "Vytvořit životopis",
+    "editResume": "Upravit životopis",
+    "lastUpdated": "Poslední aktualizace {{timestamp}}",
+    "toasts": {
+      "deleted": "{{name}} byl úspěšně smazán"
+    },
+    "buttons": {
+      "duplicate": "Duplikovat",
+      "rename": "Přejmenovat"
+    },
+    "helpText": "Budete vytvářet nový životopis od nuly, ale nejprve mu dejte jméno. To může být název pozice, na kterou chcete zažádat, nebo pokud děláte životopis pro přítele, můžete to nazvat Frantův životopis."
+  },
+  "builder": {
+    "toasts": {
+      "formErrors": "Možná budete muset vyplnit všechna povinná pole před odesláním tohoto formuláře.",
+      "doesNotExist": "Životopis, který jste hledali, již neexistuje... nebo možná nikdy neexistoval?",
+      "loadDemoData": "Nejste si jisti, kde začít? Zkuste načíst demo data a uvidíte, co může Reactive Resume nabídnout.",
+      "printError": "U cloudové funkce dochází k potížím, zkuste to prosím později nebo použijte funkci tisku v prohlížeči."
+    },
+    "sections": {
+      "heading": "Hlavička",
+      "profile": "Profil",
+      "social": "Sociální sítě",
+      "objective": "Cíl",
+      "work": "Pracovní zkušenosti",
+      "education": "Vzdělání",
+      "project": "Projekt",
+      "projects": "Projekty",
+      "award": "Ocenění",
+      "awards": "Ocenění",
+      "certification": "Certifikace",
+      "certifications": "Certifikace",
+      "skill": "Dovednost",
+      "skills": "Dovednosti",
+      "hobby": "Koníček",
+      "hobbies": "Koníčky",
+      "language": "Jazyk",
+      "languages": "Jazyky",
+      "reference": "Reference",
+      "references": "Reference",
+      "templates": "Šablony",
+      "layout": "Rozvržení",
+      "colors": "Barvy",
+      "font-size": "Velikost písma",
+      "fonts": "Písma",
+      "actions": "Akce",
+      "settings": "Nastavení",
+      "about": "O aplikaci"
+    },
+    "profile": {
+      "photograph": "Fotografie",
+      "firstName": "Jméno",
+      "lastName": "Příjmení",
+      "birthDate": "Datum narození",
+      "address": {
+        "line1": "Adresní řádek 1",
+        "line2": "Adresní řádek 2",
+        "city": "Město",
+        "pincode": "PSČ"
+      }
+    },
+    "social": {
+      "network": "Síť",
+      "username": "Uživatelské jméno",
+      "url": "Adresa URL"
+    },
+    "work": {
+      "company": "Společnost"
+    },
+    "education": {
+      "institution": "Instituce",
+      "field": "Studijní obor",
+      "degree": "Druh titulu",
+      "gpa": "GPA"
+    },
+    "awards": {
+      "awarder": "Ocenění"
+    },
+    "certifications": {
+      "issuer": "Vydavatel"
+    },
+    "skills": {
+      "level": "Úroveň"
+    },
+    "languages": {
+      "fluency": "Plynulost"
+    },
+    "layout": {
+      "block": "Blok",
+      "reset": "Resetovat rozložení",
+      "text": "Tato šablona podporuje {{count}} bloků."
+    },
+    "colors": {
+      "primary": "Primární Barva",
+      "text": "Barva textu",
+      "background": "Barva pozadí"
+    },
+    "actions": {
+      "import": {
+        "heading": "Nahrejte svůj životopis",
+        "text": "Můžete importovat své informace z různých zdrojů, jako je JSON Resume nebo LinkedIn, abyste mohli automaticky vyplnit většinu dat pro váš životopis.",
+        "button": "Nahrát"
+      },
+      "export": {
+        "heading": "Exportujte svůj životopis",
+        "text": "Exportujte svůj životopis jako PDF a sdílejte s náborovými pracovníky nebo JSON, který budete moci importovat zpět do této aplikace na jiném počítači.",
+        "button": "Exportovat"
+      },
+      "share": {
+        "heading": "Sdílejte svůj životopis",
+        "text": "Odkaz níže bude veřejně přístupný, pokud se ho rozhodnete sdílet, lidem se zobrazí nejnovější verze vašeho životopisu."
+      },
+      "loadDemoData": {
+        "text": "Nejste si jisti, co dělat s novou prázdnou stránkou? Načtěte ukázková data, abyste viděli, jak by měl životopis vypadat, a odtud můžete začít upravovat.",
+        "button": "Načíst ukázková data"
+      },
+      "resetEverything": {
+        "text": "Máte pocit, že jste udělali příliš mnoho chyb? Žádné starosti, vše vymažte jediným kliknutím, ale buďte opatrní, pokud neexistují žádné zálohy.",
+        "button": "Obnovit vše"
+      }
+    },
+    "settings": {
+      "theme": "Motiv",
+      "language": "Jazyk",
+      "translate": "Pokud chcete přispět poskytnutím překladů do vašeho jazyka, <1> navštivte tento odkaz </1>.",
+      "dangerZone": {
+        "heading": "Nebezpečná zóna",
+        "text": "Pokud chcete smazat svůj účet a vymazat všechny své životopisy, zmáčkněte tlačítko. Buďte opatrní, protože se jedná o nevratný proces.",
+        "button": "Smazat účet"
+      }
+    },
+    "about": {
+      "donate": {
+        "heading": "Přispějte na Reactive Resume",
+        "text": "Snažím se dělat, co můžu, ale pokud vám aplikace přišla užitečná, nebo jste v lepší pozici než ostatní, kteří jsou závislí na tomto projektu při svém prvním zaměstnání, <1> zvažte prosím darování pouhých 5 $, které vám pomohou udržet projekt naživu </1> :)",
+        "button": "Kup mi kávu!"
+      },
+      "bugFeature": {
+        "heading": "Chyba? Požadavek na funkci?",
+        "text": "Něco brzdí tvůj postup k vytvoření životopisu? Našli jste otravnou chybu, která prostě nepřestane? Promluvte si o tom v sekci GitHub Issues pomocí tlačítka níže.",
+        "button": "Nahlásit problém"
+      },
+      "appreciate": {
+        "heading": "Líbí se vám Reactive Resume?",
+        "text": "Nikdy mě neomrzí poslouchat příběhy o tom, jak tato aplikace pomohla lidem, a pokud vám pomohla, nebo jste právě našli Reactive Resume jako úžasný nástroj, dejte mi vědět. Můžete mě kontaktovat na mých webových stránkách."
+      },
+      "sourceCode": {
+        "heading": "Zdrojový kód",
+        "text": "Chcete spustit projekt z jeho zdroje? Jste vývojář ochotný přispět k vývoji open-source tohoto projektu? Klikněte na tlačítko níže.",
+        "button": "GitHub repozitář"
+      },
+      "footer": "Vyrobil s láskou <1> Amruth Pillai </1>"
+    },
+    "tooltips": {
+      "uploadPhotograph": "Nahrát fotografii",
+      "backToDashboard": "Přejít zpět na řídicí panel"
+    },
+    "emptyList": "Tento seznam je prázdný."
+  },
+  "modals": {
+    "auth": {
+      "whoAreYou": "Kdo jsi?",
+      "welcome": "Vítej, {{name}}!",
+      "loggedOutText": "Reactive Resume potřebuje vědět, kdo jste, aby vás mohl bezpečně ověřit do aplikace a zobrazit pouze vaše informace. Jakmile se nacházíte, můžete začít budovat svůj životopis, upravovat jej a přidávat nové dovednosti nebo jej sdílet se světem!",
+      "loggedInText": "Skvělé. Nyní, když jste se ověřili, můžeme pokračovat se skutečným důvodem, proč jste tu. Kliknutím na tlačítko Přejít na aplikaci zahájíte vytváření životopisu!",
+      "buttons": {
+        "google": "Přihlaste se pomocí Google",
+        "anonymous": "Přihlásit se anonymně"
+      }
+    },
+    "import": {
+      "button": "Vybrat soubor",
+      "reactiveResume": {
+        "heading": "Importovat z Reactive Resume",
+        "text": "Reactive Resume má svůj vlastní formát schémat, aby co nejvíce využil všech nastavitelných možností, které může nabídnout. Pokud chcete importovat zálohu svého pokračování, vytvořenou pomocí této aplikace, stačí nahrát soubor pomocí tlačítka níže."
+      },
+      "jsonResume": {
+        "heading": "Importovat z JSON Resume",
+        "text": "JSON Resume je otevřený standard pro strukturu schématu životopisu. Pokud jste jedním z mnoha nadšenců, kteří mají svůj životopis připravený v tomto formátu, stačí pouze jedno kliknutí a můžete začít s Reactive Resume."
+      },
+      "linkedIn": {
+        "heading": "Importovat z LinkedIn",
+        "text": "JSON exportovaný z LinkedIn můžete importovat kliknutím na tlačítko níže a výběrem příslušného souboru."
+      }
+    },
+    "export": {
+      "printDialog": {
+        "heading": "Použít tiskový dialog prohlížeče",
+        "text": "Pro ty z vás, kteří chtějí rychlé řešení, se nemusíte dívat dále než váš prohlížeč. Vše, co musíte udělat, je stiskněte Ctrl/Cmd + P a otevřete dialogové okno s tiskem ve vašem prohlížeči a můžete jej ihned vytisknout.",
+        "button": "Vytisknout životopis"
+      },
+      "downloadPDF": {
+        "heading": "Stáhnout PDF",
+        "text": "Tyto možnosti vám umožní vytisknout neomezenou verzi vašeho životopisu na jednu stránku, ideální pro ty, kteří mají hodně obsahu. Alternativně si můžete jediným kliknutím stáhnout také vícestránkovou verzi vašeho životopisu.",
+        "buttons": {
+          "single": "Životopis na jednu stránku",
+          "multi": "Životopis na více stránek"
+        }
+      },
+      "jsonFormat": {
+        "heading": "Exportovat do formátu JSON",
+        "text": "Můžete také exportovat svá data do formátu JSON pro bezpečné uchování, abyste je mohli snadno importovat zpět do Reactive Resume, kdykoli budete chtít upravit nebo vygenerovat životopis.",
+        "button": "Exportovat JSON"
+      }
+    }
+  }
+}

@@ -18,6 +18,17 @@ export const isFileImage = (file) => {
   return file && acceptedImageTypes.includes(file.type);
 };
 
+export const scaler = (value) => {
+  const logMax = 2.5;
+  const logMin = 0.6;
+  const steps = 20;
+  const logRange = logMax / logMin;
+  const logStepSize = logRange ** (1 / steps);
+  const min = 0;
+
+  return logStepSize ** (value - min) * logMin;
+};
+
 export const formatDate = ({ date, language = 'en', includeDay = false }) => {
   const template = includeDay ? 'DD MMMM YYYY' : 'MMMM YYYY';
 
