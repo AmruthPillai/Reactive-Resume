@@ -3,21 +3,20 @@ import { v4 as uuidv4 } from 'uuid';
 import { DatabaseConstants } from '../constants';
 import DataSnapshot from './dataSnapshot';
 
-class Reference {
-  #rootPath = '.';
-  #path = '';
-  #uuid = '';
-  #dataSnapshots = {};
-  #getDatabaseData = () => null;
-  #orderByChildPath = '';
-  #equalToValue = '';
+const rootPath = '.';
 
+class Reference {
   constructor(path, getDatabaseData) {
     if (typeof path === 'undefined' || path === null) {
-      this.#path = this.#rootPath;
+      this.pathField = rootPath;
     } else if (typeof path !== 'string') {
       throw new Error('path should be a string.');
+    } else {
+      this.pathField = path;
     }
+
+    this.uuidField = uuidv4();
+    this.dataSnapshotsField = {};
 
     if (!getDatabaseData) {
       throw new Error('getDatabaseData must be provided.');
@@ -25,42 +24,43 @@ class Reference {
       throw new Error('getDatabaseData should be a function.');
     }
 
-    this.#path = path;
-    this.#uuid = uuidv4();
-    this.#getDatabaseData = getDatabaseData;
+    this.getDatabaseDataField = getDatabaseData;
+
+    this.orderByChildPathField = '';
+    this.equalToValueField = '';
   }
 
   get path() {
-    return this.#path;
+    return this.pathField;
   }
 
   get uuid() {
-    return this.#uuid;
+    return this.uuidField;
   }
 
   getData() {
-    const databaseData = this.#getDatabaseData();
+    const databaseData = this.getDatabaseDataField();
 
     if (!databaseData) {
       return null;
     }
 
-    if (this.#path === this.#rootPath) {
+    if (this.path === rootPath) {
       return databaseData;
     }
 
     let data = null;
     if (
-      this.#path === DatabaseConstants.resumesPath ||
-      this.#path === DatabaseConstants.usersPath
+      this.path === DatabaseConstants.resumesPath ||
+      this.path === DatabaseConstants.usersPath
     ) {
-      data = this.#path in databaseData ? databaseData[this.#path] : null;
+      data = this.path in databaseData ? databaseData[this.path] : null;
 
-      if (data && this.#orderByChildPath && this.#equalToValue) {
+      if (data && this.orderByChildPathField && this.equalToValueField) {
         return Object.fromEntries(
           Object.entries(data).filter(
-            ([key, value]) =>
-              value[this.#orderByChildPath] === this.#equalToValue,
+            ([, value]) =>
+              value[this.orderByChildPathField] === this.equalToValueField,
           ),
         );
       }
@@ -69,17 +69,17 @@ class Reference {
     }
 
     if (
-      this.#path.startsWith(`${DatabaseConstants.resumesPath}/`) ||
-      this.#path.startsWith(`${DatabaseConstants.usersPath}/`)
+      this.path.startsWith(`${DatabaseConstants.resumesPath}/`) ||
+      this.path.startsWith(`${DatabaseConstants.usersPath}/`)
     ) {
-      const databaseLocationId = this.#path.substring(
-        this.#path.indexOf('/') + 1,
+      const databaseLocationId = this.path.substring(
+        this.path.indexOf('/') + 1,
       );
       if (!databaseLocationId) {
         throw new Error('Unknown database location id.');
       }
 
-      const pathWithoutId = this.#path.substring(0, this.#path.indexOf('/'));
+      const pathWithoutId = this.path.substring(0, this.path.indexOf('/'));
       if (pathWithoutId in databaseData) {
         return databaseLocationId in databaseData[pathWithoutId]
           ? databaseData[pathWithoutId][databaseLocationId]
@@ -90,7 +90,9 @@ class Reference {
     return null;
   }
 
-  off() {}
+  off() {
+    return this !== null;
+  }
 
   on(eventType, callback) {
     if (eventType !== 'value') {
@@ -99,9 +101,9 @@ class Reference {
 
     let snapshot = new DataSnapshot(eventType, this, null);
 
-    if (this.#path === DatabaseConstants.connectedPath) {
+    if (this.path === DatabaseConstants.connectedPath) {
       snapshot = new DataSnapshot(eventType, this, true);
-    } else if (this.#path === DatabaseConstants.resumesPath) {
+    } else if (this.path === DatabaseConstants.resumesPath) {
       snapshot = new DataSnapshot(eventType, this);
     }
 
@@ -110,31 +112,43 @@ class Reference {
 
   async once(eventType) {
     const newDataSnapshot = new DataSnapshot(eventType, this);
-    const existingDataSnapshot = this.#dataSnapshots[newDataSnapshot.eventType];
+    const existingDataSnapshot = this.dataSnapshotsField[
+      newDataSnapshot.eventType
+    ];
     if (existingDataSnapshot) {
       return Promise.resolve(existingDataSnapshot);
     }
 
-    this.#dataSnapshots[newDataSnapshot.eventType] = newDataSnapshot;
+    this.dataSnapshotsField[newDataSnapshot.eventType] = newDataSnapshot;
     return Promise.resolve(newDataSnapshot);
   }
 
   orderByChild(path) {
-    this.#orderByChildPath = path;
+    this.orderByChildPathField = path;
     return this;
   }
 
   equalTo(value) {
-    this.#equalToValue = value;
+    this.equalToValueField = value;
     return this;
   }
 
   async update(value) {
-    return Promise.resolve(true);
+    if (typeof value === 'undefined') {
+      throw new Error('value must be provided.');
+    }
+
+    const result = this !== null;
+    return Promise.resolve(result);
   }
 
   async set(value) {
-    return Promise.resolve(true);
+    if (typeof value === 'undefined') {
+      throw new Error('value must be provided.');
+    }
+
+    const result = this !== null;
+    return Promise.resolve(result);
   }
 }
 

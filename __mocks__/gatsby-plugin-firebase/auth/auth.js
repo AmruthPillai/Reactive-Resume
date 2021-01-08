@@ -1,48 +1,54 @@
 import { v4 as uuidv4 } from 'uuid';
 
-import { AuthConstants } from '../constants';
+import Constants from '../constants/auth';
+
+const singleton = Symbol('');
+const singletonEnforcer = Symbol('');
 
 class Auth {
-  static #instance = undefined;
-  #uuid = '';
-  #onAuthStateChangedObservers = [];
-
-  constructor() {
-    if (Auth.#instance) {
-      return Auth.#instance;
+  constructor(enforcer) {
+    if (enforcer !== singletonEnforcer) {
+      throw new Error('Cannot construct singleton');
     }
 
-    Auth.#instance = this;
+    this.uuidField = uuidv4();
+    this.onAuthStateChangedObserversField = [];
+  }
 
-    this.#uuid = uuidv4();
+  static get instance() {
+    if (!this[singleton]) {
+      this[singleton] = new Auth(singletonEnforcer);
+    }
+
+    return this[singleton];
   }
 
   get uuid() {
-    return this.#uuid;
+    return this.uuidField;
   }
 
   get onAuthStateChangedObservers() {
-    return this.#onAuthStateChangedObservers;
+    return this.onAuthStateChangedObserversField;
   }
 
   dispose() {
-    this.#onAuthStateChangedObservers = [];
+    this.onAuthStateChangedObserversField = [];
   }
 
   onAuthStateChanged(observer) {
-    this.#onAuthStateChangedObservers.push(observer);
+    this.onAuthStateChangedObservers.push(observer);
 
     return () => {
-      this.#onAuthStateChangedObservers = this.#onAuthStateChangedObservers.filter(
-        (observer) => observer !== observer,
+      this.onAuthStateChangedObserversField = this.onAuthStateChangedObservers.filter(
+        (obs) => obs !== observer,
       );
     };
   }
 
   async signInAnonymously() {
-    const user = AuthConstants.anonymousUser1;
+    const user = Constants.anonymousUser1;
 
-    this.#onAuthStateChangedObservers.forEach((observer) => observer(user));
+    this.onAuthStateChangedObservers.forEach((observer) => observer(user));
 
     return Promise.resolve(user);
   }

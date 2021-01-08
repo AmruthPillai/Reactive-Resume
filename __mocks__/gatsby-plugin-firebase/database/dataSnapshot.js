@@ -1,10 +1,6 @@
 import Reference from './reference';
 
 class DataSnapshot {
-  #eventType = '';
-  #reference = null;
-  #value = undefined;
-
   constructor(eventType, reference, value = undefined) {
     if (!eventType) {
       throw new Error('eventType must be provided.');
@@ -12,7 +8,7 @@ class DataSnapshot {
       throw new Error('eventType should be a string.');
     }
 
-    this.#eventType = eventType;
+    this.eventTypeField = eventType;
 
     if (!reference) {
       throw new Error('reference must be provided.');
@@ -20,24 +16,24 @@ class DataSnapshot {
       throw new Error('reference must be an instance of the Reference class.');
     }
 
-    this.#reference = reference;
+    this.referenceField = reference;
 
-    this.#value = value;
+    this.valueField = value;
   }
 
   get eventType() {
-    return this.#eventType;
+    return this.eventTypeField;
   }
 
   get value() {
-    return this.#value;
+    return this.valueField;
   }
 
   val() {
     if (this.eventType === 'value') {
       return typeof this.value !== 'undefined'
         ? this.value
-        : this.#reference.getData();
+        : this.referenceField.getData();
     }
 
     return undefined;

@@ -7,7 +7,7 @@ import {
 
 class FirebaseStub {
   static auth() {
-    return new Auth();
+    return Auth.instance;
   }
 
   static database() {
