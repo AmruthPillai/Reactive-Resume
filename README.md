@@ -46,6 +46,7 @@ For those of you familiar with the Crowdin Platform, you could do that too and j
 ##### Languages Currently Supported
 
 - Arabic (عربى)
+- Czech (čeština)
 - Chinese Simplified (简体中文)
 - Danish (Dansk)
 - Dutch (Nederlands)
