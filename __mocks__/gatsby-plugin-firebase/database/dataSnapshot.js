@@ -1,7 +1,5 @@
-import Reference from './reference';
-
 class DataSnapshot {
-  constructor(eventType, reference, value = undefined) {
+  constructor(eventType, getDataCallback, value = undefined) {
     if (!eventType) {
       throw new Error('eventType must be provided.');
     } else if (typeof eventType !== 'string') {
@@ -10,13 +8,13 @@ class DataSnapshot {
 
     this.eventTypeField = eventType;
 
-    if (!reference) {
-      throw new Error('reference must be provided.');
-    } else if (!(reference instanceof Reference)) {
-      throw new Error('reference must be an instance of the Reference class.');
+    if (!getDataCallback) {
+      throw new Error('getDataCallback must be provided.');
+    } else if (typeof getDataCallback !== 'function') {
+      throw new Error('getDataCallback should be a function.');
     }
 
-    this.referenceField = reference;
+    this.getDataCallbackField = getDataCallback;
 
     this.valueField = value;
   }
@@ -33,7 +31,7 @@ class DataSnapshot {
     if (this.eventType === 'value') {
       return typeof this.value !== 'undefined'
         ? this.value
-        : this.referenceField.getData();
+        : this.getDataCallbackField();
     }
 
     return undefined;

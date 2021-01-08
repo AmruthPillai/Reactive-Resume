@@ -6,7 +6,7 @@ import DataSnapshot from './dataSnapshot';
 const rootPath = '.';
 
 class Reference {
-  constructor(path, getDatabaseData) {
+  constructor(path, getDatabaseDataCallback) {
     if (typeof path === 'undefined' || path === null) {
       this.pathField = rootPath;
     } else if (typeof path !== 'string') {
@@ -16,15 +16,16 @@ class Reference {
     }
 
     this.uuidField = uuidv4();
+
     this.dataSnapshotsField = {};
 
-    if (!getDatabaseData) {
-      throw new Error('getDatabaseData must be provided.');
-    } else if (typeof getDatabaseData !== 'function') {
-      throw new Error('getDatabaseData should be a function.');
+    if (!getDatabaseDataCallback) {
+      throw new Error('getDatabaseDataCallback must be provided.');
+    } else if (typeof getDatabaseDataCallback !== 'function') {
+      throw new Error('getDatabaseDataCallback should be a function.');
     }
 
-    this.getDatabaseDataField = getDatabaseData;
+    this.getDatabaseDataCallbackField = getDatabaseDataCallback;
 
     this.orderByChildPathField = '';
     this.equalToValueField = '';
@@ -39,7 +40,7 @@ class Reference {
   }
 
   getData() {
-    const databaseData = this.getDatabaseDataField();
+    const databaseData = this.getDatabaseDataCallbackField();
 
     if (!databaseData) {
       return null;
@@ -99,19 +100,19 @@ class Reference {
       return;
     }
 
-    let snapshot = new DataSnapshot(eventType, this, null);
+    let snapshot = new DataSnapshot(eventType, () => this.getData(), null);
 
     if (this.path === DatabaseConstants.connectedPath) {
-      snapshot = new DataSnapshot(eventType, this, true);
+      snapshot = new DataSnapshot(eventType, () => this.getData(), true);
     } else if (this.path === DatabaseConstants.resumesPath) {
-      snapshot = new DataSnapshot(eventType, this);
+      snapshot = new DataSnapshot(eventType, () => this.getData());
     }
 
     callback(snapshot);
   }
 
   async once(eventType) {
-    const newDataSnapshot = new DataSnapshot(eventType, this);
+    const newDataSnapshot = new DataSnapshot(eventType, () => this.getData());
     const existingDataSnapshot = this.dataSnapshotsField[
       newDataSnapshot.eventType
     ];
