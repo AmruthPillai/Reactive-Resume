@@ -2,7 +2,7 @@
 
 ## A free and open source resume builder.
 
-[![Crowdin](https://badges.crowdin.net/reactive-resume/localized.svg)](https://crowdin.com/project/reactive-resume)
+[![Crowdin](https://badges.crowdin.net/reactive-resume/localized.svg)](https://crowdin.com/project/reactive-resume) [![Meercode CI Score](https://meercode.io/badge/AmruthPillai/Reactive-Resume?type=ci-score&branch=develop)](https://meercode.io/AmruthPillai/Reactive-Resume)
 [![GitHub](https://img.shields.io/github/license/AmruthPillai/Reactive-Resume)](https://github.com/AmruthPillai/Reactive-Resume/blob/develop/LICENSE)
 
 ### [Go to App](https://rxresu.me/)
