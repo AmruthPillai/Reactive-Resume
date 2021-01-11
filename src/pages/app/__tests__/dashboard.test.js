@@ -4,6 +4,7 @@ import { act, render, screen, waitFor } from '@testing-library/react';
 import FirebaseStub, { DatabaseConstants } from 'gatsby-plugin-firebase';
 
 import '../../../i18n/index';
+import '../../../utils/dayjs';
 import { SettingsProvider } from '../../../contexts/SettingsContext';
 import { ModalProvider } from '../../../contexts/ModalContext';
 import { UserProvider } from '../../../contexts/UserContext';
