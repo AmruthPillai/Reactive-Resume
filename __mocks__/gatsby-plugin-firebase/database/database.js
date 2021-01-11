@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import path from 'path';
 import fs from 'fs';
 import { v4 as uuidv4 } from 'uuid';
@@ -21,9 +22,9 @@ class Database {
       throw new Error('Cannot construct singleton');
     }
 
-    this.uuidField = uuidv4();
-    this.dataField = {};
-    this.referencesField = {};
+    this._uuid = uuidv4();
+    this._data = {};
+    this._references = {};
   }
 
   static get instance() {
@@ -35,7 +36,7 @@ class Database {
   }
 
   get uuid() {
-    return this.uuidField;
+    return this._uuid;
   }
 
   initializeData() {
@@ -65,22 +66,22 @@ class Database {
       resume.name = `Test Resume ${key}`;
     });
 
-    this.dataField[DatabaseConstants.resumesPath] = resumes;
+    this._data[DatabaseConstants.resumesPath] = resumes;
 
     const users = {};
     users[DatabaseConstants.user1.uid] = DatabaseConstants.user1;
     users[DatabaseConstants.user2.uid] = DatabaseConstants.user2;
-    this.dataField[DatabaseConstants.usersPath] = users;
+    this._data[DatabaseConstants.usersPath] = users;
   }
 
   ref(referencePath) {
-    const newRef = new Reference(referencePath, () => this.dataField);
-    const existingRef = this.referencesField[newRef.path];
+    const newRef = new Reference(referencePath, () => this._data);
+    const existingRef = this._references[newRef.path];
     if (existingRef) {
       return existingRef;
     }
 
-    this.referencesField[newRef.path] = newRef;
+    this._references[newRef.path] = newRef;
     return newRef;
   }
 }

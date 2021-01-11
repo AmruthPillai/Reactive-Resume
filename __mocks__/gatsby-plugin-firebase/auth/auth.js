@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { v4 as uuidv4 } from 'uuid';
 
 import Constants from '../constants/auth';
@@ -11,8 +12,8 @@ class Auth {
       throw new Error('Cannot construct singleton');
     }
 
-    this.uuidField = uuidv4();
-    this.onAuthStateChangedObserversField = [];
+    this._uuid = uuidv4();
+    this._onAuthStateChangedObservers = [];
   }
 
   static get instance() {
@@ -24,22 +25,22 @@ class Auth {
   }
 
   get uuid() {
-    return this.uuidField;
+    return this._uuid;
   }
 
   get onAuthStateChangedObservers() {
-    return this.onAuthStateChangedObserversField;
+    return this._onAuthStateChangedObservers;
   }
 
   dispose() {
-    this.onAuthStateChangedObserversField = [];
+    this._onAuthStateChangedObservers = [];
   }
 
   onAuthStateChanged(observer) {
     this.onAuthStateChangedObservers.push(observer);
 
     return () => {
-      this.onAuthStateChangedObserversField = this.onAuthStateChangedObservers.filter(
+      this._onAuthStateChangedObservers = this.onAuthStateChangedObservers.filter(
         (obs) => obs !== observer,
       );
     };

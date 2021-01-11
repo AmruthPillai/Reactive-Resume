@@ -1,37 +1,36 @@
+/* eslint-disable no-underscore-dangle */
 class DataSnapshot {
-  constructor(eventType, getDataCallback, value = undefined) {
+  constructor(eventType, getData, value = undefined) {
     if (!eventType) {
       throw new Error('eventType must be provided.');
     } else if (typeof eventType !== 'string') {
       throw new Error('eventType should be a string.');
     }
 
-    this.eventTypeField = eventType;
+    this._eventType = eventType;
 
-    if (!getDataCallback) {
-      throw new Error('getDataCallback must be provided.');
-    } else if (typeof getDataCallback !== 'function') {
-      throw new Error('getDataCallback should be a function.');
+    if (!getData) {
+      throw new Error('getData must be provided.');
+    } else if (typeof getData !== 'function') {
+      throw new Error('getData should be a function.');
     }
 
-    this.getDataCallbackField = getDataCallback;
+    this._getData = getData;
 
-    this.valueField = value;
+    this._value = value;
   }
 
   get eventType() {
-    return this.eventTypeField;
+    return this._eventType;
   }
 
   get value() {
-    return this.valueField;
+    return this._value;
   }
 
   val() {
     if (this.eventType === 'value') {
-      return typeof this.value !== 'undefined'
-        ? this.value
-        : this.getDataCallbackField();
+      return typeof this.value !== 'undefined' ? this.value : this._getData();
     }
 
     return undefined;

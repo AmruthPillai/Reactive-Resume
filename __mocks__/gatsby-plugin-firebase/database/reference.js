@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { v4 as uuidv4 } from 'uuid';
 import { debounce } from 'lodash';
 
@@ -7,41 +8,41 @@ import DataSnapshot from './dataSnapshot';
 const rootPath = '.';
 
 class Reference {
-  constructor(path, getDatabaseDataCallback) {
+  constructor(path, getDatabaseData) {
     if (typeof path === 'undefined' || path === null) {
-      this.pathField = rootPath;
+      this._path = rootPath;
     } else if (typeof path !== 'string') {
       throw new Error('path should be a string.');
     } else {
-      this.pathField = path;
+      this._path = path;
     }
 
-    this.uuidField = uuidv4();
+    this._uuid = uuidv4();
 
-    this.dataSnapshotsField = {};
+    this._dataSnapshots = {};
 
-    if (!getDatabaseDataCallback) {
-      throw new Error('getDatabaseDataCallback must be provided.');
-    } else if (typeof getDatabaseDataCallback !== 'function') {
-      throw new Error('getDatabaseDataCallback should be a function.');
+    if (!getDatabaseData) {
+      throw new Error('getDatabaseData must be provided.');
+    } else if (typeof getDatabaseData !== 'function') {
+      throw new Error('getDatabaseData should be a function.');
     }
 
-    this.getDatabaseDataCallbackField = getDatabaseDataCallback;
+    this._getDatabaseData = getDatabaseData;
 
-    this.orderByChildPathField = '';
-    this.equalToValueField = '';
+    this._orderByChildPath = '';
+    this._equalToValue = '';
   }
 
   get path() {
-    return this.pathField;
+    return this._path;
   }
 
   get uuid() {
-    return this.uuidField;
+    return this._uuid;
   }
 
   getData() {
-    const databaseData = this.getDatabaseDataCallbackField();
+    const databaseData = this._getDatabaseData();
 
     if (!databaseData) {
       return null;
@@ -58,11 +59,10 @@ class Reference {
     ) {
       data = this.path in databaseData ? databaseData[this.path] : null;
 
-      if (data && this.orderByChildPathField && this.equalToValueField) {
+      if (data && this._orderByChildPath && this._equalToValue) {
         return Object.fromEntries(
           Object.entries(data).filter(
-            ([, value]) =>
-              value[this.orderByChildPathField] === this.equalToValueField,
+            ([, value]) => value[this._orderByChildPath] === this._equalToValue,
           ),
         );
       }
@@ -115,24 +115,22 @@ class Reference {
 
   async once(eventType) {
     const newDataSnapshot = new DataSnapshot(eventType, () => this.getData());
-    const existingDataSnapshot = this.dataSnapshotsField[
-      newDataSnapshot.eventType
-    ];
+    const existingDataSnapshot = this._dataSnapshots[newDataSnapshot.eventType];
     if (existingDataSnapshot) {
       return Promise.resolve(existingDataSnapshot);
     }
 
-    this.dataSnapshotsField[newDataSnapshot.eventType] = newDataSnapshot;
+    this._dataSnapshots[newDataSnapshot.eventType] = newDataSnapshot;
     return Promise.resolve(newDataSnapshot);
   }
 
   orderByChild(path) {
-    this.orderByChildPathField = path;
+    this._orderByChildPath = path;
     return this;
   }
 
   equalTo(value) {
-    this.equalToValueField = value;
+    this._equalToValue = value;
     return this;
   }
 
