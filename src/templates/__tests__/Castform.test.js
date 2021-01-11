@@ -1,5 +1,6 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+
 import FirebaseStub, { DatabaseConstants } from 'gatsby-plugin-firebase';
 
 import '../../i18n/index';
@@ -10,6 +11,7 @@ describe('Castform', () => {
 
   beforeEach(async () => {
     FirebaseStub.database().initializeData();
+
     const resumeId = DatabaseConstants.initialStateResumeId;
     resume = (
       await FirebaseStub.database()
@@ -29,9 +31,9 @@ describe('Castform', () => {
     const birthDateLabelMatcher = /Date of birth/i;
 
     it('is not shown if not provided', () => {
-      const { queryByText } = render(<Castform data={resume} />);
+      render(<Castform data={resume} />);
 
-      expect(queryByText(birthDateLabelMatcher)).toBeNull();
+      expect(screen.queryByText(birthDateLabelMatcher)).toBeNull();
     });
 
     it('is shown if provided', () => {
@@ -39,12 +41,12 @@ describe('Castform', () => {
       const birthDateFormatted = '20 January 1990';
       resume.profile.birthDate = birthDate;
 
-      const { getByText } = render(<Castform data={resume} />);
+      render(<Castform data={resume} />);
 
-      expect(getByText(birthDateLabelMatcher)).toBeTruthy();
-      expect(getByText(birthDateLabelMatcher)).toBeInTheDocument();
-      expect(getByText(birthDateFormatted)).toBeTruthy();
-      expect(getByText(birthDateFormatted)).toBeInTheDocument();
+      expect(screen.getByText(birthDateLabelMatcher)).toBeTruthy();
+      expect(screen.getByText(birthDateLabelMatcher)).toBeInTheDocument();
+      expect(screen.getByText(birthDateFormatted)).toBeTruthy();
+      expect(screen.getByText(birthDateFormatted)).toBeInTheDocument();
     });
   });
 });

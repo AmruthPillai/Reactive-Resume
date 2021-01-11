@@ -20,16 +20,14 @@ import { ResumeProvider } from '../../../contexts/ResumeContext';
 import { StorageProvider } from '../../../contexts/StorageContext';
 import Builder from '../builder';
 
-beforeEach(() => {
-  FirebaseStub.database().initializeData();
-});
-
 describe('Builder', () => {
   let resumeId = null;
   let resume = null;
   let mockUpdateFunction = null;
 
   beforeEach(async () => {
+    FirebaseStub.database().initializeData();
+
     resumeId = DatabaseConstants.demoStateResume1Id;
     resume = (
       await FirebaseStub.database()
@@ -96,9 +94,10 @@ describe('Builder', () => {
 
       expect(input.value).toBe(newInputValue);
 
-      await waitFor(() => expect(mockUpdateFunction).toHaveBeenCalledTimes(1), {
+      await waitFor(() => mockUpdateFunction.mock.calls[0][0], {
         timeout: DebounceWaitTime,
       });
+      expect(mockUpdateFunction).toHaveBeenCalledTimes(1);
       const mockUpdateFunctionCallArgument =
         mockUpdateFunction.mock.calls[0][0];
       expect(mockUpdateFunctionCallArgument.id).toBe(resume.id);
@@ -130,9 +129,10 @@ describe('Builder', () => {
         screen.getByLabelText(new RegExp('data di nascita', 'i')),
       ).toBeInTheDocument();
 
-      await waitFor(() => expect(mockUpdateFunction).toHaveBeenCalledTimes(1), {
+      await waitFor(() => mockUpdateFunction.mock.calls[0][0], {
         timeout: DebounceWaitTime,
       });
+      expect(mockUpdateFunction).toHaveBeenCalledTimes(1);
       const mockUpdateFunctionCallArgument =
         mockUpdateFunction.mock.calls[0][0];
       expect(mockUpdateFunctionCallArgument.id).toBe(resume.id);

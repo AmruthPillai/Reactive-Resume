@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import { debounce } from 'lodash';
 
 import DatabaseConstants from '../constants/database';
 import DataSnapshot from './dataSnapshot';
@@ -108,7 +109,8 @@ class Reference {
       snapshot = new DataSnapshot(eventType, () => this.getData());
     }
 
-    callback(snapshot);
+    const debouncedCallback = debounce(callback, 100);
+    debouncedCallback(snapshot);
   }
 
   async once(eventType) {

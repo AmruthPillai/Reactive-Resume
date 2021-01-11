@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, render, screen } from '@testing-library/react';
+import { act, render, screen, waitFor } from '@testing-library/react';
 
 import FirebaseStub, { DatabaseConstants } from 'gatsby-plugin-firebase';
 
@@ -12,15 +12,13 @@ import { ResumeProvider } from '../../../contexts/ResumeContext';
 import { StorageProvider } from '../../../contexts/StorageContext';
 import Dashboard from '../dashboard';
 
-beforeEach(() => {
-  FirebaseStub.database().initializeData();
-});
-
 describe('Dashboard', () => {
   let resumes = null;
   const user = DatabaseConstants.user1;
 
   beforeEach(async () => {
+    FirebaseStub.database().initializeData();
+
     resumes = (
       await FirebaseStub.database()
         .ref(DatabaseConstants.resumesPath)
@@ -48,11 +46,17 @@ describe('Dashboard', () => {
     await act(async () => {
       await FirebaseStub.auth().signInAnonymously();
     });
+
+    await waitFor(() => screen.getByText('Create Resume'));
   });
 
   describe('renders', () => {
+    it('document title', async () => {
+      expect(document.title).toEqual('Dashboard | Reactive Resume');
+    });
+
     it('create resume', async () => {
-      expect(screen.getByText(new RegExp('Create Resume'))).toBeInTheDocument();
+      expect(screen.getByText('Create Resume')).toBeInTheDocument();
     });
 
     it('preview of user resumes', async () => {
@@ -60,11 +64,11 @@ describe('Dashboard', () => {
 
       expect(Object.values(resumes)[0].user).toEqual(user.uid);
       expect(
-        screen.getByText(new RegExp(Object.values(resumes)[0].name)),
+        screen.getByText(Object.values(resumes)[0].name),
       ).toBeInTheDocument();
       expect(Object.values(resumes)[1].user).toEqual(user.uid);
       expect(
-        screen.getByText(new RegExp(Object.values(resumes)[1].name)),
+        screen.getByText(Object.values(resumes)[1].name),
       ).toBeInTheDocument();
     });
   });

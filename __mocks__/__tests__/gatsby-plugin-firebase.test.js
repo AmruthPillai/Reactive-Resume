@@ -1,3 +1,4 @@
+import { waitFor } from '@testing-library/react';
 import FirebaseStub, {
   AuthConstants,
   DatabaseConstants,
@@ -60,6 +61,10 @@ describe('FirebaseStub', () => {
   });
 
   describe('database', () => {
+    beforeEach(() => {
+      FirebaseStub.database().initializeData();
+    });
+
     it('reuses existing Database instance', () => {
       const database1 = FirebaseStub.database();
       const database2 = FirebaseStub.database();
@@ -107,8 +112,6 @@ describe('FirebaseStub', () => {
     });
 
     it('initializing data sets up resumes and users', async () => {
-      FirebaseStub.database().initializeData();
-
       const resumesRef = FirebaseStub.database().ref(
         DatabaseConstants.resumesPath,
       );
@@ -146,8 +149,6 @@ describe('FirebaseStub', () => {
     });
 
     it('retrieves resume if it exists', async () => {
-      FirebaseStub.database().initializeData();
-
       const resume = (
         await FirebaseStub.database()
           .ref(
@@ -161,7 +162,6 @@ describe('FirebaseStub', () => {
     });
 
     it('retrieves null if resume does not exist', async () => {
-      FirebaseStub.database().initializeData();
       const resumeId = 'invalidResumeId';
 
       const resume = (
@@ -174,8 +174,6 @@ describe('FirebaseStub', () => {
     });
 
     it('retrieves user if it exists', async () => {
-      FirebaseStub.database().initializeData();
-
       const user = (
         await FirebaseStub.database()
           .ref(`${DatabaseConstants.usersPath}/${DatabaseConstants.user1.uid}`)
@@ -187,7 +185,6 @@ describe('FirebaseStub', () => {
     });
 
     it('retrieves null if user does not exist', async () => {
-      FirebaseStub.database().initializeData();
       const userId = 'invalidUserId';
 
       const user = (
@@ -208,6 +205,11 @@ describe('FirebaseStub', () => {
           snapshotValue = snapshot.val();
         });
 
+      await waitFor(() =>
+        snapshotValue ? Promise.resolve(true) : Promise.reject(),
+      );
+
+      expect(snapshotValue).not.toBeNull();
       expect(snapshotValue).toBe(true);
     });
 
@@ -224,6 +226,11 @@ describe('FirebaseStub', () => {
           snapshotValue = snapshot.val();
         });
 
+      await waitFor(() =>
+        snapshotValue ? Promise.resolve(true) : Promise.reject(),
+      );
+
+      expect(snapshotValue).not.toBeNull();
       expect(snapshotValue).toEqual(resumes);
     });
 
@@ -238,6 +245,11 @@ describe('FirebaseStub', () => {
           snapshotValue = snapshot.val();
         });
 
+      await waitFor(() =>
+        snapshotValue ? Promise.resolve(true) : Promise.reject(),
+      );
+
+      expect(snapshotValue).not.toBeNull();
       expect(Object.keys(snapshotValue)).toHaveLength(2);
       Object.values(snapshotValue).forEach((resume) =>
         expect(resume.user).toEqual(DatabaseConstants.user1.uid),
