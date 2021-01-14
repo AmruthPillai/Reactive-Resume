@@ -146,11 +146,11 @@ class Reference {
   }
 
   off() {
-    return this !== null;
+    this._eventCallbacks = {};
   }
 
   on(eventType, callback) {
-    this._eventCallbacks[eventType] = callback;
+    this.eventCallbacks[eventType] = callback;
 
     if (eventType === DatabaseConstants.valueEventType) {
       this.debounceEventCallback(eventType);

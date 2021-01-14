@@ -196,7 +196,7 @@ describe('FirebaseStub', () => {
       expect(user).toBeNull();
     });
 
-    it('triggers callback with true when listening for data changes on the connected reference path', async () => {
+    it("triggers 'value' event with true when listening for data changes on the connected reference path", async () => {
       let snapshotValue = null;
 
       FirebaseStub.database()
@@ -213,7 +213,7 @@ describe('FirebaseStub', () => {
       expect(snapshotValue).toBe(true);
     });
 
-    it('triggers callback with resumes when listening for data changes on the resumes reference path', async () => {
+    it("triggers 'value' event with resumes when listening for data changes on the resumes reference path", async () => {
       const resumesDataSnapshot = await FirebaseStub.database()
         .ref(DatabaseConstants.resumesPath)
         .once('value');
@@ -281,7 +281,7 @@ describe('FirebaseStub', () => {
       expect(reference.equalToValue).toHaveLength(0);
     });
 
-    it('triggers callback with resumes when creating a new one', async () => {
+    it("triggers 'value' event with resumes when creating a new resume", async () => {
       const userUid = DatabaseConstants.user1.uid;
 
       let snapshotValue = null;
@@ -327,14 +327,13 @@ describe('FirebaseStub', () => {
       await waitFor(() => callback.mock.calls[0][0]);
 
       expect(callback.mock.calls).toHaveLength(1);
-      callback.mockClear();
       expect(snapshotValue).not.toBeNull();
       expect(Object.keys(snapshotValue)).toHaveLength(3);
       expect(snapshotValue[newResume.id]).toBeTruthy();
       expect(snapshotValue[newResume.id].id).toBe(newResume.id);
     });
 
-    it('triggers callback with resumes when updating an existing one', async () => {
+    it("triggers 'value' event with resumes when updating a resume", async () => {
       const userUid = DatabaseConstants.user1.uid;
 
       let snapshotValue = null;
@@ -378,14 +377,13 @@ describe('FirebaseStub', () => {
       await waitFor(() => callback.mock.calls[0][0]);
 
       expect(callback.mock.calls).toHaveLength(1);
-      callback.mockClear();
       expect(snapshotValue).not.toBeNull();
       expect(Object.keys(snapshotValue)).toHaveLength(2);
       expect(snapshotValue[existingResume.id]).toBeTruthy();
       expect(snapshotValue[existingResume.id].name).toBe(existingResume.name);
     });
 
-    it('triggers callback with removed resume when removing an existing one', async () => {
+    it("triggers 'child_removed' and 'value' events when removing a resume", async () => {
       const userUid = DatabaseConstants.user1.uid;
 
       let valueCallbackSnapshotValue = null;
@@ -432,15 +430,61 @@ describe('FirebaseStub', () => {
 
       await waitFor(() => childRemovedCallback.mock.calls[0][0]);
       expect(childRemovedCallback.mock.calls).toHaveLength(1);
-      childRemovedCallback.mockClear();
       expect(childRemovedCallbackSnapshotValue).toBeTruthy();
       expect(childRemovedCallbackSnapshotValue.id).toBe(removedResume.id);
 
       await waitFor(() => valueCallback.mock.calls[0][0]);
       expect(valueCallback.mock.calls).toHaveLength(1);
-      valueCallback.mockClear();
       expect(valueCallbackSnapshotValue).toBeTruthy();
       expect(removedResume.id in valueCallbackSnapshotValue).toBe(false);
+    });
+
+    it("does not trigger any event after 'off' is called", async () => {
+      const userUid = DatabaseConstants.user1.uid;
+
+      let valueCallbackSnapshotValue = null;
+      const valueCallback = jest.fn((snapshot) => {
+        valueCallbackSnapshotValue = snapshot.val();
+      });
+      FirebaseStub.database()
+        .ref(DatabaseConstants.resumesPath)
+        .orderByChild('user')
+        .equalTo(userUid)
+        .on('value', valueCallback);
+      await waitFor(() => valueCallback.mock.calls[0][0]);
+      expect(valueCallback.mock.calls).toHaveLength(1);
+      valueCallback.mockClear();
+      valueCallbackSnapshotValue = null;
+
+      let childRemovedCallbackSnapshotValue = null;
+      const childRemovedCallback = jest.fn((snapshot) => {
+        childRemovedCallbackSnapshotValue = snapshot.val();
+      });
+      FirebaseStub.database()
+        .ref(DatabaseConstants.resumesPath)
+        .orderByChild('user')
+        .equalTo(userUid)
+        .on('child_removed', childRemovedCallback);
+
+      const removedResume = (
+        await FirebaseStub.database()
+          .ref(
+            `${DatabaseConstants.resumesPath}/${DatabaseConstants.demoStateResume1Id}`,
+          )
+          .once('value')
+      ).val();
+      expect(removedResume).toBeTruthy();
+
+      FirebaseStub.database().ref(DatabaseConstants.resumesPath).off();
+
+      await FirebaseStub.database()
+        .ref(`${DatabaseConstants.resumesPath}/${removedResume.id}`)
+        .remove();
+
+      expect(childRemovedCallback.mock.calls).toHaveLength(0);
+      expect(childRemovedCallbackSnapshotValue).toBeNull();
+      expect(valueCallback.mock.calls).toHaveLength(0);
+      expect(valueCallbackSnapshotValue).toBeNull();
     });
   });
 });
