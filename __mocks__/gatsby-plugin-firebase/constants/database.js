@@ -1,6 +1,7 @@
 import AuthConstants from './auth';
 
 const valueEventType = 'value';
+const childRemovedEventType = 'child_removed';
 
 const resumesPath = 'resumes';
 const usersPath = 'users';
@@ -22,6 +23,10 @@ const user2 = {
 class Database {
   static get valueEventType() {
     return valueEventType;
+  }
+
+  static get childRemovedEventType() {
+    return childRemovedEventType;
   }
 
   static get resumesPath() {

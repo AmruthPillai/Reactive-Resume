@@ -384,5 +384,63 @@ describe('FirebaseStub', () => {
       expect(snapshotValue[existingResume.id]).toBeTruthy();
       expect(snapshotValue[existingResume.id].name).toBe(existingResume.name);
     });
+
+    it('triggers callback with removed resume when removing an existing one', async () => {
+      const userUid = DatabaseConstants.user1.uid;
+
+      let valueCallbackSnapshotValue = null;
+      const valueCallback = jest.fn((snapshot) => {
+        valueCallbackSnapshotValue = snapshot.val();
+      });
+      FirebaseStub.database()
+        .ref(DatabaseConstants.resumesPath)
+        .orderByChild('user')
+        .equalTo(userUid)
+        .on('value', valueCallback);
+      await waitFor(() => valueCallback.mock.calls[0][0]);
+      expect(valueCallback.mock.calls).toHaveLength(1);
+      valueCallback.mockClear();
+      expect(valueCallbackSnapshotValue).not.toBeNull();
+      expect(Object.keys(valueCallbackSnapshotValue)).toHaveLength(2);
+      Object.values(valueCallbackSnapshotValue).forEach((resume) =>
+        expect(resume.user).toEqual(userUid),
+      );
+      valueCallbackSnapshotValue = null;
+
+      let childRemovedCallbackSnapshotValue = null;
+      const childRemovedCallback = jest.fn((snapshot) => {
+        childRemovedCallbackSnapshotValue = snapshot.val();
+      });
+      FirebaseStub.database()
+        .ref(DatabaseConstants.resumesPath)
+        .orderByChild('user')
+        .equalTo(userUid)
+        .on('child_removed', childRemovedCallback);
+
+      const removedResume = (
+        await FirebaseStub.database()
+          .ref(
+            `${DatabaseConstants.resumesPath}/${DatabaseConstants.demoStateResume1Id}`,
+          )
+          .once('value')
+      ).val();
+      expect(removedResume).toBeTruthy();
+      expect(removedResume.user).toEqual(userUid);
+      await FirebaseStub.database()
+        .ref(`${DatabaseConstants.resumesPath}/${removedResume.id}`)
+        .remove();
+
+      await waitFor(() => childRemovedCallback.mock.calls[0][0]);
+      expect(childRemovedCallback.mock.calls).toHaveLength(1);
+      childRemovedCallback.mockClear();
+      expect(childRemovedCallbackSnapshotValue).toBeTruthy();
+      expect(childRemovedCallbackSnapshotValue.id).toBe(removedResume.id);
+
+      await waitFor(() => valueCallback.mock.calls[0][0]);
+      expect(valueCallback.mock.calls).toHaveLength(1);
+      valueCallback.mockClear();
+      expect(valueCallbackSnapshotValue).toBeTruthy();
+      expect(removedResume.id in valueCallbackSnapshotValue).toBe(false);
+    });
   });
 });

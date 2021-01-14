@@ -17,7 +17,7 @@ class Reference {
 
     this._uuid = uuidv4();
 
-    this._dataSnapshots = {};
+    this._dataSnapshot = null;
 
     if (!getDatabaseData) {
       throw new Error('getDatabaseData must be provided.');
@@ -91,31 +91,42 @@ class Reference {
       throw new Error('value must be provided.');
     }
 
-    this._setDatabaseData(this.path, value);
-
-    this.debounceEventCallback(DatabaseConstants.valueEventType);
+    const currentData = this._getData();
 
     const pathElements = this.path.split('/');
+    let parentReference = null;
     if (pathElements.length === 2) {
-      const parentReference = this._getReference(pathElements[0]);
+      parentReference = this._getReference(pathElements[0]);
+    }
+
+    this._setDatabaseData(this.path, value);
+
+    if (value === null) {
       if (parentReference) {
+        parentReference.debounceEventCallback(
+          DatabaseConstants.childRemovedEventType,
+          currentData,
+        );
         parentReference.debounceEventCallback(DatabaseConstants.valueEventType);
+      }
+    } else {
+      const eventType = DatabaseConstants.valueEventType;
+      this.debounceEventCallback(eventType);
+      if (parentReference) {
+        parentReference.debounceEventCallback(eventType);
       }
     }
   }
 
-  debounceEventCallback(eventType) {
+  debounceEventCallback(eventType, snapshotValue = undefined) {
     if (!(eventType in this.eventCallbacks)) {
       return;
     }
 
-    let snapshot = new DataSnapshot(eventType, () => this._getData(), null);
-
-    if (this.path === DatabaseConstants.connectedPath) {
-      snapshot = new DataSnapshot(eventType, () => this._getData(), true);
-    } else if (this.path === DatabaseConstants.resumesPath) {
-      snapshot = new DataSnapshot(eventType, () => this._getData());
-    }
+    const snapshot =
+      this.path === DatabaseConstants.connectedPath
+        ? new DataSnapshot(() => this._getData(), true)
+        : new DataSnapshot(() => this._getData(), snapshotValue);
 
     const debouncedEventCallback = debounce(
       this.eventCallbacks[eventType],
@@ -139,23 +150,27 @@ class Reference {
   }
 
   on(eventType, callback) {
-    if (eventType !== DatabaseConstants.valueEventType) {
-      return;
-    }
-
     this._eventCallbacks[eventType] = callback;
 
-    this.debounceEventCallback(eventType);
+    if (eventType === DatabaseConstants.valueEventType) {
+      this.debounceEventCallback(eventType);
+    }
   }
 
   async once(eventType) {
-    const newDataSnapshot = new DataSnapshot(eventType, () => this._getData());
-    const existingDataSnapshot = this._dataSnapshots[newDataSnapshot.eventType];
-    if (existingDataSnapshot) {
-      return Promise.resolve(existingDataSnapshot);
+    if (!eventType) {
+      throw new Error('eventType must be provided.');
+    } else if (typeof eventType !== 'string') {
+      throw new Error('eventType should be a string.');
     }
 
-    this._dataSnapshots[newDataSnapshot.eventType] = newDataSnapshot;
+    if (this._dataSnapshot) {
+      return Promise.resolve(this._dataSnapshot);
+    }
+
+    const newDataSnapshot = new DataSnapshot(() => this._getData());
+    this._dataSnapshot = newDataSnapshot;
+
     return Promise.resolve(newDataSnapshot);
   }
 
@@ -166,6 +181,12 @@ class Reference {
 
   async update(value) {
     this._setData(value);
+
+    return Promise.resolve(true);
+  }
+
+  async remove() {
+    this._setData(null);
 
     return Promise.resolve(true);
   }
