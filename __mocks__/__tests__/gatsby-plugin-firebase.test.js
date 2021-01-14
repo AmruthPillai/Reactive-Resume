@@ -280,5 +280,58 @@ describe('FirebaseStub', () => {
       expect(reference.orderByChildPath).toHaveLength(0);
       expect(reference.equalToValue).toHaveLength(0);
     });
+
+    it('triggers callback with resumes when creating new one', async () => {
+      const userUid = DatabaseConstants.user1.uid;
+
+      let snapshotValue = null;
+      const callback = jest.fn((snapshot) => {
+        snapshotValue = snapshot.val();
+      });
+
+      FirebaseStub.database()
+        .ref(DatabaseConstants.resumesPath)
+        .orderByChild('user')
+        .equalTo(userUid)
+        .on('value', callback);
+
+      await waitFor(() => callback.mock.calls[0][0]);
+
+      expect(callback.mock.calls).toHaveLength(1);
+      callback.mockClear();
+      expect(snapshotValue).not.toBeNull();
+      expect(Object.keys(snapshotValue)).toHaveLength(2);
+      Object.values(snapshotValue).forEach((resume) =>
+        expect(resume.user).toEqual(userUid),
+      );
+      snapshotValue = null;
+
+      const existingResume = (
+        await FirebaseStub.database()
+          .ref(
+            `${DatabaseConstants.resumesPath}/${DatabaseConstants.demoStateResume1Id}`,
+          )
+          .once('value')
+      ).val();
+      expect(existingResume).toBeTruthy();
+      expect(existingResume.user).toEqual(userUid);
+
+      const newResume = JSON.parse(JSON.stringify(existingResume));
+      newResume.id = 'newre1';
+      newResume.name = `Test Resume ${newResume.id}`;
+
+      await FirebaseStub.database()
+        .ref(`${DatabaseConstants.resumesPath}/${newResume.id}`)
+        .set(newResume);
+
+      await waitFor(() => callback.mock.calls[0][0]);
+
+      expect(callback.mock.calls).toHaveLength(1);
+      callback.mockClear();
+      expect(snapshotValue).not.toBeNull();
+      expect(Object.keys(snapshotValue)).toHaveLength(3);
+      expect(snapshotValue[newResume.id]).toBeTruthy();
+      expect(snapshotValue[newResume.id].id).toBe(newResume.id);
+    });
   });
 });

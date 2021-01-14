@@ -1,5 +1,7 @@
 import AuthConstants from './auth';
 
+const valueEventType = 'value';
+
 const resumesPath = 'resumes';
 const usersPath = 'users';
 const connectedPath = '/.info/connected';
@@ -18,6 +20,10 @@ const user2 = {
 };
 
 class Database {
+  static get valueEventType() {
+    return valueEventType;
+  }
+
   static get resumesPath() {
     return resumesPath;
   }

@@ -39,6 +39,37 @@ class Database {
     return this._uuid;
   }
 
+  getData(dataPath) {
+    if (!dataPath) {
+      throw new Error('dataPath must be provided.');
+    }
+
+    const dataPathElements = dataPath.split('/');
+    if (!(dataPathElements[0] in this._data)) {
+      return null;
+    }
+
+    if (dataPathElements.length === 1) {
+      return this._data[dataPathElements[0]];
+    }
+
+    if (dataPathElements.length === 2) {
+      if (!(dataPathElements[1] in this._data[dataPathElements[0]])) {
+        return null;
+      }
+
+      return this._data[dataPathElements[0]][dataPathElements[1]];
+    }
+
+    return null;
+  }
+
+  getReference(referencePath) {
+    return referencePath in this._references
+      ? this._references[referencePath]
+      : null;
+  }
+
   initializeData() {
     const resumes = {};
 
@@ -75,15 +106,45 @@ class Database {
   }
 
   ref(referencePath) {
-    const newRef = new Reference(referencePath, () => this._data);
-    const existingRef = this._references[newRef.path];
+    const existingRef = this.getReference(referencePath);
     if (existingRef) {
       existingRef.initializeQueryParameters();
       return existingRef;
     }
 
+    const newRef = new Reference(
+      referencePath,
+      (dataPath) => this.getData(dataPath),
+      (dataPath, value) => this.setData(dataPath, value),
+      (refPath) => this.getReference(refPath),
+    );
     this._references[newRef.path] = newRef;
     return newRef;
+  }
+
+  setData(dataPath, value) {
+    if (!dataPath) {
+      throw new Error('dataPath must be provided.');
+    }
+
+    if (typeof value === 'undefined') {
+      throw new Error('value is undefined.');
+    }
+
+    const dataPathElements = dataPath.split('/');
+    if (dataPathElements.length !== 2) {
+      return;
+    }
+
+    if (!(dataPathElements[0] in this._data)) {
+      return;
+    }
+
+    if (!dataPathElements[1]) {
+      return;
+    }
+
+    this._data[dataPathElements[0]][dataPathElements[1]] = value;
   }
 }
 

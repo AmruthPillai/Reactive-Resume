@@ -5,12 +5,10 @@ import { debounce } from 'lodash';
 import DatabaseConstants from '../constants/database';
 import DataSnapshot from './dataSnapshot';
 
-const rootPath = '.';
-
 class Reference {
-  constructor(path, getDatabaseData) {
-    if (typeof path === 'undefined' || path === null) {
-      this._path = rootPath;
+  constructor(path, getDatabaseData, setDatabaseData, getReference) {
+    if (!path) {
+      throw new Error('path must be provided.');
     } else if (typeof path !== 'string') {
       throw new Error('path should be a string.');
     } else {
@@ -29,6 +27,24 @@ class Reference {
 
     this._getDatabaseData = getDatabaseData;
 
+    if (!setDatabaseData) {
+      throw new Error('setDatabaseData must be provided.');
+    } else if (typeof getDatabaseData !== 'function') {
+      throw new Error('setDatabaseData should be a function.');
+    }
+
+    this._setDatabaseData = setDatabaseData;
+
+    if (!getReference) {
+      throw new Error('getReference must be provided.');
+    } else if (typeof getDatabaseData !== 'function') {
+      throw new Error('getReference should be a function.');
+    }
+
+    this._getReference = getReference;
+
+    this._eventCallbacks = {};
+
     this.initializeQueryParameters();
   }
 
@@ -40,6 +56,10 @@ class Reference {
     return this._uuid;
   }
 
+  get eventCallbacks() {
+    return this._eventCallbacks;
+  }
+
   get orderByChildPath() {
     return this._orderByChildPath;
   }
@@ -48,55 +68,42 @@ class Reference {
     return this._equalToValue;
   }
 
+  debounceEventCallback(eventType) {
+    if (!(eventType in this.eventCallbacks)) {
+      return;
+    }
+
+    let snapshot = new DataSnapshot(eventType, () => this.getData(), null);
+
+    if (this.path === DatabaseConstants.connectedPath) {
+      snapshot = new DataSnapshot(eventType, () => this.getData(), true);
+    } else if (this.path === DatabaseConstants.resumesPath) {
+      snapshot = new DataSnapshot(eventType, () => this.getData());
+    }
+
+    const debouncedEventCallback = debounce(
+      this.eventCallbacks[eventType],
+      100,
+    );
+    debouncedEventCallback(snapshot);
+  }
+
   getData() {
-    const databaseData = this._getDatabaseData();
+    const databaseData = this._getDatabaseData(this.path);
 
     if (!databaseData) {
       return null;
     }
 
-    if (this.path === rootPath) {
-      return databaseData;
-    }
-
-    let data = null;
-    if (
-      this.path === DatabaseConstants.resumesPath ||
-      this.path === DatabaseConstants.usersPath
-    ) {
-      data = this.path in databaseData ? databaseData[this.path] : null;
-
-      if (data && this.orderByChildPath && this.equalToValue) {
-        return Object.fromEntries(
-          Object.entries(data).filter(
-            ([, value]) => value[this.orderByChildPath] === this.equalToValue,
-          ),
-        );
-      }
-
-      return data;
-    }
-
-    if (
-      this.path.startsWith(`${DatabaseConstants.resumesPath}/`) ||
-      this.path.startsWith(`${DatabaseConstants.usersPath}/`)
-    ) {
-      const databaseLocationId = this.path.substring(
-        this.path.indexOf('/') + 1,
+    if (this.orderByChildPath && this.equalToValue) {
+      return Object.fromEntries(
+        Object.entries(databaseData).filter(
+          ([, value]) => value[this.orderByChildPath] === this.equalToValue,
+        ),
       );
-      if (!databaseLocationId) {
-        throw new Error('Unknown database location id.');
-      }
-
-      const pathWithoutId = this.path.substring(0, this.path.indexOf('/'));
-      if (pathWithoutId in databaseData) {
-        return databaseLocationId in databaseData[pathWithoutId]
-          ? databaseData[pathWithoutId][databaseLocationId]
-          : null;
-      }
     }
 
-    return null;
+    return databaseData;
   }
 
   initializeQueryParameters() {
@@ -109,20 +116,13 @@ class Reference {
   }
 
   on(eventType, callback) {
-    if (eventType !== 'value') {
+    if (eventType !== DatabaseConstants.valueEventType) {
       return;
     }
 
-    let snapshot = new DataSnapshot(eventType, () => this.getData(), null);
+    this._eventCallbacks[eventType] = callback;
 
-    if (this.path === DatabaseConstants.connectedPath) {
-      snapshot = new DataSnapshot(eventType, () => this.getData(), true);
-    } else if (this.path === DatabaseConstants.resumesPath) {
-      snapshot = new DataSnapshot(eventType, () => this.getData());
-    }
-
-    const debouncedCallback = debounce(callback, 100);
-    debouncedCallback(snapshot);
+    this.debounceEventCallback(eventType);
   }
 
   async once(eventType) {
@@ -160,8 +160,19 @@ class Reference {
       throw new Error('value must be provided.');
     }
 
-    const result = this !== null;
-    return Promise.resolve(result);
+    this._setDatabaseData(this.path, value);
+
+    this.debounceEventCallback(DatabaseConstants.valueEventType);
+
+    const pathElements = this.path.split('/');
+    if (pathElements.length === 2) {
+      const parentReference = this._getReference(pathElements[0]);
+      if (parentReference) {
+        parentReference.debounceEventCallback(DatabaseConstants.valueEventType);
+      }
+    }
+
+    return Promise.resolve(true);
   }
 }
 

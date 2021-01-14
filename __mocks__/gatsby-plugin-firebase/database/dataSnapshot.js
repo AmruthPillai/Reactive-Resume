@@ -1,4 +1,6 @@
 /* eslint-disable no-underscore-dangle */
+import DatabaseConstants from '../constants/database';
+
 class DataSnapshot {
   constructor(eventType, getData, value = undefined) {
     if (!eventType) {
@@ -29,7 +31,7 @@ class DataSnapshot {
   }
 
   val() {
-    if (this.eventType === 'value') {
+    if (this.eventType === DatabaseConstants.valueEventType) {
       return typeof this.value !== 'undefined' ? this.value : this._getData();
     }
 
