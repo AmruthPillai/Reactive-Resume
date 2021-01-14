@@ -29,8 +29,7 @@ class Reference {
 
     this._getDatabaseData = getDatabaseData;
 
-    this._orderByChildPath = '';
-    this._equalToValue = '';
+    this.initializeQueryParameters();
   }
 
   get path() {
@@ -39,6 +38,14 @@ class Reference {
 
   get uuid() {
     return this._uuid;
+  }
+
+  get orderByChildPath() {
+    return this._orderByChildPath;
+  }
+
+  get equalToValue() {
+    return this._equalToValue;
   }
 
   getData() {
@@ -59,10 +66,10 @@ class Reference {
     ) {
       data = this.path in databaseData ? databaseData[this.path] : null;
 
-      if (data && this._orderByChildPath && this._equalToValue) {
+      if (data && this.orderByChildPath && this.equalToValue) {
         return Object.fromEntries(
           Object.entries(data).filter(
-            ([, value]) => value[this._orderByChildPath] === this._equalToValue,
+            ([, value]) => value[this.orderByChildPath] === this.equalToValue,
           ),
         );
       }
@@ -90,6 +97,11 @@ class Reference {
     }
 
     return null;
+  }
+
+  initializeQueryParameters() {
+    this._orderByChildPath = '';
+    this._equalToValue = '';
   }
 
   off() {

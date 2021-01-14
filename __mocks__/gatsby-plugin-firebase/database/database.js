@@ -78,6 +78,7 @@ class Database {
     const newRef = new Reference(referencePath, () => this._data);
     const existingRef = this._references[newRef.path];
     if (existingRef) {
+      existingRef.initializeQueryParameters();
       return existingRef;
     }
 

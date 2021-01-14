@@ -255,5 +255,30 @@ describe('FirebaseStub', () => {
         expect(resume.user).toEqual(DatabaseConstants.user1.uid),
       );
     });
+
+    it('previously set query parameters are not kept when retrieving reference again', async () => {
+      let reference = null;
+
+      reference = FirebaseStub.database().ref(DatabaseConstants.resumesPath);
+      expect(reference).toBeTruthy();
+      const { uuid } = reference;
+      expect(reference.orderByChildPath).toHaveLength(0);
+      expect(reference.equalToValue).toHaveLength(0);
+
+      reference = FirebaseStub.database()
+        .ref(DatabaseConstants.resumesPath)
+        .orderByChild('user')
+        .equalTo('testuser1');
+      expect(reference).toBeTruthy();
+      expect(reference.uuid).toBe(uuid);
+      expect(reference.orderByChildPath).toBe('user');
+      expect(reference.equalToValue).toBe('testuser1');
+
+      reference = FirebaseStub.database().ref(DatabaseConstants.resumesPath);
+      expect(reference).toBeTruthy();
+      expect(reference.uuid).toBe(uuid);
+      expect(reference.orderByChildPath).toHaveLength(0);
+      expect(reference.equalToValue).toHaveLength(0);
+    });
   });
 });
