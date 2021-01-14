@@ -281,7 +281,7 @@ describe('FirebaseStub', () => {
       expect(reference.equalToValue).toHaveLength(0);
     });
 
-    it('triggers callback with resumes when creating new one', async () => {
+    it('triggers callback with resumes when creating a new one', async () => {
       const userUid = DatabaseConstants.user1.uid;
 
       let snapshotValue = null;
@@ -332,6 +332,57 @@ describe('FirebaseStub', () => {
       expect(Object.keys(snapshotValue)).toHaveLength(3);
       expect(snapshotValue[newResume.id]).toBeTruthy();
       expect(snapshotValue[newResume.id].id).toBe(newResume.id);
+    });
+
+    it('triggers callback with resumes when updating an existing one', async () => {
+      const userUid = DatabaseConstants.user1.uid;
+
+      let snapshotValue = null;
+      const callback = jest.fn((snapshot) => {
+        snapshotValue = snapshot.val();
+      });
+
+      FirebaseStub.database()
+        .ref(DatabaseConstants.resumesPath)
+        .orderByChild('user')
+        .equalTo(userUid)
+        .on('value', callback);
+
+      await waitFor(() => callback.mock.calls[0][0]);
+
+      expect(callback.mock.calls).toHaveLength(1);
+      callback.mockClear();
+      expect(snapshotValue).not.toBeNull();
+      expect(Object.keys(snapshotValue)).toHaveLength(2);
+      Object.values(snapshotValue).forEach((resume) =>
+        expect(resume.user).toEqual(userUid),
+      );
+      snapshotValue = null;
+
+      const existingResume = (
+        await FirebaseStub.database()
+          .ref(
+            `${DatabaseConstants.resumesPath}/${DatabaseConstants.demoStateResume1Id}`,
+          )
+          .once('value')
+      ).val();
+      expect(existingResume).toBeTruthy();
+      expect(existingResume.user).toEqual(userUid);
+
+      existingResume.name = 'Test Resume renamed';
+
+      await FirebaseStub.database()
+        .ref(`${DatabaseConstants.resumesPath}/${existingResume.id}`)
+        .update(existingResume);
+
+      await waitFor(() => callback.mock.calls[0][0]);
+
+      expect(callback.mock.calls).toHaveLength(1);
+      callback.mockClear();
+      expect(snapshotValue).not.toBeNull();
+      expect(Object.keys(snapshotValue)).toHaveLength(2);
+      expect(snapshotValue[existingResume.id]).toBeTruthy();
+      expect(snapshotValue[existingResume.id].name).toBe(existingResume.name);
     });
   });
 });

@@ -39,7 +39,7 @@ class Database {
     return this._uuid;
   }
 
-  getData(dataPath) {
+  _getData(dataPath) {
     if (!dataPath) {
       throw new Error('dataPath must be provided.');
     }
@@ -64,10 +64,39 @@ class Database {
     return null;
   }
 
-  getReference(referencePath) {
+  _getReference(referencePath) {
     return referencePath in this._references
       ? this._references[referencePath]
       : null;
+  }
+
+  _setData(dataPath, value) {
+    if (!dataPath) {
+      throw new Error('dataPath must be provided.');
+    }
+
+    if (typeof value === 'undefined') {
+      throw new Error('value is undefined.');
+    }
+
+    const dataPathElements = dataPath.split('/');
+    if (dataPathElements.length !== 2) {
+      return;
+    }
+
+    if (!(dataPathElements[0] in this._data)) {
+      return;
+    }
+
+    if (!dataPathElements[1]) {
+      return;
+    }
+
+    if (value === null) {
+      delete this._data[dataPathElements[0]][dataPathElements[1]];
+    } else {
+      this._data[dataPathElements[0]][dataPathElements[1]] = value;
+    }
   }
 
   initializeData() {
@@ -106,7 +135,7 @@ class Database {
   }
 
   ref(referencePath) {
-    const existingRef = this.getReference(referencePath);
+    const existingRef = this._getReference(referencePath);
     if (existingRef) {
       existingRef.initializeQueryParameters();
       return existingRef;
@@ -114,37 +143,12 @@ class Database {
 
     const newRef = new Reference(
       referencePath,
-      (dataPath) => this.getData(dataPath),
-      (dataPath, value) => this.setData(dataPath, value),
-      (refPath) => this.getReference(refPath),
+      (dataPath) => this._getData(dataPath),
+      (dataPath, value) => this._setData(dataPath, value),
+      (refPath) => this._getReference(refPath),
     );
     this._references[newRef.path] = newRef;
     return newRef;
-  }
-
-  setData(dataPath, value) {
-    if (!dataPath) {
-      throw new Error('dataPath must be provided.');
-    }
-
-    if (typeof value === 'undefined') {
-      throw new Error('value is undefined.');
-    }
-
-    const dataPathElements = dataPath.split('/');
-    if (dataPathElements.length !== 2) {
-      return;
-    }
-
-    if (!(dataPathElements[0] in this._data)) {
-      return;
-    }
-
-    if (!dataPathElements[1]) {
-      return;
-    }
-
-    this._data[dataPathElements[0]][dataPathElements[1]] = value;
   }
 }
 

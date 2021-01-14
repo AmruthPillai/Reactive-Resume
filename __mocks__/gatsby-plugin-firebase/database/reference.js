@@ -68,27 +68,7 @@ class Reference {
     return this._equalToValue;
   }
 
-  debounceEventCallback(eventType) {
-    if (!(eventType in this.eventCallbacks)) {
-      return;
-    }
-
-    let snapshot = new DataSnapshot(eventType, () => this.getData(), null);
-
-    if (this.path === DatabaseConstants.connectedPath) {
-      snapshot = new DataSnapshot(eventType, () => this.getData(), true);
-    } else if (this.path === DatabaseConstants.resumesPath) {
-      snapshot = new DataSnapshot(eventType, () => this.getData());
-    }
-
-    const debouncedEventCallback = debounce(
-      this.eventCallbacks[eventType],
-      100,
-    );
-    debouncedEventCallback(snapshot);
-  }
-
-  getData() {
+  _getData() {
     const databaseData = this._getDatabaseData(this.path);
 
     if (!databaseData) {
@@ -104,6 +84,49 @@ class Reference {
     }
 
     return databaseData;
+  }
+
+  _setData(value) {
+    if (typeof value === 'undefined') {
+      throw new Error('value must be provided.');
+    }
+
+    this._setDatabaseData(this.path, value);
+
+    this.debounceEventCallback(DatabaseConstants.valueEventType);
+
+    const pathElements = this.path.split('/');
+    if (pathElements.length === 2) {
+      const parentReference = this._getReference(pathElements[0]);
+      if (parentReference) {
+        parentReference.debounceEventCallback(DatabaseConstants.valueEventType);
+      }
+    }
+  }
+
+  debounceEventCallback(eventType) {
+    if (!(eventType in this.eventCallbacks)) {
+      return;
+    }
+
+    let snapshot = new DataSnapshot(eventType, () => this._getData(), null);
+
+    if (this.path === DatabaseConstants.connectedPath) {
+      snapshot = new DataSnapshot(eventType, () => this._getData(), true);
+    } else if (this.path === DatabaseConstants.resumesPath) {
+      snapshot = new DataSnapshot(eventType, () => this._getData());
+    }
+
+    const debouncedEventCallback = debounce(
+      this.eventCallbacks[eventType],
+      100,
+    );
+    debouncedEventCallback(snapshot);
+  }
+
+  equalTo(value) {
+    this._equalToValue = value;
+    return this;
   }
 
   initializeQueryParameters() {
@@ -126,7 +149,7 @@ class Reference {
   }
 
   async once(eventType) {
-    const newDataSnapshot = new DataSnapshot(eventType, () => this.getData());
+    const newDataSnapshot = new DataSnapshot(eventType, () => this._getData());
     const existingDataSnapshot = this._dataSnapshots[newDataSnapshot.eventType];
     if (existingDataSnapshot) {
       return Promise.resolve(existingDataSnapshot);
@@ -141,36 +164,14 @@ class Reference {
     return this;
   }
 
-  equalTo(value) {
-    this._equalToValue = value;
-    return this;
-  }
-
   async update(value) {
-    if (typeof value === 'undefined') {
-      throw new Error('value must be provided.');
-    }
+    this._setData(value);
 
-    const result = this !== null;
-    return Promise.resolve(result);
+    return Promise.resolve(true);
   }
 
   async set(value) {
-    if (typeof value === 'undefined') {
-      throw new Error('value must be provided.');
-    }
-
-    this._setDatabaseData(this.path, value);
-
-    this.debounceEventCallback(DatabaseConstants.valueEventType);
-
-    const pathElements = this.path.split('/');
-    if (pathElements.length === 2) {
-      const parentReference = this._getReference(pathElements[0]);
-      if (parentReference) {
-        parentReference.debounceEventCallback(DatabaseConstants.valueEventType);
-      }
-    }
+    this._setData(value);
 
     return Promise.resolve(true);
   }
