@@ -135,18 +135,19 @@ class Database {
   }
 
   ref(referencePath) {
-    const existingRef = this._getReference(referencePath);
-    if (existingRef) {
-      existingRef.initializeQueryParameters();
-      return existingRef;
-    }
-
     const newRef = new Reference(
       referencePath,
       (dataPath) => this._getData(dataPath),
       (dataPath, value) => this._setData(dataPath, value),
       (refPath) => this._getReference(refPath),
     );
+
+    const existingRef = this._getReference(newRef.path);
+    if (existingRef) {
+      existingRef.initializeQueryParameters();
+      return existingRef;
+    }
+
     this._references[newRef.path] = newRef;
     return newRef;
   }

@@ -5,15 +5,25 @@ import { debounce } from 'lodash';
 import DatabaseConstants from '../constants/database';
 import DataSnapshot from './dataSnapshot';
 
+const parsePath = (path) => {
+  if (!path) {
+    throw new Error('path must be provided.');
+  } else if (typeof path !== 'string') {
+    throw new Error('path should be a string.');
+  } else {
+    let parsedPath = path.trim();
+
+    if (parsedPath[0] === '/') {
+      parsedPath = parsedPath.substring(1);
+    }
+
+    return parsedPath;
+  }
+};
+
 class Reference {
   constructor(path, getDatabaseData, setDatabaseData, getReference) {
-    if (!path) {
-      throw new Error('path must be provided.');
-    } else if (typeof path !== 'string') {
-      throw new Error('path should be a string.');
-    } else {
-      this._path = path;
-    }
+    this._path = parsePath(path);
 
     this._uuid = uuidv4();
 

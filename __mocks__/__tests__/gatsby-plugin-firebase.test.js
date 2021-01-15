@@ -74,17 +74,31 @@ describe('FirebaseStub', () => {
       expect(database1.uuid).toEqual(database2.uuid);
     });
 
-    it('reuses existing Reference instance', () => {
-      const ref1 = FirebaseStub.database().ref(
-        `${DatabaseConstants.resumesPath}/123`,
-      );
-      const ref2 = FirebaseStub.database().ref(
-        `${DatabaseConstants.resumesPath}/123`,
-      );
+    describe('ref function', () => {
+      it('reuses existing Reference instance', () => {
+        const ref1 = FirebaseStub.database().ref(
+          `${DatabaseConstants.resumesPath}/123`,
+        );
+        const ref2 = FirebaseStub.database().ref(
+          `${DatabaseConstants.resumesPath}/123`,
+        );
 
-      expect(ref1.uuid).toBeTruthy();
-      expect(ref2.uuid).toBeTruthy();
-      expect(ref1.uuid).toEqual(ref2.uuid);
+        expect(ref1).toBeTruthy();
+        expect(ref2).toBeTruthy();
+        expect(ref1).toEqual(ref2);
+      });
+
+      it('leading slash in reference path is ignored', () => {
+        const path = `${DatabaseConstants.resumesPath}/123`;
+
+        const ref1 = FirebaseStub.database().ref(path);
+        expect(ref1).toBeTruthy();
+        expect(ref1.path).toEqual(path);
+
+        const ref2 = FirebaseStub.database().ref(`/${path}`);
+        expect(ref2).toBeTruthy();
+        expect(ref2).toEqual(ref1);
+      });
     });
 
     it('ServerValue.TIMESTAMP returns current time in milliseconds', () => {

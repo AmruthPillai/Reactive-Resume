@@ -5,7 +5,7 @@ const childRemovedEventType = 'child_removed';
 
 const resumesPath = 'resumes';
 const usersPath = 'users';
-const connectedPath = '/.info/connected';
+const connectedPath = '.info/connected';
 
 const demoStateResume1Id = 'demo_1';
 const demoStateResume2Id = 'demo_2';
