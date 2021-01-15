@@ -27,7 +27,11 @@ class Reference {
 
     this._uuid = uuidv4();
 
-    this._dataSnapshot = null;
+    if (this.path === DatabaseConstants.connectedPath) {
+      this._dataSnapshot = new DataSnapshot(() => {}, true);
+    } else {
+      this._dataSnapshot = new DataSnapshot(() => this._getData());
+    }
 
     if (!getDatabaseData) {
       throw new Error('getDatabaseData must be provided.');
@@ -96,46 +100,51 @@ class Reference {
     return databaseData;
   }
 
-  _setData(value) {
+  _getParent() {
+    const pathElements = this.path.split('/');
+
+    let parent = null;
+    if (pathElements.length === 2) {
+      parent = this._getReference(pathElements[0]);
+    }
+
+    return parent;
+  }
+
+  _handleDataUpdate(value) {
     if (typeof value === 'undefined') {
       throw new Error('value must be provided.');
     }
 
     const currentData = this._getData();
-
-    const pathElements = this.path.split('/');
-    let parentReference = null;
-    if (pathElements.length === 2) {
-      parentReference = this._getReference(pathElements[0]);
-    }
+    const parentReference = this._getParent();
 
     this._setDatabaseData(this.path, value);
 
     if (value === null) {
       if (parentReference) {
-        parentReference.debounceEventCallback(
+        parentReference.triggerEventCallback(
           DatabaseConstants.childRemovedEventType,
           currentData,
         );
-        parentReference.debounceEventCallback(DatabaseConstants.valueEventType);
       }
     } else {
-      const eventType = DatabaseConstants.valueEventType;
-      this.debounceEventCallback(eventType);
-      if (parentReference) {
-        parentReference.debounceEventCallback(eventType);
-      }
+      this.triggerEventCallback(DatabaseConstants.valueEventType);
+    }
+
+    if (parentReference) {
+      parentReference.triggerEventCallback(DatabaseConstants.valueEventType);
     }
   }
 
-  debounceEventCallback(eventType, snapshotValue = undefined) {
+  triggerEventCallback(eventType, snapshotValue = undefined) {
     if (!(eventType in this.eventCallbacks)) {
       return;
     }
 
     const snapshot =
       this.path === DatabaseConstants.connectedPath
-        ? new DataSnapshot(() => this._getData(), true)
+        ? this._dataSnapshot
         : new DataSnapshot(() => this._getData(), snapshotValue);
 
     const debouncedEventCallback = debounce(
@@ -163,7 +172,7 @@ class Reference {
     this.eventCallbacks[eventType] = callback;
 
     if (eventType === DatabaseConstants.valueEventType) {
-      this.debounceEventCallback(eventType);
+      this.triggerEventCallback(eventType);
     }
   }
 
@@ -174,14 +183,7 @@ class Reference {
       throw new Error('eventType should be a string.');
     }
 
-    if (this._dataSnapshot) {
-      return Promise.resolve(this._dataSnapshot);
-    }
-
-    const newDataSnapshot = new DataSnapshot(() => this._getData());
-    this._dataSnapshot = newDataSnapshot;
-
-    return Promise.resolve(newDataSnapshot);
+    return Promise.resolve(this._dataSnapshot);
   }
 
   orderByChild(path) {
@@ -190,19 +192,19 @@ class Reference {
   }
 
   async update(value) {
-    this._setData(value);
+    this._handleDataUpdate(value);
 
     return Promise.resolve(true);
   }
 
   async remove() {
-    this._setData(null);
+    this._handleDataUpdate(null);
 
     return Promise.resolve(true);
   }
 
   async set(value) {
-    this._setData(value);
+    this._handleDataUpdate(value);
 
     return Promise.resolve(true);
   }
