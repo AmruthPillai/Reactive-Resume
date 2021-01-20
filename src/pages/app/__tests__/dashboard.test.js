@@ -1,5 +1,10 @@
 import React from 'react';
-import { act, render, screen, waitFor } from '@testing-library/react';
+import {
+  act,
+  render,
+  screen,
+  waitForElementToBeRemoved,
+} from '@testing-library/react';
 
 import FirebaseStub, { DatabaseConstants } from 'gatsby-plugin-firebase';
 
@@ -16,8 +21,9 @@ import Dashboard from '../dashboard';
 describe('Dashboard', () => {
   let resumes = null;
   const user = DatabaseConstants.user1;
+  const loadingScreenTestId = 'loading-screen';
 
-  beforeEach(async () => {
+  async function setup(waitForLoadingScreenToDisappear) {
     FirebaseStub.database().initializeData();
 
     resumes = (
@@ -48,29 +54,51 @@ describe('Dashboard', () => {
       await FirebaseStub.auth().signInAnonymously();
     });
 
-    await waitFor(() => screen.getByText('Create Resume'));
+    if (waitForLoadingScreenToDisappear) {
+      await waitForElementToBeRemoved(() =>
+        screen.getByTestId(loadingScreenTestId),
+      );
+    }
+  }
+
+  describe('after loading', () => {
+    beforeEach(async () => {
+      await setup(true);
+    });
+
+    describe('renders', () => {
+      it('document title', () => {
+        expect(document.title).toEqual('Dashboard | Reactive Resume');
+      });
+
+      it('create resume', () => {
+        expect(screen.getByText(/create resume/i)).toBeInTheDocument();
+      });
+
+      it('preview of user resumes', () => {
+        expect(Object.keys(resumes)).toHaveLength(2);
+
+        expect(Object.values(resumes)[0].user).toEqual(user.uid);
+        expect(
+          screen.getByText(Object.values(resumes)[0].name),
+        ).toBeInTheDocument();
+        expect(Object.values(resumes)[1].user).toEqual(user.uid);
+        expect(
+          screen.getByText(Object.values(resumes)[1].name),
+        ).toBeInTheDocument();
+      });
+    });
   });
 
-  describe('renders', () => {
-    it('document title', async () => {
-      expect(document.title).toEqual('Dashboard | Reactive Resume');
+  describe('while loading', () => {
+    beforeEach(async () => {
+      await setup(false);
     });
 
-    it('create resume', async () => {
-      expect(screen.getByText('Create Resume')).toBeInTheDocument();
-    });
-
-    it('preview of user resumes', async () => {
-      expect(Object.keys(resumes)).toHaveLength(2);
-
-      expect(Object.values(resumes)[0].user).toEqual(user.uid);
-      expect(
-        screen.getByText(Object.values(resumes)[0].name),
-      ).toBeInTheDocument();
-      expect(Object.values(resumes)[1].user).toEqual(user.uid);
-      expect(
-        screen.getByText(Object.values(resumes)[1].name),
-      ).toBeInTheDocument();
+    describe('renders', () => {
+      it('loading screen', () => {
+        expect(screen.getByTestId(loadingScreenTestId)).toBeInTheDocument();
+      });
     });
   });
 });
