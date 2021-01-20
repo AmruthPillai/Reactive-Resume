@@ -76,5 +76,6 @@ module.exports = {
       href: to,
     }),
   ),
+  navigate: jest.fn(),
   useStaticQuery,
 };

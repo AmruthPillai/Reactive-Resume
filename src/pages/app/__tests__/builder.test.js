@@ -1,3 +1,4 @@
+import { navigate as mockNavigateFunction } from 'gatsby';
 import React from 'react';
 import {
   act,
@@ -23,18 +24,22 @@ import Builder from '../builder';
 describe('Builder', () => {
   let resumeId = null;
   let resume = null;
-  let mockUpdateFunction = null;
+  let mockDatabaseUpdateFunction = null;
 
-  beforeEach(async () => {
+  async function setup(
+    resumeIdParameter,
+    waitForDatabaseUpdateFunctionToHaveBeenCalled = true,
+  ) {
     FirebaseStub.database().initializeData();
 
-    resumeId = DatabaseConstants.demoStateResume1Id;
+    resumeId = resumeIdParameter;
     resume = (
       await FirebaseStub.database()
         .ref(`${DatabaseConstants.resumesPath}/${resumeId}`)
         .once('value')
     ).val();
-    mockUpdateFunction = jest.spyOn(
+
+    mockDatabaseUpdateFunction = jest.spyOn(
       FirebaseStub.database().ref(
         `${DatabaseConstants.resumesPath}/${resumeId}`,
       ),
@@ -48,7 +53,7 @@ describe('Builder', () => {
             <DatabaseProvider>
               <ResumeProvider>
                 <StorageProvider>
-                  <Builder id={resume.id} />
+                  <Builder id={resumeId} />
                 </StorageProvider>
               </ResumeProvider>
             </DatabaseProvider>
@@ -61,20 +66,40 @@ describe('Builder', () => {
       await FirebaseStub.auth().signInAnonymously();
     });
 
-    await waitFor(() => mockUpdateFunction.mock.calls[0][0], {
-      timeout: DebounceWaitTime,
+    if (waitForDatabaseUpdateFunctionToHaveBeenCalled) {
+      await waitFor(() => mockDatabaseUpdateFunction.mock.calls[0][0], {
+        timeout: DebounceWaitTime,
+      });
+      mockDatabaseUpdateFunction.mockClear();
+    }
+  }
+
+  describe('handles errors', () => {
+    describe('if resume does not exist', () => {
+      beforeEach(async () => {
+        await setup('xxxxxx', false);
+      });
+
+      it('navigates to Dashboard', () => {
+        expect(resume).toBeNull();
+        expect(mockNavigateFunction).toHaveBeenCalledTimes(1);
+        expect(mockNavigateFunction).toHaveBeenCalledWith('/app/dashboard');
+      });
     });
-    mockUpdateFunction.mockClear();
   });
 
   describe('renders', () => {
-    it('first and last name', async () => {
-      expect(
-        screen.getByLabelText(new RegExp('first name', 'i')),
-      ).toHaveDisplayValue(resume.profile.firstName);
-      expect(
-        screen.getByLabelText(new RegExp('last name', 'i')),
-      ).toHaveDisplayValue(resume.profile.lastName);
+    beforeEach(async () => {
+      await setup(DatabaseConstants.demoStateResume1Id);
+    });
+
+    it('first and last name', () => {
+      expect(screen.getByLabelText(/first name/i)).toHaveDisplayValue(
+        resume.profile.firstName,
+      );
+      expect(screen.getByLabelText(/last name/i)).toHaveDisplayValue(
+        resume.profile.lastName,
+      );
       expect(
         screen.getAllByText(new RegExp(resume.profile.firstName, 'i')).length,
       ).toBeTruthy();
@@ -84,9 +109,58 @@ describe('Builder', () => {
     });
   });
 
+  describe('settings', () => {
+    const languageStorageItemKey = 'language';
+
+    beforeEach(async () => {
+      await setup(DatabaseConstants.demoStateResume1Id);
+    });
+
+    it('allow to change the language', async () => {
+      const languageElement = screen.getByLabelText(/language/i);
+      const italianLanguageCode = 'it';
+      const now = new Date().getTime();
+
+      fireEvent.change(languageElement, {
+        target: { value: italianLanguageCode },
+      });
+
+      expect(languageElement).toHaveValue(italianLanguageCode);
+
+      expect(screen.queryByLabelText(/date of birth/i)).toBeNull();
+      expect(screen.getByLabelText(/data di nascita/i)).toBeInTheDocument();
+
+      const languageStorageItem = localStorage.getItem(languageStorageItemKey);
+      expect(languageStorageItem).toBe(italianLanguageCode);
+
+      await waitFor(() => mockDatabaseUpdateFunction.mock.calls[0][0], {
+        timeout: DebounceWaitTime,
+      });
+      expect(mockDatabaseUpdateFunction).toHaveBeenCalledTimes(1);
+      const mockDatabaseUpdateFunctionCallArgument =
+        mockDatabaseUpdateFunction.mock.calls[0][0];
+      expect(mockDatabaseUpdateFunctionCallArgument.id).toBe(resumeId);
+      expect(mockDatabaseUpdateFunctionCallArgument.metadata.language).toBe(
+        italianLanguageCode,
+      );
+      expect(
+        mockDatabaseUpdateFunctionCallArgument.updatedAt,
+      ).toBeGreaterThanOrEqual(now);
+    });
+
+    afterEach(() => {
+      const englishLanguageCode = 'en';
+      localStorage.setItem(languageStorageItemKey, englishLanguageCode);
+    });
+  });
+
   describe('updates data', () => {
+    beforeEach(async () => {
+      await setup(DatabaseConstants.demoStateResume1Id);
+    });
+
     it('when input value is changed', async () => {
-      const input = screen.getByLabelText(new RegExp('address line 1', 'i'));
+      const input = screen.getByLabelText(/address line 1/i);
       const newInputValue = 'test street 123';
       const now = new Date().getTime();
 
@@ -94,54 +168,19 @@ describe('Builder', () => {
 
       expect(input.value).toBe(newInputValue);
 
-      await waitFor(() => mockUpdateFunction.mock.calls[0][0], {
+      await waitFor(() => mockDatabaseUpdateFunction.mock.calls[0][0], {
         timeout: DebounceWaitTime,
       });
-      expect(mockUpdateFunction).toHaveBeenCalledTimes(1);
-      const mockUpdateFunctionCallArgument =
-        mockUpdateFunction.mock.calls[0][0];
-      expect(mockUpdateFunctionCallArgument.id).toBe(resume.id);
-      expect(mockUpdateFunctionCallArgument.profile.address.line1).toBe(
+      expect(mockDatabaseUpdateFunction).toHaveBeenCalledTimes(1);
+      const mockDatabaseUpdateFunctionCallArgument =
+        mockDatabaseUpdateFunction.mock.calls[0][0];
+      expect(mockDatabaseUpdateFunctionCallArgument.id).toBe(resumeId);
+      expect(mockDatabaseUpdateFunctionCallArgument.profile.address.line1).toBe(
         newInputValue,
       );
-      expect(mockUpdateFunctionCallArgument.updatedAt).toBeGreaterThanOrEqual(
-        now,
-      );
-    });
-  });
-
-  describe('settings', () => {
-    it('allow to change the language', async () => {
-      const languageSelectElement = screen.getByLabelText('Language');
-      const newLanguage = 'it';
-      const now = new Date().getTime();
-
-      fireEvent.change(languageSelectElement, {
-        target: { value: newLanguage },
-      });
-
-      expect(languageSelectElement).toHaveValue(newLanguage);
-
       expect(
-        screen.queryByLabelText(new RegExp('date of birth', 'i')),
-      ).toBeNull();
-      expect(
-        screen.getByLabelText(new RegExp('data di nascita', 'i')),
-      ).toBeInTheDocument();
-
-      await waitFor(() => mockUpdateFunction.mock.calls[0][0], {
-        timeout: DebounceWaitTime,
-      });
-      expect(mockUpdateFunction).toHaveBeenCalledTimes(1);
-      const mockUpdateFunctionCallArgument =
-        mockUpdateFunction.mock.calls[0][0];
-      expect(mockUpdateFunctionCallArgument.id).toBe(resume.id);
-      expect(mockUpdateFunctionCallArgument.metadata.language).toBe(
-        newLanguage,
-      );
-      expect(mockUpdateFunctionCallArgument.updatedAt).toBeGreaterThanOrEqual(
-        now,
-      );
+        mockDatabaseUpdateFunctionCallArgument.updatedAt,
+      ).toBeGreaterThanOrEqual(now);
     });
   });
 });
