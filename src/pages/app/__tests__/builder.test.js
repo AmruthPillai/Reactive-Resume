@@ -94,12 +94,12 @@ describe('Builder', () => {
     });
 
     it('first and last name', () => {
-      expect(screen.getByLabelText(/first name/i)).toHaveDisplayValue(
-        resume.profile.firstName,
-      );
-      expect(screen.getByLabelText(/last name/i)).toHaveDisplayValue(
-        resume.profile.lastName,
-      );
+      expect(
+        screen.getByRole('textbox', { name: /first name/i }),
+      ).toHaveDisplayValue(resume.profile.firstName);
+      expect(
+        screen.getByRole('textbox', { name: /last name/i }),
+      ).toHaveDisplayValue(resume.profile.lastName);
       expect(
         screen.getAllByText(new RegExp(resume.profile.firstName, 'i')).length,
       ).toBeTruthy();
@@ -127,16 +127,18 @@ describe('Builder', () => {
 
       expect(languageElement).toHaveValue(italianLanguageCode);
 
-      expect(screen.queryByLabelText(/date of birth/i)).toBeNull();
+      expect(screen.queryByLabelText(/date of birth/i)).not.toBeInTheDocument();
       expect(screen.getByLabelText(/data di nascita/i)).toBeInTheDocument();
 
       const languageStorageItem = localStorage.getItem(languageStorageItemKey);
       expect(languageStorageItem).toBe(italianLanguageCode);
 
-      await waitFor(() => mockDatabaseUpdateFunction.mock.calls[0][0], {
-        timeout: DebounceWaitTime,
-      });
-      expect(mockDatabaseUpdateFunction).toHaveBeenCalledTimes(1);
+      await waitFor(
+        () => expect(mockDatabaseUpdateFunction).toHaveBeenCalledTimes(1),
+        {
+          timeout: DebounceWaitTime,
+        },
+      );
       const mockDatabaseUpdateFunctionCallArgument =
         mockDatabaseUpdateFunction.mock.calls[0][0];
       expect(mockDatabaseUpdateFunctionCallArgument.id).toBe(resumeId);
@@ -160,7 +162,7 @@ describe('Builder', () => {
     });
 
     it('when input value is changed', async () => {
-      const input = screen.getByLabelText(/address line 1/i);
+      const input = screen.getByRole('textbox', { name: /address line 1/i });
       const newInputValue = 'test street 123';
       const now = new Date().getTime();
 
@@ -168,10 +170,12 @@ describe('Builder', () => {
 
       expect(input.value).toBe(newInputValue);
 
-      await waitFor(() => mockDatabaseUpdateFunction.mock.calls[0][0], {
-        timeout: DebounceWaitTime,
-      });
-      expect(mockDatabaseUpdateFunction).toHaveBeenCalledTimes(1);
+      await waitFor(
+        () => expect(mockDatabaseUpdateFunction).toHaveBeenCalledTimes(1),
+        {
+          timeout: DebounceWaitTime,
+        },
+      );
       const mockDatabaseUpdateFunctionCallArgument =
         mockDatabaseUpdateFunction.mock.calls[0][0];
       expect(mockDatabaseUpdateFunctionCallArgument.id).toBe(resumeId);
