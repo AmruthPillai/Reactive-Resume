@@ -44,34 +44,42 @@ module.exports = {
             {
               family: 'Lato',
               variants: ['400', '700'],
+              subsets: ['latin-ext'],
             },
             {
               family: 'Montserrat',
               variants: ['400', '500', '600', '700'],
+              subsets: ['latin-ext'],
             },
             {
               family: 'Nunito',
               variants: ['400', '600', '700'],
+              subsets: ['latin-ext'],
             },
             {
               family: 'Open Sans',
               variants: ['400', '600', '700'],
+              subsets: ['latin-ext'],
             },
             {
               family: 'Raleway',
               variants: ['400', '500', '700'],
+              subsets: ['latin-ext'],
             },
             {
               family: 'Rubik',
               variants: ['400', '500', '700'],
+              subsets: ['latin-ext'],
             },
             {
               family: 'Source Sans Pro',
               variants: ['400', '600', '700'],
+              subsets: ['latin-ext'],
             },
             {
               family: 'Titillium Web',
               variants: ['400', '600', '700'],
+              subsets: ['latin-ext'],
             },
           ],
         },
