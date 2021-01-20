@@ -20,6 +20,8 @@ const user2 = {
   isAnonymous: AuthConstants.anonymousUser2.isAnonymous,
 };
 
+const defaultDelayInMilliseconds = 100;
+
 class Database {
   static get valueEventType() {
     return valueEventType;
@@ -59,6 +61,10 @@ class Database {
 
   static get user2() {
     return user2;
+  }
+
+  static get defaultDelayInMilliseconds() {
+    return defaultDelayInMilliseconds;
   }
 }
 

@@ -149,7 +149,7 @@ class Reference {
 
     const debouncedEventCallback = debounce(
       this.eventCallbacks[eventType],
-      100,
+      DatabaseConstants.defaultDelayInMilliseconds,
     );
     debouncedEventCallback(snapshot);
   }
@@ -182,6 +182,10 @@ class Reference {
     } else if (typeof eventType !== 'string') {
       throw new Error('eventType should be a string.');
     }
+
+    await new Promise((resolve) =>
+      setTimeout(resolve, DatabaseConstants.defaultDelayInMilliseconds),
+    );
 
     return Promise.resolve(this._dataSnapshot);
   }

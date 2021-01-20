@@ -23,7 +23,7 @@ describe('Dashboard', () => {
   const user = DatabaseConstants.user1;
   const loadingScreenTestId = 'loading-screen';
 
-  async function setup(waitForLoadingScreenToDisappear) {
+  async function setup(waitForLoadingScreenToDisappear = true) {
     FirebaseStub.database().initializeData();
 
     resumes = (
@@ -61,32 +61,30 @@ describe('Dashboard', () => {
     }
   }
 
-  describe('after loading', () => {
+  describe('renders', () => {
     beforeEach(async () => {
-      await setup(true);
+      await setup();
     });
 
-    describe('renders', () => {
-      it('document title', () => {
-        expect(document.title).toEqual('Dashboard | Reactive Resume');
-      });
+    it('document title', () => {
+      expect(document.title).toEqual('Dashboard | Reactive Resume');
+    });
 
-      it('create resume', () => {
-        expect(screen.getByText(/create resume/i)).toBeInTheDocument();
-      });
+    it('create resume', () => {
+      expect(screen.getByText(/create resume/i)).toBeInTheDocument();
+    });
 
-      it('preview of user resumes', () => {
-        expect(Object.keys(resumes)).toHaveLength(2);
+    it('preview of user resumes', () => {
+      expect(Object.keys(resumes)).toHaveLength(2);
 
-        expect(Object.values(resumes)[0].user).toEqual(user.uid);
-        expect(
-          screen.getByText(Object.values(resumes)[0].name),
-        ).toBeInTheDocument();
-        expect(Object.values(resumes)[1].user).toEqual(user.uid);
-        expect(
-          screen.getByText(Object.values(resumes)[1].name),
-        ).toBeInTheDocument();
-      });
+      expect(Object.values(resumes)[0].user).toEqual(user.uid);
+      expect(
+        screen.getByText(Object.values(resumes)[0].name),
+      ).toBeInTheDocument();
+      expect(Object.values(resumes)[1].user).toEqual(user.uid);
+      expect(
+        screen.getByText(Object.values(resumes)[1].name),
+      ).toBeInTheDocument();
     });
   });
 
@@ -95,10 +93,8 @@ describe('Dashboard', () => {
       await setup(false);
     });
 
-    describe('renders', () => {
-      it('loading screen', () => {
-        expect(screen.getByTestId(loadingScreenTestId)).toBeInTheDocument();
-      });
+    it('renders loading screen', () => {
+      expect(screen.getByTestId(loadingScreenTestId)).toBeInTheDocument();
     });
   });
 });

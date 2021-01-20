@@ -6,6 +6,7 @@ import {
   render,
   screen,
   waitFor,
+  waitForElementToBeRemoved,
 } from '@testing-library/react';
 
 import FirebaseStub, { DatabaseConstants } from 'gatsby-plugin-firebase';
@@ -25,9 +26,11 @@ describe('Builder', () => {
   let resumeId = null;
   let resume = null;
   let mockDatabaseUpdateFunction = null;
+  const loadingScreenTestId = 'loading-screen';
 
   async function setup(
     resumeIdParameter,
+    waitForLoadingScreenToDisappear = true,
     waitForDatabaseUpdateFunctionToHaveBeenCalled = true,
   ) {
     FirebaseStub.database().initializeData();
@@ -66,6 +69,12 @@ describe('Builder', () => {
       await FirebaseStub.auth().signInAnonymously();
     });
 
+    if (waitForLoadingScreenToDisappear) {
+      await waitForElementToBeRemoved(() =>
+        screen.getByTestId(loadingScreenTestId),
+      );
+    }
+
     if (waitForDatabaseUpdateFunctionToHaveBeenCalled) {
       await waitFor(() => mockDatabaseUpdateFunction.mock.calls[0][0], {
         timeout: DebounceWaitTime,
@@ -77,12 +86,13 @@ describe('Builder', () => {
   describe('handles errors', () => {
     describe('if resume does not exist', () => {
       beforeEach(async () => {
-        await setup('xxxxxx', false);
+        await setup('xxxxxx', false, false);
       });
 
-      it('navigates to Dashboard', () => {
-        expect(resume).toBeNull();
-        expect(mockNavigateFunction).toHaveBeenCalledTimes(1);
+      it('navigates to Dashboard', async () => {
+        await waitFor(() =>
+          expect(mockNavigateFunction).toHaveBeenCalledTimes(1),
+        );
         expect(mockNavigateFunction).toHaveBeenCalledWith('/app/dashboard');
       });
     });
@@ -185,6 +195,16 @@ describe('Builder', () => {
       expect(
         mockDatabaseUpdateFunctionCallArgument.updatedAt,
       ).toBeGreaterThanOrEqual(now);
+    });
+  });
+
+  describe('while loading', () => {
+    beforeEach(async () => {
+      await setup(DatabaseConstants.demoStateResume1Id, false, false);
+    });
+
+    it('renders loading screen', () => {
+      expect(screen.getByTestId(loadingScreenTestId)).toBeInTheDocument();
     });
   });
 });
