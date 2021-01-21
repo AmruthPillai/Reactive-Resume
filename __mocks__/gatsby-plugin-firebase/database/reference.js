@@ -175,6 +175,8 @@ class Reference {
     if (eventType === DatabaseConstants.valueEventType) {
       this.triggerEventCallback(eventType);
     }
+
+    return callback;
   }
 
   async once(eventType) {
