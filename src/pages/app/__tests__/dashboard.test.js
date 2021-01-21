@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  act,
   render,
   screen,
   waitForElementToBeRemoved,
@@ -34,6 +33,8 @@ describe('Dashboard', () => {
         .once('value')
     ).val();
 
+    FirebaseStub.auth().signInAnonymously();
+
     render(
       <SettingsProvider>
         <ModalProvider>
@@ -49,10 +50,6 @@ describe('Dashboard', () => {
         </ModalProvider>
       </SettingsProvider>,
     );
-
-    await act(async () => {
-      await FirebaseStub.auth().signInAnonymously();
-    });
 
     if (waitForLoadingScreenToDisappear) {
       await waitForElementToBeRemoved(() =>

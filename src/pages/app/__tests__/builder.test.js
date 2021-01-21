@@ -1,7 +1,6 @@
 import { navigate as mockNavigateFunction } from 'gatsby';
 import React from 'react';
 import {
-  act,
   fireEvent,
   render,
   screen,
@@ -31,7 +30,7 @@ describe('Builder', () => {
   async function setup(
     resumeIdParameter,
     waitForLoadingScreenToDisappear = true,
-    waitForDatabaseUpdateFunctionToHaveBeenCalled = true,
+    waitForDatabaseUpdateFunctionToHaveCompleted = true,
   ) {
     FirebaseStub.database().initializeData();
 
@@ -49,6 +48,8 @@ describe('Builder', () => {
       'update',
     );
 
+    FirebaseStub.auth().signInAnonymously();
+
     render(
       <SettingsProvider>
         <ModalProvider>
@@ -65,20 +66,17 @@ describe('Builder', () => {
       </SettingsProvider>,
     );
 
-    await act(async () => {
-      await FirebaseStub.auth().signInAnonymously();
-    });
-
     if (waitForLoadingScreenToDisappear) {
       await waitForElementToBeRemoved(() =>
         screen.getByTestId(loadingScreenTestId),
       );
     }
 
-    if (waitForDatabaseUpdateFunctionToHaveBeenCalled) {
+    if (waitForDatabaseUpdateFunctionToHaveCompleted) {
       await waitFor(() => mockDatabaseUpdateFunction.mock.calls[0][0], {
         timeout: DebounceWaitTime,
       });
+      await waitFor(() => mockDatabaseUpdateFunction.mock.results[0].value);
       mockDatabaseUpdateFunction.mockClear();
     }
   }
@@ -158,6 +156,11 @@ describe('Builder', () => {
       expect(
         mockDatabaseUpdateFunctionCallArgument.updatedAt,
       ).toBeGreaterThanOrEqual(now);
+      await waitFor(() =>
+        expect(
+          mockDatabaseUpdateFunction.mock.results[0].value,
+        ).resolves.toBeUndefined(),
+      );
     });
 
     afterEach(() => {
@@ -195,6 +198,11 @@ describe('Builder', () => {
       expect(
         mockDatabaseUpdateFunctionCallArgument.updatedAt,
       ).toBeGreaterThanOrEqual(now);
+      await waitFor(() =>
+        expect(
+          mockDatabaseUpdateFunction.mock.results[0].value,
+        ).resolves.toBeUndefined(),
+      );
     });
   });
 

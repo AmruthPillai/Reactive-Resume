@@ -14,6 +14,8 @@ const anonymousUser2 = {
   uid: 'anonym456',
 };
 
+const defaultDelayInMilliseconds = 100;
+
 class Auth {
   static get anonymousUser1() {
     return anonymousUser1;
@@ -21,6 +23,10 @@ class Auth {
 
   static get anonymousUser2() {
     return anonymousUser2;
+  }
+
+  static get defaultDelayInMilliseconds() {
+    return defaultDelayInMilliseconds;
   }
 }
 

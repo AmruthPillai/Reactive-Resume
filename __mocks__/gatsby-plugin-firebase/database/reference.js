@@ -4,6 +4,7 @@ import { debounce } from 'lodash';
 
 import DatabaseConstants from '../constants/database';
 import DataSnapshot from './dataSnapshot';
+import delay from '../utils/index';
 
 const parsePath = (path) => {
   if (!path) {
@@ -183,9 +184,7 @@ class Reference {
       throw new Error('eventType should be a string.');
     }
 
-    await new Promise((resolve) =>
-      setTimeout(resolve, DatabaseConstants.defaultDelayInMilliseconds),
-    );
+    await delay(DatabaseConstants.defaultDelayInMilliseconds);
 
     return Promise.resolve(this._dataSnapshot);
   }
@@ -196,21 +195,27 @@ class Reference {
   }
 
   async update(value) {
+    await delay(DatabaseConstants.defaultDelayInMilliseconds);
+
     this._handleDataUpdate(value);
 
-    return Promise.resolve(true);
+    return Promise.resolve();
   }
 
   async remove() {
+    await delay(DatabaseConstants.defaultDelayInMilliseconds);
+
     this._handleDataUpdate(null);
 
-    return Promise.resolve(true);
+    return Promise.resolve();
   }
 
   async set(value) {
+    await delay(DatabaseConstants.defaultDelayInMilliseconds);
+
     this._handleDataUpdate(value);
 
-    return Promise.resolve(true);
+    return Promise.resolve();
   }
 }
 
