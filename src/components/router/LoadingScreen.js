@@ -4,7 +4,7 @@ import { getRandomTip } from '../../data/tips';
 import Logo from '../shared/Logo';
 
 const LoadingScreen = () => (
-  <Modal data-testid="loading-screen" open hideBackdrop>
+  <Modal open hideBackdrop>
     <Fade in>
       <div className="w-screen h-screen flex justify-center items-center outline-none">
         <div className="flex flex-col items-center">
