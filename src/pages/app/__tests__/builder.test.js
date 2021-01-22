@@ -10,7 +10,11 @@ import {
 
 import FirebaseStub, { DatabaseConstants } from 'gatsby-plugin-firebase';
 
-import { SettingsProvider } from '../../../contexts/SettingsContext';
+import { dataTestId as loadingScreenTestId } from '../../../components/router/LoadingScreen';
+import {
+  SettingsProvider,
+  languageStorageItemKey,
+} from '../../../contexts/SettingsContext';
 import { ModalProvider } from '../../../contexts/ModalContext';
 import { UserProvider } from '../../../contexts/UserContext';
 import {
@@ -25,7 +29,6 @@ describe('Builder', () => {
   let resumeId = null;
   let resume = null;
   let mockDatabaseUpdateFunction = null;
-  const loadingScreenTestId = 'loading-screen';
 
   async function setup(
     resumeIdParameter,
@@ -118,8 +121,6 @@ describe('Builder', () => {
   });
 
   describe('settings', () => {
-    const languageStorageItemKey = 'language';
-
     beforeEach(async () => {
       await setup(DatabaseConstants.demoStateResume1Id);
     });

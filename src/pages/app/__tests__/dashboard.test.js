@@ -9,6 +9,7 @@ import FirebaseStub, { DatabaseConstants } from 'gatsby-plugin-firebase';
 
 import '../../../i18n/index';
 import '../../../utils/dayjs';
+import { dataTestId as loadingScreenTestId } from '../../../components/router/LoadingScreen';
 import { SettingsProvider } from '../../../contexts/SettingsContext';
 import { ModalProvider } from '../../../contexts/ModalContext';
 import { UserProvider } from '../../../contexts/UserContext';
@@ -20,7 +21,6 @@ import Dashboard from '../dashboard';
 describe('Dashboard', () => {
   let resumes = null;
   const user = DatabaseConstants.user1;
-  const loadingScreenTestId = 'loading-screen';
 
   async function setup(waitForLoadingScreenToDisappear = true) {
     FirebaseStub.database().initializeData();
