@@ -20,6 +20,7 @@ import { UserProvider } from '../../../contexts/UserContext';
 import { DatabaseProvider } from '../../../contexts/DatabaseContext';
 import { ResumeProvider } from '../../../contexts/ResumeContext';
 import { StorageProvider } from '../../../contexts/StorageContext';
+import Wrapper from '../../../components/shared/Wrapper';
 import Dashboard from '../dashboard';
 
 describe('Dashboard', () => {
@@ -46,7 +47,9 @@ describe('Dashboard', () => {
             <DatabaseProvider>
               <ResumeProvider>
                 <StorageProvider>
-                  <Dashboard user={user} />
+                  <Wrapper>
+                    <Dashboard user={user} />
+                  </Wrapper>
                 </StorageProvider>
               </ResumeProvider>
             </DatabaseProvider>
@@ -67,25 +70,33 @@ describe('Dashboard', () => {
       await setup();
     });
 
-    it('document title', () => {
-      expect(document.title).toEqual('Dashboard | Reactive Resume');
+    it('document title', async () => {
+      await waitFor(() => {
+        expect(document.title).toEqual('Dashboard | Reactive Resume');
+      });
     });
 
-    it('create resume', () => {
-      expect(screen.getByText(/create resume/i)).toBeInTheDocument();
+    it('create resume', async () => {
+      await waitFor(() => {
+        expect(screen.getByText(/create resume/i)).toBeInTheDocument();
+      });
     });
 
-    it('preview of user resumes', () => {
+    it('preview of user resumes', async () => {
       expect(Object.keys(resumes)).toHaveLength(2);
 
       expect(Object.values(resumes)[0].user).toEqual(user.uid);
-      expect(
-        screen.getByText(Object.values(resumes)[0].name),
-      ).toBeInTheDocument();
+      await waitFor(() => {
+        expect(
+          screen.getByText(Object.values(resumes)[0].name),
+        ).toBeInTheDocument();
+      });
       expect(Object.values(resumes)[1].user).toEqual(user.uid);
-      expect(
-        screen.getByText(Object.values(resumes)[1].name),
-      ).toBeInTheDocument();
+      await waitFor(() => {
+        expect(
+          screen.getByText(Object.values(resumes)[1].name),
+        ).toBeInTheDocument();
+      });
     });
   });
 
@@ -94,6 +105,10 @@ describe('Dashboard', () => {
     let resumeToDelete = null;
     let undeletedResume = null;
     let resumeToDeleteId = null;
+
+    const waitForDatabaseRemoveFunctionToHaveCompleted = async () => {
+      await waitFor(() => mockDatabaseRemoveFunction.mock.results[0].value);
+    };
 
     beforeEach(async () => {
       await setup();
@@ -108,9 +123,13 @@ describe('Dashboard', () => {
         'remove',
       );
 
-      const resumeToDeleteMenuToggle = screen.getByTestId(
-        `${resumePreviewMenuToggleDataTestIdPrefix}${resumeToDeleteId}`,
-      );
+      let resumeToDeleteMenuToggle = null;
+      await waitFor(() => {
+        resumeToDeleteMenuToggle = screen.queryByTestId(
+          `${resumePreviewMenuToggleDataTestIdPrefix}${resumeToDeleteId}`,
+        );
+        return resumeToDeleteMenuToggle ? Promise.resolve() : Promise.reject();
+      });
       fireEvent.click(resumeToDeleteMenuToggle);
 
       const menuItems = screen.getAllByRole('menuitem');
@@ -124,10 +143,16 @@ describe('Dashboard', () => {
       fireEvent.click(deleteMenuItem);
     });
 
+    afterEach(async () => {
+      await waitForDatabaseRemoveFunctionToHaveCompleted();
+    });
+
     it('removes it from database and preview', async () => {
       await waitFor(() =>
         expect(mockDatabaseRemoveFunction).toHaveBeenCalledTimes(1),
       );
+
+      await waitForDatabaseRemoveFunctionToHaveCompleted();
 
       await waitFor(() =>
         expect(screen.queryByText(resumeToDelete.name)).toBeNull(),
@@ -135,15 +160,11 @@ describe('Dashboard', () => {
       expect(screen.getByText(undeletedResume.name)).toBeInTheDocument();
     });
 
-    /*
     it('displays notification', async () => {
-      await waitFor(() =>
-        expect(
-          screen.getByText(`${resumeToDelete.name} was deleted successfully`),
-        ).toBeInTheDocument(),
-      );
+      await waitFor(() => {
+        expect(screen.getByRole('alert')).toBeInTheDocument();
+      });
     });
-    */
 
     it('closes menu', () => {
       const menuItems = screen.queryAllByRole('menuitem');
@@ -154,6 +175,12 @@ describe('Dashboard', () => {
   describe('while loading', () => {
     beforeEach(async () => {
       await setup(false);
+    });
+
+    afterEach(async () => {
+      await waitForElementToBeRemoved(() =>
+        screen.getByTestId(loadingScreenTestId),
+      );
     });
 
     it('renders loading screen', () => {

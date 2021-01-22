@@ -1,6 +1,5 @@
 /* eslint-disable no-underscore-dangle */
 import { v4 as uuidv4 } from 'uuid';
-import { debounce } from 'lodash';
 
 import DatabaseConstants from '../constants/database';
 import DataSnapshot from './dataSnapshot';
@@ -148,11 +147,7 @@ class Reference {
         ? this._dataSnapshot
         : new DataSnapshot(() => this._getData(), snapshotValue);
 
-    const debouncedEventCallback = debounce(
-      this.eventCallbacks[eventType],
-      DatabaseConstants.defaultDelayInMilliseconds,
-    );
-    debouncedEventCallback(snapshot);
+    this.eventCallbacks[eventType](snapshot);
   }
 
   equalTo(value) {
@@ -173,7 +168,9 @@ class Reference {
     this.eventCallbacks[eventType] = callback;
 
     if (eventType === DatabaseConstants.valueEventType) {
-      this.triggerEventCallback(eventType);
+      setTimeout(() => {
+        this.triggerEventCallback(eventType);
+      }, DatabaseConstants.defaultDelayInMilliseconds);
     }
 
     return callback;

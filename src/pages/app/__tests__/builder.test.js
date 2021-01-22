@@ -23,6 +23,7 @@ import {
 } from '../../../contexts/DatabaseContext';
 import { ResumeProvider } from '../../../contexts/ResumeContext';
 import { StorageProvider } from '../../../contexts/StorageContext';
+import Wrapper from '../../../components/shared/Wrapper';
 import Builder from '../builder';
 
 describe('Builder', () => {
@@ -60,7 +61,9 @@ describe('Builder', () => {
             <DatabaseProvider>
               <ResumeProvider>
                 <StorageProvider>
-                  <Builder id={resumeId} />
+                  <Wrapper>
+                    <Builder id={resumeId} />
+                  </Wrapper>
                 </StorageProvider>
               </ResumeProvider>
             </DatabaseProvider>
@@ -210,6 +213,12 @@ describe('Builder', () => {
   describe('while loading', () => {
     beforeEach(async () => {
       await setup(DatabaseConstants.demoStateResume1Id, false, false);
+    });
+
+    afterEach(async () => {
+      await waitForElementToBeRemoved(() =>
+        screen.getByTestId(loadingScreenTestId),
+      );
     });
 
     it('renders loading screen', () => {
