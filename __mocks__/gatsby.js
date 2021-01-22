@@ -1,5 +1,7 @@
 import React from 'react';
 
+import delay from './utils/index';
+
 const Gatsby = jest.requireActual('gatsby');
 
 const fluidImageShapes = [
@@ -67,6 +69,14 @@ const useStaticQuery = () => ({
   },
 });
 
+const defaultDelayInMilliseconds = 100;
+
+const navigate = async () => {
+  await delay(defaultDelayInMilliseconds);
+
+  return Promise.resolve();
+};
+
 module.exports = {
   ...Gatsby,
   graphql: jest.fn(),
@@ -76,6 +86,6 @@ module.exports = {
       href: to,
     }),
   ),
-  navigate: jest.fn(),
+  navigate: jest.fn(navigate),
   useStaticQuery,
 };

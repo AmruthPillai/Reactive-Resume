@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import DatabaseConstants from '../constants/database';
 import DataSnapshot from './dataSnapshot';
-import delay from '../utils/index';
+import delay from '../../utils/index';
 
 const parsePath = (path) => {
   if (!path) {

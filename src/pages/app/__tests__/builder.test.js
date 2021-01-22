@@ -89,15 +89,27 @@ describe('Builder', () => {
 
   describe('handles errors', () => {
     describe('if resume does not exist', () => {
+      const waitForNavigateFunctionToHaveCompleted = async () => {
+        await waitFor(() => mockNavigateFunction.mock.results[0].value);
+      };
+
       beforeEach(async () => {
         await setup('xxxxxx', false, false);
       });
 
-      it('navigates to Dashboard', async () => {
+      afterEach(async () => {
+        await waitForNavigateFunctionToHaveCompleted();
+      });
+
+      it('navigates to Dashboard and displays notification', async () => {
         await waitFor(() =>
           expect(mockNavigateFunction).toHaveBeenCalledTimes(1),
         );
         expect(mockNavigateFunction).toHaveBeenCalledWith('/app/dashboard');
+
+        await waitFor(() => {
+          expect(screen.getByRole('alert')).toBeInTheDocument();
+        });
       });
     });
   });

@@ -2,7 +2,7 @@
 import { v4 as uuidv4 } from 'uuid';
 
 import Constants from '../constants/auth';
-import delay from '../utils/index';
+import delay from '../../utils/index';
 
 const singleton = Symbol('');
 const singletonEnforcer = Symbol('');
