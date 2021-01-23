@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   fireEvent,
+  getByText,
   queryByText,
   render,
   screen,
@@ -160,9 +161,13 @@ describe('Dashboard', () => {
     });
 
     it('displays notification', async () => {
-      await waitFor(() => {
-        expect(screen.getByRole('alert')).toBeInTheDocument();
-      });
+      const notification = await screen.findByRole('alert');
+      expect(
+        getByText(
+          notification,
+          new RegExp(`${resumeToDelete.name} was deleted successfully`, 'i'),
+        ),
+      ).toBeInTheDocument();
 
       await waitForDatabaseRemoveToHaveCompleted();
     });

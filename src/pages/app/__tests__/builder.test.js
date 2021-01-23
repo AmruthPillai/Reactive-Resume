@@ -2,6 +2,7 @@ import { navigate as mockNavigateFunction } from 'gatsby';
 import React from 'react';
 import {
   fireEvent,
+  getByText,
   render,
   screen,
   waitFor,
@@ -117,9 +118,13 @@ describe('Builder', () => {
         );
         expect(mockNavigateFunction).toHaveBeenCalledWith('/app/dashboard');
 
-        await waitFor(() => {
-          expect(screen.getByRole('alert')).toBeInTheDocument();
-        });
+        const notification = await screen.findByRole('alert');
+        expect(
+          getByText(
+            notification,
+            /The resume you were looking for does not exist anymore/i,
+          ),
+        ).toBeInTheDocument();
 
         await waitFor(() =>
           expect(
