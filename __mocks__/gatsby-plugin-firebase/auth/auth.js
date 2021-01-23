@@ -33,10 +33,6 @@ class Auth {
     return this._onAuthStateChangedObservers;
   }
 
-  dispose() {
-    this._onAuthStateChangedObservers = [];
-  }
-
   onAuthStateChanged(observer) {
     this.onAuthStateChangedObservers.push(observer);
 

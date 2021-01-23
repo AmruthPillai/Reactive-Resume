@@ -24,13 +24,23 @@ import Wrapper from '../../../components/shared/Wrapper';
 import Dashboard from '../dashboard';
 
 describe('Dashboard', () => {
-  let resumes = null;
+  let userResumes = null;
   const user = DatabaseConstants.user1;
+
+  const waitForResumeToBeRenderedInPreview = async (resume) => {
+    await screen.findByText(resume.name);
+  };
+
+  const expectResumeToBeRenderedInPreview = async (resume) => {
+    await waitFor(() => {
+      expect(screen.getByText(resume.name)).toBeInTheDocument();
+    });
+  };
 
   async function setup(waitForLoadingScreenToDisappear = true) {
     FirebaseStub.database().initializeData();
 
-    resumes = (
+    userResumes = (
       await FirebaseStub.database()
         .ref(DatabaseConstants.resumesPath)
         .orderByChild('user')
@@ -83,20 +93,10 @@ describe('Dashboard', () => {
     });
 
     it('preview of user resumes', async () => {
-      expect(Object.keys(resumes)).toHaveLength(2);
+      expect(Object.keys(userResumes)).toHaveLength(2);
 
-      expect(Object.values(resumes)[0].user).toEqual(user.uid);
-      await waitFor(() => {
-        expect(
-          screen.getByText(Object.values(resumes)[0].name),
-        ).toBeInTheDocument();
-      });
-      expect(Object.values(resumes)[1].user).toEqual(user.uid);
-      await waitFor(() => {
-        expect(
-          screen.getByText(Object.values(resumes)[1].name),
-        ).toBeInTheDocument();
-      });
+      await expectResumeToBeRenderedInPreview(Object.values(userResumes)[0]);
+      await expectResumeToBeRenderedInPreview(Object.values(userResumes)[1]);
     });
   });
 
@@ -106,14 +106,25 @@ describe('Dashboard', () => {
     let undeletedResume = null;
     let resumeToDeleteId = null;
 
-    const waitForDatabaseRemoveFunctionToHaveCompleted = async () => {
+    const waitForDatabaseRemoveToHaveCompleted = async () => {
       await waitFor(() => mockDatabaseRemoveFunction.mock.results[0].value);
+    };
+
+    const expectDatabaseRemoveToHaveCompleted = async () => {
+      await waitFor(() =>
+        expect(mockDatabaseRemoveFunction).toHaveBeenCalledTimes(1),
+      );
+      await waitFor(() =>
+        expect(
+          mockDatabaseRemoveFunction.mock.results[0].value,
+        ).resolves.toBeUndefined(),
+      );
     };
 
     beforeEach(async () => {
       await setup();
 
-      [resumeToDelete, undeletedResume] = Object.values(resumes);
+      [resumeToDelete, undeletedResume] = Object.values(userResumes);
       resumeToDeleteId = resumeToDelete.id;
 
       mockDatabaseRemoveFunction = jest.spyOn(
@@ -123,13 +134,9 @@ describe('Dashboard', () => {
         'remove',
       );
 
-      let resumeToDeleteMenuToggle = null;
-      await waitFor(() => {
-        resumeToDeleteMenuToggle = screen.queryByTestId(
-          `${resumePreviewMenuToggleDataTestIdPrefix}${resumeToDeleteId}`,
-        );
-        return resumeToDeleteMenuToggle ? Promise.resolve() : Promise.reject();
-      });
+      const resumeToDeleteMenuToggle = await screen.findByTestId(
+        `${resumePreviewMenuToggleDataTestIdPrefix}${resumeToDeleteId}`,
+      );
       fireEvent.click(resumeToDeleteMenuToggle);
 
       const menuItems = screen.getAllByRole('menuitem');
@@ -143,32 +150,28 @@ describe('Dashboard', () => {
       fireEvent.click(deleteMenuItem);
     });
 
-    afterEach(async () => {
-      await waitForDatabaseRemoveFunctionToHaveCompleted();
-    });
-
     it('removes it from database and preview', async () => {
-      await waitFor(() =>
-        expect(mockDatabaseRemoveFunction).toHaveBeenCalledTimes(1),
-      );
-
-      await waitForDatabaseRemoveFunctionToHaveCompleted();
+      await expectDatabaseRemoveToHaveCompleted();
 
       await waitFor(() =>
         expect(screen.queryByText(resumeToDelete.name)).toBeNull(),
       );
-      expect(screen.getByText(undeletedResume.name)).toBeInTheDocument();
+      await expectResumeToBeRenderedInPreview(undeletedResume);
     });
 
     it('displays notification', async () => {
       await waitFor(() => {
         expect(screen.getByRole('alert')).toBeInTheDocument();
       });
+
+      await waitForDatabaseRemoveToHaveCompleted();
     });
 
-    it('closes menu', () => {
+    it('closes menu', async () => {
       const menuItems = screen.queryAllByRole('menuitem');
       expect(menuItems).toHaveLength(0);
+
+      await waitForDatabaseRemoveToHaveCompleted();
     });
   });
 
@@ -177,14 +180,15 @@ describe('Dashboard', () => {
       await setup(false);
     });
 
-    afterEach(async () => {
+    it('renders loading screen', async () => {
+      expect(screen.getByTestId(loadingScreenTestId)).toBeInTheDocument();
+
       await waitForElementToBeRemoved(() =>
         screen.getByTestId(loadingScreenTestId),
       );
-    });
 
-    it('renders loading screen', () => {
-      expect(screen.getByTestId(loadingScreenTestId)).toBeInTheDocument();
+      await waitForResumeToBeRenderedInPreview(Object.values(userResumes)[0]);
+      await waitForResumeToBeRenderedInPreview(Object.values(userResumes)[1]);
     });
   });
 });

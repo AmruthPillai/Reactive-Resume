@@ -31,10 +31,31 @@ describe('Builder', () => {
   let resume = null;
   let mockDatabaseUpdateFunction = null;
 
+  const fnWaitForDatabaseUpdateToHaveCompleted = async () => {
+    await waitFor(() => mockDatabaseUpdateFunction.mock.calls[0][0], {
+      timeout: DebounceWaitTime,
+    });
+    await waitFor(() => mockDatabaseUpdateFunction.mock.results[0].value);
+  };
+
+  const expectDatabaseUpdateToHaveCompleted = async () => {
+    await waitFor(
+      () => expect(mockDatabaseUpdateFunction).toHaveBeenCalledTimes(1),
+      {
+        timeout: DebounceWaitTime,
+      },
+    );
+    await waitFor(() =>
+      expect(
+        mockDatabaseUpdateFunction.mock.results[0].value,
+      ).resolves.toBeUndefined(),
+    );
+  };
+
   async function setup(
     resumeIdParameter,
     waitForLoadingScreenToDisappear = true,
-    waitForDatabaseUpdateFunctionToHaveCompleted = true,
+    waitForDatabaseUpdateToHaveCompleted = true,
   ) {
     FirebaseStub.database().initializeData();
 
@@ -78,27 +99,16 @@ describe('Builder', () => {
       );
     }
 
-    if (waitForDatabaseUpdateFunctionToHaveCompleted) {
-      await waitFor(() => mockDatabaseUpdateFunction.mock.calls[0][0], {
-        timeout: DebounceWaitTime,
-      });
-      await waitFor(() => mockDatabaseUpdateFunction.mock.results[0].value);
+    if (waitForDatabaseUpdateToHaveCompleted) {
+      await fnWaitForDatabaseUpdateToHaveCompleted();
       mockDatabaseUpdateFunction.mockClear();
     }
   }
 
   describe('handles errors', () => {
     describe('if resume does not exist', () => {
-      const waitForNavigateFunctionToHaveCompleted = async () => {
-        await waitFor(() => mockNavigateFunction.mock.results[0].value);
-      };
-
       beforeEach(async () => {
         await setup('xxxxxx', false, false);
-      });
-
-      afterEach(async () => {
-        await waitForNavigateFunctionToHaveCompleted();
       });
 
       it('navigates to Dashboard and displays notification', async () => {
@@ -110,6 +120,12 @@ describe('Builder', () => {
         await waitFor(() => {
           expect(screen.getByRole('alert')).toBeInTheDocument();
         });
+
+        await waitFor(() =>
+          expect(
+            mockNavigateFunction.mock.results[0].value,
+          ).resolves.toBeUndefined(),
+        );
       });
     });
   });
@@ -157,12 +173,7 @@ describe('Builder', () => {
       const languageStorageItem = localStorage.getItem(languageStorageItemKey);
       expect(languageStorageItem).toBe(italianLanguageCode);
 
-      await waitFor(
-        () => expect(mockDatabaseUpdateFunction).toHaveBeenCalledTimes(1),
-        {
-          timeout: DebounceWaitTime,
-        },
-      );
+      await expectDatabaseUpdateToHaveCompleted();
       const mockDatabaseUpdateFunctionCallArgument =
         mockDatabaseUpdateFunction.mock.calls[0][0];
       expect(mockDatabaseUpdateFunctionCallArgument.id).toBe(resumeId);
@@ -172,11 +183,6 @@ describe('Builder', () => {
       expect(
         mockDatabaseUpdateFunctionCallArgument.updatedAt,
       ).toBeGreaterThanOrEqual(now);
-      await waitFor(() =>
-        expect(
-          mockDatabaseUpdateFunction.mock.results[0].value,
-        ).resolves.toBeUndefined(),
-      );
     });
 
     afterEach(() => {
@@ -199,12 +205,7 @@ describe('Builder', () => {
 
       expect(input.value).toBe(newInputValue);
 
-      await waitFor(
-        () => expect(mockDatabaseUpdateFunction).toHaveBeenCalledTimes(1),
-        {
-          timeout: DebounceWaitTime,
-        },
-      );
+      await expectDatabaseUpdateToHaveCompleted();
       const mockDatabaseUpdateFunctionCallArgument =
         mockDatabaseUpdateFunction.mock.calls[0][0];
       expect(mockDatabaseUpdateFunctionCallArgument.id).toBe(resumeId);
@@ -214,11 +215,6 @@ describe('Builder', () => {
       expect(
         mockDatabaseUpdateFunctionCallArgument.updatedAt,
       ).toBeGreaterThanOrEqual(now);
-      await waitFor(() =>
-        expect(
-          mockDatabaseUpdateFunction.mock.results[0].value,
-        ).resolves.toBeUndefined(),
-      );
     });
   });
 
@@ -227,14 +223,14 @@ describe('Builder', () => {
       await setup(DatabaseConstants.demoStateResume1Id, false, false);
     });
 
-    afterEach(async () => {
+    it('renders loading screen', async () => {
+      expect(screen.getByTestId(loadingScreenTestId)).toBeInTheDocument();
+
       await waitForElementToBeRemoved(() =>
         screen.getByTestId(loadingScreenTestId),
       );
-    });
 
-    it('renders loading screen', () => {
-      expect(screen.getByTestId(loadingScreenTestId)).toBeInTheDocument();
+      await fnWaitForDatabaseUpdateToHaveCompleted();
     });
   });
 });
