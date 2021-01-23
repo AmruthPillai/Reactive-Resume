@@ -5,15 +5,16 @@
   "version": "2.0.0",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
-    "prebuild": "npm run test",
     "build": "gatsby build",
+    "clean": "gatsby clean",
+    "deploy": "firebase deploy",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
+    "lint:fix": "eslint --fix .",
+    "lint": "eslint .",
+    "prebuild": "npm run test",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
+    "start": "npm run develop",
     "test": "jest"
   },
   "dependencies": {
