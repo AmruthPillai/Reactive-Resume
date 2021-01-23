@@ -125,6 +125,7 @@ describe('Builder', () => {
             /The resume you were looking for does not exist anymore/i,
           ),
         ).toBeInTheDocument();
+        fireEvent.click(notification);
 
         await waitFor(() =>
           expect(
@@ -236,6 +237,23 @@ describe('Builder', () => {
       );
 
       await fnWaitForDatabaseUpdateToHaveCompleted();
+    });
+  });
+
+  describe('with resume in initial state', () => {
+    beforeEach(async () => {
+      await setup(DatabaseConstants.initialStateResumeId, false, false);
+    });
+
+    it('displays load demo data notification', async () => {
+      const notification = await screen.findByRole('alert');
+      expect(
+        getByText(
+          notification,
+          /Not sure where to begin\? Try loading demo data/i,
+        ),
+      ).toBeInTheDocument();
+      fireEvent.click(notification);
     });
   });
 });

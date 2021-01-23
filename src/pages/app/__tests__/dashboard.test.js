@@ -168,6 +168,7 @@ describe('Dashboard', () => {
           new RegExp(`${resumeToDelete.name} was deleted successfully`, 'i'),
         ),
       ).toBeInTheDocument();
+      fireEvent.click(notification);
 
       await waitForDatabaseRemoveToHaveCompleted();
     });
