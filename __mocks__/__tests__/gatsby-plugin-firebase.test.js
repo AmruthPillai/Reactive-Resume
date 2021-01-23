@@ -6,10 +6,6 @@ import FirebaseStub, {
 
 describe('FirebaseStub', () => {
   describe('auth', () => {
-    afterEach(() => {
-      FirebaseStub.auth().dispose();
-    });
-
     it('reuses existing Auth instance', () => {
       const auth1 = FirebaseStub.auth();
       const auth2 = FirebaseStub.auth();
@@ -49,14 +45,15 @@ describe('FirebaseStub', () => {
       const observer = () => {};
       const unsubscribe = FirebaseStub.auth().onAuthStateChanged(observer);
       expect(unsubscribe).toBeTruthy();
-      expect(FirebaseStub.auth().onAuthStateChangedObservers).toHaveLength(1);
-      expect(FirebaseStub.auth().onAuthStateChangedObservers[0]).toEqual(
-        observer,
-      );
+      expect(
+        FirebaseStub.auth().onAuthStateChangedObservers.indexOf(observer),
+      ).toBeGreaterThanOrEqual(0);
 
       unsubscribe();
 
-      expect(FirebaseStub.auth().onAuthStateChangedObservers).toHaveLength(0);
+      expect(
+        FirebaseStub.auth().onAuthStateChangedObservers.indexOf(observer),
+      ).not.toBeGreaterThanOrEqual(0);
     });
   });
 
@@ -258,7 +255,7 @@ describe('FirebaseStub', () => {
       );
     });
 
-    it('previously set query parameters are not kept when retrieving reference again', async () => {
+    it('previously set query parameters are not kept when retrieving reference again', () => {
       let reference = null;
 
       reference = FirebaseStub.database().ref(DatabaseConstants.resumesPath);

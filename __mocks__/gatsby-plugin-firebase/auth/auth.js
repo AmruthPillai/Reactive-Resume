@@ -2,6 +2,7 @@
 import { v4 as uuidv4 } from 'uuid';
 
 import Constants from '../constants/auth';
+import delay from '../../utils/index';
 
 const singleton = Symbol('');
 const singletonEnforcer = Symbol('');
@@ -32,10 +33,6 @@ class Auth {
     return this._onAuthStateChangedObservers;
   }
 
-  dispose() {
-    this._onAuthStateChangedObservers = [];
-  }
-
   onAuthStateChanged(observer) {
     this.onAuthStateChangedObservers.push(observer);
 
@@ -48,6 +45,8 @@ class Auth {
 
   async signInAnonymously() {
     const user = Constants.anonymousUser1;
+
+    await delay(Constants.defaultDelayInMilliseconds);
 
     this.onAuthStateChangedObservers.forEach((observer) => observer(user));
 

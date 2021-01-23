@@ -2,6 +2,8 @@ import i18next from 'i18next';
 import React, { createContext, memo, useEffect, useState } from 'react';
 import themeConfig from '../data/themeConfig';
 
+const languageStorageItemKey = 'language';
+
 const defaultState = {
   theme: 'Dark',
   setTheme: () => {},
@@ -18,7 +20,7 @@ const SettingsProvider = ({ children }) => {
   useEffect(() => {
     const prefTheme = localStorage.getItem('theme') || defaultState.theme;
     const prefLanguage =
-      localStorage.getItem('language') || defaultState.language;
+      localStorage.getItem(languageStorageItemKey) || defaultState.language;
     setTheme(prefTheme);
     setLanguage(prefLanguage);
   }, []);
@@ -32,7 +34,7 @@ const SettingsProvider = ({ children }) => {
   }, [theme]);
 
   useEffect(() => {
-    localStorage.setItem('language', language);
+    localStorage.setItem(languageStorageItemKey, language);
     i18next.changeLanguage(language);
   }, [language]);
 
@@ -54,4 +56,4 @@ export default SettingsContext;
 
 const memoizedProvider = memo(SettingsProvider);
 
-export { memoizedProvider as SettingsProvider };
+export { memoizedProvider as SettingsProvider, languageStorageItemKey };

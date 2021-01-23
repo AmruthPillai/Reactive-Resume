@@ -3,8 +3,10 @@ import React, { memo } from 'react';
 import { getRandomTip } from '../../data/tips';
 import Logo from '../shared/Logo';
 
+const dataTestId = 'loading-screen';
+
 const LoadingScreen = () => (
-  <Modal open hideBackdrop>
+  <Modal data-testid={dataTestId} open hideBackdrop>
     <Fade in>
       <div className="w-screen h-screen flex justify-center items-center outline-none">
         <div className="flex flex-col items-center">
@@ -17,3 +19,4 @@ const LoadingScreen = () => (
 );
 
 export default memo(LoadingScreen);
+export { dataTestId };

@@ -1,9 +1,9 @@
 /* eslint-disable no-underscore-dangle */
 import { v4 as uuidv4 } from 'uuid';
-import { debounce } from 'lodash';
 
 import DatabaseConstants from '../constants/database';
 import DataSnapshot from './dataSnapshot';
+import delay from '../../utils/index';
 
 const parsePath = (path) => {
   if (!path) {
@@ -147,11 +147,7 @@ class Reference {
         ? this._dataSnapshot
         : new DataSnapshot(() => this._getData(), snapshotValue);
 
-    const debouncedEventCallback = debounce(
-      this.eventCallbacks[eventType],
-      100,
-    );
-    debouncedEventCallback(snapshot);
+    this.eventCallbacks[eventType](snapshot);
   }
 
   equalTo(value) {
@@ -172,8 +168,12 @@ class Reference {
     this.eventCallbacks[eventType] = callback;
 
     if (eventType === DatabaseConstants.valueEventType) {
-      this.triggerEventCallback(eventType);
+      setTimeout(() => {
+        this.triggerEventCallback(eventType);
+      }, DatabaseConstants.defaultDelayInMilliseconds);
     }
+
+    return callback;
   }
 
   async once(eventType) {
@@ -182,6 +182,8 @@ class Reference {
     } else if (typeof eventType !== 'string') {
       throw new Error('eventType should be a string.');
     }
+
+    await delay(DatabaseConstants.defaultDelayInMilliseconds);
 
     return Promise.resolve(this._dataSnapshot);
   }
@@ -192,21 +194,27 @@ class Reference {
   }
 
   async update(value) {
+    await delay(DatabaseConstants.defaultDelayInMilliseconds);
+
     this._handleDataUpdate(value);
 
-    return Promise.resolve(true);
+    return Promise.resolve();
   }
 
   async remove() {
+    await delay(DatabaseConstants.defaultDelayInMilliseconds);
+
     this._handleDataUpdate(null);
 
-    return Promise.resolve(true);
+    return Promise.resolve();
   }
 
   async set(value) {
+    await delay(DatabaseConstants.defaultDelayInMilliseconds);
+
     this._handleDataUpdate(value);
 
-    return Promise.resolve(true);
+    return Promise.resolve();
   }
 }
 

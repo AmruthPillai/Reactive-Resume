@@ -9,6 +9,8 @@ import DatabaseContext from '../../contexts/DatabaseContext';
 import ModalContext from '../../contexts/ModalContext';
 import styles from './ResumePreview.module.css';
 
+const menuToggleDataTestIdPrefix = 'resume-preview-menu-toggle-';
+
 const ResumePreview = ({ resume }) => {
   const { t, i18n } = useTranslation();
   const [anchorEl, setAnchorEl] = useState(null);
@@ -54,6 +56,7 @@ const ResumePreview = ({ resume }) => {
           onClick={handleOpen}
         />
         <MdMoreHoriz
+          data-testid={`${menuToggleDataTestIdPrefix}${resume.id}`}
           color="#fff"
           size="48"
           className="cursor-pointer"
@@ -96,3 +99,5 @@ const ResumePreview = ({ resume }) => {
 };
 
 export default ResumePreview;
+
+export { menuToggleDataTestIdPrefix };
