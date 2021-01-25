@@ -14,6 +14,7 @@ import FirebaseStub, { DatabaseConstants } from 'gatsby-plugin-firebase';
 import '../../../i18n/index';
 import '../../../utils/dayjs';
 import { dataTestId as loadingScreenTestId } from '../../../components/router/LoadingScreen';
+import { createResumeButtonDataTestId } from '../../../components/dashboard/CreateResume';
 import { menuToggleDataTestIdPrefix as resumePreviewMenuToggleDataTestIdPrefix } from '../../../components/dashboard/ResumePreview';
 import { SettingsProvider } from '../../../contexts/SettingsContext';
 import { ModalProvider } from '../../../contexts/ModalContext';
@@ -98,6 +99,46 @@ describe('Dashboard', () => {
 
       await expectResumeToBeRenderedInPreview(Object.values(userResumes)[0]);
       await expectResumeToBeRenderedInPreview(Object.values(userResumes)[1]);
+    });
+  });
+
+  describe('when resume is created', () => {
+    beforeEach(async () => {
+      await setup();
+
+      const dashboardCreateResumeButton = await screen.findByTestId(
+        createResumeButtonDataTestId,
+      );
+      fireEvent.click(dashboardCreateResumeButton);
+    });
+
+    describe('with name shorter than 5 characters', () => {
+      it('displays validation error and notification', async () => {
+        const nameTextBox = screen.getByRole('textbox', { name: /name/i });
+        fireEvent.change(nameTextBox, { target: { value: 'CV 1' } });
+
+        fireEvent.focusOut(nameTextBox);
+
+        await waitFor(() =>
+          expect(
+            screen.getByText(/Please enter at least 5 characters/i),
+          ).toBeInTheDocument(),
+        );
+
+        const modalCreateResumeButton = screen.getByRole('button', {
+          name: /create resume/i,
+        });
+        fireEvent.click(modalCreateResumeButton);
+
+        const notification = await screen.findByRole('alert');
+        expect(
+          getByText(
+            notification,
+            /You might need to fill up all the required fields/i,
+          ),
+        ).toBeInTheDocument();
+        fireEvent.click(notification);
+      });
     });
   });
 
