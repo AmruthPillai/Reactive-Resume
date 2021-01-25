@@ -157,8 +157,11 @@ describe('Dashboard', () => {
 
     describe('with valid name', () => {
       const resumeName = 'Resume for SW development roles';
+      let now = 0;
 
       beforeEach(() => {
+        now = new Date().getTime();
+
         fireEvent.change(nameTextBox, {
           target: { value: resumeName },
         });
@@ -200,6 +203,29 @@ describe('Dashboard', () => {
         await waitForModalWindowToHaveBeenClosed();
 
         await expectResumeToBeRenderedInPreview({ name: resumeName });
+      });
+
+      it('adds resume in initial state to database', async () => {
+        await waitForModalWindowToHaveBeenClosed();
+        await waitForResumeToBeRenderedInPreview({ name: resumeName });
+
+        const actualUserResumes = (
+          await FirebaseStub.database()
+            .ref(DatabaseConstants.resumesPath)
+            .orderByChild('user')
+            .equalTo(user.uid)
+            .once('value')
+        ).val();
+        expect(Object.values(actualUserResumes)).toHaveLength(3);
+
+        const actualUserResumesFiltered = Object.values(
+          actualUserResumes,
+        ).filter((resume) => resume.name === resumeName);
+        expect(actualUserResumesFiltered).toHaveLength(1);
+        const createdResume = actualUserResumesFiltered[0];
+        expect(createdResume.createdAt).toBeTruthy();
+        expect(createdResume.createdAt).toBeGreaterThanOrEqual(now);
+        expect(createdResume.createdAt).toEqual(createdResume.updatedAt);
       });
     });
   });
