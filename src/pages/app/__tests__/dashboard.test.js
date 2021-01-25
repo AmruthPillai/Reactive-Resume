@@ -103,18 +103,32 @@ describe('Dashboard', () => {
   });
 
   describe('when resume is created', () => {
+    let nameTextBox = null;
+
+    const waitForModalToHaveBeenClosed = async () => {
+      await waitFor(() =>
+        screen.queryByRole('textbox', { name: /name/i })
+          ? Promise.reject()
+          : Promise.resolve(),
+      );
+    };
+
     beforeEach(async () => {
       await setup();
+
+      fetch.resetMocks();
+      fetch.mockReturnValueOnce({ url: 'https://test-url-123456789.com' });
 
       const dashboardCreateResumeButton = await screen.findByTestId(
         createResumeButtonDataTestId,
       );
       fireEvent.click(dashboardCreateResumeButton);
+
+      nameTextBox = screen.getByRole('textbox', { name: /name/i });
     });
 
     describe('with name shorter than 5 characters', () => {
       it('displays validation error and notification', async () => {
-        const nameTextBox = screen.getByRole('textbox', { name: /name/i });
         fireEvent.change(nameTextBox, { target: { value: 'CV 1' } });
 
         fireEvent.focusOut(nameTextBox);
@@ -138,6 +152,34 @@ describe('Dashboard', () => {
           ),
         ).toBeInTheDocument();
         fireEvent.click(notification);
+      });
+    });
+
+    describe('with valid name', () => {
+      it('renders loading message', async () => {
+        fireEvent.change(nameTextBox, {
+          target: { value: 'Resume for SW development roles' },
+        });
+
+        const modalCreateResumeButton = screen.getByRole('button', {
+          name: /create resume/i,
+        });
+        fireEvent.click(modalCreateResumeButton);
+
+        expect(
+          screen.getByRole('button', {
+            name: /loading/i,
+          }),
+        ).toBeInTheDocument();
+        await waitFor(() =>
+          expect(
+            screen.queryByRole('button', {
+              name: /loading/i,
+            }),
+          ).toBeNull(),
+        );
+
+        await waitForModalToHaveBeenClosed();
       });
     });
   });
