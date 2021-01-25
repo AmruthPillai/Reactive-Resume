@@ -105,7 +105,7 @@ describe('Dashboard', () => {
   describe('when resume is created', () => {
     let nameTextBox = null;
 
-    const waitForModalToHaveBeenClosed = async () => {
+    const waitForModalWindowToHaveBeenClosed = async () => {
       await waitFor(() =>
         screen.queryByRole('textbox', { name: /name/i })
           ? Promise.reject()
@@ -156,16 +156,20 @@ describe('Dashboard', () => {
     });
 
     describe('with valid name', () => {
-      it('renders loading message', async () => {
+      const resumeName = 'Resume for SW development roles';
+
+      beforeEach(() => {
         fireEvent.change(nameTextBox, {
-          target: { value: 'Resume for SW development roles' },
+          target: { value: resumeName },
         });
 
         const modalCreateResumeButton = screen.getByRole('button', {
           name: /create resume/i,
         });
         fireEvent.click(modalCreateResumeButton);
+      });
 
+      it('renders loading message', async () => {
         expect(
           screen.getByRole('button', {
             name: /loading/i,
@@ -179,7 +183,23 @@ describe('Dashboard', () => {
           ).toBeNull(),
         );
 
-        await waitForModalToHaveBeenClosed();
+        await waitForModalWindowToHaveBeenClosed();
+        await waitForResumeToBeRenderedInPreview({ name: resumeName });
+      });
+
+      it('closes modal window', async () => {
+        await waitFor(() =>
+          expect(screen.queryByRole('textbox', { name: /name/i })).toBeNull(),
+        );
+
+        await waitForResumeToBeRenderedInPreview({ name: resumeName });
+      });
+
+      // eslint-disable-next-line jest/expect-expect
+      it('renders created resume in preview', async () => {
+        await waitForModalWindowToHaveBeenClosed();
+
+        await expectResumeToBeRenderedInPreview({ name: resumeName });
       });
     });
   });
