@@ -9,6 +9,8 @@ import {
   waitForElementToBeRemoved,
 } from '@testing-library/react';
 
+import fetchMock from 'jest-fetch-mock';
+
 import FirebaseStub, { DatabaseConstants } from 'gatsby-plugin-firebase';
 
 import '../../../i18n/index';
@@ -38,6 +40,18 @@ describe('Dashboard', () => {
     await waitFor(() => {
       expect(screen.getByText(resumeName)).toBeInTheDocument();
     });
+  };
+
+  const waitForModalWindowToHaveBeenClosed = async () => {
+    await waitFor(() =>
+      screen.queryByRole('textbox', { name: /name/i })
+        ? Promise.reject()
+        : Promise.resolve(),
+    );
+  };
+
+  const dismissNotification = (notification) => {
+    fireEvent.click(notification);
   };
 
   async function setup(waitForLoadingScreenToDisappear = true) {
@@ -117,9 +131,9 @@ describe('Dashboard', () => {
     let nameTextBox = null;
 
     const setupFetchMock = () => {
-      fetch.resetMocks();
+      fetchMock.resetMocks();
 
-      fetch.mockImplementationOnce(async (input) => {
+      fetchMock.mockImplementationOnce(async (input) => {
         await delay(100);
 
         if (input === unsplashPhotoRequestUrl) {
@@ -130,14 +144,6 @@ describe('Dashboard', () => {
 
         throw new Error('Unsupported input.');
       });
-    };
-
-    const waitForModalWindowToHaveBeenClosed = async () => {
-      await waitFor(() =>
-        screen.queryByRole('textbox', { name: /name/i })
-          ? Promise.reject()
-          : Promise.resolve(),
-      );
     };
 
     beforeEach(async () => {
@@ -177,7 +183,7 @@ describe('Dashboard', () => {
             /You might need to fill up all the required fields/i,
           ),
         ).toBeInTheDocument();
-        fireEvent.click(notification);
+        dismissNotification(notification);
       });
     });
 
@@ -329,7 +335,7 @@ describe('Dashboard', () => {
           new RegExp(`${resumeToDelete.name} was deleted successfully`, 'i'),
         ),
       ).toBeInTheDocument();
-      fireEvent.click(notification);
+      dismissNotification(notification);
 
       await waitForDatabaseRemoveToHaveCompleted();
     });
@@ -339,6 +345,95 @@ describe('Dashboard', () => {
       expect(menuItems).toHaveLength(0);
 
       await waitForDatabaseRemoveToHaveCompleted();
+    });
+  });
+
+  describe('when resume is renamed', () => {
+    // const mockDatabaseUpdateFunction = null;
+    let resumeToRename = null;
+    let resumeToRenameId = null;
+    let nameTextBox = null;
+
+    /*
+    const waitForDatabaseUpdateToHaveCompleted = async () => {
+      await waitFor(() => mockDatabaseUpdateFunction.mock.calls[0][0]);
+      await waitFor(() => mockDatabaseUpdateFunction.mock.results[0].value);
+    };
+
+    const expectDatabaseUpdateToHaveCompleted = async () => {
+      await waitFor(() =>
+        expect(mockDatabaseUpdateFunction).toHaveBeenCalledTimes(1),
+      );
+      await waitFor(() =>
+        expect(
+          mockDatabaseUpdateFunction.mock.results[0].value,
+        ).resolves.toBeUndefined(),
+      );
+    };
+    */
+
+    beforeEach(async () => {
+      await setup();
+
+      [resumeToRename] = Object.values(userResumes);
+      resumeToRenameId = resumeToRename.id;
+
+      /*
+      mockDatabaseUpdateFunction = jest.spyOn(
+        FirebaseStub.database().ref(
+          `${DatabaseConstants.resumesPath}/${resumeToRenameId}`,
+        ),
+        'update',
+      );
+      */
+
+      const resumeToRenameMenuToggle = await screen.findByTestId(
+        `${resumePreviewMenuToggleDataTestIdPrefix}${resumeToRenameId}`,
+      );
+      fireEvent.click(resumeToRenameMenuToggle);
+
+      const menuItems = screen.getAllByRole('menuitem');
+      let renameMenuItem = null;
+      for (let index = 0; index < menuItems.length; index++) {
+        if (queryByText(menuItems[index], /rename/i)) {
+          renameMenuItem = menuItems[index];
+          break;
+        }
+      }
+      fireEvent.click(renameMenuItem);
+
+      nameTextBox = screen.getByRole('textbox', { name: /name/i });
+    });
+
+    describe('with name shorter than 5 characters', () => {
+      it('displays validation error and notification', async () => {
+        fireEvent.change(nameTextBox, { target: { value: 'CV 2' } });
+
+        fireEvent.focusOut(nameTextBox);
+
+        await waitFor(() =>
+          expect(
+            screen.getByText(/Please enter at least 5 characters/i),
+          ).toBeInTheDocument(),
+        );
+
+        const modalEditResumeButton = screen.getByRole('button', {
+          name: /edit resume/i,
+        });
+        fireEvent.click(modalEditResumeButton);
+
+        // const notification = await screen.findByRole('alert');
+        const notification = await screen.findByText(
+          /You might need to fill up all the required fields/i,
+        );
+        expect(
+          getByText(
+            notification,
+            /You might need to fill up all the required fields/i,
+          ),
+        ).toBeInTheDocument();
+        dismissNotification(notification);
+      });
     });
   });
 
