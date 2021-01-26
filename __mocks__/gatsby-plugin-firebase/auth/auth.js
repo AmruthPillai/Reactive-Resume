@@ -50,7 +50,7 @@ class Auth {
 
     this.onAuthStateChangedObservers.forEach((observer) => observer(user));
 
-    return Promise.resolve(user);
+    return user;
   }
 }
 

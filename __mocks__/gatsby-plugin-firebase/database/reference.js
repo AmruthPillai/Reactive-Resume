@@ -185,7 +185,7 @@ class Reference {
 
     await delay(DatabaseConstants.defaultDelayInMilliseconds);
 
-    return Promise.resolve(this._dataSnapshot);
+    return this._dataSnapshot;
   }
 
   orderByChild(path) {
@@ -197,24 +197,18 @@ class Reference {
     await delay(DatabaseConstants.defaultDelayInMilliseconds);
 
     this._handleDataUpdate(value);
-
-    return Promise.resolve();
   }
 
   async remove() {
     await delay(DatabaseConstants.defaultDelayInMilliseconds);
 
     this._handleDataUpdate(null);
-
-    return Promise.resolve();
   }
 
   async set(value) {
     await delay(DatabaseConstants.defaultDelayInMilliseconds);
 
     this._handleDataUpdate(value);
-
-    return Promise.resolve();
   }
 }
 

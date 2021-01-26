@@ -29,13 +29,13 @@ describe('Dashboard', () => {
   let userResumes = null;
   const user = DatabaseConstants.user1;
 
-  const waitForResumeToBeRenderedInPreview = async (resume) => {
-    await screen.findByText(resume.name);
+  const waitForResumeToBeRenderedInPreview = async (resumeName) => {
+    await screen.findByText(resumeName);
   };
 
-  const expectResumeToBeRenderedInPreview = async (resume) => {
+  const expectResumeToBeRenderedInPreview = async (resumeName) => {
     await waitFor(() => {
-      expect(screen.getByText(resume.name)).toBeInTheDocument();
+      expect(screen.getByText(resumeName)).toBeInTheDocument();
     });
   };
 
@@ -92,13 +92,22 @@ describe('Dashboard', () => {
       await waitFor(() => {
         expect(screen.getByText(/create resume/i)).toBeInTheDocument();
       });
+      await waitFor(() => {
+        expect(
+          screen.getByTestId(createResumeButtonDataTestId),
+        ).toBeInTheDocument();
+      });
     });
 
     it('preview of user resumes', async () => {
       expect(Object.keys(userResumes)).toHaveLength(2);
 
-      await expectResumeToBeRenderedInPreview(Object.values(userResumes)[0]);
-      await expectResumeToBeRenderedInPreview(Object.values(userResumes)[1]);
+      await expectResumeToBeRenderedInPreview(
+        Object.values(userResumes)[0].name,
+      );
+      await expectResumeToBeRenderedInPreview(
+        Object.values(userResumes)[1].name,
+      );
     });
   });
 
@@ -187,7 +196,7 @@ describe('Dashboard', () => {
         );
 
         await waitForModalWindowToHaveBeenClosed();
-        await waitForResumeToBeRenderedInPreview({ name: resumeName });
+        await waitForResumeToBeRenderedInPreview(resumeName);
       });
 
       it('closes modal window', async () => {
@@ -195,19 +204,22 @@ describe('Dashboard', () => {
           expect(screen.queryByRole('textbox', { name: /name/i })).toBeNull(),
         );
 
-        await waitForResumeToBeRenderedInPreview({ name: resumeName });
+        await waitForResumeToBeRenderedInPreview(resumeName);
       });
 
-      // eslint-disable-next-line jest/expect-expect
       it('renders created resume in preview', async () => {
         await waitForModalWindowToHaveBeenClosed();
 
-        await expectResumeToBeRenderedInPreview({ name: resumeName });
+        await waitFor(() =>
+          expect(
+            expectResumeToBeRenderedInPreview(resumeName),
+          ).resolves.toBeUndefined(),
+        );
       });
 
       it('adds resume in initial state to database', async () => {
         await waitForModalWindowToHaveBeenClosed();
-        await waitForResumeToBeRenderedInPreview({ name: resumeName });
+        await waitForResumeToBeRenderedInPreview(resumeName);
 
         const actualUserResumes = (
           await FirebaseStub.database()
@@ -286,7 +298,7 @@ describe('Dashboard', () => {
       await waitFor(() =>
         expect(screen.queryByText(resumeToDelete.name)).toBeNull(),
       );
-      await expectResumeToBeRenderedInPreview(undeletedResume);
+      await expectResumeToBeRenderedInPreview(undeletedResume.name);
     });
 
     it('displays notification', async () => {
@@ -322,8 +334,12 @@ describe('Dashboard', () => {
         screen.getByTestId(loadingScreenTestId),
       );
 
-      await waitForResumeToBeRenderedInPreview(Object.values(userResumes)[0]);
-      await waitForResumeToBeRenderedInPreview(Object.values(userResumes)[1]);
+      await waitForResumeToBeRenderedInPreview(
+        Object.values(userResumes)[0].name,
+      );
+      await waitForResumeToBeRenderedInPreview(
+        Object.values(userResumes)[1].name,
+      );
     });
   });
 });
