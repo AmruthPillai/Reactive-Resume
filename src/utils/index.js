@@ -54,8 +54,11 @@ export const getFieldProps = (formik, schema, name) => ({
   ...formik.getFieldProps(name),
 });
 
+export const unsplashPhotoRequestUrl =
+  'https://source.unsplash.com/featured/400x600';
+
 export const getUnsplashPhoto = async () => {
-  const response = await fetch('https://source.unsplash.com/featured/400x600');
+  const response = await fetch(unsplashPhotoRequestUrl);
   return response.url;
 };
 
@@ -120,4 +123,8 @@ export const b64toBlob = (b64Data, contentType = '', sliceSize = 512) => {
 
   const blob = new Blob(byteArrays, { type: contentType });
   return blob;
+};
+
+export const delay = async (milliseconds) => {
+  await new Promise((resolve) => setTimeout(resolve, milliseconds));
 };

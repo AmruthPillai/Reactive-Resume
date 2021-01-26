@@ -13,6 +13,7 @@ import FirebaseStub, { DatabaseConstants } from 'gatsby-plugin-firebase';
 
 import '../../../i18n/index';
 import '../../../utils/dayjs';
+import { unsplashPhotoRequestUrl, delay } from '../../../utils/index';
 import { dataTestId as loadingScreenTestId } from '../../../components/router/LoadingScreen';
 import { createResumeButtonDataTestId } from '../../../components/dashboard/CreateResume';
 import { menuToggleDataTestIdPrefix as resumePreviewMenuToggleDataTestIdPrefix } from '../../../components/dashboard/ResumePreview';
@@ -112,7 +113,24 @@ describe('Dashboard', () => {
   });
 
   describe('when resume is created', () => {
+    const unsplashPhotoResponseUrl = 'https://test-url-123456789.com';
     let nameTextBox = null;
+
+    const setupFetchMock = () => {
+      fetch.resetMocks();
+
+      fetch.mockImplementationOnce(async (input) => {
+        await delay(100);
+
+        if (input === unsplashPhotoRequestUrl) {
+          return {
+            url: unsplashPhotoResponseUrl,
+          };
+        }
+
+        throw new Error('Unsupported input.');
+      });
+    };
 
     const waitForModalWindowToHaveBeenClosed = async () => {
       await waitFor(() =>
@@ -123,10 +141,9 @@ describe('Dashboard', () => {
     };
 
     beforeEach(async () => {
-      await setup();
+      setupFetchMock();
 
-      fetch.resetMocks();
-      fetch.mockReturnValueOnce({ url: 'https://test-url-123456789.com' });
+      await setup();
 
       const dashboardCreateResumeButton = await screen.findByTestId(
         createResumeButtonDataTestId,
@@ -235,6 +252,9 @@ describe('Dashboard', () => {
         ).filter((resume) => resume.name === resumeName);
         expect(actualUserResumesFiltered).toHaveLength(1);
         const createdResume = actualUserResumesFiltered[0];
+        expect(createdResume.id).toBeTruthy();
+        expect(createdResume.preview).toBeTruthy();
+        expect(createdResume.preview).toEqual(unsplashPhotoResponseUrl);
         expect(createdResume.createdAt).toBeTruthy();
         expect(createdResume.createdAt).toBeGreaterThanOrEqual(now);
         expect(createdResume.createdAt).toEqual(createdResume.updatedAt);
