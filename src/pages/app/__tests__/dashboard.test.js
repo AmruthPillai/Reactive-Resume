@@ -43,15 +43,24 @@ describe('Dashboard', () => {
   };
 
   const waitForModalWindowToHaveBeenClosed = async () => {
-    await waitFor(() =>
-      screen.queryByRole('textbox', { name: /name/i })
-        ? Promise.reject()
-        : Promise.resolve(),
+    await waitForElementToBeRemoved(() =>
+      screen.getByRole('textbox', { name: /name/i }),
     );
   };
 
   const dismissNotification = (notification) => {
     fireEvent.click(notification);
+  };
+
+  const findAndDismissNotification = async () => {
+    const notification = await screen.findByRole('alert');
+    dismissNotification(notification);
+  };
+
+  const fnWaitForLoadingScreenToDisappear = async () => {
+    await waitForElementToBeRemoved(() =>
+      screen.getByTestId(loadingScreenTestId),
+    );
   };
 
   async function setup(waitForLoadingScreenToDisappear = true) {
@@ -86,9 +95,7 @@ describe('Dashboard', () => {
     );
 
     if (waitForLoadingScreenToDisappear) {
-      await waitForElementToBeRemoved(() =>
-        screen.getByTestId(loadingScreenTestId),
-      );
+      await fnWaitForLoadingScreenToDisappear();
     }
   }
 
@@ -205,17 +212,17 @@ describe('Dashboard', () => {
       });
 
       it('renders loading message', async () => {
-        expect(
+        await waitFor(() =>
+          expect(
+            screen.getByRole('button', {
+              name: /loading/i,
+            }),
+          ).toBeInTheDocument(),
+        );
+        await waitForElementToBeRemoved(() =>
           screen.getByRole('button', {
             name: /loading/i,
           }),
-        ).toBeInTheDocument();
-        await waitFor(() =>
-          expect(
-            screen.queryByRole('button', {
-              name: /loading/i,
-            }),
-          ).toBeNull(),
         );
 
         await waitForModalWindowToHaveBeenClosed();
@@ -224,7 +231,7 @@ describe('Dashboard', () => {
 
       it('closes modal window', async () => {
         await waitFor(() =>
-          expect(screen.queryByRole('textbox', { name: /name/i })).toBeNull(),
+          expect(waitForModalWindowToHaveBeenClosed()).resolves.toBeUndefined(),
         );
 
         await waitForResumeToBeRenderedInPreview(resumeName);
@@ -289,11 +296,22 @@ describe('Dashboard', () => {
       );
     };
 
+    const waitForResumeToDisappearFromPreview = async (resumeName) => {
+      await waitFor(() =>
+        screen.queryByText(resumeName) ? Promise.reject() : Promise.resolve(),
+      );
+    };
+
     beforeEach(async () => {
       await setup();
 
-      [resumeToDelete, undeletedResume] = Object.values(userResumes);
+      [resumeToDelete] = Object.values(userResumes).filter(
+        (resume) => resume.id === DatabaseConstants.demoStateResume1Id,
+      );
       resumeToDeleteId = resumeToDelete.id;
+      [undeletedResume] = Object.values(userResumes).filter(
+        (resume) => resume.id === DatabaseConstants.initialStateResumeId,
+      );
 
       mockDatabaseRemoveFunction = jest.spyOn(
         FirebaseStub.database().ref(
@@ -319,10 +337,14 @@ describe('Dashboard', () => {
     });
 
     it('removes it from database and preview', async () => {
+      await findAndDismissNotification();
+
       await expectDatabaseRemoveToHaveCompleted();
 
       await waitFor(() =>
-        expect(screen.queryByText(resumeToDelete.name)).toBeNull(),
+        expect(
+          waitForResumeToDisappearFromPreview(resumeToDelete.name),
+        ).resolves.toBeUndefined(),
       );
       await expectResumeToBeRenderedInPreview(undeletedResume.name);
     });
@@ -338,13 +360,16 @@ describe('Dashboard', () => {
       dismissNotification(notification);
 
       await waitForDatabaseRemoveToHaveCompleted();
+      await waitForResumeToDisappearFromPreview(resumeToDelete.name);
     });
 
     it('closes menu', async () => {
       const menuItems = screen.queryAllByRole('menuitem');
       expect(menuItems).toHaveLength(0);
 
+      await findAndDismissNotification();
       await waitForDatabaseRemoveToHaveCompleted();
+      await waitForResumeToDisappearFromPreview(resumeToDelete.name);
     });
   });
 
@@ -375,7 +400,9 @@ describe('Dashboard', () => {
     beforeEach(async () => {
       await setup();
 
-      [resumeToRename] = Object.values(userResumes);
+      [resumeToRename] = Object.values(userResumes).filter(
+        (resume) => resume.id === DatabaseConstants.demoStateResume1Id,
+      );
       resumeToRenameId = resumeToRename.id;
 
       /*
@@ -444,10 +471,7 @@ describe('Dashboard', () => {
 
     it('renders loading screen', async () => {
       expect(screen.getByTestId(loadingScreenTestId)).toBeInTheDocument();
-
-      await waitForElementToBeRemoved(() =>
-        screen.getByTestId(loadingScreenTestId),
-      );
+      await fnWaitForLoadingScreenToDisappear();
 
       await waitForResumeToBeRenderedInPreview(
         Object.values(userResumes)[0].name,
