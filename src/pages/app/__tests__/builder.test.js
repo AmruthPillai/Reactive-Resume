@@ -102,8 +102,9 @@ describe('Builder', () => {
 
     if (waitForDatabaseUpdateToHaveCompleted) {
       await fnWaitForDatabaseUpdateToHaveCompleted();
-      mockDatabaseUpdateFunction.mockClear();
     }
+
+    mockDatabaseUpdateFunction.mockClear();
   }
 
   describe('handles errors', () => {

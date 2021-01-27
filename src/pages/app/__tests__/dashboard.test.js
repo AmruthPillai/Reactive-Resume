@@ -374,12 +374,11 @@ describe('Dashboard', () => {
   });
 
   describe('when resume is renamed', () => {
-    // const mockDatabaseUpdateFunction = null;
+    let mockDatabaseUpdateFunction = null;
     let resumeToRename = null;
     let resumeToRenameId = null;
     let nameTextBox = null;
 
-    /*
     const waitForDatabaseUpdateToHaveCompleted = async () => {
       await waitFor(() => mockDatabaseUpdateFunction.mock.calls[0][0]);
       await waitFor(() => mockDatabaseUpdateFunction.mock.results[0].value);
@@ -395,7 +394,6 @@ describe('Dashboard', () => {
         ).resolves.toBeUndefined(),
       );
     };
-    */
 
     beforeEach(async () => {
       await setup();
@@ -405,14 +403,13 @@ describe('Dashboard', () => {
       );
       resumeToRenameId = resumeToRename.id;
 
-      /*
       mockDatabaseUpdateFunction = jest.spyOn(
         FirebaseStub.database().ref(
           `${DatabaseConstants.resumesPath}/${resumeToRenameId}`,
         ),
         'update',
       );
-      */
+      mockDatabaseUpdateFunction.mockClear();
 
       const resumeToRenameMenuToggle = await screen.findByTestId(
         `${resumePreviewMenuToggleDataTestIdPrefix}${resumeToRenameId}`,
@@ -430,6 +427,10 @@ describe('Dashboard', () => {
       fireEvent.click(renameMenuItem);
 
       nameTextBox = screen.getByRole('textbox', { name: /name/i });
+    });
+
+    it('renders current name in modal window', async () => {
+      expect(nameTextBox).toHaveValue(resumeToRename.name);
     });
 
     describe('with name shorter than 5 characters', () => {
@@ -460,6 +461,81 @@ describe('Dashboard', () => {
           ),
         ).toBeInTheDocument();
         dismissNotification(notification);
+      });
+    });
+
+    describe('with valid name', () => {
+      let resumeNewName = null;
+      let now = 0;
+
+      beforeEach(() => {
+        resumeNewName = `${resumeToRename.name} - renamed`;
+        now = new Date().getTime();
+
+        fireEvent.change(nameTextBox, {
+          target: { value: resumeNewName },
+        });
+
+        const modalEditResumeButton = screen.getByRole('button', {
+          name: /edit resume/i,
+        });
+        fireEvent.click(modalEditResumeButton);
+      });
+
+      it('renders loading message', async () => {
+        await waitFor(() =>
+          expect(
+            screen.getByRole('button', {
+              name: /loading/i,
+            }),
+          ).toBeInTheDocument(),
+        );
+        await waitForElementToBeRemoved(() =>
+          screen.getByRole('button', {
+            name: /loading/i,
+          }),
+        );
+
+        await waitForModalWindowToHaveBeenClosed();
+        await waitForDatabaseUpdateToHaveCompleted();
+        await waitForResumeToBeRenderedInPreview(resumeNewName);
+      });
+
+      it('closes modal window', async () => {
+        await waitFor(() =>
+          expect(waitForModalWindowToHaveBeenClosed()).resolves.toBeUndefined(),
+        );
+
+        await waitForDatabaseUpdateToHaveCompleted();
+        await waitForResumeToBeRenderedInPreview(resumeNewName);
+      });
+
+      it('renders renamed resume in preview', async () => {
+        await waitForModalWindowToHaveBeenClosed();
+        await waitForDatabaseUpdateToHaveCompleted();
+
+        await waitFor(() =>
+          expect(
+            expectResumeToBeRenderedInPreview(resumeNewName),
+          ).resolves.toBeUndefined(),
+        );
+      });
+
+      it('updates database', async () => {
+        await waitForModalWindowToHaveBeenClosed();
+
+        await expectDatabaseUpdateToHaveCompleted();
+        const mockDatabaseUpdateFunctionCallArgument =
+          mockDatabaseUpdateFunction.mock.calls[0][0];
+        expect(mockDatabaseUpdateFunctionCallArgument.id).toBe(
+          resumeToRenameId,
+        );
+        expect(mockDatabaseUpdateFunctionCallArgument.name).toBe(resumeNewName);
+        expect(
+          mockDatabaseUpdateFunctionCallArgument.updatedAt,
+        ).toBeGreaterThanOrEqual(now);
+
+        await waitForResumeToBeRenderedInPreview(resumeNewName);
       });
     });
   });
