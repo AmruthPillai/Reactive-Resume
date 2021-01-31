@@ -54,6 +54,7 @@ For those of you familiar with the Crowdin Platform, you could do that too and j
 - Finnish (Suomalainen)
 - French (Français)
 - German (Deutsche)
+- Greek (Ελληνικά)
 - Hindi (हिंदी)
 - Italian (Italiano)
 - Japanese (日本人)

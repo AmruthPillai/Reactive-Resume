@@ -40,6 +40,10 @@ const languages = [
     name: 'German (Deutsche)',
   },
   {
+    code: 'el',
+    name: 'Greek (Ελληνικά)',
+  },
+  {
     code: 'hi',
     name: 'Hindi (हिंदी)',
   },
