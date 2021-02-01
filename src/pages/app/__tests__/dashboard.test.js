@@ -31,6 +31,7 @@ import Dashboard from '../dashboard';
 describe('Dashboard', () => {
   let userResumes = null;
   const user = DatabaseConstants.user1;
+  const unsplashPhotoResponseUrl = 'https://test-url-123456789.com';
 
   const waitForResumeToBeRenderedInPreview = async (resumeName) => {
     await screen.findByText(resumeName);
@@ -57,13 +58,36 @@ describe('Dashboard', () => {
     dismissNotification(notification);
   };
 
-  const fnWaitForLoadingScreenToDisappear = async () => {
+  const waitForLoadingScreenToDisappearFn = async () => {
     await waitForElementToBeRemoved(() =>
       screen.getByTestId(loadingScreenTestId),
     );
   };
 
-  async function setup(waitForLoadingScreenToDisappear = true) {
+  const setupFetchMockFn = () => {
+    fetchMock.resetMocks();
+
+    fetchMock.mockImplementationOnce(async (input) => {
+      await delay(100);
+
+      if (input === unsplashPhotoRequestUrl) {
+        return {
+          url: unsplashPhotoResponseUrl,
+        };
+      }
+
+      throw new Error('Unsupported input.');
+    });
+  };
+
+  async function setup(
+    waitForLoadingScreenToDisappear = true,
+    setupFetchMock = false,
+  ) {
+    if (setupFetchMock) {
+      setupFetchMockFn();
+    }
+
     FirebaseStub.database().initializeData();
 
     userResumes = (
@@ -95,7 +119,7 @@ describe('Dashboard', () => {
     );
 
     if (waitForLoadingScreenToDisappear) {
-      await fnWaitForLoadingScreenToDisappear();
+      await waitForLoadingScreenToDisappearFn();
     }
   }
 
@@ -134,29 +158,10 @@ describe('Dashboard', () => {
   });
 
   describe('when resume is created', () => {
-    const unsplashPhotoResponseUrl = 'https://test-url-123456789.com';
     let nameTextBox = null;
 
-    const setupFetchMock = () => {
-      fetchMock.resetMocks();
-
-      fetchMock.mockImplementationOnce(async (input) => {
-        await delay(100);
-
-        if (input === unsplashPhotoRequestUrl) {
-          return {
-            url: unsplashPhotoResponseUrl,
-          };
-        }
-
-        throw new Error('Unsupported input.');
-      });
-    };
-
     beforeEach(async () => {
-      setupFetchMock();
-
-      await setup();
+      await setup(true, true);
 
       const dashboardCreateResumeButton = await screen.findByTestId(
         createResumeButtonDataTestId,
@@ -373,6 +378,91 @@ describe('Dashboard', () => {
     });
   });
 
+  describe('when resume is duplicated', () => {
+    let resumeToDuplicate = null;
+    let resumeToDuplicateId = null;
+    let duplicateResumeName = null;
+    let now = 0;
+
+    beforeEach(async () => {
+      await setup(true, true);
+
+      now = new Date().getTime();
+
+      [resumeToDuplicate] = Object.values(userResumes).filter(
+        (resume) => resume.id === DatabaseConstants.demoStateResume1Id,
+      );
+      resumeToDuplicateId = resumeToDuplicate.id;
+      duplicateResumeName = `${resumeToDuplicate.name} Copy`;
+
+      const resumeToDuplicateMenuToggle = await screen.findByTestId(
+        `${resumePreviewMenuToggleDataTestIdPrefix}${resumeToDuplicateId}`,
+      );
+      fireEvent.click(resumeToDuplicateMenuToggle);
+
+      const menuItems = screen.getAllByRole('menuitem');
+      let duplicateMenuItem = null;
+      for (let index = 0; index < menuItems.length; index++) {
+        if (queryByText(menuItems[index], /duplicate/i)) {
+          duplicateMenuItem = menuItems[index];
+          break;
+        }
+      }
+      fireEvent.click(duplicateMenuItem);
+    });
+
+    it('renders duplicate resume in preview', async () => {
+      await waitFor(() =>
+        expect(
+          expectResumeToBeRenderedInPreview(duplicateResumeName),
+        ).resolves.toBeUndefined(),
+      );
+    });
+
+    it('adds duplicate resume to database', async () => {
+      await waitForResumeToBeRenderedInPreview(duplicateResumeName);
+
+      const actualUserResumes = (
+        await FirebaseStub.database()
+          .ref(DatabaseConstants.resumesPath)
+          .orderByChild('user')
+          .equalTo(user.uid)
+          .once('value')
+      ).val();
+      expect(Object.values(actualUserResumes)).toHaveLength(3);
+
+      const actualUserResumesFiltered = Object.values(actualUserResumes).filter(
+        (resume) =>
+          resume.name === duplicateResumeName &&
+          resume.id !== resumeToDuplicateId,
+      );
+      expect(actualUserResumesFiltered).toHaveLength(1);
+      const createdResume = actualUserResumesFiltered[0];
+      expect(createdResume.id).toBeTruthy();
+      expect(createdResume.preview).toBeTruthy();
+      expect(createdResume.preview).toEqual(unsplashPhotoResponseUrl);
+      expect(createdResume.createdAt).toBeTruthy();
+      expect(createdResume.createdAt).toBeGreaterThanOrEqual(now);
+      expect(createdResume.createdAt).toEqual(createdResume.updatedAt);
+      const expectedResume = {
+        ...resumeToDuplicate,
+        id: createdResume.id,
+        name: createdResume.name,
+        preview: createdResume.preview,
+        createdAt: createdResume.createdAt,
+        updatedAt: createdResume.updatedAt,
+      };
+      expect(createdResume).toEqual(expectedResume);
+    });
+
+    it('closes menu', async () => {
+      const menuItems = screen.queryAllByRole('menuitem');
+      expect(menuItems).toHaveLength(0);
+
+      await waitForResumeToBeRenderedInPreview(duplicateResumeName);
+    });
+  });
+
   describe('while loading', () => {
     beforeEach(async () => {
       await setup(false);
@@ -380,7 +470,7 @@ describe('Dashboard', () => {
 
     it('renders loading screen', async () => {
       expect(screen.getByTestId(loadingScreenTestId)).toBeInTheDocument();
-      await fnWaitForLoadingScreenToDisappear();
+      await waitForLoadingScreenToDisappearFn();
 
       await waitForResumeToBeRenderedInPreview(
         Object.values(userResumes)[0].name,
