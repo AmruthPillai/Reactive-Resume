@@ -2,6 +2,7 @@ import ar from './ar.json';
 import cs from './cs.json';
 import da from './da.json';
 import de from './de.json';
+import el from './el.json';
 import en from './en.json';
 import es from './es.json';
 import fa from './fa.json';
@@ -27,6 +28,7 @@ export default {
   cs: { translation: cs },
   da: { translation: da },
   de: { translation: de },
+  el: { translation: el },
   en: { translation: en },
   es: { translation: es },
   fa: { translation: fa },
