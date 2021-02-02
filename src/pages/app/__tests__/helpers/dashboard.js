@@ -133,21 +133,28 @@ async function setup(user) {
   return userResumes;
 }
 
-async function setupAndWaitForLoadingScreenToDisappear(user) {
-  const userResumes = await _setup(user, true, false);
+async function setupAndWait(user, waitForLoadingScreenToDisappear) {
+  const userResumes = await _setup(
+    user,
+    waitForLoadingScreenToDisappear,
+    false,
+  );
   return userResumes;
 }
 
-async function setupWithFetchMockAndWaitForLoadingScreenToDisappear(user) {
-  const userResumes = await _setup(user, true, true);
+async function setupWithFetchMockAndWait(
+  user,
+  waitForLoadingScreenToDisappear,
+) {
+  const userResumes = await _setup(user, waitForLoadingScreenToDisappear, true);
   return userResumes;
 }
 
 export default setup;
 
 export {
-  setupAndWaitForLoadingScreenToDisappear,
-  setupWithFetchMockAndWaitForLoadingScreenToDisappear,
+  setupAndWait,
+  setupWithFetchMockAndWait,
   waitForResumeToBeRenderedInPreview,
   waitForResumeToDisappearFromPreview,
   expectResumeToBeRenderedInPreview,

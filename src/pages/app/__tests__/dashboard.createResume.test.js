@@ -15,7 +15,7 @@ import {
   waitForModalWindowToHaveBeenClosed,
   dismissNotification,
   unsplashPhotoResponseUrl,
-  setupWithFetchMockAndWaitForLoadingScreenToDisappear,
+  setupWithFetchMockAndWait,
 } from './helpers/dashboard';
 
 const tooShortResumeName = 'CV 1';
@@ -23,7 +23,7 @@ const validResumeName = 'Resume for SW development roles';
 
 async function setup() {
   const user = DatabaseConstants.user1;
-  await setupWithFetchMockAndWaitForLoadingScreenToDisappear(user);
+  await setupWithFetchMockAndWait(user, true);
 
   const dashboardCreateResumeButton = await screen.findByTestId(
     createResumeButtonDataTestId,

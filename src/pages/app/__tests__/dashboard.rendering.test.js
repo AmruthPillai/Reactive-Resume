@@ -4,7 +4,7 @@ import { DatabaseConstants } from 'gatsby-plugin-firebase';
 
 import { createResumeButtonDataTestId } from '../../../components/dashboard/CreateResume';
 import setup, {
-  setupAndWaitForLoadingScreenToDisappear,
+  setupAndWait,
   expectResumeToBeRenderedInPreview,
   expectLoadingScreenToBeRendered,
   waitForLoadingScreenToDisappear,
@@ -20,7 +20,7 @@ it('renders loading screen', async () => {
 });
 
 it('renders document title', async () => {
-  await setupAndWaitForLoadingScreenToDisappear(user);
+  await setupAndWait(user, true);
 
   await waitFor(() => {
     expect(document.title).toEqual('Dashboard | Reactive Resume');
@@ -28,7 +28,7 @@ it('renders document title', async () => {
 });
 
 it('renders create resume', async () => {
-  await setupAndWaitForLoadingScreenToDisappear(user);
+  await setupAndWait(user, true);
 
   await waitFor(() => {
     expect(screen.getByText(/create resume/i)).toBeInTheDocument();
@@ -41,7 +41,7 @@ it('renders create resume', async () => {
 });
 
 it('renders preview of user resumes', async () => {
-  const userResumes = await setupAndWaitForLoadingScreenToDisappear(user);
+  const userResumes = await setupAndWait(user, true);
 
   expect(Object.keys(userResumes)).toHaveLength(2);
 

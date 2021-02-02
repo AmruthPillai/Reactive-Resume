@@ -10,7 +10,7 @@ import FirebaseStub, { DatabaseConstants } from 'gatsby-plugin-firebase';
 
 import { menuToggleDataTestIdPrefix as resumePreviewMenuToggleDataTestIdPrefix } from '../../../components/dashboard/ResumePreview';
 import {
-  setupAndWaitForLoadingScreenToDisappear,
+  setupAndWait,
   waitForResumeToDisappearFromPreview,
   expectResumeToBeRenderedInPreview,
   dismissNotification,
@@ -37,9 +37,7 @@ const expectDatabaseRemoveToHaveCompleted = async (
 };
 
 async function setup() {
-  const userResumes = await setupAndWaitForLoadingScreenToDisappear(
-    DatabaseConstants.user1,
-  );
+  const userResumes = await setupAndWait(DatabaseConstants.user1, true);
 
   const [resumeToDelete] = Object.values(userResumes).filter(
     (resume) => resume.id === DatabaseConstants.demoStateResume1Id,

@@ -9,7 +9,7 @@ import FirebaseStub, { DatabaseConstants } from 'gatsby-plugin-firebase';
 
 import { menuToggleDataTestIdPrefix as resumePreviewMenuToggleDataTestIdPrefix } from '../../../components/dashboard/ResumePreview';
 import {
-  setupWithFetchMockAndWaitForLoadingScreenToDisappear,
+  setupWithFetchMockAndWait,
   waitForResumeToBeRenderedInPreview,
   expectResumeToBeRenderedInPreview,
   unsplashPhotoResponseUrl,
@@ -17,9 +17,7 @@ import {
 
 async function setup() {
   const user = DatabaseConstants.user1;
-  const userResumes = await setupWithFetchMockAndWaitForLoadingScreenToDisappear(
-    user,
-  );
+  const userResumes = await setupWithFetchMockAndWait(user, true);
 
   const [resumeToDuplicate] = Object.values(userResumes).filter(
     (resume) => resume.id === DatabaseConstants.demoStateResume1Id,
