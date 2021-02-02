@@ -17,7 +17,7 @@ const SkillModal = () => {
 
   const schema = Yup.object().shape({
     name: Yup.string().required(t('shared.forms.validation.required')),
-    level: Yup.string().required(t('shared.forms.validation.required')),
+    level: Yup.string(),
   });
 
   return (
