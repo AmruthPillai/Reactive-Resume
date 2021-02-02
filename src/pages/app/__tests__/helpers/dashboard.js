@@ -41,8 +41,10 @@ const expectResumeToBeRenderedInPreview = async (resumeName) => {
 };
 
 const waitForModalWindowToHaveBeenClosed = async () => {
-  await waitForElementToBeRemoved(() =>
-    screen.getByRole('textbox', { name: /name/i }),
+  await waitFor(() =>
+    screen.queryByRole('textbox', { name: /name/i })
+      ? Promise.reject()
+      : Promise.resolve(),
   );
 };
 
