@@ -6,47 +6,48 @@ import FirebaseStub, { DatabaseConstants } from 'gatsby-plugin-firebase';
 import '../../i18n/index';
 import Castform from '../Castform';
 
-describe('Castform', () => {
-  let resume = {};
+const birthDateLabelMatcher = /Date of birth/i;
 
-  beforeEach(async () => {
-    FirebaseStub.database().initializeData();
+async function setup(resumeId) {
+  FirebaseStub.database().initializeData();
 
-    const resumeId = DatabaseConstants.initialStateResumeId;
-    resume = (
-      await FirebaseStub.database()
-        .ref(`${DatabaseConstants.resumesPath}/${resumeId}`)
-        .once('value')
-    ).val();
-  });
+  const resume = (
+    await FirebaseStub.database()
+      .ref(`${DatabaseConstants.resumesPath}/${resumeId}`)
+      .once('value')
+  ).val();
 
-  it('renders correctly', () => {
-    const { container } = render(<Castform data={resume} />);
+  return resume;
+}
 
-    expect(container).toBeTruthy();
-    expect(container).toBeInTheDocument();
-  });
+test('renders correctly', async () => {
+  const resume = await setup(DatabaseConstants.initialStateResumeId);
 
-  describe('date of birth', () => {
-    const birthDateLabelMatcher = /Date of birth/i;
+  const { container } = render(<Castform data={resume} />);
 
-    it('is not shown if not provided', () => {
-      render(<Castform data={resume} />);
+  expect(container).toBeTruthy();
+  expect(container).toBeInTheDocument();
+});
 
-      expect(screen.queryByText(birthDateLabelMatcher)).toBeNull();
-    });
+test('date of birth is not shown if not provided', async () => {
+  const resume = await setup(DatabaseConstants.initialStateResumeId);
 
-    it('is shown if provided', () => {
-      const birthDate = new Date(1990, 0, 20);
-      const birthDateFormatted = '20 January 1990';
-      resume.profile.birthDate = birthDate;
+  render(<Castform data={resume} />);
 
-      render(<Castform data={resume} />);
+  expect(screen.queryByText(birthDateLabelMatcher)).toBeNull();
+});
 
-      expect(screen.getByText(birthDateLabelMatcher)).toBeTruthy();
-      expect(screen.getByText(birthDateLabelMatcher)).toBeInTheDocument();
-      expect(screen.getByText(birthDateFormatted)).toBeTruthy();
-      expect(screen.getByText(birthDateFormatted)).toBeInTheDocument();
-    });
-  });
+test('date of birth is shown if provided', async () => {
+  const resume = await setup(DatabaseConstants.initialStateResumeId);
+
+  const birthDate = new Date(1990, 0, 20);
+  const birthDateFormatted = '20 January 1990';
+  resume.profile.birthDate = birthDate;
+
+  render(<Castform data={resume} />);
+
+  expect(screen.getByText(birthDateLabelMatcher)).toBeTruthy();
+  expect(screen.getByText(birthDateLabelMatcher)).toBeInTheDocument();
+  expect(screen.getByText(birthDateFormatted)).toBeTruthy();
+  expect(screen.getByText(birthDateFormatted)).toBeInTheDocument();
 });
