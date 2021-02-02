@@ -124,11 +124,6 @@ describe('with invalid name', () => {
     await setupAndSubmit(tooShortResumeName);
 
     const notification = await screen.findByRole('alert');
-    /*
-    const notification = await screen.findByText(
-      /You might need to fill up all the required fields/i,
-    );
-    */
     expect(
       getByText(
         notification,
