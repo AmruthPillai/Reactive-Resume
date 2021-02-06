@@ -1,6 +1,6 @@
 import React from 'react';
 
-import delay from './utils/index';
+import { delay } from '../src/utils/index';
 
 const Gatsby = jest.requireActual('gatsby');
 

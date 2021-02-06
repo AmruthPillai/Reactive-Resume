@@ -5,6 +5,8 @@ import ModalContext from '../../contexts/ModalContext';
 import { handleKeyUp } from '../../utils';
 import styles from './CreateResume.module.css';
 
+const createResumeButtonDataTestId = 'create-resume-button';
+
 const CreateResume = () => {
   const { t } = useTranslation();
   const { emitter, events } = useContext(ModalContext);
@@ -17,6 +19,7 @@ const CreateResume = () => {
         <MdAdd size="48" />
       </div>
       <div
+        data-testid={createResumeButtonDataTestId}
         tabIndex="0"
         role="button"
         className={styles.page}
@@ -33,3 +36,5 @@ const CreateResume = () => {
 };
 
 export default memo(CreateResume);
+
+export { createResumeButtonDataTestId };
