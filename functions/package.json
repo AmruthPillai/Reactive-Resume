@@ -8,13 +8,10 @@
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log"
   },
-  "engines": {
-    "node": "12"
-  },
   "dependencies": {
     "firebase-admin": "^9.4.2",
     "firebase-functions": "^3.13.1",
-    "puppeteer": "5.5.0"
+    "puppeteer": "7.0.1"
   },
   "devDependencies": {
     "firebase-functions-test": "^0.2.3"
