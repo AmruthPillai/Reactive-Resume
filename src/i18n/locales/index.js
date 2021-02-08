@@ -12,6 +12,7 @@ import hi from './hi.json';
 import it from './it.json';
 import ja from './ja.json';
 import kn from './kn.json';
+import lt from './lt.json';
 import nl from './nl.json';
 import nb from './nb.json';
 import pl from './pl.json';
@@ -38,6 +39,7 @@ export default {
   it: { translation: it },
   ja: { translation: ja },
   kn: { translation: kn },
+  lt: { translation: lt },
   nl: { translation: nl },
   nb: { translation: nb },
   pl: { translation: pl },

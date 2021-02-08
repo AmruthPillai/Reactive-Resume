@@ -60,6 +60,10 @@ const languages = [
     name: 'Kannada (ಕನ್ನಡ)',
   },
   {
+    code: 'lt',
+    name: 'Lithuanian (Lietuvių)'
+  },
+  {
     code: 'nb',
     name: 'Norwegian (Norsk)',
   },
