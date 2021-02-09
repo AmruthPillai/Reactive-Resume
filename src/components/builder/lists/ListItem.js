@@ -1,5 +1,6 @@
 import { Menu, MenuItem } from '@material-ui/core';
 import React, { memo, useState } from 'react';
+import { Draggable } from 'react-beautiful-dnd';
 import { useTranslation } from 'react-i18next';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { MdMoreVert } from 'react-icons/md';
@@ -15,6 +16,7 @@ const ListItem = ({
   isFirst,
   isLast,
   onEdit,
+  index,
 }) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
@@ -66,49 +68,64 @@ const ListItem = ({
   };
 
   return (
-    <div className={styles.listItem}>
-      <div className="grid">
-        <span className="font-medium truncate">{title}</span>
-
-        {subtitle && (
-          <span className="mt-1 text-sm opacity-75 truncate">{subtitle}</span>
-        )}
-
-        {text && (
-          <span className="w-4/5 mt-5 text-sm opacity-75 truncate">{text}</span>
-        )}
-      </div>
-
-      <div className={styles.menu}>
-        <MdMoreVert
-          size="18px"
-          aria-haspopup="true"
-          onClick={handleClick}
-          className="cursor-context-menu"
-        />
-        <Menu
-          keepMounted
-          anchorEl={anchorEl}
-          onClose={handleClose}
-          open={Boolean(anchorEl)}
+    <Draggable draggableId={data.id} index={index}>
+      {(dragProvided) => (
+        <div
+          ref={dragProvided.innerRef}
+          className={styles.listItem}
+          {...dragProvided.draggableProps}
+          {...dragProvided.dragHandleProps}
         >
-          <div className="flex items-center space-around">
-            <MenuItem disabled={isFirst} onClick={handleMoveUp}>
-              <IoIosArrowUp size="18px" />
-            </MenuItem>
-            <MenuItem disabled={isLast} onClick={handleMoveDown}>
-              <IoIosArrowDown size="18px" />
-            </MenuItem>
+          <div className="grid">
+            <span className="font-medium truncate">{title}</span>
+
+            {subtitle && (
+              <span className="mt-1 text-sm opacity-75 truncate">
+                {subtitle}
+              </span>
+            )}
+
+            {text && (
+              <span className="w-4/5 mt-5 text-sm opacity-75 truncate">
+                {text}
+              </span>
+            )}
           </div>
-          <MenuItem onClick={handleEdit}>{t('shared.buttons.edit')}</MenuItem>
-          <MenuItem onClick={handleDelete}>
-            <span className="text-red-600 font-medium">
-              {t('shared.buttons.delete')}
-            </span>
-          </MenuItem>
-        </Menu>
-      </div>
-    </div>
+
+          <div className={styles.menu}>
+            <MdMoreVert
+              size="18px"
+              aria-haspopup="true"
+              onClick={handleClick}
+              className="cursor-context-menu"
+            />
+            <Menu
+              keepMounted
+              anchorEl={anchorEl}
+              onClose={handleClose}
+              open={Boolean(anchorEl)}
+            >
+              <div className="flex items-center space-around">
+                <MenuItem disabled={isFirst} onClick={handleMoveUp}>
+                  <IoIosArrowUp size="18px" />
+                </MenuItem>
+                <MenuItem disabled={isLast} onClick={handleMoveDown}>
+                  <IoIosArrowDown size="18px" />
+                </MenuItem>
+              </div>
+              <MenuItem onClick={handleEdit}>
+                {t('shared.buttons.edit')}
+              </MenuItem>
+              <MenuItem onClick={handleDelete}>
+                <span className="text-red-600 font-medium">
+                  {t('shared.buttons.delete')}
+                </span>
+              </MenuItem>
+            </Menu>
+          </div>
+        </div>
+      )}
+    </Draggable>
   );
 };
 
