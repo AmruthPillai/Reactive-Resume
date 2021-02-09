@@ -44,6 +44,10 @@ const List = ({
       return;
     }
 
+    if (source.index === destination.index) {
+      return;
+    }
+
     const itemsReordered = reorder(items, source.index, destination.index);
     dispatch({
       type: 'on_input',
