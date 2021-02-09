@@ -67,13 +67,13 @@ const dragAndDropListItem = (listItemElement, direction) => {
 
   listItemElement.focus();
 
-  // enable keyboard dragging
+  // start the drag
   fireEvent.keyDown(listItemElement, spaceKey);
 
   // move element based on direction
   fireEvent.keyDown(listItemElement, getKeyForDirection());
 
-  // disable keyboard dragging
+  // drop
   fireEvent.keyDown(listItemElement, spaceKey);
 };
 
