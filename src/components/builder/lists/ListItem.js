@@ -7,6 +7,8 @@ import { MdMoreVert } from 'react-icons/md';
 import { useDispatch } from '../../../contexts/ResumeContext';
 import styles from './ListItem.module.css';
 
+const dataTestIdPrefix = 'list-item-';
+
 const ListItem = ({
   title,
   subtitle,
@@ -73,6 +75,7 @@ const ListItem = ({
         <div
           ref={dragProvided.innerRef}
           className={styles.listItem}
+          data-testid={`${dataTestIdPrefix}${path}`}
           {...dragProvided.draggableProps}
           {...dragProvided.dragHandleProps}
         >
@@ -130,3 +133,5 @@ const ListItem = ({
 };
 
 export default memo(ListItem);
+
+export { dataTestIdPrefix };

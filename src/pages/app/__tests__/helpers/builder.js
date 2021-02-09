@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  fireEvent,
   render,
   screen,
   waitFor,
@@ -44,6 +45,36 @@ const expectDatabaseUpdateToHaveCompleted = async (
       mockDatabaseUpdateFunction.mock.results[0].value,
     ).resolves.toBeUndefined(),
   );
+};
+
+const dragAndDropDirectionUp = 'DND_DIRECTION_UP';
+const dragAndDropDirectionDown = 'DND_DIRECTION_DOWN';
+
+const dragAndDropListItem = (listItemElement, direction) => {
+  const spaceKey = { keyCode: 32 };
+  const arrowUpKey = { keyCode: 38 };
+  const arrowDownKey = { keyCode: 40 };
+  const getKeyForDirection = () => {
+    switch (direction) {
+      case dragAndDropDirectionUp:
+        return arrowUpKey;
+      case dragAndDropDirectionDown:
+        return arrowDownKey;
+      default:
+        throw new Error('Unhandled `direction`!');
+    }
+  };
+
+  listItemElement.focus();
+
+  // enable keyboard dragging
+  fireEvent.keyDown(listItemElement, spaceKey);
+
+  // move element based on direction
+  fireEvent.keyDown(listItemElement, getKeyForDirection());
+
+  // disable keyboard dragging
+  fireEvent.keyDown(listItemElement, spaceKey);
 };
 
 // eslint-disable-next-line no-underscore-dangle
@@ -124,4 +155,7 @@ export {
   setupAndWait,
   waitForDatabaseUpdateToHaveCompletedFn as waitForDatabaseUpdateToHaveCompleted,
   expectDatabaseUpdateToHaveCompleted,
+  dragAndDropDirectionUp,
+  dragAndDropDirectionDown,
+  dragAndDropListItem,
 };
