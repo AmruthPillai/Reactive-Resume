@@ -95,7 +95,13 @@ const Home = () => {
             >
               Check Out Source Code
             </a>
-            <Link to="/faq">Upvote on Product Hunt</Link>
+            <a
+              href="https://www.producthunt.com/posts/reactive-resume"
+              rel="noreferrer"
+              target="_blank"
+            >
+              Upvote on Product Hunt
+            </a>
             <a
               href="https://www.buymeacoffee.com/AmruthPillai"
               rel="noreferrer"
