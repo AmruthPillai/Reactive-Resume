@@ -1,0 +1,253 @@
+{
+  "shared": {
+    "appName": "Reactive Resume",
+    "shortDescription": "Nemokamas atvirojo kodo gyvenimo aprašymo kūrimo įrankis.",
+    "forms": {
+      "name": "Vardas",
+      "title": "Kreipinys",
+      "subtitle": "Antraštė",
+      "required": "privaloma",
+      "website": "Svetainė",
+      "date": "Data",
+      "present": "Dabar",
+      "position": "Pareigos",
+      "startDate": "Pradžios data",
+      "endDate": "Pabaigos data",
+      "address": "Adresas",
+      "phone": "Telefono numeris",
+      "email": "El. pašto adresas",
+      "summary": "Apžvalga",
+      "markdown": "Šiame teksto bloke palaikomas <1>markdown</1>.",
+      "validation": {
+        "min": "Įveskite bent {{number}} simbolius.",
+        "dateRange": "Pabaigos data turi būti vėliau nei pradžios data.",
+        "email": "Įveskite teisingą el. pašto adresą.",
+        "required": "Šis laukas privalomas.",
+        "url": "Įveskite teisingą URL."
+      }
+    },
+    "buttons": {
+      "add": "Pridėti",
+      "edit": "Redaguoti",
+      "cancel": "Atšaukti",
+      "delete": "Ištrinti",
+      "loading": "Kraunama...",
+      "confirmation": "Ar Jūs įsitikinęs?",
+      "login": "Prisijungti",
+      "logout": "Atsijungti"
+    }
+  },
+  "landing": {
+    "hero": {
+      "goToApp": "Atidaryti įrankį"
+    }
+  },
+  "dashboard": {
+    "title": "Skydelis",
+    "createResume": "Sukurti gyvenimo aprašymą",
+    "editResume": "Redaguoti gyvenimo aprašymą",
+    "lastUpdated": "Paskutinį kartą atnaujinta {{timestamp}}",
+    "toasts": {
+      "deleted": "{{name}} buvo sėkmingai pašalinta(s)."
+    },
+    "buttons": {
+      "duplicate": "Dubliuoti",
+      "rename": "Parvardyti"
+    },
+    "helpText": "Kursite gyvenimo aprašymą nenaudojant šablono. Bet pirmiausia, pavadinkite jį. Tai galėtų būti pareigų, kurių siekiate, pavadinimas. Arba, jei kuriate aprašymą draugui, galite naudoti \"Alekso gyvenimo aprašymas\"."
+  },
+  "builder": {
+    "toasts": {
+      "formErrors": "Prieš pateikiant, reikia užpildyti visus reikalaujamus laukus.",
+      "doesNotExist": "Gyvenimo aprašymo, kurio ieškai, nebėra... o galbūt niekad ir nebuvo?",
+      "loadDemoData": "Nežinai, kaip pradėti? Pabandyk panaudoti demonstracinius duomenis - pamatysi, ką gali sukurti su Reactive Resume.",
+      "printError": "Debesų funkcija šiuo metu streikuoja. Pabandyk vėliau arba naudok naršyklės spausdinimo funkciją."
+    },
+    "sections": {
+      "heading": "Antraštė",
+      "profile": "Profilis",
+      "social": "Socialiniai tinklai",
+      "objective": "Tikslai",
+      "work": "Darbo patirtis",
+      "education": "Išsilavinimas",
+      "project": "Projektas",
+      "projects": "Projektai",
+      "award": "Apdovanojimas",
+      "awards": "Apdovanojimai",
+      "certification": "Sertifikatas",
+      "certifications": "Sertifikatai",
+      "skill": "Įgūdis",
+      "skills": "Įgūdžiai",
+      "hobby": "Pomėgis",
+      "hobbies": "Pomėgiai",
+      "language": "Kalba",
+      "languages": "Kalbos",
+      "reference": "Rekomendacija",
+      "references": "Rekomendacijos",
+      "templates": "Šablonai",
+      "layout": "Išdėstymas",
+      "colors": "Spalvos",
+      "font-size": "Šrifto dydis",
+      "fonts": "Šriftai",
+      "actions": "Veiksmai",
+      "settings": "Nustatymai",
+      "about": "Apie"
+    },
+    "profile": {
+      "photograph": "Nuotrauka",
+      "firstName": "Vardas",
+      "lastName": "Pavardė",
+      "birthDate": "Gimimo data",
+      "address": {
+        "line1": "Adreso pirma eilutė",
+        "line2": "Adreso antra eilutė",
+        "city": "Miestas",
+        "pincode": "Pašto kodas"
+      }
+    },
+    "social": {
+      "network": "Socialinis tinklas",
+      "username": "Vartotojo vardas",
+      "url": "Adresas"
+    },
+    "work": {
+      "company": "Įmonė"
+    },
+    "education": {
+      "institution": "Įstaiga",
+      "field": "Studijų kryptis",
+      "degree": "Studijų pakopa",
+      "gpa": "Įvertinimas"
+    },
+    "awards": {
+      "awarder": "Išdavėjas"
+    },
+    "certifications": {
+      "issuer": "Išdavėjas"
+    },
+    "skills": {
+      "level": "Lygis"
+    },
+    "languages": {
+      "fluency": "Lygis"
+    },
+    "layout": {
+      "block": "Blokas",
+      "reset": "Atkurti pradinį išdėstymą",
+      "text": "Šis šablonas palaiko {{count}} blokus."
+    },
+    "colors": {
+      "primary": "Pagrindinė spalva",
+      "text": "Teksto spalva",
+      "background": "Fono spalva"
+    },
+    "actions": {
+      "import": {
+        "heading": "Įkelti gyvenimo aprašymą",
+        "text": "Galite įkelti informaciją iš įvairių šaltinių, tokių kaip JSON Resume ar savo LinkedIn profilio ir automatiškai užpildyti didžiąją dalį laukų jūsų naujam aprašymui.",
+        "button": "Įkelti"
+      },
+      "export": {
+        "heading": "Eksportuoti gyvenimo aprašymą",
+        "text": "Eksportuokite savo gyvenimo aprašymą PDF formatu pateikimui darbdaviams, arba JSON failą, kurį galėsi įkelti į šį įrankį ir naudoti kitame įrenginyje.",
+        "button": "Eksportuoti"
+      },
+      "share": {
+        "heading": "Dalintis gyvenimo aprašymu",
+        "text": "Nuoroda pateikta žemiau bus viešai pasiekiama jei pasidalinsite. Lankytojai bet kuriuo metu galės matyti jūsų aprašymo naujausią versiją."
+      },
+      "loadDemoData": {
+        "text": "Neaišku, ką daryti su tuščiu lapu? Įkelk demonstracinius duomenis, pamatyk kaip aprašymas turėtų atrodyti ir pradėk jį redaguoti.",
+        "button": "Įkelti demonstracinius duomenis"
+      },
+      "resetEverything": {
+        "text": "Jautiesi padaręs per daug klaidų? Ne bėda - atkurk viską nuo pradžių vos vienu spustelėjimu, bet būk atsargus, nes atsarginės kopijos nėra.",
+        "button": "Atkurti viską"
+      }
+    },
+    "settings": {
+      "theme": "Tema",
+      "language": "Kalba",
+      "translate": "Jei norėtum prisidėti įrankį išversdamas į savo kalbą, <1>apsilankyk šioje nuorodoje</1>.",
+      "dangerZone": {
+        "heading": "Pavojinga zona",
+        "text": "Jei norite ištrinti savo paskyrą ir visus joje esančius gyvenimo aprašymus, reikalingas tik vienas spustelėjimas. Būkite atsargus - šio proceso atšaukti neįmanoma.",
+        "button": "Ištrinti paskyrą"
+      }
+    },
+    "about": {
+      "donate": {
+        "heading": "Paaukoti Reactive Resume",
+        "text": "Bandau visomis pastangomis, bet jei tau šis įrankis buvo naudingas, ar esi geresnėje padėtyje nei kiti, kuriems jis svarbus gauti pirmąją poziciją, <1>apsvarstyk paaukoti nuo $5 projekto vystymui.</1> :)",
+        "button": "Nupirk man kavos!"
+      },
+      "bugFeature": {
+        "heading": "Klaida? Trūksta funkcijų?",
+        "text": "Kažkas neleidžia tinkamai kurti savo gyvenimo aprašymo? Atradai klaidą kurios neįmanoma išvengti? Paminėk tai mūsų GitHub Issues skiltyje naudodamas veiksmus žemiau.",
+        "button": "Pranešti apie klaidą"
+      },
+      "appreciate": {
+        "heading": "Dievini Reactive Resume?",
+        "text": "Niekad nepavargstu nuo istorijų apie tai, kaip šis įrankis žmonėms padėjo. Jei jis pasitarnavo ir tau, ar tiesiog manai, kad jis nuostabus, pranešk man. Gali pasiekti mane mano tinklalapyje."
+      },
+      "sourceCode": {
+        "heading": "Programinės įrangos kodas",
+        "text": "Nori pasileisti įrankį naudojant jo kodą? Ar esi programuotojas norintis prisidėti prie šio projekto atvirojo kodo vystymo? Spausk žemiau esantį mygtuką.",
+        "button": "GitHub saugykla"
+      },
+      "footer": "Su meile sukurtas <1>Amruth Pillai</1>"
+    },
+    "tooltips": {
+      "uploadPhotograph": "Įkelti nuotrauką",
+      "backToDashboard": "Atgal į skydelį"
+    },
+    "emptyList": "Šis sąrašas tuščias."
+  },
+  "modals": {
+    "auth": {
+      "whoAreYou": "Kas tu?",
+      "welcome": "Labas, {{name}}!",
+      "loggedOutText": "Reactive Resume turi žinoti kas esi kad galėtų saugiai prijungti tave prie įrankio ir rodyti tik tau skirtą informaciją. Prisijungus galėsi pradėti kurti savo aprašymą, jį redaguoti ar dalintis su pasauliu!",
+      "loggedInText": "Puiku. Kadangi jau prisijungei, galime pradėti tai, ko čia ir esi. Spausk mygtuką Atidaryti įrankį kad pradėtum kurti savo gyvenimo aprašymą!",
+      "buttons": {
+        "google": "Prisijungti su Google",
+        "anonymous": "Prisijungti anonimiškai"
+      }
+    },
+    "import": {
+      "button": "Pasirinkti failą",
+      "reactiveResume": {
+        "heading": "Įkelti iš Reactive Resume",
+        "text": "Reactive Resume turi savo formatą leidžiantį daugiausia siūlomo funkcionalumo. Jei norėtum įkelti atsarginė kopiją sukurtą šiuo įrankiu, įkelk failą paspausdamas mygtuką esantį žemiau."
+      },
+      "jsonResume": {
+        "heading": "Įkelti iš JSON Resume",
+        "text": "JSON Resume yra atviras gyvenimo aprašymo standartas. Jei esi vienas iš entuziastų, kurie turi savo aprašymą paruoštą šiuo formatu, tereikės vieno spustelėjimo kad pradėtum duomenis naudoti su Reactive Resume."
+      },
+      "linkedIn": {
+        "heading": "Įkelti iš LinkedIn",
+        "text": "Gali pasirinkti ir įkelti JSON failą eksportuotą naudojant LinkedIn spausdamas mygtuką esantį žemiau."
+      }
+    },
+    "export": {
+      "printDialog": {
+        "heading": "Naudoti naršyklės spausdinimo įrankį",
+        "text": "Ieškantiems greito sprendimo, nereikia dairytis toliau nei savo naršyklėje. Viskas ką reikia padaryti tai spausti Ctrl/Cmd + P klavišus ir atidaryti naršyklės spausdinimo įrankį kad iš kart atspausdintumėte savo aprašymą.",
+        "button": "Atspausdinti gyvenimo aprašymą"
+      },
+      "downloadPDF": {
+        "heading": "Atsisiųsti PDF",
+        "text": "Šie pasirinkimai leidžia atspausdinti vieno puslapio, neapribotą gyvenimo aprašymo versiją - tobula turintiems daug medžiagos. Taip pat vienu paspaudimu gali parsisiųsti ir kelių puslapių savo aprašymo versiją.",
+        "buttons": {
+          "single": "Vieno puslapio gyvenimo aprašymas",
+          "multi": "Kelių puslapių gyvenimo aprašymas"
+        }
+      },
+      "jsonFormat": {
+        "heading": "Eksportuoti JSON formatu",
+        "text": "Taip pat gali eksportuoti duomenis JSON formatu saugiam laikymui ir lengvam importavimui atgal į Reactive Resume norint redaguoti esamą ar sugeneruoti naują gyvenimo aprašymą.",
+        "button": "Eksportuoti JSON"
+      }
+    }
+  }
+}

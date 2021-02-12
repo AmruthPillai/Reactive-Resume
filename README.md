@@ -59,6 +59,7 @@ For those of you familiar with the Crowdin Platform, you could do that too and j
 - Italian (Italiano)
 - Japanese (日本人)
 - Kannada (ಕನ್ನಡ)
+- Lithuanian (Lietuvių)
 - Norwegian (Norsk)
 - Persian (Farsi)
 - Polish (Polskie)
