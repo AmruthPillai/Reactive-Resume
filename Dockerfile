@@ -1,9 +1,29 @@
-FROM node as builder
-
+FROM node:alpine as builder
 WORKDIR /app
-COPY ./ /app/
 
-RUN npm install
+RUN apk update \
+    && apk add --no-cache \
+        g++ \
+        yasm \
+        make \
+        automake \
+        autoconf \
+        libtool \
+        vips-dev
+
+COPY package*.json ./
+RUN npm ci
+
+ARG FIREBASE_APIKEY
+ARG FIREBASE_APPID
+ARG FIREBASE_AUTHDOMAIN
+ARG FIREBASE_DATABASEURL
+ARG FIREBASE_MEASUREMENTID
+ARG FIREBASE_MESSAGINGSENDERID
+ARG FIREBASE_PROJECTID
+ARG FIREBASE_STORAGEBUCKET
+
+COPY . ./
 RUN npm run build
 
 FROM nginx:alpine
