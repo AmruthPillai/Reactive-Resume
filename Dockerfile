@@ -1,15 +1,21 @@
 FROM node:alpine as builder
 WORKDIR /app
 
-RUN apk update \
-    && apk add --no-cache \
-        g++ \
-        yasm \
-        make \
-        automake \
-        autoconf \
-        libtool \
-        vips-dev
+RUN apk add --update --no-cache \
+    g++ \
+    yasm \
+    bash \
+    make \
+    automake \
+    autoconf \
+    libtool \
+    zlib-dev \
+    libpng-dev
+
+RUN apk add --update --no-cache \
+    --repository http://dl-3.alpinelinux.org/alpine/edge/community \
+    --repository http://dl-3.alpinelinux.org/alpine/edge/main \
+    vips-dev
 
 COPY package*.json ./
 RUN npm ci
