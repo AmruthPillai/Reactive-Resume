@@ -1,6 +1,6 @@
 import React, { memo, useContext } from 'react';
 import PageContext from '../../../contexts/PageContext';
-import { safetyCheck } from '../../../utils';
+import { safetyCheck, isItemVisible } from '../../../utils';
 
 const SkillItem = (x) => (
   <div key={x.id} className="flex flex-col">
@@ -16,7 +16,7 @@ const SkillsA = () => {
     <div>
       <Heading>{data.skills.heading}</Heading>
       <div className="grid grid-cols-2 gap-y-2 gap-x-4">
-        {data.skills.items.map(SkillItem)}
+        {data.skills.items.map((x) => isItemVisible(x) && SkillItem(x))}
       </div>
     </div>
   ) : null;

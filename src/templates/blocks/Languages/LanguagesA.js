@@ -1,6 +1,6 @@
 import React, { memo, useContext } from 'react';
 import PageContext from '../../../contexts/PageContext';
-import { safetyCheck } from '../../../utils';
+import { safetyCheck, isItemVisible } from '../../../utils';
 
 const LanguageItem = (x) => (
   <div key={x.id} className="flex flex-col">
@@ -16,7 +16,7 @@ const LanguagesA = () => {
     <div>
       <Heading>{data.languages.heading}</Heading>
       <div className="grid grid-cols-2 gap-2">
-        {data.languages.items.map(LanguageItem)}
+        {data.languages.items.map((x) => isItemVisible(x) && LanguageItem(x))}
       </div>
     </div>
   ) : null;

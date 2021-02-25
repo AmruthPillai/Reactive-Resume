@@ -68,6 +68,18 @@ const ResumeProvider = ({ children }) => {
           debouncedUpdateResume(newState);
           return newState;
 
+        case 'on_toggle_use_item':
+          items = get(state, payload.path);
+          index = findIndex(items, ['id', payload.value.id]);
+          if ('isVisible' in items[index]) {
+            items[index].isVisible = !items[index].isVisible;
+          } else {
+            items[index].isVisible = false;
+          }
+          newState = setWith(clone(state), payload.path, items, clone);
+          debouncedUpdateResume(newState);
+          return newState;
+
         case 'on_move_item_up':
           items = get(state, payload.path);
           index = findIndex(items, ['id', payload.value.id]);
