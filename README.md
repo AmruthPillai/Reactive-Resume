@@ -65,6 +65,7 @@ For those of you familiar with the Crowdin Platform, you could do that too and j
 - Polish (Polskie)
 - Portuguese (Brazilian)
 - Portuguese (Portugal)
+- Romanian (Română)
 - Russian (русский)
 - Spanish (Español)
 - Swedish (Svenska)

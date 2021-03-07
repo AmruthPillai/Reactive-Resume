@@ -18,6 +18,7 @@ import nb from './nb.json';
 import pl from './pl.json';
 import ptBr from './pt-br.json';
 import ptPt from './pt-pt.json';
+import ro from './ro.json';
 import ru from './ru.json';
 import sv from './sv.json';
 import tr from './tr.json';
@@ -45,6 +46,7 @@ export default {
   pl: { translation: pl },
   ptBr: { translation: ptBr },
   ptPt: { translation: ptPt },
+  ro: { translation: ro },
   ru: { translation: ru },
   sv: { translation: sv },
   tr: { translation: tr },

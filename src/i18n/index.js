@@ -61,7 +61,7 @@ const languages = [
   },
   {
     code: 'lt',
-    name: 'Lithuanian (Lietuvių)'
+    name: 'Lithuanian (Lietuvių)',
   },
   {
     code: 'nb',
@@ -82,6 +82,10 @@ const languages = [
   {
     code: 'ptPt',
     name: 'Portuguese (Portugal)',
+  },
+  {
+    code: 'ro',
+    name: 'Romanian (Română)',
   },
   {
     code: 'ru',
