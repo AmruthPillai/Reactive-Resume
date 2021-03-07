@@ -1,7 +1,7 @@
 import React, { memo, useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 import PageContext from '../../../contexts/PageContext';
-import { safetyCheck } from '../../../utils';
+import { isItemVisible, safetyCheck } from '../../../utils';
 
 const ReferenceItem = (x) => (
   <div key={x.id} className="flex flex-col">
@@ -22,7 +22,7 @@ const ReferencesB = () => {
     <div>
       <Heading>{data.references.heading}</Heading>
       <div className="grid gap-4">
-        {data.references.items.map(ReferenceItem)}
+        {data.references.items.map((x) => isItemVisible(x) && ReferenceItem(x))}
       </div>
     </div>
   ) : null;

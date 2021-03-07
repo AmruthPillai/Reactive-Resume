@@ -2,7 +2,7 @@ import React, { memo, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import ReactMarkdown from 'react-markdown';
 import PageContext from '../../../contexts/PageContext';
-import { formatDateRange, safetyCheck } from '../../../utils';
+import { formatDateRange, safetyCheck, isItemVisible } from '../../../utils';
 
 const EducationItem = ({ item, language }) => {
   const { t } = useTranslation();
@@ -50,13 +50,16 @@ const EducationA = () => {
     <div>
       <Heading>{data.education.heading}</Heading>
       <div className="grid gap-4">
-        {data.education.items.map((x) => (
-          <EducationItem
-            key={x.id}
-            item={x}
-            language={data.metadata.language}
-          />
-        ))}
+        {data.education.items.map(
+          (x) =>
+            isItemVisible(x) && (
+              <EducationItem
+                key={x.id}
+                item={x}
+                language={data.metadata.language}
+              />
+            ),
+        )}
       </div>
     </div>
   ) : null;

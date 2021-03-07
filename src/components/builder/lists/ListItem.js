@@ -4,6 +4,7 @@ import { Draggable } from 'react-beautiful-dnd';
 import { useTranslation } from 'react-i18next';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { MdMoreVert } from 'react-icons/md';
+import Switch from '@material-ui/core/Switch';
 import { useDispatch } from '../../../contexts/ResumeContext';
 import styles from './ListItem.module.css';
 
@@ -25,6 +26,7 @@ const ListItem = ({
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => setAnchorEl(event.currentTarget);
+  const toggleSwitchState = 'isVisible' in data ? data.isVisible : true;
 
   const handleClose = () => setAnchorEl(null);
 
@@ -69,6 +71,16 @@ const ListItem = ({
     handleClose();
   };
 
+  const handleToggleUse = () => {
+    dispatch({
+      type: 'on_toggle_use_item',
+      payload: {
+        path,
+        value: data,
+      },
+    });
+  };
+
   return (
     <Draggable draggableId={data.id} index={index}>
       {(dragProvided) => (
@@ -94,37 +106,47 @@ const ListItem = ({
               </span>
             )}
           </div>
-
-          <div className={styles.menu}>
-            <MdMoreVert
-              size="18px"
-              aria-haspopup="true"
-              onClick={handleClick}
-              className="cursor-context-menu"
+          <div className={styles.toggleButton}>
+            <Switch
+              checked={toggleSwitchState}
+              onChange={handleToggleUse}
+              color="primary"
+              name="toggleSwitch"
+              className="toggle-button"
+              inputProps={{ 'aria-label': 'primary checkbox' }}
             />
-            <Menu
-              keepMounted
-              anchorEl={anchorEl}
-              onClose={handleClose}
-              open={Boolean(anchorEl)}
-            >
-              <div className="flex items-center space-around">
-                <MenuItem disabled={isFirst} onClick={handleMoveUp}>
-                  <IoIosArrowUp size="18px" />
+
+            <div className={styles.menu}>
+              <MdMoreVert
+                size="18px"
+                aria-haspopup="true"
+                onClick={handleClick}
+                className="cursor-context-menu"
+              />
+              <Menu
+                keepMounted
+                anchorEl={anchorEl}
+                onClose={handleClose}
+                open={Boolean(anchorEl)}
+              >
+                <div className="flex items-center space-around">
+                  <MenuItem disabled={isFirst} onClick={handleMoveUp}>
+                    <IoIosArrowUp size="18px" />
+                  </MenuItem>
+                  <MenuItem disabled={isLast} onClick={handleMoveDown}>
+                    <IoIosArrowDown size="18px" />
+                  </MenuItem>
+                </div>
+                <MenuItem onClick={handleEdit}>
+                  {t('shared.buttons.edit')}
                 </MenuItem>
-                <MenuItem disabled={isLast} onClick={handleMoveDown}>
-                  <IoIosArrowDown size="18px" />
+                <MenuItem onClick={handleDelete}>
+                  <span className="text-red-600 font-medium">
+                    {t('shared.buttons.delete')}
+                  </span>
                 </MenuItem>
-              </div>
-              <MenuItem onClick={handleEdit}>
-                {t('shared.buttons.edit')}
-              </MenuItem>
-              <MenuItem onClick={handleDelete}>
-                <span className="text-red-600 font-medium">
-                  {t('shared.buttons.delete')}
-                </span>
-              </MenuItem>
-            </Menu>
+              </Menu>
+            </div>
           </div>
         </div>
       )}

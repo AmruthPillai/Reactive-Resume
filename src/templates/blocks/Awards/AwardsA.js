@@ -1,7 +1,7 @@
 import React, { memo, useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 import PageContext from '../../../contexts/PageContext';
-import { formatDate, safetyCheck } from '../../../utils';
+import { formatDate, safetyCheck, isItemVisible } from '../../../utils';
 
 const AwardItem = ({ item, language }) => (
   <div>
@@ -29,9 +29,16 @@ const AwardsA = () => {
     <div>
       <Heading>{data.awards.heading}</Heading>
       <div className="grid gap-4">
-        {data.awards.items.map((x) => (
-          <AwardItem key={x.id} item={x} language={data.metadata.language} />
-        ))}
+        {data.awards.items.map(
+          (x) =>
+            isItemVisible(x) && (
+              <AwardItem
+                key={x.id}
+                item={x}
+                language={data.metadata.language}
+              />
+            ),
+        )}
       </div>
     </div>
   ) : null;

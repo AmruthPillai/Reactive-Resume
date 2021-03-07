@@ -2,7 +2,12 @@ import React, { memo, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import ReactMarkdown from 'react-markdown';
 import PageContext from '../../../contexts/PageContext';
-import { formatDateRange, safetyCheck } from '../../../utils';
+import {
+  formatDateRange,
+  safetyCheck,
+  isItemVisible,
+  genericFilter,
+} from '../../../utils';
 
 const WorkItem = ({ item, language }) => {
   const { t } = useTranslation();
@@ -40,14 +45,16 @@ const WorkItem = ({ item, language }) => {
 
 const WorkA = () => {
   const { data, heading: Heading } = useContext(PageContext);
-
   return safetyCheck(data.work) ? (
     <div>
       <Heading>{data.work.heading}</Heading>
       <div className="grid gap-4">
-        {data.work.items.map((x) => (
-          <WorkItem key={x.id} item={x} language={data.metadata.language} />
-        ))}
+        {data.work.items.map(
+          (x) =>
+            isItemVisible(x) && (
+              <WorkItem key={x.id} item={x} language={data.metadata.language} />
+            ),
+        )}
       </div>
     </div>
   ) : null;

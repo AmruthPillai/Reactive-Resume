@@ -1,7 +1,7 @@
 import React, { memo, useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 import PageContext from '../../../contexts/PageContext';
-import { formatDate, safetyCheck } from '../../../utils';
+import { formatDate, safetyCheck, isItemVisible } from '../../../utils';
 
 const CertificationItem = ({ item, language }) => (
   <div>
@@ -29,13 +29,16 @@ const CertificationsA = () => {
     <div>
       <Heading>{data.certifications.heading}</Heading>
       <div className="grid gap-4">
-        {data.certifications.items.map((x) => (
-          <CertificationItem
-            key={x.id}
-            item={x}
-            language={data.metadata.language}
-          />
-        ))}
+        {data.certifications.items.map(
+          (x) =>
+            isItemVisible(x) && (
+              <CertificationItem
+                key={x.id}
+                item={x}
+                language={data.metadata.language}
+              />
+            ),
+        )}
       </div>
     </div>
   ) : null;

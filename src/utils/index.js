@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import { get, isEmpty } from 'lodash';
+import { get, isEmpty, clone } from 'lodash';
 
 export const getModalText = (isEditMode, type, t) =>
   isEditMode
@@ -8,6 +8,18 @@ export const getModalText = (isEditMode, type, t) =>
 
 export const safetyCheck = (section, path = 'items') =>
   !!(section && section.visible === true && !isEmpty(section[path]));
+
+export const isItemVisible = (section) =>
+  section && section.isVisible !== false;
+
+// Thought about creating a generic function to filter out non-visible items
+export const genericFilter = (key, data) => {
+  const clonedData = clone(data);
+  clonedData[`${key}`].items = clonedData[`${key}`].items.filter((x) =>
+    isItemVisible(x),
+  );
+  return data;
+};
 
 export const handleKeyUp = (event, action) => {
   (event.which === 13 || event.which === 32) && action();
