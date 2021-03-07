@@ -2,12 +2,7 @@ import React, { memo, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import ReactMarkdown from 'react-markdown';
 import PageContext from '../../../contexts/PageContext';
-import {
-  formatDateRange,
-  safetyCheck,
-  isItemVisible,
-  genericFilter,
-} from '../../../utils';
+import { formatDateRange, safetyCheck, isItemVisible } from '../../../utils';
 
 const WorkItem = ({ item, language }) => {
   const { t } = useTranslation();

@@ -3,7 +3,7 @@ import React, { memo, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaCaretRight } from 'react-icons/fa';
 import PageContext from '../../../contexts/PageContext';
-import { safetyCheck } from '../../../utils';
+import { isItemVisible, safetyCheck } from '../../../utils';
 import BirthDateC from '../BirthDate/BirthDateC';
 import Icons from '../Icons';
 
@@ -57,14 +57,17 @@ const ContactB = () => {
       <BirthDateC />
 
       {safetyCheck(data.social) &&
-        data.social.items.map((x) => (
-          <ContactItem
-            key={x.id}
-            value={x.username}
-            icon={x.network}
-            link={x.url}
-          />
-        ))}
+        data.social.items.map(
+          (x) =>
+            isItemVisible(x) && (
+              <ContactItem
+                key={x.id}
+                value={x.username}
+                icon={x.network}
+                link={x.url}
+              />
+            ),
+        )}
     </div>
   );
 };
