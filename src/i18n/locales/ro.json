@@ -1,0 +1,253 @@
+{
+  "shared": {
+    "appName": "Reactive Resume",
+    "shortDescription": "Un constructor de CV-uri gratuit și open source.",
+    "forms": {
+      "name": "Nume",
+      "title": "Titlu",
+      "subtitle": "Subtitlu",
+      "required": "necesar",
+      "website": "Site web",
+      "date": "Dată",
+      "present": "Prezent",
+      "position": "Poziție",
+      "startDate": "Data de început",
+      "endDate": "Data de încheiere",
+      "address": "Adresă",
+      "phone": "Număr de telefon",
+      "email": "Adresă de email",
+      "summary": "Sumar",
+      "markdown": "Acest bloc de text acceptă <1> markdown </1>.",
+      "validation": {
+        "min": "Vă rugăm să introduceți cel puțin {{number}} caractere.",
+        "dateRange": "Data de încheiere trebuie să fie mai târziu de Data de începere.",
+        "email": "Trebuie sa fie o adresa de email valida.",
+        "required": "Acest câmp este obligatoriu.",
+        "url": "Trebuie să fie o adresă URL validă."
+      }
+    },
+    "buttons": {
+      "add": "Adăuga",
+      "edit": "Editați",
+      "cancel": "Anulare",
+      "delete": "Șterge",
+      "loading": "Se încarcă...",
+      "confirmation": "Esti sigur?",
+      "login": "Autentificare",
+      "logout": "Deconectați-vă"
+    }
+  },
+  "landing": {
+    "hero": {
+      "goToApp": "Mergi la aplicație"
+    }
+  },
+  "dashboard": {
+    "title": "Panou de control",
+    "createResume": "Creați CV",
+    "editResume": "Editați CV",
+    "lastUpdated": "Ultima actualizare {{timestamp}}",
+    "toasts": {
+      "deleted": "{{name}} a fost șters cu succes"
+    },
+    "buttons": {
+      "duplicate": "Duplicat",
+      "rename": "Redenumiți"
+    },
+    "helpText": "Veți crea un CV nou de la zero, dar mai întâi, să-i dăm un nume. Acesta poate fi numele rolului pentru care doriți să aplicați sau, dacă creați un CV pentru un prieten, îl puteți numi CV-ul lui Alex."
+  },
+  "builder": {
+    "toasts": {
+      "formErrors": "Este posibil să fie necesar să completați toate câmpurile obligatorii înainte de a trimite acest formular.",
+      "doesNotExist": "CV-ul pe care îl căutați nu mai există... sau poate nu a existat niciodată?",
+      "loadDemoData": "Nu sunteți sigur de unde să începeți? Încercați să încărcați datele demo pentru a vedea ce are de oferit CV-ul reactiv.",
+      "printError": "Funcția cloud are probleme, vă rugăm să încercați din nou mai târziu sau să utilizați funcția de imprimare a browserului."
+    },
+    "sections": {
+      "heading": "Titlu",
+      "profile": "Profil",
+      "social": "Rețea socială",
+      "objective": "Obiectiv",
+      "work": "Experiență de muncă",
+      "education": "Educație",
+      "project": "Proiect",
+      "projects": "Proiecte",
+      "award": "Premiu",
+      "awards": "Premii",
+      "certification": "Certificare",
+      "certifications": "Certificări",
+      "skill": "Aptitudine",
+      "skills": "Aptitudini",
+      "hobby": "Pasiune",
+      "hobbies": "Pasiuni",
+      "language": "Limbă",
+      "languages": "Limbi",
+      "reference": "Referință",
+      "references": "Referințe",
+      "templates": "Șabloane",
+      "layout": "Aspect",
+      "colors": "Culori",
+      "font-size": "Marimea fontului",
+      "fonts": "Fonturi",
+      "actions": "Acțiuni",
+      "settings": "Setări",
+      "about": "Despre"
+    },
+    "profile": {
+      "photograph": "Fotografie",
+      "firstName": "Prenume",
+      "lastName": "Nume",
+      "birthDate": "Data nașterii",
+      "address": {
+        "line1": "Adresă linia 1",
+        "line2": "Adresă linia 2",
+        "city": "Oraș",
+        "pincode": "Cod poștal"
+      }
+    },
+    "social": {
+      "network": "Rețea",
+      "username": "Utilizator",
+      "url": "URL"
+    },
+    "work": {
+      "company": "Companie"
+    },
+    "education": {
+      "institution": "Instituţie",
+      "field": "Domeniu de studiu",
+      "degree": "Tipul de Diplomă",
+      "gpa": "GPA"
+    },
+    "awards": {
+      "awarder": "Premii"
+    },
+    "certifications": {
+      "issuer": "Emitent"
+    },
+    "skills": {
+      "level": "Nivel"
+    },
+    "languages": {
+      "fluency": "Fluenţă"
+    },
+    "layout": {
+      "block": "Bloc",
+      "reset": "Resetați aspectul",
+      "text": "Acest șablon acceptă blocuri {{count}}."
+    },
+    "colors": {
+      "primary": "Culoare primară",
+      "text": "Culoare text",
+      "background": "Culoare fundal"
+    },
+    "actions": {
+      "import": {
+        "heading": "Importă Curriculum vitae",
+        "text": "Puteți importa informațiile dvs. din diferite surse, cum ar fi CV-ul JSON sau LinkedIn, pentru a completa automat majoritatea datelor pentru CV-ul dvs.",
+        "button": "Importă"
+      },
+      "export": {
+        "heading": "Exportați CV-ul",
+        "text": "Exportați CV-ul dvs. în format PDF pentru a-l distribui recrutorilor sau un JSON pe care îl veți putea importa înapoi în această aplicație pe alt computer.",
+        "button": "Exportă"
+      },
+      "share": {
+        "heading": "Distribuie CV-ul tău",
+        "text": "Linkul de mai jos va fi accesibil public dacă alegeți să îl distribuiți, iar spectatorii vor vedea în orice moment cea mai recentă versiune a CV-ului dvs."
+      },
+      "loadDemoData": {
+        "text": "Nu știți ce să faceți cu o pagină goală nouă? Încărcați câteva date demonstrative pentru a vedea cum ar trebui să arate un CV și puteți începe editarea de acolo.",
+        "button": "Încărcați datele demonstrative"
+      },
+      "resetEverything": {
+        "text": "Simți că ai făcut prea multe greșeli? Nu vă faceți griji, ștergeți totul cu un singur clic, dar aveți grijă dacă nu există copii de rezervă.",
+        "button": "Resetați totul"
+      }
+    },
+    "settings": {
+      "theme": "Temă",
+      "language": "Limbă",
+      "translate": "Dacă doriți să contribuiți oferind traduceri în limba dvs., <1> vă rugăm să vizitați acest link </1>.",
+      "dangerZone": {
+        "heading": "Zonă periculoasă",
+        "text": "Dacă doriți să vă ștergeți contul și să ștergeți toate CV-urile, este la doar un buton distanță. Vă rugăm să fiți atenți, deoarece acesta este un proces ireversibil.",
+        "button": "Șterge Contul"
+      }
+    },
+    "about": {
+      "donate": {
+        "heading": "Donați la Cv-ul Reactiv",
+        "text": "Încerc să fac ce pot, dar dacă ați găsit aplicația utilă sau dacă sunteți într-o poziție mai bună decât ceilalți care depind de acest proiect pentru primul lor loc de muncă, <1>vă rugăm să luați în considerare donarea a doar 5 USD pentru a vă menține proiectul în viață</1> :)",
+        "button": "Cumpără-mi o cafea!"
+      },
+      "bugFeature": {
+        "heading": "Eroare? Solicitare funcționalitate?",
+        "text": "Ceva care vă oprește progresul din a face un CV? Ați găsit un bug plictisitor care pur și simplu nu se va opri? Vorbiți despre aceasta în secțiunea Probleme GitHub folosind acțiunile de mai jos.",
+        "button": "Ridică o problemă"
+      },
+      "appreciate": {
+        "heading": "Ți-a plăcut CV-ul Reactiv?",
+        "text": "Nu m-am săturat să aud povești despre modul în care această aplicație i-a ajutat pe oameni și, dacă v-a ajutat sau pur și simplu vi s-a părut că Reactive Resume este un instrument extraordinar, anunțați-mă. Puteți ajunge la mine pe site-ul meu web."
+      },
+      "sourceCode": {
+        "heading": "Cod sursă",
+        "text": "Doriți să rulați proiectul de la sursa sa? Sunteți un dezvoltator dispus să contribuie la dezvoltarea open source a acestui proiect? Faceți clic pe butonul de mai jos.",
+        "button": "GitHub Repo"
+      },
+      "footer": "Realizat cu dragoste de <1> Amruth Pillai </1>"
+    },
+    "tooltips": {
+      "uploadPhotograph": "Încărcați fotografia",
+      "backToDashboard": "Du-te înapoi la Panoul de Control"
+    },
+    "emptyList": "Această listă este goală."
+  },
+  "modals": {
+    "auth": {
+      "whoAreYou": "Cine ești tu?",
+      "welcome": "Bun venit, {{name}}!",
+      "loggedOutText": "CV-ul reactiv trebuie să știe cine sunteți, astfel încât să vă poată autentifica în siguranță în aplicație și să vă arate doar informațiile dvs. Odată ce vă conectați, puteți începe să vă construiți CV-ul, și să îl editați pentru a adăuga noi abilități sau să îl împărtășiți cu lumea!",
+      "loggedInText": "Minunat. Acum, că v-ați autentificat, putem continua cu adevăratul motiv pentru care sunteți aici. Faceți clic pe butonul Accesați aplicația pentru a începe să vă creați CV-ul!",
+      "buttons": {
+        "google": "Conectați-vă cu Google",
+        "anonymous": "Autentificare anonimă"
+      }
+    },
+    "import": {
+      "button": "Selectați Fișier",
+      "reactiveResume": {
+        "heading": "Importă din CV Reactiv",
+        "text": "Reactive CV are propriul format de schemă pentru a profita la maximum de toate capacitățile personalizabile pe care le are de oferit. Dacă doriți să importați o copie de rezervă a CV-ului realizat cu această aplicație, trebuie doar să încărcați fișierul folosind butonul de mai jos."
+      },
+      "jsonResume": {
+        "heading": "Importați din CV JSON",
+        "text": "JSON CV este un standard deschis pentru structura schemei CV-urilor. Dacă sunteți unul dintre mulți entuziaști care își au CV-ul pregătit în acest format, este suficient doar un clic pentru a începe cu CV-ul Reactiv."
+      },
+      "linkedIn": {
+        "heading": "Importați de pe LinkedIn",
+        "text": "Puteți importa un JSON care a fost exportat de pe LinkedIn făcând clic pe butonul de mai jos și selectând fișierul corespunzător."
+      }
+    },
+    "export": {
+      "printDialog": {
+        "heading": "Utilizați dialogul de imprimare al browserului",
+        "text": "Pentru aceia dintre voi care doresc o soluție rapidă, nu trebuie să căutați mai departe decât browserul dvs. Tot ce trebuie să faceți este să apăsați Ctrl / Cmd + P și să deschideți dialogul de imprimare din browserul dvs. și să vă imprimați imediat CV-ul.",
+        "button": "Imprimați CV"
+      },
+      "downloadPDF": {
+        "heading": "Descărcați PDF",
+        "text": "Aceste opțiuni vă permit să imprimați o singură pagină, versiune necontrolată a CV-ului dvs., perfectă pentru cei care au mult conținut. Alternativ, puteți descărca și o versiune de mai multe pagini a CV-ului dvs. cu un singur clic.",
+        "buttons": {
+          "single": "CV cu o Singură Pagină",
+          "multi": "CV cu mai multe pagini"
+        }
+      },
+      "jsonFormat": {
+        "heading": "Exportați în format JSON",
+        "text": "De asemenea, puteți exporta datele în format JSON pentru păstrarea în siguranță, astfel încât să le puteți importa cu ușurință în CV Reactiv ori de câte ori doriți să editați sau să generați un CV.",
+        "button": "Exportați JSON"
+      }
+    }
+  }
+}
