@@ -33,7 +33,7 @@ const StorageProvider = ({ children }) => {
 
     if (file.size > 2097152) {
       toast.error(
-        "Your image seems to be bigger than 2 MB. That's way too much. Maybe consider reducing it's size?",
+        "Your image seems to be bigger than 2 MB. That's way too much. Maybe consider reducing its size?",
       );
       return null;
     }
