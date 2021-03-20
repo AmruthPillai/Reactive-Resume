@@ -12,7 +12,6 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "lint:fix": "eslint --fix .",
     "lint": "eslint .",
-    "prebuild": "npm run test",
     "serve": "gatsby serve",
     "start": "npm run develop",
     "test": "jest"
