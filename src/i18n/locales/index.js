@@ -20,6 +20,7 @@ import ptBr from './pt-br.json';
 import ptPt from './pt-pt.json';
 import ro from './ro.json';
 import ru from './ru.json';
+import sk from './sk.json';
 import sv from './sv.json';
 import tr from './tr.json';
 import uk from './uk.json';
@@ -48,6 +49,7 @@ export default {
   ptPt: { translation: ptPt },
   ro: { translation: ro },
   ru: { translation: ru },
+  sk: { translation: sk },
   sv: { translation: sv },
   tr: { translation: tr },
   uk: { translation: uk },
