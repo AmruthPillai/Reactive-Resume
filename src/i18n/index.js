@@ -92,6 +92,10 @@ const languages = [
     name: 'Russian (русский)',
   },
   {
+    code: 'sk',
+    name: 'Slovak (Slovenčina)',
+  },
+  {
     code: 'es',
     name: 'Spanish (Español)',
   },
