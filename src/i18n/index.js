@@ -8,6 +8,10 @@ const languages = [
     name: 'Arabic (عربى)',
   },
   {
+    code: 'bn',
+    name: 'Bengali (বাংলা)',
+  },
+  {
     code: 'cs',
     name: 'Czech (čeština)',
   },

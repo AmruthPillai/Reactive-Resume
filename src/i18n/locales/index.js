@@ -1,4 +1,5 @@
 import ar from './ar.json';
+import bn from './bn.json';
 import cs from './cs.json';
 import da from './da.json';
 import de from './de.json';
@@ -28,6 +29,7 @@ import zh from './zh.json';
 
 export default {
   ar: { translation: ar },
+  bn: { translation: bn },
   cs: { translation: cs },
   da: { translation: da },
   de: { translation: de },
