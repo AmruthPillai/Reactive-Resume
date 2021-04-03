@@ -91,7 +91,7 @@ const DataModal = ({
     : title.create;
 
   const submitAction = (
-    <Button type="submit" onClick={() => onSubmit(values)}>
+    <Button type="submit" isLoading={loading} onClick={() => onSubmit(values)}>
       {loading ? t('shared.buttons.loading') : getTitle}
     </Button>
   );
