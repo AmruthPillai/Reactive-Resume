@@ -9,7 +9,7 @@
       "required": "obbligatorio",
       "website": "Sito Web",
       "date": "Data",
-      "present": "Regalo",
+      "present": "Attuale",
       "position": "Posizione",
       "startDate": "Data Inizio",
       "endDate": "Data di fine",
@@ -54,7 +54,7 @@
       "duplicate": "Duplica",
       "rename": "Rinomina"
     },
-    "helpText": "Stai per creare un nuovo curriculum da zero, ma in primo luogo, dai un nome. Questo può essere il nome del ruolo che si desidera ricoprire, o se stai facendo un curriculum per un amico, potresti chiamarlo Curriculum di Alex."
+    "helpText": "Stai per creare un nuovo curriculum da zero, ma prima di tutto, dagli un nome. Questo può essere il nome del ruolo che si desidera ricoprire, o se stai facendo un curriculum per un amico, potresti chiamarlo Curriculum di Alex."
   },
   "builder": {
     "toasts": {
@@ -68,7 +68,7 @@
       "profile": "Profilo",
       "social": "Social Network",
       "objective": "Obiettivo",
-      "work": "Esperienza Lavorative",
+      "work": "Esperienza Lavorativa",
       "education": "Istruzione",
       "project": "Progetto",
       "projects": "Progetti",
@@ -78,8 +78,8 @@
       "certifications": "Certificazioni",
       "skill": "Competenza",
       "skills": "Competenze",
-      "hobby": "Hobby",
-      "hobbies": "Hobby",
+      "hobby": "Passione",
+      "hobbies": "Passioni",
       "language": "Lingua",
       "languages": "Lingue",
       "reference": "Referenza",
@@ -117,7 +117,7 @@
       "institution": "Istituto",
       "field": "Titolo di studio",
       "degree": "Tipo di diploma",
-      "gpa": "GPA"
+      "gpa": "Voto"
     },
     "awards": {
       "awarder": "Distributore"
@@ -129,7 +129,7 @@
       "level": "Livello"
     },
     "languages": {
-      "fluency": "Scioltezza"
+      "fluency": "Scorrevolezza"
     },
     "layout": {
       "block": "Blocco",
@@ -157,11 +157,11 @@
         "text": "Il link qui sotto sarà accessibile pubblicamente se si sceglie di condividerlo, e gli spettatori vedranno l'ultima versione del tuo curriculum in qualsiasi momento."
       },
       "loadDemoData": {
-        "text": "Non chiaro su cosa fare con una pagina vuota fresca? Carica alcuni dati demo per vedere come dovrebbe apparire un curriculum e puoi iniziare a modificare da lì.",
+        "text": "Non chiaro su cosa fare con una nuova pagina vuota? Carica alcuni dati demo per vedere come dovrebbe apparirebbe un curriculum e potrai iniziare a modificare da lì.",
         "button": "Carica dati demo"
       },
       "resetEverything": {
-        "text": "Ti senti come se avessi commesso troppi errori? Nessuna preoccupazione, cancella tutto con un solo clic, ma fai attenzione se non ci sono backup.",
+        "text": "Ti senti come se avessi commesso troppi errori? Non preoccuparti, cancella tutto con un solo clic, ma fai attenzione se non hai fatto il backup.",
         "button": "Reimposta Tutto"
       }
     },
@@ -171,7 +171,7 @@
       "translate": "Se vuoi contribuire fornendo traduzioni nella tua lingua, <1>visita questo link</1>.",
       "dangerZone": {
         "heading": "Zona Pericolosa",
-        "text": "Se desideri eliminare il tuo account e cancellare tutti i tuoi curriculum, c'è solo un pulsante di distanza. Si prega di essere cauti in quanto si tratta di un processo irreversibile.",
+        "text": "Se desideri eliminare il tuo account e cancellare tutti i tuoi curriculum, questo è il posto giusto. Si prega di essere cauti in quanto si tratta di un processo irreversibile.",
         "button": "Elimina account"
       }
     },
@@ -182,17 +182,17 @@
         "button": "Comprami un caffè!"
       },
       "bugFeature": {
-        "heading": "Bug? Richiedi funzionalità?",
-        "text": "Qualcosa che impedisce ai tuoi progressi di fare un curriculum? Trovato un bug fastidioso che semplicemente non uscire? Parlatelo nella sezione Problemi di GitHub utilizzando le azioni qui sotto.",
-        "button": "Evidenzia un problema"
+        "heading": "Bug? Vuoi richiedere nuove funzionalità?",
+        "text": "Qualcosa che ti impedisce di fare un curriculum? Hai trovato un bug fastidioso che semplicemente non si risolve? Commenta nella sezione Problemi di GitHub utilizzando le azioni qui sotto.",
+        "button": "Segnala un problema"
       },
       "appreciate": {
         "heading": "Ti piace Reactive Resume?",
-        "text": "Non mi stanco mai di sentire storie di come questa app ha aiutato le persone, e se ti ha aiutato, o hai appena trovato Reactive Resume per essere uno strumento fantastico, fatemelo sapere. Puoi contattarmi sul mio sito web."
+        "text": "Non mi stanco mai di sentire storie di come questa app ha aiutato le persone, e se ti ha aiutato, o hai appena trovato Reactive Resume essere uno strumento fantastico, fammelo sapere. Puoi contattarmi sul mio sito web."
       },
       "sourceCode": {
         "heading": "Codice sorgente",
-        "text": "Vuoi eseguire il progetto dal codice sorgente? Sei uno sviluppatore disposto a contribuire allo sviluppo open-source di questo progetto? Fare clic sul pulsante qui sotto.",
+        "text": "Vuoi eseguire il progetto dal codice sorgente? Sei uno sviluppatore disposto a contribuire allo sviluppo open-source di questo progetto? Fai clic sul pulsante qui sotto.",
         "button": "GitHub Repo"
       },
       "footer": "Realizzato con amore da <1>Amruth Pillai</1>"
@@ -222,7 +222,7 @@
       },
       "jsonResume": {
         "heading": "Importa da JSON Resume",
-        "text": "JSON Resume è uno standard aperto per lo schema del curriculum. Se siete uno dei tanti appassionati che hanno il loro curriculum pronto in questo formato, tutto ciò che ci vuole è un solo clic per iniziare con Reactive Resume."
+        "text": "JSON Resume è uno standard aperto per lo schema del curriculum. Se sei uno dei tanti appassionati che ha il suo curriculum pronto in questo formato, tutto ciò che ci vuole è un clic per iniziare con Reactive Resume."
       },
       "linkedIn": {
         "heading": "Importa da LinkedIn",
@@ -240,7 +240,7 @@
         "text": "Queste opzioni consentono di stampare una sola pagina, una versione non vincolata del tuo curriculum, perfetta per chi ha molti contenuti. In alternativa, è possibile scaricare una versione multi-pagina del vostro curriculum anche con un solo clic.",
         "buttons": {
           "single": "Curriculum a pagina singola",
-          "multi": "Curriculum multi pagina"
+          "multi": "Curriculum pagine multiple"
         }
       },
       "jsonFormat": {
