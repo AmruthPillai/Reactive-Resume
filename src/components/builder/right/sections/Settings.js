@@ -1,6 +1,7 @@
 import React, { memo, useContext, useState } from 'react';
 import { FaAngleDown } from 'react-icons/fa';
 import { useTranslation, Trans } from 'react-i18next';
+import { toast } from 'react-toastify';
 import UserContext from '../../../../contexts/UserContext';
 import Button from '../../../shared/Button';
 import Heading from '../../../shared/Heading';
@@ -40,10 +41,20 @@ const Settings = ({ id }) => {
       return;
     }
 
-    setDeleteText('Buh bye! :(');
-    setTimeout(() => {
-      deleteAccount();
-    }, 500);
+    setDeleteText(t('shared.buttons.loading'));
+
+    setTimeout(
+      () =>
+        deleteAccount()
+          .then(() => {
+            setDeleteText('Buh bye! :(');
+          })
+          .catch((error) => {
+            toast.error(error.message);
+            setDeleteText(t('builder.settings.dangerZone.button'));
+          }),
+      500,
+    );
   };
 
   return (
