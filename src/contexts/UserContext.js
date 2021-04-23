@@ -75,17 +75,20 @@ const UserProvider = ({ children }) => {
 
   const deleteAccount = async () => {
     const { currentUser } = firebase.auth();
+    const authProviderIsGoogle =
+      currentUser.providerData.length > 0 &&
+      currentUser.providerData[0].providerId === 'google.com';
     const deleteUser = firebase.functions().httpsCallable('deleteUser');
+
+    if (authProviderIsGoogle) {
+      const userCredential = await loginWithGoogle();
+      await currentUser.reauthenticateWithCredential(userCredential.credential);
+    }
 
     await deleteUser();
 
     try {
       await currentUser.delete();
-    } catch (error) {
-      if (error.code === 'auth/requires-recent-login') {
-        await loginWithGoogle();
-        await currentUser.delete();
-      }
     } finally {
       logout();
       toast(
