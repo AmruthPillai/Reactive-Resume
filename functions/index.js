@@ -19,8 +19,9 @@ const deleteUserFunctionHandler = async (_, { auth }) => {
   }
 
   try {
-    // 1. Delete user resumes
     const userId = auth.uid;
+    const updates = {};
+
     const userResumesDataSnapshot = await admin
       .database()
       .ref('resumes')
@@ -30,18 +31,21 @@ const deleteUserFunctionHandler = async (_, { auth }) => {
     const userResumes = userResumesDataSnapshot.val();
     if (userResumes) {
       Object.keys(userResumes).forEach(async (resumeId) => {
-        await admin.database().ref(`resumes/${resumeId}`).remove();
+        updates[`resumes/${resumeId}`] = null;
       });
     }
 
-    // 2. Delete user
     const userDataSnapshot = await admin
       .database()
       .ref(`users/${userId}`)
       .once('value');
     const user = userDataSnapshot.val();
     if (user) {
-      await admin.database().ref(`users/${userId}`).remove();
+      updates[`users/${userId}`] = null;
+    }
+
+    if (Object.keys(updates).length > 0) {
+      await admin.database().ref().update(updates);
     }
 
     return true;

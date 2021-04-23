@@ -35,7 +35,7 @@ const Settings = ({ id }) => {
     dispatch({ type: 'change_language', payload: lang });
   };
 
-  const handleDeleteAccount = () => {
+  const handleDeleteAccount = async () => {
     if (deleteText === t('builder.settings.dangerZone.button')) {
       setDeleteText(t('shared.buttons.confirmation'));
       return;
@@ -43,18 +43,12 @@ const Settings = ({ id }) => {
 
     setDeleteText(t('shared.buttons.loading'));
 
-    setTimeout(
-      () =>
-        deleteAccount()
-          .then(() => {
-            setDeleteText('Buh bye! :(');
-          })
-          .catch((error) => {
-            toast.error(error.message);
-            setDeleteText(t('builder.settings.dangerZone.button'));
-          }),
-      500,
-    );
+    try {
+      await deleteAccount();
+    } catch (error) {
+      toast.error('An error occurred deleting your account');
+      setDeleteText(t('builder.settings.dangerZone.button'));
+    }
   };
 
   return (
