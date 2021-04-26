@@ -46,7 +46,7 @@ const Settings = ({ id }) => {
     try {
       await deleteAccount();
     } catch (error) {
-      toast.error('An error occurred deleting your account');
+      toast.error('An error occurred deleting your account.');
       setDeleteText(t('builder.settings.dangerZone.button'));
     }
   };
