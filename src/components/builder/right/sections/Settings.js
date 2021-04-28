@@ -18,6 +18,9 @@ const Settings = ({ id }) => {
   const [deleteText, setDeleteText] = useState(
     t('builder.settings.dangerZone.button'),
   );
+  const [isDeleteAccountInProgress, setDeleteAccountInProgress] = useState(
+    false,
+  );
 
   const dispatch = useDispatch();
   const { deleteAccount } = useContext(UserContext);
@@ -41,12 +44,13 @@ const Settings = ({ id }) => {
       return;
     }
 
-    setDeleteText(t('shared.buttons.loading'));
+    setDeleteAccountInProgress(true);
 
     try {
       await deleteAccount();
     } catch (error) {
       toast.error('An error occurred deleting your account.');
+      setDeleteAccountInProgress(false);
       setDeleteText(t('builder.settings.dangerZone.button'));
     }
   };
@@ -101,7 +105,11 @@ const Settings = ({ id }) => {
         <p className="leading-loose">{t('builder.settings.dangerZone.text')}</p>
 
         <div className="mt-4 flex">
-          <Button isDelete onClick={handleDeleteAccount}>
+          <Button
+            isDelete
+            onClick={handleDeleteAccount}
+            isLoading={isDeleteAccountInProgress}
+          >
             {deleteText}
           </Button>
         </div>
