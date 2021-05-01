@@ -10,41 +10,53 @@ function timeout(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function asyncForEach(array, callback) {
-  for (let index = 0; index < array.length; index++) {
-    // eslint-disable-next-line no-await-in-loop
-    await callback(array[index], index, array);
+const deleteUserFunctionHandler = async (_, { auth }) => {
+  if (!auth) {
+    throw new functions.https.HttpsError(
+      'failed-precondition',
+      'The function must be called while authenticated.',
+    );
   }
-}
+
+  try {
+    const userId = auth.uid;
+    const updates = {};
+
+    const userResumesDataSnapshot = await admin
+      .database()
+      .ref('resumes')
+      .orderByChild('user')
+      .equalTo(userId)
+      .once('value');
+    const userResumes = userResumesDataSnapshot.val();
+    if (userResumes) {
+      Object.keys(userResumes).forEach(async (resumeId) => {
+        updates[`resumes/${resumeId}`] = null;
+      });
+    }
+
+    const userDataSnapshot = await admin
+      .database()
+      .ref(`users/${userId}`)
+      .once('value');
+    const user = userDataSnapshot.val();
+    if (user) {
+      updates[`users/${userId}`] = null;
+    }
+
+    if (Object.keys(updates).length > 0) {
+      await admin.database().ref().update(updates);
+    }
+
+    return true;
+  } catch (error) {
+    throw new functions.https.HttpsError('internal', error.message);
+  }
+};
 
 exports.deleteUser = functions
   .runWith({ memory: '256MB' })
-  .https.onCall((_, { auth }) => {
-    if (!auth) {
-      throw new functions.https.HttpsError(
-        'failed-precondition',
-        'The function must be called while authenticated.',
-      );
-    }
-
-    return new Promise((resolve) => {
-      const resumesRef = admin.database().ref('resumes');
-
-      resumesRef.once('value', async (snapshot) => {
-        const data = snapshot.val();
-
-        const resumes = Object.keys(data).filter(
-          (x) => data[x].user === auth.uid,
-        );
-
-        await asyncForEach(resumes, async (id) => {
-          await admin.database().ref(`resumes/${id}`).remove();
-        });
-
-        resolve();
-      });
-    });
-  });
+  .https.onCall(deleteUserFunctionHandler);
 
 exports.printResume = functions
   .runWith({ memory: '1GB' })

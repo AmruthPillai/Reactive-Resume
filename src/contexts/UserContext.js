@@ -73,19 +73,55 @@ const UserProvider = ({ children }) => {
     navigate('/');
   };
 
+  const reauthenticateWithGoogle = async () => {
+    const { currentUser } = firebase.auth();
+    const provider = new firebase.auth.GoogleAuthProvider();
+
+    try {
+      const userCredential = await currentUser.reauthenticateWithPopup(
+        provider,
+      );
+      return userCredential;
+    } catch (error) {
+      toast.error(error.message);
+      throw error;
+    }
+  };
+
+  const reauthenticate = async () => {
+    const { currentUser } = firebase.auth();
+
+    if (currentUser.isAnonymous) {
+      return;
+    }
+
+    const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+    const authProviderIsGoogle =
+      currentUser.providerData &&
+      currentUser.providerData.length > 0 &&
+      currentUser.providerData[0].providerId === googleAuthProvider.providerId;
+
+    if (authProviderIsGoogle) {
+      await reauthenticateWithGoogle();
+    } else {
+      const errorMessage = 'Unable to determine reauthentication method.';
+      toast.error(errorMessage);
+      throw new Error(errorMessage);
+    }
+  };
+
   const deleteAccount = async () => {
     const { currentUser } = firebase.auth();
     const deleteUser = firebase.functions().httpsCallable('deleteUser');
-    deleteUser();
+
+    await reauthenticate();
+
+    await deleteUser();
 
     try {
-      deleteUser();
       await currentUser.delete();
-    } catch (e) {
-      if (e.code === 'auth/requires-recent-login') {
-        await loginWithGoogle();
-        await currentUser.delete();
-      }
+    } catch (error) {
+      toast.error(error.message);
     } finally {
       logout();
       toast(
