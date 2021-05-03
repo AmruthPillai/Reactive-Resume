@@ -1,6 +1,7 @@
 {
   "awards": {
     "heading": "Awards",
+    "visible": true,
     "items": [
       {
         "awarder": "Google",
@@ -23,11 +24,11 @@
         "summary": "",
         "title": "Smart India Hackathon"
       }
-    ],
-    "visible": true
+    ]
   },
   "certifications": {
     "heading": "Certifications",
+    "visible": true,
     "items": [
       {
         "date": "2018-02-01",
@@ -50,11 +51,11 @@
         "summary": "",
         "title": "DCUCI 642-999"
       }
-    ],
-    "visible": true
+    ]
   },
   "education": {
     "heading": "Education",
+    "visible": true,
     "items": [
       {
         "degree": "Masters",
@@ -76,11 +77,11 @@
         "startDate": "1997-09-01",
         "summary": ""
       }
-    ],
-    "visible": true
+    ]
   },
   "hobbies": {
     "heading": "Hobbies",
+    "visible": true,
     "items": [
       {
         "id": "788dcf5a-78ca-4866-8397-c7a29073d9a1",
@@ -102,11 +103,11 @@
         "id": "d1da41a9-ae83-48fb-8047-d45ebd869a69",
         "name": "Developing Reactive Resume"
       }
-    ],
-    "visible": true
+    ]
   },
   "languages": {
     "heading": "Languages",
+    "visible": true,
     "items": [
       {
         "fluency": "Very Fluent",
@@ -128,8 +129,7 @@
         "id": "8fff60fc-0cd6-47e2-b64f-fb249d1af0d1",
         "name": "German"
       }
-    ],
-    "visible": true
+    ]
   },
   "metadata": {
     "colors": {
@@ -138,24 +138,65 @@
       "text": "#212121"
     },
     "font": "Open Sans",
-    "fontSize": 12,
+    "fontSize": "9",
     "language": "en",
     "layout": {
       "castform": [
-        ["awards", "certifications", "languages", "hobbies"],
-        ["objective", "work", "education", "skills", "projects", "references"]
+        [
+          "awards",
+          "certifications",
+          "languages",
+          "hobbies"
+        ],
+        [
+          "objective",
+          "work",
+          "education",
+          "skills",
+          "projects",
+          "references"
+        ]
       ],
       "celebi": [
-        ["awards", "certifications", "languages", "hobbies"],
-        ["objective", "work", "education", "skills", "projects", "references"]
+        [
+          "awards",
+          "certifications",
+          "languages",
+          "hobbies"
+        ],
+        [
+          "objective",
+          "work",
+          "education",
+          "skills",
+          "projects",
+          "references"
+        ]
       ],
       "gengar": [
-        ["objective", "skills"],
-        ["awards", "certifications", "languages", "references", "hobbies"],
-        ["work", "education", "projects"]
+        [
+          "objective",
+          "skills"
+        ],
+        [
+          "awards",
+          "certifications",
+          "languages",
+          "references",
+          "hobbies"
+        ],
+        [
+          "work",
+          "education",
+          "projects"
+        ]
       ],
       "glalie": [
-        ["awards", "certifications", "hobbies"],
+        [
+          "awards",
+          "certifications",
+          "hobbies"
+        ],
         [
           "objective",
           "work",
@@ -167,13 +208,37 @@
         ]
       ],
       "onyx": [
-        ["objective", "work", "education", "projects"],
-        ["hobbies", "languages", "awards", "certifications"],
-        ["skills", "references"]
+        [
+          "objective",
+          "work",
+          "education",
+          "projects"
+        ],
+        [
+          "hobbies",
+          "languages",
+          "awards",
+          "certifications"
+        ],
+        [
+          "skills",
+          "references"
+        ]
       ],
       "pikachu": [
-        ["skills", "languages", "hobbies", "awards", "certifications"],
-        ["work", "education", "projects", "references"]
+        [
+          "skills",
+          "languages",
+          "hobbies",
+          "awards",
+          "certifications"
+        ],
+        [
+          "work",
+          "education",
+          "projects",
+          "references"
+        ]
       ]
     },
     "template": "castform"
@@ -183,7 +248,6 @@
     "heading": "Objective",
     "visible": true
   },
-  "preview": "https://images.unsplash.com/photo-1594483672645-895b77326094?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=400",
   "profile": {
     "address": {
       "city": "Bangalore, India -",
@@ -191,18 +255,19 @@
       "line2": "Brindavan Layout, Subramanyapura,",
       "pincode": "560061"
     },
-    "birthDate": "",
+    "birthDate": "1995-08-06",
     "email": "hello@amruthpillai.com",
     "firstName": "Amruth",
     "heading": "Profile",
     "lastName": "Pillai",
-    "phone": "+91 98453 36113",
     "photograph": "https://i.imgur.com/2dmLSCT.jpg",
     "subtitle": "Full Stack Web Developer",
-    "website": "amruthpillai.com"
+    "website": "amruthpillai.com",
+    "phone": "+91 98453 36113"
   },
   "projects": {
     "heading": "Projects",
+    "visible": true,
     "items": [
       {
         "date": "2020-07-01",
@@ -218,12 +283,12 @@
         "summary": "Resume on the Web has been a project that I've been focused on since the early 2014s. I didn't want my information to be displayed on just a sheet of paper that only HRs or Talent Scouts had the privilege of reading, I wanted it to be accessible to everyone. And that's how this project was conceptualized.",
         "title": "Resume on the Web"
       }
-    ],
-    "visible": true
+    ]
   },
   "public": true,
   "references": {
     "heading": "References",
+    "visible": true,
     "items": [
       {
         "email": "willywonka@goldenticket.com",
@@ -249,11 +314,11 @@
         "position": "Head of HR, Carson Logistics",
         "summary": ""
       }
-    ],
-    "visible": true
+    ]
   },
   "skills": {
     "heading": "Skills",
+    "visible": true,
     "items": [
       {
         "id": "54e5bceb-d0e9-4f04-98d1-48a34f7cf920",
@@ -285,11 +350,11 @@
         "level": "Fundamental Awareness",
         "name": "Continuous Improvement"
       }
-    ],
-    "visible": true
+    ]
   },
   "social": {
     "heading": "Social Network",
+    "visible": true,
     "items": [
       {
         "id": "a832b37d-f11d-4a80-8b4d-24796e571b17",
@@ -309,11 +374,11 @@
         "url": "https://pillai.xyz/linkedin",
         "username": "AmruthPillai"
       }
-    ],
-    "visible": true
+    ]
   },
   "work": {
     "heading": "Work Experience",
+    "visible": true,
     "items": [
       {
         "company": "On Point Electronics, NYC, NY",
@@ -342,7 +407,6 @@
         "summary": "- Worked passionately in customer service in a high volume restaurant.\n- Completed the FAST customer service training class.\n- Maintained a high tip average thanks to consistent customer satisfaction.",
         "website": "https://pizzahut.com"
       }
-    ],
-    "visible": true
+    ]
   }
 }
