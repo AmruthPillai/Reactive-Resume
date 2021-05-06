@@ -20,6 +20,10 @@ const deleteUserFunctionHandler = async (_, { auth }) => {
 
   try {
     const userId = auth.uid;
+    if (!userId) {
+      throw new Error("Could not retrieve the user's unique ID.");
+    }
+
     const updates = {};
 
     const userResumesDataSnapshot = await admin
@@ -31,7 +35,9 @@ const deleteUserFunctionHandler = async (_, { auth }) => {
     const userResumes = userResumesDataSnapshot.val();
     if (userResumes) {
       Object.keys(userResumes).forEach(async (resumeId) => {
-        updates[`resumes/${resumeId}`] = null;
+        if (resumeId) {
+          updates[`resumes/${resumeId}`] = null;
+        }
       });
     }
 
@@ -47,6 +53,11 @@ const deleteUserFunctionHandler = async (_, { auth }) => {
     if (Object.keys(updates).length > 0) {
       await admin.database().ref().update(updates);
     }
+
+    const storageUserFolderPath = `users/${userId}/`;
+    await admin.storage().bucket().deleteFiles({
+      prefix: storageUserFolderPath,
+    });
 
     return true;
   } catch (error) {
