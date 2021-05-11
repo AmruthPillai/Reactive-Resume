@@ -15,22 +15,33 @@ async function setup() {
     name: /Delete Account/i,
   });
 
-  const mockFirebaseFunctionsHttpsCallable = jest.spyOn(
-    FirebaseStub.functions(),
-    'httpsCallable',
+  const mockFirebaseUserDelete = jest.spyOn(
+    FirebaseStub.auth().currentUser,
+    'delete',
   );
 
   return {
     button,
-    mockFirebaseFunctionsHttpsCallable,
+    mockFirebaseUserDelete,
   };
 }
 
 test('prompts for confirmation', async () => {
-  const { button, mockFirebaseFunctionsHttpsCallable } = await setup();
+  const { button, mockFirebaseUserDelete } = await setup();
 
   fireEvent.click(button);
 
   expect(button).toHaveTextContent('Are you sure?');
-  expect(mockFirebaseFunctionsHttpsCallable).not.toHaveBeenCalled();
+  expect(mockFirebaseUserDelete).not.toHaveBeenCalled();
 });
+
+/*
+test('calls Firebase user delete', async () => {
+  const { button, mockFirebaseUserDelete } = await setup();
+
+  fireEvent.click(button);
+  fireEvent.click(button);
+
+  expect(mockFirebaseUserDelete).toHaveBeenCalledTimes(1);
+});
+*/
