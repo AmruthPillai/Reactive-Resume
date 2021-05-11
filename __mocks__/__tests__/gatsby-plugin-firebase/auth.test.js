@@ -13,7 +13,7 @@ test('returns anonymous user 1 when signing in anonymously', async () => {
   const user = await FirebaseStub.auth().signInAnonymously();
 
   expect(user).toBeTruthy();
-  expect(user).toEqual(AuthConstants.anonymousUser1);
+  expect(user.uid).toEqual(AuthConstants.anonymousUser1.uid);
 });
 
 test('calls onAuthStateChanged observer with anonymous user 1 when signing in anonymously', async () => {
@@ -31,7 +31,7 @@ test('calls onAuthStateChanged observer with anonymous user 1 when signing in an
   await FirebaseStub.auth().signInAnonymously();
 
   expect(user).toBeTruthy();
-  expect(user).toEqual(AuthConstants.anonymousUser1);
+  expect(user.uid).toEqual(AuthConstants.anonymousUser1.uid);
   expect(error).toBeNull();
 });
 

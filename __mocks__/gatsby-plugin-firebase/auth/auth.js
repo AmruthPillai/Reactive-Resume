@@ -2,6 +2,7 @@
 import { v4 as uuidv4 } from 'uuid';
 
 import Constants from '../constants/auth';
+import User from './user';
 import { delay } from '../../../src/utils/index';
 
 const singleton = Symbol('');
@@ -14,6 +15,7 @@ class Auth {
     }
 
     this._uuid = uuidv4();
+    this._currentUser = null;
     this._onAuthStateChangedObservers = [];
   }
 
@@ -23,6 +25,10 @@ class Auth {
     }
 
     return this[singleton];
+  }
+
+  get currentUser() {
+    return this._currentUser;
   }
 
   get uuid() {
@@ -46,11 +52,21 @@ class Auth {
   async signInAnonymously() {
     const user = Constants.anonymousUser1;
 
+    this._currentUser = new User(
+      user.displayName,
+      user.email,
+      user.isAnonymous,
+      user.uid,
+      async () => {},
+    );
+
     await delay(Constants.defaultDelayInMilliseconds);
 
-    this.onAuthStateChangedObservers.forEach((observer) => observer(user));
+    this.onAuthStateChangedObservers.forEach((observer) =>
+      observer(this._currentUser),
+    );
 
-    return user;
+    return this._currentUser;
   }
 }
 
