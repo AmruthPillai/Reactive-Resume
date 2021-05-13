@@ -57,7 +57,7 @@ class Auth {
       user.email,
       user.isAnonymous,
       user.uid,
-      async () => {},
+      this.signOut,
     );
 
     await delay(Constants.defaultDelayInMilliseconds);
@@ -67,6 +67,20 @@ class Auth {
     );
 
     return this._currentUser;
+  }
+
+  async signOut() {
+    if (this._currentUser === null) {
+      return;
+    }
+
+    this._currentUser = null;
+
+    await delay(Constants.defaultDelayInMilliseconds);
+
+    this.onAuthStateChangedObservers.forEach((observer) =>
+      observer(this._currentUser),
+    );
   }
 }
 

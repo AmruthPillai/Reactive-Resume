@@ -1,6 +1,6 @@
 const deleteUserFunctionName = 'deleteUser';
 
-const defaultDelayInMilliseconds = 2000;
+const defaultDelayInMilliseconds = 100;
 
 class Functions {
   static get deleteUserFunctionName() {
