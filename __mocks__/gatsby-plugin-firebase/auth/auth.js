@@ -77,10 +77,6 @@ class Auth {
     this._currentUser = null;
 
     await delay(Constants.defaultDelayInMilliseconds);
-
-    this.onAuthStateChangedObservers.forEach((observer) =>
-      observer(this._currentUser),
-    );
   }
 }
 

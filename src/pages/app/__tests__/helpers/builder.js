@@ -47,15 +47,6 @@ const expectDatabaseUpdateToHaveCompleted = async (
   );
 };
 
-const dismissNotification = (notification) => {
-  fireEvent.click(notification);
-};
-
-const findAndDismissNotification = async () => {
-  const notification = await screen.findByRole('alert');
-  dismissNotification(notification);
-};
-
 const dragAndDropDirectionUp = 'DND_DIRECTION_UP';
 const dragAndDropDirectionDown = 'DND_DIRECTION_DOWN';
 
@@ -167,6 +158,4 @@ export {
   dragAndDropDirectionUp,
   dragAndDropDirectionDown,
   dragAndDropListItem,
-  dismissNotification,
-  findAndDismissNotification,
 };
