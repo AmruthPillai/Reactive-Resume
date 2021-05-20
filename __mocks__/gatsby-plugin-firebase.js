@@ -1,4 +1,5 @@
 import Auth from './gatsby-plugin-firebase/auth/auth';
+import GoogleAuthProvider from './gatsby-plugin-firebase/auth/googleAuthProvider';
 import Database from './gatsby-plugin-firebase/database/database';
 import Functions from './gatsby-plugin-firebase/functions/functions';
 import AuthConstants from './gatsby-plugin-firebase/constants/auth';
@@ -18,6 +19,8 @@ class FirebaseStub {
     return Functions.instance;
   }
 }
+
+FirebaseStub.auth.GoogleAuthProvider = GoogleAuthProvider;
 
 FirebaseStub.database.ServerValue = {};
 Object.defineProperty(FirebaseStub.database.ServerValue, 'TIMESTAMP', {

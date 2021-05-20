@@ -9,7 +9,9 @@ const connectedPath = '.info/connected';
 
 const demoStateResume1Id = 'demo_1';
 const demoStateResume2Id = 'demo_2';
-const initialStateResumeId = 'initst';
+const demoStateResume3Id = 'demo_3';
+const initialStateResume1Id = 'init_1';
+const initialStateResume2Id = 'init_2';
 
 const user1 = {
   uid: AuthConstants.anonymousUser1.uid,
@@ -18,6 +20,10 @@ const user1 = {
 const user2 = {
   uid: AuthConstants.anonymousUser2.uid,
   isAnonymous: AuthConstants.anonymousUser2.isAnonymous,
+};
+const user3 = {
+  uid: AuthConstants.googleUser3.uid,
+  isAnonymous: AuthConstants.googleUser3.isAnonymous,
 };
 
 const defaultDelayInMilliseconds = 100;
@@ -51,8 +57,16 @@ class Database {
     return demoStateResume2Id;
   }
 
-  static get initialStateResumeId() {
-    return initialStateResumeId;
+  static get demoStateResume3Id() {
+    return demoStateResume3Id;
+  }
+
+  static get initialStateResume1Id() {
+    return initialStateResume1Id;
+  }
+
+  static get initialStateResume2Id() {
+    return initialStateResume2Id;
   }
 
   static get user1() {
@@ -61,6 +75,10 @@ class Database {
 
   static get user2() {
     return user2;
+  }
+
+  static get user3() {
+    return user3;
   }
 
   static get defaultDelayInMilliseconds() {

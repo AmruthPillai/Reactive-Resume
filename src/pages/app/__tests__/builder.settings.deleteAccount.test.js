@@ -14,9 +14,32 @@ import { delay } from '../../../utils/index';
 const testTimeoutInMilliseconds = 60000;
 jest.setTimeout(testTimeoutInMilliseconds);
 
-async function setup() {
-  const resumeId = DatabaseConstants.demoStateResume1Id;
-  await setupAndWait(resumeId, true, true);
+async function setup(signInWithGoogle, failReauthentication) {
+  const resumeId = signInWithGoogle
+    ? DatabaseConstants.demoStateResume3Id
+    : DatabaseConstants.demoStateResume1Id;
+
+  await setupAndWait(resumeId, signInWithGoogle, true, true);
+
+  let mockFirebaseCurrentUserReauthenticateWithPopupErrorMessage;
+  let mockFirebaseCurrentUserReauthenticateWithPopup;
+  if (failReauthentication) {
+    mockFirebaseCurrentUserReauthenticateWithPopupErrorMessage =
+      'Error occurred while reauthenticating.';
+    mockFirebaseCurrentUserReauthenticateWithPopup = jest.fn(async () => {
+      await delay(AuthConstants.defaultDelayInMilliseconds);
+      throw new Error(
+        mockFirebaseCurrentUserReauthenticateWithPopupErrorMessage,
+      );
+    });
+    FirebaseStub.auth().currentUser.reauthenticateWithPopup = mockFirebaseCurrentUserReauthenticateWithPopup;
+  } else {
+    mockFirebaseCurrentUserReauthenticateWithPopupErrorMessage = null;
+    mockFirebaseCurrentUserReauthenticateWithPopup = jest.spyOn(
+      FirebaseStub.auth().currentUser,
+      'reauthenticateWithPopup',
+    );
+  }
 
   const mockFirebaseDeleteUserCloudFunction = jest.fn(async () => {
     await delay(FunctionsConstants.defaultDelayInMilliseconds);
@@ -61,6 +84,8 @@ async function setup() {
     areYouSureButtonText,
     deleteAccountButtonText,
     waitForDeleteAccountButtonTextToChangeTo,
+    mockFirebaseCurrentUserReauthenticateWithPopup,
+    mockFirebaseCurrentUserReauthenticateWithPopupErrorMessage,
     mockFirebaseDeleteUserCloudFunction,
     mockFirebaseCurrentUserDelete,
     mockFirebaseAuthSignOut,
@@ -78,7 +103,7 @@ test('prompts for confirmation', async () => {
     mockFirebaseCurrentUserDelete,
     mockFirebaseAuthSignOut,
     mockToastError,
-  } = await setup();
+  } = await setup(false, false);
 
   fireEvent.click(deleteAccountButton);
 
@@ -98,7 +123,7 @@ test('calls Firebase delete user cloud function', async () => {
     deleteAccountButtonText,
     mockFirebaseDeleteUserCloudFunction,
     waitForDeleteAccountButtonTextToChangeTo,
-  } = await setup();
+  } = await setup(false, false);
 
   fireEvent.click(deleteAccountButton);
   fireEvent.click(deleteAccountButton);
@@ -116,7 +141,7 @@ test('calls Firebase current user delete', async () => {
     deleteAccountButtonText,
     mockFirebaseCurrentUserDelete,
     waitForDeleteAccountButtonTextToChangeTo,
-  } = await setup();
+  } = await setup(false, false);
 
   fireEvent.click(deleteAccountButton);
   fireEvent.click(deleteAccountButton);
@@ -134,7 +159,7 @@ test('calls Firebase auth sign out', async () => {
     deleteAccountButtonText,
     mockFirebaseAuthSignOut,
     waitForDeleteAccountButtonTextToChangeTo,
-  } = await setup();
+  } = await setup(false, false);
 
   fireEvent.click(deleteAccountButton);
   fireEvent.click(deleteAccountButton);
@@ -150,7 +175,7 @@ describe('if an error occurs while signing out the current user', () => {
       deleteAccountButton,
       deleteAccountButtonText,
       waitForDeleteAccountButtonTextToChangeTo,
-    } = await setup();
+    } = await setup(false, false);
 
     fireEvent.click(deleteAccountButton);
     fireEvent.click(deleteAccountButton);
@@ -167,7 +192,7 @@ describe('if an error occurs while signing out the current user', () => {
       mockFirebaseAuthSignOutErrorMessage,
       waitForDeleteAccountButtonTextToChangeTo,
       mockToastError,
-    } = await setup();
+    } = await setup(false, false);
 
     fireEvent.click(deleteAccountButton);
     fireEvent.click(deleteAccountButton);
@@ -183,5 +208,77 @@ describe('if an error occurs while signing out the current user', () => {
       2,
       'An error occurred deleting your account.',
     );
+  });
+});
+
+describe('if the current user is signed in with Google', () => {
+  test('reauthenticates the user', async () => {
+    const googleAuthProvider = new FirebaseStub.auth.GoogleAuthProvider();
+    const {
+      deleteAccountButton,
+      deleteAccountButtonText,
+      mockFirebaseCurrentUserReauthenticateWithPopup,
+      waitForDeleteAccountButtonTextToChangeTo,
+    } = await setup(true, false);
+
+    fireEvent.click(deleteAccountButton);
+    fireEvent.click(deleteAccountButton);
+
+    await waitForDeleteAccountButtonTextToChangeTo(deleteAccountButtonText);
+
+    expect(
+      mockFirebaseCurrentUserReauthenticateWithPopup,
+    ).toHaveBeenCalledTimes(1);
+    expect(mockFirebaseCurrentUserReauthenticateWithPopup).toHaveBeenCalledWith(
+      googleAuthProvider,
+    );
+  });
+
+  describe('and reauthentication fails', () => {
+    test('does not proceed further', async () => {
+      const {
+        deleteAccountButton,
+        deleteAccountButtonText,
+        waitForDeleteAccountButtonTextToChangeTo,
+        mockFirebaseDeleteUserCloudFunction,
+        mockFirebaseCurrentUserDelete,
+        mockFirebaseAuthSignOut,
+      } = await setup(true, true);
+
+      fireEvent.click(deleteAccountButton);
+      fireEvent.click(deleteAccountButton);
+
+      await waitForDeleteAccountButtonTextToChangeTo(deleteAccountButtonText);
+
+      expect(mockFirebaseDeleteUserCloudFunction).not.toHaveBeenCalled();
+      expect(mockFirebaseCurrentUserDelete).not.toHaveBeenCalled();
+      expect(mockFirebaseAuthSignOut).not.toHaveBeenCalled();
+      expect(mockNavigateFunction).not.toHaveBeenCalled();
+    });
+
+    test('displays error notifications', async () => {
+      const {
+        deleteAccountButton,
+        deleteAccountButtonText,
+        waitForDeleteAccountButtonTextToChangeTo,
+        mockFirebaseCurrentUserReauthenticateWithPopupErrorMessage,
+        mockToastError,
+      } = await setup(true, true);
+
+      fireEvent.click(deleteAccountButton);
+      fireEvent.click(deleteAccountButton);
+
+      await waitForDeleteAccountButtonTextToChangeTo(deleteAccountButtonText);
+
+      expect(mockToastError).toHaveBeenCalledTimes(2);
+      expect(mockToastError).toHaveBeenNthCalledWith(
+        1,
+        mockFirebaseCurrentUserReauthenticateWithPopupErrorMessage,
+      );
+      expect(mockToastError).toHaveBeenNthCalledWith(
+        2,
+        'An error occurred deleting your account.',
+      );
+    });
   });
 });

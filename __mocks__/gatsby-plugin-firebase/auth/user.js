@@ -1,25 +1,23 @@
 /* eslint-disable no-underscore-dangle */
 import Constants from '../constants/auth';
+// eslint-disable-next-line no-unused-vars
+import AuthProvider from './authProvider';
+import UserInfo from './userInfo';
 import { delay } from '../../../src/utils/index';
 
-class User {
+class User extends UserInfo {
   /**
    * Creates a new user.
    *
    * @param {string|null} displayName Display name.
    * @param {string|null} email Email.
-   * @param {boolean} isAnonymous Is anonymous.
+   * @param {string} providerId Auth provider ID.
    * @param {string} uid The user's unique ID.
+   * @param {boolean} isAnonymous Is anonymous.
    * @param {function():Promise<void>} deleteUser Delete user callback.
    */
-  constructor(displayName, email, isAnonymous, uid, deleteUser) {
-    if (!uid) {
-      throw new Error('uid must be provided.');
-    } else if (typeof uid !== 'string') {
-      throw new Error('uid should be a string.');
-    } else {
-      this._uid = uid;
-    }
+  constructor(displayName, email, providerId, uid, isAnonymous, deleteUser) {
+    super(displayName, email, providerId, uid);
 
     if (!deleteUser) {
       throw new Error('deleteUser must be provided.');
@@ -29,31 +27,40 @@ class User {
       this._deleteUser = deleteUser;
     }
 
-    this._displayName = displayName;
-    this._email = email;
     this._isAnonymous = isAnonymous;
-  }
 
-  get displayName() {
-    return this._displayName;
-  }
-
-  get email() {
-    return this._email;
+    this._providerData = [];
+    if (!isAnonymous) {
+      this._providerData.push(
+        new UserInfo(displayName, email, providerId, uid),
+      );
+    }
   }
 
   get isAnonymous() {
     return this._isAnonymous;
   }
 
-  get uid() {
-    return this._uid;
+  get providerData() {
+    return this._providerData;
   }
 
   async delete() {
     await delay(Constants.defaultDelayInMilliseconds);
 
     await this._deleteUser();
+  }
+
+  /**
+   * Reauthenticates the user with popup.
+   *
+   * @param {AuthProvider} provider The provider to authenticate.
+   */
+  // eslint-disable-next-line no-unused-vars
+  async reauthenticateWithPopup(provider) {
+    await delay(Constants.defaultDelayInMilliseconds);
+
+    return this;
   }
 }
 

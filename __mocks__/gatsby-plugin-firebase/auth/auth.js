@@ -2,6 +2,8 @@
 import { v4 as uuidv4 } from 'uuid';
 
 import Constants from '../constants/auth';
+import AuthProvider from './authProvider';
+import GoogleAuthProvider from './googleAuthProvider';
 import User from './user';
 import { delay } from '../../../src/utils/index';
 
@@ -55,8 +57,47 @@ class Auth {
     this._currentUser = new User(
       user.displayName,
       user.email,
-      user.isAnonymous,
+      user.providerId,
       user.uid,
+      user.isAnonymous,
+      this.signOut,
+    );
+
+    await delay(Constants.defaultDelayInMilliseconds);
+
+    this.onAuthStateChangedObservers.forEach((observer) =>
+      observer(this._currentUser),
+    );
+
+    return this._currentUser;
+  }
+
+  /**
+   * Authenticates with popup.
+   *
+   * @param {AuthProvider} provider The provider to authenticate.
+   */
+  async signInWithPopup(provider) {
+    if (!provider) {
+      throw new Error('provider must be provided.');
+    } else if (!(provider instanceof AuthProvider)) {
+      throw new Error('provider should be an AuthProvider.');
+    }
+
+    if (!(provider instanceof GoogleAuthProvider)) {
+      throw new Error(
+        `${provider.constructor.name} is currently not supported.`,
+      );
+    }
+
+    const user = Constants.googleUser3;
+
+    this._currentUser = new User(
+      user.displayName,
+      user.email,
+      user.providerId,
+      user.uid,
+      user.isAnonymous,
       this.signOut,
     );
 

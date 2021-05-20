@@ -19,6 +19,7 @@ test('allows to drag & drop', async () => {
   const resumeId = DatabaseConstants.demoStateResume1Id;
   const { resume, mockDatabaseUpdateFunction } = await setupAndWait(
     resumeId,
+    false,
     true,
     true,
   );

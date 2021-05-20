@@ -20,6 +20,7 @@ jest.setTimeout(testTimeoutInMilliseconds);
 test('renders first and last name', async () => {
   const { resume } = await setupAndWait(
     DatabaseConstants.demoStateResume1Id,
+    false,
     true,
     true,
   );
@@ -53,7 +54,7 @@ test('renders loading screen', async () => {
 });
 
 test('if resume is in initial state, renders load demo data notification', async () => {
-  await setup(DatabaseConstants.initialStateResumeId);
+  await setup(DatabaseConstants.initialStateResume1Id);
 
   const notification = await screen.findByRole('alert');
   expect(
