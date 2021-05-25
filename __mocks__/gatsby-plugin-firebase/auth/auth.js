@@ -60,7 +60,7 @@ class Auth {
       user.providerId,
       user.uid,
       user.isAnonymous,
-      this.signOut,
+      this.signOut.bind(this),
     );
 
     await delay(Constants.defaultDelayInMilliseconds);
@@ -98,7 +98,7 @@ class Auth {
       user.providerId,
       user.uid,
       user.isAnonymous,
-      this.signOut,
+      this.signOut.bind(this),
     );
 
     await delay(Constants.defaultDelayInMilliseconds);
