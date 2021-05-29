@@ -1,11 +1,11 @@
-import { Tooltip } from '@material-ui/core';
-import React, { memo, useContext, useRef } from 'react';
 import { MdFileUpload } from 'react-icons/md';
+import { Tooltip } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
-import StorageContext from '../../contexts/StorageContext';
+import React, { memo, useContext, useRef } from 'react';
 import { handleKeyUp } from '../../utils';
 import Input from './Input';
-import styles from './PhotoUpload.module.css';
+import * as styles from './PhotoUpload.module.css';
+import StorageContext from '../../contexts/StorageContext';
 
 const PhotoUpload = () => {
   const fileInputRef = useRef(null);

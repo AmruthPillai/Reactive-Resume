@@ -1,8 +1,8 @@
 /* eslint-disable no-underscore-dangle */
 import { v4 as uuidv4 } from 'uuid';
 
-import Constants from '../constants/auth';
 import { delay } from '../../../src/utils/index';
+import Constants from '../constants/auth';
 
 const singleton = Symbol('');
 const singletonEnforcer = Symbol('');
@@ -37,9 +37,8 @@ class Auth {
     this.onAuthStateChangedObservers.push(observer);
 
     return () => {
-      this._onAuthStateChangedObservers = this.onAuthStateChangedObservers.filter(
-        (obs) => obs !== observer,
-      );
+      this._onAuthStateChangedObservers =
+        this.onAuthStateChangedObservers.filter((obs) => obs !== observer);
     };
   }
 

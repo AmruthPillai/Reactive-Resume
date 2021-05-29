@@ -1,8 +1,8 @@
 import { navigate } from '@reach/router';
-import firebase from 'gatsby-plugin-firebase';
 import { pick } from 'lodash';
-import React, { createContext, memo, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import React, { createContext, memo, useEffect, useState } from 'react';
+import firebase from 'gatsby-plugin-firebase';
 import useAuthState from '../hooks/useAuthState';
 
 const defaultUser = {

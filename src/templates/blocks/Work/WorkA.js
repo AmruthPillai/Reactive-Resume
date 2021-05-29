@@ -1,8 +1,8 @@
-import React, { memo, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
+import React, { memo, useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 import PageContext from '../../../contexts/PageContext';
-import { formatDateRange, safetyCheck, isItemVisible } from '../../../utils';
+import { formatDateRange, isItemVisible, safetyCheck } from '../../../utils';
 
 const WorkItem = ({ item, language }) => {
   const { t } = useTranslation();
@@ -29,10 +29,9 @@ const WorkItem = ({ item, language }) => {
         )}
       </div>
       {item.summary && (
-        <ReactMarkdown
-          className="markdown mt-2 text-sm"
-          source={item.summary}
-        />
+        <ReactMarkdown className="markdown mt-2 text-sm">
+          {item.summary}
+        </ReactMarkdown>
       )}
     </div>
   );

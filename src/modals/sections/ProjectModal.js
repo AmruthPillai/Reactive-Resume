@@ -1,11 +1,11 @@
-import { Formik } from 'formik';
-import React, { memo } from 'react';
 import * as Yup from 'yup';
+import { Formik } from 'formik';
 import { useTranslation } from 'react-i18next';
-import Input from '../../components/shared/Input';
-import ModalEvents from '../../constants/ModalEvents';
+import React, { memo } from 'react';
 import { getFieldProps } from '../../utils';
 import DataModal from '../DataModal';
+import Input from '../../components/shared/Input';
+import ModalEvents from '../../constants/ModalEvents';
 
 const initialValues = {
   title: '',

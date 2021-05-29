@@ -1,10 +1,10 @@
-import cx from 'classnames';
 import React, { memo } from 'react';
-import { useDispatch, useSelector } from '../../../../contexts/ResumeContext';
-import fontOptions from '../../../../data/fontOptions';
+import cx from 'classnames';
+import * as styles from './Fonts.module.css';
 import { handleKeyUp } from '../../../../utils';
+import { useDispatch, useSelector } from '../../../../contexts/ResumeContext';
 import Heading from '../../../shared/Heading';
-import styles from './Fonts.module.css';
+import fontOptions from '../../../../data/fontOptions';
 
 const Fonts = ({ id }) => {
   const dispatch = useDispatch();

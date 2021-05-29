@@ -1,13 +1,13 @@
+import { MdMoreHoriz, MdOpenInNew } from 'react-icons/md';
 import { Menu, MenuItem } from '@material-ui/core';
 import { navigate } from 'gatsby';
-import React, { useContext, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { MdMoreHoriz, MdOpenInNew } from 'react-icons/md';
 import { toast } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
+import React, { useContext, useState } from 'react';
 import dayjs from 'dayjs';
 import DatabaseContext from '../../contexts/DatabaseContext';
 import ModalContext from '../../contexts/ModalContext';
-import styles from './ResumePreview.module.css';
+import * as styles from './ResumePreview.module.css';
 
 const menuToggleDataTestIdPrefix = 'resume-preview-menu-toggle-';
 

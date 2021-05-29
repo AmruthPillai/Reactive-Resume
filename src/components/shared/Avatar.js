@@ -1,11 +1,11 @@
-import cx from 'classnames';
-import { toUrl } from 'gatsby-source-gravatar';
-import React, { memo, useContext, useMemo, useState } from 'react';
 import { Menu, MenuItem } from '@material-ui/core';
+import { toUrl } from 'gatsby-source-gravatar';
 import { useTranslation } from 'react-i18next';
+import React, { memo, useContext, useMemo, useState } from 'react';
+import cx from 'classnames';
 import UserContext from '../../contexts/UserContext';
-import styles from './Avatar.module.css';
 import { handleKeyUp } from '../../utils';
+import * as styles from './Avatar.module.css';
 
 const Avatar = ({ className }) => {
   const { t } = useTranslation();
@@ -20,9 +20,10 @@ const Avatar = ({ className }) => {
     handleClose();
   };
 
-  const photoURL = useMemo(() => toUrl(user.email || '', 'size=128&d=retro'), [
-    user.email,
-  ]);
+  const photoURL = useMemo(
+    () => toUrl(user.email || '', 'size=128&d=retro'),
+    [user.email],
+  );
 
   return (
     <div>

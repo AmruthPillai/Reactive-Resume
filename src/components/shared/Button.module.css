@@ -31,14 +31,14 @@
   @apply outline-none;
 }
 
-.container.delete {
+.container.remove {
   @apply bg-red-600 border-red-600 text-white;
 }
 
-.container.delete:hover {
+.container.remove:hover {
   @apply bg-red-700 border-red-700;
 }
 
-.container.delete:focus {
+.container.remove:focus {
   @apply outline-none;
 }

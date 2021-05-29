@@ -1,7 +1,7 @@
 import React, { memo, useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
-import PageContext from '../../../contexts/PageContext';
 import { safetyCheck } from '../../../utils';
+import PageContext from '../../../contexts/PageContext';
 
 const ObjectiveA = () => {
   const { data, heading: Heading } = useContext(PageContext);
@@ -10,10 +10,9 @@ const ObjectiveA = () => {
     safetyCheck(data.objective, 'body') && (
       <div>
         <Heading>{data.objective.heading}</Heading>
-        <ReactMarkdown
-          className="markdown text-sm"
-          source={data.objective.body}
-        />
+        <ReactMarkdown className="markdown text-sm">
+          {data.objective.body}
+        </ReactMarkdown>
       </div>
     )
   );

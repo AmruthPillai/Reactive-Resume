@@ -1,10 +1,10 @@
 import { Tooltip } from '@material-ui/core';
-import React, { memo, useContext, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import Button from '../../components/shared/Button';
-import ModalContext from '../../contexts/ModalContext';
+import React, { memo, useContext, useEffect, useRef, useState } from 'react';
 import { useDispatch } from '../../contexts/ResumeContext';
 import BaseModal from '../BaseModal';
+import Button from '../../components/shared/Button';
+import ModalContext from '../../contexts/ModalContext';
 
 const ImportModal = () => {
   const { t } = useTranslation();

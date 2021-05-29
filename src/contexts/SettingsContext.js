@@ -1,5 +1,5 @@
-import i18next from 'i18next';
 import React, { createContext, memo, useEffect, useState } from 'react';
+import i18next from 'i18next';
 import themeConfig from '../data/themeConfig';
 
 const languageStorageItemKey = 'language';

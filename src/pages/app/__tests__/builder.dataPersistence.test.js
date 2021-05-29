@@ -3,8 +3,8 @@ import { fireEvent, screen } from '@testing-library/react';
 import { DatabaseConstants } from 'gatsby-plugin-firebase';
 
 import {
-  setupAndWait,
   expectDatabaseUpdateToHaveCompleted,
+  setupAndWait,
 } from './helpers/builder';
 
 const testTimeoutInMilliseconds = 20000;

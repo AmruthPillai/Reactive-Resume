@@ -1,6 +1,6 @@
 import Auth from './gatsby-plugin-firebase/auth/auth';
-import Database from './gatsby-plugin-firebase/database/database';
 import AuthConstants from './gatsby-plugin-firebase/constants/auth';
+import Database from './gatsby-plugin-firebase/database/database';
 import DatabaseConstants from './gatsby-plugin-firebase/constants/database';
 
 class FirebaseStub {

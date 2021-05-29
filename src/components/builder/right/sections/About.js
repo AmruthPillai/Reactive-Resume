@@ -1,11 +1,11 @@
-import React, { memo } from 'react';
-import { FaCoffee, FaBug, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaBug, FaCoffee, FaExternalLinkAlt } from 'react-icons/fa';
 import { MdCode } from 'react-icons/md';
 import { Trans, useTranslation } from 'react-i18next';
-import { useStaticQuery, graphql } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
+import React, { memo } from 'react';
 import Button from '../../../shared/Button';
 import Heading from '../../../shared/Heading';
-import styles from './About.module.css';
+import * as styles from './About.module.css';
 
 const About = ({ id }) => {
   const { t } = useTranslation();

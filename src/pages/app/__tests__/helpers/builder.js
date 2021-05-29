@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   fireEvent,
   render,
@@ -6,21 +5,22 @@ import {
   waitFor,
   waitForElementToBeRemoved,
 } from '@testing-library/react';
+import React from 'react';
 
 import FirebaseStub, { DatabaseConstants } from 'gatsby-plugin-firebase';
 
-import { dataTestId as loadingScreenTestId } from '../../../../components/router/LoadingScreen';
-import { SettingsProvider } from '../../../../contexts/SettingsContext';
-import { ModalProvider } from '../../../../contexts/ModalContext';
-import { UserProvider } from '../../../../contexts/UserContext';
 import {
   DatabaseProvider,
   DebounceWaitTime,
 } from '../../../../contexts/DatabaseContext';
+import { ModalProvider } from '../../../../contexts/ModalContext';
 import { ResumeProvider } from '../../../../contexts/ResumeContext';
+import { SettingsProvider } from '../../../../contexts/SettingsContext';
 import { StorageProvider } from '../../../../contexts/StorageContext';
-import Wrapper from '../../../../components/shared/Wrapper';
+import { UserProvider } from '../../../../contexts/UserContext';
+import { dataTestId as loadingScreenTestId } from '../../../../components/router/LoadingScreen';
 import Builder from '../../builder';
+import Wrapper from '../../../../components/shared/Wrapper';
 
 const waitForDatabaseUpdateToHaveCompletedFn = async (
   mockDatabaseUpdateFunction,

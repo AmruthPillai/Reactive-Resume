@@ -1,7 +1,7 @@
-import React, { memo, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import PageContext from '../../../contexts/PageContext';
+import React, { memo, useContext } from 'react';
 import { formatDate } from '../../../utils';
+import PageContext from '../../../contexts/PageContext';
 
 const BirthDateA = () => {
   const { t } = useTranslation();

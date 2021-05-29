@@ -1,7 +1,6 @@
 require('dotenv').config();
 
 module.exports = {
-  flags: { PRESERVE_WEBPACK_CACHE: true },
   siteMetadata: {
     title: 'Reactive Resume',
     siteUrl: 'https://rxresu.me',
@@ -35,6 +34,7 @@ module.exports = {
         display: 'standalone',
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-plugin-offline`,
     {
       resolve: 'gatsby-plugin-webfonts',

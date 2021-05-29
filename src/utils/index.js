@@ -1,5 +1,5 @@
+import { clone, get, isEmpty } from 'lodash';
 import dayjs from 'dayjs';
-import { get, isEmpty, clone } from 'lodash';
 
 export const getModalText = (isEditMode, type, t) =>
   isEditMode

@@ -1,6 +1,6 @@
 import React, { memo, useContext } from 'react';
-import PageContext from '../../../contexts/PageContext';
 import { hexToRgb } from '../../../utils';
+import PageContext from '../../../contexts/PageContext';
 
 const HeadingC = ({ children }) => {
   const { data } = useContext(PageContext);

@@ -1,8 +1,8 @@
 import { Redirect, Router } from '@reach/router';
 import React, { memo } from 'react';
-import Wrapper from '../components/shared/Wrapper';
-import ResumeViewer from './r/view';
 import NotFound from './404';
+import ResumeViewer from './r/view';
+import Wrapper from '../components/shared/Wrapper';
 
 const ResumeRouter = () => (
   <Wrapper>

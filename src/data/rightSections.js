@@ -2,11 +2,11 @@ import {
   MdColorLens,
   MdDashboard,
   MdFontDownload,
+  MdFormatSize,
   MdImportExport,
   MdInfo,
   MdSettings,
   MdStyle,
-  MdFormatSize,
 } from 'react-icons/md';
 
 export default [

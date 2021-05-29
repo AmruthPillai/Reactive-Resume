@@ -1,12 +1,12 @@
-import cx from 'classnames';
 import { graphql, useStaticQuery } from 'gatsby';
-import GatsbyImage from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React, { memo } from 'react';
-import { useDispatch, useSelector } from '../../../../contexts/ResumeContext';
-import templateOptions from '../../../../data/templateOptions';
+import cx from 'classnames';
+import * as styles from './Templates.module.css';
 import { handleKeyUp } from '../../../../utils';
+import { useDispatch, useSelector } from '../../../../contexts/ResumeContext';
 import Heading from '../../../shared/Heading';
-import styles from './Templates.module.css';
+import templateOptions from '../../../../data/templateOptions';
 
 const Templates = ({ id }) => {
   const dispatch = useDispatch();
@@ -16,44 +16,32 @@ const Templates = ({ id }) => {
     query {
       onyx: file(relativePath: { eq: "templates/onyx.png" }) {
         childImageSharp {
-          fluid(maxHeight: 400) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FIXED, height: 240)
         }
       }
       pikachu: file(relativePath: { eq: "templates/pikachu.png" }) {
         childImageSharp {
-          fluid(maxHeight: 400) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FIXED, height: 240)
         }
       }
       gengar: file(relativePath: { eq: "templates/gengar.png" }) {
         childImageSharp {
-          fluid(maxHeight: 400) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FIXED, height: 240)
         }
       }
       castform: file(relativePath: { eq: "templates/castform.png" }) {
         childImageSharp {
-          fluid(maxHeight: 400) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FIXED, height: 240)
         }
       }
       glalie: file(relativePath: { eq: "templates/glalie.png" }) {
         childImageSharp {
-          fluid(maxHeight: 400) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FIXED, height: 240)
         }
       }
       celebi: file(relativePath: { eq: "templates/celebi.png" }) {
         childImageSharp {
-          fluid(maxHeight: 400) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FIXED, height: 240)
         }
       }
     }
@@ -87,10 +75,7 @@ const Templates = ({ id }) => {
           >
             <GatsbyImage
               alt={x.name}
-              loading="eager"
-              className="w-full"
-              style={{ height: '230px' }}
-              fluid={previews[x.id].childImageSharp.fluid}
+              image={previews[x.id].childImageSharp.gatsbyImageData}
             />
             <span>{x.name}</span>
           </div>

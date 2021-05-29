@@ -14,7 +14,7 @@
     "plugin:jest/style",
     "prettier"
   ],
-  "plugins": ["jest", "prettier"],
+  "plugins": ["jest", "prettier", "sort-imports-es6-autofix"],
   "rules": {
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],

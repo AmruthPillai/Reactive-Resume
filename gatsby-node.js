@@ -1,14 +1,27 @@
-exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
-  if (stage === 'build-javascript') {
-    const config = getConfig();
-    const miniCssExtractPlugin = config.plugins.find(
-      (plugin) => plugin.constructor.name === 'MiniCssExtractPlugin',
-    );
-    if (miniCssExtractPlugin) {
-      miniCssExtractPlugin.options.ignoreOrder = true;
-    }
-    actions.replaceWebpackConfig(config);
+exports.onCreateWebpackConfig = ({ stage, actions, plugins, getConfig }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        path: require.resolve('path-browserify'),
+      },
+      fallback: {
+        fs: false,
+      },
+    },
+  });
+
+  if (stage === 'build-javascript' || stage === 'develop') {
+    actions.setWebpackConfig({
+      plugins: [plugins.provide({ process: 'process/browser' })],
+    });
   }
+
+  const config = getConfig();
+  const miniCssExtractPlugin = config.plugins.find(
+    (plugin) => plugin.constructor.name === 'MiniCssExtractPlugin',
+  );
+  miniCssExtractPlugin && (miniCssExtractPlugin.options.ignoreOrder = true);
+  actions.replaceWebpackConfig(config);
 
   if (stage === 'build-html') {
     actions.setWebpackConfig({

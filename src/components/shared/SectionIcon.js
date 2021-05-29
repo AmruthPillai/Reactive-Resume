@@ -1,8 +1,8 @@
-import { Tooltip } from '@material-ui/core';
-import React, { memo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Link } from 'react-scroll';
-import styles from './SectionIcon.module.css';
+import { Tooltip } from '@material-ui/core';
+import { useTranslation } from 'react-i18next';
+import React, { memo } from 'react';
+import * as styles from './SectionIcon.module.css';
 
 const SectionIcon = ({ section, containerId, tooltipPlacement }) => {
   const { t } = useTranslation();

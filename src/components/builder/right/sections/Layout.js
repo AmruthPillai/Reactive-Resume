@@ -1,11 +1,11 @@
-import React, { memo, useState } from 'react';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from '../../../../contexts/ResumeContext';
+import React, { memo, useState } from 'react';
+import * as styles from './Layout.module.css';
 import { move, reorder } from '../../../../utils';
+import { useDispatch, useSelector } from '../../../../contexts/ResumeContext';
 import Button from '../../../shared/Button';
 import Heading from '../../../shared/Heading';
-import styles from './Layout.module.css';
 
 const Layout = ({ id }) => {
   const { t } = useTranslation();

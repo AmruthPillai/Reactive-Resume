@@ -6,10 +6,10 @@ import { DatabaseConstants } from 'gatsby-plugin-firebase';
 import { dataTestIdPrefix as listItemDataTestIdPrefix } from '../../../components/builder/lists/ListItem';
 
 import {
-  setupAndWait,
-  expectDatabaseUpdateToHaveCompleted,
   dragAndDropDirectionDown,
   dragAndDropListItem,
+  expectDatabaseUpdateToHaveCompleted,
+  setupAndWait,
 } from './helpers/builder';
 
 const testTimeoutInMilliseconds = 20000;

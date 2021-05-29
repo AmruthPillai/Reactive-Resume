@@ -1,6 +1,5 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
-import PageContext from '../contexts/PageContext';
+import React from 'react';
 import { hexToRgb } from '../utils';
 import AwardsA from './blocks/Awards/AwardsA';
 import CertificationsA from './blocks/Certifications/CertificationsA';
@@ -10,6 +9,7 @@ import HeadingE from './blocks/Heading/HeadingE';
 import HobbiesA from './blocks/Hobbies/HobbiesA';
 import LanguagesB from './blocks/Languages/LanguagesB';
 import ObjectiveA from './blocks/Objective/ObjectiveA';
+import PageContext from '../contexts/PageContext';
 import ProjectsA from './blocks/Projects/ProjectsA';
 import ReferencesA from './blocks/References/ReferencesA';
 import SkillsA from './blocks/Skills/SkillsA';
