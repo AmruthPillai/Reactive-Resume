@@ -1,7 +1,7 @@
+import { graphql, useStaticQuery } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import GatsbyImage from 'gatsby-image';
-import styles from './Screenshots.module.css';
+import * as styles from './Screenshots.module.css';
 
 const Screenshots = () => {
   const screenshots = useStaticQuery(graphql`
@@ -11,9 +11,7 @@ const Screenshots = () => {
           original {
             src
           }
-          fixed(width: 320) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(layout: FIXED, width: 400)
         }
       }
       screen2: file(relativePath: { eq: "screenshots/screen-2.png" }) {
@@ -21,9 +19,7 @@ const Screenshots = () => {
           original {
             src
           }
-          fixed(width: 320) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(layout: FIXED, width: 400)
         }
       }
       screen3: file(relativePath: { eq: "screenshots/screen-3.png" }) {
@@ -31,9 +27,7 @@ const Screenshots = () => {
           original {
             src
           }
-          fixed(width: 320) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(layout: FIXED, width: 400)
         }
       }
       screen4: file(relativePath: { eq: "screenshots/screen-4.png" }) {
@@ -41,9 +35,7 @@ const Screenshots = () => {
           original {
             src
           }
-          fixed(width: 320) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(layout: FIXED, width: 400)
         }
       }
       screen5: file(relativePath: { eq: "screenshots/screen-5.png" }) {
@@ -51,9 +43,7 @@ const Screenshots = () => {
           original {
             src
           }
-          fixed(width: 320) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(layout: FIXED, width: 400)
         }
       }
     }
@@ -74,7 +64,7 @@ const Screenshots = () => {
           >
             <span className="sr-only">Reactive Resume Screenshot</span>
             <GatsbyImage
-              fixed={screenshots[x].childImageSharp.fixed}
+              image={screenshots[x].childImageSharp.gatsbyImageData}
               alt="Reactive Resume Screenshot"
             />
           </a>

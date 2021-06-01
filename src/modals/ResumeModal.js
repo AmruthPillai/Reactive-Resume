@@ -1,12 +1,12 @@
-import { Formik } from 'formik';
-import React, { memo, useContext } from 'react';
 import * as Yup from 'yup';
+import { Formik } from 'formik';
 import { useTranslation } from 'react-i18next';
-import Input from '../components/shared/Input';
-import ModalEvents from '../constants/ModalEvents';
-import DatabaseContext from '../contexts/DatabaseContext';
+import React, { memo, useContext } from 'react';
 import { getFieldProps } from '../utils';
 import DataModal from './DataModal';
+import DatabaseContext from '../contexts/DatabaseContext';
+import Input from '../components/shared/Input';
+import ModalEvents from '../constants/ModalEvents';
 
 const initialValues = {
   name: '',

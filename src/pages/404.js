@@ -1,5 +1,5 @@
-import { navigate } from 'gatsby';
 import { memo, useEffect } from 'react';
+import { navigate } from 'gatsby';
 
 const NotFound = () => {
   useEffect(() => {

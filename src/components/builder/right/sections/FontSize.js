@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { memo, useEffect, useState } from 'react';
-import { useDispatch, useSelector } from '../../../../contexts/ResumeContext';
-import fontSizeOptions from '../../../../data/fontSizeOptions';
 import { scaler } from '../../../../utils';
+import { useDispatch, useSelector } from '../../../../contexts/ResumeContext';
 import Heading from '../../../shared/Heading';
+import fontSizeOptions from '../../../../data/fontSizeOptions';
 
 const FontSizes = ({ id }) => {
   const steps = 20;

@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch } from '../../../../contexts/ResumeContext';
-import colorOptions from '../../../../data/colorOptions';
+import React, { memo } from 'react';
+import * as styles from './Colors.module.css';
 import { handleKeyUp } from '../../../../utils';
+import { useDispatch } from '../../../../contexts/ResumeContext';
 import Heading from '../../../shared/Heading';
 import Input from '../../../shared/Input';
-import styles from './Colors.module.css';
+import colorOptions from '../../../../data/colorOptions';
 
 const Colors = ({ id }) => {
   const dispatch = useDispatch();

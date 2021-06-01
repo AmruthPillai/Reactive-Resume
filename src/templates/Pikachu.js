@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import PageContext from '../contexts/PageContext';
-import ContactA from './blocks/Contact/ContactA';
-import HeadingB from './blocks/Heading/HeadingB';
 import AwardsA from './blocks/Awards/AwardsA';
 import CertificationsA from './blocks/Certifications/CertificationsA';
+import ContactA from './blocks/Contact/ContactA';
 import EducationA from './blocks/Education/EducationA';
+import HeadingB from './blocks/Heading/HeadingB';
 import HobbiesA from './blocks/Hobbies/HobbiesA';
 import LanguagesA from './blocks/Languages/LanguagesA';
+import PageContext from '../contexts/PageContext';
 import ProjectsA from './blocks/Projects/ProjectsA';
 import ReferencesA from './blocks/References/ReferencesA';
 import SkillsA from './blocks/Skills/SkillsA';
@@ -77,10 +77,9 @@ const Pikachu = ({ data }) => {
                       style={{ borderColor: data.metadata.colors.background }}
                     />
 
-                    <ReactMarkdown
-                      className="text-sm"
-                      source={data.objective.body}
-                    />
+                    <ReactMarkdown className="text-sm">
+                      {data.objective.body}
+                    </ReactMarkdown>
                   </div>
                 )}
               </div>

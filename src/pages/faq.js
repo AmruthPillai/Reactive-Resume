@@ -1,7 +1,7 @@
-import { Link } from '@reach/router';
-import React from 'react';
 import { Helmet } from 'react-helmet';
+import { Link } from '@reach/router';
 import { MdKeyboardArrowLeft } from 'react-icons/md';
+import React from 'react';
 import Wrapper from '../components/shared/Wrapper';
 
 const FrequentlyAskedQuestions = () => (

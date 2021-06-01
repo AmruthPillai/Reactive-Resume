@@ -1,17 +1,15 @@
-import cx from 'classnames';
 import { graphql, useStaticQuery } from 'gatsby';
-import GatsbyImage from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React, { memo } from 'react';
-import styles from './Logo.module.css';
+import cx from 'classnames';
+import * as styles from './Logo.module.css';
 
 const Logo = ({ size = '256px', className }) => {
   const { file } = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
-          fluid(maxWidth: 512) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FIXED)
         }
       }
     }
@@ -20,9 +18,10 @@ const Logo = ({ size = '256px', className }) => {
   return (
     <GatsbyImage
       loading="eager"
+      alt="Reactive Resume"
       className={cx(styles.logo, className)}
       style={{ width: size, height: size }}
-      fluid={file.childImageSharp.fluid}
+      image={file.childImageSharp.gatsbyImageData}
     />
   );
 };

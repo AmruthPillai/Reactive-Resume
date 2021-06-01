@@ -1,9 +1,9 @@
 /* eslint-disable no-underscore-dangle */
 import { v4 as uuidv4 } from 'uuid';
 
-import DatabaseConstants from '../constants/database';
-import DataSnapshot from './dataSnapshot';
 import { delay } from '../../../src/utils/index';
+import DataSnapshot from './dataSnapshot';
+import DatabaseConstants from '../constants/database';
 
 const parsePath = (path) => {
   if (!path) {

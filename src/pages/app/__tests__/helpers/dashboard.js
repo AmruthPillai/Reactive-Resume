@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   fireEvent,
   render,
@@ -6,6 +5,7 @@ import {
   waitFor,
   waitForElementToBeRemoved,
 } from '@testing-library/react';
+import React from 'react';
 
 import fetchMock from 'jest-fetch-mock';
 
@@ -13,16 +13,16 @@ import FirebaseStub, { DatabaseConstants } from 'gatsby-plugin-firebase';
 
 import '../../../../i18n/index';
 import '../../../../utils/dayjs';
-import { dataTestId as loadingScreenTestId } from '../../../../components/router/LoadingScreen';
-import { unsplashPhotoRequestUrl, delay } from '../../../../utils/index';
-import { SettingsProvider } from '../../../../contexts/SettingsContext';
-import { ModalProvider } from '../../../../contexts/ModalContext';
-import { UserProvider } from '../../../../contexts/UserContext';
 import { DatabaseProvider } from '../../../../contexts/DatabaseContext';
+import { ModalProvider } from '../../../../contexts/ModalContext';
 import { ResumeProvider } from '../../../../contexts/ResumeContext';
+import { SettingsProvider } from '../../../../contexts/SettingsContext';
 import { StorageProvider } from '../../../../contexts/StorageContext';
-import Wrapper from '../../../../components/shared/Wrapper';
+import { UserProvider } from '../../../../contexts/UserContext';
+import { delay, unsplashPhotoRequestUrl } from '../../../../utils/index';
+import { dataTestId as loadingScreenTestId } from '../../../../components/router/LoadingScreen';
 import Dashboard from '../../dashboard';
+import Wrapper from '../../../../components/shared/Wrapper';
 
 const waitForResumeToBeRenderedInPreview = async (resumeName) => {
   await screen.findByText(resumeName);

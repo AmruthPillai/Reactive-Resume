@@ -1,11 +1,11 @@
 /* eslint-disable no-underscore-dangle */
 import { v4 as uuidv4 } from 'uuid';
 
-import Constants from '../constants/auth';
+import { delay } from '../../../src/utils/index';
 import AuthProvider from './authProvider';
+import Constants from '../constants/auth';
 import GoogleAuthProvider from './googleAuthProvider';
 import User from './user';
-import { delay } from '../../../src/utils/index';
 
 const singleton = Symbol('');
 const singletonEnforcer = Symbol('');

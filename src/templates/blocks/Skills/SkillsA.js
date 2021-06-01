@@ -1,11 +1,11 @@
 import React, { memo, useContext } from 'react';
+import { isItemVisible, safetyCheck } from '../../../utils';
 import PageContext from '../../../contexts/PageContext';
-import { safetyCheck, isItemVisible } from '../../../utils';
 
-const SkillItem = (x) => (
-  <div key={x.id} className="flex flex-col">
-    <h6 className="font-semibold text-sm">{x.name}</h6>
-    <span className="text-xs">{x.level}</span>
+const SkillItem = ({ id, name, level }) => (
+  <div key={id} className="flex flex-col">
+    <h6 className="font-semibold text-sm">{name}</h6>
+    <span className="text-xs">{level}</span>
   </div>
 );
 

@@ -10,12 +10,12 @@ import FirebaseStub, { DatabaseConstants } from 'gatsby-plugin-firebase';
 
 import { createResumeButtonDataTestId } from '../../../components/dashboard/CreateResume';
 import {
-  waitForResumeToBeRenderedInPreview,
-  expectResumeToBeRenderedInPreview,
-  waitForModalWindowToHaveBeenClosed,
   dismissNotification,
-  unsplashPhotoResponseUrl,
+  expectResumeToBeRenderedInPreview,
   setupWithFetchMockAndWait,
+  unsplashPhotoResponseUrl,
+  waitForModalWindowToHaveBeenClosed,
+  waitForResumeToBeRenderedInPreview,
 } from './helpers/dashboard';
 
 const tooShortResumeName = 'CV 1';

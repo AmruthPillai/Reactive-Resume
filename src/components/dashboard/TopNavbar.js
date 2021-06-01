@@ -1,8 +1,8 @@
 import { Link } from 'gatsby';
 import React, { memo } from 'react';
+import * as styles from './TopNavbar.module.css';
 import Avatar from '../shared/Avatar';
 import Logo from '../shared/Logo';
-import styles from './TopNavbar.module.css';
 
 const TopNavbar = () => (
   <div className={styles.navbar}>

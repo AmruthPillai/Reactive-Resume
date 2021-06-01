@@ -1,10 +1,10 @@
 import React, { memo, useContext } from 'react';
+import { isItemVisible, safetyCheck } from '../../../utils';
 import PageContext from '../../../contexts/PageContext';
-import { safetyCheck, isItemVisible } from '../../../utils';
 
-const HobbyA = (x) => (
-  <div key={x.id}>
-    <h6 className="font-semibold text-sm">{x.name}</h6>
+const HobbyA = ({ id, name }) => (
+  <div key={id}>
+    <h6 className="font-semibold text-sm">{name}</h6>
   </div>
 );
 

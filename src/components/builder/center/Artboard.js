@@ -1,6 +1,7 @@
-import React, { memo } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
+import React, { memo } from 'react';
+import * as styles from './Artboard.module.css';
 import { useSelector } from '../../../contexts/ResumeContext';
 import Castform from '../../../templates/Castform';
 import Celebi from '../../../templates/Celebi';
@@ -8,7 +9,6 @@ import Gengar from '../../../templates/Gengar';
 import Glalie from '../../../templates/Glalie';
 import Onyx from '../../../templates/Onyx';
 import Pikachu from '../../../templates/Pikachu';
-import styles from './Artboard.module.css';
 
 const Artboard = () => {
   const state = useSelector();

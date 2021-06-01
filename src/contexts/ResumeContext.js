@@ -1,15 +1,14 @@
-import arrayMove from 'array-move';
-import { v4 as uuidv4 } from 'uuid';
 import {
   clone,
   findIndex,
   get,
+  has,
   isUndefined,
   merge,
-  setWith,
   set,
-  has,
+  setWith,
 } from 'lodash';
+import { v4 as uuidv4 } from 'uuid';
 import React, {
   createContext,
   memo,
@@ -17,10 +16,11 @@ import React, {
   useContext,
   useReducer,
 } from 'react';
+import arrayMove from 'array-move';
 import i18next from 'i18next';
 import demoState from '../data/demoState.json';
-import initialState from '../data/initialState.json';
 import DatabaseContext from './DatabaseContext';
+import initialState from '../data/initialState.json';
 
 const ResumeContext = createContext({});
 

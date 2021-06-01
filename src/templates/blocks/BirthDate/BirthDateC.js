@@ -1,8 +1,8 @@
-import React, { memo, useContext } from 'react';
 import { get } from 'lodash';
-import PageContext from '../../../contexts/PageContext';
-import Icons from '../Icons';
+import React, { memo, useContext } from 'react';
 import { formatDate } from '../../../utils';
+import Icons from '../Icons';
+import PageContext from '../../../contexts/PageContext';
 
 const BirthDateC = () => {
   const { data } = useContext(PageContext);

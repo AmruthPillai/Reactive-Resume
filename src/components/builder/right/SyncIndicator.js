@@ -1,6 +1,6 @@
-import cx from 'classnames';
-import React, { memo, useContext } from 'react';
 import { MdSync } from 'react-icons/md';
+import React, { memo, useContext } from 'react';
+import cx from 'classnames';
 import DatabaseContext from '../../../contexts/DatabaseContext';
 
 const SyncIndicator = () => {

@@ -1,19 +1,19 @@
-import { Link, navigate } from '@reach/router';
-import React, { memo, useContext, useEffect, useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet';
+import { Link, navigate } from '@reach/router';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
-import LoadingScreen from '../../components/router/LoadingScreen';
-import DatabaseContext from '../../contexts/DatabaseContext';
+import React, { memo, useContext, useEffect, useMemo, useState } from 'react';
+import * as styles from './view.module.css';
+import { scaler } from '../../utils';
 import Castform from '../../templates/Castform';
+import Celebi from '../../templates/Celebi';
+import DatabaseContext from '../../contexts/DatabaseContext';
 import Gengar from '../../templates/Gengar';
 import Glalie from '../../templates/Glalie';
+import LoadingScreen from '../../components/router/LoadingScreen';
 import Onyx from '../../templates/Onyx';
 import Pikachu from '../../templates/Pikachu';
-import styles from './view.module.css';
-import Celebi from '../../templates/Celebi';
 import fontSizeOptions from '../../data/fontSizeOptions';
-import { scaler } from '../../utils';
 
 const ResumeViewer = ({ id }) => {
   const { t, i18n } = useTranslation();

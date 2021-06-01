@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
-import path from 'path';
-import fs from 'fs';
 import { v4 as uuidv4 } from 'uuid';
+import fs from 'fs';
+import path from 'path';
 
 import DatabaseConstants from '../constants/database';
 import Reference from './reference';

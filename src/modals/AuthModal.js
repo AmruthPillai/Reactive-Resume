@@ -1,10 +1,10 @@
 import { navigate } from 'gatsby';
-import React, { memo, useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import React, { memo, useContext, useEffect, useState } from 'react';
+import BaseModal from './BaseModal';
 import Button from '../components/shared/Button';
 import ModalContext from '../contexts/ModalContext';
 import UserContext from '../contexts/UserContext';
-import BaseModal from './BaseModal';
 
 const AuthModal = () => {
   const { t } = useTranslation();
@@ -13,9 +13,8 @@ const AuthModal = () => {
   const [isLoadingAnonymous, setLoadingAnonymous] = useState(false);
 
   const { emitter, events } = useContext(ModalContext);
-  const { user, loginWithGoogle, loginAnonymously, logout } = useContext(
-    UserContext,
-  );
+  const { user, loginWithGoogle, loginAnonymously, logout } =
+    useContext(UserContext);
 
   useEffect(() => {
     const unbind = emitter.on(events.AUTH_MODAL, () => setOpen(true));

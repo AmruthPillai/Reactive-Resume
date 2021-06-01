@@ -1,5 +1,5 @@
-import { navigate as mockNavigateFunction } from 'gatsby';
 import { fireEvent, getByText, screen, waitFor } from '@testing-library/react';
+import { navigate as mockNavigateFunction } from 'gatsby';
 
 import setup from './helpers/builder';
 

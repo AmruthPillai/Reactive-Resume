@@ -1,12 +1,12 @@
-import { Menu, MenuItem } from '@material-ui/core';
-import React, { memo, useState } from 'react';
 import { Draggable } from 'react-beautiful-dnd';
-import { useTranslation } from 'react-i18next';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { MdMoreVert } from 'react-icons/md';
+import { Menu, MenuItem } from '@material-ui/core';
+import { useTranslation } from 'react-i18next';
+import React, { memo, useState } from 'react';
 import Switch from '@material-ui/core/Switch';
 import { useDispatch } from '../../../contexts/ResumeContext';
-import styles from './ListItem.module.css';
+import * as styles from './ListItem.module.css';
 
 const dataTestIdPrefix = 'list-item-';
 

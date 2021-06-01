@@ -1,15 +1,15 @@
+import { FaPrint } from 'react-icons/fa';
+import { clone } from 'lodash';
+import { toast } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
+import React, { memo, useContext, useEffect, useState } from 'react';
 import download from 'downloadjs';
 import firebase from 'gatsby-plugin-firebase';
-import { clone } from 'lodash';
-import React, { memo, useContext, useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { FaPrint } from 'react-icons/fa';
-import { toast } from 'react-toastify';
+import { useSelector } from '../../contexts/ResumeContext';
+import BaseModal from '../BaseModal';
 import Button from '../../components/shared/Button';
 import ModalContext from '../../contexts/ModalContext';
-import { useSelector } from '../../contexts/ResumeContext';
 import { b64toBlob } from '../../utils';
-import BaseModal from '../BaseModal';
 
 const ExportModal = () => {
   const state = useSelector();

@@ -1,11 +1,11 @@
 import { Backdrop, Fade, Modal } from '@material-ui/core';
-import { isFunction } from 'lodash';
-import React, { forwardRef, memo, useImperativeHandle } from 'react';
-import { useTranslation } from 'react-i18next';
 import { MdClose } from 'react-icons/md';
+import { isFunction } from 'lodash';
+import { useTranslation } from 'react-i18next';
+import React, { forwardRef, memo, useImperativeHandle } from 'react';
 import Button from '../components/shared/Button';
 import { handleKeyUp } from '../utils';
-import styles from './BaseModal.module.css';
+import * as styles from './BaseModal.module.css';
 
 const BaseModal = forwardRef(
   ({ title, state, children, action, hideActions = false, onDestroy }, ref) => {

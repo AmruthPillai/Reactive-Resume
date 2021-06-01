@@ -1,7 +1,7 @@
 import React, { memo, useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { formatDate, isItemVisible, safetyCheck } from '../../../utils';
 import PageContext from '../../../contexts/PageContext';
-import { formatDate, safetyCheck, isItemVisible } from '../../../utils';
 
 const CertificationItem = ({ item, language }) => (
   <div>
@@ -17,7 +17,9 @@ const CertificationItem = ({ item, language }) => (
       )}
     </div>
     {item.summary && (
-      <ReactMarkdown className="markdown mt-2 text-sm" source={item.summary} />
+      <ReactMarkdown className="markdown mt-2 text-sm">
+        {item.summary}
+      </ReactMarkdown>
     )}
   </div>
 );
