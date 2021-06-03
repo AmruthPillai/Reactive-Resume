@@ -11,6 +11,7 @@ import {
   FaSkype,
   FaStackOverflow,
   FaTelegram,
+  FaYoutube,
   FaTwitter,
 } from 'react-icons/fa';
 import { MdEmail, MdPhone } from 'react-icons/md';
@@ -31,6 +32,7 @@ const Icons = {
   birthday: FaBirthdayCake,
   telegram: FaTelegram,
   skype: FaSkype,
+  youtube: FaYoutube,
 };
 
 export default Icons;
