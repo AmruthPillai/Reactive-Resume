@@ -1,9 +1,9 @@
-import React, { memo, useContext } from 'react';
 import { MdAdd } from 'react-icons/md';
 import { useTranslation } from 'react-i18next';
-import ModalContext from '../../contexts/ModalContext';
+import React, { memo, useContext } from 'react';
+import * as styles from './CreateResume.module.css';
 import { handleKeyUp } from '../../utils';
-import styles from './CreateResume.module.css';
+import ModalContext from '../../contexts/ModalContext';
 
 const createResumeButtonDataTestId = 'create-resume-button';
 

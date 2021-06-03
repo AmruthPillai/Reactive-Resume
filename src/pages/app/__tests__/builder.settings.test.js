@@ -5,8 +5,8 @@ import { DatabaseConstants } from 'gatsby-plugin-firebase';
 import { languageStorageItemKey } from '../../../contexts/SettingsContext';
 
 import {
-  setupAndWait,
   expectDatabaseUpdateToHaveCompleted,
+  setupAndWait,
 } from './helpers/builder';
 
 const testTimeoutInMilliseconds = 20000;
@@ -16,6 +16,7 @@ test('allows to change the language', async () => {
   const resumeId = DatabaseConstants.demoStateResume1Id;
   const { mockDatabaseUpdateFunction } = await setupAndWait(
     resumeId,
+    false,
     true,
     true,
   );

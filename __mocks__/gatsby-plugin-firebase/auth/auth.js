@@ -1,8 +1,11 @@
 /* eslint-disable no-underscore-dangle */
 import { v4 as uuidv4 } from 'uuid';
 
-import Constants from '../constants/auth';
 import { delay } from '../../../src/utils/index';
+import AuthProvider from './authProvider';
+import Constants from '../constants/auth';
+import GoogleAuthProvider from './googleAuthProvider';
+import User from './user';
 
 const singleton = Symbol('');
 const singletonEnforcer = Symbol('');
@@ -14,6 +17,7 @@ class Auth {
     }
 
     this._uuid = uuidv4();
+    this._currentUser = null;
     this._onAuthStateChangedObservers = [];
   }
 
@@ -23,6 +27,10 @@ class Auth {
     }
 
     return this[singleton];
+  }
+
+  get currentUser() {
+    return this._currentUser;
   }
 
   get uuid() {
@@ -46,11 +54,72 @@ class Auth {
   async signInAnonymously() {
     const user = Constants.anonymousUser1;
 
+    this._currentUser = new User(
+      user.displayName,
+      user.email,
+      user.providerId,
+      user.uid,
+      user.isAnonymous,
+      this.signOut.bind(this),
+    );
+
     await delay(Constants.defaultDelayInMilliseconds);
 
-    this.onAuthStateChangedObservers.forEach((observer) => observer(user));
+    this.onAuthStateChangedObservers.forEach((observer) =>
+      observer(this._currentUser),
+    );
 
-    return user;
+    return this._currentUser;
+  }
+
+  /**
+   * Authenticates with popup.
+   *
+   * @param {AuthProvider} provider The provider to authenticate.
+   */
+  async signInWithPopup(provider) {
+    if (!provider) {
+      throw new Error('provider must be provided.');
+    } else if (!(provider instanceof AuthProvider)) {
+      throw new Error('provider should be an AuthProvider.');
+    }
+
+    if (!(provider instanceof GoogleAuthProvider)) {
+      throw new Error(
+        `${provider.constructor.name} is currently not supported.`,
+      );
+    }
+
+    const user = Constants.googleUser3;
+
+    this._currentUser = new User(
+      user.displayName,
+      user.email,
+      user.providerId,
+      user.uid,
+      user.isAnonymous,
+      this.signOut.bind(this),
+    );
+
+    await delay(Constants.defaultDelayInMilliseconds);
+
+    this.onAuthStateChangedObservers.forEach((observer) =>
+      observer(this._currentUser),
+    );
+
+    return this._currentUser;
+  }
+
+  async signOut() {
+    if (this._currentUser === null) {
+      return;
+    }
+
+    this._currentUser = null;
+
+    await delay(Constants.defaultDelayInMilliseconds);
+
+    this.onAuthStateChangedObservers.forEach((observer) => observer(null));
   }
 }
 

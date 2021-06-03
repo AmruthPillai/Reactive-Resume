@@ -1,15 +1,15 @@
-import { get, isEmpty } from 'lodash';
-import React, { memo, useContext } from 'react';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
-import { useTranslation } from 'react-i18next';
 import { MdAdd } from 'react-icons/md';
-import ModalContext from '../../../contexts/ModalContext';
-import { useDispatch, useSelector } from '../../../contexts/ResumeContext';
+import { get, isEmpty } from 'lodash';
+import { useTranslation } from 'react-i18next';
+import React, { memo, useContext } from 'react';
+import * as styles from './List.module.css';
 import { formatDateRange, reorder } from '../../../utils';
+import { useDispatch, useSelector } from '../../../contexts/ResumeContext';
 import Button from '../../shared/Button';
 import EmptyList from './EmptyList';
-import styles from './List.module.css';
 import ListItem from './ListItem';
+import ModalContext from '../../../contexts/ModalContext';
 
 const List = ({
   path,

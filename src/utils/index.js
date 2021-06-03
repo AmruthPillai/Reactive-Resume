@@ -1,5 +1,5 @@
+import { clone, get, isEmpty } from 'lodash';
 import dayjs from 'dayjs';
-import { get, isEmpty, clone } from 'lodash';
 
 export const getModalText = (isEditMode, type, t) =>
   isEditMode
@@ -137,6 +137,5 @@ export const b64toBlob = (b64Data, contentType = '', sliceSize = 512) => {
   return blob;
 };
 
-export const delay = async (milliseconds) => {
-  await new Promise((resolve) => setTimeout(resolve, milliseconds));
-};
+export const delay = (milliseconds) =>
+  new Promise((resolve) => setTimeout(resolve, milliseconds));

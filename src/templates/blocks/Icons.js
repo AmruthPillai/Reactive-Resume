@@ -1,20 +1,20 @@
 import {
-  FaGlobeAmericas,
-  FaFacebookF,
-  FaTwitter,
-  FaLinkedinIn,
-  FaGithub,
-  FaDribbble,
-  FaInstagram,
-  FaStackOverflow,
   FaBehance,
-  FaGitlab,
   FaBirthdayCake,
-  FaTelegram,
+  FaDribbble,
+  FaFacebookF,
+  FaGithub,
+  FaGitlab,
+  FaGlobeAmericas,
+  FaInstagram,
+  FaLinkedinIn,
   FaSkype,
+  FaStackOverflow,
+  FaTelegram,
   FaYoutube,
+  FaTwitter,
 } from 'react-icons/fa';
-import { MdPhone, MdEmail } from 'react-icons/md';
+import { MdEmail, MdPhone } from 'react-icons/md';
 
 const Icons = {
   phone: MdPhone,

@@ -1,10 +1,10 @@
 import React, { memo, useContext } from 'react';
+import { isItemVisible, safetyCheck } from '../../../utils';
 import PageContext from '../../../contexts/PageContext';
-import { safetyCheck, isItemVisible } from '../../../utils';
 
-const SkillItem = (x) => (
-  <li key={x.id} className="text-sm py-1">
-    {x.skill}
+const SkillItem = ({ id, skill }) => (
+  <li key={id} className="text-sm py-1">
+    {skill}
   </li>
 );
 

@@ -7,13 +7,13 @@ import {
 
 import FirebaseStub, { DatabaseConstants } from 'gatsby-plugin-firebase';
 
-import { menuToggleDataTestIdPrefix as resumePreviewMenuToggleDataTestIdPrefix } from '../../../components/dashboard/ResumePreview';
 import {
-  setupWithFetchMockAndWait,
-  waitForResumeToBeRenderedInPreview,
   expectResumeToBeRenderedInPreview,
+  setupWithFetchMockAndWait,
   unsplashPhotoResponseUrl,
+  waitForResumeToBeRenderedInPreview,
 } from './helpers/dashboard';
+import { menuToggleDataTestIdPrefix as resumePreviewMenuToggleDataTestIdPrefix } from '../../../components/dashboard/ResumePreview';
 
 async function setup() {
   const user = DatabaseConstants.user1;

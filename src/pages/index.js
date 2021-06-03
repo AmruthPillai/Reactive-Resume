@@ -1,10 +1,10 @@
-import { Link } from '@reach/router';
-import React, { memo } from 'react';
-import { Helmet } from 'react-helmet';
-import { useTranslation } from 'react-i18next';
 import { FaUserSecret, FaWalking } from 'react-icons/fa';
+import { Helmet } from 'react-helmet';
 import { IoIosRocket } from 'react-icons/io';
+import { Link } from '@reach/router';
 import { RiRefreshLine } from 'react-icons/ri';
+import { useTranslation } from 'react-i18next';
+import React, { memo } from 'react';
 import Hero from '../components/landing/Hero';
 import Screenshots from '../components/landing/Screenshots';
 import Wrapper from '../components/shared/Wrapper';

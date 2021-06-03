@@ -1,15 +1,15 @@
 import { navigate } from 'gatsby';
-import React, { memo, useContext, useEffect, useMemo, useState } from 'react';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
-import Artboard from '../../components/builder/center/Artboard';
-import LeftSidebar from '../../components/builder/left/LeftSidebar';
-import RightSidebar from '../../components/builder/right/RightSidebar';
-import LoadingScreen from '../../components/router/LoadingScreen';
-import DatabaseContext from '../../contexts/DatabaseContext';
+import React, { memo, useContext, useEffect, useMemo, useState } from 'react';
+import * as styles from './builder.module.css';
 import { useDispatch } from '../../contexts/ResumeContext';
+import Artboard from '../../components/builder/center/Artboard';
 import Button from '../../components/shared/Button';
-import styles from './builder.module.css';
+import DatabaseContext from '../../contexts/DatabaseContext';
+import LeftSidebar from '../../components/builder/left/LeftSidebar';
+import LoadingScreen from '../../components/router/LoadingScreen';
+import RightSidebar from '../../components/builder/right/RightSidebar';
 
 const Builder = ({ id }) => {
   const dispatch = useDispatch();

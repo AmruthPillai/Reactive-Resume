@@ -1,11 +1,11 @@
 import { Link } from '@reach/router';
 import { navigate } from 'gatsby';
-import React, { memo, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import ModalContext from '../../contexts/ModalContext';
-import UserContext from '../../contexts/UserContext';
+import React, { memo, useContext } from 'react';
 import Button from '../shared/Button';
 import Logo from '../shared/Logo';
+import ModalContext from '../../contexts/ModalContext';
+import UserContext from '../../contexts/UserContext';
 
 const Hero = () => {
   const { t } = useTranslation();

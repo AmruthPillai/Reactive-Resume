@@ -1,12 +1,12 @@
 import { Link } from 'gatsby';
-import React, { memo } from 'react';
 import { Tooltip } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
-import sections from '../../../data/leftSections';
+import React, { memo } from 'react';
 import Avatar from '../../shared/Avatar';
 import Logo from '../../shared/Logo';
+import * as styles from './LeftNavbar.module.css';
 import SectionIcon from '../../shared/SectionIcon';
-import styles from './LeftNavbar.module.css';
+import sections from '../../../data/leftSections';
 
 const LeftNavbar = () => {
   const { t } = useTranslation();

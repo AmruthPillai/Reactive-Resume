@@ -1,16 +1,16 @@
-import React, { Fragment, memo } from 'react';
 import { Element } from 'react-scroll';
-import sections from '../../../data/rightSections';
-import RightNavbar from './RightNavbar';
-import styles from './RightSidebar.module.css';
+import React, { Fragment, memo } from 'react';
+import * as styles from './RightSidebar.module.css';
 import About from './sections/About';
 import Actions from './sections/Actions';
 import Colors from './sections/Colors';
+import FontSize from './sections/FontSize';
 import Fonts from './sections/Fonts';
 import Layout from './sections/Layout';
+import RightNavbar from './RightNavbar';
 import Settings from './sections/Settings';
 import Templates from './sections/Templates';
-import FontSize from './sections/FontSize';
+import sections from '../../../data/rightSections';
 
 const getComponent = (id) => {
   switch (id) {

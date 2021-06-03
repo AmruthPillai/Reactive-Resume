@@ -1,12 +1,12 @@
-import React, { memo, useContext, useState } from 'react';
 import { FaFileExport, FaFileImport } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-import ModalContext from '../../../../contexts/ModalContext';
+import React, { memo, useContext, useState } from 'react';
+import * as styles from './Actions.module.css';
 import { useDispatch, useSelector } from '../../../../contexts/ResumeContext';
 import Button from '../../../shared/Button';
 import Heading from '../../../shared/Heading';
 import Input from '../../../shared/Input';
-import styles from './Actions.module.css';
+import ModalContext from '../../../../contexts/ModalContext';
 
 const Actions = ({ id }) => {
   const { t } = useTranslation();

@@ -8,14 +8,14 @@ import {
 
 import FirebaseStub, { DatabaseConstants } from 'gatsby-plugin-firebase';
 
-import { menuToggleDataTestIdPrefix as resumePreviewMenuToggleDataTestIdPrefix } from '../../../components/dashboard/ResumePreview';
 import {
+  dismissNotification,
+  expectResumeToBeRenderedInPreview,
+  findAndDismissNotification,
   setupAndWait,
   waitForResumeToDisappearFromPreview,
-  expectResumeToBeRenderedInPreview,
-  dismissNotification,
-  findAndDismissNotification,
 } from './helpers/dashboard';
+import { menuToggleDataTestIdPrefix as resumePreviewMenuToggleDataTestIdPrefix } from '../../../components/dashboard/ResumePreview';
 
 const waitForDatabaseRemoveToHaveCompleted = async (
   mockDatabaseRemoveFunction,
@@ -44,7 +44,7 @@ async function setup() {
   );
   const resumeToDeleteId = resumeToDelete.id;
   const [undeletedResume] = Object.values(userResumes).filter(
-    (resume) => resume.id === DatabaseConstants.initialStateResumeId,
+    (resume) => resume.id === DatabaseConstants.initialStateResume1Id,
   );
 
   const mockDatabaseRemoveFunction = jest.spyOn(
@@ -73,11 +73,8 @@ async function setup() {
 }
 
 it('removes resume from database and preview', async () => {
-  const {
-    resumeToDelete,
-    undeletedResume,
-    mockDatabaseRemoveFunction,
-  } = await setup();
+  const { resumeToDelete, undeletedResume, mockDatabaseRemoveFunction } =
+    await setup();
 
   await findAndDismissNotification();
 

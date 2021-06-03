@@ -1,6 +1,6 @@
-import React, { memo, useEffect } from 'react';
-import { Slide, toast } from 'react-toastify';
 import { Helmet } from 'react-helmet';
+import { Slide, toast } from 'react-toastify';
+import React, { memo, useEffect } from 'react';
 import ModalRegistrar from '../../modals/ModalRegistrar';
 
 const Wrapper = ({ children }) => {

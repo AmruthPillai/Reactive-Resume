@@ -1,6 +1,6 @@
-import firebase from 'gatsby-plugin-firebase';
-import React, { createContext, memo, useContext, useRef } from 'react';
 import { toast } from 'react-toastify';
+import React, { createContext, memo, useContext, useRef } from 'react';
+import firebase from 'gatsby-plugin-firebase';
 import { isFileImage } from '../utils';
 import { useDispatch, useSelector } from './ResumeContext';
 import UserContext from './UserContext';

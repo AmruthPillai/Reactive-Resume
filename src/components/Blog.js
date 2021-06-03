@@ -1,10 +1,10 @@
 /* eslint-disable react/no-danger */
+import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import React from 'react';
-import { Helmet } from 'react-helmet';
-import styles from './Blog.module.css';
-import Wrapper from './shared/Wrapper';
 import Hero from './landing/Hero';
+import * as styles from './Blog.module.css';
+import Wrapper from './shared/Wrapper';
 
 export default function Template({ data }) {
   const { markdownRemark } = data;
@@ -34,7 +34,7 @@ export default function Template({ data }) {
 }
 
 export const pageQuery = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       frontmatter {

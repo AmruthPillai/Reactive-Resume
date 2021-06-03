@@ -1,6 +1,6 @@
-import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import PageContext from '../contexts/PageContext';
+import React, { memo } from 'react';
+import { hasAddress } from '../utils';
 import AwardsA from './blocks/Awards/AwardsA';
 import CertificationsA from './blocks/Certifications/CertificationsA';
 import Contact from './blocks/Contact/ContactA';
@@ -9,11 +9,11 @@ import HeadingA from './blocks/Heading/HeadingA';
 import HobbiesA from './blocks/Hobbies/HobbiesA';
 import LanguagesA from './blocks/Languages/LanguagesA';
 import ObjectiveA from './blocks/Objective/ObjectiveA';
+import PageContext from '../contexts/PageContext';
 import ProjectsA from './blocks/Projects/ProjectsA';
 import ReferencesA from './blocks/References/ReferencesA';
 import SkillsA from './blocks/Skills/SkillsA';
 import WorkA from './blocks/Work/WorkA';
-import { hasAddress } from '../utils';
 
 const Blocks = {
   objective: ObjectiveA,

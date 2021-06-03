@@ -1,7 +1,7 @@
 import { navigate } from 'gatsby';
 import React, { memo, useContext } from 'react';
-import UserContext from '../../contexts/UserContext';
 import LoadingScreen from './LoadingScreen';
+import UserContext from '../../contexts/UserContext';
 
 const PrivateRoute = ({ component: Component, ...props }) => {
   const { user, loading } = useContext(UserContext);

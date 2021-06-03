@@ -1,16 +1,16 @@
 import React, { memo, useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
-import PageContext from '../../../contexts/PageContext';
 import { isItemVisible, safetyCheck } from '../../../utils';
+import PageContext from '../../../contexts/PageContext';
 
-const ReferenceItem = (x) => (
-  <div key={x.id} className="flex flex-col">
-    <h6 className="font-semibold text-sm">{x.name}</h6>
-    <span className="text-xs">{x.position}</span>
-    <span className="text-xs">{x.phone}</span>
-    <span className="text-xs">{x.email}</span>
-    {x.summary && (
-      <ReactMarkdown className="markdown mt-2 text-sm" source={x.summary} />
+const ReferenceItem = ({ id, name, position, phone, email, summary }) => (
+  <div key={id} className="flex flex-col">
+    <h6 className="font-semibold text-sm">{name}</h6>
+    <span className="text-xs">{position}</span>
+    <span className="text-xs">{phone}</span>
+    <span className="text-xs">{email}</span>
+    {summary && (
+      <ReactMarkdown className="markdown mt-2 text-sm">{summary}</ReactMarkdown>
     )}
   </div>
 );

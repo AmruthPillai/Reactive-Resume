@@ -1,12 +1,11 @@
 require('dotenv').config();
 
 module.exports = {
-  flags: { PRESERVE_WEBPACK_CACHE: true },
   siteMetadata: {
     title: 'Reactive Resume',
     siteUrl: 'https://rxresu.me',
     description: 'A free and open source resume builder.',
-    version: '2.6.8',
+    version: '2.7.0',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -35,6 +34,7 @@ module.exports = {
         display: 'standalone',
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-plugin-offline`,
     {
       resolve: 'gatsby-plugin-webfonts',

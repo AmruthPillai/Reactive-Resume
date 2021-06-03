@@ -1,5 +1,5 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
+import React from 'react';
 
 import FirebaseStub, { DatabaseConstants } from 'gatsby-plugin-firebase';
 
@@ -21,7 +21,7 @@ async function setup(resumeId) {
 }
 
 test('renders correctly', async () => {
-  const resume = await setup(DatabaseConstants.initialStateResumeId);
+  const resume = await setup(DatabaseConstants.initialStateResume1Id);
 
   const { container } = render(<Castform data={resume} />);
 
@@ -30,7 +30,7 @@ test('renders correctly', async () => {
 });
 
 test('date of birth is not shown if not provided', async () => {
-  const resume = await setup(DatabaseConstants.initialStateResumeId);
+  const resume = await setup(DatabaseConstants.initialStateResume1Id);
 
   render(<Castform data={resume} />);
 
@@ -38,7 +38,7 @@ test('date of birth is not shown if not provided', async () => {
 });
 
 test('date of birth is shown if provided', async () => {
-  const resume = await setup(DatabaseConstants.initialStateResumeId);
+  const resume = await setup(DatabaseConstants.initialStateResume1Id);
 
   const birthDate = new Date(1990, 0, 20);
   const birthDateFormatted = '20 January 1990';

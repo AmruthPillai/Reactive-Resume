@@ -1,5 +1,4 @@
 import React from 'react';
-import PageContext from '../contexts/PageContext';
 import AwardsA from './blocks/Awards/AwardsA';
 import CertificationsA from './blocks/Certifications/CertificationsA';
 import ContactC from './blocks/Contact/ContactC';
@@ -8,6 +7,7 @@ import HeadingD from './blocks/Heading/HeadingD';
 import HobbiesA from './blocks/Hobbies/HobbiesA';
 import LanguagesA from './blocks/Languages/LanguagesA';
 import ObjectiveA from './blocks/Objective/ObjectiveA';
+import PageContext from '../contexts/PageContext';
 import ProjectsA from './blocks/Projects/ProjectsA';
 import ReferencesA from './blocks/References/ReferencesA';
 import SkillsA from './blocks/Skills/SkillsA';

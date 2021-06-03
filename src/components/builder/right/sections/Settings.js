@@ -1,16 +1,16 @@
-import React, { memo, useContext, useState } from 'react';
 import { FaAngleDown } from 'react-icons/fa';
-import { useTranslation, Trans } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
-import UserContext from '../../../../contexts/UserContext';
-import Button from '../../../shared/Button';
-import Heading from '../../../shared/Heading';
-import styles from './Settings.module.css';
-import Input from '../../../shared/Input';
-import SettingsContext from '../../../../contexts/SettingsContext';
-import themeConfig from '../../../../data/themeConfig';
+import React, { memo, useContext, useState } from 'react';
+import * as styles from './Settings.module.css';
 import { languages } from '../../../../i18n';
 import { useDispatch } from '../../../../contexts/ResumeContext';
+import Button from '../../../shared/Button';
+import Heading from '../../../shared/Heading';
+import Input from '../../../shared/Input';
+import SettingsContext from '../../../../contexts/SettingsContext';
+import UserContext from '../../../../contexts/UserContext';
+import themeConfig from '../../../../data/themeConfig';
 
 const Settings = ({ id }) => {
   const { t } = useTranslation();
@@ -18,15 +18,13 @@ const Settings = ({ id }) => {
   const [deleteText, setDeleteText] = useState(
     t('builder.settings.dangerZone.button'),
   );
-  const [isDeleteAccountInProgress, setDeleteAccountInProgress] = useState(
-    false,
-  );
+  const [isDeleteAccountInProgress, setDeleteAccountInProgress] =
+    useState(false);
 
   const dispatch = useDispatch();
   const { deleteAccount } = useContext(UserContext);
-  const { theme, setTheme, language, setLanguage } = useContext(
-    SettingsContext,
-  );
+  const { theme, setTheme, language, setLanguage } =
+    useContext(SettingsContext);
 
   const handleChangeTheme = (e) => {
     setTheme(e.target.value);

@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
-import path from 'path';
-import fs from 'fs';
 import { v4 as uuidv4 } from 'uuid';
+import fs from 'fs';
+import path from 'path';
 
 import DatabaseConstants from '../constants/database';
 import Reference from './reference';
@@ -101,9 +101,9 @@ class Database {
 
   initializeData() {
     const resumes = {};
+    const date = new Date('December 15, 2020 11:20:25');
 
     const demoStateResume1 = readFile('../../../src/data/demoState.json');
-    const date = new Date('December 15, 2020 11:20:25');
     demoStateResume1.updatedAt = date.valueOf();
     date.setMonth(date.getMonth() - 2);
     demoStateResume1.createdAt = date.valueOf();
@@ -114,11 +114,24 @@ class Database {
     demoStateResume2.user = DatabaseConstants.user2.uid;
     resumes[DatabaseConstants.demoStateResume2Id] = demoStateResume2;
 
-    const initialStateResume = readFile('../../../src/data/initialState.json');
-    initialStateResume.updatedAt = date.valueOf();
-    initialStateResume.createdAt = date.valueOf();
-    initialStateResume.user = DatabaseConstants.user1.uid;
-    resumes[DatabaseConstants.initialStateResumeId] = initialStateResume;
+    const initialStateResume1 = readFile('../../../src/data/initialState.json');
+    initialStateResume1.updatedAt = date.valueOf();
+    initialStateResume1.createdAt = date.valueOf();
+    initialStateResume1.user = DatabaseConstants.user1.uid;
+    resumes[DatabaseConstants.initialStateResume1Id] = initialStateResume1;
+
+    const demoStateResume3 = readFile('../../../src/data/demoState.json');
+    demoStateResume3.updatedAt = date.valueOf();
+    date.setMonth(date.getMonth() - 2);
+    demoStateResume3.createdAt = date.valueOf();
+    demoStateResume3.user = DatabaseConstants.user3.uid;
+    resumes[DatabaseConstants.demoStateResume3Id] = demoStateResume3;
+
+    const initialStateResume2 = readFile('../../../src/data/initialState.json');
+    initialStateResume2.updatedAt = date.valueOf();
+    initialStateResume2.createdAt = date.valueOf();
+    initialStateResume2.user = DatabaseConstants.user3.uid;
+    resumes[DatabaseConstants.initialStateResume2Id] = initialStateResume2;
 
     Object.keys(resumes).forEach((key) => {
       const resume = resumes[key];
@@ -131,6 +144,7 @@ class Database {
     const users = {};
     users[DatabaseConstants.user1.uid] = DatabaseConstants.user1;
     users[DatabaseConstants.user2.uid] = DatabaseConstants.user2;
+    users[DatabaseConstants.user3.uid] = DatabaseConstants.user3;
     this._data[DatabaseConstants.usersPath] = users;
   }
 

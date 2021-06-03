@@ -1,11 +1,10 @@
-import dayjs from 'dayjs';
 import 'dayjs/locale/ar';
 import 'dayjs/locale/bn';
 import 'dayjs/locale/cs';
 import 'dayjs/locale/da';
 import 'dayjs/locale/de';
-import 'dayjs/locale/en';
 import 'dayjs/locale/el';
+import 'dayjs/locale/en';
 import 'dayjs/locale/es';
 import 'dayjs/locale/fa';
 import 'dayjs/locale/fi';
@@ -26,6 +25,7 @@ import 'dayjs/locale/sv';
 import 'dayjs/locale/tr';
 import 'dayjs/locale/uk';
 import 'dayjs/locale/zh';
+import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 
 dayjs.extend(relativeTime);

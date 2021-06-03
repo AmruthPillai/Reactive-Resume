@@ -6,10 +6,10 @@ import { DatabaseConstants } from 'gatsby-plugin-firebase';
 import { dataTestIdPrefix as listItemDataTestIdPrefix } from '../../../components/builder/lists/ListItem';
 
 import {
-  setupAndWait,
-  expectDatabaseUpdateToHaveCompleted,
   dragAndDropDirectionDown,
   dragAndDropListItem,
+  expectDatabaseUpdateToHaveCompleted,
+  setupAndWait,
 } from './helpers/builder';
 
 const testTimeoutInMilliseconds = 20000;
@@ -19,6 +19,7 @@ test('allows to drag & drop', async () => {
   const resumeId = DatabaseConstants.demoStateResume1Id;
   const { resume, mockDatabaseUpdateFunction } = await setupAndWait(
     resumeId,
+    false,
     true,
     true,
   );

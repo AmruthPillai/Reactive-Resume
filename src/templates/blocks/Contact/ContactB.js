@@ -1,11 +1,11 @@
-import { get } from 'lodash';
-import React, { memo, useContext } from 'react';
-import { useTranslation } from 'react-i18next';
 import { FaCaretRight } from 'react-icons/fa';
-import PageContext from '../../../contexts/PageContext';
+import { get } from 'lodash';
+import { useTranslation } from 'react-i18next';
+import React, { memo, useContext } from 'react';
 import { isItemVisible, safetyCheck } from '../../../utils';
 import BirthDateC from '../BirthDate/BirthDateC';
 import Icons from '../Icons';
+import PageContext from '../../../contexts/PageContext';
 
 const ContactItem = ({ value, icon, link }) => {
   const { data } = useContext(PageContext);

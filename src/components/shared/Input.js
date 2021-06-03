@@ -1,13 +1,13 @@
-import cx from 'classnames';
-import { isFunction } from 'lodash';
-import React, { memo, useEffect, useState } from 'react';
-import { Trans, useTranslation } from 'react-i18next';
 import { FaAngleDown } from 'react-icons/fa';
 import { MdOpenInNew } from 'react-icons/md';
+import { Trans, useTranslation } from 'react-i18next';
+import { isFunction } from 'lodash';
 import { v4 as uuidv4 } from 'uuid';
+import React, { memo, useEffect, useState } from 'react';
+import cx from 'classnames';
 import { useDispatch, useSelector } from '../../contexts/ResumeContext';
 import { handleKeyUp } from '../../utils';
-import styles from './Input.module.css';
+import * as styles from './Input.module.css';
 
 const Input = ({
   name,

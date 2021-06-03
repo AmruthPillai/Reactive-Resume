@@ -1,8 +1,8 @@
 import { navigate } from '@reach/router';
-import firebase from 'gatsby-plugin-firebase';
 import { pick } from 'lodash';
-import React, { createContext, memo, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import React, { createContext, memo, useEffect, useState } from 'react';
+import firebase from 'gatsby-plugin-firebase';
 import useAuthState from '../hooks/useAuthState';
 
 const defaultUser = {
@@ -66,8 +66,8 @@ const UserProvider = ({ children }) => {
     }
   };
 
-  const logout = () => {
-    firebase.auth().signOut();
+  const logout = async () => {
+    await firebase.auth().signOut();
     localStorage.removeItem('user');
     setUser(null);
     navigate('/');
@@ -123,7 +123,7 @@ const UserProvider = ({ children }) => {
     } catch (error) {
       toast.error(error.message);
     } finally {
-      logout();
+      await logout();
       toast(
         "It's sad to see you go, but we respect your privacy. All your data has been deleted successfully. Hope to see you again soon!",
       );

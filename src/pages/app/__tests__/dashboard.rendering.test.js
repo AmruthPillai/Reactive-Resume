@@ -4,9 +4,9 @@ import { DatabaseConstants } from 'gatsby-plugin-firebase';
 
 import { createResumeButtonDataTestId } from '../../../components/dashboard/CreateResume';
 import setup, {
-  setupAndWait,
-  expectResumeToBeRenderedInPreview,
   expectLoadingScreenToBeRendered,
+  expectResumeToBeRenderedInPreview,
+  setupAndWait,
   waitForLoadingScreenToDisappear,
 } from './helpers/dashboard';
 

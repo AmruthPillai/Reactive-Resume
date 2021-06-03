@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
-import sections from '../../../data/rightSections';
+import * as styles from './RightNavbar.module.css';
 import SectionIcon from '../../shared/SectionIcon';
-import styles from './RightNavbar.module.css';
 import SyncIndicator from './SyncIndicator';
+import sections from '../../../data/rightSections';
 
 const RightNavbar = () => (
   <div className={styles.container}>

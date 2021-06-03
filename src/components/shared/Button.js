@@ -1,8 +1,8 @@
-import cx from 'classnames';
-import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import React, { memo } from 'react';
+import cx from 'classnames';
 import { handleKeyUp } from '../../utils';
-import styles from './Button.module.css';
+import * as styles from './Button.module.css';
 
 const Button = ({
   icon,
@@ -22,7 +22,7 @@ const Button = ({
       onClick={isLoading ? undefined : onClick}
       className={cx(styles.container, className, {
         [styles.outline]: outline,
-        [styles.delete]: isDelete,
+        [styles.remove]: isDelete,
       })}
     >
       {icon && <Icon size="14" className="mr-3" />}
