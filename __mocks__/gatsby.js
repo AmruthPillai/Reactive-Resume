@@ -4,24 +4,18 @@ import { delay } from '../src/utils/index';
 
 const Gatsby = jest.requireActual('gatsby');
 
-const fluidImageShapes = [
-  {
-    aspectRatio: 2,
-    src: 'test_image.jpg',
-    srcSet: 'some srcSet',
-    srcSetWebp: 'some srcSetWebp',
-    sizes: '(max-width: 600px) 100vw, 600px',
-    base64: 'string_of_base64',
+const imageData = {
+  images: {
+    fallback: {
+      src: `image_src.jpg`,
+      srcSet: `image_src_set.jpg 1x`,
+    },
   },
-  {
-    aspectRatio: 3,
-    src: 'test_image_2.jpg',
-    srcSet: 'some other srcSet',
-    srcSetWebp: 'some other srcSetWebp',
-    sizes: '(max-width: 400px) 100vw, 400px',
-    base64: 'string_of_base64',
-  },
-];
+  layout: `fixed`,
+  width: 1,
+  height: 2,
+};
+const childImageSharp = { gatsbyImageData: imageData };
 
 const useStaticQuery = () => ({
   site: {
@@ -33,39 +27,25 @@ const useStaticQuery = () => ({
     },
   },
   file: {
-    childImageSharp: {
-      fluid: fluidImageShapes[0],
-    },
+    childImageSharp,
   },
   onyx: {
-    childImageSharp: {
-      fluid: fluidImageShapes[0],
-    },
+    childImageSharp,
   },
   pikachu: {
-    childImageSharp: {
-      fluid: fluidImageShapes[1],
-    },
+    childImageSharp,
   },
   gengar: {
-    childImageSharp: {
-      fluid: fluidImageShapes[0],
-    },
+    childImageSharp,
   },
   castform: {
-    childImageSharp: {
-      fluid: fluidImageShapes[1],
-    },
+    childImageSharp,
   },
   glalie: {
-    childImageSharp: {
-      fluid: fluidImageShapes[0],
-    },
+    childImageSharp,
   },
   celebi: {
-    childImageSharp: {
-      fluid: fluidImageShapes[1],
-    },
+    childImageSharp,
   },
 });
 

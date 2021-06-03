@@ -44,7 +44,7 @@ async function setup() {
   );
   const resumeToDeleteId = resumeToDelete.id;
   const [undeletedResume] = Object.values(userResumes).filter(
-    (resume) => resume.id === DatabaseConstants.initialStateResumeId,
+    (resume) => resume.id === DatabaseConstants.initialStateResume1Id,
   );
 
   const mockDatabaseRemoveFunction = jest.spyOn(

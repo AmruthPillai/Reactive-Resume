@@ -16,6 +16,7 @@ test('allows to change the language', async () => {
   const resumeId = DatabaseConstants.demoStateResume1Id;
   const { mockDatabaseUpdateFunction } = await setupAndWait(
     resumeId,
+    false,
     true,
     true,
   );

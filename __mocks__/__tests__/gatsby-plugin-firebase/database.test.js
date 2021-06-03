@@ -24,7 +24,7 @@ test('initializing data sets up resumes and users', async () => {
   const resumesDataSnapshot = await resumesRef.once('value');
   const resumes = resumesDataSnapshot.val();
   expect(resumes).toBeTruthy();
-  expect(Object.keys(resumes)).toHaveLength(3);
+  expect(Object.keys(resumes)).toHaveLength(5);
   const demoStateResume1 = resumes[DatabaseConstants.demoStateResume1Id];
   expect(demoStateResume1).toBeTruthy();
   expect(demoStateResume1.id).toEqual(DatabaseConstants.demoStateResume1Id);
@@ -33,20 +33,35 @@ test('initializing data sets up resumes and users', async () => {
   expect(demoStateResume2).toBeTruthy();
   expect(demoStateResume2.id).toEqual(DatabaseConstants.demoStateResume2Id);
   expect(demoStateResume2.user).toEqual(DatabaseConstants.user2.uid);
-  const initialStateResume = resumes[DatabaseConstants.initialStateResumeId];
-  expect(initialStateResume).toBeTruthy();
-  expect(initialStateResume.id).toEqual(DatabaseConstants.initialStateResumeId);
-  expect(initialStateResume.user).toEqual(DatabaseConstants.user1.uid);
+  const initialStateResume1 = resumes[DatabaseConstants.initialStateResume1Id];
+  expect(initialStateResume1).toBeTruthy();
+  expect(initialStateResume1.id).toEqual(
+    DatabaseConstants.initialStateResume1Id,
+  );
+  expect(initialStateResume1.user).toEqual(DatabaseConstants.user1.uid);
+  const demoStateResume3 = resumes[DatabaseConstants.demoStateResume3Id];
+  expect(demoStateResume3).toBeTruthy();
+  expect(demoStateResume3.id).toEqual(DatabaseConstants.demoStateResume3Id);
+  expect(demoStateResume3.user).toEqual(DatabaseConstants.user3.uid);
+  const initialStateResume2 = resumes[DatabaseConstants.initialStateResume2Id];
+  expect(initialStateResume2).toBeTruthy();
+  expect(initialStateResume2.id).toEqual(
+    DatabaseConstants.initialStateResume2Id,
+  );
+  expect(initialStateResume2.user).toEqual(DatabaseConstants.user3.uid);
 
   const usersRef = FirebaseStub.database().ref(DatabaseConstants.usersPath);
   const usersDataSnapshot = await usersRef.once('value');
   const users = usersDataSnapshot.val();
   expect(users).toBeTruthy();
-  expect(Object.keys(users)).toHaveLength(2);
+  expect(Object.keys(users)).toHaveLength(3);
   const anonymousUser1 = users[DatabaseConstants.user1.uid];
   expect(anonymousUser1).toBeTruthy();
   expect(anonymousUser1).toEqual(DatabaseConstants.user1);
   const anonymousUser2 = users[DatabaseConstants.user2.uid];
   expect(anonymousUser2).toBeTruthy();
   expect(anonymousUser2).toEqual(DatabaseConstants.user2);
+  const googleUser3 = users[DatabaseConstants.user3.uid];
+  expect(googleUser3).toBeTruthy();
+  expect(googleUser3).toEqual(DatabaseConstants.user3);
 });

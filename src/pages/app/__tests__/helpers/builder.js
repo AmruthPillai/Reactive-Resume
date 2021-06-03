@@ -80,6 +80,7 @@ const dragAndDropListItem = (listItemElement, direction) => {
 // eslint-disable-next-line no-underscore-dangle
 async function _setup(
   resumeId,
+  signInWithGoogle,
   waitForLoadingScreenToDisappear,
   waitForDatabaseUpdateToHaveCompleted,
 ) {
@@ -96,7 +97,12 @@ async function _setup(
     'update',
   );
 
-  FirebaseStub.auth().signInAnonymously();
+  if (signInWithGoogle) {
+    const provider = new FirebaseStub.auth.GoogleAuthProvider();
+    FirebaseStub.auth().signInWithPopup(provider);
+  } else {
+    FirebaseStub.auth().signInAnonymously();
+  }
 
   render(
     <SettingsProvider>
@@ -132,17 +138,19 @@ async function _setup(
 }
 
 async function setup(resumeId) {
-  const returnValue = await _setup(resumeId, false, false);
+  const returnValue = await _setup(resumeId, false, false, false);
   return returnValue;
 }
 
 async function setupAndWait(
   resumeId,
+  signInWithGoogle,
   waitForLoadingScreenToDisappear,
   waitForDatabaseUpdateToHaveCompleted,
 ) {
   const returnValue = await _setup(
     resumeId,
+    signInWithGoogle,
     waitForLoadingScreenToDisappear,
     waitForDatabaseUpdateToHaveCompleted,
   );

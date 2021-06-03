@@ -7,13 +7,14 @@ import {
   setupAndWait,
 } from './helpers/builder';
 
-const testTimeoutInMilliseconds = 20000;
+const testTimeoutInMilliseconds = 30000;
 jest.setTimeout(testTimeoutInMilliseconds);
 
 test('when input value is changed, updates database', async () => {
   const resumeId = DatabaseConstants.demoStateResume1Id;
   const { mockDatabaseUpdateFunction } = await setupAndWait(
     resumeId,
+    false,
     true,
     true,
   );
