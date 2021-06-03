@@ -5,7 +5,7 @@ module.exports = {
     title: 'Reactive Resume',
     siteUrl: 'https://rxresu.me',
     description: 'A free and open source resume builder.',
-    version: '2.7.1',
+    version: '2.7.2',
   },
   flags: { PRESERVE_WEBPACK_CACHE: true },
   plugins: [
