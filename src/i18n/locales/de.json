@@ -12,12 +12,13 @@
       "present": "Heute",
       "position": "Position",
       "startDate": "Startdatum",
-      "endDate": "End-Datum",
+      "endDate": "Enddatum",
       "address": "Adresse",
       "phone": "Rufnummer",
       "email": "E-Mail Adresse",
       "summary": "Zusammenfassung",
       "markdown": "Dieser Textblock unterstützt <1>Markdown</1>.",
+      "contact": "Kontakt",
       "validation": {
         "min": "Bitte geben Sie mindestens {{number}} Zeichen ein.",
         "dateRange": "Das Enddatum kann nicht vor dem Startdatum liegen.",
@@ -33,7 +34,7 @@
       "delete": "Löschen",
       "loading": "Laden...",
       "confirmation": "Sind Sie sicher?",
-      "login": "Anmeldung",
+      "login": "Anmelden",
       "logout": "Abmelden"
     }
   },
@@ -51,7 +52,7 @@
       "deleted": "{{name}} erfolgreich gelöscht"
     },
     "buttons": {
-      "duplicate": "Duplikat",
+      "duplicate": "Duplizieren",
       "rename": "Umbenennen"
     },
     "helpText": "Sie werden einen neuen Lebenslauf von Grund auf erstellen, aber lassen Sie uns zuerst einen Titel angeben. Dies kann der Name der Postion sein, für die Sie sich bewerben möchten oder wenn Sie einen Lebenslauf für einen Freund machen, könnten Sie es \"Alex Lebenslauf\" nennen."
@@ -59,14 +60,14 @@
   "builder": {
     "toasts": {
       "formErrors": "Sie müssen alle erforderlichen Felder ausfüllen, bevor Sie dieses Formular abschicken.",
-      "doesNotExist": "Der Lebenslauf, den Sie suchen, existiert nicht mehr... oder vielleicht hat er es nie getan?",
+      "doesNotExist": "Der Lebenslauf, den Sie suchen, existiert nicht mehr... oder vielleicht gab es ihn nie?",
       "loadDemoData": "Nicht sicher, wo Sie beginnen sollen? Versuchen Sie, Demodaten zu laden, um zu sehen, was Reactive Resume zu bieten hat.",
-      "printError": "Bei der Cloud-Funktion treten Probleme auf. Versuchen Sie es später erneut oder verwenden Sie die Browser-Druckfunktion."
+      "printError": "Bei der Cloud-Funktion gibt es Probleme, bitte versuchen Sie es später noch einmal oder verwenden Sie die Browser-Druckfunktion."
     },
     "sections": {
       "heading": "Überschrift",
       "profile": "Profil",
-      "social": "Soziales Netzwerk",
+      "social": "Soziale Netzwerke",
       "objective": "Ziel",
       "work": "Berufserfahrung",
       "education": "Ausbildung",
@@ -75,7 +76,7 @@
       "award": "Auszeichnung",
       "awards": "Auszeichnungen",
       "certification": "Zertifikat",
-      "certifications": "Zertifizierungen",
+      "certifications": "Zertifikate",
       "skill": "Fertigkeit",
       "skills": "Fertigkeiten",
       "hobby": "Hobby",
@@ -85,7 +86,7 @@
       "reference": "Referenz",
       "references": "Referenzen",
       "templates": "Vorlagen",
-      "layout": "Anordnung",
+      "layout": "Layout",
       "colors": "Farben",
       "font-size": "Schriftgröße",
       "fonts": "Schriftarten",
@@ -120,16 +121,16 @@
       "gpa": "Abschlussnote"
     },
     "awards": {
-      "awarder": "Auszeichner"
+      "awarder": "Preisverleiher"
     },
     "certifications": {
       "issuer": "Aussteller"
     },
     "skills": {
-      "level": "Rang"
+      "level": "Niveau"
     },
     "languages": {
-      "fluency": "Flüssigkeit"
+      "fluency": "Sprachfertigkeit"
     },
     "layout": {
       "block": "Block",
@@ -144,7 +145,7 @@
     "actions": {
       "import": {
         "heading": "Lebenslauf importieren",
-        "text": "Sie können Ihre Informationen aus verschiedenen Quellen wie JSON Resume oder LinkedIn importieren, um die meisten Daten für Ihren Lebenslauf automatisch zu füllen.",
+        "text": "Sie können Ihre Informationen aus verschiedenen Quellen wie JSON Resume oder LinkedIn importieren, um die meisten Daten für Ihren Lebenslauf automatisch zu auszufüllen.",
         "button": "Importieren"
       },
       "export": {
@@ -154,14 +155,14 @@
       },
       "share": {
         "heading": "Lebenslauf teilen",
-        "text": "Der Link unten wird öffentlich zugänglich sein, wenn Sie ihn teilen möchten. Besucher würde immer die neueste Version Ihres Lebenslaufs sehen."
+        "text": "Der unten stehende Link ist öffentlich zugänglich, wenn Sie ihn freigeben. Besucher können dann jederzeit die neueste Version Ihres Lebenslaufs sehen."
       },
       "loadDemoData": {
         "text": "Sie wissen noch nicht, was Sie mit der leeren Seite anfangen sollen? Laden Sie Demo-Daten, um zu sehen, wie ein Lebenslauf aussehen könnte und bearbeiten Sie dann die Vorlage.",
-        "button": "Demo-Daten hinzufügen"
+        "button": "Demo-Daten laden"
       },
       "resetEverything": {
-        "text": "Zu viele Fehler gemacht? Keine Sorge, löschen Sie alles mit einem Klick, aber seien Sie vorsichtig, es gibt keine Sicherungen.",
+        "text": "Zu viele Fehler gemacht? Keine Sorge, löschen Sie alles mit einem Klick, aber seien Sie vorsichtig, es gibt keine Backups.",
         "button": "Alles zurücksetzen"
       }
     },
@@ -171,20 +172,20 @@
       "translate": "Wenn Sie Übersetzungen in Ihrer Sprache ergänzen möchten, <1>besuchen Sie bitte diesen Link</1>.",
       "dangerZone": {
         "heading": "Gefahrenbereich",
-        "text": "Wenn Sie Ihr Konto löschen und alle Ihre Bewerbungen löschen möchten, erreichen Sie dies mit nur einem Klick. Bitte seien Sie vorsichtig, da dies ein unumkehrbarer Prozess ist.",
+        "text": "Wenn Sie Ihr Konto und alle Ihre Lebensläufe löschen möchten, ist dies nur einen Knopfdruck entfernt. Bitte seien Sie vorsichtig, da dies ein irreversibler Vorgang ist.",
         "button": "Account löschen"
       }
     },
     "about": {
       "donate": {
         "heading": "Spende an Reactive Resume",
-        "text": "Ich versuche zu tun, was ich kann, aber wenn Sie die App hilfreich finden, oder Sie in einer besseren Situation sind als die anderen, die für ihren ersten Job auf dieses Projekt angewiesen sind, <1>Spenden Sie bitte nur $5, um das Projekt am Leben zu halten</1> :)",
+        "text": "Ich versuche zu tun, was ich kann, aber wenn Sie die App hilfreich fanden, oder Sie in einer besseren Position sind als die anderen, die auf dieses Projekt für ihren ersten Job angewiesen sind, <1>bitte ziehen Sie in Erwägung, schon $5 zu spenden, um zu helfen, das Projekt am Leben zu erhalten</1> :)",
         "button": "Spendiere mir einen Kaffee!"
       },
       "bugFeature": {
         "heading": "Programmfehler? Feature Anfrage?",
-        "text": "Etwas bremst Ihren Fortschritt beim Erstellen eines Lebenslaufs? Einen lästigen Fehler gefunden, der einfach nicht aufhört? Legen Sie einen Fehler bei GitHub unter Verwendung der folgenden Aktionen an.",
-        "button": "Einen Fehler anlegen"
+        "text": "Etwas bremst Ihren Fortschritt beim Erstellen eines Lebenslaufs? Einen lästigen Fehler gefunden, der einfach nicht aufhört? Erstellen Sie eine GitHub Issue.",
+        "button": "GitHub Issues anlegen"
       },
       "appreciate": {
         "heading": "Mochten Sie Reactive Resume?",
@@ -232,12 +233,12 @@
     "export": {
       "printDialog": {
         "heading": "Druckdialog des Browsers verwenden",
-        "text": "Diejenigen, die eine schnelle Lösung bevorzugen, können direkt den Browser verwenden. Sie müssen nur Strg/Cmd + P drücken und den Druckdialog in Ihrem Browser öffnen und können Ihren Lebenslauf sofort drucken.",
+        "text": "Diejenigen, die eine schnelle Lösung bevorzugen, können direkt den Browser verwenden. Sie müssen nur STRG/CMD + P drücken und den Druckdialog in Ihrem Browser öffnen und können Ihren Lebenslauf sofort drucken.",
         "button": "Lebenslauf drucken"
       },
       "downloadPDF": {
         "heading": "PDF herunterladen",
-        "text": "Diese Optionen erlauben es Ihnen, alle Informationen auf einer einzelnen Seite auszudrucken, perfekt für diejenigen, die eine Menge von Inhalten haben. Alternativ können Sie auch eine mehrseitige Version Ihres Lebenslaufs mit nur einem Klick herunterladen.",
+        "text": "Diese Option erlaubt es Ihnen, alle Informationen auf einer einzelnen Seite auszudrucken, perfekt für diejenigen, die eine Menge von Inhalten haben. Alternativ können Sie auch eine mehrseitige Version Ihres Lebenslaufs mit nur einem Klick herunterladen.",
         "buttons": {
           "single": "Lebenslauf auf einer Seite",
           "multi": "Lebenslauf auf mehreren Seiten"

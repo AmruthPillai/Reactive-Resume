@@ -100,7 +100,7 @@ const Gengar = ({ data }) => {
             />
 
             <h6 className="font-bold text-xs uppercase tracking-wide mb-2">
-              Contact
+              {t('shared.forms.contact')}
             </h6>
             <ContactB />
           </div>
