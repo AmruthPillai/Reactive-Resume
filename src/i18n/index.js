@@ -48,6 +48,10 @@ const languages = [
     name: 'Greek (Ελληνικά)',
   },
   {
+    code: 'he',
+    name: 'Hebrew (עִברִית)',
+  },
+  {
     code: 'hi',
     name: 'Hindi (हिंदी)',
   },
