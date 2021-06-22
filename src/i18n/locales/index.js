@@ -10,6 +10,7 @@ import fa from './fa.json';
 import fi from './fi.json';
 import fr from './fr.json';
 import hi from './hi.json';
+import id from './id.json';
 import it from './it.json';
 import ja from './ja.json';
 import kn from './kn.json';
@@ -40,6 +41,7 @@ export default {
   fi: { translation: fi },
   fr: { translation: fr },
   hi: { translation: hi },
+  id: { translation: id },
   it: { translation: it },
   ja: { translation: ja },
   kn: { translation: kn },
