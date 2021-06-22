@@ -1,0 +1,254 @@
+{
+  "shared": {
+    "appName": "Reactive Resume",
+    "shortDescription": "Sebuah pembuat resume yang gratis dan sumber terbuka.",
+    "forms": {
+      "name": "Nama",
+      "title": "Judul",
+      "subtitle": "Sub Judul",
+      "required": "wajib",
+      "website": "Website",
+      "date": "Tanggal",
+      "present": "Saat Ini",
+      "position": "Posisi",
+      "startDate": "Tanggal Mulai",
+      "endDate": "Tanggal Berakhir",
+      "address": "Alamat",
+      "phone": "Nomor Telepon",
+      "email": "Alamat Email",
+      "summary": "Ringkasan",
+      "markdown": "Blok Teks Ini Mendukung <1>markdown</1>.",
+      "contact": "Kontak",
+      "validation": {
+        "min": "Harap masukan setidaknya {{number}} karakter.",
+        "dateRange": "Tanggal Berakhir harus melebih Tanggal Mulai.",
+        "email": "Harus alamat email yang valid.",
+        "required": "Kolom ini wajib.",
+        "url": "Harus URL yang valid."
+      }
+    },
+    "buttons": {
+      "add": "Tambah",
+      "edit": "Ubah",
+      "cancel": "Batalkan",
+      "delete": "Hapus",
+      "loading": "Memuat...",
+      "confirmation": "Apakah Anda yakin ?",
+      "login": "Masuk",
+      "logout": "Keluar"
+    }
+  },
+  "landing": {
+    "hero": {
+      "goToApp": "Pergi Ke Aplikasi"
+    }
+  },
+  "dashboard": {
+    "title": "Halaman Utama",
+    "createResume": "Buat Resume",
+    "editResume": "Ubah Resume",
+    "lastUpdated": "Terakhir Diubah {{timestamp}}",
+    "toasts": {
+      "deleted": "{{name}} telah berhasil dihapus"
+    },
+    "buttons": {
+      "duplicate": "Duplikat",
+      "rename": "Ubah Nama"
+    },
+    "helpText": "Anda akan membuat resume baru dari awal, silahkan beri nama terlebih dahulu. Nama ini dapat berupa nama posisi yang Anda ingin lamar, atau jika Anda membuat resume untuk teman, Anda dapat menamai ini Resume Alex."
+  },
+  "builder": {
+    "toasts": {
+      "formErrors": "Anda harus mengisi semua form yang wajib sebelum Anda mengajukan form ini.",
+      "doesNotExist": "Resume yang Anda cari tidak ada lagi... atau mungkin tidak pernah ada ?",
+      "loadDemoData": "Tidak tau harus memulai dari mana ? Coba untuk memuat demo untuk melihat apa yang Reactive Resume tawarkan.",
+      "printError": "Fungsi cloud mengalami beberapa masalah, silakan coba lagi nanti atau gunakan fitur cetak browser."
+    },
+    "sections": {
+      "heading": "Heading",
+      "profile": "Profil",
+      "social": "Jejaring Sosial",
+      "objective": "Objektif",
+      "work": "Pengalaman Kerja",
+      "education": "Pendidikan",
+      "project": "Proyek",
+      "projects": "Semua Proyek",
+      "award": "Penghargaan",
+      "awards": "Semua Penghargaan",
+      "certification": "Sertifikat",
+      "certifications": "Semua Sertifikat",
+      "skill": "Keahlian",
+      "skills": "Semua Keahlian",
+      "hobby": "Hobi",
+      "hobbies": "Semua Hobi",
+      "language": "Bahasa",
+      "languages": "Semua Bahasa",
+      "reference": "Referensi",
+      "references": "Semua Referensi",
+      "templates": "Template",
+      "layout": "Layout",
+      "colors": "Warna",
+      "font-size": "Ukuran Font",
+      "fonts": "Font",
+      "actions": "Aksi",
+      "settings": "Pengaturan",
+      "about": "Tentang"
+    },
+    "profile": {
+      "photograph": "Foto",
+      "firstName": "Nama Depan",
+      "lastName": "Nama Belakang",
+      "birthDate": "Tanggal Lahir",
+      "address": {
+        "line1": "Alamat 1",
+        "line2": "Alamat 2",
+        "city": "Kota",
+        "pincode": "Kode Pos"
+      }
+    },
+    "social": {
+      "network": "Jaringan",
+      "username": "Nama Pengguna",
+      "url": "URL"
+    },
+    "work": {
+      "company": "Perusahaan"
+    },
+    "education": {
+      "institution": "Institusi",
+      "field": "Bidang Studi",
+      "degree": "Jenis Gelar",
+      "gpa": "IPK"
+    },
+    "awards": {
+      "awarder": "Pemberi Penghargaan"
+    },
+    "certifications": {
+      "issuer": "Penerbit"
+    },
+    "skills": {
+      "level": "Tingkat"
+    },
+    "languages": {
+      "fluency": "Kemahiran"
+    },
+    "layout": {
+      "block": "Blok",
+      "reset": "Atur Ulang Layout",
+      "text": "Template ini mendukung {{count}} blok."
+    },
+    "colors": {
+      "primary": "Warna Utama",
+      "text": "Warna Teks",
+      "background": "Warna Latar Belakang"
+    },
+    "actions": {
+      "import": {
+        "heading": "Unggah Resume Anda",
+        "text": "Anda dapat mengunggah infromasi dari beberapa sumber seperti JSON Resume atau LinkedIn untuk mengisi hampir semua data pada resume anda.",
+        "button": "Unggah"
+      },
+      "export": {
+        "heading": "Unduh Resume Anda",
+        "text": "Unduh resume Anda menjadi file PDF untuk dibagikan dengan para rekruter atau file JSON yag dapat Anda unggah kembali ke aplikasi ini di komputer lain.",
+        "button": "Unduh"
+      },
+      "share": {
+        "heading": "Bagikan Resume Anda",
+        "text": "Tautan di bawah ini akan dapat diakses secara publik jika Anda memilih untuk membagikannya, pemirsa akan melihat versi terbaru resume Anda kapan saja."
+      },
+      "loadDemoData": {
+        "text": "Tidak tau apa yang harus dilakukan dengan halaman kosong baru ? Muat beberapa demo untuk melihat tampilan resume dan Anda dapat mulai mengubah dari sana.",
+        "button": "Muat Demo"
+      },
+      "resetEverything": {
+        "text": "Merasa seperti Anda telah membuat terlalu banyak kesalahan ? Jangan khawatir, hapus semuanya hanya dengan satu klik, tapi hati-hati jika tidak memiliki cadangan.",
+        "button": "Atur Ulang Semuanya"
+      }
+    },
+    "settings": {
+      "theme": "Tema",
+      "language": "Bahasa",
+      "translate": "Jika Anda ingin berkontribusi dengan menyediakan terjemahan dalam Bahasa Anda, <1>harap kunjungi tautan ini</1>.",
+      "dangerZone": {
+        "heading": "Zona Berbahaya",
+        "text": "Jika Anda ingin menghapus akun Anda dan menghapus semua resume Anda, hanya butuh satu tombol. Harap berhati-hati karena ini adalah proses yang tidak dapat dikembalikan.",
+        "button": "Hapus Akun"
+      }
+    },
+    "about": {
+      "donate": {
+        "heading": "Donasi Ke Reactive Resume",
+        "text": "Saya mencoba melakukan apa yang saya bisa, tapi jika Anda merasa aplikasi ini sangan membantu, atau Anda berada di posisi yang lebih baik dibandingkan orang-orang yang menghabiskan waktunya untuk proyek ini sebagai pekerjaan pertama mereka, <1>tolong pertimbangkan untuk menyumbang sedikitnya $5 untuk membantu menjaga proyek tetap hidup</1> :)",
+        "button": "Belikan Saya Kopi!"
+      },
+      "bugFeature": {
+        "heading": "Kesalahan Pada Aplikasi ? Permintaan Fitur ?",
+        "text": "Sesuatu yang menghambat Anda saat membuat resume ? Menemukan kesalahan pada aplikasi yang tidak mau berhenti ? Bicarakan tentang itu di bagian Masalah GitHub menggunakan tindakan di bawah ini.",
+        "button": "Angkat Masalah"
+      },
+      "appreciate": {
+        "heading": "Suka Dengan Reactive Resume ?",
+        "text": "Saya tidak pernah bosan mendengar cerita tentang bagaimana aplikasi ini membantu orang-orang, dan jika aplikasi ini membantu Anda, atau Anda baru saja menemukan Reactive Resume sebagai alat yang luar biasa, beri tahu saya. Anda dapat menghubungi saya di situs web saya."
+      },
+      "sourceCode": {
+        "heading": "Kode Sumber",
+        "text": "Ingin menjalankan proyek dari sumbernya ? Apakah Anda seorang pengembang yang bersedia berkontribusi pada pengembangan proyek sumber terbuka ini ? Klik tombol di bawah ini.",
+        "button": "GitHub Repo"
+      },
+      "footer": "Dibuat dengan cinta oleh <1>Amruth Pillai</1>"
+    },
+    "tooltips": {
+      "uploadPhotograph": "Unggah Foto",
+      "backToDashboard": "Kembali Ke Halaman Utama"
+    },
+    "emptyList": "Daftar ini kosong."
+  },
+  "modals": {
+    "auth": {
+      "whoAreYou": "Siapa Anda ?",
+      "welcome": "Selamat Datang, {{name}}!",
+      "loggedOutText": "Reactive Resume perlu tahu siapa Anda sehingga dapat dengan aman mengautentikasi Anda ke dalam aplikasi dan hanya menampilkan informasi Anda. Setelah masuk, Anda dapat mulai membuat resume, mengubahnya untuk menambah keterampilan baru, atau membagikannya kepada dunia!",
+      "loggedInText": "Luar biasa. Sekarang setelah Anda mengautentikasi diri Anda, kami dapat melanjutkan dengan alasan sebenarnya Anda ada di sini. Klik tombol Buka Aplikasi untuk mulai membuat resume Anda!",
+      "buttons": {
+        "google": "Masuk dengan Google",
+        "anonymous": "Masuk dengan Tanpa Nama"
+      }
+    },
+    "import": {
+      "button": "Pilih File",
+      "reactiveResume": {
+        "heading": "Unggah dari Reactive Resume",
+        "text": "Reactive Resume memiliki format skemanya sendiri untuk memaksimalkan semua kemampuan yang dapat disesuaikan dengan yang ditawarkannya. Jika Anda ingin mengunggah cadangan resume Anda yang dibuat dengan aplikasi ini, cukup unggah file menggunakan tombol di bawah."
+      },
+      "jsonResume": {
+        "heading": "Unggah dari JSON Resume",
+        "text": "JSON Resume adalah standar terbuka untuk struktur skema resume. Jika Anda adalah salah satu dari banyak peminat yang menyiapkan resume mereka dalam format ini, cukup dengan satu klik untuk memulai Reactive Resume."
+      },
+      "linkedIn": {
+        "heading": "Unggah dari LinkedIn",
+        "text": "Anda dapat mengunggah file JSON yang diunduh dari LinkedIn dengan mengklik tombol di bawah dan memilih file yang sesuai."
+      }
+    },
+    "export": {
+      "printDialog": {
+        "heading": "Gunakan Dialog Cetak Browser",
+        "text": "Bagi Anda yang menginginkan solusi cepat, Anda tidak perlu mencari lebih jauh dari browser Anda. Yang harus Anda lakukan adalah menekan Ctrl/Cmd + P dan membuka dialog cetak di browser Anda dan resume Anda segera dicetak.",
+        "button": "Print Resume"
+      },
+      "downloadPDF": {
+        "heading": "Unduh PDF",
+        "text": "Opsi ini memungkinkan Anda untuk mencetak satu halaman, versi resume Anda yang tidak dibatasi, cocok untuk mereka yang memiliki banyak konten. Atau, Anda juga dapat mengunduh versi multi-halaman resume Anda hanya dengan satu klik.",
+        "buttons": {
+          "single": "Resume Satu Halaman",
+          "multi": "Resume Multi-Halaman"
+        }
+      },
+      "jsonFormat": {
+        "heading": "Unduh Sebagai File JSON",
+        "text": "Anda juga dapat mengunduh data Anda ke dalam format JSON untuk disimpan dengan aman sehingga Anda dapat dengan mudah mengunggah kembali ke Reactive Resume kapan pun Anda ingin mengubah atau membuat resume baru.",
+        "button": "Unduh JSON"
+      }
+    }
+  }
+}
