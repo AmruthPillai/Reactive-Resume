@@ -26,7 +26,8 @@ const languages = [
   {
     code: 'nl',
     name: 'Dutch (Nederlands)',
-  },{
+  },
+  {
     code: 'id',
     name: 'Indonesian (Bahasa Indonesia)',
   },
