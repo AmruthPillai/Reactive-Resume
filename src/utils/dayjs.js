@@ -11,6 +11,7 @@ import 'dayjs/locale/fi';
 import 'dayjs/locale/fr';
 import 'dayjs/locale/he';
 import 'dayjs/locale/hi';
+import 'dayjs/locale/id';
 import 'dayjs/locale/it';
 import 'dayjs/locale/id';
 import 'dayjs/locale/ja';
