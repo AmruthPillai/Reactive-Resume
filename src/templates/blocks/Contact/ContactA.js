@@ -2,7 +2,7 @@ import { FaCaretRight } from 'react-icons/fa';
 import { get } from 'lodash';
 import { useTranslation } from 'react-i18next';
 import React, { memo, useContext } from 'react';
-import { isItemVisible, safetyCheck } from '../../../utils';
+import { hasAddress, isItemVisible, safetyCheck } from '../../../utils';
 import BirthDateB from '../BirthDate/BirthDateB';
 import Icons from '../Icons';
 import PageContext from '../../../contexts/PageContext';
@@ -35,6 +35,19 @@ const ContactA = () => {
 
   return (
     <div className="text-xs grid gap-2">
+      {hasAddress(data.profile.address) && (
+        <ContactItem
+          label={t('shared.forms.address')}
+          value={`${[
+            data.profile.address.line1,
+            data.profile.address.line2,
+            data.profile.address.city,
+          ]
+            .filter(Boolean)
+            .join(', ')} ${data.profile.address.pincode}`}
+          icon="address"
+        />
+      )}
       <ContactItem
         label={t('shared.forms.phone')}
         value={data.profile.phone}
