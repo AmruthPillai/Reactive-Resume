@@ -28,10 +28,6 @@ const languages = [
     name: 'Dutch (Nederlands)',
   },
   {
-    code: 'id',
-    name: 'Indonesian (Bahasa Indonesia)',
-  },
-  {
     code: 'en',
     name: 'English (US)',
   },
@@ -58,6 +54,10 @@ const languages = [
   {
     code: 'hi',
     name: 'Hindi (हिंदी)',
+  },
+  {
+    code: 'id',
+    name: 'Indonesian (Bahasa Indonesia)',
   },
   {
     code: 'it',
