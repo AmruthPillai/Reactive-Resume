@@ -4,7 +4,7 @@
     "shortDescription": "Otwarte i darmowe narzędzie do tworzenia CV.",
     "forms": {
       "name": "Imię",
-      "title": "Tytuł",
+      "title": "Stanowisko",
       "subtitle": "Podtytuł",
       "required": "wymagane",
       "website": "Strona",
@@ -18,6 +18,7 @@
       "email": "Adres e-mail",
       "summary": "Podsumowanie",
       "markdown": "Ten blok tekstowy obsługuje <1>markdown</1>.",
+      "contact": "Kontakt",
       "validation": {
         "min": "Wprowadź co najmniej {{number}} znaków.",
         "dateRange": "Data końcowa musi być późniejsza niż data początkowa.",
@@ -44,8 +45,8 @@
   },
   "dashboard": {
     "title": "Panel",
-    "createResume": "Utwórz CV",
-    "editResume": "Edytuj CV",
+    "createResume": "Utwórz Cv",
+    "editResume": "Edytuj Cv",
     "lastUpdated": "Ostatnia aktualizacja {{timestamp}}",
     "toasts": {
       "deleted": "{{name}} usunięto pomyślnie"
@@ -54,12 +55,12 @@
       "duplicate": "Duplikat",
       "rename": "Zmień nazwę"
     },
-    "helpText": "Zaczynasz tworzenie CV od zera, ale najpierw, nadaj mu identyfikator. Co może być identyfikatorem? Na przykład stanowisko, o które chcesz się ubiegać lub, jeśli tworzysz Cv dla przyjaciela, identyfikatorem może być Cv Michała."
+    "helpText": "Zaczynasz tworzenie Cv od zera, ale najpierw, nadaj mu identyfikator. Co może być identyfikatorem? Na przykład stanowisko, o które chcesz się ubiegać lub, jeśli tworzysz Cv dla przyjaciela, identyfikatorem może być Cv Michała."
   },
   "builder": {
     "toasts": {
       "formErrors": "Musisz wypełnić wszystkie wymagane pola przed przesłaniem tego formularza.",
-      "doesNotExist": "CV którego szukałeś(aś) już nie istnieje... a może nigdy nie istniało?",
+      "doesNotExist": "Cv którego szukałeś(aś) już nie istnieje... a może nigdy nie istniało?",
       "loadDemoData": "Nie jesteś pewien, gdzie rozpocząć? Spróbuj załadować demo, aby zobaczyć, co Reactive Resume może Ci zaoferować.",
       "printError": "Wystąpiły problemy z funkcją chmury, spróbuj ponownie później lub użyj funkcji drukowania w przeglądarce."
     },
@@ -69,9 +70,9 @@
       "social": "Media społecznościowe",
       "objective": "Cele",
       "work": "Doświadczenie zawodowe",
-      "education": "Wykształcenie",
+      "education": "Wyksztłacenie",
       "project": "Projekt",
-      "projects": "Projekty",
+      "projects": "Ptojekty",
       "award": "Nagroda",
       "awards": "Nagrody",
       "certification": "Certyfikat",
@@ -144,7 +145,7 @@
     "actions": {
       "import": {
         "heading": "Importuj swoje CV",
-        "text": "Możesz zaimportować informacje z różnych źródeł, takich jak JSON Resume lub LinkedIn w celu autouzupełniania danych do Twojego CV.",
+        "text": "Możesz zaimportować  informacje z różnych źródeł, takich jak JSON Resume lub LinkedIn w celu autouzupełniania danych do Twojego CV.",
         "button": "Importuj"
       },
       "export": {
