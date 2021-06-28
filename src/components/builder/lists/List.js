@@ -106,7 +106,7 @@ const List = ({
       </div>
 
       <Button outline icon={MdAdd} onClick={handleAdd} className="mt-8 ml-auto">
-        Add New
+        {t('shared.buttons.add')}
       </Button>
     </div>
   );
