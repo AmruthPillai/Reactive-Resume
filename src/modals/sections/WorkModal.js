@@ -71,14 +71,14 @@ const WorkModal = () => {
             <Input
               type="date"
               label={t('shared.forms.startDate')}
-              placeholder="6th August 2008"
+              placeholder="6th August 2018"
               {...getFieldProps(formik, schema, 'startDate')}
             />
 
             <Input
               type="date"
               label={t('shared.forms.endDate')}
-              placeholder="6th August 2008"
+              placeholder="6th August 2018"
               {...getFieldProps(formik, schema, 'endDate')}
             />
 
