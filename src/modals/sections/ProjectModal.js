@@ -53,14 +53,14 @@ const ProjectModal = () => {
             <Input
               type="date"
               label={t('shared.forms.startDate')}
-              placeholder="6th August 208"
+              placeholder="6th August 2018"
               {...getFieldProps(formik, schema, 'date')}
             />
 
             <Input
               type="date"
               label={t('shared.forms.endDate')}
-              placeholder="6th August 208"
+              placeholder="6th August 2018"
               {...getFieldProps(formik, schema, 'endDate')}
             />
 
