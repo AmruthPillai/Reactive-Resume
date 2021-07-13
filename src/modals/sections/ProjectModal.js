@@ -10,7 +10,8 @@ import ModalEvents from '../../constants/ModalEvents';
 const initialValues = {
   title: '',
   link: '',
-  date: '',
+  startDate: '',
+  endDate: '',
   summary: '',
 };
 
@@ -20,7 +21,13 @@ const ProjectModal = () => {
   const schema = Yup.object().shape({
     title: Yup.string().required(t('shared.forms.validation.required')),
     link: Yup.string().url(t('shared.forms.validation.url')),
-    date: Yup.date().max(new Date()),
+    startDate: Yup.date(),
+    endDate: Yup.date().when(
+      'startDate',
+      (startDate, yupSchema) =>
+        startDate &&
+        yupSchema.min(startDate, t('shared.forms.validation.dateRange')),
+    ),
     summary: Yup.string(),
   });
 
@@ -54,7 +61,7 @@ const ProjectModal = () => {
               type="date"
               label={t('shared.forms.startDate')}
               placeholder="6th August 2018"
-              {...getFieldProps(formik, schema, 'date')}
+              {...getFieldProps(formik, schema, 'startDate')}
             />
 
             <Input
