@@ -10,12 +10,14 @@ import DatabaseContext from '../../contexts/DatabaseContext';
 import LeftSidebar from '../../components/builder/left/LeftSidebar';
 import LoadingScreen from '../../components/router/LoadingScreen';
 import RightSidebar from '../../components/builder/right/RightSidebar';
+import SettingsContext from '../../contexts/SettingsContext';
 
 const Builder = ({ id }) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const [loading, setLoading] = useState(true);
   const { getResume } = useContext(DatabaseContext);
+  const { isSideBarOpen } = useContext(SettingsContext);
 
   const handleLoadDemoData = () => {
     dispatch({ type: 'load_demo_data' });
@@ -58,7 +60,7 @@ const Builder = ({ id }) => {
         <div className={styles.left}>
           <LeftSidebar />
         </div>
-        <div className={styles.center}>
+        <div className={`${styles.center} ${!isSideBarOpen && 'flex-1'}`}>
           <Artboard />
         </div>
         <div className={styles.right}>
@@ -66,7 +68,7 @@ const Builder = ({ id }) => {
         </div>
       </div>
     );
-  }, [loading]);
+  }, [loading, isSideBarOpen]);
 };
 
 export default memo(Builder);

@@ -24,6 +24,7 @@ const ListItem = ({
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const [anchorEl, setAnchorEl] = useState(null);
+  const [deleteClickCount, setDeleteClickCount] = useState(0);
 
   const handleClick = (event) => setAnchorEl(event.currentTarget);
   const toggleSwitchState = 'isVisible' in data ? data.isVisible : true;
@@ -81,6 +82,14 @@ const ListItem = ({
     });
   };
 
+  const checkConfirmationAndDelte = () => {
+    if (deleteClickCount === 1) {
+      handleDelete();
+    } else if (deleteClickCount < 1) {
+      setDeleteClickCount(deleteClickCount + 1);
+    }
+  };
+
   return (
     <Draggable draggableId={data.id} index={index}>
       {(dragProvided) => (
@@ -126,7 +135,10 @@ const ListItem = ({
               <Menu
                 keepMounted
                 anchorEl={anchorEl}
-                onClose={handleClose}
+                onClose={() => {
+                  setDeleteClickCount(0);
+                  handleClose();
+                }}
                 open={Boolean(anchorEl)}
               >
                 <div className="flex items-center space-around">
@@ -140,9 +152,11 @@ const ListItem = ({
                 <MenuItem onClick={handleEdit}>
                   {t('shared.buttons.edit')}
                 </MenuItem>
-                <MenuItem onClick={handleDelete}>
+                <MenuItem onClick={checkConfirmationAndDelte}>
                   <span className="text-red-600 font-medium">
-                    {t('shared.buttons.delete')}
+                    {deleteClickCount
+                      ? t('shared.buttons.confirmation')
+                      : t('shared.buttons.delete')}
                   </span>
                 </MenuItem>
               </Menu>
