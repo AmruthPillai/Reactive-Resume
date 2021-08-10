@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
+import Markdown from '../components/shared/Markdown';
 import AwardsA from './blocks/Awards/AwardsA';
 import CertificationsA from './blocks/Certifications/CertificationsA';
 import ContactA from './blocks/Contact/ContactA';
@@ -77,9 +77,9 @@ const Pikachu = ({ data }) => {
                       style={{ borderColor: data.metadata.colors.background }}
                     />
 
-                    <ReactMarkdown className="text-sm">
+                    <Markdown className="text-sm">
                       {data.objective.body}
-                    </ReactMarkdown>
+                    </Markdown>
                   </div>
                 )}
               </div>
