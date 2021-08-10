@@ -10,7 +10,7 @@ import TopNavbar from '../../components/dashboard/TopNavbar';
 const Dashboard = ({ user }) => {
   const { t } = useTranslation();
   const [resumes, setResumes] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const resumesRef = 'resumes';
