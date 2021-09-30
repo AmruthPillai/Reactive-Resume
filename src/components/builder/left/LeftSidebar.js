@@ -1,5 +1,5 @@
 import { Element } from 'react-scroll';
-import React, { Fragment, memo } from 'react';
+import React, { Fragment, memo, useContext } from 'react';
 import * as styles from './LeftSidebar.module.css';
 import Awards from './sections/Awards';
 import Certifications from './sections/Certifications';
@@ -15,6 +15,7 @@ import Skills from './sections/Skills';
 import Social from './sections/Social';
 import Work from './sections/Work';
 import sections from '../../../data/leftSections';
+import SettingsContext from '../../../contexts/SettingsContext';
 
 const getComponent = (id) => {
   switch (id) {
@@ -60,14 +61,17 @@ const SidebarSection = ({ id, event }) => {
   );
 };
 
-const LeftSidebar = () => (
-  <div className="flex">
-    <LeftNavbar />
-
-    <div id="LeftSidebar" className={styles.container}>
-      {sections.map(SidebarSection)}
+const LeftSidebar = () => {
+  const { isSideBarOpen } = useContext(SettingsContext);
+  return (
+    <div className="flex">
+      <LeftNavbar />
+      {isSideBarOpen && (
+        <div id="LeftSidebar" className={styles.container}>
+          {sections.map(SidebarSection)}
+        </div>
+      )}
     </div>
-  </div>
-);
-
+  );
+};
 export default memo(LeftSidebar);

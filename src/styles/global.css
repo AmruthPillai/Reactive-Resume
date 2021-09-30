@@ -7,6 +7,22 @@ body {
   @apply transition-colors duration-200 ease-in-out;
 }
 
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: white;
+}
+
+*::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px grey;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 20px;
+  outline: 1px solid slategrey;
+}
+
 a {
   @apply font-semibold;
 }

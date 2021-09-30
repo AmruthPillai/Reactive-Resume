@@ -1,5 +1,5 @@
 import { Element } from 'react-scroll';
-import React, { Fragment, memo } from 'react';
+import React, { Fragment, memo, useContext } from 'react';
 import * as styles from './RightSidebar.module.css';
 import About from './sections/About';
 import Actions from './sections/Actions';
@@ -11,6 +11,7 @@ import RightNavbar from './RightNavbar';
 import Settings from './sections/Settings';
 import Templates from './sections/Templates';
 import sections from '../../../data/rightSections';
+import SettingsContext from '../../../contexts/SettingsContext';
 
 const getComponent = (id) => {
   switch (id) {
@@ -37,7 +38,6 @@ const getComponent = (id) => {
 
 const SidebarSection = ({ id, event }) => {
   const Component = getComponent(id);
-
   return (
     <Fragment key={id}>
       <Element name={id}>
@@ -48,14 +48,18 @@ const SidebarSection = ({ id, event }) => {
   );
 };
 
-const RightSidebar = () => (
-  <div className="flex">
-    <div id="RightSidebar" className={styles.container}>
-      {sections.map(SidebarSection)}
+const RightSidebar = () => {
+  const { isSideBarOpen } = useContext(SettingsContext);
+  return (
+    <div className="flex">
+      {isSideBarOpen && (
+        <div id="RightSidebar" className={styles.container}>
+          {sections.map(SidebarSection)}
+        </div>
+      )}
+      <RightNavbar />
     </div>
-
-    <RightNavbar />
-  </div>
-);
+  );
+};
 
 export default memo(RightSidebar);

@@ -9,6 +9,8 @@ const defaultState = {
   setTheme: () => {},
   language: 'en',
   setLanguage: () => {},
+  isSideBarOpen: true,
+  setSideBarToggle: () => {},
 };
 
 const SettingsContext = createContext(defaultState);
@@ -16,7 +18,9 @@ const SettingsContext = createContext(defaultState);
 const SettingsProvider = ({ children }) => {
   const [theme, setTheme] = useState(defaultState.theme);
   const [language, setLanguage] = useState(defaultState.theme);
-
+  const [isSideBarOpen, setSideBarToggle] = useState(
+    defaultState.isSideBarOpen,
+  );
   useEffect(() => {
     const prefTheme = localStorage.getItem('theme') || defaultState.theme;
     const prefLanguage =
@@ -45,6 +49,8 @@ const SettingsProvider = ({ children }) => {
         setTheme,
         language,
         setLanguage,
+        isSideBarOpen,
+        setSideBarToggle,
       }}
     >
       {children}
