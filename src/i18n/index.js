@@ -41,7 +41,7 @@ const languages = [
   },
   {
     code: 'de',
-    name: 'German (Deutsche)',
+    name: 'German (Deutsch)',
   },
   {
     code: 'el',
