@@ -1,5 +1,5 @@
 import React, { memo, useContext } from 'react';
-import ReactMarkdown from 'react-markdown';
+import Markdown from '../../../components/shared/Markdown';
 import { isItemVisible, safetyCheck } from '../../../utils';
 import PageContext from '../../../contexts/PageContext';
 
@@ -10,7 +10,7 @@ const ReferenceItem = ({ id, name, position, phone, email, summary }) => (
     <span className="text-xs">{phone}</span>
     <span className="text-xs">{email}</span>
     {summary && (
-      <ReactMarkdown className="markdown mt-2 text-sm">{summary}</ReactMarkdown>
+      <Markdown className="markdown mt-2 text-sm">{summary}</Markdown>
     )}
   </div>
 );

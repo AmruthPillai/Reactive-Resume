@@ -1,5 +1,5 @@
 import React, { memo, useContext } from 'react';
-import ReactMarkdown from 'react-markdown';
+import Markdown from '../../../components/shared/Markdown';
 import { formatDate, isItemVisible, safetyCheck } from '../../../utils';
 import PageContext from '../../../contexts/PageContext';
 
@@ -17,9 +17,7 @@ const CertificationItem = ({ item, language }) => (
       )}
     </div>
     {item.summary && (
-      <ReactMarkdown className="markdown mt-2 text-sm">
-        {item.summary}
-      </ReactMarkdown>
+      <Markdown className="markdown mt-2 text-sm">{item.summary}</Markdown>
     )}
   </div>
 );

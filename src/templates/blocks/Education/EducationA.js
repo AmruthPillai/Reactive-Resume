@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import React, { memo, useContext } from 'react';
-import ReactMarkdown from 'react-markdown';
+import Markdown from '../../../components/shared/Markdown';
 import PageContext from '../../../contexts/PageContext';
 import { formatDateRange, isItemVisible, safetyCheck } from '../../../utils';
 
@@ -34,9 +34,7 @@ const EducationItem = ({ item, language }) => {
         </div>
       </div>
       {item.summary && (
-        <ReactMarkdown className="markdown mt-2 text-sm">
-          {item.summary}
-        </ReactMarkdown>
+        <Markdown className="markdown mt-2 text-sm">{item.summary}</Markdown>
       )}
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { memo, useContext } from 'react';
-import ReactMarkdown from 'react-markdown';
+import Markdown from '../../../components/shared/Markdown';
 import { safetyCheck } from '../../../utils';
 import PageContext from '../../../contexts/PageContext';
 
@@ -10,9 +10,7 @@ const ObjectiveA = () => {
     safetyCheck(data.objective, 'body') && (
       <div>
         <Heading>{data.objective.heading}</Heading>
-        <ReactMarkdown className="markdown text-sm">
-          {data.objective.body}
-        </ReactMarkdown>
+        <Markdown className="markdown text-sm">{data.objective.body}</Markdown>
       </div>
     )
   );
