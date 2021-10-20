@@ -8,11 +8,11 @@
     "build": "gatsby build",
     "clean": "gatsby clean",
     "deploy": "firebase deploy",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -H 0.0.0.0",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "lint:fix": "eslint --fix .",
     "lint": "eslint .",
-    "serve": "gatsby serve",
+    "serve": "gatsby serve -H 0.0.0.0",
     "start": "npm run develop",
     "test": "jest",
     "prepare": "husky install"
