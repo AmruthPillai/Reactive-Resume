@@ -32,7 +32,8 @@ async function setup(signInWithGoogle, failReauthentication) {
         mockFirebaseCurrentUserReauthenticateWithPopupErrorMessage,
       );
     });
-    FirebaseStub.auth().currentUser.reauthenticateWithPopup = mockFirebaseCurrentUserReauthenticateWithPopup;
+    FirebaseStub.auth().currentUser.reauthenticateWithPopup =
+      mockFirebaseCurrentUserReauthenticateWithPopup;
   } else {
     mockFirebaseCurrentUserReauthenticateWithPopupErrorMessage = null;
     mockFirebaseCurrentUserReauthenticateWithPopup = jest.spyOn(

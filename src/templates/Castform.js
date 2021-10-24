@@ -64,7 +64,7 @@ const Castform = ({ data }) => {
       >
         <div className="grid grid-cols-12">
           <div
-            className="col-span-4 py-8 pr-8 pl-5"
+            className="col-span-4 py-8 pl-5 pr-8"
             style={{
               color: data.metadata.colors.background,
               backgroundColor: data.metadata.colors.primary,
@@ -86,7 +86,7 @@ const Castform = ({ data }) => {
                 })}
             </div>
           </div>
-          <div className="col-span-8 py-8 pr-8 pl-5">
+          <div className="col-span-8 py-8 pl-5 pr-8">
             <div className="grid gap-4">
               {layout[1] &&
                 layout[1].map((x) => {

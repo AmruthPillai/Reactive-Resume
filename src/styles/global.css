@@ -32,7 +32,7 @@ a:hover {
 }
 
 hr {
-  @apply w-full border-primary-200 h-1;
+  @apply w-full h-1 border-primary-200;
 }
 
 ul {
@@ -117,7 +117,7 @@ section {
   font-weight: bold;
 }
 
-input[type="range"]::-webkit-slider-thumb {
+input[type='range']::-webkit-slider-thumb {
   cursor: ew-resize;
   box-shadow: -405px 0 0 400px #605e5c;
 

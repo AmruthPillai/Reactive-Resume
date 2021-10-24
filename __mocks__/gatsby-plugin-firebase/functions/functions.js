@@ -23,9 +23,8 @@ class Functions {
     this._uuid = uuidv4();
 
     this._httpsCallables = {};
-    this._httpsCallables[
-      FunctionsConstants.deleteUserFunctionName
-    ] = deleteUser;
+    this._httpsCallables[FunctionsConstants.deleteUserFunctionName] =
+      deleteUser;
   }
 
   static get instance() {

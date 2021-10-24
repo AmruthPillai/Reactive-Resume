@@ -3,17 +3,17 @@ label {
 }
 
 label > span:first-child {
-  @apply mb-1 text-primary-600 font-semibold tracking-wide text-xs uppercase;
+  @apply mb-1 text-xs font-semibold tracking-wide uppercase text-primary-600;
 }
 
 label > p {
-  @apply mt-1 text-red-600 text-xs;
+  @apply mt-1 text-xs text-red-600;
 }
 
 label input,
 label textarea,
 label select {
-  @apply w-full py-3 px-4 rounded text-primary-900 bg-primary-200 border border-transparent appearance-none;
+  @apply w-full px-4 py-3 border border-transparent rounded appearance-none text-primary-900 bg-primary-200;
 }
 
 label input::placeholder,

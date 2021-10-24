@@ -1,7 +1,7 @@
-@import "~react-toastify/dist/ReactToastify.css";
+@import '~react-toastify/dist/ReactToastify.css';
 
 .Toastify__toast {
-  @apply px-8 py-6 shadow rounded;
+  @apply px-8 py-6 rounded shadow;
 }
 
 .Toastify__toast--default {
@@ -9,7 +9,7 @@
 }
 
 .Toastify__toast-body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 
   @apply font-medium;
 }

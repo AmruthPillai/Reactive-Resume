@@ -45,9 +45,8 @@ class Auth {
     this.onAuthStateChangedObservers.push(observer);
 
     return () => {
-      this._onAuthStateChangedObservers = this.onAuthStateChangedObservers.filter(
-        (obs) => obs !== observer,
-      );
+      this._onAuthStateChangedObservers =
+        this.onAuthStateChangedObservers.filter((obs) => obs !== observer);
     };
   }
 
