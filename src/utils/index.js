@@ -70,7 +70,7 @@ export const unsplashPhotoRequestUrl =
   'https://source.unsplash.com/featured/400x600';
 
 export const getUnsplashPhoto = async () => {
-  const response = await fetch(unsplashPhotoRequestUrl);
+  const response = await fetch(unsplashPhotoRequestUrl, { mode: 'no-cors' });
   return response.url;
 };
 
