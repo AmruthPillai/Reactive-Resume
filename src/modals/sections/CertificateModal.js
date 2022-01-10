@@ -11,6 +11,7 @@ const initialValues = {
   title: '',
   issuer: '',
   date: '',
+  url: '',
   summary: '',
 };
 
@@ -21,6 +22,7 @@ const CertificateModal = () => {
     title: Yup.string().required(t('shared.forms.validation.required')),
     issuer: Yup.string().required(t('shared.forms.validation.required')),
     date: Yup.date().max(new Date()),
+    url: Yup.string().url(t('shared.forms.validation.url')),
     summary: Yup.string(),
   });
 
@@ -54,6 +56,13 @@ const CertificateModal = () => {
               type="date"
               label={t('shared.forms.date')}
               {...getFieldProps(formik, schema, 'date')}
+            />
+
+            <Input
+              label={t('shared.forms.website')}
+              className="col-span-2"
+              placeholder="https://"
+              {...getFieldProps(formik, schema, 'url')}
             />
 
             <Input

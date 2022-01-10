@@ -7,7 +7,13 @@ const CertificationItem = ({ item, language }) => (
   <div>
     <div className="flex justify-between items-center">
       <div className="flex flex-col text-left mr-2">
-        <h6 className="font-semibold text-sm">{item.title}</h6>
+        {item.url ? (
+          <a href={item.url} target="_blank" rel="noopener noreferrer">
+            <h6 className="font-semibold text-sm">{item.title}</h6>
+          </a>
+        ) : (
+          <h6 className="font-semibold text-sm">{item.title}</h6>
+        )}
         <span className="text-xs">{item.issuer}</span>
       </div>
       {item.date && (
