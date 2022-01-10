@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 import { hasAddress } from '../utils';
 import AwardsA from './blocks/Awards/AwardsA';
 import CertificationsA from './blocks/Certifications/CertificationsA';
-import Contact from './blocks/Contact/ContactA';
+import Contact from './blocks/Contact/ContactE';
 import EducationA from './blocks/Education/EducationA';
 import HeadingA from './blocks/Heading/HeadingA';
 import HobbiesA from './blocks/Hobbies/HobbiesA';
