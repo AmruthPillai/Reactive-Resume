@@ -32,7 +32,7 @@ const Castform = ({ data }) => {
   const Photo = () =>
     data.profile.photograph !== '' && (
       <img
-        className="w-32 h-32 rounded-full"
+        className="w-32 h-32 rounded-full object-cover"
         style={{
           borderWidth: 6,
           borderColor: data.metadata.colors.background,
