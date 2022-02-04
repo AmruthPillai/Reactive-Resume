@@ -60,7 +60,7 @@ For those of you familiar with the Crowdin Platform, you could do that too and j
 - Hindi (हिंदी)
 - Indonesian (Bahasa Indonesia)
 - Italian (Italiano)
-- Japanese (日本人)
+- Japanese (日本語)
 - Kannada (ಕನ್ನಡ)
 - Lithuanian (Lietuvių)
 - Norwegian (Norsk)
