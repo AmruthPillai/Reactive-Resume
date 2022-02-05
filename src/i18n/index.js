@@ -69,7 +69,7 @@ const languages = [
   },
   {
     code: 'ja',
-    name: 'Japanese (日本人)',
+    name: 'Japanese (日本語)',
   },
   {
     code: 'kn',
