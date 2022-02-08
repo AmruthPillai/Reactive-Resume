@@ -35,7 +35,7 @@ const Glalie = ({ data }) => {
     <div className="grid gap-2 text-center">
       {data.profile.photograph !== '' && (
         <img
-          className="w-40 h-40 rounded-full mx-auto"
+          className="w-40 h-40 rounded-full mx-auto object-cover"
           src={data.profile.photograph}
           alt={data.profile.firstName}
         />
