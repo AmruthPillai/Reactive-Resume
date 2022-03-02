@@ -37,10 +37,10 @@ git clone https://github.com/AmruthPillai/Reactive-Resume.git
 cd Reactive-Resume
 ```
 
-2. I prefer to use `pnpm`, but you can use anything to install dependencies (`npm`/`yarn`)
+2. I prefer to use `npm`, but you can use anything to install dependencies (`pnpm`/`yarn`)
 
 ```
-pnpm install
+npm install
 ```
 
 3. Copy the .env.example files to .env in multiple locations and fill it with values according to your setup
@@ -60,7 +60,7 @@ docker-compose up -d
 5. Run the project and start building!
 
 ```
-pnpm start
+npm start
 ```
 
 ## Contributing
