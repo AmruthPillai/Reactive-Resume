@@ -1,0 +1,8 @@
+.container {
+  @apply grid sm:grid-cols-2 gap-4;
+}
+
+.colorOptions {
+  @apply col-span-2 mb-4;
+  @apply grid grid-cols-8 gap-y-2 justify-items-center;
+}

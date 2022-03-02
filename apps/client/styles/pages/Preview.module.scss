@@ -1,0 +1,20 @@
+.container {
+  @apply my-8 flex flex-col items-center;
+}
+
+.download {
+  @apply fixed bottom-6 right-6;
+
+  button {
+    @apply flex gap-2 px-4 py-3 shadow dark:bg-neutral-600/25;
+    @apply rounded-full transition-colors;
+
+    &:hover {
+      @apply dark:bg-neutral-500/25;
+    }
+  }
+}
+
+.footer {
+  @apply mt-6 text-center text-xs font-medium opacity-50;
+}

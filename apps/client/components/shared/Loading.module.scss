@@ -1,0 +1,32 @@
+.loading {
+  animation: progress 2s linear infinite;
+
+  @apply fixed top-0 z-50;
+  @apply bg-primary-500 shadow-primary-500/50 h-0.5 w-screen shadow;
+}
+
+@keyframes progress {
+  0% {
+    left: 0%;
+    right: 100%;
+    width: 0;
+  }
+
+  10% {
+    left: 0%;
+    right: 75%;
+    width: 25%;
+  }
+
+  90% {
+    left: 75%;
+    right: 0%;
+    width: 25%;
+  }
+
+  100% {
+    left: 100%;
+    right: 0%;
+    width: 0;
+  }
+}

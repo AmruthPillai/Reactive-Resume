@@ -1,0 +1,34 @@
+.container {
+  @apply flex flex-col items-center gap-2;
+  @apply rounded-sm;
+}
+
+.page {
+  width: 210mm;
+  min-height: 297mm;
+
+  @apply relative z-50 grid shadow;
+  @apply print:shadow-none;
+
+  :global(.printer-mode) & {
+    @apply shadow-none;
+  }
+
+  &.break::after {
+    content: 'A4 Page Break';
+    top: calc(297mm - 19px);
+
+    @apply absolute w-full border-b border-dashed border-neutral-800/75;
+    @apply flex items-end justify-end pr-2 pb-0.5 text-xs font-bold text-neutral-800/75;
+    @apply print:hidden;
+
+    :global(.preview-mode) &,
+    :global(.printer-mode) & {
+      @apply hidden;
+    }
+  }
+}
+
+.pageNumber {
+  @apply text-center font-bold print:hidden;
+}

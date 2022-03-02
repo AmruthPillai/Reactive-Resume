@@ -1,0 +1,19 @@
+.page {
+  @apply px-6 py-4;
+
+  a {
+    @apply font-semibold;
+  }
+}
+
+.container {
+  @apply grid grid-cols-6 gap-4;
+
+  .main {
+    @apply col-span-4 flex flex-col gap-4;
+  }
+
+  .sidebar {
+    @apply col-span-2 flex flex-col gap-4;
+  }
+}

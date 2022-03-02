@@ -1,0 +1,22 @@
+.container {
+  @apply grid grid-cols-2 gap-4;
+}
+
+.template {
+  @apply grid text-center;
+
+  .preview {
+    aspect-ratio: 1 / 1.4142;
+
+    @apply relative grid rounded;
+    @apply border-2 border-transparent;
+
+    &.selected {
+      @apply border-black dark:border-white;
+    }
+  }
+
+  .label {
+    @apply mt-1 text-xs font-medium;
+  }
+}

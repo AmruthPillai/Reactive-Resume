@@ -1,0 +1,15 @@
+.header {
+  @apply mb-4 flex items-center justify-between;
+
+  .label {
+    @apply text-base font-semibold;
+  }
+}
+
+.inputGrid {
+  @apply grid grid-cols-2 gap-4;
+
+  .delete {
+    @apply opacity-25 hover:opacity-75;
+  }
+}

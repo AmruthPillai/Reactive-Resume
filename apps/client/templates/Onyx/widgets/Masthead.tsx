@@ -1,0 +1,64 @@
+import { Email, Phone, Public, Room } from '@mui/icons-material';
+import isEmpty from 'lodash/isEmpty';
+import Image from 'next/image';
+
+import { useAppSelector } from '@/store/hooks';
+import DataDisplay from '@/templates/shared/DataDisplay';
+import getProfileIcon from '@/utils/getProfileIcon';
+import { addHttp, formatLocation, getPhotoClassNames } from '@/utils/template';
+
+const Masthead: React.FC = () => {
+  const { name, photo, email, phone, website, headline, location, profiles } = useAppSelector(
+    (state) => state.resume.basics
+  );
+
+  return (
+    <div className="flex items-center gap-4">
+      {photo.visible && !isEmpty(photo.url) && (
+        <Image
+          alt={name}
+          src={photo.url}
+          width={photo.filters.size}
+          height={photo.filters.size}
+          objectFit="cover"
+          className={getPhotoClassNames(photo.filters)}
+        />
+      )}
+
+      <div className="grid flex-1 gap-1">
+        <h1>{name}</h1>
+        <p className="opacity-75">{headline}</p>
+
+        <div className="mt-2 grid gap-2">
+          <DataDisplay icon={<Room />} className="text-xs">
+            {formatLocation(location)}
+          </DataDisplay>
+
+          <div className="flex items-center gap-2">
+            <DataDisplay icon={<Email />} className="text-xs" link={`mailto:${email}`}>
+              {email}
+            </DataDisplay>
+
+            <DataDisplay icon={<Phone />} className="text-xs" link={`tel:${phone}`}>
+              {phone}
+            </DataDisplay>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid flex-[0.4] gap-2">
+        <DataDisplay icon={<Public />} link={addHttp(website)} className="text-xs">
+          {website}
+        </DataDisplay>
+
+        {profiles.map(({ id, username, network, url }) => (
+          <DataDisplay key={id} icon={getProfileIcon(network)} link={url} className="text-xs">
+            {username}
+          </DataDisplay>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Masthead;

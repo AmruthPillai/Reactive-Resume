@@ -1,0 +1,20 @@
+.container {
+  @apply grid gap-4;
+
+  .section {
+    @apply grid gap-2 rounded p-6;
+    @apply bg-neutral-100 dark:bg-neutral-800;
+
+    h2 {
+      @apply inline-flex items-center gap-2 text-base font-medium;
+    }
+
+    p {
+      @apply mb-3 text-xs leading-loose;
+    }
+  }
+
+  a {
+    @apply hover:no-underline;
+  }
+}

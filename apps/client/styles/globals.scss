@@ -1,0 +1,36 @@
+// Icons & Fonts
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+// Tailwind CSS
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply focus:outline-none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-inter text-sm;
+    @apply bg-neutral-50 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+
+  a {
+    @apply cursor-pointer font-medium hover:underline;
+  }
+}
+
+// Partials
+@import 'partials/reset';
+@import 'partials/forms';
+@import 'partials/toast';

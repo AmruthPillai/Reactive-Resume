@@ -1,0 +1,46 @@
+.container {
+  @apply m-6 grid gap-8 text-center md:m-8 md:text-left;
+}
+
+.header {
+  @apply flex flex-col items-center gap-8 md:flex-row;
+
+  .logo {
+    @apply h-64 w-64;
+  }
+
+  .main {
+    @apply grid md:flex-1 md:justify-start;
+
+    h1 {
+      @apply text-4xl font-bold;
+    }
+
+    h2 {
+      @apply opacity-50;
+    }
+  }
+}
+
+.buttonWrapper {
+  @apply mt-8 flex justify-center gap-4 md:justify-start;
+}
+
+.section {
+  h6 {
+    @apply mb-2 text-xs font-bold uppercase tracking-wide;
+  }
+
+  p {
+    @apply text-sm leading-relaxed;
+  }
+}
+
+.screenshots {
+  @apply grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4;
+
+  .image {
+    @apply relative h-64 rounded hover:opacity-75;
+    @apply border-2 dark:border-neutral-700;
+  }
+}

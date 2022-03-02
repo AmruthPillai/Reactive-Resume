@@ -1,0 +1,37 @@
+.resume {
+  @apply flex flex-col gap-2;
+
+  .preview {
+    aspect-ratio: 1 / 1.41;
+
+    @apply relative cursor-pointer rounded-sm shadow;
+    @apply bg-neutral-100 transition-opacity hover:opacity-80 dark:bg-neutral-800;
+  }
+
+  footer {
+    @apply flex items-center justify-between overflow-hidden;
+
+    .meta {
+      flex: 4;
+      @apply flex flex-col overflow-hidden;
+
+      p {
+        @apply overflow-hidden text-ellipsis whitespace-nowrap;
+
+        &:first-child {
+          @apply text-sm font-semibold leading-relaxed;
+        }
+
+        &:last-child {
+          @apply text-xs leading-relaxed opacity-50;
+        }
+      }
+    }
+
+    .menu {
+      flex: 1;
+
+      @apply h-full w-full cursor-pointer rounded text-lg;
+    }
+  }
+}

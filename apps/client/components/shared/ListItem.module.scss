@@ -1,0 +1,18 @@
+.item {
+  @apply flex items-center justify-between;
+  @apply py-5 pl-5 pr-2;
+  @apply border-b border-neutral-900/10 last:border-0 dark:border-neutral-50/10;
+  @apply cursor-move transition-opacity;
+
+  .meta {
+    @apply grid gap-1;
+
+    .title {
+      @apply font-semibold;
+    }
+
+    .subtitle {
+      @apply text-xs opacity-50;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.resume {
+  @apply flex flex-col gap-2;
+
+  .preview {
+    aspect-ratio: 1 / 1.41;
+
+    @apply flex items-center justify-center shadow;
+    @apply cursor-pointer rounded-sm bg-neutral-100 transition-opacity hover:opacity-80 dark:bg-neutral-800;
+  }
+
+  footer {
+    @apply flex items-center justify-between;
+
+    .meta {
+      p:first-child {
+        @apply text-sm font-semibold leading-relaxed;
+      }
+
+      p:last-child {
+        @apply text-xs leading-relaxed opacity-50;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.container {
+  @apply flex items-center justify-between;
+
+  h1 {
+    @apply text-2xl;
+  }
+
+  .actions {
+    @apply flex gap-2 opacity-75 transition-opacity lg:opacity-50 dark:lg:opacity-25;
+  }
+
+  &:hover {
+    .actions {
+      @apply opacity-75;
+    }
+  }
+}

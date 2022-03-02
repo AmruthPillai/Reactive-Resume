@@ -1,0 +1,25 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "module": "commonjs",
+    "types": ["node"],
+    "emitDecoratorMetadata": true,
+    "target": "es2015",
+    "baseUrl": ".",
+    "paths": {
+      "@reactive-resume/schema": ["../../libs/schema/src/index.ts"],
+      "@/auth/*": ["src/auth/*"],
+      "@/config/*": ["src/config/*"],
+      "@/constants/*": ["src/constants/*"],
+      "@/database/*": ["src/database/*"],
+      "@/decorators/*": ["src/decorators/*"],
+      "@/filters/*": ["src/filters/*"],
+      "@/mail/*": ["src/mail/*"],
+      "@/resume/*": ["src/resume/*"],
+      "@/users/*": ["src/users/*"]
+    }
+  },
+  "exclude": ["**/*.spec.ts", "**/*.test.ts"],
+  "include": ["**/*.ts"]
+}

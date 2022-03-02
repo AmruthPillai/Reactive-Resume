@@ -1,0 +1,7 @@
+.container {
+  @apply rounded-lg border dark:border-neutral-50/10;
+
+  .empty {
+    @apply py-8 text-center;
+  }
+}

@@ -1,0 +1,11 @@
+.container {
+  @apply grid gap-4 xl:grid-cols-2;
+}
+
+.subheading {
+  @apply mt-2 font-medium;
+}
+
+.slider {
+  @apply px-6;
+}

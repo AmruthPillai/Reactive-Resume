@@ -1,0 +1,13 @@
+.center {
+  @apply mx-0 flex flex-grow pt-12 lg:pt-16;
+  @apply transition-[margin-left,margin-right] duration-200;
+  @apply bg-neutral-200 dark:bg-neutral-900;
+}
+
+.wrapper {
+  @apply h-full w-full #{!important};
+}
+
+.artboard {
+  @apply flex gap-8;
+}
