@@ -19,7 +19,7 @@ const validationSchema = Joi.object({
 
   // Database
   POSTGRES_HOST: Joi.string().required(),
-  POSTGRES_PORT: Joi.string().required(),
+  POSTGRES_PORT: Joi.string().default(5432),
   POSTGRES_USERNAME: Joi.string().required(),
   POSTGRES_PASSWORD: Joi.string().required(),
   POSTGRES_DATABASE: Joi.string().required(),

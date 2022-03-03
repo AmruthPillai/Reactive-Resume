@@ -1,12 +1,28 @@
 version: '3'
 
 services:
-  database:
+  postgres:
     image: postgres
-    container_name: database
+    container_name: postgres
     ports:
-      - '${POSTGRES_PORT}:${POSTGRES_PORT}'
-    env_file:
-      - .env
+      - '5432:5432'
+    env_file: .env
     volumes:
       - ./scripts/database/initialize.sql:/docker-entrypoint-initdb.d/initialize.sql
+      - pgdata:/var/lib/postgresql/data
+
+  app:
+    build: .
+    container_name: app
+    depends_on:
+      - postgres
+    ports:
+      - '3000:3000'
+      - '3100:3100'
+    env_file: .env
+    environment:
+      NODE_ENV: production
+      POSTGRES_HOST: postgres
+
+volumes:
+  pgdata:

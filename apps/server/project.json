@@ -30,6 +30,11 @@
       "executor": "@nrwl/node:execute",
       "options": {
         "buildTarget": "server:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "server:build:production"
+        }
       }
     },
     "lint": {
