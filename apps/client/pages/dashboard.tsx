@@ -4,11 +4,11 @@ import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
-import i18nConfig from 'next-i18next.config';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useQuery } from 'react-query';
 
 import { RESUMES_QUERY } from '@/constants/index';
+import i18nConfig from '@/i18n/index';
 import { fetchResumes } from '@/services/resume';
 import styles from '@/styles/pages/Dashboard.module.scss';
 

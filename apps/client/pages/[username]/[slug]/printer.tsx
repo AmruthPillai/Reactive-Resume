@@ -31,7 +31,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ query }) =
   try {
     if (isEmpty(secretKey)) throw new Error('There is no secret key!');
 
-    const resume = await fetchResumeByIdentifier({ username, slug, options: { secretKey, withHost: true } });
+    const resume = await fetchResumeByIdentifier({ username, slug, options: { secretKey } });
 
     return { props: { resume } };
   } catch (error) {

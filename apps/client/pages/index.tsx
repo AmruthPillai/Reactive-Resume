@@ -1,14 +1,14 @@
 import { Link as LinkIcon } from '@mui/icons-material';
 import { Button } from '@mui/material';
-import type { NextPage } from 'next';
+import type { GetServerSideProps, NextPage } from 'next';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Trans, useTranslation } from 'next-i18next';
-import i18nConfig from 'next-i18next.config';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import { screenshots } from '@/config/screenshots';
+import i18nConfig from '@/i18n/index';
 import { logout } from '@/store/auth/authSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
@@ -20,13 +20,13 @@ const Footer = dynamic(() => import('@/components/shared/Footer'));
 const Logo = dynamic(() => import('@/components/shared/Logo'));
 const NoSSR = dynamic(() => import('@/components/shared/NoSSR'));
 
-export async function getStaticProps({ locale }) {
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common', 'modals', 'landing'], i18nConfig)),
     },
   };
-}
+};
 
 const Home: NextPage = () => {
   const { t } = useTranslation();

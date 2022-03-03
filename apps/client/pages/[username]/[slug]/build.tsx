@@ -4,11 +4,11 @@ import { GetServerSideProps, NextPage } from 'next';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
-import i18nConfig from 'next-i18next.config';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect } from 'react';
 import { useQuery } from 'react-query';
 
+import i18nConfig from '@/i18n/index';
 import { fetchResumeByIdentifier } from '@/services/resume';
 import { useAppDispatch } from '@/store/hooks';
 import { setResume } from '@/store/resume/resumeSlice';

@@ -14,7 +14,6 @@ export type FetchResumeByIdentifierParams = {
   username: string;
   slug: string;
   options?: {
-    withHost?: boolean;
     secretKey?: string;
   };
 };
@@ -22,7 +21,6 @@ export type FetchResumeByIdentifierParams = {
 export type FetchResumeByShortIdParams = {
   shortId: string;
   options?: {
-    withHost?: boolean;
     secretKey?: string;
   };
 };
@@ -60,25 +58,20 @@ export type DeleteResumeParams = {
 
 export const fetchResumes = () => axios.get<Resume[]>('/resume').then((res) => res.data);
 
-export const fetchResumeByShortId = async ({
-  shortId,
-  options = { secretKey: '', withHost: false },
-}: FetchResumeByShortIdParams) => {
-  const hostname = options.withHost ? `${process.env.SERVER_URL}/api` : '';
+export const fetchResumeByShortId = async ({ shortId, options = { secretKey: '' } }: FetchResumeByShortIdParams) => {
   const requestOptions = isEmpty(options.secretKey) ? {} : { params: { secretKey: options.secretKey } };
 
-  return axios.get<Resume>(`${hostname}/resume/short/${shortId}`, requestOptions).then((res) => res.data);
+  return axios.get<Resume>(`/resume/short/${shortId}`, requestOptions).then((res) => res.data);
 };
 
 export const fetchResumeByIdentifier = async ({
   username,
   slug,
-  options = { secretKey: '', withHost: false },
+  options = { secretKey: '' },
 }: FetchResumeByIdentifierParams) => {
-  const hostname = options.withHost ? `${process.env.SERVER_URL}/api` : '';
   const requestOptions = isEmpty(options.secretKey) ? {} : { params: { secretKey: options.secretKey } };
 
-  return axios.get<Resume>(`${hostname}/resume/${username}/${slug}`, requestOptions).then((res) => res.data);
+  return axios.get<Resume>(`/resume/${username}/${slug}`, requestOptions).then((res) => res.data);
 };
 
 export const createResume = (createResumeParams: CreateResumeParams) =>

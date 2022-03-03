@@ -13,11 +13,11 @@ export type ServerError = {
 };
 
 const axios = _axios.create({
-  baseURL: '/api',
+  baseURL: `${process.env.NEXT_PUBLIC_SERVER_URL}/api`,
 });
 
 export const uninterceptedAxios = _axios.create({
-  baseURL: '/api',
+  baseURL: `${process.env.NEXT_PUBLIC_SERVER_URL}/api`,
 });
 
 axios.interceptors.request.use((config) => {

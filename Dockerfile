@@ -4,11 +4,7 @@ WORKDIR /app
 
 COPY ./package*.json .
 
-RUN npm config set unsafe-perm true
-
 RUN npm ci
-
-RUN npm install sharp --ignore-scripts=false
 
 COPY . .
 

@@ -8,12 +8,12 @@ import isEmpty from 'lodash/isEmpty';
 import { GetServerSideProps, NextPage } from 'next';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import i18nConfig from 'next-i18next.config';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect } from 'react';
 import toast from 'react-hot-toast';
 import { useMutation, useQuery } from 'react-query';
 
+import i18nConfig from '@/i18n/index';
 import { ServerError } from '@/services/axios';
 import { printResumeAsPdf, PrintResumeAsPdfParams } from '@/services/printer';
 import { fetchResumeByShortId } from '@/services/resume';
@@ -36,7 +36,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ query, loc
   const { shortId } = query as QueryParams;
 
   try {
-    const resume = await fetchResumeByShortId({ shortId, options: { withHost: true } });
+    const resume = await fetchResumeByShortId({ shortId });
 
     return { props: { shortId, resume, ...(await serverSideTranslations(locale, ['common'], i18nConfig)) } };
   } catch {
