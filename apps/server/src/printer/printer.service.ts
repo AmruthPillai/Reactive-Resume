@@ -5,7 +5,7 @@ import { mkdir, unlink, writeFile } from 'fs/promises';
 import { nanoid } from 'nanoid';
 import { join } from 'path';
 import { PDFDocument } from 'pdf-lib';
-import { Browser, chromium } from 'playwright';
+import { Browser, chromium } from 'playwright-chromium';
 
 export const DELETION_TIME = 10 * 1000; // 10 seconds
 
