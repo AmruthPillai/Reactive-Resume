@@ -15,10 +15,15 @@
     "start": "concurrently --kill-others \"npm run start:server\" \"npm run start:client\"",
     "build": "nx run-many --target=build --all --prod",
     "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,json}\"",
-    "prepare": "husky install",
-    "commit": "changeset"
+    "precommit": "changeset && cz",
+    "prepare": "husky install"
   },
   "private": true,
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "dependencies": {
     "@date-io/dayjs": "^2.13.1",
     "@emotion/css": "^11.7.1",
@@ -141,8 +146,10 @@
     "autoprefixer": "^10.4.2",
     "babel-jest": "27.5.1",
     "babel-loader": "^8.2.3",
+    "commitizen": "^4.2.4",
     "core-js": "^3.21.1",
     "csstype": "^3.0.11",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "~8.10.0",
     "eslint-config-next": "12.1.0",
     "eslint-config-prettier": "8.4.0",
