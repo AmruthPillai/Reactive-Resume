@@ -15,7 +15,7 @@
     "start": "concurrently --kill-others \"npm run start:server\" \"npm run start:client\"",
     "build": "nx run-many --target=build --all --prod",
     "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,json}\"",
-    "precommit": "changeset && cz",
+    "commit": "changeset && cz",
     "prepare": "husky install"
   },
   "private": true,
