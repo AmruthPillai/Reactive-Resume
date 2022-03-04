@@ -6,4 +6,5 @@ export default registerAs('postgres', () => ({
   username: process.env.POSTGRES_USERNAME,
   password: process.env.POSTGRES_PASSWORD,
   database: process.env.POSTGRES_DATABASE,
+  certificate: process.env.CA_CERT,
 }));
