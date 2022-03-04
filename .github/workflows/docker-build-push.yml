@@ -5,10 +5,8 @@ on:
     branches: [v3]
 
 jobs:
-  build:
-    name: Build Image and Push to Docker Hub
+  docker:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v2
@@ -23,7 +21,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: amruthpillai/reactive-resume
+          images: ${{ secrets.DOCKER_USERNAME }}/reactive-resume
 
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc

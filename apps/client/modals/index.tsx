@@ -38,7 +38,7 @@ const ModalWrapper: React.FC = () => {
 
     if (!modal) return;
 
-    dispatch(setModalState({ modal, state: { open: true, payload: rest } }));
+    dispatch(setModalState({ modal, state: { open: true, payload: { item: rest } } }));
   }, [router.query, dispatch]);
 
   return (

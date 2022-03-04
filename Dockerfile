@@ -6,13 +6,13 @@ WORKDIR /app
 
 COPY .npmrc package.json pnpm-lock.yaml ./
 
-RUN pnpm install --ignore-scripts --frozen-lockfile
+RUN pnpm install --frozen-lockfile
 
 COPY . .
 
-RUN pnpm run build
+RUN pnpm build
 
-FROM playwright/chromium
+FROM mcr.microsoft.com/playwright:focal AS production
 
 RUN curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm
 
@@ -22,7 +22,7 @@ COPY --from=builder /app/package.json .
 COPY --from=builder /app/pnpm-lock.yaml .
 COPY --from=builder /app/dist ./dist
 
-RUN pnpm install --ignore-scripts --frozen-lockfile --prod
+RUN pnpm install --frozen-lockfile --prod
 
 # Expose App
 EXPOSE 3000

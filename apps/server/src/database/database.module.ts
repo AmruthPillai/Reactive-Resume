@@ -19,8 +19,6 @@ import { User } from '@/users/entities/user.entity';
         database: configService.get<string>('postgres.database'),
         synchronize: true,
         entities: [User, Resume],
-        migrations: [__dirname + 'migrations'],
-        cli: { migrationsDir: __dirname + 'migrations' },
       }),
     }),
   ],

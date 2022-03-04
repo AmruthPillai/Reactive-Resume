@@ -15,7 +15,7 @@ export class MailService {
     this.transporter = createTransport(
       {
         host: this.configService.get<string>('mail.host'),
-        port: this.configService.get<number>('mail.host'),
+        port: this.configService.get<number>('mail.port'),
         auth: {
           user: this.configService.get<string>('mail.username'),
           pass: this.configService.get<string>('mail.password'),
@@ -28,8 +28,9 @@ export class MailService {
   }
 
   async sendForgotPasswordEmail(user: User, resetToken: string) {
-    const url = `http://localhost:3000?modal=auth.reset&resetToken=${resetToken}`;
-    const templateSource = readFileSync(join(__dirname, 'templates/forgot-password.hbs'), 'utf-8');
+    const appUrl = this.configService.get<string>('app.url');
+    const url = `${appUrl}?modal=auth.reset&resetToken=${resetToken}`;
+    const templateSource = readFileSync(join(__dirname, 'assets/templates/forgot-password.hbs'), 'utf-8');
     const template = compile(templateSource);
     const html = template({ name: user.name, url });
 

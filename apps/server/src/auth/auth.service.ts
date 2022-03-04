@@ -72,7 +72,7 @@ export class AuthService {
   }
 
   forgotPassword(email: string) {
-    this.usersService.generateResetToken(email);
+    return this.usersService.generateResetToken(email);
   }
 
   async resetPassword(resetPasswordDto: ResetPasswordDto) {

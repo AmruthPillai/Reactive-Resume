@@ -13,13 +13,15 @@ const validationSchema = Joi.object({
   TZ: Joi.string().default('UTC'),
   PORT: Joi.number().default(3100),
   SECRET_KEY: Joi.string().required(),
+  NODE_ENV: Joi.string().valid('development', 'production').default('development'),
+
+  // URLs
   APP_URL: Joi.string().default('http://localhost:3000'),
   SERVER_URL: Joi.string().default('http://localhost:3100'),
-  NODE_ENV: Joi.string().valid('development', 'production').default('development'),
 
   // Database
   POSTGRES_HOST: Joi.string().required(),
-  POSTGRES_PORT: Joi.string().default(5432),
+  POSTGRES_PORT: Joi.number().default(5432),
   POSTGRES_USERNAME: Joi.string().required(),
   POSTGRES_PASSWORD: Joi.string().required(),
   POSTGRES_DATABASE: Joi.string().required(),
@@ -33,7 +35,7 @@ const validationSchema = Joi.object({
 
   // Mail
   MAIL_HOST: Joi.string().allow(''),
-  MAIL_PORT: Joi.string().allow(''),
+  MAIL_PORT: Joi.number().default(465),
   MAIL_USERNAME: Joi.string().allow(''),
   MAIL_PASSWORD: Joi.string().allow(''),
 });
