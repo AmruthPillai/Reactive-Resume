@@ -25,6 +25,7 @@ const validationSchema = Joi.object({
   POSTGRES_USERNAME: Joi.string().required(),
   POSTGRES_PASSWORD: Joi.string().required(),
   POSTGRES_DATABASE: Joi.string().required(),
+  POSTGRES_SSL_CERT: Joi.string().allow(''),
 
   // Auth
   JWT_SECRET: Joi.string().required(),
