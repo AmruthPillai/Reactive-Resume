@@ -28,6 +28,12 @@ You have complete control over what goes into your resume, how it looks, what co
 - Tailor-made Backend and Database, isolated from Google, Amazon etc.
 - **Oh, and did I mention that it's free?**
 
+## Docker
+
+```
+docker run -d -p 3000:3000 -p 3100:3100 --env-file .env amruthpillai/reactive-resume:v3
+```
+
 ## Build from Source
 
 1. Clone the repository locally, or use GitHub Codespaces or CodeSandbox

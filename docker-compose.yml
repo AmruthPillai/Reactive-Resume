@@ -11,8 +11,23 @@ services:
       - ./scripts/database/initialize.sql:/docker-entrypoint-initdb.d/initialize.sql
       - pgdata:/var/lib/postgresql/data
 
+  # Development
+  # app:
+  #   build: .
+  #   container_name: app
+  #   depends_on:
+  #     - postgres
+  #   ports:
+  #     - '3000:3000'
+  #     - '3100:3100'
+  #   env_file: .env
+  #   environment:
+  #     NODE_ENV: development
+  #     POSTGRES_HOST: postgres
+
+  # Production
   app:
-    build: .
+    image: amruthpillai/reactive-resume
     container_name: app
     depends_on:
       - postgres

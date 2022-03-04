@@ -4,7 +4,7 @@ export default registerAs('app', () => ({
   timezone: process.env.TZ,
   environment: process.env.NODE_ENV,
   secretKey: process.env.SECRET_KEY,
-  port: parseInt(process.env.PORT, 10) || 3100,
+  port: parseInt(process.env.SERVER_PORT, 10) || 3100,
   url: process.env.APP_URL || 'http://localhost:3000',
   serverUrl: process.env.SERVER_URL || 'http://localhost:3100',
 }));
