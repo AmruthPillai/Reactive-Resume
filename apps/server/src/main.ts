@@ -27,10 +27,12 @@ const bootstrap = async () => {
   app.setViewEngine('hbs');
 
   const configService = app.get(ConfigService);
+  const serverUrl = configService.get<number>('app.serverUrl');
   const port = configService.get<number>('app.port');
 
   await app.listen(port);
-  Logger.log(`🚀 Server is running on: http://localhost:${port}/${globalPrefix}`);
+
+  Logger.log(`🚀 Server is running on: ${serverUrl}/${globalPrefix}`);
 };
 
 bootstrap();

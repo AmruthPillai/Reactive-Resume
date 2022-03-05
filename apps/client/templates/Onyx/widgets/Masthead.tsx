@@ -1,6 +1,5 @@
 import { Email, Phone, Public, Room } from '@mui/icons-material';
 import isEmpty from 'lodash/isEmpty';
-import Image from 'next/image';
 
 import { useAppSelector } from '@/store/hooks';
 import DataDisplay from '@/templates/shared/DataDisplay';
@@ -15,12 +14,11 @@ const Masthead: React.FC = () => {
   return (
     <div className="flex items-center gap-4">
       {photo.visible && !isEmpty(photo.url) && (
-        <Image
+        <img
           alt={name}
           src={photo.url}
           width={photo.filters.size}
           height={photo.filters.size}
-          objectFit="cover"
           className={getPhotoClassNames(photo.filters)}
         />
       )}

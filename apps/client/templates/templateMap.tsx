@@ -18,37 +18,37 @@ const templateMap: Record<string, TemplateMeta> = {
   kakuna: {
     id: 'kakuna',
     name: 'Kakuna',
-    preview: require('./Kakuna/preview.jpg'),
+    preview: '/images/templates/kakuna.jpg',
     component: Kakuna,
   },
   onyx: {
     id: 'onyx',
     name: 'Onyx',
-    preview: require('./Onyx/preview.jpg'),
+    preview: '/images/templates/onyx.jpg',
     component: Onyx,
   },
   pikachu: {
     id: 'pikachu',
     name: 'Pikachu',
-    preview: require('./Pikachu/preview.jpg'),
+    preview: '/images/templates/pikachu.jpg',
     component: Pikachu,
   },
   gengar: {
     id: 'gengar',
     name: 'Gengar',
-    preview: require('./Gengar/preview.jpg'),
+    preview: '/images/templates/gengar.jpg',
     component: Gengar,
   },
   castform: {
     id: 'castform',
     name: 'Castform',
-    preview: require('./Castform/preview.jpg'),
+    preview: '/images/templates/castform.jpg',
     component: Castform,
   },
   glalie: {
     id: 'glalie',
     name: 'Glalie',
-    preview: require('./Glalie/preview.jpg'),
+    preview: '/images/templates/glalie.jpg',
     component: Glalie,
   },
 };

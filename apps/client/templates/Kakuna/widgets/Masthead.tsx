@@ -1,6 +1,5 @@
 import { Email, Phone, Public, Room } from '@mui/icons-material';
 import isEmpty from 'lodash/isEmpty';
-import Image from 'next/image';
 import React from 'react';
 
 import { useAppSelector } from '@/store/hooks';
@@ -14,22 +13,25 @@ const Masthead = () => {
   );
 
   return (
-    <div className="mb-4 border-b pb-4 text-center">
-      {photo.visible && !isEmpty(photo.url) && (
-        <Image
-          alt={name}
-          src={photo.url}
-          width={photo.filters.size}
-          height={photo.filters.size}
-          objectFit="cover"
-          className={getPhotoClassNames(photo.filters)}
-        />
-      )}
+    <div className="grid gap-3 justify-center mb-4 border-b pb-4 text-center">
+      <div className="mx-auto">
+        {photo.visible && !isEmpty(photo.url) && (
+          <img
+            alt={name}
+            src={photo.url}
+            width={photo.filters.size}
+            height={photo.filters.size}
+            className={getPhotoClassNames(photo.filters)}
+          />
+        )}
+      </div>
 
-      <h1 className="mt-2 mb-1">{name}</h1>
-      <p className="opacity-75">{headline}</p>
+      <div>
+        <h1 className="mb-1">{name}</h1>
+        <p className="opacity-75">{headline}</p>
+      </div>
 
-      <div className="mt-4 flex flex-wrap justify-center gap-3">
+      <div className="flex flex-wrap justify-center gap-3">
         <DataDisplay icon={<Email />} link={`mailto:${email}`}>
           {email}
         </DataDisplay>

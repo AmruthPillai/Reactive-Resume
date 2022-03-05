@@ -1,7 +1,6 @@
 import { Email, Phone, Public, Room } from '@mui/icons-material';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
-import Image from 'next/image';
 
 import Markdown from '@/components/shared/Markdown';
 import { useAppSelector } from '@/store/hooks';
@@ -18,19 +17,18 @@ export const MastheadSidebar: React.FC = () => {
   return (
     <div className="col-span-2 grid justify-items-center gap-4">
       {photo.visible && !isEmpty(photo.url) && (
-        <Image
+        <img
           alt={name}
           src={photo.url}
-          objectFit="cover"
           width={photo.filters.size}
           height={photo.filters.size}
           className={getPhotoClassNames(photo.filters)}
         />
       )}
 
-      <div>
+      <div className="text-center">
         <h1>{name}</h1>
-        <p className="opacity-75">{headline}</p>
+        <p className="mt-1 opacity-75">{headline}</p>
       </div>
 
       <div className="flex flex-col gap-2 rounded border-2 p-4" style={{ borderColor: primaryColor }}>

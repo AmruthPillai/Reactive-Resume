@@ -90,7 +90,6 @@ specifiers:
   googleapis: ^95.0.0
   handlebars: ^4.7.7
   husky: ^7.0.4
-  i18next-http-backend: ^1.3.2
   jest: 27.5.1
   joi: ^17.6.0
   lodash: ^4.17.21
@@ -140,7 +139,7 @@ specifiers:
   ts-jest: ^27.1.3
   ts-node: ^10.6.0
   tslib: ^2.3.1
-  typeorm: ^0.2.44
+  typeorm: ^0.2.45
   typescript: <4.6.0
   uuid: ^8.3.2
   webfontloader: ^1.6.28
@@ -167,7 +166,7 @@ dependencies:
   '@nestjs/schedule': 1.0.2_1ce925e2290a1cea9e3700e8a60baeb5
   '@nestjs/schematics': 8.0.7_typescript@4.5.5
   '@nestjs/serve-static': 2.2.2_31e7036b193d6d3c9cadab18cbb4af84
-  '@nestjs/typeorm': 8.0.3_3917dd1d6231e97e428aeb9078dfff90
+  '@nestjs/typeorm': 8.0.3_a8e966c473b8cac7d0f44522ae3cdd56
   '@nrwl/next': 13.8.4_bb72e592f08d4a41355e886e2062b95a
   '@nrwl/tao': 13.8.4
   '@nrwl/workspace': 13.8.4_b055d0f33702adf7c462f4bf04e60212
@@ -185,7 +184,6 @@ dependencies:
   downloadjs: 1.4.7
   googleapis: 95.0.0
   handlebars: 4.7.7
-  i18next-http-backend: 1.3.2
   joi: 17.6.0
   lodash: 4.17.21
   md5-hex: 4.0.0
@@ -225,7 +223,7 @@ dependencies:
   sharp: 0.30.2
   tailwindcss: 3.0.23_4b9e11f8e85900587b5e2272c5d4c20c
   tslib: 2.3.1
-  typeorm: 0.2.44_pg@8.7.3
+  typeorm: 0.2.45_pg@8.7.3
   uuid: 8.3.2
   webfontloader: 1.6.28
 
@@ -2765,7 +2763,7 @@ packages:
       tslib: 2.3.1
     dev: true
 
-  /@nestjs/typeorm/8.0.3_3917dd1d6231e97e428aeb9078dfff90:
+  /@nestjs/typeorm/8.0.3_a8e966c473b8cac7d0f44522ae3cdd56:
     resolution: {integrity: sha512-tf9rTXP6LeFInkwd+tktQhtLRsKp4RRYImprqT8gcHcJDx+xMP1IygnXELOKwF5vo2/mnhrGtBlRQ/iiS6170g==}
     peerDependencies:
       '@nestjs/common': ^8.0.0
@@ -2778,7 +2776,7 @@ packages:
       '@nestjs/core': 8.4.0_2e10c1a16efb48b2968dca34c1adcfc4
       reflect-metadata: 0.1.13
       rxjs: 7.5.4
-      typeorm: 0.2.44_pg@8.7.3
+      typeorm: 0.2.45_pg@8.7.3
       uuid: 8.3.2
     dev: false
 
@@ -6362,14 +6360,6 @@ packages:
       moment-timezone: 0.5.34
     dev: false
 
-  /cross-fetch/3.1.5:
-    resolution: {integrity: sha512-lvb1SBsI0Z7GDwmuid+mU3kWVBwTVUbe7S0H52yaaAdQOXq2YktTCZdlAcNKFzE6QtRz0snpw9bNiPeOIkkQvw==}
-    dependencies:
-      node-fetch: 2.6.7
-    transitivePeerDependencies:
-      - encoding
-    dev: false
-
   /cross-spawn/5.1.0:
     resolution: {integrity: sha1-6L0O/uWPz/b4+UUQoKVUu/ojVEk=}
     dependencies:
@@ -8349,14 +8339,6 @@ packages:
 
   /i18next-fs-backend/1.1.4:
     resolution: {integrity: sha512-/MfAGMP0jHonV966uFf9PkWWuDjPYLIcsipnSO3NxpNtAgRUKLTwvm85fEmsF6hGeu0zbZiCQ3W74jwO6K9uXA==}
-    dev: false
-
-  /i18next-http-backend/1.3.2:
-    resolution: {integrity: sha512-SfcoUmsSWnc2LYsDsCq5TCg18cxJXvXymX9N37V+qqMKQY8Gf0rWkjOnRd20sMK633Dq4NF9tvqPbOiFJ49Kbw==}
-    dependencies:
-      cross-fetch: 3.1.5
-    transitivePeerDependencies:
-      - encoding
     dev: false
 
   /i18next/21.6.13:
@@ -13752,8 +13734,8 @@ packages:
     resolution: {integrity: sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=}
     dev: false
 
-  /typeorm/0.2.44_pg@8.7.3:
-    resolution: {integrity: sha512-yFyb9Ts73vGaS/O06TvLpzvT5U/ngO31GeciNc0eoH7P1QcG8kVZdOy9FHJqkTeDmIljMRgWjbYUoMw53ZY7Xw==}
+  /typeorm/0.2.45_pg@8.7.3:
+    resolution: {integrity: sha512-c0rCO8VMJ3ER7JQ73xfk0zDnVv0WDjpsP6Q1m6CVKul7DB9iVdWLRjPzc8v2eaeBuomsbZ2+gTaYr8k1gm3bYA==}
     hasBin: true
     peerDependencies:
       '@sap/hana-client': ^2.11.14

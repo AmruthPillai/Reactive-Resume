@@ -6,7 +6,7 @@ const sampleData: Partial<Resume> = {
     email: 'alexis.jones@gmail.com',
     phone: '+1 800 1200 3820',
     photo: {
-      url: `${process.env.APP_URL}/images/sample-photo.jpg`,
+      url: `/images/sample-photo.jpg`,
       filters: {
         size: 128,
         shape: 'rounded-square',

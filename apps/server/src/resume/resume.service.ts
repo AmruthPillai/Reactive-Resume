@@ -31,10 +31,9 @@ export class ResumeService {
   async create(createResumeDto: CreateResumeDto, userId: number) {
     try {
       const user = await this.usersService.findById(userId);
-      const serverUrl = this.configService.get<string>('app.serverUrl');
 
       const shortId = nanoid(SHORT_ID_LENGTH);
-      const image = `${serverUrl}/covers/${sample(covers)}`;
+      const image = `/images/covers/${sample(covers)}`;
 
       const resume = this.resumeRepository.create({
         ...defaultState,
@@ -67,10 +66,9 @@ export class ResumeService {
   async import(importResumeDto: Partial<ResumeSchema>, userId: number) {
     try {
       const user = await this.usersService.findById(userId);
-      const serverUrl = this.configService.get<string>('app.serverUrl');
 
       const shortId = nanoid(SHORT_ID_LENGTH);
-      const image = `${serverUrl}/covers/${sample(covers)}`;
+      const image = `/images/covers/${sample(covers)}`;
 
       const resume = this.resumeRepository.create({
         ...defaultState,
@@ -168,10 +166,9 @@ export class ResumeService {
   async duplicate(id: number, userId: number) {
     try {
       const originalResume = await this.findOne(id, userId);
-      const serverUrl = this.configService.get<string>('app.serverUrl');
 
       const shortId = nanoid(SHORT_ID_LENGTH);
-      const image = `${serverUrl}/covers/${sample(covers)}`;
+      const image = `/images/covers/${sample(covers)}`;
 
       const duplicatedResume: Partial<Resume> = {
         ...pick(originalResume, ['name', 'slug', 'basics', 'metadata', 'sections', 'public']),

@@ -54,7 +54,7 @@ const LoginModal: React.FC = () => {
   );
 
   const { signIn } = useGoogleLogin({
-    clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+    clientId: process.env.googleClientId,
     onSuccess: async (response: GoogleLoginResponse) => {
       await loginWithGoogleMutation({ accessToken: response.accessToken });
 

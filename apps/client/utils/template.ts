@@ -51,6 +51,7 @@ export const parseListItemPath = (item: ListItem, path: string | string[], separ
 
 export const getPhotoClassNames = (filters: PhotoFilters) =>
   clsx({
+    'object-cover': true,
     grayscale: filters.grayscale,
     '!border-[4px] !border-solid': filters.border,
     'rounded-lg': filters.shape === 'rounded-square',

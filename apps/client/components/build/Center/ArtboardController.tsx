@@ -9,7 +9,7 @@ import {
   ZoomIn,
   ZoomOut,
 } from '@mui/icons-material';
-import { ButtonBase, Divider, Tooltip } from '@mui/material';
+import { ButtonBase, Divider, Tooltip, useMediaQuery, useTheme } from '@mui/material';
 import clsx from 'clsx';
 import { get } from 'lodash';
 import { useTranslation } from 'next-i18next';
@@ -28,9 +28,11 @@ import styles from './ArtboardController.module.scss';
 const ArtboardController: React.FC<ReactZoomPanPinchRef> = ({ zoomIn, zoomOut, centerView }) => {
   const { t } = useTranslation();
 
+  const theme = useTheme();
   const dispatch = useAppDispatch();
 
   const resume = useAppSelector((state) => state.resume);
+  const isDesktop = useMediaQuery(theme.breakpoints.up('sm'));
   const { left, right } = useAppSelector((state) => state.build.sidebar);
   const orientation = useAppSelector((state) => state.build.page.orientation);
 
@@ -92,29 +94,33 @@ const ArtboardController: React.FC<ReactZoomPanPinchRef> = ({ zoomIn, zoomOut, c
 
         <Divider />
 
-        <Tooltip arrow placement="top" title={t('builder.controller.tooltip.toggle-orientation')}>
-          <ButtonBase onClick={handleTogglePageOrientation}>
-            {orientation === 'vertical' ? (
-              <AlignHorizontalCenter fontSize="medium" />
-            ) : (
-              <AlignVerticalCenter fontSize="medium" />
-            )}
-          </ButtonBase>
-        </Tooltip>
+        {isDesktop && (
+          <>
+            <Tooltip arrow placement="top" title={t('builder.controller.tooltip.toggle-orientation')}>
+              <ButtonBase onClick={handleTogglePageOrientation}>
+                {orientation === 'vertical' ? (
+                  <AlignHorizontalCenter fontSize="medium" />
+                ) : (
+                  <AlignVerticalCenter fontSize="medium" />
+                )}
+              </ButtonBase>
+            </Tooltip>
 
-        <Tooltip arrow placement="top" title={t('builder.controller.tooltip.toggle-page-break-line')}>
-          <ButtonBase onClick={handleTogglePageBreakLine}>
-            <InsertPageBreak fontSize="medium" />
-          </ButtonBase>
-        </Tooltip>
+            <Tooltip arrow placement="top" title={t('builder.controller.tooltip.toggle-page-break-line')}>
+              <ButtonBase onClick={handleTogglePageBreakLine}>
+                <InsertPageBreak fontSize="medium" />
+              </ButtonBase>
+            </Tooltip>
 
-        <Tooltip arrow placement="top" title={t('builder.controller.tooltip.toggle-sidebars')}>
-          <ButtonBase onClick={handleToggleSidebar}>
-            <ViewSidebar fontSize="medium" />
-          </ButtonBase>
-        </Tooltip>
+            <Tooltip arrow placement="top" title={t('builder.controller.tooltip.toggle-sidebars')}>
+              <ButtonBase onClick={handleToggleSidebar}>
+                <ViewSidebar fontSize="medium" />
+              </ButtonBase>
+            </Tooltip>
 
-        <Divider />
+            <Divider />
+          </>
+        )}
 
         <Tooltip arrow placement="top" title={t('builder.controller.tooltip.copy-link')}>
           <ButtonBase onClick={handleCopyLink}>

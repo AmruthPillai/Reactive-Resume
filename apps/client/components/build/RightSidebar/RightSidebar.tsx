@@ -72,7 +72,7 @@ const RightSidebar = () => {
           <footer className={styles.footer}>
             <Footer />
 
-            <div>v{process.env.NEXT_PUBLIC_APP_VERSION}</div>
+            <div>v{process.env.appVersion}</div>
           </footer>
         </main>
       </div>

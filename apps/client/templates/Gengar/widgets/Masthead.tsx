@@ -5,7 +5,6 @@ import { Theme } from '@reactive-resume/schema';
 import clsx from 'clsx';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
-import Image from 'next/image';
 import { useMemo } from 'react';
 
 import Markdown from '@/components/shared/Markdown';
@@ -26,10 +25,9 @@ export const MastheadSidebar: React.FC = () => {
   return (
     <div className="col-span-2 grid justify-items-start gap-3 p-4">
       {photo.visible && !isEmpty(photo.url) && (
-        <Image
+        <img
           alt={name}
           src={photo.url}
-          objectFit="cover"
           width={photo.filters.size}
           height={photo.filters.size}
           className={getPhotoClassNames(photo.filters)}

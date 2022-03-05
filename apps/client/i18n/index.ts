@@ -1,18 +1,15 @@
-import HttpBackend from 'i18next-http-backend';
+import { UserConfig } from 'next-i18next';
+import { join } from 'path';
 
-const i18nConfig = {
+const i18nConfig: UserConfig = {
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
   },
   debug: false,
   nsSeparator: '.',
+  localePath: join(__dirname, '../../../public/locales'),
   ns: ['common', 'modals', 'landing', 'dashboard', 'builder'],
-  serializeConfig: false,
-  use: [HttpBackend],
-  backend: {
-    loadPath: `${process.env.NEXT_PUBLIC_APP_URL}/locales/{{lng}}/{{ns}}.json`,
-  },
 };
 
 export default i18nConfig;

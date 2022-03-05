@@ -26,18 +26,18 @@ services:
   #     POSTGRES_HOST: postgres
 
   # Production
-  app:
-    image: amruthpillai/reactive-resume
-    container_name: app
-    depends_on:
-      - postgres
-    ports:
-      - '3000:3000'
-      - '3100:3100'
-    env_file: .env
-    environment:
-      NODE_ENV: production
-      POSTGRES_HOST: postgres
+  # app:
+  #   image: amruthpillai/reactive-resume
+  #   container_name: app
+  #   depends_on:
+  #     - postgres
+  #   ports:
+  #     - '3000:3000'
+  #     - '3100:3100'
+  #   env_file: .env
+  #   environment:
+  #     NODE_ENV: production
+  #     POSTGRES_HOST: postgres
 
 volumes:
   pgdata:

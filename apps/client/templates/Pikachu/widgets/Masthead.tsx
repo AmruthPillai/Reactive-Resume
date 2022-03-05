@@ -2,7 +2,6 @@ import { Email, Phone, Public, Room } from '@mui/icons-material';
 import { Theme } from '@reactive-resume/schema';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
-import Image from 'next/image';
 import { useMemo } from 'react';
 
 import Markdown from '@/components/shared/Markdown';
@@ -19,13 +18,7 @@ export const MastheadSidebar: React.FC = () => {
     <div className="col-span-2 grid justify-items-center gap-4">
       {photo.visible && !isEmpty(photo.url) && (
         <div className="relative aspect-square h-full w-full">
-          <Image
-            alt={name}
-            layout="fill"
-            src={photo.url}
-            objectFit="cover"
-            className={getPhotoClassNames(photo.filters)}
-          />
+          <img alt={name} src={photo.url} className={getPhotoClassNames(photo.filters)} />
         </div>
       )}
 

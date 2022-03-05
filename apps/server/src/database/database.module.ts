@@ -19,9 +19,6 @@ import { User } from '@/users/entities/user.entity';
         database: configService.get<string>('postgres.database'),
         synchronize: true,
         entities: [User, Resume],
-        ssl: {
-          ca: configService.get<string>('postgres.certificate'),
-        },
       }),
     }),
   ],
