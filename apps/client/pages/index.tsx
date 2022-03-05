@@ -136,7 +136,11 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <Footer className="font-semibold leading-5 opacity-50" />
+      <footer>
+        <Footer className="font-semibold leading-5 opacity-50" />
+
+        <div>v{process.env.appVersion}</div>
+      </footer>
     </main>
   );
 };

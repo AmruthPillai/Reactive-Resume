@@ -6,6 +6,8 @@ WORKDIR /app
 
 COPY .npmrc package.json pnpm-lock.yaml ./
 
+ENV HUSKY 0
+
 RUN pnpm install --frozen-lockfile
 
 COPY . .
@@ -21,6 +23,8 @@ WORKDIR /app
 COPY --from=builder /app/package.json .
 COPY --from=builder /app/pnpm-lock.yaml .
 COPY --from=builder /app/dist ./dist
+
+ENV HUSKY 0
 
 RUN pnpm install --frozen-lockfile --prod
 
