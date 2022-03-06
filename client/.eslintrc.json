@@ -1,0 +1,7 @@
+{
+  "extends": ["../.eslintrc.json", "next/core-web-vitals"],
+  "ignorePatterns": [".next"],
+  "rules": {
+    "@next/next/no-img-element": "off"
+  }
+}
