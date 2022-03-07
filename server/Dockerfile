@@ -35,7 +35,7 @@ RUN apt-get update \
   && apt-get install -y curl g++ make \
   && curl -sL https://deb.nodesource.com/setup_16.x | bash \
   && apt-get install -y nodejs \
-  && npx playwright install-deps chromium
+  && PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npx playwright install-deps chromium
 
 RUN curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm
 
