@@ -16,14 +16,14 @@
     "dev:schema": "pnpm -F schema dev",
     "dev:server": "pnpm -F server start:dev",
     "dev:client": "pnpm -F client dev",
-    "dev": "env-cmd concurrently --kill-others \"pnpm run dev:*\"",
+    "dev": "env-cmd --silent concurrently --kill-others \"pnpm run dev:*\"",
     "build:schema": "pnpm -F schema build",
     "build:server": "pnpm -F server build",
     "build:client": "pnpm -F client build",
-    "build": "env-cmd concurrently \"pnpm run build:*\"",
+    "build": "env-cmd --silent concurrently \"pnpm run build:*\"",
     "start:server": "pnpm -F server start:prod",
-    "start:client": "env-cmd pnpm -F client start",
-    "start": "env-cmd concurrently --kill-others \"pnpm run start:*\""
+    "start:client": "pnpm -F client start",
+    "start": "env-cmd --silent concurrently --kill-others \"pnpm run start:*\""
   },
   "dependencies": {
     "concurrently": "^7.0.0",

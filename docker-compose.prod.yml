@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  server:
+    image: amruthpillai/reactive-resume:server-latest
+    container_name: server
+    env_file: .env
+    ports:
+      - 3100:3100
+    depends_on:
+      - postgres
+
+  client:
+    image: amruthpillai/reactive-resume:client-latest
+    container_name: client
+    env_file: .env
+    ports:
+      - 3000:3000
+    depends_on:
+      - server
+
+volumes:
+  pgdata:
