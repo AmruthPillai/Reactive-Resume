@@ -24,7 +24,7 @@ COPY --from=dependencies /app/node_modules ./node_modules
 COPY --from=dependencies /app/schema/node_modules ./schema/node_modules
 COPY --from=dependencies /app/client/node_modules ./client/node_modules
 
-RUN cp .env ./client/.env
+RUN [[ -e .env ]] && cp .env ./client/.env
 
 RUN pnpm run build:schema
 RUN pnpm run build:client
