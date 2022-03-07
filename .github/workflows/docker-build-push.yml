@@ -2,7 +2,8 @@ name: Build and Push to Docker Hub
 
 on:
   push:
-    branches: v3
+    branches:
+      - 'v3'
 
 jobs:
   docker:
@@ -23,7 +24,7 @@ jobs:
         with:
           context: .
           push: true
-          file: {{context}}/server/Dockerfile
+          file: server/Dockerfile
           tags: amruthpillai/reactive-resume:server-latest
 
       - name: Build and Push Client Docker Image
@@ -31,5 +32,5 @@ jobs:
         with:
           context: .
           push: true
-          file: {{context}}/client/Dockerfile
+          file: client/Dockerfile
           tags: amruthpillai/reactive-resume:client-latest
