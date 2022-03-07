@@ -1,4 +1,4 @@
-name: Build and Push to Docker Hub
+name: Build and Push Docker Image
 
 on:
   push:
@@ -6,42 +6,25 @@ on:
       - 'v3'
 
 jobs:
-  docker:
+  docker_client:
+    name: Docker (Client)
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v3.0.0
 
-      - name: Get Short Commit SHA
+      - id: slug
+        name: Get Short Commit SHA
         run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
 
-      - name: Login to Docker Hub
+      - name: Login to Docker
         uses: docker/login-action@v1.14.1
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v1.14.1
-        with:
-          registry: ghcr.io
-          username: $GITHUB_REPOSITORY_OWNER
-          password: ${{ secrets.GH_TOKEN }}
-
-      - name: Build and Push Server Docker Image
-        uses: docker/build-push-action@v2.9.0
-        with:
-          context: .
-          push: true
-          file: server/Dockerfile
-          tags: |
-            amruthpillai/reactive-resume:server-latest
-            amruthpillai/reactive-resume:server-${{ steps.slug.outputs.sha8 }}
-            ghcr.io/amruthpillai/reactive-resume:server-latest
-            ghcr.io/amruthpillai/reactive-resume:server-${{ steps.slug.outputs.sha8 }}
-
-      - name: Build and Push Client Docker Image
+      - name: Build and Push Client Image
         uses: docker/build-push-action@v2.9.0
         with:
           context: .
@@ -50,5 +33,89 @@ jobs:
           tags: |
             amruthpillai/reactive-resume:client-latest
             amruthpillai/reactive-resume:client-${{ steps.slug.outputs.sha8 }}
+
+  docker_server:
+    name: Docker (Server)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3.0.0
+
+      - id: slug
+        name: Get Short Commit SHA
+        run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
+
+      - name: Login to Docker
+        uses: docker/login-action@v1.14.1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build and Push Server Image
+        uses: docker/build-push-action@v2.9.0
+        with:
+          context: .
+          push: true
+          file: server/Dockerfile
+          tags: |
+            amruthpillai/reactive-resume:server-latest
+            amruthpillai/reactive-resume:server-${{ steps.slug.outputs.sha8 }}
+
+  github_client:
+    name: GitHub (Client)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3.0.0
+
+      - id: slug
+        name: Get Short Commit SHA
+        run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1.14.1
+        with:
+          registry: ghcr.io
+          username: $GITHUB_REPOSITORY_OWNER
+          password: ${{ secrets.GH_TOKEN }}
+
+      - name: Build and Push Client Image
+        uses: docker/build-push-action@v2.9.0
+        with:
+          context: .
+          push: true
+          file: client/Dockerfile
+          tags: |
             ghcr.io/amruthpillai/reactive-resume:client-latest
             ghcr.io/amruthpillai/reactive-resume:client-${{ steps.slug.outputs.sha8 }}
+
+  github_server:
+    name: GitHub (Server)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3.0.0
+
+      - id: slug
+        name: Get Short Commit SHA
+        run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1.14.1
+        with:
+          registry: ghcr.io
+          username: $GITHUB_REPOSITORY_OWNER
+          password: ${{ secrets.GH_TOKEN }}
+
+      - name: Build and Push Server Image
+        uses: docker/build-push-action@v2.9.0
+        with:
+          context: .
+          push: true
+          file: server/Dockerfile
+          tags: |
+            ghcr.io/amruthpillai/reactive-resume:server-latest
+            ghcr.io/amruthpillai/reactive-resume:server-${{ steps.slug.outputs.sha8 }}
