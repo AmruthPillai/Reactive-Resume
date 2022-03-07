@@ -1,3 +1,4 @@
+import env from '@beam-australia/react-env';
 import { joiResolver } from '@hookform/resolvers/joi';
 import { Google, Login, Visibility, VisibilityOff } from '@mui/icons-material';
 import { Button, IconButton, InputAdornment, TextField } from '@mui/material';
@@ -54,7 +55,7 @@ const LoginModal: React.FC = () => {
   );
 
   const { signIn } = useGoogleLogin({
-    clientId: process.env.googleClientId as string,
+    clientId: env('GOOGLE_CLIENT_ID'),
     onSuccess: async (response: GoogleLoginResponse | GoogleLoginResponseOffline) => {
       await loginWithGoogleMutation({ accessToken: (response as GoogleLoginResponse).accessToken });
 

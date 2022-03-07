@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule as NestConfigModule } from '@nestjs/config';
-import * as Joi from 'joi';
+import Joi from 'joi';
 
 import appConfig from './app.config';
 import authConfig from './auth.config';
@@ -16,8 +16,8 @@ const validationSchema = Joi.object({
   NODE_ENV: Joi.string().valid('development', 'production').default('development'),
 
   // URLs
-  APP_URL: Joi.string().default('http://localhost:3000'),
-  SERVER_URL: Joi.string().default('http://localhost:3100'),
+  PUBLIC_APP_URL: Joi.string().default('http://localhost:3000'),
+  PUBLIC_SERVER_URL: Joi.string().default('http://localhost:3100'),
 
   // Database
   POSTGRES_HOST: Joi.string().required(),
@@ -31,14 +31,16 @@ const validationSchema = Joi.object({
   JWT_SECRET: Joi.string().required(),
   JWT_EXPIRY_TIME: Joi.number().required(),
 
-  // Google
-  GOOGLE_API_KEY: Joi.string().allow(''),
-
   // Mail
   MAIL_HOST: Joi.string().allow(''),
   MAIL_PORT: Joi.number().default(465),
   MAIL_USERNAME: Joi.string().allow(''),
   MAIL_PASSWORD: Joi.string().allow(''),
+
+  // Google
+  GOOGLE_API_KEY: Joi.string().allow(''),
+  GOOGLE_CLIENT_SECRET: Joi.string().allow(''),
+  PUBLIC_GOOGLE_CLIENT_ID: Joi.string().allow(''),
 });
 
 @Module({

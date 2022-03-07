@@ -22,7 +22,7 @@
     "build:client": "pnpm -F client build",
     "build": "env-cmd concurrently \"pnpm run build:*\"",
     "start:server": "pnpm -F server start:prod",
-    "start:client": "pnpm -F client start",
+    "start:client": "env-cmd pnpm -F client start",
     "start": "env-cmd concurrently --kill-others \"pnpm run start:*\""
   },
   "dependencies": {

@@ -24,14 +24,18 @@ COPY --from=dependencies /app/node_modules ./node_modules
 COPY --from=dependencies /app/schema/node_modules ./schema/node_modules
 COPY --from=dependencies /app/server/node_modules ./server/node_modules
 
-RUN [[ -e .env ]] && cp .env ./server/.env
-
 RUN pnpm run build:schema
 RUN pnpm run build:server
 
-FROM mcr.microsoft.com/playwright:focal as production
+FROM ubuntu:focal as production
 
 WORKDIR /app
+
+RUN apt-get update \
+  && apt-get install -y curl g++ make \
+  && curl -sL https://deb.nodesource.com/setup_16.x | bash \
+  && apt-get install -y nodejs \
+  && npx playwright install-deps chromium
 
 RUN curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm
 

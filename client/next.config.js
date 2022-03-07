@@ -7,15 +7,12 @@ const nextConfig = {
 
   i18n,
 
-  images: {
-    domains: ['www.gravatar.com'],
-  },
-
   env: {
     appVersion: version,
-    appUrl: process.env.APP_URL,
-    serverUrl: process.env.SERVER_URL,
-    googleClientId: process.env.GOOGLE_CLIENT_ID,
+  },
+
+  images: {
+    domains: ['www.gravatar.com'],
   },
 
   // Hack to make Tailwind darkMode 'class' strategy with CSS Modules

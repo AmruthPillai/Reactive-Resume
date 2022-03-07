@@ -1,3 +1,4 @@
+import env from '@beam-australia/react-env';
 import _axios, { AxiosError } from 'axios';
 import Router from 'next/router';
 
@@ -13,11 +14,11 @@ export type ServerError = {
 };
 
 const axios = _axios.create({
-  baseURL: `${process.env.serverUrl}/api`,
+  baseURL: `${env('SERVER_URL')}/api`,
 });
 
 export const uninterceptedAxios = _axios.create({
-  baseURL: `${process.env.serverUrl}/api`,
+  baseURL: `${env('SERVER_URL')}/api`,
 });
 
 axios.interceptors.request.use((config) => {
