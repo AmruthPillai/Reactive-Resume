@@ -1,3 +1,4 @@
+const { version } = require('../package.json');
 const { i18n } = require('./next-i18next.config');
 
 /** @type {import('next').NextConfig} */
@@ -6,20 +7,15 @@ const nextConfig = {
 
   i18n,
 
-  env: {
-    appVersion: '3.0.0',
-    appUrl: process.env.APP_URL,
-    serverUrl: process.env.SERVER_URL,
-    googleClientId: process.env.GOOGLE_CLIENT_ID,
-  },
-
   images: {
     domains: ['www.gravatar.com'],
   },
 
-  experimental: {
-    externalDir: true,
-    outputStandalone: true,
+  env: {
+    appVersion: version,
+    appUrl: process.env.APP_URL,
+    serverUrl: process.env.SERVER_URL,
+    googleClientId: process.env.GOOGLE_CLIENT_ID,
   },
 
   // Hack to make Tailwind darkMode 'class' strategy with CSS Modules

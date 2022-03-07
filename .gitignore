@@ -1,16 +1,7 @@
-# Package Manager
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
-
-# Project Dependencies
-node_modules
-
 # Environment Variables
 .env
 .env.*
 !.env.example
+
+# Project Dependencies
+node_modules

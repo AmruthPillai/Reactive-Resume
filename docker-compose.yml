@@ -11,5 +11,29 @@ services:
       - ./scripts/database/initialize.sql:/docker-entrypoint-initdb.d/initialize.sql
       - pgdata:/var/lib/postgresql/data
 
+  server:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    container_name: server
+    env_file: .env
+    environment:
+      - POSTGRES_HOST=postgres
+    ports:
+      - 3100:3100
+    depends_on:
+      - postgres
+
+  client:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+    container_name: client
+    env_file: .env
+    ports:
+      - 3000:3000
+    depends_on:
+      - server
+
 volumes:
   pgdata:

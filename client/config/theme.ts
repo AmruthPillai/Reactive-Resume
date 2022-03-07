@@ -1,6 +1,4 @@
 import { createTheme } from '@mui/material';
-import { grey } from '@mui/material/colors';
-import { teal } from 'tailwindcss/colors';
 
 const theme = createTheme({
   typography: {
@@ -57,8 +55,8 @@ export const lightTheme = createTheme({
   ...theme,
   palette: {
     mode: 'light',
-    primary: { main: grey[800] },
-    secondary: { main: teal[600] },
+    primary: { main: '#404040' }, // neutral[700]
+    secondary: { main: '#0d9488' }, // teal[600]
   },
 });
 
@@ -66,7 +64,7 @@ export const darkTheme = createTheme({
   ...theme,
   palette: {
     mode: 'dark',
-    primary: { main: grey[100] },
-    secondary: { main: teal[400] },
+    primary: { main: '#f5f5f5' }, // neutral[100]
+    secondary: { main: '#2dd4bf' }, // teal[400]
   },
 });

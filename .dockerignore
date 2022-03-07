@@ -1,6 +1,18 @@
+# Build Artifacts
 dist
 .next
-Dockerfile
+
+# IDEs
+.vscode
+
+# Project Metadata
+README.md
+CHANGELOG.md
+
+# Project Dependencies
 node_modules
+
+# Docker
+Dockerfile
 .dockerignore
 docker-compose.yml

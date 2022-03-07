@@ -43,18 +43,16 @@ git clone https://github.com/AmruthPillai/Reactive-Resume.git
 cd Reactive-Resume
 ```
 
-2. I prefer to use `npm`, but you can use anything to install dependencies (`pnpm`/`yarn`)
+2. I prefer to use `pnpm`, but you can use anything to install dependencies (`npm`/`yarn`)
 
 ```
-npm install
+pnpm install
 ```
 
-3. Copy the .env.example files to .env in multiple locations and fill it with values according to your setup
+3. Copy the `.env.example` file to `.env` in the project root and fill it with values according to your setup. Everything except the mail server settings are required.
 
 ```
 cp .env.example .env
-cp apps/client/.env.example apps/client/.env
-cp apps/server/.env.example apps/server/.env
 ```
 
 4. Use Docker Compose to create a PostgreSQL instance and a `reactive_resume` database, or feel free to use your own and modify the variables used in `.env`
@@ -66,7 +64,7 @@ docker-compose up -d
 5. Run the project and start building!
 
 ```
-npm start
+pnpm dev
 ```
 
 ## Contributing

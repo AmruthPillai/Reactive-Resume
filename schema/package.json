@@ -5,6 +5,7 @@
   "typings": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "dev": "tsc -w",
     "lint": "eslint --fix --ext .ts ./src"
   },
   "devDependencies": {

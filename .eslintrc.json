@@ -1,8 +1,15 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
-  "extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
-  "plugins": ["@typescript-eslint/eslint-plugin", "simple-import-sort", "unused-imports"],
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "@typescript-eslint/eslint-plugin",
+    "simple-import-sort",
+    "unused-imports"
+  ],
   "rules": {
     // TypeScript ESLint
     "@typescript-eslint/no-unused-vars": "off",
@@ -10,11 +17,9 @@
     "@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
-
     // Simple Import Sort
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
-
     // Unused Imports
     "no-unused-vars": "off",
     "unused-imports/no-unused-imports": "error",
@@ -30,7 +35,9 @@
   },
   "overrides": [
     {
-      "files": ["*.js"],
+      "files": [
+        "*.js"
+      ],
       "rules": {
         "@typescript-eslint/no-var-requires": "off"
       }

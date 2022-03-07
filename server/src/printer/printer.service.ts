@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config';
 import { SchedulerRegistry } from '@nestjs/schedule';
 import { mkdir, unlink, writeFile } from 'fs/promises';
 import { nanoid } from 'nanoid';
-import { join } from 'path';
+import { join, resolve } from 'path';
 import { PDFDocument } from 'pdf-lib';
 import { Browser, chromium } from 'playwright-chromium';
 
@@ -42,7 +42,7 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
     });
 
     const pdf = await PDFDocument.create();
-    const directory = join(__dirname, 'assets', 'resumes');
+    const directory = resolve('dist/assets/resumes');
     const filename = `RxResume_PDFExport_${nanoid()}.pdf`;
     const publicUrl = `${serverUrl}/resumes/${filename}`;
 
