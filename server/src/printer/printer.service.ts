@@ -16,7 +16,9 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
   constructor(private readonly schedulerRegistry: SchedulerRegistry, private readonly configService: ConfigService) {}
 
   async onModuleInit() {
-    this.browser = await chromium.launch();
+    this.browser = await chromium.launch({
+      args: ['--disable-dev-shm-usage'],
+    });
   }
 
   async onModuleDestroy() {
