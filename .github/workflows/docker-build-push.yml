@@ -1,0 +1,35 @@
+name: Build and Push to Docker Hub
+
+on:
+  push:
+    branches: v3
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3.0.0
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1.14.1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build and Push Server Docker Image
+        uses: docker/build-push-action@v2.9.0
+        with:
+          context: .
+          push: true
+          file: {{context}}/server/Dockerfile
+          tags: amruthpillai/reactive-resume:server-latest
+
+      - name: Build and Push Client Docker Image
+        uses: docker/build-push-action@v2.9.0
+        with:
+          context: .
+          push: true
+          file: {{context}}/client/Dockerfile
+          tags: amruthpillai/reactive-resume:client-latest
