@@ -42,4 +42,6 @@ RUN pnpm install -F server --frozen-lockfile --prod
 
 EXPOSE 3100
 
+ENV PORT 3100
+
 CMD [ "pnpm", "run", "start:server" ]
