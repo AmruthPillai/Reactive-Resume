@@ -1,4 +1,16 @@
-dist
-.next
-__ENV.js
+# Global
 node_modules
+
+# Schema
+schema/dist
+
+# Server
+server/dist
+
+# Client
+client/.next
+client/public/__ENV.js
+
+# Docs
+docs/build
+docs/.docusaurus
