@@ -2,7 +2,7 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 import { SchedulerRegistry } from '@nestjs/schedule';
-import * as bcrypt from 'bcrypt';
+import bcrypt from 'bcrypt';
 import { google } from 'googleapis';
 
 import { PostgresErrorCode } from '@/database/errorCodes.enum';

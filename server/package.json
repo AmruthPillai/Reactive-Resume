@@ -21,6 +21,7 @@
     "@nestjs/schedule": "^1.0.2",
     "@nestjs/serve-static": "^2.2.2",
     "@nestjs/typeorm": "^8.0.3",
+    "@sendgrid/mail": "^7.6.1",
     "@types/passport": "^1.0.7",
     "bcrypt": "^5.0.1",
     "cache-manager": "^3.6.0",
@@ -30,13 +31,11 @@
     "csvtojson": "^2.0.10",
     "dayjs": "^1.10.8",
     "googleapis": "^95.0.0",
-    "handlebars": "^4.7.7",
     "joi": "^17.6.0",
     "lodash": "^4.17.21",
     "multer": "^1.4.4",
     "nanoid": "^3.3.1",
     "node-stream-zip": "^1.15.0",
-    "nodemailer": "^6.7.2",
     "passport": "^0.5.2",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
@@ -52,6 +51,8 @@
   "devDependencies": {
     "@nestjs/cli": "^8.2.2",
     "@nestjs/schematics": "^8.0.7",
+    "@reactive-resume/schema": "workspace:*",
+    "@types/bcrypt": "^5.0.0",
     "@types/express": "^4.17.13",
     "@types/multer": "^1.4.7",
     "@types/node": "^17.0.21",
@@ -62,7 +63,6 @@
     "ts-node": "^10.7.0",
     "tsconfig-paths": "^3.13.0",
     "typescript": "<4.6.0",
-    "webpack": "^5.70.0",
-    "@reactive-resume/schema": "workspace:*"
+    "webpack": "^5.70.0"
   }
 }

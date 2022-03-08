@@ -6,7 +6,7 @@ import appConfig from './app.config';
 import authConfig from './auth.config';
 import databaseConfig from './database.config';
 import googleConfig from './google.config';
-import mailConfig from './mail.config';
+import sendgridConfig from './sendgrid.config';
 
 const validationSchema = Joi.object({
   // App
@@ -31,22 +31,19 @@ const validationSchema = Joi.object({
   JWT_SECRET: Joi.string().required(),
   JWT_EXPIRY_TIME: Joi.number().required(),
 
-  // Mail
-  MAIL_HOST: Joi.string().allow(''),
-  MAIL_PORT: Joi.number().default(465),
-  MAIL_USERNAME: Joi.string().allow(''),
-  MAIL_PASSWORD: Joi.string().allow(''),
-
   // Google
   GOOGLE_API_KEY: Joi.string().allow(''),
   GOOGLE_CLIENT_SECRET: Joi.string().allow(''),
   PUBLIC_GOOGLE_CLIENT_ID: Joi.string().allow(''),
+
+  // SendGrid
+  SENDGRID_API_KEY: Joi.string().allow(''),
 });
 
 @Module({
   imports: [
     NestConfigModule.forRoot({
-      load: [appConfig, authConfig, databaseConfig, googleConfig, mailConfig],
+      load: [appConfig, authConfig, databaseConfig, googleConfig, sendgridConfig],
       validationSchema: validationSchema,
     }),
   ],

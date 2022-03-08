@@ -188,6 +188,8 @@ importers:
       '@nestjs/serve-static': ^2.2.2
       '@nestjs/typeorm': ^8.0.3
       '@reactive-resume/schema': workspace:*
+      '@sendgrid/mail': ^7.6.1
+      '@types/bcrypt': ^5.0.0
       '@types/express': ^4.17.13
       '@types/multer': ^1.4.7
       '@types/node': ^17.0.21
@@ -238,6 +240,7 @@ importers:
       '@nestjs/schedule': 1.0.2_1ce925e2290a1cea9e3700e8a60baeb5
       '@nestjs/serve-static': 2.2.2_31e7036b193d6d3c9cadab18cbb4af84
       '@nestjs/typeorm': 8.0.3_a8e966c473b8cac7d0f44522ae3cdd56
+      '@sendgrid/mail': 7.6.1
       '@types/passport': 1.0.7
       bcrypt: 5.0.1
       cache-manager: 3.6.0
@@ -269,6 +272,7 @@ importers:
       '@nestjs/cli': 8.2.2
       '@nestjs/schematics': 8.0.7_typescript@4.5.5
       '@reactive-resume/schema': link:../schema
+      '@types/bcrypt': 5.0.0
       '@types/express': 4.17.13
       '@types/multer': 1.4.7
       '@types/node': 17.0.21
@@ -1885,6 +1889,33 @@ packages:
     resolution: {integrity: sha512-JLo+Y592QzIE+q7Dl2pMUtt4q8SKYI5jDrZxrozEQxnGVOyYE+GWK9eLkwTaeN9DDctlaRAQ3TBmzZ1qdLE30A==}
     dev: true
 
+  /@sendgrid/client/7.6.1:
+    resolution: {integrity: sha512-q4U5OhcbJjs+lLVv/LhZSc28feiVCFMgvG9aYcRI5X4tKArnrrGDWb5HMITR9vaAtX42TXhyPFjHr1fk/Q1loQ==}
+    engines: {node: 6.* || 8.* || >=10.*}
+    dependencies:
+      '@sendgrid/helpers': 7.6.0
+      axios: 0.21.4
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
+  /@sendgrid/helpers/7.6.0:
+    resolution: {integrity: sha512-0uWD+HSXLl4Z/X3cN+UMQC20RE7xwAACgppnfjDyvKG0KvJcUgDGz7HDdQkiMUdcVWfmyk6zKSg7XKfKzBjTwA==}
+    engines: {node: '>= 6.0.0'}
+    dependencies:
+      deepmerge: 4.2.2
+    dev: false
+
+  /@sendgrid/mail/7.6.1:
+    resolution: {integrity: sha512-F+HXpDLIU4PGZyZznOiFLDGJDwLn2qh7/wD5MvwurrldDx5DaGQHrYBKHopceOl15FVuq9ElU9VIxQJF8SMvTg==}
+    engines: {node: 6.* || 8.* || >=10.*}
+    dependencies:
+      '@sendgrid/client': 7.6.1
+      '@sendgrid/helpers': 7.6.0
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
   /@sideway/address/4.1.3:
     resolution: {integrity: sha512-8ncEUtmnTsMmL7z1YPB47kPUq7LpKWJNFPsRzHiIajGC5uXlWGn+AmkYPcHNl8S4tcEGx+cnORnNYaw2wvL+LQ==}
     dependencies:
@@ -1917,6 +1948,12 @@ packages:
 
   /@tsconfig/node16/1.0.2:
     resolution: {integrity: sha512-eZxlbI8GZscaGS7kkc/trHTT5xgrjH3/1n2JDwusC9iahPKWMRvRjJSAN5mCXviuTGQ/lHnhvv8Q1YTpnfz9gA==}
+    dev: true
+
+  /@types/bcrypt/5.0.0:
+    resolution: {integrity: sha512-agtcFKaruL8TmcvqbndlqHPSJgsolhf/qPWchFlgnW1gECTN/nKbFcoFnvKAQRFfKbh+BO6A3SWdJu9t+xF3Lw==}
+    dependencies:
+      '@types/node': 17.0.21
     dev: true
 
   /@types/body-parser/1.19.2:
@@ -2703,6 +2740,14 @@ packages:
     resolution: {integrity: sha512-gd1kmb21kwNuWr6BQz8fv6GNECPBnUasepcoLbekws23NVBLODdsClRZ+bQ8+9Uomf3Sm3+Vwn0oYG9NvwnJCw==}
     engines: {node: '>=4'}
     dev: true
+
+  /axios/0.21.4:
+    resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
+    dependencies:
+      follow-redirects: 1.14.9
+    transitivePeerDependencies:
+      - debug
+    dev: false
 
   /axios/0.26.0:
     resolution: {integrity: sha512-lKoGLMYtHvFrPVt3r+RBMp9nh34N0M8zEfCWqdWZx6phynIEhQqAdydpyBAAG211zlhX9Rgu08cOamy6XjE5Og==}
@@ -3509,7 +3554,6 @@ packages:
   /deepmerge/4.2.2:
     resolution: {integrity: sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==}
     engines: {node: '>=0.10.0'}
-    dev: true
 
   /defaults/1.0.3:
     resolution: {integrity: sha1-xlYFHpgX2f8I7YgUd/P+QBnz730=}
