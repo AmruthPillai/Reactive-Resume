@@ -16,6 +16,7 @@ importers:
       eslint-plugin-prettier: ^4.0.0
       eslint-plugin-simple-import-sort: ^7.0.0
       eslint-plugin-unused-imports: ^2.0.0
+      husky: ^7.0.4
       prettier: ^2.5.1
       typescript: ^4.5.5
     dependencies:
@@ -32,6 +33,7 @@ importers:
       eslint-plugin-prettier: 4.0.0_f3d13a703a9c1079e3d1af6044603beb
       eslint-plugin-simple-import-sort: 7.0.0_eslint@8.10.0
       eslint-plugin-unused-imports: 2.0.0_5048693f84252cfc01b1f5d975a3323d
+      husky: 7.0.4
       prettier: 2.5.1
       typescript: 4.5.5
 
@@ -4886,6 +4888,12 @@ packages:
   /human-signals/1.1.1:
     resolution: {integrity: sha512-SEQu7vl8KjNL2eoGBLF3+wAjpsNfA9XMlXAYj/3EdaNfAlxKthD1xjEQfGOUhllCGGJVNY34bRr6lPINhNjyZw==}
     engines: {node: '>=8.12.0'}
+    dev: true
+
+  /husky/7.0.4:
+    resolution: {integrity: sha512-vbaCKN2QLtP/vD4yvs6iz6hBEo6wkSzs8HpRah1Z6aGmF2KW5PdYuAd7uX5a+OyBZHBhd+TFLqgjUgytQr4RvQ==}
+    engines: {node: '>=12'}
+    hasBin: true
     dev: true
 
   /i18next-fs-backend/1.1.4:

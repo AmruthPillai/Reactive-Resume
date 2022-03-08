@@ -1,15 +1,8 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
-  "extends": [
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
-  ],
-  "plugins": [
-    "@typescript-eslint/eslint-plugin",
-    "simple-import-sort",
-    "unused-imports"
-  ],
+  "extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
+  "plugins": ["@typescript-eslint/eslint-plugin", "simple-import-sort", "unused-imports"],
   "rules": {
     // TypeScript ESLint
     "@typescript-eslint/no-unused-vars": "off",
@@ -35,9 +28,7 @@
   },
   "overrides": [
     {
-      "files": [
-        "*.js"
-      ],
+      "files": ["*.js"],
       "rules": {
         "@typescript-eslint/no-var-requires": "off"
       }

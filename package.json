@@ -13,6 +13,9 @@
     }
   },
   "scripts": {
+    "prepare": "husky install",
+    "lint": "eslint --fix --ext .js,.ts,.tsx .",
+    "format": "prettier --write \"./**/*.{js,ts,tsx,json}\"",
     "dev:schema": "pnpm -F schema dev",
     "dev:server": "pnpm -F server start:dev",
     "dev:client": "pnpm -F client dev",
@@ -40,6 +43,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^7.0.4",
     "prettier": "^2.5.1",
     "typescript": "^4.5.5"
   }
