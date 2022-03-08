@@ -218,9 +218,8 @@ export class ResumeService {
 
   async uploadPhoto(id: number, userId: number, filename: string) {
     const resume = await this.findOne(id, userId);
-    const serverUrl = this.configService.get<string>('app.serverUrl');
 
-    const url = `${serverUrl}/uploads/${userId}/${id}/${filename}`;
+    const url = `/api/uploads/${userId}/${id}/${filename}`;
     const updatedResume = set(resume, 'basics.photo.url', url);
 
     return this.resumeRepository.save<Resume>(updatedResume);
@@ -228,8 +227,8 @@ export class ResumeService {
 
   async deletePhoto(id: number, userId: number) {
     const resume = await this.findOne(id, userId);
-    const key = new URL(resume.basics.photo.url).pathname;
-    const photoPath = join(__dirname, 'assets', key);
+    const filepath = new URL(resume.basics.photo.url).pathname;
+    const photoPath = join(__dirname, '..', `assets/${filepath}`);
     const updatedResume = set(resume, 'basics.photo.url', '');
 
     await unlink(photoPath);

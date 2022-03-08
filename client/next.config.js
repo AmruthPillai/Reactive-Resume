@@ -15,6 +15,19 @@ const nextConfig = {
     domains: ['www.gravatar.com'],
   },
 
+  async rewrites() {
+    if (process.env.NODE_ENV === 'development') {
+      return [
+        {
+          source: '/api/:path*',
+          destination: 'http://localhost:3100/api/:path*',
+        },
+      ];
+    }
+
+    return [];
+  },
+
   // Hack to make Tailwind darkMode 'class' strategy with CSS Modules
   // Ref: https://github.com/tailwindlabs/tailwindcss/issues/3258#issuecomment-968368156
   webpack: (config) => {

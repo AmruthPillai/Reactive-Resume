@@ -1,3 +1,4 @@
+import env from '@beam-australia/react-env';
 import { Resume } from '@reactive-resume/schema';
 import get from 'lodash/get';
 
@@ -19,7 +20,7 @@ const getResumeUrl = (resume: Resume, options: Options = defaultOptions): string
   const slug: string = get(resume, 'slug');
 
   let url = '';
-  let hostname = '';
+  let hostname = env('URL');
 
   if (typeof window !== 'undefined') {
     hostname = window.location.origin;

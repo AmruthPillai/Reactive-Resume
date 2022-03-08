@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config';
 import { SchedulerRegistry } from '@nestjs/schedule';
 import { mkdir, unlink, writeFile } from 'fs/promises';
 import { nanoid } from 'nanoid';
-import { join, resolve } from 'path';
+import { join } from 'path';
 import { PDFDocument } from 'pdf-lib';
 import { Browser, chromium } from 'playwright-chromium';
 
@@ -28,7 +28,6 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
   async printAsPdf(username: string, slug: string): Promise<string> {
     const url = this.configService.get<string>('app.url');
     const secretKey = this.configService.get<string>('app.secretKey');
-    const serverUrl = this.configService.get<string>('app.serverUrl');
 
     const page = await this.browser.newPage();
 
@@ -44,9 +43,9 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
     });
 
     const pdf = await PDFDocument.create();
-    const directory = resolve('dist/assets/resumes');
+    const directory = join(__dirname, '..', 'assets/exports');
     const filename = `RxResume_PDFExport_${nanoid()}.pdf`;
-    const publicUrl = `${serverUrl}/resumes/${filename}`;
+    const publicUrl = `/api/exports/${filename}`;
 
     for (let index = 0; index < resumePages.length; index++) {
       await page.evaluate((page) => (document.body.innerHTML = page.innerHTML), resumePages[index]);

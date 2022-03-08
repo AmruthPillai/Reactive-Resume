@@ -16,8 +16,7 @@ const validationSchema = Joi.object({
   NODE_ENV: Joi.string().valid('development', 'production').default('development'),
 
   // URLs
-  PUBLIC_APP_URL: Joi.string().default('http://localhost:3000'),
-  PUBLIC_SERVER_URL: Joi.string().default('http://localhost:3100'),
+  PUBLIC_URL: Joi.string().default('http://localhost:3000'),
 
   // Database
   POSTGRES_HOST: Joi.string().required(),
@@ -38,6 +37,9 @@ const validationSchema = Joi.object({
 
   // SendGrid
   SENDGRID_API_KEY: Joi.string().allow(''),
+  SENDGRID_FORGOT_PASSWORD_TEMPLATE_ID: Joi.string().allow(''),
+  SENDGRID_FROM_NAME: Joi.string().allow(''),
+  SENDGRID_FROM_EMAIL: Joi.string().allow(''),
 });
 
 @Module({

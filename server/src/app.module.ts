@@ -18,6 +18,7 @@ import { UsersModule } from './users/users.module';
 @Module({
   imports: [
     ServeStaticModule.forRoot({
+      serveRoot: '/api',
       rootPath: join(__dirname, 'assets'),
     }),
     ConfigModule,

@@ -16,7 +16,7 @@ import Page from '@/components/build/Center/Page';
 import { ServerError } from '@/services/axios';
 import { printResumeAsPdf, PrintResumeAsPdfParams } from '@/services/printer';
 import { fetchResumeByShortId } from '@/services/resume';
-import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { useAppDispatch } from '@/store/hooks';
 import { setResume } from '@/store/resume/resumeSlice';
 import styles from '@/styles/pages/Preview.module.scss';
 
@@ -26,34 +26,18 @@ type QueryParams = {
 
 type Props = {
   shortId: string;
-  resume?: Resume;
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async ({ query, locale = 'en' }) => {
   const { shortId } = query as QueryParams;
 
-  try {
-    const resume = await fetchResumeByShortId({ shortId });
-
-    return { props: { shortId, resume, ...(await serverSideTranslations(locale, ['common'])) } };
-  } catch {
-    return { props: { shortId, ...(await serverSideTranslations(locale, ['common'])) } };
-  }
+  return { props: { shortId, ...(await serverSideTranslations(locale, ['common'])) } };
 };
 
-const Preview: NextPage<Props> = ({ shortId, resume: initialData }) => {
+const Preview: NextPage<Props> = ({ shortId }) => {
   const dispatch = useAppDispatch();
 
-  const resume = useAppSelector((state) => state.resume);
-
-  useEffect(() => {
-    if (initialData && !isEmpty(initialData)) {
-      dispatch(setResume(initialData));
-    }
-  }, [dispatch, initialData]);
-
-  useQuery<Resume>(`resume/${shortId}`, () => fetchResumeByShortId({ shortId }), {
-    initialData,
+  const { data: resume } = useQuery<Resume>(`resume/${shortId}`, () => fetchResumeByShortId({ shortId }), {
     refetchOnMount: false,
     refetchOnReconnect: false,
     refetchOnWindowFocus: false,
@@ -64,7 +48,11 @@ const Preview: NextPage<Props> = ({ shortId, resume: initialData }) => {
 
   const { mutateAsync, isLoading } = useMutation<string, ServerError, PrintResumeAsPdfParams>(printResumeAsPdf);
 
-  if (isEmpty(resume)) return null;
+  useEffect(() => {
+    if (resume) dispatch(setResume(resume));
+  }, [resume, dispatch]);
+
+  if (!resume || isEmpty(resume)) return null;
 
   const layout: string[][][] = get(resume, 'metadata.layout', []);
 

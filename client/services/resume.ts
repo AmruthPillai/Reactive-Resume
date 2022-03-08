@@ -2,6 +2,8 @@ import { Resume } from '@reactive-resume/schema';
 import { AxiosResponse } from 'axios';
 import isEmpty from 'lodash/isEmpty';
 
+import isBrowser from '@/utils/isBrowser';
+
 import axios from './axios';
 
 export type CreateResumeParams = {
@@ -69,9 +71,10 @@ export const fetchResumeByIdentifier = async ({
   slug,
   options = { secretKey: '' },
 }: FetchResumeByIdentifierParams) => {
+  const prefix = !isBrowser && process.env.NODE_ENV === 'development' ? 'http://localhost:3100/api' : '';
   const requestOptions = isEmpty(options.secretKey) ? {} : { params: { secretKey: options.secretKey } };
 
-  return axios.get<Resume>(`/resume/${username}/${slug}`, requestOptions).then((res) => res.data);
+  return axios.get<Resume>(`${prefix}/resume/${username}/${slug}`, requestOptions).then((res) => res.data);
 };
 
 export const createResume = (createResumeParams: CreateResumeParams) =>

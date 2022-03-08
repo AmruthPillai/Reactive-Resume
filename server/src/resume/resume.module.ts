@@ -22,8 +22,8 @@ import { ResumeService } from './resume.service';
       storage: diskStorage({
         destination: async (req, _, cb) => {
           const userId = (req.user as User).id;
-          const resumeId = req.params.id;
-          const destination = join(__dirname, `assets/uploads/${userId}/${resumeId}`);
+          const resumeId = +req.params.id;
+          const destination = join(__dirname, '..', `assets/uploads/${userId}/${resumeId}`);
 
           await mkdir(destination, { recursive: true });
 

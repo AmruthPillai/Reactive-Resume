@@ -3,7 +3,6 @@ import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import cookieParser from 'cookie-parser';
-import { join } from 'path';
 
 import { AppModule } from './app.module';
 
@@ -15,24 +14,18 @@ const bootstrap = async () => {
   app.setGlobalPrefix(globalPrefix);
 
   // Middleware
-  app.enableCors({ credentials: true });
   app.enableShutdownHooks();
   app.use(cookieParser());
 
   // Pipes
   app.useGlobalPipes(new ValidationPipe({ transform: true }));
 
-  // Email Templates
-  app.setBaseViewsDir(join(__dirname, 'mail/templates'));
-  app.setViewEngine('hbs');
-
   const configService = app.get(ConfigService);
-  const serverUrl = configService.get<number>('app.serverUrl');
   const port = configService.get<number>('app.port');
 
   await app.listen(port);
 
-  Logger.log(`🚀 Server is running on: ${serverUrl}/${globalPrefix}`);
+  Logger.log(`🚀 Server is up and running!`);
 };
 
 bootstrap();

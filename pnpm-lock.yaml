@@ -192,6 +192,7 @@ importers:
       '@reactive-resume/schema': workspace:*
       '@sendgrid/mail': ^7.6.1
       '@types/bcrypt': ^5.0.0
+      '@types/cookie-parser': ^1.4.2
       '@types/express': ^4.17.13
       '@types/multer': ^1.4.7
       '@types/node': ^17.0.21
@@ -271,6 +272,7 @@ importers:
       '@nestjs/schematics': 8.0.7_typescript@4.5.5
       '@reactive-resume/schema': link:../schema
       '@types/bcrypt': 5.0.0
+      '@types/cookie-parser': 1.4.2
       '@types/express': 4.17.13
       '@types/multer': 1.4.7
       '@types/node': 17.0.21
@@ -1964,6 +1966,12 @@ packages:
     resolution: {integrity: sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==}
     dependencies:
       '@types/node': 17.0.21
+
+  /@types/cookie-parser/1.4.2:
+    resolution: {integrity: sha512-uwcY8m6SDQqciHsqcKDGbo10GdasYsPCYkH3hVegj9qAah6pX5HivOnOuI3WYmyQMnOATV39zv/Ybs0bC/6iVg==}
+    dependencies:
+      '@types/express': 4.17.13
+    dev: true
 
   /@types/debug/4.1.7:
     resolution: {integrity: sha512-9AonUzyTjXXhEOa0DnqpzZi6VHlqKMswga9EXjpXnnqxwLtdvPPtlO8evrI5D9S6asFRCQ6v+wpiUKbw+vKqyg==}

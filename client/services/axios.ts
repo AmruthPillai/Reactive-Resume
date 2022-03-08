@@ -1,4 +1,3 @@
-import env from '@beam-australia/react-env';
 import _axios, { AxiosError } from 'axios';
 import Router from 'next/router';
 
@@ -13,13 +12,7 @@ export type ServerError = {
   path: string;
 };
 
-const axios = _axios.create({
-  baseURL: `${env('SERVER_URL')}/api`,
-});
-
-export const uninterceptedAxios = _axios.create({
-  baseURL: `${env('SERVER_URL')}/api`,
-});
+const axios = _axios.create({ baseURL: '/api' });
 
 axios.interceptors.request.use((config) => {
   const { accessToken } = store.getState().auth;
