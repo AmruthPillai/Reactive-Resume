@@ -107,6 +107,18 @@ Reactive Resume would be nothing without the folks who supported me and kept the
 
 [☕️ Buy me a coffee](https://www.buymeacoffee.com/AmruthPillai)
 
+## Infrastructure
+
+- Next.js, frontend
+- NestJS, backend
+- PostgreSQL, database
+- DigitalOcean, infrastructure provider
+- Crowdin, translation management platform
+
+<a href="https://www.digitalocean.com/">
+  <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/PoweredByDO/DO_Powered_by_Badge_blue.svg" width="200px" />
+</a>
+
 ## License
 
 Reactive Resume is packaged and distributed using the [MIT License](https://choosealicense.com/licenses/mit/) which allows for commercial use, distribution, modification and private use provided that all copies of the software contain the same license and copyright.
