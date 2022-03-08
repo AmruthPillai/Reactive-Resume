@@ -1,0 +1,21 @@
+name: Deploy Latest Version on DigitalOcean
+
+on:
+  workflow_run:
+    workflows:
+      - Build and Push Docker Image
+    types:
+      - completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install DigitalOcean CLI
+        uses: digitalocean/action-doctl@v2.1.0
+        with:
+          token: ${{ secrets.DIGITALOCEAN_TOKEN }}
+
+      - name: Create Deployment with Latest Version
+        run: doctl apps create-deployment ${{ secrets.DIGITALOCEAN_APP_ID }} --wait --force-rebuild

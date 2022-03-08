@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - 'v3'
+      - v3
 
 jobs:
   docker_client:
