@@ -71,7 +71,7 @@ export const fetchResumeByIdentifier = async ({
   slug,
   options = { secretKey: '' },
 }: FetchResumeByIdentifierParams) => {
-  const prefix = !isBrowser && process.env.NODE_ENV === 'development' ? 'http://localhost:3100/api' : '';
+  const prefix = !isBrowser && process.env.NODE_ENV === 'development' ? 'http://localhost:3100' : '';
   const requestOptions = isEmpty(options.secretKey) ? {} : { params: { secretKey: options.secretKey } };
 
   return axios.get<Resume>(`${prefix}/resume/${username}/${slug}`, requestOptions).then((res) => res.data);

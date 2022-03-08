@@ -9,10 +9,6 @@ import { AppModule } from './app.module';
 const bootstrap = async () => {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
-  // Prefix
-  const globalPrefix = 'api';
-  app.setGlobalPrefix(globalPrefix);
-
   // Middleware
   app.enableShutdownHooks();
   app.use(cookieParser());
