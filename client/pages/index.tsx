@@ -87,8 +87,8 @@ const Home: NextPage = () => {
 
         <ul className="list-inside list-disc leading-loose">
           <li>{t('landing.features.list.free')}</li>
-          <li>{t('landing.features.list.ads')}</li>
           <li>{t('landing.features.list.tracking')}</li>
+          <li>{t('landing.features.list.ads')}</li>
           <li>{t('landing.features.list.languages')}</li>
           <li>{t('landing.features.list.import')}</li>
           <li>{t('landing.features.list.export')}</li>

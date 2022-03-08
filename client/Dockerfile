@@ -34,8 +34,8 @@ WORKDIR /app
 RUN apk add --no-cache curl \
   && curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm
 
-COPY --from=builder /app/pnpm-*.yaml .
-COPY --from=builder /app/package.json .
+COPY --from=builder /app/pnpm-*.yaml ./
+COPY --from=builder /app/package.json ./
 COPY --from=builder /app/client/.next ./client/.next
 COPY --from=builder /app/client/public ./client/public
 COPY --from=builder /app/client/next.config.js ./client/next.config.js

@@ -28,5 +28,4 @@ export type Metadata = {
   template: string;
   typography: Typography;
   date: DateConfig;
-  language: string;
 };

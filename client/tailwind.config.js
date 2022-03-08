@@ -1,5 +1,6 @@
 const { join } = require('path');
 const colors = require('tailwindcss/colors');
+const typography = require('@tailwindcss/typography');
 
 module.exports = {
   darkMode: 'class',
@@ -20,4 +21,5 @@ module.exports = {
       },
     },
   },
+  plugins: [typography],
 };

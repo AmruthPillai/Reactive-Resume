@@ -33,8 +33,8 @@ WORKDIR /app
 
 RUN curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm
 
-COPY --from=builder /app/pnpm-*.yaml .
-COPY --from=builder /app/package.json .
+COPY --from=builder /app/pnpm-*.yaml ./
+COPY --from=builder /app/package.json ./
 COPY --from=builder /app/server/dist ./server/dist
 COPY --from=builder /app/server/package.json ./server/package.json
 

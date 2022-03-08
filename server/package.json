@@ -10,7 +10,7 @@
     "lint": "eslint --fix --ext .ts ./src"
   },
   "dependencies": {
-    "@nestjs/axios": "^0.0.6",
+    "@nestjs/axios": "^0.0.7",
     "@nestjs/common": "^8.4.0",
     "@nestjs/config": "^1.2.0",
     "@nestjs/core": "^8.4.0",
@@ -44,13 +44,13 @@
     "playwright-chromium": "^1.19.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^7.5.4",
+    "rxjs": "^7.5.5",
     "typeorm": "^0.2.45",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.2.2",
-    "@nestjs/schematics": "^8.0.7",
+    "@nestjs/schematics": "^8.0.8",
     "@reactive-resume/schema": "workspace:*",
     "@types/bcrypt": "^5.0.0",
     "@types/cookie-parser": "^1.4.2",

@@ -1,5 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import merge from 'lodash/merge';
+
+import { Language, languageMap } from '@/config/languages';
+
 export type Theme = 'light' | 'dark';
 
 export type Sidebar = 'left' | 'right';
@@ -10,6 +13,7 @@ export type Orientation = 'horizontal' | 'vertical';
 
 export type BuildState = {
   theme?: Theme;
+  language: Language;
   sidebar: Record<Sidebar, SidebarState>;
   page: {
     breakLine: boolean;
@@ -18,6 +22,7 @@ export type BuildState = {
 };
 
 const initialState: BuildState = {
+  language: languageMap['en'],
   sidebar: {
     left: { open: false },
     right: { open: false },
@@ -29,6 +34,8 @@ const initialState: BuildState = {
 };
 
 type SetThemePayload = { theme: Theme };
+
+type SetLanguagePayload = { language: string };
 
 type ToggleSidebarPayload = { sidebar: Sidebar };
 
@@ -42,6 +49,11 @@ export const buildSlice = createSlice({
       const { theme } = action.payload;
 
       state.theme = theme;
+    },
+    setLanguage: (state, action: PayloadAction<SetLanguagePayload>) => {
+      const { language } = action.payload;
+
+      state.language = languageMap[language];
     },
     toggleSidebar: (state, action: PayloadAction<ToggleSidebarPayload>) => {
       const { sidebar } = action.payload;
@@ -64,7 +76,7 @@ export const buildSlice = createSlice({
   },
 });
 
-export const { setTheme, toggleSidebar, setSidebarState, togglePageBreakLine, togglePageOrientation } =
+export const { setTheme, setLanguage, toggleSidebar, setSidebarState, togglePageBreakLine, togglePageOrientation } =
   buildSlice.actions;
 
 export default buildSlice.reducer;
