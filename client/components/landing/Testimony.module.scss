@@ -1,0 +1,12 @@
+.testimony {
+  @apply grid gap-2;
+  @apply border-2 rounded p-4 dark:border-neutral-800;
+
+  blockquote {
+    @apply text-xs leading-normal text-justify opacity-90;
+  }
+
+  figcaption {
+    @apply text-xs opacity-60;
+  }
+}
