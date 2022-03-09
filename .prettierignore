@@ -1,4 +1,21 @@
+# Build Artifacts
 dist
 .next
-__ENV.js
+
+# IDEs
+.vscode
+
+# Project Metadata
+README.md
+CHANGELOG.md
+
+# Project Dependencies
 node_modules
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# Android App
+/app
