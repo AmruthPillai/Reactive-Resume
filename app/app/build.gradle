@@ -6,12 +6,14 @@ plugins {
 android {
     compileSdk 32
 
+    def appVersionCode = Integer.valueOf(System.env.BUILD_NUMBER ?: 0)
+
     defaultConfig {
         applicationId "me.rxresu.app"
         minSdk 21
         targetSdk 32
-        versionCode 1
         versionName "1.0"
+        versionCode appVersionCode
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
