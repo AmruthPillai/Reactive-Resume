@@ -14,8 +14,8 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "lint": "eslint --fix --ext .js,.ts,.tsx .",
-    "format": "prettier --write \"./**/*.{js,ts,tsx,json}\"",
+    "lint": "eslint --quiet --fix --ext .js,.ts,.tsx .",
+    "format": "prettier --loglevel error --write \"./**/*.{js,ts,tsx,json}\"",
     "dev:schema": "pnpm -F schema dev",
     "dev:server": "pnpm -F server start:debug",
     "dev:client": "pnpm -F client dev",
