@@ -10,7 +10,6 @@ workflows:
       groups:
         - keystore_credentials
         - google_play
-        - other
       vars:
         FCI_KEYSTORE_PATH: /tmp/keystore.keystore
 
