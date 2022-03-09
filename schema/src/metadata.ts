@@ -23,9 +23,9 @@ export type DateConfig = {
 
 export type Metadata = {
   css: CustomCSS;
-  theme: Theme;
+  date: DateConfig;
   layout: string[][][]; // page.column.section
   template: string;
+  theme: Theme;
   typography: Typography;
-  date: DateConfig;
 };

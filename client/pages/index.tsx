@@ -1,4 +1,5 @@
 import { Link as LinkIcon } from '@mui/icons-material';
+import { Masonry } from '@mui/lab';
 import { Button } from '@mui/material';
 import type { GetStaticProps, NextPage } from 'next';
 import Image from 'next/image';
@@ -6,10 +7,12 @@ import Link from 'next/link';
 import { Trans, useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
+import Testimony from '@/components/landing/Testimony';
 import Footer from '@/components/shared/Footer';
 import Logo from '@/components/shared/Logo';
 import NoSSR from '@/components/shared/NoSSR';
 import { screenshots } from '@/config/screenshots';
+import testimonials from '@/data/testimonials';
 import { logout } from '@/store/auth/authSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
@@ -87,8 +90,8 @@ const Home: NextPage = () => {
 
         <ul className="list-inside list-disc leading-loose">
           <li>{t('landing.features.list.free')}</li>
-          <li>{t('landing.features.list.tracking')}</li>
           <li>{t('landing.features.list.ads')}</li>
+          <li>{t('landing.features.list.tracking')}</li>
           <li>{t('landing.features.list.languages')}</li>
           <li>{t('landing.features.list.import')}</li>
           <li>{t('landing.features.list.export')}</li>
@@ -116,6 +119,31 @@ const Home: NextPage = () => {
       </section>
 
       <section className={styles.section}>
+        <h6>{t('landing.testimonials.heading')}</h6>
+
+        <p className="my-3">
+          <Trans t={t} i18nKey="landing.testimonials.body">
+            Good or bad, I would love to hear your opinion on Reactive Resume and how the experience has been for you.
+            <br />
+            Here are some of the messages sent in by users across the world.
+          </Trans>
+        </p>
+
+        <p className="my-3">
+          <Trans t={t} i18nKey="landing.testimonials.contact">
+            You can reach out to me through <a href="mailto:im.amruth@gmail.com">my email</a> or through the contact
+            form on <a href="https://www.amruthpillai.com">my website</a>.
+          </Trans>
+        </p>
+
+        <Masonry columns={{ xs: 1, sm: 2, lg: 4 }} spacing={2}>
+          {testimonials.map(({ name, message }, index) => (
+            <Testimony key={index} name={name} message={message} />
+          ))}
+        </Masonry>
+      </section>
+
+      <section className={styles.section}>
         <h6>{t('landing.links.heading')}</h6>
 
         <div>
@@ -131,6 +159,12 @@ const Home: NextPage = () => {
             </Button>
           </a>
         </div>
+      </section>
+
+      <section className={styles.section}>
+        <a href="https://www.digitalocean.com/" target="_blank" rel="noreferrer">
+          <Image src="/images/sponsors/digitalocean.svg" alt="Powered By DigitalOcean" width={200} height={40} />
+        </a>
       </section>
 
       <footer>
