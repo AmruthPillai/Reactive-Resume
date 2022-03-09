@@ -162,7 +162,7 @@ const Home: NextPage = () => {
       </section>
 
       <section className={styles.section}>
-        <a href="https://www.digitalocean.com/" target="_blank" rel="noreferrer">
+        <a href="https://pillai.xyz/digitalocean" target="_blank" rel="noreferrer">
           <Image src="/images/sponsors/digitalocean.svg" alt="Powered By DigitalOcean" width={200} height={40} />
         </a>
       </section>

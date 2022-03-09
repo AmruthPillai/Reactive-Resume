@@ -22,6 +22,7 @@ services:
     container_name: server
     env_file: .env
     environment:
+      - PUBLIC_URL=http://client:3000
       - POSTGRES_HOST=postgres
     ports:
       - 3100:3100
@@ -38,6 +39,8 @@ services:
       dockerfile: client/Dockerfile
     container_name: client
     env_file: .env
+    environment:
+      - PUBLIC_SERVER_URL=http://server:3100
     ports:
       - 3000:3000
     depends_on:

@@ -116,7 +116,7 @@ Reactive Resume would be nothing without the folks who supported me and kept the
 - DigitalOcean, infrastructure provider
 - Crowdin, translation management platform
 
-<a href="https://www.digitalocean.com/">
+<a href="https://pillai.xyz/digitalocean">
   <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/PoweredByDO/DO_Powered_by_Badge_blue.svg" width="200px" />
 </a>
 

@@ -36,13 +36,14 @@ RUN apk add --no-cache curl \
 
 COPY --from=builder /app/pnpm-*.yaml ./
 COPY --from=builder /app/package.json ./
+COPY --from=builder /app/client/package.json ./client/package.json
+
+RUN pnpm install -F client --frozen-lockfile --prod
+
 COPY --from=builder /app/client/.next ./client/.next
 COPY --from=builder /app/client/public ./client/public
 COPY --from=builder /app/client/next.config.js ./client/next.config.js
 COPY --from=builder /app/client/next-i18next.config.js ./client/next-i18next.config.js
-COPY --from=builder /app/client/package.json ./client/package.json
-
-RUN pnpm install -F client --frozen-lockfile --prod
 
 EXPOSE 3000
 

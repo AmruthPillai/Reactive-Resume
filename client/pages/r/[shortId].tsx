@@ -60,7 +60,7 @@ const Preview: NextPage<Props> = ({ shortId }) => {
     try {
       const url = await mutateAsync({ username: resume.user.username, slug: resume.slug });
 
-      download(url);
+      download(`/api${url}`);
     } catch {
       toast.error('Something went wrong, please try again later.');
     }

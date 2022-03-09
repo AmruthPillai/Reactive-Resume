@@ -17,7 +17,7 @@
     "lint": "eslint --fix --ext .js,.ts,.tsx .",
     "format": "prettier --write \"./**/*.{js,ts,tsx,json}\"",
     "dev:schema": "pnpm -F schema dev",
-    "dev:server": "pnpm -F server start:dev",
+    "dev:server": "pnpm -F server start:debugc",
     "dev:client": "pnpm -F client dev",
     "dev": "env-cmd --silent concurrently --kill-others \"pnpm run dev:*\"",
     "build:schema": "pnpm -F schema build",

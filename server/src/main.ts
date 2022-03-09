@@ -10,6 +10,7 @@ const bootstrap = async () => {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
   // Middleware
+  app.enableCors({ credentials: true });
   app.enableShutdownHooks();
   app.use(cookieParser());
 
