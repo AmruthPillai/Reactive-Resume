@@ -82,7 +82,7 @@ export const resumeSlice = createSlice({
     },
     deleteSection: (state: Resume, action: PayloadAction<DeleteSectionPayload>) => {
       const { path } = action.payload;
-      const id = path && path.split('.').at(-1);
+      const id = path ? path.split('.').at(-1) : '';
 
       const sections = Object.keys(state.sections).filter((x) => x !== id);
       const layout = state.metadata.layout.map((pages) => pages.map((list) => list.filter((x) => x !== id)));
