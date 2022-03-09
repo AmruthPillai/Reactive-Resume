@@ -7,7 +7,7 @@ import { join } from 'path';
 import { PDFDocument } from 'pdf-lib';
 import { Browser, chromium } from 'playwright-chromium';
 
-export const DELETION_TIME = 10 * 1000 * 1000; // 10 seconds
+export const DELETION_TIME = 10 * 1000; // 10 seconds
 
 @Injectable()
 export class PrinterService implements OnModuleInit, OnModuleDestroy {

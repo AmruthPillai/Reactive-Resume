@@ -1,6 +1,6 @@
 {
   "name": "reactive-resume",
-  "version": "3.0.0-beta.1",
+  "version": "3.0.0-beta.2",
   "private": true,
   "workspaces": [
     "schema",
@@ -17,7 +17,7 @@
     "lint": "eslint --fix --ext .js,.ts,.tsx .",
     "format": "prettier --write \"./**/*.{js,ts,tsx,json}\"",
     "dev:schema": "pnpm -F schema dev",
-    "dev:server": "pnpm -F server start:debugc",
+    "dev:server": "pnpm -F server start:debug",
     "dev:client": "pnpm -F client dev",
     "dev": "env-cmd --silent concurrently --kill-others \"pnpm run dev:*\"",
     "build:schema": "pnpm -F schema build",
@@ -26,15 +26,17 @@
     "build": "env-cmd --silent concurrently \"pnpm run build:*\"",
     "start:server": "pnpm -F server start:prod",
     "start:client": "pnpm -F client start",
-    "start": "env-cmd --silent concurrently --kill-others \"pnpm run start:*\""
+    "start": "env-cmd --silent concurrently --kill-others \"pnpm run start:*\"",
+    "release": "release-it"
   },
   "dependencies": {
     "concurrently": "^7.0.0",
     "env-cmd": "^10.1.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.13.0",
-    "@typescript-eslint/parser": "^5.13.0",
+    "@release-it/conventional-changelog": "^4.2.1",
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.5.0",
@@ -44,6 +46,7 @@
     "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^7.0.4",
     "prettier": "^2.5.1",
+    "release-it": "^14.12.5",
     "typescript": "^4.5.5"
   }
 }
