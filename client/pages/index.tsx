@@ -158,6 +158,18 @@ const Home: NextPage = () => {
               {t('landing.links.links.donate')}
             </Button>
           </a>
+
+          <Link href="/meta/privacy" passHref>
+            <Button variant="text" startIcon={<LinkIcon />}>
+              {t('landing.links.links.privacy')}
+            </Button>
+          </Link>
+
+          <Link href="/meta/service" passHref>
+            <Button variant="text" startIcon={<LinkIcon />}>
+              {t('landing.links.links.service')}
+            </Button>
+          </Link>
         </div>
       </section>
 
