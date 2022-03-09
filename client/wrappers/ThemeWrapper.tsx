@@ -1,24 +1,24 @@
-import { ThemeProvider, useMediaQuery } from '@mui/material';
+import { ThemeProvider } from '@mui/material';
 import { useEffect, useMemo } from 'react';
 
 import { darkTheme, lightTheme } from '@/config/theme';
-import { setTheme, Theme } from '@/store/build/buildSlice';
+import { setTheme } from '@/store/build/buildSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 
 const ThemeWrapper: React.FC = ({ children }) => {
   const dispatch = useAppDispatch();
 
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-  const theme: Theme | undefined = useAppSelector((state) => state.build.theme);
+  const theme = useAppSelector((state) => state.build.theme);
+
   const isDarkMode = useMemo(() => theme === 'dark', [theme]);
 
   const muiTheme = useMemo(() => (isDarkMode ? darkTheme : lightTheme), [isDarkMode]);
 
   useEffect(() => {
     if (theme === undefined) {
-      dispatch(setTheme({ theme: prefersDarkMode ? 'dark' : 'light' }));
+      dispatch(setTheme({ theme: 'dark' }));
     }
-  }, [theme, dispatch, prefersDarkMode]);
+  }, [theme, dispatch]);
 
   useEffect(() => {
     if (isDarkMode) {

@@ -142,7 +142,6 @@ const defaultState: Partial<Resume> = {
         ['skills', 'interests', 'languages', 'awards', 'certifications', 'publications'],
       ],
     ],
-    language: 'en',
     template: 'kakuna',
     typography: {
       family: {

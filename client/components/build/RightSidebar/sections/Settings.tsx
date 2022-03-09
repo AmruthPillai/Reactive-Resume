@@ -19,11 +19,11 @@ import { useMutation } from 'react-query';
 
 import Heading from '@/components/shared/Heading';
 import ThemeSwitch from '@/components/shared/ThemeSwitch';
-import { Language, languageMap, languages } from '@/config/languages';
+import { Language, languages } from '@/config/languages';
 import { ServerError } from '@/services/axios';
 import queryClient from '@/services/react-query';
 import { loadSampleData, LoadSampleDataParams, resetResume, ResetResumeParams } from '@/services/resume';
-import { setTheme, togglePageBreakLine, togglePageOrientation } from '@/store/build/buildSlice';
+import { setLanguage, setTheme, togglePageBreakLine, togglePageOrientation } from '@/store/build/buildSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setResumeState } from '@/store/resume/resumeSlice';
 import { dateFormatOptions } from '@/utils/date';
@@ -35,13 +35,13 @@ const Settings = () => {
 
   const resume = useAppSelector((state) => state.resume);
   const theme = useAppSelector((state) => state.build.theme);
+  const language = useAppSelector((state) => state.build.language);
   const breakLine = useAppSelector((state) => state.build.page.breakLine);
   const orientation = useAppSelector((state) => state.build.page.orientation);
 
   const id: number = useMemo(() => get(resume, 'id'), [resume]);
   const slug: string = useMemo(() => get(resume, 'slug'), [resume]);
   const username: string = useMemo(() => get(resume, 'user.username'), [resume]);
-  const language: string = useMemo(() => get(resume, 'metadata.language'), [resume]);
   const dateConfig: DateConfig = useMemo(() => get(resume, 'metadata.date'), [resume]);
 
   const isDarkMode = useMemo(() => theme === 'dark', [theme]);
@@ -58,8 +58,9 @@ const Settings = () => {
   const handleChangeDateFormat = (value: string | null) =>
     dispatch(setResumeState({ path: 'metadata.date.format', value }));
 
-  const handleChangeLanguage = (value: Language | null) =>
-    dispatch(setResumeState({ path: 'metadata.language', value: value?.code }));
+  const handleChangeLanguage = (value: Language | null) => {
+    dispatch(setLanguage({ language: value?.code || 'en' }));
+  };
 
   const handleLoadSampleData = async () => {
     await loadSampleDataMutation({ id });
@@ -121,7 +122,10 @@ const Settings = () => {
               disableClearable
               className="my-2 w-full"
               options={languages}
-              value={languageMap[language]}
+              value={language}
+              isOptionEqualToValue={(a, b) => a.code === b.code}
+              onChange={(_, value) => handleChangeLanguage(value)}
+              renderInput={(params) => <TextField {...params} />}
               getOptionLabel={(language) => {
                 if (language.localName) {
                   return `${language.name} (${language.localName})`;
@@ -129,9 +133,6 @@ const Settings = () => {
 
                 return language.name;
               }}
-              isOptionEqualToValue={(a, b) => a.code === b.code}
-              onChange={(_, value) => handleChangeLanguage(value)}
-              renderInput={(params) => <TextField {...params} />}
             />
           </ListItem>
         </>

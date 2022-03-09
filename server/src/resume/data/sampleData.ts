@@ -440,7 +440,6 @@ const sampleData: Partial<Resume> = {
       ],
       [['projects'], ['references']],
     ],
-    language: 'en',
     template: 'kakuna',
     typography: {
       size: {
