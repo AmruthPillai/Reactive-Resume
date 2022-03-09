@@ -25,7 +25,7 @@ workflows:
 
     scripts:
       - name: Set up local properties
-        script: echo "sdk.dir=$ANDROID_SDK_ROOT" > "$FCI_BUILD_DIR/local.properties"
+        script: echo "sdk.dir=$ANDROID_SDK_ROOT" > "$FCI_BUILD_DIR/app/local.properties"
 
       - name: Set up key.properties file for code signing
         script: |
