@@ -29,6 +29,7 @@
     "build": "env-cmd --silent concurrently \"pnpm run build:*\"",
     "start:server": "pnpm -F server start:prod",
     "start:client": "pnpm -F client start",
+    "start:docs": "pnpm -F docs serve",
     "start": "env-cmd --silent concurrently --kill-others \"pnpm run start:*\""
   },
   "dependencies": {

@@ -62,8 +62,8 @@ const config = {
             title: 'Sections',
             items: [
               {
-                label: 'Documentation',
-                to: '/docs/intro',
+                label: 'Building from Source',
+                to: '/build-from-source',
               },
             ],
           },
@@ -84,12 +84,12 @@ const config = {
             title: 'Support',
             items: [
               {
-                label: 'Translate',
-                href: 'https://translate.rxresu.me',
-              },
-              {
                 label: 'Donate',
                 href: 'https://buymeacoffee.com/AmruthPillai',
+              },
+              {
+                label: 'Translate',
+                href: 'https://translate.rxresu.me',
               },
             ],
           },
