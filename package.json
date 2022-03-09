@@ -26,15 +26,13 @@
     "build": "env-cmd --silent concurrently \"pnpm run build:*\"",
     "start:server": "pnpm -F server start:prod",
     "start:client": "pnpm -F client start",
-    "start": "env-cmd --silent concurrently --kill-others \"pnpm run start:*\"",
-    "release": "release-it"
+    "start": "env-cmd --silent concurrently --kill-others \"pnpm run start:*\""
   },
   "dependencies": {
     "concurrently": "^7.0.0",
     "env-cmd": "^10.1.0"
   },
   "devDependencies": {
-    "@release-it/conventional-changelog": "^4.2.1",
     "@typescript-eslint/eslint-plugin": "^5.14.0",
     "@typescript-eslint/parser": "^5.14.0",
     "cz-conventional-changelog": "^3.3.0",
@@ -46,7 +44,6 @@
     "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^7.0.4",
     "prettier": "^2.5.1",
-    "release-it": "^14.12.5",
     "typescript": "^4.5.5"
   }
 }
