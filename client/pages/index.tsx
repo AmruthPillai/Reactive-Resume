@@ -147,18 +147,6 @@ const Home: NextPage = () => {
         <h6>{t('landing.links.heading')}</h6>
 
         <div>
-          <a href={GITHUB_URL} target="_blank" rel="noreferrer">
-            <Button variant="text" startIcon={<LinkIcon />}>
-              {t('landing.links.links.github')}
-            </Button>
-          </a>
-
-          <a href={DONATION_URL} target="_blank" rel="noreferrer">
-            <Button variant="text" startIcon={<LinkIcon />}>
-              {t('landing.links.links.donate')}
-            </Button>
-          </a>
-
           <Link href="/meta/privacy" passHref>
             <Button variant="text" startIcon={<LinkIcon />}>
               {t('landing.links.links.privacy')}
@@ -170,6 +158,18 @@ const Home: NextPage = () => {
               {t('landing.links.links.service')}
             </Button>
           </Link>
+
+          <a href={GITHUB_URL} target="_blank" rel="noreferrer">
+            <Button variant="text" startIcon={<LinkIcon />}>
+              {t('landing.links.links.github')}
+            </Button>
+          </a>
+
+          <a href={DONATION_URL} target="_blank" rel="noreferrer">
+            <Button variant="text" startIcon={<LinkIcon />}>
+              {t('landing.links.links.donate')}
+            </Button>
+          </a>
         </div>
       </section>
 

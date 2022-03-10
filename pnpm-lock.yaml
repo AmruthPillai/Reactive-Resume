@@ -188,6 +188,7 @@ importers:
       '@nestjs/schedule': ^1.0.2
       '@nestjs/schematics': ^8.0.8
       '@nestjs/serve-static': ^2.2.2
+      '@nestjs/terminus': ^8.0.4
       '@nestjs/typeorm': ^8.0.3
       '@reactive-resume/schema': workspace:*
       '@sendgrid/mail': ^7.6.1
@@ -240,6 +241,7 @@ importers:
       '@nestjs/platform-express': 8.4.0_31e7036b193d6d3c9cadab18cbb4af84
       '@nestjs/schedule': 1.0.2_1ce925e2290a1cea9e3700e8a60baeb5
       '@nestjs/serve-static': 2.2.2_31e7036b193d6d3c9cadab18cbb4af84
+      '@nestjs/terminus': 8.0.4_44ad68f90df6df0ad3d3ea7593df94f3
       '@nestjs/typeorm': 8.0.3_d17aee4fbe284d59b832be708c000fe0
       '@sendgrid/mail': 7.6.1
       '@types/passport': 1.0.7
@@ -1411,6 +1413,21 @@ packages:
       '@nestjs/common': 8.4.0_add13df2cdecb4b62cd3f7664ea82e18
       '@nestjs/core': 8.4.0_ded80713f50ec1c99e9ba95af1765d72
       path-to-regexp: 0.1.7
+    dev: false
+
+  /@nestjs/terminus/8.0.4_44ad68f90df6df0ad3d3ea7593df94f3:
+    resolution: {integrity: sha512-KjeY7VLt0Az6pA2wO67nkL1QbE68yBb+FLZ7+aa+C/g/IKoDR668nqSuFzJarBrnFBTGEwDD09BwsgqkmymrbQ==}
+    peerDependencies:
+      '@nestjs/common': 8.x
+      '@nestjs/core': 8.x
+      reflect-metadata: 0.1.x
+      rxjs: 7.x
+    dependencies:
+      '@nestjs/common': 8.4.0_add13df2cdecb4b62cd3f7664ea82e18
+      '@nestjs/core': 8.4.0_ded80713f50ec1c99e9ba95af1765d72
+      check-disk-space: 3.1.0
+      reflect-metadata: 0.1.13
+      rxjs: 7.5.5
     dev: false
 
   /@nestjs/typeorm/8.0.3_d17aee4fbe284d59b832be708c000fe0:
@@ -2807,6 +2824,11 @@ packages:
   /chardet/0.7.0:
     resolution: {integrity: sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==}
     dev: true
+
+  /check-disk-space/3.1.0:
+    resolution: {integrity: sha512-4L3WVw4uPaBJocwnxTCWTTHc8mNu080pjCVBhZeWFdnaQBAremLHpJ1H90G+uEA0rJcW43fghYMsLBXID9X4Zg==}
+    engines: {node: '>=12'}
+    dev: false
 
   /chokidar/3.5.3:
     resolution: {integrity: sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==}
