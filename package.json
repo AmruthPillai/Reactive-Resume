@@ -1,6 +1,6 @@
 {
   "name": "reactive-resume",
-  "version": "3.0.0-beta.4",
+  "version": "3.0.0",
   "private": true,
   "workspaces": [
     "schema",
@@ -14,6 +14,7 @@
   },
   "scripts": {
     "prepare": "husky install",
+    "release": "standard-version",
     "lint": "eslint --quiet --fix --ext .js,.ts,.tsx .",
     "format": "prettier --loglevel error --write \"./**/*.{js,ts,tsx,json}\"",
     "dev:schema": "pnpm -F schema dev",
@@ -44,6 +45,7 @@
     "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^7.0.4",
     "prettier": "^2.5.1",
+    "standard-version": "^9.3.2",
     "typescript": "^4.5.5"
   }
 }
