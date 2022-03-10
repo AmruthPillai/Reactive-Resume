@@ -13,6 +13,7 @@ import {
 import { DateConfig, Resume } from '@reactive-resume/schema';
 import dayjs from 'dayjs';
 import get from 'lodash/get';
+import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { useMemo } from 'react';
 import { useMutation } from 'react-query';
@@ -29,6 +30,8 @@ import { setResumeState } from '@/store/resume/resumeSlice';
 import { dateFormatOptions } from '@/utils/date';
 
 const Settings = () => {
+  const router = useRouter();
+
   const { t } = useTranslation();
 
   const dispatch = useAppDispatch();
@@ -59,7 +62,14 @@ const Settings = () => {
     dispatch(setResumeState({ path: 'metadata.date.format', value }));
 
   const handleChangeLanguage = (value: Language | null) => {
-    dispatch(setLanguage({ language: value?.code || 'en' }));
+    const { pathname, asPath, query } = router;
+    const locale = value?.code || 'en';
+
+    dayjs.locale(locale);
+    dispatch(setLanguage({ language: locale || 'en' }));
+    document.cookie = `NEXT_LOCALE=${locale}; path=/; expires=2147483647`;
+
+    router.push({ pathname, query }, asPath, { locale });
   };
 
   const handleLoadSampleData = async () => {

@@ -5,6 +5,9 @@ import { useEffect } from 'react';
 const DateWrapper: React.FC = ({ children }) => {
   useEffect(() => {
     dayjs.extend(relativeTime);
+
+    // Locales
+    require('dayjs/locale/kn');
   }, []);
 
   return <>{children}</>;

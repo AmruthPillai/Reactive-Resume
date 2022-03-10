@@ -9,6 +9,11 @@ export const languages: Language[] = [
     code: 'en',
     name: 'English',
   },
+  {
+    code: 'kn',
+    name: 'Kannada',
+    localName: 'ಕನ್ನಡ',
+  },
 ];
 
 export const languageMap: Record<string, Language> = languages.reduce(
