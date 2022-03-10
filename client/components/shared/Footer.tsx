@@ -9,7 +9,7 @@ const Footer: React.FC<Props> = ({ className }) => {
   const { t } = useTranslation();
 
   return (
-    <footer className={clsx('text-xs', className)}>
+    <div className={clsx('text-xs', className)}>
       <p>{t('common.footer.license')}</p>
 
       <p>
@@ -20,7 +20,7 @@ const Footer: React.FC<Props> = ({ className }) => {
           </a>
         </Trans>
       </p>
-    </footer>
+    </div>
   );
 };
 

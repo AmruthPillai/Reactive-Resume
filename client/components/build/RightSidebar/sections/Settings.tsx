@@ -63,13 +63,13 @@ const Settings = () => {
 
   const handleChangeLanguage = (value: Language | null) => {
     const { pathname, asPath, query } = router;
-    const locale = value?.code || 'en';
+    const code = value?.code || 'en';
 
-    dayjs.locale(locale);
-    dispatch(setLanguage({ language: locale || 'en' }));
-    document.cookie = `NEXT_LOCALE=${locale}; path=/; expires=2147483647`;
+    dayjs.locale(code);
+    dispatch(setLanguage({ language: code }));
+    document.cookie = `NEXT_LOCALE=${code}; path=/; expires=2147483647`;
 
-    router.push({ pathname, query }, asPath, { locale });
+    router.push({ pathname, query }, asPath, { locale: code });
   };
 
   const handleLoadSampleData = async () => {

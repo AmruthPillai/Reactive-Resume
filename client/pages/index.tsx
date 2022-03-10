@@ -9,6 +9,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import Testimony from '@/components/landing/Testimony';
 import Footer from '@/components/shared/Footer';
+import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
 import Logo from '@/components/shared/Logo';
 import NoSSR from '@/components/shared/NoSSR';
 import { screenshots } from '@/config/screenshots';
@@ -180,9 +181,13 @@ const Home: NextPage = () => {
       </section>
 
       <footer>
-        <Footer className="font-semibold leading-5 opacity-50" />
+        <div className={styles.version}>
+          <Footer className="font-semibold leading-5 opacity-50" />
 
-        <div>v{process.env.appVersion}</div>
+          <div>v{process.env.appVersion}</div>
+        </div>
+
+        <LanguageSwitcher />
       </footer>
     </main>
   );
