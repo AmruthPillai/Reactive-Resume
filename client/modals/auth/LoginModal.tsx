@@ -122,7 +122,7 @@ const LoginModal: React.FC = () => {
             startIcon={<Google />}
             onClick={handleLoginWithGoogle}
           >
-            {t('modals.auth.login.actions.login-google')}
+            {t('modals.auth.login.actions.google')}
           </Button>
 
           <Button type="submit" onClick={handleSubmit(onSubmit)} disabled={isLoading}>

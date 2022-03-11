@@ -17,7 +17,7 @@ const TermsOfService: NextPage = () => (
 
     <h3>
       <strong>
-        Do whatever you want, governed by the{' '}
+        Do whatever you want, distributed under the{' '}
         <a href="https://choosealicense.com/licenses/mit/" target="_blank" rel="noreferrer">
           MIT license
         </a>

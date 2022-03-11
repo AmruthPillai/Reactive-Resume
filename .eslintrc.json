@@ -1,5 +1,6 @@
 {
   "root": true,
+  "ignorePatterns": ["/app"],
   "parser": "@typescript-eslint/parser",
   "extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
   "plugins": ["@typescript-eslint/eslint-plugin", "simple-import-sort", "unused-imports"],

@@ -1,7 +1,6 @@
 import DateWrapper from './DateWrapper';
 import FontWrapper from './FontWrapper';
 import HotkeysWrapper from './HotkeysWrapper';
-import LocaleWrapper from './LocaleWrapper';
 import ThemeWrapper from './ThemeWrapper';
 
 const WrapperRegistry: React.FC = ({ children }) => {
@@ -10,9 +9,7 @@ const WrapperRegistry: React.FC = ({ children }) => {
       <FontWrapper>
         <HotkeysWrapper>
           <DateWrapper>
-            <LocaleWrapper>
-              <>{children}</>
-            </LocaleWrapper>
+            <>{children}</>
           </DateWrapper>
         </HotkeysWrapper>
       </FontWrapper>

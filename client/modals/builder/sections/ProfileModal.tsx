@@ -10,6 +10,7 @@ import { useEffect, useMemo } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 import BaseModal from '@/components/shared/BaseModal';
+import { VALID_URL_REGEX } from '@/constants/index';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
 import { addItem, editItem } from '@/store/resume/resumeSlice';
@@ -21,17 +22,14 @@ const path = 'sections.profile';
 const defaultState: FormData = {
   network: '',
   username: '',
-  url: 'https://',
+  url: '',
 };
 
 const schema = Joi.object<FormData>({
   id: Joi.string(),
   network: Joi.string().required(),
   username: Joi.string().required(),
-  url: Joi.string()
-    .pattern(/[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/, { name: 'valid URL' })
-    .default('https://')
-    .allow(''),
+  url: Joi.string().pattern(VALID_URL_REGEX, { name: 'valid URL' }).allow(''),
 });
 
 const ProfileModal: React.FC = () => {
@@ -45,10 +43,10 @@ const ProfileModal: React.FC = () => {
   const isEditMode = useMemo(() => !!item, [item]);
 
   const addText = t('builder.common.actions.add', {
-    section: t('builder.leftSidebar.sections.profiles.heading', { count: 1 }),
+    token: t('builder.leftSidebar.sections.profiles.heading', { count: 1 }),
   });
   const editText = t('builder.common.actions.edit', {
-    section: t('builder.leftSidebar.sections.profiles.heading', { count: 1 }),
+    token: t('builder.leftSidebar.sections.profiles.heading', { count: 1 }),
   });
 
   const { reset, control, handleSubmit } = useForm<FormData>({
@@ -131,6 +129,7 @@ const ProfileModal: React.FC = () => {
             <TextField
               label={t('builder.common.form.url.label')}
               className="col-span-2"
+              placeholder="https://"
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}

@@ -9,6 +9,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import Testimony from '@/components/landing/Testimony';
 import Footer from '@/components/shared/Footer';
+import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
 import Logo from '@/components/shared/Logo';
 import NoSSR from '@/components/shared/NoSSR';
 import { screenshots } from '@/config/screenshots';
@@ -147,6 +148,18 @@ const Home: NextPage = () => {
         <h6>{t('landing.links.heading')}</h6>
 
         <div>
+          <Link href="/meta/privacy" passHref>
+            <Button variant="text" startIcon={<LinkIcon />}>
+              {t('landing.links.links.privacy')}
+            </Button>
+          </Link>
+
+          <Link href="/meta/service" passHref>
+            <Button variant="text" startIcon={<LinkIcon />}>
+              {t('landing.links.links.service')}
+            </Button>
+          </Link>
+
           <a href={GITHUB_URL} target="_blank" rel="noreferrer">
             <Button variant="text" startIcon={<LinkIcon />}>
               {t('landing.links.links.github')}
@@ -162,15 +175,19 @@ const Home: NextPage = () => {
       </section>
 
       <section className={styles.section}>
-        <a href="https://www.digitalocean.com/" target="_blank" rel="noreferrer">
+        <a href="https://pillai.xyz/digitalocean" target="_blank" rel="noreferrer">
           <Image src="/images/sponsors/digitalocean.svg" alt="Powered By DigitalOcean" width={200} height={40} />
         </a>
       </section>
 
       <footer>
-        <Footer className="font-semibold leading-5 opacity-50" />
+        <div className={styles.version}>
+          <Footer className="font-semibold leading-5 opacity-50" />
 
-        <div>v{process.env.appVersion}</div>
+          <div>v{process.env.appVersion}</div>
+        </div>
+
+        <LanguageSwitcher />
       </footer>
     </main>
   );

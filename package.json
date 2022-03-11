@@ -1,6 +1,6 @@
 {
   "name": "reactive-resume",
-  "version": "3.0.0-beta.1",
+  "version": "3.0.0-beta.6",
   "private": true,
   "workspaces": [
     "schema",
@@ -15,10 +15,11 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "lint": "eslint --fix --ext .js,.ts,.tsx .",
-    "format": "prettier --write \"./**/*.{js,ts,tsx,json}\"",
+    "release": "standard-version",
+    "lint": "eslint --quiet --fix --ext .js,.ts,.tsx .",
+    "format": "prettier --loglevel error --write \"./**/*.{js,ts,tsx,json}\"",
     "dev:schema": "pnpm -F schema dev",
-    "dev:server": "pnpm -F server start:dev",
+    "dev:server": "pnpm -F server start:debug",
     "dev:client": "pnpm -F client dev",
     "dev:docs": "pnpm -F docs start",
     "dev": "env-cmd --silent concurrently --kill-others \"pnpm run dev:*\"",
@@ -37,8 +38,8 @@
     "env-cmd": "^10.1.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.13.0",
-    "@typescript-eslint/parser": "^5.13.0",
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.5.0",
@@ -48,6 +49,7 @@
     "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^7.0.4",
     "prettier": "^2.5.1",
+    "standard-version": "^9.3.2",
     "typescript": "^4.5.5"
   }
 }

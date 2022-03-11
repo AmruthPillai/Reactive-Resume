@@ -63,7 +63,7 @@ const Sharing = () => {
 
           <div className="mt-1 flex w-full">
             <FormControlLabel
-              label={t<string>('builder.rightSidebar.sections.sharing.short-url.label')}
+              label={t('builder.rightSidebar.sections.sharing.short-url.label') as string}
               control={
                 <Checkbox className="mr-1" checked={showShortUrl} onChange={(_, value) => setShowShortUrl(value)} />
               }

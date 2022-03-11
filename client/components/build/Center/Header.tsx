@@ -184,7 +184,7 @@ const Header = () => {
                 <ListItemText>{t('builder.header.menu.share-link')}</ListItemText>
               </MenuItem>
             ) : (
-              <Tooltip arrow placement="right" title={t<string>('builder.header.menu.tooltips.share-link')}>
+              <Tooltip arrow placement="right" title={t('builder.header.menu.tooltips.share-link') as string}>
                 <div>
                   <MenuItem>
                     <ListItemIcon>
@@ -196,7 +196,7 @@ const Header = () => {
               </Tooltip>
             )}
 
-            <Tooltip arrow placement="right" title={t<string>('builder.header.menu.tooltips.delete')}>
+            <Tooltip arrow placement="right" title={t('builder.header.menu.tooltips.delete') as string}>
               <MenuItem onClick={handleDelete}>
                 <ListItemIcon>
                   <Delete className="scale-90" />

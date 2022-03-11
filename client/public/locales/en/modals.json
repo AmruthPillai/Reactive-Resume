@@ -16,7 +16,7 @@
     "login": {
       "actions": {
         "login": "Login",
-        "login-google": "Login with Google"
+        "google": "Login with Google"
       },
       "body": "Please enter your username and password associated with your account to login and access, manage and share your resumes.",
       "form": {
@@ -34,7 +34,8 @@
     },
     "register": {
       "actions": {
-        "register": "Register"
+        "register": "Register",
+        "google": "Register with Google"
       },
       "body": "Please enter your personal information to create an account.",
       "form": {
@@ -105,14 +106,14 @@
         "actions": {
           "upload-archive": "Upload ZIP Archive"
         },
-        "body": "You can save time by exporting your data from LinkedIn and using it to auto-fill fields on Reactive Resume. Head on over to the <1>Data Privacy</1> section on LinkedIn and request an archive of your data. Once it is available, upload the ZIP archive below.",
+        "body": "You can save time by exporting your data from LinkedIn and using it to auto-fill fields on Reactive Resume. Head over to the <1>Data Privacy</1> section on LinkedIn and request an archive of your data. Once it is available, upload the ZIP file below.",
         "heading": "Import From LinkedIn"
       },
       "reactive-resume": {
         "actions": {
           "upload-json": "Upload JSON"
         },
-        "body": "If you have a JSON that was exported with the current version of Reactive Resume, you can import it back here to get an editable version again.",
+        "body": "If you have a JSON that was exported with the current version of Reactive Resume, you can import it back here to get an editable version again. Previous versions of Reactive Resume are unfortunately not supported at the moment.",
         "heading": "Import From Reactive Resume"
       }
     },

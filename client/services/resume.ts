@@ -1,6 +1,6 @@
+import env from '@beam-australia/react-env';
 import { Resume } from '@reactive-resume/schema';
-import { AxiosResponse } from 'axios';
-import isEmpty from 'lodash/isEmpty';
+import _axios, { AxiosResponse } from 'axios';
 
 import isBrowser from '@/utils/isBrowser';
 
@@ -22,9 +22,6 @@ export type FetchResumeByIdentifierParams = {
 
 export type FetchResumeByShortIdParams = {
   shortId: string;
-  options?: {
-    secretKey?: string;
-  };
 };
 
 export type RenameResumeParams = {
@@ -60,22 +57,25 @@ export type DeleteResumeParams = {
 
 export const fetchResumes = () => axios.get<Resume[]>('/resume').then((res) => res.data);
 
-export const fetchResumeByShortId = async ({ shortId, options = { secretKey: '' } }: FetchResumeByShortIdParams) => {
-  const requestOptions = isEmpty(options.secretKey) ? {} : { params: { secretKey: options.secretKey } };
-
-  return axios.get<Resume>(`/resume/short/${shortId}`, requestOptions).then((res) => res.data);
-};
-
 export const fetchResumeByIdentifier = async ({
   username,
   slug,
   options = { secretKey: '' },
 }: FetchResumeByIdentifierParams) => {
-  const prefix = !isBrowser && process.env.NODE_ENV === 'development' ? 'http://localhost:3100' : '';
-  const requestOptions = isEmpty(options.secretKey) ? {} : { params: { secretKey: options.secretKey } };
+  if (!isBrowser) {
+    const serverUrl = env('SERVER_URL');
+    const secretKey = options.secretKey;
 
-  return axios.get<Resume>(`${prefix}/resume/${username}/${slug}`, requestOptions).then((res) => res.data);
+    return _axios
+      .get<Resume>(`${serverUrl}/resume/${username}/${slug}`, { params: { secretKey } })
+      .then((res) => res.data);
+  }
+
+  return axios.get<Resume>(`/resume/${username}/${slug}`).then((res) => res.data);
 };
+
+export const fetchResumeByShortId = async ({ shortId }: FetchResumeByShortIdParams) =>
+  axios.get<Resume>(`/resume/short/${shortId}`).then((res) => res.data);
 
 export const createResume = (createResumeParams: CreateResumeParams) =>
   axios.post<Resume, AxiosResponse<Resume>, CreateResumeParams>('/resume', createResumeParams).then((res) => res.data);

@@ -84,7 +84,7 @@ const ImportExternalModal: React.FC = () => {
         <p className="mb-2">
           <Trans t={t} i18nKey="modals.dashboard.import-external.linkedin.body">
             You can save time by exporting your data from LinkedIn and using it to auto-fill fields on Reactive Resume.
-            Head on over to the
+            Head over to the
             <a
               href="https://www.linkedin.com/psettings/member-data"
               className="underline"
@@ -93,7 +93,7 @@ const ImportExternalModal: React.FC = () => {
             >
               Data Privacy
             </a>
-            section on LinkedIn and request an archive of your data. Once it is available, upload the ZIP archive below.
+            section on LinkedIn and request an archive of your data. Once it is available, upload the ZIP file below.
           </Trans>
         </p>
 

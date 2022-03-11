@@ -1,8 +1,12 @@
 .container {
   @apply m-6 grid gap-8 text-center md:m-8 md:text-left;
 
-  footer > div {
-    @apply text-xs font-medium opacity-50 mt-2;
+  footer {
+    @apply flex items-end justify-between;
+
+    .version > div {
+      @apply text-xs font-medium opacity-50 mt-3;
+    }
   }
 }
 
