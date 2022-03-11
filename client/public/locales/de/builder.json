@@ -1,0 +1,357 @@
+{
+  "common": {
+    "actions": {
+      "add": "Neue {{token}} hinzufügen",
+      "delete": "Löschen {{token}}",
+      "edit": "Bearbeiten {{token}}"
+    },
+    "columns": {
+      "heading": "Spalten",
+      "tooltip": "Anzahl der Spalten ändern"
+    },
+    "form": {
+      "date": {
+        "label": "Datum"
+      },
+      "description": {
+        "label": "Beschreibung"
+      },
+      "email": {
+        "label": "E-Mail Adresse"
+      },
+      "end-date": {
+        "help-text": "Dieses Feld leer lassen, wenn noch vorhanden",
+        "label": "Enddatum"
+      },
+      "keywords": {
+        "label": "Stichwörter"
+      },
+      "level": {
+        "label": "Ebene"
+      },
+      "levelNum": {
+        "label": "Ebene (Anzahl)"
+      },
+      "name": {
+        "label": "Name"
+      },
+      "phone": {
+        "label": "Telefonnummer"
+      },
+      "position": {
+        "label": "Position"
+      },
+      "start-date": {
+        "label": "Startdatum"
+      },
+      "subtitle": {
+        "label": "Untertitel"
+      },
+      "summary": {
+        "label": "Zusammenfassung"
+      },
+      "title": {
+        "label": "Titel"
+      },
+      "url": {
+        "label": "Webseite"
+      }
+    },
+    "glossary": {
+      "page": "Seite"
+    },
+    "list": {
+      "empty-text": "Diese Liste ist leer.",
+      "actions": {
+        "edit": "Bearbeiten",
+        "duplicate": "Duplizieren",
+        "delete": "Löschen"
+      }
+    },
+    "tooltip": {
+      "delete-section": "Abschnitt löschen",
+      "rename-section": "Abschnitt umbenennen",
+      "toggle-visibility": "Sichtbarkeit umschalten",
+      "delete-item": "Sind Sie sicher, dass Sie dieses Element löschen möchten? Dies ist eine unumkehrbare Aktion."
+    }
+  },
+  "controller": {
+    "tooltip": {
+      "center-artboard": "Artboard zentrieren",
+      "copy-link": "Link zum Fortsetzen kopieren",
+      "export-pdf": "PDF exportieren",
+      "toggle-orientation": "Seitenausrichtung umschalten",
+      "toggle-page-break-line": "Pausenzeile umschalten",
+      "toggle-sidebars": "Seitenleisten umschalten",
+      "zoom-in": "Vergrößern",
+      "zoom-out": "Verkleinern"
+    }
+  },
+  "header": {
+    "menu": {
+      "delete": "Löschen",
+      "duplicate": "Duplizieren",
+      "rename": "Umbenennen",
+      "share-link": "Link teilen",
+      "tooltips": {
+        "delete": "Sind Sie sicher, dass Sie diesen Lebenslauf löschen möchten? Dies ist eine unumkehrbare Aktion.",
+        "share-link": "Du musst die Sichtbarkeit deines Lebenslaufs in die Öffentlichkeit ändern, um ihn für andere sichtbar zu machen."
+      }
+    }
+  },
+  "leftSidebar": {
+    "sections": {
+      "awards": {
+        "form": {
+          "awarder": {
+            "label": "Auszeichnung"
+          }
+        }
+      },
+      "basics": {
+        "actions": {
+          "photo-filters": "Fotofilter"
+        },
+        "heading": "Grundlagen",
+        "headline": {
+          "label": "Überschrift"
+        },
+        "name": {
+          "label": "Voller Name"
+        },
+        "photo-filters": {
+          "effects": {
+            "border": {
+              "label": "Grenze"
+            },
+            "grayscale": {
+              "label": "Graustufen"
+            },
+            "heading": "Effekte"
+          },
+          "shape": {
+            "heading": "Form"
+          },
+          "size": {
+            "heading": "Größe (in px)"
+          }
+        },
+        "photo-upload": {
+          "tooltip": {
+            "remove": "Foto entfernen",
+            "upload": "Foto hochladen"
+          }
+        }
+      },
+      "certifications": {
+        "form": {
+          "issuer": {
+            "label": "Aussteller"
+          }
+        }
+      },
+      "education": {
+        "form": {
+          "area-study": {
+            "label": "Studienbereich"
+          },
+          "courses": {
+            "label": "Kurse"
+          },
+          "degree": {
+            "label": "Grad"
+          },
+          "grade": {
+            "label": "Note"
+          },
+          "institution": {
+            "label": "Institution"
+          }
+        }
+      },
+      "location": {
+        "address": {
+          "label": "Adresse"
+        },
+        "city": {
+          "label": "Stadt"
+        },
+        "country": {
+          "label": "Land"
+        },
+        "heading": "Standort",
+        "postal-code": {
+          "label": "Postleitzahl"
+        },
+        "region": {
+          "label": "Region"
+        }
+      },
+      "profiles": {
+        "form": {
+          "network": {
+            "label": "Netzwerk"
+          },
+          "username": {
+            "label": "Benutzername"
+          }
+        },
+        "heading": "Profiles",
+        "heading_one": "Profil"
+      },
+      "publications": {
+        "form": {
+          "publisher": {
+            "label": "Herausgeber"
+          }
+        }
+      },
+      "references": {
+        "form": {
+          "relationship": {
+            "label": "Beziehung"
+          }
+        }
+      },
+      "section": {
+        "heading": "Abschnitt"
+      },
+      "volunteer": {
+        "form": {
+          "organization": {
+            "label": "Organisation"
+          }
+        }
+      }
+    }
+  },
+  "rightSidebar": {
+    "sections": {
+      "css": {
+        "heading": "Benutzerdefiniertes CSS"
+      },
+      "export": {
+        "heading": "Exportieren",
+        "json": {
+          "primary": "JSON",
+          "secondary": "Laden Sie eine JSON-Version Ihres Lebenslaufs herunter, die Sie wieder in Reactive Resume importieren können."
+        },
+        "pdf": {
+          "loading": {
+            "primary": "PDF wird erstellt",
+            "secondary": "Bitte warten Sie, wenn Ihr PDF generiert wird, dies kann bis zu 15 Sekunden dauern."
+          },
+          "normal": {
+            "primary": "PDF",
+            "secondary": "Laden Sie sich ein PDF Ihres Lebenslaufs herunter, das Sie ausdrucken und an Ihren Traumjob senden können. Diese Datei kann nicht zur weiteren Bearbeitung importiert werden."
+          }
+        }
+      },
+      "layout": {
+        "heading": "Layout",
+        "tooltip": {
+          "reset-layout": "Layout zurücksetzen"
+        }
+      },
+      "links": {
+        "bugs-features": {
+          "body": "Hält Sie etwas davon ab, einen Lebenslauf zu erstellen? Oder haben Sie eine tolle Idee, die Sie hinzufügen möchten? Erhöhen Sie einen Eintrag auf GitHub, um loszulegen.",
+          "button": "GitHub Themen",
+          "heading": "Fehler? Feature-Anfragen?"
+        },
+        "donate": {
+          "body": "Wenn Ihnen Reactive Resume gefallen hat, denken Sie bitte darüber nach, so viel wie möglich zu spenden, damit die App für immer kostenlos und werbefrei bleibt.",
+          "button": "Kaufe mir einen Kaffee",
+          "heading": "Spenden an Reactive Resume"
+        },
+        "github": "Quellcode",
+        "heading": "Links"
+      },
+      "settings": {
+        "global": {
+          "date": {
+            "primary": "Datum",
+            "secondary": "Datumsformat für die gesamte App"
+          },
+          "heading": "Globale",
+          "language": {
+            "primary": "Sprache",
+            "secondary": "Sprache anzeigen, die in der gesamten App verwendet wird"
+          },
+          "theme": {
+            "primary": "Thema"
+          }
+        },
+        "heading": "Einstellungen",
+        "page": {
+          "break-line": {
+            "primary": "Linie anhalten",
+            "secondary": "Zeile auf allen Seiten anzeigen, um die Höhe einer A4-Seite zu markieren"
+          },
+          "heading": "Seite",
+          "orientation": {
+            "primary": "Ausrichtung",
+            "secondary": "Ob Seiten horizontal oder vertikal angezeigt werden sollen"
+          }
+        },
+        "resume": {
+          "heading": "Fortsetzen",
+          "reset": {
+            "primary": "Alles zurücksetzen",
+            "secondary": "Zu viele Fehler gemacht? Klicken Sie hier, um alle Änderungen zurückzusetzen und bei Null zu beginnen. Sei vorsichtig, diese Aktion kann nicht rückgängig gemacht werden."
+          },
+          "sample": {
+            "primary": "Beispieldaten laden",
+            "secondary": "Nicht sicher, wo man anfangen soll? Klicken Sie hier, um ein paar Beispieldaten zu laden, um zu sehen, wie ein vollständiger Lebenslauf aussieht."
+          }
+        }
+      },
+      "sharing": {
+        "heading": "Teilen",
+        "short-url": {
+          "label": "Kurze URL bevorzugen"
+        },
+        "visibility": {
+          "subtitle": "Erlaube jemandem mit einem Link deinen Lebenslauf anzusehen",
+          "title": "Öffentlich"
+        }
+      },
+      "templates": {
+        "heading": "Vorlagen"
+      },
+      "theme": {
+        "form": {
+          "background": {
+            "label": "Hintergrund"
+          },
+          "primary": {
+            "label": "Primär"
+          },
+          "text": {
+            "label": "Text"
+          }
+        },
+        "heading": "Thema"
+      },
+      "typography": {
+        "form": {
+          "font-family": {
+            "label": "Schriftfamilie"
+          },
+          "font-size": {
+            "label": "Schriftgröße"
+          }
+        },
+        "heading": "Typographie",
+        "widgets": {
+          "body": {
+            "label": "Körper"
+          },
+          "headings": {
+            "label": "Überschriften"
+          }
+        }
+      }
+    }
+  }
+}
