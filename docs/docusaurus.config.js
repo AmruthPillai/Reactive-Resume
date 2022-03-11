@@ -62,8 +62,12 @@ const config = {
             title: 'Sections',
             items: [
               {
-                label: 'Building from Source',
-                to: '/build-from-source',
+                label: 'Tutorial',
+                to: '/tutorial',
+              },
+              {
+                label: 'Source Code',
+                to: '/source-code',
               },
             ],
           },

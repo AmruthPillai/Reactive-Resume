@@ -42,6 +42,15 @@ The secret key can be a unique key, a randomly generated string that is used for
 
 This URL would be used in features like link sharing functionality and authentication redirection. This points only to the client app, as the server would be running on `PORT 3100` always.
 
+### `PUBLIC_SERVER_URL`
+
+**Required**: `yes`  
+**Description:** URL through which server is accessible
+
+**Default Value:** `http://localhost:3100`
+
+This URL is used when export PDF functionality is used within the app and has to reach out to the server.
+
 ## Database
 
 ### `POSTGRES_HOST`
