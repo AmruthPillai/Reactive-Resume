@@ -5,7 +5,8 @@
   "workspaces": [
     "schema",
     "client",
-    "server"
+    "server",
+    "docs"
   ],
   "config": {
     "commitizen": {
@@ -20,13 +21,16 @@
     "dev:schema": "pnpm -F schema dev",
     "dev:server": "pnpm -F server start:debug",
     "dev:client": "pnpm -F client dev",
+    "dev:docs": "pnpm -F docs start",
     "dev": "env-cmd --silent concurrently --kill-others \"pnpm run dev:*\"",
     "build:schema": "pnpm -F schema build",
     "build:server": "pnpm -F server build",
     "build:client": "pnpm -F client build",
+    "build:docs": "pnpm -F docs build",
     "build": "env-cmd --silent concurrently \"pnpm run build:*\"",
     "start:server": "pnpm -F server start:prod",
     "start:client": "pnpm -F client start",
+    "start:docs": "pnpm -F docs serve",
     "start": "env-cmd --silent concurrently --kill-others \"pnpm run start:*\""
   },
   "dependencies": {

@@ -1,0 +1,38 @@
+---
+sidebar_position: 1
+---
+
+# Docker
+
+This is probably the easiest method to build the source code on your machine if you already have Docker and Docker Compose installed. If you don't have Docker on your machine, I'll let you figure that out on your own.
+
+1. Once you have Docker set up, you can pull the source code from GitHub and dive into the repository.
+
+```bash
+git clone git@github.com:AmruthPillai/Reactive-Resume.git
+cd Reactive-Resume
+```
+
+2. Install dependencies using [pnpm](https://pnpm.io/), but feel free to use any other package manager that supports [npm workspaces](https://docs.npmjs.com/cli/v8/using-npm/workspaces).
+
+```bash
+pnpm install
+```
+
+3. Copy the `.env.example` file to `.env` in the project root and fill it with values according to your setup. To know which environment variables are required, and about what they do, head over [this section](env-vars).
+
+```bash
+cp .env.example .env
+```
+
+4. Use Docker Compose to create a PostgreSQL instance and a `reactive_resume` database, or feel free to use your own and modify the variables used in `.env`
+
+```bash
+docker-compose up -d postgres
+```
+
+5. Run the project and start building!
+
+```bash
+pnpm dev
+```

@@ -38,10 +38,7 @@ export class AuthService {
         throw new HttpException('A user with that username and/or email already exists.', HttpStatus.UNAUTHORIZED);
       }
 
-      throw new HttpException(
-        'Something went wrong. Please try again later, or raise an issue on GitHub if the problem persists.',
-        HttpStatus.INTERNAL_SERVER_ERROR
-      );
+      throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
 
@@ -124,7 +121,7 @@ export class AuthService {
       return user;
     } catch (error: any) {
       if (error.status !== HttpStatus.NOT_FOUND) {
-        throw new Error('Something went wrong, please try again later.');
+        throw new HttpException(error, HttpStatus.BAD_GATEWAY);
       }
 
       const UserInfoClient = google.oauth2('v2').userinfo;

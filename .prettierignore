@@ -1,11 +1,18 @@
-# Build Artifacts
-dist
-.next
+# Schema
+schema/dist
+
+# Server
+server/dist
+
+# Client
+client/.next
+client/public/__ENV.js
 
 # IDEs
 .vscode
 
 # Project Metadata
+LICENSE
 README.md
 CHANGELOG.md
 
@@ -19,3 +26,7 @@ docker-compose.yml
 
 # Android App
 /app
+
+# Docs
+docs/build
+docs/.docusaurus

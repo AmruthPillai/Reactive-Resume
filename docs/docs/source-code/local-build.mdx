@@ -1,0 +1,48 @@
+---
+sidebar_position: 2
+---
+
+# Local Build
+
+This might not be the most versatile, but it's quite easy and my recommended way of getting the project set up. This project is heavily dependent on [pnpm](https://pnpm.io) and it's monorepo workspaces feature, so I'd pick that up if I were you.
+
+1. Once you have `pnpm` set up, you can pull the source code from GitHub and dive into the repository.
+
+```bash
+git clone git@github.com:AmruthPillai/Reactive-Resume.git
+cd Reactive-Resume
+```
+
+2. Install dependencies using [pnpm](https://pnpm.io/), and it should take just a few minutes.
+
+```bash
+pnpm install
+```
+
+3. Copy the `.env.example` file to `.env` in the project root and fill it with values according to your setup. To know which environment variables are required, and about what they do, head over [this section](env-vars).
+
+```bash
+cp .env.example .env
+```
+
+4. Run the app locally by using the command:
+
+```bash
+pnpm dev
+```
+
+Now, your **frontend** client should be running on [`http://localhost:3000`](http://localhost:3000), your **backend** server on [`http://localhost:3100`](http://localhost:3100) and this **documentation** on [`http://localhost:3200`](http://localhost:3200).
+
+5. Build the project before deploying by running the command:
+
+```bash
+pnpm build
+```
+
+6. Finally, start the production servers for all three workspaces by running:
+
+```bash
+pnpm start
+```
+
+Additionally, you can check the `package.json` for some additional scripts on how to run commands for a specific workspace. For more information on pnpm workspaces, head over to [their documentation](https://pnpm.io/workspaces).
