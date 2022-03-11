@@ -4,11 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [3.0.0-beta.6](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.0.0-beta.5...v3.0.0-beta.6) (2022-03-11)
 
-
 ### Features
 
 * **lang:** add language switcher on the landing page, in the footer ([8bc7d25](https://github.com/AmruthPillai/Reactive-Resume/commit/8bc7d2599ef6af7a07bfbe886c43844152b0d9f7))
-
 
 ### Bug Fixes
 
