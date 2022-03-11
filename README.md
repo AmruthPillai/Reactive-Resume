@@ -2,10 +2,12 @@
 
 # Reactive Resume
 
+![Project Version](https://img.shields.io/github/package-json/v/AmruthPillai/Reactive-Resume?style=flat-square)
+![Project License](https://img.shields.io/github/license/AmruthPillai/Reactive-Resume?style=flat-square)
 [![Docker Pulls](https://img.shields.io/docker/pulls/amruthpillai/reactive-resume?style=flat-square)](https://hub.docker.com/r/amruthpillai/reactive-resume)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FAmruthPillai%2FReactive-Resume.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FAmruthPillai%2FReactive-Resume?ref=badge_shield)
 
-## [Go to App](https://beta.rxresu.me/)
+## [Go to App](https://rxresu.me/)
 
 Reactive Resume is a free and open source resume builder that’s built to make the mundane tasks of creating, updating and sharing your resume as easy as 1, 2, 3. With this app, you can create multiple resumes, share them with recruiters through a unique link and print as PDF, all for free, no advertisements, without losing the integrity and privacy of your data.
 
@@ -15,13 +17,13 @@ You have complete control over what goes into your resume, how it looks, what co
 
 - Free, forever
 - No Advertising
-- No Tracking (no 🍪s too)
+- No User Tracking
 - Sync your data across devices
+- Accessible in multiple languages
 - Import data from [LinkedIn](https://www.linkedin.com/), [JSON Resume](https://jsonresume.org/)
 - Manage multiple resumes with one account
 - Open Source (with large community support)
 - Send your resume to others with a unique sharable link
-- Accessible in multiple languages, [help translate here](https://translate.rxresu.me/)
 - Pick any font from [Google Fonts](https://fonts.google.com/) to use on your resume
 - Choose from 6 vibrant templates and more coming soon
 - Export your resume to JSON or PDF format with just one click
@@ -30,6 +32,15 @@ You have complete control over what goes into your resume, how it looks, what co
 - Add sections, add pages and change layouts the way you want to
 - Tailor-made Backend and Database, isolated from Google, Amazon etc.
 - **Oh, and did I mention that it's free?**
+
+## Languages
+
+- English
+- German (Deutsch)
+- Kannada (ಕನ್ನಡ) (@aksh1251)
+- Tamil (தமிழ்)
+
+Help by [translating Reactive Resume](https://translate.rxresu.me) to your language!
 
 ## Docker Setup
 
