@@ -37,6 +37,7 @@ You have complete control over what goes into your resume, how it looks, what co
 
 - English
 - German (Deutsch)
+- Hindi (हिन्दी)
 - Kannada (ಕನ್ನಡ) (@aksh1251)
 - Tamil (தமிழ்)
 

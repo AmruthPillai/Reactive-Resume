@@ -10,6 +10,16 @@ export const languages: Language[] = [
     name: 'English',
   },
   {
+    code: 'de',
+    name: 'German',
+    localName: 'Deutsch',
+  },
+  {
+    code: 'hi',
+    name: 'Hindi',
+    localName: 'हिन्दी',
+  },
+  {
     code: 'kn',
     name: 'Kannada',
     localName: 'ಕನ್ನಡ',
@@ -19,12 +29,7 @@ export const languages: Language[] = [
     name: 'Tamil',
     localName: 'தமிழ்',
   },
-  {
-    code: 'de',
-    name: 'German',
-    localName: 'Deutsch',
-  },
-];
+].sort((a, b) => a.name.localeCompare(b.name));
 
 export const languageMap: Record<string, Language> = languages.reduce(
   (acc, lang) => ({
