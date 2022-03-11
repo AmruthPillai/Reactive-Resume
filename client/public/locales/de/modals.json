@@ -1,0 +1,135 @@
+{
+  "auth": {
+    "forgot-password": {
+      "actions": {
+        "send-email": "Passwort zurücksetzen E-Mail senden"
+      },
+      "body": "Geben Sie einfach die E-Mail-Adresse ein, die mit dem Konto verknüpft ist, das Sie wiederherstellen möchten.",
+      "form": {
+        "email": {
+          "label": "E-Mail Adresse"
+        }
+      },
+      "heading": "Passwort vergessen?",
+      "help-text": "Wenn das Konto existiert, erhalten Sie eine E-Mail mit einem Link zum Zurücksetzen Ihres Passworts."
+    },
+    "login": {
+      "actions": {
+        "login": "Anmelden",
+        "google": "Mit Google anmelden"
+      },
+      "body": "Bitte geben Sie Ihren Benutzernamen und Ihr Passwort ein, um sich anzumelden und zuzugreifen, Ihre Bewerbungen zu verwalten und weiterzugeben.",
+      "form": {
+        "password": {
+          "label": "Passwort"
+        },
+        "username": {
+          "help-text": "Sie können auch Ihre E-Mail-Adresse eingeben",
+          "label": "Benutzername"
+        }
+      },
+      "heading": "Bei Ihrem Konto anmelden",
+      "recover-text": "Falls Sie Ihr Passwort vergessen haben, können Sie <1>Ihr Konto wiederherstellen</1> hier einrichten.",
+      "register-text": "Wenn Sie keinen haben, können Sie hier <1>ein Konto erstellen</1> anlegen."
+    },
+    "register": {
+      "actions": {
+        "register": "Registrieren",
+        "google": "Mit Google registrieren"
+      },
+      "body": "Bitte geben Sie Ihre persönlichen Daten ein, um ein Konto zu erstellen.",
+      "form": {
+        "confirm-password": {
+          "label": "Passwort bestätigen"
+        },
+        "email": {
+          "label": "E-Mail Adresse"
+        },
+        "name": {
+          "label": "Voller Name"
+        },
+        "password": {
+          "label": "Passwort"
+        },
+        "username": {
+          "label": "Benutzername"
+        }
+      },
+      "heading": "Ein Konto erstellen",
+      "loginText": "Wenn Sie bereits ein Konto haben, können Sie sich hier <1>anmelden</1>."
+    },
+    "reset-password": {
+      "actions": {
+        "set-password": "Neues Passwort setzen"
+      },
+      "body": "Geben Sie ein neues Passwort für Ihr Konto ein.",
+      "form": {
+        "confirm-password": {
+          "label": "Passwort bestätigen"
+        },
+        "password": {
+          "label": "Passwort"
+        }
+      },
+      "heading": "Passwort zurücksetzen"
+    }
+  },
+  "dashboard": {
+    "create-resume": {
+      "actions": {
+        "create-resume": "Lebenslauf erstellen"
+      },
+      "body": "Erstelle deinen Lebenslauf, indem du ihm einen Namen gibst. Er könnte sich auf die Rolle beziehen, die Sie beantragen, oder nur auf Ihren Lieblings-Snack.",
+      "form": {
+        "name": {
+          "label": "Name"
+        },
+        "public": {
+          "label": "Ist öffentlich zugänglich?"
+        },
+        "slug": {
+          "label": "Slug"
+        }
+      },
+      "heading": "Neuen Lebenslauf erstellen"
+    },
+    "import-external": {
+      "heading": "Aus externen Quellen importieren",
+      "json-resume": {
+        "actions": {
+          "upload-json": "JSON hochladen"
+        },
+        "body": "Wenn du einen <1>validierten JSON Resume</1> bereit hast, kannst du damit deine Entwicklung auf reaktiven Resume beschleunigen. Klicken Sie auf den Button unten und laden Sie eine gültige JSON-Datei hoch, um zu beginnen.",
+        "heading": "Import vom JSON-Lebenslauf"
+      },
+      "linkedin": {
+        "actions": {
+          "upload-archive": "ZIP-Archiv hochladen"
+        },
+        "body": "Sie können Zeit sparen, indem Sie Ihre Daten aus LinkedIn exportieren und sie zum automatischen Ausfüllen von Feldern auf Reactive Resume verwenden. Gehen Sie zum Abschnitt <1>Datenschutz </1> auf LinkedIn und fordern Sie ein Archiv Ihrer Daten an. Sobald diese verfügbar sind, laden Sie die ZIP-Datei unten hoch.",
+        "heading": "Aus LinkedIn importieren"
+      },
+      "reactive-resume": {
+        "actions": {
+          "upload-json": "JSON hochladen"
+        },
+        "body": "Wenn Sie ein JSON haben, das mit der aktuellen Version von Reactive Resume exportiert wurde, Sie können es hier wieder importieren um wieder eine editierbare Version zu erhalten. Vorherige Versionen von Reactive Resume werden derzeit leider nicht unterstützt.",
+        "heading": "Import vom reaktiven Lebenslauf"
+      }
+    },
+    "rename-resume": {
+      "actions": {
+        "rename-resume": "Lebenslauf umbenennen"
+      },
+      "form": {
+        "name": {
+          "label": "Name"
+        },
+        "slug": {
+          "label": "Slug"
+        }
+      },
+      "heading": "Lebenslauf umbenennen"
+    }
+  }
+}
