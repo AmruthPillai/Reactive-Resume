@@ -13,6 +13,7 @@ import { Controller, useForm } from 'react-hook-form';
 
 import BaseModal from '@/components/shared/BaseModal';
 import MarkdownSupported from '@/components/shared/MarkdownSupported';
+import { VALID_URL_REGEX } from '@/constants/index';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
 import { addItem, editItem } from '@/store/resume/resumeSlice';
@@ -40,9 +41,7 @@ const schema = Joi.object<FormData>().keys({
     start: Joi.string().allow(''),
     end: Joi.string().allow(''),
   }),
-  url: Joi.string()
-    .pattern(/[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/, { name: 'valid URL' })
-    .allow(''),
+  url: Joi.string().pattern(VALID_URL_REGEX, { name: 'valid URL' }).allow(''),
   summary: Joi.string().allow(''),
 });
 
@@ -184,6 +183,7 @@ const WorkModal: React.FC = () => {
           render={({ field, fieldState }) => (
             <TextField
               label={t('builder.common.form.url.label')}
+              placeholder="https://"
               className="col-span-2"
               error={!!fieldState.error}
               helperText={fieldState.error?.message}

@@ -125,7 +125,7 @@ const CreateResumeModal: React.FC = () => {
 
         <FormGroup>
           <FormControlLabel
-            label={t<string>('modals.dashboard.create-resume.form.public.label')}
+            label={t('modals.dashboard.create-resume.form.public.label') as string}
             control={
               <Controller
                 name="isPublic"

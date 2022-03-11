@@ -1,19 +1,17 @@
 import { Language } from '@mui/icons-material';
 import { IconButton, Popover } from '@mui/material';
-import dayjs from 'dayjs';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 import { MouseEvent, useState } from 'react';
 
 import { languages } from '@/config/languages';
-import { setLanguage } from '@/store/build/buildSlice';
-import { useAppDispatch } from '@/store/hooks';
 
 import styles from './LanguageSwitcher.module.scss';
 
 const LanguageSwitcher = () => {
   const router = useRouter();
 
-  const dispatch = useAppDispatch();
+  const { t } = useTranslation();
 
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
@@ -24,10 +22,7 @@ const LanguageSwitcher = () => {
   const handleChangeLanguage = (locale: string) => {
     const { pathname, asPath, query } = router;
 
-    dayjs.locale(locale);
-    dispatch(setLanguage({ language: locale }));
     document.cookie = `NEXT_LOCALE=${locale}; path=/; expires=2147483647`;
-
     router.push({ pathname, query }, asPath, { locale });
   };
 
@@ -59,7 +54,7 @@ const LanguageSwitcher = () => {
             ))}
 
             <a href="https://translate.rxresu.me" target="_blank" rel="noreferrer" className={styles.language}>
-              Missing your language?
+              {t('common.footer.language.missing')}
             </a>
           </div>
         </div>

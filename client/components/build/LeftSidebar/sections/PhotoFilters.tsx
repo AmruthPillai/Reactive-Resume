@@ -58,14 +58,14 @@ const PhotoFilters = () => {
 
         <div className="flex items-center">
           <FormControlLabel
-            label={t<string>('builder.leftSidebar.sections.basics.photo-filters.effects.grayscale.label')}
+            label={t('builder.leftSidebar.sections.basics.photo-filters.effects.grayscale.label') as string}
             control={
               <Checkbox color="secondary" checked={grayscale} onChange={(_, value) => handleSetGrayscale(value)} />
             }
           />
 
           <FormControlLabel
-            label={t<string>('builder.leftSidebar.sections.basics.photo-filters.effects.border.label')}
+            label={t('builder.leftSidebar.sections.basics.photo-filters.effects.border.label') as string}
             control={<Checkbox color="secondary" checked={border} onChange={(_, value) => handleSetBorder(value)} />}
           />
         </div>

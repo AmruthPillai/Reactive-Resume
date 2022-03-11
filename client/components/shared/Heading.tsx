@@ -72,19 +72,19 @@ const Heading: React.FC<Props> = ({
         })}
       >
         {isEditable && (
-          <Tooltip title={t<string>('builder.common.tooltip.rename-section')}>
+          <Tooltip title={t('builder.common.tooltip.rename-section') as string}>
             <IconButton onClick={toggleEditMode}>{editMode ? <Check /> : <DriveFileRenameOutline />}</IconButton>
           </Tooltip>
         )}
 
         {isHideable && (
-          <Tooltip title={t<string>('builder.common.tooltip.toggle-visibility')}>
+          <Tooltip title={t('builder.common.tooltip.toggle-visibility') as string}>
             <IconButton onClick={toggleVisibility}>{visibility ? <Visibility /> : <VisibilityOff />}</IconButton>
           </Tooltip>
         )}
 
         {isDeletable && (
-          <Tooltip title={t<string>('builder.common.tooltip.delete-section')}>
+          <Tooltip title={t('builder.common.tooltip.delete-section') as string}>
             <IconButton onClick={handleDelete}>
               <Delete />
             </IconButton>

@@ -161,7 +161,7 @@ const ResumePreview: React.FC<Props> = ({ resume }) => {
               <ListItemText>{t('dashboard.resume.menu.share-link')}</ListItemText>
             </MenuItem>
           ) : (
-            <Tooltip arrow placement="right" title={t<string>('dashboard.resume.menu.tooltips.share-link')}>
+            <Tooltip arrow placement="right" title={t('dashboard.resume.menu.tooltips.share-link') as string}>
               <div>
                 <MenuItem>
                   <ListItemIcon>
@@ -173,7 +173,7 @@ const ResumePreview: React.FC<Props> = ({ resume }) => {
             </Tooltip>
           )}
 
-          <Tooltip arrow placement="right" title={t<string>('dashboard.resume.menu.tooltips.delete')}>
+          <Tooltip arrow placement="right" title={t('dashboard.resume.menu.tooltips.delete') as string}>
             <MenuItem onClick={handleDelete}>
               <ListItemIcon>
                 <DeleteOutline className="scale-90" />

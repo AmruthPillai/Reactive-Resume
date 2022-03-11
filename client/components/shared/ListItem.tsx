@@ -3,6 +3,7 @@ import { Divider, IconButton, ListItemIcon, ListItemText, Menu, MenuItem, Toolti
 import { ListItem as ListItemType } from '@reactive-resume/schema';
 import clsx from 'clsx';
 import isFunction from 'lodash/isFunction';
+import { useTranslation } from 'next-i18next';
 import React, { useRef, useState } from 'react';
 import { DropTargetMonitor, useDrag, useDrop, XYCoord } from 'react-dnd';
 
@@ -26,6 +27,8 @@ type Props = {
 };
 
 const ListItem: React.FC<Props> = ({ item, index, title, subtitle, onMove, onEdit, onDelete, onDuplicate }) => {
+  const { t } = useTranslation();
+
   const ref = useRef<HTMLDivElement>(null);
   const [anchorEl, setAnchorEl] = useState<Element | null>(null);
 
@@ -122,29 +125,25 @@ const ListItem: React.FC<Props> = ({ item, index, title, subtitle, onMove, onEdi
             <ListItemIcon>
               <DriveFileRenameOutline className="scale-90" />
             </ListItemIcon>
-            <ListItemText>Edit</ListItemText>
+            <ListItemText>{t('builder.common.list.actions.edit')}</ListItemText>
           </MenuItem>
 
           <MenuItem onClick={() => handleDuplicate(item)}>
             <ListItemIcon>
               <FileCopy className="scale-90" />
             </ListItemIcon>
-            <ListItemText>Duplicate</ListItemText>
+            <ListItemText>{t('builder.common.list.actions.duplicate')}</ListItemText>
           </MenuItem>
 
           <Divider />
 
-          <Tooltip
-            arrow
-            placement="right"
-            title="Are you sure you want to delete this item? This is an irreversible action."
-          >
+          <Tooltip arrow placement="right" title={t('builder.common.tooltip.delete-item') as string}>
             <div>
               <MenuItem onClick={() => handleDelete(item)}>
                 <ListItemIcon>
                   <DeleteOutline className="scale-90" />
                 </ListItemIcon>
-                <ListItemText>Delete</ListItemText>
+                <ListItemText>{t('builder.common.list.actions.delete')}</ListItemText>
               </MenuItem>
             </div>
           </Tooltip>
