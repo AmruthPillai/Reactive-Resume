@@ -3,6 +3,6 @@ export const getCookie = (name: string): string | undefined => {
   const parts = value.split(`; ${name}=`);
 
   if (parts.length === 2) {
-    return parts.at(-1);
+    return parts[1];
   }
 };

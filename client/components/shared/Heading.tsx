@@ -37,7 +37,7 @@ const Heading: React.FC<Props> = ({
 
   const [editMode, setEditMode] = useState(false);
 
-  const id = useMemo(() => (path ? path.split('.').at(-1) : ''), [path]);
+  const id = useMemo(() => path.split('.')[1], [path]);
 
   const icon = sections.find((x) => x.id === id)?.icon || <Grade />;
 
