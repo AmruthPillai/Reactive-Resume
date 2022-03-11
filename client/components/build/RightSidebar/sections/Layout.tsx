@@ -62,7 +62,7 @@ const Layout = () => {
         path="metadata.layout"
         name={t('builder.rightSidebar.sections.layout.heading')}
         action={
-          <Tooltip title={t<string>('builder.rightSidebar.sections.layout.tooltip.reset-layout')}>
+          <Tooltip title={t('builder.rightSidebar.sections.layout.tooltip.reset-layout') as string}>
             <IconButton onClick={handleResetLayout}>
               <Restore />
             </IconButton>
@@ -81,7 +81,7 @@ const Layout = () => {
 
               <div className={clsx(styles.delete, { hidden: pageIndex === 0 })}>
                 <Tooltip
-                  title={t<string>('builder.common.actions.delete', { token: t('builder.common.glossary.page') })}
+                  title={t('builder.common.actions.delete', { token: t('builder.common.glossary.page') }) as string}
                 >
                   <IconButton size="small" onClick={() => handleDeletePage(pageIndex)}>
                     <Close fontSize="small" />

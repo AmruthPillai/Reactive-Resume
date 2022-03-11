@@ -67,8 +67,8 @@ const PhotoUpload: React.FC = () => {
         <Tooltip
           title={
             isEmpty(photo.url)
-              ? t<string>('builder.leftSidebar.sections.basics.photo-upload.tooltip.upload')
-              : t<string>('builder.leftSidebar.sections.basics.photo-upload.tooltip.remove')
+              ? (t('builder.leftSidebar.sections.basics.photo-upload.tooltip.upload') as string)
+              : (t('builder.leftSidebar.sections.basics.photo-upload.tooltip.remove') as string)
           }
         >
           <Avatar sx={{ width: 96, height: 96 }} src={photo.url} />

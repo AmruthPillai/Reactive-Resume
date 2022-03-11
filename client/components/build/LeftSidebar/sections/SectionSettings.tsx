@@ -32,7 +32,7 @@ const SectionSettings: React.FC<Props> = ({ path }) => {
 
   return (
     <div>
-      <Tooltip title={t<string>('builder.common.columns.tooltip')}>
+      <Tooltip title={t('builder.common.columns.tooltip') as string}>
         <ButtonBase onClick={handleClick} sx={{ padding: 1, borderRadius: 1 }} className="opacity-50 hover:opacity-75">
           <ViewWeek /> <span className="ml-1.5 text-xs">{columns}</span>
         </ButtonBase>

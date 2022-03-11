@@ -41,14 +41,14 @@ const Section: React.FC<Props> = ({
   const visibility = useAppSelector<boolean>((state) => get(state.resume, `${path}.visible`, true));
 
   const handleAdd = () => {
-    const id = path ? (path.split('.').at(-1) as string) : '';
+    const id = path.split('.')[1];
     const modal: ModalName = validate(id) ? 'builder.sections.custom' : `builder.${path}`;
 
     dispatch(setModalState({ modal, state: { open: true, payload: { path } } }));
   };
 
   const handleEdit = (item: ListItem) => {
-    const id = path ? (path.split('.').at(-1) as string) : '';
+    const id = path.split('.')[1];
     const modal: ModalName = validate(id) ? 'builder.sections.custom' : `builder.${path}`;
     const payload = validate(id) ? { path, item } : { item };
 

@@ -129,7 +129,7 @@ export class AuthService {
 
       const UserInfoClient = google.oauth2('v2').userinfo;
       const { data } = await UserInfoClient.get({ auth: OAuthClient });
-      const username = data.email.split('@').at(0);
+      const username = data.email.split('@')[0];
 
       const createUserDto: CreateGoogleUserDto = {
         name: `${data.given_name} ${data.family_name}`,

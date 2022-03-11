@@ -20,25 +20,24 @@ import { useMutation } from 'react-query';
 
 import Heading from '@/components/shared/Heading';
 import ThemeSwitch from '@/components/shared/ThemeSwitch';
-import { Language, languages } from '@/config/languages';
+import { Language, languageMap, languages } from '@/config/languages';
 import { ServerError } from '@/services/axios';
 import queryClient from '@/services/react-query';
 import { loadSampleData, LoadSampleDataParams, resetResume, ResetResumeParams } from '@/services/resume';
-import { setLanguage, setTheme, togglePageBreakLine, togglePageOrientation } from '@/store/build/buildSlice';
+import { setTheme, togglePageBreakLine, togglePageOrientation } from '@/store/build/buildSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setResumeState } from '@/store/resume/resumeSlice';
 import { dateFormatOptions } from '@/utils/date';
 
 const Settings = () => {
-  const router = useRouter();
-
   const { t } = useTranslation();
 
   const dispatch = useAppDispatch();
 
+  const { locale, ...router } = useRouter();
+
   const resume = useAppSelector((state) => state.resume);
   const theme = useAppSelector((state) => state.build.theme);
-  const language = useAppSelector((state) => state.build.language);
   const breakLine = useAppSelector((state) => state.build.page.breakLine);
   const orientation = useAppSelector((state) => state.build.page.orientation);
 
@@ -62,14 +61,12 @@ const Settings = () => {
     dispatch(setResumeState({ path: 'metadata.date.format', value }));
 
   const handleChangeLanguage = (value: Language | null) => {
-    const { pathname, asPath, query } = router;
+    const { pathname, asPath, query, push } = router;
     const code = value?.code || 'en';
 
-    dayjs.locale(code);
-    dispatch(setLanguage({ language: code }));
     document.cookie = `NEXT_LOCALE=${code}; path=/; expires=2147483647`;
 
-    router.push({ pathname, query }, asPath, { locale: code });
+    push({ pathname, query }, asPath, { locale: code });
   };
 
   const handleLoadSampleData = async () => {
@@ -132,7 +129,7 @@ const Settings = () => {
               disableClearable
               className="my-2 w-full"
               options={languages}
-              value={language}
+              value={languageMap[locale ?? 'en']}
               isOptionEqualToValue={(a, b) => a.code === b.code}
               onChange={(_, value) => handleChangeLanguage(value)}
               renderInput={(params) => <TextField {...params} />}

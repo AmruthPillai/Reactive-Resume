@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0-beta.6](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.0.0-beta.5...v3.0.0-beta.6) (2022-03-11)
+
+### Features
+
+* **lang:** add language switcher on the landing page, in the footer ([8bc7d25](https://github.com/AmruthPillai/Reactive-Resume/commit/8bc7d2599ef6af7a07bfbe886c43844152b0d9f7))
+
+### Bug Fixes
+
+* **i18n:** add missing translation keys, update lang/locale logic ([7d8828a](https://github.com/AmruthPillai/Reactive-Resume/commit/7d8828a358d653bb162877a64c75028eb82678cd))
+* **webkit:** fix issue with webkit not supporting .at() ([2654cba](https://github.com/AmruthPillai/Reactive-Resume/commit/2654cba039eb73d33257c36fa90a52cabc9fda96))
+
 ## [3.0.0-beta.5](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.0.0-beta.4...v3.0.0-beta.5) (2022-03-10)
 
 ### Bug Fixes

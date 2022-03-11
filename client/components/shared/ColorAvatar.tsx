@@ -12,7 +12,7 @@ const ColorAvatar: React.FC<Props> = ({ color, size = 20, onClick }) => {
 
   return (
     <IconButton onClick={handleClick}>
-      <Avatar sx={{ bgcolor: color, width: size, height: size }}> </Avatar>
+      <Avatar sx={{ bgcolor: color, width: size, height: size }}>&nbsp;</Avatar>
     </IconButton>
   );
 };
