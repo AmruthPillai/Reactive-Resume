@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.0.0-beta.6...v3.0.0) (2022-03-11)
+
+
+### Features
+
+* **docs:** add docusaurus workspace, initial setup of docs ([dc4aa0b](https://github.com/AmruthPillai/Reactive-Resume/commit/dc4aa0b496096bd59c45426bfcea6ba7db5f5c01))
+
 ## [3.0.0-beta.6](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.0.0-beta.5...v3.0.0-beta.6) (2022-03-11)
 
 ### Features
