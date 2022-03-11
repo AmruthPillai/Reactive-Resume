@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
+* **lang**: add German, Kannada and Tamil languages to the app ([3a524f9](https://github.com/AmruthPillai/Reactive-Resume/commit/3a524f9c9c7a0e446491265b2242ad3dfeae188c))
 * **docs:** add docusaurus workspace, initial setup of docs ([dc4aa0b](https://github.com/AmruthPillai/Reactive-Resume/commit/dc4aa0b496096bd59c45426bfcea6ba7db5f5c01))
 
 ## [3.0.0-beta.6](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.0.0-beta.5...v3.0.0-beta.6) (2022-03-11)
