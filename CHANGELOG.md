@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.0.0...v3.1.0) (2022-03-12)
+
+
+### Features
+
+* **client:** add "spanish (es)" language to i18n locales ([bf167f8](https://github.com/AmruthPillai/Reactive-Resume/commit/bf167f81a3659677dada55856f5eaf0fc469e697))
+* **client:** add mm/yyyy date option to date format options ([82bf44d](https://github.com/AmruthPillai/Reactive-Resume/commit/82bf44daa24422156779e9b38d3dc695176eaa09)), closes [#656](https://github.com/AmruthPillai/Reactive-Resume/issues/656)
+* **client:** add sitemap generation to next app ([2cbc582](https://github.com/AmruthPillai/Reactive-Resume/commit/2cbc582a12b72b3012246022d4b518ed657d4c08))
+* **client:** disable "Toggle Page Orientation" when there's only one page on the artboard ([01da1a0](https://github.com/AmruthPillai/Reactive-Resume/commit/01da1a06b802f1063a41d7a9a682e76b1daf9461)), closes [#655](https://github.com/AmruthPillai/Reactive-Resume/issues/655)
+
+
+### Bug Fixes
+
+* **client:** remove hard-coded "keywords:" in certain templates ([dda42b4](https://github.com/AmruthPillai/Reactive-Resume/commit/dda42b4c6b3bc359ac4f2bb91ca8118ddc84ec07)), closes [#650](https://github.com/AmruthPillai/Reactive-Resume/issues/650)
+* **client:** show "present" string if end date is not entered, also add to i18n locales ([b5cd6c4](https://github.com/AmruthPillai/Reactive-Resume/commit/b5cd6c412b5b6b6ca7bb43c3801762de451f06b4)), closes [#653](https://github.com/AmruthPillai/Reactive-Resume/issues/653)
+* **server:** photo uploads not working, fix save location and returned url ([799f208](https://github.com/AmruthPillai/Reactive-Resume/commit/799f20823e6d97a1ff0ba2c45c61d56304d0fa58)), closes [#658](https://github.com/AmruthPillai/Reactive-Resume/issues/658)
+
 ## [3.0.0](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.0.0-beta.6...v3.0.0) (2022-03-11)
 
 
