@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.1.1](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.1.0...v3.1.1) (2022-03-12)
+
+
+### Features
+
+* **client:** add product hunt announcement banner ([b515fc3](https://github.com/AmruthPillai/Reactive-Resume/commit/b515fc36e7f282db92e8eb509b6c5004a944fa95))
+
 ## [3.1.0](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.0.0...v3.1.0) (2022-03-12)
 
 
