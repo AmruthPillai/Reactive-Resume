@@ -1,4 +1,4 @@
-import { Theme } from '@reactive-resume/schema';
+import { Theme as ThemeType } from '@reactive-resume/schema';
 import get from 'lodash/get';
 import { useTranslation } from 'next-i18next';
 
@@ -16,7 +16,7 @@ const Theme = () => {
 
   const dispatch = useAppDispatch();
 
-  const { background, text, primary } = useAppSelector<Theme>((state) => get(state.resume, 'metadata.theme'));
+  const { background, text, primary } = useAppSelector<ThemeType>((state) => get(state.resume, 'metadata.theme'));
 
   const handleChange = (property: string, color: string) => {
     dispatch(setResumeState({ path: `metadata.theme.${property}`, value: color }));

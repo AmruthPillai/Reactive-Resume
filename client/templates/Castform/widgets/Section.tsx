@@ -1,5 +1,5 @@
 import { Email, Link, Phone } from '@mui/icons-material';
-import { ListItem, Section } from '@reactive-resume/schema';
+import { ListItem, Section as SectionType } from '@reactive-resume/schema';
 import get from 'lodash/get';
 import isArray from 'lodash/isArray';
 import isEmpty from 'lodash/isEmpty';
@@ -20,7 +20,7 @@ const Section: React.FC<SectionProps> = ({
   headlinePath = 'headline',
   keywordsPath = 'keywords',
 }) => {
-  const section: Section = useAppSelector((state) => get(state.resume, path, {}));
+  const section: SectionType = useAppSelector((state) => get(state.resume, path, {}));
   const dateFormat: string = useAppSelector((state) => get(state.resume, 'metadata.date.format'));
 
   if (!section.visible) return null;

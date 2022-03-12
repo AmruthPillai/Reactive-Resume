@@ -1,8 +1,8 @@
-import { Testimony } from '@/data/testimonials';
+import { Testimony as TestimonyType } from '@/data/testimonials';
 
 import styles from './Testimony.module.scss';
 
-type Props = Testimony;
+type Props = TestimonyType;
 
 const Testimony: React.FC<Props> = ({ name, message }) => {
   return (
