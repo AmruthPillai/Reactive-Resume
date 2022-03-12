@@ -84,13 +84,7 @@ const Section: React.FC<SectionProps> = ({
                 </DataDisplay>
               )}
 
-              {keywords && (
-                <div className="leading-normal">
-                  <span className="font-semibold">Keywords:</span>
-                  &nbsp;
-                  {keywords.join(', ')}
-                </div>
-              )}
+              {keywords && <div>{keywords.join(', ')}</div>}
 
               {(phone || email) && (
                 <div className="grid gap-1">
