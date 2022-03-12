@@ -11,4 +11,5 @@ export const FILENAME_TIMESTAMP = 'DDMMYYYYHHmmss';
 // Links
 export const DONATION_URL = 'https://www.buymeacoffee.com/AmruthPillai';
 export const GITHUB_URL = 'https://github.com/AmruthPillai/Reactive-Resume';
+export const PRODUCT_HUNT_URL = 'https://www.producthunt.com/posts/reactive-resume-v3';
 export const GITHUB_ISSUES_URL = 'https://github.com/AmruthPillai/Reactive-Resume/issues/new/choose';
