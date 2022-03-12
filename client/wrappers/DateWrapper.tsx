@@ -10,6 +10,7 @@ const DateWrapper: React.FC = ({ children }) => {
     dayjs.extend(relativeTime);
 
     // Locales
+    require('dayjs/locale/es');
     require('dayjs/locale/de');
     require('dayjs/locale/hi');
     require('dayjs/locale/kn');

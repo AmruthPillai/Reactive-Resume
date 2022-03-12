@@ -25,6 +25,11 @@ export const languages: Language[] = [
     localName: 'ಕನ್ನಡ',
   },
   {
+    code: 'es',
+    name: 'Spanish',
+    localName: 'Español',
+  },
+  {
     code: 'ta',
     name: 'Tamil',
     localName: 'தமிழ்',
