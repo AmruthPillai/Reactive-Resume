@@ -66,6 +66,7 @@ const Settings = () => {
     const code = value?.code || 'en';
 
     document.cookie = `NEXT_LOCALE=${code}; path=/; expires=2147483647`;
+    dispatch(setResumeState({ path: 'metadata.locale', value: code }));
 
     push({ pathname, query }, asPath, { locale: code });
   };

@@ -421,6 +421,7 @@ const sampleData: Partial<Resume> = {
       value: '/* Enter custom CSS here */\n\n* {\n    outline: 1px solid #000;\n}',
       visible: false,
     },
+    locale: 'en',
     date: {
       format: 'MMMM DD, YYYY',
     },

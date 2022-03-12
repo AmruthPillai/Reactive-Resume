@@ -5,6 +5,8 @@ import { useTranslation } from 'next-i18next';
 import { MouseEvent, useState } from 'react';
 
 import { languages } from '@/config/languages';
+import { useAppDispatch } from '@/store/hooks';
+import { setResumeState } from '@/store/resume/resumeSlice';
 
 import styles from './LanguageSwitcher.module.scss';
 
@@ -12,6 +14,8 @@ const LanguageSwitcher = () => {
   const router = useRouter();
 
   const { t } = useTranslation();
+
+  const dispatch = useAppDispatch();
 
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
@@ -23,6 +27,8 @@ const LanguageSwitcher = () => {
     const { pathname, asPath, query } = router;
 
     document.cookie = `NEXT_LOCALE=${locale}; path=/; expires=2147483647`;
+    dispatch(setResumeState({ path: 'metadata.locale', value: locale }));
+
     router.push({ pathname, query }, asPath, { locale });
   };
 

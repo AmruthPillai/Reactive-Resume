@@ -133,6 +133,7 @@ const defaultState: Partial<Resume> = {
       background: '#ffffff',
       primary: '#f44336',
     },
+    locale: 'en',
     date: {
       format: 'MMMM DD, YYYY',
     },

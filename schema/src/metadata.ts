@@ -23,6 +23,7 @@ export type DateConfig = {
 
 export type Metadata = {
   css: CustomCSS;
+  locale: string;
   date: DateConfig;
   layout: string[][][]; // page.column.section
   template: string;

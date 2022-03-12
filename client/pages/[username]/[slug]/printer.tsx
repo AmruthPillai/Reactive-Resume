@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import { GetServerSideProps, NextPage } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect } from 'react';
 
 import Page from '@/components/build/Center/Page';
@@ -22,15 +23,19 @@ type Props = {
   redirect?: any;
 };
 
-export const getServerSideProps: GetServerSideProps<Props | Promise<Props>, QueryParams> = async ({ query }) => {
+export const getServerSideProps: GetServerSideProps<Props | Promise<Props>, QueryParams> = async ({
+  query,
+  locale,
+}) => {
   const { username, slug, secretKey } = query as QueryParams;
 
   try {
     if (isEmpty(secretKey)) throw new Error('There is no secret key!');
 
     const resume = await fetchResumeByIdentifier({ username, slug, options: { secretKey } });
+    const displayLocale = resume.metadata.locale || locale || 'en';
 
-    return { props: { resume } };
+    return { props: { resume, ...(await serverSideTranslations(displayLocale, ['common'])) } };
   } catch (error) {
     return {
       redirect: {
