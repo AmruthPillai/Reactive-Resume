@@ -2,6 +2,7 @@ import { DateRange } from '@reactive-resume/schema';
 import dayjs from 'dayjs';
 import isEmpty from 'lodash/isEmpty';
 import isString from 'lodash/isString';
+import { i18n } from 'next-i18next';
 
 export const dateFormatOptions: string[] = [
   'MMMM DD, YYYY',
@@ -21,6 +22,8 @@ export const dateFormatOptions: string[] = [
 export const getRelativeTime = (timestamp: dayjs.ConfigType): string => dayjs(timestamp).toNow(true);
 
 export const formatDateString = (date: string | DateRange, formatStr: string): string | null => {
+  const presentString = i18n?.t('common.date.present') ?? '';
+
   if (isEmpty(date)) return null;
 
   // If `date` is a string
@@ -39,5 +42,5 @@ export const formatDateString = (date: string | DateRange, formatStr: string): s
     return `${dayjs(date.start).format(formatStr)} - ${dayjs(date.end).format(formatStr)}`;
   }
 
-  return dayjs(date.start).format(formatStr);
+  return `${dayjs(date.start).format(formatStr)} - ${presentString}`;
 };
