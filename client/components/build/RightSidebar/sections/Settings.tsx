@@ -38,6 +38,7 @@ const Settings = () => {
 
   const resume = useAppSelector((state) => state.resume);
   const theme = useAppSelector((state) => state.build.theme);
+  const pages = useAppSelector((state) => state.resume.metadata.layout);
   const breakLine = useAppSelector((state) => state.build.page.breakLine);
   const orientation = useAppSelector((state) => state.build.page.orientation);
 
@@ -151,10 +152,15 @@ const Settings = () => {
           <ListItem>
             <ListItemText
               primary={t('builder.rightSidebar.sections.settings.page.orientation.primary')}
-              secondary={t('builder.rightSidebar.sections.settings.page.orientation.secondary')}
+              secondary={
+                pages.length === 1
+                  ? t('builder.rightSidebar.sections.settings.page.orientation.disabled')
+                  : t('builder.rightSidebar.sections.settings.page.orientation.secondary')
+              }
             />
             <Switch
               color="secondary"
+              disabled={pages.length === 1}
               checked={orientation === 'horizontal'}
               onChange={() => dispatch(togglePageOrientation())}
             />

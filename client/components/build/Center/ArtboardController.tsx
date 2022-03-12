@@ -33,6 +33,7 @@ const ArtboardController: React.FC<ReactZoomPanPinchRef> = ({ zoomIn, zoomOut, c
 
   const resume = useAppSelector((state) => state.resume);
   const isDesktop = useMediaQuery(theme.breakpoints.up('sm'));
+  const pages = useAppSelector((state) => state.resume.metadata.layout);
   const { left, right } = useAppSelector((state) => state.build.sidebar);
   const orientation = useAppSelector((state) => state.build.page.orientation);
 
@@ -96,15 +97,17 @@ const ArtboardController: React.FC<ReactZoomPanPinchRef> = ({ zoomIn, zoomOut, c
 
         {isDesktop && (
           <>
-            <Tooltip arrow placement="top" title={t('builder.controller.tooltip.toggle-orientation') as string}>
-              <ButtonBase onClick={handleTogglePageOrientation}>
-                {orientation === 'vertical' ? (
-                  <AlignHorizontalCenter fontSize="medium" />
-                ) : (
-                  <AlignVerticalCenter fontSize="medium" />
-                )}
-              </ButtonBase>
-            </Tooltip>
+            {pages.length > 1 && (
+              <Tooltip arrow placement="top" title={t('builder.controller.tooltip.toggle-orientation') as string}>
+                <ButtonBase onClick={handleTogglePageOrientation}>
+                  {orientation === 'vertical' ? (
+                    <AlignHorizontalCenter fontSize="medium" />
+                  ) : (
+                    <AlignVerticalCenter fontSize="medium" />
+                  )}
+                </ButtonBase>
+              </Tooltip>
+            )}
 
             <Tooltip arrow placement="top" title={t('builder.controller.tooltip.toggle-page-break-line') as string}>
               <ButtonBase onClick={handleTogglePageBreakLine}>
