@@ -45,7 +45,7 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
     const pdf = await PDFDocument.create();
     const directory = join(__dirname, '..', 'assets/exports');
     const filename = `RxResume_PDFExport_${nanoid()}.pdf`;
-    const publicUrl = `/api/exports/${filename}`;
+    const publicUrl = `/assets/exports/${filename}`;
 
     for (let index = 0; index < resumePages.length; index++) {
       await page.evaluate((page) => (document.body.innerHTML = page.innerHTML), resumePages[index]);
