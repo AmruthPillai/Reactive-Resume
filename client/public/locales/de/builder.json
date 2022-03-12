@@ -61,18 +61,18 @@
       "page": "Seite"
     },
     "list": {
-      "empty-text": "Diese Liste ist leer.",
       "actions": {
-        "edit": "Bearbeiten",
+        "delete": "Löschen",
         "duplicate": "Duplizieren",
-        "delete": "Löschen"
-      }
+        "edit": "Bearbeiten"
+      },
+      "empty-text": "Diese Liste ist leer."
     },
     "tooltip": {
+      "delete-item": "Sind Sie sicher, dass Sie dieses Element löschen möchten? Dies ist eine unumkehrbare Aktion.",
       "delete-section": "Abschnitt löschen",
       "rename-section": "Abschnitt umbenennen",
-      "toggle-visibility": "Sichtbarkeit umschalten",
-      "delete-item": "Sind Sie sicher, dass Sie dieses Element löschen möchten? Dies ist eine unumkehrbare Aktion."
+      "toggle-visibility": "Sichtbarkeit umschalten"
     }
   },
   "controller": {
@@ -290,6 +290,7 @@
           },
           "heading": "Seite",
           "orientation": {
+            "disabled": "Hat keine Auswirkung, wenn nur eine Seite vorhanden ist",
             "primary": "Ausrichtung",
             "secondary": "Ob Seiten horizontal oder vertikal angezeigt werden sollen"
           }
