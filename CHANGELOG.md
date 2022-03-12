@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.1.3](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.1.2...v3.1.3) (2022-03-12)
+
+
+### Bug Fixes
+
+* **server:** reform url for pdf generation and download ([6d55f91](https://github.com/AmruthPillai/Reactive-Resume/commit/6d55f917eab3cb2f5f3a90c5a18f03b625d60021)), closes [#661](https://github.com/AmruthPillai/Reactive-Resume/issues/661)
+
 ### [3.1.2](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.1.1...v3.1.2) (2022-03-12)
 
 
