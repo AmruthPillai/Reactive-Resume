@@ -1,0 +1,135 @@
+{
+  "auth": {
+    "forgot-password": {
+      "actions": {
+        "send-email": "Enviar correo electrónico para restablecer la contraseña"
+      },
+      "body": "Simplemente ingrese la dirección de correo electrónico asociada con la cuenta que desea recuperar.",
+      "form": {
+        "email": {
+          "label": "Correo electrónico"
+        }
+      },
+      "heading": "¿Olvidó su contraseña?",
+      "help-text": "Si la cuenta existe, recibirá un correo electrónico con un enlace para restablecer su contraseña."
+    },
+    "login": {
+      "actions": {
+        "login": "Iniciar sesión",
+        "google": "Iniciar sesión con Google"
+      },
+      "body": "Por favor, introduzca su nombre de usuario y contraseña asociados a su cuenta para iniciar sesión y acceder, gestionar y compartir sus currículos.",
+      "form": {
+        "password": {
+          "label": "Contraseña"
+        },
+        "username": {
+          "help-text": "También puede ingresar su dirección de correo electrónico",
+          "label": "Nombre de usario"
+        }
+      },
+      "heading": "Ingrese en su cuenta",
+      "recover-text": "En caso de que hayas olvidado tu contraseña, puedes <1>recuperar tu cuenta</1> aquí.",
+      "register-text": "Si no tiene una, puede <1>crear una cuenta</1> aquí."
+    },
+    "register": {
+      "actions": {
+        "register": "Registrar",
+        "google": "Regístrese con Google"
+      },
+      "body": "Por favor ingrese su información personal para crear una cuenta.",
+      "form": {
+        "confirm-password": {
+          "label": "Confirmar Contraseña"
+        },
+        "email": {
+          "label": "Correo electrónico"
+        },
+        "name": {
+          "label": "Nombre Completo"
+        },
+        "password": {
+          "label": "Contraseña"
+        },
+        "username": {
+          "label": "Nombre de usario"
+        }
+      },
+      "heading": "Crear una cuenta",
+      "loginText": "Si ya tiene una cuenta, puede <1>iniciar sesión aquí</1>."
+    },
+    "reset-password": {
+      "actions": {
+        "set-password": "Establecer una nueva contraseña"
+      },
+      "body": "Introduzca una nueva contraseña para su cuenta.",
+      "form": {
+        "confirm-password": {
+          "label": "Confirmar Contraseña"
+        },
+        "password": {
+          "label": "Contraseña"
+        }
+      },
+      "heading": "Restablecer tu contraseña"
+    }
+  },
+  "dashboard": {
+    "create-resume": {
+      "actions": {
+        "create-resume": "Crear currículum"
+      },
+      "body": "Comience a construir su currículum dándole un nombre. Podría ser en referencia al puesto que está solicitando, o simplemente a su refrigerio favorito.",
+      "form": {
+        "name": {
+          "label": "Nombre"
+        },
+        "public": {
+          "label": "¿Es de acceso público?"
+        },
+        "slug": {
+          "label": "Segmento"
+        }
+      },
+      "heading": "Crear un nuevo currículum"
+    },
+    "import-external": {
+      "heading": "Importar desde fuentes externas",
+      "json-resume": {
+        "actions": {
+          "upload-json": "Subir JSON"
+        },
+        "body": "Si tiene un <1>JSON Resume validado</1> listo para usar, puede usarlo para acelerar su desarrollo en Reactive Resume. Haga clic en el botón a continuación y cargue un archivo JSON válido para comenzar.",
+        "heading": "Importar desde JSON Resume"
+      },
+      "linkedin": {
+        "actions": {
+          "upload-archive": "Subir archivo ZIP"
+        },
+        "body": "Puede ahorrar tiempo exportando sus datos de LinkedIn y usándolos para autocompletar campos en Reactive Resume. Dirígete a <1>Privacidad de datos</1> en LinkedIn y solicita un archivo de tus datos. Una vez que esté disponible, cargue el archivo ZIP a continuación.",
+        "heading": "Importar desde LinkedIn"
+      },
+      "reactive-resume": {
+        "actions": {
+          "upload-json": "Subir JSON"
+        },
+        "body": "Si tiene un JSON que se exportó con la versión actual de Reactive Resume, puede volver a importarlo aquí para obtener una versión editable nuevamente. Desafortunadamente, las versiones anteriores de Reactive Resume no son compatibles en este momento.",
+        "heading": "Importar desde Reactive Resume"
+      }
+    },
+    "rename-resume": {
+      "actions": {
+        "rename-resume": "Renombrar currículum"
+      },
+      "form": {
+        "name": {
+          "label": "Nombre"
+        },
+        "slug": {
+          "label": "Segmento"
+        }
+      },
+      "heading": "Renombrar tu currículum"
+    }
+  }
+}
