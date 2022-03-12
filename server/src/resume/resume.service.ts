@@ -219,7 +219,7 @@ export class ResumeService {
   async uploadPhoto(id: number, userId: number, filename: string) {
     const resume = await this.findOne(id, userId);
 
-    const url = `/api/uploads/${userId}/${id}/${filename}`;
+    const url = `/api/assets/uploads/${userId}/${id}/${filename}`;
     const updatedResume = set(resume, 'basics.photo.url', url);
 
     return this.resumeRepository.save<Resume>(updatedResume);

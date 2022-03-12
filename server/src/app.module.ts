@@ -19,7 +19,7 @@ import { UsersModule } from './users/users.module';
 @Module({
   imports: [
     ServeStaticModule.forRoot({
-      serveRoot: '/api',
+      serveRoot: '/assets',
       rootPath: join(__dirname, 'assets'),
     }),
     ConfigModule,
