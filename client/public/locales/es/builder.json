@@ -61,18 +61,18 @@
       "page": "Página"
     },
     "list": {
-      "empty-text": "Esta lista esta vacia.",
       "actions": {
-        "edit": "Editar",
+        "delete": "Eliminar",
         "duplicate": "Duplicar",
-        "delete": "Eliminar"
-      }
+        "edit": "Editar"
+      },
+      "empty-text": "Esta lista esta vacia."
     },
     "tooltip": {
+      "delete-item": "¿Estás seguro de que deseas eliminar este elemento? Esta acción es irreversible.",
       "delete-section": "Eliminar sección",
       "rename-section": "Renombrar sección",
-      "toggle-visibility": "Cambiar Visibilidad",
-      "delete-item": "¿Estás seguro de que deseas eliminar este elemento? Esta acción es irreversible."
+      "toggle-visibility": "Cambiar Visibilidad"
     }
   },
   "controller": {
@@ -290,6 +290,7 @@
           },
           "heading": "Página",
           "orientation": {
+            "disabled": "No tiene efecto cuando solo hay una página.",
             "primary": "Orientación",
             "secondary": "Visualización horizontal o vertical de las páginas"
           }
