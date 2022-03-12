@@ -11,6 +11,18 @@ services:
       - ./scripts/database/initialize.sql:/docker-entrypoint-initdb.d/initialize.sql
       - pgdata:/var/lib/postgresql/data
 
+  traefik:
+    image: traefik
+    container_name: traefik
+    command:
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --entrypoints.web.address=:80
+    ports:
+      - 80:80
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
   server:
     # Production
     # image: amruthpillai/reactive-resume:server-latest
@@ -22,12 +34,18 @@ services:
     container_name: server
     env_file: .env
     environment:
-      - PUBLIC_URL=http://client:3000
+      - PUBLIC_URL=http://localhost
       - POSTGRES_HOST=postgres
-    ports:
-      - 3100:3100
     depends_on:
+      - traefik
       - postgres
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.server.entrypoints=web
+      - traefik.http.routers.server.rule=Host(`localhost`) && PathPrefix(`/api/`)
+      - traefik.http.routers.server.middlewares=server-stripprefix
+      - traefik.http.middlewares.server-stripprefix.stripprefix.prefixes=/api
+      - traefik.http.middlewares.server-stripprefix.stripprefix.forceslash=true
 
   client:
     # Production
@@ -40,11 +58,14 @@ services:
     container_name: client
     env_file: .env
     environment:
-      - PUBLIC_SERVER_URL=http://server:3100
-    ports:
-      - 3000:3000
+      - PUBLIC_SERVER_URL=http://localhost/api
     depends_on:
+      - traefik
       - server
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.client.rule=Host(`localhost`)
+      - traefik.http.routers.client.entrypoints=web
 
 volumes:
   pgdata:
