@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [3.1.2](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.1.1...v3.1.2) (2022-03-12)
 
+
+### CI
+
+* **docker:**: include traefik routing and proxy to ensure server connections pass in local ([11cb066](https://github.com/AmruthPillai/Reactive-Resume/commit/11cb066573c6917857b79c028b97fcda1acaf90a))
+
 ### [3.1.1](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.1.0...v3.1.1) (2022-03-12)
 
 
