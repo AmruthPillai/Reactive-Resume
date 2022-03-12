@@ -33,13 +33,25 @@ pnpm dev
 
 Now, your **frontend** client should be running on [`http://localhost:3000`](http://localhost:3000), your **backend** server on [`http://localhost:3100`](http://localhost:3100) and this **documentation** on [`http://localhost:3200`](http://localhost:3200).
 
-5. Build the project before deploying by running the command:
+5. To ensure that the app works currently, a proxy layer has to be made between the client and server. For this, I made use of a Chrome extension called [**Rabbit URL Rewriter**](https://chrome.google.com/webstore/detail/rabbit-url-rewriter/kcbmcmeblpkcndhfhkclggekfblookii?hl=en) to forward my requests made to `localhost:3000/api` to `localhost:3100`. The configuration should look something like this:
+
+```
+Website URL: http://localhost:3000
+From URL: http://localhost:3000/api/(.*)
+To URL: http://localhost:3100/$1
+```
+
+![Screenshot 2022-03-12 at 4 07 37 PM](https://user-images.githubusercontent.com/1134738/158023473-d415e696-f027-4bc7-af02-648c4a99b147.png)
+
+Now, you should be able to create accounts, login etc.
+
+6. Build the project before deploying by running the command:
 
 ```bash
 pnpm build
 ```
 
-6. Finally, start the production servers for all three workspaces by running:
+7. Finally, start the production servers for all three workspaces by running:
 
 ```bash
 pnpm start
