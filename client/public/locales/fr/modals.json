@@ -1,0 +1,135 @@
+{
+  "auth": {
+    "forgot-password": {
+      "actions": {
+        "send-email": "Envoyer l'email de réinitialisation du mot de passe"
+      },
+      "body": "Il suffit de saisir l'adresse email associée au compte que vous souhaitez récupérer.",
+      "form": {
+        "email": {
+          "label": "Adresse e-mail"
+        }
+      },
+      "heading": "Mot de passe oublié ?",
+      "help-text": "Si le compte existe, vous recevrez un courriel contenant un lien pour réinitialiser votre mot de passe."
+    },
+    "login": {
+      "actions": {
+        "login": "Connexion",
+        "google": "Connexion avec Google"
+      },
+      "body": "Veuillez entrer votre nom d'utilisateur et votre mot de passe associés à votre compte pour vous connecter et accéder, gérer et partager vos CVs.",
+      "form": {
+        "password": {
+          "label": "Mot de passe"
+        },
+        "username": {
+          "help-text": "Vous pouvez également saisir votre adresse e-mail",
+          "label": "Nom d'utilisateur"
+        }
+      },
+      "heading": "Connexion à votre compte",
+      "recover-text": "Si vous avez oublié votre mot de passe, vous pouvez <1>récupérer votre compte</1> ici.",
+      "register-text": "Si vous n'en avez pas, vous pouvez <1>créer un compte</1> ici."
+    },
+    "register": {
+      "actions": {
+        "register": "Inscription",
+        "google": "Inscription avec Google"
+      },
+      "body": "Veuillez saisir vos informations personnelles pour créer un compte.",
+      "form": {
+        "confirm-password": {
+          "label": "Confirmez le mot de passe"
+        },
+        "email": {
+          "label": "Adresse e-mail"
+        },
+        "name": {
+          "label": "Nom complet"
+        },
+        "password": {
+          "label": "Mot de passe"
+        },
+        "username": {
+          "label": "Nom d'utilisateur"
+        }
+      },
+      "heading": "Créer un compte",
+      "loginText": "Si vous avez déjà un compte, vous pouvez <1>vous connecter ici</1>."
+    },
+    "reset-password": {
+      "actions": {
+        "set-password": "Définir un nouveau mot de passe"
+      },
+      "body": "Saisissez un nouveau mot de passe pour votre compte.",
+      "form": {
+        "confirm-password": {
+          "label": "Confirmez le mot de passe"
+        },
+        "password": {
+          "label": "Mot de passe"
+        }
+      },
+      "heading": "Réinitialiser votre mot de passe"
+    }
+  },
+  "dashboard": {
+    "create-resume": {
+      "actions": {
+        "create-resume": "Créer un CV"
+      },
+      "body": "Commencez à construire votre CV en lui donnant un nom. Il peut s'agir d'une référence au rôle auquel vous postulez ou simplement de votre repas préféré.",
+      "form": {
+        "name": {
+          "label": "Nom"
+        },
+        "public": {
+          "label": "Est-il accessible au public ?"
+        },
+        "slug": {
+          "label": "Alias"
+        }
+      },
+      "heading": "Créer un nouveau CV"
+    },
+    "import-external": {
+      "heading": "Importer de sources externes",
+      "json-resume": {
+        "actions": {
+          "upload-json": "Mettre en ligne un JSON"
+        },
+        "body": "Si vous avez un <1>JSON Resume valide</1> prêt à l'emploi, vous pouvez l'utiliser pour accélérer votre création sur Reactive Resume. Cliquez sur le bouton ci-dessous et mettez en ligne un fichier JSON valide pour commencer.",
+        "heading": "Importer depuis JSON Resume"
+      },
+      "linkedin": {
+        "actions": {
+          "upload-archive": "Mettre en ligne une archive ZIP"
+        },
+        "body": "Vous pouvez gagner du temps en exportant vos données depuis LinkedIn et en les utilisant pour remplir automatiquement les champs sur Reactive Resume. Rendez-vous dans la section <1>Confidentialité des données</1> sur LinkedIn et demandez une archive de vos données. Une fois disponible, chargez le fichier ZIP ci-dessous.",
+        "heading": "Import depuis LinkedIn"
+      },
+      "reactive-resume": {
+        "actions": {
+          "upload-json": "Mettre en ligne un JSON"
+        },
+        "body": "Si vous avez un JSON qui a été exporté avec la version actuelle de Reactive Resume, vous pouvez l'importer ici pour récupérer une version modifiable. Les versions précédentes de Reactive Resume ne sont malheureusement pas prises en charge pour le moment.",
+        "heading": "Importer depuis Reactive Resume"
+      }
+    },
+    "rename-resume": {
+      "actions": {
+        "rename-resume": "Renommer le CV"
+      },
+      "form": {
+        "name": {
+          "label": "Nom"
+        },
+        "slug": {
+          "label": "Alias"
+        }
+      },
+      "heading": "Renommer votre CV"
+    }
+  }
+}
