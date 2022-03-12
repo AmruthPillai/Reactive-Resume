@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.1.4](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.1.3...v3.1.4) (2022-03-12)
+
+
+### Bug Fixes
+
+* **client:** exported pdf did not contain "Present" keyword with translations ([cf670af](https://github.com/AmruthPillai/Reactive-Resume/commit/cf670af4035dc9b462cf5b1aad06ca089cf1d40c))
+* **client:** fix issues raised through lgtm alerts ([dfccb31](https://github.com/AmruthPillai/Reactive-Resume/commit/dfccb3130f889934d31196226be3d33e772f323b))
+
 ### [3.1.3](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.1.2...v3.1.3) (2022-03-12)
 
 
