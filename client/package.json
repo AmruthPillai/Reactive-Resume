@@ -2,9 +2,10 @@
   "name": "@reactive-resume/client",
   "scripts": {
     "dev": "react-env --prefix PUBLIC -- next dev",
-    "build": "next build",
+    "build": "next build && npm run sitemap",
     "start": "react-env --prefix PUBLIC -- next start",
-    "lint": "next lint --fix"
+    "lint": "next lint --fix",
+    "sitemap": "next-sitemap --config next-sitemap.config.js"
   },
   "dependencies": {
     "@beam-australia/react-env": "^3.1.1",
@@ -67,6 +68,7 @@
     "autoprefixer": "^10.4.2",
     "eslint": "^8.10.0",
     "eslint-config-next": "12.1.0",
+    "next-sitemap": "^2.5.7",
     "postcss": "^8.4.8",
     "prettier": "^2.5.1",
     "sass": "^1.49.9",

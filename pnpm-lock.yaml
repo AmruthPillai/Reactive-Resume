@@ -75,6 +75,7 @@ importers:
       nanoid: ^3.3.1
       next: 12.1.0
       next-i18next: ^10.5.0
+      next-sitemap: ^2.5.7
       postcss: ^8.4.8
       prettier: ^2.5.1
       react: '>=17'
@@ -162,6 +163,7 @@ importers:
       autoprefixer: 10.4.2_postcss@8.4.8
       eslint: 8.10.0
       eslint-config-next: 12.1.0_4c2038871e8233f2b143838d68f90b16
+      next-sitemap: 2.5.7_next@12.1.0
       postcss: 8.4.8
       prettier: 2.5.1
       sass: 1.49.9
@@ -1900,6 +1902,10 @@ packages:
       chalk: 4.1.2
     dev: true
     optional: true
+
+  /@corex/deepmerge/2.6.148:
+    resolution: {integrity: sha512-6QMz0/2h5C3ua51iAnXMPWFbb1QOU1UvSM4bKBw5mzdT+WtLgjbETBBIQZ+Sh9WvEcGwlAt/DEdRpIC3XlDBMA==}
+    dev: true
 
   /@cspotcode/source-map-consumer/0.8.0:
     resolution: {integrity: sha512-41qniHzTU8yAGbCp04ohlmSrZf8bkf/iJsl3V0dRGsQN/5GFfx+LbCSsCpp2gqrqjTVg/K6O8ycoV35JIwAzAg==}
@@ -10179,6 +10185,18 @@ packages:
       - react-dom
       - react-native
     dev: false
+
+  /next-sitemap/2.5.7_next@12.1.0:
+    resolution: {integrity: sha512-snyIWKwzy4QfLrZmXk2fT7ue5RYc1GNqrMfvC/VQJWyPX5QRZnYJLVScd9jmfdVlN5l6M5sFY3VSuFmCQUZ5Vg==}
+    engines: {node: '>=14.18.3'}
+    hasBin: true
+    peerDependencies:
+      next: '*'
+    dependencies:
+      '@corex/deepmerge': 2.6.148
+      minimist: 1.2.5
+      next: 12.1.0_b8b2418670651b634ff05a91b7cd94fe
+    dev: true
 
   /next/12.1.0_b8b2418670651b634ff05a91b7cd94fe:
     resolution: {integrity: sha512-s885kWvnIlxsUFHq9UGyIyLiuD0G3BUC/xrH0CEnH5lHEWkwQcHOORgbDF0hbrW9vr/7am4ETfX4A7M6DjrE7Q==}
