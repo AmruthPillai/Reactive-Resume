@@ -14,6 +14,7 @@ export const dateFormatOptions: string[] = [
   'YYYY/MM/DD',
   'MMMM YYYY',
   'MMM YYYY',
+  'MM/YYYY',
   'YYYY',
 ];
 
