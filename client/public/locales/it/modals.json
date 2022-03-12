@@ -1,0 +1,135 @@
+{
+  "auth": {
+    "forgot-password": {
+      "actions": {
+        "send-email": "Invia e-mail per reimpostare la password"
+      },
+      "body": "Inserisci l'indirizzo e-mail associato all'account da recuperare.",
+      "form": {
+        "email": {
+          "label": "Indirizzo e-mail"
+        }
+      },
+      "heading": "Hai dimenticato la password?",
+      "help-text": "Se l'account esiste, riceverai un'e-mail con un link per reimpostare la password."
+    },
+    "login": {
+      "actions": {
+        "login": "Accedi",
+        "google": "Accedi con Google"
+      },
+      "body": "Per accedere e iniziare a lavorare sui tuoi curriculum, inserisci il nome utente e la password associati al tuo account.",
+      "form": {
+        "password": {
+          "label": "Password"
+        },
+        "username": {
+          "help-text": "Puoi anche inserire il tuo indirizzo e-mail",
+          "label": "Nome utente"
+        }
+      },
+      "heading": "Accedi al tuo account",
+      "recover-text": "Se hai dimenticato la password, puoi recuperare il tuo account <1>qui</1>.",
+      "register-text": "Se non hai ancora un account, puoi crearne uno <1>qui</1>."
+    },
+    "register": {
+      "actions": {
+        "register": "Registrati",
+        "google": "Registrati con Google"
+      },
+      "body": "Inserisci i tuoi dati per creare un account.",
+      "form": {
+        "confirm-password": {
+          "label": "Conferma password"
+        },
+        "email": {
+          "label": "Indirizzo e-mail"
+        },
+        "name": {
+          "label": "Nome e cognome"
+        },
+        "password": {
+          "label": "Password"
+        },
+        "username": {
+          "label": "Nome utente"
+        }
+      },
+      "heading": "Crea un account",
+      "loginText": "Se hai già un account, puoi accedere <1>qui</1>."
+    },
+    "reset-password": {
+      "actions": {
+        "set-password": "Imposta nuova password"
+      },
+      "body": "Inserisci una nuova password per l'account.",
+      "form": {
+        "confirm-password": {
+          "label": "Conferma password"
+        },
+        "password": {
+          "label": "Password"
+        }
+      },
+      "heading": "Reimposta password"
+    }
+  },
+  "dashboard": {
+    "create-resume": {
+      "actions": {
+        "create-resume": "Crea curriculum"
+      },
+      "body": "Inizia a creare un curriculum inserendo un nome, in riferimento alla posizione per cui vuoi candidarti o semplicemente il tuo snack preferito.",
+      "form": {
+        "name": {
+          "label": "Nome"
+        },
+        "public": {
+          "label": "È ad accesso pubblico?"
+        },
+        "slug": {
+          "label": "Nome nell’URL"
+        }
+      },
+      "heading": "Crea un nuovo curriculum"
+    },
+    "import-external": {
+      "heading": "Importa da fonti esterne",
+      "json-resume": {
+        "actions": {
+          "upload-json": "Carica JSON"
+        },
+        "body": "Se hai un <1>JSON Resume valido</1> già pronto, puoi usarlo per velocizzare il lavoro su Reactive Resume. Usa il pulsante qui sotto e carica un file JSON valido per iniziare.",
+        "heading": "Importa da JSON Resume"
+      },
+      "linkedin": {
+        "actions": {
+          "upload-archive": "Carica archivio ZIP"
+        },
+        "body": "Puoi velocizzare il tuo lavoro esportando i tuoi dati da LinkedIn e usandoli per riempire automaticamente i campi su Reactive Resume. Vai alla sezione <1>Privacy dei dati</1> di LinkedIn, richiedi una copia dei tuoi dati e carica il file ZIP qui sotto.",
+        "heading": "Importa da LinkedIn"
+      },
+      "reactive-resume": {
+        "actions": {
+          "upload-json": "Carica JSON"
+        },
+        "body": "Se hai un file JSON esportato con la versione attuale di Reactive Resume, puoi importarlo nuovamente qui e continuare ad apportare modifiche. Purtroppo le versioni precedenti di Reactive Resume non sono supportate al momento.",
+        "heading": "Importa da Reactive Resume"
+      }
+    },
+    "rename-resume": {
+      "actions": {
+        "rename-resume": "Rinomina curriculum"
+      },
+      "form": {
+        "name": {
+          "label": "Nome"
+        },
+        "slug": {
+          "label": "Nome nell’URL"
+        }
+      },
+      "heading": "Rinomina il tuo curriculum"
+    }
+  }
+}
