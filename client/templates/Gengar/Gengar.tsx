@@ -1,5 +1,7 @@
+import { css } from '@emotion/css';
 import { alpha } from '@mui/material';
 import { Theme } from '@reactive-resume/schema';
+import clsx from 'clsx';
 import get from 'lodash/get';
 import { useMemo } from 'react';
 
@@ -19,12 +21,16 @@ const Gengar: React.FC<PageProps> = ({ page }) => {
   const theme: Theme = useAppSelector((state) => get(state.resume, 'metadata.theme', {}));
   const contrast = useMemo(() => getContrastColor(theme.primary), [theme.primary]);
   const backgroundColor: string = useMemo(() => alpha(theme.primary, 0.15), [theme.primary]);
+  const color = useMemo(() => (contrast === 'dark' ? theme.text : theme.background), [theme, contrast]);
 
   return (
     <div className={styles.page}>
       <div className={styles.container}>
         <div className={styles.sidebar}>
-          <div style={{ color: contrast === 'dark' ? theme.text : theme.background, backgroundColor: theme.primary }}>
+          <div
+            className={clsx(css(`svg { color: ${color} } --primary-color: ${color}`))}
+            style={{ color: contrast === 'dark' ? theme.text : theme.background, backgroundColor: theme.primary }}
+          >
             {isFirstPage && <MastheadSidebar />}
           </div>
 
