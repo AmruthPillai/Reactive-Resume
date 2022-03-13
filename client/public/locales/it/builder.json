@@ -1,0 +1,358 @@
+{
+  "common": {
+    "actions": {
+      "add": "Aggiungi nuovo elemento {{token}}",
+      "delete": "Elimina {{token}}",
+      "edit": "Modifica {{token}}"
+    },
+    "columns": {
+      "heading": "Colonne",
+      "tooltip": "Modifica numero di colonne"
+    },
+    "form": {
+      "date": {
+        "label": "Data"
+      },
+      "description": {
+        "label": "Descrizione"
+      },
+      "email": {
+        "label": "Indirizzo e-mail"
+      },
+      "end-date": {
+        "help-text": "Lascia questo campo vuoto, se ancora presente",
+        "label": "Data di fine"
+      },
+      "keywords": {
+        "label": "Parole chiave"
+      },
+      "level": {
+        "label": "Livello"
+      },
+      "levelNum": {
+        "label": "Livello (numero)"
+      },
+      "name": {
+        "label": "Nome"
+      },
+      "phone": {
+        "label": "Numero di telefono"
+      },
+      "position": {
+        "label": "Posizione"
+      },
+      "start-date": {
+        "label": "Data di inizio"
+      },
+      "subtitle": {
+        "label": "Sottotitolo"
+      },
+      "summary": {
+        "label": "Riepilogo"
+      },
+      "title": {
+        "label": "Titolo"
+      },
+      "url": {
+        "label": "Sito web"
+      }
+    },
+    "glossary": {
+      "page": "Pagina"
+    },
+    "list": {
+      "actions": {
+        "delete": "Elimina",
+        "duplicate": "Duplica",
+        "edit": "Modifica"
+      },
+      "empty-text": "Questo elenco è vuoto."
+    },
+    "tooltip": {
+      "delete-item": "Vuoi davvero rimuovere questo elemento? Questa operazione è irreversibile.",
+      "delete-section": "Elimina sezione",
+      "rename-section": "Rinomina sezione",
+      "toggle-visibility": "Mostra/Nascondi"
+    }
+  },
+  "controller": {
+    "tooltip": {
+      "center-artboard": "Centra tavola da disegno",
+      "copy-link": "Copia link del curriculum",
+      "export-pdf": "Esporta in PDF",
+      "toggle-orientation": "Orientamento verticale/orizzontale",
+      "toggle-page-break-line": "Mostra/Nascondi linea interruzione pagina",
+      "toggle-sidebars": "Mostra/Nascondi barre laterali",
+      "zoom-in": "Ingrandisci",
+      "zoom-out": "Riduci"
+    }
+  },
+  "header": {
+    "menu": {
+      "delete": "Elimina",
+      "duplicate": "Duplica",
+      "rename": "Rinomina",
+      "share-link": "Condividi link",
+      "tooltips": {
+        "delete": "Vuoi davvero eliminare questo curriculum? Questa operazione è irreversibile.",
+        "share-link": "Per rendere il curriculum visibile agli altri, imposta la visibilità su \"Pubblico\"."
+      }
+    }
+  },
+  "leftSidebar": {
+    "sections": {
+      "awards": {
+        "form": {
+          "awarder": {
+            "label": "Conferito da"
+          }
+        }
+      },
+      "basics": {
+        "actions": {
+          "photo-filters": "Filtri per foto"
+        },
+        "heading": "Informazioni di base",
+        "headline": {
+          "label": "Intestazione"
+        },
+        "name": {
+          "label": "Nome e cognome"
+        },
+        "photo-filters": {
+          "effects": {
+            "border": {
+              "label": "Bordo"
+            },
+            "grayscale": {
+              "label": "Scala di grigi"
+            },
+            "heading": "Effetti"
+          },
+          "shape": {
+            "heading": "Forma "
+          },
+          "size": {
+            "heading": "Dimensioni (pixel)"
+          }
+        },
+        "photo-upload": {
+          "tooltip": {
+            "remove": "Rimuovi foto",
+            "upload": "Carica foto"
+          }
+        }
+      },
+      "certifications": {
+        "form": {
+          "issuer": {
+            "label": "Rilasciato da"
+          }
+        }
+      },
+      "education": {
+        "form": {
+          "area-study": {
+            "label": "Area di studio"
+          },
+          "courses": {
+            "label": "Corsi"
+          },
+          "degree": {
+            "label": "Laurea"
+          },
+          "grade": {
+            "label": "Voto"
+          },
+          "institution": {
+            "label": "Istituto"
+          }
+        }
+      },
+      "location": {
+        "address": {
+          "label": "Indirizzo"
+        },
+        "city": {
+          "label": "Città"
+        },
+        "country": {
+          "label": "Paese"
+        },
+        "heading": "Posizione",
+        "postal-code": {
+          "label": "CAP"
+        },
+        "region": {
+          "label": "Regione"
+        }
+      },
+      "profiles": {
+        "form": {
+          "network": {
+            "label": "Rete"
+          },
+          "username": {
+            "label": "Nome utente"
+          }
+        },
+        "heading": "Profili",
+        "heading_one": "Profilo"
+      },
+      "publications": {
+        "form": {
+          "publisher": {
+            "label": "Pubblicato da"
+          }
+        }
+      },
+      "references": {
+        "form": {
+          "relationship": {
+            "label": "Relazione"
+          }
+        }
+      },
+      "section": {
+        "heading": "Sezione"
+      },
+      "volunteer": {
+        "form": {
+          "organization": {
+            "label": "Organizzazione"
+          }
+        }
+      }
+    }
+  },
+  "rightSidebar": {
+    "sections": {
+      "css": {
+        "heading": "CSS personalizzato"
+      },
+      "export": {
+        "heading": "Esporta",
+        "json": {
+          "primary": "JSON",
+          "secondary": "Scarica una versione JSON del tuo curriculum che puoi importare nuovamente in Reactive Resume."
+        },
+        "pdf": {
+          "loading": {
+            "primary": "Generazione del PDF in corso...",
+            "secondary": "Attendi che la generazione del PDF sia completata, potrebbero volerci fino a 15 secondi."
+          },
+          "normal": {
+            "primary": "PDF",
+            "secondary": "Scarica un PDF del tuo curriculum che puoi stampare e usare per il lavoro dei tuoi sogni. Questo file non può essere importato nuovamente per ulteriori modifiche."
+          }
+        }
+      },
+      "layout": {
+        "heading": "Layout",
+        "tooltip": {
+          "reset-layout": "Ripristina layout"
+        }
+      },
+      "links": {
+        "bugs-features": {
+          "body": "Hai riscontrato un problema nella creazione del tuo curriculum? Hai un'idea fantastica da aggiungere? Usa gli Issue di GitHub per iniziare",
+          "button": "Issue di GitHub",
+          "heading": "Bug? Richieste di funzionalità?"
+        },
+        "donate": {
+          "body": "Se Reactive Resume ti è piaciuto, ti invitiamo a contribuire con una donazione. In questo modo potremo mantenere l'applicazione attiva, gratuita e senza pubblicità.",
+          "button": "Offrimi un caffè",
+          "heading": "Donazioni a Reactive Resume"
+        },
+        "github": "Codice sorgente",
+        "heading": "Link"
+      },
+      "settings": {
+        "global": {
+          "date": {
+            "primary": "Data",
+            "secondary": "Formato data da usare nell'app"
+          },
+          "heading": "Globale",
+          "language": {
+            "primary": "Lingua",
+            "secondary": "Lingua di visualizzazione dell'app"
+          },
+          "theme": {
+            "primary": "Tema"
+          }
+        },
+        "heading": "Impostazioni",
+        "page": {
+          "break-line": {
+            "primary": "Linea di interruzione",
+            "secondary": "Mostra una linea su tutte le pagine che indica l'altezza di un foglio A4"
+          },
+          "heading": "Pagina",
+          "orientation": {
+            "disabled": "Questa funzione non ha effetto se c'è solo una pagina",
+            "primary": "Orientamento",
+            "secondary": "Scegli se visualizzare le pagine in orizzontale o verticale"
+          }
+        },
+        "resume": {
+          "heading": "Curriculum",
+          "reset": {
+            "primary": "Ripristina tutto",
+            "secondary": "Hai fatto un po' troppi errori? Clicca qui per ripristinare tutte le modifiche e iniziare da zero. Questa operazione non è reversibile."
+          },
+          "sample": {
+            "primary": "Carica dati di esempio",
+            "secondary": "Non sai da dove cominciare? Clicca qui per caricare alcuni dati di esempio per vedere che aspetto ha un curriculum completo."
+          }
+        }
+      },
+      "sharing": {
+        "heading": "Condivisione",
+        "short-url": {
+          "label": "Preferisci URL breve"
+        },
+        "visibility": {
+          "subtitle": "Consenti a chiunque abbia il link di vedere il tuo curriculum",
+          "title": "Pubblico"
+        }
+      },
+      "templates": {
+        "heading": "Modelli"
+      },
+      "theme": {
+        "form": {
+          "background": {
+            "label": "Sfondo"
+          },
+          "primary": {
+            "label": "Principale"
+          },
+          "text": {
+            "label": "Testo"
+          }
+        },
+        "heading": "Tema"
+      },
+      "typography": {
+        "form": {
+          "font-family": {
+            "label": "Famiglia di caratteri"
+          },
+          "font-size": {
+            "label": "Dimensioni carattere"
+          }
+        },
+        "heading": "Tipografia",
+        "widgets": {
+          "body": {
+            "label": "Contenuto"
+          },
+          "headings": {
+            "label": "Intestazioni"
+          }
+        }
+      }
+    }
+  }
+}
