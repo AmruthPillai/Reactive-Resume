@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.4](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.3...v3.2.4) (2022-03-14)
+
 ### [3.2.3](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.2...v3.2.3) (2022-03-14)
 
 
