@@ -29,7 +29,7 @@ const defaultState: FormData = {
 const schema = Joi.object<FormData>().keys({
   id: Joi.string(),
   name: Joi.string().required(),
-  level: Joi.string().required(),
+  level: Joi.string().allow(''),
   levelNum: Joi.number().min(0).max(10).required(),
   keywords: Joi.array().items(Joi.string().optional()),
 });
@@ -109,7 +109,6 @@ const SkillModal: React.FC = () => {
           control={control}
           render={({ field, fieldState }) => (
             <TextField
-              required
               label={t('builder.common.form.level.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
