@@ -3,7 +3,7 @@ const path = require('path');
 const i18nConfig = {
   i18n: {
     defaultLocale: 'en',
-    locales: ['de', 'en', 'es', 'kn', 'ta', 'hi'],
+    locales: ['bn', 'de', 'en', 'es', 'fr', 'hi', 'it', 'kn', 'ta'],
   },
   nsSeparator: '.',
   localePath: path.resolve('./public/locales'),

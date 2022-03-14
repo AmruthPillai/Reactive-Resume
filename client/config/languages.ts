@@ -6,8 +6,18 @@ export type Language = {
 
 export const languages: Language[] = [
   {
+    code: 'bn',
+    name: 'Bengali',
+    localName: 'বাংলা',
+  },
+  {
     code: 'en',
     name: 'English',
+  },
+  {
+    code: 'fr',
+    name: 'French',
+    localName: 'Français',
   },
   {
     code: 'de',
@@ -18,6 +28,11 @@ export const languages: Language[] = [
     code: 'hi',
     name: 'Hindi',
     localName: 'हिन्दी',
+  },
+  {
+    code: 'it',
+    name: 'Italian',
+    localName: 'Italiano',
   },
   {
     code: 'kn',

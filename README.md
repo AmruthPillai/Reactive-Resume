@@ -36,11 +36,14 @@ You have complete control over what goes into your resume, how it looks, what co
 
 ## Languages
 
+- Bengali (বাংলা)
 - English
+- French (Français)
 - German (Deutsch)
 - Hindi (हिन्दी)
-- Kannada (ಕನ್ನಡ) (@aksh1251)
-- Spanish (Español) (@seba11998)
+- Italian (Italiano)
+- Kannada (ಕನ್ನಡ)
+- Spanish (Español)
 - Tamil (தமிழ்)
 
 Help by [translating Reactive Resume](https://translate.rxresu.me) to your language!
