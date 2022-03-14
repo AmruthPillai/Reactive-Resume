@@ -27,10 +27,12 @@ const Basics = () => {
       <Heading path="sections.basics" name={t('builder.leftSidebar.sections.basics.heading')} />
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <div className="flex flex-col items-center gap-4 sm:col-span-2 sm:flex-row">
-          <PhotoUpload />
+        <div className="grid items-center gap-4 sm:col-span-2 sm:grid-cols-3">
+          <div className="mx-auto">
+            <PhotoUpload />
+          </div>
 
-          <div className="flex w-full flex-col-reverse gap-4 sm:flex-col sm:gap-2">
+          <div className="grid gap-2 w-full sm:col-span-2">
             <ResumeInput label={t('builder.leftSidebar.sections.basics.name.label')} path="basics.name" />
 
             <Button variant="outlined" startIcon={<PhotoFilter />} onClick={handleClick}>
