@@ -11,6 +11,11 @@ export const languages: Language[] = [
     localName: 'বাংলা',
   },
   {
+    code: 'zh',
+    name: 'Chinese',
+    localName: '中文',
+  },
+  {
     code: 'en',
     name: 'English',
   },
