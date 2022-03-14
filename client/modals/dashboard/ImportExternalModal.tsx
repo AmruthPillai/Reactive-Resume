@@ -24,6 +24,7 @@ const ImportExternalModal: React.FC = () => {
   const linkedinInputRef = useRef<HTMLInputElement>(null);
   const jsonResumeInputRef = useRef<HTMLInputElement>(null);
   const reactiveResumeInputRef = useRef<HTMLInputElement>(null);
+  const reactiveResumeV2InputRef = useRef<HTMLInputElement>(null);
 
   const { open: isOpen } = useAppSelector((state) => state.modal['dashboard.import-external']);
 
@@ -48,6 +49,11 @@ const ImportExternalModal: React.FC = () => {
       if (reactiveResumeInputRef.current) {
         reactiveResumeInputRef.current.click();
         reactiveResumeInputRef.current.value = '';
+      }
+    } else if (integration === 'reactive-resume-v2') {
+      if (reactiveResumeV2InputRef.current) {
+        reactiveResumeV2InputRef.current.click();
+        reactiveResumeV2InputRef.current.value = '';
       }
     }
   };
@@ -171,7 +177,7 @@ const ImportExternalModal: React.FC = () => {
 
         <p className="mb-2">{t('modals.dashboard.import-external.reactive-resume.body')}</p>
 
-        <div>
+        <div className="flex gap-4">
           <Button
             variant="contained"
             disabled={isLoading}
@@ -181,11 +187,28 @@ const ImportExternalModal: React.FC = () => {
             {t('modals.dashboard.import-external.reactive-resume.actions.upload-json')}
           </Button>
 
+          <Button
+            variant="contained"
+            disabled={isLoading}
+            startIcon={<UploadFile />}
+            onClick={() => handleClick('reactive-resume-v2')}
+          >
+            {t('modals.dashboard.import-external.reactive-resume.actions.upload-json-v2')}
+          </Button>
+
           <input
             hidden
             type="file"
             ref={reactiveResumeInputRef}
             onChange={(event) => handleChange(event, 'reactive-resume')}
+            accept="application/json"
+          />
+
+          <input
+            hidden
+            type="file"
+            ref={reactiveResumeV2InputRef}
+            onChange={(event) => handleChange(event, 'reactive-resume-v2')}
             accept="application/json"
           />
         </div>

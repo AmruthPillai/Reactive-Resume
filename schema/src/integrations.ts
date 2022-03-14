@@ -1,1 +1,1 @@
-export type Integration = 'linkedin' | 'json-resume' | 'reactive-resume';
+export type Integration = 'linkedin' | 'json-resume' | 'reactive-resume' | 'reactive-resume-v2';

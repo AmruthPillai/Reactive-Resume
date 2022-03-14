@@ -42,4 +42,15 @@ export class IntegrationsController {
 
     return this.integrationsService.reactiveResume(userId, file.path);
   }
+
+  @UseGuards(JwtAuthGuard)
+  @Post('reactive-resume-v2')
+  @UseInterceptors(FileInterceptor('file'))
+  reactiveResumeV2(@User('id') userId: number, @UploadedFile() file: Express.Multer.File) {
+    if (!file) {
+      throw new HttpException('You must upload a valid JSON file.', HttpStatus.BAD_REQUEST);
+    }
+
+    return this.integrationsService.reactiveResumeV2(userId, file.path);
+  }
 }
