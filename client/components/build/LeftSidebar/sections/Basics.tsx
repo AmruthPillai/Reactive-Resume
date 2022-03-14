@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 import Heading from '@/components/shared/Heading';
 import ResumeInput from '@/components/shared/ResumeInput';
+import isiOS from '@/utils/isiOS';
 
 import PhotoFilters from './PhotoFilters';
 import PhotoUpload from './PhotoUpload';
@@ -22,6 +23,8 @@ const Basics = () => {
     setAnchorEl(null);
   };
 
+  const mediaMatch = window.matchMedia('(max-width: 640px)');
+  const isIosDevice = isiOS();
   return (
     <>
       <Heading path="sections.basics" name={t('builder.leftSidebar.sections.basics.heading')} />
@@ -33,7 +36,12 @@ const Basics = () => {
           <div className="flex w-full flex-col-reverse gap-4 sm:flex-col sm:gap-2">
             <ResumeInput label={t('builder.leftSidebar.sections.basics.name.label')} path="basics.name" />
 
-            <Button variant="outlined" startIcon={<PhotoFilter />} onClick={handleClick}>
+            <Button
+              variant="outlined"
+              startIcon={<PhotoFilter />}
+              onClick={handleClick}
+              style={{ marginBottom: isIosDevice && mediaMatch.matches ? '1rem' : 'none' }}
+            >
               {t('builder.leftSidebar.sections.basics.actions.photo-filters')}
             </Button>
 
