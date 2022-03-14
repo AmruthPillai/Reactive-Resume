@@ -42,6 +42,7 @@ const Build: NextPage<Props> = ({ username, slug }) => {
     `resume/${username}/${slug}`,
     () => fetchResumeByIdentifier({ username, slug }),
     {
+      cacheTime: 0,
       refetchOnMount: false,
       refetchOnReconnect: false,
       refetchOnWindowFocus: false,

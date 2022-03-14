@@ -43,7 +43,7 @@ type Separator = ', ' | ' / ' | ' | ';
 
 export const parseListItemPath = (item: ListItem, path: string | string[], separator: Separator = ', '): string => {
   if (isArray(path)) {
-    const value = path.map((_path) => get(item, _path));
+    const value = path.map((_path) => get(item, _path)).filter((x) => x);
 
     return value.join(separator);
   } else {

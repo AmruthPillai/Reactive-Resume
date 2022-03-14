@@ -8,7 +8,6 @@ import { Trans, useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import Testimony from '@/components/landing/Testimony';
-import Announcement from '@/components/shared/Announcement';
 import Footer from '@/components/shared/Footer';
 import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
 import Logo from '@/components/shared/Logo';
@@ -45,8 +44,6 @@ const Home: NextPage = () => {
 
   return (
     <main className={styles.container}>
-      <Announcement />
-
       <div className={styles.header}>
         <div className={styles.logo}>
           <Logo size={256} />

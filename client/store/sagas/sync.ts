@@ -14,7 +14,7 @@ import {
   setResumeState,
 } from '../resume/resumeSlice';
 
-const DEBOUNCE_WAIT = 2500;
+const DEBOUNCE_WAIT = 1000;
 
 const debouncedSync = debounce((resume: Resume) => updateResume(resume), DEBOUNCE_WAIT);
 
