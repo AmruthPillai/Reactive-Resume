@@ -87,7 +87,7 @@ const Section: React.FC<SectionProps> = ({
               {summary && <Markdown>{summary}</Markdown>}
 
               {url && (
-                <DataDisplay icon={<Link />} link={url && addHttp(url)} className="text-xs">
+                <DataDisplay icon={<Link />} link={addHttp(url)} className="text-xs">
                   {url}
                 </DataDisplay>
               )}

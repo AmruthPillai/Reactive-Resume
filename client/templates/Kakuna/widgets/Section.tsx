@@ -84,7 +84,7 @@ const Section: React.FC<SectionProps> = ({
 
               {url && (
                 <div className="inline-flex justify-center">
-                  <a href={url && addHttp(url)} target="_blank" rel="noreferrer">
+                  <a href={addHttp(url)} target="_blank" rel="noreferrer">
                     {url}
                   </a>
                 </div>
