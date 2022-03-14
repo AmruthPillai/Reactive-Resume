@@ -15,7 +15,7 @@ export const MastheadSidebar: React.FC = () => {
   const { name, photo, email, phone, website, location, profiles } = useAppSelector((state) => state.resume.basics);
 
   return (
-    <div className="col-span-2 grid justify-items-center gap-4">
+    <div className="col-span-2 grid justify-items-left gap-4">
       {photo.visible && !isEmpty(photo.url) && (
         <div className="relative aspect-square h-full w-full">
           <img alt={name} src={photo.url} className={getPhotoClassNames(photo.filters)} />
