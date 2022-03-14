@@ -82,7 +82,7 @@ const config = {
             items: [
               {
                 label: 'Donate',
-                href: 'https://buymeacoffee.com/AmruthPillai',
+                href: 'https://paypal.me/RajaRajanA',
               },
               {
                 label: 'Translate',

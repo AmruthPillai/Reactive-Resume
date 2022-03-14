@@ -77,7 +77,7 @@ Use the [GitHub Issues](https://github.com/AmruthPillai/Reactive-Resume/issues/n
 
 Reactive Resume would be nothing without the folks who supported me and kept the project alive in the beginning, and your cotinued support is what keeps me going. If you found Reactive Resume to be useful, helpful or just insightful and appreciate the effort I took to make the project, please consider donating as little or as much as your can.
 
-### [☕️ Buy me a coffee](https://www.buymeacoffee.com/AmruthPillai) | [💸 PayPal](https://paypal.me/RajaRajanA)
+### [💸 PayPal](https://paypal.me/RajaRajanA)
 
 ## Infrastructure
 
