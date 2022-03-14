@@ -1,0 +1,358 @@
+{
+  "common": {
+    "actions": {
+      "add": "添加新的 {{token}}",
+      "delete": "删除 {{token}}",
+      "edit": "编辑 {{token}}"
+    },
+    "columns": {
+      "heading": "分栏",
+      "tooltip": "更改栏数"
+    },
+    "form": {
+      "date": {
+        "label": "日期"
+      },
+      "description": {
+        "label": "描述"
+      },
+      "email": {
+        "label": "Email 地址"
+      },
+      "end-date": {
+        "help-text": "如果仍然存在，请将此栏留空",
+        "label": "结束日期"
+      },
+      "keywords": {
+        "label": "关键字"
+      },
+      "level": {
+        "label": "等级"
+      },
+      "levelNum": {
+        "label": "等级 (数字)"
+      },
+      "name": {
+        "label": "名称"
+      },
+      "phone": {
+        "label": "电话号码"
+      },
+      "position": {
+        "label": "职务"
+      },
+      "start-date": {
+        "label": "开始日期"
+      },
+      "subtitle": {
+        "label": "副标题"
+      },
+      "summary": {
+        "label": "概要"
+      },
+      "title": {
+        "label": "标题"
+      },
+      "url": {
+        "label": "网站"
+      }
+    },
+    "glossary": {
+      "page": "页"
+    },
+    "list": {
+      "actions": {
+        "delete": "删除",
+        "duplicate": "创建副本",
+        "edit": "编辑"
+      },
+      "empty-text": "列表为空"
+    },
+    "tooltip": {
+      "delete-item": "您确定要删除此条数据吗? 此操作无法撤消。",
+      "delete-section": "删除章节",
+      "rename-section": "重命名章节",
+      "toggle-visibility": "切换显示/隐藏"
+    }
+  },
+  "controller": {
+    "tooltip": {
+      "center-artboard": "中心画板",
+      "copy-link": "复制链接地址",
+      "export-pdf": "输出为PDF",
+      "toggle-orientation": "切换页面方向",
+      "toggle-page-break-line": "切换分页线",
+      "toggle-sidebars": "显示/隐藏侧边栏",
+      "zoom-in": "放大",
+      "zoom-out": "缩小"
+    }
+  },
+  "header": {
+    "menu": {
+      "delete": "删除",
+      "duplicate": "创建副本",
+      "rename": "重命名",
+      "share-link": "分享链接",
+      "tooltips": {
+        "delete": "您确定要删除该简历吗？该操作不可撤销。",
+        "share-link": "您需要将简历的可见性更改为公开，以使其对其他人可见。"
+      }
+    }
+  },
+  "leftSidebar": {
+    "sections": {
+      "awards": {
+        "form": {
+          "awarder": {
+            "label": "获奖纪录"
+          }
+        }
+      },
+      "basics": {
+        "actions": {
+          "photo-filters": "照片滤镜"
+        },
+        "heading": "概况",
+        "headline": {
+          "label": "标题"
+        },
+        "name": {
+          "label": "全名"
+        },
+        "photo-filters": {
+          "effects": {
+            "border": {
+              "label": "边框"
+            },
+            "grayscale": {
+              "label": "灰度"
+            },
+            "heading": "特效"
+          },
+          "shape": {
+            "heading": "形状"
+          },
+          "size": {
+            "heading": "尺寸（单位：Px）"
+          }
+        },
+        "photo-upload": {
+          "tooltip": {
+            "remove": "移除照片",
+            "upload": "上传照片"
+          }
+        }
+      },
+      "certifications": {
+        "form": {
+          "issuer": {
+            "label": "颁布方"
+          }
+        }
+      },
+      "education": {
+        "form": {
+          "area-study": {
+            "label": "专业"
+          },
+          "courses": {
+            "label": "课程"
+          },
+          "degree": {
+            "label": "学位"
+          },
+          "grade": {
+            "label": "年级"
+          },
+          "institution": {
+            "label": "机构"
+          }
+        }
+      },
+      "location": {
+        "address": {
+          "label": "地址"
+        },
+        "city": {
+          "label": "城市"
+        },
+        "country": {
+          "label": "国家"
+        },
+        "heading": "地点",
+        "postal-code": {
+          "label": "邮编"
+        },
+        "region": {
+          "label": "地区"
+        }
+      },
+      "profiles": {
+        "form": {
+          "network": {
+            "label": "网络"
+          },
+          "username": {
+            "label": "用户名"
+          }
+        },
+        "heading": "简介",
+        "heading_one": "简介"
+      },
+      "publications": {
+        "form": {
+          "publisher": {
+            "label": "发行机构"
+          }
+        }
+      },
+      "references": {
+        "form": {
+          "relationship": {
+            "label": "关系"
+          }
+        }
+      },
+      "section": {
+        "heading": "分区"
+      },
+      "volunteer": {
+        "form": {
+          "organization": {
+            "label": "组织"
+          }
+        }
+      }
+    }
+  },
+  "rightSidebar": {
+    "sections": {
+      "css": {
+        "heading": "自定义 CSS"
+      },
+      "export": {
+        "heading": "导出",
+        "json": {
+          "primary": "JSON",
+          "secondary": "下载一个JSON版本的简历，可以导入到Reactive Resume中。"
+        },
+        "pdf": {
+          "loading": {
+            "primary": "正在生成 PDF",
+            "secondary": "请等待您的 PDF 生成，这可能需要 15 秒。"
+          },
+          "normal": {
+            "primary": "PDF",
+            "secondary": "下载您的简历 PDF，您可以将其打印并发送给您期待的职位。此文件无法重新导入以进行进一步编辑。"
+          }
+        }
+      },
+      "layout": {
+        "heading": "布局",
+        "tooltip": {
+          "reset-layout": "重置布局"
+        }
+      },
+      "links": {
+        "bugs-features": {
+          "body": "是什么阻止了你制作简历？或者你有什么好主意要补充？在 GitHub 上提出问题以开始使用。",
+          "button": "GitHub Issues",
+          "heading": "发现了Bug? 想要新的功能?"
+        },
+        "donate": {
+          "body": "如果你喜欢使用Reactive Resume， 请考虑捐款以便保持应用正常运行，没有广告和永远免费。",
+          "button": "送我一杯咖啡",
+          "heading": "捐赠给 Reactive Resume"
+        },
+        "github": "源码",
+        "heading": "链接"
+      },
+      "settings": {
+        "global": {
+          "date": {
+            "primary": "日期",
+            "secondary": "整个应用程序使用的日期格式"
+          },
+          "heading": "全局",
+          "language": {
+            "primary": "语言",
+            "secondary": "显示要在整个应用程序中使用的语言"
+          },
+          "theme": {
+            "primary": "主题"
+          }
+        },
+        "heading": "设置",
+        "page": {
+          "break-line": {
+            "primary": "换行",
+            "secondary": "在所有页面上显示一条线以标记 A4 页面的高度"
+          },
+          "heading": "页面",
+          "orientation": {
+            "disabled": "当只有一个页面时没有效果",
+            "primary": "方向",
+            "secondary": "水平或者垂直翻转图像"
+          }
+        },
+        "resume": {
+          "heading": "简历",
+          "reset": {
+            "primary": "全部重置",
+            "secondary": "犯了太多错误？单击此处重置所有更改并从头开始。小心，这个动作不能逆转。"
+          },
+          "sample": {
+            "primary": "加载样本数据",
+            "secondary": "不知道从哪里开始？单击此处加载一些示例数据，以查看完整简历的外观。"
+          }
+        }
+      },
+      "sharing": {
+        "heading": "分享",
+        "short-url": {
+          "label": "倾向于短网址"
+        },
+        "visibility": {
+          "subtitle": "允许任何有链接的人查看你的简历",
+          "title": "公开"
+        }
+      },
+      "templates": {
+        "heading": "模板"
+      },
+      "theme": {
+        "form": {
+          "background": {
+            "label": "背景"
+          },
+          "primary": {
+            "label": "主要"
+          },
+          "text": {
+            "label": "文本"
+          }
+        },
+        "heading": "主题"
+      },
+      "typography": {
+        "form": {
+          "font-family": {
+            "label": "字体"
+          },
+          "font-size": {
+            "label": "字号"
+          }
+        },
+        "heading": "排版",
+        "widgets": {
+          "body": {
+            "label": "正文内容"
+          },
+          "headings": {
+            "label": "标题"
+          }
+        }
+      }
+    }
+  }
+}

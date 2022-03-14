@@ -1,0 +1,135 @@
+{
+  "auth": {
+    "forgot-password": {
+      "actions": {
+        "send-email": "发送重置密码电子邮件"
+      },
+      "body": "只需输入与您要恢复的帐户关联的电子邮件地址。",
+      "form": {
+        "email": {
+          "label": "Email 地址"
+        }
+      },
+      "heading": "找回密码",
+      "help-text": "请输入您的电子邮件地址。 您将收到一封电子邮件的链接重置您的密码。"
+    },
+    "login": {
+      "actions": {
+        "login": "登录",
+        "google": "使用 Google 帐号登录"
+      },
+      "body": "请输入与您的帐户关联的用户名和密码，以登录和访问、管理和分享您的简历。",
+      "form": {
+        "password": {
+          "label": "密码"
+        },
+        "username": {
+          "help-text": "请输入您的电子邮箱地址",
+          "label": "用户名"
+        }
+      },
+      "heading": "登录您的账号",
+      "recover-text": "如果您忘记了密码，您可以<1>恢复您的帐户</1>这里。",
+      "register-text": "如果您没有，您可以<1>创建一个帐户</1>这里。"
+    },
+    "register": {
+      "actions": {
+        "register": "注册",
+        "google": "用Google注册"
+      },
+      "body": "输入您的邮箱地址并创建一个帐户",
+      "form": {
+        "confirm-password": {
+          "label": "确认密码"
+        },
+        "email": {
+          "label": "邮箱"
+        },
+        "name": {
+          "label": "全名"
+        },
+        "password": {
+          "label": "密码"
+        },
+        "username": {
+          "label": "用户名"
+        }
+      },
+      "heading": "创建一个帐户",
+      "loginText": "如果您已经有一个帐户，您可以<1>在此处登录</1>."
+    },
+    "reset-password": {
+      "actions": {
+        "set-password": "设置新的密码"
+      },
+      "body": "为账户设置新密码",
+      "form": {
+        "confirm-password": {
+          "label": "确认密码"
+        },
+        "password": {
+          "label": "密码"
+        }
+      },
+      "heading": "重置密码"
+    }
+  },
+  "dashboard": {
+    "create-resume": {
+      "actions": {
+        "create-resume": "创建简历"
+      },
+      "body": "开始建立你的简历时，要给它起个名字。它可以是指你所申请的角色，或者只是你最喜欢的零食。",
+      "form": {
+        "name": {
+          "label": "名称"
+        },
+        "public": {
+          "label": "是否可以公开访问？"
+        },
+        "slug": {
+          "label": "缩写"
+        }
+      },
+      "heading": "创建简历"
+    },
+    "import-external": {
+      "heading": "从外部导入",
+      "json-resume": {
+        "actions": {
+          "upload-json": "上传 JSON"
+        },
+        "body": "如果您有 <1> 已验证的 JSON 简历</1>准备好了，您可以使用它来快速跟踪您在 Reactive Resume 上的开发。单击下面的按钮并上传有效的 JSON 文件以开始。",
+        "heading": "从 JSON 简历导入"
+      },
+      "linkedin": {
+        "actions": {
+          "upload-archive": "上传ZIP压缩包"
+        },
+        "body": "您可以通过从 LinkedIn 导出数据并使用它来自动填写 Reactive Resume 上的字段来节省时间。前往<1>数据隐私</1>LinkedIn 上的部分并请求存档您的数据。一旦可用，请上传下面的 ZIP 文件。",
+        "heading": "从 LinkedIn 导入"
+      },
+      "reactive-resume": {
+        "actions": {
+          "upload-json": "上传 JSON"
+        },
+        "body": "如果您有一个使用当前版本的 Reactive Resume 导出的 JSON，您可以在此处将其导入回来以再次获得可编辑的版本。遗憾的是，目前不支持以前版本的 Reactive Resume。",
+        "heading": "从 Reactive Resume 导入"
+      }
+    },
+    "rename-resume": {
+      "actions": {
+        "rename-resume": "重命名简历"
+      },
+      "form": {
+        "name": {
+          "label": "名称"
+        },
+        "slug": {
+          "label": "缩写"
+        }
+      },
+      "heading": "重命名你的简历"
+    }
+  }
+}
