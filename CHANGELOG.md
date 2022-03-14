@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.2](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.1...v3.2.2) (2022-03-14)
+
+
+### Bug Fixes
+
+* **client/skills:** make skill level optional ([02e396b](https://github.com/AmruthPillai/Reactive-Resume/commit/02e396bfdbf07ae75661f1e7e4e55060cacee7d0))
+
 ### [3.2.1](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.0...v3.2.1) (2022-03-14)
 
 
