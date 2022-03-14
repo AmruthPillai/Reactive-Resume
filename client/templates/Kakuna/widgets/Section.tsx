@@ -8,7 +8,7 @@ import Markdown from '@/components/shared/Markdown';
 import { useAppSelector } from '@/store/hooks';
 import { SectionProps } from '@/templates/sectionMap';
 import { formatDateString } from '@/utils/date';
-import { parseListItemPath } from '@/utils/template';
+import { addHttp, parseListItemPath } from '@/utils/template';
 
 import BadgeDisplay from './BadgeDisplay';
 import Heading from './Heading';
@@ -84,7 +84,7 @@ const Section: React.FC<SectionProps> = ({
 
               {url && (
                 <div className="inline-flex justify-center">
-                  <a href={url} target="_blank" rel="noreferrer">
+                  <a href={addHttp(url)} target="_blank" rel="noreferrer">
                     {url}
                   </a>
                 </div>

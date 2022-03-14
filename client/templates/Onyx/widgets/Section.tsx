@@ -9,7 +9,7 @@ import { useAppSelector } from '@/store/hooks';
 import { SectionProps } from '@/templates/sectionMap';
 import DataDisplay from '@/templates/shared/DataDisplay';
 import { formatDateString } from '@/utils/date';
-import { parseListItemPath } from '@/utils/template';
+import { addHttp, parseListItemPath } from '@/utils/template';
 
 import Heading from './Heading';
 
@@ -87,7 +87,7 @@ const Section: React.FC<SectionProps> = ({
               {summary && <Markdown>{summary}</Markdown>}
 
               {url && (
-                <DataDisplay icon={<Link />} link={url} className="text-xs">
+                <DataDisplay icon={<Link />} link={addHttp(url)} className="text-xs">
                   {url}
                 </DataDisplay>
               )}
