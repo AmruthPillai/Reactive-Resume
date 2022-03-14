@@ -1,7 +1,7 @@
 {
   "common": {
     "actions": {
-      "add": "Aggiungi nuovo elemento {{token}}",
+      "add": "Aggiungi {{token}}",
       "delete": "Elimina {{token}}",
       "edit": "Modifica {{token}}"
     },
@@ -20,7 +20,7 @@
         "label": "Indirizzo e-mail"
       },
       "end-date": {
-        "help-text": "Lascia questo campo vuoto, se ancora presente",
+        "help-text": "Se in corso, lascia questo campo vuoto",
         "label": "Data di fine"
       },
       "keywords": {
@@ -239,7 +239,7 @@
         "pdf": {
           "loading": {
             "primary": "Generazione del PDF in corso...",
-            "secondary": "Attendi che la generazione del PDF sia completata, potrebbero volerci fino a 15 secondi."
+            "secondary": "Attendi che la generazione del PDF sia completata, l'operazione potrebbe richiedere fino a 15 secondi."
           },
           "normal": {
             "primary": "PDF",
@@ -255,7 +255,7 @@
       },
       "links": {
         "bugs-features": {
-          "body": "Hai riscontrato un problema nella creazione del tuo curriculum? Hai un'idea fantastica da aggiungere? Usa gli Issue di GitHub per iniziare",
+          "body": "Hai riscontrato un problema nella creazione del tuo curriculum? Hai un'idea fantastica da aggiungere? Usa gli Issue di GitHub per iniziare.",
           "button": "Issue di GitHub",
           "heading": "Bug? Richieste di funzionalità?"
         },
@@ -271,7 +271,7 @@
         "global": {
           "date": {
             "primary": "Data",
-            "secondary": "Formato data da usare nell'app"
+            "secondary": "Formato della data da usare nell'app"
           },
           "heading": "Globale",
           "language": {
@@ -286,7 +286,7 @@
         "page": {
           "break-line": {
             "primary": "Linea di interruzione",
-            "secondary": "Mostra una linea su tutte le pagine che indica l'altezza di un foglio A4"
+            "secondary": "Mostra su tutte le pagine una linea che indica l'altezza di un foglio A4"
           },
           "heading": "Pagina",
           "orientation": {
