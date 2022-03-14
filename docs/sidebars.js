@@ -7,7 +7,7 @@
  The sidebars can be generated from the filesystem, or explicitly defined here.
 
  Create as many sidebars as you want.
-*/
+ */
 
 // @ts-check
 

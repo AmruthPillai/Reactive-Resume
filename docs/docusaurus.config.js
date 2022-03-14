@@ -12,7 +12,7 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'favicon.ico',
   organizationName: 'AmruthPillai',
   projectName: 'Reactive-Resume',
 
@@ -45,15 +45,8 @@ const config = {
         title: 'Reactive Resume',
         logo: {
           alt: 'Reactive Resume',
-          src: 'img/logo.svg',
+          src: 'logo.svg',
         },
-        items: [
-          {
-            href: 'https://github.com/AmruthPillai/Reactive-Resume',
-            position: 'right',
-            label: 'GitHub',
-          },
-        ],
       },
       footer: {
         style: 'dark',
