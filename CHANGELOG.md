@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.1](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.0...v3.2.1) (2022-03-14)
+
+
+### Features
+
+* **i18n:** add Chinese (Simplified) language to locales ([549363b](https://github.com/AmruthPillai/Reactive-Resume/commit/549363bbe5bdd781699dea9506bd4baedf5740d1))
+
+
+### Bug Fixes
+
+* **client/basics:** fix issue with overlapping photo filters on safari/webkit/iOS ([e6bda68](https://github.com/AmruthPillai/Reactive-Resume/commit/e6bda688ac3ba1c04e82721add92e755ea5386c3))
+* **docker:** fix docker-compose for production grade deployments ([57f7edc](https://github.com/AmruthPillai/Reactive-Resume/commit/57f7edc13432a038c907afc6cb74b5182a9b2333))
+
 ## [3.2.0](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.1.4...v3.2.0) (2022-03-14)
 
 
