@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.2.0](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.1.4...v3.2.0) (2022-03-14)
+
+
+### Features
+
+* **i18n:** add Bengali, Italian and other languages ([21931bc](https://github.com/AmruthPillai/Reactive-Resume/commit/21931bc324b5e2440baaaaa2e52a93b4f2c766f8))
+
+
+### Bug Fixes
+
+* **app:** fix issue with external link redirection in android app ([b18120b](https://github.com/AmruthPillai/Reactive-Resume/commit/b18120b3f7223981e28c0441a6b7725787186edb))
+* **client:** fix issue with react-query cache ([ed75a85](https://github.com/AmruthPillai/Reactive-Resume/commit/ed75a858279047dfd43152e041c1a09a625417f5))
+
 ### [3.1.4](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.1.3...v3.1.4) (2022-03-12)
 
 
