@@ -47,11 +47,10 @@ curl -L https://raw.githubusercontent.com/AmruthPillai/Reactive-Resume/main/.env
 4. Edit the docker-compose.yml file you just pulled in and update the `<SERVER-IP>` placeholders to your server's public IP (or domain, if applicable). Also, update the `.env` file that was just created and change variables such as `PUBLIC_URL`, `PUBLIC_SERVER_URL` etc. For a clear understanding of what each of the environment variables mean, head over to [this section](/source-code/env-vars) of the docs.
 
 To change the default port `80` to something else, say `3000`, just change the properties in docker-compose's traefik service:
-  
+
 ```yml
 traefik:
-  command:
-    ...
+  command: ...
     - --entrypoints.web.address=:3000
   ports:
     - 3000:3000
@@ -63,7 +62,10 @@ traefik:
 docker compose up
 ```
 
-<img width="853" alt="Screenshot 2022-03-14 at 10 08 50 AM" src="https://user-images.githubusercontent.com/1134738/158140209-f80eab18-1575-464c-b29d-ac788bd53e93.png">
+<img
+  width="853"
+  alt="Screenshot 2022-03-14 at 10 08 50 AM"
+  src="https://user-images.githubusercontent.com/1134738/158140209-f80eab18-1575-464c-b29d-ac788bd53e93.png"
+/>
 
 Now, your application should be running on http://SERVER-IP.
-

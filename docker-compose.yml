@@ -27,7 +27,6 @@ services:
     container_name: server
     env_file: .env
     environment:
-      - PUBLIC_URL=http://<SERVER-IP>
       - POSTGRES_HOST=postgres
     depends_on:
       - traefik
@@ -44,8 +43,6 @@ services:
     image: amruthpillai/reactive-resume:client-latest
     container_name: client
     env_file: .env
-    environment:
-      - PUBLIC_SERVER_URL=http://<SERVER-IP>/api
     depends_on:
       - traefik
       - server
