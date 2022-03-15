@@ -49,4 +49,7 @@ EXPOSE 3000
 
 ENV PORT 3000
 
+HEALTHCHECK --interval=30s --timeout=20s --retries=3 --start-period=15s \
+    CMD curl -fSs 127.0.0.1:3000 || exit 1
+
 CMD [ "pnpm", "run", "start:client" ]
