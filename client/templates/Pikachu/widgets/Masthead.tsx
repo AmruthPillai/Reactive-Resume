@@ -17,9 +17,13 @@ export const MastheadSidebar: React.FC = () => {
   return (
     <div className="col-span-2 grid justify-items-left gap-4">
       {photo.visible && !isEmpty(photo.url) && (
-        <div className="relative aspect-square h-full w-full">
-          <img alt={name} src={photo.url} className={getPhotoClassNames(photo.filters)} />
-        </div>
+        <img
+          alt={name}
+          src={photo.url}
+          width={photo.filters.size}
+          height={photo.filters.size}
+          className={getPhotoClassNames(photo.filters)}
+        />
       )}
 
       <div className="flex flex-col gap-2">
