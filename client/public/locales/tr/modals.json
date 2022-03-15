@@ -1,0 +1,136 @@
+{
+  "auth": {
+    "forgot-password": {
+      "actions": {
+        "send-email": "Şifre Sıfırlama E-postası Gönder"
+      },
+      "body": "Kurtarmak istediğiniz hesapla ilişkili e-posta adresini girmeniz yeterlidir.",
+      "form": {
+        "email": {
+          "label": "E-posta Adresi"
+        }
+      },
+      "heading": "Parolanızı mı unuttunuz?",
+      "help-text": "Sizinle ilişkili bir hesap mevcutsa, şifrenizi sıfırlamak için bağlantı içeren bir e-posta alacaksınız."
+    },
+    "login": {
+      "actions": {
+        "login": "Oturum Aç",
+        "google": "Google ile Giriş yap"
+      },
+      "body": "Giriş yapmak ve özgeçmişlerinize erişmek, yönetmek ve paylaşmak için lütfen hesabınızla ilişkili kullanıcı adınızı ve şifrenizi girin.",
+      "form": {
+        "password": {
+          "label": "Parola"
+        },
+        "username": {
+          "help-text": "E-posta adresinizi de girebilirsiniz",
+          "label": "Kullanıcı Adı"
+        }
+      },
+      "heading": "Hesabınıza giriş yapın",
+      "recover-text": "Şifrenizi unutmanız durumunda buradan <1>hesabınızı kurtarabilirsiniz.</1>.",
+      "register-text": "Eğer hesabınız yoksa buradan <1>bir hesap oluşturabilirsiniz</1>."
+    },
+    "register": {
+      "actions": {
+        "register": "Kayıt Ol",
+        "google": "Google ile Kayıt Ol"
+      },
+      "body": "Yeni hesap oluşturmak için lütfen kişisel bilginizi giriniz.",
+      "form": {
+        "confirm-password": {
+          "label": "Şifreyi Doğrula"
+        },
+        "email": {
+          "label": "E-posta Adresi"
+        },
+        "name": {
+          "label": "Ad Soyad"
+        },
+        "password": {
+          "label": "Parola"
+        },
+        "username": {
+          "label": "Kullanıcı Adı"
+        }
+      },
+      "heading": "Yeni bir hesap oluşturun",
+      "loginText": "Zaten bir hesabınız varsa, <1>buradan giriş yapabilirsiniz.</1>."
+    },
+    "reset-password": {
+      "actions": {
+        "set-password": "Yeni Şifre Oluştur"
+      },
+      "body": "Hesabınız için yeni bir şifre belirleyiniz.",
+      "form": {
+        "confirm-password": {
+          "label": "Şifreyi Doğrula"
+        },
+        "password": {
+          "label": "Parola"
+        }
+      },
+      "heading": "Parolanızı sıfırlayın"
+    }
+  },
+  "dashboard": {
+    "create-resume": {
+      "actions": {
+        "create-resume": "Yeni Özgeçmiş Oluştur"
+      },
+      "body": "Özgeçmişinizi bir isim vererek oluşturmaya başlayın. Bu isim, başvurduğunuz rolle veya sadece en sevdiğiniz atıştırmalıkla ilgili olabilir.",
+      "form": {
+        "name": {
+          "label": "Ad"
+        },
+        "public": {
+          "label": "Herkese Açık mı?"
+        },
+        "slug": {
+          "label": "Kısa isim"
+        }
+      },
+      "heading": "Yeni Özgeçmiş Oluştur"
+    },
+    "import-external": {
+      "heading": "Harici Kaynaklardan İçeri Aktar",
+      "json-resume": {
+        "actions": {
+          "upload-json": "JSON yükle"
+        },
+        "body": "Kullanıma hazır <1>doğrulanmış bir JSON Özgeçmişiniz</1> varsa, Reactive Resume üzerindeki gelişiminizi hızlı bir şekilde takip etmek için bunu kullanabilirsiniz. Başlamak için aşağıdaki düğmeyi tıklayın ve geçerli bir JSON dosyası yükleyin.",
+        "heading": "JSON Özgeçmişinden İçe Aktarma"
+      },
+      "linkedin": {
+        "actions": {
+          "upload-archive": "ZIP Arşivi Yükle"
+        },
+        "body": "Verilerinizi LinkedIn'den dışa aktararak ve bunları Reactive Resume'deki alanları otomatik olarak doldurmak için kullanarak zamandan tasarruf edebilirsiniz. LinkedIn'deki <1>Veri Gizliliği</1> bölümüne gidin ve verilerinizin arşivlenmesini isteyin. Kullanılabilir olduğunda, aşağıya ZIP dosyasını yükleyin.",
+        "heading": "LinkedIn'den İçeri Aktar"
+      },
+      "reactive-resume": {
+        "actions": {
+          "upload-json": "JSON yükle",
+          "upload-json-v2": "V2'den JSON Yükle"
+        },
+        "body": "Geçerli Reactive Resume sürümüyle dışa aktarılmış bir JSON formatında özgeçmişiniz varsa, yeniden düzenlenebilir bir sürüm elde etmek için onu tekrar buraya aktarabilirsiniz.",
+        "heading": "Reactive Resume'den İçeri Aktar"
+      }
+    },
+    "rename-resume": {
+      "actions": {
+        "rename-resume": "Özgeçmişi Yeniden Adlandır"
+      },
+      "form": {
+        "name": {
+          "label": "Ad"
+        },
+        "slug": {
+          "label": "Kısa isim"
+        }
+      },
+      "heading": "Özgeçmişinizi yeniden adlandırın"
+    }
+  }
+}
