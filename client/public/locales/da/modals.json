@@ -1,0 +1,136 @@
+{
+  "auth": {
+    "forgot-password": {
+      "actions": {
+        "send-email": "Send e-mail med Nulstil adgangskode"
+      },
+      "body": "Indtast blot den e-mailadresse, der er knyttet til den konto, du gerne vil gendanne.",
+      "form": {
+        "email": {
+          "label": "Email adresse"
+        }
+      },
+      "heading": "Har du glemt din adgangskode?",
+      "help-text": "Hvis der er en konto, der er knyttet til %1 vil du modtage en e-mail med et link for at nulstille din adgangskode."
+    },
+    "login": {
+      "actions": {
+        "login": "Log ind",
+        "google": "Log ind med Google"
+      },
+      "body": "Indtast venligst dit brugernavn og din adgangskode knyttet til din konto for at logge ind og få adgang til, administrere og dele dine CV'er.",
+      "form": {
+        "password": {
+          "label": "Adgangskode"
+        },
+        "username": {
+          "help-text": "Du skal indtaste din e-mailadresse.",
+          "label": "Brugernavn"
+        }
+      },
+      "heading": "Log ind på din konto",
+      "recover-text": "Hvis du har glemt din adgangskode, kan du <1>gendanne din konto</1> her.",
+      "register-text": "Hvis du ikke har en, kan du <1>oprette en konto</1> her."
+    },
+    "register": {
+      "actions": {
+        "register": "Tilmeld",
+        "google": "Log på med Google"
+      },
+      "body": "Indtast e-mail adresse for at oprette en konto.",
+      "form": {
+        "confirm-password": {
+          "label": "Bekræft adgangskode"
+        },
+        "email": {
+          "label": "Email adresse"
+        },
+        "name": {
+          "label": "Fulde navn"
+        },
+        "password": {
+          "label": "Adgangskode"
+        },
+        "username": {
+          "label": "Brugernavn"
+        }
+      },
+      "heading": "Opret en konto",
+      "loginText": "Hvis du allerede har en konto, kan du <1>logge ind her</1>."
+    },
+    "reset-password": {
+      "actions": {
+        "set-password": "Indstil ny adgangskode"
+      },
+      "body": "Indtast en ny adgangskode til din konto.",
+      "form": {
+        "confirm-password": {
+          "label": "Bekræft adgangskode"
+        },
+        "password": {
+          "label": "Adgangskode"
+        }
+      },
+      "heading": "Nulstil din adgangskode"
+    }
+  },
+  "dashboard": {
+    "create-resume": {
+      "actions": {
+        "create-resume": "Opret CV"
+      },
+      "body": "Begynd at bygge dit CV ved at give det et navn. Det kan være i forbindelse med den rolle, du søger, eller blot din yndlingssnack.",
+      "form": {
+        "name": {
+          "label": "Navn"
+        },
+        "public": {
+          "label": "Er offentligt tilgængeligt?"
+        },
+        "slug": {
+          "label": "Slug"
+        }
+      },
+      "heading": "Opret nyt CV"
+    },
+    "import-external": {
+      "heading": "Importer fra eksterne kilder",
+      "json-resume": {
+        "actions": {
+          "upload-json": "Upload JSON"
+        },
+        "body": "Hvis du har et <1>valideret JSON-CV</1> klar, kan du bruge den til at fremskynde din udvikling på Reactive Resume. Klik på knappen nedenfor og upload en gyldig JSON-fil for at begynde.",
+        "heading": "Importer fra JSON CV"
+      },
+      "linkedin": {
+        "actions": {
+          "upload-archive": "Upload ZIP-arkiv"
+        },
+        "body": "Du kan spare tid ved at eksportere dine data fra LinkedIn og bruge dem til automatisk at udfylde felter på Reactive Resume. Gå over til <1>Databeskyttelse</1> sektion på LinkedIn og anmod om et arkiv af dine data. Når den er tilgængelig, skal du uploade ZIP-filen nedenfor.",
+        "heading": "Importer fra LinkedIn"
+      },
+      "reactive-resume": {
+        "actions": {
+          "upload-json": "Upload JSON",
+          "upload-json-v2": "Upload JSON fra v2"
+        },
+        "body": "Hvis du har en JSON, der blev eksporteret med den aktuelle version af Reactive Resume, kan du importere den tilbage her for at få en redigerbar version igen.",
+        "heading": "Importer fra JSON CV"
+      }
+    },
+    "rename-resume": {
+      "actions": {
+        "rename-resume": "Omdøb CV"
+      },
+      "form": {
+        "name": {
+          "label": "Navn"
+        },
+        "slug": {
+          "label": "Slug"
+        }
+      },
+      "heading": "Omdøb dit CV"
+    }
+  }
+}
