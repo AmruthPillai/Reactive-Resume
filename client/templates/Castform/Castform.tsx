@@ -27,7 +27,7 @@ const Castform: React.FC<PageProps> = ({ page }) => {
       <div className={styles.container}>
         <div
           className={clsx(styles.sidebar, css(`svg { color: ${color} } --primary-color: ${color}`))}
-          style={{ color, backgroundColor: theme.primary }}
+          style={{ color, backgroundColor: theme.primary, wordBreak: 'break-word' }}
         >
           {isFirstPage && <MastheadSidebar />}
 

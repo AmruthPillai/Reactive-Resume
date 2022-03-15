@@ -19,7 +19,7 @@ const Glalie: React.FC<PageProps> = ({ page }) => {
   return (
     <div className={styles.page}>
       <div className={styles.container}>
-        <div className={styles.sidebar} style={{ backgroundColor: alpha(primaryColor, 0.15) }}>
+        <div className={styles.sidebar} style={{ backgroundColor: alpha(primaryColor, 0.15), wordBreak: 'break-word' }}>
           {isFirstPage && <MastheadSidebar />}
 
           {layout[1].map((key) => getSectionById(key, Section))}

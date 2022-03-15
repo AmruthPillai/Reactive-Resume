@@ -34,7 +34,7 @@ const Gengar: React.FC<PageProps> = ({ page }) => {
             {isFirstPage && <MastheadSidebar />}
           </div>
 
-          <div className={styles.inner} style={{ backgroundColor }}>
+          <div className={styles.inner} style={{ backgroundColor, wordBreak: 'break-word' }}>
             {layout[1].map((key) => getSectionById(key, Section))}
           </div>
         </div>
