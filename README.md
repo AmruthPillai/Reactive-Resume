@@ -96,7 +96,7 @@ Reactive Resume would be nothing without the folks who supported me and kept the
   <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/PoweredByDO/DO_Powered_by_Badge_blue.svg" width="200px" />
 </a>
 
-## Contributors Wall:
+## Contributors Wall
 <a href="https://github.com/AmruthPillai/Reactive-Resume/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=AmruthPillai/Reactive-Resume" />
 </a>
