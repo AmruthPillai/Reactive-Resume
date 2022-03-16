@@ -1,0 +1,358 @@
+{
+  "common": {
+    "actions": {
+      "add": "Thêm {{token}} mới",
+      "delete": "Xoá {{token}}",
+      "edit": "Sửa {{token}}"
+    },
+    "columns": {
+      "heading": "Cột",
+      "tooltip": "Sửa số cột"
+    },
+    "form": {
+      "date": {
+        "label": "Ngày"
+      },
+      "description": {
+        "label": "Mô tả"
+      },
+      "email": {
+        "label": "Địa chỉ Email"
+      },
+      "end-date": {
+        "help-text": "Để trống chỗ này, nếu vẫn còn",
+        "label": "Ngày kết thúc"
+      },
+      "keywords": {
+        "label": "Từ khoá"
+      },
+      "level": {
+        "label": "Cập đọ"
+      },
+      "levelNum": {
+        "label": "Cấp độ (Số)"
+      },
+      "name": {
+        "label": "Tên"
+      },
+      "phone": {
+        "label": "Số điện thoại"
+      },
+      "position": {
+        "label": "Chức vụ"
+      },
+      "start-date": {
+        "label": "Ngày bắt đầu"
+      },
+      "subtitle": {
+        "label": "Phụ đề"
+      },
+      "summary": {
+        "label": "Tóm tắt"
+      },
+      "title": {
+        "label": "Tiêu đề"
+      },
+      "url": {
+        "label": "Website"
+      }
+    },
+    "glossary": {
+      "page": "Trang"
+    },
+    "list": {
+      "actions": {
+        "delete": "Xóa",
+        "duplicate": "Tạo bản sao",
+        "edit": "Chỉnh sửa"
+      },
+      "empty-text": "Danh sách này trống."
+    },
+    "tooltip": {
+      "delete-item": "Bạn có chắc bạn muốn xóa mục này? Hành động này không thể hoàn tác.",
+      "delete-section": "Xóa phần",
+      "rename-section": "Đổi tên phần",
+      "toggle-visibility": "Bật tắt khả năng hiển thị"
+    }
+  },
+  "controller": {
+    "tooltip": {
+      "center-artboard": "Trung tâm Artboard",
+      "copy-link": "Sao chép liên kết để tiếp tục",
+      "export-pdf": "Xuất ra PDF",
+      "toggle-orientation": "Chuyển đổi hướng trang",
+      "toggle-page-break-line": "Chuyển đổi dòng ngắt trang",
+      "toggle-sidebars": "Bật/tắt Sidebar",
+      "zoom-in": "Phóng to",
+      "zoom-out": "Thu nhỏ"
+    }
+  },
+  "header": {
+    "menu": {
+      "delete": "Xóa",
+      "duplicate": "Tạo bản sao",
+      "rename": "Đổi tên",
+      "share-link": "Chia sẻ Liên kết",
+      "tooltips": {
+        "delete": "Bạn có chắc bạn muốn xóa mục này? Hành động này không thể hoàn tác.",
+        "share-link": "Bạn cần thay đổi chế độ hiển thị sơ yếu lý lịch của bạn thành công khai để những người khác có thể nhìn thấy nó."
+      }
+    }
+  },
+  "leftSidebar": {
+    "sections": {
+      "awards": {
+        "form": {
+          "awarder": {
+            "label": "Bên trao giải"
+          }
+        }
+      },
+      "basics": {
+        "actions": {
+          "photo-filters": "Bộ lọc ảnh"
+        },
+        "heading": "Cơ bản",
+        "headline": {
+          "label": "Tiêu đề"
+        },
+        "name": {
+          "label": "Họ và tên"
+        },
+        "photo-filters": {
+          "effects": {
+            "border": {
+              "label": "Viền"
+            },
+            "grayscale": {
+              "label": "Thang độ xám"
+            },
+            "heading": "Hiệu ứng"
+          },
+          "shape": {
+            "heading": "Hình dạng"
+          },
+          "size": {
+            "heading": "Kích cỡ (đơn vị: px)"
+          }
+        },
+        "photo-upload": {
+          "tooltip": {
+            "remove": "Xóa hình ảnh",
+            "upload": "Đăng ảnh lên"
+          }
+        }
+      },
+      "certifications": {
+        "form": {
+          "issuer": {
+            "label": "Bên cấp"
+          }
+        }
+      },
+      "education": {
+        "form": {
+          "area-study": {
+            "label": "Lĩnh vực đào tạo"
+          },
+          "courses": {
+            "label": "Khóa học"
+          },
+          "degree": {
+            "label": "Bằng cấp"
+          },
+          "grade": {
+            "label": "Lớp"
+          },
+          "institution": {
+            "label": "Trường"
+          }
+        }
+      },
+      "location": {
+        "address": {
+          "label": "Địa chỉ"
+        },
+        "city": {
+          "label": "Thành phố"
+        },
+        "country": {
+          "label": "Quốc gia"
+        },
+        "heading": "Địa điểm",
+        "postal-code": {
+          "label": "Mã bưu chính"
+        },
+        "region": {
+          "label": "Khu vực"
+        }
+      },
+      "profiles": {
+        "form": {
+          "network": {
+            "label": "Mạng lưới"
+          },
+          "username": {
+            "label": "Tên đăng nhập"
+          }
+        },
+        "heading": "Hồ sơ cá nhân",
+        "heading_one": "Hồ sơ cá nhân"
+      },
+      "publications": {
+        "form": {
+          "publisher": {
+            "label": "Nhà xuất bản"
+          }
+        }
+      },
+      "references": {
+        "form": {
+          "relationship": {
+            "label": "Mối quan hệ"
+          }
+        }
+      },
+      "section": {
+        "heading": "Đề mục"
+      },
+      "volunteer": {
+        "form": {
+          "organization": {
+            "label": "Tổ chức"
+          }
+        }
+      }
+    }
+  },
+  "rightSidebar": {
+    "sections": {
+      "css": {
+        "heading": "Tùy chỉnh CSS"
+      },
+      "export": {
+        "heading": "Xuất ra",
+        "json": {
+          "primary": "JSON",
+          "secondary": "Tải sơ yếu lý lịch của bạn dưới dạng JSON, với định dạng này bạn có thể nhập lại vào Reactive Resume."
+        },
+        "pdf": {
+          "loading": {
+            "primary": "Đang tạo PDF",
+            "secondary": "Vui lòng đợi khi tệp PDF của bạn được tạo, quá trình này có thể mất tới 15 giây."
+          },
+          "normal": {
+            "primary": "PDF",
+            "secondary": "Tải sơ yếu lý lịch của bạn dưới dạng PDF, với định dạng này bạn có thể in và gửi đi để xin việc. Không thể nhập lại tệp này vào ứng dụng để chỉnh sửa."
+          }
+        }
+      },
+      "layout": {
+        "heading": "Bố cục",
+        "tooltip": {
+          "reset-layout": "Đặt lại bố cục"
+        }
+      },
+      "links": {
+        "bugs-features": {
+          "body": "Điều gì ngăn cản bạn làm một bản sơ yếu lý lịch? Hoặc bạn có một ý tưởng tuyệt vời để đề xuất? Hãy nêu ý kiến của mình trên GitHub.",
+          "button": "Vấn đề Github",
+          "heading": "Lỗi? Yêu cầu tính năng?"
+        },
+        "donate": {
+          "body": "Nếu bạn thích sử dụng Reactive Resume, vui lòng cân nhắc quyên góp nhiều nhất có thể cho mục đích duy trì ứng dụng luôn hoạt động, không có quảng cáo và miễn phí vĩnh viễn.",
+          "button": "Mua cho tôi một ly cà phê",
+          "heading": "Quyên góp cho Reactive Resume"
+        },
+        "github": "Mã nguồn",
+        "heading": "Liên kết"
+      },
+      "settings": {
+        "global": {
+          "date": {
+            "primary": "Ngày tháng",
+            "secondary": "Định dạng ngày tháng để sử dụng trên ứng dụng"
+          },
+          "heading": "Chung",
+          "language": {
+            "primary": "Ngôn ngữ",
+            "secondary": "Ngôn ngữ hiển thị để sử dụng trên ứng dụng"
+          },
+          "theme": {
+            "primary": "Giao diện"
+          }
+        },
+        "heading": "Cài đặt",
+        "page": {
+          "break-line": {
+            "primary": "Ngắt dòng",
+            "secondary": "Hiển thị một dòng chữ trên tất cả các trang để đánh dấu chiều cao của trang A4"
+          },
+          "heading": "Trang",
+          "orientation": {
+            "disabled": "Không có tác dụng khi chỉ có một trang",
+            "primary": "Hướng giấy",
+            "secondary": "Hiển thị các trang theo chiều ngang hay chiều dọc"
+          }
+        },
+        "resume": {
+          "heading": "Sơ yếu lý lịch",
+          "reset": {
+            "primary": "Đặt lại mọi thứ",
+            "secondary": "Bạn đã mắc quá nhiều lỗi? Nhấn vào đây để đặt lại tất cả các thay đổi và bắt đầu lại từ đầu. Hãy cẩn thận, hành động này không thể hoàn lại."
+          },
+          "sample": {
+            "primary": "Thêm dữ liệu mẫu",
+            "secondary": "Không chắc chắn bắt đầu từ đâu? Nhấp vào đây để tải một số dữ liệu mẫu để xem một bản sơ yếu lý lịch hoàn chỉnh trông như thế nào."
+          }
+        }
+      },
+      "sharing": {
+        "heading": "Chia sẻ",
+        "short-url": {
+          "label": "Ưu tiên URL ngắn"
+        },
+        "visibility": {
+          "subtitle": "Cho phép bất kỳ ai có liên kết xem sơ yếu lý lịch của bạn",
+          "title": "Công khai"
+        }
+      },
+      "templates": {
+        "heading": "Mẫu"
+      },
+      "theme": {
+        "form": {
+          "background": {
+            "label": "Nền"
+          },
+          "primary": {
+            "label": "Chính"
+          },
+          "text": {
+            "label": "Văn bản"
+          }
+        },
+        "heading": "Chủ đề"
+      },
+      "typography": {
+        "form": {
+          "font-family": {
+            "label": "Phông chữ"
+          },
+          "font-size": {
+            "label": "Cỡ chữ"
+          }
+        },
+        "heading": "Kiểu Chữ",
+        "widgets": {
+          "body": {
+            "label": "Nội dung"
+          },
+          "headings": {
+            "label": "Tiêu đề"
+          }
+        }
+      }
+    }
+  }
+}
