@@ -1,0 +1,136 @@
+{
+  "auth": {
+    "forgot-password": {
+      "actions": {
+        "send-email": "Gửi email đặt lại mật khẩu"
+      },
+      "body": "Chỉ cần nhập địa chỉ email được liên kết với tài khoản bạn muốn khôi phục.",
+      "form": {
+        "email": {
+          "label": "Địa chỉ email"
+        }
+      },
+      "heading": "Quên mật khẩu?",
+      "help-text": "Nếu tài khoản tồn tại, bạn sẽ nhận được email có liên kết để đặt lại mật khẩu của mình."
+    },
+    "login": {
+      "actions": {
+        "login": "Đăng nhập",
+        "google": "Đăng nhập với Google"
+      },
+      "body": "Vui lòng nhập tên người dùng và mật khẩu được liên kết với tài khoản của bạn để đăng nhập và truy cập, quản lý và chia sẻ hồ sơ của bạn.",
+      "form": {
+        "password": {
+          "label": "Mật khẩu"
+        },
+        "username": {
+          "help-text": "Bạn cũng có thể nhập địa chỉ email của mình",
+          "label": "Tên đăng nhập"
+        }
+      },
+      "heading": "Đăng nhập vào tài khoản của bạn",
+      "recover-text": "Trong trường hợp bạn quên mật khẩu, bạn có thể <1>khôi phục tài khoản của mình</1> tại đây.",
+      "register-text": "Nếu chưa có tài khoản, bạn có thể <1>tạo một tài khoản</1> ở đây."
+    },
+    "register": {
+      "actions": {
+        "register": "Đăng ký",
+        "google": "Đăng ký bằng tài khoản Google"
+      },
+      "body": "Vui lòng nhập thông tin cá nhân của bạn để tạo tài khoản.",
+      "form": {
+        "confirm-password": {
+          "label": "Xác nhận mật khẩu"
+        },
+        "email": {
+          "label": "Địa chỉ Email"
+        },
+        "name": {
+          "label": "Họ và tên"
+        },
+        "password": {
+          "label": "Mật khẩu"
+        },
+        "username": {
+          "label": "Tên đăng nhập"
+        }
+      },
+      "heading": "Tạo tài khoản mới",
+      "loginText": "Nếu bạn đã có tài khoản, bạn có thể <1>đăng nhập tại đây</1>."
+    },
+    "reset-password": {
+      "actions": {
+        "set-password": "Đặt mật khẩu mới"
+      },
+      "body": "Nhập mật khẩu mới cho tài khoản của bạn.",
+      "form": {
+        "confirm-password": {
+          "label": "Xác nhận mật khẩu"
+        },
+        "password": {
+          "label": "Mật khẩu"
+        }
+      },
+      "heading": "Đặt lại mật khẩu của bạn"
+    }
+  },
+  "dashboard": {
+    "create-resume": {
+      "actions": {
+        "create-resume": "Tạo sơ yếu lý lịch"
+      },
+      "body": "Bắt đầu xây dựng sơ yếu lý lịch của bạn bằng cách đặt tên cho nó. Nó có thể liên quan đến vị trí mà bạn ứng tuyển, hoặc chỉ là món ăn nhẹ yêu thích của bạn.",
+      "form": {
+        "name": {
+          "label": "Tên"
+        },
+        "public": {
+          "label": "Có thể truy cập công khai không?"
+        },
+        "slug": {
+          "label": "Đường dẫn rút gọn"
+        }
+      },
+      "heading": "Tạo sơ yếu lý lịch mới"
+    },
+    "import-external": {
+      "heading": "Kết nhập dữ liệu từ nguồn ngoài",
+      "json-resume": {
+        "actions": {
+          "upload-json": "Tải lên JSON"
+        },
+        "body": "Nếu bạn có sẵn một <1>bản JSON Resume đã được xác thực</1> để chỉnh sửa, bạn có thể sử dụng nó để theo dõi nhanh sự phát triển của mình trên Reactive Resume. Nhấp vào nút bên dưới và tải lên tệp JSON hợp lệ để bắt đầu.",
+        "heading": "Kết nhập từ JSON Resume"
+      },
+      "linkedin": {
+        "actions": {
+          "upload-archive": "Tải lên bản nén ZIP"
+        },
+        "body": "Bạn có thể tiết kiệm thời gian bằng cách xuất dữ liệu của mình từ LinkedIn và sử dụng dữ liệu đó để tự động điền vào các trường trên Reactive Resume. Đi tới <1>Quyền riêng tư về dữ liệu</1> trên LinkedIn và yêu cầu lưu trữ dữ liệu của bạn. Khi nó có sẵn, hãy tải lên tệp ZIP ở bên dưới.",
+        "heading": "Kết nhập từ LinkedIn"
+      },
+      "reactive-resume": {
+        "actions": {
+          "upload-json": "Tải lên JSON",
+          "upload-json-v2": "Tải lên JSON từ v2"
+        },
+        "body": "Nếu bạn có một bản JSON đã được xuất với phiên bản Reactive Resume hiện tại, bạn có thể nhập lại bản JSON tại đây để tiếp tục chỉnh sửa.",
+        "heading": "Kết nhập từ Reactive Resume"
+      }
+    },
+    "rename-resume": {
+      "actions": {
+        "rename-resume": "Đổi tên sơ yếu"
+      },
+      "form": {
+        "name": {
+          "label": "Tên"
+        },
+        "slug": {
+          "label": "Đường dẫn rút gọn"
+        }
+      },
+      "heading": "Đổi tên sơ yếu lý lịch của bạn"
+    }
+  }
+}
