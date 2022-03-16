@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.5](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.4...v3.2.5) (2022-03-16)
+
+
+### Features
+
+* **i18n:** add danish, polish and turkish locales to i18n ([97e9432](https://github.com/AmruthPillai/Reactive-Resume/commit/97e9432d6bd887e666a3443fbfde9a92cef53965))
+
+
+### Bug Fixes
+
+* **client/templates:** fix text veering off of artboard in most templates ([b2f1fb3](https://github.com/AmruthPillai/Reactive-Resume/commit/b2f1fb3a5502988a49c5cd3e496d9d165f5c1792)), closes [#702](https://github.com/AmruthPillai/Reactive-Resume/issues/702)
+
 ### [3.2.4](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.3...v3.2.4) (2022-03-14)
 
 ### [3.2.3](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.2...v3.2.3) (2022-03-14)
