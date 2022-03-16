@@ -1,0 +1,358 @@
+{
+  "common": {
+    "actions": {
+      "add": "Yeni {{token}} Ekle",
+      "delete": "{{token}} sil",
+      "edit": "{{token}}'i düzenle"
+    },
+    "columns": {
+      "heading": "Sütunlar",
+      "tooltip": "Sütun sayısını değiştir"
+    },
+    "form": {
+      "date": {
+        "label": "Tarih"
+      },
+      "description": {
+        "label": "Açıklama"
+      },
+      "email": {
+        "label": "E-posta Adresi"
+      },
+      "end-date": {
+        "help-text": "Hâlâ mevcutsa bu alanı boş bırakın",
+        "label": "Bitiş Tarihi"
+      },
+      "keywords": {
+        "label": "Anahtar Kelimeler"
+      },
+      "level": {
+        "label": "Düzey"
+      },
+      "levelNum": {
+        "label": "Seviye (Sayı)"
+      },
+      "name": {
+        "label": "Ad"
+      },
+      "phone": {
+        "label": "Telefon Numarası"
+      },
+      "position": {
+        "label": "Pozisyon"
+      },
+      "start-date": {
+        "label": "Başlama tarihi"
+      },
+      "subtitle": {
+        "label": "Altyazı"
+      },
+      "summary": {
+        "label": "Özet"
+      },
+      "title": {
+        "label": "Başlık"
+      },
+      "url": {
+        "label": "Web Sitesi"
+      }
+    },
+    "glossary": {
+      "page": "Sayfa"
+    },
+    "list": {
+      "actions": {
+        "delete": "Sil",
+        "duplicate": "Çoğalt",
+        "edit": "Düzenle"
+      },
+      "empty-text": "Bu liste boş."
+    },
+    "tooltip": {
+      "delete-item": "Bu öğeyi silmek istediğinizden emin misiniz? Bu geri dönüşü olmayan bir eylemdir.",
+      "delete-section": "Bölümü Sil",
+      "rename-section": "Bölümü Yeniden Adlandır",
+      "toggle-visibility": "Görünürlüğü Aç/Kapat"
+    }
+  },
+  "controller": {
+    "tooltip": {
+      "center-artboard": "Çalışma Yüzeyini Ortala",
+      "copy-link": "Özgeçmişe Bağlantıyı Kopyala",
+      "export-pdf": "PDF dışa aktar",
+      "toggle-orientation": "Sayfa Yönünü Değiştir",
+      "toggle-page-break-line": "Sayfa Sonu Satırını Aç/Kapat",
+      "toggle-sidebars": "Kenar Çubuklarını Aç/Kapat",
+      "zoom-in": "Yakınlaştır",
+      "zoom-out": "Uzaklaştır"
+    }
+  },
+  "header": {
+    "menu": {
+      "delete": "Sil",
+      "duplicate": "Çoğalt",
+      "rename": "Yeniden Adlandır",
+      "share-link": "Bağlantıyı Paylaş",
+      "tooltips": {
+        "delete": "Bu özgeçmişi silmek istediğinizden emin misiniz? Bu geri dönüşü olmayan bir eylemdir.",
+        "share-link": "Başkalarına görünür kılmak için özgeçmişinizin görünürlüğünü herkese açık olarak değiştirmeniz gerekir."
+      }
+    }
+  },
+  "leftSidebar": {
+    "sections": {
+      "awards": {
+        "form": {
+          "awarder": {
+            "label": "Ödülü Veren"
+          }
+        }
+      },
+      "basics": {
+        "actions": {
+          "photo-filters": "Fotoğraf Filtreleri"
+        },
+        "heading": "Temel Bilgiler",
+        "headline": {
+          "label": "Başlık"
+        },
+        "name": {
+          "label": "Ad Soyad"
+        },
+        "photo-filters": {
+          "effects": {
+            "border": {
+              "label": "Kenar"
+            },
+            "grayscale": {
+              "label": "Gri Tonlama"
+            },
+            "heading": "Efektler"
+          },
+          "shape": {
+            "heading": "Şekil"
+          },
+          "size": {
+            "heading": "Boyut (px cinsinden)"
+          }
+        },
+        "photo-upload": {
+          "tooltip": {
+            "remove": "Fotoğrafı kaldır",
+            "upload": "Fotoğraf Yükle"
+          }
+        }
+      },
+      "certifications": {
+        "form": {
+          "issuer": {
+            "label": "Sağlayıcı"
+          }
+        }
+      },
+      "education": {
+        "form": {
+          "area-study": {
+            "label": "Çalışma alanı"
+          },
+          "courses": {
+            "label": "Kurslar"
+          },
+          "degree": {
+            "label": "Derece"
+          },
+          "grade": {
+            "label": "Not"
+          },
+          "institution": {
+            "label": "Kurum"
+          }
+        }
+      },
+      "location": {
+        "address": {
+          "label": "Adres"
+        },
+        "city": {
+          "label": "Şehir"
+        },
+        "country": {
+          "label": "Ülke"
+        },
+        "heading": "Konum",
+        "postal-code": {
+          "label": "Posta Kodu"
+        },
+        "region": {
+          "label": "Bölge"
+        }
+      },
+      "profiles": {
+        "form": {
+          "network": {
+            "label": "Ağ"
+          },
+          "username": {
+            "label": "Kullanıcı Adı"
+          }
+        },
+        "heading": "Profiller",
+        "heading_one": "Profil"
+      },
+      "publications": {
+        "form": {
+          "publisher": {
+            "label": "Yayımcı"
+          }
+        }
+      },
+      "references": {
+        "form": {
+          "relationship": {
+            "label": "İlişki"
+          }
+        }
+      },
+      "section": {
+        "heading": "Bölüm"
+      },
+      "volunteer": {
+        "form": {
+          "organization": {
+            "label": "Organizasyon"
+          }
+        }
+      }
+    }
+  },
+  "rightSidebar": {
+    "sections": {
+      "css": {
+        "heading": "Özel CSS"
+      },
+      "export": {
+        "heading": "Dışarı Aktar",
+        "json": {
+          "primary": "JSON",
+          "secondary": "Özgeçmişinizin, Reaktif Özgeçmiş'e aktarılabilecek bir JSON sürümünü indirin."
+        },
+        "pdf": {
+          "loading": {
+            "primary": "PDF Oluşturuluyor",
+            "secondary": "Lütfen PDF'niz oluşturulurken bekleyin, bu işlem 15 saniye kadar sürebilir."
+          },
+          "normal": {
+            "primary": "PDF",
+            "secondary": "Yazdırabileceğiniz ve hayalinizdeki işe gönderebileceğiniz özgeçmişinizin bir PDF'sini indirin. Bu dosya daha fazla düzenleme için yeniden içeri aktarılamaz."
+          }
+        }
+      },
+      "layout": {
+        "heading": "Düzen",
+        "tooltip": {
+          "reset-layout": "Düzeni Sıfırla"
+        }
+      },
+      "links": {
+        "bugs-features": {
+          "body": "Sizi özgeçmişinizi yapmaktan alıkoyan bir şey mi var? Yoksa eklemek istediğiniz harika bir fikriniz mi var? Başlamak için GitHub'da bir issue yaratın.",
+          "button": "GitHub Issues",
+          "heading": "Hatalar? Özellik İstekleri?"
+        },
+        "donate": {
+          "body": "Reaktif Özgeçmiş'i kullanmayı sevdiyseniz, lütfen uygulamayı reklamsız ve sonsuza kadar ücretsiz olarak çalışır durumda tutmak için elinizden geldiğince bağışta bulunmayı düşünün.",
+          "button": "Bana kahve ısmarlayın",
+          "heading": "Reactive Resume'ye Bağış Yap"
+        },
+        "github": "Kaynak Kodu",
+        "heading": "Bağlantılar"
+      },
+      "settings": {
+        "global": {
+          "date": {
+            "primary": "Tarih",
+            "secondary": "Uygulama genelinde kullanılacak tarih formatı"
+          },
+          "heading": "Küresel",
+          "language": {
+            "primary": "Dil",
+            "secondary": "Uygulama genelinde kullanılacak görüntüleme dili"
+          },
+          "theme": {
+            "primary": "Tema"
+          }
+        },
+        "heading": "Ayarlar",
+        "page": {
+          "break-line": {
+            "primary": "Ara Hat",
+            "secondary": "A4 sayfasının yüksekliğini işaretlemek için tüm sayfalarda bir çizgi göster"
+          },
+          "heading": "Sayfa",
+          "orientation": {
+            "disabled": "Sadece bir sayfa olduğunda etkisizdir",
+            "primary": "Oryantasyon",
+            "secondary": "Sayfaların yatay mı yoksa dikey mi görüntüleneceğini"
+          }
+        },
+        "resume": {
+          "heading": "Özgeçmiş",
+          "reset": {
+            "primary": "Her Şeyi Sıfırla",
+            "secondary": "Çok fazla mı hata yaptınız? Tüm değişiklikleri sıfırlamak ve yeniden başlamak için burayı tıklayın. Dikkatli olun, çünkü bu eylem geri alınamaz."
+          },
+          "sample": {
+            "primary": "Örnek Veriyi Yükle",
+            "secondary": "Nereden başlayacağınızdan emin değil misiniz? Tamamlanmış bir özgeçmişin nasıl göründüğünü görebileceğiniz bazı örnek verileri yüklemek için buraya tıklayın."
+          }
+        }
+      },
+      "sharing": {
+        "heading": "Paylaşım",
+        "short-url": {
+          "label": "Kısa URL'yi Tercih Et"
+        },
+        "visibility": {
+          "subtitle": "Bağlantısı olan herkesin özgeçmişinizi görüntülemesine izin verin",
+          "title": "Herkese açık"
+        }
+      },
+      "templates": {
+        "heading": "Şablonlar"
+      },
+      "theme": {
+        "form": {
+          "background": {
+            "label": "Arka plan"
+          },
+          "primary": {
+            "label": "Birincil"
+          },
+          "text": {
+            "label": "Yazı"
+          }
+        },
+        "heading": "Tema"
+      },
+      "typography": {
+        "form": {
+          "font-family": {
+            "label": "Yazı Tipi Ailesi"
+          },
+          "font-size": {
+            "label": "Yazı Tipi Boyutu"
+          }
+        },
+        "heading": "Tipografi",
+        "widgets": {
+          "body": {
+            "label": "Gövde"
+          },
+          "headings": {
+            "label": "Başlıklar"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,358 @@
+{
+  "common": {
+    "actions": {
+      "add": "Přidat nový {{token}}",
+      "delete": "Odstranit {{token}}",
+      "edit": "Upravit {{token}}"
+    },
+    "columns": {
+      "heading": "Sloupce",
+      "tooltip": "Změnit počet sloupců"
+    },
+    "form": {
+      "date": {
+        "label": "Datum"
+      },
+      "description": {
+        "label": "Popis"
+      },
+      "email": {
+        "label": "E-mailová adresa"
+      },
+      "end-date": {
+        "help-text": "Nechte toto pole prázdné, pokud stále trvá",
+        "label": "Datum ukončení"
+      },
+      "keywords": {
+        "label": "Klíčová slova"
+      },
+      "level": {
+        "label": "Úroveň"
+      },
+      "levelNum": {
+        "label": "Úroveň (číslo)"
+      },
+      "name": {
+        "label": "Jméno"
+      },
+      "phone": {
+        "label": "Telefonní číslo"
+      },
+      "position": {
+        "label": "Pozice"
+      },
+      "start-date": {
+        "label": "Počáteční datum"
+      },
+      "subtitle": {
+        "label": "Podtitul"
+      },
+      "summary": {
+        "label": "Shrnutí"
+      },
+      "title": {
+        "label": "Název"
+      },
+      "url": {
+        "label": "Webová stránka"
+      }
+    },
+    "glossary": {
+      "page": "Stránka"
+    },
+    "list": {
+      "actions": {
+        "delete": "Odstranit",
+        "duplicate": "Duplikovat",
+        "edit": "Upravit"
+      },
+      "empty-text": "Tento seznam je prázdný."
+    },
+    "tooltip": {
+      "delete-item": "Opravdu chcete odstranit tuto položku? Tato akce je nevratná.",
+      "delete-section": "Odstranit sekci",
+      "rename-section": "Přejmenovat sekci",
+      "toggle-visibility": "Přepnout viditelnost"
+    }
+  },
+  "controller": {
+    "tooltip": {
+      "center-artboard": "Vycentrovat Artboard",
+      "copy-link": "Kopírovat odkaz na životopis",
+      "export-pdf": "Exportovat PDF",
+      "toggle-orientation": "Přepnout orientaci stránky",
+      "toggle-page-break-line": "Přepnout řádek zalomení stránky",
+      "toggle-sidebars": "Přepnout boční panely",
+      "zoom-in": "Přiblížit",
+      "zoom-out": "Oddálit"
+    }
+  },
+  "header": {
+    "menu": {
+      "delete": "Odstranit",
+      "duplicate": "Duplikovat",
+      "rename": "Přejmenovat",
+      "share-link": "Sdílet odkaz",
+      "tooltips": {
+        "delete": "Opravdu chcete smazat tento životopis? Tato akce je nevratná.",
+        "share-link": "Musíte změnit viditelnost svého životopisu na veřejnou, aby byl viditelný pro ostatní."
+      }
+    }
+  },
+  "leftSidebar": {
+    "sections": {
+      "awards": {
+        "form": {
+          "awarder": {
+            "label": "Udělovatel"
+          }
+        }
+      },
+      "basics": {
+        "actions": {
+          "photo-filters": "Foto filtry"
+        },
+        "heading": "Základy",
+        "headline": {
+          "label": "Titulek"
+        },
+        "name": {
+          "label": "Celé jméno"
+        },
+        "photo-filters": {
+          "effects": {
+            "border": {
+              "label": "Rám"
+            },
+            "grayscale": {
+              "label": "Odstíny šedi"
+            },
+            "heading": "Efekty"
+          },
+          "shape": {
+            "heading": "Tvar"
+          },
+          "size": {
+            "heading": "Velikost (v px)"
+          }
+        },
+        "photo-upload": {
+          "tooltip": {
+            "remove": "Odstranit fotku",
+            "upload": "Nahrát fotografii"
+          }
+        }
+      },
+      "certifications": {
+        "form": {
+          "issuer": {
+            "label": "Vydavatel"
+          }
+        }
+      },
+      "education": {
+        "form": {
+          "area-study": {
+            "label": "Studijní oblast"
+          },
+          "courses": {
+            "label": "Kurzy"
+          },
+          "degree": {
+            "label": "Titul"
+          },
+          "grade": {
+            "label": "Známka"
+          },
+          "institution": {
+            "label": "Instituce"
+          }
+        }
+      },
+      "location": {
+        "address": {
+          "label": "Adresa"
+        },
+        "city": {
+          "label": "Město"
+        },
+        "country": {
+          "label": "Stát"
+        },
+        "heading": "Lokace",
+        "postal-code": {
+          "label": "PSČ"
+        },
+        "region": {
+          "label": "Region"
+        }
+      },
+      "profiles": {
+        "form": {
+          "network": {
+            "label": "Síť"
+          },
+          "username": {
+            "label": "Uživatelské jméno"
+          }
+        },
+        "heading": "Profily",
+        "heading_one": "Profil"
+      },
+      "publications": {
+        "form": {
+          "publisher": {
+            "label": "Vydavatel"
+          }
+        }
+      },
+      "references": {
+        "form": {
+          "relationship": {
+            "label": "Vztah"
+          }
+        }
+      },
+      "section": {
+        "heading": "Sekce"
+      },
+      "volunteer": {
+        "form": {
+          "organization": {
+            "label": "Firma"
+          }
+        }
+      }
+    }
+  },
+  "rightSidebar": {
+    "sections": {
+      "css": {
+        "heading": "Vlastní CSS"
+      },
+      "export": {
+        "heading": "Exportovat",
+        "json": {
+          "primary": "JSON",
+          "secondary": "Stáhněte si JSON verzi vašeho životopisu, kterou lze importovat zpět do Reactive Resume."
+        },
+        "pdf": {
+          "loading": {
+            "primary": "Generování PDF",
+            "secondary": "Počkejte prosím, než se váš PDF vygeneruje, může to trvat až 15 sekund."
+          },
+          "normal": {
+            "primary": "PDF",
+            "secondary": "Stáhněte si PDF se svým životopisem, který si můžete vytisknout a poslat do své vysněné práce. Tento soubor nelze importovat zpět pro další úpravy."
+          }
+        }
+      },
+      "layout": {
+        "heading": "Rozvržení",
+        "tooltip": {
+          "reset-layout": "Reset rozvržení"
+        }
+      },
+      "links": {
+        "bugs-features": {
+          "body": "Brání vám něco ve vytvoření životopisu? Nebo máte úžasný nápad, který byste mohli přidat? Pro začátek, založte problém na GitHubu.",
+          "button": "Hlášení chyb GitHub",
+          "heading": "Chyby? Požadavky na funkce?"
+        },
+        "donate": {
+          "body": "Pokud se vám líbilo používání Reactive Resume, zvažte prosím darování co největší částky na udržení aplikace v provozu, bez reklam a navždy zdarma.",
+          "button": "Kupte mi kávu",
+          "heading": "Přispějte na Reactive Resume"
+        },
+        "github": "Zdrojový kód",
+        "heading": "Odkazy"
+      },
+      "settings": {
+        "global": {
+          "date": {
+            "primary": "Datum",
+            "secondary": "Formát datumu, který se má používat napříč aplikací"
+          },
+          "heading": "Globální",
+          "language": {
+            "primary": "Jazyk",
+            "secondary": "Jazyk zobrazení pro použití v celé aplikaci"
+          },
+          "theme": {
+            "primary": "Motiv"
+          }
+        },
+        "heading": "Nastavení",
+        "page": {
+          "break-line": {
+            "primary": "Nový řádek",
+            "secondary": "Zobrazit čáru na všech stránkách pro označení výšky stránky A4"
+          },
+          "heading": "Stránka",
+          "orientation": {
+            "disabled": "Nemá žádný efekt, pokud existuje pouze jedna stránka",
+            "primary": "Orientace",
+            "secondary": "Zda se mají stránky zobrazovat vodorovně nebo svisle"
+          }
+        },
+        "resume": {
+          "heading": "Životopis",
+          "reset": {
+            "primary": "Resetovat vše",
+            "secondary": "Udělali jste příliš mnoho chyb? Kliknutím sem můžete všechny změny resetovat a začít znovu. Buďte opatrní, tuto akci nelze vrátit zpět."
+          },
+          "sample": {
+            "primary": "Načíst ukázková data",
+            "secondary": "Nevíte, kde začít? Klikněte zde a načtěte si vzorové údaje, abyste viděli, jak vypadá kompletní životopis."
+          }
+        }
+      },
+      "sharing": {
+        "heading": "Sdílení",
+        "short-url": {
+          "label": "Preferovat krátkou adresu URL"
+        },
+        "visibility": {
+          "subtitle": "Umožnit komukoli pomocí odkazu zobrazit váš životopis",
+          "title": "Veřejné"
+        }
+      },
+      "templates": {
+        "heading": "Šablony"
+      },
+      "theme": {
+        "form": {
+          "background": {
+            "label": "Pozadí"
+          },
+          "primary": {
+            "label": "Hlavní"
+          },
+          "text": {
+            "label": "Text"
+          }
+        },
+        "heading": "Motiv"
+      },
+      "typography": {
+        "form": {
+          "font-family": {
+            "label": "Rodina písma"
+          },
+          "font-size": {
+            "label": "Velikost písma"
+          }
+        },
+        "heading": "Typografie",
+        "widgets": {
+          "body": {
+            "label": "Tělo"
+          },
+          "headings": {
+            "label": "Nadpisy"
+          }
+        }
+      }
+    }
+  }
+}

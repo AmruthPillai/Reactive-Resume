@@ -1,0 +1,136 @@
+{
+  "auth": {
+    "forgot-password": {
+      "actions": {
+        "send-email": "Wyślij wiadomość e-mail z resetowaniem hasła"
+      },
+      "body": "Wystarczy wprowadzić adres e-mail powiązany z kontem, które chcesz odzyskać.",
+      "form": {
+        "email": {
+          "label": "Adres e-mail"
+        }
+      },
+      "heading": "Zapomniałeś hasła?",
+      "help-text": "Na twój adres email wysłaliśmy link do zresetowania hasła."
+    },
+    "login": {
+      "actions": {
+        "login": "Login",
+        "google": "Zaloguj się za pomocą Google"
+      },
+      "body": "Podaj nazwę użytkownika i hasło przypisane do Twojego konta, aby zalogować się i uzyskać dostęp do swoich życiorysów, zarządzać nimi i udostępniać je.",
+      "form": {
+        "password": {
+          "label": "Hasło"
+        },
+        "username": {
+          "help-text": "Możesz również wprowadzić swój adres e-mail",
+          "label": "Nazwa użytkownika"
+        }
+      },
+      "heading": "Zaloguj się na swoje konto",
+      "recover-text": "Jeśli zapomniałeś hasła, możesz <1>odzyskać swoje konto</1> tutaj.",
+      "register-text": "Jeśli go nie masz, możesz <1>założyć konto</1> tutaj."
+    },
+    "register": {
+      "actions": {
+        "register": "Zarejestruj się",
+        "google": "Zarejestruj się przez Google"
+      },
+      "body": "Aby utworzyć konto, wprowadź swoje dane osobowe.",
+      "form": {
+        "confirm-password": {
+          "label": "Potwierdź hasło"
+        },
+        "email": {
+          "label": "Adres e-mail"
+        },
+        "name": {
+          "label": "Imię i nazwisko"
+        },
+        "password": {
+          "label": "Hasło"
+        },
+        "username": {
+          "label": "Nazwa użytkownika"
+        }
+      },
+      "heading": "Utwórz konto",
+      "loginText": "Jeśli masz już konto, możesz <1>zalogować się tutaj</1>."
+    },
+    "reset-password": {
+      "actions": {
+        "set-password": "Ustaw nowe hasło"
+      },
+      "body": "Wprowadź nowe hasło dla swojego konta.",
+      "form": {
+        "confirm-password": {
+          "label": "Potwierdź hasło"
+        },
+        "password": {
+          "label": "Hasło"
+        }
+      },
+      "heading": "Resetuj swoje hasło"
+    }
+  },
+  "dashboard": {
+    "create-resume": {
+      "actions": {
+        "create-resume": "Utwórz CV"
+      },
+      "body": "Budowanie swojego CV zacznij od nadania mu nazwy. Może ona nawiązywać do roli, o którą się ubiegasz, lub po prostu do Twojej ulubionej przekąski.",
+      "form": {
+        "name": {
+          "label": "Imię"
+        },
+        "public": {
+          "label": "Czy jest publicznie dostępny?"
+        },
+        "slug": {
+          "label": "Fragment URL"
+        }
+      },
+      "heading": "Utwórz nowe CV"
+    },
+    "import-external": {
+      "heading": "Import z zewnętrznych źródeł",
+      "json-resume": {
+        "actions": {
+          "upload-json": "Prześlij JSON"
+        },
+        "body": "Jeśli masz <1>walidowane CV JSON</1> gotowe do pracy, możesz go użyć, aby przyspieszyć swój rozwój w Reactive Resume. Kliknij poniższy przycisk i prześlij poprawny plik JSON, aby rozpocząć.",
+        "heading": "Importuj z JSON Resume"
+      },
+      "linkedin": {
+        "actions": {
+          "upload-archive": "Prześlij archiwum ZIP"
+        },
+        "body": "Możesz zaoszczędzić czas, eksportując swoje dane z LinkedIn i używając ich do automatycznego wypełniania pól w Reactive Resume. Przejdź do sekcji <1>Prywatność danych</1> na LinkedIn i poproś o archiwum swoich danych. Gdy tylko będzie ono dostępne, prześlij plik ZIP poniżej.",
+        "heading": "Importuj z LinkedIn"
+      },
+      "reactive-resume": {
+        "actions": {
+          "upload-json": "Prześlij JSON",
+          "upload-json-v2": "Prześlij JSON z wersji 2"
+        },
+        "body": "Jeśli masz plik JSON, który został wyeksportowany za pomocą bieżącej wersji Reactive Resume, możesz go zaimportować tutaj, aby ponownie uzyskać edytowalną wersję.",
+        "heading": "Importuj z Reactive Resume"
+      }
+    },
+    "rename-resume": {
+      "actions": {
+        "rename-resume": "Zmień nazwę CV"
+      },
+      "form": {
+        "name": {
+          "label": "Imię"
+        },
+        "slug": {
+          "label": "Fragment URL"
+        }
+      },
+      "heading": "Zmień nazwę swojego CV"
+    }
+  }
+}

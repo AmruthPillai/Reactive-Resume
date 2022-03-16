@@ -1,0 +1,358 @@
+{
+  "common": {
+    "actions": {
+      "add": "Tilføj ny {{token}}",
+      "delete": "Slet {{token}}",
+      "edit": "Rediger {{token}}"
+    },
+    "columns": {
+      "heading": "Kolonner",
+      "tooltip": "Skift antal kolonner"
+    },
+    "form": {
+      "date": {
+        "label": "Dato"
+      },
+      "description": {
+        "label": "Beskriveslse"
+      },
+      "email": {
+        "label": "Email adresse"
+      },
+      "end-date": {
+        "help-text": "Lad dette felt stå tomt, hvis det stadig er til stede",
+        "label": "Slutdato"
+      },
+      "keywords": {
+        "label": "Nøgleord"
+      },
+      "level": {
+        "label": "Niveau"
+      },
+      "levelNum": {
+        "label": "Niveau (antal)"
+      },
+      "name": {
+        "label": "Navn"
+      },
+      "phone": {
+        "label": "Telefonnummer"
+      },
+      "position": {
+        "label": "Stilling"
+      },
+      "start-date": {
+        "label": "Startdato"
+      },
+      "subtitle": {
+        "label": "Undertitel"
+      },
+      "summary": {
+        "label": "Resumé"
+      },
+      "title": {
+        "label": "Titel"
+      },
+      "url": {
+        "label": "Hjemmeside"
+      }
+    },
+    "glossary": {
+      "page": "Side"
+    },
+    "list": {
+      "actions": {
+        "delete": "Slet",
+        "duplicate": "Duplikér",
+        "edit": "Rediger"
+      },
+      "empty-text": "Denne liste er tom."
+    },
+    "tooltip": {
+      "delete-item": "Er du sikker på at du ønsker at slette denne aktivitet? Det kan ikke fortrydes.",
+      "delete-section": "Slet sektion",
+      "rename-section": "Omdøb sektion",
+      "toggle-visibility": "Slå synlighed til/fra"
+    }
+  },
+  "controller": {
+    "tooltip": {
+      "center-artboard": "Centrer tegnebræt",
+      "copy-link": "Kopier link til CV",
+      "export-pdf": "Eksporter PDF",
+      "toggle-orientation": "Skift sideorientering",
+      "toggle-page-break-line": "Skift sideskiftlinje",
+      "toggle-sidebars": "Sidebjælke til/fra",
+      "zoom-in": "Zoom ind",
+      "zoom-out": "Zoom ud"
+    }
+  },
+  "header": {
+    "menu": {
+      "delete": "Slet",
+      "duplicate": "Duplikér",
+      "rename": "Omdøb",
+      "share-link": "Del Link",
+      "tooltips": {
+        "delete": "Er du sikker på at du ønsker at slette dette CV? Det kan ikke fortrydes.",
+        "share-link": "Du skal ændre synligheden af dit CV til offentligheden for at gøre det synligt for andre."
+      }
+    }
+  },
+  "leftSidebar": {
+    "sections": {
+      "awards": {
+        "form": {
+          "awarder": {
+            "label": "Udsteder"
+          }
+        }
+      },
+      "basics": {
+        "actions": {
+          "photo-filters": "Fotofiltre"
+        },
+        "heading": "Grundlæggende",
+        "headline": {
+          "label": "Overskrift"
+        },
+        "name": {
+          "label": "Fulde navn"
+        },
+        "photo-filters": {
+          "effects": {
+            "border": {
+              "label": "Grænse"
+            },
+            "grayscale": {
+              "label": "Gråtoneskala"
+            },
+            "heading": "Effekter"
+          },
+          "shape": {
+            "heading": "Facon"
+          },
+          "size": {
+            "heading": "Størrelse (i px)"
+          }
+        },
+        "photo-upload": {
+          "tooltip": {
+            "remove": "Fjern Billede",
+            "upload": "Upload billede"
+          }
+        }
+      },
+      "certifications": {
+        "form": {
+          "issuer": {
+            "label": "Udsteder"
+          }
+        }
+      },
+      "education": {
+        "form": {
+          "area-study": {
+            "label": "Studieretning"
+          },
+          "courses": {
+            "label": "Kurser"
+          },
+          "degree": {
+            "label": "Grad"
+          },
+          "grade": {
+            "label": "karakter"
+          },
+          "institution": {
+            "label": "Institution"
+          }
+        }
+      },
+      "location": {
+        "address": {
+          "label": "Adresse"
+        },
+        "city": {
+          "label": "By"
+        },
+        "country": {
+          "label": "Land"
+        },
+        "heading": "Lokation",
+        "postal-code": {
+          "label": "Postnummer"
+        },
+        "region": {
+          "label": "Region"
+        }
+      },
+      "profiles": {
+        "form": {
+          "network": {
+            "label": "Netværk"
+          },
+          "username": {
+            "label": "Brugernavn"
+          }
+        },
+        "heading": "Profiler",
+        "heading_one": "Profil"
+      },
+      "publications": {
+        "form": {
+          "publisher": {
+            "label": "Udgiver"
+          }
+        }
+      },
+      "references": {
+        "form": {
+          "relationship": {
+            "label": "Forbindelse"
+          }
+        }
+      },
+      "section": {
+        "heading": "Sektion"
+      },
+      "volunteer": {
+        "form": {
+          "organization": {
+            "label": "Organisation"
+          }
+        }
+      }
+    }
+  },
+  "rightSidebar": {
+    "sections": {
+      "css": {
+        "heading": "Tilpasset CSS"
+      },
+      "export": {
+        "heading": "Eksportér",
+        "json": {
+          "primary": "JSON",
+          "secondary": "Download en JSON-version af dit CV, der kan importeres tilbage til Reactive Resume."
+        },
+        "pdf": {
+          "loading": {
+            "primary": "Generering af PDF",
+            "secondary": "Vent venligst mens din PDF bliver genereret. Dette kan tage op til 15 sekunder."
+          },
+          "normal": {
+            "primary": "PDF",
+            "secondary": "Download en PDF af dit CV, som du kan printe og sende ud til dit drømmejob. Denne fil kan ikke importeres tilbage til yderligere redigering."
+          }
+        }
+      },
+      "layout": {
+        "heading": "Layout",
+        "tooltip": {
+          "reset-layout": "Nulstil layout"
+        }
+      },
+      "links": {
+        "bugs-features": {
+          "body": "Er der noget, der forhindrer dig i at lave et CV? Eller har du en fantastisk idé at tilføje? Rejs et problem på GitHub for at komme i gang.",
+          "button": "GitHub-problemer",
+          "heading": "Fejl? Ønsker til en ny funktion?"
+        },
+        "donate": {
+          "body": "Hvis du kunne lide at bruge Reactive Resume, bedes du overveje at donere så meget som muligt til formålet med at holde appen oppe og køre, uden annoncer og gratis for evigt.",
+          "button": "Købe mig en kop kaffe",
+          "heading": "Donér til Reactive Resume"
+        },
+        "github": "Kildekode",
+        "heading": "Links"
+      },
+      "settings": {
+        "global": {
+          "date": {
+            "primary": "Dato",
+            "secondary": "Datoformat til brug på tværs af appen"
+          },
+          "heading": "Global",
+          "language": {
+            "primary": "Sprog",
+            "secondary": "Vis sprog til brug på tværs af appen"
+          },
+          "theme": {
+            "primary": "Tema"
+          }
+        },
+        "heading": "Indstillinger",
+        "page": {
+          "break-line": {
+            "primary": "Brudlinje",
+            "secondary": "Vis en streg på alle sider for at markere højden på en A4-side"
+          },
+          "heading": "Side",
+          "orientation": {
+            "disabled": "Har ingen effekt, når der kun er én side",
+            "primary": "Orientering",
+            "secondary": "Om sider skal vises vandret eller lodret"
+          }
+        },
+        "resume": {
+          "heading": "Genoptag",
+          "reset": {
+            "primary": "Nulstil alt",
+            "secondary": "lavet for mange fejl? Klik her for at nulstille alle ændringer og starte fra bunden. Vær forsigtig, denne handling kan ikke gøres om."
+          },
+          "sample": {
+            "primary": "Indlæs prøvedata",
+            "secondary": "Ikke sikker på, hvor du skal begynde? Klik her for at indlæse nogle eksempeldata for at se, hvordan et komplet CV ser ud."
+          }
+        }
+      },
+      "sharing": {
+        "heading": "Deling",
+        "short-url": {
+          "label": "Foretræk Kort URL"
+        },
+        "visibility": {
+          "subtitle": "Tillad alle med et link at se dit CV",
+          "title": "Offentlig"
+        }
+      },
+      "templates": {
+        "heading": "Skabeloner"
+      },
+      "theme": {
+        "form": {
+          "background": {
+            "label": "Baggrund"
+          },
+          "primary": {
+            "label": "Primær"
+          },
+          "text": {
+            "label": "Tekst"
+          }
+        },
+        "heading": "Tema"
+      },
+      "typography": {
+        "form": {
+          "font-family": {
+            "label": "Skrifttype"
+          },
+          "font-size": {
+            "label": "Skriftstørrelse"
+          }
+        },
+        "heading": "Typografi",
+        "widgets": {
+          "body": {
+            "label": "Krop"
+          },
+          "headings": {
+            "label": "Overskrifter"
+          }
+        }
+      }
+    }
+  }
+}
