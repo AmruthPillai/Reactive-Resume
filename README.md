@@ -96,6 +96,14 @@ Reactive Resume would be nothing without the folks who supported me and kept the
   <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/PoweredByDO/DO_Powered_by_Badge_blue.svg" width="200px" />
 </a>
 
+## Contributors Wall:
+<a href="https://github.com/AmruthPillai/Reactive-Resume/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=AmruthPillai/Reactive-Resume" />
+</a>
+
+
+_Note: It may take up to 24h for the [contrib.rocks](https://contrib.rocks/image?repo=AmruthPillai/Reactive-Resume) plugin to update because it's refreshed once a day._
+
 ## License
 
 Reactive Resume is packaged and distributed using the [MIT License](https://choosealicense.com/licenses/mit/) which allows for commercial use, distribution, modification and private use provided that all copies of the software contain the same license and copyright.
