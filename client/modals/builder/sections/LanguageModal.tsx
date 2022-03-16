@@ -122,7 +122,7 @@ const LanguageModal: React.FC = () => {
             <div className="col-span-2">
               <h4 className="mb-3 font-semibold">{t('builder.common.form.levelNum.label')}</h4>
 
-              <div className="px-3">
+              <div className="px-10">
                 <Slider
                   {...field}
                   marks={[
