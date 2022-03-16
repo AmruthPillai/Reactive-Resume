@@ -115,7 +115,7 @@ const PublicationModal: React.FC = () => {
           render={({ field, fieldState }) => (
             <TextField
               required
-              label="{t('builder.leftSidebar.sections.publications.form.publisher.label')}"
+              label={t('builder.leftSidebar.sections.publications.form.publisher.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
