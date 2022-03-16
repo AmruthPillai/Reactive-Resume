@@ -105,8 +105,8 @@ export class IntegrationsService {
                     institution: get(school, 'School Name'),
                     degree: get(school, 'Degree Name'),
                     date: {
-                      start: dayjs(get(school, 'Start Date')).toISOString(),
-                      end: dayjs(get(school, 'End Date')).toISOString(),
+                      start: this.parseDate(get(school, 'Start Date')),
+                      end: this.parseDate(get(school, 'End Date')),
                     },
                   } as Education,
                 ],
@@ -134,8 +134,8 @@ export class IntegrationsService {
                     position: get(position, 'Title'),
                     summary: get(position, 'Description'),
                     date: {
-                      start: dayjs(get(position, 'Started On')).toISOString(),
-                      end: dayjs(get(position, 'Finished On')).toISOString(),
+                      start: this.parseDate(get(position, 'Started On')),
+                      end: this.parseDate(get(position, 'Finished On')),
                     },
                   } as WorkExperience,
                 ],
@@ -162,7 +162,7 @@ export class IntegrationsService {
                     name: get(certification, 'Name'),
                     issuer: get(certification, 'Authority'),
                     url: get(certification, 'Url'),
-                    date: dayjs(get(certification, 'Started On')).toISOString(),
+                    date: this.parseDate(get(certification, 'Started On')),
                   } as Certificate,
                 ],
               },
@@ -214,8 +214,8 @@ export class IntegrationsService {
                     description: get(project, 'Description'),
                     url: get(project, 'Url'),
                     date: {
-                      start: dayjs(get(project, 'Started On')).toISOString(),
-                      end: dayjs(get(project, 'Finished On')).toISOString(),
+                      start: this.parseDate(get(project, 'Started On')),
+                      end: this.parseDate(get(project, 'Finished On')),
                     },
                   } as Project,
                 ],
@@ -338,8 +338,8 @@ export class IntegrationsService {
                     summary: get(item, 'summary'),
                     url: get(item, 'url'),
                     date: {
-                      start: dayjs(get(item, 'startDate')).toISOString(),
-                      end: dayjs(get(item, 'endDate')).toISOString(),
+                      start: this.parseDate(get(item, 'startDate')),
+                      end: this.parseDate(get(item, 'endDate')),
                     },
                   } as WorkExperience,
                 ],
@@ -367,8 +367,8 @@ export class IntegrationsService {
                     summary: get(item, 'summary'),
                     url: get(item, 'url'),
                     date: {
-                      start: dayjs(get(item, 'startDate')).toISOString(),
-                      end: dayjs(get(item, 'endDate')).toISOString(),
+                      start: this.parseDate(get(item, 'startDate')),
+                      end: this.parseDate(get(item, 'endDate')),
                     },
                   } as Volunteer,
                 ],
@@ -398,8 +398,8 @@ export class IntegrationsService {
                     url: get(item, 'url'),
                     courses: get(item, 'courses', []),
                     date: {
-                      start: dayjs(get(item, 'startDate')).toISOString(),
-                      end: dayjs(get(item, 'endDate')).toISOString(),
+                      start: this.parseDate(get(item, 'startDate')),
+                      end: this.parseDate(get(item, 'endDate')),
                     },
                   } as Education,
                 ],
@@ -426,7 +426,7 @@ export class IntegrationsService {
                     awarder: get(award, 'awarder'),
                     summary: get(award, 'summary'),
                     url: get(award, 'url'),
-                    date: dayjs(get(award, 'date')).toISOString(),
+                    date: this.parseDate(get(award, 'date')),
                   } as Award,
                 ],
               },
@@ -452,7 +452,7 @@ export class IntegrationsService {
                     publisher: get(publication, 'publisher'),
                     summary: get(publication, 'summary'),
                     url: get(publication, 'url'),
-                    date: dayjs(get(publication, 'releaseDate')).toISOString(),
+                    date: this.parseDate(get(publication, 'releaseDate')),
                   } as Publication,
                 ],
               },
@@ -575,8 +575,8 @@ export class IntegrationsService {
                     keywords: get(project, 'keywords'),
                     url: get(project, 'url'),
                     date: {
-                      start: dayjs(get(project, 'startDate')).toISOString(),
-                      end: dayjs(get(project, 'endDate')).toISOString(),
+                      start: this.parseDate(get(project, 'startDate')),
+                      end: this.parseDate(get(project, 'endDate')),
                     },
                   } as Project,
                 ],
@@ -692,8 +692,8 @@ export class IntegrationsService {
                     summary: get(item, 'summary'),
                     url: get(item, 'website'),
                     date: {
-                      start: dayjs(get(item, 'startDate')).toISOString(),
-                      end: dayjs(get(item, 'endDate')).toISOString(),
+                      start: this.parseDate(get(item, 'startDate')),
+                      end: this.parseDate(get(item, 'endDate')),
                     },
                   } as WorkExperience,
                 ],
@@ -724,8 +724,8 @@ export class IntegrationsService {
                     summary: get(item, 'summary'),
                     courses: get(item, 'courses', []),
                     date: {
-                      start: dayjs(get(item, 'startDate')).toISOString(),
-                      end: dayjs(get(item, 'endDate')).toISOString(),
+                      start: this.parseDate(get(item, 'startDate')),
+                      end: this.parseDate(get(item, 'endDate')),
                     },
                   } as Education,
                 ],
@@ -751,7 +751,7 @@ export class IntegrationsService {
                     title: get(award, 'title'),
                     awarder: get(award, 'awarder'),
                     summary: get(award, 'summary'),
-                    date: dayjs(get(award, 'date')).toISOString(),
+                    date: this.parseDate(get(award, 'date')),
                   } as Award,
                 ],
               },
@@ -776,7 +776,7 @@ export class IntegrationsService {
                     name: get(certificate, 'title'),
                     issuer: get(certificate, 'issuer'),
                     summary: get(certificate, 'summary'),
-                    date: dayjs(get(certificate, 'date')).toISOString(),
+                    date: this.parseDate(get(certificate, 'date')),
                   } as Certificate,
                 ],
               },
@@ -900,7 +900,7 @@ export class IntegrationsService {
                     keywords: get(project, 'keywords'),
                     url: get(project, 'link'),
                     date: {
-                      start: dayjs(get(project, 'date')).toISOString(),
+                      start: this.parseDate(get(project, 'startDate')),
                     },
                   } as Project,
                 ],
@@ -945,4 +945,8 @@ export class IntegrationsService {
       await unlink(path);
     }
   }
+
+  private parseDate = (date: string): string => {
+    return isEmpty(date) ? '' : dayjs(date).toISOString();
+  };
 }
