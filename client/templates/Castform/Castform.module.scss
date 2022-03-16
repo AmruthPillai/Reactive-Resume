@@ -7,6 +7,8 @@
 }
 
 .container {
+  word-break: break-word;
+
   @apply grid h-full grid-cols-6;
 
   .main {
