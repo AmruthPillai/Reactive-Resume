@@ -19,6 +19,9 @@ const Theme = () => {
   const { background, text, primary } = useAppSelector<ThemeType>((state) => get(state.resume, 'metadata.theme'));
 
   const handleChange = (property: string, color: string) => {
+    if (color[0] !== '#') {
+      color = `#${color}`;
+    }
     dispatch(setResumeState({ path: `metadata.theme.${property}`, value: color }));
   };
 
