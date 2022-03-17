@@ -242,6 +242,7 @@ export class IntegrationsService {
                     name: get(skill, 'Name'),
                     level: 'Beginner',
                     levelNum: 5,
+                    keywords: [],
                   } as Skill,
                 ],
               },
