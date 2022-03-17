@@ -5,6 +5,7 @@ export type Language = {
 };
 
 export const languages: Language[] = [
+  { code: 'ar', name: 'Arabic', localName: 'اَلْعَرَبِيَّةُ' },
   { code: 'bn', name: 'Bengali', localName: 'বাংলা' },
   { code: 'da', name: 'Danish', localName: 'Dansk' },
   { code: 'de', name: 'German', localName: 'Deutsch' },

@@ -36,6 +36,7 @@ You have complete control over what goes into your resume, how it looks, what co
 
 ## Languages
 
+- Arabic (اَلْعَرَبِيَّةُ)
 - Bengali (বাংলা)
 - Chinese (中文)
 - Danish (Dansk)
