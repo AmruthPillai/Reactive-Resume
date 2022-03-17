@@ -3,6 +3,7 @@ import { joiResolver } from '@hookform/resolvers/joi';
 import { Google, Login, Visibility, VisibilityOff } from '@mui/icons-material';
 import { Button, IconButton, InputAdornment, TextField } from '@mui/material';
 import Joi from 'joi';
+import { isEmpty } from 'lodash';
 import { Trans, useTranslation } from 'next-i18next';
 import { useMemo, useState } from 'react';
 import { GoogleLoginResponse, GoogleLoginResponseOffline, useGoogleLogin } from 'react-google-login';
@@ -115,15 +116,17 @@ const LoginModal: React.FC = () => {
       handleClose={handleClose}
       footerChildren={
         <div className="flex gap-4">
-          <Button
-            type="submit"
-            variant="outlined"
-            disabled={isLoading}
-            startIcon={<Google />}
-            onClick={handleLoginWithGoogle}
-          >
-            {t('modals.auth.login.actions.google')}
-          </Button>
+          {!isEmpty(env('GOOGLE_CLIENT_ID')) && (
+            <Button
+              type="submit"
+              variant="outlined"
+              disabled={isLoading}
+              startIcon={<Google />}
+              onClick={handleLoginWithGoogle}
+            >
+              {t('modals.auth.login.actions.google')}
+            </Button>
+          )}
 
           <Button type="submit" onClick={handleSubmit(onSubmit)} disabled={isLoading}>
             {t('modals.auth.login.actions.login')}

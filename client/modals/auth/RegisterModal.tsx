@@ -3,6 +3,7 @@ import { joiResolver } from '@hookform/resolvers/joi';
 import { Google, HowToReg } from '@mui/icons-material';
 import { Button, TextField } from '@mui/material';
 import Joi from 'joi';
+import { isEmpty } from 'lodash';
 import { Trans, useTranslation } from 'next-i18next';
 import { GoogleLoginResponse, GoogleLoginResponseOffline, useGoogleLogin } from 'react-google-login';
 import { Controller, useForm } from 'react-hook-form';
@@ -97,21 +98,23 @@ const RegisterModal: React.FC = () => {
       heading={t('modals.auth.register.heading')}
       handleClose={handleClose}
       footerChildren={
-        <>
-          <Button
-            type="submit"
-            variant="outlined"
-            disabled={isLoading}
-            startIcon={<Google />}
-            onClick={handleLoginWithGoogle}
-          >
-            {t('modals.auth.register.actions.google')}
-          </Button>
+        <div className="flex gap-4">
+          {!isEmpty(env('GOOGLE_CLIENT_ID')) && (
+            <Button
+              type="submit"
+              variant="outlined"
+              disabled={isLoading}
+              startIcon={<Google />}
+              onClick={handleLoginWithGoogle}
+            >
+              {t('modals.auth.register.actions.google')}
+            </Button>
+          )}
 
           <Button type="submit" onClick={handleSubmit(onSubmit)} disabled={isLoading}>
             {t('modals.auth.register.actions.register')}
           </Button>
-        </>
+        </div>
       }
     >
       <p>{t('modals.auth.register.body')}</p>
