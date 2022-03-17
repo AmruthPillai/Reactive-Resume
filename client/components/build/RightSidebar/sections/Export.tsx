@@ -34,9 +34,10 @@ const Export = () => {
 
     const redactedResume = pick(resume, ['basics', 'sections', 'metadata', 'public']);
     const jsonString = JSON.stringify(redactedResume, null, 4);
+    const jsonBlob = new Blob([jsonString], { type: 'application/json;charset=utf-8' });
     const filename = `RxResume_JSONExport_${nanoid()}.json`;
 
-    download(jsonString, filename, 'application/json');
+    download(jsonBlob, filename);
   };
 
   const handleExportPDF = async () => {
