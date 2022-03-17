@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.6](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.5...v3.2.6) (2022-03-17)
+
+
+### Features
+
+* **client/auth/google:** disable google login/registration if GOOGLE_CLIENT_ID is not in ENV ([7f0ee40](https://github.com/AmruthPillai/Reactive-Resume/commit/7f0ee40af4acc7eb41514406ecee3218ace9e891)), closes [#724](https://github.com/AmruthPillai/Reactive-Resume/issues/724)
+* **i18n:** add arabic language to i18n locale ([39fa6da](https://github.com/AmruthPillai/Reactive-Resume/commit/39fa6da5dd77ce2e12e81530fa18c2eac722c1f2))
+
+
+### Bug Fixes
+
+* **i18n:** add missing languages to dayjs date wrapper locales ([9e6dafc](https://github.com/AmruthPillai/Reactive-Resume/commit/9e6dafc8cada5c01559894905996b81004bedaec)), closes [#719](https://github.com/AmruthPillai/Reactive-Resume/issues/719)
+* **json-export:** add mimeType and charset to JSON export ([b3ff780](https://github.com/AmruthPillai/Reactive-Resume/commit/b3ff7805cd856a52900d9acef0554867d8ce0b01)), closes [#726](https://github.com/AmruthPillai/Reactive-Resume/issues/726)
+* **linkedin:** fix skill modal crashing when importing from linkedin ([a02b85b](https://github.com/AmruthPillai/Reactive-Resume/commit/a02b85b4bb1c4a1499aacddeac7bc59bcb1f7adb)), closes [#718](https://github.com/AmruthPillai/Reactive-Resume/issues/718)
+
 ### [3.2.5](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.4...v3.2.5) (2022-03-16)
 
 
