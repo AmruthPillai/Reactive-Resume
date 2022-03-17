@@ -1,9 +1,9 @@
 .container {
-  @apply my-8 flex flex-col items-center;
+  @apply m-8 flex flex-col items-start lg:items-center;
 }
 
 .download {
-  @apply fixed bottom-6 right-6;
+  @apply fixed bottom-6 right-6 z-50;
 
   button {
     @apply flex gap-2 px-4 py-3 shadow dark:bg-neutral-600/25;

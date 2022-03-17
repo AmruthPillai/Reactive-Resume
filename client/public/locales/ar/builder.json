@@ -1,0 +1,358 @@
+{
+  "common": {
+    "actions": {
+      "add": "إضافة {{فقرة}} جديدة",
+      "delete": "حذة {{الفقرة}}",
+      "edit": "تحرير {{الفقرة}}"
+    },
+    "columns": {
+      "heading": "الأعمدة",
+      "tooltip": "تغيير عدد الأعمدة"
+    },
+    "form": {
+      "date": {
+        "label": "التاريخ"
+      },
+      "description": {
+        "label": "التفاصيل"
+      },
+      "email": {
+        "label": "البريد الإلكتروني"
+      },
+      "end-date": {
+        "help-text": "اترك هذا الحقل فارغًا ، إذا كان لا يزال موجودًا",
+        "label": "تاريخ الانتهاء"
+      },
+      "keywords": {
+        "label": "الكلمات الرئيسية"
+      },
+      "level": {
+        "label": "مستوى"
+      },
+      "levelNum": {
+        "label": "المستوى (Number)"
+      },
+      "name": {
+        "label": "الاسم"
+      },
+      "phone": {
+        "label": "رقم الهاتف"
+      },
+      "position": {
+        "label": "المنصب"
+      },
+      "start-date": {
+        "label": "تاريخ البداية"
+      },
+      "subtitle": {
+        "label": "العنوان الفرعي"
+      },
+      "summary": {
+        "label": "الملخص"
+      },
+      "title": {
+        "label": "العنوان"
+      },
+      "url": {
+        "label": "موقع الويب"
+      }
+    },
+    "glossary": {
+      "page": "الصفحة"
+    },
+    "list": {
+      "actions": {
+        "delete": "حذف",
+        "duplicate": "نسخه مطابقه",
+        "edit": "تعديل"
+      },
+      "empty-text": "هذه القائمة فارغة."
+    },
+    "tooltip": {
+      "delete-item": "هل أنت متأكد أنك تريد حذف هذا العنصر؟ لا يمكن التراجع عن هذا الإجراء.",
+      "delete-section": "حذف القسم",
+      "rename-section": "إعادة تسمية القسم",
+      "toggle-visibility": "تبديل الرؤية"
+    }
+  },
+  "controller": {
+    "tooltip": {
+      "center-artboard": "لوحة الوسط",
+      "copy-link": "انسخ الرابط للسيرة الذاتية",
+      "export-pdf": "تصدير PDF",
+      "toggle-orientation": "تبديل اتجاه الصفحة",
+      "toggle-page-break-line": "تبديل سطر الصفحة",
+      "toggle-sidebars": "تبديل الشريط الجانبي",
+      "zoom-in": "تكبير",
+      "zoom-out": "تصغير"
+    }
+  },
+  "header": {
+    "menu": {
+      "delete": "حذف",
+      "duplicate": "تكرار",
+      "rename": "إعادة تسمية",
+      "share-link": "مشاركة الرّابط",
+      "tooltips": {
+        "delete": "هل أنت متأكد أنك تريد حذف هذا العنصر؟ لا يمكن التراجع عن هذا الإجراء.",
+        "share-link": "أنت بحاجة إلى تغيير رؤية سيرتك الذاتية للعامة لجعلها مرئية للآخرين."
+      }
+    }
+  },
+  "leftSidebar": {
+    "sections": {
+      "awards": {
+        "form": {
+          "awarder": {
+            "label": "جائزة"
+          }
+        }
+      },
+      "basics": {
+        "actions": {
+          "photo-filters": "فلاتر الصور"
+        },
+        "heading": "الأساسيات",
+        "headline": {
+          "label": "العنوان الرئيسي"
+        },
+        "name": {
+          "label": "الاسم الكامل"
+        },
+        "photo-filters": {
+          "effects": {
+            "border": {
+              "label": "الحدود"
+            },
+            "grayscale": {
+              "label": "رمادي"
+            },
+            "heading": "مؤثرات"
+          },
+          "shape": {
+            "heading": "الشكل"
+          },
+          "size": {
+            "heading": "الحجم (بالبكسل)"
+          }
+        },
+        "photo-upload": {
+          "tooltip": {
+            "remove": "إزالة صورة",
+            "upload": "رفع صورة"
+          }
+        }
+      },
+      "certifications": {
+        "form": {
+          "issuer": {
+            "label": "جهة الإصدار"
+          }
+        }
+      },
+      "education": {
+        "form": {
+          "area-study": {
+            "label": "مجال الدراسة"
+          },
+          "courses": {
+            "label": "دورات"
+          },
+          "degree": {
+            "label": "الدرجة العلمية"
+          },
+          "grade": {
+            "label": "الدرجة / التقييم"
+          },
+          "institution": {
+            "label": "المؤسسة/الجامعة/المعهد"
+          }
+        }
+      },
+      "location": {
+        "address": {
+          "label": "العنوان"
+        },
+        "city": {
+          "label": "المدينة"
+        },
+        "country": {
+          "label": "البلد/الدولة"
+        },
+        "heading": "المكان",
+        "postal-code": {
+          "label": "الرمز البريدي"
+        },
+        "region": {
+          "label": "المنطقة"
+        }
+      },
+      "profiles": {
+        "form": {
+          "network": {
+            "label": "الشبكة"
+          },
+          "username": {
+            "label": "اسم المستخدم"
+          }
+        },
+        "heading": "الملفات الشخصية",
+        "heading_one": "الملف الشخصي"
+      },
+      "publications": {
+        "form": {
+          "publisher": {
+            "label": "الناشر"
+          }
+        }
+      },
+      "references": {
+        "form": {
+          "relationship": {
+            "label": "العلاقة"
+          }
+        }
+      },
+      "section": {
+        "heading": "القسم"
+      },
+      "volunteer": {
+        "form": {
+          "organization": {
+            "label": "المنظمة/المؤسسة"
+          }
+        }
+      }
+    }
+  },
+  "rightSidebar": {
+    "sections": {
+      "css": {
+        "heading": "تنسيقات CSS مخصصة"
+      },
+      "export": {
+        "heading": "تصدير",
+        "json": {
+          "primary": "JSON",
+          "secondary": "قم بتنزيل نسخة بصيغة JSON من سيرتك الذاتية والتي يمكن استيرادها مرة أخرى إلى Reactive Resume."
+        },
+        "pdf": {
+          "loading": {
+            "primary": "توليد ملف PDF",
+            "secondary": "يرجى الانتظار حتى يتم إنشاء ملف PDF الخاص بك ، فقد يستغرق هذا ما يصل إلى 15 ثانية."
+          },
+          "normal": {
+            "primary": "ملف - PDF",
+            "secondary": "قم بتنزيل ملف PDF لسيرتك الذاتية بحيث يمكنك طباعته وإرساله إلى وظيفة أحلامك. لا يمكن استيراد هذا الملف مرة أخرى لمزيد من التحرير."
+          }
+        }
+      },
+      "layout": {
+        "heading": "تخطيط",
+        "tooltip": {
+          "reset-layout": "إعادة تعيين التخطيط"
+        }
+      },
+      "links": {
+        "bugs-features": {
+          "body": "شيء يمنعك من عمل سيرة ذاتية؟ أو هل لديك فكرة رائعة لتضيفها؟ إطرح المشكلة على GitHub للبدء.",
+          "button": "صفحة المشاكل على \"GitHub\"",
+          "heading": "خلل برمجي؟ طلب وظائف ومميزات مخصصة؟"
+        },
+        "donate": {
+          "body": "إذا أعجبك استخدام Resctive Resume ، فالرجاء التفكير في التبرع بأكبر قدر ممكن من أجل الحفاظ على استمرار التطبيق وتشغيله ، بدون إعلانات وبشكل مجاني إلى الأبد.",
+          "button": "إشتر لي قهوة",
+          "heading": "تبرع الى Reactive Resume"
+        },
+        "github": "الشفرة المصدرية",
+        "heading": "الروابط"
+      },
+      "settings": {
+        "global": {
+          "date": {
+            "primary": "التاريخ",
+            "secondary": "صيغة التاريخ لاستخدامه عبر التطبيق"
+          },
+          "heading": "عام",
+          "language": {
+            "primary": "اللغة",
+            "secondary": "اعرض اللغة لاستخدامها عبر التطبيق"
+          },
+          "theme": {
+            "primary": "التصميم"
+          }
+        },
+        "heading": "الإعدادات",
+        "page": {
+          "break-line": {
+            "primary": "خط فاصل",
+            "secondary": "اعرض خط في كل الصفحات لتحديد ارتفاع صفحة A4"
+          },
+          "heading": "صفحة",
+          "orientation": {
+            "disabled": "ليس له تأثير عندما تكون هناك صفحة واحدة فقط",
+            "primary": "الإتجاة",
+            "secondary": "ما إذا كان سيتم عرض الصفحات أفقيًا أو رأسيًا"
+          }
+        },
+        "resume": {
+          "heading": "سيرة ذاتية",
+          "reset": {
+            "primary": "إعادة تعيين كل شيء",
+            "secondary": "أرتكبت الكثير من الأخطاء؟ انقر هنا لإعادة تعيين جميع التغييرات والبدء من نقطة الصفر. كن حذرا ، هذا الإجراء لا يمكن عكسه."
+          },
+          "sample": {
+            "primary": "تحميل نموذج البيانات",
+            "secondary": "لست متأكدا من أين تبدأ؟ انقر هنا لتحميل بعض عينات البيانات لترى كيف تبدو سيرة ذاتية كاملة."
+          }
+        }
+      },
+      "sharing": {
+        "heading": "جاري المشاركة",
+        "short-url": {
+          "label": "تفضل عنوان URL قصير"
+        },
+        "visibility": {
+          "subtitle": "اسمح لأي شخص لديه الرابط لعرض سيرتك الذاتية",
+          "title": "عام"
+        }
+      },
+      "templates": {
+        "heading": "قوالب"
+      },
+      "theme": {
+        "form": {
+          "background": {
+            "label": "الخلفية"
+          },
+          "primary": {
+            "label": "اساسي"
+          },
+          "text": {
+            "label": "نص"
+          }
+        },
+        "heading": "السمة"
+      },
+      "typography": {
+        "form": {
+          "font-family": {
+            "label": "اسم الخط"
+          },
+          "font-size": {
+            "label": "حجم الخط"
+          }
+        },
+        "heading": "الطباعة والخطوط",
+        "widgets": {
+          "body": {
+            "label": "المتن"
+          },
+          "headings": {
+            "label": "العناوين"
+          }
+        }
+      }
+    }
+  }
+}
