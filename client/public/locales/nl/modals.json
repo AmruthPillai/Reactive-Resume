@@ -1,0 +1,136 @@
+{
+  "auth": {
+    "forgot-password": {
+      "actions": {
+        "send-email": "Stuur Herstel Wachtwoord E-mail"
+      },
+      "body": "Voer gewoon het e-mailadres in dat is gekoppeld aan het account dat je wilt herstellen.",
+      "form": {
+        "email": {
+          "label": "E-mailadres"
+        }
+      },
+      "heading": "Wachtwoord vergeten?",
+      "help-text": "Als er een account is gekoppeld aan %1, ontvang je een e-mail met een link om jouw wachtwoord opnieuw in te stellen."
+    },
+    "login": {
+      "actions": {
+        "login": "Inloggen",
+        "google": "Inloggen met Google"
+      },
+      "body": "Voer jouw gebruikersnaam en wachtwoord in die bij jouw account horen om in te loggen en jouw cv's te openen, beheren en delen.",
+      "form": {
+        "password": {
+          "label": "Wachtwoord"
+        },
+        "username": {
+          "help-text": "Je kunt ook jouw e-mailadres invoeren",
+          "label": "Gebruikersnaam"
+        }
+      },
+      "heading": "Log in op jouw account",
+      "recover-text": "Als je jouw wachtwoord bent vergeten, kun je <1>hier jouw account</1> herstellen.",
+      "register-text": "Als je er geen hebt, kun je hier <1>een account maken</1>."
+    },
+    "register": {
+      "actions": {
+        "register": "Registreren",
+        "google": "Registreren met Google"
+      },
+      "body": "Vul jouw persoonlijke gegevens in om een account aan te maken.",
+      "form": {
+        "confirm-password": {
+          "label": "Bevestig wachtwoord"
+        },
+        "email": {
+          "label": "E-mailadres"
+        },
+        "name": {
+          "label": "Voor- en achternaam"
+        },
+        "password": {
+          "label": "Wachtwoord"
+        },
+        "username": {
+          "label": "Gebruikersnaam"
+        }
+      },
+      "heading": "Account aanmaken",
+      "loginText": "Als je al een account hebt, kun je <1>hier inloggen</1> ."
+    },
+    "reset-password": {
+      "actions": {
+        "set-password": "Nieuw wachtwoord instellen"
+      },
+      "body": "Voer een nieuw wachtwoord in voor jouw account.",
+      "form": {
+        "confirm-password": {
+          "label": "Wachtwoord Bevestigen"
+        },
+        "password": {
+          "label": "Wachtwoord"
+        }
+      },
+      "heading": "Je wachtwoord opnieuw instellen"
+    }
+  },
+  "dashboard": {
+    "create-resume": {
+      "actions": {
+        "create-resume": "CV Aanmaken"
+      },
+      "body": "Begin met het maken van je cv door het een naam te geven. Het kan betrekking hebben op de functie waarop je solliciteert, of gewoon jouw favoriete snack.",
+      "form": {
+        "name": {
+          "label": "Naam"
+        },
+        "public": {
+          "label": "Openbaar Toegankelijk"
+        },
+        "slug": {
+          "label": "Slug"
+        }
+      },
+      "heading": "Nieuw CV maken"
+    },
+    "import-external": {
+      "heading": "Importeren uit Externe Bronnen",
+      "json-resume": {
+        "actions": {
+          "upload-json": "JSON Uploaden"
+        },
+        "body": "Als je een <1>gevalideerde JSON CV</1> klaar hebt, kun je die gebruiken om versneld je nieuwe cv te bouwen. Klik op de onderstaande knop en upload een geldig JSON-bestand om te beginnen.",
+        "heading": "Importeren uit JSON CV"
+      },
+      "linkedin": {
+        "actions": {
+          "upload-archive": "ZIP-archief Uploaden"
+        },
+        "body": "Je kunt tijd besparen door jouw gegevens uit LinkedIn te exporteren en deze te gebruiken om velden hier automatisch in te vullen. Ga naar de <1>Gegevensprivacy</1> sectie op LinkedIn en vraag een archief van jouw gegevens aan. Zodra het beschikbaar is, upload je het ZIP-bestand hieronder.",
+        "heading": "Importeren Vanuit LinkedIn"
+      },
+      "reactive-resume": {
+        "actions": {
+          "upload-json": "JSON Uploaden",
+          "upload-json-v2": "JSON uploaden van v2"
+        },
+        "body": "Als je een JSON hebt die is geëxporteerd met de huidige versie van deze CV maker, kun je die hier terug importeren om weer een bewerkbare versie te krijgen.",
+        "heading": "Importeren van Bestaand CV"
+      }
+    },
+    "rename-resume": {
+      "actions": {
+        "rename-resume": "CV Hernoemen"
+      },
+      "form": {
+        "name": {
+          "label": "Naam"
+        },
+        "slug": {
+          "label": "Slug"
+        }
+      },
+      "heading": "Hernoem je cv"
+    }
+  }
+}
