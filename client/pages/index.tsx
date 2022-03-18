@@ -1,6 +1,6 @@
-import { Link as LinkIcon } from '@mui/icons-material';
+import { DarkMode, LightMode, Link as LinkIcon } from '@mui/icons-material';
 import { Masonry } from '@mui/lab';
-import { Button } from '@mui/material';
+import { Button, IconButton } from '@mui/material';
 import type { GetStaticProps, NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -15,11 +15,12 @@ import NoSSR from '@/components/shared/NoSSR';
 import { screenshots } from '@/config/screenshots';
 import testimonials from '@/data/testimonials';
 import { logout } from '@/store/auth/authSlice';
+import { setTheme } from '@/store/build/buildSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
 import styles from '@/styles/pages/Home.module.scss';
 
-import { DONATION_URL, GITHUB_URL } from '../constants';
+import { DIGITALOCEAN_URL, DONATION_URL, GITHUB_URL } from '../constants';
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => {
   return {
@@ -34,11 +35,14 @@ const Home: NextPage = () => {
 
   const dispatch = useAppDispatch();
 
+  const theme = useAppSelector((state) => state.build.theme);
   const isLoggedIn = useAppSelector((state) => state.auth.isLoggedIn);
 
   const handleLogin = () => dispatch(setModalState({ modal: 'auth.login', state: { open: true } }));
 
   const handleRegister = () => dispatch(setModalState({ modal: 'auth.register', state: { open: true } }));
+
+  const handleToggle = () => dispatch(setTheme({ theme: theme === 'light' ? 'dark' : 'light' }));
 
   const handleLogout = () => dispatch(logout());
 
@@ -175,7 +179,7 @@ const Home: NextPage = () => {
       </section>
 
       <section className={styles.section}>
-        <a href="https://pillai.xyz/digitalocean" target="_blank" rel="noreferrer">
+        <a href={DIGITALOCEAN_URL} target="_blank" rel="noreferrer">
           <Image src="/images/sponsors/digitalocean.svg" alt="Powered By DigitalOcean" width={200} height={40} />
         </a>
       </section>
@@ -187,7 +191,11 @@ const Home: NextPage = () => {
           <div>v{process.env.appVersion}</div>
         </div>
 
-        <LanguageSwitcher />
+        <div className={styles.actions}>
+          <IconButton onClick={handleToggle}>{theme === 'dark' ? <DarkMode /> : <LightMode />}</IconButton>
+
+          <LanguageSwitcher />
+        </div>
       </footer>
     </main>
   );

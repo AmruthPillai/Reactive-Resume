@@ -1,21 +1,13 @@
 import { Language } from '@mui/icons-material';
-import { IconButton, Popover } from '@mui/material';
+import { IconButton, Menu, MenuItem } from '@mui/material';
 import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
 import { MouseEvent, useState } from 'react';
 
 import { languages } from '@/config/languages';
-import { useAppDispatch } from '@/store/hooks';
-import { setResumeState } from '@/store/resume/resumeSlice';
-
-import styles from './LanguageSwitcher.module.scss';
+import { TRANSLATE_URL } from '@/constants/index';
 
 const LanguageSwitcher = () => {
   const router = useRouter();
-
-  const { t } = useTranslation();
-
-  const dispatch = useAppDispatch();
 
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
@@ -23,14 +15,17 @@ const LanguageSwitcher = () => {
 
   const handleClose = () => setAnchorEl(null);
 
-  const handleChangeLanguage = (locale: string) => {
+  const handleChange = (locale: string) => {
     const { pathname, asPath, query } = router;
 
+    handleClose();
+
     document.cookie = `NEXT_LOCALE=${locale}; path=/; expires=2147483647`;
-    dispatch(setResumeState({ path: 'metadata.locale', value: locale }));
 
     router.push({ pathname, query }, asPath, { locale });
   };
+
+  const handleAddLanguage = () => window.open(TRANSLATE_URL, '_blank');
 
   return (
     <div>
@@ -38,33 +33,19 @@ const LanguageSwitcher = () => {
         <Language />
       </IconButton>
 
-      <Popover
-        anchorEl={anchorEl}
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
-        }}
-        transformOrigin={{
-          vertical: 'bottom',
-          horizontal: 'right',
-        }}
-      >
-        <div className={styles.popover}>
-          <div className={styles.container}>
-            {languages.map(({ code, name, localName }) => (
-              <p key={code} className={styles.language} onClick={() => handleChangeLanguage(code)}>
-                {name} {localName && `(${localName})`}
-              </p>
-            ))}
+      <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
+        {languages.map(({ code, name, localName }) => (
+          <MenuItem key={code} onClick={() => handleChange(code)}>
+            {name} {localName && `(${localName})`}
+          </MenuItem>
+        ))}
 
-            <a href="https://translate.rxresu.me" target="_blank" rel="noreferrer" className={styles.language}>
-              {t('common.footer.language.missing')}
-            </a>
-          </div>
-        </div>
-      </Popover>
+        <MenuItem>
+          <span className="font-bold" onClick={handleAddLanguage}>
+            Add your language
+          </span>
+        </MenuItem>
+      </Menu>
     </div>
   );
 };
