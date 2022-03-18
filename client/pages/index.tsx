@@ -13,6 +13,7 @@ import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
 import Logo from '@/components/shared/Logo';
 import NoSSR from '@/components/shared/NoSSR';
 import { screenshots } from '@/config/screenshots';
+import { FLAG_DISABLE_SIGNUPS } from '@/constants/flags';
 import testimonials from '@/data/testimonials';
 import { logout } from '@/store/auth/authSlice';
 import { setTheme } from '@/store/build/buildSlice';
@@ -74,7 +75,7 @@ const Home: NextPage = () => {
                 <>
                   <Button onClick={handleLogin}>{t('landing.actions.login')}</Button>
 
-                  <Button variant="outlined" onClick={handleRegister}>
+                  <Button variant="outlined" onClick={handleRegister} disabled={FLAG_DISABLE_SIGNUPS}>
                     {t('landing.actions.register')}
                   </Button>
                 </>
