@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.8](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.7...v3.2.8) (2022-03-18)
+
+
+### Features
+
+* **client/theme:** add theme switcher to landing page ([8f5632c](https://github.com/AmruthPillai/Reactive-Resume/commit/8f5632c5ad0bc8a4b3028c2806365717fedd78c9))
+* **flags:** introduce flags, disable_user_signups ([b6267d0](https://github.com/AmruthPillai/Reactive-Resume/commit/b6267d07ba2dcaed0da3946d136a0a9a01c441d5)), closes [#698](https://github.com/AmruthPillai/Reactive-Resume/issues/698)
+* **i18n:** add Vietnamese language to i18n locales ([4390bcc](https://github.com/AmruthPillai/Reactive-Resume/commit/4390bccfb9764f2d2730ec3a124b7befb6792e9a))
+
+
+### Bug Fixes
+
+* **client/create-rename-slug:** fix slug accepting apostrophes and other special characters ([1facd2a](https://github.com/AmruthPillai/Reactive-Resume/commit/1facd2ad111cd9d990c808b3956d3915e8711acd)), closes [#706](https://github.com/AmruthPillai/Reactive-Resume/issues/706)
+* **disable_user_signups:** hide create account link under flag ([80acfe9](https://github.com/AmruthPillai/Reactive-Resume/commit/80acfe97c74bfa05b719285b19144144f3f7c5ba))
+
 ### [3.2.7](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.6...v3.2.7) (2022-03-18)
 
 
