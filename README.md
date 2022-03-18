@@ -46,6 +46,7 @@ You have complete control over what goes into your resume, how it looks, what co
 - Hindi (हिन्दी)
 - Italian (Italiano)
 - Kannada (ಕನ್ನಡ)
+- Malayalam (മലയാളം)
 - Polish (Polski)
 - Spanish (Español)
 - Tamil (தமிழ்)

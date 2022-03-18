@@ -15,6 +15,7 @@ export const languages: Language[] = [
   { code: 'hi', name: 'Hindi', localName: 'हिन्दी' },
   { code: 'it', name: 'Italian', localName: 'Italiano' },
   { code: 'kn', name: 'Kannada', localName: 'ಕನ್ನಡ' },
+  { code: 'ml', name: 'Malayalam', localName: 'മലയാളം' },
   { code: 'pl', name: 'Polish', localName: 'Polski' },
   { code: 'ta', name: 'Tamil', localName: 'தமிழ்' },
   { code: 'tr', name: 'Turkish', localName: 'Türkçe' },
