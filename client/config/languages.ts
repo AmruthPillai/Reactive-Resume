@@ -19,6 +19,7 @@ export const languages: Language[] = [
   { code: 'pl', name: 'Polish', localName: 'Polski' },
   { code: 'ta', name: 'Tamil', localName: 'தமிழ்' },
   { code: 'tr', name: 'Turkish', localName: 'Türkçe' },
+  { code: 'vi', name: 'Vietnamese', localName: 'Tiếng Việt' },
   { code: 'zh', name: 'Chinese', localName: '中文' },
 ].sort((a, b) => a.name.localeCompare(b.name));
 

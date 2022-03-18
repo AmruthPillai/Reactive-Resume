@@ -24,6 +24,7 @@ const DateWrapper: React.FC = ({ children }) => {
     require('dayjs/locale/pl');
     require('dayjs/locale/ta');
     require('dayjs/locale/tr');
+    require('dayjs/locale/vi');
     require('dayjs/locale/zh');
 
     locale && dayjs.locale(locale);
