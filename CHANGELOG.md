@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.7](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.6...v3.2.7) (2022-03-18)
+
+
+### Features
+
+* **i18n:** add Malayalam (മലയാളം) language to i18n locales ([3a2e62b](https://github.com/AmruthPillai/Reactive-Resume/commit/3a2e62be4c9acc14f17277c060cc9ea2c417a478))
+
+
+### Bug Fixes
+
+* **printer/i18n:** fix dates not showing up in resume language when printing ([90321e1](https://github.com/AmruthPillai/Reactive-Resume/commit/90321e1284409ab9442883c04a9b4c591d36f95d)), closes [#729](https://github.com/AmruthPillai/Reactive-Resume/issues/729)
+
 ### [3.2.6](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.5...v3.2.6) (2022-03-17)
 
 
