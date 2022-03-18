@@ -12,6 +12,7 @@ import toast from 'react-hot-toast';
 import { useIsMutating, useMutation } from 'react-query';
 
 import BaseModal from '@/components/shared/BaseModal';
+import { FLAG_DISABLE_SIGNUPS } from '@/constants/flags';
 import { login, LoginParams, loginWithGoogle, LoginWithGoogleParams } from '@/services/auth';
 import { ServerError } from '@/services/axios';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
@@ -167,11 +168,13 @@ const LoginModal: React.FC = () => {
         />
       </form>
 
-      <p className="text-xs">
-        <Trans t={t} i18nKey="modals.auth.login.register-text">
-          If you don&apos;t have one, you can <a onClick={handleCreateAccount}>create an account</a> here.
-        </Trans>
-      </p>
+      {!FLAG_DISABLE_SIGNUPS && (
+        <p className="text-xs">
+          <Trans t={t} i18nKey="modals.auth.login.register-text">
+            If you don&apos;t have one, you can <a onClick={handleCreateAccount}>create an account</a> here.
+          </Trans>
+        </p>
+      )}
 
       <p className="text-xs">
         <Trans t={t} i18nKey="modals.auth.login.recover-text">
