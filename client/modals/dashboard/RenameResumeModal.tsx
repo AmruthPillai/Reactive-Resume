@@ -56,7 +56,7 @@ const RenameResumeModal: React.FC = () => {
     const slug = name
       ? name
           .toLowerCase()
-          .replace(/[`~!@#$%^&*()_|+=?;:'",.<>{}[]\\\/]/gi, '')
+          .replace(/[^\w\s]/gi, '')
           .replace(/[ ]/gi, '-')
       : '';
 
