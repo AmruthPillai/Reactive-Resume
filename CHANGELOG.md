@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.9](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.8...v3.2.9) (2022-03-21)
+
+
+### Features
+
+* **i18n:** add nl and ru i18n locales to app ([03cbf22](https://github.com/AmruthPillai/Reactive-Resume/commit/03cbf22c9bee96cac8f228830b67b44529b7ecee))
+
 ### [3.2.8](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.7...v3.2.8) (2022-03-18)
 
 
