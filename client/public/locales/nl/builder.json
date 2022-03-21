@@ -1,0 +1,358 @@
+{
+  "common": {
+    "actions": {
+      "add": "Nieuw {{token}} toevoegen",
+      "delete": "{{token}} verwijderen",
+      "edit": "Bewerk {{token}}"
+    },
+    "columns": {
+      "heading": "Kolommen",
+      "tooltip": "Aantal kolommen wijzigen"
+    },
+    "form": {
+      "date": {
+        "label": "Datum"
+      },
+      "description": {
+        "label": "Beschrijving"
+      },
+      "email": {
+        "label": "E-mailadres"
+      },
+      "end-date": {
+        "help-text": "Laat dit veld leeg, indien nog aanwezig",
+        "label": "Einddatum"
+      },
+      "keywords": {
+        "label": "Trefwoorden"
+      },
+      "level": {
+        "label": "Niveau"
+      },
+      "levelNum": {
+        "label": "Niveau (nummer)"
+      },
+      "name": {
+        "label": "Naam"
+      },
+      "phone": {
+        "label": "Telefoonnummer"
+      },
+      "position": {
+        "label": "Functie"
+      },
+      "start-date": {
+        "label": "Startdatum"
+      },
+      "subtitle": {
+        "label": "Ondertitel"
+      },
+      "summary": {
+        "label": "Samenvatting"
+      },
+      "title": {
+        "label": "Titel"
+      },
+      "url": {
+        "label": "Website"
+      }
+    },
+    "glossary": {
+      "page": "Pagina"
+    },
+    "list": {
+      "actions": {
+        "delete": "Verwijderen",
+        "duplicate": "Dupliceren",
+        "edit": "Bewerken"
+      },
+      "empty-text": "Deze lijst is leeg."
+    },
+    "tooltip": {
+      "delete-item": "Weet je zeker dat je dit item wilt verwijderen? Dit is onomkeerbaar.",
+      "delete-section": "Sectie verwijderen",
+      "rename-section": "Sectie hernoemen",
+      "toggle-visibility": "Zichtbaarheid aan/uit"
+    }
+  },
+  "controller": {
+    "tooltip": {
+      "center-artboard": "Tekengebied Centreren",
+      "copy-link": "Link naar CV Kopiëren",
+      "export-pdf": "Exporteer PDF",
+      "toggle-orientation": "Oriëntatie van pagina wijzigen",
+      "toggle-page-break-line": "Regel voor pagina-einde in-/uitschakelen",
+      "toggle-sidebars": "Zijbalk tonen/verbergen",
+      "zoom-in": "Inzoomen",
+      "zoom-out": "Uitzoomen"
+    }
+  },
+  "header": {
+    "menu": {
+      "delete": "Verwijderen",
+      "duplicate": "Dupliceren",
+      "rename": "Hernoemen",
+      "share-link": "Link delen",
+      "tooltips": {
+        "delete": "Weet je zeker dat je dit cv wilt verwijderen? Dit is onomkeerbaar.",
+        "share-link": "Je moet de zichtbaarheid van jouw cv veranderen in openbaar om het zichtbaar te maken voor anderen."
+      }
+    }
+  },
+  "leftSidebar": {
+    "sections": {
+      "awards": {
+        "form": {
+          "awarder": {
+            "label": "Onderscheidingen"
+          }
+        }
+      },
+      "basics": {
+        "actions": {
+          "photo-filters": "Foto Filters"
+        },
+        "heading": "Basis",
+        "headline": {
+          "label": "Koptekst"
+        },
+        "name": {
+          "label": "Volledige naam"
+        },
+        "photo-filters": {
+          "effects": {
+            "border": {
+              "label": "Rand"
+            },
+            "grayscale": {
+              "label": "Grijswaarden"
+            },
+            "heading": "Effecten"
+          },
+          "shape": {
+            "heading": "Vorm"
+          },
+          "size": {
+            "heading": "Grootte (in px)"
+          }
+        },
+        "photo-upload": {
+          "tooltip": {
+            "remove": "Foto Verwijderen",
+            "upload": "Foto Uploaden"
+          }
+        }
+      },
+      "certifications": {
+        "form": {
+          "issuer": {
+            "label": "Verstrekker"
+          }
+        }
+      },
+      "education": {
+        "form": {
+          "area-study": {
+            "label": "Studiegebied"
+          },
+          "courses": {
+            "label": "Cursussen"
+          },
+          "degree": {
+            "label": "Graad"
+          },
+          "grade": {
+            "label": "Cijfer"
+          },
+          "institution": {
+            "label": "Instelling"
+          }
+        }
+      },
+      "location": {
+        "address": {
+          "label": "Adres"
+        },
+        "city": {
+          "label": "Stad"
+        },
+        "country": {
+          "label": "Land"
+        },
+        "heading": "Locatie",
+        "postal-code": {
+          "label": "Postcode"
+        },
+        "region": {
+          "label": "Regio"
+        }
+      },
+      "profiles": {
+        "form": {
+          "network": {
+            "label": "Netwerk"
+          },
+          "username": {
+            "label": "Gebruikersnaam"
+          }
+        },
+        "heading": "Profielen",
+        "heading_one": "Profiel"
+      },
+      "publications": {
+        "form": {
+          "publisher": {
+            "label": "Uitgever"
+          }
+        }
+      },
+      "references": {
+        "form": {
+          "relationship": {
+            "label": "Relatie"
+          }
+        }
+      },
+      "section": {
+        "heading": "Sectie"
+      },
+      "volunteer": {
+        "form": {
+          "organization": {
+            "label": "Organisatie"
+          }
+        }
+      }
+    }
+  },
+  "rightSidebar": {
+    "sections": {
+      "css": {
+        "heading": "Aangepaste CSS"
+      },
+      "export": {
+        "heading": "Exporteren",
+        "json": {
+          "primary": "JSON",
+          "secondary": "Download een JSON-versie van je cv die weer kan worden geïmporteerd in deze CV maker."
+        },
+        "pdf": {
+          "loading": {
+            "primary": "PDF genereren",
+            "secondary": "Een ogenblik geduld s.v.p. terwijl uw PDF wordt gegenereerd, dit kan tot 15 seconden duren."
+          },
+          "normal": {
+            "primary": "PDF",
+            "secondary": "Download een pdf van je cv die je kunt printen en gebruiken om je droombaan te bekomen. Dit bestand kan niet opnieuw worden geïmporteerd voor verdere bewerking."
+          }
+        }
+      },
+      "layout": {
+        "heading": "Opmaak",
+        "tooltip": {
+          "reset-layout": "Opmaak Resetten"
+        }
+      },
+      "links": {
+        "bugs-features": {
+          "body": "Houdt iets je tegen om een cv te maken? Of heb je een geweldig idee om toe te voegen? Plaats een issue op GitHub om aan de slag te gaan.",
+          "button": "GitHub problemen",
+          "heading": "Bugs? Functieverzoeken?"
+        },
+        "donate": {
+          "body": "Als Je Reactive Resume graag gebruikt, kun je overwegen zoveel mogelijk te doneren om de app in de lucht te houden, zonder advertenties en voor altijd gratis.",
+          "button": "Betaal me een koffie",
+          "heading": "Doneer aan Reactiv Resume"
+        },
+        "github": "Broncode",
+        "heading": "Links"
+      },
+      "settings": {
+        "global": {
+          "date": {
+            "primary": "Datum",
+            "secondary": "Datumformaat die gebruikt moet worden in de hele app"
+          },
+          "heading": "Globaal",
+          "language": {
+            "primary": "Taal",
+            "secondary": "Toon de te gebruiken taal in de app"
+          },
+          "theme": {
+            "primary": "Thema"
+          }
+        },
+        "heading": "Instellingen",
+        "page": {
+          "break-line": {
+            "primary": "Breek Lijn",
+            "secondary": "Toon een lijn op alle pagina's om de hoogte van een A4-pagina te markeren"
+          },
+          "heading": "Pagina",
+          "orientation": {
+            "disabled": "Heeft geen effect als er maar één pagina is",
+            "primary": "Oriëntatie",
+            "secondary": "Pagina's horizontaal of verticaal weergeven"
+          }
+        },
+        "resume": {
+          "heading": "Hervatten",
+          "reset": {
+            "primary": "Alles Resetten",
+            "secondary": "Te veel fouten gemaakt? Klik hier om alle wijzigingen te resetten en helemaal opnieuw te beginnen. Wees voorzichtig, deze actie kan niet worden teruggedraaid."
+          },
+          "sample": {
+            "primary": "Laad voorbeeldgegevens",
+            "secondary": "Weet je niet waar je moet beginnen? Klik hier om enkele voorbeeldgegevens te laden om te zien hoe een compleet cv eruitziet."
+          }
+        }
+      },
+      "sharing": {
+        "heading": "Delen",
+        "short-url": {
+          "label": "Liever korte URL"
+        },
+        "visibility": {
+          "subtitle": "Laat iedereen met een link je cv bekijken",
+          "title": "Openbaar"
+        }
+      },
+      "templates": {
+        "heading": "Sjablonen"
+      },
+      "theme": {
+        "form": {
+          "background": {
+            "label": "Achtergrond"
+          },
+          "primary": {
+            "label": "Voornaamste"
+          },
+          "text": {
+            "label": "Tekst"
+          }
+        },
+        "heading": "Thema"
+      },
+      "typography": {
+        "form": {
+          "font-family": {
+            "label": "Lettertype"
+          },
+          "font-size": {
+            "label": "Lettertypegrootte"
+          }
+        },
+        "heading": "Typografie",
+        "widgets": {
+          "body": {
+            "label": "Berichttekst"
+          },
+          "headings": {
+            "label": "Koppen"
+          }
+        }
+      }
+    }
+  }
+}
