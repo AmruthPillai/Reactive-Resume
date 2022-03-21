@@ -40,6 +40,7 @@ You have complete control over what goes into your resume, how it looks, what co
 - Bengali (বাংলা)
 - Chinese (中文)
 - Danish (Dansk)
+- Dutch (Nederlands)
 - English
 - French (Français)
 - German (Deutsch)
@@ -48,6 +49,7 @@ You have complete control over what goes into your resume, how it looks, what co
 - Kannada (ಕನ್ನಡ)
 - Malayalam (മലയാളം)
 - Polish (Polski)
+- Russian (русский)
 - Spanish (Español)
 - Tamil (தமிழ்)
 - Turkish (Türkçe)
