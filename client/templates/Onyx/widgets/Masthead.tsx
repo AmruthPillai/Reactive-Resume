@@ -50,7 +50,7 @@ const Masthead: React.FC = () => {
         </DataDisplay>
 
         {profiles.map(({ id, username, network, url }) => (
-          <DataDisplay key={id} icon={getProfileIcon(network)} link={url} className="text-xs">
+          <DataDisplay key={id} icon={getProfileIcon(network)} link={url && addHttp(url)} className="text-xs">
             {username}
           </DataDisplay>
         ))}

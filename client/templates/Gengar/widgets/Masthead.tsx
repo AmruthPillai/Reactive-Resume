@@ -57,7 +57,7 @@ export const MastheadSidebar: React.FC = () => {
         </DataDisplay>
 
         {profiles.map(({ id, username, network, url }) => (
-          <DataDisplay key={id} icon={getProfileIcon(network)} link={url} className="!gap-2 text-xs">
+          <DataDisplay key={id} icon={getProfileIcon(network)} link={url && addHttp(url)} className="!gap-2 text-xs">
             {username}
           </DataDisplay>
         ))}

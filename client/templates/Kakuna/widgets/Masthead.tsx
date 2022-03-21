@@ -47,7 +47,7 @@ const Masthead = () => {
         <DataDisplay icon={<Room />}>{formatLocation(location)}</DataDisplay>
 
         {profiles.map(({ id, username, network, url }) => (
-          <DataDisplay key={id} icon={getProfileIcon(network)} link={url}>
+          <DataDisplay key={id} icon={getProfileIcon(network)} link={url && addHttp(url)}>
             {username}
           </DataDisplay>
         ))}
