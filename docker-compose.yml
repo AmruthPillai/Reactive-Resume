@@ -1,4 +1,35 @@
 version: '3'
+
+x-env: &env
+  environment:
+  # App
+  - TZ=UTC
+  - SECRET_KEY=
+  # URLs
+  - PUBLIC_URL=http://<SERVER-IP>
+  - PUBLIC_SERVER_URL=http://<SERVER-IP>/api
+  # Database
+  - POSTGRES_HOST=localhost
+  - POSTGRES_PORT=5432
+  - POSTGRES_USERNAME=postgres
+  - POSTGRES_PASSWORD=postgres
+  - POSTGRES_DATABASE=postgres
+  - POSTGRES_SSL_CERT=
+  # Auth
+  - JWT_SECRET=
+  - JWT_EXPIRY_TIME=604800
+  # Google
+  - PUBLIC_GOOGLE_CLIENT_ID=
+  - GOOGLE_CLIENT_SECRET=
+  - GOOGLE_API_KEY=
+  # SendGrid (Optional)
+  - SENDGRID_API_KEY=
+  - SENDGRID_FORGOT_PASSWORD_TEMPLATE_ID=
+  - SENDGRID_FROM_NAME=
+  - SENDGRID_FROM_EMAIL=
+  # Flags (Optional)
+  - PUBLIC_FLAG_DISABLE_SIGNUPS=false
+
 services:
   postgres:
     image: postgres
@@ -52,34 +83,3 @@ services:
 
 volumes:
   pgdata:
-
-
-x-env: &env
-  environment:
-  # App
-  - TZ=UTC
-  - SECRET_KEY=
-  # URLs
-  - PUBLIC_URL=http://<SERVER-IP>
-  - PUBLIC_SERVER_URL=http://<SERVER-IP>/api
-  # Database
-  - POSTGRES_HOST=localhost
-  - POSTGRES_PORT=5432
-  - POSTGRES_USERNAME=postgres
-  - POSTGRES_PASSWORD=postgres
-  - POSTGRES_DATABASE=postgres
-  - POSTGRES_SSL_CERT=
-  # Auth
-  - JWT_SECRET=
-  - JWT_EXPIRY_TIME=604800
-  # Google
-  - PUBLIC_GOOGLE_CLIENT_ID=
-  - GOOGLE_CLIENT_SECRET=
-  - GOOGLE_API_KEY=
-  # SendGrid (Optional)
-  - SENDGRID_API_KEY=
-  - SENDGRID_FORGOT_PASSWORD_TEMPLATE_ID=
-  - SENDGRID_FROM_NAME=
-  - SENDGRID_FROM_EMAIL=
-  # Flags (Optional)
-  - PUBLIC_FLAG_DISABLE_SIGNUPS=false
