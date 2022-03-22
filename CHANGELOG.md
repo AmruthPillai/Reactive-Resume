@@ -2,6 +2,67 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.9](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.8...v3.2.9) (2022-03-21)
+
+
+### Features
+
+* **i18n:** add nl and ru i18n locales to app ([03cbf22](https://github.com/AmruthPillai/Reactive-Resume/commit/03cbf22c9bee96cac8f228830b67b44529b7ecee))
+
+### [3.2.8](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.7...v3.2.8) (2022-03-18)
+
+
+### Features
+
+* **client/theme:** add theme switcher to landing page ([8f5632c](https://github.com/AmruthPillai/Reactive-Resume/commit/8f5632c5ad0bc8a4b3028c2806365717fedd78c9))
+* **flags:** introduce flags, disable_user_signups ([b6267d0](https://github.com/AmruthPillai/Reactive-Resume/commit/b6267d07ba2dcaed0da3946d136a0a9a01c441d5)), closes [#698](https://github.com/AmruthPillai/Reactive-Resume/issues/698)
+* **i18n:** add Vietnamese language to i18n locales ([4390bcc](https://github.com/AmruthPillai/Reactive-Resume/commit/4390bccfb9764f2d2730ec3a124b7befb6792e9a))
+
+
+### Bug Fixes
+
+* **client/create-rename-slug:** fix slug accepting apostrophes and other special characters ([1facd2a](https://github.com/AmruthPillai/Reactive-Resume/commit/1facd2ad111cd9d990c808b3956d3915e8711acd)), closes [#706](https://github.com/AmruthPillai/Reactive-Resume/issues/706)
+* **disable_user_signups:** hide create account link under flag ([80acfe9](https://github.com/AmruthPillai/Reactive-Resume/commit/80acfe97c74bfa05b719285b19144144f3f7c5ba))
+
+### [3.2.7](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.6...v3.2.7) (2022-03-18)
+
+
+### Features
+
+* **i18n:** add Malayalam (മലയാളം) language to i18n locales ([3a2e62b](https://github.com/AmruthPillai/Reactive-Resume/commit/3a2e62be4c9acc14f17277c060cc9ea2c417a478))
+
+
+### Bug Fixes
+
+* **printer/i18n:** fix dates not showing up in resume language when printing ([90321e1](https://github.com/AmruthPillai/Reactive-Resume/commit/90321e1284409ab9442883c04a9b4c591d36f95d)), closes [#729](https://github.com/AmruthPillai/Reactive-Resume/issues/729)
+
+### [3.2.6](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.5...v3.2.6) (2022-03-17)
+
+
+### Features
+
+* **client/auth/google:** disable google login/registration if GOOGLE_CLIENT_ID is not in ENV ([7f0ee40](https://github.com/AmruthPillai/Reactive-Resume/commit/7f0ee40af4acc7eb41514406ecee3218ace9e891)), closes [#724](https://github.com/AmruthPillai/Reactive-Resume/issues/724)
+* **i18n:** add arabic language to i18n locale ([39fa6da](https://github.com/AmruthPillai/Reactive-Resume/commit/39fa6da5dd77ce2e12e81530fa18c2eac722c1f2))
+
+
+### Bug Fixes
+
+* **i18n:** add missing languages to dayjs date wrapper locales ([9e6dafc](https://github.com/AmruthPillai/Reactive-Resume/commit/9e6dafc8cada5c01559894905996b81004bedaec)), closes [#719](https://github.com/AmruthPillai/Reactive-Resume/issues/719)
+* **json-export:** add mimeType and charset to JSON export ([b3ff780](https://github.com/AmruthPillai/Reactive-Resume/commit/b3ff7805cd856a52900d9acef0554867d8ce0b01)), closes [#726](https://github.com/AmruthPillai/Reactive-Resume/issues/726)
+* **linkedin:** fix skill modal crashing when importing from linkedin ([a02b85b](https://github.com/AmruthPillai/Reactive-Resume/commit/a02b85b4bb1c4a1499aacddeac7bc59bcb1f7adb)), closes [#718](https://github.com/AmruthPillai/Reactive-Resume/issues/718)
+
+### [3.2.5](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.4...v3.2.5) (2022-03-16)
+
+
+### Features
+
+* **i18n:** add danish, polish and turkish locales to i18n ([97e9432](https://github.com/AmruthPillai/Reactive-Resume/commit/97e9432d6bd887e666a3443fbfde9a92cef53965))
+
+
+### Bug Fixes
+
+* **client/templates:** fix text veering off of artboard in most templates ([b2f1fb3](https://github.com/AmruthPillai/Reactive-Resume/commit/b2f1fb3a5502988a49c5cd3e496d9d165f5c1792)), closes [#702](https://github.com/AmruthPillai/Reactive-Resume/issues/702)
+
 ### [3.2.4](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.3...v3.2.4) (2022-03-14)
 
 ### [3.2.3](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.2...v3.2.3) (2022-03-14)

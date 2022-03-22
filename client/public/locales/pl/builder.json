@@ -1,0 +1,358 @@
+{
+  "common": {
+    "actions": {
+      "add": "Dodaj nowy {{token}}",
+      "delete": "Usuń {{token}}",
+      "edit": "Edytuj {{token}}"
+    },
+    "columns": {
+      "heading": "Kolumny",
+      "tooltip": "Zmień liczbę kolumn"
+    },
+    "form": {
+      "date": {
+        "label": "Data"
+      },
+      "description": {
+        "label": "Opis"
+      },
+      "email": {
+        "label": "Adres e-mail"
+      },
+      "end-date": {
+        "help-text": "Pozostaw to pole puste, jeśli nadal występuje",
+        "label": "Data zakończenia"
+      },
+      "keywords": {
+        "label": "Słowa kluczowe"
+      },
+      "level": {
+        "label": "Poziom"
+      },
+      "levelNum": {
+        "label": "Poziom (Liczba)"
+      },
+      "name": {
+        "label": "Imię i Nazwisko"
+      },
+      "phone": {
+        "label": "Numer telefonu"
+      },
+      "position": {
+        "label": "Stanowisko"
+      },
+      "start-date": {
+        "label": "Data rozpoczęcia"
+      },
+      "subtitle": {
+        "label": "Podtytuł"
+      },
+      "summary": {
+        "label": "Podsumowanie"
+      },
+      "title": {
+        "label": "Stanowisko"
+      },
+      "url": {
+        "label": "Strona internetowa"
+      }
+    },
+    "glossary": {
+      "page": "Strona"
+    },
+    "list": {
+      "actions": {
+        "delete": "Usuń",
+        "duplicate": "Duplikuj",
+        "edit": "Edytuj"
+      },
+      "empty-text": "Lista jest pusta."
+    },
+    "tooltip": {
+      "delete-item": "Czy na pewno chcesz usunąć ten element? To jest nieodwracalna czynność.",
+      "delete-section": "Usuń sekcję",
+      "rename-section": "Zmień Nazwę Sekcji",
+      "toggle-visibility": "Pokaż / Ukryj"
+    }
+  },
+  "controller": {
+    "tooltip": {
+      "center-artboard": "Wyśrodkuj Artboard",
+      "copy-link": "Skopiuj Link do CV",
+      "export-pdf": "Eksportuj do PDF",
+      "toggle-orientation": "Przełącz orientację strony",
+      "toggle-page-break-line": "Przełącz linię podziału strony",
+      "toggle-sidebars": "Przełącz paski boczne",
+      "zoom-in": "Powiększ",
+      "zoom-out": "Pomniejsz"
+    }
+  },
+  "header": {
+    "menu": {
+      "delete": "Usuń",
+      "duplicate": "Duplikuj",
+      "rename": "Zmień nazwę",
+      "share-link": "Udostępnij link",
+      "tooltips": {
+        "delete": "Czy na pewno chcesz usunąć to CV? To jest nieodwracalne działanie.",
+        "share-link": "Musisz zmienić widoczność swojego CV na publiczne, aby było widoczne dla innych."
+      }
+    }
+  },
+  "leftSidebar": {
+    "sections": {
+      "awards": {
+        "form": {
+          "awarder": {
+            "label": "Nagradzający"
+          }
+        }
+      },
+      "basics": {
+        "actions": {
+          "photo-filters": "Filtry zdjęcia"
+        },
+        "heading": "Podstawowe",
+        "headline": {
+          "label": "Nagłówek"
+        },
+        "name": {
+          "label": "Imię i nazwisko"
+        },
+        "photo-filters": {
+          "effects": {
+            "border": {
+              "label": "Ramka"
+            },
+            "grayscale": {
+              "label": "Odcienie Szarości"
+            },
+            "heading": "Efekty"
+          },
+          "shape": {
+            "heading": "Kształt"
+          },
+          "size": {
+            "heading": "Rozmiar (w pikselach)"
+          }
+        },
+        "photo-upload": {
+          "tooltip": {
+            "remove": "Usuń Zdjęcie",
+            "upload": "Prześlij zdjęcie"
+          }
+        }
+      },
+      "certifications": {
+        "form": {
+          "issuer": {
+            "label": "Wystawiony przez"
+          }
+        }
+      },
+      "education": {
+        "form": {
+          "area-study": {
+            "label": "Obszar badań"
+          },
+          "courses": {
+            "label": "Kursy"
+          },
+          "degree": {
+            "label": "Stopień naukowy"
+          },
+          "grade": {
+            "label": "Ocena"
+          },
+          "institution": {
+            "label": "Instytucja"
+          }
+        }
+      },
+      "location": {
+        "address": {
+          "label": "Adres"
+        },
+        "city": {
+          "label": "Miasto"
+        },
+        "country": {
+          "label": "Kraj"
+        },
+        "heading": "Lokalizacja",
+        "postal-code": {
+          "label": "Kod pocztowy"
+        },
+        "region": {
+          "label": "Województwo"
+        }
+      },
+      "profiles": {
+        "form": {
+          "network": {
+            "label": "Sieć"
+          },
+          "username": {
+            "label": "Nazwa użytkownika"
+          }
+        },
+        "heading": "Profile",
+        "heading_one": "Profil"
+      },
+      "publications": {
+        "form": {
+          "publisher": {
+            "label": "Wydawca"
+          }
+        }
+      },
+      "references": {
+        "form": {
+          "relationship": {
+            "label": "Relacja"
+          }
+        }
+      },
+      "section": {
+        "heading": "Sekcja"
+      },
+      "volunteer": {
+        "form": {
+          "organization": {
+            "label": "Organizacja"
+          }
+        }
+      }
+    }
+  },
+  "rightSidebar": {
+    "sections": {
+      "css": {
+        "heading": "Niestandardowy CSS"
+      },
+      "export": {
+        "heading": "Eksportuj",
+        "json": {
+          "primary": "JSON",
+          "secondary": "Pobierz wersję JSON, którą można zaimportować z powrotem do Reactive Resume."
+        },
+        "pdf": {
+          "loading": {
+            "primary": "Generowanie pliku PDF",
+            "secondary": "Poczekaj, aż Twój plik PDF zostanie wygenerowany, może to potrwać do 15 sekund."
+          },
+          "normal": {
+            "primary": "PDF",
+            "secondary": "Pobierz plik PDF ze swoim CV, który możesz wydrukować i wysłać do wymarzonej pracy. Tego pliku nie można zaimportować z powrotem do dalszej edycji."
+          }
+        }
+      },
+      "layout": {
+        "heading": "Układ",
+        "tooltip": {
+          "reset-layout": "Zresetuj układ"
+        }
+      },
+      "links": {
+        "bugs-features": {
+          "body": "Coś powstrzymuje Cię przed zrobieniem CV? A może masz świetny pomysł do dodania? Aby rozpocząć, zgłoś problem w serwisie GitHub.",
+          "button": "Błędy na GitHub",
+          "heading": "Błąd? Prośba o nową funkcjonalność?"
+        },
+        "donate": {
+          "body": "Jeśli podobało Ci się korzystanie z Reactive Resume, rozważ przekazanie jak największej kwoty na rzecz utrzymania aplikacji i działania, bez reklam i na zawsze za darmo.",
+          "button": "Kup mi kawę",
+          "heading": "Wesprzyj Reactive Resume"
+        },
+        "github": "Kod źródłowy",
+        "heading": "Odnośniki"
+      },
+      "settings": {
+        "global": {
+          "date": {
+            "primary": "Data",
+            "secondary": "Format daty do użycia w całej aplikacji"
+          },
+          "heading": "Globalne",
+          "language": {
+            "primary": "Język",
+            "secondary": "Wyświetlanie języka używanego w całej aplikacji"
+          },
+          "theme": {
+            "primary": "Motyw"
+          }
+        },
+        "heading": "Ustawienia",
+        "page": {
+          "break-line": {
+            "primary": "Inteligentne dopasowanie linii",
+            "secondary": "Pokaż linię na wszystkich stronach, aby oznaczyć wysokość strony A4"
+          },
+          "heading": "Strona",
+          "orientation": {
+            "disabled": "Nie ma efektu, gdy istnieje tylko jedna strona",
+            "primary": "Kierunek",
+            "secondary": "Czy wyświetlać strony poziomo czy pionowo"
+          }
+        },
+        "resume": {
+          "heading": "CV",
+          "reset": {
+            "primary": "Zresetuj wszystko",
+            "secondary": "Popełniłeś zbyt wiele błędów? Kliknij tutaj, aby zresetować wszystkie zmiany i zacząć od zera. Uważaj, tej akcji nie można cofnąć."
+          },
+          "sample": {
+            "primary": "Załaduj przykładowe dane",
+            "secondary": "Nie wiesz, od czego zacząć? Kliknij tutaj, aby załadować przykładowe dane i zobaczyć, jak wygląda pełne CV."
+          }
+        }
+      },
+      "sharing": {
+        "heading": "Udostępnienie",
+        "short-url": {
+          "label": "Preferuj krótki adres URL"
+        },
+        "visibility": {
+          "subtitle": "Zezwalaj każdemu, kto ma link, na przeglądanie Twojego CV",
+          "title": "Publiczny"
+        }
+      },
+      "templates": {
+        "heading": "Szablony"
+      },
+      "theme": {
+        "form": {
+          "background": {
+            "label": "Tło"
+          },
+          "primary": {
+            "label": "Podstawowy"
+          },
+          "text": {
+            "label": "Tekst"
+          }
+        },
+        "heading": "Motyw"
+      },
+      "typography": {
+        "form": {
+          "font-family": {
+            "label": "Czcionka"
+          },
+          "font-size": {
+            "label": "Rozmiar czcionki"
+          }
+        },
+        "heading": "Typografia",
+        "widgets": {
+          "body": {
+            "label": "Treść"
+          },
+          "headings": {
+            "label": "Nagłówki"
+          }
+        }
+      }
+    }
+  }
+}

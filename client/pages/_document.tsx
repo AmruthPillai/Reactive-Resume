@@ -4,6 +4,7 @@ import NextDocument, { DocumentContext, Head, Html, Main, NextScript } from 'nex
 const Document: NextPage = () => (
   <Html>
     <Head />
+
     <body>
       <Main />
       <NextScript />

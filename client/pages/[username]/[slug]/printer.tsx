@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import { GetServerSideProps, NextPage } from 'next';
+import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect } from 'react';
 
@@ -20,6 +21,7 @@ type QueryParams = {
 
 type Props = {
   resume?: Resume;
+  locale: string;
   redirect?: any;
 };
 
@@ -35,7 +37,13 @@ export const getServerSideProps: GetServerSideProps<Props | Promise<Props>, Quer
     const resume = await fetchResumeByIdentifier({ username, slug, options: { secretKey } });
     const displayLocale = resume.metadata.locale || locale || 'en';
 
-    return { props: { resume, ...(await serverSideTranslations(displayLocale, ['common'])) } };
+    return {
+      props: {
+        resume,
+        locale: displayLocale,
+        ...(await serverSideTranslations(displayLocale, ['common'])),
+      },
+    };
   } catch (error) {
     return {
       redirect: {
@@ -46,7 +54,9 @@ export const getServerSideProps: GetServerSideProps<Props | Promise<Props>, Quer
   }
 };
 
-const Printer: NextPage<Props> = ({ resume: initialData }) => {
+const Printer: NextPage<Props> = ({ resume: initialData, locale }) => {
+  const router = useRouter();
+
   const dispatch = useAppDispatch();
 
   const resume = useAppSelector((state) => state.resume);
@@ -54,6 +64,12 @@ const Printer: NextPage<Props> = ({ resume: initialData }) => {
   useEffect(() => {
     if (initialData) dispatch(setResume(initialData));
   }, [dispatch, initialData]);
+
+  useEffect(() => {
+    const { pathname, asPath, query } = router;
+
+    router.push({ pathname, query }, asPath, { locale });
+  }, [router, locale]);
 
   if (!resume || isEmpty(resume)) return null;
 

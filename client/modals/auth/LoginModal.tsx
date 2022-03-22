@@ -3,6 +3,7 @@ import { joiResolver } from '@hookform/resolvers/joi';
 import { Google, Login, Visibility, VisibilityOff } from '@mui/icons-material';
 import { Button, IconButton, InputAdornment, TextField } from '@mui/material';
 import Joi from 'joi';
+import { isEmpty } from 'lodash';
 import { Trans, useTranslation } from 'next-i18next';
 import { useMemo, useState } from 'react';
 import { GoogleLoginResponse, GoogleLoginResponseOffline, useGoogleLogin } from 'react-google-login';
@@ -11,6 +12,7 @@ import toast from 'react-hot-toast';
 import { useIsMutating, useMutation } from 'react-query';
 
 import BaseModal from '@/components/shared/BaseModal';
+import { FLAG_DISABLE_SIGNUPS } from '@/constants/flags';
 import { login, LoginParams, loginWithGoogle, LoginWithGoogleParams } from '@/services/auth';
 import { ServerError } from '@/services/axios';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
@@ -115,15 +117,17 @@ const LoginModal: React.FC = () => {
       handleClose={handleClose}
       footerChildren={
         <div className="flex gap-4">
-          <Button
-            type="submit"
-            variant="outlined"
-            disabled={isLoading}
-            startIcon={<Google />}
-            onClick={handleLoginWithGoogle}
-          >
-            {t('modals.auth.login.actions.google')}
-          </Button>
+          {!isEmpty(env('GOOGLE_CLIENT_ID')) && (
+            <Button
+              type="submit"
+              variant="outlined"
+              disabled={isLoading}
+              startIcon={<Google />}
+              onClick={handleLoginWithGoogle}
+            >
+              {t('modals.auth.login.actions.google')}
+            </Button>
+          )}
 
           <Button type="submit" onClick={handleSubmit(onSubmit)} disabled={isLoading}>
             {t('modals.auth.login.actions.login')}
@@ -164,11 +168,13 @@ const LoginModal: React.FC = () => {
         />
       </form>
 
-      <p className="text-xs">
-        <Trans t={t} i18nKey="modals.auth.login.register-text">
-          If you don&apos;t have one, you can <a onClick={handleCreateAccount}>create an account</a> here.
-        </Trans>
-      </p>
+      {!FLAG_DISABLE_SIGNUPS && (
+        <p className="text-xs">
+          <Trans t={t} i18nKey="modals.auth.login.register-text">
+            If you don&apos;t have one, you can <a onClick={handleCreateAccount}>create an account</a> here.
+          </Trans>
+        </p>
+      )}
 
       <p className="text-xs">
         <Trans t={t} i18nKey="modals.auth.login.recover-text">

@@ -85,10 +85,10 @@
           "label": "Nome"
         },
         "public": {
-          "label": "È ad accesso pubblico?"
+          "label": "Vuoi renderlo accessibile pubblicamente?"
         },
         "slug": {
-          "label": "Slug"
+          "label": "URL personalizzato"
         }
       },
       "heading": "Crea un nuovo curriculum"
@@ -99,21 +99,22 @@
         "actions": {
           "upload-json": "Carica JSON"
         },
-        "body": "Se hai un <1>JSON Resume valido</1> già pronto, puoi usarlo per velocizzare il lavoro su Reactive Resume. Usa il pulsante qui sotto e carica un file JSON valido per iniziare.",
+        "body": "Se hai un <1>JSON Resume</1> valido già pronto, puoi usarlo per velocizzare il lavoro su Reactive Resume. Usa il pulsante qui sotto e carica un file JSON valido per iniziare.",
         "heading": "Importa da JSON Resume"
       },
       "linkedin": {
         "actions": {
           "upload-archive": "Carica archivio ZIP"
         },
-        "body": "Puoi velocizzare il tuo lavoro esportando i tuoi dati da LinkedIn e usandoli per riempire automaticamente i campi su Reactive Resume. Vai alla sezione <1>Privacy dei dati</1> di LinkedIn, richiedi una copia dei tuoi dati e carica il file ZIP qui sotto.",
+        "body": "Puoi velocizzare il tuo lavoro esportando i tuoi dati da LinkedIn e usandoli per riempire automaticamente i campi su Reactive Resume. Vai alla sezione <1>Privacy dei dati</1> di LinkedIn, richiedi una copia dei tuoi dati e carica il file ZIP tramite il pulsante qui sotto.",
         "heading": "Importa da LinkedIn"
       },
       "reactive-resume": {
         "actions": {
-          "upload-json": "Carica JSON"
+          "upload-json": "Carica JSON",
+          "upload-json-v2": "Carica JSON dalla v2"
         },
-        "body": "Se hai un file JSON esportato con la versione attuale di Reactive Resume, puoi importarlo nuovamente qui e continuare ad apportare modifiche. Purtroppo le versioni precedenti di Reactive Resume non sono supportate al momento.",
+        "body": "Se hai un JSON che è stato esportato con la versione corrente di Reactive Resume, puoi importarlo nuovamente qui per ottenere di nuovo una versione modificabile.",
         "heading": "Importa da Reactive Resume"
       }
     },
@@ -126,7 +127,7 @@
           "label": "Nome"
         },
         "slug": {
-          "label": "Slug"
+          "label": "URL personalizzato"
         }
       },
       "heading": "Rinomina il tuo curriculum"

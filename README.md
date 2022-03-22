@@ -1,12 +1,11 @@
-<img src="/docs/static/logo.svg" alt="Reactive Resume" width="256px" height="256px" />
+<img src="https://github.com/AmruthPillai/Reactive-Resume/blob/main/docs/static/logo.svg" alt="Reactive Resume" width="256px" height="256px" />
 
 # Reactive Resume
 
-![Project Version](https://img.shields.io/github/package-json/v/AmruthPillai/Reactive-Resume?style=flat-square)
-![Project License](https://img.shields.io/github/license/AmruthPillai/Reactive-Resume?style=flat-square)
+[![Project Version](https://img.shields.io/github/package-json/v/AmruthPillai/Reactive-Resume?style=flat-square)](https://github.com/AmruthPillai/Reactive-Resume/releases)
+[![Project License](https://img.shields.io/github/license/AmruthPillai/Reactive-Resume?style=flat-square)](https://github.com/AmruthPillai/Reactive-Resume/blob/main/LICENSE)
 [![Crowdin](https://badges.crowdin.net/reactive-resume/localized.svg)](https://translate.rxresu.me)
 [![Docker Pulls](https://img.shields.io/docker/pulls/amruthpillai/reactive-resume?style=flat-square)](https://hub.docker.com/r/amruthpillai/reactive-resume)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/AmruthPillai/Reactive-Resume/Build%20and%20Push%20Docker%20Image?label=docker%20build&style=flat-square)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FAmruthPillai%2FReactive-Resume.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FAmruthPillai%2FReactive-Resume?ref=badge_shield)
 
 ## [Go to App](https://rxresu.me) | [Docs](https://docs.rxresu.me)
@@ -37,16 +36,24 @@ You have complete control over what goes into your resume, how it looks, what co
 
 ## Languages
 
+- Arabic (اَلْعَرَبِيَّةُ)
 - Bengali (বাংলা)
 - Chinese (中文)
+- Danish (Dansk)
+- Dutch (Nederlands)
 - English
 - French (Français)
 - German (Deutsch)
 - Hindi (हिन्दी)
 - Italian (Italiano)
 - Kannada (ಕನ್ನಡ)
+- Malayalam (മലയാളം)
+- Polish (Polski)
+- Russian (русский)
 - Spanish (Español)
 - Tamil (தமிழ்)
+- Turkish (Türkçe)
+- Vietnamese (Tiếng Việt)
 
 Help by [translating Reactive Resume](https://translate.rxresu.me) to your language!
 
@@ -93,6 +100,14 @@ Reactive Resume would be nothing without the folks who supported me and kept the
 <a href="https://pillai.xyz/digitalocean">
   <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/PoweredByDO/DO_Powered_by_Badge_blue.svg" width="200px" />
 </a>
+
+## Contributors Wall
+<a href="https://github.com/AmruthPillai/Reactive-Resume/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=AmruthPillai/Reactive-Resume" />
+</a>
+
+
+_Note: It may take up to 24h for the [contrib.rocks](https://contrib.rocks/image?repo=AmruthPillai/Reactive-Resume) plugin to update because it's refreshed once a day._
 
 ## License
 

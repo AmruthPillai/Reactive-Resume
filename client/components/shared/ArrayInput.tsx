@@ -8,14 +8,14 @@ import styles from './ArrayInput.module.scss';
 
 type Props = {
   label: string;
-  value: string[];
+  value?: string[];
   className?: string;
   onChange: (event: any) => void;
   errors?: FieldError | FieldError[];
 };
 
 const ArrayInput: React.FC<Props> = ({ value, label, onChange, errors, className }) => {
-  const [items, setItems] = useState<string[]>(value);
+  const [items, setItems] = useState<string[]>(value || []);
 
   const onAdd = () => setItems([...items, '']);
 

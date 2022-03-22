@@ -2,7 +2,11 @@
   @apply m-6 grid gap-8 text-center md:m-8 md:text-left;
 
   footer {
-    @apply flex items-end justify-between;
+    @apply flex flex-col gap-8 items-center sm:items-end justify-between sm:flex-row sm:gap-0;
+
+    .actions {
+      @apply flex gap-2;
+    }
 
     .version > div {
       @apply text-xs font-medium opacity-50 mt-3;

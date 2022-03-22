@@ -1,0 +1,358 @@
+{
+  "common": {
+    "actions": {
+      "add": "Добавить {{token}}",
+      "delete": "Удалить {{token}}",
+      "edit": "Изменить {{token}}"
+    },
+    "columns": {
+      "heading": "Колонки",
+      "tooltip": "Изменить количество колонок"
+    },
+    "form": {
+      "date": {
+        "label": "Дата"
+      },
+      "description": {
+        "label": "Описание"
+      },
+      "email": {
+        "label": "Адрес эл. почты"
+      },
+      "end-date": {
+        "help-text": "Оставьте это поле пустым, если ещё в процессе",
+        "label": "Дата окончания"
+      },
+      "keywords": {
+        "label": "Ключевые слова"
+      },
+      "level": {
+        "label": "Уровень"
+      },
+      "levelNum": {
+        "label": "Уровень (число)"
+      },
+      "name": {
+        "label": "Название"
+      },
+      "phone": {
+        "label": "Номер телефона"
+      },
+      "position": {
+        "label": "Должность"
+      },
+      "start-date": {
+        "label": "Дата начала"
+      },
+      "subtitle": {
+        "label": "Подзаголовок"
+      },
+      "summary": {
+        "label": "Краткое описание"
+      },
+      "title": {
+        "label": "Заголовок"
+      },
+      "url": {
+        "label": "Веб-сайт"
+      }
+    },
+    "glossary": {
+      "page": "Страница"
+    },
+    "list": {
+      "actions": {
+        "delete": "Удалить",
+        "duplicate": "Дублировать",
+        "edit": "Изменить"
+      },
+      "empty-text": "Этот список пуст."
+    },
+    "tooltip": {
+      "delete-item": "Вы уверенны, что хотите удалить это? Отменить это действие нельзя.",
+      "delete-section": "Удалить раздел",
+      "rename-section": "Переименовать раздел",
+      "toggle-visibility": "Изменить видимость"
+    }
+  },
+  "controller": {
+    "tooltip": {
+      "center-artboard": "Центрировать",
+      "copy-link": "Скопировать ссылку на резюме",
+      "export-pdf": "Экспорт в PDF",
+      "toggle-orientation": "Переключить расположение страниц",
+      "toggle-page-break-line": "Переключить линию разрыва страницы",
+      "toggle-sidebars": "Переключить боковые панели",
+      "zoom-in": "Приблизить",
+      "zoom-out": "Отдалить"
+    }
+  },
+  "header": {
+    "menu": {
+      "delete": "Удалить",
+      "duplicate": "Дублировать",
+      "rename": "Переименовать",
+      "share-link": "Поделиться ссылкой",
+      "tooltips": {
+        "delete": "Вы уверенны, что хотите удалить это резюме? Отменить это действие нельзя.",
+        "share-link": "Вам нужно изменить видимость вашего резюме, чтобы сделать его видимым для других."
+      }
+    }
+  },
+  "leftSidebar": {
+    "sections": {
+      "awards": {
+        "form": {
+          "awarder": {
+            "label": "Кем награжден"
+          }
+        }
+      },
+      "basics": {
+        "actions": {
+          "photo-filters": "Фотофильтры"
+        },
+        "heading": "Основное",
+        "headline": {
+          "label": "Заголовок"
+        },
+        "name": {
+          "label": "ФИО"
+        },
+        "photo-filters": {
+          "effects": {
+            "border": {
+              "label": "Контур"
+            },
+            "grayscale": {
+              "label": "Оттенки серого"
+            },
+            "heading": "Эффекты"
+          },
+          "shape": {
+            "heading": "Форма"
+          },
+          "size": {
+            "heading": "Размер (в px)"
+          }
+        },
+        "photo-upload": {
+          "tooltip": {
+            "remove": "Удалить фото",
+            "upload": "Загрузить фото"
+          }
+        }
+      },
+      "certifications": {
+        "form": {
+          "issuer": {
+            "label": "Кем выдан"
+          }
+        }
+      },
+      "education": {
+        "form": {
+          "area-study": {
+            "label": "Область обучения"
+          },
+          "courses": {
+            "label": "Курсы"
+          },
+          "degree": {
+            "label": "Степень"
+          },
+          "grade": {
+            "label": "Оценка"
+          },
+          "institution": {
+            "label": "Учреждение"
+          }
+        }
+      },
+      "location": {
+        "address": {
+          "label": "Адрес"
+        },
+        "city": {
+          "label": "Город"
+        },
+        "country": {
+          "label": "Страна"
+        },
+        "heading": "Местоположение",
+        "postal-code": {
+          "label": "Почтовый индекс"
+        },
+        "region": {
+          "label": "Область"
+        }
+      },
+      "profiles": {
+        "form": {
+          "network": {
+            "label": "Сеть"
+          },
+          "username": {
+            "label": "Имя пользователя"
+          }
+        },
+        "heading": "Профили",
+        "heading_one": "профиль"
+      },
+      "publications": {
+        "form": {
+          "publisher": {
+            "label": "Издатель"
+          }
+        }
+      },
+      "references": {
+        "form": {
+          "relationship": {
+            "label": "Отношения"
+          }
+        }
+      },
+      "section": {
+        "heading": "Раздел"
+      },
+      "volunteer": {
+        "form": {
+          "organization": {
+            "label": "Организация"
+          }
+        }
+      }
+    }
+  },
+  "rightSidebar": {
+    "sections": {
+      "css": {
+        "heading": "Пользовательский CSS"
+      },
+      "export": {
+        "heading": "Экспорт",
+        "json": {
+          "primary": "JSON",
+          "secondary": "Загрузите JSON-версию вашего резюме, которую можно импортировать обратно в Reactive Resume."
+        },
+        "pdf": {
+          "loading": {
+            "primary": "Генерация PDF",
+            "secondary": "Пожалуйста, подождите, пока ваш PDF-файл сгенерируется, это займет не больше 15 секунд."
+          },
+          "normal": {
+            "primary": "PDF",
+            "secondary": "Скачайте PDF-файл своего резюме, который можно распечатать и отправить на работу своей мечты. Этот файл нельзя импортировать обратно для дальнейшего редактирования."
+          }
+        }
+      },
+      "layout": {
+        "heading": "Разметка",
+        "tooltip": {
+          "reset-layout": "Сбросить разметку"
+        }
+      },
+      "links": {
+        "bugs-features": {
+          "body": "Что-то мешает вам составить резюме? Или у вас есть отличная идея для нас? Откройте новый issue на GitHub.",
+          "button": "GitHub Issues",
+          "heading": "Нашли ошибку? Есть предложения?"
+        },
+        "donate": {
+          "body": "Если вам понравилось использовать Reactive Resume, пожалуйста, подумайте о том, чтобы пожертвовать как можно больше на поддержание приложения в рабочем состоянии, без рекламы и бесплатно навсегда.",
+          "button": "Купить мне кофе",
+          "heading": "Поддержать Reactive Resume"
+        },
+        "github": "Исходный код",
+        "heading": "Ссылки"
+      },
+      "settings": {
+        "global": {
+          "date": {
+            "primary": "Дата",
+            "secondary": "Формат даты, используемый во всем приложении"
+          },
+          "heading": "Глобальные",
+          "language": {
+            "primary": "Язык",
+            "secondary": "Язык интерфейса, используемый в приложении"
+          },
+          "theme": {
+            "primary": "Тема"
+          }
+        },
+        "heading": "Настройки",
+        "page": {
+          "break-line": {
+            "primary": "Линия разрыва",
+            "secondary": "Показывать линию, обозначающую высоту страницы A4"
+          },
+          "heading": "Страница",
+          "orientation": {
+            "disabled": "Недоступно, когда есть только одна страница",
+            "primary": "Расположение",
+            "secondary": "Располагать страницы горизонтально или вертикально"
+          }
+        },
+        "resume": {
+          "heading": "Резюме",
+          "reset": {
+            "primary": "Сбросить все",
+            "secondary": "Сделали слишком много ошибок? Нажмите здесь, чтобы сбросить все изменения и начать с нуля. Будьте осторожны, отменить это действие нельзя."
+          },
+          "sample": {
+            "primary": "Загрузить пример",
+            "secondary": "Не уверены, с чего начать? Нажмите здесь, чтобы загрузить некоторые примеры данных, чтобы увидеть, как выглядит законченное резюме."
+          }
+        }
+      },
+      "sharing": {
+        "heading": "Поделиться",
+        "short-url": {
+          "label": "Предпочитать короткий URL"
+        },
+        "visibility": {
+          "subtitle": "Разрешить всем, у кого есть ссылка, просматривать ваше резюме",
+          "title": "Public"
+        }
+      },
+      "templates": {
+        "heading": "Шаблоны"
+      },
+      "theme": {
+        "form": {
+          "background": {
+            "label": "Фон"
+          },
+          "primary": {
+            "label": "Основной"
+          },
+          "text": {
+            "label": "Текст"
+          }
+        },
+        "heading": "Тема"
+      },
+      "typography": {
+        "form": {
+          "font-family": {
+            "label": "Шрифт"
+          },
+          "font-size": {
+            "label": "Размер шрифта"
+          }
+        },
+        "heading": "Типография",
+        "widgets": {
+          "body": {
+            "label": "Основной"
+          },
+          "headings": {
+            "label": "Заголовки"
+          }
+        }
+      }
+    }
+  }
+}

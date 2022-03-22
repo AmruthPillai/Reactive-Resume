@@ -159,7 +159,7 @@ const SkillModal: React.FC = () => {
           render={({ field, fieldState }) => (
             <ArrayInput
               label={t('builder.common.form.keywords.label')}
-              value={field.value as string[]}
+              value={field.value}
               onChange={field.onChange}
               errors={fieldState.error}
               className="col-span-2"
