@@ -1,34 +1,34 @@
 version: '3'
 
-x-env: &env
+x-env-server: &env-server
   environment:
-  # App
-  - TZ=UTC
-  - SECRET_KEY=
-  # URLs
-  - PUBLIC_URL=http://<SERVER-IP>
-  - PUBLIC_SERVER_URL=http://<SERVER-IP>/api
-  # Database
-  - POSTGRES_HOST=localhost
-  - POSTGRES_PORT=5432
-  - POSTGRES_USERNAME=postgres
-  - POSTGRES_PASSWORD=postgres
-  - POSTGRES_DATABASE=postgres
-  - POSTGRES_SSL_CERT=
-  # Auth
-  - JWT_SECRET=
-  - JWT_EXPIRY_TIME=604800
-  # Google
-  - PUBLIC_GOOGLE_CLIENT_ID=
-  - GOOGLE_CLIENT_SECRET=
-  - GOOGLE_API_KEY=
-  # SendGrid (Optional)
-  - SENDGRID_API_KEY=
-  - SENDGRID_FORGOT_PASSWORD_TEMPLATE_ID=
-  - SENDGRID_FROM_NAME=
-  - SENDGRID_FROM_EMAIL=
-  # Flags (Optional)
-  - PUBLIC_FLAG_DISABLE_SIGNUPS=false
+    - TZ=UTC
+    - SECRET_KEY=
+    - PUBLIC_URL=http://<SERVER-IP>
+    - POSTGRES_HOST=localhost
+    - POSTGRES_PORT=5432
+    - POSTGRES_SSL_CERT=
+    - JWT_SECRET=
+    - JWT_EXPIRY_TIME=604800
+    - PUBLIC_GOOGLE_CLIENT_ID=
+    - GOOGLE_CLIENT_SECRET=
+    - GOOGLE_API_KEY=
+    - SENDGRID_API_KEY=
+    - SENDGRID_FORGOT_PASSWORD_TEMPLATE_ID=
+    - SENDGRID_FROM_NAME=
+    - SENDGRID_FROM_EMAIL=
+x-env-client: &env-client
+  environment:
+    - TZ=UTC
+    - PUBLIC_URL=http://<SERVER-IP>
+    - PUBLIC_SERVER_URL=http://<SERVER-IP>/api
+    - PUBLIC_GOOGLE_CLIENT_ID=
+x-env-postgres: &env-postgres
+  environment:
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=postgres
+    - POSTGRES_DATABASE=postgres
+    - POSTGRES_HOST=postgres
 
 services:
   postgres:
@@ -36,7 +36,7 @@ services:
     container_name: postgres
     ports:
       - 5432:5432
-    <<: *env
+    <<: *env-postgres
     volumes:
       - pgdata:/var/lib/postgresql/data
 
@@ -55,7 +55,8 @@ services:
   server:
     image: amruthpillai/reactive-resume:server-latest
     container_name: server
-    <<: *env
+    <<: *env-server
+    <<: *env-postgres
     environment:
       - POSTGRES_HOST=postgres
     depends_on:
@@ -72,7 +73,7 @@ services:
   client:
     image: amruthpillai/reactive-resume:client-latest
     container_name: client
-    <<: *env
+    <<: *env-client
     depends_on:
       - traefik
       - server
