@@ -6,7 +6,10 @@ services:
     container_name: postgres
     ports:
       - 5432:5432
-    env_file: .env
+    environment:
+      - POSTGRES_USER="postgres"
+      - POSTGRES_PASSWORD="postgres"
+      - POSTGRES_DATABASE="postgres"
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
@@ -32,9 +35,25 @@ services:
   server:
     image: amruthpillai/reactive-resume:server-latest
     container_name: server
-    env_file: .env
     environment:
-      - POSTGRES_HOST=postgres
+      - TZ="UTC"
+      - SECRET_KEY=""
+      - PUBLIC_URL="http://<SERVER-IP>"
+      - POSTGRES_HOST="postgres"
+      - POSTGRES_PORT="5432"
+      - POSTGRES_USERNAME="postgres"
+      - POSTGRES_PASSWORD="postgres"
+      - POSTGRES_DATABASE="postgres"
+      - POSTGRES_SSL_CERT=""
+      - JWT_SECRET=""
+      - JWT_EXPIRY_TIME="604800"
+      - PUBLIC_GOOGLE_CLIENT_ID=""
+      - GOOGLE_CLIENT_SECRET=""
+      - GOOGLE_API_KEY=""
+      - SENDGRID_API_KEY="" # Optional
+      - SENDGRID_FORGOT_PASSWORD_TEMPLATE_ID="" # Optional
+      - SENDGRID_FROM_NAME="" # Optional
+      - SENDGRID_FROM_EMAIL="" # Optional
     depends_on:
       - traefik
       - postgres
@@ -50,7 +69,11 @@ services:
   client:
     image: amruthpillai/reactive-resume:client-latest
     container_name: client
-    env_file: .env
+    environment:
+      - TZ="UTC"
+      - PUBLIC_URL="http://<SERVER-IP>"
+      - PUBLIC_SERVER_URL="http://<SERVER-IP>/api"
+      - PUBLIC_GOOGLE_CLIENT_ID=""
     depends_on:
       - traefik
       - server
