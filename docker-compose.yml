@@ -2,16 +2,26 @@ version: '3'
 
 services:
   postgres:
-    image: postgres
+    image: postgres:14.2-alpine
     container_name: postgres
     ports:
       - 5432:5432
-    env_file: .env
+    environment:
+      - POSTGRES_USER="postgres"
+      - POSTGRES_PASSWORD="postgres"
+      - POSTGRES_DATABASE="postgres"
     volumes:
       - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 30s
+      timeout: 30s
+      start_period: 15s
+      retries: 3
+    restart: always
 
   traefik:
-    image: traefik
+    image: traefik:rocamadour
     container_name: traefik
     command:
       - --providers.docker=true
@@ -25,9 +35,25 @@ services:
   server:
     image: amruthpillai/reactive-resume:server-latest
     container_name: server
-    env_file: .env
     environment:
-      - POSTGRES_HOST=postgres
+      - TZ="UTC"
+      - SECRET_KEY=""
+      - PUBLIC_URL="http://<SERVER-IP>"
+      - POSTGRES_HOST="postgres"
+      - POSTGRES_PORT="5432"
+      - POSTGRES_USERNAME="postgres"
+      - POSTGRES_PASSWORD="postgres"
+      - POSTGRES_DATABASE="postgres"
+      - POSTGRES_SSL_CERT=""
+      - JWT_SECRET=""
+      - JWT_EXPIRY_TIME="604800"
+      - PUBLIC_GOOGLE_CLIENT_ID=""
+      - GOOGLE_CLIENT_SECRET=""
+      - GOOGLE_API_KEY=""
+      - SENDGRID_API_KEY="" # Optional
+      - SENDGRID_FORGOT_PASSWORD_TEMPLATE_ID="" # Optional
+      - SENDGRID_FROM_NAME="" # Optional
+      - SENDGRID_FROM_EMAIL="" # Optional
     depends_on:
       - traefik
       - postgres
@@ -38,11 +64,16 @@ services:
       - traefik.http.routers.server.middlewares=server-stripprefix
       - traefik.http.middlewares.server-stripprefix.stripprefix.prefixes=/api
       - traefik.http.middlewares.server-stripprefix.stripprefix.forceslash=true
+    restart: always
 
   client:
     image: amruthpillai/reactive-resume:client-latest
     container_name: client
-    env_file: .env
+    environment:
+      - TZ="UTC"
+      - PUBLIC_URL="http://<SERVER-IP>"
+      - PUBLIC_SERVER_URL="http://<SERVER-IP>/api"
+      - PUBLIC_GOOGLE_CLIENT_ID=""
     depends_on:
       - traefik
       - server
@@ -50,6 +81,7 @@ services:
       - traefik.enable=true
       - traefik.http.routers.client.rule=Host(`<SERVER-IP>`)
       - traefik.http.routers.client.entrypoints=web
+    restart: always
 
 volumes:
   pgdata:
