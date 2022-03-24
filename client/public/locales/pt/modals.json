@@ -1,0 +1,136 @@
+{
+  "auth": {
+    "forgot-password": {
+      "actions": {
+        "send-email": "Enviar e-mail de redefinição de senha"
+      },
+      "body": "Basta inserir o endereço de e-mail associado à conta que você gostaria de recuperar.",
+      "form": {
+        "email": {
+          "label": "Endereço de e-mail"
+        }
+      },
+      "heading": "Esqueceu sua senha?",
+      "help-text": "Se a conta existir, você receberá um e-mail com um link para redefinir sua senha."
+    },
+    "login": {
+      "actions": {
+        "login": "Entrar",
+        "google": "Entrar com o Google"
+      },
+      "body": "Por favor, digite seu nome de usuário e senha associados à sua conta para fazer login e acessar, gerenciar e compartilhar seus currículos.",
+      "form": {
+        "password": {
+          "label": "Senha"
+        },
+        "username": {
+          "help-text": "Você também pode inserir seu endereço de e-mail",
+          "label": "Nome de Usuário"
+        }
+      },
+      "heading": "Acesse a sua conta",
+      "recover-text": "Caso tenha esquecido sua senha, você pode <1>recuperar sua conta</1> aqui.",
+      "register-text": "Se não tiver, você pode <1>criar uma conta</1> aqui."
+    },
+    "register": {
+      "actions": {
+        "register": "Registre-se",
+        "google": "Registre-se com o Google"
+      },
+      "body": "Por favor, insira suas informações pessoais para criar uma conta.",
+      "form": {
+        "confirm-password": {
+          "label": "Confirme a senha"
+        },
+        "email": {
+          "label": "Endereço de e-mail"
+        },
+        "name": {
+          "label": "Nome completo"
+        },
+        "password": {
+          "label": "Senha"
+        },
+        "username": {
+          "label": "Nome de usuário"
+        }
+      },
+      "heading": "Criar uma conta",
+      "loginText": "Se já tem uma conta, você pode <1>entrar aqui</1>."
+    },
+    "reset-password": {
+      "actions": {
+        "set-password": "Definir nova senha"
+      },
+      "body": "Digite uma nova senha para sua conta.",
+      "form": {
+        "confirm-password": {
+          "label": "Confirme a senha"
+        },
+        "password": {
+          "label": "Senha"
+        }
+      },
+      "heading": "Redefinir sua senha"
+    }
+  },
+  "dashboard": {
+    "create-resume": {
+      "actions": {
+        "create-resume": "Criar Currículo"
+      },
+      "body": "Comece a construir seu currículo dando-lhe um nome. Pode ser em referência ao cargo para o qual você está se candidatando ou apenas ao seu lanche favorito.",
+      "form": {
+        "name": {
+          "label": "Nome"
+        },
+        "public": {
+          "label": "É publicamente acessível?"
+        },
+        "slug": {
+          "label": "Endereço amigável"
+        }
+      },
+      "heading": "Criar um novo currículo"
+    },
+    "import-external": {
+      "heading": "Importar de fontes externas",
+      "json-resume": {
+        "actions": {
+          "upload-json": "Carregar JSON"
+        },
+        "body": "Se você possui um <1>currículo JSON válido</1>, poderá usá-lo para acelerar seu desenvolvimento no Reactive Resume. Clique no botão abaixo e carregue um arquivo JSON válido para começar.",
+        "heading": "Importar de um currículo JSON"
+      },
+      "linkedin": {
+        "actions": {
+          "upload-archive": "Carregar arquivo ZIP"
+        },
+        "body": "Você pode economizar tempo exportando seus dados do LinkedIn e usando-os para preencher automaticamente os campos no Reactive Resume. Vá para a seção <1>Privacidade dos Dados</1> no LinkedIn e solicite um arquivo com seus dados. Assim que estiver disponível, faça upload do arquivo ZIP abaixo.",
+        "heading": "Importar do LinkedIn"
+      },
+      "reactive-resume": {
+        "actions": {
+          "upload-json": "Carregar JSON",
+          "upload-json-v2": "Carregar JSON do v2"
+        },
+        "body": "Se você possuir um JSON que foi exportado com a versão atual do Reactive Resume, poderá importá-lo de volta aqui para obter uma versão editável novamente.",
+        "heading": "Importe do Reactive Resume"
+      }
+    },
+    "rename-resume": {
+      "actions": {
+        "rename-resume": "Renomear currículo"
+      },
+      "form": {
+        "name": {
+          "label": "Nome"
+        },
+        "slug": {
+          "label": "Endereço amigável"
+        }
+      },
+      "heading": "Renomear o seu currículo"
+    }
+  }
+}
