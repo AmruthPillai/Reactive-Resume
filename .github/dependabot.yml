@@ -1,47 +1,22 @@
 version: 2
 
 updates:
-  - package-ecosystem: "docker"
-    directory: "/server"
+  - package-ecosystem: 'docker'
+    directory: '/server'
     schedule:
-      interval: "weekly"
+      interval: 'weekly'
 
-  - package-ecosystem: "docker"
-    directory: "/client"
+  - package-ecosystem: 'docker'
+    directory: '/client'
     schedule:
-      interval: "weekly"
+      interval: 'weekly'
 
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'gradle'
+    directory: '/app'
     schedule:
-      interval: "weekly"
+      interval: 'weekly'
 
-  - package-ecosystem: "npm"
-    directory: "/client"
+  - package-ecosystem: 'github-actions'
+    directory: '/'
     schedule:
-      interval: "weekly"
-
-  - package-ecosystem: "npm"
-    directory: "/server"
-    schedule:
-      interval: "weekly"
-
-  - package-ecosystem: "npm"
-    directory: "/schema"
-    schedule:
-      interval: "weekly"
-
-  - package-ecosystem: "npm"
-    directory: "/docs"
-    schedule:
-      interval: "weekly"
-
-  - package-ecosystem: "gradle"
-    directory: "/app"
-    schedule:
-      interval: "weekly"
-
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "weekly"
+      interval: 'weekly'
