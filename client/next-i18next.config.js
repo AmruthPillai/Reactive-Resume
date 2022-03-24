@@ -17,6 +17,7 @@ const i18nConfig = {
       'ml',
       'nl',
       'pl',
+      'pt',
       'ru',
       'ta',
       'tr',

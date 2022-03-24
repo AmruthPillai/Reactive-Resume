@@ -50,6 +50,7 @@ You have complete control over what goes into your resume, how it looks, what co
 - Kannada (ಕನ್ನಡ)
 - Malayalam (മലയാളം)
 - Polish (Polski)
+- Portuguese (Português)
 - Russian (русский)
 - Spanish (Español)
 - Tamil (தமிழ்)
