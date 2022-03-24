@@ -22,8 +22,12 @@ export class AuthService {
     private jwtService: JwtService
   ) {}
 
+  private getRandomSaltRounds(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
   async register(registerDto: RegisterDto) {
-    const hashedPassword = await bcrypt.hash(registerDto.password, 10);
+    const hashedPassword = await bcrypt.hash(registerDto.password, this.getRandomSaltRounds(10, 20));
 
     try {
       const createdUser = await this.usersService.create({
@@ -74,7 +78,7 @@ export class AuthService {
 
   async resetPassword(resetPasswordDto: ResetPasswordDto) {
     const user = await this.usersService.findByResetToken(resetPasswordDto.resetToken);
-    const hashedPassword = await bcrypt.hash(resetPasswordDto.password, 10);
+    const hashedPassword = await bcrypt.hash(resetPasswordDto.password, this.getRandomSaltRounds(10, 20));
 
     await this.usersService.update(user.id, {
       password: hashedPassword,
