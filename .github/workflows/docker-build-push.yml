@@ -24,7 +24,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build and Push Client Image
-        uses: docker/build-push-action@v2.9.0
+        uses: docker/build-push-action@v2.10.0
         with:
           context: .
           push: true
@@ -52,7 +52,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build and Push Server Image
-        uses: docker/build-push-action@v2.9.0
+        uses: docker/build-push-action@v2.10.0
         with:
           context: .
           push: true
@@ -81,7 +81,7 @@ jobs:
           password: ${{ secrets.GH_TOKEN }}
 
       - name: Build and Push Client Image
-        uses: docker/build-push-action@v2.9.0
+        uses: docker/build-push-action@v2.10.0
         with:
           context: .
           push: true
@@ -110,7 +110,7 @@ jobs:
           password: ${{ secrets.GH_TOKEN }}
 
       - name: Build and Push Server Image
-        uses: docker/build-push-action@v2.9.0
+        uses: docker/build-push-action@v2.10.0
         with:
           context: .
           push: true
