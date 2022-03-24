@@ -1,69 +1,47 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates
-
 version: 2
+
 updates:
-  - package-ecosystem: "docker" # See documentation for possible values
-    directory: "/server" # Location of package manifests
+  - package-ecosystem: "docker"
+    directory: "/server"
     schedule:
-      interval: "daily"
-    assignees:
-      - "AmruthPillai"
+      interval: "weekly"
 
-  - package-ecosystem: "docker" # See documentation for possible values
-    directory: "/client" # Location of package manifests
+  - package-ecosystem: "docker"
+    directory: "/client"
     schedule:
-      interval: "daily"
-    assignees:
-      - "AmruthPillai"
+      interval: "weekly"
 
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "npm"
+    directory: "/"
     schedule:
-      interval: "daily"
-    assignees:
-      - "AmruthPillai"
+      interval: "weekly"
 
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/client" # Location of package manifests
+  - package-ecosystem: "npm"
+    directory: "/client"
     schedule:
-      interval: "daily"
-    assignees:
-      - "AmruthPillai"
+      interval: "weekly"
 
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/server" # Location of package manifests
+  - package-ecosystem: "npm"
+    directory: "/server"
     schedule:
-      interval: "daily"
-    assignees:
-      - "AmruthPillai"
+      interval: "weekly"
 
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/schema" # Location of package manifests
+  - package-ecosystem: "npm"
+    directory: "/schema"
     schedule:
-      interval: "daily"
-    assignees:
-      - "AmruthPillai"
+      interval: "weekly"
 
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/docs" # Location of package manifests
+  - package-ecosystem: "npm"
+    directory: "/docs"
     schedule:
-      interval: "daily"
-    assignees:
-      - "AmruthPillai"
+      interval: "weekly"
 
-  - package-ecosystem: "gradle" # See documentation for possible values
-    directory: "/app" # Location of package manifests
+  - package-ecosystem: "gradle"
+    directory: "/app"
     schedule:
-      interval: "daily"
-    assignees:
-      - "AmruthPillai"
+      interval: "weekly"
 
   - package-ecosystem: "github-actions"
-    directory: "/" # Location of package manifests
+    directory: "/"
     schedule:
-      interval: "daily"
-    assignees:
-      - "AmruthPillai"
+      interval: "weekly"
