@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/pc8Ingg.png" alt="Reactive Resume" width="256px" height="256px" />
+<img src="https://github.com/AmruthPillai/Reactive-Resume/blob/main/docs/static/logo.svg" alt="Reactive Resume" width="256px" height="256px" />
 
 # Reactive Resume
 
@@ -6,6 +6,7 @@
 [![Project License](https://img.shields.io/github/license/AmruthPillai/Reactive-Resume?style=flat-square)](https://github.com/AmruthPillai/Reactive-Resume/blob/main/LICENSE)
 [![Crowdin](https://badges.crowdin.net/reactive-resume/localized.svg)](https://translate.rxresu.me)
 [![Docker Pulls](https://img.shields.io/docker/pulls/amruthpillai/reactive-resume?style=flat-square)](https://hub.docker.com/r/amruthpillai/reactive-resume)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/AmruthPillai/Reactive-Resume/Build%20and%20Push%20Docker%20Image?label=docker%20build&style=flat-square)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FAmruthPillai%2FReactive-Resume.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FAmruthPillai%2FReactive-Resume?ref=badge_shield)
 
 ## [Go to App](https://rxresu.me) | [Docs](https://docs.rxresu.me)
