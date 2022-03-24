@@ -54,6 +54,13 @@ updates:
     assignees:
       - "AmruthPillai"
 
+  - package-ecosystem: "gradle" # See documentation for possible values
+    directory: "/app" # Location of package manifests
+    schedule:
+      interval: "daily"
+    assignees:
+      - "AmruthPillai"
+
   - package-ecosystem: "github-actions"
     directory: "/" # Location of package manifests
     schedule:
