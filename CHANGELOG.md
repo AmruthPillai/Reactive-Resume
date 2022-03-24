@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.10](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.9...v3.2.10) (2022-03-24)
+
+
+### Features
+
+* **i18n:** add portuguese (pt) language to i18n locales ([7f1c82c](https://github.com/AmruthPillai/Reactive-Resume/commit/7f1c82cd9185ebb44486a16132eb44d5c2fb747a))
+
 ### [3.2.9](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.8...v3.2.9) (2022-03-21)
 
 
