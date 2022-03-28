@@ -1,10 +1,16 @@
 .content {
-  @apply rounded p-6 text-sm shadow lg:w-1/2 xl:w-2/5;
+  @apply rounded px-6 text-sm shadow lg:w-1/2 xl:w-2/5;
   @apply absolute inset-4 sm:inset-x-4 sm:inset-y-auto lg:inset-auto;
   @apply overflow-scroll bg-neutral-50 dark:bg-neutral-900 lg:overflow-auto;
+  @apply max-h-[90vh] min-h-fit;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .header {
+  @apply sticky top-0 left-0 right-0 z-50 pt-6 bg-neutral-50 dark:bg-neutral-900;
   @apply flex items-center justify-between;
   @apply w-full border-b pb-5 dark:border-white/10;
 
@@ -27,6 +33,7 @@
 }
 
 .footer {
+  @apply sticky bottom-0 left-0 right-0 z-50 pb-6 bg-neutral-50 dark:bg-neutral-900;
   @apply flex items-center justify-end gap-x-4;
   @apply w-full border-t pt-5 dark:border-white/10;
 }
