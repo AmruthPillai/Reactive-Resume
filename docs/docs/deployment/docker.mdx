@@ -33,7 +33,7 @@ chmod +x ~/.docker/cli-plugins/docker-compose
 sudo chown $USER /var/run/docker.sock
 
 # Verify that Docker Compose is installed
-docker compose version
+docker-compose version
 ```
 
 3. Create a new folder to host your app, then create a docker-compose.yml file. The contents of the file can be identical to the one found on the project root.
@@ -59,7 +59,7 @@ traefik:
 5. Run the `up` command to check if everything is working as it should.
 
 ```
-docker compose up
+docker-compose up
 ```
 
 <img
