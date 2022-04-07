@@ -17,6 +17,15 @@ jobs:
         name: Get Version
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
 
+      # https://github.com/docker/setup-qemu-action#usage
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1.2.0
+    
+      # https://github.com/marketplace/actions/docker-setup-buildx
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v1.6.0
+
       - name: Login to Docker
         uses: docker/login-action@v1.14.1
         with:
@@ -29,6 +38,8 @@ jobs:
           context: .
           push: true
           file: client/Dockerfile
+          #platforms: linux/amd64,linux/arm64,linux/riscv64,linux/ppc64le,linux/s390x,linux/386,linux/mips64le,linux/mips64,linux/arm/v7,linux/arm/v6
+          platforms: linux/amd64,linux/arm/v7,linux/arm/v6,linux/arm64
           tags: |
             amruthpillai/reactive-resume:client-latest
             amruthpillai/reactive-resume:client-${{ steps.version.outputs.tag }}
@@ -45,6 +56,15 @@ jobs:
         name: Get Version
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
 
+      # https://github.com/docker/setup-qemu-action#usage
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1.2.0
+    
+      # https://github.com/marketplace/actions/docker-setup-buildx
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v1.6.0
+
       - name: Login to Docker
         uses: docker/login-action@v1.14.1
         with:
@@ -57,6 +77,8 @@ jobs:
           context: .
           push: true
           file: server/Dockerfile
+          #platforms: linux/amd64,linux/arm64,linux/riscv64,linux/ppc64le,linux/s390x,linux/386,linux/mips64le,linux/mips64,linux/arm/v7,linux/arm/v6
+          platforms: linux/amd64,linux/arm/v7,linux/arm/v6,linux/arm64
           tags: |
             amruthpillai/reactive-resume:server-latest
             amruthpillai/reactive-resume:server-${{ steps.version.outputs.tag }}
@@ -73,6 +95,15 @@ jobs:
         name: Get Version
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
 
+      # https://github.com/docker/setup-qemu-action#usage
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1.2.0
+    
+      # https://github.com/marketplace/actions/docker-setup-buildx
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v1.6.0
+
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v1.14.1
         with:
@@ -86,6 +117,8 @@ jobs:
           context: .
           push: true
           file: client/Dockerfile
+          #platforms: linux/amd64,linux/arm64,linux/riscv64,linux/ppc64le,linux/s390x,linux/386,linux/mips64le,linux/mips64,linux/arm/v7,linux/arm/v6
+          platforms: linux/amd64,linux/arm/v7,linux/arm/v6,linux/arm64
           tags: |
             ghcr.io/amruthpillai/reactive-resume:client-latest
             ghcr.io/amruthpillai/reactive-resume:client-${{ steps.version.outputs.tag }}
@@ -102,6 +135,15 @@ jobs:
         name: Get Version
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
 
+      # https://github.com/docker/setup-qemu-action#usage
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1.2.0
+    
+      # https://github.com/marketplace/actions/docker-setup-buildx
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v1.6.0
+
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v1.14.1
         with:
@@ -115,6 +157,8 @@ jobs:
           context: .
           push: true
           file: server/Dockerfile
+          #platforms: linux/amd64,linux/arm64,linux/riscv64,linux/ppc64le,linux/s390x,linux/386,linux/mips64le,linux/mips64,linux/arm/v7,linux/arm/v6
+          platforms: linux/amd64,linux/arm/v7,linux/arm/v6,linux/arm64
           tags: |
             ghcr.io/amruthpillai/reactive-resume:server-latest
             ghcr.io/amruthpillai/reactive-resume:server-${{ steps.version.outputs.tag }}
