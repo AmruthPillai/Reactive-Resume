@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.3.0](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.11...v3.3.0) (2022-04-08)
+
+
+### Features
+
+* **upgrade:** changes to code to support new template ([1df7810](https://github.com/AmruthPillai/Reactive-Resume/commit/1df78100ca0667ce9b7834cf2c25384eb21c67c2))
+
 ### [3.2.11](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.10...v3.2.11) (2022-03-28)
 
 ### [3.2.10](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.9...v3.2.10) (2022-03-24)
