@@ -9,6 +9,17 @@ All notable changes to this project will be documented in this file. See [standa
 
 * **upgrade:** changes to code to support new template ([1df7810](https://github.com/AmruthPillai/Reactive-Resume/commit/1df78100ca0667ce9b7834cf2c25384eb21c67c2))
 
+### What's Changed
+* New Crowdin updates by @AmruthPillai in https://github.com/AmruthPillai/Reactive-Resume/pull/791
+* Bump org.jetbrains.kotlin.android from 1.6.10 to 1.6.20 in /app by @dependabot in https://github.com/AmruthPillai/Reactive-Resume/pull/812
+* New Crowdin updates by @AmruthPillai in https://github.com/AmruthPillai/Reactive-Resume/pull/806
+* A new template - Leafish by @klejejs in https://github.com/AmruthPillai/Reactive-Resume/pull/811
+* Automatic multi-platform Docker image build by @schklom in https://github.com/AmruthPillai/Reactive-Resume/pull/817
+
+### New Contributors
+* @klejejs made their first contribution in https://github.com/AmruthPillai/Reactive-Resume/pull/811
+* @schklom made their first contribution in https://github.com/AmruthPillai/Reactive-Resume/pull/817
+
 ### [3.2.11](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.10...v3.2.11) (2022-03-28)
 
 ### [3.2.10](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.9...v3.2.10) (2022-03-24)
