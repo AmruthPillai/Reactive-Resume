@@ -4,6 +4,7 @@ import Castform from './Castform/Castform';
 import Gengar from './Gengar/Gengar';
 import Glalie from './Glalie/Glalie';
 import Kakuna from './Kakuna/Kakuna';
+import Leafish from './Leafish/Leafish';
 import Onyx from './Onyx/Onyx';
 import Pikachu from './Pikachu/Pikachu';
 
@@ -50,6 +51,12 @@ const templateMap: Record<string, TemplateMeta> = {
     name: 'Glalie',
     preview: '/images/templates/glalie.jpg',
     component: Glalie,
+  },
+  leafish: {
+    id: 'leafish',
+    name: 'Leafish',
+    preview: '/images/templates/leafish.jpg',
+    component: Leafish,
   },
 };
 
