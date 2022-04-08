@@ -125,25 +125,25 @@ const ListItem: React.FC<Props> = ({ item, index, title, subtitle, onMove, onEdi
             <ListItemIcon>
               <DriveFileRenameOutline className="scale-90" />
             </ListItemIcon>
-            <ListItemText>{t('builder.common.list.actions.edit')}</ListItemText>
+            <ListItemText>{t<string>('builder.common.list.actions.edit')}</ListItemText>
           </MenuItem>
 
           <MenuItem onClick={() => handleDuplicate(item)}>
             <ListItemIcon>
               <FileCopy className="scale-90" />
             </ListItemIcon>
-            <ListItemText>{t('builder.common.list.actions.duplicate')}</ListItemText>
+            <ListItemText>{t<string>('builder.common.list.actions.duplicate')}</ListItemText>
           </MenuItem>
 
           <Divider />
 
-          <Tooltip arrow placement="right" title={t('builder.common.tooltip.delete-item') as string}>
+          <Tooltip arrow placement="right" title={t<string>('builder.common.tooltip.delete-item')}>
             <div>
               <MenuItem onClick={() => handleDelete(item)}>
                 <ListItemIcon>
                   <DeleteOutline className="scale-90" />
                 </ListItemIcon>
-                <ListItemText>{t('builder.common.list.actions.delete')}</ListItemText>
+                <ListItemText>{t<string>('builder.common.list.actions.delete')}</ListItemText>
               </MenuItem>
             </div>
           </Tooltip>

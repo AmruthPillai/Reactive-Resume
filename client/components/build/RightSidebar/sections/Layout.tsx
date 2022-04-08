@@ -60,9 +60,9 @@ const Layout = () => {
     <>
       <Heading
         path="metadata.layout"
-        name={t('builder.rightSidebar.sections.layout.heading')}
+        name={t<string>('builder.rightSidebar.sections.layout.heading')}
         action={
-          <Tooltip title={t('builder.rightSidebar.sections.layout.tooltip.reset-layout') as string}>
+          <Tooltip title={t<string>('builder.rightSidebar.sections.layout.tooltip.reset-layout')}>
             <IconButton onClick={handleResetLayout}>
               <Restore />
             </IconButton>
@@ -76,12 +76,16 @@ const Layout = () => {
           <div key={pageIndex} className={styles.page}>
             <div className="flex items-center justify-between pr-3">
               <p className={styles.heading}>
-                {t('builder.common.glossary.page')} {pageIndex + 1}
+                {t<string>('builder.common.glossary.page')} {pageIndex + 1}
               </p>
 
               <div className={clsx(styles.delete, { hidden: pageIndex === 0 })}>
                 <Tooltip
-                  title={t('builder.common.actions.delete', { token: t('builder.common.glossary.page') }) as string}
+                  title={
+                    t<string>('builder.common.actions.delete', {
+                      token: t<string>('builder.common.glossary.page'),
+                    }) as string
+                  }
                 >
                   <IconButton size="small" onClick={() => handleDeletePage(pageIndex)}>
                     <Close fontSize="small" />
@@ -113,7 +117,7 @@ const Layout = () => {
                                     [styles.disabled]: !get(resumeSections, `${sectionId}.visible`, true),
                                   })}
                                 >
-                                  {get(resumeSections, `${sectionId}.name`)}
+                                  {get(resumeSections, `${sectionId}.name`, '')}
                                 </div>
                               </div>
                             )}
@@ -132,7 +136,7 @@ const Layout = () => {
 
         <div className="flex items-center justify-end">
           <Button variant="outlined" startIcon={<Add />} onClick={handleAddPage}>
-            {t('builder.common.actions.add', { token: t('builder.common.glossary.page') })}
+            {t<string>('builder.common.actions.add', { token: t<string>('builder.common.glossary.page') })}
           </Button>
         </div>
       </DragDropContext>

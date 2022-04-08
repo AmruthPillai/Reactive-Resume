@@ -33,7 +33,7 @@ const Dashboard: NextPage = () => {
     <div className={styles.container}>
       <Head>
         <title>
-          {t('dashboard.title')} | {t('common.title')}
+          {t<string>('dashboard.title')} | {t<string>('common.title')}
         </title>
       </Head>
 
@@ -51,15 +51,15 @@ const Dashboard: NextPage = () => {
         <ResumeCard
           modal="dashboard.create-resume"
           icon={Add}
-          title={t('dashboard.create-resume.title')}
-          subtitle={t('dashboard.create-resume.subtitle')}
+          title={t<string>('dashboard.create-resume.title')}
+          subtitle={t<string>('dashboard.create-resume.subtitle')}
         />
 
         <ResumeCard
           modal="dashboard.import-external"
           icon={ImportExport}
-          title={t('dashboard.import-external.title')}
-          subtitle={t('dashboard.import-external.subtitle')}
+          title={t<string>('dashboard.import-external.title')}
+          subtitle={t<string>('dashboard.import-external.subtitle')}
         />
 
         {data.map((resume) => (

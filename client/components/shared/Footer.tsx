@@ -10,7 +10,7 @@ const Footer: React.FC<Props> = ({ className }) => {
 
   return (
     <div className={clsx('text-xs', className)}>
-      <p>{t('common.footer.license')}</p>
+      <p>{t<string>('common.footer.license')}</p>
 
       <p>
         <Trans t={t} i18nKey="common.footer.credit">

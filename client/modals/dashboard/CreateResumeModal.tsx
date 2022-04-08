@@ -85,15 +85,15 @@ const CreateResumeModal: React.FC = () => {
     <BaseModal
       isOpen={isOpen}
       icon={<Add />}
-      heading={t('modals.dashboard.create-resume.heading')}
+      heading={t<string>('modals.dashboard.create-resume.heading')}
       handleClose={handleClose}
       footerChildren={
         <Button type="submit" disabled={isLoading} onClick={handleSubmit(onSubmit)}>
-          {t('modals.dashboard.create-resume.actions.create-resume')}
+          {t<string>('modals.dashboard.create-resume.actions.create-resume')}
         </Button>
       }
     >
-      <p>{t('modals.dashboard.create-resume.body')}</p>
+      <p>{t<string>('modals.dashboard.create-resume.body')}</p>
 
       <form className="grid gap-4">
         <Controller
@@ -102,7 +102,7 @@ const CreateResumeModal: React.FC = () => {
           render={({ field, fieldState }) => (
             <TextField
               autoFocus
-              label={t('modals.dashboard.create-resume.form.name.label')}
+              label={t<string>('modals.dashboard.create-resume.form.name.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -115,7 +115,7 @@ const CreateResumeModal: React.FC = () => {
           control={control}
           render={({ field, fieldState }) => (
             <TextField
-              label={t('modals.dashboard.create-resume.form.slug.label')}
+              label={t<string>('modals.dashboard.create-resume.form.slug.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -125,7 +125,7 @@ const CreateResumeModal: React.FC = () => {
 
         <FormGroup>
           <FormControlLabel
-            label={t('modals.dashboard.create-resume.form.public.label') as string}
+            label={t<string>('modals.dashboard.create-resume.form.public.label')}
             control={
               <Controller
                 name="isPublic"

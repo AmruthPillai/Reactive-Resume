@@ -47,8 +47,8 @@ const ReferenceModal: React.FC = () => {
   const item: FormData = get(payload, 'item', null);
   const isEditMode = useMemo(() => !!item, [item]);
 
-  const addText = useMemo(() => t('builder.common.actions.add', { token: heading }), [t, heading]);
-  const editText = useMemo(() => t('builder.common.actions.edit', { token: heading }), [t, heading]);
+  const addText = useMemo(() => t<string>('builder.common.actions.add', { token: heading }), [t, heading]);
+  const editText = useMemo(() => t<string>('builder.common.actions.edit', { token: heading }), [t, heading]);
 
   const { reset, control, handleSubmit } = useForm<FormData>({
     defaultValues: defaultState,
@@ -98,7 +98,7 @@ const ReferenceModal: React.FC = () => {
             <TextField
               required
               autoFocus
-              label={t('builder.common.form.name.label')}
+              label={t<string>('builder.common.form.name.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -112,7 +112,7 @@ const ReferenceModal: React.FC = () => {
           render={({ field, fieldState }) => (
             <TextField
               required
-              label={t('builder.leftSidebar.sections.references.form.relationship.label')}
+              label={t<string>('builder.leftSidebar.sections.references.form.relationship.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -125,7 +125,7 @@ const ReferenceModal: React.FC = () => {
           control={control}
           render={({ field, fieldState }) => (
             <TextField
-              label={t('builder.common.form.phone.label')}
+              label={t<string>('builder.common.form.phone.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -138,7 +138,7 @@ const ReferenceModal: React.FC = () => {
           control={control}
           render={({ field, fieldState }) => (
             <TextField
-              label={t('builder.common.form.email.label')}
+              label={t<string>('builder.common.form.email.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -154,7 +154,7 @@ const ReferenceModal: React.FC = () => {
               multiline
               minRows={3}
               maxRows={6}
-              label={t('builder.common.form.summary.label')}
+              label={t<string>('builder.common.form.summary.label')}
               className="col-span-2"
               error={!!fieldState.error}
               helperText={fieldState.error?.message || <MarkdownSupported />}

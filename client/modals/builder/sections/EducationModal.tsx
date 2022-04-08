@@ -63,8 +63,8 @@ const EducationModal: React.FC = () => {
   const item: FormData = get(payload, 'item', null);
   const isEditMode = useMemo(() => !!item, [item]);
 
-  const addText = useMemo(() => t('builder.common.actions.add', { token: heading }), [t, heading]);
-  const editText = useMemo(() => t('builder.common.actions.edit', { token: heading }), [t, heading]);
+  const addText = useMemo(() => t<string>('builder.common.actions.add', { token: heading }), [t, heading]);
+  const editText = useMemo(() => t<string>('builder.common.actions.edit', { token: heading }), [t, heading]);
 
   const { reset, control, handleSubmit } = useForm<FormData>({
     defaultValues: defaultState,
@@ -114,7 +114,7 @@ const EducationModal: React.FC = () => {
             <TextField
               required
               autoFocus
-              label={t('builder.leftSidebar.sections.education.form.institution.label')}
+              label={t<string>('builder.leftSidebar.sections.education.form.institution.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -128,7 +128,7 @@ const EducationModal: React.FC = () => {
           render={({ field, fieldState }) => (
             <TextField
               required
-              label={t('builder.leftSidebar.sections.education.form.degree.label')}
+              label={t<string>('builder.leftSidebar.sections.education.form.degree.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -141,7 +141,7 @@ const EducationModal: React.FC = () => {
           control={control}
           render={({ field, fieldState }) => (
             <TextField
-              label={t('builder.leftSidebar.sections.education.form.area-study.label')}
+              label={t<string>('builder.leftSidebar.sections.education.form.area-study.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -154,7 +154,7 @@ const EducationModal: React.FC = () => {
           control={control}
           render={({ field, fieldState }) => (
             <TextField
-              label={t('builder.leftSidebar.sections.education.form.grade.label')}
+              label={t<string>('builder.leftSidebar.sections.education.form.grade.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -169,7 +169,7 @@ const EducationModal: React.FC = () => {
             <DatePicker
               {...field}
               openTo="year"
-              label={t('builder.common.form.start-date.label')}
+              label={t<string>('builder.common.form.start-date.label')}
               views={['year', 'month', 'day']}
               onChange={(date: Date | null, keyboardInputValue: string | undefined) => {
                 isEmpty(keyboardInputValue) && field.onChange('');
@@ -193,7 +193,7 @@ const EducationModal: React.FC = () => {
             <DatePicker
               {...field}
               openTo="year"
-              label={t('builder.common.form.end-date.label')}
+              label={t<string>('builder.common.form.end-date.label')}
               views={['year', 'month', 'day']}
               onChange={(date: Date | null, keyboardInputValue: string | undefined) => {
                 isEmpty(keyboardInputValue) && field.onChange('');
@@ -203,7 +203,7 @@ const EducationModal: React.FC = () => {
                 <TextField
                   {...params}
                   error={!!fieldState.error}
-                  helperText={fieldState.error?.message || t('builder.common.form.end-date.help-text')}
+                  helperText={fieldState.error?.message || t<string>('builder.common.form.end-date.help-text')}
                 />
               )}
             />
@@ -215,7 +215,7 @@ const EducationModal: React.FC = () => {
           control={control}
           render={({ field, fieldState }) => (
             <TextField
-              label={t('builder.common.form.url.label')}
+              label={t<string>('builder.common.form.url.label')}
               placeholder="https://"
               className="col-span-2"
               error={!!fieldState.error}
@@ -233,7 +233,7 @@ const EducationModal: React.FC = () => {
               multiline
               minRows={3}
               maxRows={6}
-              label={t('builder.common.form.summary.label')}
+              label={t<string>('builder.common.form.summary.label')}
               className="col-span-2"
               error={!!fieldState.error}
               helperText={fieldState.error?.message || <MarkdownSupported />}
@@ -247,7 +247,7 @@ const EducationModal: React.FC = () => {
           control={control}
           render={({ field, fieldState }) => (
             <ArrayInput
-              label={t('builder.leftSidebar.sections.education.form.courses.label')}
+              label={t<string>('builder.leftSidebar.sections.education.form.courses.label')}
               value={field.value as string[]}
               onChange={field.onChange}
               errors={fieldState.error}

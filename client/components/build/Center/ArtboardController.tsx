@@ -52,7 +52,7 @@ const ArtboardController: React.FC<ReactZoomPanPinchRef> = ({ zoomIn, zoomOut, c
     const url = getResumeUrl(resume, { withHost: true });
     await navigator.clipboard.writeText(url);
 
-    toast.success(t('common.toast.success.resume-link-copied'));
+    toast.success(t<string>('common.toast.success.resume-link-copied'));
   };
 
   const handleExportPDF = async () => {
@@ -75,19 +75,19 @@ const ArtboardController: React.FC<ReactZoomPanPinchRef> = ({ zoomIn, zoomOut, c
       })}
     >
       <div className={styles.controller}>
-        <Tooltip arrow placement="top" title={t('builder.controller.tooltip.zoom-in') as string}>
+        <Tooltip arrow placement="top" title={t<string>('builder.controller.tooltip.zoom-in')}>
           <ButtonBase onClick={() => zoomIn(0.25)}>
             <ZoomIn fontSize="medium" />
           </ButtonBase>
         </Tooltip>
 
-        <Tooltip arrow placement="top" title={t('builder.controller.tooltip.zoom-out') as string}>
+        <Tooltip arrow placement="top" title={t<string>('builder.controller.tooltip.zoom-out')}>
           <ButtonBase onClick={() => zoomOut(0.25)}>
             <ZoomOut fontSize="medium" />
           </ButtonBase>
         </Tooltip>
 
-        <Tooltip arrow placement="top" title={t('builder.controller.tooltip.center-artboard') as string}>
+        <Tooltip arrow placement="top" title={t<string>('builder.controller.tooltip.center-artboard')}>
           <ButtonBase onClick={() => centerView(0.95)}>
             <FilterCenterFocus fontSize="medium" />
           </ButtonBase>
@@ -98,7 +98,7 @@ const ArtboardController: React.FC<ReactZoomPanPinchRef> = ({ zoomIn, zoomOut, c
         {isDesktop && (
           <>
             {pages.length > 1 && (
-              <Tooltip arrow placement="top" title={t('builder.controller.tooltip.toggle-orientation') as string}>
+              <Tooltip arrow placement="top" title={t<string>('builder.controller.tooltip.toggle-orientation')}>
                 <ButtonBase onClick={handleTogglePageOrientation}>
                   {orientation === 'vertical' ? (
                     <AlignHorizontalCenter fontSize="medium" />
@@ -109,13 +109,13 @@ const ArtboardController: React.FC<ReactZoomPanPinchRef> = ({ zoomIn, zoomOut, c
               </Tooltip>
             )}
 
-            <Tooltip arrow placement="top" title={t('builder.controller.tooltip.toggle-page-break-line') as string}>
+            <Tooltip arrow placement="top" title={t<string>('builder.controller.tooltip.toggle-page-break-line')}>
               <ButtonBase onClick={handleTogglePageBreakLine}>
                 <InsertPageBreak fontSize="medium" />
               </ButtonBase>
             </Tooltip>
 
-            <Tooltip arrow placement="top" title={t('builder.controller.tooltip.toggle-sidebars') as string}>
+            <Tooltip arrow placement="top" title={t<string>('builder.controller.tooltip.toggle-sidebars')}>
               <ButtonBase onClick={handleToggleSidebar}>
                 <ViewSidebar fontSize="medium" />
               </ButtonBase>
@@ -125,13 +125,13 @@ const ArtboardController: React.FC<ReactZoomPanPinchRef> = ({ zoomIn, zoomOut, c
           </>
         )}
 
-        <Tooltip arrow placement="top" title={t('builder.controller.tooltip.copy-link') as string}>
+        <Tooltip arrow placement="top" title={t<string>('builder.controller.tooltip.copy-link')}>
           <ButtonBase onClick={handleCopyLink}>
             <Link fontSize="medium" />
           </ButtonBase>
         </Tooltip>
 
-        <Tooltip arrow placement="top" title={t('builder.controller.tooltip.export-pdf') as string}>
+        <Tooltip arrow placement="top" title={t<string>('builder.controller.tooltip.export-pdf')}>
           <ButtonBase onClick={handleExportPDF} disabled={isLoading}>
             <Download fontSize="medium" />
           </ButtonBase>

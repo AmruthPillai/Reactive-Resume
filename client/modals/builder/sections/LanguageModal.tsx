@@ -42,8 +42,8 @@ const LanguageModal: React.FC = () => {
   const item: FormData = get(payload, 'item', null);
   const isEditMode = useMemo(() => !!item, [item]);
 
-  const addText = useMemo(() => t('builder.common.actions.add', { token: heading }), [t, heading]);
-  const editText = useMemo(() => t('builder.common.actions.edit', { token: heading }), [t, heading]);
+  const addText = useMemo(() => t<string>('builder.common.actions.add', { token: heading }), [t, heading]);
+  const editText = useMemo(() => t<string>('builder.common.actions.edit', { token: heading }), [t, heading]);
 
   const { reset, control, handleSubmit } = useForm<FormData>({
     defaultValues: defaultState,
@@ -93,7 +93,7 @@ const LanguageModal: React.FC = () => {
             <TextField
               required
               autoFocus
-              label={t('builder.common.form.name.label')}
+              label={t<string>('builder.common.form.name.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -107,7 +107,7 @@ const LanguageModal: React.FC = () => {
           render={({ field, fieldState }) => (
             <TextField
               required
-              label={t('builder.common.form.level.label')}
+              label={t<string>('builder.common.form.level.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -120,7 +120,7 @@ const LanguageModal: React.FC = () => {
           control={control}
           render={({ field }) => (
             <div className="col-span-2">
-              <h4 className="mb-3 font-semibold">{t('builder.common.form.levelNum.label')}</h4>
+              <h4 className="mb-3 font-semibold">{t<string>('builder.common.form.levelNum.label')}</h4>
 
               <div className="px-10">
                 <Slider
@@ -144,7 +144,7 @@ const LanguageModal: React.FC = () => {
                   defaultValue={0}
                   color="secondary"
                   valueLabelDisplay="auto"
-                  aria-label={t('builder.common.form.levelNum.label')}
+                  aria-label={t<string>('builder.common.form.levelNum.label')}
                 />
               </div>
             </div>

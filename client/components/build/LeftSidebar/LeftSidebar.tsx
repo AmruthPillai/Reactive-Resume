@@ -114,7 +114,9 @@ const LeftSidebar = () => {
 
           <div className="py-6 text-right">
             <Button fullWidth variant="outlined" startIcon={<Add />} onClick={handleAddSection}>
-              {t('builder.common.actions.add', { token: t('builder.leftSidebar.sections.section.heading') })}
+              {t<string>('builder.common.actions.add', {
+                token: t<string>('builder.leftSidebar.sections.section.heading'),
+              })}
             </Button>
           </div>
         </main>

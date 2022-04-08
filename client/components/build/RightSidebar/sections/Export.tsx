@@ -19,12 +19,12 @@ const Export = () => {
 
   const pdfListItemText = {
     normal: {
-      primary: t('builder.rightSidebar.sections.export.pdf.normal.primary'),
-      secondary: t('builder.rightSidebar.sections.export.pdf.normal.secondary'),
+      primary: t<string>('builder.rightSidebar.sections.export.pdf.normal.primary'),
+      secondary: t<string>('builder.rightSidebar.sections.export.pdf.normal.secondary'),
     },
     loading: {
-      primary: t('builder.rightSidebar.sections.export.pdf.loading.primary'),
-      secondary: t('builder.rightSidebar.sections.export.pdf.loading.secondary'),
+      primary: t<string>('builder.rightSidebar.sections.export.pdf.loading.primary'),
+      secondary: t<string>('builder.rightSidebar.sections.export.pdf.loading.secondary'),
     },
   };
 
@@ -53,7 +53,7 @@ const Export = () => {
 
   return (
     <>
-      <Heading path="metadata.export" name={t('builder.rightSidebar.sections.export.heading')} />
+      <Heading path="metadata.export" name={t<string>('builder.rightSidebar.sections.export.heading')} />
 
       <List sx={{ padding: 0 }}>
         <ListItem sx={{ padding: 0 }}>
@@ -61,8 +61,8 @@ const Export = () => {
             <Schema />
 
             <ListItemText
-              primary={t('builder.rightSidebar.sections.export.json.primary')}
-              secondary={t('builder.rightSidebar.sections.export.json.secondary')}
+              primary={t<string>('builder.rightSidebar.sections.export.json.primary')}
+              secondary={t<string>('builder.rightSidebar.sections.export.json.secondary')}
             />
           </ListItemButton>
         </ListItem>

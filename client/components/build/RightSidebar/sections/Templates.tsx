@@ -24,7 +24,7 @@ const Templates = () => {
 
   return (
     <>
-      <Heading path="metadata.templates" name={t('builder.rightSidebar.sections.templates.heading')} />
+      <Heading path="metadata.templates" name={t<string>('builder.rightSidebar.sections.templates.heading')} />
 
       <div className={styles.container}>
         {Object.values(templateMap).map((template) => (

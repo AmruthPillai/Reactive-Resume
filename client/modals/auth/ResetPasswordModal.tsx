@@ -65,15 +65,15 @@ const ResetPasswordModal: React.FC = () => {
     <BaseModal
       icon={<LockReset />}
       isOpen={isOpen}
-      heading={t('modals.auth.reset-password.heading')}
+      heading={t<string>('modals.auth.reset-password.heading')}
       handleClose={handleClose}
       footerChildren={
         <Button type="submit" disabled={isLoading} onClick={handleSubmit(onSubmit)}>
-          {t('modals.auth.reset-password.actions.set-password')}
+          {t<string>('modals.auth.reset-password.actions.set-password')}
         </Button>
       }
     >
-      <p>{t('modals.auth.reset-password.body')}</p>
+      <p>{t<string>('modals.auth.reset-password.body')}</p>
 
       <form className="grid gap-4 md:grid-cols-2">
         <Controller
@@ -83,7 +83,7 @@ const ResetPasswordModal: React.FC = () => {
             <TextField
               autoFocus
               type="password"
-              label={t('modals.auth.reset-password.form.password.label')}
+              label={t<string>('modals.auth.reset-password.form.password.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -97,7 +97,7 @@ const ResetPasswordModal: React.FC = () => {
           render={({ field, fieldState }) => (
             <TextField
               type="password"
-              label={t('modals.auth.reset-password.form.confirm-password.label')}
+              label={t<string>('modals.auth.reset-password.form.confirm-password.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}

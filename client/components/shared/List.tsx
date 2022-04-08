@@ -66,7 +66,7 @@ const List: React.FC<Props> = ({
   return (
     <DndProvider backend={HTML5Backend}>
       <div className={clsx(styles.container, className)}>
-        {isEmpty(list) && <div className={styles.empty}>{t('builder.common.list.empty-text')}</div>}
+        {isEmpty(list) && <div className={styles.empty}>{t<string>('builder.common.list.empty-text')}</div>}
 
         {list.map((item, index) => {
           const title = get(item, titleKey, '');

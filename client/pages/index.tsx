@@ -55,28 +55,28 @@ const Home: NextPage = () => {
         </div>
 
         <div className={styles.main}>
-          <h1>{t('common.title')}</h1>
+          <h1>{t<string>('common.title')}</h1>
 
-          <h2>{t('common.subtitle')}</h2>
+          <h2>{t<string>('common.subtitle')}</h2>
 
           <NoSSR>
             <div className={styles.buttonWrapper}>
               {isLoggedIn ? (
                 <>
                   <Link href="/dashboard" passHref>
-                    <Button>{t('landing.actions.app')}</Button>
+                    <Button>{t<string>('landing.actions.app')}</Button>
                   </Link>
 
                   <Button variant="outlined" onClick={handleLogout}>
-                    {t('landing.actions.logout')}
+                    {t<string>('landing.actions.logout')}
                   </Button>
                 </>
               ) : (
                 <>
-                  <Button onClick={handleLogin}>{t('landing.actions.login')}</Button>
+                  <Button onClick={handleLogin}>{t<string>('landing.actions.login')}</Button>
 
                   <Button variant="outlined" onClick={handleRegister} disabled={FLAG_DISABLE_SIGNUPS}>
-                    {t('landing.actions.register')}
+                    {t<string>('landing.actions.register')}
                   </Button>
                 </>
               )}
@@ -86,21 +86,21 @@ const Home: NextPage = () => {
       </div>
 
       <section className={styles.section}>
-        <h6>{t('landing.summary.heading')}</h6>
+        <h6>{t<string>('landing.summary.heading')}</h6>
 
-        <p>{t('landing.summary.body')}</p>
+        <p>{t<string>('landing.summary.body')}</p>
       </section>
 
       <section className={styles.section}>
-        <h6>{t('landing.features.heading')}</h6>
+        <h6>{t<string>('landing.features.heading')}</h6>
 
         <ul className="list-inside list-disc leading-loose">
-          <li>{t('landing.features.list.free')}</li>
-          <li>{t('landing.features.list.ads')}</li>
-          <li>{t('landing.features.list.tracking')}</li>
-          <li>{t('landing.features.list.languages')}</li>
-          <li>{t('landing.features.list.import')}</li>
-          <li>{t('landing.features.list.export')}</li>
+          <li>{t<string>('landing.features.list.free')}</li>
+          <li>{t<string>('landing.features.list.ads')}</li>
+          <li>{t<string>('landing.features.list.tracking')}</li>
+          <li>{t<string>('landing.features.list.languages')}</li>
+          <li>{t<string>('landing.features.list.import')}</li>
+          <li>{t<string>('landing.features.list.export')}</li>
           <li>
             <Trans t={t} i18nKey="landing.features.list.more">
               And a lot of exciting features,
@@ -113,7 +113,7 @@ const Home: NextPage = () => {
       </section>
 
       <section className={styles.section}>
-        <h6>{t('landing.screenshots.heading')}</h6>
+        <h6>{t<string>('landing.screenshots.heading')}</h6>
 
         <div className={styles.screenshots}>
           {screenshots.map(({ src, alt }) => (
@@ -125,7 +125,7 @@ const Home: NextPage = () => {
       </section>
 
       <section className={styles.section}>
-        <h6>{t('landing.testimonials.heading')}</h6>
+        <h6>{t<string>('landing.testimonials.heading')}</h6>
 
         <p className="my-3">
           <Trans t={t} i18nKey="landing.testimonials.body">
@@ -150,30 +150,30 @@ const Home: NextPage = () => {
       </section>
 
       <section className={styles.section}>
-        <h6>{t('landing.links.heading')}</h6>
+        <h6>{t<string>('landing.links.heading')}</h6>
 
         <div>
           <Link href="/meta/privacy" passHref>
             <Button variant="text" startIcon={<LinkIcon />}>
-              {t('landing.links.links.privacy')}
+              {t<string>('landing.links.links.privacy')}
             </Button>
           </Link>
 
           <Link href="/meta/service" passHref>
             <Button variant="text" startIcon={<LinkIcon />}>
-              {t('landing.links.links.service')}
+              {t<string>('landing.links.links.service')}
             </Button>
           </Link>
 
           <a href={GITHUB_URL} target="_blank" rel="noreferrer">
             <Button variant="text" startIcon={<LinkIcon />}>
-              {t('landing.links.links.github')}
+              {t<string>('landing.links.links.github')}
             </Button>
           </a>
 
           <a href={DONATION_URL} target="_blank" rel="noreferrer">
             <Button variant="text" startIcon={<LinkIcon />}>
-              {t('landing.links.links.donate')}
+              {t<string>('landing.links.links.donate')}
             </Button>
           </a>
         </div>

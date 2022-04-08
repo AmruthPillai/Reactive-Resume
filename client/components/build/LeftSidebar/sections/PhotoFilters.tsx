@@ -32,7 +32,7 @@ const PhotoFilters = () => {
   return (
     <div className="flex flex-col gap-2 p-5 dark:bg-neutral-800">
       <div>
-        <h4 className="font-medium">{t('builder.leftSidebar.sections.basics.photo-filters.size.heading')}</h4>
+        <h4 className="font-medium">{t<string>('builder.leftSidebar.sections.basics.photo-filters.size.heading')}</h4>
 
         <div className="mx-2">
           <Slider
@@ -54,18 +54,20 @@ const PhotoFilters = () => {
       <Divider />
 
       <div>
-        <h4 className="font-medium">{t('builder.leftSidebar.sections.basics.photo-filters.effects.heading')}</h4>
+        <h4 className="font-medium">
+          {t<string>('builder.leftSidebar.sections.basics.photo-filters.effects.heading')}
+        </h4>
 
         <div className="flex items-center">
           <FormControlLabel
-            label={t('builder.leftSidebar.sections.basics.photo-filters.effects.grayscale.label') as string}
+            label={t<string>('builder.leftSidebar.sections.basics.photo-filters.effects.grayscale.label')}
             control={
               <Checkbox color="secondary" checked={grayscale} onChange={(_, value) => handleSetGrayscale(value)} />
             }
           />
 
           <FormControlLabel
-            label={t('builder.leftSidebar.sections.basics.photo-filters.effects.border.label') as string}
+            label={t<string>('builder.leftSidebar.sections.basics.photo-filters.effects.border.label')}
             control={<Checkbox color="secondary" checked={border} onChange={(_, value) => handleSetBorder(value)} />}
           />
         </div>
@@ -74,7 +76,7 @@ const PhotoFilters = () => {
       <Divider />
 
       <div className="flex flex-col gap-2">
-        <h4 className="font-medium">{t('builder.leftSidebar.sections.basics.photo-filters.shape.heading')}</h4>
+        <h4 className="font-medium">{t<string>('builder.leftSidebar.sections.basics.photo-filters.shape.heading')}</h4>
 
         <ToggleButtonGroup exclusive value={shape} onChange={(_, value) => handleChangeShape(value)}>
           <ToggleButton size="small" value="square" className="w-14">

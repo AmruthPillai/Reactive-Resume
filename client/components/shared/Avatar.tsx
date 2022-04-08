@@ -56,12 +56,12 @@ const Avatar: React.FC<Props> = ({ size = 64 }) => {
       <Menu anchorEl={anchorEl} onClose={handleClose} open={Boolean(anchorEl)}>
         <MenuItem>
           <div>
-            <span className="text-xs opacity-50">{t('common.avatar.menu.greeting')}</span>
+            <span className="text-xs opacity-50">{t<string>('common.avatar.menu.greeting')}</span>
             <p>{user?.name}</p>
           </div>
         </MenuItem>
         <Divider />
-        <MenuItem onClick={handleLogout}>{t('common.avatar.menu.logout')}</MenuItem>
+        <MenuItem onClick={handleLogout}>{t<string>('common.avatar.menu.logout')}</MenuItem>
       </Menu>
     </>
   );

@@ -62,7 +62,7 @@ const Build: NextPage<Props> = ({ username, slug }) => {
     <div className={styles.container}>
       <Head>
         <title>
-          {resume.name} | {t('common.title')}
+          {resume.name} | {t<string>('common.title')}
         </title>
       </Head>
 

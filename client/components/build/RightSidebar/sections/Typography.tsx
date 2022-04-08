@@ -64,7 +64,7 @@ const Widgets: React.FC<WidgetProps> = ({ label, category }) => {
             step={1}
             marks={[
               { value: 12, label: '12px' },
-              { value: 24, label: t('builder.rightSidebar.sections.typography.form.font-size.label') },
+              { value: 24, label: t<string>('builder.rightSidebar.sections.typography.form.font-size.label') },
               { value: 36, label: '36px' },
             ]}
             valueLabelDisplay="auto"
@@ -82,7 +82,10 @@ const Widgets: React.FC<WidgetProps> = ({ label, category }) => {
           value={fonts.find((font) => font.family === family[category])}
           onChange={(_, font: Font | null) => handleChange('family', font)}
           renderInput={(params) => (
-            <TextField {...params} label={t('builder.rightSidebar.sections.typography.form.font-family.label')} />
+            <TextField
+              {...params}
+              label={t<string>('builder.rightSidebar.sections.typography.form.font-family.label')}
+            />
           )}
         />
       </div>
@@ -95,10 +98,13 @@ const Typography = () => {
 
   return (
     <>
-      <Heading path="metadata.typography" name={t('builder.rightSidebar.sections.typography.heading')} />
+      <Heading path="metadata.typography" name={t<string>('builder.rightSidebar.sections.typography.heading')} />
 
-      <Widgets label={t('builder.rightSidebar.sections.typography.widgets.headings.label')} category="heading" />
-      <Widgets label={t('builder.rightSidebar.sections.typography.widgets.body.label')} category="body" />
+      <Widgets
+        label={t<string>('builder.rightSidebar.sections.typography.widgets.headings.label')}
+        category="heading"
+      />
+      <Widgets label={t<string>('builder.rightSidebar.sections.typography.widgets.body.label')} category="body" />
     </>
   );
 };

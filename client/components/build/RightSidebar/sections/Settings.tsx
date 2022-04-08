@@ -85,13 +85,13 @@ const Settings = () => {
 
   return (
     <>
-      <Heading path="metadata.settings" name={t('builder.rightSidebar.sections.settings.heading')} />
+      <Heading path="metadata.settings" name={t<string>('builder.rightSidebar.sections.settings.heading')} />
 
       <List sx={{ padding: 0 }}>
         {/* Global Settings */}
         <>
           <ListSubheader className="rounded">
-            {t('builder.rightSidebar.sections.settings.global.heading')}
+            {t<string>('builder.rightSidebar.sections.settings.global.heading')}
           </ListSubheader>
 
           <ListItem>
@@ -99,7 +99,7 @@ const Settings = () => {
               <Palette />
             </ListItemIcon>
             <ListItemText
-              primary={t('builder.rightSidebar.sections.settings.global.theme.primary')}
+              primary={t<string>('builder.rightSidebar.sections.settings.global.theme.primary')}
               secondary={themeString}
             />
             <ThemeSwitch checked={isDarkMode} onChange={(_, value: boolean) => handleSetTheme(value)} />
@@ -108,8 +108,8 @@ const Settings = () => {
           <ListItem className="flex-col">
             <ListItemText
               className="w-full"
-              primary={t('builder.rightSidebar.sections.settings.global.date.primary')}
-              secondary={t('builder.rightSidebar.sections.settings.global.date.secondary')}
+              primary={t<string>('builder.rightSidebar.sections.settings.global.date.primary')}
+              secondary={t<string>('builder.rightSidebar.sections.settings.global.date.secondary')}
             />
             <Autocomplete<string, false, boolean, false>
               disableClearable
@@ -124,8 +124,8 @@ const Settings = () => {
           <ListItem className="flex-col">
             <ListItemText
               className="w-full"
-              primary={t('builder.rightSidebar.sections.settings.global.language.primary')}
-              secondary={t('builder.rightSidebar.sections.settings.global.language.secondary')}
+              primary={t<string>('builder.rightSidebar.sections.settings.global.language.primary')}
+              secondary={t<string>('builder.rightSidebar.sections.settings.global.language.secondary')}
             />
             <Autocomplete<Language, false, boolean, false>
               disableClearable
@@ -148,15 +148,17 @@ const Settings = () => {
 
         {/* Page Settings */}
         <>
-          <ListSubheader className="rounded">{t('builder.rightSidebar.sections.settings.page.heading')}</ListSubheader>
+          <ListSubheader className="rounded">
+            {t<string>('builder.rightSidebar.sections.settings.page.heading')}
+          </ListSubheader>
 
           <ListItem>
             <ListItemText
-              primary={t('builder.rightSidebar.sections.settings.page.orientation.primary')}
+              primary={t<string>('builder.rightSidebar.sections.settings.page.orientation.primary')}
               secondary={
                 pages.length === 1
-                  ? t('builder.rightSidebar.sections.settings.page.orientation.disabled')
-                  : t('builder.rightSidebar.sections.settings.page.orientation.secondary')
+                  ? t<string>('builder.rightSidebar.sections.settings.page.orientation.disabled')
+                  : t<string>('builder.rightSidebar.sections.settings.page.orientation.secondary')
               }
             />
             <Switch
@@ -169,8 +171,8 @@ const Settings = () => {
 
           <ListItem>
             <ListItemText
-              primary={t('builder.rightSidebar.sections.settings.page.break-line.primary')}
-              secondary={t('builder.rightSidebar.sections.settings.page.break-line.secondary')}
+              primary={t<string>('builder.rightSidebar.sections.settings.page.break-line.primary')}
+              secondary={t<string>('builder.rightSidebar.sections.settings.page.break-line.secondary')}
             />
             <Switch color="secondary" checked={breakLine} onChange={() => dispatch(togglePageBreakLine())} />
           </ListItem>
@@ -179,7 +181,7 @@ const Settings = () => {
         {/* Resume Settings */}
         <>
           <ListSubheader className="rounded">
-            {t('builder.rightSidebar.sections.settings.resume.heading')}
+            {t<string>('builder.rightSidebar.sections.settings.resume.heading')}
           </ListSubheader>
 
           <ListItem>
@@ -188,8 +190,8 @@ const Settings = () => {
                 <Anchor />
               </ListItemIcon>
               <ListItemText
-                primary={t('builder.rightSidebar.sections.settings.resume.sample.primary')}
-                secondary={t('builder.rightSidebar.sections.settings.resume.sample.secondary')}
+                primary={t<string>('builder.rightSidebar.sections.settings.resume.sample.primary')}
+                secondary={t<string>('builder.rightSidebar.sections.settings.resume.sample.secondary')}
               />
             </ListItemButton>
           </ListItem>
@@ -200,8 +202,8 @@ const Settings = () => {
                 <DeleteForever />
               </ListItemIcon>
               <ListItemText
-                primary={t('builder.rightSidebar.sections.settings.resume.reset.primary')}
-                secondary={t('builder.rightSidebar.sections.settings.resume.reset.secondary')}
+                primary={t<string>('builder.rightSidebar.sections.settings.resume.reset.primary')}
+                secondary={t<string>('builder.rightSidebar.sections.settings.resume.reset.secondary')}
               />
             </ListItemButton>
           </ListItem>

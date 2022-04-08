@@ -133,7 +133,7 @@ const Header = () => {
     const url = getResumeUrl(resume, { withHost: true });
     await navigator.clipboard.writeText(url);
 
-    toast.success(t('common.toast.success.resume-link-copied'));
+    toast.success(t<string>('common.toast.success.resume-link-copied'));
   };
 
   return (
@@ -166,14 +166,14 @@ const Header = () => {
               <ListItemIcon>
                 <DriveFileRenameOutline className="scale-90" />
               </ListItemIcon>
-              <ListItemText>{t('builder.header.menu.rename')}</ListItemText>
+              <ListItemText>{t<string>('builder.header.menu.rename')}</ListItemText>
             </MenuItem>
 
             <MenuItem onClick={handleDuplicate}>
               <ListItemIcon>
                 <CopyAll className="scale-90" />
               </ListItemIcon>
-              <ListItemText>{t('builder.header.menu.duplicate')}</ListItemText>
+              <ListItemText>{t<string>('builder.header.menu.duplicate')}</ListItemText>
             </MenuItem>
 
             {resume.public ? (
@@ -181,27 +181,27 @@ const Header = () => {
                 <ListItemIcon>
                   <LinkIcon className="scale-90" />
                 </ListItemIcon>
-                <ListItemText>{t('builder.header.menu.share-link')}</ListItemText>
+                <ListItemText>{t<string>('builder.header.menu.share-link')}</ListItemText>
               </MenuItem>
             ) : (
-              <Tooltip arrow placement="right" title={t('builder.header.menu.tooltips.share-link') as string}>
+              <Tooltip arrow placement="right" title={t<string>('builder.header.menu.tooltips.share-link')}>
                 <div>
                   <MenuItem>
                     <ListItemIcon>
                       <LinkIcon className="scale-90" />
                     </ListItemIcon>
-                    <ListItemText>{t('builder.header.menu.share-link')}</ListItemText>
+                    <ListItemText>{t<string>('builder.header.menu.share-link')}</ListItemText>
                   </MenuItem>
                 </div>
               </Tooltip>
             )}
 
-            <Tooltip arrow placement="right" title={t('builder.header.menu.tooltips.delete') as string}>
+            <Tooltip arrow placement="right" title={t<string>('builder.header.menu.tooltips.delete')}>
               <MenuItem onClick={handleDelete}>
                 <ListItemIcon>
                   <Delete className="scale-90" />
                 </ListItemIcon>
-                <ListItemText>{t('builder.header.menu.delete')}</ListItemText>
+                <ListItemText>{t<string>('builder.header.menu.delete')}</ListItemText>
               </MenuItem>
             </Tooltip>
           </Menu>
