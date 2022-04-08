@@ -7,14 +7,17 @@ x-env-shared: &env-shared
     - PUBLIC_SERVER_URL=http://localhost/api
     - PUBLIC_GOOGLE_CLIENT_ID=
 
+x-env-database: &env-database
+  environment:
+    - POSTGRES_DB=postgres
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=postgres
+
 x-env-server: &env-server
   environment:
     - SECRET_KEY=
     - POSTGRES_HOST=postgres
     - POSTGRES_PORT=5432
-    - POSTGRES_USER=postgres
-    - POSTGRES_PASSWORD=postgres
-    - POSTGRES_DATABASE=postgres
     - POSTGRES_SSL_CERT=
     - JWT_SECRET=
     - JWT_EXPIRY_TIME=604800
@@ -34,6 +37,9 @@ services:
   postgres:
     image: postgres:14.2-alpine
     container_name: postgres
+    <<: *env-database
+    ports:
+      - 5432:5432
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
@@ -60,7 +66,8 @@ services:
     image: amruthpillai/reactive-resume:server-latest
     container_name: server
     <<: *env-shared
-    <<: *env-server 
+    <<: *env-server
+    <<: *env-database
     depends_on:
       - traefik
       - postgres

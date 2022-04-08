@@ -34,22 +34,22 @@
     "start": "env-cmd --silent concurrently --kill-others \"pnpm run start:*\""
   },
   "dependencies": {
-    "concurrently": "^7.0.0",
+    "concurrently": "^7.1.0",
     "env-cmd": "^10.1.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.16.0",
-    "@typescript-eslint/parser": "^5.16.0",
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
+    "@typescript-eslint/parser": "^5.18.0",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.11.0",
+    "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^7.0.4",
-    "prettier": "^2.6.0",
+    "prettier": "^2.6.2",
     "standard-version": "^9.3.2",
-    "typescript": "^4.5.5"
+    "typescript": "^4.6.3"
   }
 }
