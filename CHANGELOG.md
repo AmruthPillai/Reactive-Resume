@@ -9,12 +9,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 * **types/react:** downgrade to <18 ([fc77b54](https://github.com/AmruthPillai/Reactive-Resume/commit/fc77b548d8d61530b2d158ff83f088bed12d5080))
 
-### [3.3.2](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.3.0...v3.3.1) (2022-04-08)
-
-### Bug Fixes
-
-* **types/react:** downgrade to <18 ([fc77b54](https://github.com/AmruthPillai/Reactive-Resume/commit/fc77b548d8d61530b2d158ff83f088bed12d5080))
-
 ### [3.3.1](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.3.0...v3.3.1) (2022-04-08)
 
 ## [3.3.0](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.2.11...v3.3.0) (2022-04-08)
