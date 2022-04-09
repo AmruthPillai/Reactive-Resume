@@ -3,6 +3,7 @@
   "ignorePatterns": [".next", "__ENV.js"],
   "rules": {
     "@next/next/no-img-element": "off",
-    "@next/next/no-sync-scripts": "off"
+    "@next/next/no-sync-scripts": "off",
+    "@next/next/no-html-link-for-pages": [2, "client/pages"]
   }
 }
