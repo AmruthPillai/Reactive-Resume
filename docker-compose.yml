@@ -1,49 +1,13 @@
 version: '3'
 
-x-env-shared: &env-shared
-  environment:
-    - TZ=UTC
-    - PUBLIC_URL=http://localhost
-    - PUBLIC_SERVER_URL=http://localhost/api
-    - PUBLIC_GOOGLE_CLIENT_ID=
-
-x-env-database: &env-database
-  environment:
-    - POSTGRES_DB=postgres
-    - POSTGRES_USER=postgres
-    - POSTGRES_PASSWORD=postgres
-
-x-env-server: &env-server
-  environment:
-    - SECRET_KEY=
-    - POSTGRES_HOST=postgres
-    - POSTGRES_PORT=5432
-    - POSTGRES_SSL_CERT=
-    - JWT_SECRET=
-    - JWT_EXPIRY_TIME=604800
-    - PUBLIC_GOOGLE_CLIENT_ID=
-    - GOOGLE_CLIENT_SECRET=
-    - GOOGLE_API_KEY=
-    - SENDGRID_API_KEY=
-    - SENDGRID_FORGOT_PASSWORD_TEMPLATE_ID=
-    - SENDGRID_FROM_NAME=
-    - SENDGRID_FROM_EMAIL=
-    - STORAGE_BUCKET=
-    - STORAGE_REGION=
-    - STORAGE_ENDPOINT=
-    - STORAGE_URL_PREFIX=
-    - STORAGE_ACCESS_KEY=
-    - STORAGE_SECRET_KEY=
-
-x-env-flags: &env-flags
-  environment:
-    - PUBLIC_FLAG_DISABLE_SIGNUPS=false
-
 services:
   postgres:
     image: postgres:14.2-alpine
     container_name: postgres
-    <<: *env-database
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
     ports:
       - 5432:5432
     volumes:
@@ -71,9 +35,32 @@ services:
   server:
     image: amruthpillai/reactive-resume:server-latest
     container_name: server
-    <<: *env-shared
-    <<: *env-server
-    <<: *env-database
+    environment:
+      - TZ=UTC
+      - PUBLIC_URL=http://localhost:3000
+      - PUBLIC_SERVER_URL=http://localhost:3000/api
+      - PUBLIC_GOOGLE_CLIENT_ID=
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - SECRET_KEY=
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_SSL_CERT=
+      - JWT_SECRET=
+      - JWT_EXPIRY_TIME=604800
+      - GOOGLE_CLIENT_SECRET=
+      - GOOGLE_API_KEY=
+      - SENDGRID_API_KEY=
+      - SENDGRID_FORGOT_PASSWORD_TEMPLATE_ID=
+      - SENDGRID_FROM_NAME=
+      - SENDGRID_FROM_EMAIL=
+      - STORAGE_BUCKET=
+      - STORAGE_REGION=
+      - STORAGE_ENDPOINT=
+      - STORAGE_URL_PREFIX=
+      - STORAGE_ACCESS_KEY=
+      - STORAGE_SECRET_KEY=
     depends_on:
       - traefik
       - postgres
@@ -89,8 +76,12 @@ services:
   client:
     image: amruthpillai/reactive-resume:client-latest
     container_name: client
-    <<: *env-shared
-    <<: *env-flags
+    environment:
+      - TZ=UTC
+      - PUBLIC_URL=http://localhost:3000
+      - PUBLIC_SERVER_URL=http://localhost:3000/api
+      - PUBLIC_GOOGLE_CLIENT_ID=
+      - PUBLIC_FLAG_DISABLE_SIGNUPS=false
     depends_on:
       - traefik
       - server
