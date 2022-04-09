@@ -13,6 +13,7 @@ import {
   FaStackOverflow,
   FaTelegram,
   FaTwitter,
+  FaXing,
   FaYoutube,
 } from 'react-icons/fa';
 
@@ -29,6 +30,7 @@ const profileIconMap: Record<string, JSX.Element> = {
   gitlab: <FaGitlab />,
   telegram: <FaTelegram />,
   skype: <FaSkype />,
+  xing: <FaXing />,
   youtube: <FaYoutube />,
 };
 
