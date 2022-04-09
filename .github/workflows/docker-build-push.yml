@@ -5,8 +5,8 @@ on:
     types: [published]
 
 jobs:
-  docker_client:
-    name: Docker (Client)
+  client:
+    name: Client
     runs-on: ubuntu-latest
 
     steps:
@@ -28,7 +28,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          
+
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v1.14.1
         with:
@@ -49,8 +49,8 @@ jobs:
             ghcr.io/amruthpillai/reactive-resume:client-latest
             ghcr.io/amruthpillai/reactive-resume:client-${{ steps.version.outputs.tag }}
 
-  docker_server:
-    name: Docker (Server)
+  server:
+    name: Server
     runs-on: ubuntu-latest
 
     steps:
@@ -72,7 +72,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          
+
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v1.14.1
         with:
