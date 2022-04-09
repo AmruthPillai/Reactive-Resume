@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.3.3](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.3.2...v3.3.3) (2022-04-09)
+
+
+### Features
+
+* **profile:** add XING profile icon ([1e59f73](https://github.com/AmruthPillai/Reactive-Resume/commit/1e59f73f79a91d0264c0d2108906ee89d4eb27f8)), closes [#821](https://github.com/AmruthPillai/Reactive-Resume/issues/821)
+* **s3:** implement non-ephemeral storage through S3/DO Spaces ([feb911a](https://github.com/AmruthPillai/Reactive-Resume/commit/feb911aea06bacf58ea933d2803a2a89fe36e57b))
+
 ### [3.3.2](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.3.1...v3.3.2) (2022-04-08)
 
 
