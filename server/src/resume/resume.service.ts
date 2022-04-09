@@ -1,11 +1,11 @@
+import { DeleteObjectCommand, PutObjectCommand, S3, S3Client } from '@aws-sdk/client-s3';
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Resume as ResumeSchema } from '@reactive-resume/schema';
-import { unlink } from 'fs/promises';
 import { pick, sample, set } from 'lodash';
 import { nanoid } from 'nanoid';
-import { join } from 'path';
+import { extname } from 'path';
 import { Repository } from 'typeorm';
 
 import { PostgresErrorCode } from '@/database/errorCodes.enum';
@@ -22,11 +22,22 @@ export const SHORT_ID_LENGTH = 8;
 
 @Injectable()
 export class ResumeService {
+  private s3Client: S3Client;
+
   constructor(
     @InjectRepository(Resume) private resumeRepository: Repository<Resume>,
     private configService: ConfigService,
     private usersService: UsersService
-  ) {}
+  ) {
+    this.s3Client = new S3({
+      endpoint: configService.get<string>('storage.endpoint'),
+      region: configService.get<string>('storage.region'),
+      credentials: {
+        accessKeyId: configService.get<string>('storage.accessKey'),
+        secretAccessKey: configService.get<string>('storage.secretKey'),
+      },
+    });
+  }
 
   async create(createResumeDto: CreateResumeDto, userId: number) {
     try {
@@ -216,22 +227,44 @@ export class ResumeService {
     return this.resumeRepository.update(id, nextResume);
   }
 
-  async uploadPhoto(id: number, userId: number, filename: string) {
+  async uploadPhoto(id: number, userId: number, file: Express.Multer.File) {
     const resume = await this.findOne(id, userId);
 
-    const url = `/api/assets/uploads/${userId}/${id}/${filename}`;
-    const updatedResume = set(resume, 'basics.photo.url', url);
+    const urlPrefix = this.configService.get<string>('storage.urlPrefix');
+    const filename = new Date().getTime() + extname(file.originalname);
+    const key = `uploads/${userId}/${id}/${filename}`;
+
+    await this.s3Client.send(
+      new PutObjectCommand({
+        Bucket: this.configService.get<string>('storage.bucket'),
+        Key: key,
+        Body: file.buffer,
+        ACL: 'public-read',
+      })
+    );
+
+    const publicUrl = urlPrefix + key;
+
+    const updatedResume = set(resume, 'basics.photo.url', publicUrl);
 
     return this.resumeRepository.save<Resume>(updatedResume);
   }
 
   async deletePhoto(id: number, userId: number) {
     const resume = await this.findOne(id, userId);
-    const filepath = new URL(resume.basics.photo.url).pathname;
-    const photoPath = join(__dirname, '..', `assets/${filepath}`);
-    const updatedResume = set(resume, 'basics.photo.url', '');
 
-    await unlink(photoPath);
+    const urlPrefix = this.configService.get<string>('storage.urlPrefix');
+    const publicUrl = resume.basics.photo.url;
+    const key = publicUrl.replace(urlPrefix, '');
+
+    await this.s3Client.send(
+      new DeleteObjectCommand({
+        Bucket: this.configService.get<string>('storage.bucket'),
+        Key: key,
+      })
+    );
+
+    const updatedResume = set(resume, 'basics.photo.url', '');
 
     return this.resumeRepository.save<Resume>(updatedResume);
   }

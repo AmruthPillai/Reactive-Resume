@@ -28,6 +28,12 @@ x-env-server: &env-server
     - SENDGRID_FORGOT_PASSWORD_TEMPLATE_ID=
     - SENDGRID_FROM_NAME=
     - SENDGRID_FROM_EMAIL=
+    - STORAGE_BUCKET=
+    - STORAGE_REGION=
+    - STORAGE_ENDPOINT=
+    - STORAGE_URL_PREFIX=
+    - STORAGE_ACCESS_KEY=
+    - STORAGE_SECRET_KEY=
 
 x-env-flags: &env-flags
   environment:

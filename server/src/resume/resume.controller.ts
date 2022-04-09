@@ -99,7 +99,7 @@ export class ResumeController {
   @Put(':id/photo')
   @UseInterceptors(FileInterceptor('file'))
   async uploadPhoto(@Param('id') id: string, @User('id') userId: number, @UploadedFile() file: Express.Multer.File) {
-    return this.resumeService.uploadPhoto(+id, userId, file.filename);
+    return this.resumeService.uploadPhoto(+id, userId, file);
   }
 
   @UseGuards(JwtAuthGuard)
