@@ -34,6 +34,9 @@ services:
 
   server:
     image: amruthpillai/reactive-resume:server-latest
+    # build:
+    #   context: .
+    #   dockerfile: ./server/Dockerfile
     container_name: server
     environment:
       - TZ=UTC
@@ -75,6 +78,9 @@ services:
 
   client:
     image: amruthpillai/reactive-resume:client-latest
+    # build:
+    #   context: .
+    #   dockerfile: ./client/Dockerfile
     container_name: client
     environment:
       - TZ=UTC
