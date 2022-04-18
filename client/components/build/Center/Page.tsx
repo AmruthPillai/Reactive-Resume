@@ -48,7 +48,7 @@ const Page: React.FC<Props> = ({ page, showPageNumbers = false }) => {
       </div>
 
       {showPageNumbers && (
-        <h4 className={styles.pageNumber}>{`${t<string>('builder.common.glossary.page')} {page + 1}`}</h4>
+        <h4 className={styles.pageNumber}>{`${t<string>('builder.common.glossary.page')} ${page + 1}`}</h4>
       )}
     </div>
   );
