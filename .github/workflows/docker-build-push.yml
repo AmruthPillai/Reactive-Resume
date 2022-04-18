@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@v3.0.0
+        uses: actions/checkout@v3.0.1
 
       - id: version
         name: Get Version
@@ -55,7 +55,7 @@ jobs:
 
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@v3.0.0
+        uses: actions/checkout@v3.0.1
 
       - id: version
         name: Get Version
