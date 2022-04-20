@@ -1,0 +1,358 @@
+{
+  "common": {
+    "actions": {
+      "add": "Lägg till {{token}}",
+      "delete": "Ta bort {{token}}",
+      "edit": "Redigera {{token}}"
+    },
+    "columns": {
+      "heading": "Kolumner",
+      "tooltip": "Ändra antalet kolumner"
+    },
+    "form": {
+      "date": {
+        "label": "Datum"
+      },
+      "description": {
+        "label": "Beskrivning"
+      },
+      "email": {
+        "label": "E-postadress"
+      },
+      "end-date": {
+        "help-text": "Lämna fältet blankt, om fortfarande aktuellt",
+        "label": "Slutdatum"
+      },
+      "keywords": {
+        "label": "Nyckelord"
+      },
+      "level": {
+        "label": "Nivå"
+      },
+      "levelNum": {
+        "label": "Nivå (siffror)"
+      },
+      "name": {
+        "label": "Namn"
+      },
+      "phone": {
+        "label": "Telefonnummer"
+      },
+      "position": {
+        "label": "Position"
+      },
+      "start-date": {
+        "label": "Startdatum"
+      },
+      "subtitle": {
+        "label": "Undertitel"
+      },
+      "summary": {
+        "label": "Sammanfattning"
+      },
+      "title": {
+        "label": "Titel"
+      },
+      "url": {
+        "label": "Webbplats"
+      }
+    },
+    "glossary": {
+      "page": "Sida"
+    },
+    "list": {
+      "actions": {
+        "delete": "Ta bort",
+        "duplicate": "Duplicera",
+        "edit": "Redigera"
+      },
+      "empty-text": "Denna lista är tom."
+    },
+    "tooltip": {
+      "delete-item": "Är du säker på att du vill ta bort det här objektet? Detta är en oåterkallelig handling.",
+      "delete-section": "Ta bort avsnitt",
+      "rename-section": "Döp om avsnitt",
+      "toggle-visibility": "Visa/dölj"
+    }
+  },
+  "controller": {
+    "tooltip": {
+      "center-artboard": "Centrera Artboard",
+      "copy-link": "Kopiera länken till CV:et",
+      "export-pdf": "Exportera som PDF",
+      "toggle-orientation": "Byt sidans orientering",
+      "toggle-page-break-line": "Visa/dölj Sidbrytningslinjer",
+      "toggle-sidebars": "Visa/dölj Sidpanelen",
+      "zoom-in": "Zooma in",
+      "zoom-out": "Zooma Ut"
+    }
+  },
+  "header": {
+    "menu": {
+      "delete": "Ta bort",
+      "duplicate": "Duplicera",
+      "rename": "Ändra Namn",
+      "share-link": "Dela länk",
+      "tooltips": {
+        "delete": "Är du säker du vill ta bort detta CV? Detta går ej att ångra.",
+        "share-link": "Du måste ändra synligheten av ditt CV till offentligt för att göra det synligt för andra."
+      }
+    }
+  },
+  "leftSidebar": {
+    "sections": {
+      "awards": {
+        "form": {
+          "awarder": {
+            "label": "Utmärkelser"
+          }
+        }
+      },
+      "basics": {
+        "actions": {
+          "photo-filters": "Fotofilter"
+        },
+        "heading": "Grunder",
+        "headline": {
+          "label": "Rubrik"
+        },
+        "name": {
+          "label": "Fullständigt namn"
+        },
+        "photo-filters": {
+          "effects": {
+            "border": {
+              "label": "Kant"
+            },
+            "grayscale": {
+              "label": "Gråskala"
+            },
+            "heading": "Effekter"
+          },
+          "shape": {
+            "heading": "Form"
+          },
+          "size": {
+            "heading": "Storlek (i pixlar)"
+          }
+        },
+        "photo-upload": {
+          "tooltip": {
+            "remove": "Ta bort bild",
+            "upload": "Ladda upp bild"
+          }
+        }
+      },
+      "certifications": {
+        "form": {
+          "issuer": {
+            "label": "Utgivare"
+          }
+        }
+      },
+      "education": {
+        "form": {
+          "area-study": {
+            "label": "Studieinriktning"
+          },
+          "courses": {
+            "label": "Kurser"
+          },
+          "degree": {
+            "label": "Examen"
+          },
+          "grade": {
+            "label": "Betyg"
+          },
+          "institution": {
+            "label": "Institution"
+          }
+        }
+      },
+      "location": {
+        "address": {
+          "label": "Adress"
+        },
+        "city": {
+          "label": "Ort"
+        },
+        "country": {
+          "label": "Land"
+        },
+        "heading": "Plats",
+        "postal-code": {
+          "label": "Postnummer"
+        },
+        "region": {
+          "label": "Län"
+        }
+      },
+      "profiles": {
+        "form": {
+          "network": {
+            "label": "Nätverk"
+          },
+          "username": {
+            "label": "Användarnamn"
+          }
+        },
+        "heading": "Profiler",
+        "heading_one": "Profil"
+      },
+      "publications": {
+        "form": {
+          "publisher": {
+            "label": "Utgivare"
+          }
+        }
+      },
+      "references": {
+        "form": {
+          "relationship": {
+            "label": "Relation"
+          }
+        }
+      },
+      "section": {
+        "heading": "Sektion"
+      },
+      "volunteer": {
+        "form": {
+          "organization": {
+            "label": "Organisation"
+          }
+        }
+      }
+    }
+  },
+  "rightSidebar": {
+    "sections": {
+      "css": {
+        "heading": "Anpassad CSS"
+      },
+      "export": {
+        "heading": "Exportera",
+        "json": {
+          "primary": "JSON",
+          "secondary": "Ladda ner en JSON-version av ditt CV som kan importeras tillbaka till Reactive Resume."
+        },
+        "pdf": {
+          "loading": {
+            "primary": "Genererar PDF",
+            "secondary": "Vänligen vänta medans din PDF genereras, detta kan ta upp till 15 sekunder."
+          },
+          "normal": {
+            "primary": "PDF",
+            "secondary": "Ladda ner en PDF av ditt CV som du kan skriva ut och skicka till ditt drömjobb. Den här filen kan inte importeras tillbaka för ytterligare redigering."
+          }
+        }
+      },
+      "layout": {
+        "heading": "Layout",
+        "tooltip": {
+          "reset-layout": "Återställ layout"
+        }
+      },
+      "links": {
+        "bugs-features": {
+          "body": "Något som hindrar dig från att göra ett CV? Eller har du en fantastisk idé att lägga till? Starta en issue på GitHub för att komma igång.",
+          "button": "GitHub Issues",
+          "heading": "Buggar? Funktionsförslag?"
+        },
+        "donate": {
+          "body": "Om du gillade att använda Reactive Resume, överväg att donera så mycket som möjligt för att hålla appen igång utan annonser och gratis för alltid.",
+          "button": "Köp mig en kaffe",
+          "heading": "Donera till Reactive Resume"
+        },
+        "github": "Källkod",
+        "heading": "Länkar"
+      },
+      "settings": {
+        "global": {
+          "date": {
+            "primary": "Datum",
+            "secondary": "Datumformat som ska användas i hela appen"
+          },
+          "heading": "Globalt",
+          "language": {
+            "primary": "Språk",
+            "secondary": "Visa det språk som ska användas i hela appen"
+          },
+          "theme": {
+            "primary": "Tema"
+          }
+        },
+        "heading": "Inställningar",
+        "page": {
+          "break-line": {
+            "primary": "Radbrytning",
+            "secondary": "Visa en linje på alla sidor för att markera höjden på en A4-sida"
+          },
+          "heading": "Sida",
+          "orientation": {
+            "disabled": "Har ingen effekt när det bara finns en sida",
+            "primary": "Orientering",
+            "secondary": "Om sidor ska visas horisontellt eller vertikalt"
+          }
+        },
+        "resume": {
+          "heading": "CV",
+          "reset": {
+            "primary": "Återställ allt",
+            "secondary": "Har du gjort för många misstag? Klicka här för att återställa alla ändringar och börja om från början. Var försiktig, den här åtgärden kan inte återställas."
+          },
+          "sample": {
+            "primary": "Läs in exempeldata",
+            "secondary": "Vet du inte var du ska börja? Klicka här för att ladda några exempel för att se hur ett komplett CV ser ut."
+          }
+        }
+      },
+      "sharing": {
+        "heading": "Delning",
+        "short-url": {
+          "label": "Föredra kort URL"
+        },
+        "visibility": {
+          "subtitle": "Tillåt alla med en länk att se ditt CV",
+          "title": "Publik"
+        }
+      },
+      "templates": {
+        "heading": "Mallar"
+      },
+      "theme": {
+        "form": {
+          "background": {
+            "label": "Bakgrund"
+          },
+          "primary": {
+            "label": "Primär"
+          },
+          "text": {
+            "label": "Text"
+          }
+        },
+        "heading": "Tema"
+      },
+      "typography": {
+        "form": {
+          "font-family": {
+            "label": "Typsnittsfamilj"
+          },
+          "font-size": {
+            "label": "Textstorlek"
+          }
+        },
+        "heading": "Typografi",
+        "widgets": {
+          "body": {
+            "label": "Innehåll"
+          },
+          "headings": {
+            "label": "Rubriker"
+          }
+        }
+      }
+    }
+  }
+}
