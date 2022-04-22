@@ -1,0 +1,136 @@
+{
+  "auth": {
+    "forgot-password": {
+      "actions": {
+        "send-email": "Skicka e-post för återställning av lösenord"
+      },
+      "body": "Ange bara e-postadressen som är kopplad till kontot du vill återställa.",
+      "form": {
+        "email": {
+          "label": "E-postadress"
+        }
+      },
+      "heading": "Glömt ditt lösenord?",
+      "help-text": "Om kontot finns får du ett e-postmeddelande med en länk för att återställa ditt lösenord."
+    },
+    "login": {
+      "actions": {
+        "login": "Logga in",
+        "google": "Logga in med Google"
+      },
+      "body": "Vänligen ange ditt användarnamn och lösenord som är kopplat till ditt konto för att logga in och komma åt, hantera och dela dina CV.",
+      "form": {
+        "password": {
+          "label": "Lösenord"
+        },
+        "username": {
+          "help-text": "Du kan också ange din e-postadress",
+          "label": "Användarnamn"
+        }
+      },
+      "heading": "Logga in på ditt konto",
+      "recover-text": "Om du har glömt ditt lösenord kan du <1>återställa ditt konto</1> här.",
+      "register-text": "Om du inte har ett kan du <1>skapa ett konto</1> här."
+    },
+    "register": {
+      "actions": {
+        "register": "Registrera",
+        "google": "Registrera dig med Google"
+      },
+      "body": "Ange dina personliga uppgifter för att skapa ett konto.",
+      "form": {
+        "confirm-password": {
+          "label": "Bekräfta lösenord"
+        },
+        "email": {
+          "label": "E-postadress"
+        },
+        "name": {
+          "label": "Fullständigt namn"
+        },
+        "password": {
+          "label": "Lösenord"
+        },
+        "username": {
+          "label": "Användarnamn"
+        }
+      },
+      "heading": "Skapa ett konto",
+      "loginText": "Om du redan har ett konto kan du <1>logga in här</1> ."
+    },
+    "reset-password": {
+      "actions": {
+        "set-password": "Ange nytt lösenord"
+      },
+      "body": "Ange ett nytt lösenord för ditt konto.",
+      "form": {
+        "confirm-password": {
+          "label": "Bekräfta lösenord"
+        },
+        "password": {
+          "label": "Lösenord"
+        }
+      },
+      "heading": "Återställ ditt lösenord"
+    }
+  },
+  "dashboard": {
+    "create-resume": {
+      "actions": {
+        "create-resume": "Skapa CV"
+      },
+      "body": "Börja bygga ditt CV genom att ge det ett namn. Det kan vara med hänvisning till rollen du söker, eller bara ditt favoritmellanmål.",
+      "form": {
+        "name": {
+          "label": "Namn"
+        },
+        "public": {
+          "label": "Är allmänt tillgängligt?"
+        },
+        "slug": {
+          "label": "Permalänk"
+        }
+      },
+      "heading": "Skapa ett nytt CV"
+    },
+    "import-external": {
+      "heading": "Importera från externa källor",
+      "json-resume": {
+        "actions": {
+          "upload-json": "Ladda upp JSON"
+        },
+        "body": "Om du har ett <1>validerat JSON CV</1> redo att användas, kan du använda det för att snabba upp din utveckling på Reactive Resume. Klicka på knappen nedan och ladda upp en giltig JSON-fil för att börja.",
+        "heading": "Importera från JSON CV"
+      },
+      "linkedin": {
+        "actions": {
+          "upload-archive": "Ladda upp ZIP-arkiv"
+        },
+        "body": "Du kan spara tid genom att exportera dina uppgifter från LinkedIn och använda dem för att automatiskt fylla i fälten i Reactive Resume. Gå till avsnittet <1>Dataintegritet</1> på LinkedIn och begär ett arkiv av dina uppgifter. När det är tillgängligt laddar du upp ZIP-filen nedan.",
+        "heading": "Importera från LinkedIn"
+      },
+      "reactive-resume": {
+        "actions": {
+          "upload-json": "Ladda upp JSON",
+          "upload-json-v2": "Ladda upp JSON från v2"
+        },
+        "body": "Om du har en JSON som exporterades med den aktuella versionen av Reactive Resume, kan du importera den tillbaka hit för att få en redigerbar version igen.",
+        "heading": "Importera från Reactive Resume"
+      }
+    },
+    "rename-resume": {
+      "actions": {
+        "rename-resume": "Byt namn på CV"
+      },
+      "form": {
+        "name": {
+          "label": "Namn"
+        },
+        "slug": {
+          "label": "Permalänk"
+        }
+      },
+      "heading": "Byt namn på ditt CV"
+    }
+  }
+}
