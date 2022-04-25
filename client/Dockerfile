@@ -1,4 +1,4 @@
-FROM node:17-alpine as dependencies
+FROM node:18-alpine as dependencies
 
 RUN apk add --no-cache curl g++ make python3 \
   && curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm
@@ -11,7 +11,7 @@ COPY ./client/package.json ./client/package.json
 
 RUN pnpm install --frozen-lockfile
 
-FROM node:17-alpine as builder
+FROM node:18-alpine as builder
 
 RUN apk add --no-cache curl g++ make python3 \
   && curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm
@@ -27,7 +27,7 @@ COPY --from=dependencies /app/client/node_modules ./client/node_modules
 RUN pnpm run build:schema
 RUN pnpm run build:client
 
-FROM node:17-alpine as production
+FROM node:18-alpine as production
 
 WORKDIR /app
 
