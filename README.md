@@ -15,6 +15,19 @@ Reactive Resume is a free and open source resume builder that’s built to make 
 
 You have complete control over what goes into your resume, how it looks, what colors, what templates, even the layout in which sections placed. Want a dark mode resume? It’s as easy as editing 3 values and you’re done. You don’t need to wait to see your changes either. Everything you type, everything you change, appears immediately on your resume and gets updated in real time.
 
+## Table of Contents
+
+- [Features](#features)
+- [Languages](#languages)
+- [Tutorial](#tutorial)
+- [Build from Source](#build-from-source)
+- [Contributing](#contributing)
+- [Report Bugs and Feature Requests](#report-bugs-and-feature-requests)
+- [Donations](#donations)
+- [Infrastructure](#infrastructure)
+- [Contributors Wall](#contributors-wall)
+- [License](#license)
+
 ## Features
 
 - Free, forever
@@ -79,7 +92,7 @@ This project makes use of [conventional commits](https://www.conventionalcommits
 
 NOTE: Be sure to merge the latest from `main` before making a pull request!
 
-## Bugs? Feature Requests?
+## Report Bugs and Feature Requests
 
 Use the [GitHub Issues](https://github.com/AmruthPillai/Reactive-Resume/issues/new/choose) platform to notify me about bugs or new features that you would like to see in Reactive Resume. Please check before creating new issues as there might already be one.
 
