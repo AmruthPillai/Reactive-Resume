@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.4.1](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.4.0...v3.4.1) (2022-04-30)
+
+
+### Bug Fixes
+
+* **typeorm:** update typeorm to latest 0.2.x for secpatch ([5bdb92b](https://github.com/AmruthPillai/Reactive-Resume/commit/5bdb92b1cff9e56879f9bbf31801d6554a00a8d5))
+
 ### [3.4.0](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.3.3...v3.4.0) (2022-04-30)
 
 ### [3.3.4](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.3.3...v3.3.4) (2022-04-09)
