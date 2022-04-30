@@ -1,14 +1,17 @@
-import { Email, Phone, Public, Room } from '@mui/icons-material';
+import { Cake, Email, Phone, Public, Room } from '@mui/icons-material';
+import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import React from 'react';
 
 import { useAppSelector } from '@/store/hooks';
 import DataDisplay from '@/templates/shared/DataDisplay';
+import { formatDateString } from '@/utils/date';
 import getProfileIcon from '@/utils/getProfileIcon';
 import { addHttp, formatLocation, getPhotoClassNames } from '@/utils/template';
 
 const Masthead = () => {
-  const { name, photo, email, phone, website, headline, location, profiles } = useAppSelector(
+  const dateFormat: string = useAppSelector((state) => get(state.resume, 'metadata.date.format'));
+  const { name, photo, email, phone, website, birthdate, headline, location, profiles } = useAppSelector(
     (state) => state.resume.basics
   );
 
@@ -32,6 +35,8 @@ const Masthead = () => {
       </div>
 
       <div className="flex flex-wrap justify-center gap-3">
+        <DataDisplay icon={<Cake />}>{formatDateString(birthdate, dateFormat)}</DataDisplay>
+
         <DataDisplay icon={<Email />} link={`mailto:${email}`}>
           {email}
         </DataDisplay>

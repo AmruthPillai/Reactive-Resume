@@ -1,4 +1,4 @@
-import { Email, Phone, Public, Room } from '@mui/icons-material';
+import { Cake, Email, Phone, Public, Room } from '@mui/icons-material';
 import { Theme } from '@reactive-resume/schema';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
@@ -7,12 +7,16 @@ import { useMemo } from 'react';
 import Markdown from '@/components/shared/Markdown';
 import { useAppSelector } from '@/store/hooks';
 import DataDisplay from '@/templates/shared/DataDisplay';
+import { formatDateString } from '@/utils/date';
 import getProfileIcon from '@/utils/getProfileIcon';
 import { getContrastColor } from '@/utils/styles';
 import { addHttp, formatLocation, getPhotoClassNames } from '@/utils/template';
 
 export const MastheadSidebar: React.FC = () => {
-  const { name, photo, email, phone, website, location, profiles } = useAppSelector((state) => state.resume.basics);
+  const dateFormat: string = useAppSelector((state) => get(state.resume, 'metadata.date.format'));
+  const { name, photo, email, phone, birthdate, website, location, profiles } = useAppSelector(
+    (state) => state.resume.basics
+  );
 
   return (
     <div className="col-span-2 grid justify-items-left gap-4">
@@ -29,6 +33,10 @@ export const MastheadSidebar: React.FC = () => {
       <div className="flex flex-col gap-2">
         <DataDisplay icon={<Room />} className="text-xs">
           {formatLocation(location)}
+        </DataDisplay>
+
+        <DataDisplay icon={<Cake />} className="text-xs">
+          {formatDateString(birthdate, dateFormat)}
         </DataDisplay>
 
         <DataDisplay icon={<Email />} className="text-xs" link={`mailto:${email}`}>

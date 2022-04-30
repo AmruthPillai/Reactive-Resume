@@ -5,7 +5,6 @@ import { Button, TextField } from '@mui/material';
 import Joi from 'joi';
 import { isEmpty } from 'lodash';
 import { Trans, useTranslation } from 'next-i18next';
-import { GoogleLoginResponse, GoogleLoginResponseOffline, useGoogleLogin } from 'react-google-login';
 import { Controller, useForm } from 'react-hook-form';
 import { useMutation } from 'react-query';
 
@@ -14,6 +13,8 @@ import { loginWithGoogle, LoginWithGoogleParams, register as registerUser, Regis
 import { ServerError } from '@/services/axios';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
+
+declare const google: any;
 
 type FormData = {
   name: string;
@@ -63,15 +64,6 @@ const RegisterModal: React.FC = () => {
     loginWithGoogle
   );
 
-  const { signIn } = useGoogleLogin({
-    clientId: env('GOOGLE_CLIENT_ID'),
-    onSuccess: async (response: GoogleLoginResponse | GoogleLoginResponseOffline) => {
-      await loginWithGoogleMutation({ accessToken: (response as GoogleLoginResponse).accessToken });
-
-      handleClose();
-    },
-  });
-
   const handleClose = () => {
     dispatch(setModalState({ modal: 'auth.register', state: { open: false } }));
     reset();
@@ -87,8 +79,18 @@ const RegisterModal: React.FC = () => {
     dispatch(setModalState({ modal: 'auth.login', state: { open: true } }));
   };
 
-  const handleLoginWithGoogle = () => {
-    signIn();
+  const handleLoginWithGoogle = async () => {
+    google.accounts.id.initialize({
+      client_id: env('GOOGLE_CLIENT_ID'),
+      callback: async (response: any) => {
+        await loginWithGoogleMutation({ credential: response.credential });
+
+        handleClose();
+      },
+      auto_select: false,
+    });
+
+    google.accounts.id.prompt();
   };
 
   return (

@@ -13,7 +13,7 @@ export type LoginParams = {
 };
 
 export type LoginWithGoogleParams = {
-  accessToken: string;
+  credential: string;
 };
 
 export type RegisterParams = {

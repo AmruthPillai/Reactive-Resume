@@ -1,13 +1,16 @@
-import { Email, Phone, Public, Room } from '@mui/icons-material';
+import { Cake, Email, Phone, Public, Room } from '@mui/icons-material';
+import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 
 import { useAppSelector } from '@/store/hooks';
 import DataDisplay from '@/templates/shared/DataDisplay';
+import { formatDateString } from '@/utils/date';
 import getProfileIcon from '@/utils/getProfileIcon';
 import { addHttp, formatLocation, getPhotoClassNames } from '@/utils/template';
 
 const Masthead: React.FC = () => {
-  const { name, photo, email, phone, website, headline, location, profiles } = useAppSelector(
+  const dateFormat: string = useAppSelector((state) => get(state.resume, 'metadata.date.format'));
+  const { name, photo, email, phone, website, birthdate, headline, location, profiles } = useAppSelector(
     (state) => state.resume.basics
   );
 
@@ -33,6 +36,10 @@ const Masthead: React.FC = () => {
           </DataDisplay>
 
           <div className="flex items-center gap-2">
+            <DataDisplay icon={<Cake />} className="text-xs">
+              {formatDateString(birthdate, dateFormat)}
+            </DataDisplay>
+
             <DataDisplay icon={<Email />} className="text-xs" link={`mailto:${email}`}>
               {email}
             </DataDisplay>

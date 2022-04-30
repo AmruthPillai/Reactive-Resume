@@ -6,7 +6,6 @@ import Joi from 'joi';
 import { isEmpty } from 'lodash';
 import { Trans, useTranslation } from 'next-i18next';
 import { useMemo, useState } from 'react';
-import { GoogleLoginResponse, GoogleLoginResponseOffline, useGoogleLogin } from 'react-google-login';
 import { Controller, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { useIsMutating, useMutation } from 'react-query';
@@ -17,6 +16,8 @@ import { login, LoginParams, loginWithGoogle, LoginWithGoogleParams } from '@/se
 import { ServerError } from '@/services/axios';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
+
+declare const google: any;
 
 type FormData = {
   identifier: string;
@@ -56,15 +57,6 @@ const LoginModal: React.FC = () => {
     loginWithGoogle
   );
 
-  const { signIn } = useGoogleLogin({
-    clientId: env('GOOGLE_CLIENT_ID'),
-    onSuccess: async (response: GoogleLoginResponse | GoogleLoginResponseOffline) => {
-      await loginWithGoogleMutation({ accessToken: (response as GoogleLoginResponse).accessToken });
-
-      handleClose();
-    },
-  });
-
   const handleClose = () => {
     dispatch(setModalState({ modal: 'auth.login', state: { open: false } }));
     reset();
@@ -93,8 +85,18 @@ const LoginModal: React.FC = () => {
     dispatch(setModalState({ modal: 'auth.forgot', state: { open: true } }));
   };
 
-  const handleLoginWithGoogle = () => {
-    signIn();
+  const handleLoginWithGoogle = async () => {
+    google.accounts.id.initialize({
+      client_id: env('GOOGLE_CLIENT_ID'),
+      callback: async (response: any) => {
+        await loginWithGoogleMutation({ credential: response.credential });
+
+        handleClose();
+      },
+      auto_select: false,
+    });
+
+    google.accounts.id.prompt();
   };
 
   const PasswordVisibility = (): React.ReactElement => {

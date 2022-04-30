@@ -1,4 +1,4 @@
-import { Email, Phone, Public, Room } from '@mui/icons-material';
+import { Cake, Email, Phone, Public, Room } from '@mui/icons-material';
 import { alpha } from '@mui/material';
 import { Theme } from '@reactive-resume/schema';
 import get from 'lodash/get';
@@ -6,11 +6,13 @@ import isEmpty from 'lodash/isEmpty';
 
 import { useAppSelector } from '@/store/hooks';
 import DataDisplay from '@/templates/shared/DataDisplay';
+import { formatDateString } from '@/utils/date';
 import getProfileIcon from '@/utils/getProfileIcon';
 import { addHttp, formatLocation, getPhotoClassNames } from '@/utils/template';
 
 const Masthead: React.FC = () => {
-  const { name, photo, headline, summary, email, phone, website, location, profiles } = useAppSelector(
+  const dateFormat: string = useAppSelector((state) => get(state.resume, 'metadata.date.format'));
+  const { name, photo, headline, summary, email, phone, birthdate, website, location, profiles } = useAppSelector(
     (state) => state.resume.basics
   );
   const theme: Theme = useAppSelector((state) => get(state.resume, 'metadata.theme', {}));
@@ -48,6 +50,12 @@ const Masthead: React.FC = () => {
         id="Masterhead_data"
         style={{ backgroundColor: alpha(theme.primary, 0.4), gridTemplateColumns: `repeat(2, minmax(0, 1fr))` }}
       >
+        <DataDisplay icon={<Room />} className="col-span-2">
+          {formatLocation(location)}
+        </DataDisplay>
+
+        <DataDisplay icon={<Cake />}>{formatDateString(birthdate, dateFormat)}</DataDisplay>
+
         <DataDisplay icon={<Email />} link={`mailto:${email}`}>
           {email}
         </DataDisplay>
@@ -59,8 +67,6 @@ const Masthead: React.FC = () => {
         <DataDisplay icon={<Public />} link={addHttp(website)}>
           {website}
         </DataDisplay>
-
-        <DataDisplay icon={<Room />}>{formatLocation(location)}</DataDisplay>
 
         {profiles.map(({ id, username, network, url }) => (
           <DataDisplay key={id} icon={getProfileIcon(network)} link={url && addHttp(url)}>

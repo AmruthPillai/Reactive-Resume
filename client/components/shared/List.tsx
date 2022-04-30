@@ -76,6 +76,7 @@ const List: React.FC<Props> = ({
           return (
             <ListItem
               key={item.id}
+              path={path}
               item={item}
               index={index}
               title={title}

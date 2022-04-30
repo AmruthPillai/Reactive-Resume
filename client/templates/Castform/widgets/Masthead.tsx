@@ -1,5 +1,5 @@
 import { css } from '@emotion/css';
-import { Email, Phone, Public, Room } from '@mui/icons-material';
+import { Cake, Email, Phone, Public, Room } from '@mui/icons-material';
 import { Theme } from '@reactive-resume/schema';
 import clsx from 'clsx';
 import get from 'lodash/get';
@@ -9,12 +9,14 @@ import { useMemo } from 'react';
 import Markdown from '@/components/shared/Markdown';
 import { useAppSelector } from '@/store/hooks';
 import DataDisplay from '@/templates/shared/DataDisplay';
+import { formatDateString } from '@/utils/date';
 import getProfileIcon from '@/utils/getProfileIcon';
 import { getContrastColor } from '@/utils/styles';
 import { addHttp, formatLocation, getPhotoClassNames } from '@/utils/template';
 
 export const MastheadSidebar: React.FC = () => {
-  const { name, headline, photo, email, phone, website, location, profiles } = useAppSelector(
+  const dateFormat: string = useAppSelector((state) => get(state.resume, 'metadata.date.format'));
+  const { name, headline, photo, email, phone, birthdate, website, location, profiles } = useAppSelector(
     (state) => state.resume.basics
   );
   const theme: Theme = useAppSelector((state) => get(state.resume, 'metadata.theme', {}));
@@ -41,6 +43,10 @@ export const MastheadSidebar: React.FC = () => {
       <div className={clsx('flex flex-col gap-2.5', css(`svg { color: ${color} }`))}>
         <DataDisplay icon={<Room />} className="!gap-2 text-xs">
           {formatLocation(location)}
+        </DataDisplay>
+
+        <DataDisplay icon={<Cake />} className="!gap-2 text-xs">
+          {formatDateString(birthdate, dateFormat)}
         </DataDisplay>
 
         <DataDisplay icon={<Email />} className="!gap-2 text-xs" link={`mailto:${email}`}>

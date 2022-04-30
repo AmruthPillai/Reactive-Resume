@@ -10,6 +10,7 @@ const defaultState: Partial<Resume> = {
   basics: {
     email: '',
     headline: '',
+    birthdate: '',
     photo: {
       url: '',
       visible: true,

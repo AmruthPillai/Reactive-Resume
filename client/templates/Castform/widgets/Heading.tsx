@@ -5,7 +5,7 @@ import { useMemo } from 'react';
 
 import { useAppSelector } from '@/store/hooks';
 
-const Heading: React.FC = ({ children }) => {
+const Heading: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
   const theme: Theme = useAppSelector((state) => get(state.resume, 'metadata.theme', {}));
   const darkerPrimary = useMemo(() => darken(theme.primary, 0.2), [theme.primary]);
 

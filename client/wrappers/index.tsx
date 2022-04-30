@@ -3,7 +3,7 @@ import FontWrapper from './FontWrapper';
 import HotkeysWrapper from './HotkeysWrapper';
 import ThemeWrapper from './ThemeWrapper';
 
-const WrapperRegistry: React.FC = ({ children }) => {
+const WrapperRegistry: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
   return (
     <ThemeWrapper>
       <FontWrapper>

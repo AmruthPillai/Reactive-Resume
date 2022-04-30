@@ -35,6 +35,7 @@ export type Basics = {
   phone: string;
   website: string;
   headline: string;
+  birthdate: string;
   summary: string;
   location: Location;
   profiles: Profile[];

@@ -5,7 +5,7 @@ import { darkTheme, lightTheme } from '@/config/theme';
 import { setTheme } from '@/store/build/buildSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 
-const ThemeWrapper: React.FC = ({ children }) => {
+const ThemeWrapper: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
   const dispatch = useAppDispatch();
 
   const theme = useAppSelector((state) => state.build.theme);

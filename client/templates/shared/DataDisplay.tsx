@@ -7,7 +7,7 @@ type Props = {
   className?: string;
 };
 
-const DataDisplay: React.FC<Props> = ({ icon, link, className, children }) => {
+const DataDisplay: React.FC<React.PropsWithChildren<Props>> = ({ icon, link, className, children }) => {
   if (isEmpty(children)) return null;
 
   if (!isEmpty(link)) {

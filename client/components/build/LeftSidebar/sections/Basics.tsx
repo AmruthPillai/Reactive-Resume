@@ -58,6 +58,12 @@ const Basics = () => {
         </div>
 
         <ResumeInput
+          type="date"
+          label={t<string>('builder.leftSidebar.sections.basics.birthdate.label')}
+          path="basics.birthdate"
+          className="sm:col-span-2"
+        />
+        <ResumeInput
           label={t<string>('builder.common.form.email.label')}
           path="basics.email"
           className="sm:col-span-2"

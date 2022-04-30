@@ -17,6 +17,7 @@ interface DragItem {
 
 type Props = {
   item: ListItemType;
+  path: string;
   index: number;
   title: string;
   subtitle?: string;
@@ -26,14 +27,14 @@ type Props = {
   onDuplicate?: (item: ListItemType) => void;
 };
 
-const ListItem: React.FC<Props> = ({ item, index, title, subtitle, onMove, onEdit, onDelete, onDuplicate }) => {
+const ListItem: React.FC<Props> = ({ item, path, index, title, subtitle, onMove, onEdit, onDelete, onDuplicate }) => {
   const { t } = useTranslation();
 
   const ref = useRef<HTMLDivElement>(null);
   const [anchorEl, setAnchorEl] = useState<Element | null>(null);
 
   const [{ handlerId }, drop] = useDrop<DragItem, any, any>({
-    accept: 'ListItem',
+    accept: path,
     collect(monitor) {
       return { handlerId: monitor.getHandlerId() };
     },
@@ -68,7 +69,7 @@ const ListItem: React.FC<Props> = ({ item, index, title, subtitle, onMove, onEdi
   });
 
   const [{ isDragging }, drag] = useDrag({
-    type: 'ListItem',
+    type: path,
     item: () => {
       return { id: item.id, index };
     },

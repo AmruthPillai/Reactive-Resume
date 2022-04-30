@@ -3,7 +3,7 @@ import get from 'lodash/get';
 
 import { useAppSelector } from '@/store/hooks';
 
-const Heading: React.FC = ({ children }) => {
+const Heading: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
   const theme: Theme = useAppSelector((state) => get(state.resume, 'metadata.theme', {}));
 
   return (

@@ -81,14 +81,14 @@ const LeftSidebar = () => {
                 arrow
                 key={id}
                 placement="right"
-                title={get(sections, `${id}.name`, t<string>(`builder.leftSidebar.sections.${id}.heading`))}
+                title={get(sections, `${id}.name`, t<string>(`builder.leftSidebar.sections.${id}.heading`)) as string}
               >
                 <IconButton onClick={() => handleClick(id)}>{icon}</IconButton>
               </Tooltip>
             ))}
 
             {customSections.map(({ id }) => (
-              <Tooltip key={id} title={get(sections, `${id}.name`, '')} placement="right" arrow>
+              <Tooltip key={id} title={get(sections, `${id}.name`, '') as string} placement="right" arrow>
                 <IconButton onClick={() => handleClick(id)}>
                   <Star />
                 </IconButton>

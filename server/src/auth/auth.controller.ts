@@ -21,8 +21,8 @@ export class AuthController {
   }
 
   @Post('google')
-  async loginWithGoogle(@Body('accessToken') googleAccessToken: string) {
-    const user = await this.authService.authenticateWithGoogle(googleAccessToken);
+  async loginWithGoogle(@Body('credential') credential: string) {
+    const user = await this.authService.authenticateWithGoogle(credential);
     const accessToken = this.authService.getAccessToken(user.id);
 
     return { user, accessToken };

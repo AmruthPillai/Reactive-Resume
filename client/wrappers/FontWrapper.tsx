@@ -4,7 +4,7 @@ import { useCallback, useEffect } from 'react';
 
 import { useAppSelector } from '@/store/hooks';
 
-const FontWrapper: React.FC = ({ children }) => {
+const FontWrapper: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
   const typography = useAppSelector((state) => get(state.resume, 'metadata.typography'));
 
   const loadFonts = useCallback(async () => {

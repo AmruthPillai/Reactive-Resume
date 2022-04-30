@@ -4,7 +4,7 @@ import { JwtService } from '@nestjs/jwt';
 import { SchedulerRegistry } from '@nestjs/schedule';
 import bcrypt from 'bcrypt';
 import { randomInt } from 'crypto';
-import { google } from 'googleapis';
+import { OAuth2Client } from 'google-auth-library';
 
 import { PostgresErrorCode } from '@/database/errorCodes.enum';
 import { CreateGoogleUserDto } from '@/users/dto/create-google-user.dto';
@@ -107,17 +107,16 @@ export class AuthService {
     return this.usersService.findById(payload.id);
   }
 
-  async authenticateWithGoogle(googleAccessToken: string) {
+  async authenticateWithGoogle(credential: string) {
     const clientID = this.configService.get<string>('google.clientID');
     const clientSecret = this.configService.get<string>('google.clientSecret');
 
-    const OAuthClient = new google.auth.OAuth2(clientID, clientSecret);
-    OAuthClient.setCredentials({ access_token: googleAccessToken });
-
-    const { email } = await OAuthClient.getTokenInfo(googleAccessToken);
+    const OAuthClient = new OAuth2Client(clientID, clientSecret);
+    const client = await OAuthClient.verifyIdToken({ idToken: credential });
+    const userPayload = client.getPayload();
 
     try {
-      const user = await this.usersService.findByEmail(email);
+      const user = await this.usersService.findByEmail(userPayload.email);
 
       return user;
     } catch (error: any) {
@@ -125,14 +124,12 @@ export class AuthService {
         throw new HttpException(error, HttpStatus.BAD_GATEWAY);
       }
 
-      const UserInfoClient = google.oauth2('v2').userinfo;
-      const { data } = await UserInfoClient.get({ auth: OAuthClient });
-      const username = data.email.split('@')[0];
+      const username = userPayload.email.split('@')[0];
 
       const createUserDto: CreateGoogleUserDto = {
-        name: `${data.given_name} ${data.family_name}`,
+        name: `${userPayload.given_name} ${userPayload.family_name}`,
         username,
-        email: data.email,
+        email: userPayload.email,
         provider: 'google',
       };
 

@@ -1,6 +1,6 @@
 import { DarkMode, LightMode, Link as LinkIcon } from '@mui/icons-material';
 import { Masonry } from '@mui/lab';
-import { Button, IconButton } from '@mui/material';
+import { Button, IconButton, NoSsr } from '@mui/material';
 import type { GetStaticProps, NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,7 +11,6 @@ import Testimony from '@/components/landing/Testimony';
 import Footer from '@/components/shared/Footer';
 import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
 import Logo from '@/components/shared/Logo';
-import NoSSR from '@/components/shared/NoSSR';
 import { screenshots } from '@/config/screenshots';
 import { FLAG_DISABLE_SIGNUPS } from '@/constants/flags';
 import testimonials from '@/data/testimonials';
@@ -59,7 +58,7 @@ const Home: NextPage = () => {
 
           <h2>{t<string>('common.subtitle')}</h2>
 
-          <NoSSR>
+          <NoSsr>
             <div className={styles.buttonWrapper}>
               {isLoggedIn ? (
                 <>
@@ -81,7 +80,7 @@ const Home: NextPage = () => {
                 </>
               )}
             </div>
-          </NoSSR>
+          </NoSsr>
         </div>
       </div>
 

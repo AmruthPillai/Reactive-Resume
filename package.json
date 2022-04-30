@@ -1,6 +1,6 @@
 {
   "name": "reactive-resume",
-  "version": "3.3.4",
+  "version": "3.4.0",
   "private": true,
   "workspaces": [
     "schema",
@@ -38,10 +38,10 @@
     "env-cmd": "^10.1.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.18.0",
-    "@typescript-eslint/parser": "^5.18.0",
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@typescript-eslint/parser": "^5.21.0",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.12.0",
+    "eslint": "^8.14.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -50,6 +50,6 @@
     "husky": "^7.0.4",
     "prettier": "^2.6.2",
     "standard-version": "^9.3.2",
-    "typescript": "<4.6.0"
+    "typescript": "^4.6.4"
   }
 }

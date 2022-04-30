@@ -127,12 +127,14 @@ This field is only required if the Google Login functionality is important to yo
 
 ### `GOOGLE_API_KEY`
 
-**Required**: `yes`  
+**Required**: `no`  
 **Description:** Google API Key used for fetching Google Fonts
 
 Within the resume builder, there's a section where you can pick any font from the Google Fonts Library. To fetch the names and IDs of these fonts, we depend on the Google Fonts API. It does not cost any payment, or the need to enter credit card information to create or use this API.
 
 You can get your own key here: https://developers.google.com/fonts/docs/developer_api
+
+If you do not have a Google API Key, it was make use of the cached response JSON that's stored within the project source. Please note that this cache is not updated and may not have all the latest fonts that Google Fonts has to offer.
 
 ## SendGrid
 

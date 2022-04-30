@@ -3,7 +3,7 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
-const DateWrapper: React.FC = ({ children }) => {
+const DateWrapper: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
   const { locale } = useRouter();
 
   useEffect(() => {
@@ -12,8 +12,10 @@ const DateWrapper: React.FC = ({ children }) => {
     // Locales
     require('dayjs/locale/ar');
     require('dayjs/locale/bn');
+    require('dayjs/locale/cs');
     require('dayjs/locale/da');
     require('dayjs/locale/de');
+    require('dayjs/locale/el');
     require('dayjs/locale/en');
     require('dayjs/locale/es');
     require('dayjs/locale/fr');
@@ -25,6 +27,7 @@ const DateWrapper: React.FC = ({ children }) => {
     require('dayjs/locale/pl');
     require('dayjs/locale/pt');
     require('dayjs/locale/ru');
+    require('dayjs/locale/sv');
     require('dayjs/locale/ta');
     require('dayjs/locale/tr');
     require('dayjs/locale/vi');

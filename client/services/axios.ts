@@ -1,4 +1,4 @@
-import _axios, { AxiosError } from 'axios';
+import _axios from 'axios';
 import Router from 'next/router';
 
 import { logout } from '@/store/auth/authSlice';
@@ -27,7 +27,7 @@ axios.interceptors.request.use((config) => {
 
 axios.interceptors.response.use(
   (response) => response,
-  (error: AxiosError) => {
+  (error) => {
     const { response } = error;
 
     if (response) {

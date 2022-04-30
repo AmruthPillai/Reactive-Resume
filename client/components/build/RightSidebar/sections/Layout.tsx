@@ -117,7 +117,7 @@ const Layout = () => {
                                     [styles.disabled]: !get(resumeSections, `${sectionId}.visible`, true),
                                   })}
                                 >
-                                  {get(resumeSections, `${sectionId}.name`, '')}
+                                  {get(resumeSections, `${sectionId}.name`, '') as string}
                                 </div>
                               </div>
                             )}

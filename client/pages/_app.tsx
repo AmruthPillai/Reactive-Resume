@@ -4,6 +4,7 @@ import DateAdapter from '@mui/lab/AdapterDayjs';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import Script from 'next/script';
 import { appWithTranslation } from 'next-i18next';
 import { Toaster } from 'react-hot-toast';
 import { QueryClientProvider } from 'react-query';
@@ -52,6 +53,8 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
           </PersistGate>
         </LocalizationProvider>
       </ReduxProvider>
+
+      <Script src="https://accounts.google.com/gsi/client" />
     </>
   );
 };

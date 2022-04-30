@@ -5,11 +5,12 @@ import { useRouter } from 'next/router';
 import styles from './BaseModal.module.scss';
 
 type Props = {
-  icon?: React.ReactNode;
   isOpen: boolean;
   heading: string;
-  handleClose: () => void;
+  icon?: React.ReactNode;
+  children?: React.ReactNode;
   footerChildren?: React.ReactNode;
+  handleClose: () => void;
 };
 
 const BaseModal: React.FC<Props> = ({ icon, isOpen, heading, children, handleClose, footerChildren }) => {
