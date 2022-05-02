@@ -1,0 +1,136 @@
+{
+  "auth": {
+    "forgot-password": {
+      "actions": {
+        "send-email": "Jelszó visszaállítása e-mail küldése"
+      },
+      "body": "Csak adja meg a helyreállítani kívánt fiókhoz társított e-mail címet.",
+      "form": {
+        "email": {
+          "label": "Email cím"
+        }
+      },
+      "heading": "Elfelejtette a jelszavát?",
+      "help-text": "Ha a fiók létezik, kap egy e-mailt a jelszó visszaállításához szükséges linkkel."
+    },
+    "login": {
+      "actions": {
+        "login": "Belépés",
+        "google": "Jelentkezzen be a Google-lal"
+      },
+      "body": "Kérjük, adja meg a fiókjához tartozó felhasználónevét és jelszavát a bejelentkezéshez, valamint önéletrajzainak eléréséhez, kezeléséhez és megosztásához.",
+      "form": {
+        "password": {
+          "label": "Jelszó"
+        },
+        "username": {
+          "help-text": "E-mail címét is megadhatja",
+          "label": "Felhasználónév"
+        }
+      },
+      "heading": "Jelentkezz be a fiókodba",
+      "recover-text": "Ha elfelejtette jelszavát, <1>visszaállíthatja fiókját</1> itt.",
+      "register-text": "Ha nem rendelkezik fiókkal, <1>létrehozhat egy fiókot</1> itt."
+    },
+    "register": {
+      "actions": {
+        "register": "Regisztráció",
+        "google": "Regisztráljon a Google-nál"
+      },
+      "body": "Kérjük, adja meg személyes adatait fiók létrehozásához.",
+      "form": {
+        "confirm-password": {
+          "label": "Jelszó megerősítése"
+        },
+        "email": {
+          "label": "E-mail cím"
+        },
+        "name": {
+          "label": "Teljes név"
+        },
+        "password": {
+          "label": "Jelszó"
+        },
+        "username": {
+          "label": "Felhasználónév"
+        }
+      },
+      "heading": "Fiók létrehozása",
+      "loginText": "Ha már van fiókja, <1>itt bejelentkezhet</1> ."
+    },
+    "reset-password": {
+      "actions": {
+        "set-password": "Új jelszó beállítása"
+      },
+      "body": "Adjon meg egy új jelszót a fiókjához.",
+      "form": {
+        "confirm-password": {
+          "label": "Jelszó megerősítése"
+        },
+        "password": {
+          "label": "Jelszó"
+        }
+      },
+      "heading": "Jelszó visszaállítása"
+    }
+  },
+  "dashboard": {
+    "create-resume": {
+      "actions": {
+        "create-resume": "Önéletrajz létrehozása"
+      },
+      "body": "Kezdje el az önéletrajz felépítését azzal, hogy nevet ad neki. Ez utalhat a megpályázott szerepre, vagy egyszerűen csak a kedvenc nassolnivalójára.",
+      "form": {
+        "name": {
+          "label": "Név"
+        },
+        "public": {
+          "label": "Nyilvánosan elérhető?"
+        },
+        "slug": {
+          "label": "Meztelen csiga"
+        }
+      },
+      "heading": "Új önéletrajz létrehozása"
+    },
+    "import-external": {
+      "heading": "Importálás külső forrásokból",
+      "json-resume": {
+        "actions": {
+          "upload-json": "JSON feltöltése"
+        },
+        "body": "Ha <1>ellenőrzött JSON-önéletrajza van</1> használatra kész, segítségével felgyorsíthatja a Reactive Resume fejlesztését. Kattintson az alábbi gombra, és töltsön fel egy érvényes JSON-fájlt a kezdéshez.",
+        "heading": "Importálás a JSON-ból Folytatás"
+      },
+      "linkedin": {
+        "actions": {
+          "upload-archive": "Töltse fel a ZIP-archívumot"
+        },
+        "body": "Időt takaríthat meg, ha exportálja adatait a LinkedInből, és automatikusan kitölti a Reactive Resume mezőit. Nyissa meg az <1>Adatvédelem oldalt</1> szakaszt a LinkedIn-en, és kérje adatainak archiválását. Amint elérhető, töltse fel az alábbi ZIP-fájlt.",
+        "heading": "Importálás a LinkedIn-ből"
+      },
+      "reactive-resume": {
+        "actions": {
+          "upload-json": "JSON feltöltése",
+          "upload-json-v2": "JSON feltöltése v2-ből"
+        },
+        "body": "Ha van olyan JSON-ja, amelyet a Reactive Resume jelenlegi verziójával exportált, akkor ide visszaimportálhatja, hogy újra szerkeszthető változatot kapjon.",
+        "heading": "Importálás a Reactive Resume alkalmazásból"
+      }
+    },
+    "rename-resume": {
+      "actions": {
+        "rename-resume": "Önéletrajz átnevezése"
+      },
+      "form": {
+        "name": {
+          "label": "Név"
+        },
+        "slug": {
+          "label": "Meztelen csiga"
+        }
+      },
+      "heading": "Nevezze át önéletrajzát"
+    }
+  }
+}
