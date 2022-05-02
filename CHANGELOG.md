@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.4.4](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.4.3...v3.4.4) (2022-05-02)
+
+### Features
+
+* **i18n:** add Hungrarian (Magyar) language ([35fe4e2](https://github.com/AmruthPillai/Reactive-Resume/commit/35fe4e27744b6f7325b25db2cf3b626ed8598623))
+
 ### [3.4.3](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.4.2...v3.4.3) (2022-05-01)
 
 ### [3.4.2](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.4.1...v3.4.2) (2022-04-30)
