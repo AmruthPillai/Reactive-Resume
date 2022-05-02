@@ -65,6 +65,7 @@ You have complete control over what goes into your resume, how it looks, what co
 - German (Deutsch)
 - Greek (Ελληνικά)
 - Hindi (हिन्दी)
+- Hungarian (Magyar)
 - Italian (Italiano)
 - Kannada (ಕನ್ನಡ)
 - Malayalam (മലയാളം)
