@@ -1,0 +1,361 @@
+{
+  "common": {
+    "actions": {
+      "add": "Új hozzáadása {{token}}",
+      "delete": "{{token}} törlése",
+      "edit": "{{token}} szerkesztése"
+    },
+    "columns": {
+      "heading": "Oszlopok",
+      "tooltip": "Az oszlopok számának módosítása"
+    },
+    "form": {
+      "date": {
+        "label": "Dátum"
+      },
+      "description": {
+        "label": "Leírás"
+      },
+      "email": {
+        "label": "E-mail cím"
+      },
+      "end-date": {
+        "help-text": "Hagyja üresen ezt a mezőt, ha még mindig tart van",
+        "label": "Befejezés dátuma"
+      },
+      "keywords": {
+        "label": "Kulcsszavak"
+      },
+      "level": {
+        "label": "Szint"
+      },
+      "levelNum": {
+        "label": "Szint (szám)"
+      },
+      "name": {
+        "label": "Név"
+      },
+      "phone": {
+        "label": "Telefonszám"
+      },
+      "position": {
+        "label": "Pozíció"
+      },
+      "start-date": {
+        "label": "Kezdés dátuma"
+      },
+      "subtitle": {
+        "label": "Felirat"
+      },
+      "summary": {
+        "label": "Összegzés"
+      },
+      "title": {
+        "label": "Cím"
+      },
+      "url": {
+        "label": "Honlap"
+      }
+    },
+    "glossary": {
+      "page": "Oldal"
+    },
+    "list": {
+      "actions": {
+        "delete": "Törlés",
+        "duplicate": "Duplikálás",
+        "edit": "Szerkesztés"
+      },
+      "empty-text": "Ez a lista üres."
+    },
+    "tooltip": {
+      "delete-item": "Biztosan törli ezt az elemet? Ez egy visszafordíthatatlan művelet.",
+      "delete-section": "Szakasz törlése",
+      "rename-section": "Szakasz átnevezése",
+      "toggle-visibility": "Láthatóság váltása"
+    }
+  },
+  "controller": {
+    "tooltip": {
+      "center-artboard": "Központi rajztábla",
+      "copy-link": "Link másolása az önéletrajzba",
+      "export-pdf": "Exportálás PDF-be",
+      "toggle-orientation": "Oldaltájolás váltása",
+      "toggle-page-break-line": "Oldaltörés vonal váltása",
+      "toggle-sidebars": "Az oldalsávok váltása",
+      "zoom-in": "Nagyítás",
+      "zoom-out": "Kicsinyítés"
+    }
+  },
+  "header": {
+    "menu": {
+      "delete": "Törlés",
+      "duplicate": "Másolat",
+      "rename": "Átnevezés",
+      "share-link": "Link megosztása",
+      "tooltips": {
+        "delete": "Biztos, hogy törölni szeretné ezt az önéletrajzot? Ez egy visszafordíthatatlan művelet.",
+        "share-link": "Az önéletrajz láthatóságát nyilvánosra kell változtatnia, hogy mások számára is látható legyen."
+      }
+    }
+  },
+  "leftSidebar": {
+    "sections": {
+      "awards": {
+        "form": {
+          "awarder": {
+            "label": "Díjazó"
+          }
+        }
+      },
+      "basics": {
+        "actions": {
+          "photo-filters": "Fotószűrők"
+        },
+        "heading": "Alapok",
+        "headline": {
+          "label": "Címsor"
+        },
+        "name": {
+          "label": "Teljes név"
+        },
+        "birthdate": {
+          "label": "Születési dátum"
+        },
+        "photo-filters": {
+          "effects": {
+            "border": {
+              "label": "Határ"
+            },
+            "grayscale": {
+              "label": "Szürkeárnyalatos"
+            },
+            "heading": "Hatások"
+          },
+          "shape": {
+            "heading": "Alak"
+          },
+          "size": {
+            "heading": "Méret (px-ben)"
+          }
+        },
+        "photo-upload": {
+          "tooltip": {
+            "remove": "Fotó eltávolítása",
+            "upload": "Fénykép feltöltése"
+          }
+        }
+      },
+      "certifications": {
+        "form": {
+          "issuer": {
+            "label": "Kibocsátó"
+          }
+        }
+      },
+      "education": {
+        "form": {
+          "area-study": {
+            "label": "Tanulmányi terület"
+          },
+          "courses": {
+            "label": "Kurzusok"
+          },
+          "degree": {
+            "label": "Diploma"
+          },
+          "grade": {
+            "label": "Osztályzat"
+          },
+          "institution": {
+            "label": "Intézmény"
+          }
+        }
+      },
+      "location": {
+        "address": {
+          "label": "Cím"
+        },
+        "city": {
+          "label": "Település"
+        },
+        "country": {
+          "label": "Ország"
+        },
+        "heading": "Helyszín",
+        "postal-code": {
+          "label": "Irányítószám"
+        },
+        "region": {
+          "label": "Vidék"
+        }
+      },
+      "profiles": {
+        "form": {
+          "network": {
+            "label": "Hálózat"
+          },
+          "username": {
+            "label": "Felhasználónév"
+          }
+        },
+        "heading": "Profilok",
+        "heading_one": "Profil"
+      },
+      "publications": {
+        "form": {
+          "publisher": {
+            "label": "Kiadó"
+          }
+        }
+      },
+      "references": {
+        "form": {
+          "relationship": {
+            "label": "Kapcsolat"
+          }
+        }
+      },
+      "section": {
+        "heading": "Szakasz"
+      },
+      "volunteer": {
+        "form": {
+          "organization": {
+            "label": "Szervezet"
+          }
+        }
+      }
+    }
+  },
+  "rightSidebar": {
+    "sections": {
+      "css": {
+        "heading": "Egyedi CSS"
+      },
+      "export": {
+        "heading": "Exportálás",
+        "json": {
+          "primary": "JSON",
+          "secondary": "Töltse le önéletrajzának JSON-verzióját, amelyet vissza lehet importálni a Reactive Resume alkalmazásba."
+        },
+        "pdf": {
+          "loading": {
+            "primary": "PDF generálása",
+            "secondary": "Kérjük, várjon, amíg a PDF generálódik, ez akár 15 másodpercig is eltarthat."
+          },
+          "normal": {
+            "primary": "PDF",
+            "secondary": "Töltse le önéletrajzának PDF formátumát, amelyet kinyomtathat és elküldhet álmai munkahelyére. Ez a fájl nem importálható vissza további szerkesztéshez."
+          }
+        }
+      },
+      "layout": {
+        "heading": "Elrendezés",
+        "tooltip": {
+          "reset-layout": "Elrendezés visszaállítása"
+        }
+      },
+      "links": {
+        "bugs-features": {
+          "body": "Valami akadályozza az önéletrajz elkészítésében? Vagy van egy elképesztő ötlete az alkalmazáshoz? Hozzon létre egy Issue-t a GitHubon, hogy elkezdhessük.",
+          "button": "GitHub problémák",
+          "heading": "Hibák? Funkciókérés?"
+        },
+        "donate": {
+          "body": "Ha tetszett a Reactive Resume, kérjük, fontolja meg, hogy amennyit csak tud, adományozzon arra, hogy az alkalmazás folyamatosan működjön, hirdetések nélkül és örökké ingyenesen.",
+          "button": "Vegyél nekem egy kávét",
+          "heading": "Adományozzon a Reactive Resume-nak"
+        },
+        "github": "Forráskód",
+        "heading": "Linkek"
+      },
+      "settings": {
+        "global": {
+          "date": {
+            "primary": "Dátum",
+            "secondary": "Az alkalmazásban használható dátumformátum"
+          },
+          "heading": "Globális",
+          "language": {
+            "primary": "Nyelv",
+            "secondary": "Az alkalmazásban használható megjelenítési nyelv"
+          },
+          "theme": {
+            "primary": "Téma"
+          }
+        },
+        "heading": "Beállítások",
+        "page": {
+          "break-line": {
+            "primary": "Törésvonal",
+            "secondary": "Mutasson egy vonalat az összes oldalon, hogy megjelölje egy A4-es oldal magasságát"
+          },
+          "heading": "oldal",
+          "orientation": {
+            "disabled": "Nincs hatása, ha csak egy oldal van",
+            "primary": "Irányultság",
+            "secondary": "Az oldalak vízszintes vagy függőleges megjelenítése"
+          }
+        },
+        "resume": {
+          "heading": "Önéletrajz",
+          "reset": {
+            "primary": "Mindent visszaállít",
+            "secondary": "Túl sok hibát követett el? Kattintson ide az összes módosítás visszaállításához és a nulláról kezdéshez. Legyen óvatos, ezt a műveletet nem lehet visszafordítani."
+          },
+          "sample": {
+            "primary": "Példa adat betöltése",
+            "secondary": "Nem tudja hol kezdje? Kattintson ide néhány minta adat betöltéséhez, hogy megtudja, hogyan néz ki a teljes önéletrajz."
+          }
+        }
+      },
+      "sharing": {
+        "heading": "Megosztás",
+        "short-url": {
+          "label": "Rövid URL-t részesítsen előnyben"
+        },
+        "visibility": {
+          "subtitle": "A link birtokában bárki megtekintheti önéletrajzát",
+          "title": "Nyilvános"
+        }
+      },
+      "templates": {
+        "heading": "Sablonok"
+      },
+      "theme": {
+        "form": {
+          "background": {
+            "label": "Háttér"
+          },
+          "primary": {
+            "label": "Elsődleges"
+          },
+          "text": {
+            "label": "Szöveg"
+          }
+        },
+        "heading": "Téma"
+      },
+      "typography": {
+        "form": {
+          "font-family": {
+            "label": "Betűkészlet"
+          },
+          "font-size": {
+            "label": "Betűméret"
+          }
+        },
+        "heading": "Tipográfia",
+        "widgets": {
+          "body": {
+            "label": "Test"
+          },
+          "headings": {
+            "label": "Címsorok"
+          }
+        }
+      }
+    }
+  }
+}
