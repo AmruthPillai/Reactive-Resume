@@ -1,0 +1,136 @@
+{
+  "auth": {
+    "forgot-password": {
+      "actions": {
+        "send-email": "Odeslat e-mail pro obnovení hesla"
+      },
+      "body": "Stačí zadat e-mailovou adresu spojenou s účtem, který chcete obnovit.",
+      "form": {
+        "email": {
+          "label": "Emailová adresa"
+        }
+      },
+      "heading": "Zapomněli jste heslo?",
+      "help-text": "Pokud účet existuje, obdržíte e-mail s odkazem na resetování hesla."
+    },
+    "login": {
+      "actions": {
+        "login": "Přihlásit se",
+        "google": "Přihlaste se pomocí Google"
+      },
+      "body": "Zadejte prosím své uživatelské jméno a heslo spojené s vaším účtem, abyste se mohli přihlásit a získat přístup, spravovat a sdílet své životopisy.",
+      "form": {
+        "password": {
+          "label": "Heslo"
+        },
+        "username": {
+          "help-text": "Můžete také zadat svou e-mailovou adresu",
+          "label": "uživatelské jméno"
+        }
+      },
+      "heading": "Přihlaste se ke svému účtu",
+      "recover-text": "V případě, že jste zapomněli své heslo, můžete <1>obnovit svůj účet</1> tady.",
+      "register-text": "Pokud jej nemáte, můžete si <1>vytvořit účet</1> tady."
+    },
+    "register": {
+      "actions": {
+        "register": "Registrovat",
+        "google": "Zaregistrujte se u Google"
+      },
+      "body": "Chcete-li vytvořit účet, zadejte své osobní údaje.",
+      "form": {
+        "confirm-password": {
+          "label": "Potvrďte heslo"
+        },
+        "email": {
+          "label": "Emailová adresa"
+        },
+        "name": {
+          "label": "Celé jméno"
+        },
+        "password": {
+          "label": "Heslo"
+        },
+        "username": {
+          "label": "uživatelské jméno"
+        }
+      },
+      "heading": "Vytvořit účet",
+      "loginText": "Pokud již máte účet, můžete se <1>přihlásit zde</1> ."
+    },
+    "reset-password": {
+      "actions": {
+        "set-password": "Nastavit nové heslo"
+      },
+      "body": "Zadejte nové heslo ke svému účtu.",
+      "form": {
+        "confirm-password": {
+          "label": "Potvrďte heslo"
+        },
+        "password": {
+          "label": "Heslo"
+        }
+      },
+      "heading": "Obnovit heslo"
+    }
+  },
+  "dashboard": {
+    "create-resume": {
+      "actions": {
+        "create-resume": "Vytvořit životopis"
+      },
+      "body": "Začněte budovat svůj životopis tím, že mu dáte jméno. Může to být odkaz na roli, o kterou se ucházíte, nebo jen na vaši oblíbenou svačinu.",
+      "form": {
+        "name": {
+          "label": "název"
+        },
+        "public": {
+          "label": "Je veřejně přístupný?"
+        },
+        "slug": {
+          "label": "Slimák"
+        }
+      },
+      "heading": "Vytvořte nový životopis"
+    },
+    "import-external": {
+      "heading": "Import z externích zdrojů",
+      "json-resume": {
+        "actions": {
+          "upload-json": "Nahrajte JSON"
+        },
+        "body": "Pokud máte <1>ověřený životopis JSON</1> připraven k použití, můžete jej použít k rychlému sledování svého vývoje na Reactive Resume. Začněte kliknutím na tlačítko níže a nahráním platného souboru JSON.",
+        "heading": "Import z obnovení JSON"
+      },
+      "linkedin": {
+        "actions": {
+          "upload-archive": "Nahrát archiv ZIP"
+        },
+        "body": "Můžete ušetřit čas tím, že exportujete svá data z LinkedIn a použijete je k automatickému vyplňování polí na Reactive Resume. Přejděte na <1>Ochrana osobních údajů</1> sekce na LinkedIn a vyžádejte si archiv vašich dat. Jakmile bude k dispozici, nahrajte níže uvedený soubor ZIP.",
+        "heading": "Import z LinkedIn"
+      },
+      "reactive-resume": {
+        "actions": {
+          "upload-json": "Nahrajte JSON",
+          "upload-json-v2": "Nahrajte JSON z v2"
+        },
+        "body": "Pokud máte JSON, který byl exportován s aktuální verzí Reactive Resume, můžete jej sem importovat zpět a znovu získat upravitelnou verzi.",
+        "heading": "Import z reaktivního obnovení"
+      }
+    },
+    "rename-resume": {
+      "actions": {
+        "rename-resume": "Přejmenovat Resume"
+      },
+      "form": {
+        "name": {
+          "label": "název"
+        },
+        "slug": {
+          "label": "Slimák"
+        }
+      },
+      "heading": "Přejmenujte svůj životopis"
+    }
+  }
+}
