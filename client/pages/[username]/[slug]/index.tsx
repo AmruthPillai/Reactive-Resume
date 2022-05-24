@@ -59,6 +59,14 @@ const Preview: NextPage<Props> = ({ username, slug, resume: initialData }) => {
     }
   }, [dispatch, initialData]);
 
+  useEffect(() => {
+    if (!isEmpty(resume) && router.locale !== resume.metadata.locale) {
+      const { pathname, asPath, query } = router;
+
+      router.push({ pathname, query }, asPath, { locale: resume.metadata.locale });
+    }
+  }, [resume, router]);
+
   useQuery<Resume>(`resume/${username}/${slug}`, () => fetchResumeByIdentifier({ username, slug }), {
     initialData,
     retry: false,

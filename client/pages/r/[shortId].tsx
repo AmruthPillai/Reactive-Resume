@@ -7,6 +7,7 @@ import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import { GetServerSideProps, NextPage } from 'next';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect } from 'react';
 import toast from 'react-hot-toast';
@@ -35,6 +36,8 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ query, loc
 };
 
 const Preview: NextPage<Props> = ({ shortId }) => {
+  const router = useRouter();
+
   const dispatch = useAppDispatch();
 
   const { data: resume } = useQuery<Resume>(`resume/${shortId}`, () => fetchResumeByShortId({ shortId }), {
@@ -51,6 +54,14 @@ const Preview: NextPage<Props> = ({ shortId }) => {
   useEffect(() => {
     if (resume) dispatch(setResume(resume));
   }, [resume, dispatch]);
+
+  useEffect(() => {
+    if (resume && !isEmpty(resume) && router.locale !== resume.metadata.locale) {
+      const { pathname, asPath, query } = router;
+
+      router.push({ pathname, query }, asPath, { locale: resume.metadata.locale });
+    }
+  }, [resume, router]);
 
   if (!resume || isEmpty(resume)) return null;
 
