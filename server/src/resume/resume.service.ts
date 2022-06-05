@@ -2,6 +2,7 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Resume as ResumeSchema } from '@reactive-resume/schema';
+import fs from 'fs';
 import { pick, sample, set } from 'lodash';
 import { nanoid } from 'nanoid';
 import { extname } from 'path';
@@ -220,7 +221,6 @@ export class ResumeService {
 
     const filename = id + '--' + new Date().getTime() + extname(file.originalname);
     const key = `uploads/${userId}/${id}/${filename}`;
-    const fs = require('fs');
     fs.writeFile(__dirname + '/../assets/' + key, file.buffer, (err) => {
       if (err) {
         console.log(err);
@@ -234,8 +234,6 @@ export class ResumeService {
     const resume = await this.findOne(id, userId);
     const publicUrl = resume.basics.photo.url;
 
-    const glob = require('glob');
-    const fs = require('fs');
     fs.unlink(__dirname + '/../' + resume.basics.photo.url.replace('/api/', ''), (err) => {
       if (err) {
         console.log(err);
