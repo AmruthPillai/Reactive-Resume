@@ -1,6 +1,6 @@
 {
   "name": "reactive-resume",
-  "version": "3.4.5",
+  "version": "3.6.0",
   "private": true,
   "workspaces": [
     "schema",
@@ -34,8 +34,11 @@
     "start": "env-cmd --silent concurrently --kill-others \"pnpm run start:*\""
   },
   "dependencies": {
+    "@docusaurus/core": "^2.0.0-beta.21",
+    "@docusaurus/preset-classic": "^2.0.0-beta.21",
     "concurrently": "^7.1.0",
-    "env-cmd": "^10.1.0"
+    "env-cmd": "^10.1.0",
+    "glob": "^8.0.3"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.21.0",

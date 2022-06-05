@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.6.0](https://github.com/dvd741-a/Reactive-Resume/compare/v3.3.4...v3.6.0) (2022-06-05)
+
+
+### Features
+
+* **all:** upgrade to v3.4.0 ([87d381f](https://github.com/dvd741-a/Reactive-Resume/commit/87d381fe8eab9ca4624df5de6e8b9ab18a072b67))
+* **i18n:** add Hungrarian (Magyar) language ([35fe4e2](https://github.com/dvd741-a/Reactive-Resume/commit/35fe4e27744b6f7325b25db2cf3b626ed8598623))
+
+
+### Bug Fixes
+
+* **i18n:** fix language mismatch in exported pdf ([62fd63e](https://github.com/dvd741-a/Reactive-Resume/commit/62fd63e41fe10fba843a40fb08191f5944f2b2fc))
+* **typeorm:** update typeorm to latest 0.2.x for secpatch ([5bdb92b](https://github.com/dvd741-a/Reactive-Resume/commit/5bdb92b1cff9e56879f9bbf31801d6554a00a8d5))
+
+## [3.5.0](https://github.com/dvd741-a/Reactive-Resume/compare/v3.3.4...v3.5.0) (2022-06-05)
+
+
+### Features
+
+* **all:** upgrade to v3.4.0 ([87d381f](https://github.com/dvd741-a/Reactive-Resume/commit/87d381fe8eab9ca4624df5de6e8b9ab18a072b67))
+* **i18n:** add Hungrarian (Magyar) language ([35fe4e2](https://github.com/dvd741-a/Reactive-Resume/commit/35fe4e27744b6f7325b25db2cf3b626ed8598623))
+
+
+### Bug Fixes
+
+* **i18n:** fix language mismatch in exported pdf ([62fd63e](https://github.com/dvd741-a/Reactive-Resume/commit/62fd63e41fe10fba843a40fb08191f5944f2b2fc))
+* **typeorm:** update typeorm to latest 0.2.x for secpatch ([5bdb92b](https://github.com/dvd741-a/Reactive-Resume/commit/5bdb92b1cff9e56879f9bbf31801d6554a00a8d5))
+
 ### [3.4.5](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.4.4...v3.4.5) (2022-05-24)
 
 
