@@ -1,0 +1,136 @@
+{
+  "auth": {
+    "forgot-password": {
+      "actions": {
+        "send-email": "Kirim Reset Kata Sandi Email"
+      },
+      "body": "Cukup masukkan alamat email yang terkait dengan akun yang ingin Anda pulihkan.",
+      "form": {
+        "email": {
+          "label": "Alamat Email"
+        }
+      },
+      "heading": "Lupa Kata Sandi?",
+      "help-text": "Jika akun ada, Anda akan menerima email dengan tautan untuk mengatur ulang kata sandi Anda."
+    },
+    "login": {
+      "actions": {
+        "login": "Masuk",
+        "google": "Masuk dengan Google"
+      },
+      "body": "Silakan masukkan nama pengguna dan kata sandi Anda yang terkait dengan akun Anda untuk masuk dan mengakses, mengelola, dan membagikan resume Anda.",
+      "form": {
+        "password": {
+          "label": "kata Sandi"
+        },
+        "username": {
+          "help-text": "Anda juga dapat memasukkan alamat email Anda",
+          "label": "Nama Pengguna"
+        }
+      },
+      "heading": "Masuk ke akun Anda",
+      "recover-text": "Jika Anda lupa sandi, Anda dapat <1>memulihkan akun</1> di sini.",
+      "register-text": "Jika Anda tidak memilikinya, Anda dapat <1>membuat akun</1> di sini."
+    },
+    "register": {
+      "actions": {
+        "register": "Daftar",
+        "google": "Daftar dengan Google"
+      },
+      "body": "Silakan masukkan informasi pribadi Anda untuk membuat akun.",
+      "form": {
+        "confirm-password": {
+          "label": "Konfirmasi Sandi"
+        },
+        "email": {
+          "label": "Alamat Email"
+        },
+        "name": {
+          "label": "Nama Lengkap"
+        },
+        "password": {
+          "label": "Kata Sandi"
+        },
+        "username": {
+          "label": "Nama Panggilan"
+        }
+      },
+      "heading": "Buat akun",
+      "loginText": "Jika Anda sudah memiliki akun, Anda dapat <1>masuk di sini</1>."
+    },
+    "reset-password": {
+      "actions": {
+        "set-password": "Ubah Kata Sandi Baru"
+      },
+      "body": "Masukkan kata sandi baru untuk akun Anda.",
+      "form": {
+        "confirm-password": {
+          "label": "Konfirmasi Sandi"
+        },
+        "password": {
+          "label": "Kata Sandi"
+        }
+      },
+      "heading": "Atur ulang kata sandi"
+    }
+  },
+  "dashboard": {
+    "create-resume": {
+      "actions": {
+        "create-resume": "Buat Resume"
+      },
+      "body": "Mulailah membangun resume Anda dengan memberinya nama. Bisa jadi mengacu pada peran yang Anda lamar, atau hanya cemilan favorit Anda.",
+      "form": {
+        "name": {
+          "label": "Nama"
+        },
+        "public": {
+          "label": "Apakah Dapat Diakses Publik?"
+        },
+        "slug": {
+          "label": "Slug"
+        }
+      },
+      "heading": "Buat resume baru"
+    },
+    "import-external": {
+      "heading": "Impor dari Sumber luar",
+      "json-resume": {
+        "actions": {
+          "upload-json": "Unggah JSON"
+        },
+        "body": "Jika Anda memiliki <1>JSON Resume yang divalidasi</1> yang siap digunakan, Anda dapat menggunakannya untuk mempercepat pengembangan Anda di Reactive Resume. Klik tombol di bawah dan unggah file JSON yang valid untuk memulai.",
+        "heading": "Impor dari JSON Resume"
+      },
+      "linkedin": {
+        "actions": {
+          "upload-archive": "Unggah berkas ZIP"
+        },
+        "body": "Anda dapat menghemat waktu dengan mengekspor data Anda dari LinkedIn dan menggunakannya untuk mengisi kolom secara otomatis di Reactive Resume. Buka bagian <1>Privasi Data</1> di LinkedIn dan minta arsip data Anda. Setelah tersedia, unggah file ZIP di bawah ini.",
+        "heading": "Impor dari LinkedIn"
+      },
+      "reactive-resume": {
+        "actions": {
+          "upload-json": "Unggah JSON",
+          "upload-json-v2": "Unggah JSON dari v2"
+        },
+        "body": "Jika Anda memiliki JSON yang diekspor dengan versi Reactive Resume saat ini, Anda dapat mengimpornya kembali ke sini untuk mendapatkan versi yang dapat diedit lagi.",
+        "heading": "Impor dari Reactive Resume"
+      }
+    },
+    "rename-resume": {
+      "actions": {
+        "rename-resume": "Ubah nama Resume"
+      },
+      "form": {
+        "name": {
+          "label": "Nama"
+        },
+        "slug": {
+          "label": "Slug"
+        }
+      },
+      "heading": "Ubah nama resume Anda"
+    }
+  }
+}
