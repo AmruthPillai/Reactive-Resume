@@ -253,7 +253,9 @@ export class ResumeService {
     } else {
       const path = `${__dirname}/../assets/uploads/${userId}/${id}/`;
       fs.mkdir(path, { recursive: true }, (err) => {
-        if (err) throw err;
+        if (err) {
+          console.log(err);
+        }
         fs.writeFile(path + filename, file.buffer, (err) => {
           if (err) {
             console.log(err);
