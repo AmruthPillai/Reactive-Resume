@@ -7,6 +7,7 @@ import authConfig from './auth.config';
 import databaseConfig from './database.config';
 import googleConfig from './google.config';
 import sendgridConfig from './sendgrid.config';
+import storageConfig from './storage.config';
 
 const validationSchema = Joi.object({
   // App
@@ -40,12 +41,20 @@ const validationSchema = Joi.object({
   SENDGRID_FORGOT_PASSWORD_TEMPLATE_ID: Joi.string().allow(''),
   SENDGRID_FROM_NAME: Joi.string().allow(''),
   SENDGRID_FROM_EMAIL: Joi.string().allow(''),
+
+  // Storage
+  STORAGE_BUCKET: Joi.string().allow(''),
+  STORAGE_REGION: Joi.string().allow(''),
+  STORAGE_ENDPOINT: Joi.string().allow(''),
+  STORAGE_URL_PREFIX: Joi.string().allow(''),
+  STORAGE_ACCESS_KEY: Joi.string().allow(''),
+  STORAGE_SECRET_KEY: Joi.string().allow(''),
 });
 
 @Module({
   imports: [
     NestConfigModule.forRoot({
-      load: [appConfig, authConfig, databaseConfig, googleConfig, sendgridConfig],
+      load: [appConfig, authConfig, databaseConfig, googleConfig, sendgridConfig, storageConfig],
       validationSchema: validationSchema,
     }),
   ],
