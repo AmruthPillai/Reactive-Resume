@@ -1,0 +1,361 @@
+{
+  "common": {
+    "actions": {
+      "add": "Tambah Baru {{token}}",
+      "delete": "Hapus {{token}}",
+      "edit": "Ubah {{token}}"
+    },
+    "columns": {
+      "heading": "Kolom",
+      "tooltip": "Ubah nomor kolom"
+    },
+    "form": {
+      "date": {
+        "label": "Tanggal"
+      },
+      "description": {
+        "label": "Keterangan"
+      },
+      "email": {
+        "label": "Alamat Email"
+      },
+      "end-date": {
+        "help-text": "Biarkan kosong, Jika masih terbaru",
+        "label": "Tanggal Akhir"
+      },
+      "keywords": {
+        "label": "Kata Kunci"
+      },
+      "level": {
+        "label": "Tingkat"
+      },
+      "levelNum": {
+        "label": "Tingkat (Angka)"
+      },
+      "name": {
+        "label": "Nama"
+      },
+      "phone": {
+        "label": "Nomor Telepon"
+      },
+      "position": {
+        "label": "Jabatan"
+      },
+      "start-date": {
+        "label": "Tanggal Mulai"
+      },
+      "subtitle": {
+        "label": "Sub Judul"
+      },
+      "summary": {
+        "label": "Ringkasan"
+      },
+      "title": {
+        "label": "Judul"
+      },
+      "url": {
+        "label": "Situs web"
+      }
+    },
+    "glossary": {
+      "page": "Halaman"
+    },
+    "list": {
+      "actions": {
+        "delete": "Hapus",
+        "duplicate": "Duplikat",
+        "edit": "Ubah"
+      },
+      "empty-text": "Daftar ini kosong."
+    },
+    "tooltip": {
+      "delete-item": "Anda yakin ingin menghapus item ini? Tindakan ini tidak dapat dibatalkan.",
+      "delete-section": "Hapus Bagian",
+      "rename-section": "Ganti Nama Bagian",
+      "toggle-visibility": "Beralih Visibilitas"
+    }
+  },
+  "controller": {
+    "tooltip": {
+      "center-artboard": "Tengahkan Artboard",
+      "copy-link": "Salin Tautan ke Resume",
+      "export-pdf": "Ekspor PDF",
+      "toggle-orientation": "Beralih Orientasi Halaman",
+      "toggle-page-break-line": "Beralih Garis Pemisah Halaman",
+      "toggle-sidebars": "Beralih Sidebar",
+      "zoom-in": "Perbesar",
+      "zoom-out": "Perkecil"
+    }
+  },
+  "header": {
+    "menu": {
+      "delete": "Hapus",
+      "duplicate": "Duplikat",
+      "rename": "Ganti nama",
+      "share-link": "Bagikan tautan",
+      "tooltips": {
+        "delete": "Anda yakin ingin menghapus Resume ini? Tindakan ini tidak dapat dibatalkan.",
+        "share-link": "Anda perlu mengubah visibilitas resume Anda ke publik agar terlihat oleh orang lain."
+      }
+    }
+  },
+  "leftSidebar": {
+    "sections": {
+      "awards": {
+        "form": {
+          "awarder": {
+            "label": "Penghargaan"
+          }
+        }
+      },
+      "basics": {
+        "actions": {
+          "photo-filters": "Filter Foto"
+        },
+        "heading": "Dasar",
+        "headline": {
+          "label": "Judul"
+        },
+        "name": {
+          "label": "Nama Lengkap"
+        },
+        "birthdate": {
+          "label": "Tanggal Lahir"
+        },
+        "photo-filters": {
+          "effects": {
+            "border": {
+              "label": "Batas"
+            },
+            "grayscale": {
+              "label": "Grayscale"
+            },
+            "heading": "Efek"
+          },
+          "shape": {
+            "heading": "Bentuk"
+          },
+          "size": {
+            "heading": "Besar (dalam px)"
+          }
+        },
+        "photo-upload": {
+          "tooltip": {
+            "remove": "Hapus Foto",
+            "upload": "Unggah Foto"
+          }
+        }
+      },
+      "certifications": {
+        "form": {
+          "issuer": {
+            "label": "Penerbit"
+          }
+        }
+      },
+      "education": {
+        "form": {
+          "area-study": {
+            "label": "Area belajar"
+          },
+          "courses": {
+            "label": "Kursus"
+          },
+          "degree": {
+            "label": "Gelar"
+          },
+          "grade": {
+            "label": "Tingkatan"
+          },
+          "institution": {
+            "label": "Lembaga"
+          }
+        }
+      },
+      "location": {
+        "address": {
+          "label": "Alamat"
+        },
+        "city": {
+          "label": "Kota"
+        },
+        "country": {
+          "label": "Negara"
+        },
+        "heading": "Lokasi",
+        "postal-code": {
+          "label": "Kode Pos"
+        },
+        "region": {
+          "label": "Wilayah"
+        }
+      },
+      "profiles": {
+        "form": {
+          "network": {
+            "label": "Network"
+          },
+          "username": {
+            "label": "Nama Panggilan"
+          }
+        },
+        "heading": "Profil",
+        "heading_one": "Profil"
+      },
+      "publications": {
+        "form": {
+          "publisher": {
+            "label": "Penerbit"
+          }
+        }
+      },
+      "references": {
+        "form": {
+          "relationship": {
+            "label": "Hubungan"
+          }
+        }
+      },
+      "section": {
+        "heading": "Bagian"
+      },
+      "volunteer": {
+        "form": {
+          "organization": {
+            "label": "Organisasi"
+          }
+        }
+      }
+    }
+  },
+  "rightSidebar": {
+    "sections": {
+      "css": {
+        "heading": "Kostumisasi CSS"
+      },
+      "export": {
+        "heading": "Ekspor",
+        "json": {
+          "primary": "JSON",
+          "secondary": "Unduh versi JSON dari resume Anda yang dapat diimpor kembali ke Reactive Resume."
+        },
+        "pdf": {
+          "loading": {
+            "primary": "Membuat PDF",
+            "secondary": "Harap tunggu saat ini PDF Anda sedang dibuat, mungkin memerlukan waktu hingga 15 detik."
+          },
+          "normal": {
+            "primary": "PDF",
+            "secondary": "Unduh PDF dari resume Anda yang dapat Anda cetak dan kirimkan ke pekerjaan impian Anda. File ini tidak dapat diimpor kembali untuk pengeditan lanjutan."
+          }
+        }
+      },
+      "layout": {
+        "heading": "Layout",
+        "tooltip": {
+          "reset-layout": "Atur ulang Layout"
+        }
+      },
+      "links": {
+        "bugs-features": {
+          "body": "Sesuatu menghentikan Anda dari membuat resume? Atau apakah Anda memiliki ide luar biasa untuk ditambahkan? Buat Issues di GitHub untuk memulai.",
+          "button": "GitHub Issues",
+          "heading": "Bugs? Request Fitur?"
+        },
+        "donate": {
+          "body": "Jika Anda suka menggunakan Reactive Resume, harap pertimbangkan untuk donasi sebanyak mungkin untuk menjaga aplikasi tetap berjalan, tanpa iklan dan gratis selamanya.",
+          "button": "Belikan Saya Kopi",
+          "heading": "Donasi ke Reactive Resume"
+        },
+        "github": "Kode sumber",
+        "heading": "Link"
+      },
+      "settings": {
+        "global": {
+          "date": {
+            "primary": "Tanggal",
+            "secondary": "Format tanggal untuk digunakan di seluruh aplikasi"
+          },
+          "heading": "Global",
+          "language": {
+            "primary": "Bahasa",
+            "secondary": "Tampilkan bahasa untuk digunakan di seluruh aplikasi"
+          },
+          "theme": {
+            "primary": "Tema"
+          }
+        },
+        "heading": "Pengaturan",
+        "page": {
+          "break-line": {
+            "primary": "Break Line",
+            "secondary": "Tampilkan garis di semua halaman untuk menandai ketinggian halaman A4"
+          },
+          "heading": "Halaman",
+          "orientation": {
+            "disabled": "Tidak berpengaruh ketika hanya ada satu halaman",
+            "primary": "Orientasi",
+            "secondary": "Menampilkan halaman secara horizontal atau vertikal"
+          }
+        },
+        "resume": {
+          "heading": "Resume",
+          "reset": {
+            "primary": "Atur ulang Semuanya",
+            "secondary": "Membuat terlalu banyak kesalahan? Klik di sini untuk mengatur ulang semua perubahan dan memulai dari awal. Hati-hati, tindakan ini tidak dapat dibatalkan."
+          },
+          "sample": {
+            "primary": "Muat Data Sampel",
+            "secondary": "Tidak yakin harus mulai dari mana? Klik di sini untuk memuat beberapa contoh data untuk melihat bagaimana resume lengkap terlihat."
+          }
+        }
+      },
+      "sharing": {
+        "heading": "Bagikan",
+        "short-url": {
+          "label": "Gunakan URL pendek"
+        },
+        "visibility": {
+          "subtitle": "Izinkan siapa pun yang memiliki tautan untuk melihat resume Anda",
+          "title": "Publik"
+        }
+      },
+      "templates": {
+        "heading": "Template"
+      },
+      "theme": {
+        "form": {
+          "background": {
+            "label": "Latar Belakang"
+          },
+          "primary": {
+            "label": "Utama"
+          },
+          "text": {
+            "label": "Teks"
+          }
+        },
+        "heading": "Tema"
+      },
+      "typography": {
+        "form": {
+          "font-family": {
+            "label": "Font Family"
+          },
+          "font-size": {
+            "label": "Besar Font"
+          }
+        },
+        "heading": "Tipografi",
+        "widgets": {
+          "body": {
+            "label": "Tubuh"
+          },
+          "headings": {
+            "label": "Judul"
+          }
+        }
+      }
+    }
+  }
+}
