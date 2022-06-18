@@ -35,8 +35,6 @@ export class ResumeController {
   @UseGuards(JwtAuthGuard)
   @Get()
   async findAllByUser(@User('id') userId: number) {
-    console.log('findAllByUser', userId);
-
     return this.resumeService.findAllByUser(userId);
   }
 

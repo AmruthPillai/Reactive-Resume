@@ -7,4 +7,5 @@ export default registerAs('storage', () => ({
   urlPrefix: process.env.STORAGE_URL_PREFIX,
   accessKey: process.env.STORAGE_ACCESS_KEY,
   secretKey: process.env.STORAGE_SECRET_KEY,
+  s3Enabled: process.env.STORAGE_S3_ENABLED,
 }));
