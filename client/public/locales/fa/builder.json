@@ -1,0 +1,361 @@
+{
+  "common": {
+    "actions": {
+      "add": "{{token}} جدید اضافه کنید",
+      "delete": "حذف {{token}}",
+      "edit": "ویرایش {{token}}"
+    },
+    "columns": {
+      "heading": "ستون‌ها",
+      "tooltip": "تغییر تعداد ستون‌ها"
+    },
+    "form": {
+      "date": {
+        "label": "تاریخ"
+      },
+      "description": {
+        "label": "توضیحات"
+      },
+      "email": {
+        "label": "آدرس ایمیل"
+      },
+      "end-date": {
+        "help-text": "اگر هنوز پایان نیافته، این قسمت را خالی بگذارید",
+        "label": "تاریخ پایان"
+      },
+      "keywords": {
+        "label": "کلمات کلیدی"
+      },
+      "level": {
+        "label": "سطح"
+      },
+      "levelNum": {
+        "label": "سطح (عدد)"
+      },
+      "name": {
+        "label": "نام"
+      },
+      "phone": {
+        "label": "شماره تلفن"
+      },
+      "position": {
+        "label": "عنوان شغلی"
+      },
+      "start-date": {
+        "label": "تاریخ شروع"
+      },
+      "subtitle": {
+        "label": "عنوان فرعی"
+      },
+      "summary": {
+        "label": "درباره من"
+      },
+      "title": {
+        "label": "عنوان"
+      },
+      "url": {
+        "label": "وب‌سایت"
+      }
+    },
+    "glossary": {
+      "page": "صفحه"
+    },
+    "list": {
+      "actions": {
+        "delete": "حذف",
+        "duplicate": "کپی",
+        "edit": "ویرایش"
+      },
+      "empty-text": "این لیست خالی است."
+    },
+    "tooltip": {
+      "delete-item": "آیا از حذف این مورد اطمینان دارید؟ این عمل غیرقابل برگشت است.",
+      "delete-section": "حذف بخش",
+      "rename-section": "تغییر نام بخش",
+      "toggle-visibility": "تغییر وضعیت نمایش"
+    }
+  },
+  "controller": {
+    "tooltip": {
+      "center-artboard": "قرار دادن صفحه در مرکز",
+      "copy-link": "کپی کردن لینک رزومه",
+      "export-pdf": "خروجی PDF",
+      "toggle-orientation": "تغییر وضعیت جهت‌گیری صفحه",
+      "toggle-page-break-line": "تغییر وضعیت خط شکست صفحه",
+      "toggle-sidebars": "باز/بسته کردن نوار کنار صفحه",
+      "zoom-in": "بزرگ‌نمایی",
+      "zoom-out": "کوچک‌نمایی"
+    }
+  },
+  "header": {
+    "menu": {
+      "delete": "حذف",
+      "duplicate": "کپی",
+      "rename": "تغییر نام",
+      "share-link": "اشتراک‌گذاری لینک",
+      "tooltips": {
+        "delete": "آیا از حذف این رزومه اطمینان دارید؟ این عمل غیرقابل برگشت است.",
+        "share-link": "باید وضعیت نمایش رزومه خود را به عمومی تغییر دهید تا برای دیگران قابل مشاهده باشد."
+      }
+    }
+  },
+  "leftSidebar": {
+    "sections": {
+      "awards": {
+        "form": {
+          "awarder": {
+            "label": "اعطا کننده"
+          }
+        }
+      },
+      "basics": {
+        "actions": {
+          "photo-filters": "فیلترهای تصویر"
+        },
+        "heading": "موارد پایه",
+        "headline": {
+          "label": "سرصفحه"
+        },
+        "name": {
+          "label": "نام کامل"
+        },
+        "birthdate": {
+          "label": "تاریخ تولد"
+        },
+        "photo-filters": {
+          "effects": {
+            "border": {
+              "label": "لبه"
+            },
+            "grayscale": {
+              "label": "سیاه و سفید"
+            },
+            "heading": "افکت‌ها"
+          },
+          "shape": {
+            "heading": "شکل"
+          },
+          "size": {
+            "heading": "اندازه (بر حسب پیکسل)"
+          }
+        },
+        "photo-upload": {
+          "tooltip": {
+            "remove": "حذف تصویر",
+            "upload": "آپلود تصویر"
+          }
+        }
+      },
+      "certifications": {
+        "form": {
+          "issuer": {
+            "label": "صادرکننده"
+          }
+        }
+      },
+      "education": {
+        "form": {
+          "area-study": {
+            "label": "رشته تحصیلی"
+          },
+          "courses": {
+            "label": "دوره‌ها"
+          },
+          "degree": {
+            "label": "مدرک تحصیلی"
+          },
+          "grade": {
+            "label": "نمره"
+          },
+          "institution": {
+            "label": "مؤسسه"
+          }
+        }
+      },
+      "location": {
+        "address": {
+          "label": "نشانی"
+        },
+        "city": {
+          "label": "شهر"
+        },
+        "country": {
+          "label": "كشور"
+        },
+        "heading": "موقعیت مکانی",
+        "postal-code": {
+          "label": "کد پستی"
+        },
+        "region": {
+          "label": "منطقه"
+        }
+      },
+      "profiles": {
+        "form": {
+          "network": {
+            "label": "شبکه اجتماعی"
+          },
+          "username": {
+            "label": "نام کاربری"
+          }
+        },
+        "heading": "پروفایل‌ها",
+        "heading_one": "پروفایل"
+      },
+      "publications": {
+        "form": {
+          "publisher": {
+            "label": "ناشر"
+          }
+        }
+      },
+      "references": {
+        "form": {
+          "relationship": {
+            "label": "نسبت"
+          }
+        }
+      },
+      "section": {
+        "heading": "بخش"
+      },
+      "volunteer": {
+        "form": {
+          "organization": {
+            "label": "سازمان"
+          }
+        }
+      }
+    }
+  },
+  "rightSidebar": {
+    "sections": {
+      "css": {
+        "heading": "CSS سفارشی"
+      },
+      "export": {
+        "heading": "خروجی",
+        "json": {
+          "primary": "JSON",
+          "secondary": "یک نسخه JSON از رزومه خود را دانلود کنید که می‌تواند دوباره در Reactive Resume بارگذاری شود."
+        },
+        "pdf": {
+          "loading": {
+            "primary": "در حال تولید PDF",
+            "secondary": "لطفاً منتظر بمانید تا PDF شما تولید شود، ممکن است تا ۱۵ ثانیه طول بکشد."
+          },
+          "normal": {
+            "primary": "PDF",
+            "secondary": "یک PDF از رزومه خود را دانلود کنید که می‌توانید آن را چاپ کرده و به شغل رویایی خود ارسال کنید. این فایل را نمی‌توان برای ویرایش بیشتر بارگذاری کرد."
+          }
+        }
+      },
+      "layout": {
+        "heading": "چیدمان",
+        "tooltip": {
+          "reset-layout": "بازنشانی چیدمان"
+        }
+      },
+      "links": {
+        "bugs-features": {
+          "body": "چیزی شما را از ایجاد رزومه باز می‌دارد؟ یا ایده جذابی برای اضافه کردن دارید؟ برای شروع یک issue در GitHub مطرح کنید.",
+          "button": "GitHub Issues",
+          "heading": "باگ‌ها؟ درخواست ویژگی جدید؟"
+        },
+        "donate": {
+          "body": "اگر استفاده از Reactive Resume را دوست داشتید، لطفاً تا جایی که می توانید کمک مالی کنید تا برنامه را بدون تبلیغات و برای همیشه رایگان نگه دارید.",
+          "button": "برای من یک قهوه بخر",
+          "heading": "کمک مالی به Reactive Resume"
+        },
+        "github": "کد منبع",
+        "heading": "لینک‌ها"
+      },
+      "settings": {
+        "global": {
+          "date": {
+            "primary": "تاریخ",
+            "secondary": "فرمت تاریخ برای استفاده در سراسر برنامه"
+          },
+          "heading": "سراسری",
+          "language": {
+            "primary": "زبان",
+            "secondary": "زبان مورد نمایش برای استفاده از برنامه"
+          },
+          "theme": {
+            "primary": "پوسته"
+          }
+        },
+        "heading": "تنظیمات",
+        "page": {
+          "break-line": {
+            "primary": "خط شکست",
+            "secondary": "برای مشخص کردن ارتفاع صفحه A4 یک خط در همه صفحات نشان داده شود"
+          },
+          "heading": "صفحه",
+          "orientation": {
+            "disabled": "زمانی که تنها یک صفحه وجود دارد، تاثیری ندارد",
+            "primary": "جهت‌گیری",
+            "secondary": "اینکه صفحات به صورت عمودی یا افقی نمایش داده شوند"
+          }
+        },
+        "resume": {
+          "heading": "رزومه",
+          "reset": {
+            "primary": "بازنشانی همه چیز",
+            "secondary": "اشتباهات زیادی انجام دادید؟ اینجا کلیک کنید تا همه تغییرات بازنشانی شوند و از ابتدا شروع کنید. مراقب باشید، این عمل غیرقابل برگشت است."
+          },
+          "sample": {
+            "primary": "بارگیری داده‌های نمونه",
+            "secondary": "نمی‌دانید از کجا شروع کنید؟برای اینکه تعدادی داده نمونه بارگیری شوند تا ببینید یک رزومه کامل به چه شکل است، اینجا کلیک کنید."
+          }
+        }
+      },
+      "sharing": {
+        "heading": "اشتراک‌گذاری",
+        "short-url": {
+          "label": "انتخاب URL کوتاه"
+        },
+        "visibility": {
+          "subtitle": "هرکسی با این لینک بتواند رزومه شما را ببیند",
+          "title": "عمومی"
+        }
+      },
+      "templates": {
+        "heading": "قالب‌ها"
+      },
+      "theme": {
+        "form": {
+          "background": {
+            "label": "پس‌زمینه"
+          },
+          "primary": {
+            "label": "اصلی"
+          },
+          "text": {
+            "label": "متن"
+          }
+        },
+        "heading": "پوسته"
+      },
+      "typography": {
+        "form": {
+          "font-family": {
+            "label": "نوع فونت"
+          },
+          "font-size": {
+            "label": "اندازه فونت"
+          }
+        },
+        "heading": "تایپوگرافی",
+        "widgets": {
+          "body": {
+            "label": "بدنه"
+          },
+          "headings": {
+            "label": "سرصفحه‌ها"
+          }
+        }
+      }
+    }
+  }
+}
