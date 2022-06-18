@@ -43,6 +43,8 @@ RUN pnpm install -F server --frozen-lockfile --prod
 
 COPY --from=builder /app/server/dist ./server/dist
 
+VOLUME /app/server/dist/assets/uploads
+
 EXPOSE 3100
 
 ENV PORT 3100
