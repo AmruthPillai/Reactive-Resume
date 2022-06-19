@@ -108,11 +108,11 @@ export class ResumeService {
   }
 
   findAllByUser(userId: number) {
-    return this.resumeRepository.find({ user: { id: userId } });
+    return this.resumeRepository.find({ where: { user: { id: userId } } });
   }
 
   async findOne(id: number, userId?: number) {
-    const resume = await this.resumeRepository.findOne(id);
+    const resume = await this.resumeRepository.findOne({ where: { id } });
 
     if (!resume) {
       throw new HttpException('The resume you are looking does not exist, or maybe never did?', HttpStatus.NOT_FOUND);
@@ -129,7 +129,7 @@ export class ResumeService {
   }
 
   async findOneByShortId(shortId: string, userId?: number, secretKey?: string) {
-    const resume = await this.resumeRepository.findOne({ shortId });
+    const resume = await this.resumeRepository.findOne({ where: { shortId } });
 
     if (!resume) {
       throw new HttpException('The resume you are looking does not exist, or maybe never did?', HttpStatus.NOT_FOUND);
@@ -147,7 +147,7 @@ export class ResumeService {
   }
 
   async findOneByIdentifier(username: string, slug: string, userId?: number, secretKey?: string) {
-    const resume = await this.resumeRepository.findOne({ user: { username }, slug });
+    const resume = await this.resumeRepository.findOne({ where: { user: { username }, slug } });
 
     if (!resume) {
       throw new HttpException('The resume you are looking does not exist, or maybe never did?', HttpStatus.NOT_FOUND);

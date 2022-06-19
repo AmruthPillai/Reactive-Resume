@@ -1,7 +1,7 @@
 import '@/styles/globals.scss';
 
-import DateAdapter from '@mui/lab/AdapterDayjs';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import DayjsAdapter from '@date-io/dayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Script from 'next/script';
@@ -32,7 +32,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
       </Head>
 
       <ReduxProvider store={store}>
-        <LocalizationProvider dateAdapter={DateAdapter}>
+        <LocalizationProvider dateAdapter={DayjsAdapter}>
           <PersistGate loading={null} persistor={persistor}>
             <QueryClientProvider client={queryClient}>
               <WrapperRegistry>

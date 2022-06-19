@@ -23,7 +23,7 @@ export class UsersService {
   ) {}
 
   async findById(id: number): Promise<User> {
-    const user = await this.userRepository.findOne({ id });
+    const user = await this.userRepository.findOne({ where: { id } });
 
     if (user) {
       return user;
@@ -33,7 +33,7 @@ export class UsersService {
   }
 
   async findByEmail(email: string): Promise<User> {
-    const user = await this.userRepository.findOne({ email });
+    const user = await this.userRepository.findOne({ where: { email } });
 
     if (user) {
       return user;
@@ -55,7 +55,7 @@ export class UsersService {
   }
 
   async findByResetToken(resetToken: string): Promise<User> {
-    const user = await this.userRepository.findOne({ resetToken });
+    const user = await this.userRepository.findOne({ where: { resetToken } });
 
     if (user) {
       return user;
