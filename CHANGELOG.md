@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.4.7](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.4.6...v3.4.7) (2022-06-30)
+
+
+### Bug Fixes
+
+* **mui:** update mui datepickers to newer package ([bfb48e3](https://github.com/AmruthPillai/Reactive-Resume/commit/bfb48e3aa7e0575922841522edc1d38544d1884f))
+
 ### [3.4.6](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.4.5...v3.4.6) (2022-06-19)
 
 ## [3.6.0](https://github.com/dvd741-a/Reactive-Resume/compare/v3.3.4...v3.6.0) (2022-06-05)
