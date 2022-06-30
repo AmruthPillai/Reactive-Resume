@@ -1,0 +1,361 @@
+{
+  "common": {
+    "actions": {
+      "add": "הוסף חדש{{token}}",
+      "delete": "מחק{{token}}",
+      "edit": "ערוך{{token}}"
+    },
+    "columns": {
+      "heading": "טורים",
+      "tooltip": "שנה את מספר הטורים"
+    },
+    "form": {
+      "date": {
+        "label": "תאריך"
+      },
+      "description": {
+        "label": "תיאור"
+      },
+      "email": {
+        "label": "כתובת דוא\"ל"
+      },
+      "end-date": {
+        "help-text": "השאר שדה זה ריק, אם אתה עדיין נמצא שם",
+        "label": "תאריך סיום"
+      },
+      "keywords": {
+        "label": "מילות מפתח"
+      },
+      "level": {
+        "label": "רמה"
+      },
+      "levelNum": {
+        "label": "רמה (מספר)"
+      },
+      "name": {
+        "label": "שם"
+      },
+      "phone": {
+        "label": "מספר טלפון"
+      },
+      "position": {
+        "label": "תפקיד בעבודה"
+      },
+      "start-date": {
+        "label": "תאריך התחלה"
+      },
+      "subtitle": {
+        "label": "תת כותרת"
+      },
+      "summary": {
+        "label": "סיכום"
+      },
+      "title": {
+        "label": "כותרת"
+      },
+      "url": {
+        "label": "אתר"
+      }
+    },
+    "glossary": {
+      "page": "דף"
+    },
+    "list": {
+      "actions": {
+        "delete": "מחיקה",
+        "duplicate": "שכפול",
+        "edit": "עריכה"
+      },
+      "empty-text": "הרשימה ריקה!"
+    },
+    "tooltip": {
+      "delete-item": "האם אתה בטוח שברצונך להסיר פריט זה? זה בלתי הפיך.",
+      "delete-section": "מחיקת קטע",
+      "rename-section": "שנה את שם הקטע",
+      "toggle-visibility": "שנה מצב נראות"
+    }
+  },
+  "controller": {
+    "tooltip": {
+      "center-artboard": "משטח יצירה מרכזי",
+      "copy-link": "העתק קישור לקורות חיים",
+      "export-pdf": "ייצא PDF",
+      "toggle-orientation": "כיוון דף הבית",
+      "toggle-page-break-line": "החלף את קו מעבר עמוד",
+      "toggle-sidebars": "החלף את סרגלי הצד",
+      "zoom-in": "הגדל",
+      "zoom-out": "הקטן"
+    }
+  },
+  "header": {
+    "menu": {
+      "delete": "מחיקה",
+      "duplicate": "שכפל",
+      "rename": "שנה שם",
+      "share-link": "שתף קישור",
+      "tooltips": {
+        "delete": "האם אתה בטוח שברצונך להסיר תכונה זו? זה בלתי הפיך.",
+        "share-link": "עליך לשנות את החשיפה של קורות החיים שלך לציבור כדי להפוך אותם לגלויים לאחרים."
+      }
+    }
+  },
+  "leftSidebar": {
+    "sections": {
+      "awards": {
+        "form": {
+          "awarder": {
+            "label": "מעניק"
+          }
+        }
+      },
+      "basics": {
+        "actions": {
+          "photo-filters": "מסנן תמונות"
+        },
+        "heading": "בסיסי",
+        "headline": {
+          "label": "כותרת"
+        },
+        "name": {
+          "label": "שם מלא"
+        },
+        "birthdate": {
+          "label": "תאריך לידה"
+        },
+        "photo-filters": {
+          "effects": {
+            "border": {
+              "label": "גבול"
+            },
+            "grayscale": {
+              "label": "גווני אפור"
+            },
+            "heading": "אפקטים"
+          },
+          "shape": {
+            "heading": "צוּרָה"
+          },
+          "size": {
+            "heading": "גודל (בפיקסלים)"
+          }
+        },
+        "photo-upload": {
+          "tooltip": {
+            "remove": "הסר תמונה",
+            "upload": "העלה תמונה"
+          }
+        }
+      },
+      "certifications": {
+        "form": {
+          "issuer": {
+            "label": "מנפיק"
+          }
+        }
+      },
+      "education": {
+        "form": {
+          "area-study": {
+            "label": "תחום לימוד"
+          },
+          "courses": {
+            "label": "קורסים"
+          },
+          "degree": {
+            "label": "תוֹאַר"
+          },
+          "grade": {
+            "label": "כיתה"
+          },
+          "institution": {
+            "label": "מוֹסָד"
+          }
+        }
+      },
+      "location": {
+        "address": {
+          "label": "כתובת"
+        },
+        "city": {
+          "label": "עִיר"
+        },
+        "country": {
+          "label": "מדינה"
+        },
+        "heading": "מקום",
+        "postal-code": {
+          "label": "מיקוד"
+        },
+        "region": {
+          "label": "אזור"
+        }
+      },
+      "profiles": {
+        "form": {
+          "network": {
+            "label": "רֶשֶׁת"
+          },
+          "username": {
+            "label": "שם משתמש"
+          }
+        },
+        "heading": "פרופילים",
+        "heading_one": "פּרוֹפִיל"
+      },
+      "publications": {
+        "form": {
+          "publisher": {
+            "label": "מוֹצִיא לָאוֹר"
+          }
+        }
+      },
+      "references": {
+        "form": {
+          "relationship": {
+            "label": "מערכת יחסים"
+          }
+        }
+      },
+      "section": {
+        "heading": "סָעִיף"
+      },
+      "volunteer": {
+        "form": {
+          "organization": {
+            "label": "אִרגוּן"
+          }
+        }
+      }
+    }
+  },
+  "rightSidebar": {
+    "sections": {
+      "css": {
+        "heading": "CSS מותאם אישית"
+      },
+      "export": {
+        "heading": "יְצוּא",
+        "json": {
+          "primary": "JSON",
+          "secondary": "הורד גירסת JSON של קורות החיים שלך שניתן לייבא חזרה אל קורות חיים ריאקטיביים."
+        },
+        "pdf": {
+          "loading": {
+            "primary": "יצירת PDF",
+            "secondary": "המתן עם יצירת ה-PDF שלך, זה עשוי להימשך עד 15 שניות."
+          },
+          "normal": {
+            "primary": "PDF",
+            "secondary": "הורד קובץ PDF של קורות החיים שלך שתוכל להדפיס ולשלוח לעבודת החלומות שלך. לא ניתן לייבא קובץ זה בחזרה לעריכה נוספת."
+          }
+        }
+      },
+      "layout": {
+        "heading": "מַעֲרָך",
+        "tooltip": {
+          "reset-layout": "אפס פריסה"
+        }
+      },
+      "links": {
+        "bugs-features": {
+          "body": "משהו מונע ממך לעשות קורות חיים? או שיש לכם רעיון מדהים להוסיף? העלה בעיה ב-GitHub כדי להתחיל.",
+          "button": "בעיות GitHub",
+          "heading": "באגים? בקשות לתכונה?"
+        },
+        "donate": {
+          "body": "אם אהבתם להשתמש בקורות חיים ריאקטיביים, אנא שקול לתרום ככל שתוכל למען שמירה על האפליקציה ופועלת, ללא פרסומות ובחינם לנצח.",
+          "button": "תקנה לי קפה",
+          "heading": "תרומה לקורות חיים ריאקטיביים"
+        },
+        "github": "קוד מקור",
+        "heading": "קישורים"
+      },
+      "settings": {
+        "global": {
+          "date": {
+            "primary": "תַאֲרִיך",
+            "secondary": "פורמט תאריך לשימוש בכל האפליקציה"
+          },
+          "heading": "גלוֹבָּלִי",
+          "language": {
+            "primary": "שפה",
+            "secondary": "שפת תצוגה לשימוש בכל האפליקציה"
+          },
+          "theme": {
+            "primary": "ערכת נושא"
+          }
+        },
+        "heading": "הגדרות",
+        "page": {
+          "break-line": {
+            "primary": "קו עצירה",
+            "secondary": "הצג קו בכל הדפים כדי לסמן את גובהו של דף A4"
+          },
+          "heading": "דף",
+          "orientation": {
+            "disabled": "אין השפעה כשיש רק עמוד אחד",
+            "primary": "כיוון",
+            "secondary": "האם להציג עמודים אופקית או אנכית"
+          }
+        },
+        "resume": {
+          "heading": "קורות חיים",
+          "reset": {
+            "primary": "אפס הכל",
+            "secondary": "עשית יותר מדי טעויות? לחץ כאן כדי לאפס את כל השינויים ולהתחיל מאפס. היזהר, פעולה זו לא ניתנת לביטול."
+          },
+          "sample": {
+            "primary": "טען נתונים לדוגמה",
+            "secondary": "לא בטוחים מאיפה להתחיל? לחץ כאן כדי לטעון כמה נתונים לדוגמה כדי לראות איך קורות חיים מלאים נראים."
+          }
+        }
+      },
+      "sharing": {
+        "heading": "שיתוף",
+        "short-url": {
+          "label": "העדף כתובת URL קצרה"
+        },
+        "visibility": {
+          "subtitle": "אפשר לכל מי שיש לו קישור לראות את קורות החיים שלך",
+          "title": "גלוי לכול"
+        }
+      },
+      "templates": {
+        "heading": "תבניות"
+      },
+      "theme": {
+        "form": {
+          "background": {
+            "label": "רקע"
+          },
+          "primary": {
+            "label": "ראשי"
+          },
+          "text": {
+            "label": "טקסט"
+          }
+        },
+        "heading": "ערכת נושא"
+      },
+      "typography": {
+        "form": {
+          "font-family": {
+            "label": "משפחת גופן"
+          },
+          "font-size": {
+            "label": "גודל גופן"
+          }
+        },
+        "heading": "טיפוגרפיה",
+        "widgets": {
+          "body": {
+            "label": "גוף"
+          },
+          "headings": {
+            "label": "כותרת"
+          }
+        }
+      }
+    }
+  }
+}
