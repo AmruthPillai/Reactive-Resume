@@ -138,7 +138,7 @@ _Note: It may take up to 24h for the [contrib.rocks](https://contrib.rocks/image
 
 ## License
 
-Reactive Resume is packaged and distributed using the [MIT License](https://choosealicense.com/licenses/mit/) which allows for commercial use, distribution, modification and private use provided that all copies of the software contain the same license and copyright .
+Reactive Resume is packaged and distributed using the [MIT License](https://choosealicense.com/licenses/mit/) which allows for commercial use, distribution, modification and private use provided that all copies of the software contain the same license and copyright.
 
 _By the community, for the community._  
 A passion project by [Amruth Pillai](https://amruthpillai.com/)
