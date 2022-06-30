@@ -1,6 +1,6 @@
 import { joiResolver } from '@hookform/resolvers/joi';
 import { Add, DriveFileRenameOutline } from '@mui/icons-material';
-import DatePicker from '@mui/lab/DatePicker';
+import { DatePicker } from '@mui/x-date-pickers';
 import { Button, Slider, TextField } from '@mui/material';
 import { Custom } from '@reactive-resume/schema';
 import dayjs from 'dayjs';

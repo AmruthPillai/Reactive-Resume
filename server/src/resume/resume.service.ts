@@ -4,7 +4,7 @@ import { ConfigService } from '@nestjs/config';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Resume as ResumeSchema } from '@reactive-resume/schema';
 import fs from 'fs';
-import { pick, sample, set } from 'lodash';
+import { isEmpty, pick, sample, set } from 'lodash';
 import { nanoid } from 'nanoid';
 import { extname } from 'path';
 import { Repository } from 'typeorm';
@@ -31,7 +31,8 @@ export class ResumeService {
     private configService: ConfigService,
     private usersService: UsersService
   ) {
-    this.s3Enabled = configService.get<string>('storage.s3Enabled') !== 'false';
+    this.s3Enabled = !isEmpty(configService.get<string>('storage.bucket'));
+
     if (this.s3Enabled) {
       this.s3Client = new S3({
         endpoint: configService.get<string>('storage.endpoint'),
@@ -237,6 +238,7 @@ export class ResumeService {
 
     const filename = new Date().getTime() + extname(file.originalname);
     let updatedResume = null;
+
     if (this.s3Enabled) {
       const urlPrefix = this.configService.get<string>('storage.urlPrefix');
       const key = `uploads/${userId}/${id}/${filename}`;
@@ -271,6 +273,7 @@ export class ResumeService {
   async deletePhoto(id: number, userId: number) {
     const resume = await this.findOne(id, userId);
     const publicUrl = resume.basics.photo.url;
+
     if (this.s3Enabled) {
       const urlPrefix = this.configService.get<string>('storage.urlPrefix');
       const key = publicUrl.replace(urlPrefix, '');
@@ -291,6 +294,7 @@ export class ResumeService {
         });
       }
     }
+
     const updatedResume = set(resume, 'basics.photo.url', '');
 
     return this.resumeRepository.save<Resume>(updatedResume);

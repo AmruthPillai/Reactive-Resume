@@ -1,7 +1,7 @@
 import '@/styles/globals.scss';
 
 import DayjsAdapter from '@date-io/dayjs';
-import { LocalizationProvider } from '@mui/lab';
+import { LocalizationProvider } from '@mui/x-date-pickers';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Script from 'next/script';

@@ -1,5 +1,5 @@
-import { DatePicker } from '@mui/lab';
 import { TextField } from '@mui/material';
+import { DatePicker } from '@mui/x-date-pickers';
 import dayjs from 'dayjs';
 import { isEmpty } from 'lodash';
 import get from 'lodash/get';
