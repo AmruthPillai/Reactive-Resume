@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.4.8](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.4.7...v3.4.8) (2022-07-13)
+
+
+### Features
+
+* **google:** add toast to display error message from google ([25cf594](https://github.com/AmruthPillai/Reactive-Resume/commit/25cf594eb948e1c2d6157028ee1fff2799df5f92))
+
 ### [3.4.7](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.4.6...v3.4.7) (2022-06-30)
 
 
