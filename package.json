@@ -34,17 +34,17 @@
     "start": "env-cmd --silent concurrently --kill-others \"pnpm run start:*\""
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.120.0",
-    "@docusaurus/core": "^2.0.0-beta.21",
-    "@docusaurus/preset-classic": "^2.0.0-beta.21",
+    "@aws-sdk/client-s3": "^3.127.0",
+    "@docusaurus/core": "^2.0.0-beta.22",
+    "@docusaurus/preset-classic": "^2.0.0-beta.22",
     "concurrently": "^7.2.2",
     "env-cmd": "^10.1.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.30.0",
-    "@typescript-eslint/parser": "^5.30.0",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.18.0",
+    "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
