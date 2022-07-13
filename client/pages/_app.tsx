@@ -54,7 +54,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
         </LocalizationProvider>
       </ReduxProvider>
 
-      <Script src="https://accounts.google.com/gsi/client" />
+      <Script src="https://accounts.google.com/gsi/client" async defer />
     </>
   );
 };

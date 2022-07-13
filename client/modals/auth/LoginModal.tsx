@@ -87,16 +87,24 @@ const LoginModal: React.FC = () => {
 
   const handleLoginWithGoogle = async () => {
     google.accounts.id.initialize({
+      auto_select: true,
+      itp_support: true,
       client_id: env('GOOGLE_CLIENT_ID'),
       callback: async (response: any) => {
         await loginWithGoogleMutation({ credential: response.credential });
 
         handleClose();
       },
-      auto_select: false,
     });
 
-    google.accounts.id.prompt();
+    google.accounts.id.prompt((notification: any) => {
+      if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+        const reason = notification.getNotDisplayedReason() || notification.getSkippedReason();
+
+        toast.error(`Google returned an error while trying to sign in: ${reason}.`);
+        toast("Please try logging in using email/password, or use another browser that supports Google's One Tap API.");
+      }
+    });
   };
 
   const PasswordVisibility = (): React.ReactElement => {
