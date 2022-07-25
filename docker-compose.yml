@@ -3,13 +3,10 @@ version: '3'
 services:
   postgres:
     image: postgres:14.2-alpine
-    container_name: postgres
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-    ports:
-      - 5432:5432
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
@@ -22,7 +19,6 @@ services:
 
   traefik:
     image: traefik:rocamadour
-    container_name: traefik
     command:
       - --providers.docker=true
       - --providers.docker.exposedbydefault=false
@@ -37,7 +33,6 @@ services:
     # build:
     #   context: .
     #   dockerfile: ./server/Dockerfile
-    container_name: server
     environment:
       - TZ=UTC
       - PUBLIC_URL=http://localhost:3000
@@ -81,7 +76,6 @@ services:
     # build:
     #   context: .
     #   dockerfile: ./client/Dockerfile
-    container_name: client
     environment:
       - TZ=UTC
       - PUBLIC_URL=http://localhost:3000
