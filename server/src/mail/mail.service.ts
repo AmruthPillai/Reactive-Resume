@@ -7,7 +7,11 @@ import { User } from '@/users/entities/user.entity';
 @Injectable()
 export class MailService {
   constructor(private configService: ConfigService) {
-    SendGrid.setApiKey(this.configService.get<string>('sendgrid.apiKey'));
+    const sendGridApiKey = this.configService.get<string>('sendgrid.apiKey');
+
+    if (sendGridApiKey) {
+      SendGrid.setApiKey(this.configService.get<string>('sendgrid.apiKey'));
+    }
   }
 
   async sendEmail(mail: SendGrid.MailDataRequired) {
