@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.5.0](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.4.8...v3.5.0) (2022-07-30)
+
+
+### Bug Fixes
+
+* **client:** :bug: attempt to fix the one-off date issue ([5197f95](https://github.com/AmruthPillai/Reactive-Resume/commit/5197f954c0baed3daf1c7e2c79b607354ef42024))
+* **client:** :bug: fix mui rendering of utc dates ([977fa72](https://github.com/AmruthPillai/Reactive-Resume/commit/977fa72ddeeeebf7463d43a820e85f783489a4dc))
+
 ### [3.4.8](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.4.7...v3.4.8) (2022-07-13)
 
 
