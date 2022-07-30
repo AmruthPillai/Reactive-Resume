@@ -140,7 +140,7 @@ const VolunteerModal: React.FC = () => {
               views={['year', 'month', 'day']}
               onChange={(date: Date | null, keyboardInputValue: string | undefined) => {
                 isEmpty(keyboardInputValue) && field.onChange('');
-                date && dayjs(date).utc().isValid() && field.onChange(date.toISOString());
+                date && dayjs(date).utc().isValid() && field.onChange(dayjs(date).utc().toISOString());
               }}
               renderInput={(params) => (
                 <TextField
@@ -164,7 +164,7 @@ const VolunteerModal: React.FC = () => {
               views={['year', 'month', 'day']}
               onChange={(date: Date | null, keyboardInputValue: string | undefined) => {
                 isEmpty(keyboardInputValue) && field.onChange('');
-                date && dayjs(date).utc().isValid() && field.onChange(date.toISOString());
+                date && dayjs(date).utc().isValid() && field.onChange(dayjs(date).utc().toISOString());
               }}
               renderInput={(params) => (
                 <TextField
