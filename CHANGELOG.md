@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.5.1](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.5.0...v3.5.1) (2022-07-30)
+
+
+### Features
+
+* **client:** :sparkles: ask for confirmation when resetting a resume ([4d43f6a](https://github.com/AmruthPillai/Reactive-Resume/commit/4d43f6a6427198e62e9fcb995f1a28c0ee4de71e))
+* **docker:** :zap: remove ports from postgres docker instance ([07c91e9](https://github.com/AmruthPillai/Reactive-Resume/commit/07c91e9ac21e8ef120d08ab92363d8e48a55aaba))
+
+
+### Bug Fixes
+
+* **server:** :zap: don't initialize sendgrid if the apikey is empty ([05d3f1f](https://github.com/AmruthPillai/Reactive-Resume/commit/05d3f1f06fbffd899269a5c4dea3c52cf408125f))
+
 ## [3.5.0](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.4.8...v3.5.0) (2022-07-30)
 
 
