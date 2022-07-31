@@ -48,7 +48,7 @@ const Settings = () => {
   const dateConfig: DateConfig = useMemo(() => get(resume, 'metadata.date'), [resume]);
 
   const isDarkMode = useMemo(() => theme === 'dark', [theme]);
-  const exampleString = useMemo(() => `Eg. ${dayjs().format(dateConfig.format)}`, [dateConfig.format]);
+  const exampleString = useMemo(() => `Eg. ${dayjs().utc().format(dateConfig.format)}`, [dateConfig.format]);
   const themeString = useMemo(() => (isDarkMode ? 'Matte Black Everything' : 'As bright as your future'), [isDarkMode]);
 
   const { mutateAsync: loadSampleDataMutation } = useMutation<Resume, ServerError, LoadSampleDataParams>(
