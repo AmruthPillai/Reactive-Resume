@@ -1,0 +1,136 @@
+{
+  "auth": {
+    "forgot-password": {
+      "actions": {
+        "send-email": "Lähetä salasanan palautussähköposti"
+      },
+      "body": "Kirjoita vain palautettavaan tiliin liitetty sähköpostiosoite.",
+      "form": {
+        "email": {
+          "label": "Sähköpostiosoite"
+        }
+      },
+      "heading": "Unohditko salasanasi?",
+      "help-text": "Jos sähköpostiosoitteesi on olemassa, saat sähköpostiviestissä linkin salasanasi palautukseen."
+    },
+    "login": {
+      "actions": {
+        "login": "Kirjaudu sisään",
+        "google": "Kirjaudu Google-tilillä"
+      },
+      "body": "Anna tiliisi liitetty käyttäjätunnuksesi ja salasanasi kirjautuaksesi sisään ja käyttääksesi, hallitaksesi ja jakaaksesi ansioluettelosi.",
+      "form": {
+        "password": {
+          "label": "Salasana"
+        },
+        "username": {
+          "help-text": "Voit myös syöttää sähköpostiosoitteesi",
+          "label": "Käyttäjänimi"
+        }
+      },
+      "heading": "Kirjaudu tilillesi",
+      "recover-text": "Jos olet unohtanut salasanasi, voit <1>palauttaa tilisi</1> täällä.",
+      "register-text": "Jos sinulla ei ole tiliä, voit <1>luoda tilin</1> täällä."
+    },
+    "register": {
+      "actions": {
+        "register": "Rekisteröidy",
+        "google": "Rekisteröidy Google-tilillä"
+      },
+      "body": "Anna tietosi luodaksesi uuden käyttäjätilin.",
+      "form": {
+        "confirm-password": {
+          "label": "Vahvista Salasana"
+        },
+        "email": {
+          "label": "Sähköpostiosoite"
+        },
+        "name": {
+          "label": "Koko nimi"
+        },
+        "password": {
+          "label": "Salasana"
+        },
+        "username": {
+          "label": "Käyttäjänimi"
+        }
+      },
+      "heading": "Luo käyttäjätili",
+      "loginText": "Jos sinulla on jo tili, voit <1>kirjautua sisään täällä</1>."
+    },
+    "reset-password": {
+      "actions": {
+        "set-password": "Aseta uusi salasana"
+      },
+      "body": "Anna uusi salasana tilillesi.",
+      "form": {
+        "confirm-password": {
+          "label": "Vahvista Salasana"
+        },
+        "password": {
+          "label": "Salasana"
+        }
+      },
+      "heading": "Palauta salasanasi"
+    }
+  },
+  "dashboard": {
+    "create-resume": {
+      "actions": {
+        "create-resume": "Luo ansioluettelo"
+      },
+      "body": "Aloita ansioluettelosi rakentaminen antamalla sille nimi. Se voi viitata rooliin, johon haet, tai vaikka suosikkivälipalaasi.",
+      "form": {
+        "name": {
+          "label": "Nimi"
+        },
+        "public": {
+          "label": "Onko julkisesti saatavilla?"
+        },
+        "slug": {
+          "label": "Tunniste"
+        }
+      },
+      "heading": "Luo uusi ansioluettelo"
+    },
+    "import-external": {
+      "heading": "Tuo ulkoisista lähteistä",
+      "json-resume": {
+        "actions": {
+          "upload-json": "Lataa JSON"
+        },
+        "body": "Jos sinulla on valmiiksi <1>validoitu JSON-ansioluettelo</1>, voit käyttää sitä Reactive Resume -ansioluettelon laatimisen nopeuttamiseen. Napsauta alla olevaa painiketta ja lataa validoitu JSON-tiedosto aloittaaksesi.",
+        "heading": "Tuo JSON-muotoisesta ansioluettelosta"
+      },
+      "linkedin": {
+        "actions": {
+          "upload-archive": "Lataa ZIP-tiedosto"
+        },
+        "body": "Voit säästää aikaa tuomalla tietosi LinkedInistä ja käyttämällä niitä Reactive Resumen kenttien automaattiseen täyttämiseen. Siirry LinkedInin <1>tietosuojaosioon</1> ja pyydä tietojesi arkistointia. Kun se on saatavilla, lataa alla oleva ZIP-tiedosto.",
+        "heading": "Tuo LinkedInistä"
+      },
+      "reactive-resume": {
+        "actions": {
+          "upload-json": "Lataa JSON",
+          "upload-json-v2": "Lataa JSON v2:sta"
+        },
+        "body": "Jos sinulla on JSON, joka on viety Reactive Resume -ohjelman nykyisellä versiolla, voit tuoda sen takaisin tänne saadaksesi muokattavan version uudelleen.",
+        "heading": "Tuo Reactive Resume -ohjelmalla tehdystä"
+      }
+    },
+    "rename-resume": {
+      "actions": {
+        "rename-resume": "Nimeä ansioluettelo uudelleen"
+      },
+      "form": {
+        "name": {
+          "label": "Nimi"
+        },
+        "slug": {
+          "label": "Tunniste"
+        }
+      },
+      "heading": "Nimeä ansioluettelosi uudelleen"
+    }
+  }
+}
