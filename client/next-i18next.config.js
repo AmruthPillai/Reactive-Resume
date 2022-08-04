@@ -13,6 +13,7 @@ const i18nConfig = {
       'en',
       'es',
       'fa',
+      'fi',
       'fr',
       'he',
       'hi',

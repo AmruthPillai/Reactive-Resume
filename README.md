@@ -61,6 +61,7 @@ You have complete control over what goes into your resume, how it looks, what co
 - Danish (Dansk)
 - Dutch (Nederlands)
 - English
+- Finnish (Suomi)
 - French (Français)
 - German (Deutsch)
 - Greek (Ελληνικά)
