@@ -4,6 +4,8 @@ services:
   postgres:
     image: postgres:14.2-alpine
     container_name: postgres
+    ports:
+      - 5432:5432
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres

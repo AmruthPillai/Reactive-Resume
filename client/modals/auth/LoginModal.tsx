@@ -86,6 +86,8 @@ const LoginModal: React.FC = () => {
   };
 
   const handleLoginWithGoogle = async () => {
+    console.log(process.env.PUBLIC_GOOGLE_CLIENT_ID, env('GOOGLE_CLIENT_ID'));
+
     google.accounts.id.initialize({
       auto_select: true,
       itp_support: true,
