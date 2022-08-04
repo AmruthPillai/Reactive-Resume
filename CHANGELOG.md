@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.5.2](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.5.1...v3.5.2) (2022-08-04)
+
+
+### Features
+
+* **client:** :dizzy: add Finnish language support ([16d19eb](https://github.com/AmruthPillai/Reactive-Resume/commit/16d19eb70f64f768304f352d0f87102d328b57c1))
+
 ### [3.5.1](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.5.0...v3.5.1) (2022-07-30)
 
 
