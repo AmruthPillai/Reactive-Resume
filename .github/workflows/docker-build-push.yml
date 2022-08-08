@@ -31,7 +31,7 @@ jobs:
           password: ${{ secrets.GH_TOKEN }}
 
       - name: Build and Push Client Image
-        uses: docker/build-push-action@v3.1.0
+        uses: docker/build-push-action@v3.1.1
         with:
           context: .
           push: true
@@ -68,7 +68,7 @@ jobs:
           password: ${{ secrets.GH_TOKEN }}
 
       - name: Build and Push Server Image
-        uses: docker/build-push-action@v3.1.0
+        uses: docker/build-push-action@v3.1.1
         with:
           context: .
           push: true
