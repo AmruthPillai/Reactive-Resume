@@ -13,6 +13,7 @@ const DateWrapper: React.FC<React.PropsWithChildren<unknown>> = ({ children }) =
 
     // Locales
     require('dayjs/locale/ar');
+    require('dayjs/locale/bg');
     require('dayjs/locale/bn');
     require('dayjs/locale/cs');
     require('dayjs/locale/da');

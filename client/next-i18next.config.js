@@ -5,6 +5,7 @@ const i18nConfig = {
     defaultLocale: 'en',
     locales: [
       'ar',
+      'bg',
       'bn',
       'cs',
       'da',

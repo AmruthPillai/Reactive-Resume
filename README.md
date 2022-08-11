@@ -56,6 +56,7 @@ You have complete control over what goes into your resume, how it looks, what co
 
 - Arabic (اَلْعَرَبِيَّةُ)
 - Bengali (বাংলা)
+- Bulgarian (български)
 - Chinese (中文)
 - Czech (čeština)
 - Danish (Dansk)
