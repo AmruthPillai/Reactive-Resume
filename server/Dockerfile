@@ -32,7 +32,7 @@ FROM mcr.microsoft.com/playwright:focal as production
 WORKDIR /app
 
 RUN apt-get update \
-  && apt-get install -y curl \
+  && apt-get install -y g++ make curl \
   && curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm
 
 COPY --from=builder /app/pnpm-*.yaml ./
