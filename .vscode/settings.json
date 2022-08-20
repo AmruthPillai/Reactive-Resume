@@ -11,21 +11,12 @@
     "client",
     "server"
   ],
-  "i18n-ally.enabledFrameworks": [
-    "react"
-  ],
-  "i18n-ally.keystyle": "nested",
-  "i18n-ally.localesPaths": [
-    "client/public/locales"
-  ],
-  "i18n-ally.namespace": true,
-  "i18n-ally.pathMatcher": "{locale}/{namespaces}.{ext}",
-  "i18n-ally.sortKeys": true,
   "scss.validate": false,
   "conventionalCommits.scopes": [
     "client",
     "server",
     "docker",
     "dependencies"
-  ]
+  ],
+  "npm.packageManager": "pnpm"
 }
