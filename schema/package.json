@@ -4,9 +4,8 @@
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
     "dev": "tsc -w",
-    "lint": "eslint --fix --ext .ts ./src"
+    "build": "tsc"
   },
   "devDependencies": {
     "eslint": "^8.22.0",

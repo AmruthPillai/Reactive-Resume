@@ -1,22 +1,22 @@
 {
   "css.validate": false,
+  "scss.validate": false,
+  "editor.wordWrap": "on",
+  "npm.packageManager": "pnpm",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "editor.wordWrap": "on",
   "eslint.workingDirectories": [
     "schema",
     "client",
     "server"
   ],
-  "scss.validate": false,
   "conventionalCommits.scopes": [
     "client",
     "server",
     "docker",
     "dependencies"
-  ],
-  "npm.packageManager": "pnpm"
+  ]
 }

@@ -1,10 +1,6 @@
-// @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
-
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
-/** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Reactive Resume',
   tagline: 'A free and open source resume builder.',
@@ -24,7 +20,6 @@ const config = {
         blog: false,
         docs: {
           routeBasePath: '/',
-          sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/AmruthPillai/Reactive-Resume/tree/main/docs',
         },
         sitemap: {

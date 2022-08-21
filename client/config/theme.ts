@@ -1,6 +1,6 @@
-import { createTheme } from '@mui/material';
+import { createTheme, ThemeOptions } from '@mui/material/styles';
 
-const theme = createTheme({
+const theme: ThemeOptions = {
   typography: {
     fontSize: 12,
     fontFamily: 'Inter, sans-serif',
@@ -49,7 +49,7 @@ const theme = createTheme({
       },
     },
   },
-});
+};
 
 export const lightTheme = createTheme({
   ...theme,

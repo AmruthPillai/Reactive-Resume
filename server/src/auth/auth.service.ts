@@ -2,8 +2,7 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 import { SchedulerRegistry } from '@nestjs/schedule';
-import bcrypt from 'bcrypt';
-import { randomInt } from 'crypto';
+import { compareSync, hashSync } from 'bcryptjs';
 import { OAuth2Client } from 'google-auth-library';
 
 import { PostgresErrorCode } from '@/database/errorCodes.enum';
@@ -24,12 +23,12 @@ export class AuthService {
   ) {}
 
   async register(registerDto: RegisterDto) {
-    const hashedPassword = await bcrypt.hash(registerDto.password, randomInt(8, 12));
+    const password = hashSync(registerDto.password);
 
     try {
       const createdUser = await this.usersService.create({
         ...registerDto,
-        password: hashedPassword,
+        password,
         provider: 'email',
       });
 
@@ -40,6 +39,17 @@ export class AuthService {
       }
 
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
+
+  async verifyPassword(password: string, hashedPassword: string) {
+    const isPasswordMatching = compareSync(password, hashedPassword);
+
+    if (!isPasswordMatching) {
+      throw new HttpException(
+        'The username/email and password combination provided was incorrect.',
+        HttpStatus.UNAUTHORIZED
+      );
     }
   }
 
@@ -58,27 +68,17 @@ export class AuthService {
     }
   }
 
-  async verifyPassword(password: string, hashedPassword: string) {
-    const isPasswordMatching = await bcrypt.compare(password, hashedPassword);
-
-    if (!isPasswordMatching) {
-      throw new HttpException(
-        'The username/email and password combination provided was incorrect.',
-        HttpStatus.UNAUTHORIZED
-      );
-    }
-  }
-
   forgotPassword(email: string) {
     return this.usersService.generateResetToken(email);
   }
 
   async resetPassword(resetPasswordDto: ResetPasswordDto) {
     const user = await this.usersService.findByResetToken(resetPasswordDto.resetToken);
-    const hashedPassword = await bcrypt.hash(resetPasswordDto.password, randomInt(8, 12));
+
+    const password = hashSync(resetPasswordDto.password);
 
     await this.usersService.update(user.id, {
-      password: hashedPassword,
+      password,
       resetToken: null,
     });
 

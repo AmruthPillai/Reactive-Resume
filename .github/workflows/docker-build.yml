@@ -1,8 +1,6 @@
 name: Build and Push Docker Image
 
-on:
-  release:
-    types: [published]
+on: pull_request
 
 jobs:
   client:
@@ -20,29 +18,26 @@ jobs:
         with:
           fetch-depth: 2
 
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2.0.0
+
+      - id: buildx
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2.0.0
+        with:
+          install: true
+
       - id: version
         name: Get Version
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
 
-      - name: Login to Docker Hub
-        uses: docker/login-action@v2.0.0
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v2.0.0
-        with:
-          registry: ghcr.io
-          username: $GITHUB_REPOSITORY_OWNER
-          password: ${{ secrets.GH_TOKEN }}
-
-      - name: Build and Push Client Image
+      - name: Build Client Image
         uses: docker/build-push-action@v3.1.1
         with:
           context: .
-          push: true
+          push: false
           file: client/Dockerfile
+          platforms: linux/amd64,linux/arm64
           tags: |
             amruthpillai/reactive-resume:client-latest
             amruthpillai/reactive-resume:client-${{ steps.version.outputs.tag }}
@@ -64,29 +59,26 @@ jobs:
         with:
           fetch-depth: 2
 
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2.0.0
+
+      - id: buildx
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2.0.0
+        with:
+          install: true
+
       - id: version
         name: Get Version
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
 
-      - name: Login to Docker Hub
-        uses: docker/login-action@v2.0.0
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v2.0.0
-        with:
-          registry: ghcr.io
-          username: $GITHUB_REPOSITORY_OWNER
-          password: ${{ secrets.GH_TOKEN }}
-
-      - name: Build and Push Server Image
+      - name: Build Server Image
         uses: docker/build-push-action@v3.1.1
         with:
           context: .
-          push: true
+          push: false
           file: server/Dockerfile
+          platforms: linux/amd64,linux/arm64
           tags: |
             amruthpillai/reactive-resume:server-latest
             amruthpillai/reactive-resume:server-${{ steps.version.outputs.tag }}
