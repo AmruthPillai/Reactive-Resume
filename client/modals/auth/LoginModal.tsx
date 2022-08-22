@@ -1,7 +1,8 @@
 import env from '@beam-australia/react-env';
 import { joiResolver } from '@hookform/resolvers/joi';
-import { Google, Login, Visibility, VisibilityOff } from '@mui/icons-material';
+import { Login, Visibility, VisibilityOff } from '@mui/icons-material';
 import { Button, IconButton, InputAdornment, TextField } from '@mui/material';
+import { CredentialResponse, GoogleLogin } from '@react-oauth/google';
 import Joi from 'joi';
 import { isEmpty } from 'lodash';
 import { Trans, useTranslation } from 'next-i18next';
@@ -16,8 +17,6 @@ import { login, LoginParams, loginWithGoogle, LoginWithGoogleParams } from '@/se
 import { ServerError } from '@/services/axios';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
-
-declare const google: any;
 
 type FormData = {
   identifier: string;
@@ -85,28 +84,16 @@ const LoginModal: React.FC = () => {
     dispatch(setModalState({ modal: 'auth.forgot', state: { open: true } }));
   };
 
-  const handleLoginWithGoogle = async () => {
-    console.log(process.env.PUBLIC_GOOGLE_CLIENT_ID, env('GOOGLE_CLIENT_ID'));
+  const handleLoginWithGoogle = async (response: CredentialResponse) => {
+    if (response.credential) {
+      await loginWithGoogleMutation({ credential: response.credential }, { onError: handleLoginWithGoogleError });
 
-    google.accounts.id.initialize({
-      auto_select: true,
-      itp_support: true,
-      client_id: env('GOOGLE_CLIENT_ID'),
-      callback: async (response: any) => {
-        await loginWithGoogleMutation({ credential: response.credential });
+      handleClose();
+    }
+  };
 
-        handleClose();
-      },
-    });
-
-    google.accounts.id.prompt((notification: any) => {
-      if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
-        const reason = notification.getNotDisplayedReason() || notification.getSkippedReason();
-
-        toast.error(`Google returned an error while trying to sign in: ${reason}.`);
-        toast("Please try logging in using email/password, or use another browser that supports Google's One Tap API.");
-      }
-    });
+  const handleLoginWithGoogleError = () => {
+    toast("Please try logging in using email/password, or use another browser that supports Google's One Tap API.");
   };
 
   const PasswordVisibility = (): React.ReactElement => {
@@ -130,15 +117,7 @@ const LoginModal: React.FC = () => {
       footerChildren={
         <div className="flex gap-4">
           {!isEmpty(env('GOOGLE_CLIENT_ID')) && (
-            <Button
-              type="submit"
-              variant="outlined"
-              disabled={isLoading}
-              startIcon={<Google />}
-              onClick={handleLoginWithGoogle}
-            >
-              {t<string>('modals.auth.login.actions.google')}
-            </Button>
+            <GoogleLogin onSuccess={handleLoginWithGoogle} onError={handleLoginWithGoogleError} />
           )}
 
           <Button type="submit" onClick={handleSubmit(onSubmit)} disabled={isLoading}>

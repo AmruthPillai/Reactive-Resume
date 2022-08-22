@@ -1,10 +1,11 @@
 import '@/styles/globals.scss';
 
+import env from '@beam-australia/react-env';
 import DayjsAdapter from '@date-io/dayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import Script from 'next/script';
 import { appWithTranslation } from 'next-i18next';
 import { Toaster } from 'react-hot-toast';
 import { QueryClientProvider } from 'react-query';
@@ -34,27 +35,27 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
       <ReduxProvider store={store}>
         <LocalizationProvider dateAdapter={DayjsAdapter}>
           <PersistGate loading={null} persistor={persistor}>
-            <QueryClientProvider client={queryClient}>
-              <WrapperRegistry>
-                <Loading />
+            <GoogleOAuthProvider clientId={env('GOOGLE_CLIENT_ID')}>
+              <QueryClientProvider client={queryClient}>
+                <WrapperRegistry>
+                  <Loading />
 
-                <Component {...pageProps} />
+                  <Component {...pageProps} />
 
-                <ModalWrapper />
-                <Toaster
-                  position="bottom-right"
-                  toastOptions={{
-                    duration: 4000,
-                    className: 'toast',
-                  }}
-                />
-              </WrapperRegistry>
-            </QueryClientProvider>
+                  <ModalWrapper />
+                  <Toaster
+                    position="bottom-right"
+                    toastOptions={{
+                      duration: 4000,
+                      className: 'toast',
+                    }}
+                  />
+                </WrapperRegistry>
+              </QueryClientProvider>
+            </GoogleOAuthProvider>
           </PersistGate>
         </LocalizationProvider>
       </ReduxProvider>
-
-      <Script src="https://accounts.google.com/gsi/client" async defer />
     </>
   );
 };
