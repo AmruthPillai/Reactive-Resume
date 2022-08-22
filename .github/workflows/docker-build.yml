@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: Build Docker Image
 
 on: pull_request
 
@@ -17,6 +17,10 @@ jobs:
         uses: actions/checkout@v3.0.2
         with:
           fetch-depth: 2
+
+      - id: vars
+        name: Get Short SHA
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2.0.0
@@ -40,9 +44,9 @@ jobs:
           platforms: linux/amd64,linux/arm64
           tags: |
             amruthpillai/reactive-resume:client-latest
-            amruthpillai/reactive-resume:client-${{ steps.version.outputs.tag }}
+            amruthpillai/reactive-resume:client-${{ steps.vars.outputs.sha_short }}
             ghcr.io/amruthpillai/reactive-resume:client-latest
-            ghcr.io/amruthpillai/reactive-resume:client-${{ steps.version.outputs.tag }}
+            ghcr.io/amruthpillai/reactive-resume:client-${{ steps.vars.outputs.sha_short }}
 
   server:
     name: Server
@@ -81,6 +85,6 @@ jobs:
           platforms: linux/amd64,linux/arm64
           tags: |
             amruthpillai/reactive-resume:server-latest
-            amruthpillai/reactive-resume:server-${{ steps.version.outputs.tag }}
+            amruthpillai/reactive-resume:server-${{ steps.vars.outputs.sha_short }}
             ghcr.io/amruthpillai/reactive-resume:server-latest
-            ghcr.io/amruthpillai/reactive-resume:server-${{ steps.version.outputs.tag }}
+            ghcr.io/amruthpillai/reactive-resume:server-${{ steps.vars.outputs.sha_short }}
