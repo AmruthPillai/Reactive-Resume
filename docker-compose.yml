@@ -6,10 +6,7 @@ services:
     container_name: postgres
     ports:
       - 5432:5432
-    environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+    env_file: .env.docker
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
@@ -38,7 +35,7 @@ services:
       context: .
       dockerfile: ./server/Dockerfile
     container_name: server
-    env_file: .env
+    env_file: .env.docker
     depends_on:
       - traefik
       - postgres
@@ -57,7 +54,7 @@ services:
       context: .
       dockerfile: ./client/Dockerfile
     container_name: client
-    env_file: .env
+    env_file: .env.docker
     depends_on:
       - traefik
       - server

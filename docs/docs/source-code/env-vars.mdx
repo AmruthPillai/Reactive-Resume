@@ -136,30 +136,16 @@ You can get your own key here: https://developers.google.com/fonts/docs/develope
 
 If you do not have a Google API Key, it was make use of the cached response JSON that's stored within the project source. Please note that this cache is not updated and may not have all the latest fonts that Google Fonts has to offer.
 
-## SendGrid
+## Mail
 
-The server makes use of SendGrid to send the password reset email to those who have forgotten their password. **This section is completely optional for those who do not require this functionality.**
+The server makes use of SMTP to send the password reset email to those who have forgotten their password. **This section is completely optional for those who do not require this functionality.**
 
-### `SENDGRID_API_KEY`
-
-**Required**: `no`  
-**Description:** SendGrid API Key
-
-Does not require any payment or credit card information to obtain an API key.
-
-You can get your own key here: https://docs.sendgrid.com/ui/account-and-settings/api-keys
-
-### `SENDGRID_FORGOT_PASSWORD_TEMPLATE_ID`
-
-**Required**: `no`  
-**Description:** Dynamic Template ID for Forgot Password
-
-### `SENDGRID_FROM_NAME`
+### `MAIL_FROM_NAME`
 
 **Required**: `no`  
 **Description:** Sender's Name
 
-### `SENDGRID_FROM_EMAIL`
+### `MAIL_FROM_EMAIL`
 
 **Required**: `no`  
 **Description:** Sender's Email Address

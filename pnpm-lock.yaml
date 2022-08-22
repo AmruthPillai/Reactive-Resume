@@ -221,13 +221,13 @@ importers:
       '@nestjs/terminus': ^9.1.1
       '@nestjs/typeorm': ^9.0.1
       '@reactive-resume/schema': workspace:*
-      '@sendgrid/mail': ^7.7.0
       '@types/bcryptjs': ^2.4.2
       '@types/cookie-parser': ^1.4.3
       '@types/express': ^4.17.13
       '@types/lodash': ^4.14.184
       '@types/multer': ^1.4.7
       '@types/node': ^18.7.9
+      '@types/nodemailer': ^6.4.5
       '@types/passport': ^1.0.10
       '@types/passport-jwt': ^3.0.6
       '@types/passport-local': ^1.0.34
@@ -244,6 +244,7 @@ importers:
       multer: ^1.4.4
       nanoid: ^3.3.4
       node-stream-zip: ^1.15.0
+      nodemailer: ^6.7.8
       passport: ^0.6.0
       passport-jwt: ^4.0.0
       passport-local: ^1.0.0
@@ -276,7 +277,6 @@ importers:
       '@nestjs/serve-static': 3.0.0_khr6mt6ojlxbw7bo55fknouh34
       '@nestjs/terminus': 9.1.1_mr622mjrz7hsw5sxbt7k6brday
       '@nestjs/typeorm': 9.0.1_sp4gtzkbiyh24r2ydcb6yqstha
-      '@sendgrid/mail': 7.7.0
       '@types/passport': 1.0.10
       bcryptjs: 2.4.3
       cache-manager: 4.1.0
@@ -291,6 +291,7 @@ importers:
       multer: 1.4.4
       nanoid: 3.3.4
       node-stream-zip: 1.15.0
+      nodemailer: 6.7.8
       passport: 0.6.0
       passport-jwt: 4.0.0
       passport-local: 1.0.0
@@ -312,6 +313,7 @@ importers:
       '@types/lodash': 4.14.184
       '@types/multer': 1.4.7
       '@types/node': 18.7.9
+      '@types/nodemailer': 6.4.5
       '@types/passport-jwt': 3.0.6
       '@types/passport-local': 1.0.34
       prettier: 2.7.1
@@ -4696,33 +4698,6 @@ packages:
     resolution: {integrity: sha512-WiBSI6JBIhC6LRIsB2Kwh8DsGTlbBU+mLRxJmAe3LjHTdkDpwIbEOZgoXBbZilk/vlfjK8i6nKRAvIRn1XaIMw==}
     dev: true
 
-  /@sendgrid/client/7.7.0:
-    resolution: {integrity: sha512-SxH+y8jeAQSnDavrTD0uGDXYIIkFylCo+eDofVmZLQ0f862nnqbC3Vd1ej6b7Le7lboyzQF6F7Fodv02rYspuA==}
-    engines: {node: 6.* || 8.* || >=10.*}
-    dependencies:
-      '@sendgrid/helpers': 7.7.0
-      axios: 0.26.1
-    transitivePeerDependencies:
-      - debug
-    dev: false
-
-  /@sendgrid/helpers/7.7.0:
-    resolution: {integrity: sha512-3AsAxfN3GDBcXoZ/y1mzAAbKzTtUZ5+ZrHOmWQ279AuaFXUNCh9bPnRpN504bgveTqoW+11IzPg3I0WVgDINpw==}
-    engines: {node: '>= 6.0.0'}
-    dependencies:
-      deepmerge: 4.2.2
-    dev: false
-
-  /@sendgrid/mail/7.7.0:
-    resolution: {integrity: sha512-5+nApPE9wINBvHSUxwOxkkQqM/IAAaBYoP9hw7WwgDNQPxraruVqHizeTitVtKGiqWCKm2mnjh4XGN3fvFLqaw==}
-    engines: {node: 6.* || 8.* || >=10.*}
-    dependencies:
-      '@sendgrid/client': 7.7.0
-      '@sendgrid/helpers': 7.7.0
-    transitivePeerDependencies:
-      - debug
-    dev: false
-
   /@sideway/address/4.1.4:
     resolution: {integrity: sha512-7vwq+rOHVWjyXxVlR76Agnvhy8I9rpzjosTESvmhNeXOXdZZB15Fl+TI9x1SiHZH5Jv2wTGduSxFDIaq0m3DUw==}
     dependencies:
@@ -5101,9 +5076,16 @@ packages:
 
   /@types/node/18.6.2:
     resolution: {integrity: sha512-KcfkBq9H4PI6Vpu5B/KoPeuVDAbmi+2mDBqGPGUgoL7yXQtcWGu2vJWmmRkneWK3Rh0nIAX192Aa87AqKHYChQ==}
+    dev: false
 
   /@types/node/18.7.9:
     resolution: {integrity: sha512-0N5Y1XAdcl865nDdjbO0m3T6FdmQ4ijE89/urOHLREyTXbpMWbSafx9y7XIsgWGtwUP2iYTinLyyW3FatAxBLQ==}
+
+  /@types/nodemailer/6.4.5:
+    resolution: {integrity: sha512-zuP3nBRQHI6M2PkXnGGy1Ww4VB+MyYHGgnfV2T+JR9KLkeWqPJuyVUgLpKXuFnA/b7pZaIDFh2sV4759B7jK1g==}
+    dependencies:
+      '@types/node': 18.7.9
+    dev: true
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -5957,14 +5939,6 @@ packages:
     resolution: {integrity: sha512-cD8FOb0tRH3uuEe6+evtAbgJtfxr7ly3fQjYcMcuPlgkwVS9xboaVIpcDV+cYQe+yGykgwZCs1pzjntcGa6l5g==}
     dependencies:
       follow-redirects: 1.15.1
-    transitivePeerDependencies:
-      - debug
-    dev: false
-
-  /axios/0.26.1:
-    resolution: {integrity: sha512-fPwcX4EvnSHuInCMItEhAGnaSEXRBjtzh9fOtsE6E1G6p7vl7edEeZe11QHf18+6+9gR5PbKV/sGKNaD8YaMeA==}
-    dependencies:
-      follow-redirects: 1.14.9
     transitivePeerDependencies:
       - debug
     dev: false
@@ -9804,7 +9778,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 18.6.2
+      '@types/node': 18.7.9
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -11067,6 +11041,11 @@ packages:
   /node-stream-zip/1.15.0:
     resolution: {integrity: sha512-LN4fydt9TqhZhThkZIVQnF9cwjU3qmUH9h78Mx/K7d3VvfRqqwthLwJEUOEL0QPZ0XQmNN7be5Ggit5+4dq3Bw==}
     engines: {node: '>=0.12.0'}
+    dev: false
+
+  /nodemailer/6.7.8:
+    resolution: {integrity: sha512-2zaTFGqZixVmTxpJRCFC+Vk5eGRd/fYtvIR+dl5u9QXLTQWGIf48x/JXvo58g9sa0bU6To04XUv554Paykum3g==}
+    engines: {node: '>=6.0.0'}
     dev: false
 
   /normalize-package-data/2.5.0:

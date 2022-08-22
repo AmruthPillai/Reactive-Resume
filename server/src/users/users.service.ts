@@ -2,7 +2,7 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { SchedulerRegistry } from '@nestjs/schedule';
 import { InjectRepository } from '@nestjs/typeorm';
 import { randomBytes } from 'crypto';
-import { Connection, Repository } from 'typeorm';
+import { DataSource, Repository } from 'typeorm';
 
 import { MailService } from '@/mail/mail.service';
 
@@ -19,7 +19,7 @@ export class UsersService {
     @InjectRepository(User) private userRepository: Repository<User>,
     private schedulerRegistry: SchedulerRegistry,
     private mailService: MailService,
-    private connection: Connection
+    private dataSource: DataSource
   ) {}
 
   async findById(id: number): Promise<User> {
@@ -93,7 +93,7 @@ export class UsersService {
       const user = await this.findByEmail(email);
 
       const resetToken = randomBytes(32).toString('hex');
-      const queryRunner = this.connection.createQueryRunner();
+      const queryRunner = this.dataSource.createQueryRunner();
 
       const timeout = setTimeout(async () => {
         await this.userRepository.update(user.id, { resetToken: null });
