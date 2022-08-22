@@ -7,7 +7,6 @@ on:
 jobs:
   client:
     name: Client
-    timeout-minutes: 15
     runs-on: ubuntu-latest
 
     env:
@@ -51,7 +50,6 @@ jobs:
 
   server:
     name: Server
-    timeout-minutes: 15
     runs-on: ubuntu-latest
 
     env:
