@@ -1,6 +1,7 @@
 FROM node:lts-alpine AS base
 
 WORKDIR /app
+
 RUN apk add --no-cache g++ git curl make python3 \
   && curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm
 

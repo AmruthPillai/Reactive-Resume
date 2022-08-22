@@ -34,7 +34,7 @@ RUN apt-get update \
 COPY --from=builder /app/package.json /app/pnpm-*.yaml /app/turbo.json ./
 COPY --from=builder /app/server/package.json ./server/package.json
 
-RUN npx playwright install --with-deps chromium
+RUN pnpm dlx playwright install --with-deps chromium
 RUN pnpm install --filter server --prod --frozen-lockfile --workspace-root
 
 COPY --from=builder /app/server/dist ./server/dist
