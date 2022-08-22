@@ -1,13 +1,19 @@
 # Build Artifacts
 dist
 .next
+.turbo
 
 # IDEs
 .vscode
 
 # Project Metadata
+.crowdin.yml
+
+# Documentation
 README.md
+SECURITY.md
 CHANGELOG.md
+CODE_OF_CONDUCT.md
 
 # Project Dependencies
 node_modules

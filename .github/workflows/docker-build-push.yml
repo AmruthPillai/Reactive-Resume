@@ -9,9 +9,15 @@ jobs:
     name: Client
     runs-on: ubuntu-latest
 
+    env:
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v3.0.2
+        with:
+          fetch-depth: 2
 
       - id: version
         name: Get Version
@@ -46,9 +52,15 @@ jobs:
     name: Server
     runs-on: ubuntu-latest
 
+    env:
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v3.0.2
+        with:
+          fetch-depth: 2
 
       - id: version
         name: Get Version

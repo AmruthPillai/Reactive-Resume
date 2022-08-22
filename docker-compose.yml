@@ -1,15 +1,12 @@
-version: '3'
+version: '3.8'
 
 services:
   postgres:
-    image: postgres:14.2-alpine
+    image: postgres:alpine
     container_name: postgres
     ports:
       - 5432:5432
-    environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+    env_file: .env.docker
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
@@ -21,7 +18,7 @@ services:
     restart: always
 
   traefik:
-    image: traefik:rocamadour
+    image: traefik:latest
     container_name: traefik
     command:
       - --providers.docker=true
@@ -33,37 +30,12 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
   server:
-    image: amruthpillai/reactive-resume:server-latest
-    # build:
-    #   context: .
-    #   dockerfile: ./server/Dockerfile
+    # image: amruthpillai/reactive-resume:server-latest
+    build:
+      context: .
+      dockerfile: ./server/Dockerfile
     container_name: server
-    environment:
-      - TZ=UTC
-      - PUBLIC_URL=http://localhost:3000
-      - PUBLIC_SERVER_URL=http://localhost:3000/api
-      - PUBLIC_GOOGLE_CLIENT_ID=
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - SECRET_KEY=
-      - POSTGRES_HOST=postgres
-      - POSTGRES_PORT=5432
-      - POSTGRES_SSL_CERT=
-      - JWT_SECRET=
-      - JWT_EXPIRY_TIME=604800
-      - GOOGLE_CLIENT_SECRET=
-      - GOOGLE_API_KEY=
-      - SENDGRID_API_KEY=
-      - SENDGRID_FORGOT_PASSWORD_TEMPLATE_ID=
-      - SENDGRID_FROM_NAME=
-      - SENDGRID_FROM_EMAIL=
-      - STORAGE_BUCKET=
-      - STORAGE_REGION=
-      - STORAGE_ENDPOINT=
-      - STORAGE_URL_PREFIX=
-      - STORAGE_ACCESS_KEY=
-      - STORAGE_SECRET_KEY=
+    env_file: .env.docker
     depends_on:
       - traefik
       - postgres
@@ -77,17 +49,12 @@ services:
     restart: always
 
   client:
-    image: amruthpillai/reactive-resume:client-latest
-    # build:
-    #   context: .
-    #   dockerfile: ./client/Dockerfile
+    # image: amruthpillai/reactive-resume:client-latest
+    build:
+      context: .
+      dockerfile: ./client/Dockerfile
     container_name: client
-    environment:
-      - TZ=UTC
-      - PUBLIC_URL=http://localhost:3000
-      - PUBLIC_SERVER_URL=http://localhost:3000/api
-      - PUBLIC_GOOGLE_CLIENT_ID=
-      - PUBLIC_FLAG_DISABLE_SIGNUPS=false
+    env_file: .env.docker
     depends_on:
       - traefik
       - server

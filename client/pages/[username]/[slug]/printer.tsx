@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import { GetServerSideProps, NextPage } from 'next';
-import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect } from 'react';
 
@@ -55,8 +54,6 @@ export const getServerSideProps: GetServerSideProps<Props | Promise<Props>, Quer
 };
 
 const Printer: NextPage<Props> = ({ resume: initialData, locale }) => {
-  const router = useRouter();
-
   const dispatch = useAppDispatch();
 
   const resume = useAppSelector((state) => state.resume);
@@ -64,12 +61,6 @@ const Printer: NextPage<Props> = ({ resume: initialData, locale }) => {
   useEffect(() => {
     if (initialData) dispatch(setResume(initialData));
   }, [dispatch, initialData]);
-
-  useEffect(() => {
-    const { pathname, asPath, query } = router;
-
-    router.push({ pathname, query }, asPath, { locale });
-  }, [router, locale]);
 
   if (!resume || isEmpty(resume)) return null;
 

@@ -97,7 +97,7 @@ const Settings = () => {
       <List sx={{ padding: 0 }}>
         {/* Global Settings */}
         <>
-          <ListSubheader className="rounded">
+          <ListSubheader disableSticky className="rounded">
             {t<string>('builder.rightSidebar.sections.settings.global.heading')}
           </ListSubheader>
 
@@ -155,7 +155,7 @@ const Settings = () => {
 
         {/* Page Settings */}
         <>
-          <ListSubheader className="rounded">
+          <ListSubheader disableSticky className="rounded">
             {t<string>('builder.rightSidebar.sections.settings.page.heading')}
           </ListSubheader>
 
@@ -187,7 +187,7 @@ const Settings = () => {
 
         {/* Resume Settings */}
         <>
-          <ListSubheader className="rounded">
+          <ListSubheader disableSticky className="rounded">
             {t<string>('builder.rightSidebar.sections.settings.resume.heading')}
           </ListSubheader>
 

@@ -1,11 +1,13 @@
 import env from '@beam-australia/react-env';
 import { joiResolver } from '@hookform/resolvers/joi';
-import { Google, HowToReg } from '@mui/icons-material';
+import { HowToReg } from '@mui/icons-material';
 import { Button, TextField } from '@mui/material';
+import { CredentialResponse, GoogleLogin } from '@react-oauth/google';
 import Joi from 'joi';
 import { isEmpty } from 'lodash';
 import { Trans, useTranslation } from 'next-i18next';
 import { Controller, useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import { useMutation } from 'react-query';
 
 import BaseModal from '@/components/shared/BaseModal';
@@ -13,8 +15,6 @@ import { loginWithGoogle, LoginWithGoogleParams, register as registerUser, Regis
 import { ServerError } from '@/services/axios';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
-
-declare const google: any;
 
 type FormData = {
   name: string;
@@ -79,18 +79,16 @@ const RegisterModal: React.FC = () => {
     dispatch(setModalState({ modal: 'auth.login', state: { open: true } }));
   };
 
-  const handleLoginWithGoogle = async () => {
-    google.accounts.id.initialize({
-      client_id: env('GOOGLE_CLIENT_ID'),
-      callback: async (response: any) => {
-        await loginWithGoogleMutation({ credential: response.credential });
+  const handleLoginWithGoogle = async (response: CredentialResponse) => {
+    if (response.credential) {
+      await loginWithGoogleMutation({ credential: response.credential }, { onError: handleLoginWithGoogleError });
 
-        handleClose();
-      },
-      auto_select: false,
-    });
+      handleClose();
+    }
+  };
 
-    google.accounts.id.prompt();
+  const handleLoginWithGoogleError = () => {
+    toast("Please try logging in using email/password, or use another browser that supports Google's One Tap API.");
   };
 
   return (
@@ -102,15 +100,7 @@ const RegisterModal: React.FC = () => {
       footerChildren={
         <div className="flex gap-4">
           {!isEmpty(env('GOOGLE_CLIENT_ID')) && (
-            <Button
-              type="submit"
-              variant="outlined"
-              disabled={isLoading}
-              startIcon={<Google />}
-              onClick={handleLoginWithGoogle}
-            >
-              {t<string>('modals.auth.register.actions.google')}
-            </Button>
+            <GoogleLogin onSuccess={handleLoginWithGoogle} onError={handleLoginWithGoogleError} />
           )}
 
           <Button type="submit" onClick={handleSubmit(onSubmit)} disabled={isLoading}>

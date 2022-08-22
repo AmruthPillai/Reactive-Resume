@@ -1,0 +1,88 @@
+name: Build Docker Image
+
+on: pull_request
+
+jobs:
+  client:
+    name: Client
+    runs-on: ubuntu-latest
+
+    env:
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3.0.2
+        with:
+          fetch-depth: 2
+
+      - id: vars
+        name: Get Short SHA
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2.0.0
+
+      - id: buildx
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2.0.0
+        with:
+          install: true
+
+      - id: version
+        name: Get Version
+        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+
+      - name: Build Client Image
+        uses: docker/build-push-action@v3.1.1
+        with:
+          context: .
+          push: false
+          file: client/Dockerfile
+          platforms: linux/amd64,linux/arm64
+          tags: |
+            amruthpillai/reactive-resume:client-latest
+            amruthpillai/reactive-resume:client-${{ steps.vars.outputs.sha_short }}
+            ghcr.io/amruthpillai/reactive-resume:client-latest
+            ghcr.io/amruthpillai/reactive-resume:client-${{ steps.vars.outputs.sha_short }}
+
+  server:
+    name: Server
+    runs-on: ubuntu-latest
+
+    env:
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3.0.2
+        with:
+          fetch-depth: 2
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2.0.0
+
+      - id: buildx
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2.0.0
+        with:
+          install: true
+
+      - id: version
+        name: Get Version
+        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+
+      - name: Build Server Image
+        uses: docker/build-push-action@v3.1.1
+        with:
+          context: .
+          push: false
+          file: server/Dockerfile
+          platforms: linux/amd64,linux/arm64
+          tags: |
+            amruthpillai/reactive-resume:server-latest
+            amruthpillai/reactive-resume:server-${{ steps.vars.outputs.sha_short }}
+            ghcr.io/amruthpillai/reactive-resume:server-latest
+            ghcr.io/amruthpillai/reactive-resume:server-${{ steps.vars.outputs.sha_short }}
