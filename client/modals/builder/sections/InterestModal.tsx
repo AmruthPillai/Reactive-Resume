@@ -35,7 +35,7 @@ const InterestModal: React.FC = () => {
 
   const dispatch = useAppDispatch();
 
-  const heading = useAppSelector((state) => get(state.resume, `${path}.name`));
+  const heading = useAppSelector((state) => get(state.resume.present, `${path}.name`));
   const { open: isOpen, payload } = useAppSelector((state) => state.modal[`builder.${path}`]);
 
   const item: FormData = get(payload, 'item', null);

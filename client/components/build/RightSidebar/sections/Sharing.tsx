@@ -17,7 +17,7 @@ const Sharing = () => {
 
   const [showShortUrl, setShowShortUrl] = useState(false);
 
-  const resume = useAppSelector((state) => state.resume);
+  const resume = useAppSelector((state) => state.resume.present);
   const isPublic = useMemo(() => get(resume, 'public'), [resume]);
   const url = useMemo(() => getResumeUrl(resume, { withHost: true }), [resume]);
   const shortUrl = useMemo(() => getResumeUrl(resume, { withHost: true, shortUrl: true }), [resume]);

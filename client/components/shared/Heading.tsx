@@ -32,8 +32,8 @@ const Heading: React.FC<Props> = ({
 
   const dispatch = useAppDispatch();
 
-  const heading = useAppSelector((state) => get(state.resume, `${path}.name`, name));
-  const visibility = useAppSelector((state) => get(state.resume, `${path}.visible`, true));
+  const heading = useAppSelector((state) => get(state.resume.present, `${path}.name`, name));
+  const visibility = useAppSelector((state) => get(state.resume.present, `${path}.visible`, true));
 
   const [editMode, setEditMode] = useState(false);
 

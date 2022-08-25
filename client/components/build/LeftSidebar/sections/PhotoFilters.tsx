@@ -12,7 +12,7 @@ const PhotoFilters = () => {
 
   const dispatch = useAppDispatch();
 
-  const photo: Photo = useAppSelector((state) => get(state.resume, 'basics.photo'));
+  const photo: Photo = useAppSelector((state) => get(state.resume.present, 'basics.photo'));
   const size: number = get(photo, 'filters.size', 128);
   const shape: PhotoShape = get(photo, 'filters.shape', 'square');
   const grayscale: boolean = get(photo, 'filters.grayscale', false);

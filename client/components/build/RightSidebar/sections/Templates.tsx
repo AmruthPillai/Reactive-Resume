@@ -16,7 +16,7 @@ const Templates = () => {
 
   const dispatch = useAppDispatch();
 
-  const currentTemplate: string = useAppSelector((state) => get(state.resume, 'metadata.template'));
+  const currentTemplate: string = useAppSelector((state) => get(state.resume.present, 'metadata.template'));
 
   const handleChange = (template: TemplateMeta) => {
     dispatch(setResumeState({ path: 'metadata.template', value: template.id }));
@@ -31,7 +31,7 @@ const Templates = () => {
           <div key={template.id} className={styles.template}>
             <div className={clsx(styles.preview, { [styles.selected]: template.id === currentTemplate })}>
               <ButtonBase onClick={() => handleChange(template)}>
-                <Image src={template.preview} alt={template.name} className="rounded-sm" layout="fill" />
+                <Image src={template.preview} alt={template.name} className="rounded-sm" layout="fill" priority />
               </ButtonBase>
             </div>
 

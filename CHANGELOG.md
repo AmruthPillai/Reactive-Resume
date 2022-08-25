@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.6.2](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.5.3...v3.6.2) (2022-08-25)
+
+### Features
+
+- Implement Undo/Redo functionality across the resume builder section
+
+### Improvements
+
+- Update dependencies to the latest version
+- Cleanup ESLint configuration, add tailwindCSS formatting
+
 ### [3.5.3](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.5.2...v3.5.3) (2022-08-11)
 
 ### [3.5.2](https://github.com/AmruthPillai/Reactive-Resume/compare/v3.5.1...v3.5.2) (2022-08-04)

@@ -17,7 +17,7 @@ const CustomCSS = () => {
 
   const dispatch = useAppDispatch();
 
-  const customCSS: CustomCSSType = useAppSelector((state) => get(state.resume, 'metadata.css', {}));
+  const customCSS: CustomCSSType = useAppSelector((state) => get(state.resume.present, 'metadata.css', {}));
 
   const handleChange = (value: string | undefined) => {
     dispatch(setResumeState({ path: 'metadata.css.value', value }));

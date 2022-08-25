@@ -13,13 +13,13 @@ import { getContrastColor } from '@/utils/styles';
 import { addHttp, formatLocation, getPhotoClassNames } from '@/utils/template';
 
 export const MastheadSidebar: React.FC = () => {
-  const dateFormat: string = useAppSelector((state) => get(state.resume, 'metadata.date.format'));
+  const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
   const { name, photo, email, phone, birthdate, website, location, profiles } = useAppSelector(
-    (state) => state.resume.basics
+    (state) => state.resume.present.basics
   );
 
   return (
-    <div className="col-span-2 grid justify-items-left gap-4">
+    <div className="col-span-2 grid justify-items-start gap-4">
       {photo.visible && !isEmpty(photo.url) && (
         <img
           alt={name}
@@ -62,10 +62,10 @@ export const MastheadSidebar: React.FC = () => {
 };
 
 export const MastheadMain: React.FC = () => {
-  const theme: Theme = useAppSelector((state) => get(state.resume, 'metadata.theme', {}));
+  const theme: Theme = useAppSelector((state) => get(state.resume.present, 'metadata.theme', {}));
   const contrast = useMemo(() => getContrastColor(theme.primary), [theme.primary]);
 
-  const { name, summary, headline } = useAppSelector((state) => state.resume.basics);
+  const { name, summary, headline } = useAppSelector((state) => state.resume.present.basics);
 
   return (
     <div

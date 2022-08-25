@@ -17,8 +17,8 @@ import Section from './widgets/Section';
 const Gengar: React.FC<PageProps> = ({ page }) => {
   const isFirstPage = useMemo(() => page === 0, [page]);
 
-  const layout: string[][] = useAppSelector((state) => state.resume.metadata.layout[page]);
-  const theme: Theme = useAppSelector((state) => get(state.resume, 'metadata.theme', {}));
+  const layout: string[][] = useAppSelector((state) => state.resume.present.metadata.layout[page]);
+  const theme: Theme = useAppSelector((state) => get(state.resume.present, 'metadata.theme', {}));
   const contrast = useMemo(() => getContrastColor(theme.primary), [theme.primary]);
   const backgroundColor: string = useMemo(() => alpha(theme.primary, 0.15), [theme.primary]);
   const color = useMemo(() => (contrast === 'dark' ? theme.text : theme.background), [theme, contrast]);

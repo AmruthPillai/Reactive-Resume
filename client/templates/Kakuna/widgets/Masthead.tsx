@@ -10,13 +10,13 @@ import getProfileIcon from '@/utils/getProfileIcon';
 import { addHttp, formatLocation, getPhotoClassNames } from '@/utils/template';
 
 const Masthead = () => {
-  const dateFormat: string = useAppSelector((state) => get(state.resume, 'metadata.date.format'));
+  const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
   const { name, photo, email, phone, website, birthdate, headline, location, profiles } = useAppSelector(
-    (state) => state.resume.basics
+    (state) => state.resume.present.basics
   );
 
   return (
-    <div className="grid gap-3 justify-center mb-4 border-b pb-4 text-center">
+    <div className="mb-4 grid justify-center gap-3 border-b pb-4 text-center">
       <div className="mx-auto">
         {photo.visible && !isEmpty(photo.url) && (
           <img

@@ -13,7 +13,7 @@ type Props = {
 };
 
 const BadgeDisplay: React.FC<Props> = ({ items }) => {
-  const theme: Theme = useAppSelector((state) => get(state.resume, 'metadata.theme', {}));
+  const theme: Theme = useAppSelector((state) => get(state.resume.present, 'metadata.theme', {}));
   const contrast = useMemo(() => getContrastColor(theme.primary), [theme.primary]);
 
   if (!isArray(items) || isEmpty(items)) return null;

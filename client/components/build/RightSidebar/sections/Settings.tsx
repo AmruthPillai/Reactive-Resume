@@ -38,9 +38,9 @@ const Settings = () => {
 
   const [confirmReset, setConfirmReset] = useState(false);
 
-  const resume = useAppSelector((state) => state.resume);
+  const resume = useAppSelector((state) => state.resume.present);
   const theme = useAppSelector((state) => state.build.theme);
-  const pages = useAppSelector((state) => state.resume.metadata.layout);
+  const pages = useAppSelector((state) => state.resume.present.metadata.layout);
   const breakLine = useAppSelector((state) => state.build.page.breakLine);
   const orientation = useAppSelector((state) => state.build.page.orientation);
 

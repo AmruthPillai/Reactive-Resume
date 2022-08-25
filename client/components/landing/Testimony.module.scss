@@ -1,9 +1,9 @@
 .testimony {
   @apply grid gap-2;
-  @apply border-2 rounded p-4 dark:border-neutral-800;
+  @apply rounded border-2 p-4 dark:border-neutral-800;
 
   blockquote {
-    @apply text-xs leading-normal text-justify opacity-90;
+    @apply text-justify text-xs leading-normal opacity-90;
   }
 
   figcaption {

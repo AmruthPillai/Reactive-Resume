@@ -56,7 +56,7 @@ export const getServerSideProps: GetServerSideProps<Props | Promise<Props>, Quer
 const Printer: NextPage<Props> = ({ resume: initialData, locale }) => {
   const dispatch = useAppDispatch();
 
-  const resume = useAppSelector((state) => state.resume);
+  const resume = useAppSelector((state) => state.resume.present);
 
   useEffect(() => {
     if (initialData) dispatch(setResume(initialData));

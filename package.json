@@ -1,10 +1,10 @@
 {
   "name": "reactive-resume",
-  "version": "3.6.1",
+  "version": "3.6.2",
   "private": true,
   "scripts": {
     "dev": "env-cmd --silent turbo run dev",
-    "lint": "eslint --fix .",
+    "lint": "turbo run lint",
     "build": "env-cmd --silent turbo run build",
     "start": "env-cmd --silent turbo run start",
     "format": "prettier --write .",
@@ -17,20 +17,22 @@
     "docs"
   ],
   "dependencies": {
-    "turbo": "^1.4.3",
-    "env-cmd": "^10.1.0"
+    "env-cmd": "^10.1.0",
+    "turbo": "^1.4.3"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
+    "@typescript-eslint/parser": "^5.35.1",
     "eslint": "^8.22.0",
-    "prettier": "^2.7.1",
-    "typescript": "^4.7.4",
-    "standard-version": "^9.5.0",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "@typescript-eslint/parser": "^5.33.1",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.33.1",
-    "eslint-plugin-simple-import-sort": "^7.0.0"
+    "prettier": "^2.7.1",
+    "standard-version": "^9.5.0",
+    "typescript": "^4.7.4"
+  },
+  "resolutions": {
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.2"
   }
 }

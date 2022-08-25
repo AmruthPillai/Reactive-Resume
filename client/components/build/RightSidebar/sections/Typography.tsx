@@ -33,7 +33,7 @@ const Widgets: React.FC<WidgetProps> = ({ label, category }) => {
 
   const dispatch = useAppDispatch();
 
-  const { family, size } = useAppSelector<TypographyType>((state) => get(state.resume, 'metadata.typography'));
+  const { family, size } = useAppSelector<TypographyType>((state) => get(state.resume.present, 'metadata.typography'));
 
   const { data: fonts } = useQuery(FONTS_QUERY, fetchFonts, {
     select: (fonts) => fonts.sort((a, b) => a.category.localeCompare(b.category)),

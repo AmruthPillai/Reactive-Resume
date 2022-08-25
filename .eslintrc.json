@@ -1,15 +1,14 @@
 {
-  "root": true,
   "ignorePatterns": ["/app"],
   "parser": "@typescript-eslint/parser",
-  "extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
+  "extends": ["plugin:@typescript-eslint/recommended"],
   "plugins": ["@typescript-eslint/eslint-plugin", "simple-import-sort", "unused-imports"],
   "rules": {
-    // Unused Imports
+    // ESLint
     "no-unused-vars": "off",
-    // Simple Import Sort
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
+
+    // Unused Imports
+    "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": [
       "warn",
       {
@@ -19,7 +18,11 @@
         "argsIgnorePattern": "^_"
       }
     ],
-    "unused-imports/no-unused-imports": "error",
+
+    // Simple Import Sort
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+
     // TypeScript ESLint
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-explicit-any": "off",

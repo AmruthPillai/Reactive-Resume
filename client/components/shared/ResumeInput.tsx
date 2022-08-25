@@ -21,7 +21,7 @@ interface Props {
 const ResumeInput: React.FC<Props> = ({ type = 'text', label, path, className, markdownSupported = false }) => {
   const dispatch = useAppDispatch();
 
-  const stateValue = useAppSelector((state) => get(state.resume, path, ''));
+  const stateValue = useAppSelector((state) => get(state.resume.present, path, ''));
 
   useEffect(() => {
     setValue(stateValue);

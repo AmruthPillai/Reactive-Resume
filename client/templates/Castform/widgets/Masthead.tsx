@@ -15,11 +15,11 @@ import { getContrastColor } from '@/utils/styles';
 import { addHttp, formatLocation, getPhotoClassNames } from '@/utils/template';
 
 export const MastheadSidebar: React.FC = () => {
-  const dateFormat: string = useAppSelector((state) => get(state.resume, 'metadata.date.format'));
+  const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
   const { name, headline, photo, email, phone, birthdate, website, location, profiles } = useAppSelector(
-    (state) => state.resume.basics
+    (state) => state.resume.present.basics
   );
-  const theme: Theme = useAppSelector((state) => get(state.resume, 'metadata.theme', {}));
+  const theme: Theme = useAppSelector((state) => get(state.resume.present, 'metadata.theme', {}));
   const contrast = useMemo(() => getContrastColor(theme.primary), [theme.primary]);
   const color = useMemo(() => (contrast === 'dark' ? theme.text : theme.background), [theme, contrast]);
 
@@ -72,7 +72,7 @@ export const MastheadSidebar: React.FC = () => {
 };
 
 export const MastheadMain: React.FC = () => {
-  const { summary } = useAppSelector((state) => state.resume.basics);
+  const { summary } = useAppSelector((state) => state.resume.present.basics);
 
   return (
     <div className="px-4 pt-4">

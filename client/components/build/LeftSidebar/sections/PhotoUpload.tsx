@@ -21,8 +21,8 @@ const PhotoUpload: React.FC = () => {
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const id: number = useAppSelector((state) => get(state.resume, 'id'));
-  const photo: Photo = useAppSelector((state) => get(state.resume, 'basics.photo'));
+  const id: number = useAppSelector((state) => get(state.resume.present, 'id'));
+  const photo: Photo = useAppSelector((state) => get(state.resume.present, 'basics.photo'));
 
   const { mutateAsync: uploadMutation, isLoading } = useMutation<Resume, ServerError, UploadPhotoParams>(uploadPhoto);
 

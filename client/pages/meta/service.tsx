@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 
 const TermsOfService: NextPage = () => (
-  <div className="mx-auto my-12 prose dark:prose-invert">
+  <div className="prose mx-auto my-12 dark:prose-invert">
     <h1>Terms of Service</h1>
 
     <p>

@@ -32,7 +32,7 @@ const Basics = () => {
             <PhotoUpload />
           </div>
 
-          <div className="grid gap-2 w-full sm:col-span-2">
+          <div className="grid w-full gap-2 sm:col-span-2">
             <ResumeInput label={t<string>('builder.leftSidebar.sections.basics.name.label')} path="basics.name" />
 
             <Button variant="outlined" startIcon={<PhotoFilter />} onClick={handleClick}>

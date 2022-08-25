@@ -5,6 +5,7 @@ import styles from './Loading.module.scss';
 
 const Loading: React.FC = () => {
   const { isReady } = useRouter();
+
   const isFetching = useIsFetching();
   const isMutating = useIsMutating();
 

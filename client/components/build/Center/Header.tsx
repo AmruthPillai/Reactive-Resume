@@ -57,7 +57,7 @@ const Header = () => {
 
   const { mutateAsync: deleteMutation } = useMutation<void, ServerError, DeleteResumeParams>(deleteResume);
 
-  const resume = useAppSelector((state) => state.resume);
+  const resume = useAppSelector((state) => state.resume.present);
   const { left, right } = useAppSelector((state) => state.build.sidebar);
 
   const name = useMemo(() => get(resume, 'name'), [resume]);

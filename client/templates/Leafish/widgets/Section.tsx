@@ -3,6 +3,7 @@ import { ListItem, Section as SectionType } from '@reactive-resume/schema';
 import get from 'lodash/get';
 import isArray from 'lodash/isArray';
 import isEmpty from 'lodash/isEmpty';
+import { useMemo } from 'react';
 
 import Markdown from '@/components/shared/Markdown';
 import { useAppSelector } from '@/store/hooks';
@@ -20,22 +21,23 @@ const Section: React.FC<SectionProps> = ({
   headlinePath = 'headline',
   keywordsPath = 'keywords',
 }) => {
-  const section: SectionType = useAppSelector((state) => get(state.resume, path, {}));
-  const dateFormat: string = useAppSelector((state) => get(state.resume, 'metadata.date.format'));
-  const primaryColor: string = useAppSelector((state) => get(state.resume, 'metadata.theme.primary'));
+  const section: SectionType = useAppSelector((state) => get(state.resume.present, path, {}));
+  const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
+  const primaryColor: string = useAppSelector((state) => get(state.resume.present, 'metadata.theme.primary'));
+
+  const sectionId = useMemo(() => section.id || path.replace('sections.', ''), [path, section]);
 
   if (!section.visible) return null;
 
   if (isArray(section.items) && isEmpty(section.items)) return null;
 
   return (
-    <section className="mb-4">
+    <section id={`Leafish_${sectionId}`}>
       <Heading>{section.name}</Heading>
 
       <div
         className="grid items-start gap-4"
         style={{ gridTemplateColumns: `repeat(${section.columns}, minmax(0, 1fr))` }}
-        id={`Section_${section.id}`}
       >
         {section.items.map((item: ListItem) => {
           const id = item.id,
@@ -52,16 +54,16 @@ const Section: React.FC<SectionProps> = ({
             date = formatDateString(get(item, 'date'), dateFormat);
 
           return (
-            <div key={id} id={id} className={`grid gap-1 mb-2 Section_${section.id}_inner`}>
-              <div>
-                {title && <div className="font-bold Section_title">{title}</div>}
-                {subtitle && <div className="Section_subtitle">{subtitle}</div>}
+            <div key={id} className="mb-2 grid gap-1">
+              <div className="grid gap-1">
+                {title && <div className="font-bold">{title}</div>}
+                {subtitle && <div>{subtitle}</div>}
                 {date && (
-                  <div className="italic text-xs Section_date" style={{ color: primaryColor }}>
+                  <div className="text-xs" style={{ color: primaryColor }}>
                     ({date})
                   </div>
                 )}
-                {headline && <div className="opacity-50 Section_headline">{headline}</div>}
+                {headline && <div className="opacity-50">{headline}</div>}
               </div>
 
               {(level || levelNum > 0) && (
@@ -84,14 +86,7 @@ const Section: React.FC<SectionProps> = ({
                 </div>
               )}
 
-              {summary && (
-                <div>
-                  <div className="italic text-xs" style={{ color: primaryColor }}>
-                    Overview
-                  </div>
-                  <Markdown className={`marker:text-[${primaryColor}]`}>{summary}</Markdown>
-                </div>
-              )}
+              {summary && <Markdown>{summary}</Markdown>}
 
               {url && (
                 <DataDisplay icon={<Link />} link={url} className="text-xs">

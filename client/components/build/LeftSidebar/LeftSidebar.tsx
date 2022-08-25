@@ -25,7 +25,7 @@ const LeftSidebar = () => {
 
   const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
 
-  const sections = useAppSelector((state) => state.resume.sections);
+  const sections = useAppSelector((state) => state.resume.present.sections);
   const { open } = useAppSelector((state) => state.build.sidebar.left);
 
   const customSections = useMemo(() => getCustomSections(sections), [sections]);

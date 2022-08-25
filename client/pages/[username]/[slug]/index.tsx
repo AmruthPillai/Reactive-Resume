@@ -51,7 +51,7 @@ const Preview: NextPage<Props> = ({ username, slug, resume: initialData }) => {
 
   const dispatch = useAppDispatch();
 
-  const resume = useAppSelector((state) => state.resume);
+  const resume = useAppSelector((state) => state.resume.present);
 
   useEffect(() => {
     if (initialData && !isEmpty(initialData)) {
