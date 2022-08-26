@@ -65,7 +65,7 @@ const LeftSidebar = () => {
       variant={isDesktop ? 'persistent' : 'temporary'}
     >
       <div className={styles.container}>
-        <nav>
+        <nav className="overflow-y-scroll">
           <div>
             <Link href="/dashboard">
               <a className="inline-flex">
