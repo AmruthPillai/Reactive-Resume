@@ -1,0 +1,135 @@
+{
+  "auth": {
+    "forgot-password": {
+      "actions": {
+        "send-email": "비밀번호 재설정 이메일 보내기"
+      },
+      "body": "복구하려는 계정과 연결된 이메일 주소를 입력하기만 하면 됩니다.",
+      "form": {
+        "email": {
+          "label": "이메일 주소"
+        }
+      },
+      "heading": "비밀번호를 잊어 버렸습니까?",
+      "help-text": "계정이 있는 경우 비밀번호 재설정 링크가 포함된 이메일을 받게 됩니다."
+    },
+    "login": {
+      "actions": {
+        "login": "로그인"
+      },
+      "body": "이력서에 로그인하고 액세스, 관리 및 공유하려면 계정과 연결된 사용자 이름과 비밀번호를 입력하십시오.",
+      "form": {
+        "password": {
+          "label": "비밀번호"
+        },
+        "username": {
+          "help-text": "이메일 주소를 입력할 수도 있습니다.",
+          "label": "사용자 이름"
+        }
+      },
+      "heading": "계정에 로그인",
+      "recover-text": "비밀번호를 잊어버린 경우 <1>계정을 복구할 수 있습니다.</1> 여기.",
+      "register-text": "계정이 없으면 <1>계정을 만들 수 있습니다.</1> 여기."
+    },
+    "register": {
+      "actions": {
+        "register": "등록하다",
+        "google": "Google에 등록"
+      },
+      "body": "계정 생성을 위해 개인정보를 입력해주세요.",
+      "form": {
+        "confirm-password": {
+          "label": "비밀번호 확인"
+        },
+        "email": {
+          "label": "이메일 주소"
+        },
+        "name": {
+          "label": "성명"
+        },
+        "password": {
+          "label": "비밀번호"
+        },
+        "username": {
+          "label": "사용자 이름"
+        }
+      },
+      "heading": "계정 만들기",
+      "loginText": "이미 계정이 있는 경우 <1>여기에서 로그인할 수 있습니다.</1> ."
+    },
+    "reset-password": {
+      "actions": {
+        "set-password": "새 비밀번호 설정"
+      },
+      "body": "계정의 새 비밀번호를 입력하세요.",
+      "form": {
+        "confirm-password": {
+          "label": "비밀번호 확인"
+        },
+        "password": {
+          "label": "비밀번호"
+        }
+      },
+      "heading": "비밀번호를 재설정"
+    }
+  },
+  "dashboard": {
+    "create-resume": {
+      "actions": {
+        "create-resume": "이력서 작성"
+      },
+      "body": "이름을 지정하여 이력서 작성을 시작하십시오. 지원하는 역할이나 좋아하는 간식을 참조할 수 있습니다.",
+      "form": {
+        "name": {
+          "label": "이름"
+        },
+        "public": {
+          "label": "공개적으로 액세스할 수 있습니까?"
+        },
+        "slug": {
+          "label": "강타"
+        }
+      },
+      "heading": "새 이력서 만들기"
+    },
+    "import-external": {
+      "heading": "외부 소스에서 가져오기",
+      "json-resume": {
+        "actions": {
+          "upload-json": "JSON 업로드"
+        },
+        "body": "<1>검증된 JSON 이력서가 있는 경우</1> 준비가 완료되면 Reactive Resume에서 개발을 빠르게 추적하는 데 사용할 수 있습니다. 시작하려면 아래 버튼을 클릭하고 유효한 JSON 파일을 업로드하세요.",
+        "heading": "JSON 이력서에서 가져오기"
+      },
+      "linkedin": {
+        "actions": {
+          "upload-archive": "ZIP 아카이브 업로드"
+        },
+        "body": "LinkedIn에서 데이터를 내보내고 Reactive Resume의 필드를 자동으로 채우는 데 사용하여 시간을 절약할 수 있습니다. <1>데이터 개인정보 보호로 이동</1> LinkedIn에서 섹션을 방문하여 데이터 아카이브를 요청하십시오. 사용할 수 있게 되면 아래 ZIP 파일을 업로드하세요.",
+        "heading": "LinkedIn에서 가져오기"
+      },
+      "reactive-resume": {
+        "actions": {
+          "upload-json": "JSON 업로드",
+          "upload-json-v2": "v2에서 JSON 업로드"
+        },
+        "body": "Reactive Resume의 현재 버전으로 내보낸 JSON이 있는 경우 여기에서 다시 가져와서 편집 가능한 버전을 다시 얻을 수 있습니다.",
+        "heading": "반응적인 이력서에서 가져오기"
+      }
+    },
+    "rename-resume": {
+      "actions": {
+        "rename-resume": "이력서 이름 바꾸기"
+      },
+      "form": {
+        "name": {
+          "label": "이름"
+        },
+        "slug": {
+          "label": "강타"
+        }
+      },
+      "heading": "이력서 이름 바꾸기"
+    }
+  }
+}
