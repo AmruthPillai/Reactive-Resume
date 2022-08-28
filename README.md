@@ -3,9 +3,9 @@ description: >-
   Reactive Resume is a free and open source resume builder that's built to make
   the mundane tasks of creating, updating and sharing your resume as easy as 1,
   2, 3.
-cover: >-
-  https://images.unsplash.com/photo-1485988412941-77a35537dae4?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHw0fHxyZXN1bWV8ZW58MHx8fHwxNjYxNDYxNTA1&ixlib=rb-1.2.1&q=80
-coverY: 0
+cover: .gitbook/assets/builder.png
+coverY: 279.7092095721537
+layout: landing
 ---
 
 # Reactive Resume
