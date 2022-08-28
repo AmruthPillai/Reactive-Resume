@@ -8,7 +8,7 @@
     "start": "node dist/main"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.157.0",
+    "@aws-sdk/client-s3": "^3.159.0",
     "@nestjs/axios": "^0.1.0",
     "@nestjs/common": "^9.0.11",
     "@nestjs/config": "^2.2.0",
@@ -45,11 +45,11 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.5.6",
-    "typeorm": "0.3.7",
+    "typeorm": "0.3.8",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@nestjs/cli": "^9.0.0",
+    "@nestjs/cli": "^9.1.1",
     "@nestjs/schematics": "^9.0.1",
     "@reactive-resume/schema": "workspace:*",
     "@types/bcryptjs": "^2.4.2",
@@ -66,7 +66,7 @@
     "ts-loader": "^9.3.1",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.1.0",
-    "typescript": "^4.7.4",
+    "typescript": "^4.8.2",
     "webpack": "^5.74.0"
   }
 }
