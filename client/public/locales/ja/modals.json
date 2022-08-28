@@ -1,0 +1,135 @@
+{
+  "auth": {
+    "forgot-password": {
+      "actions": {
+        "send-email": "パスワードリセットメールを送信する"
+      },
+      "body": "復元したいアカウントに関連付けられているメールアドレスを入力してください",
+      "form": {
+        "email": {
+          "label": "メールアドレス"
+        }
+      },
+      "heading": "パスワードを忘れましたか？",
+      "help-text": "アカウントが存在する場合、パスワードをリセットするためのリンクが記載されたメールが送信されます。"
+    },
+    "login": {
+      "actions": {
+        "login": "ログイン"
+      },
+      "body": "アカウントに関連付けられたユーザー名とパスワードを入力してログインし、レジュメにアクセス、管理、共有することができます。",
+      "form": {
+        "password": {
+          "label": "パスワード"
+        },
+        "username": {
+          "help-text": "また、メールアドレスを入力することもできます",
+          "label": "ユーザー名"
+        }
+      },
+      "heading": "ログイン",
+      "recover-text": "パスワードをお忘れの場合は、こちらで<1>復旧</1>できます。",
+      "register-text": "お持ちでない方は、こちらから<1>アカウントを作成して</1>ください。"
+    },
+    "register": {
+      "actions": {
+        "register": "登録",
+        "google": "Googleアカウントで登録"
+      },
+      "body": "個人情報を入力し、アカウントを作成してください。",
+      "form": {
+        "confirm-password": {
+          "label": "パスワードの確認"
+        },
+        "email": {
+          "label": "メールアドレス"
+        },
+        "name": {
+          "label": "フルネーム"
+        },
+        "password": {
+          "label": "パスワード"
+        },
+        "username": {
+          "label": "ユーザー名"
+        }
+      },
+      "heading": "アカウントを作成",
+      "loginText": "すでにアカウントをお持ちの方は、<1>こちらからログイン</1>できます。"
+    },
+    "reset-password": {
+      "actions": {
+        "set-password": "新しいパスワードの設定"
+      },
+      "body": "アカウントの新しいパスワードを入力します。",
+      "form": {
+        "confirm-password": {
+          "label": "パスワードの確認"
+        },
+        "password": {
+          "label": "パスワード"
+        }
+      },
+      "heading": "パスワードのリセット"
+    }
+  },
+  "dashboard": {
+    "create-resume": {
+      "actions": {
+        "create-resume": "履歴書の作成"
+      },
+      "body": "履歴書の作成は、名前をつけることから始めましょう。応募している職務にちなんだものでも、好きなお菓子にちなんだものでもよいでしょう。",
+      "form": {
+        "name": {
+          "label": "名称"
+        },
+        "public": {
+          "label": "一般に公開されているか？"
+        },
+        "slug": {
+          "label": "スラッグ"
+        }
+      },
+      "heading": "新しいレジュメを作成する"
+    },
+    "import-external": {
+      "heading": "外部からの取り込み",
+      "json-resume": {
+        "actions": {
+          "upload-json": "JSONのアップロード"
+        },
+        "body": "<1>検証済みのJSON Resumeが</1>あれば、それを使ってReactive Resumeでの開発を迅速に進めることができます。下のボタンをクリックし、有効なJSONファイルをアップロードして開始してください。",
+        "heading": "JSON履歴書からのインポート"
+      },
+      "linkedin": {
+        "actions": {
+          "upload-archive": "ZIPアーカイブのアップロード"
+        },
+        "body": "LinkedInからデータをエクスポートして、Reactive Resumeのフィールドの自動入力に使用すると、時間を節約することができます。LinkedInの<1>データプライバシーセクションに</1>移動して、データのアーカイブをリクエストしてください。アーカイブが利用可能になったら、以下のZIPファイルをアップロードしてください。",
+        "heading": "LinkedInからインポートする"
+      },
+      "reactive-resume": {
+        "actions": {
+          "upload-json": "JSONのアップロード",
+          "upload-json-v2": "v2からのJSONのアップロード"
+        },
+        "body": "もし、現在のバージョンのReactive ResumeでエクスポートされたJSONがあれば、ここにインポートして、再び編集可能なバージョンを入手することができます。",
+        "heading": "リアクティブレジュームからのインポート"
+      }
+    },
+    "rename-resume": {
+      "actions": {
+        "rename-resume": "リネーム・レジューム"
+      },
+      "form": {
+        "name": {
+          "label": "名称"
+        },
+        "slug": {
+          "label": "スラッグ"
+        }
+      },
+      "heading": "履歴書の名前を変更する"
+    }
+  }
+}
