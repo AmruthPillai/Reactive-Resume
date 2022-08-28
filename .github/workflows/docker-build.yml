@@ -17,10 +17,6 @@ jobs:
         with:
           fetch-depth: 2
 
-      - id: vars
-        name: Get Short SHA
-        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
-
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2.0.0
 
@@ -30,9 +26,9 @@ jobs:
         with:
           install: true
 
-      - id: version
-        name: Get Version
-        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+      - id: variables
+        name: Get Short SHA
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
 
       - name: Build Client Image
         uses: docker/build-push-action@v3.1.1
@@ -43,9 +39,9 @@ jobs:
           platforms: linux/amd64,linux/arm64
           tags: |
             amruthpillai/reactive-resume:client-latest
-            amruthpillai/reactive-resume:client-${{ steps.vars.outputs.sha_short }}
+            amruthpillai/reactive-resume:client-${{ steps.variables.outputs.sha_short }}
             ghcr.io/amruthpillai/reactive-resume:client-latest
-            ghcr.io/amruthpillai/reactive-resume:client-${{ steps.vars.outputs.sha_short }}
+            ghcr.io/amruthpillai/reactive-resume:client-${{ steps.variables.outputs.sha_short }}
 
   server:
     name: Server
@@ -70,9 +66,9 @@ jobs:
         with:
           install: true
 
-      - id: version
-        name: Get Version
-        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+      - id: variables
+        name: Get Short SHA
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
 
       - name: Build Server Image
         uses: docker/build-push-action@v3.1.1
@@ -83,6 +79,6 @@ jobs:
           platforms: linux/amd64,linux/arm64
           tags: |
             amruthpillai/reactive-resume:server-latest
-            amruthpillai/reactive-resume:server-${{ steps.vars.outputs.sha_short }}
+            amruthpillai/reactive-resume:server-${{ steps.variables.outputs.sha_short }}
             ghcr.io/amruthpillai/reactive-resume:server-latest
-            ghcr.io/amruthpillai/reactive-resume:server-${{ steps.vars.outputs.sha_short }}
+            ghcr.io/amruthpillai/reactive-resume:server-${{ steps.variables.outputs.sha_short }}
