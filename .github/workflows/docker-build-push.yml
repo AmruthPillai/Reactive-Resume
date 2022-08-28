@@ -23,6 +23,15 @@ jobs:
         name: Get Version
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
 
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2.0.0
+
+      - id: buildx
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2.0.0
+        with:
+          install: true
+
       - name: Login to Docker Hub
         uses: docker/login-action@v2.0.0
         with:
@@ -42,6 +51,7 @@ jobs:
           context: .
           push: true
           file: client/Dockerfile
+          platforms: linux/amd64,linux/arm64
           tags: |
             amruthpillai/reactive-resume:client-latest
             amruthpillai/reactive-resume:client-${{ steps.version.outputs.tag }}
@@ -66,6 +76,15 @@ jobs:
         name: Get Version
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
 
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2.0.0
+
+      - id: buildx
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2.0.0
+        with:
+          install: true
+
       - name: Login to Docker Hub
         uses: docker/login-action@v2.0.0
         with:
@@ -85,6 +104,7 @@ jobs:
           context: .
           push: true
           file: server/Dockerfile
+          platforms: linux/amd64,linux/arm64
           tags: |
             amruthpillai/reactive-resume:server-latest
             amruthpillai/reactive-resume:server-${{ steps.version.outputs.tag }}
