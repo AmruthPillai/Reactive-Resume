@@ -5,7 +5,6 @@ description: >-
   2, 3.
 cover: .gitbook/assets/builder.png
 coverY: 279.7092095721537
-layout: landing
 ---
 
 # Reactive Resume
