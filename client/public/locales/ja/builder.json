@@ -1,0 +1,363 @@
+{
+  "common": {
+    "actions": {
+      "add": "新規追加 {{token}}",
+      "delete": "削除 {{token}}",
+      "edit": "編集 {{token}}."
+    },
+    "columns": {
+      "heading": "列",
+      "tooltip": "列数の変更"
+    },
+    "form": {
+      "date": {
+        "label": "日付"
+      },
+      "description": {
+        "label": "概要"
+      },
+      "email": {
+        "label": "メールアドレス"
+      },
+      "end-date": {
+        "help-text": "まだ存在する場合、このフィールドを空白のままにします。",
+        "label": "終了日"
+      },
+      "keywords": {
+        "label": "キーワード"
+      },
+      "level": {
+        "label": "レベル"
+      },
+      "levelNum": {
+        "label": "レベル(数値)"
+      },
+      "name": {
+        "label": "氏名"
+      },
+      "phone": {
+        "label": "電話番号"
+      },
+      "position": {
+        "label": "役職"
+      },
+      "start-date": {
+        "label": "開始日"
+      },
+      "subtitle": {
+        "label": "サブタイトル"
+      },
+      "summary": {
+        "label": "要約"
+      },
+      "title": {
+        "label": "タイトル"
+      },
+      "url": {
+        "label": "Webサイト"
+      }
+    },
+    "glossary": {
+      "page": "ページ"
+    },
+    "list": {
+      "actions": {
+        "delete": "削除",
+        "duplicate": "複製",
+        "edit": "編集"
+      },
+      "empty-text": "このリストは空です。"
+    },
+    "tooltip": {
+      "delete-item": "本当にこの項目を削除しますか？これは元に戻すことができない操作です。",
+      "delete-section": "セクションを削除する",
+      "rename-section": "セクションの名前を変更する",
+      "toggle-visibility": "トグル・ビジビリティ"
+    }
+  },
+  "controller": {
+    "tooltip": {
+      "center-artboard": "センターアートボード",
+      "copy-link": "レジュメへのリンクをコピー",
+      "export-pdf": "PDF形式でエクスポート",
+      "toggle-orientation": "ページの向きを切り替える",
+      "toggle-page-break-line": "改ページ線のトグル",
+      "toggle-sidebars": "トグル・サイドバー",
+      "zoom-in": "ズームイン",
+      "zoom-out": "ズームアウト",
+      "undo": "アンドゥ",
+      "redo": "やり直し"
+    }
+  },
+  "header": {
+    "menu": {
+      "delete": "削除",
+      "duplicate": "デュプリケート",
+      "rename": "リネーム",
+      "share-link": "シェアリンク",
+      "tooltips": {
+        "delete": "本当にこのレジュメを削除しますか？これは不可逆的なアクションです。",
+        "share-link": "レジュメを他の人に見てもらうためには、レジュメの表示方法を公開に変更する必要があります。"
+      }
+    }
+  },
+  "leftSidebar": {
+    "sections": {
+      "awards": {
+        "form": {
+          "awarder": {
+            "label": "賞罰"
+          }
+        }
+      },
+      "basics": {
+        "actions": {
+          "photo-filters": "フォトフィルター"
+        },
+        "heading": "基本事項",
+        "headline": {
+          "label": "ヘッドライン"
+        },
+        "name": {
+          "label": "フルネーム"
+        },
+        "birthdate": {
+          "label": "生年月日"
+        },
+        "photo-filters": {
+          "effects": {
+            "border": {
+              "label": "ボーダー"
+            },
+            "grayscale": {
+              "label": "グレースケール"
+            },
+            "heading": "効果"
+          },
+          "shape": {
+            "heading": "形状"
+          },
+          "size": {
+            "heading": "サイズ（単位：px）"
+          }
+        },
+        "photo-upload": {
+          "tooltip": {
+            "remove": "写真を削除する",
+            "upload": "写真のアップロード"
+          }
+        }
+      },
+      "certifications": {
+        "form": {
+          "issuer": {
+            "label": "発行者"
+          }
+        }
+      },
+      "education": {
+        "form": {
+          "area-study": {
+            "label": "専攻分野"
+          },
+          "courses": {
+            "label": "コース紹介"
+          },
+          "degree": {
+            "label": "学位"
+          },
+          "grade": {
+            "label": "グレード"
+          },
+          "institution": {
+            "label": "インスティテューション"
+          }
+        }
+      },
+      "location": {
+        "address": {
+          "label": "住所"
+        },
+        "city": {
+          "label": "市区町村"
+        },
+        "country": {
+          "label": "国"
+        },
+        "heading": "所在地",
+        "postal-code": {
+          "label": "郵便番号"
+        },
+        "region": {
+          "label": "地域"
+        }
+      },
+      "profiles": {
+        "form": {
+          "network": {
+            "label": "ネットワーク"
+          },
+          "username": {
+            "label": "ユーザー名"
+          }
+        },
+        "heading": "プロフィール",
+        "heading_one": "プロフィール"
+      },
+      "publications": {
+        "form": {
+          "publisher": {
+            "label": "出版社"
+          }
+        }
+      },
+      "references": {
+        "form": {
+          "relationship": {
+            "label": "関係"
+          }
+        }
+      },
+      "section": {
+        "heading": "セクション"
+      },
+      "volunteer": {
+        "form": {
+          "organization": {
+            "label": "組織"
+          }
+        }
+      }
+    }
+  },
+  "rightSidebar": {
+    "sections": {
+      "css": {
+        "heading": "カスタムCSS"
+      },
+      "export": {
+        "heading": "エクスポート",
+        "json": {
+          "primary": "JSON",
+          "secondary": "履歴書のJSONバージョンをダウンロードし、Reactive Resumeにインポートすることができます。"
+        },
+        "pdf": {
+          "loading": {
+            "primary": "PDF を生成中",
+            "secondary": "PDFが生成されるまで、15秒程度かかる場合があります。"
+          },
+          "normal": {
+            "primary": "PDF",
+            "secondary": "履歴書のPDFをダウンロードして印刷し、憧れの職場に送りましょう。このファイルは、再度インポートして編集することはできません。"
+          }
+        }
+      },
+      "layout": {
+        "heading": "レイアウト",
+        "tooltip": {
+          "reset-layout": "リセットレイアウト"
+        }
+      },
+      "links": {
+        "bugs-features": {
+          "body": "レジュメを作るのを邪魔しているものがありますか？または、追加したい素晴らしいアイディアがありますか？GitHub で課題を出してください。",
+          "button": "GitHubの課題",
+          "heading": "バグ？機能要望？"
+        },
+        "donate": {
+          "body": "もしReactive Resumeを気に入って使っていただけたなら、このアプリを広告なしで、いつまでも無料で使い続けるために、できる限りの寄付をご検討ください。",
+          "button": "コーヒーを買ってきて",
+          "heading": "リアクティブ・レジュメに寄付をする"
+        },
+        "github": "ソースコード",
+        "heading": "リンク集"
+      },
+      "settings": {
+        "global": {
+          "date": {
+            "primary": "日付",
+            "secondary": "アプリ全体で使用する日付フォーマット"
+          },
+          "heading": "グローバル",
+          "language": {
+            "primary": "言語",
+            "secondary": "アプリ全体で使用する表示言語"
+          },
+          "theme": {
+            "primary": "テーマ"
+          }
+        },
+        "heading": "設定",
+        "page": {
+          "break-line": {
+            "primary": "ブレイクライン",
+            "secondary": "A4ページの高さを示す線を全ページに表示する。"
+          },
+          "heading": "ページ",
+          "orientation": {
+            "disabled": "ページが1つしかない場合は効果がありません",
+            "primary": "オリエンテーション",
+            "secondary": "ページを水平に表示するか垂直に表示するか"
+          }
+        },
+        "resume": {
+          "heading": "レジュメ",
+          "reset": {
+            "primary": "すべてをリセットする",
+            "secondary": "間違いが多いですか？ここをクリックすると、すべての変更がリセットされ、最初からやり直すことができます。この操作は元に戻せませんのでご注意ください。"
+          },
+          "sample": {
+            "primary": "サンプルデータの読み込み",
+            "secondary": "どこから始めればいいのかわからない？ここをクリックしてサンプルデータをロードし、完全な履歴書がどのように見えるかを確認してください。"
+          }
+        }
+      },
+      "sharing": {
+        "heading": "シェアリング",
+        "short-url": {
+          "label": "短いURLを希望"
+        },
+        "visibility": {
+          "subtitle": "リンクで誰でもレジュメを閲覧できるようにする",
+          "title": "公共"
+        }
+      },
+      "templates": {
+        "heading": "テンプレート"
+      },
+      "theme": {
+        "form": {
+          "background": {
+            "label": "背景"
+          },
+          "primary": {
+            "label": "プライマリー"
+          },
+          "text": {
+            "label": "テキスト"
+          }
+        },
+        "heading": "テーマ"
+      },
+      "typography": {
+        "form": {
+          "font-family": {
+            "label": "フォントファミリー"
+          },
+          "font-size": {
+            "label": "文字サイズ"
+          }
+        },
+        "heading": "タイポグラフィ",
+        "widgets": {
+          "body": {
+            "label": "本体"
+          },
+          "headings": {
+            "label": "見出し"
+          }
+        }
+      }
+    }
+  }
+}
