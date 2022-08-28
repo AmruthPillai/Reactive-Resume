@@ -20,7 +20,7 @@ import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
 import styles from '@/styles/pages/Home.module.scss';
 
-import { DIGITALOCEAN_URL, DONATION_URL, GITHUB_URL } from '../constants';
+import { DIGITALOCEAN_URL, DOCS_URL, DONATION_URL, GITHUB_URL } from '../constants';
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => {
   return {
@@ -167,6 +167,12 @@ const Home: NextPage = () => {
           <a href={GITHUB_URL} target="_blank" rel="noreferrer">
             <Button variant="text" startIcon={<LinkIcon />}>
               {t<string>('landing.links.links.github')}
+            </Button>
+          </a>
+
+          <a href={DOCS_URL} target="_blank" rel="noreferrer">
+            <Button variant="text" startIcon={<LinkIcon />}>
+              {t<string>('landing.links.links.docs')}
             </Button>
           </a>
 
