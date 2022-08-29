@@ -2,22 +2,10 @@
   "ignorePatterns": ["/app"],
   "parser": "@typescript-eslint/parser",
   "extends": ["plugin:@typescript-eslint/recommended"],
-  "plugins": ["@typescript-eslint/eslint-plugin", "simple-import-sort", "unused-imports"],
+  "plugins": ["@typescript-eslint/eslint-plugin", "simple-import-sort"],
   "rules": {
     // ESLint
     "no-unused-vars": "off",
-
-    // Unused Imports
-    "unused-imports/no-unused-imports": "error",
-    "unused-imports/no-unused-vars": [
-      "warn",
-      {
-        "vars": "all",
-        "args": "none",
-        "varsIgnorePattern": "^_",
-        "argsIgnorePattern": "^_"
-      }
-    ],
 
     // Simple Import Sort
     "simple-import-sort/imports": "error",
