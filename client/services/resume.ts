@@ -1,6 +1,5 @@
-import env from '@beam-australia/react-env';
 import { Resume } from '@reactive-resume/schema';
-import _axios, { AxiosResponse } from 'axios';
+import { AxiosResponse } from 'axios';
 
 import isBrowser from '@/utils/isBrowser';
 
@@ -63,12 +62,9 @@ export const fetchResumeByIdentifier = async ({
   options = { secretKey: '' },
 }: FetchResumeByIdentifierParams) => {
   if (!isBrowser) {
-    const serverUrl = env('SERVER_URL');
     const secretKey = options.secretKey;
 
-    return _axios
-      .get<Resume>(`${serverUrl}/resume/${username}/${slug}`, { params: { secretKey } })
-      .then((res) => res.data);
+    return axios.get<Resume>(`/resume/${username}/${slug}`, { params: { secretKey } }).then((res) => res.data);
   }
 
   return axios.get<Resume>(`/resume/${username}/${slug}`).then((res) => res.data);

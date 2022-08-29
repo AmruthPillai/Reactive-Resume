@@ -1,3 +1,4 @@
+import env from '@beam-australia/react-env';
 import _axios from 'axios';
 import Router from 'next/router';
 
@@ -6,13 +7,14 @@ import { logout } from '@/store/auth/authSlice';
 import store from '../store';
 
 export type ServerError = {
-  statusCode: number;
+  path: string;
   message: string;
   timestamp: string;
-  path: string;
+  statusCode: number;
 };
 
-const axios = _axios.create({ baseURL: '/api' });
+const baseURL = env('SERVER_URL') || '/api';
+const axios = _axios.create({ baseURL });
 
 axios.interceptors.request.use((config) => {
   const { accessToken } = store.getState().auth;

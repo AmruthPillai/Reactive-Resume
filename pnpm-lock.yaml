@@ -240,7 +240,7 @@ importers:
       ts-loader: ^9.3.1
       ts-node: ^10.9.1
       tsconfig-paths: ^4.1.0
-      typeorm: 0.3.8
+      typeorm: 0.3.9
       typescript: ^4.8.2
       uuid: ^8.3.2
       webpack: ^5.74.0
@@ -257,7 +257,7 @@ importers:
       '@nestjs/schedule': 2.1.0_fvppslgepxggj3fnmtlnh4cori
       '@nestjs/serve-static': 3.0.0_khr6mt6ojlxbw7bo55fknouh34
       '@nestjs/terminus': 9.1.1_mr622mjrz7hsw5sxbt7k6brday
-      '@nestjs/typeorm': 9.0.1_st2lgrtczmd47ypuvaupbfaph4
+      '@nestjs/typeorm': 9.0.1_tq7xycdignr3g27t42km5o6vju
       '@types/passport': 1.0.10
       bcryptjs: 2.4.3
       cache-manager: 4.1.0
@@ -282,7 +282,7 @@ importers:
       reflect-metadata: 0.1.13
       rimraf: 3.0.2
       rxjs: 7.5.6
-      typeorm: 0.3.8_pg@8.8.0+ts-node@10.9.1
+      typeorm: 0.3.9_pg@8.8.0+ts-node@10.9.1
       uuid: 8.3.2
     devDependencies:
       '@nestjs/cli': 9.1.1
@@ -2338,7 +2338,7 @@ packages:
       rxjs: 7.5.6
     dev: false
 
-  /@nestjs/typeorm/9.0.1_st2lgrtczmd47ypuvaupbfaph4:
+  /@nestjs/typeorm/9.0.1_tq7xycdignr3g27t42km5o6vju:
     resolution: {integrity: sha512-A2BgLIPsMtmMI0bPKEf4bmzgFPsnvHqNBx3KkvaJ7hJrBQy0OqYOb+Rr06ifblKWDWS2tUPNrAFQbZjtk3PI+g==}
     peerDependencies:
       '@nestjs/common': ^8.0.0 || ^9.0.0
@@ -2351,7 +2351,7 @@ packages:
       '@nestjs/core': 9.0.11_psficsz3mqirqwo2ujbfhdr2aa
       reflect-metadata: 0.1.13
       rxjs: 7.5.6
-      typeorm: 0.3.8_pg@8.8.0+ts-node@10.9.1
+      typeorm: 0.3.9_pg@8.8.0+ts-node@10.9.1
       uuid: 8.3.2
     dev: false
 
@@ -9038,8 +9038,8 @@ packages:
   /typedarray/0.0.6:
     resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
 
-  /typeorm/0.3.8_pg@8.8.0+ts-node@10.9.1:
-    resolution: {integrity: sha512-77PNamypfwieZlhwbUAjMudX2T+5F6JCoNR18RdKenJ5Uu+9gc9AWa1kmz/2hH84MU23lGqPCu8u2lKnlfsN2g==}
+  /typeorm/0.3.9_pg@8.8.0+ts-node@10.9.1:
+    resolution: {integrity: sha512-xNcE44D4hn74n7pjuMog9hRgep+BiO3IBpjEaQZ8fb56zsDz7xHT1GAeWwmGuuU+4nDEELp2mIqgSCR+zxR7Jw==}
     engines: {node: '>= 12.9.0'}
     hasBin: true
     peerDependencies:

@@ -1,68 +1,79 @@
-version: '3.8'
+version: "3.8"
 
 services:
   postgres:
     image: postgres:alpine
     container_name: postgres
+    restart: always
     ports:
       - 5432:5432
-    env_file: .env.docker
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
       start_period: 15s
       interval: 30s
       timeout: 30s
       retries: 3
-    restart: always
-
-  traefik:
-    image: traefik:latest
-    container_name: traefik
-    command:
-      - --providers.docker=true
-      - --providers.docker.exposedbydefault=false
-      - --entrypoints.web.address=:80
-    ports:
-      - 80:80
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
 
   server:
-    # image: amruthpillai/reactive-resume:server-latest
-    build:
-      context: .
-      dockerfile: ./server/Dockerfile
+    image: amruthpillai/reactive-resume:server-latest
+    # build:
+    #   context: .
+    #   dockerfile: ./server/Dockerfile
     container_name: server
-    env_file: .env.docker
-    depends_on:
-      - traefik
-      - postgres
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.server.entrypoints=web
-      - traefik.http.routers.server.rule=Host(`localhost`) && PathPrefix(`/api/`)
-      - traefik.http.routers.server.middlewares=server-stripprefix
-      - traefik.http.middlewares.server-stripprefix.stripprefix.prefixes=/api
-      - traefik.http.middlewares.server-stripprefix.stripprefix.forceslash=true
     restart: always
+    ports:
+      - 3100:3100
+    depends_on:
+      - postgres
+    environment:
+      - PUBLIC_URL=http://localhost:3000
+      - PUBLIC_SERVER_URL=http://localhost:3100
+      - PUBLIC_GOOGLE_CLIENT_ID=
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - SECRET_KEY=change-me-to-something-secure
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_SSL_CERT=
+      - JWT_SECRET=change-me-to-something-secure
+      - JWT_EXPIRY_TIME=604800
+      - GOOGLE_CLIENT_SECRET=
+      - GOOGLE_API_KEY=
+      - MAIL_FROM_NAME=Reactive Resume
+      - MAIL_FROM_EMAIL=noreply@rxresu.me
+      - MAIL_HOST=
+      - MAIL_PORT=
+      - MAIL_USERNAME=
+      - MAIL_PASSWORD=
+      - STORAGE_BUCKET=
+      - STORAGE_REGION=
+      - STORAGE_ENDPOINT=
+      - STORAGE_URL_PREFIX=
+      - STORAGE_ACCESS_KEY=
+      - STORAGE_SECRET_KEY=
 
   client:
-    # image: amruthpillai/reactive-resume:client-latest
-    build:
-      context: .
-      dockerfile: ./client/Dockerfile
+    image: amruthpillai/reactive-resume:client-latest
+    # build:
+    #   context: .
+    #   dockerfile: ./client/Dockerfile
     container_name: client
-    env_file: .env.docker
-    depends_on:
-      - traefik
-      - server
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.client.rule=Host(`localhost`)
-      - traefik.http.routers.client.entrypoints=web
     restart: always
+    ports:
+      - 3000:3000
+    depends_on:
+      - server
+    environment:
+      - PUBLIC_URL=http://localhost:3000
+      - PUBLIC_SERVER_URL=http://localhost:3100
+      - PUBLIC_GOOGLE_CLIENT_ID=
 
 volumes:
   pgdata:
