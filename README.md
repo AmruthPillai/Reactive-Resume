@@ -11,7 +11,7 @@ coverY: 279.7092095721537
 
 [![Project Version](https://img.shields.io/github/package-json/v/AmruthPillai/Reactive-Resume?style=flat-square)](https://github.com/AmruthPillai/Reactive-Resume/releases) [![Project License](https://img.shields.io/github/license/AmruthPillai/Reactive-Resume?style=flat-square)](https://github.com/AmruthPillai/Reactive-Resume/blob/main/LICENSE) [![Crowdin](https://badges.crowdin.net/reactive-resume/localized.svg)](https://translate.rxresu.me) [![Docker Pulls](https://img.shields.io/docker/pulls/amruthpillai/reactive-resume?style=flat-square)](https://hub.docker.com/r/amruthpillai/reactive-resume) [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FAmruthPillai%2FReactive-Resume.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FAmruthPillai%2FReactive-Resume?ref=badge\_shield)
 
-> ### [Go to App](https://rxresu.me) | [GitHub Repo](https://github.com/AmruthPillai/Reactive-Resume)
+> #### [Go to App](https://rxresu.me) | [GitHub Repo](https://github.com/AmruthPillai/Reactive-Resume)
 
 ### Summary
 
@@ -62,7 +62,9 @@ You have complete control over what goes into your resume, how it looks, what co
 * Japanese (日本語)
 * Kannada (ಕನ್ನಡ)
 * Khmer (ភាសាខ្មែរ)
+* Korean (한국어)
 * Malayalam (മലയാളം)
+* Marathi (मराठी)
 * Nepali (नेपाली)
 * Norwegian (Norsk)
 * Odia (ଓଡ଼ିଆ)
@@ -89,7 +91,7 @@ Use the [GitHub Issues](https://github.com/AmruthPillai/Reactive-Resume/issues/n
 
 Reactive Resume would be nothing without the folks who supported me and kept the project alive in the beginning, and your continued support is what keeps me going. If you found Reactive Resume to be useful, helpful or just insightful and appreciate the effort I took to make the project, please consider donating as little or as much as you can.
 
-#### [**💸  Contribute via PayPal**](https://paypal.me/RajaRajanA)
+#### [**💸 Contribute via PayPal**](https://paypal.me/RajaRajanA)
 
 ### License
 
