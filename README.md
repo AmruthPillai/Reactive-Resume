@@ -1,4 +1,4 @@
-<img src="https://github.com/AmruthPillai/Reactive-Resume/blob/main/docs/static/logo.svg" alt="Reactive Resume" width="256px" height="256px" />
+<img src="https://rxresu.me/images/logos/logo.png" alt="Reactive Resume" width="256px" height="256px" />
 
 # Reactive Resume
 
@@ -18,7 +18,6 @@ You have complete control over what goes into your resume, how it looks, what co
 ## Table of Contents
 
 - [Reactive Resume](#reactive-resume)
-  - [Go to App | [Docs](https://docs.rxresu.me)](#go-to-app--docs)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Languages](#languages)
@@ -27,7 +26,6 @@ You have complete control over what goes into your resume, how it looks, what co
   - [Contributing](#contributing)
   - [Report Bugs and Feature Requests](#report-bugs-and-feature-requests)
   - [Donations](#donations)
-    - [💸 PayPal](#-paypal)
   - [Infrastructure](#infrastructure)
   - [Contributors Wall](#contributors-wall)
   - [License](#license)
@@ -124,7 +122,8 @@ Use the [GitHub Issues](https://github.com/AmruthPillai/Reactive-Resume/issues/n
 
 Reactive Resume would be nothing without the folks who supported me and kept the project alive in the beginning, and your continued support is what keeps me going. If you found Reactive Resume to be useful, helpful or just insightful and appreciate the effort I took to make the project, please consider donating as little or as much as you can.
 
-### [💸 PayPal](https://paypal.me/RajaRajanA)
+### [GitHub Sponsor](https://github.com/sponsors/AmruthPillai)
+### [PayPal](https://paypal.me/RajaRajanA)
 
 ## Infrastructure
 
