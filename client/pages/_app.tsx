@@ -18,7 +18,7 @@ import queryClient from '@/services/react-query';
 import store, { persistor } from '@/store/index';
 import WrapperRegistry from '@/wrappers/index';
 
-const App: React.FC<AppProps> = ({ Component, pageProps }) => (
+const App = ({ Component, pageProps }: AppProps): JSX.Element => (
   <>
     <Head>
       <title>Reactive Resume</title>
