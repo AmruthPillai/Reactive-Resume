@@ -98,7 +98,7 @@ const Preview: NextPage<Props> = ({ username, slug, resume: initialData }) => {
     try {
       const url = await mutateAsync({ username, slug });
 
-      download(`/api${url}`);
+      download(url);
     } catch {
       toast.error('Something went wrong, please try again later.');
     }

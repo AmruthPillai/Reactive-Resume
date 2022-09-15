@@ -48,7 +48,7 @@ const Export = () => {
 
     const url = await mutateAsync({ username, slug });
 
-    download(`/api${url}`);
+    download(url);
   };
 
   return (

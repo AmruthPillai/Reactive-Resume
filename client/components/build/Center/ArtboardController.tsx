@@ -70,7 +70,7 @@ const ArtboardController: React.FC<ReactZoomPanPinchRef> = ({ zoomIn, zoomOut, c
 
     const url = await mutateAsync({ username, slug });
 
-    download(`/api${url}`);
+    download(url);
   };
 
   return (
