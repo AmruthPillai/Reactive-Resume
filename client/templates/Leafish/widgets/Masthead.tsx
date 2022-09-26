@@ -1,4 +1,6 @@
 import { Cake, Email, Phone, Public, Room } from '@mui/icons-material';
+import Markdown from '@/components/shared/Markdown';
+
 import { alpha } from '@mui/material';
 import { Theme } from '@reactive-resume/schema';
 import get from 'lodash/get';
@@ -23,7 +25,7 @@ const Masthead: React.FC = () => {
         <div className="grid flex-1 gap-1">
           <h1>{name}</h1>
           <p style={{ color: theme.primary }}>{headline}</p>
-          <p className="opacity-75">{summary}</p>
+          <p className="opacity-75"><Markdown>{summary}</Markdown></p>
         </div>
 
         {photo.visible && !isEmpty(photo.url) && (
