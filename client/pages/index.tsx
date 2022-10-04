@@ -186,7 +186,7 @@ const Home: NextPage = () => {
 
       <section className={styles.section}>
         <a href={DIGITALOCEAN_URL} target="_blank" rel="noreferrer">
-          <Image src="/images/sponsors/digitalocean.svg" alt="Powered By DigitalOcean" width={200} height={40} />
+          <Image src={`/images/sponsors/${theme=="dark"?"digitalocean":"digitaloceanLight"}.svg`} alt="Powered By DigitalOcean" width={200} height={40} />
         </a>
       </section>
 
