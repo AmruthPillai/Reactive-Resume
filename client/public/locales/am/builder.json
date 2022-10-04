@@ -1,103 +1,103 @@
 {
   "common": {
     "actions": {
-      "add": "Add New {{token}}",
-      "delete": "Delete {{token}}",
-      "edit": "Edit {{token}}"
+      "add": "አዲስ {{token}} ጨምር",
+      "delete": "{{token}} አጥፋ",
+      "edit": "{{token}} አዘምን"
     },
     "columns": {
-      "heading": "Columns",
-      "tooltip": "Change number of columns"
+      "heading": "አምዶች",
+      "tooltip": "የአምዶች ብዛት ይቀይሩ"
     },
     "form": {
       "date": {
-        "label": "Date"
+        "label": "ቀን"
       },
       "description": {
-        "label": "Description"
+        "label": "መግለጫ"
       },
       "email": {
-        "label": "Email Address"
+        "label": "የኢሜል አድራሻ"
       },
       "end-date": {
-        "help-text": "Leave this field blank, if still present",
-        "label": "End Date"
+        "help-text": "አሁንም ካለ፤ ይህንን ቦታ ክፍት ይተውት።",
+        "label": "የመጨረሻ ቀን"
       },
       "keywords": {
-        "label": "Keywords"
+        "label": "ቁልፍ ቃላት"
       },
       "level": {
-        "label": "Level"
+        "label": "ደረጃ"
       },
       "levelNum": {
-        "label": "Level (Number)"
+        "label": "ደረጃ (ቁጥር)"
       },
       "name": {
-        "label": "Name"
+        "label": "ስም"
       },
       "phone": {
-        "label": "Phone Number"
+        "label": "የስልክ ቁጥር"
       },
       "position": {
-        "label": "Position"
+        "label": "የስራ ሚና"
       },
       "start-date": {
-        "label": "Start Date"
+        "label": "የመጀመሪያ ቀን"
       },
       "subtitle": {
-        "label": "Subtitle"
+        "label": "ንዑስ ርዕስ"
       },
       "summary": {
-        "label": "Summary"
+        "label": "ማጠቃለያ"
       },
       "title": {
-        "label": "Title"
+        "label": "ርዕስ"
       },
       "url": {
-        "label": "Website"
+        "label": "ድህረገፅ"
       }
     },
     "glossary": {
-      "page": "Page"
+      "page": "ገጽ"
     },
     "list": {
       "actions": {
-        "delete": "Delete",
-        "duplicate": "Duplicate",
-        "edit": "Edit"
+        "delete": "አጥፋ",
+        "duplicate": "አባዛ",
+        "edit": "አዘምን"
       },
-      "empty-text": "This list is empty."
+      "empty-text": "ይህ ዝርዝር ባዶ ነው።"
     },
     "tooltip": {
-      "delete-item": "Are you sure you want to delete this item? This is an irreversible action.",
-      "delete-section": "Delete Section",
-      "rename-section": "Rename Section",
-      "toggle-visibility": "Toggle Visibility"
+      "delete-item": "እርግጠኛ ነዎት ይህንn ማጥፋት ይፈልጋሉ? ይህ የማይመለስ ተግባር ነው።",
+      "delete-section": "ክፍሉን አጥፋ",
+      "rename-section": "ክፍሉን እንደገና ይሰይሙ",
+      "toggle-visibility": "ዕይታውን ቀያይር"
     }
   },
   "controller": {
     "tooltip": {
-      "center-artboard": "Center Artboard",
-      "copy-link": "Copy Link to Resume",
-      "export-pdf": "Export PDF",
-      "toggle-orientation": "Toggle Page Orientation",
-      "toggle-page-break-line": "Toggle Page Break Line",
-      "toggle-sidebars": "Toggle Sidebars",
-      "zoom-in": "Zoom In",
-      "zoom-out": "Zoom Out",
-      "undo": "Undo",
-      "redo": "Redo"
+      "center-artboard": "መሃል የሰዕል ማሳያ",
+      "copy-link": "የስራ ልምድ ሰነዱን ሊንክ ቅዳ",
+      "export-pdf": "PDF አውጣ",
+      "toggle-orientation": "የገጽ አቀማመጥን ቀያይር",
+      "toggle-page-break-line": "የገጽ መግቻ መስመርን ቀያይር",
+      "toggle-sidebars": "የጎን ክፍሎችን ቀይር",
+      "zoom-in": "አቅርብ",
+      "zoom-out": "አሳንስ",
+      "undo": "ቀልብስ",
+      "redo": "ድገም"
     }
   },
   "header": {
     "menu": {
-      "delete": "Delete",
-      "duplicate": "Duplicate",
-      "rename": "Rename",
-      "share-link": "Share Link",
+      "delete": "አጥፋ",
+      "duplicate": "አብዛ",
+      "rename": "ዳግም ሰይም",
+      "share-link": "ሊንክ አጋራ",
       "tooltips": {
-        "delete": "Are you sure you want to delete this resume? This is an irreversible action.",
-        "share-link": "You need to change the visibility of your resume to public to make it visible to others."
+        "delete": "እርግጠኛ ነዎት ይህን የስራ ልምድ ሰነድ ማጥፋት ይፈልጋሉ? ይህ የማይመለስ ተግባር ነው።",
+        "share-link": "የሥራ ልምድዎን ለሌሎች እንዲታይ ለማድረግ ዕይታውን ወደ ይፋዊ መለወጥ ያስፈልግዎታል።"
       }
     }
   },
@@ -106,125 +106,125 @@
       "awards": {
         "form": {
           "awarder": {
-            "label": "Awarder"
+            "label": "ሸላሚ"
           }
         }
       },
       "basics": {
         "actions": {
-          "photo-filters": "Photo Filters"
+          "photo-filters": "የፎቶ ማጣሪያዎች"
         },
-        "heading": "Basics",
+        "heading": "መሰረታዊ ነገሮች",
         "headline": {
-          "label": "Headline"
+          "label": "ርዕስ"
         },
         "name": {
-          "label": "Full Name"
+          "label": "ሙሉ ስም"
         },
         "birthdate": {
-          "label": "Date of Birth"
+          "label": "የትውልድ ቀን"
         },
         "photo-filters": {
           "effects": {
             "border": {
-              "label": "Border"
+              "label": "ድንበር"
             },
             "grayscale": {
-              "label": "Grayscale"
+              "label": "ግራጫ ልኬት"
             },
-            "heading": "Effects"
+            "heading": "ተፅዕኖዎች"
           },
           "shape": {
-            "heading": "Shape"
+            "heading": "ቅርጽ"
           },
           "size": {
-            "heading": "Size (in px)"
+            "heading": "መጠን (በፒክስል)"
           }
         },
         "photo-upload": {
           "tooltip": {
-            "remove": "Remove Photo",
-            "upload": "Upload Photo"
+            "remove": "ፎቶ አስወግድ",
+            "upload": "ፎቶ ስቀል"
           }
         }
       },
       "certifications": {
         "form": {
           "issuer": {
-            "label": "Issuer"
+            "label": "ሰጪ አካል"
           }
         }
       },
       "education": {
         "form": {
           "area-study": {
-            "label": "Area of Study"
+            "label": "የጥናት ዙሪያ"
           },
           "courses": {
-            "label": "Courses"
+            "label": "ትምህርቶች"
           },
           "degree": {
-            "label": "Degree"
+            "label": "ዲግሪ"
           },
           "grade": {
-            "label": "Grade"
+            "label": "ውጤት"
           },
           "institution": {
-            "label": "Institution"
+            "label": "ተቋም"
           }
         }
       },
       "location": {
         "address": {
-          "label": "Address"
+          "label": "አድራሻ"
         },
         "city": {
-          "label": "City"
+          "label": "ከተማ"
         },
         "country": {
-          "label": "Country"
+          "label": "ሀገር"
         },
-        "heading": "Location",
+        "heading": "አካባቢ",
         "postal-code": {
-          "label": "Postal Code"
+          "label": "የፖስታ ኮድ"
         },
         "region": {
-          "label": "Region"
+          "label": "ክልል"
         }
       },
       "profiles": {
         "form": {
           "network": {
-            "label": "Network"
+            "label": "አውታረ መረብ"
           },
           "username": {
-            "label": "Username"
+            "label": "የተጠቃሚ ስም"
           }
         },
-        "heading": "Profiles",
-        "heading_one": "Profile"
+        "heading": "መለያዎች",
+        "heading_one": "መለያ"
       },
       "publications": {
         "form": {
           "publisher": {
-            "label": "Publisher"
+            "label": "አታሚ"
           }
         }
       },
       "references": {
         "form": {
           "relationship": {
-            "label": "Relationship"
+            "label": "ዝምድና"
           }
         }
       },
       "section": {
-        "heading": "Section"
+        "heading": "ክፍል"
       },
       "volunteer": {
         "form": {
           "organization": {
-            "label": "Organization"
+            "label": "ድርጅት"
           }
         }
       }
@@ -233,129 +233,129 @@
   "rightSidebar": {
     "sections": {
       "css": {
-        "heading": "Custom CSS"
+        "heading": "የራስ CSS"
       },
       "export": {
-        "heading": "Export",
+        "heading": "አውጣ",
         "json": {
           "primary": "JSON",
-          "secondary": "Download a JSON version of your resume that can be imported back into Reactive Resume."
+          "secondary": "ወደ Reactive Resume ተመልሶ ሊመጣ የሚችል የስራ ልምድ ሰነድ የJSON ቅጂዎትን ያውርዱ።"
         },
         "pdf": {
           "loading": {
-            "primary": "Generating PDF",
-            "secondary": "Please wait as your PDF gets generated, this may take upto 15 seconds."
+            "primary": "PDF በመስራት ላይ",
+            "secondary": "እባክዎ PDF እስኪሰራ ይጠብቁ፣ ይህ እስከ 15 ሰከንድ ሊወስድ ይችላል።"
           },
           "normal": {
             "primary": "PDF",
-            "secondary": "Download a PDF of your resume that you can print and send out to your dream job. This file cannot be imported back for further editing."
+            "secondary": "ማተም እና መላክ የሚችሉትን የስራ ልምድ ሰነድዎን በPDF ያውርዱ። ይህ ፋይል ለተጨማሪ አርትዖት ተመልሶ ሊመጣ አይችልም።"
           }
         }
       },
       "layout": {
-        "heading": "Layout",
+        "heading": "አቀማመጥ",
         "tooltip": {
-          "reset-layout": "Reset Layout"
+          "reset-layout": "አቀማመጡን መልስ"
         }
       },
       "links": {
         "bugs-features": {
-          "body": "Something stopping you from making a resume? Or do you have an amazing idea to add? Raise an issue on GitHub to get started.",
-          "button": "GitHub Issues",
-          "heading": "Bugs? Feature Requests?"
+          "body": "የስራ ልምድ ሰነድዎን ለመስራት የሚከለክሎት ነገር አለ? ወይም የሚጨምሩት አስደናቂ ሀሳብ አለዎት? በ GitHub ላይ ጉዳይዎን ያቅርቡ።",
+          "button": "GitHub ጉዳዮች",
+          "heading": "ችግሮች? የባህሪ ጥያቄዎች?"
         },
         "donate": {
-          "body": "If you liked using Reactive Resume, please consider donating as much as you can to the cause of keeping the app up and running, without ads and free forever.",
-          "button": "Buy me a coffee",
-          "heading": "Donate to Reactive Resume"
+          "body": "Reactive Resumeን መጠቀም ከወደዱ እባክዎን መተግበሪያው እንዲሰራ እና ያለ ማስታወቂያ ሁሌም በነፃ እንዲቀጥል በተቻለዎት መጠን ለመለገስ ያስቡበት።",
+          "button": "ቡና ይጋብዙኝ",
+          "heading": "ለ Reactive Resume ይለግሱ"
         },
-        "github": "Source Code",
-        "docs": "Documentation",
-        "heading": "Links"
+        "github": "የምንጭ ኮድ",
+        "docs": "ሰነዶች",
+        "heading": "አገናኞች"
       },
       "settings": {
         "global": {
           "date": {
-            "primary": "Date",
-            "secondary": "Date format to use across the app"
+            "primary": "ቀን",
+            "secondary": "በመላው መተግበሪያ ላይ የሚጠቀሙበት የቀን አይነት"
           },
-          "heading": "Global",
+          "heading": "ዓለም አቀፍ",
           "language": {
-            "primary": "Language",
-            "secondary": "Display language to use across the app"
+            "primary": "ቋንቋ",
+            "secondary": "በመላው መተግበሪያ ላይ የሚጠቀሙበት ቋንቋ"
           },
           "theme": {
-            "primary": "Theme"
+            "primary": "ገጽታ"
           }
         },
-        "heading": "Settings",
+        "heading": "ቅንብሮች",
         "page": {
           "break-line": {
-            "primary": "Break Line",
-            "secondary": "Show a line on all pages to mark the height of an A4 page"
+            "primary": "መስመር መቁረጫ",
+            "secondary": "የA4 ገጽ ቁመትን ለመለየት በሁሉም ገጾች ላይ መስመር አሳይ"
           },
-          "heading": "Page",
+          "heading": "ገጽ",
           "orientation": {
-            "disabled": "Has no effect when there is only one page",
-            "primary": "Orientation",
-            "secondary": "Whether to display pages horizontally or vertically"
+            "disabled": "አንድ ገጽ ብቻ ሲኖር ምንም ተጽእኖ የለውም",
+            "primary": "አቅጣጫ",
+            "secondary": "ገጾችን በአግድም ሆነ በቋሚ ለማሳየት"
           }
         },
         "resume": {
-          "heading": "Resume",
+          "heading": "የስራልምድ ሰነድ",
           "reset": {
-            "primary": "Reset Everything",
-            "secondary": "Made too many mistakes? Click here to reset all changes and start from scratch. Be careful, this action cannot be reversed."
+            "primary": "ሁሉንም ነገር ዳግም አስጀምር",
+            "secondary": "በጣም ብዙ ስህተቶችን ሰርተዋል? ሁሉንም ለውጦች ዳግም ለማስጀመር እና ከባዶ ለመጀመር እዚህ ይንኩ። ይጠንቀቁ፤ ይህ እርምጃ ወደ ኋላ መመለስ አይቻልም።"
           },
           "sample": {
-            "primary": "Load Sample Data",
-            "secondary": "Not sure where to begin? Click here to load some sample data to see how a complete resume looks like."
+            "primary": "የናሙና መረጃን ጫን",
+            "secondary": "የት መጀመር እንዳለብዎት እርግጠኛ አይደሉም? የተሟላ የስራ ልምድ ሰነድ እንዴት እንደሚመስል ለማየት አንዳንድ ናሙና መረጃ ለመጫን እዚህ ይንኩ።"
           }
         }
       },
       "sharing": {
-        "heading": "Sharing",
+        "heading": "ማጋራት",
         "short-url": {
-          "label": "Prefer Short URL"
+          "label": "አጭር ማስፈንጠሪያ ይመርጣሉ።"
         },
         "visibility": {
-          "subtitle": "Allow anyone with a link to view your resume",
-          "title": "Public"
+          "subtitle": "ማስፈንጥሪያ ያለው ማንኛውም ሰው የእርስዎን የስራ ልምድ እንዲመለከት ይፍቀዱለት",
+          "title": "ይፋዊ"
         }
       },
       "templates": {
-        "heading": "Templates"
+        "heading": "ምሳሌዎች"
       },
       "theme": {
         "form": {
           "background": {
-            "label": "Background"
+            "label": "ዳራ"
           },
           "primary": {
-            "label": "Primary"
+            "label": "ዋና"
           },
           "text": {
-            "label": "Text"
+            "label": "ጽሑፍ"
           }
         },
-        "heading": "Theme"
+        "heading": "ገጽታ"
       },
       "typography": {
         "form": {
           "font-family": {
-            "label": "Font Family"
+            "label": "የጽሁፍ ቅርጽ ቤተሰብ"
           },
           "font-size": {
-            "label": "Font Size"
+            "label": "የጽሁፍ ቅርጽ መጠን"
           }
         },
-        "heading": "Typography",
+        "heading": "የፊደል አጻጻፍ",
         "widgets": {
           "body": {
-            "label": "Body"
+            "label": "ሐተታ"
           },
           "headings": {
-            "label": "Headings"
+            "label": "ርዕሶች"
           }
         }
       }
