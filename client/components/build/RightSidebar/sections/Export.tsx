@@ -1,5 +1,6 @@
 import { PictureAsPdf, Schema } from '@mui/icons-material';
 import { List, ListItem, ListItemButton, ListItemText } from '@mui/material';
+import dayjs from 'dayjs';
 import get from 'lodash/get';
 import pick from 'lodash/pick';
 import { useTranslation } from 'next-i18next';
@@ -45,8 +46,9 @@ const Export = () => {
 
     const slug = get(resume, 'slug');
     const username = get(resume, 'user.username');
+    const updatedAt = get(resume, 'updatedAt');
 
-    const url = await mutateAsync({ username, slug });
+    const url = await mutateAsync({ username, slug, lastUpdated: dayjs(updatedAt).unix().toString() });
 
     download(url);
   };

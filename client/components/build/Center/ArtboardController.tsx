@@ -13,6 +13,7 @@ import {
 } from '@mui/icons-material';
 import { ButtonBase, Divider, Tooltip, useMediaQuery, useTheme } from '@mui/material';
 import clsx from 'clsx';
+import dayjs from 'dayjs';
 import { get } from 'lodash';
 import { useTranslation } from 'next-i18next';
 import toast from 'react-hot-toast';
@@ -67,8 +68,9 @@ const ArtboardController: React.FC<ReactZoomPanPinchRef> = ({ zoomIn, zoomOut, c
 
     const slug = get(resume, 'slug');
     const username = get(resume, 'user.username');
+    const updatedAt = get(resume, 'updatedAt');
 
-    const url = await mutateAsync({ username, slug });
+    const url = await mutateAsync({ username, slug, lastUpdated: dayjs(updatedAt).unix().toString() });
 
     download(url);
   };

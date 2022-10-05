@@ -34,7 +34,7 @@ const store = configureStore({
   },
 });
 
-sagaMiddleware.run(syncSaga);
+sagaMiddleware.run(() => syncSaga(store.dispatch));
 
 export const persistor = persistStore(store);
 

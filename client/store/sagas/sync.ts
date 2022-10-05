@@ -3,7 +3,7 @@ import debounce from 'lodash/debounce';
 import { select, takeLatest } from 'redux-saga/effects';
 
 import { updateResume } from '@/services/resume';
-import { RootState } from '@/store/index';
+import { AppDispatch, RootState } from '@/store/index';
 
 import {
   addItem,
@@ -12,23 +12,24 @@ import {
   deleteSection,
   duplicateItem,
   editItem,
+  setResume,
   setResumeState,
 } from '../resume/resumeSlice';
 
 const DEBOUNCE_WAIT = 1000;
 
-const debouncedSync = debounce((resume: Resume) => updateResume(resume), DEBOUNCE_WAIT);
+const debouncedSync = debounce((resume: Resume, dispatch: AppDispatch) => updateResume(resume).then((resume) => dispatch(setResume(resume))), DEBOUNCE_WAIT);
 
-function* handleSync() {
+function* handleSync(dispatch: AppDispatch) {
   const resume: Resume = yield select((state: RootState) => state.resume.present);
 
-  debouncedSync(resume);
+  debouncedSync(resume, dispatch);
 }
 
-function* syncSaga() {
+function* syncSaga(dispatch: AppDispatch) {
   yield takeLatest(
     [setResumeState, addItem, editItem, duplicateItem, deleteItem, addSection, deleteSection],
-    handleSync
+    () => handleSync(dispatch)
   );
 }
 
