@@ -19,6 +19,7 @@ const axios = _axios.create({ baseURL });
 axios.interceptors.request.use((config) => {
   const { accessToken } = store.getState().auth;
 
+  // @ts-ignore
   config.headers = {
     ...config.headers,
     Authorization: `Bearer ${accessToken}`,
