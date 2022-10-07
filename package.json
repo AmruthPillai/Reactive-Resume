@@ -1,6 +1,6 @@
 {
   "name": "reactive-resume",
-  "version": "3.6.6",
+  "version": "3.6.7",
   "private": true,
   "scripts": {
     "dev": "env-cmd --silent turbo run dev",
@@ -17,17 +17,17 @@
   ],
   "dependencies": {
     "env-cmd": "^10.1.0",
-    "turbo": "^1.4.6"
+    "turbo": "^1.5.5"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.37.0",
-    "@typescript-eslint/parser": "^5.37.0",
-    "eslint": "^8.23.1",
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@typescript-eslint/parser": "^5.39.0",
+    "eslint": "^8.24.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-simple-import-sort": "^8.0.0",
     "prettier": "^2.7.1",
     "standard-version": "^9.5.0",
-    "typescript": "^4.8.3"
+    "typescript": "^4.8.4"
   },
   "resolutions": {
     "@types/react": "17.0.2",
