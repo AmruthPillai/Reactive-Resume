@@ -17,6 +17,7 @@ const DateWrapper: React.FC<React.PropsWithChildren<unknown>> = ({ children }) =
     dayjs.tz.setDefault('UTC');
 
     // Locales
+    require('dayjs/locale/am');
     require('dayjs/locale/ar');
     require('dayjs/locale/bg');
     require('dayjs/locale/bn');

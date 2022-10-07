@@ -2,10 +2,12 @@ export type Language = {
   code: string;
   name: string;
   localName?: string;
+  isRTL?: boolean;
 };
 
 export const languages: Language[] = [
-  { code: 'ar', name: 'Arabic', localName: 'اَلْعَرَبِيَّةُ' },
+  { code: 'am', name: 'Amharic', localName: 'አማርኛ' },
+  { code: 'ar', name: 'Arabic', localName: 'اَلْعَرَبِيَّةُ', isRTL: true },
   { code: 'bg', name: 'Bulgarian', localName: 'български' },
   { code: 'bn', name: 'Bengali', localName: 'বাংলা' },
   { code: 'ca', name: 'Catalan', localName: 'Valencian' },
@@ -15,10 +17,10 @@ export const languages: Language[] = [
   { code: 'el', name: 'Greek', localName: 'Ελληνικά' },
   { code: 'en', name: 'English' },
   { code: 'es', name: 'Spanish', localName: 'Español' },
-  { code: 'fa', name: 'Persian', localName: 'فارسی' },
+  { code: 'fa', name: 'Persian', localName: 'فارسی', isRTL: true },
   { code: 'fi', name: 'Finnish', localName: 'Suomi' },
   { code: 'fr', name: 'French', localName: 'Français' },
-  { code: 'he', name: 'Hebrew', localName: 'Ivrit' },
+  { code: 'he', name: 'Hebrew', localName: 'Ivrit', isRTL: true },
   { code: 'hi', name: 'Hindi', localName: 'हिन्दी' },
   { code: 'hu', name: 'Hungarian', localName: 'Magyar' },
   { code: 'id', name: 'Indonesian', localName: 'Bahasa Indonesia' },

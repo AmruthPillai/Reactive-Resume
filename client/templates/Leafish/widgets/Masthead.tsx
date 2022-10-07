@@ -4,6 +4,7 @@ import { Theme } from '@reactive-resume/schema';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 
+import Markdown from '@/components/shared/Markdown';
 import { useAppSelector } from '@/store/hooks';
 import DataDisplay from '@/templates/shared/DataDisplay';
 import { formatDateString } from '@/utils/date';
@@ -23,7 +24,9 @@ const Masthead: React.FC = () => {
         <div className="grid flex-1 gap-1">
           <h1>{name}</h1>
           <p style={{ color: theme.primary }}>{headline}</p>
-          <p className="opacity-75">{summary}</p>
+          <p className="opacity-75">
+            <Markdown>{summary}</Markdown>
+          </p>
         </div>
 
         {photo.visible && !isEmpty(photo.url) && (

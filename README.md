@@ -18,6 +18,7 @@ You have complete control over what goes into your resume, how it looks, what co
 ## Table of Contents
 
 - [Reactive Resume](#reactive-resume)
+  - [Go to App | [Docs](https://docs.rxresu.me)](#go-to-app--docs)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Languages](#languages)
@@ -26,6 +27,8 @@ You have complete control over what goes into your resume, how it looks, what co
   - [Contributing](#contributing)
   - [Report Bugs and Feature Requests](#report-bugs-and-feature-requests)
   - [Donations](#donations)
+    - [GitHub Sponsor](#github-sponsor)
+    - [PayPal](#paypal)
   - [Infrastructure](#infrastructure)
   - [Contributors Wall](#contributors-wall)
   - [License](#license)
@@ -52,6 +55,7 @@ You have complete control over what goes into your resume, how it looks, what co
 
 ## Languages
 
+- Amharic (አማርኛ)
 - Arabic (اَلْعَرَبِيَّةُ)
 - Bengali (বাংলা)
 - Bulgarian (български)
