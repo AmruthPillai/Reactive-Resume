@@ -1,0 +1,135 @@
+{
+  "auth": {
+    "forgot-password": {
+      "actions": {
+        "send-email": "የይለፍ ቃል ዳግም ማስጀመሪያ ኢሜይል ላክ"
+      },
+      "body": "መልሰው ማግኘት ከሚፈልጉት መለያ ጋር የተያያዘውን የኢሜይል አድራሻ ያስገቡ።",
+      "form": {
+        "email": {
+          "label": "የኢሜል አድራሻ"
+        }
+      },
+      "heading": "የይለፍ ቃልዎን ረሱ?",
+      "help-text": "መለያው ካለ የይለፍ ቃልዎን እንደገና ለማስጀመር የሚያስችል ኢሜል ይደርስዎታል።"
+    },
+    "login": {
+      "actions": {
+        "login": "ግባ"
+      },
+      "body": "እባክዎ የስራ ልምድ ሰነድዎ ወዳለበት ለመግባት፣ ለማግኘት፣ ለማስተዳደር እና ለማጋራት ከመለያዎ ጋር የተያያዘውን የተጠቃሚ ስምዎን እና የይለፍ ቃልዎን ያስገቡ።",
+      "form": {
+        "password": {
+          "label": "የይለፍ ቃል"
+        },
+        "username": {
+          "help-text": "እንዲሁም የኢሜል አድራሻዎን ማስገባት ይችላሉ",
+          "label": "የተጠቃሚ ስም"
+        }
+      },
+      "heading": "ወደ መለያዎ ይግቡ",
+      "recover-text": "የይለፍ ቃልዎን ከረሱት፣ እዚህ <1>መለያዎን መልሰው ማግኘት</1> ይችላሉ።",
+      "register-text": "ከሌለዎት እዚህ <1>መለያ መፍጠር</1> ይችላሉ።"
+    },
+    "register": {
+      "actions": {
+        "register": "ይመዝገቡ",
+        "google": "በጉግል ይመዝገቡ"
+      },
+      "body": "እባክዎ መለያ ለመፍጠር የእርስዎን የግል መረጃ ያስገቡ።",
+      "form": {
+        "confirm-password": {
+          "label": "የይለፍ ቃልዎን አረጋግጥ"
+        },
+        "email": {
+          "label": "የኢሜል አድራሻ"
+        },
+        "name": {
+          "label": "ሙሉ ስም"
+        },
+        "password": {
+          "label": "የይለፍ ቃል"
+        },
+        "username": {
+          "label": "የተጠቃሚ ስም"
+        }
+      },
+      "heading": "መለያ ፍጠር",
+      "loginText": "መለያ ካለዎት <1>እዚህ መግባት</1> ይችላሉ።"
+    },
+    "reset-password": {
+      "actions": {
+        "set-password": "አዲስ የይለፍ ቃል ያዘጋጁ"
+      },
+      "body": "ለመለያዎ አዲስ የይለፍ ቃል ያስገቡ።",
+      "form": {
+        "confirm-password": {
+          "label": "የይለፍ ቃልዎን አረጋግጡ"
+        },
+        "password": {
+          "label": "የይለፍ ቃል"
+        }
+      },
+      "heading": "የይለፍ ቃልዎን ዳግም ያስጀምሩ"
+    }
+  },
+  "dashboard": {
+    "create-resume": {
+      "actions": {
+        "create-resume": "የስራ ታሪክ ሰነድ ይፍጠሩ"
+      },
+      "body": "ስም በመስጠት የስራ ልምድዎ ሰነድዎን መገንባት ይጀምሩ። መጠሪያው ለሚያመለክቱበት የስራ ሚና ወይም የሚወዱት ምግብ ሊሆን ይችላል።",
+      "form": {
+        "name": {
+          "label": "ስም"
+        },
+        "public": {
+          "label": "በይፋ ተደራሽ ነው?"
+        },
+        "slug": {
+          "label": "ማስፈንጠሪያ"
+        }
+      },
+      "heading": "አዲስ የስራ ታሪክ ሰነድ ይፍጠሩ"
+    },
+    "import-external": {
+      "heading": "ከውጭ ምንጮች አስገባ",
+      "json-resume": {
+        "actions": {
+          "upload-json": "JSON ስቀል"
+        },
+        "body": "ለመቀጠል ዝግጁ የሆነ <1>የተረጋገጠ JSON ሰነድ</1> ካለዎት በReactive Resume ላይ ስራዎን ለማፋጠን ሊጠቀሙበት ይችላሉ። ከታች ያለውን አዝራር በመጫን የሚሰራ JSON ፋይል ይስቀሉ።",
+        "heading": "ከ JSON ሰነድ"
+      },
+      "linkedin": {
+        "actions": {
+          "upload-archive": "የ ZIP ማህደር ስቀል"
+        },
+        "body": "መረጃዎን ከ LinkedIn ወደ በመላክ እና Reactive Resume ላይ በራስ-ሙላ መስኮችን በመጠቀም ጊዜ መቆጠብ ይችላሉ። በ LinkedIn ላይ ወደ <1>የመረጃ ግላዊነት</1> ክፍል ይሂዱ እና የመረጃ ማህደርዎን ይጠይቁ። ከተገኘ በኋላ፣ ከታች በሚገኘው የ ZIP ፋይሉን ይስቀሉ።",
+        "heading": "ከ LinkedIn ስቀል"
+      },
+      "reactive-resume": {
+        "actions": {
+          "upload-json": "JSON ስቀል",
+          "upload-json-v2": "JSON v2 ይስቀሉ።"
+        },
+        "body": "አሁን ካለው Reactive Resume ስሪት ጋር ወደ ውጭ የተላከ JSON ካለዎት፣ እንደገና ሊስተካከል የሚችል ስሪት ለማግኘት ወደዚህ መልሰው ማስገባት ይችላሉ።",
+        "heading": "ከ Reactive Resume ስቀል"
+      }
+    },
+    "rename-resume": {
+      "actions": {
+        "rename-resume": "የስራ ታሪክ ሰነዱን ደግመው ይሰይሙ"
+      },
+      "form": {
+        "name": {
+          "label": "ስም"
+        },
+        "slug": {
+          "label": "ማስፈንጥሪያ"
+        }
+      },
+      "heading": "የስራ ታሪክ ሰነዱን ደግመው ይሰይሙ"
+    }
+  }
+}
