@@ -1,4 +1,4 @@
-<img src="https://rxresu.me/images/logos/logo.png" alt="Reactive Resume" width="256px" height="256px" /><centre></centre>
+<centre><img src="https://rxresu.me/images/logos/logo.png" alt="Reactive Resume" width="256px" height="256px" /></centre>
 
 # Reactive Resume
 
