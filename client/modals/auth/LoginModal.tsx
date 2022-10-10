@@ -162,15 +162,14 @@ const LoginModal: React.FC = () => {
       {!FLAG_DISABLE_SIGNUPS && (
         <p className="text-xs">
           <Trans t={t} i18nKey="modals.auth.login.register-text">
-            If you don&apos;t have one, you can <a onClick={handleCreateAccount}>create an account</a> here.
+            If you don&apos;t have one, you can <a onClick={handleCreateAccount}>create an account here.</a>
           </Trans>
         </p>
       )}
 
       <p className="text-xs">
         <Trans t={t} i18nKey="modals.auth.login.recover-text">
-          In case you have forgotten your password, you can <a onClick={handleRecoverAccount}>recover your account</a>
-          here.
+          In case you have forgotten your password, you can <a onClick={handleRecoverAccount}>recover your account here.</a>
         </Trans>
       </p>
     </BaseModal>
