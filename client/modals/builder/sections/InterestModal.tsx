@@ -84,7 +84,7 @@ const InterestModal: React.FC = () => {
       heading={isEditMode ? editText : addText}
       footerChildren={<Button onClick={handleSubmit(onSubmit)}>{isEditMode ? editText : addText}</Button>}
     >
-      <form className="my-2 grid grid-cols-2 gap-4">
+      <form className="my-2 grid grid-cols-2 gap-4" onSubmit={handleSubmit(onSubmit)}>
         <Controller
           name="name"
           control={control}
@@ -114,6 +114,7 @@ const InterestModal: React.FC = () => {
             />
           )}
         />
+        <input type="submit" style={{ display: 'none' }} />
       </form>
     </BaseModal>
   );
