@@ -114,6 +114,7 @@ const InterestModal: React.FC = () => {
             />
           )}
         />
+        <input type="submit" style={{ display: 'none' }} />
       </form>
     </BaseModal>
   );
