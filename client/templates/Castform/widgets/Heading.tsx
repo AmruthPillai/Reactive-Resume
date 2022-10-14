@@ -1,12 +1,12 @@
 import { darken } from '@mui/material';
-import { Theme } from '@reactive-resume/schema';
+import { ThemeConfig } from '@reactive-resume/schema';
 import get from 'lodash/get';
 import { useMemo } from 'react';
 
 import { useAppSelector } from '@/store/hooks';
 
 const Heading: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
-  const theme: Theme = useAppSelector((state) => get(state.resume.present, 'metadata.theme', {}));
+  const theme: ThemeConfig = useAppSelector((state) => get(state.resume.present, 'metadata.theme', {}));
   const darkerPrimary = useMemo(() => darken(theme.primary, 0.2), [theme.primary]);
 
   return (

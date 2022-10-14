@@ -1,6 +1,6 @@
 import { css } from '@emotion/css';
 import { alpha } from '@mui/material';
-import { Theme } from '@reactive-resume/schema';
+import { ThemeConfig } from '@reactive-resume/schema';
 import clsx from 'clsx';
 import get from 'lodash/get';
 import { useMemo } from 'react';
@@ -18,7 +18,7 @@ const Gengar: React.FC<PageProps> = ({ page }) => {
   const isFirstPage = useMemo(() => page === 0, [page]);
 
   const layout: string[][] = useAppSelector((state) => state.resume.present.metadata.layout[page]);
-  const theme: Theme = useAppSelector((state) => get(state.resume.present, 'metadata.theme', {}));
+  const theme: ThemeConfig = useAppSelector((state) => get(state.resume.present, 'metadata.theme', {}));
   const contrast = useMemo(() => getContrastColor(theme.primary), [theme.primary]);
   const backgroundColor: string = useMemo(() => alpha(theme.primary, 0.15), [theme.primary]);
   const color = useMemo(() => (contrast === 'dark' ? theme.text : theme.background), [theme, contrast]);

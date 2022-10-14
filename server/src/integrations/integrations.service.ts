@@ -932,6 +932,9 @@ export class IntegrationsService {
               body: get(jsonResume, 'metadata.fontSize'),
             },
           },
+          page: {
+            format: 'A4',
+          },
           theme: {
             background: get(jsonResume, 'metadata.colors.background'),
             primary: get(jsonResume, 'metadata.colors.primary'),

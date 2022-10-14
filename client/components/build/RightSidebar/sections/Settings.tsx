@@ -10,7 +10,7 @@ import {
   Switch,
   TextField,
 } from '@mui/material';
-import { DateConfig, Resume } from '@reactive-resume/schema';
+import { DateConfig, PageConfig, Resume } from '@reactive-resume/schema';
 import dayjs from 'dayjs';
 import get from 'lodash/get';
 import { useRouter } from 'next/router';
@@ -47,10 +47,11 @@ const Settings = () => {
   const id: number = useMemo(() => get(resume, 'id'), [resume]);
   const slug: string = useMemo(() => get(resume, 'slug'), [resume]);
   const username: string = useMemo(() => get(resume, 'user.username'), [resume]);
+  const pageConfig: PageConfig = useMemo(() => get(resume, 'metadata.page'), [resume]);
   const dateConfig: DateConfig = useMemo(() => get(resume, 'metadata.date'), [resume]);
 
   const isDarkMode = useMemo(() => theme === 'dark', [theme]);
-  const exampleString = useMemo(() => `Eg. ${dayjs().utc().format(dateConfig.format)}`, [dateConfig.format]);
+  const exampleDateString = useMemo(() => `Eg. ${dayjs().utc().format(dateConfig.format)}`, [dateConfig.format]);
   const themeString = useMemo(() => (isDarkMode ? 'Matte Black Everything' : 'As bright as your future'), [isDarkMode]);
 
   const { mutateAsync: loadSampleDataMutation } = useMutation<Resume, ServerError, LoadSampleDataParams>(
@@ -59,6 +60,9 @@ const Settings = () => {
   const { mutateAsync: resetResumeMutation } = useMutation<Resume, ServerError, ResetResumeParams>(resetResume);
 
   const handleSetTheme = (value: boolean) => dispatch(setTheme({ theme: value ? 'dark' : 'light' }));
+
+  const handleChangePageFormat = (value: PageConfig['format'] | null) =>
+    dispatch(setResumeState({ path: 'metadata.page.format', value }));
 
   const handleChangeDateFormat = (value: string | null) =>
     dispatch(setResumeState({ path: 'metadata.date.format', value }));
@@ -118,13 +122,13 @@ const Settings = () => {
               primary={t<string>('builder.rightSidebar.sections.settings.global.date.primary')}
               secondary={t<string>('builder.rightSidebar.sections.settings.global.date.secondary')}
             />
-            <Autocomplete<string, false, boolean, false>
+            <Autocomplete<string, false, true, false>
               disableClearable
               className="my-2 w-full"
               options={dateFormatOptions}
               value={dateConfig.format}
               onChange={(_, value) => handleChangeDateFormat(value)}
-              renderInput={(params) => <TextField {...params} helperText={exampleString} />}
+              renderInput={(params) => <TextField {...params} helperText={exampleDateString} />}
             />
           </ListItem>
 
@@ -134,7 +138,7 @@ const Settings = () => {
               primary={t<string>('builder.rightSidebar.sections.settings.global.language.primary')}
               secondary={t<string>('builder.rightSidebar.sections.settings.global.language.secondary')}
             />
-            <Autocomplete<Language, false, boolean, false>
+            <Autocomplete<Language, false, true, false>
               disableClearable
               className="my-2 w-full"
               options={languages}
@@ -158,6 +162,23 @@ const Settings = () => {
           <ListSubheader disableSticky className="rounded">
             {t<string>('builder.rightSidebar.sections.settings.page.heading')}
           </ListSubheader>
+
+          <ListItem className="flex-col">
+            <ListItemText
+              className="w-full"
+              primary={t<string>('builder.rightSidebar.sections.settings.page.format.primary')}
+              secondary={t<string>('builder.rightSidebar.sections.settings.page.format.secondary')}
+            />
+            <Autocomplete<PageConfig['format'], false, true, false>
+              disableClearable
+              defaultValue="A4"
+              className="my-2 w-full"
+              options={['A4', 'Letter']}
+              value={pageConfig?.format || 'A4'}
+              renderInput={(params) => <TextField {...params} />}
+              onChange={(_, value) => handleChangePageFormat(value)}
+            />
+          </ListItem>
 
           <ListItem>
             <ListItemText

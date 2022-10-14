@@ -1,5 +1,5 @@
 import { Cake, Email, Phone, Public, Room } from '@mui/icons-material';
-import { Theme } from '@reactive-resume/schema';
+import { ThemeConfig } from '@reactive-resume/schema';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import { useMemo } from 'react';
@@ -62,7 +62,7 @@ export const MastheadSidebar: React.FC = () => {
 };
 
 export const MastheadMain: React.FC = () => {
-  const theme: Theme = useAppSelector((state) => get(state.resume.present, 'metadata.theme', {}));
+  const theme: ThemeConfig = useAppSelector((state) => get(state.resume.present, 'metadata.theme', {}));
   const contrast = useMemo(() => getContrastColor(theme.primary), [theme.primary]);
 
   const { name, summary, headline } = useAppSelector((state) => state.resume.present.basics);

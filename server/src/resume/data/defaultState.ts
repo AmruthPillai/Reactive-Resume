@@ -138,6 +138,9 @@ const defaultState: Partial<Resume> = {
     date: {
       format: 'MMMM DD, YYYY',
     },
+    page: {
+      format: 'A4',
+    },
     layout: [
       [
         ['work', 'education', 'projects', 'volunteer', 'references'],

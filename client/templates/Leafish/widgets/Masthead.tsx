@@ -1,6 +1,6 @@
 import { Cake, Email, Phone, Public, Room } from '@mui/icons-material';
 import { alpha } from '@mui/material';
-import { Theme } from '@reactive-resume/schema';
+import { ThemeConfig } from '@reactive-resume/schema';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 
@@ -16,7 +16,7 @@ const Masthead: React.FC = () => {
   const { name, photo, headline, summary, email, phone, birthdate, website, location, profiles } = useAppSelector(
     (state) => state.resume.present.basics
   );
-  const theme: Theme = useAppSelector((state) => get(state.resume.present, 'metadata.theme', {}));
+  const theme: ThemeConfig = useAppSelector((state) => get(state.resume.present, 'metadata.theme', {}));
 
   return (
     <div>

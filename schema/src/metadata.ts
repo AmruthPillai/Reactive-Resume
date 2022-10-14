@@ -3,7 +3,11 @@ export type CustomCSS = {
   visible: boolean;
 };
 
-export type Theme = {
+export type PageConfig = {
+  format: 'A4' | 'Letter';
+};
+
+export type ThemeConfig = {
   text: string;
   background: string;
   primary: string;
@@ -27,6 +31,7 @@ export type Metadata = {
   date: DateConfig;
   layout: string[][][]; // page.column.section
   template: string;
-  theme: Theme;
+  theme: ThemeConfig;
+  page?: PageConfig;
   typography: Typography;
 };

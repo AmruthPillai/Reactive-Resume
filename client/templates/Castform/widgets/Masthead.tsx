@@ -1,6 +1,6 @@
 import { css } from '@emotion/css';
 import { Cake, Email, Phone, Public, Room } from '@mui/icons-material';
-import { Theme } from '@reactive-resume/schema';
+import { ThemeConfig } from '@reactive-resume/schema';
 import clsx from 'clsx';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
@@ -19,7 +19,7 @@ export const MastheadSidebar: React.FC = () => {
   const { name, headline, photo, email, phone, birthdate, website, location, profiles } = useAppSelector(
     (state) => state.resume.present.basics
   );
-  const theme: Theme = useAppSelector((state) => get(state.resume.present, 'metadata.theme', {}));
+  const theme: ThemeConfig = useAppSelector((state) => get(state.resume.present, 'metadata.theme', {}));
   const contrast = useMemo(() => getContrastColor(theme.primary), [theme.primary]);
   const color = useMemo(() => (contrast === 'dark' ? theme.text : theme.background), [theme, contrast]);
 
