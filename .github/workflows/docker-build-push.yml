@@ -21,7 +21,7 @@ jobs:
 
       - id: version
         name: Get Version
-        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+        run: echo "version=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2.0.0
@@ -54,9 +54,9 @@ jobs:
           platforms: linux/amd64,linux/arm64
           tags: |
             amruthpillai/reactive-resume:client-latest
-            amruthpillai/reactive-resume:client-${{ steps.version.outputs.tag }}
+            amruthpillai/reactive-resume:client-${{ env.version }}
             ghcr.io/amruthpillai/reactive-resume:client-latest
-            ghcr.io/amruthpillai/reactive-resume:client-${{ steps.version.outputs.tag }}
+            ghcr.io/amruthpillai/reactive-resume:client-${{ env.version }}
 
   server:
     name: Server
@@ -74,7 +74,7 @@ jobs:
 
       - id: version
         name: Get Version
-        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+        run: echo "version=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2.0.0
@@ -107,6 +107,6 @@ jobs:
           platforms: linux/amd64,linux/arm64
           tags: |
             amruthpillai/reactive-resume:server-latest
-            amruthpillai/reactive-resume:server-${{ steps.version.outputs.tag }}
+            amruthpillai/reactive-resume:server-${{ env.version }}
             ghcr.io/amruthpillai/reactive-resume:server-latest
-            ghcr.io/amruthpillai/reactive-resume:server-${{ steps.version.outputs.tag }}
+            ghcr.io/amruthpillai/reactive-resume:server-${{ env.version }}
