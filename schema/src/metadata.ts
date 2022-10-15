@@ -9,8 +9,8 @@ export type PageConfig = {
 
 export type ThemeConfig = {
   text: string;
-  background: string;
   primary: string;
+  background: string;
 };
 
 export type TypeCategory = 'heading' | 'body';

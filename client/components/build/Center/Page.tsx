@@ -34,16 +34,16 @@ const Page: React.FC<Props> = ({ page, showPageNumbers = false }) => {
   const TemplatePage: React.FC<PageProps> | null = useMemo(() => templateMap[template].component, [template]);
 
   return (
-    <div data-page={page + 1} data-format={pageConfig.format || 'A4'} className={styles.container}>
+    <div className={styles.container} data-page={page + 1} data-format={pageConfig?.format || 'A4'}>
       <div
         className={clsx({
           reset: true,
           [styles.page]: true,
           [styles.break]: breakLine,
+          [styles['format-letter']]: pageConfig?.format === 'Letter',
           [css(themeCSS)]: true,
           [css(typographyCSS)]: true,
           [css(customCSS.value)]: customCSS.visible,
-          [styles['format-letter']]: pageConfig?.format === 'Letter',
         })}
       >
         {TemplatePage && <TemplatePage page={page} />}
