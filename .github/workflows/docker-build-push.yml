@@ -24,7 +24,7 @@ jobs:
         run: echo "version=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
 
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2.0.0
+        uses: docker/setup-qemu-action@v2.1.0
 
       - id: buildx
         name: Set up Docker Buildx
@@ -77,7 +77,7 @@ jobs:
         run: echo "version=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
 
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2.0.0
+        uses: docker/setup-qemu-action@v2.1.0
 
       - id: buildx
         name: Set up Docker Buildx
