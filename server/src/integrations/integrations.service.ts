@@ -35,6 +35,7 @@ export class IntegrationsService {
 
   async linkedIn(userId: number, path: string): Promise<ResumeEntity> {
     let archive: StreamZip.StreamZipAsync;
+    let isArchiveValid = false;
 
     try {
       archive = new StreamZip.async({ file: path });
@@ -47,6 +48,9 @@ export class IntegrationsService {
         name: `Imported from LinkedIn (${timestamp})`,
         slug: `imported-from-linkedin-${timestamp}`,
       });
+
+      // Check if archive is valid
+      isArchiveValid = await archive.entries().then((entries) => Object.keys(entries).length > 0);
 
       // Profile
       try {
@@ -261,7 +265,7 @@ export class IntegrationsService {
       throw new HttpException('You must upload a valid zip archive downloaded from LinkedIn.', HttpStatus.BAD_REQUEST);
     } finally {
       await unlink(path);
-      !isEmpty(archive) && archive.close();
+      isArchiveValid && archive.close();
     }
   }
 
