@@ -2,7 +2,7 @@ import { joiResolver } from '@hookform/resolvers/joi';
 import { Add, DriveFileRenameOutline } from '@mui/icons-material';
 import { Button, TextField } from '@mui/material';
 import { DatePicker } from '@mui/x-date-pickers';
-import { SectionPath, WorkExperience } from '@reactive-resume/schema';
+import { WorkExperience } from '@reactive-resume/schema';
 import dayjs from 'dayjs';
 import Joi from 'joi';
 import get from 'lodash/get';
@@ -19,8 +19,6 @@ import { setModalState } from '@/store/modal/modalSlice';
 import { addItem, editItem } from '@/store/resume/resumeSlice';
 
 type FormData = WorkExperience;
-
-const path: SectionPath = 'sections.work';
 
 const defaultState: FormData = {
   name: '',
@@ -51,9 +49,11 @@ const WorkModal: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const heading = useAppSelector((state) => get(state.resume.present, `${path}.name`));
-  const { open: isOpen, payload } = useAppSelector((state) => state.modal[`builder.${path}`]);
 
+  const { open: isOpen, payload } = useAppSelector((state) => state.modal['builder.sections.work']);
+  const path: string = get(payload, 'path', 'sections.work');
   const item: FormData = get(payload, 'item', null);
+
   const isEditMode = useMemo(() => !!item, [item]);
 
   const addText = useMemo(() => t<string>('builder.common.actions.add', { token: heading }), [t, heading]);
@@ -77,7 +77,7 @@ const WorkModal: React.FC = () => {
   const handleClose = () => {
     dispatch(
       setModalState({
-        modal: `builder.${path}`,
+        modal: 'builder.sections.work',
         state: { open: false },
       })
     );

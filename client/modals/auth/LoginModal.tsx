@@ -169,7 +169,8 @@ const LoginModal: React.FC = () => {
 
       <p className="text-xs">
         <Trans t={t} i18nKey="modals.auth.login.recover-text">
-          In case you have forgotten your password, you can <a onClick={handleRecoverAccount}>recover your account here.</a>
+          In case you have forgotten your password, you can{' '}
+          <a onClick={handleRecoverAccount}>recover your account here.</a>
         </Trans>
       </p>
     </BaseModal>

@@ -1,4 +1,4 @@
-import { ListItem, Profile, Resume, Section } from '@reactive-resume/schema';
+import { ListItem, Profile, Resume, Section, SectionType } from '@reactive-resume/schema';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import cloneDeep from 'lodash/cloneDeep';
 import get from 'lodash/get';
@@ -6,6 +6,8 @@ import merge from 'lodash/merge';
 import pick from 'lodash/pick';
 import set from 'lodash/set';
 import { v4 as uuidv4 } from 'uuid';
+
+import { getSectionsByType } from '@/config/sections';
 
 type SetResumeStatePayload = { path: string; value: unknown };
 
@@ -17,7 +19,7 @@ type DuplicateItemPayload = { path: string; value: ListItem };
 
 type DeleteItemPayload = { path: string; value: ListItem };
 
-type AddSectionPayload = { value: Section };
+type AddSectionPayload = { value: Section; type: SectionType };
 
 type DeleteSectionPayload = { path: string };
 
@@ -80,6 +82,15 @@ export const resumeSlice = createSlice({
       state.sections[id] = value;
       state.metadata.layout[0][0].push(id);
     },
+    duplicateSection: (state: Resume, action: PayloadAction<AddSectionPayload>) => {
+      const { value, type } = action.payload;
+
+      const id = getSectionsByType(state.sections, type).length + 1;
+      value.name = value.name + '-' + id;
+
+      state.sections[`${type}-${id}`] = value;
+      state.metadata.layout[0][0].push(`${type}-${id}`);
+    },
     deleteSection: (state: Resume, action: PayloadAction<DeleteSectionPayload>) => {
       const { path } = action.payload;
       const id = path.split('.')[1];
@@ -119,6 +130,7 @@ export const {
   duplicateItem,
   deleteItem,
   addSection,
+  duplicateSection,
   deleteSection,
   addPage,
   deletePage,
