@@ -1,0 +1,135 @@
+{
+  "auth": {
+    "forgot-password": {
+      "actions": {
+        "send-email": "Trimiteți e-mail de resetare a parolei"
+      },
+      "body": "Introduceți doar adresa de e-mail asociată contului pe care doriți să îl recuperați.",
+      "form": {
+        "email": {
+          "label": "Adresa de e-mail"
+        }
+      },
+      "heading": "Ați uitat parola?",
+      "help-text": "Dacă există un cont, veți primi un e-mail cu un link pentru resetarea parolei."
+    },
+    "login": {
+      "actions": {
+        "login": "Autentificare"
+      },
+      "body": "Vă rugăm să introduceți numele de utilizator și parola asociate contului dvs. pentru a vă conecta și a accesa, gestiona și partaja CV-urile dvs.",
+      "form": {
+        "password": {
+          "label": "Parola"
+        },
+        "username": {
+          "help-text": "De asemenea, puteți introduce adresa dvs. de e-mail",
+          "label": "Nume utilizator"
+        }
+      },
+      "heading": "Conectați-vă la contul dvs.",
+      "recover-text": "În cazul în care v-ați uitat parola, vă puteți <1>recupera contul</1> aici.",
+      "register-text": "Dacă nu aveți unul, vă puteți <1>crea un cont</1> aici."
+    },
+    "register": {
+      "actions": {
+        "register": "Înregistrare",
+        "google": "Înregistrați-vă la Google"
+      },
+      "body": "Vă rugăm să introduceți informațiile dvs. personale pentru a crea un cont.",
+      "form": {
+        "confirm-password": {
+          "label": "Confirmați parola"
+        },
+        "email": {
+          "label": "Adresa de e-mail"
+        },
+        "name": {
+          "label": "Nume și prenume"
+        },
+        "password": {
+          "label": "Parola"
+        },
+        "username": {
+          "label": "Nume utilizator"
+        }
+      },
+      "heading": "Creați un cont",
+      "loginText": "Dacă aveți deja un cont, vă puteți <1>autentifica aici</1>."
+    },
+    "reset-password": {
+      "actions": {
+        "set-password": "Setați o nouă parolă"
+      },
+      "body": "Introduceți o nouă parolă pentru contul dumneavoastră.",
+      "form": {
+        "confirm-password": {
+          "label": "Confirmați parola"
+        },
+        "password": {
+          "label": "Parola"
+        }
+      },
+      "heading": "Resetați-vă parola"
+    }
+  },
+  "dashboard": {
+    "create-resume": {
+      "actions": {
+        "create-resume": "Creați CV-ul"
+      },
+      "body": "Începeți să vă construiți CV-ul dându-i un nume. Acesta poate face referire la rolul pentru care candidați sau pur și simplu la gustarea dvs. preferată.",
+      "form": {
+        "name": {
+          "label": "Nume"
+        },
+        "public": {
+          "label": "Este accesibil publicului?"
+        },
+        "slug": {
+          "label": "Melc"
+        }
+      },
+      "heading": "Creați un nou CV"
+    },
+    "import-external": {
+      "heading": "Import din surse externe",
+      "json-resume": {
+        "actions": {
+          "upload-json": "Încărcați JSON"
+        },
+        "body": "Dacă aveți un CV <1>JSON validat</1> și gata de utilizare, îl puteți folosi pentru a vă accelera dezvoltarea pe Reactive Resume. Faceți clic pe butonul de mai jos și încărcați un fișier JSON valid pentru a începe.",
+        "heading": "Import din JSON Reluare"
+      },
+      "linkedin": {
+        "actions": {
+          "upload-archive": "Încărcați arhiva ZIP"
+        },
+        "body": "Puteți economisi timp exportând datele dvs. de pe LinkedIn și folosindu-le pentru a completa automat câmpurile din Reactive Resume. Mergeți la secțiunea <1>Data Privacy (Confidențialitatea datelor</1> ) de pe LinkedIn și solicitați o arhivă a datelor dvs. Odată ce aceasta este disponibilă, încărcați fișierul ZIP de mai jos.",
+        "heading": "Importați din LinkedIn"
+      },
+      "reactive-resume": {
+        "actions": {
+          "upload-json": "Încărcați JSON",
+          "upload-json-v2": "Încărcați JSON din v2"
+        },
+        "body": "Dacă aveți un JSON care a fost exportat cu versiunea actuală a Reactive Resume, îl puteți importa înapoi aici pentru a obține din nou o versiune editabilă.",
+        "heading": "Importul din reluarea reactivă"
+      }
+    },
+    "rename-resume": {
+      "actions": {
+        "rename-resume": "Redenumiți CV-ul"
+      },
+      "form": {
+        "name": {
+          "label": "Nume"
+        },
+        "slug": {
+          "label": "Melc"
+        }
+      },
+      "heading": "Redenumiți-vă CV-ul"
+    }
+  }
+}

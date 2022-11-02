@@ -1,7 +1,11 @@
 .container {
-  @apply grid grid-cols-2 gap-8 px-6 py-4;
+  @apply grid grid-cols-2 gap-4 px-6 py-4;
 
-  .column {
-    @apply col-span-1 flex flex-col;
+  .main {
+    @apply grid gap-4;
+  }
+
+  .sidebar {
+    @apply grid gap-4;
   }
 }

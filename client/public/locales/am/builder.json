@@ -1,0 +1,368 @@
+{
+  "common": {
+    "actions": {
+      "add": "አዲስ {{token}} ጨምር",
+      "delete": "{{token}} አጥፋ",
+      "edit": "{{token}} አዘምን"
+    },
+    "columns": {
+      "heading": "አምዶች",
+      "tooltip": "የአምዶች ብዛት ይቀይሩ"
+    },
+    "form": {
+      "date": {
+        "label": "ቀን"
+      },
+      "description": {
+        "label": "መግለጫ"
+      },
+      "email": {
+        "label": "የኢሜል አድራሻ"
+      },
+      "end-date": {
+        "help-text": "አሁንም ካለ፤ ይህንን ቦታ ክፍት ይተውት።",
+        "label": "የመጨረሻ ቀን"
+      },
+      "keywords": {
+        "label": "ቁልፍ ቃላት"
+      },
+      "level": {
+        "label": "ደረጃ"
+      },
+      "levelNum": {
+        "label": "ደረጃ (ቁጥር)"
+      },
+      "name": {
+        "label": "ስም"
+      },
+      "phone": {
+        "label": "የስልክ ቁጥር"
+      },
+      "position": {
+        "label": "የስራ ሚና"
+      },
+      "start-date": {
+        "label": "የመጀመሪያ ቀን"
+      },
+      "subtitle": {
+        "label": "ንዑስ ርዕስ"
+      },
+      "summary": {
+        "label": "ማጠቃለያ"
+      },
+      "title": {
+        "label": "ርዕስ"
+      },
+      "url": {
+        "label": "ድህረገፅ"
+      }
+    },
+    "glossary": {
+      "page": "ገጽ"
+    },
+    "list": {
+      "actions": {
+        "delete": "አጥፋ",
+        "duplicate": "አባዛ",
+        "edit": "አዘምን"
+      },
+      "empty-text": "ይህ ዝርዝር ባዶ ነው።"
+    },
+    "tooltip": {
+      "delete-item": "እርግጠኛ ነዎት ይህንn ማጥፋት ይፈልጋሉ? ይህ የማይመለስ ተግባር ነው።",
+      "delete-section": "ክፍሉን አጥፋ",
+      "rename-section": "ክፍሉን እንደገና ይሰይሙ",
+      "toggle-visibility": "ዕይታውን ቀያይር"
+    }
+  },
+  "controller": {
+    "tooltip": {
+      "center-artboard": "መሃል የሰዕል ማሳያ",
+      "copy-link": "የስራ ልምድ ሰነዱን ሊንክ ቅዳ",
+      "export-pdf": "PDF አውጣ",
+      "toggle-orientation": "የገጽ አቀማመጥን ቀያይር",
+      "toggle-page-break-line": "የገጽ መግቻ መስመርን ቀያይር",
+      "toggle-sidebars": "የጎን ክፍሎችን ቀይር",
+      "zoom-in": "አቅርብ",
+      "zoom-out": "አሳንስ",
+      "undo": "ቀልብስ",
+      "redo": "ድገም"
+    }
+  },
+  "header": {
+    "menu": {
+      "delete": "አጥፋ",
+      "duplicate": "አብዛ",
+      "rename": "ዳግም ሰይም",
+      "share-link": "ሊንክ አጋራ",
+      "tooltips": {
+        "delete": "እርግጠኛ ነዎት ይህን የስራ ልምድ ሰነድ ማጥፋት ይፈልጋሉ? ይህ የማይመለስ ተግባር ነው።",
+        "share-link": "የሥራ ልምድዎን ለሌሎች እንዲታይ ለማድረግ ዕይታውን ወደ ይፋዊ መለወጥ ያስፈልግዎታል።"
+      }
+    }
+  },
+  "leftSidebar": {
+    "sections": {
+      "awards": {
+        "form": {
+          "awarder": {
+            "label": "ሸላሚ"
+          }
+        }
+      },
+      "basics": {
+        "actions": {
+          "photo-filters": "የፎቶ ማጣሪያዎች"
+        },
+        "heading": "መሰረታዊ ነገሮች",
+        "headline": {
+          "label": "ርዕስ"
+        },
+        "name": {
+          "label": "ሙሉ ስም"
+        },
+        "birthdate": {
+          "label": "የትውልድ ቀን"
+        },
+        "photo-filters": {
+          "effects": {
+            "border": {
+              "label": "ድንበር"
+            },
+            "grayscale": {
+              "label": "ግራጫ ልኬት"
+            },
+            "heading": "ተፅዕኖዎች"
+          },
+          "shape": {
+            "heading": "ቅርጽ"
+          },
+          "size": {
+            "heading": "መጠን (በፒክስል)"
+          }
+        },
+        "photo-upload": {
+          "tooltip": {
+            "remove": "ፎቶ አስወግድ",
+            "upload": "ፎቶ ስቀል"
+          }
+        }
+      },
+      "certifications": {
+        "form": {
+          "issuer": {
+            "label": "ሰጪ አካል"
+          }
+        }
+      },
+      "education": {
+        "form": {
+          "area-study": {
+            "label": "የጥናት ዙሪያ"
+          },
+          "courses": {
+            "label": "ትምህርቶች"
+          },
+          "degree": {
+            "label": "ዲግሪ"
+          },
+          "grade": {
+            "label": "ውጤት"
+          },
+          "institution": {
+            "label": "ተቋም"
+          }
+        }
+      },
+      "location": {
+        "address": {
+          "label": "አድራሻ"
+        },
+        "city": {
+          "label": "ከተማ"
+        },
+        "country": {
+          "label": "ሀገር"
+        },
+        "heading": "አካባቢ",
+        "postal-code": {
+          "label": "የፖስታ ኮድ"
+        },
+        "region": {
+          "label": "ክልል"
+        }
+      },
+      "profiles": {
+        "form": {
+          "network": {
+            "label": "አውታረ መረብ"
+          },
+          "username": {
+            "label": "የተጠቃሚ ስም"
+          }
+        },
+        "heading": "መለያዎች",
+        "heading_one": "መለያ"
+      },
+      "publications": {
+        "form": {
+          "publisher": {
+            "label": "አታሚ"
+          }
+        }
+      },
+      "references": {
+        "form": {
+          "relationship": {
+            "label": "ዝምድና"
+          }
+        }
+      },
+      "section": {
+        "heading": "ክፍል"
+      },
+      "volunteer": {
+        "form": {
+          "organization": {
+            "label": "ድርጅት"
+          }
+        }
+      }
+    }
+  },
+  "rightSidebar": {
+    "sections": {
+      "css": {
+        "heading": "የራስ CSS"
+      },
+      "export": {
+        "heading": "አውጣ",
+        "json": {
+          "primary": "JSON",
+          "secondary": "ወደ Reactive Resume ተመልሶ ሊመጣ የሚችል የስራ ልምድ ሰነድ የJSON ቅጂዎትን ያውርዱ።"
+        },
+        "pdf": {
+          "loading": {
+            "primary": "PDF በመስራት ላይ",
+            "secondary": "እባክዎ PDF እስኪሰራ ይጠብቁ፣ ይህ እስከ 15 ሰከንድ ሊወስድ ይችላል።"
+          },
+          "normal": {
+            "primary": "PDF",
+            "secondary": "ማተም እና መላክ የሚችሉትን የስራ ልምድ ሰነድዎን በPDF ያውርዱ። ይህ ፋይል ለተጨማሪ አርትዖት ተመልሶ ሊመጣ አይችልም።"
+          }
+        }
+      },
+      "layout": {
+        "heading": "አቀማመጥ",
+        "tooltip": {
+          "reset-layout": "አቀማመጡን መልስ"
+        }
+      },
+      "links": {
+        "bugs-features": {
+          "body": "የስራ ልምድ ሰነድዎን ለመስራት የሚከለክሎት ነገር አለ? ወይም የሚጨምሩት አስደናቂ ሀሳብ አለዎት? በ GitHub ላይ ጉዳይዎን ያቅርቡ።",
+          "button": "GitHub ጉዳዮች",
+          "heading": "ችግሮች? የባህሪ ጥያቄዎች?"
+        },
+        "donate": {
+          "body": "Reactive Resumeን መጠቀም ከወደዱ እባክዎን መተግበሪያው እንዲሰራ እና ያለ ማስታወቂያ ሁሌም በነፃ እንዲቀጥል በተቻለዎት መጠን ለመለገስ ያስቡበት።",
+          "button": "ቡና ይጋብዙኝ",
+          "heading": "ለ Reactive Resume ይለግሱ"
+        },
+        "github": "የምንጭ ኮድ",
+        "docs": "ሰነዶች",
+        "heading": "አገናኞች"
+      },
+      "settings": {
+        "global": {
+          "date": {
+            "primary": "ቀን",
+            "secondary": "በመላው መተግበሪያ ላይ የሚጠቀሙበት የቀን አይነት"
+          },
+          "heading": "ዓለም አቀፍ",
+          "language": {
+            "primary": "ቋንቋ",
+            "secondary": "በመላው መተግበሪያ ላይ የሚጠቀሙበት ቋንቋ"
+          },
+          "theme": {
+            "primary": "ገጽታ"
+          }
+        },
+        "heading": "ቅንብሮች",
+        "page": {
+          "format": {
+            "primary": "የወረቀት መጠን",
+            "secondary": "ከቆመበት ቀጥል ገጾችዎ ልኬቶችን ይወስናል"
+          },
+          "break-line": {
+            "primary": "መስመር መቁረጫ",
+            "secondary": "የA4 ገጽ ቁመትን ለመለየት በሁሉም ገጾች ላይ መስመር አሳይ"
+          },
+          "heading": "ገጽ",
+          "orientation": {
+            "disabled": "አንድ ገጽ ብቻ ሲኖር ምንም ተጽእኖ የለውም",
+            "primary": "አቅጣጫ",
+            "secondary": "ገጾችን በአግድም ሆነ በቋሚ ለማሳየት"
+          }
+        },
+        "resume": {
+          "heading": "የስራልምድ ሰነድ",
+          "reset": {
+            "primary": "ሁሉንም ነገር ዳግም አስጀምር",
+            "secondary": "በጣም ብዙ ስህተቶችን ሰርተዋል? ሁሉንም ለውጦች ዳግም ለማስጀመር እና ከባዶ ለመጀመር እዚህ ይንኩ። ይጠንቀቁ፤ ይህ እርምጃ ወደ ኋላ መመለስ አይቻልም።"
+          },
+          "sample": {
+            "primary": "የናሙና መረጃን ጫን",
+            "secondary": "የት መጀመር እንዳለብዎት እርግጠኛ አይደሉም? የተሟላ የስራ ልምድ ሰነድ እንዴት እንደሚመስል ለማየት አንዳንድ ናሙና መረጃ ለመጫን እዚህ ይንኩ።"
+          }
+        }
+      },
+      "sharing": {
+        "heading": "ማጋራት",
+        "short-url": {
+          "label": "አጭር ማስፈንጠሪያ ይመርጣሉ።"
+        },
+        "visibility": {
+          "subtitle": "ማስፈንጥሪያ ያለው ማንኛውም ሰው የእርስዎን የስራ ልምድ እንዲመለከት ይፍቀዱለት",
+          "title": "ይፋዊ"
+        }
+      },
+      "templates": {
+        "heading": "ምሳሌዎች"
+      },
+      "theme": {
+        "form": {
+          "background": {
+            "label": "ዳራ"
+          },
+          "primary": {
+            "label": "ዋና"
+          },
+          "text": {
+            "label": "ጽሑፍ"
+          }
+        },
+        "heading": "ገጽታ"
+      },
+      "typography": {
+        "form": {
+          "font-family": {
+            "label": "የጽሁፍ ቅርጽ ቤተሰብ"
+          },
+          "font-size": {
+            "label": "የጽሁፍ ቅርጽ መጠን"
+          }
+        },
+        "heading": "የፊደል አጻጻፍ",
+        "widgets": {
+          "body": {
+            "label": "ሐተታ"
+          },
+          "headings": {
+            "label": "ርዕሶች"
+          }
+        }
+      }
+    }
+  }
+}

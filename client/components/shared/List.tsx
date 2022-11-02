@@ -36,7 +36,7 @@ const List: React.FC<Props> = ({
 
   const dispatch = useAppDispatch();
 
-  const list: Array<ListItemType> = useAppSelector((state) => get(state.resume, path, []));
+  const list: Array<ListItemType> = useAppSelector((state) => get(state.resume.present, path, []));
 
   const handleEdit = (item: ListItemType) => {
     isFunction(onEdit) && onEdit(item);

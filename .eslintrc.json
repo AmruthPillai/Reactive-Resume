@@ -1,31 +1,22 @@
 {
-  "root": true,
   "ignorePatterns": ["/app"],
   "parser": "@typescript-eslint/parser",
-  "extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
-  "plugins": ["@typescript-eslint/eslint-plugin", "simple-import-sort", "unused-imports"],
+  "extends": ["plugin:@typescript-eslint/recommended"],
+  "plugins": ["@typescript-eslint/eslint-plugin", "simple-import-sort"],
   "rules": {
+    // ESLint
+    "no-unused-vars": "off",
+
+    // Simple Import Sort
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+
     // TypeScript ESLint
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    // Simple Import Sort
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
-    // Unused Imports
-    "no-unused-vars": "off",
-    "unused-imports/no-unused-imports": "error",
-    "unused-imports/no-unused-vars": [
-      "warn",
-      {
-        "vars": "all",
-        "varsIgnorePattern": "^_",
-        "args": "none",
-        "argsIgnorePattern": "^_"
-      }
-    ]
+    "@typescript-eslint/explicit-module-boundary-types": "off"
   },
   "overrides": [
     {

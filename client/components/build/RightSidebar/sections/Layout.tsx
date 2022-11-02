@@ -1,10 +1,10 @@
+import { DragDropContext, Draggable, DraggableLocation, Droppable, DropResult } from '@hello-pangea/dnd';
 import { Add, Close, Restore } from '@mui/icons-material';
 import { Button, IconButton, Tooltip } from '@mui/material';
 import clsx from 'clsx';
 import cloneDeep from 'lodash/cloneDeep';
 import get from 'lodash/get';
 import { useTranslation } from 'next-i18next';
-import { DragDropContext, Draggable, DraggableLocation, Droppable, DropResult } from 'react-beautiful-dnd';
 
 import Heading from '@/components/shared/Heading';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
@@ -23,8 +23,8 @@ const Layout = () => {
 
   const dispatch = useAppDispatch();
 
-  const layout = useAppSelector((state) => state.resume.metadata.layout);
-  const resumeSections = useAppSelector((state) => state.resume.sections);
+  const layout = useAppSelector((state) => state.resume.present.metadata.layout);
+  const resumeSections = useAppSelector((state) => state.resume.present.sections);
 
   const onDragEnd = (dropResult: DropResult) => {
     const { source: srcLoc, destination: destLoc } = dropResult;

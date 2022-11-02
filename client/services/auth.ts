@@ -18,8 +18,8 @@ export type LoginWithGoogleParams = {
 
 export type RegisterParams = {
   name: string;
-  username: string;
   email: string;
+  username: string;
   password: string;
 };
 

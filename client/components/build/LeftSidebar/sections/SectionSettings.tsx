@@ -18,7 +18,7 @@ const SectionSettings: React.FC<Props> = ({ path }) => {
 
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
-  const columns = useAppSelector<number>((state) => get(state.resume, `${path}.columns`, 2));
+  const columns = useAppSelector<number>((state) => get(state.resume.present, `${path}.columns`, 2));
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);

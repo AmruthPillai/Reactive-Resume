@@ -1,0 +1,368 @@
+{
+  "common": {
+    "actions": {
+      "add": "Додати {{token}}",
+      "delete": "Видалити {{token}}",
+      "edit": "Редагувати {{token}}"
+    },
+    "columns": {
+      "heading": "Стовпці",
+      "tooltip": "Змінити кількість стовпців"
+    },
+    "form": {
+      "date": {
+        "label": "Дата"
+      },
+      "description": {
+        "label": "Опис"
+      },
+      "email": {
+        "label": "Адреса ел. пошти"
+      },
+      "end-date": {
+        "help-text": "Залиште це поле порожнім, якщо воно ще є",
+        "label": "Дата завершення"
+      },
+      "keywords": {
+        "label": "Ключові слова"
+      },
+      "level": {
+        "label": "Рівень"
+      },
+      "levelNum": {
+        "label": "Рівень (число)"
+      },
+      "name": {
+        "label": "Назва"
+      },
+      "phone": {
+        "label": "Номер телефону"
+      },
+      "position": {
+        "label": "Посада"
+      },
+      "start-date": {
+        "label": "Дата початку"
+      },
+      "subtitle": {
+        "label": "Підзаголовок"
+      },
+      "summary": {
+        "label": "Резюме"
+      },
+      "title": {
+        "label": "Заголовок"
+      },
+      "url": {
+        "label": "Веб-сайт"
+      }
+    },
+    "glossary": {
+      "page": "Сторінка"
+    },
+    "list": {
+      "actions": {
+        "delete": "Видалити",
+        "duplicate": "Дублювати",
+        "edit": "Змінити"
+      },
+      "empty-text": "Цей список порожній."
+    },
+    "tooltip": {
+      "delete-item": "Ви впевнені, що хочете видалити цей елемент? Це незворотна дія.",
+      "delete-section": "Видалити розділ",
+      "rename-section": "Перейменувати розділ",
+      "toggle-visibility": "Змінити видимість"
+    }
+  },
+  "controller": {
+    "tooltip": {
+      "center-artboard": "Центрувати",
+      "copy-link": "Скопіювати посилання на резюме",
+      "export-pdf": "Експорт в PDF",
+      "toggle-orientation": "Перемкнути орієнтацію сторінки",
+      "toggle-page-break-line": "Перемкнути лінію розриву сторінки",
+      "toggle-sidebars": "Перемкнути бічні панелі",
+      "zoom-in": "Наблизити",
+      "zoom-out": "Віддалити",
+      "undo": "Скасувати",
+      "redo": "Повторити"
+    }
+  },
+  "header": {
+    "menu": {
+      "delete": "Видалити",
+      "duplicate": "Дублювати",
+      "rename": "Перейменувати",
+      "share-link": "Поділитись посиланням",
+      "tooltips": {
+        "delete": "Ви впевнені, що хочете видалити це резюме? Це незворотна дія.",
+        "share-link": "Вам потрібно змінити видимість свого резюме для всіх, щоб зробити його видимим для інших."
+      }
+    }
+  },
+  "leftSidebar": {
+    "sections": {
+      "awards": {
+        "form": {
+          "awarder": {
+            "label": "Нагороджувач"
+          }
+        }
+      },
+      "basics": {
+        "actions": {
+          "photo-filters": "Фотофільтри"
+        },
+        "heading": "Основне",
+        "headline": {
+          "label": "Заголовок"
+        },
+        "name": {
+          "label": "ПІБ"
+        },
+        "birthdate": {
+          "label": "Дата народження"
+        },
+        "photo-filters": {
+          "effects": {
+            "border": {
+              "label": "Кордон"
+            },
+            "grayscale": {
+              "label": "Відтінки сірого"
+            },
+            "heading": "Ефекти"
+          },
+          "shape": {
+            "heading": "Форма"
+          },
+          "size": {
+            "heading": "Розмір (у пікселях)"
+          }
+        },
+        "photo-upload": {
+          "tooltip": {
+            "remove": "Видалити фото",
+            "upload": "Завантажити фото"
+          }
+        }
+      },
+      "certifications": {
+        "form": {
+          "issuer": {
+            "label": "Видано"
+          }
+        }
+      },
+      "education": {
+        "form": {
+          "area-study": {
+            "label": "Галузь дослідження"
+          },
+          "courses": {
+            "label": "Курси"
+          },
+          "degree": {
+            "label": "Ступінь"
+          },
+          "grade": {
+            "label": "Оцінка"
+          },
+          "institution": {
+            "label": "Установа"
+          }
+        }
+      },
+      "location": {
+        "address": {
+          "label": "Адреса"
+        },
+        "city": {
+          "label": "Місто"
+        },
+        "country": {
+          "label": "Країна"
+        },
+        "heading": "Місце проживання",
+        "postal-code": {
+          "label": "Поштовий код"
+        },
+        "region": {
+          "label": "Регіон"
+        }
+      },
+      "profiles": {
+        "form": {
+          "network": {
+            "label": "Мережа"
+          },
+          "username": {
+            "label": "Ім'я користувача"
+          }
+        },
+        "heading": "Профілі",
+        "heading_one": "Профіль"
+      },
+      "publications": {
+        "form": {
+          "publisher": {
+            "label": "Видавець"
+          }
+        }
+      },
+      "references": {
+        "form": {
+          "relationship": {
+            "label": "Зв’язок"
+          }
+        }
+      },
+      "section": {
+        "heading": "Розділ"
+      },
+      "volunteer": {
+        "form": {
+          "organization": {
+            "label": "Організація"
+          }
+        }
+      }
+    }
+  },
+  "rightSidebar": {
+    "sections": {
+      "css": {
+        "heading": "Спеціальний CSS"
+      },
+      "export": {
+        "heading": "Експорт",
+        "json": {
+          "primary": "JSON",
+          "secondary": "Завантажити JSON-версію Вашого резюме, яку можна імпортувати назад у Reactive Resume."
+        },
+        "pdf": {
+          "loading": {
+            "primary": "Згенерувати PDF",
+            "secondary": "Будь ласка, зачекайте, поки ваш PDF згенерується, це може зайняти до 15 секунд."
+          },
+          "normal": {
+            "primary": "PDF",
+            "secondary": "Завантажте резюме у форматі PDF, який можна роздрукувати та надіслати на роботу своєї мрії. Цей файл не можна імпортувати назад для подальшого редагування."
+          }
+        }
+      },
+      "layout": {
+        "heading": "Розмітка",
+        "tooltip": {
+          "reset-layout": "Скинути розмітку"
+        }
+      },
+      "links": {
+        "bugs-features": {
+          "body": "Щось заважає Вам скласти резюме? У вас є дивовижна ідея для реалізації? Підніміть проблему на GitHub, щоб почати її вирішення.",
+          "button": "GitHub Issues",
+          "heading": "Помилки? Пропозиції?"
+        },
+        "donate": {
+          "body": "Якщо вам сподобалося використовувати Reactive Resume, будь ласка, подумайте пожертувати стільки, скільки можете для підтримки роботи додатку без реклами та назавжди безкоштовно.",
+          "button": "Купіть мені кави",
+          "heading": "Пожертвуйте на Reactive Resume"
+        },
+        "github": "Вихідний код",
+        "docs": "Документація",
+        "heading": "Посилання"
+      },
+      "settings": {
+        "global": {
+          "date": {
+            "primary": "Дата",
+            "secondary": "Формат дати, що використовується у програмі"
+          },
+          "heading": "Глобальні",
+          "language": {
+            "primary": "Мова",
+            "secondary": "Мова, якою відображається додаток"
+          },
+          "theme": {
+            "primary": "Тема"
+          }
+        },
+        "heading": "Налаштування",
+        "page": {
+          "format": {
+            "primary": "Розмір паперу",
+            "secondary": "Визначає розміри сторінок вашого резюме"
+          },
+          "break-line": {
+            "primary": "Розривати рядки",
+            "secondary": "Показати лінію на всіх сторінках, для позначення розміру сторінки А4"
+          },
+          "heading": "Сторінка",
+          "orientation": {
+            "disabled": "Не діє, якщо є лише одна сторінка",
+            "primary": "Орієнтація",
+            "secondary": "Відображати сторінки горизонтально чи вертикально"
+          }
+        },
+        "resume": {
+          "heading": "Резюме",
+          "reset": {
+            "primary": "Скинути все",
+            "secondary": "Зробили забагато помилок? Натисніть тут, щоб скинути всі зміни та почати з нуля. Будьте обережні, цю дію неможливо скасувати."
+          },
+          "sample": {
+            "primary": "Завантажити приклад даних",
+            "secondary": "Не впевнені на чому починати? Натисніть тут, щоб завантажити демонстраційні дані, щоб побачити як виглядає заповнене резюме."
+          }
+        }
+      },
+      "sharing": {
+        "heading": "Спільний доступ",
+        "short-url": {
+          "label": "Віддавайте перевагу короткій URL-адресі"
+        },
+        "visibility": {
+          "subtitle": "Дозвольте кожному, хто має посилання, переглядати ваше резюме",
+          "title": "Громадський"
+        }
+      },
+      "templates": {
+        "heading": "Шаблони"
+      },
+      "theme": {
+        "form": {
+          "background": {
+            "label": "Фон"
+          },
+          "primary": {
+            "label": "Первинний"
+          },
+          "text": {
+            "label": "текст"
+          }
+        },
+        "heading": "Тема"
+      },
+      "typography": {
+        "form": {
+          "font-family": {
+            "label": "Сімейство шрифтів"
+          },
+          "font-size": {
+            "label": "Розмір шрифту"
+          }
+        },
+        "heading": "Типографіка",
+        "widgets": {
+          "body": {
+            "label": "Тіло"
+          },
+          "headings": {
+            "label": "Заголовки"
+          }
+        }
+      }
+    }
+  }
+}

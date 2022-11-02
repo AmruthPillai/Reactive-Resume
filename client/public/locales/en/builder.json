@@ -84,7 +84,9 @@
       "toggle-page-break-line": "Toggle Page Break Line",
       "toggle-sidebars": "Toggle Sidebars",
       "zoom-in": "Zoom In",
-      "zoom-out": "Zoom Out"
+      "zoom-out": "Zoom Out",
+      "undo": "Undo",
+      "redo": "Redo"
     }
   },
   "header": {
@@ -268,6 +270,7 @@
           "heading": "Donate to Reactive Resume"
         },
         "github": "Source Code",
+        "docs": "Documentation",
         "heading": "Links"
       },
       "settings": {
@@ -287,6 +290,10 @@
         },
         "heading": "Settings",
         "page": {
+          "format": {
+            "primary": "Paper Size",
+            "secondary": "Determines the dimensions of your resume pages"
+          },
           "break-line": {
             "primary": "Break Line",
             "secondary": "Show a line on all pages to mark the height of an A4 page"

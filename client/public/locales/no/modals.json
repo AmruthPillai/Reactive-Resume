@@ -1,0 +1,135 @@
+{
+  "auth": {
+    "forgot-password": {
+      "actions": {
+        "send-email": "Send e-post for tilbakestill passord"
+      },
+      "body": "Bare skriv inn e-postadressen knyttet til kontoen du ønsker å gjenopprette.",
+      "form": {
+        "email": {
+          "label": "Epostadresse"
+        }
+      },
+      "heading": "Glemt passordet?",
+      "help-text": "Hvis kontoen eksisterer, vil du motta en e-post med en lenke for å tilbakestille passordet ditt."
+    },
+    "login": {
+      "actions": {
+        "login": "Logg Inn"
+      },
+      "body": "Vennligst skriv inn brukernavn og passord knyttet til kontoen din for å logge på og få tilgang til, administrere og dele CV-ene dine.",
+      "form": {
+        "password": {
+          "label": "Passord"
+        },
+        "username": {
+          "help-text": "Du kan også skrive inn e-postadressen din",
+          "label": "Brukernavn"
+        }
+      },
+      "heading": "Logg inn på kontoen din",
+      "recover-text": "I tilfelle du har glemt passordet ditt, kan du <1>gjenopprette kontoen din</1> her.",
+      "register-text": "Hvis du ikke har en, kan du <1>opprette en konto</1> her."
+    },
+    "register": {
+      "actions": {
+        "register": "Registrere",
+        "google": "Registrer deg hos Google"
+      },
+      "body": "Vennligst skriv inn din personlige informasjon for å opprette en konto.",
+      "form": {
+        "confirm-password": {
+          "label": "bekreft passord"
+        },
+        "email": {
+          "label": "Epostadresse"
+        },
+        "name": {
+          "label": "Fullt navn"
+        },
+        "password": {
+          "label": "Passord"
+        },
+        "username": {
+          "label": "Brukernavn"
+        }
+      },
+      "heading": "Opprett en konto",
+      "loginText": "Hvis du allerede har en konto, kan du <1>logge inn her</1> ."
+    },
+    "reset-password": {
+      "actions": {
+        "set-password": "Angi nytt passord"
+      },
+      "body": "Skriv inn et nytt passord for kontoen din.",
+      "form": {
+        "confirm-password": {
+          "label": "bekreft passord"
+        },
+        "password": {
+          "label": "Passord"
+        }
+      },
+      "heading": "Tilbakestill passordet ditt"
+    }
+  },
+  "dashboard": {
+    "create-resume": {
+      "actions": {
+        "create-resume": "Opprett CV"
+      },
+      "body": "Begynn å bygge din CV ved å gi den et navn. Det kan være i referanse til rollen du søker på, eller bare din favorittmatbit.",
+      "form": {
+        "name": {
+          "label": "Navn"
+        },
+        "public": {
+          "label": "Er offentlig tilgjengelig?"
+        },
+        "slug": {
+          "label": "Mordersnegle"
+        }
+      },
+      "heading": "Opprett en ny CV"
+    },
+    "import-external": {
+      "heading": "Importer fra eksterne kilder",
+      "json-resume": {
+        "actions": {
+          "upload-json": "Last opp JSON"
+        },
+        "body": "Hvis du har en <1>validert JSON-CV</1> klar til bruk, kan du bruke den til å raskere utviklingen din på Reactive Resume. Klikk på knappen nedenfor og last opp en gyldig JSON-fil for å begynne.",
+        "heading": "Importer fra JSON CV"
+      },
+      "linkedin": {
+        "actions": {
+          "upload-archive": "Last opp ZIP-arkiv"
+        },
+        "body": "Du kan spare tid ved å eksportere dataene dine fra LinkedIn og bruke dem til å automatisk fylle ut felt på Reactive Resume. Gå over til <1>Datavern</1> delen på LinkedIn og be om et arkiv av dataene dine. Når den er tilgjengelig, last opp ZIP-filen nedenfor.",
+        "heading": "Importer fra LinkedIn"
+      },
+      "reactive-resume": {
+        "actions": {
+          "upload-json": "Last opp JSON",
+          "upload-json-v2": "Last opp JSON fra v2"
+        },
+        "body": "Hvis du har en JSON som ble eksportert med gjeldende versjon av Reactive Resume, kan du importere den tilbake hit for å få en redigerbar versjon igjen.",
+        "heading": "Importer fra reaktiv CV"
+      }
+    },
+    "rename-resume": {
+      "actions": {
+        "rename-resume": "Gi nytt navn til CV"
+      },
+      "form": {
+        "name": {
+          "label": "Navn"
+        },
+        "slug": {
+          "label": "Mordersnegle"
+        }
+      },
+      "heading": "Gi nytt navn til CV-en din"
+    }
+  }
+}

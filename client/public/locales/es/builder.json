@@ -84,7 +84,9 @@
       "toggle-page-break-line": "Alternar línea de salto de página",
       "toggle-sidebars": "Ocultar/mostrar barra lateral",
       "zoom-in": "Acercar",
-      "zoom-out": "Alejar"
+      "zoom-out": "Alejar",
+      "undo": "Deshacer",
+      "redo": "Rehacer"
     }
   },
   "header": {
@@ -268,6 +270,7 @@
           "heading": "Donar a Reactive Resume"
         },
         "github": "Código Fuente",
+        "docs": "Documentación",
         "heading": "Enlaces"
       },
       "settings": {
@@ -287,6 +290,10 @@
         },
         "heading": "Preferencias",
         "page": {
+          "format": {
+            "primary": "Tamaño de papel",
+            "secondary": "Determina las dimensiones de las páginas de tu currículum."
+          },
           "break-line": {
             "primary": "Linea de separación",
             "secondary": "Mostrar una línea en todas las páginas para marcar la altura de una página A4"

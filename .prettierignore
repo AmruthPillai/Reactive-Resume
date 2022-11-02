@@ -1,3 +1,6 @@
+# Android App
+/app
+
 # Schema
 schema/dist
 
@@ -18,15 +21,9 @@ CHANGELOG.md
 
 # Project Dependencies
 node_modules
+pnpm-lock.yaml
 
 # Docker
 Dockerfile
 .dockerignore
 docker-compose.yml
-
-# Android App
-/app
-
-# Docs
-docs/build
-docs/.docusaurus

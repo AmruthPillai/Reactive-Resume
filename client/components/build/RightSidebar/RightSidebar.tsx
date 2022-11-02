@@ -43,7 +43,7 @@ const RightSidebar = () => {
       variant={isDesktop ? 'persistent' : 'temporary'}
     >
       <div className={styles.container}>
-        <nav>
+        <nav className="overflow-y-scroll">
           <div>
             <Avatar size={40} />
             <Divider />

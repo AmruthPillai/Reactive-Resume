@@ -9,6 +9,7 @@ export const VALID_URL_REGEX = /[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}
 export const FILENAME_TIMESTAMP = 'DDMMYYYYHHmmss';
 
 // Links
+export const DOCS_URL = 'https://docs.rxresu.me';
 export const DONATION_URL = 'https://paypal.me/RajaRajanA';
 export const TRANSLATE_URL = 'https://translate.rxresu.me/';
 export const DIGITALOCEAN_URL = 'https://pillai.xyz/digitalocean';

@@ -25,7 +25,7 @@ const LeftSidebar = () => {
 
   const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
 
-  const sections = useAppSelector((state) => state.resume.sections);
+  const sections = useAppSelector((state) => state.resume.present.sections);
   const { open } = useAppSelector((state) => state.build.sidebar.left);
 
   const customSections = useMemo(() => getCustomSections(sections), [sections]);
@@ -65,7 +65,7 @@ const LeftSidebar = () => {
       variant={isDesktop ? 'persistent' : 'temporary'}
     >
       <div className={styles.container}>
-        <nav>
+        <nav className="overflow-y-scroll">
           <div>
             <Link href="/dashboard">
               <a className="inline-flex">

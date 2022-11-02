@@ -1,7 +1,7 @@
 {
   "common": {
     "actions": {
-      "add": "Tambah Baru {{token}}",
+      "add": "Tambahkan {{token}} Baru",
       "delete": "Hapus {{token}}",
       "edit": "Ubah {{token}}"
     },
@@ -14,7 +14,7 @@
         "label": "Tanggal"
       },
       "description": {
-        "label": "Keterangan"
+        "label": "Deskripsi"
       },
       "email": {
         "label": "Alamat Email"
@@ -84,7 +84,9 @@
       "toggle-page-break-line": "Beralih Garis Pemisah Halaman",
       "toggle-sidebars": "Beralih Sidebar",
       "zoom-in": "Perbesar",
-      "zoom-out": "Perkecil"
+      "zoom-out": "Perkecil",
+      "undo": "Batalkan",
+      "redo": "Ulangi"
     }
   },
   "header": {
@@ -128,7 +130,7 @@
               "label": "Batas"
             },
             "grayscale": {
-              "label": "Grayscale"
+              "label": "Tingkat keabuan"
             },
             "heading": "Efek"
           },
@@ -136,7 +138,7 @@
             "heading": "Bentuk"
           },
           "size": {
-            "heading": "Besar (dalam px)"
+            "heading": "Ukuran (dalam px)"
           }
         },
         "photo-upload": {
@@ -156,7 +158,7 @@
       "education": {
         "form": {
           "area-study": {
-            "label": "Area belajar"
+            "label": "Bidang Studi"
           },
           "courses": {
             "label": "Kursus"
@@ -168,7 +170,7 @@
             "label": "Tingkatan"
           },
           "institution": {
-            "label": "Lembaga"
+            "label": "Institusi"
           }
         }
       },
@@ -268,6 +270,7 @@
           "heading": "Donasi ke Reactive Resume"
         },
         "github": "Kode sumber",
+        "docs": "Dokumentasi",
         "heading": "Link"
       },
       "settings": {
@@ -287,6 +290,10 @@
         },
         "heading": "Pengaturan",
         "page": {
+          "format": {
+            "primary": "Ukuran kertas",
+            "secondary": "Menentukan dimensi halaman resume Anda"
+          },
           "break-line": {
             "primary": "Break Line",
             "secondary": "Tampilkan garis di semua halaman untuk menandai ketinggian halaman A4"

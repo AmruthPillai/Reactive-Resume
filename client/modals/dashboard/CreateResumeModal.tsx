@@ -69,7 +69,8 @@ const CreateResumeModal: React.FC = () => {
     try {
       await mutateAsync({ name, slug, public: isPublic });
 
-      queryClient.invalidateQueries(RESUMES_QUERY);
+      await queryClient.invalidateQueries(RESUMES_QUERY);
+
       handleClose();
     } catch (error: any) {
       toast.error(error.message);

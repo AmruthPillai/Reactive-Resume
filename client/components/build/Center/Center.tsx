@@ -13,7 +13,7 @@ import Page from './Page';
 const Center = () => {
   const orientation = useAppSelector((state) => state.build.page.orientation);
 
-  const resume = useAppSelector((state) => state.resume);
+  const resume = useAppSelector((state) => state.resume.present);
   const layout: string[][][] = get(resume, 'metadata.layout');
 
   if (isEmpty(resume)) return null;

@@ -3,6 +3,7 @@ import { ListItem, Section as SectionType } from '@reactive-resume/schema';
 import get from 'lodash/get';
 import isArray from 'lodash/isArray';
 import isEmpty from 'lodash/isEmpty';
+import { useMemo } from 'react';
 
 import Markdown from '@/components/shared/Markdown';
 import { useAppSelector } from '@/store/hooks';
@@ -20,16 +21,18 @@ const Section: React.FC<SectionProps> = ({
   headlinePath = 'headline',
   keywordsPath = 'keywords',
 }) => {
-  const section: SectionType = useAppSelector((state) => get(state.resume, path, {}));
-  const dateFormat: string = useAppSelector((state) => get(state.resume, 'metadata.date.format'));
-  const primaryColor: string = useAppSelector((state) => get(state.resume, 'metadata.theme.primary'));
+  const section: SectionType = useAppSelector((state) => get(state.resume.present, path, {}));
+  const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
+  const primaryColor: string = useAppSelector((state) => get(state.resume.present, 'metadata.theme.primary'));
+
+  const sectionId = useMemo(() => section.id || path.replace('sections.', ''), [path, section]);
 
   if (!section.visible) return null;
 
   if (isArray(section.items) && isEmpty(section.items)) return null;
 
   return (
-    <section>
+    <section id={`Gengar_${sectionId}`}>
       <Heading>{section.name}</Heading>
 
       <div

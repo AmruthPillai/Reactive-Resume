@@ -84,7 +84,9 @@
       "toggle-page-break-line": "切换分页线",
       "toggle-sidebars": "显示/隐藏侧边栏",
       "zoom-in": "放大",
-      "zoom-out": "缩小"
+      "zoom-out": "缩小",
+      "undo": "撤销",
+      "redo": "重做"
     }
   },
   "header": {
@@ -268,6 +270,7 @@
           "heading": "捐赠给 Reactive Resume"
         },
         "github": "源码",
+        "docs": "文件",
         "heading": "链接"
       },
       "settings": {
@@ -287,6 +290,10 @@
         },
         "heading": "设置",
         "page": {
+          "format": {
+            "primary": "纸张尺寸",
+            "secondary": "确定简历页面的尺寸"
+          },
           "break-line": {
             "primary": "换行",
             "secondary": "在所有页面上显示一条线以标记 A4 页面的高度"

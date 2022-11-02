@@ -1,9 +1,33 @@
 {
-  "extends": ["../.eslintrc.json", "next/core-web-vitals"],
+  "extends": ["../.eslintrc.json", "next/core-web-vitals", "plugin:tailwindcss/recommended"],
+  "plugins": ["unused-imports"],
   "ignorePatterns": [".next", "__ENV.js"],
+  "settings": {
+    "next": {
+      "rootDir": "client"
+    }
+  },
   "rules": {
+    // Next.js
     "@next/next/no-img-element": "off",
     "@next/next/no-sync-scripts": "off",
-    "@next/next/no-html-link-for-pages": ["error", "pages"]
+
+    // React Hooks
+    "react-hooks/exhaustive-deps": "off",
+
+    // Unused Imports
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "args": "none",
+        "varsIgnorePattern": "^_",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+
+    // Tailwind CSS
+    "tailwindcss/no-custom-classname": ["warn", { "whitelist": ["preview-mode", "printer-mode", "markdown"] }]
   }
 }

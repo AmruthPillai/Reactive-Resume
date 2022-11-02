@@ -1,0 +1,368 @@
+{
+  "common": {
+    "actions": {
+      "add": "Afegeix nou {{token}}",
+      "delete": "Suprimeix {{token}}",
+      "edit": "Edita {{token}}"
+    },
+    "columns": {
+      "heading": "Columnes",
+      "tooltip": "Canvia el nombre de columnes"
+    },
+    "form": {
+      "date": {
+        "label": "Data"
+      },
+      "description": {
+        "label": "Descripció"
+      },
+      "email": {
+        "label": "Correu electrònic"
+      },
+      "end-date": {
+        "help-text": "Deixeu aquest camp en blanc, si encara està present",
+        "label": "Data de finalització"
+      },
+      "keywords": {
+        "label": "Paraules clau"
+      },
+      "level": {
+        "label": "Nivell"
+      },
+      "levelNum": {
+        "label": "Nivell (nombre)"
+      },
+      "name": {
+        "label": "Nom"
+      },
+      "phone": {
+        "label": "Número de telèfon"
+      },
+      "position": {
+        "label": "Posició"
+      },
+      "start-date": {
+        "label": "Data d'inici"
+      },
+      "subtitle": {
+        "label": "Subtítol"
+      },
+      "summary": {
+        "label": "Resum"
+      },
+      "title": {
+        "label": "Títol"
+      },
+      "url": {
+        "label": "Pàgina web"
+      }
+    },
+    "glossary": {
+      "page": "Pàgina"
+    },
+    "list": {
+      "actions": {
+        "delete": "Elimina",
+        "duplicate": "Duplica",
+        "edit": "Edita"
+      },
+      "empty-text": "Aquesta llista està buida."
+    },
+    "tooltip": {
+      "delete-item": "Estàs segur que vols esborrar aquest element? Aquesta acció és irreversible.",
+      "delete-section": "Suprimeix una secció",
+      "rename-section": "Canvia el nom de la secció",
+      "toggle-visibility": "Commuta la visibilitat"
+    }
+  },
+  "controller": {
+    "tooltip": {
+      "center-artboard": "Centrar tauler de dibuix",
+      "copy-link": "Copia l'enllaç al currículum",
+      "export-pdf": "Exporta com a PDF",
+      "toggle-orientation": "Commuta l'orientació de la pàgina",
+      "toggle-page-break-line": "Commuta la línia de salt de pàgina",
+      "toggle-sidebars": "Mostra o oculta la barra lateral",
+      "zoom-in": "Amplia",
+      "zoom-out": "Allunya",
+      "undo": "Desfer",
+      "redo": "Refer"
+    }
+  },
+  "header": {
+    "menu": {
+      "delete": "Elimina",
+      "duplicate": "Duplica",
+      "rename": "Canvia el nom",
+      "share-link": "Comparteix l'enllaç",
+      "tooltips": {
+        "delete": "Estàs segur que vols esborrar aquest currículum? Aquesta acció és irreversible.",
+        "share-link": "Heu de canviar la visibilitat del vostre currículum a pública per fer-lo visible per als altres."
+      }
+    }
+  },
+  "leftSidebar": {
+    "sections": {
+      "awards": {
+        "form": {
+          "awarder": {
+            "label": "Otorgat per"
+          }
+        }
+      },
+      "basics": {
+        "actions": {
+          "photo-filters": "Filtres fotogràfics"
+        },
+        "heading": "Bàsics",
+        "headline": {
+          "label": "Títol"
+        },
+        "name": {
+          "label": "Nom complet"
+        },
+        "birthdate": {
+          "label": "Data de naixement"
+        },
+        "photo-filters": {
+          "effects": {
+            "border": {
+              "label": "Vora"
+            },
+            "grayscale": {
+              "label": "Escala de grisos"
+            },
+            "heading": "Efectes"
+          },
+          "shape": {
+            "heading": "Forma"
+          },
+          "size": {
+            "heading": "Mida (en px)"
+          }
+        },
+        "photo-upload": {
+          "tooltip": {
+            "remove": "Esborrar foto",
+            "upload": "Pugeu la foto"
+          }
+        }
+      },
+      "certifications": {
+        "form": {
+          "issuer": {
+            "label": "Emissor"
+          }
+        }
+      },
+      "education": {
+        "form": {
+          "area-study": {
+            "label": "Àrea d'estudi"
+          },
+          "courses": {
+            "label": "Cursos"
+          },
+          "degree": {
+            "label": "Graus"
+          },
+          "grade": {
+            "label": "Qualificació"
+          },
+          "institution": {
+            "label": "Institució"
+          }
+        }
+      },
+      "location": {
+        "address": {
+          "label": "Adreça"
+        },
+        "city": {
+          "label": "Ciutat"
+        },
+        "country": {
+          "label": "País"
+        },
+        "heading": "Ubicació",
+        "postal-code": {
+          "label": "Codi Postal"
+        },
+        "region": {
+          "label": "Regió"
+        }
+      },
+      "profiles": {
+        "form": {
+          "network": {
+            "label": "Xarxa"
+          },
+          "username": {
+            "label": "Nom d'usuari"
+          }
+        },
+        "heading": "Perfils",
+        "heading_one": "Perfil"
+      },
+      "publications": {
+        "form": {
+          "publisher": {
+            "label": "Editor"
+          }
+        }
+      },
+      "references": {
+        "form": {
+          "relationship": {
+            "label": "Relació"
+          }
+        }
+      },
+      "section": {
+        "heading": "Secció"
+      },
+      "volunteer": {
+        "form": {
+          "organization": {
+            "label": "Organització"
+          }
+        }
+      }
+    }
+  },
+  "rightSidebar": {
+    "sections": {
+      "css": {
+        "heading": "CSS personalitzat"
+      },
+      "export": {
+        "heading": "Exporta",
+        "json": {
+          "primary": "JSON",
+          "secondary": "Baixeu una versió JSON del vostre currículum que es pot tornar a importar a Reactive Resume."
+        },
+        "pdf": {
+          "loading": {
+            "primary": "Generació de PDF",
+            "secondary": "Si us plau, espereu mentre es generi el vostre PDF; això pot trigar fins a 15 segons."
+          },
+          "normal": {
+            "primary": "PDF",
+            "secondary": "Descarrega un PDF del teu currículum que pots imprimir i enviar a la feina dels teus somnis. Aquest fitxer no es pot tornar a importar per editar-lo més."
+          }
+        }
+      },
+      "layout": {
+        "heading": "Disseny",
+        "tooltip": {
+          "reset-layout": "Restableix el disseny"
+        }
+      },
+      "links": {
+        "bugs-features": {
+          "body": "Alguna cosa t'impedeix fer un currículum? O tens una idea sorprenent per afegir? Planteja un problema a GitHub per començar.",
+          "button": "Problemes de GitHub",
+          "heading": "Errors? Sol·licituds de funcions?"
+        },
+        "donate": {
+          "body": "Si us ha agradat utilitzar Reactive Resume, considereu donar tant com pugueu per mantenir l'aplicació en funcionament, sense anuncis i gratuïta per sempre.",
+          "button": "Compra'm un cafè",
+          "heading": "Dona a Reactive Curriculum vitae"
+        },
+        "github": "Codi font",
+        "docs": "Documentació",
+        "heading": "Enllaços"
+      },
+      "settings": {
+        "global": {
+          "date": {
+            "primary": "Data",
+            "secondary": "Format de data per utilitzar a l'aplicació"
+          },
+          "heading": "Global",
+          "language": {
+            "primary": "Llenguatge",
+            "secondary": "Mostra l'idioma per utilitzar a l'aplicació"
+          },
+          "theme": {
+            "primary": "Tema"
+          }
+        },
+        "heading": "Configuració",
+        "page": {
+          "format": {
+            "primary": "Mida del paper",
+            "secondary": "Determina les dimensions de les pàgines del vostre currículum"
+          },
+          "break-line": {
+            "primary": "Línia de trencament",
+            "secondary": "Mostra una línia a totes les pàgines per marcar l'alçada d'una pàgina A4"
+          },
+          "heading": "Pàgina",
+          "orientation": {
+            "disabled": "No té efecte quan només hi ha una pàgina",
+            "primary": "Orientació",
+            "secondary": "Si voleu mostrar les pàgines horitzontalment o verticalment"
+          }
+        },
+        "resume": {
+          "heading": "Resum",
+          "reset": {
+            "primary": "Restablir-ho tot",
+            "secondary": "S'ha equivocat massa? Feu clic aquí per restablir tots els canvis i començar des de zero. Aneu amb compte, aquesta acció no es pot revertir."
+          },
+          "sample": {
+            "primary": "Carregueu dades de mostra",
+            "secondary": "No saps per on començar? Feu clic aquí per carregar algunes dades de mostra per veure com es veu un currículum complet."
+          }
+        }
+      },
+      "sharing": {
+        "heading": "Compartint",
+        "short-url": {
+          "label": "Prefereix URL curt"
+        },
+        "visibility": {
+          "subtitle": "Permet que qualsevol persona amb un enllaç vegi el teu currículum",
+          "title": "Públic"
+        }
+      },
+      "templates": {
+        "heading": "Plantilles"
+      },
+      "theme": {
+        "form": {
+          "background": {
+            "label": "Fons"
+          },
+          "primary": {
+            "label": "primària"
+          },
+          "text": {
+            "label": "Text"
+          }
+        },
+        "heading": "Tema"
+      },
+      "typography": {
+        "form": {
+          "font-family": {
+            "label": "Família de lletres"
+          },
+          "font-size": {
+            "label": "Mida de la font"
+          }
+        },
+        "heading": "Tipografia",
+        "widgets": {
+          "body": {
+            "label": "Cos"
+          },
+          "headings": {
+            "label": "Encapçalaments"
+          }
+        }
+      }
+    }
+  }
+}

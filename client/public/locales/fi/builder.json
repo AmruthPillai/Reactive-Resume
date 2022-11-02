@@ -1,0 +1,368 @@
+{
+  "common": {
+    "actions": {
+      "add": "Lisää uusi",
+      "delete": "Poista",
+      "edit": "Muokkaa"
+    },
+    "columns": {
+      "heading": "Palstat",
+      "tooltip": "Muut palstojen määrää"
+    },
+    "form": {
+      "date": {
+        "label": "Päivämäärä"
+      },
+      "description": {
+        "label": "Kuvaus"
+      },
+      "email": {
+        "label": "Sähköposti"
+      },
+      "end-date": {
+        "help-text": "Jätä tämä kenttä tyhjäksi, jos se on vielä esillä",
+        "label": "Päättymispäivä"
+      },
+      "keywords": {
+        "label": "Avainsanat"
+      },
+      "level": {
+        "label": "Taso"
+      },
+      "levelNum": {
+        "label": "Taso (numero)"
+      },
+      "name": {
+        "label": "Nimi"
+      },
+      "phone": {
+        "label": "Puhelinnumero"
+      },
+      "position": {
+        "label": "Sijainti"
+      },
+      "start-date": {
+        "label": "Alkamispäivä"
+      },
+      "subtitle": {
+        "label": "Alaotsikko"
+      },
+      "summary": {
+        "label": "Yhteenveto"
+      },
+      "title": {
+        "label": "Otsikko"
+      },
+      "url": {
+        "label": "Verkkosivusto"
+      }
+    },
+    "glossary": {
+      "page": "Sivu"
+    },
+    "list": {
+      "actions": {
+        "delete": "Poista",
+        "duplicate": "Monista",
+        "edit": "Muokkaa"
+      },
+      "empty-text": "Tämä luettelo on tyhjä."
+    },
+    "tooltip": {
+      "delete-item": "Haluatko varmasti poistaa tämän kohteen? Tämä on peruuttamaton toimenpide.",
+      "delete-section": "Poista osio",
+      "rename-section": "Nimeä osio uudelleen",
+      "toggle-visibility": "Näkyvyys päälle/pois"
+    }
+  },
+  "controller": {
+    "tooltip": {
+      "center-artboard": "Keskitä Kuvataulu",
+      "copy-link": "Kopioi linkki ansioluetteloon",
+      "export-pdf": "Vie PDF",
+      "toggle-orientation": "Vaihda sivun suunta",
+      "toggle-page-break-line": "Vaihda sivunvaihtoviivaa",
+      "toggle-sidebars": "Vaihda Sivupalkkeja",
+      "zoom-in": "Suurenna",
+      "zoom-out": "Pienennä",
+      "undo": "Kumoa",
+      "redo": "Redo"
+    }
+  },
+  "header": {
+    "menu": {
+      "delete": "Poista",
+      "duplicate": "Kopioi",
+      "rename": "Nimeä uudelleen",
+      "share-link": "Jaa linkki",
+      "tooltips": {
+        "delete": "Haluatko varmasti poistaa tämän ansioluettelon? Tämä on peruuttamaton toimenpide.",
+        "share-link": "Sinun on muutettava ansioluettelosi näkyvyys julkiseksi, jotta se näkyisi muille."
+      }
+    }
+  },
+  "leftSidebar": {
+    "sections": {
+      "awards": {
+        "form": {
+          "awarder": {
+            "label": "Tunnustuksen antaja"
+          }
+        }
+      },
+      "basics": {
+        "actions": {
+          "photo-filters": "Valokuvasuodattimet"
+        },
+        "heading": "Perustiedot",
+        "headline": {
+          "label": "Otsikko"
+        },
+        "name": {
+          "label": "Koko nimi"
+        },
+        "birthdate": {
+          "label": "Syntymäaika"
+        },
+        "photo-filters": {
+          "effects": {
+            "border": {
+              "label": "Kehys"
+            },
+            "grayscale": {
+              "label": "Harmaasävy"
+            },
+            "heading": "Efektit"
+          },
+          "shape": {
+            "heading": "Muoto"
+          },
+          "size": {
+            "heading": "Koko (px)"
+          }
+        },
+        "photo-upload": {
+          "tooltip": {
+            "remove": "Poista kuva",
+            "upload": "Lataa valokuva"
+          }
+        }
+      },
+      "certifications": {
+        "form": {
+          "issuer": {
+            "label": "Myöntäjä"
+          }
+        }
+      },
+      "education": {
+        "form": {
+          "area-study": {
+            "label": "Opintojen alue"
+          },
+          "courses": {
+            "label": "Kurssit"
+          },
+          "degree": {
+            "label": "Tutkinto"
+          },
+          "grade": {
+            "label": "Arvosana"
+          },
+          "institution": {
+            "label": "Oppilaitos"
+          }
+        }
+      },
+      "location": {
+        "address": {
+          "label": "Osoite"
+        },
+        "city": {
+          "label": "Kaupunki"
+        },
+        "country": {
+          "label": "Maa"
+        },
+        "heading": "Sijainti",
+        "postal-code": {
+          "label": "Postinumero"
+        },
+        "region": {
+          "label": "Paikkakunta"
+        }
+      },
+      "profiles": {
+        "form": {
+          "network": {
+            "label": "Verkosto"
+          },
+          "username": {
+            "label": "Käyttäjätunnus"
+          }
+        },
+        "heading": "Profiilit",
+        "heading_one": "Profiili"
+      },
+      "publications": {
+        "form": {
+          "publisher": {
+            "label": "Julkaisija"
+          }
+        }
+      },
+      "references": {
+        "form": {
+          "relationship": {
+            "label": "Suhde suosittelijaan"
+          }
+        }
+      },
+      "section": {
+        "heading": "Osio"
+      },
+      "volunteer": {
+        "form": {
+          "organization": {
+            "label": "Organisaatio"
+          }
+        }
+      }
+    }
+  },
+  "rightSidebar": {
+    "sections": {
+      "css": {
+        "heading": "Mukautettu CSS"
+      },
+      "export": {
+        "heading": "Vie",
+        "json": {
+          "primary": "JSON",
+          "secondary": "Lataa JSON-versio ansioluettelostasi, jonka voit tuoda takaisin Reactive Resumeen."
+        },
+        "pdf": {
+          "loading": {
+            "primary": "Luodaan PDF-tiedostoa",
+            "secondary": "Odota, että PDF-tiedostosi luodaan. Tämä voi kestää jopa 15 sekuntia."
+          },
+          "normal": {
+            "primary": "PDF",
+            "secondary": "Lataa PDF-tiedosto ansioluettelostasi, jonka voit tulostaa ja lähettää unelmiesi työpaikkaan. Tätä tiedostoa ei voi tuoda takaisin muokattavaksi."
+          }
+        }
+      },
+      "layout": {
+        "heading": "Asettelu",
+        "tooltip": {
+          "reset-layout": "Nollaa asettelu"
+        }
+      },
+      "links": {
+        "bugs-features": {
+          "body": "Estääkö jokin sinua tekemästä ansioluetteloa? Vai onko sinulla mahtava idea lisättäväksi? Nosta ongelma GitHubissa päästäksesi alkuun.",
+          "button": "GitHub Issues",
+          "heading": "Bugeja? Ominaisuuspyyntöjä?"
+        },
+        "donate": {
+          "body": "Jos pidit Reactive Resume -sovelluksen käytöstä, harkitse lahjoitusta niin paljon kuin voit, jotta sovellus pysyy toiminnassa ilman mainoksia ja ikuisesti ilmaisena.",
+          "button": "Osta minulle kahvi",
+          "heading": "Lahjoita Reaktiiviselle ansioluettelolle"
+        },
+        "github": "Lähdekoodi",
+        "docs": "Dokumentaatio",
+        "heading": "Linkit"
+      },
+      "settings": {
+        "global": {
+          "date": {
+            "primary": "Päivämäärä",
+            "secondary": "Sovelluksessa käytettävä päivämäärämuoto"
+          },
+          "heading": "Yleinen",
+          "language": {
+            "primary": "Kieli",
+            "secondary": "Koko sovelluksessa käytettävä näyttökieli"
+          },
+          "theme": {
+            "primary": "Teema"
+          }
+        },
+        "heading": "Asetukset",
+        "page": {
+          "format": {
+            "primary": "Paperikoko",
+            "secondary": "Määrittää ansioluettelosi sivujen mitat"
+          },
+          "break-line": {
+            "primary": "Katkoviiva",
+            "secondary": "Näytä viiva kaikilla sivuilla A4-sivun korkeuden merkitsemiseksi"
+          },
+          "heading": "Sivu",
+          "orientation": {
+            "disabled": "Ei vaikuta, kun sivuja on vain yksi",
+            "primary": "Suunta",
+            "secondary": "Näytetäänkö sivut vaaka- vai pystysuunnassa"
+          }
+        },
+        "resume": {
+          "heading": "Ansioluettelo",
+          "reset": {
+            "primary": "Tyhjennä Kaikki",
+            "secondary": "Oletko tehnyt liikaa virheitä? Napsauta tätä nollataksesi kaikki muutokset ja aloittaaksesi alusta. Ole varovainen, tätä toimintoa ei voi peruuttaa."
+          },
+          "sample": {
+            "primary": "Lataa näytetiedot",
+            "secondary": "Etkö ole varma mistä aloittaa? Napsauta tätä ladataksesi näytetietoja nähdäksesi, miltä täydellinen ansioluettelo näyttää."
+          }
+        }
+      },
+      "sharing": {
+        "heading": "Jakaminen",
+        "short-url": {
+          "label": "Valitse lyhyt URL-osoite"
+        },
+        "visibility": {
+          "subtitle": "Salli kenelle tahansa linkin avulla mahdollisuus tarkastella ansioluetteloasi.",
+          "title": "Julkinen"
+        }
+      },
+      "templates": {
+        "heading": "Mallipohjat"
+      },
+      "theme": {
+        "form": {
+          "background": {
+            "label": "Taustakuva"
+          },
+          "primary": {
+            "label": "Ensisijainen"
+          },
+          "text": {
+            "label": "Teksti"
+          }
+        },
+        "heading": "Teema"
+      },
+      "typography": {
+        "form": {
+          "font-family": {
+            "label": "Kirjasintyyli"
+          },
+          "font-size": {
+            "label": "Fontin koko"
+          }
+        },
+        "heading": "Painatus",
+        "widgets": {
+          "body": {
+            "label": "Runko"
+          },
+          "headings": {
+            "label": "Otsikot"
+          }
+        }
+      }
+    }
+  }
+}

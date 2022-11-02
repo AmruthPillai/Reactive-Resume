@@ -2,14 +2,14 @@
   @apply m-6 grid gap-8 text-center md:m-8 md:text-left;
 
   footer {
-    @apply flex flex-col gap-8 items-center sm:items-end justify-between sm:flex-row sm:gap-0;
+    @apply flex flex-col items-center justify-between gap-8 sm:flex-row sm:items-end sm:gap-0;
 
     .actions {
       @apply flex gap-2;
     }
 
     .version > div {
-      @apply text-xs font-medium opacity-50 mt-3;
+      @apply mt-3 text-xs font-medium opacity-50;
     }
   }
 }
@@ -49,7 +49,7 @@
 }
 
 .screenshots {
-  @apply grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4;
+  @apply grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6;
 
   .image {
     @apply relative h-64 rounded hover:opacity-75;

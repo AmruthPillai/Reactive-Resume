@@ -1,0 +1,368 @@
+{
+  "common": {
+    "actions": {
+      "add": "Dodaj Novi {{token}}",
+      "delete": "Obriši {{token}}",
+      "edit": "Ažuriraj {{token}}"
+    },
+    "columns": {
+      "heading": "Kolone",
+      "tooltip": "Promeni broj kolona"
+    },
+    "form": {
+      "date": {
+        "label": "Datum"
+      },
+      "description": {
+        "label": "Opis"
+      },
+      "email": {
+        "label": "Imejl Adresa"
+      },
+      "end-date": {
+        "help-text": "Ostavi ovo polje prazno, ukoliko još postoji",
+        "label": "Datum kraja"
+      },
+      "keywords": {
+        "label": "Ključne reči"
+      },
+      "level": {
+        "label": "Nivo"
+      },
+      "levelNum": {
+        "label": "Nivo (Broj)"
+      },
+      "name": {
+        "label": "Ime"
+      },
+      "phone": {
+        "label": "Broj Telefona"
+      },
+      "position": {
+        "label": "Pozicija"
+      },
+      "start-date": {
+        "label": "Datum Početka"
+      },
+      "subtitle": {
+        "label": "Podnaslov"
+      },
+      "summary": {
+        "label": "Rezime"
+      },
+      "title": {
+        "label": "Naslov"
+      },
+      "url": {
+        "label": "Veb Sajt"
+      }
+    },
+    "glossary": {
+      "page": "Stranica"
+    },
+    "list": {
+      "actions": {
+        "delete": "Obriši",
+        "duplicate": "Dupliraj",
+        "edit": "Edituj"
+      },
+      "empty-text": "Ova lista je prazna."
+    },
+    "tooltip": {
+      "delete-item": "Da li sigurno želiš da izbrišeš ovu stavku? Ovo je nepovratna akcija.",
+      "delete-section": "Obriši Sekciju",
+      "rename-section": "Preimenuj Sekciju",
+      "toggle-visibility": "Prebaci Vidljivost"
+    }
+  },
+  "controller": {
+    "tooltip": {
+      "center-artboard": "Centriraj Kanvas",
+      "copy-link": "Kopiraj link u rezime",
+      "export-pdf": "Eksportuj PDF",
+      "toggle-orientation": "Uključi/Isključi Orijentaciju Stranice",
+      "toggle-page-break-line": "Uključi/Isključi liniju preloma stranice",
+      "toggle-sidebars": "Uključi/Isključi Sidebar",
+      "zoom-in": "Zumiraj",
+      "zoom-out": "Odzumiraj",
+      "undo": "Врати",
+      "redo": "Понови"
+    }
+  },
+  "header": {
+    "menu": {
+      "delete": "Obriši",
+      "duplicate": "Dupliraj",
+      "rename": "Preimenuj",
+      "share-link": "Podeli Link",
+      "tooltips": {
+        "delete": "Da li sigurno želiš da obrišeš ovaj rezime? Ovo je nepovratna akcija.",
+        "share-link": "Moraš da promeniš vidljivost rezimea na javno kako bi bio vidljiv drugima."
+      }
+    }
+  },
+  "leftSidebar": {
+    "sections": {
+      "awards": {
+        "form": {
+          "awarder": {
+            "label": "Dodelio nagradu"
+          }
+        }
+      },
+      "basics": {
+        "actions": {
+          "photo-filters": "Filteri za Slike"
+        },
+        "heading": "Osnovno",
+        "headline": {
+          "label": "Naslov"
+        },
+        "name": {
+          "label": "Puno Ime"
+        },
+        "birthdate": {
+          "label": "Datum Rođenja"
+        },
+        "photo-filters": {
+          "effects": {
+            "border": {
+              "label": "Okvir"
+            },
+            "grayscale": {
+              "label": "Sivi Ton"
+            },
+            "heading": "Efekti"
+          },
+          "shape": {
+            "heading": "Oblik"
+          },
+          "size": {
+            "heading": "Veličina (u pikselima)"
+          }
+        },
+        "photo-upload": {
+          "tooltip": {
+            "remove": "Obriši Sliku",
+            "upload": "Učitaj Sliku"
+          }
+        }
+      },
+      "certifications": {
+        "form": {
+          "issuer": {
+            "label": "Izdavač"
+          }
+        }
+      },
+      "education": {
+        "form": {
+          "area-study": {
+            "label": "Oblast Edukacije"
+          },
+          "courses": {
+            "label": "Kursevi"
+          },
+          "degree": {
+            "label": "Stepen"
+          },
+          "grade": {
+            "label": "Ocena"
+          },
+          "institution": {
+            "label": "Institucija"
+          }
+        }
+      },
+      "location": {
+        "address": {
+          "label": "Adresa"
+        },
+        "city": {
+          "label": "Grad"
+        },
+        "country": {
+          "label": "Zemlja"
+        },
+        "heading": "Lokacija",
+        "postal-code": {
+          "label": "Poštanski Broj"
+        },
+        "region": {
+          "label": "Region"
+        }
+      },
+      "profiles": {
+        "form": {
+          "network": {
+            "label": "Mreža"
+          },
+          "username": {
+            "label": "Korisničko ime"
+          }
+        },
+        "heading": "Profili",
+        "heading_one": "Profil"
+      },
+      "publications": {
+        "form": {
+          "publisher": {
+            "label": "Izdavač"
+          }
+        }
+      },
+      "references": {
+        "form": {
+          "relationship": {
+            "label": "Veza"
+          }
+        }
+      },
+      "section": {
+        "heading": "Sekcija"
+      },
+      "volunteer": {
+        "form": {
+          "organization": {
+            "label": "Organizacija"
+          }
+        }
+      }
+    }
+  },
+  "rightSidebar": {
+    "sections": {
+      "css": {
+        "heading": "Prilagodi CSS"
+      },
+      "export": {
+        "heading": "Eksportuj",
+        "json": {
+          "primary": "JSON",
+          "secondary": "Preuzmi JSON verziju tvog rezimea koja se može importovati nazad u Reactive Resume."
+        },
+        "pdf": {
+          "loading": {
+            "primary": "Generišem PDF",
+            "secondary": "Sačekaj dok se tvoj PDF generiše, ovo može da potraje do 15 sekundi."
+          },
+          "normal": {
+            "primary": "PDF",
+            "secondary": "Preuzmi PDF verziju rezimea koju možeš da štampaš i pošalješ za svoj posao iz snova. Ovaj fajl se ne može importovati ponovo kako bi se ponovo ažurirao."
+          }
+        }
+      },
+      "layout": {
+        "heading": "Izgled",
+        "tooltip": {
+          "reset-layout": "Resetuj izgled"
+        }
+      },
+      "links": {
+        "bugs-features": {
+          "body": "Nešto de sprečava da napraviš svoj rezime? Ili imaš neku super ideju kao predlog? Kreiraj task na GitHub-u za početak.",
+          "button": "GitHub Problemi",
+          "heading": "Bagovi? Zahtevi za novu funkcionalnost?"
+        },
+        "donate": {
+          "body": "Ako ti se sviđa Reactive Resume, razmotri o donaciji kako bi aplikacija nastavila da funkcioniše i bude dostupna, bez reklama i besplatna zauvek.",
+          "button": "Kupi mi kafu",
+          "heading": "Doniraj za Reactive Resume"
+        },
+        "github": "Izvorni Kod",
+        "docs": "Документација",
+        "heading": "Linkovi"
+      },
+      "settings": {
+        "global": {
+          "date": {
+            "primary": "Datum",
+            "secondary": "Format datuma koji se koristi u aplikaciji"
+          },
+          "heading": "Globalno",
+          "language": {
+            "primary": "Jezik",
+            "secondary": "Jezika prikaza za korišćenje u celoj aplikaciji"
+          },
+          "theme": {
+            "primary": "Tema"
+          }
+        },
+        "heading": "Podešavanja",
+        "page": {
+          "format": {
+            "primary": "Величина папира",
+            "secondary": "Одређује димензије страница вашег животописа"
+          },
+          "break-line": {
+            "primary": "Prelomi Redova",
+            "secondary": "Pokaži liniju na svakoj stranici kako bi se obeležila visina A4 stranice"
+          },
+          "heading": "Strana",
+          "orientation": {
+            "disabled": "Nema efekat kada postoji samo jedna stranica",
+            "primary": "Orijentacija",
+            "secondary": "Da li prikazujem stranice horizontalno ili vertikalno"
+          }
+        },
+        "resume": {
+          "heading": "Rezime",
+          "reset": {
+            "primary": "Resetuje sve",
+            "secondary": "Previše grešaka? Klikni ovde da resetuješ sve izmene i počneš izpočetka. Vodi računa, ova akcija se ne može promeniti."
+          },
+          "sample": {
+            "primary": "Učitaj podatke kao primer",
+            "secondary": "Ne znaš gde da počneš? Klikni ovde da učitaš podatke kao primer i vidiš kako ceo rezime može da izgleda."
+          }
+        }
+      },
+      "sharing": {
+        "heading": "Deljenje",
+        "short-url": {
+          "label": "Kao Kratak URL"
+        },
+        "visibility": {
+          "subtitle": "Dozvoli svakom sa linkom da pogleda tvoj rezime",
+          "title": "Javno"
+        }
+      },
+      "templates": {
+        "heading": "Šabloni"
+      },
+      "theme": {
+        "form": {
+          "background": {
+            "label": "Pozadina"
+          },
+          "primary": {
+            "label": "Glavni"
+          },
+          "text": {
+            "label": "Tekst"
+          }
+        },
+        "heading": "Tema"
+      },
+      "typography": {
+        "form": {
+          "font-family": {
+            "label": "Porodica Fontova"
+          },
+          "font-size": {
+            "label": "Veličina Fonta"
+          }
+        },
+        "heading": "Tipografija",
+        "widgets": {
+          "body": {
+            "label": "Sadržaj"
+          },
+          "headings": {
+            "label": "Naslovi"
+          }
+        }
+      }
+    }
+  }
+}

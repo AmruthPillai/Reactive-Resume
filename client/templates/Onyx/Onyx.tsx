@@ -12,8 +12,8 @@ import Section from './widgets/Section';
 const Onyx: React.FC<PageProps> = ({ page }) => {
   const isFirstPage = useMemo(() => page === 0, [page]);
 
-  const { summary } = useAppSelector((state) => state.resume.basics);
-  const layout: string[][] = useAppSelector((state) => state.resume.metadata.layout[page]);
+  const { summary } = useAppSelector((state) => state.resume.present.basics);
+  const layout: string[][] = useAppSelector((state) => state.resume.present.metadata.layout[page]);
 
   return (
     <div className={styles.page}>

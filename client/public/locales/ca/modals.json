@@ -1,0 +1,135 @@
+{
+  "auth": {
+    "forgot-password": {
+      "actions": {
+        "send-email": "Envieu un correu electrònic de restabliment de la contrasenya"
+      },
+      "body": "Només cal que introduïu l'adreça de correu electrònic associada al compte que voleu recuperar.",
+      "form": {
+        "email": {
+          "label": "Correu electrònic"
+        }
+      },
+      "heading": "Has oblidat la teva contrasenya?",
+      "help-text": "Si el compte existeix, rebràs un correu electrònic amb un enllaç per restablir la teva contrasenya."
+    },
+    "login": {
+      "actions": {
+        "login": "iniciar Sessió"
+      },
+      "body": "Introduïu el vostre nom d'usuari i contrasenya associats al vostre compte per iniciar sessió i accedir, gestionar i compartir els vostres currículums.",
+      "form": {
+        "password": {
+          "label": "Contrasenya"
+        },
+        "username": {
+          "help-text": "També podeu introduir la vostra adreça de correu electrònic",
+          "label": "Nom d'usuari"
+        }
+      },
+      "heading": "Inicieu sessió al vostre compte",
+      "recover-text": "En cas que hagis oblidat la teva contrasenya, pots <1>recuperar el teu compte</1> aquí.",
+      "register-text": "Si no en teniu cap, podeu <1>crear un compte</1> aquí."
+    },
+    "register": {
+      "actions": {
+        "register": "Registra't",
+        "google": "Registra't a Google"
+      },
+      "body": "Introduïu la vostra informació personal per crear un compte.",
+      "form": {
+        "confirm-password": {
+          "label": "Confirma la contrassenya"
+        },
+        "email": {
+          "label": "Correu electrònic"
+        },
+        "name": {
+          "label": "Nom complet"
+        },
+        "password": {
+          "label": "Contrasenya"
+        },
+        "username": {
+          "label": "Nom d'usuari"
+        }
+      },
+      "heading": "Crear un compte",
+      "loginText": "Si ja teniu un compte, podeu <1>iniciar sessió aquí</1> ."
+    },
+    "reset-password": {
+      "actions": {
+        "set-password": "Estableix una contrasenya nova"
+      },
+      "body": "Introduïu una contrasenya nova per al vostre compte.",
+      "form": {
+        "confirm-password": {
+          "label": "Confirma la contrassenya"
+        },
+        "password": {
+          "label": "Contrasenya"
+        }
+      },
+      "heading": "Restablir la contrasenya"
+    }
+  },
+  "dashboard": {
+    "create-resume": {
+      "actions": {
+        "create-resume": "Crea un currículum"
+      },
+      "body": "Comenceu a crear el vostre currículum posant-li un nom. Pot ser en referència a la funció que esteu sol·licitant, o només al vostre berenar preferit.",
+      "form": {
+        "name": {
+          "label": "Nom"
+        },
+        "public": {
+          "label": "És accessible públicament?"
+        },
+        "slug": {
+          "label": "Llimac"
+        }
+      },
+      "heading": "Crea un currículum nou"
+    },
+    "import-external": {
+      "heading": "Importa des de fonts externes",
+      "json-resume": {
+        "actions": {
+          "upload-json": "Carregueu JSON"
+        },
+        "body": "Si teniu un currículum JSON <1>validat</1> a punt per començar, podeu utilitzar-lo per accelerar el vostre desenvolupament a Reactive Resume. Feu clic al botó següent i carregueu un fitxer JSON vàlid per començar.",
+        "heading": "Importa des del currículum JSON"
+      },
+      "linkedin": {
+        "actions": {
+          "upload-archive": "Carregueu l'arxiu ZIP"
+        },
+        "body": "Podeu estalviar temps exportant les vostres dades de LinkedIn i utilitzant-les per omplir automàticament els camps de Reactive Resume. Aneu a <1>Privadesa de dades</1> secció a LinkedIn i sol·liciteu un arxiu de les vostres dades. Un cop estigui disponible, carregueu el fitxer ZIP a continuació.",
+        "heading": "Importa des de LinkedIn"
+      },
+      "reactive-resume": {
+        "actions": {
+          "upload-json": "Carregueu JSON",
+          "upload-json-v2": "Carregueu JSON des de la v2"
+        },
+        "body": "Si teniu un JSON que s'ha exportat amb la versió actual de Reactive Resume, podeu tornar-lo a importar aquí per tornar a obtenir una versió editable.",
+        "heading": "Importa des del currículum reactiu"
+      }
+    },
+    "rename-resume": {
+      "actions": {
+        "rename-resume": "Canvia el nom del currículum"
+      },
+      "form": {
+        "name": {
+          "label": "Nom"
+        },
+        "slug": {
+          "label": "Llimac"
+        }
+      },
+      "heading": "Canvieu el nom del vostre currículum"
+    }
+  }
+}

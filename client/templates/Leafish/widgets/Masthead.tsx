@@ -1,9 +1,10 @@
 import { Cake, Email, Phone, Public, Room } from '@mui/icons-material';
 import { alpha } from '@mui/material';
-import { Theme } from '@reactive-resume/schema';
+import { ThemeConfig } from '@reactive-resume/schema';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 
+import Markdown from '@/components/shared/Markdown';
 import { useAppSelector } from '@/store/hooks';
 import DataDisplay from '@/templates/shared/DataDisplay';
 import { formatDateString } from '@/utils/date';
@@ -11,26 +12,20 @@ import getProfileIcon from '@/utils/getProfileIcon';
 import { addHttp, formatLocation, getPhotoClassNames } from '@/utils/template';
 
 const Masthead: React.FC = () => {
-  const dateFormat: string = useAppSelector((state) => get(state.resume, 'metadata.date.format'));
+  const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
   const { name, photo, headline, summary, email, phone, birthdate, website, location, profiles } = useAppSelector(
-    (state) => state.resume.basics
+    (state) => state.resume.present.basics
   );
-  const theme: Theme = useAppSelector((state) => get(state.resume, 'metadata.theme', {}));
+  const theme: ThemeConfig = useAppSelector((state) => get(state.resume.present, 'metadata.theme', {}));
 
   return (
     <div>
-      <div
-        className="flex items-center gap-4 p-6"
-        id="Masterhead_main"
-        style={{ backgroundColor: alpha(theme.primary, 0.2) }}
-      >
+      <div className="flex items-center gap-4 p-6" style={{ backgroundColor: alpha(theme.primary, 0.2) }}>
         <div className="grid flex-1 gap-1">
-          <h1 id="Masterhead_name">{name}</h1>
-          <p style={{ color: theme.primary }} id="Masterhead_headline">
-            {headline}
-          </p>
-          <p className="opacity-75" id="Masterhead_summary">
-            {summary}
+          <h1>{name}</h1>
+          <p style={{ color: theme.primary }}>{headline}</p>
+          <p className="opacity-75">
+            <Markdown>{summary}</Markdown>
           </p>
         </div>
 
@@ -41,13 +36,11 @@ const Masthead: React.FC = () => {
             width={photo.filters.size}
             height={photo.filters.size}
             className={getPhotoClassNames(photo.filters)}
-            id="Masterhead_photo"
           />
         )}
       </div>
       <div
         className="grid gap-y-2 px-8 py-4"
-        id="Masterhead_data"
         style={{ backgroundColor: alpha(theme.primary, 0.4), gridTemplateColumns: `repeat(2, minmax(0, 1fr))` }}
       >
         <DataDisplay icon={<Room />} className="col-span-2">

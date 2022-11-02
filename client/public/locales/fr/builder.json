@@ -84,7 +84,9 @@
       "toggle-page-break-line": "Afficher/cacher l'indicateur de saut de page",
       "toggle-sidebars": "Afficher/cacher les barres latérales",
       "zoom-in": "Zoomer",
-      "zoom-out": "Dézoomer"
+      "zoom-out": "Dézoomer",
+      "undo": "Défaire",
+      "redo": "Refaire"
     }
   },
   "header": {
@@ -268,6 +270,7 @@
           "heading": "Faire un don à Reactive Resume"
         },
         "github": "Code source",
+        "docs": "Documentation",
         "heading": "Liens"
       },
       "settings": {
@@ -287,6 +290,10 @@
         },
         "heading": "Paramètres",
         "page": {
+          "format": {
+            "primary": "Taille de papier",
+            "secondary": "Détermine les dimensions de vos pages de CV"
+          },
           "break-line": {
             "primary": "Indicateur de changement de page",
             "secondary": "Afficher une ligne sur toutes les pages pour marquer la hauteur d'une feuille A4"

@@ -5,6 +5,8 @@ import {
   FilterCenterFocus,
   InsertPageBreak,
   Link,
+  RedoOutlined,
+  UndoOutlined,
   ViewSidebar,
   ZoomIn,
   ZoomOut,
@@ -16,6 +18,7 @@ import { useTranslation } from 'next-i18next';
 import toast from 'react-hot-toast';
 import { useMutation } from 'react-query';
 import { ReactZoomPanPinchRef } from 'react-zoom-pan-pinch';
+import { ActionCreators } from 'redux-undo';
 
 import { ServerError } from '@/services/axios';
 import { printResumeAsPdf, PrintResumeAsPdfParams } from '@/services/printer';
@@ -31,13 +34,17 @@ const ArtboardController: React.FC<ReactZoomPanPinchRef> = ({ zoomIn, zoomOut, c
   const theme = useTheme();
   const dispatch = useAppDispatch();
 
-  const resume = useAppSelector((state) => state.resume);
   const isDesktop = useMediaQuery(theme.breakpoints.up('sm'));
-  const pages = useAppSelector((state) => state.resume.metadata.layout);
+
+  const { past, present: resume, future } = useAppSelector((state) => state.resume);
+  const pages = get(resume, 'metadata.layout');
   const { left, right } = useAppSelector((state) => state.build.sidebar);
   const orientation = useAppSelector((state) => state.build.page.orientation);
 
   const { mutateAsync, isLoading } = useMutation<string, ServerError, PrintResumeAsPdfParams>(printResumeAsPdf);
+
+  const handleUndo = () => dispatch(ActionCreators.undo());
+  const handleRedo = () => dispatch(ActionCreators.redo());
 
   const handleTogglePageBreakLine = () => dispatch(togglePageBreakLine());
 
@@ -63,7 +70,7 @@ const ArtboardController: React.FC<ReactZoomPanPinchRef> = ({ zoomIn, zoomOut, c
 
     const url = await mutateAsync({ username, slug });
 
-    download(`/api${url}`);
+    download(url);
   };
 
   return (
@@ -75,6 +82,20 @@ const ArtboardController: React.FC<ReactZoomPanPinchRef> = ({ zoomIn, zoomOut, c
       })}
     >
       <div className={styles.controller}>
+        <Tooltip arrow placement="top" title={t<string>('builder.controller.tooltip.undo')}>
+          <ButtonBase onClick={handleUndo} className={clsx({ 'pointer-events-none opacity-50': past.length < 2 })}>
+            <UndoOutlined fontSize="medium" />
+          </ButtonBase>
+        </Tooltip>
+
+        <Tooltip arrow placement="top" title={t<string>('builder.controller.tooltip.redo')}>
+          <ButtonBase onClick={handleRedo} className={clsx({ 'pointer-events-none opacity-50': future.length === 0 })}>
+            <RedoOutlined fontSize="medium" />
+          </ButtonBase>
+        </Tooltip>
+
+        <Divider />
+
         <Tooltip arrow placement="top" title={t<string>('builder.controller.tooltip.zoom-in')}>
           <ButtonBase onClick={() => zoomIn(0.25)}>
             <ZoomIn fontSize="medium" />
@@ -97,17 +118,18 @@ const ArtboardController: React.FC<ReactZoomPanPinchRef> = ({ zoomIn, zoomOut, c
 
         {isDesktop && (
           <>
-            {pages.length > 1 && (
-              <Tooltip arrow placement="top" title={t<string>('builder.controller.tooltip.toggle-orientation')}>
-                <ButtonBase onClick={handleTogglePageOrientation}>
-                  {orientation === 'vertical' ? (
-                    <AlignHorizontalCenter fontSize="medium" />
-                  ) : (
-                    <AlignVerticalCenter fontSize="medium" />
-                  )}
-                </ButtonBase>
-              </Tooltip>
-            )}
+            <Tooltip arrow placement="top" title={t<string>('builder.controller.tooltip.toggle-orientation')}>
+              <ButtonBase
+                onClick={handleTogglePageOrientation}
+                className={clsx({ 'pointer-events-none opacity-50': pages.length === 1 })}
+              >
+                {orientation === 'vertical' ? (
+                  <AlignHorizontalCenter fontSize="medium" />
+                ) : (
+                  <AlignVerticalCenter fontSize="medium" />
+                )}
+              </ButtonBase>
+            </Tooltip>
 
             <Tooltip arrow placement="top" title={t<string>('builder.controller.tooltip.toggle-page-break-line')}>
               <ButtonBase onClick={handleTogglePageBreakLine}>

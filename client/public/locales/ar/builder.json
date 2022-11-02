@@ -84,7 +84,9 @@
       "toggle-page-break-line": "تبديل سطر الصفحة",
       "toggle-sidebars": "تبديل الشريط الجانبي",
       "zoom-in": "تكبير",
-      "zoom-out": "تصغير"
+      "zoom-out": "تصغير",
+      "undo": "الغاء التحميل",
+      "redo": "إعادة"
     }
   },
   "header": {
@@ -268,6 +270,7 @@
           "heading": "تبرع الى Reactive Resume"
         },
         "github": "الشفرة المصدرية",
+        "docs": "توثيق",
         "heading": "الروابط"
       },
       "settings": {
@@ -287,6 +290,10 @@
         },
         "heading": "الإعدادات",
         "page": {
+          "format": {
+            "primary": "حجم الورق",
+            "secondary": "تحدد أبعاد صفحات سيرتك الذاتية"
+          },
           "break-line": {
             "primary": "خط فاصل",
             "secondary": "اعرض خط في كل الصفحات لتحديد ارتفاع صفحة A4"

@@ -1,4 +1,4 @@
-import { Theme, Typography } from '@reactive-resume/schema';
+import { ThemeConfig, Typography } from '@reactive-resume/schema';
 import { RgbColor } from 'react-colorful';
 
 import { hexColorPattern } from '@/config/colors';
@@ -27,7 +27,7 @@ export const generateTypographyStyles = ({ family, size }: Typography): string =
   h6 { font-size: ${size.heading / 3.5}px; line-height: ${size.heading / 3.5}px; }
 `;
 
-export const generateThemeStyles = ({ text, background, primary }: Theme): string => `
+export const generateThemeStyles = ({ text, background, primary }: ThemeConfig): string => `
   color: ${text};
   background-color: ${background};
   --primary-color: ${primary};

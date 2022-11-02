@@ -21,7 +21,7 @@ interface Props {
 const ResumeInput: React.FC<Props> = ({ type = 'text', label, path, className, markdownSupported = false }) => {
   const dispatch = useAppDispatch();
 
-  const stateValue = useAppSelector((state) => get(state.resume, path, ''));
+  const stateValue = useAppSelector((state) => get(state.resume.present, path, ''));
 
   useEffect(() => {
     setValue(stateValue);
@@ -63,7 +63,7 @@ const ResumeInput: React.FC<Props> = ({ type = 'text', label, path, className, m
         renderInput={(params) => <TextField {...params} error={false} className={className} />}
         onChange={(date: Date | null, keyboardInputValue: string | undefined) => {
           isEmpty(keyboardInputValue) && onChangeValue('');
-          date && dayjs(date).isValid() && onChangeValue(date.toISOString());
+          date && dayjs(date).utc().isValid() && onChangeValue(dayjs(date).utc().toISOString());
         }}
       />
     );

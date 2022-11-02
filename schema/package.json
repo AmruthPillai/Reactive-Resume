@@ -4,12 +4,12 @@
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "lint": "eslint --fix src",
     "dev": "tsc -w",
-    "lint": "eslint --fix --ext .ts ./src"
+    "build": "tsc"
   },
   "devDependencies": {
-    "eslint": "^8.19.0",
-    "typescript": "^4.7.4"
+    "eslint": "^8.25.0",
+    "typescript": "^4.8.4"
   }
 }

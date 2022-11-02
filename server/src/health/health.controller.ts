@@ -12,10 +12,6 @@ export class HealthController {
   @Get()
   @HealthCheck()
   check() {
-    return this.health.check([
-      () => this.db.pingCheck('database'),
-      () => this.http.pingCheck('app', 'https://rxresu.me'),
-      () => this.http.pingCheck('docs', 'https://docs.rxresu.me'),
-    ]);
+    return this.health.check([() => this.db.pingCheck('database')]);
   }
 }

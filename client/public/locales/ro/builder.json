@@ -1,0 +1,368 @@
+{
+  "common": {
+    "actions": {
+      "add": "Adăugați un nou {{token}}",
+      "delete": "Ștergeți {{token}}",
+      "edit": "Editați {{token}}"
+    },
+    "columns": {
+      "heading": "Coloane",
+      "tooltip": "Modificarea numărului de coloane"
+    },
+    "form": {
+      "date": {
+        "label": "Data"
+      },
+      "description": {
+        "label": "Descriere"
+      },
+      "email": {
+        "label": "Adresa de e-mail"
+      },
+      "end-date": {
+        "help-text": "Lăsați acest câmp gol, dacă este încă prezent",
+        "label": "Data de încheiere"
+      },
+      "keywords": {
+        "label": "Cuvinte cheie"
+      },
+      "level": {
+        "label": "Nivel"
+      },
+      "levelNum": {
+        "label": "Nivel (număr)"
+      },
+      "name": {
+        "label": "Nume"
+      },
+      "phone": {
+        "label": "Număr de telefon"
+      },
+      "position": {
+        "label": "Poziția"
+      },
+      "start-date": {
+        "label": "Data de începere"
+      },
+      "subtitle": {
+        "label": "Subtitlu"
+      },
+      "summary": {
+        "label": "Rezumat"
+      },
+      "title": {
+        "label": "Titlu"
+      },
+      "url": {
+        "label": "Site web"
+      }
+    },
+    "glossary": {
+      "page": "Pagina"
+    },
+    "list": {
+      "actions": {
+        "delete": "Ștergeți",
+        "duplicate": "Duplicat",
+        "edit": "Editați"
+      },
+      "empty-text": "Această listă este goală."
+    },
+    "tooltip": {
+      "delete-item": "Sunteți sigur că doriți să ștergeți acest element? Aceasta este o acțiune ireversibilă.",
+      "delete-section": "Ștergeți secțiunea",
+      "rename-section": "Redenumiți secțiunea",
+      "toggle-visibility": "Comutarea vizibilității"
+    }
+  },
+  "controller": {
+    "tooltip": {
+      "center-artboard": "Centrul Artboard",
+      "copy-link": "Copiați link-ul în CV",
+      "export-pdf": "Export PDF",
+      "toggle-orientation": "Schimbă orientarea paginii",
+      "toggle-page-break-line": "Alternează linia de întrerupere a paginii",
+      "toggle-sidebars": "Comutați bare laterale",
+      "zoom-in": "Zoom In",
+      "zoom-out": "Zoom Out",
+      "undo": "Desfaceți",
+      "redo": "Refaceți"
+    }
+  },
+  "header": {
+    "menu": {
+      "delete": "Ștergeți",
+      "duplicate": "Duplicat",
+      "rename": "Redenumiți",
+      "share-link": "Share Link",
+      "tooltips": {
+        "delete": "Sunteți sigur că doriți să ștergeți acest CV? Aceasta este o acțiune ireversibilă.",
+        "share-link": "Trebuie să schimbați vizibilitatea CV-ului dvs. la public pentru ca acesta să fie vizibil pentru ceilalți."
+      }
+    }
+  },
+  "leftSidebar": {
+    "sections": {
+      "awards": {
+        "form": {
+          "awarder": {
+            "label": "Premiant"
+          }
+        }
+      },
+      "basics": {
+        "actions": {
+          "photo-filters": "Filtre foto"
+        },
+        "heading": "Noțiuni de bază",
+        "headline": {
+          "label": "Titlul"
+        },
+        "name": {
+          "label": "Nume și prenume"
+        },
+        "birthdate": {
+          "label": "Data nașterii"
+        },
+        "photo-filters": {
+          "effects": {
+            "border": {
+              "label": "Frontieră"
+            },
+            "grayscale": {
+              "label": "Scară de griuri"
+            },
+            "heading": "Efecte"
+          },
+          "shape": {
+            "heading": "Formă"
+          },
+          "size": {
+            "heading": "Dimensiune (în px)"
+          }
+        },
+        "photo-upload": {
+          "tooltip": {
+            "remove": "Eliminați fotografia",
+            "upload": "Încărcați fotografia"
+          }
+        }
+      },
+      "certifications": {
+        "form": {
+          "issuer": {
+            "label": "Emitent"
+          }
+        }
+      },
+      "education": {
+        "form": {
+          "area-study": {
+            "label": "Domeniul de studiu"
+          },
+          "courses": {
+            "label": "Cursuri"
+          },
+          "degree": {
+            "label": "Gradul"
+          },
+          "grade": {
+            "label": "Clasa"
+          },
+          "institution": {
+            "label": "Instituția"
+          }
+        }
+      },
+      "location": {
+        "address": {
+          "label": "Adresa"
+        },
+        "city": {
+          "label": "Orașul"
+        },
+        "country": {
+          "label": "Țara"
+        },
+        "heading": "Locație",
+        "postal-code": {
+          "label": "Cod poștal"
+        },
+        "region": {
+          "label": "Regiune"
+        }
+      },
+      "profiles": {
+        "form": {
+          "network": {
+            "label": "Rețea"
+          },
+          "username": {
+            "label": "Nume utilizator"
+          }
+        },
+        "heading": "Profiluri",
+        "heading_one": "Profil"
+      },
+      "publications": {
+        "form": {
+          "publisher": {
+            "label": "Editor"
+          }
+        }
+      },
+      "references": {
+        "form": {
+          "relationship": {
+            "label": "Relația"
+          }
+        }
+      },
+      "section": {
+        "heading": "Secțiunea"
+      },
+      "volunteer": {
+        "form": {
+          "organization": {
+            "label": "Organizația"
+          }
+        }
+      }
+    }
+  },
+  "rightSidebar": {
+    "sections": {
+      "css": {
+        "heading": "CSS personalizat"
+      },
+      "export": {
+        "heading": "Export",
+        "json": {
+          "primary": "JSON",
+          "secondary": "Descărcați o versiune JSON a CV-ului dumneavoastră care poate fi importată înapoi în Reactive Resume."
+        },
+        "pdf": {
+          "loading": {
+            "primary": "Generarea PDF",
+            "secondary": "Vă rugăm să așteptați până când se generează PDF-ul, acest lucru poate dura până la 15 secunde."
+          },
+          "normal": {
+            "primary": "PDF",
+            "secondary": "Descărcați un PDF al CV-ului dumneavoastră pe care îl puteți imprima și trimite la locul de muncă visat. Acest fișier nu poate fi importat înapoi pentru editare ulterioară."
+          }
+        }
+      },
+      "layout": {
+        "heading": "Layout",
+        "tooltip": {
+          "reset-layout": "Resetare Layout"
+        }
+      },
+      "links": {
+        "bugs-features": {
+          "body": "Ceva te oprește să faci un CV? Sau ai o idee extraordinară de adăugat? Ridicați o problemă pe GitHub pentru a începe.",
+          "button": "Probleme GitHub",
+          "heading": "Gândaci? Solicitări de caracteristici?"
+        },
+        "donate": {
+          "body": "Dacă ți-a plăcut să folosești Reactive Resume, te rugăm să te gândești să donezi cât de mult poți pentru a menține aplicația în funcțiune, fără reclame și gratuită pentru totdeauna.",
+          "button": "Cumpără-mi o cafea.",
+          "heading": "Donează pentru Reactive Resume"
+        },
+        "github": "Codul sursă",
+        "docs": "Documentație",
+        "heading": "Legături"
+      },
+      "settings": {
+        "global": {
+          "date": {
+            "primary": "Data",
+            "secondary": "Formatul de dată care trebuie utilizat în întreaga aplicație"
+          },
+          "heading": "Global",
+          "language": {
+            "primary": "Limba",
+            "secondary": "Limba de afișare care trebuie utilizată în întreaga aplicație"
+          },
+          "theme": {
+            "primary": "Tema"
+          }
+        },
+        "heading": "Setări",
+        "page": {
+          "format": {
+            "primary": "Dimensiunea hartiei",
+            "secondary": "Determină dimensiunile paginilor de CV"
+          },
+          "break-line": {
+            "primary": "Linia de pauză",
+            "secondary": "Afișați o linie pe toate paginile pentru a marca înălțimea unei pagini A4"
+          },
+          "heading": "Pagina",
+          "orientation": {
+            "disabled": "Nu are niciun efect atunci când există doar o singură pagină",
+            "primary": "Orientare",
+            "secondary": "Afișarea paginilor pe orizontală sau pe verticală"
+          }
+        },
+        "resume": {
+          "heading": "Curriculum vitae",
+          "reset": {
+            "primary": "Resetați totul",
+            "secondary": "Ați făcut prea multe greșeli? Faceți clic aici pentru a reseta toate modificările și a începe de la zero. Aveți grijă, această acțiune nu poate fi anulată."
+          },
+          "sample": {
+            "primary": "Încărcați datele de probă",
+            "secondary": "Nu sunteți sigur de unde să începeți? Faceți clic aici pentru a încărca câteva exemple de date pentru a vedea cum arată un CV complet."
+          }
+        }
+      },
+      "sharing": {
+        "heading": "Împărtășirea",
+        "short-url": {
+          "label": "Preferați un URL scurt"
+        },
+        "visibility": {
+          "subtitle": "Permiteți oricui cu un link să vă vizualizeze CV-ul",
+          "title": "Public"
+        }
+      },
+      "templates": {
+        "heading": "Șabloane"
+      },
+      "theme": {
+        "form": {
+          "background": {
+            "label": "Fond"
+          },
+          "primary": {
+            "label": "Primare"
+          },
+          "text": {
+            "label": "Text"
+          }
+        },
+        "heading": "Tema"
+      },
+      "typography": {
+        "form": {
+          "font-family": {
+            "label": "Familie de fonturi"
+          },
+          "font-size": {
+            "label": "Mărimea fontului"
+          }
+        },
+        "heading": "Tipografie",
+        "widgets": {
+          "body": {
+            "label": "Corp"
+          },
+          "headings": {
+            "label": "Rubrici"
+          }
+        }
+      }
+    }
+  }
+}

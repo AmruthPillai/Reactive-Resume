@@ -59,17 +59,19 @@ const Printer: NextPage<Props> = ({ resume: initialData, locale }) => {
 
   const dispatch = useAppDispatch();
 
-  const resume = useAppSelector((state) => state.resume);
+  const resume = useAppSelector((state) => state.resume.present);
+
+  useEffect(() => {
+    if (router.locale !== locale) {
+      const { pathname, asPath, query } = router;
+
+      router.push({ pathname, query }, asPath, { locale });
+    }
+  }, [router, locale]);
 
   useEffect(() => {
     if (initialData) dispatch(setResume(initialData));
   }, [dispatch, initialData]);
-
-  useEffect(() => {
-    const { pathname, asPath, query } = router;
-
-    router.push({ pathname, query }, asPath, { locale });
-  }, [router, locale]);
 
   if (!resume || isEmpty(resume)) return null;
 

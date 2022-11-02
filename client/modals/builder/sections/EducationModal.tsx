@@ -57,7 +57,7 @@ const EducationModal: React.FC = () => {
 
   const dispatch = useAppDispatch();
 
-  const heading = useAppSelector((state) => get(state.resume, `${path}.name`));
+  const heading = useAppSelector((state) => get(state.resume.present, `${path}.name`));
   const { open: isOpen, payload } = useAppSelector((state) => state.modal[`builder.${path}`]);
 
   const item: FormData = get(payload, 'item', null);
@@ -106,7 +106,7 @@ const EducationModal: React.FC = () => {
       heading={isEditMode ? editText : addText}
       footerChildren={<Button onClick={handleSubmit(onSubmit)}>{isEditMode ? editText : addText}</Button>}
     >
-      <form className="my-2 grid grid-cols-2 gap-4">
+      <form className="my-2 grid grid-cols-2 gap-4" onSubmit={handleSubmit(onSubmit)}>
         <Controller
           name="institution"
           control={control}
@@ -173,7 +173,7 @@ const EducationModal: React.FC = () => {
               views={['year', 'month', 'day']}
               onChange={(date: Date | null, keyboardInputValue: string | undefined) => {
                 isEmpty(keyboardInputValue) && field.onChange('');
-                date && dayjs(date).isValid() && field.onChange(date.toISOString());
+                date && dayjs(date).utc().isValid() && field.onChange(dayjs(date).utc().toISOString());
               }}
               renderInput={(params) => (
                 <TextField
@@ -197,7 +197,7 @@ const EducationModal: React.FC = () => {
               views={['year', 'month', 'day']}
               onChange={(date: Date | null, keyboardInputValue: string | undefined) => {
                 isEmpty(keyboardInputValue) && field.onChange('');
-                date && dayjs(date).isValid() && field.onChange(date.toISOString());
+                date && dayjs(date).utc().isValid() && field.onChange(dayjs(date).utc().toISOString());
               }}
               renderInput={(params) => (
                 <TextField
@@ -255,6 +255,7 @@ const EducationModal: React.FC = () => {
             />
           )}
         />
+        <input type="submit" style={{ display: 'none' }} />
       </form>
     </BaseModal>
   );

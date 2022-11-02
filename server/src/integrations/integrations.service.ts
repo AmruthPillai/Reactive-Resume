@@ -15,6 +15,7 @@ import {
 } from '@reactive-resume/schema';
 import csv from 'csvtojson';
 import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
 import { readFile, unlink } from 'fs/promises';
 import { cloneDeep, get, isEmpty, merge } from 'lodash';
 import StreamZip from 'node-stream-zip';
@@ -28,10 +29,13 @@ import { ResumeService } from '@/resume/resume.service';
 
 @Injectable()
 export class IntegrationsService {
-  constructor(private resumeService: ResumeService) {}
+  constructor(private resumeService: ResumeService) {
+    dayjs.extend(utc);
+  }
 
   async linkedIn(userId: number, path: string): Promise<ResumeEntity> {
     let archive: StreamZip.StreamZipAsync;
+    let isArchiveValid = false;
 
     try {
       archive = new StreamZip.async({ file: path });
@@ -39,11 +43,14 @@ export class IntegrationsService {
       const resume: Partial<Resume> = cloneDeep(defaultState);
 
       // Basics
-      const timestamp = dayjs().format(FILENAME_TIMESTAMP);
+      const timestamp = dayjs().utc().format(FILENAME_TIMESTAMP);
       merge<Partial<Resume>, DeepPartial<Resume>>(resume, {
         name: `Imported from LinkedIn (${timestamp})`,
         slug: `imported-from-linkedin-${timestamp}`,
       });
+
+      // Check if archive is valid
+      isArchiveValid = await archive.entries().then((entries) => Object.keys(entries).length > 0);
 
       // Profile
       try {
@@ -258,7 +265,7 @@ export class IntegrationsService {
       throw new HttpException('You must upload a valid zip archive downloaded from LinkedIn.', HttpStatus.BAD_REQUEST);
     } finally {
       await unlink(path);
-      !isEmpty(archive) && archive.close();
+      isArchiveValid && archive.close();
     }
   }
 
@@ -269,7 +276,7 @@ export class IntegrationsService {
       const resume: Partial<Resume> = cloneDeep(defaultState);
 
       // Metadata
-      const timestamp = dayjs().format(FILENAME_TIMESTAMP);
+      const timestamp = dayjs().utc().format(FILENAME_TIMESTAMP);
       merge<Partial<Resume>, DeepPartial<Resume>>(resume, {
         name: `Imported from JSON Resume (${timestamp})`,
         slug: `imported-from-json-resume-${timestamp}`,
@@ -604,7 +611,7 @@ export class IntegrationsService {
       const resume: Partial<Resume> = cloneDeep(jsonResume);
 
       // Metadata
-      const timestamp = dayjs().format(FILENAME_TIMESTAMP);
+      const timestamp = dayjs().utc().format(FILENAME_TIMESTAMP);
       merge<Partial<Resume>, DeepPartial<Resume>>(resume, {
         name: `Imported from Reactive Resume (${timestamp})`,
         slug: `imported-from-reactive-resume-${timestamp}`,
@@ -625,7 +632,7 @@ export class IntegrationsService {
       const resume: Partial<Resume> = cloneDeep(defaultState);
 
       // Metadata
-      const timestamp = dayjs().format(FILENAME_TIMESTAMP);
+      const timestamp = dayjs().utc().format(FILENAME_TIMESTAMP);
       merge<Partial<Resume>, DeepPartial<Resume>>(resume, {
         name: `Imported from Reactive Resume V2 (${timestamp})`,
         slug: `imported-from-reactive-resume-v2-${timestamp}`,
@@ -929,6 +936,9 @@ export class IntegrationsService {
               body: get(jsonResume, 'metadata.fontSize'),
             },
           },
+          page: {
+            format: 'A4',
+          },
           theme: {
             background: get(jsonResume, 'metadata.colors.background'),
             primary: get(jsonResume, 'metadata.colors.primary'),
@@ -948,6 +958,6 @@ export class IntegrationsService {
   }
 
   private parseDate = (date: string): string => {
-    return isEmpty(date) ? '' : dayjs(date).toISOString();
+    return isEmpty(date) ? '' : dayjs(date).utc().toISOString();
   };
 }

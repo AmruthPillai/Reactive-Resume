@@ -1,5 +1,5 @@
 import { css } from '@emotion/css';
-import { CustomCSS, Theme, Typography } from '@reactive-resume/schema';
+import { CustomCSS, PageConfig, ThemeConfig, Typography } from '@reactive-resume/schema';
 import clsx from 'clsx';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
@@ -20,12 +20,13 @@ type Props = PageProps & {
 const Page: React.FC<Props> = ({ page, showPageNumbers = false }) => {
   const { t } = useTranslation();
 
-  const resume = useAppSelector((state) => state.resume);
+  const resume = useAppSelector((state) => state.resume.present);
   const breakLine: boolean = useAppSelector((state) => state.build.page.breakLine);
 
-  const theme: Theme = get(resume, 'metadata.theme');
+  const theme: ThemeConfig = get(resume, 'metadata.theme');
   const customCSS: CustomCSS = get(resume, 'metadata.css');
   const template: string = get(resume, 'metadata.template');
+  const pageConfig: PageConfig = get(resume, 'metadata.page');
   const typography: Typography = get(resume, 'metadata.typography');
 
   const themeCSS = useMemo(() => !isEmpty(theme) && generateThemeStyles(theme), [theme]);
@@ -33,12 +34,13 @@ const Page: React.FC<Props> = ({ page, showPageNumbers = false }) => {
   const TemplatePage: React.FC<PageProps> | null = useMemo(() => templateMap[template].component, [template]);
 
   return (
-    <div data-page={page + 1} className={styles.container}>
+    <div className={styles.container} data-page={page + 1} data-format={pageConfig?.format || 'A4'}>
       <div
         className={clsx({
           reset: true,
           [styles.page]: true,
           [styles.break]: breakLine,
+          [styles['format-letter']]: pageConfig?.format === 'Letter',
           [css(themeCSS)]: true,
           [css(typographyCSS)]: true,
           [css(customCSS.value)]: customCSS.visible,

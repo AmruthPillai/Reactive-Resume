@@ -1,6 +1,7 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { persistReducer, persistStore } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
+import undoable from 'redux-undo';
 
 import authReducer from '@/store/auth/authSlice';
 import buildReducer from '@/store/build/buildSlice';
@@ -16,7 +17,7 @@ const reducers = combineReducers({
   auth: authReducer,
   modal: modalReducer,
   build: buildReducer,
-  resume: resumeReducer,
+  resume: undoable(resumeReducer),
 });
 
 const persistedReducers = persistReducer({ key: 'root', storage, whitelist: ['auth', 'build'] }, reducers);

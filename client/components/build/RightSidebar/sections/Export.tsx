@@ -13,7 +13,7 @@ import { useAppSelector } from '@/store/hooks';
 const Export = () => {
   const { t } = useTranslation();
 
-  const resume = useAppSelector((state) => state.resume);
+  const resume = useAppSelector((state) => state.resume.present);
 
   const { mutateAsync, isLoading } = useMutation<string, ServerError, PrintResumeAsPdfParams>(printResumeAsPdf);
 
@@ -48,7 +48,7 @@ const Export = () => {
 
     const url = await mutateAsync({ username, slug });
 
-    download(`/api${url}`);
+    download(url);
   };
 
   return (

@@ -84,7 +84,9 @@
       "toggle-page-break-line": "Sayfa Sonu Satırını Aç/Kapat",
       "toggle-sidebars": "Kenar Çubuklarını Aç/Kapat",
       "zoom-in": "Yakınlaştır",
-      "zoom-out": "Uzaklaştır"
+      "zoom-out": "Uzaklaştır",
+      "undo": "Geri al",
+      "redo": "Yeniden Yap"
     }
   },
   "header": {
@@ -95,7 +97,7 @@
       "share-link": "Bağlantıyı Paylaş",
       "tooltips": {
         "delete": "Bu özgeçmişi silmek istediğinizden emin misiniz? Bu geri dönüşü olmayan bir eylemdir.",
-        "share-link": "Başkalarına görünür kılmak için özgeçmişinizin görünürlüğünü herkese açık olarak değiştirmeniz gerekir."
+        "share-link": "Özgeçmişinizin herkese açık bir şekilde görüntülenebilmesi için, görünürlük ayarını değiştirmeniz gerekmektedir."
       }
     }
   },
@@ -268,6 +270,7 @@
           "heading": "Reactive Resume'ye Bağış Yap"
         },
         "github": "Kaynak Kodu",
+        "docs": "Dokümantasyon",
         "heading": "Bağlantılar"
       },
       "settings": {
@@ -287,6 +290,10 @@
         },
         "heading": "Ayarlar",
         "page": {
+          "format": {
+            "primary": "Kağıt boyutu",
+            "secondary": "Özgeçmiş sayfalarınızın boyutlarını belirler"
+          },
           "break-line": {
             "primary": "Ara Hat",
             "secondary": "A4 sayfasının yüksekliğini işaretlemek için tüm sayfalarda bir çizgi göster"

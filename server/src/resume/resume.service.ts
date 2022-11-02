@@ -3,7 +3,7 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Resume as ResumeSchema } from '@reactive-resume/schema';
-import fs from 'fs';
+import fs from 'fs/promises';
 import { isEmpty, pick, sample, set } from 'lodash';
 import { nanoid } from 'nanoid';
 import { extname } from 'path';
@@ -254,17 +254,19 @@ export class ResumeService {
       updatedResume = set(resume, 'basics.photo.url', publicUrl);
     } else {
       const path = `${__dirname}/../assets/uploads/${userId}/${id}/`;
-      fs.mkdir(path, { recursive: true }, (err) => {
-        if (err) {
-          console.log(err);
-        }
-        fs.writeFile(path + filename, file.buffer, (err) => {
-          if (err) {
-            console.log(err);
-          }
-        });
-      });
-      updatedResume = set(resume, 'basics.photo.url', `/api/assets/uploads/${userId}/${id}/` + filename);
+      const serverUrl = this.configService.get<string>('app.serverUrl');
+
+      try {
+        await fs.mkdir(path, { recursive: true });
+        await fs.writeFile(path + filename, file.buffer);
+
+        updatedResume = set(resume, 'basics.photo.url', `${serverUrl}/assets/uploads/${userId}/${id}/` + filename);
+      } catch (error) {
+        throw new HttpException(
+          'Something went wrong. Please try again later, or raise an issue on GitHub if the problem persists.',
+          HttpStatus.INTERNAL_SERVER_ERROR
+        );
+      }
     }
 
     return this.resumeRepository.save<Resume>(updatedResume);
@@ -285,13 +287,13 @@ export class ResumeService {
         })
       );
     } else {
-      const filePath = __dirname + '/../' + resume.basics.photo.url.replace('/api/', '');
-      if (fs.existsSync(filePath)) {
-        fs.unlink(filePath, (err) => {
-          if (err) {
-            console.log(err);
-          }
-        });
+      const serverUrl = this.configService.get<string>('app.serverUrl');
+      const filePath = __dirname + '/..' + resume.basics.photo.url.replace(serverUrl, '');
+
+      const isValidFile = (await fs.stat(filePath)).isFile();
+
+      if (isValidFile) {
+        await fs.unlink(filePath);
       }
     }
 

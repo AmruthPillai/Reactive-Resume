@@ -15,7 +15,7 @@
   }
 
   &.break::after {
-    content: 'A4 Page Break';
+    content: 'Page Break';
     top: calc(297mm - 19px);
 
     @apply absolute w-full border-b border-dashed border-neutral-800/75;
@@ -25,6 +25,22 @@
     :global(.preview-mode) &,
     :global(.printer-mode) & {
       @apply hidden;
+    }
+  }
+
+  &.format-letter {
+    width: 216mm;
+    min-height: 279mm;
+
+    &.break::after {
+      top: calc(279mm - 19px);
+    }
+  }
+
+  .markdown {
+    ul {
+      padding-left: 1.5em;
+      text-indent: -1.5em;
     }
   }
 }
