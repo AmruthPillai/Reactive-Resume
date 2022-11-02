@@ -3,7 +3,6 @@ version: "3.8"
 services:
   postgres:
     image: postgres:alpine
-    container_name: postgres
     restart: always
     ports:
       - 5432:5432
@@ -25,7 +24,6 @@ services:
     # build:
     #   context: .
     #   dockerfile: ./server/Dockerfile
-    container_name: server
     restart: always
     ports:
       - 3100:3100
@@ -64,7 +62,6 @@ services:
     # build:
     #   context: .
     #   dockerfile: ./client/Dockerfile
-    container_name: client
     restart: always
     ports:
       - 3000:3000
