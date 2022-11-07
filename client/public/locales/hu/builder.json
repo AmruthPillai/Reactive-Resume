@@ -1,7 +1,7 @@
 {
   "common": {
     "actions": {
-      "add": "Új hozzáadása {{token}}",
+      "add": "Új {{token}} hozzáadása",
       "delete": "{{token}} törlése",
       "edit": "{{token}} szerkesztése"
     },
@@ -20,7 +20,7 @@
         "label": "E-mail cím"
       },
       "end-date": {
-        "help-text": "Hagyja üresen ezt a mezőt, ha még mindig tart van",
+        "help-text": "Hagyja üresen ezt a mezőt, ha még folyamatban van",
         "label": "Befejezés dátuma"
       },
       "keywords": {
@@ -51,7 +51,7 @@
         "label": "Összegzés"
       },
       "title": {
-        "label": "Cím"
+        "label": "Titulus"
       },
       "url": {
         "label": "Honlap"
@@ -63,30 +63,30 @@
     "list": {
       "actions": {
         "delete": "Törlés",
-        "duplicate": "Duplikálás",
+        "duplicate": "Másolás",
         "edit": "Szerkesztés"
       },
       "empty-text": "Ez a lista üres."
     },
     "tooltip": {
-      "delete-item": "Biztosan törli ezt az elemet? Ez egy visszafordíthatatlan művelet.",
+      "delete-item": "Biztosan törli ezt az elemet? Ez a művelet nem visszavonható.",
       "delete-section": "Szakasz törlése",
       "rename-section": "Szakasz átnevezése",
-      "toggle-visibility": "Láthatóság váltása"
+      "toggle-visibility": "Láthatóság ki/be"
     }
   },
   "controller": {
     "tooltip": {
       "center-artboard": "Központi rajztábla",
-      "copy-link": "Link másolása az önéletrajzba",
+      "copy-link": "Önéletrajz link másolása",
       "export-pdf": "Exportálás PDF-be",
-      "toggle-orientation": "Oldaltájolás váltása",
-      "toggle-page-break-line": "Oldaltörés vonal váltása",
-      "toggle-sidebars": "Az oldalsávok váltása",
+      "toggle-orientation": "Oldaltájolás",
+      "toggle-page-break-line": "Oldaltörés vonal ki/be",
+      "toggle-sidebars": "Oldalsávok ki/be",
       "zoom-in": "Nagyítás",
       "zoom-out": "Kicsinyítés",
-      "undo": "Undo",
-      "redo": "Redo"
+      "undo": "Visszavonás",
+      "redo": "Mégis"
     }
   },
   "header": {
@@ -96,7 +96,7 @@
       "rename": "Átnevezés",
       "share-link": "Link megosztása",
       "tooltips": {
-        "delete": "Biztos, hogy törölni szeretné ezt az önéletrajzot? Ez egy visszafordíthatatlan művelet.",
+        "delete": "Biztos, hogy törölni szeretné ezt az önéletrajzot? Ez a művelet nem visszavonható.",
         "share-link": "Az önéletrajz láthatóságát nyilvánosra kell változtatnia, hogy mások számára is látható legyen."
       }
     }
@@ -138,7 +138,7 @@
             "heading": "Alak"
           },
           "size": {
-            "heading": "Méret (px-ben)"
+            "heading": "Méret (pixel)"
           }
         },
         "photo-upload": {
@@ -189,7 +189,7 @@
           "label": "Irányítószám"
         },
         "region": {
-          "label": "Vidék"
+          "label": "Régió"
         }
       },
       "profiles": {
@@ -248,7 +248,7 @@
           },
           "normal": {
             "primary": "PDF",
-            "secondary": "Töltse le önéletrajzának PDF formátumát, amelyet kinyomtathat és elküldhet álmai munkahelyére. Ez a fájl nem importálható vissza további szerkesztéshez."
+            "secondary": "Töltse le önéletrajzát PDF formátumban, amelyet kinyomtathat és elküldhet álmai munkahelyére. Ez a fájl nem importálható vissza további szerkesztéshez."
           }
         }
       },
@@ -265,7 +265,7 @@
           "heading": "Hibák? Funkciókérés?"
         },
         "donate": {
-          "body": "Ha tetszett a Reactive Resume, kérjük, fontolja meg, hogy amennyit csak tud, adományozzon arra, hogy az alkalmazás folyamatosan működjön, hirdetések nélkül és örökké ingyenesen.",
+          "body": "Ha elégedett a Reactive Resume alkalmazással, kérjük, fontolja meg, hogy tetszőleges összeggel támogassa munkánkat, hogy továbbra is ingyenes és hirdetésmentes lehessen.",
           "button": "Vegyél nekem egy kávét",
           "heading": "Adományozzon a Reactive Resume-nak"
         },
@@ -277,12 +277,12 @@
         "global": {
           "date": {
             "primary": "Dátum",
-            "secondary": "Az alkalmazásban használható dátumformátum"
+            "secondary": "Az alkalmazásban használt dátumformátum"
           },
           "heading": "Globális",
           "language": {
             "primary": "Nyelv",
-            "secondary": "Az alkalmazásban használható megjelenítési nyelv"
+            "secondary": "Az alkalmazásban használt megjelenítési nyelv"
           },
           "theme": {
             "primary": "Téma"
@@ -292,7 +292,7 @@
         "page": {
           "format": {
             "primary": "Papírméret",
-            "secondary": "Meghatározza az önéletrajzi oldalak méreteit"
+            "secondary": "Meghatározza az önéletrajz oldalméreteit"
           },
           "break-line": {
             "primary": "Törésvonal",
@@ -301,7 +301,7 @@
           "heading": "oldal",
           "orientation": {
             "disabled": "Nincs hatása, ha csak egy oldal van",
-            "primary": "Irányultság",
+            "primary": "Tájolás",
             "secondary": "Az oldalak vízszintes vagy függőleges megjelenítése"
           }
         },
@@ -320,7 +320,7 @@
       "sharing": {
         "heading": "Megosztás",
         "short-url": {
-          "label": "Rövid URL-t részesítsen előnyben"
+          "label": "Rövid URL előnyben részesítése"
         },
         "visibility": {
           "subtitle": "A link birtokában bárki megtekintheti önéletrajzát",
@@ -336,7 +336,7 @@
             "label": "Háttér"
           },
           "primary": {
-            "label": "Elsődleges"
+            "label": "Elsődleges "
           },
           "text": {
             "label": "Szöveg"
@@ -356,7 +356,7 @@
         "heading": "Tipográfia",
         "widgets": {
           "body": {
-            "label": "Test"
+            "label": "Szövegtörzs"
           },
           "headings": {
             "label": "Címsorok"

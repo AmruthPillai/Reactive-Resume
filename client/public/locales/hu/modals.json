@@ -2,7 +2,7 @@
   "auth": {
     "forgot-password": {
       "actions": {
-        "send-email": "Jelszó visszaállítása e-mail küldése"
+        "send-email": "Jelszó helyreállító e-mail küldése"
       },
       "body": "Csak adja meg a helyreállítani kívánt fiókhoz társított e-mail címet.",
       "form": {
@@ -27,14 +27,14 @@
           "label": "Felhasználónév"
         }
       },
-      "heading": "Jelentkezz be a fiókodba",
+      "heading": "Jelentkezzen be a fiókjába",
       "recover-text": "Ha elfelejtette jelszavát, <1>visszaállíthatja fiókját</1> itt.",
       "register-text": "Ha nem rendelkezik fiókkal, <1>létrehozhat egy fiókot</1> itt."
     },
     "register": {
       "actions": {
         "register": "Regisztráció",
-        "google": "Regisztráljon a Google-nál"
+        "google": "Regisztráljon Google fiókkal"
       },
       "body": "Kérjük, adja meg személyes adatait fiók létrehozásához.",
       "form": {
@@ -87,7 +87,7 @@
           "label": "Nyilvánosan elérhető?"
         },
         "slug": {
-          "label": "Meztelen csiga"
+          "label": "Saját URL"
         }
       },
       "heading": "Új önéletrajz létrehozása"
@@ -126,7 +126,7 @@
           "label": "Név"
         },
         "slug": {
-          "label": "Meztelen csiga"
+          "label": "Saját URL"
         }
       },
       "heading": "Nevezze át önéletrajzát"
