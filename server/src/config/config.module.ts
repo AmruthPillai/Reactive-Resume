@@ -4,6 +4,7 @@ import Joi from 'joi';
 
 import appConfig from './app.config';
 import authConfig from './auth.config';
+import cacheConfig from './cache.config';
 import databaseConfig from './database.config';
 import googleConfig from './google.config';
 import mailConfig from './mail.config';
@@ -52,12 +53,15 @@ const validationSchema = Joi.object({
   STORAGE_URL_PREFIX: Joi.string().allow(''),
   STORAGE_ACCESS_KEY: Joi.string().allow(''),
   STORAGE_SECRET_KEY: Joi.string().allow(''),
+
+  // Cache
+  PDF_DELETION_TIME: Joi.number().default(6 * 24 * 60 * 60 * 1000), // 6 days
 });
 
 @Module({
   imports: [
     NestConfigModule.forRoot({
-      load: [appConfig, authConfig, databaseConfig, googleConfig, mailConfig, storageConfig],
+      load: [appConfig, authConfig, cacheConfig, databaseConfig, googleConfig, mailConfig, storageConfig],
       validationSchema: validationSchema,
     }),
   ],

@@ -2,6 +2,7 @@ import { Download, Downloading } from '@mui/icons-material';
 import { ButtonBase } from '@mui/material';
 import { Resume } from '@reactive-resume/schema';
 import clsx from 'clsx';
+import dayjs from 'dayjs';
 import download from 'downloadjs';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
@@ -96,7 +97,9 @@ const Preview: NextPage<Props> = ({ username, slug, resume: initialData }) => {
 
   const handleDownload = async () => {
     try {
-      const url = await mutateAsync({ username, slug });
+      const updatedAt = get(resume, 'updatedAt');
+
+      const url = await mutateAsync({ username, slug, lastUpdated: dayjs(updatedAt).unix().toString() });
 
       download(url);
     } catch {
