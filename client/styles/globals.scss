@@ -26,7 +26,11 @@
   }
 
   a {
-    @apply cursor-pointer font-medium hover:underline;
+    @apply cursor-pointer font-medium;
+  }
+
+  .markdown {
+    @apply prose prose-sm leading-relaxed prose-ul:p-0 prose-ul:my-0 prose-p:my-0;
   }
 }
 

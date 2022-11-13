@@ -70,7 +70,11 @@ const Preview: NextPage<Props> = ({ shortId }) => {
 
   const handleDownload = async () => {
     try {
-      const url = await mutateAsync({ username: resume.user.username, slug: resume.slug, lastUpdated: dayjs(resume.updatedAt).unix().toString() });
+      const url = await mutateAsync({
+        username: resume.user.username,
+        slug: resume.slug,
+        lastUpdated: dayjs(resume.updatedAt).unix().toString(),
+      });
 
       download(url);
     } catch {

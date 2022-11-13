@@ -53,7 +53,7 @@ export const getSectionById = (id: string, Section: React.FC<SectionProps>): JSX
   // Check if section id is a predefined seciton in config
   const predefinedSection = get(sectionMap(Section), id);
 
-  if(predefinedSection) {
+  if (predefinedSection) {
     return predefinedSection;
   }
 

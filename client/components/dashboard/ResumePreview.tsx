@@ -115,9 +115,7 @@ const ResumePreview: React.FC<Props> = ({ resume }) => {
         }}
       >
         <ButtonBase className={styles.preview}>
-          {resume.image ? (
-            <Image src={resume.image} alt={resume.name} objectFit="cover" layout="fill" priority />
-          ) : null}
+          {resume.image ? <Image src={resume.image} alt={resume.name} priority width={400} height={0} /> : null}
         </ButtonBase>
       </Link>
 

@@ -96,7 +96,7 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
       await mkdir(directory, { recursive: true });
       await writeFile(join(directory, filename), pdfBytes);
 
-      // Delete PDF artifacts after pdfDeletionTime ms
+      // Delete PDF artifacts after `pdfDeletionTime` ms
       const timeout = setTimeout(async () => {
         try {
           await unlink(join(directory, filename));

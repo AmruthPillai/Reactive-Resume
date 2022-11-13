@@ -56,6 +56,7 @@ services:
       - STORAGE_URL_PREFIX=
       - STORAGE_ACCESS_KEY=
       - STORAGE_SECRET_KEY=
+      - PDF_DELETION_TIME=
 
   client:
     image: amruthpillai/reactive-resume:client-latest

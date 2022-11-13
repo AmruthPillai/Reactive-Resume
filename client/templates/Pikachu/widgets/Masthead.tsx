@@ -62,7 +62,7 @@ export const MastheadSidebar: React.FC = () => {
 };
 
 export const MastheadMain: React.FC = () => {
-  const theme: ThemeConfig = useAppSelector((state) => get(state.resume.present, 'metadata.theme', {}));
+  const theme: ThemeConfig = useAppSelector((state) => get(state.resume.present, 'metadata.theme', {} as ThemeConfig));
   const contrast = useMemo(() => getContrastColor(theme.primary), [theme.primary]);
 
   const { name, summary, headline } = useAppSelector((state) => state.resume.present.basics);

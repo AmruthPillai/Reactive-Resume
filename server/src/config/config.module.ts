@@ -55,7 +55,7 @@ const validationSchema = Joi.object({
   STORAGE_SECRET_KEY: Joi.string().allow(''),
 
   // Cache
-  PDF_DELETION_TIME: Joi.number().default(6 * 24 * 60 * 60 * 1000), // 6 days
+  PDF_DELETION_TIME: Joi.number().default(4 * 24 * 60 * 60 * 1000), // 4 days
 });
 
 @Module({

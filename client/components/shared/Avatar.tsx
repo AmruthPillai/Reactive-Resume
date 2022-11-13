@@ -47,9 +47,9 @@ const Avatar: React.FC<Props> = ({ size = 64 }) => {
         <Image
           width={size}
           height={size}
-          alt={user?.name}
           className={styles.avatar}
           src={getGravatarUrl(email, size)}
+          alt={user?.name ?? 'User Avatar'}
         />
       </IconButton>
 

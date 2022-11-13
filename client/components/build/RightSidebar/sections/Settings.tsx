@@ -47,8 +47,8 @@ const Settings = () => {
   const id: number = useMemo(() => get(resume, 'id'), [resume]);
   const slug: string = useMemo(() => get(resume, 'slug'), [resume]);
   const username: string = useMemo(() => get(resume, 'user.username'), [resume]);
-  const pageConfig: PageConfig = useMemo(() => get(resume, 'metadata.page'), [resume]);
   const dateConfig: DateConfig = useMemo(() => get(resume, 'metadata.date'), [resume]);
+  const pageConfig: PageConfig | undefined = useMemo(() => get(resume, 'metadata.page'), [resume]);
 
   const isDarkMode = useMemo(() => theme === 'dark', [theme]);
   const exampleDateString = useMemo(() => `Eg. ${dayjs().utc().format(dateConfig.format)}`, [dateConfig.format]);
@@ -98,7 +98,7 @@ const Settings = () => {
     <>
       <Heading path="metadata.settings" name={t<string>('builder.rightSidebar.sections.settings.heading')} />
 
-      <List sx={{ padding: 0 }}>
+      <List disablePadding>
         {/* Global Settings */}
         <>
           <ListSubheader disableSticky className="rounded">
@@ -212,7 +212,7 @@ const Settings = () => {
             {t<string>('builder.rightSidebar.sections.settings.resume.heading')}
           </ListSubheader>
 
-          <ListItem>
+          <ListItem disableGutters>
             <ListItemButton onClick={handleLoadSampleData}>
               <ListItemIcon>
                 <Anchor />
@@ -224,7 +224,7 @@ const Settings = () => {
             </ListItemButton>
           </ListItem>
 
-          <ListItem>
+          <ListItem disableGutters>
             <ListItemButton onClick={handleResetResume}>
               <ListItemIcon>
                 <DeleteForever />

@@ -16,7 +16,7 @@ const Masthead: React.FC = () => {
   const { name, photo, headline, summary, email, phone, birthdate, website, location, profiles } = useAppSelector(
     (state) => state.resume.present.basics
   );
-  const theme: ThemeConfig = useAppSelector((state) => get(state.resume.present, 'metadata.theme', {}));
+  const theme: ThemeConfig = useAppSelector((state) => get(state.resume.present, 'metadata.theme', {} as ThemeConfig));
 
   return (
     <div>

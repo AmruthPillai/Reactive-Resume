@@ -40,7 +40,7 @@ export const resumeSlice = createSlice({
     addItem: (state: Resume, action: PayloadAction<AddItemPayload>) => {
       const { path, value } = action.payload;
       const id = uuidv4();
-      const list = get(state, path, []);
+      const list: ListItem[] = get(state, path, []);
       const item = merge(value, { id });
 
       list.push(item);

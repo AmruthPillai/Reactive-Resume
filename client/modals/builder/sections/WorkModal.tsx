@@ -48,11 +48,11 @@ const WorkModal: React.FC = () => {
 
   const dispatch = useAppDispatch();
 
-  const heading = useAppSelector((state) => get(state.resume.present, `${path}.name`));
-
   const { open: isOpen, payload } = useAppSelector((state) => state.modal['builder.sections.work']);
   const path: string = get(payload, 'path', 'sections.work');
   const item: FormData = get(payload, 'item', null);
+
+  const heading = useAppSelector((state) => get(state.resume.present, `${path}.name`));
 
   const isEditMode = useMemo(() => !!item, [item]);
 

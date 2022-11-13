@@ -17,13 +17,11 @@ import { fetchResumes } from '@/services/resume';
 import { useAppDispatch } from '@/store/hooks';
 import styles from '@/styles/pages/Dashboard.module.scss';
 
-export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common', 'modals', 'dashboard'])),
-    },
-  };
-};
+export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common', 'modals', 'dashboard'])),
+  },
+});
 
 const Dashboard: NextPage = () => {
   const { t } = useTranslation();
@@ -48,9 +46,7 @@ const Dashboard: NextPage = () => {
 
       <header>
         <Link href="/">
-          <a>
-            <Logo size={40} />
-          </a>
+          <Logo size={40} />
         </Link>
 
         <Avatar size={40} />
@@ -58,15 +54,15 @@ const Dashboard: NextPage = () => {
 
       <main className={styles.resumes}>
         <ResumeCard
-          modal="dashboard.create-resume"
           icon={Add}
+          modal="dashboard.create-resume"
           title={t<string>('dashboard.create-resume.title')}
           subtitle={t<string>('dashboard.create-resume.subtitle')}
         />
 
         <ResumeCard
-          modal="dashboard.import-external"
           icon={ImportExport}
+          modal="dashboard.import-external"
           title={t<string>('dashboard.import-external.title')}
           subtitle={t<string>('dashboard.import-external.subtitle')}
         />

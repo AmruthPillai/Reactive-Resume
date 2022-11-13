@@ -79,7 +79,7 @@ const Section: React.FC<Props> = ({
       visible: true,
       columns: 2,
       items: [],
-      isDuplicated: true
+      isDuplicated: true,
     };
 
     dispatch(duplicateSection({ value: newSection, type }));

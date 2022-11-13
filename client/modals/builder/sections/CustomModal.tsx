@@ -60,12 +60,13 @@ const CustomModal: React.FC = () => {
 
   const dispatch = useAppDispatch();
 
-  const heading = useAppSelector((state) => get(state.resume.present, `${path}.name`));
   const { open: isOpen, payload } = useAppSelector((state) => state.modal['builder.sections.custom']);
 
-  const path: string = get(payload, 'path', '');
+  const path: string = get(payload, 'path', 'sections.custom');
   const item: FormData = get(payload, 'item', null);
   const isEditMode = useMemo(() => !!item, [item]);
+
+  const heading = useAppSelector((state) => get(state.resume.present, `${path}.name`));
 
   const addText = useMemo(() => t<string>('builder.common.actions.add', { token: heading }), [t, heading]);
   const editText = useMemo(() => t<string>('builder.common.actions.edit', { token: heading }), [t, heading]);
@@ -260,9 +261,9 @@ const CustomModal: React.FC = () => {
               multiline
               minRows={3}
               maxRows={6}
-              label={t<string>('builder.common.form.summary.label')}
               className="col-span-2"
               error={!!fieldState.error}
+              label={t<string>('builder.common.form.summary.label')}
               helperText={fieldState.error?.message || <MarkdownSupported />}
               {...field}
             />

@@ -26,8 +26,8 @@ const Page: React.FC<Props> = ({ page, showPageNumbers = false }) => {
   const theme: ThemeConfig = get(resume, 'metadata.theme');
   const customCSS: CustomCSS = get(resume, 'metadata.css');
   const template: string = get(resume, 'metadata.template');
-  const pageConfig: PageConfig = get(resume, 'metadata.page');
   const typography: Typography = get(resume, 'metadata.typography');
+  const pageConfig: PageConfig = get(resume, 'metadata.page', {} as PageConfig);
 
   const themeCSS = useMemo(() => !isEmpty(theme) && generateThemeStyles(theme), [theme]);
   const typographyCSS = useMemo(() => !isEmpty(typography) && generateTypographyStyles(typography), [typography]);

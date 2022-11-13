@@ -21,7 +21,7 @@ const Section: React.FC<SectionProps> = ({
   headlinePath = 'headline',
   keywordsPath = 'keywords',
 }) => {
-  const section: SectionType = useAppSelector((state) => get(state.resume.present, path, {}));
+  const section: SectionType = useAppSelector((state) => get(state.resume.present, path, {} as SectionType));
   const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
   const primaryColor: string = useAppSelector((state) => get(state.resume.present, 'metadata.theme.primary'));
 
@@ -45,13 +45,13 @@ const Section: React.FC<SectionProps> = ({
             subtitle = parseListItemPath(item, subtitlePath),
             headline = parseListItemPath(item, headlinePath),
             keywords: string[] = get(item, keywordsPath),
-            url: string = get(item, 'url'),
-            summary: string = get(item, 'summary'),
-            level: string = get(item, 'level'),
-            levelNum: number = get(item, 'levelNum'),
-            phone: string = get(item, 'phone'),
-            email: string = get(item, 'email'),
-            date = formatDateString(get(item, 'date'), dateFormat);
+            url: string = get(item, 'url', ''),
+            level: string = get(item, 'level', ''),
+            phone: string = get(item, 'phone', ''),
+            email: string = get(item, 'email', ''),
+            summary: string = get(item, 'summary', ''),
+            levelNum: number = get(item, 'levelNum', 0),
+            date = formatDateString(get(item, 'date', ''), dateFormat);
 
           return (
             <div key={id} id={id} className="grid gap-1">

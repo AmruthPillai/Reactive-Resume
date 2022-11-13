@@ -16,9 +16,7 @@ type Props = {
 const ResumeCard: React.FC<Props> = ({ modal, icon: Icon, title, subtitle }) => {
   const dispatch = useAppDispatch();
 
-  const handleClick = () => {
-    dispatch(setModalState({ modal, state: { open: true } }));
-  };
+  const handleClick = () => dispatch(setModalState({ modal, state: { open: true } }));
 
   return (
     <section className={styles.resume}>

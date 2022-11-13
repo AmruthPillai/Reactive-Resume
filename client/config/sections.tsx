@@ -75,54 +75,121 @@ export const left: SidebarSection[] = [
   {
     id: 'education',
     icon: <School />,
-    component: <Section type={"education"} path="sections.education" titleKey="institution" subtitleKey="area" isEditable isHideable />,
+    component: (
+      <Section
+        type={'education'}
+        path="sections.education"
+        titleKey="institution"
+        subtitleKey="area"
+        isEditable
+        isHideable
+      />
+    ),
   },
   {
     id: 'awards',
     icon: <EmojiEvents />,
-    component: <Section type={"awards"} path="sections.awards" titleKey="title" subtitleKey="awarder" isEditable isHideable />,
+    component: (
+      <Section type={'awards'} path="sections.awards" titleKey="title" subtitleKey="awarder" isEditable isHideable />
+    ),
   },
   {
     id: 'certifications',
     icon: <CardGiftcard />,
-    component: <Section type={"certifications"} path="sections.certifications" titleKey="name" subtitleKey="issuer" isEditable isHideable />,
+    component: (
+      <Section
+        type={'certifications'}
+        path="sections.certifications"
+        titleKey="name"
+        subtitleKey="issuer"
+        isEditable
+        isHideable
+      />
+    ),
   },
   {
     id: 'publications',
     icon: <MenuBook />,
-    component: <Section type={"publications"} path="sections.publications" titleKey="name" subtitleKey="publisher" isEditable isHideable />,
+    component: (
+      <Section
+        type={'publications'}
+        path="sections.publications"
+        titleKey="name"
+        subtitleKey="publisher"
+        isEditable
+        isHideable
+      />
+    ),
   },
   {
     id: 'skills',
     icon: <Architecture />,
-    component: <Section type={"skills"} path="sections.skills" titleKey="name" subtitleKey="level" isEditable isHideable />,
+    component: (
+      <Section type={'skills'} path="sections.skills" titleKey="name" subtitleKey="level" isEditable isHideable />
+    ),
   },
   {
     id: 'languages',
     icon: <Language />,
-    component: <Section type={"languages"} path="sections.languages" titleKey="name" subtitleKey="level" isEditable isHideable />,
+    component: (
+      <Section type={'languages'} path="sections.languages" titleKey="name" subtitleKey="level" isEditable isHideable />
+    ),
   },
   {
     id: 'interests',
     icon: <Sailing />,
-    component: <Section type={"interests"} path="sections.interests" titleKey="name" subtitleKey="keywords" isEditable isHideable />,
+    component: (
+      <Section
+        type={'interests'}
+        path="sections.interests"
+        titleKey="name"
+        subtitleKey="keywords"
+        isEditable
+        isHideable
+      />
+    ),
   },
   {
     id: 'volunteer',
     icon: <VolunteerActivism />,
     component: (
-      <Section type={"volunteer"} path="sections.volunteer" titleKey="organization" subtitleKey="position" isEditable isHideable />
+      <Section
+        type={'volunteer'}
+        path="sections.volunteer"
+        titleKey="organization"
+        subtitleKey="position"
+        isEditable
+        isHideable
+      />
     ),
   },
   {
     id: 'projects',
     icon: <Coffee />,
-    component: <Section type={"projects"} path="sections.projects" titleKey="name" subtitleKey="description" isEditable isHideable />,
+    component: (
+      <Section
+        type={'projects'}
+        path="sections.projects"
+        titleKey="name"
+        subtitleKey="description"
+        isEditable
+        isHideable
+      />
+    ),
   },
   {
     id: 'references',
     icon: <Groups />,
-    component: <Section type={"references"} path="sections.references" titleKey="name" subtitleKey="relationship" isEditable isHideable />,
+    component: (
+      <Section
+        type={'references'}
+        path="sections.references"
+        titleKey="name"
+        subtitleKey="relationship"
+        isEditable
+        isHideable
+      />
+    ),
   },
 ];
 
@@ -174,10 +241,7 @@ export const right: SidebarSection[] = [
   },
 ];
 
-export const getSectionsByType = (
-  sections: Record<string, SectionRecord>,
-  type: SectionType
-): Array<Required<SectionRecord>> => {
+export const getSectionsByType = (sections: Record<string, SectionRecord>, type: SectionType): SectionRecord[] => {
   if (isEmpty(sections)) return [];
 
   return Object.entries(sections).reduce((acc, [id, section]) => {
@@ -186,10 +250,10 @@ export const getSectionsByType = (
     }
 
     return acc;
-  }, [] as Array<Required<SectionRecord>>);
+  }, [] as SectionRecord[]);
 };
 
-export const getCustomSections = (sections: Record<string, SectionRecord>): Array<Required<SectionRecord>> => {
+export const getCustomSections = (sections: Record<string, SectionRecord>): SectionRecord[] => {
   if (isEmpty(sections)) return [];
 
   return Object.entries(sections).reduce((acc, [id, section]) => {
@@ -198,7 +262,7 @@ export const getCustomSections = (sections: Record<string, SectionRecord>): Arra
     }
 
     return acc;
-  }, [] as Array<Required<SectionRecord>>);
+  }, [] as SectionRecord[]);
 };
 
 const sections = [...left, ...right];

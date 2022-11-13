@@ -22,13 +22,11 @@ import styles from '@/styles/pages/Home.module.scss';
 
 import { DIGITALOCEAN_URL, DOCS_URL, DONATION_URL, GITHUB_URL } from '../constants';
 
-export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common', 'modals', 'landing'])),
-    },
-  };
-};
+export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common', 'modals', 'landing'])),
+  },
+});
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
@@ -39,11 +37,8 @@ const Home: NextPage = () => {
   const isLoggedIn = useAppSelector((state) => state.auth.isLoggedIn);
 
   const handleLogin = () => dispatch(setModalState({ modal: 'auth.login', state: { open: true } }));
-
   const handleRegister = () => dispatch(setModalState({ modal: 'auth.register', state: { open: true } }));
-
   const handleToggle = () => dispatch(setTheme({ theme: theme === 'light' ? 'dark' : 'light' }));
-
   const handleLogout = () => dispatch(logout());
 
   return (
@@ -117,7 +112,13 @@ const Home: NextPage = () => {
         <div className={styles.screenshots}>
           {screenshots.map(({ src, alt }) => (
             <a key={src} href={src} className={styles.image} target="_blank" rel="noreferrer">
-              <Image src={src} alt={alt} layout="fill" objectFit="cover" />
+              <Image
+                fill
+                src={src}
+                alt={alt}
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
             </a>
           ))}
         </div>
@@ -186,7 +187,13 @@ const Home: NextPage = () => {
 
       <section className={styles.section}>
         <a href={DIGITALOCEAN_URL} target="_blank" rel="noreferrer">
-          <Image src={`/images/sponsors/${theme=="dark"?"digitalocean":"digitaloceanLight"}.svg`} alt="Powered By DigitalOcean" width={200} height={40} />
+          <Image
+            src={`/images/sponsors/${theme == 'dark' ? 'digitalocean' : 'digitaloceanLight'}.svg`}
+            style={{ width: 200, height: 40, objectFit: 'contain' }}
+            alt="Powered By DigitalOcean"
+            width={200}
+            height={40}
+          />
         </a>
       </section>
 

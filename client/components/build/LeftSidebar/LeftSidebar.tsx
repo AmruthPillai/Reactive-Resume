@@ -111,9 +111,7 @@ const LeftSidebar = () => {
         <nav className="overflow-y-scroll">
           <div>
             <Link href="/dashboard">
-              <a className="inline-flex">
-                <Logo size={40} />
-              </a>
+              <Logo size={40} />
             </Link>
             <Divider />
           </div>
@@ -132,7 +130,7 @@ const LeftSidebar = () => {
 
             {customSections.map(({ id }) => (
               <Tooltip key={id} title={get(sections, `${id}.name`, '') as string} placement="right" arrow>
-                <IconButton onClick={() => handleClick(id)}>
+                <IconButton onClick={() => id && handleClick(id)}>
                   <Star />
                 </IconButton>
               </Tooltip>

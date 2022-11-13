@@ -151,5 +151,5 @@ export type Section = {
   columns: number;
   visible: boolean;
   items: ListItem[];
-  isDuplicated: boolean;
+  isDuplicated?: boolean;
 };

@@ -31,7 +31,14 @@ const Templates = () => {
           <div key={template.id} className={styles.template}>
             <div className={clsx(styles.preview, { [styles.selected]: template.id === currentTemplate })}>
               <ButtonBase onClick={() => handleChange(template)}>
-                <Image src={template.preview} alt={template.name} className="rounded-sm" layout="fill" priority />
+                <Image
+                  fill
+                  priority
+                  alt={template.name}
+                  src={template.preview}
+                  className="rounded-sm"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
               </ButtonBase>
             </div>
 
