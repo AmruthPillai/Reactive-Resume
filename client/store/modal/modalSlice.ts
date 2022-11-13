@@ -9,6 +9,7 @@ export type ModalName =
   | 'dashboard.import-external'
   | 'dashboard.rename-resume'
   | 'builder.sections.profile'
+  | 'builder.sections.work'
   | `builder.sections.${string}`;
 
 export type ModalState = {

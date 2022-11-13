@@ -1,14 +1,15 @@
 import { Add, Star } from '@mui/icons-material';
 import { Button, Divider, IconButton, SwipeableDrawer, Tooltip, useMediaQuery, useTheme } from '@mui/material';
 import { Section as SectionRecord } from '@reactive-resume/schema';
+import cloneDeep from 'lodash/cloneDeep';
 import get from 'lodash/get';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
-import { useMemo } from 'react';
+import React, { ReactComponentElement, useMemo } from 'react';
 import { validate } from 'uuid';
 
 import Logo from '@/components/shared/Logo';
-import { getCustomSections, left } from '@/config/sections';
+import { getCustomSections, getSectionsByType, left } from '@/config/sections';
 import { setSidebarState } from '@/store/build/buildSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { addSection } from '@/store/resume/resumeSlice';
@@ -52,7 +53,49 @@ const LeftSidebar = () => {
       items: [],
     };
 
-    dispatch(addSection({ value: newSection }));
+    dispatch(addSection({ value: newSection, type: 'custom' }));
+  };
+
+  const sectionsList = () => {
+    const sectionsComponents: Array<ReactComponentElement<any>> = [];
+
+    for (const item of left) {
+      const id = (item as any).id;
+      const component = (item as any).component;
+      const type = component.props.type || 'basic';
+      const addMore = !!component.props.addMore;
+
+      sectionsComponents.push(
+        <section key={id} id={id}>
+          {component}
+        </section>
+      );
+
+      if (addMore) {
+        const additionalSections = getSectionsByType(sections, type);
+        const elements = [];
+        for (const element of additionalSections) {
+          const newId = element.id;
+
+          const props = cloneDeep(component.props);
+          props.path = 'sections.' + newId;
+          props.name = element.name;
+          props.isDeletable = true;
+          props.addMore = false;
+          props.isDuplicated = true;
+          const newComponent = React.cloneElement(component, props);
+
+          elements.push(
+            <section key={newId} id={`section-${newId}`}>
+              {newComponent}
+            </section>
+          );
+        }
+        sectionsComponents.push(...elements);
+      }
+    }
+
+    return sectionsComponents;
   };
 
   return (
@@ -100,12 +143,7 @@ const LeftSidebar = () => {
         </nav>
 
         <main>
-          {left.map(({ id, component }) => (
-            <section key={id} id={id}>
-              {component}
-            </section>
-          ))}
-
+          {sectionsList()}
           {customSections.map(({ id }) => (
             <section key={id} id={`section-${id}`}>
               <Section path={`sections.${id}`} isEditable isHideable isDeletable />

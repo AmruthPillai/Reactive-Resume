@@ -38,7 +38,7 @@ const defaultState: Partial<Resume> = {
     work: {
       id: 'work',
       name: 'Work Experience',
-      type: 'basic',
+      type: 'work',
       columns: 2,
       visible: true,
       items: [],

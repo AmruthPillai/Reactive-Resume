@@ -125,7 +125,22 @@ export type ListItem =
   | WorkExperience
   | Custom;
 
-export type SectionType = 'basic' | 'custom';
+export type SectionType =
+  | 'basic'
+  | 'location'
+  | 'profiles'
+  | 'education'
+  | 'awards'
+  | 'certifications'
+  | 'publications'
+  | 'skills'
+  | 'languages'
+  | 'interests'
+  | 'volunteer'
+  | 'projects'
+  | 'references'
+  | 'custom'
+  | 'work';
 
 export type SectionPath = `sections.${string}`;
 
@@ -136,4 +151,5 @@ export type Section = {
   columns: number;
   visible: boolean;
   items: ListItem[];
+  isDuplicated: boolean;
 };
