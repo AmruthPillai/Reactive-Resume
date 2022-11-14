@@ -33,8 +33,6 @@ const Page: React.FC<Props> = ({ page, showPageNumbers = false }) => {
   const typographyCSS = useMemo(() => !isEmpty(typography) && generateTypographyStyles(typography), [typography]);
   const TemplatePage: React.FC<PageProps> | null = useMemo(() => templateMap[template].component, [template]);
 
-  console.log(styles);
-
   return (
     <div className={styles.container} data-page={page + 1} data-format={pageConfig?.format || 'A4'}>
       <div
