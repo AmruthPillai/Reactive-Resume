@@ -22,7 +22,7 @@
   }
 
   p {
-    @apply leading-relaxed;
+    @apply leading-normal;
   }
 
   a {
@@ -30,7 +30,11 @@
   }
 
   .markdown {
-    @apply prose prose-sm leading-relaxed prose-ul:p-0 prose-ul:my-0 prose-p:my-0;
+    @apply prose prose-sm leading-normal prose-ul:p-0 prose-ul:my-0 prose-p:my-0;
+
+    ul li {
+      @apply ml-4 list-outside;
+    }
   }
 }
 
