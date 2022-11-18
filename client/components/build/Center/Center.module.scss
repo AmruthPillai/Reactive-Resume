@@ -5,7 +5,7 @@
 }
 
 .wrapper {
-  @apply h-full w-full #{!important};
+  @apply h-full w-full overflow-visible #{!important};
 }
 
 .artboard {

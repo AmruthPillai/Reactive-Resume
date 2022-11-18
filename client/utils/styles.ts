@@ -4,10 +4,10 @@ import { RgbColor } from 'react-colorful';
 import { hexColorPattern } from '@/config/colors';
 
 export const generateTypographyStyles = ({ family, size }: Typography): string => `
-  font-size: ${size.body}px;
-  font-family: ${family.body};
+  font-size: ${size.body}px !important;
+  font-family: ${family.body} !important;
 
-  svg { font-size: ${size.body}px; }
+  svg { font-size: ${size.body}px !important; }
 
   h1,
   h2,
@@ -15,25 +15,35 @@ export const generateTypographyStyles = ({ family, size }: Typography): string =
   h4,
   h5,
   h6 {
-    font-weight: bold;
-    font-family: ${family.heading};
+    font-weight: bold !important;
+    font-family: ${family.heading} !important;
   }
 
-  h1 { font-size: ${size.heading}px; line-height: ${size.heading}px; }
-  h2 { font-size: ${size.heading / 1.5}px; line-height: ${size.heading / 1.5}px; }
-  h3 { font-size: ${size.heading / 2}px; line-height: ${size.heading / 2}px; }
-  h4 { font-size: ${size.heading / 2.5}px; line-height: ${size.heading / 2.5}px; }
-  h5 { font-size: ${size.heading / 3}px; line-height: ${size.heading / 3}px; }
-  h6 { font-size: ${size.heading / 3.5}px; line-height: ${size.heading / 3.5}px; }
+  h1 { font-size: ${size.heading}px !important; line-height: ${size.heading}px !important; }
+  h2 { font-size: ${size.heading / 1.5}px !important; line-height: ${size.heading / 1.5}px !important; }
+  h3 { font-size: ${size.heading / 2}px !important; line-height: ${size.heading / 2}px !important; }
+  h4 { font-size: ${size.heading / 2.5}px !important; line-height: ${size.heading / 2.5}px !important; }
+  h5 { font-size: ${size.heading / 3}px !important; line-height: ${size.heading / 3}px !important; }
+  h6 { font-size: ${size.heading / 3.5}px !important; line-height: ${size.heading / 3.5}px !important; }
+
+  .markdown p,
+  .markdown li {
+    font-size: ${size.body}px !important;
+  }
 `;
 
 export const generateThemeStyles = ({ text, background, primary }: ThemeConfig): string => `
-  color: ${text};
-  background-color: ${background};
-  --primary-color: ${primary};
+  color: ${text} !important;
+  background-color: ${background} !important;
+  --primary-color: ${primary} !important;
 
   svg {
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
+  }
+
+  .markdown p,
+  .markdown li {
+    color: ${text} !important;
   }
 `;
 
