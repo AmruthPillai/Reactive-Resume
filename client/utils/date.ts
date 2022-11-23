@@ -30,7 +30,7 @@ export const formatDateString = (date: string | DateRange, formatStr: string): s
   if (isString(date)) {
     if (!dayjs(date).isValid()) return null;
 
-    return dayjs(date).utc(true).format(formatStr);
+    return dayjs(date).format(formatStr);
   }
 
   // If `date` is a DateRange
@@ -39,8 +39,8 @@ export const formatDateString = (date: string | DateRange, formatStr: string): s
   if (!dayjs(date.start).isValid()) return null;
 
   if (!isEmpty(date.end) && dayjs(date.end).isValid()) {
-    return `${dayjs(date.start).utc(true).format(formatStr)} - ${dayjs(date.end).utc(true).format(formatStr)}`;
+    return `${dayjs(date.start).format(formatStr)} - ${dayjs(date.end).format(formatStr)}`;
   }
 
-  return `${dayjs(date.start).utc(true).format(formatStr)} - ${presentString}`;
+  return `${dayjs(date.start).format(formatStr)} - ${presentString}`;
 };

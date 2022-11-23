@@ -22,6 +22,7 @@ const ResumeInput: React.FC<Props> = ({ type = 'text', label, path, className, m
   const dispatch = useAppDispatch();
 
   const stateValue = useAppSelector((state) => get(state.resume.present, path, ''));
+  const dateFormat = useAppSelector((state) => state.resume.present.metadata.date.format);
 
   useEffect(() => {
     setValue(stateValue);
@@ -56,14 +57,16 @@ const ResumeInput: React.FC<Props> = ({ type = 'text', label, path, className, m
   if (type === 'date') {
     return (
       <DatePicker
+        showToolbar
         openTo="year"
         label={label}
         value={value}
+        toolbarFormat={dateFormat}
         views={['year', 'month', 'day']}
         renderInput={(params) => <TextField {...params} error={false} className={className} />}
         onChange={(date: Date | null, keyboardInputValue: string | undefined) => {
           isEmpty(keyboardInputValue) && onChangeValue('');
-          date && dayjs(date).utc().isValid() && onChangeValue(dayjs(date).utc().toISOString());
+          date && dayjs(date).isValid() && onChangeValue(dayjs(date).format('YYYY-MM-DD'));
         }}
       />
     );
