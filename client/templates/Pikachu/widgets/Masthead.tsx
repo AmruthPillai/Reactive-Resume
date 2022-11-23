@@ -1,5 +1,6 @@
 import { Cake, Email, Phone, Public, Room } from '@mui/icons-material';
 import { ThemeConfig } from '@reactive-resume/schema';
+import clsx from 'clsx';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import { useMemo } from 'react';
@@ -72,14 +73,14 @@ export const MastheadMain: React.FC = () => {
       className="grid gap-2 p-4"
       style={{ color: contrast === 'dark' ? theme.text : theme.background, backgroundColor: theme.primary }}
     >
-      <div>
+      <div className={clsx({ invert: contrast === 'light' })}>
         <h1>{name}</h1>
         <p className="opacity-75">{headline}</p>
       </div>
 
       <hr className="opacity-25" />
 
-      <Markdown>{summary}</Markdown>
+      <Markdown className={clsx({ invert: contrast === 'light' })}>{summary}</Markdown>
     </div>
   );
 };

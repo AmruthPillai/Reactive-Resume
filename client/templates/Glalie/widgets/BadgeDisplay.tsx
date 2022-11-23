@@ -21,15 +21,8 @@ const BadgeDisplay: React.FC<Props> = ({ items }) => {
   return (
     <ul className="mt-1 flex flex-wrap gap-2 text-xs">
       {items.map((item) => (
-        <li
-          key={item}
-          className="rounded-sm px-2 py-0.5"
-          style={{
-            color: contrast === 'dark' ? theme.text : theme.background,
-            backgroundColor: alpha(theme.primary, 0.75),
-          }}
-        >
-          {item}
+        <li key={item} className="rounded-sm px-2 py-0.5" style={{ backgroundColor: alpha(theme.primary, 0.75) }}>
+          <span style={{ color: contrast === 'dark' ? theme.text : theme.background }}>{item}</span>
         </li>
       ))}
     </ul>

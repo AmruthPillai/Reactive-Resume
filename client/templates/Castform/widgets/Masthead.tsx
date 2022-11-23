@@ -35,34 +35,55 @@ export const MastheadSidebar: React.FC = () => {
         />
       )}
 
-      <div>
+      <div className={clsx({ invert: contrast === 'light' })}>
         <h1 className="mb-1">{name}</h1>
         <p className="opacity-75">{headline}</p>
       </div>
 
       <div className={clsx('flex flex-col gap-2.5', css(`svg { color: ${color} }`))}>
-        <DataDisplay icon={<Room />} className="!gap-2 text-xs">
+        <DataDisplay icon={<Room />} className="!gap-2 text-xs" textClassName={clsx({ invert: contrast === 'light' })}>
           {formatLocation(location)}
         </DataDisplay>
 
-        <DataDisplay icon={<Cake />} className="!gap-2 text-xs">
+        <DataDisplay icon={<Cake />} className="!gap-2 text-xs" textClassName={clsx({ invert: contrast === 'light' })}>
           {formatDateString(birthdate, dateFormat)}
         </DataDisplay>
 
-        <DataDisplay icon={<Email />} className="!gap-2 text-xs" link={`mailto:${email}`}>
+        <DataDisplay
+          icon={<Email />}
+          className="!gap-2 text-xs"
+          link={`mailto:${email}`}
+          textClassName={clsx({ invert: contrast === 'light' })}
+        >
           {email}
         </DataDisplay>
 
-        <DataDisplay icon={<Phone />} className="!gap-2 text-xs" link={`tel:${phone}`}>
+        <DataDisplay
+          icon={<Phone />}
+          className="!gap-2 text-xs"
+          link={`tel:${phone}`}
+          textClassName={clsx({ invert: contrast === 'light' })}
+        >
           {phone}
         </DataDisplay>
 
-        <DataDisplay icon={<Public />} link={website && addHttp(website)} className="!gap-2 text-xs">
+        <DataDisplay
+          icon={<Public />}
+          link={website && addHttp(website)}
+          className="!gap-2 text-xs"
+          textClassName={clsx({ invert: contrast === 'light' })}
+        >
           {website}
         </DataDisplay>
 
         {profiles.map(({ id, username, network, url }) => (
-          <DataDisplay key={id} icon={getProfileIcon(network)} link={url && addHttp(url)} className="!gap-2 text-xs">
+          <DataDisplay
+            key={id}
+            icon={getProfileIcon(network)}
+            link={url && addHttp(url)}
+            className="!gap-2 text-xs"
+            textClassName={clsx({ invert: contrast === 'light' })}
+          >
             {username}
           </DataDisplay>
         ))}

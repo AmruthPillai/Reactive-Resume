@@ -7,7 +7,7 @@ export const generateTypographyStyles = ({ family, size }: Typography): string =
   font-size: ${size.body}px !important;
   font-family: ${family.body} !important;
 
-  svg { font-size: ${size.body}px !important; }
+  p, li, svg { font-size: ${size.body}px !important; line-height: ${size.body * 1.5}px !important; }
 
   h1,
   h2,
@@ -25,25 +25,31 @@ export const generateTypographyStyles = ({ family, size }: Typography): string =
   h4 { font-size: ${size.heading / 2.5}px !important; line-height: ${size.heading / 2.5}px !important; }
   h5 { font-size: ${size.heading / 3}px !important; line-height: ${size.heading / 3}px !important; }
   h6 { font-size: ${size.heading / 3.5}px !important; line-height: ${size.heading / 3.5}px !important; }
-
-  .markdown p,
-  .markdown li {
-    font-size: ${size.body}px !important;
-  }
 `;
 
 export const generateThemeStyles = ({ text, background, primary }: ThemeConfig): string => `
-  color: ${text} !important;
-  background-color: ${background} !important;
+  --text-color: ${text} !important;
   --primary-color: ${primary} !important;
+  --background-color: ${background} !important;
 
-  svg {
-    color: var(--primary-color) !important;
+  color: var(--text-color);
+  background-color: var(--background-color);
+
+  span,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  li,
+  p,
+  a {
+    color: var(--text-color);
   }
 
-  .markdown p,
-  .markdown li {
-    color: ${text} !important;
+  svg {
+    color: var(--primary-color);
   }
 `;
 

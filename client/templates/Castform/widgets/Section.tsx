@@ -1,5 +1,6 @@
 import { Email, Link, Phone } from '@mui/icons-material';
 import { ListItem, Section as SectionType } from '@reactive-resume/schema';
+import clsx from 'clsx';
 import get from 'lodash/get';
 import isArray from 'lodash/isArray';
 import isEmpty from 'lodash/isEmpty';
@@ -23,8 +24,10 @@ const Section: React.FC<SectionProps> = ({
 }) => {
   const section: SectionType = useAppSelector((state) => get(state.resume.present, path, {} as SectionType));
   const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
+  const layout: string[][][] = useAppSelector((state) => get(state.resume.present, 'metadata.layout'));
 
   const sectionId = useMemo(() => section.id || path.replace('sections.', ''), [path, section]);
+  const isSidebarSection = useMemo(() => layout.some((row) => row[1].includes(sectionId)), [layout, sectionId]);
 
   if (!section.visible) return null;
 
@@ -35,7 +38,7 @@ const Section: React.FC<SectionProps> = ({
       <Heading>{section.name}</Heading>
 
       <div
-        className="grid items-start gap-4"
+        className={clsx('grid items-start gap-4', { invert: isSidebarSection })}
         style={{ gridTemplateColumns: `repeat(${section.columns}, minmax(0, 1fr))` }}
       >
         {section.items.map((item: ListItem) => {
@@ -76,8 +79,13 @@ const Section: React.FC<SectionProps> = ({
                           key={index}
                           className="mr-2 h-3 w-3 rounded-full border"
                           style={{
-                            borderColor: 'var(--primary-color)',
-                            backgroundColor: levelNum / (10 / 5) > index ? 'var(--primary-color)' : '',
+                            borderColor: isSidebarSection ? 'var(--text-color)' : 'var(--primary-color)',
+                            backgroundColor:
+                              levelNum / (10 / 5) > index
+                                ? isSidebarSection
+                                  ? 'var(--text-color)'
+                                  : 'var(--primary-color)'
+                                : '',
                           }}
                         />
                       ))}
@@ -94,7 +102,7 @@ const Section: React.FC<SectionProps> = ({
                 </DataDisplay>
               )}
 
-              {keywords && <div>{keywords.join(', ')}</div>}
+              {keywords && <span>{keywords.join(', ')}</span>}
 
               {(phone || email) && (
                 <div className="grid gap-1">
