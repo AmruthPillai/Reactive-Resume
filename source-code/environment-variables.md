@@ -169,3 +169,13 @@ You can either use S3 or any S3-compliant service such as DigitalOcean Spaces to
 #### `STORAGE_SECRET_KEY`
 
 **Required**: `yes`
+
+### Cache
+
+These are just some settings to help ease the repetitive requests made to the server.
+
+#### `PDF_DELETION_TIME`
+
+**Required**: `no`
+**Default Value**: `345600000 ms` / `4 days`
+**Description:** Determines when the PDF should be deleted from the server, in case the user tries to download it again (in ms)
