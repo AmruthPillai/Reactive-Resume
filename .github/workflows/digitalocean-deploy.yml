@@ -8,9 +8,8 @@ on:
       - completed
 
 jobs:
-  deploy:
+  on-success:
     runs-on: ubuntu-latest
-
     steps:
       - name: Install DigitalOcean CLI
         uses: digitalocean/action-doctl@v2.2.0
@@ -19,3 +18,9 @@ jobs:
 
       - name: Create Deployment with Latest Version
         run: doctl apps create-deployment ${{ secrets.DIGITALOCEAN_APP_ID }} --wait --force-rebuild
+
+  on-failure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Abruptly end the worklfow
+        run: exit 1
