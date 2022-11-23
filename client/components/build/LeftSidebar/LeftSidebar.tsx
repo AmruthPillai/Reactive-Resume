@@ -62,7 +62,7 @@ const LeftSidebar = () => {
     for (const item of left) {
       const id = (item as any).id;
       const component = (item as any).component;
-      const type = component.props.type || 'basic';
+      const type = component.props.type;
       const addMore = !!component.props.addMore;
 
       sectionsComponents.push(
@@ -142,9 +142,10 @@ const LeftSidebar = () => {
 
         <main>
           {sectionsList()}
+
           {customSections.map(({ id }) => (
             <section key={id} id={`section-${id}`}>
-              <Section path={`sections.${id}`} isEditable isHideable isDeletable />
+              <Section path={`sections.${id}`} type="custom" isEditable isHideable isDeletable />
             </section>
           ))}
 

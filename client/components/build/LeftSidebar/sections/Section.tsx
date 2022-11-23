@@ -47,12 +47,8 @@ const Section: React.FC<Props> = ({
   const visibility = useAppSelector<boolean>((state) => get(state.resume.present, `${path}.visible`, true));
 
   const handleAdd = () => {
-    const id = path.split('.')[1];
-    let modal: ModalName = validate(id) ? 'builder.sections.custom' : `builder.${path}`;
+    const modal: ModalName = `builder.sections.${type}`;
 
-    if (type) {
-      modal = `builder.sections.${type}`;
-    }
     dispatch(setModalState({ modal, state: { open: true, payload: { path } } }));
   };
 
