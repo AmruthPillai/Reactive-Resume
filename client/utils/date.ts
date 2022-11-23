@@ -38,6 +38,10 @@ export const formatDateString = (date: string | DateRange, formatStr: string): s
 
   if (!dayjs(date.start).isValid()) return null;
 
+  if (dayjs(date.start).isSame(date.end)) {
+    return dayjs(date.start).format(formatStr);
+  }
+
   if (!isEmpty(date.end) && dayjs(date.end).isValid()) {
     return `${dayjs(date.start).format(formatStr)} - ${dayjs(date.end).format(formatStr)}`;
   }
