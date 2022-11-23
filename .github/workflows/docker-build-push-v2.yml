@@ -1,8 +1,6 @@
 name: Build and Push Docker Image
 
-on:
-  release:
-    types: [published]
+on: [workflow_dispatch]
 
 jobs:
   build_matrix:
