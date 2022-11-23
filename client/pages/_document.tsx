@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 import NextDocument, { DocumentContext, Head, Html, Main, NextScript } from 'next/document';
 
 const Document: NextPage = () => (
-  <Html>
+  <Html lang="en">
     <Head />
 
     <body>
