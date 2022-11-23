@@ -4,7 +4,7 @@ on: [workflow_dispatch]
 
 jobs:
   build_matrix:
-    name: Build and Push Docker Images of Client and Server
+    name: Build and Push Docker Image
     runs-on: ubuntu-latest
 
     env:
@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         arch: [amd64, arm64]
-        images: [client, server]
+        image: [client, server]
 
     steps:
       - name: Checkout the repository
