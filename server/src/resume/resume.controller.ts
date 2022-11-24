@@ -56,8 +56,6 @@ export class ResumeController {
     @User('id') userId?: number,
     @Query('secretKey') secretKey?: string
   ) {
-    console.log('ResumeController~findOneByIdentifier', username, slug, userId, secretKey);
-
     return this.resumeService.findOneByIdentifier(username, slug, userId, secretKey);
   }
 
