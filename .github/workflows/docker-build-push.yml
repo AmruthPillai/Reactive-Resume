@@ -16,7 +16,6 @@ jobs:
 
     strategy:
       matrix:
-        arch: [amd64, arm64]
         image: [client, server]
 
     steps:
@@ -30,7 +29,7 @@ jobs:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2.1.0
         with:
-          platforms: ${{ matrix.arch }}
+          platforms: amd64
 
       - id: buildx
         name: Set up Docker Buildx
@@ -54,7 +53,7 @@ jobs:
         with:
           context: .
           push: true
-          platforms: ${{ matrix.arch }}
+          platforms: linux/amd64
           file: ${{ matrix.image }}/Dockerfile
           tags: |
             amruthpillai/reactive-resume:${{ matrix.image }}-latest
