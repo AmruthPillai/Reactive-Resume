@@ -55,7 +55,7 @@ jobs:
           push: true
           platforms: ${{ matrix.arch }}
           file: ${{ matrix.image }}/Dockerfile
-          build_args: |
+          build-args: |
             "SENTRY_ORG=reactive-resume"
             "SENTRY_URL=https://sentry.io"
             "SENTRY_PROJECT=${{ matrix.image }}"
