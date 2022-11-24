@@ -18,7 +18,7 @@ You have complete control over what goes into your resume, how it looks, what co
 ## Table of Contents
 
 - [Reactive Resume](#reactive-resume)
-  - [Go to App Docs](https://docs.rxresu.me)](#go-to-app--docs)
+  - [Go to App Docs](https://docs.rxresu.me)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Languages](#languages)
