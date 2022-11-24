@@ -1,3 +1,4 @@
+import env from '@beam-australia/react-env';
 import { Resume } from '@reactive-resume/schema';
 import { AxiosResponse } from 'axios';
 
@@ -68,7 +69,13 @@ export const fetchResumeByIdentifier = async ({
       .get<Resume>(`/resume/${username}/${slug}`, { params: { secretKey } })
       .then((res) => res.data);
 
-    console.log('ResumeService~fetchResumeByIdentifier', 'isNotBrowser', JSON.stringify(resume));
+    console.log('ResumeService~fetchResumeByIdentifier', 'using axios', JSON.stringify(resume));
+
+    const resumeJSON = fetch(env('SERVER_URL') + `/resume/${username}/${slug}?secretKey=${secretKey}`).then(
+      (response) => response.json()
+    );
+
+    console.log('ResumeService~fetchResumeByIdentifier', 'using fetch', JSON.stringify(resumeJSON));
 
     return resume;
   }
