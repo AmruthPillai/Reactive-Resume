@@ -2,7 +2,6 @@ import { Logger, ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
-import * as Sentry from '@sentry/node';
 import cookieParser from 'cookie-parser';
 
 import { AppModule } from './app.module';
@@ -18,9 +17,6 @@ const bootstrap = async () => {
 
   // Pipes
   app.useGlobalPipes(new ValidationPipe({ transform: true }));
-
-  // Error Logging
-  Sentry.init({ dsn: configService.get<string>('logging.sentryDSN') });
 
   // Server Port
   const port = configService.get<number>('app.port');
