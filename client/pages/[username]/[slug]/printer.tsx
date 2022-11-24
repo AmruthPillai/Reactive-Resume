@@ -27,7 +27,7 @@ type Props = {
 
 export const getServerSideProps: GetServerSideProps<Props | Promise<Props>, QueryParams> = async ({
   query,
-  locale,
+  locale = 'en',
 }) => {
   const { username, slug, secretKey } = query as QueryParams;
 
@@ -35,7 +35,7 @@ export const getServerSideProps: GetServerSideProps<Props | Promise<Props>, Quer
     if (isEmpty(secretKey)) throw new Error('There is no secret key!');
 
     const resume = await fetchResumeByIdentifier({ username, slug, options: { secretKey } });
-    const displayLocale = get(resume, 'metadata.locale') ?? locale ?? 'en';
+    const displayLocale = get(resume, 'metadata.locale') ?? locale;
 
     return {
       props: {
