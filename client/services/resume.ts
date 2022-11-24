@@ -64,10 +64,22 @@ export const fetchResumeByIdentifier = async ({
   if (!isBrowser) {
     const secretKey = options.secretKey;
 
-    return axios.get<Resume>(`/resume/${username}/${slug}`, { params: { secretKey } }).then((res) => res.data);
+    console.log('ResumeService~fetchResumeByIdentifier', 'isNotBrowser', username, slug, secretKey);
+
+    const resume = axios.get<Resume>(`/resume/${username}/${slug}`, { params: { secretKey } }).then((res) => res.data);
+
+    console.log('ResumeService~fetchResumeByIdentifier', 'isNotBrowser', resume);
+
+    return resume;
   }
 
-  return axios.get<Resume>(`/resume/${username}/${slug}`).then((res) => res.data);
+  console.log('ResumeService~fetchResumeByIdentifier', 'isBrowser', username, slug);
+
+  const resume = axios.get<Resume>(`/resume/${username}/${slug}`).then((res) => res.data);
+
+  console.log('ResumeService~fetchResumeByIdentifier', 'isBrowser', resume);
+
+  return resume;
 };
 
 export const fetchResumeByShortId = async ({ shortId }: FetchResumeByShortIdParams) =>

@@ -162,6 +162,8 @@ export class ResumeService {
       throw new HttpException('The resume you are looking does not exist, or maybe never did?', HttpStatus.NOT_FOUND);
     }
 
+    console.log('ResumeService~findOneByIdentifier', resume);
+
     return resume;
   }
 
