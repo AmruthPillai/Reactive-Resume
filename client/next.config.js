@@ -1,5 +1,6 @@
 const { version } = require('../package.json');
 const { i18n } = require('./next-i18next.config');
+const { withSentryConfig } = require('@sentry/nextjs');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -13,6 +14,10 @@ const nextConfig = {
 
   images: {
     domains: ['cdn.rxresu.me', 'www.gravatar.com'],
+  },
+
+  sentry: {
+    hideSourceMaps: true,
   },
 
   // Hack to make Tailwind darkMode 'class' strategy with CSS Modules
@@ -47,4 +52,9 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+/** @type {import('@sentry/nextjs').SentryWebpackPluginOptions} */
+const sentryConfig = {
+  silent: true,
+};
+
+module.exports = withSentryConfig(nextConfig, sentryConfig);
