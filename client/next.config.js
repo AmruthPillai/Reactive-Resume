@@ -55,6 +55,7 @@ const nextConfig = {
 /** @type {import('@sentry/nextjs').SentryWebpackPluginOptions} */
 const sentryConfig = {
   silent: true,
+  dryRun: process.env.NODE_ENV !== 'production',
 };
 
 module.exports = withSentryConfig(nextConfig, sentryConfig);
