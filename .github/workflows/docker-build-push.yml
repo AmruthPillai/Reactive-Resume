@@ -48,18 +48,25 @@ jobs:
           username: $GITHUB_REPOSITORY_OWNER
           password: ${{ secrets.GH_TOKEN }}
 
+      - name: Setup Sentry CLI
+        uses: mathieu-bour/setup-sentry-cli@v1.3.0
+        with:
+          token: ${{ secrets.SENTRY_TOKEN }}
+          organization: reactive-resume
+          project: ${{ matrix.image }}
+
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v3.2.0
+        env:
+          SENTRY_ORG: reactive-resume
+          SENTRY_URL: https://sentry.io
+          SENTRY_PROJECT: ${{ matrix.image }}
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_TOKEN }}
         with:
           context: .
           push: true
           platforms: ${{ matrix.arch }}
           file: ${{ matrix.image }}/Dockerfile
-          secrets: |
-            "SENTRY_ORG=reactive-resume"
-            "SENTRY_URL=https://sentry.io"
-            "SENTRY_PROJECT=${{ matrix.image }}"
-            "SENTRY_AUTH_TOKEN=${{ secrets.SENTRY_TOKEN }}"
           tags: |
             amruthpillai/reactive-resume:${{ matrix.image }}-latest
             amruthpillai/reactive-resume:${{ matrix.image }}-${{ steps.version.outputs.current-version }}
