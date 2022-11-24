@@ -71,7 +71,7 @@ export const fetchResumeByIdentifier = async ({
 
     console.log('ResumeService~fetchResumeByIdentifier', 'using axios', JSON.stringify(resume));
 
-    const resumeJSON = fetch(env('SERVER_URL') + `/resume/${username}/${slug}?secretKey=${secretKey}`).then(
+    const resumeJSON = await fetch(env('SERVER_URL') + `/resume/${username}/${slug}?secretKey=${secretKey}`).then(
       (response) => response.json()
     );
 
