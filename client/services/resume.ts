@@ -63,28 +63,13 @@ export const fetchResumeByIdentifier = async ({
   options = { secretKey: '' },
 }: FetchResumeByIdentifierParams) => {
   if (!isBrowser) {
+    const serverUrl = env('SERVER_URL');
     const secretKey = options.secretKey;
 
-    const resume = await axios
-      .get<Resume>(`/resume/${username}/${slug}`, { params: { secretKey } })
-      .then((res) => res.data);
-
-    console.log('ResumeService~fetchResumeByIdentifier', 'using axios', JSON.stringify(resume));
-
-    const resumeJSON = await fetch(env('SERVER_URL') + `/resume/${username}/${slug}?secretKey=${secretKey}`).then(
-      (response) => response.json()
-    );
-
-    console.log('ResumeService~fetchResumeByIdentifier', 'using fetch', JSON.stringify(resumeJSON));
-
-    return resume;
+    return fetch(`${serverUrl}/resume/${username}/${slug}?secretKey=${secretKey}`).then((response) => response.json());
   }
 
-  const resume = await axios.get<Resume>(`/resume/${username}/${slug}`).then((res) => res.data);
-
-  console.log('ResumeService~fetchResumeByIdentifier', 'isBrowser', JSON.stringify(resume));
-
-  return resume;
+  return axios.get<Resume>(`/resume/${username}/${slug}`).then((res) => res.data);
 };
 
 export const fetchResumeByShortId = async ({ shortId }: FetchResumeByShortIdParams) =>
