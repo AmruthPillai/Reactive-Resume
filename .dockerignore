@@ -2,9 +2,9 @@
 /app
 
 # Build Artifacts
-dist
-.next
-.turbo
+**/.turbo
+/server/dist
+/client/.next
 
 # IDEs
 .vscode
@@ -18,8 +18,11 @@ SECURITY.md
 CHANGELOG.md
 CODE_OF_CONDUCT.md
 
+# Git History
+**/.git
+
 # Project Dependencies
-node_modules
+**/node_modules
 
 # Docker
 Dockerfile
