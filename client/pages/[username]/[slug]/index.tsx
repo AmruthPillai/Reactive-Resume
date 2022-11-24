@@ -61,10 +61,12 @@ const Preview: NextPage<Props> = ({ username, slug, resume: initialData }) => {
   }, [dispatch, initialData]);
 
   useEffect(() => {
-    if (!isEmpty(resume) && router.locale !== resume.metadata.locale) {
+    const locale = get(resume, 'metadata.locale', 'en');
+
+    if (!isEmpty(resume) && router.locale !== locale) {
       const { pathname, asPath, query } = router;
 
-      router.push({ pathname, query }, asPath, { locale: resume.metadata.locale });
+      router.push({ pathname, query }, asPath, { locale });
     }
   }, [resume, router]);
 

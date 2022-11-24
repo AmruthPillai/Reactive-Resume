@@ -35,7 +35,7 @@ export const getServerSideProps: GetServerSideProps<Props | Promise<Props>, Quer
     if (isEmpty(secretKey)) throw new Error('There is no secret key!');
 
     const resume = await fetchResumeByIdentifier({ username, slug, options: { secretKey } });
-    const displayLocale = resume.metadata.locale || locale || 'en';
+    const displayLocale = get(resume, 'metadata.locale') ?? locale ?? 'en';
 
     return {
       props: {
