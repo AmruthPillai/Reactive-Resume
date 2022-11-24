@@ -18,7 +18,7 @@ You have complete control over what goes into your resume, how it looks, what co
 ## Table of Contents
 
 - [Reactive Resume](#reactive-resume)
-  - [Go to App | [Docs](https://docs.rxresu.me)](#go-to-app--docs)
+  - [Go to App Docs](https://docs.rxresu.me)](#go-to-app--docs)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Languages](#languages)
@@ -93,7 +93,7 @@ You have complete control over what goes into your resume, how it looks, what co
 - Swedish (Svenska)
 - Tamil (தமிழ்)
 - Turkish (Türkçe)
-- Ukranian (Українська мова)
+- Ukrainian (Українська мова)
 - Vietnamese (Tiếng Việt)
 
 Help by [translating Reactive Resume](https://translate.rxresu.me) to your language!
@@ -104,7 +104,7 @@ The docs include an extensive [Tutorial](https://docs.rxresu.me/tutorial) sectio
 
 ## Build from Source
 
-For extensive information on how to build the app on your local machine, head over to the docs's [Source Code](https://docs.rxresu.me/source-code) section.
+For extensive information on how to build the app on your local machine, head over to the docs [Source Code](https://docs.rxresu.me/source-code) section.
 
 ## Contributing
 
