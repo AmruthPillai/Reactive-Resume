@@ -54,7 +54,7 @@ jobs:
           SENTRY_URL: https://sentry.io
           SENTRY_ORG: reactive-resume
           SENTRY_PROJECT: ${{ matrix.image }}
-          SENTRY_TOKEN: ${{ secrets.SENTRY_TOKEN }}
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_TOKEN }}
         with:
           context: .
           push: true
