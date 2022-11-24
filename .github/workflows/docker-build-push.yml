@@ -48,6 +48,13 @@ jobs:
           username: $GITHUB_REPOSITORY_OWNER
           password: ${{ secrets.GH_TOKEN }}
 
+      - name: Setup Sentry CLI
+        uses: mathieu-bour/setup-sentry-cli@v1.3.0
+        with:
+          token: ${{ secrets.SENTRY_TOKEN }}
+          organization: reactive-resume
+          project: ${{ matrix.image }}
+
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v3.2.0
         with:
