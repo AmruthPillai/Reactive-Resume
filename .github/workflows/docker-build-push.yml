@@ -56,10 +56,10 @@ jobs:
           platforms: ${{ matrix.arch }}
           file: ${{ matrix.image }}/Dockerfile
           secrets: |
-            SENTRY_URL=https://sentry.io
-            SENTRY_ORG=reactive-resume
-            SENTRY_PROJECT=${{ matrix.image }}
-            SENTRY_AUTH_TOKEN=${{ secrets.SENTRY_TOKEN }}
+            "SENTRY_ORG=reactive-resume"
+            "SENTRY_URL=https://sentry.io"
+            "SENTRY_PROJECT=${{ matrix.image }}"
+            "SENTRY_AUTH_TOKEN=${{ secrets.SENTRY_TOKEN }}"
           tags: |
             amruthpillai/reactive-resume:${{ matrix.image }}-latest
             amruthpillai/reactive-resume:${{ matrix.image }}-${{ steps.version.outputs.current-version }}
