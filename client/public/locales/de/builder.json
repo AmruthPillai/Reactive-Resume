@@ -1,10 +1,9 @@
 {
   "common": {
     "actions": {
-      "add": "{{token}} hinzufügen",
-      "delete": "{{token}} löschen",
-      "edit": "{{token}} bearbeiten",
-      "duplicate": "Abschnitt duplizieren"
+      "add": "Neue {{token}} hinzufügen",
+      "delete": "Löschen {{token}}",
+      "edit": "Bearbeiten {{token}}"
     },
     "columns": {
       "heading": "Spalten",
@@ -18,10 +17,10 @@
         "label": "Beschreibung"
       },
       "email": {
-        "label": "E-Mail-Adresse"
+        "label": "E-Mail Adresse"
       },
       "end-date": {
-        "help-text": "Dieses Feld leer lassen, wenn dieser Eintrag noch kein Enddatum hat.",
+        "help-text": "Dieses Feld leer lassen, wenn noch vorhanden",
         "label": "Enddatum"
       },
       "keywords": {
@@ -70,7 +69,7 @@
       "empty-text": "Diese Liste ist leer."
     },
     "tooltip": {
-      "delete-item": "Sind Sie sicher, dass Sie dieses Element löschen möchten? Dies lässt sich nicht rückgängig machen.",
+      "delete-item": "Sind Sie sicher, dass Sie dieses Element löschen möchten? Dies ist eine unumkehrbare Aktion.",
       "delete-section": "Abschnitt löschen",
       "rename-section": "Abschnitt umbenennen",
       "toggle-visibility": "Sichtbarkeit umschalten"
@@ -87,7 +86,7 @@
       "zoom-in": "Vergrößern",
       "zoom-out": "Verkleinern",
       "undo": "Rückgängig machen",
-      "redo": "Wiederholen"
+      "redo": "Redo"
     }
   },
   "header": {
@@ -97,8 +96,8 @@
       "rename": "Umbenennen",
       "share-link": "Link teilen",
       "tooltips": {
-        "delete": "Sind Sie sicher, dass Sie diesen Lebenslauf löschen möchten? Dies lässt sich nicht rückgängig machen.",
-        "share-link": "Sie müssen die Sichtbarkeit Ihres Lebenslaufs in Öffentlich ändern, um ihn für andere sichtbar zu machen."
+        "delete": "Sind Sie sicher, dass Sie diesen Lebenslauf löschen möchten? Dies ist eine unumkehrbare Aktion.",
+        "share-link": "Du musst die Sichtbarkeit deines Lebenslaufs in die Öffentlichkeit ändern, um ihn für andere sichtbar zu machen."
       }
     }
   },
@@ -107,7 +106,7 @@
       "awards": {
         "form": {
           "awarder": {
-            "label": "Auszeichner"
+            "label": "Auszeichnung"
           }
         }
       },
@@ -120,7 +119,7 @@
           "label": "Überschrift"
         },
         "name": {
-          "label": "Vollständiger Name"
+          "label": "Voller Name"
         },
         "birthdate": {
           "label": "Geburtsdatum"
@@ -128,7 +127,7 @@
         "photo-filters": {
           "effects": {
             "border": {
-              "label": "Rahmen"
+              "label": "Grenze"
             },
             "grayscale": {
               "label": "Graustufen"
@@ -159,13 +158,13 @@
       "education": {
         "form": {
           "area-study": {
-            "label": "Studienfach"
+            "label": "Studienbereich"
           },
           "courses": {
             "label": "Kurse"
           },
           "degree": {
-            "label": "Abschluss"
+            "label": "Grad"
           },
           "grade": {
             "label": "Note"
@@ -177,7 +176,7 @@
       },
       "location": {
         "address": {
-          "label": "Straße"
+          "label": "Adresse"
         },
         "city": {
           "label": "Stadt"
@@ -185,12 +184,12 @@
         "country": {
           "label": "Land"
         },
-        "heading": "Anschrift",
+        "heading": "Standort",
         "postal-code": {
           "label": "Postleitzahl"
         },
         "region": {
-          "label": "Bundesland"
+          "label": "Region"
         }
       },
       "profiles": {
@@ -202,7 +201,7 @@
             "label": "Benutzername"
           }
         },
-        "heading": "Soziale Netzwerke",
+        "heading": "Profiles",
         "heading_one": "Profil"
       },
       "publications": {
@@ -240,16 +239,16 @@
         "heading": "Exportieren",
         "json": {
           "primary": "JSON",
-          "secondary": "Laden Sie eine JSON-Version Ihres Lebenslaufs herunter, die Sie wieder in Reactive Resume importieren können."
+          "secondary": "Laden Sie eine JSON-Version Ihres Lebenslaufs herunter, die Sie wieder in Reaktives Lebenslauf importieren können."
         },
         "pdf": {
           "loading": {
             "primary": "PDF wird erstellt",
-            "secondary": "Bitte warten Sie, während Ihr PDF generiert wird. Dies kann bis zu 15 Sekunden dauern."
+            "secondary": "Bitte warten Sie, wenn Ihr PDF generiert wird, dies kann bis zu 15 Sekunden dauern."
           },
           "normal": {
             "primary": "PDF",
-            "secondary": "Laden Sie sich ein PDF Ihres Lebenslaufs herunter, dass Sie ausdrucken oder an Ihren Traumarbeitgeber senden können. Diese Datei kann nicht zur weiteren Bearbeitung importiert werden."
+            "secondary": "Laden Sie sich ein PDF Ihres Lebenslaufs herunter, das Sie ausdrucken und an Ihren Traumjob senden können. Diese Datei kann nicht zur weiteren Bearbeitung importiert werden."
           }
         }
       },
@@ -257,20 +256,18 @@
         "heading": "Layout",
         "tooltip": {
           "reset-layout": "Layout zurücksetzen"
-        },
-        "main": "Hauptteil",
-        "sidebar": "Seitenleiste"
+        }
       },
       "links": {
         "bugs-features": {
-          "body": "Sind Sie bei der Erstellung Ihres Lebenslaufs auf ein Problem gestoßen? Oder haben Sie eine tolle Idee, die Sie hinzufügen möchten? Erstellen Sie ein Ticket auf GitHub.",
-          "button": "GitHub Issues",
-          "heading": "Fehler? Verbesserungsvorschläge?"
+          "body": "Hält Sie etwas davon ab, einen Lebenslauf zu erstellen? Oder haben Sie eine tolle Idee, die Sie hinzufügen möchten? Erhöhen Sie einen Eintrag auf GitHub, um loszulegen.",
+          "button": "GitHub Themen",
+          "heading": "Fehler? Feature-Anfragen?"
         },
         "donate": {
-          "body": "Sollte Ihnen Reactive Resume gefallen, möchte ich Sie bitten, etwas zu spenden, damit die App für immer kostenlos und werbefrei bleibt.",
+          "body": "Wenn Ihnen Reactive Resume gefallen hat, denken Sie bitte darüber nach, so viel wie möglich zu spenden, damit die App für immer kostenlos und werbefrei bleibt.",
           "button": "Kaufe mir einen Kaffee",
-          "heading": "Spenden Sie an Reactive Resume."
+          "heading": "Spenden an Reaktives Lebenslauf"
         },
         "github": "Quellcode",
         "docs": "Dokumentation",
@@ -280,44 +277,43 @@
         "global": {
           "date": {
             "primary": "Datum",
-            "secondary": "Datumsformat für die gesamte App.",
-            "prefix": "Z.B."
+            "secondary": "Datumsformat für die gesamte App"
           },
-          "heading": "Global",
+          "heading": "Globale",
           "language": {
             "primary": "Sprache",
-            "secondary": "Anzeigesprache, die in der gesamten App verwendet wird."
+            "secondary": "Sprache anzeigen, die in der gesamten App verwendet wird"
           },
           "theme": {
-            "primary": "App Design"
+            "primary": "Thema"
           }
         },
         "heading": "Einstellungen",
         "page": {
           "format": {
-            "primary": "Papiergröße",
-            "secondary": "Legt die Seitenabmessungen Ihres Lebenslaufs fest."
+            "primary": "Papier größe",
+            "secondary": "Legt die Abmessungen Ihrer Lebenslaufseiten fest"
           },
           "break-line": {
-            "primary": "Seitenumbruch anzeigen",
-            "secondary": "Zeigt den Seitenumbruch als Linie auf allen Seiten an."
+            "primary": "Linie anhalten",
+            "secondary": "Zeile auf allen Seiten anzeigen, um die Höhe einer A4-Seite zu markieren"
           },
           "heading": "Seite",
           "orientation": {
-            "disabled": "Hat keine Auswirkung, wenn nur eine Seite vorhanden ist.",
+            "disabled": "Hat keine Auswirkung, wenn nur eine Seite vorhanden ist",
             "primary": "Ausrichtung",
-            "secondary": "Legt fest, ob Seiten horizontal oder vertikal angezeigt werden sollen."
+            "secondary": "Ob Seiten horizontal oder vertikal angezeigt werden sollen"
           }
         },
         "resume": {
           "heading": "Lebenslauf",
           "reset": {
             "primary": "Alles zurücksetzen",
-            "secondary": "Zu viele Fehler gemacht? Klicken Sie hier, um alle Änderungen zurückzusetzen und von vorne zu beginnen. Vorsicht! Diese Aktion kann nicht rückgängig gemacht werden."
+            "secondary": "Zu viele Fehler gemacht? Klicken Sie hier, um alle Änderungen zurückzusetzen und bei Null zu beginnen. Sei vorsichtig, diese Aktion kann nicht rückgängig gemacht werden."
           },
           "sample": {
             "primary": "Beispieldaten laden",
-            "secondary": "Sie sind nicht sicher, wo Sie anfangen sollen? Klicken Sie hier, um Beispieldaten zu laden. So können Sie sich ansehen, wie ein vollständiger Lebenslauf aussieht."
+            "secondary": "Nicht sicher, wo man anfangen soll? Klicken Sie hier, um ein paar Beispieldaten zu laden, um zu sehen, wie ein vollständiger Lebenslauf aussieht."
           }
         }
       },
@@ -327,8 +323,8 @@
           "label": "Kurze URL bevorzugen"
         },
         "visibility": {
-          "subtitle": "Erlaubt jedem, dem Sie diesen Link schicken, Ihren Lebenslauf anzusehen.",
-          "title": "Öffentlich zugänglich"
+          "subtitle": "Erlaube jemandem mit einem Link deinen Lebenslauf anzusehen",
+          "title": "Öffentlich"
         }
       },
       "templates": {
@@ -337,16 +333,16 @@
       "theme": {
         "form": {
           "background": {
-            "label": "Hintergrundfarbe"
+            "label": "Hintergrund"
           },
           "primary": {
-            "label": "Primärfarbe"
+            "label": "Primär"
           },
           "text": {
-            "label": "Textfarbe"
+            "label": "Text"
           }
         },
-        "heading": "Lebenslauf Design"
+        "heading": "Thema"
       },
       "typography": {
         "form": {
