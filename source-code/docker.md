@@ -21,7 +21,9 @@ cd Reactive-Resume
 pnpm install
 ```
 
-5. Copy the `.env.example` file to `.env` in the project root and fill it with values according to your setup. To know which environment variables are required, and about what they do, head over [this section](https://docs.rxresu.me/source-code/environment-variables). For a quickstart you only need to change ```PUBLIC_URL``` and ```PUBLIC_SERVER_URL``` to the IP adress of the machine you're running the server on, ```SECRET_KEY``` and ```JWT_SECRET```.
+5. Copy the `.env.example` file to `.env` in the project root and fill it with values according to your setup. To know which environment variables are required, and about what they do, head over [this section](https://docs.rxresu.me/source-code/environment-variables). For a quickstart you only need to change ```PUBLIC_URL``` and ```PUBLIC_SERVER_URL``` to the IP adress of the machine you're running the server on, ```SECRET_KEY``` and ```JWT_SECRET```.  
+
+**Note:** For this development setup, server and client are served on the same port _(default: 3000)_. Make sure your ```PUBLIC_URL``` and ```PUBLIC_SERVER_URL``` reflect this. For ```POSTGRES_HOST``` you might need to change the value from the container name _(default: postgres)_ to _localhost_.
 
 ```bash
 cp .env.example .env
