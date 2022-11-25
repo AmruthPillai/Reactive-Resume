@@ -103,7 +103,7 @@ const Layout = () => {
                   <Droppable key={index} droppableId={index}>
                     {(provided) => (
                       <div ref={provided.innerRef} className={styles.column} {...provided.droppableProps}>
-                        <p className={styles.heading}>{columnIndex ? 'Sidebar' : 'Main'}</p>
+                        <p className={styles.heading}>{columnIndex ? t<string>('builder.rightSidebar.sections.layout.sidebar') : t<string>('builder.rightSidebar.sections.layout.main')}</p>
 
                         <div className={styles.base} />
 
