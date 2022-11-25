@@ -11,6 +11,7 @@ import { HttpExceptionFilter } from './filters/http-exception.filter';
 import { FontsModule } from './fonts/fonts.module';
 import { HealthModule } from './health/health.module';
 import { IntegrationsModule } from './integrations/integrations.module';
+import { SentryInterceptor } from './interceptors/sentry.interceptor';
 import { MailModule } from './mail/mail.module';
 import { PrinterModule } from './printer/printer.module';
 import { ResumeModule } from './resume/resume.module';
@@ -39,6 +40,10 @@ import { UsersModule } from './users/users.module';
     {
       provide: APP_INTERCEPTOR,
       useClass: ClassSerializerInterceptor,
+    },
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: SentryInterceptor,
     },
     {
       provide: APP_FILTER,
