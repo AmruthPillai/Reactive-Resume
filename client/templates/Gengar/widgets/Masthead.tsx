@@ -83,7 +83,7 @@ export const MastheadSidebar: React.FC = () => {
             icon={getProfileIcon(network)}
             link={url && addHttp(url)}
             className="!gap-2 text-xs"
-            textClassName="invert"
+            textClassName={clsx({ invert: contrast === 'light' })}
           >
             {username}
           </DataDisplay>
