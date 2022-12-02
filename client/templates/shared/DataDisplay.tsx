@@ -15,7 +15,7 @@ const DataDisplay: React.FC<React.PropsWithChildren<Props>> = ({ icon, link, cla
     return (
       <div className={clsx('inline-flex items-center gap-1', className)}>
         {icon}
-        <a href={link} target="_blank" rel="noreferrer" className={textClassName}>
+        <a href={link} target="_blank" rel="noreferrer" className="{textClassName}">
           {children}
         </a>
       </div>
