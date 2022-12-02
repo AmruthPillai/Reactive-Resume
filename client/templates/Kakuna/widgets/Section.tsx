@@ -1,4 +1,4 @@
-import { Email, Phone } from '@mui/icons-material';
+import { Email, Link, Phone } from '@mui/icons-material';
 import { ListItem, Section as SectionType } from '@reactive-resume/schema';
 import get from 'lodash/get';
 import isArray from 'lodash/isArray';
@@ -8,8 +8,9 @@ import { useMemo } from 'react';
 import Markdown from '@/components/shared/Markdown';
 import { useAppSelector } from '@/store/hooks';
 import { SectionProps } from '@/templates/sectionMap';
+import DataDisplay from '@/templates/shared/DataDisplay';
 import { formatDateString } from '@/utils/date';
-import { addHttp, parseListItemPath } from '@/utils/template';
+import { parseListItemPath } from '@/utils/template';
 
 import BadgeDisplay from './BadgeDisplay';
 import Heading from './Heading';
@@ -87,9 +88,9 @@ const Section: React.FC<SectionProps> = ({
 
               {url && (
                 <div className="inline-flex justify-center">
-                  <a href={addHttp(url)} target="_blank" rel="noreferrer">
+                  <DataDisplay link={url} icon={<Link />}>
                     {url}
-                  </a>
+                  </DataDisplay>
                 </div>
               )}
 
