@@ -23,9 +23,11 @@ COPY --from=dependencies /app/client/node_modules ./client/node_modules
 
 ARG TURBO_TEAM
 ARG TURBO_TOKEN
+ARG SENTRY_AUTH_TOKEN
 
 ENV TURBO_TEAM $TURBO_TEAM
 ENV TURBO_TOKEN $TURBO_TOKEN
+ENV SENTRY_AUTH_TOKEN $SENTRY_AUTH_TOKEN
 
 RUN pnpm run build --filter client
 
