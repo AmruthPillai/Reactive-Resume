@@ -3,10 +3,10 @@
   "version": "3.6.14",
   "private": true,
   "scripts": {
-    "dev": "env-cmd --silent turbo run dev",
+    "dev": "env-cmd --silent cross-var cross-env VERSION=$npm_package_version turbo run dev",
     "lint": "turbo run lint",
-    "build": "env-cmd --silent turbo run build",
-    "start": "env-cmd --silent turbo run start",
+    "build": "env-cmd --silent cross-var cross-env VERSION=$npm_package_version turbo run build",
+    "start": "env-cmd --silent cross-var cross-env VERSION=$npm_package_version turbo run start",
     "format": "prettier --write ."
   },
   "workspaces": [
@@ -15,6 +15,8 @@
     "server"
   ],
   "dependencies": {
+    "cross-env": "^7.0.3",
+    "cross-var": "^1.1.0",
     "env-cmd": "^10.1.0",
     "turbo": "^1.6.3"
   },

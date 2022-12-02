@@ -23,9 +23,12 @@ const bootstrap = async () => {
 
   // Sentry Error Logging
   const sentryDSN = configService.get<string>('logging.sentryDSN');
+  const version = configService.get<string>('app.version');
+
   if (sentryDSN) {
     Sentry.init({
       dsn: sentryDSN,
+      release: version,
       tracesSampleRate: 1.0,
       enabled: process.env.NODE_ENV === 'production',
     });

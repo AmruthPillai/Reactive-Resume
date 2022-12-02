@@ -2,6 +2,7 @@ import { registerAs } from '@nestjs/config';
 
 export default registerAs('app', () => ({
   timezone: process.env.TZ,
+  version: process.env.VERSION,
   environment: process.env.NODE_ENV,
   secretKey: process.env.SECRET_KEY,
   port: parseInt(process.env.PORT, 10) || 3100,

@@ -48,6 +48,16 @@ jobs:
           username: $GITHUB_REPOSITORY_OWNER
           password: ${{ secrets.GH_TOKEN }}
 
+      - name: Create Sentry Release
+        uses: getsentry/action-release@v1.2.1
+        env:
+          SENTRY_ORG: reactive-resume
+          SENTRY_PROJECT: ${{ matrix.image }}
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+        with:
+          environment: production
+          version: ${{ steps.version.outputs.current-version }}
+
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v3.2.0
         with:
