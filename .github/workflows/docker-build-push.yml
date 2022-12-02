@@ -48,6 +48,21 @@ jobs:
           username: $GITHUB_REPOSITORY_OWNER
           password: ${{ secrets.GH_TOKEN }}
 
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v3.2.0
+        with:
+          context: .
+          push: true
+          platforms: linux/amd64
+          file: ${{ matrix.image }}/Dockerfile
+          secrets: |
+            "SENTRY_AUTH_TOKEN=${{ secrets.SENTRY_AUTH_TOKEN }}"
+          tags: |
+            amruthpillai/reactive-resume:${{ matrix.image }}-latest
+            amruthpillai/reactive-resume:${{ matrix.image }}-${{ steps.version.outputs.current-version }}
+            ghcr.io/amruthpillai/reactive-resume:${{ matrix.image }}-latest
+            ghcr.io/amruthpillai/reactive-resume:${{ matrix.image }}-${{ steps.version.outputs.current-version }}
+
       - name: Create Sentry Release
         uses: getsentry/action-release@v1.2.1
         env:
@@ -57,16 +72,3 @@ jobs:
         with:
           environment: production
           version: ${{ steps.version.outputs.current-version }}
-
-      - name: Build and Push Docker Image
-        uses: docker/build-push-action@v3.2.0
-        with:
-          context: .
-          push: true
-          platforms: linux/amd64
-          file: ${{ matrix.image }}/Dockerfile
-          tags: |
-            amruthpillai/reactive-resume:${{ matrix.image }}-latest
-            amruthpillai/reactive-resume:${{ matrix.image }}-${{ steps.version.outputs.current-version }}
-            ghcr.io/amruthpillai/reactive-resume:${{ matrix.image }}-latest
-            ghcr.io/amruthpillai/reactive-resume:${{ matrix.image }}-${{ steps.version.outputs.current-version }}
