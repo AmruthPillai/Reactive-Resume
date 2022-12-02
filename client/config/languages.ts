@@ -13,7 +13,7 @@ export const languages: Language[] = [
   { code: 'ca', name: 'Catalan', localName: 'Valencian' },
   { code: 'cs', name: 'Czech', localName: 'čeština' },
   { code: 'da', name: 'Danish', localName: 'Dansk' },
-  { code: 'de', name: 'German', localName: 'Deutsch' },
+  { code: 'de', name: 'German', localName: 'Deutsch Formell / Sie' },
   { code: 'el', name: 'Greek', localName: 'Ελληνικά' },
   { code: 'en', name: 'English' },
   { code: 'es', name: 'Spanish', localName: 'Español' },
