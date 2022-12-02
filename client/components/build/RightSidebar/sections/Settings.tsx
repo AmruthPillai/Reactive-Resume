@@ -51,7 +51,7 @@ const Settings = () => {
   const pageConfig: PageConfig | undefined = useMemo(() => get(resume, 'metadata.page'), [resume]);
 
   const isDarkMode = useMemo(() => theme === 'dark', [theme]);
-  const exampleDateString = useMemo(() => t<string>('builder.rightSidebar.sections.settings.global.date.prefix') + ` ${dayjs().utc().format(dateConfig.format)}`, [dateConfig.format]);
+  const exampleDateString = useMemo(() => `Eg. ${dayjs().utc().format(dateConfig.format)}`, [dateConfig.format]);
   const themeString = useMemo(() => (isDarkMode ? 'Matte Black Everything' : 'As bright as your future'), [isDarkMode]);
 
   const { mutateAsync: loadSampleDataMutation } = useMutation<Resume, ServerError, LoadSampleDataParams>(
