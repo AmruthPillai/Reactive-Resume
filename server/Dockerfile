@@ -29,7 +29,7 @@ ENV TURBO_TOKEN $TURBO_TOKEN
 
 RUN pnpm run build --filter server
 
-FROM mcr.microsoft.com/playwright:next-jammy as production
+FROM mcr.microsoft.com/playwright:v1.28.0-focal as production
 
 WORKDIR /app
 

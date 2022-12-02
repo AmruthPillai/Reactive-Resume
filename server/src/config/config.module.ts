@@ -7,6 +7,7 @@ import authConfig from './auth.config';
 import cacheConfig from './cache.config';
 import databaseConfig from './database.config';
 import googleConfig from './google.config';
+import loggingConfig from './logging.config';
 import mailConfig from './mail.config';
 import storageConfig from './storage.config';
 
@@ -14,6 +15,7 @@ const validationSchema = Joi.object({
   // App
   TZ: Joi.string().default('UTC'),
   PORT: Joi.number().default(3100),
+  VERSION: Joi.string().required(),
   SECRET_KEY: Joi.string().required(),
   NODE_ENV: Joi.string().valid('development', 'production').default('development'),
 
@@ -58,12 +60,24 @@ const validationSchema = Joi.object({
   PDF_DELETION_TIME: Joi.number()
     .default(4 * 24 * 60 * 60 * 1000) // 4 days
     .allow(''),
+
+  // Logging
+  SERVER_SENTRY_DSN: Joi.string().allow(''),
 });
 
 @Module({
   imports: [
     NestConfigModule.forRoot({
-      load: [appConfig, authConfig, cacheConfig, databaseConfig, googleConfig, mailConfig, storageConfig],
+      load: [
+        appConfig,
+        authConfig,
+        cacheConfig,
+        databaseConfig,
+        googleConfig,
+        loggingConfig,
+        mailConfig,
+        storageConfig,
+      ],
       validationSchema: validationSchema,
     }),
   ],
