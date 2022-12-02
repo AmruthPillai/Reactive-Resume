@@ -56,6 +56,10 @@ jobs:
           push: true
           platforms: linux/amd64
           file: ${{ matrix.image }}/Dockerfile
+          build-args: |
+            TURBO_TEAM=${{ secrets.TURBO_TEAM }}
+            TURBO_TOKEN=${{ secrets.TURBO_TOKEN }}
+            SENTRY_AUTH_TOKEN=${{ secrets.SENTRY_AUTH_TOKEN }}
           tags: |
             amruthpillai/reactive-resume:${{ matrix.image }}-latest
             amruthpillai/reactive-resume:${{ matrix.image }}-${{ steps.version.outputs.current-version }}
