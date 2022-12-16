@@ -2,18 +2,20 @@ tasks:
   - name: Run PostgreSQL Database
     command: docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
 
+  - name: Install Project Dependencies
+    command: |
+      pnpm install
+      pnpm dlx playwright install --with-deps chromium
+      gp sync-done dependencies
+
   - name: Generate Environment Variables
+    init: gp sync-await dependencies
     command: |
       if [ -f .env ]; then
         echo "Found .env in workspace, skipping generation"
       else
         pnpm generate-env
       fi
-
-  - name: Install Project Dependencies
-    command: |
-      pnpm dlx playwright install --with-deps chromium
-      pnpm install
 
 ports:
   # PostgreSQL
