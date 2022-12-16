@@ -16,6 +16,7 @@
 
 * [Introduction](source-code/introduction.md)
 * [Docker](source-code/docker.md)
+* [Gitpod](source-code/gitpod.md)
 * [Local Build](source-code/local-build.md)
 * [Environment Variables](source-code/environment-variables.md)
 

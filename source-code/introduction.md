@@ -9,4 +9,5 @@ The source code to Reactive Resume is available on [GitHub](https://github.com/A
 In this section, I'll be going through the steps on how you can build the project on your local machine (or the cloud). You can choose one of two paths from here:
 
 * [Docker](docker.md)
+* Gitpod
 * [Local Build](local-build.md)
