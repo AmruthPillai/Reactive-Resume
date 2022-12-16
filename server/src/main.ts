@@ -10,8 +10,10 @@ const bootstrap = async () => {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   const configService = app.get(ConfigService);
 
+  const appUrl = configService.get<string>('app.url');
+
   // Middleware
-  app.enableCors({ credentials: true });
+  app.enableCors({ origin: [appUrl], credentials: true });
   app.enableShutdownHooks();
   app.use(cookieParser());
 

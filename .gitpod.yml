@@ -1,0 +1,41 @@
+tasks:
+  - name: Run PostgreSQL Database
+    command: docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
+
+  - name: Install Project Dependencies
+    command: |
+      pnpm install
+      pnpm dlx playwright install --with-deps chromium
+      gp sync-done deps
+
+  - name: Generate Environment Variables
+    init: gp sync-await deps
+    command: |
+      if [ -f .env ]; then
+        echo "Found .env in workspace, skipping generation"
+      else
+        pnpm generate-env
+      fi
+      gp sync-done env
+
+  - name: Build and Run Project
+    init: gp sync-await env
+    command: |
+      pnpm build
+      pnpm start
+
+ports:
+  # PostgreSQL
+  - port: 5432
+    onOpen: ignore
+    visibility: private
+
+  # Client
+  - port: 3100
+    onOpen: ignore
+    visibility: public
+
+  # Client
+  - port: 3000
+    onOpen: open-browser
+    visibility: public
