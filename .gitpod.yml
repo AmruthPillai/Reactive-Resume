@@ -1,6 +1,6 @@
 tasks:
   - name: Run a local PostgreSQL Database
-    command: docker run --name postgres -e POSTGRES_PASSWORD=postgres -d postgres
+    command: docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
 
   - name: Restore .env file, or create a new one
     command: |
