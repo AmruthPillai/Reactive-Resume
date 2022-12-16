@@ -6,16 +6,23 @@ tasks:
     command: |
       pnpm install
       pnpm dlx playwright install --with-deps chromium
-      gp sync-done dependencies
+      gp sync-done deps
 
   - name: Generate Environment Variables
-    init: gp sync-await dependencies
+    init: gp sync-await deps
     command: |
       if [ -f .env ]; then
         echo "Found .env in workspace, skipping generation"
       else
         pnpm generate-env
       fi
+      gp sync-done env
+
+  - name: Build and Run Project
+    init: gp sync-await env
+    command: |
+      pnpm build
+      pnpm start
 
 ports:
   # PostgreSQL
