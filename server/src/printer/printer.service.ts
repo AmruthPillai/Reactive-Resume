@@ -58,6 +58,7 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
 
       await page.goto(`${url}/${username}/${slug}/printer?secretKey=${secretKey}`);
       await page.waitForSelector('html.wf-active');
+      await page.waitForLoadState("networkidle")
 
       const pageFormat: PageConfig['format'] = await page.$$eval(
         '[data-page]',
