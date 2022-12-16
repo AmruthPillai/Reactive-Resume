@@ -18,7 +18,7 @@ You have complete control over what goes into your resume, how it looks, what co
 ## Table of Contents
 
 - [Reactive Resume](#reactive-resume)
-  - [Go to App Docs](https://docs.rxresu.me)
+  - [Go to App | Docs](#go-to-app--docs)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Languages](#languages)
@@ -103,6 +103,10 @@ Help by [translating Reactive Resume](https://translate.rxresu.me) to your langu
 The docs include an extensive [Tutorial](https://docs.rxresu.me/tutorial) section which outline the features of Reactive Resume and help you through building your first resume on the app.
 
 ## Build from Source
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/AmruthPillai/Reactive-Resume)
+
+Initially building the image and project on Gitpod will take at least ~10 minutes, so please be patient on first launch.
 
 For extensive information on how to build the app on your local machine, head over to the docs [Source Code](https://docs.rxresu.me/source-code) section.
 
