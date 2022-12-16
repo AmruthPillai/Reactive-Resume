@@ -12,20 +12,21 @@ tasks:
 
   - name: Install Project Dependencies
     command: |
-      npx playwright install-deps
+      pnpm dlx playwright install --with-deps chromium
       pnpm install
 
 ports:
   # PostgreSQL
   - port: 5432
+    onOpen: ignore
     visibility: private
 
   # Client
   - port: 3100
-    visibility: public
     onOpen: ignore
+    visibility: public
 
   # Client
   - port: 3000
-    visibility: public
     onOpen: open-browser
+    visibility: public
