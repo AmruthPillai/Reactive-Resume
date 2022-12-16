@@ -37,7 +37,7 @@ const main = async () => {
   // URLs
   // If running in a Gitpod environment, auto generated the URLs
   if (process.env.GITPOD_WORKSPACE_URL) {
-    const baseUrl = new URL(process.env.GITPOD_WORKSPACE_URL!);
+    const baseUrl = new URL(process.env.GITPOD_WORKSPACE_URL!).host;
 
     envMap['PUBLIC_SERVER_URL'] = `https://3100-${baseUrl}`;
     envMap['PUBLIC_URL'] = `https://3000-${baseUrl}`;
