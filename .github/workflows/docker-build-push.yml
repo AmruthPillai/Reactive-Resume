@@ -10,11 +10,6 @@ jobs:
     name: Build and Push Docker Image
     runs-on: ubuntu-latest
 
-    env:
-      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
-
     strategy:
       matrix:
         image: [client, server]
@@ -56,22 +51,8 @@ jobs:
           push: true
           platforms: linux/amd64
           file: ${{ matrix.image }}/Dockerfile
-          build-args: |
-            TURBO_TEAM=${{ secrets.TURBO_TEAM }}
-            TURBO_TOKEN=${{ secrets.TURBO_TOKEN }}
-            SENTRY_AUTH_TOKEN=${{ secrets.SENTRY_AUTH_TOKEN }}
           tags: |
             amruthpillai/reactive-resume:${{ matrix.image }}-latest
             amruthpillai/reactive-resume:${{ matrix.image }}-${{ steps.version.outputs.current-version }}
             ghcr.io/amruthpillai/reactive-resume:${{ matrix.image }}-latest
             ghcr.io/amruthpillai/reactive-resume:${{ matrix.image }}-${{ steps.version.outputs.current-version }}
-
-      - name: Create Sentry Release
-        uses: getsentry/action-release@v1.2.1
-        env:
-          SENTRY_ORG: reactive-resume
-          SENTRY_PROJECT: ${{ matrix.image }}
-          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
-        with:
-          environment: production
-          version: ${{ steps.version.outputs.current-version }}
