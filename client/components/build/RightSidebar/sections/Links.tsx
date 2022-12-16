@@ -3,7 +3,7 @@ import { Button } from '@mui/material';
 import { useTranslation } from 'next-i18next';
 
 import Heading from '@/components/shared/Heading';
-import { DOCS_URL, DONATION_URL, GITHUB_ISSUES_URL, GITHUB_URL } from '@/constants/index';
+import { DOCS_URL, DONATION_URL, GITHUB_ISSUES_URL, GITHUB_URL, REDDIT_URL } from '@/constants/index';
 
 import styles from './Links.module.scss';
 
@@ -47,6 +47,12 @@ const Links = () => {
           <a href={GITHUB_URL} target="_blank" rel="noreferrer">
             <Button variant="text" startIcon={<Link />}>
               {t<string>('builder.rightSidebar.sections.links.github')}
+            </Button>
+          </a>
+
+          <a href={REDDIT_URL} target="_blank" rel="noreferrer">
+            <Button variant="text" startIcon={<Link />}>
+              {t<string>('builder.rightSidebar.sections.links.reddit')}
             </Button>
           </a>
 

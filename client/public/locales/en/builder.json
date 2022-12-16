@@ -3,8 +3,8 @@
     "actions": {
       "add": "Add New {{token}}",
       "delete": "Delete {{token}}",
-      "edit": "Edit {{token}}",
-      "duplicate": "Duplicate Section"
+      "duplicate": "Duplicate Section",
+      "edit": "Edit {{token}}"
     },
     "columns": {
       "heading": "Columns",
@@ -81,13 +81,13 @@
       "center-artboard": "Center Artboard",
       "copy-link": "Copy Link to Resume",
       "export-pdf": "Export PDF",
+      "redo": "Redo",
       "toggle-orientation": "Toggle Page Orientation",
       "toggle-page-break-line": "Toggle Page Break Line",
       "toggle-sidebars": "Toggle Sidebars",
-      "zoom-in": "Zoom In",
-      "zoom-out": "Zoom Out",
       "undo": "Undo",
-      "redo": "Redo"
+      "zoom-in": "Zoom In",
+      "zoom-out": "Zoom Out"
     }
   },
   "header": {
@@ -115,15 +115,15 @@
         "actions": {
           "photo-filters": "Photo Filters"
         },
+        "birthdate": {
+          "label": "Date of Birth"
+        },
         "heading": "Basics",
         "headline": {
           "label": "Headline"
         },
         "name": {
           "label": "Full Name"
-        },
-        "birthdate": {
-          "label": "Date of Birth"
         },
         "photo-filters": {
           "effects": {
@@ -265,14 +265,15 @@
           "button": "GitHub Issues",
           "heading": "Bugs? Feature Requests?"
         },
+        "docs": "Documentation",
         "donate": {
           "body": "If you liked using Reactive Resume, please consider donating as much as you can to the cause of keeping the app up and running, without ads and free forever.",
           "button": "Buy me a coffee",
           "heading": "Donate to Reactive Resume"
         },
         "github": "Source Code",
-        "docs": "Documentation",
-        "heading": "Links"
+        "heading": "Links",
+        "reddit": "Reddit"
       },
       "settings": {
         "global": {
@@ -291,13 +292,13 @@
         },
         "heading": "Settings",
         "page": {
-          "format": {
-            "primary": "Paper Size",
-            "secondary": "Determines the dimensions of your resume pages"
-          },
           "break-line": {
             "primary": "Break Line",
             "secondary": "Show a line on all pages to mark the height of an A4 page"
+          },
+          "format": {
+            "primary": "Paper Size",
+            "secondary": "Determines the dimensions of your resume pages"
           },
           "heading": "Page",
           "orientation": {
