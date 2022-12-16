@@ -1,8 +1,8 @@
 tasks:
-  - name: Run a local PostgreSQL Database
+  - name: Run PostgreSQL Database
     command: docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
 
-  - name: Restore .env file, or create a new one
+  - name: Restore Environment Variables
     command: |
       if [ -f .env ]; then
         echo "Found .env in workspace"
@@ -16,9 +16,10 @@ tasks:
         fi
       fi
 
-  - name: Set up dependencies, and run the development server
-    init: pnpm install
-    command: pnpm dev
+  - name: Install Project Dependencies
+    command: |
+      npx playwright install-deps
+      pnpm install
 
 ports:
   # PostgreSQL
