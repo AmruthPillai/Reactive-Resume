@@ -2,18 +2,12 @@ tasks:
   - name: Run PostgreSQL Database
     command: docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
 
-  - name: Restore Environment Variables
+  - name: Generate Environment Variables
     command: |
       if [ -f .env ]; then
-        echo "Found .env in workspace"
+        echo "Found .env in workspace, skipping generation"
       else
-        if [ -z "${DOTENV}" ]; then
-          echo "Setting example .env"
-          cp .env.gitpod .env
-        else
-          echo "Restoring .env from Gitpod"
-          echo "${DOTENV}" | base64 -d > .env
-        fi
+        pnpm generate-env
       fi
 
   - name: Install Project Dependencies
