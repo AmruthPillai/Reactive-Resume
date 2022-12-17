@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+// KaTeX (for remark-math)
+@import url('https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css');
+
 // Tailwind CSS
 @tailwind base;
 @tailwind components;
@@ -34,6 +37,10 @@
 
     ul li {
       @apply ml-4 list-outside;
+    }
+
+    .footnotes p {
+      @apply inline;
     }
   }
 }
