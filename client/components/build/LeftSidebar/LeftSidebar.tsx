@@ -108,7 +108,7 @@ const LeftSidebar = () => {
       variant={isDesktop ? 'persistent' : 'temporary'}
     >
       <div className={styles.container}>
-        <nav className="overflow-y-scroll">
+        <nav className="overflow-y-auto">
           <div>
             <Link href="/dashboard">
               <Logo size={40} />
