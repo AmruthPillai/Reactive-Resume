@@ -13,7 +13,7 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Install DigitalOcean CLI
-        uses: digitalocean/action-doctl@v2.2.0
+        uses: digitalocean/action-doctl@v2.3.0
         with:
           token: ${{ secrets.DIGITALOCEAN_TOKEN }}
 
