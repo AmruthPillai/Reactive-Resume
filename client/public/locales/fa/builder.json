@@ -3,6 +3,7 @@
     "actions": {
       "add": "{{token}} جدید اضافه کنید",
       "delete": "حذف {{token}}",
+      "duplicate": "بخش تکراری",
       "edit": "ویرایش {{token}}"
     },
     "columns": {
@@ -80,13 +81,13 @@
       "center-artboard": "قرار دادن صفحه در مرکز",
       "copy-link": "کپی کردن لینک رزومه",
       "export-pdf": "خروجی PDF",
+      "redo": "دوباره انجام دهید",
       "toggle-orientation": "تغییر وضعیت جهت‌گیری صفحه",
       "toggle-page-break-line": "تغییر وضعیت خط شکست صفحه",
       "toggle-sidebars": "باز/بسته کردن نوار کنار صفحه",
-      "zoom-in": "بزرگ‌نمایی",
-      "zoom-out": "کوچک‌نمایی",
       "undo": "واگرد",
-      "redo": "دوباره انجام دهید"
+      "zoom-in": "بزرگ‌نمایی",
+      "zoom-out": "کوچک‌نمایی"
     }
   },
   "header": {
@@ -114,15 +115,15 @@
         "actions": {
           "photo-filters": "فیلترهای تصویر"
         },
+        "birthdate": {
+          "label": "تاریخ تولد"
+        },
         "heading": "موارد پایه",
         "headline": {
           "label": "سرصفحه"
         },
         "name": {
           "label": "نام کامل"
-        },
-        "birthdate": {
-          "label": "تاریخ تولد"
         },
         "photo-filters": {
           "effects": {
@@ -264,14 +265,15 @@
           "button": "GitHub Issues",
           "heading": "باگ‌ها؟ درخواست ویژگی جدید؟"
         },
+        "docs": "مستندات",
         "donate": {
           "body": "اگر استفاده از Reactive Resume را دوست داشتید، لطفاً تا جایی که می توانید کمک مالی کنید تا برنامه را بدون تبلیغات و برای همیشه رایگان نگه دارید.",
           "button": "برای من یک قهوه بخر",
           "heading": "کمک مالی به Reactive Resume"
         },
         "github": "کد منبع",
-        "docs": "مستندات",
-        "heading": "لینک‌ها"
+        "heading": "لینک‌ها",
+        "reddit": "ردیت"
       },
       "settings": {
         "global": {
@@ -290,13 +292,13 @@
         },
         "heading": "تنظیمات",
         "page": {
-          "format": {
-            "primary": "اندازه کاغذ",
-            "secondary": "ابعاد صفحات رزومه شما را تعیین می کند"
-          },
           "break-line": {
             "primary": "خط شکست",
             "secondary": "برای مشخص کردن ارتفاع صفحه A4 یک خط در همه صفحات نشان داده شود"
+          },
+          "format": {
+            "primary": "اندازه کاغذ",
+            "secondary": "ابعاد صفحات رزومه شما را تعیین می کند"
           },
           "heading": "صفحه",
           "orientation": {
