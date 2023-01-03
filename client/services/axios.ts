@@ -1,5 +1,5 @@
 import env from '@beam-australia/react-env';
-import _axios from 'axios';
+import _axios, { RawAxiosRequestHeaders } from 'axios';
 import Router from 'next/router';
 
 import { logout } from '@/store/auth/authSlice';
@@ -20,7 +20,7 @@ axios.interceptors.request.use((config) => {
   const { accessToken } = store.getState().auth;
 
   config.headers = {
-    ...config.headers,
+    ...(config.headers as RawAxiosRequestHeaders),
     Authorization: `Bearer ${accessToken}`,
   };
 
