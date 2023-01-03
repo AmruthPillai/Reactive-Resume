@@ -31,10 +31,8 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
     const publicUrl = `${serverUrl}/assets/exports/${filename}`;
 
     try {
-      // check if file already exists
       await access(join(directory, filename));
     } catch {
-      // delete old files and scheduler jobs
       const activeSchedulerTimeouts = this.schedulerRegistry.getTimeouts();
       await readdir(directory).then(async (files) => {
         await Promise.all(
@@ -49,7 +47,6 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
         );
       });
 
-      // create file as it doesn't exist
       const url = this.configService.get<string>('app.url');
       const secretKey = this.configService.get<string>('app.secretKey');
       const pdfDeletionTime = this.configService.get<number>('cache.pdfDeletionTime');
@@ -57,8 +54,8 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
       const page = await this.browser.newPage();
 
       await page.goto(`${url}/${username}/${slug}/printer?secretKey=${secretKey}`);
+      await page.waitForLoadState('networkidle');
       await page.waitForSelector('html.wf-active');
-      await page.waitForLoadState("networkidle")
 
       const pageFormat: PageConfig['format'] = await page.$$eval(
         '[data-page]',

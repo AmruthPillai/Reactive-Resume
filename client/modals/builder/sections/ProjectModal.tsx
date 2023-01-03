@@ -143,7 +143,7 @@ const ProjectModal: React.FC = () => {
               views={['year', 'month', 'day']}
               onChange={(date: Date | null, keyboardInputValue: string | undefined) => {
                 isEmpty(keyboardInputValue) && field.onChange('');
-                date && dayjs(date).utc().isValid() && field.onChange(dayjs(date).utc().toISOString());
+                date && dayjs(date).isValid() && field.onChange(dayjs(date).format('YYYY-MM-DD'));
               }}
               renderInput={(params) => (
                 <TextField
@@ -167,7 +167,7 @@ const ProjectModal: React.FC = () => {
               views={['year', 'month', 'day']}
               onChange={(date: Date | null, keyboardInputValue: string | undefined) => {
                 isEmpty(keyboardInputValue) && field.onChange('');
-                date && dayjs(date).utc().isValid() && field.onChange(dayjs(date).utc().toISOString());
+                date && dayjs(date).isValid() && field.onChange(dayjs(date).format('YYYY-MM-DD'));
               }}
               renderInput={(params) => (
                 <TextField

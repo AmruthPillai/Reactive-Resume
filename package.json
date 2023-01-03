@@ -1,11 +1,12 @@
 {
   "name": "reactive-resume",
-  "version": "3.6.16",
+  "version": "3.6.17",
   "private": true,
   "scripts": {
     "dev": "env-cmd --silent cross-var cross-env VERSION=$npm_package_version turbo run dev",
     "build": "env-cmd --silent cross-var cross-env VERSION=$npm_package_version turbo run build",
     "start": "env-cmd --silent cross-var cross-env VERSION=$npm_package_version turbo run start",
+    "update-deps": "ncu -x nanoid,class-validator --deep -u && pnpm install",
     "generate-env": "ts-node ./scripts/generate-env.ts",
     "format": "prettier --write .",
     "lint": "turbo run lint"
@@ -23,12 +24,13 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "@types/node": "^18.11.15",
-    "@typescript-eslint/eslint-plugin": "^5.46.1",
-    "@typescript-eslint/parser": "^5.46.1",
-    "eslint": "^8.29.0",
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.48.0",
+    "@typescript-eslint/parser": "^5.48.0",
+    "eslint": "^8.31.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-simple-import-sort": "^8.0.0",
+    "npm-check-updates": "^16.6.2",
     "prettier": "^2.8.1",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.4"

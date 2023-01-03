@@ -10,7 +10,7 @@ export const dateFormatOptions: string[] = [
   'DD.MM.YYYY',
   'DD/MM/YYYY',
   'MM.DD.YYYY',
-  'M.D.YYYY',  
+  'M.D.YYYY',
   'MM/DD/YYYY',
   'YYYY.MM.DD',
   'YYYY/MM/DD',
@@ -20,7 +20,7 @@ export const dateFormatOptions: string[] = [
   'YYYY',
 ];
 
-export const getRelativeTime = (timestamp: dayjs.ConfigType): string => dayjs(timestamp).utc().toNow(true);
+export const getRelativeTime = (timestamp: dayjs.ConfigType): string => dayjs(timestamp).toNow(true);
 
 export const formatDateString = (date: string | DateRange, formatStr: string): string | null => {
   const presentString = i18n?.t<string>('common.date.present') ?? '';
@@ -31,7 +31,7 @@ export const formatDateString = (date: string | DateRange, formatStr: string): s
   if (isString(date)) {
     if (!dayjs(date).isValid()) return null;
 
-    return dayjs(date).format(formatStr);
+    return dayjs.utc(date).local().format(formatStr);
   }
 
   // If `date` is a DateRange
@@ -40,12 +40,12 @@ export const formatDateString = (date: string | DateRange, formatStr: string): s
   if (!dayjs(date.start).isValid()) return null;
 
   if (dayjs(date.start).isSame(date.end)) {
-    return dayjs(date.start).format(formatStr);
+    return dayjs.utc(date.start).local().format(formatStr);
   }
 
   if (!isEmpty(date.end) && dayjs(date.end).isValid()) {
-    return `${dayjs(date.start).format(formatStr)} - ${dayjs(date.end).format(formatStr)}`;
+    return `${dayjs.utc(date.start).local().format(formatStr)} - ${dayjs.utc(date.end).local().format(formatStr)}`;
   }
 
-  return `${dayjs(date.start).format(formatStr)} - ${presentString}`;
+  return `${dayjs.utc(date.start).local().format(formatStr)} - ${presentString}`;
 };

@@ -5,9 +5,9 @@ const sampleData: Partial<Resume> = {
     name: 'Alexis Jones',
     email: 'alexis.jones@gmail.com',
     phone: '+1 800 1200 3820',
-    birthdate: '1995-08-06T00:00:00.000Z',
+    birthdate: '1995-08-06',
     photo: {
-      url: `/images/sample-photo.jpg`,
+      url: `https://i.imgur.com/40gTnCx.jpg`,
       filters: {
         size: 128,
         shape: 'rounded-square',
@@ -53,7 +53,7 @@ const sampleData: Partial<Resume> = {
           url: 'https://www.espritcam.com',
           date: {
             end: '',
-            start: '2015-09-01T16:34:27.000Z',
+            start: '2015-09-01',
           },
           name: 'DP Technology Corp.',
           summary:
@@ -64,8 +64,8 @@ const sampleData: Partial<Resume> = {
           id: '285d78f8-df56-4569-ba6b-cff5ebe5381e',
           url: 'https://www.vokophone.com',
           date: {
-            end: '2015-07-31T22:00:00.000Z',
-            start: '2011-05-31T22:00:00.000Z',
+            end: '2015-07-31',
+            start: '2011-05-31',
           },
           name: 'Voko Communications',
           summary:
@@ -84,7 +84,7 @@ const sampleData: Partial<Resume> = {
         {
           title: 'Blitz Hackathon',
           awarder: '2nd Place',
-          date: '2018-03-31T22:00:00.000Z',
+          date: '2018-03-31',
           url: '',
           summary: '',
           id: '657cadb0-c07d-4a35-8351-9079598c7ac0',
@@ -92,7 +92,7 @@ const sampleData: Partial<Resume> = {
         {
           title: 'Carl-Zeiss Hackathon',
           awarder: '2nd Place',
-          date: '2017-05-09T22:00:00.000Z',
+          date: '2017-05-09',
           url: '',
           summary: '',
           id: 'db3bc5cb-483e-4221-9867-9c28ee5f2051',
