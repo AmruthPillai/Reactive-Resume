@@ -3,6 +3,7 @@
     "actions": {
       "add": "Agregar nuevo {{token}}",
       "delete": "Eliminar {{token}}",
+      "duplicate": "Sección duplicada",
       "edit": "Editar {{token}}"
     },
     "columns": {
@@ -80,13 +81,13 @@
       "center-artboard": "Centrar Tablero",
       "copy-link": "Copiar enlace al currículum",
       "export-pdf": "Exportar PDF",
+      "redo": "Rehacer",
       "toggle-orientation": "Cambiar la orientación de la página",
       "toggle-page-break-line": "Alternar línea de salto de página",
       "toggle-sidebars": "Ocultar/mostrar barra lateral",
-      "zoom-in": "Acercar",
-      "zoom-out": "Alejar",
       "undo": "Deshacer",
-      "redo": "Rehacer"
+      "zoom-in": "Acercar",
+      "zoom-out": "Alejar"
     }
   },
   "header": {
@@ -114,15 +115,15 @@
         "actions": {
           "photo-filters": "Filtro de fotos"
         },
+        "birthdate": {
+          "label": "Fecha de cumpleaños"
+        },
         "heading": "Información básica",
         "headline": {
           "label": "Titular"
         },
         "name": {
           "label": "Nombre Completo"
-        },
-        "birthdate": {
-          "label": "Fecha de cumpleaños"
         },
         "photo-filters": {
           "effects": {
@@ -264,14 +265,15 @@
           "button": "Propuesta de GitHub",
           "heading": "¿Errores? ¿Solicitud de características?"
         },
+        "docs": "Documentación",
         "donate": {
           "body": "Si le gustó usar Reactive Resume, considere donar lo que pueda a la causa de mantener la aplicación en funcionamiento, sin anuncios y gratis para siempre.",
           "button": "Invítame a un café",
           "heading": "Donar a Reactive Resume"
         },
         "github": "Código Fuente",
-        "docs": "Documentación",
-        "heading": "Enlaces"
+        "heading": "Enlaces",
+        "reddit": "Reddit"
       },
       "settings": {
         "global": {
@@ -290,13 +292,13 @@
         },
         "heading": "Preferencias",
         "page": {
-          "format": {
-            "primary": "Tamaño de papel",
-            "secondary": "Determina las dimensiones de las páginas de tu currículum."
-          },
           "break-line": {
             "primary": "Linea de separación",
             "secondary": "Mostrar una línea en todas las páginas para marcar la altura de una página A4"
+          },
+          "format": {
+            "primary": "Tamaño de papel",
+            "secondary": "Determina las dimensiones de las páginas de tu currículum."
           },
           "heading": "Página",
           "orientation": {
