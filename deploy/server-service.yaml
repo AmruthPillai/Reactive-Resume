@@ -9,10 +9,14 @@ metadata:
     io.kompose.service: server
   name: server
 spec:
+  type: LoadBalancer
   ports:
-    - name: "3100"
+    - name: server
+      protocol: TCP
       port: 3100
       targetPort: 3100
+  externalIPs:
+    - localhost
   selector:
     io.kompose.service: server
 status:
