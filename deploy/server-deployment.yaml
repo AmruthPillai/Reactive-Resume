@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.26.1 (HEAD)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: server
+  name: server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: server
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.26.1 (HEAD)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: server
+    spec:
+      containers:
+        - env:
+            - name: GOOGLE_API_KEY
+            - name: GOOGLE_CLIENT_SECRET
+            - name: JWT_EXPIRY_TIME
+              value: "604800"
+            - name: JWT_SECRET
+              value: change-me-to-something-secure
+            - name: MAIL_FROM_EMAIL
+              value: noreply@rxresu.me
+            - name: MAIL_FROM_NAME
+              value: Reactive Resume
+            - name: MAIL_HOST
+            - name: MAIL_PASSWORD
+            - name: MAIL_PORT
+            - name: MAIL_USERNAME
+            - name: PDF_DELETION_TIME
+            - name: POSTGRES_DB
+              value: postgres
+            - name: POSTGRES_HOST
+              value: postgres
+            - name: POSTGRES_PASSWORD
+              value: postgres
+            - name: POSTGRES_PORT
+              value: "5432"
+            - name: POSTGRES_SSL_CERT
+            - name: POSTGRES_USER
+              value: postgres
+            - name: PUBLIC_GOOGLE_CLIENT_ID
+            - name: PUBLIC_SERVER_URL
+              value: http://localhost:3100
+            - name: PUBLIC_URL
+              value: http://localhost:3000
+            - name: SECRET_KEY
+              value: change-me-to-something-secure
+            - name: STORAGE_ACCESS_KEY
+            - name: STORAGE_BUCKET
+            - name: STORAGE_ENDPOINT
+            - name: STORAGE_REGION
+            - name: STORAGE_SECRET_KEY
+            - name: STORAGE_URL_PREFIX
+          image: amruthpillai/reactive-resume:server-latest
+          name: server
+          ports:
+            - containerPort: 3100
+          resources: {}
+      restartPolicy: Always
+status: {}
