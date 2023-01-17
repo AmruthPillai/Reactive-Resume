@@ -1,7 +1,7 @@
 package main
 
-import "github.com/AthulMuralidhar/Reactive-Resume/pkg/api"
+import "log"
 
 func main() {
-  api.Server()
+  log.Println("=== starting server ===")
 }

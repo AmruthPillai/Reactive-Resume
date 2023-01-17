@@ -1,4 +1,4 @@
-# Specifies a parent image
+## Specifies a parent image
 FROM golang:latest
 
 RUN mkdir /app
@@ -11,14 +11,14 @@ ADD . /app
 WORKDIR /app
 ## we run go build to compile the binary
 ## executable of our Go program
-RUN #go build ./... -o ./main
 
 RUN go build ./...
-EXPOSE 8000
+EXPOSE 8080
 ## Our start command which kicks off
 ## our newly created binary executable
 CMD ["go", "run", "./..."]
 # to build:
-# docker build -t go-server .
-# to run:
-# docker run go-server
+## docker build -t go-server .
+## to run:
+## docker run go-server
+
