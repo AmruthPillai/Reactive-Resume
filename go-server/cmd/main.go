@@ -1,7 +1,7 @@
 package main
 
-import "fmt"
+import "github.com/AthulMuralidhar/Reactive-Resume/pkg/api"
 
 func main() {
-  fmt.Println("working")
+  api.Server()
 }
