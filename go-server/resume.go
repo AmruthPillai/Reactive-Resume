@@ -3,34 +3,37 @@ package main
 import (
 	"encoding/json"
 	"github.com/google/uuid"
+	"os"
 	"time"
 )
 
 type Resume struct {
-	ID      uuid.UUID
-	shortID string
-	Name    string `fake:"{firstname}"`
-	Slug    string `fake:"{randomstring}"`
-	Image   string
-	// JSONB in database, can do further processing here
-	Basics string
-	// Another jsonb field
-	Sections string
-	// jsonb again
-	Metadata  string
-	Public    bool      `fake:"{bool}"`
-	createdAt time.Time `fake:"{year}-{month}-{day}" format:"2006-01-02"`
-	updatedAt time.Time `fake:"{year}-{month}-{day}" format:"2006-01-02"`
-	UserID    uuid.UUID `fake:"{uuid}"`
+	ID        uuid.UUID `json:"id,omitempty"`
+	shortID   string    `json:"short_id, omitempty" fake:"{uuid}"`
+	Name      string    `json:"name,omitempty"  fake:"{firstname}"`
+	Slug      string    `json:"slug,omitempty" fake:"{randomstring}"`
+	Image     string    `json:"image,omitempty"`
+	Basics    string    `json:"basics,omitempty"`   // JSONB in database, can do further processing here
+	Sections  string    `json:"sections,omitempty"` // Another jsonb field
+	Metadata  string    `json:"metadata,omitempty"` // jsonb again
+	Public    bool      `json:"public,omitempty" fake:"{bool}"`
+	CreatedAt time.Time `json:"created_at,omitempty" fake:"{date}"`
+	UpdatedAt time.Time `json:"updated_at,omitempty" fake:"{date}" `
+	UserID    uuid.UUID `json:"user_id,omitempty" fake:"{uuid}"`
 }
 
 type Resumes struct {
 	resumes []*Resume
 }
 
-func (r Resumes) EncodeToJSON() error {
+func (r Resumes) EncodeToJSON(file *os.File) error {
 	marshal, err := json.Marshal(r)
 	if err != nil {
 		return err
 	}
+	_, err = file.Write(marshal)
+	if err != nil {
+		return err
+	}
+	return nil
 }
