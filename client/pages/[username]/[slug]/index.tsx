@@ -15,6 +15,7 @@ import toast from 'react-hot-toast';
 import { useMutation, useQuery } from 'react-query';
 
 import Page from '@/components/build/Center/Page';
+import { DEFAULT_ERROR_MESSAGE } from '@/constants/index';
 import { ServerError } from '@/services/axios';
 import { printResumeAsPdf, PrintResumeAsPdfParams } from '@/services/printer';
 import { fetchResumeByIdentifier } from '@/services/resume';
@@ -105,7 +106,7 @@ const Preview: NextPage<Props> = ({ username, slug, resume: initialData }) => {
 
       download(url);
     } catch {
-      toast.error('Something went wrong, please try again later.');
+      toast.error(DEFAULT_ERROR_MESSAGE);
     }
   };
 

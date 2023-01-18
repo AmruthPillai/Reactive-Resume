@@ -17,3 +17,7 @@ export const REDDIT_URL = 'https://www.reddit.com/r/reactiveresume/';
 export const GITHUB_URL = 'https://github.com/AmruthPillai/Reactive-Resume';
 export const PRODUCT_HUNT_URL = 'https://www.producthunt.com/posts/reactive-resume-v3';
 export const GITHUB_ISSUES_URL = 'https://github.com/AmruthPillai/Reactive-Resume/issues/new/choose';
+
+// Default Error Message
+export const DEFAULT_ERROR_MESSAGE =
+  'Something went wrong while performing this action, please report this issue on GitHub.';

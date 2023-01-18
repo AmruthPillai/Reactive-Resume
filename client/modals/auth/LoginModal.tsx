@@ -62,14 +62,7 @@ const LoginModal: React.FC = () => {
   };
 
   const onSubmit = async ({ identifier, password }: FormData) => {
-    await loginMutation(
-      { identifier, password },
-      {
-        onError: (error) => {
-          toast.error(error.message);
-        },
-      }
-    );
+    await loginMutation({ identifier, password });
 
     handleClose();
   };
@@ -86,14 +79,14 @@ const LoginModal: React.FC = () => {
 
   const handleLoginWithGoogle = async (response: CredentialResponse) => {
     if (response.credential) {
-      await loginWithGoogleMutation({ credential: response.credential }, { onError: handleLoginWithGoogleError });
+      await loginWithGoogleMutation({ credential: response.credential }, { onError: handleGoogleLoginError });
 
       handleClose();
     }
   };
 
-  const handleLoginWithGoogleError = () => {
-    toast("Please try logging in using email/password, or use another browser that supports Google's One Tap API.");
+  const handleGoogleLoginError = () => {
+    toast.error("Google doesn't seem to be responding, please try logging in using email/password instead.");
   };
 
   const PasswordVisibility = (): React.ReactElement => {
@@ -117,7 +110,7 @@ const LoginModal: React.FC = () => {
       footerChildren={
         <div className="flex gap-4">
           {!isEmpty(env('GOOGLE_CLIENT_ID')) && (
-            <GoogleLogin onSuccess={handleLoginWithGoogle} onError={handleLoginWithGoogleError} />
+            <GoogleLogin onSuccess={handleLoginWithGoogle} onError={handleGoogleLoginError} />
           )}
 
           <Button type="submit" onClick={handleSubmit(onSubmit)} disabled={isLoading}>

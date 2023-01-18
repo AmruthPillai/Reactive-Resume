@@ -6,7 +6,6 @@ import Joi from 'joi';
 import { useTranslation } from 'next-i18next';
 import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import toast from 'react-hot-toast';
 import { useMutation } from 'react-query';
 
 import BaseModal from '@/components/shared/BaseModal';
@@ -66,15 +65,10 @@ const CreateResumeModal: React.FC = () => {
   }, [name, setValue]);
 
   const onSubmit = async ({ name, slug, isPublic }: FormData) => {
-    try {
-      await mutateAsync({ name, slug, public: isPublic });
+    await mutateAsync({ name, slug, public: isPublic });
+    await queryClient.invalidateQueries(RESUMES_QUERY);
 
-      await queryClient.invalidateQueries(RESUMES_QUERY);
-
-      handleClose();
-    } catch (error: any) {
-      toast.error(error.message);
-    }
+    handleClose();
   };
 
   const handleClose = () => {

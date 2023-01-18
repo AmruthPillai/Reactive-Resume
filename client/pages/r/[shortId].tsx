@@ -11,7 +11,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect } from 'react';
-import toast from 'react-hot-toast';
 import { useMutation, useQuery } from 'react-query';
 
 import Page from '@/components/build/Center/Page';
@@ -69,17 +68,13 @@ const Preview: NextPage<Props> = ({ shortId }) => {
   const layout: string[][][] = get(resume, 'metadata.layout', []);
 
   const handleDownload = async () => {
-    try {
-      const url = await mutateAsync({
-        username: resume.user.username,
-        slug: resume.slug,
-        lastUpdated: dayjs(resume.updatedAt).unix().toString(),
-      });
+    const url = await mutateAsync({
+      username: resume.user.username,
+      slug: resume.slug,
+      lastUpdated: dayjs(resume.updatedAt).unix().toString(),
+    });
 
-      download(url);
-    } catch {
-      toast.error('Something went wrong, please try again later.');
-    }
+    download(url);
   };
 
   return (
