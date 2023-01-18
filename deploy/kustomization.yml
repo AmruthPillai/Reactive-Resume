@@ -1,0 +1,10 @@
+#secretGenerator:
+#  - name: mysql-pass
+#    literals:
+#      - password=dummypass
+#      - username=root
+#apiVersion: v1
+resources:
+  - deploy-go-server.yml
+  - go-server-svc.yml
+#  - wordpress-pvc.yml

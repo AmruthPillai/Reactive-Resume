@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-server
+  labels:
+    app: go-server
+spec:
+  selector:
+    matchLabels:
+      app: go-server
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: go-server
+    spec:
+      containers:
+        - image: golang:latest
+          name: go-server
+          ports:
+            - containerPort: 8080
+              name: go-server
+
+# some prelims:
+# the cluster is running on minikube so, do not forget to do:
+# minikube service go-server-svc --url
+# this will give you a curl able endpoint - made my a minikube tunnel
+# enjoy

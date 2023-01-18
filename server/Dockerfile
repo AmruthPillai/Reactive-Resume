@@ -50,3 +50,4 @@ HEALTHCHECK --interval=30s --timeout=20s --retries=3 --start-period=15s \
     CMD curl -fSs localhost:3100/health || exit 1
 
 CMD [ "pnpm", "run", "start", "--filter", "server" ]
+
