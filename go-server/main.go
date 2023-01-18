@@ -5,8 +5,6 @@ import (
   "encoding/json"
   "errors"
   "fmt"
-  "github.com/brianvoe/gofakeit/v6"
-  "github.com/google/uuid"
   "io"
   "log"
   "net"
@@ -60,7 +58,7 @@ func resumeListHandler(writer http.ResponseWriter, request *http.Request) {
   resumeBinData, _ := io.ReadAll(file)
   json.Unmarshal(resumeBinData, &randomResumeList)
 
-  _, err = io.WriteString(writer, string(resumeBinData[:]))
+  _, err = io.WriteString(writer, string(resumeBinData))
   if err != nil {
     log.Fatal(err)
   }
@@ -70,88 +68,57 @@ func userListHandler(writer http.ResponseWriter, request *http.Request) {
 
 }
 
-const tempDataPathForResumes = "./data/resumedata.json"
-const tempDataPathForUsers = "./data/userdata.json"
-const randomData = 10
+//const tempDataPathForResumes = "./data/resumedata.json"
+//const tempDataPathForUsers = "./data/userdata.json"
+//const randomData = 10
 
 func generateRandomUsersAndResumeHandler(writer http.ResponseWriter, request *http.Request) {
   // TODO: handle errors
-  var randomResumeList Resumes
+  //var randomResumeList Resumes
   log.Printf("get from generateRandomUsersAndResumeHandler\n")
 
-  resumesFile, err := os.OpenFile(tempDataPathForResumes, os.O_RDWR, 0766)
-  defer resumesFile.Close()
-  if errors.Is(err, os.ErrNotExist) {
-    // handle the case where the file doesn't exist
-    resumesFile, err = os.Create(tempDataPathForResumes)
-    if err != nil {
-      log.Println("error during create resume file in generateRandomUsersAndResumeHandler")
-      log.Fatal(err)
-    }
-    for i := 0; i < randomData; i++ {
-      // make 100 random user and resume json objects
-      randomResume := Resume{
-        ID: uuid.New(),
-      }
-
-      err := gofakeit.Struct(&randomResume)
-      if err != nil {
-        log.Println("error during generating random resume in generateRandomUsersAndResumeHandler")
-        log.Fatal(err)
-      }
-    }
-    err := randomResumeList.EncodeToJSONFile(resumesFile)
-    if err != nil {
-      log.Println("error during json encoding random resumes in generateRandomUsersAndResumeHandler")
-      log.Fatal(err)
-    }
-    generateRandomUsersAndResumeHandler(writer, request)
-  } else if err != nil {
-    log.Println("error during os.Open of random resumes in generateRandomUsersAndResumeHandler")
-    log.Fatal(err)
-  }
   // TODO: refactor to struct method
-  var randomUsersList Users
-  usersFile, err := os.OpenFile(tempDataPathForUsers, os.O_RDWR, 0766)
-  defer usersFile.Close()
-  if errors.Is(err, os.ErrNotExist) {
-    // handle the case where the file doesn't exist
-    resumesFile, err = os.Create(tempDataPathForUsers)
-    if err != nil {
-      log.Println("error during create user file in generateRandomUsersAndResumeHandler")
-      log.Fatal(err)
-    }
-    randomUser := User{
-      ID: uuid.New(),
-    }
-    for i := 0; i < randomData; i++ {
-      // make 100 random user and resume json objects
-      err = gofakeit.Struct(&randomUser)
-      if err != nil {
-        log.Println("error during generating random user in generateRandomUsersAndResumeHandler")
-        log.Fatal(err)
-      }
-      randomUsersList.users = append(randomUsersList.users, &randomUser)
-    }
-    err = randomUsersList.EncodeToJSON(usersFile)
-    if err != nil {
-      log.Println("error during json encoding random users in generateRandomUsersAndResumeHandler")
-      log.Fatal(err)
-    }
-    generateRandomUsersAndResumeHandler(writer, request)
-  } else if err != nil {
-    log.Println("error during os.Open of random users in generateRandomUsersAndResumeHandler")
-    log.Fatal(err)
-  }
-
-  // load file if stuff exists
-  resumeBinData, _ := io.ReadAll(resumesFile)
-  json.Unmarshal(resumeBinData, &randomResumeList)
-
-  userBinData, _ := io.ReadAll(usersFile)
-  json.Unmarshal(userBinData, &randomUsersList)
-
-  _, _ = io.WriteString(writer, "generated data successfully\n")
+  //var randomUsersList Users
+  //usersFile, err := os.OpenFile(tempDataPathForUsers, os.O_RDWR, 0766)
+  //defer usersFile.Close()
+  //if errors.Is(err, os.ErrNotExist) {
+  //	// handle the case where the file doesn't exist
+  //	resumesFile, err = os.Create(tempDataPathForUsers)
+  //	if err != nil {
+  //		log.Println("error during create user file in generateRandomUsersAndResumeHandler")
+  //		log.Fatal(err)
+  //	}
+  //	randomUser := User{
+  //		ID: uuid.New(),
+  //	}
+  //	for i := 0; i < randomData; i++ {
+  //		// make 100 random user and resume json objects
+  //		err = gofakeit.Struct(&randomUser)
+  //		if err != nil {
+  //			log.Println("error during generating random user in generateRandomUsersAndResumeHandler")
+  //			log.Fatal(err)
+  //		}
+  //		randomUsersList.users = append(randomUsersList.users, &randomUser)
+  //	}
+  //	err = randomUsersList.EncodeToJSON(usersFile)
+  //	if err != nil {
+  //		log.Println("error during json encoding random users in generateRandomUsersAndResumeHandler")
+  //		log.Fatal(err)
+  //	}
+  //	generateRandomUsersAndResumeHandler(writer, request)
+  //} else if err != nil {
+  //	log.Println("error during os.Open of random users in generateRandomUsersAndResumeHandler")
+  //	log.Fatal(err)
+  //}
+  //
+  //// load file if stuff exists
+  //resumeBinData, _ := io.ReadAll(resumesFile)
+  //json.Unmarshal(resumeBinData, &randomResumeList)
+  //
+  //userBinData, _ := io.ReadAll(usersFile)
+  //json.Unmarshal(userBinData, &randomUsersList)
+  //
+  //_, _ = io.WriteString(writer, "generated data successfully\n")
 }
 
 func userHandler(writer http.ResponseWriter, request *http.Request) {
