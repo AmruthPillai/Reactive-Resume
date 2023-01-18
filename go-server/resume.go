@@ -26,7 +26,7 @@ type Resumes struct {
 	resumes []*Resume
 }
 
-func (r Resumes) EncodeToJSON(file *os.File) error {
+func (r Resumes) EncodeToJSONFile(file *os.File) error {
 	marshal, err := json.Marshal(r)
 	if err != nil {
 		return err
