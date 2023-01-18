@@ -6,12 +6,14 @@ import { compareSync, hashSync } from 'bcryptjs';
 import { OAuth2Client } from 'google-auth-library';
 
 import { PostgresErrorCode } from '@/database/errorCodes.enum';
+import { ResumeService } from '@/resume/resume.service';
 import { CreateGoogleUserDto } from '@/users/dto/create-google-user.dto';
 import { User } from '@/users/entities/user.entity';
 import { UsersService } from '@/users/users.service';
 
 import { RegisterDto } from './dto/register.dto';
 import { ResetPasswordDto } from './dto/reset-password.dto';
+import { UpdateProfileDto } from './dto/update-profile.dto';
 
 @Injectable()
 export class AuthService {
@@ -66,6 +68,10 @@ export class AuthService {
         HttpStatus.UNAUTHORIZED
       );
     }
+  }
+
+  updateProfile(id: number, newData: UpdateProfileDto) {
+    return this.usersService.update(id, { name: newData.name });
   }
 
   forgotPassword(email: string) {

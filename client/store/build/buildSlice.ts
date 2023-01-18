@@ -39,7 +39,7 @@ export const buildSlice = createSlice({
   name: 'build',
   initialState,
   reducers: {
-    setTheme: (state, action: PayloadAction<SetThemePayload>) => {
+    setTheme: (state: BuildState, action: PayloadAction<SetThemePayload>) => {
       const { theme } = action.payload;
 
       state.theme = theme;

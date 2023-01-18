@@ -6,15 +6,17 @@ import { useState } from 'react';
 
 import { logout } from '@/store/auth/authSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { setModalState } from '@/store/modal/modalSlice';
 import getGravatarUrl from '@/utils/getGravatarUrl';
 
 import styles from './Avatar.module.scss';
 
 type Props = {
   size?: number;
+  interactive?: boolean;
 };
 
-const Avatar: React.FC<Props> = ({ size = 64 }) => {
+const Avatar: React.FC<Props> = ({ size = 64, interactive = true }) => {
   const router = useRouter();
 
   const { t } = useTranslation();
@@ -34,6 +36,11 @@ const Avatar: React.FC<Props> = ({ size = 64 }) => {
     setAnchorEl(null);
   };
 
+  const handleOpenProfile = () => {
+    dispatch(setModalState({ modal: 'auth.profile', state: { open: true } }));
+    handleClose();
+  };
+
   const handleLogout = () => {
     dispatch(logout());
     handleClose();
@@ -43,7 +50,7 @@ const Avatar: React.FC<Props> = ({ size = 64 }) => {
 
   return (
     <>
-      <IconButton onClick={handleOpen}>
+      <IconButton onClick={handleOpen} disabled={!interactive}>
         <Image
           width={size}
           height={size}
@@ -54,9 +61,9 @@ const Avatar: React.FC<Props> = ({ size = 64 }) => {
       </IconButton>
 
       <Menu anchorEl={anchorEl} onClose={handleClose} open={Boolean(anchorEl)}>
-        <MenuItem>
+        <MenuItem onClick={handleOpenProfile}>
           <div>
-            <span className="text-xs opacity-50">{t<string>('common.avatar.menu.greeting')}</span>
+            <span className="text-xs opacity-50">{t<string>('common.avatar.menu.greeting')},</span>
             <p>{user?.name}</p>
           </div>
         </MenuItem>

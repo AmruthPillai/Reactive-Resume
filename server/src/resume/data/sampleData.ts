@@ -7,7 +7,7 @@ const sampleData: Partial<Resume> = {
     phone: '+1 800 1200 3820',
     birthdate: '1995-08-06',
     photo: {
-      url: `https://i.imgur.com/40gTnCx.jpg`,
+      url: `https://i.imgur.com/O7iT9ke.jpg`,
       filters: {
         size: 128,
         shape: 'rounded-square',

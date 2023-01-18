@@ -2,7 +2,7 @@ import { User } from '@reactive-resume/schema';
 import { AxiosResponse } from 'axios';
 import toast from 'react-hot-toast';
 
-import { setAccessToken, setUser } from '@/store/auth/authSlice';
+import { logout, setAccessToken, setUser } from '@/store/auth/authSlice';
 
 import store from '../store';
 import axios from './axios';
@@ -35,6 +35,10 @@ export type ForgotPasswordParams = {
 export type ResetPasswordParams = {
   resetToken: string;
   password: string;
+};
+
+export type UpdateProfileParams = {
+  name: string;
 };
 
 export const login = async (loginParams: LoginParams) => {
@@ -74,4 +78,24 @@ export const resetPassword = async (resetPasswordParams: ResetPasswordParams) =>
   await axios.post<void, AxiosResponse<void>, ResetPasswordParams>('/auth/reset-password', resetPasswordParams);
 
   toast.success('Your password has been changed successfully, please login again.');
+};
+
+export const updateProfile = async (updateProfileParams: UpdateProfileParams) => {
+  const { data: user } = await axios.patch<User, AxiosResponse<User>, UpdateProfileParams>(
+    '/auth/update-profile',
+    updateProfileParams
+  );
+
+  store.dispatch(setUser(user));
+
+  toast.success('Your profile has been successfully updated.');
+};
+
+export const deleteAccount = async () => {
+  await axios.delete('/resume/all');
+  await axios.delete('/auth');
+
+  store.dispatch(logout());
+
+  toast.success('Your account has been deleted, hope to see you again soon.');
 };

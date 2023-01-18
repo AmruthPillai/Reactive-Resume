@@ -53,12 +53,11 @@ const Header = () => {
 
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
-  const { mutateAsync: duplicateMutation } = useMutation<Resume, ServerError, DuplicateResumeParams>(duplicateResume);
-
-  const { mutateAsync: deleteMutation } = useMutation<void, ServerError, DeleteResumeParams>(deleteResume);
-
   const resume = useAppSelector((state) => state.resume.present);
   const { left, right } = useAppSelector((state) => state.build.sidebar);
+
+  const { mutateAsync: deleteMutation } = useMutation<void, ServerError, DeleteResumeParams>(deleteResume);
+  const { mutateAsync: duplicateMutation } = useMutation<Resume, ServerError, DuplicateResumeParams>(duplicateResume);
 
   const name = useMemo(() => get(resume, 'name'), [resume]);
 
