@@ -3,6 +3,7 @@ import { CrisisAlert, ManageAccounts } from '@mui/icons-material';
 import { Button, Divider, TextField } from '@mui/material';
 import Joi from 'joi';
 import { useRouter } from 'next/router';
+import { Trans, useTranslation } from 'next-i18next';
 import { useEffect, useMemo, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useMutation } from 'react-query';
@@ -33,6 +34,8 @@ const schema = Joi.object({
 
 const UserProfileModal = () => {
   const router = useRouter();
+
+  const { t } = useTranslation();
 
   const dispatch = useAppDispatch();
 
@@ -86,7 +89,7 @@ const UserProfileModal = () => {
                 render={({ field, fieldState }) => (
                   <TextField
                     autoFocus
-                    label="Name"
+                    label={t('modals.auth.profile.form.name.label')}
                     error={!!fieldState.error}
                     helperText={fieldState.error?.message}
                     {...field}
@@ -94,11 +97,13 @@ const UserProfileModal = () => {
                 )}
               />
 
-              <p className="pl-4 text-[10.5px] opacity-50">
-                You can update your profile picture on{' '}
-                <a href="https://gravatar.com/" target="_blank" rel="noreferrer">
-                  Gravatar
-                </a>
+              <p className="pl-4 text-[10.25px] opacity-50">
+                <Trans t={t} i18nKey="modals.auth.profile.form.avatar.help-text">
+                  You can update your profile picture on{' '}
+                  <a href="https://gravatar.com/" target="_blank" rel="noreferrer">
+                    Gravatar
+                  </a>
+                </Trans>
               </p>
             </div>
           </div>
@@ -109,16 +114,16 @@ const UserProfileModal = () => {
             render={({ field, fieldState }) => (
               <TextField
                 disabled
-                label="Email"
+                label={t('modals.auth.profile.form.email.label')}
                 error={!!fieldState.error}
-                helperText="It is not possible to update your email address at the moment, please create a new account instead."
+                helperText={t('modals.auth.profile.form.email.help-text')}
                 {...field}
               />
             )}
           />
 
           <div>
-            <Button onClick={handleUpdate}>Save Changes</Button>
+            <Button onClick={handleUpdate}>{t('modals.auth.profile.actions.save')}</Button>
           </div>
         </form>
 
@@ -128,21 +133,21 @@ const UserProfileModal = () => {
 
         <div className="flex items-center gap-2">
           <CrisisAlert />
-          <h5 className="font-medium">Danger Zone</h5>
+          <h5 className="font-medium">{t('modals.auth.profile.delete-account.heading')}</h5>
         </div>
 
-        <p className="text-xs opacity-75">
-          To delete your account, your data and all your resumes, type{' '}
-          <code className="font-bold">&apos;delete&apos;</code> into the text box below and click on the button. Please
-          note that this is an irreversible action and your data cannot be retrieved again.
-        </p>
+        <p className="text-xs opacity-75">{t('modals.auth.profile.delete-account.body', { keyword: 'delete' })}</p>
 
         <div className="flex max-w-xs flex-col gap-4">
-          <TextField size="small" value={deleteText} onChange={(e) => setDeleteText(e.target.value)} />
+          <TextField
+            value={deleteText}
+            placeholder="Type 'delete' to confirm"
+            onChange={(e) => setDeleteText(e.target.value)}
+          />
 
           <div>
             <Button variant="contained" color="error" disabled={!isDeleteTextValid} onClick={handleDelete}>
-              Delete Your Data
+              {t('modals.auth.profile.delete-account.actions.delete')}
             </Button>
           </div>
         </div>

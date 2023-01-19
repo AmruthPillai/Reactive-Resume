@@ -71,6 +71,31 @@
         }
       },
       "heading": "Reset your password"
+    },
+    "profile": {
+      "heading": "Your Account",
+      "form": {
+        "avatar": {
+          "help-text": "You can update your profile picture on <1>Gravatar</1>"
+        },
+        "name": {
+          "label": "Full Name"
+        },
+        "email": {
+          "label": "Email Address",
+          "help-text": "It is not possible to update your email address at the moment, please create a new account instead."
+        }
+      },
+      "delete-account": {
+        "heading": "Delete Account and Data",
+        "body": "To delete your account, your data and all your resumes, type \"{{keyword}}\" into the textbox and click on the button. Please note that this is an irreversible action and your data cannot be retrieved again.",
+        "actions": {
+          "delete": "Delete Account"
+        }
+      },
+      "actions": {
+        "save": "Save Changes"
+      }
     }
   },
   "dashboard": {
