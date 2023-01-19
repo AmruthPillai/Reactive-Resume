@@ -72,6 +72,12 @@ export class ResumeController {
   }
 
   @UseGuards(JwtAuthGuard)
+  @Delete('/all')
+  removeAllByUser(@User('id') userId: number) {
+    return this.resumeService.removeAllByUser(userId);
+  }
+
+  @UseGuards(JwtAuthGuard)
   @Delete(':id')
   remove(@Param('id') id: string, @User('id') userId: number) {
     return this.resumeService.remove(+id, userId);

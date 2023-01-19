@@ -8,6 +8,7 @@ import ForgotPasswordModal from './auth/ForgotPasswordModal';
 import LoginModal from './auth/LoginModal';
 import RegisterModal from './auth/RegisterModal';
 import ResetPasswordModal from './auth/ResetPasswordModal';
+import UserProfileModal from './auth/UserProfileModal';
 import AwardModal from './builder/sections/AwardModal';
 import CertificateModal from './builder/sections/CertificateModal';
 import CustomModal from './builder/sections/CustomModal';
@@ -49,6 +50,7 @@ const ModalWrapper: React.FC = () => {
       <RegisterModal />
       <ForgotPasswordModal />
       <ResetPasswordModal />
+      <UserProfileModal />
 
       {/* Dashboard */}
       <CreateResumeModal />
