@@ -11,6 +11,7 @@
 * [Filling resume data](tutorial/filling-resume-data.md)
 * [Create a custom section](tutorial/create-a-custom-section.md)
 * [Exporting the resume](tutorial/exporting-the-resume.md)
+* [Deleting your account](tutorial/deleting-your-account.md)
 
 ## Source Code
 
