@@ -62,7 +62,6 @@ export class AuthController {
   @UseGuards(JwtAuthGuard)
   @Patch('update-profile')
   updateProfile(@User('id') userId: number, @Body() updateProfileDto: UpdateProfileDto) {
-    console.log({ userId, updateProfileDto });
     return this.authService.updateProfile(userId, updateProfileDto);
   }
 
