@@ -1,5 +1,5 @@
 import env from '@beam-australia/react-env';
-import _axios, { AxiosError, RawAxiosRequestHeaders } from 'axios';
+import _axios, { AxiosError } from 'axios';
 import Router from 'next/router';
 import { toast } from 'react-hot-toast';
 
@@ -20,10 +20,7 @@ const axios = _axios.create({ baseURL });
 axios.interceptors.request.use((config) => {
   const { accessToken } = store.getState().auth;
 
-  config.headers = {
-    ...(config.headers as RawAxiosRequestHeaders),
-    Authorization: `Bearer ${accessToken}`,
-  };
+  config.headers.set('Authorization', `Bearer ${accessToken}`);
 
   return config;
 });
