@@ -71,6 +71,31 @@
         }
       },
       "heading": "Restablecer tu contraseña"
+    },
+    "profile": {
+      "heading": "Tu cuenta",
+      "form": {
+        "avatar": {
+          "help-text": "Puedes actualizar tu foto de perfil en <1>Gravatar</1>"
+        },
+        "name": {
+          "label": "Nombre Completo"
+        },
+        "email": {
+          "label": "Correo electrónico",
+          "help-text": "No es posible actualizar tu dirección de correo electrónico en este momento, por favor crea una nueva cuenta en su lugar."
+        }
+      },
+      "delete-account": {
+        "heading": "Eliminar cuenta y datos",
+        "body": "Para eliminar su cuenta, sus datos y todos sus currículums, escriba \"{{keyword}}\" en el cuadro de texto y haga clic en el botón. Tenga en cuenta que esta es una acción irreversible y sus datos no se pueden recuperar nuevamente.",
+        "actions": {
+          "delete": "Eliminar Cuenta"
+        }
+      },
+      "actions": {
+        "save": "Guardar cambios"
+      }
     }
   },
   "dashboard": {
