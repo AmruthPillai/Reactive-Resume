@@ -11,11 +11,6 @@
     "format": "prettier --write .",
     "lint": "turbo run lint"
   },
-  "workspaces": [
-    "schema",
-    "client",
-    "server"
-  ],
   "dependencies": {
     "cross-env": "^7.0.3",
     "cross-var": "^1.1.0",
