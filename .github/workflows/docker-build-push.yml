@@ -45,7 +45,7 @@ jobs:
           password: ${{ secrets.GH_TOKEN }}
 
       - name: Build and Push Docker Image
-        uses: docker/build-push-action@v3.3.0
+        uses: docker/build-push-action@v4.0.0
         with:
           context: .
           push: true
