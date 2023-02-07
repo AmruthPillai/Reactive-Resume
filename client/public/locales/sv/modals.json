@@ -71,6 +71,31 @@
         }
       },
       "heading": "Återställ ditt lösenord"
+    },
+    "profile": {
+      "heading": "Ditt konto",
+      "form": {
+        "avatar": {
+          "help-text": "Du kan ändra din profilbild på <1>Gravatar</1>"
+        },
+        "name": {
+          "label": "Fullständigt namn"
+        },
+        "email": {
+          "label": "E-postadress",
+          "help-text": "Det är inte möjligt att uppdatera din e-postadress för tillfället, skapa ett nytt konto istället."
+        }
+      },
+      "delete-account": {
+        "heading": "Ta bort konto och data",
+        "body": "För att radera ditt konto, din data och alla dina CV, skriv \"{{keyword}}\" i textrutan och klicka på knappen. Observera att detta är en oåterkallelig åtgärd och din data kan inte hämtas igen.",
+        "actions": {
+          "delete": "Radera konto"
+        }
+      },
+      "actions": {
+        "save": "Spara ändringar"
+      }
     }
   },
   "dashboard": {

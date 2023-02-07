@@ -3,8 +3,8 @@
     "actions": {
       "add": "{{token}} hinzufügen",
       "delete": "{{token}} löschen",
-      "edit": "{{token}} bearbeiten",
-      "duplicate": "Abschnitt duplizieren"
+      "duplicate": "Abschnitt duplizieren",
+      "edit": "{{token}} bearbeiten"
     },
     "columns": {
       "heading": "Spalten",
@@ -81,13 +81,13 @@
       "center-artboard": "Artboard zentrieren",
       "copy-link": "Link zum Lebenslauf kopieren",
       "export-pdf": "PDF exportieren",
+      "redo": "Wiederholen",
       "toggle-orientation": "Seitenausrichtung umschalten",
       "toggle-page-break-line": "Pausenzeile umschalten",
       "toggle-sidebars": "Seitenleisten umschalten",
-      "zoom-in": "Vergrößern",
-      "zoom-out": "Verkleinern",
       "undo": "Rückgängig machen",
-      "redo": "Wiederholen"
+      "zoom-in": "Vergrößern",
+      "zoom-out": "Verkleinern"
     }
   },
   "header": {
@@ -115,15 +115,15 @@
         "actions": {
           "photo-filters": "Fotofilter"
         },
+        "birthdate": {
+          "label": "Geburtsdatum"
+        },
         "heading": "Grundlagen",
         "headline": {
           "label": "Überschrift"
         },
         "name": {
           "label": "Vollständiger Name"
-        },
-        "birthdate": {
-          "label": "Geburtsdatum"
         },
         "photo-filters": {
           "effects": {
@@ -257,33 +257,31 @@
         "heading": "Layout",
         "tooltip": {
           "reset-layout": "Layout zurücksetzen"
-        },
-        "main": "Hauptteil",
-        "sidebar": "Seitenleiste"
+        }
       },
       "links": {
         "bugs-features": {
           "body": "Sind Sie bei der Erstellung Ihres Lebenslaufs auf ein Problem gestoßen? Oder haben Sie eine tolle Idee, die Sie hinzufügen möchten? Erstellen Sie ein Ticket auf GitHub.",
-          "button": "GitHub Issues",
+          "button": "GitHub Themen",
           "heading": "Fehler? Verbesserungsvorschläge?"
         },
+        "docs": "Dokumentation",
         "donate": {
           "body": "Sollte Ihnen Reactive Resume gefallen, möchte ich Sie bitten, etwas zu spenden, damit die App für immer kostenlos und werbefrei bleibt.",
           "button": "Kaufe mir einen Kaffee",
           "heading": "Spenden Sie an Reactive Resume."
         },
         "github": "Quellcode",
-        "docs": "Dokumentation",
-        "heading": "Links"
+        "heading": "Links",
+        "reddit": "Reddit"
       },
       "settings": {
         "global": {
           "date": {
             "primary": "Datum",
-            "secondary": "Datumsformat für die gesamte App.",
-            "prefix": "Z.B."
+            "secondary": "Datumsformat für die gesamte App."
           },
-          "heading": "Global",
+          "heading": "Globale",
           "language": {
             "primary": "Sprache",
             "secondary": "Anzeigesprache, die in der gesamten App verwendet wird."
@@ -294,13 +292,13 @@
         },
         "heading": "Einstellungen",
         "page": {
-          "format": {
-            "primary": "Papiergröße",
-            "secondary": "Legt die Seitenabmessungen Ihres Lebenslaufs fest."
-          },
           "break-line": {
             "primary": "Seitenumbruch anzeigen",
             "secondary": "Zeigt den Seitenumbruch als Linie auf allen Seiten an."
+          },
+          "format": {
+            "primary": "Papiergröße",
+            "secondary": "Legt die Seitenabmessungen Ihres Lebenslaufs fest."
           },
           "heading": "Seite",
           "orientation": {

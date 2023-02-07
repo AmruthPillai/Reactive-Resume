@@ -3,6 +3,7 @@
     "actions": {
       "add": "Adăugați un nou {{token}}",
       "delete": "Ștergeți {{token}}",
+      "duplicate": "Secțiune duplicat",
       "edit": "Editați {{token}}"
     },
     "columns": {
@@ -80,13 +81,13 @@
       "center-artboard": "Centrul Artboard",
       "copy-link": "Copiați link-ul în CV",
       "export-pdf": "Export PDF",
+      "redo": "Refaceți",
       "toggle-orientation": "Schimbă orientarea paginii",
       "toggle-page-break-line": "Alternează linia de întrerupere a paginii",
       "toggle-sidebars": "Comutați bare laterale",
-      "zoom-in": "Zoom In",
-      "zoom-out": "Zoom Out",
       "undo": "Desfaceți",
-      "redo": "Refaceți"
+      "zoom-in": "Zoom In",
+      "zoom-out": "Zoom Out"
     }
   },
   "header": {
@@ -114,15 +115,15 @@
         "actions": {
           "photo-filters": "Filtre foto"
         },
+        "birthdate": {
+          "label": "Data nașterii"
+        },
         "heading": "Noțiuni de bază",
         "headline": {
           "label": "Titlul"
         },
         "name": {
           "label": "Nume și prenume"
-        },
-        "birthdate": {
-          "label": "Data nașterii"
         },
         "photo-filters": {
           "effects": {
@@ -264,14 +265,15 @@
           "button": "Probleme GitHub",
           "heading": "Gândaci? Solicitări de caracteristici?"
         },
+        "docs": "Documentație",
         "donate": {
           "body": "Dacă ți-a plăcut să folosești Reactive Resume, te rugăm să te gândești să donezi cât de mult poți pentru a menține aplicația în funcțiune, fără reclame și gratuită pentru totdeauna.",
           "button": "Cumpără-mi o cafea.",
           "heading": "Donează pentru Reactive Resume"
         },
         "github": "Codul sursă",
-        "docs": "Documentație",
-        "heading": "Legături"
+        "heading": "Legături",
+        "reddit": "Reddit"
       },
       "settings": {
         "global": {
@@ -290,13 +292,13 @@
         },
         "heading": "Setări",
         "page": {
-          "format": {
-            "primary": "Dimensiunea hartiei",
-            "secondary": "Determină dimensiunile paginilor de CV"
-          },
           "break-line": {
             "primary": "Linia de pauză",
             "secondary": "Afișați o linie pe toate paginile pentru a marca înălțimea unei pagini A4"
+          },
+          "format": {
+            "primary": "Dimensiunea hartiei",
+            "secondary": "Determină dimensiunile paginilor de CV"
           },
           "heading": "Pagina",
           "orientation": {

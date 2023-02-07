@@ -7,7 +7,7 @@
       "body": "Geben Sie die E-Mail-Adresse des Benutzerkontos ein, dass Sie wiederherstellen möchten.",
       "form": {
         "email": {
-          "label": "E-Mail-Addresse"
+          "label": "E-Mail-Adresse"
         }
       },
       "heading": "Passwort vergessen?",
@@ -42,7 +42,7 @@
           "label": "Passwort bestätigen"
         },
         "email": {
-          "label": "E-Mail-Addresse"
+          "label": "E-Mail-Adresse"
         },
         "name": {
           "label": "Vollständiger Name"
@@ -71,6 +71,31 @@
         }
       },
       "heading": "Passwort zurücksetzen"
+    },
+    "profile": {
+      "heading": "Ihr Benutzerkonto",
+      "form": {
+        "avatar": {
+          "help-text": "Sie können Ihr Profilbild auf <1>Gravatar</1> aktualisieren"
+        },
+        "name": {
+          "label": "Vollständiger Name"
+        },
+        "email": {
+          "label": "E-Mail-Adresse",
+          "help-text": "Im Moment ist es nicht möglich, Ihre E-Mail-Adresse zu aktualisieren. Bitte erstellen Sie stattdessen ein neues Konto."
+        }
+      },
+      "delete-account": {
+        "heading": "Konto und Daten löschen",
+        "body": "Um Ihr Konto, Ihre Daten und alle Ihre Lebensläufe zu löschen, geben Sie „{{keyword}}“ in das Textfeld ein und klicken Sie auf die Schaltfläche. Bitte beachten Sie, dass dies ein irreversibler Vorgang ist und Ihre Daten nicht wiederhergestellt werden können.",
+        "actions": {
+          "delete": "Account löschen"
+        }
+      },
+      "actions": {
+        "save": "Änderungen speichern"
+      }
     }
   },
   "dashboard": {
@@ -87,7 +112,7 @@
           "label": "Ist öffentlich zugänglich?"
         },
         "slug": {
-          "label": "Slug"
+          "label": "URL-Segment"
         }
       },
       "heading": "Neuen Lebenslauf erstellen"
@@ -98,14 +123,14 @@
         "actions": {
           "upload-json": "JSON hochladen"
         },
-        "body": "Wenn du einen <1>validierten JSON Resume</1> bereit hast, kannst du damit deine Entwicklung auf reaktiven Resume beschleunigen. Klicken Sie auf den Button unten und laden Sie eine gültige JSON-Datei hoch, um zu beginnen.",
+        "body": "Wenn du einen <1>validierten JSON Lebenslauf</1> bereit hast, kannst du damit deine Entwicklung auf Reactive Resume beschleunigen. Klicken Sie auf den Button unten und laden Sie eine gültige JSON-Datei hoch, um zu beginnen.",
         "heading": "Import vom JSON-Lebenslauf"
       },
       "linkedin": {
         "actions": {
           "upload-archive": "ZIP-Archiv hochladen"
         },
-        "body": "Sie können Zeit sparen, indem Sie Ihre Daten aus LinkedIn exportieren und sie zum automatischen Ausfüllen von Feldern auf Reaktives Lebenslauf verwenden. Gehen Sie zum Abschnitt <1>Datenschutz </1> auf LinkedIn und fordern Sie ein Archiv Ihrer Daten an. Sobald diese verfügbar sind, laden Sie die ZIP-Datei unten hoch.",
+        "body": "Sie können Zeit sparen, indem Sie Ihre Daten aus LinkedIn exportieren und sie zum automatischen Ausfüllen von Feldern auf Reactive Resume verwenden. Gehen Sie zum Abschnitt <1>Datenschutz </1> auf LinkedIn und fordern Sie ein Archiv Ihrer Daten an. Sobald diese verfügbar sind, laden Sie die ZIP-Datei unten hoch.",
         "heading": "Aus LinkedIn importieren"
       },
       "reactive-resume": {
@@ -114,7 +139,7 @@
           "upload-json-v2": "Laden Sie JSON von v2 hoch"
         },
         "body": "Wenn Sie eine JSON haben, die mit der aktuellen Version von Reactive Resume exportiert wurde, können Sie sie hier wieder importieren, um wieder eine bearbeitbare Version zu erhalten.",
-        "heading": "Import vom Reaktives Lebenslauf"
+        "heading": "Import von Reactive Resume"
       }
     },
     "rename-resume": {
@@ -126,7 +151,7 @@
           "label": "Name"
         },
         "slug": {
-          "label": "Slug"
+          "label": "URL-Segment"
         }
       },
       "heading": "Lebenslauf umbenennen"
