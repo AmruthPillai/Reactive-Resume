@@ -56,8 +56,15 @@ const WorkModal: React.FC = () => {
 
   const isEditMode = useMemo(() => !!item, [item]);
 
-  const addText = useMemo(() => t<string>('builder.common.actions.add', { token: heading }), [t, heading]);
-  const editText = useMemo(() => t<string>('builder.common.actions.edit', { token: heading }), [t, heading]);
+  const addText = useMemo(
+    () => t<string>('builder.common.actions.add', { token: t<string>(`builder.leftSidebar.${path}.heading`, heading) }),
+    [t, heading]
+  );
+  const editText = useMemo(
+    () =>
+      t<string>('builder.common.actions.edit', { token: t<string>(`builder.leftSidebar.${path}.heading`, heading) }),
+    [t, heading]
+  );
 
   const { reset, control, handleSubmit } = useForm<FormData>({
     defaultValues: defaultState,

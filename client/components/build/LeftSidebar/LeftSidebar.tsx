@@ -27,6 +27,7 @@ const LeftSidebar = () => {
   const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
 
   const sections = useAppSelector((state) => state.resume.present.sections);
+
   const { open } = useAppSelector((state) => state.build.sidebar.left);
 
   const customSections = useMemo(() => getCustomSections(sections), [sections]);
@@ -122,14 +123,19 @@ const LeftSidebar = () => {
                 arrow
                 key={id}
                 placement="right"
-                title={get(sections, `${id}.name`, t<string>(`builder.leftSidebar.sections.${id}.heading`)) as string}
+                title={t<string>(`builder.leftSidebar.sections.${id}.heading`, get(sections, `${id}.name`))}
               >
                 <IconButton onClick={() => handleClick(id)}>{icon}</IconButton>
               </Tooltip>
             ))}
 
             {customSections.map(({ id }) => (
-              <Tooltip key={id} title={get(sections, `${id}.name`, '') as string} placement="right" arrow>
+              <Tooltip
+                key={id}
+                title={t<string>(`builder.leftSidebar.sections.${id}.heading`, get(sections, `${id}.name`))}
+                placement="right"
+                arrow
+              >
                 <IconButton onClick={() => id && handleClick(id)}>
                   <Star />
                 </IconButton>

@@ -3,7 +3,8 @@
     "actions": {
       "add": "Adicionar {{token}}",
       "delete": "Remover {{token}}",
-      "edit": "Editar {{token}}"
+      "edit": "Editar {{token}}",
+      "duplicate": "Duplicar sessão"
     },
     "columns": {
       "heading": "Colunas",
@@ -108,7 +109,13 @@
           "awarder": {
             "label": "Concedente"
           }
-        }
+        },
+        "heading": "Títulos",
+        "heading_one": "Título"
+      },
+      "work": {
+        "heading": "Experiências de Trabalho",
+        "heading_one": "Experiência de Trabalho"
       },
       "basics": {
         "actions": {
@@ -153,7 +160,9 @@
           "issuer": {
             "label": "Emissor"
           }
-        }
+        },
+        "heading": "Certificações",
+        "heading_one": "Certificação"
       },
       "education": {
         "form": {
@@ -172,7 +181,9 @@
           "institution": {
             "label": "Instituição"
           }
-        }
+        },
+        "heading": "Formação Acadêmica",
+        "heading_one": "Formação Acadêmica"
       },
       "location": {
         "address": {
@@ -209,14 +220,34 @@
           "publisher": {
             "label": "Editor"
           }
-        }
+        },
+        "heading": "Publicações",
+        "heading_one": "Publicação"
       },
       "references": {
         "form": {
           "relationship": {
             "label": "Relação"
           }
-        }
+        },
+        "heading": "Referências",
+        "heading_one": "Referência"
+      },
+      "skills": {
+        "heading": "Habilidades",
+        "heading_one": "Habilidade"
+      },
+      "languages": {
+        "heading": "Idiomas",
+        "heading_one": "Idioma"
+      },
+      "interests": {
+        "heading": "Interesses",
+        "heading_one": "Interesse"
+      },
+      "projects": {
+        "heading": "Projetos",
+        "heading_one": "Projeto"
       },
       "section": {
         "heading": "Seção"
@@ -226,7 +257,9 @@
           "organization": {
             "label": "Organização"
           }
-        }
+        },
+        "heading": "Trabalhos Voluntários",
+        "heading_one": "Trabalho Voluntário"
       }
     }
   },
