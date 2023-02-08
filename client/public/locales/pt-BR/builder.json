@@ -1,0 +1,368 @@
+{
+  "common": {
+    "actions": {
+      "add": "Adicionar {{token}}",
+      "delete": "Remover {{token}}",
+      "edit": "Editar {{token}}"
+    },
+    "columns": {
+      "heading": "Colunas",
+      "tooltip": "Alterar o número de colunas"
+    },
+    "form": {
+      "date": {
+        "label": "Data"
+      },
+      "description": {
+        "label": "Descrição"
+      },
+      "email": {
+        "label": "Endereço de e-mail"
+      },
+      "end-date": {
+        "help-text": "Deixe este campo em branco se for até o presente",
+        "label": "Data de Término"
+      },
+      "keywords": {
+        "label": "Palavras-chave"
+      },
+      "level": {
+        "label": "Nível"
+      },
+      "levelNum": {
+        "label": "Nível (Número)"
+      },
+      "name": {
+        "label": "Nome"
+      },
+      "phone": {
+        "label": "Número de telefone"
+      },
+      "position": {
+        "label": "Cargo"
+      },
+      "start-date": {
+        "label": "Data de Início"
+      },
+      "subtitle": {
+        "label": "Subtítulo"
+      },
+      "summary": {
+        "label": "Resumo"
+      },
+      "title": {
+        "label": "Título"
+      },
+      "url": {
+        "label": "Site"
+      }
+    },
+    "glossary": {
+      "page": "Página"
+    },
+    "list": {
+      "actions": {
+        "delete": "Excluir",
+        "duplicate": "Duplicar",
+        "edit": "Editar"
+      },
+      "empty-text": "Essa lista está vazia."
+    },
+    "tooltip": {
+      "delete-item": "Tem certeza de que deseja excluir este item? Esta ação é irreversível.",
+      "delete-section": "Excluir Seção",
+      "rename-section": "Renomear Seção",
+      "toggle-visibility": "Alternar Visibilidade"
+    }
+  },
+  "controller": {
+    "tooltip": {
+      "center-artboard": "Prancheta central",
+      "copy-link": "Copiar link do currículo",
+      "export-pdf": "Exportar PDF",
+      "toggle-orientation": "Alternar orientação da página",
+      "toggle-page-break-line": "Alternar linha de quebra de página",
+      "toggle-sidebars": "Alternar barra lateral",
+      "zoom-in": "Mais Zoom",
+      "zoom-out": "Menos Zoom",
+      "undo": "Desfazer",
+      "redo": "Redo"
+    }
+  },
+  "header": {
+    "menu": {
+      "delete": "Deletar",
+      "duplicate": "Duplicar",
+      "rename": "Renomear",
+      "share-link": "Compartilhar Link",
+      "tooltips": {
+        "delete": "Tem certeza de que deseja excluir este currículo? Esta ação é irreversível.",
+        "share-link": "Você precisa alterar a visibilidade do seu currículo para público para torná-lo visível para outras pessoas."
+      }
+    }
+  },
+  "leftSidebar": {
+    "sections": {
+      "awards": {
+        "form": {
+          "awarder": {
+            "label": "Concedente"
+          }
+        }
+      },
+      "basics": {
+        "actions": {
+          "photo-filters": "Filtros da foto"
+        },
+        "heading": "Informações básicas",
+        "headline": {
+          "label": "Título"
+        },
+        "name": {
+          "label": "Nome Completo"
+        },
+        "birthdate": {
+          "label": "Data de nascimento"
+        },
+        "photo-filters": {
+          "effects": {
+            "border": {
+              "label": "Borda"
+            },
+            "grayscale": {
+              "label": "Escala de cinza"
+            },
+            "heading": "Efeitos"
+          },
+          "shape": {
+            "heading": "Forma"
+          },
+          "size": {
+            "heading": "Tamanho (em px)"
+          }
+        },
+        "photo-upload": {
+          "tooltip": {
+            "remove": "Excluir Foto",
+            "upload": "Enviar Foto"
+          }
+        }
+      },
+      "certifications": {
+        "form": {
+          "issuer": {
+            "label": "Emissor"
+          }
+        }
+      },
+      "education": {
+        "form": {
+          "area-study": {
+            "label": "Área de estudo"
+          },
+          "courses": {
+            "label": "Cursos"
+          },
+          "degree": {
+            "label": "Grau"
+          },
+          "grade": {
+            "label": "Nota"
+          },
+          "institution": {
+            "label": "Instituição"
+          }
+        }
+      },
+      "location": {
+        "address": {
+          "label": "Endereço"
+        },
+        "city": {
+          "label": "Cidade"
+        },
+        "country": {
+          "label": "País"
+        },
+        "heading": "Localização",
+        "postal-code": {
+          "label": "Código Postal"
+        },
+        "region": {
+          "label": "Região"
+        }
+      },
+      "profiles": {
+        "form": {
+          "network": {
+            "label": "Rede Social"
+          },
+          "username": {
+            "label": "Nome de Usuário"
+          }
+        },
+        "heading": "Perfis",
+        "heading_one": "Perfil"
+      },
+      "publications": {
+        "form": {
+          "publisher": {
+            "label": "Editor"
+          }
+        }
+      },
+      "references": {
+        "form": {
+          "relationship": {
+            "label": "Relação"
+          }
+        }
+      },
+      "section": {
+        "heading": "Seção"
+      },
+      "volunteer": {
+        "form": {
+          "organization": {
+            "label": "Organização"
+          }
+        }
+      }
+    }
+  },
+  "rightSidebar": {
+    "sections": {
+      "css": {
+        "heading": "CSS Personalizado"
+      },
+      "export": {
+        "heading": "Exportar",
+        "json": {
+          "primary": "JSON",
+          "secondary": "Baixe uma versão JSON do seu currículo que poderá ser importada de volta ao Reactive Resume."
+        },
+        "pdf": {
+          "loading": {
+            "primary": "Gerando PDF",
+            "secondary": "Por favor aguarde enquanto o seu PDF é gerado, isso pode levar até 15 segundos."
+          },
+          "normal": {
+            "primary": "PDF",
+            "secondary": "Baixe um PDF do seu currículo que você pode imprimir e enviar para o emprego dos seus sonhos. Este arquivo não pode ser importado de volta para edição posterior."
+          }
+        }
+      },
+      "layout": {
+        "heading": "Layout",
+        "tooltip": {
+          "reset-layout": "Redefinir Layout"
+        }
+      },
+      "links": {
+        "bugs-features": {
+          "body": "Alguma coisa te impede de fazer um currículo? Ou você tem uma ideia incrível para adicionar? Crie uma issue no GitHub para começar.",
+          "button": "GitHub Issues",
+          "heading": "Bugs? Sugestões de recursos?"
+        },
+        "donate": {
+          "body": "Se você gostou de usar o Reactive Resume, considere doar o máximo possível para manter o aplicativo em funcionamento, sem anúncios e gratuito para sempre.",
+          "button": "Pague-me um café",
+          "heading": "Faça uma doação ao Reactive Resume"
+        },
+        "github": "Código Fonte",
+        "docs": "Documentação",
+        "heading": "Links"
+      },
+      "settings": {
+        "global": {
+          "date": {
+            "primary": "Data",
+            "secondary": "Formato de data usado em todo o aplicativo"
+          },
+          "heading": "Global",
+          "language": {
+            "primary": "Idioma",
+            "secondary": "Idioma de exibição usado em todo o aplicativo"
+          },
+          "theme": {
+            "primary": "Tema"
+          }
+        },
+        "heading": "Configurações",
+        "page": {
+          "format": {
+            "primary": "Tamanho do papel",
+            "secondary": "Determina as dimensões das suas páginas de currículo"
+          },
+          "break-line": {
+            "primary": "Linha de quebra",
+            "secondary": "Mostrar uma linha em todas as páginas para marcar a altura de uma página A4"
+          },
+          "heading": "Página",
+          "orientation": {
+            "disabled": "Não tem efeito quando há somente uma página",
+            "primary": "Orientação",
+            "secondary": "Se as páginas devem ser exibidas horizontalmente ou verticalmente"
+          }
+        },
+        "resume": {
+          "heading": "Currículo",
+          "reset": {
+            "primary": "Limpar Tudo",
+            "secondary": "Cometeu muitos erros? Clique aqui para redefinir todas as alterações e começar do zero. Tenha cuidado, esta ação não pode ser revertida."
+          },
+          "sample": {
+            "primary": "Carregar dados de exemplo",
+            "secondary": "Não sabe por onde começar? Clique aqui para carregar alguns dados de exemplo para ver como é um currículo completo."
+          }
+        }
+      },
+      "sharing": {
+        "heading": "Compartilhamento",
+        "short-url": {
+          "label": "Prefiro um URL curto"
+        },
+        "visibility": {
+          "subtitle": "Permitir que qualquer um com um link veja seu currículo",
+          "title": "Público"
+        }
+      },
+      "templates": {
+        "heading": "Modelos"
+      },
+      "theme": {
+        "form": {
+          "background": {
+            "label": "Plano de fundo"
+          },
+          "primary": {
+            "label": "Primário"
+          },
+          "text": {
+            "label": "Texto"
+          }
+        },
+        "heading": "Tema"
+      },
+      "typography": {
+        "form": {
+          "font-family": {
+            "label": "Família da fonte"
+          },
+          "font-size": {
+            "label": "Tamanho da fonte"
+          }
+        },
+        "heading": "Tipografia",
+        "widgets": {
+          "body": {
+            "label": "Corpo"
+          },
+          "headings": {
+            "label": "Cabeçalho"
+          }
+        }
+      }
+    }
+  }
+}

@@ -37,6 +37,7 @@ export const languages: Language[] = [
   { code: 'or', name: 'Odia', localName: 'ଓଡ଼ିଆ' },
   { code: 'pl', name: 'Polish', localName: 'Polski' },
   { code: 'pt', name: 'Portuguese', localName: 'Português' },
+  { code: 'pt-BR', name: 'Brazilian Portuguese', localName: 'Brasil' },
   { code: 'ro', name: 'Romanian', localName: 'limba română' },
   { code: 'ru', name: 'Russian', localName: 'русский' },
   { code: 'sr', name: 'Serbian', localName: 'српски језик' },

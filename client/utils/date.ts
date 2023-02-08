@@ -31,7 +31,7 @@ export const formatDateString = (date: string | DateRange, formatStr: string): s
   if (isString(date)) {
     if (!dayjs(date).isValid()) return null;
 
-    return dayjs.utc(date).local().format(formatStr);
+    return dayjs.utc(date).format(formatStr);
   }
 
   // If `date` is a DateRange
