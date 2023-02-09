@@ -75,7 +75,7 @@ const Section: React.FC<SectionProps> = ({
                       {Array.from(Array(8).keys()).map((_, index) => (
                         <div
                           key={index}
-                          className="mr-1 h-2 w-4 rounded-sm border"
+                          className="mr-1 h-2 w-full max-w-[1rem] rounded-sm border"
                           style={{
                             borderColor: primaryColor,
                             backgroundColor: levelNum / (10 / 8) > index ? primaryColor : '',

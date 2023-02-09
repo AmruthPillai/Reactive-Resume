@@ -96,8 +96,12 @@ export const MastheadMain: React.FC = () => {
   const { summary } = useAppSelector((state) => state.resume.present.basics);
 
   return (
-    <div className="px-4 pt-4">
-      <Markdown>{summary}</Markdown>
-    </div>
+    <>
+      {summary && (
+        <div className="px-4 pt-4">
+          <Markdown>{summary}</Markdown>
+        </div>
+      )}
+    </>
   );
 };

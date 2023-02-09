@@ -68,8 +68,8 @@ const ImportExternalModal: React.FC = () => {
       }
 
       await mutateAsync({ integration, file });
-
       queryClient.invalidateQueries(RESUMES_QUERY);
+
       handleClose();
     }
   };

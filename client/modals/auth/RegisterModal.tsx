@@ -81,14 +81,14 @@ const RegisterModal: React.FC = () => {
 
   const handleLoginWithGoogle = async (response: CredentialResponse) => {
     if (response.credential) {
-      await loginWithGoogleMutation({ credential: response.credential }, { onError: handleLoginWithGoogleError });
+      await loginWithGoogleMutation({ credential: response.credential }, { onError: handleGoogleLoginError });
 
       handleClose();
     }
   };
 
-  const handleLoginWithGoogleError = () => {
-    toast("Please try logging in using email/password, or use another browser that supports Google's One Tap API.");
+  const handleGoogleLoginError = () => {
+    toast("Google doesn't seem to be responding, please try logging in using email/password instead.");
   };
 
   return (
@@ -100,7 +100,7 @@ const RegisterModal: React.FC = () => {
       footerChildren={
         <div className="flex gap-4">
           {!isEmpty(env('GOOGLE_CLIENT_ID')) && (
-            <GoogleLogin onSuccess={handleLoginWithGoogle} onError={handleLoginWithGoogleError} />
+            <GoogleLogin onSuccess={handleLoginWithGoogle} onError={handleGoogleLoginError} />
           )}
 
           <Button type="submit" onClick={handleSubmit(onSubmit)} disabled={isLoading}>

@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, HttpCode, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpCode, Patch, Post, UseGuards } from '@nestjs/common';
 
 import { User } from '@/decorators/user.decorator';
 import { User as UserEntity } from '@/users/entities/user.entity';
@@ -7,6 +7,7 @@ import { AuthService } from './auth.service';
 import { ForgotPasswordDto } from './dto/forgot-password.dto';
 import { RegisterDto } from './dto/register.dto';
 import { ResetPasswordDto } from './dto/reset-password.dto';
+import { UpdateProfileDto } from './dto/update-profile.dto';
 import { JwtAuthGuard } from './guards/jwt.guard';
 import { LocalAuthGuard } from './guards/local.guard';
 
@@ -55,6 +56,13 @@ export class AuthController {
   @Post('reset-password')
   resetPassword(@Body() resetPasswordDto: ResetPasswordDto) {
     return this.authService.resetPassword(resetPasswordDto);
+  }
+
+  @HttpCode(200)
+  @UseGuards(JwtAuthGuard)
+  @Patch('update-profile')
+  updateProfile(@User('id') userId: number, @Body() updateProfileDto: UpdateProfileDto) {
+    return this.authService.updateProfile(userId, updateProfileDto);
   }
 
   @HttpCode(200)

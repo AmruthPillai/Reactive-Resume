@@ -5,6 +5,7 @@ export type ModalName =
   | 'auth.register'
   | 'auth.forgot'
   | 'auth.reset'
+  | 'auth.profile'
   | 'dashboard.create-resume'
   | 'dashboard.import-external'
   | 'dashboard.rename-resume'
@@ -24,6 +25,7 @@ const initialState: Record<ModalName, ModalState> = {
   'auth.register': { open: false },
   'auth.forgot': { open: false },
   'auth.reset': { open: false },
+  'auth.profile': { open: false },
   'dashboard.create-resume': { open: false },
   'dashboard.import-external': { open: false },
   'dashboard.rename-resume': { open: false },

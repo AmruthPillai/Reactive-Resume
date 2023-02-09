@@ -176,8 +176,12 @@ export class ResumeService {
     return this.resumeRepository.save<Resume>(updatedResume);
   }
 
-  async remove(id: number, userId: number) {
-    await this.resumeRepository.delete({ id, user: { id: userId } });
+  remove(id: number, userId: number) {
+    return this.resumeRepository.delete({ id, user: { id: userId } });
+  }
+
+  removeAllByUser(userId: number) {
+    return this.resumeRepository.delete({ user: { id: userId } });
   }
 
   async duplicate(id: number, userId: number) {

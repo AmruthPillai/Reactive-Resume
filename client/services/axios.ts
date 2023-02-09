@@ -1,6 +1,7 @@
 import env from '@beam-australia/react-env';
-import _axios from 'axios';
+import _axios, { AxiosError } from 'axios';
 import Router from 'next/router';
+import { toast } from 'react-hot-toast';
 
 import { logout } from '@/store/auth/authSlice';
 
@@ -19,22 +20,22 @@ const axios = _axios.create({ baseURL });
 axios.interceptors.request.use((config) => {
   const { accessToken } = store.getState().auth;
 
-  config.headers = {
-    ...config.headers,
-    Authorization: `Bearer ${accessToken}`,
-  };
+  config.headers.set('Authorization', `Bearer ${accessToken}`);
 
   return config;
 });
 
 axios.interceptors.response.use(
   (response) => response,
-  (error) => {
+  (error: AxiosError<ServerError>) => {
     const { response } = error;
 
     if (response) {
-      const errorObject: ServerError = response.data;
+      const errorObject = response.data;
       const code = errorObject.statusCode;
+      const message = errorObject.message;
+
+      toast.error(message);
 
       if (code === 401 || code === 404) {
         store.dispatch(logout());

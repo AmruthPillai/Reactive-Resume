@@ -2,7 +2,7 @@
   "auth": {
     "forgot-password": {
       "actions": {
-        "send-email": "Trimiteți e-mail de resetare a parolei"
+        "send-email": "Trimite e-mail pentru resetarea parolei"
       },
       "body": "Introduceți doar adresa de e-mail asociată contului pe care doriți să îl recuperați.",
       "form": {
@@ -71,6 +71,31 @@
         }
       },
       "heading": "Resetați-vă parola"
+    },
+    "profile": {
+      "heading": "Your account",
+      "form": {
+        "avatar": {
+          "help-text": "Vă puteți actualiza imaginea de profil pe <1>Gravatar</1>"
+        },
+        "name": {
+          "label": "Nume Complet"
+        },
+        "email": {
+          "label": "Adresa de e-mail",
+          "help-text": "Nu este posibil să vă actualizați adresa de e-mail în acest moment, vă rugăm să creați un cont nou."
+        }
+      },
+      "delete-account": {
+        "heading": "Șterge Datele Contului",
+        "body": "Pentru a vă șterge contul, datele și toate CV-urile, tastați \"{{keyword}}\" în caseta de text și faceți clic pe buton. Vă rugăm să rețineți că aceasta este o acțiune ireversibilă și că datele dumneavoastră nu mai pot fi recuperate.",
+        "actions": {
+          "delete": "Ștergere cont"
+        }
+      },
+      "actions": {
+        "save": "Salvează modificările"
+      }
     }
   },
   "dashboard": {

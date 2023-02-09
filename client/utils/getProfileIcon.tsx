@@ -9,6 +9,7 @@ import {
   FaHackerrank,
   FaInstagram,
   FaLinkedinIn,
+  FaMastodon,
   FaMedium,
   FaSkype,
   FaSoundcloud,
@@ -18,10 +19,11 @@ import {
   FaXing,
   FaYoutube,
 } from 'react-icons/fa';
-import { SiCodechef, SiCodeforces } from 'react-icons/si';
+import { SiCodeberg, SiCodechef, SiCodeforces } from 'react-icons/si';
 
 const profileIconMap: Record<string, JSX.Element> = {
   behance: <FaBehance />,
+  codeberg: <SiCodeberg />,
   codechef: <SiCodechef />,
   codeforces: <SiCodeforces />,
   dribbble: <FaDribbble />,
@@ -31,6 +33,7 @@ const profileIconMap: Record<string, JSX.Element> = {
   hackerrank: <FaHackerrank />,
   instagram: <FaInstagram />,
   linkedin: <FaLinkedinIn />,
+  mastodon: <FaMastodon />,
   medium: <FaMedium />,
   skype: <FaSkype />,
   soundcloud: <FaSoundcloud />,

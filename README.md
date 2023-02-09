@@ -134,6 +134,10 @@ Reactive Resume would be nothing without the folks who supported me and kept the
 ### [GitHub Sponsor](https://github.com/sponsors/AmruthPillai)
 ### [PayPal](https://paypal.me/RajaRajanA)
 
+## GitHub Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=AmruthPillai/Reactive-Resume&type=Date)](https://star-history.com/#AmruthPillai/Reactive-Resume&Date)
+
 ## Infrastructure
 
 - [Next.js](https://nextjs.org/), frontend

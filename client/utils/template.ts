@@ -20,7 +20,7 @@ export const formatLocation = (location?: Location): string => {
 };
 
 export const addHttp = (url: string) => {
-  if (url.search(/^http[s]?:\/\//) == -1) {
+  if (url.search(/^http[s]?:\/\//) == -1 && url.search(/^mailto:/) == -1 && url.search(/^tel:/) == -1) {
     url = 'http://' + url;
   }
 

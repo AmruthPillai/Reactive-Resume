@@ -3,6 +3,7 @@
     "actions": {
       "add": "Lägg till {{token}}",
       "delete": "Ta bort {{token}}",
+      "duplicate": "Duplicera avsnitt",
       "edit": "Redigera {{token}}"
     },
     "columns": {
@@ -80,13 +81,13 @@
       "center-artboard": "Centrera Artboard",
       "copy-link": "Kopiera länken till CV:et",
       "export-pdf": "Exportera som PDF",
+      "redo": "Gör om",
       "toggle-orientation": "Byt sidans orientering",
       "toggle-page-break-line": "Visa/dölj Sidbrytningslinjer",
       "toggle-sidebars": "Visa/dölj Sidpanelen",
-      "zoom-in": "Zooma in",
-      "zoom-out": "Zooma Ut",
       "undo": "Ångra",
-      "redo": "Gör om"
+      "zoom-in": "Zooma in",
+      "zoom-out": "Zooma Ut"
     }
   },
   "header": {
@@ -114,15 +115,15 @@
         "actions": {
           "photo-filters": "Fotofilter"
         },
+        "birthdate": {
+          "label": "Födelsedatum"
+        },
         "heading": "Grunder",
         "headline": {
           "label": "Rubrik"
         },
         "name": {
           "label": "Fullständigt namn"
-        },
-        "birthdate": {
-          "label": "Födelsedatum"
         },
         "photo-filters": {
           "effects": {
@@ -264,14 +265,15 @@
           "button": "GitHub Issues",
           "heading": "Buggar? Funktionsförslag?"
         },
+        "docs": "Dokumentation",
         "donate": {
           "body": "Om du gillade att använda Reactive Resume, överväg att donera så mycket som möjligt för att hålla appen igång utan annonser och gratis för alltid.",
           "button": "Köp mig en kaffe",
           "heading": "Donera till Reactive Resume"
         },
         "github": "Källkod",
-        "docs": "Dokumentation",
-        "heading": "Länkar"
+        "heading": "Länkar",
+        "reddit": "Reddit"
       },
       "settings": {
         "global": {
@@ -290,13 +292,13 @@
         },
         "heading": "Inställningar",
         "page": {
-          "format": {
-            "primary": "Pappersformat",
-            "secondary": "Bestämmer måtten på dina CV-sidor"
-          },
           "break-line": {
             "primary": "Radbrytning",
             "secondary": "Visa en linje på alla sidor för att markera höjden på en A4-sida"
+          },
+          "format": {
+            "primary": "Pappersformat",
+            "secondary": "Bestämmer måtten på dina CV-sidor"
           },
           "heading": "Sida",
           "orientation": {
