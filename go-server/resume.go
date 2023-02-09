@@ -2,10 +2,10 @@ package main
 
 import (
 	"encoding/json"
-	"errors"
 	"github.com/brianvoe/gofakeit/v6"
 	"github.com/google/uuid"
 	"log"
+	"net/http"
 	"os"
 	"time"
 )
@@ -29,67 +29,59 @@ type Resumes struct {
 	resumes []*Resume
 }
 
-func (r Resumes) EncodeToJSONFile(file *os.File) error {
-	marshal, err := json.Marshal(r)
-	if err != nil {
-		return err
-	}
-	_, err = file.Write(marshal)
-	if err != nil {
-		return err
-	}
-	return nil
-}
+const RandomResumes = 10
+const ResumeDataPath = "./data/resumedata.json"
 
-const tempDataPathForResumes = "./data/resumedata.json"
-const tempDataPathForUsers = "./data/userdata.json"
-const randomData = 10
-
-func getResumeData() (Resumes, error) {
-	log.Printf("printing from getResumeData\n")
-	err := genrateResumeData() // if err == nil, the file exists and generated
-	if err != nil {
-		return Resumes{}, err
-	}
-	// if it exists then just get them unmarshalled  as go structs
-	return Resumes{}, err
-}
-
-func genrateResumeData() error {
+func generateRandomResumeHandler(writer http.ResponseWriter, request *http.Request) {
+	log.Printf("get from generateRandomResumeHandler\n")
 	var randomResumeList Resumes
-	log.Printf("printing from genrateResumeData\n")
-	resumesFile, err := os.OpenFile(tempDataPathForResumes, os.O_RDWR, 0766)
-	defer func(resumesFile *os.File) {
-		err := resumesFile.Close()
+
+	for i := 0; i < RandomResumes; i++ {
+		r := &Resume{
+			ID:        uuid.New(),
+			shortID:   "",
+			Name:      gofakeit.Name(),
+			Basics:    "",
+			Sections:  "",
+			Metadata:  "",
+			Public:    false,
+			CreatedAt: time.Now(),
+			UpdatedAt: time.Now(),
+			UserID:    uuid.New(),
+		}
+
+		randomResumeList.resumes = append(randomResumeList.resumes, r)
+	}
+	log.Println("generated resumes")
+
+	for _, resume := range randomResumeList.resumes {
+		b, err := json.Marshal(resume)
 		if err != nil {
 			log.Fatal(err)
 		}
-	}(resumesFile)
 
-	switch err != nil {
-	case errors.Is(err, os.ErrNotExist):
-		resumesFile, err = os.Create(tempDataPathForResumes)
+		err = os.WriteFile(ResumeDataPath, b, 0644)
 		if err != nil {
-			return err
+			log.Fatal(err)
 		}
-		for i := 0; i < randomData; i++ {
-			// make 100 random user and resume json objects
-			randomResume := Resume{
-				ID: uuid.New(),
-			}
+		log.Println("resume data wrote to file")
 
-			err := gofakeit.Struct(&randomResume)
-			if err != nil {
-				return err
-			}
-		}
-		err := randomResumeList.EncodeToJSONFile(resumesFile)
+		_, err = writer.Write(b)
 		if err != nil {
-			return err
+			log.Fatal(err)
 		}
-	default:
-		return err
 	}
+}
 
-	return nil
+func resumeListHandler(writer http.ResponseWriter, request *http.Request) {
+	log.Printf("get from resumeListHandler\n")
+	// load resumes from file
+	file, err := os.ReadFile(ResumeDataPath)
+	if err != nil {
+		log.Fatal(err)
+	}
+	_, err = writer.Write(file)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
