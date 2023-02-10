@@ -35,6 +35,7 @@ const i18nConfig = {
       'or',
       'pl',
       'pt',
+      'pt-BR',
       'ro',
       'ru',
       'sr',
