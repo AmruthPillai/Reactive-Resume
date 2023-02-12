@@ -3,6 +3,7 @@
     "actions": {
       "add": "Ajouter un/une {{token}}",
       "delete": "Supprimer {{token}}",
+      "duplicate": "Section dupliquée",
       "edit": "Éditer {{token}}"
     },
     "columns": {
@@ -80,13 +81,13 @@
       "center-artboard": "Centrer l'affichage",
       "copy-link": "Copier le lien vers le CV",
       "export-pdf": "Exporter en PDF",
+      "redo": "Refaire",
       "toggle-orientation": "Basculer l'orientation de la page",
       "toggle-page-break-line": "Afficher/cacher l'indicateur de saut de page",
       "toggle-sidebars": "Afficher/cacher les barres latérales",
-      "zoom-in": "Zoomer",
-      "zoom-out": "Dézoomer",
       "undo": "Défaire",
-      "redo": "Refaire"
+      "zoom-in": "Zoomer",
+      "zoom-out": "Dézoomer"
     }
   },
   "header": {
@@ -112,7 +113,10 @@
       },
       "basics": {
         "actions": {
-          "photo-filters": "Filtres pour la photo"
+          "photo-filters": "Filtres photo"
+        },
+        "birthdate": {
+          "label": "Date de naissance"
         },
         "heading": "Informations de base",
         "headline": {
@@ -120,9 +124,6 @@
         },
         "name": {
           "label": "Nom complet"
-        },
-        "birthdate": {
-          "label": "Date de naissance"
         },
         "photo-filters": {
           "effects": {
@@ -264,14 +265,15 @@
           "button": "Issues GitHub",
           "heading": "Bogues ? Demandes de fonctionnalités ?"
         },
+        "docs": "Documentation",
         "donate": {
           "body": "Si vous avez aimé utiliser Reactive Resume, pensez à donner comme vous le pouvez pour que l'application reste disponible, gratuite et sans publicité pour toujours.",
           "button": "Offrez-moi un café",
           "heading": "Faire un don à Reactive Resume"
         },
         "github": "Code source",
-        "docs": "Documentation",
-        "heading": "Liens"
+        "heading": "Liens",
+        "reddit": "Reddit"
       },
       "settings": {
         "global": {
@@ -290,13 +292,13 @@
         },
         "heading": "Paramètres",
         "page": {
-          "format": {
-            "primary": "Taille de papier",
-            "secondary": "Détermine les dimensions de vos pages de CV"
-          },
           "break-line": {
             "primary": "Indicateur de changement de page",
             "secondary": "Afficher une ligne sur toutes les pages pour marquer la hauteur d'une feuille A4"
+          },
+          "format": {
+            "primary": "Taille de papier",
+            "secondary": "Détermine les dimensions de vos pages de CV"
           },
           "heading": "Page",
           "orientation": {
