@@ -71,6 +71,31 @@
         }
       },
       "heading": "Réinitialiser votre mot de passe"
+    },
+    "profile": {
+      "heading": "Votre compte",
+      "form": {
+        "avatar": {
+          "help-text": "Vous pouvez mettre à jour votre photo de profil sur <1>Gravatar</1>"
+        },
+        "name": {
+          "label": "Nom complet"
+        },
+        "email": {
+          "label": "Email",
+          "help-text": "Il n'est pas possible de mettre à jour votre adresse e-mail pour le moment, merci de créer un nouveau compte à la place."
+        }
+      },
+      "delete-account": {
+        "heading": "Supprimer le compte et effacer les données",
+        "body": "Pour supprimer votre compte, vos données et tous vos CV, tapez \"{{keyword}}\" dans la zone de texte et cliquez sur le bouton. Veuillez noter qu'il s'agit d'une action irréversible et que vos données ne pourront plus être récupérées.",
+        "actions": {
+          "delete": "Supprimer le compte"
+        }
+      },
+      "actions": {
+        "save": "Enregistrer les Modifications"
+      }
     }
   },
   "dashboard": {
@@ -110,10 +135,10 @@
       },
       "reactive-resume": {
         "actions": {
-          "upload-json": "Mettre en ligne un JSON",
-          "upload-json-v2": "Télécharger JSON à partir de la v2"
+          "upload-json": "Importer un JSON",
+          "upload-json-v2": "Importer un JSON v2 ou plus"
         },
-        "body": "Si vous avez un JSON qui a été exporté avec la version actuelle de Reactive Resume, vous pouvez le réimporter ici pour obtenir à nouveau une version modifiable.",
+        "body": "Si vous avez un JSON qui a été exporté avec la version actuelle de Reactive Resume, vous pouvez le réimporter ici pour l'éditer à nouveau.",
         "heading": "Importer depuis Reactive Resume"
       }
     },
