@@ -3,7 +3,7 @@
     "actions": {
       "add": "Ajouter un/une {{token}}",
       "delete": "Supprimer {{token}}",
-      "duplicate": "Section dupliquée",
+      "duplicate": "Dupliquer la section",
       "edit": "Éditer {{token}}"
     },
     "columns": {
@@ -64,7 +64,7 @@
     "list": {
       "actions": {
         "delete": "Supprimer",
-        "duplicate": "Dédoubler",
+        "duplicate": "Dupliquer",
         "edit": "Éditer"
       },
       "empty-text": "Cette liste est vide."
@@ -93,7 +93,7 @@
   "header": {
     "menu": {
       "delete": "Supprimer",
-      "duplicate": "Dédoubler",
+      "duplicate": "Dupliquer",
       "rename": "Renommer",
       "share-link": "Partager un lien",
       "tooltips": {
@@ -245,11 +245,11 @@
         "pdf": {
           "loading": {
             "primary": "Génération du PDF",
-            "secondary": "Veuillez patienter pendant que votre PDF est généré, cela peut prendre jusqu'à 15 secondes."
+            "secondary": "Merci de patienter que votre PDF soit généré, cela peut prendre jusqu'à 15 secondes."
           },
           "normal": {
             "primary": "PDF",
-            "secondary": "Téléchargez un PDF de votre CV que vous pourrez imprimer et envoyer à l'emploi de vos rêves. Ce fichier ne peut pas être réimporté pour être modifié ultérieurement."
+            "secondary": "Télécharger au format PDF votre CV, à imprimer et envoyer à l'offre d'emploi de vos rêves. Ce fichier ne peut pas être réimporté pour être modifié ultérieurement."
           }
         }
       },
@@ -261,13 +261,13 @@
       },
       "links": {
         "bugs-features": {
-          "body": "Quelque chose vous a empêché de rédiger un CV ? Ou vous avez une idée géniale à ajouter ? Créez une issue sur GitHub pour commencer.",
+          "body": "Quelque chose vous a empêché de faire un CV ? Vous avez une idée géniale à ajouter ? Créez une issue sur GitHub dès maintenant.",
           "button": "Issues GitHub",
           "heading": "Bogues ? Demandes de fonctionnalités ?"
         },
         "docs": "Documentation",
         "donate": {
-          "body": "Si vous avez aimé utiliser Reactive Resume, pensez à donner comme vous le pouvez pour que l'application reste disponible, gratuite et sans publicité pour toujours.",
+          "body": "Si vous avez aimé utiliser Reactive Resume, merci d'envisager de faire un don pour que l'application puisse rester disponible, gratuite et sans publicité pour toujours.",
           "button": "Offrez-moi un café",
           "heading": "Faire un don à Reactive Resume"
         },
@@ -294,7 +294,7 @@
         "page": {
           "break-line": {
             "primary": "Indicateur de changement de page",
-            "secondary": "Afficher une ligne sur toutes les pages pour marquer la hauteur d'une feuille A4"
+            "secondary": "Affiche une ligne sur toutes les pages pour marquer la hauteur d'une feuille A4"
           },
           "format": {
             "primary": "Taille de papier",
@@ -302,7 +302,7 @@
           },
           "heading": "Page",
           "orientation": {
-            "disabled": "N'a aucun effet lorsqu'il n'y a qu'une seule page",
+            "disabled": "Aucun effet lorsqu'il n'y a qu'une seule page",
             "primary": "Orientation",
             "secondary": "Afficher les pages horizontalement ou verticalement"
           }
@@ -310,22 +310,22 @@
         "resume": {
           "heading": "CV",
           "reset": {
-            "primary": "Tout remettre à zéro",
+            "primary": "Remise à zéro",
             "secondary": "Vous avez fait trop d'erreurs ? Cliquez ici pour réinitialiser toutes les modifications et repartir de zéro. Attention, cette action ne peut pas être annulée."
           },
           "sample": {
-            "primary": "Charger les données de démo",
-            "secondary": "Vous ne savez pas par où commencer ? Cliquez ici pour charger quelques exemples de données afin de voir à quoi ressemble un CV complet."
+            "primary": "Charger un exemple de données",
+            "secondary": "Vous ne savez pas par où commencer ? Cliquez-ici pour charger un exemple de données afin de voir à quoi ressemble un CV complet."
           }
         }
       },
       "sharing": {
-        "heading": "Partage",
+        "heading": "Partager",
         "short-url": {
-          "label": "Préférer une URL courte"
+          "label": "URL courte préférée"
         },
         "visibility": {
-          "subtitle": "Permettre à toute personne ayant un lien de consulter votre CV",
+          "subtitle": "Permettre de consulter votre CV à toute personne ayant un lien",
           "title": "Public"
         }
       },
@@ -355,7 +355,7 @@
             "label": "Taille de la police"
           }
         },
-        "heading": "Typographie",
+        "heading": "Polices",
         "widgets": {
           "body": {
             "label": "Contenu"
