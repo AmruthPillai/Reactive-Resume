@@ -55,7 +55,7 @@ export const lightTheme = createTheme({
   ...theme,
   palette: {
     mode: 'light',
-    primary: { main: '#404040' }, // neutral[700]
+    primary: { main: '#007D7F' }, // neutral[700]
     secondary: { main: '#0d9488' }, // teal[600]
   },
 });
@@ -64,7 +64,7 @@ export const darkTheme = createTheme({
   ...theme,
   palette: {
     mode: 'dark',
-    primary: { main: '#f5f5f5' }, // neutral[100]
+    primary: { main: '#FCED17' }, // neutral[100]
     secondary: { main: '#2dd4bf' }, // teal[400]
   },
 });
