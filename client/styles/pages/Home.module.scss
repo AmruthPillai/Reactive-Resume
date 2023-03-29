@@ -1,8 +1,8 @@
 .container {
-  @apply h-screen flex flex-col gap-6 pt-24 pb-6 px-6;
+  @apply h-screen flex flex-col gap-6 p-6;
 
   .content {
-    @apply flex-1;
+    @apply flex flex-col flex-1 items-center justify-center;
   }
 
   .actions {
