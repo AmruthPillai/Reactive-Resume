@@ -3,6 +3,7 @@
     "actions": {
       "add": "새 {{token}} 추가",
       "delete": "{{token}} 삭제",
+      "duplicate": "중복 섹션",
       "edit": "{{token}} 수정"
     },
     "columns": {
@@ -63,8 +64,8 @@
     "list": {
       "actions": {
         "delete": "삭제",
-        "duplicate": "복제하다",
-        "edit": "편집하다"
+        "duplicate": "복제",
+        "edit": "편집"
       },
       "empty-text": "이 목록은 비어 있습니다."
     },
@@ -72,7 +73,7 @@
       "delete-item": "이 항목을 삭제하시겠습니까? 이것은 되돌릴 수 없는 조치입니다.",
       "delete-section": "섹션 삭제",
       "rename-section": "섹션 이름 바꾸기",
-      "toggle-visibility": "가시성 전환"
+      "toggle-visibility": "표시 전환"
     }
   },
   "controller": {
@@ -80,23 +81,23 @@
       "center-artboard": "중앙 대지",
       "copy-link": "이력서 링크 복사",
       "export-pdf": "PDF 내보내기",
+      "redo": "다시 실행",
       "toggle-orientation": "페이지 방향 전환",
-      "toggle-page-break-line": "페이지 나누기 줄 전환",
-      "toggle-sidebars": "사이드바 토글",
-      "zoom-in": "확대",
-      "zoom-out": "축소",
+      "toggle-page-break-line": "페이지 구분선 전환",
+      "toggle-sidebars": "사이드바 전환",
       "undo": "실행 취소",
-      "redo": "다시 하다"
+      "zoom-in": "확대",
+      "zoom-out": "축소"
     }
   },
   "header": {
     "menu": {
       "delete": "삭제",
-      "duplicate": "복제하다",
+      "duplicate": "복제",
       "rename": "이름 바꾸기",
       "share-link": "링크 공유",
       "tooltips": {
-        "delete": "이 이력서를 삭제하시겠습니까? 이것은 되돌릴 수 없는 조치입니다.",
+        "delete": "이 이력서를 삭제하시겠습니까? 삭제는 되돌릴 수 없는 작업입니다.",
         "share-link": "다른 사람이 볼 수 있도록 이력서의 공개 상태를 변경해야 합니다."
       }
     }
@@ -114,15 +115,15 @@
         "actions": {
           "photo-filters": "사진 필터"
         },
+        "birthdate": {
+          "label": "생일"
+        },
         "heading": "기초",
         "headline": {
           "label": "표제"
         },
         "name": {
           "label": "성명"
-        },
-        "birthdate": {
-          "label": "생일"
         },
         "photo-filters": {
           "effects": {
@@ -264,14 +265,15 @@
           "button": "GitHub 문제",
           "heading": "버그? 기능 요청?"
         },
+        "docs": "선적 서류 비치",
         "donate": {
           "body": "Reactive Resume 사용이 마음에 드셨다면, 광고 없이 영원히 무료로 앱을 계속 운영할 수 있도록 가능한 한 많은 기부를 고려하십시오.",
           "button": "커피 사줘",
           "heading": "Reactive Resume에 기부"
         },
         "github": "소스 코드",
-        "docs": "선적 서류 비치",
-        "heading": "연결"
+        "heading": "연결",
+        "reddit": "Reddit"
       },
       "settings": {
         "global": {
@@ -290,13 +292,13 @@
         },
         "heading": "설정",
         "page": {
-          "format": {
-            "primary": "용지 크기",
-            "secondary": "이력서 페이지의 크기를 결정합니다."
-          },
           "break-line": {
             "primary": "브레이크 라인",
             "secondary": "A4 페이지의 높이를 표시하기 위해 모든 페이지에 선 표시"
+          },
+          "format": {
+            "primary": "용지 크기",
+            "secondary": "이력서 페이지의 크기를 결정합니다."
           },
           "heading": "페이지",
           "orientation": {
