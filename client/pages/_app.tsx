@@ -1,8 +1,8 @@
 import '@/styles/globals.scss';
 
 import env from '@beam-australia/react-env';
-import DayjsAdapter from '@date-io/dayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
@@ -32,7 +32,7 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => (
     </Head>
 
     <ReduxProvider store={store}>
-      <LocalizationProvider dateAdapter={DayjsAdapter}>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
         <PersistGate loading={null} persistor={persistor}>
           <GoogleOAuthProvider clientId={env('GOOGLE_CLIENT_ID')}>
             <QueryClientProvider client={queryClient}>
