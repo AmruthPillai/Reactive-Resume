@@ -3,7 +3,7 @@ FROM node:lts-alpine AS base
 WORKDIR /app
 
 RUN apk add --no-cache g++ git curl make python3 libc6-compat \
-  && curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm
+  && curl -fsSL https://get.pnpm.io/install.sh | node - add --global pnpm
 
 FROM base as dependencies
 
