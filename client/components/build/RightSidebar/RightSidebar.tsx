@@ -1,5 +1,5 @@
 import { Divider, IconButton, SwipeableDrawer, Tooltip, useMediaQuery, useTheme } from '@mui/material';
-import { capitalize } from 'lodash';
+import capitalize from 'lodash/capitalize';
 import { useTranslation } from 'next-i18next';
 
 import Avatar from '@/components/shared/Avatar';

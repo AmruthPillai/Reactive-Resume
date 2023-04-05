@@ -1,8 +1,8 @@
 import '@/styles/globals.scss';
 
 import env from '@beam-australia/react-env';
-import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';

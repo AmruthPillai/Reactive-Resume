@@ -16,7 +16,10 @@ import {
 import csv from 'csvtojson';
 import dayjs from 'dayjs';
 import { readFile, unlink } from 'fs/promises';
-import { cloneDeep, get, isEmpty, merge } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
+import get from 'lodash/get';
+import isEmpty from 'lodash/isEmpty';
+import merge from 'lodash/merge';
 import StreamZip from 'node-stream-zip';
 import { DeepPartial } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';

@@ -14,11 +14,11 @@ import {
 import { ButtonBase, Divider, Tooltip, useMediaQuery, useTheme } from '@mui/material';
 import clsx from 'clsx';
 import dayjs from 'dayjs';
-import { get } from 'lodash';
+import get from 'lodash/get';
 import { useTranslation } from 'next-i18next';
 import toast from 'react-hot-toast';
 import { useMutation } from 'react-query';
-import { ReactZoomPanPinchRef } from 'react-zoom-pan-pinch';
+import { ReactZoomPanPinchHandlers } from 'react-zoom-pan-pinch';
 import { ActionCreators } from 'redux-undo';
 
 import { ServerError } from '@/services/axios';
@@ -29,7 +29,7 @@ import getResumeUrl from '@/utils/getResumeUrl';
 
 import styles from './ArtboardController.module.scss';
 
-const ArtboardController: React.FC<ReactZoomPanPinchRef> = ({ zoomIn, zoomOut, centerView }) => {
+const ArtboardController: React.FC<ReactZoomPanPinchHandlers> = ({ zoomIn, zoomOut, centerView }) => {
   const { t } = useTranslation();
 
   const theme = useTheme();

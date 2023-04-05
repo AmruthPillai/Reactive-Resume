@@ -1,12 +1,12 @@
 {
   "name": "reactive-resume",
-  "version": "3.6.19",
+  "version": "3.7.0",
   "private": true,
   "scripts": {
     "dev": "env-cmd --silent cross-var cross-env VERSION=$npm_package_version turbo run dev",
     "build": "env-cmd --silent cross-var cross-env VERSION=$npm_package_version turbo run build",
     "start": "env-cmd --silent cross-var cross-env VERSION=$npm_package_version turbo run start",
-    "update-deps": "ncu -x nanoid,class-validator --deep -u && pnpm install",
+    "update-deps": "ncu -x nanoid --deep -u && pnpm install",
     "generate-env": "ts-node ./scripts/generate-env.ts",
     "format": "prettier --write .",
     "lint": "turbo run lint"

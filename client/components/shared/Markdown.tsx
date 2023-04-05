@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash/isEmpty';
 import ReactMarkdown from 'react-markdown';
 import rehypeKatex from 'rehype-katex';
 import remarkGfm from 'remark-gfm';

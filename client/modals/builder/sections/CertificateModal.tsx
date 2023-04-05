@@ -1,7 +1,7 @@
 import { joiResolver } from '@hookform/resolvers/joi';
 import { Add, DriveFileRenameOutline } from '@mui/icons-material';
 import { Button, TextField } from '@mui/material';
-import { DatePicker } from '@mui/x-date-pickers';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { Certificate, SectionPath } from '@reactive-resume/schema';
 import dayjs from 'dayjs';
 import Joi from 'joi';
@@ -128,21 +128,23 @@ const CertificateModal: React.FC = () => {
           control={control}
           render={({ field, fieldState }) => (
             <DatePicker
-              {...field}
               openTo="year"
+              inputRef={field.ref}
               label={t<string>('builder.common.form.date.label')}
+              value={dayjs(field.value)}
               views={['year', 'month', 'day']}
-              onChange={(date: Date | null, keyboardInputValue: string | undefined) => {
-                isEmpty(keyboardInputValue) && field.onChange('');
+              slots={{
+                textField: (params) => (
+                  <TextField
+                    {...params}
+                    error={!!fieldState.error}
+                    helperText={fieldState.error?.message || params.inputProps?.placeholder}
+                  />
+                ),
+              }}
+              onChange={(date: dayjs.Dayjs | null) => {
                 date && dayjs(date).isValid() && field.onChange(dayjs(date).format('YYYY-MM-DD'));
               }}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  error={!!fieldState.error}
-                  helperText={fieldState.error?.message || params.inputProps?.placeholder}
-                />
-              )}
             />
           )}
         />

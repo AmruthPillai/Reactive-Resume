@@ -4,7 +4,7 @@ import { Login, Visibility, VisibilityOff } from '@mui/icons-material';
 import { Button, IconButton, InputAdornment, TextField } from '@mui/material';
 import { CredentialResponse, GoogleLogin } from '@react-oauth/google';
 import Joi from 'joi';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash/isEmpty';
 import { Trans, useTranslation } from 'next-i18next';
 import { useMemo, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';

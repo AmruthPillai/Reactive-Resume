@@ -4,7 +4,7 @@ import { HowToReg } from '@mui/icons-material';
 import { Button, TextField } from '@mui/material';
 import { CredentialResponse, GoogleLogin } from '@react-oauth/google';
 import Joi from 'joi';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash/isEmpty';
 import { Trans, useTranslation } from 'next-i18next';
 import { Controller, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';

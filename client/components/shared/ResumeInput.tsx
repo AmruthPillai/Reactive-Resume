@@ -1,7 +1,6 @@
 import { TextField } from '@mui/material';
-import { DatePicker } from '@mui/x-date-pickers';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import dayjs from 'dayjs';
-import { isEmpty } from 'lodash';
 import get from 'lodash/get';
 import { useEffect, useState } from 'react';
 
@@ -22,7 +21,6 @@ const ResumeInput: React.FC<Props> = ({ type = 'text', label, path, className, m
   const dispatch = useAppDispatch();
 
   const stateValue = useAppSelector((state) => get(state.resume.present, path, ''));
-  const dateFormat = useAppSelector((state) => state.resume.present.metadata.date.format);
 
   useEffect(() => {
     setValue(stateValue);
@@ -57,15 +55,14 @@ const ResumeInput: React.FC<Props> = ({ type = 'text', label, path, className, m
   if (type === 'date') {
     return (
       <DatePicker
-        showToolbar
         openTo="year"
         label={label}
-        value={value}
-        toolbarFormat={dateFormat}
+        value={dayjs(value)}
         views={['year', 'month', 'day']}
-        renderInput={(params) => <TextField {...params} error={false} className={className} />}
-        onChange={(date: Date | null, keyboardInputValue: string | undefined) => {
-          isEmpty(keyboardInputValue) && onChangeValue('');
+        slots={{
+          textField: (params) => <TextField {...params} error={false} className={className} />,
+        }}
+        onChange={(date: dayjs.Dayjs | null) => {
           date && dayjs(date).isValid() && onChangeValue(dayjs(date).format('YYYY-MM-DD'));
         }}
       />

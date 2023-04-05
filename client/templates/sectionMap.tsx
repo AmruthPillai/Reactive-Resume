@@ -1,4 +1,4 @@
-import { find } from 'lodash';
+import find from 'lodash/find';
 import get from 'lodash/get';
 import React from 'react';
 import { validate } from 'uuid';

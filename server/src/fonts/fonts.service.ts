@@ -2,7 +2,7 @@ import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Font } from '@reactive-resume/schema';
-import { get } from 'lodash';
+import get from 'lodash/get';
 import { firstValueFrom } from 'rxjs';
 
 import cachedResponse from './assets/cachedResponse.json';
