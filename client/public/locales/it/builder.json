@@ -3,6 +3,7 @@
     "actions": {
       "add": "Aggiungi {{token}}",
       "delete": "Elimina {{token}}",
+      "duplicate": "Duplica sezione",
       "edit": "Modifica {{token}}"
     },
     "columns": {
@@ -80,13 +81,13 @@
       "center-artboard": "Centra tavola da disegno",
       "copy-link": "Copia link del curriculum",
       "export-pdf": "Esporta in PDF",
+      "redo": "Ripeti",
       "toggle-orientation": "Orientamento verticale/orizzontale",
       "toggle-page-break-line": "Mostra/Nascondi linea interruzione pagina",
       "toggle-sidebars": "Mostra/Nascondi barre laterali",
-      "zoom-in": "Ingrandisci",
-      "zoom-out": "Riduci",
       "undo": "Annulla",
-      "redo": "Rifare"
+      "zoom-in": "Ingrandisci",
+      "zoom-out": "Riduci"
     }
   },
   "header": {
@@ -114,15 +115,15 @@
         "actions": {
           "photo-filters": "Filtri per foto"
         },
+        "birthdate": {
+          "label": "Data di nascita"
+        },
         "heading": "Informazioni di base",
         "headline": {
           "label": "Intestazione"
         },
         "name": {
           "label": "Nome e cognome"
-        },
-        "birthdate": {
-          "label": "Data di nascita"
         },
         "photo-filters": {
           "effects": {
@@ -244,7 +245,7 @@
         "pdf": {
           "loading": {
             "primary": "Generazione del PDF in corso...",
-            "secondary": "Attendi che la generazione del PDF sia completata, l'operazione potrebbe richiedere fino a 15 secondi."
+            "secondary": "La generazione del PDF è in corso e potrebbe richiedere fino a 15 secondi."
           },
           "normal": {
             "primary": "PDF",
@@ -264,14 +265,15 @@
           "button": "Issue di GitHub",
           "heading": "Bug? Richieste di funzionalità?"
         },
+        "docs": "Documentazione",
         "donate": {
           "body": "Se Reactive Resume ti è piaciuto, ti invitiamo a contribuire con una donazione. In questo modo l'applicazione potrà continuare ad essere attiva, gratuita e senza pubblicità.",
           "button": "Offrimi un caffè",
           "heading": "Dona a Reactive Resume"
         },
         "github": "Codice sorgente",
-        "docs": "Documentazione",
-        "heading": "Link"
+        "heading": "Link",
+        "reddit": "Reddit"
       },
       "settings": {
         "global": {
@@ -290,13 +292,13 @@
         },
         "heading": "Impostazioni",
         "page": {
-          "format": {
-            "primary": "Dimensioni del foglio",
-            "secondary": "Determina le dimensioni delle pagine del tuo curriculum"
-          },
           "break-line": {
             "primary": "Linea di interruzione",
             "secondary": "Mostra su tutte le pagine una linea che indica l'altezza di un foglio A4"
+          },
+          "format": {
+            "primary": "Dimensioni del foglio",
+            "secondary": "Determina le dimensioni delle pagine del tuo curriculum"
           },
           "heading": "Pagina",
           "orientation": {
