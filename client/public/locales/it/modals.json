@@ -71,6 +71,31 @@
         }
       },
       "heading": "Reimposta password"
+    },
+    "profile": {
+      "heading": "Il tuo account",
+      "form": {
+        "avatar": {
+          "help-text": "Puoi aggiornare l'immagine del tuo profilo in <1>Gravatar</1>"
+        },
+        "name": {
+          "label": "Nome e cognome"
+        },
+        "email": {
+          "label": "Indirizzo e-mail",
+          "help-text": "In questo momento non è possibile aggiornare il tuo indirizzo e-mail, crea un nuovo account."
+        }
+      },
+      "delete-account": {
+        "heading": "Elimina account e dati",
+        "body": "Per eliminare il tuo account, i tuoi dati e tutti i tuoi curriculum, digita \"{{keyword}}\" nella casella di testo e fai clic sul pulsante. Nota che si tratta di un'azione irreversibile e che i dati non possono essere recuperati.",
+        "actions": {
+          "delete": "Elimina account"
+        }
+      },
+      "actions": {
+        "save": "Salva modifiche"
+      }
     }
   },
   "dashboard": {
@@ -113,7 +138,7 @@
           "upload-json": "Carica JSON",
           "upload-json-v2": "Carica JSON dalla v2"
         },
-        "body": "Se hai un JSON che è stato esportato con la versione corrente di Reactive Resume, puoi importarlo nuovamente qui per ottenere di nuovo una versione modificabile.",
+        "body": "Se hai un JSON esportato con la versione attuale di Reactive Resume, puoi importarlo qui per ottenere nuovamente una versione modificabile.",
         "heading": "Importa da Reactive Resume"
       }
     },
@@ -126,7 +151,7 @@
           "label": "Nome"
         },
         "slug": {
-          "label": "URL personalizzato"
+          "label": "URL personalizzato (slug)"
         }
       },
       "heading": "Rinomina il tuo curriculum"
