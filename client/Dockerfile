@@ -7,7 +7,7 @@ RUN apk add --no-cache g++ git curl make python3 libc6-compat \
 
 FROM base as dependencies
 
-COPY package.json pnpm-*.yaml turbo.json ./
+COPY package.json pnpm-*.yaml ./
 COPY ./schema/package.json ./schema/package.json
 COPY ./client/package.json ./client/package.json
 
@@ -25,7 +25,7 @@ RUN pnpm run build --filter client
 
 FROM base as production
 
-COPY --from=builder /app/package.json /app/pnpm-*.yaml /app/turbo.json ./
+COPY --from=builder /app/package.json /app/pnpm-*.yaml ./
 COPY --from=builder /app/client/package.json ./client/package.json
 
 RUN pnpm install --filter client --prod --frozen-lockfile --workspace-root

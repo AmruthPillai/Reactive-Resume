@@ -10,13 +10,13 @@
   "dependencies": {
     "@aws-sdk/client-s3": "^3.306.0",
     "@nestjs/axios": "^2.0.0",
-    "@nestjs/common": "^9.3.12",
+    "@nestjs/common": "^9.4.0",
     "@nestjs/config": "^2.3.1",
-    "@nestjs/core": "^9.3.12",
+    "@nestjs/core": "^9.4.0",
     "@nestjs/jwt": "^10.0.3",
     "@nestjs/mapped-types": "^1.2.2",
     "@nestjs/passport": "^9.0.3",
-    "@nestjs/platform-express": "^9.3.12",
+    "@nestjs/platform-express": "^9.4.0",
     "@nestjs/schedule": "^2.2.1",
     "@nestjs/serve-static": "^3.0.1",
     "@nestjs/terminus": "^9.2.2",
@@ -45,7 +45,7 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^4.4.1",
     "rxjs": "^7.8.0",
-    "typeorm": "0.3.12",
+    "typeorm": "0.3.13",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
@@ -68,6 +68,6 @@
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.0.3",
-    "webpack": "^5.77.0"
+    "webpack": "^5.78.0"
   }
 }

@@ -7,7 +7,7 @@ RUN apk add --no-cache g++ git curl make python3 libc6-compat \
 
 FROM base AS dependencies
 
-COPY package.json pnpm-*.yaml turbo.json ./
+COPY package.json pnpm-*.yaml ./
 COPY ./schema/package.json ./schema/package.json
 COPY ./server/package.json ./server/package.json
 
@@ -31,7 +31,7 @@ RUN apt-get update \
   && apt-get install -y curl build-essential \
   && curl -fsSL https://get.pnpm.io/install.sh | node - add --global pnpm
 
-COPY --from=builder /app/package.json /app/pnpm-*.yaml /app/turbo.json ./
+COPY --from=builder /app/package.json /app/pnpm-*.yaml ./
 COPY --from=builder /app/server/package.json ./server/package.json
 
 RUN pnpm dlx playwright install --with-deps chromium

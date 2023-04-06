@@ -3,13 +3,13 @@
   "version": "3.7.0",
   "private": true,
   "scripts": {
-    "dev": "env-cmd --silent cross-var cross-env VERSION=$npm_package_version turbo run dev",
-    "build": "env-cmd --silent cross-var cross-env VERSION=$npm_package_version turbo run build",
-    "start": "env-cmd --silent cross-var cross-env VERSION=$npm_package_version turbo run start",
+    "dev": "env-cmd --silent cross-var cross-env VERSION=$npm_package_version pnpm run --recursive --parallel --stream dev",
+    "build": "env-cmd --silent cross-var cross-env VERSION=$npm_package_version pnpm run --recursive --parallel build",
+    "start": "env-cmd --silent cross-var cross-env VERSION=$npm_package_version pnpm run --recursive --parallel --stream start",
     "update-deps": "ncu -x nanoid --deep -u && pnpm install",
     "generate-env": "ts-node ./scripts/generate-env.ts",
     "format": "prettier --write .",
-    "lint": "turbo run lint"
+    "lint": "pnpm run --recursive --parallel lint"
   },
   "workspaces": [
     "schema",
@@ -29,10 +29,9 @@
     "eslint": "^8.37.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-simple-import-sort": "^10.0.0",
-    "npm-check-updates": "^16.10.2",
+    "npm-check-updates": "^16.10.7",
     "prettier": "^2.8.7",
     "ts-node": "^10.9.1",
-    "turbo": "^1.8.8",
     "typescript": "^5.0.3"
   },
   "resolutions": {
