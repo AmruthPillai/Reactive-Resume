@@ -6,7 +6,6 @@ import android.webkit.WebView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var webView: WebView
 
     private var url = "https://rxresu.me"
