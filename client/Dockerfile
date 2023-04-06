@@ -2,8 +2,8 @@ FROM node:lts-alpine AS base
 
 WORKDIR /app
 
-RUN apk add --no-cache g++ git curl make python3 libc6-compat \
-  && curl -fsSL https://get.pnpm.io/install.sh | node - add --global pnpm
+RUN apk add --no-cache g++ git make curl python3 libc6-compat \
+  && corepack enable && corepack prepare pnpm@latest --activate
 
 FROM base as dependencies
 
