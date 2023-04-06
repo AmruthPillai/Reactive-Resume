@@ -43,4 +43,4 @@ ENV PORT 3000
 HEALTHCHECK --interval=30s --timeout=20s --retries=3 --start-period=15s \
     CMD curl -fSs localhost:3000 || exit 1
 
-CMD [ "pnpm", "run", "--filter", "client", "start" ]
+CMD [ "pnpm", "run", "start" ]
