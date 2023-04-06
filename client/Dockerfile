@@ -21,7 +21,8 @@ COPY --from=dependencies /app/node_modules ./node_modules
 COPY --from=dependencies /app/schema/node_modules ./schema/node_modules
 COPY --from=dependencies /app/client/node_modules ./client/node_modules
 
-RUN pnpm run build --filter client
+RUN pnpm run --filter schema build \
+  && pnpm run --filter client build
 
 FROM base as production
 
@@ -42,4 +43,4 @@ ENV PORT 3000
 HEALTHCHECK --interval=30s --timeout=20s --retries=3 --start-period=15s \
     CMD curl -fSs localhost:3000 || exit 1
 
-CMD [ "pnpm", "run", "start", "--filter", "client" ]
+CMD [ "pnpm", "run", "--filter", "client", "start" ]

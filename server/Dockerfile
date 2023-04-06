@@ -2,7 +2,7 @@ FROM node:lts-alpine AS base
 
 WORKDIR /app
 
-RUN apk add --no-cache g++ git curl make python3 libc6-compat \
+RUN apk add --no-cache g++ git make curl python3 libc6-compat \
   && corepack enable && corepack prepare pnpm@latest --activate
 
 FROM base AS dependencies
@@ -21,7 +21,8 @@ COPY --from=dependencies /app/node_modules ./node_modules
 COPY --from=dependencies /app/schema/node_modules ./schema/node_modules
 COPY --from=dependencies /app/server/node_modules ./server/node_modules
 
-RUN pnpm run build --filter server
+RUN pnpm run --filter schema build \
+  && pnpm run --filter server build
 
 FROM mcr.microsoft.com/playwright:v1.32.1-focal as production
 
@@ -49,4 +50,4 @@ ENV PORT 3100
 HEALTHCHECK --interval=30s --timeout=20s --retries=3 --start-period=15s \
     CMD curl -fSs localhost:3100/health || exit 1
 
-CMD [ "pnpm", "run", "start", "--filter", "server" ]
+CMD [ "pnpm", "run", "--filter", "server", "start" ]
