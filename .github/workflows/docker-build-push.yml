@@ -20,7 +20,7 @@ jobs:
 
       - id: version
         name: App Version
-        uses: martinbeentjes/npm-get-version-action@v1.2.3
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2.1.0
