@@ -3,6 +3,7 @@
     "actions": {
       "add": "Afegeix nou {{token}}",
       "delete": "Suprimeix {{token}}",
+      "duplicate": "Secció duplicada",
       "edit": "Edita {{token}}"
     },
     "columns": {
@@ -80,13 +81,13 @@
       "center-artboard": "Centrar tauler de dibuix",
       "copy-link": "Copia l'enllaç al currículum",
       "export-pdf": "Exporta com a PDF",
+      "redo": "Refer",
       "toggle-orientation": "Commuta l'orientació de la pàgina",
       "toggle-page-break-line": "Commuta la línia de salt de pàgina",
       "toggle-sidebars": "Mostra o oculta la barra lateral",
-      "zoom-in": "Amplia",
-      "zoom-out": "Allunya",
       "undo": "Desfer",
-      "redo": "Refer"
+      "zoom-in": "Amplia",
+      "zoom-out": "Allunya"
     }
   },
   "header": {
@@ -114,15 +115,15 @@
         "actions": {
           "photo-filters": "Filtres fotogràfics"
         },
+        "birthdate": {
+          "label": "Data de naixement"
+        },
         "heading": "Bàsics",
         "headline": {
           "label": "Títol"
         },
         "name": {
           "label": "Nom complet"
-        },
-        "birthdate": {
-          "label": "Data de naixement"
         },
         "photo-filters": {
           "effects": {
@@ -264,14 +265,15 @@
           "button": "Problemes de GitHub",
           "heading": "Errors? Sol·licituds de funcions?"
         },
+        "docs": "Documentació",
         "donate": {
           "body": "Si us ha agradat utilitzar Reactive Resume, considereu donar tant com pugueu per mantenir l'aplicació en funcionament, sense anuncis i gratuïta per sempre.",
           "button": "Compra'm un cafè",
           "heading": "Dona a Reactive Curriculum vitae"
         },
         "github": "Codi font",
-        "docs": "Documentació",
-        "heading": "Enllaços"
+        "heading": "Enllaços",
+        "reddit": "Reddit"
       },
       "settings": {
         "global": {
@@ -290,13 +292,13 @@
         },
         "heading": "Configuració",
         "page": {
-          "format": {
-            "primary": "Mida del paper",
-            "secondary": "Determina les dimensions de les pàgines del vostre currículum"
-          },
           "break-line": {
             "primary": "Línia de trencament",
             "secondary": "Mostra una línia a totes les pàgines per marcar l'alçada d'una pàgina A4"
+          },
+          "format": {
+            "primary": "Mida del paper",
+            "secondary": "Determina les dimensions de les pàgines del vostre currículum"
           },
           "heading": "Pàgina",
           "orientation": {
