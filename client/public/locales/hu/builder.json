@@ -3,6 +3,7 @@
     "actions": {
       "add": "Új {{token}} hozzáadása",
       "delete": "{{token}} törlése",
+      "duplicate": "Második szakasz",
       "edit": "{{token}} szerkesztése"
     },
     "columns": {
@@ -80,13 +81,13 @@
       "center-artboard": "Központi rajztábla",
       "copy-link": "Önéletrajz link másolása",
       "export-pdf": "Exportálás PDF-be",
+      "redo": "Mégis",
       "toggle-orientation": "Oldaltájolás",
       "toggle-page-break-line": "Oldaltörés vonal ki/be",
       "toggle-sidebars": "Oldalsávok ki/be",
-      "zoom-in": "Nagyítás",
-      "zoom-out": "Kicsinyítés",
       "undo": "Visszavonás",
-      "redo": "Mégis"
+      "zoom-in": "Nagyítás",
+      "zoom-out": "Kicsinyítés"
     }
   },
   "header": {
@@ -114,15 +115,15 @@
         "actions": {
           "photo-filters": "Fotószűrők"
         },
+        "birthdate": {
+          "label": "Születési dátum"
+        },
         "heading": "Alapok",
         "headline": {
           "label": "Címsor"
         },
         "name": {
           "label": "Teljes név"
-        },
-        "birthdate": {
-          "label": "Születési dátum"
         },
         "photo-filters": {
           "effects": {
@@ -264,14 +265,15 @@
           "button": "GitHub problémák",
           "heading": "Hibák? Funkciókérés?"
         },
+        "docs": "Dokumentáció",
         "donate": {
           "body": "Ha elégedett a Reactive Resume alkalmazással, kérjük, fontolja meg, hogy tetszőleges összeggel támogassa munkánkat, hogy továbbra is ingyenes és hirdetésmentes lehessen.",
           "button": "Vegyél nekem egy kávét",
           "heading": "Adományozzon a Reactive Resume-nak"
         },
         "github": "Forráskód",
-        "docs": "Dokumentáció",
-        "heading": "Linkek"
+        "heading": "Linkek",
+        "reddit": "Reddit"
       },
       "settings": {
         "global": {
@@ -290,13 +292,13 @@
         },
         "heading": "Beállítások",
         "page": {
-          "format": {
-            "primary": "Papírméret",
-            "secondary": "Meghatározza az önéletrajz oldalméreteit"
-          },
           "break-line": {
             "primary": "Törésvonal",
             "secondary": "Mutasson egy vonalat az összes oldalon, hogy megjelölje egy A4-es oldal magasságát"
+          },
+          "format": {
+            "primary": "Papírméret",
+            "secondary": "Meghatározza az önéletrajz oldalméreteit"
           },
           "heading": "oldal",
           "orientation": {
@@ -336,7 +338,7 @@
             "label": "Háttér"
           },
           "primary": {
-            "label": "Elsődleges "
+            "label": "Elsődleges"
           },
           "text": {
             "label": "Szöveg"
