@@ -3,6 +3,7 @@
     "actions": {
       "add": "አዲስ {{token}} ጨምር",
       "delete": "{{token}} አጥፋ",
+      "duplicate": "የተባዛ ክፍል",
       "edit": "{{token}} አዘምን"
     },
     "columns": {
@@ -80,13 +81,13 @@
       "center-artboard": "መሃል የሰዕል ማሳያ",
       "copy-link": "የስራ ልምድ ሰነዱን ሊንክ ቅዳ",
       "export-pdf": "PDF አውጣ",
+      "redo": "ድገም",
       "toggle-orientation": "የገጽ አቀማመጥን ቀያይር",
       "toggle-page-break-line": "የገጽ መግቻ መስመርን ቀያይር",
       "toggle-sidebars": "የጎን ክፍሎችን ቀይር",
-      "zoom-in": "አቅርብ",
-      "zoom-out": "አሳንስ",
       "undo": "ቀልብስ",
-      "redo": "ድገም"
+      "zoom-in": "አቅርብ",
+      "zoom-out": "አሳንስ"
     }
   },
   "header": {
@@ -114,15 +115,15 @@
         "actions": {
           "photo-filters": "የፎቶ ማጣሪያዎች"
         },
+        "birthdate": {
+          "label": "የትውልድ ቀን"
+        },
         "heading": "መሰረታዊ ነገሮች",
         "headline": {
           "label": "ርዕስ"
         },
         "name": {
           "label": "ሙሉ ስም"
-        },
-        "birthdate": {
-          "label": "የትውልድ ቀን"
         },
         "photo-filters": {
           "effects": {
@@ -264,14 +265,15 @@
           "button": "GitHub ጉዳዮች",
           "heading": "ችግሮች? የባህሪ ጥያቄዎች?"
         },
+        "docs": "ሰነዶች",
         "donate": {
           "body": "Reactive Resumeን መጠቀም ከወደዱ እባክዎን መተግበሪያው እንዲሰራ እና ያለ ማስታወቂያ ሁሌም በነፃ እንዲቀጥል በተቻለዎት መጠን ለመለገስ ያስቡበት።",
           "button": "ቡና ይጋብዙኝ",
           "heading": "ለ Reactive Resume ይለግሱ"
         },
         "github": "የምንጭ ኮድ",
-        "docs": "ሰነዶች",
-        "heading": "አገናኞች"
+        "heading": "አገናኞች",
+        "reddit": "Reddit"
       },
       "settings": {
         "global": {
@@ -290,13 +292,13 @@
         },
         "heading": "ቅንብሮች",
         "page": {
-          "format": {
-            "primary": "የወረቀት መጠን",
-            "secondary": "ከቆመበት ቀጥል ገጾችዎ ልኬቶችን ይወስናል"
-          },
           "break-line": {
             "primary": "መስመር መቁረጫ",
             "secondary": "የA4 ገጽ ቁመትን ለመለየት በሁሉም ገጾች ላይ መስመር አሳይ"
+          },
+          "format": {
+            "primary": "የወረቀት መጠን",
+            "secondary": "ከቆመበት ቀጥል ገጾችዎ ልኬቶችን ይወስናል"
           },
           "heading": "ገጽ",
           "orientation": {
