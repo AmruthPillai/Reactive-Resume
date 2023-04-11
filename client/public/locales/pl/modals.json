@@ -71,6 +71,31 @@
         }
       },
       "heading": "Resetuj swoje hasło"
+    },
+    "profile": {
+      "heading": "Twoje konto",
+      "form": {
+        "avatar": {
+          "help-text": "Możesz zaktualizować swoje zdjęcie profilowe na <1>Gravatar</1>"
+        },
+        "name": {
+          "label": "Pełne imię i nazwisko"
+        },
+        "email": {
+          "label": "Adres e-mail",
+          "help-text": "W tej chwili nie można zaktualizować adresu e-mail, zamiast tego utwórz nowe konto."
+        }
+      },
+      "delete-account": {
+        "heading": "Usuń konto i dane",
+        "body": "Aby usunąć swoje konto, dane i wszystkie CV, wpisz „{{keyword}}” w polu tekstowym i kliknij przycisk. Należy pamiętać, że jest to działanie nieodwracalne i nie można odzyskać danych.",
+        "actions": {
+          "delete": "Usuń konto"
+        }
+      },
+      "actions": {
+        "save": "Zapisz zmiany"
+      }
     }
   },
   "dashboard": {
