@@ -71,6 +71,31 @@
         }
       },
       "heading": "重置密码"
+    },
+    "profile": {
+      "heading": "你的帐户",
+      "form": {
+        "avatar": {
+          "help-text": "您可以在 <1>Gravatar 上更新您的头像</1>"
+        },
+        "name": {
+          "label": "全名"
+        },
+        "email": {
+          "label": "电子邮件地址",
+          "help-text": "目前无法更新您的电子邮件地址，请创建一个新帐户。"
+        }
+      },
+      "delete-account": {
+        "heading": "删除帐户和数据",
+        "body": "要删除您的帐户、数据和所有简历，请在文本框中键入“{{keyword}}”并单击按钮。请注意，这是不可逆的操作，您的数据将无法再次检索。",
+        "actions": {
+          "delete": "删除帐户"
+        }
+      },
+      "actions": {
+        "save": "保存更改"
+      }
     }
   },
   "dashboard": {
