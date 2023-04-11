@@ -3,6 +3,7 @@
     "actions": {
       "add": "新規追加 {{token}}",
       "delete": "削除 {{token}}",
+      "duplicate": "重複セクション",
       "edit": "編集 {{token}}."
     },
     "columns": {
@@ -80,13 +81,13 @@
       "center-artboard": "センターアートボード",
       "copy-link": "レジュメへのリンクをコピー",
       "export-pdf": "PDF形式でエクスポート",
+      "redo": "やり直し",
       "toggle-orientation": "ページの向きを切り替える",
       "toggle-page-break-line": "改ページ線のトグル",
       "toggle-sidebars": "トグル・サイドバー",
-      "zoom-in": "ズームイン",
-      "zoom-out": "ズームアウト",
       "undo": "アンドゥ",
-      "redo": "やり直し"
+      "zoom-in": "ズームイン",
+      "zoom-out": "ズームアウト"
     }
   },
   "header": {
@@ -114,15 +115,15 @@
         "actions": {
           "photo-filters": "フォトフィルター"
         },
+        "birthdate": {
+          "label": "生年月日"
+        },
         "heading": "基本事項",
         "headline": {
           "label": "ヘッドライン"
         },
         "name": {
           "label": "フルネーム"
-        },
-        "birthdate": {
-          "label": "生年月日"
         },
         "photo-filters": {
           "effects": {
@@ -264,14 +265,15 @@
           "button": "GitHubの課題",
           "heading": "バグ？機能要望？"
         },
+        "docs": "ドキュメンテーション",
         "donate": {
           "body": "もしReactive Resumeを気に入って使っていただけたなら、このアプリを広告なしで、いつまでも無料で使い続けるために、できる限りの寄付をご検討ください。",
           "button": "コーヒーを買ってきて",
           "heading": "リアクティブ・レジュメに寄付をする"
         },
         "github": "ソースコード",
-        "docs": "ドキュメンテーション",
-        "heading": "リンク集"
+        "heading": "リンク集",
+        "reddit": "レディット"
       },
       "settings": {
         "global": {
@@ -290,13 +292,13 @@
         },
         "heading": "設定",
         "page": {
-          "format": {
-            "primary": "用紙サイズ",
-            "secondary": "履歴書ページのサイズを決定します"
-          },
           "break-line": {
             "primary": "ブレイクライン",
             "secondary": "A4ページの高さを示す線を全ページに表示する。"
+          },
+          "format": {
+            "primary": "用紙サイズ",
+            "secondary": "履歴書ページのサイズを決定します"
           },
           "heading": "ページ",
           "orientation": {
