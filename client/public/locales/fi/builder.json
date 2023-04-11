@@ -3,6 +3,7 @@
     "actions": {
       "add": "Lisää uusi",
       "delete": "Poista",
+      "duplicate": "Kopioi osio",
       "edit": "Muokkaa"
     },
     "columns": {
@@ -80,13 +81,13 @@
       "center-artboard": "Keskitä Kuvataulu",
       "copy-link": "Kopioi linkki ansioluetteloon",
       "export-pdf": "Vie PDF",
+      "redo": "Redo",
       "toggle-orientation": "Vaihda sivun suunta",
       "toggle-page-break-line": "Vaihda sivunvaihtoviivaa",
       "toggle-sidebars": "Vaihda Sivupalkkeja",
-      "zoom-in": "Suurenna",
-      "zoom-out": "Pienennä",
       "undo": "Kumoa",
-      "redo": "Redo"
+      "zoom-in": "Suurenna",
+      "zoom-out": "Pienennä"
     }
   },
   "header": {
@@ -114,15 +115,15 @@
         "actions": {
           "photo-filters": "Valokuvasuodattimet"
         },
+        "birthdate": {
+          "label": "Syntymäaika"
+        },
         "heading": "Perustiedot",
         "headline": {
           "label": "Otsikko"
         },
         "name": {
           "label": "Koko nimi"
-        },
-        "birthdate": {
-          "label": "Syntymäaika"
         },
         "photo-filters": {
           "effects": {
@@ -264,14 +265,15 @@
           "button": "GitHub Issues",
           "heading": "Bugeja? Ominaisuuspyyntöjä?"
         },
+        "docs": "Dokumentaatio",
         "donate": {
           "body": "Jos pidit Reactive Resume -sovelluksen käytöstä, harkitse lahjoitusta niin paljon kuin voit, jotta sovellus pysyy toiminnassa ilman mainoksia ja ikuisesti ilmaisena.",
           "button": "Osta minulle kahvi",
           "heading": "Lahjoita Reaktiiviselle ansioluettelolle"
         },
         "github": "Lähdekoodi",
-        "docs": "Dokumentaatio",
-        "heading": "Linkit"
+        "heading": "Linkit",
+        "reddit": "Reddit"
       },
       "settings": {
         "global": {
@@ -290,13 +292,13 @@
         },
         "heading": "Asetukset",
         "page": {
-          "format": {
-            "primary": "Paperikoko",
-            "secondary": "Määrittää ansioluettelosi sivujen mitat"
-          },
           "break-line": {
             "primary": "Katkoviiva",
             "secondary": "Näytä viiva kaikilla sivuilla A4-sivun korkeuden merkitsemiseksi"
+          },
+          "format": {
+            "primary": "Paperikoko",
+            "secondary": "Määrittää ansioluettelosi sivujen mitat"
           },
           "heading": "Sivu",
           "orientation": {
