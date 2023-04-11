@@ -71,6 +71,31 @@
         }
       },
       "heading": "Obnovit heslo"
+    },
+    "profile": {
+      "heading": "Váš účet",
+      "form": {
+        "avatar": {
+          "help-text": "Svůj profilový obrázek si můžete aktualizovat na <1>Gravatar</1>"
+        },
+        "name": {
+          "label": "Celé jméno"
+        },
+        "email": {
+          "label": "Emailová adresa",
+          "help-text": "V tuto chvíli není možné aktualizovat vaši e-mailovou adresu, vytvořte si místo toho nový účet."
+        }
+      },
+      "delete-account": {
+        "heading": "Smazat účet a data",
+        "body": "Chcete-li smazat svůj účet, data a všechny své životopisy, zadejte do textového pole „{{keyword}}“ a klikněte na tlačítko. Upozorňujeme, že se jedná o nevratnou akci a vaše data nelze znovu získat.",
+        "actions": {
+          "delete": "Smazat účet"
+        }
+      },
+      "actions": {
+        "save": "Uložit změny"
+      }
     }
   },
   "dashboard": {
