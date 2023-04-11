@@ -3,6 +3,7 @@
     "actions": {
       "add": "Yeni {{token}} Ekle",
       "delete": "{{token}} sil",
+      "duplicate": "Yinelenen bölüm",
       "edit": "{{token}}'i düzenle"
     },
     "columns": {
@@ -80,13 +81,13 @@
       "center-artboard": "Çalışma Yüzeyini Ortala",
       "copy-link": "Özgeçmişe Bağlantıyı Kopyala",
       "export-pdf": "PDF dışa aktar",
+      "redo": "Yeniden Yap",
       "toggle-orientation": "Sayfa Yönünü Değiştir",
       "toggle-page-break-line": "Sayfa Sonu Satırını Aç/Kapat",
       "toggle-sidebars": "Kenar Çubuklarını Aç/Kapat",
-      "zoom-in": "Yakınlaştır",
-      "zoom-out": "Uzaklaştır",
       "undo": "Geri al",
-      "redo": "Yeniden Yap"
+      "zoom-in": "Yakınlaştır",
+      "zoom-out": "Uzaklaştır"
     }
   },
   "header": {
@@ -114,15 +115,15 @@
         "actions": {
           "photo-filters": "Fotoğraf Filtreleri"
         },
+        "birthdate": {
+          "label": "Doğum tarihi"
+        },
         "heading": "Temel Bilgiler",
         "headline": {
           "label": "Başlık"
         },
         "name": {
           "label": "Ad Soyad"
-        },
-        "birthdate": {
-          "label": "Doğum tarihi"
         },
         "photo-filters": {
           "effects": {
@@ -264,14 +265,15 @@
           "button": "GitHub Issues",
           "heading": "Hatalar? Özellik İstekleri?"
         },
+        "docs": "Dokümantasyon",
         "donate": {
           "body": "Reaktif Özgeçmiş'i kullanmayı sevdiyseniz, lütfen uygulamayı reklamsız ve sonsuza kadar ücretsiz olarak çalışır durumda tutmak için elinizden geldiğince bağışta bulunmayı düşünün.",
           "button": "Bana kahve ısmarlayın",
           "heading": "Reactive Resume'ye Bağış Yap"
         },
         "github": "Kaynak Kodu",
-        "docs": "Dokümantasyon",
-        "heading": "Bağlantılar"
+        "heading": "Bağlantılar",
+        "reddit": "reddit"
       },
       "settings": {
         "global": {
@@ -290,13 +292,13 @@
         },
         "heading": "Ayarlar",
         "page": {
-          "format": {
-            "primary": "Kağıt boyutu",
-            "secondary": "Özgeçmiş sayfalarınızın boyutlarını belirler"
-          },
           "break-line": {
             "primary": "Ara Hat",
             "secondary": "A4 sayfasının yüksekliğini işaretlemek için tüm sayfalarda bir çizgi göster"
+          },
+          "format": {
+            "primary": "Kağıt boyutu",
+            "secondary": "Özgeçmiş sayfalarınızın boyutlarını belirler"
           },
           "heading": "Sayfa",
           "orientation": {
