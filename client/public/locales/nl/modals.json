@@ -71,6 +71,31 @@
         }
       },
       "heading": "Je wachtwoord opnieuw instellen"
+    },
+    "profile": {
+      "heading": "Jouw rekening",
+      "form": {
+        "avatar": {
+          "help-text": "U kunt uw profielfoto bijwerken op <1>Gravatar</1>"
+        },
+        "name": {
+          "label": "Voor-en achternaam"
+        },
+        "email": {
+          "label": "E-mailadres",
+          "help-text": "Het is momenteel niet mogelijk om uw e-mailadres bij te werken, maak in plaats daarvan een nieuw account aan."
+        }
+      },
+      "delete-account": {
+        "heading": "Account en gegevens verwijderen",
+        "body": "Om uw account, uw gegevens en al uw cv's te verwijderen, typt u \"{{keyword}}\" in het tekstvak en klikt u op de knop. Houd er rekening mee dat dit een onomkeerbare actie is en dat uw gegevens niet opnieuw kunnen worden opgehaald.",
+        "actions": {
+          "delete": "Account verwijderen"
+        }
+      },
+      "actions": {
+        "save": "Wijzigingen opslaan"
+      }
     }
   },
   "dashboard": {
