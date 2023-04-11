@@ -3,6 +3,7 @@
     "actions": {
       "add": "Thêm {{token}} mới",
       "delete": "Xoá {{token}}",
+      "duplicate": "Phần trùng lặp",
       "edit": "Sửa {{token}}"
     },
     "columns": {
@@ -80,13 +81,13 @@
       "center-artboard": "Trung tâm Artboard",
       "copy-link": "Sao chép liên kết để tiếp tục",
       "export-pdf": "Xuất ra PDF",
+      "redo": "Làm lại",
       "toggle-orientation": "Chuyển đổi hướng trang",
       "toggle-page-break-line": "Chuyển đổi dòng ngắt trang",
       "toggle-sidebars": "Bật/tắt Sidebar",
-      "zoom-in": "Phóng to",
-      "zoom-out": "Thu nhỏ",
       "undo": "Hoàn tác",
-      "redo": "Làm lại"
+      "zoom-in": "Phóng to",
+      "zoom-out": "Thu nhỏ"
     }
   },
   "header": {
@@ -114,15 +115,15 @@
         "actions": {
           "photo-filters": "Bộ lọc ảnh"
         },
+        "birthdate": {
+          "label": "Ngày sinh"
+        },
         "heading": "Cơ bản",
         "headline": {
           "label": "Tiêu đề"
         },
         "name": {
           "label": "Họ và tên"
-        },
-        "birthdate": {
-          "label": "Ngày sinh"
         },
         "photo-filters": {
           "effects": {
@@ -264,14 +265,15 @@
           "button": "Vấn đề Github",
           "heading": "Lỗi? Yêu cầu tính năng?"
         },
+        "docs": "Tài liệu",
         "donate": {
           "body": "Nếu bạn thích sử dụng Reactive Resume, vui lòng cân nhắc quyên góp nhiều nhất có thể cho mục đích duy trì ứng dụng luôn hoạt động, không có quảng cáo và miễn phí vĩnh viễn.",
           "button": "Mua cho tôi một ly cà phê",
           "heading": "Quyên góp cho Reactive Resume"
         },
         "github": "Mã nguồn",
-        "docs": "Tài liệu",
-        "heading": "Liên kết"
+        "heading": "Liên kết",
+        "reddit": "reddit"
       },
       "settings": {
         "global": {
@@ -290,13 +292,13 @@
         },
         "heading": "Cài đặt",
         "page": {
-          "format": {
-            "primary": "Khổ giấy",
-            "secondary": "Xác định kích thước của các trang sơ yếu lý lịch của bạn"
-          },
           "break-line": {
             "primary": "Ngắt dòng",
             "secondary": "Hiển thị một dòng chữ trên tất cả các trang để đánh dấu chiều cao của trang A4"
+          },
+          "format": {
+            "primary": "Khổ giấy",
+            "secondary": "Xác định kích thước của các trang sơ yếu lý lịch của bạn"
           },
           "heading": "Trang",
           "orientation": {
