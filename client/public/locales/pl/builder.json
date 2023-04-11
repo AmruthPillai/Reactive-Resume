@@ -3,6 +3,7 @@
     "actions": {
       "add": "Dodaj nowy {{token}}",
       "delete": "Usuń {{token}}",
+      "duplicate": "Duplikat sekcji",
       "edit": "Edytuj {{token}}"
     },
     "columns": {
@@ -80,13 +81,13 @@
       "center-artboard": "Wyśrodkuj Artboard",
       "copy-link": "Skopiuj Link do CV",
       "export-pdf": "Eksportuj do PDF",
+      "redo": "Redo",
       "toggle-orientation": "Przełącz orientację strony",
       "toggle-page-break-line": "Przełącz linię podziału strony",
       "toggle-sidebars": "Przełącz paski boczne",
-      "zoom-in": "Powiększ",
-      "zoom-out": "Pomniejsz",
       "undo": "Undo",
-      "redo": "Redo"
+      "zoom-in": "Powiększ",
+      "zoom-out": "Pomniejsz"
     }
   },
   "header": {
@@ -114,15 +115,15 @@
         "actions": {
           "photo-filters": "Filtry zdjęcia"
         },
+        "birthdate": {
+          "label": "Data urodzenia"
+        },
         "heading": "Podstawowe",
         "headline": {
           "label": "Nagłówek"
         },
         "name": {
           "label": "Imię i nazwisko"
-        },
-        "birthdate": {
-          "label": "Data urodzenia"
         },
         "photo-filters": {
           "effects": {
@@ -264,14 +265,15 @@
           "button": "Błędy na GitHub",
           "heading": "Błąd? Prośba o nową funkcjonalność?"
         },
+        "docs": "Dokumentacja",
         "donate": {
           "body": "Jeśli podobało Ci się korzystanie z Reactive Resume, rozważ przekazanie jak największej kwoty na rzecz utrzymania aplikacji i działania, bez reklam i na zawsze za darmo.",
           "button": "Kup mi kawę",
           "heading": "Wesprzyj Reactive Resume"
         },
         "github": "Kod źródłowy",
-        "docs": "Dokumentacja",
-        "heading": "Odnośniki"
+        "heading": "Odnośniki",
+        "reddit": "Reddit"
       },
       "settings": {
         "global": {
@@ -290,13 +292,13 @@
         },
         "heading": "Ustawienia",
         "page": {
-          "format": {
-            "primary": "Rozmiar papieru",
-            "secondary": "Określa wymiary twoich stron CV"
-          },
           "break-line": {
             "primary": "Inteligentne dopasowanie linii",
             "secondary": "Pokaż linię na wszystkich stronach, aby oznaczyć wysokość strony A4"
+          },
+          "format": {
+            "primary": "Rozmiar papieru",
+            "secondary": "Określa wymiary twoich stron CV"
           },
           "heading": "Strona",
           "orientation": {
