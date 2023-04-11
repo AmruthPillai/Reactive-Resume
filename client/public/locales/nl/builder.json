@@ -3,6 +3,7 @@
     "actions": {
       "add": "Nieuw {{token}} toevoegen",
       "delete": "{{token}} verwijderen",
+      "duplicate": "Dupliceer sectie",
       "edit": "Bewerk {{token}}"
     },
     "columns": {
@@ -80,13 +81,13 @@
       "center-artboard": "Tekengebied Centreren",
       "copy-link": "Link naar CV Kopiëren",
       "export-pdf": "Exporteer PDF",
+      "redo": "Redo",
       "toggle-orientation": "Oriëntatie van pagina wijzigen",
       "toggle-page-break-line": "Regel voor pagina-einde in-/uitschakelen",
       "toggle-sidebars": "Zijbalk tonen/verbergen",
-      "zoom-in": "Inzoomen",
-      "zoom-out": "Uitzoomen",
       "undo": "Ongedaan maken",
-      "redo": "Redo"
+      "zoom-in": "Inzoomen",
+      "zoom-out": "Uitzoomen"
     }
   },
   "header": {
@@ -114,15 +115,15 @@
         "actions": {
           "photo-filters": "Foto Filters"
         },
+        "birthdate": {
+          "label": "Geboortedatum"
+        },
         "heading": "Basis",
         "headline": {
           "label": "Koptekst"
         },
         "name": {
           "label": "Volledige naam"
-        },
-        "birthdate": {
-          "label": "Geboortedatum"
         },
         "photo-filters": {
           "effects": {
@@ -264,14 +265,15 @@
           "button": "GitHub problemen",
           "heading": "Bugs? Functieverzoeken?"
         },
+        "docs": "Documentatie",
         "donate": {
           "body": "Als Je Reactive Resume graag gebruikt, kun je overwegen zoveel mogelijk te doneren om de app in de lucht te houden, zonder advertenties en voor altijd gratis.",
           "button": "Betaal me een koffie",
           "heading": "Doneer aan Reactive Resume"
         },
         "github": "Broncode",
-        "docs": "Documentatie",
-        "heading": "Links"
+        "heading": "Links",
+        "reddit": "Reddit"
       },
       "settings": {
         "global": {
@@ -290,13 +292,13 @@
         },
         "heading": "Instellingen",
         "page": {
-          "format": {
-            "primary": "Papiergrootte",
-            "secondary": "Bepaalt de afmetingen van uw cv-pagina's"
-          },
           "break-line": {
             "primary": "Breek Lijn",
             "secondary": "Toon een lijn op alle pagina's om de hoogte van een A4-pagina te markeren"
+          },
+          "format": {
+            "primary": "Papiergrootte",
+            "secondary": "Bepaalt de afmetingen van uw cv-pagina's"
           },
           "heading": "Pagina",
           "orientation": {
