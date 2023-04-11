@@ -71,6 +71,31 @@
         }
       },
       "heading": "Jelszó visszaállítása"
+    },
+    "profile": {
+      "heading": "Fiókja",
+      "form": {
+        "avatar": {
+          "help-text": "Frissítheti profilképét a <1>Gravataron</1>"
+        },
+        "name": {
+          "label": "Teljes név"
+        },
+        "email": {
+          "label": "Email cím",
+          "help-text": "Jelenleg nem lehetséges az e-mail cím frissítése, kérjük, hozzon létre egy új fiókot."
+        }
+      },
+      "delete-account": {
+        "heading": "Fiók és adatok törlése",
+        "body": "Fiókjának, adatainak és összes önéletrajzának törléséhez írja be a \"{{keyword}}\" értéket a szövegmezőbe, és kattintson a gombra. Kérjük, vegye figyelembe, hogy ez egy visszafordíthatatlan művelet, és adatait nem lehet újra lekérni.",
+        "actions": {
+          "delete": "Fiók törlése"
+        }
+      },
+      "actions": {
+        "save": "Változtatások mentése"
+      }
     }
   },
   "dashboard": {
