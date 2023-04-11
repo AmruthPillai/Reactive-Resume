@@ -71,6 +71,31 @@
         }
       },
       "heading": "Nulstil din adgangskode"
+    },
+    "profile": {
+      "heading": "Din konto",
+      "form": {
+        "avatar": {
+          "help-text": "Du kan opdatere dit profilbillede på <1>Gravatar</1>"
+        },
+        "name": {
+          "label": "Fulde navn"
+        },
+        "email": {
+          "label": "Email adresse",
+          "help-text": "Det er ikke muligt at opdatere din e-mailadresse i øjeblikket, opret en ny konto i stedet for."
+        }
+      },
+      "delete-account": {
+        "heading": "Slet konto og data",
+        "body": "For at slette din konto, dine data og alle dine CV'er skal du skrive \"{{keyword}}\" i tekstboksen og klikke på knappen. Bemærk venligst, at dette er en uigenkaldelig handling, og dine data kan ikke genfindes.",
+        "actions": {
+          "delete": "Slet konto"
+        }
+      },
+      "actions": {
+        "save": "Gem ændringer"
+      }
     }
   },
   "dashboard": {
