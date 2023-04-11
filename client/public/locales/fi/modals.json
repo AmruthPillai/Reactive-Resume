@@ -71,6 +71,31 @@
         }
       },
       "heading": "Palauta salasanasi"
+    },
+    "profile": {
+      "heading": "Tilisi",
+      "form": {
+        "avatar": {
+          "help-text": "Voit päivittää profiilikuvasi <1>Gravatarissa</1>"
+        },
+        "name": {
+          "label": "Koko nimi"
+        },
+        "email": {
+          "label": "Sähköpostiosoite",
+          "help-text": "Sähköpostiosoitettasi ei voi tällä hetkellä päivittää, luo sen sijaan uusi tili."
+        }
+      },
+      "delete-account": {
+        "heading": "Poista tili ja tiedot",
+        "body": "Poistaaksesi tilisi, tietosi ja kaikki ansioluettelosi, kirjoita \"{{keyword}}\" tekstiruutuun ja napsauta painiketta. Huomaa, että tämä on peruuttamaton toimenpide, eikä tietojasi voi noutaa uudelleen.",
+        "actions": {
+          "delete": "Poista tili"
+        }
+      },
+      "actions": {
+        "save": "Tallenna muutokset"
+      }
     }
   },
   "dashboard": {
