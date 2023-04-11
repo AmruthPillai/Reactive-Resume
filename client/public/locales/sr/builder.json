@@ -3,6 +3,7 @@
     "actions": {
       "add": "Dodaj Novi {{token}}",
       "delete": "Obriši {{token}}",
+      "duplicate": "Дупликат одељка",
       "edit": "Ažuriraj {{token}}"
     },
     "columns": {
@@ -80,13 +81,13 @@
       "center-artboard": "Centriraj Kanvas",
       "copy-link": "Kopiraj link u rezime",
       "export-pdf": "Eksportuj PDF",
+      "redo": "Понови",
       "toggle-orientation": "Uključi/Isključi Orijentaciju Stranice",
       "toggle-page-break-line": "Uključi/Isključi liniju preloma stranice",
       "toggle-sidebars": "Uključi/Isključi Sidebar",
-      "zoom-in": "Zumiraj",
-      "zoom-out": "Odzumiraj",
       "undo": "Врати",
-      "redo": "Понови"
+      "zoom-in": "Zumiraj",
+      "zoom-out": "Odzumiraj"
     }
   },
   "header": {
@@ -114,15 +115,15 @@
         "actions": {
           "photo-filters": "Filteri za Slike"
         },
+        "birthdate": {
+          "label": "Datum Rođenja"
+        },
         "heading": "Osnovno",
         "headline": {
           "label": "Naslov"
         },
         "name": {
           "label": "Puno Ime"
-        },
-        "birthdate": {
-          "label": "Datum Rođenja"
         },
         "photo-filters": {
           "effects": {
@@ -264,14 +265,15 @@
           "button": "GitHub Problemi",
           "heading": "Bagovi? Zahtevi za novu funkcionalnost?"
         },
+        "docs": "Документација",
         "donate": {
           "body": "Ako ti se sviđa Reactive Resume, razmotri o donaciji kako bi aplikacija nastavila da funkcioniše i bude dostupna, bez reklama i besplatna zauvek.",
           "button": "Kupi mi kafu",
           "heading": "Doniraj za Reactive Resume"
         },
         "github": "Izvorni Kod",
-        "docs": "Документација",
-        "heading": "Linkovi"
+        "heading": "Linkovi",
+        "reddit": "Реддит"
       },
       "settings": {
         "global": {
@@ -290,13 +292,13 @@
         },
         "heading": "Podešavanja",
         "page": {
-          "format": {
-            "primary": "Величина папира",
-            "secondary": "Одређује димензије страница вашег животописа"
-          },
           "break-line": {
             "primary": "Prelomi Redova",
             "secondary": "Pokaži liniju na svakoj stranici kako bi se obeležila visina A4 stranice"
+          },
+          "format": {
+            "primary": "Величина папира",
+            "secondary": "Одређује димензије страница вашег животописа"
           },
           "heading": "Strana",
           "orientation": {
