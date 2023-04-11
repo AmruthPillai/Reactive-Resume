@@ -71,6 +71,31 @@
         }
       },
       "heading": "Parolanızı sıfırlayın"
+    },
+    "profile": {
+      "heading": "Hesabınız",
+      "form": {
+        "avatar": {
+          "help-text": "<1>Gravatar'da profil resminizi güncelleyebilirsiniz</1>"
+        },
+        "name": {
+          "label": "Ad Soyad"
+        },
+        "email": {
+          "label": "E-posta Adresi",
+          "help-text": "E-posta adresinizi şu anda güncellemeniz mümkün değil, lütfen bunun yerine yeni bir hesap oluşturun."
+        }
+      },
+      "delete-account": {
+        "heading": "Hesabı ve Verileri Sil",
+        "body": "Hesabınızı, verilerinizi ve tüm özgeçmişlerinizi silmek için metin kutusuna \"{{keyword}}\" yazıp butona tıklayın. Lütfen bunun geri alınamaz bir işlem olduğunu ve verilerinizin tekrar alınamayacağını unutmayın.",
+        "actions": {
+          "delete": "Hesabı sil"
+        }
+      },
+      "actions": {
+        "save": "Değişiklikleri Kaydet"
+      }
     }
   },
   "dashboard": {
