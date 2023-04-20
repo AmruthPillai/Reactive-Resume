@@ -89,7 +89,7 @@ const UserProfileModal = () => {
                 render={({ field, fieldState }) => (
                   <TextField
                     autoFocus
-                    label={t('modals.auth.profile.form.name.label')}
+                    label={t<string>('modals.auth.profile.form.name.label')}
                     error={!!fieldState.error}
                     helperText={fieldState.error?.message}
                     {...field}
@@ -114,16 +114,16 @@ const UserProfileModal = () => {
             render={({ field, fieldState }) => (
               <TextField
                 disabled
-                label={t('modals.auth.profile.form.email.label')}
+                label={t<string>('modals.auth.profile.form.email.label')}
                 error={!!fieldState.error}
-                helperText={t('modals.auth.profile.form.email.help-text')}
+                helperText={t<string>('modals.auth.profile.form.email.help-text')}
                 {...field}
               />
             )}
           />
 
           <div>
-            <Button onClick={handleUpdate}>{t('modals.auth.profile.actions.save')}</Button>
+            <Button onClick={handleUpdate}>{t<string>('modals.auth.profile.actions.save')}</Button>
           </div>
         </form>
 
@@ -133,10 +133,12 @@ const UserProfileModal = () => {
 
         <div className="flex items-center gap-2">
           <CrisisAlert />
-          <h5 className="font-medium">{t('modals.auth.profile.delete-account.heading')}</h5>
+          <h5 className="font-medium">{t<string>('modals.auth.profile.delete-account.heading')}</h5>
         </div>
 
-        <p className="text-xs opacity-75">{t('modals.auth.profile.delete-account.body', { keyword: 'delete' })}</p>
+        <p className="text-xs opacity-75">
+          {t<string>('modals.auth.profile.delete-account.body', { keyword: 'delete' })}
+        </p>
 
         <div className="flex max-w-xs flex-col gap-4">
           <TextField
@@ -147,7 +149,7 @@ const UserProfileModal = () => {
 
           <div>
             <Button variant="contained" color="error" disabled={!isDeleteTextValid} onClick={handleDelete}>
-              {t('modals.auth.profile.delete-account.actions.delete')}
+              {t<string>('modals.auth.profile.delete-account.actions.delete')}
             </Button>
           </div>
         </div>

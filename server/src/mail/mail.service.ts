@@ -12,14 +12,14 @@ export class MailService {
 
   constructor(private configService: ConfigService) {
     this.transporter = createTransport({
-      host: this.configService.get<string>('mail.host'),
+      host: this.configService.get('mail.host'),
       port: this.configService.get<number>('mail.port'),
       pool: true,
       secure: false,
       tls: { ciphers: 'SSLv3' },
       auth: {
-        user: this.configService.get<string>('mail.username'),
-        pass: this.configService.get<string>('mail.password'),
+        user: this.configService.get('mail.username'),
+        pass: this.configService.get('mail.password'),
       },
     });
   }
@@ -35,13 +35,13 @@ export class MailService {
   }
 
   async sendForgotPasswordEmail(user: User, resetToken: string): Promise<void> {
-    const appUrl = this.configService.get<string>('app.url');
+    const appUrl = this.configService.get('app.url');
     const url = `${appUrl}?modal=auth.reset&resetToken=${resetToken}`;
 
     const sendMailDto: SendMailDto = {
       from: {
-        name: this.configService.get<string>('mail.from.name'),
-        email: this.configService.get<string>('mail.from.email'),
+        name: this.configService.get('mail.from.name'),
+        email: this.configService.get('mail.from.email'),
       },
       to: {
         name: user.name,

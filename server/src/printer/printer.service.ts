@@ -24,7 +24,7 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
   }
 
   async printAsPdf(username: string, slug: string, lastUpdated: string): Promise<string> {
-    const serverUrl = this.configService.get<string>('app.serverUrl');
+    const serverUrl = this.configService.get('app.serverUrl');
 
     const directory = join(__dirname, '..', 'assets/exports');
     const filename = `RxResume_PDFExport_${username}_${slug}_${lastUpdated}.pdf`;
@@ -47,8 +47,8 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
         );
       });
 
-      const url = this.configService.get<string>('app.url');
-      const secretKey = this.configService.get<string>('app.secretKey');
+      const url = this.configService.get('app.url');
+      const secretKey = this.configService.get('app.secretKey');
       const pdfDeletionTime = this.configService.get<number>('cache.pdfDeletionTime');
 
       const page = await this.browser.newPage();

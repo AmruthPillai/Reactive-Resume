@@ -48,6 +48,7 @@ const i18nConfig = {
     ],
   },
   nsSeparator: '.',
+  returnNull: false,
   localePath: path.resolve('./public/locales'),
   ns: ['common', 'modals', 'landing', 'dashboard', 'builder'],
 };

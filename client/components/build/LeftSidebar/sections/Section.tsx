@@ -99,7 +99,7 @@ const Section: React.FC<Props> = ({
 
         <Button variant="outlined" startIcon={<Add />} onClick={handleAdd}>
           {t<string>('builder.common.actions.add', {
-            token: t<string>(`builder.leftSidebar.${path}.heading`, heading),
+            token: t<string>(`builder.leftSidebar.${path}.heading`, { defaultValue: heading }),
           })}
         </Button>
       </footer>

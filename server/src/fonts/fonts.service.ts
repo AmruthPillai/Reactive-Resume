@@ -12,7 +12,7 @@ export class FontsService {
   constructor(private configService: ConfigService, private httpService: HttpService) {}
 
   async getAll(): Promise<Font[]> {
-    const apiKey = this.configService.get<string>('google.apiKey');
+    const apiKey = this.configService.get('google.apiKey');
     const url = 'https://www.googleapis.com/webfonts/v1/webfonts?key=' + apiKey;
 
     let data = [];

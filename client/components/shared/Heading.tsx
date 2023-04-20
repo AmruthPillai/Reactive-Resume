@@ -62,7 +62,7 @@ const Heading: React.FC<Props> = ({
         {editMode ? (
           <TextField size="small" value={heading} className="w-3/4" onChange={handleChange} />
         ) : (
-          <h1>{t<string>(`builder.leftSidebar.${path}.heading`, heading)}</h1>
+          <h1>{t<string>(`builder.leftSidebar.${path}.heading`, { defaultValue: heading })}</h1>
         )}
       </div>
 

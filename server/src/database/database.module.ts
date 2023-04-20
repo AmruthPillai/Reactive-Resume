@@ -12,15 +12,15 @@ import { User } from '@/users/entities/user.entity';
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) => ({
         type: 'postgres',
-        host: configService.get<string>('postgres.host'),
+        host: configService.get('postgres.host'),
         port: configService.get<number>('postgres.port'),
-        username: configService.get<string>('postgres.username'),
-        password: configService.get<string>('postgres.password'),
-        database: configService.get<string>('postgres.database'),
+        username: configService.get('postgres.username'),
+        password: configService.get('postgres.password'),
+        database: configService.get('postgres.database'),
         poolSize: 22,
         synchronize: true,
         entities: [User, Resume],
-        ssl: configService.get<string>('postgres.certificate') && {
+        ssl: configService.get('postgres.certificate') && {
           ca: Buffer.from(configService.get<string>('postgres.certificate'), 'base64').toString('ascii'),
         },
       }),

@@ -34,15 +34,15 @@ export class ResumeService {
     private configService: ConfigService,
     private usersService: UsersService
   ) {
-    this.s3Enabled = !isEmpty(configService.get<string>('storage.bucket'));
+    this.s3Enabled = !isEmpty(configService.get('storage.bucket'));
 
     if (this.s3Enabled) {
       this.s3Client = new S3({
-        endpoint: configService.get<string>('storage.endpoint'),
-        region: configService.get<string>('storage.region'),
+        endpoint: configService.get('storage.endpoint'),
+        region: configService.get('storage.region'),
         credentials: {
-          accessKeyId: configService.get<string>('storage.accessKey'),
-          secretAccessKey: configService.get<string>('storage.secretKey'),
+          accessKeyId: configService.get('storage.accessKey'),
+          secretAccessKey: configService.get('storage.secretKey'),
         },
       });
     }
@@ -141,7 +141,7 @@ export class ResumeService {
 
     const isPrivate = !resume.public;
     const isOwner = resume.user.id === userId;
-    const isInternal = secretKey === this.configService.get<string>('app.secretKey');
+    const isInternal = secretKey === this.configService.get('app.secretKey');
 
     if (!isInternal && isPrivate && !isOwner) {
       throw new HttpException('The resume you are looking does not exist, or maybe never did?', HttpStatus.NOT_FOUND);
@@ -159,7 +159,7 @@ export class ResumeService {
 
     const isPrivate = !resume.public;
     const isOwner = resume.user.id === userId;
-    const isInternal = secretKey === this.configService.get<string>('app.secretKey');
+    const isInternal = secretKey === this.configService.get('app.secretKey');
 
     if (!isInternal && isPrivate && !isOwner) {
       throw new HttpException('The resume you are looking does not exist, or maybe never did?', HttpStatus.NOT_FOUND);
@@ -247,7 +247,7 @@ export class ResumeService {
     let updatedResume = null;
 
     if (this.s3Enabled) {
-      const urlPrefix = this.configService.get<string>('storage.urlPrefix');
+      const urlPrefix = this.configService.get('storage.urlPrefix');
       const key = `uploads/${userId}/${id}/${filename}`;
       const publicUrl = urlPrefix + key;
       await this.s3Client.send(
@@ -255,13 +255,13 @@ export class ResumeService {
           Key: key,
           Body: file.buffer,
           ACL: 'public-read',
-          Bucket: this.configService.get<string>('storage.bucket'),
+          Bucket: this.configService.get('storage.bucket'),
         })
       );
       updatedResume = set(resume, 'basics.photo.url', publicUrl);
     } else {
       const path = `${__dirname}/../assets/uploads/${userId}/${id}/`;
-      const serverUrl = this.configService.get<string>('app.serverUrl');
+      const serverUrl = this.configService.get('app.serverUrl');
 
       try {
         await fs.mkdir(path, { recursive: true });
@@ -286,16 +286,16 @@ export class ResumeService {
     if (!publicUrl || publicUrl === '') return;
 
     if (this.s3Enabled) {
-      const urlPrefix = this.configService.get<string>('storage.urlPrefix');
+      const urlPrefix = this.configService.get('storage.urlPrefix');
       const key = publicUrl.replace(urlPrefix, '');
       await this.s3Client.send(
         new DeleteObjectCommand({
           Key: key,
-          Bucket: this.configService.get<string>('storage.bucket'),
+          Bucket: this.configService.get('storage.bucket'),
         })
       );
     } else {
-      const serverUrl = this.configService.get<string>('app.serverUrl');
+      const serverUrl = this.configService.get('app.serverUrl');
       const filePath = __dirname + '/..' + resume.basics.photo.url.replace(serverUrl, '');
 
       const isValidFile = (await fs.stat(filePath)).isFile();

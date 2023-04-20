@@ -106,15 +106,15 @@ export class AuthService {
 
   getUserFromAccessToken(accessToken: string) {
     const payload: User = this.jwtService.verify(accessToken, {
-      secret: this.configService.get<string>('auth.jwtSecret'),
+      secret: this.configService.get('auth.jwtSecret'),
     });
 
     return this.usersService.findById(payload.id);
   }
 
   async authenticateWithGoogle(credential: string) {
-    const clientID = this.configService.get<string>('google.clientID');
-    const clientSecret = this.configService.get<string>('google.clientSecret');
+    const clientID = this.configService.get('google.clientID');
+    const clientSecret = this.configService.get('google.clientSecret');
 
     const OAuthClient = new OAuth2Client(clientID, clientSecret);
     const client = await OAuthClient.verifyIdToken({ idToken: credential });
