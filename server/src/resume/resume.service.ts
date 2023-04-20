@@ -252,10 +252,10 @@ export class ResumeService {
       const publicUrl = urlPrefix + key;
       await this.s3Client.send(
         new PutObjectCommand({
-          Bucket: this.configService.get<string>('storage.bucket'),
           Key: key,
           Body: file.buffer,
           ACL: 'public-read',
+          Bucket: this.configService.get<string>('storage.bucket'),
         })
       );
       updatedResume = set(resume, 'basics.photo.url', publicUrl);
@@ -283,14 +283,15 @@ export class ResumeService {
     const resume = await this.findOne(id, userId);
     const publicUrl = resume.basics.photo.url;
 
+    if (!publicUrl || publicUrl === '') return;
+
     if (this.s3Enabled) {
       const urlPrefix = this.configService.get<string>('storage.urlPrefix');
       const key = publicUrl.replace(urlPrefix, '');
-
       await this.s3Client.send(
         new DeleteObjectCommand({
-          Bucket: this.configService.get<string>('storage.bucket'),
           Key: key,
+          Bucket: this.configService.get<string>('storage.bucket'),
         })
       );
     } else {
@@ -299,9 +300,7 @@ export class ResumeService {
 
       const isValidFile = (await fs.stat(filePath)).isFile();
 
-      if (isValidFile) {
-        await fs.unlink(filePath);
-      }
+      if (isValidFile) await fs.unlink(filePath);
     }
 
     const updatedResume = set(resume, 'basics.photo.url', '');

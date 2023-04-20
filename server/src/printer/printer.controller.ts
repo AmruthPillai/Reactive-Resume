@@ -1,4 +1,4 @@
-import { Controller, Get, InternalServerErrorException, Param, Query } from '@nestjs/common';
+import { Controller, Get, Param, Query } from '@nestjs/common';
 
 import { PrinterService } from './printer.service';
 

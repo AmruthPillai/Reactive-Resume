@@ -1,5 +1,19 @@
 {
   "extends": "../.eslintrc.json",
+  "plugins": ["unused-imports"],
   "ignorePatterns": ["dist"],
-  "env": { "node": true }
+  "env": { "node": true },
+  "rules": {
+    // Unused Imports
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "args": "none",
+        "varsIgnorePattern": "^_",
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  }
 }

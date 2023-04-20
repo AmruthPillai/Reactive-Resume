@@ -6,7 +6,6 @@ import { compareSync, hashSync } from 'bcryptjs';
 import { OAuth2Client } from 'google-auth-library';
 
 import { PostgresErrorCode } from '@/database/errorCodes.enum';
-import { ResumeService } from '@/resume/resume.service';
 import { CreateGoogleUserDto } from '@/users/dto/create-google-user.dto';
 import { User } from '@/users/entities/user.entity';
 import { UsersService } from '@/users/users.service';

@@ -6,7 +6,7 @@
     "dev": "env-cmd --silent cross-var cross-env VERSION=$npm_package_version pnpm run --recursive --parallel --stream dev",
     "build": "env-cmd --silent cross-var cross-env VERSION=$npm_package_version pnpm run --recursive --parallel build",
     "start": "env-cmd --silent cross-var cross-env VERSION=$npm_package_version pnpm run --recursive --parallel --stream start",
-    "update-deps": "ncu -x nanoid --deep -u && pnpm install",
+    "update": "ncu -x nanoid --deep -u && pnpm install",
     "generate-env": "ts-node ./scripts/generate-env.ts",
     "format": "prettier --write .",
     "lint": "pnpm run --recursive --parallel lint"
@@ -23,16 +23,16 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "@types/node": "^18.15.11",
-    "@typescript-eslint/eslint-plugin": "^5.57.1",
-    "@typescript-eslint/parser": "^5.57.1",
-    "eslint": "^8.37.0",
+    "@types/node": "^18.15.12",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
+    "eslint": "^8.38.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-simple-import-sort": "^10.0.0",
-    "npm-check-updates": "^16.10.7",
+    "npm-check-updates": "^16.10.8",
     "prettier": "^2.8.7",
     "ts-node": "^10.9.1",
-    "typescript": "^5.0.3"
+    "typescript": "^5.0.4"
   },
   "resolutions": {
     "@types/react": "17.0.2",
