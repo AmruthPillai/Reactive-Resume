@@ -3,6 +3,7 @@
     "actions": {
       "add": "Legg til ny {{token}}",
       "delete": "Slett {{token}}",
+      "duplicate": "Duplisert seksjon",
       "edit": "Rediger {{token}}"
     },
     "columns": {
@@ -80,13 +81,13 @@
       "center-artboard": "Center Artboard",
       "copy-link": "Kopier lenke til CV",
       "export-pdf": "Eksporter PDF",
+      "redo": "Gjøre om",
       "toggle-orientation": "Bytt sideorientering",
       "toggle-page-break-line": "Veksle på sideskiftlinje",
       "toggle-sidebars": "Slå av sidefelt",
-      "zoom-in": "Zoom inn",
-      "zoom-out": "Zoome ut",
       "undo": "Angre",
-      "redo": "Gjøre om"
+      "zoom-in": "Zoom inn",
+      "zoom-out": "Zoome ut"
     }
   },
   "header": {
@@ -114,15 +115,15 @@
         "actions": {
           "photo-filters": "Fotofiltre"
         },
+        "birthdate": {
+          "label": "Fødselsdato"
+        },
         "heading": "Grunnleggende",
         "headline": {
           "label": "Overskrift"
         },
         "name": {
           "label": "Fullt navn"
-        },
-        "birthdate": {
-          "label": "Fødselsdato"
         },
         "photo-filters": {
           "effects": {
@@ -264,14 +265,15 @@
           "button": "GitHub-problemer",
           "heading": "Bugs? Funksjonsforespørsler?"
         },
+        "docs": "Dokumentasjon",
         "donate": {
           "body": "Hvis du likte å bruke Reactive Resume, kan du vurdere å donere så mye du kan for å holde appen oppe og kjøre, uten annonser og gratis for alltid.",
           "button": "Kjøp meg en kaffe",
           "heading": "Doner til Reactive CV"
         },
         "github": "Kildekode",
-        "docs": "Dokumentasjon",
-        "heading": "Linker"
+        "heading": "Linker",
+        "reddit": "Reddit"
       },
       "settings": {
         "global": {
@@ -290,13 +292,13 @@
         },
         "heading": "Innstillinger",
         "page": {
-          "format": {
-            "primary": "Papir størrelse",
-            "secondary": "Bestemmer dimensjonene til CV-sidene dine"
-          },
           "break-line": {
             "primary": "Break Line",
             "secondary": "Vis en linje på alle sider for å markere høyden på en A4-side"
+          },
+          "format": {
+            "primary": "Papir størrelse",
+            "secondary": "Bestemmer dimensjonene til CV-sidene dine"
           },
           "heading": "Side",
           "orientation": {

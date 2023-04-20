@@ -3,6 +3,7 @@
     "actions": {
       "add": "إضافة {{token}} جديدة",
       "delete": "حذف {{token}}",
+      "duplicate": "قسم مكرر",
       "edit": "تحرير {{token}}"
     },
     "columns": {
@@ -80,13 +81,13 @@
       "center-artboard": "لوحة الوسط",
       "copy-link": "انسخ الرابط للسيرة الذاتية",
       "export-pdf": "تصدير PDF",
+      "redo": "إعادة",
       "toggle-orientation": "تبديل اتجاه الصفحة",
       "toggle-page-break-line": "تبديل سطر الصفحة",
       "toggle-sidebars": "تبديل الشريط الجانبي",
-      "zoom-in": "تكبير",
-      "zoom-out": "تصغير",
       "undo": "الغاء التحميل",
-      "redo": "إعادة"
+      "zoom-in": "تكبير",
+      "zoom-out": "تصغير"
     }
   },
   "header": {
@@ -114,15 +115,15 @@
         "actions": {
           "photo-filters": "فلاتر الصور"
         },
+        "birthdate": {
+          "label": "تاريخ الميلاد"
+        },
         "heading": "الأساسيات",
         "headline": {
           "label": "العنوان الرئيسي"
         },
         "name": {
           "label": "الاسم الكامل"
-        },
-        "birthdate": {
-          "label": "تاريخ الميلاد"
         },
         "photo-filters": {
           "effects": {
@@ -264,14 +265,15 @@
           "button": "صفحة المشاكل على \"GitHub\"",
           "heading": "خلل برمجي؟ طلب وظائف ومميزات مخصصة؟"
         },
+        "docs": "توثيق",
         "donate": {
           "body": "إذا أعجبك استخدام Resctive Resume ، فالرجاء التفكير في التبرع بأكبر قدر ممكن من أجل الحفاظ على استمرار التطبيق وتشغيله ، بدون إعلانات وبشكل مجاني إلى الأبد.",
           "button": "إشتر لي قهوة",
           "heading": "تبرع الى Reactive Resume"
         },
         "github": "الشفرة المصدرية",
-        "docs": "توثيق",
-        "heading": "الروابط"
+        "heading": "الروابط",
+        "reddit": "رديت"
       },
       "settings": {
         "global": {
@@ -290,13 +292,13 @@
         },
         "heading": "الإعدادات",
         "page": {
-          "format": {
-            "primary": "حجم الورق",
-            "secondary": "تحدد أبعاد صفحات سيرتك الذاتية"
-          },
           "break-line": {
             "primary": "خط فاصل",
             "secondary": "اعرض خط في كل الصفحات لتحديد ارتفاع صفحة A4"
+          },
+          "format": {
+            "primary": "حجم الورق",
+            "secondary": "تحدد أبعاد صفحات سيرتك الذاتية"
           },
           "heading": "صفحة",
           "orientation": {

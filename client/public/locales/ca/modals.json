@@ -71,6 +71,31 @@
         }
       },
       "heading": "Restablir la contrasenya"
+    },
+    "profile": {
+      "heading": "El teu compte",
+      "form": {
+        "avatar": {
+          "help-text": "Pots actualitzar la teva foto de perfil a <1>Gravatar</1>"
+        },
+        "name": {
+          "label": "Nom complet"
+        },
+        "email": {
+          "label": "Correu electrònic",
+          "help-text": "No és possible actualitzar la vostra adreça de correu electrònic en aquest moment, si us plau, creeu un compte nou."
+        }
+      },
+      "delete-account": {
+        "heading": "Suprimeix el compte i les dades",
+        "body": "Per eliminar el vostre compte, les vostres dades i tots els vostres currículums, escriviu \"{{keyword}}\" al quadre de text i feu clic al botó. Tingueu en compte que aquesta és una acció irreversible i que les vostres dades no es poden recuperar de nou.",
+        "actions": {
+          "delete": "Esborrar compte"
+        }
+      },
+      "actions": {
+        "save": "Guardar canvis"
+      }
     }
   },
   "dashboard": {

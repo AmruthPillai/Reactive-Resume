@@ -3,6 +3,7 @@
     "actions": {
       "add": "Добавить {{token}}",
       "delete": "Удалить {{token}}",
+      "duplicate": "Дублировать раздел",
       "edit": "Изменить {{token}}"
     },
     "columns": {
@@ -80,13 +81,13 @@
       "center-artboard": "Центрировать",
       "copy-link": "Скопировать ссылку на резюме",
       "export-pdf": "Экспорт в PDF",
+      "redo": "Redo",
       "toggle-orientation": "Переключить расположение страниц",
       "toggle-page-break-line": "Переключить линию разрыва страницы",
       "toggle-sidebars": "Переключить боковые панели",
-      "zoom-in": "Приблизить",
-      "zoom-out": "Отдалить",
       "undo": "Развернуть",
-      "redo": "Redo"
+      "zoom-in": "Приблизить",
+      "zoom-out": "Отдалить"
     }
   },
   "header": {
@@ -114,15 +115,15 @@
         "actions": {
           "photo-filters": "Фотофильтры"
         },
+        "birthdate": {
+          "label": "Дата рождения"
+        },
         "heading": "Основное",
         "headline": {
           "label": "Заголовок"
         },
         "name": {
           "label": "ФИО"
-        },
-        "birthdate": {
-          "label": "Дата рождения"
         },
         "photo-filters": {
           "effects": {
@@ -264,14 +265,15 @@
           "button": "GitHub Issues",
           "heading": "Нашли ошибку? Есть предложения?"
         },
+        "docs": "Документация",
         "donate": {
           "body": "Если вам понравилось использовать Reactive Resume, пожалуйста, подумайте о том, чтобы пожертвовать как можно больше на поддержание приложения в рабочем состоянии, без рекламы и бесплатно навсегда.",
           "button": "Купить мне кофе",
           "heading": "Поддержать Reactive Resume"
         },
         "github": "Исходный код",
-        "docs": "Документация",
-        "heading": "Ссылки"
+        "heading": "Ссылки",
+        "reddit": "Реддит"
       },
       "settings": {
         "global": {
@@ -290,13 +292,13 @@
         },
         "heading": "Настройки",
         "page": {
-          "format": {
-            "primary": "Размер бумаги",
-            "secondary": "Определяет размеры страниц вашего резюме"
-          },
           "break-line": {
             "primary": "Линия разрыва",
             "secondary": "Показывать линию, обозначающую высоту страницы A4"
+          },
+          "format": {
+            "primary": "Размер бумаги",
+            "secondary": "Определяет размеры страниц вашего резюме"
           },
           "heading": "Страница",
           "orientation": {

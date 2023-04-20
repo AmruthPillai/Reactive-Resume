@@ -71,6 +71,31 @@
         }
       },
       "heading": "Atur ulang kata sandi"
+    },
+    "profile": {
+      "heading": "Akun Anda",
+      "form": {
+        "avatar": {
+          "help-text": "Anda dapat memperbarui gambar profil Anda di <1>Gravatar</1>"
+        },
+        "name": {
+          "label": "Nama lengkap"
+        },
+        "email": {
+          "label": "Alamat email",
+          "help-text": "Tidak mungkin memperbarui alamat email Anda saat ini, harap buat akun baru."
+        }
+      },
+      "delete-account": {
+        "heading": "Hapus Akun dan Data",
+        "body": "Untuk menghapus akun Anda, data Anda dan semua resume Anda, ketik \"{{keyword}}\" ke dalam kotak teks dan klik tombolnya. Harap perhatikan bahwa ini adalah tindakan yang tidak dapat diubah dan data Anda tidak dapat diambil kembali.",
+        "actions": {
+          "delete": "Hapus akun"
+        }
+      },
+      "actions": {
+        "save": "Simpan perubahan"
+      }
     }
   },
   "dashboard": {

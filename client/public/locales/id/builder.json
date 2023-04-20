@@ -3,6 +3,7 @@
     "actions": {
       "add": "Tambahkan {{token}} Baru",
       "delete": "Hapus {{token}}",
+      "duplicate": "Bagian Duplikat",
       "edit": "Ubah {{token}}"
     },
     "columns": {
@@ -80,13 +81,13 @@
       "center-artboard": "Tengahkan Artboard",
       "copy-link": "Salin Tautan ke Resume",
       "export-pdf": "Ekspor PDF",
+      "redo": "Ulangi",
       "toggle-orientation": "Beralih Orientasi Halaman",
       "toggle-page-break-line": "Beralih Garis Pemisah Halaman",
       "toggle-sidebars": "Beralih Sidebar",
-      "zoom-in": "Perbesar",
-      "zoom-out": "Perkecil",
       "undo": "Batalkan",
-      "redo": "Ulangi"
+      "zoom-in": "Perbesar",
+      "zoom-out": "Perkecil"
     }
   },
   "header": {
@@ -114,15 +115,15 @@
         "actions": {
           "photo-filters": "Filter Foto"
         },
+        "birthdate": {
+          "label": "Tanggal Lahir"
+        },
         "heading": "Dasar",
         "headline": {
           "label": "Judul"
         },
         "name": {
           "label": "Nama Lengkap"
-        },
-        "birthdate": {
-          "label": "Tanggal Lahir"
         },
         "photo-filters": {
           "effects": {
@@ -264,14 +265,15 @@
           "button": "Masalah GitHub",
           "heading": "Bugs? Request Fitur?"
         },
+        "docs": "Dokumentasi",
         "donate": {
           "body": "Jika Anda suka menggunakan Reactive Resume, harap pertimbangkan untuk donasi sebanyak mungkin untuk menjaga aplikasi tetap berjalan, tanpa iklan dan gratis selamanya.",
           "button": "Belikan Saya Kopi",
           "heading": "Donasi ke Reactive Resume"
         },
         "github": "Kode sumber",
-        "docs": "Dokumentasi",
-        "heading": "Link"
+        "heading": "Link",
+        "reddit": "Reddit"
       },
       "settings": {
         "global": {
@@ -290,13 +292,13 @@
         },
         "heading": "Pengaturan",
         "page": {
-          "format": {
-            "primary": "Ukuran kertas",
-            "secondary": "Menentukan dimensi halaman resume Anda"
-          },
           "break-line": {
             "primary": "Break Line",
             "secondary": "Tampilkan garis di semua halaman untuk menandai ketinggian halaman A4"
+          },
+          "format": {
+            "primary": "Ukuran kertas",
+            "secondary": "Menentukan dimensi halaman resume Anda"
           },
           "heading": "Halaman",
           "orientation": {

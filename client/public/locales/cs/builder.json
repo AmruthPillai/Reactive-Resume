@@ -3,6 +3,7 @@
     "actions": {
       "add": "Přidat nový {{token}}",
       "delete": "Odstranit {{token}}",
+      "duplicate": "Duplicitní sekce",
       "edit": "Upravit {{token}}"
     },
     "columns": {
@@ -80,13 +81,13 @@
       "center-artboard": "Vycentrovat Artboard",
       "copy-link": "Kopírovat odkaz na životopis",
       "export-pdf": "Exportovat PDF",
+      "redo": "Přepracovat",
       "toggle-orientation": "Přepnout orientaci stránky",
       "toggle-page-break-line": "Přepnout řádek zalomení stránky",
       "toggle-sidebars": "Přepnout boční panely",
-      "zoom-in": "Přiblížit",
-      "zoom-out": "Oddálit",
       "undo": "Zrušit",
-      "redo": "Přepracovat"
+      "zoom-in": "Přiblížit",
+      "zoom-out": "Oddálit"
     }
   },
   "header": {
@@ -114,15 +115,15 @@
         "actions": {
           "photo-filters": "Foto filtry"
         },
+        "birthdate": {
+          "label": "Datum narození"
+        },
         "heading": "Základy",
         "headline": {
           "label": "Titulek"
         },
         "name": {
           "label": "Celé jméno"
-        },
-        "birthdate": {
-          "label": "Datum narození"
         },
         "photo-filters": {
           "effects": {
@@ -264,14 +265,15 @@
           "button": "Hlášení chyb GitHub",
           "heading": "Chyby? Požadavky na funkce?"
         },
+        "docs": "Dokumentace",
         "donate": {
           "body": "Pokud se vám líbilo používání Reactive Resume, zvažte prosím darování co největší částky na udržení aplikace v provozu, bez reklam a navždy zdarma.",
           "button": "Kupte mi kávu",
           "heading": "Přispějte na Reactive Resume"
         },
         "github": "Zdrojový kód",
-        "docs": "Dokumentace",
-        "heading": "Odkazy"
+        "heading": "Odkazy",
+        "reddit": "Reddit"
       },
       "settings": {
         "global": {
@@ -290,13 +292,13 @@
         },
         "heading": "Nastavení",
         "page": {
-          "format": {
-            "primary": "Velikost papíru",
-            "secondary": "Určuje rozměry stránek vašeho životopisu"
-          },
           "break-line": {
             "primary": "Nový řádek",
             "secondary": "Zobrazit čáru na všech stránkách pro označení výšky stránky A4"
+          },
+          "format": {
+            "primary": "Velikost papíru",
+            "secondary": "Určuje rozměry stránek vašeho životopisu"
           },
           "heading": "Stránka",
           "orientation": {

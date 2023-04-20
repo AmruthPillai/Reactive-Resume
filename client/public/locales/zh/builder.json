@@ -3,6 +3,7 @@
     "actions": {
       "add": "添加新的 {{token}}",
       "delete": "删除 {{token}}",
+      "duplicate": "重复章节",
       "edit": "编辑 {{token}}"
     },
     "columns": {
@@ -80,13 +81,13 @@
       "center-artboard": "中心画板",
       "copy-link": "复制链接地址",
       "export-pdf": "输出为PDF",
+      "redo": "重做",
       "toggle-orientation": "切换页面方向",
       "toggle-page-break-line": "切换分页线",
       "toggle-sidebars": "显示/隐藏侧边栏",
-      "zoom-in": "放大",
-      "zoom-out": "缩小",
       "undo": "撤销",
-      "redo": "重做"
+      "zoom-in": "放大",
+      "zoom-out": "缩小"
     }
   },
   "header": {
@@ -114,15 +115,15 @@
         "actions": {
           "photo-filters": "照片滤镜"
         },
+        "birthdate": {
+          "label": "出生日期"
+        },
         "heading": "概况",
         "headline": {
           "label": "标题"
         },
         "name": {
           "label": "全名"
-        },
-        "birthdate": {
-          "label": "出生日期"
         },
         "photo-filters": {
           "effects": {
@@ -264,14 +265,15 @@
           "button": "GitHub Issues",
           "heading": "发现了Bug? 想要新的功能?"
         },
+        "docs": "文件",
         "donate": {
           "body": "如果你喜欢使用Reactive Resume， 请考虑捐款以便保持应用正常运行，没有广告和永远免费。",
           "button": "送我一杯咖啡",
           "heading": "捐赠给 Reactive Resume"
         },
         "github": "源码",
-        "docs": "文件",
-        "heading": "链接"
+        "heading": "链接",
+        "reddit": "红迪网"
       },
       "settings": {
         "global": {
@@ -290,13 +292,13 @@
         },
         "heading": "设置",
         "page": {
-          "format": {
-            "primary": "纸张尺寸",
-            "secondary": "确定简历页面的尺寸"
-          },
           "break-line": {
             "primary": "换行",
             "secondary": "在所有页面上显示一条线以标记 A4 页面的高度"
+          },
+          "format": {
+            "primary": "纸张尺寸",
+            "secondary": "确定简历页面的尺寸"
           },
           "heading": "页面",
           "orientation": {

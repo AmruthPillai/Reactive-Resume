@@ -71,6 +71,31 @@
         }
       },
       "heading": "Tilbakestill passordet ditt"
+    },
+    "profile": {
+      "heading": "Kontoen din",
+      "form": {
+        "avatar": {
+          "help-text": "Du kan oppdatere profilbildet ditt på <1>Gravatar</1>"
+        },
+        "name": {
+          "label": "Fullt navn"
+        },
+        "email": {
+          "label": "Epostadresse",
+          "help-text": "Det er ikke mulig å oppdatere e-postadressen din for øyeblikket, vennligst opprett en ny konto i stedet."
+        }
+      },
+      "delete-account": {
+        "heading": "Slett konto og data",
+        "body": "For å slette kontoen din, dataene dine og alle CV-ene dine, skriv inn \"{{keyword}}\" i tekstboksen og klikk på knappen. Vær oppmerksom på at dette er en irreversibel handling og dataene dine kan ikke hentes igjen.",
+        "actions": {
+          "delete": "Slett konto"
+        }
+      },
+      "actions": {
+        "save": "Lagre endringer"
+      }
     }
   },
   "dashboard": {
