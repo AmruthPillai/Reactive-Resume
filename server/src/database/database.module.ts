@@ -17,6 +17,7 @@ import { User } from '@/users/entities/user.entity';
         username: configService.get<string>('postgres.username'),
         password: configService.get<string>('postgres.password'),
         database: configService.get<string>('postgres.database'),
+        poolSize: 22,
         synchronize: true,
         entities: [User, Resume],
         ssl: configService.get<string>('postgres.certificate') && {
