@@ -1,5 +1,6 @@
+import { CacheModule } from "@nestjs/cache-manager";
 import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MulterModule } from '@nestjs/platform-express';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { memoryStorage } from 'multer';
@@ -18,6 +19,13 @@ import { ResumeService } from './resume.service';
     MulterModule.register({ storage: memoryStorage() }),
     AuthModule,
     UsersModule,
+    CacheModule.registerAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: async (configService: ConfigService) => ({
+        ttl: configService.get('cache.pdfDeletionTime'),
+      })
+    })
   ],
   controllers: [ResumeController],
   providers: [ResumeService],

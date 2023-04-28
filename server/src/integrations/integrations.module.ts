@@ -33,5 +33,6 @@ import { IntegrationsService } from './integrations.service';
   ],
   controllers: [IntegrationsController],
   providers: [IntegrationsService],
+  exports: [IntegrationsService],
 })
 export class IntegrationsModule {}

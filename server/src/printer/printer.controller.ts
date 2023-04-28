@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Query } from '@nestjs/common';
+import { Body, Controller, Get, Param, Query } from '@nestjs/common';
 
 import { PrinterService } from './printer.service';
 
@@ -13,5 +13,10 @@ export class PrinterController {
     @Query('lastUpdated') lastUpdated: string
   ): Promise<string> {
     return this.printerService.printAsPdf(username, slug, lastUpdated);
+  }
+
+  @Get()
+  printJsonAsPdf(@Body() body: string): Promise<string> {
+    return this.printerService.printJsonAsPdf(body, new Date().toISOString());
   }
 }

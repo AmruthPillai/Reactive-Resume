@@ -65,6 +65,10 @@ export class UsersService {
   }
 
   async create(createUserDto: CreateUserDto | CreateGoogleUserDto): Promise<User> {
+    if (createUserDto.username === "__from_json__") {
+      throw new HttpException('Invalid username.', HttpStatus.BAD_REQUEST);
+    }
+
     const user = this.userRepository.create(createUserDto);
 
     await this.userRepository.save(user);

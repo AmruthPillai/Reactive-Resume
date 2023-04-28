@@ -1,8 +1,10 @@
 import { DeleteObjectCommand, PutObjectCommand, S3, S3Client } from '@aws-sdk/client-s3';
-import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { CACHE_MANAGER } from "@nestjs/cache-manager";
+import { HttpException, HttpStatus, Inject, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Resume as ResumeSchema } from '@reactive-resume/schema';
+import { Cache } from 'cache-manager';
 import fs from 'fs/promises';
 import isEmpty from 'lodash/isEmpty';
 import pick from 'lodash/pick';
@@ -32,7 +34,8 @@ export class ResumeService {
   constructor(
     @InjectRepository(Resume) private resumeRepository: Repository<Resume>,
     private configService: ConfigService,
-    private usersService: UsersService
+    private usersService: UsersService,
+    @Inject(CACHE_MANAGER) private cacheManager: Cache
   ) {
     this.s3Enabled = !isEmpty(configService.get('storage.bucket'));
 
@@ -85,18 +88,7 @@ export class ResumeService {
 
   async import(importResumeDto: Partial<ResumeSchema>, userId: number) {
     try {
-      const user = await this.usersService.findById(userId);
-
-      const shortId = nanoid(SHORT_ID_LENGTH);
-      const image = `/images/covers/${sample(covers)}`;
-
-      const resume = this.resumeRepository.create({
-        ...defaultState,
-        ...importResumeDto,
-        shortId,
-        image,
-        user,
-      });
+      const resume = await this.createResumeInstance(userId, importResumeDto);
 
       return this.resumeRepository.save(resume);
     } catch {
@@ -105,6 +97,22 @@ export class ResumeService {
         HttpStatus.INTERNAL_SERVER_ERROR
       );
     }
+  }
+
+  private async createResumeInstance(userId: number, importResumeDto: Partial<Resume>) {
+    const user = userId === -1 ? {} : await this.usersService.findById(userId);
+
+    const shortId = nanoid(SHORT_ID_LENGTH);
+    const image = `/images/covers/${sample(covers)}`;
+
+    const resume = this.resumeRepository.create({
+      ...defaultState,
+      ...importResumeDto,
+      shortId,
+      image,
+      user,
+    });
+    return resume;
   }
 
   findAll() {
@@ -151,14 +159,17 @@ export class ResumeService {
   }
 
   async findOneByIdentifier(username: string, slug: string, userId?: number, secretKey?: string) {
-    const resume = await this.resumeRepository.findOne({ where: { user: { username }, slug } });
+    const isToFetchFromCache = username === '__from_json__';
+    const resume = isToFetchFromCache
+      ? await this.getCachedJsonResume(slug)
+      : await this.resumeRepository.findOne({ where: { user: { username }, slug } });
 
     if (!resume) {
       throw new HttpException('The resume you are looking does not exist, or maybe never did?', HttpStatus.NOT_FOUND);
     }
 
     const isPrivate = !resume.public;
-    const isOwner = resume.user.id === userId;
+    const isOwner = resume.user.id === userId || isToFetchFromCache;
     const isInternal = secretKey === this.configService.get('app.secretKey');
 
     if (!isInternal && isPrivate && !isOwner) {
@@ -306,5 +317,13 @@ export class ResumeService {
     const updatedResume = set(resume, 'basics.photo.url', '');
 
     return this.resumeRepository.save<Resume>(updatedResume);
+  }
+
+  async cacheJsonResume(hash: string, resume: Partial<Resume>) {
+    await this.cacheManager.set(hash, await this.createResumeInstance(-1, resume));
+  }
+
+  async getCachedJsonResume(hash: string): Promise<Resume> {
+    return this.cacheManager.get(hash);
   }
 }
