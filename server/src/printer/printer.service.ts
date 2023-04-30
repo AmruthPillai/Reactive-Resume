@@ -112,11 +112,11 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
     return [directory, filename, publicUrl];
   }
 
-  async printJsonAsPdf(json: any, lastUpdated: string): Promise<string> {
-    const hash = createHash('md5').update(JSON.stringify(json)).digest('hex').substring(0, 10);
+  async printJsonAsPdf(resume: Partial<Resume>, lastUpdated: string): Promise<string> {
+    const hash = createHash('md5').update(JSON.stringify(resume)).digest('hex').substring(0, 10);
     const [directory, filename, publicUrl] = this.getFilePaths(lastUpdated, hash);
 
-    await this.resumeService.cacheJsonResume(hash, json as Resume);
+    await this.resumeService.cacheJsonResume(hash, resume);
 
     try {
       await access(join(directory, filename));

@@ -8,6 +8,9 @@
     "dev": "tsc -w",
     "build": "tsc"
   },
+  "dependencies": {
+    "zod": "^3.21.4"
+  },
   "devDependencies": {
     "eslint": "^8.38.0",
     "typescript": "^5.0.4"

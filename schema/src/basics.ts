@@ -1,42 +1,50 @@
-export type Location = {
-  address: string;
-  city: string;
-  region: string;
-  country: string;
-  postalCode: string;
-};
+import { z } from "zod";
 
-export type Profile = {
-  id?: string;
-  network: string;
-  username: string;
-  url?: string;
-};
+export const LocationSchema = z.object({
+  address: z.string(),
+  city: z.string(),
+  region: z.string(),
+  country: z.string(),
+  postalCode: z.string()
+});
+export type Location = z.infer<typeof LocationSchema>;
 
-export type PhotoShape = 'square' | 'rounded-square' | 'circle';
+export const ProfileSchema = z.object({
+  id: z.string().optional(),
+  network: z.string(),
+  username: z.string(),
+  url: z.string().optional()
+});
+export type Profile = z.infer<typeof ProfileSchema>;
 
-export type PhotoFilters = {
-  size: number;
-  shape: PhotoShape;
-  border: boolean;
-  grayscale: boolean;
-};
+export const PhotoShapeSchema = z.enum(['square', 'rounded-square', 'circle']);
+export type PhotoShape = z.infer<typeof PhotoShapeSchema>;
 
-export type Photo = {
-  url?: string;
-  visible: boolean;
-  filters: PhotoFilters;
-};
+export const PhotoFiltersSchema = z.object({
+  size: z.number(),
+  shape: PhotoShapeSchema,
+  border: z.boolean(),
+  grayscale: z.boolean()
+});
+export type PhotoFilters = z.infer<typeof PhotoFiltersSchema>;
 
-export type Basics = {
-  name: string;
-  photo: Photo;
-  email: string;
-  phone: string;
-  website: string;
-  headline: string;
-  birthdate: string;
-  summary: string;
-  location: Location;
-  profiles: Profile[];
-};
+export const PhotoSchema = z.object({
+  url: z.string().optional(),
+  visible: z.boolean(),
+  filters: PhotoFiltersSchema
+});
+export type Photo = z.infer<typeof PhotoSchema>;
+
+export const BasicsSchema = z.object({
+  name: z.string(),
+  photo: PhotoSchema,
+  email: z.string(),
+  phone: z.string(),
+  website: z.string(),
+  headline: z.string(),
+  birthdate: z.string(),
+  summary: z.string(),
+  location: LocationSchema,
+  profiles: z.array(ProfileSchema)
+});
+export type Basics = z.infer<typeof BasicsSchema>;

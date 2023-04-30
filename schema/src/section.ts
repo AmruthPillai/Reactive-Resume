@@ -1,155 +1,176 @@
-import { DateRange } from './atoms';
-import { Profile } from './basics';
+import { z } from "zod";
 
-export type WorkExperience = {
-  id?: string;
-  name: string;
-  position: string;
-  date?: DateRange;
-  url?: string;
-  summary?: string;
-};
+import { DateRangeSchema } from './atoms';
+import { ProfileSchema } from './basics';
 
-export type Education = {
-  id?: string;
-  institution: string;
-  degree: string;
-  area?: string;
-  score?: string;
-  date?: DateRange;
-  url?: string;
-  summary?: string;
-  courses?: string[];
-};
+export const WorkExperienceSchema = z.object({
+  id: z.string().optional(),
+  name: z.string(),
+  position: z.string(),
+  date: DateRangeSchema.optional(),
+  url: z.string().optional(),
+  summary: z.string().optional()
+});
+export type WorkExperience = z.infer<typeof WorkExperienceSchema>;
 
-export type Award = {
-  id?: string;
-  title: string;
-  awarder: string;
-  date?: string;
-  url?: string;
-  summary?: string;
-};
+export const EducationSchema = z.object({
+  id: z.string().optional(),
+  institution: z.string(),
+  degree: z.string(),
+  area: z.string().optional(),
+  score: z.string().optional(),
+  date: DateRangeSchema.optional(),
+  url: z.string().optional(),
+  summary: z.string().optional(),
+  courses: z.array(z.string()).optional()
+});
+export type Education = z.infer<typeof EducationSchema>;
 
-export type Certificate = {
-  id?: string;
-  name: string;
-  issuer: string;
-  date?: string;
-  url?: string;
-  summary?: string;
-};
+export const AwardSchema = z.object({
+  id: z.string().optional(),
+  title: z.string(),
+  awarder: z.string(),
+  date: z.string().optional(),
+  url: z.string().optional(),
+  summary: z.string().optional()
+});
+export type Award = z.infer<typeof AwardSchema>;
 
-export type Volunteer = {
-  id?: string;
-  organization: string;
-  position: string;
-  date?: DateRange;
-  url?: string;
-  summary?: string;
-};
+export const CertificateSchema = z.object({
+  id: z.string().optional(),
+  name: z.string(),
+  issuer: z.string(),
+  date: z.string().optional(),
+  url: z.string().optional(),
+  summary: z.string().optional()
+});
+export type Certificate = z.infer<typeof CertificateSchema>;
 
-export type Publication = {
-  id?: string;
-  name: string;
-  publisher: string;
-  date?: string;
-  url?: string;
-  summary?: string;
-};
+export const VolunteerSchema = z.object({
+  id: z.string().optional(),
+  organization: z.string(),
+  position: z.string(),
+  date: DateRangeSchema.optional(),
+  url: z.string().optional(),
+  summary: z.string().optional()
+});
+export type Volunteer = z.infer<typeof VolunteerSchema>;
 
-export type Skill = {
-  id?: string;
-  name: string;
-  level?: string;
-  levelNum: number;
-  keywords?: string[];
-};
+export const PublicationSchema = z.object({
+  id: z.string().optional(),
+  name: z.string(),
+  publisher: z.string(),
+  date: z.string().optional(),
+  url: z.string().optional(),
+  summary: z.string().optional()
+});
+export type Publication = z.infer<typeof PublicationSchema>;
 
-export type Language = {
-  id?: string;
-  name: string;
-  level: string;
-  levelNum: number;
-};
+export const SkillSchema = z.object({
+  id: z.string().optional(),
+  name: z.string(),
+  level: z.string().optional(),
+  levelNum: z.number(),
+  keywords: z.array(z.string()).optional()
+});
+export type Skill = z.infer<typeof SkillSchema>;
 
-export type Interest = {
-  id?: string;
-  name: string;
-  keywords?: string[];
-};
+export const LanguageSchema = z.object({
+  id: z.string().optional(),
+  name: z.string(),
+  level: z.string(),
+  levelNum: z.number()
+});
+export type Language = z.infer<typeof LanguageSchema>;
 
-export type Project = {
-  id?: string;
-  name: string;
-  description: string;
-  date?: DateRange;
-  url?: string;
-  summary?: string;
-  keywords?: string[];
-};
+export const InterestSchema = z.object({
+  id: z.string().optional(),
+  name: z.string(),
+  keywords: z.array(z.string()).optional()
+});
+export type Interest = z.infer<typeof InterestSchema>;
 
-export type Reference = {
-  id?: string;
-  name: string;
-  relationship: string;
-  phone?: string;
-  email?: string;
-  summary?: string;
-};
+export const ProjectSchema = z.object({
+  id: z.string().optional(),
+  name: z.string(),
+  description: z.string(),
+  date: DateRangeSchema.optional(),
+  url: z.string().optional(),
+  summary: z.string().optional(),
+  keywords: z.array(z.string()).optional()
+});
+export type Project = z.infer<typeof ProjectSchema>;
 
-export type Custom = {
-  id?: string;
-  title: string;
-  subtitle?: string;
-  date?: DateRange;
-  url?: string;
-  level?: string;
-  levelNum?: number;
-  summary?: string;
-  keywords?: string[];
-};
+export const ReferenceSchema = z.object({
+  id: z.string().optional(),
+  name: z.string(),
+  relationship: z.string(),
+  phone: z.string().optional(),
+  email: z.string().optional(),
+  summary: z.string().optional()
+});
+export type Reference = z.infer<typeof ReferenceSchema>;
 
-export type ListItem =
-  | Award
-  | Certificate
-  | Education
-  | Interest
-  | Language
-  | Profile
-  | Project
-  | Publication
-  | Reference
-  | Skill
-  | Volunteer
-  | WorkExperience
-  | Custom;
+export const CustomSchema = z.object({
+  id: z.string().optional(),
+  title: z.string(),
+  subtitle: z.string().optional(),
+  date: DateRangeSchema.optional(),
+  url: z.string().optional(),
+  level: z.string().optional(),
+  levelNum: z.number().optional(),
+  summary: z.string().optional(),
+  keywords: z.array(z.string()).optional()
+});
+export type Custom = z.infer<typeof CustomSchema>;
 
-export type SectionType =
-  | 'basic'
-  | 'location'
-  | 'profiles'
-  | 'education'
-  | 'awards'
-  | 'certifications'
-  | 'publications'
-  | 'skills'
-  | 'languages'
-  | 'interests'
-  | 'volunteer'
-  | 'projects'
-  | 'references'
-  | 'custom'
-  | 'work';
+export const ListItemSchema = z.union([
+  AwardSchema,
+  CertificateSchema,
+  EducationSchema,
+  InterestSchema,
+  LanguageSchema,
+  ProfileSchema,
+  ProjectSchema,
+  PublicationSchema,
+  ReferenceSchema,
+  SkillSchema,
+  VolunteerSchema,
+  WorkExperienceSchema,
+  CustomSchema
+]);
+export type ListItem = z.infer<typeof ListItemSchema>;
 
-export type SectionPath = `sections.${string}`;
+export const SectionTypeSchema = z.enum([
+  'basic',
+  'location',
+  'profiles',
+  'education',
+  'awards',
+  'certifications',
+  'publications',
+  'skills',
+  'languages',
+  'interests',
+  'volunteer',
+  'projects',
+  'references',
+  'custom',
+  'work'
+]);
 
-export type Section = {
-  id?: string;
-  name: string;
-  type: SectionType;
-  columns: number;
-  visible: boolean;
-  items: ListItem[];
-  isDuplicated?: boolean;
-};
+export type SectionType = z.infer<typeof SectionTypeSchema>;
+
+export const SectionPathSchema = z.string().regex(/^sections\..*$/);
+export type SectionPath = z.infer<typeof SectionPathSchema>;
+
+export const SectionSchema = z.object({
+  id: z.string().optional(),
+  name: z.string(),
+  type: SectionTypeSchema,
+  columns: z.number(),
+  visible: z.boolean(),
+  items: z.array(ListItemSchema),
+  isDuplicated: z.boolean().optional()
+});
+export type Section = z.infer<typeof SectionSchema>;

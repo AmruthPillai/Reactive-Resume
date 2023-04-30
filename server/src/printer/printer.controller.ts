@@ -1,4 +1,6 @@
 import { Body, Controller, Get, Param, Query } from '@nestjs/common';
+import type { Resume } from "@reactive-resume/schema";
+import { reactiveResumeV2JsonImportedSchema } from "@reactive-resume/schema";
 
 import { PrinterService } from './printer.service';
 
@@ -16,7 +18,12 @@ export class PrinterController {
   }
 
   @Get()
-  printJsonAsPdf(@Body() body: string): Promise<string> {
-    return this.printerService.printJsonAsPdf(body, new Date().toISOString());
+  printJsonAsPdf(@Body() body: Partial<Resume>): Promise<string> {
+    reactiveResumeV2JsonImportedSchema.parse(body)
+
+    return this.printerService.printJsonAsPdf(
+      body,
+      new Date().toISOString()
+    );
   }
 }
