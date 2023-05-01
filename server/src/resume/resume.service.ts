@@ -159,7 +159,8 @@ export class ResumeService {
   }
 
   async findOneByIdentifier(username: string, slug: string, userId?: number, secretKey?: string) {
-    const isToFetchFromCache = username === '__from_json__';
+    const jsonCacheClient = this.configService.get<string>('cache.jsonCacheClient');
+    const isToFetchFromCache = username === jsonCacheClient;
     const resume = isToFetchFromCache
       ? await this.getCachedJsonResume(slug)
       : await this.resumeRepository.findOne({ where: { user: { username }, slug } });

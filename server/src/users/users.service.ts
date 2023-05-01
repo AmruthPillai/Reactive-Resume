@@ -1,4 +1,5 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { ConfigService } from "@nestjs/config";
 import { SchedulerRegistry } from '@nestjs/schedule';
 import { InjectRepository } from '@nestjs/typeorm';
 import { randomBytes } from 'crypto';
@@ -19,6 +20,7 @@ export class UsersService {
     @InjectRepository(User) private userRepository: Repository<User>,
     private schedulerRegistry: SchedulerRegistry,
     private mailService: MailService,
+    private configService: ConfigService,
     private dataSource: DataSource
   ) {}
 
@@ -65,7 +67,8 @@ export class UsersService {
   }
 
   async create(createUserDto: CreateUserDto | CreateGoogleUserDto): Promise<User> {
-    if (createUserDto.username === "__from_json__") {
+    const jsonCacheClient = this.configService.get<string>('cache.jsonCacheClient');
+    if (createUserDto.username === jsonCacheClient) {
       throw new HttpException('Invalid username.', HttpStatus.BAD_REQUEST);
     }
 

@@ -6,7 +6,7 @@ import { createHash } from 'crypto';
 import { access, mkdir, readdir, unlink, writeFile } from 'fs/promises';
 import { join } from 'path';
 import { PDFDocument } from 'pdf-lib';
-import { Browser, chromium } from 'playwright-chromium';
+import { Browser, chromium, Page } from 'playwright-chromium';
 
 import { ResumeService } from "@/resume/resume.service";
 
@@ -43,45 +43,7 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
       const page = await this.browser.newPage();
 
       await page.goto(`${url}/${username}/${slug}/printer?secretKey=${secretKey}`);
-      await page.waitForLoadState('networkidle');
-      await page.waitForSelector('html.wf-active');
-
-      const pageFormat: PageConfig['format'] = await page.$$eval(
-        '[data-page]',
-        (pages) => pages[0].getAttribute('data-format') as PageConfig['format']
-      );
-
-      const resumePages = await page.$$eval('[data-page]', (pages) =>
-        pages.map((page, index) => ({
-          pageNumber: index + 1,
-          innerHTML: page.innerHTML,
-          height: page.clientHeight,
-        }))
-      );
-
-      const pdf = await PDFDocument.create();
-
-      for (let index = 0; index < resumePages.length; index++) {
-        await page.evaluate((page) => (document.body.innerHTML = page.innerHTML), resumePages[index]);
-
-        const buffer = await page.pdf({
-          printBackground: true,
-          height: resumePages[index].height,
-          width: pageFormat === 'A4' ? '210mm' : '216mm',
-        });
-
-        const pageDoc = await PDFDocument.load(buffer);
-        const copiedPages = await pdf.copyPages(pageDoc, [0]);
-
-        copiedPages.forEach((copiedPage) => pdf.addPage(copiedPage));
-      }
-
-      await page.close();
-
-      const pdfBytes = await pdf.save();
-
-      await mkdir(directory, { recursive: true });
-      await writeFile(join(directory, filename), pdfBytes);
+      await this.generatePdf(page, directory, filename);
 
       // Delete PDF artifacts after `pdfDeletionTime` ms
       const timeout = setTimeout(async () => {
@@ -125,50 +87,12 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
       await readdir(directory)
         .then(this.deletePreviousExistingFiles(hash, directory, activeSchedulerTimeouts));
 
-      const { url, secretKey, pdfDeletionTime } = this.getConfig();
+      const { url, secretKey, pdfDeletionTime, jsonCacheClient } = this.getConfig();
 
       const page = await this.browser.newPage();
 
-      await page.goto(`${url}/__from_json__/${hash}/printer?secretKey=${secretKey}`);
-      await page.waitForLoadState('networkidle');
-      await page.waitForSelector('html.wf-active');
-
-      const pageFormat: PageConfig['format'] = await page.$$eval(
-        '[data-page]',
-        (pages) => pages[0].getAttribute('data-format') as PageConfig['format']
-      );
-
-      const resumePages = await page.$$eval('[data-page]', (pages) =>
-        pages.map((page, index) => ({
-          pageNumber: index + 1,
-          innerHTML: page.innerHTML,
-          height: page.clientHeight,
-        }))
-      );
-
-      const pdf = await PDFDocument.create();
-
-      for (let index = 0; index < resumePages.length; index++) {
-        await page.evaluate((page) => (document.body.innerHTML = page.innerHTML), resumePages[index]);
-
-        const buffer = await page.pdf({
-          printBackground: true,
-          height: resumePages[index].height,
-          width: pageFormat === 'A4' ? '210mm' : '216mm',
-        });
-
-        const pageDoc = await PDFDocument.load(buffer);
-        const copiedPages = await pdf.copyPages(pageDoc, [0]);
-
-        copiedPages.forEach((copiedPage) => pdf.addPage(copiedPage));
-      }
-
-      await page.close();
-
-      const pdfBytes = await pdf.save();
-
-      await mkdir(directory, { recursive: true });
-      await writeFile(join(directory, filename), pdfBytes);
+      await page.goto(`${url}/${jsonCacheClient}/${hash}/printer?secretKey=${secretKey}`);
+      await this.generatePdf(page, directory, filename);
 
       // Delete PDF artifacts after `pdfDeletionTime` ms
       const timeout = setTimeout(async () => {
@@ -187,11 +111,54 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
     return publicUrl;
   }
 
+  private async generatePdf(page: Page, directory: string, filename: string) {
+    await page.waitForLoadState('networkidle');
+    await page.waitForSelector('html.wf-active');
+
+    const pageFormat: PageConfig['format'] = await page.$$eval(
+      '[data-page]',
+      (pages) => pages[0].getAttribute('data-format') as PageConfig['format']
+    );
+
+    const resumePages = await page.$$eval('[data-page]', (pages) =>
+      pages.map((page, index) => ({
+        pageNumber: index + 1,
+        innerHTML: page.innerHTML,
+        height: page.clientHeight,
+      }))
+    );
+
+    const pdf = await PDFDocument.create();
+
+    for (let index = 0; index < resumePages.length; index++) {
+      await page.evaluate((page) => (document.body.innerHTML = page.innerHTML), resumePages[index]);
+
+      const buffer = await page.pdf({
+        printBackground: true,
+        height: resumePages[index].height,
+        width: pageFormat === 'A4' ? '210mm' : '216mm',
+      });
+
+      const pageDoc = await PDFDocument.load(buffer);
+      const copiedPages = await pdf.copyPages(pageDoc, [0]);
+
+      copiedPages.forEach((copiedPage) => pdf.addPage(copiedPage));
+    }
+
+    await page.close();
+
+    const pdfBytes = await pdf.save();
+
+    await mkdir(directory, {recursive: true});
+    await writeFile(join(directory, filename), pdfBytes);
+  }
+
   private getConfig() {
     const url = this.configService.get('app.url');
     const secretKey = this.configService.get('app.secretKey');
     const pdfDeletionTime = this.configService.get<number>('cache.pdfDeletionTime');
-    return { url, secretKey, pdfDeletionTime };
+    const jsonCacheClient = this.configService.get<string>('cache.jsonCacheClient');
+    return { url, secretKey, pdfDeletionTime, jsonCacheClient };
   }
 
   private deletePreviousExistingFiles(slug: string, directory: string, activeSchedulerTimeouts: string[], username?: string) {

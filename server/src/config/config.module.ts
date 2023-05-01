@@ -58,6 +58,7 @@ const validationSchema = Joi.object({
   PDF_DELETION_TIME: Joi.number()
     .default(4 * 24 * 60 * 60 * 1000) // 4 days
     .allow(''),
+  JSON_CACHE_CLIENT: Joi.string().default('__from_json__')
 });
 
 @Module({
