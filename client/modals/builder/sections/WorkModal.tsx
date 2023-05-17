@@ -119,7 +119,7 @@ const WorkModal: React.FC = () => {
             <TextField
               required
               autoFocus
-              label={t<string>('builder.common.form.name.label')}
+              label={t<string>('builder.leftSidebar.sections.experience.form.name.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
