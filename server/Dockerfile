@@ -24,7 +24,7 @@ COPY --from=dependencies /app/server/node_modules ./server/node_modules
 RUN pnpm run --filter schema build \
   && pnpm run --filter server build
 
-FROM mcr.microsoft.com/playwright:v1.32.3-focal as production
+FROM mcr.microsoft.com/playwright:v1.34.0-focal as production
 
 WORKDIR /app
 
