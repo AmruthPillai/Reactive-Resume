@@ -13,6 +13,7 @@ jobs:
     strategy:
       matrix:
         image: [client, server]
+        arch: [linux/amd64, linux/arm64]
 
     steps:
       - name: Checkout the repository
@@ -25,7 +26,7 @@ jobs:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2.1.0
         with:
-          platforms: amd64,arm
+          platforms: ${{ matrix.arch }}
 
       - id: buildx
         name: Set up Docker Buildx
@@ -49,7 +50,7 @@ jobs:
         with:
           context: .
           push: true
-          platforms: linux/amd64,linux/arm64
+          platforms: ${{ matrix.arch }}
           file: ${{ matrix.image }}/Dockerfile
           build-args: |
             TURBO_TOKEN=${{ secrets.TURBO_TOKEN }}
