@@ -53,7 +53,7 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
 
       const page = await this.browser.newPage();
 
-      await page.goto(`${url}${username}/${slug}/printer?secretKey=${secretKey}`);
+      await page.goto(`${url}/${username}/${slug}/printer?secretKey=${secretKey}`);
       await page.waitForLoadState('networkidle');
       await page.waitForSelector('html.wf-active');
 
