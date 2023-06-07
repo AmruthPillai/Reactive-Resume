@@ -5,17 +5,57 @@ import { PageConfig } from '@reactive-resume/schema';
 import { access, mkdir, readdir, unlink, writeFile } from 'fs/promises';
 import { join } from 'path';
 import { PDFDocument } from 'pdf-lib';
-import { Browser, chromium } from 'playwright-chromium';
+import { BrowserContext, chromium } from 'playwright-chromium';
+
+const minimal_chromium_args = [
+  '--autoplay-policy=user-gesture-required',
+  '--disable-background-networking',
+  '--disable-background-timer-throttling',
+  '--disable-backgrounding-occluded-windows',
+  '--disable-breakpad',
+  '--disable-client-side-phishing-detection',
+  '--disable-component-update',
+  '--disable-default-apps',
+  '--disable-dev-shm-usage',
+  '--disable-domain-reliability',
+  '--disable-extensions',
+  '--disable-features=AudioServiceOutOfProcess',
+  '--disable-hang-monitor',
+  '--disable-ipc-flooding-protection',
+  '--disable-notifications',
+  '--disable-offer-store-unmasked-wallet-cards',
+  '--disable-popup-blocking',
+  '--disable-print-preview',
+  '--disable-prompt-on-repost',
+  '--disable-renderer-backgrounding',
+  '--disable-setuid-sandbox',
+  '--disable-speech-api',
+  '--disable-sync',
+  '--hide-scrollbars',
+  '--ignore-gpu-blacklist',
+  '--metrics-recording-only',
+  '--mute-audio',
+  '--no-default-browser-check',
+  '--no-first-run',
+  '--no-pings',
+  '--no-sandbox',
+  '--no-zygote',
+  '--password-store=basic',
+  '--use-gl=swiftshader',
+  '--use-mock-keychain',
+];
 
 @Injectable()
 export class PrinterService implements OnModuleInit, OnModuleDestroy {
-  private browser: Browser;
+  private browser: BrowserContext;
 
   constructor(private readonly schedulerRegistry: SchedulerRegistry, private readonly configService: ConfigService) {}
 
   async onModuleInit() {
-    this.browser = await chromium.launch({
-      args: ['--disable-dev-shm-usage'],
+    this.browser = await chromium.launchPersistentContext('.playwright', {
+      headless: true,
+      forcedColors: 'active',
+      args: minimal_chromium_args,
     });
   }
 
@@ -34,6 +74,7 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
       await access(join(directory, filename));
     } catch {
       const activeSchedulerTimeouts = this.schedulerRegistry.getTimeouts();
+
       await readdir(directory).then(async (files) => {
         await Promise.all(
           files.map(async (file) => {
@@ -53,9 +94,8 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
 
       const page = await this.browser.newPage();
 
-      await page.goto(`${url}/${username}/${slug}/printer?secretKey=${secretKey}`);
-      await page.waitForLoadState('networkidle');
-      await page.waitForSelector('html.wf-active');
+      await page.goto(`${url}/${username}/${slug}/printer?secretKey=${secretKey}`, { waitUntil: 'networkidle' });
+      await page.waitForSelector('html.wf-active', { state: 'visible' });
 
       const pageFormat: PageConfig['format'] = await page.$$eval(
         '[data-page]',

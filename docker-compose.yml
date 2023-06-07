@@ -8,22 +8,16 @@ services:
       - 5432:5432
     volumes:
       - pgdata:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
-      start_period: 15s
-      interval: 30s
-      timeout: 30s
-      retries: 3
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
 
   server:
-    image: amruthpillai/reactive-resume:server-latest
-    # build:
-    #   context: .
-    #   dockerfile: ./server/Dockerfile
+    # image: amruthpillai/reactive-resume:server-latest
+    build:
+      context: .
+      dockerfile: ./server/Dockerfile
     restart: always
     ports:
       - 3100:3100
@@ -59,10 +53,10 @@ services:
       - PDF_DELETION_TIME=
 
   client:
-    image: amruthpillai/reactive-resume:client-latest
-    # build:
-    #   context: .
-    #   dockerfile: ./client/Dockerfile
+    # image: amruthpillai/reactive-resume:client-latest
+    build:
+      context: .
+      dockerfile: ./client/Dockerfile
     restart: always
     ports:
       - 3000:3000

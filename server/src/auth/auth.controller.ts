@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, HttpCode, Patch, Post, UseGuards } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Delete, Get, HttpCode, Patch, Post, UseGuards } from '@nestjs/common';
 
 import { User } from '@/decorators/user.decorator';
 import { User as UserEntity } from '@/users/entities/user.entity';
@@ -23,10 +23,14 @@ export class AuthController {
 
   @Post('google')
   async loginWithGoogle(@Body('credential') credential: string) {
-    const user = await this.authService.authenticateWithGoogle(credential);
-    const accessToken = this.authService.getAccessToken(user.id);
+    try {
+      const user = await this.authService.authenticateWithGoogle(credential);
+      const accessToken = this.authService.getAccessToken(user.id);
 
-    return { user, accessToken };
+      return { user, accessToken };
+    } catch (error) {
+      throw new BadRequestException('User with this email might already exist.');
+    }
   }
 
   @Post('register')

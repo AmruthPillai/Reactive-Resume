@@ -1,4 +1,5 @@
-import { CacheInterceptor, Controller, Get, UseGuards, UseInterceptors } from '@nestjs/common';
+import { CacheInterceptor } from '@nestjs/cache-manager';
+import { Controller, Get, UseGuards, UseInterceptors } from '@nestjs/common';
 
 import { JwtAuthGuard } from '@/auth/guards/jwt.guard';
 
