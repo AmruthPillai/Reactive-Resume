@@ -49,4 +49,4 @@ EXPOSE 3100
 
 ENV PORT 3100
 
-CMD [ "pnpm", "run", "start" ]
+CMD [ "pnpm", "run", "--filter", "server", "start" ]
