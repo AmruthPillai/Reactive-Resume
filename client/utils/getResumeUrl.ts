@@ -1,5 +1,5 @@
 import env from '@beam-australia/react-env';
-import { Resume } from '@reactive-resume/schema';
+import { Resume } from 'schema';
 import get from 'lodash/get';
 
 type Options = {

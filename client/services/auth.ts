@@ -1,6 +1,6 @@
-import { User } from '@reactive-resume/schema';
 import { AxiosResponse } from 'axios';
 import toast from 'react-hot-toast';
+import { User } from 'schema';
 
 import { logout, setAccessToken, setUser } from '@/store/auth/authSlice';
 

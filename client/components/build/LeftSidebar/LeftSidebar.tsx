@@ -1,11 +1,11 @@
 import { Add, Star } from '@mui/icons-material';
 import { Button, Divider, IconButton, SwipeableDrawer, Tooltip, useMediaQuery, useTheme } from '@mui/material';
-import { Section as SectionRecord } from '@reactive-resume/schema';
 import cloneDeep from 'lodash/cloneDeep';
 import get from 'lodash/get';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import React, { ReactComponentElement, useMemo } from 'react';
+import { Section as SectionRecord } from 'schema';
 import { validate } from 'uuid';
 
 import Logo from '@/components/shared/Logo';

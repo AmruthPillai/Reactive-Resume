@@ -1,6 +1,6 @@
 import { css } from '@emotion/css';
 import { Cake, Email, Phone, Public, Room } from '@mui/icons-material';
-import { ThemeConfig } from '@reactive-resume/schema';
+import { ThemeConfig } from 'schema';
 import clsx from 'clsx';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';

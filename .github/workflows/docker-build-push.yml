@@ -51,6 +51,8 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64
           file: ${{ matrix.image }}/Dockerfile
+          build-args: |
+            TURBO_TOKEN=${{ secrets.TURBO_TOKEN }}
           tags: |
             amruthpillai/reactive-resume:${{ matrix.image }}-latest
             amruthpillai/reactive-resume:${{ matrix.image }}-${{ steps.version.outputs.current-version }}

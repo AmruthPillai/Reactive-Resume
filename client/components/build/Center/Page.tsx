@@ -1,10 +1,10 @@
 import { css } from '@emotion/css';
-import { CustomCSS, PageConfig, ThemeConfig, Typography } from '@reactive-resume/schema';
 import clsx from 'clsx';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import { useTranslation } from 'next-i18next';
 import { useMemo } from 'react';
+import { CustomCSS, PageConfig, ThemeConfig, Typography } from 'schema';
 
 import { useAppSelector } from '@/store/hooks';
 import templateMap from '@/templates/templateMap';

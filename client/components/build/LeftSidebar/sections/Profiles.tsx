@@ -1,7 +1,7 @@
 import { Add } from '@mui/icons-material';
 import { Button } from '@mui/material';
-import { ListItem } from '@reactive-resume/schema';
 import { useTranslation } from 'next-i18next';
+import { ListItem } from 'schema';
 
 import Heading from '@/components/shared/Heading';
 import List from '@/components/shared/List';

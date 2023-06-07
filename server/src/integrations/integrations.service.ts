@@ -1,4 +1,12 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import csv from 'csvtojson';
+import dayjs from 'dayjs';
+import { readFile, unlink } from 'fs/promises';
+import cloneDeep from 'lodash/cloneDeep';
+import get from 'lodash/get';
+import isEmpty from 'lodash/isEmpty';
+import merge from 'lodash/merge';
+import StreamZip from 'node-stream-zip';
 import {
   Award,
   Certificate,
@@ -12,15 +20,7 @@ import {
   Skill,
   Volunteer,
   WorkExperience,
-} from '@reactive-resume/schema';
-import csv from 'csvtojson';
-import dayjs from 'dayjs';
-import { readFile, unlink } from 'fs/promises';
-import cloneDeep from 'lodash/cloneDeep';
-import get from 'lodash/get';
-import isEmpty from 'lodash/isEmpty';
-import merge from 'lodash/merge';
-import StreamZip from 'node-stream-zip';
+} from 'schema';
 import { DeepPartial } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
 

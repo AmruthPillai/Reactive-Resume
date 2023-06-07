@@ -1,6 +1,5 @@
 import { Download, Downloading } from '@mui/icons-material';
 import { ButtonBase } from '@mui/material';
-import { Resume } from '@reactive-resume/schema';
 import clsx from 'clsx';
 import dayjs from 'dayjs';
 import download from 'downloadjs';
@@ -13,6 +12,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect } from 'react';
 import toast from 'react-hot-toast';
 import { useMutation, useQuery } from 'react-query';
+import { Resume } from 'schema';
 
 import Page from '@/components/build/Center/Page';
 import { DEFAULT_ERROR_MESSAGE } from '@/constants/index';

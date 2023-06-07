@@ -23,8 +23,8 @@ import {
   VolunteerActivism,
   Work,
 } from '@mui/icons-material';
-import { Section as SectionRecord, SectionType } from '@reactive-resume/schema';
 import isEmpty from 'lodash/isEmpty';
+import { Section as SectionRecord, SectionType } from 'schema';
 
 import Basics from '@/components/build/LeftSidebar/sections/Basics';
 import Location from '@/components/build/LeftSidebar/sections/Location';

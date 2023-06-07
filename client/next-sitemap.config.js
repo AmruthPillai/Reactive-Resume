@@ -2,5 +2,5 @@
 module.exports = {
   siteUrl: 'https://rxresu.me',
   changefreq: 'monthly',
-  generateRobotsTxt: true,
+  generateIndexSitemap: false,
 };

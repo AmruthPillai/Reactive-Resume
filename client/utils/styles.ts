@@ -1,4 +1,4 @@
-import { ThemeConfig, Typography } from '@reactive-resume/schema';
+import { ThemeConfig, Typography } from 'schema';
 import { RgbColor } from 'react-colorful';
 
 import { hexColorPattern } from '@/config/colors';

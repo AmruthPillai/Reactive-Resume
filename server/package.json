@@ -1,10 +1,9 @@
 {
-  "name": "@reactive-resume/server",
+  "name": "server",
   "scripts": {
     "lint": "eslint --fix src",
     "dev": "nest start --watch",
     "build": "rimraf dist && nest build",
-    "debug": "nest start --debug --watch",
     "start": "node dist/main"
   },
   "dependencies": {
@@ -51,7 +50,7 @@
   "devDependencies": {
     "@nestjs/cli": "^9.5.0",
     "@nestjs/schematics": "^9.2.0",
-    "@reactive-resume/schema": "workspace:*",
+    "schema": "workspace:*",
     "@types/bcryptjs": "^2.4.2",
     "@types/cookie-parser": "^1.4.3",
     "@types/express": "^4.17.17",

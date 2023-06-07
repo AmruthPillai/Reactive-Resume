@@ -1,7 +1,7 @@
 import { joiResolver } from '@hookform/resolvers/joi';
 import { Add } from '@mui/icons-material';
 import { Button, FormControlLabel, FormGroup, Switch, TextField } from '@mui/material';
-import { Resume } from '@reactive-resume/schema';
+import { Resume } from 'schema';
 import Joi from 'joi';
 import { useTranslation } from 'next-i18next';
 import { useEffect } from 'react';

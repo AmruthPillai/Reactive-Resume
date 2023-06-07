@@ -21,8 +21,10 @@ COPY --from=dependencies /app/node_modules ./node_modules
 COPY --from=dependencies /app/schema/node_modules ./schema/node_modules
 COPY --from=dependencies /app/server/node_modules ./server/node_modules
 
-RUN pnpm run --filter schema build \
-  && pnpm run --filter server build
+ARG TURBO_TOKEN
+ENV TURBO_TOKEN=$TURBO_TOKEN
+
+RUN pnpm exec turbo --filter server build
 
 FROM mcr.microsoft.com/playwright:v1.34.3-focal as production
 

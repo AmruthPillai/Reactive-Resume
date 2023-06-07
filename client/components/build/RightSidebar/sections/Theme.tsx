@@ -1,6 +1,6 @@
-import { ThemeConfig } from '@reactive-resume/schema';
 import get from 'lodash/get';
 import { useTranslation } from 'next-i18next';
+import { ThemeConfig } from 'schema';
 
 import ColorAvatar from '@/components/shared/ColorAvatar';
 import ColorPicker from '@/components/shared/ColorPicker';

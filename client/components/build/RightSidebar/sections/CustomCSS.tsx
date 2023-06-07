@@ -1,10 +1,10 @@
 import Editor from '@monaco-editor/react';
 import { useTheme } from '@mui/material';
-import { CustomCSS as CustomCSSType } from '@reactive-resume/schema';
 import clsx from 'clsx';
 import get from 'lodash/get';
 import { useTranslation } from 'next-i18next';
 import React from 'react';
+import { CustomCSS as CustomCSSType } from 'schema';
 
 import Heading from '@/components/shared/Heading';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';

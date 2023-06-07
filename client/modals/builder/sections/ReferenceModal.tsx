@@ -1,7 +1,7 @@
 import { joiResolver } from '@hookform/resolvers/joi';
 import { Add, DriveFileRenameOutline } from '@mui/icons-material';
 import { Button, TextField } from '@mui/material';
-import { Reference, SectionPath } from '@reactive-resume/schema';
+import { Reference, SectionPath } from 'schema';
 import Joi from 'joi';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';

@@ -1,6 +1,7 @@
 # Environment Variables
 .env
 .env.*
+*.env
 !.env.gitpod
 !.env.example
 
@@ -12,3 +13,6 @@ node_modules
 
 # Intellij
 .idea
+
+# Turborepo
+.turbo

@@ -1,11 +1,11 @@
 import { Injectable, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { SchedulerRegistry } from '@nestjs/schedule';
-import { PageConfig } from '@reactive-resume/schema';
 import { access, mkdir, readdir, unlink, writeFile } from 'fs/promises';
 import { join } from 'path';
 import { PDFDocument } from 'pdf-lib';
 import { BrowserContext, chromium } from 'playwright-chromium';
+import { PageConfig } from 'schema';
 
 const minimal_chromium_args = [
   '--autoplay-policy=user-gesture-required',

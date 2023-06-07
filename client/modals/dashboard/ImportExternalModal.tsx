@@ -1,6 +1,6 @@
 import { Code, ImportExport, LinkedIn, TrackChanges, UploadFile } from '@mui/icons-material';
 import { Button, Divider } from '@mui/material';
-import { Integration, Resume } from '@reactive-resume/schema';
+import { Integration, Resume } from 'schema';
 import { Trans, useTranslation } from 'next-i18next';
 import { useRef } from 'react';
 import toast from 'react-hot-toast';

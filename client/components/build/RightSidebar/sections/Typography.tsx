@@ -1,9 +1,9 @@
 import { Autocomplete, Skeleton, Slider, TextField } from '@mui/material';
-import { Font, TypeCategory, TypeProperty, Typography as TypographyType } from '@reactive-resume/schema';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import { useTranslation } from 'next-i18next';
 import { useQuery } from 'react-query';
+import { Font, TypeCategory, TypeProperty, Typography as TypographyType } from 'schema';
 
 import Heading from '@/components/shared/Heading';
 import { FONTS_QUERY } from '@/constants/index';

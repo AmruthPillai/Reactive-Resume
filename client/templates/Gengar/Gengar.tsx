@@ -1,6 +1,6 @@
 import { css } from '@emotion/css';
 import { alpha } from '@mui/material';
-import { ThemeConfig } from '@reactive-resume/schema';
+import { ThemeConfig } from 'schema';
 import clsx from 'clsx';
 import get from 'lodash/get';
 import { useMemo } from 'react';

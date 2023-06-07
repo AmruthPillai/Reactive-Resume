@@ -2,7 +2,6 @@ import { DeleteObjectCommand, PutObjectCommand, S3, S3Client } from '@aws-sdk/cl
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Resume as ResumeSchema } from '@reactive-resume/schema';
 import fs from 'fs/promises';
 import isEmpty from 'lodash/isEmpty';
 import pick from 'lodash/pick';
@@ -10,6 +9,7 @@ import sample from 'lodash/sample';
 import set from 'lodash/set';
 import { nanoid } from 'nanoid';
 import { extname } from 'path';
+import { Resume as ResumeSchema } from 'schema';
 import { Repository } from 'typeorm';
 
 import { PostgresErrorCode } from '@/database/errorCodes.enum';

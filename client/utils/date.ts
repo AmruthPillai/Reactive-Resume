@@ -1,4 +1,4 @@
-import { DateRange } from '@reactive-resume/schema';
+import { DateRange } from 'schema';
 import dayjs from 'dayjs';
 import isEmpty from 'lodash/isEmpty';
 import isString from 'lodash/isString';

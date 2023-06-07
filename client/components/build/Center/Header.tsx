@@ -20,7 +20,6 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material';
-import { Resume } from '@reactive-resume/schema';
 import clsx from 'clsx';
 import get from 'lodash/get';
 import { useRouter } from 'next/router';
@@ -28,6 +27,7 @@ import { useTranslation } from 'next-i18next';
 import { useEffect, useMemo, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useMutation } from 'react-query';
+import { Resume } from 'schema';
 
 import { RESUMES_QUERY } from '@/constants/index';
 import { ServerError } from '@/services/axios';

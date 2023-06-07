@@ -1,5 +1,5 @@
 {
-  "name": "@reactive-resume/client",
+  "name": "client",
   "scripts": {
     "dev": "react-env --prefix PUBLIC -- next dev",
     "lint": "next lint --fix",
@@ -58,7 +58,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.22.1",
-    "@reactive-resume/schema": "workspace:*",
+    "schema": "workspace:*",
     "@tailwindcss/typography": "^0.5.9",
     "@types/downloadjs": "^1.4.3",
     "@types/lodash": "^4.14.195",

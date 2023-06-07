@@ -1,4 +1,3 @@
-import { Resume } from '@reactive-resume/schema';
 import clsx from 'clsx';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
@@ -6,6 +5,7 @@ import { GetServerSideProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect } from 'react';
+import { Resume } from 'schema';
 
 import Page from '@/components/build/Center/Page';
 import { fetchResumeByIdentifier } from '@/services/resume';

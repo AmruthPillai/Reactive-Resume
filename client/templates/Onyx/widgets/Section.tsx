@@ -1,5 +1,5 @@
 import { Email, Link, Phone } from '@mui/icons-material';
-import { ListItem, Section as SectionType } from '@reactive-resume/schema';
+import { ListItem, Section as SectionType } from 'schema';
 import get from 'lodash/get';
 import isArray from 'lodash/isArray';
 import isEmpty from 'lodash/isEmpty';

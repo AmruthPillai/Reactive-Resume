@@ -1,9 +1,9 @@
 import { Add } from '@mui/icons-material';
 import { Button } from '@mui/material';
-import { ListItem, Section as SectionRecord, SectionType } from '@reactive-resume/schema';
 import clsx from 'clsx';
 import get from 'lodash/get';
 import { useTranslation } from 'next-i18next';
+import { ListItem, Section as SectionRecord, SectionType } from 'schema';
 import { validate } from 'uuid';
 
 import Heading from '@/components/shared/Heading';

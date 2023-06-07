@@ -1,4 +1,3 @@
-import { ListItem as ListItemType } from '@reactive-resume/schema';
 import clsx from 'clsx';
 import get from 'lodash/get';
 import isArray from 'lodash/isArray';
@@ -8,6 +7,7 @@ import { useTranslation } from 'next-i18next';
 import { useCallback } from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+import { ListItem as ListItemType } from 'schema';
 
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { deleteItem, setResumeState } from '@/store/resume/resumeSlice';

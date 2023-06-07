@@ -1,11 +1,11 @@
 import { Avatar, IconButton, Skeleton, Tooltip } from '@mui/material';
-import { Photo, Resume } from '@reactive-resume/schema';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import { useTranslation } from 'next-i18next';
 import React, { useRef } from 'react';
 import toast from 'react-hot-toast';
 import { useMutation } from 'react-query';
+import { Photo, Resume } from 'schema';
 
 import { ServerError } from '@/services/axios';
 import { deletePhoto, DeletePhotoParams, uploadPhoto, UploadPhotoParams } from '@/services/resume';

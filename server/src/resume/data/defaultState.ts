@@ -1,4 +1,4 @@
-import { Resume } from '@reactive-resume/schema';
+import { Resume } from 'schema';
 
 const defaultCSS = `/* Enter custom CSS here */
 

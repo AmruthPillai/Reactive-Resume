@@ -21,8 +21,10 @@ COPY --from=dependencies /app/node_modules ./node_modules
 COPY --from=dependencies /app/schema/node_modules ./schema/node_modules
 COPY --from=dependencies /app/client/node_modules ./client/node_modules
 
-RUN pnpm run --filter schema build \
-  && pnpm run --filter client build
+ARG TURBO_TOKEN
+ENV TURBO_TOKEN=$TURBO_TOKEN
+
+RUN pnpm exec turbo --filter client build
 
 FROM base as production
 

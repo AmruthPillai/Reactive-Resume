@@ -1,6 +1,6 @@
 import env from '@beam-australia/react-env';
-import { Resume } from '@reactive-resume/schema';
 import { AxiosResponse } from 'axios';
+import { Resume } from 'schema';
 
 import isBrowser from '@/utils/isBrowser';
 

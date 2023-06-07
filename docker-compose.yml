@@ -18,6 +18,8 @@ services:
     build:
       context: .
       dockerfile: ./server/Dockerfile
+      args:
+        - TURBO_TOKEN=
     restart: always
     ports:
       - 3100:3100
@@ -57,6 +59,8 @@ services:
     build:
       context: .
       dockerfile: ./client/Dockerfile
+      args:
+        - TURBO_TOKEN=
     restart: always
     ports:
       - 3000:3000

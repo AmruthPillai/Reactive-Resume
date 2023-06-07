@@ -1,4 +1,4 @@
-import { ThemeConfig } from '@reactive-resume/schema';
+import { ThemeConfig } from 'schema';
 import get from 'lodash/get';
 
 import { useAppSelector } from '@/store/hooks';

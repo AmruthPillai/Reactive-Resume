@@ -1,4 +1,3 @@
-import { Resume } from '@reactive-resume/schema';
 import isEmpty from 'lodash/isEmpty';
 import { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
@@ -6,6 +5,7 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect } from 'react';
 import { useQuery } from 'react-query';
+import { Resume } from 'schema';
 
 import Center from '@/components/build/Center/Center';
 import LeftSidebar from '@/components/build/LeftSidebar/LeftSidebar';

@@ -1,5 +1,5 @@
 import { alpha } from '@mui/material';
-import { ThemeConfig } from '@reactive-resume/schema';
+import { ThemeConfig } from 'schema';
 import get from 'lodash/get';
 import isArray from 'lodash/isArray';
 import isEmpty from 'lodash/isEmpty';

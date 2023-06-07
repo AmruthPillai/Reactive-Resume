@@ -10,13 +10,13 @@ import {
   Switch,
   TextField,
 } from '@mui/material';
-import { DateConfig, PageConfig, Resume } from '@reactive-resume/schema';
 import dayjs from 'dayjs';
 import get from 'lodash/get';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { useMemo, useState } from 'react';
 import { useMutation } from 'react-query';
+import { DateConfig, PageConfig, Resume } from 'schema';
 
 import Heading from '@/components/shared/Heading';
 import ThemeSwitch from '@/components/shared/ThemeSwitch';

@@ -1,4 +1,4 @@
-import { Font } from '@reactive-resume/schema';
+import { Font } from 'schema';
 
 import axios from './axios';
 

@@ -1,11 +1,11 @@
 import { DeleteOutline, DriveFileRenameOutline, FileCopy, MoreVert } from '@mui/icons-material';
 import { Divider, IconButton, ListItemIcon, ListItemText, Menu, MenuItem, Tooltip } from '@mui/material';
-import { ListItem as ListItemType } from '@reactive-resume/schema';
 import clsx from 'clsx';
 import isFunction from 'lodash/isFunction';
 import { useTranslation } from 'next-i18next';
 import React, { useRef, useState } from 'react';
 import { DropTargetMonitor, useDrag, useDrop, XYCoord } from 'react-dnd';
+import { ListItem as ListItemType } from 'schema';
 
 import styles from './ListItem.module.scss';
 

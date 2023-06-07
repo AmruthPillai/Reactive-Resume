@@ -1,4 +1,4 @@
-import { Controller, GatewayTimeoutException,Get, Param, Query } from '@nestjs/common';
+import { Controller, GatewayTimeoutException, Get, Param, Query } from '@nestjs/common';
 
 import { PrinterService } from './printer.service';
 

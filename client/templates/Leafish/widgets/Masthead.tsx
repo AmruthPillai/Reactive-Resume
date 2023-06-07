@@ -1,6 +1,6 @@
 import { Cake, Email, Phone, Public, Room } from '@mui/icons-material';
 import { alpha } from '@mui/material';
-import { ThemeConfig } from '@reactive-resume/schema';
+import { ThemeConfig } from 'schema';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 

@@ -1,4 +1,4 @@
-import { ListItem, Location, PhotoFilters } from '@reactive-resume/schema';
+import { ListItem, Location, PhotoFilters } from 'schema';
 import clsx from 'clsx';
 import get from 'lodash/get';
 import isArray from 'lodash/isArray';

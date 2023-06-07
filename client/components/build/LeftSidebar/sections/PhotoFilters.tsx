@@ -1,8 +1,8 @@
 import { Circle, Square, SquareRounded } from '@mui/icons-material';
 import { Checkbox, Divider, FormControlLabel, Slider, ToggleButton, ToggleButtonGroup } from '@mui/material';
-import { Photo, PhotoShape } from '@reactive-resume/schema';
 import get from 'lodash/get';
 import { useTranslation } from 'next-i18next';
+import { Photo, PhotoShape } from 'schema';
 
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setResumeState } from '@/store/resume/resumeSlice';

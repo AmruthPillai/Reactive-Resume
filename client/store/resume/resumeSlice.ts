@@ -1,10 +1,10 @@
-import { ListItem, Profile, Resume, Section, SectionType } from '@reactive-resume/schema';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import cloneDeep from 'lodash/cloneDeep';
 import get from 'lodash/get';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
 import set from 'lodash/set';
+import { ListItem, Profile, Resume, Section, SectionType } from 'schema';
 import { v4 as uuidv4 } from 'uuid';
 
 import { getSectionsByType } from '@/config/sections';

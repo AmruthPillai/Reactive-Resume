@@ -7,7 +7,6 @@ import {
   OpenInNew,
 } from '@mui/icons-material';
 import { ButtonBase, ListItemIcon, ListItemText, Menu, MenuItem, Tooltip } from '@mui/material';
-import { Resume } from '@reactive-resume/schema';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -15,6 +14,7 @@ import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useMutation } from 'react-query';
+import { Resume } from 'schema';
 
 import { RESUMES_QUERY } from '@/constants/index';
 import { ServerError } from '@/services/axios';

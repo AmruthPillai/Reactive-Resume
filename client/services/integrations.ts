@@ -1,5 +1,5 @@
-import { Integration, Resume } from '@reactive-resume/schema';
 import { AxiosResponse } from 'axios';
+import { Integration, Resume } from 'schema';
 
 import axios from './axios';
 
