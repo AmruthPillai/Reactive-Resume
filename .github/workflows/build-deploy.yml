@@ -1,0 +1,83 @@
+name: Build and Deploy Latest Version of Reactive Resume
+
+on:
+  workflow_dispatch:
+
+env:
+  REGISTRY_IMAGE: amruthpillai/reactive-resume
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        image:
+          - client
+          - server
+        platform:
+          - linux/amd64
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3.5.2
+
+      - name: Retrieve version from package.json
+        id: version
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
+
+      - name: Docker Metadaata
+        id: meta
+        uses: docker/metadata-action@v4.5.0
+        with:
+          images: ${{ env.REGISTRY_IMAGE }}
+          tags: |
+            type=raw,value=${{ matrix.image }}-latest
+            type=raw,value=${{ matrix.image }}-${{ steps.version.outputs.current-version }}
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2.2.0
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2.6.0
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2.2.0
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2.2.0
+        with:
+          registry: ghcr.io
+          username: $GITHUB_REPOSITORY_OWNER
+          password: ${{ secrets.GH_TOKEN }}
+
+      - name: Build and Push
+        id: build
+        uses: docker/build-push-action@v4.0.0
+        with:
+          context: .
+          platforms: ${{ matrix.platform }}
+          file: ${{ matrix.image }}/Dockerfile
+          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta.outputs.tags }}
+          build-args: |
+            TURBO_TOKEN=${{ secrets.TURBO_TOKEN }}
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install DigitalOcean CLI
+        uses: digitalocean/action-doctl@v2.3.0
+        with:
+          token: ${{ secrets.DIGITALOCEAN_TOKEN }}
+
+      - name: Create Deployment with Latest Version
+        run: doctl apps create-deployment ${{ secrets.DIGITALOCEAN_APP_ID }} --wait --force-rebuild
