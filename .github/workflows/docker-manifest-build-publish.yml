@@ -1,0 +1,126 @@
+name: Build and Push Multi-Arch Docker Images using Manifest
+
+on:
+  workflow_dispatch:
+
+env:
+  REGISTRY_IMAGE: amruthpillai/reactive-resume
+
+jobs:
+  build:
+    name: Build and Push Images
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        image:
+          - client
+          - server
+        platform:
+          - linux/amd64
+          - linux/arm64
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3.5.2
+
+      - id: version
+        name: Retrieve version from package.json
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2.2.0
+        with:
+          platforms: ${{ matrix.platform }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2.6.0
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2.2.0
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2.2.0
+        with:
+          registry: ghcr.io
+          username: $GITHUB_REPOSITORY_OWNER
+          password: ${{ secrets.GH_TOKEN }}
+
+      - name: Build and Push by Digest
+        id: build
+        uses: docker/build-push-action@v4.0.0
+        with:
+          context: .
+          platforms: ${{ matrix.platform }}
+          file: ${{ matrix.image }}/Dockerfile
+          labels: |
+            ${{ matrix.image }}-latest
+            ${{ matrix.image }}-${{ steps.version.outputs.current-version }}
+          outputs: type=image,name=${{ env.REGISTRY_IMAGE }},push-by-digest=true,name-canonical=true,push=true
+          build-args: |
+            TURBO_TOKEN=${{ secrets.TURBO_TOKEN }}
+
+      - name: Export Digests
+        run: |
+          mkdir -p /tmp/digests
+          digest="${{ steps.build.outputs.digest }}"
+          touch "/tmp/digests/${digest#sha256:}"
+
+      - name: Upload Digests
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: digests
+          path: /tmp/digests/*
+          if-no-files-found: error
+          retention-days: 1
+
+  publish:
+    name: Publish Manifest
+    runs-on: ubuntu-latest
+
+    needs:
+      - build
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3.5.2
+
+      - id: version
+        name: Retrieve version from package.json
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
+
+      - name: Download Digests
+        uses: actions/download-artifact@v3.0.2
+        with:
+          name: digests
+          path: /tmp/digests
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2.6.0
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2.2.0
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2.2.0
+        with:
+          registry: ghcr.io
+          username: $GITHUB_REPOSITORY_OWNER
+          password: ${{ secrets.GH_TOKEN }}
+
+      - name: Create Docker Manifest and Publish
+        working-directory: /tmp/digests
+        run: |
+          docker buildx imagetools create $(jq -cr '.tags | map("-t " + .) | join(" ")' <<< "$DOCKER_METADATA_OUTPUT_JSON") \
+            $(printf '${{ env.REGISTRY_IMAGE }}@sha256:%s ' *)
+
+      - name: Inspect Image
+        run: |
+          docker buildx imagetools inspect ${{ env.REGISTRY_IMAGE }}:${{ steps.version.outputs.current-version }}
