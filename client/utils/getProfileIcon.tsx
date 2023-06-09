@@ -2,6 +2,7 @@ import { Link } from '@mui/icons-material';
 import get from 'lodash/get';
 import {
   FaBehance,
+  FaDiscord,
   FaDribbble,
   FaFacebookF,
   FaGithub,
@@ -24,13 +25,14 @@ import {
   SiCodechef,
   SiCodeforces,
   SiGeeksforgeeks,
-  SiLeetcode,
   SiHackerearth,
+  SiLeetcode,
   SiTopcoder,
 } from 'react-icons/si';
 
 const profileIconMap: Record<string, JSX.Element> = {
   behance: <FaBehance />,
+  discord: <FaDiscord />,
   codeberg: <SiCodeberg />,
   codechef: <SiCodechef />,
   codeforces: <SiCodeforces />,
