@@ -15,7 +15,7 @@ cd Reactive-Resume
 pnpm install
 ```
 
-1. Copy the `.env.example` file to `.env` in the project root and fill it with values according to your setup. To know which environment variables are required, and about what they do, head over this section.
+1. Copy the `.env.example` file to `.env` in the project root and fill it with values according to your setup. To know which environment variables are required, and about what they do, head over [this section](https://docs.rxresu.me/source-code/environment-variables).
 
 ```bash
 cp .env.example .env
