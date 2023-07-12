@@ -1,4 +1,4 @@
-<img src="/client/public/logo/dark.png" alt="Reactive Resume" width="256px" height="256px" />
+<img src="/client/public/logo/dark.svg" alt="Reactive Resume" width="256px" height="256px" />
 
 # Reactive Resume
 
