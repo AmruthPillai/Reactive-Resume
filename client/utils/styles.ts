@@ -1,7 +1,20 @@
-import { ThemeConfig, Typography } from 'schema';
+import clsx, { ClassValue } from 'clsx';
 import { RgbColor } from 'react-colorful';
+import { ThemeConfig, Typography } from 'schema';
+import { twMerge } from 'tailwind-merge';
 
 import { hexColorPattern } from '@/config/colors';
+
+export const breakpoints = {
+  xs: 0,
+  sm: 640,
+  md: 768,
+  lg: 1024,
+  xl: 1280,
+  '2xl': 1400,
+};
+
+export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
 
 export const generateTypographyStyles = ({ family, size }: Typography): string => `
   font-size: ${size.body}px !important;

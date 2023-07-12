@@ -2,7 +2,6 @@ import { joiResolver } from '@hookform/resolvers/joi';
 import { Add, DriveFileRenameOutline } from '@mui/icons-material';
 import { Button, Slider, TextField } from '@mui/material';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { Custom } from 'schema';
 import dayjs from 'dayjs';
 import Joi from 'joi';
 import get from 'lodash/get';
@@ -10,6 +9,7 @@ import isEmpty from 'lodash/isEmpty';
 import { useTranslation } from 'next-i18next';
 import { useEffect, useMemo } from 'react';
 import { Controller, useForm } from 'react-hook-form';
+import { Custom } from 'schema';
 
 import ArrayInput from '@/components/shared/ArrayInput';
 import BaseModal from '@/components/shared/BaseModal';
@@ -68,8 +68,8 @@ const CustomModal: React.FC = () => {
 
   const heading = useAppSelector((state) => get(state.resume.present, `${path}.name`));
 
-  const addText = useMemo(() => t<string>('builder.common.actions.add', { token: heading }), [t, heading]);
-  const editText = useMemo(() => t<string>('builder.common.actions.edit', { token: heading }), [t, heading]);
+  const addText = useMemo(() => t('builder.common.actions.add', { token: heading }), [t, heading]);
+  const editText = useMemo(() => t('builder.common.actions.edit', { token: heading }), [t, heading]);
 
   const { reset, control, handleSubmit } = useForm<FormData>({
     defaultValues: defaultState,
@@ -91,7 +91,7 @@ const CustomModal: React.FC = () => {
       setModalState({
         modal: 'builder.sections.custom',
         state: { open: false },
-      })
+      }),
     );
 
     reset(defaultState);
@@ -119,7 +119,7 @@ const CustomModal: React.FC = () => {
             <TextField
               required
               autoFocus
-              label={t<string>('builder.common.form.title.label')}
+              label={t('builder.common.form.title.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -132,7 +132,7 @@ const CustomModal: React.FC = () => {
           control={control}
           render={({ field, fieldState }) => (
             <TextField
-              label={t<string>('builder.common.form.subtitle.label')}
+              label={t('builder.common.form.subtitle.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -147,7 +147,7 @@ const CustomModal: React.FC = () => {
             <DatePicker
               openTo="year"
               inputRef={field.ref}
-              label={t<string>('builder.common.form.start-date.label')}
+              label={t('builder.common.form.start-date.label')}
               value={dayjs(field.value)}
               views={['year', 'month', 'day']}
               slots={{
@@ -173,7 +173,7 @@ const CustomModal: React.FC = () => {
             <DatePicker
               openTo="year"
               inputRef={field.ref}
-              label={t<string>('builder.common.form.end-date.label')}
+              label={t('builder.common.form.end-date.label')}
               value={dayjs(field.value)}
               views={['year', 'month', 'day']}
               slots={{
@@ -181,7 +181,7 @@ const CustomModal: React.FC = () => {
                   <TextField
                     {...params}
                     error={!!fieldState.error}
-                    helperText={fieldState.error?.message || t<string>('builder.common.form.end-date.help-text')}
+                    helperText={fieldState.error?.message || t('builder.common.form.end-date.help-text')}
                   />
                 ),
               }}
@@ -197,7 +197,7 @@ const CustomModal: React.FC = () => {
           control={control}
           render={({ field, fieldState }) => (
             <TextField
-              label={t<string>('builder.common.form.url.label')}
+              label={t('builder.common.form.url.label')}
               placeholder="https://"
               className="col-span-2"
               error={!!fieldState.error}
@@ -212,7 +212,7 @@ const CustomModal: React.FC = () => {
           control={control}
           render={({ field, fieldState }) => (
             <TextField
-              label={t<string>('builder.common.form.level.label')}
+              label={t('builder.common.form.level.label')}
               className="col-span-2"
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
@@ -226,11 +226,13 @@ const CustomModal: React.FC = () => {
           control={control}
           render={({ field }) => (
             <div className="col-span-2">
-              <h4 className="mb-3 font-semibold">{t<string>('builder.common.form.levelNum.label')}</h4>
+              <h4 className="mb-3 font-semibold">{t('builder.common.form.levelNum.label')}</h4>
 
               <div className="px-10">
                 <Slider
-                  {...field}
+                  name={field.name}
+                  value={field.value}
+                  onChange={(_, value) => field.onChange(value as number)}
                   marks={[
                     {
                       value: 0,
@@ -250,7 +252,7 @@ const CustomModal: React.FC = () => {
                   defaultValue={0}
                   color="secondary"
                   valueLabelDisplay="auto"
-                  aria-label={t<string>('builder.common.form.levelNum.label')}
+                  aria-label={t('builder.common.form.levelNum.label')}
                 />
               </div>
             </div>
@@ -267,7 +269,7 @@ const CustomModal: React.FC = () => {
               maxRows={6}
               className="col-span-2"
               error={!!fieldState.error}
-              label={t<string>('builder.common.form.summary.label')}
+              label={t('builder.common.form.summary.label')}
               helperText={fieldState.error?.message || <MarkdownSupported />}
               {...field}
             />
@@ -279,7 +281,7 @@ const CustomModal: React.FC = () => {
           control={control}
           render={({ field, fieldState }) => (
             <ArrayInput
-              label={t<string>('builder.common.form.keywords.label')}
+              label={t('builder.common.form.keywords.label')}
               value={field.value as string[]}
               onChange={field.onChange}
               errors={fieldState.error}

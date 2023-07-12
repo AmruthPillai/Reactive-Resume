@@ -24,7 +24,7 @@ const Basics = () => {
 
   return (
     <>
-      <Heading path="sections.basics" name={t<string>('builder.leftSidebar.sections.basics.heading')} />
+      <Heading path="sections.basics" name={t('builder.leftSidebar.sections.basics.heading')} />
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div className="grid items-center gap-4 sm:col-span-2 sm:grid-cols-3">
@@ -33,10 +33,10 @@ const Basics = () => {
           </div>
 
           <div className="grid w-full gap-2 sm:col-span-2">
-            <ResumeInput label={t<string>('builder.leftSidebar.sections.basics.name.label')} path="basics.name" />
+            <ResumeInput label={t('builder.leftSidebar.sections.basics.name.label')} path="basics.name" />
 
             <Button variant="outlined" startIcon={<PhotoFilter />} onClick={handleClick}>
-              {t<string>('builder.leftSidebar.sections.basics.actions.photo-filters')}
+              {t('builder.leftSidebar.sections.basics.actions.photo-filters')}
             </Button>
 
             <Popover
@@ -59,28 +59,24 @@ const Basics = () => {
 
         <ResumeInput
           type="date"
-          label={t<string>('builder.leftSidebar.sections.basics.birthdate.label')}
+          label={t('builder.leftSidebar.sections.basics.birthdate.label')}
           path="basics.birthdate"
           className="sm:col-span-2"
         />
-        <ResumeInput
-          label={t<string>('builder.common.form.email.label')}
-          path="basics.email"
-          className="sm:col-span-2"
-        />
-        <ResumeInput label={t<string>('builder.common.form.phone.label')} path="basics.phone" />
-        <ResumeInput label={t<string>('builder.common.form.url.label')} path="basics.website" />
+        <ResumeInput label={t('builder.common.form.email.label')} path="basics.email" className="sm:col-span-2" />
+        <ResumeInput label={t('builder.common.form.phone.label')} path="basics.phone" />
+        <ResumeInput label={t('builder.common.form.url.label')} path="basics.website" />
 
         <Divider className="sm:col-span-2" />
 
         <ResumeInput
-          label={t<string>('builder.leftSidebar.sections.basics.headline.label')}
+          label={t('builder.leftSidebar.sections.basics.headline.label')}
           path="basics.headline"
           className="sm:col-span-2"
         />
         <ResumeInput
           type="textarea"
-          label={t<string>('builder.common.form.summary.label')}
+          label={t('builder.common.form.summary.label')}
           path="basics.summary"
           className="sm:col-span-2"
           markdownSupported

@@ -41,9 +41,6 @@ const Preview: NextPage<Props> = ({ shortId }) => {
   const dispatch = useAppDispatch();
 
   const { data: resume } = useQuery<Resume>(`resume/${shortId}`, () => fetchResumeByShortId({ shortId }), {
-    refetchOnMount: false,
-    refetchOnReconnect: false,
-    refetchOnWindowFocus: false,
     onSuccess: (data) => {
       dispatch(setResume(data));
     },

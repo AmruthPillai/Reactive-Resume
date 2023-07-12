@@ -29,19 +29,19 @@ const Sharing = () => {
 
     await navigator.clipboard.writeText(text);
 
-    toast.success(t<string>('common.toast.success.resume-link-copied'));
+    toast.success(t('common.toast.success.resume-link-copied'));
   };
 
   return (
     <>
-      <Heading path="metadata.sharing" name={t<string>('builder.rightSidebar.sections.sharing.heading')} />
+      <Heading path="metadata.sharing" name={t('builder.rightSidebar.sections.sharing.heading')} />
 
       <List sx={{ padding: 0 }}>
         <ListItem className="flex flex-col" sx={{ padding: 0 }}>
           <div className="flex w-full items-center justify-between">
             <ListItemText
-              primary={t<string>('builder.rightSidebar.sections.sharing.visibility.title')}
-              secondary={t<string>('builder.rightSidebar.sections.sharing.visibility.subtitle')}
+              primary={t('builder.rightSidebar.sections.sharing.visibility.title')}
+              secondary={t('builder.rightSidebar.sections.sharing.visibility.subtitle')}
             />
             <Switch color="secondary" checked={isPublic} onChange={(_, value) => handleSetVisibility(value)} />
           </div>
@@ -63,7 +63,7 @@ const Sharing = () => {
 
           <div className="mt-1 flex w-full">
             <FormControlLabel
-              label={t<string>('builder.rightSidebar.sections.sharing.short-url.label')}
+              label={t('builder.rightSidebar.sections.sharing.short-url.label')}
               control={
                 <Checkbox className="mr-1" checked={showShortUrl} onChange={(_, value) => setShowShortUrl(value)} />
               }

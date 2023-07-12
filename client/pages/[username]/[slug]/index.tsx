@@ -57,6 +57,16 @@ const Preview: NextPage<Props> = ({ username, slug, resume: initialData }) => {
 
   useEffect(() => {
     if (initialData && !isEmpty(initialData)) {
+      const errorObj = JSON.parse(JSON.stringify(initialData));
+      const statusCode: number | null = get(errorObj, 'statusCode', null);
+
+      if (statusCode === 404) {
+        toast.error('The resume you were looking for does not exist, or maybe it never did?');
+
+        router.push('/');
+        return;
+      }
+
       dispatch(setResume(initialData));
     }
   }, [dispatch, initialData]);
@@ -73,10 +83,6 @@ const Preview: NextPage<Props> = ({ username, slug, resume: initialData }) => {
 
   useQuery<Resume>(`resume/${username}/${slug}`, () => fetchResumeByIdentifier({ username, slug }), {
     initialData,
-    retry: false,
-    refetchOnMount: false,
-    refetchOnReconnect: false,
-    refetchOnWindowFocus: false,
     onSuccess: (data) => {
       dispatch(setResume(data));
     },

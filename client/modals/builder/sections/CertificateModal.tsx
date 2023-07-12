@@ -50,8 +50,8 @@ const CertificateModal: React.FC = () => {
 
   const isEditMode = useMemo(() => !!item, [item]);
 
-  const addText = useMemo(() => t<string>('builder.common.actions.add', { token: heading }), [t, heading]);
-  const editText = useMemo(() => t<string>('builder.common.actions.edit', { token: heading }), [t, heading]);
+  const addText = useMemo(() => t('builder.common.actions.add', { token: heading }), [t, heading]);
+  const editText = useMemo(() => t('builder.common.actions.edit', { token: heading }), [t, heading]);
 
   const { reset, control, handleSubmit } = useForm<FormData>({
     defaultValues: defaultState,
@@ -73,7 +73,7 @@ const CertificateModal: React.FC = () => {
       setModalState({
         modal: `builder.${path}`,
         state: { open: false },
-      })
+      }),
     );
 
     reset(defaultState);
@@ -101,7 +101,7 @@ const CertificateModal: React.FC = () => {
             <TextField
               required
               autoFocus
-              label={t<string>('builder.common.form.name.label')}
+              label={t('builder.common.form.name.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -115,7 +115,7 @@ const CertificateModal: React.FC = () => {
           render={({ field, fieldState }) => (
             <TextField
               required
-              label={t<string>('builder.leftSidebar.sections.certifications.form.issuer.label')}
+              label={t('builder.leftSidebar.sections.certifications.form.issuer.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -130,7 +130,7 @@ const CertificateModal: React.FC = () => {
             <DatePicker
               openTo="year"
               inputRef={field.ref}
-              label={t<string>('builder.common.form.date.label')}
+              label={t('builder.common.form.date.label')}
               value={dayjs(field.value)}
               views={['year', 'month', 'day']}
               slots={{
@@ -154,7 +154,7 @@ const CertificateModal: React.FC = () => {
           control={control}
           render={({ field, fieldState }) => (
             <TextField
-              label={t<string>('builder.common.form.url.label')}
+              label={t('builder.common.form.url.label')}
               placeholder="https://"
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
@@ -171,7 +171,7 @@ const CertificateModal: React.FC = () => {
               multiline
               minRows={3}
               maxRows={6}
-              label={t<string>('builder.common.form.summary.label')}
+              label={t('builder.common.form.summary.label')}
               className="col-span-2"
               error={!!fieldState.error}
               helperText={fieldState.error?.message || <MarkdownSupported />}

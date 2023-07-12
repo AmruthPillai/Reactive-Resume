@@ -17,7 +17,7 @@ const Theme = () => {
   const dispatch = useAppDispatch();
 
   const { background, text, primary } = useAppSelector<ThemeConfig>((state) =>
-    get(state.resume.present, 'metadata.theme')
+    get(state.resume.present, 'metadata.theme'),
   );
 
   const handleChange = (property: string, color: string) => {
@@ -26,7 +26,7 @@ const Theme = () => {
 
   return (
     <>
-      <Heading path="metadata.theme" name={t<string>('builder.rightSidebar.sections.theme.heading')} />
+      <Heading path="metadata.theme" name={t('builder.rightSidebar.sections.theme.heading')} />
 
       <div className={styles.container}>
         <div className={styles.colorOptions}>
@@ -36,18 +36,18 @@ const Theme = () => {
         </div>
 
         <ColorPicker
-          label={t<string>('builder.rightSidebar.sections.theme.form.primary.label')}
+          label={t('builder.rightSidebar.sections.theme.form.primary.label')}
           color={primary}
           className="col-span-2"
           onChange={(color) => handleChange('primary', color)}
         />
         <ColorPicker
-          label={t<string>('builder.rightSidebar.sections.theme.form.background.label')}
+          label={t('builder.rightSidebar.sections.theme.form.background.label')}
           color={background}
           onChange={(color) => handleChange('background', color)}
         />
         <ColorPicker
-          label={t<string>('builder.rightSidebar.sections.theme.form.text.label')}
+          label={t('builder.rightSidebar.sections.theme.form.text.label')}
           color={text}
           onChange={(color) => handleChange('text', color)}
         />

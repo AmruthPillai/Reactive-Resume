@@ -1,10 +1,10 @@
 .header {
   @apply mx-0 flex justify-between shadow;
-  @apply bg-neutral-800 text-neutral-100;
+  @apply bg-zinc-900 text-zinc-100;
   @apply transition-[margin-left,margin-right] duration-200;
 
   button > svg {
-    @apply text-base text-neutral-100;
+    @apply text-base text-zinc-100;
   }
 }
 

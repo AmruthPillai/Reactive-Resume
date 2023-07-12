@@ -42,11 +42,11 @@ const ProfileModal: React.FC = () => {
   const item: FormData = get(payload, 'item', null);
   const isEditMode = useMemo(() => !!item, [item]);
 
-  const addText = t<string>('builder.common.actions.add', {
-    token: t<string>('builder.leftSidebar.sections.profiles.heading', { count: 1 }),
+  const addText = t('builder.common.actions.add', {
+    token: t('builder.leftSidebar.sections.profiles.heading', { count: 1 }),
   });
-  const editText = t<string>('builder.common.actions.edit', {
-    token: t<string>('builder.leftSidebar.sections.profiles.heading', { count: 1 }),
+  const editText = t('builder.common.actions.edit', {
+    token: t('builder.leftSidebar.sections.profiles.heading', { count: 1 }),
   });
 
   const { reset, control, handleSubmit } = useForm<FormData>({
@@ -69,7 +69,7 @@ const ProfileModal: React.FC = () => {
       setModalState({
         modal: `builder.${path}`,
         state: { open: false },
-      })
+      }),
     );
 
     reset(defaultState);
@@ -97,7 +97,7 @@ const ProfileModal: React.FC = () => {
             <TextField
               required
               autoFocus
-              label={t<string>('builder.leftSidebar.sections.profiles.form.network.label')}
+              label={t('builder.leftSidebar.sections.profiles.form.network.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -111,7 +111,7 @@ const ProfileModal: React.FC = () => {
           render={({ field, fieldState }) => (
             <TextField
               required
-              label={t<string>('builder.leftSidebar.sections.profiles.form.username.label')}
+              label={t('builder.leftSidebar.sections.profiles.form.username.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               InputProps={{
@@ -127,7 +127,7 @@ const ProfileModal: React.FC = () => {
           control={control}
           render={({ field, fieldState }) => (
             <TextField
-              label={t<string>('builder.common.form.url.label')}
+              label={t('builder.common.form.url.label')}
               className="col-span-2"
               placeholder="https://"
               error={!!fieldState.error}

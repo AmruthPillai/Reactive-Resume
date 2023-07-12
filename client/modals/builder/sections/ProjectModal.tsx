@@ -59,8 +59,8 @@ const ProjectModal: React.FC = () => {
   const item: FormData = get(payload, 'item', null);
   const isEditMode = useMemo(() => !!item, [item]);
 
-  const addText = useMemo(() => t<string>('builder.common.actions.add', { token: heading }), [t, heading]);
-  const editText = useMemo(() => t<string>('builder.common.actions.edit', { token: heading }), [t, heading]);
+  const addText = useMemo(() => t('builder.common.actions.add', { token: heading }), [t, heading]);
+  const editText = useMemo(() => t('builder.common.actions.edit', { token: heading }), [t, heading]);
 
   const { reset, control, handleSubmit } = useForm<FormData>({
     defaultValues: defaultState,
@@ -82,7 +82,7 @@ const ProjectModal: React.FC = () => {
       setModalState({
         modal: `builder.${path}`,
         state: { open: false },
-      })
+      }),
     );
 
     reset(defaultState);
@@ -110,7 +110,7 @@ const ProjectModal: React.FC = () => {
             <TextField
               required
               autoFocus
-              label={t<string>('builder.common.form.name.label')}
+              label={t('builder.common.form.name.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -124,7 +124,7 @@ const ProjectModal: React.FC = () => {
           render={({ field, fieldState }) => (
             <TextField
               required
-              label={t<string>('builder.common.form.description.label')}
+              label={t('builder.common.form.description.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -139,7 +139,7 @@ const ProjectModal: React.FC = () => {
             <DatePicker
               openTo="year"
               inputRef={field.ref}
-              label={t<string>('builder.common.form.start-date.label')}
+              label={t('builder.common.form.start-date.label')}
               value={dayjs(field.value)}
               views={['year', 'month', 'day']}
               slots={{
@@ -165,7 +165,7 @@ const ProjectModal: React.FC = () => {
             <DatePicker
               openTo="year"
               inputRef={field.ref}
-              label={t<string>('builder.common.form.end-date.label')}
+              label={t('builder.common.form.end-date.label')}
               value={dayjs(field.value)}
               views={['year', 'month', 'day']}
               slots={{
@@ -173,7 +173,7 @@ const ProjectModal: React.FC = () => {
                   <TextField
                     {...params}
                     error={!!fieldState.error}
-                    helperText={fieldState.error?.message || t<string>('builder.common.form.end-date.help-text')}
+                    helperText={fieldState.error?.message || t('builder.common.form.end-date.help-text')}
                   />
                 ),
               }}
@@ -189,7 +189,7 @@ const ProjectModal: React.FC = () => {
           control={control}
           render={({ field, fieldState }) => (
             <TextField
-              label={t<string>('builder.common.form.url.label')}
+              label={t('builder.common.form.url.label')}
               placeholder="https://"
               className="col-span-2"
               error={!!fieldState.error}
@@ -207,7 +207,7 @@ const ProjectModal: React.FC = () => {
               multiline
               minRows={3}
               maxRows={6}
-              label={t<string>('builder.common.form.summary.label')}
+              label={t('builder.common.form.summary.label')}
               className="col-span-2"
               error={!!fieldState.error}
               helperText={fieldState.error?.message || <MarkdownSupported />}
@@ -221,7 +221,7 @@ const ProjectModal: React.FC = () => {
           control={control}
           render={({ field, fieldState }) => (
             <ArrayInput
-              label={t<string>('builder.common.form.keywords.label')}
+              label={t('builder.common.form.keywords.label')}
               value={field.value as string[]}
               onChange={field.onChange}
               errors={fieldState.error}

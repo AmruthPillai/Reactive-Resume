@@ -53,7 +53,7 @@ const LoginModal: React.FC = () => {
   const { mutateAsync: loginMutation } = useMutation<void, ServerError, LoginParams>(login);
 
   const { mutateAsync: loginWithGoogleMutation } = useMutation<void, ServerError, LoginWithGoogleParams>(
-    loginWithGoogle
+    loginWithGoogle,
   );
 
   const handleClose = () => {
@@ -105,7 +105,7 @@ const LoginModal: React.FC = () => {
     <BaseModal
       icon={<Login />}
       isOpen={isOpen}
-      heading={t<string>('modals.auth.login.heading')}
+      heading={t('modals.auth.login.heading')}
       handleClose={handleClose}
       footerChildren={
         <div className="flex gap-4">
@@ -114,12 +114,12 @@ const LoginModal: React.FC = () => {
           )}
 
           <Button type="submit" onClick={handleSubmit(onSubmit)} disabled={isLoading}>
-            {t<string>('modals.auth.login.actions.login')}
+            {t('modals.auth.login.actions.login')}
           </Button>
         </div>
       }
     >
-      <p>{t<string>('modals.auth.login.body')}</p>
+      <p>{t('modals.auth.login.body')}</p>
 
       <form className="grid gap-4 xl:w-2/3">
         <Controller
@@ -128,9 +128,9 @@ const LoginModal: React.FC = () => {
           render={({ field, fieldState }) => (
             <TextField
               autoFocus
-              label={t<string>('modals.auth.login.form.username.label')}
+              label={t('modals.auth.login.form.username.label')}
               error={!!fieldState.error}
-              helperText={fieldState.error?.message || t<string>('modals.auth.login.form.username.help-text')}
+              helperText={fieldState.error?.message || t('modals.auth.login.form.username.help-text')}
               {...field}
             />
           )}
@@ -142,7 +142,7 @@ const LoginModal: React.FC = () => {
           render={({ field, fieldState }) => (
             <TextField
               type={showPassword ? 'text' : 'password'}
-              label={t<string>('modals.auth.login.form.password.label')}
+              label={t('modals.auth.login.form.password.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               InputProps={{ endAdornment: <PasswordVisibility /> }}

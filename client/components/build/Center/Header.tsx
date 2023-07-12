@@ -20,7 +20,6 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material';
-import clsx from 'clsx';
 import get from 'lodash/get';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
@@ -37,6 +36,7 @@ import { setSidebarState, toggleSidebar } from '@/store/build/buildSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
 import getResumeUrl from '@/utils/getResumeUrl';
+import { cn } from '@/utils/styles';
 
 import styles from './Header.module.scss';
 
@@ -102,7 +102,7 @@ const Header = () => {
             },
           },
         },
-      })
+      }),
     );
   };
 
@@ -132,14 +132,14 @@ const Header = () => {
     const url = getResumeUrl(resume, { withHost: true });
     await navigator.clipboard.writeText(url);
 
-    toast.success(t<string>('common.toast.success.resume-link-copied'));
+    toast.success(t('common.toast.success.resume-link-copied'));
   };
 
   return (
     <AppBar elevation={0} position="fixed">
       <Toolbar
         variant="regular"
-        className={clsx({
+        className={cn({
           [styles.header]: true,
           [styles.pushLeft]: left.open,
           [styles.pushRight]: right.open,
@@ -165,14 +165,14 @@ const Header = () => {
               <ListItemIcon>
                 <DriveFileRenameOutline className="scale-90" />
               </ListItemIcon>
-              <ListItemText>{t<string>('builder.header.menu.rename')}</ListItemText>
+              <ListItemText>{t('builder.header.menu.rename')}</ListItemText>
             </MenuItem>
 
             <MenuItem onClick={handleDuplicate}>
               <ListItemIcon>
                 <CopyAll className="scale-90" />
               </ListItemIcon>
-              <ListItemText>{t<string>('builder.header.menu.duplicate')}</ListItemText>
+              <ListItemText>{t('builder.header.menu.duplicate')}</ListItemText>
             </MenuItem>
 
             {resume.public ? (
@@ -180,27 +180,27 @@ const Header = () => {
                 <ListItemIcon>
                   <LinkIcon className="scale-90" />
                 </ListItemIcon>
-                <ListItemText>{t<string>('builder.header.menu.share-link')}</ListItemText>
+                <ListItemText>{t('builder.header.menu.share-link')}</ListItemText>
               </MenuItem>
             ) : (
-              <Tooltip arrow placement="right" title={t<string>('builder.header.menu.tooltips.share-link')}>
+              <Tooltip arrow placement="right" title={t('builder.header.menu.tooltips.share-link')}>
                 <div>
                   <MenuItem>
                     <ListItemIcon>
                       <LinkIcon className="scale-90" />
                     </ListItemIcon>
-                    <ListItemText>{t<string>('builder.header.menu.share-link')}</ListItemText>
+                    <ListItemText>{t('builder.header.menu.share-link')}</ListItemText>
                   </MenuItem>
                 </div>
               </Tooltip>
             )}
 
-            <Tooltip arrow placement="right" title={t<string>('builder.header.menu.tooltips.delete')}>
+            <Tooltip arrow placement="right" title={t('builder.header.menu.tooltips.delete')}>
               <MenuItem onClick={handleDelete}>
                 <ListItemIcon>
                   <Delete className="scale-90" />
                 </ListItemIcon>
-                <ListItemText>{t<string>('builder.header.menu.delete')}</ListItemText>
+                <ListItemText>{t('builder.header.menu.delete')}</ListItemText>
               </MenuItem>
             </Tooltip>
           </Menu>

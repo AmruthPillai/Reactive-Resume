@@ -1,4 +1,4 @@
-version: "3.8"
+version: '3.8'
 
 services:
   postgres:
@@ -14,12 +14,7 @@ services:
       - POSTGRES_PASSWORD=postgres
 
   server:
-    # image: amruthpillai/reactive-resume:server-latest
-    build:
-      context: .
-      dockerfile: ./server/Dockerfile
-      args:
-        - TURBO_TOKEN=
+    image: amruthpillai/reactive-resume:server-latest
     restart: always
     ports:
       - 3100:3100
@@ -55,12 +50,7 @@ services:
       - PDF_DELETION_TIME=
 
   client:
-    # image: amruthpillai/reactive-resume:client-latest
-    build:
-      context: .
-      dockerfile: ./client/Dockerfile
-      args:
-        - TURBO_TOKEN=
+    image: amruthpillai/reactive-resume:client-latest
     restart: always
     ports:
       - 3000:3000

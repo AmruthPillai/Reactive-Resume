@@ -55,7 +55,7 @@ const Settings = () => {
   const themeString = useMemo(() => (isDarkMode ? 'Matte Black Everything' : 'As bright as your future'), [isDarkMode]);
 
   const { mutateAsync: loadSampleDataMutation } = useMutation<Resume, ServerError, LoadSampleDataParams>(
-    loadSampleData
+    loadSampleData,
   );
   const { mutateAsync: resetResumeMutation } = useMutation<Resume, ServerError, ResetResumeParams>(resetResume);
 
@@ -96,13 +96,13 @@ const Settings = () => {
 
   return (
     <>
-      <Heading path="metadata.settings" name={t<string>('builder.rightSidebar.sections.settings.heading')} />
+      <Heading path="metadata.settings" name={t('builder.rightSidebar.sections.settings.heading')} />
 
       <List disablePadding>
         {/* Global Settings */}
         <>
           <ListSubheader disableSticky className="rounded">
-            {t<string>('builder.rightSidebar.sections.settings.global.heading')}
+            {t('builder.rightSidebar.sections.settings.global.heading')}
           </ListSubheader>
 
           <ListItem>
@@ -110,7 +110,7 @@ const Settings = () => {
               <Palette />
             </ListItemIcon>
             <ListItemText
-              primary={t<string>('builder.rightSidebar.sections.settings.global.theme.primary')}
+              primary={t('builder.rightSidebar.sections.settings.global.theme.primary')}
               secondary={themeString}
             />
             <ThemeSwitch checked={isDarkMode} onChange={(_, value: boolean) => handleSetTheme(value)} />
@@ -119,8 +119,8 @@ const Settings = () => {
           <ListItem className="flex-col">
             <ListItemText
               className="w-full"
-              primary={t<string>('builder.rightSidebar.sections.settings.global.date.primary')}
-              secondary={t<string>('builder.rightSidebar.sections.settings.global.date.secondary')}
+              primary={t('builder.rightSidebar.sections.settings.global.date.primary')}
+              secondary={t('builder.rightSidebar.sections.settings.global.date.secondary')}
             />
             <Autocomplete<string, false, true, false>
               disableClearable
@@ -135,8 +135,8 @@ const Settings = () => {
           <ListItem className="flex-col">
             <ListItemText
               className="w-full"
-              primary={t<string>('builder.rightSidebar.sections.settings.global.language.primary')}
-              secondary={t<string>('builder.rightSidebar.sections.settings.global.language.secondary')}
+              primary={t('builder.rightSidebar.sections.settings.global.language.primary')}
+              secondary={t('builder.rightSidebar.sections.settings.global.language.secondary')}
             />
             <Autocomplete<Language, false, true, false>
               disableClearable
@@ -160,14 +160,14 @@ const Settings = () => {
         {/* Page Settings */}
         <>
           <ListSubheader disableSticky className="rounded">
-            {t<string>('builder.rightSidebar.sections.settings.page.heading')}
+            {t('builder.rightSidebar.sections.settings.page.heading')}
           </ListSubheader>
 
           <ListItem className="flex-col">
             <ListItemText
               className="w-full"
-              primary={t<string>('builder.rightSidebar.sections.settings.page.format.primary')}
-              secondary={t<string>('builder.rightSidebar.sections.settings.page.format.secondary')}
+              primary={t('builder.rightSidebar.sections.settings.page.format.primary')}
+              secondary={t('builder.rightSidebar.sections.settings.page.format.secondary')}
             />
             <Autocomplete<PageConfig['format'], false, true, false>
               disableClearable
@@ -182,11 +182,11 @@ const Settings = () => {
 
           <ListItem>
             <ListItemText
-              primary={t<string>('builder.rightSidebar.sections.settings.page.orientation.primary')}
+              primary={t('builder.rightSidebar.sections.settings.page.orientation.primary')}
               secondary={
                 pages.length === 1
-                  ? t<string>('builder.rightSidebar.sections.settings.page.orientation.disabled')
-                  : t<string>('builder.rightSidebar.sections.settings.page.orientation.secondary')
+                  ? t('builder.rightSidebar.sections.settings.page.orientation.disabled')
+                  : t('builder.rightSidebar.sections.settings.page.orientation.secondary')
               }
             />
             <Switch
@@ -199,8 +199,8 @@ const Settings = () => {
 
           <ListItem>
             <ListItemText
-              primary={t<string>('builder.rightSidebar.sections.settings.page.break-line.primary')}
-              secondary={t<string>('builder.rightSidebar.sections.settings.page.break-line.secondary')}
+              primary={t('builder.rightSidebar.sections.settings.page.break-line.primary')}
+              secondary={t('builder.rightSidebar.sections.settings.page.break-line.secondary')}
             />
             <Switch color="secondary" checked={breakLine} onChange={() => dispatch(togglePageBreakLine())} />
           </ListItem>
@@ -209,7 +209,7 @@ const Settings = () => {
         {/* Resume Settings */}
         <>
           <ListSubheader disableSticky className="rounded">
-            {t<string>('builder.rightSidebar.sections.settings.resume.heading')}
+            {t('builder.rightSidebar.sections.settings.resume.heading')}
           </ListSubheader>
 
           <ListItem disableGutters>
@@ -218,8 +218,8 @@ const Settings = () => {
                 <Anchor />
               </ListItemIcon>
               <ListItemText
-                primary={t<string>('builder.rightSidebar.sections.settings.resume.sample.primary')}
-                secondary={t<string>('builder.rightSidebar.sections.settings.resume.sample.secondary')}
+                primary={t('builder.rightSidebar.sections.settings.resume.sample.primary')}
+                secondary={t('builder.rightSidebar.sections.settings.resume.sample.secondary')}
               />
             </ListItemButton>
           </ListItem>
@@ -231,11 +231,9 @@ const Settings = () => {
               </ListItemIcon>
               <ListItemText
                 primary={
-                  confirmReset
-                    ? 'Are you sure?'
-                    : t<string>('builder.rightSidebar.sections.settings.resume.reset.primary')
+                  confirmReset ? 'Are you sure?' : t('builder.rightSidebar.sections.settings.resume.reset.primary')
                 }
-                secondary={t<string>('builder.rightSidebar.sections.settings.resume.reset.secondary')}
+                secondary={t('builder.rightSidebar.sections.settings.resume.reset.secondary')}
               />
             </ListItemButton>
           </ListItem>

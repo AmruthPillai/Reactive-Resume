@@ -23,7 +23,7 @@ const Document: NextPage = () => (
             "@context": "https://schema.org",
             "@type": "Organization",
             "url": "https://rxresu.me",
-            "logo": "https://rxresu.me/images/logos/logo.svg"
+            "logo": "https://rxresu.me/logo/dark.svg"
           }`,
         }}
       />

@@ -1,9 +1,10 @@
 import { createTheme, ThemeOptions } from '@mui/material/styles';
+import colors from 'tailwindcss/colors';
 
 const theme: ThemeOptions = {
   typography: {
     fontSize: 12,
-    fontFamily: 'Inter, sans-serif',
+    fontFamily: '"IBM Plex Sans", sans-serif',
   },
   components: {
     MuiButton: {
@@ -48,6 +49,15 @@ const theme: ThemeOptions = {
         },
       },
     },
+    MuiModal: {
+      defaultProps: {
+        componentsProps: {
+          backdrop: {
+            className: 'backdrop-blur-sm',
+          },
+        },
+      },
+    },
   },
 };
 
@@ -55,8 +65,9 @@ export const lightTheme = createTheme({
   ...theme,
   palette: {
     mode: 'light',
-    primary: { main: '#404040' }, // neutral[700]
-    secondary: { main: '#0d9488' }, // teal[600]
+    background: { default: colors.zinc[50], paper: colors.zinc[100] },
+    primary: { main: colors.zinc[900], ...colors.zinc },
+    secondary: { main: colors.teal[500], ...colors.teal },
   },
 });
 
@@ -64,7 +75,8 @@ export const darkTheme = createTheme({
   ...theme,
   palette: {
     mode: 'dark',
-    primary: { main: '#f5f5f5' }, // neutral[100]
-    secondary: { main: '#2dd4bf' }, // teal[400]
+    background: { default: colors.zinc[950], paper: colors.zinc[900] },
+    primary: { main: colors.zinc[100], ...colors.zinc },
+    secondary: { main: colors.teal[600], ...colors.teal },
   },
 });

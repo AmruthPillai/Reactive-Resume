@@ -6,11 +6,11 @@
   @apply fixed bottom-6 right-6 z-50;
 
   button {
-    @apply flex gap-2 px-4 py-3 shadow dark:bg-neutral-600/25;
+    @apply flex gap-2 px-4 py-3 shadow dark:bg-zinc-600/25;
     @apply rounded-full transition-colors;
 
     &:hover {
-      @apply dark:bg-neutral-500/25;
+      @apply dark:bg-zinc-500/25;
     }
   }
 }

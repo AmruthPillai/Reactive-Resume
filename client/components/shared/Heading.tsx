@@ -62,7 +62,7 @@ const Heading: React.FC<Props> = ({
         {editMode ? (
           <TextField size="small" value={heading} className="w-3/4" onChange={handleChange} />
         ) : (
-          <h1>{t<string>(`builder.leftSidebar.${path}.heading`, { defaultValue: heading })}</h1>
+          <h1>{t(`builder.leftSidebar.${path}.heading`, { defaultValue: heading })}</h1>
         )}
       </div>
 
@@ -72,19 +72,19 @@ const Heading: React.FC<Props> = ({
         })}
       >
         {isEditable && (
-          <Tooltip title={t<string>('builder.common.tooltip.rename-section')}>
+          <Tooltip title={t('builder.common.tooltip.rename-section')}>
             <IconButton onClick={toggleEditMode}>{editMode ? <Check /> : <DriveFileRenameOutline />}</IconButton>
           </Tooltip>
         )}
 
         {isHideable && (
-          <Tooltip title={t<string>('builder.common.tooltip.toggle-visibility')}>
+          <Tooltip title={t('builder.common.tooltip.toggle-visibility')}>
             <IconButton onClick={toggleVisibility}>{visibility ? <Visibility /> : <VisibilityOff />}</IconButton>
           </Tooltip>
         )}
 
         {isDeletable && (
-          <Tooltip title={t<string>('builder.common.tooltip.delete-section')}>
+          <Tooltip title={t('builder.common.tooltip.delete-section')}>
             <IconButton onClick={handleDelete}>
               <Delete />
             </IconButton>

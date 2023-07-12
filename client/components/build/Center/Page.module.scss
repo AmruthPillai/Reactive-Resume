@@ -18,8 +18,8 @@
     content: 'Page Break';
     top: calc(297mm - 19px);
 
-    @apply absolute w-full border-b border-dashed border-neutral-800/75;
-    @apply flex items-end justify-end pr-2 pb-0.5 text-xs font-bold text-neutral-800/75;
+    @apply absolute w-full border-b border-dashed border-zinc-900/75;
+    @apply flex items-end justify-end pr-2 pb-0.5 text-xs font-bold text-zinc-900/75;
     @apply print:hidden;
 
     :global(.preview-mode) &,
