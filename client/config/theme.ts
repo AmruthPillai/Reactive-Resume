@@ -1,5 +1,4 @@
 import { createTheme, ThemeOptions } from '@mui/material/styles';
-import colors from 'tailwindcss/colors';
 
 const theme: ThemeOptions = {
   typography: {
@@ -65,9 +64,9 @@ export const lightTheme = createTheme({
   ...theme,
   palette: {
     mode: 'light',
-    background: { default: colors.zinc[50], paper: colors.zinc[100] },
-    primary: { main: colors.zinc[900], ...colors.zinc },
-    secondary: { main: colors.teal[500], ...colors.teal },
+    background: { default: '#fafafa', paper: '#f4f4f5' },
+    primary: { main: '#18181b' },
+    secondary: { main: '#14b8a6' },
   },
 });
 
@@ -75,8 +74,8 @@ export const darkTheme = createTheme({
   ...theme,
   palette: {
     mode: 'dark',
-    background: { default: colors.zinc[950], paper: colors.zinc[900] },
-    primary: { main: colors.zinc[100], ...colors.zinc },
-    secondary: { main: colors.teal[600], ...colors.teal },
+    background: { default: '#09090b', paper: '#18181b' },
+    primary: { main: '#f4f4f5' },
+    secondary: { main: '#0d9488' },
   },
 });
