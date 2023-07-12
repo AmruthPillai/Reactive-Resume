@@ -15,7 +15,7 @@
 .controller {
   @apply z-20 flex items-center justify-center shadow-lg;
   @apply flex rounded-l-full rounded-r-full px-4;
-  @apply bg-neutral-50 dark:bg-neutral-800;
+  @apply bg-zinc-50 dark:bg-zinc-900;
   @apply opacity-70 transition-opacity duration-200 hover:opacity-100;
 
   > button {
@@ -23,6 +23,6 @@
   }
 
   > hr {
-    @apply mx-3 h-5 w-0.5 bg-neutral-900/40 dark:bg-neutral-50/20;
+    @apply mx-3 h-5 w-0.5 bg-zinc-900/40 dark:bg-zinc-50/20;
   }
 }

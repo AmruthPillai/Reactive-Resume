@@ -8,7 +8,7 @@ import React, { ReactComponentElement, useMemo } from 'react';
 import { Section as SectionRecord } from 'schema';
 import { validate } from 'uuid';
 
-import Logo from '@/components/shared/Logo';
+import Icon from '@/components/shared/Icon';
 import { getCustomSections, getSectionsByType, left } from '@/config/sections';
 import { setSidebarState } from '@/store/build/buildSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
@@ -69,7 +69,7 @@ const LeftSidebar = () => {
       sectionsComponents.push(
         <section key={id} id={id}>
           {component}
-        </section>
+        </section>,
       );
 
       if (addMore) {
@@ -89,7 +89,7 @@ const LeftSidebar = () => {
           elements.push(
             <section key={newId} id={`section-${newId}`}>
               {newComponent}
-            </section>
+            </section>,
           );
         }
         sectionsComponents.push(...elements);
@@ -112,7 +112,9 @@ const LeftSidebar = () => {
         <nav className="overflow-y-auto">
           <div>
             <Link href="/dashboard">
-              <Logo size={40} />
+              <IconButton>
+                <Icon size={24} />
+              </IconButton>
             </Link>
             <Divider />
           </div>
@@ -123,7 +125,7 @@ const LeftSidebar = () => {
                 arrow
                 key={id}
                 placement="right"
-                title={t<string>(`builder.leftSidebar.sections.${id}.heading`, get(sections, `${id}.name`))}
+                title={t(`builder.leftSidebar.sections.${id}.heading`, get(sections, `${id}.name`))}
               >
                 <IconButton onClick={() => handleClick(id)}>{icon}</IconButton>
               </Tooltip>
@@ -132,7 +134,7 @@ const LeftSidebar = () => {
             {customSections.map(({ id }) => (
               <Tooltip
                 key={id}
-                title={t<string>(`builder.leftSidebar.sections.${id}.heading`, get(sections, `${id}.name`))}
+                title={t(`builder.leftSidebar.sections.${id}.heading`, get(sections, `${id}.name`))}
                 placement="right"
                 arrow
               >
@@ -157,8 +159,8 @@ const LeftSidebar = () => {
 
           <div className="py-6 text-right">
             <Button fullWidth variant="outlined" startIcon={<Add />} onClick={handleAddSection}>
-              {t<string>('builder.common.actions.add', {
-                token: t<string>('builder.leftSidebar.sections.section.heading'),
+              {t('builder.common.actions.add', {
+                token: t('builder.leftSidebar.sections.section.heading'),
               })}
             </Button>
           </div>

@@ -1,7 +1,3 @@
-// Icons & Fonts
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 // KaTeX (for remark-math)
 @import url('https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css');
 
@@ -20,8 +16,8 @@
   }
 
   body {
-    @apply font-inter text-sm;
-    @apply bg-neutral-50 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100;
+    @apply font-ibm-plex-sans text-sm;
+    @apply bg-zinc-50 text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50;
   }
 
   p {

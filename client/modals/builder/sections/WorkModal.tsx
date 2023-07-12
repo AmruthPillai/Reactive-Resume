@@ -58,17 +58,17 @@ const WorkModal: React.FC = () => {
 
   const addText = useMemo(
     () =>
-      t<string>('builder.common.actions.add', {
-        token: t<string>(`builder.leftSidebar.${path}.heading`, { defaultValue: heading }),
+      t('builder.common.actions.add', {
+        token: t(`builder.leftSidebar.${path}.heading`, { defaultValue: heading }),
       }),
-    [t, heading]
+    [t, heading],
   );
   const editText = useMemo(
     () =>
-      t<string>('builder.common.actions.edit', {
-        token: t<string>(`builder.leftSidebar.${path}.heading`, { defaultValue: heading }),
+      t('builder.common.actions.edit', {
+        token: t(`builder.leftSidebar.${path}.heading`, { defaultValue: heading }),
       }),
-    [t, heading]
+    [t, heading],
   );
 
   const { reset, control, handleSubmit } = useForm<FormData>({
@@ -91,7 +91,7 @@ const WorkModal: React.FC = () => {
       setModalState({
         modal: 'builder.sections.work',
         state: { open: false },
-      })
+      }),
     );
 
     reset(defaultState);
@@ -119,7 +119,7 @@ const WorkModal: React.FC = () => {
             <TextField
               required
               autoFocus
-              label={t<string>('builder.leftSidebar.sections.experience.form.name.label')}
+              label={t('builder.leftSidebar.sections.experience.form.name.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -133,7 +133,7 @@ const WorkModal: React.FC = () => {
           render={({ field, fieldState }) => (
             <TextField
               required
-              label={t<string>('builder.common.form.position.label')}
+              label={t('builder.common.form.position.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -148,7 +148,7 @@ const WorkModal: React.FC = () => {
             <DatePicker
               openTo="year"
               inputRef={field.ref}
-              label={t<string>('builder.common.form.start-date.label')}
+              label={t('builder.common.form.start-date.label')}
               value={dayjs(field.value)}
               views={['year', 'month', 'day']}
               slots={{
@@ -174,7 +174,7 @@ const WorkModal: React.FC = () => {
             <DatePicker
               openTo="year"
               inputRef={field.ref}
-              label={t<string>('builder.common.form.end-date.label')}
+              label={t('builder.common.form.end-date.label')}
               value={dayjs(field.value)}
               views={['year', 'month', 'day']}
               slots={{
@@ -182,7 +182,7 @@ const WorkModal: React.FC = () => {
                   <TextField
                     {...params}
                     error={!!fieldState.error}
-                    helperText={fieldState.error?.message || t<string>('builder.common.form.end-date.help-text')}
+                    helperText={fieldState.error?.message || t('builder.common.form.end-date.help-text')}
                   />
                 ),
               }}
@@ -198,7 +198,7 @@ const WorkModal: React.FC = () => {
           control={control}
           render={({ field, fieldState }) => (
             <TextField
-              label={t<string>('builder.common.form.url.label')}
+              label={t('builder.common.form.url.label')}
               placeholder="https://"
               className="col-span-2"
               error={!!fieldState.error}
@@ -216,7 +216,7 @@ const WorkModal: React.FC = () => {
               multiline
               minRows={3}
               maxRows={6}
-              label={t<string>('builder.common.form.summary.label')}
+              label={t('builder.common.form.summary.label')}
               className="col-span-2"
               error={!!fieldState.error}
               helperText={fieldState.error?.message || <MarkdownSupported />}

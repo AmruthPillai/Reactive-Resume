@@ -63,7 +63,7 @@ const ImportExternalModal: React.FC = () => {
       const file = event.target.files[0];
 
       if (file.size > FILE_UPLOAD_MAX_SIZE) {
-        toast.error(t<string>('common.toast.error.upload-file-size'));
+        toast.error(t('common.toast.error.upload-file-size'));
         return;
       }
 
@@ -78,13 +78,13 @@ const ImportExternalModal: React.FC = () => {
     <BaseModal
       isOpen={isOpen}
       icon={<ImportExport />}
-      heading={t<string>('modals.dashboard.import-external.heading')}
+      heading={t('modals.dashboard.import-external.heading')}
       handleClose={handleClose}
     >
       <div className="grid gap-5">
         <h2 className="inline-flex items-center gap-2 text-lg font-medium">
           <LinkedIn />
-          {t<string>('modals.dashboard.import-external.linkedin.heading')}
+          {t('modals.dashboard.import-external.linkedin.heading')}
         </h2>
 
         <p className="mb-2">
@@ -110,7 +110,7 @@ const ImportExternalModal: React.FC = () => {
             startIcon={<UploadFile />}
             onClick={() => handleClick('linkedin')}
           >
-            {t<string>('modals.dashboard.import-external.linkedin.actions.upload-archive')}
+            {t('modals.dashboard.import-external.linkedin.actions.upload-archive')}
           </Button>
 
           <input
@@ -128,7 +128,7 @@ const ImportExternalModal: React.FC = () => {
       <div className="grid gap-5">
         <h2 className="inline-flex items-center gap-2 text-lg font-medium">
           <Code />
-          {t<string>('modals.dashboard.import-external.json-resume.heading')}
+          {t('modals.dashboard.import-external.json-resume.heading')}
         </h2>
 
         <p className="mb-2">
@@ -154,7 +154,7 @@ const ImportExternalModal: React.FC = () => {
             startIcon={<UploadFile />}
             onClick={() => handleClick('json-resume')}
           >
-            {t<string>('modals.dashboard.import-external.json-resume.actions.upload-json')}
+            {t('modals.dashboard.import-external.json-resume.actions.upload-json')}
           </Button>
 
           <input
@@ -172,10 +172,10 @@ const ImportExternalModal: React.FC = () => {
       <div className="grid gap-5">
         <h2 className="inline-flex items-center gap-2 text-lg font-medium">
           <TrackChanges />
-          {t<string>('modals.dashboard.import-external.reactive-resume.heading')}
+          {t('modals.dashboard.import-external.reactive-resume.heading')}
         </h2>
 
-        <p className="mb-2">{t<string>('modals.dashboard.import-external.reactive-resume.body')}</p>
+        <p className="mb-2">{t('modals.dashboard.import-external.reactive-resume.body')}</p>
 
         <div className="flex gap-4">
           <Button
@@ -184,7 +184,7 @@ const ImportExternalModal: React.FC = () => {
             startIcon={<UploadFile />}
             onClick={() => handleClick('reactive-resume')}
           >
-            {t<string>('modals.dashboard.import-external.reactive-resume.actions.upload-json')}
+            {t('modals.dashboard.import-external.reactive-resume.actions.upload-json')}
           </Button>
 
           <Button
@@ -193,7 +193,7 @@ const ImportExternalModal: React.FC = () => {
             startIcon={<UploadFile />}
             onClick={() => handleClick('reactive-resume-v2')}
           >
-            {t<string>('modals.dashboard.import-external.reactive-resume.actions.upload-json-v2')}
+            {t('modals.dashboard.import-external.reactive-resume.actions.upload-json-v2')}
           </Button>
 
           <input

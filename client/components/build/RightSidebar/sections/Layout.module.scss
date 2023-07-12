@@ -1,6 +1,6 @@
 .page {
-  @apply relative border pl-4 pb-4 dark:border-neutral-100/10;
-  @apply rounded bg-neutral-100 dark:bg-neutral-800;
+  @apply relative border pl-4 pb-4 dark:border-zinc-100/10;
+  @apply rounded bg-zinc-100 dark:bg-zinc-900;
 
   .delete {
     @apply opacity-50 hover:opacity-75;
@@ -28,14 +28,14 @@
 
   .base {
     @apply absolute inset-0 w-4/5;
-    @apply rounded bg-neutral-200 dark:bg-neutral-700;
+    @apply rounded bg-zinc-200 dark:bg-zinc-800;
   }
 }
 
 .section {
   @apply relative my-3 w-full px-4 py-2;
   @apply cursor-move break-all rounded text-xs capitalize;
-  @apply bg-neutral-800/90 text-neutral-50 dark:bg-neutral-50/90 dark:text-neutral-800;
+  @apply bg-zinc-900/90 text-zinc-50 dark:bg-zinc-50/90 dark:text-zinc-900;
 
   &.disabled {
     @apply opacity-60;

@@ -1,9 +1,9 @@
-import clsx from 'clsx';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
 
 import { useAppSelector } from '@/store/hooks';
+import { cn } from '@/utils/styles';
 
 import ArtboardController from './ArtboardController';
 import styles from './Center.module.scss';
@@ -19,7 +19,7 @@ const Center = () => {
   if (isEmpty(resume)) return null;
 
   return (
-    <div className={clsx(styles.center)}>
+    <div className={cn(styles.center)}>
       <Header />
 
       <TransformWrapper
@@ -35,7 +35,7 @@ const Center = () => {
           <>
             <TransformComponent wrapperClass={styles.wrapper}>
               <div
-                className={clsx({
+                className={cn({
                   [styles.artboard]: true,
                   'flex-col': orientation === 'vertical',
                 })}

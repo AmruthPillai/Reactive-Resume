@@ -32,7 +32,7 @@ export class ResumeService {
   constructor(
     @InjectRepository(Resume) private resumeRepository: Repository<Resume>,
     private configService: ConfigService,
-    private usersService: UsersService
+    private usersService: UsersService,
   ) {
     this.s3Enabled = !isEmpty(configService.get('storage.bucket'));
 
@@ -72,13 +72,13 @@ export class ResumeService {
       if (error?.code === PostgresErrorCode.UniqueViolation) {
         throw new HttpException(
           'A resume with the same slug already exists, please enter a unique slug and try again.',
-          HttpStatus.BAD_REQUEST
+          HttpStatus.BAD_REQUEST,
         );
       }
 
       throw new HttpException(
         'Something went wrong. Please try again later, or raise an issue on GitHub if the problem persists.',
-        HttpStatus.INTERNAL_SERVER_ERROR
+        HttpStatus.INTERNAL_SERVER_ERROR,
       );
     }
   }
@@ -102,7 +102,7 @@ export class ResumeService {
     } catch {
       throw new HttpException(
         'Something went wrong. Please try again later, or raise an issue on GitHub if the problem persists.',
-        HttpStatus.INTERNAL_SERVER_ERROR
+        HttpStatus.INTERNAL_SERVER_ERROR,
       );
     }
   }
@@ -212,13 +212,13 @@ export class ResumeService {
       if (error?.code === PostgresErrorCode.UniqueViolation) {
         throw new HttpException(
           'A resume with the same slug already exists, please enter a unique slug and try again.',
-          HttpStatus.BAD_REQUEST
+          HttpStatus.BAD_REQUEST,
         );
       }
 
       throw new HttpException(
         'Something went wrong. Please try again later, or raise an issue on GitHub if the problem persists.',
-        HttpStatus.INTERNAL_SERVER_ERROR
+        HttpStatus.INTERNAL_SERVER_ERROR,
       );
     }
   }
@@ -256,7 +256,7 @@ export class ResumeService {
           Body: file.buffer,
           ACL: 'public-read',
           Bucket: this.configService.get('storage.bucket'),
-        })
+        }),
       );
       updatedResume = set(resume, 'basics.photo.url', publicUrl);
     } else {
@@ -271,7 +271,7 @@ export class ResumeService {
       } catch (error) {
         throw new HttpException(
           'Something went wrong. Please try again later, or raise an issue on GitHub if the problem persists.',
-          HttpStatus.INTERNAL_SERVER_ERROR
+          HttpStatus.INTERNAL_SERVER_ERROR,
         );
       }
     }
@@ -292,7 +292,7 @@ export class ResumeService {
         new DeleteObjectCommand({
           Key: key,
           Bucket: this.configService.get('storage.bucket'),
-        })
+        }),
       );
     } else {
       const serverUrl = this.configService.get('app.serverUrl');

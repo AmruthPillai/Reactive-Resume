@@ -76,7 +76,7 @@ const ResumePreview: React.FC<Props> = ({ resume }) => {
             },
           },
         },
-      })
+      }),
     );
   };
 
@@ -94,7 +94,7 @@ const ResumePreview: React.FC<Props> = ({ resume }) => {
     const url = getResumeUrl(resume, { withHost: true });
     await navigator.clipboard.writeText(url);
 
-    toast.success(t<string>('common.toast.success.resume-link-copied'));
+    toast.success(t('common.toast.success.resume-link-copied'));
   };
 
   const handleDelete = async () => {
@@ -122,7 +122,7 @@ const ResumePreview: React.FC<Props> = ({ resume }) => {
       <footer>
         <div className={styles.meta}>
           <p>{resume.name}</p>
-          <p>{t<string>('dashboard.resume.timestamp', { timestamp: getRelativeTime(resume.updatedAt) })}</p>
+          <p>{t('dashboard.resume.timestamp', { timestamp: getRelativeTime(resume.updatedAt) })}</p>
         </div>
 
         <ButtonBase className={styles.menu} onClick={handleOpenMenu}>
@@ -134,21 +134,21 @@ const ResumePreview: React.FC<Props> = ({ resume }) => {
             <ListItemIcon>
               <OpenInNew className="scale-90" />
             </ListItemIcon>
-            <ListItemText>{t<string>('dashboard.resume.menu.open')}</ListItemText>
+            <ListItemText>{t('dashboard.resume.menu.open')}</ListItemText>
           </MenuItem>
 
           <MenuItem onClick={handleRename}>
             <ListItemIcon>
               <DriveFileRenameOutline className="scale-90" />
             </ListItemIcon>
-            <ListItemText>{t<string>('dashboard.resume.menu.rename')}</ListItemText>
+            <ListItemText>{t('dashboard.resume.menu.rename')}</ListItemText>
           </MenuItem>
 
           <MenuItem onClick={handleDuplicate}>
             <ListItemIcon>
               <ContentCopy className="scale-90" />
             </ListItemIcon>
-            <ListItemText>{t<string>('dashboard.resume.menu.duplicate')}</ListItemText>
+            <ListItemText>{t('dashboard.resume.menu.duplicate')}</ListItemText>
           </MenuItem>
 
           {resume.public ? (
@@ -156,27 +156,27 @@ const ResumePreview: React.FC<Props> = ({ resume }) => {
               <ListItemIcon>
                 <LinkIcon className="scale-90" />
               </ListItemIcon>
-              <ListItemText>{t<string>('dashboard.resume.menu.share-link')}</ListItemText>
+              <ListItemText>{t('dashboard.resume.menu.share-link')}</ListItemText>
             </MenuItem>
           ) : (
-            <Tooltip arrow placement="right" title={t<string>('dashboard.resume.menu.tooltips.share-link')}>
+            <Tooltip arrow placement="right" title={t('dashboard.resume.menu.tooltips.share-link')}>
               <div>
                 <MenuItem>
                   <ListItemIcon>
                     <LinkIcon className="scale-90" />
                   </ListItemIcon>
-                  <ListItemText>{t<string>('dashboard.resume.menu.share-link')}</ListItemText>
+                  <ListItemText>{t('dashboard.resume.menu.share-link')}</ListItemText>
                 </MenuItem>
               </div>
             </Tooltip>
           )}
 
-          <Tooltip arrow placement="right" title={t<string>('dashboard.resume.menu.tooltips.delete')}>
+          <Tooltip arrow placement="right" title={t('dashboard.resume.menu.tooltips.delete')}>
             <MenuItem onClick={handleDelete}>
               <ListItemIcon>
                 <DeleteOutline className="scale-90" />
               </ListItemIcon>
-              <ListItemText>{t<string>('dashboard.resume.menu.delete')}</ListItemText>
+              <ListItemText>{t('dashboard.resume.menu.delete')}</ListItemText>
             </MenuItem>
           </Tooltip>
         </Menu>

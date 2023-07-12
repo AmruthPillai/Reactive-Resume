@@ -45,7 +45,7 @@ const RightSidebar = () => {
       <div className={styles.container}>
         <nav className="overflow-y-auto">
           <div>
-            <Avatar size={40} />
+            <Avatar size={24} />
             <Divider />
           </div>
 
@@ -55,7 +55,7 @@ const RightSidebar = () => {
                 key={id}
                 arrow
                 placement="right"
-                title={t<string>(`builder.rightSidebar.sections.${id}.heading`, { defaultValue: capitalize(id) })}
+                title={t(`builder.rightSidebar.sections.${id}.heading`, { defaultValue: capitalize(id) })}
               >
                 <IconButton onClick={() => handleClick(id)}>{icon}</IconButton>
               </Tooltip>

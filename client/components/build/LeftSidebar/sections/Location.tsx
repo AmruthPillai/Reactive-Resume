@@ -8,28 +8,19 @@ const Location = () => {
 
   return (
     <>
-      <Heading path="sections.location" name={t<string>('builder.leftSidebar.sections.location.heading')} />
+      <Heading path="sections.location" name={t('builder.leftSidebar.sections.location.heading')} />
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <ResumeInput
-          label={t<string>('builder.leftSidebar.sections.location.address.label')}
+          label={t('builder.leftSidebar.sections.location.address.label')}
           path="basics.location.address"
           className="sm:col-span-2"
         />
+        <ResumeInput label={t('builder.leftSidebar.sections.location.city.label')} path="basics.location.city" />
+        <ResumeInput label={t('builder.leftSidebar.sections.location.region.label')} path="basics.location.region" />
+        <ResumeInput label={t('builder.leftSidebar.sections.location.country.label')} path="basics.location.country" />
         <ResumeInput
-          label={t<string>('builder.leftSidebar.sections.location.city.label')}
-          path="basics.location.city"
-        />
-        <ResumeInput
-          label={t<string>('builder.leftSidebar.sections.location.region.label')}
-          path="basics.location.region"
-        />
-        <ResumeInput
-          label={t<string>('builder.leftSidebar.sections.location.country.label')}
-          path="basics.location.country"
-        />
-        <ResumeInput
-          label={t<string>('builder.leftSidebar.sections.location.postal-code.label')}
+          label={t('builder.leftSidebar.sections.location.postal-code.label')}
           path="basics.location.postalCode"
         />
       </div>

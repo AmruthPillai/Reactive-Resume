@@ -1,0 +1,73 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:alpine
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  server:
+    build:
+      context: .
+      dockerfile: ./server/Dockerfile
+      args:
+        - TURBO_TOKEN=
+    restart: always
+    ports:
+      - 3100:3100
+    depends_on:
+      - postgres
+    environment:
+      - PUBLIC_URL=http://localhost:3000
+      - PUBLIC_SERVER_URL=http://localhost:3100
+      - PUBLIC_GOOGLE_CLIENT_ID=
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - SECRET_KEY=change-me-to-something-secure
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_SSL_CERT=
+      - JWT_SECRET=change-me-to-something-secure
+      - JWT_EXPIRY_TIME=604800
+      - GOOGLE_CLIENT_SECRET=
+      - GOOGLE_API_KEY=
+      - MAIL_FROM_NAME=Reactive Resume
+      - MAIL_FROM_EMAIL=noreply@rxresu.me
+      - MAIL_HOST=
+      - MAIL_PORT=
+      - MAIL_USERNAME=
+      - MAIL_PASSWORD=
+      - STORAGE_BUCKET=
+      - STORAGE_REGION=
+      - STORAGE_ENDPOINT=
+      - STORAGE_URL_PREFIX=
+      - STORAGE_ACCESS_KEY=
+      - STORAGE_SECRET_KEY=
+      - PDF_DELETION_TIME=
+
+  client:
+    build:
+      context: .
+      dockerfile: ./client/Dockerfile
+      args:
+        - TURBO_TOKEN=
+    restart: always
+    ports:
+      - 3000:3000
+    depends_on:
+      - server
+    environment:
+      - PUBLIC_URL=http://localhost:3000
+      - PUBLIC_SERVER_URL=http://localhost:3100
+      - PUBLIC_GOOGLE_CLIENT_ID=
+
+volumes:
+  pgdata:

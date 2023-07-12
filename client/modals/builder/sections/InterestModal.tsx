@@ -41,8 +41,8 @@ const InterestModal: React.FC = () => {
   const item: FormData = get(payload, 'item', null);
   const isEditMode = useMemo(() => !!item, [item]);
 
-  const addText = useMemo(() => t<string>('builder.common.actions.add', { token: heading }), [t, heading]);
-  const editText = useMemo(() => t<string>('builder.common.actions.edit', { token: heading }), [t, heading]);
+  const addText = useMemo(() => t('builder.common.actions.add', { token: heading }), [t, heading]);
+  const editText = useMemo(() => t('builder.common.actions.edit', { token: heading }), [t, heading]);
 
   const { reset, control, handleSubmit } = useForm<FormData>({
     defaultValues: defaultState,
@@ -64,7 +64,7 @@ const InterestModal: React.FC = () => {
       setModalState({
         modal: `builder.${path}`,
         state: { open: false },
-      })
+      }),
     );
 
     reset(defaultState);
@@ -92,7 +92,7 @@ const InterestModal: React.FC = () => {
             <TextField
               required
               autoFocus
-              label={t<string>('builder.common.form.name.label')}
+              label={t('builder.common.form.name.label')}
               className="col-span-2"
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
@@ -106,7 +106,7 @@ const InterestModal: React.FC = () => {
           control={control}
           render={({ field, fieldState }) => (
             <ArrayInput
-              label={t<string>('builder.common.form.keywords.label')}
+              label={t('builder.common.form.keywords.label')}
               value={field.value as string[]}
               onChange={field.onChange}
               errors={fieldState.error}

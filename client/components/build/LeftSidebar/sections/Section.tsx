@@ -98,8 +98,8 @@ const Section: React.FC<Props> = ({
         <SectionSettings path={path} />
 
         <Button variant="outlined" startIcon={<Add />} onClick={handleAdd}>
-          {t<string>('builder.common.actions.add', {
-            token: t<string>(`builder.leftSidebar.${path}.heading`, { defaultValue: heading }),
+          {t('builder.common.actions.add', {
+            token: t(`builder.leftSidebar.${path}.heading`, { defaultValue: heading }),
           })}
         </Button>
       </footer>
@@ -107,7 +107,7 @@ const Section: React.FC<Props> = ({
       {addMore ? (
         <div className="py-6 text-right">
           <Button fullWidth variant="outlined" startIcon={<Add />} onClick={handleDuplicateSection}>
-            {t<string>('builder.common.actions.duplicate')}
+            {t('builder.common.actions.duplicate')}
           </Button>
         </div>
       ) : (

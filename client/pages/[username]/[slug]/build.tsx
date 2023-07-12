@@ -42,14 +42,10 @@ const Build: NextPage<Props> = ({ username, slug }) => {
     `resume/${username}/${slug}`,
     () => fetchResumeByIdentifier({ username, slug }),
     {
-      cacheTime: 0,
-      refetchOnMount: false,
-      refetchOnReconnect: false,
-      refetchOnWindowFocus: false,
       onSuccess: (resume) => {
         dispatch(setResume(resume));
       },
-    }
+    },
   );
 
   useEffect(() => {
@@ -62,7 +58,7 @@ const Build: NextPage<Props> = ({ username, slug }) => {
     <div className={styles.container}>
       <Head>
         <title>
-          {resume.name} | {t<string>('common.title')}
+          {resume.name} | {t('common.title')}
         </title>
       </Head>
 

@@ -49,7 +49,7 @@ const PhotoUpload: React.FC = () => {
       const file = event.target.files[0];
 
       if (file.size > FILE_UPLOAD_MAX_SIZE) {
-        toast.error(t<string>('common.toast.error.upload-photo-size'));
+        toast.error(t('common.toast.error.upload-photo-size'));
         return;
       }
 
@@ -67,8 +67,8 @@ const PhotoUpload: React.FC = () => {
         <Tooltip
           title={
             isEmpty(photo.url)
-              ? (t<string>('builder.leftSidebar.sections.basics.photo-upload.tooltip.upload') as string)
-              : (t<string>('builder.leftSidebar.sections.basics.photo-upload.tooltip.remove') as string)
+              ? (t('builder.leftSidebar.sections.basics.photo-upload.tooltip.upload') as string)
+              : (t('builder.leftSidebar.sections.basics.photo-upload.tooltip.remove') as string)
           }
         >
           <Avatar sx={{ width: 96, height: 96 }} src={photo.url} />

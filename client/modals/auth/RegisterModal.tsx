@@ -61,7 +61,7 @@ const RegisterModal: React.FC = () => {
   const { mutateAsync, isLoading } = useMutation<void, ServerError, RegisterParams>(registerUser);
 
   const { mutateAsync: loginWithGoogleMutation } = useMutation<void, ServerError, LoginWithGoogleParams>(
-    loginWithGoogle
+    loginWithGoogle,
   );
 
   const handleClose = () => {
@@ -95,7 +95,7 @@ const RegisterModal: React.FC = () => {
     <BaseModal
       icon={<HowToReg />}
       isOpen={isOpen}
-      heading={t<string>('modals.auth.register.heading')}
+      heading={t('modals.auth.register.heading')}
       handleClose={handleClose}
       footerChildren={
         <div className="flex gap-4">
@@ -104,12 +104,12 @@ const RegisterModal: React.FC = () => {
           )}
 
           <Button type="submit" onClick={handleSubmit(onSubmit)} disabled={isLoading}>
-            {t<string>('modals.auth.register.actions.register')}
+            {t('modals.auth.register.actions.register')}
           </Button>
         </div>
       }
     >
-      <p>{t<string>('modals.auth.register.body')}</p>
+      <p>{t('modals.auth.register.body')}</p>
 
       <form className="grid gap-4 md:grid-cols-2">
         <Controller
@@ -118,7 +118,7 @@ const RegisterModal: React.FC = () => {
           render={({ field, fieldState }) => (
             <TextField
               autoFocus
-              label={t<string>('modals.auth.register.form.name.label')}
+              label={t('modals.auth.register.form.name.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -131,7 +131,7 @@ const RegisterModal: React.FC = () => {
           control={control}
           render={({ field, fieldState }) => (
             <TextField
-              label={t<string>('modals.auth.register.form.username.label')}
+              label={t('modals.auth.register.form.username.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -145,7 +145,7 @@ const RegisterModal: React.FC = () => {
           render={({ field, fieldState }) => (
             <TextField
               type="email"
-              label={t<string>('modals.auth.register.form.email.label')}
+              label={t('modals.auth.register.form.email.label')}
               className="col-span-2"
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
@@ -160,7 +160,7 @@ const RegisterModal: React.FC = () => {
           render={({ field, fieldState }) => (
             <TextField
               type="password"
-              label={t<string>('modals.auth.register.form.password.label')}
+              label={t('modals.auth.register.form.password.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -174,7 +174,7 @@ const RegisterModal: React.FC = () => {
           render={({ field, fieldState }) => (
             <TextField
               type="password"
-              label={t<string>('modals.auth.register.form.confirm-password.label')}
+              label={t('modals.auth.register.form.confirm-password.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}

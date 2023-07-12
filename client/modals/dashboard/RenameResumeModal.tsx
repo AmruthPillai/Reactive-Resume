@@ -92,11 +92,11 @@ const RenameResumeModal: React.FC = () => {
     <BaseModal
       icon={<DriveFileRenameOutline />}
       isOpen={isOpen}
-      heading={t<string>('modals.dashboard.rename-resume.heading')}
+      heading={t('modals.dashboard.rename-resume.heading')}
       handleClose={handleClose}
       footerChildren={
         <Button type="submit" disabled={isLoading} onClick={handleSubmit(onSubmit)}>
-          {t<string>('modals.dashboard.rename-resume.actions.rename-resume')}
+          {t('modals.dashboard.rename-resume.actions.rename-resume')}
         </Button>
       }
     >
@@ -107,7 +107,7 @@ const RenameResumeModal: React.FC = () => {
           render={({ field, fieldState }) => (
             <TextField
               autoFocus
-              label={t<string>('modals.dashboard.rename-resume.form.name.label')}
+              label={t('modals.dashboard.rename-resume.form.name.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -120,7 +120,7 @@ const RenameResumeModal: React.FC = () => {
           control={control}
           render={({ field, fieldState }) => (
             <TextField
-              label={t<string>('modals.dashboard.rename-resume.form.slug.label')}
+              label={t('modals.dashboard.rename-resume.form.slug.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}

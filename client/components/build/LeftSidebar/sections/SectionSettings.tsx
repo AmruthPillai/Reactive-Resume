@@ -32,7 +32,7 @@ const SectionSettings: React.FC<Props> = ({ path }) => {
 
   return (
     <div>
-      <Tooltip title={t<string>('builder.common.columns.tooltip')}>
+      <Tooltip title={t('builder.common.columns.tooltip')}>
         <ButtonBase onClick={handleClick} sx={{ padding: 1, borderRadius: 1 }} className="opacity-50 hover:opacity-75">
           <ViewWeek /> <span className="ml-1.5 text-xs">{columns}</span>
         </ButtonBase>
@@ -47,8 +47,8 @@ const SectionSettings: React.FC<Props> = ({ path }) => {
           horizontal: 'left',
         }}
       >
-        <div className="p-5 dark:bg-neutral-800">
-          <h4 className="mb-2 font-medium">{t<string>('builder.common.columns.heading')}</h4>
+        <div className="p-5 dark:bg-zinc-900">
+          <h4 className="mb-2 font-medium">{t('builder.common.columns.heading')}</h4>
 
           <ToggleButtonGroup exclusive value={columns} onChange={(_, value: number) => handleSetColumns(value)}>
             {[1, 2, 3, 4].map((index) => (

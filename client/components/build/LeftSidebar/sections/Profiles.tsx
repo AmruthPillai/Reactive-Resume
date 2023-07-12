@@ -28,7 +28,7 @@ const Profiles = () => {
 
   return (
     <>
-      <Heading path="sections.profiles" name={t<string>('builder.leftSidebar.sections.profiles.heading')} />
+      <Heading path="sections.profiles" name={t('builder.leftSidebar.sections.profiles.heading')} />
 
       <List
         path="basics.profiles"
@@ -40,8 +40,8 @@ const Profiles = () => {
 
       <footer className="flex justify-end">
         <Button variant="outlined" startIcon={<Add />} onClick={handleAdd}>
-          {t<string>('builder.common.actions.add', {
-            token: t<string>('builder.leftSidebar.sections.profiles.heading', { count: 1 }),
+          {t('builder.common.actions.add', {
+            token: t('builder.leftSidebar.sections.profiles.heading', { count: 1 }),
           })}
         </Button>
       </footer>
