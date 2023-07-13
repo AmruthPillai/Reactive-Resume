@@ -1,5 +1,5 @@
-import { ThemeConfig } from 'schema';
 import get from 'lodash/get';
+import { ThemeConfig } from 'schema';
 
 import { useAppSelector } from '@/store/hooks';
 

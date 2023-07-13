@@ -3,9 +3,9 @@
   "version": "3.8.1",
   "private": true,
   "scripts": {
-    "dev": "env-cmd --silent cross-var cross-env VERSION=$npm_package_version turbo run dev",
-    "build": "env-cmd --silent cross-var cross-env VERSION=$npm_package_version turbo run build",
-    "start": "env-cmd --silent cross-var cross-env VERSION=$npm_package_version turbo run start",
+    "dev": "dotenv -- turbo run dev",
+    "build": "dotenv -- turbo run build",
+    "start": "dotenv -- turbo run start",
     "format": "prettier --write --loglevel silent --cache .",
     "lint": "turbo run lint",
     "update-dependencies": "ncu -x nanoid --deep -u && pnpm install",
@@ -17,10 +17,7 @@
     "server"
   ],
   "dependencies": {
-    "cross-env": "^7.0.3",
-    "cross-var": "^1.1.0",
-    "env-cmd": "^10.1.0",
-    "uuid": "^9.0.0"
+    "dotenv-cli": "^7.2.1"
   },
   "devDependencies": {
     "@types/node": "^20.4.1",

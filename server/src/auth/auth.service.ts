@@ -20,7 +20,7 @@ export class AuthService {
     private schedulerRegistry: SchedulerRegistry,
     private configService: ConfigService,
     private usersService: UsersService,
-    private jwtService: JwtService
+    private jwtService: JwtService,
   ) {}
 
   async register(registerDto: RegisterDto) {
@@ -49,7 +49,7 @@ export class AuthService {
     if (!isPasswordMatching) {
       throw new HttpException(
         'The username/email and password combination provided was incorrect.',
-        HttpStatus.UNAUTHORIZED
+        HttpStatus.UNAUTHORIZED,
       );
     }
   }
@@ -64,7 +64,7 @@ export class AuthService {
     } catch (error) {
       throw new HttpException(
         'The username/email and password combination provided was incorrect.',
-        HttpStatus.UNAUTHORIZED
+        HttpStatus.UNAUTHORIZED,
       );
     }
   }

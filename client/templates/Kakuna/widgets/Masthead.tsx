@@ -12,7 +12,7 @@ import { addHttp, formatLocation, getPhotoClassNames } from '@/utils/template';
 const Masthead = () => {
   const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
   const { name, photo, email, phone, website, birthdate, headline, location, profiles } = useAppSelector(
-    (state) => state.resume.present.basics
+    (state) => state.resume.present.basics,
   );
 
   return (

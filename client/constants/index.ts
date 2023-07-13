@@ -10,7 +10,7 @@ export const FILENAME_TIMESTAMP = 'DDMMYYYYHHmmss';
 
 // Links
 export const DOCS_URL = 'https://docs.rxresu.me';
-export const DONATION_URL = 'https://paypal.me/RajaRajanA';
+export const DONATION_URL = 'https://paypal.me/amruthde';
 export const TRANSLATE_URL = 'https://translate.rxresu.me/';
 export const DIGITALOCEAN_URL = 'https://pillai.xyz/digitalocean';
 export const REDDIT_URL = 'https://www.reddit.com/r/reactiveresume/';

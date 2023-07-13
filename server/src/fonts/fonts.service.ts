@@ -9,7 +9,10 @@ import cachedResponse from './assets/cachedResponse.json';
 
 @Injectable()
 export class FontsService {
-  constructor(private configService: ConfigService, private httpService: HttpService) {}
+  constructor(
+    private configService: ConfigService,
+    private httpService: HttpService,
+  ) {}
 
   async getAll(): Promise<Font[]> {
     const apiKey = this.configService.get('google.apiKey');

@@ -1,8 +1,8 @@
-import { ListItem, Location, PhotoFilters } from 'schema';
 import clsx from 'clsx';
 import get from 'lodash/get';
 import isArray from 'lodash/isArray';
 import isEmpty from 'lodash/isEmpty';
+import { ListItem, Location, PhotoFilters } from 'schema';
 
 export type Required<T, K extends keyof T> = T & { [P in K]-?: T[P] };
 
@@ -55,7 +55,7 @@ export const parseListItemPath = (item: ListItem, path: string | string[], separ
 
 export const getPhotoClassNames = (filters: PhotoFilters) =>
   clsx({
-    'object-cover': true,
+    'object-cover aspect-square': true,
     grayscale: filters.grayscale,
     '!border-[4px] !border-solid': filters.border,
     'rounded-lg': filters.shape === 'rounded-square',

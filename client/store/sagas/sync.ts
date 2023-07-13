@@ -20,7 +20,7 @@ const DEBOUNCE_WAIT = 1000;
 
 const debouncedSync = debounce(
   (resume: Resume, dispatch: AppDispatch) => updateResume(resume).then((resume) => dispatch(setResume(resume))),
-  DEBOUNCE_WAIT
+  DEBOUNCE_WAIT,
 );
 
 function* handleSync(dispatch: AppDispatch) {
@@ -31,7 +31,7 @@ function* handleSync(dispatch: AppDispatch) {
 
 function* syncSaga(dispatch: AppDispatch) {
   yield takeLatest([setResumeState, addItem, editItem, duplicateItem, deleteItem, addSection, deleteSection], () =>
-    handleSync(dispatch)
+    handleSync(dispatch),
   );
 }
 

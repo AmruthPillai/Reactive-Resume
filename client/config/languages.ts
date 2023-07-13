@@ -54,5 +54,5 @@ export const languageMap: Record<string, Language> = languages.reduce(
     ...acc,
     [lang.code]: lang,
   }),
-  {}
+  {},
 );

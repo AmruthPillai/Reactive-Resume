@@ -49,7 +49,10 @@ const minimal_chromium_args = [
 export class PrinterService implements OnModuleInit, OnModuleDestroy {
   private browser: BrowserContext;
 
-  constructor(private readonly schedulerRegistry: SchedulerRegistry, private readonly configService: ConfigService) {}
+  constructor(
+    private readonly schedulerRegistry: SchedulerRegistry,
+    private readonly configService: ConfigService,
+  ) {}
 
   async onModuleInit() {
     this.browser = await chromium.launchPersistentContext('.playwright', {
@@ -84,7 +87,7 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
                 this.schedulerRegistry.deleteTimeout(`delete-${file}`);
               }
             }
-          })
+          }),
         );
       });
 
@@ -99,7 +102,7 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
 
       const pageFormat: PageConfig['format'] = await page.$$eval(
         '[data-page]',
-        (pages) => pages[0].getAttribute('data-format') as PageConfig['format']
+        (pages) => pages[0].getAttribute('data-format') as PageConfig['format'],
       );
 
       const resumePages = await page.$$eval('[data-page]', (pages) =>
@@ -107,7 +110,7 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
           pageNumber: index + 1,
           innerHTML: page.innerHTML,
           height: page.clientHeight,
-        }))
+        })),
       );
 
       const pdf = await PDFDocument.create();

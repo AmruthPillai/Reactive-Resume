@@ -1,9 +1,9 @@
 import { Cake, Email, Phone, Public, Room } from '@mui/icons-material';
-import { ThemeConfig } from 'schema';
 import clsx from 'clsx';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import { useMemo } from 'react';
+import { ThemeConfig } from 'schema';
 
 import Markdown from '@/components/shared/Markdown';
 import { useAppSelector } from '@/store/hooks';
@@ -16,7 +16,7 @@ import { addHttp, formatLocation, getPhotoClassNames } from '@/utils/template';
 export const MastheadSidebar: React.FC = () => {
   const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
   const { name, photo, email, phone, birthdate, website, location, profiles } = useAppSelector(
-    (state) => state.resume.present.basics
+    (state) => state.resume.present.basics,
   );
 
   return (

@@ -19,7 +19,7 @@ export class UsersService {
     @InjectRepository(User) private userRepository: Repository<User>,
     private schedulerRegistry: SchedulerRegistry,
     private mailService: MailService,
-    private dataSource: DataSource
+    private dataSource: DataSource,
   ) {}
 
   async findById(id: number): Promise<User> {
@@ -115,7 +115,7 @@ export class UsersService {
 
         throw new HttpException(
           'Please wait at least 30 minutes before resetting your password again.',
-          HttpStatus.TOO_MANY_REQUESTS
+          HttpStatus.TOO_MANY_REQUESTS,
         );
       } finally {
         await queryRunner.release();

@@ -10,7 +10,7 @@ export class PrinterController {
   async printAsPdf(
     @Param('username') username: string,
     @Param('slug') slug: string,
-    @Query('lastUpdated') lastUpdated: string
+    @Query('lastUpdated') lastUpdated: string,
   ): Promise<string> {
     try {
       return await this.printerService.printAsPdf(username, slug, lastUpdated);

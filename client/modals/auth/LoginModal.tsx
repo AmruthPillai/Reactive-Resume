@@ -121,7 +121,7 @@ const LoginModal: React.FC = () => {
     >
       <p>{t('modals.auth.login.body')}</p>
 
-      <form className="grid gap-4 xl:w-2/3">
+      <form className="grid gap-4">
         <Controller
           name="identifier"
           control={control}

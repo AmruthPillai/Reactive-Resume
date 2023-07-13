@@ -9,6 +9,6 @@ export type PrintResumeAsPdfParams = {
 export const printResumeAsPdf = (printResumeAsPdfParams: PrintResumeAsPdfParams): Promise<string> =>
   axios
     .get(
-      `/printer/${printResumeAsPdfParams.username}/${printResumeAsPdfParams.slug}?lastUpdated=${printResumeAsPdfParams.lastUpdated}`
+      `/printer/${printResumeAsPdfParams.username}/${printResumeAsPdfParams.slug}?lastUpdated=${printResumeAsPdfParams.lastUpdated}`,
     )
     .then((res) => res.data);

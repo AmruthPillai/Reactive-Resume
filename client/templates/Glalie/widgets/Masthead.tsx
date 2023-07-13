@@ -13,7 +13,7 @@ export const MastheadSidebar: React.FC = () => {
   const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
   const primaryColor: string = useAppSelector((state) => get(state.resume.present, 'metadata.theme.primary'));
   const { name, headline, photo, email, phone, birthdate, website, location, profiles } = useAppSelector(
-    (state) => state.resume.present.basics
+    (state) => state.resume.present.basics,
   );
 
   return (

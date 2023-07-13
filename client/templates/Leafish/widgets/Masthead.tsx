@@ -14,7 +14,7 @@ import { addHttp, formatLocation, getPhotoClassNames } from '@/utils/template';
 const Masthead: React.FC = () => {
   const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
   const { name, photo, headline, summary, email, phone, birthdate, website, location, profiles } = useAppSelector(
-    (state) => state.resume.present.basics
+    (state) => state.resume.present.basics,
   );
   const theme: ThemeConfig = useAppSelector((state) => get(state.resume.present, 'metadata.theme', {} as ThemeConfig));
 

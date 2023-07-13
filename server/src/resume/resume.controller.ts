@@ -43,7 +43,7 @@ export class ResumeController {
   findOneByShortId(
     @Param('shortId') shortId: string,
     @User('id') userId?: number,
-    @Query('secretKey') secretKey?: string
+    @Query('secretKey') secretKey?: string,
   ) {
     return this.resumeService.findOneByShortId(shortId, userId, secretKey);
   }
@@ -54,7 +54,7 @@ export class ResumeController {
     @Param('username') username: string,
     @Param('slug') slug: string,
     @User('id') userId?: number,
-    @Query('secretKey') secretKey?: string
+    @Query('secretKey') secretKey?: string,
   ) {
     return this.resumeService.findOneByIdentifier(username, slug, userId, secretKey);
   }

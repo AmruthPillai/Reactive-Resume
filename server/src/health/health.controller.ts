@@ -6,7 +6,7 @@ export class HealthController {
   constructor(
     private health: HealthCheckService,
     private http: HttpHealthIndicator,
-    private db: TypeOrmHealthIndicator
+    private db: TypeOrmHealthIndicator,
   ) {}
 
   @Get()

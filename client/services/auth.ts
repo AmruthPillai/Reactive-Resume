@@ -83,7 +83,7 @@ export const resetPassword = async (resetPasswordParams: ResetPasswordParams) =>
 export const updateProfile = async (updateProfileParams: UpdateProfileParams) => {
   const { data: user } = await axios.patch<User, AxiosResponse<User>, UpdateProfileParams>(
     '/auth/update-profile',
-    updateProfileParams
+    updateProfileParams,
   );
 
   store.dispatch(setUser(user));

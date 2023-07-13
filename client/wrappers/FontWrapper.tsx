@@ -11,7 +11,7 @@ const FontWrapper: React.FC<React.PropsWithChildren<unknown>> = ({ children }) =
     const WebFont = (await import('webfontloader')).default;
     const families = Object.values(typography.family).reduce(
       (acc, family) => [...acc, `${family}:400,600,700`],
-      [] as string[]
+      [] as string[],
     );
 
     WebFont.load({ google: { families } });
