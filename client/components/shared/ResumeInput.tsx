@@ -58,6 +58,7 @@ const ResumeInput: React.FC<Props> = ({ type = 'text', label, path, className, m
         openTo="year"
         label={label}
         value={dayjs(value)}
+        views={['year', 'month', 'day']}
         slots={{ textField: (params) => <TextField {...params} error={false} className={className} /> }}
         onChange={(date: dayjs.Dayjs | null) => {
           if (!date) return onChangeValue('');
