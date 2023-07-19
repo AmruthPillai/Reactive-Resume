@@ -91,8 +91,8 @@ jobs:
         with:
           images: amruthpillai/reactive-resume
           tags: |
-            type=raw,value=${{ matrix.image }}-latest
-            type=raw,value=${{ matrix.image }}-${{ steps.version.outputs.current-version }}
+            type=raw,value=${{ matrix.image }}-arm64-latest
+            type=raw,value=${{ matrix.image }}-arm64-${{ steps.version.outputs.current-version }}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2.2.0
