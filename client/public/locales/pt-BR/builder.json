@@ -3,12 +3,12 @@
     "actions": {
       "add": "Adicionar {{token}}",
       "delete": "Remover {{token}}",
-      "edit": "Editar {{token}}",
-      "duplicate": "Duplicar sessão"
+      "duplicate": "Duplicar sessão",
+      "edit": "Editar {{token}}"
     },
     "columns": {
       "heading": "Colunas",
-      "tooltip": "Alterar o número de colunas"
+      "tooltip": "Alterar número de colunas"
     },
     "form": {
       "date": {
@@ -21,7 +21,7 @@
         "label": "Endereço de e-mail"
       },
       "end-date": {
-        "help-text": "Deixe este campo em branco se for até o presente",
+        "help-text": "Deixe este campo em branco se for emprego atual",
         "label": "Data de Término"
       },
       "keywords": {
@@ -49,7 +49,7 @@
         "label": "Subtítulo"
       },
       "summary": {
-        "label": "Resumo"
+        "label": "Descritivo"
       },
       "title": {
         "label": "Título"
@@ -67,7 +67,7 @@
         "duplicate": "Duplicar",
         "edit": "Editar"
       },
-      "empty-text": "Essa lista está vazia."
+      "empty-text": "Lista está vazia."
     },
     "tooltip": {
       "delete-item": "Tem certeza de que deseja excluir este item? Esta ação é irreversível.",
@@ -81,13 +81,13 @@
       "center-artboard": "Prancheta central",
       "copy-link": "Copiar link do currículo",
       "export-pdf": "Exportar PDF",
+      "redo": "Refazer",
       "toggle-orientation": "Alternar orientação da página",
       "toggle-page-break-line": "Alternar linha de quebra de página",
       "toggle-sidebars": "Alternar barra lateral",
-      "zoom-in": "Mais Zoom",
-      "zoom-out": "Menos Zoom",
       "undo": "Desfazer",
-      "redo": "Redo"
+      "zoom-in": "Mais Zoom",
+      "zoom-out": "Menos Zoom"
     }
   },
   "header": {
@@ -109,17 +109,14 @@
           "awarder": {
             "label": "Concedente"
           }
-        },
-        "heading": "Títulos",
-        "heading_one": "Título"
-      },
-      "work": {
-        "heading": "Experiências de Trabalho",
-        "heading_one": "Experiência de Trabalho"
+        }
       },
       "basics": {
         "actions": {
           "photo-filters": "Filtros da foto"
+        },
+        "birthdate": {
+          "label": "Data de nascimento"
         },
         "heading": "Informações básicas",
         "headline": {
@@ -127,9 +124,6 @@
         },
         "name": {
           "label": "Nome Completo"
-        },
-        "birthdate": {
-          "label": "Data de nascimento"
         },
         "photo-filters": {
           "effects": {
@@ -160,9 +154,7 @@
           "issuer": {
             "label": "Emissor"
           }
-        },
-        "heading": "Certificações",
-        "heading_one": "Certificação"
+        }
       },
       "education": {
         "form": {
@@ -181,14 +173,12 @@
           "institution": {
             "label": "Instituição"
           }
-        },
-        "heading": "Formação Acadêmica",
-        "heading_one": "Formação Acadêmica"
+        }
       },
       "experience": {
         "form": {
           "name": {
-            "label": "Company Name"
+            "label": "Nome da Empresa"
           }
         }
       },
@@ -204,10 +194,10 @@
         },
         "heading": "Localização",
         "postal-code": {
-          "label": "Código Postal"
+          "label": "CEP"
         },
         "region": {
-          "label": "Região"
+          "label": "Estado"
         }
       },
       "profiles": {
@@ -227,34 +217,14 @@
           "publisher": {
             "label": "Editor"
           }
-        },
-        "heading": "Publicações",
-        "heading_one": "Publicação"
+        }
       },
       "references": {
         "form": {
           "relationship": {
             "label": "Relação"
           }
-        },
-        "heading": "Referências",
-        "heading_one": "Referência"
-      },
-      "skills": {
-        "heading": "Habilidades",
-        "heading_one": "Habilidade"
-      },
-      "languages": {
-        "heading": "Idiomas",
-        "heading_one": "Idioma"
-      },
-      "interests": {
-        "heading": "Interesses",
-        "heading_one": "Interesse"
-      },
-      "projects": {
-        "heading": "Projetos",
-        "heading_one": "Projeto"
+        }
       },
       "section": {
         "heading": "Seção"
@@ -264,9 +234,7 @@
           "organization": {
             "label": "Organização"
           }
-        },
-        "heading": "Trabalhos Voluntários",
-        "heading_one": "Trabalho Voluntário"
+        }
       }
     }
   },
@@ -293,7 +261,7 @@
         }
       },
       "layout": {
-        "heading": "Layout",
+        "heading": "Disposição",
         "tooltip": {
           "reset-layout": "Redefinir Layout"
         }
@@ -301,17 +269,18 @@
       "links": {
         "bugs-features": {
           "body": "Alguma coisa te impede de fazer um currículo? Ou você tem uma ideia incrível para adicionar? Crie uma issue no GitHub para começar.",
-          "button": "GitHub Issues",
+          "button": "Problemas do GitHub",
           "heading": "Bugs? Sugestões de recursos?"
         },
+        "docs": "Documentação",
         "donate": {
           "body": "Se você gostou de usar o Reactive Resume, considere doar o máximo possível para manter o aplicativo em funcionamento, sem anúncios e gratuito para sempre.",
           "button": "Pague-me um café",
           "heading": "Faça uma doação ao Reactive Resume"
         },
         "github": "Código Fonte",
-        "docs": "Documentação",
-        "heading": "Links"
+        "heading": "links",
+        "reddit": "Reddit"
       },
       "settings": {
         "global": {
@@ -330,13 +299,13 @@
         },
         "heading": "Configurações",
         "page": {
+          "break-line": {
+            "primary": "Quebra de Linha",
+            "secondary": "Mostrar uma linha em todas as páginas para marcar a altura de uma página A4"
+          },
           "format": {
             "primary": "Tamanho do papel",
             "secondary": "Determina as dimensões das suas páginas de currículo"
-          },
-          "break-line": {
-            "primary": "Linha de quebra",
-            "secondary": "Mostrar uma linha em todas as páginas para marcar a altura de uma página A4"
           },
           "heading": "Página",
           "orientation": {
