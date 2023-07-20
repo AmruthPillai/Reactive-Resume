@@ -71,6 +71,31 @@
         }
       },
       "heading": "Redefinir sua senha"
+    },
+    "profile": {
+      "heading": "Sua conta",
+      "form": {
+        "avatar": {
+          "help-text": "Você pode atualizar sua foto de perfil no <1>Gravatar</1>"
+        },
+        "name": {
+          "label": "Nome completo"
+        },
+        "email": {
+          "label": "Endereço de email",
+          "help-text": "Não é possível atualizar seu endereço de e-mail no momento, crie uma nova conta."
+        }
+      },
+      "delete-account": {
+        "heading": "Excluir conta e dados",
+        "body": "Para excluir sua conta, seus dados e todos os seus currículos, digite \"{{keyword}}\" na caixa de texto e clique no botão. Observe que esta é uma ação irreversível e seus dados não podem ser recuperados novamente.",
+        "actions": {
+          "delete": "Deletar conta"
+        }
+      },
+      "actions": {
+        "save": "Salvar alterações"
+      }
     }
   },
   "dashboard": {
