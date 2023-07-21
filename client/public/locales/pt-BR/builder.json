@@ -8,7 +8,7 @@
     },
     "columns": {
       "heading": "Colunas",
-      "tooltip": "Alterar o número de colunas"
+      "tooltip": "Alterar número de colunas"
     },
     "form": {
       "date": {
@@ -21,7 +21,7 @@
         "label": "Endereço de e-mail"
       },
       "end-date": {
-        "help-text": "Deixe este campo em branco se for até o presente",
+        "help-text": "Deixe este campo em branco se for emprego atual",
         "label": "Data de Término"
       },
       "keywords": {
@@ -49,7 +49,7 @@
         "label": "Subtítulo"
       },
       "summary": {
-        "label": "Resumo"
+        "label": "Descritivo"
       },
       "title": {
         "label": "Título"
@@ -67,7 +67,7 @@
         "duplicate": "Duplicar",
         "edit": "Editar"
       },
-      "empty-text": "Essa lista está vazia."
+      "empty-text": "Lista está vazia."
     },
     "tooltip": {
       "delete-item": "Tem certeza de que deseja excluir este item? Esta ação é irreversível.",
@@ -87,7 +87,7 @@
       "zoom-in": "Mais Zoom",
       "zoom-out": "Menos Zoom",
       "undo": "Desfazer",
-      "redo": "Redo"
+      "redo": "Refazer"
     }
   },
   "header": {
@@ -182,13 +182,13 @@
             "label": "Instituição"
           }
         },
-        "heading": "Formação Acadêmica",
-        "heading_one": "Formação Acadêmica"
+        "heading": "Escolaridade",
+        "heading_one": "Escolaridade"
       },
       "experience": {
         "form": {
           "name": {
-            "label": "Company Name"
+            "label": "Nome da Empresa"
           }
         }
       },
@@ -204,10 +204,10 @@
         },
         "heading": "Localização",
         "postal-code": {
-          "label": "Código Postal"
+          "label": "CEP"
         },
         "region": {
-          "label": "Região"
+          "label": "Estado"
         }
       },
       "profiles": {
@@ -335,7 +335,7 @@
             "secondary": "Determina as dimensões das suas páginas de currículo"
           },
           "break-line": {
-            "primary": "Linha de quebra",
+            "primary": "Quebra de Linha",
             "secondary": "Mostrar uma linha em todas as páginas para marcar a altura de uma página A4"
           },
           "heading": "Página",
