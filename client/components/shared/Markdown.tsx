@@ -15,9 +15,9 @@ const Markdown: React.FC<Props> = ({ className, children }) => {
 
   return (
     <ReactMarkdown
+      rehypePlugins={[rehypeKatex]}
       className={clsx('markdown', className)}
       remarkPlugins={[remarkGfm, remarkMath]}
-      rehypePlugins={[rehypeKatex]}
     >
       {children}
     </ReactMarkdown>

@@ -2,6 +2,7 @@ import { TextField } from '@mui/material';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import dayjs from 'dayjs';
 import get from 'lodash/get';
+import isEmpty from 'lodash/isEmpty';
 import { useEffect, useState } from 'react';
 
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
@@ -57,9 +58,9 @@ const ResumeInput: React.FC<Props> = ({ type = 'text', label, path, className, m
       <DatePicker
         openTo="year"
         label={label}
-        value={dayjs(value)}
-        views={['year', 'month', 'day']}
         className={className}
+        views={['year', 'month', 'day']}
+        value={isEmpty(value) ? null : dayjs(value)}
         onChange={(date: dayjs.Dayjs | null) => {
           if (!date) return onChangeValue('');
           if (dayjs(date).isValid()) return onChangeValue(dayjs(date).format('YYYY-MM-DD'));

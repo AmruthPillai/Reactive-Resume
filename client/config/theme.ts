@@ -24,6 +24,13 @@ const theme: ThemeOptions = {
         variant: 'outlined',
       },
     },
+    MuiInputBase: {
+      styleOverrides: {
+        input: {
+          boxShadow: 'none !important',
+        },
+      },
+    },
     MuiAppBar: {
       styleOverrides: {
         root: {

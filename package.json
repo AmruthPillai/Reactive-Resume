@@ -3,11 +3,11 @@
   "version": "3.8.1",
   "private": true,
   "scripts": {
-    "dev": "dotenv -- turbo run dev",
+    "dev": "turbo run dev",
     "build": "dotenv -- turbo run build",
     "start": "dotenv -- turbo run start",
-    "format": "prettier --write --loglevel silent --cache .",
     "lint": "turbo run lint",
+    "format": "prettier --write --loglevel silent --cache .",
     "update-dependencies": "ncu -x nanoid --deep -u && pnpm install",
     "generate-env": "ts-node ./scripts/generate-env.ts"
   },
@@ -20,17 +20,17 @@
     "dotenv-cli": "^7.2.1"
   },
   "devDependencies": {
-    "@types/node": "^20.4.4",
+    "@types/node": "^20.4.5",
     "@typescript-eslint/eslint-plugin": "^6.2.0",
     "@typescript-eslint/parser": "^6.2.0",
     "eslint": "^8.45.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-unused-imports": "^3.0.0",
-    "npm-check-updates": "^16.10.16",
+    "npm-check-updates": "^16.10.17",
     "prettier": "^3.0.0",
     "ts-node": "^10.9.1",
-    "turbo": "^1.10.11",
+    "turbo": "^1.10.12",
     "typescript": "^5.1.6"
   },
   "resolutions": {

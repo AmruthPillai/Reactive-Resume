@@ -30,7 +30,7 @@ const Export = () => {
   };
 
   const handleExportJSON = async () => {
-    const { nanoid } = await import('nanoid');
+    const nanoid = (await import('nanoid')).nanoid;
     const download = (await import('downloadjs')).default;
 
     const redactedResume = pick(resume, ['basics', 'sections', 'metadata', 'public']);
