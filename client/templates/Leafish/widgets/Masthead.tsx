@@ -1,8 +1,8 @@
 import { Cake, Email, Phone, Public, Room } from '@mui/icons-material';
 import { alpha } from '@mui/material';
-import { ThemeConfig } from 'schema';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
+import { ThemeConfig } from 'schema';
 
 import Markdown from '@/components/shared/Markdown';
 import { useAppSelector } from '@/store/hooks';
