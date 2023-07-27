@@ -3,7 +3,7 @@
   "version": "3.8.1",
   "private": true,
   "scripts": {
-    "dev": "turbo run dev",
+    "dev": "dotenv -- turbo run dev",
     "build": "dotenv -- turbo run build",
     "start": "dotenv -- turbo run start",
     "lint": "turbo run lint",
