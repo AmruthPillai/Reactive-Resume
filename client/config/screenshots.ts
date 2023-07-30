@@ -10,7 +10,7 @@ export const screenshots: Screenshot[] = [
   },
   {
     src: '/images/screenshots/import-external.png',
-    alt: 'Import your data from LinkedIn, JSON Resume or Reactive Resume',
+    alt: 'Import your data from LinkedIn, JSON Resume or CVPAP',
   },
   {
     src: '/images/screenshots/builder.png',

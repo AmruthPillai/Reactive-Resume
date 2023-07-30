@@ -5,8 +5,8 @@ const PrivacyPolicy: NextPage = () => (
     <h1>Privacy Policy</h1>
 
     <p>
-      Amruth Pillai built Reactive Resume as a free and open source app. This service is provided by Amruth Pillai at no
-      cost and is intended for use as is.
+      Amruth Pillai built CVPAP as a free and open source app. This service is provided by Amruth Pillai at no cost and
+      is intended for use as is.
     </p>
 
     <p>
@@ -22,7 +22,7 @@ const PrivacyPolicy: NextPage = () => (
 
     <p>
       The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which are accessible
-      at Reactive Resume unless otherwise defined in this Privacy Policy.
+      at CVPAP unless otherwise defined in this Privacy Policy.
     </p>
 
     <h3>Information Collection and Use</h3>

@@ -10,12 +10,12 @@ const testimonials: Testimony[] = [
   },
   {
     name: 'Chandani B.',
-    message: `Hi Amruth, Thank you for creating reactive resume and keeping it open source. I am about to use it in updating my profile and therefore wanted to express my gratitude.
+    message: `Hi Amruth, Thank you for creating CVPAP and keeping it open source. I am about to use it in updating my profile and therefore wanted to express my gratitude.
 As a new enthusiast with no previous background in coding, I thought it would be amazing to connect with you to learn more. Thanks`,
   },
   {
     name: 'Aadith R.',
-    message: `Hey, I just found out about Reactive Resume through a co-worker and it's damn good. Minimalist, Contains all the necessary things and is also editable.`,
+    message: `Hey, I just found out about CVPAP through a co-worker and it's damn good. Minimalist, Contains all the necessary things and is also editable.`,
   },
   {
     name: 'Krzysztof W.',
@@ -23,11 +23,11 @@ As a new enthusiast with no previous background in coding, I thought it would be
   },
   {
     name: 'Bharat M.',
-    message: `Hi Amruth, I Just came across your open-source app, Reactive Resume while trying to search for some good resume builders online. I can't express how useful it is! I wish I found it earlier than yesterday! :D I appreciate your work. From now on, I'm gonna recommend the app to whoever I feel could make good use of it! Thank you very much for your work! I will remember this and would like to buy you coffee as soon as I can. What's better than donating for such a good cause! Thanks again. Have a great day!`,
+    message: `Hi Amruth, I Just came across your open-source app, CVPAP while trying to search for some good resume builders online. I can't express how useful it is! I wish I found it earlier than yesterday! :D I appreciate your work. From now on, I'm gonna recommend the app to whoever I feel could make good use of it! Thank you very much for your work! I will remember this and would like to buy you coffee as soon as I can. What's better than donating for such a good cause! Thanks again. Have a great day!`,
   },
   {
     name: 'Shlok C.',
-    message: `Hey Amruth, I recently stumbled upon reactive resume and have started playing around with it. Kudos to you for building such an awesome open-source resume building tool..... Best wishes!`,
+    message: `Hey Amruth, I recently stumbled upon CVPAP and have started playing around with it. Kudos to you for building such an awesome open-source resume building tool..... Best wishes!`,
   },
   {
     name: 'Joao R.',

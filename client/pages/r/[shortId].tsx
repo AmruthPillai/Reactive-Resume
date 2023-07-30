@@ -97,7 +97,7 @@ const Preview: NextPage<Props> = ({ shortId }) => {
       </div>
 
       <p className={styles.footer}>
-        Made with <Link href="/">Reactive Resume</Link>
+        Made with <Link href="/">CVPAP</Link>
       </p>
     </div>
   );

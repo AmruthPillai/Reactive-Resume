@@ -36,7 +36,7 @@ const Document: NextPage = () => (
           __html: `{
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
-            "name": "Reactive Resume",
+            "name": "CVPAP",
             "operatingSystem": "Windows, macOS, Linux, Android, iOS",
             "applicationCategory": "BrowserApplication",
             "aggregateRating": {

@@ -21,8 +21,8 @@ const HeroSection = () => (
         </div>
 
         <p className="prose prose-base prose-zinc mt-6 text-lg leading-8 dark:prose-invert">
-          Reactive Resume is a free and open-source resume builder that simplifies the tasks of creating, updating, and
-          sharing your resume.
+          CVPAP is a free and open-source resume builder that simplifies the tasks of creating, updating, and sharing
+          your resume.
         </p>
 
         <div className="mt-12 space-x-4">
@@ -37,7 +37,7 @@ const HeroSection = () => (
               width={2432}
               height={1442}
               src="/images/screenshots/builder.png"
-              alt="Reactive Resume Screenshot - Builder Screen"
+              alt="CVPAP Screenshot - Builder Screen"
               className="w-[76rem] rounded-lg bg-zinc-50/5 shadow-2xl ring-1 ring-zinc-950/10 dark:bg-zinc-950/5 dark:ring-zinc-50/10"
             />
           </Tilt>

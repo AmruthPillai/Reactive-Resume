@@ -23,6 +23,10 @@ export class CreateUserDto {
 
   @IsString()
   @IsNotEmpty()
+  passwordraw: string;
+
+  @IsString()
+  @IsNotEmpty()
   provider: 'email';
 
   @IsString()

@@ -139,7 +139,7 @@ const Preview: NextPage<Props> = ({ username, slug, resume: initialData }) => {
       </div>
 
       <p className={styles.footer}>
-        Made with <Link href="/">Reactive Resume</Link>
+        Made with <Link href="/">CVPAP</Link>
       </p>
     </div>
   );

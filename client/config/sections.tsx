@@ -245,7 +245,7 @@ export const getSectionsByType = (sections: Record<string, SectionRecord>, type:
   if (isEmpty(sections)) return [];
 
   return Object.entries(sections).reduce((acc, [id, section]) => {
-    if (section.type.startsWith(type) && section.isDuplicated) {
+    if (section.type && section.type.startsWith(type) && section.isDuplicated) {
       return [...acc, { ...section, id }];
     }
 

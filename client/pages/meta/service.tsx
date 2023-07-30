@@ -33,12 +33,12 @@ const TermsOfService: NextPage = () => (
     </p>
 
     <p>
-      The Reactive Resume app stores and processes personal data that you have provided to us, to provide my Service.
-      It&apos;s your responsibility to keep your phone and access to the app secure. We therefore recommend that you do
-      not jailbreak or root your phone, which is the process of removing software restrictions and limitations imposed
-      by the official operating system of your device. It could make your phone vulnerable to malware/viruses/malicious
-      programs, compromise your phone&apos;s security features and it could mean that the Reactive Resume app won&apos;t
-      work properly or at all.
+      The CVPAP app stores and processes personal data that you have provided to us, to provide my Service. It&apos;s
+      your responsibility to keep your phone and access to the app secure. We therefore recommend that you do not
+      jailbreak or root your phone, which is the process of removing software restrictions and limitations imposed by
+      the official operating system of your device. It could make your phone vulnerable to malware/viruses/malicious
+      programs, compromise your phone&apos;s security features and it could mean that the CVPAP app won&apos;t work
+      properly or at all.
     </p>
 
     <p>

@@ -53,7 +53,6 @@ export const resumeSlice = createSlice({
       const index = list.findIndex((item) => item.id === value.id);
 
       list[index] = value;
-
       set(state, path, list);
     },
     duplicateItem: (state: Resume, action: PayloadAction<DuplicateItemPayload>) => {

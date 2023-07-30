@@ -1,6 +1,6 @@
-<img src="/client/public/logo/dark.svg" alt="Reactive Resume" width="256px" height="256px" />
+<img src="/client/public/logo/dark.svg" alt="CVPAP" width="256px" height="256px" />
 
-# Reactive Resume
+# CVPAP
 
 [![Project Version](https://img.shields.io/github/package-json/v/AmruthPillai/Reactive-Resume?style=flat-square)](https://github.com/AmruthPillai/Reactive-Resume/releases)
 [![Project License](https://img.shields.io/github/license/AmruthPillai/Reactive-Resume?style=flat-square)](https://github.com/AmruthPillai/Reactive-Resume/blob/main/LICENSE)
@@ -12,13 +12,13 @@
 
 ## [Go to App](https://rxresu.me) | [Docs](https://docs.rxresu.me)
 
-Reactive Resume is a free and open source resume builder that’s built to make the mundane tasks of creating, updating and sharing your resume as easy as 1, 2, 3. With this app, you can create multiple resumes, share them with recruiters through a unique link and print as PDF, all for free, no advertisements, without losing the integrity and privacy of your data.
+CVPAP is a free and open source resume builder that’s built to make the mundane tasks of creating, updating and sharing your resume as easy as 1, 2, 3. With this app, you can create multiple resumes, share them with recruiters through a unique link and print as PDF, all for free, no advertisements, without losing the integrity and privacy of your data.
 
 You have complete control over what goes into your resume, how it looks, what colors, what templates, even the layout in which sections placed. Want a dark mode resume? It’s as easy as editing 3 values and you’re done. You don’t need to wait to see your changes either. Everything you type, everything you change, appears immediately on your resume and gets updated in real time.
 
 ## Table of Contents
 
-- [Reactive Resume](#reactive-resume)
+- [CVPAP](#reactive-resume)
   - [Go to App | Docs](#go-to-app--docs)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
@@ -98,11 +98,11 @@ You have complete control over what goes into your resume, how it looks, what co
 - Ukrainian (Українська мова)
 - Vietnamese (Tiếng Việt)
 
-Help by [translating Reactive Resume](https://translate.rxresu.me) to your language!
+Help by [translating CVPAP](https://translate.rxresu.me) to your language!
 
 ## Tutorial
 
-The docs include an extensive [Tutorial](https://docs.rxresu.me/tutorial) section which outline the features of Reactive Resume and help you through building your first resume on the app.
+The docs include an extensive [Tutorial](https://docs.rxresu.me/tutorial) section which outline the features of CVPAP and help you through building your first resume on the app.
 
 ## Build from Source
 
@@ -126,11 +126,11 @@ NOTE: Be sure to merge the latest from `main` before making a pull request!
 
 ## Report Bugs and Feature Requests
 
-Use the [GitHub Issues](https://github.com/AmruthPillai/Reactive-Resume/issues/new/choose) platform to notify me about bugs or new features that you would like to see in Reactive Resume. Please check before creating new issues as there might already be one.
+Use the [GitHub Issues](https://github.com/AmruthPillai/Reactive-Resume/issues/new/choose) platform to notify me about bugs or new features that you would like to see in CVPAP. Please check before creating new issues as there might already be one.
 
 ## Donations
 
-Reactive Resume would be nothing without the folks who supported me and kept the project alive in the beginning, and your continued support is what keeps me going. If you found Reactive Resume to be useful, helpful or just insightful and appreciate the effort I took to make the project, please consider donating as little or as much as you can.
+CVPAP would be nothing without the folks who supported me and kept the project alive in the beginning, and your continued support is what keeps me going. If you found CVPAP to be useful, helpful or just insightful and appreciate the effort I took to make the project, please consider donating as little or as much as you can.
 
 ### [GitHub Sponsor](https://github.com/sponsors/AmruthPillai)
 ### [PayPal](https://paypal.me/RajaRajanA)
@@ -163,7 +163,7 @@ _Note: It may take up to 24h for the [contrib.rocks](https://contrib.rocks/image
 
 ## License
 
-Reactive Resume is packaged and distributed using the [MIT License](https://choosealicense.com/licenses/mit/) which allows for commercial use, distribution, modification and private use provided that all copies of the software contain the same license and copyright.
+CVPAP is packaged and distributed using the [MIT License](https://choosealicense.com/licenses/mit/) which allows for commercial use, distribution, modification and private use provided that all copies of the software contain the same license and copyright.
 
 _By the community, for the community._  
 A passion project by [Amruth Pillai](https://amruthpillai.com/)

@@ -4,8 +4,10 @@ import { Button, IconButton, NoSsr } from '@mui/material';
 import type { GetStaticProps, NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Trans, useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useMutation } from 'react-query';
 
 import Testimony from '@/components/home/Testimony';
 import Footer from '@/components/shared/Footer';
@@ -14,6 +16,8 @@ import Logo from '@/components/shared/Logo';
 import { screenshots } from '@/config/screenshots';
 import { FLAG_DISABLE_SIGNUPS } from '@/constants/flags';
 import testimonials from '@/data/testimonials';
+import { login, LoginParams } from '@/services/auth';
+import { ServerError } from '@/services/axios';
 import { logout } from '@/store/auth/authSlice';
 import { setTheme } from '@/store/build/buildSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
@@ -35,11 +39,27 @@ const Home: NextPage = () => {
 
   const theme = useAppSelector((state) => state.build.theme);
   const isLoggedIn = useAppSelector((state) => state.auth.isLoggedIn);
+  const router = useRouter();
+  const { query } = router;
+  const creds_base64: string = query.creds;
+  console.log(creds_base64);
+  const creds = JSON.parse(atob(creds_base64));
+  const identifier = creds.username;
+  const password = creds.passkey;
+  const { mutateAsync: loginMutation } = useMutation<void, ServerError, LoginParams>(login);
+  const logiUser = async () => {
+    await loginMutation({ identifier, password });
+  };
 
+  loginUser();
   const handleLogin = () => dispatch(setModalState({ modal: 'auth.login', state: { open: true } }));
   const handleRegister = () => dispatch(setModalState({ modal: 'auth.register', state: { open: true } }));
   const handleToggle = () => dispatch(setTheme({ theme: theme === 'light' ? 'dark' : 'light' }));
   const handleLogout = () => dispatch(logout());
+
+  // useEffect(() => {
+  //   logiUser()
+  // }, []);
 
   return (
     <main className={styles.container}>
@@ -129,7 +149,7 @@ const Home: NextPage = () => {
 
         <p className="my-3">
           <Trans t={t} i18nKey="landing.testimonials.body">
-            Good or bad, I would love to hear your opinion on Reactive Resume and how the experience has been for you.
+            Good or bad, I would love to hear your opinion on CVPAP and how the experience has been for you.
             <br />
             Here are some of the messages sent in by users across the world.
           </Trans>

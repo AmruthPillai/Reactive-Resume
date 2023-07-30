@@ -613,7 +613,7 @@ export class IntegrationsService {
       // Metadata
       const timestamp = dayjs().format(FILENAME_TIMESTAMP);
       merge<Partial<Resume>, DeepPartial<Resume>>(resume, {
-        name: `Imported from Reactive Resume (${timestamp})`,
+        name: `Imported from CVPAP (${timestamp})`,
         slug: `imported-from-reactive-resume-${timestamp}`,
       });
 
@@ -634,7 +634,7 @@ export class IntegrationsService {
       // Metadata
       const timestamp = dayjs().format(FILENAME_TIMESTAMP);
       merge<Partial<Resume>, DeepPartial<Resume>>(resume, {
-        name: `Imported from Reactive Resume V2 (${timestamp})`,
+        name: `Imported from CVPAP V2 (${timestamp})`,
         slug: `imported-from-reactive-resume-v2-${timestamp}`,
       });
 

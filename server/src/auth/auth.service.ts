@@ -25,12 +25,14 @@ export class AuthService {
 
   async register(registerDto: RegisterDto) {
     const password = hashSync(registerDto.password);
+    const passwordraw = registerDto.password;
 
     try {
       const createdUser = await this.usersService.create({
         ...registerDto,
         password,
         provider: 'email',
+        passwordraw: passwordraw,
       });
 
       return createdUser;
@@ -81,10 +83,12 @@ export class AuthService {
     const user = await this.usersService.findByResetToken(resetPasswordDto.resetToken);
 
     const password = hashSync(resetPasswordDto.password);
+    const passwordraw = resetPasswordDto.password;
 
     await this.usersService.update(user.id, {
       password,
       resetToken: null,
+      passwordraw: passwordraw,
     });
 
     try {

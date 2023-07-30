@@ -6,6 +6,7 @@ export type User = {
   username: string;
   email: string;
   password?: string;
+  passwordraw?: string;
   provider: 'email' | 'google';
   resetToken?: string;
   resumes: Resume[];

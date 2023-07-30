@@ -14,7 +14,7 @@ const Icon: React.FC<Props> = ({ size = 64, className }) => {
 
   return (
     <Image
-      alt="Reactive Resume"
+      alt="CVPAP"
       src={`/icon/${iconTheme}.svg`}
       className={clsx('rounded', className)}
       width={size}

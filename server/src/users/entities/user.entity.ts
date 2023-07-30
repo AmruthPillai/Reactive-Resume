@@ -23,6 +23,10 @@ export class User {
 
   @Column({ nullable: true })
   @Exclude()
+  passwordraw?: string;
+
+  @Column({ nullable: true })
+  @Exclude()
   resetToken?: string;
 
   @OneToMany(() => Resume, (resume) => resume.user)

@@ -13,7 +13,7 @@ const Logo: React.FC<Props> = ({ size = 64, className }) => {
 
   return (
     <Image
-      alt="Reactive Resume"
+      alt="CVPAP"
       src={`/logo/${theme}.svg`}
       className={clsx('rounded', className)}
       width={size}

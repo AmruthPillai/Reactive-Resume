@@ -17,7 +17,7 @@ const Footer = () => {
         <div className="flex flex-col gap-y-2">
           <Logo size={96} className="-ml-2" />
 
-          <h2 className="text-xl font-medium">Reactive Resume</h2>
+          <h2 className="text-xl font-medium">CVPAP</h2>
 
           <p className="prose prose-sm prose-zinc leading-relaxed opacity-60 dark:prose-invert">
             A free and open-source resume builder that simplifies the tasks of creating, updating, and sharing your

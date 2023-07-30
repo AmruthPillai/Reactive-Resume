@@ -47,7 +47,7 @@ export class MailService {
         name: user.name,
         email: user.email,
       },
-      subject: 'Reset your Reactive Resume password',
+      subject: 'Reset your CVPAP password',
       message: `<p>Hey ${user.name}!</p> <p>You can reset your password by visiting this link: <a href="${url}">${url}</a>.</p> <p>But hurry, because it will expire in 30 minutes.</p>`,
     };
 
