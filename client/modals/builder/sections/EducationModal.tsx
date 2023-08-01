@@ -66,7 +66,7 @@ const EducationModal: React.FC = () => {
   const addText = useMemo(() => t('builder.common.actions.add', { token: heading }), [t, heading]);
   const editText = useMemo(() => t('builder.common.actions.edit', { token: heading }), [t, heading]);
 
-  const { reset, control, handleSubmit } = useForm<FormData>({
+  const { reset, control, handleSubmit,formState:{isDirty} } = useForm<FormData>({
     defaultValues: defaultState,
     resolver: joiResolver(schema),
   });
@@ -90,6 +90,15 @@ const EducationModal: React.FC = () => {
     );
 
     reset(defaultState);
+  }
+  
+  const handleModalClose = () => {
+    if(isDirty){
+      if(confirm("You have unsaved changes, Do you want to discard the changes?"))
+      handleClose()
+      else return
+    }
+    handleClose()
   };
 
   useEffect(() => {
@@ -102,7 +111,7 @@ const EducationModal: React.FC = () => {
     <BaseModal
       icon={isEditMode ? <DriveFileRenameOutline /> : <Add />}
       isOpen={isOpen}
-      handleClose={handleClose}
+      handleClose={handleModalClose}
       heading={isEditMode ? editText : addText}
       footerChildren={<Button onClick={handleSubmit(onSubmit)}>{isEditMode ? editText : addText}</Button>}
     >

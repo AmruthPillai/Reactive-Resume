@@ -17,16 +17,21 @@ const BaseModal: React.FC<Props> = ({ icon, isOpen, heading, children, handleClo
   const router = useRouter();
   const { pathname, query } = router;
 
-  const onClose = () => {
+  const onClose = (event:object, reason:string) => {
     router.push({ pathname, query }, '');
+    if (reason === 'backdropClick') return;
+    handleClose();
+  };
 
+  const onIconClose = () => {
+    router.push({ pathname, query }, '');
     handleClose();
   };
 
   return (
     <Modal
       open={isOpen}
-      onClose={onClose}
+      onClose={(event, reason) => onClose(event, reason)}
       closeAfterTransition
       aria-labelledby={heading}
       classes={{ root: 'flex items-center justify-center' }}
@@ -40,7 +45,7 @@ const BaseModal: React.FC<Props> = ({ icon, isOpen, heading, children, handleClo
               <h1>{heading}</h1>
             </div>
 
-            <IconButton size="small" onClick={onClose}>
+            <IconButton size="small" onClick={onIconClose}>
               <CloseIcon sx={{ fontSize: 18 }} />
             </IconButton>
           </header>
