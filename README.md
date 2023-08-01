@@ -16,6 +16,16 @@ Reactive Resume is a free and open source resume builder that’s built to make 
 
 You have complete control over what goes into your resume, how it looks, what colors, what templates, even the layout in which sections placed. Want a dark mode resume? It’s as easy as editing 3 values and you’re done. You don’t need to wait to see your changes either. Everything you type, everything you change, appears immediately on your resume and gets updated in real time.
 
+## ❗️ Important Notice
+
+Due to increasing and recurring costs from Google Cloud, I would have to take down the **Version 1 and Version 2** flavor of the application that lives on **https://v1.rxresu.me/** and **https://v2.rxresu.me/**.
+
+I plan to take down the servers on **1st September 2023**, so if you have any data on the earlier versions, please migrate it over to the latest version on https://rxresu.me as soon as you can.
+
+The current version will remain unchanged, and is still actively supported. It will have no effect on these changes.
+
+Thank you to the 400,000+ people using the app! 🙏
+
 ## Table of Contents
 
 - [Reactive Resume](#reactive-resume)
