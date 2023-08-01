@@ -18,9 +18,9 @@ You have complete control over what goes into your resume, how it looks, what co
 
 ## ❗️ Important Notice
 
-Due to increasing and recurring costs from Google Cloud, I would have to take down the **Version 1 and Version 2** flavor of the application that lives on **https://v1.rxresu.me/** and **https://v2.rxresu.me/**.
+Due to increasing and recurring costs from Google Cloud, I would have to take down the Version 1 and Version 2 editions of the application that live on https://v1.rxresu.me/ and https://v2.rxresu.me/ respectively.
 
-I plan to take down the servers on **1st September 2023**, so if you have any data on the earlier versions, please migrate it over to the latest version on https://rxresu.me as soon as you can.
+I plan to take down the servers on 1st September 2023, so if you have any data on the earlier versions, please migrate it over to the latest version on https://rxresu.me/ as soon as you can.
 
 The current version will remain unchanged, and is still actively supported. It will have no effect on these changes.
 
