@@ -151,14 +151,11 @@ const WorkModal: React.FC = () => {
               label={t('builder.common.form.start-date.label')}
               value={dayjs(field.value)}
               views={['year', 'month', 'day']}
-              slots={{
-                textField: (params) => (
-                  <TextField
-                    {...params}
-                    error={!!fieldState.error}
-                    helperText={fieldState.error?.message || params.inputProps?.placeholder}
-                  />
-                ),
+              slotProps={{
+                textField: {
+                  error: !!fieldState.error,
+                  helperText: fieldState.error?.message || t('builder.common.form.start-date.help-text')
+                },
               }}
               onChange={(date: dayjs.Dayjs | null) => {
                 date && dayjs(date).isValid() && field.onChange(dayjs(date).format('YYYY-MM-DD'));
@@ -177,14 +174,11 @@ const WorkModal: React.FC = () => {
               label={t('builder.common.form.end-date.label')}
               value={dayjs(field.value)}
               views={['year', 'month', 'day']}
-              slots={{
-                textField: (params) => (
-                  <TextField
-                    {...params}
-                    error={!!fieldState.error}
-                    helperText={fieldState.error?.message || t('builder.common.form.end-date.help-text')}
-                  />
-                ),
+              slotProps={{
+                textField: {
+                  error: !!fieldState.error,
+                  helperText: fieldState.error?.message || t('builder.common.form.end-date.help-text')
+                },
               }}
               onChange={(date: dayjs.Dayjs | null) => {
                 date && dayjs(date).isValid() && field.onChange(dayjs(date).format('YYYY-MM-DD'));
