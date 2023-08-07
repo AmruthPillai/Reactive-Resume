@@ -2,7 +2,6 @@ import { joiResolver } from '@hookform/resolvers/joi';
 import { Add, DriveFileRenameOutline } from '@mui/icons-material';
 import { Button, TextField } from '@mui/material';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { Education, SectionPath } from 'schema';
 import dayjs from 'dayjs';
 import Joi from 'joi';
 import get from 'lodash/get';
@@ -10,6 +9,7 @@ import isEmpty from 'lodash/isEmpty';
 import { useTranslation } from 'next-i18next';
 import { useEffect, useMemo } from 'react';
 import { Controller, useForm } from 'react-hook-form';
+import { Education, SectionPath } from 'schema';
 
 import ArrayInput from '@/components/shared/ArrayInput';
 import BaseModal from '@/components/shared/BaseModal';
@@ -66,7 +66,12 @@ const EducationModal: React.FC = () => {
   const addText = useMemo(() => t('builder.common.actions.add', { token: heading }), [t, heading]);
   const editText = useMemo(() => t('builder.common.actions.edit', { token: heading }), [t, heading]);
 
-  const { reset, control, handleSubmit,formState:{isDirty} } = useForm<FormData>({
+  const {
+    reset,
+    control,
+    handleSubmit,
+    formState: { isDirty },
+  } = useForm<FormData>({
     defaultValues: defaultState,
     resolver: joiResolver(schema),
   });
@@ -90,15 +95,14 @@ const EducationModal: React.FC = () => {
     );
 
     reset(defaultState);
-  }
-  
+  };
+
   const handleModalClose = () => {
-    if(isDirty){
-      if(confirm("You have unsaved changes, Do you want to discard the changes?"))
-      handleClose()
-      else return
+    if (isDirty) {
+      if (confirm('You have unsaved changes, Do you want to discard the changes?')) handleClose();
+      else return;
     }
-    handleClose()
+    handleClose();
   };
 
   useEffect(() => {
@@ -184,7 +188,7 @@ const EducationModal: React.FC = () => {
               slotProps={{
                 textField: {
                   error: !!fieldState.error,
-                  helperText: fieldState.error?.message || t('builder.common.form.start-date.help-text')
+                  helperText: fieldState.error?.message || t('builder.common.form.start-date.help-text'),
                 },
               }}
               onChange={(date: dayjs.Dayjs | null) => {
@@ -207,7 +211,7 @@ const EducationModal: React.FC = () => {
               slotProps={{
                 textField: {
                   error: !!fieldState.error,
-                  helperText: fieldState.error?.message || t('builder.common.form.end-date.help-text')
+                  helperText: fieldState.error?.message || t('builder.common.form.end-date.help-text'),
                 },
               }}
               onChange={(date: dayjs.Dayjs | null) => {

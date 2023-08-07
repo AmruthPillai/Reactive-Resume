@@ -17,7 +17,7 @@ const BaseModal: React.FC<Props> = ({ icon, isOpen, heading, children, handleClo
   const router = useRouter();
   const { pathname, query } = router;
 
-  const onClose = (event:object, reason:string) => {
+  const onClose = (event: object, reason: string) => {
     router.push({ pathname, query }, '');
     if (reason === 'backdropClick') return;
     handleClose();
