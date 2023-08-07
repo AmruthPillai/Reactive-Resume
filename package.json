@@ -1,6 +1,6 @@
 {
   "name": "reactive-resume",
-  "version": "3.8.3",
+  "version": "3.8.4",
   "private": true,
   "scripts": {
     "dev": "dotenv -- turbo run dev",
@@ -20,15 +20,15 @@
     "dotenv-cli": "^7.2.1"
   },
   "devDependencies": {
-    "@types/node": "^20.4.5",
-    "@typescript-eslint/eslint-plugin": "^6.2.0",
-    "@typescript-eslint/parser": "^6.2.0",
-    "eslint": "^8.45.0",
-    "eslint-plugin-import": "^2.27.5",
+    "@types/node": "^20.4.8",
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
+    "eslint": "^8.46.0",
+    "eslint-plugin-import": "^2.28.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-unused-imports": "^3.0.0",
     "npm-check-updates": "^16.10.17",
-    "prettier": "^3.0.0",
+    "prettier": "^3.0.1",
     "ts-node": "^10.9.1",
     "turbo": "^1.10.12",
     "typescript": "^5.1.6"
