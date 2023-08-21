@@ -21,11 +21,13 @@ import { setModalState } from '@/store/modal/modalSlice';
 type FormData = {
   identifier: string;
   password: string;
+  slug: string;
 };
 
 const defaultState: FormData = {
   identifier: '',
   password: '',
+  slug: '',
 };
 
 const schema = Joi.object({
@@ -61,8 +63,8 @@ const LoginModal: React.FC = () => {
     reset();
   };
 
-  const onSubmit = async ({ identifier, password }: FormData) => {
-    await loginMutation({ identifier, password });
+  const onSubmit = async ({ identifier, password, slug }: FormData) => {
+    await loginMutation({ identifier, password, slug });
 
     handleClose();
   };

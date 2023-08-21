@@ -1,36 +1,37 @@
-import { DarkMode, LightMode, Link as LinkIcon } from '@mui/icons-material';
-import { Masonry } from '@mui/lab';
+import { DarkMode, LightMode } from '@mui/icons-material';
 import { Button, IconButton, NoSsr } from '@mui/material';
 import type { GetStaticProps, NextPage } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { Trans, useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useMutation } from 'react-query';
+import { useEffect } from 'react';
 
-import Testimony from '@/components/home/Testimony';
-import Footer from '@/components/shared/Footer';
 import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
 import Logo from '@/components/shared/Logo';
-import { screenshots } from '@/config/screenshots';
 import { FLAG_DISABLE_SIGNUPS } from '@/constants/flags';
-import testimonials from '@/data/testimonials';
-import { login, LoginParams } from '@/services/auth';
-import { ServerError } from '@/services/axios';
+import { loginMain } from '@/services/auth';
 import { logout } from '@/store/auth/authSlice';
 import { setTheme } from '@/store/build/buildSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
 import styles from '@/styles/pages/Home.module.scss';
 
-import { DIGITALOCEAN_URL, DOCS_URL, DONATION_URL, GITHUB_URL, REDDIT_URL } from '../constants';
-
 export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => ({
   props: {
     ...(await serverSideTranslations(locale, ['common', 'modals', 'landing'])),
   },
 });
+
+type FormData = {
+  identifier: string;
+  password: string;
+};
+
+const defaultState: FormData = {
+  identifier: '',
+  password: '',
+};
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
@@ -39,19 +40,37 @@ const Home: NextPage = () => {
 
   const theme = useAppSelector((state) => state.build.theme);
   const isLoggedIn = useAppSelector((state) => state.auth.isLoggedIn);
+  // const [identifier, setIdentifier] = useState('');
+  // const [slug, setSlug] = useState('');
   const router = useRouter();
   const { query } = router;
-  const creds_base64: string = query.creds;
+  const creds_base64: any = query.creds;
+  // const { mutateAsync: loginMutation } = useMutation<void, ServerError, LoginParams>(login);
+  // const loginUser = async ({ identifier, password }: FormData) => {
+  //   await loginMutation({ identifier, password });
+  // };
   console.log(creds_base64);
-  const creds = JSON.parse(atob(creds_base64));
-  const identifier = creds.username;
-  const password = creds.passkey;
-  const { mutateAsync: loginMutation } = useMutation<void, ServerError, LoginParams>(login);
-  const logiUser = async () => {
-    await loginMutation({ identifier, password });
+
+  const handleSucceess = ({ identifier, slug }: any) => {
+    if (identifier && slug) {
+      router.push({
+        pathname: '/[username]/[slug]/build',
+        query: { username: identifier, slug: slug },
+      });
+    }
   };
 
-  loginUser();
+  useEffect(() => {
+    if (creds_base64 !== undefined) {
+      const creds = JSON.parse(atob(creds_base64));
+      console.log(creds);
+      const id = creds.username;
+      const password = creds.passkey;
+      const sl = creds.slug;
+
+      dispatch(loginMain({ password: password, identifier: id, slug: sl }, handleSucceess));
+    }
+  }, [creds_base64]);
   const handleLogin = () => dispatch(setModalState({ modal: 'auth.login', state: { open: true } }));
   const handleRegister = () => dispatch(setModalState({ modal: 'auth.register', state: { open: true } }));
   const handleToggle = () => dispatch(setTheme({ theme: theme === 'light' ? 'dark' : 'light' }));
@@ -98,138 +117,7 @@ const Home: NextPage = () => {
           </NoSsr>
         </div>
       </div>
-
-      <section className={styles.section}>
-        <h6>{t('landing.summary.heading')}</h6>
-
-        <p>{t('landing.summary.body')}</p>
-      </section>
-
-      <section className={styles.section}>
-        <h6>{t('landing.features.heading')}</h6>
-
-        <ul className="list-inside list-disc leading-loose">
-          <li>{t('landing.features.list.free')}</li>
-          <li>{t('landing.features.list.ads')}</li>
-          <li>{t('landing.features.list.tracking')}</li>
-          <li>{t('landing.features.list.languages')}</li>
-          <li>{t('landing.features.list.import')}</li>
-          <li>{t('landing.features.list.export')}</li>
-          <li>
-            <Trans t={t} i18nKey="landing.features.list.more">
-              And a lot of exciting features,
-              <a href={`${GITHUB_URL}#features`} target="_blank" rel="noreferrer">
-                click here to know more
-              </a>
-            </Trans>
-          </li>
-        </ul>
-      </section>
-
-      <section className={styles.section}>
-        <h6>{t('landing.screenshots.heading')}</h6>
-
-        <div className={styles.screenshots}>
-          {screenshots.map(({ src, alt }) => (
-            <a key={src} href={src} className={styles.image} target="_blank" rel="noreferrer">
-              <Image
-                fill
-                src={src}
-                alt={alt}
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </a>
-          ))}
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <h6>{t('landing.testimonials.heading')}</h6>
-
-        <p className="my-3">
-          <Trans t={t} i18nKey="landing.testimonials.body">
-            Good or bad, I would love to hear your opinion on CVPAP and how the experience has been for you.
-            <br />
-            Here are some of the messages sent in by users across the world.
-          </Trans>
-        </p>
-
-        <p className="my-3">
-          <Trans t={t} i18nKey="landing.testimonials.contact">
-            You can reach out to me through <a href="mailto:im.amruth@gmail.com">my email</a> or through the contact
-            form on <a href="https://www.amruthpillai.com">my website</a>.
-          </Trans>
-        </p>
-
-        <Masonry columns={{ xs: 1, sm: 2, lg: 4 }} spacing={2}>
-          {testimonials.map(({ name, message }, index) => (
-            <Testimony key={index} name={name} message={message} />
-          ))}
-        </Masonry>
-      </section>
-
-      <section className={styles.section}>
-        <h6>{t('landing.links.heading')}</h6>
-
-        <div>
-          <Link href="/meta/privacy" passHref>
-            <Button variant="text" startIcon={<LinkIcon />}>
-              {t('landing.links.links.privacy')}
-            </Button>
-          </Link>
-
-          <Link href="/meta/service" passHref>
-            <Button variant="text" startIcon={<LinkIcon />}>
-              {t('landing.links.links.service')}
-            </Button>
-          </Link>
-
-          <a href={GITHUB_URL} target="_blank" rel="noreferrer">
-            <Button variant="text" startIcon={<LinkIcon />}>
-              {t('landing.links.links.github')}
-            </Button>
-          </a>
-
-          <a href={DOCS_URL} target="_blank" rel="noreferrer">
-            <Button variant="text" startIcon={<LinkIcon />}>
-              {t('landing.links.links.docs')}
-            </Button>
-          </a>
-
-          <a href={REDDIT_URL} target="_blank" rel="noreferrer">
-            <Button variant="text" startIcon={<LinkIcon />}>
-              {t('landing.links.links.reddit')}
-            </Button>
-          </a>
-
-          <a href={DONATION_URL} target="_blank" rel="noreferrer">
-            <Button variant="text" startIcon={<LinkIcon />}>
-              {t('landing.links.links.donate')}
-            </Button>
-          </a>
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <a href={DIGITALOCEAN_URL} target="_blank" rel="noreferrer">
-          <Image
-            src={`/images/sponsors/${theme == 'dark' ? 'digitalocean' : 'digitaloceanLight'}.svg`}
-            style={{ width: 200, height: 40, objectFit: 'contain' }}
-            alt="Powered By DigitalOcean"
-            width={200}
-            height={40}
-          />
-        </a>
-      </section>
-
       <footer>
-        <div className={styles.version}>
-          <Footer className="font-semibold leading-5 opacity-50" />
-
-          <div>v{process.env.appVersion}</div>
-        </div>
-
         <div className={styles.actions}>
           <IconButton onClick={handleToggle}>{theme === 'dark' ? <DarkMode /> : <LightMode />}</IconButton>
 

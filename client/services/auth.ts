@@ -10,6 +10,7 @@ import axios from './axios';
 export type LoginParams = {
   identifier: string;
   password: string;
+  slug: string;
 };
 
 export type LoginWithGoogleParams = {
@@ -39,6 +40,21 @@ export type ResetPasswordParams = {
 
 export type UpdateProfileParams = {
   name: string;
+};
+
+export const loginMain = (loginParams: LoginParams, handleSuccess: any) => async (dispatch: any) => {
+  axios
+    .post<AuthDTO, AxiosResponse<AuthDTO>, LoginParams>('/auth/login', loginParams)
+    .then((resp) => {
+      const {
+        data: { user, accessToken },
+      } = resp;
+
+      dispatch(setUser(user));
+      dispatch(setAccessToken(accessToken));
+      handleSuccess(loginParams);
+    })
+    .catch(() => {});
 };
 
 export const login = async (loginParams: LoginParams) => {
