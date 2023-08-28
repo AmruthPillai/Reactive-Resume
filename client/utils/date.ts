@@ -41,12 +41,12 @@ export const formatDateString = (date: string | DateRange, formatStr: string): s
   if (!dayjs(date.start).isValid()) return null;
 
   if (dayjs(date.start).isSame(date.end)) {
-    return dayjs.utc(date.start).local().format(formatStr);
+    return dayjs.utc(date.start).format(formatStr);
   }
 
   if (!isEmpty(date.end) && dayjs(date.end).isValid()) {
-    return `${dayjs.utc(date.start).local().format(formatStr)} - ${dayjs.utc(date.end).local().format(formatStr)}`;
+    return `${dayjs.utc(date.start).format(formatStr)} - ${dayjs.utc(date.end).format(formatStr)}`;
   }
 
-  return `${dayjs.utc(date.start).local().format(formatStr)} - ${presentString}`;
+  return `${dayjs.utc(date.start).format(formatStr)} - ${presentString}`;
 };
