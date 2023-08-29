@@ -9,11 +9,13 @@ import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { JwtStrategy } from './strategy/jwt.strategy';
 import { LocalStrategy } from './strategy/local.strategy';
+import { WhatsappUsersModule } from 'src/whatsapp_users/whatsapp.users.module';
 
 @Module({
   imports: [
     ConfigModule,
     UsersModule,
+    WhatsappUsersModule,
     PassportModule,
     JwtModule.registerAsync({
       imports: [ConfigModule],

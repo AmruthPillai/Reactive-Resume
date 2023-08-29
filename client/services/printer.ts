@@ -11,4 +11,7 @@ export const printResumeAsPdf = (printResumeAsPdfParams: PrintResumeAsPdfParams)
     .get(
       `/printer/${printResumeAsPdfParams.username}/${printResumeAsPdfParams.slug}?lastUpdated=${printResumeAsPdfParams.lastUpdated}`,
     )
-    .then((res) => res.data);
+    .then((res) => {
+      console.log(res.data);
+      return res.data;
+    });

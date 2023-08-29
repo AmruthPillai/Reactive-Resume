@@ -15,6 +15,7 @@ import { MailModule } from './mail/mail.module';
 import { PrinterModule } from './printer/printer.module';
 import { ResumeModule } from './resume/resume.module';
 import { UsersModule } from './users/users.module';
+import { WhatsappUsersModule } from './whatsapp_users/whatsapp.users.module';
 
 @Module({
   imports: [
@@ -29,6 +30,7 @@ import { UsersModule } from './users/users.module';
     AuthModule,
     MailModule.register(),
     UsersModule,
+    WhatsappUsersModule,
     ResumeModule,
     FontsModule,
     IntegrationsModule,
