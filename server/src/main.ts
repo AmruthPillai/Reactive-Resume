@@ -54,8 +54,9 @@ const bootstrap = async () => {
   // const localApp = await NestFactory.createApplicationContext(WhatsappUsersModule);
   // You now have access to the NestJS context with the configured providers.
   // You can use this context to instantiate your `SocketClass`.
-  const socketClass = app.get(SocketClass);
-
+  // const socketClass = app.get(SocketClass);
+  // const service = new WhatsappUserService();
+  const socketClass = new SocketClass();
   await socketClass.startSock();
   Logger.log(`🚀 Server is up and running!`);
 };

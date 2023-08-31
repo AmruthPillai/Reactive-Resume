@@ -1,9 +1,6 @@
-import { Exclude } from 'class-transformer';
-import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
-import { Resume } from '@/resume/entities/resume.entity';
-
-@Entity()
+@Entity({ name: 'WhatsappUser' })
 export class WhatsappUser {
   @PrimaryGeneratedColumn()
   id: number;
@@ -34,8 +31,4 @@ export class WhatsappUser {
 
   @UpdateDateColumn()
   updatedAt: Date;
-
-  constructor(partial: Partial<WhatsappUser>) {
-    Object.assign(this, partial);
-  }
 }

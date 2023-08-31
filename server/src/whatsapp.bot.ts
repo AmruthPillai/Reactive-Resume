@@ -1,4 +1,5 @@
 import { Boom } from '@hapi/boom';
+import { Injectable } from '@nestjs/common';
 import makeWASocket, {
   AnyMessageContent,
   delay,
@@ -18,17 +19,13 @@ import NodeCache from 'node-cache';
 import { PDFExtract } from 'pdf.js-extract';
 import pdf from 'pdf-parse';
 import readline from 'readline';
-import { v4 as uuid4 } from 'uuid';
+import { createConnection } from 'typeorm';
 
-import CustomerSchema, { createdb } from './botmodels/CustomerSchema';
 import MAIN_LOGGER from './utils/logger';
-import { WhatsappUser } from './whatsapp_users/entities/whatsapp-user.entity';
-import { InjectRepository } from '@nestjs/typeorm';
-import { UsersService } from './users/users.service';
-import { WhatsappUsersService } from './whatsapp_users/whatsapp.users.service';
-import { CreateWhatsappUserDto } from './whatsapp_users/dto/create--whatsapp-user.dto';
 import { UpdateWhatsAppUserDto } from './whatsapp_users/dto/update-whatsapp-user.dto';
-import { Injectable } from '@nestjs/common';
+import { WhatsappUser } from './whatsapp_users/entities/whatsapp-user.entity';
+// import { WhatsappUser } from './whatsapp_users/entities/whatsapp-user.entity';
+import { WhatsappUserService } from './whatsapp_users/whatsapp.users.service';
 const port = 5100;
 
 const pdfExtract = new PDFExtract();
@@ -46,7 +43,7 @@ const useStore = !process.argv.includes('--no-store');
 const doReplies = !process.argv.includes('--no-reply');
 const usePairingCode = process.argv.includes('--use-pairing-code');
 const useMobile = process.argv.includes('--mobile');
-var data: any;
+let data: any;
 
 const baseurl = 'http://localhost:5000';
 
@@ -71,9 +68,11 @@ setInterval(() => {
 @Injectable()
 class SocketClass {
   private static instance: SocketClass;
+  usersService: WhatsappUserService;
 
-  private constructor(@InjectRepository(WhatsappUser) private usersService: WhatsappUsersService) {
-    this.startSock();
+  public constructor() {
+    // this.usersService = new WhatsappUserService();
+    // this.startSock();
   }
 
   sock: any = null;
@@ -87,6 +86,19 @@ class SocketClass {
   // }
 
   startSock: any = async () => {
+    const connection = await createConnection({
+      type: 'postgres',
+      host: 'localhost',
+      port: 5432,
+      username: 'postgres',
+      password: 'admin',
+      database: 'testcv',
+      entities: [WhatsappUser],
+    });
+    //     POSTGRES_DB=testcv
+    // POSTGRES_USER=postgres
+    // POSTGRES_PASSWORD=admin
+    this.usersService = connection.getCustomRepository(WhatsappUserService);
     const { state, saveCreds } = await useMultiFileAuthState('baileys_auth_info');
     // fetch latest version of WA Web
     const { version, isLatest } = await fetchLatestBaileysVersion();
@@ -141,6 +153,7 @@ class SocketClass {
     this.sock.ev.process(
       // events is a map for event name => event data
       async (events) => {
+        // eslint-disable-next-line @typescript-eslint/no-this-alias
         const self = this;
         // const localRealm = realm
         // something about the connection changed
@@ -196,9 +209,9 @@ class SocketClass {
                 let isNew = true;
                 // const customerSchema = realm.objects(CustomerSchema);
 
-                const customer = await this.usersService.findById(msg.key.remoteJid);
+                const customer = await this.usersService.findByNumber(msg.key.remoteJid);
                 if (customer === undefined) {
-                  const user = new CreateWhatsappUserDto();
+                  const user = new WhatsappUser();
                   user.currentSession = '';
                   user.lastCvDetails = '';
                   user.whatsappName = msg.pushName;
@@ -206,7 +219,7 @@ class SocketClass {
                   user.whatsappNumber = msg.key.remoteJid;
                   user.previewUrl = '';
                   user.lastjobDescription = '';
-                  this.usersService.create(user);
+                  this.usersService.save(user);
                 } else {
                   isNew = false;
                 }
@@ -265,19 +278,22 @@ class SocketClass {
                       //   }
                       // });
 
-                      const currentUser = await self.usersService.findById(msg.key.remoteJid);
-                      const user = new UpdateWhatsAppUserDto();
-                      user.lastCvDetails = data.text;
-                      user.currentSession = '1';
-                      user.lastCvDetails = currentUser.lastCvDetails;
-                      user.whatsappName = currentUser.whatsappName;
-                      user.lastSessionSelection = currentUser.lastSessionSelection;
-                      user.whatsappNumber = msg.key.remoteJid;
-                      user.previewUrl = currentUser.previewUrl;
-                      user.lastjobDescription = currentUser.lastSessionSelection;
-                      self.usersService.update(msg.key.remoteJid, user);
+                      // const currentUser = await self.usersService.findByNumber(msg.key.remoteJid);
+                      // const user = new UpdateWhatsAppUserDto();
+                      // user.lastCvDetails = data.text;
+                      // user.currentSession = '1';
+                      // user.lastCvDetails = currentUser.lastCvDetails;
+                      // user.whatsappName = currentUser.whatsappName;
+                      // user.lastSessionSelection = currentUser.lastSessionSelection;
+                      // user.whatsappNumber = msg.key.remoteJid;
+                      // user.previewUrl = currentUser.previewUrl;
+                      // user.lastjobDescription = currentUser.lastSessionSelection;
+                      self.usersService.updateName(msg.key.remoteJid, {
+                        lastCvDetails: data.text,
+                        currentSession: '1',
+                      });
 
-                      self.usersService.update(msg.key.remoteJid, user);
+                      // self.usersService.update(msg.key.remoteJid, user);
                       await sendMessageWTyping(
                         {
                           text: 'Your CV has been recieved successfuly, Now send the job description you are applying for so that we can tailor your cv to match it.\n\nIf you just want to upgrade your cv without job description reply with *ok*',
@@ -293,46 +309,47 @@ class SocketClass {
                   // console.log("****")
                 } else {
                   console.log(msg);
-                  const currentUser = await self.usersService.findById(msg.key.remoteJid);
+                  const currentUser = await self.usersService.findByNumber(msg.key.remoteJid);
                   if (msg.message?.conversation === '1' || msg.message?.extendedTextMessage?.text === '1') {
                     const user = new UpdateWhatsAppUserDto();
-                    user.lastCvDetails = data.text;
-                    user.currentSession = currentUser.currentSession;
-                    user.lastCvDetails = currentUser.lastCvDetails;
-                    user.whatsappName = currentUser.whatsappName;
+                    // user.lastCvDetails = data.text;
+                    // user.currentSession = currentUser.currentSession;
+                    // user.lastCvDetails = currentUser.lastCvDetails;
+                    // user.whatsappName = currentUser.whatsappName;
                     user.lastSessionSelection = '1';
-                    user.whatsappNumber = msg.key.remoteJid;
-                    user.previewUrl = currentUser.previewUrl;
-                    user.lastjobDescription = currentUser.lastSessionSelection;
-                    self.usersService.update(msg.key.remoteJid, user);
+                    // user.whatsappNumber = msg.key.remoteJid;
+                    // user.previewUrl = currentUser.previewUrl;
+                    // user.lastjobDescription = currentUser.lastSessionSelection;
+                    self.usersService.updateName(msg.key.remoteJid, { lastSessionSelection: '1' });
                     await this.sock!.readMessages([msg.key]);
                     //   if(isNew){
                     await sendMessageWTyping({ text: cvreply }, msg.key.remoteJid!);
                     return;
                   }
                   if (msg.message?.conversation === '2' || msg.message?.extendedTextMessage?.text === '2') {
-                    const user = new UpdateWhatsAppUserDto();
-                    user.lastCvDetails = data.text;
-                    user.currentSession = currentUser.currentSession;
-                    user.lastCvDetails = currentUser.lastCvDetails;
-                    user.whatsappName = currentUser.whatsappName;
-                    user.lastSessionSelection = '2';
-                    user.whatsappNumber = msg.key.remoteJid;
-                    user.previewUrl = currentUser.previewUrl;
-                    user.lastjobDescription = currentUser.lastSessionSelection;
-                    self.usersService.update(msg.key.remoteJid, user);
+                    // const user = new UpdateWhatsAppUserDto();
+                    // user.lastCvDetails = data.text;
+                    // user.currentSession = currentUser.currentSession;
+                    // user.lastCvDetails = currentUser.lastCvDetails;
+                    // user.whatsappName = currentUser.whatsappName;
+                    // user.lastSessionSelection = '2';
+                    // user.whatsappNumber = msg.key.remoteJid;
+                    // user.previewUrl = currentUser.previewUrl;
+                    // user.lastjobDescription = currentUser.lastSessionSelection;
+                    self.usersService.updateName(msg.key.remoteJid, { lastSessionSelection: '2' });
                   }
                   if (msg.message?.conversation === '3' || msg.message?.extendedTextMessage?.text === '3') {
                     const user = new UpdateWhatsAppUserDto();
-                    user.lastCvDetails = data.text;
-                    user.currentSession = currentUser.currentSession;
-                    user.lastCvDetails = currentUser.lastCvDetails;
-                    user.whatsappName = currentUser.whatsappName;
-                    user.lastSessionSelection = '3';
-                    user.whatsappNumber = msg.key.remoteJid;
-                    user.previewUrl = currentUser.previewUrl;
-                    user.lastjobDescription = currentUser.lastSessionSelection;
-                    self.usersService.update(msg.key.remoteJid, user);
+                    // user.lastCvDetails = data.text;
+                    // user.currentSession = currentUser.currentSession;
+                    // user.lastCvDetails = currentUser.lastCvDetails;
+                    // user.whatsappName = currentUser.whatsappName;
+                    // user.lastSessionSelection = '3';
+                    // user.whatsappNumber = msg.key.remoteJid;
+                    // user.previewUrl = currentUser.previewUrl;
+                    // user.lastjobDescription = currentUser.lastSessionSelection;
+                    // self.usersService.updateWhatsappUser(msg.key.remoteJid, user);
+                    self.usersService.updateName(msg.key.remoteJid, { lastSessionSelection: '3' });
                     //TODO check if there is current preview then send it or reply with a message
                   }
                   if (
@@ -414,16 +431,17 @@ class SocketClass {
                     //     cust.lastCvDetails = '';
                     //   }
                     // });
-                    const user = new UpdateWhatsAppUserDto();
-                    user.lastCvDetails = data.text;
-                    user.currentSession = '';
-                    user.lastCvDetails = currentUser.lastCvDetails;
-                    user.whatsappName = currentUser.whatsappName;
-                    user.lastSessionSelection = '';
-                    user.whatsappNumber = msg.key.remoteJid;
-                    user.previewUrl = currentUser.previewUrl;
-                    user.lastjobDescription = currentUser.lastSessionSelection;
-                    self.usersService.update(msg.key.remoteJid, user);
+                    // const user = new UpdateWhatsAppUserDto();
+                    // user.lastCvDetails = data.text;
+                    // user.currentSession = '';
+                    // user.lastCvDetails = currentUser.lastCvDetails;
+                    // user.whatsappName = currentUser.whatsappName;
+                    // user.lastSessionSelection = '';
+                    // user.whatsappNumber = msg.key.remoteJid;
+                    // user.previewUrl = currentUser.previewUrl;
+                    // user.lastjobDescription = currentUser.lastSessionSelection;
+                    self.usersService.updateName(msg.key.remoteJid, { lastSessionSelection: '', currentSession: '' });
+                    // self.usersService.updateWhatsappUser(msg.key.remoteJid, user);
                     await this.sock!.readMessages([msg.key]);
                     //   if(isNew){
                     await sendMessageWTyping({ text: standardReply }, msg.key.remoteJid!);
@@ -438,16 +456,20 @@ class SocketClass {
                       msg.message?.extendedTextMessage?.text?.toLowerCase() === 'ok' ||
                       msg.message?.extendedTextMessage?.text?.toLowerCase() === 'okay')
                   ) {
-                    const user = new UpdateWhatsAppUserDto();
-                    user.lastCvDetails = data.text;
-                    user.currentSession = '2';
-                    user.lastCvDetails = currentUser.lastCvDetails;
-                    user.whatsappName = currentUser.whatsappName;
-                    user.lastSessionSelection = 'okay';
-                    user.whatsappNumber = msg.key.remoteJid;
-                    user.previewUrl = currentUser.previewUrl;
-                    user.lastjobDescription = currentUser.lastSessionSelection;
-                    self.usersService.update(msg.key.remoteJid, user);
+                    // const user = new UpdateWhatsAppUserDto();
+                    // user.lastCvDetails = data.text;
+                    // user.currentSession = '2';
+                    // user.lastCvDetails = currentUser.lastCvDetails;
+                    // user.whatsappName = currentUser.whatsappName;
+                    // user.lastSessionSelection = 'okay';
+                    // user.whatsappNumber = msg.key.remoteJid;
+                    // user.previewUrl = currentUser.previewUrl;
+                    // user.lastjobDescription = currentUser.lastSessionSelection;
+                    self.usersService.updateName(msg.key.remoteJid, {
+                      lastSessionSelection: 'ok',
+                      currentSession: '2',
+                    });
+                    // self.usersService.updateWhatsappUser(msg.key.remoteJid, user);
                     // //TODO create reply with a create cv response
                     // realm.write(() => {
                     //   // const customerSchema = realm.objects(CustomerSchema);
@@ -494,16 +516,17 @@ class SocketClass {
                     //     cust.currentSession = '';
                     //   }
                     // });
-                    const user = new UpdateWhatsAppUserDto();
-                    user.lastCvDetails = data.text;
-                    user.currentSession = '';
-                    user.lastCvDetails = currentUser.lastCvDetails;
-                    user.whatsappName = currentUser.whatsappName;
-                    user.lastSessionSelection = '';
-                    user.whatsappNumber = msg.key.remoteJid;
-                    user.previewUrl = currentUser.previewUrl;
-                    user.lastjobDescription = currentUser.lastSessionSelection;
-                    self.usersService.update(msg.key.remoteJid, user);
+                    // const user = new UpdateWhatsAppUserDto();
+                    // user.lastCvDetails = data.text;
+                    // user.currentSession = '';
+                    // user.lastCvDetails = currentUser.lastCvDetails;
+                    // user.whatsappName = currentUser.whatsappName;
+                    // user.lastSessionSelection = '';
+                    // user.whatsappNumber = msg.key.remoteJid;
+                    // user.previewUrl = currentUser.previewUrl;
+                    // user.lastjobDescription = currentUser.lastSessionSelection;
+                    // self.usersService.updateWhatsappUser(msg.key.remoteJid, user);
+                    self.usersService.updateName(msg.key.remoteJid, { lastSessionSelection: '', currentSession: '' });
                     await this.sock!.readMessages([msg.key]);
                     //   if(isNew){
                     await sendMessageWTyping({ text: standardReply }, msg.key.remoteJid!);
