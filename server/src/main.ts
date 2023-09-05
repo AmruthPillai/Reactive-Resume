@@ -5,7 +5,6 @@ import { NestExpressApplication } from '@nestjs/platform-express';
 import cookieParser from 'cookie-parser';
 
 import { AppModule } from './app.module';
-import SocketClass from './whatsapp.bot';
 // import { WhatsappUsersModule } from './whatsapp_users/whatsapp.users.module';
 
 const bootstrap = async () => {
@@ -56,8 +55,8 @@ const bootstrap = async () => {
   // You can use this context to instantiate your `SocketClass`.
   // const socketClass = app.get(SocketClass);
   // const service = new WhatsappUserService();
-  const socketClass = new SocketClass();
-  await socketClass.startSock();
+  // const socketClass = new SocketClass();
+  // await socketClass.startSock();
   Logger.log(`🚀 Server is up and running!`);
 };
 

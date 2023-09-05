@@ -142,7 +142,7 @@ export class WhatsappUserService extends Repository<WhatsappUser> {
     }
     return this.createQueryBuilder('whatsappuser')
       .update()
-      .set(data)
+      .set(newData)
       .where('whatsappuser.whatsappNumber = :whatsappNumber', { whatsappNumber })
       .execute();
   }
