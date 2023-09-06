@@ -160,6 +160,7 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
     const directory = join(__dirname, '..', 'assets/exports');
     const filename = `RxResume_PDFExport_${username}_${slug}_${lastUpdated}.pdf`;
     const publicUrl = `${serverUrl}/assets/exports/${filename}`;
+    let pdfBytes = null;
 
     try {
       await access(join(directory, filename));
@@ -181,8 +182,7 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
 
       const url = this.configService.get('app.url');
       const secretKey = this.configService.get('app.secretKey');
-      const pdfDeletionTime = this.configService.get<number>('cache.pdfDeletionTime');
-
+      // const pdfDeletionTime = this.configService.get<number>('cache.pdfDeletionTime');
       const page = await this.browser.newPage();
 
       await page.goto(`${url}/${username}/${slug}/printer?secretKey=${secretKey}`, { waitUntil: 'networkidle' });
@@ -220,25 +220,25 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
 
       await page.close();
 
-      const pdfBytes = await pdf.save();
+      pdfBytes = await pdf.save();
 
-      await mkdir(directory, { recursive: true });
-      await writeFile(join(directory, filename), pdfBytes);
+      // await mkdir(directory, { recursive: true });
+      // await writeFile(join(directory, filename), pdfBytes);
 
-      // Delete PDF artifacts after `pdfDeletionTime` ms
-      const timeout = setTimeout(async () => {
-        try {
-          await unlink(join(directory, filename));
+      // // Delete PDF artifacts after `pdfDeletionTime` ms
+      // const timeout = setTimeout(async () => {
+      //   try {
+      //     await unlink(join(directory, filename));
 
-          this.schedulerRegistry.deleteTimeout(`delete-${filename}`);
-        } catch {
-          // pass through
-        }
-      }, pdfDeletionTime);
+      //     this.schedulerRegistry.deleteTimeout(`delete-${filename}`);
+      //   } catch {
+      //     // pass through
+      //   }
+      // }, pdfDeletionTime);
 
-      this.schedulerRegistry.addTimeout(`delete-${filename}`, timeout);
+      // this.schedulerRegistry.addTimeout(`delete-${filename}`, timeout);
     }
 
-    return publicUrl;
+    return pdfBytes;
   }
 }
