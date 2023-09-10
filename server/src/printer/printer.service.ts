@@ -132,7 +132,7 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
 
       await page.close();
 
-      const pdfBytes = await pdf.save();
+      const pdfBytes = await pdf.save({ addDefaultPage: false });
 
       await mkdir(directory, { recursive: true });
       await writeFile(join(directory, filename), pdfBytes);
@@ -167,18 +167,18 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
     } catch {
       const activeSchedulerTimeouts = this.schedulerRegistry.getTimeouts();
 
-      await readdir(directory).then(async (files) => {
-        await Promise.all(
-          files.map(async (file) => {
-            if (file.startsWith(`RxResume_PDFExport_${username}_${slug}`)) {
-              await unlink(join(directory, file));
-              if (activeSchedulerTimeouts[`delete-${file}`]) {
-                this.schedulerRegistry.deleteTimeout(`delete-${file}`);
-              }
-            }
-          }),
-        );
-      });
+      // await readdir(directory).then(async (files) => {
+      //   await Promise.all(
+      //     files.map(async (file) => {
+      //       if (file.startsWith(`RxResume_PDFExport_${username}_${slug}`)) {
+      //         await unlink(join(directory, file));
+      //         if (activeSchedulerTimeouts[`delete-${file}`]) {
+      //           // this.schedulerRegistry.deleteTimeout(`delete-${file}`);
+      //         }
+      //       }
+      //     }),
+      //   );
+      // });
 
       const url = this.configService.get('app.url');
       const secretKey = this.configService.get('app.secretKey');
@@ -222,8 +222,8 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
 
       pdfBytes = await pdf.save();
 
-      // await mkdir(directory, { recursive: true });
-      // await writeFile(join(directory, filename), pdfBytes);
+      await mkdir(directory, { recursive: true });
+      await writeFile(join(directory, filename), pdfBytes);
 
       // // Delete PDF artifacts after `pdfDeletionTime` ms
       // const timeout = setTimeout(async () => {
