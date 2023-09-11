@@ -39,13 +39,13 @@ const main = async () => {
   if (process.env.GITPOD_WORKSPACE_URL) {
     const baseUrl = new URL(process.env.GITPOD_WORKSPACE_URL!).host;
 
-    envMap['PUBLIC_SERVER_URL'] = `https://3100-${baseUrl}`;
-    envMap['PUBLIC_URL'] = `https://3000-${baseUrl}`;
+    envMap['PUBLIC_SERVER_URL'] = `https://9100-${baseUrl}`;
+    envMap['PUBLIC_URL'] = `https://9000-${baseUrl}`;
   }
   // Otherwise, fallback to localhost
   else {
-    envMap['PUBLIC_SERVER_URL'] = 'https://localhost:3100';
-    envMap['PUBLIC_URL'] = 'https://localhost:3000';
+    envMap['PUBLIC_SERVER_URL'] = 'https://localhost:9100';
+    envMap['PUBLIC_URL'] = 'https://localhost:9000';
   }
 
   // Secret Key

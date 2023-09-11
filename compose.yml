@@ -17,12 +17,12 @@ services:
     image: amruthpillai/reactive-resume:server-latest
     restart: always
     ports:
-      - 3100:3100
+      - 9100:9100
     depends_on:
       - postgres
     environment:
-      - PUBLIC_URL=http://localhost:3000
-      - PUBLIC_SERVER_URL=http://localhost:3100
+      - PUBLIC_URL=http://localhost:9000
+      - PUBLIC_SERVER_URL=http://localhost:9100
       - PUBLIC_GOOGLE_CLIENT_ID=
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
@@ -53,12 +53,12 @@ services:
     image: amruthpillai/reactive-resume:client-latest
     restart: always
     ports:
-      - 3000:3000
+      - 9000:9000
     depends_on:
       - server
     environment:
-      - PUBLIC_URL=http://localhost:3000
-      - PUBLIC_SERVER_URL=http://localhost:3100
+      - PUBLIC_URL=http://localhost:9000
+      - PUBLIC_SERVER_URL=http://localhost:9100
       - PUBLIC_GOOGLE_CLIENT_ID=
 
 volumes:

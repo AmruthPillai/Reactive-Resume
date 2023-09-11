@@ -38,8 +38,8 @@ COPY --from=builder /app/client/public ./client/public
 COPY --from=builder /app/client/next.config.js ./client/next.config.js
 COPY --from=builder /app/client/next-i18next.config.js ./client/next-i18next.config.js
 
-EXPOSE 3000
+EXPOSE 9000
 
-ENV PORT 3000
+ENV PORT 9000
 
 CMD [ "pnpm", "run", "--filter", "client", "start" ]

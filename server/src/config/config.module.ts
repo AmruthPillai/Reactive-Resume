@@ -13,13 +13,13 @@ import storageConfig from './storage.config';
 const validationSchema = Joi.object({
   // App
   TZ: Joi.string().default('UTC'),
-  PORT: Joi.number().default(3100),
+  PORT: Joi.number().default(9100),
   SECRET_KEY: Joi.string().required(),
   NODE_ENV: Joi.string().valid('development', 'production').default('development'),
 
   // URLs
-  PUBLIC_URL: Joi.string().default('http://localhost:3000'),
-  PUBLIC_SERVER_URL: Joi.string().default('http://localhost:3100'),
+  PUBLIC_URL: Joi.string().default('http://localhost:9000'),
+  PUBLIC_SERVER_URL: Joi.string().default('http://localhost:9100'),
 
   // Database
   POSTGRES_HOST: Joi.string().required(),

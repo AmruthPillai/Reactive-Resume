@@ -4,7 +4,7 @@
     "dev": "react-env --prefix PUBLIC -- next dev",
     "lint": "next lint --fix",
     "build": "next build",
-    "start": "react-env --prefix PUBLIC -- next start",
+    "start": "PORT=9000 react-env --prefix PUBLIC -- next start",
     "sitemap": "next-sitemap --config next-sitemap.config.js"
   },
   "dependencies": {
