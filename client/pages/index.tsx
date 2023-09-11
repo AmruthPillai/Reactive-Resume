@@ -28,6 +28,7 @@ type FormData = {
   password: string;
 };
 
+// eslint-disable-next-line unused-imports/no-unused-vars
 const defaultState: FormData = {
   identifier: '',
   password: '',
