@@ -32,7 +32,8 @@ const PhotoUpload: React.FC = () => {
     if (fileInputRef.current) {
       if (!isEmpty(photo.url)) {
         try {
-          await deleteMutation({ id });
+          const resume = await deleteMutation({ id });
+          dispatch(setResumeState({ path: 'updatedAt', value: get(resume, 'updatedAt', '') }));
         } finally {
           dispatch(setResumeState({ path: 'basics.photo.url', value: '' }));
         }
@@ -56,6 +57,7 @@ const PhotoUpload: React.FC = () => {
       const resume = await uploadMutation({ id, file });
 
       dispatch(setResumeState({ path: 'basics.photo.url', value: get(resume, 'basics.photo.url', '') }));
+      dispatch(setResumeState({ path: 'updatedAt', value: get(resume, 'updatedAt', '') }));
     }
   };
 
