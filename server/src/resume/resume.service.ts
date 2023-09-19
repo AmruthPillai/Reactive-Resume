@@ -268,6 +268,7 @@ export class ResumeService {
         await fs.writeFile(path + filename, file.buffer);
 
         updatedResume = set(resume, 'basics.photo.url', `${serverUrl}/assets/uploads/${userId}/${id}/` + filename);
+        updatedResume = set(updatedResume, 'updatedAt', new Date());
       } catch (error) {
         throw new HttpException(
           'Something went wrong. Please try again later, or raise an issue on GitHub if the problem persists.',
@@ -303,7 +304,8 @@ export class ResumeService {
       if (isValidFile) await fs.unlink(filePath);
     }
 
-    const updatedResume = set(resume, 'basics.photo.url', '');
+    let updatedResume = set(resume, 'basics.photo.url', '');
+    updatedResume = set(updatedResume, 'updatedAt', new Date());
 
     return this.resumeRepository.save<Resume>(updatedResume);
   }
