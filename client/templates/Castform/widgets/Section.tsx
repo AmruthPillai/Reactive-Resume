@@ -27,7 +27,7 @@ const Section: React.FC<SectionProps> = ({
   const layout: string[][][] = useAppSelector((state) => get(state.resume.present, 'metadata.layout'));
 
   const sectionId = useMemo(() => section.id || path.replace('sections.', ''), [path, section]);
-  const isSidebarSection = useMemo(() => layout.some((row) => row[1].includes(sectionId)), [layout, sectionId]);
+  const isSidebarSection = useMemo(() => layout.some((row) => row[1]?.includes(sectionId)), [layout, sectionId]);
 
   if (!section.visible) return null;
 

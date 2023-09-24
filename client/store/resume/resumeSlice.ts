@@ -114,7 +114,7 @@ export const resumeSlice = createSlice({
 
       // Add sections to page 0 as a default
       state.metadata.layout[0][0].push(...main);
-      state.metadata.layout[0][1].push(...sidebar);
+      sidebar && state.metadata.layout[0][1]?.push(...sidebar);
 
       state.metadata.layout.splice(page, 1);
     },

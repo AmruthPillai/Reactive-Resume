@@ -31,7 +31,7 @@ const Castform: React.FC<PageProps> = ({ page }) => {
         >
           {isFirstPage && <MastheadSidebar />}
 
-          <div className={styles.inner}>{layout[1].map((key) => getSectionById(key, Section))}</div>
+          <div className={styles.inner}>{layout[1]?.map((key) => getSectionById(key, Section))}</div>
         </div>
         <div className={styles.main}>
           <div className={styles.firstPage}>{isFirstPage && <MastheadMain />}</div>
