@@ -31,11 +31,11 @@ ports:
     visibility: private
 
   # Server
-  - port: 9100
+  - port: 3100
     onOpen: ignore
     visibility: public
 
   # Client
-  - port: 9000
+  - port: 3000
     onOpen: open-browser
     visibility: public

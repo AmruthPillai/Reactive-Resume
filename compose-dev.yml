@@ -21,12 +21,12 @@ services:
         - TURBO_TOKEN=
     restart: always
     ports:
-      - 9100:9100
+      - 3100:3100
     depends_on:
       - postgres
     environment:
-      - PUBLIC_URL=http://localhost:9000
-      - PUBLIC_SERVER_URL=http://localhost:9100
+      - PUBLIC_URL=http://localhost:3000
+      - PUBLIC_SERVER_URL=http://localhost:3100
       - PUBLIC_GOOGLE_CLIENT_ID=
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
@@ -61,12 +61,12 @@ services:
         - TURBO_TOKEN=
     restart: always
     ports:
-      - 9000:9000
+      - 3000:3000
     depends_on:
       - server
     environment:
-      - PUBLIC_URL=http://localhost:9000
-      - PUBLIC_SERVER_URL=http://localhost:9100
+      - PUBLIC_URL=http://localhost:3000
+      - PUBLIC_SERVER_URL=http://localhost:3100
       - PUBLIC_GOOGLE_CLIENT_ID=
 
 volumes:

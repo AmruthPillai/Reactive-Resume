@@ -45,8 +45,8 @@ COPY --from=builder /app/server/dist ./server/dist
 VOLUME /app/server/dist/assets/exports
 VOLUME /app/server/dist/assets/uploads
 
-EXPOSE 9100
+EXPOSE 3100
 
-ENV PORT 9100
+ENV PORT 3100
 
 CMD [ "pnpm", "run", "--filter", "server", "start" ]
