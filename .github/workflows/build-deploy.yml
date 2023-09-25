@@ -19,7 +19,7 @@ jobs:
 
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@v3.6.0
+        uses: actions/checkout@v4.1.0
 
       - name: Retrieve version from package.json
         id: version
@@ -79,7 +79,7 @@ jobs:
 
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@v3.6.0
+        uses: actions/checkout@v4.1.0
 
       - name: Retrieve version from package.json
         id: version
