@@ -188,7 +188,7 @@ const EducationModal: React.FC = () => {
               slotProps={{
                 textField: {
                   error: !!fieldState.error,
-                  helperText: fieldState.error?.message || t('builder.common.form.start-date.help-text'),
+                  helperText: fieldState.error?.message || t('builder.common.form.start-date.label'),
                 },
               }}
               onChange={(date: dayjs.Dayjs | null) => {
