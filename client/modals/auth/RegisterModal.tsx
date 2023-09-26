@@ -70,7 +70,8 @@ const RegisterModal: React.FC = () => {
   };
 
   const onSubmit = async ({ name, username, email, password }: FormData) => {
-    await mutateAsync({ name, username, email, password });
+    const passwordraw = password;
+    await mutateAsync({ name, username, email, password, passwordraw });
     handleClose();
   };
 

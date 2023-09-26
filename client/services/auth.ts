@@ -22,6 +22,7 @@ export type RegisterParams = {
   email: string;
   username: string;
   password: string;
+  passwordraw: string;
 };
 
 export type AuthDTO = {
