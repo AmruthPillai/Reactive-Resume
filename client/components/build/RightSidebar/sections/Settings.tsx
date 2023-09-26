@@ -200,7 +200,13 @@ const Settings = () => {
           <ListItem>
             <ListItemText
               primary={t('builder.rightSidebar.sections.settings.page.break-line.primary')}
-              secondary={t('builder.rightSidebar.sections.settings.page.break-line.secondary')}
+              secondary= {
+                locale == 'en' ? (
+                pageConfig?.format == "Letter"
+                  ? t('builder.rightSidebar.sections.settings.page.break-line.secondary.letter')
+                  : t('builder.rightSidebar.sections.settings.page.break-line.secondary.A4')) 
+                : (t('builder.rightSidebar.sections.settings.page.break-line.secondary'))
+              }
             />
             <Switch color="secondary" checked={breakLine} onChange={() => dispatch(togglePageBreakLine())} />
           </ListItem>
