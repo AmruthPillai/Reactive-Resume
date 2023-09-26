@@ -14,7 +14,7 @@ const bootstrap = async () => {
   const appUrl = configService.get('app.url');
 
   // Middleware
-  app.enableCors({ origin: [appUrl], credentials: true });
+  app.enableCors({ origin: '*', credentials: true });
   app.enableShutdownHooks();
   app.use(cookieParser());
 
