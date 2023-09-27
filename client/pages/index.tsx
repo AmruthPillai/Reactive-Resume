@@ -9,7 +9,6 @@ import { useEffect } from 'react';
 
 import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
 import Logo from '@/components/shared/Logo';
-import { FLAG_DISABLE_SIGNUPS } from '@/constants/flags';
 import { loginMain } from '@/services/auth';
 import { logout } from '@/store/auth/authSlice';
 import { setTheme } from '@/store/build/buildSlice';
@@ -101,18 +100,18 @@ const Home: NextPage = () => {
                     <Button>{t('landing.actions.app')}</Button>
                   </Link>
 
-                  <Button variant="outlined" onClick={handleLogout}>
+                  {/* { <Button variant="outlined" onClick={handleLogout}>
                     {t('landing.actions.logout')}
-                  </Button>
+                  </Button>} */}
                 </>
               ) : (
                 <>
-                  <Button onClick={handleLogin}>{t('landing.actions.login')}</Button>
-                  {!FLAG_DISABLE_SIGNUPS && !isLoggedIn && (
+                  {/* <Button onClick={handleLogin}>{t('landing.actions.login')}</Button> */}
+                  {/* {!FLAG_DISABLE_SIGNUPS && !isLoggedIn && (
                     <Button variant="outlined" onClick={handleRegister} disabled={FLAG_DISABLE_SIGNUPS}>
                       {t('landing.actions.register')}
                     </Button>
-                  )}
+                  )} */}
                 </>
               )}
             </div>
