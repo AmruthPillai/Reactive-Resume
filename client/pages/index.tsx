@@ -108,10 +108,11 @@ const Home: NextPage = () => {
               ) : (
                 <>
                   <Button onClick={handleLogin}>{t('landing.actions.login')}</Button>
-
-                  <Button variant="outlined" onClick={handleRegister} disabled={FLAG_DISABLE_SIGNUPS}>
-                    {t('landing.actions.register')}
-                  </Button>
+                  {!FLAG_DISABLE_SIGNUPS && !isLoggedIn && (
+                    <Button variant="outlined" onClick={handleRegister} disabled={FLAG_DISABLE_SIGNUPS}>
+                      {t('landing.actions.register')}
+                    </Button>
+                  )}
                 </>
               )}
             </div>
