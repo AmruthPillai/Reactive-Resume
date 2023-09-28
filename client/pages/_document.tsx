@@ -57,7 +57,7 @@ const Document: NextPage = () => (
       <Main />
       <NextScript />
 
-      <script src="/__ENV.js" />
+      <script src="/__ENV.js?v=<%= Date.now() %>" />
 
       <noscript
         dangerouslySetInnerHTML={{

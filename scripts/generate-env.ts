@@ -3,8 +3,8 @@ import fs from 'fs/promises';
 
 const envMap = {
   TZ: 'UTC',
-  PUBLIC_URL: '',
-  PUBLIC_SERVER_URL: '',
+  PUBLIC_URL: 'https://resume.absq.ch',
+  PUBLIC_SERVER_URL: 'https://resume.absq.ch/api',
   PUBLIC_GOOGLE_CLIENT_ID: '',
   POSTGRES_DB: 'postgres',
   POSTGRES_USER: 'postgres',
