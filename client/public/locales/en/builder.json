@@ -301,7 +301,10 @@
         "page": {
           "break-line": {
             "primary": "Break Line",
-            "secondary": "Show a line on all pages to mark the height of an A4 page"
+            "secondary": {
+              "letter": "Show a line on all pages to mark the height of a Letter page",
+              "A4": "Show a line on all pages to mark the height of an A4 page"
+            }
           },
           "format": {
             "primary": "Paper Size",
