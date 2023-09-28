@@ -134,7 +134,7 @@ jobs:
 
     steps:
       - name: Install DigitalOcean CLI
-        uses: digitalocean/action-doctl@v2.4.0
+        uses: digitalocean/action-doctl@v2.4.1
         with:
           token: ${{ secrets.DIGITALOCEAN_TOKEN }}
 
