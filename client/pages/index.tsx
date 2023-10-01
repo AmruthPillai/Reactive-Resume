@@ -5,8 +5,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
+import Templates from '@/components/build/RightSidebar/sections/Templates';
 import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
 import Logo from '@/components/shared/Logo';
 import { loginMain } from '@/services/auth';
@@ -40,6 +41,7 @@ const Home: NextPage = () => {
 
   const theme = useAppSelector((state) => state.build.theme);
   const isLoggedIn = useAppSelector((state) => state.auth.isLoggedIn);
+  const [slug, setSlug] = useState('');
   // const [identifier, setIdentifier] = useState('');
   // const [slug, setSlug] = useState('');
   const router = useRouter();
@@ -51,12 +53,13 @@ const Home: NextPage = () => {
   // };
   console.log(creds_base64);
 
-  const handleSucceess = ({ identifier, slug }: any) => {
-    if (identifier && slug) {
-      router.push({
-        pathname: '/[username]/[slug]/build',
-        query: { username: identifier, slug: slug },
-      });
+  const handleSucceess = ({ identifier, nslug }: any) => {
+    if (identifier && nslug) {
+      setSlug(nslug);
+      // router.push({
+      //   pathname: '/[username]/[slug]/build',
+      //   query: { username: identifier, slug: slug },
+      // });
     }
   };
 
@@ -100,9 +103,7 @@ const Home: NextPage = () => {
                     <Button>{t('landing.actions.app')}</Button>
                   </Link>
 
-                  {/* { <Button variant="outlined" onClick={handleLogout}>
-                    {t('landing.actions.logout')}
-                  </Button>} */}
+                  <Templates creds={{ slug: slug }} />
                 </>
               ) : (
                 <>

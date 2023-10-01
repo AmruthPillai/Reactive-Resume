@@ -11,7 +11,7 @@ import templateMap, { TemplateMeta } from '@/templates/templateMap';
 
 import styles from './Templates.module.scss';
 
-const Templates = () => {
+const Templates = ({ ...creds }) => {
   const { t } = useTranslation();
 
   const dispatch = useAppDispatch();
@@ -19,6 +19,10 @@ const Templates = () => {
   const currentTemplate: string = useAppSelector((state) => get(state.resume.present, 'metadata.template'));
 
   const handleChange = (template: TemplateMeta) => {
+    if (creds !== undefined && creds !== null && creds.slug !== undefined && creds.slug !== null) {
+      dispatch(setResumeState({ path: creds.slug, value: template.id }));
+      return;
+    }
     dispatch(setResumeState({ path: 'metadata.template', value: template.id }));
   };
 
