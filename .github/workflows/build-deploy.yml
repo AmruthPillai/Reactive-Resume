@@ -35,7 +35,7 @@ jobs:
             type=raw,value=${{ matrix.image }}-${{ steps.version.outputs.current-version }}
 
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2.2.0
+        uses: docker/setup-qemu-action@v3.0.0
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3.0.0
@@ -95,7 +95,7 @@ jobs:
             type=raw,value=${{ matrix.image }}-arm64-${{ steps.version.outputs.current-version }}
 
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2.2.0
+        uses: docker/setup-qemu-action@v3.0.0
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3.0.0
