@@ -27,7 +27,7 @@ jobs:
 
       - name: Docker Metadaata
         id: meta
-        uses: docker/metadata-action@v4.6.0
+        uses: docker/metadata-action@v5.0.0
         with:
           images: amruthpillai/reactive-resume
           tags: |
@@ -87,7 +87,7 @@ jobs:
 
       - name: Docker Metadaata
         id: meta
-        uses: docker/metadata-action@v4.6.0
+        uses: docker/metadata-action@v5.0.0
         with:
           images: amruthpillai/reactive-resume
           tags: |
