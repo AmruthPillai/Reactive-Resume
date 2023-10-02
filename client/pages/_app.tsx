@@ -27,11 +27,11 @@ import WrapperRegistry from '@/wrappers/index';
 const App = ({ Component, pageProps }: AppProps): JSX.Element => (
   <>
     <Head>
-      <title>CVPAP | A free and open source resume builder</title>
+      <title>CVPAP | A an innovative and user-friendly Resume builder accessible right from your WhatsApp</title>
 
       <meta
         name="description"
-        content="CVPAP is a free and open source resume builder that's built to make the mundane tasks of creating, updating and sharing your resume as easy as 1, 2, 3."
+        content="CVPAP is an innovative and user-friendly Resume builder accessible right from your WhatsApp, it's built to make the mundane tasks of creating, updating and sharing your resume as easy as 1, 2, 3."
       />
       <link rel="icon" href="/favicon.ico" />
       <meta name="viewport" content="initial-scale=1, width=device-width" />

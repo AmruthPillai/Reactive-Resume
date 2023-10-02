@@ -7,9 +7,8 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect, useState } from 'react';
 
-import Templates from '@/components/build/RightSidebar/sections/Templates';
+import HomeTemplates from '@/components/build/RightSidebar/sections/HomeTemplates';
 import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
-import Logo from '@/components/shared/Logo';
 import { loginMain } from '@/services/auth';
 import { logout } from '@/store/auth/authSlice';
 import { setTheme } from '@/store/build/buildSlice';
@@ -85,16 +84,17 @@ const Home: NextPage = () => {
 
   return (
     <main className={styles.container}>
-      <div className={styles.header}>
-        <div className={styles.logo}>
+      <div className={styles.header} style={{ width: '100%', margin: '0 auto' }}>
+        {/* <div className={styles.logo}>
           <Logo size={256} />
-        </div>
+        </div> */}
 
         <div className={styles.main}>
           <h1>{t('common.title')}</h1>
 
-          <h2>{t('common.subtitle')}</h2>
+          <h2>Welcome to CVpap and thank you for trying our services. Before proceeding to edit your resume:-</h2>
 
+          <h5>Kindly, select Resume Design from the list below that you willl use in your resume</h5>
           <NoSsr>
             <div className={styles.buttonWrapper}>
               {isLoggedIn ? (
@@ -102,18 +102,11 @@ const Home: NextPage = () => {
                   <Link href="/dashboard" passHref>
                     <Button>{t('landing.actions.app')}</Button>
                   </Link>
-
-                  <Templates creds={{ slug: slug }} />
                 </>
               ) : (
-                <>
-                  {/* <Button onClick={handleLogin}>{t('landing.actions.login')}</Button> */}
-                  {/* {!FLAG_DISABLE_SIGNUPS && !isLoggedIn && (
-                    <Button variant="outlined" onClick={handleRegister} disabled={FLAG_DISABLE_SIGNUPS}>
-                      {t('landing.actions.register')}
-                    </Button>
-                  )} */}
-                </>
+                <div style={{ width: '100%' }}>
+                  <HomeTemplates creds={{ slug: slug }} />
+                </div>
               )}
             </div>
           </NoSsr>

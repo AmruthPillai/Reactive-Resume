@@ -1,5 +1,4 @@
-import { Transform } from 'class-transformer';
-import { IsEmail, IsNotEmpty, IsString, Matches, MinLength } from 'class-validator';
+import { IsString } from 'class-validator';
 
 export class CreateWhatsappUserDto {
   // @MinLength(3)

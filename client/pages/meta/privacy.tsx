@@ -1,13 +1,8 @@
 import { NextPage } from 'next';
 
 const PrivacyPolicy: NextPage = () => (
-  <div className="prose mx-auto my-12 dark:prose-invert">
+  <div className="mx-auto my-12 prose dark:prose-invert">
     <h1>Privacy Policy</h1>
-
-    <p>
-      Amruth Pillai built CVPAP as a free and open source app. This service is provided by Amruth Pillai at no cost and
-      is intended for use as is.
-    </p>
 
     <p>
       This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal

@@ -19,7 +19,7 @@ As a new enthusiast with no previous background in coding, I thought it would be
   },
   {
     name: 'Krzysztof W.',
-    message: `I have just used Your CV builder to make something that jus might get me a job. Very nice website and so easy to use, perfect outcome. if i get the job i'll "buy you coffee" for sure i will recommend it to friends`,
+    message: `I have just used Your Resume builder to make something that jus might get me a job. Very nice website and so easy to use, perfect outcome. if i get the job i'll "buy you coffee" for sure i will recommend it to friends`,
   },
   {
     name: 'Bharat M.',

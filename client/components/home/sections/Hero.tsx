@@ -11,18 +11,18 @@ const HeroSection = () => (
     <HeroPattern />
     <HeroBackground />
 
-    <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-52">
-      <div className="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:max-w-xl lg:pt-12">
+    <div className="px-6 pt-10 pb-24 mx-auto max-w-7xl sm:pb-32 lg:flex lg:px-8 lg:py-52">
+      <div className="max-w-2xl mx-auto shrink-0 lg:mx-0 lg:max-w-xl lg:pt-12">
         <div className="mt-10 space-y-2">
           <h6 className="text-base font-bold tracking-wide">Finally,</h6>
           <h1 className="text-4xl font-bold !leading-[1.15] tracking-tight sm:text-6xl">
-            A free and open-source resume builder
+            An innovative and user-friendly Resume builder accessible right from your WhatsApp
           </h1>
         </div>
 
-        <p className="prose prose-base prose-zinc mt-6 text-lg leading-8 dark:prose-invert">
-          CVPAP is a free and open-source resume builder that simplifies the tasks of creating, updating, and sharing
-          your resume.
+        <p className="mt-6 text-lg leading-8 prose prose-base prose-zinc dark:prose-invert">
+          CVPAP is an innovative and user-friendly Resume builder accessible right from your WhatsApp, it's built to
+          simplifies the tasks of creating, updating, and sharing your resume.
         </p>
 
         <div className="mt-12 space-x-4">
@@ -30,8 +30,8 @@ const HeroSection = () => (
         </div>
       </div>
 
-      <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
-        <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
+      <div className="flex max-w-2xl mx-auto mt-16 sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
+        <div className="flex-none max-w-3xl sm:max-w-5xl lg:max-w-none">
           <Tilt {...defaultTiltProps}>
             <img
               width={2432}

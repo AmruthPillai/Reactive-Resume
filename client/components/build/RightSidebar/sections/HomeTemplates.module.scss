@@ -1,0 +1,34 @@
+// @media (max-width: 600px) {
+.container {
+  @apply grid grid-cols-4 gap-2;
+}
+// }
+
+// @media (min-width: 601px) {
+//   .container {
+//     @apply grid grid-cols-4 gap-4;
+//   }
+// }
+
+.home-templates-container {
+  width: 100%;
+}
+
+.template {
+  @apply grid text-center;
+
+  .preview {
+    aspect-ratio: 1 / 1.4142;
+
+    @apply relative grid rounded;
+    @apply border-2 border-transparent;
+
+    &.selected {
+      @apply border-black dark:border-white;
+    }
+  }
+
+  .label {
+    @apply mt-1 text-xs font-medium;
+  }
+}
