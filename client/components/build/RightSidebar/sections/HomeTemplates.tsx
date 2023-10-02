@@ -5,6 +5,7 @@ import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 
 import { useAppDispatch } from '@/store/hooks';
+import { setResumeState } from '@/store/resume/resumeSlice';
 import templateMap, { TemplateMeta } from '@/templates/templateMap';
 
 import styles from './HomeTemplates.module.scss';
@@ -30,7 +31,6 @@ const HomeTemplates = ({ ...creds }) => {
   return (
     <div>
       <h3>
-        {' '}
         Currently You have selected <b>{currentTemplate}</b>{' '}
       </h3>
 

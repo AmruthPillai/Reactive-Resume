@@ -1,7 +1,6 @@
 import { DarkMode, LightMode } from '@mui/icons-material';
-import { Button, IconButton, NoSsr } from '@mui/material';
+import { IconButton, NoSsr } from '@mui/material';
 import type { GetStaticProps, NextPage } from 'next';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -88,30 +87,30 @@ const Home: NextPage = () => {
         {/* <div className={styles.logo}>
           <Logo size={256} />
         </div> */}
+        {isLoggedIn ? (
+          <div className={styles.main}>
+            <h1>{t('common.title')}</h1>
 
-        <div className={styles.main}>
-          <h1>{t('common.title')}</h1>
+            <h2>Welcome to CVpap and thank you for trying our services. Before proceeding to edit your resume:-</h2>
 
-          <h2>Welcome to CVpap and thank you for trying our services. Before proceeding to edit your resume:-</h2>
-
-          <h5>Kindly, select Resume Design from the list below that you willl use in your resume</h5>
-          <NoSsr>
-            <div className={styles.buttonWrapper}>
-              {isLoggedIn ? (
+            <h5>Kindly, select Resume Design from the list below that you willl use in your resume</h5>
+            <NoSsr>
+              <div className={styles.buttonWrapper}>
                 <>
-                  <Link href="/dashboard" passHref>
-                    <Button>{t('landing.actions.app')}</Button>
-                  </Link>
+                  <div style={{ width: '100%' }}>
+                    <HomeTemplates creds={{ slug: slug }} />
+                  </div>
                 </>
-              ) : (
-                <div style={{ width: '100%' }}>
-                  <HomeTemplates creds={{ slug: slug }} />
-                </div>
-              )}
-            </div>
-          </NoSsr>
-        </div>
+              </div>
+            </NoSsr>
+          </div>
+        ) : (
+          <div style={{ width: '100%' }}>
+            <HomeTemplates creds={{ slug: slug }} />
+          </div>
+        )}
       </div>
+
       <footer>
         <div className={styles.actions}>
           <IconButton onClick={handleToggle}>{theme === 'dark' ? <DarkMode /> : <LightMode />}</IconButton>
