@@ -42,6 +42,7 @@ const Home: NextPage = () => {
   const theme = useAppSelector((state) => state.build.theme);
   const isLoggedIn = useAppSelector((state) => state.auth.isLoggedIn);
   const [slug, setSlug] = useState('');
+  const [templateId, setTemplateId] = useState('');
   // const [identifier, setIdentifier] = useState('');
   // const [slug, setSlug] = useState('');
   const router = useRouter();
@@ -67,6 +68,7 @@ const Home: NextPage = () => {
 
   const handleResumeSuccess = (data: any) => {
     dispatch(setResume(data));
+    setTemplateId(data.metadata.template);
   };
 
   useEffect(() => {
