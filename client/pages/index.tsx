@@ -114,9 +114,12 @@ const Home: NextPage = () => {
               </div>
             </NoSsr>
             <br />
-            <Button variant="outlined" startIcon={<ArrowForward />} onClick={() => {}}>
-              Edit Resume
-            </Button>
+
+            {templateId && (
+              <Button variant="outlined" startIcon={<ArrowForward />} onClick={() => {}}>
+                Edit Resume
+              </Button>
+            )}
           </div>
         ) : (
           <div style={{ width: '100%' }}>
