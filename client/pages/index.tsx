@@ -9,10 +9,12 @@ import { useEffect, useState } from 'react';
 import HomeTemplates from '@/components/build/RightSidebar/sections/HomeTemplates';
 import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
 import { loginMain } from '@/services/auth';
+import { fetchResumeByShortIdMain } from '@/services/resume';
 import { logout } from '@/store/auth/authSlice';
 import { setTheme } from '@/store/build/buildSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
+import { setResume } from '@/store/resume/resumeSlice';
 import styles from '@/styles/pages/Home.module.scss';
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => ({
@@ -51,14 +53,19 @@ const Home: NextPage = () => {
   // };
   console.log(creds_base64);
 
-  const handleSucceess = ({ identifier, nslug }: any) => {
+  const handleSucceess = ({ identifier, nslug, shortId }: any) => {
     if (identifier && nslug) {
       setSlug(nslug);
+      dispatch(fetchResumeByShortIdMain({ shortId: shortId }, handleResumeSuccess));
       // router.push({
       //   pathname: '/[username]/[slug]/build',
       //   query: { username: identifier, slug: slug },
       // });
     }
+  };
+
+  const handleResumeSuccess = (data: any) => {
+    dispatch(setResume(data));
   };
 
   useEffect(() => {

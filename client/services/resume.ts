@@ -75,6 +75,11 @@ export const fetchResumeByIdentifier = async ({
 export const fetchResumeByShortId = async ({ shortId }: FetchResumeByShortIdParams) =>
   axios.get<Resume>(`/resume/short/${shortId}`).then((res) => res.data);
 
+export const fetchResumeByShortIdMain =
+  ({ shortId }: FetchResumeByShortIdParams, handleSuccess: any) =>
+  async () =>
+    axios.get<Resume>(`/resume/short/${shortId}`).then((res) => handleSuccess(res.data));
+
 export const createResume = (createResumeParams: CreateResumeParams) =>
   axios.post<Resume, AxiosResponse<Resume>, CreateResumeParams>('/resume', createResumeParams).then((res) => res.data);
 
