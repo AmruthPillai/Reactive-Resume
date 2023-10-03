@@ -25,6 +25,7 @@
 
     &.selected {
       @apply border-black dark:border-white;
+      box-shadow: 0px 0px 2px 5px green;
     }
   }
 
