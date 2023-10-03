@@ -42,7 +42,7 @@ const Home: NextPage = () => {
   const theme = useAppSelector((state) => state.build.theme);
   const isLoggedIn = useAppSelector((state) => state.auth.isLoggedIn);
   const [slug, setSlug] = useState('');
-  const [templateId, setTemplateId] = useState('');
+  const [templateId, setTemplate] = useState('');
   // const [identifier, setIdentifier] = useState('');
   // const [slug, setSlug] = useState('');
   const router = useRouter();
@@ -68,7 +68,7 @@ const Home: NextPage = () => {
 
   const handleResumeSuccess = (data: any) => {
     dispatch(setResume(data));
-    setTemplateId(data.metadata.template);
+    setTemplate(data.metadata.template);
   };
 
   useEffect(() => {
@@ -117,7 +117,7 @@ const Home: NextPage = () => {
           </div>
         ) : (
           <div style={{ width: '100%' }}>
-            <HomeTemplates templateId={templateId} creds={{ slug: slug }} />
+            <HomeTemplates setTemplate={setTemplate} currentTemplate={templateId} creds={{ slug: slug }} />
           </div>
         )}
       </div>

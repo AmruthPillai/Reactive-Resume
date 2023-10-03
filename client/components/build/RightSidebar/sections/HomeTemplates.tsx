@@ -2,7 +2,6 @@ import { ButtonBase } from '@mui/material';
 import clsx from 'clsx';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
-import { useState } from 'react';
 
 import { useAppDispatch } from '@/store/hooks';
 import { setResumeState } from '@/store/resume/resumeSlice';
@@ -10,10 +9,10 @@ import templateMap, { TemplateMeta } from '@/templates/templateMap';
 
 import styles from './HomeTemplates.module.scss';
 
-const HomeTemplates = ({ templateId, creds }: any) => {
+const HomeTemplates = ({ currentTemplate, setTemplate, creds }: any) => {
   const { t } = useTranslation();
 
-  const [currentTemplate, setTemplate] = useState(templateId);
+  // const [currentTemplate, setTemplate] = useState(templateId);
 
   const dispatch = useAppDispatch();
 
