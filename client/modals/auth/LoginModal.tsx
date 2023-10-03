@@ -22,12 +22,14 @@ type FormData = {
   identifier: string;
   password: string;
   slug: string;
+  shortId: string;
 };
 
 const defaultState: FormData = {
   identifier: '',
   password: '',
   slug: '',
+  shortId: '',
 };
 
 const schema = Joi.object({
@@ -63,8 +65,8 @@ const LoginModal: React.FC = () => {
     reset();
   };
 
-  const onSubmit = async ({ identifier, password, slug }: FormData) => {
-    await loginMutation({ identifier, password, slug });
+  const onSubmit = async ({ identifier, password, slug, shortId }: FormData) => {
+    await loginMutation({ identifier, password, slug, shortId });
 
     handleClose();
   };
