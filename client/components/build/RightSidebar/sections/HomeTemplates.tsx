@@ -10,10 +10,10 @@ import templateMap, { TemplateMeta } from '@/templates/templateMap';
 
 import styles from './HomeTemplates.module.scss';
 
-const HomeTemplates = ({ ...creds }) => {
+const HomeTemplates = ({ templateId, creds }: any) => {
   const { t } = useTranslation();
 
-  const [currentTemplate, setTemplate] = useState('Castform');
+  const [currentTemplate, setTemplate] = useState(templateId);
 
   const dispatch = useAppDispatch();
 

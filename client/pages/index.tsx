@@ -117,7 +117,7 @@ const Home: NextPage = () => {
           </div>
         ) : (
           <div style={{ width: '100%' }}>
-            <HomeTemplates creds={{ slug: slug }} />
+            <HomeTemplates templateId={templateId} creds={{ slug: slug }} />
           </div>
         )}
       </div>
