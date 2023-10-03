@@ -35,13 +35,13 @@ const defaultState: FormData = {
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
-
   const dispatch = useAppDispatch();
 
   const theme = useAppSelector((state) => state.build.theme);
   const isLoggedIn = useAppSelector((state) => state.auth.isLoggedIn);
   const [slug, setSlug] = useState('');
   const [templateId, setTemplate] = useState('');
+  const [identifier, setIdentifier] = useState('');
   // const [identifier, setIdentifier] = useState('');
   // const [slug, setSlug] = useState('');
   const router = useRouter();
@@ -57,6 +57,7 @@ const Home: NextPage = () => {
     if (identifier && slug && shortId) {
       setSlug(slug);
       console.log(shortId);
+      setIdentifier(identifier);
       dispatch(fetchResumeByShortIdMain({ shortId: shortId }, handleResumeSuccess));
       // router.push({
       //   pathname: '/[username]/[slug]/build',
@@ -116,7 +117,13 @@ const Home: NextPage = () => {
             <br />
 
             {templateId && (
-              <Button variant="outlined" startIcon={<ArrowForward />} onClick={() => {}}>
+              <Button
+                variant="outlined"
+                startIcon={<ArrowForward />}
+                onClick={() => {
+                  router.push(`/${identifier}/${slug}/build`);
+                }}
+              >
                 Edit Resume
               </Button>
             )}
