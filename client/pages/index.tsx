@@ -53,9 +53,9 @@ const Home: NextPage = () => {
   // };
   console.log(creds_base64);
 
-  const handleSucceess = ({ identifier, nslug, shortId }: any) => {
-    if (identifier && nslug && shortId) {
-      setSlug(nslug);
+  const handleSucceess = ({ identifier, slug, shortId }: any) => {
+    if (identifier && slug && shortId) {
+      setSlug(slug);
       console.log(shortId);
       dispatch(fetchResumeByShortIdMain({ shortId: shortId }, handleResumeSuccess));
       // router.push({
