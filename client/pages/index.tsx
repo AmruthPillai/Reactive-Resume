@@ -76,9 +76,9 @@ const Home: NextPage = () => {
       const id = creds.username;
       const password = creds.passkey;
       const sl = creds.slug;
-      const shortId = creds.shortId;
+      const short = creds.shortId;
 
-      dispatch(loginMain({ password: password, identifier: id, slug: sl, shortId: shortId }, handleSucceess));
+      dispatch(loginMain({ password: password, identifier: id, slug: sl, shortId: short }, handleSucceess));
     }
   }, [creds_base64]);
   const handleLogin = () => dispatch(setModalState({ modal: 'auth.login', state: { open: true } }));
