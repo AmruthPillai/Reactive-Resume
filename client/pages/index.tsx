@@ -1,5 +1,5 @@
-import { DarkMode, LightMode } from '@mui/icons-material';
-import { IconButton, NoSsr } from '@mui/material';
+import { ArrowForward, DarkMode, LightMode } from '@mui/icons-material';
+import { Button, IconButton, NoSsr } from '@mui/material';
 import type { GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
@@ -113,6 +113,9 @@ const Home: NextPage = () => {
                 </>
               </div>
             </NoSsr>
+            <Button variant="outlined" startIcon={<ArrowForward />} onClick={() => {}}>
+              Edit Resume
+            </Button>
           </div>
         ) : (
           <div style={{ width: '100%' }}>
