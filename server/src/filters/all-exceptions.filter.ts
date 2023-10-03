@@ -1,7 +1,7 @@
 import { ArgumentsHost, Catch, ExceptionFilter, HttpException, HttpStatus } from '@nestjs/common';
 import { HttpAdapterHost } from '@nestjs/core';
 
-import { INTERNAL_SERVER_ERROR } from '../constants';
+import { INTERNAL_SERVER_ERROR } from '@/constants/index';
 
 @Catch()
 export class AllExceptionsFilter implements ExceptionFilter {
