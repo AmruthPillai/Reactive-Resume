@@ -16,6 +16,12 @@ const HomeTemplates = ({ currentTemplate, setTemplate, creds }: any) => {
 
   const dispatch = useAppDispatch();
 
+  const capitalizeFirstLetter = (text: any) => {
+    if (text) {
+      return text.charAt(0).toUpperCase() + text.slice(1);
+    }
+    return '';
+  };
   // const currentTemplate: string = useAppSelector((state) => get(state.resume.present, 'metadata.template'));
 
   const handleChange = (template: TemplateMeta) => {
@@ -27,7 +33,7 @@ const HomeTemplates = ({ currentTemplate, setTemplate, creds }: any) => {
   return (
     <div>
       <h3>
-        Currently You have selected <b>{currentTemplate}</b>{' '}
+        Currently You have selected <b>{capitalizeFirstLetter(currentTemplate)}</b>{' '}
       </h3>
 
       <br />
