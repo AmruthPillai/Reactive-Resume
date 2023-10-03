@@ -104,7 +104,7 @@ const Home: NextPage = () => {
 
             <h2>Welcome to CVpap and thank you for trying our services. Before proceeding to edit your resume:-</h2>
 
-            <h5>Kindly, select Resume Design from the list below that you willl use in your resume</h5>
+            <h5>Kindly, select Resume Design from the list below that you would like to use in your resume</h5>
             <NoSsr>
               <div className={styles.buttonWrapper}>
                 <>
