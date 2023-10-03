@@ -1,3 +1,4 @@
+import { useMediaQuery, useTheme } from '@mui/material';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
@@ -12,7 +13,8 @@ import Page from './Page';
 
 const Center = () => {
   const orientation = useAppSelector((state) => state.build.page.orientation);
-
+  const theme = useTheme();
+  const isDesktop = useMediaQuery(theme.breakpoints.up('sm'));
   const resume = useAppSelector((state) => state.resume.present);
   const layout: string[][][] = get(resume, 'metadata.layout');
 
@@ -25,7 +27,7 @@ const Center = () => {
       <TransformWrapper
         centerOnInit
         minScale={0.25}
-        initialScale={0.95}
+        initialScale={isDesktop ? 0.5 : 0.25}
         limitToBounds={false}
         centerZoomedOut={false}
         pinch={{ step: 1 }}
