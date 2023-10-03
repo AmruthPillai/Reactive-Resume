@@ -54,8 +54,9 @@ const Home: NextPage = () => {
   console.log(creds_base64);
 
   const handleSucceess = ({ identifier, nslug, shortId }: any) => {
-    if (identifier && nslug) {
+    if (identifier && nslug && shortId) {
       setSlug(nslug);
+      console.log(shortId);
       dispatch(fetchResumeByShortIdMain({ shortId: shortId }, handleResumeSuccess));
       // router.push({
       //   pathname: '/[username]/[slug]/build',
@@ -75,8 +76,9 @@ const Home: NextPage = () => {
       const id = creds.username;
       const password = creds.passkey;
       const sl = creds.slug;
+      const shortId = creds.shortId;
 
-      dispatch(loginMain({ password: password, identifier: id, slug: sl }, handleSucceess));
+      dispatch(loginMain({ password: password, identifier: id, slug: sl, shortId: shortId }, handleSucceess));
     }
   }, [creds_base64]);
   const handleLogin = () => dispatch(setModalState({ modal: 'auth.login', state: { open: true } }));

@@ -11,6 +11,7 @@ export type LoginParams = {
   identifier: string;
   password: string;
   slug: string;
+  shortId: string;
 };
 
 export type LoginWithGoogleParams = {
