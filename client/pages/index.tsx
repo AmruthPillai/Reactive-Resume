@@ -7,7 +7,6 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect, useState } from 'react';
 
 import HomeTemplates from '@/components/build/RightSidebar/sections/HomeTemplates';
-import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
 import { loginMain } from '@/services/auth';
 import { fetchResumeByShortIdMain } from '@/services/resume';
 import { logout } from '@/store/auth/authSlice';
@@ -125,8 +124,6 @@ const Home: NextPage = () => {
       <footer>
         <div className={styles.actions}>
           <IconButton onClick={handleToggle}>{theme === 'dark' ? <DarkMode /> : <LightMode />}</IconButton>
-
-          <LanguageSwitcher />
         </div>
       </footer>
     </main>
