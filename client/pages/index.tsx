@@ -109,7 +109,7 @@ const Home: NextPage = () => {
               <div className={styles.buttonWrapper}>
                 <>
                   <div style={{ width: '100%' }}>
-                    <HomeTemplates creds={{ slug: slug }} />
+                    <HomeTemplates />
                   </div>
                 </>
               </div>
@@ -117,7 +117,7 @@ const Home: NextPage = () => {
           </div>
         ) : (
           <div style={{ width: '100%' }}>
-            <HomeTemplates setTemplate={setTemplate} currentTemplate={templateId} creds={{ slug: slug }} />
+            {/* <HomeTemplates setTemplate={setTemplate} currentTemplate={templateId} creds={{ slug: slug }} /> */}
           </div>
         )}
       </div>
