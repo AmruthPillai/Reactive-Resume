@@ -9,19 +9,18 @@ import templateMap, { TemplateMeta } from '@/templates/templateMap';
 
 import styles from './HomeTemplates.module.scss';
 
-const HomeTemplates = () => {
+const HomeTemplates = ({ currentTemplate, setTemplate, creds }: any) => {
   const { t } = useTranslation();
 
   // const [currentTemplate, setTemplate] = useState(templateId);
 
   const dispatch = useAppDispatch();
 
-  const currentTemplate: string = useAppSelector((state) => get(state.resume.present, 'metadata.template'));
-
   // const currentTemplate: string = useAppSelector((state) => get(state.resume.present, 'metadata.template'));
 
   const handleChange = (template: TemplateMeta) => {
-    // setTemplate(template.id);
+    setTemplate(template.id);
+
     dispatch(setResumeState({ path: 'metadata.template', value: template.id }));
   };
 
@@ -58,10 +57,3 @@ const HomeTemplates = () => {
 };
 
 export default HomeTemplates;
-function useAppSelector(arg0: (state: any) => any): string {
-  throw new Error('Function not implemented.');
-}
-
-function get(present: any, arg1: string) {
-  throw new Error('Function not implemented.');
-}
