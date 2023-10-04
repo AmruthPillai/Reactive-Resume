@@ -10,7 +10,7 @@ import set from 'lodash/set';
 import { nanoid } from 'nanoid';
 import { extname } from 'path';
 import { Resume as ResumeSchema } from 'schema';
-import { Repository } from 'typeorm';
+import { DeepPartial, Repository } from 'typeorm';
 
 import { PostgresErrorCode } from '@/database/errorCodes.enum';
 import { UsersService } from '@/users/users.service';
@@ -237,7 +237,7 @@ export class ResumeService {
     const resume = await this.findOne(id, userId);
 
     const prevResume = pick(resume, ['id', 'shortId', 'name', 'slug', 'image', 'user', 'createdAt', 'order']);
-    const nextResume = { ...prevResume, ...defaultState };
+    const nextResume = { ...prevResume, ...defaultState } as DeepPartial<Resume>;
 
     return this.resumeRepository.update(id, nextResume);
   }
