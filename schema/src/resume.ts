@@ -1,5 +1,6 @@
 import { Basics } from './basics';
 import { Metadata } from './metadata';
+import { Order } from './order';
 import { Section } from './section';
 import { User } from './user';
 
@@ -13,6 +14,7 @@ export type Resume = {
   basics: Basics;
   sections: Record<string, Section>;
   metadata: Metadata;
+  order: Order;
   public: boolean;
   createdAt: Date;
   updatedAt: Date;

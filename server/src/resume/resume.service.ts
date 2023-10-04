@@ -61,6 +61,7 @@ export class ResumeService {
         shortId,
         image,
         user,
+        order: null,
         basics: {
           ...defaultState.basics,
           name: user.name,
@@ -94,6 +95,7 @@ export class ResumeService {
         ...defaultState,
         ...importResumeDto,
         shortId,
+        order: null,
         image,
         user,
       });
@@ -234,7 +236,7 @@ export class ResumeService {
   async reset(id: number, userId: number) {
     const resume = await this.findOne(id, userId);
 
-    const prevResume = pick(resume, ['id', 'shortId', 'name', 'slug', 'image', 'user', 'createdAt']);
+    const prevResume = pick(resume, ['id', 'shortId', 'name', 'slug', 'image', 'user', 'createdAt', 'order']);
     const nextResume = { ...prevResume, ...defaultState };
 
     return this.resumeRepository.update(id, nextResume);

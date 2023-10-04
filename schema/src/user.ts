@@ -1,3 +1,4 @@
+import { Order } from './order';
 import { Resume } from './resume';
 
 export type User = {
@@ -10,6 +11,7 @@ export type User = {
   provider: 'email' | 'google';
   resetToken?: string;
   resumes: Resume[];
+  order: Order[];
   createdAt: Date;
   updatedAt: Date;
 };

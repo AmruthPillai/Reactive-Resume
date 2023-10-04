@@ -12,6 +12,7 @@ import { FontsModule } from './fonts/fonts.module';
 import { HealthModule } from './health/health.module';
 import { IntegrationsModule } from './integrations/integrations.module';
 import { MailModule } from './mail/mail.module';
+import { OrderModule } from './orders/order.module';
 import { PrinterModule } from './printer/printer.module';
 import { ResumeModule } from './resume/resume.module';
 import { UsersModule } from './users/users.module';
@@ -34,6 +35,7 @@ import { UsersModule } from './users/users.module';
     IntegrationsModule,
     PrinterModule,
     HealthModule,
+    OrderModule,
   ],
   providers: [
     {

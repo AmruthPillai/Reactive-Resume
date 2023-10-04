@@ -1,5 +1,15 @@
 import { Basics, Metadata, Section } from 'schema';
-import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, Unique, UpdateDateColumn } from 'typeorm';
+import { Order } from 'src/orders/entities/order.entity';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  ManyToOne,
+  OneToOne,
+  PrimaryGeneratedColumn,
+  Unique,
+  UpdateDateColumn,
+} from 'typeorm';
 
 import { User } from '@/users/entities/user.entity';
 
@@ -27,6 +37,13 @@ export class Resume {
     onDelete: 'CASCADE',
   })
   user: User;
+
+  @OneToOne(() => Order, (order) => order.resume, {
+    eager: true,
+    cascade: true,
+    onDelete: 'CASCADE',
+  })
+  order: Order;
 
   @Column({ type: 'jsonb', default: {} })
   basics: Basics;

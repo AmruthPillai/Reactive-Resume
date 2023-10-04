@@ -1,4 +1,5 @@
 import { Exclude } from 'class-transformer';
+import { Order } from 'src/orders/entities/order.entity';
 import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
 import { Resume } from '@/resume/entities/resume.entity';
@@ -31,6 +32,9 @@ export class User {
 
   @OneToMany(() => Resume, (resume) => resume.user)
   resumes: Resume[];
+
+  @OneToMany(() => Order, (order) => order.user)
+  orders: Order[];
 
   @Column()
   provider: 'email' | 'google';

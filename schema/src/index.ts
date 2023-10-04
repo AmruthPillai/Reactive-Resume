@@ -3,6 +3,7 @@ export * from './basics';
 export * from './fonts';
 export * from './integrations';
 export * from './metadata';
+export * from './order';
 export * from './resume';
 export * from './section';
 export * from './user';
