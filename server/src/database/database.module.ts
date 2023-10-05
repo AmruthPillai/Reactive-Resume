@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Order } from 'src/orders/entities/order.entity';
 
 import { Resume } from '@/resume/entities/resume.entity';
 import { User } from '@/users/entities/user.entity';
@@ -19,7 +20,7 @@ import { User } from '@/users/entities/user.entity';
         database: configService.get('postgres.database'),
         poolSize: 22,
         synchronize: true,
-        entities: [User, Resume],
+        entities: [User, Resume, Order],
         ssl: configService.get('postgres.certificate') && {
           ca: Buffer.from(configService.get<string>('postgres.certificate'), 'base64').toString('ascii'),
         },

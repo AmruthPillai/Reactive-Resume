@@ -17,11 +17,7 @@ export class Order {
   @Column({ unique: true })
   transactionId: string;
 
-  @OneToOne(() => Resume, (resume) => resume.order, {
-    eager: true,
-    cascade: true,
-    onDelete: 'CASCADE',
-  })
+  @OneToOne(() => Resume, (resume) => resume.order, {})
   resume: Resume;
 
   @ManyToOne(() => User, (user) => user.orders, {
