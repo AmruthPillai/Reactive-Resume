@@ -10,9 +10,9 @@ import { OrderService } from './order.service';
 export class OrderController {
   constructor(private readonly orderService: OrderService) {}
 
-  // @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   @Post()
-  create(@Body() createOrderDto: CreateOrderDto, @Query('userId') userId: number, @Query('shortId') shortId: string) {
+  create(@Body() createOrderDto: CreateOrderDto, @User('id') userId: number, @Query('shortId') shortId: string) {
     return this.orderService.create(createOrderDto, userId, shortId);
   }
 

@@ -5,7 +5,7 @@ import {
   CreateDateColumn,
   Entity,
   ManyToOne,
-  OneToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
   Unique,
   UpdateDateColumn,
@@ -38,12 +38,8 @@ export class Resume {
   })
   user: User;
 
-  @OneToOne(() => Order, (order) => order.resume, {
-    eager: true,
-    cascade: true,
-    onDelete: 'CASCADE',
-  })
-  order: Order;
+  @OneToMany(() => Order, (order) => order.resume, {})
+  order: Order[];
 
   @Column({ type: 'jsonb', default: {} })
   basics: Basics;

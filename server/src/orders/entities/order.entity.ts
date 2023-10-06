@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
 import { Resume } from '@/resume/entities/resume.entity';
 import { User } from '@/users/entities/user.entity';
@@ -17,7 +17,11 @@ export class Order {
   @Column({ unique: true })
   transactionId: string;
 
-  @OneToOne(() => Resume, (resume) => resume.order, {})
+  @ManyToOne(() => Resume, (resume) => resume.order, {
+    eager: true,
+    cascade: true,
+    onDelete: 'CASCADE',
+  })
   resume: Resume;
 
   @ManyToOne(() => User, (user) => user.orders, {
