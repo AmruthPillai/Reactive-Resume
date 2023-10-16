@@ -62,20 +62,21 @@ export class OrderService {
   //   return this.resumeRepository.find({ where: { user: { id: userId } } });
   // }
 
-  async findOne(userId: number, shortId?: string) {
+  async findOne(username: string, shortId?: string) {
     const today = new Date();
     const order = await this.orderRepository.findOne({
       where: {
         resume: {
           shortId: shortId,
         },
-        user: { id: userId },
+        user: { username: username },
         expiredDate: LessThan(today),
+        status: 'paid',
       },
     });
 
     if (!order) {
-      throw new HttpException('No active payment record was found', HttpStatus.NOT_FOUND);
+      return null;
     }
 
     // const isPrivate = !resume.public;

@@ -49,8 +49,13 @@ const Export = () => {
     const updatedAt = get(resume, 'updatedAt');
 
     const url = await mutateAsync({ username, slug, lastUpdated: dayjs(updatedAt).unix().toString() });
-
-    download(url);
+    console.log(url);
+    // try {
+    // JSON.parse(url);
+    // } catch (e) {
+    //   console.log(e);
+    // }
+    // download(url);
   };
 
   return (

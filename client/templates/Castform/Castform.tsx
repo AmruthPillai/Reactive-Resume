@@ -1,8 +1,8 @@
 import { css } from '@emotion/css';
-import { ThemeConfig } from 'schema';
 import clsx from 'clsx';
 import get from 'lodash/get';
 import { useMemo } from 'react';
+import { ThemeConfig } from 'schema';
 
 import { useAppSelector } from '@/store/hooks';
 import { getContrastColor } from '@/utils/styles';

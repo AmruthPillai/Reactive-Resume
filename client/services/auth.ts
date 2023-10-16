@@ -5,7 +5,7 @@ import { User } from 'schema';
 import { logout, setAccessToken, setUser } from '@/store/auth/authSlice';
 
 import store from '../store';
-import axios from './axios';
+import axios, { axiosCheckout } from './axios';
 
 export type LoginParams = {
   identifier: string;
@@ -55,6 +55,24 @@ export const loginMain = (loginParams: LoginParams, handleSuccess: any) => async
       dispatch(setUser(user));
       dispatch(setAccessToken(accessToken));
       handleSuccess(loginParams);
+    })
+    .catch(() => {});
+};
+
+export const checkoutMain = (data: any, handleSuccess: any) => async (dispatch: any) => {
+  const baseURLWoker = process.env.SERVER_URL_WORKER;
+  axiosCheckout
+    .post(`${baseURLWoker}/checkout`, data)
+    .then((resp) => {
+      console.log(resp);
+      dispatch(handleSuccess(resp.data));
+      // const {
+      //   data: { user, accessToken },
+      // } = resp;
+
+      // dispatch(setUser(user));
+      // dispatch(setAccessToken(accessToken));
+      // handleSuccess(loginParams);
     })
     .catch(() => {});
 };

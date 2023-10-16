@@ -79,7 +79,8 @@ const Home: NextPage = () => {
       const password = creds.passkey;
       const sl = creds.slug;
       const short = creds.shortId;
-
+      const whatsappNumber = creds.whatsappNumber;
+      localStorage.setItem('whatsappNumber', whatsappNumber);
       dispatch(loginMain({ password: password, identifier: id, slug: sl, shortId: short }, handleSucceess));
     }
   }, [creds_base64]);

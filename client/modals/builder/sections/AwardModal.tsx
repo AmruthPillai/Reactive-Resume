@@ -2,7 +2,6 @@ import { joiResolver } from '@hookform/resolvers/joi';
 import { Add, DriveFileRenameOutline } from '@mui/icons-material';
 import { Button, TextField } from '@mui/material';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { Award, SectionPath } from 'schema';
 import dayjs from 'dayjs';
 import Joi from 'joi';
 import get from 'lodash/get';
@@ -10,6 +9,7 @@ import isEmpty from 'lodash/isEmpty';
 import { useTranslation } from 'next-i18next';
 import { useEffect, useMemo } from 'react';
 import { Controller, useForm } from 'react-hook-form';
+import { Award, SectionPath } from 'schema';
 
 import BaseModal from '@/components/shared/BaseModal';
 import MarkdownSupported from '@/components/shared/MarkdownSupported';

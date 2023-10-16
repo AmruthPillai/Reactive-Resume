@@ -1,10 +1,10 @@
 import { css } from '@emotion/css';
 import { Cake, Email, Phone, Public, Room } from '@mui/icons-material';
-import { ThemeConfig } from 'schema';
 import clsx from 'clsx';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import { useMemo } from 'react';
+import { ThemeConfig } from 'schema';
 
 import Markdown from '@/components/shared/Markdown';
 import { useAppSelector } from '@/store/hooks';

@@ -71,8 +71,14 @@ const ArtboardController: React.FC<ReactZoomPanPinchHandlers> = ({ zoomIn, zoomO
     const updatedAt = get(resume, 'updatedAt');
 
     const url = await mutateAsync({ username, slug, lastUpdated: dayjs(updatedAt).unix().toString() });
-
-    download(url);
+    // console.log(url);
+    // try {
+    console.log(url);
+    // JSON.parse(url);
+    // download(url);
+    // } catch (e) {
+    //   console.log(e);
+    // }
   };
 
   return (

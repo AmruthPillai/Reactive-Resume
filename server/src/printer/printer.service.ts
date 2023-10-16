@@ -6,6 +6,7 @@ import { join } from 'path';
 import { PDFDocument } from 'pdf-lib';
 import { BrowserContext, chromium } from 'playwright-chromium';
 import { PageConfig } from 'schema';
+import { OrderService } from 'src/orders/order.service';
 
 const minimal_chromium_args = [
   '--autoplay-policy=user-gesture-required',
@@ -52,6 +53,7 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
   constructor(
     private readonly schedulerRegistry: SchedulerRegistry,
     private readonly configService: ConfigService,
+    private readonly orderService: OrderService,
   ) {}
 
   async onModuleInit() {
@@ -68,7 +70,14 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
 
   async printAsPdf(username: string, slug: string, lastUpdated: string): Promise<string> {
     const serverUrl = this.configService.get('app.serverUrl');
-
+    const order = await this.orderService.findOne(username);
+    if (order === null) {
+      const publicUrl = JSON.stringify({
+        message: 'No payment found for this resume,kindly pay KSh 50 in order to buy your resume.',
+        status: '412',
+      });
+      return publicUrl;
+    }
     const directory = join(__dirname, '..', 'assets/exports');
     const filename = `RxResume_PDFExport_${username}_${slug}_${lastUpdated}.pdf`;
     const publicUrl = `${serverUrl}/assets/exports/${filename}`;
@@ -150,8 +159,13 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
 
       this.schedulerRegistry.addTimeout(`delete-${filename}`, timeout);
     }
+    const result = JSON.stringify({
+      message: 'Resume processing is success',
+      status: '200',
+      url: publicUrl,
+    });
 
-    return publicUrl;
+    return result;
   }
 
   async printAsPdfBinary(username: string, slug: string, lastUpdated: string): Promise<string> {

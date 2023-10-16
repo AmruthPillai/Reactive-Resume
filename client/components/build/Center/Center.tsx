@@ -8,6 +8,7 @@ import { cn } from '@/utils/styles';
 
 import ArtboardController from './ArtboardController';
 import styles from './Center.module.scss';
+import CheckoutModal from './Checkout';
 import Header from './Header';
 import Page from './Page';
 
@@ -23,11 +24,11 @@ const Center = () => {
   return (
     <div className={cn(styles.center)}>
       <Header />
-
+      <CheckoutModal />
       <TransformWrapper
         centerOnInit
         minScale={0.25}
-        initialScale={isDesktop ? 0.5 : 0.25}
+        initialScale={isDesktop ? 0.9 : 0.5}
         limitToBounds={false}
         centerZoomedOut={false}
         pinch={{ step: 1 }}
@@ -47,7 +48,6 @@ const Center = () => {
                 ))}
               </div>
             </TransformComponent>
-
             <ArtboardController {...controllerProps} />
           </>
         )}
