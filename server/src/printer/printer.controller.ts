@@ -12,9 +12,14 @@ export class PrinterController {
     @Param('username') username: string,
     @Param('slug') slug: string,
     @Query('lastUpdated') lastUpdated: string,
+    @Query('preview') preview: string,
   ): Promise<string> {
     try {
-      return await this.printerService.printAsPdf(username, slug, lastUpdated);
+      let prev = false;
+      if (preview != null) {
+        prev = true;
+      }
+      return await this.printerService.printAsPdf(username, slug, lastUpdated, prev);
     } catch (error) {
       throw new GatewayTimeoutException();
     }

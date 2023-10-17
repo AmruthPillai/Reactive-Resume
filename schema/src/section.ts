@@ -31,6 +31,13 @@ export type Award = {
   summary?: string;
 };
 
+export type Checkout = {
+  phonenumber: string;
+  whatsappNumber: string;
+  userId: string;
+  shortId: string;
+};
+
 export type Certificate = {
   id?: string;
   name: string;

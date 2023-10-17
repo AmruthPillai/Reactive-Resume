@@ -68,10 +68,10 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
     await this.browser.close();
   }
 
-  async printAsPdf(username: string, slug: string, lastUpdated: string): Promise<string> {
+  async printAsPdf(username: string, slug: string, lastUpdated: string, preview: boolean): Promise<string> {
     const serverUrl = this.configService.get('app.serverUrl');
     const order = await this.orderService.findOne(username);
-    if (order === null) {
+    if (order === null && !preview) {
       const publicUrl = JSON.stringify({
         message: 'No payment found for this resume,kindly pay KSh 50 in order to buy your resume.',
         status: '412',
