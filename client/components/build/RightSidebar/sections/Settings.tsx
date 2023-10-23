@@ -1,9 +1,8 @@
-import { Anchor, DeleteForever, Palette } from '@mui/icons-material';
+import { Palette } from '@mui/icons-material';
 import {
   Autocomplete,
   List,
   ListItem,
-  ListItemButton,
   ListItemIcon,
   ListItemText,
   ListSubheader,
@@ -208,7 +207,7 @@ const Settings = () => {
 
         {/* Resume Settings */}
         <>
-          <ListSubheader disableSticky className="rounded">
+          {/* <ListSubheader disableSticky className="rounded">
             {t('builder.rightSidebar.sections.settings.resume.heading')}
           </ListSubheader>
 
@@ -222,9 +221,9 @@ const Settings = () => {
                 secondary={t('builder.rightSidebar.sections.settings.resume.sample.secondary')}
               />
             </ListItemButton>
-          </ListItem>
+          </ListItem> */}
 
-          <ListItem disableGutters>
+          {/* <ListItem disableGutters>
             <ListItemButton onClick={handleResetResume}>
               <ListItemIcon>
                 <DeleteForever />
@@ -236,7 +235,7 @@ const Settings = () => {
                 secondary={t('builder.rightSidebar.sections.settings.resume.reset.secondary')}
               />
             </ListItemButton>
-          </ListItem>
+          </ListItem> */}
         </>
       </List>
     </>

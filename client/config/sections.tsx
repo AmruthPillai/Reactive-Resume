@@ -8,7 +8,7 @@ import {
   FontDownload,
   Groups,
   Language,
-  Link as LinkIcon,
+  // Link as LinkIcon,
   Map,
   Margin,
   MenuBook,
@@ -33,7 +33,6 @@ import Section from '@/components/build/LeftSidebar/sections/Section';
 import CustomCSS from '@/components/build/RightSidebar/sections/CustomCSS';
 import Export from '@/components/build/RightSidebar/sections/Export';
 import Layout from '@/components/build/RightSidebar/sections/Layout';
-import Links from '@/components/build/RightSidebar/sections/Links';
 import Settings from '@/components/build/RightSidebar/sections/Settings';
 import Sharing from '@/components/build/RightSidebar/sections/Sharing';
 import Templates from '@/components/build/RightSidebar/sections/Templates';
@@ -234,11 +233,11 @@ export const right: SidebarSection[] = [
     icon: <SettingsIcon />,
     component: <Settings />,
   },
-  {
-    id: 'links',
-    icon: <LinkIcon />,
-    component: <Links />,
-  },
+  // {
+  //   id: 'links',
+  //   icon: <LinkIcon />,
+  //   component: <Links />,
+  // },
 ];
 
 export const getSectionsByType = (sections: Record<string, SectionRecord>, type: SectionType): SectionRecord[] => {

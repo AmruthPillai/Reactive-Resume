@@ -3,9 +3,9 @@ import toast from 'react-hot-toast';
 import { User } from 'schema';
 
 import { logout, setAccessToken, setUser } from '@/store/auth/authSlice';
-
+const baseURLWoker = process.env.SERVER_URL_WORKER || 'http://localhost:5000';
 import store from '../store';
-import axios, { axiosCheckout } from './axios';
+import axios from './axios';
 
 export type LoginParams = {
   identifier: string;
@@ -59,22 +59,29 @@ export const loginMain = (loginParams: LoginParams, handleSuccess: any) => async
     .catch(() => {});
 };
 
-export const checkoutMain = (data: any, handleSuccess: any) => async (dispatch: any) => {
-  const baseURLWoker = process.env.SERVER_URL_WORKER;
-  axiosCheckout
-    .post(`${baseURLWoker}/checkout`, data)
-    .then((resp) => {
+export const checkoutMain = (data: any, handleSuccess: any, handleError: any) => async (dispatch: any) => {
+  const headers = {
+    'Content-Type': 'application/json',
+  };
+  fetch(`${baseURLWoker}/checkout`, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data),
+  })
+    .then(async (resp) => {
+      const data = await resp.json();
       console.log(resp);
-      dispatch(handleSuccess(resp.data));
+      dispatch(handleSuccess(data));
       // const {
       //   data: { user, accessToken },
       // } = resp;
-
       // dispatch(setUser(user));
       // dispatch(setAccessToken(accessToken));
       // handleSuccess(loginParams);
     })
-    .catch(() => {});
+    .catch(() => {
+      handleError();
+    });
 };
 
 export const login = async (loginParams: LoginParams) => {

@@ -2,7 +2,7 @@ import { S3Client } from '@aws-sdk/client-s3';
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { InjectRepository } from '@nestjs/typeorm';
-import { LessThan, Repository } from 'typeorm';
+import { MoreThan, Repository } from 'typeorm';
 
 import { PostgresErrorCode } from '@/database/errorCodes.enum';
 import { ResumeService } from '@/resume/resume.service';
@@ -70,12 +70,12 @@ export class OrderService {
           shortId: shortId,
         },
         user: { username: username },
-        expiredDate: LessThan(today),
+        expiredDate: MoreThan(today),
         status: 'paid',
       },
     });
 
-    if (!order) {
+    if (order === null || order === undefined) {
       return null;
     }
 

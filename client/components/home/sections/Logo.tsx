@@ -2,7 +2,7 @@ import { cn } from '@/utils/styles';
 
 type LogoProps = { brand: string };
 
-const Logo = ({ brand }: LogoProps) => (
+export const Logo = ({ brand }: LogoProps) => (
   <div className={cn('col-span-2 col-start-2 sm:col-start-auto lg:col-span-1', brand === 'twilio' && 'sm:col-start-2')}>
     {/* Show on Light Theme */}
     <img

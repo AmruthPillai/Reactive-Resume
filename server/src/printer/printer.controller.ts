@@ -16,7 +16,7 @@ export class PrinterController {
   ): Promise<string> {
     try {
       let prev = false;
-      if (preview != null) {
+      if (preview === 'true') {
         prev = true;
       }
       return await this.printerService.printAsPdf(username, slug, lastUpdated, prev);

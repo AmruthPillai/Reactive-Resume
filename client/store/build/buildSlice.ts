@@ -16,6 +16,9 @@ export type BuildState = {
     breakLine: boolean;
     orientation: Orientation;
   };
+  checkout: {
+    checkout: boolean;
+  };
 };
 
 const initialState: BuildState = {
@@ -26,6 +29,9 @@ const initialState: BuildState = {
   page: {
     breakLine: true,
     orientation: 'horizontal',
+  },
+  checkout: {
+    checkout: false,
   },
 };
 
@@ -62,10 +68,17 @@ export const buildSlice = createSlice({
 
       state.page.orientation = orientation;
     },
+    setCheckout: (state) => {
+      if (state.checkout.checkout) {
+        state.checkout.checkout = false;
+      } else {
+        state.checkout.checkout = true;
+      }
+    },
   },
 });
 
-export const { setTheme, toggleSidebar, setSidebarState, togglePageBreakLine, togglePageOrientation } =
+export const { setTheme, toggleSidebar, setSidebarState, togglePageBreakLine, togglePageOrientation, setCheckout } =
   buildSlice.actions;
 
 export default buildSlice.reducer;

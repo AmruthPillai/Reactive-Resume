@@ -17,7 +17,7 @@ export type ServerError = {
 const baseURL = env('SERVER_URL') || '/api';
 const baseURLWoker = process.env.SERVER_URL_WORKER;
 const axios = _axios.create({ baseURL });
-export const axiosCheckout = _axios.create({ baseURL: baseURLWoker });
+// export const axiosCheckout = _axios.create({ baseURL: baseURLWoker });
 
 axios.interceptors.request.use((config) => {
   const { accessToken } = store.getState().auth;

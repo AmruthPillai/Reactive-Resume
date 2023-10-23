@@ -24,6 +24,7 @@ import { ServerError } from '@/services/axios';
 import { printResumeAsPdf, PrintResumeAsPdfParams } from '@/services/printer';
 import { togglePageBreakLine, togglePageOrientation, toggleSidebar } from '@/store/build/buildSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { setModalState } from '@/store/modal/modalSlice';
 import getResumeUrl from '@/utils/getResumeUrl';
 import { cn } from '@/utils/styles';
 
@@ -40,6 +41,7 @@ const ArtboardController: React.FC<ReactZoomPanPinchHandlers> = ({ zoomIn, zoomO
   const { past, present: resume, future } = useAppSelector((state) => state.resume);
   const pages = get(resume, 'metadata.layout');
   const { left, right } = useAppSelector((state) => state.build.sidebar);
+  const { open: isOpen } = useAppSelector((state) => state.modal['builder.sections.checkout']);
   const orientation = useAppSelector((state) => state.build.page.orientation);
 
   const { mutateAsync, isLoading } = useMutation<string, ServerError, PrintResumeAsPdfParams>(printResumeAsPdf);
@@ -70,10 +72,27 @@ const ArtboardController: React.FC<ReactZoomPanPinchHandlers> = ({ zoomIn, zoomO
     const username = get(resume, 'user.username');
     const updatedAt = get(resume, 'updatedAt');
 
-    const url = await mutateAsync({ username, slug, lastUpdated: dayjs(updatedAt).unix().toString() });
+    const urlData: any = await mutateAsync({
+      username,
+      slug,
+      lastUpdated: dayjs(updatedAt).unix().toString(),
+      preview: 'false',
+    });
+    console.log(urlData);
+
+    if (urlData.status === '412') {
+      dispatch(
+        setModalState({
+          modal: `builder.sections.checkout`,
+          state: { open: true },
+        }),
+      );
+    }
+    if (urlData.status === '200') {
+      download(urlData.url);
+    }
     // console.log(url);
-    // try {
-    console.log(url);
+    // try {s
     // JSON.parse(url);
     // download(url);
     // } catch (e) {

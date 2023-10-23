@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config';
 import { SchedulerRegistry } from '@nestjs/schedule';
 import { access, mkdir, readdir, unlink, writeFile } from 'fs/promises';
 import { join } from 'path';
-import { PDFDocument } from 'pdf-lib';
+import { PDFDocument, rgb } from 'pdf-lib';
 import { BrowserContext, chromium } from 'playwright-chromium';
 import { PageConfig } from 'schema';
 import { OrderService } from 'src/orders/order.service';
@@ -68,10 +68,50 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
     await this.browser.close();
   }
 
+  async addWatermarkToPdf(pdfDoc, watermarkText) {
+    // Load the existing PDF buffer
+    // const pdfDoc = await PDFDocument.load(pdfBuffer);
+
+    // Get the number of pages in the PDF
+    const pageCount = pdfDoc.getPageCount();
+
+    // Create a watermark text
+    const watermark = pdfDoc.embedFont('Helvetica');
+    const watermarkSize = 50;
+    const watermarkColor = rgb(0.5, 0.5, 0.5);
+
+    for (let i = 0; i < pageCount; i++) {
+      const page = pdfDoc.getPage(i);
+      const { width, height } = page.getSize();
+
+      // Calculate the position for the watermark (e.g., centered)
+      const textWidth = watermarkText.length * watermarkSize * 0.6;
+      const x = (width - textWidth) / 2;
+      const y = (height - watermarkSize) / 2;
+
+      page.drawText(watermarkText).at(x, y).withFont(watermark).withSize(watermarkSize).withColor(watermarkColor);
+    }
+
+    // Serialize the PDF to a buffer
+    const modifiedPdfBuffer = await pdfDoc.save();
+
+    return modifiedPdfBuffer;
+  }
+
+  // Usage
+  // const inputPdfPath = 'input.pdf';
+  // const watermarkText = 'CONFIDENTIAL';
+
+  // fs.readFile(inputPdfPath)
+  //   .then((pdfBuffer) => addWatermarkToPdf(pdfBuffer, watermarkText))
+  //   .then((outputPdfBuffer) => fs.writeFile('output.pdf', outputPdfBuffer))
+  //   .catch((error) => console.error(error));
+
   async printAsPdf(username: string, slug: string, lastUpdated: string, preview: boolean): Promise<string> {
     const serverUrl = this.configService.get('app.serverUrl');
     const order = await this.orderService.findOne(username);
-    if (order === null && !preview) {
+
+    if (order === null && (preview === false || preview === undefined || preview === null)) {
       const publicUrl = JSON.stringify({
         message: 'No payment found for this resume,kindly pay KSh 50 in order to buy your resume.',
         status: '412',
@@ -125,7 +165,9 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
       const pdf = await PDFDocument.create();
 
       for (let index = 0; index < resumePages.length; index++) {
-        await page.evaluate((page) => (document.body.innerHTML = page.innerHTML), resumePages[index]);
+        await page.evaluate((page) => {
+          document.body.innerHTML = page.innerHTML;
+        }, resumePages[index]);
 
         const buffer = await page.pdf({
           printBackground: true,
@@ -134,9 +176,12 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
         });
 
         const pageDoc = await PDFDocument.load(buffer);
-        const copiedPages = await pdf.copyPages(pageDoc, [0]);
+        const buffefDoc = await this.addWatermarkToPdf(pageDoc, 'watermark');
+        const copiedPages = await pdf.copyPages(buffefDoc, [0]);
 
-        copiedPages.forEach((copiedPage) => pdf.addPage(copiedPage));
+        copiedPages.forEach((copiedPage) => {
+          pdf.addPage(copiedPage);
+        });
       }
 
       await page.close();

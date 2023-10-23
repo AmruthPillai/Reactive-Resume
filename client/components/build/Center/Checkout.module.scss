@@ -1,0 +1,41 @@
+.center {
+  @apply mx-0 flex flex-grow pt-12 lg:pt-16;
+  @apply transition-[margin-left,margin-right] duration-200;
+  @apply bg-zinc-100 dark:bg-zinc-900;
+}
+
+.checkout {
+}
+
+.mpesa {
+  height: 3rem;
+  width: 3rem;
+  position: relative;
+  margin-right: 1rem;
+}
+
+.checkout_form {
+  display: inline-flex;
+  position: relative;
+}
+
+.free_sample {
+  // margin-left: 7rem;
+  position: absolute;
+  top: 1rem;
+  right: 0rem;
+}
+
+.mpesa_number {
+  width: 50%;
+  position: relative;
+  margin-right: 3rem;
+}
+
+.wrapper {
+  @apply h-full w-full overflow-visible #{!important};
+}
+
+.artboard {
+  @apply flex gap-8;
+}

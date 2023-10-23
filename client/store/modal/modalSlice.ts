@@ -11,6 +11,7 @@ export type ModalName =
   | 'dashboard.rename-resume'
   | 'builder.sections.profile'
   | 'builder.sections.work'
+  | 'builder.sections.checkout'
   | `builder.sections.${string}`;
 
 export type ModalState = {
@@ -42,6 +43,7 @@ const initialState: Record<ModalName, ModalState> = {
   'builder.sections.references': { open: false },
   'builder.sections.projects': { open: false },
   'builder.sections.custom': { open: false },
+  'builder.sections.checkout': { open: false },
 };
 
 export const modalSlice = createSlice({
