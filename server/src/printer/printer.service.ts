@@ -168,92 +168,89 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
         await page.evaluate((page) => {
           document.body.innerHTML = page.innerHTML;
           const selector = 'body';
+          if (preview) {
+            const newDiv = document.createElement('div');
+            const newStart = document.createElement('div');
+            const newEnd = document.createElement('div');
+            newDiv.innerHTML = `<div style='
+            background: #d3d3d344;
+            color: #ff000044;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            font-size: 50px;
+            z-index: 99999;
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            left: 50%;  /* Horizontally center the div */
+            top: 50%;   /* Vertically center the div */
+            transform: translate(-50%, -50%); /* Move the div back by half its width and height */
+        '>
+          CVPAP<br>
+            <small style="font-size: 10px;">
+                Glab Tech Services
+            </small>
+        </div>
+        `;
 
-          const today = new Date();
-          const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+            newStart.innerHTML = `<div style='
+            background: #d3d3d344;
+            color: #ff000066;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            font-size: 40px;
+            z-index: 99999;
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            right: 3rem;  /* Horizontally center the div */
+            top: 8rem;   /* Vertically center the div */
+            transform: translate(-50%, -50%); /* Move the div back by half its width and height */
+        '>
+          CVPAP<br>
+            <small style="font-size: 10px;">
+                Glab Tech Services
+            </small>
+        </div>
+        `;
 
-          const newDiv = document.createElement('div');
-          const newStart = document.createElement('div');
-          const newEnd = document.createElement('div');
-          newDiv.innerHTML = `<div style='
-          background: #d3d3d344;
-          color: #ff000044;
-          border-radius: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-          text-align: center;
-          font-size: 50px;
-          z-index: 99999;
-          position: fixed;
-          width: 500px;
-          height: 500px;
-          left: 50%;  /* Horizontally center the div */
-          top: 50%;   /* Vertically center the div */
-          transform: translate(-50%, -50%); /* Move the div back by half its width and height */
-      '>
-        CVPAP<br>
-          <small style="font-size: 10px;">
-              Glab Tech Services
-          </small>
-      </div>
-      `;
-
-          newStart.innerHTML = `<div style='
-          background: #d3d3d344;
-          color: #ff000066;
-          border-radius: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-          text-align: center;
-          font-size: 40px;
-          z-index: 99999;
-          position: fixed;
-          width: 300px;
-          height: 300px;
-          right: 3rem;  /* Horizontally center the div */
-          top: 8rem;   /* Vertically center the div */
-          transform: translate(-50%, -50%); /* Move the div back by half its width and height */
-      '>
-        CVPAP<br>
-          <small style="font-size: 10px;">
-              Glab Tech Services
-          </small>
-      </div>
-      `;
-
-          newEnd.innerHTML = `<div style='
-          background: #d3d3d344;
-          color: #ff000044;
-          border-radius: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-          text-align: center;
-          font-size: 20px;
-          z-index: 99999;
-          position: fixed;
-          width: 300px;
-          height: 300px;
-          left: 8rem;  /* Horizontally center the div */
-          bottom: 1rem;   /* Vertically center the div */
-          transform: translate(-50%, -50%); /* Move the div back by half its width and height */
-      '>
-        CVPAP<br>
-          <small style="font-size: 10px;">
-              Glab Tech Services
-          </small>
-      </div>
-      `;
-
-          const currentDiv = document.querySelector(selector);
-          currentDiv.prepend(newDiv);
-          currentDiv.prepend(newStart);
-          currentDiv.prepend(newEnd);
+            newEnd.innerHTML = `<div style='
+            background: #d3d3d344;
+            color: #ff000044;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            font-size: 20px;
+            z-index: 99999;
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            left: 8rem;  /* Horizontally center the div */
+            bottom: 1rem;   /* Vertically center the div */
+            transform: translate(-50%, -50%); /* Move the div back by half its width and height */
+        '>
+          CVPAP<br>
+            <small style="font-size: 10px;">
+                Glab Tech Services
+            </small>
+        </div>
+        `;
+            const currentDiv = document.querySelector(selector);
+            currentDiv.prepend(newDiv);
+            currentDiv.prepend(newStart);
+            currentDiv.prepend(newEnd);
+          }
         }, resumePages[index]);
 
         const buffer = await page.pdf({
