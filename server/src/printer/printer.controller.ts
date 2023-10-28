@@ -12,11 +12,11 @@ export class PrinterController {
     @Param('username') username: string,
     @Param('slug') slug: string,
     @Query('lastUpdated') lastUpdated: string,
-    @Query('preview') preview: string,
+    @Query('preview') preview: string | boolean,
   ): Promise<string> {
     try {
       let prev = false;
-      if (preview === 'true') {
+      if (preview === 'true' || preview === true) {
         prev = true;
       }
       return await this.printerService.printAsPdf(username, slug, lastUpdated, prev);

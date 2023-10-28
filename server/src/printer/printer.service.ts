@@ -1,9 +1,9 @@
-import { Injectable, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
+import { Injectable, Logger, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { SchedulerRegistry } from '@nestjs/schedule';
 import { access, mkdir, readdir, unlink, writeFile } from 'fs/promises';
 import { join } from 'path';
-import { PDFDocument, rgb } from 'pdf-lib';
+import { PDFDocument } from 'pdf-lib';
 import { BrowserContext, chromium } from 'playwright-chromium';
 import { PageConfig } from 'schema';
 import { OrderService } from 'src/orders/order.service';
@@ -68,35 +68,35 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
     await this.browser.close();
   }
 
-  async addWatermarkToPdf(pdfDoc, watermarkText) {
-    // Load the existing PDF buffer
-    // const pdfDoc = await PDFDocument.load(pdfBuffer);
+  // async addWatermarkToPdf(pdfDoc, watermarkText) {
+  //   // Load the existing PDF buffer
+  //   // const pdfDoc = await PDFDocument.load(pdfBuffer);
 
-    // Get the number of pages in the PDF
-    const pageCount = pdfDoc.getPageCount();
+  //   // Get the number of pages in the PDF
+  //   const pageCount = pdfDoc.getPageCount();
 
-    // Create a watermark text
-    const watermark = pdfDoc.embedFont('Helvetica');
-    const watermarkSize = 50;
-    const watermarkColor = rgb(0.5, 0.5, 0.5);
+  //   // Create a watermark text
+  //   const watermark = pdfDoc.embedFont('Helvetica');
+  //   const watermarkSize = 50;
+  //   const watermarkColor = rgb(0.5, 0.5, 0.5);
 
-    for (let i = 0; i < pageCount; i++) {
-      const page = pdfDoc.getPage(i);
-      const { width, height } = page.getSize();
+  //   for (let i = 0; i < pageCount; i++) {
+  //     const page = pdfDoc.getPage(i);
+  //     const { width, height } = page.getSize();
 
-      // Calculate the position for the watermark (e.g., centered)
-      const textWidth = watermarkText.length * watermarkSize * 0.6;
-      const x = (width - textWidth) / 2;
-      const y = (height - watermarkSize) / 2;
+  //     // Calculate the position for the watermark (e.g., centered)
+  //     const textWidth = watermarkText.length * watermarkSize * 0.6;
+  //     const x = (width - textWidth) / 2;
+  //     const y = (height - watermarkSize) / 2;
 
-      page.drawText(watermarkText).at(x, y).withFont(watermark).withSize(watermarkSize).withColor(watermarkColor);
-    }
+  //     page.drawText(watermarkText).at(x, y).withFont(watermark).withSize(watermarkSize).withColor(watermarkColor);
+  //   }
 
-    // Serialize the PDF to a buffer
-    const modifiedPdfBuffer = await pdfDoc.save();
+  //   // Serialize the PDF to a buffer
+  //   const modifiedPdfBuffer = await pdfDoc.save();
 
-    return modifiedPdfBuffer;
-  }
+  //   return modifiedPdfBuffer;
+  // }
 
   // Usage
   // const inputPdfPath = 'input.pdf';
@@ -167,6 +167,93 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
       for (let index = 0; index < resumePages.length; index++) {
         await page.evaluate((page) => {
           document.body.innerHTML = page.innerHTML;
+          const selector = 'body';
+
+          const today = new Date();
+          const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+
+          const newDiv = document.createElement('div');
+          const newStart = document.createElement('div');
+          const newEnd = document.createElement('div');
+          newDiv.innerHTML = `<div style='
+          background: #d3d3d344;
+          color: #ff000044;
+          border-radius: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          text-align: center;
+          font-size: 50px;
+          z-index: 99999;
+          position: fixed;
+          width: 500px;
+          height: 500px;
+          left: 50%;  /* Horizontally center the div */
+          top: 50%;   /* Vertically center the div */
+          transform: translate(-50%, -50%); /* Move the div back by half its width and height */
+      '>
+        CVPAP<br>
+          <small style="font-size: 10px;">
+              Glab Tech Services
+          </small>
+      </div>
+      `;
+
+          newStart.innerHTML = `<div style='
+          background: #d3d3d344;
+          color: #ff000066;
+          border-radius: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          text-align: center;
+          font-size: 40px;
+          z-index: 99999;
+          position: fixed;
+          width: 300px;
+          height: 300px;
+          right: 3rem;  /* Horizontally center the div */
+          top: 8rem;   /* Vertically center the div */
+          transform: translate(-50%, -50%); /* Move the div back by half its width and height */
+      '>
+        CVPAP<br>
+          <small style="font-size: 10px;">
+              Glab Tech Services
+          </small>
+      </div>
+      `;
+
+          newEnd.innerHTML = `<div style='
+          background: #d3d3d344;
+          color: #ff000044;
+          border-radius: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          text-align: center;
+          font-size: 20px;
+          z-index: 99999;
+          position: fixed;
+          width: 300px;
+          height: 300px;
+          left: 8rem;  /* Horizontally center the div */
+          bottom: 1rem;   /* Vertically center the div */
+          transform: translate(-50%, -50%); /* Move the div back by half its width and height */
+      '>
+        CVPAP<br>
+          <small style="font-size: 10px;">
+              Glab Tech Services
+          </small>
+      </div>
+      `;
+
+          const currentDiv = document.querySelector(selector);
+          currentDiv.prepend(newDiv);
+          currentDiv.prepend(newStart);
+          currentDiv.prepend(newEnd);
         }, resumePages[index]);
 
         const buffer = await page.pdf({
@@ -176,12 +263,19 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
         });
 
         const pageDoc = await PDFDocument.load(buffer);
-        const buffefDoc = await this.addWatermarkToPdf(pageDoc, 'watermark');
-        const copiedPages = await pdf.copyPages(buffefDoc, [0]);
+        try {
+          // const buffefDoc = await this.addWatermarkToPdf(pageDoc, 'watermark');
 
-        copiedPages.forEach((copiedPage) => {
-          pdf.addPage(copiedPage);
-        });
+          // const copiedPages = await pdf.copyPages(buffefDoc, [0]);
+          const pageDoc = await PDFDocument.load(buffer);
+          const copiedPages = await pdf.copyPages(pageDoc, [0]);
+
+          copiedPages.forEach((copiedPage) => {
+            pdf.addPage(copiedPage);
+          });
+        } catch (e) {
+          Logger.log(e);
+        }
       }
 
       await page.close();
