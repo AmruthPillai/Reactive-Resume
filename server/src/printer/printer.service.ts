@@ -119,7 +119,7 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
       return publicUrl;
     }
     const directory = join(__dirname, '..', 'assets/exports');
-    const filename = `RxResume_PDFExport_${username}_${slug}_${lastUpdated}.pdf`;
+    const filename = `CVpap_${username}_${slug}_${lastUpdated}.pdf`;
     const publicUrl = `${serverUrl}/assets/exports/${filename}`;
 
     try {
@@ -130,7 +130,7 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
       await readdir(directory).then(async (files) => {
         await Promise.all(
           files.map(async (file) => {
-            if (file.startsWith(`RxResume_PDFExport_${username}_${slug}`)) {
+            if (file.startsWith(`CVpap_${username}_${slug}`)) {
               await unlink(join(directory, file));
               if (activeSchedulerTimeouts[`delete-${file}`]) {
                 this.schedulerRegistry.deleteTimeout(`delete-${file}`);
@@ -314,7 +314,7 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
     const serverUrl = this.configService.get('app.serverUrl');
 
     const directory = join(__dirname, '..', 'assets/exports');
-    const filename = `RxResume_PDFExport_${username}_${slug}_${lastUpdated}.pdf`;
+    const filename = `CVpap_${username}_${slug}_${lastUpdated}.pdf`;
     const publicUrl = `${serverUrl}/assets/exports/${filename}`;
     let pdfBytes = null;
 
@@ -326,7 +326,7 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
       // await readdir(directory).then(async (files) => {
       //   await Promise.all(
       //     files.map(async (file) => {
-      //       if (file.startsWith(`RxResume_PDFExport_${username}_${slug}`)) {
+      //       if (file.startsWith(`CVpap_${username}_${slug}`)) {
       //         await unlink(join(directory, file));
       //         if (activeSchedulerTimeouts[`delete-${file}`]) {
       //           // this.schedulerRegistry.deleteTimeout(`delete-${file}`);
