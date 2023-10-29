@@ -1,3 +1,5 @@
+## Notice: I am looking for a dev-ops/backend engineer to help me with the new version, to help make it easier to self-host and deploy. Please reach out (hello@amruthpillai.com) if you would be able to help!
+
 <img src="/client/public/logo/dark.svg" alt="Reactive Resume" width="256px" height="256px" />
 
 # Reactive Resume
