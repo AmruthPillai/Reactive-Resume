@@ -15,6 +15,16 @@ const nextConfig = {
     domains: ['cdn.rxresu.me', 'www.gravatar.com'],
   },
 
+  rewrites: () => {
+    return [
+      // Rewrite everything else to use `pages/index`
+      {
+        source: '/:path*',
+        destination: '/',
+      },
+    ];
+  },
+
   // Hack to make Tailwind darkMode 'class' strategy with CSS Modules
   // Ref: https://github.com/tailwindlabs/tailwindcss/issues/3258#issuecomment-968368156
   webpack: (config) => {

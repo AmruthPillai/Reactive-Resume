@@ -5,8 +5,7 @@ import isEmpty from 'lodash/isEmpty';
 import isFunction from 'lodash/isFunction';
 import { useTranslation } from 'next-i18next';
 import { useCallback } from 'react';
-import { DndProvider } from 'react-dnd';
-import { HTML5Backend } from 'react-dnd-html5-backend';
+// import { DndProvider } from 'react-dnd';
 import { ListItem as ListItemType } from 'schema';
 
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
@@ -64,32 +63,32 @@ const List: React.FC<Props> = ({
   );
 
   return (
-    <DndProvider backend={HTML5Backend}>
-      <div className={clsx(styles.container, className)}>
-        {isEmpty(list) && <div className={styles.empty}>{t('builder.common.list.empty-text')}</div>}
+    // <DndProvider backend={HTML5Backend}>
+    <div className={clsx(styles.container, className)}>
+      {isEmpty(list) && <div className={styles.empty}>{t('builder.common.list.empty-text')}</div>}
 
-        {list.map((item, index) => {
-          const title = get(item, titleKey, '');
-          const subtitleObj = get(item, subtitleKey);
-          const subtitle: string = isArray(subtitleObj) ? subtitleObj.join(', ') : subtitleObj;
+      {list.map((item, index) => {
+        const title = get(item, titleKey, '');
+        const subtitleObj = get(item, subtitleKey);
+        const subtitle: string = isArray(subtitleObj) ? subtitleObj.join(', ') : subtitleObj;
 
-          return (
-            <ListItem
-              key={item.id}
-              path={path}
-              item={item}
-              index={index}
-              title={title}
-              subtitle={subtitle}
-              onMove={handleMove}
-              onEdit={handleEdit}
-              onDelete={handleDelete}
-              onDuplicate={handleDuplicate}
-            />
-          );
-        })}
-      </div>
-    </DndProvider>
+        return (
+          <ListItem
+            key={item.id}
+            path={path}
+            item={item}
+            index={index}
+            title={title}
+            subtitle={subtitle}
+            onMove={handleMove}
+            onEdit={handleEdit}
+            onDelete={handleDelete}
+            onDuplicate={handleDuplicate}
+          />
+        );
+      })}
+    </div>
+    // </DndProvider>
   );
 };
 

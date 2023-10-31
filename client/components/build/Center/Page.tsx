@@ -31,7 +31,10 @@ const Page: React.FC<Props> = ({ page, showPageNumbers = false }) => {
 
   const themeCSS = useMemo(() => !isEmpty(theme) && generateThemeStyles(theme), [theme]);
   const typographyCSS = useMemo(() => !isEmpty(typography) && generateTypographyStyles(typography), [typography]);
-  const TemplatePage: React.FC<PageProps> | null = useMemo(() => templateMap[template].component, [template]);
+  const TemplatePage: React.FC<PageProps> | null = useMemo(
+    () => (templateMap[template] || templateMap.kakuna).component,
+    [template],
+  );
 
   return (
     <div className={styles.container} data-page={page + 1} data-format={pageConfig?.format || 'A4'}>
