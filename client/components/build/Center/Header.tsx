@@ -98,7 +98,7 @@ const Header = () => {
             onComplete: (newResume: Resume) => {
               queryClient.invalidateQueries(RESUMES_QUERY);
 
-              router.push(`/${resume.user.username}/${newResume.slug}/build`);
+              router.push(`/${resume.user.username}/${newResume.slug}/builder`);
             },
           },
         },
@@ -113,7 +113,7 @@ const Header = () => {
 
     queryClient.invalidateQueries(RESUMES_QUERY);
 
-    router.push(`/${resume.user.username}/${newResume.slug}/build`);
+    router.push(`/${resume.user.username}/${newResume.slug}/builder`);
   };
 
   const handleDelete = async () => {

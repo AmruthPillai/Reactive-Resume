@@ -15,8 +15,6 @@ import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
 import styles from '@/styles/pages/Home.module.scss';
 
-import { DOCS_URL, DONATION_URL, GITHUB_URL, REDDIT_URL } from '../constants';
-
 export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => ({
   props: {
     ...(await serverSideTranslations(locale, ['common', 'modals', 'landing'])),
@@ -89,30 +87,6 @@ const Home: NextPage = () => {
               {t('landing.links.links.service')}
             </Button>
           </Link>
-
-          <a href={GITHUB_URL} target="_blank" rel="noreferrer">
-            <Button variant="text" startIcon={<LinkIcon />}>
-              {t('landing.links.links.github')}
-            </Button>
-          </a>
-
-          <a href={DOCS_URL} target="_blank" rel="noreferrer">
-            <Button variant="text" startIcon={<LinkIcon />}>
-              {t('landing.links.links.docs')}
-            </Button>
-          </a>
-
-          <a href={REDDIT_URL} target="_blank" rel="noreferrer">
-            <Button variant="text" startIcon={<LinkIcon />}>
-              {t('landing.links.links.reddit')}
-            </Button>
-          </a>
-
-          <a href={DONATION_URL} target="_blank" rel="noreferrer">
-            <Button variant="text" startIcon={<LinkIcon />}>
-              {t('landing.links.links.donate')}
-            </Button>
-          </a>
         </div>
       </section>
 

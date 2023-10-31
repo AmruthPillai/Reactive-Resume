@@ -1,6 +1,6 @@
 import env from '@beam-australia/react-env';
-import { Resume } from 'schema';
 import get from 'lodash/get';
+import { Resume } from 'schema';
 
 type Options = {
   withHost?: boolean;
@@ -28,7 +28,7 @@ const getResumeUrl = (resume: Resume, options: Options = defaultOptions): string
 
   url = options.withHost ? `${hostname}` : url;
   url = options.shortUrl ? `${url}/r/${shortId}` : `${url}/${username}/${slug}`;
-  url = options.buildUrl ? `${url}/build` : url;
+  url = options.buildUrl ? `${url}/builder` : url;
 
   return url;
 };

@@ -193,11 +193,11 @@ export class ResumeService {
 
       const shortId = nanoid(SHORT_ID_LENGTH);
       const image = `/images/covers/${sample(covers)}`;
-
+      const slug = nanoid(SHORT_ID_LENGTH);
       const duplicatedResume: Partial<Resume> = {
         ...pick(originalResume, ['name', 'slug', 'basics', 'metadata', 'sections', 'public']),
-        name: `${originalResume.name} Copy`,
-        slug: `${originalResume.slug}-copy`,
+        name: `${originalResume.name}-${slug} Copy`,
+        slug: `${originalResume.slug}-${slug}-copy`,
         shortId,
         image,
       };

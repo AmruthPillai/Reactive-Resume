@@ -48,7 +48,7 @@ const ResumePreview: React.FC<Props> = ({ resume }) => {
     handleClose();
 
     router.push({
-      pathname: '/[username]/[slug]/build',
+      pathname: '/[username]/[slug]/builder',
       query: { username: resume.user.username, slug: resume.slug },
     });
   };
@@ -110,7 +110,7 @@ const ResumePreview: React.FC<Props> = ({ resume }) => {
       <Link
         passHref
         href={{
-          pathname: '/[username]/[slug]/build',
+          pathname: '/[username]/[slug]/builder',
           query: { username: resume.user.username, slug: resume.slug },
         }}
       >

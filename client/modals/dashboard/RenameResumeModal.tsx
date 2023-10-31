@@ -1,7 +1,6 @@
 import { joiResolver } from '@hookform/resolvers/joi';
 import { DriveFileRenameOutline } from '@mui/icons-material';
 import { Button, TextField } from '@mui/material';
-import { Resume } from 'schema';
 import Joi from 'joi';
 import get from 'lodash/get';
 import noop from 'lodash/noop';
@@ -9,6 +8,7 @@ import { useTranslation } from 'next-i18next';
 import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useMutation } from 'react-query';
+import { Resume } from 'schema';
 
 import BaseModal from '@/components/shared/BaseModal';
 import { RESUMES_QUERY } from '@/constants/index';
