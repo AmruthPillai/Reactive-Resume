@@ -62,7 +62,7 @@ export class OrderService {
   //   return this.resumeRepository.find({ where: { user: { id: userId } } });
   // }
 
-  async findOne(username: string, shortId?: string) {
+  async findOne(username: string, shortId: string) {
     const today = new Date();
     const order = await this.orderRepository.findOne({
       where: {
