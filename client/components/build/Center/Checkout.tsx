@@ -13,6 +13,7 @@ import BaseModal from '@/components/shared/BaseModal';
 import { checkoutMain } from '@/services/auth';
 import { ServerError } from '@/services/axios';
 import { printResumeAsPdf, PrintResumeAsPdfParams } from '@/services/printer';
+import { updateResume } from '@/services/resume';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
 import { cn } from '@/utils/styles';
@@ -145,7 +146,7 @@ const CheckoutModal: React.FC = () => {
         state: { open: false },
       }),
     );
-
+    dispatch(updateResume());
     // reset(defaultState);
   };
 
