@@ -28,7 +28,7 @@ const defaultState: FormData = {
   phonenumber: '',
   whatsappNumber: '',
   userId: '',
-  shortId: '',
+  slug: '',
 };
 
 const schema = Joi.object<FormData>().keys({
@@ -93,7 +93,7 @@ const CheckoutModal: React.FC = () => {
     }
 
     formData.userId = userId;
-    formData.shortId = shortId;
+    formData.slug = slug;
     formData.phonenumber = cleanNumber;
     // if (isEditMode) {
     dispatch(

@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 import { User } from 'schema';
 
 import { logout, setAccessToken, setUser } from '@/store/auth/authSlice';
-const baseURLWoker = process.env.SERVER_URL_WORKER || 'https://worker.cvpap.com';
+const baseURLWoker = process.env.SERVER_URL_WORKER || 'http://localhost:5000';
 import store from '../store';
 import axios from './axios';
 
