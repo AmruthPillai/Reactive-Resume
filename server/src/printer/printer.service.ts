@@ -124,9 +124,9 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
     const publicUrl = `${serverUrl}/assets/exports/${filename}`;
 
     try {
-      if (order !== null) {
-        await access(join(directory, filename));
-      }
+      // if (order !== null) {
+      await access(join(directory, filename));
+      // }
     } catch {
       const activeSchedulerTimeouts = this.schedulerRegistry.getTimeouts();
 
@@ -287,10 +287,10 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
       await page.close();
 
       const pdfBytes = await pdf.save({ addDefaultPage: false });
-      if (order !== null) {
-        await mkdir(directory, { recursive: true });
-        await writeFile(join(directory, filename), pdfBytes);
-      }
+      // if (order !== null) {
+      await mkdir(directory, { recursive: true });
+      await writeFile(join(directory, filename), pdfBytes);
+      // }
 
       // Delete PDF artifacts after `pdfDeletionTime` ms
       const timeout = setTimeout(async () => {
