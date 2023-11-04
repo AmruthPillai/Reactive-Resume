@@ -109,8 +109,8 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
 
   async printAsPdf(username: string, slug: string, lastUpdated: string, preview: boolean): Promise<string> {
     const serverUrl = this.configService.get('app.serverUrl');
-    // const order = await this.orderService.findOne(username);
-    const order = null;
+    const order = await this.orderService.findOne(username, slug);
+    // const order = null;
 
     if (order === null && (preview === false || preview === undefined || preview === null)) {
       const publicUrl = JSON.stringify({
