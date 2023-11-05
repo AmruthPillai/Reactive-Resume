@@ -75,7 +75,7 @@ services:
       ACCESS_TOKEN_SECRET: access_token_secret
       REFRESH_TOKEN_SECRET: refresh_token_secret
       # -- Emails --
-      SMTP_URL: smtp://user:pass@smtp:587 # Optional
+      # SMTP_URL: smtp://user:pass@smtp:587 # Optional
       # -- Storage (Minio) --
       STORAGE_ENDPOINT: minio
       STORAGE_PORT: 9000
@@ -86,7 +86,7 @@ services:
       # -- Cache (Redis) --
       REDIS_URL: redis://default:password@redis:6379
       # -- Sentry --
-      SENTRY_DSN: https://id.sentry.io # Optional
+      # SENTRY_DSN: https://id.sentry.io # Optional
       # -- GitHub --
       GITHUB_CLIENT_ID: github_client_id
       GITHUB_CLIENT_SECRET: github_client_secret

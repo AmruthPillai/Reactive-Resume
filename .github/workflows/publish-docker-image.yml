@@ -1,10 +1,10 @@
 name: Publish Docker Image
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - v4
-  workflow_dispatch:
 
 env:
   IMAGE: amruthpillai/reactive-resume
@@ -21,7 +21,7 @@ jobs:
       matrix:
         platform:
           - linux/amd64
-          - linux/arm64
+          # - linux/arm64 # Skipping linux/arm64 for now as it is extremely slow to build on GitHub Actions
 
     steps:
       - name: Checkout Repository
