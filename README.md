@@ -125,5 +125,5 @@ You are free to turn off all AI features (and not be aware of it’s existence) 
 
 Reactive Resume is packaged and distributed using the [MIT License](/LICENSE.md) which allows for commercial use, distribution, modification and private use provided that all copies of the software contain the same license and copyright.
 
-By the community, for the community.
-A passion project by Amruth Pillai
+_By the community, for the community._  
+A passion project by [Amruth Pillai](https://www.amruthpillai.com/)
