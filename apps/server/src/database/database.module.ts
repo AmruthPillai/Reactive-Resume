@@ -17,16 +17,12 @@ import { Config } from "@/server/config/schema";
       useFactory: async (configService: ConfigService<Config>) => ({
         prismaOptions: { datasourceUrl: configService.get("DATABASE_URL") },
         middlewares: [
-          ...(configService.get("NODE_ENV") === "development"
-            ? [
-                loggingMiddleware({
-                  logLevel: "debug",
-                  logger: new Logger(PrismaService.name),
-                  logMessage: (query) =>
-                    `[Query] ${query.model}.${query.action} - ${query.executionTime}ms`,
-                }),
-              ]
-            : []),
+          loggingMiddleware({
+            logLevel: "debug", // only in development
+            logger: new Logger(PrismaService.name),
+            logMessage: (query) =>
+              `[Query] ${query.model}.${query.action} - ${query.executionTime}ms`,
+          }),
         ],
       }),
     }),

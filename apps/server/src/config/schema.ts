@@ -1,7 +1,7 @@
 import { z } from "nestjs-zod/z";
 
 export const configSchema = z.object({
-  NODE_ENV: z.enum(["development", "production"]).default("development"),
+  NODE_ENV: z.enum(["development", "production"]).default("production"),
 
   // Ports
   PORT: z.coerce.number().default(3000),

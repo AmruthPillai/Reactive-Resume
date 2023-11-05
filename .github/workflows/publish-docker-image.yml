@@ -6,6 +6,10 @@ on:
     branches:
       - v4
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   IMAGE: amruthpillai/reactive-resume
 
