@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <base href="/" />
+
+    <!-- SEO -->
+    <title>Reactive Resume - A free and open-source resume builder</title>
+    <meta
+      name="description"
+      content="A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
+    />
+
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- White Flash Prevention Script -->
+    <script type="text/javascript" src="/scripts/initialize-theme.js"></script>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/icon/dark.svg"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/icon/light.svg"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body class="bg-background text-foreground text-sm antialiased print:bg-white print:m-0">
+    <div id="root"></div>
+
+    <!-- Scripts -->
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

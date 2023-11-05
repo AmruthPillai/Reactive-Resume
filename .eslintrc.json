@@ -1,0 +1,62 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nx"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "extends": ["plugin:prettier/recommended"],
+      "plugins": ["simple-import-sort", "unused-imports"],
+      "rules": {
+        // simple-import-sort
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error",
+
+        // unused-imports
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": [
+          "warn",
+          {
+            "vars": "all",
+            "varsIgnorePattern": "^_",
+            "args": "after-used",
+            "argsIgnorePattern": "^_"
+          }
+        ],
+
+        // nx
+        "@nx/enforce-module-boundaries": [
+          "error",
+          {
+            "allowCircularSelfDependency": true,
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nx/typescript"],
+      "rules": {
+        // typescript-eslint
+        "@typescript-eslint/no-unused-vars": "off"
+      }
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nx/javascript"],
+      "rules": {
+        // eslint
+        "no-console": "warn",
+        "no-unused-vars": "off"
+      }
+    }
+  ]
+}

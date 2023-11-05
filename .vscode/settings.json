@@ -1,0 +1,10 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "files.associations": {
+    "compose-dev.yml": "dockercompose",
+    ".github/workflows/*.yml": "github-actions-workflow"
+  },
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": "file:///Users/amruth/Projects/Reactive-Resume/.github/workflows/publish-docker-image.yml"
+  }
+}

@@ -1,0 +1,74 @@
+/* Theme */
+@layer base {
+  :root {
+    --background: var(--zinc-50);
+    --foreground: var(--zinc-950);
+    --border: var(--zinc-200);
+
+    /* Primary */
+    --primary: var(--zinc-900);
+    --primary-accent: var(--zinc-800);
+    --primary-foreground: var(--zinc-50);
+
+    /* Secondary */
+    --secondary: var(--zinc-200);
+    --secondary-accent: var(--zinc-100);
+    --secondary-foreground: var(--zinc-950);
+
+    /* Error */
+    --error: var(--rose-500);
+    --error-accent: var(--rose-400);
+    --error-foreground: var(--rose-50);
+
+    /* Warning */
+    --warning: var(--amber-500);
+    --warning-accent: var(--amber-400);
+    --warning-foreground: var(--amber-50);
+
+    /* Info */
+    --info: var(--sky-500);
+    --info-accent: var(--sky-400);
+    --info-foreground: var(--sky-50);
+
+    /* Success */
+    --success: var(--emerald-500);
+    --success-accent: var(--emerald-400);
+    --success-foreground: var(--emerald-50);
+  }
+
+  .dark {
+    --background: var(--zinc-950);
+    --foreground: var(--zinc-50);
+    --border: var(--zinc-800);
+
+    /* Primary */
+    --primary: var(--zinc-100);
+    --primary-accent: var(--zinc-200);
+    --primary-foreground: var(--zinc-950);
+
+    /* Secondary */
+    --secondary: var(--zinc-800);
+    --secondary-accent: var(--zinc-900);
+    --secondary-foreground: var(--zinc-50);
+
+    /* Error */
+    --error: var(--rose-700);
+    --error-accent: var(--rose-800);
+    --error-foreground: var(--rose-50);
+
+    /* Warning */
+    --warning: var(--amber-700);
+    --warning-accent: var(--amber-800);
+    --warning-foreground: var(--amber-50);
+
+    /* Info */
+    --info: var(--sky-700);
+    --info-accent: var(--sky-800);
+    --info-foreground: var(--sky-50);
+
+    /* Success */
+    --success: var(--emerald-700);
+    --success-accent: var(--emerald-800);
+    --success-foreground: var(--emerald-50);
+  }
+}

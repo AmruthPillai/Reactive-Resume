@@ -1,0 +1,59 @@
+import { HouseSimple, SidebarSimple } from "@phosphor-icons/react";
+import { useBreakpoint } from "@reactive-resume/hooks";
+import { Button } from "@reactive-resume/ui";
+import { cn } from "@reactive-resume/utils";
+import { Link } from "react-router-dom";
+
+import { useBuilderStore } from "@/client/stores/builder";
+import { useResumeStore } from "@/client/stores/resume";
+
+export const BuilderHeader = () => {
+  const { isDesktop } = useBreakpoint();
+  const defaultPanelSize = isDesktop ? 25 : 0;
+
+  const toggle = useBuilderStore((state) => state.toggle);
+  const title = useResumeStore((state) => state.resume.title);
+  const isDragging = useBuilderStore(
+    (state) => state.panel.left.isDragging || state.panel.right.isDragging,
+  );
+  const leftPanelSize = useBuilderStore(
+    (state) => state.panel.left.ref?.getSize() ?? defaultPanelSize,
+  );
+  const rightPanelSize = useBuilderStore(
+    (state) => state.panel.right.ref?.getSize() ?? defaultPanelSize,
+  );
+
+  const onToggle = (side: "left" | "right") => toggle(side);
+
+  return (
+    <div
+      style={{ left: `${leftPanelSize}%`, right: `${rightPanelSize}%` }}
+      className={cn(
+        "fixed inset-x-0 top-0 z-[100] h-16 bg-secondary-accent/50 backdrop-blur-lg lg:z-20",
+        !isDragging && "transition-[left,right]",
+      )}
+    >
+      <div className="flex h-full items-center justify-between px-4">
+        <Button size="icon" variant="ghost" onClick={() => onToggle("left")}>
+          <SidebarSimple />
+        </Button>
+
+        <div className="flex items-center justify-center gap-x-1">
+          <Button asChild size="icon" variant="ghost">
+            <Link to="/dashboard/resumes">
+              <HouseSimple />
+            </Link>
+          </Button>
+
+          <span className="mr-2 text-xs opacity-40">{"/"}</span>
+
+          <h1 className="font-medium">{title}</h1>
+        </div>
+
+        <Button size="icon" variant="ghost" onClick={() => onToggle("right")}>
+          <SidebarSimple className="-scale-x-100" />
+        </Button>
+      </div>
+    </div>
+  );
+};

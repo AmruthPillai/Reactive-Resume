@@ -1,0 +1,17 @@
+{
+  "name": "@reactive-resume/schema",
+  "version": "0.0.1",
+  "private": false,
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@swc/helpers": "~0.5.2",
+    "zod": "^3.22.4",
+    "@reactive-resume/utils": "*",
+    "@paralleldrive/cuid2": "^2.2.2"
+  }
+}

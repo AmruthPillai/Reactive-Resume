@@ -1,0 +1,96 @@
+import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  Button,
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  Input,
+} from "@reactive-resume/ui";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { useCounter } from "usehooks-ts";
+import { z } from "zod";
+
+import { useToast } from "@/client/hooks/use-toast";
+import { useLogout } from "@/client/services/auth";
+import { useDeleteUser } from "@/client/services/user";
+
+const formSchema = z.object({
+  deleteConfirm: z.literal("delete"),
+});
+
+type FormValues = z.infer<typeof formSchema>;
+
+export const DangerZoneSettings = () => {
+  const { toast } = useToast();
+  const navigate = useNavigate();
+  const { logout } = useLogout();
+  const { count, increment } = useCounter(0);
+  const { deleteUser, loading } = useDeleteUser();
+
+  const form = useForm<FormValues>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      deleteConfirm: "" as FormValues["deleteConfirm"],
+    },
+  });
+
+  const onDelete = async () => {
+    // On the first click, increment the counter
+    increment();
+
+    // On the second click, delete the account
+    if (count === 1) {
+      await Promise.all([deleteUser, logout]);
+
+      toast({
+        variant: "success",
+        title: "Your account has been deleted successfully.",
+      });
+
+      navigate("/");
+    }
+  };
+
+  return (
+    <div className="space-y-6">
+      <div>
+        <h3 className="text-2xl font-bold leading-relaxed tracking-tight">Danger Zone</h3>
+        <p className="leading-relaxed opacity-75">
+          In this section, you can delete your account and all the data associated to your user, but
+          please keep in mind that{" "}
+          <span className="font-semibold">this action is irreversible</span>.
+        </p>
+      </div>
+
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onDelete)} className="grid gap-6 sm:grid-cols-2">
+          <FormField
+            name="deleteConfirm"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Delete Account</FormLabel>
+                <FormControl>
+                  <Input placeholder="delete" {...field} />
+                </FormControl>
+                <FormDescription>
+                  Type <code className="font-bold">delete</code> to confirm deleting your account.
+                </FormDescription>
+              </FormItem>
+            )}
+          />
+
+          <div className="flex items-center space-x-2 self-center">
+            <Button type="submit" variant="error" disabled={!form.formState.isValid || loading}>
+              {count === 1 ? "Are you sure?" : "Delete Account"}
+            </Button>
+          </div>
+        </form>
+      </Form>
+    </div>
+  );
+};

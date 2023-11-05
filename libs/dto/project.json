@@ -1,0 +1,34 @@
+{
+  "name": "dto",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/dto/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/dto",
+        "main": "libs/dto/src/index.ts",
+        "tsConfig": "libs/dto/tsconfig.lib.json",
+        "assets": ["libs/dto/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/dto/**/*.ts", "libs/dto/package.json"]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/libs/dto"
+      }
+    }
+  },
+  "tags": ["frontend", "backend"]
+}

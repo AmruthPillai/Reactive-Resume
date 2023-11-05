@@ -1,0 +1,101 @@
+version: "3"
+
+services:
+  # Database (Postgres)
+  postgres:
+    image: postgres
+    restart: unless-stopped
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    healthcheck:
+      test: ["CMD", "pg_isready -U postgres -d postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Storage (for image uploads)
+  minio:
+    image: minio/minio
+    restart: unless-stopped
+    command: server /data
+    ports:
+      - 9000:9000
+    volumes:
+      - minio_data:/data
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+
+  # Chrome Browser (for printing and previews)
+  chrome:
+    image: browserless/chrome
+    restart: unless-stopped
+    environment:
+      TOKEN: chrome_token
+      EXIT_ON_HEALTH_FAILURE: true
+      PRE_REQUEST_HEALTH_CHECK: true
+
+  # Redis (for cache & server session management)
+  redis:
+    image: redis
+    restart: unless-stopped
+    command: redis-server --requirepass password
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - NX_CLOUD_ACCESS_TOKEN=${NX_CLOUD_ACCESS_TOKEN}
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    depends_on:
+      - postgres
+      - minio
+      - redis
+      - chrome
+    environment:
+      # -- Environment Variables --
+      PORT: 3000
+      NODE_ENV: production
+      # -- URLs --
+      PUBLIC_URL: http://localhost:3000
+      STORAGE_URL: http://localhost:9000
+      # -- Printer (Chrome) --
+      CHROME_URL: ws://chrome:3000
+      CHROME_TOKEN: chrome_token
+      # -- Database (Postgres) --
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/postgres
+      # -- Auth --
+      ACCESS_TOKEN_SECRET: access_token_secret
+      REFRESH_TOKEN_SECRET: refresh_token_secret
+      # -- Emails --
+      SMTP_URL: smtp://user:pass@smtp:587 # Optional
+      # -- Storage (Minio) --
+      STORAGE_ENDPOINT: minio
+      STORAGE_PORT: 9000
+      STORAGE_REGION: us-east-1 # Optional
+      STORAGE_BUCKET: default
+      STORAGE_ACCESS_KEY: minioadmin
+      STORAGE_SECRET_KEY: minioadmin
+      # -- Cache (Redis) --
+      REDIS_URL: redis://default:password@redis:6379
+      # -- Sentry --
+      SENTRY_DSN: https://id.sentry.io # Optional
+      # -- GitHub --
+      GITHUB_CLIENT_ID: github_client_id
+      GITHUB_CLIENT_SECRET: github_client_secret
+      GITHUB_CALLBACK_URL: http://localhost:3000/api/auth/github/callback
+      # -- Google --
+      GOOGLE_CLIENT_ID: google_client_id
+      GOOGLE_CLIENT_SECRET: google_client_secret
+      GOOGLE_CALLBACK_URL: http://localhost:3000/api/auth/google/callback
+
+volumes:
+  minio_data:
+  postgres_data:

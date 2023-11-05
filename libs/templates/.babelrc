@@ -1,0 +1,4 @@
+{
+  "presets": [["@nx/react/babel", { "runtime": "automatic", "useBuiltIns": "usage" }]],
+  "plugins": [["styled-components", { "pure": true, "ssr": false }]]
+}

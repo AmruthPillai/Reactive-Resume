@@ -1,0 +1,18 @@
+{
+  "name": "@reactive-resume/dto",
+  "version": "0.0.1",
+  "private": false,
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@swc/helpers": "~0.5.2",
+    "nestjs-zod": "^3.0.0",
+    "@reactive-resume/utils": "*",
+    "@reactive-resume/schema": "*",
+    "@prisma/client": "^5.4.2"
+  }
+}

@@ -1,0 +1,63 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Provider {
+  email
+  github
+  google
+}
+
+enum Visibility {
+  public
+  private
+}
+
+model User {
+  id               String   @id @default(cuid())
+  name             String
+  picture          String?
+  username         String   @unique
+  email            String   @unique
+  language         String   @default("en")
+  emailVerified    Boolean  @default(false)
+  twoFactorEnabled Boolean  @default(false)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  provider         Provider
+  secrets          Secrets?
+  resumes          Resume[]
+}
+
+model Secrets {
+  id                   String    @id @default(cuid())
+  password             String?
+  lastSignedIn         DateTime?
+  verificationToken    String?
+  twoFactorSecret      String?
+  twoFactorBackupCodes String[]  @default([])
+  refreshToken         String?
+  resetToken           String?   @unique
+  userId               String    @unique
+  user                 User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Resume {
+  id         String     @id @default(cuid())
+  title      String
+  slug       String
+  data       Json       @default("{}")
+  visibility Visibility @default(private)
+  userId     String
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
+}

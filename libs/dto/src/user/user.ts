@@ -1,0 +1,31 @@
+import type { Prisma } from "@prisma/client";
+import { idSchema } from "@reactive-resume/schema";
+import { createZodDto } from "nestjs-zod/dto";
+import { z } from "nestjs-zod/z";
+
+export const usernameSchema = z
+  .string()
+  .min(3)
+  .max(255)
+  .regex(/^[a-z0-9._-]+$/, {
+    message:
+      "Usernames can only contain lowercase letters, numbers, periods, hyphens, and underscores.",
+  });
+
+export const userSchema = z.object({
+  id: idSchema,
+  name: z.string().min(3).max(255),
+  picture: z.literal("").or(z.null()).or(z.string().url()),
+  username: usernameSchema,
+  email: z.string().email(),
+  language: z.string().default("en"),
+  emailVerified: z.boolean().default(false),
+  twoFactorEnabled: z.boolean().default(false),
+  provider: z.enum(["email", "github", "google"]).default("email"),
+  createdAt: z.date().or(z.dateString()),
+  updatedAt: z.date().or(z.dateString()),
+});
+
+export class UserDto extends createZodDto(userSchema) {}
+
+export type UserWithSecrets = Prisma.UserGetPayload<{ include: { secrets: true } }>;

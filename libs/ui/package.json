@@ -1,0 +1,16 @@
+{
+  "name": "@reactive-resume/ui",
+  "version": "0.0.1",
+  "private": false,
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  }
+}
