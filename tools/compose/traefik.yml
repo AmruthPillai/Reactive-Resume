@@ -1,0 +1,123 @@
+version: "3"
+
+# In this Docker Compose example, we use Traefik to route requests to the app and storage containers.
+# This example assumes you have a domain name (example.com) and a wildcard DNS record pointing to your server.
+# The only exposed port here is from Traefik (80). If you choose to use SSL, check the Traefik docs for more info.
+# Note: Please change `example.com` to your domain name where necessary.
+
+services:
+  # Database (Postgres)
+  postgres:
+    image: postgres
+    restart: unless-stopped
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    healthcheck:
+      test: ["CMD", "pg_isready -U postgres -d postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Storage (for image uploads)
+  minio:
+    image: minio/minio
+    restart: unless-stopped
+    command: server /data
+    volumes:
+      - minio_data:/data
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.minio.rule=Host(`storage.example.com`)
+      - traefik.http.services.minio.loadbalancer.server.port=9000
+
+  # Chrome Browser (for printing and previews)
+  chrome:
+    image: browserless/chrome
+    restart: unless-stopped
+    environment:
+      TOKEN: chrome_token
+      EXIT_ON_HEALTH_FAILURE: true
+      PRE_REQUEST_HEALTH_CHECK: true
+
+  # Redis (for cache & server session management)
+  redis:
+    image: redis
+    restart: unless-stopped
+    command: redis-server --requirepass password
+
+  app:
+    build:
+      context: ../..
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    depends_on:
+      - postgres
+      - minio
+      - redis
+      - chrome
+    environment:
+      # -- Environment Variables --
+      PORT: 3000
+      NODE_ENV: production
+      # -- URLs --
+      PUBLIC_URL: http://example.com
+      STORAGE_URL: http://storage.example.com
+      # -- Printer (Chrome) --
+      CHROME_URL: ws://chrome:3000
+      CHROME_TOKEN: chrome_token
+      # -- Database (Postgres) --
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/postgres
+      # -- Auth --
+      ACCESS_TOKEN_SECRET: access_token_secret
+      REFRESH_TOKEN_SECRET: refresh_token_secret
+      # -- Emails --
+      SMTP_URL: smtp://user:pass@smtp:587 # Optional
+      # -- Storage (Minio) --
+      STORAGE_ENDPOINT: minio
+      STORAGE_PORT: 9000
+      STORAGE_REGION: us-east-1 # Optional
+      STORAGE_BUCKET: default
+      STORAGE_ACCESS_KEY: minioadmin
+      STORAGE_SECRET_KEY: minioadmin
+      # -- Cache (Redis) --
+      REDIS_URL: redis://default:password@redis:6379
+      # -- Sentry --
+      SENTRY_DSN: https://id.sentry.io # Optional
+      # -- GitHub --
+      GITHUB_CLIENT_ID: github_client_id
+      GITHUB_CLIENT_SECRET: github_client_secret
+      GITHUB_CALLBACK_URL: http://localhost:3000/api/auth/github/callback
+      # -- Google --
+      GOOGLE_CLIENT_ID: google_client_id
+      GOOGLE_CLIENT_SECRET: google_client_secret
+      GOOGLE_CALLBACK_URL: http://localhost:3000/api/auth/google/callback
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.app.rule=Host(`example.com`)
+      - traefik.http.services.app.loadbalancer.server.port=3000
+
+  traefik:
+    image: traefik
+    command:
+      - --api.insecure=true
+      - --providers.docker
+      - --providers.docker.exposedbydefault=false
+      - --entrypoints.web.address=:80
+    ports:
+      - 80:80
+      - 8080:8080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+volumes:
+  minio_data:
+  postgres_data:

@@ -1,5 +1,9 @@
 version: "3"
 
+# In this Docker Compose example, we only fire up the services required for local development.
+# This is not advised for production use as it exposes ports to the database insecurely.
+# If you're looking for a production-ready Docker Compose file, check out the `traefik.yml` file.
+
 services:
   # Database (Postgres)
   postgres:
