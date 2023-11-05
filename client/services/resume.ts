@@ -64,7 +64,7 @@ export const fetchResumeByIdentifier = async ({
 }: FetchResumeByIdentifierParams) => {
   if (!isBrowser) {
     const serverUrl = env('SERVER_URL');
-    const secretKey = options.secretKey;
+    const secretKey = encodeURIComponent(options.secretKey ?? '');
 
     return fetch(`${serverUrl}/resume/${username}/${slug}?secretKey=${secretKey}`).then((response) => response.json());
   }

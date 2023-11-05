@@ -96,8 +96,9 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
       const pdfDeletionTime = this.configService.get<number>('cache.pdfDeletionTime');
 
       const page = await this.browser.newPage();
-
-      await page.goto(`${url}/${username}/${slug}/printer?secretKey=${secretKey}`, { waitUntil: 'networkidle' });
+      await page.goto(`${url}/${username}/${slug}/printer?secretKey=${encodeURIComponent(secretKey)}`, {
+        waitUntil: 'networkidle',
+      });
       await page.waitForSelector('html.wf-active', { state: 'visible' });
 
       const pageFormat: PageConfig['format'] = await page.$$eval(
