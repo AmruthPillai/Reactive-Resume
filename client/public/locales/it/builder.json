@@ -301,7 +301,10 @@
         "page": {
           "break-line": {
             "primary": "Linea di interruzione",
-            "secondary": "Mostra su tutte le pagine una linea che indica l'altezza di un foglio A4"
+            "secondary": {
+              "letter": "Mostra una linea su tutte le pagine per contrassegnare l'altezza di una pagina formato lettera",
+              "A4": "Mostra una linea su tutte le pagine per contrassegnare l'altezza di una pagina A4"
+            }
           },
           "format": {
             "primary": "Dimensioni del foglio",
