@@ -1,5 +1,6 @@
 import { CacheInterceptor, CacheKey, CacheTTL } from "@nestjs/cache-manager";
 import { Controller, Get, NotFoundException, UseInterceptors } from "@nestjs/common";
+import { ApiTags } from "@nestjs/swagger";
 import { HealthCheck, HealthCheckService } from "@nestjs/terminus";
 import { RedisService } from "@songkeys/nestjs-redis";
 import { RedisHealthIndicator } from "@songkeys/nestjs-redis-health";
@@ -9,6 +10,7 @@ import { BrowserHealthIndicator } from "./browser.health";
 import { DatabaseHealthIndicator } from "./database.health";
 import { StorageHealthIndicator } from "./storage.health";
 
+@ApiTags("Health")
 @Controller("health")
 export class HealthController {
   constructor(

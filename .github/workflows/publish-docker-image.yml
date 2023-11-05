@@ -33,8 +33,7 @@ jobs:
 
       - name: Extract version from package.json
         id: version
-        run: |
-          echo "version=$(jq -r '.version' package.json)" >> "$GITHUB_OUTPUT"
+        run: echo "version=$(jq -r '.version' package.json)" >> "$GITHUB_OUTPUT"
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3.0.0
@@ -48,6 +47,13 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
+      - name: Login to Quay.io
+        uses: docker/login-action@v3.0.0
+        with:
+          registry: quay.io
+          username: ${{ secrets.QUAY_USERNAME }}
+          password: ${{ secrets.QUAY_PASSWORD }}
+
       - name: Login to GitHub Container Registery
         uses: docker/login-action@v3.0.0
         with:
@@ -59,8 +65,10 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5.0.0
         with:
-          images: ${{ env.IMAGE }}
           tags: type=semver,pattern={{version}},prefix=v,value=${{ steps.version.outputs.version }}
+          images: |
+            ${{ env.IMAGE }}
+            ghcr.io/${{ env.IMAGE }}
 
       - name: Build and Push by Digest
         uses: docker/build-push-action@v5.0.0
@@ -112,14 +120,23 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5.0.0
         with:
-          images: ${{ env.IMAGE }}
           tags: type=semver,pattern={{version}},prefix=v,value=${{ needs.build.outputs.version }}
+          images: |
+            ${{ env.IMAGE }}
+            ghcr.io/${{ env.IMAGE }}
 
       - name: Login to Docker Hub
         uses: docker/login-action@v3.0.0
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
+
+      - name: Login to Quay.io
+        uses: docker/login-action@v3.0.0
+        with:
+          registry: quay.io
+          username: ${{ secrets.QUAY_USERNAME }}
+          password: ${{ secrets.QUAY_PASSWORD }}
 
       - name: Login to GitHub Container Registery
         uses: docker/login-action@v3.0.0

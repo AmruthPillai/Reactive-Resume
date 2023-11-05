@@ -1,8 +1,9 @@
 version: "3"
 
-# In this Docker Compose example, it assumes that you maintain a reverse proxy externally (or chose not to).
-# The only two exposed ports here are from minio (:9000) and the app itself (:3000).
-# If these ports are changed, ensure that the env vars passed to the app are also changed accordingly.
+# In this Docker Compose example, we use Traefik to route requests to the app and storage containers in a secure manner (HTTPS).
+# This example assumes you have a domain name (example.com) and a wildcard DNS record pointing to your server.
+# The only exposed ports here are from Traefik (80 and 443). All non-secure requests are redirected to HTTPS.
+# Note: Please change `example.com` to your domain name where necessary.
 
 services:
   # Database (Postgres)
@@ -26,13 +27,17 @@ services:
     image: minio/minio
     restart: unless-stopped
     command: server /data
-    ports:
-      - 9000:9000
     volumes:
       - minio_data:/data
     environment:
       MINIO_ROOT_USER: minioadmin
       MINIO_ROOT_PASSWORD: minioadmin
+    labels:
+      - traefik.enable
+      - traefik.http.routers.app.rule=Host(`storage.example.com`)
+      - traefik.http.routers.app.entrypoints=websecure
+      - traefik.http.routers.app.tls.certresolver=letsencrypt
+      - traefik.http.services.app.loadbalancer.server.port=9000
 
   # Chrome Browser (for printing and previews)
   chrome:
@@ -47,13 +52,13 @@ services:
   redis:
     image: redis
     restart: unless-stopped
-    command: redis-server --requirepass password
+    command: redis-server --save 60 1 --loglevel warning --requirepass password
+    volumes:
+      - redis_data:/data
 
   app:
     image: amruthpillai/reactive-resume:v4.0.0-alpha.0
     restart: unless-stopped
-    ports:
-      - 3000:3000
     depends_on:
       - postgres
       - minio
@@ -65,8 +70,8 @@ services:
       NODE_ENV: production
 
       # -- URLs --
-      PUBLIC_URL: http://localhost:3000
-      STORAGE_URL: http://localhost:9000
+      PUBLIC_URL: http://example.com
+      STORAGE_URL: http://storage.example.com
 
       # -- Printer (Chrome) --
       CHROME_URL: ws://chrome:3000
@@ -105,7 +110,41 @@ services:
       GOOGLE_CLIENT_ID: google_client_id
       GOOGLE_CLIENT_SECRET: google_client_secret
       GOOGLE_CALLBACK_URL: http://localhost:3000/api/auth/google/callback
+    labels:
+      - traefik.enable
+      - traefik.http.routers.app.rule=Host(`example.com`)
+      - traefik.http.routers.app.entrypoints=websecure
+      - traefik.http.routers.app.tls
+      - traefik.http.routers.app.tls.certresolver=letsencrypt
+      - traefik.http.services.app.loadbalancer.server.port=3000
+
+  traefik:
+    image: traefik
+    command:
+      - --api
+      - --providers.docker
+      - --providers.docker.exposedbydefault=false
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+      - --certificatesresolvers.letsencrypt.acme.tlschallenge
+      - --certificatesresolvers.letsencrypt.acme.email=noreply@example.com
+      - --certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json
+
+      # Let's Encrypt Staging Server (for testing)
+      - --certificatesResolvers.letsencrypt.acme.caServer=https://acme-staging-v02.api.letsencrypt.org/directory
+
+      # Redirect all HTTP requests to HTTPS
+      - --entrypoints.web.http.redirections.entrypoint.to=websecure
+      - --entrypoints.web.http.redirections.entrypoint.scheme=https
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - letsencrypt_data:/letsencrypt
+      - /var/run/docker.sock:/var/run/docker.sock
 
 volumes:
   minio_data:
+  redis_data:
   postgres_data:
+  letsencrypt_data:

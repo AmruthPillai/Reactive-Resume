@@ -53,7 +53,7 @@ services:
     command: redis-server --requirepass password
 
   app:
-    image: amruthpillai/reactive-resume
+    image: amruthpillai/reactive-resume:v4.0.0-alpha.0
     restart: unless-stopped
     depends_on:
       - postgres
@@ -64,19 +64,25 @@ services:
       # -- Environment Variables --
       PORT: 3000
       NODE_ENV: production
+
       # -- URLs --
       PUBLIC_URL: http://example.com
       STORAGE_URL: http://storage.example.com
+
       # -- Printer (Chrome) --
       CHROME_URL: ws://chrome:3000
       CHROME_TOKEN: chrome_token
+
       # -- Database (Postgres) --
       DATABASE_URL: postgresql://postgres:postgres@postgres:5432/postgres
+
       # -- Auth --
       ACCESS_TOKEN_SECRET: access_token_secret
       REFRESH_TOKEN_SECRET: refresh_token_secret
+
       # -- Emails --
       # SMTP_URL: smtp://user:pass@smtp:587 # Optional
+
       # -- Storage (Minio) --
       STORAGE_ENDPOINT: minio
       STORAGE_PORT: 9000
@@ -84,14 +90,18 @@ services:
       STORAGE_BUCKET: default
       STORAGE_ACCESS_KEY: minioadmin
       STORAGE_SECRET_KEY: minioadmin
+
       # -- Cache (Redis) --
       REDIS_URL: redis://default:password@redis:6379
+
       # -- Sentry --
       # SENTRY_DSN: https://id.sentry.io # Optional
+
       # -- GitHub --
       GITHUB_CLIENT_ID: github_client_id
       GITHUB_CLIENT_SECRET: github_client_secret
       GITHUB_CALLBACK_URL: http://localhost:3000/api/auth/github/callback
+
       # -- Google --
       GOOGLE_CLIENT_ID: google_client_id
       GOOGLE_CLIENT_SECRET: google_client_secret
