@@ -18,8 +18,8 @@ export class OrderController {
 
   @UseGuards(JwtAuthGuard)
   @Get()
-  async findOneOrderBy(@User('id') username: string, @Query('shortId') shortId: string) {
-    return this.orderService.findOne(username, shortId);
+  async findOneOrderBy(@User('id') username: string, @Query('slug') slug: string) {
+    return this.orderService.findOne(username, slug);
   }
 
   // @UseGuards(OptionalJwtAuthGuard)
