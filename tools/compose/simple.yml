@@ -7,7 +7,7 @@ version: "3"
 services:
   # Database (Postgres)
   postgres:
-    image: postgres
+    image: postgres:alpine
     restart: unless-stopped
     volumes:
       - postgres_data:/var/lib/postgresql/data
@@ -16,7 +16,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     healthcheck:
-      test: ["CMD", "pg_isready -U postgres -d postgres"]
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -45,7 +45,7 @@ services:
 
   # Redis (for cache & server session management)
   redis:
-    image: redis
+    image: redis:alpine
     restart: unless-stopped
     command: redis-server --requirepass password
 
@@ -69,8 +69,8 @@ services:
       STORAGE_URL: http://localhost:9000
 
       # -- Printer (Chrome) --
-      CHROME_URL: ws://chrome:3000
       CHROME_TOKEN: chrome_token
+      CHROME_URL: ws://chrome:3000
 
       # -- Database (Postgres) --
       DATABASE_URL: postgresql://postgres:postgres@postgres:5432/postgres

@@ -125,7 +125,10 @@ export class ResumeController {
 
       return { url };
     } catch (error) {
-      throw new InternalServerErrorException(ErrorMessage.ResumePrinterError, error);
+      throw new InternalServerErrorException(ErrorMessage.ResumePrinterError, {
+        cause: error,
+        description: error.message,
+      });
     }
   }
 
@@ -138,7 +141,10 @@ export class ResumeController {
 
       return { url };
     } catch (error) {
-      throw new InternalServerErrorException(ErrorMessage.ResumePreviewError);
+      throw new InternalServerErrorException(ErrorMessage.ResumePreviewError, {
+        cause: error,
+        description: error.message,
+      });
     }
   }
 }

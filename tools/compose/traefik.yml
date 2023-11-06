@@ -8,7 +8,7 @@ version: "3"
 services:
   # Database (Postgres)
   postgres:
-    image: postgres
+    image: postgres:alpine
     restart: unless-stopped
     volumes:
       - postgres_data:/var/lib/postgresql/data
@@ -17,7 +17,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     healthcheck:
-      test: ["CMD", "pg_isready -U postgres -d postgres"]
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -34,8 +34,8 @@ services:
       MINIO_ROOT_PASSWORD: minioadmin
     labels:
       - traefik.enable=true
-      - traefik.http.routers.minio.rule=Host(`storage.example.com`)
-      - traefik.http.services.minio.loadbalancer.server.port=9000
+      - traefik.http.routers.storage.rule=Host(`storage.example.com`)
+      - traefik.http.services.storage.loadbalancer.server.port=9000
 
   # Chrome Browser (for printing and previews)
   chrome:
@@ -45,10 +45,14 @@ services:
       TOKEN: chrome_token
       EXIT_ON_HEALTH_FAILURE: true
       PRE_REQUEST_HEALTH_CHECK: true
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.printer.rule=Host(`printer.example.com`)
+      - traefik.http.services.printer.loadbalancer.server.port=3000
 
   # Redis (for cache & server session management)
   redis:
-    image: redis
+    image: redis:alpine
     restart: unless-stopped
     command: redis-server --requirepass password
 
@@ -70,8 +74,8 @@ services:
       STORAGE_URL: http://storage.example.com
 
       # -- Printer (Chrome) --
-      CHROME_URL: ws://chrome:3000
       CHROME_TOKEN: chrome_token
+      CHROME_URL: ws://chrome:3000
 
       # -- Database (Postgres) --
       DATABASE_URL: postgresql://postgres:postgres@postgres:5432/postgres
@@ -115,7 +119,7 @@ services:
     image: traefik
     command:
       - --api.insecure=true
-      - --providers.docker
+      - --providers.docker=true
       - --providers.docker.exposedbydefault=false
       - --entrypoints.web.address=:80
     ports:
