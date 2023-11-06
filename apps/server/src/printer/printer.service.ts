@@ -17,7 +17,6 @@ import { StorageService } from "../storage/storage.service";
 import { UtilsService } from "../utils/utils.service";
 
 const MM_TO_PX = 3.78;
-const PREVIEW_TIMEOUT = 5000; // 5 seconds
 const PRINTER_TIMEOUT = 10000; // 10 seconds
 
 @Injectable()
@@ -81,7 +80,7 @@ export class PrinterService {
     return this.utils.getCachedOrSet(
       `user:${resume.userId}:storage:previews:${resume.id}`,
       async () => {
-        return withTimeout(this.generatePreview(resume), PREVIEW_TIMEOUT);
+        return withTimeout(this.generatePreview(resume), PRINTER_TIMEOUT);
       },
     );
   }
