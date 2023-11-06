@@ -6,6 +6,7 @@ import {
   Delete,
   Get,
   InternalServerErrorException,
+  Logger,
   Param,
   Patch,
   Post,
@@ -125,10 +126,8 @@ export class ResumeController {
 
       return { url };
     } catch (error) {
-      throw new InternalServerErrorException(ErrorMessage.ResumePrinterError, {
-        cause: error,
-        description: error.message,
-      });
+      Logger.error(error);
+      throw new InternalServerErrorException(error);
     }
   }
 
@@ -141,10 +140,8 @@ export class ResumeController {
 
       return { url };
     } catch (error) {
-      throw new InternalServerErrorException(ErrorMessage.ResumePreviewError, {
-        cause: error,
-        description: error.message,
-      });
+      Logger.error(error);
+      throw new InternalServerErrorException(error);
     }
   }
 }
