@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { MagicWand, Plus } from "@phosphor-icons/react";
+import { CaretDown, MagicWand, Plus, TestTube } from "@phosphor-icons/react";
 import { createResumeSchema, ResumeDto } from "@reactive-resume/dto";
 import { idSchema } from "@reactive-resume/schema";
 import {
@@ -18,6 +18,10 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
   Form,
   FormControl,
   FormDescription,
@@ -34,6 +38,7 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
+import { sampleResume } from "@/client/constants/sample-resume";
 import { useToast } from "@/client/hooks/use-toast";
 import { useCreateResume, useDeleteResume, useUpdateResume } from "@/client/services/resume";
 import { useImportResume } from "@/client/services/resume/import";
@@ -135,6 +140,19 @@ export const ResumeDialog = () => {
     form.setValue("slug", kebabCase(name));
   };
 
+  const onCreateSample = async () => {
+    const randomName = generateRandomName();
+    const { title, slug } = form.getValues();
+
+    await duplicateResume({
+      title: title || randomName,
+      slug: slug || kebabCase(randomName),
+      data: sampleResume,
+    });
+
+    close();
+  };
+
   if (isDelete) {
     return (
       <AlertDialog open={isOpen} onOpenChange={close}>
@@ -233,11 +251,26 @@ export const ResumeDialog = () => {
             />
 
             <DialogFooter>
-              <Button type="submit" disabled={loading}>
-                {isCreate && "Create"}
-                {isUpdate && "Save Changes"}
-                {isDuplicate && "Duplicate"}
-              </Button>
+              <div className="flex items-center">
+                <Button type="submit" disabled={loading} className="rounded-r-none">
+                  {isCreate && "Create"}
+                  {isUpdate && "Save Changes"}
+                  {isDuplicate && "Duplicate"}
+                </Button>
+                <DropdownMenu>
+                  <DropdownMenuTrigger>
+                    <Button type="button" size="icon" className="rounded-l-none border-l">
+                      <CaretDown />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent side="right" align="center">
+                    <DropdownMenuItem onClick={onCreateSample}>
+                      <TestTube className="mr-2" />
+                      Create Sample Resume
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
             </DialogFooter>
           </form>
         </Form>

@@ -27,7 +27,7 @@ export const RhyhornStyles = styled.div`
 
       span {
         padding: 0 6px;
-        border-right: 2px solid var(--color-primary);
+        border-right: 1px solid var(--color-primary);
 
         &:first-child {
           padding-left: 0;
