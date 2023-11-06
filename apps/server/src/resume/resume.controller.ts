@@ -16,16 +16,8 @@ import {
 import { ApiTags } from "@nestjs/swagger";
 import { User as UserEntity } from "@prisma/client";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
-import {
-  CreateResumeDto,
-  ImportResumeDto,
-  ResumeDto,
-  StatisticsDto,
-  UpdateResumeDto,
-  UrlDto,
-} from "@reactive-resume/dto";
+import { CreateResumeDto, ImportResumeDto, ResumeDto, UpdateResumeDto } from "@reactive-resume/dto";
 import { resumeDataSchema } from "@reactive-resume/schema";
-import { ZodSerializerDto } from "nestjs-zod";
 import { zodToJsonSchema } from "zod-to-json-schema";
 
 import { User } from "@/server/user/decorators/user.decorator";
@@ -91,7 +83,6 @@ export class ResumeController {
 
   @Get(":id/statistics")
   @UseGuards(TwoFactorGuard)
-  @ZodSerializerDto(StatisticsDto)
   findOneStatistics(@User("id") userId: string, @Param("id") id: string) {
     return this.resumeService.findOneStatistics(userId, id);
   }
@@ -111,15 +102,20 @@ export class ResumeController {
     return this.resumeService.update(user.id, id, updateResumeDto);
   }
 
+  @Patch(":id/lock")
+  @UseGuards(TwoFactorGuard)
+  lock(@User() user: UserEntity, @Param("id") id: string, @Body("set") set: boolean = true) {
+    return this.resumeService.lock(user.id, id, set);
+  }
+
   @Delete(":id")
   @UseGuards(TwoFactorGuard)
-  remove(@User() user: UserEntity, @Param("id") id: string) {
-    return this.resumeService.remove(user.id, id);
+  async remove(@User() user: UserEntity, @Param("id") id: string) {
+    await this.resumeService.remove(user.id, id);
   }
 
   @Get("/print/:id")
   @UseGuards(OptionalGuard, ResumeGuard)
-  @ZodSerializerDto(UrlDto)
   async printResume(@Resume() resume: ResumeDto) {
     try {
       const url = await this.resumeService.printResume(resume);
@@ -133,7 +129,6 @@ export class ResumeController {
 
   @Get("/print/:id/preview")
   @UseGuards(TwoFactorGuard, ResumeGuard)
-  @ZodSerializerDto(UrlDto)
   async printPreview(@Resume() resume: ResumeDto) {
     try {
       const url = await this.resumeService.printPreview(resume);

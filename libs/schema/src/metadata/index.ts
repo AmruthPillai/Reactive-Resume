@@ -39,6 +39,7 @@ export const metadataSchema = z.object({
     lineHeight: z.number().default(1.5),
     underlineLinks: z.boolean().default(true),
   }),
+  notes: z.string().default(""),
 });
 
 // Type
@@ -76,4 +77,5 @@ export const defaultMetadata: Metadata = {
     lineHeight: 1.5,
     underlineLinks: true,
   },
+  notes: "",
 };

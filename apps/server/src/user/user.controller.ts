@@ -1,8 +1,7 @@
 import { Body, Controller, Delete, Get, Patch, Res, UseGuards } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
-import { MessageDto, UpdateUserDto, UserDto } from "@reactive-resume/dto";
+import { UpdateUserDto, UserDto } from "@reactive-resume/dto";
 import type { Response } from "express";
-import { ZodSerializerDto } from "nestjs-zod";
 
 import { AuthService } from "../auth/auth.service";
 import { TwoFactorGuard } from "../auth/guards/two-factor.guard";
@@ -19,14 +18,12 @@ export class UserController {
 
   @Get("me")
   @UseGuards(TwoFactorGuard)
-  @ZodSerializerDto(UserDto)
   fetch(@User() user: UserDto) {
     return user;
   }
 
   @Patch("me")
   @UseGuards(TwoFactorGuard)
-  @ZodSerializerDto(UserDto)
   async update(@User("email") email: string, @Body() updateUserDto: UpdateUserDto) {
     // If user is updating their email, send a verification email
     if (updateUserDto.email && updateUserDto.email !== email) {
@@ -50,7 +47,6 @@ export class UserController {
 
   @Delete("me")
   @UseGuards(TwoFactorGuard)
-  @ZodSerializerDto(MessageDto)
   async delete(@User("id") id: string, @Res({ passthrough: true }) response: Response) {
     await this.userService.deleteOneById(id);
 

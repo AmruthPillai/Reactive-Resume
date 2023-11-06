@@ -2,9 +2,9 @@ import {
   ArrowCounterClockwise,
   Broom,
   Columns,
-  DotsThreeVertical,
   Eye,
   EyeSlash,
+  List,
   PencilSimple,
   Plus,
   TrashSimple,
@@ -55,7 +55,7 @@ export const SectionOptions = ({ id }: Props) => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon">
-          <DotsThreeVertical weight="bold" />
+          <List weight="bold" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-48">
