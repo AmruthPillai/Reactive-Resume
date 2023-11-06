@@ -1,6 +1,5 @@
 import { Skill as ISkill } from "@reactive-resume/schema";
 import { useStore } from "@reactive-resume/templates";
-import { Fragment } from "react";
 
 import { SectionBase } from "../shared/section-base";
 
@@ -11,14 +10,14 @@ export const Skills = () => {
     <SectionBase<ISkill>
       section={section}
       header={(item) => (
-        <Fragment>
+        <>
           <div>
             <h6>{item.name}</h6>
             <p>{item.description}</p>
           </div>
 
           <div />
-        </Fragment>
+        </>
       )}
       footer={(item) => <small>{item.keywords.join(", ")}</small>}
     />

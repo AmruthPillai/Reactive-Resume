@@ -48,7 +48,7 @@ export const ThemeSection = () => {
                   style={{ backgroundColor: theme.primary }}
                 />
               </PopoverTrigger>
-              <PopoverContent asChild className="rounded-lg border-none bg-transparent p-0">
+              <PopoverContent className="rounded-lg border-none bg-transparent p-0">
                 <HexColorPicker
                   color={theme.primary}
                   onChange={(color) => {

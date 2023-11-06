@@ -1,8 +1,6 @@
 import { Item, SectionItem, SectionWithItem } from "@reactive-resume/schema";
 import { ItemGrid } from "@reactive-resume/templates";
 
-import { Heading } from "./heading";
-
 type Props<T extends Item> = {
   section: SectionWithItem<T>;
   header?: (item: T) => React.ReactNode;
@@ -15,7 +13,7 @@ export const SectionBase = <T extends SectionItem>({ section, header, main, foot
 
   return (
     <section id={section.id} className={`section section__${section.id}`}>
-      <Heading>{section.name}</Heading>
+      <h4 className="section__heading">{section.name}</h4>
 
       <ItemGrid className="section__items" $columns={section.columns}>
         {section.items

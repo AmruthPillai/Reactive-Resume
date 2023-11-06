@@ -1,7 +1,6 @@
 import { Profile as IProfile } from "@reactive-resume/schema";
 import { useStore } from "@reactive-resume/templates";
 import { isUrl } from "@reactive-resume/utils";
-import { Fragment } from "react";
 import styled from "styled-components";
 
 import { SectionBase } from "../shared/section-base";
@@ -18,7 +17,7 @@ export const Profiles = () => {
     <SectionBase<IProfile>
       section={section}
       header={(item) => (
-        <Fragment>
+        <>
           <div>
             {item.icon && (
               <i>
@@ -42,7 +41,7 @@ export const Profiles = () => {
           </div>
 
           <div />
-        </Fragment>
+        </>
       )}
     />
   );

@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { CaretDown, MagicWand, Plus, TestTube } from "@phosphor-icons/react";
+import { CaretDown, Flask, MagicWand, Plus } from "@phosphor-icons/react";
 import { createResumeSchema, ResumeDto } from "@reactive-resume/dto";
 import { idSchema } from "@reactive-resume/schema";
 import {
@@ -265,7 +265,7 @@ export const ResumeDialog = () => {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent side="right" align="center">
                     <DropdownMenuItem onClick={onCreateSample}>
-                      <TestTube className="mr-2" />
+                      <Flask className="mr-2" />
                       Create Sample Resume
                     </DropdownMenuItem>
                   </DropdownMenuContent>

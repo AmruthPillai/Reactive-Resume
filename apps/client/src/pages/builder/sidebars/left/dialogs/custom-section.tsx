@@ -12,7 +12,6 @@ import {
   FormMessage,
   Input,
   RichInput,
-  Slider,
 } from "@reactive-resume/ui";
 import { AnimatePresence, motion } from "framer-motion";
 import { useForm } from "react-hook-form";
@@ -88,13 +87,13 @@ export const CustomSectionDialog = () => {
         />
 
         <FormField
-          name="url"
+          name="location"
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Website</FormLabel>
+              <FormLabel>Location</FormLabel>
               <FormControl>
-                <URLInput {...field} />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -102,24 +101,13 @@ export const CustomSectionDialog = () => {
         />
 
         <FormField
-          name="level"
+          name="url"
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-2">
-              <FormLabel>Level</FormLabel>
-              <FormControl className="py-2">
-                <div className="flex items-center gap-x-4">
-                  <Slider
-                    {...field}
-                    min={0}
-                    max={5}
-                    value={[field.value]}
-                    orientation="horizontal"
-                    onValueChange={(value) => field.onChange(value[0])}
-                  />
-
-                  <span className="text-base font-bold">{field.value}</span>
-                </div>
+              <FormLabel>Website</FormLabel>
+              <FormControl>
+                <URLInput {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

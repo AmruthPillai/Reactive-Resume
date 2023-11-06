@@ -6,7 +6,7 @@ import {
   PageGrid,
   PageNumber,
   PageWrapper,
-  Rhyhorn,
+  templatesList,
 } from "@reactive-resume/templates";
 import { pageSizeMap } from "@reactive-resume/utils";
 import { AnimatePresence, motion } from "framer-motion";
@@ -34,6 +34,15 @@ export const BuilderPage = () => {
       showPageNumbers: options.pageNumbers,
     };
   }, [resume.metadata.page]);
+
+  const Template = useMemo(() => {
+    const Component = templatesList.find((template) => template.id === resume.metadata.template)
+      ?.Component;
+
+    if (!Component) return null;
+
+    return Component;
+  }, [resume.metadata.template]);
 
   return (
     <>
@@ -64,7 +73,12 @@ export const BuilderPage = () => {
                     <PageWrapper>
                       {showPageNumbers && <PageNumber>Page {pageIndex + 1}</PageNumber>}
 
-                      <Rhyhorn isFirstPage={pageIndex === 0} columns={columns as SectionKey[][]} />
+                      {Template !== null && (
+                        <Template
+                          isFirstPage={pageIndex === 0}
+                          columns={columns as SectionKey[][]}
+                        />
+                      )}
 
                       {showBreakLine && <PageBreakLine $pageHeight={pageHeight} />}
                     </PageWrapper>

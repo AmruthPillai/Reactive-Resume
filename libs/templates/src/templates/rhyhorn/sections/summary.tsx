@@ -1,7 +1,5 @@
 import { useStore } from "@reactive-resume/templates";
 
-import { Heading } from "../shared/heading";
-
 export const Summary = () => {
   const section = useStore((state) => state.sections.summary);
 
@@ -9,7 +7,7 @@ export const Summary = () => {
 
   return (
     <section id={section.id} className={`section section__${section.id}`}>
-      <Heading>{section.name}</Heading>
+      <h4 className="section__heading">{section.name}</h4>
 
       <main className="section__item-content">
         <div

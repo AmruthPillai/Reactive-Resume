@@ -1,6 +1,7 @@
 import { ResumeDto } from "@reactive-resume/dto";
+import { useTemplate } from "@reactive-resume/hooks";
 import { SectionKey } from "@reactive-resume/schema";
-import { Artboard, PageWrapper, Rhyhorn } from "@reactive-resume/templates";
+import { Artboard, PageWrapper } from "@reactive-resume/templates";
 import { Button } from "@reactive-resume/ui";
 import { pageSizeMap } from "@reactive-resume/utils";
 import { Helmet } from "react-helmet-async";
@@ -15,6 +16,7 @@ import { findResumeByUsernameSlug } from "@/client/services/resume";
 export const PublicResumePage = () => {
   const { title, data: resume } = useLoaderData() as ResumeDto;
   const format = resume.metadata.page.format;
+  const template = useTemplate(resume.metadata.template);
 
   return (
     <div>
@@ -29,7 +31,12 @@ export const PublicResumePage = () => {
         <Artboard resume={resume} style={{ pointerEvents: "auto" }}>
           {resume.metadata.layout.map((columns, pageIndex) => (
             <PageWrapper key={pageIndex} data-page={pageIndex + 1}>
-              <Rhyhorn isFirstPage={pageIndex === 0} columns={columns as SectionKey[][]} />
+              {template !== null && (
+                <template.Component
+                  isFirstPage={pageIndex === 0}
+                  columns={columns as SectionKey[][]}
+                />
+              )}
             </PageWrapper>
           ))}
         </Artboard>

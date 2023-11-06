@@ -436,9 +436,9 @@ export const sampleResume: ResumeData = {
             id: "j69rrkkdf94jqqfe5v726d1n",
             visible: true,
             name: "QuantRes",
-            description: "Nassau, Bahamas",
+            description: "Execution Team Manager",
             date: "Jan 2018 - Jul 2020",
-            level: 0,
+            location: "Nassau, Bahamas",
             summary:
               "<p>Proprietary quantitative trading firm and privately-held quantitative futures fund with $1B in AUM and a focus on futures and OTC FX opportunities. 25+ year track record of trading global derivatives markets.</p><h3>Execution Team Manager</h3><p>Led international OTC FX and futures trading desk, software development, compliance, and market data for fund averaging $5B in monthly FX transactions and generating 500K+ futures contracts per month.</p><p>Steered a 12-member team of 4 traders and 8 software engineers. Oversaw co-located trade execution and managed direct market access in 4 data centers globally for exchanges not co-located. Built partnerships with trading technology providers. Point of contact with banks, brokerages, FXSpotStream, and 9 other liquidity providers. Led market data feed agreements with exchanges. Maintained CME and Eurex exchange memberships. Headed fulfillment of regulatory compliance and due diligence requests.</p><ul><li><p><strong>Decreased HFT FX trading costs</strong> by integrating streaming of 1 million NDF prices into co-located servers, coordinating with engineers of the FX pricing engine.</p></li></ul><ul><li><p><strong>Streamlined market data contracts and reduced costs by improving data quality and availability.</strong> Consolidated technology providers (Bloomberg and Reuters) and enhanced data collection for time periods needed, data types, and breadth of data.</p></li></ul><ul><li><p><strong>Scaled capabilities by recruiting to enlarge the team</strong>, hiring 3 traders, 2 software engineers, and a consultant with 85% retention for 2+ years. Sourced top talent by posting jobs, leveraging network of contacts, and outsourcing with recruiters.</p></li></ul><ul><li><p><strong>Reduced bank, vendor, and futures broker fees, expanded access to services</strong>, and maintained open lines of communication by strengthening existing relationships. Contacted sales representatives to facilitate introductions.</p></li></ul>",
             keywords: [],
@@ -477,7 +477,7 @@ export const sampleResume: ResumeData = {
     theme: {
       background: "#ffffff",
       text: "#000000",
-      primary: "#000000",
+      primary: "#222222",
     },
     typography: {
       font: {

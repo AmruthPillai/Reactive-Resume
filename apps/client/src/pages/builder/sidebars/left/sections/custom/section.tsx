@@ -16,7 +16,7 @@ type CustomFieldProps = {
 export const CustomField = ({ field, onChange, onRemove }: CustomFieldProps) => {
   const controls = useDragControls();
 
-  const handleChange = (key: "name" | "value", value: string) =>
+  const handleChange = (key: "icon" | "name" | "value", value: string) =>
     onChange({ ...field, [key]: value });
 
   return (
@@ -28,7 +28,7 @@ export const CustomField = ({ field, onChange, onRemove }: CustomFieldProps) => 
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
     >
-      <div className="flex items-end justify-between space-x-4">
+      <div className="flex items-end justify-between space-x-2">
         <Button
           size="icon"
           variant="ghost"
@@ -39,8 +39,14 @@ export const CustomField = ({ field, onChange, onRemove }: CustomFieldProps) => 
         </Button>
 
         <Input
+          placeholder="Icon"
+          value={field.icon}
+          className="!ml-0"
+          onChange={(event) => handleChange("icon", event.target.value)}
+        />
+
+        <Input
           placeholder="Name"
-          className="!ml-2"
           value={field.name}
           onChange={(event) => handleChange("name", event.target.value)}
         />
@@ -54,7 +60,7 @@ export const CustomField = ({ field, onChange, onRemove }: CustomFieldProps) => 
         <Button
           size="icon"
           variant="ghost"
-          className="!ml-2 shrink-0"
+          className="!ml-0 shrink-0"
           onClick={() => onRemove(field.id)}
         >
           <X />
@@ -73,7 +79,10 @@ export const CustomFieldsSection = ({ className }: Props) => {
   const customFields = useResumeStore((state) => state.resume.data.basics.customFields);
 
   const onAddCustomField = () => {
-    setValue("basics.customFields", [...customFields, { id: createId(), name: "", value: "" }]);
+    setValue("basics.customFields", [
+      ...customFields,
+      { id: createId(), icon: "", name: "", value: "" },
+    ]);
   };
 
   const onChangeCustomField = (field: ICustomField) => {

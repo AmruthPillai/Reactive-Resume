@@ -1,4 +1,5 @@
-import { Button } from "@reactive-resume/ui";
+import { templatesList } from "@reactive-resume/templates";
+import { Button, HoverCard, HoverCardContent, HoverCardTrigger } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 
 import { useResumeStore } from "@/client/stores/resume";
@@ -6,9 +7,6 @@ import { useResumeStore } from "@/client/stores/resume";
 import { getSectionIcon } from "../shared/section-icon";
 
 export const TemplateSection = () => {
-  // TODO: Import templates from @reactive-resume/templates
-  const templateList = ["rhyhorn"];
-
   const setValue = useResumeStore((state) => state.setValue);
   const currentTemplate = useResumeStore((state) => state.resume.data.metadata.template);
 
@@ -21,20 +19,31 @@ export const TemplateSection = () => {
         </div>
       </header>
 
-      <main className="grid grid-cols-2 gap-y-4">
-        {templateList.map((template) => (
-          <Button
-            key={template}
-            variant="outline"
-            disabled={template === currentTemplate}
-            onClick={() => setValue("metadata.template", template)}
-            className={cn(
-              "flex h-12 items-center justify-center overflow-hidden rounded border text-center text-sm capitalize ring-primary transition-colors hover:bg-secondary-accent focus:outline-none focus:ring-1 disabled:opacity-100",
-              template === currentTemplate && "ring-1",
-            )}
-          >
-            {template}
-          </Button>
+      <main className="grid grid-cols-2 gap-4">
+        {templatesList.map(({ id, name }) => (
+          <HoverCard key={id} openDelay={0} closeDelay={0}>
+            <HoverCardTrigger asChild>
+              <Button
+                variant="outline"
+                onClick={() => setValue("metadata.template", id)}
+                className={cn(
+                  "flex h-12 items-center justify-center overflow-hidden rounded border text-center text-sm capitalize ring-primary transition-colors hover:bg-secondary-accent focus:outline-none focus:ring-1 disabled:opacity-100",
+                  id === currentTemplate && "ring-1",
+                )}
+              >
+                {name}
+              </Button>
+            </HoverCardTrigger>
+
+            <HoverCardContent className="max-w-xs overflow-hidden border-none bg-white p-0">
+              <img
+                alt={name}
+                loading="lazy"
+                src={`/templates/${id}.jpg`}
+                className="aspect-[1/1.4142]"
+              />
+            </HoverCardContent>
+          </HoverCard>
         ))}
       </main>
     </section>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const RhyhornStyles = styled.div`
+export const RhyhornWrapper = styled.div`
   display: grid;
   row-gap: 16px;
 
@@ -21,13 +21,17 @@ export const RhyhornStyles = styled.div`
       line-height: calc(var(--line-height) + 0.5rem);
     }
 
+    &__headline {
+      color: var(--color-primary);
+    }
+
     &__meta {
       font-size: 0.875rem;
       line-height: var(--line-height);
 
       span {
         padding: 0 6px;
-        border-right: 1px solid var(--color-primary);
+        border-right: 1px solid currentColor;
 
         &:first-child {
           padding-left: 0;
@@ -41,6 +45,16 @@ export const RhyhornStyles = styled.div`
   }
 
   .section {
+    &__heading {
+      font-size: 0.9rem;
+      line-height: 1.2rem;
+      padding-bottom: 2px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      border-bottom: 1px solid var(--color-text);
+    }
+
     &__item {
       display: flex;
       flex-direction: column;

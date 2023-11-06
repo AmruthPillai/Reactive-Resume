@@ -16,7 +16,7 @@ import { References } from "./sections/references";
 import { Skills } from "./sections/skills";
 import { Summary } from "./sections/summary";
 import { Volunteer } from "./sections/volunteer";
-import { RhyhornStyles } from "./style";
+import { RhyhornWrapper } from "./style";
 
 const sectionMap: Partial<Record<SectionKey, () => React.ReactNode>> = {
   summary: Summary,
@@ -44,7 +44,7 @@ const getSection = (id: SectionKey) => {
 };
 
 export const Rhyhorn = ({ isFirstPage, columns }: TemplateProps) => (
-  <RhyhornStyles>
+  <RhyhornWrapper>
     {isFirstPage && <Header />}
 
     {/* Main */}
@@ -52,5 +52,5 @@ export const Rhyhorn = ({ isFirstPage, columns }: TemplateProps) => (
 
     {/* Sidebar */}
     {columns[1].map(getSection)}
-  </RhyhornStyles>
+  </RhyhornWrapper>
 );

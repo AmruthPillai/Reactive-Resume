@@ -33,34 +33,48 @@ export const FrameWrapper = ({ children, style }: Props) => {
     setHeight(`${height}px`);
   }, []);
 
+  const loadFonts = useCallback(
+    (frame: HTMLIFrameElement) => {
+      if (font.family === "CMU Serif") {
+        return webfontloader.load({
+          classes: false,
+          custom: {
+            families: ["CMU Serif"],
+            urls: ["https://cdn.jsdelivr.net/npm/computer-modern/cmu-serif.min.css"],
+          },
+          context: frame.contentWindow!,
+          fontactive: () => handleResize(frame!),
+        });
+      }
+
+      webfontloader.load({
+        classes: false,
+        google: { families: [fontString] },
+        context: frame.contentWindow!,
+        fontactive: () => handleResize(frame!),
+      });
+    },
+    [font, fontString, handleResize],
+  );
+
+  const loadIconFonts = useCallback((frame: HTMLIFrameElement) => {
+    const document = frame.contentDocument!;
+
+    const link = document.createElement("link");
+    link.type = "text/css";
+    link.rel = "stylesheet";
+    link.href = "https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css";
+
+    document.head.appendChild(link);
+  }, []);
+
   const onLoad = useCallback(() => {
     if (!frameRef.current) return;
 
     handleResize(frameRef.current);
-
-    if (font.family === "CMU Serif") {
-      return webfontloader.load({
-        classes: false,
-        custom: {
-          families: ["CMU Serif"],
-          urls: ["https://cdn.jsdelivr.net/npm/computer-modern/cmu-serif.min.css"],
-        },
-        context: frameRef.current.contentWindow!,
-        fontactive: () => {
-          handleResize(frameRef.current!);
-        },
-      });
-    }
-
-    webfontloader.load({
-      classes: false,
-      google: { families: [fontString] },
-      context: frameRef.current.contentWindow!,
-      fontactive: () => {
-        handleResize(frameRef.current!);
-      },
-    });
-  }, [frameRef, font, fontString, handleResize]);
+    loadFonts(frameRef.current);
+    loadIconFonts(frameRef.current);
+  }, [frameRef, handleResize, loadFonts, loadIconFonts]);
 
   useEffect(() => {
     onLoad();

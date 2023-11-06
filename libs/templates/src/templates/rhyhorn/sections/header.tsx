@@ -1,11 +1,12 @@
 import { Picture, useStore } from "@reactive-resume/templates";
+import { isUrl } from "@reactive-resume/utils";
 
 export const Header = () => {
   const basics = useStore((state) => state.basics);
 
   return (
     <div className="header">
-      {basics.picture.url && !basics.picture.effects.hidden && (
+      {isUrl(basics.picture.url) && !basics.picture.effects.hidden && (
         <Picture
           alt={basics.name}
           src={basics.picture.url}

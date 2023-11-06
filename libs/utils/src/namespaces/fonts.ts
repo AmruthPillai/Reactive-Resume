@@ -313,16 +313,6 @@ export const fonts: Font[] = [
     },
   },
   {
-    family: "Material Icons",
-    category: "monospace",
-    subsets: ["latin"],
-    variants: ["regular"],
-    files: {
-      regular:
-        "http://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNZIhI8tIHh.ttf",
-    },
-  },
-  {
     family: "Roboto Mono",
     category: "monospace",
     subsets: ["cyrillic", "cyrillic-ext", "greek", "latin", "latin-ext", "vietnamese"],
