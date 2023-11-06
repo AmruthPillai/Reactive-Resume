@@ -489,5 +489,7 @@ export const sampleResume: ResumeData = {
       lineHeight: 1.5,
       underlineLinks: true,
     },
+    notes:
+      "<p>I sent this resume to Deloitte back in July 2022. I am yet to hear back from them.</p>",
   },
 };

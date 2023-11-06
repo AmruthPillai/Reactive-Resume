@@ -4,6 +4,7 @@ import {
   IconProps,
   Info,
   Layout,
+  Note,
   Palette,
   ReadCvLogo,
   ShareFat,
@@ -13,6 +14,7 @@ import {
 import { Button, ButtonProps, Tooltip } from "@reactive-resume/ui";
 
 export type MetadataKey =
+  | "notes"
   | "template"
   | "layout"
   | "typography"
@@ -26,6 +28,8 @@ export type MetadataKey =
 export const getSectionIcon = (id: MetadataKey, props: IconProps = {}) => {
   switch (id) {
     // Left Sidebar
+    case "notes":
+      return <Note size={18} {...props} />;
     case "template":
       return <DiamondsFour size={18} {...props} />;
     case "layout":

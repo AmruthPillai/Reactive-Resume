@@ -21,6 +21,8 @@ export const ErrorMessage = {
   ResumeSlugAlreadyExists:
     "A resume with this slug already exists, please pick a different unique identifier.",
   ResumeNotFound: "It looks like the resume you're looking for doesn't exist.",
+  ResumeLocked:
+    "The resume you want to update is locked, please unlock if you wish to make any changes to it.",
   ResumePrinterError:
     "Something went wrong while printing your resume. Please try again later or raise an issue on GitHub.",
   ResumePreviewError:

@@ -1,5 +1,5 @@
 import { CACHE_MANAGER } from "@nestjs/cache-manager";
-import { Inject, Injectable, Logger } from "@nestjs/common";
+import { BadRequestException, Inject, Injectable, Logger } from "@nestjs/common";
 import { Prisma } from "@prisma/client";
 import { CreateResumeDto, ImportResumeDto, ResumeDto, UpdateResumeDto } from "@reactive-resume/dto";
 import { defaultResumeData, ResumeData } from "@reactive-resume/schema";
@@ -13,6 +13,7 @@ import { PrismaService } from "nestjs-prisma";
 
 import { PrinterService } from "@/server/printer/printer.service";
 
+import { ErrorMessage } from "../constants/error-message";
 import { StorageService } from "../storage/storage.service";
 import { UtilsService } from "../utils/utils.service";
 
@@ -129,22 +130,44 @@ export class ResumeService {
   }
 
   async update(userId: string, id: string, updateResumeDto: UpdateResumeDto) {
-    await Promise.all([
-      this.cache.set(`user:${userId}:resume:${id}`, updateResumeDto),
-      this.cache.del(`user:${userId}:resumes`),
-      this.cache.del(`user:${userId}:storage:resumes:${id}`),
-      this.cache.del(`user:${userId}:storage:previews:${id}`),
-    ]);
+    try {
+      const resume = await this.prisma.resume.update({
+        data: {
+          title: updateResumeDto.title,
+          slug: updateResumeDto.slug,
+          visibility: updateResumeDto.visibility,
+          data: updateResumeDto.data as unknown as Prisma.JsonObject,
+        },
+        where: { userId_id: { userId, id }, locked: false },
+      });
 
-    return this.prisma.resume.update({
-      data: {
-        title: updateResumeDto.title,
-        slug: updateResumeDto.slug,
-        visibility: updateResumeDto.visibility,
-        data: updateResumeDto.data as unknown as Prisma.JsonObject,
-      },
+      await Promise.all([
+        this.cache.set(`user:${userId}:resume:${id}`, resume),
+        this.cache.del(`user:${userId}:resumes`),
+        this.cache.del(`user:${userId}:storage:resumes:${id}`),
+        this.cache.del(`user:${userId}:storage:previews:${id}`),
+      ]);
+
+      return resume;
+    } catch (error) {
+      if (error.code === "P2025") {
+        throw new BadRequestException(ErrorMessage.ResumeLocked);
+      }
+    }
+  }
+
+  async lock(userId: string, id: string, set: boolean) {
+    const resume = await this.prisma.resume.update({
+      data: { locked: set },
       where: { userId_id: { userId, id } },
     });
+
+    await Promise.all([
+      this.cache.set(`user:${userId}:resume:${id}`, resume),
+      this.cache.del(`user:${userId}:resumes`),
+    ]);
+
+    return resume;
   }
 
   async remove(userId: string, id: string) {
@@ -156,9 +179,10 @@ export class ResumeService {
       // Remove files in storage, and their cached keys
       this.storageService.deleteObject(userId, "resumes", id),
       this.storageService.deleteObject(userId, "previews", id),
-    ]);
 
-    return this.prisma.resume.delete({ where: { userId_id: { userId, id } } });
+      // Remove resume from database
+      this.prisma.resume.delete({ where: { userId_id: { userId, id } } }),
+    ]);
   }
 
   async printResume(resume: ResumeDto) {

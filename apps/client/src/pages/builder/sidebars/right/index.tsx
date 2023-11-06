@@ -7,6 +7,7 @@ import { ThemeSwitch } from "@/client/components/theme-switch";
 import { ExportSection } from "./sections/export";
 import { InformationSection } from "./sections/information";
 import { LayoutSection } from "./sections/layout";
+import { NotesSection } from "./sections/notes";
 import { PageSection } from "./sections/page";
 import { SharingSection } from "./sections/sharing";
 import { StatisticsSection } from "./sections/statistics";
@@ -43,6 +44,8 @@ export const RightSidebar = () => {
           <Separator />
           <ExportSection />
           <Separator />
+          <NotesSection />
+          <Separator />
           <InformationSection />
           <Separator />
           <Copyright className="text-center" />
@@ -63,6 +66,18 @@ export const RightSidebar = () => {
           <SectionIcon id="theme" name="Theme" onClick={() => scrollIntoView("#theme")} />
           <SectionIcon id="page" name="Page" onClick={() => scrollIntoView("#page")} />
           <SectionIcon id="sharing" name="Sharing" onClick={() => scrollIntoView("#sharing")} />
+          <SectionIcon
+            id="statistics"
+            name="Statistics"
+            onClick={() => scrollIntoView("#statistics")}
+          />
+          <SectionIcon id="export" name="Export" onClick={() => scrollIntoView("#export")} />
+          <SectionIcon id="notes" name="Notes" onClick={() => scrollIntoView("#notes")} />
+          <SectionIcon
+            id="information"
+            name="Information"
+            onClick={() => scrollIntoView("#information")}
+          />
         </div>
 
         <ThemeSwitch size={14} />

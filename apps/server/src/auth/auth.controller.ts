@@ -16,19 +16,16 @@ import {
   authResponseSchema,
   backupCodesSchema,
   ForgotPasswordDto,
-  MessageDto,
   messageSchema,
   RegisterDto,
   ResetPasswordDto,
   TwoFactorBackupDto,
   TwoFactorDto,
   UpdatePasswordDto,
-  UserDto,
   userSchema,
   UserWithSecrets,
 } from "@reactive-resume/dto";
 import type { Response } from "express";
-import { ZodSerializerDto } from "nestjs-zod";
 
 import { ErrorMessage } from "../constants/error-message";
 import { User } from "../user/decorators/user.decorator";
@@ -151,7 +148,6 @@ export class AuthController {
 
   @Patch("password")
   @UseGuards(TwoFactorGuard)
-  @ZodSerializerDto(MessageDto)
   async updatePassword(@User("email") email: string, @Body() { password }: UpdatePasswordDto) {
     await this.authService.updatePassword(email, password);
 
@@ -174,7 +170,6 @@ export class AuthController {
   @ApiTags("Two-Factor Auth")
   @Post("2fa/setup")
   @UseGuards(JwtGuard)
-  @ZodSerializerDto(MessageDto)
   async setup2FASecret(@User("email") email: string) {
     return this.authService.setup2FASecret(email);
   }
@@ -204,7 +199,6 @@ export class AuthController {
   @HttpCode(200)
   @Post("2fa/disable")
   @UseGuards(TwoFactorGuard)
-  @ZodSerializerDto(MessageDto)
   async disable2FA(@User("email") email: string) {
     await this.authService.disable2FA(email);
 
@@ -215,7 +209,6 @@ export class AuthController {
   @HttpCode(200)
   @Post("2fa/verify")
   @UseGuards(JwtGuard)
-  @ZodSerializerDto(UserDto)
   async verify2FACode(
     @User() user: UserWithSecrets,
     @Body() { code }: TwoFactorDto,
@@ -235,7 +228,6 @@ export class AuthController {
   @HttpCode(200)
   @Post("2fa/backup")
   @UseGuards(JwtGuard)
-  @ZodSerializerDto(UserDto)
   async useBackup2FACode(
     @User("id") id: string,
     @User("email") email: string,
@@ -267,7 +259,6 @@ export class AuthController {
   @ApiTags("Password Reset")
   @HttpCode(200)
   @Post("reset-password")
-  @ZodSerializerDto(MessageDto)
   async resetPassword(@Body() { token, password }: ResetPasswordDto) {
     try {
       await this.authService.resetPassword(token, password);
@@ -282,7 +273,6 @@ export class AuthController {
   @ApiTags("Email Verification")
   @Post("verify-email")
   @UseGuards(TwoFactorGuard)
-  @ZodSerializerDto(MessageDto)
   async verifyEmail(
     @User("id") id: string,
     @User("emailVerified") emailVerified: boolean,
@@ -302,7 +292,6 @@ export class AuthController {
   @ApiTags("Email Verification")
   @Post("verify-email/resend")
   @UseGuards(TwoFactorGuard)
-  @ZodSerializerDto(MessageDto)
   async resendVerificationEmail(
     @User("email") email: string,
     @User("emailVerified") emailVerified: boolean,

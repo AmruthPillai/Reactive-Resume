@@ -2,7 +2,7 @@ import { HttpException, Module } from "@nestjs/common";
 import { APP_INTERCEPTOR, APP_PIPE } from "@nestjs/core";
 import { ServeStaticModule } from "@nestjs/serve-static";
 import { RavenInterceptor, RavenModule } from "nest-raven";
-import { ZodSerializerInterceptor, ZodValidationPipe } from "nestjs-zod";
+import { ZodValidationPipe } from "nestjs-zod";
 import { join } from "path";
 
 import { AuthModule } from "./auth/auth.module";
@@ -43,10 +43,6 @@ import { UtilsModule } from "./utils/utils.module";
     {
       provide: APP_PIPE,
       useClass: ZodValidationPipe,
-    },
-    {
-      provide: APP_INTERCEPTOR,
-      useClass: ZodSerializerInterceptor,
     },
     {
       provide: APP_INTERCEPTOR,

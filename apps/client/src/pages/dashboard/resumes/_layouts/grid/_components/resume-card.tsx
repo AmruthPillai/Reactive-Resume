@@ -2,6 +2,8 @@ import {
   CircleNotch,
   CopySimple,
   FolderOpen,
+  Lock,
+  LockOpen,
   PencilSimple,
   TrashSimple,
 } from "@phosphor-icons/react";
@@ -30,6 +32,7 @@ type Props = {
 export const ResumeCard = ({ resume }: Props) => {
   const navigate = useNavigate();
   const { open } = useDialog<ResumeDto>("resume");
+  const { open: lockOpen } = useDialog<ResumeDto>("lock");
 
   const { url, loading } = useResumePreview(resume.id);
 
@@ -47,6 +50,10 @@ export const ResumeCard = ({ resume }: Props) => {
     open("duplicate", { id: "resume", item: resume });
   };
 
+  const onLockChange = () => {
+    lockOpen(resume.locked ? "update" : "create", { id: "lock", item: resume });
+  };
+
   const onDelete = () => {
     open("delete", { id: "resume", item: resume });
   };
@@ -54,7 +61,7 @@ export const ResumeCard = ({ resume }: Props) => {
   return (
     <ContextMenu>
       <ContextMenuTrigger>
-        <BaseCard onClick={onOpen}>
+        <BaseCard onClick={onOpen} className="space-y-0">
           <AnimatePresence presenceAffectsLayout>
             {loading && (
               <motion.div
@@ -85,6 +92,19 @@ export const ResumeCard = ({ resume }: Props) => {
             )}
           </AnimatePresence>
 
+          <AnimatePresence>
+            {resume.locked && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="absolute inset-0 flex items-center justify-center bg-background/75 backdrop-blur-sm"
+              >
+                <Lock size={42} />
+              </motion.div>
+            )}
+          </AnimatePresence>
+
           <div
             className={cn(
               "absolute inset-x-0 bottom-0 z-10 flex flex-col justify-end space-y-0.5 p-4 pt-12",
@@ -110,6 +130,17 @@ export const ResumeCard = ({ resume }: Props) => {
           <CopySimple size={14} className="mr-2" />
           Duplicate
         </ContextMenuItem>
+        {resume.locked ? (
+          <ContextMenuItem onClick={onLockChange}>
+            <LockOpen size={14} className="mr-2" />
+            Unlock
+          </ContextMenuItem>
+        ) : (
+          <ContextMenuItem onClick={onLockChange}>
+            <Lock size={14} className="mr-2" />
+            Lock
+          </ContextMenuItem>
+        )}
         <ContextMenuSeparator />
         <ContextMenuItem onClick={onDelete} className="text-error">
           <TrashSimple size={14} className="mr-2" />

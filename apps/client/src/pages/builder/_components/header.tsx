@@ -1,6 +1,6 @@
-import { HouseSimple, SidebarSimple } from "@phosphor-icons/react";
+import { HouseSimple, Lock, SidebarSimple } from "@phosphor-icons/react";
 import { useBreakpoint } from "@reactive-resume/hooks";
-import { Button } from "@reactive-resume/ui";
+import { Button, Tooltip } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { Link } from "react-router-dom";
 
@@ -11,8 +11,10 @@ export const BuilderHeader = () => {
   const { isDesktop } = useBreakpoint();
   const defaultPanelSize = isDesktop ? 25 : 0;
 
-  const toggle = useBuilderStore((state) => state.toggle);
   const title = useResumeStore((state) => state.resume.title);
+  const locked = useResumeStore((state) => state.resume.locked);
+
+  const toggle = useBuilderStore((state) => state.toggle);
   const isDragging = useBuilderStore(
     (state) => state.panel.left.isDragging || state.panel.right.isDragging,
   );
@@ -48,6 +50,12 @@ export const BuilderHeader = () => {
           <span className="mr-2 text-xs opacity-40">{"/"}</span>
 
           <h1 className="font-medium">{title}</h1>
+
+          {locked && (
+            <Tooltip content="This resume is locked, please unlock to make further changes.">
+              <Lock size={14} className="ml-2 opacity-75" />
+            </Tooltip>
+          )}
         </div>
 
         <Button size="icon" variant="ghost" onClick={() => onToggle("right")}>
