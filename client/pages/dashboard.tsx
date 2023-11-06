@@ -1,3 +1,4 @@
+'use client';
 import { Add, ImportExport } from '@mui/icons-material';
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';

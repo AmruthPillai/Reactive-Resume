@@ -1,3 +1,4 @@
+'use client';
 import { NextPage } from 'next';
 
 const TermsOfService: NextPage = () => (

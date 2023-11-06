@@ -1,3 +1,4 @@
+'use client';
 import { Download, Downloading } from '@mui/icons-material';
 import { ButtonBase } from '@mui/material';
 import clsx from 'clsx';

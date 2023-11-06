@@ -8,7 +8,6 @@ import {
 } from '@mui/icons-material';
 import { ButtonBase, ListItemIcon, ListItemText, Menu, MenuItem, Tooltip } from '@mui/material';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
@@ -20,6 +19,7 @@ import { RESUMES_QUERY } from '@/constants/index';
 import { ServerError } from '@/services/axios';
 import queryClient from '@/services/react-query';
 import { deleteResume, DeleteResumeParams, duplicateResume, DuplicateResumeParams } from '@/services/resume';
+import { setCurrentResume } from '@/store/dashboard/dashboardSlice';
 import { useAppDispatch } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
 import { getRelativeTime } from '@/utils/date';
@@ -47,10 +47,14 @@ const ResumePreview: React.FC<Props> = ({ resume }) => {
   const handleOpen = () => {
     handleClose();
 
-    router.push({
-      pathname: '/[username]/[slug]/builder',
-      query: { username: resume.user.username, slug: resume.slug },
-    });
+    dispatch(setCurrentResume({ slug: resume.slug, username: resume.user.username }));
+
+    router.push('/resume/builder');
+
+    // router.push({
+    //   pathname: '/[username]/[slug]/builder',
+    //   query: { username: resume.user.username, slug: resume.slug },
+    // });
   };
 
   const handleOpenMenu = (event: React.MouseEvent<Element>) => {
@@ -107,17 +111,9 @@ const ResumePreview: React.FC<Props> = ({ resume }) => {
 
   return (
     <section className={styles.resume}>
-      <Link
-        passHref
-        href={{
-          pathname: '/[username]/[slug]/builder',
-          query: { username: resume.user.username, slug: resume.slug },
-        }}
-      >
-        <ButtonBase className={styles.preview}>
-          {resume.image ? <Image src={resume.image} alt={resume.name} priority width={400} height={0} /> : null}
-        </ButtonBase>
-      </Link>
+      <ButtonBase className={styles.preview} onClick={handleOpen}>
+        {resume.image ? <Image src={resume.image} alt={resume.name} priority width={400} height={0} /> : null}
+      </ButtonBase>
 
       <footer>
         <div className={styles.meta}>

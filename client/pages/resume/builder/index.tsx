@@ -1,6 +1,6 @@
 'use client';
 import isEmpty from 'lodash/isEmpty';
-import { GetServerSideProps, NextPage } from 'next';
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -12,29 +12,19 @@ import Center from '@/components/build/Center/Center';
 import LeftSidebar from '@/components/build/LeftSidebar/LeftSidebar';
 import RightSidebar from '@/components/build/RightSidebar/RightSidebar';
 import { fetchResumeByIdentifier } from '@/services/resume';
-import { useAppDispatch } from '@/store/hooks';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setResume } from '@/store/resume/resumeSlice';
 import styles from '@/styles/pages/Build.module.scss';
 
-type QueryParams = {
-  username: string;
-  slug: string;
-};
+export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common', 'modals', 'builder'])),
+  },
+});
 
-type Props = {
-  username: string;
-  slug: string;
-};
-
-export const getServerSideProps: GetServerSideProps<Props> = async ({ query, locale = 'en' }) => {
-  const { username, slug } = query as QueryParams;
-
-  return {
-    props: { username, slug, ...(await serverSideTranslations(locale, ['common', 'modals', 'builder'])) },
-  };
-};
-
-const Build: NextPage<Props> = ({ username, slug }) => {
+const Builder = () => {
+  const { currentResume } = useAppSelector((state) => state.dashboard);
+  const { username, slug } = currentResume;
   const { t } = useTranslation();
 
   const dispatch = useAppDispatch();
@@ -70,4 +60,4 @@ const Build: NextPage<Props> = ({ username, slug }) => {
   );
 };
 
-export default Build;
+export default Builder;
