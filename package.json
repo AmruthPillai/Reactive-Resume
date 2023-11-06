@@ -16,12 +16,12 @@
   "scripts": {
     "dev": "nx run-many -t serve",
     "test": "nx run-many -t test",
-    "prebuild": "pnpm exec prisma generate",
+    "prebuild": "pnpm dlx prisma generate",
     "build": "nx run-many -t build",
     "prestart": "pnpm dlx prisma migrate deploy",
     "start": "node dist/apps/server/main",
     "lint": "nx run-many -t lint --fix",
-    "format": "pnpm exec prettier -w .",
+    "format": "pnpm dlx prettier -w .",
     "prepare": "pnpm dlx husky install"
   },
   "devDependencies": {

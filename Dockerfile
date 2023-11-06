@@ -32,9 +32,9 @@ COPY --chown=node:node --from=build /app/.npmrc /app/package.json /app/pnpm-lock
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
 
 # Copy Prisma Generated Client
-COPY --chown=node:node --from=build ./app/node_modules/.pnpm/@prisma+client* ./node_modules/.pnpm/
+COPY --chown=node:node --from=build /app/node_modules/.pnpm/@prisma+client* ./node_modules/.pnpm/
 
 # Copy Prisma Schema & Migrations
-COPY --chown=node:node --from=build ./app/tools/prisma ./tools/prisma
+COPY --chown=node:node --from=build /app/tools/prisma ./tools/prisma
 
 CMD [ "dumb-init", "pnpm", "start" ]
