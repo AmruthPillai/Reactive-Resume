@@ -8,9 +8,9 @@ import { useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { Resume } from 'schema';
 
-import Center from '@/components/build/Center/Center';
-import LeftSidebar from '@/components/build/LeftSidebar/LeftSidebar';
 import RightSidebar from '@/components/build/RightSidebar/RightSidebar';
+import Center from '@/components/resume/Center/Center';
+import LeftSidebar from '@/components/resume/LeftSidebar/LeftSidebar';
 import { fetchResumeByIdentifier } from '@/services/resume';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setResume } from '@/store/resume/resumeSlice';

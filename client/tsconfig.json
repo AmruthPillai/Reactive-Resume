@@ -19,6 +19,7 @@
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
+      "react": ["./node_modules/@types/react"],
       "@/data/*": ["data/*"],
       "@/i18n/*": ["i18n/*"],
       "@/pages/*": ["pages/*"],

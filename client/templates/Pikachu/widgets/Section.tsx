@@ -1,9 +1,9 @@
 import { Email, Link, Phone } from '@mui/icons-material';
-import { ListItem, Section as SectionType } from 'schema';
 import get from 'lodash/get';
 import isArray from 'lodash/isArray';
 import isEmpty from 'lodash/isEmpty';
 import { useMemo } from 'react';
+import { ListItem, Section as SectionType } from 'schema';
 
 import Markdown from '@/components/shared/Markdown';
 import { useAppSelector } from '@/store/hooks';

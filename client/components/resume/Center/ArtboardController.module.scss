@@ -1,0 +1,28 @@
+.container {
+  @apply flex w-auto items-center justify-center;
+  @apply fixed inset-x-0 bottom-6;
+  @apply transition-[margin-left,margin-right] duration-200;
+}
+
+.pushLeft {
+  @apply xl:ml-[30vw] 2xl:ml-[28vw];
+}
+
+.pushRight {
+  @apply xl:mr-[30vw] 2xl:mr-[28vw];
+}
+
+.controller {
+  @apply z-20 flex items-center justify-center shadow-lg;
+  @apply flex rounded-l-full rounded-r-full px-4;
+  @apply bg-zinc-50 dark:bg-zinc-900;
+  @apply opacity-70 transition-opacity duration-200 hover:opacity-100;
+
+  > button {
+    @apply px-2.5 py-2.5;
+  }
+
+  > hr {
+    @apply mx-3 h-5 w-0.5 bg-zinc-900/40 dark:bg-zinc-50/20;
+  }
+}

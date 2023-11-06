@@ -1,0 +1,45 @@
+.container {
+  @apply h-screen w-[95vw] md:w-[70vw] lg:w-[50vw] xl:w-[30vw] 2xl:w-[28vw];
+  @apply bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100;
+  @apply relative flex border-r-2 border-zinc-100/10;
+
+  nav {
+    @apply absolute inset-y-0 left-0;
+    @apply w-14 py-4 md:w-16 md:px-2;
+    @apply bg-zinc-100 shadow dark:bg-zinc-900;
+    @apply flex flex-col items-center justify-between;
+
+    hr {
+      @apply mt-2;
+    }
+
+    > div {
+      @apply grid gap-2;
+    }
+
+    .sections svg {
+      @apply opacity-75 transition-opacity hover:opacity-100;
+    }
+  }
+
+  main {
+    @apply overflow-y-scroll p-4;
+    @apply absolute inset-y-0 left-12 right-0 md:left-16;
+
+    > section {
+      @apply grid gap-4;
+      @apply pt-5 pb-7 first:pt-0;
+      @apply border-b border-zinc-900/10 last:border-b-0 dark:border-zinc-100/10;
+
+      hr {
+        @apply my-2;
+      }
+    }
+
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

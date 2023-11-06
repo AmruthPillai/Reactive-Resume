@@ -1,0 +1,25 @@
+.header {
+  @apply mx-0 flex justify-between shadow;
+  @apply bg-zinc-900 text-zinc-100;
+  @apply transition-[margin-left,margin-right] duration-200;
+
+  button > svg {
+    @apply text-base text-zinc-100;
+  }
+}
+
+.pushLeft {
+  @apply xl:ml-[30vw] 2xl:ml-[28vw];
+}
+
+.pushRight {
+  @apply xl:mr-[30vw] 2xl:mr-[28vw];
+}
+
+.title {
+  @apply flex items-center justify-center;
+
+  h1 {
+    @apply ml-2;
+  }
+}
