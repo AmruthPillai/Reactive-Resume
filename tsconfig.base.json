@@ -15,15 +15,13 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      // App Paths
       "@/client/*": ["apps/client/src/*"],
       "@/server/*": ["apps/server/src/*"],
-      // Library Paths
+      "@/artboard/*": ["apps/artboard/src/*"],
       "@reactive-resume/dto": ["libs/dto/src/index.ts"],
       "@reactive-resume/hooks": ["libs/hooks/src/index.ts"],
       "@reactive-resume/parser": ["libs/parser/src/index.ts"],
       "@reactive-resume/schema": ["libs/schema/src/index.ts"],
-      "@reactive-resume/templates": ["libs/templates/src/index.ts"],
       "@reactive-resume/ui": ["libs/ui/src/index.ts"],
       "@reactive-resume/utils": ["libs/utils/src/index.ts"]
     }

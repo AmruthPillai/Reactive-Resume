@@ -27,10 +27,6 @@ import { UtilsModule } from "./utils/utils.module";
     CacheModule,
     UtilsModule,
     HealthModule,
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, "..", "client"),
-      exclude: ["/api*", "/docs*"],
-    }),
 
     // Feature Modules
     AuthModule.register(),
@@ -38,6 +34,16 @@ import { UtilsModule } from "./utils/utils.module";
     ResumeModule,
     StorageModule,
     PrinterModule,
+
+    // Static Assets
+    ServeStaticModule.forRoot({
+      serveRoot: "/artboard",
+      rootPath: join(__dirname, "..", "artboard"),
+    }),
+    ServeStaticModule.forRoot({
+      renderPath: "/*",
+      rootPath: join(__dirname, "..", "client"),
+    }),
   ],
   providers: [
     {

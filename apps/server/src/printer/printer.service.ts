@@ -4,7 +4,7 @@ import { Injectable } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import fontkit from "@pdf-lib/fontkit";
 import { ResumeDto } from "@reactive-resume/dto";
-import { getFontUrls, pageSizeMap, withTimeout } from "@reactive-resume/utils";
+import { getFontUrls, withTimeout } from "@reactive-resume/utils";
 import retry from "async-retry";
 import { readFile } from "fs/promises";
 import { join } from "path";
@@ -16,7 +16,6 @@ import { ErrorMessage } from "../constants/error-message";
 import { StorageService } from "../storage/storage.service";
 import { UtilsService } from "../utils/utils.service";
 
-const MM_TO_PX = 3.78;
 const PRINTER_TIMEOUT = 10000; // 10 seconds
 
 @Injectable()
@@ -114,59 +113,38 @@ export class PrinterService {
     }
 
     // Set the data of the resume to be printed in the browser's session storage
-    const format = resume.data.metadata.page.format;
     const numPages = resume.data.metadata.layout.length;
 
-    await page.evaluateOnNewDocument((data: string) => {
-      sessionStorage.setItem("resume", data);
-    }, JSON.stringify(resume.data));
+    await page.evaluateOnNewDocument((data) => {
+      sessionStorage.setItem("resume", JSON.stringify(data));
+    }, resume.data);
 
-    await page.goto(`${url}/printer`, { waitUntil: "networkidle0" });
-    await page.emulateMediaType("print");
+    await page.goto(`${url}/artboard/preview`, { waitUntil: "networkidle0" });
 
     const pagesBuffer: Buffer[] = [];
 
-    // Hide all the pages (elements with [data-page] attribute) using CSS
-    const hidePages = () => {
-      return page.$eval("iframe", (frame) => {
-        frame.contentDocument?.documentElement.querySelectorAll("[data-page]").forEach((page) => {
-          page.setAttribute("style", "display: none");
-        });
-      });
-    };
+    const processPage = async (index: number) => {
+      const pageElement = await page.$(`[data-page="${index}"]`);
+      const width = (await (await pageElement?.getProperty("scrollWidth"))?.jsonValue()) ?? 0;
+      const height = (await (await pageElement?.getProperty("scrollHeight"))?.jsonValue()) ?? 0;
 
-    const processPage = (index: number) => {
-      // Calculate the height of the page based on the format, convert mm to pixels
-      const pageSize = {
-        width: pageSizeMap[format].width * MM_TO_PX,
-        height: pageSizeMap[format].height * MM_TO_PX,
-      };
+      const tempHtml = await page.evaluate((element: HTMLDivElement) => {
+        const clonedElement = element.cloneNode(true) as HTMLDivElement;
+        const tempHtml = document.body.innerHTML;
+        document.body.innerHTML = `${clonedElement.outerHTML}`;
+        return tempHtml;
+      }, pageElement);
 
-      return page.$eval(
-        "iframe",
-        (frame, index, pageSize) => {
-          const page = frame.contentDocument?.querySelector(`[data-page="${index}"]`);
-          page?.setAttribute("style", "display: block");
+      pagesBuffer.push(await page.pdf({ width, height }));
 
-          return {
-            width: Math.max(pageSize.width, page?.scrollWidth ?? 0),
-            height: Math.max(pageSize.height, page?.scrollHeight ?? 0),
-          };
-        },
-        index,
-        pageSize,
-      );
+      await page.evaluate((tempHtml: string) => {
+        document.body.innerHTML = tempHtml;
+      }, tempHtml);
     };
 
     // Loop through all the pages and print them, by first displaying them, printing the PDF and then hiding them back
     for (let index = 1; index <= numPages; index++) {
-      await hidePages();
-
-      const { width, height } = await processPage(index);
-      const buffer = await page.pdf({ width, height });
-      pagesBuffer.push(buffer);
-
-      await hidePages();
+      await processPage(index);
     }
 
     // Using 'pdf-lib', merge all the pages from their buffers into a single PDF
@@ -265,18 +243,13 @@ export class PrinterService {
     }
 
     // Set the data of the resume to be printed in the browser's session storage
-    const format = resume.data.metadata.page.format;
-
     await page.evaluateOnNewDocument((data: string) => {
       sessionStorage.setItem("resume", data);
     }, JSON.stringify(resume.data));
 
-    await page.setViewport({
-      width: Math.round(pageSizeMap[format].width * MM_TO_PX),
-      height: Math.round(pageSizeMap[format].height * MM_TO_PX),
-    });
+    await page.setViewport({ width: 794, height: 1123 });
 
-    await page.goto(`${url}/printer`, { waitUntil: "networkidle0" });
+    await page.goto(`${url}/artboard/preview`, { waitUntil: "networkidle0" });
 
     // Save the JPEG to storage and return the URL
     // Store the URL in cache for future requests, under the previously generated hash digest

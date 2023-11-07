@@ -33,7 +33,7 @@ export const BuilderLayout = () => {
   if (isDesktop) {
     return (
       <div className="relative h-full w-full overflow-hidden">
-        <PanelGroup direction="horizontal" autoSaveId="builder-layout">
+        <PanelGroup direction="horizontal">
           <Panel
             collapsible
             minSize={20}

@@ -1,0 +1,31 @@
+{
+  "extends": ["plugin:@nx/react", "../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "extends": ["plugin:tailwindcss/recommended"],
+      "settings": {
+        "tailwindcss": {
+          "callees": ["cn", "clsx", "cva"],
+          "config": "tailwind.config.js"
+        }
+      },
+      "rules": {
+        // react-hooks
+        "react-hooks/exhaustive-deps": "off",
+
+        // tailwindcss
+        "tailwindcss/no-custom-classname": "off"
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {}
+    }
+  ]
+}

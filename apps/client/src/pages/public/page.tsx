@@ -1,9 +1,7 @@
 import { ResumeDto } from "@reactive-resume/dto";
-import { useTemplate } from "@reactive-resume/hooks";
-import { SectionKey } from "@reactive-resume/schema";
-import { Artboard, PageWrapper } from "@reactive-resume/templates";
 import { Button } from "@reactive-resume/ui";
 import { pageSizeMap } from "@reactive-resume/utils";
+import { useCallback, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, LoaderFunction, redirect, useLoaderData } from "react-router-dom";
 
@@ -14,9 +12,42 @@ import { queryClient } from "@/client/libs/query-client";
 import { findResumeByUsernameSlug } from "@/client/services/resume";
 
 export const PublicResumePage = () => {
+  const frameRef = useRef<HTMLIFrameElement>(null);
+
   const { title, data: resume } = useLoaderData() as ResumeDto;
   const format = resume.metadata.page.format;
-  const template = useTemplate(resume.metadata.template);
+
+  const updateResumeInFrame = useCallback(() => {
+    if (!frameRef.current || !frameRef.current.contentWindow) return;
+    const message = { type: "SET_RESUME", payload: resume };
+    (() => frameRef.current.contentWindow.postMessage(message, "*"))();
+  }, [frameRef, resume]);
+
+  useEffect(() => {
+    if (!frameRef.current) return;
+    frameRef.current.addEventListener("load", updateResumeInFrame);
+    return () => frameRef.current?.removeEventListener("load", updateResumeInFrame);
+  }, [frameRef]);
+
+  useEffect(() => {
+    if (!frameRef.current || !frameRef.current.contentWindow) return;
+
+    const handleMessage = (event: MessageEvent) => {
+      if (!frameRef.current || !frameRef.current.contentWindow) return;
+      if (event.origin !== window.location.origin) return;
+
+      if (event.data.type === "PAGE_LOADED") {
+        frameRef.current.height = event.data.payload.height;
+        frameRef.current.contentWindow.removeEventListener("message", handleMessage);
+      }
+    };
+
+    frameRef.current.contentWindow.addEventListener("message", handleMessage);
+
+    return () => {
+      frameRef.current?.contentWindow?.removeEventListener("message", handleMessage);
+    };
+  }, [frameRef]);
 
   return (
     <div>
@@ -26,20 +57,14 @@ export const PublicResumePage = () => {
 
       <div
         style={{ width: `${pageSizeMap[format].width}mm` }}
-        className="mx-auto mb-6 mt-16 flex shadow-xl print:m-0 print:shadow-none"
+        className="mx-auto mb-6 mt-16 overflow-hidden rounded shadow-xl print:m-0 print:shadow-none"
       >
-        <Artboard resume={resume} style={{ pointerEvents: "auto" }}>
-          {resume.metadata.layout.map((columns, pageIndex) => (
-            <PageWrapper key={pageIndex} data-page={pageIndex + 1}>
-              {template !== null && (
-                <template.Component
-                  isFirstPage={pageIndex === 0}
-                  columns={columns as SectionKey[][]}
-                />
-              )}
-            </PageWrapper>
-          ))}
-        </Artboard>
+        <iframe
+          title={title}
+          ref={frameRef}
+          src="/artboard/preview"
+          style={{ width: `${pageSizeMap[format].width}mm` }}
+        />
       </div>
 
       <div className="flex justify-center py-10 opacity-50 print:hidden">

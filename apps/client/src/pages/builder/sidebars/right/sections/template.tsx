@@ -1,6 +1,5 @@
-import { templatesList } from "@reactive-resume/templates";
 import { Button, HoverCard, HoverCardContent, HoverCardTrigger } from "@reactive-resume/ui";
-import { cn } from "@reactive-resume/utils";
+import { cn, templatesList } from "@reactive-resume/utils";
 
 import { useResumeStore } from "@/client/stores/resume";
 
@@ -20,7 +19,7 @@ export const TemplateSection = () => {
       </header>
 
       <main className="grid grid-cols-2 gap-4">
-        {templatesList.map(({ id, name }) => (
+        {templatesList.map(({ id, name, image }) => (
           <HoverCard key={id} openDelay={0} closeDelay={0}>
             <HoverCardTrigger asChild>
               <Button
@@ -36,12 +35,7 @@ export const TemplateSection = () => {
             </HoverCardTrigger>
 
             <HoverCardContent className="max-w-xs overflow-hidden border-none bg-white p-0">
-              <img
-                alt={name}
-                loading="lazy"
-                src={`/templates/${id}.jpg`}
-                className="aspect-[1/1.4142]"
-              />
+              <img alt={name} src={image} loading="lazy" className="aspect-[1/1.4142]" />
             </HoverCardContent>
           </HoverCard>
         ))}

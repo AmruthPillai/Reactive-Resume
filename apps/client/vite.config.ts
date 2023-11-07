@@ -21,11 +21,6 @@ export default defineConfig({
     fs: { allow: [searchForWorkspaceRoot(process.cwd())] },
   },
 
-  preview: {
-    host: true,
-    port: +(process.env.__DEV__CLIENT_PORT ?? 5173),
-  },
-
   plugins: [react(), nxViteTsPaths(), splitVendorChunkPlugin()],
 
   test: {

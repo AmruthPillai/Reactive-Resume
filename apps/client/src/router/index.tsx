@@ -9,13 +9,13 @@ import { ResetPasswordPage } from "../pages/auth/reset-password/page";
 import { VerifyEmailPage } from "../pages/auth/verify-email/page";
 import { VerifyOtpPage } from "../pages/auth/verify-otp/page";
 import { BuilderLayout } from "../pages/builder/layout";
-import { builderLoader, BuilderPage } from "../pages/builder/page";
+import { BuilderPage } from "../pages/builder/page";
+import { builderLoader } from "../pages/builder/page";
 import { DashboardLayout } from "../pages/dashboard/layout";
 import { ResumesPage } from "../pages/dashboard/resumes/page";
 import { SettingsPage } from "../pages/dashboard/settings/page";
 import { HomeLayout } from "../pages/home/layout";
 import { HomePage } from "../pages/home/page";
-import { PrinterPage } from "../pages/printer/page";
 import { publicLoader, PublicResumePage } from "../pages/public/page";
 import { Providers } from "../providers";
 import { AuthGuard } from "./guards/auth";
@@ -79,8 +79,6 @@ export const routes = createRoutesFromElements(
         </Route>
       </Route>
     </Route>
-
-    <Route path="printer" element={<PrinterPage />} />
 
     {/* Public Routes */}
     <Route path=":username">

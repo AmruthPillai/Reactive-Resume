@@ -110,8 +110,8 @@ export class ResumeController {
 
   @Delete(":id")
   @UseGuards(TwoFactorGuard)
-  async remove(@User() user: UserEntity, @Param("id") id: string) {
-    await this.resumeService.remove(user.id, id);
+  remove(@User() user: UserEntity, @Param("id") id: string) {
+    return this.resumeService.remove(user.id, id);
   }
 
   @Get("/print/:id")
@@ -122,6 +122,7 @@ export class ResumeController {
 
       return { url };
     } catch (error) {
+      console.log(error);
       Logger.error(error);
       throw new InternalServerErrorException(error);
     }
