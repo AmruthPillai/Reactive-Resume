@@ -9,7 +9,6 @@ export type SectionProps = {
   subtitlePath?: string | string[];
   headlinePath?: string | string[];
   keywordsPath?: string;
-  sectionClickable?: boolean;
 };
 
 const sectionMap = (Section: React.FC<SectionProps>): Record<string, JSX.Element> => ({

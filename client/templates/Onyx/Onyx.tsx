@@ -17,12 +17,7 @@ const Onyx: React.FC<PageProps> = ({ page }) => {
 
   return (
     <div className={styles.page}>
-      {isFirstPage && (
-        <div className="mb-4 grid gap-4 border-b pb-4">
-          <Masthead />
-          <Markdown>{summary}</Markdown>
-        </div>
-      )}
+      {isFirstPage && <Masthead />}
 
       <div className={styles.container}>
         <div className={styles.main}>{layout[0].map((key) => getSectionById(key, Section))}</div>

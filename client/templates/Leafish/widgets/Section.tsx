@@ -2,7 +2,7 @@ import { Email, Link, Phone } from '@mui/icons-material';
 import get from 'lodash/get';
 import isArray from 'lodash/isArray';
 import isEmpty from 'lodash/isEmpty';
-import { useMemo } from 'react';
+import { useContext, useMemo } from 'react';
 import { ListItem, Section as SectionType } from 'schema';
 
 import Markdown from '@/components/shared/Markdown';
@@ -13,6 +13,9 @@ import { formatDateString } from '@/utils/date';
 import { parseListItemPath } from '@/utils/template';
 
 import Heading from './Heading';
+import ScrollSectionInView from '@/templates/shared/ScrollSectionInView';
+import { TEMPLATES } from '@/templates/templateHelper';
+import { ResumeBuilderContext } from '@/wrappers/BuilderContext';
 
 const Section: React.FC<SectionProps> = ({
   path,
@@ -21,6 +24,7 @@ const Section: React.FC<SectionProps> = ({
   headlinePath = 'headline',
   keywordsPath = 'keywords',
 }) => {
+  const builderContext = useContext(ResumeBuilderContext);
   const section: SectionType = useAppSelector((state) => get(state.resume.present, path, {} as SectionType));
   const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
   const primaryColor: string = useAppSelector((state) => get(state.resume.present, 'metadata.theme.primary'));
@@ -32,7 +36,11 @@ const Section: React.FC<SectionProps> = ({
   if (isArray(section.items) && isEmpty(section.items)) return null;
 
   return (
-    <section id={`Leafish_${sectionId}`}>
+    <ScrollSectionInView
+      enable={builderContext.enableSelectToScroll}
+      sectionId={sectionId}
+      template={TEMPLATES.LEAFISH}
+    >
       <Heading>{section.name}</Heading>
 
       <div
@@ -115,7 +123,7 @@ const Section: React.FC<SectionProps> = ({
           );
         })}
       </div>
-    </section>
+    </ScrollSectionInView>
   );
 };
 

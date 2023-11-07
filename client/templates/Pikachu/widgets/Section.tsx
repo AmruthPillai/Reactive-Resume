@@ -15,6 +15,7 @@ import { addHttp, parseListItemPath } from '@/utils/template';
 import Heading from './Heading';
 import { ResumeBuilderContext } from '@/wrappers/BuilderContext';
 import ScrollSectionInView from '@/templates/shared/ScrollSectionInView';
+import { TEMPLATES } from '@/templates/templateHelper';
 
 const Section: React.FC<SectionProps> = ({
   path,
@@ -35,7 +36,11 @@ const Section: React.FC<SectionProps> = ({
   if (isArray(section.items) && isEmpty(section.items)) return null;
 
   return (
-    <ScrollSectionInView enable={builderContext.enableSelectToScroll} sectionId={sectionId}>
+    <ScrollSectionInView
+      enable={builderContext.enableSelectToScroll}
+      sectionId={sectionId}
+      template={TEMPLATES.PIKACHU}
+    >
       <Heading>{section.name}</Heading>
 
       <div

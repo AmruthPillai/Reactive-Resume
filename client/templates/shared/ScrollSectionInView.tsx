@@ -4,18 +4,20 @@ import React from 'react';
 
 type ScrollSectionInViewProps = {
   sectionId: string;
+  template: string;
   enable?: boolean;
 };
 
 export const ScrollSectionInView: React.FC<React.PropsWithChildren<ScrollSectionInViewProps>> = ({
   sectionId,
   children,
+  template,
   enable = false,
 }) => {
   return (
     <Box
       component={'section'}
-      id={`Pikachu_${sectionId}`}
+      id={`${template}_${sectionId}`}
       sx={
         enable
           ? {

@@ -11,8 +11,6 @@ import Section from './widgets/Section';
 
 const Kakuna: React.FC<PageProps> = ({ page }) => {
   const isFirstPage = useMemo(() => page === 0, [page]);
-
-  const { summary } = useAppSelector((state) => state.resume.present.basics);
   const layout: string[][] = useAppSelector((state) => state.resume.present.metadata.layout[page]);
 
   return (
@@ -20,7 +18,6 @@ const Kakuna: React.FC<PageProps> = ({ page }) => {
       {isFirstPage && (
         <>
           <Masthead />
-          <Markdown className="mb-2 text-center">{summary}</Markdown>
         </>
       )}
 

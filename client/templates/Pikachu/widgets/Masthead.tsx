@@ -14,6 +14,7 @@ import { getContrastColor } from '@/utils/styles';
 import { addHttp, formatLocation, getPhotoClassNames } from '@/utils/template';
 import { ResumeBuilderContext } from '@/wrappers/BuilderContext';
 import ScrollSectionInView from '@/templates/shared/ScrollSectionInView';
+import { TEMPLATES } from '@/templates/templateHelper';
 
 export const MastheadSidebar: React.FC = () => {
   const builderContext = useContext(ResumeBuilderContext);
@@ -23,7 +24,7 @@ export const MastheadSidebar: React.FC = () => {
   );
 
   return (
-    <ScrollSectionInView enable={builderContext.enableSelectToScroll} sectionId={'basics'}>
+    <ScrollSectionInView enable={builderContext.enableSelectToScroll} sectionId={'basics'} template={TEMPLATES.PIKACHU}>
       <div className="col-span-2 grid justify-items-start gap-4">
         {photo.visible && !isEmpty(photo.url) && (
           <img
@@ -75,7 +76,7 @@ export const MastheadMain: React.FC = () => {
   const { name, summary, headline } = useAppSelector((state) => state.resume.present.basics);
 
   return (
-    <ScrollSectionInView enable={builderContext.enableSelectToScroll} sectionId={'basics'}>
+    <ScrollSectionInView enable={builderContext.enableSelectToScroll} sectionId={'basics'} template={TEMPLATES.PIKACHU}>
       <div
         className="grid gap-2 p-4"
         style={{ color: contrast === 'dark' ? theme.text : theme.background, backgroundColor: theme.primary }}

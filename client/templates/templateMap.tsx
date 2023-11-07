@@ -7,6 +7,7 @@ import Kakuna from './Kakuna/Kakuna';
 import Leafish from './Leafish/Leafish';
 import Onyx from './Onyx/Onyx';
 import Pikachu from './Pikachu/Pikachu';
+import { TEMPLATES } from './templateHelper';
 
 export type TemplateMeta = {
   id: string;
@@ -17,44 +18,44 @@ export type TemplateMeta = {
 
 const templateMap: Record<string, TemplateMeta> = {
   kakuna: {
-    id: 'kakuna',
-    name: 'Kakuna',
+    id: TEMPLATES.KAKUNA.toLowerCase(),
+    name: TEMPLATES.KAKUNA,
     preview: '/images/templates/kakuna.jpg',
     component: Kakuna,
   },
   onyx: {
-    id: 'onyx',
-    name: 'Onyx',
+    id: TEMPLATES.ONYX.toLowerCase(),
+    name: TEMPLATES.ONYX,
     preview: '/images/templates/onyx.jpg',
     component: Onyx,
   },
   pikachu: {
-    id: 'pikachu',
-    name: 'Pikachu',
+    id: TEMPLATES.PIKACHU.toLowerCase(),
+    name: TEMPLATES.PIKACHU,
     preview: '/images/templates/pikachu.jpg',
     component: Pikachu,
   },
   gengar: {
-    id: 'gengar',
-    name: 'Gengar',
+    id: TEMPLATES.GENGAR.toLowerCase(),
+    name: TEMPLATES.GENGAR,
     preview: '/images/templates/gengar.jpg',
     component: Gengar,
   },
   castform: {
-    id: 'castform',
-    name: 'Castform',
+    id: TEMPLATES.CASTFORM.toLowerCase(),
+    name: TEMPLATES.CASTFORM,
     preview: '/images/templates/castform.jpg',
     component: Castform,
   },
   glalie: {
-    id: 'glalie',
-    name: 'Glalie',
+    id: TEMPLATES.GLALIE.toLowerCase(),
+    name: TEMPLATES.GLALIE,
     preview: '/images/templates/glalie.jpg',
     component: Glalie,
   },
   leafish: {
-    id: 'leafish',
-    name: 'Leafish',
+    id: TEMPLATES.LEAFISH.toLowerCase(),
+    name: TEMPLATES.LEAFISH,
     preview: '/images/templates/leafish.jpg',
     component: Leafish,
   },

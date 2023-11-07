@@ -8,7 +8,6 @@ export type Required<T, K extends keyof T> = T & { [P in K]-?: T[P] };
 
 export type PageProps = {
   page: number;
-  sectionClickable?: boolean;
 };
 
 export const formatLocation = (location?: Location): string => {
