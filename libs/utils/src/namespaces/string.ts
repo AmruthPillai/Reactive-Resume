@@ -15,6 +15,11 @@ export const isUrl = (string: string) => {
   return urlRegex.test(string);
 };
 
+export const isEmptyString = (string: string) => {
+  if (string === "<p></p>") return true;
+  return string.trim().length === 0;
+};
+
 export const extractUrl = (string: string) => {
   const urlRegex = /https?:\/\/[^ \n]+/i;
 

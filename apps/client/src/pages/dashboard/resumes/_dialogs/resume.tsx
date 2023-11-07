@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CaretDown, Flask, MagicWand, Plus } from "@phosphor-icons/react";
 import { createResumeSchema, ResumeDto } from "@reactive-resume/dto";
-import { idSchema } from "@reactive-resume/schema";
+import { idSchema, sampleResume } from "@reactive-resume/schema";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -38,7 +38,6 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { sampleResume } from "@/client/constants/sample-resume";
 import { useToast } from "@/client/hooks/use-toast";
 import { useCreateResume, useDeleteResume, useUpdateResume } from "@/client/services/resume";
 import { useImportResume } from "@/client/services/resume/import";
@@ -258,7 +257,7 @@ export const ResumeDialog = () => {
                   {isDuplicate && "Duplicate"}
                 </Button>
                 <DropdownMenu>
-                  <DropdownMenuTrigger>
+                  <DropdownMenuTrigger asChild>
                     <Button type="button" size="icon" className="rounded-l-none border-l">
                       <CaretDown />
                     </Button>

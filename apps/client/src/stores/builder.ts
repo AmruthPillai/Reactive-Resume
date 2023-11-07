@@ -1,5 +1,4 @@
 import { ImperativePanelHandle } from "react-resizable-panels";
-import { ReactZoomPanPinchRef } from "react-zoom-pan-pinch";
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 
@@ -10,15 +9,15 @@ type Sheet = {
 
 type Panel = {
   isDragging: boolean;
+  setDragging: (dragging: boolean) => void;
   ref: ImperativePanelHandle | null;
   setRef: (ref: ImperativePanelHandle | null) => void;
-  setDragging: (dragging: boolean) => void;
 };
 
 interface BuilderState {
-  transform: {
-    ref: Omit<ReactZoomPanPinchRef, "instance"> | null;
-    setRef: (ref: Omit<ReactZoomPanPinchRef, "instance"> | null) => void;
+  frame: {
+    ref: HTMLIFrameElement | null;
+    setRef: (ref: HTMLIFrameElement | null) => void;
   };
   sheet: {
     left: Sheet;
@@ -36,11 +35,12 @@ interface BuilderActions {
 
 export const useBuilderStore = create<BuilderState & BuilderActions>()(
   immer((set) => ({
-    transform: {
+    frame: {
       ref: null,
       setRef: (ref) => {
         set((state) => {
-          state.transform.ref = ref;
+          // @ts-expect-error Unable to set ref type
+          state.frame.ref = ref;
         });
       },
     },

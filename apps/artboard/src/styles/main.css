@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply border-current;
+}
+
+#root {
+  @apply antialiased;
+}
+
+#root.underline-links a {
+  @apply underline underline-offset-2;
+}
+
+.wysiwyg {
+  @apply prose max-w-none text-current prose-headings:my-1.5 prose-p:my-1.5 prose-ul:my-1.5 prose-li:my-1.5 prose-ol:my-1.5 prose-img:my-1.5 prose-hr:my-1.5;
+}

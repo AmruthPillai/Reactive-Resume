@@ -179,10 +179,9 @@ export class ResumeService {
       // Remove files in storage, and their cached keys
       this.storageService.deleteObject(userId, "resumes", id),
       this.storageService.deleteObject(userId, "previews", id),
-
-      // Remove resume from database
-      this.prisma.resume.delete({ where: { userId_id: { userId, id } } }),
     ]);
+
+    return this.prisma.resume.delete({ where: { userId_id: { userId, id } } });
   }
 
   async printResume(resume: ResumeDto) {

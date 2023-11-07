@@ -22,7 +22,7 @@ export const BuilderToolbar = () => {
   const setValue = useResumeStore((state) => state.setValue);
   const undo = useTemporalResumeStore((state) => state.undo);
   const redo = useTemporalResumeStore((state) => state.redo);
-  const transformRef = useBuilderStore((state) => state.transform.ref);
+  const frameRef = useBuilderStore((state) => state.frame.ref);
 
   const id = useResumeStore((state) => state.resume.id);
   const isPublic = useResumeStore((state) => state.resume.visibility === "public");
@@ -40,6 +40,11 @@ export const BuilderToolbar = () => {
 
     openInNewTab(url);
   };
+
+  const onZoomIn = () => frameRef?.contentWindow?.postMessage({ type: "ZOOM_IN" }, "*");
+  const onZoomOut = () => frameRef?.contentWindow?.postMessage({ type: "ZOOM_OUT" }, "*");
+  const onResetView = () => frameRef?.contentWindow?.postMessage({ type: "RESET_VIEW" }, "*");
+  const onCenterView = () => frameRef?.contentWindow?.postMessage({ type: "CENTER_VIEW" }, "*");
 
   return (
     <motion.div
@@ -65,49 +70,26 @@ export const BuilderToolbar = () => {
 
         <Separator orientation="vertical" className="h-9" />
 
-        {/* Zoom In */}
         <Tooltip content="Zoom In">
-          <Button
-            size="icon"
-            variant="ghost"
-            className="rounded-none"
-            onClick={() => transformRef?.zoomIn(0.2)}
-          >
+          <Button size="icon" variant="ghost" className="rounded-none" onClick={onZoomIn}>
             <MagnifyingGlassPlus />
           </Button>
         </Tooltip>
 
-        {/* Zoom Out */}
         <Tooltip content="Zoom Out">
-          <Button
-            size="icon"
-            variant="ghost"
-            className="rounded-none"
-            onClick={() => transformRef?.zoomOut(0.2)}
-          >
+          <Button size="icon" variant="ghost" className="rounded-none" onClick={onZoomOut}>
             <MagnifyingGlassMinus />
           </Button>
         </Tooltip>
 
         <Tooltip content="Reset Zoom">
-          <Button
-            size="icon"
-            variant="ghost"
-            className="rounded-none"
-            onClick={() => transformRef?.resetTransform()}
-          >
+          <Button size="icon" variant="ghost" className="rounded-none" onClick={onResetView}>
             <ClockClockwise />
           </Button>
         </Tooltip>
 
-        {/* Center Artboard */}
         <Tooltip content="Center Artboard">
-          <Button
-            size="icon"
-            variant="ghost"
-            className="rounded-none"
-            onClick={() => transformRef?.centerView()}
-          >
+          <Button size="icon" variant="ghost" className="rounded-none" onClick={onCenterView}>
             <CubeFocus />
           </Button>
         </Tooltip>
