@@ -4,7 +4,7 @@ import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useEffect } from 'react';
+import { createContext, useEffect, useMemo } from 'react';
 import { useQuery } from 'react-query';
 import { Resume } from 'schema';
 
@@ -15,6 +15,7 @@ import { fetchResumeByIdentifier } from '@/services/resume';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setResume } from '@/store/resume/resumeSlice';
 import styles from '@/styles/pages/Build.module.scss';
+import BuilderContext from '@/wrappers/BuilderContext';
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => ({
   props: {
@@ -23,7 +24,7 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => ({
 });
 
 const Builder = () => {
-  const { currentResume } = useAppSelector((state) => state.dashboard);
+  const { currentResume } = useAppSelector((state) => state.editor);
   const { username, slug } = currentResume;
   const { t } = useTranslation();
 
@@ -46,17 +47,19 @@ const Builder = () => {
   if (!resume || isEmpty(resume)) return null;
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>
-          {resume.name} | {t('common.title')}
-        </title>
-      </Head>
+    <BuilderContext>
+      <div className={styles.container}>
+        <Head>
+          <title>
+            {resume.name} | {t('common.title')}
+          </title>
+        </Head>
 
-      <LeftSidebar />
-      <Center />
-      <RightSidebar />
-    </div>
+        <LeftSidebar />
+        <Center />
+        <RightSidebar />
+      </div>
+    </BuilderContext>
   );
 };
 

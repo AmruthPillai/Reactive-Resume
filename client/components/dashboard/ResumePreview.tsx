@@ -19,7 +19,7 @@ import { RESUMES_QUERY } from '@/constants/index';
 import { ServerError } from '@/services/axios';
 import queryClient from '@/services/react-query';
 import { deleteResume, DeleteResumeParams, duplicateResume, DuplicateResumeParams } from '@/services/resume';
-import { setCurrentResume } from '@/store/dashboard/dashboardSlice';
+import { setCurrentResume } from '@/store/editor/editorSlice';
 import { useAppDispatch } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
 import { getRelativeTime } from '@/utils/date';

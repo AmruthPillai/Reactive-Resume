@@ -5,7 +5,7 @@ import undoable from 'redux-undo';
 
 import authReducer from '@/store/auth/authSlice';
 import buildReducer from '@/store/build/buildSlice';
-import dashboardReducer from '@/store/dashboard/dashboardSlice';
+import editorReducer from '@/store/editor/editorSlice';
 import modalReducer from '@/store/modal/modalSlice';
 import resumeReducer from '@/store/resume/resumeSlice';
 
@@ -18,11 +18,11 @@ const reducers = combineReducers({
   auth: authReducer,
   modal: modalReducer,
   build: buildReducer,
-  dashboard: dashboardReducer,
+  editor: editorReducer,
   resume: undoable(resumeReducer),
 });
 
-const persistedReducers = persistReducer({ key: 'root', storage, whitelist: ['auth', 'build'] }, reducers);
+const persistedReducers = persistReducer({ key: 'root', storage, whitelist: ['auth', 'build', 'editor'] }, reducers);
 
 const store = configureStore({
   reducer: persistedReducers,

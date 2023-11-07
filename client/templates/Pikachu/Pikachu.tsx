@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useContext, useMemo } from 'react';
 
 import { useAppSelector } from '@/store/hooks';
 import { PageProps } from '@/utils/template';
@@ -7,6 +7,7 @@ import { getSectionById } from '../sectionMap';
 import styles from './Pikachu.module.scss';
 import { MastheadMain, MastheadSidebar } from './widgets/Masthead';
 import Section from './widgets/Section';
+import { ResumeBuilderContext } from '@/wrappers/BuilderContext';
 
 const Pikachu: React.FC<PageProps> = ({ page }) => {
   const isFirstPage = useMemo(() => page === 0, [page]);

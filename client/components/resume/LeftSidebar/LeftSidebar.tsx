@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import React, { ReactComponentElement, useMemo } from 'react';
 import { Section as SectionRecord } from 'schema';
-import { validate } from 'uuid';
 
 import Section from '@/components/build/LeftSidebar/sections/Section';
 import Icon from '@/components/shared/Icon';
@@ -14,6 +13,7 @@ import { getCustomSections, getSectionsByType, left } from '@/config/sections';
 import { setSidebarState } from '@/store/build/buildSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { addSection } from '@/store/resume/resumeSlice';
+import { sectionScrollIntoView } from '@/utils/editor';
 
 import styles from './LeftSidebar.module.scss';
 
@@ -35,15 +35,6 @@ const LeftSidebar = () => {
   const handleOpen = () => dispatch(setSidebarState({ sidebar: 'left', state: { open: true } }));
 
   const handleClose = () => dispatch(setSidebarState({ sidebar: 'left', state: { open: false } }));
-
-  const handleClick = (id: string) => {
-    const elementId = validate(id) ? `#section-${id}` : `#${id}`;
-    const section = document.querySelector(elementId);
-
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
 
   const handleAddSection = () => {
     const newSection: SectionRecord = {
@@ -127,7 +118,7 @@ const LeftSidebar = () => {
                 placement="right"
                 title={t(`builder.leftSidebar.sections.${id}.heading`, get(sections, `${id}.name`))}
               >
-                <IconButton onClick={() => handleClick(id)}>{icon}</IconButton>
+                <IconButton onClick={() => sectionScrollIntoView(id)}>{icon}</IconButton>
               </Tooltip>
             ))}
 
@@ -138,7 +129,7 @@ const LeftSidebar = () => {
                 placement="right"
                 arrow
               >
-                <IconButton onClick={() => id && handleClick(id)}>
+                <IconButton onClick={() => id && sectionScrollIntoView(id)}>
                   <Star />
                 </IconButton>
               </Tooltip>
