@@ -234,11 +234,6 @@ export const right: SidebarSection[] = [
     icon: <SettingsIcon />,
     component: <Settings />,
   },
-  {
-    id: 'links',
-    icon: <LinkIcon />,
-    component: <Links />,
-  },
 ];
 
 export const getSectionsByType = (sections: Record<string, SectionRecord>, type: SectionType): SectionRecord[] => {
