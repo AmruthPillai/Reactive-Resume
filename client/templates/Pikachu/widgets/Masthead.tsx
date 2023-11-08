@@ -17,14 +17,13 @@ import ScrollSectionInView from '@/templates/shared/ScrollSectionInView';
 import { TEMPLATES } from '@/templates/templateHelper';
 
 export const MastheadSidebar: React.FC = () => {
-  const builderContext = useContext(ResumeBuilderContext);
   const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
   const { name, photo, email, phone, birthdate, website, location, profiles } = useAppSelector(
     (state) => state.resume.present.basics,
   );
 
   return (
-    <ScrollSectionInView enable={builderContext.enableSelectToScroll} sectionId={'basics'} template={TEMPLATES.PIKACHU}>
+    <ScrollSectionInView sectionId={'basics'} template={TEMPLATES.PIKACHU}>
       <div className="col-span-2 grid justify-items-start gap-4">
         {photo.visible && !isEmpty(photo.url) && (
           <img
@@ -69,14 +68,13 @@ export const MastheadSidebar: React.FC = () => {
 };
 
 export const MastheadMain: React.FC = () => {
-  const builderContext = useContext(ResumeBuilderContext);
   const theme: ThemeConfig = useAppSelector((state) => get(state.resume.present, 'metadata.theme', {} as ThemeConfig));
   const contrast = useMemo(() => getContrastColor(theme.primary), [theme.primary]);
 
   const { name, summary, headline } = useAppSelector((state) => state.resume.present.basics);
 
   return (
-    <ScrollSectionInView enable={builderContext.enableSelectToScroll} sectionId={'basics'} template={TEMPLATES.PIKACHU}>
+    <ScrollSectionInView sectionId={'basics'} template={TEMPLATES.PIKACHU}>
       <div
         className="grid gap-2 p-4"
         style={{ color: contrast === 'dark' ? theme.text : theme.background, backgroundColor: theme.primary }}

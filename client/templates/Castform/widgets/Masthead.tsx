@@ -18,7 +18,6 @@ import { TEMPLATES } from '@/templates/templateHelper';
 import { ResumeBuilderContext } from '@/wrappers/BuilderContext';
 
 export const MastheadSidebar: React.FC = () => {
-  const builderContext = useContext(ResumeBuilderContext);
   const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
   const { name, headline, photo, email, phone, birthdate, website, location, profiles } = useAppSelector(
     (state) => state.resume.present.basics,
@@ -28,11 +27,7 @@ export const MastheadSidebar: React.FC = () => {
   const color = useMemo(() => (contrast === 'dark' ? theme.text : theme.background), [theme, contrast]);
 
   return (
-    <ScrollSectionInView
-      enable={builderContext.enableSelectToScroll}
-      sectionId={'basics'}
-      template={TEMPLATES.CASTFORM}
-    >
+    <ScrollSectionInView sectionId={'basics'} template={TEMPLATES.CASTFORM}>
       <div className="col-span-2 grid justify-items-start gap-3 px-4 pt-4">
         {photo.visible && !isEmpty(photo.url) && (
           <img
@@ -112,13 +107,9 @@ export const MastheadSidebar: React.FC = () => {
 
 export const MastheadMain: React.FC = () => {
   const { summary } = useAppSelector((state) => state.resume.present.basics);
-  const builderContext = useContext(ResumeBuilderContext);
+
   return (
-    <ScrollSectionInView
-      enable={builderContext.enableSelectToScroll}
-      sectionId={'basics'}
-      template={TEMPLATES.CASTFORM}
-    >
+    <ScrollSectionInView sectionId={'basics'} template={TEMPLATES.CASTFORM}>
       {summary && (
         <div className="px-4 pt-4">
           <Markdown>{summary}</Markdown>

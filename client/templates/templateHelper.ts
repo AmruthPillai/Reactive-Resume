@@ -1,9 +1,9 @@
 export const TEMPLATES = {
-  PIKACHU: 'Pikachu',
-  ONYX: 'Onyx',
-  KAKUNA: 'Kakuna',
-  GENGAR: 'Gengar',
-  CASTFORM: 'Castform',
-  GLALIE: 'Glalie',
-  LEAFISH: 'Leafish',
+  PIKACHU: 'pikachu',
+  ONYX: 'onyx',
+  KAKUNA: 'kakuna',
+  GENGAR: 'gengar',
+  CASTFORM: 'castform',
+  GLALIE: 'glalie',
+  LEAFISH: 'leafish',
 };

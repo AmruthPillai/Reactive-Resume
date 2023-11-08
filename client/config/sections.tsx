@@ -43,21 +43,25 @@ import { SidebarSection } from '@/types/app';
 
 export const left: SidebarSection[] = [
   {
+    order: 1,
     id: 'basics',
     icon: <Person />,
     component: <Basics />,
   },
   {
+    order: 2,
     id: 'location',
     icon: <Map />,
     component: <Location />,
   },
   {
+    order: 3,
     id: 'profiles',
     icon: <Twitter />,
     component: <Profiles />,
   },
   {
+    order: 4,
     id: 'work',
     icon: <Work />,
     component: (
@@ -73,6 +77,7 @@ export const left: SidebarSection[] = [
     ),
   },
   {
+    order: 5,
     id: 'education',
     icon: <School />,
     component: (
@@ -87,6 +92,7 @@ export const left: SidebarSection[] = [
     ),
   },
   {
+    order: 6,
     id: 'awards',
     icon: <EmojiEvents />,
     component: (
@@ -94,6 +100,7 @@ export const left: SidebarSection[] = [
     ),
   },
   {
+    order: 7,
     id: 'certifications',
     icon: <CardGiftcard />,
     component: (
@@ -108,6 +115,7 @@ export const left: SidebarSection[] = [
     ),
   },
   {
+    order: 8,
     id: 'publications',
     icon: <MenuBook />,
     component: (
@@ -122,6 +130,7 @@ export const left: SidebarSection[] = [
     ),
   },
   {
+    order: 9,
     id: 'skills',
     icon: <Architecture />,
     component: (
@@ -129,6 +138,7 @@ export const left: SidebarSection[] = [
     ),
   },
   {
+    order: 10,
     id: 'languages',
     icon: <Language />,
     component: (
@@ -136,6 +146,7 @@ export const left: SidebarSection[] = [
     ),
   },
   {
+    order: 11,
     id: 'interests',
     icon: <Sailing />,
     component: (
@@ -150,6 +161,7 @@ export const left: SidebarSection[] = [
     ),
   },
   {
+    order: 12,
     id: 'volunteer',
     icon: <VolunteerActivism />,
     component: (
@@ -164,6 +176,7 @@ export const left: SidebarSection[] = [
     ),
   },
   {
+    order: 13,
     id: 'projects',
     icon: <Coffee />,
     component: (
@@ -178,6 +191,7 @@ export const left: SidebarSection[] = [
     ),
   },
   {
+    order: 14,
     id: 'references',
     icon: <Groups />,
     component: (
@@ -195,41 +209,49 @@ export const left: SidebarSection[] = [
 
 export const right: SidebarSection[] = [
   {
+    order: 1,
     id: 'templates',
     icon: <Category />,
     component: <Templates />,
   },
   {
+    order: 2,
     id: 'layout',
     icon: <Margin />,
     component: <Layout />,
   },
   {
+    order: 3,
     id: 'typography',
     icon: <FontDownload />,
     component: <Typography />,
   },
   {
+    order: 4,
     id: 'theme',
     icon: <Palette />,
     component: <Theme />,
   },
   {
+    order: 5,
     id: 'css',
     icon: <Style />,
     component: <CustomCSS />,
   },
   {
+    order: 6,
     id: 'sharing',
     icon: <Share />,
     component: <Sharing />,
   },
   {
+    order: 7,
     id: 'export',
     icon: <Download />,
     component: <Export />,
   },
   {
+    order: 8,
     id: 'settings',
     icon: <SettingsIcon />,
     component: <Settings />,

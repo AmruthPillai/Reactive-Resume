@@ -4,7 +4,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import get from 'lodash/get';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
-import React, { ReactComponentElement, useMemo } from 'react';
+import React, { ReactComponentElement, useMemo, useState } from 'react';
 import { Section as SectionRecord } from 'schema';
 
 import Section from '@/components/build/LeftSidebar/sections/Section';
@@ -13,11 +13,15 @@ import { getCustomSections, getSectionsByType, left } from '@/config/sections';
 import { setSidebarState } from '@/store/build/buildSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { addSection } from '@/store/resume/resumeSlice';
-import { sectionScrollIntoView } from '@/utils/editor';
+import { resumePreviewScrollIntoView, sectionScrollIntoView } from '@/utils/editor';
+import { v4 as uuidv4 } from 'uuid';
 
-import styles from './LeftSidebar.module.scss';
-
-const LeftSidebar = () => {
+import styles from './SectionEditor.module.scss';
+type SectionEditorProps = {
+  currentSection?: string;
+  setCurrentSection: Function;
+};
+const SectionEditor: React.FC<SectionEditorProps> = ({ currentSection, setCurrentSection }) => {
   const theme = useTheme();
 
   const { t } = useTranslation();
@@ -27,16 +31,12 @@ const LeftSidebar = () => {
   const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
 
   const sections = useAppSelector((state) => state.resume.present.sections);
-
-  const { open } = useAppSelector((state) => state.build.sidebar.left);
+  const metadata = useAppSelector((state) => state.resume.present.metadata);
 
   const customSections = useMemo(() => getCustomSections(sections), [sections]);
 
-  const handleOpen = () => dispatch(setSidebarState({ sidebar: 'left', state: { open: true } }));
-
-  const handleClose = () => dispatch(setSidebarState({ sidebar: 'left', state: { open: false } }));
-
   const handleAddSection = () => {
+    const id = uuidv4();
     const newSection: SectionRecord = {
       name: 'Custom Section',
       type: 'custom',
@@ -45,22 +45,26 @@ const LeftSidebar = () => {
       items: [],
     };
 
-    dispatch(addSection({ value: newSection, type: 'custom' }));
+    dispatch(addSection({ id, value: newSection, type: 'custom' }));
+    setTimeout(() => {
+      onMenuClick(id);
+    }, 400);
   };
 
-  const sectionsList = () => {
-    const sectionsComponents: Array<ReactComponentElement<any>> = [];
+  const getCurrentSection = () => {
+    let sectionsComponent: ReactComponentElement<any> = <></>;
 
-    for (const item of left) {
+    const item = left.find((x) => x.id === currentSection);
+    if (item) {
       const id = (item as any).id;
       const component = (item as any).component;
       const type = component.props.type;
       const addMore = !!component.props.addMore;
 
-      sectionsComponents.push(
+      sectionsComponent = (
         <section key={id} id={id}>
           {component}
-        </section>,
+        </section>
       );
 
       if (addMore) {
@@ -83,33 +87,35 @@ const LeftSidebar = () => {
             </section>,
           );
         }
-        sectionsComponents.push(...elements);
+      }
+    } else {
+      const customItem = customSections.find((x) => x.id === currentSection);
+      if (customItem) {
+        sectionsComponent = (
+          <section key={customItem.id} id={`section-${customItem.id}`}>
+            <Section path={`sections.${customItem.id}`} type="custom" isEditable isHideable isDeletable />
+          </section>
+        );
       }
     }
 
-    return sectionsComponents;
+    return sectionsComponent;
+  };
+
+  const onMenuClick = (id?: string) => {
+    if (id) {
+      sectionScrollIntoView(id);
+      setCurrentSection(id);
+      if (isDesktop && metadata.template) {
+        resumePreviewScrollIntoView(metadata.template, id);
+      }
+    }
   };
 
   return (
-    <SwipeableDrawer
-      open={open}
-      anchor="left"
-      onOpen={handleOpen}
-      onClose={handleClose}
-      PaperProps={{ className: '!shadow-lg' }}
-      variant={isDesktop ? 'persistent' : 'temporary'}
-    >
+    <>
       <div className={styles.container}>
         <nav className="overflow-y-auto">
-          <div>
-            <Link href="/dashboard">
-              <IconButton>
-                <Icon size={24} />
-              </IconButton>
-            </Link>
-            <Divider />
-          </div>
-
           <div className={styles.sections}>
             {left.map(({ id, icon }) => (
               <Tooltip
@@ -118,7 +124,9 @@ const LeftSidebar = () => {
                 placement="right"
                 title={t(`builder.leftSidebar.sections.${id}.heading`, get(sections, `${id}.name`))}
               >
-                <IconButton onClick={() => sectionScrollIntoView(id)}>{icon}</IconButton>
+                <IconButton onClick={() => onMenuClick(id)} color={id === currentSection ? 'secondary' : 'primary'}>
+                  {icon}
+                </IconButton>
               </Tooltip>
             ))}
 
@@ -129,24 +137,16 @@ const LeftSidebar = () => {
                 placement="right"
                 arrow
               >
-                <IconButton onClick={() => id && sectionScrollIntoView(id)}>
+                <IconButton onClick={() => onMenuClick(id)} color={id === currentSection ? 'secondary' : 'primary'}>
                   <Star />
                 </IconButton>
               </Tooltip>
             ))}
           </div>
-
-          <div />
         </nav>
 
         <main>
-          {sectionsList()}
-
-          {customSections.map(({ id }) => (
-            <section key={id} id={`section-${id}`}>
-              <Section path={`sections.${id}`} type="custom" isEditable isHideable isDeletable />
-            </section>
-          ))}
+          {getCurrentSection()}
 
           <div className="py-6 text-right">
             <Button fullWidth variant="outlined" startIcon={<Add />} onClick={handleAddSection}>
@@ -157,8 +157,8 @@ const LeftSidebar = () => {
           </div>
         </main>
       </div>
-    </SwipeableDrawer>
+    </>
   );
 };
 
-export default LeftSidebar;
+export default SectionEditor;

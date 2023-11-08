@@ -16,7 +16,6 @@ import { useContext } from 'react';
 import { ResumeBuilderContext } from '@/wrappers/BuilderContext';
 
 const Masthead: React.FC = () => {
-  const builderContext = useContext(ResumeBuilderContext);
   const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
   const { name, photo, headline, summary, email, phone, birthdate, website, location, profiles } = useAppSelector(
     (state) => state.resume.present.basics,
@@ -24,7 +23,7 @@ const Masthead: React.FC = () => {
   const theme: ThemeConfig = useAppSelector((state) => get(state.resume.present, 'metadata.theme', {} as ThemeConfig));
 
   return (
-    <ScrollSectionInView enable={builderContext.enableSelectToScroll} sectionId={'basics'} template={TEMPLATES.LEAFISH}>
+    <ScrollSectionInView sectionId={'basics'} template={TEMPLATES.LEAFISH}>
       <div>
         <div className="flex items-center gap-4 p-6" style={{ backgroundColor: alpha(theme.primary, 0.2) }}>
           <div className="grid flex-1 gap-1">

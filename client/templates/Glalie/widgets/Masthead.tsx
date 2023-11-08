@@ -14,7 +14,6 @@ import { useContext } from 'react';
 import { ResumeBuilderContext } from '@/wrappers/BuilderContext';
 
 export const MastheadSidebar: React.FC = () => {
-  const builderContext = useContext(ResumeBuilderContext);
   const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
   const primaryColor: string = useAppSelector((state) => get(state.resume.present, 'metadata.theme.primary'));
   const { name, headline, photo, email, phone, birthdate, website, location, profiles } = useAppSelector(
@@ -22,7 +21,7 @@ export const MastheadSidebar: React.FC = () => {
   );
 
   return (
-    <ScrollSectionInView enable={builderContext.enableSelectToScroll} sectionId={'basics'} template={TEMPLATES.GLALIE}>
+    <ScrollSectionInView sectionId={'basics'} template={TEMPLATES.GLALIE}>
       <div className="col-span-2 grid justify-items-center gap-4">
         {photo.visible && !isEmpty(photo.url) && (
           <img
@@ -73,9 +72,9 @@ export const MastheadSidebar: React.FC = () => {
 
 export const MastheadMain: React.FC = () => {
   const { summary } = useAppSelector((state) => state.resume.present.basics);
-  const builderContext = useContext(ResumeBuilderContext);
+
   return (
-    <ScrollSectionInView enable={builderContext.enableSelectToScroll} sectionId={'basics'} template={TEMPLATES.GLALIE}>
+    <ScrollSectionInView sectionId={'basics'} template={TEMPLATES.GLALIE}>
       <Markdown>{summary}</Markdown>
     </ScrollSectionInView>
   );

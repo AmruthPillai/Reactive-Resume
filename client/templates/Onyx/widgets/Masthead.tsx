@@ -14,14 +14,13 @@ import { ResumeBuilderContext } from '@/wrappers/BuilderContext';
 import Markdown from '@/components/shared/Markdown';
 
 const Masthead: React.FC = () => {
-  const builderContext = useContext(ResumeBuilderContext);
   const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
   const { name, photo, email, phone, website, birthdate, headline, location, profiles, summary } = useAppSelector(
     (state) => state.resume.present.basics,
   );
 
   return (
-    <ScrollSectionInView enable={builderContext.enableSelectToScroll} sectionId={'basics'} template={TEMPLATES.ONYX}>
+    <ScrollSectionInView sectionId={'basics'} template={TEMPLATES.ONYX}>
       <>
         <div className="mb-4 grid gap-4 border-b pb-4">
           <div className="flex items-center gap-4">

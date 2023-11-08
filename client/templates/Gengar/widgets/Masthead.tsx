@@ -19,7 +19,6 @@ import ScrollSectionInView from '@/templates/shared/ScrollSectionInView';
 import { ResumeBuilderContext } from '@/wrappers/BuilderContext';
 
 export const MastheadSidebar: React.FC = () => {
-  const builderContext = useContext(ResumeBuilderContext);
   const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
   const { name, headline, photo, email, phone, birthdate, website, location, profiles } = useAppSelector(
     (state) => state.resume.present.basics,
@@ -29,7 +28,7 @@ export const MastheadSidebar: React.FC = () => {
   const iconColor = useMemo(() => (contrast === 'dark' ? theme.text : theme.background), [theme, contrast]);
 
   return (
-    <ScrollSectionInView enable={builderContext.enableSelectToScroll} sectionId={'basics'} template={TEMPLATES.GENGAR}>
+    <ScrollSectionInView sectionId={'basics'} template={TEMPLATES.GENGAR}>
       <div className="col-span-2 grid justify-items-start gap-3 p-4">
         {photo.visible && !isEmpty(photo.url) && (
           <img
@@ -108,14 +107,13 @@ export const MastheadSidebar: React.FC = () => {
 };
 
 export const MastheadMain: React.FC = () => {
-  const builderContext = useContext(ResumeBuilderContext);
   const primaryColor: string = useAppSelector((state) => get(state.resume.present, 'metadata.theme.primary'));
   const backgroundColor: string = useMemo(() => alpha(primaryColor, 0.15), [primaryColor]);
 
   const { summary } = useAppSelector((state) => state.resume.present.basics);
 
   return (
-    <ScrollSectionInView enable={builderContext.enableSelectToScroll} sectionId={'basics'} template={TEMPLATES.GENGAR}>
+    <ScrollSectionInView sectionId={'basics'} template={TEMPLATES.GENGAR}>
       <div className="grid gap-2 p-4" style={{ backgroundColor }}>
         <Markdown>{summary}</Markdown>
       </div>

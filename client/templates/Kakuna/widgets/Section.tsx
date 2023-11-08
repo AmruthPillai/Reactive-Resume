@@ -25,7 +25,6 @@ const Section: React.FC<SectionProps> = ({
   headlinePath = 'headline',
   keywordsPath = 'keywords',
 }) => {
-  const builderContext = useContext(ResumeBuilderContext);
   const section: SectionType = useAppSelector((state) => get(state.resume.present, path, {} as SectionType));
   const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
   const primaryColor: string = useAppSelector((state) => get(state.resume.present, 'metadata.theme.primary'));
@@ -37,7 +36,7 @@ const Section: React.FC<SectionProps> = ({
   if (isArray(section.items) && isEmpty(section.items)) return null;
 
   return (
-    <ScrollSectionInView enable={builderContext.enableSelectToScroll} sectionId={sectionId} template={TEMPLATES.KAKUNA}>
+    <ScrollSectionInView sectionId={sectionId} template={TEMPLATES.KAKUNA}>
       <Heading>{section.name}</Heading>
 
       <div

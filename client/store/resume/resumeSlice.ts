@@ -19,7 +19,7 @@ type DuplicateItemPayload = { path: string; value: ListItem };
 
 type DeleteItemPayload = { path: string; value: ListItem };
 
-type AddSectionPayload = { value: Section; type: SectionType };
+type AddSectionPayload = { id?: string; value: Section; type: SectionType };
 
 type DeleteSectionPayload = { path: string };
 
@@ -76,11 +76,10 @@ export const resumeSlice = createSlice({
       set(state, path, list);
     },
     addSection: (state: Resume, action: PayloadAction<AddSectionPayload>) => {
-      const id = uuidv4();
-      const { value } = action.payload;
-
-      state.sections[id] = value;
-      state.metadata.layout[0][0].push(id);
+      const { value, id } = action.payload;
+      const _id = id || uuidv4();
+      state.sections[_id] = value;
+      state.metadata.layout[0][0].push(_id);
     },
     duplicateSection: (state: Resume, action: PayloadAction<AddSectionPayload>) => {
       const { value, type } = action.payload;

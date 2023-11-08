@@ -14,14 +14,13 @@ import { ResumeBuilderContext } from '@/wrappers/BuilderContext';
 import Markdown from '@/components/shared/Markdown';
 
 const Masthead = () => {
-  const builderContext = useContext(ResumeBuilderContext);
   const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
   const { name, photo, email, phone, website, birthdate, headline, location, profiles, summary } = useAppSelector(
     (state) => state.resume.present.basics,
   );
 
   return (
-    <ScrollSectionInView enable={builderContext.enableSelectToScroll} sectionId={'basics'} template={TEMPLATES.KAKUNA}>
+    <ScrollSectionInView sectionId={'basics'} template={TEMPLATES.KAKUNA}>
       <div className="mb-4 grid justify-center gap-3 border-b pb-4 text-center">
         <div className="mx-auto">
           {photo.visible && !isEmpty(photo.url) && (
