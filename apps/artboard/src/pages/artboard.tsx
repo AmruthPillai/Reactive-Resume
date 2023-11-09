@@ -30,6 +30,19 @@ export const ArtboardPage = () => {
   useEffect(() => {
     document.documentElement.style.setProperty("font-size", `${metadata.typography.font.size}px`);
     document.documentElement.style.setProperty("line-height", `${metadata.typography.lineHeight}`);
+
+    document.documentElement.style.setProperty("--font-size", `${metadata.typography.font.size}px`);
+    document.documentElement.style.setProperty(
+      "--line-height",
+      `${metadata.typography.lineHeight}`,
+    );
+
+    document.documentElement.style.setProperty("--color-text", `${metadata.theme.text}`);
+    document.documentElement.style.setProperty("--color-primary", `${metadata.theme.primary}`);
+    document.documentElement.style.setProperty(
+      "--color-background",
+      `${metadata.theme.background}`,
+    );
   }, [metadata]);
 
   // Underline Links

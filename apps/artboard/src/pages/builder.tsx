@@ -1,17 +1,20 @@
 import { SectionKey } from "@reactive-resume/schema";
-import { pageSizeMap } from "@reactive-resume/utils";
-import { useEffect, useRef } from "react";
+import { pageSizeMap, TemplateKey } from "@reactive-resume/utils";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useMemo, useRef } from "react";
 import { ReactZoomPanPinchRef, TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
 
 import { MM_TO_PX, Page } from "../components/page";
 import { useArtboardStore } from "../store/artboard";
-import { Rhyhorn } from "../templates/rhyhorn";
+import { getTemplate } from "../templates";
 
 export const BuilderLayout = () => {
   const transformRef = useRef<ReactZoomPanPinchRef>(null);
   const format = useArtboardStore((state) => state.resume.metadata.page.format);
   const layout = useArtboardStore((state) => state.resume.metadata.layout);
-  const template = useArtboardStore((state) => state.resume.metadata.template);
+  const template = useArtboardStore((state) => state.resume.metadata.template as TemplateKey);
+
+  const Template = useMemo(() => getTemplate(template), [template]);
 
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
@@ -50,13 +53,21 @@ export const BuilderLayout = () => {
           gridTemplateColumns: `repeat(${layout.length}, 1fr)`,
         }}
       >
-        {layout.map((columns, pageIndex) => (
-          <Page key={pageIndex} mode="builder" pageNumber={pageIndex + 1}>
-            {template === "rhyhorn" && (
-              <Rhyhorn isFirstPage={pageIndex === 0} columns={columns as SectionKey[][]} />
-            )}
-          </Page>
-        ))}
+        <AnimatePresence>
+          {layout.map((columns, pageIndex) => (
+            <motion.div
+              layout
+              key={pageIndex}
+              initial={{ opacity: 0, x: -200 }}
+              animate={{ opacity: 1, x: 0, transition: { delay: pageIndex * 0.3 } }}
+              exit={{ opacity: 0, x: -200 }}
+            >
+              <Page mode="builder" pageNumber={pageIndex + 1}>
+                <Template isFirstPage={pageIndex === 0} columns={columns as SectionKey[][]} />
+              </Page>
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </TransformComponent>
     </TransformWrapper>
   );

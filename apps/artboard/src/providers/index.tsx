@@ -1,3 +1,4 @@
+import { sampleResume } from "@reactive-resume/schema";
 import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 
@@ -30,9 +31,9 @@ export const Providers = () => {
   }, [setResume]);
 
   // Only for testing, in production this will be fetched from window.postMessage
-  // useEffect(() => {
-  //   setResume(sampleResume);
-  // }, [setResume]);
+  useEffect(() => {
+    setResume(sampleResume);
+  }, [setResume]);
 
   if (!resume) return null;
 

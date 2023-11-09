@@ -1,8 +1,12 @@
-import { isUrl } from "@reactive-resume/utils";
+import { cn, isUrl } from "@reactive-resume/utils";
 
 import { useArtboardStore } from "../store/artboard";
 
-export const Picture = () => {
+type PictureProps = {
+  className?: string;
+};
+
+export const Picture = ({ className }: PictureProps) => {
   const picture = useArtboardStore((state) => state.resume.basics.picture);
 
   if (!isUrl(picture.url) || picture.effects.hidden) return null;
@@ -11,7 +15,7 @@ export const Picture = () => {
     <img
       src={picture.url}
       alt="Profile"
-      className="object-cover"
+      className={cn("relative z-20 object-cover", className)}
       style={{
         maxWidth: `${picture.size}px`,
         aspectRatio: `${picture.aspectRatio}`,

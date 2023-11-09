@@ -1,6 +1,6 @@
 import { createId } from "@paralleldrive/cuid2";
 import { ResumeDto } from "@reactive-resume/dto";
-import { CustomSection, defaultSection, SectionKey } from "@reactive-resume/schema";
+import { CustomSectionGroup, defaultSection, SectionKey } from "@reactive-resume/schema";
 import { removeItemInLayout } from "@reactive-resume/utils";
 import _set from "lodash.set";
 import { temporal, TemporalState } from "zundo";
@@ -38,7 +38,7 @@ export const useResumeStore = create<ResumeStore>()(
         });
       },
       addSection: () => {
-        const section: CustomSection = {
+        const section: CustomSectionGroup = {
           ...defaultSection,
           id: createId(),
           name: "Custom Section",

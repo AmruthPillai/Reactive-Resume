@@ -24,8 +24,8 @@ export const Page = ({ mode = "preview", pageNumber, children }: Props) => {
       style={{
         fontFamily,
         padding: page.margin,
-        width: `${pageSizeMap[page.format].width * MM_TO_PX * window.devicePixelRatio}px`,
-        minHeight: `${pageSizeMap[page.format].height * MM_TO_PX * window.devicePixelRatio}px`,
+        width: `${pageSizeMap[page.format].width * MM_TO_PX}px`,
+        minHeight: `${pageSizeMap[page.format].height * MM_TO_PX}px`,
       }}
     >
       {mode === "builder" && page.options.pageNumbers && (
@@ -40,7 +40,7 @@ export const Page = ({ mode = "preview", pageNumber, children }: Props) => {
         <div
           className="absolute inset-x-0 border-b border-dashed"
           style={{
-            top: `${pageSizeMap[page.format].height * MM_TO_PX * window.devicePixelRatio}px`,
+            top: `${pageSizeMap[page.format].height * MM_TO_PX}px`,
           }}
         />
       )}

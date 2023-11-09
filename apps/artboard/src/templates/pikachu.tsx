@@ -27,47 +27,67 @@ import { TemplateProps } from "../types/template";
 
 const Header = () => {
   const basics = useArtboardStore((state) => state.resume.basics);
+  const borderRadius = useArtboardStore((state) => state.resume.basics.picture.borderRadius);
 
   return (
-    <div className="flex items-center space-x-4">
-      <Picture />
+    <div
+      className="summary group bg-primary px-6 pb-7 pt-6 text-background"
+      style={{ borderRadius: `calc(${borderRadius}px - 2px)` }}
+    >
+      <div className="col-span-2 space-y-4">
+        <div className="leading-tight">
+          <h2 className="text-2xl font-bold">{basics.name}</h2>
+          <p>{basics.headline}</p>
+        </div>
 
-      <div className="space-y-0.5">
-        <div className="text-2xl font-bold">{basics.name}</div>
-        <div className="text-base">{basics.headline}</div>
+        <hr className="border-background opacity-50" />
 
         <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-sm">
           {basics.location && (
-            <div className="flex items-center gap-x-1.5 border-r pr-2 last:border-r-0 last:pr-0">
-              <i className="ph ph-bold ph-map-pin text-primary" />
-              <div>{basics.location}</div>
-            </div>
+            <>
+              <div className="flex items-center gap-x-1.5">
+                <i className="ph ph-bold ph-map-pin" />
+                <div>{basics.location}</div>
+              </div>
+              <div className="h-1 w-1 rounded-full bg-background last:hidden" />
+            </>
           )}
           {basics.phone && (
-            <div className="flex items-center gap-x-1.5 border-r pr-2 last:border-r-0 last:pr-0">
-              <i className="ph ph-bold ph-phone text-primary" />
-              <a href={`tel:${basics.phone}`} target="_blank" rel="noreferrer">
-                {basics.phone}
-              </a>
-            </div>
+            <>
+              <div className="flex items-center gap-x-1.5">
+                <i className="ph ph-bold ph-phone" />
+                <a href={`tel:${basics.phone}`} target="_blank" rel="noreferrer">
+                  {basics.phone}
+                </a>
+              </div>
+              <div className="h-1 w-1 rounded-full bg-background last:hidden" />
+            </>
           )}
           {basics.email && (
-            <div className="flex items-center gap-x-1.5 border-r pr-2 last:border-r-0 last:pr-0">
-              <i className="ph ph-bold ph-at text-primary" />
-              <a href={`mailto:${basics.email}`} target="_blank" rel="noreferrer">
-                {basics.email}
-              </a>
-            </div>
+            <>
+              <div className="flex items-center gap-x-1.5">
+                <i className="ph ph-bold ph-at" />
+                <a href={`mailto:${basics.email}`} target="_blank" rel="noreferrer">
+                  {basics.email}
+                </a>
+              </div>
+              <div className="h-1 w-1 rounded-full bg-background last:hidden" />
+            </>
           )}
-          <Link url={basics.url} />
+          {isUrl(basics.url.href) && (
+            <>
+              <Link url={basics.url} />
+              <div className="h-1 w-1 rounded-full bg-background last:hidden" />
+            </>
+          )}
           {basics.customFields.map((item) => (
-            <div
-              key={item.id}
-              className="flex items-center gap-x-1.5 border-r pr-2 last:border-r-0 last:pr-0"
-            >
-              <i className={cn(`ph ph-bold ph-${item.icon}`, "text-primary")} />
-              <span>{[item.name, item.value].filter(Boolean).join(": ")}</span>
-            </div>
+            <>
+              <div key={item.id} className="flex items-center gap-x-1.5">
+                <i className={cn(`ph ph-bold ph-${item.icon}`)} />
+                <span>{[item.name, item.value].filter(Boolean).join(": ")}</span>
+              </div>
+              <div className="h-1 w-1 rounded-full bg-background last:hidden" />
+            </>
           ))}
         </div>
       </div>
@@ -82,7 +102,7 @@ const Summary = () => {
 
   return (
     <section id={section.id}>
-      <h4 className="mb-2 border-b pb-0.5 text-sm font-bold uppercase">{section.name}</h4>
+      <h4 className="mb-2 text-base font-bold uppercase">{section.name}</h4>
 
       <div
         className="wysiwyg"
@@ -98,10 +118,18 @@ type RatingProps = { level: number };
 const Rating = ({ level }: RatingProps) => (
   <div className="flex items-center gap-x-1.5">
     {Array.from({ length: 5 }).map((_, index) => (
-      <div
+      <i
         key={index}
-        className={cn("h-2 w-2 rounded-full border border-primary", level > index && "bg-primary")}
+        className={cn(
+          "ph ph-diamond text-primary",
+          level > index && "ph-fill",
+          level <= index && "ph-bold",
+        )}
       />
+      // <div
+      //   key={index}
+      //   className={cn("h-2 w-4 border border-primary", level > index && "bg-primary")}
+      // />
     ))}
   </div>
 );
@@ -118,7 +146,7 @@ const Link = ({ url, icon, label, className }: LinkProps) => {
 
   return (
     <div className="flex items-center gap-x-1.5">
-      {icon ?? <i className="ph ph-bold ph-link text-primary" />}
+      {icon ?? <i className="ph ph-bold ph-link text-primary group-[.summary]:text-background" />}
       <a
         href={url.href}
         target="_blank"
@@ -154,7 +182,7 @@ const Section = <T,>({
 
   return (
     <section id={section.id} className="grid">
-      <h4 className="mb-2 border-b pb-0.5 text-sm font-bold uppercase">{section.name}</h4>
+      <h4 className="mb-2 border-b border-primary text-base font-bold uppercase">{section.name}</h4>
 
       <div
         className="grid gap-3"
@@ -229,7 +257,7 @@ const Experience = () => {
   return (
     <Section<Experience> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
             <div className="font-bold">{item.company}</div>
             <div>{item.position}</div>
@@ -251,7 +279,7 @@ const Education = () => {
   return (
     <Section<Education> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
             <div className="font-bold">{item.institution}</div>
             <div>{item.area}</div>
@@ -274,7 +302,7 @@ const Awards = () => {
   return (
     <Section<Award> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
             <div className="font-bold">{item.title}</div>
             <div>{item.awarder}</div>
@@ -295,7 +323,7 @@ const Certifications = () => {
   return (
     <Section<Certification> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
             <div className="font-bold">{item.name}</div>
             <div>{item.issuer}</div>
@@ -316,7 +344,7 @@ const Skills = () => {
   return (
     <Section<Skill> section={section} levelKey="level" keywordsKey="keywords">
       {(item) => (
-        <div className="leading-tight">
+        <div>
           <div className="font-bold">{item.name}</div>
           <div>{item.description}</div>
         </div>
@@ -329,7 +357,7 @@ const Interests = () => {
   const section = useArtboardStore((state) => state.resume.sections.interests);
 
   return (
-    <Section<Interest> section={section} keywordsKey="keywords" className="space-y-0.5">
+    <Section<Interest> section={section} className="space-y-0" keywordsKey="keywords">
       {(item) => <div className="font-bold">{item.name}</div>}
     </Section>
   );
@@ -341,7 +369,7 @@ const Publications = () => {
   return (
     <Section<Publication> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
             <div className="font-bold">{item.name}</div>
             <div>{item.publisher}</div>
@@ -362,7 +390,7 @@ const Volunteer = () => {
   return (
     <Section<Volunteer> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
             <div className="font-bold">{item.organization}</div>
             <div>{item.position}</div>
@@ -384,7 +412,7 @@ const Languages = () => {
   return (
     <Section<Language> section={section} levelKey="fluencyLevel">
       {(item) => (
-        <div className="space-y-0.5">
+        <div>
           <div className="font-bold">{item.name}</div>
           <div>{item.fluency}</div>
         </div>
@@ -399,7 +427,7 @@ const Projects = () => {
   return (
     <Section<Project> section={section} urlKey="url" summaryKey="summary" keywordsKey="keywords">
       {(item) => (
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
             <div className="font-bold">{item.name}</div>
             <div>{item.description}</div>
@@ -440,7 +468,7 @@ const Custom = ({ id }: { id: string }) => {
       keywordsKey="keywords"
     >
       {(item) => (
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
             <div className="font-bold">{item.name}</div>
             <div>{item.description}</div>
@@ -491,21 +519,27 @@ const mapSectionToComponent = (section: SectionKey) => {
   }
 };
 
-export const Rhyhorn = ({ columns, isFirstPage = false }: TemplateProps) => {
+export const Pikachu = ({ columns, isFirstPage = false }: TemplateProps) => {
   const [main, sidebar] = columns;
 
   return (
     <div className="space-y-4">
-      {isFirstPage && <Header />}
+      <div className="grid grid-cols-3 space-x-6">
+        <div className="sidebar group col-span-1 space-y-4">
+          {isFirstPage && <Picture className="w-full !max-w-none" />}
 
-      <div className="space-y-4">
-        {main.map((section) => (
-          <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
-        ))}
+          {sidebar.map((section) => (
+            <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
+          ))}
+        </div>
 
-        {sidebar.map((section) => (
-          <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
-        ))}
+        <div className="main group col-span-2 space-y-4">
+          {isFirstPage && <Header />}
+
+          {main.map((section) => (
+            <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
+          ))}
+        </div>
       </div>
     </div>
   );

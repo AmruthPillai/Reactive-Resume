@@ -29,47 +29,44 @@ const Header = () => {
   const basics = useArtboardStore((state) => state.resume.basics);
 
   return (
-    <div className="flex items-center space-x-4">
+    <div className="flex flex-col items-center space-y-2 text-center">
       <Picture />
 
-      <div className="space-y-0.5">
+      <div>
         <div className="text-2xl font-bold">{basics.name}</div>
         <div className="text-base">{basics.headline}</div>
+      </div>
 
-        <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-sm">
-          {basics.location && (
-            <div className="flex items-center gap-x-1.5 border-r pr-2 last:border-r-0 last:pr-0">
-              <i className="ph ph-bold ph-map-pin text-primary" />
-              <div>{basics.location}</div>
-            </div>
-          )}
-          {basics.phone && (
-            <div className="flex items-center gap-x-1.5 border-r pr-2 last:border-r-0 last:pr-0">
-              <i className="ph ph-bold ph-phone text-primary" />
-              <a href={`tel:${basics.phone}`} target="_blank" rel="noreferrer">
-                {basics.phone}
-              </a>
-            </div>
-          )}
-          {basics.email && (
-            <div className="flex items-center gap-x-1.5 border-r pr-2 last:border-r-0 last:pr-0">
-              <i className="ph ph-bold ph-at text-primary" />
-              <a href={`mailto:${basics.email}`} target="_blank" rel="noreferrer">
-                {basics.email}
-              </a>
-            </div>
-          )}
-          <Link url={basics.url} />
-          {basics.customFields.map((item) => (
-            <div
-              key={item.id}
-              className="flex items-center gap-x-1.5 border-r pr-2 last:border-r-0 last:pr-0"
-            >
-              <i className={cn(`ph ph-bold ph-${item.icon}`, "text-primary")} />
-              <span>{[item.name, item.value].filter(Boolean).join(": ")}</span>
-            </div>
-          ))}
-        </div>
+      <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-sm">
+        {basics.location && (
+          <div className="flex items-center gap-x-1.5">
+            <i className="ph ph-bold ph-map-pin text-primary" />
+            <div>{basics.location}</div>
+          </div>
+        )}
+        {basics.phone && (
+          <div className="flex items-center gap-x-1.5">
+            <i className="ph ph-bold ph-phone text-primary" />
+            <a href={`tel:${basics.phone}`} target="_blank" rel="noreferrer">
+              {basics.phone}
+            </a>
+          </div>
+        )}
+        {basics.email && (
+          <div className="flex items-center gap-x-1.5">
+            <i className="ph ph-bold ph-at text-primary" />
+            <a href={`mailto:${basics.email}`} target="_blank" rel="noreferrer">
+              {basics.email}
+            </a>
+          </div>
+        )}
+        <Link url={basics.url} />
+        {basics.customFields.map((item) => (
+          <div key={item.id} className="flex items-center gap-x-1.5">
+            <i className={cn(`ph ph-bold ph-${item.icon}`, "text-primary")} />
+            <span>{[item.name, item.value].filter(Boolean).join(": ")}</span>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -81,11 +78,13 @@ const Summary = () => {
   if (!section.visible || isEmptyString(section.content)) return null;
 
   return (
-    <section id={section.id}>
-      <h4 className="mb-2 border-b pb-0.5 text-sm font-bold uppercase">{section.name}</h4>
+    <section id={section.id} className="grid grid-cols-5 border-t pt-2.5">
+      <div className="col-span-1">
+        <h4 className="text-base font-bold">{section.name}</h4>
+      </div>
 
       <div
-        className="wysiwyg"
+        className="wysiwyg col-span-4"
         style={{ columns: section.columns }}
         dangerouslySetInnerHTML={{ __html: section.content }}
       />
@@ -153,11 +152,13 @@ const Section = <T,>({
   if (!section.visible || !section.items.length) return null;
 
   return (
-    <section id={section.id} className="grid">
-      <h4 className="mb-2 border-b pb-0.5 text-sm font-bold uppercase">{section.name}</h4>
+    <section id={section.id} className="grid grid-cols-5 border-t pt-2.5">
+      <div className="col-span-1">
+        <h4 className="text-base font-bold">{section.name}</h4>
+      </div>
 
       <div
-        className="grid gap-3"
+        className="col-span-4 grid gap-3"
         style={{ gridTemplateColumns: `repeat(${section.columns}, 1fr)` }}
       >
         {section.items
@@ -316,7 +317,7 @@ const Skills = () => {
   return (
     <Section<Skill> section={section} levelKey="level" keywordsKey="keywords">
       {(item) => (
-        <div className="leading-tight">
+        <div className="space-y-0.5">
           <div className="font-bold">{item.name}</div>
           <div>{item.description}</div>
         </div>
@@ -491,7 +492,7 @@ const mapSectionToComponent = (section: SectionKey) => {
   }
 };
 
-export const Rhyhorn = ({ columns, isFirstPage = false }: TemplateProps) => {
+export const Bronzor = ({ columns, isFirstPage = false }: TemplateProps) => {
   const [main, sidebar] = columns;
 
   return (

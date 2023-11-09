@@ -14,8 +14,8 @@ export const sampleResume: ResumeData = {
     customFields: [],
     picture: {
       url: "https://res.cloudinary.com/amruth-pillai/image/upload/v1699362669/reactive-resume/sample-resume/sample-picture_iitowc.jpg",
-      size: 64,
-      aspectRatio: 0.75,
+      size: 128,
+      aspectRatio: 1,
       borderRadius: 6,
       effects: {
         hidden: false,
@@ -35,7 +35,7 @@ export const sampleResume: ResumeData = {
     },
     awards: {
       name: "Awards",
-      columns: 2,
+      columns: 1,
       visible: true,
       id: "awards",
       items: [
@@ -204,7 +204,7 @@ export const sampleResume: ResumeData = {
     },
     languages: {
       name: "Languages",
-      columns: 2,
+      columns: 1,
       visible: true,
       id: "languages",
       items: [
@@ -240,7 +240,7 @@ export const sampleResume: ResumeData = {
     },
     profiles: {
       name: "Profiles",
-      columns: 5,
+      columns: 2,
       visible: true,
       id: "profiles",
       items: [
@@ -331,7 +331,7 @@ export const sampleResume: ResumeData = {
     },
     references: {
       name: "References",
-      columns: 2,
+      columns: 1,
       visible: true,
       id: "references",
       items: [
@@ -453,21 +453,24 @@ export const sampleResume: ResumeData = {
   },
   metadata: {
     locale: "en",
-    template: "rhyhorn",
+    template: "pikachu",
     layout: [
-      [["profiles", "summary", "experience"], []],
-      [["custom.juryi0w9w9jabsgorks0bixq", "education", "certifications", "awards"], []],
       [
-        ["skills", "interests", "publications", "volunteer", "languages", "projects", "references"],
-        [],
+        ["summary", "experience"],
+        ["profiles", "skills", "awards", "certifications"],
       ],
+      [
+        ["custom.juryi0w9w9jabsgorks0bixq", "education"],
+        ["interests", "languages"],
+      ],
+      [["publications", "volunteer", "projects", "references"], []],
     ],
     css: {
       value: ".section {\n\toutline: 1px solid #000;\n\toutline-offset: 4px;\n}",
       visible: false,
     },
     page: {
-      margin: 18,
+      margin: 24,
       format: "a4",
       options: {
         breakLine: true,
@@ -477,16 +480,16 @@ export const sampleResume: ResumeData = {
     theme: {
       background: "#ffffff",
       text: "#000000",
-      primary: "#78716c",
+      primary: "#DC1A4E",
     },
     typography: {
       font: {
         family: "IBM Plex Serif",
         subset: "latin",
-        variants: ["regular", "italic", "600", "600italic"],
-        size: 14,
+        variants: ["regular", "italic", "500", "600", "600italic"],
+        size: 13,
       },
-      lineHeight: 1.5,
+      lineHeight: 2,
       underlineLinks: true,
     },
     notes:

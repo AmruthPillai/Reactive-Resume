@@ -7,7 +7,6 @@ import {
   Experience,
   Interest,
   Language,
-  Profile,
   Project,
   Publication,
   Reference,
@@ -19,7 +18,7 @@ import {
 } from "@reactive-resume/schema";
 import { cn, isEmptyString, isUrl } from "@reactive-resume/utils";
 import get from "lodash.get";
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 
 import { Picture } from "../components/picture";
 import { useArtboardStore } from "../store/artboard";
@@ -27,50 +26,72 @@ import { TemplateProps } from "../types/template";
 
 const Header = () => {
   const basics = useArtboardStore((state) => state.resume.basics);
+  const profiles = useArtboardStore((state) => state.resume.sections.profiles);
 
   return (
-    <div className="flex items-center space-x-4">
+    <div className="flex flex-col items-center justify-center space-y-2 pb-2 text-center">
       <Picture />
 
-      <div className="space-y-0.5">
+      <div>
         <div className="text-2xl font-bold">{basics.name}</div>
         <div className="text-base">{basics.headline}</div>
-
-        <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-sm">
-          {basics.location && (
-            <div className="flex items-center gap-x-1.5 border-r pr-2 last:border-r-0 last:pr-0">
-              <i className="ph ph-bold ph-map-pin text-primary" />
-              <div>{basics.location}</div>
-            </div>
-          )}
-          {basics.phone && (
-            <div className="flex items-center gap-x-1.5 border-r pr-2 last:border-r-0 last:pr-0">
-              <i className="ph ph-bold ph-phone text-primary" />
-              <a href={`tel:${basics.phone}`} target="_blank" rel="noreferrer">
-                {basics.phone}
-              </a>
-            </div>
-          )}
-          {basics.email && (
-            <div className="flex items-center gap-x-1.5 border-r pr-2 last:border-r-0 last:pr-0">
-              <i className="ph ph-bold ph-at text-primary" />
-              <a href={`mailto:${basics.email}`} target="_blank" rel="noreferrer">
-                {basics.email}
-              </a>
-            </div>
-          )}
-          <Link url={basics.url} />
-          {basics.customFields.map((item) => (
-            <div
-              key={item.id}
-              className="flex items-center gap-x-1.5 border-r pr-2 last:border-r-0 last:pr-0"
-            >
-              <i className={cn(`ph ph-bold ph-${item.icon}`, "text-primary")} />
-              <span>{[item.name, item.value].filter(Boolean).join(": ")}</span>
-            </div>
-          ))}
-        </div>
       </div>
+
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5 text-sm">
+        {basics.location && (
+          <div className="flex items-center gap-x-1.5">
+            <i className="ph ph-bold ph-map-pin text-primary" />
+            <div>{basics.location}</div>
+          </div>
+        )}
+        {basics.phone && (
+          <div className="flex items-center gap-x-1.5">
+            <i className="ph ph-bold ph-phone text-primary" />
+            <a href={`tel:${basics.phone}`} target="_blank" rel="noreferrer">
+              {basics.phone}
+            </a>
+          </div>
+        )}
+        {basics.email && (
+          <div className="flex items-center gap-x-1.5">
+            <i className="ph ph-bold ph-at text-primary" />
+            <a href={`mailto:${basics.email}`} target="_blank" rel="noreferrer">
+              {basics.email}
+            </a>
+          </div>
+        )}
+        <Link url={basics.url} />
+        {basics.customFields.map((item) => (
+          <div key={item.id} className="flex items-center gap-x-1.5">
+            <i className={cn(`ph ph-bold ph-${item.icon}`, "text-primary")} />
+            <span>{[item.name, item.value].filter(Boolean).join(": ")}</span>
+          </div>
+        ))}
+      </div>
+
+      {profiles.visible && profiles.items.length > 0 && (
+        <div className="flex items-center gap-x-3 gap-y-0.5">
+          {profiles.items
+            .filter((item) => item.visible)
+            .map((item) => (
+              <div key={item.id} className="flex items-center gap-x-2">
+                <Link
+                  url={item.url}
+                  label={item.username}
+                  className="text-sm"
+                  icon={
+                    <img
+                      width="12"
+                      height="12"
+                      alt={item.network}
+                      src={`https://cdn.simpleicons.org/${item.icon}`}
+                    />
+                  }
+                />
+              </div>
+            ))}
+        </div>
+      )}
     </div>
   );
 };
@@ -82,7 +103,9 @@ const Summary = () => {
 
   return (
     <section id={section.id}>
-      <h4 className="mb-2 border-b pb-0.5 text-sm font-bold uppercase">{section.name}</h4>
+      <h4 className="mb-2 border-b border-primary text-center font-bold uppercase text-primary">
+        {section.name}
+      </h4>
 
       <div
         className="wysiwyg"
@@ -100,7 +123,7 @@ const Rating = ({ level }: RatingProps) => (
     {Array.from({ length: 5 }).map((_, index) => (
       <div
         key={index}
-        className={cn("h-2 w-2 rounded-full border border-primary", level > index && "bg-primary")}
+        className={cn("h-3 w-5 rounded border-2 border-primary", level > index && "bg-primary")}
       />
     ))}
   </div>
@@ -154,7 +177,9 @@ const Section = <T,>({
 
   return (
     <section id={section.id} className="grid">
-      <h4 className="mb-2 border-b pb-0.5 text-sm font-bold uppercase">{section.name}</h4>
+      <h4 className="mb-2 border-b border-primary text-center font-bold uppercase text-primary">
+        {section.name}
+      </h4>
 
       <div
         className="grid gap-3"
@@ -170,10 +195,7 @@ const Section = <T,>({
 
             return (
               <div key={item.id} className={cn("space-y-2", className)}>
-                <div className="leading-snug">
-                  {children?.(item as T)}
-                  {url && <Link url={url} />}
-                </div>
+                <div className="leading-snug">{children?.(item as T)}</div>
 
                 {summary && !isEmptyString(summary) && (
                   <div className="wysiwyg" dangerouslySetInnerHTML={{ __html: summary }} />
@@ -184,42 +206,13 @@ const Section = <T,>({
                 {keywords && keywords.length > 0 && (
                   <p className="text-sm">{keywords.join(", ")}</p>
                 )}
+
+                {url && <Link url={url} />}
               </div>
             );
           })}
       </div>
     </section>
-  );
-};
-
-const Profiles = () => {
-  const section = useArtboardStore((state) => state.resume.sections.profiles);
-  const fontSize = useArtboardStore((state) => state.resume.metadata.typography.font.size);
-
-  return (
-    <Section<Profile> section={section}>
-      {(item) => (
-        <div className="leading-snug">
-          {isUrl(item.url.href) ? (
-            <Link
-              url={item.url}
-              label={item.username}
-              icon={
-                <img
-                  width={fontSize}
-                  height={fontSize}
-                  alt={item.network}
-                  src={`https://cdn.simpleicons.org/${item.icon}`}
-                />
-              }
-            />
-          ) : (
-            <p>{item.username}</p>
-          )}
-          <p className="text-sm">{item.network}</p>
-        </div>
-      )}
-    </Section>
   );
 };
 
@@ -229,16 +222,11 @@ const Experience = () => {
   return (
     <Section<Experience> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
-        <div className="flex items-center justify-between">
-          <div className="text-left">
-            <div className="font-bold">{item.company}</div>
-            <div>{item.position}</div>
-          </div>
-
-          <div className="shrink-0 text-right">
-            <div className="font-bold">{item.date}</div>
-            <div>{item.location}</div>
-          </div>
+        <div>
+          <div className="font-bold">{item.company}</div>
+          <div>{item.position}</div>
+          <div>{item.location}</div>
+          <div className="font-bold italic">{item.date}</div>
         </div>
       )}
     </Section>
@@ -251,17 +239,12 @@ const Education = () => {
   return (
     <Section<Education> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
-        <div className="flex items-center justify-between">
-          <div className="text-left">
-            <div className="font-bold">{item.institution}</div>
-            <div>{item.area}</div>
-            <div>{item.score}</div>
-          </div>
-
-          <div className="shrink-0 text-right">
-            <div className="font-bold">{item.date}</div>
-            <div>{item.studyType}</div>
-          </div>
+        <div>
+          <div className="font-bold">{item.institution}</div>
+          <div>{item.area}</div>
+          <div>{item.score}</div>
+          <div>{item.studyType}</div>
+          <div className="font-bold italic">{item.date}</div>
         </div>
       )}
     </Section>
@@ -274,15 +257,10 @@ const Awards = () => {
   return (
     <Section<Award> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
-        <div className="flex items-center justify-between">
-          <div className="text-left">
-            <div className="font-bold">{item.title}</div>
-            <div>{item.awarder}</div>
-          </div>
-
-          <div className="shrink-0 text-right">
-            <div className="font-bold">{item.date}</div>
-          </div>
+        <div>
+          <div className="font-bold">{item.title}</div>
+          <div>{item.awarder}</div>
+          <div className="font-bold italic">{item.date}</div>
         </div>
       )}
     </Section>
@@ -295,15 +273,10 @@ const Certifications = () => {
   return (
     <Section<Certification> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
-        <div className="flex items-center justify-between">
-          <div className="text-left">
-            <div className="font-bold">{item.name}</div>
-            <div>{item.issuer}</div>
-          </div>
-
-          <div className="shrink-0 text-right">
-            <div className="font-bold">{item.date}</div>
-          </div>
+        <div>
+          <div className="font-bold">{item.name}</div>
+          <div>{item.issuer}</div>
+          <div className="font-bold italic">{item.date}</div>
         </div>
       )}
     </Section>
@@ -316,7 +289,7 @@ const Skills = () => {
   return (
     <Section<Skill> section={section} levelKey="level" keywordsKey="keywords">
       {(item) => (
-        <div className="leading-tight">
+        <div>
           <div className="font-bold">{item.name}</div>
           <div>{item.description}</div>
         </div>
@@ -341,15 +314,10 @@ const Publications = () => {
   return (
     <Section<Publication> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
-        <div className="flex items-center justify-between">
-          <div className="text-left">
-            <div className="font-bold">{item.name}</div>
-            <div>{item.publisher}</div>
-          </div>
-
-          <div className="shrink-0 text-right">
-            <div className="font-bold">{item.date}</div>
-          </div>
+        <div>
+          <div className="font-bold">{item.name}</div>
+          <div>{item.publisher}</div>
+          <div className="font-bold italic">{item.date}</div>
         </div>
       )}
     </Section>
@@ -362,16 +330,11 @@ const Volunteer = () => {
   return (
     <Section<Volunteer> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
-        <div className="flex items-center justify-between">
-          <div className="text-left">
-            <div className="font-bold">{item.organization}</div>
-            <div>{item.position}</div>
-          </div>
-
-          <div className="shrink-0 text-right">
-            <div className="font-bold">{item.date}</div>
-            <div>{item.location}</div>
-          </div>
+        <div>
+          <div className="font-bold">{item.organization}</div>
+          <div>{item.position}</div>
+          <div>{item.location}</div>
+          <div className="font-bold italic">{item.date}</div>
         </div>
       )}
     </Section>
@@ -384,7 +347,7 @@ const Languages = () => {
   return (
     <Section<Language> section={section} levelKey="fluencyLevel">
       {(item) => (
-        <div className="space-y-0.5">
+        <div>
           <div className="font-bold">{item.name}</div>
           <div>{item.fluency}</div>
         </div>
@@ -399,14 +362,11 @@ const Projects = () => {
   return (
     <Section<Project> section={section} urlKey="url" summaryKey="summary" keywordsKey="keywords">
       {(item) => (
-        <div className="flex items-center justify-between">
-          <div className="text-left">
+        <div>
+          <div>
             <div className="font-bold">{item.name}</div>
             <div>{item.description}</div>
-          </div>
-
-          <div className="shrink-0 text-right">
-            <div className="font-bold">{item.date}</div>
+            <div className="font-bold italic">{item.date}</div>
           </div>
         </div>
       )}
@@ -440,15 +400,12 @@ const Custom = ({ id }: { id: string }) => {
       keywordsKey="keywords"
     >
       {(item) => (
-        <div className="flex items-center justify-between">
-          <div className="text-left">
+        <div>
+          <div>
             <div className="font-bold">{item.name}</div>
             <div>{item.description}</div>
-          </div>
-
-          <div className="shrink-0 text-right">
-            <div className="font-bold">{item.date}</div>
             <div>{item.location}</div>
+            <div className="font-bold italic">{item.date}</div>
           </div>
         </div>
       )}
@@ -458,8 +415,6 @@ const Custom = ({ id }: { id: string }) => {
 
 const mapSectionToComponent = (section: SectionKey) => {
   switch (section) {
-    case "profiles":
-      return <Profiles />;
     case "summary":
       return <Summary />;
     case "experience":
@@ -491,7 +446,7 @@ const mapSectionToComponent = (section: SectionKey) => {
   }
 };
 
-export const Rhyhorn = ({ columns, isFirstPage = false }: TemplateProps) => {
+export const Kakuna = ({ columns, isFirstPage = false }: TemplateProps) => {
   const [main, sidebar] = columns;
 
   return (

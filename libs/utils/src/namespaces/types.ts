@@ -1,7 +1,5 @@
 export type Json = Record<string, unknown>;
 
-export type Template = { id: string; name: string; image: string };
-
 export type LayoutLocator = { page: number; column: number; section: number };
 
 export type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T;

@@ -2,7 +2,7 @@ import { Plus, PlusCircle } from "@phosphor-icons/react";
 import {
   Award,
   Certification,
-  CustomSectionItem,
+  CustomSection,
   Education,
   Experience,
   Interest,
@@ -172,7 +172,7 @@ export const LeftSidebar = () => {
             <Fragment key={section.id}>
               <Separator />
 
-              <SectionBase<CustomSectionItem>
+              <SectionBase<CustomSection>
                 id={`custom.${section.id}`}
                 title={(item) => item.name}
                 description={(item) => item.description}

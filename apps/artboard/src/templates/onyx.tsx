@@ -7,7 +7,6 @@ import {
   Experience,
   Interest,
   Language,
-  Profile,
   Project,
   Publication,
   Reference,
@@ -19,7 +18,7 @@ import {
 } from "@reactive-resume/schema";
 import { cn, isEmptyString, isUrl } from "@reactive-resume/utils";
 import get from "lodash.get";
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 
 import { Picture } from "../components/picture";
 import { useArtboardStore } from "../store/artboard";
@@ -27,24 +26,27 @@ import { TemplateProps } from "../types/template";
 
 const Header = () => {
   const basics = useArtboardStore((state) => state.resume.basics);
+  const profiles = useArtboardStore((state) => state.resume.sections.profiles);
 
   return (
-    <div className="flex items-center space-x-4">
+    <div className="flex items-center justify-between space-x-4 border-b border-primary pb-5">
       <Picture />
 
-      <div className="space-y-0.5">
-        <div className="text-2xl font-bold">{basics.name}</div>
-        <div className="text-base">{basics.headline}</div>
+      <div className="flex-1 space-y-2">
+        <div>
+          <div className="text-2xl font-bold">{basics.name}</div>
+          <div className="text-base">{basics.headline}</div>
+        </div>
 
         <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-sm">
           {basics.location && (
-            <div className="flex items-center gap-x-1.5 border-r pr-2 last:border-r-0 last:pr-0">
+            <div className="flex items-center gap-x-1.5">
               <i className="ph ph-bold ph-map-pin text-primary" />
               <div>{basics.location}</div>
             </div>
           )}
           {basics.phone && (
-            <div className="flex items-center gap-x-1.5 border-r pr-2 last:border-r-0 last:pr-0">
+            <div className="flex items-center gap-x-1.5">
               <i className="ph ph-bold ph-phone text-primary" />
               <a href={`tel:${basics.phone}`} target="_blank" rel="noreferrer">
                 {basics.phone}
@@ -52,7 +54,7 @@ const Header = () => {
             </div>
           )}
           {basics.email && (
-            <div className="flex items-center gap-x-1.5 border-r pr-2 last:border-r-0 last:pr-0">
+            <div className="flex items-center gap-x-1.5">
               <i className="ph ph-bold ph-at text-primary" />
               <a href={`mailto:${basics.email}`} target="_blank" rel="noreferrer">
                 {basics.email}
@@ -61,16 +63,40 @@ const Header = () => {
           )}
           <Link url={basics.url} />
           {basics.customFields.map((item) => (
-            <div
-              key={item.id}
-              className="flex items-center gap-x-1.5 border-r pr-2 last:border-r-0 last:pr-0"
-            >
+            <div key={item.id} className="flex items-center gap-x-1.5">
               <i className={cn(`ph ph-bold ph-${item.icon}`, "text-primary")} />
               <span>{[item.name, item.value].filter(Boolean).join(": ")}</span>
             </div>
           ))}
         </div>
       </div>
+
+      {profiles.visible && profiles.items.length > 0 && (
+        <div
+          className="grid gap-x-4 gap-y-1 self-end text-right"
+          style={{ gridTemplateColumns: `repeat(${profiles.columns}, auto)` }}
+        >
+          {profiles.items
+            .filter((item) => item.visible)
+            .map((item) => (
+              <div key={item.id} className="flex items-center gap-x-2">
+                <Link
+                  url={item.url}
+                  label={item.username}
+                  className="text-sm"
+                  icon={
+                    <img
+                      width="12"
+                      height="12"
+                      alt={item.network}
+                      src={`https://cdn.simpleicons.org/${item.icon}`}
+                    />
+                  }
+                />
+              </div>
+            ))}
+        </div>
+      )}
     </div>
   );
 };
@@ -82,7 +108,7 @@ const Summary = () => {
 
   return (
     <section id={section.id}>
-      <h4 className="mb-2 border-b pb-0.5 text-sm font-bold uppercase">{section.name}</h4>
+      <h4 className="mb-1 font-bold uppercase text-primary">{section.name}</h4>
 
       <div
         className="wysiwyg"
@@ -100,7 +126,7 @@ const Rating = ({ level }: RatingProps) => (
     {Array.from({ length: 5 }).map((_, index) => (
       <div
         key={index}
-        className={cn("h-2 w-2 rounded-full border border-primary", level > index && "bg-primary")}
+        className={cn("h-3 w-3 rounded border-2 border-primary", level > index && "bg-primary")}
       />
     ))}
   </div>
@@ -154,7 +180,7 @@ const Section = <T,>({
 
   return (
     <section id={section.id} className="grid">
-      <h4 className="mb-2 border-b pb-0.5 text-sm font-bold uppercase">{section.name}</h4>
+      <h4 className="mb-1 font-bold uppercase text-primary">{section.name}</h4>
 
       <div
         className="grid gap-3"
@@ -189,37 +215,6 @@ const Section = <T,>({
           })}
       </div>
     </section>
-  );
-};
-
-const Profiles = () => {
-  const section = useArtboardStore((state) => state.resume.sections.profiles);
-  const fontSize = useArtboardStore((state) => state.resume.metadata.typography.font.size);
-
-  return (
-    <Section<Profile> section={section}>
-      {(item) => (
-        <div className="leading-snug">
-          {isUrl(item.url.href) ? (
-            <Link
-              url={item.url}
-              label={item.username}
-              icon={
-                <img
-                  width={fontSize}
-                  height={fontSize}
-                  alt={item.network}
-                  src={`https://cdn.simpleicons.org/${item.icon}`}
-                />
-              }
-            />
-          ) : (
-            <p>{item.username}</p>
-          )}
-          <p className="text-sm">{item.network}</p>
-        </div>
-      )}
-    </Section>
   );
 };
 
@@ -316,7 +311,7 @@ const Skills = () => {
   return (
     <Section<Skill> section={section} levelKey="level" keywordsKey="keywords">
       {(item) => (
-        <div className="leading-tight">
+        <div>
           <div className="font-bold">{item.name}</div>
           <div>{item.description}</div>
         </div>
@@ -458,8 +453,6 @@ const Custom = ({ id }: { id: string }) => {
 
 const mapSectionToComponent = (section: SectionKey) => {
   switch (section) {
-    case "profiles":
-      return <Profiles />;
     case "summary":
       return <Summary />;
     case "experience":
@@ -491,7 +484,7 @@ const mapSectionToComponent = (section: SectionKey) => {
   }
 };
 
-export const Rhyhorn = ({ columns, isFirstPage = false }: TemplateProps) => {
+export const Onyx = ({ columns, isFirstPage = false }: TemplateProps) => {
   const [main, sidebar] = columns;
 
   return (

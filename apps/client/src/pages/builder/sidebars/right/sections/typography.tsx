@@ -75,6 +75,8 @@ export const TypographySection = () => {
               disabled={typography.font.family === font}
               onClick={() => {
                 setValue("metadata.typography.font.family", font);
+                setValue("metadata.typography.font.subset", "latin");
+                setValue("metadata.typography.font.variants", ["regular"]);
               }}
               className={cn(
                 "flex h-12 items-center justify-center overflow-hidden rounded border text-center text-sm ring-primary transition-colors hover:bg-secondary-accent focus:outline-none focus:ring-1 disabled:opacity-100",
