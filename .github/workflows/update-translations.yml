@@ -10,20 +10,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4.1.1
 
-      - name: crowdin action
+      - name: Sync Sources with Crowdin
         uses: crowdin/github-action@v1
         with:
           upload_sources: true
-          create_pull_request: true
+          create_pull_request: false
           upload_translations: false
-          download_translations: true
-          localization_branch_name: l10n
-          pull_request_base_branch_name: "v4"
-          pull_request_title: "New Translations"
-          pull_request_body: "There have been new translations added to the project. Please review and merge the changes made on Crowdin to help keep them in sync."
+          download_translations: false
 
         env:
           GITHUB_TOKEN: ${{ github.token }}

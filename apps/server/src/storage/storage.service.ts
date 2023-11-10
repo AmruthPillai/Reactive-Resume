@@ -1,14 +1,8 @@
-import { CACHE_MANAGER } from "@nestjs/cache-manager";
-import {
-  Inject,
-  Injectable,
-  InternalServerErrorException,
-  Logger,
-  OnModuleInit,
-} from "@nestjs/common";
+import { Injectable, InternalServerErrorException, Logger, OnModuleInit } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { createId } from "@paralleldrive/cuid2";
-import { Cache } from "cache-manager";
+import { RedisService } from "@songkeys/nestjs-redis";
+import { Redis } from "ioredis";
 import { Client } from "minio";
 import { MinioService } from "nestjs-minio-client";
 import sharp from "sharp";
@@ -44,6 +38,7 @@ const PUBLIC_ACCESS_POLICY = {
 
 @Injectable()
 export class StorageService implements OnModuleInit {
+  private readonly redis: Redis;
   private readonly logger = new Logger(StorageService.name);
 
   private client: Client;
@@ -52,8 +47,10 @@ export class StorageService implements OnModuleInit {
   constructor(
     private readonly configService: ConfigService<Config>,
     private readonly minioService: MinioService,
-    @Inject(CACHE_MANAGER) private readonly cache: Cache,
-  ) {}
+    private readonly redisService: RedisService,
+  ) {
+    this.redis = this.redisService.getClient();
+  }
 
   async onModuleInit() {
     this.client = this.minioService.client;
@@ -125,7 +122,7 @@ export class StorageService implements OnModuleInit {
 
       await Promise.all([
         this.client.putObject(this.bucketName, filepath, buffer, metadata),
-        this.cache.set(`user:${userId}:storage:${type}:${filename}`, url),
+        this.redis.set(`user:${userId}:storage:${type}:${filename}`, url),
       ]);
 
       return url;
@@ -140,7 +137,7 @@ export class StorageService implements OnModuleInit {
 
     try {
       return Promise.all([
-        this.cache.del(`user:${userId}:storage:${type}:${filename}`),
+        this.redis.del(`user:${userId}:storage:${type}:${filename}`),
         this.client.removeObject(this.bucketName, path),
       ]);
     } catch (error) {

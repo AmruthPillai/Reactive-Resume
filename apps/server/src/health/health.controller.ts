@@ -1,11 +1,11 @@
-import { CacheInterceptor, CacheKey, CacheTTL } from "@nestjs/cache-manager";
-import { Controller, Get, NotFoundException, UseInterceptors } from "@nestjs/common";
+import { Controller, Get, NotFoundException } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
 import { HealthCheck, HealthCheckService } from "@nestjs/terminus";
 import { RedisService } from "@songkeys/nestjs-redis";
 import { RedisHealthIndicator } from "@songkeys/nestjs-redis-health";
 
 import { configSchema } from "../config/schema";
+import { UtilsService } from "../utils/utils.service";
 import { BrowserHealthIndicator } from "./browser.health";
 import { DatabaseHealthIndicator } from "./database.health";
 import { StorageHealthIndicator } from "./storage.health";
@@ -20,14 +20,10 @@ export class HealthController {
     private readonly storage: StorageHealthIndicator,
     private readonly redisService: RedisService,
     private readonly redis: RedisHealthIndicator,
+    private readonly utils: UtilsService,
   ) {}
 
-  @Get()
-  @HealthCheck()
-  @UseInterceptors(CacheInterceptor)
-  @CacheKey("health:check")
-  @CacheTTL(30000) // 30 seconds
-  check() {
+  private run() {
     return this.health.check([
       () => this.database.isHealthy(),
       () => this.storage.isHealthy(),
@@ -40,6 +36,12 @@ export class HealthController {
         });
       },
     ]);
+  }
+
+  @Get()
+  @HealthCheck()
+  check() {
+    return this.utils.getCachedOrSet(`health:check`, () => this.run(), 1000 * 30); // 30 seconds
   }
 
   @Get("environment")

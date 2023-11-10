@@ -1,7 +1,7 @@
-import { CACHE_MANAGER } from "@nestjs/cache-manager";
-import { Inject, Injectable, InternalServerErrorException } from "@nestjs/common";
+import { Injectable, InternalServerErrorException } from "@nestjs/common";
 import { Prisma } from "@prisma/client";
-import { Cache } from "cache-manager";
+import { RedisService } from "@songkeys/nestjs-redis";
+import Redis from "ioredis";
 import { PrismaService } from "nestjs-prisma";
 
 import { ErrorMessage } from "../constants/error-message";
@@ -9,11 +9,15 @@ import { StorageService } from "../storage/storage.service";
 
 @Injectable()
 export class UserService {
+  private readonly redis: Redis;
+
   constructor(
     private readonly prisma: PrismaService,
     private readonly storageService: StorageService,
-    @Inject(CACHE_MANAGER) private readonly cache: Cache,
-  ) {}
+    private readonly redisService: RedisService,
+  ) {
+    this.redis = this.redisService.getClient();
+  }
 
   async findOneById(id: string) {
     const user = await this.prisma.user.findUniqueOrThrow({
@@ -67,10 +71,7 @@ export class UserService {
   }
 
   async deleteOneById(id: string) {
-    await Promise.all([
-      ...(await this.cache.store.keys(`user:${id}:*`)).map((key) => this.cache.del(key)),
-      this.storageService.deleteFolder(id),
-    ]);
+    await Promise.all([this.redis.del(`user:${id}:*`), this.storageService.deleteFolder(id)]);
 
     return this.prisma.user.delete({ where: { id } });
   }

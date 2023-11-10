@@ -42,6 +42,9 @@ export const configSchema = z.object({
   // Sentry
   SENTRY_DSN: z.string().url().startsWith("https://").optional(),
 
+  // Crowdin (Optional)
+  CROWDIN_DISTRIBUTION_HASH: z.string().optional(),
+
   // GitHub (OAuth)
   GITHUB_CLIENT_ID: z.string().optional(),
   GITHUB_CLIENT_SECRET: z.string().optional(),

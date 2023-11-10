@@ -1,6 +1,8 @@
 import { i18n } from "@lingui/core";
 import { t } from "@lingui/macro";
 
+import { axios } from "./axios";
+
 type Locale = "en-US" | "de-DE" | "zu-ZA";
 
 export const defaultLocale = "en-US";
@@ -20,7 +22,8 @@ export const getLocales = () => {
 };
 
 export async function dynamicActivate(locale: string) {
-  const { messages } = await import(`../locales/${locale}/messages.po`);
+  const response = await axios(`translation/${locale}`);
+  const messages = await response.data;
 
   i18n.load(locale, messages);
   i18n.activate(locale);

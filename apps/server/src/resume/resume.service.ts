@@ -1,12 +1,10 @@
-import { CACHE_MANAGER } from "@nestjs/cache-manager";
-import { BadRequestException, Inject, Injectable, Logger } from "@nestjs/common";
+import { BadRequestException, Injectable, Logger } from "@nestjs/common";
 import { Prisma } from "@prisma/client";
 import { CreateResumeDto, ImportResumeDto, ResumeDto, UpdateResumeDto } from "@reactive-resume/dto";
 import { defaultResumeData, ResumeData } from "@reactive-resume/schema";
 import type { DeepPartial } from "@reactive-resume/utils";
 import { generateRandomName, kebabCase } from "@reactive-resume/utils";
 import { RedisService } from "@songkeys/nestjs-redis";
-import { Cache } from "cache-manager";
 import deepmerge from "deepmerge";
 import Redis from "ioredis";
 import { PrismaService } from "nestjs-prisma";
@@ -28,7 +26,6 @@ export class ResumeService {
     private readonly storageService: StorageService,
     private readonly redisService: RedisService,
     private readonly utils: UtilsService,
-    @Inject(CACHE_MANAGER) private readonly cache: Cache,
   ) {
     this.redis = this.redisService.getClient();
   }
@@ -54,8 +51,8 @@ export class ResumeService {
     });
 
     await Promise.all([
-      this.cache.del(`user:${userId}:resumes`),
-      this.cache.set(`user:${userId}:resume:${resume.id}`, resume),
+      this.redis.del(`user:${userId}:resumes`),
+      this.redis.set(`user:${userId}:resume:${resume.id}`, JSON.stringify(resume)),
     ]);
 
     return resume;
@@ -75,8 +72,8 @@ export class ResumeService {
     });
 
     await Promise.all([
-      this.cache.del(`user:${userId}:resumes`),
-      this.cache.set(`user:${userId}:resume:${resume.id}`, resume),
+      this.redis.del(`user:${userId}:resumes`),
+      this.redis.set(`user:${userId}:resume:${resume.id}`, JSON.stringify(resume)),
     ]);
 
     return resume;
@@ -142,10 +139,10 @@ export class ResumeService {
       });
 
       await Promise.all([
-        this.cache.set(`user:${userId}:resume:${id}`, resume),
-        this.cache.del(`user:${userId}:resumes`),
-        this.cache.del(`user:${userId}:storage:resumes:${id}`),
-        this.cache.del(`user:${userId}:storage:previews:${id}`),
+        this.redis.set(`user:${userId}:resume:${id}`, JSON.stringify(resume)),
+        this.redis.del(`user:${userId}:resumes`),
+        this.redis.del(`user:${userId}:storage:resumes:${id}`),
+        this.redis.del(`user:${userId}:storage:previews:${id}`),
       ]);
 
       return resume;
@@ -163,8 +160,8 @@ export class ResumeService {
     });
 
     await Promise.all([
-      this.cache.set(`user:${userId}:resume:${id}`, resume),
-      this.cache.del(`user:${userId}:resumes`),
+      this.redis.set(`user:${userId}:resume:${id}`, JSON.stringify(resume)),
+      this.redis.del(`user:${userId}:resumes`),
     ]);
 
     return resume;
@@ -173,8 +170,8 @@ export class ResumeService {
   async remove(userId: string, id: string) {
     await Promise.all([
       // Remove cached keys
-      this.cache.del(`user:${userId}:resumes`),
-      this.cache.del(`user:${userId}:resume:${id}`),
+      this.redis.del(`user:${userId}:resumes`),
+      this.redis.del(`user:${userId}:resume:${id}`),
 
       // Remove files in storage, and their cached keys
       this.storageService.deleteObject(userId, "resumes", id),

@@ -1,4 +1,3 @@
-import { CacheInterceptor, CacheKey } from "@nestjs/cache-manager";
 import {
   BadRequestException,
   Body,
@@ -11,7 +10,6 @@ import {
   Patch,
   Post,
   UseGuards,
-  UseInterceptors,
 } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
 import { User as UserEntity } from "@prisma/client";
@@ -25,6 +23,7 @@ import { User } from "@/server/user/decorators/user.decorator";
 import { OptionalGuard } from "../auth/guards/optional.guard";
 import { TwoFactorGuard } from "../auth/guards/two-factor.guard";
 import { ErrorMessage } from "../constants/error-message";
+import { UtilsService } from "../utils/utils.service";
 import { Resume } from "./decorators/resume.decorator";
 import { ResumeGuard } from "./guards/resume.guard";
 import { ResumeService } from "./resume.service";
@@ -32,13 +31,18 @@ import { ResumeService } from "./resume.service";
 @ApiTags("Resume")
 @Controller("resume")
 export class ResumeController {
-  constructor(private readonly resumeService: ResumeService) {}
+  constructor(
+    private readonly resumeService: ResumeService,
+    private readonly utils: UtilsService,
+  ) {}
 
   @Get("schema")
-  @UseInterceptors(CacheInterceptor)
-  @CacheKey("resume:schema")
-  async getSchema() {
-    return zodToJsonSchema(resumeDataSchema);
+  getSchema() {
+    return this.utils.getCachedOrSet(
+      `resume:schema`,
+      () => zodToJsonSchema(resumeDataSchema),
+      1000 * 60 * 60 * 24, // 24 hours
+    );
   }
 
   @Post()
