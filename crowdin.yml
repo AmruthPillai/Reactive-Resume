@@ -1,8 +1,9 @@
 base_path: .
-base_url: "https://api.crowdin.com"
+project_id: "503410"
 preserve_hierarchy: false
+base_url: "https://api.crowdin.com"
+api_token_env: CROWDIN_PERSONAL_TOKEN
 
 files:
   - source: /apps/client/src/locales/en-US.po
     translation: /apps/client/src/locales/%locale%.po
-    type: po
