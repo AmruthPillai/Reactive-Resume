@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { StatisticsDto, UrlDto } from "@reactive-resume/dto";
 import { useMutation } from "@tanstack/react-query";
 import { AxiosError } from "axios";
@@ -25,11 +26,6 @@ export const usePrintResume = () => {
         if (cache === undefined) return cache;
         return { ...cache, downloads: cache.downloads + 1 } satisfies StatisticsDto;
       });
-
-      toast({
-        variant: "success",
-        title: "A PDF of your resume has been successfully generated.",
-      });
     },
     onError: (error) => {
       if (error instanceof AxiosError) {
@@ -37,7 +33,7 @@ export const usePrintResume = () => {
 
         toast({
           variant: "error",
-          title: "An error occurred while trying to generate your resume.",
+          title: t`An error occurred while trying to print your resume.`,
           description: message,
         });
       }

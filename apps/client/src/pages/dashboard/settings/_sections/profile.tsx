@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { t, Trans } from "@lingui/macro";
 import { useTheme } from "@reactive-resume/hooks";
 import { Button } from "@reactive-resume/ui";
 import { Combobox } from "@reactive-resume/ui";
@@ -8,11 +9,12 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
+import { dynamicActivate, getLocales } from "@/client/libs/lingui";
 import { useUpdateUser, useUser } from "@/client/services/user";
 
 const formSchema = z.object({
   theme: z.enum(["system", "light", "dark"]).default("system"),
-  language: z.string().default("en"),
+  locale: z.string().default("en-US"),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -24,7 +26,7 @@ export const ProfileSettings = () => {
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: { theme, language: "en" },
+    defaultValues: { theme, locale: "en-US" },
   });
 
   useEffect(() => {
@@ -34,7 +36,7 @@ export const ProfileSettings = () => {
   const onReset = () => {
     if (!user) return;
 
-    form.reset({ theme, language: user.language ?? "en" });
+    form.reset({ theme, locale: user.locale ?? "en-US" });
   };
 
   const onSubmit = async (data: FormValues) => {
@@ -42,8 +44,9 @@ export const ProfileSettings = () => {
 
     setTheme(data.theme);
 
-    if (user.language !== data.language) {
-      await updateUser({ language: data.language });
+    if (user.locale !== data.locale) {
+      await dynamicActivate(data.locale);
+      await updateUser({ locale: data.locale });
     }
 
     form.reset(data);
@@ -52,9 +55,9 @@ export const ProfileSettings = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h3 className="text-2xl font-bold leading-relaxed tracking-tight">Profile</h3>
+        <h3 className="text-2xl font-bold leading-relaxed tracking-tight">{t`Profile`}</h3>
         <p className="leading-relaxed opacity-75">
-          Here, you can update your profile to customize and personalize your experience.
+          {t`Here, you can update your profile to customize and personalize your experience.`}
         </p>
       </div>
 
@@ -65,16 +68,16 @@ export const ProfileSettings = () => {
             control={form.control}
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Theme</FormLabel>
+                <FormLabel>{t`Theme`}</FormLabel>
                 <div className="w-full">
                   <Combobox
                     {...field}
                     value={field.value}
                     onValueChange={field.onChange}
                     options={[
-                      { label: "System", value: "system" },
-                      { label: "Light", value: "light" },
-                      { label: "Dark", value: "dark" },
+                      { label: t`System`, value: "system" },
+                      { label: t`Light`, value: "light" },
+                      { label: t`Dark`, value: "dark" },
                     ]}
                   />
                 </div>
@@ -83,35 +86,35 @@ export const ProfileSettings = () => {
           />
 
           <FormField
-            name="language"
+            name="locale"
             control={form.control}
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Language</FormLabel>
+                <FormLabel>{t`Language`}</FormLabel>
                 <div className="w-full">
                   <Combobox
                     {...field}
                     value={field.value}
                     onValueChange={field.onChange}
-                    options={[
-                      {
-                        value: "en",
-                        label: <p>English</p>,
-                      },
-                    ]}
+                    options={Object.entries(getLocales()).map(([value, label]) => ({
+                      label,
+                      value,
+                    }))}
                   />
                 </div>
                 <FormDescription>
                   <span>
-                    Don't see your language?{" "}
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer nofollow"
-                      href="https://translate.rxresu.me/"
-                      className="font-medium underline underline-offset-2"
-                    >
-                      Help translate the app.
-                    </a>
+                    <Trans>
+                      Don't see your locale?{" "}
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                        href="https://translate.rxresu.me/"
+                        className="font-medium underline underline-offset-2"
+                      >
+                        Help translate the app.
+                      </a>
+                    </Trans>
                   </span>
                 </FormDescription>
               </FormItem>
@@ -125,10 +128,10 @@ export const ProfileSettings = () => {
             )}
           >
             <Button type="submit" disabled={loading}>
-              Save Changes
+              {t`Save Changes`}
             </Button>
             <Button type="reset" variant="ghost" onClick={onReset}>
-              Reset
+              {t`Discard`}
             </Button>
           </div>
         </form>

@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { ResumeDto } from "@reactive-resume/dto";
 import { Button } from "@reactive-resume/ui";
 import { pageSizeMap } from "@reactive-resume/utils";
@@ -52,7 +53,9 @@ export const PublicResumePage = () => {
   return (
     <div>
       <Helmet>
-        <title>{title} - Reactive Resume</title>
+        <title>
+          {title} - {t`Reactive Resume`}
+        </title>
       </Helmet>
 
       <div
@@ -70,9 +73,9 @@ export const PublicResumePage = () => {
       <div className="flex justify-center py-10 opacity-50 print:hidden">
         <Link to="/">
           <Button size="sm" variant="ghost" className="space-x-1.5 text-xs font-normal">
-            <span>Built with</span>
+            <span>{t`Built with`}</span>
             <Icon size={12} />
-            <span>Reactive Resume</span>
+            <span>{t`Reactive Resume`}</span>
           </Button>
         </Link>
       </div>
@@ -98,7 +101,7 @@ export const publicLoader: LoaderFunction<ResumeDto> = async ({ params }) => {
   } catch (error) {
     toast({
       variant: "error",
-      title: "The resume you were looking for was nowhere to be found... or maybe never existed?",
+      title: t`The resume you were looking for doesn't seem to exist, please check the link and try again.`,
     });
 
     return redirect("/");

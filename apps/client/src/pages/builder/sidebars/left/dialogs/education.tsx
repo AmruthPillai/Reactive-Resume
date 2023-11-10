@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { t } from "@lingui/macro";
 import { defaultEducation, educationSchema } from "@reactive-resume/schema";
 import {
   FormControl,
@@ -35,9 +36,9 @@ export const EducationDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Institution</FormLabel>
+              <FormLabel>{t`Institution`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Carnegie Mellon University" />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -49,9 +50,14 @@ export const EducationDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Type of Study</FormLabel>
+              <FormLabel>
+                {t({
+                  message: "Type of Study",
+                  comment: "For example, Bachelor's Degree or Master's Degree",
+                })}
+              </FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Bachelor's Degree" />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -63,9 +69,14 @@ export const EducationDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Area of Study</FormLabel>
+              <FormLabel>
+                {t({
+                  message: "Area of Study",
+                  comment: "For example, Computer Science or Business Administration",
+                })}
+              </FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Computer Science" />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -77,7 +88,12 @@ export const EducationDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Score</FormLabel>
+              <FormLabel>
+                {t({
+                  message: "Score",
+                  comment: "Score or honors for the degree, for example, CGPA or magna cum laude",
+                })}
+              </FormLabel>
               <FormControl>
                 <Input {...field} placeholder="9.2 GPA" />
               </FormControl>
@@ -91,9 +107,9 @@ export const EducationDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1 sm:col-span-2">
-              <FormLabel>Date</FormLabel>
+              <FormLabel>{t`Date`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Aug 2006 - Oct 2012" />
+                <Input {...field} placeholder={t`March 2023 - Present`} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -105,9 +121,9 @@ export const EducationDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1 sm:col-span-2">
-              <FormLabel>Website</FormLabel>
+              <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
-                <URLInput {...field} placeholder="https://www.cmu.edu/" />
+                <URLInput {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -119,7 +135,7 @@ export const EducationDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1 sm:col-span-2">
-              <FormLabel>Summary</FormLabel>
+              <FormLabel>{t`Summary`}</FormLabel>
               <FormControl>
                 <RichInput
                   {...field}

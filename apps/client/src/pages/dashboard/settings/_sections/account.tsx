@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { t } from "@lingui/macro";
 import { Check, UploadSimple, Warning } from "@phosphor-icons/react";
 import { UpdateUserDto, updateUserSchema } from "@reactive-resume/dto";
 import {
@@ -65,7 +66,7 @@ export const AccountSettings = () => {
     if (user.email !== data.email) {
       toast({
         variant: "info",
-        title: "Check your email for the confirmation link to update your email address.",
+        title: t`Check your email for the confirmation link to update your email address.`,
       });
     }
 
@@ -100,10 +101,9 @@ export const AccountSettings = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h3 className="text-2xl font-bold leading-relaxed tracking-tight">Account</h3>
+        <h3 className="text-2xl font-bold leading-relaxed tracking-tight">{t`Account`}</h3>
         <p className="leading-relaxed opacity-75">
-          Here, you can update your account information such as your profile picture, name and
-          username.
+          {t`Here, you can update your account information such as your profile picture, name and username.`}
         </p>
       </div>
 
@@ -117,7 +117,7 @@ export const AccountSettings = () => {
                 <UserAvatar />
 
                 <FormItem className="flex-1">
-                  <FormLabel>Picture</FormLabel>
+                  <FormLabel>{t`Picture`}</FormLabel>
                   <FormControl>
                     <Input placeholder="https://..." {...field} value={field.value || ""} />
                   </FormControl>
@@ -149,7 +149,7 @@ export const AccountSettings = () => {
             control={form.control}
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel>{t`Name`}</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
@@ -162,7 +162,7 @@ export const AccountSettings = () => {
             control={form.control}
             render={({ field, fieldState }) => (
               <FormItem>
-                <FormLabel>Username</FormLabel>
+                <FormLabel>{t`Username`}</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
@@ -180,7 +180,7 @@ export const AccountSettings = () => {
             control={form.control}
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel>{t`Email`}</FormLabel>
                 <FormControl>
                   <Input type="email" {...field} />
                 </FormControl>
@@ -191,14 +191,14 @@ export const AccountSettings = () => {
                   )}
                 >
                   {user.emailVerified ? <Check size={12} /> : <Warning size={12} />}
-                  {user.emailVerified ? "Verified" : "Unverified"}
+                  {user.emailVerified ? t`Verified` : t`Unverified`}
                   {!user.emailVerified && (
                     <Button
                       variant="link"
                       className="h-auto text-xs"
                       onClick={onResendVerificationEmail}
                     >
-                      Resend confirmation link
+                      {t`Resend email confirmation link`}
                     </Button>
                   )}
                 </FormDescription>
@@ -216,10 +216,10 @@ export const AccountSettings = () => {
                 className="flex items-center space-x-2 self-center sm:col-start-2"
               >
                 <Button type="submit" disabled={loading}>
-                  Save Changes
+                  {t`Save Changes`}
                 </Button>
                 <Button type="reset" variant="ghost" onClick={onReset}>
-                  Reset
+                  {t`Discard`}
                 </Button>
               </motion.div>
             )}

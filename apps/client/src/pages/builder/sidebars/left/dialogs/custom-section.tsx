@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { t } from "@lingui/macro";
 import { X } from "@phosphor-icons/react";
 import { CustomSection, customSectionSchema, defaultCustomSection } from "@reactive-resume/schema";
 import {
@@ -49,7 +50,7 @@ export const CustomSectionDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Name</FormLabel>
+              <FormLabel>{t`Name`}</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -63,7 +64,7 @@ export const CustomSectionDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Description</FormLabel>
+              <FormLabel>{t`Description`}</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -77,7 +78,7 @@ export const CustomSectionDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Date</FormLabel>
+              <FormLabel>{t`Date`}</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -91,7 +92,7 @@ export const CustomSectionDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Location</FormLabel>
+              <FormLabel>{t`Location`}</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -105,7 +106,7 @@ export const CustomSectionDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-2">
-              <FormLabel>Website</FormLabel>
+              <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
                 <URLInput {...field} />
               </FormControl>
@@ -119,7 +120,7 @@ export const CustomSectionDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1 sm:col-span-2">
-              <FormLabel>Summary</FormLabel>
+              <FormLabel>{t`Summary`}</FormLabel>
               <FormControl>
                 <RichInput
                   {...field}
@@ -141,12 +142,12 @@ export const CustomSectionDialog = () => {
           render={({ field }) => (
             <div className="col-span-2 space-y-3">
               <FormItem>
-                <FormLabel>Keywords</FormLabel>
+                <FormLabel>{t`Keywords`}</FormLabel>
                 <FormControl>
                   <BadgeInput {...field} />
                 </FormControl>
                 <FormDescription>
-                  You can add multiple keywords by separating them with a comma.
+                  {t`You can add multiple keywords by separating them with a comma or pressing enter.`}
                 </FormDescription>
                 <FormMessage />
               </FormItem>

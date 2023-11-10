@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { t } from "@lingui/macro";
 import { defaultLanguage, languageSchema } from "@reactive-resume/schema";
 import {
   FormControl,
@@ -33,9 +34,9 @@ export const LanguagesDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Name</FormLabel>
+              <FormLabel>{t`Name`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="German" />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -47,9 +48,9 @@ export const LanguagesDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Fluency</FormLabel>
+              <FormLabel>{t`Fluency`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Native Speaker" />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -61,7 +62,7 @@ export const LanguagesDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-2">
-              <FormLabel>Fluency (CEFR)</FormLabel>
+              <FormLabel>{t`Fluency (CEFR)`}</FormLabel>
               <FormControl className="py-2">
                 <div className="flex items-center gap-x-4">
                   <Slider

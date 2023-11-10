@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { HouseSimple, Lock, SidebarSimple } from "@phosphor-icons/react";
 import { useBreakpoint } from "@reactive-resume/hooks";
 import { Button, Tooltip } from "@reactive-resume/ui";
@@ -52,7 +53,7 @@ export const BuilderHeader = () => {
           <h1 className="font-medium">{title}</h1>
 
           {locked && (
-            <Tooltip content="This resume is locked, please unlock to make further changes.">
+            <Tooltip content={t`This resume is locked, please unlock to make further changes.`}>
               <Lock size={14} className="ml-2 opacity-75" />
             </Tooltip>
           )}

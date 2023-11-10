@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { Button, HoverCard, HoverCardContent, HoverCardTrigger } from "@reactive-resume/ui";
 import { cn, templatesList } from "@reactive-resume/utils";
 
@@ -14,7 +15,7 @@ export const TemplateSection = () => {
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
           {getSectionIcon("template")}
-          <h2 className="line-clamp-1 text-3xl font-bold">Template</h2>
+          <h2 className="line-clamp-1 text-3xl font-bold">{t`Template`}</h2>
         </div>
       </header>
 

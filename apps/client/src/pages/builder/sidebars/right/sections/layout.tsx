@@ -18,6 +18,7 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
+import { t, Trans } from "@lingui/macro";
 import { ArrowCounterClockwise, DotsSixVertical, Plus, TrashSimple } from "@phosphor-icons/react";
 import { defaultMetadata } from "@reactive-resume/schema";
 import { Button, Portal, Tooltip } from "@reactive-resume/ui";
@@ -203,10 +204,10 @@ export const LayoutSection = () => {
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
           {getSectionIcon("layout")}
-          <h2 className="line-clamp-1 text-3xl font-bold">Layout</h2>
+          <h2 className="line-clamp-1 text-3xl font-bold">{t`Layout`}</h2>
         </div>
 
-        <Tooltip content="Reset Layout">
+        <Tooltip content={t`Reset Layout`}>
           <Button size="icon" variant="ghost" onClick={onResetLayout}>
             <ArrowCounterClockwise />
           </Button>
@@ -232,7 +233,9 @@ export const LayoutSection = () => {
             return (
               <div key={pageIndex} className="rounded border p-3 pb-4">
                 <div className="flex items-center justify-between">
-                  <p className="mb-3 text-xs font-bold">Page {pageIndex + 1}</p>
+                  <p className="mb-3 text-xs font-bold">
+                    <Trans>Page {pageIndex + 1}</Trans>
+                  </p>
 
                   {pageIndex !== 0 && (
                     <Button
@@ -247,8 +250,8 @@ export const LayoutSection = () => {
                 </div>
 
                 <div className="grid grid-cols-2 items-start gap-x-4">
-                  <Column id={mainIndex} name="Main" items={main} />
-                  <Column id={sidebarIndex} name="Sidebar" items={sidebar} />
+                  <Column id={mainIndex} name={t`Main`} items={main} />
+                  <Column id={sidebarIndex} name={t`Sidebar`} items={sidebar} />
                 </div>
               </div>
             );
@@ -261,7 +264,7 @@ export const LayoutSection = () => {
 
         <Button variant="outline" className="ml-auto" onClick={onAddPage}>
           <Plus />
-          <span className="ml-2">Add New Page</span>
+          <span className="ml-2">{t`Add New Page`}</span>
         </Button>
       </main>
     </section>

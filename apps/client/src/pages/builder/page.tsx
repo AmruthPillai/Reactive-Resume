@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { ResumeDto } from "@reactive-resume/dto";
 import { useCallback, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
@@ -34,7 +35,9 @@ export const BuilderPage = () => {
   return (
     <>
       <Helmet>
-        <title>{title} - Reactive Resume</title>
+        <title>
+          {title} - {t`Reactive Resume`}
+        </title>
       </Helmet>
 
       <iframe

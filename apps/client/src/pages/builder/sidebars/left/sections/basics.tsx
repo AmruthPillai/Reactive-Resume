@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { basicsSchema } from "@reactive-resume/schema";
 import { Input, Label } from "@reactive-resume/ui";
 
@@ -17,7 +18,7 @@ export const BasicsSection = () => {
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
           {getSectionIcon("basics")}
-          <h2 className="line-clamp-1 text-3xl font-bold">Basics</h2>
+          <h2 className="line-clamp-1 text-3xl font-bold">{t`Basics`}</h2>
         </div>
       </header>
 
@@ -27,10 +28,9 @@ export const BasicsSection = () => {
         </div>
 
         <div className="space-y-1.5 sm:col-span-2">
-          <Label htmlFor="basics.name">Full Name</Label>
+          <Label htmlFor="basics.name">{t`Full Name`}</Label>
           <Input
             id="basics.name"
-            placeholder="John Doe"
             value={basics.name}
             hasError={!basicsSchema.pick({ name: true }).safeParse({ name: basics.name }).success}
             onChange={(event) => setValue("basics.name", event.target.value)}
@@ -38,17 +38,16 @@ export const BasicsSection = () => {
         </div>
 
         <div className="space-y-1.5 sm:col-span-2">
-          <Label htmlFor="basics.headline">Headline</Label>
+          <Label htmlFor="basics.headline">{t`Headline`}</Label>
           <Input
             id="basics.headline"
-            placeholder="Highly Creative Frontend Web Developer"
             value={basics.headline}
             onChange={(event) => setValue("basics.headline", event.target.value)}
           />
         </div>
 
         <div className="space-y-1.5">
-          <Label htmlFor="basics.email">Email Address</Label>
+          <Label htmlFor="basics.email">{t`Email`}</Label>
           <Input
             id="basics.email"
             placeholder="john.doe@example.com"
@@ -61,7 +60,7 @@ export const BasicsSection = () => {
         </div>
 
         <div className="space-y-1.5">
-          <Label htmlFor="basics.url">Website</Label>
+          <Label htmlFor="basics.url">{t`Website`}</Label>
           <URLInput
             id="basics.url"
             value={basics.url}
@@ -71,7 +70,7 @@ export const BasicsSection = () => {
         </div>
 
         <div className="space-y-1.5">
-          <Label htmlFor="basics.phone">Phone Number</Label>
+          <Label htmlFor="basics.phone">{t`Phone`}</Label>
           <Input
             id="basics.phone"
             placeholder="+1 (123) 4567 7890"
@@ -81,10 +80,9 @@ export const BasicsSection = () => {
         </div>
 
         <div className="space-y-1.5">
-          <Label htmlFor="basics.location">Location</Label>
+          <Label htmlFor="basics.location">{t`Location`}</Label>
           <Input
             id="basics.location"
-            placeholder="105 Cedarhurst Ave, Cedarhurst, NY 11516"
             value={basics.location}
             onChange={(event) => setValue("basics.location", event.target.value)}
           />

@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { createId } from "@paralleldrive/cuid2";
 import { CopySimple, PencilSimple, Plus } from "@phosphor-icons/react";
 import { SectionItem, SectionWithItem } from "@reactive-resume/schema";
@@ -20,7 +21,7 @@ import {
 } from "@reactive-resume/ui";
 import { produce } from "immer";
 import get from "lodash.get";
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { UseFormReturn } from "react-hook-form";
 
 import { DialogName, useDialog } from "@/client/stores/dialog";
@@ -40,12 +41,12 @@ export const SectionDialog = <T extends SectionItem>({
   children,
 }: Props<T>) => {
   const { isOpen, mode, close, payload } = useDialog<T>(id);
+
   const setValue = useResumeStore((state) => state.setValue);
   const section = useResumeStore((state) => {
     if (!id) return null;
     return get(state.resume.data.sections, id);
   }) as SectionWithItem<T> | null;
-  const name = useMemo(() => section?.name ?? "", [section?.name]);
 
   const isCreate = mode === "create";
   const isUpdate = mode === "update";
@@ -111,18 +112,16 @@ export const SectionDialog = <T extends SectionItem>({
           <Form {...form}>
             <form>
               <AlertDialogHeader>
-                <AlertDialogTitle>Are you sure you want to delete this {name}?</AlertDialogTitle>
+                <AlertDialogTitle>{t`Are you sure you want to delete this item?`}</AlertDialogTitle>
                 <AlertDialogDescription>
-                  This action can be reverted by clicking on the undo button in the floating
-                  toolbar.
+                  {t`This action can be reverted by clicking on the undo button in the floating toolbar.`}
                 </AlertDialogDescription>
               </AlertDialogHeader>
 
               <AlertDialogFooter>
-                <AlertDialogCancel>Cancel</AlertDialogCancel>
-
+                <AlertDialogCancel>{t`Cancel`}</AlertDialogCancel>
                 <AlertDialogAction variant="error" onClick={form.handleSubmit(onSubmit)}>
-                  Delete
+                  {t`Delete`}
                 </AlertDialogAction>
               </AlertDialogFooter>
             </form>
@@ -144,9 +143,9 @@ export const SectionDialog = <T extends SectionItem>({
                   {isUpdate && <PencilSimple />}
                   {isDuplicate && <CopySimple />}
                   <h2>
-                    {isCreate && `Create a new ${name}`}
-                    {isUpdate && `Update an existing ${name}`}
-                    {isDuplicate && `Duplicate an existing ${name}`}
+                    {isCreate && t`Create a new item`}
+                    {isUpdate && t`Update an existing item`}
+                    {isDuplicate && t`Duplicate an existing item`}
                   </h2>
                 </div>
               </DialogTitle>
@@ -156,9 +155,9 @@ export const SectionDialog = <T extends SectionItem>({
 
             <DialogFooter>
               <Button type="submit">
-                {isCreate && "Create"}
-                {isUpdate && "Save Changes"}
-                {isDuplicate && "Duplicate"}
+                {isCreate && t`Create`}
+                {isUpdate && t`Save Changes`}
+                {isDuplicate && t`Duplicate`}
               </Button>
             </DialogFooter>
           </form>

@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { t } from "@lingui/macro";
 import { CaretDown, Flask, MagicWand, Plus } from "@phosphor-icons/react";
 import { createResumeSchema, ResumeDto } from "@reactive-resume/dto";
 import { idSchema, sampleResume } from "@reactive-resume/schema";
@@ -116,7 +117,7 @@ export const ResumeDialog = () => {
 
         toast({
           variant: "error",
-          title: "An error occurred while trying process your request.",
+          title: t`An error occurred while trying to create your resume.`,
           description: message,
         });
       }
@@ -159,18 +160,16 @@ export const ResumeDialog = () => {
           <Form {...form}>
             <form>
               <AlertDialogHeader>
-                <AlertDialogTitle>Are you sure you want to delete your resume?</AlertDialogTitle>
+                <AlertDialogTitle>{t`Are you sure you want to delete your resume?`}</AlertDialogTitle>
                 <AlertDialogDescription>
-                  This action cannot be undone. This will permanently delete your resume and cannot
-                  be recovered.
+                  {t`This action cannot be undone. This will permanently delete your resume and cannot be recovered.`}
                 </AlertDialogDescription>
               </AlertDialogHeader>
 
               <AlertDialogFooter>
-                <AlertDialogCancel>Cancel</AlertDialogCancel>
-
+                <AlertDialogCancel>{t`Cancel`}</AlertDialogCancel>
                 <AlertDialogAction variant="error" onClick={form.handleSubmit(onSubmit)}>
-                  Delete
+                  {t`Delete`}
                 </AlertDialogAction>
               </AlertDialogFooter>
             </form>
@@ -190,16 +189,16 @@ export const ResumeDialog = () => {
                 <div className="flex items-center space-x-2.5">
                   <Plus />
                   <h2>
-                    {isCreate && "Create a new resume"}
-                    {isUpdate && "Update an existing resume"}
-                    {isDuplicate && "Duplicate an existing resume"}
+                    {isCreate && t`Create a new resume`}
+                    {isUpdate && t`Update an existing resume`}
+                    {isDuplicate && t`Duplicate an existing resume`}
                   </h2>
                 </div>
               </DialogTitle>
               <DialogDescription>
-                {isCreate && "Start building your resume by giving it a name."}
-                {isUpdate && "Changed your mind about the name? Give it a new one."}
-                {isDuplicate && "Give your old resume a new name."}
+                {isCreate && t`Start building your resume by giving it a name.`}
+                {isUpdate && t`Changed your mind about the name? Give it a new one.`}
+                {isDuplicate && t`Give your old resume a new name.`}
               </DialogDescription>
             </DialogHeader>
 
@@ -208,13 +207,13 @@ export const ResumeDialog = () => {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Title</FormLabel>
+                  <FormLabel>{t`Title`}</FormLabel>
                   <FormControl>
                     <div className="flex items-center justify-between gap-x-2">
                       <Input {...field} className="flex-1" />
 
                       {(isCreate || isDuplicate) && (
-                        <Tooltip content="Generate a random name">
+                        <Tooltip content={t`Generate a random title for your resume`}>
                           <Button
                             size="icon"
                             type="button"
@@ -228,7 +227,7 @@ export const ResumeDialog = () => {
                     </div>
                   </FormControl>
                   <FormDescription>
-                    Tip: You can name the resume referring to the position you are applying for.
+                    {t`Tip: You can name the resume referring to the position you are applying for.`}
                   </FormDescription>
                   <FormMessage />
                 </FormItem>
@@ -240,7 +239,7 @@ export const ResumeDialog = () => {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Slug</FormLabel>
+                  <FormLabel>{t`Slug`}</FormLabel>
                   <FormControl>
                     <Input {...field} />
                   </FormControl>
@@ -252,9 +251,9 @@ export const ResumeDialog = () => {
             <DialogFooter>
               <div className="flex items-center">
                 <Button type="submit" disabled={loading} className="rounded-r-none">
-                  {isCreate && "Create"}
-                  {isUpdate && "Save Changes"}
-                  {isDuplicate && "Duplicate"}
+                  {isCreate && t`Create`}
+                  {isUpdate && t`Save Changes`}
+                  {isDuplicate && t`Duplicate`}
                 </Button>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
@@ -265,7 +264,7 @@ export const ResumeDialog = () => {
                   <DropdownMenuContent side="right" align="center">
                     <DropdownMenuItem onClick={onCreateSample}>
                       <Flask className="mr-2" />
-                      Create Sample Resume
+                      {t`Create Sample Resume`}
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>

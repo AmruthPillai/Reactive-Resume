@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { t, Trans } from "@lingui/macro";
 import { Warning } from "@phosphor-icons/react";
 import { resetPasswordSchema } from "@reactive-resume/dto";
 import { usePasswordToggle } from "@reactive-resume/hooks";
@@ -53,7 +54,7 @@ export const ResetPasswordPage = () => {
         toast({
           variant: "error",
           icon: <Warning size={16} weight="bold" />,
-          title: "An error occurred while trying to reset your password",
+          title: t`An error occurred while trying to reset your password.`,
           description: message,
         });
       }
@@ -68,9 +69,9 @@ export const ResetPasswordPage = () => {
   return (
     <div className="space-y-8">
       <div className="space-y-1.5">
-        <h2 className="text-2xl font-semibold tracking-tight">Reset your password</h2>
+        <h2 className="text-2xl font-semibold tracking-tight">{t`Reset your password`}</h2>
         <h6 className="leading-relaxed opacity-75">
-          Enter a new password below, and make sure it's secure.
+          {t`Enter a new password below, and make sure it's secure.`}
         </h6>
       </div>
 
@@ -86,13 +87,15 @@ export const ResetPasswordPage = () => {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password</FormLabel>
+                  <FormLabel>{t`Password`}</FormLabel>
                   <FormControl>
                     <Input type="password" {...field} />
                   </FormControl>
                   <FormDescription>
-                    Hold <code className="text-xs font-bold">Ctrl</code> to display your password
-                    temporarily.
+                    <Trans>
+                      Hold <code className="text-xs font-bold">Ctrl</code> to display your password
+                      temporarily.
+                    </Trans>
                   </FormDescription>
                   <FormMessage />
                 </FormItem>
@@ -100,7 +103,7 @@ export const ResetPasswordPage = () => {
             />
 
             <Button type="submit" disabled={loading} className="mt-4 w-full">
-              Update Password
+              {t`Change Password`}
             </Button>
           </form>
         </Form>

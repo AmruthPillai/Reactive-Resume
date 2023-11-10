@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { t } from "@lingui/macro";
 import { defaultExperience, experienceSchema } from "@reactive-resume/schema";
 import {
   FormControl,
@@ -35,9 +36,9 @@ export const ExperienceDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Company</FormLabel>
+              <FormLabel>{t`Company`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Alphabet Inc." />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -49,9 +50,14 @@ export const ExperienceDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Position</FormLabel>
+              <FormLabel>
+                {t({
+                  message: "Position",
+                  context: "Position held at a company, for example, Software Engineer",
+                })}
+              </FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Chief Executive Officer" />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -63,9 +69,9 @@ export const ExperienceDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Date</FormLabel>
+              <FormLabel>{t`Date`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Dec 2019 - Present" />
+                <Input {...field} placeholder={t`March 2023 - Present`} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -77,9 +83,9 @@ export const ExperienceDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Location</FormLabel>
+              <FormLabel>{t`Location`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="New York, NY" />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -91,9 +97,9 @@ export const ExperienceDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1 sm:col-span-2">
-              <FormLabel>Website</FormLabel>
+              <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
-                <URLInput {...field} placeholder="https://www.abc.xyz/" />
+                <URLInput {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -105,7 +111,7 @@ export const ExperienceDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1 sm:col-span-2">
-              <FormLabel>Summary</FormLabel>
+              <FormLabel>{t`Summary`}</FormLabel>
               <FormControl>
                 <RichInput
                   {...field}

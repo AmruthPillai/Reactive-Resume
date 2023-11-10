@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { Info } from "@phosphor-icons/react";
 import { Alert, AlertDescription, AlertTitle } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
@@ -19,7 +20,7 @@ export const StatisticsSection = () => {
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
           {getSectionIcon("statistics")}
-          <h2 className="line-clamp-1 text-3xl font-bold">Statistics</h2>
+          <h2 className="line-clamp-1 text-3xl font-bold">{t`Statistics`}</h2>
         </div>
       </header>
 
@@ -34,12 +35,9 @@ export const StatisticsSection = () => {
             >
               <Alert variant="info">
                 <Info size={18} />
-
-                <AlertTitle>Statistics are available only for public resumes.</AlertTitle>
-
+                <AlertTitle>{t`Statistics are available only for public resumes.`}</AlertTitle>
                 <AlertDescription className="text-xs leading-relaxed">
-                  You can track the number of views your resume has received, or how many people
-                  have downloaded the resume by enabling public sharing.
+                  {t`You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing.`}
                 </AlertDescription>
               </Alert>
             </motion.div>
@@ -50,14 +48,14 @@ export const StatisticsSection = () => {
           <h3 className={cn("text-4xl font-bold blur-none transition-all", !isPublic && "blur-sm")}>
             {statistics?.views ?? 0}
           </h3>
-          <p className="opacity-75">Views</p>
+          <p className="opacity-75">{t`Views`}</p>
         </div>
 
         <div>
           <h3 className={cn("text-4xl font-bold blur-none transition-all", !isPublic && "blur-sm")}>
             {statistics?.downloads ?? 0}
           </h3>
-          <p className="opacity-75">Downloads</p>
+          <p className="opacity-75">{t`Downloads`}</p>
         </div>
       </main>
     </section>

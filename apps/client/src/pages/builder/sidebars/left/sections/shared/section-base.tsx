@@ -14,6 +14,7 @@ import {
   sortableKeyboardCoordinates,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
+import { t } from "@lingui/macro";
 import { Plus } from "@phosphor-icons/react";
 import { SectionItem, SectionKey, SectionWithItem } from "@reactive-resume/schema";
 import { Button } from "@reactive-resume/ui";
@@ -103,7 +104,12 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
             className="gap-x-2 border-dashed py-6 leading-relaxed hover:bg-secondary-accent"
           >
             <Plus size={14} />
-            <span className="font-medium">Add New {section.name}</span>
+            <span className="font-medium">
+              {t({
+                message: "Add New Item",
+                context: "For example, add a new work experience, or add a new profile.",
+              })}
+            </span>
           </Button>
         )}
 
@@ -137,7 +143,12 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
         <footer className="flex items-center justify-end">
           <Button variant="outline" className="ml-auto gap-x-2" onClick={onCreate}>
             <Plus />
-            <span>Add New {section.name}</span>
+            <span>
+              {t({
+                message: "Add New Item",
+                context: "For example, add a new work experience, or add a new profile.",
+              })}
+            </span>
           </Button>
         </footer>
       )}

@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { t, Trans } from "@lingui/macro";
 import { ArrowRight, Warning } from "@phosphor-icons/react";
 import { loginSchema } from "@reactive-resume/dto";
 import { usePasswordToggle } from "@reactive-resume/hooks";
@@ -48,7 +49,7 @@ export const LoginPage = () => {
         toast({
           variant: "error",
           icon: <Warning size={16} weight="bold" />,
-          title: "An error occurred while trying to sign in",
+          title: t`An error occurred while trying to sign in to your account.`,
           description: message,
         });
       }
@@ -58,12 +59,13 @@ export const LoginPage = () => {
   return (
     <div className="space-y-8">
       <div className="space-y-1.5">
-        <h2 className="text-2xl font-semibold tracking-tight">Sign in to your account</h2>
+        <h2 className="text-2xl font-semibold tracking-tight">{t`Sign in to your account`}</h2>
         <h6>
-          <span className="opacity-75">Don't have an account?</span>
+          <span className="opacity-75">{t`Don't have an account?`}</span>
           <Button asChild variant="link" className="px-1.5">
             <Link to="/auth/register">
-              Create one now <ArrowRight className="ml-1" />
+              {t({ message: "Create one now", context: "This is a link to create a new account" })}{" "}
+              <ArrowRight className="ml-1" />
             </Link>
           </Button>
         </h6>
@@ -81,11 +83,11 @@ export const LoginPage = () => {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>{t`Email`}</FormLabel>
                   <FormControl>
                     <Input placeholder="john.doe@example.com" {...field} />
                   </FormControl>
-                  <FormDescription>You can also enter your username.</FormDescription>
+                  <FormDescription>{t`You can also enter your username.`}</FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -96,13 +98,15 @@ export const LoginPage = () => {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password</FormLabel>
+                  <FormLabel>{t`Password`}</FormLabel>
                   <FormControl>
                     <Input type="password" {...field} />
                   </FormControl>
                   <FormDescription>
-                    Hold <code className="text-xs font-bold">Ctrl</code> to display your password
-                    temporarily.
+                    <Trans>
+                      Hold <code className="text-xs font-bold">Ctrl</code> to display your password
+                      temporarily.
+                    </Trans>
                   </FormDescription>
                   <FormMessage />
                 </FormItem>
@@ -111,11 +115,11 @@ export const LoginPage = () => {
 
             <div className="mt-4 flex items-center gap-x-4">
               <Button type="submit" disabled={loading} className="flex-1">
-                Sign in
+                {t`Sign in`}
               </Button>
 
               <Button asChild variant="link" className="px-4">
-                <Link to="/auth/forgot-password">Forgot Password?</Link>
+                <Link to="/auth/forgot-password">{t`Forgot Password?`}</Link>
               </Button>
             </div>
           </form>

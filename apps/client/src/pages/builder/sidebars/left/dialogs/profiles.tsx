@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { t, Trans } from "@lingui/macro";
 import { defaultProfile, profileSchema } from "@reactive-resume/schema";
 import {
   Avatar,
@@ -35,8 +36,9 @@ export const ProfilesDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Network</FormLabel>
+              <FormLabel>{t`Network`}</FormLabel>
               <FormControl>
+                {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
                 <Input {...field} placeholder="LinkedIn" />
               </FormControl>
               <FormMessage />
@@ -49,9 +51,9 @@ export const ProfilesDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Username</FormLabel>
+              <FormLabel>{t`Username`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="johndoe" />
+                <Input {...field} placeholder="john.doe" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -63,7 +65,7 @@ export const ProfilesDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1 sm:col-span-2">
-              <FormLabel>URL</FormLabel>
+              <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
                 <URLInput {...field} placeholder="https://linkedin.com/in/johndoe" />
               </FormControl>
@@ -77,7 +79,7 @@ export const ProfilesDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-2">
-              <FormLabel htmlFor="iconSlug">Icon</FormLabel>
+              <FormLabel htmlFor="iconSlug">{t`Icon`}</FormLabel>
               <FormControl>
                 <div className="flex items-center gap-x-2">
                   <Avatar className="h-8 w-8 bg-white">
@@ -93,15 +95,17 @@ export const ProfilesDialog = () => {
               </FormControl>
               <FormMessage />
               <FormDescription className="ml-10">
-                Powered by{" "}
-                <a
-                  href="https://simpleicons.org/"
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  className="font-medium"
-                >
-                  Simple Icons
-                </a>
+                <Trans>
+                  Powered by{" "}
+                  <a
+                    href="https://simpleicons.org/"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="font-medium"
+                  >
+                    Simple Icons
+                  </a>
+                </Trans>
               </FormDescription>
             </FormItem>
           )}

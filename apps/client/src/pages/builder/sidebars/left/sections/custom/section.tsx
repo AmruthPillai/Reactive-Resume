@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { createId } from "@paralleldrive/cuid2";
 import { DotsSixVertical, Plus, X } from "@phosphor-icons/react";
 import { CustomField as ICustomField } from "@reactive-resume/schema";
@@ -38,21 +39,22 @@ export const CustomField = ({ field, onChange, onRemove }: CustomFieldProps) => 
           <DotsSixVertical />
         </Button>
 
-        <Input
-          placeholder="Icon"
+        {/* <Input
+          placeholder={t`Icon`}
           value={field.icon}
           className="!ml-0"
           onChange={(event) => handleChange("icon", event.target.value)}
-        />
+        /> */}
 
         <Input
-          placeholder="Name"
+          placeholder={t`Name`}
           value={field.name}
+          className="!ml-0"
           onChange={(event) => handleChange("name", event.target.value)}
         />
 
         <Input
-          placeholder="Value"
+          placeholder={t`Value`}
           value={field.value}
           onChange={(event) => handleChange("value", event.target.value)}
         />
@@ -126,7 +128,7 @@ export const CustomFieldsSection = ({ className }: Props) => {
 
       <Button variant="link" onClick={onAddCustomField}>
         <Plus className="mr-2" />
-        <span>Add a custom field</span>
+        <span>{t`Add a custom field`}</span>
       </Button>
     </div>
   );

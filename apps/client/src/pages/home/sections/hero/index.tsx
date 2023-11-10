@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { ArrowRight } from "@phosphor-icons/react";
 import { Badge, Button } from "@reactive-resume/ui";
 import { motion } from "framer-motion";
@@ -20,24 +21,23 @@ export const HeroSection = () => (
         whileInView={{ opacity: 1, x: 0 }}
       >
         <div className="mt-24 flex items-center gap-x-4 sm:mt-32 lg:mt-0">
-          <Badge>Version 4</Badge>
+          <Badge>{t`Version 4`}</Badge>
 
           <Button variant="link" className="space-x-2 text-left">
-            <p>What's new in the latest version</p>
+            <p>{t`What's new in the latest version`}</p>
             <ArrowRight />
           </Button>
         </div>
 
         <div className="mt-10 space-y-2">
-          <h6 className="text-base font-bold tracking-wide">Finally,</h6>
+          <h6 className="text-base font-bold tracking-wide">{t`Finally,`}</h6>
           <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-            A free and open-source resume builder.
+            {t`A free and open-source resume builder.`}
           </h1>
         </div>
 
         <p className="prose prose-base prose-zinc mt-6 text-lg leading-8 dark:prose-invert">
-          A free and open-source resume builder that simplifies the process of creating, updating,
-          and sharing your resume.
+          {t`A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume.`}
         </p>
 
         <div className="mt-10 flex items-center gap-x-8">
@@ -53,7 +53,7 @@ export const HeroSection = () => (
                 width={3600}
                 height={2078}
                 src="/screenshots/builder.png"
-                alt="Reactive Resume - Screenshot - Builder Screen"
+                alt={t`Reactive Resume - Screenshot - Builder Screen`}
                 className="w-[76rem] rounded-lg bg-background/5 shadow-2xl ring-1 ring-foreground/10"
               />
             </Tilt>

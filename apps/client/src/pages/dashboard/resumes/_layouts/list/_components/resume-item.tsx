@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import {
   CopySimple,
   DotsThreeVertical,
@@ -73,7 +74,7 @@ export const ResumeListItem = ({ resume }: Props) => {
           }}
         >
           <FolderOpen size={14} className="mr-2" />
-          Open
+          {t`Open`}
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={(event) => {
@@ -82,7 +83,7 @@ export const ResumeListItem = ({ resume }: Props) => {
           }}
         >
           <PencilSimple size={14} className="mr-2" />
-          Rename
+          {t`Rename`}
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={(event) => {
@@ -91,7 +92,7 @@ export const ResumeListItem = ({ resume }: Props) => {
           }}
         >
           <CopySimple size={14} className="mr-2" />
-          Duplicate
+          {t`Duplicate`}
         </DropdownMenuItem>
         <ContextMenuSeparator />
         <DropdownMenuItem
@@ -102,7 +103,7 @@ export const ResumeListItem = ({ resume }: Props) => {
           }}
         >
           <TrashSimple size={14} className="mr-2" />
-          Delete
+          {t`Delete`}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
@@ -117,7 +118,7 @@ export const ResumeListItem = ({ resume }: Props) => {
               onClick={onOpen}
               className="group"
               title={resume.title}
-              description={`Last updated ${lastUpdated}`}
+              description={t`Last updated ${lastUpdated}`}
               end={dropdownMenu}
             />
           </HoverCardTrigger>
@@ -142,20 +143,20 @@ export const ResumeListItem = ({ resume }: Props) => {
       <ContextMenuContent>
         <ContextMenuItem onClick={onOpen}>
           <FolderOpen size={14} className="mr-2" />
-          Open
+          {t`Open`}
         </ContextMenuItem>
         <ContextMenuItem onClick={onUpdate}>
           <PencilSimple size={14} className="mr-2" />
-          Rename
+          {t`Rename`}
         </ContextMenuItem>
         <ContextMenuItem onClick={onDuplicate}>
           <CopySimple size={14} className="mr-2" />
-          Duplicate
+          {t`Duplicate`}
         </ContextMenuItem>
         <ContextMenuSeparator />
         <ContextMenuItem onClick={onDelete} className="text-error">
           <TrashSimple size={14} className="mr-2" />
-          Delete
+          {t`Delete`}
         </ContextMenuItem>
       </ContextMenuContent>
     </ContextMenu>

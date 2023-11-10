@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import {
   CaretDown,
   ChatTeardropText,
@@ -39,15 +40,14 @@ export const AiActions = ({ value, onChange, className }: Props) => {
 
   const onClick = async (action: Action, mood?: Mood) => {
     setLoading(action);
-    let result = value;
 
-    // await new Promise((resolve) => setTimeout(resolve, 2000));
+    let result = value;
 
     if (action === "improve") result = await improveWriting(value);
     if (action === "fix") result = await fixGrammar(value);
     if (action === "tone" && mood) result = await changeTone(value, mood);
 
-    onChange("Result" + result);
+    onChange(result);
 
     setLoading(false);
   };
@@ -67,52 +67,52 @@ export const AiActions = ({ value, onChange, className }: Props) => {
           className="-rotate-90 bg-background px-2 text-[10px] leading-[10px]"
         >
           <MagicWand size={10} className="mr-1" />
-          AI
+          {t`AI`}
         </Badge>
       </div>
 
       <Button size="sm" variant="outline" disabled={!!loading} onClick={() => onClick("improve")}>
         {loading === "improve" ? <CircleNotch className="animate-spin" /> : <PenNib />}
-        <span className="ml-2 text-xs">Improve Writing</span>
+        <span className="ml-2 text-xs">{t`Improve Writing`}</span>
       </Button>
 
       <Button size="sm" variant="outline" disabled={!!loading} onClick={() => onClick("fix")}>
         {loading === "fix" ? <CircleNotch className="animate-spin" /> : <Exam />}
-        <span className="ml-2 text-xs">Fix Spelling & Grammar</span>
+        <span className="ml-2 text-xs">{t`Fix Spelling & Grammar`}</span>
       </Button>
 
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button size="sm" variant="outline" disabled={!!loading}>
             {loading === "tone" ? <CircleNotch className="animate-spin" /> : <ChatTeardropText />}
-            <span className="mx-2 text-xs">Change Tone</span>
+            <span className="mx-2 text-xs">{t`Change Tone`}</span>
             <CaretDown />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuItem onClick={() => onClick("tone", "casual")}>
-            <span role="img" aria-label="Casual">
+            <span role="img" aria-label={t`Casual`}>
               🙂
             </span>
-            <span className="ml-2">Casual</span>
+            <span className="ml-2">{t`Casual`}</span>
           </DropdownMenuItem>
           <DropdownMenuItem onClick={() => onClick("tone", "professional")}>
-            <span role="img" aria-label="Professional">
+            <span role="img" aria-label={t`Professional`}>
               💼
             </span>
-            <span className="ml-2">Professional</span>
+            <span className="ml-2">{t`Professional`}</span>
           </DropdownMenuItem>
           <DropdownMenuItem onClick={() => onClick("tone", "confident")}>
-            <span role="img" aria-label="Confident">
+            <span role="img" aria-label={t`Confident`}>
               😎
             </span>
-            <span className="ml-2">Confident</span>
+            <span className="ml-2">{t`Confident`}</span>
           </DropdownMenuItem>
           <DropdownMenuItem onClick={() => onClick("tone", "friendly")}>
-            <span role="img" aria-label="Friendly">
+            <span role="img" aria-label={t`Friendly`}>
               😊
             </span>
-            <span className="ml-2">Friendly</span>
+            <span className="ml-2">{t`Friendly`}</span>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

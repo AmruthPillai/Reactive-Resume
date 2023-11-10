@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { t, Trans } from "@lingui/macro";
 import { ArrowRight, Warning } from "@phosphor-icons/react";
 import { registerSchema } from "@reactive-resume/dto";
 import { usePasswordToggle } from "@reactive-resume/hooks";
@@ -38,7 +39,7 @@ export const RegisterPage = () => {
       username: "",
       email: "",
       password: "",
-      language: "en",
+      locale: "en",
     },
   });
 
@@ -56,7 +57,7 @@ export const RegisterPage = () => {
         toast({
           variant: "error",
           icon: <Warning size={16} weight="bold" />,
-          title: "An error occurred while trying to sign up",
+          title: t`An error occurred while trying to create a new account.`,
           description: message,
         });
       }
@@ -66,12 +67,12 @@ export const RegisterPage = () => {
   return (
     <div className="space-y-8">
       <div className="space-y-1.5">
-        <h2 className="text-2xl font-semibold tracking-tight">Create a new account</h2>
+        <h2 className="text-2xl font-semibold tracking-tight">{t`Create a new account`}</h2>
         <h6>
-          <span className="opacity-75">Already have an account?</span>
+          <span className="opacity-75">{t`Already have an account?`}</span>
           <Button asChild variant="link" className="px-1.5">
             <Link to="/auth/login">
-              Sign in now <ArrowRight className="ml-1" />
+              {t`Sign in now`} <ArrowRight className="ml-1" />
             </Link>
           </Button>
         </h6>
@@ -89,9 +90,16 @@ export const RegisterPage = () => {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>{t`Name`}</FormLabel>
                   <FormControl>
-                    <Input placeholder="John Doe" {...field} />
+                    <Input
+                      placeholder={t({
+                        message: "John Doe",
+                        context:
+                          "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish.",
+                      })}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -103,9 +111,16 @@ export const RegisterPage = () => {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Username</FormLabel>
+                  <FormLabel>{t`Username`}</FormLabel>
                   <FormControl>
-                    <Input placeholder="john.doe" {...field} />
+                    <Input
+                      placeholder={t({
+                        message: "john.doe",
+                        context:
+                          "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish.",
+                      })}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -117,9 +132,16 @@ export const RegisterPage = () => {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>{t`Email`}</FormLabel>
                   <FormControl>
-                    <Input placeholder="john.doe@example.com" {...field} />
+                    <Input
+                      placeholder={t({
+                        message: "john.doe@example.com",
+                        context:
+                          "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish.",
+                      })}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -131,13 +153,15 @@ export const RegisterPage = () => {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password</FormLabel>
+                  <FormLabel>{t`Password`}</FormLabel>
                   <FormControl>
                     <Input type="password" {...field} />
                   </FormControl>
                   <FormDescription>
-                    Hold <code className="text-xs font-bold">Ctrl</code> to display your password
-                    temporarily.
+                    <Trans>
+                      Hold <code className="text-xs font-bold">Ctrl</code> to display your password
+                      temporarily.
+                    </Trans>
                   </FormDescription>
                   <FormMessage />
                 </FormItem>
@@ -145,7 +169,7 @@ export const RegisterPage = () => {
             />
 
             <Button disabled={loading} className="mt-4 w-full">
-              Sign up
+              {t`Sign up`}
             </Button>
           </form>
         </Form>

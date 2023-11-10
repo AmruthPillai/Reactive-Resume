@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -24,12 +25,14 @@ export const UserOptions = ({ children }: Props) => {
 
       <DropdownMenuContent side="top" align="start" className="w-48">
         <DropdownMenuItem onClick={() => navigate("/dashboard/settings")}>
-          Settings
+          {t`Settings`}
+          {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
           <KeyboardShortcut>⇧S</KeyboardShortcut>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={() => logout()}>
-          Logout
+          {t`Logout`}
+          {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
           <KeyboardShortcut>⇧Q</KeyboardShortcut>
         </DropdownMenuItem>
       </DropdownMenuContent>

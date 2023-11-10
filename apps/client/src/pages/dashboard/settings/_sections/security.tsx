@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { t, Trans } from "@lingui/macro";
 import {
   Accordion,
   AccordionContent,
@@ -29,7 +30,8 @@ const formSchema = z
   })
   .refine((data) => data.password === data.confirmPassword, {
     path: ["confirmPassword"],
-    message: "The passwords you entered do not match.",
+    // eslint-disable-next-line lingui/t-call-in-function
+    message: t`The passwords you entered do not match.`,
   });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -54,7 +56,7 @@ export const SecuritySettings = () => {
 
     toast({
       variant: "success",
-      title: "Your password has been updated successfully.",
+      title: t`Your password has been updated successfully.`,
     });
 
     onReset();
@@ -63,16 +65,15 @@ export const SecuritySettings = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h3 className="text-2xl font-bold leading-relaxed tracking-tight">Security</h3>
+        <h3 className="text-2xl font-bold leading-relaxed tracking-tight">{t`Security`}</h3>
         <p className="leading-relaxed opacity-75">
-          In this section, you can change your password and enable/disable two-factor
-          authentication.
+          {t`In this section, you can change your password and enable/disable two-factor authentication.`}
         </p>
       </div>
 
       <Accordion type="multiple" defaultValue={["password", "two-factor"]}>
         <AccordionItem value="password">
-          <AccordionTrigger>Password</AccordionTrigger>
+          <AccordionTrigger>{t`Password`}</AccordionTrigger>
           <AccordionContent>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-6 sm:grid-cols-2">
@@ -81,7 +82,7 @@ export const SecuritySettings = () => {
                   control={form.control}
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>New Password</FormLabel>
+                      <FormLabel>{t`New Password`}</FormLabel>
                       <FormControl>
                         <Input type="password" {...field} />
                       </FormControl>
@@ -94,7 +95,7 @@ export const SecuritySettings = () => {
                   control={form.control}
                   render={({ field, fieldState }) => (
                     <FormItem>
-                      <FormLabel>Confirm New Password</FormLabel>
+                      <FormLabel>{t`Confirm New Password`}</FormLabel>
                       <FormControl>
                         <Input type="password" {...field} />
                       </FormControl>
@@ -117,10 +118,10 @@ export const SecuritySettings = () => {
                       className="flex items-center space-x-2 self-center sm:col-start-2"
                     >
                       <Button type="submit" disabled={loading}>
-                        Change Password
+                        {t`Change Password`}
                       </Button>
                       <Button type="reset" variant="ghost" onClick={onReset}>
-                        Reset
+                        {t`Discard`}
                       </Button>
                     </motion.div>
                   )}
@@ -131,27 +132,31 @@ export const SecuritySettings = () => {
         </AccordionItem>
 
         <AccordionItem value="two-factor">
-          <AccordionTrigger>Two-Factor Authentication</AccordionTrigger>
+          <AccordionTrigger>{t`Two-Factor Authentication`}</AccordionTrigger>
           <AccordionContent>
             {user?.twoFactorEnabled ? (
               <p className="mb-4 leading-relaxed opacity-75">
-                <strong>Two-factor authentication is enabled.</strong> You will be asked to enter a
-                code every time you sign in.
+                <Trans>
+                  <strong>Two-factor authentication is enabled.</strong> You will be asked to enter
+                  a code every time you sign in.
+                </Trans>
               </p>
             ) : (
               <p className="mb-4 leading-relaxed opacity-75">
-                <strong>Two-factor authentication is currently disabled.</strong> You can enable it
-                by adding an authenticator app to your account.
+                <Trans>
+                  <strong>Two-factor authentication is currently disabled.</strong> You can enable
+                  it by adding an authenticator app to your account.
+                </Trans>
               </p>
             )}
 
             {user?.twoFactorEnabled ? (
               <Button variant="outline" onClick={() => open("delete")}>
-                Disable 2FA
+                {t`Disable 2FA`}
               </Button>
             ) : (
               <Button variant="outline" onClick={() => open("create")}>
-                Enable 2FA
+                {t`Enable 2FA`}
               </Button>
             )}
           </AccordionContent>

@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { t } from "@lingui/macro";
 import { ArrowRight, Warning } from "@phosphor-icons/react";
 import { twoFactorSchema } from "@reactive-resume/dto";
 import { usePasswordToggle } from "@reactive-resume/hooks";
@@ -49,7 +50,7 @@ export const VerifyOtpPage = () => {
         toast({
           variant: "error",
           icon: <Warning size={16} weight="bold" />,
-          title: "An error occurred while trying to sign in",
+          title: t`An error occurred while trying to sign in to your account.`,
           description: message,
         });
       }
@@ -59,14 +60,14 @@ export const VerifyOtpPage = () => {
   return (
     <div className="space-y-8">
       <div className="space-y-1.5">
-        <h2 className="text-2xl font-semibold tracking-tight">Two Step Verification</h2>
+        <h2 className="text-2xl font-semibold tracking-tight">{t`Two-Factor Authentication`}</h2>
         <h6>
           <span className="opacity-75">
-            Enter the one-time password provided by your authenticator app below.
+            {t`Enter the one-time password provided by your authenticator app below.`}
           </span>
           <Button asChild variant="link" className="px-1.5">
             <Link to="/auth/backup-otp">
-              Lost your device? <ArrowRight className="ml-1" />
+              {t`Lost your device?`} <ArrowRight className="ml-1" />
             </Link>
           </Button>
         </h6>
@@ -84,7 +85,7 @@ export const VerifyOtpPage = () => {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>One-Time Password</FormLabel>
+                  <FormLabel>{t`One-Time Password`}</FormLabel>
                   <FormControl>
                     <Input placeholder="123456" {...field} />
                   </FormControl>
@@ -94,7 +95,7 @@ export const VerifyOtpPage = () => {
             />
 
             <Button type="submit" disabled={loading} className="mt-4 w-full">
-              Sign in
+              {t`Sign in`}
             </Button>
           </form>
         </Form>

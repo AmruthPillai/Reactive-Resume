@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import {
   ArrowClockwise,
   ArrowCounterClockwise,
@@ -55,14 +56,14 @@ export const BuilderToolbar = () => {
     >
       <div className="inline-flex items-center justify-center rounded-full bg-background px-4 shadow-xl">
         {/* Undo */}
-        <Tooltip content="Undo">
+        <Tooltip content={t`Undo`}>
           <Button size="icon" variant="ghost" className="rounded-none" onClick={() => undo()}>
             <ArrowCounterClockwise />
           </Button>
         </Tooltip>
 
         {/* Redo */}
-        <Tooltip content="Redo">
+        <Tooltip content={t`Redo`}>
           <Button size="icon" variant="ghost" className="rounded-none" onClick={() => redo()}>
             <ArrowClockwise />
           </Button>
@@ -70,25 +71,25 @@ export const BuilderToolbar = () => {
 
         <Separator orientation="vertical" className="h-9" />
 
-        <Tooltip content="Zoom In">
+        <Tooltip content={t`Zoom In`}>
           <Button size="icon" variant="ghost" className="rounded-none" onClick={onZoomIn}>
             <MagnifyingGlassPlus />
           </Button>
         </Tooltip>
 
-        <Tooltip content="Zoom Out">
+        <Tooltip content={t`Zoom Out`}>
           <Button size="icon" variant="ghost" className="rounded-none" onClick={onZoomOut}>
             <MagnifyingGlassMinus />
           </Button>
         </Tooltip>
 
-        <Tooltip content="Reset Zoom">
+        <Tooltip content={t`Reset Zoom`}>
           <Button size="icon" variant="ghost" className="rounded-none" onClick={onResetView}>
             <ClockClockwise />
           </Button>
         </Tooltip>
 
-        <Tooltip content="Center Artboard">
+        <Tooltip content={t`Center Artboard`}>
           <Button size="icon" variant="ghost" className="rounded-none" onClick={onCenterView}>
             <CubeFocus />
           </Button>
@@ -97,7 +98,7 @@ export const BuilderToolbar = () => {
         <Separator orientation="vertical" className="h-9" />
 
         {/* Toggle Page Break Line */}
-        <Tooltip content="Toggle Page Break Line">
+        <Tooltip content={t`Toggle Page Break Line`}>
           <Toggle
             className="rounded-none"
             pressed={pageOptions.breakLine}
@@ -110,7 +111,7 @@ export const BuilderToolbar = () => {
         </Tooltip>
 
         {/* Toggle Page Numbers */}
-        <Tooltip content="Toggle Page Numbers">
+        <Tooltip content={t`Toggle Page Numbers`}>
           <Toggle
             className="rounded-none"
             pressed={pageOptions.pageNumbers}
@@ -125,14 +126,14 @@ export const BuilderToolbar = () => {
         <Separator orientation="vertical" className="h-9" />
 
         {/* Copy Link to Resume */}
-        <Tooltip content="Copy Link to Resume">
+        <Tooltip content={t`Copy Link to Resume`}>
           <Button size="icon" variant="ghost" className="rounded-none" disabled={!isPublic}>
             <LinkSimple />
           </Button>
         </Tooltip>
 
         {/* Download PDF */}
-        <Tooltip content="Download PDF">
+        <Tooltip content={t`Download PDF`}>
           <Button
             size="icon"
             variant="ghost"

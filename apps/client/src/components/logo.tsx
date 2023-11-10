@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { useTheme } from "@reactive-resume/hooks";
 import { cn } from "@reactive-resume/utils";
 
@@ -25,7 +26,7 @@ export const Logo = ({ size = 32, className }: Props) => {
       src={src}
       width={size}
       height={size}
-      alt="Reactive Resume"
+      alt={t`Reactive Resume`}
       className={cn("rounded-sm", className)}
     />
   );

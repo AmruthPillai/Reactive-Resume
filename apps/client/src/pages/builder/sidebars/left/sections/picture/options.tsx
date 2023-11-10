@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import {
   AspectRatio,
   Checkbox,
@@ -69,7 +70,7 @@ export const PictureOptions = () => {
     <div className="flex flex-col gap-y-5">
       <div className="grid grid-cols-3 items-center gap-x-6">
         <Label htmlFor="picture.size" className="col-span-1">
-          Size (in px)
+          {t`Size (in px)`}
         </Label>
         <Input
           type="number"
@@ -85,7 +86,7 @@ export const PictureOptions = () => {
 
       <div className="grid grid-cols-3 items-center gap-x-6">
         <Label htmlFor="picture.aspectRatio" className="col-span-1">
-          Aspect Ratio
+          {t`Aspect Ratio`}
         </Label>
         <div className="col-span-2 flex items-center justify-between">
           <ToggleGroup
@@ -94,19 +95,19 @@ export const PictureOptions = () => {
             onValueChange={onAspectRatioChange}
             className="flex items-center justify-center"
           >
-            <Tooltip content="Square">
+            <Tooltip content={t`Square`}>
               <ToggleGroupItem value="square">
                 <div className="h-3 w-3 border border-foreground" />
               </ToggleGroupItem>
             </Tooltip>
 
-            <Tooltip content="Horizontal">
+            <Tooltip content={t`Horizontal`}>
               <ToggleGroupItem value="horizontal">
                 <div className="h-2 w-3 border border-foreground" />
               </ToggleGroupItem>
             </Tooltip>
 
-            <Tooltip content="Portrait">
+            <Tooltip content={t`Portrait`}>
               <ToggleGroupItem value="portrait">
                 <div className="h-3 w-2 border border-foreground" />
               </ToggleGroupItem>
@@ -130,7 +131,7 @@ export const PictureOptions = () => {
 
       <div className="grid grid-cols-3 items-center gap-x-6">
         <Label htmlFor="picture.borderRadius" className="col-span-1">
-          Border Radius
+          {t`Border Radius`}
         </Label>
         <div className="col-span-2 flex items-center justify-between">
           <ToggleGroup
@@ -139,19 +140,19 @@ export const PictureOptions = () => {
             onValueChange={onBorderRadiusChange}
             className="flex items-center justify-center"
           >
-            <Tooltip content="Square">
+            <Tooltip content={t`Square`}>
               <ToggleGroupItem value="square">
                 <div className="h-3 w-3 border border-foreground" />
               </ToggleGroupItem>
             </Tooltip>
 
-            <Tooltip content="Rounded">
+            <Tooltip content={t`Rounded`}>
               <ToggleGroupItem value="rounded">
                 <div className="h-3 w-3 rounded-sm border border-foreground" />
               </ToggleGroupItem>
             </Tooltip>
 
-            <Tooltip content="Circle">
+            <Tooltip content={t`Circle`}>
               <ToggleGroupItem value="circle">
                 <div className="h-3 w-3 rounded-full border border-foreground" />
               </ToggleGroupItem>
@@ -176,7 +177,7 @@ export const PictureOptions = () => {
       <div>
         <div className="grid grid-cols-3 items-start gap-x-6">
           <div className="col-span-1">
-            <Label>Effects</Label>
+            <Label>{t`Effects`}</Label>
           </div>
           <div className="col-span-2 space-y-4">
             <div className="flex items-center space-x-2">
@@ -187,7 +188,7 @@ export const PictureOptions = () => {
                   setValue("basics.picture.effects.hidden", checked);
                 }}
               />
-              <Label htmlFor="picture.effects.hidden">Hidden</Label>
+              <Label htmlFor="picture.effects.hidden">{t`Hidden`}</Label>
             </div>
 
             <div className="flex items-center space-x-2">
@@ -198,7 +199,7 @@ export const PictureOptions = () => {
                   setValue("basics.picture.effects.border", checked);
                 }}
               />
-              <Label htmlFor="picture.effects.border">Border</Label>
+              <Label htmlFor="picture.effects.border">{t`Border`}</Label>
             </div>
 
             <div className="flex items-center space-x-2">
@@ -209,7 +210,7 @@ export const PictureOptions = () => {
                   setValue("basics.picture.effects.grayscale", checked);
                 }}
               />
-              <Label htmlFor="picture.effects.grayscale">Grayscale</Label>
+              <Label htmlFor="picture.effects.grayscale">{t`Grayscale`}</Label>
             </div>
           </div>
         </div>

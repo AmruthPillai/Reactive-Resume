@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { CopySimple } from "@phosphor-icons/react";
 import { Button, Input, Label, Switch, Tooltip } from "@reactive-resume/ui";
 import { AnimatePresence, motion } from "framer-motion";
@@ -25,9 +26,8 @@ export const SharingSection = () => {
 
     toast({
       variant: "success",
-      title: "A link has been copied to your clipboard.",
-      description:
-        "Anyone with this link can view and download the resume. Share it on your profile or with recruiters.",
+      title: t`A link has been copied to your clipboard.`,
+      description: t`Anyone with this link can view and download the resume. Share it on your profile or with recruiters.`,
     });
   };
 
@@ -36,7 +36,7 @@ export const SharingSection = () => {
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
           {getSectionIcon("sharing")}
-          <h2 className="line-clamp-1 text-3xl font-bold">Sharing</h2>
+          <h2 className="line-clamp-1 text-3xl font-bold">{t`Sharing`}</h2>
         </div>
       </header>
 
@@ -52,9 +52,9 @@ export const SharingSection = () => {
             />
             <div>
               <Label htmlFor="visibility" className="space-y-1">
-                <p>Public</p>
+                <p>{t`Public`}</p>
                 <p className="text-xs opacity-60">
-                  Anyone with the link can view and download the resume.
+                  {t`Anyone with the link can view and download the resume.`}
                 </p>
               </Label>
             </div>
@@ -70,12 +70,12 @@ export const SharingSection = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              <Label htmlFor="resume-url">URL</Label>
+              <Label htmlFor="resume-url">{t`URL`}</Label>
 
               <div className="flex gap-x-1.5">
                 <Input id="resume-url" readOnly value={url} className="flex-1" />
 
-                <Tooltip content="Copy to Clipboard">
+                <Tooltip content={t`Copy to Clipboard`}>
                   <Button size="icon" variant="ghost" onClick={onCopy}>
                     <CopySimple />
                   </Button>

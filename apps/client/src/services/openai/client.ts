@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { OpenAI } from "openai";
 
 import { useOpenAiStore } from "@/client/stores/openai";
@@ -7,7 +8,7 @@ export const openai = () => {
 
   if (!apiKey) {
     throw new Error(
-      "Your OpenAI API Key has not been set yet. Please go to your account settings to enable OpenAI Integration.",
+      t`Your OpenAI API Key has not been set yet. Please go to your account settings to enable OpenAI Integration.`,
     );
   }
 
