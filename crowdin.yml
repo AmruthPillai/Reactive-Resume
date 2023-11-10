@@ -6,6 +6,5 @@ api_token_env: CROWDIN_PERSONAL_TOKEN
 preserve_hierarchy: false
 
 files:
-  - type: po
-    source: /apps/client/src/locales/en-US.po
+  - source: /apps/client/src/locales/en-US.po
     translation: /apps/client/src/locales/%locale%.po
