@@ -1,0 +1,31 @@
+name: Update Translations
+
+on:
+  push:
+    branches:
+      - v4
+
+jobs:
+  update-translations:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: crowdin action
+        uses: crowdin/github-action@v1
+        with:
+          upload_sources: true
+          create_pull_request: true
+          upload_translations: false
+          download_translations: true
+          localization_branch_name: l10n
+          pull_request_base_branch_name: "v4"
+          pull_request_title: "New Translations"
+          pull_request_body: "There have been new translations added to the project. Please review and merge the changes made on Crowdin to help keep them in sync."
+
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          CROWDIN_PROJECT_ID: "503410"
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_TOKEN }}
