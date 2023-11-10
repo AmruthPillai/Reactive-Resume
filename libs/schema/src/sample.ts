@@ -452,7 +452,7 @@ export const sampleResume: ResumeData = {
     },
   },
   metadata: {
-    locale: "en",
+    locale: "en-US",
     template: "pikachu",
     layout: [
       [

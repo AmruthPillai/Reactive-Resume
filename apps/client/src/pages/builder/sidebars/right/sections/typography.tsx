@@ -14,7 +14,7 @@ import { getSectionIcon } from "../shared/section-icon";
 const fontSuggestions = [
   "Open Sans",
   "Merriweather",
-  "CMU Serif",
+  "Roboto Condensed",
   "Playfair Display",
   "Lato",
   "Lora",
@@ -38,7 +38,6 @@ export const TypographySection = () => {
 
   const loadFontSuggestions = useCallback(async () => {
     fontSuggestions.forEach((font) => {
-      if (font === "CMU Serif") return;
       webfontloader.load({
         events: false,
         classes: false,

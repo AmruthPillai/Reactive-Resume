@@ -32,7 +32,7 @@ export const HeroSection = () => (
         <div className="mt-10 space-y-2">
           <h6 className="text-base font-bold tracking-wide">{t`Finally,`}</h6>
           <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-            {t`A free and open-source resume builder.`}
+            {t`A free and open-source resume builder`}
           </h1>
         </div>
 

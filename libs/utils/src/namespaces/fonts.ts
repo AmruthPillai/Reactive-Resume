@@ -8,15 +8,6 @@ export type Font = {
 
 export const fonts: Font[] = [
   {
-    family: "CMU Serif",
-    category: "serif",
-    subsets: ["latin"],
-    variants: ["regular"],
-    files: {
-      regular: "https://cdn.jsdelivr.net/npm/computer-modern/cmu-serif.min.css",
-    },
-  },
-  {
     family: "Roboto",
     category: "sans-serif",
     subsets: ["cyrillic", "cyrillic-ext", "greek", "greek-ext", "latin", "latin-ext", "vietnamese"],

@@ -6,8 +6,6 @@ import fontkit from "@pdf-lib/fontkit";
 import { ResumeDto } from "@reactive-resume/dto";
 import { getFontUrls, withTimeout } from "@reactive-resume/utils";
 import retry from "async-retry";
-import { readFile } from "fs/promises";
-import { join } from "path";
 import { PDFDocument } from "pdf-lib";
 import { connect } from "puppeteer";
 
@@ -154,40 +152,20 @@ export class PrinterService {
     // Get information about fonts used in the resume from the metadata
     const fontData = resume.data.metadata.typography.font;
 
-    // Handle Special Case for CMU Serif as it is not available on Google Fonts
-    if (fontData.family === "CMU Serif") {
-      const fontsBuffer = await Promise.all([
-        readFile(join(__dirname, "assets/fonts/computer-modern/regular.ttf")),
-        readFile(join(__dirname, "assets/fonts/computer-modern/italic.ttf")),
-        readFile(join(__dirname, "assets/fonts/computer-modern/bold.ttf")),
-      ]);
+    const fontUrls = getFontUrls(fontData.family, fontData.variants);
 
-      await Promise.all(
-        fontsBuffer.map((buffer) => {
-          // Convert Buffer to ArrayBuffer
-          const arrayBuffer = buffer.buffer.slice(
-            buffer.byteOffset,
-            buffer.byteOffset + buffer.byteLength,
-          );
-          return pdf.embedFont(arrayBuffer);
+    // Load all the fonts from the URLs using HttpService
+    const responses = await Promise.all(
+      fontUrls.map((url) =>
+        this.httpService.axiosRef.get(url, {
+          responseType: "arraybuffer",
         }),
-      );
-    } else {
-      const fontUrls = getFontUrls(fontData.family, fontData.variants);
+      ),
+    );
+    const fontsBuffer = responses.map((response) => response.data as ArrayBuffer);
 
-      // Load all the fonts from the URLs using HttpService
-      const responses = await Promise.all(
-        fontUrls.map((url) =>
-          this.httpService.axiosRef.get(url, {
-            responseType: "arraybuffer",
-          }),
-        ),
-      );
-      const fontsBuffer = responses.map((response) => response.data as ArrayBuffer);
-
-      // Embed all the fonts in the PDF
-      await Promise.all(fontsBuffer.map((buffer) => pdf.embedFont(buffer)));
-    }
+    // Embed all the fonts in the PDF
+    await Promise.all(fontsBuffer.map((buffer) => pdf.embedFont(buffer)));
 
     for (let index = 0; index < pagesBuffer.length; index++) {
       const page = await PDFDocument.load(pagesBuffer[index]);

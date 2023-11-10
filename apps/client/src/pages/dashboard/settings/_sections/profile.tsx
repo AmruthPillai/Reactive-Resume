@@ -105,7 +105,7 @@ export const ProfileSettings = () => {
                 <FormDescription>
                   <span>
                     <Trans>
-                      Don't see your locale?{" "}
+                      Don't see your language?{" "}
                       <a
                         target="_blank"
                         rel="noopener noreferrer nofollow"

@@ -9,20 +9,22 @@ import {
   ReadCvLogo,
   ShareFat,
   TextT,
+  Translate,
   TrendUp,
 } from "@phosphor-icons/react";
 import { Button, ButtonProps, Tooltip } from "@reactive-resume/ui";
 
 export type MetadataKey =
-  | "notes"
   | "template"
   | "layout"
   | "typography"
   | "theme"
   | "page"
+  | "locale"
   | "sharing"
   | "statistics"
   | "export"
+  | "notes"
   | "information";
 
 export const getSectionIcon = (id: MetadataKey, props: IconProps = {}) => {
@@ -40,6 +42,8 @@ export const getSectionIcon = (id: MetadataKey, props: IconProps = {}) => {
       return <Palette size={18} {...props} />;
     case "page":
       return <ReadCvLogo size={18} {...props} />;
+    case "locale":
+      return <Translate size={18} {...props} />;
     case "sharing":
       return <ShareFat size={18} {...props} />;
     case "statistics":

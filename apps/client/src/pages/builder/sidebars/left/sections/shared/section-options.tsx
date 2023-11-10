@@ -109,8 +109,8 @@ export const SectionOptions = ({ id }: Props) => {
             <DropdownMenuSubContent>
               <DropdownMenuRadioGroup value={`${section.columns}`} onValueChange={onChangeColumns}>
                 {Array.from({ length: 5 }, (_, i) => i + 1).map((value) => (
-                  <DropdownMenuRadioItem value={`${value}`}>
-                    {plural(value, { one: "Column", other: "Columns" })}
+                  <DropdownMenuRadioItem key={value} value={`${value}`}>
+                    {value} {plural(value, { one: "Column", other: "Columns" })}
                   </DropdownMenuRadioItem>
                 ))}
               </DropdownMenuRadioGroup>

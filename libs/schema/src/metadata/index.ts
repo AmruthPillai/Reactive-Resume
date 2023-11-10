@@ -9,7 +9,7 @@ export const defaultLayout = [
 
 // Schema
 export const metadataSchema = z.object({
-  locale: z.string().default("en"),
+  locale: z.string().default("en-US"),
   template: z.string().default("rhyhorn"),
   layout: z.array(z.array(z.array(z.string()))).default(defaultLayout), // pages -> columns -> sections
   css: z.object({
@@ -47,7 +47,7 @@ export type Metadata = z.infer<typeof metadataSchema>;
 
 // Defaults
 export const defaultMetadata: Metadata = {
-  locale: "en",
+  locale: "en-US",
   template: "rhyhorn",
   layout: defaultLayout,
   css: {

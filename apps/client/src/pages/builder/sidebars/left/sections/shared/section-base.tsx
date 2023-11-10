@@ -106,7 +106,7 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
             <Plus size={14} />
             <span className="font-medium">
               {t({
-                message: "Add New Item",
+                message: "Add a new item",
                 context: "For example, add a new work experience, or add a new profile.",
               })}
             </span>
@@ -145,7 +145,7 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
             <Plus />
             <span>
               {t({
-                message: "Add New Item",
+                message: "Add a new item",
                 context: "For example, add a new work experience, or add a new profile.",
               })}
             </span>

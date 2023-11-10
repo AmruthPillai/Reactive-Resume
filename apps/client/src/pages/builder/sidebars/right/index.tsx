@@ -8,6 +8,7 @@ import { ThemeSwitch } from "@/client/components/theme-switch";
 import { ExportSection } from "./sections/export";
 import { InformationSection } from "./sections/information";
 import { LayoutSection } from "./sections/layout";
+import { LocaleSection } from "./sections/locale";
 import { NotesSection } from "./sections/notes";
 import { PageSection } from "./sections/page";
 import { SharingSection } from "./sections/sharing";
@@ -38,6 +39,8 @@ export const RightSidebar = () => {
           <ThemeSection />
           <Separator />
           <PageSection />
+          <Separator />
+          <LocaleSection />
           <Separator />
           <SharingSection />
           <Separator />
