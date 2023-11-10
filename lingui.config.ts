@@ -1,11 +1,12 @@
 import type { LinguiConfig } from "@lingui/conf";
 
 const config: LinguiConfig = {
-  locales: ["en-US", "de-DE"],
+  format: "po",
   sourceLocale: "en-US",
+  locales: ["en-US", "de-DE"],
   catalogs: [
     {
-      path: "<rootDir>/apps/client/src/locales/{locale}",
+      path: "<rootDir>/apps/client/src/locales/{locale}/messages",
       include: ["<rootDir>/apps/client/src"],
     },
   ],
