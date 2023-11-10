@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { DownloadSimple } from "@phosphor-icons/react";
 import { KeyboardShortcut } from "@reactive-resume/ui";
 
@@ -14,11 +15,12 @@ export const ImportResumeListItem = () => {
       onClick={() => open("create")}
       title={
         <>
-          <span>Import an existing resume</span>
-          <KeyboardShortcut className="ml-2">(^I)</KeyboardShortcut>
+          <span>{t`Import an existing resume`}</span>
+          {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
+          <KeyboardShortcut className="ml-2">^I</KeyboardShortcut>
         </>
       }
-      description="LinkedIn, JSON Resume, etc."
+      description={t`LinkedIn, JSON Resume, etc.`}
     />
   );
 };

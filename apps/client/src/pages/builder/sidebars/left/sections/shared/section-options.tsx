@@ -1,3 +1,4 @@
+import { plural, t } from "@lingui/macro";
 import {
   ArrowCounterClockwise,
   Broom,
@@ -63,7 +64,7 @@ export const SectionOptions = ({ id }: Props) => {
           <>
             <DropdownMenuItem onClick={onCreate}>
               <Plus />
-              <span className="ml-2">Add a new item</span>
+              <span className="ml-2">{t`Add a new item`}</span>
             </DropdownMenuItem>
 
             <DropdownMenuSeparator />
@@ -73,12 +74,12 @@ export const SectionOptions = ({ id }: Props) => {
         <DropdownMenuGroup>
           <DropdownMenuItem onClick={toggleVisibility}>
             {section.visible ? <Eye /> : <EyeSlash />}
-            <span className="ml-2">{section.visible ? "Hide" : "Show"}</span>
+            <span className="ml-2">{section.visible ? t`Hide` : t`Show`}</span>
           </DropdownMenuItem>
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>
               <PencilSimple />
-              <span className="ml-2">Rename</span>
+              <span className="ml-2">{t`Rename`}</span>
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
               <div className="relative col-span-2">
@@ -103,15 +104,15 @@ export const SectionOptions = ({ id }: Props) => {
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>
               <Columns />
-              <span className="ml-2">Columns</span>
+              <span className="ml-2">{t`Columns`}</span>
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
               <DropdownMenuRadioGroup value={`${section.columns}`} onValueChange={onChangeColumns}>
-                <DropdownMenuRadioItem value="1">1 Column</DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="2">2 Columns</DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="3">3 Columns</DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="4">4 Columns</DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="5">5 Columns</DropdownMenuRadioItem>
+                {Array.from({ length: 5 }, (_, i) => i + 1).map((value) => (
+                  <DropdownMenuRadioItem value={`${value}`}>
+                    {plural(value, { one: "Column", other: "Columns" })}
+                  </DropdownMenuRadioItem>
+                ))}
               </DropdownMenuRadioGroup>
             </DropdownMenuSubContent>
           </DropdownMenuSub>
@@ -119,12 +120,12 @@ export const SectionOptions = ({ id }: Props) => {
         <DropdownMenuSeparator />
         <DropdownMenuItem disabled={!hasItems} onClick={onResetItems}>
           <Broom />
-          <span className="ml-2">Reset</span>
+          <span className="ml-2">{t`Reset`}</span>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem className="text-error" disabled={!isCustomSection} onClick={onRemove}>
           <TrashSimple />
-          <span className="ml-2">Remove</span>
+          <span className="ml-2">{t`Remove`}</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

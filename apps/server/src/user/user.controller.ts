@@ -41,7 +41,7 @@ export class UserController {
       name: updateUserDto.name,
       picture: updateUserDto.picture,
       username: updateUserDto.username,
-      language: updateUserDto.language,
+      locale: updateUserDto.locale,
     });
   }
 

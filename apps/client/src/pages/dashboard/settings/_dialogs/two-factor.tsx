@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { t } from "@lingui/macro";
 import { QrCode } from "@phosphor-icons/react";
 import {
   Alert,
@@ -46,7 +47,8 @@ import { useDialog } from "@/client/stores/dialog";
 
 const formSchema = z.object({
   uri: z.literal("").or(z.string().optional()),
-  code: z.literal("").or(z.string().regex(/^\d{6}$/, "Code must be exactly 6 digits long.")),
+  // eslint-disable-next-line lingui/t-call-in-function
+  code: z.literal("").or(z.string().regex(/^\d{6}$/, t`Code must be exactly 6 digits long.`)),
   backupCodes: z.array(z.string()),
 });
 
@@ -103,7 +105,7 @@ export const TwoFactorDialog = () => {
 
           toast({
             variant: "error",
-            title: "An error occurred while trying to enable two-factor authentication.",
+            title: t`An error occurred while trying to enable two-factor authentication.`,
             description: message,
           });
         }
@@ -131,23 +133,21 @@ export const TwoFactorDialog = () => {
             <form className="space-y-4">
               <AlertDialogHeader>
                 <AlertDialogTitle>
-                  Are you sure you want to disable two-factor authentication?
+                  {t`Are you sure you want to disable two-factor authentication?`}
                 </AlertDialogTitle>
                 <AlertDialogDescription>
-                  If you disable two-factor authentication, you will no longer be required to enter
-                  a verification code when logging in.
+                  {t`If you disable two-factor authentication, you will no longer be required to enter a verification code when logging in.`}
                 </AlertDialogDescription>
               </AlertDialogHeader>
 
               <Alert variant="info">
-                <AlertDescription>Note: This will make your account less secure.</AlertDescription>
+                <AlertDescription>{t`Note: This will make your account less secure.`}</AlertDescription>
               </Alert>
 
               <AlertDialogFooter>
-                <AlertDialogCancel>Cancel</AlertDialogCancel>
-
+                <AlertDialogCancel>{t`Cancel`}</AlertDialogCancel>
                 <AlertDialogAction variant="error" onClick={form.handleSubmit(onSubmit)}>
-                  Disable
+                  {t`Disable`}
                 </AlertDialogAction>
               </AlertDialogFooter>
             </form>
@@ -167,19 +167,19 @@ export const TwoFactorDialog = () => {
                 <div className="flex items-center space-x-2.5">
                   <QrCode />
                   <h2>
-                    {mode === "create" && "Setup two-factor authentication on your account"}
+                    {mode === "create" && t`Setup two-factor authentication on your account`}
                     {mode === "update" &&
-                      "Verify that two-factor authentication has been setup correctly"}
-                    {mode === "duplicate" && "Store your backup codes securely"}
+                      t`Verify that two-factor authentication has been setup correctly`}
+                    {mode === "duplicate" && t`Store your backup codes securely`}
                   </h2>
                 </div>
               </DialogTitle>
               <DialogDescription>
                 {isCreate &&
-                  "Scan the QR code below with your authenticator app to setup 2FA on your account."}
+                  t`Scan the QR code below with your authenticator app to setup 2FA on your account.`}
                 {isUpdate &&
-                  "Enter the 6-digit code from your authenticator app to verify that 2FA has been setup correctly."}
-                {isDuplicate && "You have enabled two-factor authentication successfully."}
+                  t`Enter the 6-digit code from your authenticator app to verify that 2FA has been setup correctly.`}
+                {isDuplicate && t`You have enabled two-factor authentication successfully.`}
               </DialogDescription>
             </DialogHeader>
 
@@ -196,8 +196,7 @@ export const TwoFactorDialog = () => {
                       </div>
                     </FormControl>
                     <FormDescription>
-                      In case you don't have access to your camera, you can also copy-paste this URI
-                      to your authenticator app.
+                      {t`In case you are unable to scan this QR Code, you can also copy-paste this link into your authenticator app.`}
                     </FormDescription>
                   </FormItem>
                 )}
@@ -210,7 +209,7 @@ export const TwoFactorDialog = () => {
                 control={form.control}
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Code</FormLabel>
+                    <FormLabel>{t`Code`}</FormLabel>
                     <FormControl>
                       <Input type="number" placeholder="123456" {...field} />
                     </FormControl>
@@ -237,24 +236,23 @@ export const TwoFactorDialog = () => {
                 />
 
                 <p className="text-xs leading-relaxed">
-                  Please store your backup codes in a secure location. You can use one of these
-                  one-time use codes to login in case you lose access to your authenticator app.
+                  {t`Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app.`}
                 </p>
               </>
             )}
 
             <DialogFooter>
-              {isCreate && <Button disabled={loading}>Continue</Button>}
+              {isCreate && <Button disabled={loading}>{t`Continue`}</Button>}
               {isUpdate && (
                 <>
                   <Button variant="ghost" onClick={() => open("create")}>
-                    Back
+                    {t`Back`}
                   </Button>
 
-                  <Button disabled={loading}>Continue</Button>
+                  <Button disabled={loading}>{t`Continue`}</Button>
                 </>
               )}
-              {isDuplicate && <Button disabled={loading}>Close</Button>}
+              {isDuplicate && <Button disabled={loading}>{t`Close`}</Button>}
             </DialogFooter>
           </form>
         </Form>

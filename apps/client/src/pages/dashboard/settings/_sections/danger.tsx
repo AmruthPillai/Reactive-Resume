@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { t, Trans } from "@lingui/macro";
 import {
   Button,
   Form,
@@ -48,7 +49,7 @@ export const DangerZoneSettings = () => {
 
       toast({
         variant: "success",
-        title: "Your account has been deleted successfully.",
+        title: t`Your account and all your data has been deleted successfully. Goodbye!`,
       });
 
       navigate("/");
@@ -58,11 +59,13 @@ export const DangerZoneSettings = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h3 className="text-2xl font-bold leading-relaxed tracking-tight">Danger Zone</h3>
+        <h3 className="text-2xl font-bold leading-relaxed tracking-tight">{t`Danger Zone`}</h3>
         <p className="leading-relaxed opacity-75">
-          In this section, you can delete your account and all the data associated to your user, but
-          please keep in mind that{" "}
-          <span className="font-semibold">this action is irreversible</span>.
+          <Trans>
+            In this section, you can delete your account and all the data associated to your user,
+            but please keep in mind that{" "}
+            <span className="font-semibold">this action is irreversible</span>.
+          </Trans>
         </p>
       </div>
 
@@ -73,12 +76,14 @@ export const DangerZoneSettings = () => {
             control={form.control}
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Delete Account</FormLabel>
+                <FormLabel>{t`Delete Account`}</FormLabel>
                 <FormControl>
                   <Input placeholder="delete" {...field} />
                 </FormControl>
                 <FormDescription>
-                  Type <code className="font-bold">delete</code> to confirm deleting your account.
+                  <Trans>
+                    Type <code className="font-bold">delete</code> to confirm deleting your account.
+                  </Trans>
                 </FormDescription>
               </FormItem>
             )}
@@ -86,7 +91,7 @@ export const DangerZoneSettings = () => {
 
           <div className="flex items-center space-x-2 self-center">
             <Button type="submit" variant="error" disabled={!form.formState.isValid || loading}>
-              {count === 1 ? "Are you sure?" : "Delete Account"}
+              {count === 1 ? t`Are you sure?` : t`Delete Account`}
             </Button>
           </div>
         </form>

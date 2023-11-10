@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { t } from "@lingui/macro";
 import { certificationSchema, defaultCertification } from "@reactive-resume/schema";
 import {
   FormControl,
@@ -35,9 +36,9 @@ export const CertificationsDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Name</FormLabel>
+              <FormLabel>{t({ message: "Name", context: "Name of the Certification" })}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Web Developer Bootcamp" />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -49,9 +50,9 @@ export const CertificationsDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Issuer</FormLabel>
+              <FormLabel>{t`Issuer`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Udemy" />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -63,9 +64,9 @@ export const CertificationsDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Date</FormLabel>
+              <FormLabel>{t`Date`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Aug 2019" />
+                <Input {...field} placeholder={t`March 2023`} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -77,7 +78,7 @@ export const CertificationsDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Website</FormLabel>
+              <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
                 <URLInput {...field} placeholder="https://udemy.com/certificate/UC-..." />
               </FormControl>
@@ -91,7 +92,7 @@ export const CertificationsDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1 sm:col-span-2">
-              <FormLabel>Summary</FormLabel>
+              <FormLabel>{t`Summary`}</FormLabel>
               <FormControl>
                 <RichInput
                   {...field}

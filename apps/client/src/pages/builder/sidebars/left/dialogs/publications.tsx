@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { t } from "@lingui/macro";
 import { defaultPublication, publicationSchema } from "@reactive-resume/schema";
 import {
   FormControl,
@@ -35,9 +36,9 @@ export const PublicationsDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Name</FormLabel>
+              <FormLabel>{t`Name`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="The Great Gatsby" />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -49,9 +50,9 @@ export const PublicationsDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Publisher</FormLabel>
+              <FormLabel>{t`Publisher`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Charles Scribner's Sons" />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -63,9 +64,9 @@ export const PublicationsDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Release Date</FormLabel>
+              <FormLabel>{t`Date`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="April 10, 1925" />
+                <Input {...field} placeholder={t`March 2023`} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -77,9 +78,9 @@ export const PublicationsDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Website</FormLabel>
+              <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
-                <URLInput {...field} placeholder="https://books.google.com/..." />
+                <URLInput {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -91,7 +92,7 @@ export const PublicationsDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1 sm:col-span-2">
-              <FormLabel>Summary</FormLabel>
+              <FormLabel>{t`Summary`}</FormLabel>
               <FormControl>
                 <RichInput
                   {...field}

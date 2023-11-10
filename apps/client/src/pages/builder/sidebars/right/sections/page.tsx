@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import {
   Label,
   Select,
@@ -22,13 +23,13 @@ export const PageSection = () => {
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
           {getSectionIcon("page")}
-          <h2 className="line-clamp-1 text-3xl font-bold">Page</h2>
+          <h2 className="line-clamp-1 text-3xl font-bold">{t`Page`}</h2>
         </div>
       </header>
 
       <main className="grid gap-y-4">
         <div className="space-y-1.5">
-          <Label>Format</Label>
+          <Label>{t`Format`}</Label>
           <Select
             value={page.format}
             onValueChange={(value) => {
@@ -36,17 +37,17 @@ export const PageSection = () => {
             }}
           >
             <SelectTrigger>
-              <SelectValue placeholder="Format" />
+              <SelectValue placeholder={t`Format`} />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="a4">A4</SelectItem>
-              <SelectItem value="letter">Letter</SelectItem>
+              <SelectItem value="a4">{t`A4`}</SelectItem>
+              <SelectItem value="letter">{t`Letter`}</SelectItem>
             </SelectContent>
           </Select>
         </div>
 
         <div className="space-y-1.5">
-          <Label>Margin</Label>
+          <Label>{t`Margin`}</Label>
           <div className="flex items-center gap-x-4 py-1">
             <Slider
               min={0}
@@ -63,7 +64,7 @@ export const PageSection = () => {
         </div>
 
         <div className="space-y-1.5">
-          <Label>Options</Label>
+          <Label>{t`Options`}</Label>
 
           <div className="py-2">
             <div className="flex items-center gap-x-4">
@@ -74,7 +75,7 @@ export const PageSection = () => {
                   setValue("metadata.page.options.breakLine", checked);
                 }}
               />
-              <Label htmlFor="metadata.page.options.breakLine">Show Break Line</Label>
+              <Label htmlFor="metadata.page.options.breakLine">{t`Show Break Line`}</Label>
             </div>
           </div>
 
@@ -87,7 +88,7 @@ export const PageSection = () => {
                   setValue("metadata.page.options.pageNumbers", checked);
                 }}
               />
-              <Label htmlFor="metadata.page.options.pageNumbers">Show Page Numbers</Label>
+              <Label htmlFor="metadata.page.options.pageNumbers">{t`Show Page Numbers`}</Label>
             </div>
           </div>
         </div>

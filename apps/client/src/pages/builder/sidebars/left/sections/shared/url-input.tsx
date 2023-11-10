@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { Tag } from "@phosphor-icons/react";
 import { URL, urlSchema } from "@reactive-resume/schema";
 import { Button, Input, Popover, PopoverContent, PopoverTrigger } from "@reactive-resume/ui";
@@ -36,14 +37,14 @@ export const URLInput = forwardRef<HTMLInputElement, Props>(
             <PopoverContent className="p-1.5">
               <Input
                 value={value.label}
-                placeholder="Label"
+                placeholder={t`Label`}
                 onChange={(event) => onChange({ ...value, label: event.target.value })}
               />
             </PopoverContent>
           </Popover>
         </div>
 
-        {hasError && <small className="opacity-75">URL must start with https://</small>}
+        {hasError && <small className="opacity-75">{t`URL must start with https://`}</small>}
       </>
     );
   },

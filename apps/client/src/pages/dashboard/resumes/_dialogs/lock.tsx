@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { ResumeDto } from "@reactive-resume/dto";
 import {
   AlertDialog,
@@ -34,22 +35,21 @@ export const LockDialog = () => {
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>
-            {isLockMode && "Are you sure you want to lock this resume?"}
-            {isUnlockMode && "Are you sure you want to unlock this resume?"}
+            {isLockMode && t`Are you sure you want to lock this resume?`}
+            {isUnlockMode && t`Are you sure you want to unlock this resume?`}
           </AlertDialogTitle>
           <AlertDialogDescription>
             {isLockMode &&
-              "Locking a resume will prevent any further changes to it. This is useful when you have already shared your resume with someone and you don't want to accidentally make any changes to it."}
-            {isUnlockMode && "Unlocking a resume will allow you to make changes to it again."}
+              t`Locking a resume will prevent any further changes to it. This is useful when you have already shared your resume with someone and you don't want to accidentally make any changes to it.`}
+            {isUnlockMode && t`Unlocking a resume will allow you to make changes to it again.`}
           </AlertDialogDescription>
         </AlertDialogHeader>
 
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
-
+          <AlertDialogCancel>{t`Cancel`}</AlertDialogCancel>
           <AlertDialogAction variant="info" disabled={loading} onClick={onSubmit}>
-            {isLockMode && "Lock"}
-            {isUnlockMode && "Unlock"}
+            {isLockMode && t`Lock`}
+            {isUnlockMode && t`Unlock`}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

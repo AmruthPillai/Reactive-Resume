@@ -100,7 +100,7 @@ export class AuthService {
         name: registerDto.name,
         email: registerDto.email,
         username: registerDto.username,
-        language: registerDto.language,
+        locale: registerDto.locale,
         provider: "email",
         emailVerified: false, // Set to true if you don't want to verify user's email
         secrets: { create: { password: hashedPassword } },

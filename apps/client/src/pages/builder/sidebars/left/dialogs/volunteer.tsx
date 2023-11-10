@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { t } from "@lingui/macro";
 import { defaultVolunteer, volunteerSchema } from "@reactive-resume/schema";
 import {
   FormControl,
@@ -35,9 +36,9 @@ export const VolunteerDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Organization</FormLabel>
+              <FormLabel>{t`Organization`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Amnesty International" />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -49,9 +50,9 @@ export const VolunteerDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Position</FormLabel>
+              <FormLabel>{t`Position`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Recruiter" />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -63,9 +64,9 @@ export const VolunteerDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Date</FormLabel>
+              <FormLabel>{t`Date`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Dec 2016 - Aug 2017" />
+                <Input {...field} placeholder={t`March 2023 - Present`} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -77,9 +78,9 @@ export const VolunteerDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Location</FormLabel>
+              <FormLabel>{t`Location`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="New York, NY" />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -91,9 +92,9 @@ export const VolunteerDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1 sm:col-span-2">
-              <FormLabel>Website</FormLabel>
+              <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
-                <URLInput {...field} placeholder="https://www.amnesty.org/" />
+                <URLInput {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -105,7 +106,7 @@ export const VolunteerDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1 sm:col-span-2">
-              <FormLabel>Summary</FormLabel>
+              <FormLabel>{t`Summary`}</FormLabel>
               <FormControl>
                 <RichInput
                   {...field}

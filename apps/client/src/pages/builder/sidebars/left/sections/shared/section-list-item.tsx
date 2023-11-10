@@ -1,5 +1,6 @@
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
+import { t } from "@lingui/macro";
 import { CopySimple, DotsSixVertical, PencilSimple, TrashSimple } from "@phosphor-icons/react";
 import {
   DropdownMenu,
@@ -81,19 +82,19 @@ export const SectionListItem = ({
           </DropdownMenuTrigger>
           <DropdownMenuContent align="center" side="left" sideOffset={-16}>
             <DropdownMenuCheckboxItem checked={visible} onCheckedChange={onToggleVisibility}>
-              <span className="-ml-0.5">Visible</span>
+              <span className="-ml-0.5">{t`Visible`}</span>
             </DropdownMenuCheckboxItem>
             <DropdownMenuItem onClick={onUpdate}>
               <PencilSimple size={14} />
-              <span className="ml-2">Edit</span>
+              <span className="ml-2">{t`Edit`}</span>
             </DropdownMenuItem>
             <DropdownMenuItem onClick={onDuplicate}>
               <CopySimple size={14} />
-              <span className="ml-2">Copy</span>
+              <span className="ml-2">{t`Copy`}</span>
             </DropdownMenuItem>
             <DropdownMenuItem className="text-error" onClick={onDelete}>
               <TrashSimple size={14} />
-              <span className="ml-2">Remove</span>
+              <span className="ml-2">{t`Remove`}</span>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

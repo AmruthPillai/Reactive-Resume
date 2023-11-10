@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { Plus } from "@phosphor-icons/react";
 import { KeyboardShortcut } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
@@ -20,11 +21,12 @@ export const CreateResumeCard = () => {
         )}
       >
         <h4 className="font-medium">
-          Create a new resume
-          <KeyboardShortcut className="ml-2">(^N)</KeyboardShortcut>
+          {t`Create a new resume`}
+          {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
+          <KeyboardShortcut className="ml-2">^N</KeyboardShortcut>
         </h4>
 
-        <p className="text-xs opacity-75">Start from scratch</p>
+        <p className="text-xs opacity-75">{t`Start from scratch`}</p>
       </div>
     </BaseCard>
   );

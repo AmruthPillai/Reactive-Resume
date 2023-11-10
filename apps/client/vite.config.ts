@@ -1,5 +1,6 @@
 /// <reference types='vitest' />
 
+import { lingui } from "@lingui/vite-plugin";
 import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 import react from "@vitejs/plugin-react-swc";
 import { defineConfig, searchForWorkspaceRoot, splitVendorChunkPlugin } from "vite";
@@ -21,7 +22,14 @@ export default defineConfig({
     fs: { allow: [searchForWorkspaceRoot(process.cwd())] },
   },
 
-  plugins: [react(), nxViteTsPaths(), splitVendorChunkPlugin()],
+  plugins: [
+    react({
+      plugins: [["@lingui/swc-plugin", {}]],
+    }),
+    lingui(),
+    nxViteTsPaths(),
+    splitVendorChunkPlugin(),
+  ],
 
   test: {
     globals: true,

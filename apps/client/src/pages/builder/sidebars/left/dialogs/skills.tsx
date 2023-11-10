@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { t } from "@lingui/macro";
 import { X } from "@phosphor-icons/react";
 import { defaultSkill, skillSchema } from "@reactive-resume/schema";
 import {
@@ -37,9 +38,9 @@ export const SkillsDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Name</FormLabel>
+              <FormLabel>{t`Name`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Content Management" />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -51,9 +52,9 @@ export const SkillsDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Description</FormLabel>
+              <FormLabel>{t`Description`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Advanced" />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -65,7 +66,7 @@ export const SkillsDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-2">
-              <FormLabel>Level</FormLabel>
+              <FormLabel>{t`Level`}</FormLabel>
               <FormControl className="py-2">
                 <div className="flex items-center gap-x-4">
                   <Slider
@@ -91,12 +92,12 @@ export const SkillsDialog = () => {
           render={({ field }) => (
             <div className="col-span-2 space-y-3">
               <FormItem>
-                <FormLabel>Keywords</FormLabel>
+                <FormLabel>{t`Keywords`}</FormLabel>
                 <FormControl>
-                  <BadgeInput {...field} placeholder="WordPress, Joomla, Webflow etc." />
+                  <BadgeInput {...field} />
                 </FormControl>
                 <FormDescription>
-                  You can add multiple keywords by separating them with a comma.
+                  {t`You can add multiple keywords by separating them with a comma or pressing enter.`}
                 </FormDescription>
                 <FormMessage />
               </FormItem>

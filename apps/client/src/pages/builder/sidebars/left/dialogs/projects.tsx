@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { t } from "@lingui/macro";
 import { X } from "@phosphor-icons/react";
 import { defaultProject, projectSchema } from "@reactive-resume/schema";
 import {
@@ -40,9 +41,9 @@ export const ProjectsDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Name</FormLabel>
+              <FormLabel>{t`Name`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Reactive Resume" />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -54,9 +55,9 @@ export const ProjectsDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Description</FormLabel>
+              <FormLabel>{t`Description`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Open Source Resume Builder" />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -68,9 +69,9 @@ export const ProjectsDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Date</FormLabel>
+              <FormLabel>{t`Date`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Sep 2018 - Present" />
+                <Input {...field} placeholder={t`March 2023 - Present`} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -82,7 +83,7 @@ export const ProjectsDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Website</FormLabel>
+              <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
                 <URLInput {...field} placeholder="https://rxresu.me" />
               </FormControl>
@@ -96,7 +97,7 @@ export const ProjectsDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1 sm:col-span-2">
-              <FormLabel>Summary</FormLabel>
+              <FormLabel>{t`Summary`}</FormLabel>
               <FormControl>
                 <RichInput
                   {...field}
@@ -118,12 +119,12 @@ export const ProjectsDialog = () => {
           render={({ field }) => (
             <div className="col-span-2 space-y-3">
               <FormItem>
-                <FormLabel>Keywords</FormLabel>
+                <FormLabel>{t`Keywords`}</FormLabel>
                 <FormControl>
-                  <BadgeInput {...field} placeholder="FIFA 23, Call of Duty, etc." />
+                  <BadgeInput {...field} />
                 </FormControl>
                 <FormDescription>
-                  You can add multiple keywords by separating them with a comma.
+                  {t`You can add multiple keywords by separating them with a comma or pressing enter.`}
                 </FormDescription>
                 <FormMessage />
               </FormItem>

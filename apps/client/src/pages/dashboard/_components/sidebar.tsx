@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { FadersHorizontal, ReadCvLogo } from "@phosphor-icons/react";
 import { Button, KeyboardShortcut, Separator } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
@@ -32,21 +33,6 @@ interface SidebarItem {
   shortcut?: string;
   icon: React.ReactNode;
 }
-
-const sidebarItems: SidebarItem[] = [
-  {
-    path: "/dashboard/resumes",
-    name: "Resumes",
-    shortcut: "⇧R",
-    icon: <ReadCvLogo />,
-  },
-  {
-    path: "/dashboard/settings",
-    name: "Settings",
-    shortcut: "⇧S",
-    icon: <FadersHorizontal />,
-  },
-];
 
 type SidebarItemProps = SidebarItem & {
   onClick?: () => void;
@@ -93,6 +79,21 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
     navigate("/dashboard/settings");
     setOpen?.(false);
   });
+
+  const sidebarItems: SidebarItem[] = [
+    {
+      path: "/dashboard/resumes",
+      name: t`Resumes`,
+      shortcut: "⇧R",
+      icon: <ReadCvLogo />,
+    },
+    {
+      path: "/dashboard/settings",
+      name: t`Settings`,
+      shortcut: "⇧S",
+      icon: <FadersHorizontal />,
+    },
+  ];
 
   return (
     <div className="flex h-full flex-col gap-y-4">

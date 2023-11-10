@@ -1,3 +1,6 @@
+/* eslint-disable lingui/no-unlocalized-strings */
+
+import { t } from "@lingui/macro";
 import { Button, Combobox, ComboboxOption, Label, Slider, Switch } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { fonts } from "@reactive-resume/utils";
@@ -61,7 +64,7 @@ export const TypographySection = () => {
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
           {getSectionIcon("typography")}
-          <h2 className="line-clamp-1 text-3xl font-bold">Typography</h2>
+          <h2 className="line-clamp-1 text-3xl font-bold">{t`Typography`}</h2>
         </div>
       </header>
 
@@ -89,11 +92,11 @@ export const TypographySection = () => {
         </div>
 
         <div className="space-y-1.5">
-          <Label>Font Family</Label>
+          <Label>{t`Font Family`}</Label>
           <Combobox
             options={families}
             value={typography.font.family}
-            searchPlaceholder="Search for a font family"
+            searchPlaceholder={t`Search for a font family`}
             onValueChange={(value) => {
               setValue("metadata.typography.font.family", value);
               setValue("metadata.typography.font.subset", "latin");
@@ -104,11 +107,11 @@ export const TypographySection = () => {
 
         <div className="grid grid-cols-2 gap-x-4">
           <div className="space-y-1.5">
-            <Label>Font Subset</Label>
+            <Label>{t`Font Subset`}</Label>
             <Combobox
               options={subsets}
               value={typography.font.subset}
-              searchPlaceholder="Search for a font subset"
+              searchPlaceholder={t`Search for a font subset`}
               onValueChange={(value) => {
                 setValue("metadata.typography.font.subset", value);
               }}
@@ -116,12 +119,12 @@ export const TypographySection = () => {
           </div>
 
           <div className="space-y-1.5">
-            <Label>Font Variants</Label>
+            <Label>{t`Font Variants`}</Label>
             <Combobox
               multiple
               options={variants}
               value={typography.font.variants}
-              searchPlaceholder="Search for a font variant"
+              searchPlaceholder={t`Search for a font variant`}
               onValueChange={(value) => {
                 setValue("metadata.typography.font.variants", value);
               }}
@@ -130,7 +133,7 @@ export const TypographySection = () => {
         </div>
 
         <div className="space-y-1.5">
-          <Label>Font Size</Label>
+          <Label>{t`Font Size`}</Label>
           <div className="flex items-center gap-x-4 py-1">
             <Slider
               min={12}
@@ -147,7 +150,7 @@ export const TypographySection = () => {
         </div>
 
         <div className="space-y-1.5">
-          <Label>Line Height</Label>
+          <Label>{t`Line Height`}</Label>
           <div className="flex items-center gap-x-4 py-1">
             <Slider
               min={0}
@@ -164,7 +167,7 @@ export const TypographySection = () => {
         </div>
 
         <div className="space-y-1.5">
-          <Label>Options</Label>
+          <Label>{t`Options`}</Label>
 
           <div className="py-2">
             <div className="flex items-center gap-x-4">
@@ -175,7 +178,7 @@ export const TypographySection = () => {
                   setValue("metadata.typography.underlineLinks", checked);
                 }}
               />
-              <Label htmlFor="metadata.typography.underlineLinks">Underline Links</Label>
+              <Label htmlFor="metadata.typography.underlineLinks">{t`Underline Links`}</Label>
             </div>
           </div>
         </div>

@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { Aperture, UploadSimple } from "@phosphor-icons/react";
 import {
   Avatar,
@@ -48,7 +49,7 @@ export const PictureSection = () => {
       </Avatar>
 
       <div className="flex w-full flex-col gap-y-1.5">
-        <Label htmlFor="basics.picture.url">Picture</Label>
+        <Label htmlFor="basics.picture.url">{t`Picture`}</Label>
         <div className="flex items-center gap-x-2">
           <Input
             id="basics.picture.url"

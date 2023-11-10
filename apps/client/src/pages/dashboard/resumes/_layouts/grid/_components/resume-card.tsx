@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import {
   CircleNotch,
   CopySimple,
@@ -112,7 +113,7 @@ export const ResumeCard = ({ resume }: Props) => {
             )}
           >
             <h4 className="line-clamp-2 font-medium">{resume.title}</h4>
-            <p className="line-clamp-1 text-xs opacity-75">{`Last updated ${lastUpdated}`}</p>
+            <p className="line-clamp-1 text-xs opacity-75">{t`Last updated ${lastUpdated}`}</p>
           </div>
         </BaseCard>
       </ContextMenuTrigger>
@@ -120,31 +121,31 @@ export const ResumeCard = ({ resume }: Props) => {
       <ContextMenuContent>
         <ContextMenuItem onClick={onOpen}>
           <FolderOpen size={14} className="mr-2" />
-          Open
+          {t`Open`}
         </ContextMenuItem>
         <ContextMenuItem onClick={onUpdate}>
           <PencilSimple size={14} className="mr-2" />
-          Rename
+          {t`Rename`}
         </ContextMenuItem>
         <ContextMenuItem onClick={onDuplicate}>
           <CopySimple size={14} className="mr-2" />
-          Duplicate
+          {t`Duplicate`}
         </ContextMenuItem>
         {resume.locked ? (
           <ContextMenuItem onClick={onLockChange}>
             <LockOpen size={14} className="mr-2" />
-            Unlock
+            {t`Unlock`}
           </ContextMenuItem>
         ) : (
           <ContextMenuItem onClick={onLockChange}>
             <Lock size={14} className="mr-2" />
-            Lock
+            {t`Lock`}
           </ContextMenuItem>
         )}
         <ContextMenuSeparator />
         <ContextMenuItem onClick={onDelete} className="text-error">
           <TrashSimple size={14} className="mr-2" />
-          Delete
+          {t`Delete`}
         </ContextMenuItem>
       </ContextMenuContent>
     </ContextMenu>

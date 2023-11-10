@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { DownloadSimple } from "@phosphor-icons/react";
 import { KeyboardShortcut } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
@@ -20,11 +21,12 @@ export const ImportResumeCard = () => {
         )}
       >
         <h4 className="line-clamp-1 font-medium">
-          Import an existing resume
-          <KeyboardShortcut className="ml-2">(^I)</KeyboardShortcut>
+          {t`Import an existing resume`}
+          {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
+          <KeyboardShortcut className="ml-2">^I</KeyboardShortcut>
         </h4>
 
-        <p className="line-clamp-1 text-xs opacity-75">LinkedIn, JSON Resume, etc.</p>
+        <p className="line-clamp-1 text-xs opacity-75">{t`LinkedIn, JSON Resume, etc.`}</p>
       </div>
     </BaseCard>
   );

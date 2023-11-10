@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { Input, Label, Popover, PopoverContent, PopoverTrigger } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { HexColorPicker } from "react-colorful";
@@ -16,7 +17,7 @@ export const ThemeSection = () => {
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
           {getSectionIcon("theme")}
-          <h2 className="line-clamp-1 text-3xl font-bold">Theme</h2>
+          <h2 className="line-clamp-1 text-3xl font-bold">{t`Theme`}</h2>
         </div>
       </header>
 
@@ -39,7 +40,7 @@ export const ThemeSection = () => {
         </div>
 
         <div className="space-y-1.5">
-          <Label htmlFor="theme.primary">Primary Color</Label>
+          <Label htmlFor="theme.primary">{t`Primary Color`}</Label>
           <div className="relative">
             <Popover>
               <PopoverTrigger asChild>
@@ -69,7 +70,7 @@ export const ThemeSection = () => {
         </div>
 
         <div className="space-y-1.5">
-          <Label htmlFor="theme.primary">Background Color</Label>
+          <Label htmlFor="theme.primary">{t`Background Color`}</Label>
           <div className="relative">
             <Popover>
               <PopoverTrigger asChild>
@@ -99,7 +100,7 @@ export const ThemeSection = () => {
         </div>
 
         <div className="space-y-1.5">
-          <Label htmlFor="theme.primary">Text Color</Label>
+          <Label htmlFor="theme.primary">{t`Text Color`}</Label>
           <div className="relative">
             <Popover>
               <PopoverTrigger asChild>

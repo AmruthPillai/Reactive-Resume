@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { t } from "@lingui/macro";
 import { Check, DownloadSimple, Warning } from "@phosphor-icons/react";
 import {
   JsonResume,
@@ -141,7 +142,7 @@ export const ImportDialog = () => {
         toast({
           variant: "error",
           icon: <Warning size={16} weight="bold" />,
-          title: "An error occurred while validating the file.",
+          title: t`An error occurred while validating the file.`,
         });
       }
     }
@@ -186,7 +187,7 @@ export const ImportDialog = () => {
       toast({
         variant: "error",
         icon: <Warning size={16} weight="bold" />,
-        title: "An error occurred while importing your resume.",
+        title: t`An error occurred while importing your resume.`,
         description: importError?.message,
       });
     }
@@ -206,12 +207,11 @@ export const ImportDialog = () => {
               <DialogTitle>
                 <div className="flex items-center space-x-2.5">
                   <DownloadSimple />
-                  <h2>Import an existing resume</h2>
+                  <h2>{t`Import an existing resume`}</h2>
                 </div>
               </DialogTitle>
               <DialogDescription>
-                Upload a file from an external source to parse an existing resume and import it into
-                Reactive Resume for easier editing.
+                {t`Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing.`}
               </DialogDescription>
             </DialogHeader>
 
@@ -220,20 +220,24 @@ export const ImportDialog = () => {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Type</FormLabel>
+                  <FormLabel>{t`Filetype`}</FormLabel>
                   <FormControl>
                     <Select value={field.value} onValueChange={field.onChange}>
                       <SelectTrigger>
-                        <SelectValue placeholder="Please select a file type" />
+                        <SelectValue placeholder={t`Please select a file type`} />
                       </SelectTrigger>
                       <SelectContent>
+                        {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
                         <SelectItem value="reactive-resume-json">
                           Reactive Resume (.json)
                         </SelectItem>
+                        {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
                         <SelectItem value="reactive-resume-v3-json">
                           Reactive Resume v3 (.json)
                         </SelectItem>
+                        {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
                         <SelectItem value="json-resume-json">JSON Resume (.json)</SelectItem>
+                        {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
                         <SelectItem value="linkedin-data-export-zip">
                           LinkedIn Data Export (.zip)
                         </SelectItem>
@@ -250,7 +254,7 @@ export const ImportDialog = () => {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>File</FormLabel>
+                  <FormLabel>{t`File`}</FormLabel>
                   <FormControl>
                     <Input
                       type="file"
@@ -263,14 +267,22 @@ export const ImportDialog = () => {
                     />
                   </FormControl>
                   <FormMessage />
-                  {accept && <FormDescription>Accepts only {accept} files</FormDescription>}
+                  {accept && (
+                    <FormDescription>
+                      {t({
+                        message: `Accepts only ${accept} files`,
+                        comment:
+                          "Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.",
+                      })}
+                    </FormDescription>
+                  )}
                 </FormItem>
               )}
             />
 
             {validationResult?.isValid === false && validationResult.errors !== undefined && (
               <div className="space-y-2">
-                <Label className="text-error">Errors during Validation</Label>
+                <Label className="text-error">{t`Errors`}</Label>
                 <ScrollArea orientation="vertical" className="h-[180px]">
                   <div className="whitespace-pre-wrap rounded bg-secondary-accent p-4 font-mono text-xs leading-relaxed">
                     {JSON.stringify(validationResult.errors, null, 4)}
@@ -283,25 +295,25 @@ export const ImportDialog = () => {
               <AnimatePresence presenceAffectsLayout>
                 {(!validationResult ?? false) && (
                   <Button type="button" onClick={onValidate}>
-                    Validate
+                    {t`Validate`}
                   </Button>
                 )}
 
                 {validationResult !== null && !validationResult.isValid && (
                   <Button type="button" variant="secondary" onClick={onReset}>
-                    Reset
+                    {t`Discard`}
                   </Button>
                 )}
 
                 {validationResult !== null && validationResult.isValid && (
                   <>
                     <Button type="button" onClick={onImport} disabled={loading}>
-                      Import
+                      {t`Import`}
                     </Button>
 
                     <Button disabled type="button" variant="success">
                       <Check size={16} weight="bold" className="mr-2" />
-                      Validated
+                      {t`Validated`}
                     </Button>
                   </>
                 )}

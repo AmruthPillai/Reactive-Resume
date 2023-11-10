@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { t } from "@lingui/macro";
 import { awardSchema, defaultAward } from "@reactive-resume/schema";
 import {
   FormControl,
@@ -35,9 +36,9 @@ export const AwardsDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Title</FormLabel>
+              <FormLabel>{t({ message: "Title", context: "Name of the Award" })}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="3rd Runner Up" />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -49,9 +50,9 @@ export const AwardsDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Awarder</FormLabel>
+              <FormLabel>{t`Awarder`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="TechCrunch Disrupt SF" />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -63,9 +64,15 @@ export const AwardsDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Date</FormLabel>
+              <FormLabel>{t`Date`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Aug 2019" />
+                <Input
+                  {...field}
+                  placeholder={t({
+                    message: "March 2023",
+                    comment: "The month and year should be uniform across all languages.",
+                  })}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -77,9 +84,9 @@ export const AwardsDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1">
-              <FormLabel>Website</FormLabel>
+              <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
-                <URLInput {...field} placeholder="https://techcrunch.com/events/disrupt-sf-2019" />
+                <URLInput {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -91,7 +98,7 @@ export const AwardsDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-1 sm:col-span-2">
-              <FormLabel>Summary</FormLabel>
+              <FormLabel>{t`Summary`}</FormLabel>
               <FormControl>
                 <RichInput
                   {...field}

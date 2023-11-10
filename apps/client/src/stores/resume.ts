@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { createId } from "@paralleldrive/cuid2";
 import { ResumeDto } from "@reactive-resume/dto";
 import { CustomSectionGroup, defaultSection, SectionKey } from "@reactive-resume/schema";
@@ -41,7 +42,7 @@ export const useResumeStore = create<ResumeStore>()(
         const section: CustomSectionGroup = {
           ...defaultSection,
           id: createId(),
-          name: "Custom Section",
+          name: t`Custom Section`,
           items: [],
         };
 

@@ -38,9 +38,14 @@ Thumbs.db
 
 # Generated Files
 .nx
+.swc
 stats.html
 libs/prisma
 
 # Environment Variables
 *.env*
 !.env.example
+
+# Lingui Compiled Messages
+apps/client/src/locales/_build/
+apps/client/src/locales/**/*.js

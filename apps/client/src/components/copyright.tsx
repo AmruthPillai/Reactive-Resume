@@ -1,3 +1,4 @@
+import { t, Trans } from "@lingui/macro";
 import { cn } from "@reactive-resume/utils";
 
 type Props = {
@@ -12,23 +13,29 @@ export const Copyright = ({ className }: Props) => (
     )}
   >
     <span>
-      Licensed under{" "}
-      <a
-        target="_blank"
-        rel="noopener noreferrer nofollow"
-        href="https://github.com/AmruthPillai/Reactive-Resume/blob/main/LICENSE"
-      >
-        MIT
-      </a>
+      <Trans>
+        Licensed under{" "}
+        <a
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          href="https://github.com/AmruthPillai/Reactive-Resume/blob/main/LICENSE"
+        >
+          MIT
+        </a>
+      </Trans>
     </span>
-    <span>By the community, for the community.</span>
+    <span>{t`By the community, for the community.`}</span>
     <span>
-      A passion project by{" "}
-      <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.amruthpillai.com/">
-        Amruth Pillai
-      </a>
+      <Trans>
+        A passion project by{" "}
+        <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.amruthpillai.com/">
+          Amruth Pillai
+        </a>
+      </Trans>
     </span>
 
-    <span className="mt-2 font-bold">Reactive Resume v{appVersion}</span>
+    <span className="mt-4">
+      {t`Reactive Resume`} {"v" + appVersion}
+    </span>
   </div>
 );

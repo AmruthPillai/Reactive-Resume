@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { t } from "@lingui/macro";
 import { X } from "@phosphor-icons/react";
 import { defaultInterest, interestSchema } from "@reactive-resume/schema";
 import {
@@ -36,9 +37,9 @@ export const InterestsDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="col-span-2">
-              <FormLabel>Name</FormLabel>
+              <FormLabel>{t`Name`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Video Games" />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -51,12 +52,12 @@ export const InterestsDialog = () => {
           render={({ field }) => (
             <div className="col-span-2 space-y-3">
               <FormItem>
-                <FormLabel>Keywords</FormLabel>
+                <FormLabel>{t`Keywords`}</FormLabel>
                 <FormControl>
-                  <BadgeInput {...field} placeholder="FIFA 23, Call of Duty, etc." />
+                  <BadgeInput {...field} />
                 </FormControl>
                 <FormDescription>
-                  You can add multiple keywords by separating them with a comma.
+                  {t`You can add multiple keywords by separating them with a comma or pressing enter.`}
                 </FormDescription>
                 <FormMessage />
               </FormItem>

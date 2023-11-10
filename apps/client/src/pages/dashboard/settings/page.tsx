@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { Separator } from "@reactive-resume/ui";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
@@ -11,7 +12,9 @@ import { SecuritySettings } from "./_sections/security";
 export const SettingsPage = () => (
   <>
     <Helmet>
-      <title>Settings - Reactive Resume</title>
+      <title>
+        {t`Settings`} - {t`Reactive Resume`}
+      </title>
     </Helmet>
 
     <div className="max-w-2xl space-y-8 pb-12">
@@ -20,7 +23,7 @@ export const SettingsPage = () => (
         animate={{ opacity: 1, x: 0 }}
         className="text-4xl font-bold tracking-tight"
       >
-        Settings
+        {t`Settings`}
       </motion.h1>
 
       <AccountSettings />

@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { List, SquaresFour } from "@phosphor-icons/react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@reactive-resume/ui";
 import { motion } from "framer-motion";
@@ -15,7 +16,9 @@ export const ResumesPage = () => {
   return (
     <>
       <Helmet>
-        <title>Resumes - Reactive Resume</title>
+        <title>
+          {t`Resumes`} - {t`Reactive Resume`}
+        </title>
       </Helmet>
 
       <Tabs value={layout} onValueChange={(value) => setLayout(value as Layout)}>
@@ -25,17 +28,17 @@ export const ResumesPage = () => {
             animate={{ opacity: 1, x: 0 }}
             className="text-4xl font-bold tracking-tight"
           >
-            Resumes
+            {t`Resumes`}
           </motion.h1>
 
           <TabsList>
             <TabsTrigger value="grid" className="h-8 w-8 p-0 sm:h-8 sm:w-auto sm:px-4">
               <SquaresFour />
-              <span className="ml-2 hidden sm:block">Grid</span>
+              <span className="ml-2 hidden sm:block">{t`Grid`}</span>
             </TabsTrigger>
             <TabsTrigger value="list" className="h-8 w-8 p-0 sm:h-8 sm:w-auto sm:px-4">
               <List />
-              <span className="ml-2 hidden sm:block">List</span>
+              <span className="ml-2 hidden sm:block">{t`List`}</span>
             </TabsTrigger>
           </TabsList>
         </div>

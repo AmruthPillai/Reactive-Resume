@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { ResumeDto, UpdateResumeDto } from "@reactive-resume/dto";
 import { useMutation } from "@tanstack/react-query";
 import { AxiosError, AxiosResponse } from "axios";
@@ -31,7 +32,7 @@ export const updateResume = async (data: UpdateResumeDto) => {
 
       toast({
         variant: "error",
-        title: "There was an error while updating your resume.",
+        title: t`There was an error while updating your resume.`,
         description: message,
       });
     }

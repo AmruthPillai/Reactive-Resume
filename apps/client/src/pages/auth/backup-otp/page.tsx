@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { t } from "@lingui/macro";
 import { Warning } from "@phosphor-icons/react";
 import { twoFactorBackupSchema } from "@reactive-resume/dto";
 import { usePasswordToggle } from "@reactive-resume/hooks";
@@ -49,7 +50,7 @@ export const BackupOtpPage = () => {
         toast({
           variant: "error",
           icon: <Warning size={16} weight="bold" />,
-          title: "An error occurred while trying to sign in",
+          title: t`An error occurred while trying to sign in to your account.`,
           description: message,
         });
       }
@@ -59,9 +60,9 @@ export const BackupOtpPage = () => {
   return (
     <div className="space-y-8">
       <div className="space-y-1.5">
-        <h2 className="text-2xl font-semibold tracking-tight">Use your backup code</h2>
+        <h2 className="text-2xl font-semibold tracking-tight">{t`Use your backup code`}</h2>
         <h6 className="leading-relaxed opacity-60">
-          Enter one of the 10 backup codes you saved when you enabled two-factor authentication.
+          {t`Enter one of the 10 backup codes you saved when you enabled two-factor authentication.`}
         </h6>
       </div>
 
@@ -77,12 +78,12 @@ export const BackupOtpPage = () => {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Backup Code</FormLabel>
+                  <FormLabel>{t`Backup Code`}</FormLabel>
                   <FormControl>
                     <Input
                       pattern="[a-z0-9]{10}"
                       placeholder="a1b2c3d4e5"
-                      title="may contain lowercase letters or numbers, and must be exactly 10 characters."
+                      title={t`Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters.`}
                       {...field}
                     />
                   </FormControl>
@@ -92,7 +93,7 @@ export const BackupOtpPage = () => {
             />
 
             <Button type="submit" disabled={loading} className="mt-4 w-full">
-              Sign in
+              {t`Sign in`}
             </Button>
           </form>
         </Form>

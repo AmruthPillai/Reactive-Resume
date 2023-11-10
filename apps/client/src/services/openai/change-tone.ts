@@ -1,3 +1,7 @@
+/* eslint-disable lingui/text-restrictions */
+
+import { t } from "@lingui/macro";
+
 import { openai } from "./client";
 
 const PROMPT = `You are an AI writing assistant specialized in writing copy for resumes.
@@ -23,7 +27,7 @@ export const changeTone = async (text: string, mood: Mood) => {
   });
 
   if (result.choices.length === 0) {
-    throw new Error("OpenAI did not return any choices for your text.");
+    throw new Error(t`OpenAI did not return any choices for your text.`);
   }
 
   return result.choices[0].text;

@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { Plus, PlusCircle } from "@phosphor-icons/react";
 import {
   Award,
@@ -50,7 +51,15 @@ export const LeftSidebar = () => {
         </Button>
 
         <div className="flex flex-col items-center justify-center gap-y-2">
-          <SectionIcon id="basics" name="Basics" onClick={() => scrollIntoView("#basics")} />
+          <SectionIcon
+            id="basics"
+            onClick={() => scrollIntoView("#basics")}
+            name={t({
+              message: "Basics",
+              context:
+                "The Basics section of a Resume consists of User's Picture, Full Name, Location etc.",
+            })}
+          />
           <SectionIcon id="summary" onClick={() => scrollIntoView("#summary")} />
           <SectionIcon id="profiles" onClick={() => scrollIntoView("#profiles")} />
           <SectionIcon id="experience" onClick={() => scrollIntoView("#experience")} />
@@ -68,10 +77,11 @@ export const LeftSidebar = () => {
           <SectionIcon
             id="custom"
             variant="outline"
-            name="Add a new section"
+            name={t`Add a new section`}
             icon={<Plus size={14} />}
             onClick={() => {
               addSection();
+              // eslint-disable-next-line lingui/no-unlocalized-strings
               scrollIntoView("& > section:last-of-type");
             }}
           />
@@ -184,7 +194,7 @@ export const LeftSidebar = () => {
 
           <Button size="lg" variant="outline" onClick={addSection}>
             <PlusCircle />
-            <span className="ml-2">Add a new section</span>
+            <span className="ml-2">{t`Add a new section`}</span>
           </Button>
         </div>
       </ScrollArea>
