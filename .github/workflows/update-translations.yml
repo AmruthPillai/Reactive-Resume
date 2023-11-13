@@ -17,7 +17,7 @@ jobs:
         uses: crowdin/github-action@v1.14.1
         with:
           upload_sources: true
-          upload_translations: true
+          upload_translations: false
           download_translations: false
 
         env:
