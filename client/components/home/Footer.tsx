@@ -1,5 +1,3 @@
-import GitHubButton from 'react-github-btn';
-
 import { useAppSelector } from '@/store/hooks';
 
 import { Copyright } from '../shared/Copyright';
@@ -23,19 +21,6 @@ const Footer = () => {
             A free and open-source resume builder that simplifies the tasks of creating, updating, and sharing your
             resume.
           </p>
-
-          <div className="mt-6">
-            <GitHubButton
-              data-size="large"
-              data-show-count="true"
-              data-icon="octicon-star"
-              data-color-scheme={theme ? 'dark' : 'light'}
-              href="https://github.com/AmruthPillai/Reactive-Resume"
-              aria-label="Star AmruthPillai/Reactive-Resume on GitHub"
-            >
-              Star
-            </GitHubButton>
-          </div>
 
           <Copyright className="mt-4" />
         </div>

@@ -26,7 +26,7 @@ const Home: NextPage = () => (
       <LogoSection />
 
       {/* Statistics */}
-      <StatsSection />
+      {/* <StatsSection /> */}
     </main>
 
     <Footer />

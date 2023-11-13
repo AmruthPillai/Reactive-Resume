@@ -100,7 +100,6 @@ const LoginModal: React.FC = () => {
       </InputAdornment>
     );
   };
-
   return (
     <BaseModal
       icon={<Login />}

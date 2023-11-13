@@ -1,3 +1,4 @@
+'use client';
 import { Add, Star } from '@mui/icons-material';
 import { Button, Divider, IconButton, SwipeableDrawer, Tooltip, useMediaQuery, useTheme } from '@mui/material';
 import cloneDeep from 'lodash/cloneDeep';

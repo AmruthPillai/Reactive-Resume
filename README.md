@@ -30,20 +30,15 @@ Thank you to the 400,000+ people using the app! 🙏
 
 - [Reactive Resume](#reactive-resume)
   - [Go to App | Docs](#go-to-app--docs)
+  - [❗️ Important Notice](#️-important-notice)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Languages](#languages)
   - [Tutorial](#tutorial)
   - [Build from Source](#build-from-source)
-  - [Contributing](#contributing)
   - [Report Bugs and Feature Requests](#report-bugs-and-feature-requests)
-  - [Donations](#donations)
-    - [GitHub Sponsor](#github-sponsor)
-    - [PayPal](#paypal)
   - [GitHub Star History](#github-star-history)
   - [Infrastructure](#infrastructure)
-  - [Contributors Wall](#contributors-wall)
-  - [License](#license)
 
 ## Features
 
@@ -122,28 +117,9 @@ Initially building the image and project on Gitpod will take at least ~10 minute
 
 For extensive information on how to build the app on your local machine, head over to the docs [Source Code](https://docs.rxresu.me/source-code) section.
 
-## Contributing
-
-This project makes use of [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) style and workflow for commit messages to ensure that the CHANGELOG is auto-generated. In general, this project follows the "fork-and-pull" Git workflow.
-
-1. **Fork** the repo on GitHub
-2. **Clone** the project to your own machine
-3. **Commit** changes to your own branch
-4. **Push** your work back up to your fork
-5. Submit a **Pull Request** so that we can review your changes
-
-NOTE: Be sure to merge the latest from `main` before making a pull request!
-
 ## Report Bugs and Feature Requests
 
 Use the [GitHub Issues](https://github.com/AmruthPillai/Reactive-Resume/issues/new/choose) platform to notify me about bugs or new features that you would like to see in Reactive Resume. Please check before creating new issues as there might already be one.
-
-## Donations
-
-Reactive Resume would be nothing without the folks who supported me and kept the project alive in the beginning, and your continued support is what keeps me going. If you found Reactive Resume to be useful, helpful or just insightful and appreciate the effort I took to make the project, please consider donating as little or as much as you can.
-
-### [GitHub Sponsor](https://github.com/sponsors/AmruthPillai)
-### [PayPal](https://paypal.me/RajaRajanA)
 
 ## GitHub Star History
 
@@ -156,24 +132,3 @@ Reactive Resume would be nothing without the folks who supported me and kept the
 - [PostgreSQL](https://www.postgresql.org/), database
 - [DigitalOcean](https://www.digitalocean.com/), infrastructure provider
 - [Crowdin](https://translate.rxresu.me/), translation management platform
-
-&nbsp;
-
-<a href="https://pillai.xyz/digitalocean">
-  <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/PoweredByDO/DO_Powered_by_Badge_blue.svg" width="200px" />
-</a>
-
-## Contributors Wall
-<a href="https://github.com/AmruthPillai/Reactive-Resume/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=AmruthPillai/Reactive-Resume" />
-</a>
-
-
-_Note: It may take up to 24h for the [contrib.rocks](https://contrib.rocks/image?repo=AmruthPillai/Reactive-Resume) plugin to update because it's refreshed once a day._
-
-## License
-
-Reactive Resume is packaged and distributed using the [MIT License](https://choosealicense.com/licenses/mit/) which allows for commercial use, distribution, modification and private use provided that all copies of the software contain the same license and copyright.
-
-_By the community, for the community._  
-A passion project by [Amruth Pillai](https://amruthpillai.com/)

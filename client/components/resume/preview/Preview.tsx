@@ -1,3 +1,4 @@
+'use client';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 
