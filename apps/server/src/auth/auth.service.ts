@@ -210,7 +210,7 @@ export class AuthService {
     });
   }
 
-  // Two Factor Authentication Flows
+  // Two-Factor Authentication Flows
   async setup2FASecret(email: string) {
     // If the user already has 2FA enabled, throw an error
     const user = await this.userService.findOneByIdentifier(email);

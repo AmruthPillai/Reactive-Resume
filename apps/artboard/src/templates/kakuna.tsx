@@ -27,6 +27,7 @@ import { TemplateProps } from "../types/template";
 const Header = () => {
   const basics = useArtboardStore((state) => state.resume.basics);
   const profiles = useArtboardStore((state) => state.resume.sections.profiles);
+  const fontSize = useArtboardStore((state) => state.resume.metadata.typography.font.size);
 
   return (
     <div className="flex flex-col items-center justify-center space-y-2 pb-2 text-center">
@@ -81,8 +82,9 @@ const Header = () => {
                   className="text-sm"
                   icon={
                     <img
-                      width="12"
-                      height="12"
+                      className="ph"
+                      width={fontSize}
+                      height={fontSize}
                       alt={item.network}
                       src={`https://cdn.simpleicons.org/${item.icon}`}
                     />

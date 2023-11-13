@@ -133,7 +133,7 @@ export class PrinterService {
         return tempHtml;
       }, pageElement);
 
-      pagesBuffer.push(await page.pdf({ width, height }));
+      pagesBuffer.push(await page.pdf({ width, height, printBackground: true }));
 
       await page.evaluate((tempHtml: string) => {
         document.body.innerHTML = tempHtml;

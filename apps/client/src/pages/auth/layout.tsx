@@ -2,7 +2,9 @@ import { t } from "@lingui/macro";
 import { useMemo } from "react";
 import { Link, matchRoutes, Outlet, useLocation } from "react-router-dom";
 
+import { LocaleSwitch } from "@/client/components/locale-switch";
 import { Logo } from "@/client/components/logo";
+import { ThemeSwitch } from "@/client/components/theme-switch";
 
 import { SocialAuth } from "./_components/social-auth";
 
@@ -15,10 +17,17 @@ export const AuthLayout = () => {
 
   return (
     <div className="flex h-screen w-screen">
-      <div className="flex w-full flex-col justify-center gap-y-8 px-12 sm:mx-auto sm:basis-[420px] sm:px-0 lg:basis-[480px] lg:px-12">
-        <Link to="/" className="h-24 w-24">
-          <Logo className="-ml-3" size={96} />
-        </Link>
+      <div className="relative flex w-full flex-col justify-center gap-y-8 px-12 sm:mx-auto sm:basis-[420px] sm:px-0 lg:basis-[480px] lg:px-12">
+        <div className="flex items-center justify-between">
+          <Link to="/" className="h-24 w-24">
+            <Logo className="-ml-3" size={96} />
+          </Link>
+
+          <div className="inset-x-0 bottom-0 space-x-2 text-right lg:absolute lg:p-12 lg:text-center">
+            <LocaleSwitch />
+            <ThemeSwitch />
+          </div>
+        </div>
 
         <Outlet />
 
@@ -45,7 +54,7 @@ export const AuthLayout = () => {
         <img
           width={1920}
           height={1080}
-          alt={t`Open books on a table`}
+          alt="Open books on a table"
           className="h-screen w-full object-cover object-center"
           src="/backgrounds/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg"
         />

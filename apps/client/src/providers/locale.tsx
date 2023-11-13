@@ -1,34 +1,44 @@
 import "@/client/libs/dayjs";
 
 import { i18n } from "@lingui/core";
-import { detect, fromNavigator, fromUrl } from "@lingui/detect-locale";
+import { detect, fromNavigator, fromStorage, fromUrl } from "@lingui/detect-locale";
 import { I18nProvider } from "@lingui/react";
-import get from "lodash.get";
 import { useEffect } from "react";
 
 import { defaultLocale, dynamicActivate } from "../libs/lingui";
+import { updateUser } from "../services/user";
 import { useAuthStore } from "../stores/auth";
-import { useResumeStore } from "../stores/resume";
 
 type Props = {
   children: React.ReactNode;
 };
 
 export const LocaleProvider = ({ children }: Props) => {
-  const userLocale = useAuthStore((state) => get(state.user, "locale", null));
-  const resumeLocale = useResumeStore((state) => get(state.resume, "data.metadata.locale", null));
+  const userLocale = useAuthStore((state) => state.user?.locale);
 
   useEffect(() => {
     const detectedLocale = detect(
-      resumeLocale,
-      userLocale,
-      fromUrl("lang"),
+      fromUrl("locale"),
+      fromStorage("locale"),
       fromNavigator(),
+      userLocale,
       defaultLocale,
     )!;
 
     dynamicActivate(detectedLocale);
-  }, [userLocale, resumeLocale]);
+  }, [userLocale]);
 
   return <I18nProvider i18n={i18n}>{children}</I18nProvider>;
+};
+
+export const changeLanguage = async (locale: string) => {
+  // Update locale in local storage
+  window.localStorage.setItem("locale", locale);
+
+  // Update locale in user profile, if authenticated
+  const state = useAuthStore.getState();
+  if (state.user) await updateUser({ locale }).catch(() => null);
+
+  // Reload the page for language switch to take effect
+  window.location.reload();
 };

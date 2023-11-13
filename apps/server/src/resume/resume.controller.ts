@@ -126,7 +126,6 @@ export class ResumeController {
 
       return { url };
     } catch (error) {
-      console.log(error);
       Logger.error(error);
       throw new InternalServerErrorException(error);
     }

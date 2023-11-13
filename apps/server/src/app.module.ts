@@ -8,6 +8,7 @@ import { join } from "path";
 import { AuthModule } from "./auth/auth.module";
 import { CacheModule } from "./cache/cache.module";
 import { ConfigModule } from "./config/config.module";
+import { ContributorsModule } from "./contributors/contributors.module";
 import { DatabaseModule } from "./database/database.module";
 import { HealthModule } from "./health/health.module";
 import { MailModule } from "./mail/mail.module";
@@ -36,6 +37,7 @@ import { UtilsModule } from "./utils/utils.module";
     StorageModule,
     PrinterModule,
     TranslationModule,
+    ContributorsModule,
 
     // Static Assets
     ServeStaticModule.forRoot({

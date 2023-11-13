@@ -36,7 +36,7 @@ type ComboboxPropsMultiple = {
 
 export type ComboboxProps = ComboboxPropsSingle | ComboboxPropsMultiple;
 
-export const handleSingleSelect = (props: ComboboxPropsSingle, option: ComboboxOption) => {
+const handleSingleSelect = (props: ComboboxPropsSingle, option: ComboboxOption) => {
   if (props.clearable) {
     props.onValueChange?.(option.value === props.value ? "" : option.value);
   } else {
@@ -44,7 +44,7 @@ export const handleSingleSelect = (props: ComboboxPropsSingle, option: ComboboxO
   }
 };
 
-export const handleMultipleSelect = (props: ComboboxPropsMultiple, option: ComboboxOption) => {
+const handleMultipleSelect = (props: ComboboxPropsMultiple, option: ComboboxOption) => {
   if (props.value?.includes(option.value)) {
     if (!props.clearable && props.value.length === 1) return false;
     props.onValueChange?.(props.value.filter((value) => value !== option.value));

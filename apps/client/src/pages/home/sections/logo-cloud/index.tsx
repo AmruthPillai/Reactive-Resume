@@ -33,7 +33,7 @@ const Logo = ({ company }: LogoProps) => (
 const logoList: string[] = ["amazon", "google", "postman", "twilio", "zalando"];
 
 export const LogoCloudSection = () => (
-  <section className="relative py-24 sm:py-32">
+  <section id="logo-cloud" className="relative py-24 sm:py-32">
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <p className="text-center text-lg leading-relaxed">
         {t`Reactive Resume has helped people land jobs at these great companies:`}

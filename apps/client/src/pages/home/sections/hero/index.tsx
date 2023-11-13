@@ -10,13 +10,14 @@ import { HeroCTA } from "./call-to-action";
 import { Decoration } from "./decoration";
 
 export const HeroSection = () => (
-  <section className="relative">
+  <section id="hero" className="relative">
     <Decoration.Grid />
     <Decoration.Gradient />
 
     <div className="mx-auto max-w-7xl px-6 lg:flex lg:h-screen lg:items-center lg:px-12">
       <motion.div
         className="mx-auto max-w-3xl shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8"
+        viewport={{ once: true }}
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
       >
@@ -47,13 +48,17 @@ export const HeroSection = () => (
 
       <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-20">
         <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
-          <motion.div initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }}>
+          <motion.div
+            viewport={{ once: true }}
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+          >
             <Tilt {...defaultTiltProps}>
               <img
                 width={3600}
                 height={2078}
                 src="/screenshots/builder.png"
-                alt={t`Reactive Resume - Screenshot - Builder Screen`}
+                alt="Reactive Resume - Screenshot - Builder Screen"
                 className="w-[76rem] rounded-lg bg-background/5 shadow-2xl ring-1 ring-foreground/10"
               />
             </Tilt>

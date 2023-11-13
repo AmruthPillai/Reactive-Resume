@@ -85,10 +85,10 @@ export const ResumeCard = ({ resume }: Props) => {
                 layout
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                src={url}
                 loading="lazy"
                 alt={resume.title}
                 className="h-full w-full object-cover"
+                src={`${url}?cache=${new Date().getTime()}`}
               />
             )}
           </AnimatePresence>

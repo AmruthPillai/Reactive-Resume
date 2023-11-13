@@ -168,17 +168,26 @@ export const TypographySection = () => {
         <div className="space-y-1.5">
           <Label>{t`Options`}</Label>
 
-          <div className="py-2">
-            <div className="flex items-center gap-x-4">
-              <Switch
-                id="metadata.typography.underlineLinks"
-                checked={typography.underlineLinks}
-                onCheckedChange={(checked) => {
-                  setValue("metadata.typography.underlineLinks", checked);
-                }}
-              />
-              <Label htmlFor="metadata.typography.underlineLinks">{t`Underline Links`}</Label>
-            </div>
+          <div className="flex items-center gap-x-4 py-2">
+            <Switch
+              id="metadata.typography.hideIcons"
+              checked={typography.hideIcons}
+              onCheckedChange={(checked) => {
+                setValue("metadata.typography.hideIcons", checked);
+              }}
+            />
+            <Label htmlFor="metadata.typography.hideIcons">{t`Hide Icons`}</Label>
+          </div>
+
+          <div className="flex items-center gap-x-4 py-2">
+            <Switch
+              id="metadata.typography.underlineLinks"
+              checked={typography.underlineLinks}
+              onCheckedChange={(checked) => {
+                setValue("metadata.typography.underlineLinks", checked);
+              }}
+            />
+            <Label htmlFor="metadata.typography.underlineLinks">{t`Underline Links`}</Label>
           </div>
         </div>
       </main>

@@ -1,34 +1,31 @@
-import { HttpService } from "@nestjs/axios";
 import { Controller, Get, Header, Param } from "@nestjs/common";
-import { ConfigService } from "@nestjs/config";
 
-import { Config } from "../config/schema";
 import { UtilsService } from "../utils/utils.service";
+import { TranslationService } from "./translation.service";
 
 @Controller("translation")
 export class TranslationController {
   constructor(
-    private readonly httpService: HttpService,
-    private readonly configService: ConfigService<Config>,
+    private readonly translationService: TranslationService,
     private readonly utils: UtilsService,
   ) {}
 
-  private async fetchTranslations(locale: string) {
-    const distributionHash = this.configService.get("CROWDIN_DISTRIBUTION_HASH");
-    const response = await this.httpService.axiosRef.get(
-      `https://distributions.crowdin.net/${distributionHash}/content/${locale}/messages.json`,
+  @Get("/languages")
+  async languages() {
+    return this.utils.getCachedOrSet(
+      `translation:languages`,
+      async () => this.translationService.fetchLanguages(),
+      1000 * 60 * 60 * 24, // 24 hours
     );
-
-    return response.data;
   }
 
   @Get("/:locale")
   @Header("Content-Type", "application/octet-stream")
   @Header("Content-Disposition", 'attachment; filename="messages.po"')
-  async getTranslation(@Param("locale") locale: string) {
+  async translation(@Param("locale") locale: string) {
     return this.utils.getCachedOrSet(
       `translation:${locale}`,
-      async () => this.fetchTranslations(locale),
+      async () => this.translationService.fetchTranslations(locale),
       1000 * 60 * 60 * 24, // 24 hours
     );
   }

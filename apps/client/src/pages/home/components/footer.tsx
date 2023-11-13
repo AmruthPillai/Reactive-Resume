@@ -2,6 +2,7 @@ import { t } from "@lingui/macro";
 import { Separator } from "@reactive-resume/ui";
 
 import { Copyright } from "@/client/components/copyright";
+import { LocaleSwitch } from "@/client/components/locale-switch";
 import { Logo } from "@/client/components/logo";
 import { ThemeSwitch } from "@/client/components/theme-switch";
 
@@ -23,7 +24,8 @@ export const Footer = () => (
       </div>
 
       <div className="relative col-start-4">
-        <div className="absolute bottom-0 right-0">
+        <div className="absolute bottom-0 right-0 space-x-2">
+          <LocaleSwitch />
           <ThemeSwitch />
         </div>
       </div>

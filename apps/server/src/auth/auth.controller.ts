@@ -166,7 +166,7 @@ export class AuthController {
     response.status(200).send(data);
   }
 
-  // Two Factor Authentication Flows
+  // Two-Factor Authentication Flows
   @ApiTags("Two-Factor Auth")
   @Post("2fa/setup")
   @UseGuards(JwtGuard)

@@ -206,6 +206,7 @@ const Profiles = () => {
               label={item.username}
               icon={
                 <img
+                  className="ph"
                   width={fontSize}
                   height={fontSize}
                   alt={item.network}

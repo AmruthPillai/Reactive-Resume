@@ -452,7 +452,6 @@ export const sampleResume: ResumeData = {
     },
   },
   metadata: {
-    locale: "en-US",
     template: "pikachu",
     layout: [
       [
@@ -490,6 +489,7 @@ export const sampleResume: ResumeData = {
         size: 13,
       },
       lineHeight: 2,
+      hideIcons: false,
       underlineLinks: true,
     },
     notes:

@@ -36,6 +36,7 @@ type Props = { id: SectionKey };
 
 export const SectionOptions = ({ id }: Props) => {
   const { open } = useDialog(id);
+
   const setValue = useResumeStore((state) => state.setValue);
   const removeSection = useResumeStore((state) => state.removeSection);
 

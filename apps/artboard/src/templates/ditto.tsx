@@ -79,13 +79,13 @@ const Header = () => {
               </>
             )}
             {basics.customFields.map((item) => (
-              <>
-                <div key={item.id} className="flex items-center gap-x-1.5">
+              <Fragment key={item.id}>
+                <div className="flex items-center gap-x-1.5">
                   <i className={cn(`ph ph-bold ph-${item.icon}`, "text-primary")} />
                   <span>{[item.name, item.value].filter(Boolean).join(": ")}</span>
                 </div>
                 <div className="bg-text h-1 w-1 rounded-full last:hidden" />
-              </>
+              </Fragment>
             ))}
           </div>
         </div>
@@ -234,6 +234,7 @@ const Profiles = () => {
               label={item.username}
               icon={
                 <img
+                  className="ph"
                   width={fontSize}
                   height={fontSize}
                   alt={item.network}

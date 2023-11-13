@@ -45,8 +45,14 @@ export const ArtboardPage = () => {
     );
   }, [metadata]);
 
-  // Underline Links
+  // Typography Options
   useEffect(() => {
+    if (metadata.typography.hideIcons) {
+      document.querySelector("#root")!.classList.add("hide-icons");
+    } else {
+      document.querySelector("#root")!.classList.remove("hide-icons");
+    }
+
     if (metadata.typography.underlineLinks) {
       document.querySelector("#root")!.classList.add("underline-links");
     } else {

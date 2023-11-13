@@ -27,6 +27,7 @@ import { TemplateProps } from "../types/template";
 const Header = () => {
   const basics = useArtboardStore((state) => state.resume.basics);
   const profiles = useArtboardStore((state) => state.resume.sections.profiles);
+  const fontSize = useArtboardStore((state) => state.resume.metadata.typography.font.size);
 
   return (
     <div className="flex items-center justify-between space-x-4 border-b border-primary pb-5">
@@ -73,7 +74,7 @@ const Header = () => {
 
       {profiles.visible && profiles.items.length > 0 && (
         <div
-          className="grid gap-x-4 gap-y-1 self-end text-right"
+          className="grid gap-x-4 gap-y-1 text-right"
           style={{ gridTemplateColumns: `repeat(${profiles.columns}, auto)` }}
         >
           {profiles.items
@@ -86,8 +87,9 @@ const Header = () => {
                   className="text-sm"
                   icon={
                     <img
-                      width="12"
-                      height="12"
+                      className="ph"
+                      width={fontSize}
+                      height={fontSize}
                       alt={item.network}
                       src={`https://cdn.simpleicons.org/${item.icon}`}
                     />
@@ -108,7 +110,7 @@ const Summary = () => {
 
   return (
     <section id={section.id}>
-      <h4 className="mb-1 font-bold uppercase text-primary">{section.name}</h4>
+      <h4 className="font-bold uppercase text-primary">{section.name}</h4>
 
       <div
         className="wysiwyg"
@@ -180,7 +182,7 @@ const Section = <T,>({
 
   return (
     <section id={section.id} className="grid">
-      <h4 className="mb-1 font-bold uppercase text-primary">{section.name}</h4>
+      <h4 className="font-bold uppercase text-primary">{section.name}</h4>
 
       <div
         className="grid gap-3"

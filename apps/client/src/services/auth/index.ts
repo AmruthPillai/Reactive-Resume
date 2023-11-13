@@ -12,7 +12,7 @@ export * from "./email-verification/verify-email";
 export * from "./password-recovery/forgot-password";
 export * from "./password-recovery/reset-password";
 
-// Two Factor Authentication
+// Two-Factor Authentication
 export * from "./two-factor-authentication/backup-otp";
 export * from "./two-factor-authentication/disable";
 export * from "./two-factor-authentication/enable";

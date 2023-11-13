@@ -26,7 +26,6 @@ const DonateCard = () => (
             If you like the app and want to support keeping it free forever, please donate whatever
             you can afford to give.
           </p>
-          <p>Your donations could be tax-deductible, depending on your location.</p>
         </Trans>
       </CardDescription>
     </CardContent>

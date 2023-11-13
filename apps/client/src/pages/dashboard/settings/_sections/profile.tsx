@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { dynamicActivate, getLocales } from "@/client/libs/lingui";
+import { useLanguages } from "@/client/services/resume/translation";
 import { useUpdateUser, useUser } from "@/client/services/user";
 
 const formSchema = z.object({
@@ -21,6 +21,7 @@ type FormValues = z.infer<typeof formSchema>;
 
 export const ProfileSettings = () => {
   const { user } = useUser();
+  const { languages } = useLanguages();
   const { theme, setTheme } = useTheme();
   const { updateUser, loading } = useUpdateUser();
 
@@ -45,8 +46,10 @@ export const ProfileSettings = () => {
     setTheme(data.theme);
 
     if (user.locale !== data.locale) {
-      await dynamicActivate(data.locale);
+      window.localStorage.setItem("locale", data.locale);
       await updateUser({ locale: data.locale });
+
+      window.location.reload();
     }
 
     form.reset(data);
@@ -96,10 +99,7 @@ export const ProfileSettings = () => {
                     {...field}
                     value={field.value}
                     onValueChange={field.onChange}
-                    options={Object.entries(getLocales()).map(([value, label]) => ({
-                      label,
-                      value,
-                    }))}
+                    options={languages.map(({ locale, name }) => ({ label: name, value: locale }))}
                   />
                 </div>
                 <FormDescription>

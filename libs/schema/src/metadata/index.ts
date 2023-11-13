@@ -9,7 +9,6 @@ export const defaultLayout = [
 
 // Schema
 export const metadataSchema = z.object({
-  locale: z.string().default("en-US"),
   template: z.string().default("rhyhorn"),
   layout: z.array(z.array(z.array(z.string()))).default(defaultLayout), // pages -> columns -> sections
   css: z.object({
@@ -37,6 +36,7 @@ export const metadataSchema = z.object({
       size: z.number().default(14),
     }),
     lineHeight: z.number().default(1.5),
+    hideIcons: z.boolean().default(false),
     underlineLinks: z.boolean().default(true),
   }),
   notes: z.string().default(""),
@@ -47,7 +47,6 @@ export type Metadata = z.infer<typeof metadataSchema>;
 
 // Defaults
 export const defaultMetadata: Metadata = {
-  locale: "en-US",
   template: "rhyhorn",
   layout: defaultLayout,
   css: {
@@ -75,6 +74,7 @@ export const defaultMetadata: Metadata = {
       size: 14,
     },
     lineHeight: 1.5,
+    hideIcons: false,
     underlineLinks: true,
   },
   notes: "",
