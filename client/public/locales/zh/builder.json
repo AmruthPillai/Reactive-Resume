@@ -212,6 +212,21 @@
         "heading": "简介",
         "heading_one": "简介"
       },
+	  "skills": {
+        "heading": "技能"
+      },
+      "languages": {
+        "heading": "语言"
+      },
+      "interests": {
+        "heading": "兴趣爱好"
+      },
+	  "work": {
+        "heading": "工作经历"
+      },
+      "projects": {
+        "heading": "项目经历"
+      },
       "publications": {
         "form": {
           "publisher": {
@@ -301,7 +316,10 @@
         "page": {
           "break-line": {
             "primary": "换行",
-            "secondary": "在所有页面上显示一条线以标记 A4 页面的高度"
+            "secondary": {
+              "letter": "在所有页面上显示一条线以标记 A4 页面的高度",
+              "A4": "在所有页面上显示一条线以标记 A4 页面的高度"
+            }
           },
           "format": {
             "primary": "纸张尺寸",

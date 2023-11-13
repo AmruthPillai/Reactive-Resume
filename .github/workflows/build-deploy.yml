@@ -19,7 +19,7 @@ jobs:
 
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@v4.1.0
+        uses: actions/checkout@v4.1.1
 
       - name: Retrieve version from package.json
         id: version
@@ -79,7 +79,7 @@ jobs:
 
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@v4.1.0
+        uses: actions/checkout@v4.1.1
 
       - name: Retrieve version from package.json
         id: version
@@ -134,7 +134,7 @@ jobs:
 
     steps:
       - name: Install DigitalOcean CLI
-        uses: digitalocean/action-doctl@v2.4.1
+        uses: digitalocean/action-doctl@v2.5.0
         with:
           token: ${{ secrets.DIGITALOCEAN_TOKEN }}
 
