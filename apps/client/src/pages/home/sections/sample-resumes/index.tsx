@@ -1,4 +1,4 @@
-import { t } from "@lingui/macro";
+import { t, Trans } from "@lingui/macro";
 import { motion } from "framer-motion";
 
 const resumes = [
@@ -13,9 +13,17 @@ export const SampleResumesSection = () => (
     <div className="container flex flex-col gap-12 lg:min-h-[600px] lg:flex-row lg:items-start">
       <div className="space-y-4 lg:mt-16 lg:basis-96">
         <h2 className="text-4xl font-bold">{t`Sample Resumes`}</h2>
-        <p className="text-base leading-relaxed">
-          {t`Have a look at some of the resume created to showcase the templates available on Reactive Resume. They also serve some great examples to help guide the creation of your own resume.`}
-        </p>
+
+        <Trans>
+          <p className="leading-relaxed">
+            Have a look at some of the resume created to showcase the templates available on
+            Reactive Resume.
+          </p>
+
+          <p className="leading-relaxed">
+            They could also serve as examples to help guide the creation of your next resume.
+          </p>
+        </Trans>
       </div>
 
       <div className="w-full overflow-hidden lg:absolute lg:right-0 lg:max-w-[55%]">

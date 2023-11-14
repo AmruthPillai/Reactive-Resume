@@ -32,19 +32,12 @@ export const CustomField = ({ field, onChange, onRemove }: CustomFieldProps) => 
       <div className="flex items-end justify-between space-x-2">
         <Button
           size="icon"
-          variant="ghost"
+          variant="link"
           className="shrink-0"
           onPointerDown={(event) => controls.start(event)}
         >
           <DotsSixVertical />
         </Button>
-
-        {/* <Input
-          placeholder={t`Icon`}
-          value={field.icon}
-          className="!ml-0"
-          onChange={(event) => handleChange("icon", event.target.value)}
-        /> */}
 
         <Input
           placeholder={t`Name`}
@@ -61,7 +54,7 @@ export const CustomField = ({ field, onChange, onRemove }: CustomFieldProps) => 
 
         <Button
           size="icon"
-          variant="ghost"
+          variant="link"
           className="!ml-0 shrink-0"
           onClick={() => onRemove(field.id)}
         >

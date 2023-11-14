@@ -490,7 +490,7 @@ export const Azurill = ({ columns, isFirstPage = false }: TemplateProps) => {
       {isFirstPage && <Header />}
 
       <div className="grid grid-cols-3 gap-x-4">
-        <div className="sidebar group col-span-1 space-y-4">
+        <div className="sidebar group space-y-4">
           {sidebar.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}

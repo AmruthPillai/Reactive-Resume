@@ -1,6 +1,6 @@
 import { t } from "@lingui/macro";
 import { List, SquaresFour } from "@phosphor-icons/react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@reactive-resume/ui";
+import { ScrollArea, Tabs, TabsContent, TabsList, TabsTrigger } from "@reactive-resume/ui";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
@@ -21,7 +21,11 @@ export const ResumesPage = () => {
         </title>
       </Helmet>
 
-      <Tabs value={layout} onValueChange={(value) => setLayout(value as Layout)}>
+      <Tabs
+        value={layout}
+        onValueChange={(value) => setLayout(value as Layout)}
+        className="space-y-4"
+      >
         <div className="flex items-center justify-between">
           <motion.h1
             initial={{ opacity: 0, x: -50 }}
@@ -43,14 +47,14 @@ export const ResumesPage = () => {
           </TabsList>
         </div>
 
-        <div className="mt-12 md:mt-8">
+        <ScrollArea className="h-[calc(100vh-140px)] lg:h-[calc(100vh-88px)]">
           <TabsContent value="grid">
             <GridView />
           </TabsContent>
           <TabsContent value="list">
             <ListView />
           </TabsContent>
-        </div>
+        </ScrollArea>
       </Tabs>
     </>
   );

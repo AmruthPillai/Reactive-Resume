@@ -7,10 +7,10 @@ import { Logo } from "@/client/components/logo";
 import { ThemeSwitch } from "@/client/components/theme-switch";
 
 export const Footer = () => (
-  <footer className="fixed inset-x-0 bottom-0 -z-50 h-[400px] bg-background">
+  <footer className="bg-background">
     <Separator />
 
-    <div className="container grid py-6 sm:grid-cols-3 lg:grid-cols-4">
+    <div className="container grid py-12 sm:grid-cols-3 lg:grid-cols-4">
       <div className="flex flex-col gap-y-2">
         <Logo size={96} className="-ml-2" />
 
@@ -24,7 +24,7 @@ export const Footer = () => (
       </div>
 
       <div className="relative col-start-4">
-        <div className="absolute bottom-0 right-0 space-x-2">
+        <div className="absolute bottom-0 right-0 lg:space-x-2">
           <LocaleSwitch />
           <ThemeSwitch />
         </div>

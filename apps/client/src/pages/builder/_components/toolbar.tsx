@@ -50,19 +50,17 @@ export const BuilderToolbar = () => {
   return (
     <motion.div
       initial={{ opacity: 0, bottom: -64 }}
-      whileHover={{ opacity: 1, bottom: 0 }}
       animate={{ opacity: 0.3, bottom: -28 }}
-      className="fixed inset-x-0 mx-auto pb-4 pt-6 text-center"
+      whileHover={{ opacity: 1, bottom: 0 }}
+      className="fixed inset-x-0 mx-auto hidden pb-4 pt-6 text-center md:block"
     >
       <div className="inline-flex items-center justify-center rounded-full bg-background px-4 shadow-xl">
-        {/* Undo */}
         <Tooltip content={t`Undo`}>
           <Button size="icon" variant="ghost" className="rounded-none" onClick={() => undo()}>
             <ArrowCounterClockwise />
           </Button>
         </Tooltip>
 
-        {/* Redo */}
         <Tooltip content={t`Redo`}>
           <Button size="icon" variant="ghost" className="rounded-none" onClick={() => redo()}>
             <ArrowClockwise />
@@ -97,7 +95,6 @@ export const BuilderToolbar = () => {
 
         <Separator orientation="vertical" className="h-9" />
 
-        {/* Toggle Page Break Line */}
         <Tooltip content={t`Toggle Page Break Line`}>
           <Toggle
             className="rounded-none"
@@ -110,7 +107,6 @@ export const BuilderToolbar = () => {
           </Toggle>
         </Tooltip>
 
-        {/* Toggle Page Numbers */}
         <Tooltip content={t`Toggle Page Numbers`}>
           <Toggle
             className="rounded-none"
@@ -125,15 +121,13 @@ export const BuilderToolbar = () => {
 
         <Separator orientation="vertical" className="h-9" />
 
-        {/* Copy Link to Resume */}
         <Tooltip content={t`Copy Link to Resume`}>
           <Button size="icon" variant="ghost" className="rounded-none" disabled={!isPublic}>
             <LinkSimple />
           </Button>
         </Tooltip>
 
-        {/* Download PDF */}
-        <Tooltip content={t`Download PDF`}>
+        <Tooltip content={t`Export as PDF`}>
           <Button
             size="icon"
             variant="ghost"

@@ -19,8 +19,9 @@ export const ArtboardPage = () => {
     webfontloader.load({
       google: { families: [fontString] },
       active: () => {
+        const width = window.document.body.offsetWidth;
         const height = window.document.body.offsetHeight;
-        const message = { type: "PAGE_LOADED", payload: { height } };
+        const message = { type: "PAGE_LOADED", payload: { width, height } };
         window.postMessage(message, "*");
       },
     });

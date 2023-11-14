@@ -526,7 +526,7 @@ export const Pikachu = ({ columns, isFirstPage = false }: TemplateProps) => {
   return (
     <div className="space-y-4">
       <div className="grid grid-cols-3 space-x-6">
-        <div className="sidebar group col-span-1 space-y-4">
+        <div className="sidebar group space-y-4">
           {isFirstPage && <Picture className="w-full !max-w-none" />}
 
           {sidebar.map((section) => (

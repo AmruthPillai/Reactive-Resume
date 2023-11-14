@@ -35,7 +35,7 @@ export const AwardsDialog = () => {
           name="title"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1">
+            <FormItem>
               <FormLabel>{t({ message: "Title", context: "Name of the Award" })}</FormLabel>
               <FormControl>
                 <Input {...field} />
@@ -49,7 +49,7 @@ export const AwardsDialog = () => {
           name="awarder"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1">
+            <FormItem>
               <FormLabel>{t`Awarder`}</FormLabel>
               <FormControl>
                 <Input {...field} />
@@ -63,7 +63,7 @@ export const AwardsDialog = () => {
           name="date"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1">
+            <FormItem>
               <FormLabel>{t`Date`}</FormLabel>
               <FormControl>
                 <Input
@@ -83,7 +83,7 @@ export const AwardsDialog = () => {
           name="url"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1">
+            <FormItem>
               <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
                 <URLInput {...field} />
@@ -97,7 +97,7 @@ export const AwardsDialog = () => {
           name="summary"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1 sm:col-span-2">
+            <FormItem className="sm:col-span-2">
               <FormLabel>{t`Summary`}</FormLabel>
               <FormControl>
                 <RichInput

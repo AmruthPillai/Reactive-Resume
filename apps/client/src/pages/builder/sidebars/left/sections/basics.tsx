@@ -88,7 +88,7 @@ export const BasicsSection = () => {
           />
         </div>
 
-        <CustomFieldsSection className="col-span-2" />
+        <CustomFieldsSection className="sm:col-span-2" />
       </main>
     </section>
   );

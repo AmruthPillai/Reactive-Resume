@@ -503,7 +503,7 @@ export const Chikorita = ({ columns, isFirstPage = false }: TemplateProps) => {
           ))}
         </div>
 
-        <div className="sidebar group col-span-1 space-y-4 text-background">
+        <div className="sidebar group space-y-4 text-background">
           {sidebar.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}
@@ -511,7 +511,7 @@ export const Chikorita = ({ columns, isFirstPage = false }: TemplateProps) => {
       </div>
 
       <div className="absolute inset-0 grid grid-cols-3" style={{ top: -margin }}>
-        <div className="col-span-1 col-start-3 ml-2 bg-primary"></div>
+        <div className="col-start-3 ml-2 bg-primary"></div>
       </div>
     </div>
   );

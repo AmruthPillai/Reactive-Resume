@@ -35,7 +35,7 @@ export const ProfilesDialog = () => {
           name="network"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1">
+            <FormItem>
               <FormLabel>{t`Network`}</FormLabel>
               <FormControl>
                 {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
@@ -50,7 +50,7 @@ export const ProfilesDialog = () => {
           name="username"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1">
+            <FormItem>
               <FormLabel>{t`Username`}</FormLabel>
               <FormControl>
                 <Input {...field} placeholder="john.doe" />
@@ -64,7 +64,7 @@ export const ProfilesDialog = () => {
           name="url"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1 sm:col-span-2">
+            <FormItem className="sm:col-span-2">
               <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
                 <URLInput {...field} placeholder="https://linkedin.com/in/johndoe" />
@@ -78,7 +78,7 @@ export const ProfilesDialog = () => {
           name="icon"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-2">
+            <FormItem className="sm:col-span-2">
               <FormLabel htmlFor="iconSlug">{t`Icon`}</FormLabel>
               <FormControl>
                 <div className="flex items-center gap-x-2">

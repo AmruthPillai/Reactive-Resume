@@ -75,7 +75,7 @@ export const BuilderLayout = () => {
       <Sheet open={sheet.left.open} onOpenChange={sheet.left.setOpen}>
         <SheetContent
           side="left"
-          className="p-0 sm:max-w-xl"
+          className="top-16 p-0 sm:max-w-xl"
           showClose={false}
           onOpenAutoFocus={onOpenAutoFocus}
         >

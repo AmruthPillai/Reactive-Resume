@@ -35,7 +35,7 @@ export const ReferencesDialog = () => {
           name="name"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1">
+            <FormItem>
               <FormLabel>{t`Name`}</FormLabel>
               <FormControl>
                 <Input {...field} />
@@ -49,7 +49,7 @@ export const ReferencesDialog = () => {
           name="description"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1">
+            <FormItem>
               <FormLabel>{t`Description`}</FormLabel>
               <FormControl>
                 <Input {...field} />
@@ -63,7 +63,7 @@ export const ReferencesDialog = () => {
           name="url"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-2">
+            <FormItem className="sm:col-span-2">
               <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
                 <URLInput {...field} />
@@ -77,7 +77,7 @@ export const ReferencesDialog = () => {
           name="summary"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1 sm:col-span-2">
+            <FormItem className="sm:col-span-2">
               <FormLabel>{t`Summary`}</FormLabel>
               <FormControl>
                 <RichInput

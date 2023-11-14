@@ -35,7 +35,7 @@ export const CertificationsDialog = () => {
           name="name"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1">
+            <FormItem>
               <FormLabel>{t({ message: "Name", context: "Name of the Certification" })}</FormLabel>
               <FormControl>
                 <Input {...field} />
@@ -49,7 +49,7 @@ export const CertificationsDialog = () => {
           name="issuer"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1">
+            <FormItem>
               <FormLabel>{t`Issuer`}</FormLabel>
               <FormControl>
                 <Input {...field} />
@@ -63,7 +63,7 @@ export const CertificationsDialog = () => {
           name="date"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1">
+            <FormItem>
               <FormLabel>{t`Date`}</FormLabel>
               <FormControl>
                 <Input {...field} placeholder={t`March 2023`} />
@@ -77,7 +77,7 @@ export const CertificationsDialog = () => {
           name="url"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1">
+            <FormItem>
               <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
                 <URLInput {...field} placeholder="https://udemy.com/certificate/UC-..." />
@@ -91,7 +91,7 @@ export const CertificationsDialog = () => {
           name="summary"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1 sm:col-span-2">
+            <FormItem className="sm:col-span-2">
               <FormLabel>{t`Summary`}</FormLabel>
               <FormControl>
                 <RichInput

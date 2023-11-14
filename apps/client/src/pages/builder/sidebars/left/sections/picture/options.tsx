@@ -69,9 +69,7 @@ export const PictureOptions = () => {
   return (
     <div className="flex flex-col gap-y-5">
       <div className="grid grid-cols-3 items-center gap-x-6">
-        <Label htmlFor="picture.size" className="col-span-1">
-          {t`Size (in px)`}
-        </Label>
+        <Label htmlFor="picture.size">{t`Size (in px)`}</Label>
         <Input
           type="number"
           id="picture.size"
@@ -85,9 +83,7 @@ export const PictureOptions = () => {
       </div>
 
       <div className="grid grid-cols-3 items-center gap-x-6">
-        <Label htmlFor="picture.aspectRatio" className="col-span-1">
-          {t`Aspect Ratio`}
-        </Label>
+        <Label htmlFor="picture.aspectRatio">{t`Aspect Ratio`}</Label>
         <div className="col-span-2 flex items-center justify-between">
           <ToggleGroup
             type="single"
@@ -130,9 +126,7 @@ export const PictureOptions = () => {
       </div>
 
       <div className="grid grid-cols-3 items-center gap-x-6">
-        <Label htmlFor="picture.borderRadius" className="col-span-1">
-          {t`Border Radius`}
-        </Label>
+        <Label htmlFor="picture.borderRadius">{t`Border Radius`}</Label>
         <div className="col-span-2 flex items-center justify-between">
           <ToggleGroup
             type="single"
@@ -176,7 +170,7 @@ export const PictureOptions = () => {
 
       <div>
         <div className="grid grid-cols-3 items-start gap-x-6">
-          <div className="col-span-1">
+          <div>
             <Label>{t`Effects`}</Label>
           </div>
           <div className="col-span-2 space-y-4">

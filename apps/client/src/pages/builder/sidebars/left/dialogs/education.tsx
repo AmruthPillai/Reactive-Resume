@@ -35,7 +35,7 @@ export const EducationDialog = () => {
           name="institution"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1">
+            <FormItem>
               <FormLabel>{t`Institution`}</FormLabel>
               <FormControl>
                 <Input {...field} />
@@ -49,7 +49,7 @@ export const EducationDialog = () => {
           name="studyType"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1">
+            <FormItem>
               <FormLabel>
                 {t({
                   message: "Type of Study",
@@ -68,7 +68,7 @@ export const EducationDialog = () => {
           name="area"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1">
+            <FormItem>
               <FormLabel>
                 {t({
                   message: "Area of Study",
@@ -87,7 +87,7 @@ export const EducationDialog = () => {
           name="score"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1">
+            <FormItem>
               <FormLabel>
                 {t({
                   message: "Score",
@@ -106,7 +106,7 @@ export const EducationDialog = () => {
           name="date"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1 sm:col-span-2">
+            <FormItem className="sm:col-span-2">
               <FormLabel>{t`Date`}</FormLabel>
               <FormControl>
                 <Input {...field} placeholder={t`March 2023 - Present`} />
@@ -120,7 +120,7 @@ export const EducationDialog = () => {
           name="url"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1 sm:col-span-2">
+            <FormItem className="sm:col-span-2">
               <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
                 <URLInput {...field} />
@@ -134,7 +134,7 @@ export const EducationDialog = () => {
           name="summary"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1 sm:col-span-2">
+            <FormItem className="sm:col-span-2">
               <FormLabel>{t`Summary`}</FormLabel>
               <FormControl>
                 <RichInput

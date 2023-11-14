@@ -37,7 +37,7 @@ export const SkillsDialog = () => {
           name="name"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1">
+            <FormItem>
               <FormLabel>{t`Name`}</FormLabel>
               <FormControl>
                 <Input {...field} />
@@ -51,7 +51,7 @@ export const SkillsDialog = () => {
           name="description"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1">
+            <FormItem>
               <FormLabel>{t`Description`}</FormLabel>
               <FormControl>
                 <Input {...field} />
@@ -65,7 +65,7 @@ export const SkillsDialog = () => {
           name="level"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-2">
+            <FormItem className="sm:col-span-2">
               <FormLabel>{t`Level`}</FormLabel>
               <FormControl className="py-2">
                 <div className="flex items-center gap-x-4">
@@ -90,7 +90,7 @@ export const SkillsDialog = () => {
           name="keywords"
           control={form.control}
           render={({ field }) => (
-            <div className="col-span-2 space-y-3">
+            <div className="space-y-3 sm:col-span-2">
               <FormItem>
                 <FormLabel>{t`Keywords`}</FormLabel>
                 <FormControl>

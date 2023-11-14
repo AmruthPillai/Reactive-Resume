@@ -226,32 +226,31 @@ const Question5 = () => (
   </AccordionItem>
 );
 
-export const FAQSection = () => {
-  return (
-    <section id="faq" className="container relative py-24 sm:py-32">
-      <div className="grid gap-12 lg:grid-cols-3">
-        <div className="col-span-1 space-y-6">
-          <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
+export const FAQSection = () => (
+  <section id="faq" className="container relative py-24 sm:py-32">
+    <div className="grid gap-12 lg:grid-cols-3">
+      <div className="space-y-6">
+        <h2 className="text-4xl font-bold">Frequently Asked Questions</h2>
 
-          <p className="text-base leading-loose">
-            Here are some questions I often get asked about Reactive Resume.
-          </p>
+        <p className="text-base leading-loose">
+          Here are some questions I often get asked about Reactive Resume.
+        </p>
 
-          <p className="text-sm leading-loose">
-            Unfortunately, this section is available only in English, as I do not want to burden
-            translators with having to translate these large paragraphs of text.
-          </p>
-        </div>
-        <div className="col-span-2">
-          <Accordion collapsible type="single">
-            <Question1 />
-            <Question2 />
-            <Question3 />
-            <Question4 />
-            <Question5 />
-          </Accordion>
-        </div>
+        <p className="text-sm leading-loose">
+          Unfortunately, this section is available only in English, as I do not want to burden
+          translators with having to translate these large paragraphs of text.
+        </p>
       </div>
-    </section>
-  );
-};
+
+      <div className="col-span-2">
+        <Accordion collapsible type="single">
+          <Question1 />
+          <Question2 />
+          <Question3 />
+          <Question4 />
+          <Question5 />
+        </Accordion>
+      </div>
+    </div>
+  </section>
+);

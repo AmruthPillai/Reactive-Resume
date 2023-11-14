@@ -12,7 +12,7 @@ import { SupportSection } from "./sections/support";
 import { TestimonialsSection } from "./sections/testimonials";
 
 export const HomePage = () => (
-  <main className="relative isolate mb-[400px] overflow-hidden bg-background">
+  <main className="relative isolate bg-background">
     <Helmet>
       <title>
         {t`Reactive Resume`} - {t`A free and open-source resume builder`}

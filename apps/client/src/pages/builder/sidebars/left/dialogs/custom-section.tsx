@@ -49,7 +49,7 @@ export const CustomSectionDialog = () => {
           name="name"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1">
+            <FormItem>
               <FormLabel>{t`Name`}</FormLabel>
               <FormControl>
                 <Input {...field} />
@@ -63,7 +63,7 @@ export const CustomSectionDialog = () => {
           name="description"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1">
+            <FormItem>
               <FormLabel>{t`Description`}</FormLabel>
               <FormControl>
                 <Input {...field} />
@@ -77,7 +77,7 @@ export const CustomSectionDialog = () => {
           name="date"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1">
+            <FormItem>
               <FormLabel>{t`Date`}</FormLabel>
               <FormControl>
                 <Input {...field} />
@@ -91,7 +91,7 @@ export const CustomSectionDialog = () => {
           name="location"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1">
+            <FormItem>
               <FormLabel>{t`Location`}</FormLabel>
               <FormControl>
                 <Input {...field} />
@@ -105,7 +105,7 @@ export const CustomSectionDialog = () => {
           name="url"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-2">
+            <FormItem className="sm:col-span-2">
               <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
                 <URLInput {...field} />
@@ -119,7 +119,7 @@ export const CustomSectionDialog = () => {
           name="summary"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1 sm:col-span-2">
+            <FormItem className="sm:col-span-2">
               <FormLabel>{t`Summary`}</FormLabel>
               <FormControl>
                 <RichInput
@@ -140,7 +140,7 @@ export const CustomSectionDialog = () => {
           name="keywords"
           control={form.control}
           render={({ field }) => (
-            <div className="col-span-2 space-y-3">
+            <div className="space-y-3 sm:col-span-2">
               <FormItem>
                 <FormLabel>{t`Keywords`}</FormLabel>
                 <FormControl>

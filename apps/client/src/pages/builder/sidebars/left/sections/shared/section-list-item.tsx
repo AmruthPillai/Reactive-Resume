@@ -64,7 +64,7 @@ export const SectionListItem = ({
             !isDragging && "hover:bg-secondary",
           )}
         >
-          <DotsSixVertical size={12} />
+          <DotsSixVertical weight="bold" size={12} />
         </div>
 
         {/* List Item */}
@@ -80,7 +80,7 @@ export const SectionListItem = ({
               {description && <p className="text-xs leading-relaxed opacity-50">{description}</p>}
             </div>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="center" side="left" sideOffset={-16}>
+          <DropdownMenuContent>
             <DropdownMenuCheckboxItem checked={visible} onCheckedChange={onToggleVisibility}>
               <span className="-ml-0.5">{t`Visible`}</span>
             </DropdownMenuCheckboxItem>

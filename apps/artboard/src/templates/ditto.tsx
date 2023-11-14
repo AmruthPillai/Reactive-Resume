@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
     <div className="relative z-20 grid grid-cols-3 space-x-4">
-      <div className="col-span-1 mx-auto">
+      <div className="mx-auto">
         <Picture />
       </div>
 
@@ -530,7 +530,7 @@ export const Ditto = ({ columns, isFirstPage = false }: TemplateProps) => {
       {isFirstPage && <Header />}
 
       <div className="grid grid-cols-3 space-x-4">
-        <div className="sidebar group col-span-1 space-y-4">
+        <div className="sidebar group space-y-4">
           {sidebar.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}

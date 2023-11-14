@@ -33,7 +33,7 @@ export const LanguagesDialog = () => {
           name="name"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1">
+            <FormItem>
               <FormLabel>{t`Name`}</FormLabel>
               <FormControl>
                 <Input {...field} />
@@ -47,7 +47,7 @@ export const LanguagesDialog = () => {
           name="fluency"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-1">
+            <FormItem>
               <FormLabel>{t`Fluency`}</FormLabel>
               <FormControl>
                 <Input {...field} />
@@ -61,7 +61,7 @@ export const LanguagesDialog = () => {
           name="fluencyLevel"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="col-span-2">
+            <FormItem className="sm:col-span-2">
               <FormLabel>{t`Fluency (CEFR)`}</FormLabel>
               <FormControl className="py-2">
                 <div className="flex items-center gap-x-4">

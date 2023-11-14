@@ -38,6 +38,7 @@ export const PublicResumePage = () => {
       if (event.origin !== window.location.origin) return;
 
       if (event.data.type === "PAGE_LOADED") {
+        frameRef.current.width = event.data.payload.width;
         frameRef.current.height = event.data.payload.height;
         frameRef.current.contentWindow.removeEventListener("message", handleMessage);
       }
@@ -65,8 +66,9 @@ export const PublicResumePage = () => {
         <iframe
           title={title}
           ref={frameRef}
+          scrolling="no"
           src="/artboard/preview"
-          style={{ width: `${pageSizeMap[format].width}mm` }}
+          style={{ width: `${pageSizeMap[format].width}mm`, overflow: "hidden" }}
         />
       </div>
 

@@ -79,7 +79,7 @@ const Summary = () => {
 
   return (
     <section id={section.id} className="grid grid-cols-5 border-t pt-2.5">
-      <div className="col-span-1">
+      <div>
         <h4 className="text-base font-bold">{section.name}</h4>
       </div>
 
@@ -153,7 +153,7 @@ const Section = <T,>({
 
   return (
     <section id={section.id} className="grid grid-cols-5 border-t pt-2.5">
-      <div className="col-span-1">
+      <div>
         <h4 className="text-base font-bold">{section.name}</h4>
       </div>
 
