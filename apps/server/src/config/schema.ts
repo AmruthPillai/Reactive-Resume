@@ -44,7 +44,6 @@ export const configSchema = z.object({
 
   // Crowdin (Optional)
   CROWDIN_PROJECT_ID: z.coerce.number().optional(),
-  CROWDIN_DISTRIBUTION_HASH: z.string().optional(),
   CROWDIN_ACCESS_TOKEN: z.string().optional(),
 
   // GitHub (OAuth)
