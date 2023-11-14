@@ -13,7 +13,6 @@ export const configSchema = z.object({
   // URLs
   PUBLIC_URL: z.string().url(),
   STORAGE_URL: z.string().url(),
-  CHROME_URL: z.string().url(),
 
   // Database (Prisma)
   DATABASE_URL: z.string().url().startsWith("postgresql://"),
@@ -24,6 +23,7 @@ export const configSchema = z.object({
 
   // Browser
   CHROME_TOKEN: z.string(),
+  CHROME_URL: z.string().url(),
 
   // Mail Server
   SMTP_URL: z.string().url().startsWith("smtp://").optional(),

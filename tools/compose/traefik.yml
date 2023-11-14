@@ -39,7 +39,7 @@ services:
 
   # Chrome Browser (for printing and previews)
   chrome:
-    image: browserless/chrome
+    image: browserless/chrome:1.61.0-puppeteer-21.4.1
     restart: unless-stopped
     environment:
       TOKEN: chrome_token

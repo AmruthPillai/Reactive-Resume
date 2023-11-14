@@ -14,13 +14,13 @@ import { Config } from "../config/schema";
 import { StorageService } from "../storage/storage.service";
 import { UtilsService } from "../utils/utils.service";
 
-const PRINTER_TIMEOUT = 15000; // 15 seconds
+const PRINTER_TIMEOUT = 10000; // 10 seconds
 
 @Injectable()
 export class PrinterService {
   private readonly logger = new Logger(PrinterService.name);
 
-  private browserEndpoint: string;
+  private browserURL: string;
 
   constructor(
     private readonly configService: ConfigService<Config>,
@@ -31,12 +31,12 @@ export class PrinterService {
     const chromeUrl = this.configService.getOrThrow<string>("CHROME_URL");
     const chromeToken = this.configService.getOrThrow<string>("CHROME_TOKEN");
 
-    this.browserEndpoint = `${chromeUrl}?token=${chromeToken}`;
+    this.browserURL = `${chromeUrl}?token=${chromeToken}`;
   }
 
   private getBrowser() {
     try {
-      return connect({ browserWSEndpoint: this.browserEndpoint });
+      return connect({ browserWSEndpoint: this.browserURL });
     } catch (error) {
       throw new InternalServerErrorException(ErrorMessage.InvalidBrowserConnection, error.message);
     }
@@ -56,10 +56,10 @@ export class PrinterService {
         const start = performance.now();
 
         const url = await retry(() => withTimeout(this.generateResume(resume), PRINTER_TIMEOUT), {
-          retries: 3,
+          retries: 2,
           randomize: true,
           onRetry: (_, attempt) => {
-            this.logger.debug(`Retrying resume print job: Attempt #${attempt}`);
+            this.logger.debug(`Print Resume: retry attempt #${attempt}`);
           },
         });
 

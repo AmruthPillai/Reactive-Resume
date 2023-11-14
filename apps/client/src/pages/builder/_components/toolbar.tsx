@@ -49,9 +49,8 @@ export const BuilderToolbar = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, bottom: -64 }}
-      animate={{ opacity: 0.3, bottom: -28 }}
-      whileHover={{ opacity: 1, bottom: 0 }}
+      initial={{ opacity: 0.5 }}
+      whileHover={{ opacity: 1 }}
       className="fixed inset-x-0 mx-auto hidden pb-4 pt-6 text-center md:block"
     >
       <div className="inline-flex items-center justify-center rounded-full bg-background px-4 shadow-xl">
