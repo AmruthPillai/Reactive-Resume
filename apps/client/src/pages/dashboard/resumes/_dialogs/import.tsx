@@ -187,7 +187,7 @@ export const ImportDialog = () => {
       toast({
         variant: "error",
         icon: <Warning size={16} weight="bold" />,
-        title: t`An error occurred while importing your resume.`,
+        title: t`Oops, the server returned an error.`,
         description: importError?.message,
       });
     }

@@ -1,6 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/macro";
-import { Warning } from "@phosphor-icons/react";
 import { twoFactorBackupSchema } from "@reactive-resume/dto";
 import { usePasswordToggle } from "@reactive-resume/hooks";
 import {
@@ -13,13 +12,11 @@ import {
   FormMessage,
   Input,
 } from "@reactive-resume/ui";
-import { AxiosError } from "axios";
 import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { z } from "zod";
 
-import { toast } from "@/client/hooks/use-toast";
 import { useBackupOtp } from "@/client/services/auth";
 
 type FormValues = z.infer<typeof twoFactorBackupSchema>;
@@ -43,17 +40,6 @@ export const BackupOtpPage = () => {
       navigate("/dashboard");
     } catch (error) {
       form.reset();
-
-      if (error instanceof AxiosError) {
-        const message = error.response?.data.message || error.message;
-
-        toast({
-          variant: "error",
-          icon: <Warning size={16} weight="bold" />,
-          title: t`An error occurred while trying to sign in to your account.`,
-          description: message,
-        });
-      }
     }
   };
 

@@ -1,10 +1,7 @@
-import { t } from "@lingui/macro";
 import { StatisticsDto, UrlDto } from "@reactive-resume/dto";
 import { useMutation } from "@tanstack/react-query";
-import { AxiosError } from "axios";
 
 import { RESUME_KEY } from "@/client/constants/query-keys";
-import { toast } from "@/client/hooks/use-toast";
 import { axios } from "@/client/libs/axios";
 import { queryClient } from "@/client/libs/query-client";
 
@@ -26,17 +23,6 @@ export const usePrintResume = () => {
         if (cache === undefined) return cache;
         return { ...cache, downloads: cache.downloads + 1 } satisfies StatisticsDto;
       });
-    },
-    onError: (error) => {
-      if (error instanceof AxiosError) {
-        const message = error.response?.data.message || error.message;
-
-        toast({
-          variant: "error",
-          title: t`An error occurred while trying to print your resume.`,
-          description: message,
-        });
-      }
     },
   });
 

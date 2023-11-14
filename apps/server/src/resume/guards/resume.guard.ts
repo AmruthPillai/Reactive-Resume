@@ -1,8 +1,7 @@
 import { CanActivate, ExecutionContext, Injectable, NotFoundException } from "@nestjs/common";
 import { UserWithSecrets } from "@reactive-resume/dto";
+import { ErrorMessage } from "@reactive-resume/utils";
 import { Request } from "express";
-
-import { ErrorMessage } from "@/server/constants/error-message";
 
 import { ResumeService } from "../resume.service";
 

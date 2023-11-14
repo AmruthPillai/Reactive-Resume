@@ -1,7 +1,6 @@
 import { t, Trans } from "@lingui/macro";
-import { ArrowRight, Info, SealCheck, Warning } from "@phosphor-icons/react";
+import { ArrowRight, Info, SealCheck } from "@phosphor-icons/react";
 import { Alert, AlertDescription, AlertTitle, Button } from "@reactive-resume/ui";
-import { AxiosError } from "axios";
 import { useEffect } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
@@ -19,29 +18,16 @@ export const VerifyEmailPage = () => {
 
   useEffect(() => {
     const handleVerifyEmail = async (token: string) => {
-      try {
-        await verifyEmail({ token });
-        await queryClient.invalidateQueries({ queryKey: ["user"] });
+      await verifyEmail({ token });
+      await queryClient.invalidateQueries({ queryKey: ["user"] });
 
-        toast({
-          variant: "success",
-          icon: <SealCheck size={16} weight="bold" />,
-          title: t`Your email address has been verified successfully.`,
-        });
+      toast({
+        variant: "success",
+        icon: <SealCheck size={16} weight="bold" />,
+        title: t`Your email address has been verified successfully.`,
+      });
 
-        navigate("/dashboard/resumes", { replace: true });
-      } catch (error) {
-        if (error instanceof AxiosError) {
-          const message = error.response?.data.message || error.message;
-
-          toast({
-            variant: "error",
-            icon: <Warning size={16} weight="bold" />,
-            title: t`An error occurred while trying to verify your email address.`,
-            description: message,
-          });
-        }
-      }
+      navigate("/dashboard/resumes", { replace: true });
     };
 
     if (!token) return;

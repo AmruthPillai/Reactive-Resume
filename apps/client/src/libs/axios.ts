@@ -1,10 +1,13 @@
+import { t } from "@lingui/macro";
 import { deepSearchAndParseDates } from "@reactive-resume/utils";
 import _axios from "axios";
 import createAuthRefreshInterceptor from "axios-auth-refresh";
 import { redirect } from "react-router-dom";
 
 import { USER_KEY } from "../constants/query-keys";
+import { toast } from "../hooks/use-toast";
 import { refresh } from "../services/auth/refresh";
+import { translateError } from "../services/errors/translate-error";
 import { queryClient } from "./query-client";
 
 export type ServerError = {
@@ -16,10 +19,23 @@ export type ServerError = {
 export const axios = _axios.create({ baseURL: "/api", withCredentials: true });
 
 // Intercept responses to transform ISO dates to JS date objects
-axios.interceptors.response.use((response) => {
-  const transformedResponse = deepSearchAndParseDates(response.data, ["createdAt", "updatedAt"]);
-  return { ...response, data: transformedResponse };
-});
+axios.interceptors.response.use(
+  (response) => {
+    const transformedResponse = deepSearchAndParseDates(response.data, ["createdAt", "updatedAt"]);
+    return { ...response, data: transformedResponse };
+  },
+  (error) => {
+    const message = error.response?.data.message || error.message;
+
+    toast({
+      variant: "error",
+      title: t`Oops, the server returned an error.`,
+      description: translateError(message),
+    });
+
+    return Promise.reject(error);
+  },
+);
 
 // Create another instance to handle failed refresh tokens
 // Reference: https://github.com/Flyrell/axios-auth-refresh/issues/191

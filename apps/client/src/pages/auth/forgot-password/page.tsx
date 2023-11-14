@@ -1,6 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/macro";
-import { Warning } from "@phosphor-icons/react";
 import { forgotPasswordSchema } from "@reactive-resume/dto";
 import {
   Alert,
@@ -14,12 +13,10 @@ import {
   FormMessage,
   Input,
 } from "@reactive-resume/ui";
-import { AxiosError } from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { toast } from "@/client/hooks/use-toast";
 import { useForgotPassword } from "@/client/services/auth";
 
 type FormValues = z.infer<typeof forgotPasswordSchema>;
@@ -34,22 +31,10 @@ export const ForgotPasswordPage = () => {
   });
 
   const onSubmit = async (data: FormValues) => {
-    try {
-      await forgotPassword(data);
-      setSubmitted(true);
-      form.reset();
-    } catch (error) {
-      if (error instanceof AxiosError) {
-        const message = error.response?.data.message || error.message;
+    await forgotPassword(data);
 
-        toast({
-          variant: "error",
-          icon: <Warning size={16} weight="bold" />,
-          title: t`An error occurred while trying to send your password recovery email.`,
-          description: message,
-        });
-      }
-    }
+    setSubmitted(true);
+    form.reset();
   };
 
   if (submitted) {

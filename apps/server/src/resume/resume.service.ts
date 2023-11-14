@@ -4,6 +4,7 @@ import { CreateResumeDto, ImportResumeDto, ResumeDto, UpdateResumeDto } from "@r
 import { defaultResumeData, ResumeData } from "@reactive-resume/schema";
 import type { DeepPartial } from "@reactive-resume/utils";
 import { generateRandomName, kebabCase } from "@reactive-resume/utils";
+import { ErrorMessage } from "@reactive-resume/utils";
 import { RedisService } from "@songkeys/nestjs-redis";
 import deepmerge from "deepmerge";
 import Redis from "ioredis";
@@ -11,7 +12,6 @@ import { PrismaService } from "nestjs-prisma";
 
 import { PrinterService } from "@/server/printer/printer.service";
 
-import { ErrorMessage } from "../constants/error-message";
 import { StorageService } from "../storage/storage.service";
 import { UtilsService } from "../utils/utils.service";
 

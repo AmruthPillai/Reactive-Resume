@@ -13,9 +13,9 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     environment:
-      POSTGRES_DB: postgres
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
       interval: 10s
@@ -107,15 +107,19 @@ services:
       # -- Sentry --
       # SENTRY_DSN: https://id.sentry.io # Optional
 
+      # -- Crowdin (Optional) --
+      # CROWDIN_PROJECT_ID:
+      # CROWDIN_ACCESS_TOKEN:
+
       # -- GitHub --
       GITHUB_CLIENT_ID: github_client_id
       GITHUB_CLIENT_SECRET: github_client_secret
-      GITHUB_CALLBACK_URL: http://localhost:3000/api/auth/github/callback
+      GITHUB_CALLBACK_URL: https://example.com/api/auth/github/callback
 
       # -- Google --
       GOOGLE_CLIENT_ID: google_client_id
       GOOGLE_CLIENT_SECRET: google_client_secret
-      GOOGLE_CALLBACK_URL: http://localhost:3000/api/auth/google/callback
+      GOOGLE_CALLBACK_URL: https://example.com/api/auth/google/callback
     labels:
       - traefik.enable=true
       - traefik.http.routers.app.rule=Host(`example.com`)

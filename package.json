@@ -23,7 +23,7 @@
     "lint": "nx run-many -t lint --fix",
     "format": "pnpm dlx prettier -w .",
     "prepare": "pnpm dlx husky install",
-    "messages:extract": "pnpm exec lingui extract --clean --overwrite --locale en-US"
+    "messages:extract": "pnpm exec lingui extract --clean --overwrite"
   },
   "devDependencies": {
     "@babel/core": "^7.23.3",

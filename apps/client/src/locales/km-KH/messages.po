@@ -18,12 +18,16 @@ msgstr ""
 "X-Crowdin-File: /[AmruthPillai.Reactive-Resume] v4/apps/client/src/locales/en-US/messages.po\n"
 "X-Crowdin-File-ID: 450\n"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:182
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:169
 msgid "You have enabled two-factor authentication successfully."
 msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:114
 msgid "{value, plural, one {Column} other {Columns}}"
+msgstr ""
+
+#: apps/client/src/pages/home/sections/sample-resumes/index.tsx:17
+msgid "<0>Have a look at some of the resume created to showcase the templates available on Reactive Resume.</0><1>They could also serve as examples to help guide the creation of your next resume.</1>"
 msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:20
@@ -72,8 +76,16 @@ msgstr ""
 msgid "A passion project by <0>Amruth Pillai</0>"
 msgstr ""
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:62
+#: apps/client/src/pages/auth/forgot-password/page.tsx:47
 msgid "A password reset link should have been sent to your inbox, if an account existed with the email you provided."
+msgstr ""
+
+#: apps/client/src/services/errors/translate-error.ts:31
+msgid "A resume with this slug already exists, please pick a different unique identifier."
+msgstr ""
+
+#: apps/client/src/services/errors/translate-error.ts:9
+msgid "A user with this email address and/or username already exists."
 msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:43
@@ -89,7 +101,7 @@ msgstr ""
 msgid "Account"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:131
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:124
 msgid "Add a custom field"
 msgstr ""
 
@@ -116,46 +128,8 @@ msgstr ""
 msgid "AI"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:72
+#: apps/client/src/pages/auth/register/page.tsx:59
 msgid "Already have an account?"
-msgstr ""
-
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:190
-msgid "An error occurred while importing your resume."
-msgstr ""
-
-#: apps/client/src/pages/auth/register/page.tsx:60
-msgid "An error occurred while trying to create a new account."
-msgstr ""
-
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:120
-msgid "An error occurred while trying to create your resume."
-msgstr ""
-
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:108
-msgid "An error occurred while trying to enable two-factor authentication."
-msgstr ""
-
-#: apps/client/src/services/resume/print.ts:36
-msgid "An error occurred while trying to print your resume."
-msgstr ""
-
-#: apps/client/src/pages/auth/reset-password/page.tsx:57
-msgid "An error occurred while trying to reset your password."
-msgstr ""
-
-#: apps/client/src/pages/auth/forgot-password/page.tsx:48
-msgid "An error occurred while trying to send your password recovery email."
-msgstr ""
-
-#: apps/client/src/pages/auth/backup-otp/page.tsx:53
-#: apps/client/src/pages/auth/login/page.tsx:52
-#: apps/client/src/pages/auth/verify-otp/page.tsx:53
-msgid "An error occurred while trying to sign in to your account."
-msgstr ""
-
-#: apps/client/src/pages/auth/verify-email/page.tsx:40
-msgid "An error occurred while trying to verify your email address."
 msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:145
@@ -182,11 +156,11 @@ msgstr ""
 msgid "Are you sure you want to delete this item?"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:163
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:148
 msgid "Are you sure you want to delete your resume?"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:136
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:123
 msgid "Are you sure you want to disable two-factor authentication?"
 msgstr ""
 
@@ -207,7 +181,7 @@ msgstr ""
 msgid "Area of Study"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:89
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:86
 msgid "Aspect Ratio"
 msgstr ""
 
@@ -219,7 +193,7 @@ msgstr ""
 msgid "Awarder"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:249
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:236
 msgid "Back"
 msgstr ""
 
@@ -227,11 +201,11 @@ msgstr ""
 msgid "Background Color"
 msgstr ""
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:81
+#: apps/client/src/pages/auth/backup-otp/page.tsx:67
 msgid "Backup Code"
 msgstr ""
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:86
+#: apps/client/src/pages/auth/backup-otp/page.tsx:72
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr ""
 
@@ -244,15 +218,15 @@ msgstr ""
 msgid "Basics"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:202
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:196
 msgid "Border"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:134
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:129
 msgid "Border Radius"
 msgstr ""
 
-#: apps/client/src/pages/public/page.tsx:76
+#: apps/client/src/pages/public/page.tsx:77
 msgid "Built with"
 msgstr ""
 
@@ -263,8 +237,8 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:122
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:170
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:148
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:155
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:135
 msgid "Cancel"
 msgstr ""
 
@@ -273,11 +247,11 @@ msgstr ""
 msgid "Casual"
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:92
+#: apps/client/src/pages/builder/_components/toolbar.tsx:90
 msgid "Center Artboard"
 msgstr ""
 
-#: apps/client/src/pages/auth/reset-password/page.tsx:106
+#: apps/client/src/pages/auth/reset-password/page.tsx:92
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:121
 msgid "Change Password"
 msgstr ""
@@ -286,7 +260,7 @@ msgstr ""
 msgid "Change Tone"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:200
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
 msgid "Changed your mind about the name? Give it a new one."
 msgstr ""
 
@@ -294,19 +268,19 @@ msgstr ""
 msgid "Check your email for the confirmation link to update your email address."
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:155
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:149
 msgid "Circle"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:255
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:242
 msgid "Close"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:212
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:199
 msgid "Code"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:51
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:50
 msgid "Code must be exactly 6 digits long."
 msgstr ""
 
@@ -327,8 +301,8 @@ msgstr ""
 msgid "Confirm New Password"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:245
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:252
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:232
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:239
 msgid "Continue"
 msgstr ""
 
@@ -336,7 +310,7 @@ msgstr ""
 msgid "Copy"
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:129
+#: apps/client/src/pages/builder/_components/toolbar.tsx:124
 msgid "Copy Link to Resume"
 msgstr ""
 
@@ -345,11 +319,11 @@ msgid "Copy to Clipboard"
 msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:158
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:254
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:239
 msgid "Create"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:70
+#: apps/client/src/pages/auth/register/page.tsx:57
 msgid "Create a new account"
 msgstr ""
 
@@ -357,18 +331,18 @@ msgstr ""
 msgid "Create a new item"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:192
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:177
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:24
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:19
 msgid "Create a new resume"
 msgstr ""
 
-#: apps/client/src/pages/auth/login/page.tsx:67
+#: apps/client/src/pages/auth/login/page.tsx:53
 msgctxt "This is a link to create a new account"
 msgid "Create one now"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:267
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:252
 msgid "Create Sample Resume"
 msgstr ""
 
@@ -408,7 +382,7 @@ msgid "Date"
 msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:124
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:172
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:157
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:148
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:106
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:159
@@ -431,7 +405,7 @@ msgstr ""
 msgid "Design single/multi page resumes"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:150
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
 msgid "Disable"
 msgstr ""
 
@@ -441,7 +415,7 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:304
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:222
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:134
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:141
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
 msgid "Discard"
 msgstr ""
@@ -450,7 +424,7 @@ msgstr ""
 msgid "Documentation"
 msgstr ""
 
-#: apps/client/src/pages/auth/login/page.tsx:64
+#: apps/client/src/pages/auth/login/page.tsx:50
 msgid "Don't have an account?"
 msgstr ""
 
@@ -458,7 +432,7 @@ msgstr ""
 msgid "Don't know where to begin? Hit the docs!"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:107
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:114
 msgid "Don't see your language? <0>Help translate the app.</0>"
 msgstr ""
 
@@ -474,16 +448,12 @@ msgstr ""
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:136
-msgid "Download PDF"
-msgstr ""
-
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:58
 msgid "Downloads"
 msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:160
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:256
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:241
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:132
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:95
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:154
@@ -494,7 +464,7 @@ msgstr ""
 msgid "Duplicate an existing item"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:194
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:179
 msgid "Duplicate an existing resume"
 msgstr ""
 
@@ -502,13 +472,13 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:180
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:174
 msgid "Effects"
 msgstr ""
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:87
-#: apps/client/src/pages/auth/login/page.tsx:86
-#: apps/client/src/pages/auth/register/page.tsx:135
+#: apps/client/src/pages/auth/forgot-password/page.tsx:72
+#: apps/client/src/pages/auth/login/page.tsx:72
+#: apps/client/src/pages/auth/register/page.tsx:122
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:50
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:183
 msgid "Email"
@@ -518,23 +488,23 @@ msgstr ""
 msgid "Enable 2FA"
 msgstr ""
 
-#: apps/client/src/pages/auth/reset-password/page.tsx:74
+#: apps/client/src/pages/auth/reset-password/page.tsx:60
 msgid "Enter a new password below, and make sure it's secure."
 msgstr ""
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:65
+#: apps/client/src/pages/auth/backup-otp/page.tsx:51
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:181
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
 msgid "Enter the 6-digit code from your authenticator app to verify that 2FA has been setup correctly."
 msgstr ""
 
-#: apps/client/src/pages/auth/verify-otp/page.tsx:66
+#: apps/client/src/pages/auth/verify-otp/page.tsx:53
 msgid "Enter the one-time password provided by your authenticator app below."
 msgstr ""
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:75
+#: apps/client/src/pages/auth/forgot-password/page.tsx:60
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr ""
 
@@ -543,7 +513,8 @@ msgid "Errors"
 msgstr ""
 
 #: apps/client/src/pages/home/sections/support/index.tsx:81
-msgid "Even if you're not in a position to contribute financially, you can still make a difference by\n"
+msgid ""
+"Even if you're not in a position to contribute financially, you can still make a difference by\n"
 "giving the GitHub repository a star, spreading the word to your friends, or dropping a quick\n"
 "message to let me know how Reactive Resume has helped you. Your feedback and support are\n"
 "always welcome and much appreciated!"
@@ -552,6 +523,10 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:79
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:40
 msgid "Export"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/toolbar.tsx:130
+msgid "Export as PDF"
 msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:257
@@ -602,11 +577,11 @@ msgstr ""
 msgid "Forget"
 msgstr ""
 
-#: apps/client/src/pages/auth/login/page.tsx:122
+#: apps/client/src/pages/auth/login/page.tsx:108
 msgid "Forgot Password?"
 msgstr ""
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:73
+#: apps/client/src/pages/auth/forgot-password/page.tsx:58
 msgid "Forgot your password?"
 msgstr ""
 
@@ -632,7 +607,7 @@ msgstr ""
 msgid "Full Name"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:216
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:201
 msgid "Generate a random title for your resume"
 msgstr ""
 
@@ -648,11 +623,11 @@ msgstr ""
 msgid "GitHub Stars"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:201
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:186
 msgid "Give your old resume a new name."
 msgstr ""
 
-#: apps/client/src/pages/auth/verify-email/page.tsx:74
+#: apps/client/src/pages/auth/verify-email/page.tsx:60
 #: apps/client/src/pages/home/sections/hero/call-to-action.tsx:18
 msgid "Go to Dashboard"
 msgstr ""
@@ -661,16 +636,12 @@ msgstr ""
 msgid "Google"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:213
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:207
 msgid "Grayscale"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/page.tsx:37
+#: apps/client/src/pages/dashboard/resumes/page.tsx:41
 msgid "Grid"
-msgstr ""
-
-#: apps/client/src/pages/home/sections/sample-resumes/index.tsx:17
-msgid "Have a look at some of the resume created to showcase the templates available on Reactive Resume. They also serve some great examples to help guide the creation of your own resume."
 msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:41
@@ -685,7 +656,7 @@ msgstr ""
 msgid "Here, you can update your profile to customize and personalize your experience."
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:191
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:185
 msgid "Hidden"
 msgstr ""
 
@@ -697,13 +668,13 @@ msgstr ""
 msgid "Hide Icons"
 msgstr ""
 
-#: apps/client/src/pages/auth/login/page.tsx:106
-#: apps/client/src/pages/auth/register/page.tsx:161
-#: apps/client/src/pages/auth/reset-password/page.tsx:95
+#: apps/client/src/pages/auth/login/page.tsx:92
+#: apps/client/src/pages/auth/register/page.tsx:148
+#: apps/client/src/pages/auth/reset-password/page.tsx:81
 msgid "Hold <0>Ctrl</0> to display your password temporarily."
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:104
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:100
 msgid "Horizontal"
 msgstr ""
 
@@ -723,12 +694,13 @@ msgstr ""
 msgid "If this app has helped you with your job hunt, let me know by reaching out through <0>this contact form</0>."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:139
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:126
 msgid "If you disable two-factor authentication, you will no longer be required to enter a verification code when logging in."
 msgstr ""
 
 #: apps/client/src/pages/home/sections/support/index.tsx:59
-msgid "If you're multilingual, we'd love your help in bringing the app to more languages and\n"
+msgid ""
+"If you're multilingual, we'd love your help in bringing the app to more languages and\n"
 "communities. Don't worry if you don't see your language on the list - just give me a\n"
 "shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into\n"
 "translation over at Crowdin by clicking the link below."
@@ -748,7 +720,7 @@ msgstr ""
 msgid "Improve Writing"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:199
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:186
 msgid "In case you are unable to scan this QR Code, you can also copy-paste this link into your authenticator app."
 msgstr ""
 
@@ -773,17 +745,45 @@ msgstr ""
 msgid "Issuer"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:96
+#: apps/client/src/services/errors/translate-error.ts:7
+msgid "It doesn't look like a user exists with the credentials you provided."
+msgstr ""
+
+#: apps/client/src/services/errors/translate-error.ts:27
+msgid "It looks like the backup code you provided is invalid or used. Please try again."
+msgstr ""
+
+#: apps/client/src/services/errors/translate-error.ts:15
+msgid "It looks like the reset token you provided is invalid. Please try restarting the password reset process again."
+msgstr ""
+
+#: apps/client/src/services/errors/translate-error.ts:33
+msgid "It looks like the resume you're looking for doesn't exist."
+msgstr ""
+
+#: apps/client/src/services/errors/translate-error.ts:25
+msgid "It looks like the two-factor authentication code you provided is invalid. Please try again."
+msgstr ""
+
+#: apps/client/src/services/errors/translate-error.ts:17
+msgid "It looks like the verification token you provided is invalid. Please try restarting the verification process again."
+msgstr ""
+
+#: apps/client/src/services/errors/translate-error.ts:19
+msgid "It looks like your email address has already been verified."
+msgstr ""
+
+#: apps/client/src/pages/auth/register/page.tsx:83
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
 msgid "John Doe"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:117
+#: apps/client/src/pages/auth/register/page.tsx:104
 msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
 msgid "john.doe"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:138
+#: apps/client/src/pages/auth/register/page.tsx:125
 msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
 msgid "john.doe@example.com"
 msgstr ""
@@ -850,7 +850,7 @@ msgstr ""
 msgid "LinkedIn, JSON Resume, etc."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/page.tsx:41
+#: apps/client/src/pages/dashboard/resumes/page.tsx:45
 msgid "List"
 msgstr ""
 
@@ -879,7 +879,7 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
-#: apps/client/src/pages/auth/verify-otp/page.tsx:70
+#: apps/client/src/pages/auth/verify-otp/page.tsx:57
 msgid "Lost your device?"
 msgstr ""
 
@@ -913,7 +913,7 @@ msgstr ""
 msgid "MIT License"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:93
+#: apps/client/src/pages/auth/register/page.tsx:80
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:53
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:40
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:37
@@ -921,7 +921,7 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:41
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:50
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:43
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:152
 msgid "Name"
 msgstr ""
@@ -947,7 +947,7 @@ msgstr ""
 msgid "No user tracking or advertising"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:144
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:131
 msgid "Note: This will make your account less secure."
 msgstr ""
 
@@ -956,8 +956,13 @@ msgstr ""
 msgid "Notes"
 msgstr ""
 
-#: apps/client/src/pages/auth/verify-otp/page.tsx:88
+#: apps/client/src/pages/auth/verify-otp/page.tsx:75
 msgid "One-Time Password"
+msgstr ""
+
+#: apps/client/src/libs/axios.ts:32
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:190
+msgid "Oops, the server returned an error."
 msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:124
@@ -1004,9 +1009,9 @@ msgstr ""
 msgid "Page {0}"
 msgstr ""
 
-#: apps/client/src/pages/auth/login/page.tsx:101
-#: apps/client/src/pages/auth/register/page.tsx:156
-#: apps/client/src/pages/auth/reset-password/page.tsx:90
+#: apps/client/src/pages/auth/login/page.tsx:87
+#: apps/client/src/pages/auth/register/page.tsx:143
+#: apps/client/src/pages/auth/reset-password/page.tsx:76
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
 msgid "Password"
 msgstr ""
@@ -1036,7 +1041,7 @@ msgstr ""
 msgid "Picture"
 msgstr ""
 
-#: apps/client/src/pages/auth/verify-email/page.tsx:66
+#: apps/client/src/pages/auth/verify-email/page.tsx:52
 msgid "Please note that this step is completely optional."
 msgstr ""
 
@@ -1044,11 +1049,11 @@ msgstr ""
 msgid "Please select a file type"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:239
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:226
 msgid "Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app."
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:110
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:106
 msgid "Portrait"
 msgstr ""
 
@@ -1101,7 +1106,7 @@ msgstr ""
 #: apps/client/src/pages/home/components/footer.tsx:17
 #: apps/client/src/pages/home/page.tsx:18
 #: apps/client/src/pages/public/page.tsx:57
-#: apps/client/src/pages/public/page.tsx:78
+#: apps/client/src/pages/public/page.tsx:79
 msgid "Reactive Resume"
 msgstr ""
 
@@ -1121,7 +1126,7 @@ msgstr ""
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:66
+#: apps/client/src/pages/builder/_components/toolbar.tsx:64
 msgid "Redo"
 msgstr ""
 
@@ -1149,17 +1154,17 @@ msgstr ""
 msgid "Reset Layout"
 msgstr ""
 
-#: apps/client/src/pages/auth/reset-password/page.tsx:72
+#: apps/client/src/pages/auth/reset-password/page.tsx:58
 msgid "Reset your password"
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:86
+#: apps/client/src/pages/builder/_components/toolbar.tsx:84
 msgid "Reset Zoom"
 msgstr ""
 
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:86
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
-#: apps/client/src/pages/dashboard/resumes/page.tsx:31
+#: apps/client/src/pages/dashboard/resumes/page.tsx:35
 msgid "Resumes"
 msgstr ""
 
@@ -1171,7 +1176,7 @@ msgstr ""
 msgid "Rich in features, not in pricing."
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:149
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:143
 msgid "Rounded"
 msgstr ""
 
@@ -1180,13 +1185,13 @@ msgid "Sample Resumes"
 msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:159
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:255
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:240
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:131
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:138
 msgid "Save Changes"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:179
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:166
 msgid "Scan the QR code below with your authenticator app to setup 2FA on your account."
 msgstr ""
 
@@ -1223,7 +1228,7 @@ msgstr ""
 msgid "Self-host with Docker"
 msgstr ""
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:97
+#: apps/client/src/pages/auth/forgot-password/page.tsx:82
 msgid "Send Email"
 msgstr ""
 
@@ -1238,7 +1243,7 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:170
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:157
 msgid "Setup two-factor authentication on your account"
 msgstr ""
 
@@ -1263,17 +1268,17 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:96
-#: apps/client/src/pages/auth/login/page.tsx:118
-#: apps/client/src/pages/auth/verify-otp/page.tsx:98
+#: apps/client/src/pages/auth/backup-otp/page.tsx:82
+#: apps/client/src/pages/auth/login/page.tsx:104
+#: apps/client/src/pages/auth/verify-otp/page.tsx:85
 msgid "Sign in"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:75
+#: apps/client/src/pages/auth/register/page.tsx:62
 msgid "Sign in now"
 msgstr ""
 
-#: apps/client/src/pages/auth/login/page.tsx:62
+#: apps/client/src/pages/auth/login/page.tsx:48
 msgid "Sign in to your account"
 msgstr ""
 
@@ -1289,20 +1294,32 @@ msgstr ""
 msgid "Sign in with Google"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:172
+#: apps/client/src/pages/auth/register/page.tsx:159
 msgid "Sign up"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:73
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:72
 msgid "Size (in px)"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:242
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:227
 msgid "Slug"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:98
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:143
+#: apps/client/src/services/errors/translate-error.ts:39
+msgid "Something went wrong while grabbing a preview your resume. Please try again later or raise an issue on GitHub."
+msgstr ""
+
+#: apps/client/src/services/errors/translate-error.ts:37
+msgid "Something went wrong while printing your resume. Please try again later or raise an issue on GitHub."
+msgstr ""
+
+#: apps/client/src/services/errors/translate-error.ts:41
+msgid "Something went wrong while processing your request. Please try again later or raise an issue on GitHub."
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:94
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:137
 msgid "Square"
 msgstr ""
 
@@ -1310,7 +1327,7 @@ msgstr ""
 msgid "Start building from scratch"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:199
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:184
 msgid "Start building your resume by giving it a name."
 msgstr ""
 
@@ -1331,7 +1348,7 @@ msgstr ""
 msgid "Store Locally"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:173
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:160
 msgid "Store your backup codes securely"
 msgstr ""
 
@@ -1388,8 +1405,8 @@ msgstr ""
 msgid "The passwords you entered do not match."
 msgstr ""
 
-#: apps/client/src/pages/public/page.tsx:104
-msgid "The resume you were looking for doesn't seem to exist, please check the link and try again."
+#: apps/client/src/services/errors/translate-error.ts:35
+msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
 msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:71
@@ -1398,16 +1415,20 @@ msgstr ""
 msgid "Theme"
 msgstr ""
 
-#: apps/client/src/services/resume/update.ts:35
-msgid "There was an error while updating your resume."
+#: apps/client/src/services/errors/translate-error.ts:29
+msgid "There was an error connecting to the browser. Please make sure 'chrome' is running and reachable."
 msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:117
 msgid "This action can be reverted by clicking on the undo button in the floating toolbar."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:165
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:150
 msgid "This action cannot be undone. This will permanently delete your resume and cannot be recovered."
+msgstr ""
+
+#: apps/client/src/services/errors/translate-error.ts:13
+msgid "This email address is associated with an OAuth account. Please sign in with your OAuth provider."
 msgstr ""
 
 #: apps/client/src/pages/builder/_components/header.tsx:56
@@ -1418,7 +1439,7 @@ msgstr ""
 msgid "This section is reserved for your personal notes specific to this resume. The content here remains private and is not shared with anyone else."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:230
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:215
 msgid "Tip: You can name the resume referring to the position you are applying for."
 msgstr ""
 
@@ -1427,15 +1448,15 @@ msgctxt "Name of the Award"
 msgid "Title"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:210
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:195
 msgid "Title"
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:101
+#: apps/client/src/pages/builder/_components/toolbar.tsx:98
 msgid "Toggle Page Break Line"
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:114
+#: apps/client/src/pages/builder/_components/toolbar.tsx:110
 msgid "Toggle Page Numbers"
 msgstr ""
 
@@ -1443,9 +1464,17 @@ msgstr ""
 msgid "Track views and downloads"
 msgstr ""
 
-#: apps/client/src/pages/auth/verify-otp/page.tsx:63
+#: apps/client/src/pages/auth/verify-otp/page.tsx:50
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:135
 msgid "Two-Factor Authentication"
+msgstr ""
+
+#: apps/client/src/services/errors/translate-error.ts:23
+msgid "Two-factor authentication is already enabled for this account."
+msgstr ""
+
+#: apps/client/src/services/errors/translate-error.ts:21
+msgid "Two-factor authentication is not enabled for this account."
 msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:84
@@ -1466,7 +1495,7 @@ msgstr ""
 msgid "Underline Links"
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:59
+#: apps/client/src/pages/builder/_components/toolbar.tsx:58
 msgid "Undo"
 msgstr ""
 
@@ -1487,7 +1516,7 @@ msgstr ""
 msgid "Update an existing item"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:193
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:178
 msgid "Update an existing resume"
 msgstr ""
 
@@ -1503,11 +1532,15 @@ msgstr ""
 msgid "URL must start with https://"
 msgstr ""
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:63
+#: apps/client/src/pages/auth/backup-otp/page.tsx:49
 msgid "Use your backup code"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:114
+#: apps/client/src/services/errors/translate-error.ts:11
+msgid "User does not have an associated 'secrets' record. Please report this issue on GitHub."
+msgstr ""
+
+#: apps/client/src/pages/auth/register/page.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:54
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:165
 msgid "Username"
@@ -1525,7 +1558,7 @@ msgstr ""
 msgid "Validated"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:57
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:50
 msgid "Value"
 msgstr ""
 
@@ -1533,11 +1566,11 @@ msgstr ""
 msgid "Verified"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:172
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:159
 msgid "Verify that two-factor authentication has been setup correctly"
 msgstr ""
 
-#: apps/client/src/pages/auth/verify-email/page.tsx:55
+#: apps/client/src/pages/auth/verify-email/page.tsx:41
 msgid "Verify your email address"
 msgstr ""
 
@@ -1553,7 +1586,7 @@ msgstr ""
 msgid "Visible"
 msgstr ""
 
-#: apps/client/src/pages/auth/verify-email/page.tsx:68
+#: apps/client/src/pages/auth/verify-email/page.tsx:54
 msgid "We verify your email address only to ensure that we can send you a password reset link in case you forget your password."
 msgstr ""
 
@@ -1582,7 +1615,7 @@ msgstr ""
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr ""
 
-#: apps/client/src/pages/auth/login/page.tsx:90
+#: apps/client/src/pages/auth/login/page.tsx:76
 msgid "You can also enter your username."
 msgstr ""
 
@@ -1598,11 +1631,11 @@ msgstr ""
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr ""
 
-#: apps/client/src/pages/auth/verify-email/page.tsx:57
+#: apps/client/src/pages/auth/verify-email/page.tsx:43
 msgid "You should have received an email from <0>Reactive Resume</0> with a link to verify your account."
 msgstr ""
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:59
+#: apps/client/src/pages/auth/forgot-password/page.tsx:44
 msgid "You've got mail!"
 msgstr ""
 
@@ -1614,7 +1647,7 @@ msgstr ""
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr ""
 
-#: apps/client/src/pages/auth/verify-email/page.tsx:29
+#: apps/client/src/pages/auth/verify-email/page.tsx:27
 msgid "Your email address has been verified successfully."
 msgstr ""
 
@@ -1626,11 +1659,10 @@ msgstr ""
 msgid "Your password has been updated successfully."
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:74
+#: apps/client/src/pages/builder/_components/toolbar.tsx:72
 msgid "Zoom In"
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:80
+#: apps/client/src/pages/builder/_components/toolbar.tsx:78
 msgid "Zoom Out"
 msgstr ""
-

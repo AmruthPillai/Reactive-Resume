@@ -1,7 +1,7 @@
 import { HttpService } from "@nestjs/axios";
 import { Injectable } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
-import { LanguageDto } from "@reactive-resume/dto";
+import { Language, languages } from "@reactive-resume/utils";
 
 import { Config } from "../config/schema";
 
@@ -21,48 +21,44 @@ export class TranslationService {
     private readonly configService: ConfigService<Config>,
   ) {}
 
-  async fetchTranslations(locale: string) {
-    const distributionHash = this.configService.get("CROWDIN_DISTRIBUTION_HASH");
-    const response = await this.httpService.axiosRef.get(
-      `https://distributions.crowdin.net/${distributionHash}/content/${locale}/messages.json`,
-    );
-
-    return response.data;
-  }
-
   async fetchLanguages() {
     const isDevelopment = this.configService.get("NODE_ENV") === "development";
-    const projectId = this.configService.get("CROWDIN_PROJECT_ID");
-    const accessToken = this.configService.get("CROWDIN_ACCESS_TOKEN");
 
-    const response = await this.httpService.axiosRef.get(
-      `https://api.crowdin.com/api/v2/projects/${projectId}/languages/progress?limit=100`,
-      { headers: { Authorization: `Bearer ${accessToken}` } },
-    );
-    const { data } = response.data as CrowdinResponse;
+    try {
+      const projectId = this.configService.getOrThrow("CROWDIN_PROJECT_ID");
+      const accessToken = this.configService.getOrThrow("CROWDIN_ACCESS_TOKEN");
 
-    if (isDevelopment) {
-      data.push({
-        data: {
-          language: {
-            id: "zu-ZA",
-            locale: "zu-ZA",
-            editorCode: "zuza",
-            name: "Psuedo Locale",
+      const response = await this.httpService.axiosRef.get(
+        `https://api.crowdin.com/api/v2/projects/${projectId}/languages/progress?limit=100`,
+        { headers: { Authorization: `Bearer ${accessToken}` } },
+      );
+      const { data } = response.data as CrowdinResponse;
+
+      if (isDevelopment) {
+        data.push({
+          data: {
+            language: {
+              id: "zu-ZA",
+              locale: "zu-ZA",
+              editorCode: "zuza",
+              name: "Psuedo Locale",
+            },
+            translationProgress: 100,
           },
-          translationProgress: 100,
-        },
-      });
-    }
+        });
+      }
 
-    return data.map(({ data }) => {
-      return {
-        id: data.language.id,
-        name: data.language.name,
-        progress: data.translationProgress,
-        editorCode: data.language.editorCode,
-        locale: data.language.locale,
-      } satisfies LanguageDto;
-    });
+      return data.map(({ data }) => {
+        return {
+          id: data.language.id,
+          name: data.language.name,
+          progress: data.translationProgress,
+          editorCode: data.language.editorCode,
+          locale: data.language.locale,
+        } satisfies Language;
+      });
+    } catch (error) {
+      return languages;
+    }
   }
 }

@@ -9,13 +9,3 @@ export const contributorSchema = z.object({
 });
 
 export class ContributorDto extends createZodDto(contributorSchema) {}
-
-export const languageSchema = z.object({
-  id: z.string(),
-  name: z.string(),
-  locale: z.string(),
-  editorCode: z.string(),
-  progress: z.number(),
-});
-
-export class LanguageDto extends createZodDto(languageSchema) {}

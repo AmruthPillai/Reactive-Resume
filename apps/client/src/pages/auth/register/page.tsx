@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t, Trans } from "@lingui/macro";
-import { ArrowRight, Warning } from "@phosphor-icons/react";
+import { ArrowRight } from "@phosphor-icons/react";
 import { registerSchema } from "@reactive-resume/dto";
 import { usePasswordToggle } from "@reactive-resume/hooks";
 import {
@@ -14,13 +14,11 @@ import {
   FormMessage,
   Input,
 } from "@reactive-resume/ui";
-import { AxiosError } from "axios";
 import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { z } from "zod";
 
-import { toast } from "@/client/hooks/use-toast";
 import { useRegister } from "@/client/services/auth";
 
 type FormValues = z.infer<typeof registerSchema>;
@@ -50,17 +48,6 @@ export const RegisterPage = () => {
       navigate("/auth/verify-email");
     } catch (error) {
       form.reset();
-
-      if (error instanceof AxiosError) {
-        const message = error.response?.data.message || error.message;
-
-        toast({
-          variant: "error",
-          icon: <Warning size={16} weight="bold" />,
-          title: t`An error occurred while trying to create a new account.`,
-          description: message,
-        });
-      }
     }
   };
 

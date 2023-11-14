@@ -5,12 +5,12 @@ import { ConfigService } from "@nestjs/config";
 import fontkit from "@pdf-lib/fontkit";
 import { ResumeDto } from "@reactive-resume/dto";
 import { getFontUrls, withTimeout } from "@reactive-resume/utils";
+import { ErrorMessage } from "@reactive-resume/utils";
 import retry from "async-retry";
 import { PDFDocument } from "pdf-lib";
 import { connect } from "puppeteer";
 
 import { Config } from "../config/schema";
-import { ErrorMessage } from "../constants/error-message";
 import { StorageService } from "../storage/storage.service";
 import { UtilsService } from "../utils/utils.service";
 

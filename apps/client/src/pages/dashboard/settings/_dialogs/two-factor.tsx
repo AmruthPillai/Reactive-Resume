@@ -28,7 +28,6 @@ import {
   FormMessage,
   Input,
 } from "@reactive-resume/ui";
-import { AxiosError } from "axios";
 import { QRCodeSVG } from "qrcode.react";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
@@ -93,23 +92,11 @@ export const TwoFactorDialog = () => {
     if (isUpdate) {
       if (!values.code) return;
 
-      try {
-        const data = await enable2FA({ code: values.code });
-        form.setValue("backupCodes", data.backupCodes);
-        await queryClient.invalidateQueries({ queryKey: ["user"] });
+      const data = await enable2FA({ code: values.code });
+      form.setValue("backupCodes", data.backupCodes);
+      await queryClient.invalidateQueries({ queryKey: ["user"] });
 
-        open("duplicate");
-      } catch (error) {
-        if (error instanceof AxiosError) {
-          const message = error.response?.data?.message || error.message;
-
-          toast({
-            variant: "error",
-            title: t`An error occurred while trying to enable two-factor authentication.`,
-            description: message,
-          });
-        }
-      }
+      open("duplicate");
     }
 
     if (isDuplicate) {

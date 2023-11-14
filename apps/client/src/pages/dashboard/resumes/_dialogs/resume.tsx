@@ -34,12 +34,10 @@ import {
   Tooltip,
 } from "@reactive-resume/ui";
 import { generateRandomName, kebabCase } from "@reactive-resume/utils";
-import { AxiosError } from "axios";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { useToast } from "@/client/hooks/use-toast";
 import { useCreateResume, useDeleteResume, useUpdateResume } from "@/client/services/resume";
 import { useImportResume } from "@/client/services/resume/import";
 import { useDialog } from "@/client/stores/dialog";
@@ -49,7 +47,6 @@ const formSchema = createResumeSchema.extend({ id: idSchema.optional() });
 type FormValues = z.infer<typeof formSchema>;
 
 export const ResumeDialog = () => {
-  const { toast } = useToast();
   const { isOpen, mode, payload, close } = useDialog<ResumeDto>("resume");
 
   const isCreate = mode === "create";
@@ -79,49 +76,37 @@ export const ResumeDialog = () => {
   }, [form.watch("title")]);
 
   const onSubmit = async (values: FormValues) => {
-    try {
-      if (isCreate) {
-        await createResume({ slug: values.slug, title: values.title, visibility: "private" });
-      }
-
-      if (isUpdate) {
-        if (!payload.item?.id) return;
-
-        await updateResume({
-          ...payload.item,
-          title: values.title,
-          slug: values.slug,
-        });
-      }
-
-      if (isDuplicate) {
-        if (!payload.item?.id) return;
-
-        await duplicateResume({
-          title: values.title,
-          slug: values.slug,
-          data: payload.item.data,
-        });
-      }
-
-      if (isDelete) {
-        if (!payload.item?.id) return;
-
-        await deleteResume({ id: payload.item?.id });
-      }
-
-      close();
-    } catch (error) {
-      if (error instanceof AxiosError) {
-        const message = error.response?.data?.message || error.message;
-
-        toast({
-          variant: "error",
-          title: t`An error occurred while trying to create your resume.`,
-          description: message,
-        });
-      }
+    if (isCreate) {
+      await createResume({ slug: values.slug, title: values.title, visibility: "private" });
     }
+
+    if (isUpdate) {
+      if (!payload.item?.id) return;
+
+      await updateResume({
+        ...payload.item,
+        title: values.title,
+        slug: values.slug,
+      });
+    }
+
+    if (isDuplicate) {
+      if (!payload.item?.id) return;
+
+      await duplicateResume({
+        title: values.title,
+        slug: values.slug,
+        data: payload.item.data,
+      });
+    }
+
+    if (isDelete) {
+      if (!payload.item?.id) return;
+
+      await deleteResume({ id: payload.item?.id });
+    }
+
+    close();
   };
 
   const onReset = () => {

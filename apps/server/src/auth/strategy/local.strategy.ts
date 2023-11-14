@@ -1,8 +1,7 @@
 import { BadRequestException, Injectable } from "@nestjs/common";
 import { PassportStrategy } from "@nestjs/passport";
+import { ErrorMessage } from "@reactive-resume/utils";
 import { IStrategyOptions, Strategy } from "passport-local";
-
-import { ErrorMessage } from "@/server/constants/error-message";
 
 import { AuthService } from "../auth.service";
 

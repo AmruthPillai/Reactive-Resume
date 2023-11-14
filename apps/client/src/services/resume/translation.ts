@@ -1,10 +1,10 @@
-import { LanguageDto } from "@reactive-resume/dto";
+import { Language } from "@reactive-resume/utils";
 import { useQuery } from "@tanstack/react-query";
 
 import { axios } from "@/client/libs/axios";
 
 export const fetchLanguages = async () => {
-  const response = await axios.get<LanguageDto[]>(`/translation/languages`);
+  const response = await axios.get<Language[]>(`/translation/languages`);
 
   return response.data;
 };

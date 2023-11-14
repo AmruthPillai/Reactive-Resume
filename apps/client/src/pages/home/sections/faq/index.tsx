@@ -153,15 +153,18 @@ const Question4 = () => {
             >
               <div className="relative bg-secondary-accent font-medium">
                 <span className="px-2 py-1">{language.name}</span>
-                <span
-                  className={cn(
-                    "inset-0 bg-warning px-1.5 py-1 text-xs text-white",
-                    language.progress < 40 && "bg-error",
-                    language.progress > 80 && "bg-success",
-                  )}
-                >
-                  {language.progress}%
-                </span>
+
+                {language.progress && (
+                  <span
+                    className={cn(
+                      "inset-0 bg-warning px-1.5 py-1 text-xs text-white",
+                      language.progress < 40 && "bg-error",
+                      language.progress > 80 && "bg-success",
+                    )}
+                  >
+                    {language.progress}%
+                  </span>
+                )}
               </div>
             </a>
           ))}

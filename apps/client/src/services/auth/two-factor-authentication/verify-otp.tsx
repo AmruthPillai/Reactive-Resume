@@ -1,8 +1,7 @@
 import { AuthResponseDto, TwoFactorDto } from "@reactive-resume/dto";
 import { useMutation } from "@tanstack/react-query";
-import { AxiosError, AxiosResponse } from "axios";
+import { AxiosResponse } from "axios";
 
-import { toast } from "@/client/hooks/use-toast";
 import { axios } from "@/client/libs/axios";
 import { queryClient } from "@/client/libs/query-client";
 import { useAuthStore } from "@/client/stores/auth";
@@ -28,13 +27,6 @@ export const useVerifyOtp = () => {
     onSuccess: (data) => {
       setUser(data.user);
       queryClient.setQueryData(["user"], data.user);
-    },
-    onError: (error) => {
-      if (error instanceof AxiosError) {
-        const message = error.response?.data?.message || error.message;
-
-        toast({ variant: "error", title: message });
-      }
     },
   });
 

@@ -8,7 +8,6 @@ import { Link, LoaderFunction, redirect, useLoaderData } from "react-router-dom"
 
 import { Icon } from "@/client/components/icon";
 import { ThemeSwitch } from "@/client/components/theme-switch";
-import { toast } from "@/client/hooks/use-toast";
 import { queryClient } from "@/client/libs/query-client";
 import { findResumeByUsernameSlug } from "@/client/services/resume";
 
@@ -101,11 +100,6 @@ export const publicLoader: LoaderFunction<ResumeDto> = async ({ params }) => {
 
     return resume;
   } catch (error) {
-    toast({
-      variant: "error",
-      title: t`The resume you were looking for doesn't seem to exist, please check the link and try again.`,
-    });
-
     return redirect("/");
   }
 };

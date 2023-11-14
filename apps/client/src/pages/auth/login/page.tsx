@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t, Trans } from "@lingui/macro";
-import { ArrowRight, Warning } from "@phosphor-icons/react";
+import { ArrowRight } from "@phosphor-icons/react";
 import { loginSchema } from "@reactive-resume/dto";
 import { usePasswordToggle } from "@reactive-resume/hooks";
 import {
@@ -14,19 +14,16 @@ import {
   FormMessage,
   Input,
 } from "@reactive-resume/ui";
-import { AxiosError } from "axios";
 import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { z } from "zod";
 
-import { useToast } from "@/client/hooks/use-toast";
 import { useLogin } from "@/client/services/auth";
 
 type FormValues = z.infer<typeof loginSchema>;
 
 export const LoginPage = () => {
-  const { toast } = useToast();
   const { login, loading } = useLogin();
 
   const formRef = useRef<HTMLFormElement>(null);
@@ -42,17 +39,6 @@ export const LoginPage = () => {
       await login(data);
     } catch (error) {
       form.reset();
-
-      if (error instanceof AxiosError) {
-        const message = error.response?.data.message || error.message;
-
-        toast({
-          variant: "error",
-          icon: <Warning size={16} weight="bold" />,
-          title: t`An error occurred while trying to sign in to your account.`,
-          description: message,
-        });
-      }
     }
   };
 

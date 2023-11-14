@@ -64,6 +64,9 @@ CREATE UNIQUE INDEX "Secrets_resetToken_key" ON "Secrets"("resetToken");
 CREATE UNIQUE INDEX "Secrets_userId_key" ON "Secrets"("userId");
 
 -- CreateIndex
+CREATE UNIQUE INDEX "Resume_slug_key" ON "Resume"("slug");
+
+-- CreateIndex
 CREATE INDEX "Resume_userId_idx" ON "Resume"("userId");
 
 -- CreateIndex

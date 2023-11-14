@@ -8,12 +8,12 @@ import { ConfigService } from "@nestjs/config";
 import { JwtService } from "@nestjs/jwt";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
 import { LoginDto, RegisterDto } from "@reactive-resume/dto";
+import { ErrorMessage } from "@reactive-resume/utils";
 import * as bcryptjs from "bcryptjs";
 import { randomBytes } from "crypto";
 import { authenticator } from "otplib";
 
 import { Config } from "../config/schema";
-import { ErrorMessage } from "../constants/error-message";
 import { MailService } from "../mail/mail.service";
 import { UserService } from "../user/user.service";
 import { UtilsService } from "../utils/utils.service";

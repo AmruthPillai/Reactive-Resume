@@ -25,9 +25,9 @@ import {
   userSchema,
   UserWithSecrets,
 } from "@reactive-resume/dto";
+import { ErrorMessage } from "@reactive-resume/utils";
 import type { Response } from "express";
 
-import { ErrorMessage } from "../constants/error-message";
 import { User } from "../user/decorators/user.decorator";
 import { UtilsService } from "../utils/utils.service";
 import { AuthService } from "./auth.service";

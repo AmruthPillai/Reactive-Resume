@@ -50,7 +50,7 @@ model Secrets {
 model Resume {
   id         String     @id @default(cuid())
   title      String
-  slug       String
+  slug       String     @unique
   data       Json       @default("{}")
   visibility Visibility @default(private)
   locked     Boolean    @default(false)

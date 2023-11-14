@@ -1,10 +1,10 @@
 import { Injectable, InternalServerErrorException } from "@nestjs/common";
 import { Prisma } from "@prisma/client";
+import { ErrorMessage } from "@reactive-resume/utils";
 import { RedisService } from "@songkeys/nestjs-redis";
 import Redis from "ioredis";
 import { PrismaService } from "nestjs-prisma";
 
-import { ErrorMessage } from "../constants/error-message";
 import { StorageService } from "../storage/storage.service";
 
 @Injectable()
