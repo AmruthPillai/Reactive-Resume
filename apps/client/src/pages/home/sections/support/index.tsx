@@ -56,10 +56,7 @@ export const SupportSection = () => (
       </div>
 
       <p className="max-w-4xl leading-loose">
-        {t`If you're multilingual, we'd love your help in bringing the app to more languages and
-        communities. Don't worry if you don't see your language on the list - just give me a
-        shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into
-        translation over at Crowdin by clicking the link below.`}
+        {t`If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below.`}
       </p>
 
       <div className="flex items-center gap-x-10">
@@ -78,10 +75,7 @@ export const SupportSection = () => (
       </div>
 
       <p className="max-w-4xl leading-loose">
-        {t`Even if you're not in a position to contribute financially, you can still make a difference by
-        giving the GitHub repository a star, spreading the word to your friends, or dropping a quick
-        message to let me know how Reactive Resume has helped you. Your feedback and support are
-        always welcome and much appreciated!`}
+        {t`Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Reactive Resume has helped you. Your feedback and support are always welcome and much appreciated!`}
       </p>
     </div>
   </section>

@@ -34,6 +34,18 @@ export class TranslationService {
       );
       const { data } = response.data as CrowdinResponse;
 
+      data.push({
+        data: {
+          language: {
+            id: "en-US",
+            locale: "en-US",
+            editorCode: "en",
+            name: "English",
+          },
+          translationProgress: 100,
+        },
+      });
+
       if (isDevelopment) {
         data.push({
           data: {
