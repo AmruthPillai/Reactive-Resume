@@ -22,8 +22,6 @@ export class TranslationService {
   ) {}
 
   async fetchLanguages() {
-    const isDevelopment = this.configService.get("NODE_ENV") === "development";
-
     try {
       const projectId = this.configService.getOrThrow("CROWDIN_PROJECT_ID");
       const accessToken = this.configService.getOrThrow("CROWDIN_ACCESS_TOKEN");
@@ -34,6 +32,7 @@ export class TranslationService {
       );
       const { data } = response.data as CrowdinResponse;
 
+      // Add English Locale
       data.push({
         data: {
           language: {
@@ -46,19 +45,18 @@ export class TranslationService {
         },
       });
 
-      if (isDevelopment) {
-        data.push({
-          data: {
-            language: {
-              id: "zu-ZA",
-              locale: "zu-ZA",
-              editorCode: "zuza",
-              name: "Psuedo Locale",
-            },
-            translationProgress: 100,
+      // Add Pseudo Locale
+      data.push({
+        data: {
+          language: {
+            id: "zu-ZA",
+            locale: "zu-ZA",
+            editorCode: "zuza",
+            name: "Psuedo Locale",
           },
-        });
-      }
+          translationProgress: 100,
+        },
+      });
 
       return data.map(({ data }) => {
         return {

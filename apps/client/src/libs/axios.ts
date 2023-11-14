@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { deepSearchAndParseDates } from "@reactive-resume/utils";
+import { deepSearchAndParseDates, ErrorMessage } from "@reactive-resume/utils";
 import _axios from "axios";
 import createAuthRefreshInterceptor from "axios-auth-refresh";
 import { redirect } from "react-router-dom";
@@ -25,13 +25,16 @@ axios.interceptors.response.use(
     return { ...response, data: transformedResponse };
   },
   (error) => {
-    const message = error.response?.data.message || error.message;
+    const message = error.response?.data.message as ErrorMessage;
+    const description = translateError(message);
 
-    toast({
-      variant: "error",
-      title: t`Oops, the server returned an error.`,
-      description: translateError(message),
-    });
+    if (description) {
+      toast({
+        variant: "error",
+        title: t`Oops, the server returned an error.`,
+        description,
+      });
+    }
 
     return Promise.reject(error);
   },

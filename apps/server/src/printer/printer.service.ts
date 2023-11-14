@@ -14,7 +14,7 @@ import { Config } from "../config/schema";
 import { StorageService } from "../storage/storage.service";
 import { UtilsService } from "../utils/utils.service";
 
-const PRINTER_TIMEOUT = 10000; // 10 seconds
+const PRINTER_TIMEOUT = 15000; // 15 seconds
 
 @Injectable()
 export class PrinterService {
@@ -76,9 +76,7 @@ export class PrinterService {
   async printPreview(resume: ResumeDto) {
     return this.utils.getCachedOrSet(
       `user:${resume.userId}:storage:previews:${resume.id}`,
-      async () => {
-        return withTimeout(this.generatePreview(resume), PRINTER_TIMEOUT);
-      },
+      async () => withTimeout(this.generatePreview(resume), PRINTER_TIMEOUT),
     );
   }
 

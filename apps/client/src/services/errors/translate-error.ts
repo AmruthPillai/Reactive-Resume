@@ -41,6 +41,6 @@ export const translateError = (error: ErrorMessage) => {
       return t`Something went wrong while processing your request. Please try again later or raise an issue on GitHub.`;
 
     default:
-      return error;
+      return null;
   }
 };

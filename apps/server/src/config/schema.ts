@@ -7,8 +7,8 @@ export const configSchema = z.object({
   PORT: z.coerce.number().default(3000),
 
   // Client Port & URL (only for development environments)
-  __DEV__CLIENT_PORT: z.coerce.number().default(5173),
-  __DEV__CLIENT_URL: z.string().url().default("http://localhost:5173"),
+  __DEV__CLIENT_PORT: z.coerce.number().optional(),
+  __DEV__CLIENT_URL: z.string().url().optional(),
 
   // URLs
   PUBLIC_URL: z.string().url(),
