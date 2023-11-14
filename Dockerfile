@@ -21,7 +21,7 @@ FROM base AS release
 
 RUN apt update && apt install -y dumb-init --no-install-recommends
 
-COPY --chown=node:node --from=build /app/.npmrc /app/package.json /app/pnpm-lock.yaml ./
+COPY --chown=node:node --from=build /app/.npmrc /app/package.json /app/package-lock.json ./
 RUN npm ci --production && npm cache clean --force
 
 # Copy Build Output
