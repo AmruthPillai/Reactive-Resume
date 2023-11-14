@@ -9,7 +9,7 @@ FROM base AS build
 
 ENV NX_CLOUD_ACCESS_TOKEN=$NX_CLOUD_ACCESS_TOKEN
 
-COPY .npmrc package.json pnpm-lock.yaml ./
+COPY .npmrc package.json package-lock.json ./
 RUN npm ci && npm cache clean --force
 
 COPY . .
