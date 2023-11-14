@@ -9,7 +9,9 @@ import { useLanguages } from "@/client/services/resume/translation";
 // Who are you, and why did you build Reactive Resume?
 const Question1 = () => (
   <AccordionItem value="1">
-    <AccordionTrigger>Who are you, and why did you build Reactive Resume?</AccordionTrigger>
+    <AccordionTrigger className="text-left leading-relaxed">
+      Who are you, and why did you build Reactive Resume?
+    </AccordionTrigger>
     <AccordionContent className="prose max-w-none dark:prose-invert">
       <p>
         I'm Amruth Pillai, just another run-off-the-mill developer working at Elara Digital GmbH in
@@ -52,7 +54,9 @@ const Question1 = () => (
 // How much does it cost to run Reactive Resume?
 const Question2 = () => (
   <AccordionItem value="2">
-    <AccordionTrigger>How much does it cost to run Reactive Resume?</AccordionTrigger>
+    <AccordionTrigger className="text-left leading-relaxed">
+      How much does it cost to run Reactive Resume?
+    </AccordionTrigger>
     <AccordionContent className="prose max-w-none dark:prose-invert">
       <p>
         It's not much honestly.{" "}
@@ -95,7 +99,9 @@ const Question2 = () => (
 // Other than donating, how can I support you?
 const Question3 = () => (
   <AccordionItem value="3">
-    <AccordionTrigger>Other than donating, how can I support you?</AccordionTrigger>
+    <AccordionTrigger className="text-left leading-relaxed">
+      Other than donating, how can I support you?
+    </AccordionTrigger>
     <AccordionContent className="prose max-w-none dark:prose-invert">
       <p>
         <strong>If you speak a language other than English</strong>, sign up to be a translator on
@@ -127,7 +133,9 @@ const Question4 = () => {
 
   return (
     <AccordionItem value="4">
-      <AccordionTrigger>What languages are supported on Reactive Resume?</AccordionTrigger>
+      <AccordionTrigger className="text-left leading-relaxed">
+        What languages are supported on Reactive Resume?
+      </AccordionTrigger>
       <AccordionContent className="prose max-w-none dark:prose-invert">
         <p>
           Here are the languages currently supported by Reactive Resume, along with their respective
@@ -180,7 +188,9 @@ const Question4 = () => {
 // How does the OpenAI Integration work?
 const Question5 = () => (
   <AccordionItem value="5">
-    <AccordionTrigger>How does the OpenAI Integration work?</AccordionTrigger>
+    <AccordionTrigger className="text-left leading-relaxed">
+      How does the OpenAI Integration work?
+    </AccordionTrigger>
     <AccordionContent className="prose max-w-none dark:prose-invert">
       <p>
         OpenAI has been a game-changer for all of us. I cannot tell you how much ChatGPT has helped
@@ -219,7 +229,7 @@ const Question5 = () => (
 export const FAQSection = () => {
   return (
     <section id="faq" className="container relative py-24 sm:py-32">
-      <div className="grid grid-cols-3 gap-x-12">
+      <div className="grid gap-12 lg:grid-cols-3">
         <div className="col-span-1 space-y-6">
           <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
 

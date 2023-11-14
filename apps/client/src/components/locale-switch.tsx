@@ -65,8 +65,7 @@ export const LocaleSwitch = () => {
                         i18n.locale === option.value && "opacity-100",
                       )}
                     />
-                    {option.label}{" "}
-                    <span className="ml-1.5 text-xs opacity-50">({option.value})</span>
+                    {option.label} <span className="ml-1 text-xs opacity-50">({option.value})</span>
                   </CommandItem>
                 ))}
               </div>

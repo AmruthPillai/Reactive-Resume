@@ -1,4 +1,4 @@
-import { Controller, Get, Header, Param } from "@nestjs/common";
+import { Controller, Get, Param } from "@nestjs/common";
 
 import { UtilsService } from "../utils/utils.service";
 import { TranslationService } from "./translation.service";
@@ -20,8 +20,6 @@ export class TranslationController {
   }
 
   @Get("/:locale")
-  @Header("Content-Type", "application/octet-stream")
-  @Header("Content-Disposition", 'attachment; filename="messages.po"')
   async translation(@Param("locale") locale: string) {
     return this.utils.getCachedOrSet(
       `translation:${locale}`,

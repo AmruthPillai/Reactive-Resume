@@ -112,8 +112,8 @@ export const FeaturesSection = () => {
                   key={index}
                   viewport={{ once: true }}
                   initial={{ opacity: 0, x: -50 }}
+                  className={cn(featureLabel, feature.className)}
                   whileInView={{ opacity: 1, x: 0, transition: { delay: index * 0.1 } }}
-                  className={cn(featureLabel, feature.className, index > 8 && "hidden lg:flex")}
                 >
                   {feature.icon}
                   <h4>{feature.title}</h4>

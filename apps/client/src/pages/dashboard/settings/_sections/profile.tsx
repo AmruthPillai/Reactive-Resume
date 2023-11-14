@@ -99,7 +99,14 @@ export const ProfileSettings = () => {
                     {...field}
                     value={field.value}
                     onValueChange={field.onChange}
-                    options={languages.map(({ locale, name }) => ({ label: name, value: locale }))}
+                    options={languages.map(({ locale, name }) => ({
+                      label: (
+                        <>
+                          {name} <span className="ml-1 text-xs opacity-50">({locale})</span>
+                        </>
+                      ),
+                      value: locale,
+                    }))}
                   />
                 </div>
                 <FormDescription>

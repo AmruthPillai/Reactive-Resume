@@ -25,6 +25,7 @@ export const Counter = ({ from, to }: CounterProps) => {
   return (
     <motion.span
       ref={nodeRef}
+      viewport={{ once: true }}
       transition={{ duration: 0.5 }}
       initial={{ opacity: 0, scale: 0.1 }}
       whileInView={{ opacity: 1, scale: 1 }}

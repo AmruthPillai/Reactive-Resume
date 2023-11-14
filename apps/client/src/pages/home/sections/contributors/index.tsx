@@ -48,8 +48,8 @@ export const ContributorsSection = () => {
             key={index}
             viewport={{ once: true }}
             initial={{ opacity: 0, scale: 0 }}
+            className={cn(index >= 30 && "hidden lg:block")}
             whileInView={{ opacity: 1, scale: 1, transition: { delay: index * 0.025 } }}
-            className={cn(index > 30 && "hidden lg:block")}
           >
             <a href={contributor.url} target="_blank" rel="noreferrer">
               <Tooltip content={contributor.name}>
