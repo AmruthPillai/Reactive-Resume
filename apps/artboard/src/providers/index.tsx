@@ -19,7 +19,7 @@ export const Providers = () => {
       }
     };
 
-    const resumeData = window.sessionStorage.getItem("resume");
+    const resumeData = window.localStorage.getItem("resume");
     if (resumeData) return setResume(JSON.parse(resumeData));
 
     window.addEventListener("message", handleMessage);

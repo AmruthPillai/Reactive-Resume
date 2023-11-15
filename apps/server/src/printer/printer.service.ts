@@ -82,7 +82,6 @@ export class PrinterService {
 
   async generateResume(resume: ResumeDto) {
     const browser = await this.getBrowser();
-
     const page = await browser.newPage();
 
     let url = this.utils.getUrl();
@@ -112,7 +111,7 @@ export class PrinterService {
     const numPages = resume.data.metadata.layout.length;
 
     await page.evaluateOnNewDocument((data) => {
-      sessionStorage.setItem("resume", JSON.stringify(data));
+      window.localStorage.setItem("resume", JSON.stringify(data));
     }, resume.data);
 
     await page.goto(`${url}/artboard/preview`, { waitUntil: "networkidle0" });
@@ -192,7 +191,6 @@ export class PrinterService {
 
   async generatePreview(resume: ResumeDto) {
     const browser = await this.getBrowser();
-
     const page = await browser.newPage();
 
     let url = this.utils.getUrl();
@@ -220,7 +218,7 @@ export class PrinterService {
 
     // Set the data of the resume to be printed in the browser's session storage
     await page.evaluateOnNewDocument((data: string) => {
-      sessionStorage.setItem("resume", data);
+      window.localStorage.setItem("resume", data);
     }, JSON.stringify(resume.data));
 
     await page.setViewport({ width: 794, height: 1123 });
