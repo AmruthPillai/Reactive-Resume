@@ -31,4 +31,6 @@ COPY --chown=node:node --from=build /app/node_modules/.prisma/client ./node_modu
 # Copy Prisma Schema & Migrations
 COPY --chown=node:node --from=build /app/tools/prisma ./tools/prisma
 
+EXPOSE 3000
+
 CMD [ "dumb-init", "npm", "run", "start" ]

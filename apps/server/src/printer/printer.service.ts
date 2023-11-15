@@ -217,9 +217,9 @@ export class PrinterService {
     }
 
     // Set the data of the resume to be printed in the browser's session storage
-    await page.evaluateOnNewDocument((data: string) => {
-      window.localStorage.setItem("resume", data);
-    }, JSON.stringify(resume.data));
+    await page.evaluateOnNewDocument((data) => {
+      window.localStorage.setItem("resume", JSON.stringify(data));
+    }, resume.data);
 
     await page.setViewport({ width: 794, height: 1123 });
 
