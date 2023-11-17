@@ -25,7 +25,7 @@ import {
   TextAa,
   Translate,
 } from "@phosphor-icons/react";
-import { cn } from "@reactive-resume/utils";
+import { cn, templatesList } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
 
 type Feature = {
@@ -39,6 +39,8 @@ const featureLabel = cn(
 );
 
 export const FeaturesSection = () => {
+  const templatesCount = templatesList.length;
+
   const features: Feature[] = [
     { icon: <CurrencyDollarSimple />, title: t`Free, forever` },
     { icon: <GitBranch />, title: t`Open Source` },
@@ -51,7 +53,7 @@ export const FeaturesSection = () => {
     { icon: <GoogleLogo />, title: t`Sign in with Google` },
     { icon: <EnvelopeSimple />, title: t`Sign in with Email` },
     { icon: <Lock />, title: t`Secure with two-factor authentication` },
-    { icon: <StackSimple />, title: t`8 design templates to choose from, more on the way` },
+    { icon: <StackSimple />, title: t`${templatesCount} resume templates to choose from` },
     { icon: <Files />, title: t`Design single/multi page resumes` },
     { icon: <Folder />, title: t`Manage multiple resumes` },
     { icon: <Swatches />, title: t`Customisable colour palettes` },
