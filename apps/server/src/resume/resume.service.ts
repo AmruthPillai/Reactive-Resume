@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable, Logger } from "@nestjs/common";
+import { BadRequestException, Injectable } from "@nestjs/common";
 import { Prisma } from "@prisma/client";
 import { CreateResumeDto, ImportResumeDto, ResumeDto, UpdateResumeDto } from "@reactive-resume/dto";
 import { defaultResumeData, ResumeData } from "@reactive-resume/schema";
@@ -18,7 +18,6 @@ import { UtilsService } from "../utils/utils.service";
 @Injectable()
 export class ResumeService {
   private readonly redis: Redis;
-  private readonly logger = new Logger(ResumeService.name);
 
   constructor(
     private readonly prisma: PrismaService,

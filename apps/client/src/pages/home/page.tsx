@@ -6,9 +6,9 @@ import { FAQSection } from "./sections/faq";
 import { FeaturesSection } from "./sections/features";
 import { HeroSection } from "./sections/hero";
 import { LogoCloudSection } from "./sections/logo-cloud";
-import { SampleResumesSection } from "./sections/sample-resumes";
 import { StatisticsSection } from "./sections/statistics";
 import { SupportSection } from "./sections/support";
+import { TemplatesSection } from "./sections/templates";
 import { TestimonialsSection } from "./sections/testimonials";
 
 export const HomePage = () => (
@@ -23,7 +23,7 @@ export const HomePage = () => (
     <LogoCloudSection />
     <StatisticsSection />
     <FeaturesSection />
-    <SampleResumesSection />
+    <TemplatesSection />
     <TestimonialsSection />
     <SupportSection />
     <FAQSection />

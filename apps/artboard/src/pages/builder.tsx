@@ -1,5 +1,5 @@
 import { SectionKey } from "@reactive-resume/schema";
-import { pageSizeMap, TemplateKey } from "@reactive-resume/utils";
+import { pageSizeMap, Template } from "@reactive-resume/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useMemo, useRef } from "react";
 import { ReactZoomPanPinchRef, TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
@@ -12,7 +12,7 @@ export const BuilderLayout = () => {
   const transformRef = useRef<ReactZoomPanPinchRef>(null);
   const format = useArtboardStore((state) => state.resume.metadata.page.format);
   const layout = useArtboardStore((state) => state.resume.metadata.layout);
-  const template = useArtboardStore((state) => state.resume.metadata.template as TemplateKey);
+  const template = useArtboardStore((state) => state.resume.metadata.template as Template);
 
   const Template = useMemo(() => getTemplate(template), [template]);
 

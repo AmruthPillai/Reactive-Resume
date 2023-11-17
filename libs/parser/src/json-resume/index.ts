@@ -190,7 +190,7 @@ export class JsonResumeParser implements Parser<Json, JsonResume> {
           ...defaultLanguage,
           id: createId(),
           name: language.language ?? "",
-          fluency: language.fluency ?? "",
+          description: language.fluency ?? "",
         });
       }
     }

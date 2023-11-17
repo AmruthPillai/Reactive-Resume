@@ -1,5 +1,5 @@
 import { SectionKey } from "@reactive-resume/schema";
-import { TemplateKey } from "@reactive-resume/utils";
+import { Template } from "@reactive-resume/utils";
 import { useMemo } from "react";
 
 import { Page } from "../components/page";
@@ -8,7 +8,7 @@ import { getTemplate } from "../templates";
 
 export const PreviewLayout = () => {
   const layout = useArtboardStore((state) => state.resume.metadata.layout);
-  const template = useArtboardStore((state) => state.resume.metadata.template as TemplateKey);
+  const template = useArtboardStore((state) => state.resume.metadata.template as Template);
 
   const Template = useMemo(() => getTemplate(template), [template]);
 

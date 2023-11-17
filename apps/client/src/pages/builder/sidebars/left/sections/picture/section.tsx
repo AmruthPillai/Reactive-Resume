@@ -1,8 +1,7 @@
 import { t } from "@lingui/macro";
-import { Aperture, UploadSimple } from "@phosphor-icons/react";
+import { Aperture, Trash, UploadSimple } from "@phosphor-icons/react";
 import {
   Avatar,
-  AvatarFallback,
   AvatarImage,
   buttonVariants,
   Input,
@@ -11,8 +10,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@reactive-resume/ui";
-import { cn, getInitials } from "@reactive-resume/utils";
-import { AnimatePresence, motion } from "framer-motion";
+import { cn } from "@reactive-resume/utils";
+import { motion } from "framer-motion";
 import { useMemo, useRef } from "react";
 import { z } from "zod";
 
@@ -23,10 +22,9 @@ import { PictureOptions } from "./options";
 
 export const PictureSection = () => {
   const inputRef = useRef<HTMLInputElement>(null);
-  const { uploadImage, loading } = useUploadImage();
+  const { uploadImage } = useUploadImage();
 
   const setValue = useResumeStore((state) => state.setValue);
-  const name = useResumeStore((state) => state.resume.data.basics.name);
   const picture = useResumeStore((state) => state.resume.data.basics.picture);
 
   const isValidUrl = useMemo(() => z.string().url().safeParse(picture.url).success, [picture.url]);
@@ -41,16 +39,37 @@ export const PictureSection = () => {
     }
   };
 
+  const onAvatarClick = () => {
+    if (isValidUrl) {
+      setValue("basics.picture.url", "");
+    } else {
+      inputRef.current?.click();
+    }
+  };
+
   return (
     <div className="flex items-center gap-x-4">
-      <Avatar className="h-14 w-14">
-        {isValidUrl && <AvatarImage src={picture.url} />}
-        <AvatarFallback className="text-lg font-bold">{getInitials(name)}</AvatarFallback>
-      </Avatar>
+      <div className="group relative cursor-pointer" onClick={onAvatarClick}>
+        <Avatar className="h-14 w-14 bg-secondary">
+          <AvatarImage src={picture.url} />
+        </Avatar>
+
+        {isValidUrl ? (
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center rounded-full bg-background/30 opacity-0 transition-opacity group-hover:opacity-100">
+            <Trash size={16} weight="bold" />
+          </div>
+        ) : (
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center rounded-full bg-background/30 opacity-0 transition-opacity group-hover:opacity-100">
+            <UploadSimple size={16} weight="bold" />
+          </div>
+        )}
+      </div>
 
       <div className="flex w-full flex-col gap-y-1.5">
         <Label htmlFor="basics.picture.url">{t`Picture`}</Label>
         <div className="flex items-center gap-x-2">
+          <input hidden type="file" ref={inputRef} onChange={onSelectImage} />
+
           <Input
             id="basics.picture.url"
             placeholder="https://..."
@@ -58,44 +77,23 @@ export const PictureSection = () => {
             onChange={(event) => setValue("basics.picture.url", event.target.value)}
           />
 
-          <AnimatePresence>
-            {/* Show options button if picture exists */}
-            {isValidUrl && (
-              <Popover>
-                <PopoverTrigger asChild>
-                  <motion.button
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className={cn(buttonVariants({ size: "icon", variant: "ghost" }))}
-                  >
-                    <Aperture />
-                  </motion.button>
-                </PopoverTrigger>
-                <PopoverContent className="w-[360px]">
-                  <PictureOptions />
-                </PopoverContent>
-              </Popover>
-            )}
-
-            {/* Show upload button if picture doesn't exist, else show remove button to delete picture */}
-            {!isValidUrl && (
-              <>
-                <input hidden type="file" ref={inputRef} onChange={onSelectImage} />
-
+          {isValidUrl && (
+            <Popover>
+              <PopoverTrigger asChild>
                 <motion.button
-                  disabled={loading}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  onClick={() => inputRef.current?.click()}
                   className={cn(buttonVariants({ size: "icon", variant: "ghost" }))}
                 >
-                  <UploadSimple />
+                  <Aperture />
                 </motion.button>
-              </>
-            )}
-          </AnimatePresence>
+              </PopoverTrigger>
+              <PopoverContent className="w-[360px]">
+                <PictureOptions />
+              </PopoverContent>
+            </Popover>
+          )}
         </div>
       </div>
     </div>

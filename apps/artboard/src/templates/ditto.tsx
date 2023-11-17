@@ -101,7 +101,7 @@ const Summary = () => {
 
   return (
     <section id={section.id}>
-      <h4 className="mb-2 text-base font-bold uppercase">{section.name}</h4>
+      <h4 className="mb-2 text-base font-bold">{section.name}</h4>
 
       <div
         className="wysiwyg"
@@ -173,10 +173,10 @@ const Section = <T,>({
 
   return (
     <section id={section.id} className="grid">
-      <h4 className="mb-2 text-base font-bold uppercase">{section.name}</h4>
+      <h4 className="mb-2 text-base font-bold">{section.name}</h4>
 
       <div
-        className="grid gap-3"
+        className="grid gap-x-6 gap-y-3"
         style={{ gridTemplateColumns: `repeat(${section.columns}, 1fr)` }}
       >
         {section.items
@@ -193,21 +193,21 @@ const Section = <T,>({
                 className={cn("relative space-y-2 pl-4 group-[.sidebar]:pl-0", className)}
               >
                 <div className="relative -ml-4 group-[.sidebar]:ml-0">
-                  <div className="pl-4 leading-snug group-[.sidebar]:pl-0">
+                  <div className="pl-4 group-[.sidebar]:pl-0">
                     {children?.(item as T)}
-                    {url && <Link url={url} />}
+                    {url !== undefined && <Link url={url} />}
                   </div>
 
                   <div className="absolute inset-y-0 -left-px border-l-[4px] border-primary group-[.sidebar]:hidden" />
                 </div>
 
-                {summary && !isEmptyString(summary) && (
+                {summary !== undefined && !isEmptyString(summary) && (
                   <div className="wysiwyg" dangerouslySetInnerHTML={{ __html: summary }} />
                 )}
 
-                {level && level > 0 && <Rating level={level} />}
+                {level !== undefined && level > 0 && <Rating level={level} />}
 
-                {keywords && keywords.length > 0 && (
+                {keywords !== undefined && keywords.length > 0 && (
                   <p className="text-sm">{keywords.join(", ")}</p>
                 )}
 
@@ -227,7 +227,7 @@ const Profiles = () => {
   return (
     <Section<Profile> section={section}>
       {(item) => (
-        <div className="leading-snug">
+        <div>
           {isUrl(item.url.href) ? (
             <Link
               url={item.url}
@@ -411,11 +411,11 @@ const Languages = () => {
   const section = useArtboardStore((state) => state.resume.sections.languages);
 
   return (
-    <Section<Language> section={section} levelKey="fluencyLevel">
+    <Section<Language> section={section} levelKey="level">
       {(item) => (
         <div>
           <div className="font-bold">{item.name}</div>
-          <div>{item.fluency}</div>
+          <div>{item.description}</div>
         </div>
       )}
     </Section>

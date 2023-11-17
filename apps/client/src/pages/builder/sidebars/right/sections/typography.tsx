@@ -137,7 +137,7 @@ export const TypographySection = () => {
             <Slider
               min={12}
               max={18}
-              step={1}
+              step={0.05}
               value={[typography.font.size]}
               onValueChange={(value) => {
                 setValue("metadata.typography.font.size", value[0]);
@@ -154,7 +154,7 @@ export const TypographySection = () => {
             <Slider
               min={0}
               max={3}
-              step={0.25}
+              step={0.05}
               value={[typography.lineHeight]}
               onValueChange={(value) => {
                 setValue("metadata.typography.lineHeight", value[0]);

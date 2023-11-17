@@ -1,0 +1,134 @@
+version: "3"
+
+# In this Docker Compose example, we use Nginx Proxy Manager to manage the reverse proxy and SSL certificates.
+# There's very little configuration to be made on the compose file itself, and most of it is done on the Nginx Proxy Manager UI.
+
+services:
+  # Database (Postgres)
+  postgres:
+    image: postgres:alpine
+    restart: unless-stopped
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Storage (for image uploads)
+  minio:
+    image: minio/minio
+    restart: unless-stopped
+    command: server /data
+    volumes:
+      - minio_data:/data
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.storage.rule=Host(`storage.example.com`)
+      - traefik.http.routers.storage.entrypoints=websecure
+      - traefik.http.routers.storage.tls.certresolver=letsencrypt
+      - traefik.http.services.storage.loadbalancer.server.port=9000
+
+  # Chrome Browser (for printing and previews)
+  chrome:
+    image: browserless/chrome:1.61.0-puppeteer-21.4.1
+    restart: unless-stopped
+    environment:
+      TOKEN: chrome_token
+      EXIT_ON_HEALTH_FAILURE: true
+      PRE_REQUEST_HEALTH_CHECK: true
+
+  # Redis (for cache & server session management)
+  redis:
+    image: redis:alpine
+    restart: unless-stopped
+    command: redis-server --save 60 1 --loglevel warning --requirepass password
+    volumes:
+      - redis_data:/data
+
+  app:
+    image: amruthpillai/reactive-resume:v4.0.0-alpha.0
+    restart: unless-stopped
+    depends_on:
+      - postgres
+      - minio
+      - redis
+      - chrome
+    environment:
+      # -- Environment Variables --
+      PORT: 3000
+      NODE_ENV: production
+
+      # -- URLs --
+      PUBLIC_URL: https://example.com
+      STORAGE_URL: https://storage.example.com
+
+      # -- Printer (Chrome) --
+      CHROME_TOKEN: chrome_token
+      CHROME_URL: wss://printer.example.com
+
+      # -- Database (Postgres) --
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/postgres
+
+      # -- Auth --
+      ACCESS_TOKEN_SECRET: access_token_secret
+      REFRESH_TOKEN_SECRET: refresh_token_secret
+
+      # -- Emails --
+      # SMTP_URL: smtp://user:pass@smtp:587 # Optional
+
+      # -- Storage (Minio) --
+      STORAGE_ENDPOINT: minio
+      STORAGE_PORT: 9000
+      STORAGE_REGION: us-east-1 # Optional
+      STORAGE_BUCKET: default
+      STORAGE_ACCESS_KEY: minioadmin
+      STORAGE_SECRET_KEY: minioadmin
+
+      # -- Cache (Redis) --
+      REDIS_URL: redis://default:password@redis:6379
+
+      # -- Sentry --
+      # VITE_SENTRY_DSN: https://id.sentry.io # Optional
+
+      # -- Crowdin (Optional) --
+      # CROWDIN_PROJECT_ID:
+      # CROWDIN_ACCESS_TOKEN:
+
+      # -- GitHub --
+      GITHUB_CLIENT_ID: github_client_id
+      GITHUB_CLIENT_SECRET: github_client_secret
+      GITHUB_CALLBACK_URL: https://example.com/api/auth/github/callback
+
+      # -- Google --
+      GOOGLE_CLIENT_ID: google_client_id
+      GOOGLE_CLIENT_SECRET: google_client_secret
+      GOOGLE_CALLBACK_URL: https://example.com/api/auth/google/callback
+
+  nginx:
+    image: jc21/nginx-proxy-manager
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+      - 81:81 # Port 81 is used for Proxy Manager's Web UI
+    volumes:
+      - nginx_data:/data
+      - letsencrypt_data:/etc/letsencrypt
+    environment:
+      DISABLE_IPV6: true
+
+volumes:
+  minio_data:
+  redis_data:
+  nginx_data:
+  postgres_data:
+  letsencrypt_data:

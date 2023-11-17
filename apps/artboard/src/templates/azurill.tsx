@@ -79,11 +79,11 @@ const Summary = () => {
 
   return (
     <section id={section.id}>
-      <div className="mb-2 hidden font-bold uppercase text-primary group-[.main]:block">
+      <div className="mb-2 hidden font-bold text-primary group-[.main]:block">
         <h4>{section.name}</h4>
       </div>
 
-      <div className="mb-2 hidden items-center gap-x-2 text-center font-bold uppercase text-primary group-[.sidebar]:flex">
+      <div className="mb-2 hidden items-center gap-x-2 text-center font-bold text-primary group-[.sidebar]:flex">
         <div className="h-1.5 w-1.5 rounded-full border border-primary" />
         <h4>{section.name}</h4>
         <div className="h-1.5 w-1.5 rounded-full border border-primary" />
@@ -162,18 +162,18 @@ const Section = <T,>({
 
   return (
     <section id={section.id} className="grid">
-      <div className="mb-2 hidden font-bold uppercase text-primary group-[.main]:block">
+      <div className="mb-2 hidden font-bold text-primary group-[.main]:block">
         <h4>{section.name}</h4>
       </div>
 
-      <div className="mx-auto mb-2 hidden items-center gap-x-2 text-center font-bold uppercase text-primary group-[.sidebar]:flex">
+      <div className="mx-auto mb-2 hidden items-center gap-x-2 text-center font-bold text-primary group-[.sidebar]:flex">
         <div className="h-1.5 w-1.5 rounded-full border border-primary" />
         <h4>{section.name}</h4>
         <div className="h-1.5 w-1.5 rounded-full border border-primary" />
       </div>
 
       <div
-        className="grid gap-3 group-[.sidebar]:mx-auto group-[.sidebar]:text-center"
+        className="grid gap-x-6 gap-y-3 group-[.sidebar]:mx-auto group-[.sidebar]:text-center"
         style={{ gridTemplateColumns: `repeat(${section.columns}, 1fr)` }}
       >
         {section.items
@@ -193,19 +193,19 @@ const Section = <T,>({
                   className,
                 )}
               >
-                <div className="leading-snug">{children?.(item as T)}</div>
+                <div>{children?.(item as T)}</div>
 
-                {summary && !isEmptyString(summary) && (
+                {summary !== undefined && !isEmptyString(summary) && (
                   <div className="wysiwyg" dangerouslySetInnerHTML={{ __html: summary }} />
                 )}
 
-                {level && level > 0 && <Rating level={level} />}
+                {level !== undefined && level > 0 && <Rating level={level} />}
 
-                {keywords && keywords.length > 0 && (
+                {keywords !== undefined && keywords.length > 0 && (
                   <p className="text-sm">{keywords.join(", ")}</p>
                 )}
 
-                {url && <Link url={url} />}
+                {url !== undefined && <Link url={url} />}
 
                 <div className="absolute left-[-4.5px] top-px hidden h-[8px] w-[8px] rounded-full bg-primary group-[.main]:block" />
               </div>
@@ -223,7 +223,7 @@ const Profiles = () => {
   return (
     <Section<Profile> section={section}>
       {(item) => (
-        <div className="leading-snug">
+        <div>
           {isUrl(item.url.href) ? (
             <Link
               url={item.url}
@@ -258,7 +258,7 @@ const Experience = () => {
           <div className="font-bold">{item.company}</div>
           <div>{item.position}</div>
           <div>{item.location}</div>
-          <div className="font-bold italic">{item.date}</div>
+          <div className="font-bold">{item.date}</div>
         </div>
       )}
     </Section>
@@ -276,7 +276,7 @@ const Education = () => {
           <div>{item.area}</div>
           <div>{item.score}</div>
           <div>{item.studyType}</div>
-          <div className="font-bold italic">{item.date}</div>
+          <div className="font-bold">{item.date}</div>
         </div>
       )}
     </Section>
@@ -292,7 +292,7 @@ const Awards = () => {
         <div>
           <div className="font-bold">{item.title}</div>
           <div>{item.awarder}</div>
-          <div className="font-bold italic">{item.date}</div>
+          <div className="font-bold">{item.date}</div>
         </div>
       )}
     </Section>
@@ -308,7 +308,7 @@ const Certifications = () => {
         <div>
           <div className="font-bold">{item.name}</div>
           <div>{item.issuer}</div>
-          <div className="font-bold italic">{item.date}</div>
+          <div className="font-bold">{item.date}</div>
         </div>
       )}
     </Section>
@@ -349,7 +349,7 @@ const Publications = () => {
         <div>
           <div className="font-bold">{item.name}</div>
           <div>{item.publisher}</div>
-          <div className="font-bold italic">{item.date}</div>
+          <div className="font-bold">{item.date}</div>
         </div>
       )}
     </Section>
@@ -366,7 +366,7 @@ const Volunteer = () => {
           <div className="font-bold">{item.organization}</div>
           <div>{item.position}</div>
           <div>{item.location}</div>
-          <div className="font-bold italic">{item.date}</div>
+          <div className="font-bold">{item.date}</div>
         </div>
       )}
     </Section>
@@ -377,11 +377,11 @@ const Languages = () => {
   const section = useArtboardStore((state) => state.resume.sections.languages);
 
   return (
-    <Section<Language> section={section} levelKey="fluencyLevel">
+    <Section<Language> section={section} levelKey="level">
       {(item) => (
         <div>
           <div className="font-bold">{item.name}</div>
-          <div>{item.fluency}</div>
+          <div>{item.description}</div>
         </div>
       )}
     </Section>
@@ -399,7 +399,7 @@ const Projects = () => {
             <div className="font-bold">{item.name}</div>
             <div>{item.description}</div>
 
-            <div className="font-bold italic">{item.date}</div>
+            <div className="font-bold">{item.date}</div>
           </div>
         </div>
       )}
@@ -438,7 +438,7 @@ const Custom = ({ id }: { id: string }) => {
             <div className="font-bold">{item.name}</div>
             <div>{item.description}</div>
 
-            <div className="font-bold italic">{item.date}</div>
+            <div className="font-bold">{item.date}</div>
             <div>{item.location}</div>
           </div>
         </div>

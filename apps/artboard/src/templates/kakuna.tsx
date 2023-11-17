@@ -105,7 +105,7 @@ const Summary = () => {
 
   return (
     <section id={section.id}>
-      <h4 className="mb-2 border-b border-primary text-center font-bold uppercase text-primary">
+      <h4 className="mb-2 border-b border-primary text-center font-bold text-primary">
         {section.name}
       </h4>
 
@@ -179,12 +179,12 @@ const Section = <T,>({
 
   return (
     <section id={section.id} className="grid">
-      <h4 className="mb-2 border-b border-primary text-center font-bold uppercase text-primary">
+      <h4 className="mb-2 border-b border-primary text-center font-bold text-primary">
         {section.name}
       </h4>
 
       <div
-        className="grid gap-3"
+        className="grid gap-x-6 gap-y-3"
         style={{ gridTemplateColumns: `repeat(${section.columns}, 1fr)` }}
       >
         {section.items
@@ -197,19 +197,19 @@ const Section = <T,>({
 
             return (
               <div key={item.id} className={cn("space-y-2", className)}>
-                <div className="leading-snug">{children?.(item as T)}</div>
+                <div>{children?.(item as T)}</div>
 
-                {summary && !isEmptyString(summary) && (
+                {summary !== undefined && !isEmptyString(summary) && (
                   <div className="wysiwyg" dangerouslySetInnerHTML={{ __html: summary }} />
                 )}
 
-                {level && level > 0 && <Rating level={level} />}
+                {level !== undefined && level > 0 && <Rating level={level} />}
 
-                {keywords && keywords.length > 0 && (
+                {keywords !== undefined && keywords.length > 0 && (
                   <p className="text-sm">{keywords.join(", ")}</p>
                 )}
 
-                {url && <Link url={url} />}
+                {url !== undefined && <Link url={url} />}
               </div>
             );
           })}
@@ -228,7 +228,7 @@ const Experience = () => {
           <div className="font-bold">{item.company}</div>
           <div>{item.position}</div>
           <div>{item.location}</div>
-          <div className="font-bold italic">{item.date}</div>
+          <div className="font-bold">{item.date}</div>
         </div>
       )}
     </Section>
@@ -246,7 +246,7 @@ const Education = () => {
           <div>{item.area}</div>
           <div>{item.score}</div>
           <div>{item.studyType}</div>
-          <div className="font-bold italic">{item.date}</div>
+          <div className="font-bold">{item.date}</div>
         </div>
       )}
     </Section>
@@ -262,7 +262,7 @@ const Awards = () => {
         <div>
           <div className="font-bold">{item.title}</div>
           <div>{item.awarder}</div>
-          <div className="font-bold italic">{item.date}</div>
+          <div className="font-bold">{item.date}</div>
         </div>
       )}
     </Section>
@@ -278,7 +278,7 @@ const Certifications = () => {
         <div>
           <div className="font-bold">{item.name}</div>
           <div>{item.issuer}</div>
-          <div className="font-bold italic">{item.date}</div>
+          <div className="font-bold">{item.date}</div>
         </div>
       )}
     </Section>
@@ -319,7 +319,7 @@ const Publications = () => {
         <div>
           <div className="font-bold">{item.name}</div>
           <div>{item.publisher}</div>
-          <div className="font-bold italic">{item.date}</div>
+          <div className="font-bold">{item.date}</div>
         </div>
       )}
     </Section>
@@ -336,7 +336,7 @@ const Volunteer = () => {
           <div className="font-bold">{item.organization}</div>
           <div>{item.position}</div>
           <div>{item.location}</div>
-          <div className="font-bold italic">{item.date}</div>
+          <div className="font-bold">{item.date}</div>
         </div>
       )}
     </Section>
@@ -347,11 +347,11 @@ const Languages = () => {
   const section = useArtboardStore((state) => state.resume.sections.languages);
 
   return (
-    <Section<Language> section={section} levelKey="fluencyLevel">
+    <Section<Language> section={section} levelKey="level">
       {(item) => (
         <div>
           <div className="font-bold">{item.name}</div>
-          <div>{item.fluency}</div>
+          <div>{item.description}</div>
         </div>
       )}
     </Section>
@@ -368,7 +368,7 @@ const Projects = () => {
           <div>
             <div className="font-bold">{item.name}</div>
             <div>{item.description}</div>
-            <div className="font-bold italic">{item.date}</div>
+            <div className="font-bold">{item.date}</div>
           </div>
         </div>
       )}
@@ -407,7 +407,7 @@ const Custom = ({ id }: { id: string }) => {
             <div className="font-bold">{item.name}</div>
             <div>{item.description}</div>
             <div>{item.location}</div>
-            <div className="font-bold italic">{item.date}</div>
+            <div className="font-bold">{item.date}</div>
           </div>
         </div>
       )}

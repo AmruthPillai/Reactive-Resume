@@ -34,8 +34,8 @@ const Header = () => {
       className="summary group bg-primary px-6 pb-7 pt-6 text-background"
       style={{ borderRadius: `calc(${borderRadius}px - 2px)` }}
     >
-      <div className="col-span-2 space-y-4">
-        <div className="leading-tight">
+      <div className="col-span-2 space-y-2.5">
+        <div>
           <h2 className="text-2xl font-bold">{basics.name}</h2>
           <p>{basics.headline}</p>
         </div>
@@ -102,7 +102,7 @@ const Summary = () => {
 
   return (
     <section id={section.id}>
-      <h4 className="mb-2 text-base font-bold uppercase">{section.name}</h4>
+      <h4 className="mb-2 border-b border-primary text-base font-bold">{section.name}</h4>
 
       <div
         className="wysiwyg"
@@ -182,10 +182,10 @@ const Section = <T,>({
 
   return (
     <section id={section.id} className="grid">
-      <h4 className="mb-2 border-b border-primary text-base font-bold uppercase">{section.name}</h4>
+      <h4 className="mb-2 border-b border-primary text-base font-bold">{section.name}</h4>
 
       <div
-        className="grid gap-3"
+        className="grid gap-x-6 gap-y-3"
         style={{ gridTemplateColumns: `repeat(${section.columns}, 1fr)` }}
       >
         {section.items
@@ -198,18 +198,18 @@ const Section = <T,>({
 
             return (
               <div key={item.id} className={cn("space-y-2", className)}>
-                <div className="leading-snug">
+                <div>
                   {children?.(item as T)}
-                  {url && <Link url={url} />}
+                  {url !== undefined && <Link url={url} />}
                 </div>
 
-                {summary && !isEmptyString(summary) && (
+                {summary !== undefined && !isEmptyString(summary) && (
                   <div className="wysiwyg" dangerouslySetInnerHTML={{ __html: summary }} />
                 )}
 
-                {level && level > 0 && <Rating level={level} />}
+                {level !== undefined && level > 0 && <Rating level={level} />}
 
-                {keywords && keywords.length > 0 && (
+                {keywords !== undefined && keywords.length > 0 && (
                   <p className="text-sm">{keywords.join(", ")}</p>
                 )}
               </div>
@@ -227,7 +227,7 @@ const Profiles = () => {
   return (
     <Section<Profile> section={section}>
       {(item) => (
-        <div className="leading-snug">
+        <div>
           {isUrl(item.url.href) ? (
             <Link
               url={item.url}
@@ -358,7 +358,7 @@ const Interests = () => {
   const section = useArtboardStore((state) => state.resume.sections.interests);
 
   return (
-    <Section<Interest> section={section} className="space-y-0" keywordsKey="keywords">
+    <Section<Interest> section={section} className="space-y-1" keywordsKey="keywords">
       {(item) => <div className="font-bold">{item.name}</div>}
     </Section>
   );
@@ -411,11 +411,11 @@ const Languages = () => {
   const section = useArtboardStore((state) => state.resume.sections.languages);
 
   return (
-    <Section<Language> section={section} levelKey="fluencyLevel">
+    <Section<Language> section={section} levelKey="level">
       {(item) => (
         <div>
           <div className="font-bold">{item.name}</div>
-          <div>{item.fluency}</div>
+          <div>{item.description}</div>
         </div>
       )}
     </Section>

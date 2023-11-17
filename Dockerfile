@@ -1,36 +1,38 @@
 # --- Base Image ---
 FROM node:bullseye-slim AS base
-WORKDIR /app
 
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
 ARG NX_CLOUD_ACCESS_TOKEN
+
+RUN corepack enable
+
+WORKDIR /app
 
 # --- Build Image ---
 FROM base AS build
 
 ENV NX_CLOUD_ACCESS_TOKEN=$NX_CLOUD_ACCESS_TOKEN
 
-COPY .npmrc package.json package-lock.json ./
-RUN npm ci && npm cache clean --force
+COPY .npmrc package.json pnpm-lock.yaml ./
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 
 COPY . .
 
-RUN npm run build
+RUN pnpm build
 
 # --- Release Image ---
 FROM base AS release
 
 RUN apt update && apt install -y dumb-init --no-install-recommends
 
-COPY --chown=node:node --from=build /app/.npmrc /app/package.json /app/package-lock.json ./
-RUN npm ci --omit=dev && npm cache clean --force
+COPY --chown=node:node --from=build /app/.npmrc /app/package.json /app/pnpm-lock.yaml ./
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
 
-# Copy Build Output
 COPY --chown=node:node --from=build /app/dist ./dist
-# Copy Prisma Generated Client
-COPY --chown=node:node --from=build /app/node_modules/.prisma/client ./node_modules/.prisma/client
-# Copy Prisma Schema & Migrations
 COPY --chown=node:node --from=build /app/tools/prisma ./tools/prisma
+RUN pnpm prisma:generate
 
 EXPOSE 3000
 
-CMD [ "dumb-init", "npm", "run", "start" ]
+CMD [ "dumb-init", "pnpm", "start" ]

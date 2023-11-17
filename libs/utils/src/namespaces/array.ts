@@ -1,33 +1,5 @@
 import { LayoutLocator } from "./types";
 
-type CombinationsInput<T> = {
-  [K in keyof T]: T[K][];
-};
-
-export const generateCombinations = <T>(obj: CombinationsInput<T>): Array<T> => {
-  const keys = Object.keys(obj) as (keyof T)[];
-
-  const results: Array<T> = [];
-
-  function backtrack(combination: Partial<T>, index: number): void {
-    if (index === keys.length) {
-      results.push(combination as T);
-      return;
-    }
-
-    const key = keys[index];
-    const values = obj[key];
-
-    for (const value of values) {
-      backtrack({ ...combination, [key]: value }, index + 1);
-    }
-  }
-
-  backtrack({}, 0);
-
-  return results;
-};
-
 // Function to find a specific item in a layout
 export const findItemInLayout = (item: string, layout: string[][][]): LayoutLocator | null => {
   for (let page = 0; page < layout.length; page++) {
@@ -60,17 +32,21 @@ export const moveItemInLayout = (
   target: LayoutLocator,
   layout: string[][][],
 ): string[][][] => {
-  // Create a deep copy of the layout to avoid mutating the original array
-  const newLayout = JSON.parse(JSON.stringify(layout)) as string[][][];
+  try {
+    // Create a deep copy of the layout to avoid mutating the original array
+    const newLayout = JSON.parse(JSON.stringify(layout)) as string[][][];
 
-  // Get the item from the current location
-  const item = newLayout[current.page][current.column][current.section];
+    // Get the item from the current location
+    const item = newLayout[current.page][current.column][current.section];
 
-  // Remove the item from the current location
-  newLayout[current.page][current.column].splice(current.section, 1);
+    // Remove the item from the current location
+    newLayout[current.page][current.column].splice(current.section, 1);
 
-  // Insert the item at the target location
-  newLayout[target.page][target.column].splice(target.section, 0, item);
+    // Insert the item at the target location
+    newLayout[target.page][target.column].splice(target.section, 0, item);
 
-  return newLayout;
+    return newLayout;
+  } catch (error) {
+    return layout;
+  }
 };

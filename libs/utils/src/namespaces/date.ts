@@ -4,6 +4,7 @@ export const sortByDate = <T>(a: T, b: T, key: keyof T, desc = true) => {
   if (!a[key] || !b[key]) return 0;
   if (!(a[key] instanceof Date) || !(b[key] instanceof Date)) return 0;
 
+  if (dayjs(a[key] as Date).isSame(dayjs(b[key] as Date))) return 0;
   if (desc) return dayjs(a[key] as Date).isBefore(dayjs(b[key] as Date)) ? 1 : -1;
   else return dayjs(a[key] as Date).isBefore(dayjs(b[key] as Date)) ? -1 : 1;
 };

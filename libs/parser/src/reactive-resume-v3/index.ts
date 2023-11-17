@@ -177,8 +177,8 @@ export class ReactiveResumeV3Parser implements Parser<Json, ReactiveResumeV3> {
           ...defaultLanguage,
           id: createId(),
           name: language.name,
-          fluency: language.level,
-          fluencyLevel: Math.floor(language.levelNum / 2),
+          description: language.level,
+          level: Math.floor(language.levelNum / 2),
         });
       }
     }

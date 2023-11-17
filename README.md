@@ -1,4 +1,4 @@
-![Reactive Resume](https://res.cloudinary.com/amruth-pillai/image/upload/v1699180255/reactive-resume/readme/banner_zvieca.png)
+![Reactive Resume](https://i.imgur.com/FFc4nyZ.jpg)
 
 ![App Version](https://img.shields.io/github/package-json/version/AmruthPillai/Reactive-Resume/v4?label=version)
 [![Docker Pulls](https://img.shields.io/docker/pulls/amruthpillai/reactive-resume)](https://hub.docker.com/repository/docker/amruthpillai/reactive-resume)

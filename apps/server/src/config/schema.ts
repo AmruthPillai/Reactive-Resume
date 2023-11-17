@@ -40,7 +40,7 @@ export const configSchema = z.object({
   REDIS_URL: z.string().url().startsWith("redis://").optional(),
 
   // Sentry
-  SENTRY_DSN: z.string().url().startsWith("https://").optional(),
+  VITE_SENTRY_DSN: z.string().url().startsWith("https://").optional(),
 
   // Crowdin (Optional)
   CROWDIN_PROJECT_ID: z.coerce.number().optional(),

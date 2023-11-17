@@ -23,7 +23,7 @@ async function bootstrap() {
 
   // Sentry
   // Error Reporting and Performance Monitoring
-  const sentryDsn = configService.get("SENTRY_DSN");
+  const sentryDsn = configService.get("VITE_SENTRY_DSN");
 
   if (sentryDsn) {
     const express = app.getHttpAdapter().getInstance();

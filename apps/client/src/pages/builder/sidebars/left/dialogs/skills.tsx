@@ -71,14 +71,18 @@ export const SkillsDialog = () => {
                 <div className="flex items-center gap-x-4">
                   <Slider
                     {...field}
-                    min={1}
+                    min={0}
                     max={5}
                     value={[field.value]}
                     orientation="horizontal"
                     onValueChange={(value) => field.onChange(value[0])}
                   />
 
-                  <span className="text-base font-bold">{field.value}</span>
+                  {field.value === 0 ? (
+                    <span className="text-base font-bold">{t`Hidden`}</span>
+                  ) : (
+                    <span className="text-base font-bold">{field.value}</span>
+                  )}
                 </div>
               </FormControl>
               <FormMessage />

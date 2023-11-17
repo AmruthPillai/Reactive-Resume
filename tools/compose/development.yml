@@ -46,9 +46,11 @@ services:
     ports:
       - ${CHROME_PORT:-8080}:3000
     environment:
-      TOKEN: ${CHROME_TOKEN:-chrome_token}
+      KEEP_ALIVE: true
+      CONNECTION_TIMEOUT: 10000
       EXIT_ON_HEALTH_FAILURE: true
       PRE_REQUEST_HEALTH_CHECK: true
+      TOKEN: ${CHROME_TOKEN:-chrome_token}
 
   # Redis (for cache & server session management)
   redis:

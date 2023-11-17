@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/macro";
-import { Check, DownloadSimple, Warning } from "@phosphor-icons/react";
+import { Check, DownloadSimple } from "@phosphor-icons/react";
 import {
   JsonResume,
   JsonResumeParser,
@@ -141,7 +141,6 @@ export const ImportDialog = () => {
 
         toast({
           variant: "error",
-          icon: <Warning size={16} weight="bold" />,
           title: t`An error occurred while validating the file.`,
         });
       }
@@ -186,7 +185,6 @@ export const ImportDialog = () => {
     } catch (error) {
       toast({
         variant: "error",
-        icon: <Warning size={16} weight="bold" />,
         title: t`Oops, the server returned an error.`,
         description: importError?.message,
       });

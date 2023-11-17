@@ -1,6 +1,7 @@
 import { t } from "@lingui/macro";
-import { Button, HoverCard, HoverCardContent, HoverCardTrigger } from "@reactive-resume/ui";
+import { AspectRatio } from "@reactive-resume/ui";
 import { cn, templatesList } from "@reactive-resume/utils";
+import { motion } from "framer-motion";
 
 import { useResumeStore } from "@/client/stores/resume";
 
@@ -19,31 +20,28 @@ export const TemplateSection = () => {
         </div>
       </header>
 
-      <main className="grid grid-cols-2 gap-4">
-        {templatesList.map(({ id, name }) => (
-          <HoverCard key={id} openDelay={0} closeDelay={0}>
-            <HoverCardTrigger asChild>
-              <Button
-                variant="outline"
-                onClick={() => setValue("metadata.template", id)}
-                className={cn(
-                  "flex h-12 items-center justify-center overflow-hidden rounded border text-center text-sm capitalize ring-primary transition-colors hover:bg-secondary-accent focus:outline-none focus:ring-1 disabled:opacity-100",
-                  id === currentTemplate && "ring-1",
-                )}
-              >
-                {name}
-              </Button>
-            </HoverCardTrigger>
+      <main className="grid grid-cols-2 gap-5 @lg/right:grid-cols-3 @2xl/right:grid-cols-4">
+        {templatesList.map((template, index) => (
+          <AspectRatio ratio={1 / 1.4142}>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0, transition: { delay: index * 0.1 } }}
+              whileTap={{ scale: 0.98, transition: { duration: 0.1 } }}
+              onClick={() => setValue("metadata.template", template)}
+              className={cn(
+                "relative cursor-pointer rounded-sm ring-primary transition-all hover:ring-2",
+                currentTemplate === template && "ring-2",
+              )}
+            >
+              <img src={`/templates/jpg/${template}.jpg`} alt={template} className="rounded-sm" />
 
-            <HoverCardContent className="max-w-xs overflow-hidden border-none bg-white p-0">
-              <img
-                alt={name}
-                loading="lazy"
-                src="/templates/sample.jpg"
-                className="aspect-[1/1.4142]"
-              />
-            </HoverCardContent>
-          </HoverCard>
+              <div className="absolute inset-x-0 bottom-0 h-32 w-full bg-gradient-to-b from-transparent to-background/80">
+                <p className="absolute inset-x-0 bottom-2 text-center font-bold capitalize text-primary">
+                  {template}
+                </p>
+              </div>
+            </motion.div>
+          </AspectRatio>
         ))}
       </main>
     </section>

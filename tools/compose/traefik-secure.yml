@@ -105,7 +105,7 @@ services:
       REDIS_URL: redis://default:password@redis:6379
 
       # -- Sentry --
-      # SENTRY_DSN: https://id.sentry.io # Optional
+      # VITE_SENTRY_DSN: https://id.sentry.io # Optional
 
       # -- Crowdin (Optional) --
       # CROWDIN_PROJECT_ID:

@@ -5,7 +5,7 @@ import {
   CircleNotch,
   ClockClockwise,
   CubeFocus,
-  DownloadSimple,
+  FilePdf,
   Hash,
   LineSegment,
   LinkSimple,
@@ -51,7 +51,7 @@ export const BuilderToolbar = () => {
     <motion.div
       initial={{ opacity: 0.5 }}
       whileHover={{ opacity: 1 }}
-      className="fixed inset-x-0 mx-auto hidden pb-4 pt-6 text-center md:block"
+      className="fixed inset-x-0 bottom-0 mx-auto pb-4 pt-6 text-center md:block"
     >
       <div className="inline-flex items-center justify-center rounded-full bg-background px-4 shadow-xl">
         <Tooltip content={t`Undo`}>
@@ -134,7 +134,7 @@ export const BuilderToolbar = () => {
             onClick={onPrint}
             disabled={loading}
           >
-            {loading ? <CircleNotch className="animate-spin" /> : <DownloadSimple />}
+            {loading ? <CircleNotch className="animate-spin" /> : <FilePdf />}
           </Button>
         </Tooltip>
       </div>

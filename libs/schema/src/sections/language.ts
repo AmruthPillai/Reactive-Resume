@@ -5,8 +5,8 @@ import { defaultItem, itemSchema } from "../shared";
 // Schema
 export const languageSchema = itemSchema.extend({
   name: z.string().min(1),
-  fluency: z.string(),
-  fluencyLevel: z.number().min(1).max(6),
+  description: z.string(),
+  level: z.number().min(0).max(5).default(1),
 });
 
 // Type
@@ -16,6 +16,6 @@ export type Language = z.infer<typeof languageSchema>;
 export const defaultLanguage: Language = {
   ...defaultItem,
   name: "",
-  fluency: "",
-  fluencyLevel: 1,
+  description: "",
+  level: 1,
 };

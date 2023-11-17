@@ -7,6 +7,7 @@ import {
   Experience,
   Interest,
   Language,
+  Profile,
   Project,
   Publication,
   Reference,
@@ -26,8 +27,6 @@ import { TemplateProps } from "../types/template";
 
 const Header = () => {
   const basics = useArtboardStore((state) => state.resume.basics);
-  const profiles = useArtboardStore((state) => state.resume.sections.profiles);
-  const fontSize = useArtboardStore((state) => state.resume.metadata.typography.font.size);
 
   return (
     <div className="grid grid-cols-3">
@@ -71,31 +70,6 @@ const Header = () => {
               </div>
             ))}
           </div>
-
-          {profiles.visible && profiles.items.length > 0 && (
-            <div className="flex items-center gap-x-3 gap-y-0.5">
-              {profiles.items
-                .filter((item) => item.visible)
-                .map((item) => (
-                  <div key={item.id} className="flex items-center gap-x-2">
-                    <Link
-                      url={item.url}
-                      label={item.username}
-                      className="text-sm"
-                      icon={
-                        <img
-                          className="ph"
-                          width={fontSize}
-                          height={fontSize}
-                          alt={item.network}
-                          src={`https://cdn.simpleicons.org/${item.icon}`}
-                        />
-                      }
-                    />
-                  </div>
-                ))}
-            </div>
-          )}
         </div>
       </div>
     </div>
@@ -109,7 +83,7 @@ const Summary = () => {
 
   return (
     <section id={section.id}>
-      <h4 className="mb-2 border-b pb-0.5 text-sm font-bold uppercase">{section.name}</h4>
+      <h4 className="mb-2 border-b pb-0.5 text-sm font-bold">{section.name}</h4>
 
       <div
         className="wysiwyg"
@@ -184,10 +158,10 @@ const Section = <T,>({
 
   return (
     <section id={section.id} className="grid">
-      <h4 className="mb-2 border-b pb-0.5 text-sm font-bold uppercase">{section.name}</h4>
+      <h4 className="mb-2 border-b pb-0.5 text-sm font-bold">{section.name}</h4>
 
       <div
-        className="grid gap-3"
+        className="grid gap-x-6 gap-y-3"
         style={{ gridTemplateColumns: `repeat(${section.columns}, 1fr)` }}
       >
         {section.items
@@ -200,18 +174,18 @@ const Section = <T,>({
 
             return (
               <div key={item.id} className={cn("space-y-2", className)}>
-                <div className="leading-snug">
+                <div>
                   {children?.(item as T)}
-                  {url && <Link url={url} />}
+                  {url !== undefined && <Link url={url} />}
                 </div>
 
-                {summary && !isEmptyString(summary) && (
+                {summary !== undefined && !isEmptyString(summary) && (
                   <div className="wysiwyg" dangerouslySetInnerHTML={{ __html: summary }} />
                 )}
 
-                {level && level > 0 && <Rating level={level} />}
+                {level !== undefined && level > 0 && <Rating level={level} />}
 
-                {keywords && keywords.length > 0 && (
+                {keywords !== undefined && keywords.length > 0 && (
                   <p className="text-sm">{keywords.join(", ")}</p>
                 )}
               </div>
@@ -261,6 +235,38 @@ const Education = () => {
             <div className="font-bold">{item.date}</div>
             <div>{item.studyType}</div>
           </div>
+        </div>
+      )}
+    </Section>
+  );
+};
+
+const Profiles = () => {
+  const section = useArtboardStore((state) => state.resume.sections.profiles);
+  const fontSize = useArtboardStore((state) => state.resume.metadata.typography.font.size);
+
+  return (
+    <Section<Profile> section={section}>
+      {(item) => (
+        <div>
+          {isUrl(item.url.href) ? (
+            <Link
+              url={item.url}
+              label={item.username}
+              icon={
+                <img
+                  className="ph"
+                  width={fontSize}
+                  height={fontSize}
+                  alt={item.network}
+                  src={`https://cdn.simpleicons.org/${item.icon}`}
+                />
+              }
+            />
+          ) : (
+            <p>{item.username}</p>
+          )}
+          <p className="text-sm">{item.network}</p>
         </div>
       )}
     </Section>
@@ -381,11 +387,11 @@ const Languages = () => {
   const section = useArtboardStore((state) => state.resume.sections.languages);
 
   return (
-    <Section<Language> section={section} levelKey="fluencyLevel">
+    <Section<Language> section={section} levelKey="level">
       {(item) => (
         <div className="space-y-0.5">
           <div className="font-bold">{item.name}</div>
-          <div>{item.fluency}</div>
+          <div>{item.description}</div>
         </div>
       )}
     </Section>
@@ -457,6 +463,8 @@ const Custom = ({ id }: { id: string }) => {
 
 const mapSectionToComponent = (section: SectionKey) => {
   switch (section) {
+    case "profiles":
+      return <Profiles />;
     case "summary":
       return <Summary />;
     case "experience":

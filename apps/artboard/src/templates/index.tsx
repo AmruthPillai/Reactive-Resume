@@ -1,15 +1,16 @@
-import { TemplateKey } from "@reactive-resume/utils";
+import { Template } from "@reactive-resume/utils";
 
 import { Azurill } from "./azurill";
 import { Bronzor } from "./bronzor";
 import { Chikorita } from "./chikorita";
 import { Ditto } from "./ditto";
 import { Kakuna } from "./kakuna";
+import { Nosepass } from "./nosepass";
 import { Onyx } from "./onyx";
 import { Pikachu } from "./pikachu";
 import { Rhyhorn } from "./rhyhorn";
 
-export const getTemplate = (template: TemplateKey) => {
+export const getTemplate = (template: Template) => {
   switch (template) {
     case "onyx":
       return Onyx;
@@ -27,6 +28,8 @@ export const getTemplate = (template: TemplateKey) => {
       return Bronzor;
     case "pikachu":
       return Pikachu;
+    case "nosepass":
+      return Nosepass;
     default:
       return Onyx;
   }

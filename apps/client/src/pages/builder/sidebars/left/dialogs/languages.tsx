@@ -10,7 +10,6 @@ import {
   Input,
   Slider,
 } from "@reactive-resume/ui";
-import { getCEFRLevel } from "@reactive-resume/utils";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -44,11 +43,11 @@ export const LanguagesDialog = () => {
         />
 
         <FormField
-          name="fluency"
+          name="description"
           control={form.control}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>{t`Fluency`}</FormLabel>
+              <FormLabel>{t`Description`}</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -58,22 +57,26 @@ export const LanguagesDialog = () => {
         />
 
         <FormField
-          name="fluencyLevel"
+          name="level"
           control={form.control}
           render={({ field }) => (
             <FormItem className="sm:col-span-2">
-              <FormLabel>{t`Fluency (CEFR)`}</FormLabel>
+              <FormLabel>{t`Level`}</FormLabel>
               <FormControl className="py-2">
                 <div className="flex items-center gap-x-4">
                   <Slider
                     {...field}
-                    min={1}
-                    max={6}
+                    min={0}
+                    max={5}
                     value={[field.value]}
                     onValueChange={(value) => field.onChange(value[0])}
                   />
 
-                  <span className="text-base font-bold">{getCEFRLevel(field.value)}</span>
+                  {field.value === 0 ? (
+                    <span className="text-base font-bold">{t`Hidden`}</span>
+                  ) : (
+                    <span className="text-base font-bold">{field.value}</span>
+                  )}
                 </div>
               </FormControl>
               <FormMessage />

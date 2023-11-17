@@ -130,7 +130,7 @@ export class LinkedInParser implements Parser<JSZip, LinkedIn> {
           ...defaultLanguage,
           id: createId(),
           name: language.Name,
-          fluency: language.Proficiency ?? "",
+          description: language.Proficiency ?? "",
         });
       }
     }
