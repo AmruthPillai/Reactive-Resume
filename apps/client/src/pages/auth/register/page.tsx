@@ -37,7 +37,7 @@ export const RegisterPage = () => {
       username: "",
       email: "",
       password: "",
-      locale: "en",
+      locale: "en-US",
     },
   });
 

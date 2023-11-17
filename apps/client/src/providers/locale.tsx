@@ -3,6 +3,7 @@ import "@/client/libs/dayjs";
 import { i18n } from "@lingui/core";
 import { detect, fromStorage, fromUrl } from "@lingui/detect-locale";
 import { I18nProvider } from "@lingui/react";
+import { languages } from "@reactive-resume/utils";
 import { useEffect } from "react";
 
 import { defaultLocale, dynamicActivate } from "../libs/lingui";
@@ -24,7 +25,12 @@ export const LocaleProvider = ({ children }: Props) => {
       defaultLocale,
     )!;
 
-    dynamicActivate(detectedLocale);
+    // Activate the locale only if it's supported
+    if (languages.some((lang) => lang.locale === detectedLocale)) {
+      dynamicActivate(detectedLocale);
+    } else {
+      dynamicActivate(defaultLocale);
+    }
   }, [userLocale]);
 
   return <I18nProvider i18n={i18n}>{children}</I18nProvider>;

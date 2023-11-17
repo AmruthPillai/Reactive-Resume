@@ -3,7 +3,7 @@ import { z } from "zod";
 export const defaultLayout = [
   [
     ["profiles", "summary", "experience", "education", "projects", "volunteer", "references"],
-    ["skills", "interests", "certification", "awards", "publications", "languages"],
+    ["skills", "interests", "certifications", "awards", "publications", "languages"],
   ],
 ];
 
@@ -26,7 +26,7 @@ export const metadataSchema = z.object({
   theme: z.object({
     background: z.string().default("#ffffff"),
     text: z.string().default("#000000"),
-    primary: z.string().default("#000000"),
+    primary: z.string().default("#dc2626"),
   }),
   typography: z.object({
     font: z.object({
@@ -64,7 +64,7 @@ export const defaultMetadata: Metadata = {
   theme: {
     background: "#ffffff",
     text: "#000000",
-    primary: "#000000",
+    primary: "#dc2626",
   },
   typography: {
     font: {

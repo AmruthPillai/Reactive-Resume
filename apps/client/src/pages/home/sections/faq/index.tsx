@@ -17,8 +17,7 @@ const Question1 = () => (
         I'm Amruth Pillai, just another run-off-the-mill developer working at Elara Digital GmbH in
         Berlin, Germany. I'm married to my beautiful and insanely supportive wife who has helped me
         in more ways than one in seeing this project to it's fruition. I am originally from
-        Bengaluru, India where I was a developer at Postman (the API testing tool) for a short
-        while.
+        Bengaluru, India where I was a developer at Postman for a short while.
       </p>
 
       <p>
@@ -43,9 +42,9 @@ const Question1 = () => (
       <p>
         My dream has always been to build something that at least a handful people use on a daily
         basis, and I'm extremely proud to say that Reactive Resume, over it's years of development,
-        has **helped over half a million people build their resume**, and I hope it only increases
-        from here and reaches more people who are in need of a good resume to kickstart their career
-        but can't afford to pay for one.
+        has <strong>helped over half a million people build their resume</strong>, and I hope it
+        only increases from here and reaches more people who are in need of a good resume to
+        kickstart their career.
       </p>
     </AccordionContent>
   </AccordionItem>
@@ -104,10 +103,13 @@ const Question3 = () => (
     </AccordionTrigger>
     <AccordionContent className="prose max-w-none dark:prose-invert">
       <p>
-        <strong>If you speak a language other than English</strong>, sign up to be a translator on
-        Crowdin, our translation management service. You can help translate the product to your
-        language and share it among your community. Even if the language is already translated, it
-        helps to sign up as you would be notified when there are new phrases to be translated.
+        <strong>If you speak a language other than English</strong>, sign up to be a translator on{" "}
+        <a href="https://translate.rxresu.me/" target="_blank" rel="noreferrer">
+          Crowdin
+        </a>
+        , our translation management service. You can help translate the product to your language
+        and share it among your community. Even if the language is already translated, it helps to
+        sign up as you would be notified when there are new phrases to be translated.
       </p>
 
       <p>
@@ -119,7 +121,14 @@ const Question3 = () => (
       </p>
 
       <p>
-        <strong>If you found a bug or have an idea for a feature</strong>, raise an issue on GitHub
+        <strong>If you found a bug or have an idea for a feature</strong>, raise an issue on{" "}
+        <a
+          href="https://github.com/AmruthPillai/Reactive-Resume/issues/new/choose"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub
+        </a>{" "}
         or shoot me a message and let me know what you'd like to see. I can't promise that it'll be
         done soon, but juggling work, life and open-source, I'll definitely get to it when I can.
       </p>
@@ -212,7 +221,11 @@ const Question5 = () => (
 
       <p>
         The policy behind "bring your own key" (BYOK) is{" "}
-        <a href="https://community.openai.com/t/openais-bring-your-own-key-policy/14538/46">
+        <a
+          href="https://community.openai.com/t/openais-bring-your-own-key-policy/14538/46"
+          target="_blank"
+          rel="noreferrer"
+        >
           still being discussed
         </a>{" "}
         and probably might change over a period of time, but while it's available, I would keep the
@@ -221,7 +234,7 @@ const Question5 = () => (
 
       <p>
         You are free to turn off all AI features (and not be aware of it's existence) simply by not
-        adding a key in the Settings page and still make use of all of the useful features that
+        adding a key in the Settings page and still make use of all the useful features that
         Reactive Resume has to offer. I would even suggest you to take the extra step of using
         ChatGPT to write your content, and simply copy it over to Reactive Resume.
       </p>
