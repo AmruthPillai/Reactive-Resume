@@ -3,7 +3,6 @@ import type { LinguiConfig } from "@lingui/conf";
 const config: LinguiConfig = {
   format: "po",
   sourceLocale: "en-US",
-  pseudoLocale: "zu-ZA",
   fallbackLocales: { default: "en-US" },
   locales: [
     "af-ZA",
@@ -52,7 +51,6 @@ const config: LinguiConfig = {
     "vi-VN",
     "zh-CN",
     "zh-TW",
-    "zu-ZA",
   ],
   catalogs: [
     {

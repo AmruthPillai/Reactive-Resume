@@ -8,7 +8,7 @@ msgstr ""
 "Language: fr\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-11-14 12:56\n"
+"PO-Revision-Date: 2023-11-17 07:49\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -24,10 +24,6 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:114
 msgid "{value, plural, one {Column} other {Columns}}"
-msgstr ""
-
-#: apps/client/src/pages/home/sections/sample-resumes/index.tsx:17
-msgid "<0>Have a look at some of the resume created to showcase the templates available on Reactive Resume.</0><1>They could also serve as examples to help guide the creation of your next resume.</1>"
 msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:20
@@ -93,7 +89,7 @@ msgid "A4"
 msgstr ""
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:272
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:270
 msgid "Accepts only {accept} files"
 msgstr ""
 
@@ -115,8 +111,8 @@ msgstr ""
 msgid "Add a new item"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:80
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:197
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:79
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:196
 msgid "Add a new section"
 msgstr ""
 
@@ -132,7 +128,7 @@ msgstr ""
 msgid "Already have an account?"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:145
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:144
 msgid "An error occurred while validating the file."
 msgstr ""
 
@@ -209,8 +205,8 @@ msgstr ""
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:57
-msgctxt "The Basics section of a Resume consists of User's Picture, Full Name, Location etc."
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:56
+msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
 msgid "Basics"
 msgstr ""
 
@@ -247,7 +243,7 @@ msgstr ""
 msgid "Casual"
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:90
+#: apps/client/src/pages/builder/_components/toolbar.tsx:89
 msgid "Center Artboard"
 msgstr ""
 
@@ -310,7 +306,7 @@ msgstr ""
 msgid "Copy"
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:124
+#: apps/client/src/pages/builder/_components/toolbar.tsx:123
 msgid "Copy Link to Resume"
 msgstr ""
 
@@ -395,6 +391,7 @@ msgid "Delete Account"
 msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:67
+#: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:58
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:53
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:55
@@ -413,7 +410,7 @@ msgstr ""
 msgid "Disable 2FA"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:304
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:302
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:222
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:141
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
@@ -508,7 +505,7 @@ msgstr ""
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:285
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:283
 msgid "Errors"
 msgstr ""
 
@@ -516,20 +513,24 @@ msgstr ""
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Reactive Resume has helped you. Your feedback and support are always welcome and much appreciated!"
 msgstr ""
 
+#: apps/client/src/pages/home/sections/templates/index.tsx:12
+msgid "Explore the templates available in Reactive Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:79
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:40
 msgid "Export"
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:130
+#: apps/client/src/pages/builder/_components/toolbar.tsx:129
 msgid "Export as PDF"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:257
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
 msgid "File"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:223
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:221
 msgid "Filetype"
 msgstr ""
 
@@ -539,14 +540,6 @@ msgstr ""
 
 #: apps/client/src/components/ai-actions.tsx:81
 msgid "Fix Spelling & Grammar"
-msgstr ""
-
-#: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:51
-msgid "Fluency"
-msgstr ""
-
-#: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:65
-msgid "Fluency (CEFR)"
 msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:94
@@ -652,6 +645,8 @@ msgstr ""
 msgid "Here, you can update your profile to customize and personalize your experience."
 msgstr ""
 
+#: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:76
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:82
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:185
 msgid "Hidden"
 msgstr ""
@@ -698,11 +693,11 @@ msgstr ""
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:311
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:309
 msgid "Import"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:210
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:208
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:24
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:18
 msgid "Import an existing resume"
@@ -787,7 +782,7 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:145
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:55
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:122
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:95
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:99
 msgid "Keywords"
 msgstr ""
 
@@ -817,6 +812,7 @@ msgstr ""
 msgid "Letter"
 msgstr ""
 
+#: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:64
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:69
 msgid "Level"
 msgstr ""
@@ -908,7 +904,7 @@ msgstr ""
 #: apps/client/src/pages/auth/register/page.tsx:80
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:53
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:40
-#: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:37
+#: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:44
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
@@ -952,8 +948,9 @@ msgstr ""
 msgid "One-Time Password"
 msgstr ""
 
-#: apps/client/src/libs/axios.ts:32
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:190
+#: apps/client/src/libs/axios.ts:34
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:188
+#: apps/client/src/services/resume/print.tsx:34
 msgid "Oops, the server returned an error."
 msgstr ""
 
@@ -1028,7 +1025,7 @@ msgstr ""
 msgid "Pick any font from Google Fonts"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/section.tsx:52
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/section.tsx:69
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:120
 msgid "Picture"
 msgstr ""
@@ -1037,7 +1034,7 @@ msgstr ""
 msgid "Please note that this step is completely optional."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:227
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:225
 msgid "Please select a file type"
 msgstr ""
 
@@ -1118,7 +1115,7 @@ msgstr ""
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:64
+#: apps/client/src/pages/builder/_components/toolbar.tsx:63
 msgid "Redo"
 msgstr ""
 
@@ -1150,7 +1147,7 @@ msgstr ""
 msgid "Reset your password"
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:84
+#: apps/client/src/pages/builder/_components/toolbar.tsx:83
 msgid "Reset Zoom"
 msgstr ""
 
@@ -1170,10 +1167,6 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:143
 msgid "Rounded"
-msgstr ""
-
-#: apps/client/src/pages/home/sections/sample-resumes/index.tsx:15
-msgid "Sample Resumes"
 msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:159
@@ -1377,8 +1370,12 @@ msgid "System"
 msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:62
-#: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:18
+#: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
 msgid "Template"
+msgstr ""
+
+#: apps/client/src/pages/home/sections/templates/index.tsx:9
+msgid "Templates"
 msgstr ""
 
 #: apps/client/src/pages/home/sections/testimonials/index.tsx:68
@@ -1444,11 +1441,11 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:98
+#: apps/client/src/pages/builder/_components/toolbar.tsx:97
 msgid "Toggle Page Break Line"
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:110
+#: apps/client/src/pages/builder/_components/toolbar.tsx:109
 msgid "Toggle Page Numbers"
 msgstr ""
 
@@ -1487,7 +1484,7 @@ msgstr ""
 msgid "Underline Links"
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:58
+#: apps/client/src/pages/builder/_components/toolbar.tsx:57
 msgid "Undo"
 msgstr ""
 
@@ -1512,7 +1509,7 @@ msgstr ""
 msgid "Update an existing resume"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:214
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:212
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
 msgstr ""
 
@@ -1542,11 +1539,11 @@ msgstr ""
 msgid "Users Signed Up"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:298
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:296
 msgid "Validate"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:316
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:314
 msgid "Validated"
 msgstr ""
 
@@ -1603,7 +1600,7 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:150
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:60
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:127
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:100
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:104
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr ""
 
@@ -1651,11 +1648,11 @@ msgstr ""
 msgid "Your password has been updated successfully."
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:72
+#: apps/client/src/pages/builder/_components/toolbar.tsx:71
 msgid "Zoom In"
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:78
+#: apps/client/src/pages/builder/_components/toolbar.tsx:77
 msgid "Zoom Out"
 msgstr ""
 

@@ -45,18 +45,7 @@ export class TranslationService {
         },
       });
 
-      // Add Pseudo Locale
-      data.push({
-        data: {
-          language: {
-            id: "zu-ZA",
-            locale: "zu-ZA",
-            editorCode: "zuza",
-            name: "Psuedo Locale",
-          },
-          translationProgress: 100,
-        },
-      });
+      data.sort((a, b) => a.data.language.name.localeCompare(b.data.language.name));
 
       return data.map(({ data }) => {
         return {

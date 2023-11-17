@@ -1,7 +1,7 @@
 {
   "name": "@reactive-resume/source",
   "description": "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume.",
-  "version": "4.0.0-alpha.4",
+  "version": "4.0.0-alpha.5",
   "license": "MIT",
   "private": true,
   "author": {
@@ -22,6 +22,7 @@
     "start": "node dist/apps/server/main",
     "lint": "nx run-many -t lint --fix",
     "format": "pnpm exec prettier -w .",
+    "crowdin:sync": "crowdin push && crowdin pull",
     "prisma:generate": "pnpm exec prisma generate",
     "prisma:migrate": "pnpm exec prisma migrate deploy",
     "prisma:migrate:dev": "pnpm exec prisma migrate dev",
