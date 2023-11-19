@@ -15,6 +15,7 @@ import {
   Input,
 } from "@reactive-resume/ui";
 import { useRef } from "react";
+import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { z } from "zod";
@@ -44,6 +45,12 @@ export const LoginPage = () => {
 
   return (
     <div className="space-y-8">
+      <Helmet>
+        <title>
+          {t`Sign in to your account`} - {t`Reactive Resume`}
+        </title>
+      </Helmet>
+
       <div className="space-y-1.5">
         <h2 className="text-2xl font-semibold tracking-tight">{t`Sign in to your account`}</h2>
         <h6>

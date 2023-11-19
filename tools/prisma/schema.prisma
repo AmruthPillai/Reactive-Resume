@@ -50,7 +50,7 @@ model Secrets {
 model Resume {
   id         String     @id @default(cuid())
   title      String
-  slug       String     @unique
+  slug       String
   data       Json       @default("{}")
   visibility Visibility @default(private)
   locked     Boolean    @default(false)
@@ -60,5 +60,6 @@ model Resume {
   updatedAt  DateTime   @updatedAt
 
   @@unique([userId, id])
+  @@unique([userId, slug])
   @@index(fields: [userId])
 }

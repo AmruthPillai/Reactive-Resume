@@ -45,7 +45,7 @@ export class UserService {
 
       // Otherwise, find the user by username
       // If the user doesn't exist, throw an error
-      return this.prisma.user.findUniqueOrThrow({
+      return await this.prisma.user.findUniqueOrThrow({
         where: { username: identifier },
         include: { secrets: true },
       });
@@ -59,11 +59,11 @@ export class UserService {
   }
 
   async create(data: Prisma.UserCreateInput) {
-    return this.prisma.user.create({ data, include: { secrets: true } });
+    return await this.prisma.user.create({ data, include: { secrets: true } });
   }
 
   async updateByEmail(email: string, data: Prisma.UserUpdateArgs["data"]) {
-    return this.prisma.user.update({ where: { email }, data });
+    return await this.prisma.user.update({ where: { email }, data });
   }
 
   async updateByResetToken(resetToken: string, data: Prisma.SecretsUpdateArgs["data"]) {
@@ -73,6 +73,6 @@ export class UserService {
   async deleteOneById(id: string) {
     await Promise.all([this.redis.del(`user:${id}:*`), this.storageService.deleteFolder(id)]);
 
-    return this.prisma.user.delete({ where: { id } });
+    return await this.prisma.user.delete({ where: { id } });
   }
 }

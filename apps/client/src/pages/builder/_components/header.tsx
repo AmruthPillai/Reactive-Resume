@@ -1,6 +1,5 @@
 import { t } from "@lingui/macro";
 import { HouseSimple, Lock, SidebarSimple } from "@phosphor-icons/react";
-import { useBreakpoint } from "@reactive-resume/hooks";
 import { Button, Tooltip } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { Link } from "react-router-dom";
@@ -9,22 +8,15 @@ import { useBuilderStore } from "@/client/stores/builder";
 import { useResumeStore } from "@/client/stores/resume";
 
 export const BuilderHeader = () => {
-  const { isDesktop } = useBreakpoint();
-  const defaultPanelSize = isDesktop ? 25 : 0;
-
   const title = useResumeStore((state) => state.resume.title);
   const locked = useResumeStore((state) => state.resume.locked);
 
   const toggle = useBuilderStore((state) => state.toggle);
   const isDragging = useBuilderStore(
-    (state) => state.panel.left.isDragging || state.panel.right.isDragging,
+    (state) => state.panel.left.handle.isDragging || state.panel.right.handle.isDragging,
   );
-  const leftPanelSize = useBuilderStore(
-    (state) => state.panel.left.ref?.getSize() ?? defaultPanelSize,
-  );
-  const rightPanelSize = useBuilderStore(
-    (state) => state.panel.right.ref?.getSize() ?? defaultPanelSize,
-  );
+  const leftPanelSize = useBuilderStore((state) => state.panel.left.size);
+  const rightPanelSize = useBuilderStore((state) => state.panel.right.size);
 
   const onToggle = (side: "left" | "right") => toggle(side);
 
@@ -37,11 +29,16 @@ export const BuilderHeader = () => {
       )}
     >
       <div className="flex h-full items-center justify-between px-4">
-        <Button size="icon" variant="ghost" onClick={() => onToggle("left")}>
+        <Button
+          size="icon"
+          variant="ghost"
+          className="flex lg:hidden"
+          onClick={() => onToggle("left")}
+        >
           <SidebarSimple />
         </Button>
 
-        <div className="flex items-center justify-center gap-x-1">
+        <div className="flex items-center justify-center gap-x-1 lg:mx-auto">
           <Button asChild size="icon" variant="ghost">
             <Link to="/dashboard/resumes">
               <HouseSimple />
@@ -59,7 +56,12 @@ export const BuilderHeader = () => {
           )}
         </div>
 
-        <Button size="icon" variant="ghost" onClick={() => onToggle("right")}>
+        <Button
+          size="icon"
+          variant="ghost"
+          className="flex lg:hidden"
+          onClick={() => onToggle("right")}
+        >
           <SidebarSimple className="-scale-x-100" />
         </Button>
       </div>

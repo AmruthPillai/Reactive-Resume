@@ -15,6 +15,7 @@ import {
   Input,
 } from "@reactive-resume/ui";
 import { useRef } from "react";
+import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { z } from "zod";
@@ -53,6 +54,12 @@ export const RegisterPage = () => {
 
   return (
     <div className="space-y-8">
+      <Helmet>
+        <title>
+          {t`Create a new account`} - {t`Reactive Resume`}
+        </title>
+      </Helmet>
+
       <div className="space-y-1.5">
         <h2 className="text-2xl font-semibold tracking-tight">{t`Create a new account`}</h2>
         <h6>

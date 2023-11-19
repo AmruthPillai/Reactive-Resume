@@ -32,9 +32,9 @@ export class PrinterService {
     this.browserURL = `${chromeUrl}?token=${chromeToken}`;
   }
 
-  private getBrowser() {
+  private async getBrowser() {
     try {
-      return connect({ browserWSEndpoint: this.browserURL });
+      return await connect({ browserWSEndpoint: this.browserURL });
     } catch (error) {
       throw new InternalServerErrorException(ErrorMessage.InvalidBrowserConnection, error.message);
     }

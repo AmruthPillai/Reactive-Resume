@@ -41,7 +41,7 @@ const sectionSchema = z.object({
   id: z.string(),
   name: z.string(),
   type: z.enum(["basic", "custom"]),
-  columns: z.number(),
+  columns: z.number().or(z.null()),
   visible: z.boolean(),
 });
 

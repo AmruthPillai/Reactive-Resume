@@ -1,6 +1,18 @@
-import { Body, Controller, Delete, Get, Patch, Res, UseGuards } from "@nestjs/common";
+import {
+  BadRequestException,
+  Body,
+  Controller,
+  Delete,
+  Get,
+  InternalServerErrorException,
+  Patch,
+  Res,
+  UseGuards,
+} from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
+import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
 import { UpdateUserDto, UserDto } from "@reactive-resume/dto";
+import { ErrorMessage } from "@reactive-resume/utils";
 import type { Response } from "express";
 
 import { AuthService } from "../auth/auth.service";
@@ -25,24 +37,32 @@ export class UserController {
   @Patch("me")
   @UseGuards(TwoFactorGuard)
   async update(@User("email") email: string, @Body() updateUserDto: UpdateUserDto) {
-    // If user is updating their email, send a verification email
-    if (updateUserDto.email && updateUserDto.email !== email) {
-      await this.userService.updateByEmail(email, {
-        emailVerified: false,
-        email: updateUserDto.email,
+    try {
+      // If user is updating their email, send a verification email
+      if (updateUserDto.email && updateUserDto.email !== email) {
+        await this.userService.updateByEmail(email, {
+          emailVerified: false,
+          email: updateUserDto.email,
+        });
+
+        await this.authService.sendVerificationEmail(updateUserDto.email);
+
+        email = updateUserDto.email;
+      }
+
+      return await this.userService.updateByEmail(email, {
+        name: updateUserDto.name,
+        picture: updateUserDto.picture,
+        username: updateUserDto.username,
+        locale: updateUserDto.locale,
       });
+    } catch (error) {
+      if (error instanceof PrismaClientKnownRequestError && error.code === "P2002") {
+        throw new BadRequestException(ErrorMessage.UserAlreadyExists);
+      }
 
-      await this.authService.sendVerificationEmail(updateUserDto.email);
-
-      email = updateUserDto.email;
+      throw new InternalServerErrorException(error);
     }
-
-    return this.userService.updateByEmail(email, {
-      name: updateUserDto.name,
-      picture: updateUserDto.picture,
-      username: updateUserDto.username,
-      locale: updateUserDto.locale,
-    });
   }
 
   @Delete("me")

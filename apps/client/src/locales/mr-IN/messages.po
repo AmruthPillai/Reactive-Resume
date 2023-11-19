@@ -8,7 +8,7 @@ msgstr ""
 "Language: mr\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-11-17 13:00\n"
+"PO-Revision-Date: 2023-11-19 08:50\n"
 "Last-Translator: \n"
 "Language-Team: Marathi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -72,7 +72,7 @@ msgstr ""
 msgid "A passion project by <0>Amruth Pillai</0>"
 msgstr ""
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:47
+#: apps/client/src/pages/auth/forgot-password/page.tsx:54
 msgid "A password reset link should have been sent to your inbox, if an account existed with the email you provided."
 msgstr ""
 
@@ -124,7 +124,7 @@ msgstr ""
 msgid "AI"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:59
+#: apps/client/src/pages/auth/register/page.tsx:66
 msgid "Already have an account?"
 msgstr ""
 
@@ -197,11 +197,11 @@ msgstr ""
 msgid "Background Color"
 msgstr ""
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:67
+#: apps/client/src/pages/auth/backup-otp/page.tsx:74
 msgid "Backup Code"
 msgstr ""
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:72
+#: apps/client/src/pages/auth/backup-otp/page.tsx:79
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr ""
 
@@ -247,7 +247,7 @@ msgstr ""
 msgid "Center Artboard"
 msgstr ""
 
-#: apps/client/src/pages/auth/reset-password/page.tsx:92
+#: apps/client/src/pages/auth/reset-password/page.tsx:99
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:121
 msgid "Change Password"
 msgstr ""
@@ -319,7 +319,8 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:57
+#: apps/client/src/pages/auth/register/page.tsx:59
+#: apps/client/src/pages/auth/register/page.tsx:64
 msgid "Create a new account"
 msgstr ""
 
@@ -333,7 +334,7 @@ msgstr ""
 msgid "Create a new resume"
 msgstr ""
 
-#: apps/client/src/pages/auth/login/page.tsx:53
+#: apps/client/src/pages/auth/login/page.tsx:60
 msgctxt "This is a link to create a new account"
 msgid "Create one now"
 msgstr ""
@@ -411,7 +412,7 @@ msgid "Disable 2FA"
 msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:302
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:222
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:141
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
 msgid "Discard"
@@ -421,7 +422,7 @@ msgstr ""
 msgid "Documentation"
 msgstr ""
 
-#: apps/client/src/pages/auth/login/page.tsx:50
+#: apps/client/src/pages/auth/login/page.tsx:57
 msgid "Don't have an account?"
 msgstr ""
 
@@ -473,11 +474,11 @@ msgstr ""
 msgid "Effects"
 msgstr ""
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:72
-#: apps/client/src/pages/auth/login/page.tsx:72
-#: apps/client/src/pages/auth/register/page.tsx:122
+#: apps/client/src/pages/auth/forgot-password/page.tsx:79
+#: apps/client/src/pages/auth/login/page.tsx:79
+#: apps/client/src/pages/auth/register/page.tsx:129
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:50
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:183
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:180
 msgid "Email"
 msgstr ""
 
@@ -485,11 +486,11 @@ msgstr ""
 msgid "Enable 2FA"
 msgstr ""
 
-#: apps/client/src/pages/auth/reset-password/page.tsx:60
+#: apps/client/src/pages/auth/reset-password/page.tsx:67
 msgid "Enter a new password below, and make sure it's secure."
 msgstr ""
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:51
+#: apps/client/src/pages/auth/backup-otp/page.tsx:58
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
 msgstr ""
 
@@ -497,11 +498,11 @@ msgstr ""
 msgid "Enter the 6-digit code from your authenticator app to verify that 2FA has been setup correctly."
 msgstr ""
 
-#: apps/client/src/pages/auth/verify-otp/page.tsx:53
+#: apps/client/src/pages/auth/verify-otp/page.tsx:60
 msgid "Enter the one-time password provided by your authenticator app below."
 msgstr ""
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:60
+#: apps/client/src/pages/auth/forgot-password/page.tsx:67
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr ""
 
@@ -566,11 +567,11 @@ msgstr ""
 msgid "Forget"
 msgstr ""
 
-#: apps/client/src/pages/auth/login/page.tsx:108
+#: apps/client/src/pages/auth/login/page.tsx:115
 msgid "Forgot Password?"
 msgstr ""
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:58
+#: apps/client/src/pages/auth/forgot-password/page.tsx:65
 msgid "Forgot your password?"
 msgstr ""
 
@@ -616,7 +617,7 @@ msgstr ""
 msgid "Give your old resume a new name."
 msgstr ""
 
-#: apps/client/src/pages/auth/verify-email/page.tsx:60
+#: apps/client/src/pages/auth/verify-email/page.tsx:67
 #: apps/client/src/pages/home/sections/hero/call-to-action.tsx:18
 msgid "Go to Dashboard"
 msgstr ""
@@ -659,9 +660,9 @@ msgstr ""
 msgid "Hide Icons"
 msgstr ""
 
-#: apps/client/src/pages/auth/login/page.tsx:92
-#: apps/client/src/pages/auth/register/page.tsx:148
-#: apps/client/src/pages/auth/reset-password/page.tsx:81
+#: apps/client/src/pages/auth/login/page.tsx:99
+#: apps/client/src/pages/auth/register/page.tsx:155
+#: apps/client/src/pages/auth/reset-password/page.tsx:88
 msgid "Hold <0>Ctrl</0> to display your password temporarily."
 msgstr ""
 
@@ -760,17 +761,17 @@ msgstr ""
 msgid "It looks like your email address has already been verified."
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:83
+#: apps/client/src/pages/auth/register/page.tsx:90
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
 msgid "John Doe"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:104
+#: apps/client/src/pages/auth/register/page.tsx:111
 msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
 msgid "john.doe"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:125
+#: apps/client/src/pages/auth/register/page.tsx:132
 msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
 msgid "john.doe@example.com"
 msgstr ""
@@ -867,7 +868,7 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
-#: apps/client/src/pages/auth/verify-otp/page.tsx:57
+#: apps/client/src/pages/auth/verify-otp/page.tsx:64
 msgid "Lost your device?"
 msgstr ""
 
@@ -901,7 +902,7 @@ msgstr ""
 msgid "MIT License"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:80
+#: apps/client/src/pages/auth/register/page.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:53
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:40
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
@@ -944,7 +945,7 @@ msgstr ""
 msgid "Notes"
 msgstr ""
 
-#: apps/client/src/pages/auth/verify-otp/page.tsx:75
+#: apps/client/src/pages/auth/verify-otp/page.tsx:82
 msgid "One-Time Password"
 msgstr ""
 
@@ -998,9 +999,9 @@ msgstr ""
 msgid "Page {0}"
 msgstr ""
 
-#: apps/client/src/pages/auth/login/page.tsx:87
-#: apps/client/src/pages/auth/register/page.tsx:143
-#: apps/client/src/pages/auth/reset-password/page.tsx:76
+#: apps/client/src/pages/auth/login/page.tsx:94
+#: apps/client/src/pages/auth/register/page.tsx:150
+#: apps/client/src/pages/auth/reset-password/page.tsx:83
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
 msgid "Password"
 msgstr ""
@@ -1030,7 +1031,7 @@ msgstr ""
 msgid "Picture"
 msgstr ""
 
-#: apps/client/src/pages/auth/verify-email/page.tsx:52
+#: apps/client/src/pages/auth/verify-email/page.tsx:59
 msgid "Please note that this step is completely optional."
 msgstr ""
 
@@ -1089,6 +1090,13 @@ msgid "Raise an issue"
 msgstr ""
 
 #: apps/client/src/components/copyright.tsx:38
+#: apps/client/src/pages/auth/backup-otp/page.tsx:51
+#: apps/client/src/pages/auth/forgot-password/page.tsx:46
+#: apps/client/src/pages/auth/login/page.tsx:50
+#: apps/client/src/pages/auth/register/page.tsx:59
+#: apps/client/src/pages/auth/reset-password/page.tsx:60
+#: apps/client/src/pages/auth/verify-email/page.tsx:43
+#: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/builder/page.tsx:39
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
@@ -1131,7 +1139,7 @@ msgstr ""
 msgid "Rename"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:201
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:198
 msgid "Resend email confirmation link"
 msgstr ""
 
@@ -1143,8 +1151,12 @@ msgstr ""
 msgid "Reset Layout"
 msgstr ""
 
-#: apps/client/src/pages/auth/reset-password/page.tsx:58
+#: apps/client/src/pages/auth/reset-password/page.tsx:65
 msgid "Reset your password"
+msgstr ""
+
+#: apps/client/src/pages/auth/reset-password/page.tsx:60
+msgid "Reset your Password"
 msgstr ""
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:83
@@ -1171,7 +1183,7 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:159
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:240
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:138
 msgid "Save Changes"
 msgstr ""
@@ -1213,7 +1225,7 @@ msgstr ""
 msgid "Self-host with Docker"
 msgstr ""
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:82
+#: apps/client/src/pages/auth/forgot-password/page.tsx:89
 msgid "Send Email"
 msgstr ""
 
@@ -1253,17 +1265,18 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:82
-#: apps/client/src/pages/auth/login/page.tsx:104
-#: apps/client/src/pages/auth/verify-otp/page.tsx:85
+#: apps/client/src/pages/auth/backup-otp/page.tsx:89
+#: apps/client/src/pages/auth/login/page.tsx:111
+#: apps/client/src/pages/auth/verify-otp/page.tsx:92
 msgid "Sign in"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:62
+#: apps/client/src/pages/auth/register/page.tsx:69
 msgid "Sign in now"
 msgstr ""
 
-#: apps/client/src/pages/auth/login/page.tsx:48
+#: apps/client/src/pages/auth/login/page.tsx:50
+#: apps/client/src/pages/auth/login/page.tsx:55
 msgid "Sign in to your account"
 msgstr ""
 
@@ -1279,7 +1292,7 @@ msgstr ""
 msgid "Sign in with Google"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:159
+#: apps/client/src/pages/auth/register/page.tsx:166
 msgid "Sign up"
 msgstr ""
 
@@ -1420,7 +1433,7 @@ msgstr ""
 msgid "This email address is associated with an OAuth account. Please sign in with your OAuth provider."
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/header.tsx:56
+#: apps/client/src/pages/builder/_components/header.tsx:53
 msgid "This resume is locked, please unlock to make further changes."
 msgstr ""
 
@@ -1453,7 +1466,8 @@ msgstr ""
 msgid "Track views and downloads"
 msgstr ""
 
-#: apps/client/src/pages/auth/verify-otp/page.tsx:50
+#: apps/client/src/pages/auth/verify-otp/page.tsx:52
+#: apps/client/src/pages/auth/verify-otp/page.tsx:57
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:135
 msgid "Two-Factor Authentication"
 msgstr ""
@@ -1497,7 +1511,7 @@ msgstr ""
 msgid "Unlocking a resume will allow you to make changes to it again."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:194
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:191
 msgid "Unverified"
 msgstr ""
 
@@ -1521,7 +1535,8 @@ msgstr ""
 msgid "URL must start with https://"
 msgstr ""
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:49
+#: apps/client/src/pages/auth/backup-otp/page.tsx:51
+#: apps/client/src/pages/auth/backup-otp/page.tsx:56
 msgid "Use your backup code"
 msgstr ""
 
@@ -1529,9 +1544,9 @@ msgstr ""
 msgid "User does not have an associated 'secrets' record. Please report this issue on GitHub."
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:101
+#: apps/client/src/pages/auth/register/page.tsx:108
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:54
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:165
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
 msgid "Username"
 msgstr ""
 
@@ -1551,7 +1566,7 @@ msgstr ""
 msgid "Value"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:194
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:191
 msgid "Verified"
 msgstr ""
 
@@ -1559,7 +1574,8 @@ msgstr ""
 msgid "Verify that two-factor authentication has been setup correctly"
 msgstr ""
 
-#: apps/client/src/pages/auth/verify-email/page.tsx:41
+#: apps/client/src/pages/auth/verify-email/page.tsx:43
+#: apps/client/src/pages/auth/verify-email/page.tsx:48
 msgid "Verify your email address"
 msgstr ""
 
@@ -1575,7 +1591,7 @@ msgstr ""
 msgid "Visible"
 msgstr ""
 
-#: apps/client/src/pages/auth/verify-email/page.tsx:54
+#: apps/client/src/pages/auth/verify-email/page.tsx:61
 msgid "We verify your email address only to ensure that we can send you a password reset link in case you forget your password."
 msgstr ""
 
@@ -1604,7 +1620,7 @@ msgstr ""
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr ""
 
-#: apps/client/src/pages/auth/login/page.tsx:76
+#: apps/client/src/pages/auth/login/page.tsx:83
 msgid "You can also enter your username."
 msgstr ""
 
@@ -1620,11 +1636,12 @@ msgstr ""
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr ""
 
-#: apps/client/src/pages/auth/verify-email/page.tsx:43
+#: apps/client/src/pages/auth/verify-email/page.tsx:50
 msgid "You should have received an email from <0>Reactive Resume</0> with a link to verify your account."
 msgstr ""
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:44
+#: apps/client/src/pages/auth/forgot-password/page.tsx:46
+#: apps/client/src/pages/auth/forgot-password/page.tsx:51
 msgid "You've got mail!"
 msgstr ""
 
@@ -1636,7 +1653,7 @@ msgstr ""
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr ""
 
-#: apps/client/src/pages/auth/verify-email/page.tsx:27
+#: apps/client/src/pages/auth/verify-email/page.tsx:28
 msgid "Your email address has been verified successfully."
 msgstr ""
 

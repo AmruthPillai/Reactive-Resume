@@ -136,7 +136,7 @@ export class StorageService implements OnModuleInit {
     const path = `${userId}/${type}/${filename}.${extension}`;
 
     try {
-      return Promise.all([
+      return await Promise.all([
         this.redis.del(`user:${userId}:storage:${type}:${filename}`),
         this.client.removeObject(this.bucketName, path),
       ]);
@@ -157,7 +157,7 @@ export class StorageService implements OnModuleInit {
     }
 
     try {
-      return this.client.removeObjects(this.bucketName, objectsList);
+      return await this.client.removeObjects(this.bucketName, objectsList);
     } catch (error) {
       throw new InternalServerErrorException(
         `There was an error while deleting the folder at the specified path: ${this.bucketName}/${prefix}.`,

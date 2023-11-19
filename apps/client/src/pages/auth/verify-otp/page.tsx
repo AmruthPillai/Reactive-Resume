@@ -14,6 +14,7 @@ import {
   Input,
 } from "@reactive-resume/ui";
 import { useRef } from "react";
+import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { z } from "zod";
@@ -46,6 +47,12 @@ export const VerifyOtpPage = () => {
 
   return (
     <div className="space-y-8">
+      <Helmet>
+        <title>
+          {t`Two-Factor Authentication`} - {t`Reactive Resume`}
+        </title>
+      </Helmet>
+
       <div className="space-y-1.5">
         <h2 className="text-2xl font-semibold tracking-tight">{t`Two-Factor Authentication`}</h2>
         <h6>

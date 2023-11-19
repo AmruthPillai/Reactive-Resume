@@ -1,4 +1,3 @@
-import { ImperativePanelHandle } from "react-resizable-panels";
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 
@@ -7,11 +6,15 @@ type Sheet = {
   setOpen: (open: boolean) => void;
 };
 
-type Panel = {
+type PanelHandle = {
   isDragging: boolean;
   setDragging: (dragging: boolean) => void;
-  ref: ImperativePanelHandle | null;
-  setRef: (ref: ImperativePanelHandle | null) => void;
+};
+
+type Panel = {
+  size: number;
+  setSize: (size: number) => void;
+  handle: PanelHandle;
 };
 
 interface BuilderState {
@@ -64,44 +67,41 @@ export const useBuilderStore = create<BuilderState & BuilderActions>()(
     },
     panel: {
       left: {
-        ref: null,
-        isDragging: false,
-        setRef: (ref) => {
+        size: 0,
+        setSize: (size) => {
           set((state) => {
-            state.panel.left.ref = ref;
+            state.panel.left.size = size;
           });
         },
-        setDragging: (dragging) => {
-          set((state) => {
-            state.panel.left.isDragging = dragging;
-          });
+        handle: {
+          isDragging: false,
+          setDragging: (dragging) => {
+            set((state) => {
+              state.panel.left.handle.isDragging = dragging;
+            });
+          },
         },
       },
       right: {
-        ref: null,
-        isDragging: false,
-        setRef: (ref) => {
+        size: 0,
+        setSize: (size) => {
           set((state) => {
-            state.panel.right.ref = ref;
+            state.panel.right.size = size;
           });
         },
-        setDragging: (dragging) => {
-          set((state) => {
-            state.panel.right.isDragging = dragging;
-          });
+        handle: {
+          isDragging: false,
+          setDragging: (dragging) => {
+            set((state) => {
+              state.panel.right.handle.isDragging = dragging;
+            });
+          },
         },
       },
     },
     toggle: (side) => {
       set((state) => {
-        const panelRef = state.panel[side].ref;
-
-        if (panelRef) {
-          const collapsed = panelRef.getCollapsed();
-          collapsed ? panelRef.expand() : panelRef.collapse();
-        } else {
-          state.sheet[side].open = !state.sheet[side].open;
-        }
+        state.sheet[side].open = !state.sheet[side].open;
       });
     },
   })),

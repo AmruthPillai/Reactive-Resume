@@ -14,6 +14,7 @@ import {
   Input,
 } from "@reactive-resume/ui";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -40,6 +41,12 @@ export const ForgotPasswordPage = () => {
   if (submitted) {
     return (
       <div className="space-y-8">
+        <Helmet>
+          <title>
+            {t`You've got mail!`} - {t`Reactive Resume`}
+          </title>
+        </Helmet>
+
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold tracking-tight">{t`You've got mail!`}</h2>
           <Alert variant="success">

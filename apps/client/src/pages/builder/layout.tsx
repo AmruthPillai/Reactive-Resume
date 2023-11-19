@@ -25,8 +25,13 @@ const OutletSlot = () => (
 export const BuilderLayout = () => {
   const { isDesktop } = useBreakpoint();
 
-  const panel = useBuilderStore((state) => state.panel);
   const sheet = useBuilderStore((state) => state.sheet);
+
+  const leftSetSize = useBuilderStore((state) => state.panel.left.setSize);
+  const rightSetSize = useBuilderStore((state) => state.panel.right.setSize);
+
+  const leftHandle = useBuilderStore((state) => state.panel.left.handle);
+  const rightHandle = useBuilderStore((state) => state.panel.right.handle);
 
   const onOpenAutoFocus = (event: Event) => event.preventDefault();
 
@@ -35,33 +40,31 @@ export const BuilderLayout = () => {
       <div className="relative h-full w-full overflow-hidden">
         <PanelGroup direction="horizontal">
           <Panel
-            collapsible
-            minSize={20}
-            maxSize={35}
-            defaultSize={28}
-            ref={panel.left.setRef}
-            className={cn("z-10 bg-background", !panel.left.isDragging && "transition-[flex]")}
+            minSizePixels={48}
+            maxSizePercentage={35}
+            defaultSizePercentage={28}
+            onResize={({ sizePercentage }) => leftSetSize(sizePercentage)}
+            className={cn("z-10 bg-background", !leftHandle.isDragging && "transition-[flex]")}
           >
             <LeftSidebar />
           </Panel>
           <PanelResizeHandle
-            isDragging={panel.left.isDragging}
-            onDragging={panel.left.setDragging}
+            isDragging={leftHandle.isDragging}
+            onDragging={leftHandle.setDragging}
           />
           <Panel>
             <OutletSlot />
           </Panel>
           <PanelResizeHandle
-            isDragging={panel.right.isDragging}
-            onDragging={panel.right.setDragging}
+            isDragging={rightHandle.isDragging}
+            onDragging={rightHandle.setDragging}
           />
           <Panel
-            collapsible
-            minSize={20}
-            maxSize={35}
-            defaultSize={28}
-            ref={panel.right.setRef}
-            className={cn("z-10 bg-background", !panel.right.isDragging && "transition-[flex]")}
+            minSizePixels={48}
+            maxSizePercentage={35}
+            defaultSizePercentage={28}
+            onResize={({ sizePercentage }) => rightSetSize(sizePercentage)}
+            className={cn("z-10 bg-background", !rightHandle.isDragging && "transition-[flex]")}
           >
             <RightSidebar />
           </Panel>
@@ -75,9 +78,9 @@ export const BuilderLayout = () => {
       <Sheet open={sheet.left.open} onOpenChange={sheet.left.setOpen}>
         <SheetContent
           side="left"
-          className="top-16 p-0 sm:max-w-xl"
           showClose={false}
           onOpenAutoFocus={onOpenAutoFocus}
+          className="top-16 p-0 sm:max-w-xl"
         >
           <LeftSidebar />
         </SheetContent>
@@ -88,9 +91,9 @@ export const BuilderLayout = () => {
       <Sheet open={sheet.right.open} onOpenChange={sheet.right.setOpen}>
         <SheetContent
           side="right"
-          className="p-0 sm:max-w-xl"
           showClose={false}
           onOpenAutoFocus={onOpenAutoFocus}
+          className="top-16 p-0 sm:max-w-xl"
         >
           <RightSidebar />
         </SheetContent>

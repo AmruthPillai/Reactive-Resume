@@ -153,6 +153,7 @@ export const AccountSettings = () => {
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
+                <FormMessage />
               </FormItem>
             )}
           />
@@ -160,17 +161,13 @@ export const AccountSettings = () => {
           <FormField
             name="username"
             control={form.control}
-            render={({ field, fieldState }) => (
+            render={({ field }) => (
               <FormItem>
                 <FormLabel>{t`Username`}</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
-                {fieldState.error && (
-                  <FormDescription className="text-error">
-                    {fieldState.error.message}
-                  </FormDescription>
-                )}
+                <FormMessage />
               </FormItem>
             )}
           />

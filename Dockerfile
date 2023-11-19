@@ -19,7 +19,7 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 
 COPY . .
 
-RUN pnpm build
+RUN pnpm run build
 
 # --- Release Image ---
 FROM base AS release
@@ -31,8 +31,9 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-l
 
 COPY --chown=node:node --from=build /app/dist ./dist
 COPY --chown=node:node --from=build /app/tools/prisma ./tools/prisma
-RUN pnpm prisma:generate
+RUN pnpm run prisma:generate
+RUN pnpm run messages:compile
 
 EXPOSE 3000
 
-CMD [ "dumb-init", "pnpm", "start" ]
+CMD [ "dumb-init", "pnpm", "run", "start" ]

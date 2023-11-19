@@ -22,10 +22,10 @@ export const TemplateSection = () => {
 
       <main className="grid grid-cols-2 gap-5 @lg/right:grid-cols-3 @2xl/right:grid-cols-4">
         {templatesList.map((template, index) => (
-          <AspectRatio ratio={1 / 1.4142}>
+          <AspectRatio key={template} ratio={1 / 1.4142}>
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0, transition: { delay: index * 0.1 } }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { delay: index * 0.1 } }}
               whileTap={{ scale: 0.98, transition: { duration: 0.1 } }}
               onClick={() => setValue("metadata.template", template)}
               className={cn(

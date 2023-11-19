@@ -2,6 +2,7 @@ import { t, Trans } from "@lingui/macro";
 import { ArrowRight, Info, SealCheck } from "@phosphor-icons/react";
 import { Alert, AlertDescription, AlertTitle, Button } from "@reactive-resume/ui";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
 import { useToast } from "@/client/hooks/use-toast";
@@ -37,6 +38,12 @@ export const VerifyEmailPage = () => {
 
   return (
     <div className="space-y-6">
+      <Helmet>
+        <title>
+          {t`Verify your email address`} - {t`Reactive Resume`}
+        </title>
+      </Helmet>
+
       <div className="space-y-2">
         <h2 className="text-2xl font-semibold tracking-tight">{t`Verify your email address`}</h2>
         <p className="leading-relaxed opacity-75">

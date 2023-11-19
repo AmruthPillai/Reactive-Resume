@@ -152,8 +152,6 @@ export class AuthService {
     const text = `Please click on the link below to reset your password:\n\n${url}`;
 
     await this.mailService.sendEmail({ to: email, subject, text });
-
-    return;
   }
 
   async updatePassword(email: string, password: string) {
@@ -188,8 +186,6 @@ export class AuthService {
       const text = `Please verify your email address by clicking on the link below:\n\n${url}`;
 
       await this.mailService.sendEmail({ to: email, subject, text });
-
-      return;
     } catch (error) {
       throw new InternalServerErrorException(error);
     }

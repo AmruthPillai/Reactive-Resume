@@ -14,6 +14,7 @@ import {
   Input,
 } from "@reactive-resume/ui";
 import { useEffect, useRef } from "react";
+import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { z } from "zod";
@@ -54,6 +55,12 @@ export const ResetPasswordPage = () => {
 
   return (
     <div className="space-y-8">
+      <Helmet>
+        <title>
+          {t`Reset your Password`} - {t`Reactive Resume`}
+        </title>
+      </Helmet>
+
       <div className="space-y-1.5">
         <h2 className="text-2xl font-semibold tracking-tight">{t`Reset your password`}</h2>
         <h6 className="leading-relaxed opacity-75">

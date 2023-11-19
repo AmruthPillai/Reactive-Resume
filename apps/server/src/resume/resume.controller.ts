@@ -47,9 +47,9 @@ export class ResumeController {
 
   @Post()
   @UseGuards(TwoFactorGuard)
-  create(@User() user: UserEntity, @Body() createResumeDto: CreateResumeDto) {
+  async create(@User() user: UserEntity, @Body() createResumeDto: CreateResumeDto) {
     try {
-      return this.resumeService.create(user.id, createResumeDto);
+      return await this.resumeService.create(user.id, createResumeDto);
     } catch (error) {
       if (error instanceof PrismaClientKnownRequestError && error.code === "P2002") {
         throw new BadRequestException(ErrorMessage.ResumeSlugAlreadyExists);
@@ -61,9 +61,9 @@ export class ResumeController {
 
   @Post("import")
   @UseGuards(TwoFactorGuard)
-  import(@User() user: UserEntity, @Body() importResumeDto: ImportResumeDto) {
+  async import(@User() user: UserEntity, @Body() importResumeDto: ImportResumeDto) {
     try {
-      return this.resumeService.import(user.id, importResumeDto);
+      return await this.resumeService.import(user.id, importResumeDto);
     } catch (error) {
       if (error instanceof PrismaClientKnownRequestError && error.code === "P2002") {
         throw new BadRequestException(ErrorMessage.ResumeSlugAlreadyExists);

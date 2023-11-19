@@ -26,8 +26,8 @@ export const RightSidebar = () => {
   };
 
   return (
-    <div className="flex bg-secondary-accent/30 pt-16 lg:pt-0">
-      <ScrollArea orientation="vertical" className="h-screen flex-1">
+    <div className="flex bg-secondary-accent/30">
+      <ScrollArea orientation="vertical" className="h-screen flex-1 pb-16 lg:pb-0">
         <div ref={containterRef} className="grid gap-y-6 p-6 @container/right">
           <TemplateSection />
           <Separator />
