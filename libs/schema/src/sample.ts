@@ -459,10 +459,9 @@ export const sampleResume: ResumeData = {
         ["profiles", "skills", "awards", "certifications"],
       ],
       [
-        ["custom.juryi0w9w9jabsgorks0bixq", "education"],
-        ["interests", "languages"],
+        ["custom.juryi0w9w9jabsgorks0bixq", "education", "projects", "references"],
+        ["interests", "publications", "volunteer", "languages"],
       ],
-      [["publications", "volunteer", "projects", "references"], []],
     ],
     css: {
       value: ".section {\n\toutline: 1px solid #000;\n\toutline-offset: 4px;\n}",

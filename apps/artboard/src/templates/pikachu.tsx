@@ -264,7 +264,7 @@ const Experience = () => {
             <div>{item.position}</div>
           </div>
 
-          <div className="shrink-0 text-right">
+          <div className="shrink-0 text-right group-[.sidebar]:text-left">
             <div className="font-bold">{item.date}</div>
             <div>{item.location}</div>
           </div>
@@ -287,7 +287,7 @@ const Education = () => {
             <div>{item.score}</div>
           </div>
 
-          <div className="shrink-0 text-right">
+          <div className="shrink-0 text-right group-[.sidebar]:text-left">
             <div className="font-bold">{item.date}</div>
             <div>{item.studyType}</div>
           </div>
@@ -309,7 +309,7 @@ const Awards = () => {
             <div>{item.awarder}</div>
           </div>
 
-          <div className="shrink-0 text-right">
+          <div className="shrink-0 text-right group-[.sidebar]:text-left">
             <div className="font-bold">{item.date}</div>
           </div>
         </div>
@@ -330,7 +330,7 @@ const Certifications = () => {
             <div>{item.issuer}</div>
           </div>
 
-          <div className="shrink-0 text-right">
+          <div className="shrink-0 text-right group-[.sidebar]:text-left">
             <div className="font-bold">{item.date}</div>
           </div>
         </div>
@@ -376,7 +376,7 @@ const Publications = () => {
             <div>{item.publisher}</div>
           </div>
 
-          <div className="shrink-0 text-right">
+          <div className="shrink-0 text-right group-[.sidebar]:text-left">
             <div className="font-bold">{item.date}</div>
           </div>
         </div>
@@ -397,7 +397,7 @@ const Volunteer = () => {
             <div>{item.position}</div>
           </div>
 
-          <div className="shrink-0 text-right">
+          <div className="shrink-0 text-right group-[.sidebar]:text-left">
             <div className="font-bold">{item.date}</div>
             <div>{item.location}</div>
           </div>
@@ -434,7 +434,7 @@ const Projects = () => {
             <div>{item.description}</div>
           </div>
 
-          <div className="shrink-0 text-right">
+          <div className="shrink-0 text-right group-[.sidebar]:text-left">
             <div className="font-bold">{item.date}</div>
           </div>
         </div>
@@ -475,7 +475,7 @@ const Custom = ({ id }: { id: string }) => {
             <div>{item.description}</div>
           </div>
 
-          <div className="shrink-0 text-right">
+          <div className="shrink-0 text-right group-[.sidebar]:text-left">
             <div className="font-bold">{item.date}</div>
             <div>{item.location}</div>
           </div>
