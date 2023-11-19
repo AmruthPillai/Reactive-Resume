@@ -1,11 +1,13 @@
-{
-  "format": "po",
-  "sourceLocale": "en-US",
-  "compileNamespace": "es",
-  "fallbackLocales": {
-    "default": "en-US"
+import type { LinguiConfig } from "@lingui/conf";
+
+const config: LinguiConfig = {
+  format: "po",
+  sourceLocale: "en-US",
+  compileNamespace: "es",
+  fallbackLocales: {
+    default: "en-US",
   },
-  "locales": [
+  locales: [
     "af-ZA",
     "am-ET",
     "ar-SA",
@@ -51,14 +53,14 @@
     "uk-UA",
     "vi-VN",
     "zh-CN",
-    "zh-TW"
+    "zh-TW",
   ],
-  "catalogs": [
+  catalogs: [
     {
-      "include": [
-        "<rootDir>/apps/client/src"
-      ],
-      "path": "<rootDir>/apps/client/src/locales/{locale}/messages"
-    }
-  ]
-}
+      include: ["<rootDir>/apps/client/src"],
+      path: "<rootDir>/apps/client/src/locales/{locale}/messages",
+    },
+  ],
+};
+
+export default config;
