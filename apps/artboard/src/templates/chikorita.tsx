@@ -501,26 +501,31 @@ export const Chikorita = ({ columns, isFirstPage = false }: TemplateProps) => {
   const [main, sidebar] = columns;
 
   return (
-    <div className="space-y-4">
-      {isFirstPage && <Header />}
+    <>
+      <div className="space-y-4">
+        {isFirstPage && <Header />}
 
-      <div className="relative z-10 grid grid-cols-3 space-x-8">
-        <div className="main group col-span-2 space-y-4">
-          {main.map((section) => (
-            <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
-          ))}
-        </div>
+        <div className="relative z-10 grid grid-cols-3 space-x-8">
+          <div className="main group col-span-2 space-y-4">
+            {main.map((section) => (
+              <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
+            ))}
+          </div>
 
-        <div className="sidebar group space-y-4 text-background">
-          {sidebar.map((section) => (
-            <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
-          ))}
+          <div className="sidebar group space-y-4 text-background">
+            {sidebar.map((section) => (
+              <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
+            ))}
+          </div>
         </div>
       </div>
 
-      <div className="absolute inset-0 grid grid-cols-3" style={{ top: -margin }}>
-        <div className="col-start-3 ml-2 bg-primary"></div>
+      <div
+        style={{ columnGap: margin }}
+        className="pointer-events-none absolute inset-0 grid grid-cols-3"
+      >
+        <div className="col-start-3 bg-primary" />
       </div>
-    </div>
+    </>
   );
 };

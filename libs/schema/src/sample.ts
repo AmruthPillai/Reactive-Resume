@@ -469,7 +469,7 @@ export const sampleResume: ResumeData = {
       visible: false,
     },
     page: {
-      margin: 24,
+      margin: 16,
       format: "a4",
       options: {
         breakLine: true,
