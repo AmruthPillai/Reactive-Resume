@@ -3,10 +3,7 @@ import type { LinguiConfig } from "@lingui/conf";
 const config: LinguiConfig = {
   format: "po",
   sourceLocale: "en-US",
-  compileNamespace: "es",
-  fallbackLocales: {
-    default: "en-US",
-  },
+  fallbackLocales: { default: "en-US" },
   locales: [
     "af-ZA",
     "am-ET",

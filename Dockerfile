@@ -30,12 +30,8 @@ COPY --chown=node:node --from=build /app/.npmrc /app/package.json /app/pnpm-lock
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
 
 COPY --chown=node:node --from=build /app/dist ./dist
-
 COPY --chown=node:node --from=build /app/tools/prisma ./tools/prisma
 RUN pnpm run prisma:generate
-
-COPY --chown=node:node --from=build /app/lingui.config.ts ./lingui.config.ts
-RUN pnpm run messages:compile
 
 EXPOSE 3000
 
