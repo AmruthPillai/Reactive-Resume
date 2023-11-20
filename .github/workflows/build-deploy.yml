@@ -55,7 +55,7 @@ jobs:
 
       - name: Build and Push
         id: build
-        uses: docker/build-push-action@v5.0.0
+        uses: docker/build-push-action@v5.1.0
         with:
           context: .
           push: true
@@ -115,7 +115,7 @@ jobs:
 
       - name: Build and Push
         id: build
-        uses: docker/build-push-action@v5.0.0
+        uses: docker/build-push-action@v5.1.0
         with:
           context: .
           push: true
