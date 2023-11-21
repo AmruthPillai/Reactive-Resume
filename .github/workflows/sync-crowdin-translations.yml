@@ -24,7 +24,7 @@ jobs:
           localization_branch_name: "l10n"
           pull_request_base_branch_name: "v4"
           pull_request_title: "New Translations from Crowdin"
-          pull_request_body: "You've got new translations to be merged into the app from contributors on Crowdin.\n_This pull request was automatically created by the [Crowdin Action](https://github.com/marketplace/actions/crowdin-action)._"
+          pull_request_body: "You've got new translations to be merged into the app from contributors on Crowdin.\n\n_This pull request was automatically created by the [Crowdin Action](https://github.com/marketplace/actions/crowdin-action)._"
         env:
           GITHUB_TOKEN: ${{ github.token }}
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
