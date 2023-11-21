@@ -1,27 +1,42 @@
 # Table of contents
 
-* [Reactive Resume](README.md)
+* [👋 Reactive Resume](README.md)
 
-## Tutorial
+## Overview
 
-* [Creating an account](tutorial/creating-an-account.md)
-* [Create a new resume](tutorial/create-a-new-resume.md)
-* [Import from external sources](tutorial/import-from-external-sources.md)
-* [Working with the artboard](tutorial/working-with-the-artboard.md)
-* [Filling resume data](tutorial/filling-resume-data.md)
-* [Create a custom section](tutorial/create-a-custom-section.md)
-* [Exporting the resume](tutorial/exporting-the-resume.md)
-* [Deleting your account](tutorial/deleting-your-account.md)
+* [💡 Information](overview/information.md)
+* [✨ Features](overview/features.md)
 
-## Source Code
+## Engineering
 
-* [Introduction](source-code/introduction.md)
-* [Docker](source-code/docker.md)
-* [Gitpod](source-code/gitpod.md)
-* [Local Build](source-code/local-build.md)
-* [Environment Variables](source-code/environment-variables.md)
+* [🎴 Mission](engineering/mission.md)
+* [🎒 Tech Stack](engineering/tech-stack.md)
+* [🔧 How It Works: The Frontend](engineering/how-it-works-the-frontend.md)
+* [🔨 How It Works: The Backend](engineering/how-it-works-the-backend.md)
 
-## Deployment
+## Product Guides
 
-* [Introduction](deployment/introduction.md)
-* [Docker](deployment/docker.md)
+* [🦸 Setting up your account](product-guides/setting-up-your-account.md)
+* [🖊 Updating your profile](product-guides/updating-your-profile.md)
+* [🔑 Updating your password](product-guides/updating-your-password.md)
+* [🛂 Setting up two-factor authentication](product-guides/setting-up-two-factor-authentication.md)
+* [🧠 Enabling OpenAI Integration](product-guides/enabling-openai-integration.md)
+* [🇦🇮 Translate your resume with ChatGPT](product-guides/translate-your-resume-with-chatgpt.md)
+* [👩💻 Exporting your resume as JSON](product-guides/exporting-your-resume-as-json.md)
+* [👩💻 Exporting your resume as PDF](product-guides/exporting-your-resume-as-pdf.md)
+* [📢 Making your resume publicly available](product-guides/making-your-resume-publicly-available.md)
+* [🖇 Importing your data from LinkedIn](product-guides/importing-your-data-from-linkedin.md)
+* [📃 Creating a Multi-Page Resume](product-guides/creating-a-multi-page-resume.md)
+* [Use ChatGPT to rewrite your resume](product-guides/use-chatgpt-to-rewrite-your-resume.md)
+
+## Contributing
+
+* [🇧🇷 Translating Reactive Resume into your language](contributing/translating-reactive-resume-into-your-language.md)
+* [💵 Sponsor through Open Collective](contributing/sponsor-through-open-collective.md)
+* [💶 Sponsor through GitHub Sponsors](contributing/sponsor-through-github-sponsors.md)
+
+## Meta
+
+* [⚖ License](meta/license.md)
+* [🔏 Privacy Policy](meta/privacy-policy.md)
+* [🐕🦺 Terms of Service](meta/terms-of-service.md)
