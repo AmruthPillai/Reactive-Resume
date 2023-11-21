@@ -69,8 +69,17 @@ body:
     id: template
     attributes:
       label: What template are you using?
+      description: Leave blank if the issue applies to all templates, or is not template-specific.
       multiple: false
       options:
+        - Azurill
+        - Bronzor
+        - Chikorita
+        - Ditto
+        - Kakuna
+        - Nosepass
+        - Onyx
+        - Pikachu
         - Rhyhorn
     validations:
       required: false

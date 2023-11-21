@@ -318,8 +318,8 @@ dependencies:
     specifier: ^7.48.2
     version: 7.48.2(react@18.2.0)
   react-parallax-tilt:
-    specifier: ^1.7.174
-    version: 1.7.174(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^1.7.175
+    version: 1.7.175(react-dom@18.2.0)(react@18.2.0)
   react-resizable-panels:
     specifier: ^0.0.61
     version: 0.0.61(react-dom@18.2.0)(react@18.2.0)
@@ -387,7 +387,7 @@ devDependencies:
     version: 4.0.4(@lingui/macro@4.5.0)(@swc/core@1.3.99)
   '@lingui/vite-plugin':
     specifier: ^4.5.0
-    version: 4.5.0(typescript@5.3.2)(vite@5.0.0)
+    version: 4.5.0(typescript@5.3.2)(vite@5.0.1)
   '@nestjs/schematics':
     specifier: ^10.0.3
     version: 10.0.3(typescript@5.3.2)
@@ -417,7 +417,7 @@ devDependencies:
     version: 17.1.3(@swc-node/register@1.6.8)(@swc/core@1.3.99)(@types/node@20.9.3)(eslint@8.54.0)(nx@17.1.3)(typescript@5.3.2)(webpack@5.89.0)
   '@nx/vite':
     specifier: 17.1.3
-    version: 17.1.3(@swc-node/register@1.6.8)(@swc/core@1.3.99)(@types/node@20.9.3)(nx@17.1.3)(typescript@5.3.2)(vite@5.0.0)(vitest@0.34.6)
+    version: 17.1.3(@swc-node/register@1.6.8)(@swc/core@1.3.99)(@types/node@20.9.3)(nx@17.1.3)(typescript@5.3.2)(vite@5.0.1)(vitest@0.34.6)
   '@nx/web':
     specifier: 17.1.3
     version: 17.1.3(@swc-node/register@1.6.8)(@swc/core@1.3.99)(@types/node@20.9.3)(nx@17.1.3)(typescript@5.3.2)
@@ -525,10 +525,10 @@ devDependencies:
     version: 6.12.0(eslint@8.54.0)(typescript@5.3.2)
   '@vitejs/plugin-react':
     specifier: ~4.2.0
-    version: 4.2.0(vite@5.0.0)
+    version: 4.2.0(vite@5.0.1)
   '@vitejs/plugin-react-swc':
     specifier: ~3.5.0
-    version: 3.5.0(@swc/helpers@0.5.3)(vite@5.0.0)
+    version: 3.5.0(@swc/helpers@0.5.3)(vite@5.0.1)
   '@vitest/coverage-v8':
     specifier: ^0.34.6
     version: 0.34.6(vitest@0.34.6)
@@ -611,11 +611,11 @@ devDependencies:
     specifier: ~5.3.2
     version: 5.3.2
   vite:
-    specifier: ~5.0.0
-    version: 5.0.0(@types/node@20.9.3)(less@4.1.3)(stylus@0.59.0)
+    specifier: ~5.0.1
+    version: 5.0.1(@types/node@20.9.3)(less@4.1.3)(stylus@0.59.0)
   vite-plugin-dts:
     specifier: ~3.6.3
-    version: 3.6.3(@types/node@20.9.3)(typescript@5.3.2)(vite@5.0.0)
+    version: 3.6.3(@types/node@20.9.3)(typescript@5.3.2)(vite@5.0.1)
   vitest:
     specifier: ~0.34.6
     version: 0.34.6(@vitest/ui@0.34.6)(jsdom@22.1.0)(less@4.1.3)(stylus@0.59.0)
@@ -3085,7 +3085,7 @@ packages:
       '@swc/core': 1.3.99(@swc/helpers@0.5.3)
     dev: true
 
-  /@lingui/vite-plugin@4.5.0(typescript@5.3.2)(vite@5.0.0):
+  /@lingui/vite-plugin@4.5.0(typescript@5.3.2)(vite@5.0.1):
     resolution: {integrity: sha512-REAzk7BgoK+jSytTlBvtPXfkE3nbWpUzy1qjupk0EfDxVtLiPIQk7EpNQ6Qk7F5Av3udWlHL7z+dBF7TY/MQBg==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
@@ -3093,7 +3093,7 @@ packages:
     dependencies:
       '@lingui/cli': 4.5.0(typescript@5.3.2)
       '@lingui/conf': 4.5.0(typescript@5.3.2)
-      vite: 5.0.0(@types/node@20.9.3)(less@4.1.3)(stylus@0.59.0)
+      vite: 5.0.1(@types/node@20.9.3)(less@4.1.3)(stylus@0.59.0)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -3719,10 +3719,10 @@ packages:
       - debug
     dev: true
 
-  /@nrwl/vite@17.1.3(@swc-node/register@1.6.8)(@swc/core@1.3.99)(@types/node@20.9.3)(nx@17.1.3)(typescript@5.3.2)(vite@5.0.0)(vitest@0.34.6):
+  /@nrwl/vite@17.1.3(@swc-node/register@1.6.8)(@swc/core@1.3.99)(@types/node@20.9.3)(nx@17.1.3)(typescript@5.3.2)(vite@5.0.1)(vitest@0.34.6):
     resolution: {integrity: sha512-CXB9LnfLB9bAq6nqWAZBTHyTe5/tPoSmMyStK9djgeyXNCvNNz30EXJOEislA7FuSL1HDh59np3Y2KgVOtbxuA==}
     dependencies:
-      '@nx/vite': 17.1.3(@swc-node/register@1.6.8)(@swc/core@1.3.99)(@types/node@20.9.3)(nx@17.1.3)(typescript@5.3.2)(vite@5.0.0)(vitest@0.34.6)
+      '@nx/vite': 17.1.3(@swc-node/register@1.6.8)(@swc/core@1.3.99)(@types/node@20.9.3)(nx@17.1.3)(typescript@5.3.2)(vite@5.0.1)(vitest@0.34.6)
     transitivePeerDependencies:
       - '@babel/traverse'
       - '@swc-node/register'
@@ -4207,20 +4207,20 @@ packages:
       - webpack
     dev: true
 
-  /@nx/vite@17.1.3(@swc-node/register@1.6.8)(@swc/core@1.3.99)(@types/node@20.9.3)(nx@17.1.3)(typescript@5.3.2)(vite@5.0.0)(vitest@0.34.6):
+  /@nx/vite@17.1.3(@swc-node/register@1.6.8)(@swc/core@1.3.99)(@types/node@20.9.3)(nx@17.1.3)(typescript@5.3.2)(vite@5.0.1)(vitest@0.34.6):
     resolution: {integrity: sha512-IuBpfSjn94vYCKs637Hh2pUF4Xzp5nmNTYqEl6UnNbzrK0EmV5H3KnkA2jF3KTLzO2pul/FY3Nwr+OfdYK9qig==}
     peerDependencies:
       vite: ^4.3.4
       vitest: '>=0.31.0 <1.0.0'
     dependencies:
-      '@nrwl/vite': 17.1.3(@swc-node/register@1.6.8)(@swc/core@1.3.99)(@types/node@20.9.3)(nx@17.1.3)(typescript@5.3.2)(vite@5.0.0)(vitest@0.34.6)
+      '@nrwl/vite': 17.1.3(@swc-node/register@1.6.8)(@swc/core@1.3.99)(@types/node@20.9.3)(nx@17.1.3)(typescript@5.3.2)(vite@5.0.1)(vitest@0.34.6)
       '@nx/devkit': 17.1.3(nx@17.1.3)
       '@nx/js': 17.1.3(@swc-node/register@1.6.8)(@swc/core@1.3.99)(@types/node@20.9.3)(nx@17.1.3)(typescript@5.3.2)
       '@phenomnomnominal/tsquery': 5.0.1(typescript@5.3.2)
       '@swc/helpers': 0.5.3
       enquirer: 2.3.6
       tsconfig-paths: 4.2.0
-      vite: 5.0.0(@types/node@20.9.3)(less@4.1.3)(stylus@0.59.0)
+      vite: 5.0.1(@types/node@20.9.3)(less@4.1.3)(stylus@0.59.0)
       vitest: 0.34.6(@vitest/ui@0.34.6)(jsdom@22.1.0)(less@4.1.3)(stylus@0.59.0)
     transitivePeerDependencies:
       - '@babel/traverse'
@@ -7472,18 +7472,18 @@ packages:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
 
-  /@vitejs/plugin-react-swc@3.5.0(@swc/helpers@0.5.3)(vite@5.0.0):
+  /@vitejs/plugin-react-swc@3.5.0(@swc/helpers@0.5.3)(vite@5.0.1):
     resolution: {integrity: sha512-1PrOvAaDpqlCV+Up8RkAh9qaiUjoDUcjtttyhXDKw53XA6Ve16SOp6cCOpRs8Dj8DqUQs6eTW5YkLcLJjrXAig==}
     peerDependencies:
       vite: ^4 || ^5
     dependencies:
       '@swc/core': 1.3.99(@swc/helpers@0.5.3)
-      vite: 5.0.0(@types/node@20.9.3)(less@4.1.3)(stylus@0.59.0)
+      vite: 5.0.1(@types/node@20.9.3)(less@4.1.3)(stylus@0.59.0)
     transitivePeerDependencies:
       - '@swc/helpers'
     dev: true
 
-  /@vitejs/plugin-react@4.2.0(vite@5.0.0):
+  /@vitejs/plugin-react@4.2.0(vite@5.0.1):
     resolution: {integrity: sha512-+MHTH/e6H12kRp5HUkzOGqPMksezRMmW+TNzlh/QXfI8rRf6l2Z2yH/v12no1UvTwhZgEDMuQ7g7rrfMseU6FQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -7494,7 +7494,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.23.3(@babel/core@7.23.3)
       '@types/babel__core': 7.20.4
       react-refresh: 0.14.0
-      vite: 5.0.0(@types/node@20.9.3)(less@4.1.3)(stylus@0.59.0)
+      vite: 5.0.1(@types/node@20.9.3)(less@4.1.3)(stylus@0.59.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -16239,8 +16239,8 @@ packages:
   /react-is@18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
 
-  /react-parallax-tilt@1.7.174(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-NFmSZ1O+CJ+K+vDqhnNNSREzhJez3sXYX4b12tl00kxvN7jmdngZwCgd5bOtqgyk3OcGAAM43P+pkvxBXrzbSg==}
+  /react-parallax-tilt@1.7.175(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-EwXLhOsEJmqP9/w7dl0B8qUQzI+d5SAeO5ZlECvGKrycMq2W19icjsEXHSDdTKsD/0n109dkSR/USOEsH6SJPA==}
     peerDependencies:
       react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
       react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
@@ -18453,7 +18453,7 @@ packages:
       mlly: 1.4.2
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 5.0.0(@types/node@20.9.3)(less@4.1.3)(stylus@0.59.0)
+      vite: 5.0.1(@types/node@20.9.3)(less@4.1.3)(stylus@0.59.0)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -18465,7 +18465,7 @@ packages:
       - terser
     dev: true
 
-  /vite-plugin-dts@3.6.3(@types/node@20.9.3)(typescript@5.3.2)(vite@5.0.0):
+  /vite-plugin-dts@3.6.3(@types/node@20.9.3)(typescript@5.3.2)(vite@5.0.1):
     resolution: {integrity: sha512-NyRvgobl15rYj65coi/gH7UAEH+CpSjh539DbGb40DfOTZSvDLNYTzc8CK4460W+LqXuMK7+U3JAxRB3ksrNPw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -18481,7 +18481,7 @@ packages:
       debug: 4.3.4
       kolorist: 1.8.0
       typescript: 5.3.2
-      vite: 5.0.0(@types/node@20.9.3)(less@4.1.3)(stylus@0.59.0)
+      vite: 5.0.1(@types/node@20.9.3)(less@4.1.3)(stylus@0.59.0)
       vue-tsc: 1.8.22(typescript@5.3.2)
     transitivePeerDependencies:
       - '@types/node'
@@ -18489,8 +18489,8 @@ packages:
       - supports-color
     dev: true
 
-  /vite@5.0.0(@types/node@20.9.3)(less@4.1.3)(stylus@0.59.0):
-    resolution: {integrity: sha512-ESJVM59mdyGpsiNAeHQOR/0fqNoOyWPYesFto8FFZugfmhdHx8Fzd8sF3Q/xkVhZsyOxHfdM7ieiVAorI9RjFw==}
+  /vite@5.0.1(@types/node@20.9.3)(less@4.1.3)(stylus@0.59.0):
+    resolution: {integrity: sha512-T2plNaDK+olJPoxwmpGxKcI+BScI2OAulAtRUAljTrb6QxSqJShWMUT+7ilXcBHTMAzbYHfWROuC1J/g2oRhEw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -18581,7 +18581,7 @@ packages:
       strip-literal: 1.3.0
       tinybench: 2.5.1
       tinypool: 0.7.0
-      vite: 5.0.0(@types/node@20.9.3)(less@4.1.3)(stylus@0.59.0)
+      vite: 5.0.1(@types/node@20.9.3)(less@4.1.3)(stylus@0.59.0)
       vite-node: 0.34.6(@types/node@20.9.3)(less@4.1.3)(stylus@0.59.0)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
