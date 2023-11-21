@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 * {
+  font-variant-ligatures: none;
+
   @apply border-current;
 }
 

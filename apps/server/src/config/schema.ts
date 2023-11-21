@@ -6,8 +6,7 @@ export const configSchema = z.object({
   // Ports
   PORT: z.coerce.number().default(3000),
 
-  // Client Port & URL (only for development environments)
-  __DEV__CLIENT_PORT: z.coerce.number().optional(),
+  // Client URL (only for development environments)
   __DEV__CLIENT_URL: z.string().url().optional(),
 
   // URLs
@@ -44,7 +43,10 @@ export const configSchema = z.object({
 
   // Crowdin (Optional)
   CROWDIN_PROJECT_ID: z.coerce.number().optional(),
-  CROWDIN_ACCESS_TOKEN: z.string().optional(),
+  CROWDIN_PERSONAL_TOKEN: z.string().optional(),
+
+  // Email (Optional)
+  DISABLE_EMAIL_AUTH: z.coerce.boolean().optional().default(false),
 
   // GitHub (OAuth)
   GITHUB_CLIENT_ID: z.string().optional(),

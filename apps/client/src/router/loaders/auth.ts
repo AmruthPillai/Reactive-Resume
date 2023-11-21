@@ -9,11 +9,13 @@ import { useAuthStore } from "@/client/stores/auth";
 export const authLoader: LoaderFunction<UserDto> = async ({ request }) => {
   const status = new URL(request.url).searchParams.get("status");
 
-  const { success } = authResponseSchema
-    .pick({ status: true })
-    .safeParse({ status: new URL(request.url).searchParams.get("status") });
+  const { success } = authResponseSchema.pick({ status: true }).safeParse({ status });
 
   if (!success) return redirect("/auth/login");
+
+  if (status === "2fa_required") {
+    return redirect("/auth/verify-otp");
+  }
 
   const user = await queryClient.fetchQuery({
     queryKey: [USER_KEY],
@@ -21,11 +23,7 @@ export const authLoader: LoaderFunction<UserDto> = async ({ request }) => {
   });
 
   if (!user) {
-    redirect("/auth/login");
-  }
-
-  if (status === "2fa_required") {
-    return redirect("/auth/verify-otp");
+    return redirect("/auth/login");
   }
 
   if (status === "authenticated") {

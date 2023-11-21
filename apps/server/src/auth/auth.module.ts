@@ -33,22 +33,6 @@ export class AuthModule {
 
         // OAuth2 Strategies
         {
-          provide: GoogleStrategy,
-          inject: [ConfigService, UserService],
-          useFactory: (configService: ConfigService<Config>, userService: UserService) => {
-            try {
-              const clientID = configService.getOrThrow("GOOGLE_CLIENT_ID");
-              const clientSecret = configService.getOrThrow("GOOGLE_CLIENT_SECRET");
-              const callbackURL = configService.getOrThrow("GOOGLE_CALLBACK_URL");
-
-              return new GoogleStrategy(clientID, clientSecret, callbackURL, userService);
-            } catch (error) {
-              return new DummyStrategy();
-            }
-          },
-        },
-
-        {
           provide: GitHubStrategy,
           inject: [ConfigService, UserService],
           useFactory: (configService: ConfigService<Config>, userService: UserService) => {
@@ -58,6 +42,22 @@ export class AuthModule {
               const callbackURL = configService.getOrThrow("GITHUB_CALLBACK_URL");
 
               return new GitHubStrategy(clientID, clientSecret, callbackURL, userService);
+            } catch (error) {
+              return new DummyStrategy();
+            }
+          },
+        },
+
+        {
+          provide: GoogleStrategy,
+          inject: [ConfigService, UserService],
+          useFactory: (configService: ConfigService<Config>, userService: UserService) => {
+            try {
+              const clientID = configService.getOrThrow("GOOGLE_CLIENT_ID");
+              const clientSecret = configService.getOrThrow("GOOGLE_CLIENT_SECRET");
+              const callbackURL = configService.getOrThrow("GOOGLE_CALLBACK_URL");
+
+              return new GoogleStrategy(clientID, clientSecret, callbackURL, userService);
             } catch (error) {
               return new DummyStrategy();
             }

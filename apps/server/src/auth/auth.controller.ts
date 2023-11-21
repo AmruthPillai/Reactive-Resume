@@ -106,6 +106,12 @@ export class AuthController {
     return this.handleAuthenticationResponse(user, response);
   }
 
+  @Get("providers")
+  getAuthProviders() {
+    return this.authService.getAuthProviders();
+  }
+
+  // OAuth Flows
   @ApiTags("OAuth", "GitHub")
   @Get("github")
   @UseGuards(GitHubGuard)

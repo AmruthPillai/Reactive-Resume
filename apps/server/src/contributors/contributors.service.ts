@@ -35,21 +35,25 @@ export class ContributorsService {
 
   async fetchCrowdinContributors() {
     const projectId = this.configService.getOrThrow("CROWDIN_PROJECT_ID");
-    const accessToken = this.configService.getOrThrow("CROWDIN_ACCESS_TOKEN");
+    const accessToken = this.configService.getOrThrow("CROWDIN_PERSONAL_TOKEN");
 
-    const response = await this.httpService.axiosRef.get(
-      `https://api.crowdin.com/api/v2/projects/${projectId}/members`,
-      { headers: { Authorization: `Bearer ${accessToken}` } },
-    );
-    const { data } = response.data as CrowdinContributorsResponse;
+    try {
+      const response = await this.httpService.axiosRef.get(
+        `https://api.crowdin.com/api/v2/projects/${projectId}/members`,
+        { headers: { Authorization: `Bearer ${accessToken}` } },
+      );
+      const { data } = response.data as CrowdinContributorsResponse;
 
-    return data.map(({ data }) => {
-      return {
-        id: data.id,
-        name: data.username,
-        url: `https://crowdin.com/profile/${data.username}`,
-        avatar: data.avatarUrl,
-      } satisfies ContributorDto;
-    });
+      return data.map(({ data }) => {
+        return {
+          id: data.id,
+          name: data.username,
+          url: `https://crowdin.com/profile/${data.username}`,
+          avatar: data.avatarUrl,
+        } satisfies ContributorDto;
+      });
+    } catch (error) {
+      return [];
+    }
   }
 }

@@ -1,8 +1,22 @@
 import { i18n } from "@lingui/core";
+import dayjs from "dayjs";
+
+import { dayjsLocales } from "./dayjs";
 
 export const defaultLocale = "en-US";
 
 export async function dynamicActivate(locale: string) {
-  const { messages } = await import(`../locales/${locale}/messages.po`);
-  i18n.loadAndActivate({ locale, messages });
+  try {
+    const { messages } = await import(`../locales/${locale}/messages.po`);
+
+    if (messages) {
+      i18n.loadAndActivate({ locale, messages });
+    }
+
+    if (dayjsLocales[locale]) {
+      dayjs.locale(await dayjsLocales[locale]());
+    }
+  } catch (error) {
+    console.error(error);
+  }
 }

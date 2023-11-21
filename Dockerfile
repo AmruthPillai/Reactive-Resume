@@ -33,6 +33,9 @@ COPY --chown=node:node --from=build /app/dist ./dist
 COPY --chown=node:node --from=build /app/tools/prisma ./tools/prisma
 RUN pnpm run prisma:generate
 
+ENV TZ=UTC
+ENV NODE_ENV=production
+
 EXPOSE 3000
 
 CMD [ "dumb-init", "pnpm", "run", "start" ]

@@ -65,8 +65,9 @@ Start creating your standout resume with Reactive Resume today!
 
 ## Built With
 
+- React (Vite), for the frontend
+- NestJS, for the backend
 - Postgres (primary database)
-- DigitalOcean (infrastructure)
 - Prisma ORM, which frees you to switch to any other relational database with a few minor changes in the code
 - Redis (for caching, session storage and resume statistics)
 - Minio (for object storage: to store avatars, resume PDFs and previews)

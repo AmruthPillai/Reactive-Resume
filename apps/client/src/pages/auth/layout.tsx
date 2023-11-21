@@ -1,10 +1,12 @@
 import { t } from "@lingui/macro";
+import { cn } from "@reactive-resume/utils";
 import { useMemo } from "react";
 import { Link, matchRoutes, Outlet, useLocation } from "react-router-dom";
 
 import { LocaleSwitch } from "@/client/components/locale-switch";
 import { Logo } from "@/client/components/logo";
 import { ThemeSwitch } from "@/client/components/theme-switch";
+import { useAuthProviders } from "@/client/services/auth/providers";
 
 import { SocialAuth } from "./_components/social-auth";
 
@@ -13,7 +15,12 @@ const authRoutes = [{ path: "/auth/login" }, { path: "/auth/register" }];
 export const AuthLayout = () => {
   const location = useLocation();
 
+  const { providers } = useAuthProviders();
+  const emailAuthDisabled = !providers || !providers.includes("email");
+
   const isAuthRoute = useMemo(() => matchRoutes(authRoutes, location) !== null, [location]);
+
+  if (!providers) return null;
 
   return (
     <div className="flex h-screen w-screen">
@@ -33,7 +40,7 @@ export const AuthLayout = () => {
 
         {isAuthRoute && (
           <>
-            <div className="flex items-center gap-x-4">
+            <div className={cn("flex items-center gap-x-4", emailAuthDisabled && "hidden")}>
               <hr className="flex-1" />
               <span className="text-xs font-medium">
                 {t({

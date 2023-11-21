@@ -1,6 +1,7 @@
 import { Language } from "@reactive-resume/utils";
 import { useQuery } from "@tanstack/react-query";
 
+import { LANGUAGES_KEY } from "@/client/constants/query-keys";
 import { axios } from "@/client/libs/axios";
 
 export const fetchLanguages = async () => {
@@ -15,7 +16,7 @@ export const useLanguages = () => {
     isPending: loading,
     data: languages,
   } = useQuery({
-    queryKey: ["translation", "languages"],
+    queryKey: [LANGUAGES_KEY],
     queryFn: fetchLanguages,
   });
 

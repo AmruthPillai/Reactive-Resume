@@ -14,6 +14,7 @@ import {
   FormMessage,
   Input,
 } from "@reactive-resume/ui";
+import { cn } from "@reactive-resume/utils";
 import { useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
@@ -21,12 +22,16 @@ import { Link, useNavigate } from "react-router-dom";
 import { z } from "zod";
 
 import { useRegister } from "@/client/services/auth";
+import { useAuthProviders } from "@/client/services/auth/providers";
 
 type FormValues = z.infer<typeof registerSchema>;
 
 export const RegisterPage = () => {
   const navigate = useNavigate();
   const { register, loading } = useRegister();
+
+  const { providers } = useAuthProviders();
+  const emailAuthDisabled = !providers || !providers.includes("email");
 
   const formRef = useRef<HTMLFormElement>(null);
   usePasswordToggle(formRef);
@@ -62,7 +67,7 @@ export const RegisterPage = () => {
 
       <div className="space-y-1.5">
         <h2 className="text-2xl font-semibold tracking-tight">{t`Create a new account`}</h2>
-        <h6>
+        <h6 className={cn(emailAuthDisabled && "hidden")}>
           <span className="opacity-75">{t`Already have an account?`}</span>
           <Button asChild variant="link" className="px-1.5">
             <Link to="/auth/login">
@@ -72,7 +77,7 @@ export const RegisterPage = () => {
         </h6>
       </div>
 
-      <div>
+      <div className={cn(emailAuthDisabled && "hidden")}>
         <Form {...form}>
           <form
             ref={formRef}

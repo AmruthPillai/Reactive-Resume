@@ -7,7 +7,7 @@ import {
 import { ConfigService } from "@nestjs/config";
 import { JwtService } from "@nestjs/jwt";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
-import { LoginDto, RegisterDto } from "@reactive-resume/dto";
+import { AuthProvidersDto, LoginDto, RegisterDto } from "@reactive-resume/dto";
 import { ErrorMessage } from "@reactive-resume/utils";
 import * as bcryptjs from "bcryptjs";
 import { randomBytes } from "crypto";
@@ -169,6 +169,32 @@ export class AuthService {
       resetToken: null,
       password: hashedPassword,
     });
+  }
+
+  getAuthProviders() {
+    const providers: AuthProvidersDto = [];
+
+    if (!this.configService.get("DISABLE_EMAIL_AUTH")) {
+      providers.push("email");
+    }
+
+    if (
+      this.configService.get("GITHUB_CLIENT_ID") &&
+      this.configService.get("GITHUB_CLIENT_SECRET") &&
+      this.configService.get("GITHUB_CALLBACK_URL")
+    ) {
+      providers.push("github");
+    }
+
+    if (
+      this.configService.get("GOOGLE_CLIENT_ID") &&
+      this.configService.get("GOOGLE_CLIENT_SECRET") &&
+      this.configService.get("GOOGLE_CALLBACK_URL")
+    ) {
+      providers.push("google");
+    }
+
+    return providers;
   }
 
   // Email Verification Flows

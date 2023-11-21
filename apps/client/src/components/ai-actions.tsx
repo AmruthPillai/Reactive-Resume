@@ -18,6 +18,7 @@ import {
 import { cn } from "@reactive-resume/utils";
 import { useState } from "react";
 
+import { toast } from "../hooks/use-toast";
 import { changeTone } from "../services/openai/change-tone";
 import { fixGrammar } from "../services/openai/fix-grammar";
 import { improveWriting } from "../services/openai/improve-writing";
@@ -39,17 +40,25 @@ export const AiActions = ({ value, onChange, className }: Props) => {
   if (!aiEnabled) return null;
 
   const onClick = async (action: Action, mood?: Mood) => {
-    setLoading(action);
+    try {
+      setLoading(action);
 
-    let result = value;
+      let result = value;
 
-    if (action === "improve") result = await improveWriting(value);
-    if (action === "fix") result = await fixGrammar(value);
-    if (action === "tone" && mood) result = await changeTone(value, mood);
+      if (action === "improve") result = await improveWriting(value);
+      if (action === "fix") result = await fixGrammar(value);
+      if (action === "tone" && mood) result = await changeTone(value, mood);
 
-    onChange(result);
-
-    setLoading(false);
+      onChange(result);
+    } catch (error) {
+      toast({
+        variant: "error",
+        title: t`Oops, the server returned an error.`,
+        description: (error as Error)?.message,
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

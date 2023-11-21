@@ -98,7 +98,10 @@ services:
 
       # -- Crowdin (Optional) --
       # CROWDIN_PROJECT_ID:
-      # CROWDIN_ACCESS_TOKEN:
+      # CROWDIN_PERSONAL_TOKEN:
+
+      # -- Email --
+      # DISABLE_EMAIL_AUTH: true
 
       # -- GitHub --
       GITHUB_CLIENT_ID: github_client_id
