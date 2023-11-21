@@ -54,7 +54,7 @@ msgstr ""
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr ""
 
-#: apps/client/src/pages/home/page.tsx:18
+#: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/home/sections/hero/index.tsx:36
 msgid "A free and open-source resume builder"
 msgstr ""
@@ -124,7 +124,7 @@ msgstr ""
 msgid "AI"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:66
+#: apps/client/src/pages/auth/register/page.tsx:71
 msgid "Already have an account?"
 msgstr ""
 
@@ -222,7 +222,7 @@ msgstr ""
 msgid "Border Radius"
 msgstr ""
 
-#: apps/client/src/pages/public/page.tsx:77
+#: apps/client/src/pages/public/page.tsx:91
 msgid "Built with"
 msgstr ""
 
@@ -319,8 +319,8 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:59
 #: apps/client/src/pages/auth/register/page.tsx:64
+#: apps/client/src/pages/auth/register/page.tsx:69
 msgid "Create a new account"
 msgstr ""
 
@@ -334,7 +334,7 @@ msgstr ""
 msgid "Create a new resume"
 msgstr ""
 
-#: apps/client/src/pages/auth/login/page.tsx:60
+#: apps/client/src/pages/auth/login/page.tsx:65
 msgctxt "This is a link to create a new account"
 msgid "Create one now"
 msgstr ""
@@ -422,7 +422,7 @@ msgstr ""
 msgid "Documentation"
 msgstr ""
 
-#: apps/client/src/pages/auth/login/page.tsx:57
+#: apps/client/src/pages/auth/login/page.tsx:62
 msgid "Don't have an account?"
 msgstr ""
 
@@ -444,6 +444,11 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:74
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/toolbar.tsx:129
+#: apps/client/src/pages/public/page.tsx:103
+msgid "Download PDF"
 msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:58
@@ -475,8 +480,8 @@ msgid "Effects"
 msgstr ""
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:79
-#: apps/client/src/pages/auth/login/page.tsx:79
-#: apps/client/src/pages/auth/register/page.tsx:129
+#: apps/client/src/pages/auth/login/page.tsx:84
+#: apps/client/src/pages/auth/register/page.tsx:134
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:50
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:180
 msgid "Email"
@@ -523,10 +528,6 @@ msgstr ""
 msgid "Export"
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:129
-msgid "Export as PDF"
-msgstr ""
-
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
 msgid "File"
 msgstr ""
@@ -567,7 +568,7 @@ msgstr ""
 msgid "Forget"
 msgstr ""
 
-#: apps/client/src/pages/auth/login/page.tsx:115
+#: apps/client/src/pages/auth/login/page.tsx:120
 msgid "Forgot Password?"
 msgstr ""
 
@@ -660,8 +661,8 @@ msgstr ""
 msgid "Hide Icons"
 msgstr ""
 
-#: apps/client/src/pages/auth/login/page.tsx:99
-#: apps/client/src/pages/auth/register/page.tsx:155
+#: apps/client/src/pages/auth/login/page.tsx:104
+#: apps/client/src/pages/auth/register/page.tsx:160
 #: apps/client/src/pages/auth/reset-password/page.tsx:88
 msgid "Hold <0>Ctrl</0> to display your password temporarily."
 msgstr ""
@@ -761,17 +762,17 @@ msgstr ""
 msgid "It looks like your email address has already been verified."
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:90
+#: apps/client/src/pages/auth/register/page.tsx:95
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
 msgid "John Doe"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:111
+#: apps/client/src/pages/auth/register/page.tsx:116
 msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
 msgid "john.doe"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:132
+#: apps/client/src/pages/auth/register/page.tsx:137
 msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
 msgid "john.doe@example.com"
 msgstr ""
@@ -902,7 +903,7 @@ msgstr ""
 msgid "MIT License"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:87
+#: apps/client/src/pages/auth/register/page.tsx:92
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:53
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:40
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
@@ -982,7 +983,7 @@ msgstr ""
 msgid "Options"
 msgstr ""
 
-#: apps/client/src/pages/auth/layout.tsx:39
+#: apps/client/src/pages/auth/layout.tsx:46
 msgctxt "The user can either login with email/password, or continue with GitHub or Google."
 msgid "or continue with"
 msgstr ""
@@ -1000,8 +1001,8 @@ msgstr ""
 msgid "Page {0}"
 msgstr ""
 
-#: apps/client/src/pages/auth/login/page.tsx:94
-#: apps/client/src/pages/auth/register/page.tsx:150
+#: apps/client/src/pages/auth/login/page.tsx:99
+#: apps/client/src/pages/auth/register/page.tsx:155
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
 msgid "Password"
@@ -1019,7 +1020,7 @@ msgstr ""
 msgid "Phone"
 msgstr ""
 
-#: apps/client/src/pages/auth/layout.tsx:68
+#: apps/client/src/pages/auth/layout.tsx:75
 msgid "Photograph by Patrick Tomasso"
 msgstr ""
 
@@ -1093,8 +1094,8 @@ msgstr ""
 #: apps/client/src/components/copyright.tsx:38
 #: apps/client/src/pages/auth/backup-otp/page.tsx:51
 #: apps/client/src/pages/auth/forgot-password/page.tsx:46
-#: apps/client/src/pages/auth/login/page.tsx:50
-#: apps/client/src/pages/auth/register/page.tsx:59
+#: apps/client/src/pages/auth/login/page.tsx:55
+#: apps/client/src/pages/auth/register/page.tsx:64
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
@@ -1102,9 +1103,9 @@ msgstr ""
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
 #: apps/client/src/pages/home/components/footer.tsx:17
-#: apps/client/src/pages/home/page.tsx:18
-#: apps/client/src/pages/public/page.tsx:57
-#: apps/client/src/pages/public/page.tsx:79
+#: apps/client/src/pages/home/page.tsx:24
+#: apps/client/src/pages/public/page.tsx:71
+#: apps/client/src/pages/public/page.tsx:93
 msgid "Reactive Resume"
 msgstr ""
 
@@ -1267,17 +1268,17 @@ msgid "Sidebar"
 msgstr ""
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:89
-#: apps/client/src/pages/auth/login/page.tsx:111
+#: apps/client/src/pages/auth/login/page.tsx:116
 #: apps/client/src/pages/auth/verify-otp/page.tsx:92
 msgid "Sign in"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:69
+#: apps/client/src/pages/auth/register/page.tsx:74
 msgid "Sign in now"
 msgstr ""
 
-#: apps/client/src/pages/auth/login/page.tsx:50
 #: apps/client/src/pages/auth/login/page.tsx:55
+#: apps/client/src/pages/auth/login/page.tsx:60
 msgid "Sign in to your account"
 msgstr ""
 
@@ -1293,7 +1294,7 @@ msgstr ""
 msgid "Sign in with Google"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:166
+#: apps/client/src/pages/auth/register/page.tsx:171
 msgid "Sign up"
 msgstr ""
 
@@ -1545,7 +1546,7 @@ msgstr ""
 msgid "User does not have an associated 'secrets' record. Please report this issue on GitHub."
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:108
+#: apps/client/src/pages/auth/register/page.tsx:113
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:54
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
 msgid "Username"
@@ -1621,7 +1622,7 @@ msgstr ""
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr ""
 
-#: apps/client/src/pages/auth/login/page.tsx:83
+#: apps/client/src/pages/auth/login/page.tsx:88
 msgid "You can also enter your username."
 msgstr ""
 
@@ -1673,4 +1674,3 @@ msgstr ""
 #: apps/client/src/pages/builder/_components/toolbar.tsx:77
 msgid "Zoom Out"
 msgstr ""
-

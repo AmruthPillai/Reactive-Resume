@@ -114,13 +114,13 @@ export class ResumeService {
     return { views, downloads };
   }
 
-  async findOneByUsernameSlug(username: string, slug: string) {
+  async findOneByUsernameSlug(username: string, slug: string, userId?: string) {
     const resume = await this.prisma.resume.findFirstOrThrow({
       where: { user: { username }, slug, visibility: "public" },
     });
 
     // Update statistics: increment the number of views by 1
-    await this.redis.incr(`user:${resume.userId}:resume:${resume.id}:views`);
+    if (!userId) await this.redis.incr(`user:${resume.userId}:resume:${resume.id}:views`);
 
     return resume;
   }
@@ -180,11 +180,11 @@ export class ResumeService {
     return this.prisma.resume.delete({ where: { userId_id: { userId, id } } });
   }
 
-  async printResume(resume: ResumeDto) {
+  async printResume(resume: ResumeDto, userId?: string) {
     const url = await this.printerService.printResume(resume);
 
     // Update statistics: increment the number of downloads by 1
-    await this.redis.incr(`user:${resume.userId}:resume:${resume.id}:downloads`);
+    if (!userId) await this.redis.incr(`user:${resume.userId}:resume:${resume.id}:downloads`);
 
     return url;
   }

@@ -1,4 +1,5 @@
 import { t } from "@lingui/macro";
+import { CircleNotch, FilePdf } from "@phosphor-icons/react";
 import { ResumeDto } from "@reactive-resume/dto";
 import { Button } from "@reactive-resume/ui";
 import { pageSizeMap } from "@reactive-resume/utils";
@@ -9,12 +10,14 @@ import { Link, LoaderFunction, redirect, useLoaderData } from "react-router-dom"
 import { Icon } from "@/client/components/icon";
 import { ThemeSwitch } from "@/client/components/theme-switch";
 import { queryClient } from "@/client/libs/query-client";
-import { findResumeByUsernameSlug } from "@/client/services/resume";
+import { findResumeByUsernameSlug, usePrintResume } from "@/client/services/resume";
 
 export const PublicResumePage = () => {
   const frameRef = useRef<HTMLIFrameElement>(null);
 
-  const { title, data: resume } = useLoaderData() as ResumeDto;
+  const { printResume, loading } = usePrintResume();
+
+  const { id, title, data: resume } = useLoaderData() as ResumeDto;
   const format = resume.metadata.page.format;
 
   const updateResumeInFrame = useCallback(() => {
@@ -50,6 +53,17 @@ export const PublicResumePage = () => {
     };
   }, [frameRef]);
 
+  const onDownloadPdf = async () => {
+    const { url } = await printResume({ id });
+
+    const openInNewTab = (url: string) => {
+      const win = window.open(url, "_blank");
+      if (win) win.focus();
+    };
+
+    openInNewTab(url);
+  };
+
   return (
     <div>
       <Helmet>
@@ -82,7 +96,15 @@ export const PublicResumePage = () => {
       </div>
 
       <div className="fixed bottom-5 right-5 print:hidden">
-        <ThemeSwitch />
+        <div className="flex items-center gap-x-4">
+          <Button variant="outline" className="gap-x-2 rounded-full" onClick={onDownloadPdf}>
+            {loading ? <CircleNotch size={16} className="animate-spin" /> : <FilePdf size={16} />}
+            {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
+            <span>{t`Download PDF`}</span>
+          </Button>
+
+          <ThemeSwitch />
+        </div>
       </div>
     </div>
   );

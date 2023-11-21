@@ -54,7 +54,7 @@ msgstr "<0>ಎರಡು ಅಂಶದ ದೃಢೀಕರಣವನ್ನು ಪ್
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr "<0>ಎರಡು ಅಂಶದ ದೃಢೀಕರಣವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ.</0> ನೀವು ಸೈನ್ ಇನ್ ಮಾಡಿದಾಗಲೆಲ್ಲಾ ಕೋಡ್ ಅನ್ನು ನಮೂದಿಸಲು ನಿಮ್ಮನ್ನು ಕೇಳಲಾಗುತ್ತದೆ."
 
-#: apps/client/src/pages/home/page.tsx:18
+#: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/home/sections/hero/index.tsx:36
 msgid "A free and open-source resume builder"
 msgstr "ಉಚಿತ ಮತ್ತು ಮೂಲ ಕೋಡ್ ತೆರೆದಿರುವ ರೇಜ಼ಮೈ ನಿರ್ಮಾಪಕ"
@@ -124,7 +124,7 @@ msgstr "ಹೊಸ ಪುಟವನ್ನು ಸೇರಿಸಿ"
 msgid "AI"
 msgstr "AI"
 
-#: apps/client/src/pages/auth/register/page.tsx:66
+#: apps/client/src/pages/auth/register/page.tsx:71
 msgid "Already have an account?"
 msgstr "ಈಗಾಗಲೇ ಖಾತೆ ಹೊಂದಿದ್ದೀರ?"
 
@@ -222,7 +222,7 @@ msgstr "ಅಂಚುಗಳು"
 msgid "Border Radius"
 msgstr "ಗಡಿ ತ್ರಿಜ್ಯ"
 
-#: apps/client/src/pages/public/page.tsx:77
+#: apps/client/src/pages/public/page.tsx:91
 msgid "Built with"
 msgstr "ಇದರೊಂದಿಗೆ ನಿರ್ಮಿಸಲಾಗಿದೆ"
 
@@ -319,8 +319,8 @@ msgstr "ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ನಕಲಿಸಿ"
 msgid "Create"
 msgstr "ರಚಿಸಿ"
 
-#: apps/client/src/pages/auth/register/page.tsx:59
 #: apps/client/src/pages/auth/register/page.tsx:64
+#: apps/client/src/pages/auth/register/page.tsx:69
 msgid "Create a new account"
 msgstr "ಹೊಸ ಖಾತೆಯನ್ನು ರಚಿಸಿ"
 
@@ -334,7 +334,7 @@ msgstr "ಹೊಸ ಐಟಂ ರಚಿಸಿ"
 msgid "Create a new resume"
 msgstr "ಹೊಸ ರೆಸ್ಯೂಮ್ ಅನ್ನು ರಚಿಸಿ"
 
-#: apps/client/src/pages/auth/login/page.tsx:60
+#: apps/client/src/pages/auth/login/page.tsx:65
 msgctxt "This is a link to create a new account"
 msgid "Create one now"
 msgstr "ಇದೀಗ ಒಂದನ್ನು ರಚಿಸಿ"
@@ -422,7 +422,7 @@ msgstr "ತಿರಸ್ಕರಿಸು"
 msgid "Documentation"
 msgstr "ದಾಖಲೀಕರಣ"
 
-#: apps/client/src/pages/auth/login/page.tsx:57
+#: apps/client/src/pages/auth/login/page.tsx:62
 msgid "Don't have an account?"
 msgstr "ಖಾತೆ ಇಲ್ಲವೇ?"
 
@@ -445,6 +445,11 @@ msgstr "ನಿಮ್ಮ ರೆಸ್ಯೂಮ್‌ನ JSON ಸ್ನ್ಯಾ�
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:74
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "ನಿಮ್ಮ ರೆಸ್ಯೂಮ್‌ನ PDF ಅನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ. ನಿಮ್ಮ ರೆಸ್ಯೂಮ್ ಅನ್ನು ಪ್ರಿಂಟ್ ಮಾಡಲು, ನೇಮಕಾತಿ ಮಾಡುವವರಿಗೆ ಕಳುಹಿಸಲು ಅಥವಾ ಜಾಬ್ ಪೋರ್ಟಲ್‌ಗಳಲ್ಲಿ ಅಪ್‌ಲೋಡ್ ಮಾಡಲು ಈ ಫೈಲ್ ಅನ್ನು ಬಳಸಬಹುದು."
+
+#: apps/client/src/pages/builder/_components/toolbar.tsx:129
+#: apps/client/src/pages/public/page.tsx:103
+msgid "Download PDF"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:58
 msgid "Downloads"
@@ -475,8 +480,8 @@ msgid "Effects"
 msgstr "ಪರಿಣಾಮಗಳು"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:79
-#: apps/client/src/pages/auth/login/page.tsx:79
-#: apps/client/src/pages/auth/register/page.tsx:129
+#: apps/client/src/pages/auth/login/page.tsx:84
+#: apps/client/src/pages/auth/register/page.tsx:134
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:50
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:180
 msgid "Email"
@@ -523,10 +528,6 @@ msgstr "ಪ್ರತಿಕ್ರಿಯಾತ್ಮಕ ರೆಸ್ಯೂಮ್�
 msgid "Export"
 msgstr "ರಫ್ತು ಮಾಡು"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:129
-msgid "Export as PDF"
-msgstr "PDF ಆಗಿ ರಫ್ತು ಮಾಡಿ"
-
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
 msgid "File"
 msgstr "ಕಡತ"
@@ -567,7 +568,7 @@ msgstr "ಉದಾಹರಣೆಗೆ, ನೀವು ಈ ರೆಸ್ಯೂಮ್ �
 msgid "Forget"
 msgstr "ಮರೆತುಬಿಡಿ"
 
-#: apps/client/src/pages/auth/login/page.tsx:115
+#: apps/client/src/pages/auth/login/page.tsx:120
 msgid "Forgot Password?"
 msgstr "ಪಾಸ್ವರ್ಡ್ ಮರೆತಿರಾ?"
 
@@ -660,8 +661,8 @@ msgstr "ಮರೆಮಾಡಿ"
 msgid "Hide Icons"
 msgstr "ಐಕಾನ್‌ಗಳನ್ನು ಮರೆಮಾಡಿ"
 
-#: apps/client/src/pages/auth/login/page.tsx:99
-#: apps/client/src/pages/auth/register/page.tsx:155
+#: apps/client/src/pages/auth/login/page.tsx:104
+#: apps/client/src/pages/auth/register/page.tsx:160
 #: apps/client/src/pages/auth/reset-password/page.tsx:88
 msgid "Hold <0>Ctrl</0> to display your password temporarily."
 msgstr "ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ತಾತ್ಕಾಲಿಕವಾಗಿ ಪ್ರದರ್ಶಿಸಲು <0>Ctrl</0> ಅನ್ನು ಹಿಡಿದುಕೊಳ್ಳಿ."
@@ -761,17 +762,17 @@ msgstr "ನೀವು ಒದಗಿಸಿದ ಮರುಹೊಂದಿಸುವ ಟ
 msgid "It looks like your email address has already been verified."
 msgstr "ನಿಮ್ಮ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ಈಗಾಗಲೇ ಪರಿಶೀಲಿಸಿರುವಂತೆ ತೋರುತ್ತಿದೆ."
 
-#: apps/client/src/pages/auth/register/page.tsx:90
+#: apps/client/src/pages/auth/register/page.tsx:95
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
 msgid "John Doe"
 msgstr "ಜಾನ್ ಡೋ"
 
-#: apps/client/src/pages/auth/register/page.tsx:111
+#: apps/client/src/pages/auth/register/page.tsx:116
 msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
 msgid "john.doe"
 msgstr "ಜಾನ್ ಡೋ"
 
-#: apps/client/src/pages/auth/register/page.tsx:132
+#: apps/client/src/pages/auth/register/page.tsx:137
 msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
 msgid "john.doe@example.com"
 msgstr "john.doe@example.com"
@@ -902,7 +903,7 @@ msgstr "ಅಂಚು"
 msgid "MIT License"
 msgstr "MIT ಪರವಾನಗಿ"
 
-#: apps/client/src/pages/auth/register/page.tsx:87
+#: apps/client/src/pages/auth/register/page.tsx:92
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:53
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:40
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
@@ -982,7 +983,7 @@ msgstr "OpenAI ಏಕೀಕರಣ"
 msgid "Options"
 msgstr "ಆಯ್ಕೆಗಳು"
 
-#: apps/client/src/pages/auth/layout.tsx:39
+#: apps/client/src/pages/auth/layout.tsx:46
 msgctxt "The user can either login with email/password, or continue with GitHub or Google."
 msgid "or continue with"
 msgstr "ಅಥವಾ ಮುಂದುವರಿಸಿ"
@@ -1000,8 +1001,8 @@ msgstr "ಪುಟ"
 msgid "Page {0}"
 msgstr "ಪುಟ {0}"
 
-#: apps/client/src/pages/auth/login/page.tsx:94
-#: apps/client/src/pages/auth/register/page.tsx:150
+#: apps/client/src/pages/auth/login/page.tsx:99
+#: apps/client/src/pages/auth/register/page.tsx:155
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
 msgid "Password"
@@ -1019,7 +1020,7 @@ msgstr "ಪ್ರತಿ ರೆಸ್ಯೂಮ್ ವೈಯಕ್ತಿಕ ಟಿ
 msgid "Phone"
 msgstr "ದೂರವಾಣಿ"
 
-#: apps/client/src/pages/auth/layout.tsx:68
+#: apps/client/src/pages/auth/layout.tsx:75
 msgid "Photograph by Patrick Tomasso"
 msgstr "ಪ್ಯಾಟ್ರಿಕ್ ಟೊಮಾಸೊ ಅವರ ಛಾಯಾಚಿತ್ರ"
 
@@ -1093,8 +1094,8 @@ msgstr "ಒಂದು ಸಮಸ್ಯೆಯನ್ನು ಎತ್ತಿಕೊಳ�
 #: apps/client/src/components/copyright.tsx:38
 #: apps/client/src/pages/auth/backup-otp/page.tsx:51
 #: apps/client/src/pages/auth/forgot-password/page.tsx:46
-#: apps/client/src/pages/auth/login/page.tsx:50
-#: apps/client/src/pages/auth/register/page.tsx:59
+#: apps/client/src/pages/auth/login/page.tsx:55
+#: apps/client/src/pages/auth/register/page.tsx:64
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
@@ -1102,9 +1103,9 @@ msgstr "ಒಂದು ಸಮಸ್ಯೆಯನ್ನು ಎತ್ತಿಕೊಳ�
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
 #: apps/client/src/pages/home/components/footer.tsx:17
-#: apps/client/src/pages/home/page.tsx:18
-#: apps/client/src/pages/public/page.tsx:57
-#: apps/client/src/pages/public/page.tsx:79
+#: apps/client/src/pages/home/page.tsx:24
+#: apps/client/src/pages/public/page.tsx:71
+#: apps/client/src/pages/public/page.tsx:93
 msgid "Reactive Resume"
 msgstr "ರಿಯಾಕ್ಟಿವ್ ರೆಸ್ಯೂಮೇ"
 
@@ -1267,17 +1268,17 @@ msgid "Sidebar"
 msgstr "ಪಾರ್ಶ್ವಪಟ್ಟಿ"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:89
-#: apps/client/src/pages/auth/login/page.tsx:111
+#: apps/client/src/pages/auth/login/page.tsx:116
 #: apps/client/src/pages/auth/verify-otp/page.tsx:92
 msgid "Sign in"
 msgstr "ಸೈನ್ ಇನ್ ಮಾಡಿ"
 
-#: apps/client/src/pages/auth/register/page.tsx:69
+#: apps/client/src/pages/auth/register/page.tsx:74
 msgid "Sign in now"
 msgstr "ಈಗ ಸೈನ್ ಇನ್ ಮಾಡಿ"
 
-#: apps/client/src/pages/auth/login/page.tsx:50
 #: apps/client/src/pages/auth/login/page.tsx:55
+#: apps/client/src/pages/auth/login/page.tsx:60
 msgid "Sign in to your account"
 msgstr "ನಿಮ್ಮ ಖಾತೆಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ"
 
@@ -1293,7 +1294,7 @@ msgstr "GitHub ನೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ"
 msgid "Sign in with Google"
 msgstr "Google ನೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ"
 
-#: apps/client/src/pages/auth/register/page.tsx:166
+#: apps/client/src/pages/auth/register/page.tsx:171
 msgid "Sign up"
 msgstr "ಖಾತೇ ರಚಿಸಿ"
 
@@ -1545,7 +1546,7 @@ msgstr "ನಿಮ್ಮ ಬ್ಯಾಕಪ್ ಕೋಡ್ ಬಳಸಿ"
 msgid "User does not have an associated 'secrets' record. Please report this issue on GitHub."
 msgstr "ಬಳಕೆದಾರರು ಸಂಬಂಧಿತ 'ರಹಸ್ಯ' ದಾಖಲೆಯನ್ನು ಹೊಂದಿಲ್ಲ. ದಯವಿಟ್ಟು ಈ ಸಮಸ್ಯೆಯನ್ನು GitHub ನಲ್ಲಿ ವರದಿ ಮಾಡಿ."
 
-#: apps/client/src/pages/auth/register/page.tsx:108
+#: apps/client/src/pages/auth/register/page.tsx:113
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:54
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
 msgid "Username"
@@ -1621,7 +1622,7 @@ msgstr "ಇತ್ತೀಚಿನ ಆವೃತ್ತಿಯಲ್ಲಿ ಹೊಸ�
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr "ಅಲ್ಪವಿರಾಮದಿಂದ ಬೇರ್ಪಡಿಸುವ ಮೂಲಕ ಅಥವಾ ಎಂಟರ್ ಒತ್ತುವ ಮೂಲಕ ನೀವು ಬಹು ಕೀವರ್ಡ್‌ಗಳನ್ನು ಸೇರಿಸಬಹುದು."
 
-#: apps/client/src/pages/auth/login/page.tsx:83
+#: apps/client/src/pages/auth/login/page.tsx:88
 msgid "You can also enter your username."
 msgstr "ನಿಮ್ಮ ಬಳಕೆದಾರಹೆಸರನ್ನು ಸಹ ನೀವು ನಮೂದಿಸಬಹುದು."
 
@@ -1673,4 +1674,3 @@ msgstr "ಗಾತ್ರ ಹಿಗ್ಗಿಸಿ"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:77
 msgid "Zoom Out"
 msgstr "ಗಾತ್ರ ಕುಗ್ಗಿಸಿ"
-

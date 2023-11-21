@@ -92,8 +92,13 @@ export class ResumeController {
   }
 
   @Get("/public/:username/:slug")
-  findOneByUsernameSlug(@Param("username") username: string, @Param("slug") slug: string) {
-    return this.resumeService.findOneByUsernameSlug(username, slug);
+  @UseGuards(OptionalGuard)
+  findOneByUsernameSlug(
+    @Param("username") username: string,
+    @Param("slug") slug: string,
+    @User("id") userId: string,
+  ) {
+    return this.resumeService.findOneByUsernameSlug(username, slug, userId);
   }
 
   @Patch(":id")
@@ -120,9 +125,9 @@ export class ResumeController {
 
   @Get("/print/:id")
   @UseGuards(OptionalGuard, ResumeGuard)
-  async printResume(@Resume() resume: ResumeDto) {
+  async printResume(@User("id") userId: string | undefined, @Resume() resume: ResumeDto) {
     try {
-      const url = await this.resumeService.printResume(resume);
+      const url = await this.resumeService.printResume(resume, userId);
 
       return { url };
     } catch (error) {

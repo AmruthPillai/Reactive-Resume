@@ -126,13 +126,13 @@ export const BuilderToolbar = () => {
           </Button>
         </Tooltip>
 
-        <Tooltip content={t`Export as PDF`}>
+        <Tooltip content={t`Download PDF`}>
           <Button
             size="icon"
             variant="ghost"
-            className="rounded-none"
             onClick={onPrint}
             disabled={loading}
+            className="rounded-none"
           >
             {loading ? <CircleNotch className="animate-spin" /> : <FilePdf />}
           </Button>

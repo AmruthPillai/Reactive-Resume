@@ -54,7 +54,7 @@ msgstr "<0>Two-factor authentication is currently disabled.</0> You can enable i
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 
-#: apps/client/src/pages/home/page.tsx:18
+#: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/home/sections/hero/index.tsx:36
 msgid "A free and open-source resume builder"
 msgstr "A free and open-source resume builder"
@@ -124,7 +124,7 @@ msgstr "Add New Page"
 msgid "AI"
 msgstr "AI"
 
-#: apps/client/src/pages/auth/register/page.tsx:66
+#: apps/client/src/pages/auth/register/page.tsx:71
 msgid "Already have an account?"
 msgstr "Already have an account?"
 
@@ -222,7 +222,7 @@ msgstr "Border"
 msgid "Border Radius"
 msgstr "Border Radius"
 
-#: apps/client/src/pages/public/page.tsx:77
+#: apps/client/src/pages/public/page.tsx:91
 msgid "Built with"
 msgstr "Built with"
 
@@ -319,8 +319,8 @@ msgstr "Copy to Clipboard"
 msgid "Create"
 msgstr "Create"
 
-#: apps/client/src/pages/auth/register/page.tsx:59
 #: apps/client/src/pages/auth/register/page.tsx:64
+#: apps/client/src/pages/auth/register/page.tsx:69
 msgid "Create a new account"
 msgstr "Create a new account"
 
@@ -334,7 +334,7 @@ msgstr "Create a new item"
 msgid "Create a new resume"
 msgstr "Create a new resume"
 
-#: apps/client/src/pages/auth/login/page.tsx:60
+#: apps/client/src/pages/auth/login/page.tsx:65
 msgctxt "This is a link to create a new account"
 msgid "Create one now"
 msgstr "Create one now"
@@ -422,7 +422,7 @@ msgstr "Discard"
 msgid "Documentation"
 msgstr "Documentation"
 
-#: apps/client/src/pages/auth/login/page.tsx:57
+#: apps/client/src/pages/auth/login/page.tsx:62
 msgid "Don't have an account?"
 msgstr "Don't have an account?"
 
@@ -445,6 +445,11 @@ msgstr "Download a JSON snapshot of your resume. This file can be used to import
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:74
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
+
+#: apps/client/src/pages/builder/_components/toolbar.tsx:129
+#: apps/client/src/pages/public/page.tsx:103
+msgid "Download PDF"
+msgstr "Download PDF"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:58
 msgid "Downloads"
@@ -475,8 +480,8 @@ msgid "Effects"
 msgstr "Effects"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:79
-#: apps/client/src/pages/auth/login/page.tsx:79
-#: apps/client/src/pages/auth/register/page.tsx:129
+#: apps/client/src/pages/auth/login/page.tsx:84
+#: apps/client/src/pages/auth/register/page.tsx:134
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:50
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:180
 msgid "Email"
@@ -523,10 +528,6 @@ msgstr "Explore the templates available in Reactive Resume and view the resumes 
 msgid "Export"
 msgstr "Export"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:129
-msgid "Export as PDF"
-msgstr "Export as PDF"
-
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
 msgid "File"
 msgstr "File"
@@ -567,7 +568,7 @@ msgstr "For example, information regarding which companies you sent this resume 
 msgid "Forget"
 msgstr "Forget"
 
-#: apps/client/src/pages/auth/login/page.tsx:115
+#: apps/client/src/pages/auth/login/page.tsx:120
 msgid "Forgot Password?"
 msgstr "Forgot Password?"
 
@@ -660,8 +661,8 @@ msgstr "Hide"
 msgid "Hide Icons"
 msgstr "Hide Icons"
 
-#: apps/client/src/pages/auth/login/page.tsx:99
-#: apps/client/src/pages/auth/register/page.tsx:155
+#: apps/client/src/pages/auth/login/page.tsx:104
+#: apps/client/src/pages/auth/register/page.tsx:160
 #: apps/client/src/pages/auth/reset-password/page.tsx:88
 msgid "Hold <0>Ctrl</0> to display your password temporarily."
 msgstr "Hold <0>Ctrl</0> to display your password temporarily."
@@ -761,17 +762,17 @@ msgstr "It looks like the verification token you provided is invalid. Please try
 msgid "It looks like your email address has already been verified."
 msgstr "It looks like your email address has already been verified."
 
-#: apps/client/src/pages/auth/register/page.tsx:90
+#: apps/client/src/pages/auth/register/page.tsx:95
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
 msgid "John Doe"
 msgstr "John Doe"
 
-#: apps/client/src/pages/auth/register/page.tsx:111
+#: apps/client/src/pages/auth/register/page.tsx:116
 msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
 msgid "john.doe"
 msgstr "john.doe"
 
-#: apps/client/src/pages/auth/register/page.tsx:132
+#: apps/client/src/pages/auth/register/page.tsx:137
 msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
 msgid "john.doe@example.com"
 msgstr "john.doe@example.com"
@@ -902,7 +903,7 @@ msgstr "Margin"
 msgid "MIT License"
 msgstr "MIT License"
 
-#: apps/client/src/pages/auth/register/page.tsx:87
+#: apps/client/src/pages/auth/register/page.tsx:92
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:53
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:40
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
@@ -982,7 +983,7 @@ msgstr "OpenAI Integration"
 msgid "Options"
 msgstr "Options"
 
-#: apps/client/src/pages/auth/layout.tsx:39
+#: apps/client/src/pages/auth/layout.tsx:46
 msgctxt "The user can either login with email/password, or continue with GitHub or Google."
 msgid "or continue with"
 msgstr "or continue with"
@@ -1000,8 +1001,8 @@ msgstr "Page"
 msgid "Page {0}"
 msgstr "Page {0}"
 
-#: apps/client/src/pages/auth/login/page.tsx:94
-#: apps/client/src/pages/auth/register/page.tsx:150
+#: apps/client/src/pages/auth/login/page.tsx:99
+#: apps/client/src/pages/auth/register/page.tsx:155
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
 msgid "Password"
@@ -1019,7 +1020,7 @@ msgstr "Personal notes for each resume"
 msgid "Phone"
 msgstr "Phone"
 
-#: apps/client/src/pages/auth/layout.tsx:68
+#: apps/client/src/pages/auth/layout.tsx:75
 msgid "Photograph by Patrick Tomasso"
 msgstr "Photograph by Patrick Tomasso"
 
@@ -1093,8 +1094,8 @@ msgstr "Raise an issue"
 #: apps/client/src/components/copyright.tsx:38
 #: apps/client/src/pages/auth/backup-otp/page.tsx:51
 #: apps/client/src/pages/auth/forgot-password/page.tsx:46
-#: apps/client/src/pages/auth/login/page.tsx:50
-#: apps/client/src/pages/auth/register/page.tsx:59
+#: apps/client/src/pages/auth/login/page.tsx:55
+#: apps/client/src/pages/auth/register/page.tsx:64
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
@@ -1102,9 +1103,9 @@ msgstr "Raise an issue"
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
 #: apps/client/src/pages/home/components/footer.tsx:17
-#: apps/client/src/pages/home/page.tsx:18
-#: apps/client/src/pages/public/page.tsx:57
-#: apps/client/src/pages/public/page.tsx:79
+#: apps/client/src/pages/home/page.tsx:24
+#: apps/client/src/pages/public/page.tsx:71
+#: apps/client/src/pages/public/page.tsx:93
 msgid "Reactive Resume"
 msgstr "Reactive Resume"
 
@@ -1267,17 +1268,17 @@ msgid "Sidebar"
 msgstr "Sidebar"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:89
-#: apps/client/src/pages/auth/login/page.tsx:111
+#: apps/client/src/pages/auth/login/page.tsx:116
 #: apps/client/src/pages/auth/verify-otp/page.tsx:92
 msgid "Sign in"
 msgstr "Sign in"
 
-#: apps/client/src/pages/auth/register/page.tsx:69
+#: apps/client/src/pages/auth/register/page.tsx:74
 msgid "Sign in now"
 msgstr "Sign in now"
 
-#: apps/client/src/pages/auth/login/page.tsx:50
 #: apps/client/src/pages/auth/login/page.tsx:55
+#: apps/client/src/pages/auth/login/page.tsx:60
 msgid "Sign in to your account"
 msgstr "Sign in to your account"
 
@@ -1293,7 +1294,7 @@ msgstr "Sign in with GitHub"
 msgid "Sign in with Google"
 msgstr "Sign in with Google"
 
-#: apps/client/src/pages/auth/register/page.tsx:166
+#: apps/client/src/pages/auth/register/page.tsx:171
 msgid "Sign up"
 msgstr "Sign up"
 
@@ -1545,7 +1546,7 @@ msgstr "Use your backup code"
 msgid "User does not have an associated 'secrets' record. Please report this issue on GitHub."
 msgstr "User does not have an associated 'secrets' record. Please report this issue on GitHub."
 
-#: apps/client/src/pages/auth/register/page.tsx:108
+#: apps/client/src/pages/auth/register/page.tsx:113
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:54
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
 msgid "Username"
@@ -1621,7 +1622,7 @@ msgstr "What's new in the latest version"
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr "You can add multiple keywords by separating them with a comma or pressing enter."
 
-#: apps/client/src/pages/auth/login/page.tsx:83
+#: apps/client/src/pages/auth/login/page.tsx:88
 msgid "You can also enter your username."
 msgstr "You can also enter your username."
 
