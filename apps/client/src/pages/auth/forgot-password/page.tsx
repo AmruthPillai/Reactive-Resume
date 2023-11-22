@@ -1,5 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/macro";
+import { ArrowLeft } from "@phosphor-icons/react";
 import { forgotPasswordSchema } from "@reactive-resume/dto";
 import {
   Alert,
@@ -16,6 +17,7 @@ import {
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { z } from "zod";
 
 import { useForgotPassword } from "@/client/services/auth";
@@ -23,6 +25,7 @@ import { useForgotPassword } from "@/client/services/auth";
 type FormValues = z.infer<typeof forgotPasswordSchema>;
 
 export const ForgotPasswordPage = () => {
+  const navigate = useNavigate();
   const [submitted, setSubmitted] = useState<boolean>(false);
   const { forgotPassword, loading } = useForgotPassword();
 
@@ -85,9 +88,16 @@ export const ForgotPasswordPage = () => {
               )}
             />
 
-            <Button type="submit" disabled={loading} className="mt-4 w-full">
-              {t`Send Email`}
-            </Button>
+            <div className="mt-4 flex items-center gap-x-2">
+              <Button variant="link" className="px-5" onClick={() => navigate(-1)}>
+                <ArrowLeft size={14} className="mr-2" />
+                <span>{t`Back`}</span>
+              </Button>
+
+              <Button type="submit" disabled={loading} className="w-full">
+                {t`Send Email`}
+              </Button>
+            </div>
           </form>
         </Form>
       </div>

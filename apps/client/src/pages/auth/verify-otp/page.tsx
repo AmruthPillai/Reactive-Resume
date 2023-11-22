@@ -56,7 +56,7 @@ export const VerifyOtpPage = () => {
       <div className="space-y-1.5">
         <h2 className="text-2xl font-semibold tracking-tight">{t`Two-Factor Authentication`}</h2>
         <h6>
-          <span className="opacity-75">
+          <span className="leading-relaxed opacity-60">
             {t`Enter the one-time password provided by your authenticator app below.`}
           </span>
           <Button asChild variant="link" className="px-1.5">

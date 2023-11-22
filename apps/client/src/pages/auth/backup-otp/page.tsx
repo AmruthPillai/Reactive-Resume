@@ -1,5 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/macro";
+import { ArrowLeft } from "@phosphor-icons/react";
 import { twoFactorBackupSchema } from "@reactive-resume/dto";
 import { usePasswordToggle } from "@reactive-resume/hooks";
 import {
@@ -85,9 +86,16 @@ export const BackupOtpPage = () => {
               )}
             />
 
-            <Button type="submit" disabled={loading} className="mt-4 w-full">
-              {t`Sign in`}
-            </Button>
+            <div className="mt-4 flex items-center gap-x-2">
+              <Button variant="link" className="px-5" onClick={() => navigate(-1)}>
+                <ArrowLeft size={14} className="mr-2" />
+                <span>{t`Back`}</span>
+              </Button>
+
+              <Button type="submit" disabled={loading} className="flex-1">
+                {t`Sign in`}
+              </Button>
+            </div>
           </form>
         </Form>
       </div>
