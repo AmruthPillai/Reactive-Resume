@@ -25,7 +25,7 @@ jobs:
       matrix:
         platform:
           - linux/amd64
-          # - linux/arm64 # Skipping linux/arm64 for now as it is extremely slow to build on GitHub Actions
+          - linux/arm64
 
     steps:
       - name: Checkout Repository
