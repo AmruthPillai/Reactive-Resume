@@ -13,7 +13,6 @@
     "type": "git",
     "url": "https://github.com/AmruthPillai/Reactive-Resume.git"
   },
-  "packageManager": "pnpm@8.10.5",
   "scripts": {
     "dev": "nx run-many -t serve",
     "test": "nx run-many -t test",
@@ -236,6 +235,10 @@
     "zod-to-json-schema": "^3.22.0",
     "zundo": "^2.0.0",
     "zustand": "^4.4.6"
+  },
+  "packageManager": "pnpm@8.10.5",
+  "engines": {
+    "node": ">=18.0.0"
   },
   "prisma": {
     "schema": "tools/prisma/schema.prisma"
