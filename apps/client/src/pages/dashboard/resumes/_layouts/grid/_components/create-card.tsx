@@ -26,7 +26,7 @@ export const CreateResumeCard = () => {
           <KeyboardShortcut className="ml-2">^N</KeyboardShortcut>
         </h4>
 
-        <p className="text-xs opacity-75">{t`Start from scratch`}</p>
+        <p className="text-xs opacity-75">{t`Start building from scratch`}</p>
       </div>
     </BaseCard>
   );
