@@ -53,6 +53,7 @@ const Section: React.FC<Props> = ({
   };
 
   const handleEdit = (item: ListItem) => {
+    console.log(path);
     const id = path.split('.')[1];
     let modal: ModalName = validate(id) ? 'builder.sections.custom' : `builder.${path}`;
 
