@@ -1,7 +1,14 @@
 import { t } from "@lingui/macro";
 import { Tag } from "@phosphor-icons/react";
 import { URL, urlSchema } from "@reactive-resume/schema";
-import { Button, Input, Popover, PopoverContent, PopoverTrigger } from "@reactive-resume/ui";
+import {
+  Button,
+  Input,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  Tooltip,
+} from "@reactive-resume/ui";
 import { forwardRef, useMemo } from "react";
 
 interface Props {
@@ -29,11 +36,13 @@ export const URLInput = forwardRef<HTMLInputElement, Props>(
           />
 
           <Popover>
-            <PopoverTrigger asChild>
-              <Button size="icon" variant="ghost">
-                <Tag />
-              </Button>
-            </PopoverTrigger>
+            <Tooltip content={t`Label`}>
+              <PopoverTrigger asChild>
+                <Button size="icon" variant="ghost">
+                  <Tag />
+                </Button>
+              </PopoverTrigger>
+            </Tooltip>
             <PopoverContent className="p-1.5">
               <Input
                 value={value.label}
