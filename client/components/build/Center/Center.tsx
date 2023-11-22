@@ -17,6 +17,8 @@ const Center = () => {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up('sm'));
   const resume = useAppSelector((state) => state.resume.present);
+
+  console.log(resume);
   const layout: string[][][] = get(resume, 'metadata.layout');
 
   if (isEmpty(resume)) return null;
