@@ -63,7 +63,7 @@ If you have any questions, concerns, or requests regarding this Privacy Policy o
 Thank you for trusting Reactive Resume with your personal information. We are committed to protecting your privacy and providing you with a valuable resume-building experience.
 
 ```
-Raja Rajan Ashokan (legal name)
+Amruth Pillai (legal name, Raja Rajan Ashokan)
 c/o Reactive Resume
 Berlin, Germany
 hello@amruthpillai.com

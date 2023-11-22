@@ -27,7 +27,8 @@
 * [📢 Making your resume publicly available](product-guides/making-your-resume-publicly-available.md)
 * [🖇 Importing your data from LinkedIn](product-guides/importing-your-data-from-linkedin.md)
 * [📃 Creating a Multi-Page Resume](product-guides/creating-a-multi-page-resume.md)
-* [Use ChatGPT to rewrite your resume](product-guides/use-chatgpt-to-rewrite-your-resume.md)
+* [🧠 Use ChatGPT to rewrite your resume](product-guides/use-chatgpt-to-rewrite-your-resume.md)
+* [🔄 Change the number of columns for a section](product-guides/change-the-number-of-columns-for-a-section.md)
 
 ## Contributing
 

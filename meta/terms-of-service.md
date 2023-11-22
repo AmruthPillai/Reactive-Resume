@@ -4,7 +4,7 @@
 Effective Date: 21st November 2023
 {% endhint %}
 
-These Terms of Service ("Terms") govern your use of the Reactive Resume app ("Reactive Resume" or "the Service"), provided by \[Your Company Name] ("we," "our," or "us"). By creating an account and using Reactive Resume, you agree to comply with and be bound by these Terms.
+These Terms of Service ("Terms") govern your use of the Reactive Resume app ("Reactive Resume" or "the Service"), provided by Amruth Pillai. By creating an account and using Reactive Resume, you agree to comply with and be bound by these Terms.
 
 **1. Account Registration**
 
@@ -57,7 +57,7 @@ If you have any questions, concerns, or requests regarding these Terms of Servic
 Thank you for using Reactive Resume!
 
 ```
-Raja Rajan Ashokan (legal name)
+Amruth Pillai (legal name, Raja Rajan Ashokan)
 c/o Reactive Resume
 Berlin, Germany
 hello@amruthpillai.com
