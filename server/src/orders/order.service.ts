@@ -1,5 +1,5 @@
 import { S3Client } from '@aws-sdk/client-s3';
-import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { InjectRepository } from '@nestjs/typeorm';
 import { MoreThan, Repository } from 'typeorm';
@@ -62,14 +62,13 @@ export class OrderService {
   //   return this.resumeRepository.find({ where: { user: { id: userId } } });
   // }
 
-  async findOne(username: string, shortId?: string) {
+  async findOne(username: string, slug: string) {
     const today = new Date();
+    Logger.log(slug);
     const order = await this.orderRepository.findOne({
       where: {
-        resume: {
-          shortId: shortId,
-        },
-        user: { username: username },
+        resume: { slug },
+        user: { username },
         expiredDate: MoreThan(today),
         status: 'paid',
       },

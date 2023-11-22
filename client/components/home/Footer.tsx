@@ -19,7 +19,7 @@ const Footer = () => {
 
           <h2 className="text-xl font-medium">CVPAP</h2>
 
-          <p className="leading-relaxed prose-sm prose prose-zinc opacity-60 dark:prose-invert">
+          <p className="prose prose-sm prose-zinc leading-relaxed opacity-60 dark:prose-invert">
             An innovative and user-friendly Resume builder accessible right from your WhatsApp, its built to simplify
             the tasks of creating, updating, and sharing your resume.
           </p>
