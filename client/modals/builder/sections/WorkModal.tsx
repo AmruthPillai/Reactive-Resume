@@ -78,9 +78,12 @@ const WorkModal: React.FC = () => {
   });
 
   const onSubmit = (formData: FormData) => {
+    console.log('here');
     if (isEditMode) {
+      console.log('here 1');
       dispatch(editItem({ path: `${path}.items`, value: formData }));
     } else {
+      console.log('here 2');
       dispatch(addItem({ path: `${path}.items`, value: formData }));
     }
 
