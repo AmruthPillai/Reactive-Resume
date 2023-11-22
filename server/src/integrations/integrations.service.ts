@@ -342,7 +342,7 @@ export class IntegrationsService {
                   ...get(resume, 'sections.work.items', []),
                   {
                     id: uuidv4(),
-                    name: get(item, 'name'),
+                    name: get(item, 'Company Name'),
                     company: get(item, 'Company Name'),
                     position: get(item, 'position'),
                     summary: get(item, 'summary'),
@@ -697,7 +697,7 @@ export class IntegrationsService {
                   ...get(resume, 'sections.work.items', []),
                   {
                     id: uuidv4(),
-                    name: get(item, 'company'),
+                    name: get(item, 'Company Name'),
                     company: get(item, 'Company Name'),
                     position: get(item, 'position'),
                     summary: get(item, 'summary'),
