@@ -57,7 +57,7 @@ export const ResetPasswordPage = () => {
     <div className="space-y-8">
       <Helmet>
         <title>
-          {t`Reset your Password`} - {t`Reactive Resume`}
+          {t`Reset your password`} - {t`Reactive Resume`}
         </title>
       </Helmet>
 
