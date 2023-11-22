@@ -283,7 +283,7 @@ export const ImportDialog = () => {
                 <Label className="text-error">{t`Errors`}</Label>
                 <ScrollArea orientation="vertical" className="h-[180px]">
                   <div className="whitespace-pre-wrap rounded bg-secondary-accent p-4 font-mono text-xs leading-relaxed">
-                    {JSON.stringify(validationResult.errors, null, 4)}
+                    {JSON.stringify(JSON.parse(validationResult.errors), null, 4)}
                   </div>
                 </ScrollArea>
               </div>

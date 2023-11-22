@@ -64,13 +64,13 @@ CREATE UNIQUE INDEX "Secrets_resetToken_key" ON "Secrets"("resetToken");
 CREATE UNIQUE INDEX "Secrets_userId_key" ON "Secrets"("userId");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Resume_slug_key" ON "Resume"("slug");
-
--- CreateIndex
 CREATE INDEX "Resume_userId_idx" ON "Resume"("userId");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Resume_userId_id_key" ON "Resume"("userId", "id");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Resume_userId_slug_key" ON "Resume"("userId", "slug");
 
 -- AddForeignKey
 ALTER TABLE "Secrets" ADD CONSTRAINT "Secrets_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;

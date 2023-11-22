@@ -1,87 +1,98 @@
 version: "3.8"
 
-# In this Docker Compose example, we use Traefik to route requests to the app and storage containers in a secure manner (HTTPS).
-# This example assumes you have a domain name (example.com) and a wildcard DNS record pointing to your server.
-# The only exposed ports here are from Traefik (80 and 443). All non-secure requests are redirected to HTTPS.
-# Note: Please change `example.com` to your domain name where necessary.
+# In this Docker Compose example, we use Docker Swarm to deploy Reactive Resume on multiple servers, with Traefik as the load balancer.
 
 services:
   # Database (Postgres)
   postgres:
     image: postgres:alpine
-    restart: unless-stopped
+    networks:
+      - reactive_resume_network
     volumes:
       - postgres_data:/var/lib/postgresql/data
     environment:
+      POSTGRES_DB: postgres
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: postgres
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
       interval: 10s
       timeout: 5s
       retries: 5
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
 
   # Storage (for image uploads)
   minio:
     image: minio/minio
-    restart: unless-stopped
     command: server /data
+    networks:
+      - reactive_resume_network
     volumes:
       - minio_data:/data
     environment:
       MINIO_ROOT_USER: minioadmin
       MINIO_ROOT_PASSWORD: minioadmin
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.storage.rule=Host(`storage.example.com`)
-      - traefik.http.routers.storage.entrypoints=websecure
-      - traefik.http.routers.storage.tls.certresolver=letsencrypt
-      - traefik.http.services.storage.loadbalancer.server.port=9000
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.storage.rule=Host(`storage.arkpg.xyz`)
+        - traefik.http.routers.storage.entrypoints=websecure
+        - traefik.http.routers.storage.tls.certresolver=letsencrypt
+        - traefik.http.services.storage.loadbalancer.server.port=9000
 
   # Chrome Browser (for printing and previews)
   chrome:
     image: browserless/chrome:1.61.0-puppeteer-21.4.1
-    restart: unless-stopped
+    networks:
+      - reactive_resume_network
     environment:
       TOKEN: chrome_token
-      EXIT_ON_HEALTH_FAILURE: true
-      PRE_REQUEST_HEALTH_CHECK: true
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.printer.rule=Host(`printer.example.com`)
-      - traefik.http.routers.printer.entrypoints=websecure
-      - traefik.http.routers.printer.tls.certresolver=letsencrypt
-      - traefik.http.services.printer.loadbalancer.server.port=3000
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: on-failure
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.printer.rule=Host(`printer.arkpg.xyz`)
+        - traefik.http.routers.printer.entrypoints=websecure
+        - traefik.http.routers.printer.tls.certresolver=letsencrypt
+        - traefik.http.services.printer.loadbalancer.server.port=3000
 
   # Redis (for cache & server session management)
   redis:
     image: redis:alpine
-    restart: unless-stopped
-    command: redis-server --save 60 1 --loglevel warning --requirepass password
+    command: redis-server --save 60 1 --loglevel warning --bind 0.0.0.0 --requirepass password
+    networks:
+      - reactive_resume_network
     volumes:
       - redis_data:/data
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
 
   app:
-    image: amruthpillai/reactive-resume:v4.0.0-alpha.0
-    restart: unless-stopped
-    depends_on:
-      - postgres
-      - minio
-      - redis
-      - chrome
+    image: amruthpillai/reactive-resume:v4.0.0-alpha.8
+    networks:
+      - reactive_resume_network
     environment:
       # -- Environment Variables --
       PORT: 3000
       NODE_ENV: production
 
       # -- URLs --
-      PUBLIC_URL: https://example.com
-      STORAGE_URL: https://storage.example.com
+      PUBLIC_URL: https://arkpg.xyz
+      STORAGE_URL: https://storage.arkpg.xyz
 
       # -- Printer (Chrome) --
       CHROME_TOKEN: chrome_token
-      CHROME_URL: wss://printer.example.com
+      CHROME_URL: wss://printer.arkpg.xyz
 
       # -- Database (Postgres) --
       DATABASE_URL: postgresql://postgres:postgres@postgres:5432/postgres
@@ -108,8 +119,8 @@ services:
       # VITE_SENTRY_DSN: https://id.sentry.io # Optional
 
       # -- Crowdin (Optional) --
-      # CROWDIN_PROJECT_ID:
-      # CROWDIN_PERSONAL_TOKEN:
+      CROWDIN_PROJECT_ID:
+      CROWDIN_PERSONAL_TOKEN:
 
       # -- Email --
       # DISABLE_EMAIL_AUTH: true
@@ -117,33 +128,39 @@ services:
       # -- GitHub --
       GITHUB_CLIENT_ID: github_client_id
       GITHUB_CLIENT_SECRET: github_client_secret
-      GITHUB_CALLBACK_URL: https://example.com/api/auth/github/callback
+      GITHUB_CALLBACK_URL: https://arkpg.xyz/api/auth/github/callback
 
       # -- Google --
       GOOGLE_CLIENT_ID: google_client_id
       GOOGLE_CLIENT_SECRET: google_client_secret
-      GOOGLE_CALLBACK_URL: https://example.com/api/auth/google/callback
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.app.rule=Host(`example.com`)
-      - traefik.http.routers.app.entrypoints=websecure
-      - traefik.http.routers.app.tls.certresolver=letsencrypt
-      - traefik.http.services.app.loadbalancer.server.port=3000
+      GOOGLE_CALLBACK_URL: https://arkpg.xyz/api/auth/google/callback
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: on-failure
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.app.rule=Host(`arkpg.xyz`)
+        - traefik.http.routers.app.entrypoints=websecure
+        - traefik.http.routers.app.tls.certresolver=letsencrypt
+        - traefik.http.services.app.loadbalancer.server.port=3000
 
   traefik:
     image: traefik
     command:
       - --api=true
       - --providers.docker=true
+      - --providers.docker.swarmMode=true
       - --providers.docker.exposedbydefault=false
+      - --providers.docker.network=reactive_resume_network
       - --entrypoints.web.address=:80
       - --entrypoints.websecure.address=:443
       - --certificatesresolvers.letsencrypt.acme.tlschallenge=true
-      - --certificatesresolvers.letsencrypt.acme.email=noreply@example.com
+      - --certificatesresolvers.letsencrypt.acme.email=noreply@arkpg.xyz
       - --certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json
 
       # Let's Encrypt Staging Server (for testing)
-      - --certificatesResolvers.letsencrypt.acme.caServer=https://acme-staging-v02.api.letsencrypt.org/directory
+      # - --certificatesResolvers.letsencrypt.acme.caServer=https://acme-staging-v02.api.letsencrypt.org/directory
 
       # Redirect all HTTP requests to HTTPS
       - --entrypoints.web.http.redirections.entrypoint.to=websecure
@@ -151,12 +168,22 @@ services:
     ports:
       - 80:80
       - 443:443
+      - 8080:8080
+    networks:
+      - reactive_resume_network
     volumes:
       - letsencrypt_data:/letsencrypt
       - /var/run/docker.sock:/var/run/docker.sock
+    deploy:
+      placement:
+        constraints: [node.role == manager]
 
 volumes:
   minio_data:
   redis_data:
   postgres_data:
   letsencrypt_data:
+
+networks:
+  reactive_resume_network:
+    external: true

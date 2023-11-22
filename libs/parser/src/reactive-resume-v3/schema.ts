@@ -15,7 +15,7 @@ const basicsSchema = z.object({
   phone: z.string(),
   headline: z.string(),
   summary: z.string(),
-  birthdate: z.string(),
+  birthdate: z.string().optional(),
   website: z.string(),
   profiles: z.array(profileSchema),
   location: z.object({
@@ -40,7 +40,7 @@ const basicsSchema = z.object({
 const sectionSchema = z.object({
   id: z.string(),
   name: z.string(),
-  type: z.enum(["basic", "custom"]),
+  type: z.enum(["basic", "work", "custom"]),
   columns: z.number().or(z.null()),
   visible: z.boolean(),
 });
@@ -147,7 +147,7 @@ const metadataSchema = z.object({
   date: z.object({ format: z.string() }),
   theme: z.object({ text: z.string(), primary: z.string(), background: z.string() }),
   layout: z.array(z.array(z.array(z.string()))),
-  locale: z.string(),
+  locale: z.string().optional(),
   template: z.string(),
   typography: z.object({
     size: z.object({ body: z.number(), heading: z.number() }),

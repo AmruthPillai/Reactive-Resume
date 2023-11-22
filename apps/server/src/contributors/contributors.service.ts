@@ -34,10 +34,10 @@ export class ContributorsService {
   }
 
   async fetchCrowdinContributors() {
-    const projectId = this.configService.getOrThrow("CROWDIN_PROJECT_ID");
-    const accessToken = this.configService.getOrThrow("CROWDIN_PERSONAL_TOKEN");
-
     try {
+      const projectId = this.configService.getOrThrow("CROWDIN_PROJECT_ID");
+      const accessToken = this.configService.getOrThrow("CROWDIN_PERSONAL_TOKEN");
+
       const response = await this.httpService.axiosRef.get(
         `https://api.crowdin.com/api/v2/projects/${projectId}/members`,
         { headers: { Authorization: `Bearer ${accessToken}` } },
