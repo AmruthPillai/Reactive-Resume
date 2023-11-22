@@ -63,7 +63,7 @@ services:
       - redis_data:/data
 
   app:
-    image: amruthpillai/reactive-resume:v4.0.0-alpha.0
+    image: amruthpillai/reactive-resume:latest
     restart: unless-stopped
     depends_on:
       - postgres

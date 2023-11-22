@@ -80,7 +80,7 @@ services:
         condition: on-failure
 
   app:
-    image: amruthpillai/reactive-resume:v4.0.0-alpha.8
+    image: amruthpillai/reactive-resume:latest
     networks:
       - reactive_resume_network
     environment:
