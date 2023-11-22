@@ -47,7 +47,8 @@ export const useResumeStore = create<ResumeStore>()(
         };
 
         set((state) => {
-          state.resume.data.metadata.layout[0][0].push(`custom.${section.id}`);
+          const lastPageIndex = state.resume.data.metadata.layout.length - 1;
+          state.resume.data.metadata.layout[lastPageIndex][0].push(`custom.${section.id}`);
           state.resume.data = _set(state.resume.data, `sections.custom.${section.id}`, section);
 
           debouncedUpdateResume(JSON.parse(JSON.stringify(state.resume)));

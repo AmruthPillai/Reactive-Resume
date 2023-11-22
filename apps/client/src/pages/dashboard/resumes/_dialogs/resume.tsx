@@ -33,7 +33,7 @@ import {
   Input,
   Tooltip,
 } from "@reactive-resume/ui";
-import { generateRandomName, kebabCase } from "@reactive-resume/utils";
+import { cn, generateRandomName, kebabCase } from "@reactive-resume/utils";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -235,24 +235,31 @@ export const ResumeDialog = () => {
 
             <DialogFooter>
               <div className="flex items-center">
-                <Button type="submit" disabled={loading} className="rounded-r-none">
+                <Button
+                  type="submit"
+                  disabled={loading}
+                  className={cn(isCreate && "rounded-r-none")}
+                >
                   {isCreate && t`Create`}
                   {isUpdate && t`Save Changes`}
                   {isDuplicate && t`Duplicate`}
                 </Button>
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button type="button" size="icon" className="rounded-l-none border-l">
-                      <CaretDown />
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent side="right" align="center">
-                    <DropdownMenuItem onClick={onCreateSample}>
-                      <Flask className="mr-2" />
-                      {t`Create Sample Resume`}
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
+
+                {isCreate && (
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button type="button" size="icon" className="rounded-l-none border-l">
+                        <CaretDown />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent side="right" align="center">
+                      <DropdownMenuItem onClick={onCreateSample}>
+                        <Flask className="mr-2" />
+                        {t`Create Sample Resume`}
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                )}
               </div>
             </DialogFooter>
           </form>

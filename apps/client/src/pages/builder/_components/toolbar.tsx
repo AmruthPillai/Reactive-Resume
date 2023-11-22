@@ -48,11 +48,7 @@ export const BuilderToolbar = () => {
   const onCenterView = () => frameRef?.contentWindow?.postMessage({ type: "CENTER_VIEW" }, "*");
 
   return (
-    <motion.div
-      initial={{ opacity: 0.5 }}
-      whileHover={{ opacity: 1 }}
-      className="fixed inset-x-0 bottom-0 mx-auto pb-4 pt-6 text-center md:block"
-    >
+    <motion.div className="fixed inset-x-0 bottom-0 mx-auto hidden py-6 text-center md:block">
       <div className="inline-flex items-center justify-center rounded-full bg-background px-4 shadow-xl">
         <Tooltip content={t`Undo`}>
           <Button size="icon" variant="ghost" className="rounded-none" onClick={() => undo()}>

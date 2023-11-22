@@ -238,14 +238,16 @@ export const LayoutSection = () => {
                   </p>
 
                   {pageIndex !== 0 && (
-                    <Button
-                      size="icon"
-                      variant="ghost"
-                      className="h-8 w-8"
-                      onClick={() => onRemovePage(pageIndex)}
-                    >
-                      <TrashSimple size={12} />
-                    </Button>
+                    <Tooltip content={t`Remove Page`}>
+                      <Button
+                        size="icon"
+                        variant="ghost"
+                        className="h-8 w-8"
+                        onClick={() => onRemovePage(pageIndex)}
+                      >
+                        <TrashSimple size={12} className="text-error" />
+                      </Button>
+                    </Tooltip>
                   )}
                 </div>
 

@@ -58,7 +58,7 @@ export const BuilderLayout = () => {
             <motion.div
               layout
               key={pageIndex}
-              initial={{ opacity: 0, x: -200 }}
+              initial={{ opacity: 0, x: -200, y: 0 }}
               animate={{ opacity: 1, x: 0, transition: { delay: pageIndex * 0.3 } }}
               exit={{ opacity: 0, x: -200 }}
             >
