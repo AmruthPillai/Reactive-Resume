@@ -3,7 +3,7 @@ import { Profile } from './basics';
 
 export type WorkExperience = {
   id?: string;
-  name: string;
+  company: string;
   position: string;
   date?: DateRange;
   url?: string;

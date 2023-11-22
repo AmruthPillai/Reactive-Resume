@@ -2,7 +2,6 @@ import { joiResolver } from '@hookform/resolvers/joi';
 import { Add, DriveFileRenameOutline } from '@mui/icons-material';
 import { Button, TextField } from '@mui/material';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { WorkExperience } from 'schema';
 import dayjs from 'dayjs';
 import Joi from 'joi';
 import get from 'lodash/get';
@@ -10,6 +9,7 @@ import isEmpty from 'lodash/isEmpty';
 import { useTranslation } from 'next-i18next';
 import { useEffect, useMemo } from 'react';
 import { Controller, useForm } from 'react-hook-form';
+import { WorkExperience } from 'schema';
 
 import BaseModal from '@/components/shared/BaseModal';
 import MarkdownSupported from '@/components/shared/MarkdownSupported';
@@ -21,7 +21,7 @@ import { addItem, editItem } from '@/store/resume/resumeSlice';
 type FormData = WorkExperience;
 
 const defaultState: FormData = {
-  name: '',
+  company: '',
   position: '',
   date: {
     start: '',
@@ -33,7 +33,7 @@ const defaultState: FormData = {
 
 const schema = Joi.object<FormData>().keys({
   id: Joi.string(),
-  name: Joi.string().required(),
+  company: Joi.string().required(),
   position: Joi.string().required(),
   date: Joi.object().keys({
     start: Joi.string().allow(''),
@@ -113,7 +113,7 @@ const WorkModal: React.FC = () => {
     >
       <form className="my-2 grid grid-cols-2 gap-4" onSubmit={handleSubmit(onSubmit)}>
         <Controller
-          name="name"
+          name="company"
           control={control}
           render={({ field, fieldState }) => (
             <TextField
