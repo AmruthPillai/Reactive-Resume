@@ -91,6 +91,7 @@ services:
       REFRESH_TOKEN_SECRET: refresh_token_secret
 
       # -- Emails --
+      MAIL_FROM: noreply@example.com
       # SMTP_URL: smtp://user:pass@smtp:587 # Optional
 
       # -- Storage (Minio) --

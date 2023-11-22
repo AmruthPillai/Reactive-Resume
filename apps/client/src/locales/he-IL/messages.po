@@ -72,7 +72,7 @@ msgstr "קישור הועתק ללוח הגזירים שלך."
 msgid "A passion project by <0>Amruth Pillai</0>"
 msgstr "מיזם שמונע מהתשוקה של <0>אמרות׳ פילאי</0>"
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:54
+#: apps/client/src/pages/auth/forgot-password/page.tsx:57
 msgid "A password reset link should have been sent to your inbox, if an account existed with the email you provided."
 msgstr "קישור לאיפוס הסיסמה אמור היה להישלח לדואר הנכנס בדוא״ל שלך, בהנחה שיש חשבון עם כתובת הדוא״ל שסיפקת."
 
@@ -189,6 +189,8 @@ msgstr "זמין בלמעלה מ־20 שפות"
 msgid "Awarder"
 msgstr "גוף מעניק"
 
+#: apps/client/src/pages/auth/backup-otp/page.tsx:92
+#: apps/client/src/pages/auth/forgot-password/page.tsx:94
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:236
 msgid "Back"
 msgstr "חזרה"
@@ -197,11 +199,11 @@ msgstr "חזרה"
 msgid "Background Color"
 msgstr "צבע הרקע"
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:74
+#: apps/client/src/pages/auth/backup-otp/page.tsx:75
 msgid "Backup Code"
 msgstr "קוד גיבוי"
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:79
+#: apps/client/src/pages/auth/backup-otp/page.tsx:80
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "קודים למטרות גיבוי יכולים להכיל רק אותיות לטיניות קטנות או מספרים והם חייבים להיות באורך של 10 תווים בדיוק."
 
@@ -479,7 +481,7 @@ msgstr "עריכה"
 msgid "Effects"
 msgstr "אפקטים"
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:79
+#: apps/client/src/pages/auth/forgot-password/page.tsx:82
 #: apps/client/src/pages/auth/login/page.tsx:84
 #: apps/client/src/pages/auth/register/page.tsx:134
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:50
@@ -495,7 +497,7 @@ msgstr "הפעלת אימות דו־שלבי"
 msgid "Enter a new password below, and make sure it's secure."
 msgstr "נא למלא סיסמה חדשה להלן וכדאי לוודא שהיא בטוחה."
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:58
+#: apps/client/src/pages/auth/backup-otp/page.tsx:59
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
 msgstr "נא להקליד אחת מבין 10 הקודים למטרות גיבוי שקיבלת עם הפעלה האימות הדו־שלבי."
 
@@ -507,7 +509,7 @@ msgstr "נא למלא את הקוד באורך 6 ספרות מיישומון ה�
 msgid "Enter the one-time password provided by your authenticator app below."
 msgstr "נא למלא את הסיסמה החד־פעמית שסופקה על ידי יישומון המאמת שלך להלן."
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:67
+#: apps/client/src/pages/auth/forgot-password/page.tsx:70
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "נא למלא את כתובת הדוא״ל שלך ואנו נשלח לך קישור לאיפוס הסיסמה שלך אם החשבון קיים."
 
@@ -572,7 +574,7 @@ msgstr "לשכוח"
 msgid "Forgot Password?"
 msgstr "שכחת סיסמה?"
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:65
+#: apps/client/src/pages/auth/forgot-password/page.tsx:68
 msgid "Forgot your password?"
 msgstr "שכחת את הסיסמה שלך?"
 
@@ -953,7 +955,7 @@ msgstr "סיסמה חד־פעמית"
 #: apps/client/src/components/ai-actions.tsx:56
 #: apps/client/src/libs/axios.ts:34
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:188
-#: apps/client/src/services/resume/print.tsx:34
+#: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "אופס, השרת החזיר שגיאה."
 
@@ -1092,8 +1094,8 @@ msgid "Raise an issue"
 msgstr "דיווח על בעיה"
 
 #: apps/client/src/components/copyright.tsx:38
-#: apps/client/src/pages/auth/backup-otp/page.tsx:51
-#: apps/client/src/pages/auth/forgot-password/page.tsx:46
+#: apps/client/src/pages/auth/backup-otp/page.tsx:52
+#: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/login/page.tsx:55
 #: apps/client/src/pages/auth/register/page.tsx:64
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
@@ -1153,12 +1155,9 @@ msgstr "איפוס"
 msgid "Reset Layout"
 msgstr "איפוס פריסה"
 
+#: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/reset-password/page.tsx:65
 msgid "Reset your password"
-msgstr "איפוס הסיסמה שלך"
-
-#: apps/client/src/pages/auth/reset-password/page.tsx:60
-msgid "Reset your Password"
 msgstr "איפוס הסיסמה שלך"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:83
@@ -1227,7 +1226,7 @@ msgstr "אבטחה"
 msgid "Self-host with Docker"
 msgstr "אירוח עצמי עם Docker"
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:89
+#: apps/client/src/pages/auth/forgot-password/page.tsx:98
 msgid "Send Email"
 msgstr "שליחת דוא״ל"
 
@@ -1267,7 +1266,7 @@ msgstr "הצגת מספרי שורות"
 msgid "Sidebar"
 msgstr "סרגל צד"
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:89
+#: apps/client/src/pages/auth/backup-otp/page.tsx:96
 #: apps/client/src/pages/auth/login/page.tsx:116
 #: apps/client/src/pages/auth/verify-otp/page.tsx:92
 msgid "Sign in"
@@ -1323,6 +1322,7 @@ msgstr "משהו השתבש בעיבוד הבקשה שלך. נא לנסות שו
 msgid "Square"
 msgstr "מרובע"
 
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:29
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:24
 msgid "Start building from scratch"
 msgstr "התחלת בנייה מאפס"
@@ -1330,10 +1330,6 @@ msgstr "התחלת בנייה מאפס"
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:184
 msgid "Start building your resume by giving it a name."
 msgstr "אפשר להתחיל לבנות את קורות החיים שלך על ידי ציון שם."
-
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:29
-msgid "Start from scratch"
-msgstr "התחלה מאפס"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:76
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:23
@@ -1537,8 +1533,8 @@ msgstr "כתובת"
 msgid "URL must start with https://"
 msgstr "כתובת חייבת להיפתח ב־https://‎"
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:51
-#: apps/client/src/pages/auth/backup-otp/page.tsx:56
+#: apps/client/src/pages/auth/backup-otp/page.tsx:52
+#: apps/client/src/pages/auth/backup-otp/page.tsx:57
 msgid "Use your backup code"
 msgstr "להשתמש בקוד הגיבוי שלך"
 
@@ -1642,8 +1638,8 @@ msgstr "יש לך אפשרות <0>לקבל מפתח API משלך ל־OpenAI</0>.
 msgid "You should have received an email from <0>Reactive Resume</0> with a link to verify your account."
 msgstr "היית אמור לקבל הודעה מ־<0>Reactive Resume</0> עם קישור לאימות חשבונך."
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:46
-#: apps/client/src/pages/auth/forgot-password/page.tsx:51
+#: apps/client/src/pages/auth/forgot-password/page.tsx:49
+#: apps/client/src/pages/auth/forgot-password/page.tsx:54
 msgid "You've got mail!"
 msgstr "קיבלת הודעה!"
 
@@ -1674,4 +1670,3 @@ msgstr "התקרבות"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:77
 msgid "Zoom Out"
 msgstr "התרחקות"
-

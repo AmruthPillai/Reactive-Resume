@@ -14,6 +14,7 @@ const emptyTransporter = nodemailer.createTransport({});
     MailerModule.forRootAsync({
       inject: [ConfigService],
       useFactory: (configService: ConfigService<Config>) => {
+        const from = configService.get("MAIL_FROM");
         const smtpUrl = configService.get("SMTP_URL");
 
         if (!smtpUrl) {
@@ -24,8 +25,8 @@ const emptyTransporter = nodemailer.createTransport({});
         }
 
         return {
+          defaults: { from },
           transport: smtpUrl || emptyTransporter,
-          defaults: { from: "Reactive Resume <noreply@rxresu.me>" },
         };
       },
     }),

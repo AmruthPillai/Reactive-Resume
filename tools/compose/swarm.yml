@@ -1,6 +1,8 @@
 version: "3.8"
 
 # In this Docker Compose example, we use Docker Swarm to deploy Reactive Resume on multiple servers, with Traefik as the load balancer.
+# Ensure that the overlay network is created before deploying this stack. You can do so by running the following command:
+# docker network create --driver=overlay --attachable reactive_resume_network
 
 services:
   # Database (Postgres)
@@ -102,6 +104,7 @@ services:
       REFRESH_TOKEN_SECRET: refresh_token_secret
 
       # -- Emails --
+      MAIL_FROM: noreply@example.com
       # SMTP_URL: smtp://user:pass@smtp:587 # Optional
 
       # -- Storage (Minio) --

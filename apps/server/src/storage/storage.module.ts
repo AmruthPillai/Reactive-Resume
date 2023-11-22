@@ -12,7 +12,6 @@ import { StorageService } from "./storage.service";
     MinioModule.registerAsync({
       inject: [ConfigService],
       useFactory: (configService: ConfigService<Config>) => ({
-        useSSL: false,
         endPoint: configService.getOrThrow<string>("STORAGE_ENDPOINT"),
         port: configService.getOrThrow<number>("STORAGE_PORT"),
         region: configService.get<string>("STORAGE_REGION"),

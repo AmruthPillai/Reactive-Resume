@@ -72,7 +72,7 @@ msgstr "Er is een link naar uw klembord gekopieerd."
 msgid "A passion project by <0>Amruth Pillai</0>"
 msgstr "Een passieproject van <0>Amruth Pillai</0>"
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:54
+#: apps/client/src/pages/auth/forgot-password/page.tsx:57
 msgid "A password reset link should have been sent to your inbox, if an account existed with the email you provided."
 msgstr "Er zou een link om het wachtwoord opnieuw in te stellen naar uw Postvak IN moeten zijn gestuurd, als er een account bestond met het e-mailadres dat u hebt opgegeven."
 
@@ -189,6 +189,8 @@ msgstr ""
 msgid "Awarder"
 msgstr ""
 
+#: apps/client/src/pages/auth/backup-otp/page.tsx:92
+#: apps/client/src/pages/auth/forgot-password/page.tsx:94
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:236
 msgid "Back"
 msgstr ""
@@ -197,11 +199,11 @@ msgstr ""
 msgid "Background Color"
 msgstr ""
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:74
+#: apps/client/src/pages/auth/backup-otp/page.tsx:75
 msgid "Backup Code"
 msgstr ""
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:79
+#: apps/client/src/pages/auth/backup-otp/page.tsx:80
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr ""
 
@@ -479,7 +481,7 @@ msgstr ""
 msgid "Effects"
 msgstr ""
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:79
+#: apps/client/src/pages/auth/forgot-password/page.tsx:82
 #: apps/client/src/pages/auth/login/page.tsx:84
 #: apps/client/src/pages/auth/register/page.tsx:134
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:50
@@ -495,7 +497,7 @@ msgstr ""
 msgid "Enter a new password below, and make sure it's secure."
 msgstr ""
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:58
+#: apps/client/src/pages/auth/backup-otp/page.tsx:59
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
 msgstr ""
 
@@ -507,7 +509,7 @@ msgstr ""
 msgid "Enter the one-time password provided by your authenticator app below."
 msgstr ""
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:67
+#: apps/client/src/pages/auth/forgot-password/page.tsx:70
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr ""
 
@@ -572,7 +574,7 @@ msgstr ""
 msgid "Forgot Password?"
 msgstr ""
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:65
+#: apps/client/src/pages/auth/forgot-password/page.tsx:68
 msgid "Forgot your password?"
 msgstr ""
 
@@ -953,7 +955,7 @@ msgstr ""
 #: apps/client/src/components/ai-actions.tsx:56
 #: apps/client/src/libs/axios.ts:34
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:188
-#: apps/client/src/services/resume/print.tsx:34
+#: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr ""
 
@@ -1092,8 +1094,8 @@ msgid "Raise an issue"
 msgstr ""
 
 #: apps/client/src/components/copyright.tsx:38
-#: apps/client/src/pages/auth/backup-otp/page.tsx:51
-#: apps/client/src/pages/auth/forgot-password/page.tsx:46
+#: apps/client/src/pages/auth/backup-otp/page.tsx:52
+#: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/login/page.tsx:55
 #: apps/client/src/pages/auth/register/page.tsx:64
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
@@ -1153,12 +1155,9 @@ msgstr ""
 msgid "Reset Layout"
 msgstr ""
 
+#: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/reset-password/page.tsx:65
 msgid "Reset your password"
-msgstr ""
-
-#: apps/client/src/pages/auth/reset-password/page.tsx:60
-msgid "Reset your Password"
 msgstr ""
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:83
@@ -1227,7 +1226,7 @@ msgstr ""
 msgid "Self-host with Docker"
 msgstr ""
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:89
+#: apps/client/src/pages/auth/forgot-password/page.tsx:98
 msgid "Send Email"
 msgstr ""
 
@@ -1267,7 +1266,7 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:89
+#: apps/client/src/pages/auth/backup-otp/page.tsx:96
 #: apps/client/src/pages/auth/login/page.tsx:116
 #: apps/client/src/pages/auth/verify-otp/page.tsx:92
 msgid "Sign in"
@@ -1323,16 +1322,13 @@ msgstr ""
 msgid "Square"
 msgstr ""
 
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:29
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:24
 msgid "Start building from scratch"
 msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:184
 msgid "Start building your resume by giving it a name."
-msgstr ""
-
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:29
-msgid "Start from scratch"
 msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:76
@@ -1537,8 +1533,8 @@ msgstr ""
 msgid "URL must start with https://"
 msgstr ""
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:51
-#: apps/client/src/pages/auth/backup-otp/page.tsx:56
+#: apps/client/src/pages/auth/backup-otp/page.tsx:52
+#: apps/client/src/pages/auth/backup-otp/page.tsx:57
 msgid "Use your backup code"
 msgstr ""
 
@@ -1642,8 +1638,8 @@ msgstr ""
 msgid "You should have received an email from <0>Reactive Resume</0> with a link to verify your account."
 msgstr ""
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:46
-#: apps/client/src/pages/auth/forgot-password/page.tsx:51
+#: apps/client/src/pages/auth/forgot-password/page.tsx:49
+#: apps/client/src/pages/auth/forgot-password/page.tsx:54
 msgid "You've got mail!"
 msgstr ""
 
@@ -1674,4 +1670,3 @@ msgstr ""
 #: apps/client/src/pages/builder/_components/toolbar.tsx:77
 msgid "Zoom Out"
 msgstr ""
-

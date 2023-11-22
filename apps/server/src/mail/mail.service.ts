@@ -19,6 +19,6 @@ export class MailService {
       return Logger.log(options, "MailService#sendEmail");
     }
 
-    return this.mailerService.sendMail(options);
+    return await this.mailerService.sendMail(options);
   }
 }

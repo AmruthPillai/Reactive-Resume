@@ -102,7 +102,7 @@ export class StorageService implements OnModuleInit {
     const extension = type === "resumes" ? "pdf" : "jpg";
     const storageUrl = this.configService.get<string>("STORAGE_URL");
     const filepath = `${userId}/${type}/${filename}.${extension}`;
-    const url = `${storageUrl}/${this.bucketName}/${filepath}`;
+    const url = `${storageUrl}/${filepath}`;
     const metadata =
       extension === "jpg"
         ? { "Content-Type": "image/jpeg" }

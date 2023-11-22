@@ -72,7 +72,7 @@ msgstr "लिंक को क्लिपबोर्ड में कॉप�
 msgid "A passion project by <0>Amruth Pillai</0>"
 msgstr "<0>अमृत पिल्लई</0> का एक जुनूनी प्रोजेक्ट"
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:54
+#: apps/client/src/pages/auth/forgot-password/page.tsx:57
 msgid "A password reset link should have been sent to your inbox, if an account existed with the email you provided."
 msgstr "यदि आपके द्वारा प्रदान किए गए ईमेल के साथ कोई खाता मौजूद है, तो एक पासवर्ड रीसेट लिंक आपके इनबॉक्स पर भेजा जाना चाहिए था।"
 
@@ -189,6 +189,8 @@ msgstr "20+ भाषाओं में उपलब्ध है"
 msgid "Awarder"
 msgstr "पुरस्कार देने वाला"
 
+#: apps/client/src/pages/auth/backup-otp/page.tsx:92
+#: apps/client/src/pages/auth/forgot-password/page.tsx:94
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:236
 msgid "Back"
 msgstr "पीछे"
@@ -197,11 +199,11 @@ msgstr "पीछे"
 msgid "Background Color"
 msgstr "पृष्ठभूमि रंग"
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:74
+#: apps/client/src/pages/auth/backup-otp/page.tsx:75
 msgid "Backup Code"
 msgstr "बैकअप कोड"
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:79
+#: apps/client/src/pages/auth/backup-otp/page.tsx:80
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "बैकअप कोड में केवल छोटे अक्षर या संख्याएँ हो सकती हैं, और बिल्कुल 10 अक्षर होने चाहिए।"
 
@@ -479,7 +481,7 @@ msgstr "एडिट करें"
 msgid "Effects"
 msgstr "प्रभाव"
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:79
+#: apps/client/src/pages/auth/forgot-password/page.tsx:82
 #: apps/client/src/pages/auth/login/page.tsx:84
 #: apps/client/src/pages/auth/register/page.tsx:134
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:50
@@ -495,7 +497,7 @@ msgstr "2FA चालू करें"
 msgid "Enter a new password below, and make sure it's secure."
 msgstr "नीचे एक नया पासवर्ड दर्ज करें और सुनिश्चित करें कि यह सुरक्षित है।"
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:58
+#: apps/client/src/pages/auth/backup-otp/page.tsx:59
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
 msgstr "दो-कारक प्रमाणीकरण सक्षम करते समय आपके द्वारा सहेजे गए 10 बैकअप कोड में से एक दर्ज करें।"
 
@@ -507,7 +509,7 @@ msgstr "यह सत्यापित करने के लिए कि 2FA
 msgid "Enter the one-time password provided by your authenticator app below."
 msgstr "नीचे आपके प्रमाणक ऐप द्वारा प्रदान किया गया वन-टाइम पासवर्ड दर्ज करें।"
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:67
+#: apps/client/src/pages/auth/forgot-password/page.tsx:70
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "अपना ईमेल पता दर्ज करें और यदि खाता मौजूद है तो हम आपको अपना पासवर्ड रीसेट करने के लिए एक लिंक भेजेंगे।"
 
@@ -572,7 +574,7 @@ msgstr "हटाएं"
 msgid "Forgot Password?"
 msgstr "पासवर्ड भूल गए?"
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:65
+#: apps/client/src/pages/auth/forgot-password/page.tsx:68
 msgid "Forgot your password?"
 msgstr "पासवर्ड भूल गए हैं?"
 
@@ -953,7 +955,7 @@ msgstr "एक बारी पासवर्ड"
 #: apps/client/src/components/ai-actions.tsx:56
 #: apps/client/src/libs/axios.ts:34
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:188
-#: apps/client/src/services/resume/print.tsx:34
+#: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "ओह, सर्वर ने एक त्रुटि लौटा दी।"
 
@@ -1092,8 +1094,8 @@ msgid "Raise an issue"
 msgstr "एक मुद्दा उठाओ"
 
 #: apps/client/src/components/copyright.tsx:38
-#: apps/client/src/pages/auth/backup-otp/page.tsx:51
-#: apps/client/src/pages/auth/forgot-password/page.tsx:46
+#: apps/client/src/pages/auth/backup-otp/page.tsx:52
+#: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/login/page.tsx:55
 #: apps/client/src/pages/auth/register/page.tsx:64
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
@@ -1153,12 +1155,9 @@ msgstr "रीसेट"
 msgid "Reset Layout"
 msgstr "लेआउट रिसेट"
 
+#: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/reset-password/page.tsx:65
 msgid "Reset your password"
-msgstr "अपना पासवर्ड रीसेट करें"
-
-#: apps/client/src/pages/auth/reset-password/page.tsx:60
-msgid "Reset your Password"
 msgstr "अपना पासवर्ड रीसेट करें"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:83
@@ -1227,7 +1226,7 @@ msgstr "सुरक्षा"
 msgid "Self-host with Docker"
 msgstr "डॉकर के साथ स्व-मेज़बान"
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:89
+#: apps/client/src/pages/auth/forgot-password/page.tsx:98
 msgid "Send Email"
 msgstr "ईमेल भेजें"
 
@@ -1267,7 +1266,7 @@ msgstr "पृष्ठ क्रमांक दिखाएँ"
 msgid "Sidebar"
 msgstr "साइडबार"
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:89
+#: apps/client/src/pages/auth/backup-otp/page.tsx:96
 #: apps/client/src/pages/auth/login/page.tsx:116
 #: apps/client/src/pages/auth/verify-otp/page.tsx:92
 msgid "Sign in"
@@ -1323,6 +1322,7 @@ msgstr "आपके बायोडाटा का पूर्वावलो
 msgid "Square"
 msgstr "वर्ग"
 
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:29
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:24
 msgid "Start building from scratch"
 msgstr "शून्य से निर्माण शुरू करें"
@@ -1330,10 +1330,6 @@ msgstr "शून्य से निर्माण शुरू करें"
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:184
 msgid "Start building your resume by giving it a name."
 msgstr "अपना बायोडाटा एक नाम देकर बनाना शुरू करें।"
-
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:29
-msgid "Start from scratch"
-msgstr "शून्य से शुरू करें"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:76
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:23
@@ -1537,8 +1533,8 @@ msgstr "यूआरएल"
 msgid "URL must start with https://"
 msgstr "यूआरएल https:// से शुरू होना चाहिए"
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:51
-#: apps/client/src/pages/auth/backup-otp/page.tsx:56
+#: apps/client/src/pages/auth/backup-otp/page.tsx:52
+#: apps/client/src/pages/auth/backup-otp/page.tsx:57
 msgid "Use your backup code"
 msgstr "एक बैकअप कोड उपयोग करें"
 
@@ -1642,8 +1638,8 @@ msgstr "आपके पास <0>अपनी स्वयं की OpenAI API
 msgid "You should have received an email from <0>Reactive Resume</0> with a link to verify your account."
 msgstr "आपको अपने खाते को सत्यापित करने के लिंक के साथ <0>रिएक्टिव रेज़्यूमे</0> से एक ईमेल प्राप्त होना चाहिए था।"
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:46
-#: apps/client/src/pages/auth/forgot-password/page.tsx:51
+#: apps/client/src/pages/auth/forgot-password/page.tsx:49
+#: apps/client/src/pages/auth/forgot-password/page.tsx:54
 msgid "You've got mail!"
 msgstr "आपको मेल प्राप्त हुआ है"
 
@@ -1674,4 +1670,3 @@ msgstr "ज़ूम इन"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:77
 msgid "Zoom Out"
 msgstr "ज़ूम आउट"
-
