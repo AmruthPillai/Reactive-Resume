@@ -3,6 +3,7 @@ import {
   ForbiddenException,
   Injectable,
   InternalServerErrorException,
+  Logger,
 } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { JwtService } from "@nestjs/jwt";
@@ -115,6 +116,7 @@ export class AuthService {
         throw new BadRequestException(ErrorMessage.UserAlreadyExists);
       }
 
+      Logger.error(error);
       throw new InternalServerErrorException(error);
     }
   }
@@ -213,6 +215,7 @@ export class AuthService {
 
       await this.mailService.sendEmail({ to: email, subject, text });
     } catch (error) {
+      Logger.error(error);
       throw new InternalServerErrorException(error);
     }
   }

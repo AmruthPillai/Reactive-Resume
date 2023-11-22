@@ -55,6 +55,7 @@ export class ResumeController {
         throw new BadRequestException(ErrorMessage.ResumeSlugAlreadyExists);
       }
 
+      Logger.error(error);
       throw new InternalServerErrorException(error);
     }
   }
@@ -69,6 +70,7 @@ export class ResumeController {
         throw new BadRequestException(ErrorMessage.ResumeSlugAlreadyExists);
       }
 
+      Logger.error(error);
       throw new InternalServerErrorException(error);
     }
   }

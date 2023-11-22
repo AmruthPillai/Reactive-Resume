@@ -1,4 +1,9 @@
-import { BadRequestException, Injectable } from "@nestjs/common";
+import {
+  BadRequestException,
+  Injectable,
+  InternalServerErrorException,
+  Logger,
+} from "@nestjs/common";
 import { Prisma } from "@prisma/client";
 import { CreateResumeDto, ImportResumeDto, ResumeDto, UpdateResumeDto } from "@reactive-resume/dto";
 import { defaultResumeData, ResumeData } from "@reactive-resume/schema";
@@ -127,6 +132,13 @@ export class ResumeService {
 
   async update(userId: string, id: string, updateResumeDto: UpdateResumeDto) {
     try {
+      const { locked } = await this.prisma.resume.findUniqueOrThrow({
+        where: { id },
+        select: { locked: true },
+      });
+
+      if (locked) throw new BadRequestException(ErrorMessage.ResumeLocked);
+
       const resume = await this.prisma.resume.update({
         data: {
           title: updateResumeDto.title,
@@ -134,7 +146,7 @@ export class ResumeService {
           visibility: updateResumeDto.visibility,
           data: updateResumeDto.data as unknown as Prisma.JsonObject,
         },
-        where: { userId_id: { userId, id }, locked: false },
+        where: { userId_id: { userId, id } },
       });
 
       await Promise.all([
@@ -147,7 +159,8 @@ export class ResumeService {
       return resume;
     } catch (error) {
       if (error.code === "P2025") {
-        throw new BadRequestException(ErrorMessage.ResumeLocked);
+        Logger.error(error);
+        throw new InternalServerErrorException(error);
       }
     }
   }

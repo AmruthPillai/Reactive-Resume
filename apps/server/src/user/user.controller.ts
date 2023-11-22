@@ -5,6 +5,7 @@ import {
   Delete,
   Get,
   InternalServerErrorException,
+  Logger,
   Patch,
   Res,
   UseGuards,
@@ -61,6 +62,7 @@ export class UserController {
         throw new BadRequestException(ErrorMessage.UserAlreadyExists);
       }
 
+      Logger.error(error);
       throw new InternalServerErrorException(error);
     }
   }
