@@ -36,7 +36,7 @@ export type Checkout = {
   phonenumber: string;
   whatsappNumber: string;
   userId: string;
-  shortId: string;
+  slug: string;
 };
 
 export type Certificate = {
