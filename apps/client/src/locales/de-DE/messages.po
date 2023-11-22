@@ -116,7 +116,7 @@ msgstr "Eintrag hinzufügen"
 msgid "Add a new section"
 msgstr "Neuen Abschnitt hinzufügen"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:267
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:269
 msgid "Add New Page"
 msgstr "Neue Seite hinzufügen"
 
@@ -245,7 +245,7 @@ msgstr "Abbrechen"
 msgid "Casual"
 msgstr "Leger"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:89
+#: apps/client/src/pages/builder/_components/toolbar.tsx:85
 msgid "Center Artboard"
 msgstr "Artboard zentrieren"
 
@@ -304,11 +304,11 @@ msgstr "Neues Passwort bestätigen"
 msgid "Continue"
 msgstr "Weiter"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:93
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:94
 msgid "Copy"
 msgstr "Kopieren"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:123
+#: apps/client/src/pages/builder/_components/toolbar.tsx:119
 msgid "Copy Link to Resume"
 msgstr "Link zum Lebenslauf kopieren"
 
@@ -317,7 +317,7 @@ msgid "Copy to Clipboard"
 msgstr "In die Zwischenablage kopieren"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:158
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:239
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
 msgid "Create"
 msgstr "Erstellen"
 
@@ -341,7 +341,7 @@ msgctxt "This is a link to create a new account"
 msgid "Create one now"
 msgstr "Jetzt eins erstellen"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:252
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:258
 msgid "Create Sample Resume"
 msgstr "Musterlebenslauf erstellen"
 
@@ -448,7 +448,7 @@ msgstr "Lade Deinen Lebenslauf im JSON-Format herunter. Diese Datei kannst Du zu
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "Lade Deinen Lebenslauf als PDF herunter. Diese Datei kannst Du dann ausdrucken, an Recruiter schicken oder in Jobbörsen hochladen."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:129
+#: apps/client/src/pages/builder/_components/toolbar.tsx:125
 #: apps/client/src/pages/public/page.tsx:103
 msgid "Download PDF"
 msgstr "PDF herunterladen"
@@ -458,7 +458,7 @@ msgid "Downloads"
 msgstr "Downloads"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:160
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:241
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:132
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:95
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:154
@@ -473,7 +473,7 @@ msgstr "Vorhandenen Eintrag duplizieren"
 msgid "Duplicate an existing resume"
 msgstr "Vorhandenen Lebenslauf duplizieren"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:89
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:90
 msgid "Edit"
 msgstr "Bearbeiten"
 
@@ -790,7 +790,8 @@ msgstr "JSON"
 msgid "Keywords"
 msgstr "Schlüsselwörter"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:40
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:39
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:49
 msgid "Label"
 msgstr "Beschriftung"
 
@@ -875,7 +876,7 @@ msgstr "Abmelden"
 msgid "Lost your device?"
 msgstr "Gerät verloren?"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:253
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:255
 msgid "Main"
 msgstr "Hauptteil"
 
@@ -1127,14 +1128,18 @@ msgstr "Reactive Resume ist ein Herzensprojekt, an dem ich über drei Jahre lang
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
 msgstr "Reactive Resume blüht dank seiner lebendigen Gemeinschaft auf. Dieses Projekt verdankt seinen Fortschritt zahlreichen Personen, die ihre Zeit und Fähigkeiten eingebracht haben. Hier würdigen wir die Entwickler, die seine Funktionen auf GitHub verbessert haben, und die Sprachexperten, deren Übersetzungen auf Crowdin es einem breiteren Publikum zugänglich gemacht haben."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:63
+#: apps/client/src/pages/builder/_components/toolbar.tsx:59
 msgid "Redo"
 msgstr "Wiederherstellen"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:97
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:129
 msgid "Remove"
 msgstr "Entfernen"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:241
+msgid "Remove Page"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:83
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:128
@@ -1160,7 +1165,7 @@ msgstr "Layout zurücksetzen"
 msgid "Reset your password"
 msgstr "Passwort zurücksetzen"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:83
+#: apps/client/src/pages/builder/_components/toolbar.tsx:79
 msgid "Reset Zoom"
 msgstr "Zoom zurücksetzen"
 
@@ -1183,7 +1188,7 @@ msgid "Rounded"
 msgstr "Abgerundet"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:159
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:240
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:138
 msgid "Save Changes"
@@ -1262,7 +1267,7 @@ msgstr "Seitenumbruchlinie anzeigen"
 msgid "Show Page Numbers"
 msgstr "Seitenzahlen anzeigen"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:254
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:256
 msgid "Sidebar"
 msgstr "Seitenleiste"
 
@@ -1452,11 +1457,11 @@ msgstr "Titel"
 msgid "Title"
 msgstr "Titel"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:97
+#: apps/client/src/pages/builder/_components/toolbar.tsx:93
 msgid "Toggle Page Break Line"
 msgstr "Anzeige der Seitenumbruchlinie umschalten"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:109
+#: apps/client/src/pages/builder/_components/toolbar.tsx:105
 msgid "Toggle Page Numbers"
 msgstr "Anzeige der Seitenzahlen umschalten"
 
@@ -1496,7 +1501,7 @@ msgstr "Typografie"
 msgid "Underline Links"
 msgstr "Links unterstreichen"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:57
+#: apps/client/src/pages/builder/_components/toolbar.tsx:53
 msgid "Undo"
 msgstr "Rückgängig machen"
 
@@ -1529,7 +1534,7 @@ msgstr "Lade eine Datei von einer der akzeptierten Quellen hoch, um die Daten zu
 msgid "URL"
 msgstr "URL"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:47
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:56
 msgid "URL must start with https://"
 msgstr "URL muss mit https:// beginnen"
 
@@ -1585,7 +1590,7 @@ msgstr "Version 4"
 msgid "Views"
 msgstr "Aufrufe"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:85
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:86
 msgid "Visible"
 msgstr "Sichtbar"
 
@@ -1663,10 +1668,10 @@ msgstr "Du hast noch keinen OpenAI API-Schlüssel abgespeichert. Gehe in deine K
 msgid "Your password has been updated successfully."
 msgstr "Dein Passwort wurde erfolgreich geändert."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:71
+#: apps/client/src/pages/builder/_components/toolbar.tsx:67
 msgid "Zoom In"
 msgstr "Hineinzoomen"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:77
+#: apps/client/src/pages/builder/_components/toolbar.tsx:73
 msgid "Zoom Out"
 msgstr "Herauszoomen"

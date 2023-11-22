@@ -1,8 +1,9 @@
 name: Close Stale Issues
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: 0 0 * * * # every day at midnight (UTC)
+    - cron: 0 0 * * * # everyday at midnight (UTC)
 
 permissions:
   issues: write

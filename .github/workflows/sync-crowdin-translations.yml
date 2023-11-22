@@ -2,9 +2,8 @@ name: Sync Crowdin Translations
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - v4
+  schedule:
+    - cron: 0 0 * * * # everyday at midnight (UTC)
 
 jobs:
   sync:
