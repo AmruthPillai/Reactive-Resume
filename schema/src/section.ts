@@ -3,11 +3,12 @@ import { Profile } from './basics';
 
 export type WorkExperience = {
   id?: string;
-  company: string;
+  name: string;
   position: string;
   date?: DateRange;
   url?: string;
   summary?: string;
+  company: string;
 };
 
 export type Education = {
@@ -35,7 +36,7 @@ export type Checkout = {
   phonenumber: string;
   whatsappNumber: string;
   userId: string;
-  slug: string;
+  shortId: string;
 };
 
 export type Certificate = {

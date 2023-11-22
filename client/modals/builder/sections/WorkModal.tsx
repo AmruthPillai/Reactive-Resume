@@ -21,7 +21,7 @@ import { addItem, editItem } from '@/store/resume/resumeSlice';
 type FormData = WorkExperience;
 
 const defaultState: FormData = {
-  company: '',
+  name: '',
   position: '',
   date: {
     start: '',
@@ -29,11 +29,12 @@ const defaultState: FormData = {
   },
   url: '',
   summary: '',
+  company: '',
 };
 
 const schema = Joi.object<FormData>().keys({
   id: Joi.string(),
-  company: Joi.string().required(),
+  name: Joi.string().required(),
   position: Joi.string().required(),
   date: Joi.object().keys({
     start: Joi.string().allow(''),
@@ -113,7 +114,7 @@ const WorkModal: React.FC = () => {
     >
       <form className="my-2 grid grid-cols-2 gap-4" onSubmit={handleSubmit(onSubmit)}>
         <Controller
-          name="company"
+          name="name"
           control={control}
           render={({ field, fieldState }) => (
             <TextField
