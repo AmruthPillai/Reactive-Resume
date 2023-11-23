@@ -17,7 +17,7 @@ import { Config } from "../config/schema";
 
 type ImageUploadType = "pictures" | "previews";
 type DocumentUploadType = "resumes";
-type UploadType = ImageUploadType | DocumentUploadType;
+export type UploadType = ImageUploadType | DocumentUploadType;
 
 const PUBLIC_ACCESS_POLICY = {
   Version: "2012-10-17",
