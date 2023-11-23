@@ -15,11 +15,13 @@ import {
 import { Button, Separator, Toggle, Tooltip } from "@reactive-resume/ui";
 import { motion } from "framer-motion";
 
+import { useToast } from "@/client/hooks/use-toast";
 import { usePrintResume } from "@/client/services/resume";
 import { useBuilderStore } from "@/client/stores/builder";
 import { useResumeStore, useTemporalResumeStore } from "@/client/stores/resume";
 
 export const BuilderToolbar = () => {
+  const { toast } = useToast();
   const setValue = useResumeStore((state) => state.setValue);
   const undo = useTemporalResumeStore((state) => state.undo);
   const redo = useTemporalResumeStore((state) => state.redo);
@@ -40,6 +42,17 @@ export const BuilderToolbar = () => {
     };
 
     openInNewTab(url);
+  };
+
+  const onCopy = async () => {
+    const { url } = await printResume({ id });
+    await navigator.clipboard.writeText(url);
+
+    toast({
+      variant: "success",
+      title: t`A link has been copied to your clipboard.`,
+      description: t`Anyone with this link can view and download the resume. Share it on your profile or with recruiters.`,
+    });
   };
 
   const onZoomIn = () => frameRef?.contentWindow?.postMessage({ type: "ZOOM_IN" }, "*");
@@ -117,7 +130,13 @@ export const BuilderToolbar = () => {
         <Separator orientation="vertical" className="h-9" />
 
         <Tooltip content={t`Copy Link to Resume`}>
-          <Button size="icon" variant="ghost" className="rounded-none" disabled={!isPublic}>
+          <Button
+            size="icon"
+            variant="ghost"
+            className="rounded-none"
+            onClick={onCopy}
+            disabled={!isPublic}
+          >
             <LinkSimple />
           </Button>
         </Tooltip>
