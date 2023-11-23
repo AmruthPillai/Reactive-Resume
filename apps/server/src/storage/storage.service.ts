@@ -67,8 +67,21 @@ export class StorageService implements OnModuleInit {
           this.bucketName,
         );
 
-        await this.client.makeBucket(this.bucketName);
-        await this.client.setBucketPolicy(this.bucketName, bucketPolicy);
+        try {
+          await this.client.makeBucket(this.bucketName);
+        } catch (error) {
+          throw new InternalServerErrorException(
+            "There was an error while creating the storage bucket.",
+          );
+        }
+
+        try {
+          await this.client.setBucketPolicy(this.bucketName, bucketPolicy);
+        } catch (error) {
+          throw new InternalServerErrorException(
+            "There was an error while applying the policy to the storage bucket.",
+          );
+        }
 
         this.logger.log(
           "A new storage bucket has been created and the policy has been applied successfully.",
@@ -77,9 +90,7 @@ export class StorageService implements OnModuleInit {
         this.logger.log("Successfully connected to the storage service.");
       }
     } catch (error) {
-      throw new InternalServerErrorException(
-        "There was an error while creating the storage bucket.",
-      );
+      throw new InternalServerErrorException(error);
     }
   }
 
