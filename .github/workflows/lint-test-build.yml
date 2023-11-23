@@ -3,6 +3,7 @@ name: Lint, Test and Build
 on:
   push:
   pull_request:
+  workflow_dispatch:
 
 permissions:
   actions: read
