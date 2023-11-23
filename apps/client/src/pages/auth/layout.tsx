@@ -14,13 +14,13 @@ const authRoutes = [{ path: "/auth/login" }, { path: "/auth/register" }];
 
 export const AuthLayout = () => {
   const location = useLocation();
-
   const { providers } = useAuthProviders();
-  const emailAuthDisabled = !providers || !providers.includes("email");
-
   const isAuthRoute = useMemo(() => matchRoutes(authRoutes, location) !== null, [location]);
 
   if (!providers) return null;
+
+  // Condition (providers.length === 1) hides the divider if providers[] includes only "email"
+  const hideDivider = !providers.includes("email") || providers.length === 1;
 
   return (
     <div className="flex h-screen w-screen">
@@ -40,7 +40,7 @@ export const AuthLayout = () => {
 
         {isAuthRoute && (
           <>
-            <div className={cn("flex items-center gap-x-4", emailAuthDisabled && "hidden")}>
+            <div className={cn("flex items-center gap-x-4", hideDivider && "hidden")}>
               <hr className="flex-1" />
               <span className="text-xs font-medium">
                 {t({
