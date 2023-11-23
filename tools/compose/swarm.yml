@@ -43,7 +43,7 @@ services:
         condition: on-failure
       labels:
         - traefik.enable=true
-        - traefik.http.routers.storage.rule=Host(`storage.arkpg.xyz`)
+        - traefik.http.routers.storage.rule=Host(`storage.example.com`)
         - traefik.http.routers.storage.entrypoints=websecure
         - traefik.http.routers.storage.tls.certresolver=letsencrypt
         - traefik.http.services.storage.loadbalancer.server.port=9000
@@ -56,12 +56,12 @@ services:
     environment:
       TOKEN: chrome_token
     deploy:
-      replicas: 3
+      replicas: 2
       restart_policy:
         condition: on-failure
       labels:
         - traefik.enable=true
-        - traefik.http.routers.printer.rule=Host(`printer.arkpg.xyz`)
+        - traefik.http.routers.printer.rule=Host(`printer.example.com`)
         - traefik.http.routers.printer.entrypoints=websecure
         - traefik.http.routers.printer.tls.certresolver=letsencrypt
         - traefik.http.services.printer.loadbalancer.server.port=3000
@@ -89,12 +89,12 @@ services:
       NODE_ENV: production
 
       # -- URLs --
-      PUBLIC_URL: https://arkpg.xyz
-      STORAGE_URL: https://storage.arkpg.xyz
+      PUBLIC_URL: https://example.com
+      STORAGE_URL: https://storage.example.com
 
       # -- Printer (Chrome) --
       CHROME_TOKEN: chrome_token
-      CHROME_URL: wss://printer.arkpg.xyz
+      CHROME_URL: wss://printer.example.com
 
       # -- Database (Postgres) --
       DATABASE_URL: postgresql://postgres:postgres@postgres:5432/postgres
@@ -132,19 +132,19 @@ services:
       # -- GitHub --
       GITHUB_CLIENT_ID: github_client_id
       GITHUB_CLIENT_SECRET: github_client_secret
-      GITHUB_CALLBACK_URL: https://arkpg.xyz/api/auth/github/callback
+      GITHUB_CALLBACK_URL: https://example.com/api/auth/github/callback
 
       # -- Google --
       GOOGLE_CLIENT_ID: google_client_id
       GOOGLE_CLIENT_SECRET: google_client_secret
-      GOOGLE_CALLBACK_URL: https://arkpg.xyz/api/auth/google/callback
+      GOOGLE_CALLBACK_URL: https://example.com/api/auth/google/callback
     deploy:
-      replicas: 3
+      replicas: 2
       restart_policy:
         condition: on-failure
       labels:
         - traefik.enable=true
-        - traefik.http.routers.app.rule=Host(`arkpg.xyz`)
+        - traefik.http.routers.app.rule=Host(`example.com`)
         - traefik.http.routers.app.entrypoints=websecure
         - traefik.http.routers.app.tls.certresolver=letsencrypt
         - traefik.http.services.app.loadbalancer.server.port=3000
@@ -160,7 +160,7 @@ services:
       - --entrypoints.web.address=:80
       - --entrypoints.websecure.address=:443
       - --certificatesresolvers.letsencrypt.acme.tlschallenge=true
-      - --certificatesresolvers.letsencrypt.acme.email=noreply@arkpg.xyz
+      - --certificatesresolvers.letsencrypt.acme.email=noreply@example.com
       - --certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json
 
       # Let's Encrypt Staging Server (for testing)
