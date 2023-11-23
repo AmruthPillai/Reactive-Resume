@@ -63,7 +63,7 @@ const awardsSchema = z.object({
 });
 
 const certificatesSchema = z.object({
-  title: z.string().optional(),
+  name: z.string().optional(),
   date: iso8601.optional(),
   issuer: z.string().optional(),
   summary: z.string().optional(),

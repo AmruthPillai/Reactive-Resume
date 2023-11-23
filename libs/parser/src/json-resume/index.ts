@@ -147,7 +147,7 @@ export class JsonResumeParser implements Parser<Json, JsonResume> {
         result.sections.certifications.items.push({
           ...defaultCertification,
           id: createId(),
-          name: certificate.title ?? "",
+          name: certificate.name ?? "",
           date: certificate.date ?? "",
           issuer: certificate.issuer ?? "",
           summary: certificate.summary ?? "",
