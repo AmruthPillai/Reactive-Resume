@@ -9,7 +9,9 @@ export const getInitials = (name: string) => {
   return ((initials.shift()?.[1] || "") + (initials.pop()?.[1] || "")).toUpperCase();
 };
 
-export const isUrl = (string: string) => {
+export const isUrl = (string: string | null | undefined) => {
+  if (!string) return false;
+
   const urlRegex = /https?:\/\/[^ \n]+/i;
 
   return urlRegex.test(string);
