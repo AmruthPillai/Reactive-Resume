@@ -3,6 +3,8 @@ import {
   CopySimple,
   DotsThreeVertical,
   FolderOpen,
+  Lock,
+  LockOpen,
   PencilSimple,
   TrashSimple,
 } from "@phosphor-icons/react";
@@ -38,6 +40,7 @@ type Props = {
 export const ResumeListItem = ({ resume }: Props) => {
   const navigate = useNavigate();
   const { open } = useDialog<ResumeDto>("resume");
+  const { open: lockOpen } = useDialog<ResumeDto>("lock");
 
   const { url } = useResumePreview(resume.id);
 
@@ -53,6 +56,10 @@ export const ResumeListItem = ({ resume }: Props) => {
 
   const onDuplicate = () => {
     open("duplicate", { id: "resume", item: resume });
+  };
+
+  const onLockChange = () => {
+    lockOpen(resume.locked ? "update" : "create", { id: "lock", item: resume });
   };
 
   const onDelete = () => {
@@ -153,6 +160,17 @@ export const ResumeListItem = ({ resume }: Props) => {
           <CopySimple size={14} className="mr-2" />
           {t`Duplicate`}
         </ContextMenuItem>
+        {resume.locked ? (
+          <ContextMenuItem onClick={onLockChange}>
+            <LockOpen size={14} className="mr-2" />
+            {t`Unlock`}
+          </ContextMenuItem>
+        ) : (
+          <ContextMenuItem onClick={onLockChange}>
+            <Lock size={14} className="mr-2" />
+            {t`Lock`}
+          </ContextMenuItem>
+        )}
         <ContextMenuSeparator />
         <ContextMenuItem onClick={onDelete} className="text-error">
           <TrashSimple size={14} className="mr-2" />
