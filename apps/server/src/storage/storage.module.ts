@@ -17,6 +17,7 @@ import { StorageService } from "./storage.service";
         region: configService.get<string>("STORAGE_REGION"),
         accessKey: configService.getOrThrow<string>("STORAGE_ACCESS_KEY"),
         secretKey: configService.getOrThrow<string>("STORAGE_SECRET_KEY"),
+        useSSL: configService.getOrThrow<boolean>("STORAGE_USE_SSL"),
       }),
     }),
   ],

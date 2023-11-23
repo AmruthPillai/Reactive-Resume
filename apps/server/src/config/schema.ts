@@ -35,6 +35,7 @@ export const configSchema = z.object({
   STORAGE_BUCKET: z.string(),
   STORAGE_ACCESS_KEY: z.string(),
   STORAGE_SECRET_KEY: z.string(),
+  STORAGE_USE_SSL: z.coerce.boolean().default(false),
 
   // Redis
   REDIS_URL: z.string().url().startsWith("redis://").optional(),

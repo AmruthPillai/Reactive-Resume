@@ -95,6 +95,7 @@ services:
       STORAGE_BUCKET: default
       STORAGE_ACCESS_KEY: minioadmin
       STORAGE_SECRET_KEY: minioadmin
+      STORAGE_USE_SSL: false
 
       # -- Cache (Redis) --
       REDIS_URL: redis://default:password@redis:6379
