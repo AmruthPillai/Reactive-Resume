@@ -50,7 +50,7 @@ services:
       CONNECTION_TIMEOUT: 10000
       EXIT_ON_HEALTH_FAILURE: true
       PRE_REQUEST_HEALTH_CHECK: true
-      TOKEN: ${CHROME_TOKEN:-chrome_token}
+      TOKEN: ${CHROME_TOKEN:-ed7431df-2419-419b-9d81-93eec25c8d37}
 
   # Redis (for cache & server session management)
   redis:
