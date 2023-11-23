@@ -25,7 +25,7 @@ export const configSchema = z.object({
   CHROME_URL: z.string().url(),
 
   // Mail Server
-  MAIL_FROM: z.string().includes("@").default("noreply@localhost"),
+  MAIL_FROM: z.string().includes("@").optional().default("noreply@localhost"),
   SMTP_URL: z.string().url().startsWith("smtp://").optional(),
 
   // Storage
@@ -35,7 +35,10 @@ export const configSchema = z.object({
   STORAGE_BUCKET: z.string(),
   STORAGE_ACCESS_KEY: z.string(),
   STORAGE_SECRET_KEY: z.string(),
-  STORAGE_USE_SSL: z.coerce.boolean().default(false),
+  STORAGE_USE_SSL: z
+    .string()
+    .default("false")
+    .transform((s) => s !== "false" && s !== "0"),
 
   // Redis
   REDIS_URL: z.string().url().startsWith("redis://").optional(),
@@ -48,7 +51,10 @@ export const configSchema = z.object({
   CROWDIN_PERSONAL_TOKEN: z.string().optional(),
 
   // Email (Optional)
-  DISABLE_EMAIL_AUTH: z.coerce.boolean().optional().default(false),
+  DISABLE_EMAIL_AUTH: z
+    .string()
+    .default("false")
+    .transform((s) => s !== "false" && s !== "0"),
 
   // GitHub (OAuth)
   GITHUB_CLIENT_ID: z.string().optional(),
