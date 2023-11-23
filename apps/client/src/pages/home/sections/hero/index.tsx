@@ -1,6 +1,7 @@
 import { t } from "@lingui/macro";
 import { ArrowRight } from "@phosphor-icons/react";
-import { Badge, Button } from "@reactive-resume/ui";
+import { Badge, buttonVariants } from "@reactive-resume/ui";
+import { cn } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 
@@ -24,10 +25,15 @@ export const HeroSection = () => (
         <div className="mt-24 flex items-center gap-x-4 sm:mt-32 lg:mt-0">
           <Badge>{t`Version 4`}</Badge>
 
-          <Button variant="link" className="space-x-2 text-left">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://docs.rxresu.me/overview/features"
+            className={cn(buttonVariants({ variant: "link" }), "space-x-2 text-left")}
+          >
             <p>{t`What's new in the latest version`}</p>
             <ArrowRight />
-          </Button>
+          </a>
         </div>
 
         <div className="mt-10 space-y-2">
