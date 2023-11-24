@@ -55,15 +55,16 @@ msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a
 msgstr "<0>दो-कारक प्रमाणीकरण सक्षम है।</0> हर बार साइन इन करने पर आपसे एक कोड दर्ज करने के लिए कहा जाएगा।"
 
 #: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/home/sections/hero/index.tsx:36
+#: apps/client/src/pages/home/sections/hero/index.tsx:42
 msgid "A free and open-source resume builder"
 msgstr "एक मुफ़्त और ओपन-सोर्स रेज़्युमे बिल्डर"
 
 #: apps/client/src/pages/home/components/footer.tsx:20
-#: apps/client/src/pages/home/sections/hero/index.tsx:41
+#: apps/client/src/pages/home/sections/hero/index.tsx:47
 msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "एक मुफ़्त और ओपन-सोर्स रेज़्यूमे बिल्डर जो आपके रेज़्यूमे को बनाने, अपडेट करने और साझा करने की प्रक्रिया को सरल बनाता है।"
 
+#: apps/client/src/pages/builder/_components/toolbar.tsx:53
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
 msgid "A link has been copied to your clipboard."
 msgstr "लिंक को क्लिपबोर्ड में कॉपी किया गया है।"
@@ -140,6 +141,7 @@ msgstr "और भी कई..."
 msgid "Anyone with the link can view and download the resume."
 msgstr "लिंक वाला कोई भी व्यक्ति बायोडाटा देख और डाउनलोड कर सकता है।"
 
+#: apps/client/src/pages/builder/_components/toolbar.tsx:54
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:30
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "इस लिंक वाला कोई भी व्यक्ति बायोडाटा देख और डाउनलोड कर सकता है। इसे अपनी प्रोफ़ाइल पर या भर्तीकर्ताओं के साथ साझा करें।"
@@ -245,7 +247,7 @@ msgstr "रद्द करें"
 msgid "Casual"
 msgstr "साधारण"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:85
+#: apps/client/src/pages/builder/_components/toolbar.tsx:98
 msgid "Center Artboard"
 msgstr "केंद्र आर्टबोर्ड"
 
@@ -308,7 +310,7 @@ msgstr "जारी रखें"
 msgid "Copy"
 msgstr "कॉपी करें"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:119
+#: apps/client/src/pages/builder/_components/toolbar.tsx:132
 msgid "Copy Link to Resume"
 msgstr "फिर से शुरू करने के लिए लिंक कॉपी करें"
 
@@ -383,8 +385,8 @@ msgstr "दिनांक"
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:124
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:157
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:148
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:106
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:159
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:134
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:198
 msgid "Delete"
 msgstr "हटाएं"
 
@@ -448,7 +450,7 @@ msgstr "अपने बायोडाटा का JSON स्नैपशॉ�
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "अपने बायोडाटा का एक पीडीएफ डाउनलोड करें। इस फ़ाइल का उपयोग आपके बायोडाटा को प्रिंट करने, भर्तीकर्ताओं को भेजने या नौकरी पोर्टल पर अपलोड करने के लिए किया जा सकता है।"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:125
+#: apps/client/src/pages/builder/_components/toolbar.tsx:144
 #: apps/client/src/pages/public/page.tsx:103
 msgid "Download PDF"
 msgstr ""
@@ -460,8 +462,8 @@ msgstr "डाउनलोड"
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:160
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:132
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:95
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:154
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:102
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:182
 msgid "Duplicate"
 msgstr "प्रतिरूप"
 
@@ -538,7 +540,7 @@ msgstr "फ़ाइल"
 msgid "Filetype"
 msgstr "फाइल का प्रकार"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:34
+#: apps/client/src/pages/home/sections/hero/index.tsx:40
 msgid "Finally,"
 msgstr "अंत में,"
 
@@ -800,7 +802,7 @@ msgid "Language"
 msgstr "भाषा"
 
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:116
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:121
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:149
 msgid "Last updated {lastUpdated}"
 msgstr "अंतिम अद्यतन {lastUpdated}"
 
@@ -856,6 +858,8 @@ msgstr "स्थान"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:51
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:142
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:122
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:192
 msgid "Lock"
 msgstr "लॉक करें"
 
@@ -961,8 +965,8 @@ msgid "Oops, the server returned an error."
 msgstr "ओह, सर्वर ने एक त्रुटि लौटा दी।"
 
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:124
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:77
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:146
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:84
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:174
 msgid "Open"
 msgstr "खोलें"
 
@@ -1128,7 +1132,7 @@ msgstr "रिएक्टिव रेज़्युमे 3 वर्षो�
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
 msgstr "रिएक्टिव रेज़्यूमे अपने जीवंत समुदाय की बदौलत फलता-फूलता है। इस परियोजना की प्रगति का श्रेय उन असंख्य व्यक्तियों को जाता है जिन्होंने अपना समय और कौशल समर्पित किया है। नीचे, हम उन कोडर्स का जश्न मना रहे हैं जिन्होंने GitHub पर इसकी विशेषताओं को बढ़ाया है और उन भाषाविदों का जश्न मनाया है जिनके क्राउडिन पर अनुवादों ने इसे व्यापक दर्शकों के लिए सुलभ बना दिया है।"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:59
+#: apps/client/src/pages/builder/_components/toolbar.tsx:72
 msgid "Redo"
 msgstr "पुनः करें"
 
@@ -1143,8 +1147,8 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:83
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:128
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:86
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:150
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:93
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:178
 msgid "Rename"
 msgstr "नाम बदलें"
 
@@ -1165,7 +1169,7 @@ msgstr "लेआउट रिसेट"
 msgid "Reset your password"
 msgstr "अपना पासवर्ड रीसेट करें"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:79
+#: apps/client/src/pages/builder/_components/toolbar.tsx:92
 msgid "Reset Zoom"
 msgstr "ज़ूम रीसेट करें"
 
@@ -1457,11 +1461,11 @@ msgstr "शीर्षक"
 msgid "Title"
 msgstr "शीर्षक"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:93
+#: apps/client/src/pages/builder/_components/toolbar.tsx:106
 msgid "Toggle Page Break Line"
 msgstr "पेज ब्रेक लाइन टॉगल करें"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:105
+#: apps/client/src/pages/builder/_components/toolbar.tsx:118
 msgid "Toggle Page Numbers"
 msgstr "पेज नंबर टॉगल करें"
 
@@ -1501,12 +1505,14 @@ msgstr "टाइपोग्राफी"
 msgid "Underline Links"
 msgstr "लिंक को रेखांकित करें"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:53
+#: apps/client/src/pages/builder/_components/toolbar.tsx:66
 msgid "Undo"
 msgstr "वापस लाएं"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:52
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:137
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:112
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:187
 msgid "Unlock"
 msgstr "खोले"
 
@@ -1582,7 +1588,7 @@ msgstr "सत्यापित करें कि दो-कारक प्�
 msgid "Verify your email address"
 msgstr "अपने ईमेल पते की पुष्टि करें"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:25
+#: apps/client/src/pages/home/sections/hero/index.tsx:26
 msgid "Version 4"
 msgstr "संस्करण 4"
 
@@ -1612,7 +1618,7 @@ msgstr "हम आपके ईमेल पते को केवल यह �
 msgid "Website"
 msgstr "वेबसाइट"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:28
+#: apps/client/src/pages/home/sections/hero/index.tsx:34
 msgid "What's new in the latest version"
 msgstr "नवीनतम संस्करण में नया क्या है"
 
@@ -1668,11 +1674,10 @@ msgstr "आपकी OpenAI API कुंजी अभी तक सेट न�
 msgid "Your password has been updated successfully."
 msgstr "आपका पासवर्ड बदला जा चुका है।"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:67
+#: apps/client/src/pages/builder/_components/toolbar.tsx:80
 msgid "Zoom In"
 msgstr "ज़ूम इन"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:73
+#: apps/client/src/pages/builder/_components/toolbar.tsx:86
 msgid "Zoom Out"
 msgstr "ज़ूम आउट"
-

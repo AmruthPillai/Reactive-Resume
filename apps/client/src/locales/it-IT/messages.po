@@ -55,15 +55,16 @@ msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a
 msgstr "<0>L'autenticazione a due fattori è abilitata.</0> Ti verrà chiesto di inserire un codice ogni volta che accedi."
 
 #: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/home/sections/hero/index.tsx:36
+#: apps/client/src/pages/home/sections/hero/index.tsx:42
 msgid "A free and open-source resume builder"
 msgstr "Un generatore di curriculum gratuito e open source"
 
 #: apps/client/src/pages/home/components/footer.tsx:20
-#: apps/client/src/pages/home/sections/hero/index.tsx:41
+#: apps/client/src/pages/home/sections/hero/index.tsx:47
 msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "Un generatore di curriculum gratuito e open source che semplifica il processo di creazione, aggiornamento e condivisione del tuo curriculum."
 
+#: apps/client/src/pages/builder/_components/toolbar.tsx:53
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
 msgid "A link has been copied to your clipboard."
 msgstr "Il link è stato copiato negli appunti."
@@ -140,6 +141,7 @@ msgstr "e molti altri..."
 msgid "Anyone with the link can view and download the resume."
 msgstr "Chiunque abbia il collegamento può visualizzare e scaricare il curriculum."
 
+#: apps/client/src/pages/builder/_components/toolbar.tsx:54
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:30
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "Chiunque abbia questo link può visualizzare e scaricare il curriculum. Condividilo sul tuo profilo o con i reclutatori."
@@ -245,7 +247,7 @@ msgstr "Annulla"
 msgid "Casual"
 msgstr "Casuale"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:85
+#: apps/client/src/pages/builder/_components/toolbar.tsx:98
 msgid "Center Artboard"
 msgstr "Cartella Centrata"
 
@@ -308,7 +310,7 @@ msgstr "Continuare"
 msgid "Copy"
 msgstr "Copia"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:119
+#: apps/client/src/pages/builder/_components/toolbar.tsx:132
 msgid "Copy Link to Resume"
 msgstr "Copia collegamento per riprendere"
 
@@ -383,8 +385,8 @@ msgstr "Data"
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:124
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:157
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:148
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:106
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:159
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:134
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:198
 msgid "Delete"
 msgstr "Elimina"
 
@@ -448,7 +450,7 @@ msgstr "Scarica uno snapshot JSON del tuo curriculum. Questo file può essere ut
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "Scarica un PDF del tuo curriculum. Questo file può essere utilizzato per stampare il tuo curriculum, inviarlo ai reclutatori o caricarlo su portali di lavoro."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:125
+#: apps/client/src/pages/builder/_components/toolbar.tsx:144
 #: apps/client/src/pages/public/page.tsx:103
 msgid "Download PDF"
 msgstr "Scarica PDF"
@@ -460,8 +462,8 @@ msgstr "Downloads"
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:160
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:132
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:95
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:154
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:102
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:182
 msgid "Duplicate"
 msgstr "Duplica"
 
@@ -538,7 +540,7 @@ msgstr "File"
 msgid "Filetype"
 msgstr "Tipo di file"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:34
+#: apps/client/src/pages/home/sections/hero/index.tsx:40
 msgid "Finally,"
 msgstr "Finalmente,"
 
@@ -800,7 +802,7 @@ msgid "Language"
 msgstr "Lingua"
 
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:116
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:121
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:149
 msgid "Last updated {lastUpdated}"
 msgstr "Ultimo aggiornamento: {lastUpdated}"
 
@@ -856,6 +858,8 @@ msgstr "Posizione"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:51
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:142
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:122
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:192
 msgid "Lock"
 msgstr "Blocca"
 
@@ -961,8 +965,8 @@ msgid "Oops, the server returned an error."
 msgstr "Spiacenti, il server ha restituito un errore."
 
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:124
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:77
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:146
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:84
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:174
 msgid "Open"
 msgstr "Apri"
 
@@ -1128,7 +1132,7 @@ msgstr "Reactive Resume è un progetto di passione che ha richiesto oltre 3 anni
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
 msgstr "Reactive Resume prospera grazie alla sua vivace comunità. Questo progetto deve i suoi progressi a numerose persone che hanno dedicato il loro tempo e le loro competenze. Di seguito, celebriamo i codificatori che hanno migliorato le sue funzioni su GitHub e i linguisti le cui traduzioni su Crowdin lo hanno reso accessibile ad un pubblico più vasto."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:59
+#: apps/client/src/pages/builder/_components/toolbar.tsx:72
 msgid "Redo"
 msgstr "Ritorna"
 
@@ -1143,8 +1147,8 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:83
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:128
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:86
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:150
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:93
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:178
 msgid "Rename"
 msgstr "Rinomina"
 
@@ -1165,7 +1169,7 @@ msgstr "Ripristina Layout"
 msgid "Reset your password"
 msgstr "Reimposta la tua password"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:79
+#: apps/client/src/pages/builder/_components/toolbar.tsx:92
 msgid "Reset Zoom"
 msgstr "Ripristina zoom"
 
@@ -1457,11 +1461,11 @@ msgstr "Titolo"
 msgid "Title"
 msgstr "Titolo"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:93
+#: apps/client/src/pages/builder/_components/toolbar.tsx:106
 msgid "Toggle Page Break Line"
 msgstr "Attiva/disattiva la riga di interruzione di pagina"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:105
+#: apps/client/src/pages/builder/_components/toolbar.tsx:118
 msgid "Toggle Page Numbers"
 msgstr "Attiva/disattiva i numeri di pagina"
 
@@ -1501,12 +1505,14 @@ msgstr "Tipografia"
 msgid "Underline Links"
 msgstr "Sottolinea i link"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:53
+#: apps/client/src/pages/builder/_components/toolbar.tsx:66
 msgid "Undo"
 msgstr "Annulla"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:52
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:137
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:112
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:187
 msgid "Unlock"
 msgstr "Sblocca"
 
@@ -1582,7 +1588,7 @@ msgstr "Verifica che l'autenticazione a due fattori sia stata impostata corretta
 msgid "Verify your email address"
 msgstr "Verifica il tuo indirizzo email"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:25
+#: apps/client/src/pages/home/sections/hero/index.tsx:26
 msgid "Version 4"
 msgstr "Versione 4"
 
@@ -1612,7 +1618,7 @@ msgstr "Verifichiamo il suo indirizzo e-mail solo per assicurarci di poterle inv
 msgid "Website"
 msgstr "Sito Web"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:28
+#: apps/client/src/pages/home/sections/hero/index.tsx:34
 msgid "What's new in the latest version"
 msgstr "Cosa c'è di nuovo nell'ultima versione"
 
@@ -1668,11 +1674,10 @@ msgstr "La tua chiave API OpenAI non è stata ancora impostata. Vai alle imposta
 msgid "Your password has been updated successfully."
 msgstr "L'aggiornamento della password è stato completato con successo."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:67
+#: apps/client/src/pages/builder/_components/toolbar.tsx:80
 msgid "Zoom In"
 msgstr "Ingrandisci"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:73
+#: apps/client/src/pages/builder/_components/toolbar.tsx:86
 msgid "Zoom Out"
 msgstr "Rimpicciolisci"
-

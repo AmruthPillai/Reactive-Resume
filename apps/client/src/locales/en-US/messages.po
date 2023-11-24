@@ -55,15 +55,16 @@ msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a
 msgstr "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 
 #: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/home/sections/hero/index.tsx:36
+#: apps/client/src/pages/home/sections/hero/index.tsx:42
 msgid "A free and open-source resume builder"
 msgstr "A free and open-source resume builder"
 
 #: apps/client/src/pages/home/components/footer.tsx:20
-#: apps/client/src/pages/home/sections/hero/index.tsx:41
+#: apps/client/src/pages/home/sections/hero/index.tsx:47
 msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
 
+#: apps/client/src/pages/builder/_components/toolbar.tsx:53
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
 msgid "A link has been copied to your clipboard."
 msgstr "A link has been copied to your clipboard."
@@ -140,6 +141,7 @@ msgstr "and many more..."
 msgid "Anyone with the link can view and download the resume."
 msgstr "Anyone with the link can view and download the resume."
 
+#: apps/client/src/pages/builder/_components/toolbar.tsx:54
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:30
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
@@ -245,7 +247,7 @@ msgstr "Cancel"
 msgid "Casual"
 msgstr "Casual"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:85
+#: apps/client/src/pages/builder/_components/toolbar.tsx:98
 msgid "Center Artboard"
 msgstr "Center Artboard"
 
@@ -308,7 +310,7 @@ msgstr "Continue"
 msgid "Copy"
 msgstr "Copy"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:119
+#: apps/client/src/pages/builder/_components/toolbar.tsx:132
 msgid "Copy Link to Resume"
 msgstr "Copy Link to Resume"
 
@@ -383,8 +385,8 @@ msgstr "Date"
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:124
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:157
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:148
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:106
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:159
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:134
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:198
 msgid "Delete"
 msgstr "Delete"
 
@@ -448,7 +450,7 @@ msgstr "Download a JSON snapshot of your resume. This file can be used to import
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:125
+#: apps/client/src/pages/builder/_components/toolbar.tsx:144
 #: apps/client/src/pages/public/page.tsx:103
 msgid "Download PDF"
 msgstr "Download PDF"
@@ -460,8 +462,8 @@ msgstr "Downloads"
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:160
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:132
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:95
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:154
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:102
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:182
 msgid "Duplicate"
 msgstr "Duplicate"
 
@@ -538,7 +540,7 @@ msgstr "File"
 msgid "Filetype"
 msgstr "Filetype"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:34
+#: apps/client/src/pages/home/sections/hero/index.tsx:40
 msgid "Finally,"
 msgstr "Finally,"
 
@@ -800,7 +802,7 @@ msgid "Language"
 msgstr "Language"
 
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:116
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:121
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:149
 msgid "Last updated {lastUpdated}"
 msgstr "Last updated {lastUpdated}"
 
@@ -856,6 +858,8 @@ msgstr "Location"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:51
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:142
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:122
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:192
 msgid "Lock"
 msgstr "Lock"
 
@@ -961,8 +965,8 @@ msgid "Oops, the server returned an error."
 msgstr "Oops, the server returned an error."
 
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:124
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:77
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:146
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:84
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:174
 msgid "Open"
 msgstr "Open"
 
@@ -1128,7 +1132,7 @@ msgstr "Reactive Resume is a passion project of over 3 years of hard work, and w
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
 msgstr "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:59
+#: apps/client/src/pages/builder/_components/toolbar.tsx:72
 msgid "Redo"
 msgstr "Redo"
 
@@ -1143,8 +1147,8 @@ msgstr "Remove Page"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:83
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:128
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:86
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:150
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:93
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:178
 msgid "Rename"
 msgstr "Rename"
 
@@ -1165,7 +1169,7 @@ msgstr "Reset Layout"
 msgid "Reset your password"
 msgstr "Reset your password"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:79
+#: apps/client/src/pages/builder/_components/toolbar.tsx:92
 msgid "Reset Zoom"
 msgstr "Reset Zoom"
 
@@ -1457,11 +1461,11 @@ msgstr "Title"
 msgid "Title"
 msgstr "Title"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:93
+#: apps/client/src/pages/builder/_components/toolbar.tsx:106
 msgid "Toggle Page Break Line"
 msgstr "Toggle Page Break Line"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:105
+#: apps/client/src/pages/builder/_components/toolbar.tsx:118
 msgid "Toggle Page Numbers"
 msgstr "Toggle Page Numbers"
 
@@ -1501,12 +1505,14 @@ msgstr "Typography"
 msgid "Underline Links"
 msgstr "Underline Links"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:53
+#: apps/client/src/pages/builder/_components/toolbar.tsx:66
 msgid "Undo"
 msgstr "Undo"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:52
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:137
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:112
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:187
 msgid "Unlock"
 msgstr "Unlock"
 
@@ -1582,7 +1588,7 @@ msgstr "Verify that two-factor authentication has been setup correctly"
 msgid "Verify your email address"
 msgstr "Verify your email address"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:25
+#: apps/client/src/pages/home/sections/hero/index.tsx:26
 msgid "Version 4"
 msgstr "Version 4"
 
@@ -1612,7 +1618,7 @@ msgstr "We verify your email address only to ensure that we can send you a passw
 msgid "Website"
 msgstr "Website"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:28
+#: apps/client/src/pages/home/sections/hero/index.tsx:34
 msgid "What's new in the latest version"
 msgstr "What's new in the latest version"
 
@@ -1668,10 +1674,10 @@ msgstr "Your OpenAI API Key has not been set yet. Please go to your account sett
 msgid "Your password has been updated successfully."
 msgstr "Your password has been updated successfully."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:67
+#: apps/client/src/pages/builder/_components/toolbar.tsx:80
 msgid "Zoom In"
 msgstr "Zoom In"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:73
+#: apps/client/src/pages/builder/_components/toolbar.tsx:86
 msgid "Zoom Out"
 msgstr "Zoom Out"
