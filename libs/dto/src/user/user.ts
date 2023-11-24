@@ -1,7 +1,8 @@
-import type { Prisma } from "@prisma/client";
 import { idSchema } from "@reactive-resume/schema";
 import { createZodDto } from "nestjs-zod/dto";
 import { z } from "nestjs-zod/z";
+
+import { secretsSchema } from "../secrets";
 
 export const usernameSchema = z
   .string()
@@ -28,4 +29,6 @@ export const userSchema = z.object({
 
 export class UserDto extends createZodDto(userSchema) {}
 
-export type UserWithSecrets = Prisma.UserGetPayload<{ include: { secrets: true } }>;
+export const userWithSecretsSchema = userSchema.merge(z.object({ secrets: secretsSchema }));
+
+export class UserWithSecrets extends createZodDto(userWithSecretsSchema) {}
