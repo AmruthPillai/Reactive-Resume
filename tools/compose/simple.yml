@@ -115,6 +115,11 @@ services:
       GOOGLE_CLIENT_SECRET: google_client_secret
       GOOGLE_CALLBACK_URL: http://localhost:3000/api/auth/google/callback
 
+      # -- LinkedIn --
+      LINKEDIN_CLIENT_ID: linkedin_client_id
+      LINKEDIN_CLIENT_SECRET: linkedin_client_secret
+      LINKEDIN_CALLBACK_URL: https://example.com/api/auth/linkedin/callback
+
 volumes:
   minio_data:
   postgres_data:
