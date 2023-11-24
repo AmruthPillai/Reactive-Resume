@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { useLanguages } from "@/client/services/resume/translation";
+import { LocaleCombobox } from "@/client/components/locale-combobox";
 import { useUpdateUser, useUser } from "@/client/services/user";
 
 const formSchema = z.object({
@@ -21,7 +21,6 @@ type FormValues = z.infer<typeof formSchema>;
 
 export const ProfileSettings = () => {
   const { user } = useUser();
-  const { languages } = useLanguages();
   const { theme, setTheme } = useTheme();
   const { updateUser, loading } = useUpdateUser();
 
@@ -95,19 +94,7 @@ export const ProfileSettings = () => {
               <FormItem>
                 <FormLabel>{t`Language`}</FormLabel>
                 <div className="w-full">
-                  <Combobox
-                    {...field}
-                    value={field.value}
-                    onValueChange={field.onChange}
-                    options={languages.map(({ locale, name }) => ({
-                      label: (
-                        <>
-                          {name} <span className="ml-1 text-xs opacity-50">({locale})</span>
-                        </>
-                      ),
-                      value: locale,
-                    }))}
-                  />
+                  <LocaleCombobox value={field.value} onValueChange={field.onChange} />
                 </div>
                 <FormDescription>
                   <span>

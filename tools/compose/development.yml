@@ -7,7 +7,7 @@ version: "3.8"
 services:
   # Database (Postgres)
   postgres:
-    image: postgres:alpine
+    image: postgres:15-alpine
     restart: unless-stopped
     ports:
       - ${POSTGRES_PORT:-5432}:5432

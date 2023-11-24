@@ -7,7 +7,7 @@ version: "3.8"
 services:
   # Database (Postgres)
   postgres:
-    image: postgres:alpine
+    image: postgres:15-alpine
     networks:
       - reactive_resume_network
     volumes:

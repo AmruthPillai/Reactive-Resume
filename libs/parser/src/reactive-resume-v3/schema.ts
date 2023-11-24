@@ -1,36 +1,47 @@
 import { z } from "zod";
 
-const dateSchema = z.object({ start: z.string(), end: z.string() });
+const dateSchema = z
+  .object({ start: z.string().optional(), end: z.string().optional() })
+  .optional();
 
 const profileSchema = z.object({
-  id: z.string(),
-  url: z.string(),
-  network: z.string(),
-  username: z.string(),
+  id: z.string().optional(),
+  url: z.string().optional(),
+  network: z.string().optional(),
+  username: z.string().optional(),
 });
 
 const basicsSchema = z.object({
-  name: z.string(),
+  name: z.string().optional(),
   email: z.literal("").or(z.string().email()),
-  phone: z.string(),
-  headline: z.string(),
-  summary: z.string(),
+  phone: z.string().optional(),
+  headline: z.string().optional(),
+  summary: z
+    .string()
+    .or(
+      z.object({
+        body: z.string().optional(),
+        visible: z.boolean().default(true),
+        heading: z.string().optional(),
+      }),
+    )
+    .optional(),
   birthdate: z.string().optional(),
-  website: z.string(),
+  website: z.string().optional(),
   profiles: z.array(profileSchema),
   location: z.object({
-    address: z.string(),
-    postalCode: z.string(),
-    city: z.string(),
-    country: z.string(),
-    region: z.string(),
+    address: z.string().optional(),
+    postalCode: z.string().optional(),
+    city: z.string().optional(),
+    country: z.string().optional(),
+    region: z.string().optional(),
   }),
   photo: z.object({
     visible: z.boolean(),
-    url: z.string(),
+    url: z.string().optional(),
     filters: z.object({
-      shape: z.string(),
-      size: z.number(),
+      shape: z.string().nullable().optional(),
+      size: z.coerce.number(),
       border: z.boolean(),
       grayscale: z.boolean(),
     }),
@@ -38,122 +49,158 @@ const basicsSchema = z.object({
 });
 
 const sectionSchema = z.object({
-  id: z.string(),
-  name: z.string(),
+  id: z.string().optional(),
+  name: z.string().optional(),
   type: z.enum(["basic", "work", "custom"]),
-  columns: z.number().or(z.null()),
+  columns: z.coerce.number().or(z.null()).default(1),
   visible: z.boolean(),
 });
 
-const workSchema = z.object({
-  id: z.string(),
-  url: z.string(),
-  date: dateSchema,
-  name: z.string(),
-  position: z.string(),
-  summary: z.string(),
-});
+const workSchema = z
+  .object({
+    id: z.string().optional(),
+    url: z.string().optional(),
+    date: dateSchema,
+    name: z.string().optional(),
+    position: z.string().optional(),
+    summary: z.string().nullable().optional(),
+  })
+  .nullable();
 
-const awardSchema = z.object({
-  id: z.string(),
-  url: z.string(),
-  date: z.string(),
-  title: z.string(),
-  awarder: z.string(),
-  summary: z.string(),
-});
+const awardSchema = z
+  .object({
+    id: z.string().optional(),
+    url: z.string().optional(),
+    date: z.string().optional(),
+    title: z.string().optional(),
+    awarder: z.string().optional(),
+    summary: z.string().nullable().optional(),
+  })
+  .nullable();
 
-const skillSchema = z.object({
-  id: z.string(),
-  name: z.string(),
-  level: z.string(),
-  keywords: z.array(z.string()),
-  levelNum: z.number(),
-});
+const skillSchema = z
+  .object({
+    id: z.string().optional(),
+    name: z.string().optional(),
+    level: z.coerce.string().optional(),
+    keywords: z.array(z.string().nullable()).optional(),
+    levelNum: z.coerce.number(),
+  })
+  .nullable();
 
-const projectSchema = z.object({
-  id: z.string(),
-  url: z.string(),
-  date: dateSchema,
-  name: z.string(),
-  summary: z.string(),
-  keywords: z.array(z.string()),
-  description: z.string(),
-});
+const projectSchema = z
+  .object({
+    id: z.string().optional(),
+    url: z.string().optional(),
+    date: dateSchema,
+    name: z.string().optional(),
+    summary: z.string().nullable().optional(),
+    keywords: z.array(z.string().nullable()).optional(),
+    description: z.string().optional(),
+  })
+  .nullable();
 
-const educationSchema = z.object({
-  id: z.string(),
-  url: z.string(),
-  area: z.string(),
-  date: dateSchema,
-  score: z.string(),
-  degree: z.string(),
-  courses: z.array(z.string()),
-  summary: z.string(),
-  institution: z.string(),
-});
+const educationSchema = z
+  .object({
+    id: z.string().optional(),
+    url: z.string().optional(),
+    area: z.string().optional(),
+    date: dateSchema,
+    score: z.string().optional(),
+    degree: z.string().optional(),
+    courses: z.array(z.string().nullable()).optional(),
+    summary: z.string().nullable().optional(),
+    institution: z.string().optional(),
+  })
+  .nullable();
 
-const interestSchema = z.object({
-  id: z.string(),
-  name: z.string(),
-  keywords: z.array(z.string()),
-});
+const interestSchema = z
+  .object({
+    id: z.string().optional(),
+    name: z.string().optional(),
+    keywords: z.array(z.string().nullable()).optional(),
+  })
+  .nullable();
 
-const languageSchema = z.object({
-  id: z.string(),
-  name: z.string(),
-  level: z.string(),
-  levelNum: z.number(),
-});
+const languageSchema = z
+  .object({
+    id: z.string().optional(),
+    name: z.string().optional(),
+    level: z.string().optional(),
+    levelNum: z.coerce.number(),
+  })
+  .nullable();
 
-const volunteerSchema = z.object({
-  id: z.string(),
-  organization: z.string(),
-  position: z.string(),
-  date: dateSchema,
-  url: z.string(),
-  summary: z.string(),
-});
+const volunteerSchema = z
+  .object({
+    id: z.string().optional(),
+    organization: z.string().optional(),
+    position: z.string().optional(),
+    date: dateSchema,
+    url: z.string().optional(),
+    summary: z.string().nullable().optional(),
+  })
+  .nullable();
 
-const referenceSchema = z.object({
-  id: z.string(),
-  name: z.string(),
-  email: z.string(),
-  phone: z.string(),
-  summary: z.string(),
-  relationship: z.string(),
-});
+const referenceSchema = z
+  .object({
+    id: z.string().optional(),
+    name: z.string().optional(),
+    email: z.string().optional(),
+    phone: z.string().optional(),
+    summary: z.string().nullable().optional(),
+    relationship: z.string().optional(),
+  })
+  .nullable();
 
-const publicationSchema = z.object({
-  id: z.string(),
-  url: z.string(),
-  date: z.string(),
-  name: z.string(),
-  publisher: z.string(),
-  summary: z.string(),
-});
+const publicationSchema = z
+  .object({
+    id: z.string().optional(),
+    url: z.string().optional(),
+    date: z.string().optional(),
+    name: z.string().optional(),
+    publisher: z.string().optional(),
+    summary: z.string().nullable().optional(),
+  })
+  .nullable();
 
-const certificationSchema = z.object({
-  id: z.string(),
-  url: z.string(),
-  date: z.string(),
-  name: z.string(),
-  issuer: z.string(),
-  summary: z.string(),
-});
+const certificationSchema = z
+  .object({
+    id: z.string().optional(),
+    url: z.string().optional(),
+    date: z.string().optional(),
+    name: z.string().optional(),
+    issuer: z.string().optional(),
+    summary: z.string().nullable().optional(),
+  })
+  .nullable();
 
-const metadataSchema = z.object({
-  css: z.object({ value: z.string(), visible: z.boolean() }),
-  date: z.object({ format: z.string() }),
-  theme: z.object({ text: z.string(), primary: z.string(), background: z.string() }),
-  layout: z.array(z.array(z.array(z.string()))),
-  locale: z.string().optional(),
-  template: z.string(),
-  typography: z.object({
-    size: z.object({ body: z.number(), heading: z.number() }),
-    family: z.object({ body: z.string(), heading: z.string() }),
-  }),
-});
+const metadataSchema = z
+  .object({
+    css: z.object({ value: z.string().optional(), visible: z.boolean() }).optional(),
+    date: z.object({ format: z.string().optional() }).optional(),
+    theme: z
+      .object({
+        text: z.string().optional(),
+        primary: z.string().optional(),
+        background: z.string().optional(),
+      })
+      .optional(),
+    layout: z.array(z.array(z.array(z.string().nullable()))).optional(),
+    locale: z.string().optional(),
+    template: z.string().optional(),
+    typography: z
+      .object({
+        size: z
+          .object({ body: z.coerce.number().optional(), heading: z.coerce.number().optional() })
+          .optional(),
+        family: z
+          .object({ body: z.string().optional(), heading: z.string().optional() })
+          .optional(),
+      })
+      .optional(),
+  })
+  .optional();
 
 export const reactiveResumeV3Schema = z.object({
   public: z.boolean(),

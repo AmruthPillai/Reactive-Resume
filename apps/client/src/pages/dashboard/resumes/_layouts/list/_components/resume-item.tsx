@@ -101,6 +101,27 @@ export const ResumeListItem = ({ resume }: Props) => {
           <CopySimple size={14} className="mr-2" />
           {t`Duplicate`}
         </DropdownMenuItem>
+        {resume.locked ? (
+          <DropdownMenuItem
+            onClick={(event) => {
+              event.stopPropagation();
+              onLockChange();
+            }}
+          >
+            <LockOpen size={14} className="mr-2" />
+            {t`Unlock`}
+          </DropdownMenuItem>
+        ) : (
+          <DropdownMenuItem
+            onClick={(event) => {
+              event.stopPropagation();
+              onLockChange();
+            }}
+          >
+            <Lock size={14} className="mr-2" />
+            {t`Lock`}
+          </DropdownMenuItem>
+        )}
         <ContextMenuSeparator />
         <DropdownMenuItem
           className="text-error"

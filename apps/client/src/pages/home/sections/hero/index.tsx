@@ -17,12 +17,12 @@ export const HeroSection = () => (
 
     <div className="mx-auto max-w-7xl px-6 lg:flex lg:h-screen lg:items-center lg:px-12">
       <motion.div
-        className="mx-auto max-w-3xl shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8"
+        className="mx-auto mt-32 max-w-3xl shrink-0 lg:mx-0 lg:mt-0 lg:max-w-xl lg:pt-8"
         viewport={{ once: true }}
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
       >
-        <div className="mt-24 flex items-center gap-x-4 sm:mt-32 lg:mt-0">
+        <div className="hidden items-center gap-x-4 sm:flex">
           <Badge>{t`Version 4`}</Badge>
 
           <a
