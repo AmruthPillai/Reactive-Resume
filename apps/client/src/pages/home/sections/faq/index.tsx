@@ -160,10 +160,10 @@ const Question4 = () => {
               className="no-underline"
               href={`https://crowdin.com/translate/reactive-resume/all/en-${language.editorCode}`}
             >
-              <div className="relative bg-secondary-accent font-medium">
+              <div className="relative bg-secondary-accent font-medium transition-colors hover:bg-primary hover:text-background">
                 <span className="px-2 py-1">{language.name}</span>
 
-                {language.progress && (
+                {language.progress !== undefined && (
                   <span
                     className={cn(
                       "inset-0 bg-warning px-1.5 py-1 text-xs text-white",
