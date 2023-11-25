@@ -8,7 +8,7 @@ msgstr ""
 "Language: pl\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-11-24 00:13\n"
+"PO-Revision-Date: 2023-11-25 00:07\n"
 "Last-Translator: \n"
 "Language-Team: Polish\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
@@ -20,11 +20,11 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:169
 msgid "You have enabled two-factor authentication successfully."
-msgstr ""
+msgstr "Poprawnie aktywowano autentykacje 2FA."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:56
 msgid "{templatesCount} resume templates to choose from"
-msgstr ""
+msgstr "{templatesCount} szablonów dostępnych"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:114
 msgid "{value, plural, one {Column} other {Columns}}"
@@ -83,43 +83,43 @@ msgstr ""
 
 #: apps/client/src/services/errors/translate-error.ts:9
 msgid "A user with this email address and/or username already exists."
-msgstr ""
+msgstr "Użytkownik o tym adresie e-mail i/lub nazwie użytkownika już istnieje."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:43
 msgid "A4"
-msgstr ""
+msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:270
 msgid "Accepts only {accept} files"
-msgstr ""
+msgstr "Akceptuje tylko pliki {accept}"
 
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:104
 msgid "Account"
-msgstr ""
+msgstr "Konto"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:124
 msgid "Add a custom field"
-msgstr ""
+msgstr "Dodaj niestandardowe pole"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:108
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:147
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
-msgstr ""
+msgstr "Dodaj nowy element"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:68
 msgid "Add a new item"
-msgstr ""
+msgstr "Dodaj nowy element"
 
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:79
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:196
 msgid "Add a new section"
-msgstr ""
+msgstr "Dodaj nową sekcję"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:269
 msgid "Add New Page"
-msgstr ""
+msgstr "Dodaj nową stronę"
 
 #: apps/client/src/components/ai-actions.tsx:79
 msgid "AI"
