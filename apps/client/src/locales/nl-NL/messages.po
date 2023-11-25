@@ -8,7 +8,7 @@ msgstr ""
 "Language: nl\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-11-24 00:13\n"
+"PO-Revision-Date: 2023-11-25 00:07\n"
 "Last-Translator: \n"
 "Language-Team: Dutch\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -28,7 +28,7 @@ msgstr "{templatesCount} CV-sjablonen om uit te kiezen"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:114
 msgid "{value, plural, one {Column} other {Columns}}"
-msgstr ""
+msgstr "{value, plural, one {Kolom} other {Kolommen}}"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:20
 msgid "<0>I built Reactive Resume mostly by myself during my spare time, with a lot of help from other great open-source contributors.</0><1>If you like the app and want to support keeping it free forever, please donate whatever you can afford to give.</1>"
@@ -148,125 +148,125 @@ msgstr "Iedereen met deze link kan het CV bekijken en downloaden. Deel het op je
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:83
 msgid "API Key"
-msgstr ""
+msgstr "API sleutel"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:115
 msgid "Are you sure you want to delete this item?"
-msgstr ""
+msgstr "Weet u zeker dat u dit item wilt verwijderen?"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:148
 msgid "Are you sure you want to delete your resume?"
-msgstr ""
+msgstr "Weet u zeker dat u uw cv wilt verwijderen?"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:123
 msgid "Are you sure you want to disable two-factor authentication?"
-msgstr ""
+msgstr "Weet u zeker dat u tweefactorauthenticatie wilt uitschakelen?"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:38
 msgid "Are you sure you want to lock this resume?"
-msgstr ""
+msgstr "Weet u zeker dat u dit cv wilt vergrendelen?"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:39
 msgid "Are you sure you want to unlock this resume?"
-msgstr ""
+msgstr "Weet u zeker dat u deze cv wilt ontgrendelen?"
 
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:94
 msgid "Are you sure?"
-msgstr ""
+msgstr "Weet je het zeker?"
 
 #. For example, Computer Science or Business Administration
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:73
 msgid "Area of Study"
-msgstr ""
+msgstr "Studierichting"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:86
 msgid "Aspect Ratio"
-msgstr ""
+msgstr "Verhouding"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:50
 msgid "Available in 20+ languages"
-msgstr ""
+msgstr "Beschikbaar in %d+ talen"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:53
 msgid "Awarder"
-msgstr ""
+msgstr "Prijswinnaar"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:92
 #: apps/client/src/pages/auth/forgot-password/page.tsx:94
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:236
 msgid "Back"
-msgstr ""
+msgstr "Terug"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:73
 msgid "Background Color"
-msgstr ""
+msgstr "Achtergrondkleur"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:75
 msgid "Backup Code"
-msgstr ""
+msgstr "Back-up code"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:80
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
-msgstr ""
+msgstr "Back-upcodes mogen alleen kleine letters of cijfers bevatten en moeten exact 10 tekens lang zijn."
 
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:56
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
 msgid "Basics"
-msgstr ""
+msgstr "Basisgegevens"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:21
 msgid "Basics"
-msgstr ""
+msgstr "Basisgegevens"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:196
 msgid "Border"
-msgstr ""
+msgstr "Rand"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:129
 msgid "Border Radius"
-msgstr ""
+msgstr "Grensradius"
 
 #: apps/client/src/pages/public/page.tsx:91
 msgid "Built with"
-msgstr ""
+msgstr "Gebouwd met"
 
 #: apps/client/src/components/copyright.tsx:27
 #: apps/client/src/pages/home/sections/contributors/index.tsx:20
 msgid "By the community, for the community."
-msgstr ""
+msgstr "Door de gemeenschap, voor de gemeenschap."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:122
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:155
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:135
 msgid "Cancel"
-msgstr ""
+msgstr "Annuleren"
 
 #: apps/client/src/components/ai-actions.tsx:103
 #: apps/client/src/components/ai-actions.tsx:106
 msgid "Casual"
-msgstr ""
+msgstr "Gewoontjes"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:98
 msgid "Center Artboard"
-msgstr ""
+msgstr "Centrum tekengebied"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:121
 msgid "Change Password"
-msgstr ""
+msgstr "Verander Wachtwoord"
 
 #: apps/client/src/components/ai-actions.tsx:97
 msgid "Change Tone"
-msgstr ""
+msgstr "Wijzig Toon"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
 msgid "Changed your mind about the name? Give it a new one."
-msgstr ""
+msgstr "Ben je van gedachten veranderd over de naam? Geef het een nieuwe."
 
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:69
 msgid "Check your email for the confirmation link to update your email address."
-msgstr ""
+msgstr "Controleer uw e-mail voor de bevestigingslink om uw e-mailadres bij te werken."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:149
 msgid "Circle"
