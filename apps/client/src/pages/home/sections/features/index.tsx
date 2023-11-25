@@ -25,7 +25,7 @@ import {
   TextAa,
   Translate,
 } from "@phosphor-icons/react";
-import { cn, templatesList } from "@reactive-resume/utils";
+import { cn, languages, templatesList } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
 
 type Feature = {
@@ -39,6 +39,7 @@ const featureLabel = cn(
 );
 
 export const FeaturesSection = () => {
+  const languagesCount = languages.length;
   const templatesCount = templatesList.length;
 
   const features: Feature[] = [
@@ -47,7 +48,7 @@ export const FeaturesSection = () => {
     { icon: <Scales />, title: t`MIT License` },
     { icon: <Prohibit />, title: t`No user tracking or advertising` },
     { icon: <Cloud />, title: t`Self-host with Docker` },
-    { icon: <Translate />, title: t`Available in 20+ languages` },
+    { icon: <Translate />, title: t`Available in ${languagesCount} languages` },
     { icon: <Brain />, title: t`OpenAI Integration` },
     { icon: <GithubLogo />, title: t`Sign in with GitHub` },
     { icon: <GoogleLogo />, title: t`Sign in with Google` },
