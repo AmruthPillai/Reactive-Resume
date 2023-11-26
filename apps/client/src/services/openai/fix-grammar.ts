@@ -15,8 +15,8 @@ Revised Text: """`;
 export const fixGrammar = async (text: string) => {
   const prompt = PROMPT.replace("{input}", text);
 
-  const result = await openai().completions.create({
-    prompt,
+  const result = await openai().chat.completions.create({
+    messages: [{ role: "user", content: prompt }],
     model: "gpt-3.5-turbo",
     max_tokens: 1024,
     temperature: 0,
@@ -28,5 +28,5 @@ export const fixGrammar = async (text: string) => {
     throw new Error(t`OpenAI did not return any choices for your text.`);
   }
 
-  return result.choices[0].text;
+  return result.choices[0].message.content ?? text;
 };
