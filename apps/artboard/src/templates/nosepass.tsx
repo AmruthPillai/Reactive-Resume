@@ -31,7 +31,6 @@ const Header = () => {
   return (
     <div className="grid grid-cols-4 gap-x-6">
       <div className="mt-1 space-y-2 text-right">
-        <p className="font-medium text-primary">Personal Information</p>
         <Picture className="ml-auto" />
       </div>
 
@@ -504,9 +503,9 @@ export const Nosepass = ({ columns, isFirstPage = false }: TemplateProps) => {
   const [main, sidebar] = columns;
 
   return (
-    <div className="space-y-4">
+    <div className="p-custom space-y-6">
       <div className="flex items-center justify-between">
-        <img alt="Europass Logo" className="h-[48px]" src="https://i.imgur.com/eRK005p.png" />
+        <img alt="Europass Logo" className="h-[42px]" src="https://i.imgur.com/eRK005p.png" />
 
         <p className="font-medium text-primary">Curriculum Vitae</p>
 

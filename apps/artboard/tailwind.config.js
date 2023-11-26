@@ -22,6 +22,7 @@ module.exports = {
         relaxed: "calc(var(--line-height) + 0.3)",
         loose: "calc(var(--line-height) + 0.5)",
       },
+      spacing: { custom: "var(--margin)" },
     },
   },
   plugins: [require("@tailwindcss/typography")],
