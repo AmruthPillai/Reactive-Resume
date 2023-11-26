@@ -22,7 +22,7 @@ msgstr ""
 msgid "You have enabled two-factor authentication successfully."
 msgstr "Du har aktiveret to-faktor godkendelse."
 
-#: apps/client/src/pages/home/sections/features/index.tsx:56
+#: apps/client/src/pages/home/sections/features/index.tsx:57
 msgid "{templatesCount} resume templates to choose from"
 msgstr "{templatesCount} CV skabeloner at vælge imellem"
 
@@ -133,7 +133,7 @@ msgstr "Har du allerede en bruger?"
 msgid "An error occurred while validating the file."
 msgstr "Der opstod en fejl under validering af filen."
 
-#: apps/client/src/pages/home/sections/features/index.tsx:134
+#: apps/client/src/pages/home/sections/features/index.tsx:135
 msgid "and many more..."
 msgstr "og mange flere..."
 
@@ -183,9 +183,9 @@ msgstr "Studieområde"
 msgid "Aspect Ratio"
 msgstr "Billedeformat"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:50
-msgid "Available in 20+ languages"
-msgstr "Tilgængelig på mere end 20 sprog"
+#: apps/client/src/pages/home/sections/features/index.tsx:51
+msgid "Available in {languagesCount} languages"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:53
 msgid "Awarder"
@@ -347,7 +347,7 @@ msgstr "Opret en nu"
 msgid "Create Sample Resume"
 msgstr "Opret eksempel på CV"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:61
+#: apps/client/src/pages/home/sections/features/index.tsx:62
 msgid "Custom resume sections"
 msgstr "Brugerdefinerede CV-sektioner"
 
@@ -355,11 +355,11 @@ msgstr "Brugerdefinerede CV-sektioner"
 msgid "Custom Section"
 msgstr "Brugerdefineret sektion"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:59
+#: apps/client/src/pages/home/sections/features/index.tsx:60
 msgid "Customisable colour palettes"
 msgstr "Brugerdefinerbare farvepaletter"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:60
+#: apps/client/src/pages/home/sections/features/index.tsx:61
 msgid "Customisable layouts"
 msgstr "Brugerdefinerbare layouts"
 
@@ -367,7 +367,7 @@ msgstr "Brugerdefinerbare layouts"
 msgid "Danger Zone"
 msgstr "Farezone"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:83
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:82
 msgid "Dark"
 msgstr "Mørk"
 
@@ -403,7 +403,7 @@ msgstr "Slet Konto"
 msgid "Description"
 msgstr "Beskriveslse"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:57
+#: apps/client/src/pages/home/sections/features/index.tsx:58
 msgid "Design single/multi page resumes"
 msgstr "Design af enkelt- og flersidede CV'er"
 
@@ -417,7 +417,7 @@ msgstr "Deaktivér 2FA"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:302
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:141
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:128
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
 msgid "Discard"
 msgstr "Kassér"
@@ -434,7 +434,7 @@ msgstr "Har du ikke en konto?"
 msgid "Don't know where to begin? Hit the docs!"
 msgstr "Ved du ikke, hvor du skal begynde? Tryk på dokumenterne!"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:114
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:101
 msgid "Don't see your language? <0>Help translate the app.</0>"
 msgstr "Kan du ikke se dit sprog? <0>Hjælp med at oversætte appen.</0>"
 
@@ -589,7 +589,7 @@ msgstr "Format"
 msgid "Found a bug, or have an idea for a new feature?"
 msgstr "Har du fundet en fejl, eller har du en idé til en ny funktion?"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:45
+#: apps/client/src/pages/home/sections/features/index.tsx:46
 msgid "Free, forever"
 msgstr "Gratis for evigt"
 
@@ -647,7 +647,7 @@ msgstr "Overskrift"
 msgid "Here, you can update your account information such as your profile picture, name and username."
 msgstr "Her kan du opdatere dine kontooplysninger såsom dit profilbillede, navn og brugernavn."
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:63
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:62
 msgid "Here, you can update your profile to customize and personalize your experience."
 msgstr "Her kan du opdatere din profil for at tilpasse og personliggøre din oplevelse."
 
@@ -675,7 +675,7 @@ msgstr "Hold <0>Ctrl</0>nede for at vise din adgangskode midlertidigt."
 msgid "Horizontal"
 msgstr "Horisontal"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:66
+#: apps/client/src/pages/home/sections/features/index.tsx:67
 msgid "Host your resume publicly"
 msgstr "Gør dit CV offentligt tilgængeligt"
 
@@ -797,7 +797,7 @@ msgstr "Nøgleord"
 msgid "Label"
 msgstr "Label"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:96
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:95
 msgid "Language"
 msgstr "Sprog"
 
@@ -828,11 +828,11 @@ msgstr "Niveau"
 msgid "Licensed under <0>MIT</0>"
 msgstr "Licenseret under <0>MIT</0>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:82
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:81
 msgid "Light"
 msgstr "Lyst"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:68
+#: apps/client/src/pages/home/sections/features/index.tsx:69
 msgid "Light or dark theme"
 msgstr "Lyst eller mørkt tema"
 
@@ -863,7 +863,7 @@ msgstr "Beliggenhed"
 msgid "Lock"
 msgstr "Lås"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:63
+#: apps/client/src/pages/home/sections/features/index.tsx:64
 msgid "Lock a resume to prevent editing"
 msgstr "Lås et CV for at forhindre redigering"
 
@@ -884,7 +884,7 @@ msgstr "Har du mistet din enhed?"
 msgid "Main"
 msgstr "Hovedmenu"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:58
+#: apps/client/src/pages/home/sections/features/index.tsx:59
 msgid "Manage multiple resumes"
 msgstr "Administrer flere CV'er"
 
@@ -906,7 +906,7 @@ msgstr "Marts 2023 - nutid"
 msgid "Margin"
 msgstr "Margen"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:47
+#: apps/client/src/pages/home/sections/features/index.tsx:48
 msgid "MIT License"
 msgstr "MIT-licens"
 
@@ -936,11 +936,11 @@ msgstr "Netværk"
 msgid "New Password"
 msgstr "Ny adgangskode"
 
-#: apps/client/src/components/locale-switch.tsx:43
+#: apps/client/src/components/locale-combobox.tsx:39
 msgid "No results found"
 msgstr "Ingen resultater fundet"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:48
+#: apps/client/src/pages/home/sections/features/index.tsx:49
 msgid "No user tracking or advertising"
 msgstr "Ingen sporing af brugere eller reklamer"
 
@@ -970,7 +970,7 @@ msgstr "Ups, serveren returnerede en fejl."
 msgid "Open"
 msgstr "Åben"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:46
+#: apps/client/src/pages/home/sections/features/index.tsx:47
 msgid "Open Source"
 msgstr "Åben kilde"
 
@@ -981,7 +981,7 @@ msgid "OpenAI did not return any choices for your text."
 msgstr "OpenAI returnerede ikke nogen valgmuligheder for din tekst."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:52
-#: apps/client/src/pages/home/sections/features/index.tsx:51
+#: apps/client/src/pages/home/sections/features/index.tsx:52
 msgid "OpenAI Integration"
 msgstr "OpenAI-integration"
 
@@ -1019,7 +1019,7 @@ msgstr "Adgangskode"
 msgid "PDF"
 msgstr "PDF"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:62
+#: apps/client/src/pages/home/sections/features/index.tsx:63
 msgid "Personal notes for each resume"
 msgstr "Personlige noter til hvert CV"
 
@@ -1031,7 +1031,7 @@ msgstr "Telefon"
 msgid "Photograph by Patrick Tomasso"
 msgstr "Foto af Patrick Tomasso"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:65
+#: apps/client/src/pages/home/sections/features/index.tsx:66
 msgid "Pick any font from Google Fonts"
 msgstr "Vælg en skrifttype fra Google Fonts"
 
@@ -1065,7 +1065,7 @@ msgstr "Stilling"
 msgid "Position"
 msgstr "Stilling"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:96
+#: apps/client/src/pages/home/sections/features/index.tsx:97
 msgid "Powered by"
 msgstr "Drevet af"
 
@@ -1082,7 +1082,7 @@ msgstr "Primær farve"
 msgid "Professional"
 msgstr "Professionel"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:61
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:60
 msgid "Profile"
 msgstr "Profil"
 
@@ -1124,7 +1124,7 @@ msgstr "Reactive Resume har hjulpet folk med at få job hos disse fantastiske vi
 msgid "Reactive Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Reactive Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
 msgstr "Reactive Resume er et gratis open-source projekt, som hovedsageligt er lavet af mig, og din støtte vil blive værdsat. Hvis du har lyst til at bidrage, og kun hvis du har råd til det, kan du overveje at give en donation via en af de nævnte platforme. Derudover er donationer til Reactive Resume gennem Open Collective skattefri, da projektet er finansielt hostet af Open Collective Europe."
 
-#: apps/client/src/pages/home/sections/features/index.tsx:107
+#: apps/client/src/pages/home/sections/features/index.tsx:108
 msgid "Reactive Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
 msgstr "Reactive Resume er et passionsprojekt med over 3 års hårdt arbejde, og med det følger en række gentagne ideer og funktioner, der er blevet bygget til (næsten) perfektion."
 
@@ -1183,7 +1183,7 @@ msgstr "Resumé"
 msgid "Resumes Generated"
 msgstr "Genererede CV'er"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:105
+#: apps/client/src/pages/home/sections/features/index.tsx:106
 msgid "Rich in features, not in pricing."
 msgstr "Rig på funktioner, ikke på priser."
 
@@ -1194,7 +1194,7 @@ msgstr "Afrundet"
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:159
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:138
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:125
 msgid "Save Changes"
 msgstr "Gem ændringer"
 
@@ -1219,11 +1219,11 @@ msgstr "Søg efter et skrifttypeundersæt"
 msgid "Search for a font variant"
 msgstr "Søg efter en skrifttypevariant"
 
-#: apps/client/src/components/locale-switch.tsx:42
+#: apps/client/src/components/locale-combobox.tsx:37
 msgid "Search for a language"
 msgstr "Søg efter et sprog"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:55
+#: apps/client/src/pages/home/sections/features/index.tsx:56
 msgid "Secure with two-factor authentication"
 msgstr "Sikker med to-faktor godkendelse"
 
@@ -1231,7 +1231,7 @@ msgstr "Sikker med to-faktor godkendelse"
 msgid "Security"
 msgstr "Sikkerhed"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:49
+#: apps/client/src/pages/home/sections/features/index.tsx:50
 msgid "Self-host with Docker"
 msgstr "Selv-host med Docker"
 
@@ -1290,15 +1290,15 @@ msgstr "Log på nu"
 msgid "Sign in to your account"
 msgstr "Log ind på din konto"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:54
+#: apps/client/src/pages/home/sections/features/index.tsx:55
 msgid "Sign in with Email"
 msgstr "Log ind med e-mail"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:52
+#: apps/client/src/pages/home/sections/features/index.tsx:53
 msgid "Sign in with GitHub"
 msgstr "Log ind med GitHub"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:53
+#: apps/client/src/pages/home/sections/features/index.tsx:54
 msgid "Sign in with Google"
 msgstr "Log på med Google"
 
@@ -1381,11 +1381,11 @@ msgstr "Støt appen ved at donere, hvad du kan!"
 msgid "Supporting Reactive Resume"
 msgstr "Støtter Reactive Resume"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:64
+#: apps/client/src/pages/home/sections/features/index.tsx:65
 msgid "Supports A4/Letter page formats"
 msgstr "Understøtter A4/Brev-sideformater"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:81
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:80
 msgid "System"
 msgstr "System"
 
@@ -1420,7 +1420,7 @@ msgstr "Det CV, du vil opdatere, er låst. Lås op, hvis du vil foretage ændrin
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:71
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:20
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:74
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:73
 msgid "Theme"
 msgstr "Tema"
 
@@ -1469,7 +1469,7 @@ msgstr "Slå Sideskift Til"
 msgid "Toggle Page Numbers"
 msgstr "Slå Sidenumre Til"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:67
+#: apps/client/src/pages/home/sections/features/index.tsx:68
 msgid "Track views and downloads"
 msgstr "Spor visninger og downloads"
 
@@ -1681,4 +1681,3 @@ msgstr "Zoom ind"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:86
 msgid "Zoom Out"
 msgstr "Zoom ud"
-

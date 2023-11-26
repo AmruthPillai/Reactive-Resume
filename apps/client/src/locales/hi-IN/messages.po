@@ -22,7 +22,7 @@ msgstr ""
 msgid "You have enabled two-factor authentication successfully."
 msgstr "आपने दो-कारक प्रमाणीकरण सफलतापूर्वक सक्षम कर लिया है।"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:56
+#: apps/client/src/pages/home/sections/features/index.tsx:57
 msgid "{templatesCount} resume templates to choose from"
 msgstr "चुनने के लिए {templatesCount} बायोडाटा टेम्प्लेट"
 
@@ -133,7 +133,7 @@ msgstr "क्या आपके पास पहले से एक खात
 msgid "An error occurred while validating the file."
 msgstr "फ़ाइल बनाते समय कोई त्रुटि आई"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:134
+#: apps/client/src/pages/home/sections/features/index.tsx:135
 msgid "and many more..."
 msgstr "और भी कई..."
 
@@ -183,9 +183,9 @@ msgstr "अध्ययन का क्षेत्र"
 msgid "Aspect Ratio"
 msgstr "आकार अनुपात"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:50
-msgid "Available in 20+ languages"
-msgstr "20+ भाषाओं में उपलब्ध है"
+#: apps/client/src/pages/home/sections/features/index.tsx:51
+msgid "Available in {languagesCount} languages"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:53
 msgid "Awarder"
@@ -347,7 +347,7 @@ msgstr "अभी एक बनाएं"
 msgid "Create Sample Resume"
 msgstr "नमूना बायोडाटा बनाएं"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:61
+#: apps/client/src/pages/home/sections/features/index.tsx:62
 msgid "Custom resume sections"
 msgstr "कस्टम बायोडाटा अनुभाग"
 
@@ -355,11 +355,11 @@ msgstr "कस्टम बायोडाटा अनुभाग"
 msgid "Custom Section"
 msgstr "कस्टम अनुभाग"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:59
+#: apps/client/src/pages/home/sections/features/index.tsx:60
 msgid "Customisable colour palettes"
 msgstr "अनुकूलन योग्य रंग पट्टियाँ"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:60
+#: apps/client/src/pages/home/sections/features/index.tsx:61
 msgid "Customisable layouts"
 msgstr "अनुकूलन योग्य लेआउट"
 
@@ -367,7 +367,7 @@ msgstr "अनुकूलन योग्य लेआउट"
 msgid "Danger Zone"
 msgstr "खतरनाक क्षेत्र"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:83
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:82
 msgid "Dark"
 msgstr "गहरी"
 
@@ -403,7 +403,7 @@ msgstr "खाता हटाएँ|"
 msgid "Description"
 msgstr "विवरण"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:57
+#: apps/client/src/pages/home/sections/features/index.tsx:58
 msgid "Design single/multi page resumes"
 msgstr "सिंगल/मल्टी पेज बायोडाटा डिज़ाइन करें"
 
@@ -417,7 +417,7 @@ msgstr "2FA निलम्बित करें"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:302
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:141
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:128
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
 msgid "Discard"
 msgstr "रद्द करें"
@@ -434,7 +434,7 @@ msgstr "आपका खाता नहीं है?"
 msgid "Don't know where to begin? Hit the docs!"
 msgstr "पता नहीं कहाँ से शुरू करें? दस्तावेज़ पढ़ें"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:114
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:101
 msgid "Don't see your language? <0>Help translate the app.</0>"
 msgstr "अपनी भाषा नहीं देखते? <0>ऐप का अनुवाद करने में सहायता करें।</0>"
 
@@ -589,7 +589,7 @@ msgstr "फॉर्मेट"
 msgid "Found a bug, or have an idea for a new feature?"
 msgstr "कोई बग मिला, या किसी नई सुविधा के बारे में कोई विचार है?"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:45
+#: apps/client/src/pages/home/sections/features/index.tsx:46
 msgid "Free, forever"
 msgstr "हमेशा के लिए मुफ़्त"
 
@@ -647,7 +647,7 @@ msgstr "शीर्षक"
 msgid "Here, you can update your account information such as your profile picture, name and username."
 msgstr "यहां, आप अपने खाते की जानकारी जैसे अपनी प्रोफ़ाइल तस्वीर, नाम और उपयोगकर्ता नाम अपडेट कर सकते हैं।"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:63
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:62
 msgid "Here, you can update your profile to customize and personalize your experience."
 msgstr "यहां, आप अपने अनुभव को अनुकूलित और वैयक्तिकृत करने के लिए अपनी प्रोफ़ाइल को अपडेट कर सकते हैं।"
 
@@ -675,7 +675,7 @@ msgstr "<0>Ctrl दबाए रखें</0> अपना पासवर्ड
 msgid "Horizontal"
 msgstr "क्षैतिज"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:66
+#: apps/client/src/pages/home/sections/features/index.tsx:67
 msgid "Host your resume publicly"
 msgstr "अपना बायोडाटा सार्वजनिक रूप से होस्ट करें"
 
@@ -797,7 +797,7 @@ msgstr "खोजशब्द:"
 msgid "Label"
 msgstr "लेबल"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:96
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:95
 msgid "Language"
 msgstr "भाषा"
 
@@ -828,11 +828,11 @@ msgstr "स्तर"
 msgid "Licensed under <0>MIT</0>"
 msgstr "<0>एमआईटी के तहत लाइसेंस प्राप्त</0>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:82
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:81
 msgid "Light"
 msgstr "हल्का रंग"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:68
+#: apps/client/src/pages/home/sections/features/index.tsx:69
 msgid "Light or dark theme"
 msgstr "प्रकाश या अंधेरा थीम"
 
@@ -863,7 +863,7 @@ msgstr "स्थान"
 msgid "Lock"
 msgstr "लॉक करें"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:63
+#: apps/client/src/pages/home/sections/features/index.tsx:64
 msgid "Lock a resume to prevent editing"
 msgstr "संपादन को रोकने के लिए बायोडाटा को लॉक करें"
 
@@ -884,7 +884,7 @@ msgstr "क्या आपका उपकरण खो गया?"
 msgid "Main"
 msgstr "मुख्‍य"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:58
+#: apps/client/src/pages/home/sections/features/index.tsx:59
 msgid "Manage multiple resumes"
 msgstr "एकाधिक बायोडाटा प्रबंधित करें"
 
@@ -906,7 +906,7 @@ msgstr "मार्च 2023 - वर्तमान"
 msgid "Margin"
 msgstr "अंतर"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:47
+#: apps/client/src/pages/home/sections/features/index.tsx:48
 msgid "MIT License"
 msgstr "मआईटी लाईसन्स"
 
@@ -936,11 +936,11 @@ msgstr "नेटवर्क"
 msgid "New Password"
 msgstr "नया पासवर्ड"
 
-#: apps/client/src/components/locale-switch.tsx:43
+#: apps/client/src/components/locale-combobox.tsx:39
 msgid "No results found"
 msgstr "कोई परिणाम नहीं मिला"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:48
+#: apps/client/src/pages/home/sections/features/index.tsx:49
 msgid "No user tracking or advertising"
 msgstr "कोई उपयोगकर्ता ट्रैकिंग या विज्ञापन नहीं"
 
@@ -970,7 +970,7 @@ msgstr "ओह, सर्वर ने एक त्रुटि लौटा �
 msgid "Open"
 msgstr "खोलें"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:46
+#: apps/client/src/pages/home/sections/features/index.tsx:47
 msgid "Open Source"
 msgstr "खुला स्त्रोत"
 
@@ -981,7 +981,7 @@ msgid "OpenAI did not return any choices for your text."
 msgstr "OpenAI ने आपके टेक्स्ट के लिए कोई विकल्प नहीं लौटाया।"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:52
-#: apps/client/src/pages/home/sections/features/index.tsx:51
+#: apps/client/src/pages/home/sections/features/index.tsx:52
 msgid "OpenAI Integration"
 msgstr "OpenAI एकीकरण"
 
@@ -1019,7 +1019,7 @@ msgstr "पासवर्ड"
 msgid "PDF"
 msgstr "पीडीएफ"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:62
+#: apps/client/src/pages/home/sections/features/index.tsx:63
 msgid "Personal notes for each resume"
 msgstr "प्रत्येक बायोडाटा के लिए व्यक्तिगत नोट्स"
 
@@ -1031,7 +1031,7 @@ msgstr "फ़ोन"
 msgid "Photograph by Patrick Tomasso"
 msgstr "फ़ोटोग्राफ़ पैट्रिक टोमासो द्वारा"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:65
+#: apps/client/src/pages/home/sections/features/index.tsx:66
 msgid "Pick any font from Google Fonts"
 msgstr "Google फ़ॉन्ट्स से कोई भी फ़ॉन्ट चुनें"
 
@@ -1065,7 +1065,7 @@ msgstr "स्थान"
 msgid "Position"
 msgstr "स्थान"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:96
+#: apps/client/src/pages/home/sections/features/index.tsx:97
 msgid "Powered by"
 msgstr "द्वारा संचालित"
 
@@ -1082,7 +1082,7 @@ msgstr "प्राथमिक रंग"
 msgid "Professional"
 msgstr "प्रोफेशनल"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:61
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:60
 msgid "Profile"
 msgstr "प्रोफ़ाइल"
 
@@ -1124,7 +1124,7 @@ msgstr "रिएक्टिव रेज़्यूमे ने लोगो
 msgid "Reactive Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Reactive Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
 msgstr "रिएक्टिव रेज़्यूमे एक स्वतंत्र और ओपन-सोर्स प्रोजेक्ट है जिसे ज्यादातर मेरे द्वारा तैयार किया गया है, और आपके समर्थन की बहुत सराहना की जाएगी। यदि आप योगदान करने के इच्छुक हैं, और यदि आप इसे वहन कर सकते हैं, तो किसी भी सूचीबद्ध प्लेटफ़ॉर्म के माध्यम से दान करने पर विचार करें। इसके अतिरिक्त, ओपन कलेक्टिव के माध्यम से रिएक्टिव रेज़्यूमे में दान कर-मुक्त है, क्योंकि परियोजना को ओपन कलेक्टिव यूरोप द्वारा वित्तीय रूप से होस्ट किया गया है।"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:107
+#: apps/client/src/pages/home/sections/features/index.tsx:108
 msgid "Reactive Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
 msgstr "रिएक्टिव रेज़्युमे 3 वर्षों से अधिक की कड़ी मेहनत का एक जुनूनी प्रोजेक्ट है, और इसके साथ कई बार दोहराए गए विचार और विशेषताएं आती हैं जिन्हें (लगभग) पूर्णता के लिए बनाया गया है।"
 
@@ -1183,7 +1183,7 @@ msgstr "बायोडाटा"
 msgid "Resumes Generated"
 msgstr "बायोडाटा तैयार किया गया"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:105
+#: apps/client/src/pages/home/sections/features/index.tsx:106
 msgid "Rich in features, not in pricing."
 msgstr "सुविधाओं से भरपूर, कीमत से नहीं।"
 
@@ -1194,7 +1194,7 @@ msgstr "गोल"
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:159
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:138
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:125
 msgid "Save Changes"
 msgstr "परिवर्तन सेव करें"
 
@@ -1219,11 +1219,11 @@ msgstr "फ़ॉन्ट उपसमुच्चय खोजें"
 msgid "Search for a font variant"
 msgstr "फ़ॉन्ट प्रकार खोजें"
 
-#: apps/client/src/components/locale-switch.tsx:42
+#: apps/client/src/components/locale-combobox.tsx:37
 msgid "Search for a language"
 msgstr "एक भाषा के लिए खोज करे"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:55
+#: apps/client/src/pages/home/sections/features/index.tsx:56
 msgid "Secure with two-factor authentication"
 msgstr "दो-कारक प्रमाणीकरण के साथ सुरक्षित"
 
@@ -1231,7 +1231,7 @@ msgstr "दो-कारक प्रमाणीकरण के साथ स�
 msgid "Security"
 msgstr "सुरक्षा"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:49
+#: apps/client/src/pages/home/sections/features/index.tsx:50
 msgid "Self-host with Docker"
 msgstr "डॉकर के साथ स्व-मेज़बान"
 
@@ -1290,15 +1290,15 @@ msgstr "साइन इन करें"
 msgid "Sign in to your account"
 msgstr "अपने अकाउंट मे साइन इन करें."
 
-#: apps/client/src/pages/home/sections/features/index.tsx:54
+#: apps/client/src/pages/home/sections/features/index.tsx:55
 msgid "Sign in with Email"
 msgstr "ईमेल के साथ साइन इन करें"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:52
+#: apps/client/src/pages/home/sections/features/index.tsx:53
 msgid "Sign in with GitHub"
 msgstr "GitHub के साथ साइन इन करें!"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:53
+#: apps/client/src/pages/home/sections/features/index.tsx:54
 msgid "Sign in with Google"
 msgstr "गूगल से साइन इन करें"
 
@@ -1381,11 +1381,11 @@ msgstr "आप जो कर सकते हैं दान करके ऐ�
 msgid "Supporting Reactive Resume"
 msgstr "रिएक्टिव रेज़्यूमे समर्थन"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:64
+#: apps/client/src/pages/home/sections/features/index.tsx:65
 msgid "Supports A4/Letter page formats"
 msgstr "A4/लेटर पेज फॉर्मेट का समर्थन करता है"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:81
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:80
 msgid "System"
 msgstr "सिस्टम"
 
@@ -1420,7 +1420,7 @@ msgstr "आप जिस बायोडाटा को अपडेट कर�
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:71
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:20
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:74
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:73
 msgid "Theme"
 msgstr "थीम"
 
@@ -1469,7 +1469,7 @@ msgstr "पेज ब्रेक लाइन टॉगल करें"
 msgid "Toggle Page Numbers"
 msgstr "पेज नंबर टॉगल करें"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:67
+#: apps/client/src/pages/home/sections/features/index.tsx:68
 msgid "Track views and downloads"
 msgstr "दृश्य और डाउनलोड ट्रैक करें"
 
@@ -1681,4 +1681,3 @@ msgstr "ज़ूम इन"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:86
 msgid "Zoom Out"
 msgstr "ज़ूम आउट"
-
