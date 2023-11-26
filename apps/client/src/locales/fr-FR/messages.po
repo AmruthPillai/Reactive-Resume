@@ -125,7 +125,7 @@ msgstr "Ajouter une Nouvelle Page"
 msgid "AI"
 msgstr "IA"
 
-#: apps/client/src/pages/auth/register/page.tsx:71
+#: apps/client/src/pages/auth/register/page.tsx:74
 msgid "Already have an account?"
 msgstr "Vous avez déjà un compte ?"
 
@@ -323,8 +323,8 @@ msgstr "Copier dans le Presse-Papier"
 msgid "Create"
 msgstr "Créer"
 
-#: apps/client/src/pages/auth/register/page.tsx:64
-#: apps/client/src/pages/auth/register/page.tsx:69
+#: apps/client/src/pages/auth/register/page.tsx:67
+#: apps/client/src/pages/auth/register/page.tsx:72
 msgid "Create a new account"
 msgstr "Créer un nouveau compte"
 
@@ -485,7 +485,7 @@ msgstr ""
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:82
 #: apps/client/src/pages/auth/login/page.tsx:84
-#: apps/client/src/pages/auth/register/page.tsx:134
+#: apps/client/src/pages/auth/register/page.tsx:148
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:50
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:180
 msgid "Email"
@@ -666,7 +666,7 @@ msgid "Hide Icons"
 msgstr ""
 
 #: apps/client/src/pages/auth/login/page.tsx:104
-#: apps/client/src/pages/auth/register/page.tsx:160
+#: apps/client/src/pages/auth/register/page.tsx:174
 #: apps/client/src/pages/auth/reset-password/page.tsx:88
 msgid "Hold <0>Ctrl</0> to display your password temporarily."
 msgstr ""
@@ -766,17 +766,17 @@ msgstr ""
 msgid "It looks like your email address has already been verified."
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:95
+#: apps/client/src/pages/auth/register/page.tsx:109
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
 msgid "John Doe"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:116
+#: apps/client/src/pages/auth/register/page.tsx:130
 msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
 msgid "john.doe"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:137
+#: apps/client/src/pages/auth/register/page.tsx:151
 msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
 msgid "john.doe@example.com"
 msgstr ""
@@ -910,7 +910,7 @@ msgstr "Marge"
 msgid "MIT License"
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:92
+#: apps/client/src/pages/auth/register/page.tsx:106
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:53
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:40
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
@@ -936,7 +936,7 @@ msgstr ""
 msgid "New Password"
 msgstr ""
 
-#: apps/client/src/components/locale-combobox.tsx:39
+#: apps/client/src/components/locale-combobox.tsx:43
 msgid "No results found"
 msgstr ""
 
@@ -1009,7 +1009,7 @@ msgid "Page {0}"
 msgstr ""
 
 #: apps/client/src/pages/auth/login/page.tsx:99
-#: apps/client/src/pages/auth/register/page.tsx:155
+#: apps/client/src/pages/auth/register/page.tsx:169
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
 msgid "Password"
@@ -1102,7 +1102,7 @@ msgstr "Signaler un problème"
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/login/page.tsx:55
-#: apps/client/src/pages/auth/register/page.tsx:64
+#: apps/client/src/pages/auth/register/page.tsx:67
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
@@ -1219,7 +1219,7 @@ msgstr ""
 msgid "Search for a font variant"
 msgstr ""
 
-#: apps/client/src/components/locale-combobox.tsx:37
+#: apps/client/src/components/locale-combobox.tsx:41
 msgid "Search for a language"
 msgstr "Rechercher une langue"
 
@@ -1281,7 +1281,7 @@ msgstr ""
 msgid "Sign in"
 msgstr "Se connecter"
 
-#: apps/client/src/pages/auth/register/page.tsx:74
+#: apps/client/src/pages/auth/register/page.tsx:77
 msgid "Sign in now"
 msgstr "Se connecter maintenant"
 
@@ -1302,9 +1302,13 @@ msgstr "Se connecter avec GitHub"
 msgid "Sign in with Google"
 msgstr "Se connecter avec Google"
 
-#: apps/client/src/pages/auth/register/page.tsx:171
+#: apps/client/src/pages/auth/register/page.tsx:185
 msgid "Sign up"
 msgstr "S'inscrire"
+
+#: apps/client/src/pages/auth/register/page.tsx:85
+msgid "Signups are currently disabled by the administrator."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:72
 msgid "Size (in px)"
@@ -1553,7 +1557,7 @@ msgstr ""
 msgid "User does not have an associated 'secrets' record. Please report this issue on GitHub."
 msgstr ""
 
-#: apps/client/src/pages/auth/register/page.tsx:113
+#: apps/client/src/pages/auth/register/page.tsx:127
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:54
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
 msgid "Username"

@@ -125,7 +125,7 @@ msgstr "ಹೊಸ ಪುಟವನ್ನು ಸೇರಿಸಿ"
 msgid "AI"
 msgstr "AI"
 
-#: apps/client/src/pages/auth/register/page.tsx:71
+#: apps/client/src/pages/auth/register/page.tsx:74
 msgid "Already have an account?"
 msgstr "ಈಗಾಗಲೇ ಖಾತೆ ಹೊಂದಿದ್ದೀರ?"
 
@@ -323,8 +323,8 @@ msgstr "ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ನಕಲಿಸಿ"
 msgid "Create"
 msgstr "ರಚಿಸಿ"
 
-#: apps/client/src/pages/auth/register/page.tsx:64
-#: apps/client/src/pages/auth/register/page.tsx:69
+#: apps/client/src/pages/auth/register/page.tsx:67
+#: apps/client/src/pages/auth/register/page.tsx:72
 msgid "Create a new account"
 msgstr "ಹೊಸ ಖಾತೆಯನ್ನು ರಚಿಸಿ"
 
@@ -485,7 +485,7 @@ msgstr "ಪರಿಣಾಮಗಳು"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:82
 #: apps/client/src/pages/auth/login/page.tsx:84
-#: apps/client/src/pages/auth/register/page.tsx:134
+#: apps/client/src/pages/auth/register/page.tsx:148
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:50
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:180
 msgid "Email"
@@ -666,7 +666,7 @@ msgid "Hide Icons"
 msgstr "ಐಕಾನ್‌ಗಳನ್ನು ಮರೆಮಾಡಿ"
 
 #: apps/client/src/pages/auth/login/page.tsx:104
-#: apps/client/src/pages/auth/register/page.tsx:160
+#: apps/client/src/pages/auth/register/page.tsx:174
 #: apps/client/src/pages/auth/reset-password/page.tsx:88
 msgid "Hold <0>Ctrl</0> to display your password temporarily."
 msgstr "ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ತಾತ್ಕಾಲಿಕವಾಗಿ ಪ್ರದರ್ಶಿಸಲು <0>Ctrl</0> ಅನ್ನು ಹಿಡಿದುಕೊಳ್ಳಿ."
@@ -766,17 +766,17 @@ msgstr "ನೀವು ಒದಗಿಸಿದ ಮರುಹೊಂದಿಸುವ ಟ
 msgid "It looks like your email address has already been verified."
 msgstr "ನಿಮ್ಮ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ಈಗಾಗಲೇ ಪರಿಶೀಲಿಸಿರುವಂತೆ ತೋರುತ್ತಿದೆ."
 
-#: apps/client/src/pages/auth/register/page.tsx:95
+#: apps/client/src/pages/auth/register/page.tsx:109
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
 msgid "John Doe"
 msgstr "ಜಾನ್ ಡೋ"
 
-#: apps/client/src/pages/auth/register/page.tsx:116
+#: apps/client/src/pages/auth/register/page.tsx:130
 msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
 msgid "john.doe"
 msgstr "ಜಾನ್ ಡೋ"
 
-#: apps/client/src/pages/auth/register/page.tsx:137
+#: apps/client/src/pages/auth/register/page.tsx:151
 msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
 msgid "john.doe@example.com"
 msgstr "john.doe@example.com"
@@ -910,7 +910,7 @@ msgstr "ಅಂಚು"
 msgid "MIT License"
 msgstr "MIT ಪರವಾನಗಿ"
 
-#: apps/client/src/pages/auth/register/page.tsx:92
+#: apps/client/src/pages/auth/register/page.tsx:106
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:53
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:40
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
@@ -936,7 +936,7 @@ msgstr "ನೆಟ್ವರ್ಕ್"
 msgid "New Password"
 msgstr "ಹೊಸ ಪಾಸ್ವರ್ಡ್"
 
-#: apps/client/src/components/locale-combobox.tsx:39
+#: apps/client/src/components/locale-combobox.tsx:43
 msgid "No results found"
 msgstr "ಯಾವುದೇ ಫಲಿತಾಂಶಗಳು ಕಂಡುಬರಲಿಲ್ಲ"
 
@@ -1009,7 +1009,7 @@ msgid "Page {0}"
 msgstr "ಪುಟ {0}"
 
 #: apps/client/src/pages/auth/login/page.tsx:99
-#: apps/client/src/pages/auth/register/page.tsx:155
+#: apps/client/src/pages/auth/register/page.tsx:169
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
 msgid "Password"
@@ -1102,7 +1102,7 @@ msgstr "ಒಂದು ಸಮಸ್ಯೆಯನ್ನು ಎತ್ತಿಕೊಳ�
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/login/page.tsx:55
-#: apps/client/src/pages/auth/register/page.tsx:64
+#: apps/client/src/pages/auth/register/page.tsx:67
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
@@ -1219,7 +1219,7 @@ msgstr "ಫಾಂಟ್ ಉಪವಿಭಾಗಕ್ಕಾಗಿ ಹುಡುಕ�
 msgid "Search for a font variant"
 msgstr "ಫಾಂಟ್ ಉಪವಿಭಾಗಕ್ಕಾಗಿ ಹುಡುಕಿ"
 
-#: apps/client/src/components/locale-combobox.tsx:37
+#: apps/client/src/components/locale-combobox.tsx:41
 msgid "Search for a language"
 msgstr "ಭಾಷೆಗಾಗಿ ಹುಡುಕಿ"
 
@@ -1281,7 +1281,7 @@ msgstr "ಪಾರ್ಶ್ವಪಟ್ಟಿ"
 msgid "Sign in"
 msgstr "ಸೈನ್ ಇನ್ ಮಾಡಿ"
 
-#: apps/client/src/pages/auth/register/page.tsx:74
+#: apps/client/src/pages/auth/register/page.tsx:77
 msgid "Sign in now"
 msgstr "ಈಗ ಸೈನ್ ಇನ್ ಮಾಡಿ"
 
@@ -1302,9 +1302,13 @@ msgstr "GitHub ನೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ"
 msgid "Sign in with Google"
 msgstr "Google ನೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ"
 
-#: apps/client/src/pages/auth/register/page.tsx:171
+#: apps/client/src/pages/auth/register/page.tsx:185
 msgid "Sign up"
 msgstr "ಖಾತೇ ರಚಿಸಿ"
+
+#: apps/client/src/pages/auth/register/page.tsx:85
+msgid "Signups are currently disabled by the administrator."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:72
 msgid "Size (in px)"
@@ -1553,7 +1557,7 @@ msgstr "ನಿಮ್ಮ ಬ್ಯಾಕಪ್ ಕೋಡ್ ಬಳಸಿ"
 msgid "User does not have an associated 'secrets' record. Please report this issue on GitHub."
 msgstr "ಬಳಕೆದಾರರು ಸಂಬಂಧಿತ 'ರಹಸ್ಯ' ದಾಖಲೆಯನ್ನು ಹೊಂದಿಲ್ಲ. ದಯವಿಟ್ಟು ಈ ಸಮಸ್ಯೆಯನ್ನು GitHub ನಲ್ಲಿ ವರದಿ ಮಾಡಿ."
 
-#: apps/client/src/pages/auth/register/page.tsx:113
+#: apps/client/src/pages/auth/register/page.tsx:127
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:54
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
 msgid "Username"
