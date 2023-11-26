@@ -29,16 +29,16 @@ const Header = () => {
   const basics = useArtboardStore((state) => state.resume.basics);
 
   return (
-    <div className="relative z-20 grid grid-cols-3 space-x-4">
-      <div className="mx-auto">
-        <Picture />
-      </div>
+    <div className="p-custom relative grid grid-cols-3 space-x-4 pb-0">
+      <Picture className="mx-auto" />
 
-      <div className="col-span-2 space-y-0.5 text-background">
-        <h2 className="min-h-[30px] text-4xl font-bold">{basics.name}</h2>
-        <p className="min-h-[24px]">{basics.headline}</p>
+      <div className="relative z-10 col-span-2 text-background">
+        <div className="space-y-0.5">
+          <h2 className="text-3xl font-bold">{basics.name}</h2>
+          <p>{basics.headline}</p>
+        </div>
 
-        <div className="text-text !mt-10">
+        <div className="text-text col-span-2 col-start-2 mt-10">
           <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-sm">
             {basics.location && (
               <>
@@ -524,19 +524,22 @@ export const Ditto = ({ columns, isFirstPage = false }: TemplateProps) => {
   const [main, sidebar] = columns;
 
   return (
-    <div className="space-y-4">
-      {isFirstPage && <div className="absolute inset-x-0 top-0 z-10 h-32 bg-primary" />}
+    <div>
+      {isFirstPage && (
+        <div className="relative">
+          <Header />
+          <div className="absolute inset-x-0 top-0 h-[85px] w-full bg-primary" />
+        </div>
+      )}
 
-      {isFirstPage && <Header />}
-
-      <div className="grid grid-cols-3 space-x-4">
-        <div className="sidebar group space-y-4">
+      <div className="grid grid-cols-3">
+        <div className="sidebar p-custom group space-y-4">
           {sidebar.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}
         </div>
 
-        <div className="main group col-span-2 space-y-4">
+        <div className="main p-custom group col-span-2 space-y-4">
           {main.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}

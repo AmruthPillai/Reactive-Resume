@@ -7,7 +7,6 @@ import {
   Experience,
   Interest,
   Language,
-  Profile,
   Project,
   Publication,
   Reference,
@@ -17,7 +16,7 @@ import {
   URL,
   Volunteer,
 } from "@reactive-resume/schema";
-import { cn, isEmptyString, isUrl, linearTransform } from "@reactive-resume/utils";
+import { cn, hexToRgb, isEmptyString, isUrl } from "@reactive-resume/utils";
 import get from "lodash.get";
 import React, { Fragment } from "react";
 
@@ -27,90 +26,105 @@ import { TemplateProps } from "../types/template";
 
 const Header = () => {
   const basics = useArtboardStore((state) => state.resume.basics);
+  const section = useArtboardStore((state) => state.resume.sections.summary);
+  const profiles = useArtboardStore((state) => state.resume.sections.profiles);
+  const primaryColor = useArtboardStore((state) => state.resume.metadata.theme.primary);
+  const fontSize = useArtboardStore((state) => state.resume.metadata.typography.font.size);
 
   return (
-    <div className="flex flex-col items-center justify-center space-y-2 pb-2 text-center">
-      <Picture />
+    <div>
+      <div
+        className="p-custom flex items-center space-x-8"
+        style={{ backgroundColor: hexToRgb(primaryColor, 0.2) }}
+      >
+        <div className="space-y-3">
+          <div>
+            <div className="text-3xl font-bold">{basics.name}</div>
+            <div className="text-base font-medium text-primary">{basics.headline}</div>
+          </div>
 
-      <div>
-        <div className="text-2xl font-bold">{basics.name}</div>
-        <div className="text-base">{basics.headline}</div>
+          <div
+            className="wysiwyg"
+            style={{ columns: section.columns }}
+            dangerouslySetInnerHTML={{ __html: section.content }}
+          />
+        </div>
+
+        <Picture />
       </div>
 
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5 text-sm">
-        {basics.location && (
-          <div className="flex items-center gap-x-1.5">
-            <i className="ph ph-bold ph-map-pin text-primary" />
-            <div>{basics.location}</div>
+      <div className="p-custom space-y-3" style={{ backgroundColor: hexToRgb(primaryColor, 0.4) }}>
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5 text-sm">
+          {basics.location && (
+            <div className="flex items-center gap-x-1.5">
+              <i className="ph ph-bold ph-map-pin text-primary" />
+              <div>{basics.location}</div>
+            </div>
+          )}
+          {basics.phone && (
+            <div className="flex items-center gap-x-1.5">
+              <i className="ph ph-bold ph-phone text-primary" />
+              <a href={`tel:${basics.phone}`} target="_blank" rel="noreferrer">
+                {basics.phone}
+              </a>
+            </div>
+          )}
+          {basics.email && (
+            <div className="flex items-center gap-x-1.5">
+              <i className="ph ph-bold ph-at text-primary" />
+              <a href={`mailto:${basics.email}`} target="_blank" rel="noreferrer">
+                {basics.email}
+              </a>
+            </div>
+          )}
+          <Link url={basics.url} />
+          {basics.customFields.map((item) => (
+            <div key={item.id} className="flex items-center gap-x-1.5">
+              <i className={cn(`ph ph-bold ph-${item.icon}`, "text-primary")} />
+              <span>{[item.name, item.value].filter(Boolean).join(": ")}</span>
+            </div>
+          ))}
+        </div>
+
+        {profiles.visible && profiles.items.length > 0 && (
+          <div className="flex items-center gap-x-3 gap-y-0.5">
+            {profiles.items
+              .filter((item) => item.visible)
+              .map((item) => (
+                <div key={item.id} className="flex items-center gap-x-2">
+                  <Link
+                    url={item.url}
+                    label={item.username}
+                    className="text-sm"
+                    icon={
+                      <img
+                        className="ph"
+                        width={fontSize}
+                        height={fontSize}
+                        alt={item.network}
+                        src={`https://cdn.simpleicons.org/${item.icon}`}
+                      />
+                    }
+                  />
+                </div>
+              ))}
           </div>
         )}
-        {basics.phone && (
-          <div className="flex items-center gap-x-1.5">
-            <i className="ph ph-bold ph-phone text-primary" />
-            <a href={`tel:${basics.phone}`} target="_blank" rel="noreferrer">
-              {basics.phone}
-            </a>
-          </div>
-        )}
-        {basics.email && (
-          <div className="flex items-center gap-x-1.5">
-            <i className="ph ph-bold ph-at text-primary" />
-            <a href={`mailto:${basics.email}`} target="_blank" rel="noreferrer">
-              {basics.email}
-            </a>
-          </div>
-        )}
-        <Link url={basics.url} />
-        {basics.customFields.map((item) => (
-          <div key={item.id} className="flex items-center gap-x-1.5">
-            <i className={cn(`ph ph-bold ph-${item.icon}`, "text-primary")} />
-            <span>{[item.name, item.value].filter(Boolean).join(": ")}</span>
-          </div>
-        ))}
       </div>
     </div>
-  );
-};
-
-const Summary = () => {
-  const section = useArtboardStore((state) => state.resume.sections.summary);
-
-  if (!section.visible || isEmptyString(section.content)) return null;
-
-  return (
-    <section id={section.id}>
-      <div className="mb-2 hidden font-bold text-primary group-[.main]:block">
-        <h4>{section.name}</h4>
-      </div>
-
-      <div className="mb-2 hidden items-center gap-x-2 text-center font-bold text-primary group-[.sidebar]:flex">
-        <div className="h-1.5 w-1.5 rounded-full border border-primary" />
-        <h4>{section.name}</h4>
-        <div className="h-1.5 w-1.5 rounded-full border border-primary" />
-      </div>
-
-      <main className={cn("relative space-y-2", "border-l border-primary pl-4")}>
-        <div className="absolute left-[-4.5px] top-[8px] hidden h-[8px] w-[8px] rounded-full bg-primary group-[.main]:block" />
-
-        <div
-          className="wysiwyg"
-          style={{ columns: section.columns }}
-          dangerouslySetInnerHTML={{ __html: section.content }}
-        />
-      </main>
-    </section>
   );
 };
 
 type RatingProps = { level: number };
 
 const Rating = ({ level }: RatingProps) => (
-  <div className="relative h-1 w-[128px] group-[.sidebar]:mx-auto">
-    <div className="absolute inset-0 h-1 w-[128px] rounded bg-primary opacity-25" />
-    <div
-      className="absolute inset-0 h-1 rounded bg-primary"
-      style={{ width: linearTransform(level, 0, 5, 0, 128) }}
-    />
+  <div className="flex items-center gap-x-1.5">
+    {Array.from({ length: 5 }).map((_, index) => (
+      <div
+        key={index}
+        className={cn("h-3 w-6 border-2 border-primary", level > index && "bg-primary")}
+      />
+    ))}
   </div>
 );
 
@@ -162,18 +176,12 @@ const Section = <T,>({
 
   return (
     <section id={section.id} className="grid">
-      <div className="mb-2 hidden font-bold text-primary group-[.main]:block">
-        <h4>{section.name}</h4>
-      </div>
-
-      <div className="mx-auto mb-2 hidden items-center gap-x-2 text-center font-bold text-primary group-[.sidebar]:flex">
-        <div className="h-1.5 w-1.5 rounded-full border border-primary" />
-        <h4>{section.name}</h4>
-        <div className="h-1.5 w-1.5 rounded-full border border-primary" />
-      </div>
+      <h4 className="mb-2 border-b border-primary text-left font-bold text-primary">
+        {section.name}
+      </h4>
 
       <div
-        className="grid gap-x-6 gap-y-3 group-[.sidebar]:mx-auto group-[.sidebar]:text-center"
+        className="grid gap-x-6 gap-y-3"
         style={{ gridTemplateColumns: `repeat(${section.columns}, 1fr)` }}
       >
         {section.items
@@ -185,14 +193,7 @@ const Section = <T,>({
             const keywords = (keywordsKey && get(item, keywordsKey, [])) as string[] | undefined;
 
             return (
-              <div
-                key={item.id}
-                className={cn(
-                  "relative space-y-2",
-                  "border-primary group-[.main]:border-l group-[.main]:pl-4",
-                  className,
-                )}
-              >
+              <div key={item.id} className={cn("space-y-2", className)}>
                 <div>{children?.(item as T)}</div>
 
                 {summary !== undefined && !isEmptyString(summary) && (
@@ -206,45 +207,11 @@ const Section = <T,>({
                 )}
 
                 {url !== undefined && <Link url={url} />}
-
-                <div className="absolute left-[-4.5px] top-px hidden h-[8px] w-[8px] rounded-full bg-primary group-[.main]:block" />
               </div>
             );
           })}
       </div>
     </section>
-  );
-};
-
-const Profiles = () => {
-  const section = useArtboardStore((state) => state.resume.sections.profiles);
-  const fontSize = useArtboardStore((state) => state.resume.metadata.typography.font.size);
-
-  return (
-    <Section<Profile> section={section}>
-      {(item) => (
-        <div>
-          {isUrl(item.url.href) ? (
-            <Link
-              url={item.url}
-              label={item.username}
-              icon={
-                <img
-                  className="ph"
-                  width={fontSize}
-                  height={fontSize}
-                  alt={item.network}
-                  src={`https://cdn.simpleicons.org/${item.icon}`}
-                />
-              }
-            />
-          ) : (
-            <p>{item.username}</p>
-          )}
-          <p className="text-sm">{item.network}</p>
-        </div>
-      )}
-    </Section>
   );
 };
 
@@ -398,7 +365,6 @@ const Projects = () => {
           <div>
             <div className="font-bold">{item.name}</div>
             <div>{item.description}</div>
-
             <div className="font-bold">{item.date}</div>
           </div>
         </div>
@@ -437,9 +403,8 @@ const Custom = ({ id }: { id: string }) => {
           <div>
             <div className="font-bold">{item.name}</div>
             <div>{item.description}</div>
-
-            <div className="font-bold">{item.date}</div>
             <div>{item.location}</div>
+            <div className="font-bold">{item.date}</div>
           </div>
         </div>
       )}
@@ -449,10 +414,6 @@ const Custom = ({ id }: { id: string }) => {
 
 const mapSectionToComponent = (section: SectionKey) => {
   switch (section) {
-    case "profiles":
-      return <Profiles />;
-    case "summary":
-      return <Summary />;
     case "experience":
       return <Experience />;
     case "education":
@@ -482,22 +443,22 @@ const mapSectionToComponent = (section: SectionKey) => {
   }
 };
 
-export const Azurill = ({ columns, isFirstPage = false }: TemplateProps) => {
+export const Leafish = ({ columns, isFirstPage = false }: TemplateProps) => {
   const [main, sidebar] = columns;
 
   return (
-    <div className="p-custom space-y-3">
+    <div>
       {isFirstPage && <Header />}
 
-      <div className="grid grid-cols-3 gap-x-4">
-        <div className="sidebar group space-y-4">
-          {sidebar.map((section) => (
+      <div className="p-custom grid grid-cols-2 items-start space-x-6">
+        <div className="grid gap-y-4">
+          {main.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}
         </div>
 
-        <div className="main group col-span-2 space-y-4">
-          {main.map((section) => (
+        <div className="grid gap-y-4">
+          {sidebar.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}
         </div>

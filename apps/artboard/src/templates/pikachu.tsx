@@ -524,23 +524,21 @@ export const Pikachu = ({ columns, isFirstPage = false }: TemplateProps) => {
   const [main, sidebar] = columns;
 
   return (
-    <div className="space-y-4">
-      <div className="grid grid-cols-3 space-x-6">
-        <div className="sidebar group space-y-4">
-          {isFirstPage && <Picture className="w-full !max-w-none" />}
+    <div className="p-custom grid grid-cols-3 space-x-6">
+      <div className="sidebar group space-y-4">
+        {isFirstPage && <Picture className="w-full !max-w-none" />}
 
-          {sidebar.map((section) => (
-            <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
-          ))}
-        </div>
+        {sidebar.map((section) => (
+          <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
+        ))}
+      </div>
 
-        <div className="main group col-span-2 space-y-4">
-          {isFirstPage && <Header />}
+      <div className="main group col-span-2 space-y-4">
+        {isFirstPage && <Header />}
 
-          {main.map((section) => (
-            <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
-          ))}
-        </div>
+        {main.map((section) => (
+          <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
+        ))}
       </div>
     </div>
   );

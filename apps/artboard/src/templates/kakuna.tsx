@@ -452,7 +452,7 @@ export const Kakuna = ({ columns, isFirstPage = false }: TemplateProps) => {
   const [main, sidebar] = columns;
 
   return (
-    <div className="space-y-4">
+    <div className="p-custom space-y-4">
       {isFirstPage && <Header />}
 
       <div className="space-y-4">
