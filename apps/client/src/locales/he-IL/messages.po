@@ -22,7 +22,7 @@ msgstr ""
 msgid "You have enabled two-factor authentication successfully."
 msgstr "הפעלת אימות דו־שלבי בהצלחה."
 
-#: apps/client/src/pages/home/sections/features/index.tsx:56
+#: apps/client/src/pages/home/sections/features/index.tsx:57
 msgid "{templatesCount} resume templates to choose from"
 msgstr "{templatesCount} תבניות קורות חיים לבחירתך"
 
@@ -133,7 +133,7 @@ msgstr "כבר יש לך חשבון?"
 msgid "An error occurred while validating the file."
 msgstr "אירעה שגיאה בתיקוף הקובץ."
 
-#: apps/client/src/pages/home/sections/features/index.tsx:134
+#: apps/client/src/pages/home/sections/features/index.tsx:135
 msgid "and many more..."
 msgstr "ועוד שלל יכולות…"
 
@@ -183,9 +183,9 @@ msgstr "תחום לימודים"
 msgid "Aspect Ratio"
 msgstr "יחס גובה־רוחב"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:50
-msgid "Available in 20+ languages"
-msgstr "זמין בלמעלה מ־20 שפות"
+#: apps/client/src/pages/home/sections/features/index.tsx:51
+msgid "Available in {languagesCount} languages"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:53
 msgid "Awarder"
@@ -347,7 +347,7 @@ msgstr "יצירת אחד כזה עכשיו"
 msgid "Create Sample Resume"
 msgstr "יצירת קורות חיים לדוגמה"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:61
+#: apps/client/src/pages/home/sections/features/index.tsx:62
 msgid "Custom resume sections"
 msgstr "סעיפים משלך לקורות החיים"
 
@@ -355,11 +355,11 @@ msgstr "סעיפים משלך לקורות החיים"
 msgid "Custom Section"
 msgstr "סעיף מותאם אישית"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:59
+#: apps/client/src/pages/home/sections/features/index.tsx:60
 msgid "Customisable colour palettes"
 msgstr "ערכות צבעים מותאמות אישית"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:60
+#: apps/client/src/pages/home/sections/features/index.tsx:61
 msgid "Customisable layouts"
 msgstr "פריסות להתאמה אישית"
 
@@ -367,7 +367,7 @@ msgstr "פריסות להתאמה אישית"
 msgid "Danger Zone"
 msgstr "אזור הדמדומים"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:83
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:82
 msgid "Dark"
 msgstr "כהה"
 
@@ -403,7 +403,7 @@ msgstr "מחיקת חשבון"
 msgid "Description"
 msgstr "תיאור"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:57
+#: apps/client/src/pages/home/sections/features/index.tsx:58
 msgid "Design single/multi page resumes"
 msgstr "תכנון קורות חיים עם עמוד אחד/יותר"
 
@@ -417,7 +417,7 @@ msgstr "השבתת האימות הדו־שלבי"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:302
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:141
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:128
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
 msgid "Discard"
 msgstr "התעלמות"
@@ -434,7 +434,7 @@ msgstr "אין לך חשבון?"
 msgid "Don't know where to begin? Hit the docs!"
 msgstr "לא ברור לך מאיפה מתחילים? כדאי לבקר בתיעוד!"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:114
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:101
 msgid "Don't see your language? <0>Help translate the app.</0>"
 msgstr "השפה שלך לא מופיעה? <0>אפשר לסייע בתרגום היישום.</0>"
 
@@ -589,7 +589,7 @@ msgstr "תבנית"
 msgid "Found a bug, or have an idea for a new feature?"
 msgstr "מצאת תקלה או שיש לך רעיון ליכולת חדשה?"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:45
+#: apps/client/src/pages/home/sections/features/index.tsx:46
 msgid "Free, forever"
 msgstr "חינם, לעד"
 
@@ -647,7 +647,7 @@ msgstr "כותרת עליונה"
 msgid "Here, you can update your account information such as your profile picture, name and username."
 msgstr "כאן אפשר לעדכן את פרטי החשבון שלך כגון תמונת הפרופיל, השם ושם המשתמש."
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:63
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:62
 msgid "Here, you can update your profile to customize and personalize your experience."
 msgstr "כאן אפשר לעדכן את הפרופיל שלך כדי להתאים ולהפוך את החוויה שלך לאישית יותר."
 
@@ -675,7 +675,7 @@ msgstr "יש להחזיק את <0>Ctrl</0> כדי להציג את הסיסמה �
 msgid "Horizontal"
 msgstr "אופקי"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:66
+#: apps/client/src/pages/home/sections/features/index.tsx:67
 msgid "Host your resume publicly"
 msgstr "אחסון ציבורי של קורות החיים שלך"
 
@@ -797,7 +797,7 @@ msgstr "מילות מפתח"
 msgid "Label"
 msgstr "תווית"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:96
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:95
 msgid "Language"
 msgstr "שפה"
 
@@ -828,11 +828,11 @@ msgstr "רמה"
 msgid "Licensed under <0>MIT</0>"
 msgstr "כפוף לרישיון <0>MIT</0>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:82
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:81
 msgid "Light"
 msgstr "בהירה"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:68
+#: apps/client/src/pages/home/sections/features/index.tsx:69
 msgid "Light or dark theme"
 msgstr "ערכת עיצוב בהירה או כהה"
 
@@ -863,7 +863,7 @@ msgstr "מקום"
 msgid "Lock"
 msgstr "נעילה"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:63
+#: apps/client/src/pages/home/sections/features/index.tsx:64
 msgid "Lock a resume to prevent editing"
 msgstr "לנעול את קורות החיים כדי למנוע עריכה"
 
@@ -884,7 +884,7 @@ msgstr "איבדת את המכשיר שלך?"
 msgid "Main"
 msgstr "ראשי"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:58
+#: apps/client/src/pages/home/sections/features/index.tsx:59
 msgid "Manage multiple resumes"
 msgstr "ניהול מספר קורות חיים"
 
@@ -906,7 +906,7 @@ msgstr "מרץ 2023 - כרגע"
 msgid "Margin"
 msgstr "מרווח"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:47
+#: apps/client/src/pages/home/sections/features/index.tsx:48
 msgid "MIT License"
 msgstr "רישיון MIT"
 
@@ -936,11 +936,11 @@ msgstr "רשת"
 msgid "New Password"
 msgstr "סיסמה חדשה"
 
-#: apps/client/src/components/locale-switch.tsx:43
+#: apps/client/src/components/locale-combobox.tsx:39
 msgid "No results found"
 msgstr "לא נמצאו תוצאות"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:48
+#: apps/client/src/pages/home/sections/features/index.tsx:49
 msgid "No user tracking or advertising"
 msgstr "אין מעקב אחרי המשתמשים או פרסום"
 
@@ -970,7 +970,7 @@ msgstr "אופס, השרת החזיר שגיאה."
 msgid "Open"
 msgstr "פתיחה"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:46
+#: apps/client/src/pages/home/sections/features/index.tsx:47
 msgid "Open Source"
 msgstr "קוד פתוח"
 
@@ -981,7 +981,7 @@ msgid "OpenAI did not return any choices for your text."
 msgstr "OpenAI לא החזיר אפשרויות לטקסט שלך."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:52
-#: apps/client/src/pages/home/sections/features/index.tsx:51
+#: apps/client/src/pages/home/sections/features/index.tsx:52
 msgid "OpenAI Integration"
 msgstr "שילוב מול OpenAI"
 
@@ -1019,7 +1019,7 @@ msgstr "סיסמה"
 msgid "PDF"
 msgstr "PDF"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:62
+#: apps/client/src/pages/home/sections/features/index.tsx:63
 msgid "Personal notes for each resume"
 msgstr "הערות אישיות לכל קורות חיים"
 
@@ -1031,7 +1031,7 @@ msgstr "טלפון"
 msgid "Photograph by Patrick Tomasso"
 msgstr "תמונה מאת פטריק טומאסו"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:65
+#: apps/client/src/pages/home/sections/features/index.tsx:66
 msgid "Pick any font from Google Fonts"
 msgstr "אפשר לבחור כל גופן מבין הגופנים של Google"
 
@@ -1065,7 +1065,7 @@ msgstr "תפקיד"
 msgid "Position"
 msgstr "תפקיד"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:96
+#: apps/client/src/pages/home/sections/features/index.tsx:97
 msgid "Powered by"
 msgstr "מופעל על גבי"
 
@@ -1082,7 +1082,7 @@ msgstr "צבע עיקרי"
 msgid "Professional"
 msgstr "מקצועי"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:61
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:60
 msgid "Profile"
 msgstr "פרופיל"
 
@@ -1124,7 +1124,7 @@ msgstr "Reactive Resume סייע לאנשים להתקבל למשרות בחבר
 msgid "Reactive Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Reactive Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
 msgstr "Reactive Resume הוא מיזם חופשי בקוד פתוח שנוצר בעיקר על ידיי והתמיכה שלך תהיה מאוד מוערכת. אם שקלת לתרום ויש לך אפשרות כלכלית שכזאת, כדאי לשקול לתרום דרך אחת מהפלטפורמות שמופיעות כאן. בנוסף, התרומות ל־Reactive Resume דרך Open Collective מוכרות במס כיוון שהמיזם מתארח באופן פיסקאלי (משפטית) על ידי Open Collective אירופה."
 
-#: apps/client/src/pages/home/sections/features/index.tsx:107
+#: apps/client/src/pages/home/sections/features/index.tsx:108
 msgid "Reactive Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
 msgstr "Reactive Resume הוא מיזם שקם מתוך תשוקה כבר למעלה מ־3 שנות עבודה שבהן התגלגלו מגוון רעיונות ויכולות שנבנו באופן (כמעט) מושלם."
 
@@ -1183,7 +1183,7 @@ msgstr "מסמכי קורות חיים"
 msgid "Resumes Generated"
 msgstr "נוצרו מסמכי קורות חיים"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:105
+#: apps/client/src/pages/home/sections/features/index.tsx:106
 msgid "Rich in features, not in pricing."
 msgstr "עשיר ביכולות, לא בממון."
 
@@ -1194,7 +1194,7 @@ msgstr "מעוגל"
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:159
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:138
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:125
 msgid "Save Changes"
 msgstr "שמירת שינויים"
 
@@ -1219,11 +1219,11 @@ msgstr "חיפוש תת־קבוצת גופנים"
 msgid "Search for a font variant"
 msgstr "חיפוש הגוון גופן"
 
-#: apps/client/src/components/locale-switch.tsx:42
+#: apps/client/src/components/locale-combobox.tsx:37
 msgid "Search for a language"
 msgstr "חיפוש שפה"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:55
+#: apps/client/src/pages/home/sections/features/index.tsx:56
 msgid "Secure with two-factor authentication"
 msgstr "הגנה עם אימות דו־שלבי"
 
@@ -1231,7 +1231,7 @@ msgstr "הגנה עם אימות דו־שלבי"
 msgid "Security"
 msgstr "אבטחה"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:49
+#: apps/client/src/pages/home/sections/features/index.tsx:50
 msgid "Self-host with Docker"
 msgstr "אירוח עצמי עם Docker"
 
@@ -1290,15 +1290,15 @@ msgstr "כניסה כעת"
 msgid "Sign in to your account"
 msgstr "כניסה לחשבון שלך"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:54
+#: apps/client/src/pages/home/sections/features/index.tsx:55
 msgid "Sign in with Email"
 msgstr "כניסה עם דוא״ל"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:52
+#: apps/client/src/pages/home/sections/features/index.tsx:53
 msgid "Sign in with GitHub"
 msgstr "כניסה עם GitHub"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:53
+#: apps/client/src/pages/home/sections/features/index.tsx:54
 msgid "Sign in with Google"
 msgstr "כניסה עם Google"
 
@@ -1381,11 +1381,11 @@ msgstr "אפשר לתמוך ביישום על ידי תרומה בכל דרך ש
 msgid "Supporting Reactive Resume"
 msgstr "תמיכה ב־Reactive Resume"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:64
+#: apps/client/src/pages/home/sections/features/index.tsx:65
 msgid "Supports A4/Letter page formats"
 msgstr "תמיכה בגודלי הדפים A4/מכתב"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:81
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:80
 msgid "System"
 msgstr "מערכת"
 
@@ -1420,7 +1420,7 @@ msgstr "קורות החיים שברצונך לעדכן נעולים, נא לש�
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:71
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:20
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:74
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:73
 msgid "Theme"
 msgstr "ערכת עיצוב"
 
@@ -1469,7 +1469,7 @@ msgstr "החלפת מצב שורות מעבר עמוד"
 msgid "Toggle Page Numbers"
 msgstr "החלפת תצוגת מספרי עמודים"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:67
+#: apps/client/src/pages/home/sections/features/index.tsx:68
 msgid "Track views and downloads"
 msgstr "מעקב אחר צפיות והורדות"
 
@@ -1681,4 +1681,3 @@ msgstr "התקרבות"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:86
 msgid "Zoom Out"
 msgstr "התרחקות"
-
