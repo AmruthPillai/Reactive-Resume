@@ -108,7 +108,7 @@ export const SectionDialog = <T extends SectionItem>({
   if (isDelete) {
     return (
       <AlertDialog open={isOpen} onOpenChange={close}>
-        <AlertDialogContent className="z-[70]">
+        <AlertDialogContent className="z-50">
           <Form {...form}>
             <form>
               <AlertDialogHeader>
@@ -133,7 +133,7 @@ export const SectionDialog = <T extends SectionItem>({
 
   return (
     <Dialog open={isOpen} onOpenChange={close}>
-      <DialogContent className="z-[70]">
+      <DialogContent className="z-50">
         <Form {...form}>
           <form className="space-y-6" onSubmit={form.handleSubmit(onSubmit)}>
             <DialogHeader>
