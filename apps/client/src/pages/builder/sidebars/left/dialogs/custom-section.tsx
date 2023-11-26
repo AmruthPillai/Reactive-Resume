@@ -78,7 +78,7 @@ export const CustomSectionDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>{t`Date`}</FormLabel>
+              <FormLabel>{t`Date or Date Range`}</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
