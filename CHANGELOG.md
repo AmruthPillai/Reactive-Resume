@@ -17,3 +17,12 @@ From a **design** perspective, the motivation behind this is to ensure that Reac
 From a **self-hosting perspective**, it has never been simpler. Instead of running two separate services on your Docker (one for the client and one for the server) and struggling to establish communication between them, now you only need to pull a single image. Additionally, there are a few dependent services available on Docker (such as Postgres, Redis, Minio etc.) that you can also pull and have them all working together seamlessly.
 
 I'm excited for you to try out the app, as I've spent months building it to perfection. If you enjoy the experience of building your resume using the app, please consider supporting by [becoming a GitHub Sponsor](https://github.com/sponsors/AmruthPillai).
+
+
+### Breaking Changes in v4
+
+1. Old Date Time formats will need to be corrected from "YYYY-MM-DDT00:00:00.000Z" to "YYYY-MM-DD"
+1. The new Rich Text Editor breaks any markdown you might have in your CV such as links, images and formatting
+  
+[Here](https://github.com/AmruthPillai/Reactive-Resume/raw/main/rxresume_v4-upgrade.py) is a simple Python script that will convert a V3 JSON file to a V4 file. 
+It reformats date strings, converts Markdown links and images to HTML and saves your resume with the suffix _modified.json. You will still need to fix any bold, italic, underlined text manually. 
