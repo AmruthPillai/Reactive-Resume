@@ -6,11 +6,11 @@
 [![Crowdin](https://badges.crowdin.net/reactive-resume/localized.svg)](https://crowdin.com/project/reactive-resume)
 [![Discord](https://img.shields.io/discord/1173518977851473940?label=discord&link=https%3A%2F%2Fdiscord.gg%2FhzwkZbyvUW)](https://discord.gg/hzwkZbyvUW)
 
-# Reactive Resume
+# Reactive Resume V4
 
 A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume.
 
-### [Go to App](https://rxresu.me/) | [Docs](https://docs.rxresu.me/)
+### [Go to App](https://rxresu.me/) | [Docs](https://docs.rxresu.me/) | [V4 Change Log](https://github.com/AmruthPillai/Reactive-Resume/blob/main/CHANGELOG.md)
 
 ## Description
 
