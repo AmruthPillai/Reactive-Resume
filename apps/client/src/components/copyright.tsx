@@ -18,7 +18,7 @@ export const Copyright = ({ className }: Props) => (
         <a
           target="_blank"
           rel="noopener noreferrer nofollow"
-          href="https://github.com/AmruthPillai/Reactive-Resume/blob/main/LICENSE"
+          href="https://github.com/AmruthPillai/Reactive-Resume/blob/main/LICENSE.md"
         >
           MIT
         </a>
