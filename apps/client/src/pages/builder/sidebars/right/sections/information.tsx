@@ -37,7 +37,7 @@ const DonateCard = () => (
         target="_blank"
       >
         <HandHeart size={14} weight="bold" className="mr-2" />
-        <span>{t`Donate to Reactive Resume`}</span>
+        <span className="line-clamp-1">{t`Donate to Reactive Resume`}</span>
       </a>
     </CardFooter>
   </Card>
@@ -66,7 +66,7 @@ const IssuesCard = () => (
         target="_blank"
       >
         <GithubLogo size={14} weight="bold" className="mr-2" />
-        <span>{t`Raise an issue`}</span>
+        <span className="line-clamp-1">{t`Raise an issue`}</span>
       </a>
 
       <a
@@ -76,7 +76,7 @@ const IssuesCard = () => (
         target="_blank"
       >
         <EnvelopeSimpleOpen size={14} weight="bold" className="mr-2" />
-        <span>{t`Send me a message`}</span>
+        <span className="line-clamp-1">{t`Send me a message`}</span>
       </a>
     </CardFooter>
   </Card>
@@ -107,7 +107,7 @@ const DocumentationCard = () => (
         rel="noopener noreferrer nofollow"
       >
         <Book size={14} weight="bold" className="mr-2" />
-        <span>{t`Documentation`}</span>
+        <span className="line-clamp-1">{t`Documentation`}</span>
       </a>
     </CardFooter>
   </Card>

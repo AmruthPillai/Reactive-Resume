@@ -82,7 +82,7 @@ export const OpenAISettings = () => {
               <FormItem>
                 <FormLabel>{t`API Key`}</FormLabel>
                 <FormControl>
-                  <Input type="password" placeholder="sk-..." {...field} />
+                  <Input type="password" placeholder="sk-..." {...field} disabled={isEnabled} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

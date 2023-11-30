@@ -4,6 +4,8 @@ import { ArrowRight } from "@phosphor-icons/react";
 import { registerSchema } from "@reactive-resume/dto";
 import { usePasswordToggle } from "@reactive-resume/hooks";
 import {
+  Alert,
+  AlertTitle,
   Button,
   Form,
   FormControl,
@@ -29,6 +31,7 @@ type FormValues = z.infer<typeof registerSchema>;
 export const RegisterPage = () => {
   const navigate = useNavigate();
   const { register, loading } = useRegister();
+  const disableSignups = import.meta.env.VITE_DISABLE_SIGNUPS === "true";
 
   const { providers } = useAuthProviders();
   const emailAuthDisabled = !providers || !providers.includes("email");
@@ -77,7 +80,18 @@ export const RegisterPage = () => {
         </h6>
       </div>
 
-      <div className={cn(emailAuthDisabled && "hidden")}>
+      {disableSignups && (
+        <Alert variant="error">
+          <AlertTitle>{t`Signups are currently disabled by the administrator.`}</AlertTitle>
+        </Alert>
+      )}
+
+      <div
+        className={cn(
+          emailAuthDisabled && "hidden",
+          disableSignups && "pointer-events-none blur-sm",
+        )}
+      >
         <Form {...form}>
           <form
             ref={formRef}

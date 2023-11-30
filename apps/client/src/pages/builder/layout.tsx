@@ -41,8 +41,8 @@ export const BuilderLayout = () => {
         <PanelGroup direction="horizontal">
           <Panel
             minSizePixels={48}
-            maxSizePercentage={35}
-            defaultSizePercentage={28}
+            maxSizePercentage={45}
+            defaultSizePercentage={30}
             onResize={({ sizePercentage }) => leftSetSize(sizePercentage)}
             className={cn("z-10 bg-background", !leftHandle.isDragging && "transition-[flex]")}
           >
@@ -61,8 +61,8 @@ export const BuilderLayout = () => {
           />
           <Panel
             minSizePixels={48}
-            maxSizePercentage={35}
-            defaultSizePercentage={28}
+            maxSizePercentage={45}
+            defaultSizePercentage={30}
             onResize={({ sizePercentage }) => rightSetSize(sizePercentage)}
             className={cn("z-10 bg-background", !rightHandle.isDragging && "transition-[flex]")}
           >

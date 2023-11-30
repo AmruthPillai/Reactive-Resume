@@ -69,7 +69,7 @@ export const ExperienceDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>{t`Date`}</FormLabel>
+              <FormLabel>{t`Date or Date Range`}</FormLabel>
               <FormControl>
                 <Input {...field} placeholder={t`March 2023 - Present`} />
               </FormControl>

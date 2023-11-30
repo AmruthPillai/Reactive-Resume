@@ -1,3 +1,4 @@
+import { DotsSixVertical } from "@phosphor-icons/react";
 import { cn } from "@reactive-resume/utils";
 import * as PanelPrimitive from "react-resizable-panels";
 
@@ -27,6 +28,10 @@ export const PanelResizeHandle = ({
           isDragging && "bg-info opacity-100",
         )}
       />
+    </div>
+
+    <div className="pointer-events-none absolute inset-y-0 left-[-5px] z-50 flex items-center justify-center">
+      <DotsSixVertical size={14} opacity={0.75} />
     </div>
   </PanelPrimitive.PanelResizeHandle>
 );

@@ -23,7 +23,6 @@ export const Page = ({ mode = "preview", pageNumber, children }: Props) => {
       className={cn("relative bg-white", mode === "builder" && "shadow-2xl")}
       style={{
         fontFamily,
-        padding: page.margin,
         width: `${pageSizeMap[page.format].width * MM_TO_PX}px`,
         minHeight: `${pageSizeMap[page.format].height * MM_TO_PX}px`,
       }}

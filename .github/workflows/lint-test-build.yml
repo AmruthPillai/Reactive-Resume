@@ -2,7 +2,11 @@ name: Lint, Test and Build
 
 on:
   push:
+    branches:
+      - main
   pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:

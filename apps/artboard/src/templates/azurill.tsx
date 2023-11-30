@@ -486,7 +486,7 @@ export const Azurill = ({ columns, isFirstPage = false }: TemplateProps) => {
   const [main, sidebar] = columns;
 
   return (
-    <div className="space-y-3">
+    <div className="p-custom space-y-3">
       {isFirstPage && <Header />}
 
       <div className="grid grid-cols-3 gap-x-4">

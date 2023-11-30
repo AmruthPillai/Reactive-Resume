@@ -102,15 +102,16 @@ services:
       # CROWDIN_PROJECT_ID:
       # CROWDIN_PERSONAL_TOKEN:
 
-      # -- Email --
+      # -- Email (Optional) --
       # DISABLE_EMAIL_AUTH: true
+      # VITE_DISABLE_SIGNUPS: true
 
-      # -- GitHub --
+      # -- GitHub (Optional) --
       GITHUB_CLIENT_ID: github_client_id
       GITHUB_CLIENT_SECRET: github_client_secret
       GITHUB_CALLBACK_URL: http://localhost:3000/api/auth/github/callback
 
-      # -- Google --
+      # -- Google (Optional) --
       GOOGLE_CLIENT_ID: google_client_id
       GOOGLE_CLIENT_SECRET: google_client_secret
       GOOGLE_CALLBACK_URL: http://localhost:3000/api/auth/google/callback

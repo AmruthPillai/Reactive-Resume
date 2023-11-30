@@ -43,8 +43,6 @@ import { Button } from "./button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "./form";
 import { Input } from "./input";
 import { Popover, PopoverContent } from "./popover";
-import { ScrollArea } from "./scroll-area";
-import { Separator } from "./separator";
 import { Skeleton } from "./skeleton";
 import { Toggle } from "./toggle";
 import { Tooltip } from "./tooltip";
@@ -137,299 +135,283 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
   }, [editor]);
 
   return (
-    <div className="absolute inset-x-0 top-2 px-2">
-      <ScrollArea orientation="horizontal">
-        <div className="flex h-8 gap-1">
-          <Tooltip content="Bold">
-            <Toggle
-              size="sm"
-              pressed={editor.isActive("bold")}
-              disabled={!editor.can().chain().focus().toggleBold().run()}
-              onPressedChange={() => editor.chain().focus().toggleBold().run()}
-            >
-              <TextB />
-            </Toggle>
-          </Tooltip>
+    <div className="flex flex-wrap gap-0.5 border p-1">
+      <Tooltip content="Bold">
+        <Toggle
+          size="sm"
+          pressed={editor.isActive("bold")}
+          disabled={!editor.can().chain().focus().toggleBold().run()}
+          onPressedChange={() => editor.chain().focus().toggleBold().run()}
+        >
+          <TextB />
+        </Toggle>
+      </Tooltip>
 
-          <Tooltip content="Italic">
-            <Toggle
-              size="sm"
-              pressed={editor.isActive("italic")}
-              disabled={!editor.can().chain().focus().toggleItalic().run()}
-              onPressedChange={() => editor.chain().focus().toggleItalic().run()}
-            >
-              <TextItalic />
-            </Toggle>
-          </Tooltip>
+      <Tooltip content="Italic">
+        <Toggle
+          size="sm"
+          pressed={editor.isActive("italic")}
+          disabled={!editor.can().chain().focus().toggleItalic().run()}
+          onPressedChange={() => editor.chain().focus().toggleItalic().run()}
+        >
+          <TextItalic />
+        </Toggle>
+      </Tooltip>
 
-          <Tooltip content="Strikethrough">
-            <Toggle
-              size="sm"
-              pressed={editor.isActive("strike")}
-              disabled={!editor.can().chain().focus().toggleStrike().run()}
-              onPressedChange={() => editor.chain().focus().toggleStrike().run()}
-            >
-              <TextStrikethrough />
-            </Toggle>
-          </Tooltip>
+      <Tooltip content="Strikethrough">
+        <Toggle
+          size="sm"
+          pressed={editor.isActive("strike")}
+          disabled={!editor.can().chain().focus().toggleStrike().run()}
+          onPressedChange={() => editor.chain().focus().toggleStrike().run()}
+        >
+          <TextStrikethrough />
+        </Toggle>
+      </Tooltip>
 
-          <Tooltip content="Underline">
-            <Toggle
-              size="sm"
-              pressed={editor.isActive("underline")}
-              disabled={!editor.can().chain().focus().toggleUnderline().run()}
-              onPressedChange={() => editor.chain().focus().toggleUnderline().run()}
-            >
-              <TextAUnderline />
-            </Toggle>
-          </Tooltip>
+      <Tooltip content="Underline">
+        <Toggle
+          size="sm"
+          pressed={editor.isActive("underline")}
+          disabled={!editor.can().chain().focus().toggleUnderline().run()}
+          onPressedChange={() => editor.chain().focus().toggleUnderline().run()}
+        >
+          <TextAUnderline />
+        </Toggle>
+      </Tooltip>
 
-          <Tooltip content="Highlight">
-            <Toggle
-              size="sm"
-              pressed={editor.isActive("highlight")}
-              disabled={!editor.can().chain().focus().toggleHighlight().run()}
-              onPressedChange={() => editor.chain().focus().toggleHighlight().run()}
-            >
-              <HighlighterCircle />
-            </Toggle>
-          </Tooltip>
+      <Tooltip content="Highlight">
+        <Toggle
+          size="sm"
+          pressed={editor.isActive("highlight")}
+          disabled={!editor.can().chain().focus().toggleHighlight().run()}
+          onPressedChange={() => editor.chain().focus().toggleHighlight().run()}
+        >
+          <HighlighterCircle />
+        </Toggle>
+      </Tooltip>
 
-          <Tooltip content="Hyperlink">
-            <Button type="button" size="sm" variant="ghost" className="px-2" onClick={setLink}>
-              <LinkSimple />
+      <Tooltip content="Hyperlink">
+        <Button type="button" size="sm" variant="ghost" className="px-2" onClick={setLink}>
+          <LinkSimple />
+        </Button>
+      </Tooltip>
+
+      <Tooltip content="Inline Code">
+        <Toggle
+          size="sm"
+          pressed={editor.isActive("code")}
+          disabled={!editor.can().chain().focus().toggleCode().run()}
+          onPressedChange={() => editor.chain().focus().toggleCode().run()}
+        >
+          <Code />
+        </Toggle>
+      </Tooltip>
+
+      <Tooltip content="Code Block">
+        <Toggle
+          size="sm"
+          pressed={editor.isActive("codeBlock")}
+          disabled={!editor.can().chain().focus().toggleCodeBlock().run()}
+          onPressedChange={() => editor.chain().focus().toggleCodeBlock().run()}
+        >
+          <CodeBlock />
+        </Toggle>
+      </Tooltip>
+
+      <Tooltip content="Heading 1">
+        <Toggle
+          size="sm"
+          pressed={editor.isActive("heading", { level: 1 })}
+          disabled={!editor.can().chain().focus().toggleHeading({ level: 1 }).run()}
+          onPressedChange={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
+        >
+          <TextHOne />
+        </Toggle>
+      </Tooltip>
+
+      <Tooltip content="Heading 2">
+        <Toggle
+          size="sm"
+          pressed={editor.isActive("heading", { level: 2 })}
+          disabled={!editor.can().chain().focus().toggleHeading({ level: 2 }).run()}
+          onPressedChange={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
+        >
+          <TextHTwo />
+        </Toggle>
+      </Tooltip>
+
+      <Tooltip content="Heading 3">
+        <Toggle
+          size="sm"
+          pressed={editor.isActive("heading", { level: 3 })}
+          disabled={!editor.can().chain().focus().toggleHeading({ level: 3 }).run()}
+          onPressedChange={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
+        >
+          <TextHThree />
+        </Toggle>
+      </Tooltip>
+
+      <Tooltip content="Paragraph">
+        <Toggle
+          size="sm"
+          pressed={editor.isActive("paragraph")}
+          onPressedChange={() => editor.chain().focus().setParagraph().run()}
+        >
+          <Paragraph />
+        </Toggle>
+      </Tooltip>
+
+      <Tooltip content="Align Left">
+        <Toggle
+          size="sm"
+          pressed={editor.isActive({ textAlign: "left" })}
+          disabled={!editor.can().chain().focus().setTextAlign("left").run()}
+          onPressedChange={() => editor.chain().focus().setTextAlign("left").run()}
+        >
+          <TextAlignLeft />
+        </Toggle>
+      </Tooltip>
+
+      <Tooltip content="Align Center">
+        <Toggle
+          size="sm"
+          pressed={editor.isActive({ textAlign: "center" })}
+          disabled={!editor.can().chain().focus().setTextAlign("center").run()}
+          onPressedChange={() => editor.chain().focus().setTextAlign("center").run()}
+        >
+          <TextAlignCenter />
+        </Toggle>
+      </Tooltip>
+
+      <Tooltip content="Align Right">
+        <Toggle
+          size="sm"
+          pressed={editor.isActive({ textAlign: "right" })}
+          disabled={!editor.can().chain().focus().setTextAlign("right").run()}
+          onPressedChange={() => editor.chain().focus().setTextAlign("right").run()}
+        >
+          <TextAlignRight />
+        </Toggle>
+      </Tooltip>
+
+      <Tooltip content="Align Justify">
+        <Toggle
+          size="sm"
+          pressed={editor.isActive({ textAlign: "justify" })}
+          disabled={!editor.can().chain().focus().setTextAlign("justify").run()}
+          onPressedChange={() => editor.chain().focus().setTextAlign("justify").run()}
+        >
+          <TextAlignJustify />
+        </Toggle>
+      </Tooltip>
+
+      <Tooltip content="Bullet List">
+        <Toggle
+          size="sm"
+          pressed={editor.isActive("bulletList")}
+          disabled={!editor.can().chain().focus().toggleBulletList().run()}
+          onPressedChange={() => editor.chain().focus().toggleBulletList().run()}
+        >
+          <ListBullets />
+        </Toggle>
+      </Tooltip>
+
+      <Tooltip content="Numbered List">
+        <Toggle
+          size="sm"
+          pressed={editor.isActive("orderedList")}
+          disabled={!editor.can().chain().focus().toggleOrderedList().run()}
+          onPressedChange={() => editor.chain().focus().toggleOrderedList().run()}
+        >
+          <ListNumbers />
+        </Toggle>
+      </Tooltip>
+
+      <Tooltip content="Outdent">
+        <Button
+          size="sm"
+          variant="ghost"
+          className="px-2"
+          onClick={() => editor.chain().focus().liftListItem("listItem").run()}
+          disabled={!editor.can().chain().focus().liftListItem("listItem").run()}
+        >
+          <TextOutdent />
+        </Button>
+      </Tooltip>
+
+      <Tooltip content="Indent">
+        <Button
+          size="sm"
+          variant="ghost"
+          className="px-2"
+          onClick={() => editor.chain().focus().sinkListItem("listItem").run()}
+          disabled={!editor.can().chain().focus().sinkListItem("listItem").run()}
+        >
+          <TextIndent />
+        </Button>
+      </Tooltip>
+
+      <Popover>
+        <Tooltip content="Insert Image">
+          <PopoverTrigger asChild>
+            <Button size="sm" variant="ghost" className="px-2">
+              <ImageIcon />
             </Button>
-          </Tooltip>
+          </PopoverTrigger>
+        </Tooltip>
+        <PopoverContent className="w-80">
+          <InsertImageForm onInsert={(props) => editor.chain().focus().setImage(props).run()} />
+        </PopoverContent>
+      </Popover>
 
-          <Separator orientation="vertical" className="mx-1" />
+      <Tooltip content="Insert Break Line">
+        <Button
+          size="sm"
+          variant="ghost"
+          className="px-2"
+          onClick={() => editor.chain().focus().setHardBreak().run()}
+          disabled={!editor.can().chain().focus().setHardBreak().run()}
+        >
+          <KeyReturn />
+        </Button>
+      </Tooltip>
 
-          <Tooltip content="Inline Code">
-            <Toggle
-              size="sm"
-              pressed={editor.isActive("code")}
-              disabled={!editor.can().chain().focus().toggleCode().run()}
-              onPressedChange={() => editor.chain().focus().toggleCode().run()}
-            >
-              <Code />
-            </Toggle>
-          </Tooltip>
+      <Tooltip content="Insert Horizontal Rule">
+        <Button
+          size="sm"
+          variant="ghost"
+          className="px-2"
+          onClick={() => editor.chain().focus().setHorizontalRule().run()}
+          disabled={!editor.can().chain().focus().setHorizontalRule().run()}
+        >
+          <Minus />
+        </Button>
+      </Tooltip>
 
-          <Tooltip content="Code Block">
-            <Toggle
-              size="sm"
-              pressed={editor.isActive("codeBlock")}
-              disabled={!editor.can().chain().focus().toggleCodeBlock().run()}
-              onPressedChange={() => editor.chain().focus().toggleCodeBlock().run()}
-            >
-              <CodeBlock />
-            </Toggle>
-          </Tooltip>
+      <Tooltip content="Undo">
+        <Button
+          size="sm"
+          variant="ghost"
+          className="px-2"
+          disabled={!editor.can().undo()}
+          onClick={() => editor.chain().focus().undo().run()}
+        >
+          <ArrowCounterClockwise />
+        </Button>
+      </Tooltip>
 
-          <Separator orientation="vertical" className="mx-1" />
-
-          <Tooltip content="Heading 1">
-            <Toggle
-              size="sm"
-              pressed={editor.isActive("heading", { level: 1 })}
-              disabled={!editor.can().chain().focus().toggleHeading({ level: 1 }).run()}
-              onPressedChange={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
-            >
-              <TextHOne />
-            </Toggle>
-          </Tooltip>
-
-          <Tooltip content="Heading 2">
-            <Toggle
-              size="sm"
-              pressed={editor.isActive("heading", { level: 2 })}
-              disabled={!editor.can().chain().focus().toggleHeading({ level: 2 }).run()}
-              onPressedChange={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
-            >
-              <TextHTwo />
-            </Toggle>
-          </Tooltip>
-
-          <Tooltip content="Heading 3">
-            <Toggle
-              size="sm"
-              pressed={editor.isActive("heading", { level: 3 })}
-              disabled={!editor.can().chain().focus().toggleHeading({ level: 3 }).run()}
-              onPressedChange={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
-            >
-              <TextHThree />
-            </Toggle>
-          </Tooltip>
-
-          <Tooltip content="Paragraph">
-            <Toggle
-              size="sm"
-              pressed={editor.isActive("paragraph")}
-              onPressedChange={() => editor.chain().focus().setParagraph().run()}
-            >
-              <Paragraph />
-            </Toggle>
-          </Tooltip>
-
-          <Separator orientation="vertical" className="mx-1" />
-
-          <Tooltip content="Align Left">
-            <Toggle
-              size="sm"
-              pressed={editor.isActive({ textAlign: "left" })}
-              disabled={!editor.can().chain().focus().setTextAlign("left").run()}
-              onPressedChange={() => editor.chain().focus().setTextAlign("left").run()}
-            >
-              <TextAlignLeft />
-            </Toggle>
-          </Tooltip>
-
-          <Tooltip content="Align Center">
-            <Toggle
-              size="sm"
-              pressed={editor.isActive({ textAlign: "center" })}
-              disabled={!editor.can().chain().focus().setTextAlign("center").run()}
-              onPressedChange={() => editor.chain().focus().setTextAlign("center").run()}
-            >
-              <TextAlignCenter />
-            </Toggle>
-          </Tooltip>
-
-          <Tooltip content="Align Right">
-            <Toggle
-              size="sm"
-              pressed={editor.isActive({ textAlign: "right" })}
-              disabled={!editor.can().chain().focus().setTextAlign("right").run()}
-              onPressedChange={() => editor.chain().focus().setTextAlign("right").run()}
-            >
-              <TextAlignRight />
-            </Toggle>
-          </Tooltip>
-
-          <Tooltip content="Align Justify">
-            <Toggle
-              size="sm"
-              pressed={editor.isActive({ textAlign: "justify" })}
-              disabled={!editor.can().chain().focus().setTextAlign("justify").run()}
-              onPressedChange={() => editor.chain().focus().setTextAlign("justify").run()}
-            >
-              <TextAlignJustify />
-            </Toggle>
-          </Tooltip>
-
-          <Separator orientation="vertical" className="mx-1" />
-
-          <Tooltip content="Bullet List">
-            <Toggle
-              size="sm"
-              pressed={editor.isActive("bulletList")}
-              disabled={!editor.can().chain().focus().toggleBulletList().run()}
-              onPressedChange={() => editor.chain().focus().toggleBulletList().run()}
-            >
-              <ListBullets />
-            </Toggle>
-          </Tooltip>
-
-          <Tooltip content="Numbered List">
-            <Toggle
-              size="sm"
-              pressed={editor.isActive("orderedList")}
-              disabled={!editor.can().chain().focus().toggleOrderedList().run()}
-              onPressedChange={() => editor.chain().focus().toggleOrderedList().run()}
-            >
-              <ListNumbers />
-            </Toggle>
-          </Tooltip>
-
-          <Tooltip content="Outdent">
-            <Button
-              size="sm"
-              variant="ghost"
-              className="px-2"
-              onClick={() => editor.chain().focus().liftListItem("listItem").run()}
-              disabled={!editor.can().chain().focus().liftListItem("listItem").run()}
-            >
-              <TextOutdent />
-            </Button>
-          </Tooltip>
-
-          <Tooltip content="Indent">
-            <Button
-              size="sm"
-              variant="ghost"
-              className="px-2"
-              onClick={() => editor.chain().focus().sinkListItem("listItem").run()}
-              disabled={!editor.can().chain().focus().sinkListItem("listItem").run()}
-            >
-              <TextIndent />
-            </Button>
-          </Tooltip>
-
-          <Separator orientation="vertical" className="mx-1" />
-
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button size="sm" variant="ghost" className="px-2">
-                <ImageIcon />
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-80">
-              <InsertImageForm onInsert={(props) => editor.chain().focus().setImage(props).run()} />
-            </PopoverContent>
-          </Popover>
-
-          <Tooltip content="Insert Break Line">
-            <Button
-              size="sm"
-              variant="ghost"
-              className="px-2"
-              onClick={() => editor.chain().focus().setHardBreak().run()}
-              disabled={!editor.can().chain().focus().setHardBreak().run()}
-            >
-              <KeyReturn />
-            </Button>
-          </Tooltip>
-
-          <Tooltip content="Insert Horizontal Rule">
-            <Button
-              size="sm"
-              variant="ghost"
-              className="px-2"
-              onClick={() => editor.chain().focus().setHorizontalRule().run()}
-              disabled={!editor.can().chain().focus().setHorizontalRule().run()}
-            >
-              <Minus />
-            </Button>
-          </Tooltip>
-
-          <Separator orientation="vertical" className="mx-1" />
-
-          <Tooltip content="Undo">
-            <Button
-              size="sm"
-              variant="ghost"
-              className="px-2"
-              disabled={!editor.can().undo()}
-              onClick={() => editor.chain().focus().undo().run()}
-            >
-              <ArrowCounterClockwise />
-            </Button>
-          </Tooltip>
-
-          <Tooltip content="Redo">
-            <Button
-              size="sm"
-              variant="ghost"
-              className="px-2"
-              disabled={!editor.can().redo()}
-              onClick={() => editor.chain().focus().redo().run()}
-            >
-              <ArrowClockwise />
-            </Button>
-          </Tooltip>
-        </div>
-      </ScrollArea>
-
-      <Separator className="mt-2" />
+      <Tooltip content="Redo">
+        <Button
+          size="sm"
+          variant="ghost"
+          className="px-2"
+          disabled={!editor.can().redo()}
+          onClick={() => editor.chain().focus().redo().run()}
+        >
+          <ArrowClockwise />
+        </Button>
+      </Tooltip>
     </div>
   );
 };
@@ -484,13 +466,13 @@ export const RichInput = forwardRef<Editor, RichInputProps>(
     }
 
     return (
-      <div className="relative">
+      <div>
         {!hideToolbar && <Toolbar editor={editor} />}
 
         <EditorContent
           editor={editor}
           className={cn(
-            "grid min-h-[160px] w-full rounded-sm border bg-transparent px-3 pb-2 pt-14 text-sm placeholder:opacity-80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:cursor-not-allowed disabled:opacity-50",
+            "grid min-h-[160px] w-full rounded-sm border bg-transparent px-3 py-2 text-sm placeholder:opacity-80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:cursor-not-allowed disabled:opacity-50",
             hideToolbar && "pt-2",
             className,
           )}

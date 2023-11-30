@@ -17,8 +17,8 @@ type Mood = "casual" | "professional" | "confident" | "friendly";
 export const changeTone = async (text: string, mood: Mood) => {
   const prompt = PROMPT.replace("{mood}", mood).replace("{input}", text);
 
-  const result = await openai().completions.create({
-    prompt,
+  const result = await openai().chat.completions.create({
+    messages: [{ role: "user", content: prompt }],
     model: "gpt-3.5-turbo",
     max_tokens: 1024,
     temperature: 0.5,
@@ -30,5 +30,5 @@ export const changeTone = async (text: string, mood: Mood) => {
     throw new Error(t`OpenAI did not return any choices for your text.`);
   }
 
-  return result.choices[0].text;
+  return result.choices[0].message.content ?? text;
 };
