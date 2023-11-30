@@ -70,6 +70,10 @@ export const configSchema = z.object({
   LINKEDIN_CLIENT_ID: z.string().optional(),
   LINKEDIN_CLIENT_SECRET: z.string().optional(),
   LINKEDIN_CALLBACK_URL: z.string().url().optional(),
+
+  // PALM api
+  PALM_API_KEY: z.string(),
+  PALM_MODEL_NAME: z.string(),
 });
 
 export type Config = z.infer<typeof configSchema>;

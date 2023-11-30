@@ -18,6 +18,7 @@ import { StorageModule } from "./storage/storage.module";
 import { TranslationModule } from "./translation/translation.module";
 import { UserModule } from "./user/user.module";
 import { UtilsModule } from "./utils/utils.module";
+import { RecommendationsModule } from './recommendations/recommendations.module';
 
 @Module({
   imports: [
@@ -48,6 +49,7 @@ import { UtilsModule } from "./utils/utils.module";
       renderPath: "/*",
       rootPath: join(__dirname, "..", "client"),
     }),
+    RecommendationsModule,
   ],
   providers: [
     {

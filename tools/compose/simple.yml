@@ -121,6 +121,10 @@ services:
       LINKEDIN_CLIENT_SECRET: linkedin_client_secret
       LINKEDIN_CALLBACK_URL: https://example.com/api/auth/linkedin/callback
 
+      # -- PALM api --
+      PALM_API_KEY: palm_api_key
+      PALM_MODEL_NAME: models/text-bison-001
+
 volumes:
   minio_data:
   postgres_data:
