@@ -1,5 +1,5 @@
 import { Body, Controller, Post } from "@nestjs/common";
-import { PalmSummaryRequest } from "@reactive-resume/schema";
+import { PalmGenerateTextRequest } from "@reactive-resume/schema";
 
 import { RecommendationsService } from "./recommendations.service";
 
@@ -7,11 +7,9 @@ import { RecommendationsService } from "./recommendations.service";
 export class RecommendationsController {
   constructor(private readonly recommendationsService: RecommendationsService) {}
 
-  @Post("summary")
-  async summary(@Body() palmReq: PalmSummaryRequest) {
-    const recommendation = await this.recommendationsService.getSummaryRecommendation(
-      palmReq.summary,
-    );
+  @Post("text")
+  async text(@Body() palmReq: PalmGenerateTextRequest) {
+    const recommendation = await this.recommendationsService.getTextRecommendation(palmReq);
     return recommendation;
   }
 }

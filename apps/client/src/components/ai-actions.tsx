@@ -19,9 +19,12 @@ import { cn } from "@reactive-resume/utils";
 import { useState } from "react";
 
 import { toast } from "../hooks/use-toast";
-import { changeTone } from "../services/openai/change-tone";
-import { fixGrammar } from "../services/openai/fix-grammar";
-import { improveWriting } from "../services/openai/improve-writing";
+import { changeTone as openaiChangeTone } from "../services/openai/change-tone";
+import { fixGrammar as openaiFixGrammar } from "../services/openai/fix-grammar";
+import { improveWriting as openaiImproveWriting } from "../services/openai/improve-writing";
+import { changeTone as palmChangeTone } from "../services/palm/change-tone";
+import { fixGrammar as palmFixGrammar } from "../services/palm/fix-grammar";
+import { improveWriting as palmImproveWriting } from "../services/palm/improve-writing";
 import { useOpenAiStore } from "../stores/openai";
 
 type Action = "improve" | "fix" | "tone";
@@ -35,9 +38,11 @@ type Props = {
 
 export const AiActions = ({ value, onChange, className }: Props) => {
   const [loading, setLoading] = useState<Action | false>(false);
-  const aiEnabled = useOpenAiStore((state) => !!state.apiKey);
+  const openaiEnabled = useOpenAiStore((state) => !!state.apiKey);
 
-  if (!aiEnabled) return null;
+  const improveWriting = openaiEnabled ? openaiImproveWriting : palmImproveWriting;
+  const fixGrammar = openaiEnabled ? openaiFixGrammar : palmFixGrammar;
+  const changeTone = openaiEnabled ? openaiChangeTone : palmChangeTone;
 
   const onClick = async (action: Action, mood?: Mood) => {
     try {
@@ -76,7 +81,7 @@ export const AiActions = ({ value, onChange, className }: Props) => {
           className="-rotate-90 bg-background px-2 text-[10px] leading-[10px]"
         >
           <MagicWand size={10} className="mr-1" />
-          {t`AI`}
+          {openaiEnabled ? t`OPENAPI` : t`DEFAULT`} {t`AI`}
         </Badge>
       </div>
 

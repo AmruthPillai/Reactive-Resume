@@ -1,6 +1,7 @@
 import { v1beta2 } from "@google-ai/generativelanguage";
 import { Injectable } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
+import { PalmGenerateTextRequest } from "@reactive-resume/schema";
 import { GoogleAuth } from "google-auth-library";
 
 import { Config } from "../config/schema";
@@ -15,17 +16,11 @@ export class RecommendationsService {
     this.palm_modal_name = this.configService.get("PALM_MODEL_NAME") || "";
   }
 
-  async getSummaryRecommendation(summery: string) {
+  async getTextRecommendation(palmReq: PalmGenerateTextRequest) {
     const client = new v1beta2.TextServiceClient({
       authClient: new GoogleAuth().fromAPIKey(this.palm_key),
     });
-    const prompt = summery;
-    const result = await client.generateText({
-      model: this.palm_modal_name,
-      prompt: {
-        text: prompt,
-      },
-    });
+    const result = await client.generateText(palmReq);
     return result;
   }
 }
