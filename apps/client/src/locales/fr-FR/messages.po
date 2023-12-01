@@ -8,7 +8,7 @@ msgstr ""
 "Language: fr\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-11-26 14:53\n"
+"PO-Revision-Date: 2023-11-30 00:08\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -32,7 +32,7 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:20
 msgid "<0>I built Reactive Resume mostly by myself during my spare time, with a lot of help from other great open-source contributors.</0><1>If you like the app and want to support keeping it free forever, please donate whatever you can afford to give.</1>"
-msgstr ""
+msgstr "<0>J'ai construit Reactive Resume principalement par moi-même pendant mon temps libre, avec beaucoup d'aide de la part d'autres grands contributeurs open-source.</0><1>Si vous aimez l'application et que vous voulez contribuer à ce qu'elle reste gratuite pour toujours, donnez ce que vous pouvez vous permettre de donner.</1>"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:51
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
@@ -40,7 +40,7 @@ msgstr "<0>Je suis sûre que l'application n'est pas parfaite, mais j'aimerais q
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:126
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
-msgstr ""
+msgstr "<0>Remarque :</0> En utilisant l'API OpenAI, vous reconnaissez et acceptez les <1>conditions d'utilisation</1> et <2>politique de confidentialité</2> décrit par OpenAI. Veuillez noter que Reactive Resume n'assume aucune responsabilité pour toute utilisation inappropriée ou non autorisée du service, et toutes les répercussions ou responsabilités qui en résultent incombent uniquement à l'utilisateur."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:90
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
@@ -92,7 +92,7 @@ msgstr "A4"
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:270
 msgid "Accepts only {accept} files"
-msgstr ""
+msgstr "Accepte uniquement les fichiers {accept}"
 
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:104
 msgid "Account"
@@ -131,7 +131,7 @@ msgstr "Vous avez déjà un compte ?"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:144
 msgid "An error occurred while validating the file."
-msgstr ""
+msgstr "Une erreur s'est produite lors du chargement du fichier."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:135
 msgid "and many more..."
@@ -177,7 +177,7 @@ msgstr "Etes-vous sûr?"
 #. For example, Computer Science or Business Administration
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:73
 msgid "Area of Study"
-msgstr ""
+msgstr "Domaine d'étude"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:86
 msgid "Aspect Ratio"
@@ -199,7 +199,7 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:73
 msgid "Background Color"
-msgstr ""
+msgstr "Couleur de fond"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:75
 msgid "Backup Code"
@@ -240,7 +240,7 @@ msgstr "Par la communauté, pour la communauté."
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:155
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:135
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #: apps/client/src/components/ai-actions.tsx:103
 #: apps/client/src/components/ai-actions.tsx:106
@@ -423,7 +423,7 @@ msgstr "Désactiver la 2FA"
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:128
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
 msgid "Discard"
-msgstr ""
+msgstr "Abandonner"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:110
 msgid "Documentation"
@@ -439,7 +439,7 @@ msgstr "Vous ne savez pas par où commencer ? La doc !"
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:101
 msgid "Don't see your language? <0>Help translate the app.</0>"
-msgstr ""
+msgstr "Vous ne voyez pas votre langue ? <0>Aidez à traduire l'application.</0>"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:40
 msgid "Donate to Reactive Resume"
@@ -447,7 +447,7 @@ msgstr "Faire un don à Reactive Resume"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:56
 msgid "Download a JSON snapshot of your resume. This file can be used to import your resume in the future, or can even be shared with others to collaborate."
-msgstr ""
+msgstr "Téléchargez un instantané JSON de votre CV. Ce fichier peut être utilisé pour importer votre CV à l'avenir, ou peut même être partagé avec d'autres pour collaborer."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:74
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."

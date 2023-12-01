@@ -8,7 +8,7 @@ msgstr ""
 "Language: ja\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-11-28 00:08\n"
+"PO-Revision-Date: 2023-11-29 00:08\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -71,28 +71,28 @@ msgstr "リンクがクリップボードにコピーされました"
 
 #: apps/client/src/components/copyright.tsx:29
 msgid "A passion project by <0>Amruth Pillai</0>"
-msgstr ""
+msgstr "<0>Amruth Pillai によるパッションプロジェクト</0>"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:57
 msgid "A password reset link should have been sent to your inbox, if an account existed with the email you provided."
-msgstr ""
+msgstr "入力されたメールアドレスにパスワードリセットリンクを送信しました。"
 
 #: apps/client/src/services/errors/translate-error.ts:31
 msgid "A resume with this slug already exists, please pick a different unique identifier."
-msgstr ""
+msgstr "このIDの履歴書はすでに存在します。"
 
 #: apps/client/src/services/errors/translate-error.ts:9
 msgid "A user with this email address and/or username already exists."
-msgstr ""
+msgstr "このメールアドレスおよび/またはユーザー名を持つユーザーは既に存在します。"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:43
 msgid "A4"
-msgstr ""
+msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:270
 msgid "Accepts only {accept} files"
-msgstr ""
+msgstr "{accept} ファイルのみ"
 
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:104
 msgid "Account"
@@ -100,96 +100,96 @@ msgstr "アカウント"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:124
 msgid "Add a custom field"
-msgstr ""
+msgstr "カスタムフィールドを追加"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:108
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:147
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
-msgstr ""
+msgstr "アイテムを追加"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:68
 msgid "Add a new item"
-msgstr ""
+msgstr "アイテムを追加"
 
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:79
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:196
 msgid "Add a new section"
-msgstr ""
+msgstr "セクションを追加"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:269
 msgid "Add New Page"
-msgstr ""
+msgstr "ページを追加"
 
 #: apps/client/src/components/ai-actions.tsx:79
 msgid "AI"
-msgstr ""
+msgstr "AI"
 
 #: apps/client/src/pages/auth/register/page.tsx:74
 msgid "Already have an account?"
-msgstr ""
+msgstr "既にアカウントをお持ちですか？"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:144
 msgid "An error occurred while validating the file."
-msgstr ""
+msgstr "ファイルの読み込み中にエラーが発生しました。"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:135
 msgid "and many more..."
-msgstr ""
+msgstr "他にもたくさん"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:57
 msgid "Anyone with the link can view and download the resume."
-msgstr ""
+msgstr "リンクを知っている人は誰でも履歴書を表示してダウンロードできます。"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:54
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:30
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
-msgstr ""
+msgstr "このリンクを知っている人は誰でも履歴書を表示してダウンロードできます。あなたのプロフィールで共有するか採用担当者と共有しましょう。"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:83
 msgid "API Key"
-msgstr ""
+msgstr "API キー"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:115
 msgid "Are you sure you want to delete this item?"
-msgstr ""
+msgstr "このアイテムを削除してもよろしいですか？"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:148
 msgid "Are you sure you want to delete your resume?"
-msgstr ""
+msgstr "この履歴書を削除してもよろしいですか？"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:123
 msgid "Are you sure you want to disable two-factor authentication?"
-msgstr ""
+msgstr "2要素認証を無効にしてもよろしいですか？"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:38
 msgid "Are you sure you want to lock this resume?"
-msgstr ""
+msgstr "この履歴書をロックしてもよろしいですか？"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:39
 msgid "Are you sure you want to unlock this resume?"
-msgstr ""
+msgstr "この履歴書をアンロックしてもよろしいですか？"
 
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:94
 msgid "Are you sure?"
-msgstr ""
+msgstr "本当によろしいですか？"
 
 #. For example, Computer Science or Business Administration
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:73
 msgid "Area of Study"
-msgstr ""
+msgstr "研究分野"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:86
 msgid "Aspect Ratio"
-msgstr ""
+msgstr "アスペクト比"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:51
 msgid "Available in {languagesCount} languages"
-msgstr ""
+msgstr "{languagesCount} 言語で利用可能"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:53
 msgid "Awarder"
-msgstr ""
+msgstr "受賞者"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:92
 #: apps/client/src/pages/auth/forgot-password/page.tsx:94
@@ -207,28 +207,28 @@ msgstr "バックアップコード"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:80
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
-msgstr ""
+msgstr "バックアップコードは小文字のアルファベットまたは数字のみを含んだ10文字である必要があります。"
 
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:56
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
 msgid "Basics"
-msgstr ""
+msgstr "基礎"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:21
 msgid "Basics"
-msgstr ""
+msgstr "基礎"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:196
 msgid "Border"
-msgstr ""
+msgstr "罫線"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:129
 msgid "Border Radius"
-msgstr ""
+msgstr "境界の半径"
 
 #: apps/client/src/pages/public/page.tsx:91
 msgid "Built with"
-msgstr ""
+msgstr "利用したソフトウェア"
 
 #: apps/client/src/components/copyright.tsx:27
 #: apps/client/src/pages/home/sections/contributors/index.tsx:20
@@ -245,7 +245,7 @@ msgstr "キャンセル"
 #: apps/client/src/components/ai-actions.tsx:103
 #: apps/client/src/components/ai-actions.tsx:106
 msgid "Casual"
-msgstr ""
+msgstr "カジュアル"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:98
 msgid "Center Artboard"
