@@ -16,6 +16,8 @@ import { ResumesPage } from "../pages/dashboard/resumes/page";
 import { SettingsPage } from "../pages/dashboard/settings/page";
 import { HomeLayout } from "../pages/home/layout";
 import { HomePage } from "../pages/home/page";
+import { PageLayout } from "../pages/pricing/layout";
+import { PricingPage } from "../pages/pricing/page";
 import { publicLoader, PublicResumePage } from "../pages/public/page";
 import { Providers } from "../providers";
 import { AuthGuard } from "./guards/auth";
@@ -78,6 +80,10 @@ export const routes = createRoutesFromElements(
           <Route index element={<Navigate to="/dashboard/resumes" replace />} />
         </Route>
       </Route>
+    </Route>
+
+    <Route element={<PageLayout />}>
+      <Route path="/pricing" element={<PricingPage />} />
     </Route>
 
     {/* Public Routes */}

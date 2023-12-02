@@ -25,6 +25,10 @@ export const userSchema = z.object({
   provider: z.enum(["email", "github", "google", "linkedin"]).default("email"),
   createdAt: z.date().or(z.dateString()),
   updatedAt: z.date().or(z.dateString()),
+  // The customer's billing address, stored in JSON format.
+  billingAddress: z.json().optional(),
+  // Stores your customer's payment instruments.
+  paymentMethod: z.json().optional(),
 });
 
 export class UserDto extends createZodDto(userSchema) {}

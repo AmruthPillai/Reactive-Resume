@@ -19,20 +19,45 @@ enum Visibility {
   private
 }
 
+enum PricingType {
+  one_time
+  recurring
+}
+
+enum Interval {
+  day
+  week
+  month
+  year
+}
+
+enum PaymentStatus {
+  trialing
+  active
+  canceled
+  incomplete
+  incomplete_expired
+  past_due
+  unpaid
+  paused
+}
+
 model User {
-  id               String   @id @default(cuid())
+  id               String        @id @default(cuid())
   name             String
   picture          String?
-  username         String   @unique
-  email            String   @unique
-  locale           String   @default("en-US")
-  emailVerified    Boolean  @default(false)
-  twoFactorEnabled Boolean  @default(false)
-  createdAt        DateTime @default(now())
-  updatedAt        DateTime @updatedAt
+  username         String        @unique
+  email            String        @unique
+  locale           String        @default("en-US")
+  emailVerified    Boolean       @default(false)
+  twoFactorEnabled Boolean       @default(false)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
   provider         Provider
   secrets          Secrets?
   resumes          Resume[]
+  customer         Customer?
+  subscription     Subscription?
 }
 
 model Secrets {
@@ -63,4 +88,65 @@ model Resume {
   @@unique([userId, id])
   @@unique([userId, slug])
   @@index(fields: [userId])
+}
+
+model Customer {
+  id               String @id @default(cuid())
+  userId           String @unique
+  user             User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  stripeCustomerId String
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
+}
+
+model Product {
+  id          String  @id @default(cuid())
+  active      Boolean @default(false)
+  name        String
+  description String
+  image       String?
+  metadata    Json    @default("{}")
+
+  prices Price[]
+}
+
+model Price {
+  id        String  @id @default(cuid())
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  active      Boolean @default(false)
+  description String
+  unitAmount  Int     @default(0)
+  currency    String  @default("INR") @db.VarChar(3)
+
+  pricingType     PricingType
+  interval        Interval
+  intervalCount   Int         @default(0)
+  trialPeriodDays Int         @default(0)
+  metadata        Json        @default("{}")
+
+  subscription Subscription?
+}
+
+model Subscription {
+  id       String        @id @default(cuid())
+  userId   String        @unique
+  user     User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  status   PaymentStatus
+  metadata Json          @default("{}")
+  priceId  String        @unique
+  price    Price         @relation(fields: [priceId], references: [id], onDelete: Cascade)
+
+  quantity           Int       @default(0)
+  cancelAtPeriodEnd  Boolean   @default(false)
+  createdAt          DateTime  @default(now())
+  currentPeriodStart DateTime
+  currentPeriodEnd   DateTime
+  endedAt            DateTime?
+  cancelAt           DateTime?
+  canceledAt         DateTime?
+  trialStart         DateTime?
+  trialEnd           DateTime?
 }

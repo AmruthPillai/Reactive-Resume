@@ -86,6 +86,18 @@ export class ResumeService {
   findAll(userId: string) {
     return this.utils.getCachedOrSet(`user:${userId}:resumes`, () =>
       this.prisma.resume.findMany({
+        select: {
+          id: true,
+          title: true,
+          slug: true,
+          // data: true,
+          visibility: true,
+          locked: true,
+          userId: true,
+          createdAt: true,
+          updatedAt: true,
+          user: true,
+        },
         where: { userId },
         orderBy: { updatedAt: "desc" },
       }),
