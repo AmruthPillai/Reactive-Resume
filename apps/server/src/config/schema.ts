@@ -76,7 +76,7 @@ export const configSchema = z.object({
   PALM_MODEL_NAME: z.string(),
 
   // Stripe
-  STRIPE_PUBLISHABLE_KEY: z.string(),
+  VITE_STRIPE_PUBLISHABLE_KEY: z.string(),
   STRIPE_SECRET_KEY: z.string(),
   STRIPE_WEBHOOK_SECRET: z.string(),
 });

@@ -3,13 +3,26 @@ import { CircleNotch, StripeLogo } from "@phosphor-icons/react";
 import { PriceDto, ProductDto } from "@reactive-resume/dto";
 import { Button } from "@reactive-resume/ui";
 
+import { createCheckoutSession } from "@/client/services/stripe/stripe";
+
+import { getStripe } from "../../stripeClient";
+
 type Props = {
   product: ProductDto;
 };
 
 export const SingleProduct = ({ product }: Props) => {
   const loading = "";
-  const handleCheckout = async (price: PriceDto) => {};
+  const handleCheckout = async (price: PriceDto) => {
+    const { sessionId } = await createCheckoutSession({
+      priceId: price.id,
+      quantity: 1,
+    });
+
+    const stripe = await getStripe();
+    debugger;
+    stripe?.redirectToCheckout({ sessionId });
+  };
   return (
     <section className="">
       <div className="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
@@ -45,7 +58,7 @@ export const SingleProduct = ({ product }: Props) => {
                   <li className="flex items-center space-x-3">
                     {/* <!-- Icon --> */}
                     <svg
-                      className="h-5 w-5 flex-shrink-0 text-green-500 dark:text-green-400"
+                      className="h-5 w-5 shrink-0 text-green-500 dark:text-green-400"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +74,7 @@ export const SingleProduct = ({ product }: Props) => {
                   <li className="flex items-center space-x-3">
                     {/* <!-- Icon --> */}
                     <svg
-                      className="h-5 w-5 flex-shrink-0 text-green-500 dark:text-green-400"
+                      className="h-5 w-5 shrink-0 text-green-500 dark:text-green-400"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +90,7 @@ export const SingleProduct = ({ product }: Props) => {
                   <li className="flex items-center space-x-3">
                     {/* <!-- Icon --> */}
                     <svg
-                      className="h-5 w-5 flex-shrink-0 text-green-500 dark:text-green-400"
+                      className="h-5 w-5 shrink-0 text-green-500 dark:text-green-400"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +108,7 @@ export const SingleProduct = ({ product }: Props) => {
                   <li className="flex items-center space-x-3">
                     {/* <!-- Icon --> */}
                     <svg
-                      className="h-5 w-5 flex-shrink-0 text-green-500 dark:text-green-400"
+                      className="h-5 w-5 shrink-0 text-green-500 dark:text-green-400"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +126,7 @@ export const SingleProduct = ({ product }: Props) => {
                   <li className="flex items-center space-x-3">
                     {/* <!-- Icon --> */}
                     <svg
-                      className="h-5 w-5 flex-shrink-0 text-green-500 dark:text-green-400"
+                      className="h-5 w-5 shrink-0 text-green-500 dark:text-green-400"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg"

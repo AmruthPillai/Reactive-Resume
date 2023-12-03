@@ -1,4 +1,3 @@
-import { idSchema } from "@reactive-resume/schema";
 import { createZodDto } from "nestjs-zod/dto";
 import { z } from "nestjs-zod/z";
 
@@ -10,7 +9,7 @@ export const priceSchema = z.object({
   // Price ID from Stripe, e.g. price_1234.
   id: z.string(),
   // The ID of the prduct that this price belongs to.
-  productId: idSchema,
+  productId: z.string(),
   // product: productSchema.optional(),
   // Whether the price can be used for new purchases.
   active: z.boolean().default(false),

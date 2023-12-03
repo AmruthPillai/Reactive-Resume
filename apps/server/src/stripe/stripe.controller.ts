@@ -1,6 +1,7 @@
-import { Controller, Get, UseGuards } from "@nestjs/common";
+import { Body, Controller, Get, Post, UseGuards } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
 import { User as UserEntity } from "@prisma/client";
+import { StripeCheckoutRequest } from "@reactive-resume/schema";
 
 import { User } from "@/server/user/decorators/user.decorator";
 
@@ -30,5 +31,11 @@ export class StripeController {
   @UseGuards(TwoFactorGuard)
   getSubscriptions(@User() user: UserEntity) {
     return this.stripeService.findAllSubscriptions(user.id);
+  }
+
+  @Post("create-checkout-session")
+  @UseGuards(TwoFactorGuard)
+  createCheckoutSession(@User() user: UserEntity, @Body() request: StripeCheckoutRequest) {
+    return this.stripeService.createCheckoutSession(user.id, request.priceId, request.quantity);
   }
 }
