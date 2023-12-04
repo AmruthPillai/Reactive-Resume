@@ -44,6 +44,8 @@ export class StorageService implements OnModuleInit {
   private client: Client;
   private bucketName: string;
 
+  private skipCreateBucket: boolean;
+
   constructor(
     private readonly configService: ConfigService<Config>,
     private readonly minioService: MinioService,
@@ -55,6 +57,12 @@ export class StorageService implements OnModuleInit {
   async onModuleInit() {
     this.client = this.minioService.client;
     this.bucketName = this.configService.getOrThrow<string>("STORAGE_BUCKET");
+    this.skipCreateBucket = this.configService.getOrThrow<boolean>("STORAGE_SKIP_CREATE_BUCKET");
+
+    if (this.skipCreateBucket) {
+      this.logger.log("Skipping the creation of the storage bucket.");
+      return;
+    }
 
     try {
       // Create a storage bucket if it doesn't exist
