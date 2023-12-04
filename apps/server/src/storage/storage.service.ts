@@ -61,6 +61,10 @@ export class StorageService implements OnModuleInit {
 
     if (this.skipCreateBucket) {
       this.logger.log("Skipping the creation of the storage bucket.");
+      this.logger.warn("Make sure that the following paths are publicly accessible: ");
+      this.logger.warn("- /pictures/*");
+      this.logger.warn("- /previews/*");
+      this.logger.warn("- /resumes/*");
       return;
     }
 
