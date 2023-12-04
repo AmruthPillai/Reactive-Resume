@@ -43,6 +43,7 @@ It should take just under half a minute for all the services to be booted up cor
 ### 5. Run the development server
 
 ```sh
+pnpm prisma:migrate:dev
 pnpm dev
 ```
 
