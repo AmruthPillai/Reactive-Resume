@@ -13,7 +13,7 @@ export const priceSchema = z.object({
   interval: z.enum(["lifetime", "year", "month"]),
   intervalCount: z.number().default(0),
   trialPeriodDays: z.number().default(0),
-  metadata: z.string(),
+  metadata: z.record(z.string(), z.string()),
 });
 
 // Type

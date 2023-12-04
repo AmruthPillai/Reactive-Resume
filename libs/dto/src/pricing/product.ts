@@ -11,9 +11,9 @@ export const productSchema = z.object({
   // The product's name, meant to be displayable to the customer. Whenever this product is sold via a subscription, name will show up on associated invoice line item descriptions.
   name: z.string().max(255),
   // The product's description, meant to be displayable to the customer. Use this field to optionally store a long form explanation of the product being sold for your own rendering purposes.
-  description: z.string(),
+  description: z.string().nullable(),
   // A URL of the product image in Stripe, meant to be displayable to the customer.
-  image: z.literal("").or(z.null()).or(z.string().url()),
+  image: z.string().nullable(),
   // Set of key-value pairs, used to store additional information about the object in a structured format.
   metadata: z.json().optional(),
 

@@ -5,6 +5,7 @@ import {
   Get,
   HttpCode,
   InternalServerErrorException,
+  Logger,
   Patch,
   Post,
   Query,
@@ -86,6 +87,8 @@ export class AuthController {
 
     if (user.twoFactorEnabled && !isTwoFactorAuth) status = "2fa_required";
 
+    Logger.log(user);
+    Logger.log(authResponseSchema);
     const responseData = authResponseSchema.parse({ status, user });
 
     redirectUrl.searchParams.set("status", status);

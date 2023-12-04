@@ -53,11 +53,13 @@ model User {
   twoFactorEnabled Boolean       @default(false)
   createdAt        DateTime      @default(now())
   updatedAt        DateTime      @updatedAt
+  billingAddress   Json?         @default("{}")
+  paymentMethod    Json?         @default("{}")
   provider         Provider
   secrets          Secrets?
   resumes          Resume[]
   customer         Customer?
-  subscription     Subscription?
+  subscription     Subscription[]
 }
 
 model Secrets {
@@ -91,22 +93,22 @@ model Resume {
 }
 
 model Customer {
-  id               String @id @default(cuid())
-  userId           String @unique
-  user             User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id               String @id
   stripeCustomerId String
+  user             User   @relation(fields: [id], references: [id], onDelete: Cascade)
+  
 
-  @@unique([userId, id])
-  @@index(fields: [userId])
+  @@unique([id, stripeCustomerId])
+  @@index(fields: [stripeCustomerId])
 }
 
 model Product {
   id          String  @id @default(cuid())
   active      Boolean @default(false)
   name        String
-  description String
+  description String?
   image       String?
-  metadata    Json    @default("{}")
+  metadata    Json?    @default("{}")
 
   prices Price[]
 }
@@ -117,30 +119,30 @@ model Price {
   product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
 
   active      Boolean @default(false)
-  description String
-  unitAmount  Int     @default(0)
+  description String?
+  unitAmount  Int?
   currency    String  @default("INR") @db.VarChar(3)
 
   pricingType     PricingType
-  interval        Interval
-  intervalCount   Int         @default(0)
-  trialPeriodDays Int         @default(0)
-  metadata        Json        @default("{}")
+  interval        Interval?
+  intervalCount   Int?         @default(0)
+  trialPeriodDays Int ?        @default(0)
+  metadata        Json?       @default("{}")
 
-  subscription Subscription?
+  subscription Subscription[]
 }
 
 model Subscription {
   id       String        @id @default(cuid())
-  userId   String        @unique
+  userId   String
   user     User          @relation(fields: [userId], references: [id], onDelete: Cascade)
   status   PaymentStatus
-  metadata Json          @default("{}")
-  priceId  String        @unique
+  metadata Json?          @default("{}")
+  priceId  String
   price    Price         @relation(fields: [priceId], references: [id], onDelete: Cascade)
 
-  quantity           Int       @default(0)
-  cancelAtPeriodEnd  Boolean   @default(false)
+  quantity           Int
+  cancelAtPeriodEnd  Boolean
   createdAt          DateTime  @default(now())
   currentPeriodStart DateTime
   currentPeriodEnd   DateTime
@@ -149,4 +151,6 @@ model Subscription {
   canceledAt         DateTime?
   trialStart         DateTime?
   trialEnd           DateTime?
+
+  @@index(fields: [userId])
 }

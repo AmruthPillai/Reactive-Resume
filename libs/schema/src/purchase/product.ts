@@ -9,7 +9,7 @@ export const productSchema = z.object({
   name: z.string(),
   description: z.string(),
   image: z.string().nullable(),
-  metadata: z.string(),
+  metadata: z.record(z.string(), z.string()),
 
   prices: z.array(priceSchema),
 });

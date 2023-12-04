@@ -20,7 +20,6 @@ export const SingleProduct = ({ product }: Props) => {
     });
 
     const stripe = await getStripe();
-    debugger;
     stripe?.redirectToCheckout({ sessionId });
   };
   return (

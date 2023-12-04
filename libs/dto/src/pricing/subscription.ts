@@ -31,7 +31,7 @@ export const subscriptionSchema = z.object({
   // Quantity multiplied by the unit amount of the price creates the amount of the subscription. Can be used to charge multiple seats.
   quantity: z.number().int().default(1),
   // If true the subscription has been canceled by the user and will be deleted at the end of the billing period.
-  cancelAtPeriodEnd: z.boolean().default(false),
+  cancelAtPeriodEnd: z.boolean().optional(),
   // Time at which the subscription was created.
   createdAt: z.date().or(z.dateString()),
   // Start of the current period that the subscription has been invoiced for.
