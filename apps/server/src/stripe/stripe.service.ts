@@ -283,7 +283,6 @@ export class StripeService {
     });
 
     const { id: userId } = customerData!;
-    Logger.log("############## userId", userId);
 
     const subscription = await this.stripe.subscriptions.retrieve(subscriptionId, {
       expand: ["default_payment_method"],
@@ -298,9 +297,7 @@ export class StripeService {
         metadata: subscription.metadata,
         status: subscription.status,
         priceId: subscription.items.data[0].price.id,
-        //TODO check quantity on subscription
-        // @ts-ignore
-        quantity: subscription.quantity,
+        quantity: 1,
         cancelAtPeriodEnd: subscription.cancel_at_period_end,
         cancelAt: subscription.cancel_at
           ? this.utils.toDateTime(subscription.cancel_at).toISOString()
@@ -327,9 +324,7 @@ export class StripeService {
         metadata: subscription.metadata,
         status: subscription.status,
         priceId: subscription.items.data[0].price.id,
-        //TODO check quantity on subscription
-        // @ts-ignore
-        quantity: subscription.quantity,
+        quantity: 1,
         cancelAtPeriodEnd: subscription.cancel_at_period_end,
         cancelAt: subscription.cancel_at
           ? this.utils.toDateTime(subscription.cancel_at).toISOString()
@@ -357,7 +352,6 @@ export class StripeService {
     // For a new subscription copy the billing details to the customer object.
     // NOTE: This is a costly operation and should happen at the very end.
     if (createAction && subscription.default_payment_method && userId)
-      //@ts-ignore
       await this.copyBillingDetailsToCustomer(
         userId,
         subscription.default_payment_method as Stripe.PaymentMethod,
@@ -390,8 +384,6 @@ export class StripeService {
   };
 
   createOrRetrieveCustomer = async ({ email, userId }: { email: string; userId: string }) => {
-    this.logger.log(email);
-    this.logger.log(userId);
     const customerData = await this.prisma.customer.findFirst({
       where: {
         id: userId,
@@ -408,7 +400,7 @@ export class StripeService {
       if (email) customerData.email = email;
       const customer = await this.stripe.customers.create(customerData);
       // Now insert the customer ID into our Supabase mapping table.
-      const data = await this.prisma.customer.create({
+      await this.prisma.customer.create({
         data: {
           id: userId,
           stripeCustomerId: customer.id,

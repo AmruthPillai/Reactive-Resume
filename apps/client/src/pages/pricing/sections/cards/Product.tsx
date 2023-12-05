@@ -2,16 +2,19 @@
 import { CircleNotch, StripeLogo } from "@phosphor-icons/react";
 import { PriceDto, ProductDto } from "@reactive-resume/dto";
 import { Button } from "@reactive-resume/ui";
+import { cn } from "@reactive-resume/utils";
+import { useState } from "react";
 
 import { createCheckoutSession } from "@/client/services/stripe/stripe";
 
 import { getStripe } from "../../stripeClient";
 
 type Props = {
-  product: ProductDto;
+  products: ProductDto[];
 };
 
-export const SingleProduct = ({ product }: Props) => {
+export const Product = ({ products }: Props) => {
+  const [product, setProduct] = useState(() => products[0]);
   const loading = "";
   const handleCheckout = async (price: PriceDto) => {
     const { sessionId } = await createCheckoutSession({
@@ -24,33 +27,60 @@ export const SingleProduct = ({ product }: Props) => {
   };
   return (
     <section className="">
-      <div className="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
-        <div className="mx-auto mb-8 max-w-screen-md text-center lg:mb-12">
-          <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-            Designed for business teams like yours
-          </h2>
-          <p className="mb-5 font-light text-gray-500 dark:text-gray-400 sm:text-xl">
-            Here at Flowbite we focus on markets where technology, innovation, and capital can
-            unlock long-term value and drive economic growth.
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-24 lg:px-8">
+        <div className="sm:flex sm:flex-col">
+          <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
+            Pricing Plans
+          </h1>
+          <p className="m-auto mt-5 max-w-2xl text-xl text-zinc-200 sm:text-center sm:text-2xl">
+            Start building for free, then add a site plan to go live. Account plans unlock
+            additional features.
           </p>
+          <div className="relative mt-6 flex self-center rounded-lg border border-zinc-800 bg-zinc-900 p-0.5 sm:mt-8">
+            {products.map((prd) => {
+              const active = prd.id === product.id;
+              return (
+                <button
+                  onClick={() => setProduct(prd)}
+                  type="button"
+                  className={cn(
+                    "relative  w-1/2 whitespace-nowrap rounded-md py-2 text-sm font-medium focus:outline-none sm:w-auto sm:px-8",
+                    active && "border-slate-50 bg-slate-50 text-secondary shadow-sm",
+                    !active && "ml-0.5 border border-transparent text-primary",
+                  )}
+                >
+                  {prd.name}
+                </button>
+              );
+            })}
+          </div>
         </div>
-        <div className="space-y-8 sm:gap-6 lg:grid lg:grid-cols-3 lg:space-y-0 xl:gap-10">
+        <div
+          className={cn(
+            "mt-12 space-y-8 sm:gap-6 lg:grid  lg:space-y-0 xl:gap-10",
+            (product.prices?.length || 0) < 3 ? "lg:grid-cols-2" : "lg:grid-cols-3",
+          )}
+        >
           {/* <!-- Pricing Card --> */}
           {product.prices?.map((price) => {
-            const priceString = new Intl.NumberFormat("en-US", {
-              style: "currency",
-              currency: price.currency!,
-              minimumFractionDigits: 0,
-            }).format(price?.unitAmount || 0);
+            const priceString =
+              price.unitAmount &&
+              new Intl.NumberFormat("en-US", {
+                style: "currency",
+                currency: price.currency!,
+                minimumFractionDigits: 0,
+              }).format(price?.unitAmount / 100);
             return (
               <div className="mx-auto flex max-w-lg flex-col rounded-lg border border-gray-100 bg-white p-6 text-center text-gray-900 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white xl:p-8">
                 <h3 className="mb-4 text-2xl font-semibold">{product.name}</h3>
                 <p className="font-light text-gray-500 dark:text-gray-400 sm:text-lg">
-                  {product.description}
+                  {price.description}
                 </p>
                 <div className="my-8 flex items-baseline justify-center">
                   <span className="mr-2 text-5xl font-extrabold"> {priceString}</span>
-                  <span className="text-gray-500 dark:text-gray-400">/{price.interval}</span>
+                  <span className="text-gray-500 dark:text-gray-400">
+                    /{price.interval ?? "lifetime"}
+                  </span>
                 </div>
                 {/* <!-- List --> */}
                 <ul role="list" className="mb-8 space-y-4 text-left">
@@ -148,8 +178,8 @@ export const SingleProduct = ({ product }: Props) => {
                   onClick={() => handleCheckout(price)}
                 >
                   <button>
-                    {loading ? <CircleNotch className="animate-spin" /> : <StripeLogo />} Get
-                    started
+                    {loading ? <CircleNotch className="animate-spin" /> : <StripeLogo />}{" "}
+                    {price.pricingType === "recurring" ? "Subscribe now" : "Buy now"}
                   </button>
                 </Button>
               </div>

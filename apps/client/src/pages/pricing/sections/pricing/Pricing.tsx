@@ -1,6 +1,6 @@
 import { useProducts } from "@/client/services/stripe/product";
 
-import { SingleProduct } from "../cards/SingleProduct";
+import { Product } from "../cards/Product";
 
 export const Pricing = () => {
   const { products, error, loading } = useProducts();
@@ -9,5 +9,5 @@ export const Pricing = () => {
     return null;
   }
 
-  return <SingleProduct product={products[0]} />;
+  return <Product products={products} />;
 };
