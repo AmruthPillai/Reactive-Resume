@@ -75,6 +75,19 @@ export class StripeService {
       },
     });
   }
+
+  async createPortalLink(userId: string, email: string) {
+    const customer = await this.createOrRetrieveCustomer({
+      userId: userId || "",
+      email: email || "",
+    });
+    const { url } = await this.stripe.billingPortal.sessions.create({
+      customer,
+      return_url: `${this.frontendUrl}/dashboard/settings?payment=success`,
+    });
+    return { url };
+  }
+
   async createCheckoutSession(userId: string, priceId: string, quantity: number) {
     // Get the user from auth
     const user = await this.prisma.user.findFirstOrThrow({
@@ -125,8 +138,8 @@ export class StripeService {
           // trial_period_days: 1,
           metadata,
         },
-        success_url: `${this.frontendUrl}/success`,
-        cancel_url: `${this.frontendUrl}/cancel`,
+        success_url: `${this.frontendUrl}/dashboard/settings?payment=success`,
+        cancel_url: `${this.frontendUrl}/pricing?payment=failed`,
       });
       sessionId = session.id;
     } else if (price.pricingType === "one_time") {

@@ -64,6 +64,12 @@ export class StripeController {
     return this.stripeService.createCheckoutSession(user.id, body.priceId, body.quantity);
   }
 
+  @Get("create-portal-link")
+  @UseGuards(TwoFactorGuard)
+  createPortalLink(@User() user: UserEntity) {
+    return this.stripeService.createPortalLink(user.id, user.email);
+  }
+
   @Post("webhook")
   // @UseGuards(TwoFactorGuard)
   webhook(

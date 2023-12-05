@@ -144,7 +144,7 @@ export const SecuritySettings = () => {
             ) : (
               <p className="mb-4 leading-relaxed opacity-75">
                 <Trans>
-                  <strong>Two-factor authentication is currently disabled.</strong> You can enable
+                  <strong>Two-factoer authentication is currently disabled.</strong> You can enable
                   it by adding an authenticator app to your account.
                 </Trans>
               </p>

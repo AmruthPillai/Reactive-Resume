@@ -29,14 +29,12 @@ export const Product = ({ products }: Props) => {
     <section className="">
       <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-24 lg:px-8">
         <div className="sm:flex sm:flex-col">
-          <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
-            Pricing Plans
-          </h1>
-          <p className="m-auto mt-5 max-w-2xl text-xl text-zinc-200 sm:text-center sm:text-2xl">
+          <h1 className="text-4xl font-extrabold sm:text-center sm:text-6xl">Pricing Plans</h1>
+          <p className="m-auto mt-5 max-w-2xl text-xl sm:text-center sm:text-2xl">
             Start building for free, then add a site plan to go live. Account plans unlock
             additional features.
           </p>
-          <div className="relative mt-6 flex self-center rounded-lg border border-zinc-800 bg-zinc-900 p-0.5 sm:mt-8">
+          <div className="relative mt-6 flex self-center rounded-lg border border-foreground p-0.5 sm:mt-8">
             {products.map((prd) => {
               const active = prd.id === product.id;
               return (
@@ -45,8 +43,8 @@ export const Product = ({ products }: Props) => {
                   type="button"
                   className={cn(
                     "relative  w-1/2 whitespace-nowrap rounded-md py-2 text-sm font-medium focus:outline-none sm:w-auto sm:px-8",
-                    active && "border-slate-50 bg-slate-50 text-secondary shadow-sm",
-                    !active && "ml-0.5 border border-transparent text-primary",
+                    active && "border-slate-50 bg-foreground text-background shadow-sm",
+                    !active && "ml-0.5 border  border-transparent bg-background text-foreground",
                   )}
                 >
                   {prd.name}
@@ -71,16 +69,12 @@ export const Product = ({ products }: Props) => {
                 minimumFractionDigits: 0,
               }).format(price?.unitAmount / 100);
             return (
-              <div className="mx-auto flex max-w-lg flex-col rounded-lg border border-gray-100 bg-white p-6 text-center text-gray-900 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white xl:p-8">
+              <div className="mx-auto flex max-w-lg flex-col rounded-lg border border-gray-100 p-6 text-center shadow dark:border-gray-600 xl:p-8">
                 <h3 className="mb-4 text-2xl font-semibold">{product.name}</h3>
-                <p className="font-light text-gray-500 dark:text-gray-400 sm:text-lg">
-                  {price.description}
-                </p>
+                <p className="font-light sm:text-lg">{price.description}</p>
                 <div className="my-8 flex items-baseline justify-center">
                   <span className="mr-2 text-5xl font-extrabold"> {priceString}</span>
-                  <span className="text-gray-500 dark:text-gray-400">
-                    /{price.interval ?? "lifetime"}
-                  </span>
+                  <span>/{price.interval ?? "lifetime"}</span>
                 </div>
                 {/* <!-- List --> */}
                 <ul role="list" className="mb-8 space-y-4 text-left">

@@ -14,6 +14,11 @@ export const createCheckoutSession = async (checkoutRequest: StripeCheckoutReque
   return response.data;
 };
 
+export const createPaymentLink = async () => {
+  const response = await axios.get<{ url: string }>(`/stripe/create-portal-link`);
+  return response.data;
+};
+
 export const useCheckoutSession = (checkoutRequest: StripeCheckoutRequest) => {
   const {
     error,
