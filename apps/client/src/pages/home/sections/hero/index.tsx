@@ -39,12 +39,12 @@ export const HeroSection = () => (
         <div className="mt-10 space-y-2">
           <h6 className="text-base font-bold tracking-wide">{t`Finally,`}</h6>
           <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-            {t`A free and open-source resume builder`}
+            {t`Transform Your Career Journey with Live Resumes and AI Brilliance`}
           </h1>
         </div>
 
         <p className="prose prose-base prose-zinc mt-6 text-lg leading-8 dark:prose-invert">
-          {t`A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume.`}
+          {t`Craft dynamic, personalized resumes on the fly with our AI Resume Builder. Experience the future of job applications – live, interactive, and tailored to showcase your unique skills. Your dream career starts with a click!`}
         </p>
 
         <div className="mt-10 flex items-center gap-x-8">
