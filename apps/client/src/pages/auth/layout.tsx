@@ -30,7 +30,7 @@ export const AuthLayout = () => {
             <Logo className="-ml-3" size={96} />
           </Link>
 
-          <div className="inset-x-0 bottom-0 space-x-2 text-right lg:absolute lg:p-12 lg:text-center">
+          <div className="right-0 space-x-2 text-right lg:absolute lg:p-12 lg:text-center">
             <LocaleSwitch />
             <ThemeSwitch />
           </div>
