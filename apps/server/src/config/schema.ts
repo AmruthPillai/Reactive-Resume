@@ -39,6 +39,10 @@ export const configSchema = z.object({
     .string()
     .default("false")
     .transform((s) => s !== "false" && s !== "0"),
+  STORAGE_SKIP_CREATE_BUCKET: z
+    .string()
+    .default("false")
+    .transform((s) => s !== "false" && s !== "0"),
 
   // Redis
   REDIS_URL: z.string().url().startsWith("redis://").optional(),
