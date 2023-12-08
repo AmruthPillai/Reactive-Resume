@@ -17,6 +17,7 @@ patchNestJsSwagger();
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
     logger: process.env.NODE_ENV === "development" ? ["debug"] : ["error", "warn", "log"],
+    rawBody: true,
   });
   const configService = app.get(ConfigService<Config>);
   const prisma = app.get(PrismaService);

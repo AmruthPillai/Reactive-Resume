@@ -128,6 +128,11 @@ services:
       PALM_API_KEY: palm_api_key
       PALM_MODEL_NAME: models/text-bison-001
 
+      # -- Stripe keys -- 
+      VITE_STRIPE_PUBLISHABLE_KEY: stripe_publish_key
+      STRIPE_SECRET_KEY: stripe_secret_key
+      STRIPE_WEBHOOK_SECRET: stripe_webhook_secret
+
   nginx:
     image: jc21/nginx-proxy-manager
     restart: always

@@ -78,6 +78,11 @@ export const configSchema = z.object({
   // PALM api
   PALM_API_KEY: z.string(),
   PALM_MODEL_NAME: z.string(),
+
+  // Stripe
+  VITE_STRIPE_PUBLISHABLE_KEY: z.string(),
+  STRIPE_SECRET_KEY: z.string(),
+  STRIPE_WEBHOOK_SECRET: z.string(),
 });
 
 export type Config = z.infer<typeof configSchema>;

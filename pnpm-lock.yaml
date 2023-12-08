@@ -164,6 +164,9 @@ dependencies:
   '@songkeys/nestjs-redis-health':
     specifier: ^10.0.0
     version: 10.0.0(@nestjs/common@10.2.10)(@nestjs/core@10.2.10)(@nestjs/terminus@10.2.0)(ioredis@5.3.2)
+  '@stripe/stripe-js':
+    specifier: ^2.2.0
+    version: 2.2.0
   '@swc/helpers':
     specifier: ~0.5.3
     version: 0.5.3
@@ -350,6 +353,9 @@ dependencies:
   sharp:
     specifier: ^0.32.6
     version: 0.32.6
+  stripe:
+    specifier: ^14.7.0
+    version: 14.7.0
   tailwind-merge:
     specifier: ^2.1.0
     version: 2.1.0
@@ -6157,6 +6163,10 @@ packages:
       '@nestjs/core': 10.2.10(@nestjs/common@10.2.10)(@nestjs/platform-express@10.2.10)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       ioredis: 5.3.2
       tslib: 2.6.0
+    dev: false
+
+  /@stripe/stripe-js@2.2.0:
+    resolution: {integrity: sha512-YyXQbsXvnNRJ6MofFhCLIQ4W7UpfkfSOQhjIaHEiCMBv3IBxhzugXiYNNzceGTK/7DL31v7HtTnkJ+FI+6AIow==}
     dev: false
 
   /@svgr/babel-plugin-add-jsx-attribute@8.0.0(@babel/core@7.23.5):
@@ -17724,6 +17734,14 @@ packages:
     resolution: {integrity: sha512-A21Xsm1XzUkK0qK1ZrytDUvqsQWict2Cykhvi0fBQntGG5JSprESasEyV1EZ/4CiR5WB5KjzLTrP/bO37B0wPg==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dev: true
+
+  /stripe@14.7.0:
+    resolution: {integrity: sha512-A6XWH76K0K7IgEBz4odIVxjhkdPduSPafZju6ltAFU0oMbWJlfeaDyMTfRJ9vcYA9zqENfwRizExD/2nZ4rQ1A==}
+    engines: {node: '>=12.*'}
+    dependencies:
+      '@types/node': 20.10.3
+      qs: 6.11.2
+    dev: false
 
   /strnum@1.0.5:
     resolution: {integrity: sha512-J8bbNyKKXl5qYcR36TIO8W3mVGVHrmmxsd5PAItGkmyzwJvybiw2IVq5nqd0i4LSNSkB/sx9VHllbfFdr9k1JA==}

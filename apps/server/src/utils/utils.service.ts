@@ -38,7 +38,8 @@ export class UtilsService {
   ): Promise<T> {
     // Try to get the value from the cache
     const start = performance.now();
-    const cachedValue = await this.redis.get(key);
+    // const cachedValue = await this.redis.get(key);
+    const cachedValue = false;
     const duration = Number(performance.now() - start).toFixed(0);
 
     if (!cachedValue) {
@@ -62,4 +63,10 @@ export class UtilsService {
     // Return the value
     return value;
   }
+
+  toDateTime = (secs: number) => {
+    const t = new Date("1970-01-01T00:30:00Z"); // Unix epoch start.
+    t.setSeconds(secs);
+    return t;
+  };
 }
