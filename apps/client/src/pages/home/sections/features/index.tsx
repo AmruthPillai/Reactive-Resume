@@ -1,6 +1,7 @@
 import { Trans, t } from "@lingui/macro";
 import { Brain, Files, Globe, Paragraph, PencilLine, TrendUp } from "@phosphor-icons/react";
 import { templatesList } from "@reactive-resume/utils";
+import { motion } from "framer-motion";
 
 type Feature = {
   icon: React.ReactNode;
@@ -57,7 +58,7 @@ export const FeaturesSection = () => {
             </div>
 
             {features.map((feature) => (
-              <div className="md:-mx-4 md:flex md:items-start">
+              <div className="md:-mx-4 md:flex md:items-start" key={feature.title}>
                 <span className="inline-block rounded-xl bg-blue-100 p-2 text-blue-500 dark:bg-blue-500 dark:text-white md:mx-4">
                   {feature.icon}
                 </span>
@@ -71,12 +72,42 @@ export const FeaturesSection = () => {
             ))}
           </div>
 
-          <div className="hidden lg:flex lg:w-1/2 lg:items-center lg:justify-center">
+          {/* <div className="hidden lg:flex lg:w-1/2 lg:items-center lg:justify-center">
             <img
               className="p-2 object-cover"
               src="/screenshots/builder.jpg"
               alt=""
             />
+          </div> */}
+          <div className="w-full overflow-hidden lg:absolute lg:right-0 lg:max-w-[45%]">
+            <motion.div
+              animate={{
+                x: [0, 200 * -1],
+                transition: {
+                  x: {
+                    duration: 30,
+                    repeat: Infinity,
+                    repeatType: "mirror",
+                  },
+                },
+              }}
+              className="flex items-center gap-x-6"
+            >
+              <motion.a
+                className="max-w-none flex-none"
+                viewport={{ once: true }}
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+              >
+                <img
+                  className=" h-[400px] rounded object-cover lg:h-[600px]"
+                  src="/screenshots/builder.jpg"
+                  alt="Resume Builder"
+                />
+              </motion.a>
+            </motion.div>
+
+            <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-1/2 bg-gradient-to-r from-background to-transparent lg:block" />
           </div>
         </div>
       </div>

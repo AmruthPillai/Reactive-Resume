@@ -6,10 +6,10 @@ export const TemplatesSection = () => (
   <section id="sample-resumes" className="relative py-24 sm:py-32">
     <div className="container flex flex-col gap-12 lg:min-h-[600px] lg:flex-row lg:items-start">
       <div className="space-y-4 lg:mt-16 lg:basis-96">
-        <h2 className="text-4xl font-bold">{t`Templates`}</h2>
+        <h2 className="text-4xl font-bold">{t`Explore our Powerful Resume Builder Templates`}</h2>
 
         <p className="leading-relaxed">
-          {t`Explore the templates available in Reactive Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume.`}
+          {t`Fuel your career success with our top-tier Resume Builder templates. Unleash the potential of your professional story, crafted with precision and innovation. Find the perfect template to make your resume stand out and climb the ranks in Google's search results. Elevate your career with a resume that leaves a lasting impression!`}
         </p>
       </div>
 
