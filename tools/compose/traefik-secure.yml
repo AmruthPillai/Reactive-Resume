@@ -140,6 +140,10 @@ services:
       VITE_STRIPE_PUBLISHABLE_KEY: stripe_publish_key
       STRIPE_SECRET_KEY: stripe_secret_key
       STRIPE_WEBHOOK_SECRET: stripe_webhook_secret
+
+      # -- New Relic --
+      NEW_RELIC_APP_NAME: new_relic_app_name
+      NEW_RELIC_LICENSE_KEY:  new_relic_license_key
       
     labels:
       - traefik.enable=true
