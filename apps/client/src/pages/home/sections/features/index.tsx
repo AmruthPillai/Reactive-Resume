@@ -1,141 +1,114 @@
-import { t } from "@lingui/macro";
-import {
-  Brain,
-  Cloud,
-  CloudSun,
-  CurrencyDollarSimple,
-  EnvelopeSimple,
-  Eye,
-  File,
-  Files,
-  Folder,
-  GitBranch,
-  GithubLogo,
-  GoogleChromeLogo,
-  GoogleLogo,
-  IconContext,
-  Layout,
-  Lock,
-  Note,
-  Prohibit,
-  Scales,
-  StackSimple,
-  Star,
-  Swatches,
-  TextAa,
-  Translate,
-} from "@phosphor-icons/react";
-import { cn, languages, templatesList } from "@reactive-resume/utils";
+import { Trans, t } from "@lingui/macro";
+import { Brain, Files, Globe, Paragraph, PencilLine, TrendUp } from "@phosphor-icons/react";
+import { templatesList } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
 
 type Feature = {
   icon: React.ReactNode;
   title: string;
-  className?: string;
+  description: string;
 };
 
-const featureLabel = cn(
-  "flex cursor-default items-center justify-center gap-x-2 rounded bg-secondary px-4 py-3 text-sm font-medium leading-none text-primary transition-colors hover:bg-primary hover:text-background",
-);
-
 export const FeaturesSection = () => {
-  const languagesCount = languages.length;
   const templatesCount = templatesList.length;
-
   const features: Feature[] = [
-    { icon: <CurrencyDollarSimple />, title: t`Free, forever` },
-    { icon: <GitBranch />, title: t`Open Source` },
-    { icon: <Scales />, title: t`MIT License` },
-    { icon: <Prohibit />, title: t`No user tracking or advertising` },
-    { icon: <Cloud />, title: t`Self-host with Docker` },
-    { icon: <Translate />, title: t`Available in ${languagesCount} languages` },
-    { icon: <Brain />, title: t`OpenAI Integration` },
-    { icon: <GithubLogo />, title: t`Sign in with GitHub` },
-    { icon: <GoogleLogo />, title: t`Sign in with Google` },
-    { icon: <EnvelopeSimple />, title: t`Sign in with Email` },
-    { icon: <Lock />, title: t`Secure with two-factor authentication` },
-    { icon: <StackSimple />, title: t`${templatesCount} resume templates to choose from` },
-    { icon: <Files />, title: t`Design single/multi page resumes` },
-    { icon: <Folder />, title: t`Manage multiple resumes` },
-    { icon: <Swatches />, title: t`Customisable colour palettes` },
-    { icon: <Layout />, title: t`Customisable layouts` },
-    { icon: <Star />, title: t`Custom resume sections` },
-    { icon: <Note />, title: t`Personal notes for each resume` },
-    { icon: <Lock />, title: t`Lock a resume to prevent editing` },
-    { icon: <File />, title: t`Supports A4/Letter page formats` },
-    { icon: <TextAa />, title: t`Pick any font from Google Fonts` },
-    { icon: <GoogleChromeLogo />, title: t`Host your resume publicly` },
-    { icon: <Eye />, title: t`Track views and downloads` },
-    { icon: <CloudSun />, title: t`Light or dark theme` },
     {
-      icon: (
-        <div className="flex items-center space-x-1">
-          <img src="https://cdn.simpleicons.org/react" alt="React" width={14} height={14} />
-          <img src="https://cdn.simpleicons.org/vite" alt="Vite" width={14} height={14} />
-          <img
-            src="https://cdn.simpleicons.org/tailwindcss"
-            alt="TailwindCSS"
-            width={14}
-            height={14}
-          />
-          <img src="https://cdn.simpleicons.org/nestjs" alt="NestJS" width={14} height={14} />
-          <img
-            src="https://cdn.simpleicons.org/googlechrome"
-            alt="Google Chrome"
-            width={14}
-            height={14}
-          />
-          <img
-            src="https://cdn.simpleicons.org/postgresql"
-            alt="PostgreSQL"
-            width={14}
-            height={14}
-          />
-          <img src="https://cdn.simpleicons.org/redis" alt="Redis" width={14} height={14} />
-        </div>
-      ),
-      title: t`Powered by`,
-      className: "flex-row-reverse",
+      icon: <PencilLine />,
+      title: t`Expert Writing Tips`,
+      description: t`Get real-time feedback and suggestions for improvement, from grammar and formatting checks to ensuring your resume is clear, concise, and impactful.`,
+    },
+    {
+      icon: <Brain />,
+      title: t`Smart Content Suggestions`,
+      description: t`Get personalized recommendations for relevant achievements, quantifiable results, and action verbs to showcase your impact and drive.`,
+    },
+    {
+      icon: <Globe />,
+      title: t`Optimize Your Online Presence`,
+      description: t`Enhance your online profile and make it easier for employers to find and discover your talents.`,
+    },
+    {
+      icon: <Files />,
+      title: t`Extensive Template Library`,
+      description: t`Choose from over 10+ professional resume templates, designed for various industries and job titles.`,
+    },
+    {
+      icon: <TrendUp />,
+      title: t`Real-Time Engagement Tracking`,
+      description: t`See how many recruiters have viewed your Live Resume, how long they spent on each section, and what actions they took.`,
     },
   ];
-
   return (
     <section id="features" className="relative bg-secondary-accent py-24 sm:py-32">
-      <div className="container">
-        <div className="space-y-6 leading-loose">
-          <h2 className="text-4xl font-bold">{t`Rich in features, not in pricing.`}</h2>
-          <p className="max-w-4xl text-base leading-relaxed">
-            {t`Reactive Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection.`}
-          </p>
+      <div className="container mx-auto px-6 py-10">
+        <div className="lg:flex lg:items-center">
+          <div className="w-full space-y-12 lg:w-1/2 ">
+            <div>
+              <h1 className="text-3xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl">
+                <Trans>
+                  explore our <br /> awesome Components
+                </Trans>
+              </h1>
 
-          <IconContext.Provider value={{ size: 14, weight: "bold" }}>
-            <div className="!mt-12 flex flex-wrap items-center gap-4">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  viewport={{ once: true }}
-                  initial={{ opacity: 0, x: -50 }}
-                  className={cn(featureLabel, feature.className)}
-                  whileInView={{ opacity: 1, x: 0, transition: { delay: index * 0.1 } }}
-                >
-                  {feature.icon}
-                  <h4>{feature.title}</h4>
-                </motion.div>
-              ))}
-
-              <motion.p
-                viewport={{ once: true }}
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{
-                  opacity: 1,
-                  x: 0,
-                  transition: { delay: (features.length + 1) * 0.1 },
-                }}
-              >
-                {t`and many more...`}
-              </motion.p>
+              <div className="mt-2">
+                <span className="inline-block h-1 w-40 rounded-full bg-blue-500"></span>
+                <span className="ml-1 inline-block h-1 w-3 rounded-full bg-blue-500"></span>
+                <span className="ml-1 inline-block h-1 w-1 rounded-full bg-blue-500"></span>
+              </div>
             </div>
-          </IconContext.Provider>
+
+            {features.map((feature) => (
+              <div className="md:-mx-4 md:flex md:items-start" key={feature.title}>
+                <span className="inline-block rounded-xl bg-blue-100 p-2 text-blue-500 dark:bg-blue-500 dark:text-white md:mx-4">
+                  {feature.icon}
+                </span>
+
+                <div className="mt-4 md:mx-4 md:mt-0">
+                  <h1 className="text-2xl font-semibold capitalize">{feature.title}</h1>
+
+                  <p className="mt-3">{feature.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* <div className="hidden lg:flex lg:w-1/2 lg:items-center lg:justify-center">
+            <img
+              className="p-2 object-cover"
+              src="/screenshots/builder.jpg"
+              alt=""
+            />
+          </div> */}
+          <div className="w-full overflow-hidden lg:absolute lg:right-0 lg:max-w-[45%]">
+            <motion.div
+              animate={{
+                x: [0, 200 * -1],
+                transition: {
+                  x: {
+                    duration: 30,
+                    repeat: Infinity,
+                    repeatType: "mirror",
+                  },
+                },
+              }}
+              className="flex items-center gap-x-6"
+            >
+              <motion.a
+                className="max-w-none flex-none"
+                viewport={{ once: true }}
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+              >
+                <img
+                  className=" h-[400px] rounded object-cover lg:h-[600px]"
+                  src="/screenshots/builder.jpg"
+                  alt="Resume Builder"
+                />
+              </motion.a>
+            </motion.div>
+
+            <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-1/2 bg-gradient-to-r from-background to-transparent lg:block" />
+          </div>
         </div>
       </div>
     </section>

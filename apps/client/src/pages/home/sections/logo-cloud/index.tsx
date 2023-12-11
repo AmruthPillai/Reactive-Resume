@@ -36,14 +36,14 @@ export const LogoCloudSection = () => (
   <section id="logo-cloud" className="relative py-24 sm:py-32">
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <p className="text-center text-lg leading-relaxed">
-        {t`Reactive Resume has helped people land jobs at these great companies:`}
+        {t`Trusted by Leading Brands: Explore How Our Builder Elevates Careers`}
       </p>
       <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
         {logoList.map((company) => (
           <Logo key={company} company={company} />
         ))}
       </div>
-      <p className="mx-auto mt-8 max-w-sm text-center leading-relaxed">
+      {/* <p className="mx-auto mt-8 max-w-sm text-center leading-relaxed">
         <Trans>
           If this app has helped you with your job hunt, let me know by reaching out through{" "}
           <a
@@ -56,7 +56,7 @@ export const LogoCloudSection = () => (
           </a>
           .
         </Trans>
-      </p>
+      </p> */}
     </div>
   </section>
 );
