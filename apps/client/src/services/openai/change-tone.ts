@@ -6,7 +6,7 @@ import { openai } from "./client";
 
 const PROMPT = `You are an AI writing assistant specialized in writing copy for resumes.
 Do not return anything else except the text you improved. It should not begin with a newline. It should not have any prefix or suffix text.
-Change the tone of the following paragraph to be {mood}:
+Change the tone of the following paragraph to be {mood} and returns in the language of the text:
 
 Text: """{input}"""
 
