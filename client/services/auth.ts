@@ -72,6 +72,7 @@ export const checkoutMain = (data: any, handleSuccess: any, handleError: any) =>
       const data = await resp.json();
       console.log(resp);
       dispatch(handleSuccess(data));
+      return;
       // const {
       //   data: { user, accessToken },
       // } = resp;
