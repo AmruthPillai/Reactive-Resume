@@ -71,7 +71,7 @@ export const checkoutMain = (data: any, handleSuccess: any, handleError: any) =>
     .then(async (resp) => {
       const localdata = await resp.json();
       console.log(resp);
-      dispatch(handleSuccess(localdata));
+      store.dispatch(handleSuccess(localdata));
       return;
       // const {
       //   data: { user, accessToken },
@@ -82,7 +82,7 @@ export const checkoutMain = (data: any, handleSuccess: any, handleError: any) =>
     })
     .catch((e) => {
       console.log(e);
-      handleError();
+      store.dispatch(handleError());
     });
 };
 
