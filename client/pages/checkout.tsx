@@ -1,6 +1,7 @@
 `use client`;
 import { TextField } from '@mui/material';
 import dayjs from 'dayjs';
+import { NextPage } from 'next';
 import { useRouter } from 'next/dist/client/router';
 import React, { useEffect, useState } from 'react';
 import { pdfjs } from 'react-pdf';
@@ -16,7 +17,8 @@ import { cn } from '@/utils/styles';
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL('pdfjs-dist/build/pdf.worker.min.js', import.meta.url).toString();
 
-const CheckoutPage = () => {
+const CheckoutPage: NextPage = () => {
+  const dispatch = useAppDispatch();
   const [numPages, setNumPages] = useState<number>();
   const [pageNumber, setPageNumber] = useState<number>();
   const [errors, seterrors] = useState('');
@@ -29,7 +31,6 @@ const CheckoutPage = () => {
   console.log(phone);
   const [phonenumber, setNumber] = useState(phone ? phone.toString()?.split('@')[0] : '');
   console.log(phonenumber);
-  const dispatch = useAppDispatch();
 
   function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
     setNumPages(numPages);
@@ -112,6 +113,7 @@ const CheckoutPage = () => {
       checkoutMain(
         formData,
         (data: any) => {
+          console.log(data);
           setIsSuccess(
             'We have initiated an STK push for the premium version of your resume to your mobile device. Please follow the instructions on your phone to complete the payment process. Once we receive your payment, the premium product will be activated. This may take a few minutes. Thank you for choosing our premium service.',
           );
