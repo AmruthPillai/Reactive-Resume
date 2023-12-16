@@ -175,11 +175,15 @@ const CheckoutModal: React.FC = () => {
         <p>
           <strong>Dear {name && name.split(' ').length > 0 ? name.split(' ')[0] : name}</strong>,<strong></strong>
           <br />
-          <small>- You will instantly receive this CV pdf document on your Whatsapp with no watermark</small>
+          <small>
+            - You will instantly receive this CV pdf document on your Whatsapp with no watermark upon payment.
+          </small>
           <br />
-          <small>- - Get unlimited access to this resume and download it at any time</small>
+          <small>
+            - You will also get unlimited access to this resume and download it at any time via download/edit link
+            option on whatsapp.
+          </small>
           <br />
-          <small>- Get the freedom to edit this resume as many times as you need</small>
         </p>
       ) : (
         <p>{isSuccess}</p>

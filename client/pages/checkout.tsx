@@ -146,11 +146,14 @@ const CheckoutPage = () => {
               <h1>Secure Checkout</h1>
               <ul>
                 <br />
-                <li>- You will instantly receive this CV pdf document on your Whatsapp with no watermark</li>
+                <li>
+                  - You will instantly receive this CV pdf document on your Whatsapp with no watermark upon payment.
+                </li>
                 <br />
-                <li>- Get unlimited access to this resume and download it at any time</li>
-                <br />
-                <li>- Get the freedom to edit this resume as many times as you need</li>
+                <li>
+                  - You will also get unlimited access to this resume and download it at any time via download/edit link
+                  option on whatsapp.
+                </li>
                 <br />
               </ul>
               <h3 className={styles.itemName}>Resume Id: {slug} </h3>
