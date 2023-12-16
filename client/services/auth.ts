@@ -79,7 +79,8 @@ export const checkoutMain = (data: any, handleSuccess: any, handleError: any) =>
       // dispatch(setAccessToken(accessToken));
       // handleSuccess(loginParams);
     })
-    .catch(() => {
+    .catch((e) => {
+      console.log(e);
       handleError();
     });
 };

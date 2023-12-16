@@ -169,7 +169,7 @@ const CheckoutPage = () => {
                     className={styles.mpesa_number}
                     type="tel"
                     label={'M-Pesa Number'}
-                    error={errors != ''}
+                    error={errors !== ''}
                     helperText={errors}
                   />
                 </form>
