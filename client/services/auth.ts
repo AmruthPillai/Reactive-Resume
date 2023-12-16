@@ -81,7 +81,7 @@ export const checkoutMain = (data: any, handleSuccess: any, handleError: any) =>
       // handleSuccess(loginParams);
     })
     .catch((e) => {
-      console.log(e.response);
+      console.log(e);
       handleError();
     });
 };
