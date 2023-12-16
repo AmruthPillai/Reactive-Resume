@@ -173,29 +173,13 @@ const CheckoutModal: React.FC = () => {
     >
       {!isSuccess ? (
         <p>
-          <strong>Dear {name && name.split(' ').length > 0 ? name.split(' ')[0] : name}</strong>,
+          <strong>Dear {name && name.split(' ').length > 0 ? name.split(' ')[0] : name}</strong>,<strong></strong>
           <br />
-          <span>Currently, you can only download free resume which is intended for sample use.</span>
+          <small>- You will instantly receive this CV pdf document on your Whatsapp with no watermark</small>
           <br />
-          <strong>To obtain the premium version of resume,</strong>
+          <small>- - Get unlimited access to this resume and download it at any time</small>
           <br />
-          <strong>please make a payment of Kshs 50 via M-pesa.</strong>
-          <br />
-          <strong>This payment will grant you:</strong>
-          <br />
-          <small>- The ability to download this resume without a watermark</small>
-          <br />
-          <small>- A customized cover letter to accompany your resume</small>
-          <br />
-          <small>- ATS compliant Resume</small>
-          <br />
-          <small>- Unlimited access to this resume for downloading at any time</small>
-          <br />
-          <small>- The freedom to edit this resume as many times as needed</small>
-          <br />
-          <small>
-            <strong>Please Note: This payment is per resume.</strong>
-          </small>
+          <small>- Get the freedom to edit this resume as many times as you need</small>
         </p>
       ) : (
         <p>{isSuccess}</p>
