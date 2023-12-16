@@ -8,6 +8,8 @@ import { BrowserContext, chromium } from 'playwright-chromium';
 import { PageConfig } from 'schema';
 import { OrderService } from 'src/orders/order.service';
 
+import { UsersService } from '@/users/users.service';
+
 const minimal_chromium_args = [
   '--autoplay-policy=user-gesture-required',
   '--disable-background-networking',
@@ -46,6 +48,12 @@ const minimal_chromium_args = [
   '--use-mock-keychain',
 ];
 
+type ResumePage = {
+  pageNumber: number;
+  innerHTML: string;
+  height: string;
+};
+
 @Injectable()
 export class PrinterService implements OnModuleInit, OnModuleDestroy {
   private browser: BrowserContext;
@@ -54,6 +62,7 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
     private readonly schedulerRegistry: SchedulerRegistry,
     private readonly configService: ConfigService,
     private readonly orderService: OrderService,
+    private readonly userServcice: UsersService,
   ) {}
 
   async onModuleInit() {
@@ -107,9 +116,18 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
   //   .then((outputPdfBuffer) => fs.writeFile('output.pdf', outputPdfBuffer))
   //   .catch((error) => console.error(error));
 
-  async printAsPdf(username: string, slug: string, lastUpdated: string, preview: boolean): Promise<string> {
+  async printAsPdf(
+    username: string,
+    slug: string,
+    lastUpdated: string,
+    preview: boolean,
+    whatsappPhone: string,
+  ): Promise<string> {
     const serverUrl = this.configService.get('app.serverUrl');
+    const webUrl = this.configService.get('app.url');
     const order = await this.orderService.findOne(username, slug);
+    const user = await this.userServcice.findByIdentifier(username);
+    const userId = user.id.toString();
     // const order = null;
 
     if (order === null && (preview === false || preview === undefined || preview === null)) {
@@ -122,6 +140,8 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
     const directory = join(__dirname, '..', 'assets/exports');
     const filename = `CVpap_${username}_${slug}_${lastUpdated}.pdf`;
     const publicUrl = `${serverUrl}/assets/exports/${filename}`;
+
+    const checkoutUrl = `${webUrl}/checkout?username=${username}&slug=${slug}&updatedAt=${lastUpdated}&phone=${whatsappPhone}&userId=${userId}`;
 
     try {
       // if (order !== null) {
@@ -166,96 +186,65 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
       );
 
       const pdf = await PDFDocument.create();
-
+      Logger.log(whatsappPhone);
       for (let index = 0; index < resumePages.length; index++) {
         if (preview === true) {
-          await page.evaluate((page) => {
-            document.body.innerHTML = page.innerHTML;
+          // Logger.log(whatsappPhone);
+          try {
+            await page.evaluate(
+              ([pagejson, checkoutUrl]) => {
+                // console.log(whatsappPhone);
+                const page: ResumePage = JSON.parse(pagejson);
+                document.body.innerHTML = page.innerHTML;
+                const use = 'username';
+                // Logger.log(use);
+                const selector = 'body';
+                const newDiv = document.createElement('div');
+                // const newStart = document.createElement('div');
+                // const newEnd = document.createElement('div');
+                newDiv.innerHTML = `<div style='
+                  background: #d3d3d38a;
+                  color: #064c04cf;
+                  border-radius: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  flex-direction: column;
+                  text-align: center;
+                  font-size: 50px;
+                  z-index: 99999999;
+                  pointer-events: all;
+                  position: fixed;
+                  width: 800px;
+                  height: 800px;
+                  left: 50%;  /* Horizontally center the div */
+                  top: 50%;   /* Vertically center the div */
+                  transform: translate(-50%, -50%); /* Move the div back by half its width and height */
+              '>
+               <h3>CVPAP Free Sample</h3><hr/>
+               <br/>
+               <br/>
+               <a href="${checkoutUrl}"><h5 style="text-decoration: underline;">Click Here To Purchase</h5></a>
+               <br/><br/>
+               <a href="${checkoutUrl}"><h5>Remove This Watermark</h5></a>
+               <br/>
+               <a href="${checkoutUrl}"><h5>@ Kes 50/=</h5></a>
+                 <small style="font-size: 10px;">
+                     Glab Tech Services
+                 </small>
+               </div>
+               `;
 
-            const selector = 'body';
-            const newDiv = document.createElement('div');
-            const newStart = document.createElement('div');
-            const newEnd = document.createElement('div');
-            newDiv.innerHTML = `<div style='
-          background: #d3d3d344;
-          color: #ff000044;
-          border-radius: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-          text-align: center;
-          font-size: 50px;
-          z-index: 99999;
-          position: fixed;
-          width: 500px;
-          height: 500px;
-          left: 50%;  /* Horizontally center the div */
-          top: 50%;   /* Vertically center the div */
-          transform: translate(-50%, -50%); /* Move the div back by half its width and height */
-      '>
-        CVPAP<br>
-          <small style="font-size: 10px;">
-              Glab Tech Services
-          </small>
-      </div>
-      `;
-
-            newStart.innerHTML = `<div style='
-          background: #d3d3d344;
-          color: #ff000066;
-          border-radius: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-          text-align: center;
-          font-size: 40px;
-          z-index: 99999;
-          position: fixed;
-          width: 300px;
-          height: 300px;
-          right: 3rem;  /* Horizontally center the div */
-          top: 8rem;   /* Vertically center the div */
-          transform: translate(-50%, -50%); /* Move the div back by half its width and height */
-      '>
-        CVPAP<br>
-          <small style="font-size: 10px;">
-              Glab Tech Services
-          </small>
-      </div>
-      `;
-
-            newEnd.innerHTML = `<div style='
-          background: #d3d3d344;
-          color: #ff000044;
-          border-radius: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-          text-align: center;
-          font-size: 20px;
-          z-index: 99999;
-          position: fixed;
-          width: 300px;
-          height: 300px;
-          left: 8rem;  /* Horizontally center the div */
-          bottom: 1rem;   /* Vertically center the div */
-          transform: translate(-50%, -50%); /* Move the div back by half its width and height */
-      '>
-        CVPAP<br>
-          <small style="font-size: 10px;">
-              Glab Tech Services
-          </small>
-      </div>
-      `;
-
-            const currentDiv = document.querySelector(selector);
-            currentDiv.prepend(newDiv);
-            currentDiv.prepend(newStart);
-            currentDiv.prepend(newEnd);
-          }, resumePages[index]);
+                const currentDiv = document.querySelector(selector);
+                currentDiv.prepend(newDiv);
+                // currentDiv.prepend(newStart);
+                // currentDiv.prepend(newEnd);
+              },
+              [JSON.stringify(resumePages[index]), checkoutUrl],
+            );
+          } catch (e) {
+            Logger.log(e);
+          }
         } else {
           await page.evaluate((page) => {
             document.body.innerHTML = page.innerHTML;
@@ -267,6 +256,8 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
           height: resumePages[index].height,
           width: pageFormat === 'A4' ? '210mm' : '216mm',
         });
+
+        // Logger.log('whatsappPhone' + 'jkjkj');
 
         const pageDoc = await PDFDocument.load(buffer);
         try {

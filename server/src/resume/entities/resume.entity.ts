@@ -59,6 +59,9 @@ export class Resume {
   @UpdateDateColumn()
   updatedAt: Date;
 
+  @Column({ nullable: true })
+  rawCvData: string;
+
   constructor(partial: Partial<Resume>) {
     Object.assign(this, partial);
   }

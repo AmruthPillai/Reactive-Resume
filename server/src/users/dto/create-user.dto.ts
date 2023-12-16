@@ -31,4 +31,29 @@ export class CreateUserDto {
 
   @IsString()
   resetToken?: string;
+
+  @IsString()
+  whatsappName: string;
+
+  @IsString()
+  @IsNotEmpty()
+  whatsappNumber: string;
+
+  @IsString()
+  lastSessionSelection: string;
+
+  @IsString()
+  currentSession: string;
+
+  @IsString()
+  previewUrl: string;
+
+  @IsString()
+  status: string;
+
+  @IsString()
+  lastCvDetails: string;
+
+  @IsString()
+  lastjobDescription: string;
 }

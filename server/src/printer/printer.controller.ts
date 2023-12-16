@@ -13,13 +13,14 @@ export class PrinterController {
     @Param('slug') slug: string,
     @Query('lastUpdated') lastUpdated: string,
     @Query('preview') preview: string | boolean,
+    @Query('whatsappNumber') whatsappNumber: string,
   ): Promise<string> {
     try {
       let prev = false;
       if (preview === 'true' || preview === true) {
         prev = true;
       }
-      return await this.printerService.printAsPdf(username, slug, lastUpdated, prev);
+      return await this.printerService.printAsPdf(username, slug, lastUpdated, prev, whatsappNumber);
     } catch (error) {
       throw new GatewayTimeoutException();
     }

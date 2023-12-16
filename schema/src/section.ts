@@ -8,7 +8,7 @@ export type WorkExperience = {
   date?: DateRange;
   url?: string;
   summary?: string;
-  company: string;
+  company?: string;
 };
 
 export type Education = {

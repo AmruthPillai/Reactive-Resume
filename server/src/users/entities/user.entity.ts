@@ -45,6 +45,30 @@ export class User {
   @UpdateDateColumn()
   updatedAt: Date;
 
+  @Column({ nullable: true })
+  whatsappName: string;
+
+  @Column({ nullable: true })
+  whatsappNumber: string;
+
+  @Column({ nullable: true })
+  lastSessionSelection: string;
+
+  @Column({ nullable: true })
+  currentSession: string;
+
+  @Column({ nullable: true })
+  previewUrl: string;
+
+  @Column({ nullable: true })
+  status: string;
+
+  @Column({ nullable: true })
+  lastCvDetails: string;
+
+  @Column({ nullable: true })
+  lastjobDescription: string;
+
   constructor(partial: Partial<User>) {
     Object.assign(this, partial);
   }
