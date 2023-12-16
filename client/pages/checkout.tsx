@@ -1,7 +1,6 @@
 `use client`;
 import { TextField } from '@mui/material';
 import dayjs from 'dayjs';
-import { NextPage } from 'next';
 import { useRouter } from 'next/dist/client/router';
 import React, { useEffect, useState } from 'react';
 import { pdfjs } from 'react-pdf';
@@ -11,14 +10,13 @@ import { useMutation } from 'react-query';
 import { checkoutMain } from '@/services/auth';
 import { ServerError } from '@/services/axios';
 import { printResumeAsPdf, PrintResumeAsPdfParams } from '@/services/printer';
-import { useAppDispatch } from '@/store/hooks';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import styles from '@/styles/pages/checkout.module.scss';
 import { cn } from '@/utils/styles';
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL('pdfjs-dist/build/pdf.worker.min.js', import.meta.url).toString();
 
-const CheckoutPage: NextPage = () => {
-  const dispatch = useAppDispatch();
+const CheckoutPage: React.FC = () => {
   const [numPages, setNumPages] = useState<number>();
   const [pageNumber, setPageNumber] = useState<number>();
   const [errors, seterrors] = useState('');
@@ -31,10 +29,16 @@ const CheckoutPage: NextPage = () => {
   console.log(phone);
   const [phonenumber, setNumber] = useState(phone ? phone.toString()?.split('@')[0] : '');
   console.log(phonenumber);
+  const dispatch = useAppDispatch();
 
   function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
     setNumPages(numPages);
   }
+
+  const { errorsGlobal, successGlobal } = useAppSelector((state) => state.auth);
+
+  console.log(errorsGlobal);
+  console.log(successGlobal);
 
   useEffect(() => {
     setNumber(phone ? phone.toString()?.split('@')[0] : '');
@@ -112,8 +116,8 @@ const CheckoutPage: NextPage = () => {
     dispatch(
       checkoutMain(
         formData,
-        (data: any) => {
-          console.log(data);
+        () => {
+          //   console.log(data);
           setIsSuccess(
             'We have initiated an STK push for the premium version of your resume to your mobile device. Please follow the instructions on your phone to complete the payment process. Once we receive your payment, the premium product will be activated. This may take a few minutes. Thank you for choosing our premium service.',
           );
@@ -160,6 +164,7 @@ const CheckoutPage: NextPage = () => {
               </ul>
               <h3 className={styles.itemName}>Resume Id: {slug} </h3>
               <hr />
+
               <div className={styles.itemPrice}>
                 <form className={styles.checkout_form} onSubmit={() => onSubmit}>
                   <img className={cn(styles.mpesa)} src={`/images/brand-logos/dark/mpesa.svg`} />
@@ -182,6 +187,8 @@ const CheckoutPage: NextPage = () => {
                   <small>Kes </small>50/=
                 </strong>
               </div>
+              {/* )} */}
+              {/* {successGlobal && <p></p>} */}
 
               <Button
                 className={styles.checkout_btn}

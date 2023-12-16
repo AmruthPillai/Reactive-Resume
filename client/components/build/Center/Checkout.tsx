@@ -47,18 +47,18 @@ const CheckoutModal: React.FC = () => {
   const slug = get(resume, 'slug');
   const username = get(resume, 'user.username');
   const updatedAt = get(resume, 'updatedAt');
-  // const [isSuccess, setIsSuccess] = useState('');
+  const [isSuccess, setIsSuccess] = useState('');
   const [number, setNumber] = useState(
     localStorage.getItem('whatsappNumber') ? localStorage.getItem('whatsappNumber')?.split('@')[0] : '',
   );
   const { open: isOpen } = useAppSelector((state) => state.modal['builder.sections.checkout']);
-  const isSuccess = useAppSelector((state) => state.auth.success);
-  const errors = useAppSelector((state) => state.auth.success);
+  const [errors, seterrors] = useState('');
   const user = get(resume, 'user');
   const name = get(user, 'name');
   const userId = get(user, 'id');
   const shortId = get(resume, 'shortId');
   const editText = useMemo(() => t('builder.common.actions.edit', { token: heading }), [t, heading]);
+  const { errorsGlobal, successGlobal } = useAppSelector((state) => state.auth);
 
   // const { reset, control, handleSubmit } = useForm<FormData>({
   //   defaultValues: defaultState,
@@ -67,9 +67,9 @@ const CheckoutModal: React.FC = () => {
 
   const onSubmit = () => {
     let cleanNumber = '';
-    // seterrors('');
+    seterrors('');
     if (!number) {
-      // seterrors('Enter your Mpesa phonenumber to continue');
+      seterrors('Enter your Mpesa phonenumber to continue');
       return;
     }
 
@@ -81,7 +81,7 @@ const CheckoutModal: React.FC = () => {
     console.log(cleanNumber.substring(0, 3));
     if (cleanNumber.substring(0, 3) !== '254') {
       console.log(cleanNumber);
-      // seterrors('Please enter a valid Mpesa number');
+      seterrors('Please enter a valid Mpesa number');
       return;
     }
 
@@ -101,12 +101,12 @@ const CheckoutModal: React.FC = () => {
       checkoutMain(
         formData,
         (data: any) => {
-          // setIsSuccess(
-          //   'We have initiated an STK push for the premium version of your resume to your mobile device. Please follow the instructions on your phone to complete the payment process. Once we receive your payment, the premium product will be activated. This may take a few minutes. Thank you for choosing our premium service.',
-          // );
+          setIsSuccess(
+            'We have initiated an STK push for the premium version of your resume to your mobile device. Please follow the instructions on your phone to complete the payment process. Once we receive your payment, the premium product will be activated. This may take a few minutes. Thank you for choosing our premium service.',
+          );
         },
         () => {
-          // seterrors('An error occurred while processing your payment kindly check the phonenumber and try again');
+          seterrors('An error occurred while processing your payment kindly check the phonenumber and try again');
         },
       ),
     );
@@ -138,8 +138,8 @@ const CheckoutModal: React.FC = () => {
   };
 
   const handleClose = () => {
-    // setIsSuccess('');
-    // seterrors('');
+    setIsSuccess('');
+    seterrors('');
     dispatch(
       setModalState({
         modal: `builder.sections.checkout`,
@@ -187,11 +187,11 @@ const CheckoutModal: React.FC = () => {
           <br />
         </p>
       ) : (
-        <p>{isSuccess}</p>
+        <p>{successGlobal}</p>
       )}
 
       <hr />
-      {!isSuccess && (
+      {!successGlobal && (
         <form className={cn(styles.checkout_form)} onSubmit={() => onSubmit}>
           <img className={cn(styles.mpesa)} src={`/images/brand-logos/dark/mpesa.svg`} />
 
@@ -200,7 +200,7 @@ const CheckoutModal: React.FC = () => {
             value={number}
             onChange={(e) => {
               setNumber(e.target.value);
-              // seterrors('');
+              seterrors('');
             }}
             className={styles.mpesa_number}
             type="tel"

@@ -59,7 +59,7 @@ export const loginMain = (loginParams: LoginParams, handleSuccess: any) => async
     .catch(() => {});
 };
 
-export const checkoutMain = (data: any, handleSuccess: any, handleError: any) => async (dispatch: any) => {
+export const checkoutMain = (data: any, handleCorrect: any, handleMistakes: any) => async (dispatch: any) => {
   const headers = {
     'Content-Type': 'application/json',
   };
@@ -69,10 +69,12 @@ export const checkoutMain = (data: any, handleSuccess: any, handleError: any) =>
     body: JSON.stringify(data),
   })
     .then(async (resp) => {
-      const localdata = await resp.json();
-      console.log(resp);
-      store.dispatch(handleSuccess(localdata));
-      return;
+      resp.status === 200;
+      {
+        const data = await resp.json();
+        console.log(resp);
+        dispatch(handleCorrect());
+      }
       // const {
       //   data: { user, accessToken },
       // } = resp;
@@ -81,8 +83,7 @@ export const checkoutMain = (data: any, handleSuccess: any, handleError: any) =>
       // handleSuccess(loginParams);
     })
     .catch((e) => {
-      console.log(e);
-      store.dispatch(handleError());
+      dispatch(handleMistakes());
     });
 };
 
