@@ -140,10 +140,8 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
     const directory = join(__dirname, '..', 'assets/exports');
     const filename = `CVpap_${username}_${slug}_${lastUpdated}.pdf`;
     const publicUrl = `${serverUrl}/assets/exports/${filename}`;
-    const base = Buffer.from(
-      `username=${username}&slug=${slug}&updatedAt=${lastUpdated}&phone=${whatsappPhone}&userId=${userId}`,
-    ).toString('base64');
-    const checkoutUrl = `${webUrl}/checkout?data=${base}`;
+
+    const checkoutUrl = `${webUrl}/checkout?username=${username}&slug=${slug}&updatedAt=${lastUpdated}&phone=${whatsappPhone}&userId=${userId}`;
 
     try {
       // if (order !== null) {
