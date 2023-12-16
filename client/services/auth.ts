@@ -69,9 +69,9 @@ export const checkoutMain = (data: any, handleSuccess: any, handleError: any) =>
     body: JSON.stringify(data),
   })
     .then(async (resp) => {
-      const data = await resp.json();
+      const localdata = await resp.json();
       console.log(resp);
-      dispatch(handleSuccess(data));
+      dispatch(handleSuccess(localdata));
       return;
       // const {
       //   data: { user, accessToken },
