@@ -118,7 +118,7 @@ const CheckoutPage: NextPage = () => {
       checkoutMain(
         formData,
         () => {
-          console.log('data');
+          // console.log('data');
           //   console.log(data);
           setIsSuccess(
             'We have initiated an STK push for the premium version of your resume to your mobile device. Please follow the instructions on your phone to complete the payment process. Once we receive your payment, the premium product will be activated. This may take a few minutes. Thank you for choosing our premium service.',
@@ -168,23 +168,26 @@ const CheckoutPage: NextPage = () => {
               <hr />
 
               <div className={styles.itemPrice}>
-                <form className={styles.checkout_form} onSubmit={() => onSubmit}>
-                  <img className={cn(styles.mpesa)} src={`/images/brand-logos/dark/mpesa.svg`} />
+                {isSuccess && <p>{successGlobal}</p>}
+                {!isSuccess && (
+                  <form className={styles.checkout_form} onSubmit={() => onSubmit}>
+                    <img className={cn(styles.mpesa)} src={`/images/brand-logos/dark/mpesa.svg`} />
 
-                  <TextField
-                    required
-                    value={phonenumber}
-                    onChange={(e) => {
-                      setNumber(e.target.value);
-                      seterrors('');
-                    }}
-                    className={styles.mpesa_number}
-                    type="tel"
-                    label={'M-Pesa Number'}
-                    error={errors !== ''}
-                    helperText={errors}
-                  />
-                </form>
+                    <TextField
+                      required
+                      value={phonenumber}
+                      onChange={(e) => {
+                        setNumber(e.target.value);
+                        seterrors('');
+                      }}
+                      className={styles.mpesa_number}
+                      type="tel"
+                      label={'M-Pesa Number'}
+                      error={errors !== ''}
+                      helperText={errors}
+                    />
+                  </form>
+                )}
                 <strong>
                   <small>Kes </small>50/=
                 </strong>
