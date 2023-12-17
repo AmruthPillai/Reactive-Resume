@@ -5,16 +5,16 @@ type AuthState = {
   user: User | null;
   accessToken: string | null;
   isLoggedIn: boolean;
-  errorsGlobal: string;
-  successGlobal: string;
+  errorsGlobal: string | null;
+  successGlobal: string | null;
 };
 
 const initialState: AuthState = {
   user: null,
   accessToken: null,
   isLoggedIn: false,
-  errorsGlobal: '',
-  successGlobal: '',
+  errorsGlobal: null,
+  successGlobal: null,
 };
 
 export const authSlice = createSlice({

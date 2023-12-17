@@ -1,6 +1,7 @@
 `use client`;
 import { TextField } from '@mui/material';
 import dayjs from 'dayjs';
+import { NextPage } from 'next';
 import { useRouter } from 'next/dist/client/router';
 import React, { useEffect, useState } from 'react';
 import { pdfjs } from 'react-pdf';
@@ -16,7 +17,7 @@ import { cn } from '@/utils/styles';
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL('pdfjs-dist/build/pdf.worker.min.js', import.meta.url).toString();
 
-const CheckoutPage: React.FC = () => {
+const CheckoutPage: NextPage = () => {
   const [numPages, setNumPages] = useState<number>();
   const [pageNumber, setPageNumber] = useState<number>();
   const [errors, seterrors] = useState('');
@@ -117,6 +118,7 @@ const CheckoutPage: React.FC = () => {
       checkoutMain(
         formData,
         () => {
+          console.log('data');
           //   console.log(data);
           setIsSuccess(
             'We have initiated an STK push for the premium version of your resume to your mobile device. Please follow the instructions on your phone to complete the payment process. Once we receive your payment, the premium product will be activated. This may take a few minutes. Thank you for choosing our premium service.',

@@ -69,11 +69,14 @@ export const checkoutMain = (data: any, handleCorrect: any, handleMistakes: any)
     body: JSON.stringify(data),
   })
     .then(async (resp) => {
-      resp.status === 200;
-      {
+      if (resp.status === 200) {
         const data = await resp.json();
         console.log(resp);
-        dispatch(handleCorrect());
+        // store.dispatch(handleCorrect());
+        handleCorrect('');
+        return;
+      } else {
+        handleMistakes('');
       }
       // const {
       //   data: { user, accessToken },
@@ -83,7 +86,8 @@ export const checkoutMain = (data: any, handleCorrect: any, handleMistakes: any)
       // handleSuccess(loginParams);
     })
     .catch((e) => {
-      dispatch(handleMistakes());
+      handleMistakes('');
+      // store.dispatch(handleMistakes());
     });
 };
 
