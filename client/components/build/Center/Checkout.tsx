@@ -187,11 +187,11 @@ const CheckoutModal: React.FC = () => {
           <br />
         </p>
       ) : (
-        <p>{successGlobal}</p>
+        <p>{isSuccess}</p>
       )}
 
       <hr />
-      {!successGlobal && (
+      {!isSuccess && (
         <form className={cn(styles.checkout_form)} onSubmit={() => onSubmit}>
           <img className={cn(styles.mpesa)} src={`/images/brand-logos/dark/mpesa.svg`} />
 
