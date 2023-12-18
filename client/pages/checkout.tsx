@@ -163,6 +163,12 @@ const CheckoutPage: NextPage = () => {
                   option on whatsapp.
                 </li>
                 <br />
+                <small>
+                  <strong>
+                    Incase of any issue, kindly contact us on 0791186712, (If it is not receiving the CV/Resume after
+                    payment kindly foward the m-pesa message to the same number)
+                  </strong>
+                </small>
               </ul>
               <h3 className={styles.itemName}>Resume Id: {slug} </h3>
               <hr />

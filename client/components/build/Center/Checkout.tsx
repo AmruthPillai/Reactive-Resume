@@ -185,6 +185,12 @@ const CheckoutModal: React.FC = () => {
             option on whatsapp.
           </small>
           <br />
+          <small>
+            <strong>
+              Incase of any issue, kindly contact us on 0791186712, (If it is not receiving the CV/Resume after payment
+              kindly foward the m-pesa message to the same number)
+            </strong>
+          </small>
         </p>
       ) : (
         <p>{isSuccess}</p>
