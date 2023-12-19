@@ -163,12 +163,19 @@ const CheckoutPage: NextPage = () => {
                   option on whatsapp.
                 </li>
                 <br />
-                <small>
-                  <strong>
-                    Incase of any issue, kindly contact us on 0791186712, (If it is not receiving the CV/Resume after
-                    payment kindly foward the m-pesa message to the same number)
-                  </strong>
-                </small>
+
+                <h4>FAQs</h4>
+                <p>
+                  <strong>I haven't Received My CV without watermark after Payment?</strong>
+                  <br />
+                  <span>Kindly share the m-pesa confirmation message to the number 0791186712</span>
+                  <br />
+                  <strong>I can't Pay the system isn't responding it throws error while paying?</strong>
+                  <br />
+                  <span> - Pay via Mpesa - Till 5189665</span>
+                  <br />
+                  <span> - Kindly share the m-pesa confirmation message to the number 0791186712</span>
+                </p>
               </ul>
               <h3 className={styles.itemName}>Resume Id: {slug} </h3>
               <hr />
