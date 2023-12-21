@@ -31,9 +31,7 @@ export const SummarySection = () => {
         <RichInput
           content={section.content}
           onChange={(value) => setValue("sections.summary.content", value)}
-          footer={(editor) => (
-            <AiActions value={editor.getText()} onChange={editor.commands.setContent} />
-          )}
+          footer={(editor) => <AiActions editor={editor} />}
         />
       </main>
     </section>

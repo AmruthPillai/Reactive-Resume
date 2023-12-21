@@ -104,9 +104,7 @@ export const AwardsDialog = () => {
                   {...field}
                   content={field.value}
                   onChange={(value) => field.onChange(value)}
-                  footer={(editor) => (
-                    <AiActions value={editor.getText()} onChange={editor.commands.setContent} />
-                  )}
+                  footer={(editor) => <AiActions editor={editor} />}
                 />
               </FormControl>
               <FormMessage />

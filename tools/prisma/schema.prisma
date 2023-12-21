@@ -1,5 +1,5 @@
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
 }
 
 datasource db {
@@ -43,18 +43,18 @@ enum PaymentStatus {
 }
 
 model User {
-  id               String        @id @default(cuid())
+  id               String         @id @default(cuid())
   name             String
   picture          String?
-  username         String        @unique
-  email            String        @unique
-  locale           String        @default("en-US")
-  emailVerified    Boolean       @default(false)
-  twoFactorEnabled Boolean       @default(false)
-  createdAt        DateTime      @default(now())
-  updatedAt        DateTime      @updatedAt
-  billingAddress   Json?         @default("{}")
-  paymentMethod    Json?         @default("{}")
+  username         String         @unique
+  email            String         @unique
+  locale           String         @default("en-US")
+  emailVerified    Boolean        @default(false)
+  twoFactorEnabled Boolean        @default(false)
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  billingAddress   Json?          @default("{}")
+  paymentMethod    Json?          @default("{}")
   provider         Provider
   secrets          Secrets?
   resumes          Resume[]
@@ -79,6 +79,7 @@ model Resume {
   id         String     @id @default(cuid())
   title      String
   slug       String
+  jobTitle   String?
   data       Json       @default("{}")
   visibility Visibility @default(private)
   locked     Boolean    @default(false)
@@ -96,7 +97,6 @@ model Customer {
   id               String @id
   stripeCustomerId String
   user             User   @relation(fields: [id], references: [id], onDelete: Cascade)
-  
 
   @@unique([id, stripeCustomerId])
   @@index(fields: [stripeCustomerId])
@@ -108,7 +108,7 @@ model Product {
   name        String
   description String?
   image       String?
-  metadata    Json?    @default("{}")
+  metadata    Json?   @default("{}")
 
   prices Price[]
 }
@@ -125,8 +125,8 @@ model Price {
 
   pricingType     PricingType
   interval        Interval?
-  intervalCount   Int?         @default(0)
-  trialPeriodDays Int ?        @default(0)
+  intervalCount   Int?        @default(0)
+  trialPeriodDays Int?        @default(0)
   metadata        Json?       @default("{}")
 
   subscription Subscription[]
@@ -137,7 +137,7 @@ model Subscription {
   userId   String
   user     User          @relation(fields: [userId], references: [id], onDelete: Cascade)
   status   PaymentStatus
-  metadata Json?          @default("{}")
+  metadata Json?         @default("{}")
   priceId  String
   price    Price         @relation(fields: [priceId], references: [id], onDelete: Cascade)
 
@@ -154,3 +154,42 @@ model Subscription {
 
   @@index(fields: [userId])
 }
+
+// model JobTitle {
+//   id    String @id @default(cuid())
+//   title String
+
+//   relatedBy JobTitle[] @relation("RelatedJobTitles")
+//   relating  JobTitle[] @relation("RelatedJobTitles")
+
+//   // categories               JobTitleCategory[]
+//   recommendations RecommendationSnippet[]
+// }
+
+// model JobTitleCategory {
+//   id    String @id @default(cuid())
+//   title String
+
+//   // jobTitles                JobTitle[]
+//   recommendations RecommendationSnippet[]
+// }
+
+// model RecommendationSnippet {
+//   id         String @id @default(cuid())
+//   phrase     String
+//   highlight  String
+//   locale     String @default("en") @db.VarChar(2)
+//   usageCount Int    @default(0)
+
+//   jobTitleId String
+//   jobTitle   JobTitle @relation(fields: [jobTitleId], references: [id], onDelete: Cascade)
+
+//   categoryId String
+//   category   JobTitleCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+//   subPhrases RecommendationSnippet[] @relation("SubPhrases")
+//   phrases    RecommendationSnippet[] @relation("SubPhrases")
+
+//   @@unique([id, jobTitleId, categoryId])
+//   @@index(fields: [jobTitleId, categoryId, phrase])
+// }
