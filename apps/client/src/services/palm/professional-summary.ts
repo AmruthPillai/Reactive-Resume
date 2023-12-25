@@ -9,7 +9,7 @@ const PROMPT = `You are an AI writing assistant specialized in writing copy for 
 Generate the suggestion for Professional Summary for job title and the related Job titles.
 Write the data in the following JSON format:
 {"jobTitle": JOB_TITLE, "relatedJobTitles": [RELATED_JOB_TITLE_1, RELATED_JOB_TITLE_1], "suggestions": [SUGGESTION_1, SUGGESTION_2] }
-Return just valid JSON, do not add new lines or extra spaces.
+Return just valid JSON, do not add new lines or extra spaces and suggest at least 5 suggestions
 
 Candidate Details: """{input}"""
 `;
