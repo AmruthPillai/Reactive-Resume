@@ -1,5 +1,3 @@
-// import "./suggestions.scss";
-
 import { t } from "@lingui/macro";
 import { MagnifyingGlass, X } from "@phosphor-icons/react";
 import { PopoverArrow } from "@radix-ui/react-popover";
@@ -12,18 +10,19 @@ import {
   ScrollArea,
   Skeleton,
 } from "@reactive-resume/ui";
+import { cn } from "@reactive-resume/utils";
 import { Editor } from "@tiptap/react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 import { professionalSummary } from "../services/palm/professional-summary";
 import { useResumeStore } from "../stores/resume";
-export const Suggestions = ({ editor }: { editor: Editor }) => {
+export const Suggestions = ({ editor, content }: { editor: Editor; content: string }) => {
   const jt = useResumeStore((state) => state.resume.jobTitle) || "";
   const [input, setInput] = useState<string>(() => jt);
   const [jobTitle, setJobTitle] = useState<string>(() => jt);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [suggestions, setSuggestions] = useState<string[]>([]);
+  const [suggestions, setSuggestions] = useState<{ text: string; isSelected: boolean }[]>([]);
   const [relatedJobTitles, setRelatedJobTitles] = useState<string[]>([]);
 
   const getSuggestions = async () => {
@@ -33,13 +32,27 @@ export const Suggestions = ({ editor }: { editor: Editor }) => {
     };
     const result = await professionalSummary(JSON.stringify(input));
     setIsLoading(false);
-    setSuggestions(result.suggestions);
+    const list = result.suggestions?.map((suggestion) => ({
+      text: suggestion,
+      isSelected: content.includes(suggestion),
+    }));
+    setSuggestions(list);
     setRelatedJobTitles(result.relatedJobTitles);
   };
 
   useEffect(() => {
     getSuggestions();
   }, [jobTitle]);
+
+  useEffect(() => {
+    if (suggestions.length > 0) {
+      const list = suggestions.map((suggestion) => ({
+        text: suggestion.text,
+        isSelected: content.includes(suggestion.text),
+      }));
+      setSuggestions(list);
+    }
+  }, [content]);
 
   const handleSuggestionClick = (suggestion: string) => {
     editor.commands.insertContent([
@@ -105,7 +118,7 @@ export const Suggestions = ({ editor }: { editor: Editor }) => {
             </div>
           </div>
           <h3 className="text-lg">{t`Recommendations`}</h3>
-          <ScrollArea className="max-h-[200px] overflow-scroll">
+          <ScrollArea className="max-h-[250px] overflow-scroll">
             <ul className="mb-3 mt-2 w-full rounded-lg">
               {isLoading ? (
                 <>
@@ -116,18 +129,28 @@ export const Suggestions = ({ editor }: { editor: Editor }) => {
                 suggestions?.map((suggestion, index) => {
                   return (
                     <li
-                      className="mb-1 cursor-pointer"
+                      className={cn(
+                        "mb-1",
+                        suggestion.isSelected ? "cursor-default" : "cursor-pointer",
+                      )}
                       key={index}
-                      onClick={() => handleSuggestionClick(suggestion)}
+                      onClick={() =>
+                        !suggestion.isSelected && handleSuggestionClick(suggestion.text)
+                      }
                     >
                       <motion.div
                         viewport={{ once: true }}
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0, transition: { delay: index * 0.1 } }}
                       >
-                        <span className="flex rounded-lg bg-gray-800 p-3 hover:bg-gray-600">
-                          <span className="ml-2" title={suggestion}>
-                            {suggestion}
+                        <span
+                          className={cn(
+                            "flex rounded-lg p-3",
+                            suggestion.isSelected ? "bg-gray-600" : "bg-gray-800 hover:bg-gray-600",
+                          )}
+                        >
+                          <span className="ml-2" title={suggestion.text}>
+                            {suggestion.text}
                           </span>
                         </span>
                       </motion.div>

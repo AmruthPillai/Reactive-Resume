@@ -99,7 +99,7 @@ export const AiActions = ({ editor, className }: Props) => {
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-[360px]">
-          <Suggestions editor={editor} />
+          <Suggestions editor={editor} content={editor.getText()} />
         </PopoverContent>
       </Popover>
 
