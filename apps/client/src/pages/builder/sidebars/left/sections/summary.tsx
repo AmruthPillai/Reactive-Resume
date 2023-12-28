@@ -1,6 +1,6 @@
 import { defaultSections } from "@reactive-resume/schema";
 import { RichInput } from "@reactive-resume/ui";
-import { cn } from "@reactive-resume/utils";
+import { cn, ResumeSections } from "@reactive-resume/utils";
 
 import { AiActions } from "@/client/components/ai-actions";
 import { useResumeStore } from "@/client/stores/resume";
@@ -31,7 +31,7 @@ export const SummarySection = () => {
         <RichInput
           content={section.content}
           onChange={(value) => setValue("sections.summary.content", value)}
-          footer={(editor) => <AiActions editor={editor} />}
+          footer={(editor) => <AiActions editor={editor} sectionName={ResumeSections.SUMMARY} />}
         />
       </main>
     </section>

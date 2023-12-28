@@ -32,7 +32,7 @@ export const changeTone = async (text: string, mood: Mood) => {
   } as PalmGenerateTextRequest);
 
   if (!response.data[0].candidates) {
-    throw new Error(t`OpenAI did not return any choices for your text.`);
+    throw new Error(t`AI did not return any choices for your text.`);
   }
 
   return response.data[0].candidates[0].output ?? text;

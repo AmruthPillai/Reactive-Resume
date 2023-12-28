@@ -14,6 +14,7 @@ import {
   Input,
   RichInput,
 } from "@reactive-resume/ui";
+import { ResumeSections } from "@reactive-resume/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -103,7 +104,9 @@ export const ProjectsDialog = () => {
                   {...field}
                   content={field.value}
                   onChange={(value) => field.onChange(value)}
-                  footer={(editor) => <AiActions editor={editor} />}
+                  footer={(editor) => (
+                    <AiActions editor={editor} sectionName={ResumeSections.PROJECTS} />
+                  )}
                 />
               </FormControl>
               <FormMessage />

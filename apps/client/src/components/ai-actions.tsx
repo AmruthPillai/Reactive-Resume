@@ -19,7 +19,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@reactive-resume/ui";
-import { cn } from "@reactive-resume/utils";
+import { cn, ResumeSections } from "@reactive-resume/utils";
 import { Editor } from "@tiptap/react";
 import { useState } from "react";
 
@@ -31,7 +31,7 @@ import { changeTone as palmChangeTone } from "../services/palm/change-tone";
 import { fixGrammar as palmFixGrammar } from "../services/palm/fix-grammar";
 import { improveWriting as palmImproveWriting } from "../services/palm/improve-writing";
 import { useOpenAiStore } from "../stores/openai";
-import { Suggestions } from "./suggestions";
+import { Suggestions } from "./suggestions/suggestions";
 
 type Action = "improve" | "fix" | "tone";
 type Mood = "casual" | "professional" | "confident" | "friendly";
@@ -39,9 +39,10 @@ type Mood = "casual" | "professional" | "confident" | "friendly";
 type Props = {
   editor: Editor;
   className?: string;
+  sectionName: ResumeSections;
 };
 
-export const AiActions = ({ editor, className }: Props) => {
+export const AiActions = ({ editor, className, sectionName }: Props) => {
   const [loading, setLoading] = useState<Action | false>(false);
   const openaiEnabled = useOpenAiStore((state) => !!state.apiKey);
 
@@ -91,17 +92,23 @@ export const AiActions = ({ editor, className }: Props) => {
         </Badge>
       </div>
 
-      <Popover>
-        <PopoverTrigger asChild>
-          <Button size="sm" variant="outline" disabled={!!loading}>
-            {loading === "fix" ? <CircleNotch className="animate-spin" /> : <Brain />}
-            <span className="ml-2 text-xs">{t`Suggestions`}</span>
-          </Button>
-        </PopoverTrigger>
-        <PopoverContent className="w-[360px]">
-          <Suggestions editor={editor} content={editor.getText()} />
-        </PopoverContent>
-      </Popover>
+      {[
+        ResumeSections.EDUCATION as string,
+        ResumeSections.EXPERIENCE as string,
+        ResumeSections.SUMMARY as string,
+      ].includes(sectionName) && (
+        <Popover>
+          <PopoverTrigger asChild>
+            <Button size="sm" variant="outline" disabled={!!loading}>
+              {loading === "fix" ? <CircleNotch className="animate-spin" /> : <Brain />}
+              <span className="ml-2 text-xs">{t`Suggestions`}</span>
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent className="w-[360px]">
+            <Suggestions editor={editor} content={editor.getText()} sectionName={sectionName} />
+          </PopoverContent>
+        </Popover>
+      )}
 
       <Button size="sm" variant="outline" disabled={!!loading} onClick={() => onClick("improve")}>
         {loading === "improve" ? <CircleNotch className="animate-spin" /> : <PenNib />}

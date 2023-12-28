@@ -10,6 +10,7 @@ import {
   Input,
   RichInput,
 } from "@reactive-resume/ui";
+import { ResumeSections } from "@reactive-resume/utils";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -84,7 +85,9 @@ export const ReferencesDialog = () => {
                   {...field}
                   content={field.value}
                   onChange={(value) => field.onChange(value)}
-                  footer={(editor) => <AiActions editor={editor} />}
+                  footer={(editor) => (
+                    <AiActions editor={editor} sectionName={ResumeSections.REFERENCES} />
+                  )}
                 />
               </FormControl>
               <FormMessage />
