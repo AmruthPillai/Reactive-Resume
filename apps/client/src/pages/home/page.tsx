@@ -35,7 +35,7 @@ export const HomePage = () => {
       <FeaturesSection />
       <TemplatesSection />
       <KeywordsSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       {/* <SupportSection /> */}
       <FAQSection />
       {/* <ContributorsSection /> */}
