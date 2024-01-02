@@ -8,7 +8,7 @@ msgstr ""
 "Language: zh\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-12-17 00:08\n"
+"PO-Revision-Date: 2023-12-31 00:09\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -20,11 +20,11 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:169
 msgid "You have enabled two-factor authentication successfully."
-msgstr "您已成功启用双重身份验证。"
+msgstr "您已成功启用双因素认证。"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:57
 msgid "{templatesCount} resume templates to choose from"
-msgstr "{templatesCount} 简历模板可供选择"
+msgstr "有 {templatesCount} 个简历模板可供选择"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:114
 msgid "{value, plural, one {Column} other {Columns}}"
@@ -32,7 +32,7 @@ msgstr "{value, plural, one {栏} other {栏}}"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:20
 msgid "<0>I built Reactive Resume mostly by myself during my spare time, with a lot of help from other great open-source contributors.</0><1>If you like the app and want to support keeping it free forever, please donate whatever you can afford to give.</1>"
-msgstr "<0>我主要是在业余时间自己创建了 Reactive Resume，其他优秀的开源贡献者也提供了很多帮助。</0><1>如果你喜欢这个应用程序，并希望支持它永远免费，请您进行力所能及的捐助。</1>"
+msgstr "<0>我花费了大量业余时间，独立开发了 Reactive Resume，并非常感谢其他优秀开源贡献者的帮助。</0><1>您的任何捐赠都会帮助 Reactive Resume 保持免费并持续发展，让更多的人从中受益。</1>"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:51
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
@@ -573,7 +573,7 @@ msgstr "例如，您可以在此处注明您发送给的公司或者职位描述
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:107
 msgid "Forget"
-msgstr ""
+msgstr "你好"
 
 #: apps/client/src/pages/auth/login/page.tsx:120
 msgid "Forgot Password?"
@@ -1336,7 +1336,7 @@ msgstr "处理您的请求时出现问题。请稍后重试，或在 GitHub 上�
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:94
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:137
 msgid "Square"
-msgstr ""
+msgstr "方形"
 
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:29
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:24
@@ -1470,7 +1470,7 @@ msgstr "标题"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:106
 msgid "Toggle Page Break Line"
-msgstr ""
+msgstr "切换分页线"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:118
 msgid "Toggle Page Numbers"
