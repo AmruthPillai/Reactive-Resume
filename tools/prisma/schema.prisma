@@ -162,7 +162,7 @@ model Subscription {
 //   relatedBy JobTitle[] @relation("RelatedJobTitles")
 //   relating  JobTitle[] @relation("RelatedJobTitles")
 
-//   // categories               JobTitleCategory[]
+//   categories               JobTitleCategory[]
 //   recommendations RecommendationSnippet[]
 // }
 
@@ -170,8 +170,7 @@ model Subscription {
 //   id    String @id @default(cuid())
 //   title String
 
-//   // jobTitles                JobTitle[]
-//   recommendations RecommendationSnippet[]
+//   jobTitles                JobTitle[]
 // }
 
 // model RecommendationSnippet {
@@ -184,12 +183,8 @@ model Subscription {
 //   jobTitleId String
 //   jobTitle   JobTitle @relation(fields: [jobTitleId], references: [id], onDelete: Cascade)
 
-//   categoryId String
-//   category   JobTitleCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
-
 //   subPhrases RecommendationSnippet[] @relation("SubPhrases")
 //   phrases    RecommendationSnippet[] @relation("SubPhrases")
 
-//   @@unique([id, jobTitleId, categoryId])
-//   @@index(fields: [jobTitleId, categoryId, phrase])
+//   @@index(fields: [jobTitleId, phrase])
 // }

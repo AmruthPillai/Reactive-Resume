@@ -41,7 +41,9 @@ export const List = ({
                     <span
                       className={cn(
                         "flex rounded-lg p-3",
-                        suggestion.isSelected ? "bg-gray-600" : "bg-gray-800 hover:bg-gray-600",
+                        suggestion.isSelected
+                          ? "bg-secondary"
+                          : "bg-secondary-accent hover:bg-secondary",
                       )}
                     >
                       <span className="ml-2" title={suggestion.text}>
