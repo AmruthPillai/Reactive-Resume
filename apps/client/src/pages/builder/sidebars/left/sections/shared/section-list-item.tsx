@@ -1,13 +1,25 @@
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { t } from "@lingui/macro";
-import { CopySimple, DotsSixVertical, PencilSimple, TrashSimple } from "@phosphor-icons/react";
 import {
+  CopySimple,
+  DotsSixVertical,
+  List,
+  PencilSimple,
+  TrashSimple,
+} from "@phosphor-icons/react";
+import {
+  Button,
   ContextMenu,
   ContextMenuCheckboxItem,
   ContextMenuContent,
   ContextMenuItem,
   ContextMenuTrigger,
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
 } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
@@ -99,6 +111,33 @@ export const SectionListItem = ({
             </ContextMenuItem>
           </ContextMenuContent>
         </ContextMenu>
+
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <div className="flex w-10 cursor-move items-center justify-center hover:bg-secondary">
+              <Button variant="ghost" size="icon">
+                <List weight="bold" />
+              </Button>
+            </div>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-48">
+            <DropdownMenuCheckboxItem checked={visible} onClick={onToggleVisibility}>
+              <span className="-ml-0.5">{t`Visible`}</span>
+            </DropdownMenuCheckboxItem>
+            <DropdownMenuItem onClick={onUpdate}>
+              <PencilSimple size={14} />
+              <span className="ml-2">{t`Edit`}</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={onDuplicate}>
+              <CopySimple size={14} />
+              <span className="ml-2">{t`Copy`}</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={onDelete}>
+              <TrashSimple size={14} />
+              <span className="ml-2">{t`Remove`}</span>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
     </motion.section>
   );
