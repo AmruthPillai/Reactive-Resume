@@ -59,7 +59,7 @@ export const BuilderHeader = () => {
         <Button
           size="icon"
           variant="ghost"
-          className="flex lg:hidden"
+          className="flex sm:hidden"
           onClick={() => onToggle("right")}
         >
           <SidebarSimple className="-scale-x-100" />
