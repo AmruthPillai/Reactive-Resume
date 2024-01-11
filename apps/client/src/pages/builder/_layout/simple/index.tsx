@@ -52,7 +52,7 @@ export const SimpleBuilderLayout = () => {
   }
 
   return (
-    <div className="relative h-full w-full">
+    <div className="relative h-screen w-full overflow-hidden">
       <BuilderHeader />
       <div className="">
         <Left />
