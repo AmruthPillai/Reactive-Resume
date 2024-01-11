@@ -44,8 +44,8 @@ export const BuilderPage = () => {
         ref={setFrameRef}
         title={resume.id}
         src="/artboard/builder"
-        className="mt-16 w-screen"
-        style={{ height: `calc(100vh - 64px)` }}
+        className="w-screen mt-16"
+        style={{ height: `calc(100vh - 64px)`, width: "100%" }}
       />
     </>
   );

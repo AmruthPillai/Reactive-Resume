@@ -8,10 +8,9 @@ import { RegisterPage } from "../pages/auth/register/page";
 import { ResetPasswordPage } from "../pages/auth/reset-password/page";
 import { VerifyEmailPage } from "../pages/auth/verify-email/page";
 import { VerifyOtpPage } from "../pages/auth/verify-otp/page";
-import { BuilderLayout } from "../pages/builder/_layout/single";
-// import { BuilderLayout } from "../pages/builder/layout";
-import { BuilderPage } from "../pages/builder/page";
-import { builderLoader } from "../pages/builder/page";
+import { AdvanceBuilderLayout } from "../pages/builder/_layout/advance";
+import { SimpleBuilderLayout } from "../pages/builder/_layout/simple";
+import { builderLoader, BuilderPage } from "../pages/builder/page";
 import { DashboardLayout } from "../pages/dashboard/layout";
 import { ResumesPage } from "../pages/dashboard/resumes/page";
 import { SettingsPage } from "../pages/dashboard/settings/page";
@@ -75,9 +74,14 @@ export const routes = createRoutesFromElements(
 
     <Route path="builder">
       <Route element={<AuthGuard />}>
-        <Route element={<BuilderLayout />}>
+        {/* Advance Builder - One Page */}
+        <Route element={<AdvanceBuilderLayout />}>
           <Route path=":id" loader={builderLoader} element={<BuilderPage />} />
-
+          <Route index element={<Navigate to="/dashboard/resumes" replace />} />
+        </Route>
+        {/* Simple Builder - Multi Page */}
+        <Route element={<SimpleBuilderLayout />}>
+          <Route path=":id/:section" loader={builderLoader} element={<BuilderPage />} />
           <Route index element={<Navigate to="/dashboard/resumes" replace />} />
         </Route>
       </Route>

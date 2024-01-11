@@ -22,7 +22,7 @@ const OutletSlot = () => (
   </>
 );
 
-export const BuilderLayout = () => {
+export const AdvanceBuilderLayout = () => {
   const { isDesktop } = useBreakpoint();
 
   const sheet = useBuilderStore((state) => state.sheet);
