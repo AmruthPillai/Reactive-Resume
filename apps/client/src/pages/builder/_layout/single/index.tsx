@@ -6,9 +6,9 @@ import { Outlet } from "react-router-dom";
 import { useBuilderStore } from "@/client/stores/builder";
 
 import { BuilderHeader } from "./_components/header";
+import { LeftSidebar } from "./_components/sidebars/left";
+import { RightSidebar } from "./_components/sidebars/right";
 import { BuilderToolbar } from "./_components/toolbar";
-import { LeftSidebar } from "./sidebars/left";
-import { RightSidebar } from "./sidebars/right";
 
 const OutletSlot = () => (
   <>

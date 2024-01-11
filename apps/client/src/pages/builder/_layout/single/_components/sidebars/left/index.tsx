@@ -22,12 +22,11 @@ import { Link } from "react-router-dom";
 import { Icon } from "@/client/components/icon";
 import { UserAvatar } from "@/client/components/user-avatar";
 import { UserOptions } from "@/client/components/user-options";
+import { BasicsSection } from "@/client/pages/builder/_components/sections/basics";
+import { SectionBase } from "@/client/pages/builder/_components/sections/shared/section-base";
+import { SectionIcon } from "@/client/pages/builder/_components/sections/shared/section-icon";
+import { SummarySection } from "@/client/pages/builder/_components/sections/summary";
 import { useResumeStore } from "@/client/stores/resume";
-
-import { BasicsSection } from "./sections/basics";
-import { SectionBase } from "./sections/shared/section-base";
-import { SectionIcon } from "./sections/shared/section-icon";
-import { SummarySection } from "./sections/summary";
 
 export const LeftSidebar = () => {
   const containterRef = useRef<HTMLDivElement | null>(null);

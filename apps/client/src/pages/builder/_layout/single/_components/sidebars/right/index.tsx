@@ -4,18 +4,17 @@ import { useRef } from "react";
 
 import { Copyright } from "@/client/components/copyright";
 import { ThemeSwitch } from "@/client/components/theme-switch";
-
-import { ExportSection } from "./sections/export";
-import { InformationSection } from "./sections/information";
-import { LayoutSection } from "./sections/layout";
-import { NotesSection } from "./sections/notes";
-import { PageSection } from "./sections/page";
-import { SharingSection } from "./sections/sharing";
-import { StatisticsSection } from "./sections/statistics";
-import { TemplateSection } from "./sections/template";
-import { ThemeSection } from "./sections/theme";
-import { TypographySection } from "./sections/typography";
-import { SectionIcon } from "./shared/section-icon";
+import { ExportSection } from "@/client/pages/builder/_components/sections/export";
+import { InformationSection } from "@/client/pages/builder/_components/sections/information";
+import { LayoutSection } from "@/client/pages/builder/_components/sections/layout";
+import { NotesSection } from "@/client/pages/builder/_components/sections/notes";
+import { PageSection } from "@/client/pages/builder/_components/sections/page";
+import { SharingSection } from "@/client/pages/builder/_components/sections/sharing";
+import { StatisticsSection } from "@/client/pages/builder/_components/sections/statistics";
+import { TemplateSection } from "@/client/pages/builder/_components/sections/template";
+import { ThemeSection } from "@/client/pages/builder/_components/sections/theme";
+import { TypographySection } from "@/client/pages/builder/_components/sections/typography";
+import { SectionIcon } from "@/client/pages/builder/_components/shared/section-icon";
 
 export const RightSidebar = () => {
   const containterRef = useRef<HTMLDivElement | null>(null);
