@@ -28,7 +28,7 @@ export const SimpleBuilderLayout = () => {
 
   if (isTablet || isDesktop) {
     return (
-      <div className="relative h-full w-full overflow-hidden">
+      <div className="relative h-screen w-full overflow-hidden">
         <BuilderHeader />
         <PanelGroup direction="horizontal">
           <Panel
@@ -54,7 +54,7 @@ export const SimpleBuilderLayout = () => {
   return (
     <div className="relative h-full w-full">
       <BuilderHeader />
-      <div className="top-16 p-0 sm:max-w-xl">
+      <div className="">
         <Left />
       </div>
 
