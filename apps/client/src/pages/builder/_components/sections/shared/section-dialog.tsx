@@ -18,6 +18,7 @@ import {
   DialogHeader,
   DialogTitle,
   Form,
+  ScrollArea,
 } from "@reactive-resume/ui";
 import { produce } from "immer";
 import get from "lodash.get";
@@ -134,34 +135,36 @@ export const SectionDialog = <T extends SectionItem>({
   return (
     <Dialog open={isOpen} onOpenChange={close}>
       <DialogContent className="z-50">
-        <Form {...form}>
-          <form className="space-y-6" onSubmit={form.handleSubmit(onSubmit)}>
-            <DialogHeader>
-              <DialogTitle>
-                <div className="flex items-center space-x-2.5">
-                  {isCreate && <Plus />}
-                  {isUpdate && <PencilSimple />}
-                  {isDuplicate && <CopySimple />}
-                  <h2>
-                    {isCreate && t`Create a new item`}
-                    {isUpdate && t`Update an existing item`}
-                    {isDuplicate && t`Duplicate an existing item`}
-                  </h2>
-                </div>
-              </DialogTitle>
-            </DialogHeader>
+        <ScrollArea hideScrollbar className="h-[calc(100vh-140px)] lg:h-[calc(100vh-88px)]">
+          <Form {...form}>
+            <form className="space-y-6" onSubmit={form.handleSubmit(onSubmit)}>
+              <DialogHeader>
+                <DialogTitle>
+                  <div className="flex items-center space-x-2.5">
+                    {isCreate && <Plus />}
+                    {isUpdate && <PencilSimple />}
+                    {isDuplicate && <CopySimple />}
+                    <h2>
+                      {isCreate && t`Create a new item`}
+                      {isUpdate && t`Update an existing item`}
+                      {isDuplicate && t`Duplicate an existing item`}
+                    </h2>
+                  </div>
+                </DialogTitle>
+              </DialogHeader>
 
-            {children}
+              {children}
 
-            <DialogFooter>
-              <Button type="submit">
-                {isCreate && t`Create`}
-                {isUpdate && t`Save Changes`}
-                {isDuplicate && t`Duplicate`}
-              </Button>
-            </DialogFooter>
-          </form>
-        </Form>
+              <DialogFooter>
+                <Button type="submit">
+                  {isCreate && t`Create`}
+                  {isUpdate && t`Save Changes`}
+                  {isDuplicate && t`Duplicate`}
+                </Button>
+              </DialogFooter>
+            </form>
+          </Form>
+        </ScrollArea>
       </DialogContent>
     </Dialog>
   );
