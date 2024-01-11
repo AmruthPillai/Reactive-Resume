@@ -15,16 +15,13 @@ export const BuilderHeader = () => {
   const isDragging = useBuilderStore(
     (state) => state.panel.left.handle.isDragging || state.panel.right.handle.isDragging,
   );
-  const leftPanelSize = useBuilderStore((state) => state.panel.left.size);
-  const rightPanelSize = useBuilderStore((state) => state.panel.right.size);
 
   const onToggle = (side: "left" | "right") => toggle(side);
 
   return (
     <div
-      style={{ left: `${leftPanelSize}%`, right: `${rightPanelSize}%` }}
       className={cn(
-        "fixed inset-x-0 top-0 z-[60] h-16 bg-secondary-accent/50 backdrop-blur-lg lg:z-20",
+        "relative inset-x-0 top-0 z-[60] h-16 bg-secondary-accent/50 backdrop-blur-lg lg:z-20",
         !isDragging && "transition-[left,right]",
       )}
     >
