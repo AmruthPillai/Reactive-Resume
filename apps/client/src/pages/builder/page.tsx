@@ -1,8 +1,9 @@
 import { t } from "@lingui/macro";
 import { ResumeDto } from "@reactive-resume/dto";
+import { cn } from "@reactive-resume/utils";
 import { useCallback, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { LoaderFunction, redirect } from "react-router-dom";
+import { LoaderFunction, redirect, useParams } from "react-router-dom";
 
 import { queryClient } from "@/client/libs/query-client";
 import { findResumeById } from "@/client/services/resume";
@@ -16,6 +17,8 @@ export const BuilderPage = () => {
   const resume = useResumeStore((state) => state.resume);
   const title = useResumeStore((state) => state.resume.title);
 
+  const params = useParams();
+  const isSimpleEditor = !!params.section;
   const updateResumeInFrame = useCallback(() => {
     if (!frameRef || !frameRef.contentWindow) return;
     const message = { type: "SET_RESUME", payload: resume.data };
@@ -44,7 +47,7 @@ export const BuilderPage = () => {
         ref={setFrameRef}
         title={resume.id}
         src="/artboard/builder"
-        className="w-screen"
+        className={cn("w-screen", !isSimpleEditor && "mt-16")}
         style={{ height: `calc(100vh - 64px)`, width: "100%" }}
       />
     </>
