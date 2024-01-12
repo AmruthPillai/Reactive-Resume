@@ -1,11 +1,5 @@
-/* eslint-disable lingui/text-restrictions */
-/* eslint-disable lingui/no-unlocalized-strings */
-
+import { t, Trans } from "@lingui/macro";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@reactive-resume/ui";
-import { cn } from "@reactive-resume/utils";
-
-import { useLanguages } from "@/client/services/resume/translation";
-import { Trans, t } from "@lingui/macro";
 
 // What is a live resume?
 const Question1 = () => (
@@ -14,13 +8,13 @@ const Question1 = () => (
       {t`What is a live resume?`}
     </AccordionTrigger>
     <AccordionContent className="prose max-w-none dark:prose-invert">
-      <Trans>
-        <p>
+      <p>
+        <Trans>
           A live resume is an interactive online document that goes beyond static text. It allows
           you to embed multimedia content, update achievements in real-time, and engage with
           recruiters in a dynamic way.
-        </p>
-      </Trans>
+        </Trans>
+      </p>
     </AccordionContent>
   </AccordionItem>
 );
@@ -32,13 +26,13 @@ const Question2 = () => (
       {t`What is an AI resume builder?`}
     </AccordionTrigger>
     <AccordionContent className="prose max-w-none dark:prose-invert">
-      <Trans>
-        <p>
+      <p>
+        <Trans>
           An AI resume builder uses artificial intelligence to help you create a professional and
           targeted resume. It can analyze your skills and experience, suggest relevant keywords, and
           provide personalized feedback.
-        </p>
-      </Trans>
+        </Trans>
+      </p>
     </AccordionContent>
   </AccordionItem>
 );
@@ -76,8 +70,6 @@ const Question3 = () => (
   </AccordionItem>
 );
 
-const Question4 = () => null;
-
 // How does the OpenAI Integration work?
 const Question5 = () => (
   <AccordionItem value="5">
@@ -103,7 +95,7 @@ const Question5 = () => (
         </p>
 
         <p>
-          The policy behind "bring your own key" (BYOK) is{" "}
+          The policy behind 'bring your own key' (BYOK) is{" "}
           <a
             href="https://community.openai.com/t/openais-bring-your-own-key-policy/14538/46"
             target="_blank"
@@ -133,13 +125,13 @@ const Question6 = () => (
       {t`How does your AI resume builder work?`}
     </AccordionTrigger>
     <AccordionContent className="prose max-w-none dark:prose-invert">
-      <Trans>
-        <p>
+      <p>
+        <Trans>
           Our AI resume builder analyzes your information and provides personalized recommendations
           for content, keywords, and formatting. It also helps you optimize your resume for ATS and
           ensures it is professional and impactful.
-        </p>
-      </Trans>
+        </Trans>
+      </p>
     </AccordionContent>
   </AccordionItem>
 );
@@ -151,12 +143,12 @@ const Question7 = () => (
       {t`Is my live resume publicly accessible?`}
     </AccordionTrigger>
     <AccordionContent className="prose max-w-none dark:prose-invert">
-      <Trans>
-        <p>
+      <p>
+        <Trans>
           You can choose whether to publish your live resume publicly or share it with specific
           individuals through private links.
-        </p>
-      </Trans>
+        </Trans>
+      </p>
     </AccordionContent>
   </AccordionItem>
 );
@@ -168,13 +160,13 @@ const Question8 = () => (
       {t`How does the AI help me build a better resume?`}
     </AccordionTrigger>
     <AccordionContent className="prose max-w-none dark:prose-invert">
-      <Trans>
-        <p>
+      <p>
+        <Trans>
           The AI analyzes your skills and experience, suggests relevant keywords and phrases,
           provides feedback on writing style and formatting, and ensures your resume is optimized
           for ATS.
-        </p>
-      </Trans>
+        </Trans>
+      </p>
     </AccordionContent>
   </AccordionItem>
 );
@@ -186,12 +178,12 @@ const Question9 = () => (
       {t`How can I track who has viewed my live resume?`}
     </AccordionTrigger>
     <AccordionContent className="prose max-w-none dark:prose-invert">
-      <Trans>
-        <p>
+      <p>
+        <Trans>
           Our Live Resume Analytics feature provides detailed reports on viewer engagement,
           including the number of views, time spent, and actions taken.
-        </p>
-      </Trans>
+        </Trans>{" "}
+      </p>
     </AccordionContent>
   </AccordionItem>
 );

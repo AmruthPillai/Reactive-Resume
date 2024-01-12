@@ -1,5 +1,14 @@
+import { X } from "@phosphor-icons/react";
 import { useBreakpoint } from "@reactive-resume/hooks";
-import { Panel, PanelGroup, PanelResizeHandle, Sheet, SheetContent } from "@reactive-resume/ui";
+import {
+  Button,
+  Panel,
+  PanelGroup,
+  PanelResizeHandle,
+  Sheet,
+  SheetClose,
+  SheetContent,
+} from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { Outlet } from "react-router-dom";
 
@@ -63,8 +72,15 @@ export const SimpleBuilderLayout = () => {
           side="right"
           showClose={false}
           onOpenAutoFocus={onOpenAutoFocus}
-          className="top-16 p-0 sm:max-w-xl"
+          className="p-0 sm:max-w-xl"
         >
+          <div className="h-16">
+            <SheetClose asChild className="absolute right-4 top-4">
+              <Button size="icon" variant="ghost">
+                <X />
+              </Button>
+            </SheetClose>
+          </div>
           <OutletSlot />
         </SheetContent>
       </Sheet>

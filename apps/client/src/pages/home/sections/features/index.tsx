@@ -1,5 +1,5 @@
-import { Trans, t } from "@lingui/macro";
-import { Brain, Files, Globe, Paragraph, PencilLine, TrendUp } from "@phosphor-icons/react";
+import { t, Trans } from "@lingui/macro";
+import { Brain, Files, Globe, PencilLine, TrendUp } from "@phosphor-icons/react";
 import { templatesList } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
 
