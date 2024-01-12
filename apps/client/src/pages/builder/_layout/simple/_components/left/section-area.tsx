@@ -1,49 +1,67 @@
 import { t } from "@lingui/macro";
-import { PlusCircle } from "@phosphor-icons/react";
-import {
-  Award,
-  Certification,
-  CustomSection,
-  Education,
-  Experience,
-  Interest,
-  Language,
-  Profile,
-  Project,
-  Publication,
-  Reference,
-  Skill,
-  Volunteer,
-} from "@reactive-resume/schema";
 import { Button, ScrollArea, Separator } from "@reactive-resume/ui";
 import { ResumeSections } from "@reactive-resume/utils";
-import { Fragment, useRef } from "react";
+import { useMemo, useRef, useState } from "react";
 
-import { BasicsSection } from "@/client/pages/builder/_components/sections/basics";
-import { SectionBase } from "@/client/pages/builder/_components/sections/shared/section-base";
-import { SummarySection } from "@/client/pages/builder/_components/sections/summary";
-import { useResumeStore } from "@/client/stores/resume";
+import { Steps, StepsSection } from "./steps";
 
 export const SectionArea = () => {
-  const containterRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
-  const addSection = useResumeStore((state) => state.addSection);
-  const customSections = useResumeStore((state) => state.resume.data.sections.custom);
+  const [currentStep, setCurrentStep] = useState<ResumeSections>(Steps[0]);
+
+  const onPrevious = () => {
+    const stepIndex = Steps.findIndex((s) => s === currentStep);
+    setCurrentStep(Steps[stepIndex - 1]);
+  };
+  const onNext = () => {
+    const stepIndex = Steps.findIndex((s) => s === currentStep);
+    setCurrentStep(Steps[stepIndex + 1]);
+  };
+
+  const isNext = useMemo(() => {
+    return Steps.findIndex((s) => s === currentStep) < Steps.length - 1;
+  }, [Steps, currentStep]);
+
+  const isPrevious = useMemo(() => {
+    return Steps.findIndex((s) => s === currentStep) > 0;
+  }, [Steps, currentStep]);
+
+  const variants = {
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        ease: "easeOut",
+        duration: 0.3,
+      },
+    },
+    hide: {
+      y: -20,
+      opacity: 0,
+    },
+  };
 
   return (
-    <ScrollArea orientation="vertical" className="h-screen flex-1 pb-0">
-      <div ref={containterRef} className="grid gap-y-6 p-6 @container/left">
-        <BasicsSection />
+    <ScrollArea orientation="vertical" className="h-screen flex-1 pb-20">
+      <div ref={containerRef} className="grid gap-y-6 p-6 @container/left">
+        {StepsSection[currentStep]}
         <Separator />
-        <SummarySection />
-        <Separator />
-        <SectionBase<Profile>
-          id={ResumeSections.PROFILES}
-          title={(item) => item.network}
-          description={(item) => item.username}
-        />
-        <Separator />
-        <SectionBase<Experience>
+
+        <div className="grid grid-cols-3 gap-y-6">
+          {isPrevious && (
+            <Button className="col-span-1" type="button" onClick={onPrevious}>
+              {t`Previous`}
+            </Button>
+          )}
+
+          {isNext && (
+            <Button className="col-span-1 col-start-3" type="button" onClick={onNext}>
+              {t`Next`}
+            </Button>
+          )}
+        </div>
+        {/* <SectionBase<Experience>
           id={ResumeSections.EXPERIENCE}
           title={(item) => item.company}
           description={(item) => item.position}
@@ -112,10 +130,10 @@ export const SectionArea = () => {
           id={ResumeSections.REFERENCES}
           title={(item) => item.name}
           description={(item) => item.description}
-        />
+        /> */}
 
         {/* Custom Sections */}
-        {Object.values(customSections).map((section) => (
+        {/* {Object.values(customSections).map((section) => (
           <Fragment key={section.id}>
             <Separator />
 
@@ -132,7 +150,7 @@ export const SectionArea = () => {
         <Button size="lg" variant="outline" onClick={addSection}>
           <PlusCircle />
           <span className="ml-2">{t`Add a new section`}</span>
-        </Button>
+        </Button> */}
       </div>
     </ScrollArea>
   );
