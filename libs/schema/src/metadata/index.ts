@@ -1,9 +1,25 @@
+import { ResumeSections } from "@reactive-resume/utils";
 import { z } from "zod";
 
 export const defaultLayout = [
   [
-    ["profiles", "summary", "experience", "education", "projects", "volunteer", "references"],
-    ["skills", "interests", "certifications", "awards", "publications", "languages"],
+    [
+      ResumeSections.PROFILES,
+      ResumeSections.SUMMARY,
+      ResumeSections.EXPERIENCE,
+      ResumeSections.EDUCATION,
+      ResumeSections.PROJECTS,
+      ResumeSections.VOLUNTEER,
+      ResumeSections.REFERENCES,
+    ],
+    [
+      ResumeSections.SKILLS,
+      ResumeSections.INTERESTS,
+      ResumeSections.CERTIFICATIONS,
+      ResumeSections.AWARDS,
+      ResumeSections.PUBLICATIONS,
+      ResumeSections.LANGUAGES,
+    ],
   ],
 ];
 

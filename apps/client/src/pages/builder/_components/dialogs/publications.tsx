@@ -30,7 +30,11 @@ export const PublicationsDialog = () => {
   });
 
   return (
-    <SectionDialog<FormValues> id="publications" form={form} defaultValues={defaultPublication}>
+    <SectionDialog<FormValues>
+      id={ResumeSections.PUBLICATIONS}
+      form={form}
+      defaultValues={defaultPublication}
+    >
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <FormField
           name="name"

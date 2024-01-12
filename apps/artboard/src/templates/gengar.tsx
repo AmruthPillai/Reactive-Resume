@@ -17,7 +17,7 @@ import {
   URL,
   Volunteer,
 } from "@reactive-resume/schema";
-import { cn, hexToRgb, isEmptyString, isUrl } from "@reactive-resume/utils";
+import { cn, hexToRgb, isEmptyString, isUrl, ResumeSections } from "@reactive-resume/utils";
 import get from "lodash.get";
 import { Fragment } from "react";
 
@@ -456,32 +456,35 @@ const Custom = ({ id }: { id: string }) => {
 
 const mapSectionToComponent = (section: SectionKey) => {
   switch (section) {
-    case "profiles":
+    case ResumeSections.PROFILES:
       return <Profiles />;
-    case "experience":
+    case ResumeSections.SUMMARY:
+      return <Summary />;
+    case ResumeSections.EXPERIENCE:
       return <Experience />;
-    case "education":
+    case ResumeSections.EDUCATION:
       return <Education />;
-    case "awards":
+    case ResumeSections.AWARDS:
       return <Awards />;
-    case "certifications":
+    case ResumeSections.CERTIFICATIONS:
       return <Certifications />;
-    case "skills":
+    case ResumeSections.SKILLS:
       return <Skills />;
-    case "interests":
+    case ResumeSections.INTERESTS:
       return <Interests />;
-    case "publications":
+    case ResumeSections.PUBLICATIONS:
       return <Publications />;
-    case "volunteer":
+    case ResumeSections.VOLUNTEER:
       return <Volunteer />;
-    case "languages":
+    case ResumeSections.LANGUAGES:
       return <Languages />;
-    case "projects":
+    case ResumeSections.PROJECTS:
       return <Projects />;
-    case "references":
+    case ResumeSections.REFERENCES:
       return <References />;
     default:
-      if (section.startsWith("custom.")) return <Custom id={section.split(".")[1]} />;
+      if (section.startsWith(`${ResumeSections.CUSTOM}.`))
+        return <Custom id={section.split(".")[1]} />;
 
       return null;
   }

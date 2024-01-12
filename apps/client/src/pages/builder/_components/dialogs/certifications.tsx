@@ -30,7 +30,11 @@ export const CertificationsDialog = () => {
   });
 
   return (
-    <SectionDialog<FormValues> id="certifications" form={form} defaultValues={defaultCertification}>
+    <SectionDialog<FormValues>
+      id={ResumeSections.CERTIFICATIONS}
+      form={form}
+      defaultValues={defaultCertification}
+    >
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <FormField
           name="name"

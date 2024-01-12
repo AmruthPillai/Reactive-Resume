@@ -13,6 +13,7 @@ export enum ResumeSections {
   PROJECTS = "projects",
   PUBLICATIONS = "publications",
   VOLUNTEER = "volunteer",
+  SKILLS = "skills",
   REFERENCES = "references",
   CUSTOM = "custom",
 }

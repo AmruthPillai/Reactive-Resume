@@ -14,6 +14,7 @@ import {
   Input,
   Slider,
 } from "@reactive-resume/ui";
+import { ResumeSections } from "@reactive-resume/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -31,7 +32,7 @@ export const SkillsDialog = () => {
   });
 
   return (
-    <SectionDialog<FormValues> id="skills" form={form} defaultValues={defaultSkill}>
+    <SectionDialog<FormValues> id={ResumeSections.SKILLS} form={form} defaultValues={defaultSkill}>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <FormField
           name="name"

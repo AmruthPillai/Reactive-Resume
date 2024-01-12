@@ -26,6 +26,7 @@ import {
   DropdownMenuTrigger,
   Input,
 } from "@reactive-resume/ui";
+import { ResumeSections } from "@reactive-resume/utils";
 import get from "lodash.get";
 import { useMemo } from "react";
 
@@ -44,7 +45,7 @@ export const SectionOptions = ({ id }: Props) => {
   const section = useResumeStore((state) => get(state.resume.data.sections, id)) as SectionWithItem;
 
   const hasItems = useMemo(() => "items" in section, [section]);
-  const isCustomSection = useMemo(() => id.startsWith("custom"), [id]);
+  const isCustomSection = useMemo(() => id.startsWith(ResumeSections.CUSTOM), [id]);
 
   const onCreate = () => open("create", { id });
   const toggleVisibility = () => setValue(`sections.${id}.visible`, !section.visible);

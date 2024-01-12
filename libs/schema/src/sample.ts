@@ -1,3 +1,5 @@
+import { ResumeSections } from "@reactive-resume/utils";
+
 import { ResumeData } from ".";
 
 export const sampleResume: ResumeData = {
@@ -29,7 +31,7 @@ export const sampleResume: ResumeData = {
       name: "Summary",
       columns: 1,
       visible: true,
-      id: "summary",
+      id: ResumeSections.SUMMARY,
       content:
         "<p>Innovative Web Developer with 5 years of experience in building impactful and user-friendly websites and applications. Specializes in <strong>front-end technologies</strong> and passionate about modern web standards and cutting-edge development techniques. Proven track record of leading successful projects from concept to deployment.</p>",
     },
@@ -37,14 +39,14 @@ export const sampleResume: ResumeData = {
       name: "Awards",
       columns: 1,
       visible: true,
-      id: "awards",
+      id: ResumeSections.AWARDS,
       items: [],
     },
     certifications: {
       name: "Certifications",
       columns: 1,
       visible: true,
-      id: "certifications",
+      id: ResumeSections.CERTIFICATIONS,
       items: [
         {
           id: "spdhh9rrqi1gvj0yqnbqunlo",
@@ -76,7 +78,7 @@ export const sampleResume: ResumeData = {
       name: "Education",
       columns: 1,
       visible: true,
-      id: "education",
+      id: ResumeSections.EDUCATION,
       items: [
         {
           id: "yo3p200zo45c6cdqc6a2vtt3",
@@ -98,7 +100,7 @@ export const sampleResume: ResumeData = {
       name: "Experience",
       columns: 1,
       visible: true,
-      id: "experience",
+      id: ResumeSections.EXPERIENCE,
       items: [
         {
           id: "lhw25d7gf32wgdfpsktf6e0x",
@@ -134,28 +136,28 @@ export const sampleResume: ResumeData = {
       name: "Volunteering",
       columns: 1,
       visible: true,
-      id: "volunteer",
+      id: ResumeSections.VOLUNTEER,
       items: [],
     },
     interests: {
       name: "Interests",
       columns: 1,
       visible: true,
-      id: "interests",
+      id: ResumeSections.INTERESTS,
       items: [],
     },
     languages: {
       name: "Languages",
       columns: 1,
       visible: true,
-      id: "languages",
+      id: ResumeSections.LANGUAGES,
       items: [],
     },
     profiles: {
       name: "Profiles",
       columns: 1,
       visible: true,
-      id: "profiles",
+      id: ResumeSections.PROFILES,
       items: [
         {
           id: "cnbk5f0aeqvhx69ebk7hktwd",
@@ -185,7 +187,7 @@ export const sampleResume: ResumeData = {
       name: "Projects",
       columns: 1,
       visible: true,
-      id: "projects",
+      id: ResumeSections.PROJECTS,
       items: [
         {
           id: "yw843emozcth8s1ubi1ubvlf",
@@ -221,14 +223,14 @@ export const sampleResume: ResumeData = {
       name: "Publications",
       columns: 1,
       visible: true,
-      id: "publications",
+      id: ResumeSections.PUBLICATIONS,
       items: [],
     },
     references: {
       name: "References",
       columns: 1,
       visible: false,
-      id: "references",
+      id: ResumeSections.REFERENCES,
       items: [
         {
           id: "f2sv5z0cce6ztjl87yuk8fak",
@@ -247,7 +249,7 @@ export const sampleResume: ResumeData = {
       name: "Skills",
       columns: 1,
       visible: true,
-      id: "skills",
+      id: ResumeSections.SKILLS,
       items: [
         {
           id: "hn0keriukh6c0ojktl9gsgjm",

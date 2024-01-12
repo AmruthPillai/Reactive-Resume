@@ -12,6 +12,7 @@ import {
   FormMessage,
   Input,
 } from "@reactive-resume/ui";
+import { ResumeSections } from "@reactive-resume/utils";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -29,7 +30,11 @@ export const ProfilesDialog = () => {
   });
 
   return (
-    <SectionDialog<FormValues> id="profiles" form={form} defaultValues={defaultProfile}>
+    <SectionDialog<FormValues>
+      id={ResumeSections.PROFILES}
+      form={form}
+      defaultValues={defaultProfile}
+    >
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <FormField
           name="network"

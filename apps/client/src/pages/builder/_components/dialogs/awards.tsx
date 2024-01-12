@@ -30,7 +30,7 @@ export const AwardsDialog = () => {
   });
 
   return (
-    <SectionDialog<FormValues> id="awards" form={form} defaultValues={defaultAward}>
+    <SectionDialog<FormValues> id={ResumeSections.AWARDS} form={form} defaultValues={defaultAward}>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <FormField
           name="title"

@@ -1,6 +1,7 @@
 import { t } from "@lingui/macro";
 import { Plus } from "@phosphor-icons/react";
 import { Button } from "@reactive-resume/ui";
+import { ResumeSections } from "@reactive-resume/utils";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 
@@ -30,30 +31,69 @@ export const SectionBar = () => {
 
       <div className="flex flex-col items-center justify-center gap-y-2">
         <SectionIcon
-          id="basics"
-          onClick={() => scrollIntoView("#basics")}
+          id={ResumeSections.BASICS}
+          onClick={() => scrollIntoView(`#${ResumeSections.BASICS}`)}
           name={t({
             message: "Basics",
             context:
               "The basics section of a resume consists of User's Picture, Full Name, Location etc.",
           })}
         />
-        <SectionIcon id="summary" onClick={() => scrollIntoView("#summary")} />
-        <SectionIcon id="profiles" onClick={() => scrollIntoView("#profiles")} />
-        <SectionIcon id="experience" onClick={() => scrollIntoView("#experience")} />
-        <SectionIcon id="education" onClick={() => scrollIntoView("#education")} />
-        <SectionIcon id="skills" onClick={() => scrollIntoView("#skills")} />
-        <SectionIcon id="languages" onClick={() => scrollIntoView("#languages")} />
-        <SectionIcon id="awards" onClick={() => scrollIntoView("#awards")} />
-        <SectionIcon id="certifications" onClick={() => scrollIntoView("#certifications")} />
-        <SectionIcon id="interests" onClick={() => scrollIntoView("#interests")} />
-        <SectionIcon id="projects" onClick={() => scrollIntoView("#projects")} />
-        <SectionIcon id="publications" onClick={() => scrollIntoView("#publications")} />
-        <SectionIcon id="volunteer" onClick={() => scrollIntoView("#volunteer")} />
-        <SectionIcon id="references" onClick={() => scrollIntoView("#references")} />
+        <SectionIcon
+          id={ResumeSections.SUMMARY}
+          onClick={() => scrollIntoView(`#${ResumeSections.SUMMARY}`)}
+        />
+        <SectionIcon
+          id={ResumeSections.PROFILES}
+          onClick={() => scrollIntoView(`#${ResumeSections.PROFILES}`)}
+        />
+        <SectionIcon
+          id={ResumeSections.EXPERIENCE}
+          onClick={() => scrollIntoView(`#${ResumeSections.EXPERIENCE}`)}
+        />
+        <SectionIcon
+          id={ResumeSections.EDUCATION}
+          onClick={() => scrollIntoView(`#${ResumeSections.EDUCATION}`)}
+        />
+        <SectionIcon
+          id={ResumeSections.SKILLS}
+          onClick={() => scrollIntoView(`#${ResumeSections.SKILLS}`)}
+        />
+        <SectionIcon
+          id={ResumeSections.LANGUAGES}
+          onClick={() => scrollIntoView(`#${ResumeSections.LANGUAGES}`)}
+        />
+        <SectionIcon
+          id={ResumeSections.AWARDS}
+          onClick={() => scrollIntoView(`#${ResumeSections.AWARDS}`)}
+        />
+        <SectionIcon
+          id={ResumeSections.CERTIFICATIONS}
+          onClick={() => scrollIntoView(`#${ResumeSections.CERTIFICATIONS}`)}
+        />
+        <SectionIcon
+          id={ResumeSections.INTERESTS}
+          onClick={() => scrollIntoView(`#${ResumeSections.INTERESTS}`)}
+        />
+        <SectionIcon
+          id={ResumeSections.PROFILES}
+          onClick={() => scrollIntoView(`#${ResumeSections.PROJECTS}`)}
+        />
+        <SectionIcon
+          id={ResumeSections.PUBLICATIONS}
+          onClick={() => scrollIntoView(`#${ResumeSections.PUBLICATIONS}`)}
+        />
+        <SectionIcon
+          id={ResumeSections.VOLUNTEER}
+          onClick={() => scrollIntoView(`#${ResumeSections.VOLUNTEER}`)}
+        />
+        <SectionIcon
+          id={ResumeSections.REFERENCES}
+          onClick={() => scrollIntoView(`#${ResumeSections.REFERENCES}`)}
+        />
 
         <SectionIcon
-          id="custom"
+          id={ResumeSections.CUSTOM}
           variant="outline"
           name={t`Add a new section`}
           icon={<Plus size={14} />}

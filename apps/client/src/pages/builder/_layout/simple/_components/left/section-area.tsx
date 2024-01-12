@@ -16,6 +16,7 @@ import {
   Volunteer,
 } from "@reactive-resume/schema";
 import { Button, ScrollArea, Separator } from "@reactive-resume/ui";
+import { ResumeSections } from "@reactive-resume/utils";
 import { Fragment, useRef } from "react";
 
 import { BasicsSection } from "@/client/pages/builder/_components/sections/basics";
@@ -37,25 +38,25 @@ export const SectionArea = () => {
         <SummarySection />
         <Separator />
         <SectionBase<Profile>
-          id="profiles"
+          id={ResumeSections.PROFILES}
           title={(item) => item.network}
           description={(item) => item.username}
         />
         <Separator />
         <SectionBase<Experience>
-          id="experience"
+          id={ResumeSections.EXPERIENCE}
           title={(item) => item.company}
           description={(item) => item.position}
         />
         <Separator />
         <SectionBase<Education>
-          id="education"
+          id={ResumeSections.EDUCATION}
           title={(item) => item.institution}
           description={(item) => item.area}
         />
         <Separator />
         <SectionBase<Skill>
-          id="skills"
+          id={ResumeSections.SKILLS}
           title={(item) => item.name}
           description={(item) => {
             if (item.description) return item.description;
@@ -64,25 +65,25 @@ export const SectionArea = () => {
         />
         <Separator />
         <SectionBase<Language>
-          id="languages"
+          id={ResumeSections.LANGUAGES}
           title={(item) => item.name}
           description={(item) => item.description}
         />
         <Separator />
         <SectionBase<Award>
-          id="awards"
+          id={ResumeSections.AWARDS}
           title={(item) => item.title}
           description={(item) => item.awarder}
         />
         <Separator />
         <SectionBase<Certification>
-          id="certifications"
+          id={ResumeSections.CERTIFICATIONS}
           title={(item) => item.name}
           description={(item) => item.issuer}
         />
         <Separator />
         <SectionBase<Interest>
-          id="interests"
+          id={ResumeSections.INTERESTS}
           title={(item) => item.name}
           description={(item) => {
             if (item.keywords.length > 0) return `${item.keywords.length} keywords`;
@@ -90,25 +91,25 @@ export const SectionArea = () => {
         />
         <Separator />
         <SectionBase<Project>
-          id="projects"
+          id={ResumeSections.PROJECTS}
           title={(item) => item.name}
           description={(item) => item.description}
         />
         <Separator />
         <SectionBase<Publication>
-          id="publications"
+          id={ResumeSections.PUBLICATIONS}
           title={(item) => item.name}
           description={(item) => item.publisher}
         />
         <Separator />
         <SectionBase<Volunteer>
-          id="volunteer"
+          id={ResumeSections.VOLUNTEER}
           title={(item) => item.organization}
           description={(item) => item.position}
         />
         <Separator />
         <SectionBase<Reference>
-          id="references"
+          id={ResumeSections.REFERENCES}
           title={(item) => item.name}
           description={(item) => item.description}
         />
@@ -119,7 +120,7 @@ export const SectionArea = () => {
             <Separator />
 
             <SectionBase<CustomSection>
-              id={`custom.${section.id}`}
+              id={`${ResumeSections.CUSTOM}.${section.id}`}
               title={(item) => item.name}
               description={(item) => item.description}
             />

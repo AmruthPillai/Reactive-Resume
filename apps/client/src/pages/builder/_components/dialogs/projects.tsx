@@ -35,7 +35,11 @@ export const ProjectsDialog = () => {
   });
 
   return (
-    <SectionDialog<FormValues> id="projects" form={form} defaultValues={defaultProject}>
+    <SectionDialog<FormValues>
+      id={ResumeSections.PROJECTS}
+      form={form}
+      defaultValues={defaultProject}
+    >
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <FormField
           name="name"

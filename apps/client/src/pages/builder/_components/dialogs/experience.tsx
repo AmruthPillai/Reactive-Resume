@@ -30,7 +30,11 @@ export const ExperienceDialog = () => {
   });
 
   return (
-    <SectionDialog<FormValues> id="experience" form={form} defaultValues={defaultExperience}>
+    <SectionDialog<FormValues>
+      id={ResumeSections.EXPERIENCE}
+      form={form}
+      defaultValues={defaultExperience}
+    >
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <FormField
           name="company"

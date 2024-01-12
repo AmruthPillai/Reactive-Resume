@@ -15,15 +15,15 @@ export const SummarySection = () => {
   );
 
   return (
-    <section id="summary" className="grid gap-y-6">
+    <section id={ResumeSections.SUMMARY} className="grid gap-y-6">
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
-          {getSectionIcon("summary")}
+          {getSectionIcon(ResumeSections.SUMMARY)}
           <h2 className="line-clamp-1 text-3xl font-bold">{section.name}</h2>
         </div>
 
         <div className="flex items-center gap-x-2">
-          <SectionOptions id="summary" />
+          <SectionOptions id={ResumeSections.SUMMARY} />
         </div>
       </header>
 

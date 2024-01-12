@@ -30,7 +30,11 @@ export const ReferencesDialog = () => {
   });
 
   return (
-    <SectionDialog<FormValues> id="references" form={form} defaultValues={defaultReference}>
+    <SectionDialog<FormValues>
+      id={ResumeSections.REFERENCES}
+      form={form}
+      defaultValues={defaultReference}
+    >
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <FormField
           name="name"

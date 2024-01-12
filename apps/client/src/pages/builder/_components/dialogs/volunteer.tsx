@@ -30,7 +30,11 @@ export const VolunteerDialog = () => {
   });
 
   return (
-    <SectionDialog<FormValues> id="volunteer" form={form} defaultValues={defaultVolunteer}>
+    <SectionDialog<FormValues>
+      id={ResumeSections.VOLUNTEER}
+      form={form}
+      defaultValues={defaultVolunteer}
+    >
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <FormField
           name="organization"

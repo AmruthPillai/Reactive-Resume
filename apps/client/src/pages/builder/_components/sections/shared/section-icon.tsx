@@ -17,6 +17,7 @@ import {
 } from "@phosphor-icons/react";
 import { defaultSection, SectionKey, SectionWithItem } from "@reactive-resume/schema";
 import { Button, ButtonProps, Tooltip } from "@reactive-resume/ui";
+import { ResumeSections } from "@reactive-resume/utils";
 import get from "lodash.get";
 
 import { useResumeStore } from "@/client/stores/resume";
@@ -24,33 +25,33 @@ import { useResumeStore } from "@/client/stores/resume";
 export const getSectionIcon = (id: SectionKey, props: IconProps = {}) => {
   switch (id) {
     // Left Sidebar
-    case "basics":
+    case ResumeSections.BASICS:
       return <User size={18} {...props} />;
-    case "summary":
+    case ResumeSections.SUMMARY:
       return <Article size={18} {...props} />;
-    case "awards":
+    case ResumeSections.AWARDS:
       return <Medal size={18} {...props} />;
-    case "profiles":
+    case ResumeSections.PROFILES:
       return <ShareNetwork size={18} {...props} />;
-    case "experience":
+    case ResumeSections.EXPERIENCE:
       return <Briefcase size={18} {...props} />;
-    case "education":
+    case ResumeSections.EDUCATION:
       return <GraduationCap size={18} {...props} />;
-    case "certifications":
+    case ResumeSections.CERTIFICATIONS:
       return <Certificate size={18} {...props} />;
-    case "interests":
+    case ResumeSections.INTERESTS:
       return <GameController size={18} {...props} />;
-    case "languages":
+    case ResumeSections.LANGUAGES:
       return <Translate size={18} {...props} />;
-    case "volunteer":
+    case ResumeSections.VOLUNTEER:
       return <HandHeart size={18} {...props} />;
-    case "projects":
+    case ResumeSections.PROJECTS:
       return <PuzzlePiece size={18} {...props} />;
-    case "publications":
+    case ResumeSections.PUBLICATIONS:
       return <Books size={18} {...props} />;
-    case "skills":
+    case ResumeSections.SKILLS:
       return <CompassTool size={18} {...props} />;
-    case "references":
+    case ResumeSections.REFERENCES:
       return <Users size={18} {...props} />;
 
     default:
