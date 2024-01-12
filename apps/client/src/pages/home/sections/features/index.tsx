@@ -46,7 +46,7 @@ export const FeaturesSection = () => {
             <div>
               <h1 className="text-3xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl">
                 <Trans>
-                  explore our <br /> awesome Components
+                  explore our <br /> awesome Features
                 </Trans>
               </h1>
 

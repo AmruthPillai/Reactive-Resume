@@ -11,7 +11,7 @@ import {
   ListBullets,
   ListNumbers,
   Minus,
-  Paragraph,
+  Paragraph as ParagraphIcon,
   TextAlignCenter,
   TextAlignJustify,
   TextAlignLeft,
@@ -31,6 +31,7 @@ import { cn } from "@reactive-resume/utils";
 import { Highlight } from "@tiptap/extension-highlight";
 import { Image } from "@tiptap/extension-image";
 import { Link } from "@tiptap/extension-link";
+import Paragraph from "@tiptap/extension-paragraph";
 import { TextAlign } from "@tiptap/extension-text-align";
 import { Underline } from "@tiptap/extension-underline";
 import { Editor, EditorContent, EditorContentProps, useEditor } from "@tiptap/react";
@@ -258,7 +259,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           pressed={editor.isActive("paragraph")}
           onPressedChange={() => editor.chain().focus().setParagraph().run()}
         >
-          <Paragraph />
+          <ParagraphIcon />
         </Toggle>
       </Tooltip>
 
@@ -440,6 +441,20 @@ export const RichInput = forwardRef<Editor, RichInputProps>(
         Image,
         Underline,
         Highlight,
+        Paragraph.extend({
+          addAttributes() {
+            return {
+              "data-value": {
+                default: null,
+                renderHTML: (attributes) => {
+                  return {
+                    "data-value": `${attributes?.["data-value"]}`,
+                  };
+                },
+              },
+            };
+          },
+        }),
         Link.configure({ openOnClick: false }),
         TextAlign.configure({ types: ["heading", "paragraph"] }),
       ],

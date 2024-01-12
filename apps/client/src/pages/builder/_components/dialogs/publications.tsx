@@ -10,6 +10,7 @@ import {
   Input,
   RichInput,
 } from "@reactive-resume/ui";
+import { ResumeSections } from "@reactive-resume/utils";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -99,7 +100,7 @@ export const PublicationsDialog = () => {
                   content={field.value}
                   onChange={(value) => field.onChange(value)}
                   footer={(editor) => (
-                    <AiActions value={editor.getText()} onChange={editor.commands.setContent} />
+                    <AiActions editor={editor} sectionName={ResumeSections.PUBLICATIONS} />
                   )}
                 />
               </FormControl>
