@@ -8,6 +8,7 @@ export const resumeSchema = z.object({
   id: idSchema,
   title: z.string(),
   slug: z.string(),
+  jobTitle: z.string().optional(),
   data: resumeDataSchema.default(defaultResumeData),
   visibility: z.enum(["private", "public"]).default("private"),
   locked: z.boolean().default(false),

@@ -63,7 +63,7 @@ export const ResumeDialog = () => {
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: { title: "", slug: "" },
+    defaultValues: { title: "", slug: "", jobTitle: "" },
   });
 
   useEffect(() => {
@@ -77,7 +77,12 @@ export const ResumeDialog = () => {
 
   const onSubmit = async (values: FormValues) => {
     if (isCreate) {
-      await createResume({ slug: values.slug, title: values.title, visibility: "private" });
+      await createResume({
+        slug: values.slug,
+        title: values.title,
+        jobTitle: values.jobTitle,
+        visibility: "private",
+      });
     }
 
     if (isUpdate) {
@@ -87,6 +92,7 @@ export const ResumeDialog = () => {
         ...payload.item,
         title: values.title,
         slug: values.slug,
+        jobTitle: values.jobTitle,
       });
     }
 
@@ -110,19 +116,34 @@ export const ResumeDialog = () => {
   };
 
   const onReset = () => {
-    if (isCreate) form.reset({ title: "", slug: "" });
+    if (isCreate) form.reset({ title: "", slug: "", jobTitle: "" });
     if (isUpdate)
-      form.reset({ id: payload.item?.id, title: payload.item?.title, slug: payload.item?.slug });
+      form.reset({
+        id: payload.item?.id,
+        title: payload.item?.title,
+        slug: payload.item?.slug,
+        jobTitle: payload.item?.jobTitle,
+      });
     if (isDuplicate)
-      form.reset({ title: `${payload.item?.title} (Copy)`, slug: `${payload.item?.slug}-copy` });
+      form.reset({
+        title: `${payload.item?.title} (Copy)`,
+        slug: `${payload.item?.slug}-copy`,
+        jobTitle: payload.item?.jobTitle,
+      });
     if (isDelete)
-      form.reset({ id: payload.item?.id, title: payload.item?.title, slug: payload.item?.slug });
+      form.reset({
+        id: payload.item?.id,
+        title: payload.item?.title,
+        slug: payload.item?.slug,
+        jobTitle: payload.item?.jobTitle,
+      });
   };
 
   const onGenerateRandomName = () => {
     const name = generateRandomName();
     form.setValue("title", name);
     form.setValue("slug", kebabCase(name));
+    form.setValue("jobTitle", "");
   };
 
   const onCreateSample = async () => {
@@ -132,6 +153,7 @@ export const ResumeDialog = () => {
     await duplicateResume({
       title: title || randomName,
       slug: slug || kebabCase(randomName),
+      jobTitle: "",
       data: sampleResume,
     });
 
@@ -228,6 +250,23 @@ export const ResumeDialog = () => {
                   <FormControl>
                     <Input {...field} />
                   </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              name="jobTitle"
+              control={form.control}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t`Job Title`}</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormDescription>
+                    {t`Tip: Enter Your Desired Job Title for Tailored Suggestions.`}
+                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}

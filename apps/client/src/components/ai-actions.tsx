@@ -1,5 +1,6 @@
 import { t } from "@lingui/macro";
 import {
+  Brain,
   CaretDown,
   ChatTeardropText,
   CircleNotch,
@@ -14,8 +15,12 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
 } from "@reactive-resume/ui";
-import { cn } from "@reactive-resume/utils";
+import { cn, ResumeSections } from "@reactive-resume/utils";
+import { Editor } from "@tiptap/react";
 import { useState } from "react";
 
 import { toast } from "../hooks/use-toast";
@@ -26,17 +31,18 @@ import { changeTone as palmChangeTone } from "../services/palm/change-tone";
 import { fixGrammar as palmFixGrammar } from "../services/palm/fix-grammar";
 import { improveWriting as palmImproveWriting } from "../services/palm/improve-writing";
 import { useOpenAiStore } from "../stores/openai";
+import { Suggestions } from "./suggestions/suggestions";
 
 type Action = "improve" | "fix" | "tone";
 type Mood = "casual" | "professional" | "confident" | "friendly";
 
 type Props = {
-  value: string;
-  onChange: (value: string) => void;
+  editor: Editor;
   className?: string;
+  sectionName: ResumeSections;
 };
 
-export const AiActions = ({ value, onChange, className }: Props) => {
+export const AiActions = ({ editor, className, sectionName }: Props) => {
   const [loading, setLoading] = useState<Action | false>(false);
   const openaiEnabled = useOpenAiStore((state) => !!state.apiKey);
 
@@ -47,14 +53,14 @@ export const AiActions = ({ value, onChange, className }: Props) => {
   const onClick = async (action: Action, mood?: Mood) => {
     try {
       setLoading(action);
+      const textToImprove = editor.getText();
+      let result = textToImprove;
 
-      let result = value;
+      if (action === "improve") result = await improveWriting(textToImprove);
+      if (action === "fix") result = await fixGrammar(textToImprove);
+      if (action === "tone" && mood) result = await changeTone(textToImprove, mood);
 
-      if (action === "improve") result = await improveWriting(value);
-      if (action === "fix") result = await fixGrammar(value);
-      if (action === "tone" && mood) result = await changeTone(value, mood);
-
-      onChange(result);
+      editor.commands.setContent(result);
     } catch (error) {
       toast({
         variant: "error",
@@ -74,16 +80,35 @@ export const AiActions = ({ value, onChange, className }: Props) => {
         className,
       )}
     >
-      <div className="absolute -left-5 z-10">
+      <div className="absolute -left-2 z-10">
         <Badge
           outline
           variant="primary"
           className="-rotate-90 bg-background px-2 text-[10px] leading-[10px]"
         >
           <MagicWand size={10} className="mr-1" />
-          {openaiEnabled ? t`OPENAPI` : t`DEFAULT`} {t`AI`}
+          {/* {openaiEnabled ? t`OPENAPI` : t`DEFAULT`} {t`AI`} */}
+          {t`AI`}
         </Badge>
       </div>
+
+      {[
+        ResumeSections.EDUCATION as string,
+        ResumeSections.EXPERIENCE as string,
+        ResumeSections.SUMMARY as string,
+      ].includes(sectionName) && (
+        <Popover>
+          <PopoverTrigger asChild>
+            <Button size="sm" variant="outline" disabled={!!loading}>
+              {loading === "fix" ? <CircleNotch className="animate-spin" /> : <Brain />}
+              <span className="ml-2 text-xs">{t`Suggestions`}</span>
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent className="w-[360px]">
+            <Suggestions editor={editor} content={editor.getText()} sectionName={sectionName} />
+          </PopoverContent>
+        </Popover>
+      )}
 
       <Button size="sm" variant="outline" disabled={!!loading} onClick={() => onClick("improve")}>
         {loading === "improve" ? <CircleNotch className="animate-spin" /> : <PenNib />}

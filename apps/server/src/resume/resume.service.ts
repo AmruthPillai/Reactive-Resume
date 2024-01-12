@@ -51,6 +51,7 @@ export class ResumeService {
         title: createResumeDto.title,
         visibility: createResumeDto.visibility,
         slug: createResumeDto.slug ?? kebabCase(createResumeDto.title),
+        jobTitle: createResumeDto.jobTitle,
       },
     });
 
@@ -72,6 +73,7 @@ export class ResumeService {
         data: importResumeDto.data,
         title: importResumeDto.title || randomTitle,
         slug: importResumeDto.slug || kebabCase(randomTitle),
+        jobTitle: importResumeDto.jobTitle,
       },
     });
 
@@ -90,6 +92,7 @@ export class ResumeService {
           id: true,
           title: true,
           slug: true,
+          jobTitle: true,
           // data: true,
           visibility: true,
           locked: true,
@@ -155,6 +158,7 @@ export class ResumeService {
         data: {
           title: updateResumeDto.title,
           slug: updateResumeDto.slug,
+          jobTitle: updateResumeDto.jobTitle,
           visibility: updateResumeDto.visibility,
           data: updateResumeDto.data as unknown as Prisma.JsonObject,
         },
