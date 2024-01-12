@@ -1,4 +1,4 @@
-import { Template } from "@reactive-resume/utils";
+import { Template, Templates } from "@reactive-resume/utils";
 
 import { Azurill } from "./azurill";
 import { Bronzor } from "./bronzor";
@@ -15,29 +15,29 @@ import { Rhyhorn } from "./rhyhorn";
 
 export const getTemplate = (template: Template) => {
   switch (template) {
-    case "azurill":
+    case Templates.AZURILL:
       return Azurill;
-    case "bronzor":
+    case Templates.BRONZOR:
       return Bronzor;
-    case "chikorita":
+    case Templates.CHIKORITA:
       return Chikorita;
-    case "ditto":
+    case Templates.DITTO:
       return Ditto;
-    case "gengar":
+    case Templates.GENGAR:
       return Gengar;
-    case "glalie":
+    case Templates.GLALIE:
       return Glalie;
-    case "kakuna":
+    case Templates.KAKUNA:
       return Kakuna;
-    case "leafish":
+    case Templates.LEAFISH:
       return Leafish;
-    case "nosepass":
+    case Templates.NOSEPASS:
       return Nosepass;
-    case "onyx":
+    case Templates.ONYX:
       return Onyx;
-    case "pikachu":
+    case Templates.PIKACHU:
       return Pikachu;
-    case "rhyhorn":
+    case Templates.RHYHORN:
       return Rhyhorn;
     default:
       return Onyx;
