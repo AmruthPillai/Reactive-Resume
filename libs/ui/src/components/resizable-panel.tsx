@@ -30,7 +30,7 @@ export const PanelResizeHandle = ({
       />
     </div>
 
-    <div className="pointer-events-none absolute inset-y-0 left-[-5px] z-50 flex items-center justify-center bg-secondary opacity-100">
+    <div className="pointer-events-none absolute inset-y-0 left-[-5px] z-50 flex items-center justify-center bg-secondary opacity-50">
       <DotsSixVertical size={14} opacity={1} />
     </div>
   </PanelPrimitive.PanelResizeHandle>
