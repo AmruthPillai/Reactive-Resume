@@ -17,3 +17,10 @@ export enum ResumeSections {
   REFERENCES = "references",
   CUSTOM = "custom",
 }
+
+export const isValidResumeSection = (section?: string): section is ResumeSections => {
+  return Object.values<string>(ResumeSections).includes(section || "");
+};
+
+export const getValidSectionValue = (section?: string) =>
+  isValidResumeSection(section) ? (section as ResumeSections) : null;

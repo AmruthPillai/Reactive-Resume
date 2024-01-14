@@ -2,23 +2,20 @@ import { t } from "@lingui/macro";
 import { Plus } from "@phosphor-icons/react";
 import { Button } from "@reactive-resume/ui";
 import { ResumeSections } from "@reactive-resume/utils";
-import { useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { Icon } from "@/client/components/icon";
 import { UserAvatar } from "@/client/components/user-avatar";
 import { UserOptions } from "@/client/components/user-options";
 import { SectionIcon } from "@/client/pages/builder/_components/sections/shared/section-icon";
-import { useResumeStore } from "@/client/stores/resume";
 
 export const SectionBar = () => {
-  const containterRef = useRef<HTMLDivElement | null>(null);
+  const navigate = useNavigate();
 
-  const addSection = useResumeStore((state) => state.addSection);
+  const params = useParams<{ id: string; section: string }>();
 
-  const scrollIntoView = (selector: string) => {
-    const section = containterRef.current?.querySelector(selector);
-    section?.scrollIntoView({ behavior: "smooth" });
+  const handleSectionClick = (sectionId: string) => {
+    navigate(`/builder/${params.id}/${sectionId}`);
   };
 
   return (
@@ -32,7 +29,7 @@ export const SectionBar = () => {
       <div className="flex flex-col items-center justify-center gap-y-2">
         <SectionIcon
           id={ResumeSections.BASICS}
-          onClick={() => scrollIntoView(`#${ResumeSections.BASICS}`)}
+          onClick={() => handleSectionClick(ResumeSections.BASICS)}
           name={t({
             message: "Basics",
             context:
@@ -41,55 +38,55 @@ export const SectionBar = () => {
         />
         <SectionIcon
           id={ResumeSections.SUMMARY}
-          onClick={() => scrollIntoView(`#${ResumeSections.SUMMARY}`)}
+          onClick={() => handleSectionClick(ResumeSections.SUMMARY)}
         />
         <SectionIcon
           id={ResumeSections.PROFILES}
-          onClick={() => scrollIntoView(`#${ResumeSections.PROFILES}`)}
+          onClick={() => handleSectionClick(ResumeSections.PROFILES)}
         />
         <SectionIcon
           id={ResumeSections.EXPERIENCE}
-          onClick={() => scrollIntoView(`#${ResumeSections.EXPERIENCE}`)}
+          onClick={() => handleSectionClick(ResumeSections.EXPERIENCE)}
         />
         <SectionIcon
           id={ResumeSections.EDUCATION}
-          onClick={() => scrollIntoView(`#${ResumeSections.EDUCATION}`)}
+          onClick={() => handleSectionClick(ResumeSections.EDUCATION)}
         />
         <SectionIcon
           id={ResumeSections.SKILLS}
-          onClick={() => scrollIntoView(`#${ResumeSections.SKILLS}`)}
+          onClick={() => handleSectionClick(ResumeSections.SKILLS)}
         />
         <SectionIcon
           id={ResumeSections.LANGUAGES}
-          onClick={() => scrollIntoView(`#${ResumeSections.LANGUAGES}`)}
+          onClick={() => handleSectionClick(ResumeSections.LANGUAGES)}
         />
         <SectionIcon
           id={ResumeSections.AWARDS}
-          onClick={() => scrollIntoView(`#${ResumeSections.AWARDS}`)}
+          onClick={() => handleSectionClick(ResumeSections.AWARDS)}
         />
         <SectionIcon
           id={ResumeSections.CERTIFICATIONS}
-          onClick={() => scrollIntoView(`#${ResumeSections.CERTIFICATIONS}`)}
+          onClick={() => handleSectionClick(ResumeSections.CERTIFICATIONS)}
         />
         <SectionIcon
           id={ResumeSections.INTERESTS}
-          onClick={() => scrollIntoView(`#${ResumeSections.INTERESTS}`)}
+          onClick={() => handleSectionClick(ResumeSections.INTERESTS)}
         />
         <SectionIcon
-          id={ResumeSections.PROFILES}
-          onClick={() => scrollIntoView(`#${ResumeSections.PROJECTS}`)}
+          id={ResumeSections.PROJECTS}
+          onClick={() => handleSectionClick(ResumeSections.PROJECTS)}
         />
         <SectionIcon
           id={ResumeSections.PUBLICATIONS}
-          onClick={() => scrollIntoView(`#${ResumeSections.PUBLICATIONS}`)}
+          onClick={() => handleSectionClick(ResumeSections.PUBLICATIONS)}
         />
         <SectionIcon
           id={ResumeSections.VOLUNTEER}
-          onClick={() => scrollIntoView(`#${ResumeSections.VOLUNTEER}`)}
+          onClick={() => handleSectionClick(ResumeSections.VOLUNTEER)}
         />
         <SectionIcon
           id={ResumeSections.REFERENCES}
-          onClick={() => scrollIntoView(`#${ResumeSections.REFERENCES}`)}
+          onClick={() => handleSectionClick(ResumeSections.REFERENCES)}
         />
 
         <SectionIcon
@@ -98,9 +95,7 @@ export const SectionBar = () => {
           name={t`Add a new section`}
           icon={<Plus size={14} />}
           onClick={() => {
-            addSection();
-            // eslint-disable-next-line lingui/no-unlocalized-strings
-            scrollIntoView("& > section:last-of-type");
+            handleSectionClick(ResumeSections.CUSTOM);
           }}
         />
       </div>

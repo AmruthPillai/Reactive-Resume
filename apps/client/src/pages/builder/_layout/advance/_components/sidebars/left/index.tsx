@@ -1,39 +1,21 @@
 import { t } from "@lingui/macro";
-import { Plus, PlusCircle } from "@phosphor-icons/react";
-import {
-  Award,
-  Certification,
-  CustomSection,
-  Education,
-  Experience,
-  Interest,
-  Language,
-  Profile,
-  Project,
-  Publication,
-  Reference,
-  Skill,
-  Volunteer,
-} from "@reactive-resume/schema";
+import { Plus } from "@phosphor-icons/react";
 import { Button, ScrollArea, Separator } from "@reactive-resume/ui";
 import { ResumeSections } from "@reactive-resume/utils";
-import { Fragment, useRef } from "react";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 
 import { Icon } from "@/client/components/icon";
 import { UserAvatar } from "@/client/components/user-avatar";
 import { UserOptions } from "@/client/components/user-options";
-import { BasicsSection } from "@/client/pages/builder/_components/sections/basics";
-import { SectionBase } from "@/client/pages/builder/_components/sections/shared/section-base";
 import { SectionIcon } from "@/client/pages/builder/_components/sections/shared/section-icon";
-import { SummarySection } from "@/client/pages/builder/_components/sections/summary";
+import { SectionMapping } from "@/client/pages/builder/_helper/section";
 import { useResumeStore } from "@/client/stores/resume";
 
 export const LeftSidebar = () => {
   const containterRef = useRef<HTMLDivElement | null>(null);
 
   const addSection = useResumeStore((state) => state.addSection);
-  const customSections = useResumeStore((state) => state.resume.data.sections.custom);
 
   const scrollIntoView = (selector: string) => {
     const section = containterRef.current?.querySelector(selector);
@@ -134,106 +116,36 @@ export const LeftSidebar = () => {
 
       <ScrollArea orientation="vertical" className="h-screen flex-1 pb-16 lg:pb-0">
         <div ref={containterRef} className="grid gap-y-6 p-6 @container/left">
-          <BasicsSection />
+          {SectionMapping[ResumeSections.BASICS]}
           <Separator />
-          <SummarySection />
+          {SectionMapping[ResumeSections.SUMMARY]}
           <Separator />
-          <SectionBase<Profile>
-            id={ResumeSections.PROFILES}
-            title={(item) => item.network}
-            description={(item) => item.username}
-          />
+          {SectionMapping[ResumeSections.PROFILES]}
           <Separator />
-          <SectionBase<Experience>
-            id={ResumeSections.EXPERIENCE}
-            title={(item) => item.company}
-            description={(item) => item.position}
-          />
+          {SectionMapping[ResumeSections.EXPERIENCE]}
           <Separator />
-          <SectionBase<Education>
-            id={ResumeSections.EDUCATION}
-            title={(item) => item.institution}
-            description={(item) => item.area}
-          />
+          {SectionMapping[ResumeSections.EDUCATION]}
           <Separator />
-          <SectionBase<Skill>
-            id={ResumeSections.SKILLS}
-            title={(item) => item.name}
-            description={(item) => {
-              if (item.description) return item.description;
-              if (item.keywords.length > 0) return `${item.keywords.length} keywords`;
-            }}
-          />
+          {SectionMapping[ResumeSections.SKILLS]}
           <Separator />
-          <SectionBase<Language>
-            id={ResumeSections.LANGUAGES}
-            title={(item) => item.name}
-            description={(item) => item.description}
-          />
+          {SectionMapping[ResumeSections.LANGUAGES]}
           <Separator />
-          <SectionBase<Award>
-            id={ResumeSections.AWARDS}
-            title={(item) => item.title}
-            description={(item) => item.awarder}
-          />
+          {SectionMapping[ResumeSections.AWARDS]}
           <Separator />
-          <SectionBase<Certification>
-            id={ResumeSections.CERTIFICATIONS}
-            title={(item) => item.name}
-            description={(item) => item.issuer}
-          />
+          {SectionMapping[ResumeSections.CERTIFICATIONS]}
           <Separator />
-          <SectionBase<Interest>
-            id={ResumeSections.INTERESTS}
-            title={(item) => item.name}
-            description={(item) => {
-              if (item.keywords.length > 0) return `${item.keywords.length} keywords`;
-            }}
-          />
+          {SectionMapping[ResumeSections.INTERESTS]}
           <Separator />
-          <SectionBase<Project>
-            id={ResumeSections.PROJECTS}
-            title={(item) => item.name}
-            description={(item) => item.description}
-          />
+          {SectionMapping[ResumeSections.PROJECTS]}
           <Separator />
-          <SectionBase<Publication>
-            id={ResumeSections.PUBLICATIONS}
-            title={(item) => item.name}
-            description={(item) => item.publisher}
-          />
+          {SectionMapping[ResumeSections.PUBLICATIONS]}
           <Separator />
-          <SectionBase<Volunteer>
-            id={ResumeSections.VOLUNTEER}
-            title={(item) => item.organization}
-            description={(item) => item.position}
-          />
+          {SectionMapping[ResumeSections.VOLUNTEER]}
           <Separator />
-          <SectionBase<Reference>
-            id={ResumeSections.REFERENCES}
-            title={(item) => item.name}
-            description={(item) => item.description}
-          />
+          {SectionMapping[ResumeSections.REFERENCES]}
 
           {/* Custom Sections */}
-          {Object.values(customSections).map((section) => (
-            <Fragment key={section.id}>
-              <Separator />
-
-              <SectionBase<CustomSection>
-                id={`${ResumeSections.CUSTOM}.${section.id}`}
-                title={(item) => item.name}
-                description={(item) => item.description}
-              />
-            </Fragment>
-          ))}
-
-          <Separator />
-
-          <Button size="lg" variant="outline" onClick={addSection}>
-            <PlusCircle />
-            <span className="ml-2">{t`Add a new section`}</span>
-          </Button>
+          {SectionMapping[ResumeSections.CUSTOM]}
         </div>
       </ScrollArea>
     </div>
