@@ -64,7 +64,7 @@ export const BuilderToolbar = () => {
 
   return (
     <motion.div className="relative">
-      <div className="absolute inset-x-0 bottom-0 mx-auto block py-6 text-center">
+      <div className="absolute inset-x-0 bottom-0 mx-auto block py-10 text-center">
         <div className="inline-flex items-center justify-center rounded-full bg-background px-4 shadow-xl">
           <Tooltip content={t`Undo`}>
             <Button

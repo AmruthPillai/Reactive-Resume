@@ -1,6 +1,6 @@
 import { t } from "@lingui/macro";
 import { ResumeDto } from "@reactive-resume/dto";
-import { cn } from "@reactive-resume/utils";
+import { cn, getValidSectionValue } from "@reactive-resume/utils";
 import { useCallback, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { LoaderFunction, redirect, useParams } from "react-router-dom";
@@ -11,19 +11,28 @@ import { useBuilderStore } from "@/client/stores/builder";
 import { useResumeStore } from "@/client/stores/resume";
 
 export const BuilderPage = () => {
+  const params = useParams<{ id: string; section: string }>();
   const frameRef = useBuilderStore((state) => state.frame.ref);
+  const activeSection = useBuilderStore((state) => state.activeSection);
   const setFrameRef = useBuilderStore((state) => state.frame.setRef);
 
   const resume = useResumeStore((state) => state.resume);
   const title = useResumeStore((state) => state.resume.title);
 
-  const params = useParams();
+  // Is Simple editor opened
   const isSimpleEditor = !!params.section;
+
   const updateResumeInFrame = useCallback(() => {
     if (!frameRef || !frameRef.contentWindow) return;
     const message = { type: "SET_RESUME", payload: resume.data };
     (() => frameRef.contentWindow.postMessage(message, "*"))();
   }, [frameRef, resume.data]);
+
+  // update current section for Simple Builder
+  useEffect(() => {
+    const section = getValidSectionValue(params.section);
+    section && activeSection.left.setSection(section);
+  }, [params]);
 
   // Send resume data to iframe on initial load
   useEffect(() => {

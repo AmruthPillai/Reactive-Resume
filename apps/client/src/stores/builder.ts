@@ -1,9 +1,15 @@
+import { ResumeSections } from "@reactive-resume/utils";
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 
 type Sheet = {
   open: boolean;
   setOpen: (open: boolean) => void;
+};
+
+type ActiveSection = {
+  name: ResumeSections;
+  setSection: (section: ResumeSections) => void;
 };
 
 type PanelHandle = {
@@ -30,6 +36,9 @@ interface BuilderState {
     left: Panel;
     right: Panel;
   };
+  activeSection: {
+    left: ActiveSection;
+  };
 }
 
 interface BuilderActions {
@@ -38,6 +47,16 @@ interface BuilderActions {
 
 export const useBuilderStore = create<BuilderState & BuilderActions>()(
   immer((set) => ({
+    activeSection: {
+      left: {
+        name: ResumeSections.BASICS,
+        setSection: (section) => {
+          set((state) => {
+            state.activeSection.left.name = section;
+          });
+        },
+      },
+    },
     frame: {
       ref: null,
       setRef: (ref) => {

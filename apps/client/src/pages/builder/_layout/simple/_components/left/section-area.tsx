@@ -1,10 +1,10 @@
 import { t } from "@lingui/macro";
 import { Button, ScrollArea, Separator } from "@reactive-resume/ui";
-import { getValidSectionValue, ResumeSections } from "@reactive-resume/utils";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { SectionMapping } from "@/client/pages/builder/_helper/section";
+import { useBuilderStore } from "@/client/stores/builder";
 import { useTemporalResumeStore } from "@/client/stores/resume";
 
 import { Steps } from "./steps";
@@ -14,12 +14,8 @@ export const SectionArea = () => {
   const params = useParams<{ id: string; section: string }>();
   const clearHistory = useTemporalResumeStore((state) => state.clear);
 
-  const getSection = () => getValidSectionValue(params.section) || Steps[0];
-  const [currentStep, setCurrentStep] = useState<ResumeSections>(() => getSection());
-
-  useEffect(() => {
-    setCurrentStep(getSection());
-  }, [params]);
+  const activeSection = useBuilderStore((state) => state.activeSection);
+  const currentStep = activeSection.left.name;
 
   const handleSectionClick = (sectionId: string) => {
     navigate(`/builder/${params.id}/${sectionId}`);
