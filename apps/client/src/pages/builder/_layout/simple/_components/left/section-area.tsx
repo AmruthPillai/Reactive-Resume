@@ -5,12 +5,14 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { SectionMapping } from "@/client/pages/builder/_helper/section";
+import { useTemporalResumeStore } from "@/client/stores/resume";
 
 import { Steps } from "./steps";
 
 export const SectionArea = () => {
   const navigate = useNavigate();
   const params = useParams<{ id: string; section: string }>();
+  const clearHistory = useTemporalResumeStore((state) => state.clear);
 
   const getSection = () => getValidSectionValue(params.section) || Steps[0];
   const [currentStep, setCurrentStep] = useState<ResumeSections>(() => getSection());
@@ -30,6 +32,7 @@ export const SectionArea = () => {
   const onStep = (step: number) => {
     const stepIndex = Steps.findIndex((s) => s === currentStep);
     handleSectionClick(Steps[stepIndex + step]);
+    clearHistory();
   };
 
   const isNext = useMemo(() => {

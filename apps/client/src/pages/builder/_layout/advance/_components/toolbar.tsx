@@ -24,7 +24,9 @@ export const BuilderToolbar = () => {
   const { toast } = useToast();
   const setValue = useResumeStore((state) => state.setValue);
   const undo = useTemporalResumeStore((state) => state.undo);
+  const isUndo = useTemporalResumeStore((state) => state.pastStates.length > 0);
   const redo = useTemporalResumeStore((state) => state.redo);
+  const isRedo = useTemporalResumeStore((state) => state.futureStates.length > 0);
   const frameRef = useBuilderStore((state) => state.frame.ref);
 
   const id = useResumeStore((state) => state.resume.id);
@@ -64,13 +66,25 @@ export const BuilderToolbar = () => {
     <motion.div className="fixed inset-x-0 bottom-0 mx-auto hidden py-6 text-center md:block">
       <div className="inline-flex items-center justify-center rounded-full bg-background px-4 shadow-xl">
         <Tooltip content={t`Undo`}>
-          <Button size="icon" variant="ghost" className="rounded-none" onClick={() => undo()}>
+          <Button
+            size="icon"
+            variant="ghost"
+            className="rounded-none"
+            onClick={() => undo()}
+            disabled={!isUndo}
+          >
             <ArrowCounterClockwise />
           </Button>
         </Tooltip>
 
         <Tooltip content={t`Redo`}>
-          <Button size="icon" variant="ghost" className="rounded-none" onClick={() => redo()}>
+          <Button
+            size="icon"
+            variant="ghost"
+            className="rounded-none"
+            onClick={() => redo()}
+            disabled={!isRedo}
+          >
             <ArrowClockwise />
           </Button>
         </Tooltip>

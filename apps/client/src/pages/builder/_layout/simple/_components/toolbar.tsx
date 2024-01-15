@@ -12,7 +12,6 @@ import {
   MagnifyingGlassMinus,
   MagnifyingGlassPlus,
 } from "@phosphor-icons/react";
-import { useBreakpoint } from "@reactive-resume/hooks";
 import { Button, Separator, Toggle, Tooltip } from "@reactive-resume/ui";
 import { motion } from "framer-motion";
 
@@ -23,10 +22,11 @@ import { useResumeStore, useTemporalResumeStore } from "@/client/stores/resume";
 
 export const BuilderToolbar = () => {
   const { toast } = useToast();
-  const { isMobile } = useBreakpoint();
   const setValue = useResumeStore((state) => state.setValue);
   const undo = useTemporalResumeStore((state) => state.undo);
+  const isUndo = useTemporalResumeStore((state) => state.pastStates.length > 0);
   const redo = useTemporalResumeStore((state) => state.redo);
+  const isRedo = useTemporalResumeStore((state) => state.futureStates.length > 0);
   const frameRef = useBuilderStore((state) => state.frame.ref);
 
   const id = useResumeStore((state) => state.resume.id);
@@ -66,21 +66,29 @@ export const BuilderToolbar = () => {
     <motion.div className="relative">
       <div className="absolute inset-x-0 bottom-0 mx-auto block py-6 text-center">
         <div className="inline-flex items-center justify-center rounded-full bg-background px-4 shadow-xl">
-          {!isMobile && (
-            <>
-              <Tooltip content={t`Undo`}>
-                <Button size="icon" variant="ghost" className="rounded-none" onClick={() => undo()}>
-                  <ArrowCounterClockwise />
-                </Button>
-              </Tooltip>
+          <Tooltip content={t`Undo`}>
+            <Button
+              size="icon"
+              variant="ghost"
+              className="rounded-none"
+              onClick={() => undo()}
+              disabled={!isUndo}
+            >
+              <ArrowCounterClockwise />
+            </Button>
+          </Tooltip>
 
-              <Tooltip content={t`Redo`}>
-                <Button size="icon" variant="ghost" className="rounded-none" onClick={() => redo()}>
-                  <ArrowClockwise />
-                </Button>
-              </Tooltip>
-            </>
-          )}
+          <Tooltip content={t`Redo`}>
+            <Button
+              size="icon"
+              variant="ghost"
+              className="rounded-none"
+              onClick={() => redo()}
+              disabled={!isRedo}
+            >
+              <ArrowClockwise />
+            </Button>
+          </Tooltip>
           <Separator orientation="vertical" className="h-9" />
 
           <Tooltip content={t`Zoom In`}>
