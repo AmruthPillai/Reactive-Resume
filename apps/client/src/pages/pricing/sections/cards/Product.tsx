@@ -1,4 +1,4 @@
-/* eslint-disable lingui/no-unlocalized-strings */
+import { t, Trans } from "@lingui/macro";
 import { CircleNotch, StripeLogo } from "@phosphor-icons/react";
 import { PriceDto, ProductDto } from "@reactive-resume/dto";
 import { Button } from "@reactive-resume/ui";
@@ -29,10 +29,10 @@ export const Product = ({ products }: Props) => {
     <section className="">
       <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-24 lg:px-8">
         <div className="sm:flex sm:flex-col">
-          <h1 className="text-4xl font-extrabold sm:text-center sm:text-6xl">Pricing Plans</h1>
+          <h1 className="text-4xl font-extrabold sm:text-center sm:text-6xl">{t`Pricing Plans`}</h1>
           <p className="m-auto mt-5 max-w-2xl text-xl sm:text-center sm:text-2xl">
-            Start building for free, then add a site plan to go live. Account plans unlock
-            additional features.
+            {t`Start building for free, then add a site plan to go live. Account plans unlock
+            additional features.`}
           </p>
           <div className="relative mt-6 flex self-center rounded-lg border border-foreground p-0.5 sm:mt-8">
             {products.map((prd) => {
@@ -77,7 +77,7 @@ export const Product = ({ products }: Props) => {
                   <span>/{price.interval ?? "lifetime"}</span>
                 </div>
                 {/* <!-- List --> */}
-                <ul role="list" className="mb-8 space-y-4 text-left">
+                <ul className="mb-8 space-y-4 text-left">
                   <li className="flex items-center space-x-3">
                     {/* <!-- Icon --> */}
                     <svg
@@ -92,7 +92,7 @@ export const Product = ({ products }: Props) => {
                         clip-rule="evenodd"
                       ></path>
                     </svg>
-                    <span>Individual configuration</span>
+                    <span>{t`Individual configuration`}</span>
                   </li>
                   <li className="flex items-center space-x-3">
                     {/* <!-- Icon --> */}
@@ -108,7 +108,7 @@ export const Product = ({ products }: Props) => {
                         clip-rule="evenodd"
                       ></path>
                     </svg>
-                    <span>No setup, or hidden fees</span>
+                    <span>{t`No setup, or hidden fees`}</span>
                   </li>
                   <li className="flex items-center space-x-3">
                     {/* <!-- Icon --> */}
@@ -125,7 +125,9 @@ export const Product = ({ products }: Props) => {
                       ></path>
                     </svg>
                     <span>
-                      Team size: <span className="font-semibold">1 developer</span>
+                      <Trans>
+                        Team size: <span className="font-semibold">1 developer</span>
+                      </Trans>
                     </span>
                   </li>
                   <li className="flex items-center space-x-3">
@@ -143,7 +145,9 @@ export const Product = ({ products }: Props) => {
                       ></path>
                     </svg>
                     <span>
-                      Premium support: <span className="font-semibold">6 months</span>
+                      <Trans>
+                        Premium support: <span className="font-semibold">6 months</span>
+                      </Trans>
                     </span>
                   </li>
                   <li className="flex items-center space-x-3">
@@ -161,7 +165,9 @@ export const Product = ({ products }: Props) => {
                       ></path>
                     </svg>
                     <span>
-                      Free updates: <span className="font-semibold">6 months</span>
+                      <Trans>
+                        Free updates: <span className="font-semibold">6 months</span>
+                      </Trans>
                     </span>
                   </li>
                 </ul>
@@ -173,7 +179,7 @@ export const Product = ({ products }: Props) => {
                 >
                   <button>
                     {loading ? <CircleNotch className="animate-spin" /> : <StripeLogo />}{" "}
-                    {price.pricingType === "recurring" ? "Subscribe now" : "Buy now"}
+                    {price.pricingType === "recurring" ? t`Subscribe Now` : t`Buy Now`}
                   </button>
                 </Button>
               </div>
