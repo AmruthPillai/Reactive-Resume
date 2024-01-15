@@ -11,7 +11,7 @@ import {
   ResumeData,
   resumeDataSchema,
 } from "@reactive-resume/schema";
-import { extractUrl, Json, parseCSV } from "@reactive-resume/utils";
+import { extractUrl, Json, parseArrayLikeCSVEntry, parseCSV } from "@reactive-resume/utils";
 import * as JSZip from "jszip";
 import { Schema } from "zod";
 
@@ -64,16 +64,21 @@ export class LinkedInParser implements Parser<JSZip, LinkedIn> {
       result.basics.name = `${profile["First Name"]} ${profile["Last Name"]}`;
       result.basics.location = profile["Geo Location"];
       result.basics.headline = profile.Headline;
-      result.basics.url.href = extractUrl(profile.Websites) ?? "";
+      // profile.Websites is represented as an array-like structure f.e. [COMPANY:https://some.link,PORTFOLIO:...]
+      const extractFirstWebsiteLink = (entry: string) =>
+        (parseArrayLikeCSVEntry(entry)[0] ?? "").replace(/.*?:/, "");
+      result.basics.url.href = extractUrl(extractFirstWebsiteLink(profile.Websites)) ?? "";
       result.sections.summary.content = profile.Summary;
-      result.sections.profiles.items.push({
-        ...defaultProfile,
-        id: createId(),
-        icon: "twitter",
-        network: "Twitter",
-        username: twitterHandle,
-        url: { ...defaultProfile.url, href: `https://twitter.com/${twitterHandle}` },
-      });
+      if (twitterHandle) {
+        result.sections.profiles.items.push({
+          ...defaultProfile,
+          id: createId(),
+          icon: "twitter",
+          network: "Twitter",
+          username: twitterHandle,
+          url: { ...defaultProfile.url, href: `https://twitter.com/${twitterHandle}` },
+        });
+      }
     }
 
     // Email Addresses
