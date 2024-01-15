@@ -22,6 +22,14 @@ export default defineConfig({
     fs: { allow: [searchForWorkspaceRoot(process.cwd())] },
   },
 
+  optimizeDeps: {
+    esbuildOptions: {
+      loader: {
+        ".po": "text",
+      },
+    },
+  },
+
   plugins: [
     react({
       plugins: [["@lingui/swc-plugin", {}]],
