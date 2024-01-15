@@ -1,4 +1,5 @@
-import { ResumeSections } from "@reactive-resume/utils";
+import { BuilderType } from "@reactive-resume/schema";
+import { Builder, ResumeSections } from "@reactive-resume/utils";
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 
@@ -8,8 +9,10 @@ type Sheet = {
 };
 
 type ActiveSection = {
-  name: ResumeSections;
+  section: ResumeSections;
   setSection: (section: ResumeSections) => void;
+  openCustomize: boolean;
+  setOpenCustomize: (open: boolean) => void;
 };
 
 type PanelHandle = {
@@ -24,6 +27,10 @@ type Panel = {
 };
 
 interface BuilderState {
+  builder: {
+    type: BuilderType;
+    setType: (type: BuilderType) => void;
+  };
   frame: {
     ref: HTMLIFrameElement | null;
     setRef: (ref: HTMLIFrameElement | null) => void;
@@ -47,12 +54,26 @@ interface BuilderActions {
 
 export const useBuilderStore = create<BuilderState & BuilderActions>()(
   immer((set) => ({
+    builder: {
+      type: Builder.ADVANCE,
+      setType: (type) => {
+        set((state) => {
+          state.builder.type = type;
+        });
+      },
+    },
     activeSection: {
       left: {
-        name: ResumeSections.BASICS,
+        section: ResumeSections.BASICS,
         setSection: (section) => {
           set((state) => {
-            state.activeSection.left.name = section;
+            state.activeSection.left.section = section;
+          });
+        },
+        openCustomize: false,
+        setOpenCustomize: (open) => {
+          set((state) => {
+            state.activeSection.left.openCustomize = open;
           });
         },
       },

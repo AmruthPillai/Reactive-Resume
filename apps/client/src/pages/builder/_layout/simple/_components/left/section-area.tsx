@@ -15,7 +15,7 @@ export const SectionArea = () => {
   const clearHistory = useTemporalResumeStore((state) => state.clear);
 
   const activeSection = useBuilderStore((state) => state.activeSection);
-  const currentStep = activeSection.left.name;
+  const currentStep = activeSection.left.section;
 
   const handleSectionClick = (sectionId: string) => {
     navigate(`/builder/${params.id}/${sectionId}`);

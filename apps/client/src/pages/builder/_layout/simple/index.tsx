@@ -9,8 +9,9 @@ import {
   SheetClose,
   SheetContent,
 } from "@reactive-resume/ui";
-import { cn } from "@reactive-resume/utils";
-import { Outlet } from "react-router-dom";
+import { Builder, cn, getValidSectionValue } from "@reactive-resume/utils";
+import { useEffect } from "react";
+import { Outlet, useParams } from "react-router-dom";
 
 import { useBuilderStore } from "@/client/stores/builder";
 
@@ -30,10 +31,23 @@ const OutletSlot = () => (
 
 export const SimpleBuilderLayout = () => {
   const { isTablet, isDesktop } = useBreakpoint();
+  const params = useParams<{ id: string; section: string }>();
+  const activeSection = useBuilderStore((state) => state.activeSection);
+  const builder = useBuilderStore((state) => state.builder);
 
   const sheet = useBuilderStore((state) => state.sheet);
   const leftHandle = useBuilderStore((state) => state.panel.left.handle);
   const onOpenAutoFocus = (event: Event) => event.preventDefault();
+
+  // update current section for Simple Builder
+  useEffect(() => {
+    const section = getValidSectionValue(params.section);
+    section && activeSection.left.setSection(section);
+  }, [params]);
+
+  useEffect(() => {
+    builder.setType(Builder.SIMPLE);
+  }, []);
 
   if (isTablet || isDesktop) {
     return (

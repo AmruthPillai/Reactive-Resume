@@ -1,6 +1,7 @@
 import { useBreakpoint } from "@reactive-resume/hooks";
 import { Panel, PanelGroup, PanelResizeHandle, Sheet, SheetContent } from "@reactive-resume/ui";
-import { cn } from "@reactive-resume/utils";
+import { Builder, cn } from "@reactive-resume/utils";
+import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 
 import { useBuilderStore } from "@/client/stores/builder";
@@ -26,6 +27,7 @@ export const AdvanceBuilderLayout = () => {
   const { isDesktop } = useBreakpoint();
 
   const sheet = useBuilderStore((state) => state.sheet);
+  const builder = useBuilderStore((state) => state.builder);
 
   const leftSetSize = useBuilderStore((state) => state.panel.left.setSize);
   const rightSetSize = useBuilderStore((state) => state.panel.right.setSize);
@@ -34,6 +36,10 @@ export const AdvanceBuilderLayout = () => {
   const rightHandle = useBuilderStore((state) => state.panel.right.handle);
 
   const onOpenAutoFocus = (event: Event) => event.preventDefault();
+
+  useEffect(() => {
+    builder.setType(Builder.ADVANCE);
+  }, []);
 
   if (isDesktop) {
     return (
