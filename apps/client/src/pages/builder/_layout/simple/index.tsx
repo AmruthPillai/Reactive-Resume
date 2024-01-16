@@ -125,7 +125,6 @@ export const SimpleBuilderLayout = () => {
           </SheetContent>
         </Sheet>
       </div>
-
     </div>
   );
 };
