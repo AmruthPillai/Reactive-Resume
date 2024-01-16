@@ -40,7 +40,7 @@ export const SectionArea = () => {
   return activeSection.left.openOption ? (
     <Options />
   ) : (
-    <ScrollArea orientation="vertical" className="flex-1 pb-20 sm:h-screen">
+    <ScrollArea orientation="vertical" className="flex-1 sm:h-screen">
       <div className="grid gap-y-6 p-6 @container/left">
         {SectionMapping[currentStep]}
 

@@ -126,10 +126,6 @@ export const SimpleBuilderLayout = () => {
         </Sheet>
       </div>
 
-      <footer className="flex h-10">
-        {" "}
-        <Copyright />
-      </footer>
     </div>
   );
 };
