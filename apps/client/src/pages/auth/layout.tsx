@@ -57,7 +57,7 @@ export const AuthLayout = () => {
         )}
       </div>
 
-      <div className="relative hidden lg:block lg:flex-1">
+      {/* <div className="relative hidden lg:block lg:flex-1">
         <img
           width={1920}
           height={1080}
@@ -75,7 +75,7 @@ export const AuthLayout = () => {
             {t`Photograph by Patrick Tomasso`}
           </a>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

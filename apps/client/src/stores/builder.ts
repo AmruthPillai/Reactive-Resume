@@ -1,5 +1,11 @@
 import { BuilderType } from "@reactive-resume/schema";
-import { Builder, ResumeSections } from "@reactive-resume/utils";
+import {
+  Builder,
+  isValidResumeOption,
+  isValidResumeSection,
+  ResumeOptions,
+  ResumeSections,
+} from "@reactive-resume/utils";
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 
@@ -9,10 +15,9 @@ type Sheet = {
 };
 
 type ActiveSection = {
-  section: ResumeSections;
-  setSection: (section: ResumeSections) => void;
-  openCustomize: boolean;
-  setOpenCustomize: (open: boolean) => void;
+  section: ResumeSections | ResumeOptions;
+  setSection: (section: ResumeSections | ResumeOptions) => void;
+  openOption: boolean;
 };
 
 type PanelHandle = {
@@ -67,15 +72,15 @@ export const useBuilderStore = create<BuilderState & BuilderActions>()(
         section: ResumeSections.BASICS,
         setSection: (section) => {
           set((state) => {
+            if (isValidResumeOption(section)) {
+              state.activeSection.left.openOption = true;
+            } else if (isValidResumeSection(section)) {
+              state.activeSection.left.openOption = false;
+            }
             state.activeSection.left.section = section;
           });
         },
-        openCustomize: false,
-        setOpenCustomize: (open) => {
-          set((state) => {
-            state.activeSection.left.openCustomize = open;
-          });
-        },
+        openOption: false,
       },
     },
     frame: {

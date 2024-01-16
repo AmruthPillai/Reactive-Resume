@@ -1,5 +1,6 @@
 import { t } from "@lingui/macro";
 import { ScrollArea, Separator } from "@reactive-resume/ui";
+import { ResumeOptions } from "@reactive-resume/utils";
 import { useRef } from "react";
 
 import { Copyright } from "@/client/components/copyright";
@@ -57,30 +58,54 @@ export const RightSidebar = () => {
 
         <div className="flex flex-col items-center justify-center gap-y-2">
           <SectionIcon
-            id="template"
+            id={ResumeOptions.TEMPLATE}
             name={t`Template`}
-            onClick={() => scrollIntoView("#template")}
+            onClick={() => scrollIntoView(`#${ResumeOptions.NOTES}`)}
           />
-          <SectionIcon id="layout" name={t`Layout`} onClick={() => scrollIntoView("#layout")} />
           <SectionIcon
-            id="typography"
+            id={ResumeOptions.LAYOUT}
+            name={t`Layout`}
+            onClick={() => scrollIntoView(`#${ResumeOptions.LAYOUT}`)}
+          />
+          <SectionIcon
+            id={ResumeOptions.TYPOGRAPHY}
             name={t`Typography`}
-            onClick={() => scrollIntoView("#typography")}
+            onClick={() => scrollIntoView(`#${ResumeOptions.TYPOGRAPHY}`)}
           />
-          <SectionIcon id="theme" name={t`Theme`} onClick={() => scrollIntoView("#theme")} />
-          <SectionIcon id="page" name={t`Page`} onClick={() => scrollIntoView("#page")} />
-          <SectionIcon id="sharing" name={t`Sharing`} onClick={() => scrollIntoView("#sharing")} />
           <SectionIcon
-            id="statistics"
+            id={ResumeOptions.THEME}
+            name={t`Theme`}
+            onClick={() => scrollIntoView(`#${ResumeOptions.THEME}`)}
+          />
+          <SectionIcon
+            id={ResumeOptions.PAGE}
+            name={t`Page`}
+            onClick={() => scrollIntoView(`#${ResumeOptions.PAGE}`)}
+          />
+          <SectionIcon
+            id={ResumeOptions.SHARING}
+            name={t`Sharing`}
+            onClick={() => scrollIntoView(`#${ResumeOptions.SHARING}`)}
+          />
+          <SectionIcon
+            id={ResumeOptions.STATISTICS}
             name={t`Statistics`}
-            onClick={() => scrollIntoView("#statistics")}
+            onClick={() => scrollIntoView(`#${ResumeOptions.STATISTICS}`)}
           />
-          <SectionIcon id="export" name={t`Export`} onClick={() => scrollIntoView("#export")} />
-          <SectionIcon id="notes" name={t`Notes`} onClick={() => scrollIntoView("#notes")} />
           <SectionIcon
-            id="information"
+            id={ResumeOptions.EXPORT}
+            name={t`Export`}
+            onClick={() => scrollIntoView(`#${ResumeOptions.EXPORT}`)}
+          />
+          <SectionIcon
+            id={ResumeOptions.NOTES}
+            name={t`Notes`}
+            onClick={() => scrollIntoView(`#${ResumeOptions.NOTES}`)}
+          />
+          <SectionIcon
+            id={ResumeOptions.INFORMATION}
             name={t`Information`}
-            onClick={() => scrollIntoView("#information")}
+            onClick={() => scrollIntoView(`#${ResumeOptions.INFORMATION}`)}
           />
         </div>
 

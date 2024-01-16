@@ -13,11 +13,10 @@ import { Builder, cn, getValidSectionValue } from "@reactive-resume/utils";
 import { useEffect } from "react";
 import { Outlet, useParams } from "react-router-dom";
 
+import { BuilderHeader } from "@/client/pages/builder/_layout/simple/_components/header";
+import { Left } from "@/client/pages/builder/_layout/simple/_components/left";
+import { BuilderToolbar } from "@/client/pages/builder/_layout/simple/_components/toolbar";
 import { useBuilderStore } from "@/client/stores/builder";
-
-import { BuilderHeader } from "./_components/header";
-import { Left } from "./_components/left";
-import { BuilderToolbar } from "./_components/toolbar";
 
 const OutletSlot = () => (
   <>

@@ -16,12 +16,23 @@ import {
   Volunteer,
 } from "@reactive-resume/schema";
 import { Button, Separator } from "@reactive-resume/ui";
-import { ResumeSections } from "@reactive-resume/utils";
+import { ResumeOptions, ResumeSections } from "@reactive-resume/utils";
 import { Fragment } from "react";
 
+import { Copyright } from "@/client/components/copyright";
 import { BasicsSection } from "@/client/pages/builder/_components/sections/basics";
+import { ExportSection } from "@/client/pages/builder/_components/sections/export";
+import { InformationSection } from "@/client/pages/builder/_components/sections/information";
+import { LayoutSection } from "@/client/pages/builder/_components/sections/layout";
+import { NotesSection } from "@/client/pages/builder/_components/sections/notes";
+import { PageSection } from "@/client/pages/builder/_components/sections/page";
 import { SectionBase } from "@/client/pages/builder/_components/sections/shared/section-base";
+import { SharingSection } from "@/client/pages/builder/_components/sections/sharing";
+import { StatisticsSection } from "@/client/pages/builder/_components/sections/statistics";
 import { SummarySection } from "@/client/pages/builder/_components/sections/summary";
+import { TemplateSection } from "@/client/pages/builder/_components/sections/template";
+import { ThemeSection } from "@/client/pages/builder/_components/sections/theme";
+import { TypographySection } from "@/client/pages/builder/_components/sections/typography";
 import { useResumeStore } from "@/client/stores/resume";
 
 const CustomSection = () => {
@@ -50,7 +61,7 @@ const CustomSection = () => {
   );
 };
 
-export const SectionMapping: { [key in ResumeSections]?: React.ReactElement } = {
+export const SectionMapping: { [key in ResumeSections | ResumeOptions]?: React.ReactElement } = {
   [ResumeSections.BASICS]: <BasicsSection />,
   [ResumeSections.SUMMARY]: <SummarySection />,
   [ResumeSections.PROFILES]: (
@@ -143,4 +154,29 @@ export const SectionMapping: { [key in ResumeSections]?: React.ReactElement } = 
     />
   ),
   [ResumeSections.CUSTOM]: <CustomSection />,
+  [ResumeOptions.TEMPLATE]: <TemplateSection />,
+  [ResumeOptions.LAYOUT]: <LayoutSection />,
+  [ResumeOptions.TYPOGRAPHY]: <TypographySection />,
+  [ResumeOptions.THEME]: <ThemeSection />,
+  [ResumeOptions.PAGE]: <PageSection />,
+  [ResumeOptions.SHARING]: <SharingSection />,
+  [ResumeOptions.STATISTICS]: <StatisticsSection />,
+  [ResumeOptions.EXPORT]: <ExportSection />,
+  [ResumeOptions.NOTES]: <NotesSection />,
+  [ResumeOptions.INFORMATION]: <InformationSection />,
+  [ResumeOptions.COPYRIGHT]: <Copyright className="text-center" />,
 };
+
+// export const OptionsMapping: { [key in ResumeOptions]?: React.ReactElement } = {
+//   [ResumeOptions.TEMPLATE]: <TemplateSection />,
+//   [ResumeOptions.LAYOUT]: <LayoutSection />,
+//   [ResumeOptions.TYPOGRAPHY]: <TypographySection />,
+//   [ResumeOptions.THEME]: <ThemeSection />,
+//   [ResumeOptions.PAGE]: <PageSection />,
+//   [ResumeOptions.SHARING]: <SharingSection />,
+//   [ResumeOptions.STATISTICS]: <StatisticsSection />,
+//   [ResumeOptions.EXPORT]: <ExportSection />,
+//   [ResumeOptions.NOTES]: <NotesSection />,
+//   [ResumeOptions.INFORMATION]: <InformationSection />,
+//   [ResumeOptions.COPYRIGHT]: <Copyright className="text-center" />,
+// };

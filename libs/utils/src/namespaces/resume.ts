@@ -1,5 +1,4 @@
-// Sections
-
+// Resume Sections
 export enum ResumeSections {
   BASICS = "basics",
   SUMMARY = "summary",
@@ -18,8 +17,27 @@ export enum ResumeSections {
   CUSTOM = "custom",
 }
 
+// Resume Options for Export/Format
+export enum ResumeOptions {
+  TEMPLATE = "template",
+  LAYOUT = "layout",
+  TYPOGRAPHY = "typography",
+  THEME = "theme",
+  PAGE = "page",
+  SHARING = "sharing",
+  STATISTICS = "statistics",
+  NOTES = "notes",
+  EXPORT = "export",
+  INFORMATION = "information",
+  COPYRIGHT = "copyright",
+}
+
 export const isValidResumeSection = (section?: string): section is ResumeSections => {
   return Object.values<string>(ResumeSections).includes(section || "");
+};
+
+export const isValidResumeOption = (section?: string): section is ResumeOptions => {
+  return Object.values<string>(ResumeOptions).includes(section || "");
 };
 
 export const getValidSectionValue = (section?: string) =>
