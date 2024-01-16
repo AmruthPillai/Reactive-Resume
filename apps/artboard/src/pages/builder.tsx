@@ -1,5 +1,5 @@
 import { SectionKey } from "@reactive-resume/schema";
-import { pageSizeMap, Template } from "@reactive-resume/utils";
+import { BuilderArtBoardEventType, pageSizeMap, Template } from "@reactive-resume/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useMemo, useRef } from "react";
 import { ReactZoomPanPinchRef, TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
@@ -20,10 +20,11 @@ export const BuilderLayout = () => {
     const handleMessage = (event: MessageEvent) => {
       if (event.origin !== window.location.origin) return;
 
-      if (event.data.type === "ZOOM_IN") transformRef.current?.zoomIn(0.2);
-      if (event.data.type === "ZOOM_OUT") transformRef.current?.zoomOut(0.2);
-      if (event.data.type === "CENTER_VIEW") transformRef.current?.centerView();
-      if (event.data.type === "RESET_VIEW") {
+      if (event.data.type === BuilderArtBoardEventType.ZOOM_IN) transformRef.current?.zoomIn(0.2);
+      if (event.data.type === BuilderArtBoardEventType.ZOOM_OUT) transformRef.current?.zoomOut(0.2);
+      if (event.data.type === BuilderArtBoardEventType.CENTER_VIEW)
+        transformRef.current?.centerView();
+      if (event.data.type === BuilderArtBoardEventType.RESET_VIEW) {
         transformRef.current?.resetTransform(0);
         setTimeout(() => transformRef.current?.centerView(0.8, 0), 10);
       }

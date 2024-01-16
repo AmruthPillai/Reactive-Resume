@@ -13,6 +13,7 @@ import {
   MagnifyingGlassPlus,
 } from "@phosphor-icons/react";
 import { Button, Separator, Toggle, Tooltip } from "@reactive-resume/ui";
+import { BuilderArtBoardEventType } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
 
 import { useToast } from "@/client/hooks/use-toast";
@@ -57,10 +58,14 @@ export const BuilderToolbar = () => {
     });
   };
 
-  const onZoomIn = () => frameRef?.contentWindow?.postMessage({ type: "ZOOM_IN" }, "*");
-  const onZoomOut = () => frameRef?.contentWindow?.postMessage({ type: "ZOOM_OUT" }, "*");
-  const onResetView = () => frameRef?.contentWindow?.postMessage({ type: "RESET_VIEW" }, "*");
-  const onCenterView = () => frameRef?.contentWindow?.postMessage({ type: "CENTER_VIEW" }, "*");
+  const onZoomIn = () =>
+    frameRef?.contentWindow?.postMessage({ type: BuilderArtBoardEventType.ZOOM_IN }, "*");
+  const onZoomOut = () =>
+    frameRef?.contentWindow?.postMessage({ type: BuilderArtBoardEventType.ZOOM_OUT }, "*");
+  const onResetView = () =>
+    frameRef?.contentWindow?.postMessage({ type: BuilderArtBoardEventType.RESET_VIEW }, "*");
+  const onCenterView = () =>
+    frameRef?.contentWindow?.postMessage({ type: BuilderArtBoardEventType.CENTER_VIEW }, "*");
 
   return (
     <motion.div className="fixed inset-x-0 bottom-0 mx-auto hidden py-6 text-center md:block">

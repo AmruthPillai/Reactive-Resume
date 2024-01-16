@@ -42,3 +42,6 @@ export const isValidResumeOption = (section?: string): section is ResumeOptions 
 
 export const getValidSectionValue = (section?: string) =>
   isValidResumeSection(section) ? (section as ResumeSections) : null;
+
+export const getValidOptionValue = (option?: string) =>
+  isValidResumeOption(option) ? (option as ResumeOptions) : null;

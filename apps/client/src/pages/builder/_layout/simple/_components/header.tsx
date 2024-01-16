@@ -2,7 +2,7 @@ import { t } from "@lingui/macro";
 import { Gear, HouseSimple, Lock, SidebarSimple } from "@phosphor-icons/react";
 import { Button, Tooltip } from "@reactive-resume/ui";
 import { cn, ResumeOptions, ResumeSections } from "@reactive-resume/utils";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { ThemeSwitch } from "@/client/components/theme-switch";
 import { useBuilderStore } from "@/client/stores/builder";
@@ -12,11 +12,14 @@ export const BuilderHeader = () => {
   const title = useResumeStore((state) => state.resume.title);
   const locked = useResumeStore((state) => state.resume.locked);
   const activeSection = useBuilderStore((state) => state.activeSection.left);
+  const navigate = useNavigate();
+  const params = useParams<{ id: string; section: string }>();
+  const handleOptionClick = (sectionId: string) => {
+    navigate(`/builder/${params.id}/${sectionId}`);
+  };
 
   const openOptions = () => {
-    activeSection.setSection(
-      activeSection.openOption ? ResumeSections.BASICS : ResumeOptions.TEMPLATE,
-    );
+    handleOptionClick(activeSection.openOption ? ResumeSections.BASICS : ResumeOptions.TEMPLATE);
   };
   const toggle = useBuilderStore((state) => state.toggle);
   const isDragging = useBuilderStore(

@@ -9,7 +9,7 @@ import {
   SheetClose,
   SheetContent,
 } from "@reactive-resume/ui";
-import { Builder, cn, getValidSectionValue } from "@reactive-resume/utils";
+import { Builder, cn, getValidOptionValue, getValidSectionValue } from "@reactive-resume/utils";
 import { useEffect } from "react";
 import { Outlet, useParams } from "react-router-dom";
 
@@ -40,7 +40,7 @@ export const SimpleBuilderLayout = () => {
 
   // update current section for Simple Builder
   useEffect(() => {
-    const section = getValidSectionValue(params.section);
+    const section = getValidSectionValue(params.section) || getValidOptionValue(params.section);
     section && activeSection.left.setSection(section);
   }, [params]);
 
