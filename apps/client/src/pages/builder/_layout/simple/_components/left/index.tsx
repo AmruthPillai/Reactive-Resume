@@ -3,10 +3,9 @@ import { SectionBar } from "@/client/pages/builder/_layout/simple/_components/le
 
 export const Left = () => {
   return (
-    <div className="flex bg-secondary-accent/30">
+    <>
       <SectionBar />
-
       <SectionArea />
-    </div>
+    </>
   );
 };

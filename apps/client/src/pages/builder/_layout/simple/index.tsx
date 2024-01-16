@@ -19,6 +19,7 @@ import {
 import { useEffect } from "react";
 import { Outlet, useParams } from "react-router-dom";
 
+import { Copyright } from "@/client/components/copyright";
 import { BuilderHeader } from "@/client/pages/builder/_layout/simple/_components/header";
 import { Left } from "@/client/pages/builder/_layout/simple/_components/left";
 import { BuilderToolbar } from "@/client/pages/builder/_layout/simple/_components/toolbar";
@@ -26,8 +27,6 @@ import { useBuilderStore } from "@/client/stores/builder";
 
 const OutletSlot = () => (
   <>
-    {/* <BuilderHeader /> */}
-
     <Outlet />
 
     <BuilderToolbar />
@@ -66,53 +65,71 @@ export const SimpleBuilderLayout = () => {
 
   if (isTablet || isDesktop) {
     return (
-      <div className="relative h-screen w-full overflow-hidden">
-        <BuilderHeader />
-        <PanelGroup direction="horizontal">
-          <Panel
-            minSizePercentage={25}
-            maxSizePercentage={75}
-            defaultSizePercentage={50}
-            className={cn("z-10 bg-background", !leftHandle.isDragging && "transition-[flex]")}
-          >
-            <Left />
-          </Panel>
-          <PanelResizeHandle
-            isDragging={leftHandle.isDragging}
-            onDragging={leftHandle.setDragging}
-          />
-          <Panel>
-            <OutletSlot />
-          </Panel>
-        </PanelGroup>
+      <div className="flex h-screen flex-col">
+        <header className="flex h-16">
+          <BuilderHeader />
+        </header>
+
+        <div className="flex flex-1 overflow-auto">
+          <PanelGroup direction="horizontal">
+            <Panel
+              minSizePercentage={25}
+              maxSizePercentage={75}
+              defaultSizePercentage={50}
+              className={cn("z-10 bg-background", !leftHandle.isDragging && "transition-[flex]")}
+            >
+              <div className="flex h-full">
+                <Left />
+              </div>
+            </Panel>
+            <PanelResizeHandle
+              isDragging={leftHandle.isDragging}
+              onDragging={leftHandle.setDragging}
+            />
+            <Panel>
+              <OutletSlot />
+            </Panel>
+          </PanelGroup>
+        </div>
+
+        <footer className="flex h-10">
+          <Copyright />
+        </footer>
       </div>
     );
   }
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
-      <BuilderHeader />
-      <div className="">
+    <div className="flex h-screen flex-col">
+      <header className="flex h-16">
+        <BuilderHeader />
+      </header>
+
+      <div className="flex flex-1 overflow-auto">
         <Left />
+        <Sheet open={sheet.right.open} onOpenChange={sheet.right.setOpen}>
+          <SheetContent
+            side="right"
+            showClose={false}
+            onOpenAutoFocus={onOpenAutoFocus}
+            className="p-0 sm:max-w-xl"
+          >
+            <div className="">
+              <SheetClose asChild className="absolute right-4 top-4 bg-background">
+                <Button size="icon" variant="ghost">
+                  <X />
+                </Button>
+              </SheetClose>
+            </div>
+            <OutletSlot />
+          </SheetContent>
+        </Sheet>
       </div>
 
-      <Sheet open={sheet.right.open} onOpenChange={sheet.right.setOpen}>
-        <SheetContent
-          side="right"
-          showClose={false}
-          onOpenAutoFocus={onOpenAutoFocus}
-          className="p-0 sm:max-w-xl"
-        >
-          <div className="h-16">
-            <SheetClose asChild className="absolute right-4 top-4">
-              <Button size="icon" variant="ghost">
-                <X />
-              </Button>
-            </SheetClose>
-          </div>
-          <OutletSlot />
-        </SheetContent>
-      </Sheet>
+      <footer className="flex h-10">
+        {" "}
+        <Copyright />
+      </footer>
     </div>
   );
 };

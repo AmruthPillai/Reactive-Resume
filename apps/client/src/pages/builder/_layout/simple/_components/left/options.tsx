@@ -19,11 +19,11 @@ export const Options = () => {
 
   return (
     <>
-      <ScrollArea orientation="vertical" className="h-screen flex-1 pb-16 lg:pb-16" hideScrollbar>
+      <ScrollArea orientation="vertical" className="h-full flex-1" hideScrollbar>
         <div className="grid gap-y-6 p-6 @container/right">{SectionMapping[currentStep]}</div>
       </ScrollArea>
 
-      <div className="hidden basis-12 flex-col items-center justify-between bg-secondary-accent/30 py-4 sm:flex">
+      <div className="basis-12 flex-col items-center justify-between bg-secondary-accent/30 py-4 sm:flex">
         <div />
 
         <div className="flex flex-col items-center justify-center gap-y-2">
