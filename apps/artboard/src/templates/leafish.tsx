@@ -36,6 +36,7 @@ const Header = () => {
       <div
         className="p-custom flex items-center space-x-8"
         style={{ backgroundColor: hexToRgb(primaryColor, 0.2) }}
+        id={`resume-section-${ResumeSections.BASICS}`}
       >
         <div className="space-y-3">
           <div>
@@ -175,7 +176,7 @@ const Section = <T,>({
   if (!section.visible || !section.items.length) return null;
 
   return (
-    <section id={section.id} className="grid">
+    <section id={`resume-section-${section.id}`} className="grid">
       <h4 className="mb-2 border-b border-primary text-left font-bold text-primary">
         {section.name}
       </h4>

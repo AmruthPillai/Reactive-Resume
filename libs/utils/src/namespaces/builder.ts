@@ -8,4 +8,5 @@ export enum BuilderArtBoardEventType {
   ZOOM_OUT = "ZOOM_OUT",
   RESET_VIEW = "RESET_VIEW",
   CENTER_VIEW = "CENTER_VIEW",
+  SCROLL_TO = "SCROLL_TO",
 }

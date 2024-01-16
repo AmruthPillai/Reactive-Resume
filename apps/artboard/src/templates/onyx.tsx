@@ -30,7 +30,10 @@ const Header = () => {
   const fontSize = useArtboardStore((state) => state.resume.metadata.typography.font.size);
 
   return (
-    <div className="flex items-center justify-between space-x-4 border-b border-primary pb-5">
+    <div
+      className="flex items-center justify-between space-x-4 border-b border-primary pb-5"
+      id={`resume-section-${ResumeSections.BASICS}`}
+    >
       <Picture />
 
       <div className="flex-1 space-y-2">
@@ -109,7 +112,7 @@ const Summary = () => {
   if (!section.visible || isEmptyString(section.content)) return null;
 
   return (
-    <section id={section.id}>
+    <section id={`resume-section-${section.id}`}>
       <h4 className="font-bold text-primary">{section.name}</h4>
 
       <div
@@ -181,7 +184,7 @@ const Section = <T,>({
   if (!section.visible || !section.items.length) return null;
 
   return (
-    <section id={section.id} className="grid">
+    <section id={`resume-section-${section.id}`} className="grid">
       <h4 className="font-bold text-primary">{section.name}</h4>
 
       <div

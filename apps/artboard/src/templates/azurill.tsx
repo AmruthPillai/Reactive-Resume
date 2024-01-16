@@ -29,7 +29,10 @@ const Header = () => {
   const basics = useArtboardStore((state) => state.resume.basics);
 
   return (
-    <div className="flex flex-col items-center justify-center space-y-2 pb-2 text-center">
+    <div
+      className="flex flex-col items-center justify-center space-y-2 pb-2 text-center"
+      id={`resume-section-${ResumeSections.BASICS}`}
+    >
       <Picture />
 
       <div>
@@ -78,7 +81,7 @@ const Summary = () => {
   if (!section.visible || isEmptyString(section.content)) return null;
 
   return (
-    <section id={section.id}>
+    <section id={`resume-section-${section.id}`}>
       <div className="mb-2 hidden font-bold text-primary group-[.main]:block">
         <h4>{section.name}</h4>
       </div>
@@ -161,7 +164,7 @@ const Section = <T,>({
   if (!section.visible || !section.items.length) return null;
 
   return (
-    <section id={section.id} className="grid">
+    <section id={`resume-section-${section.id}`} className="grid">
       <div className="mb-2 hidden font-bold text-primary group-[.main]:block">
         <h4>{section.name}</h4>
       </div>

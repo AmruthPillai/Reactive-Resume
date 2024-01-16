@@ -9,7 +9,13 @@ import {
   SheetClose,
   SheetContent,
 } from "@reactive-resume/ui";
-import { Builder, cn, getValidOptionValue, getValidSectionValue } from "@reactive-resume/utils";
+import {
+  Builder,
+  BuilderArtBoardEventType,
+  cn,
+  getValidOptionValue,
+  getValidSectionValue,
+} from "@reactive-resume/utils";
 import { useEffect } from "react";
 import { Outlet, useParams } from "react-router-dom";
 
@@ -38,10 +44,20 @@ export const SimpleBuilderLayout = () => {
   const leftHandle = useBuilderStore((state) => state.panel.left.handle);
   const onOpenAutoFocus = (event: Event) => event.preventDefault();
 
+  const frameRef = useBuilderStore((state) => state.frame.ref);
+
+  const onScrollView = (section: string) =>
+    frameRef?.contentWindow?.postMessage(
+      { type: BuilderArtBoardEventType.SCROLL_TO, section },
+      "*",
+    );
+
   // update current section for Simple Builder
   useEffect(() => {
     const section = getValidSectionValue(params.section) || getValidOptionValue(params.section);
     section && activeSection.left.setSection(section);
+    getValidSectionValue(params.section) &&
+      onScrollView(`#resume-section-${getValidSectionValue(params.section)}`);
   }, [params]);
 
   useEffect(() => {

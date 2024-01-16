@@ -33,6 +33,7 @@ const Header = () => {
     <div
       className="summary group bg-primary px-6 pb-7 pt-6 text-background"
       style={{ borderRadius: `calc(${borderRadius}px - 2px)` }}
+      id={`resume-section-${ResumeSections.BASICS}`}
     >
       <div className="col-span-2 space-y-2.5">
         <div>
@@ -101,7 +102,7 @@ const Summary = () => {
   if (!section.visible || isEmptyString(section.content)) return null;
 
   return (
-    <section id={section.id}>
+    <section id={`resume-section-${section.id}`}>
       <h4 className="mb-2 border-b border-primary text-base font-bold">{section.name}</h4>
 
       <div
@@ -181,7 +182,7 @@ const Section = <T,>({
   if (!section.visible || !section.items.length) return null;
 
   return (
-    <section id={section.id} className="grid">
+    <section id={`resume-section-${section.id}`} className="grid">
       <h4 className="mb-2 border-b border-primary text-base font-bold">{section.name}</h4>
 
       <div

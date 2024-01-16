@@ -29,7 +29,10 @@ const Header = () => {
   const basics = useArtboardStore((state) => state.resume.basics);
 
   return (
-    <div className="p-custom space-y-4 bg-primary text-background">
+    <div
+      className="p-custom space-y-4 bg-primary text-background"
+      id={`resume-section-${ResumeSections.BASICS}`}
+    >
       <Picture className="border-background" />
 
       <div>
@@ -80,7 +83,7 @@ const Summary = () => {
   if (!section.visible || isEmptyString(section.content)) return null;
 
   return (
-    <section id={section.id}>
+    <section id={`resume-section-${section.id}`}>
       <div
         className="wysiwyg"
         style={{ columns: section.columns }}
@@ -150,7 +153,7 @@ const Section = <T,>({
   if (!section.visible || !section.items.length) return null;
 
   return (
-    <section id={section.id} className="grid">
+    <section id={`resume-section-${section.id}`} className="grid">
       <h4 className="mb-2 border-b border-primary text-base font-bold">{section.name}</h4>
 
       <div

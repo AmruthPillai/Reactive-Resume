@@ -29,7 +29,7 @@ const Header = () => {
   const basics = useArtboardStore((state) => state.resume.basics);
 
   return (
-    <div className="grid grid-cols-4 gap-x-6">
+    <div className="grid grid-cols-4 gap-x-6" id={`resume-section-${ResumeSections.BASICS}`}>
       <div className="mt-1 space-y-2 text-right">
         <Picture className="ml-auto" />
       </div>
@@ -86,7 +86,7 @@ const Summary = () => {
   if (!section.visible || isEmptyString(section.content)) return null;
 
   return (
-    <section id={section.id} className="grid grid-cols-4 gap-x-6">
+    <section id={`resume-section-${section.id}`} className="grid grid-cols-4 gap-x-6">
       <div className="text-right">
         <h4 className="font-medium text-primary">{section.name}</h4>
       </div>
@@ -153,7 +153,10 @@ const Section = <T,>({
   if (!section.visible || !section.items.length) return null;
 
   return (
-    <section id={section.id} className={cn("grid", dateKey !== undefined && "gap-y-4")}>
+    <section
+      id={`resume-section-${section.id}`}
+      className={cn("grid", dateKey !== undefined && "gap-y-4")}
+    >
       <div className="grid grid-cols-4 gap-x-6">
         <div className="text-right">
           <h4 className="font-medium text-primary">{section.name}</h4>
