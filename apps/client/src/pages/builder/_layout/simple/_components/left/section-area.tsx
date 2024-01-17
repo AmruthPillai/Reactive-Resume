@@ -1,14 +1,34 @@
 import { t } from "@lingui/macro";
+import { SectionKey } from "@reactive-resume/schema";
 import { Button, ScrollArea } from "@reactive-resume/ui";
+import { ResumeSections } from "@reactive-resume/utils";
 import { useMemo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
+import { getSectionIcon } from "@/client/pages/builder/_components/sections/shared/section-icon";
 import { SectionMapping } from "@/client/pages/builder/_helper/section";
 import { useBuilderStore } from "@/client/stores/builder";
 import { useTemporalResumeStore } from "@/client/stores/resume";
 
 import { Options } from "./options";
-import { Steps } from "./steps";
+
+export const Steps: ResumeSections[] = [
+  ResumeSections.BASICS,
+  ResumeSections.SUMMARY,
+  ResumeSections.PROFILES,
+  ResumeSections.EXPERIENCE,
+  ResumeSections.EDUCATION,
+  ResumeSections.SKILLS,
+  ResumeSections.LANGUAGES,
+  ResumeSections.AWARDS,
+  ResumeSections.CERTIFICATIONS,
+  ResumeSections.INTERESTS,
+  ResumeSections.PROJECTS,
+  ResumeSections.PUBLICATIONS,
+  ResumeSections.VOLUNTEER,
+  ResumeSections.REFERENCES,
+  ResumeSections.CUSTOM,
+];
 
 export const SectionArea = () => {
   const navigate = useNavigate();
@@ -22,19 +42,19 @@ export const SectionArea = () => {
     navigate(`/builder/${params.id}/${sectionId}`);
   };
 
-  const onStep = (step: number) => {
-    const stepIndex = Steps.findIndex((s) => s === currentStep);
-    handleSectionClick(Steps[stepIndex + step]);
+  const onStep = (section: ResumeSections) => {
+    handleSectionClick(section);
     clearHistory();
   };
 
-  const isNext = useMemo(() => {
-    const cur = Steps.findIndex((s) => s === currentStep);
-    return cur < Steps.length - 1 && cur > -1;
+  const nextSection = useMemo(() => {
+    const stepIndex = Steps.findIndex((s) => s === currentStep);
+    return Steps[stepIndex + 1];
   }, [Steps, currentStep]);
 
-  const isPrevious = useMemo(() => {
-    return Steps.findIndex((s) => s === currentStep) > 0;
+  const previousSection = useMemo(() => {
+    const stepIndex = Steps.findIndex((s) => s === currentStep);
+    return Steps[stepIndex - 1];
   }, [Steps, currentStep]);
 
   return activeSection.left.openOption ? (
@@ -45,15 +65,24 @@ export const SectionArea = () => {
         {SectionMapping[currentStep]}
 
         <div className="grid grid-cols-3 gap-y-6">
-          {isPrevious && (
-            <Button className="col-span-1" type="button" onClick={() => onStep(-1)}>
-              {t`Previous`}
+          {previousSection && (
+            <Button
+              className="col-span-1 gap-x-2"
+              type="button"
+              onClick={() => onStep(previousSection)}
+            >
+              {getSectionIcon(previousSection as SectionKey)}
+              <span>{t`Previous`}</span>
             </Button>
           )}
 
-          {isNext && (
-            <Button className="col-span-1 col-start-3" type="button" onClick={() => onStep(+1)}>
-              {t`Next`}
+          {nextSection && (
+            <Button
+              className="col-span-1 col-start-3 gap-x-2"
+              type="button"
+              onClick={() => onStep(nextSection)}
+            >
+              {t`Next`} {getSectionIcon(nextSection as SectionKey)}
             </Button>
           )}
         </div>

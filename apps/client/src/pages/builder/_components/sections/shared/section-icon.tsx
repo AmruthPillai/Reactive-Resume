@@ -9,6 +9,7 @@ import {
   HandHeart,
   IconProps,
   Medal,
+  Plus,
   PuzzlePiece,
   ShareNetwork,
   Translate,
@@ -53,6 +54,8 @@ export const getSectionIcon = (id: SectionKey, props: IconProps = {}) => {
       return <CompassTool size={18} {...props} />;
     case ResumeSections.REFERENCES:
       return <Users size={18} {...props} />;
+    case ResumeSections.CUSTOM:
+      return <Plus size={18} {...props} />;
 
     default:
       return null;
