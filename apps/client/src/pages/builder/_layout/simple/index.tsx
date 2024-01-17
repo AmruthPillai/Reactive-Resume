@@ -47,7 +47,7 @@ export const SimpleBuilderLayout = () => {
 
   const onScrollView = (section: string) =>
     frameRef?.contentWindow?.postMessage(
-      { type: BuilderArtBoardEventType.SCROLL_TO, section },
+      { type: BuilderArtBoardEventType.HIGHLIGHT, section },
       "*",
     );
 
@@ -57,7 +57,7 @@ export const SimpleBuilderLayout = () => {
     section && activeSection.left.setSection(section);
     getValidSectionValue(params.section) &&
       onScrollView(`#resume-section-${getValidSectionValue(params.section)}`);
-  }, [params]);
+  }, [params.section]);
 
   useEffect(() => {
     builder.setType(Builder.SIMPLE);

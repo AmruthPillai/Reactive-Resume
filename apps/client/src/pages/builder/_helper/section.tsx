@@ -166,17 +166,3 @@ export const SectionMapping: { [key in ResumeSections | ResumeOptions]?: React.R
   [ResumeOptions.INFORMATION]: <InformationSection />,
   [ResumeOptions.COPYRIGHT]: <Copyright className="text-center" />,
 };
-
-// export const OptionsMapping: { [key in ResumeOptions]?: React.ReactElement } = {
-//   [ResumeOptions.TEMPLATE]: <TemplateSection />,
-//   [ResumeOptions.LAYOUT]: <LayoutSection />,
-//   [ResumeOptions.TYPOGRAPHY]: <TypographySection />,
-//   [ResumeOptions.THEME]: <ThemeSection />,
-//   [ResumeOptions.PAGE]: <PageSection />,
-//   [ResumeOptions.SHARING]: <SharingSection />,
-//   [ResumeOptions.STATISTICS]: <StatisticsSection />,
-//   [ResumeOptions.EXPORT]: <ExportSection />,
-//   [ResumeOptions.NOTES]: <NotesSection />,
-//   [ResumeOptions.INFORMATION]: <InformationSection />,
-//   [ResumeOptions.COPYRIGHT]: <Copyright className="text-center" />,
-// };

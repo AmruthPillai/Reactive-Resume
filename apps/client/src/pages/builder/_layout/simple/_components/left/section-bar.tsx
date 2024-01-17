@@ -91,7 +91,6 @@ export const SectionBar = () => {
 
         <SectionIcon
           id={ResumeSections.CUSTOM}
-          variant="outline"
           name={t`Add a new section`}
           icon={<Plus size={14} />}
           onClick={() => {

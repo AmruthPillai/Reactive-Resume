@@ -1,3 +1,6 @@
+import "./../styles/builder.css";
+
+import { useBreakpoint } from "@reactive-resume/hooks";
 import { SectionKey } from "@reactive-resume/schema";
 import { BuilderArtBoardEventType, pageSizeMap, Template } from "@reactive-resume/utils";
 import { AnimatePresence, motion } from "framer-motion";
@@ -14,12 +17,16 @@ export const BuilderLayout = () => {
   const format = useArtboardStore((state) => state.resume.metadata.page.format);
   const layout = useArtboardStore((state) => state.resume.metadata.layout);
   const template = useArtboardStore((state) => state.resume.metadata.template as Template);
+  const { isMobile, isTablet } = useBreakpoint();
 
   const Template = useMemo(() => getTemplate(template), [template]);
 
-  const scrollIntoView = (selector: string) => {
+  const animate = (selector: string) => {
     const section = containterRef.current?.querySelector(selector);
-    section?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    section?.classList.add("wiggle");
+    setTimeout(() => {
+      section?.classList.remove("wiggle");
+    }, 2000);
   };
 
   useEffect(() => {
@@ -31,11 +38,10 @@ export const BuilderLayout = () => {
         transformRef.current?.centerView();
       if (event.data.type === BuilderArtBoardEventType.RESET_VIEW) {
         transformRef.current?.resetTransform(0);
-        setTimeout(() => transformRef.current?.centerView(0.8, 0), 10);
+        setTimeout(() => transformRef.current?.centerView(getInitialZoom(), 0), 10);
       }
-      if (event.data.type === BuilderArtBoardEventType.SCROLL_TO) {
-        transformRef.current?.resetTransform(0);
-        setTimeout(() => scrollIntoView(event.data.section), 200);
+      if (event.data.type === BuilderArtBoardEventType.HIGHLIGHT) {
+        animate(event.data.section);
       }
     };
 
@@ -46,12 +52,22 @@ export const BuilderLayout = () => {
     };
   }, [transformRef]);
 
+  const getInitialZoom = () => {
+    if (isMobile) {
+      return 0.5;
+    } else if (isTablet) {
+      return 0.7;
+    } else {
+      return 0.8;
+    }
+  };
+
   return (
     <TransformWrapper
       centerOnInit
       maxScale={2}
       minScale={0.4}
-      initialScale={0.8}
+      initialScale={getInitialZoom()}
       ref={transformRef}
       limitToBounds={false}
     >
