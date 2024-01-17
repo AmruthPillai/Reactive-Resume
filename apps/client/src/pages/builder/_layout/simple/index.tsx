@@ -92,8 +92,12 @@ export const SimpleBuilderLayout = () => {
           </PanelGroup>
         </div>
 
-        <footer className="flex h-10">
-          <Copyright />
+        <footer className="flex h-10 items-center justify-between">
+          <div />
+          <div className="mx-auto flex items-center justify-center gap-x-1">
+            <Copyright />
+          </div>
+          <div />
         </footer>
       </div>
     );

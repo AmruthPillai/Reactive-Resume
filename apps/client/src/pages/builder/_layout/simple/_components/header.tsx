@@ -4,6 +4,7 @@ import { Button, Tooltip } from "@reactive-resume/ui";
 import { cn, ResumeOptions, ResumeSections } from "@reactive-resume/utils";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
+import { LocaleSwitch } from "@/client/components/locale-switch";
 import { ThemeSwitch } from "@/client/components/theme-switch";
 import { useBuilderStore } from "@/client/stores/builder";
 import { useResumeStore } from "@/client/stores/resume";
@@ -55,6 +56,7 @@ export const BuilderHeader = () => {
         </div>
 
         <div className="flex">
+          <LocaleSwitch />
           <ThemeSwitch size={14} />
           <Button size="icon" variant="ghost" className="flex" onClick={openOptions}>
             <Gear />
