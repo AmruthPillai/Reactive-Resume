@@ -8,7 +8,7 @@ msgstr ""
 "Language: ro\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-01-04 00:08\n"
+"PO-Revision-Date: 2024-01-12 00:08\n"
 "Last-Translator: \n"
 "Language-Team: Romanian\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);\n"
@@ -172,7 +172,7 @@ msgstr "Sigur doriți să deblocați acest CV?"
 
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:94
 msgid "Are you sure?"
-msgstr ""
+msgstr "Ești sigur?"
 
 #. For example, Computer Science or Business Administration
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:73
@@ -245,7 +245,7 @@ msgstr "Anulează"
 #: apps/client/src/components/ai-actions.tsx:103
 #: apps/client/src/components/ai-actions.tsx:106
 msgid "Casual"
-msgstr ""
+msgstr "Cazual"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:98
 msgid "Center Artboard"
@@ -258,7 +258,7 @@ msgstr "Schimbare parolă"
 
 #: apps/client/src/components/ai-actions.tsx:97
 msgid "Change Tone"
-msgstr ""
+msgstr "Schimbați Tonul"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
 msgid "Changed your mind about the name? Give it a new one."
@@ -282,11 +282,11 @@ msgstr "Cod"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:50
 msgid "Code must be exactly 6 digits long."
-msgstr ""
+msgstr "Codul trebuie să fie format din exact 6 cifre."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:108
 msgid "Columns"
-msgstr ""
+msgstr "Coloane"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:39
 msgid "Company"
@@ -304,7 +304,7 @@ msgstr ""
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:232
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:239
 msgid "Continue"
-msgstr ""
+msgstr "Continuă"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:94
 msgid "Copy"
@@ -431,7 +431,7 @@ msgstr "Documentație"
 
 #: apps/client/src/pages/auth/login/page.tsx:62
 msgid "Don't have an account?"
-msgstr ""
+msgstr "Nu ai un cont?"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:88
 msgid "Don't know where to begin? Hit the docs!"
@@ -456,7 +456,7 @@ msgstr "Descărcați un PDF al CV-ului dvs. Acest fișier poate fi folosit pentr
 #: apps/client/src/pages/builder/_components/toolbar.tsx:144
 #: apps/client/src/pages/public/page.tsx:103
 msgid "Download PDF"
-msgstr ""
+msgstr "Descarcă PDF-ul"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:58
 msgid "Downloads"
@@ -468,7 +468,7 @@ msgstr "Descărcări"
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:102
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:182
 msgid "Duplicate"
-msgstr ""
+msgstr "Duplică"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:148
 msgid "Duplicate an existing item"
@@ -652,7 +652,7 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:62
 msgid "Here, you can update your profile to customize and personalize your experience."
-msgstr ""
+msgstr "Aici, vă puteți actualiza profilul pentru a vă personaliza experiența."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:76
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:82
@@ -718,7 +718,7 @@ msgstr "Îmbunătățiți scrierea"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:186
 msgid "In case you are unable to scan this QR Code, you can also copy-paste this link into your authenticator app."
-msgstr ""
+msgstr "În cazul în care nu puteți scana acest cod QR, puteți, de asemenea, să copiați și să inserați acest link în aplicația dumneavoastră de autentificare."
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:70
 msgid "In this section, you can change your password and enable/disable two-factor authentication."
@@ -726,7 +726,7 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:64
 msgid "In this section, you can delete your account and all the data associated to your user, but please keep in mind that <0>this action is irreversible</0>."
-msgstr ""
+msgstr "În această secțiune, vă puteți șterge contul si toate datele asociate utilizatorului dumneavoastră, dar aveți în vedere că <0>această acțiune este ireversibilă</0>."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:83
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:122
@@ -743,11 +743,11 @@ msgstr ""
 
 #: apps/client/src/services/errors/translate-error.ts:7
 msgid "It doesn't look like a user exists with the credentials you provided."
-msgstr ""
+msgstr "Se pare că nu există un utilizator cu carențialele pe care le-ați furnizat."
 
 #: apps/client/src/services/errors/translate-error.ts:27
 msgid "It looks like the backup code you provided is invalid or used. Please try again."
-msgstr ""
+msgstr "Se pare că codul de rezervă pe care l-ați furnizat este invalid sau folosit. Vă rugăm să încercați din nou."
 
 #: apps/client/src/services/errors/translate-error.ts:15
 msgid "It looks like the reset token you provided is invalid. Please try restarting the password reset process again."
@@ -755,7 +755,7 @@ msgstr ""
 
 #: apps/client/src/services/errors/translate-error.ts:33
 msgid "It looks like the resume you're looking for doesn't exist."
-msgstr ""
+msgstr "Se pare că CV-ul pe care îl căutați nu există."
 
 #: apps/client/src/services/errors/translate-error.ts:25
 msgid "It looks like the two-factor authentication code you provided is invalid. Please try again."
@@ -782,7 +782,7 @@ msgstr "john.doe"
 #: apps/client/src/pages/auth/register/page.tsx:151
 msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
 msgid "john.doe@example.com"
-msgstr ""
+msgstr "john.doe@example.com"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:54
 msgid "JSON"
@@ -872,7 +872,7 @@ msgstr "Blocați un CV pentru a preveni editarea"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:43
 msgid "Locking a resume will prevent any further changes to it. This is useful when you have already shared your resume with someone and you don't want to accidentally make any changes to it."
-msgstr ""
+msgstr "Blocarea unui CV va preveni orice modificări suplimentare ale acestuia. Acest lucru este util atunci când ați partajat deja CV-ul cu cineva și nu doriți să faceți din greșeală nicio modificare."
 
 #: apps/client/src/components/user-options.tsx:34
 #: apps/client/src/pages/home/sections/hero/call-to-action.tsx:23
@@ -911,7 +911,7 @@ msgstr "Margine"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:48
 msgid "MIT License"
-msgstr ""
+msgstr "Licență MIT"
 
 #: apps/client/src/pages/auth/register/page.tsx:106
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:53
