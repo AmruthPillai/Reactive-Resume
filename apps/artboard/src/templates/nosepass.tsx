@@ -17,7 +17,7 @@ import {
   URL,
   Volunteer,
 } from "@reactive-resume/schema";
-import { cn, isEmptyString, isUrl } from "@reactive-resume/utils";
+import { cn, isEmptyString, isUrl, ResumeSections } from "@reactive-resume/utils";
 import get from "lodash.get";
 import { Fragment } from "react";
 
@@ -29,7 +29,7 @@ const Header = () => {
   const basics = useArtboardStore((state) => state.resume.basics);
 
   return (
-    <div className="grid grid-cols-4 gap-x-6">
+    <div className="grid grid-cols-4 gap-x-6" id={`resume-section-${ResumeSections.BASICS}`}>
       <div className="mt-1 space-y-2 text-right">
         <Picture className="ml-auto" />
       </div>
@@ -86,7 +86,7 @@ const Summary = () => {
   if (!section.visible || isEmptyString(section.content)) return null;
 
   return (
-    <section id={section.id} className="grid grid-cols-4 gap-x-6">
+    <section id={`resume-section-${section.id}`} className="grid grid-cols-4 gap-x-6">
       <div className="text-right">
         <h4 className="font-medium text-primary">{section.name}</h4>
       </div>
@@ -153,7 +153,10 @@ const Section = <T,>({
   if (!section.visible || !section.items.length) return null;
 
   return (
-    <section id={section.id} className={cn("grid", dateKey !== undefined && "gap-y-4")}>
+    <section
+      id={`resume-section-${section.id}`}
+      className={cn("grid", dateKey !== undefined && "gap-y-4")}
+    >
       <div className="grid grid-cols-4 gap-x-6">
         <div className="text-right">
           <h4 className="font-medium text-primary">{section.name}</h4>
@@ -464,34 +467,35 @@ const Custom = ({ id }: { id: string }) => {
 
 const mapSectionToComponent = (section: SectionKey) => {
   switch (section) {
-    case "profiles":
+    case ResumeSections.PROFILES:
       return <Profiles />;
-    case "summary":
+    case ResumeSections.SUMMARY:
       return <Summary />;
-    case "experience":
+    case ResumeSections.EXPERIENCE:
       return <Experience />;
-    case "education":
+    case ResumeSections.EDUCATION:
       return <Education />;
-    case "awards":
+    case ResumeSections.AWARDS:
       return <Awards />;
-    case "certifications":
+    case ResumeSections.CERTIFICATIONS:
       return <Certifications />;
-    case "skills":
+    case ResumeSections.SKILLS:
       return <Skills />;
-    case "interests":
+    case ResumeSections.INTERESTS:
       return <Interests />;
-    case "publications":
+    case ResumeSections.PUBLICATIONS:
       return <Publications />;
-    case "volunteer":
+    case ResumeSections.VOLUNTEER:
       return <Volunteer />;
-    case "languages":
+    case ResumeSections.LANGUAGES:
       return <Languages />;
-    case "projects":
+    case ResumeSections.PROJECTS:
       return <Projects />;
-    case "references":
+    case ResumeSections.REFERENCES:
       return <References />;
     default:
-      if (section.startsWith("custom.")) return <Custom id={section.split(".")[1]} />;
+      if (section.startsWith(`${ResumeSections.CUSTOM}.`))
+        return <Custom id={section.split(".")[1]} />;
 
       return null;
   }

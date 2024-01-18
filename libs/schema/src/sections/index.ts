@@ -1,4 +1,4 @@
-import { FilterKeys } from "@reactive-resume/utils";
+import { FilterKeys, ResumeSections } from "@reactive-resume/utils";
 import { z } from "zod";
 
 import { idSchema } from "../shared";
@@ -31,55 +31,55 @@ export const customSchema = sectionSchema.extend({
 
 export const sectionsSchema = z.object({
   summary: sectionSchema.extend({
-    id: z.literal("summary"),
+    id: z.literal(ResumeSections.SUMMARY),
     content: z.string().default(""),
   }),
   awards: sectionSchema.extend({
-    id: z.literal("awards"),
+    id: z.literal(ResumeSections.AWARDS),
     items: z.array(awardSchema),
   }),
   certifications: sectionSchema.extend({
-    id: z.literal("certifications"),
+    id: z.literal(ResumeSections.CERTIFICATIONS),
     items: z.array(certificationSchema),
   }),
   education: sectionSchema.extend({
-    id: z.literal("education"),
+    id: z.literal(ResumeSections.EDUCATION),
     items: z.array(educationSchema),
   }),
   experience: sectionSchema.extend({
-    id: z.literal("experience"),
+    id: z.literal(ResumeSections.EXPERIENCE),
     items: z.array(experienceSchema),
   }),
   volunteer: sectionSchema.extend({
-    id: z.literal("volunteer"),
+    id: z.literal(ResumeSections.VOLUNTEER),
     items: z.array(volunteerSchema),
   }),
   interests: sectionSchema.extend({
-    id: z.literal("interests"),
+    id: z.literal(ResumeSections.INTERESTS),
     items: z.array(interestSchema),
   }),
   languages: sectionSchema.extend({
-    id: z.literal("languages"),
+    id: z.literal(ResumeSections.LANGUAGES),
     items: z.array(languageSchema),
   }),
   profiles: sectionSchema.extend({
-    id: z.literal("profiles"),
+    id: z.literal(ResumeSections.PROFILES),
     items: z.array(profileSchema),
   }),
   projects: sectionSchema.extend({
-    id: z.literal("projects"),
+    id: z.literal(ResumeSections.PROJECTS),
     items: z.array(projectSchema),
   }),
   publications: sectionSchema.extend({
-    id: z.literal("publications"),
+    id: z.literal(ResumeSections.PUBLICATIONS),
     items: z.array(publicationSchema),
   }),
   references: sectionSchema.extend({
-    id: z.literal("references"),
+    id: z.literal(ResumeSections.REFERENCES),
     items: z.array(referenceSchema),
   }),
   skills: sectionSchema.extend({
-    id: z.literal("skills"),
+    id: z.literal(ResumeSections.SKILLS),
     items: z.array(skillSchema),
   }),
   custom: z.record(z.string(), customSchema),
@@ -89,7 +89,7 @@ export const sectionsSchema = z.object({
 export type Section = z.infer<typeof sectionSchema>;
 export type Sections = z.infer<typeof sectionsSchema>;
 
-export type SectionKey = "basics" | keyof Sections | `custom.${string}`;
+export type SectionKey = ResumeSections.BASICS | keyof Sections | `custom.${string}`;
 export type SectionWithItem<T = unknown> = Sections[FilterKeys<Sections, { items: T[] }>];
 export type SectionItem = SectionWithItem["items"][number];
 export type CustomSectionGroup = z.infer<typeof customSchema>;
@@ -102,19 +102,29 @@ export const defaultSection: Section = {
 };
 
 export const defaultSections: Sections = {
-  summary: { ...defaultSection, id: "summary", name: "Summary", content: "" },
-  awards: { ...defaultSection, id: "awards", name: "Awards", items: [] },
-  certifications: { ...defaultSection, id: "certifications", name: "Certifications", items: [] },
-  education: { ...defaultSection, id: "education", name: "Education", items: [] },
-  experience: { ...defaultSection, id: "experience", name: "Experience", items: [] },
-  volunteer: { ...defaultSection, id: "volunteer", name: "Volunteering", items: [] },
-  interests: { ...defaultSection, id: "interests", name: "Interests", items: [] },
-  languages: { ...defaultSection, id: "languages", name: "Languages", items: [] },
-  profiles: { ...defaultSection, id: "profiles", name: "Profiles", items: [] },
-  projects: { ...defaultSection, id: "projects", name: "Projects", items: [] },
-  publications: { ...defaultSection, id: "publications", name: "Publications", items: [] },
-  references: { ...defaultSection, id: "references", name: "References", items: [] },
-  skills: { ...defaultSection, id: "skills", name: "Skills", items: [] },
+  summary: { ...defaultSection, id: ResumeSections.SUMMARY, name: "Summary", content: "" },
+  awards: { ...defaultSection, id: ResumeSections.AWARDS, name: "Awards", items: [] },
+  certifications: {
+    ...defaultSection,
+    id: ResumeSections.CERTIFICATIONS,
+    name: "Certifications",
+    items: [],
+  },
+  education: { ...defaultSection, id: ResumeSections.EDUCATION, name: "Education", items: [] },
+  experience: { ...defaultSection, id: ResumeSections.EXPERIENCE, name: "Experience", items: [] },
+  volunteer: { ...defaultSection, id: ResumeSections.VOLUNTEER, name: "Volunteering", items: [] },
+  interests: { ...defaultSection, id: ResumeSections.INTERESTS, name: "Interests", items: [] },
+  languages: { ...defaultSection, id: ResumeSections.LANGUAGES, name: "Languages", items: [] },
+  profiles: { ...defaultSection, id: ResumeSections.PROFILES, name: "Profiles", items: [] },
+  projects: { ...defaultSection, id: ResumeSections.PROJECTS, name: "Projects", items: [] },
+  publications: {
+    ...defaultSection,
+    id: ResumeSections.PUBLICATIONS,
+    name: "Publications",
+    items: [],
+  },
+  references: { ...defaultSection, id: ResumeSections.REFERENCES, name: "References", items: [] },
+  skills: { ...defaultSection, id: ResumeSections.SKILLS, name: "Skills", items: [] },
   custom: {},
 };
 

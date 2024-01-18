@@ -1,5 +1,6 @@
 import { t } from "@lingui/macro";
 import { ResumeDto } from "@reactive-resume/dto";
+import { Builder, cn } from "@reactive-resume/utils";
 import { useCallback, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { LoaderFunction, redirect } from "react-router-dom";
@@ -12,6 +13,7 @@ import { useResumeStore } from "@/client/stores/resume";
 export const BuilderPage = () => {
   const frameRef = useBuilderStore((state) => state.frame.ref);
   const setFrameRef = useBuilderStore((state) => state.frame.setRef);
+  const builder = useBuilderStore((state) => state.builder);
 
   const resume = useResumeStore((state) => state.resume);
   const title = useResumeStore((state) => state.resume.title);
@@ -44,8 +46,7 @@ export const BuilderPage = () => {
         ref={setFrameRef}
         title={resume.id}
         src="/artboard/builder"
-        className="mt-16 w-screen"
-        style={{ height: `calc(100vh - 64px)` }}
+        className={cn("h-full w-full", builder.type === Builder.ADVANCE && "mt-16")}
       />
     </>
   );

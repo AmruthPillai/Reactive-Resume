@@ -7,7 +7,7 @@ export const useBreakpoint = () => {
 
   const { isMobile, isTablet, isDesktop } = useMemo(() => {
     return {
-      isMobile: breakpoint === "xs" || breakpoint === "sm" || breakpoint === "md",
+      isMobile: breakpoint === "xs",
       isTablet: breakpoint === "sm" || breakpoint === "md",
       isDesktop: breakpoint === "lg" || breakpoint === "xl" || breakpoint === "2xl",
     };

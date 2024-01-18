@@ -1,9 +1,23 @@
+import { BuilderType } from "@reactive-resume/schema";
+import {
+  Builder,
+  isValidResumeOption,
+  isValidResumeSection,
+  ResumeOptions,
+  ResumeSections,
+} from "@reactive-resume/utils";
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 
 type Sheet = {
   open: boolean;
   setOpen: (open: boolean) => void;
+};
+
+type ActiveSection = {
+  section: ResumeSections | ResumeOptions;
+  setSection: (section: ResumeSections | ResumeOptions) => void;
+  openOption: boolean;
 };
 
 type PanelHandle = {
@@ -18,6 +32,10 @@ type Panel = {
 };
 
 interface BuilderState {
+  builder: {
+    type: BuilderType;
+    setType: (type: BuilderType) => void;
+  };
   frame: {
     ref: HTMLIFrameElement | null;
     setRef: (ref: HTMLIFrameElement | null) => void;
@@ -30,6 +48,9 @@ interface BuilderState {
     left: Panel;
     right: Panel;
   };
+  activeSection: {
+    left: ActiveSection;
+  };
 }
 
 interface BuilderActions {
@@ -38,6 +59,30 @@ interface BuilderActions {
 
 export const useBuilderStore = create<BuilderState & BuilderActions>()(
   immer((set) => ({
+    builder: {
+      type: Builder.ADVANCE,
+      setType: (type) => {
+        set((state) => {
+          state.builder.type = type;
+        });
+      },
+    },
+    activeSection: {
+      left: {
+        section: ResumeSections.BASICS,
+        setSection: (section) => {
+          set((state) => {
+            if (isValidResumeOption(section)) {
+              state.activeSection.left.openOption = true;
+            } else if (isValidResumeSection(section)) {
+              state.activeSection.left.openOption = false;
+            }
+            state.activeSection.left.section = section;
+          });
+        },
+        openOption: false,
+      },
+    },
     frame: {
       ref: null,
       setRef: (ref) => {

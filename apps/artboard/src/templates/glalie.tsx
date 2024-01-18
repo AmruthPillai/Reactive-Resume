@@ -17,7 +17,14 @@ import {
   URL,
   Volunteer,
 } from "@reactive-resume/schema";
-import { cn, hexToRgb, isEmptyString, isUrl, linearTransform } from "@reactive-resume/utils";
+import {
+  cn,
+  hexToRgb,
+  isEmptyString,
+  isUrl,
+  linearTransform,
+  ResumeSections,
+} from "@reactive-resume/utils";
 import get from "lodash.get";
 import { Fragment } from "react";
 
@@ -29,7 +36,10 @@ const Header = () => {
   const basics = useArtboardStore((state) => state.resume.basics);
 
   return (
-    <div className="flex flex-col items-center space-y-4 text-center">
+    <div
+      className="flex flex-col items-center space-y-4 text-center"
+      id={`resume-section-${ResumeSections.BASICS}`}
+    >
       <Picture />
 
       <div className="space-y-4">
@@ -80,7 +90,7 @@ const Summary = () => {
   if (!section.visible || isEmptyString(section.content)) return null;
 
   return (
-    <section id={section.id}>
+    <section id={`resume-section-${section.id}`}>
       <h4 className="mb-2 border-b pb-0.5 text-sm font-bold">{section.name}</h4>
 
       <div
@@ -158,7 +168,7 @@ const Section = <T,>({
   if (!section.visible || !section.items.length) return null;
 
   return (
-    <section id={section.id} className="grid">
+    <section id={`resume-section-${section.id}`} className="grid">
       <h4 className="mb-2 border-b pb-0.5 text-sm font-bold group-[.sidebar]:text-primary">
         {section.name}
       </h4>
@@ -466,34 +476,35 @@ const Custom = ({ id }: { id: string }) => {
 
 const mapSectionToComponent = (section: SectionKey) => {
   switch (section) {
-    case "profiles":
+    case ResumeSections.PROFILES:
       return <Profiles />;
-    case "summary":
+    case ResumeSections.SUMMARY:
       return <Summary />;
-    case "experience":
+    case ResumeSections.EXPERIENCE:
       return <Experience />;
-    case "education":
+    case ResumeSections.EDUCATION:
       return <Education />;
-    case "awards":
+    case ResumeSections.AWARDS:
       return <Awards />;
-    case "certifications":
+    case ResumeSections.CERTIFICATIONS:
       return <Certifications />;
-    case "skills":
+    case ResumeSections.SKILLS:
       return <Skills />;
-    case "interests":
+    case ResumeSections.INTERESTS:
       return <Interests />;
-    case "publications":
+    case ResumeSections.PUBLICATIONS:
       return <Publications />;
-    case "volunteer":
+    case ResumeSections.VOLUNTEER:
       return <Volunteer />;
-    case "languages":
+    case ResumeSections.LANGUAGES:
       return <Languages />;
-    case "projects":
+    case ResumeSections.PROJECTS:
       return <Projects />;
-    case "references":
+    case ResumeSections.REFERENCES:
       return <References />;
     default:
-      if (section.startsWith("custom.")) return <Custom id={section.split(".")[1]} />;
+      if (section.startsWith(`${ResumeSections.CUSTOM}.`))
+        return <Custom id={section.split(".")[1]} />;
 
       return null;
   }

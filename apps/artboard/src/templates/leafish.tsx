@@ -16,7 +16,7 @@ import {
   URL,
   Volunteer,
 } from "@reactive-resume/schema";
-import { cn, hexToRgb, isEmptyString, isUrl } from "@reactive-resume/utils";
+import { cn, hexToRgb, isEmptyString, isUrl, ResumeSections } from "@reactive-resume/utils";
 import get from "lodash.get";
 import React, { Fragment } from "react";
 
@@ -36,6 +36,7 @@ const Header = () => {
       <div
         className="p-custom flex items-center space-x-8"
         style={{ backgroundColor: hexToRgb(primaryColor, 0.2) }}
+        id={`resume-section-${ResumeSections.BASICS}`}
       >
         <div className="space-y-3">
           <div>
@@ -175,7 +176,7 @@ const Section = <T,>({
   if (!section.visible || !section.items.length) return null;
 
   return (
-    <section id={section.id} className="grid">
+    <section id={`resume-section-${section.id}`} className="grid">
       <h4 className="mb-2 border-b border-primary text-left font-bold text-primary">
         {section.name}
       </h4>
@@ -414,30 +415,31 @@ const Custom = ({ id }: { id: string }) => {
 
 const mapSectionToComponent = (section: SectionKey) => {
   switch (section) {
-    case "experience":
+    case ResumeSections.EXPERIENCE:
       return <Experience />;
-    case "education":
+    case ResumeSections.EDUCATION:
       return <Education />;
-    case "awards":
+    case ResumeSections.AWARDS:
       return <Awards />;
-    case "certifications":
+    case ResumeSections.CERTIFICATIONS:
       return <Certifications />;
-    case "skills":
+    case ResumeSections.SKILLS:
       return <Skills />;
-    case "interests":
+    case ResumeSections.INTERESTS:
       return <Interests />;
-    case "publications":
+    case ResumeSections.PUBLICATIONS:
       return <Publications />;
-    case "volunteer":
+    case ResumeSections.VOLUNTEER:
       return <Volunteer />;
-    case "languages":
+    case ResumeSections.LANGUAGES:
       return <Languages />;
-    case "projects":
+    case ResumeSections.PROJECTS:
       return <Projects />;
-    case "references":
+    case ResumeSections.REFERENCES:
       return <References />;
     default:
-      if (section.startsWith("custom.")) return <Custom id={section.split(".")[1]} />;
+      if (section.startsWith(`${ResumeSections.CUSTOM}.`))
+        return <Custom id={section.split(".")[1]} />;
 
       return null;
   }

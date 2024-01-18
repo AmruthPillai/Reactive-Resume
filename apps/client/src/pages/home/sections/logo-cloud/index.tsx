@@ -1,5 +1,4 @@
-import { t, Trans } from "@lingui/macro";
-import { buttonVariants } from "@reactive-resume/ui";
+import { t } from "@lingui/macro";
 import { cn } from "@reactive-resume/utils";
 
 type LogoProps = { company: string };

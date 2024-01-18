@@ -1,0 +1,42 @@
+.wiggle {
+    animation: wiggle 2s linear infinite;
+}
+
+/* Keyframes */
+@keyframes wiggle {
+
+    0%,
+    7% {
+        transform: rotateZ(0);
+        background-color: rgb(37, 99, 235);
+        zoom: 110%;
+    }
+
+    15% {
+        transform: rotateZ(-15deg);
+        zoom: 107%;
+    }
+
+    20% {
+        transform: rotateZ(10deg);
+        zoom: 105%;
+    }
+
+    25% {
+        transform: rotateZ(-10deg);
+        zoom: 102%;
+    }
+
+    30% {
+        transform: rotateZ(6deg);
+    }
+
+    35% {
+        transform: rotateZ(-4deg);
+    }
+
+    40%,
+    100% {
+        transform: rotateZ(0);
+    }
+}

@@ -1,4 +1,5 @@
 import { SectionKey } from "@reactive-resume/schema";
+import { ResumeSections } from "@reactive-resume/utils";
 import { create } from "zustand";
 
 export type DialogName = "resume" | "lock" | "import" | "two-factor" | SectionKey;
@@ -31,7 +32,7 @@ export const useDialogStore = create<DialogState & DialogActions>()((set) => ({
 
 export const useDialog = <T = unknown>(name: DialogName) => {
   const dialog = useDialogStore((state) => {
-    if (name.startsWith("custom.")) name = "custom";
+    if (name.startsWith(`${ResumeSections.CUSTOM}.`)) name = ResumeSections.CUSTOM;
     return state.dialog?.name === name ? state.dialog : null;
   });
 
