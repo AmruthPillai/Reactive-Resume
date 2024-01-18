@@ -24,7 +24,7 @@ export const BuilderHeader = () => {
     <div
       style={{ left: `${leftPanelSize}%`, right: `${rightPanelSize}%` }}
       className={cn(
-        "fixed inset-x-0 top-0 z-[60] h-16 bg-secondary-accent/50 backdrop-blur-lg lg:z-20",
+        "fixed inset-x-0 top-0 z-[60] h-16 bg-secondary-accent/50 backdrop-blur-lg lg:z-[1]",
         !isDragging && "transition-[left,right]",
       )}
     >
