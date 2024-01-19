@@ -63,9 +63,10 @@ export const SectionDialog = <T extends SectionItem>({
     if (!section) return;
 
     if (isCreate || isDuplicate) {
-      if (pendingKeyword && values.keywords) {
+      if (pendingKeyword && "keywords" in values) {
         values.keywords.push(pendingKeyword);
       }
+
       setValue(
         `sections.${id}.items`,
         produce(section.items, (draft: T[]): void => {
@@ -77,7 +78,7 @@ export const SectionDialog = <T extends SectionItem>({
     if (isUpdate) {
       if (!payload.item?.id) return;
 
-      if (pendingKeyword && values.keywords) {
+      if (pendingKeyword && "keywords" in values) {
         values.keywords.push(pendingKeyword);
       }
 
