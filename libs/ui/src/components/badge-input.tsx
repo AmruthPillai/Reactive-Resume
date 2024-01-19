@@ -1,14 +1,15 @@
-import { forwardRef, useCallback, useEffect, useState } from "react";
+import { Dispatch, forwardRef, SetStateAction, useCallback, useEffect, useState } from "react";
 
 import { Input, InputProps } from "./input";
 
 type BadgeInputProps = Omit<InputProps, "value" | "onChange"> & {
   value: string[];
   onChange: (value: string[]) => void;
+  setPendingKeyword?: Dispatch<SetStateAction<string>>;
 };
 
 export const BadgeInput = forwardRef<HTMLInputElement, BadgeInputProps>(
-  ({ value, onChange, ...props }, ref) => {
+  ({ value, onChange, setPendingKeyword, ...props }, ref) => {
     const [label, setLabel] = useState("");
 
     const processInput = useCallback(() => {
@@ -26,6 +27,10 @@ export const BadgeInput = forwardRef<HTMLInputElement, BadgeInputProps>(
         processInput();
       }
     }, [label, processInput]);
+
+    useEffect(() => {
+      if (setPendingKeyword) setPendingKeyword(label);
+    }, [label, setPendingKeyword]);
 
     const onKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
       if (event.key === "Enter") {
