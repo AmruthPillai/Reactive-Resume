@@ -15,6 +15,7 @@ import {
   RichInput,
 } from "@reactive-resume/ui";
 import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -33,8 +34,15 @@ export const ProjectsDialog = () => {
     resolver: zodResolver(formSchema),
   });
 
+  const [pendingKeyword, setPendingKeyword] = useState("");
+
   return (
-    <SectionDialog<FormValues> id="projects" form={form} defaultValues={defaultProject}>
+    <SectionDialog<FormValues>
+      id="projects"
+      form={form}
+      defaultValues={defaultProject}
+      pendingKeyword={pendingKeyword}
+    >
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <FormField
           name="name"
@@ -121,7 +129,7 @@ export const ProjectsDialog = () => {
               <FormItem>
                 <FormLabel>{t`Keywords`}</FormLabel>
                 <FormControl>
-                  <BadgeInput {...field} />
+                  <BadgeInput {...field} setPendingKeyword={setPendingKeyword} />
                 </FormControl>
                 <FormDescription>
                   {t`You can add multiple keywords by separating them with a comma or pressing enter.`}
