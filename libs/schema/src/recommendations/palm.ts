@@ -22,3 +22,10 @@ export type PalmGenerateTextResponse = [
   protos.google.ai.generativelanguage.v1beta2.IGenerateTextRequest | undefined,
   undefined,
 ];
+
+export type PalmSuggestionResponse = {
+  suggestions: string[];
+  relatedJobTitles: string[];
+  jobTitle: string;
+  jobCategory?: string;
+};

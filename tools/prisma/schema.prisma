@@ -1,5 +1,5 @@
 generator client {
-  provider        = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -155,36 +155,38 @@ model Subscription {
   @@index(fields: [userId])
 }
 
-// model JobTitle {
-//   id    String @id @default(cuid())
-//   title String
+model JobTitle {
+  id    String @id @default(cuid())
+  title String @unique
 
-//   relatedBy JobTitle[] @relation("RelatedJobTitles")
-//   relating  JobTitle[] @relation("RelatedJobTitles")
+  relatedJobTitles Json? @default("{}")
 
-//   categories               JobTitleCategory[]
-//   recommendations RecommendationSnippet[]
-// }
+  categoryId String?
+  category   JobTitleCategory? @relation(fields: [categoryId], references: [id], onDelete: Cascade)
 
-// model JobTitleCategory {
-//   id    String @id @default(cuid())
-//   title String
+  recommendations RecommendationSnippet[]
 
-//   jobTitles                JobTitle[]
-// }
+  @@index(fields: [title])
+}
 
-// model RecommendationSnippet {
-//   id         String @id @default(cuid())
-//   phrase     String
-//   highlight  String
-//   locale     String @default("en") @db.VarChar(2)
-//   usageCount Int    @default(0)
+model JobTitleCategory {
+  id    String @id @default(cuid())
+  title String @unique
 
-//   jobTitleId String
-//   jobTitle   JobTitle @relation(fields: [jobTitleId], references: [id], onDelete: Cascade)
+  jobTitles JobTitle[]
+}
 
-//   subPhrases RecommendationSnippet[] @relation("SubPhrases")
-//   phrases    RecommendationSnippet[] @relation("SubPhrases")
+model RecommendationSnippet {
+  id         String  @id @default(cuid())
+  type       String
+  phrase     String
+  highlight  String?
+  locale     String  @default("en-US")
+  usageCount Int     @default(0)
 
-//   @@index(fields: [jobTitleId, phrase])
-// }
+  jobTitleId String
+  jobTitle   JobTitle @relation(fields: [jobTitleId], references: [id], onDelete: Cascade)
+
+  @@index(fields: [jobTitleId, phrase])
+  @@unique([jobTitleId, phrase, type])
+}
