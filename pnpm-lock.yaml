@@ -103,6 +103,9 @@ importers:
       '@reduxjs/toolkit':
         specifier: ^1.9.5
         version: 1.9.5(react-redux@8.1.1)(react@18.2.0)
+      '@types/redux-thunk':
+        specifier: ^2.1.0
+        version: 2.1.0(redux@4.2.1)
       antd:
         specifier: ^5.11.0
         version: 5.11.0(react-dom@18.2.0)(react@18.2.0)
@@ -214,6 +217,9 @@ importers:
       redux-saga:
         specifier: ^1.2.3
         version: 1.2.3
+      redux-thunk:
+        specifier: ^3.1.0
+        version: 3.1.0(redux@4.2.1)
       redux-undo:
         specifier: ^1.1.0
         version: 1.1.0
@@ -3797,6 +3803,15 @@ packages:
     dependencies:
       '@types/prop-types': 15.7.5
       csstype: 3.1.2
+
+  /@types/redux-thunk@2.1.0(redux@4.2.1):
+    resolution: {integrity: sha512-8M+kcrnZQYO3A40d8a1lieBFur/ab8EXHqa2dGMQqsmBaVCbNp3gd8ed/HuSjLoLA63ov/trXaXWlkiKVF4VUw==}
+    deprecated: This is a stub types definition for Redux Thunk (https://github.com/gaearon/redux-thunk). Redux Thunk provides its own type definitions, so you don't need @types/redux-thunk installed!
+    dependencies:
+      redux-thunk: 3.1.0(redux@4.2.1)
+    transitivePeerDependencies:
+      - redux
+    dev: false
 
   /@types/semver@7.5.1:
     resolution: {integrity: sha512-cJRQXpObxfNKkFAZbJl2yjWtJCqELQIdShsogr1d2MilP8dKD9TE/nEKHkJgUNHdGKCQaf9HbIynuV2csLGVLg==}
@@ -11006,6 +11021,14 @@ packages:
     resolution: {integrity: sha512-+P3TjtnP0k/FEjcBL5FZpoovtvrTNT/UXd4/sluaSyrURlSlhLSzEdfsTBW7WsKB6yPvgd7q/iZPICFjW4o57Q==}
     peerDependencies:
       redux: ^4
+    dependencies:
+      redux: 4.2.1
+    dev: false
+
+  /redux-thunk@3.1.0(redux@4.2.1):
+    resolution: {integrity: sha512-NW2r5T6ksUKXCabzhL9z+h206HQw/NJkcLm1GPImRQ8IzfXwRGqjVhKJGauHirT0DAuyy6hjdnMZaRoAcy0Klw==}
+    peerDependencies:
+      redux: ^5.0.0
     dependencies:
       redux: 4.2.1
     dev: false

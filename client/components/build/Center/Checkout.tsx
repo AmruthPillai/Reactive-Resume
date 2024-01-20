@@ -48,6 +48,7 @@ const CheckoutModal: React.FC = () => {
   const username = get(resume, 'user.username');
   const updatedAt = get(resume, 'updatedAt');
   const [isSuccess, setIsSuccess] = useState('');
+  const [isLoadingPay, setIsLoadingPay] = useState(false);
   const [number, setNumber] = useState(
     localStorage.getItem('whatsappNumber') ? localStorage.getItem('whatsappNumber')?.split('@')[0] : '',
   );
@@ -97,6 +98,7 @@ const CheckoutModal: React.FC = () => {
     formData.slug = slug;
     formData.phonenumber = cleanNumber;
     // if (isEditMode) {
+    setIsLoadingPay(true);
     dispatch(
       checkoutMain(
         formData,
@@ -104,9 +106,11 @@ const CheckoutModal: React.FC = () => {
           setIsSuccess(
             'We have initiated an STK push for the premium version of your resume to your mobile device. Please follow the instructions on your phone to complete the payment process. Once we receive your payment, the premium product will be activated. This may take a few minutes. Thank you for choosing our premium service.',
           );
+          setIsLoadingPay(false);
         },
         () => {
           seterrors('An error occurred while processing your payment kindly check the phonenumber and try again');
+          setIsLoadingPay(false);
         },
       ),
     );
@@ -224,10 +228,10 @@ const CheckoutModal: React.FC = () => {
           <span className={styles.free_sample}>
             <Button
               onClick={() => {
-                onSubmit();
+                !isLoadingPay ? onSubmit() : alert('Kindly wait as we process your order before paying again');
               }}
             >
-              Buy
+              {!isLoadingPay ? 'Buy' : 'Loading'}
             </Button>
           </span>
         </form>

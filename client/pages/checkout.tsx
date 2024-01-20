@@ -22,6 +22,7 @@ const CheckoutPage: NextPage = () => {
   const [pageNumber, setPageNumber] = useState<number>();
   const [errors, seterrors] = useState('');
   const [isSuccess, setIsSuccess] = useState('');
+  const [isLoadingPay, setIsLoadingPay] = useState(false);
   const [pdfUrl, setPdfUrl] = useState('');
 
   const { mutateAsync, isLoading } = useMutation<string, ServerError, PrintResumeAsPdfParams>(printResumeAsPdf);
@@ -114,6 +115,7 @@ const CheckoutPage: NextPage = () => {
     formData.slug = slug;
     formData.phonenumber = cleanNumber;
     // if (isEditMode) {
+    setIsLoadingPay(true);
     dispatch(
       checkoutMain(
         formData,
@@ -123,9 +125,11 @@ const CheckoutPage: NextPage = () => {
           setIsSuccess(
             'We have initiated an STK push for the premium version of your resume to your mobile device. Please follow the instructions on your phone to complete the payment process. Once we receive your payment, the premium product will be activated. This may take a few minutes. Thank you for choosing our premium service.',
           );
+          setIsLoadingPay(false);
         },
         () => {
           seterrors('An error occurred while processing your payment kindly check the phonenumber and try again');
+          setIsLoadingPay(false);
         },
       ),
     );
@@ -202,7 +206,7 @@ const CheckoutPage: NextPage = () => {
                   </form>
                 )}
                 <strong>
-                  <small>Kes </small>50/=
+                  <small>Kes </small>150/=
                 </strong>
               </div>
               {/* )} */}
@@ -211,11 +215,11 @@ const CheckoutPage: NextPage = () => {
               <Button
                 className={styles.checkout_btn}
                 onClick={() => {
-                  onSubmit();
+                  !isLoadingPay ? onSubmit() : alert('Kindly as wait we process your order before paying again');
                 }}
-                text={'Buy'}
+                text={!isLoadingPay ? 'Buy' : 'Loading'}
               >
-                Buy
+                {!isLoadingPay ? 'Buy' : 'Loading'}
               </Button>
             </div>
           </div>

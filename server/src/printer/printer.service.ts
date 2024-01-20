@@ -228,7 +228,7 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
                <br/><br/>
                <a href="${checkoutUrl}"><h5>Remove This Watermark</h5></a>
                <br/>
-               <a href="${checkoutUrl}"><h5>@ Kes 50/=</h5></a>
+               <a href="${checkoutUrl}"><h5>@ Kes 150/=</h5></a>
                  <small style="font-size: 10px;">
                      Glab Tech Services
                  </small>
