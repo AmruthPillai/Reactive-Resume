@@ -30,7 +30,7 @@ export const ThemeSection = () => {
                 setValue("metadata.theme.primary", color);
               }}
               className={cn(
-                "flex h-6 w-6 cursor-pointer items-center justify-center rounded-full ring-primary ring-offset-1 ring-offset-background transition-shadow hover:ring-1",
+                "flex size-6 cursor-pointer items-center justify-center rounded-full ring-primary ring-offset-1 ring-offset-background transition-shadow hover:ring-1",
                 theme.primary === color && "ring-1",
               )}
             >
