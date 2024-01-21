@@ -22,6 +22,14 @@ export const List = ({
               <Skeleton className="mb-1 h-[90px] w-full" />
               <Skeleton className="mb-1 h-[90px] w-full" />
             </>
+          ) : suggestions?.length === 0 ? (
+            <motion.div
+              viewport={{ once: true }}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0, transition: { delay: 0.1 } }}
+            >
+              {t`No suggestions found; try exploring alternative job titles in your search`}
+            </motion.div>
           ) : (
             suggestions?.map((suggestion, index) => {
               return (

@@ -1,11 +1,13 @@
 import { X } from "@phosphor-icons/react";
 import { PopoverArrow } from "@radix-ui/react-popover";
+import { PromptKey } from "@reactive-resume/schema";
 import { PopoverClose } from "@reactive-resume/ui";
 import { ResumeSections } from "@reactive-resume/utils";
 import { Editor } from "@tiptap/react";
 import { useEffect, useState } from "react";
 
 import { palmSuggestions } from "@/client/services/palm/suggestions";
+import { useRecommendations } from "@/client/services/recommendations/recommendations";
 
 import { useResumeStore } from "../../stores/resume";
 import { List } from "./list";
@@ -23,11 +25,21 @@ export const Suggestions = ({
   const { resume } = useResumeStore.getState();
 
   const [jobTitle, setJobTitle] = useState<string>(() => resume.jobTitle || "");
-  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [suggestions, setSuggestions] = useState<{ text: string; isSelected: boolean }[]>([]);
   const [relatedJobTitles, setRelatedJobTitles] = useState<string[]>([]);
 
-  const getSuggestions = async () => {
+  const { recommendations, loading } = useRecommendations(jobTitle, sectionName as PromptKey);
+
+  useEffect(() => {
+    const list = recommendations?.recommendations?.map((suggestion) => ({
+      text: suggestion.phrase,
+      isSelected: content.includes(suggestion.phrase),
+    }));
+    setSuggestions(list || []);
+    setRelatedJobTitles(recommendations?.relatedJobTitles || []);
+  }, [recommendations]);
+
+  const _getSuggestions = async () => {
     const experience = resume.data.sections.experience.items.map((exp) => ({
       date: exp.date,
       jobTitle: exp.position,
@@ -50,7 +62,6 @@ export const Suggestions = ({
       name: skl.name,
       keywords: skl.keywords,
     }));
-    setIsLoading(true);
     const input = {
       jobTarget: jobTitle,
       // Experience details
@@ -75,7 +86,6 @@ export const Suggestions = ({
       ...([ResumeSections.SUMMARY as string].includes(sectionName) ? certifications : {}),
     };
     const result = await palmSuggestions(JSON.stringify(input), sectionName);
-    setIsLoading(false);
     const list = result.suggestions?.map((suggestion: string) => ({
       text: suggestion,
       isSelected: content.includes(suggestion),
@@ -84,9 +94,10 @@ export const Suggestions = ({
     setRelatedJobTitles(result.relatedJobTitles);
   };
 
-  useEffect(() => {
-    getSuggestions();
-  }, [jobTitle]);
+  // TO use the Palm API directly
+  // useEffect(() => {
+  //   _getSuggestions();
+  // }, [jobTitle]);
 
   useEffect(() => {
     if (suggestions.length > 0) {
@@ -129,7 +140,7 @@ export const Suggestions = ({
           <Search relatedJobTitles={relatedJobTitles} setJobTitle={setJobTitle} />
 
           <List
-            isLoading={isLoading}
+            isLoading={loading}
             suggestions={suggestions}
             handleSuggestionClick={handleSuggestionClick}
           />

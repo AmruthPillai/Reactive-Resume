@@ -1,10 +1,10 @@
 import { Injectable } from "@nestjs/common";
+import { PromptKey } from "@reactive-resume/schema";
 import { RedisService } from "@songkeys/nestjs-redis";
 import { PrismaService } from "nestjs-prisma";
 
 import { UtilsService } from "../utils/utils.service";
 import { JobTitleService } from "./job-title/job-title.service";
-import { PromptKey } from "./palm/palm.prompt";
 import { PalmService } from "./palm/palm.service";
 
 @Injectable()
@@ -39,7 +39,6 @@ export class RecommendationsService {
             palmResponse.suggestions,
             type,
           );
-          return jt;
         } else {
           // Recommendations: If Not exist, add Recommendations
           const count = await this.prisma.recommendationSnippet.count({
@@ -52,8 +51,18 @@ export class RecommendationsService {
             const palmResponse = await this.palmService.getRecommendation(title, type);
             await this.jobTitleService.createRecommendations(jt.id, palmResponse.suggestions, type);
           }
-          return this.jobTitleService.getJobTitle(title);
         }
+        return this.jobTitleService.getRecommendations(title);
+      },
+      1000 * 60 * 60 * 1, // 1 hour
+    );
+  }
+
+  async searchJobTitles(search: string) {
+    return this.utils.getCachedOrSet(
+      `autocomplete:job-title:${search}}`,
+      async () => {
+        return this.jobTitleService.searchJobTitle(search);
       },
       1000 * 60 * 60 * 1, // 1 hour
     );

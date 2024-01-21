@@ -1,25 +1,11 @@
 import { Injectable } from "@nestjs/common";
+import { JobTitleRecommendationsDto, JobTitleSearchDto } from "@reactive-resume/dto";
+import { PromptKey } from "@reactive-resume/schema";
 import { PrismaService } from "nestjs-prisma";
-
-import { PromptKey } from "../palm/palm.prompt";
 
 @Injectable()
 export class JobTitleService {
   constructor(private readonly prisma: PrismaService) {}
-  select_jobTitle = {
-    id: true,
-    title: true,
-    relatedJobTitles: true,
-    recommendations: {
-      select: {
-        id: true,
-        phrase: true,
-        highlight: true,
-        locale: true,
-      },
-    },
-    category: true,
-  };
 
   async createJobTitle(
     jobTitle: string,
@@ -40,7 +26,6 @@ export class JobTitleService {
           },
         },
       },
-      select: this.select_jobTitle,
     });
   }
 
@@ -52,12 +37,42 @@ export class JobTitleService {
     });
   }
 
-  async getJobTitle(jobTitle: string) {
-    return await this.prisma.jobTitle.findFirst({
+  async getRecommendations(jobTitle: string): Promise<JobTitleRecommendationsDto> {
+    const recommendations = await this.prisma.jobTitle.findFirst({
       where: {
-        title: jobTitle,
+        title: {
+          contains: jobTitle,
+          mode: "insensitive", // Case-insensitive search
+        },
       },
-      select: this.select_jobTitle,
+      select: {
+        id: true,
+        title: true,
+        relatedJobTitles: true,
+        recommendations: {
+          select: {
+            id: true,
+            phrase: true,
+          },
+        },
+      },
+    });
+    return recommendations as JobTitleRecommendationsDto;
+  }
+
+  async searchJobTitle(search: string): Promise<JobTitleSearchDto[]> {
+    return await this.prisma.jobTitle.findMany({
+      where: {
+        title: {
+          contains: search,
+          mode: "insensitive", // Case-insensitive search
+        },
+      },
+      take: 10,
+      select: {
+        id: true,
+        title: true,
+      },
     });
   }
 }

@@ -40,4 +40,10 @@ export class RecommendationsController {
     );
     return recommendation;
   }
+
+  @Get("suggest/job-titles")
+  async JobTitles(@Param("jobTitle") jobTitle: string) {
+    const recommendation = await this.recommendationService.searchJobTitles(jobTitle);
+    return recommendation;
+  }
 }

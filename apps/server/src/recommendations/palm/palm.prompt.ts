@@ -1,7 +1,4 @@
-export type PromptKey = "summary" | "education" | "experience";
-type PromptType = {
-  [key in PromptKey]: string;
-};
+import { PromptType } from "@reactive-resume/schema";
 
 export const PROMPT: PromptType = {
   summary: `You are an AI writing assistant specialized in writing copy for resumes.
