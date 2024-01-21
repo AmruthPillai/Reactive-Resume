@@ -440,7 +440,7 @@ export const RichInput = forwardRef<Editor, RichInputProps>(
         Image,
         Underline,
         Highlight,
-        Link.configure({ openOnClick: false }),
+        Link.extend({ inclusive: false }).configure({ openOnClick: false }),
         TextAlign.configure({ types: ["heading", "paragraph"] }),
       ],
       editorProps: {
