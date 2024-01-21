@@ -10,16 +10,7 @@ export const SocialAuth = () => {
   if (!providers || providers.length === 0) return null;
 
   return (
-    <div className="grid grid-cols-2 gap-4">
-      {providers.includes("github") && (
-        <Button asChild size="lg" className="w-full !bg-[#222] !text-white hover:!bg-[#222]/80">
-          <a href="/api/auth/github">
-            <GithubLogo className="mr-3 h-4 w-4" />
-            {t`GitHub`}
-          </a>
-        </Button>
-      )}
-
+    <div className="grid grid-cols-1 gap-4">
       {providers.includes("google") && (
         <Button
           asChild
@@ -27,8 +18,17 @@ export const SocialAuth = () => {
           className="w-full !bg-[#4285F4] !text-white hover:!bg-[#4285F4]/80"
         >
           <a href="/api/auth/google">
-            <GoogleLogo className="mr-3 h-4 w-4" />
+            <GoogleLogo className="mr-3 size-4" />
             {t`Google`}
+          </a>
+        </Button>
+      )}
+
+      {providers.includes("github") && (
+        <Button asChild size="lg" className="w-full !bg-[#222] !text-white hover:!bg-[#222]/80">
+          <a href="/api/auth/github">
+            <GithubLogo className="mr-3 size-4" />
+            {t`GitHub`}
           </a>
         </Button>
       )}
@@ -40,7 +40,7 @@ export const SocialAuth = () => {
           className="w-full !bg-[#4285F4] !text-white hover:!bg-[#4285F4]/80"
         >
           <a href="/api/auth/linkedin">
-            <LinkedinLogo className="mr-3 h-4 w-4" />
+            <LinkedinLogo className="mr-3 size-4" />
             {t`LinkedIn`}
           </a>
         </Button>
