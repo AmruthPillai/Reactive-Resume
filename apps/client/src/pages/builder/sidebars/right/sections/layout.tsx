@@ -242,7 +242,7 @@ export const LayoutSection = () => {
                       <Button
                         size="icon"
                         variant="ghost"
-                        className="h-8 w-8"
+                        className="size-8"
                         onClick={() => onRemovePage(pageIndex)}
                       >
                         <TrashSimple size={12} className="text-error" />

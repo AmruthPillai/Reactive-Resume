@@ -36,11 +36,11 @@ export const ResumesPage = () => {
           </motion.h1>
 
           <TabsList>
-            <TabsTrigger value="grid" className="h-8 w-8 p-0 sm:h-8 sm:w-auto sm:px-4">
+            <TabsTrigger value="grid" className="size-8 p-0 sm:h-8 sm:w-auto sm:px-4">
               <SquaresFour />
               <span className="ml-2 hidden sm:block">{t`Grid`}</span>
             </TabsTrigger>
-            <TabsTrigger value="list" className="h-8 w-8 p-0 sm:h-8 sm:w-auto sm:px-4">
+            <TabsTrigger value="list" className="size-8 p-0 sm:h-8 sm:w-auto sm:px-4">
               <List />
               <span className="ml-2 hidden sm:block">{t`List`}</span>
             </TabsTrigger>

@@ -100,7 +100,7 @@ const Rating = ({ level }: RatingProps) => (
       <div
         key={index}
         className={cn(
-          "h-2 w-2 rounded-full border border-primary group-[.sidebar]:border-background",
+          "size-2 rounded-full border border-primary group-[.sidebar]:border-background",
           level > index && "bg-primary group-[.sidebar]:bg-background",
         )}
       />

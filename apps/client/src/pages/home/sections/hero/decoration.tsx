@@ -2,7 +2,7 @@ export const Decoration = {
   Grid: () => (
     <svg
       aria-hidden="true"
-      className="absolute inset-0 -z-10 h-full w-full stroke-foreground/10 opacity-60 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] dark:opacity-40"
+      className="absolute inset-0 -z-10 size-full stroke-foreground/10 opacity-60 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] dark:opacity-40"
     >
       <defs>
         <pattern
