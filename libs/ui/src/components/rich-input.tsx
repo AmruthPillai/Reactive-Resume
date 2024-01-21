@@ -444,7 +444,16 @@ export const RichInput = forwardRef<Editor, RichInputProps>(
         Image,
         Underline,
         Highlight,
-        Link.configure({ openOnClick: false }),
+        Link.extend({
+          addKeyboardShortcuts() {
+            return {
+              "Mod-k": () => {
+                setLinkGlobal(this.editor as Editor);
+                return true;
+              },
+            };
+          },
+        }).configure({ openOnClick: false }),
         TextAlign.configure({ types: ["heading", "paragraph"] }),
       ],
       editorProps: {
