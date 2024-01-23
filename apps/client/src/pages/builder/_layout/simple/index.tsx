@@ -73,9 +73,9 @@ export const SimpleBuilderLayout = () => {
         <div className="flex flex-1 overflow-auto">
           <PanelGroup direction="horizontal">
             <Panel
-              minSizePercentage={25}
-              maxSizePercentage={75}
-              defaultSizePercentage={50}
+              minSize={25}
+              maxSize={75}
+              defaultSize={50}
               className={cn("z-10 bg-background", !leftHandle.isDragging && "transition-[flex]")}
             >
               <div className="flex h-full">
