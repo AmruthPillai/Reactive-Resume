@@ -23,8 +23,9 @@ import { Copyright } from "@/client/components/copyright";
 import { BuilderHeader } from "@/client/pages/builder/_layout/simple/_components/header";
 import { BuilderToolbar } from "@/client/pages/builder/_layout/simple/_components/toolbar";
 import { useBuilderStore } from "@/client/stores/builder";
-import { SectionBar } from "./_components/left/section-bar";
+
 import { SectionArea } from "./_components/left/section-area";
+import { SectionBar } from "./_components/left/section-bar";
 
 const OutletSlot = () => (
   <>

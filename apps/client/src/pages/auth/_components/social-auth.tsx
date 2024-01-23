@@ -40,7 +40,7 @@ export const SocialAuth = () => {
           className="w-full !bg-[#4285F4] !text-white hover:!bg-[#4285F4]/80"
         >
           <a href="/api/auth/linkedin">
-            <LinkedinLogo className="mr-3 h-4 w-4" />
+            <LinkedinLogo className="mr-3 size-4" />
             {t`LinkedIn`}
           </a>
         </Button>

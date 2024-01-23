@@ -25,7 +25,7 @@ export const LeftSidebar = () => {
   return (
     <div className="flex bg-secondary-accent/30">
       <div className="hidden basis-12 flex-col items-center justify-between bg-secondary-accent/30 py-4 sm:flex">
-        <Button asChild size="icon" variant="ghost" className="h-8 w-8 rounded-full">
+        <Button asChild size="icon" variant="ghost" className="size-8 rounded-full">
           <Link to="/dashboard">
             <Icon size={14} />
           </Link>
