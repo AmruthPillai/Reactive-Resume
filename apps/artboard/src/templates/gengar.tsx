@@ -461,8 +461,6 @@ const mapSectionToComponent = (section: SectionKey) => {
   switch (section) {
     case ResumeSections.PROFILES:
       return <Profiles />;
-    case ResumeSections.SUMMARY:
-      return <Summary />;
     case ResumeSections.EXPERIENCE:
       return <Experience />;
     case ResumeSections.EDUCATION:

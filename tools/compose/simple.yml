@@ -87,7 +87,7 @@ services:
       STORAGE_ENDPOINT: minio
       STORAGE_PORT: 9000
       STORAGE_REGION: us-east-1 # Optional
-      STORAGE_BUCKET: default
+      STORAGE_BUCKET: mylivecv
       STORAGE_ACCESS_KEY: minioadmin
       STORAGE_SECRET_KEY: minioadmin
       STORAGE_USE_SSL: false
