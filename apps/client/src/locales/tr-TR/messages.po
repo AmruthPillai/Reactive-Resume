@@ -8,7 +8,7 @@ msgstr ""
 "Language: tr\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-01-05 00:08\n"
+"PO-Revision-Date: 2024-01-23 00:08\n"
 "Last-Translator: \n"
 "Language-Team: Turkish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -131,7 +131,7 @@ msgstr "Zaten bir hesabınız mı var?"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:144
 msgid "An error occurred while validating the file."
-msgstr ""
+msgstr "Dosya doğrulanırken bir hata oluştu."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:135
 msgid "and many more..."
@@ -139,7 +139,7 @@ msgstr "ve daha fazlası..."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:57
 msgid "Anyone with the link can view and download the resume."
-msgstr ""
+msgstr "Bağlantıya sahip olan herkes özgeçmişi görüntüleyebilir ve indirebilir."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:54
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:30
@@ -245,11 +245,11 @@ msgstr "Reddet"
 #: apps/client/src/components/ai-actions.tsx:103
 #: apps/client/src/components/ai-actions.tsx:106
 msgid "Casual"
-msgstr ""
+msgstr "Sıradan"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:98
 msgid "Center Artboard"
-msgstr ""
+msgstr "Merkez Çalışma Panosu"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:121
@@ -258,15 +258,15 @@ msgstr "Şifre Değiştir"
 
 #: apps/client/src/components/ai-actions.tsx:97
 msgid "Change Tone"
-msgstr ""
+msgstr "Tonu Değiştir"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
 msgid "Changed your mind about the name? Give it a new one."
-msgstr ""
+msgstr "İsim konusunda fikrinizi mi değiştirdiniz? Yeni bir isim verin."
 
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:69
 msgid "Check your email for the confirmation link to update your email address."
-msgstr ""
+msgstr "E-posta adresinizi güncellemek için e-postanıza gelen onay bağlantısını kontrol edin."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:149
 msgid "Circle"
@@ -282,11 +282,11 @@ msgstr "Kod"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:50
 msgid "Code must be exactly 6 digits long."
-msgstr ""
+msgstr "Kod tam olarak 6 hane uzunluğunda olmalıdır."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:108
 msgid "Columns"
-msgstr ""
+msgstr "Sütunlar"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:39
 msgid "Company"
@@ -295,7 +295,7 @@ msgstr "Şirket"
 #: apps/client/src/components/ai-actions.tsx:115
 #: apps/client/src/components/ai-actions.tsx:118
 msgid "Confident"
-msgstr ""
+msgstr "Kendinden Emin"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:98
 msgid "Confirm New Password"
@@ -365,7 +365,7 @@ msgstr "Özelleştirilebilir tasarım düzeni"
 
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:62
 msgid "Danger Zone"
-msgstr ""
+msgstr "Tehlikeli Bölge"
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:82
 msgid "Dark"
@@ -396,7 +396,7 @@ msgstr "Sil"
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:79
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:94
 msgid "Delete Account"
-msgstr ""
+msgstr "Hesabı Sil"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:67
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
@@ -408,11 +408,11 @@ msgstr "Açıklama"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:58
 msgid "Design single/multi page resumes"
-msgstr ""
+msgstr "Tek/çok sayfalı özgeçmiş tasarlayın"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
 msgid "Disable"
-msgstr ""
+msgstr "Devre dışı bırak"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:155
 msgid "Disable 2FA"
@@ -423,11 +423,11 @@ msgstr "2FA'yı devre dışı bırak"
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:128
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
 msgid "Discard"
-msgstr ""
+msgstr "Vazgeç"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:110
 msgid "Documentation"
-msgstr ""
+msgstr "Dökümantasyon"
 
 #: apps/client/src/pages/auth/login/page.tsx:62
 msgid "Don't have an account?"
@@ -447,7 +447,7 @@ msgstr "Reaktif Özgeçmiş'e Bağış Yapın"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:56
 msgid "Download a JSON snapshot of your resume. This file can be used to import your resume in the future, or can even be shared with others to collaborate."
-msgstr ""
+msgstr "Özgeçmişinizin bir JSON versiyonunu indirin. Bu dosya gelecekte özgeçmişinizi içe aktarmak için kullanılabilir veya işbirliği yapmak için başkalarıyla paylaşılabilir."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:74
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
@@ -484,7 +484,7 @@ msgstr "Düzenle"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:174
 msgid "Effects"
-msgstr ""
+msgstr "Efektler"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:82
 #: apps/client/src/pages/auth/login/page.tsx:84
@@ -508,11 +508,11 @@ msgstr "İki faktörlü kimlik doğrulamayı etkinleştirdiğinizde kaydettiğin
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
 msgid "Enter the 6-digit code from your authenticator app to verify that 2FA has been setup correctly."
-msgstr ""
+msgstr "2FA'nın doğru şekilde kurulduğunu doğrulamak için kimlik doğrulayıcı uygulamanızdan 6 basamaklı kodu girin."
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:60
 msgid "Enter the one-time password provided by your authenticator app below."
-msgstr ""
+msgstr "Kimlik doğrulayıcı uygulamanız tarafından sağlanan tek kullanımlık şifreyi aşağıya girin."
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:70
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
@@ -524,11 +524,11 @@ msgstr "Hatalar"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:78
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Reactive Resume has helped you. Your feedback and support are always welcome and much appreciated!"
-msgstr ""
+msgstr "Maddi olarak katkıda bulunacak durumda olmasanız bile, GitHub sayfamıza bir yıldız vererek, arkadaşlarınıza duyurarak veya Reactive Resume'un size nasıl yardımcı olduğunu bildirmek için hızlı bir mesaj bırakarak yine de bir fark yaratabilirsiniz. Geri bildiriminiz ve desteğiniz bizim için çok değerlidir!"
 
 #: apps/client/src/pages/home/sections/templates/index.tsx:12
 msgid "Explore the templates available in Reactive Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
-msgstr ""
+msgstr "Reactive Resume'da bulunan şablonları keşfedin ve bunlarla hazırlanmış özgeçmişleri görüntüleyin. Bu şablonlar, bir sonraki özgeçmişinizin oluşturulmasına yardımcı olacak örnekler olarak da kullanılabilir."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:79
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:40
@@ -545,7 +545,7 @@ msgstr "Dosya türü"
 
 #: apps/client/src/pages/home/sections/hero/index.tsx:40
 msgid "Finally,"
-msgstr ""
+msgstr "Nihayet,"
 
 #: apps/client/src/components/ai-actions.tsx:90
 msgid "Fix Spelling & Grammar"
@@ -561,7 +561,7 @@ msgstr "Yazı Tipi Büyüklüğü"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:109
 msgid "Font Subset"
-msgstr ""
+msgstr "Yazı Tipi Alt Kümesi"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:121
 msgid "Font Variants"
@@ -569,7 +569,7 @@ msgstr "Yazı Tipi Çeşitleri"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:30
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
-msgstr ""
+msgstr "Örneğin, bu özgeçmişi hangi şirketlere gönderdiğinize ilişkin bilgiler veya iş tanımlarının bağlantıları buraya not edilebilir."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:107
 msgid "Forget"
@@ -586,11 +586,11 @@ msgstr "Şifrenizi mi unuttunuz?"
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:32
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:40
 msgid "Format"
-msgstr ""
+msgstr "Format"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:49
 msgid "Found a bug, or have an idea for a new feature?"
-msgstr ""
+msgstr "Bir hata mı buldunuz ya da yeni bir özellik için bir fikriniz mi var?"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:46
 msgid "Free, forever"
@@ -599,7 +599,7 @@ msgstr "Ömür boyu ücretsiz"
 #: apps/client/src/components/ai-actions.tsx:121
 #: apps/client/src/components/ai-actions.tsx:124
 msgid "Friendly"
-msgstr ""
+msgstr "Dostça"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:31
 msgid "Full Name"
@@ -607,11 +607,11 @@ msgstr "Tam Ad"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:201
 msgid "Generate a random title for your resume"
-msgstr ""
+msgstr "Özgeçmişiniz için rastgele bir başlık oluşturun"
 
 #: apps/client/src/pages/home/sections/hero/call-to-action.tsx:33
 msgid "Get Started"
-msgstr ""
+msgstr "Başlayın"
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:18
 msgid "GitHub"
@@ -623,12 +623,12 @@ msgstr "GitHub Yıldızları"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:186
 msgid "Give your old resume a new name."
-msgstr ""
+msgstr "Eski özgeçmişinize yeni bir isim verin."
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:67
 #: apps/client/src/pages/home/sections/hero/call-to-action.tsx:18
 msgid "Go to Dashboard"
-msgstr ""
+msgstr "Gösterge Paneline Git"
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:31
 msgid "Google"
@@ -648,11 +648,11 @@ msgstr "Başlık"
 
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:106
 msgid "Here, you can update your account information such as your profile picture, name and username."
-msgstr ""
+msgstr "Burada profil resminiz, adınız ve kullanıcı adınız gibi hesap bilgilerinizi güncelleyebilirsiniz."
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:62
 msgid "Here, you can update your profile to customize and personalize your experience."
-msgstr ""
+msgstr "Burada, deneyiminizi özelleştirmek ve kişiselleştirmek için profilinizi güncelleyebilirsiniz."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:76
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:82
@@ -672,7 +672,7 @@ msgstr "Simgeleri Gizle"
 #: apps/client/src/pages/auth/register/page.tsx:174
 #: apps/client/src/pages/auth/reset-password/page.tsx:88
 msgid "Hold <0>Ctrl</0> to display your password temporarily."
-msgstr ""
+msgstr "Parolanızı geçici olarak görüntülemek için <0>Ctrl</0> tuşunu basılı tutun."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:100
 msgid "Horizontal"
@@ -684,7 +684,7 @@ msgstr "Özgeçmişinizi herkese açık olarak sunun"
 
 #: apps/client/src/pages/home/sections/testimonials/index.tsx:70
 msgid "I always love to hear from the users of Reactive Resume with feedback or support. Here are some of the messages I've received. If you have any feedback, feel free to drop me an email at <0>{email}</0>."
-msgstr ""
+msgstr "Reactive Resume kullanıcılarından geri bildirim veya destek almayı her zaman isterim. İşte aldığım mesajlardan bazıları. Herhangi bir geri bildiriminiz varsa bana <0>{email} adresinden e-posta göndermekten çekinmeyin.</0>."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:82
 msgid "Icon"
@@ -692,11 +692,11 @@ msgstr "Simge"
 
 #: apps/client/src/pages/home/sections/logo-cloud/index.tsx:47
 msgid "If this app has helped you with your job hunt, let me know by reaching out through <0>this contact form</0>."
-msgstr ""
+msgstr "Bu uygulama iş arayışınızda size yardımcı olduysa, <0>bu iletişim formu</0> aracılığıyla bana ulaşarak bildirin."
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:126
 msgid "If you disable two-factor authentication, you will no longer be required to enter a verification code when logging in."
-msgstr ""
+msgstr "İki faktörlü kimlik doğrulamayı devre dışı bırakırsanız, oturum açarken artık bir doğrulama kodu girmeniz gerekmeyecektir."
 
 #: apps/client/src/pages/home/sections/support/index.tsx:59
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
