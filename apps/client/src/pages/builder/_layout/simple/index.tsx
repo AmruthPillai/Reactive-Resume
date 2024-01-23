@@ -21,9 +21,10 @@ import { Outlet, useParams } from "react-router-dom";
 
 import { Copyright } from "@/client/components/copyright";
 import { BuilderHeader } from "@/client/pages/builder/_layout/simple/_components/header";
-import { Left } from "@/client/pages/builder/_layout/simple/_components/left";
 import { BuilderToolbar } from "@/client/pages/builder/_layout/simple/_components/toolbar";
 import { useBuilderStore } from "@/client/stores/builder";
+import { SectionBar } from "./_components/left/section-bar";
+import { SectionArea } from "./_components/left/section-area";
 
 const OutletSlot = () => (
   <>
@@ -79,7 +80,8 @@ export const SimpleBuilderLayout = () => {
               className={cn("z-10 bg-background", !leftHandle.isDragging && "transition-[flex]")}
             >
               <div className="flex h-full">
-                <Left />
+                <SectionBar />
+                <SectionArea />
               </div>
             </Panel>
             <PanelResizeHandle
@@ -110,7 +112,8 @@ export const SimpleBuilderLayout = () => {
       </header>
 
       <div className="flex flex-1 overflow-auto">
-        <Left />
+        <SectionBar />
+        <SectionArea />
         <Sheet open={sheet.right.open} onOpenChange={sheet.right.setOpen}>
           <SheetContent
             side="right"

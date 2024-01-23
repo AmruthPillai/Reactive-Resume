@@ -35,7 +35,7 @@ import { ThemeSection } from "@/client/pages/builder/_components/sections/theme"
 import { TypographySection } from "@/client/pages/builder/_components/sections/typography";
 import { useResumeStore } from "@/client/stores/resume";
 
-const CustomSection = () => {
+const CustomSections = () => {
   const customSections = useResumeStore((state) => state.resume.data.sections.custom);
   const addSection = useResumeStore((state) => state.addSection);
 
@@ -153,7 +153,7 @@ export const SectionMapping: { [key in ResumeSections | ResumeOptions]?: React.R
       description={(item) => item.description}
     />
   ),
-  [ResumeSections.CUSTOM]: <CustomSection />,
+  [ResumeSections.CUSTOM]: <CustomSections />,
   [ResumeOptions.TEMPLATE]: <TemplateSection />,
   [ResumeOptions.LAYOUT]: <LayoutSection />,
   [ResumeOptions.TYPOGRAPHY]: <TypographySection />,
