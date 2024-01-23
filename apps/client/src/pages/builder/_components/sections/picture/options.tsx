@@ -93,7 +93,7 @@ export const PictureOptions = () => {
           >
             <Tooltip content={t`Square`}>
               <ToggleGroupItem value="square">
-                <div className="h-3 w-3 border border-foreground" />
+                <div className="size-3 border border-foreground" />
               </ToggleGroupItem>
             </Tooltip>
 
@@ -136,19 +136,19 @@ export const PictureOptions = () => {
           >
             <Tooltip content={t`Square`}>
               <ToggleGroupItem value="square">
-                <div className="h-3 w-3 border border-foreground" />
+                <div className="size-3 border border-foreground" />
               </ToggleGroupItem>
             </Tooltip>
 
             <Tooltip content={t`Rounded`}>
               <ToggleGroupItem value="rounded">
-                <div className="h-3 w-3 rounded-sm border border-foreground" />
+                <div className="size-3 rounded-sm border border-foreground" />
               </ToggleGroupItem>
             </Tooltip>
 
             <Tooltip content={t`Circle`}>
               <ToggleGroupItem value="circle">
-                <div className="h-3 w-3 rounded-full border border-foreground" />
+                <div className="size-3 rounded-full border border-foreground" />
               </ToggleGroupItem>
             </Tooltip>
           </ToggleGroup>

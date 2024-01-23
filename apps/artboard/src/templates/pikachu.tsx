@@ -50,7 +50,7 @@ const Header = () => {
                 <i className="ph ph-bold ph-map-pin" />
                 <div>{basics.location}</div>
               </div>
-              <div className="h-1 w-1 rounded-full bg-background last:hidden" />
+              <div className="size-1 rounded-full bg-background last:hidden" />
             </>
           )}
           {basics.phone && (
@@ -61,7 +61,7 @@ const Header = () => {
                   {basics.phone}
                 </a>
               </div>
-              <div className="h-1 w-1 rounded-full bg-background last:hidden" />
+              <div className="size-1 rounded-full bg-background last:hidden" />
             </>
           )}
           {basics.email && (
@@ -72,13 +72,13 @@ const Header = () => {
                   {basics.email}
                 </a>
               </div>
-              <div className="h-1 w-1 rounded-full bg-background last:hidden" />
+              <div className="size-1 rounded-full bg-background last:hidden" />
             </>
           )}
           {isUrl(basics.url.href) && (
             <>
               <Link url={basics.url} />
-              <div className="h-1 w-1 rounded-full bg-background last:hidden" />
+              <div className="size-1 rounded-full bg-background last:hidden" />
             </>
           )}
           {basics.customFields.map((item) => (
@@ -87,7 +87,7 @@ const Header = () => {
                 <i className={cn(`ph ph-bold ph-${item.icon}`)} />
                 <span>{[item.name, item.value].filter(Boolean).join(": ")}</span>
               </div>
-              <div className="h-1 w-1 rounded-full bg-background last:hidden" />
+              <div className="size-1 rounded-full bg-background last:hidden" />
             </Fragment>
           ))}
         </div>

@@ -100,7 +100,7 @@ const Rating = ({ level }: RatingProps) => (
     {Array.from({ length: 5 }).map((_, index) => (
       <div
         key={index}
-        className={cn("h-2 w-2 rounded-full border border-primary", level > index && "bg-primary")}
+        className={cn("size-2 rounded-full border border-primary", level > index && "bg-primary")}
       />
     ))}
   </div>

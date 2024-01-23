@@ -34,7 +34,7 @@ export const ThemeSection = () => {
                 theme.primary === color && "ring-1",
               )}
             >
-              <div className="h-5 w-5 rounded-full" style={{ backgroundColor: color }} />
+              <div className="size-5 rounded-full" style={{ backgroundColor: color }} />
             </div>
           ))}
         </div>
@@ -45,7 +45,7 @@ export const ThemeSection = () => {
             <Popover>
               <PopoverTrigger asChild>
                 <div
-                  className="absolute inset-y-0 left-3 my-2.5 h-4 w-4 cursor-pointer rounded-full ring-primary ring-offset-2 ring-offset-background transition-shadow hover:ring-1"
+                  className="absolute inset-y-0 left-3 my-2.5 size-4 cursor-pointer rounded-full ring-primary ring-offset-2 ring-offset-background transition-shadow hover:ring-1"
                   style={{ backgroundColor: theme.primary }}
                 />
               </PopoverTrigger>
@@ -75,7 +75,7 @@ export const ThemeSection = () => {
             <Popover>
               <PopoverTrigger asChild>
                 <div
-                  className="absolute inset-y-0 left-3 my-2.5 h-4 w-4 cursor-pointer rounded-full ring-primary ring-offset-2 ring-offset-background transition-shadow hover:ring-1"
+                  className="absolute inset-y-0 left-3 my-2.5 size-4 cursor-pointer rounded-full ring-primary ring-offset-2 ring-offset-background transition-shadow hover:ring-1"
                   style={{ backgroundColor: theme.background }}
                 />
               </PopoverTrigger>
@@ -105,7 +105,7 @@ export const ThemeSection = () => {
             <Popover>
               <PopoverTrigger asChild>
                 <div
-                  className="absolute inset-y-0 left-3 my-2.5 h-4 w-4 cursor-pointer rounded-full ring-primary ring-offset-2 ring-offset-background transition-shadow hover:ring-1"
+                  className="absolute inset-y-0 left-3 my-2.5 size-4 cursor-pointer rounded-full ring-primary ring-offset-2 ring-offset-background transition-shadow hover:ring-1"
                   style={{ backgroundColor: theme.text }}
                 />
               </PopoverTrigger>

@@ -164,7 +164,7 @@ export const ResumeCard = ({ resume }: Props) => {
                 animate={{ opacity: 1 }}
                 loading="lazy"
                 alt={resume.title}
-                className="h-full w-full object-cover"
+                className="size-full object-cover"
                 src={`${url}?cache=${new Date().getTime()}`}
               />
             )}

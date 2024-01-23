@@ -43,13 +43,13 @@ export const AdvanceBuilderLayout = () => {
 
   if (isDesktop) {
     return (
-      <div className="relative h-full w-full overflow-hidden">
+      <div className="relative size-full overflow-hidden">
         <PanelGroup direction="horizontal">
           <Panel
-            minSizePixels={48}
-            maxSizePercentage={45}
-            defaultSizePercentage={30}
-            onResize={({ sizePercentage }) => leftSetSize(sizePercentage)}
+            minSize={25}
+            maxSize={45}
+            defaultSize={30}
+            onResize={leftSetSize}
             className={cn("z-10 bg-background", !leftHandle.isDragging && "transition-[flex]")}
           >
             <LeftSidebar />
@@ -66,10 +66,10 @@ export const AdvanceBuilderLayout = () => {
             onDragging={rightHandle.setDragging}
           />
           <Panel
-            minSizePixels={48}
-            maxSizePercentage={45}
-            defaultSizePercentage={30}
-            onResize={({ sizePercentage }) => rightSetSize(sizePercentage)}
+            minSize={25}
+            maxSize={45}
+            defaultSize={30}
+            onResize={rightSetSize}
             className={cn("z-10 bg-background", !rightHandle.isDragging && "transition-[flex]")}
           >
             <RightSidebar />

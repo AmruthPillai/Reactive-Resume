@@ -31,7 +31,7 @@ export const ContextMenuSubTrigger = forwardRef<
     {...props}
   >
     {children}
-    <CaretRight className="ml-auto h-4 w-4" />
+    <CaretRight className="ml-auto size-4" />
   </ContextMenuPrimitive.SubTrigger>
 ));
 
@@ -103,7 +103,7 @@ export const ContextMenuCheckboxItem = forwardRef<
     checked={checked}
     {...props}
   >
-    <span className="absolute left-2 flex h-4 w-4 items-center justify-center">
+    <span className="absolute left-2 flex size-4 items-center justify-center">
       <ContextMenuPrimitive.ItemIndicator>
         <Check size={14} />
       </ContextMenuPrimitive.ItemIndicator>
@@ -126,7 +126,7 @@ export const ContextMenuRadioItem = forwardRef<
     )}
     {...props}
   >
-    <span className="absolute left-2 flex h-4 w-4 items-center justify-center">
+    <span className="absolute left-2 flex size-4 items-center justify-center">
       <ContextMenuPrimitive.ItemIndicator>
         <Check size={14} className="fill-current" />
       </ContextMenuPrimitive.ItemIndicator>

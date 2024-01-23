@@ -94,7 +94,7 @@ const Summary = () => {
       <div className="col-span-3">
         <div className="relative">
           <hr className="mt-3 border-primary pb-3" />
-          <div className="absolute bottom-3 right-0 h-3 w-3 bg-primary" />
+          <div className="absolute bottom-3 right-0 size-3 bg-primary" />
         </div>
 
         <div
@@ -165,7 +165,7 @@ const Section = <T,>({
         <div className="col-span-3">
           <div className="relative">
             <hr className="mt-3 border-primary" />
-            <div className="absolute bottom-0 right-0 h-3 w-3 bg-primary" />
+            <div className="absolute bottom-0 right-0 size-3 bg-primary" />
           </div>
         </div>
       </div>

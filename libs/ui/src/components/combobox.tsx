@@ -81,7 +81,7 @@ export const Combobox = forwardRef(
             </span>
             <CaretDown
               className={cn(
-                "ml-2 h-4 w-4 shrink-0 rotate-0 opacity-50 transition-transform",
+                "ml-2 size-4 shrink-0 rotate-0 opacity-50 transition-transform",
                 open && "rotate-180",
               )}
             />
@@ -119,7 +119,7 @@ export const Combobox = forwardRef(
                     >
                       <Check
                         className={cn(
-                          "mr-2 h-4 w-4 opacity-0",
+                          "mr-2 size-4 opacity-0",
                           !props.multiple && props.value === option.value && "opacity-100",
                           props.multiple && props.value?.includes(option.value) && "opacity-100",
                         )}
