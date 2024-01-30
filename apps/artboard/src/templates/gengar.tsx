@@ -227,7 +227,7 @@ const Experience = () => {
   return (
     <Section<Experience> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
-        <div className="flex items-center justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
+        <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
             <div className="font-bold">{item.company}</div>
             <div>{item.position}</div>
@@ -249,7 +249,7 @@ const Education = () => {
   return (
     <Section<Education> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
-        <div className="flex items-center justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
+        <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
             <div className="font-bold">{item.institution}</div>
             <div>{item.area}</div>
@@ -272,7 +272,7 @@ const Awards = () => {
   return (
     <Section<Award> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
-        <div className="flex items-center justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
+        <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
             <div className="font-bold">{item.title}</div>
             <div>{item.awarder}</div>
@@ -293,7 +293,7 @@ const Certifications = () => {
   return (
     <Section<Certification> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
-        <div className="flex items-center justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
+        <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
             <div className="font-bold">{item.name}</div>
             <div>{item.issuer}</div>
@@ -339,7 +339,7 @@ const Publications = () => {
   return (
     <Section<Publication> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
-        <div className="flex items-center justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
+        <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
             <div className="font-bold">{item.name}</div>
             <div>{item.publisher}</div>
@@ -360,7 +360,7 @@ const Volunteer = () => {
   return (
     <Section<Volunteer> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
-        <div className="flex items-center justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
+        <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
             <div className="font-bold">{item.organization}</div>
             <div>{item.position}</div>
@@ -397,7 +397,7 @@ const Projects = () => {
   return (
     <Section<Project> section={section} urlKey="url" summaryKey="summary" keywordsKey="keywords">
       {(item) => (
-        <div className="flex items-center justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
+        <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
             <div className="font-bold">{item.name}</div>
             <div>{item.description}</div>
@@ -438,7 +438,7 @@ const Custom = ({ id }: { id: string }) => {
       keywordsKey="keywords"
     >
       {(item) => (
-        <div className="flex items-center justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
+        <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
             <div className="font-bold">{item.name}</div>
             <div>{item.description}</div>
