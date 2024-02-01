@@ -12,11 +12,11 @@
   @apply antialiased;
 }
 
-#root.hide-icons .ph {
+[data-page].hide-icons .ph {
   @apply hidden;
 }
 
-#root.underline-links a {
+[data-page].underline-links a {
   @apply underline underline-offset-2;
 }
 
