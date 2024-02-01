@@ -8,7 +8,7 @@ msgstr ""
 "Language: ru\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-01-24 00:08\n"
+"PO-Revision-Date: 2024-02-01 09:12\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
@@ -150,7 +150,7 @@ msgstr "Любой человек, имеющий эту ссылку, може�
 msgid "API Key"
 msgstr "API-ключ"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:115
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:125
 msgid "Are you sure you want to delete this item?"
 msgstr "Вы уверены, что хотите удалить этот элемент?"
 
@@ -235,7 +235,7 @@ msgstr "Сделано при помощи"
 msgid "By the community, for the community."
 msgstr "Продукт сообщества для сообщества."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:122
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:132
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:155
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:135
@@ -318,7 +318,7 @@ msgstr "Скопировать ссылку на резюме"
 msgid "Copy to Clipboard"
 msgstr "Скопировать в буфер"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:158
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:168
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
 msgid "Create"
 msgstr "Создать"
@@ -328,7 +328,7 @@ msgstr "Создать"
 msgid "Create a new account"
 msgstr "Создать новый аккаунт"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:146
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:156
 msgid "Create a new item"
 msgstr "Создать новый элемент"
 
@@ -377,15 +377,15 @@ msgstr "Темная"
 msgid "Date"
 msgstr "Дата"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:81
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:85
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:110
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:72
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:72
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:80
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:67
 msgid "Date or Date Range"
 msgstr "Дата или Диапазон Дат"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:124
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:134
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:157
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:148
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:134
@@ -398,11 +398,11 @@ msgstr "Удалить"
 msgid "Delete Account"
 msgstr "Удалить Аккаунт"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:67
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:71
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:58
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:66
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:53
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:55
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:63
 msgid "Description"
 msgstr "Описание"
 
@@ -462,7 +462,7 @@ msgstr "Скачать PDF"
 msgid "Downloads"
 msgstr "Загрузки"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:160
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:170
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:132
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:102
@@ -470,7 +470,7 @@ msgstr "Загрузки"
 msgid "Duplicate"
 msgstr "Дублировать"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:148
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:158
 msgid "Duplicate an existing item"
 msgstr "Дублировать существующий элемент"
 
@@ -655,7 +655,7 @@ msgid "Here, you can update your profile to customize and personalize your exper
 msgstr "Здесь вы можете обновить свой профиль, чтобы настроить и персонализировать свой опыт."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:76
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:82
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:90
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:185
 msgid "Hidden"
 msgstr "Скрытый"
@@ -788,10 +788,10 @@ msgstr "ivan.ivanovich@example.com"
 msgid "JSON"
 msgstr "JSON"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:145
-#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:55
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:122
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:99
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:149
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:130
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:107
 msgid "Keywords"
 msgstr "Ключевые слова"
 
@@ -823,7 +823,7 @@ msgid "Letter"
 msgstr "Letter"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:64
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:69
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:77
 msgid "Level"
 msgstr "Уровень"
 
@@ -852,7 +852,7 @@ msgstr "LinkedIn, JSON Resume и т.д."
 msgid "List"
 msgstr "Список"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:95
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:99
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:83
@@ -900,7 +900,7 @@ msgstr "Март 2023"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:112
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:74
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:74
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:82
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:69
 msgid "March 2023 - Present"
 msgstr "Март 2023 - настоящее время"
@@ -914,13 +914,13 @@ msgid "MIT License"
 msgstr "Лицензия MIT"
 
 #: apps/client/src/pages/auth/register/page.tsx:106
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:53
-#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:40
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:57
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:48
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:44
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:52
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:41
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:43
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:152
 msgid "Name"
@@ -993,7 +993,7 @@ msgstr "Интеграция OpenAI"
 msgid "Options"
 msgstr "Настройки"
 
-#: apps/client/src/pages/auth/layout.tsx:46
+#: apps/client/src/pages/auth/layout.tsx:47
 msgctxt "The user can either login with email/password, or continue with GitHub or Google."
 msgid "or continue with"
 msgstr "или продолжить с"
@@ -1030,7 +1030,7 @@ msgstr "Личные заметки для каждого резюме"
 msgid "Phone"
 msgstr "Телефон"
 
-#: apps/client/src/pages/auth/layout.tsx:75
+#: apps/client/src/pages/auth/layout.tsx:76
 msgid "Photograph by Patrick Tomasso"
 msgstr "Фотография Патрика Томассо"
 
@@ -1194,7 +1194,7 @@ msgstr "Богатый функционал, а не цена."
 msgid "Rounded"
 msgstr "Скруглённая"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:159
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:169
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:125
@@ -1370,10 +1370,10 @@ msgstr "Сохранено"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:123
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:127
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:138
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:114
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:100
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:108
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:95
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:109
@@ -1435,7 +1435,7 @@ msgstr "Тема"
 msgid "There was an error connecting to the browser. Please make sure 'chrome' is running and reachable."
 msgstr "Произошла ошибка при подключении к браузеру. Пожалуйста, убедитесь, что 'chrome' запущен и доступен."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:117
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:127
 msgid "This action can be reverted by clicking on the undo button in the floating toolbar."
 msgstr "Это действие можно отменить, нажав на кнопку \"Отменить\" на плавающей панели инструментов."
 
@@ -1531,7 +1531,7 @@ msgstr "Разблокировка резюме позволит вам снов
 msgid "Unverified"
 msgstr "Не подтверждена"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:147
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:157
 msgid "Update an existing item"
 msgstr "Обновить существующий элемент"
 
@@ -1613,11 +1613,11 @@ msgstr "Мы подтверждаем ваш адрес эл. почты, тол
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:81
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:109
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:113
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:124
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:68
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:86
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:94
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:67
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:95
@@ -1629,10 +1629,10 @@ msgstr "Сайт"
 msgid "What's new in the latest version"
 msgstr "Что нового в последней версии"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:150
-#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:60
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:127
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:104
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:154
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:135
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:112
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr "Вы можете добавить несколько ключевых слов, разделив их запятой или нажав Enter."
 
