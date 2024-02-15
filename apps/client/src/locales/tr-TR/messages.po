@@ -8,7 +8,7 @@ msgstr ""
 "Language: tr\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-01-23 00:08\n"
+"PO-Revision-Date: 2024-02-01 09:12\n"
 "Last-Translator: \n"
 "Language-Team: Turkish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -150,7 +150,7 @@ msgstr "Bu bağlantıya sahip herkes özgeçmişi görüntüleyebilir ve indireb
 msgid "API Key"
 msgstr "API Anahtarı"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:115
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:125
 msgid "Are you sure you want to delete this item?"
 msgstr "Bu öğeyi silmek istediğinizden emin misiniz?"
 
@@ -235,7 +235,7 @@ msgstr "İle oluşturuldu"
 msgid "By the community, for the community."
 msgstr "Topluluk tarafından topluluk için oluşturuldu."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:122
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:132
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:155
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:135
@@ -318,7 +318,7 @@ msgstr "Bağlantıyı Özgeçmişe Kopyala"
 msgid "Copy to Clipboard"
 msgstr "Panoya Kopyala"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:158
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:168
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
 msgid "Create"
 msgstr "Oluştur"
@@ -328,7 +328,7 @@ msgstr "Oluştur"
 msgid "Create a new account"
 msgstr "Yeni bir hesap oluştur"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:146
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:156
 msgid "Create a new item"
 msgstr "Yeni bir öğe oluştur"
 
@@ -377,15 +377,15 @@ msgstr "Karanlık"
 msgid "Date"
 msgstr "Tarih"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:81
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:85
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:110
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:72
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:72
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:80
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:67
 msgid "Date or Date Range"
 msgstr "Tarih veya Tarih Aralığı"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:124
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:134
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:157
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:148
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:134
@@ -398,11 +398,11 @@ msgstr "Sil"
 msgid "Delete Account"
 msgstr "Hesabı Sil"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:67
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:71
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:58
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:66
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:53
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:55
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:63
 msgid "Description"
 msgstr "Açıklama"
 
@@ -462,7 +462,7 @@ msgstr "PDF indir"
 msgid "Downloads"
 msgstr "İndirmeler"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:160
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:170
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:132
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:102
@@ -470,7 +470,7 @@ msgstr "İndirmeler"
 msgid "Duplicate"
 msgstr "Çoğalt"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:148
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:158
 msgid "Duplicate an existing item"
 msgstr "Mevcut bir öğeyi çoğalt"
 
@@ -636,7 +636,7 @@ msgstr "Google"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:207
 msgid "Grayscale"
-msgstr ""
+msgstr "Gri tonlamalı"
 
 #: apps/client/src/pages/dashboard/resumes/page.tsx:41
 msgid "Grid"
@@ -655,7 +655,7 @@ msgid "Here, you can update your profile to customize and personalize your exper
 msgstr "Burada, deneyiminizi özelleştirmek ve kişiselleştirmek için profilinizi güncelleyebilirsiniz."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:76
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:82
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:90
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:185
 msgid "Hidden"
 msgstr "Gizli"
@@ -704,13 +704,13 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:309
 msgid "Import"
-msgstr ""
+msgstr "İçe Aktar"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:208
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:24
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:18
 msgid "Import an existing resume"
-msgstr ""
+msgstr "Mevcut bir özgeçmişi içe aktar"
 
 #: apps/client/src/components/ai-actions.tsx:85
 msgid "Improve Writing"
@@ -735,7 +735,7 @@ msgstr "Bilgi"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:39
 msgid "Institution"
-msgstr ""
+msgstr "Kurum"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:53
 msgid "Issuer"
@@ -788,17 +788,17 @@ msgstr "john.doe@example.com"
 msgid "JSON"
 msgstr "JSON"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:145
-#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:55
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:122
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:99
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:149
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:130
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:107
 msgid "Keywords"
 msgstr "Anahtar Kelimeler"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:49
 msgid "Label"
-msgstr ""
+msgstr "Etiket"
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:95
 msgid "Language"
@@ -823,7 +823,7 @@ msgid "Letter"
 msgstr "Harf"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:64
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:69
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:77
 msgid "Level"
 msgstr "Düzey"
 
@@ -852,7 +852,7 @@ msgstr "LinkedIn, JSON Özgeçmiş, vb."
 msgid "List"
 msgstr "Liste"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:95
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:99
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:83
@@ -885,7 +885,7 @@ msgstr "Cihazınızı mı kaybettiniz?"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:255
 msgid "Main"
-msgstr ""
+msgstr "Ana Sayfa"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:59
 msgid "Manage multiple resumes"
@@ -900,7 +900,7 @@ msgstr "Mart 2023"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:112
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:74
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:74
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:82
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:69
 msgid "March 2023 - Present"
 msgstr "Mart 2023 - Günümüz"
@@ -914,13 +914,13 @@ msgid "MIT License"
 msgstr "MIT Lisansı"
 
 #: apps/client/src/pages/auth/register/page.tsx:106
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:53
-#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:40
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:57
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:48
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:44
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:52
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:41
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:43
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:152
 msgid "Name"
@@ -933,7 +933,7 @@ msgstr "İsim"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:39
 msgid "Network"
-msgstr ""
+msgstr "Sosyal Ağlar"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:85
 msgid "New Password"
@@ -975,13 +975,13 @@ msgstr "Aç"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:47
 msgid "Open Source"
-msgstr ""
+msgstr "Açık Kaynak"
 
 #: apps/client/src/services/openai/change-tone.ts:30
 #: apps/client/src/services/openai/fix-grammar.ts:28
 #: apps/client/src/services/openai/improve-writing.ts:28
 msgid "OpenAI did not return any choices for your text."
-msgstr ""
+msgstr "OpenAI, metniniz için herhangi bir seçenek döndürmedi."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:52
 #: apps/client/src/pages/home/sections/features/index.tsx:52
@@ -991,61 +991,61 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:169
 msgid "Options"
-msgstr ""
+msgstr "Seçenekler"
 
-#: apps/client/src/pages/auth/layout.tsx:46
+#: apps/client/src/pages/auth/layout.tsx:47
 msgctxt "The user can either login with email/password, or continue with GitHub or Google."
 msgid "or continue with"
-msgstr ""
+msgstr "veya şununla devam et"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:39
 msgid "Organization"
-msgstr ""
+msgstr "Organizasyon"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:72
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:26
 msgid "Page"
-msgstr ""
+msgstr "Sayfa"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:237
 msgid "Page {0}"
-msgstr ""
+msgstr "Sayfa {0}"
 
 #: apps/client/src/pages/auth/login/page.tsx:99
 #: apps/client/src/pages/auth/register/page.tsx:169
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
 msgid "Password"
-msgstr ""
+msgstr "Şifre"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:72
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:63
 msgid "Personal notes for each resume"
-msgstr ""
+msgstr "Her özgeçmiş için kişisel notlar"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:73
 msgid "Phone"
-msgstr ""
+msgstr "Telefon"
 
-#: apps/client/src/pages/auth/layout.tsx:75
+#: apps/client/src/pages/auth/layout.tsx:76
 msgid "Photograph by Patrick Tomasso"
-msgstr ""
+msgstr "Fotoğraf: Patrick Tomasso"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:66
 msgid "Pick any font from Google Fonts"
-msgstr ""
+msgstr "Google Fonts'tan herhangi bir yazı tipini seçin"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/section.tsx:69
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:120
 msgid "Picture"
-msgstr ""
+msgstr "Resim"
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:59
 msgid "Please note that this step is completely optional."
-msgstr ""
+msgstr "Bu adımın tamamen isteğe bağlı olduğunu lütfen unutmayın."
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:225
 msgid "Please select a file type"
@@ -1057,49 +1057,49 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:106
 msgid "Portrait"
-msgstr ""
+msgstr "Portre"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:54
 msgctxt "Position held at a company, for example, Software Engineer"
 msgid "Position"
-msgstr ""
+msgstr "Konum"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:53
 msgid "Position"
-msgstr ""
+msgstr "Konum"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:97
 msgid "Powered by"
-msgstr ""
+msgstr "Destekleyen"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:98
 msgid "Powered by <0>Simple Icons</0>"
-msgstr ""
+msgstr "<0>Simple Icons</0> tarafından desteklenmektedir"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:43
 msgid "Primary Color"
-msgstr ""
+msgstr "Birincil Renk"
 
 #: apps/client/src/components/ai-actions.tsx:109
 #: apps/client/src/components/ai-actions.tsx:112
 msgid "Professional"
-msgstr ""
+msgstr "Profesyonel"
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:60
 msgid "Profile"
-msgstr ""
+msgstr "Profil"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:55
 msgid "Public"
-msgstr ""
+msgstr "Herkese Açık"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:53
 msgid "Publisher"
-msgstr ""
+msgstr "Yayınlayıcı"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:69
 msgid "Raise an issue"
-msgstr ""
+msgstr "Bir sorunu dile getirin"
 
 #: apps/client/src/components/copyright.tsx:38
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
@@ -1117,7 +1117,7 @@ msgstr ""
 #: apps/client/src/pages/public/page.tsx:71
 #: apps/client/src/pages/public/page.tsx:93
 msgid "Reactive Resume"
-msgstr ""
+msgstr "Reactive Resume"
 
 #: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
 msgid "Reactive Resume has helped people land jobs at these great companies:"
@@ -1142,7 +1142,7 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:129
 msgid "Remove"
-msgstr ""
+msgstr "Kaldır"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:241
 msgid "Remove Page"
@@ -1153,70 +1153,70 @@ msgstr ""
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:93
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:178
 msgid "Rename"
-msgstr ""
+msgstr "Yeniden adlandır"
 
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:198
 msgid "Resend email confirmation link"
-msgstr ""
+msgstr "E-posta onay bağlantısını yeniden gönder"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:124
 msgid "Reset"
-msgstr ""
+msgstr "Sıfırla"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:210
 msgid "Reset Layout"
-msgstr ""
+msgstr "Düzeni Sıfırla"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/reset-password/page.tsx:65
 msgid "Reset your password"
-msgstr ""
+msgstr "Şifrenizi sıfırlayın"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:92
 msgid "Reset Zoom"
-msgstr ""
+msgstr "Yakınlaştırmayı Sıfırla"
 
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:86
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/resumes/page.tsx:35
 msgid "Resumes"
-msgstr ""
+msgstr "Özgeçmişler"
 
 #: apps/client/src/pages/home/sections/statistics/index.tsx:14
 msgid "Resumes Generated"
-msgstr ""
+msgstr "Oluşturulan Özgeçmişler"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:106
 msgid "Rich in features, not in pricing."
-msgstr ""
+msgstr "Fiyat açısından değil, özellikler açısından zengin."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:143
 msgid "Rounded"
-msgstr ""
+msgstr "Yuvarlak"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:159
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:169
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:125
 msgid "Save Changes"
-msgstr ""
+msgstr "Değişiklikleri Kaydet"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:166
 msgid "Scan the QR code below with your authenticator app to setup 2FA on your account."
-msgstr ""
+msgstr "Hesabınızda 2FA'yı kurmak için aşağıdaki QR kodunu kimlik doğrulayıcı uygulamanızla tarayın."
 
 #. Score or honors for the degree, for example, CGPA or magna cum laude
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:92
 msgid "Score"
-msgstr ""
+msgstr "Skor"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:98
 msgid "Search for a font family"
-msgstr ""
+msgstr "Bir yazı tipi ailesi arayın"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:113
 msgid "Search for a font subset"
-msgstr ""
+msgstr "Yazı tipi alt kümesini arayın"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:126
 msgid "Search for a font variant"
@@ -1224,7 +1224,7 @@ msgstr ""
 
 #: apps/client/src/components/locale-combobox.tsx:41
 msgid "Search for a language"
-msgstr ""
+msgstr "Dili arayın"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:56
 msgid "Secure with two-factor authentication"
@@ -1232,26 +1232,26 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:68
 msgid "Security"
-msgstr ""
+msgstr "Güvenlik"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:50
 msgid "Self-host with Docker"
-msgstr ""
+msgstr "Docker ile kendi kendine barındırma"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:98
 msgid "Send Email"
-msgstr ""
+msgstr "E-posta gönder"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:79
 msgid "Send me a message"
-msgstr ""
+msgstr "Mesaj gönder"
 
 #: apps/client/src/components/user-options.tsx:28
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
 #: apps/client/src/pages/dashboard/settings/page.tsx:26
 msgid "Settings"
-msgstr ""
+msgstr "Ayarlar"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:157
 msgid "Setup two-factor authentication on your account"
@@ -1260,11 +1260,11 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:73
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
 msgid "Sharing"
-msgstr ""
+msgstr "Paylaşım"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:78
 msgid "Show"
-msgstr ""
+msgstr "Göster"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:78
 msgid "Show Break Line"
@@ -1282,32 +1282,32 @@ msgstr ""
 #: apps/client/src/pages/auth/login/page.tsx:116
 #: apps/client/src/pages/auth/verify-otp/page.tsx:92
 msgid "Sign in"
-msgstr ""
+msgstr "Giriş yap"
 
 #: apps/client/src/pages/auth/register/page.tsx:77
 msgid "Sign in now"
-msgstr ""
+msgstr "Şimdi giriş yap"
 
 #: apps/client/src/pages/auth/login/page.tsx:55
 #: apps/client/src/pages/auth/login/page.tsx:60
 msgid "Sign in to your account"
-msgstr ""
+msgstr "Hesabınızda oturum açın"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:55
 msgid "Sign in with Email"
-msgstr ""
+msgstr "E-posta ile giriş yapın"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:53
 msgid "Sign in with GitHub"
-msgstr ""
+msgstr "Github ile giriş yapın"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:54
 msgid "Sign in with Google"
-msgstr ""
+msgstr "Google ile giriş yapın"
 
 #: apps/client/src/pages/auth/register/page.tsx:185
 msgid "Sign up"
-msgstr ""
+msgstr "Kayıt ol"
 
 #: apps/client/src/pages/auth/register/page.tsx:85
 msgid "Signups are currently disabled by the administrator."
@@ -1315,11 +1315,11 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:72
 msgid "Size (in px)"
-msgstr ""
+msgstr "Boyut (px cinsinden)"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:227
 msgid "Slug"
-msgstr ""
+msgstr "Slug"
 
 #: apps/client/src/services/errors/translate-error.ts:39
 msgid "Something went wrong while grabbing a preview your resume. Please try again later or raise an issue on GitHub."
@@ -1336,7 +1336,7 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:94
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:137
 msgid "Square"
-msgstr ""
+msgstr "Kare"
 
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:29
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:24
@@ -1370,10 +1370,10 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:123
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:127
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:138
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:114
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:100
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:108
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:95
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:109
@@ -1411,15 +1411,15 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:103
 msgid "Text Color"
-msgstr ""
+msgstr "Metin Rengi"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:25
 msgid "That doesn't look like a valid OpenAI API key."
-msgstr ""
+msgstr "Bu geçerli bir OpenAI API anahtarına benzemiyor."
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
 msgid "The passwords you entered do not match."
-msgstr ""
+msgstr "Girdiğiniz şifreler eşleşmiyor."
 
 #: apps/client/src/services/errors/translate-error.ts:35
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
@@ -1429,13 +1429,13 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:20
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:73
 msgid "Theme"
-msgstr ""
+msgstr "Tema"
 
 #: apps/client/src/services/errors/translate-error.ts:29
 msgid "There was an error connecting to the browser. Please make sure 'chrome' is running and reachable."
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:117
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:127
 msgid "This action can be reverted by clicking on the undo button in the floating toolbar."
 msgstr ""
 
@@ -1531,7 +1531,7 @@ msgstr ""
 msgid "Unverified"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:147
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:157
 msgid "Update an existing item"
 msgstr ""
 
@@ -1549,12 +1549,12 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:56
 msgid "URL must start with https://"
-msgstr ""
+msgstr "URL https:// ile başlamalıdır"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/backup-otp/page.tsx:57
 msgid "Use your backup code"
-msgstr ""
+msgstr "Yedek kodunuzu kullanın"
 
 #: apps/client/src/services/errors/translate-error.ts:11
 msgid "User does not have an associated 'secrets' record. Please report this issue on GitHub."
@@ -1564,23 +1564,23 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:54
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
 msgid "Username"
-msgstr ""
+msgstr "Kullanıcı adı"
 
 #: apps/client/src/pages/home/sections/statistics/index.tsx:13
 msgid "Users Signed Up"
-msgstr ""
+msgstr "Kaydolan Kullanıcılar"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:296
 msgid "Validate"
-msgstr ""
+msgstr "Doğrula"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:314
 msgid "Validated"
-msgstr ""
+msgstr "Doğrulanmış"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:50
 msgid "Value"
-msgstr ""
+msgstr "Değer"
 
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:191
 msgid "Verified"
@@ -1593,7 +1593,7 @@ msgstr ""
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-email/page.tsx:48
 msgid "Verify your email address"
-msgstr ""
+msgstr "E-posta adresinizi doğrulayın"
 
 #: apps/client/src/pages/home/sections/hero/index.tsx:26
 msgid "Version 4"
@@ -1601,11 +1601,11 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:51
 msgid "Views"
-msgstr ""
+msgstr "Görüntülenmeler"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:86
 msgid "Visible"
-msgstr ""
+msgstr "Görünür"
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:61
 msgid "We verify your email address only to ensure that we can send you a password reset link in case you forget your password."
@@ -1613,26 +1613,26 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:81
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:109
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:113
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:124
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:68
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:86
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:94
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:67
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:95
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:63
 msgid "Website"
-msgstr ""
+msgstr "İnternet sitesi"
 
 #: apps/client/src/pages/home/sections/hero/index.tsx:34
 msgid "What's new in the latest version"
-msgstr ""
+msgstr "En son sürümdeki yenilikler"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:150
-#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:60
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:127
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:104
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:154
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:135
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:112
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr ""
 
