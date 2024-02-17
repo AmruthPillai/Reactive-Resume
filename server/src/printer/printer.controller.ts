@@ -1,4 +1,4 @@
-import { Controller, GatewayTimeoutException, Get, Param, Query, Res } from '@nestjs/common';
+import { Controller, GatewayTimeoutException, Get, Logger, Param, Query, Res } from '@nestjs/common';
 import { Response } from 'express'; // Import the Response object
 
 import { PrinterService } from './printer.service';
@@ -22,6 +22,7 @@ export class PrinterController {
       }
       return await this.printerService.printAsPdf(username, slug, lastUpdated, prev, whatsappNumber);
     } catch (error) {
+      Logger.log(error);
       throw new GatewayTimeoutException();
     }
   }

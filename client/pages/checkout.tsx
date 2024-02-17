@@ -206,7 +206,7 @@ const CheckoutPage: NextPage = () => {
                   </form>
                 )}
                 <strong>
-                  <small>Kes </small>150/=
+                  <small>Kes </small>50/=
                 </strong>
               </div>
               {/* )} */}
