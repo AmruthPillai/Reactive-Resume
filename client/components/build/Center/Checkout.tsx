@@ -181,7 +181,8 @@ const CheckoutModal: React.FC = () => {
           <strong>Dear {name && name.split(' ').length > 0 ? name.split(' ')[0] : name}</strong>,<strong></strong>
           <br />
           <small>
-            - You will instantly receive this CV pdf document on your Whatsapp with no watermark upon payment.
+            - You will instantly receive this CV pdf together with an ATS format of the document on your Whatsapp and
+            email with no watermark upon payment.
           </small>
           <br />
           <small>
