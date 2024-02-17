@@ -159,12 +159,13 @@ const CheckoutPage: NextPage = () => {
               <ul>
                 <br />
                 <li>
-                  - You will instantly receive this CV pdf document on your Whatsapp with no watermark upon payment.
+                  - You will instantly receive this CV pdf together with an ATS format of the document on your Whatsapp
+                  and email with no watermark upon payment.
                 </li>
                 <br />
                 <li>
-                  - You will also get unlimited access to this resume and download it at any time via download/edit link
-                  option on whatsapp.
+                  - Get unlimited access to this resume and download it at any time via download/edit link option on
+                  whatsapp.
                 </li>
                 <br />
 
