@@ -206,7 +206,7 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
                 newDiv.innerHTML = `<div style='
                   background: #fffffff3;
                   color: #064c04cf;
-                  border-radius: 100%;
+                  border-radius: 5px;
                   display: flex;
                   align-items: center;
                   justify-content: center;
@@ -217,9 +217,9 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
                   pointer-events: all;
                   position: fixed;
                   width: 800px;
-                  height: 100vh;
+                  height: 60vh;
                   left: 50%;  /* Horizontally center the div */
-                  top: 30%;   /* Vertically center the div */
+                  top: 50%;   /* Vertically center the div */
                   transform: translate(-50%, -50%); /* Move the div back by half its width and height */
               '>
                <h3>CVPAP Free Sample</h3><hr/>
