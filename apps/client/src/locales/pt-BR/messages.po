@@ -8,7 +8,7 @@ msgstr ""
 "Language: pt\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-02-09 00:07\n"
+"PO-Revision-Date: 2024-02-16 00:07\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese, Brazilian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -700,7 +700,7 @@ msgstr "Se você desativar a autenticação em dois passos, não será mais nece
 
 #: apps/client/src/pages/home/sections/support/index.tsx:59
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
-msgstr ""
+msgstr "Se você é multilíngue, gostaríamos de contar com sua ajuda para levar o aplicativo a mais idiomas e comunidades. Não se preocupe se não encontrar seu idioma na lista - basta me avisar no GitHub, e eu me certificarei de incluí-lo. Pronto para começar? Entre na tradução no Crowdin clicando no link abaixo."
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:309
 msgid "Import"
@@ -718,7 +718,7 @@ msgstr "Melhorar a escrita"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:186
 msgid "In case you are unable to scan this QR Code, you can also copy-paste this link into your authenticator app."
-msgstr ""
+msgstr "Caso você não consiga escanear este código QR, você também pode copiar e colar este link no seu aplicativo de autenticação."
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:70
 msgid "In this section, you can change your password and enable/disable two-factor authentication."
@@ -755,19 +755,19 @@ msgstr "Parece que o token de redefinição fornecido é inválido. Tente reinic
 
 #: apps/client/src/services/errors/translate-error.ts:33
 msgid "It looks like the resume you're looking for doesn't exist."
-msgstr ""
+msgstr "Parece que o currículo que está procurando não existe."
 
 #: apps/client/src/services/errors/translate-error.ts:25
 msgid "It looks like the two-factor authentication code you provided is invalid. Please try again."
-msgstr ""
+msgstr "Parece que o código de autenticação de dois fatores fornecido é inválido. Por favor, tente novamente."
 
 #: apps/client/src/services/errors/translate-error.ts:17
 msgid "It looks like the verification token you provided is invalid. Please try restarting the verification process again."
-msgstr ""
+msgstr "Parece que o token de redefinição fornecido é inválido. Tente reiniciar o processo de redefinição de senha novamente."
 
 #: apps/client/src/services/errors/translate-error.ts:19
 msgid "It looks like your email address has already been verified."
-msgstr ""
+msgstr "Parece que seu endereço de e-mail já foi verificado."
 
 #: apps/client/src/pages/auth/register/page.tsx:109
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
@@ -807,7 +807,7 @@ msgstr "Idioma"
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:116
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:149
 msgid "Last updated {lastUpdated}"
-msgstr ""
+msgstr "Última atualização {lastUpdated}"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:65
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:207
@@ -829,7 +829,7 @@ msgstr "Nível"
 
 #: apps/client/src/components/copyright.tsx:16
 msgid "Licensed under <0>MIT</0>"
-msgstr ""
+msgstr "Licenciado sob <0>MIT</0>"
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:81
 msgid "Light"
@@ -846,7 +846,7 @@ msgstr "Altura da linha"
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:29
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:23
 msgid "LinkedIn, JSON Resume, etc."
-msgstr ""
+msgstr "LinkedIn, currículo JSON, etc."
 
 #: apps/client/src/pages/dashboard/resumes/page.tsx:45
 msgid "List"
@@ -872,7 +872,7 @@ msgstr "Bloqueie um currículo para evitar edição"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:43
 msgid "Locking a resume will prevent any further changes to it. This is useful when you have already shared your resume with someone and you don't want to accidentally make any changes to it."
-msgstr ""
+msgstr "Bloquear um currículo impedirá quaisquer alterações adicionais nele. Isso é útil quando você já compartilhou seu currículo com alguém e não deseja fazer alterações nele acidentalmente."
 
 #: apps/client/src/components/user-options.tsx:34
 #: apps/client/src/pages/home/sections/hero/call-to-action.tsx:23
@@ -1024,7 +1024,7 @@ msgstr "PDF"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:63
 msgid "Personal notes for each resume"
-msgstr ""
+msgstr "Notas pessoais para cada currículo"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:73
 msgid "Phone"
@@ -1032,11 +1032,11 @@ msgstr "Telefone"
 
 #: apps/client/src/pages/auth/layout.tsx:76
 msgid "Photograph by Patrick Tomasso"
-msgstr ""
+msgstr "Fotografia de Patrick Tomasso"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:66
 msgid "Pick any font from Google Fonts"
-msgstr ""
+msgstr "Escolha qualquer fonte do Google Fonts"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/section.tsx:69
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:120
@@ -1045,7 +1045,7 @@ msgstr "Foto"
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:59
 msgid "Please note that this step is completely optional."
-msgstr ""
+msgstr "Por favor, note que esta etapa é completamente opcional."
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:225
 msgid "Please select a file type"
@@ -1053,7 +1053,7 @@ msgstr "Por favor, selecione um tipo de arquivo"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:226
 msgid "Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app."
-msgstr ""
+msgstr "Guarde seus códigos de backup em um local seguro. Você pode usar um desses códigos de uso único para fazer login caso perca o acesso ao seu aplicativo autenticador."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:106
 msgid "Portrait"
@@ -1083,7 +1083,7 @@ msgstr "Cor Primária"
 #: apps/client/src/components/ai-actions.tsx:109
 #: apps/client/src/components/ai-actions.tsx:112
 msgid "Professional"
-msgstr ""
+msgstr "Profissional"
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:60
 msgid "Profile"
@@ -1095,7 +1095,7 @@ msgstr "Público"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:53
 msgid "Publisher"
-msgstr ""
+msgstr "Editor"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:69
 msgid "Raise an issue"
@@ -1121,15 +1121,15 @@ msgstr "Reactive Resume"
 
 #: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
 msgid "Reactive Resume has helped people land jobs at these great companies:"
-msgstr ""
+msgstr "O Reactive Resume ajudou pessoas a conseguir empregos nestas grandes empresas:"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:12
 msgid "Reactive Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Reactive Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
-msgstr ""
+msgstr "Reactive Resume é um projeto gratuito e de código aberto criado principalmente por mim, e seu apoio seria muito apreciado. Se você estiver disposto a contribuir, e somente se puder, considere fazer uma doação por meio de qualquer uma das plataformas listadas. Além disso, as doações para o Reactive Resume através do Open Collective são isentas de impostos, já que o projeto é hospedado fiscalmente pela Open Collective Europe."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:108
 msgid "Reactive Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
-msgstr ""
+msgstr "O Reactive Resume é um projeto de paixão de mais de 3 anos de trabalho árduo e, com isso, vem uma série de ideias e recursos reiterados que foram desenvolvidos com (quase) perfeição."
 
 #: apps/client/src/pages/home/sections/contributors/index.tsx:22
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."

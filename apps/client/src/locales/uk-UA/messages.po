@@ -8,7 +8,7 @@ msgstr ""
 "Language: uk\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-02-01 09:12\n"
+"PO-Revision-Date: 2024-02-18 00:08\n"
 "Last-Translator: \n"
 "Language-Team: Ukrainian\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
@@ -20,11 +20,11 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:169
 msgid "You have enabled two-factor authentication successfully."
-msgstr ""
+msgstr "Ви успішно ввімкнули двофакторну автентифікацію."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:57
 msgid "{templatesCount} resume templates to choose from"
-msgstr ""
+msgstr "{templatesCount} шаблонів резюме на вибір"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:114
 msgid "{value, plural, one {Column} other {Columns}}"
@@ -87,7 +87,7 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:43
 msgid "A4"
-msgstr ""
+msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:270
@@ -96,7 +96,7 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:104
 msgid "Account"
-msgstr ""
+msgstr "Обліковий запис"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:124
 msgid "Add a custom field"
@@ -106,11 +106,11 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:147
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
-msgstr ""
+msgstr "Додайте новий елемент"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:68
 msgid "Add a new item"
-msgstr ""
+msgstr "Додайте новий елемент"
 
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:79
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:196
@@ -119,11 +119,11 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:269
 msgid "Add New Page"
-msgstr ""
+msgstr "Додати нову сторінку"
 
 #: apps/client/src/components/ai-actions.tsx:79
 msgid "AI"
-msgstr ""
+msgstr "ШІ"
 
 #: apps/client/src/pages/auth/register/page.tsx:74
 msgid "Already have an account?"
@@ -135,7 +135,7 @@ msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:135
 msgid "and many more..."
-msgstr ""
+msgstr "та багато іншого..."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:57
 msgid "Anyone with the link can view and download the resume."
@@ -148,7 +148,7 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:83
 msgid "API Key"
-msgstr ""
+msgstr "Ключ API"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:125
 msgid "Are you sure you want to delete this item?"
@@ -168,11 +168,11 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:39
 msgid "Are you sure you want to unlock this resume?"
-msgstr ""
+msgstr "Ви впевнені, що хочете розблокувати це резюме?"
 
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:94
 msgid "Are you sure?"
-msgstr ""
+msgstr "Ви впевнені?"
 
 #. For example, Computer Science or Business Administration
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:73
@@ -195,15 +195,15 @@ msgstr ""
 #: apps/client/src/pages/auth/forgot-password/page.tsx:94
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:236
 msgid "Back"
-msgstr ""
+msgstr "Назад"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:73
 msgid "Background Color"
-msgstr ""
+msgstr "Колір фону"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:75
 msgid "Backup Code"
-msgstr ""
+msgstr "Резервний код"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:80
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
@@ -233,14 +233,14 @@ msgstr ""
 #: apps/client/src/components/copyright.tsx:27
 #: apps/client/src/pages/home/sections/contributors/index.tsx:20
 msgid "By the community, for the community."
-msgstr ""
+msgstr "Спільнотою, для спільноти."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:132
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:155
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:135
 msgid "Cancel"
-msgstr ""
+msgstr "Скасувати"
 
 #: apps/client/src/components/ai-actions.tsx:103
 #: apps/client/src/components/ai-actions.tsx:106
@@ -254,7 +254,7 @@ msgstr ""
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:121
 msgid "Change Password"
-msgstr ""
+msgstr "Змінити пароль"
 
 #: apps/client/src/components/ai-actions.tsx:97
 msgid "Change Tone"
@@ -274,23 +274,23 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:242
 msgid "Close"
-msgstr ""
+msgstr "Закрити"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:199
 msgid "Code"
-msgstr ""
+msgstr "Код"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:50
 msgid "Code must be exactly 6 digits long."
-msgstr ""
+msgstr "Код має містити рівно 6 цифр."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:108
 msgid "Columns"
-msgstr ""
+msgstr "Стовпці"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:39
 msgid "Company"
-msgstr ""
+msgstr "Компанія"
 
 #: apps/client/src/components/ai-actions.tsx:115
 #: apps/client/src/components/ai-actions.tsx:118
@@ -299,61 +299,61 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:98
 msgid "Confirm New Password"
-msgstr ""
+msgstr "Підтвердити новий пароль"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:232
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:239
 msgid "Continue"
-msgstr ""
+msgstr "Продовжити"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:94
 msgid "Copy"
-msgstr ""
+msgstr "Скопіювати"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:132
 msgid "Copy Link to Resume"
-msgstr ""
+msgstr "Скопіювати посилання до резюме"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:78
 msgid "Copy to Clipboard"
-msgstr ""
+msgstr "Копіювати до буфера обміну"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:168
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
 msgid "Create"
-msgstr ""
+msgstr "Створити"
 
 #: apps/client/src/pages/auth/register/page.tsx:67
 #: apps/client/src/pages/auth/register/page.tsx:72
 msgid "Create a new account"
-msgstr ""
+msgstr "Створити новий обліковий запис"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:156
 msgid "Create a new item"
-msgstr ""
+msgstr "Створити новий елемент"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:177
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:24
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:19
 msgid "Create a new resume"
-msgstr ""
+msgstr "Створіть нове резюме"
 
 #: apps/client/src/pages/auth/login/page.tsx:65
 msgctxt "This is a link to create a new account"
 msgid "Create one now"
-msgstr ""
+msgstr "Створити зараз"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:258
 msgid "Create Sample Resume"
-msgstr ""
+msgstr "Створити зразок резюме"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:62
 msgid "Custom resume sections"
-msgstr ""
+msgstr "Користувацькі розділи резюме"
 
 #: apps/client/src/stores/resume.ts:45
 msgid "Custom Section"
-msgstr ""
+msgstr "Користувацький розділ"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:60
 msgid "Customisable colour palettes"
@@ -365,17 +365,17 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:62
 msgid "Danger Zone"
-msgstr ""
+msgstr "Небезпечна зона"
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:82
 msgid "Dark"
-msgstr ""
+msgstr "Темний"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:67
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:67
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:67
 msgid "Date"
-msgstr ""
+msgstr "Дата"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:85
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:110
@@ -391,12 +391,12 @@ msgstr ""
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:134
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:198
 msgid "Delete"
-msgstr ""
+msgstr "Видалити"
 
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:79
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:94
 msgid "Delete Account"
-msgstr ""
+msgstr "Видалити обліковий запис"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:71
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
@@ -404,7 +404,7 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:53
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:63
 msgid "Description"
-msgstr ""
+msgstr "Опис"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:58
 msgid "Design single/multi page resumes"
@@ -412,7 +412,7 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
 msgid "Disable"
-msgstr ""
+msgstr "Вимкнути"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:155
 msgid "Disable 2FA"
@@ -427,11 +427,11 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:110
 msgid "Documentation"
-msgstr ""
+msgstr "Документація"
 
 #: apps/client/src/pages/auth/login/page.tsx:62
 msgid "Don't have an account?"
-msgstr ""
+msgstr "Немає облікового запису?"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:88
 msgid "Don't know where to begin? Hit the docs!"
@@ -456,7 +456,7 @@ msgstr ""
 #: apps/client/src/pages/builder/_components/toolbar.tsx:144
 #: apps/client/src/pages/public/page.tsx:103
 msgid "Download PDF"
-msgstr ""
+msgstr "Завантажити в PDF"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:58
 msgid "Downloads"
@@ -468,7 +468,7 @@ msgstr ""
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:102
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:182
 msgid "Duplicate"
-msgstr ""
+msgstr "Дублювати"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:158
 msgid "Duplicate an existing item"
@@ -480,7 +480,7 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:90
 msgid "Edit"
-msgstr ""
+msgstr "Редагувати"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:174
 msgid "Effects"
@@ -492,15 +492,15 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:50
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:180
 msgid "Email"
-msgstr ""
+msgstr "Пошта"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:159
 msgid "Enable 2FA"
-msgstr ""
+msgstr "Увімкнути 2FA"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:67
 msgid "Enter a new password below, and make sure it's secure."
-msgstr ""
+msgstr "Введіть новий пароль нижче та переконайтеся, що він безпечний."
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:59
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
@@ -520,7 +520,7 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:283
 msgid "Errors"
-msgstr ""
+msgstr "Помилки"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:78
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Reactive Resume has helped you. Your feedback and support are always welcome and much appreciated!"
@@ -545,7 +545,7 @@ msgstr ""
 
 #: apps/client/src/pages/home/sections/hero/index.tsx:40
 msgid "Finally,"
-msgstr ""
+msgstr "Нарешті,"
 
 #: apps/client/src/components/ai-actions.tsx:90
 msgid "Fix Spelling & Grammar"
@@ -557,7 +557,7 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:135
 msgid "Font Size"
-msgstr ""
+msgstr "Розмір шрифту"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:109
 msgid "Font Subset"
@@ -586,7 +586,7 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:32
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:40
 msgid "Format"
-msgstr ""
+msgstr "Формат"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:49
 msgid "Found a bug, or have an idea for a new feature?"
@@ -1462,11 +1462,11 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:39
 msgctxt "Name of the Award"
 msgid "Title"
-msgstr ""
+msgstr "Назва"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:195
 msgid "Title"
-msgstr ""
+msgstr "Назва"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:106
 msgid "Toggle Page Break Line"
@@ -1597,15 +1597,15 @@ msgstr ""
 
 #: apps/client/src/pages/home/sections/hero/index.tsx:26
 msgid "Version 4"
-msgstr ""
+msgstr "Версія 4"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:51
 msgid "Views"
-msgstr ""
+msgstr "Перегляди"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:86
 msgid "Visible"
-msgstr ""
+msgstr "Видимий"
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:61
 msgid "We verify your email address only to ensure that we can send you a password reset link in case you forget your password."
@@ -1623,11 +1623,11 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:95
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:63
 msgid "Website"
-msgstr ""
+msgstr "Вебсторінка"
 
 #: apps/client/src/pages/home/sections/hero/index.tsx:34
 msgid "What's new in the latest version"
-msgstr ""
+msgstr "Що нового в останній версії"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:154
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
@@ -1638,7 +1638,7 @@ msgstr ""
 
 #: apps/client/src/pages/auth/login/page.tsx:88
 msgid "You can also enter your username."
-msgstr ""
+msgstr "Також ви можете ввести своє ім'я користувача."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:54
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
@@ -1659,7 +1659,7 @@ msgstr ""
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/forgot-password/page.tsx:54
 msgid "You've got mail!"
-msgstr ""
+msgstr "Ви отримали листа!"
 
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:52
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
@@ -1679,13 +1679,13 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:59
 msgid "Your password has been updated successfully."
-msgstr ""
+msgstr "Ваш пароль успішно оновлено."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:80
 msgid "Zoom In"
-msgstr ""
+msgstr "Збільшити"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:86
 msgid "Zoom Out"
-msgstr ""
+msgstr "Зменшити"
 
