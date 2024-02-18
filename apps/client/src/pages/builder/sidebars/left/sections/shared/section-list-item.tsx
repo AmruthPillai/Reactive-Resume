@@ -101,7 +101,7 @@ export const SectionListItem = ({
         </ContextMenu>
 
         {/* Delete Button */}
-        <button onClick={onDelete} className="flex items-center justify-center p-4">
+        <button onClick={onDelete} className="flex items-center justify-center p-4 text-error">
           <TrashSimple size={12} />
         </button>
       </div>
