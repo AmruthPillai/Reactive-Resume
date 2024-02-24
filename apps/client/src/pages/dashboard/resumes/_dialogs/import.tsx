@@ -186,7 +186,7 @@ export const ImportDialog = () => {
       toast({
         variant: "error",
         title: t`Oops, the server returned an error.`,
-        description: importError?.message,
+        description: error?.message,
       });
     }
   };
