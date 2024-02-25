@@ -55,8 +55,12 @@ export class LinkedInParser implements Parser<JSZip, LinkedIn> {
 
   convert(data: LinkedIn) {
     const result = JSON.parse(JSON.stringify(defaultResumeData)) as ResumeData;
-    function avoidToShort(name, len) {
-      if (!name || name.length<len) { return "Unknown" } else { return name; }
+    function avoidTooShort(name, len) {
+      if (!name || name.length<len) {
+        return "Unknown";
+      } else {
+        return name;
+      }
     };
 
     // Profile
@@ -112,9 +116,9 @@ export class LinkedInParser implements Parser<JSZip, LinkedIn> {
         result.sections.education.items.push({
           ...defaultEducation,
           id: createId(),
-          institution: avoidToShort(education["School Name"], 2),
-          studyType: avoidToShort(education["Degree Name"], 2),
-          summary: avoidToShort(education.Notes ?? "", 2),
+          institution: avoidTooShort(education["School Name"], 2),
+          studyType: avoidTooShort(education["Degree Name"], 2),
+          summary: avoidTooShort(education.Notes ?? "", 2),
           date: `${education["Start Date"]} - ${education["End Date"] ?? "Present"}`,
         });
       }
