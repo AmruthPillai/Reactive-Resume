@@ -34,7 +34,9 @@ export class GitHubStrategy extends PassportStrategy(Strategy, "github") {
     if (!email) throw new BadRequestException();
 
     try {
-      const user = await this.userService.findOneByIdentifier(email);
+      const user =
+        (await this.userService.findOneByIdentifier(email)) ||
+        (await this.userService.findOneByIdentifier(username));
 
       if (!user) throw new UnauthorizedException();
 
