@@ -54,6 +54,7 @@ enum ImportType {
 const formSchema = z.object({
   file: z.instanceof(File),
   type: z.nativeEnum(ImportType),
+  jobTitle: z.string().min(1).max(50),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -86,7 +87,7 @@ export const ImportDialog = () => {
   }, [isOpen]);
 
   useEffect(() => {
-    form.reset({ file: undefined, type: filetype });
+    form.reset();
     setValidationResult(null);
   }, [filetype]);
 
@@ -98,9 +99,9 @@ export const ImportDialog = () => {
   }, [filetype]);
 
   const onValidate = async () => {
-    const { file, type } = formSchema.parse(form.getValues());
-
+    form.trigger();
     try {
+      const { file, type } = formSchema.parse(form.getValues());
       if (type === ImportType["reactive-resume-json"]) {
         const parser = new ReactiveResumeParser();
         const data = await parser.readFile(file);
@@ -148,7 +149,7 @@ export const ImportDialog = () => {
   };
 
   const onImport = async () => {
-    const { type } = formSchema.parse(form.getValues());
+    const { type, jobTitle } = formSchema.parse(form.getValues());
 
     if (!validationResult?.isValid || validationResult.type !== type) return;
 
@@ -157,28 +158,28 @@ export const ImportDialog = () => {
         const parser = new ReactiveResumeParser();
         const data = parser.convert(validationResult.result as ResumeData);
 
-        await importResume({ data });
+        await importResume({ data, jobTitle });
       }
 
       if (type === ImportType["reactive-resume-v3-json"]) {
         const parser = new ReactiveResumeV3Parser();
         const data = parser.convert(validationResult.result as ReactiveResumeV3);
 
-        await importResume({ data });
+        await importResume({ data, jobTitle });
       }
 
       if (type === ImportType["json-resume-json"]) {
         const parser = new JsonResumeParser();
         const data = parser.convert(validationResult.result as JsonResume);
 
-        await importResume({ data });
+        await importResume({ data, jobTitle });
       }
 
       if (type === ImportType["linkedin-data-export-zip"]) {
         const parser = new LinkedInParser();
         const data = parser.convert(validationResult.result as LinkedIn);
 
-        await importResume({ data });
+        await importResume({ data, jobTitle });
       }
 
       close();
@@ -192,7 +193,8 @@ export const ImportDialog = () => {
   };
 
   const onReset = () => {
-    form.reset();
+    form.getValues();
+    form.reset({ file: null }, { keepDirtyValues: true });
     setValidationResult(null);
   };
 
@@ -278,6 +280,23 @@ export const ImportDialog = () => {
               )}
             />
 
+            <FormField
+              name="jobTitle"
+              control={form.control}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t`Job Title`}</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormDescription>
+                    {t`Tip: Enter Your Desired Job Title for Tailored Suggestions.`}
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
             {validationResult?.isValid === false && validationResult.errors !== undefined && (
               <div className="space-y-2">
                 <Label className="text-error">{t`Errors`}</Label>
@@ -299,7 +318,7 @@ export const ImportDialog = () => {
 
                 {validationResult !== null && !validationResult.isValid && (
                   <Button type="button" variant="secondary" onClick={onReset}>
-                    {t`Discard`}
+                    {t`Reset`}
                   </Button>
                 )}
 

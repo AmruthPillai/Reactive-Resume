@@ -103,6 +103,7 @@ export const ResumeDialog = () => {
         title: values.title,
         slug: values.slug,
         data: payload.item.data,
+        jobTitle: values.jobTitle,
       });
     }
 
@@ -143,7 +144,8 @@ export const ResumeDialog = () => {
     const name = generateRandomName();
     form.setValue("title", name);
     form.setValue("slug", kebabCase(name));
-    form.setValue("jobTitle", "");
+    // eslint-disable-next-line lingui/no-unlocalized-strings
+    form.setValue("jobTitle", "Developer");
   };
 
   const onCreateSample = async () => {
@@ -153,7 +155,8 @@ export const ResumeDialog = () => {
     await duplicateResume({
       title: title || randomName,
       slug: slug || kebabCase(randomName),
-      jobTitle: "",
+      // eslint-disable-next-line lingui/no-unlocalized-strings
+      jobTitle: "Developer",
       data: sampleResume,
     });
 
