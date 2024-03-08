@@ -71,4 +71,40 @@
     --success-accent: var(--emerald-800);
     --success-foreground: var(--emerald-50);
   }
+
+  .sky {
+    --background: var(--zinc-50);
+    --foreground: var(--blue-950);
+    --border: var(--zinc-200);
+
+    /* Primary */
+    --primary: var(--blue-900);
+    --primary-accent: var(--blue-800);
+    --primary-foreground: var(--blue-50);
+
+    /* Secondary */
+    --secondary: var(--blue-200);
+    --secondary-accent: var(--blue-100);
+    --secondary-foreground: var(--blue-950);
+
+    /* Error */
+    --error: var(--rose-500);
+    --error-accent: var(--rose-400);
+    --error-foreground: var(--rose-50);
+
+    /* Warning */
+    --warning: var(--amber-500);
+    --warning-accent: var(--amber-400);
+    --warning-foreground: var(--amber-50);
+
+    /* Info */
+    --info: var(--sky-500);
+    --info-accent: var(--sky-400);
+    --info-foreground: var(--sky-50);
+
+    /* Success */
+    --success: var(--emerald-500);
+    --success-accent: var(--emerald-400);
+    --success-foreground: var(--emerald-50);
+  }
 }
