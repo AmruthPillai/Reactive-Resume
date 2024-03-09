@@ -182,11 +182,11 @@ export const ImportDialog = () => {
       }
 
       close();
-    } catch (error) {
+    } catch (error: any) {
       toast({
         variant: "error",
         title: t`Oops, the server returned an error.`,
-        description: error?.message,
+        description: error["message"],
       });
     }
   };
