@@ -55,12 +55,10 @@ export class LinkedInParser implements Parser<JSZip, LinkedIn> {
 
   convert(data: LinkedIn) {
     const result = JSON.parse(JSON.stringify(defaultResumeData)) as ResumeData;
-    function avoidTooShort(name: string, len: number) {
-      if (!name || name.length<len) {
-        return "Unknown";
-      } else {
-        return name;
-      }
+
+    const avoidTooShort = (name: string, len: number) => {
+      if (!name || name.length < len) return "Unknown";
+      return name;
     };
 
     // Profile
