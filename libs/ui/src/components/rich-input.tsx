@@ -113,29 +113,25 @@ const InsertImageForm = ({ onInsert }: InsertImageProps) => {
   );
 };
 
-const setLinkGlobal = (editor: Editor) => {
-  const previousUrl = editor.getAttributes("link").href;
-  const url = window.prompt("URL", previousUrl);
-
-  // cancelled
-  if (url === null) {
-    return;
-  }
-
-  // empty
-  if (url === "") {
-    editor.chain().focus().extendMarkRange("link").unsetLink().run();
-
-    return;
-  }
-
-  // update link
-  editor.chain().focus().extendMarkRange("link").setLink({ href: url }).run();
-};
-
 const Toolbar = ({ editor }: { editor: Editor }) => {
   const setLink = useCallback(() => {
-    setLinkGlobal(editor);
+    const previousUrl = editor.getAttributes("link").href;
+    const url = window.prompt("URL", previousUrl);
+
+    // cancelled
+    if (url === null) {
+      return;
+    }
+
+    // empty
+    if (url === "") {
+      editor.chain().focus().extendMarkRange("link").unsetLink().run();
+
+      return;
+    }
+
+    // update link
+    editor.chain().focus().extendMarkRange("link").setLink({ href: url }).run();
   }, [editor]);
 
   return (
@@ -446,14 +442,9 @@ export const RichInput = forwardRef<Editor, RichInputProps>(
         Highlight,
         Link.extend({
           inclusive: false,
-          addKeyboardShortcuts() {
-            return {
-              "Mod-k": () => {
-                setLinkGlobal(this.editor as Editor);
-                return true;
-              },
-            };
-          },
+          addKeyboardShortcuts: () => ({
+            "Mod-k": () => setLink(),
+          }),
         }).configure({ openOnClick: false }),
         TextAlign.configure({ types: ["heading", "paragraph"] }),
       ],
@@ -469,6 +460,24 @@ export const RichInput = forwardRef<Editor, RichInputProps>(
       parseOptions: { preserveWhitespace: "full" },
       onUpdate: ({ editor }) => onChange?.(editor.getHTML()),
     });
+
+    const setLink = useCallback(() => {
+      if (!editor) return false;
+
+      const previousUrl = editor.getAttributes("link").href;
+      const url = window.prompt("URL", previousUrl);
+
+      // cancelled
+      if (url === null) return false;
+
+      // empty
+      if (url === "") {
+        return editor.chain().focus().extendMarkRange("link").unsetLink().run();
+      }
+
+      // update link
+      return editor.chain().focus().extendMarkRange("link").setLink({ href: url }).run();
+    }, [editor]);
 
     if (!editor) {
       return (
