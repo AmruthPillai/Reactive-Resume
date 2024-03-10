@@ -7,6 +7,7 @@ import {
   CommandGroup,
   CommandInput,
   CommandItem,
+  CommandList,
   Popover,
   PopoverContent,
   PopoverTrigger,
@@ -40,36 +41,40 @@ export const LocaleCombobox = ({ value, onValueChange }: Props) => {
         onValueChange={setSearch}
         placeholder={t`Search for a language`}
       />
-      <CommandEmpty>{t`No results found`}</CommandEmpty>
-      <CommandGroup>
-        <ScrollArea orientation="vertical">
-          <div className="max-h-60">
-            {options.map(({ original }) => (
-              <CommandItem
-                key={original.locale}
-                value={original.locale.trim().toLowerCase()}
-                onSelect={async (selectedValue) => {
-                  const result = options.find(
-                    ({ original }) => original.locale.trim().toLowerCase() === selectedValue,
-                  );
+      <CommandList>
+        <CommandEmpty>{t`No results found`}</CommandEmpty>
+        <CommandGroup>
+          <ScrollArea orientation="vertical">
+            <div className="max-h-60">
+              {options.map(({ original }) => (
+                <CommandItem
+                  disabled={false}
+                  key={original.locale}
+                  value={original.locale.trim()}
+                  onSelect={async (selectedValue) => {
+                    const result = options.find(
+                      ({ original }) => original.locale.trim() === selectedValue,
+                    );
 
-                  if (!result) return null;
+                    if (!result) return null;
 
-                  onValueChange(result.original.locale);
-                }}
-              >
-                <Check
-                  className={cn(
-                    "mr-2 size-4 opacity-0",
-                    value === original.locale && "opacity-100",
-                  )}
-                />
-                {original.name} <span className="ml-1 text-xs opacity-50">({original.locale})</span>
-              </CommandItem>
-            ))}
-          </div>
-        </ScrollArea>
-      </CommandGroup>
+                    onValueChange(result.original.locale);
+                  }}
+                >
+                  <Check
+                    className={cn(
+                      "mr-2 size-4 opacity-0",
+                      value === original.locale && "opacity-100",
+                    )}
+                  />
+                  {original.name}{" "}
+                  <span className="ml-1 text-xs opacity-50">({original.locale})</span>
+                </CommandItem>
+              ))}
+            </div>
+          </ScrollArea>
+        </CommandGroup>
+      </CommandList>
     </Command>
   );
 };

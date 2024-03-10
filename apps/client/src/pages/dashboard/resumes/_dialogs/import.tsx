@@ -291,7 +291,7 @@ export const ImportDialog = () => {
 
             <DialogFooter>
               <AnimatePresence presenceAffectsLayout>
-                {(!validationResult ?? false) && (
+                {(!validationResult || false) && (
                   <Button type="button" onClick={onValidate}>
                     {t`Validate`}
                   </Button>
