@@ -256,7 +256,7 @@ export const ImportDialog = () => {
                   <FormControl>
                     <Input
                       type="file"
-                      key={accept}
+                      key={`${accept}-${filetype}`}
                       accept={accept}
                       onChange={(event) => {
                         if (!event.target.files || !event.target.files.length) return;
