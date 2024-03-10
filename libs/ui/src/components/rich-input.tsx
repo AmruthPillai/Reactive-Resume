@@ -34,7 +34,7 @@ import { Link } from "@tiptap/extension-link";
 import { TextAlign } from "@tiptap/extension-text-align";
 import { Underline } from "@tiptap/extension-underline";
 import { Editor, EditorContent, EditorContentProps, useEditor } from "@tiptap/react";
-import { StarterKit } from "@tiptap/starter-kit";
+import StarterKit from "@tiptap/starter-kit";
 import { forwardRef, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
