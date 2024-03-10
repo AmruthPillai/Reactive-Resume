@@ -19,7 +19,7 @@ export const Command = forwardRef<
 
 Command.displayName = CommandPrimitive.displayName;
 
-interface CommandDialogProps extends DialogProps {}
+type CommandDialogProps = DialogProps;
 
 export const CommandDialog = ({ children, ...props }: CommandDialogProps) => (
   <Dialog {...props}>

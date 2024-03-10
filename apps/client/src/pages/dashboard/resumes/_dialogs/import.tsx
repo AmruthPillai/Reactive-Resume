@@ -72,7 +72,7 @@ type ValidationResult =
 export const ImportDialog = () => {
   const { toast } = useToast();
   const { isOpen, close } = useDialog("import");
-  const { importResume, loading, error: importError } = useImportResume();
+  const { importResume, loading } = useImportResume();
 
   const [validationResult, setValidationResult] = useState<ValidationResult | null>(null);
 
@@ -182,11 +182,11 @@ export const ImportDialog = () => {
       }
 
       close();
-    } catch (error: any) {
+    } catch (error: unknown) {
       toast({
         variant: "error",
         title: t`Oops, the server returned an error.`,
-        description: error["message"],
+        description: error instanceof Error ? error.message : undefined,
       });
     }
   };
