@@ -31,7 +31,7 @@ export class GitHubStrategy extends PassportStrategy(Strategy, "github") {
 
     let user: User | null = null;
 
-    if (!email) throw new BadRequestException();
+    if (!email || !username) throw new BadRequestException();
 
     try {
       const user =
