@@ -49,17 +49,10 @@ export const ArtboardPage = () => {
 
   // Typography Options
   useEffect(() => {
-    if (metadata.typography.hideIcons) {
-      document.querySelector("#root")!.classList.add("hide-icons");
-    } else {
-      document.querySelector("#root")!.classList.remove("hide-icons");
-    }
-
-    if (metadata.typography.underlineLinks) {
-      document.querySelector("#root")!.classList.add("underline-links");
-    } else {
-      document.querySelector("#root")!.classList.remove("underline-links");
-    }
+    document.querySelectorAll(`[data-page]`).forEach((el) => {
+      el.classList.toggle("hide-icons", metadata.typography.hideIcons);
+      el.classList.toggle("underline-links", metadata.typography.underlineLinks);
+    });
   }, [metadata]);
 
   return <Outlet />;
