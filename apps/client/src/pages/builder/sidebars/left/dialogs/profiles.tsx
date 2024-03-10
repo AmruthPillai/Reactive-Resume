@@ -82,7 +82,7 @@ export const ProfilesDialog = () => {
               <FormLabel htmlFor="iconSlug">{t`Icon`}</FormLabel>
               <FormControl>
                 <div className="flex items-center gap-x-2">
-                  <Avatar className="h-8 w-8 bg-white">
+                  <Avatar className="size-8 bg-white">
                     {field.value && (
                       <AvatarImage
                         className="p-1.5"

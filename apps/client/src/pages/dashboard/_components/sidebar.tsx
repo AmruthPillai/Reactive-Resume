@@ -21,7 +21,7 @@ const ActiveIndicator = ({ className }: Props) => (
     initial={{ opacity: 0, x: -20 }}
     animate={{ opacity: 1, x: 0 }}
     className={cn(
-      "h-1.5 w-1.5 animate-pulse rounded-full bg-info shadow-[0_0_12px] shadow-info",
+      "size-1.5 animate-pulse rounded-full bg-info shadow-[0_0_12px] shadow-info",
       className,
     )}
   />
@@ -98,7 +98,7 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
   return (
     <div className="flex h-full flex-col gap-y-4">
       <div className="ml-12 flex justify-center lg:ml-0">
-        <Button asChild size="icon" variant="ghost" className="h-10 w-10 p-0">
+        <Button asChild size="icon" variant="ghost" className="size-10 p-0">
           <Link to="/">
             <Icon size={24} className="mx-auto hidden lg:block" />
           </Link>

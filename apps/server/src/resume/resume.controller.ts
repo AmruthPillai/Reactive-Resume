@@ -115,7 +115,7 @@ export class ResumeController {
 
   @Patch(":id/lock")
   @UseGuards(TwoFactorGuard)
-  lock(@User() user: UserEntity, @Param("id") id: string, @Body("set") set: boolean = true) {
+  lock(@User() user: UserEntity, @Param("id") id: string, @Body("set") set = true) {
     return this.resumeService.lock(user.id, id, set);
   }
 

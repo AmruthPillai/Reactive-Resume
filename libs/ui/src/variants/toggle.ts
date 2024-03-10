@@ -9,9 +9,9 @@ export const toggleVariants = cva(
         outline: "border bg-transparent hover:bg-secondary/60 hover:text-secondary-foreground",
       },
       size: {
-        sm: "h-8 w-8",
-        md: "h-9 w-9",
-        lg: "h-10 w-10",
+        sm: "size-8",
+        md: "size-9",
+        lg: "size-10",
       },
     },
     defaultVariants: {
