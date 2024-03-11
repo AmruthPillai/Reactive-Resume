@@ -32,18 +32,7 @@ export const ProfilesDialog = () => {
 
   const [iconSrc, setIconSrc] = useDebounceValue("", 400)
 
-  const handleIconChange = useCallback((event: React.ChangeEvent<HTMLInputElement>, field: ControllerRenderProps<{
-    id: string;
-    visible: boolean;
-    network: string;
-    username: string;
-    icon: string;
-    url: {
-      label: string;
-      href: string;
-    };
-  }, "icon">) => {
-    field.onChange(event);
+  const handleIconChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.value === "") {
       setIconSrc("");
     } else {
@@ -115,7 +104,10 @@ export const ProfilesDialog = () => {
                       />
                     )}
                   </Avatar>
-                  <Input {...field} id="iconSlug" placeholder="linkedin" onChange={(e) => handleIconChange(e, field)} />
+                  <Input {...field} id="iconSlug" placeholder="linkedin" onChange={(event) => {
+                    field.onChange(event)
+                    handleIconChange(event)
+                  }} />
                 </div>
               </FormControl>
               <FormMessage />
