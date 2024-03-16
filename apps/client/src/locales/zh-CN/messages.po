@@ -8,7 +8,7 @@ msgstr ""
 "Language: zh\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-01-21 00:09\n"
+"PO-Revision-Date: 2024-03-12 00:07\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:169
 msgid "You have enabled two-factor authentication successfully."
-msgstr "您已成功启用双因素认证。"
+msgstr "您已成功启用双重身份认证。"
 
 #: apps/client/src/pages/home/sections/keywords/index.tsx:49
 msgid "{templatesCount} resume templates to choose from"
@@ -59,8 +59,8 @@ msgid "<0>The community has spent a lot of time writing the documentation for Re
 msgstr "<0>社区花费了大量时间编写 Reactive Resume 的文档，我相信这将有助于您上手该应用程序。</0><1>还有很多示例可以帮助您入门，也有很多您可能不知道但有助于构建完美简历的功能。</1>"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:146
-msgid "<0>Two-factoer authentication is currently disabled.</0> You can enable it by adding an authenticator app to your account."
-msgstr ""
+msgid "<0>Two-factor authentication is currently disabled.</0> You can enable it by adding an authenticator app to your account."
+msgstr "<0>现已禁用双重身份验证。</0>您可以将身份验证程序添加到您的账户来启用。"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:139
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
@@ -183,7 +183,7 @@ msgstr "任何人都可以通过此链接查看或下载简历。您可以在个
 msgid "API Key"
 msgstr "API Key"
 
-#: apps/client/src/pages/builder/_components/sections/shared/section-dialog.tsx:125
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:125
 msgid "Are you sure you want to delete this item?"
 msgstr "您确定要删除此项目吗？"
 
@@ -272,7 +272,7 @@ msgstr ""
 msgid "By the community, for the community."
 msgstr "来自社区，服务社区。"
 
-#: apps/client/src/pages/builder/_components/sections/shared/section-dialog.tsx:132
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:132
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:177
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:135
@@ -362,16 +362,8 @@ msgstr "复制链接到简历"
 msgid "Copy to Clipboard"
 msgstr "复制到剪贴板"
 
-#: apps/client/src/components/copyright.tsx:17
-msgid "Copyright © <0>MyLiveCV</0> {0}"
-msgstr ""
-
-#: apps/client/src/pages/home/sections/hero/index.tsx:44
-msgid "Craft dynamic, personalized resumes on the fly with our AI Resume Builder. Experience the future of job applications – live, interactive, and tailored to showcase your unique skills. Your dream career starts with a click!"
-msgstr ""
-
-#: apps/client/src/pages/builder/_components/sections/shared/section-dialog.tsx:168
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:282
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:168
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
 msgid "Create"
 msgstr "创建"
 
@@ -380,7 +372,7 @@ msgstr "创建"
 msgid "Create a new account"
 msgstr "创建账户"
 
-#: apps/client/src/pages/builder/_components/sections/shared/section-dialog.tsx:156
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:156
 msgid "Create a new item"
 msgstr "创建新条目"
 
@@ -429,18 +421,17 @@ msgstr "深色"
 msgid "Date"
 msgstr "日期"
 
-#: apps/client/src/pages/builder/_components/dialogs/custom-section.tsx:86
-#: apps/client/src/pages/builder/_components/dialogs/education.tsx:115
-#: apps/client/src/pages/builder/_components/dialogs/experience.tsx:77
-#: apps/client/src/pages/builder/_components/dialogs/projects.tsx:81
-#: apps/client/src/pages/builder/_components/dialogs/volunteer.tsx:72
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:85
+#: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:110
+#: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:72
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:80
+#: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:67
 msgid "Date or Date Range"
 msgstr "日期或日期范围"
 
-#: apps/client/src/pages/builder/_components/sections/shared/section-dialog.tsx:134
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:179
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:133
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:228
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:134
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:157
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:148
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:134
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:198
 msgid "Delete"
@@ -451,11 +442,11 @@ msgstr "删除"
 msgid "Delete Account"
 msgstr "删除账户"
 
-#: apps/client/src/pages/builder/_components/dialogs/custom-section.tsx:72
-#: apps/client/src/pages/builder/_components/dialogs/languages.tsx:55
-#: apps/client/src/pages/builder/_components/dialogs/projects.tsx:67
-#: apps/client/src/pages/builder/_components/dialogs/references.tsx:58
-#: apps/client/src/pages/builder/_components/dialogs/skills.tsx:64
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:71
+#: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:66
+#: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:53
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:63
 msgid "Description"
 msgstr "描述"
 
@@ -516,16 +507,15 @@ msgstr "下载 PDF"
 msgid "Downloads"
 msgstr "下载"
 
-#: apps/client/src/pages/builder/_components/sections/shared/section-dialog.tsx:170
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:284
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:101
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:212
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:170
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:132
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:102
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:182
 msgid "Duplicate"
 msgstr "复制"
 
-#: apps/client/src/pages/builder/_components/sections/shared/section-dialog.tsx:158
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:158
 msgid "Duplicate an existing item"
 msgstr "复制现有项目"
 
@@ -650,7 +640,7 @@ msgstr "例如，您可以在此处注明您发送给的公司或者职位描述
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:107
 msgid "Forget"
-msgstr "你好"
+msgstr "遗弃"
 
 #: apps/client/src/pages/auth/login/page.tsx:120
 msgid "Forgot Password?"
@@ -743,9 +733,9 @@ msgstr ""
 msgid "Here, you can update your profile to customize and personalize your experience."
 msgstr "在这里，您可以更新个人资料，定制个性化的体验。"
 
-#: apps/client/src/pages/builder/_components/dialogs/languages.tsx:81
-#: apps/client/src/pages/builder/_components/dialogs/skills.tsx:91
-#: apps/client/src/pages/builder/_components/sections/picture/options.tsx:185
+#: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:76
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:90
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:185
 msgid "Hidden"
 msgstr "隐藏"
 
@@ -903,10 +893,10 @@ msgstr "zhangsan@example.com"
 msgid "JSON"
 msgstr "JSON"
 
-#: apps/client/src/pages/builder/_components/dialogs/custom-section.tsx:150
-#: apps/client/src/pages/builder/_components/dialogs/interests.tsx:64
-#: apps/client/src/pages/builder/_components/dialogs/projects.tsx:131
-#: apps/client/src/pages/builder/_components/dialogs/skills.tsx:108
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:149
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:130
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:107
 msgid "Keywords"
 msgstr "关键词"
 
@@ -934,8 +924,8 @@ msgstr "布局"
 msgid "Letter"
 msgstr "信件"
 
-#: apps/client/src/pages/builder/_components/dialogs/languages.tsx:69
-#: apps/client/src/pages/builder/_components/dialogs/skills.tsx:78
+#: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:64
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:77
 msgid "Level"
 msgstr "等级"
 
@@ -964,10 +954,10 @@ msgstr "LinkedIn、JSON 简历等"
 msgid "List"
 msgstr "列表"
 
-#: apps/client/src/pages/builder/_components/dialogs/custom-section.tsx:100
-#: apps/client/src/pages/builder/_components/dialogs/experience.tsx:91
-#: apps/client/src/pages/builder/_components/dialogs/volunteer.tsx:86
-#: apps/client/src/pages/builder/_components/sections/basics.tsx:84
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:99
+#: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
+#: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:83
 msgid "Location"
 msgstr "位置"
 
@@ -1016,10 +1006,10 @@ msgstr ""
 msgid "March 2023"
 msgstr "2023 年 3 月"
 
-#: apps/client/src/pages/builder/_components/dialogs/education.tsx:117
-#: apps/client/src/pages/builder/_components/dialogs/experience.tsx:79
-#: apps/client/src/pages/builder/_components/dialogs/projects.tsx:83
-#: apps/client/src/pages/builder/_components/dialogs/volunteer.tsx:74
+#: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:112
+#: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:74
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:82
+#: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:69
 msgid "March 2023 - Present"
 msgstr "2023 年 3 月至今"
 
@@ -1028,14 +1018,14 @@ msgid "Margin"
 msgstr "边距"
 
 #: apps/client/src/pages/auth/register/page.tsx:106
-#: apps/client/src/pages/builder/_components/dialogs/custom-section.tsx:58
-#: apps/client/src/pages/builder/_components/dialogs/interests.tsx:49
-#: apps/client/src/pages/builder/_components/dialogs/languages.tsx:41
-#: apps/client/src/pages/builder/_components/dialogs/projects.tsx:53
-#: apps/client/src/pages/builder/_components/dialogs/publications.tsx:44
-#: apps/client/src/pages/builder/_components/dialogs/references.tsx:44
-#: apps/client/src/pages/builder/_components/dialogs/skills.tsx:50
-#: apps/client/src/pages/builder/_components/sections/custom/section.tsx:43
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:57
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:48
+#: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:52
+#: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
+#: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:43
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:152
 msgid "Name"
 msgstr "名称"
@@ -1166,7 +1156,11 @@ msgstr "每份简历的个人注释"
 msgid "Phone"
 msgstr "电话"
 
-#: apps/client/src/pages/home/sections/keywords/index.tsx:58
+#: apps/client/src/pages/auth/layout.tsx:76
+msgid "Photograph by Patrick Tomasso"
+msgstr "摄影：帕特里克-托马索"
+
+#: apps/client/src/pages/home/sections/features/index.tsx:66
 msgid "Pick any font from Google Fonts"
 msgstr "从谷歌字体中选择任意字体"
 
@@ -1334,8 +1328,8 @@ msgstr "生成的简历"
 msgid "Rounded"
 msgstr "圆角"
 
-#: apps/client/src/pages/builder/_components/sections/shared/section-dialog.tsx:169
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:283
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:169
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:125
 msgid "Save Changes"
@@ -1528,23 +1522,15 @@ msgstr "安全地存储您的备份码"
 msgid "Stored"
 msgstr "已存储"
 
-#: apps/client/src/pages/pricing/sections/cards/Product.tsx:182
-msgid "Subscribe Now"
-msgstr ""
-
-#: apps/client/src/components/ai-actions.tsx:104
-msgid "Suggestions"
-msgstr ""
-
-#: apps/client/src/pages/builder/_components/dialogs/awards.tsx:102
-#: apps/client/src/pages/builder/_components/dialogs/certifications.tsx:100
-#: apps/client/src/pages/builder/_components/dialogs/custom-section.tsx:128
-#: apps/client/src/pages/builder/_components/dialogs/education.tsx:143
-#: apps/client/src/pages/builder/_components/dialogs/experience.tsx:119
-#: apps/client/src/pages/builder/_components/dialogs/projects.tsx:109
-#: apps/client/src/pages/builder/_components/dialogs/publications.tsx:100
-#: apps/client/src/pages/builder/_components/dialogs/references.tsx:86
-#: apps/client/src/pages/builder/_components/dialogs/volunteer.tsx:114
+#: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
+#: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:127
+#: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:138
+#: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:114
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:108
+#: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:95
+#: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:81
+#: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:109
 msgid "Summary"
 msgstr "总结"
 
@@ -1609,7 +1595,7 @@ msgstr "主题"
 msgid "There was an error connecting to the browser. Please make sure 'chrome' is running and reachable."
 msgstr "连接浏览器时出现错误。请确保谷歌浏览器正在运行并可连接。"
 
-#: apps/client/src/pages/builder/_components/sections/shared/section-dialog.tsx:127
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:127
 msgid "This action can be reverted by clicking on the undo button in the floating toolbar."
 msgstr "单击浮动工具栏中的撤消按钮即可恢复此操作。"
 
@@ -1727,7 +1713,7 @@ msgstr ""
 msgid "Unverified"
 msgstr "未验证"
 
-#: apps/client/src/pages/builder/_components/sections/shared/section-dialog.tsx:157
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:157
 msgid "Update an existing item"
 msgstr "更新现有项目"
 
@@ -1804,17 +1790,17 @@ msgstr "可见"
 msgid "We verify your email address only to ensure that we can send you a password reset link in case you forget your password."
 msgstr "我们验证您的电子邮件地址只是为了确保在您忘记密码时能向您发送密码重置链接。"
 
-#: apps/client/src/pages/builder/_components/dialogs/awards.tsx:88
-#: apps/client/src/pages/builder/_components/dialogs/certifications.tsx:86
-#: apps/client/src/pages/builder/_components/dialogs/custom-section.tsx:114
-#: apps/client/src/pages/builder/_components/dialogs/education.tsx:129
-#: apps/client/src/pages/builder/_components/dialogs/experience.tsx:105
-#: apps/client/src/pages/builder/_components/dialogs/profiles.tsx:73
-#: apps/client/src/pages/builder/_components/dialogs/projects.tsx:95
-#: apps/client/src/pages/builder/_components/dialogs/publications.tsx:86
-#: apps/client/src/pages/builder/_components/dialogs/references.tsx:72
-#: apps/client/src/pages/builder/_components/dialogs/volunteer.tsx:100
-#: apps/client/src/pages/builder/_components/sections/basics.tsx:64
+#: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:87
+#: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:81
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:113
+#: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:124
+#: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:100
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:68
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:94
+#: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:81
+#: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:67
+#: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:95
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:63
 msgid "Website"
 msgstr "网站"
 
@@ -1822,18 +1808,10 @@ msgstr "网站"
 msgid "What are the benefits of using your website to build a live resume?"
 msgstr ""
 
-#: apps/client/src/pages/home/sections/faq/index.tsx:8
-msgid "What is a live resume?"
-msgstr ""
-
-#: apps/client/src/pages/home/sections/faq/index.tsx:26
-msgid "What is an AI resume builder?"
-msgstr ""
-
-#: apps/client/src/pages/builder/_components/dialogs/custom-section.tsx:155
-#: apps/client/src/pages/builder/_components/dialogs/interests.tsx:69
-#: apps/client/src/pages/builder/_components/dialogs/projects.tsx:136
-#: apps/client/src/pages/builder/_components/dialogs/skills.tsx:113
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:154
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:135
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:112
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr "您可以通过用逗号或回车分隔来添加多个关键字。"
 

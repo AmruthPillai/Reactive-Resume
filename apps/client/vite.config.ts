@@ -2,7 +2,7 @@
 
 import { lingui } from "@lingui/vite-plugin";
 import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
-import react from "@vitejs/plugin-react-swc";
+import react from "@vitejs/plugin-react";
 import { defineConfig, searchForWorkspaceRoot, splitVendorChunkPlugin } from "vite";
 
 export default defineConfig({
@@ -32,7 +32,9 @@ export default defineConfig({
 
   plugins: [
     react({
-      plugins: [["@lingui/swc-plugin", {}]],
+      babel: {
+        plugins: ["macros"],
+      },
     }),
     lingui(),
     nxViteTsPaths(),

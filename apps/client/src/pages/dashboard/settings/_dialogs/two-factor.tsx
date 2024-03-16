@@ -178,7 +178,7 @@ export const TwoFactorDialog = () => {
                   <FormItem>
                     <FormControl>
                       <div className="space-y-4">
-                        <QRCodeSVG value={field.value!} size={256} className="mx-auto" />
+                        <QRCodeSVG value={field.value ?? ""} size={256} className="mx-auto" />
                         <Input readOnly {...field} className="opacity-75" />
                       </div>
                     </FormControl>
