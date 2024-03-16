@@ -28,7 +28,8 @@
     "prisma:validate": "pnpm exec prisma validate",
     "prisma:migrate": "pnpm exec prisma migrate deploy",
     "prisma:migrate:dev": "pnpm exec prisma migrate dev",
-    "messages:extract": "pnpm exec lingui extract --clean --overwrite"
+    "messages:extract": "pnpm exec lingui extract --clean --overwrite",
+    "stripe:local": "stripe listen --forward-to http://localhost:5173/api/stripe/webhook"
   },
   "devDependencies": {
     "@babel/core": "^7.24.0",

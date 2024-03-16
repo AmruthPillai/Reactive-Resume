@@ -22,7 +22,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@reactive-resume/ui";
-import { cn } from "@reactive-resume/utils";
+import { cn, ResumeSections } from "@reactive-resume/utils";
 import dayjs from "dayjs";
 import { AnimatePresence, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -46,7 +46,7 @@ export const ResumeCard = ({ resume }: Props) => {
   const lastUpdated = dayjs().to(resume.updatedAt);
 
   const onOpen = () => {
-    navigate(`/builder/${resume.id}`);
+    navigate(`/builder/${resume.id}/${ResumeSections.BASICS}`);
   };
 
   const onUpdate = () => {
@@ -186,7 +186,7 @@ export const ResumeCard = ({ resume }: Props) => {
           <div
             className={cn(
               "absolute inset-x-0 bottom-0 z-10 flex flex-row justify-between space-y-0.5 p-4 pt-12",
-              "bg-gradient-to-t from-background/80 to-transparent",
+              "bg-gradient-to-t from-background from-50% via-background/80 to-transparent",
             )}
           >
             <div>

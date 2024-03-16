@@ -51,15 +51,15 @@ export const FeaturesSection = () => {
               </h1>
 
               <div className="mt-2">
-                <span className="inline-block h-1 w-40 rounded-full bg-blue-500"></span>
-                <span className="ml-1 inline-block h-1 w-3 rounded-full bg-blue-500"></span>
-                <span className="ml-1 inline-block size-1 rounded-full bg-blue-500"></span>
+                <span className="inline-block h-1 w-40 rounded-full bg-secondary"></span>
+                <span className="ml-1 inline-block h-1 w-3 rounded-full bg-secondary"></span>
+                <span className="ml-1 inline-block size-1 rounded-full bg-secondary"></span>
               </div>
             </div>
 
             {features.map((feature) => (
               <div className="md:-mx-4 md:flex md:items-start" key={feature.title}>
-                <span className="inline-block rounded-xl bg-blue-100 p-2 text-blue-500 dark:bg-blue-500 dark:text-white md:mx-4">
+                <span className="inline-block rounded-xl bg-primary p-2 text-secondary dark:bg-secondary dark:text-primary md:mx-4">
                   {feature.icon}
                 </span>
 
