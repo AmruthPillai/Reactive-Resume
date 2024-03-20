@@ -10,10 +10,11 @@ import {
   Plus,
   TrashSimple,
 } from "@phosphor-icons/react";
-import { defaultSections, SectionKey, SectionWithItem } from "@reactive-resume/schema";
+import { defaultSections, SectionKey, sectionsSchema, SectionWithItem } from "@reactive-resume/schema";
 import {
   Button,
   DropdownMenu,
+  DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
@@ -31,6 +32,9 @@ import { useMemo } from "react";
 
 import { useDialog } from "@/client/stores/dialog";
 import { useResumeStore } from "@/client/stores/resume";
+import { DropdownMenuItemIndicator } from "@radix-ui/react-dropdown-menu";
+import { CheckboxIndicator } from "@radix-ui/react-checkbox";
+import { itemsEqual } from "@dnd-kit/sortable/dist/utilities";
 
 type Props = { id: SectionKey };
 
@@ -47,6 +51,7 @@ export const SectionOptions = ({ id }: Props) => {
   const isCustomSection = useMemo(() => id.startsWith("custom"), [id]);
 
   const onCreate = () => open("create", { id });
+  const toggleSeperateLinks = (checked: boolean) => setValue(`sections.${id}.separateLinks`, checked);
   const toggleVisibility = () => setValue(`sections.${id}.visible`, !section.visible);
   const onResetName = () => setValue(`sections.${id}.name`, originalName);
   const onChangeColumns = (value: string) => setValue(`sections.${id}.columns`, Number(value));
@@ -67,7 +72,12 @@ export const SectionOptions = ({ id }: Props) => {
               <Plus />
               <span className="ml-2">{t`Add a new item`}</span>
             </DropdownMenuItem>
-
+            <DropdownMenuCheckboxItem
+              onCheckedChange={toggleSeperateLinks}
+              checked={section.separateLinks}
+            >
+              <span className="ml-0">{t`Separate Links`}</span>
+            </DropdownMenuCheckboxItem>
             <DropdownMenuSeparator />
           </>
         )}
