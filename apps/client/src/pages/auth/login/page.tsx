@@ -41,6 +41,8 @@ export const LoginPage = () => {
   });
 
   const onSubmit = async (data: FormValues) => {
+    //email/username convert to lowecase
+    data.identifier = data.identifier.toLowerCase();
     try {
       await login(data);
     } catch (error) {
