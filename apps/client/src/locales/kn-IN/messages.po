@@ -8,7 +8,7 @@ msgstr ""
 "Language: kn\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-02-01 09:12\n"
+"PO-Revision-Date: 2024-03-22 10:29\n"
 "Last-Translator: \n"
 "Language-Team: Kannada\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -686,7 +686,7 @@ msgstr "ನಿಮ್ಮ ರೆಸ್ಯೂಮೇ ಅನ್ನು ಸಾರ್ವ
 msgid "I always love to hear from the users of Reactive Resume with feedback or support. Here are some of the messages I've received. If you have any feedback, feel free to drop me an email at <0>{email}</0>."
 msgstr "ಪ್ರತಿಕ್ರಿಯೆ ಅಥವಾ ಬೆಂಬಲದೊಂದಿಗೆ ರಿಯಾಕ್ಟಿವ್ ರೆಸ್ಯೂಮೇನ ಬಳಕೆದಾರರಿಂದ ಕೇಳಲು ನಾನು ಯಾವಾಗಲೂ ಇಷ್ಟಪಡುತ್ತೇನೆ. ನಾನು ಸ್ವೀಕರಿಸಿದ ಕೆಲವು ಸಂದೇಶಗಳು ಇಲ್ಲಿವೆ. ನೀವು ಯಾವುದೇ ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಹೊಂದಿದ್ದರೆ, <0>{email} ನಲ್ಲಿ ನನಗೆ ಇಮೇಲ್ ಅನ್ನು ಡ್ರಾಪ್ ಮಾಡಲು ಹಿಂಜರಿಯಬೇಡಿ</0>."
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:82
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:96
 msgid "Icon"
 msgstr "ಐಕಾನ್"
 
@@ -931,7 +931,7 @@ msgctxt "Name of the Certification"
 msgid "Name"
 msgstr "ಹೆಸರು"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:39
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:53
 msgid "Network"
 msgstr "ನೆಟ್ವರ್ಕ್"
 
@@ -939,7 +939,7 @@ msgstr "ನೆಟ್ವರ್ಕ್"
 msgid "New Password"
 msgstr "ಹೊಸ ಪಾಸ್ವರ್ಡ್"
 
-#: apps/client/src/components/locale-combobox.tsx:43
+#: apps/client/src/components/locale-combobox.tsx:45
 msgid "No results found"
 msgstr "ಯಾವುದೇ ಫಲಿತಾಂಶಗಳು ಕಂಡುಬರಲಿಲ್ಲ"
 
@@ -1072,7 +1072,7 @@ msgstr "ಸ್ಥಾನ"
 msgid "Powered by"
 msgstr "ಇವರಿಂದ ನಡೆಸಲ್ಪಡುತ್ತಿದೆ"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:98
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:115
 msgid "Powered by <0>Simple Icons</0>"
 msgstr "<0>ಸರಳ ಐಕಾನ್‌ಗಳಿಂದ</0> ನಡೆಸಲ್ಪಡುತ್ತಿದೆ"
 
@@ -1222,7 +1222,7 @@ msgstr "ಫಾಂಟ್ ಉಪವಿಭಾಗಕ್ಕಾಗಿ ಹುಡುಕ�
 msgid "Search for a font variant"
 msgstr "ಫಾಂಟ್ ಉಪವಿಭಾಗಕ್ಕಾಗಿ ಹುಡುಕಿ"
 
-#: apps/client/src/components/locale-combobox.tsx:41
+#: apps/client/src/components/locale-combobox.tsx:42
 msgid "Search for a language"
 msgstr "ಭಾಷೆಗಾಗಿ ಹುಡುಕಿ"
 
@@ -1561,7 +1561,7 @@ msgid "User does not have an associated 'secrets' record. Please report this iss
 msgstr "ಬಳಕೆದಾರರು ಸಂಬಂಧಿತ 'ರಹಸ್ಯ' ದಾಖಲೆಯನ್ನು ಹೊಂದಿಲ್ಲ. ದಯವಿಟ್ಟು ಈ ಸಮಸ್ಯೆಯನ್ನು GitHub ನಲ್ಲಿ ವರದಿ ಮಾಡಿ."
 
 #: apps/client/src/pages/auth/register/page.tsx:127
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:54
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:68
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
 msgid "Username"
 msgstr "ಬಳಕೆದಾರರ ಹೆಸರು"
@@ -1616,7 +1616,7 @@ msgstr "ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ನೀವ
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:113
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:124
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:100
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:68
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:82
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:94
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:67
