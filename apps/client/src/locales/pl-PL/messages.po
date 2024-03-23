@@ -8,7 +8,7 @@ msgstr ""
 "Language: pl\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-02-01 09:12\n"
+"PO-Revision-Date: 2024-03-22 10:30\n"
 "Last-Translator: \n"
 "Language-Team: Polish\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
@@ -686,7 +686,7 @@ msgstr "Udostępnij swoje CV publicznie"
 msgid "I always love to hear from the users of Reactive Resume with feedback or support. Here are some of the messages I've received. If you have any feedback, feel free to drop me an email at <0>{email}</0>."
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:82
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:96
 msgid "Icon"
 msgstr "Ikona"
 
@@ -931,7 +931,7 @@ msgctxt "Name of the Certification"
 msgid "Name"
 msgstr "Nazwa"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:39
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:53
 msgid "Network"
 msgstr "Sieć"
 
@@ -939,7 +939,7 @@ msgstr "Sieć"
 msgid "New Password"
 msgstr "Nowe Hasło"
 
-#: apps/client/src/components/locale-combobox.tsx:43
+#: apps/client/src/components/locale-combobox.tsx:45
 msgid "No results found"
 msgstr "Brak wyników"
 
@@ -1072,7 +1072,7 @@ msgstr ""
 msgid "Powered by"
 msgstr "Napędzane przez"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:98
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:115
 msgid "Powered by <0>Simple Icons</0>"
 msgstr "Napędzane przez <0>Simple Icons</0>"
 
@@ -1222,7 +1222,7 @@ msgstr "Wyszukaj podzbiór czcionek"
 msgid "Search for a font variant"
 msgstr "Wyszukaj wariant czcionki"
 
-#: apps/client/src/components/locale-combobox.tsx:41
+#: apps/client/src/components/locale-combobox.tsx:42
 msgid "Search for a language"
 msgstr "Wyszukaj język"
 
@@ -1561,7 +1561,7 @@ msgid "User does not have an associated 'secrets' record. Please report this iss
 msgstr "Użytkownik nie ma powiązanego rekordu \"secrets\". Proszę zgłosić ten błąd na GitHub."
 
 #: apps/client/src/pages/auth/register/page.tsx:127
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:54
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:68
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
 msgid "Username"
 msgstr "Nazwa Użytkownika"
@@ -1616,7 +1616,7 @@ msgstr "Weryfikujemy Twój adres e-mail tylko po to, aby mieć pewność, że b�
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:113
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:124
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:100
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:68
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:82
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:94
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:67

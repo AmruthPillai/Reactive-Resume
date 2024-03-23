@@ -15,7 +15,7 @@ export const usernameSchema = z
 
 export const userSchema = z.object({
   id: idSchema,
-  name: z.string().min(3).max(255),
+  name: z.string().min(1).max(255),
   picture: z.literal("").or(z.null()).or(z.string().url()),
   username: usernameSchema,
   email: z.string().email(),

@@ -72,7 +72,7 @@ type ValidationResult =
 export const ImportDialog = () => {
   const { toast } = useToast();
   const { isOpen, close } = useDialog("import");
-  const { importResume, loading, error: importError } = useImportResume();
+  const { importResume, loading } = useImportResume();
 
   const [validationResult, setValidationResult] = useState<ValidationResult | null>(null);
 
@@ -182,11 +182,11 @@ export const ImportDialog = () => {
       }
 
       close();
-    } catch (error) {
+    } catch (error: unknown) {
       toast({
         variant: "error",
         title: t`Oops, the server returned an error.`,
-        description: importError?.message,
+        description: error instanceof Error ? error.message : undefined,
       });
     }
   };
@@ -256,7 +256,7 @@ export const ImportDialog = () => {
                   <FormControl>
                     <Input
                       type="file"
-                      key={accept}
+                      key={`${accept}-${filetype}`}
                       accept={accept}
                       onChange={(event) => {
                         if (!event.target.files || !event.target.files.length) return;
@@ -291,7 +291,7 @@ export const ImportDialog = () => {
 
             <DialogFooter>
               <AnimatePresence presenceAffectsLayout>
-                {(!validationResult ?? false) && (
+                {(!validationResult || false) && (
                   <Button type="button" onClick={onValidate}>
                     {t`Validate`}
                   </Button>

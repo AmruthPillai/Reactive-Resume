@@ -48,52 +48,42 @@ export class PrinterService {
   }
 
   async printResume(resume: ResumeDto) {
-    return this.utils.getCachedOrSet(
-      `user:${resume.userId}:storage:resumes:${resume.id}`,
-      async () => {
-        const start = performance.now();
+    const start = performance.now();
 
-        const url = await retry(() => this.generateResume(resume), {
-          retries: 3,
-          randomize: true,
-          onRetry: (_, attempt) => {
-            this.logger.log(`Retrying to print resume #${resume.id}, attempt #${attempt}`);
-          },
-        });
-
-        const duration = Number(performance.now() - start).toFixed(0);
-        const numPages = resume.data.metadata.layout.length;
-
-        this.logger.debug(`Chrome took ${duration}ms to print ${numPages} page(s)`);
-
-        return url;
+    const url = await retry(() => this.generateResume(resume), {
+      retries: 3,
+      randomize: true,
+      onRetry: (_, attempt) => {
+        this.logger.log(`Retrying to print resume #${resume.id}, attempt #${attempt}`);
       },
-    );
+    });
+
+    const duration = Number(performance.now() - start).toFixed(0);
+    const numPages = resume.data.metadata.layout.length;
+
+    this.logger.debug(`Chrome took ${duration}ms to print ${numPages} page(s)`);
+
+    return url;
   }
 
   async printPreview(resume: ResumeDto) {
-    return this.utils.getCachedOrSet(
-      `user:${resume.userId}:storage:previews:${resume.id}`,
-      async () => {
-        const start = performance.now();
+    const start = performance.now();
 
-        const url = await retry(() => this.generatePreview(resume), {
-          retries: 3,
-          randomize: true,
-          onRetry: (_, attempt) => {
-            this.logger.log(
-              `Retrying to generate preview of resume #${resume.id}, attempt #${attempt}`,
-            );
-          },
-        });
-
-        const duration = Number(performance.now() - start).toFixed(0);
-
-        this.logger.debug(`Chrome took ${duration}ms to generate preview`);
-
-        return url;
+    const url = await retry(() => this.generatePreview(resume), {
+      retries: 3,
+      randomize: true,
+      onRetry: (_, attempt) => {
+        this.logger.log(
+          `Retrying to generate preview of resume #${resume.id}, attempt #${attempt}`,
+        );
       },
-    );
+    });
+
+    const duration = Number(performance.now() - start).toFixed(0);
+
+    this.logger.debug(`Chrome took ${duration}ms to generate preview`);
+
+    return url;
   }
 
   async generateResume(resume: ResumeDto) {

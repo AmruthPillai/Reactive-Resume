@@ -8,7 +8,7 @@ msgstr ""
 "Language: pt\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-03-01 00:08\n"
+"PO-Revision-Date: 2024-03-22 10:30\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese, Brazilian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -686,7 +686,7 @@ msgstr "Hospede seu currículo publicamente"
 msgid "I always love to hear from the users of Reactive Resume with feedback or support. Here are some of the messages I've received. If you have any feedback, feel free to drop me an email at <0>{email}</0>."
 msgstr "Sempre gosto de receber comentários ou suporte dos usuários do Reactive Resume. Aqui estão algumas das mensagens que recebi. Se você tiver algum comentário, sinta-se à vontade para enviar um e-mail para <0>{email}</0>."
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:82
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:96
 msgid "Icon"
 msgstr "Ícone"
 
@@ -931,7 +931,7 @@ msgctxt "Name of the Certification"
 msgid "Name"
 msgstr "Nome"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:39
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:53
 msgid "Network"
 msgstr "Rede"
 
@@ -939,7 +939,7 @@ msgstr "Rede"
 msgid "New Password"
 msgstr "Nova Senha"
 
-#: apps/client/src/components/locale-combobox.tsx:43
+#: apps/client/src/components/locale-combobox.tsx:45
 msgid "No results found"
 msgstr "Nenhum resultado encontrado"
 
@@ -1072,7 +1072,7 @@ msgstr "Posição"
 msgid "Powered by"
 msgstr "Desenvolvido por"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:98
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:115
 msgid "Powered by <0>Simple Icons</0>"
 msgstr "Desenvolvido por <0>Simple Icons</0>"
 
@@ -1222,7 +1222,7 @@ msgstr "Procure um subconjunto de fontes"
 msgid "Search for a font variant"
 msgstr "Procure uma variante de fonte"
 
-#: apps/client/src/components/locale-combobox.tsx:41
+#: apps/client/src/components/locale-combobox.tsx:42
 msgid "Search for a language"
 msgstr "Selecionar idioma"
 
@@ -1561,7 +1561,7 @@ msgid "User does not have an associated 'secrets' record. Please report this iss
 msgstr "O usuário não tem um registro \"secrets\" associado. Por favor, relate esse problema no GitHub."
 
 #: apps/client/src/pages/auth/register/page.tsx:127
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:54
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:68
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
 msgid "Username"
 msgstr "Nome de usuário"
@@ -1616,7 +1616,7 @@ msgstr "Verificamos seu endereço de e-mail apenas para garantir que possamos en
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:113
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:124
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:100
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:68
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:82
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:94
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:67
@@ -1634,19 +1634,19 @@ msgstr "O que há de novo na versão mais recente"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:135
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:112
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
-msgstr ""
+msgstr "Você pode adicionar várias palavras-chave separando-as com vírgula ou pressionando Enter."
 
 #: apps/client/src/pages/auth/login/page.tsx:88
 msgid "You can also enter your username."
-msgstr ""
+msgstr "Você também pode inserir seu nome de usuário."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:54
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
-msgstr ""
+msgstr "Você pode usar a API OpenAI para ajudá-lo a gerar conteúdo ou melhorar seus textos ao escrever seu currículo."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:40
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
-msgstr ""
+msgstr "Você pode acompanhar o número de visualizações que seu currículo recebeu ou quantas pessoas baixaram o currículo ativando o compartilhamento público."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:60
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
@@ -1675,11 +1675,11 @@ msgstr ""
 
 #: apps/client/src/services/openai/client.ts:11
 msgid "Your OpenAI API Key has not been set yet. Please go to your account settings to enable OpenAI Integration."
-msgstr ""
+msgstr "Sua chave de API OpenAI ainda não foi definida. Acesse as configurações da sua conta para ativar a integração com a OpenAI."
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:59
 msgid "Your password has been updated successfully."
-msgstr ""
+msgstr "Sua senha foi atualizada com sucesso."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:80
 msgid "Zoom In"

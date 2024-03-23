@@ -41,16 +41,16 @@ services:
 
   # Chrome Browser (for printing and previews)
   chrome:
-    image: browserless/chrome:1.61.0-puppeteer-21.4.1
+    image: ghcr.io/browserless/chromium:latest
     restart: unless-stopped
     ports:
       - ${CHROME_PORT:-8080}:3000
     environment:
-      KEEP_ALIVE: true
-      CONNECTION_TIMEOUT: 10000
+      TIMEOUT: 10000
+      CONCURRENT: 10
+      TOKEN: ${CHROME_TOKEN:-chrome_token}
       EXIT_ON_HEALTH_FAILURE: true
       PRE_REQUEST_HEALTH_CHECK: true
-      TOKEN: ${CHROME_TOKEN:-chrome_token}
 
   # Redis (for cache & server session management)
   redis:

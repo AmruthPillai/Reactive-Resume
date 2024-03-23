@@ -34,7 +34,7 @@ import { Link } from "@tiptap/extension-link";
 import { TextAlign } from "@tiptap/extension-text-align";
 import { Underline } from "@tiptap/extension-underline";
 import { Editor, EditorContent, EditorContentProps, useEditor } from "@tiptap/react";
-import { StarterKit } from "@tiptap/starter-kit";
+import StarterKit from "@tiptap/starter-kit";
 import { forwardRef, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -440,7 +440,12 @@ export const RichInput = forwardRef<Editor, RichInputProps>(
         Image,
         Underline,
         Highlight,
-        Link.configure({ openOnClick: false }),
+        Link.extend({
+          inclusive: false,
+          addKeyboardShortcuts: () => ({
+            "Mod-k": () => setLink(),
+          }),
+        }).configure({ openOnClick: false }),
         TextAlign.configure({ types: ["heading", "paragraph"] }),
       ],
       editorProps: {
@@ -455,6 +460,24 @@ export const RichInput = forwardRef<Editor, RichInputProps>(
       parseOptions: { preserveWhitespace: "full" },
       onUpdate: ({ editor }) => onChange?.(editor.getHTML()),
     });
+
+    const setLink = useCallback(() => {
+      if (!editor) return false;
+
+      const previousUrl = editor.getAttributes("link").href;
+      const url = window.prompt("URL", previousUrl);
+
+      // cancelled
+      if (url === null) return false;
+
+      // empty
+      if (url === "") {
+        return editor.chain().focus().extendMarkRange("link").unsetLink().run();
+      }
+
+      // update link
+      return editor.chain().focus().extendMarkRange("link").setLink({ href: url }).run();
+    }, [editor]);
 
     if (!editor) {
       return (

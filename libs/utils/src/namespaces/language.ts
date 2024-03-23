@@ -15,6 +15,12 @@ export const languages: Language[] = [
     locale: "af-ZA",
   },
   {
+    id: "sq",
+    name: "Albanian",
+    editorCode: "sq",
+    locale: "sq-AL",
+  },
+  {
     id: "am",
     name: "Amharic",
     editorCode: "am",
@@ -27,22 +33,34 @@ export const languages: Language[] = [
     locale: "ar-SA",
   },
   {
-    id: "bg",
-    name: "Bulgarian",
-    editorCode: "bg",
-    locale: "bg-BG",
-  },
-  {
     id: "bn",
     name: "Bengali",
     editorCode: "bn",
     locale: "bn-BD",
   },
   {
+    id: "bg",
+    name: "Bulgarian",
+    editorCode: "bg",
+    locale: "bg-BG",
+  },
+  {
     id: "ca",
     name: "Catalan",
     editorCode: "ca",
     locale: "ca-ES",
+  },
+  {
+    id: "zh-CN",
+    name: "Chinese Simplified",
+    editorCode: "zhcn",
+    locale: "zh-CN",
+  },
+  {
+    id: "zh-TW",
+    name: "Chinese Traditional",
+    editorCode: "zhtw",
+    locale: "zh-TW",
   },
   {
     id: "cs",
@@ -57,34 +75,16 @@ export const languages: Language[] = [
     locale: "da-DK",
   },
   {
-    id: "de",
-    name: "German",
-    editorCode: "de",
-    locale: "de-DE",
-  },
-  {
-    id: "el",
-    name: "Greek",
-    editorCode: "el",
-    locale: "el-GR",
+    id: "nl",
+    name: "Dutch",
+    editorCode: "nl",
+    locale: "nl-NL",
   },
   {
     id: "en",
     name: "English",
     editorCode: "en",
     locale: "en-US",
-  },
-  {
-    id: "es-ES",
-    name: "Spanish",
-    editorCode: "es",
-    locale: "es-ES",
-  },
-  {
-    id: "fa",
-    name: "Persian",
-    editorCode: "fa",
-    locale: "fa-IR",
   },
   {
     id: "fi",
@@ -97,6 +97,18 @@ export const languages: Language[] = [
     name: "French",
     editorCode: "fr",
     locale: "fr-FR",
+  },
+  {
+    id: "de",
+    name: "German",
+    editorCode: "de",
+    locale: "de-DE",
+  },
+  {
+    id: "el",
+    name: "Greek",
+    editorCode: "el",
+    locale: "el-GR",
   },
   {
     id: "he",
@@ -135,22 +147,28 @@ export const languages: Language[] = [
     locale: "ja-JP",
   },
   {
-    id: "km",
-    name: "Khmer",
-    editorCode: "km",
-    locale: "km-KH",
-  },
-  {
     id: "kn",
     name: "Kannada",
     editorCode: "kn",
     locale: "kn-IN",
   },
   {
+    id: "km",
+    name: "Khmer",
+    editorCode: "km",
+    locale: "km-KH",
+  },
+  {
     id: "ko",
     name: "Korean",
     editorCode: "ko",
     locale: "ko-KR",
+  },
+  {
+    id: "lv",
+    name: "Latvian",
+    editorCode: "lv",
+    locale: "lv-LV",
   },
   {
     id: "lt",
@@ -177,12 +195,6 @@ export const languages: Language[] = [
     locale: "ne-NP",
   },
   {
-    id: "nl",
-    name: "Dutch",
-    editorCode: "nl",
-    locale: "nl-NL",
-  },
-  {
     id: "no",
     name: "Norwegian",
     editorCode: "no",
@@ -195,22 +207,28 @@ export const languages: Language[] = [
     locale: "or-IN",
   },
   {
+    id: "fa",
+    name: "Persian",
+    editorCode: "fa",
+    locale: "fa-IR",
+  },
+  {
     id: "pl",
     name: "Polish",
     editorCode: "pl",
     locale: "pl-PL",
   },
   {
-    id: "pt-BR",
-    name: "Portuguese, Brazilian",
-    editorCode: "ptbr",
-    locale: "pt-BR",
-  },
-  {
     id: "pt-PT",
     name: "Portuguese",
     editorCode: "pt",
     locale: "pt-PT",
+  },
+  {
+    id: "pt-BR",
+    name: "Portuguese, Brazilian",
+    editorCode: "ptbr",
+    locale: "pt-BR",
   },
   {
     id: "ro",
@@ -229,6 +247,12 @@ export const languages: Language[] = [
     name: "Serbian (Cyrillic)",
     editorCode: "sr",
     locale: "sr-SP",
+  },
+  {
+    id: "es-ES",
+    name: "Spanish",
+    editorCode: "es",
+    locale: "es-ES",
   },
   {
     id: "sv-SE",
@@ -267,21 +291,15 @@ export const languages: Language[] = [
     locale: "uk-UA",
   },
   {
+    id: "uz",
+    name: "Uzbek",
+    editorCode: "uz",
+    locale: "uz-UZ",
+  },
+  {
     id: "vi",
     name: "Vietnamese",
     editorCode: "vi",
     locale: "vi-VN",
-  },
-  {
-    id: "zh-CN",
-    name: "Chinese Simplified",
-    editorCode: "zhcn",
-    locale: "zh-CN",
-  },
-  {
-    id: "zh-TW",
-    name: "Chinese Traditional",
-    editorCode: "zhtw",
-    locale: "zh-TW",
   },
 ];

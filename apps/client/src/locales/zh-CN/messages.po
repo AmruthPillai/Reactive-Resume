@@ -8,7 +8,7 @@ msgstr ""
 "Language: zh\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-02-01 09:12\n"
+"PO-Revision-Date: 2024-03-22 10:29\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:169
 msgid "You have enabled two-factor authentication successfully."
-msgstr "您已成功启用双因素认证。"
+msgstr "您已成功启用双重身份认证。"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:57
 msgid "{templatesCount} resume templates to choose from"
@@ -48,7 +48,7 @@ msgstr "<0>社区花费了大量时间编写 Reactive Resume 的文档，我相�
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:146
 msgid "<0>Two-factor authentication is currently disabled.</0> You can enable it by adding an authenticator app to your account."
-msgstr "<0>目前双因素身份验证已禁用。</0>您可以将身份验证器应用程序添加到您的账户来启用。"
+msgstr "<0>现已禁用双重身份验证。</0>您可以将身份验证程序添加到您的账户来启用。"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:139
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
@@ -686,7 +686,7 @@ msgstr "公开展示您的简历"
 msgid "I always love to hear from the users of Reactive Resume with feedback or support. Here are some of the messages I've received. If you have any feedback, feel free to drop me an email at <0>{email}</0>."
 msgstr "我们十分欢迎用户对于 Reactive Resume 的反馈和支持。这是我们收到的一些信息，如果您有任何反馈，请随时发送邮件至 <0>{email}</0>。"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:82
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:96
 msgid "Icon"
 msgstr "图标"
 
@@ -931,7 +931,7 @@ msgctxt "Name of the Certification"
 msgid "Name"
 msgstr "名称"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:39
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:53
 msgid "Network"
 msgstr "网络"
 
@@ -939,7 +939,7 @@ msgstr "网络"
 msgid "New Password"
 msgstr "新密码"
 
-#: apps/client/src/components/locale-combobox.tsx:43
+#: apps/client/src/components/locale-combobox.tsx:45
 msgid "No results found"
 msgstr "没找到结果"
 
@@ -1072,7 +1072,7 @@ msgstr "位置"
 msgid "Powered by"
 msgstr "技术支持："
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:98
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:115
 msgid "Powered by <0>Simple Icons</0>"
 msgstr "由 <0>Simple Icons</0> 支持"
 
@@ -1222,7 +1222,7 @@ msgstr "搜索字体子集"
 msgid "Search for a font variant"
 msgstr "搜索字体变体"
 
-#: apps/client/src/components/locale-combobox.tsx:41
+#: apps/client/src/components/locale-combobox.tsx:42
 msgid "Search for a language"
 msgstr "搜索语言"
 
@@ -1561,7 +1561,7 @@ msgid "User does not have an associated 'secrets' record. Please report this iss
 msgstr "用户没有关联的“秘密”记录。请在 GitHub 上报告此问题。"
 
 #: apps/client/src/pages/auth/register/page.tsx:127
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:54
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:68
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
 msgid "Username"
 msgstr "用户名"
@@ -1616,7 +1616,7 @@ msgstr "我们验证您的电子邮件地址只是为了确保在您忘记密码
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:113
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:124
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:100
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:68
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:82
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:94
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:67

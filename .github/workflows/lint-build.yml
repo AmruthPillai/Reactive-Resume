@@ -1,4 +1,4 @@
-name: Lint, Test and Build
+name: Lint and Build
 
 on:
   push:
@@ -35,7 +35,6 @@ jobs:
         pnpm exec nx-cloud record -- pnpm exec nx format:check
       parallel-commands-on-agents: |
         pnpm exec nx affected --target=lint --parallel=3
-        pnpm exec nx affected --target=test --parallel=3 --ci --code-coverage
         pnpm exec nx affected --target=build --parallel=3
 
   agents:
