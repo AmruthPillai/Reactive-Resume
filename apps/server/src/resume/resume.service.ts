@@ -92,7 +92,7 @@ export class ResumeService {
         title: true,
         slug: true,
         jobTitle: true,
-        // data: true,
+        data: true,
         visibility: true,
         locked: true,
         userId: true,
