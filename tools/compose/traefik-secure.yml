@@ -41,9 +41,11 @@ services:
 
   # Chrome Browser (for printing and previews)
   chrome:
-    image: browserless/chrome:1.61.0-puppeteer-21.4.1
+    image: ghcr.io/browserless/chromium:latest
     restart: unless-stopped
     environment:
+      TIMEOUT: 10000
+      CONCURRENT: 10
       TOKEN: chrome_token
       EXIT_ON_HEALTH_FAILURE: true
       PRE_REQUEST_HEALTH_CHECK: true
