@@ -1,5 +1,5 @@
 import { HttpException, Module } from "@nestjs/common";
-import { APP_INTERCEPTOR, APP_PIPE } from "@nestjs/core";
+import { APP_GUARD, APP_INTERCEPTOR, APP_PIPE } from "@nestjs/core";
 import { ServeStaticModule } from "@nestjs/serve-static";
 import { RavenInterceptor, RavenModule } from "nest-raven";
 import { ZodValidationPipe } from "nestjs-zod";
@@ -20,6 +20,7 @@ import { StripeModule } from "./stripe/stripe.module";
 import { TranslationModule } from "./translation/translation.module";
 import { UserModule } from "./user/user.module";
 import { UtilsModule } from "./utils/utils.module";
+import { ThrottlerGuard, ThrottlerModule } from "@nestjs/throttler";
 
 @Module({
   imports: [
@@ -52,6 +53,12 @@ import { UtilsModule } from "./utils/utils.module";
     }),
     RecommendationsModule,
     StripeModule,
+    ThrottlerModule.forRoot([
+      {
+        ttl: 1000,
+        limit: 10000,
+      },
+    ]),
   ],
   providers: [
     {
@@ -69,6 +76,10 @@ import { UtilsModule } from "./utils/utils.module";
           },
         ],
       }),
+    },
+    {
+      provide: APP_GUARD,
+      useClass: ThrottlerGuard,
     },
   ],
 })

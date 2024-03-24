@@ -71,6 +71,9 @@ dependencies:
   '@nestjs/terminus':
     specifier: ^10.2.3
     version: 10.2.3(@nestjs/axios@3.0.2)(@nestjs/common@10.3.5)(@nestjs/core@10.3.5)(@prisma/client@5.11.0)(reflect-metadata@0.2.1)(rxjs@7.8.1)
+  '@nestjs/throttler':
+    specifier: ^5.1.2
+    version: 5.1.2(@nestjs/common@10.3.5)(@nestjs/core@10.3.5)(reflect-metadata@0.2.1)
   '@newrelic/next':
     specifier: ^0.8.0
     version: 0.8.0(newrelic@11.14.0)
@@ -3915,6 +3918,18 @@ packages:
       '@nestjs/platform-express': 10.3.5(@nestjs/common@10.3.5)(@nestjs/core@10.3.5)
       tslib: 2.6.2
     dev: true
+
+  /@nestjs/throttler@5.1.2(@nestjs/common@10.3.5)(@nestjs/core@10.3.5)(reflect-metadata@0.2.1):
+    resolution: {integrity: sha512-60MqhSLYUqWOgc38P6C6f76JIpf6mVjly7gpuPBCKtVd0p5e8Fq855j7bJuO4/v25vgaOo1OdVs0U1qtgYioGw==}
+    peerDependencies:
+      '@nestjs/common': ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
+      '@nestjs/core': ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
+      reflect-metadata: ^0.1.13 || ^0.2.0
+    dependencies:
+      '@nestjs/common': 10.3.5(reflect-metadata@0.2.1)(rxjs@7.8.1)
+      '@nestjs/core': 10.3.5(@nestjs/common@10.3.5)(@nestjs/platform-express@10.3.5)(reflect-metadata@0.2.1)(rxjs@7.8.1)
+      reflect-metadata: 0.2.1
+    dev: false
 
   /@newrelic/aws-sdk@7.3.0:
     resolution: {integrity: sha512-6HBrd9SlHPeFI2MPH9s3KQUwJnuehHgn0boAtoGloiNL+dm6XbuTiNV1Deo1P2qspsCsf/luBvxM5b37MiGqVg==}

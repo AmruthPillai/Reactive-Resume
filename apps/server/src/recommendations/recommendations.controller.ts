@@ -4,6 +4,7 @@ import { PalmGenerateTextRequest } from "@reactive-resume/schema";
 import { PalmService } from "./palm/palm.service";
 import { RecommendationsService } from "./recommendations.service";
 import { ApiTags } from "@nestjs/swagger";
+import { Throttle } from "@nestjs/throttler";
 
 @ApiTags("Recommendations")
 @Controller("recommendations")
@@ -13,6 +14,7 @@ export class RecommendationsController {
     private readonly recommendationService: RecommendationsService,
   ) {}
 
+  @Throttle({ default: { limit: 5, ttl: 1000 } })
   @Post("text")
   async text(@Body() palmReq: PalmGenerateTextRequest) {
     const recommendation = await this.palmService.getTextRecommendation(palmReq);
