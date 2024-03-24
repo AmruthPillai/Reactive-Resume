@@ -38,8 +38,7 @@ export class UtilsService {
   ): Promise<T> {
     // Try to get the value from the cache
     const start = performance.now();
-    // const cachedValue = await this.redis.get(key);
-    const cachedValue = false;
+    const cachedValue = await this.redis.get(key);
     const duration = Number(performance.now() - start).toFixed(0);
 
     if (!cachedValue) {

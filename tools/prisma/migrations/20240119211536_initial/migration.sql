@@ -25,8 +25,8 @@ CREATE TABLE "User" (
     "twoFactorEnabled" BOOLEAN NOT NULL DEFAULT false,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
-    "billingAddress" JSONB,
-    "paymentMethod" JSONB,
+    "billingAddress" JSONB DEFAULT '{}',
+    "paymentMethod" JSONB DEFAULT '{}',
     "provider" "Provider" NOT NULL,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
@@ -52,6 +52,7 @@ CREATE TABLE "Resume" (
     "id" TEXT NOT NULL,
     "title" TEXT NOT NULL,
     "slug" TEXT NOT NULL,
+    "jobTitle" TEXT,
     "data" JSONB NOT NULL DEFAULT '{}',
     "visibility" "Visibility" NOT NULL DEFAULT 'private',
     "locked" BOOLEAN NOT NULL DEFAULT false,
@@ -65,7 +66,6 @@ CREATE TABLE "Resume" (
 -- CreateTable
 CREATE TABLE "Customer" (
     "id" TEXT NOT NULL,
-    "userId" TEXT NOT NULL,
     "stripeCustomerId" TEXT NOT NULL,
 
     CONSTRAINT "Customer_pkey" PRIMARY KEY ("id")
@@ -121,6 +121,37 @@ CREATE TABLE "Subscription" (
     CONSTRAINT "Subscription_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateTable
+CREATE TABLE "JobTitle" (
+    "id" TEXT NOT NULL,
+    "title" TEXT NOT NULL,
+    "relatedJobTitles" JSONB DEFAULT '{}',
+    "categoryId" TEXT,
+
+    CONSTRAINT "JobTitle_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "JobTitleCategory" (
+    "id" TEXT NOT NULL,
+    "title" TEXT NOT NULL,
+
+    CONSTRAINT "JobTitleCategory_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "RecommendationSnippet" (
+    "id" TEXT NOT NULL,
+    "type" TEXT NOT NULL,
+    "phrase" TEXT NOT NULL,
+    "highlight" TEXT,
+    "locale" TEXT NOT NULL DEFAULT 'en-US',
+    "usageCount" INTEGER NOT NULL DEFAULT 0,
+    "jobTitleId" TEXT NOT NULL,
+
+    CONSTRAINT "RecommendationSnippet_pkey" PRIMARY KEY ("id")
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "User_username_key" ON "User"("username");
 
@@ -143,19 +174,28 @@ CREATE UNIQUE INDEX "Resume_userId_id_key" ON "Resume"("userId", "id");
 CREATE UNIQUE INDEX "Resume_userId_slug_key" ON "Resume"("userId", "slug");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Customer_userId_key" ON "Customer"("userId");
+CREATE INDEX "Customer_stripeCustomerId_idx" ON "Customer"("stripeCustomerId");
 
 -- CreateIndex
-CREATE INDEX "Customer_userId_idx" ON "Customer"("userId");
+CREATE UNIQUE INDEX "Customer_id_stripeCustomerId_key" ON "Customer"("id", "stripeCustomerId");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Customer_userId_id_key" ON "Customer"("userId", "id");
+CREATE INDEX "Subscription_userId_idx" ON "Subscription"("userId");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Subscription_userId_key" ON "Subscription"("userId");
+CREATE UNIQUE INDEX "JobTitle_title_key" ON "JobTitle"("title");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Subscription_priceId_key" ON "Subscription"("priceId");
+CREATE INDEX "JobTitle_title_idx" ON "JobTitle"("title");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "JobTitleCategory_title_key" ON "JobTitleCategory"("title");
+
+-- CreateIndex
+CREATE INDEX "RecommendationSnippet_jobTitleId_phrase_idx" ON "RecommendationSnippet"("jobTitleId", "phrase");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "RecommendationSnippet_jobTitleId_phrase_type_key" ON "RecommendationSnippet"("jobTitleId", "phrase", "type");
 
 -- AddForeignKey
 ALTER TABLE "Secrets" ADD CONSTRAINT "Secrets_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
@@ -164,7 +204,7 @@ ALTER TABLE "Secrets" ADD CONSTRAINT "Secrets_userId_fkey" FOREIGN KEY ("userId"
 ALTER TABLE "Resume" ADD CONSTRAINT "Resume_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Customer" ADD CONSTRAINT "Customer_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "Customer" ADD CONSTRAINT "Customer_id_fkey" FOREIGN KEY ("id") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Price" ADD CONSTRAINT "Price_productId_fkey" FOREIGN KEY ("productId") REFERENCES "Product"("id") ON DELETE CASCADE ON UPDATE CASCADE;
@@ -174,3 +214,9 @@ ALTER TABLE "Subscription" ADD CONSTRAINT "Subscription_userId_fkey" FOREIGN KEY
 
 -- AddForeignKey
 ALTER TABLE "Subscription" ADD CONSTRAINT "Subscription_priceId_fkey" FOREIGN KEY ("priceId") REFERENCES "Price"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "JobTitle" ADD CONSTRAINT "JobTitle_categoryId_fkey" FOREIGN KEY ("categoryId") REFERENCES "JobTitleCategory"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "RecommendationSnippet" ADD CONSTRAINT "RecommendationSnippet_jobTitleId_fkey" FOREIGN KEY ("jobTitleId") REFERENCES "JobTitle"("id") ON DELETE CASCADE ON UPDATE CASCADE;

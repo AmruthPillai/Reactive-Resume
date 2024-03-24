@@ -1,26 +1,70 @@
-import { v1beta2 } from "@google-ai/generativelanguage";
 import { Injectable } from "@nestjs/common";
-import { ConfigService } from "@nestjs/config";
-import { PalmGenerateTextRequest } from "@reactive-resume/schema";
-import { GoogleAuth } from "google-auth-library";
+import { PromptKey } from "@reactive-resume/schema";
+import { RedisService } from "@songkeys/nestjs-redis";
+import { PrismaService } from "nestjs-prisma";
 
-import { Config } from "../config/schema";
+import { UtilsService } from "../utils/utils.service";
+import { JobTitleService } from "./job-title/job-title.service";
+import { PalmService } from "./palm/palm.service";
 
 @Injectable()
 export class RecommendationsService {
-  readonly palm_key: string;
-  readonly palm_modal_name: string;
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly palmService: PalmService,
+    private readonly jobTitleService: JobTitleService,
+    private readonly redisService: RedisService,
+    private readonly utils: UtilsService,
+  ) {}
 
-  constructor(private readonly configService: ConfigService<Config>) {
-    this.palm_key = this.configService.get("PALM_API_KEY") || "";
-    this.palm_modal_name = this.configService.get("PALM_MODEL_NAME") || "";
+  async getRecommendation(title: string, type: PromptKey) {
+    return this.utils.getCachedOrSet(
+      `recommendations:${title}:${type}`,
+      async () => {
+        // Get Job Title from DB
+        let jt = await this.prisma.jobTitle.findFirst({
+          where: {
+            title: title,
+          },
+          select: {
+            id: true,
+          },
+        });
+        // Job Title: If Not exist, add Job Title and Recommendations
+        if (!jt) {
+          const palmResponse = await this.palmService.getRecommendation(title, type);
+          jt = await this.jobTitleService.createJobTitle(
+            palmResponse.jobTitle,
+            palmResponse.relatedJobTitles,
+            palmResponse.suggestions,
+            type,
+          );
+        } else {
+          // Recommendations: If Not exist, add Recommendations
+          const count = await this.prisma.recommendationSnippet.count({
+            where: {
+              jobTitleId: jt.id,
+              type,
+            },
+          });
+          if (count < 5) {
+            const palmResponse = await this.palmService.getRecommendation(title, type);
+            await this.jobTitleService.createRecommendations(jt.id, palmResponse.suggestions, type);
+          }
+        }
+        return this.jobTitleService.getRecommendations(title);
+      },
+      1000 * 60 * 60 * 1, // 1 hour
+    );
   }
 
-  async getTextRecommendation(palmReq: PalmGenerateTextRequest) {
-    const client = new v1beta2.TextServiceClient({
-      authClient: new GoogleAuth().fromAPIKey(this.palm_key),
-    });
-    const result = await client.generateText(palmReq);
-    return result;
+  async searchJobTitles(search: string) {
+    return this.utils.getCachedOrSet(
+      `autocomplete:job-title:${search}}`,
+      async () => {
+        return this.jobTitleService.searchJobTitle(search);
+      },
+      1000 * 60 * 60 * 1, // 1 hour
+    );
   }
 }

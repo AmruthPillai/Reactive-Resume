@@ -11,6 +11,12 @@
     zoom: 110%;
   }
 
+    0%,
+    7% {
+        transform: rotateZ(0);
+        /* background-color: rgb(37, 99, 235); */
+        zoom: 110%;
+    }
   15% {
     transform: rotateZ(-15deg);
     zoom: 107%;

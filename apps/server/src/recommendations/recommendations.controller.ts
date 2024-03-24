@@ -1,15 +1,49 @@
-import { Body, Controller, Post } from "@nestjs/common";
+import { Body, Controller, Get, Param, Post } from "@nestjs/common";
 import { PalmGenerateTextRequest } from "@reactive-resume/schema";
 
+import { PalmService } from "./palm/palm.service";
 import { RecommendationsService } from "./recommendations.service";
 
 @Controller("recommendations")
 export class RecommendationsController {
-  constructor(private readonly recommendationsService: RecommendationsService) {}
+  constructor(
+    private readonly palmService: PalmService,
+    private readonly recommendationService: RecommendationsService,
+  ) {}
 
   @Post("text")
   async text(@Body() palmReq: PalmGenerateTextRequest) {
-    const recommendation = await this.recommendationsService.getTextRecommendation(palmReq);
+    const recommendation = await this.palmService.getTextRecommendation(palmReq);
+    return recommendation;
+  }
+
+  @Get(":jobTitle/summary")
+  async Summary(@Param("jobTitle") jobTitle: string) {
+    const recommendation = await this.recommendationService.getRecommendation(jobTitle, "summary");
+    return recommendation;
+  }
+
+  @Get(":jobTitle/experience")
+  async WorkSummary(@Param("jobTitle") jobTitle: string) {
+    const recommendation = await this.recommendationService.getRecommendation(
+      jobTitle,
+      "experience",
+    );
+    return recommendation;
+  }
+
+  @Get(":jobTitle/education")
+  async EducationSummary(@Param("jobTitle") jobTitle: string) {
+    const recommendation = await this.recommendationService.getRecommendation(
+      jobTitle,
+      "education",
+    );
+    return recommendation;
+  }
+
+  @Get("suggest/job-titles")
+  async JobTitles(@Param("jobTitle") jobTitle: string) {
+    const recommendation = await this.recommendationService.searchJobTitles(jobTitle);
     return recommendation;
   }
 }

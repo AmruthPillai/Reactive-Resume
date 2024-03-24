@@ -111,8 +111,8 @@ export const LoginPage = () => {
               )}
             />
 
-            <div className="mt-4 flex items-center gap-x-4">
-              <Button type="submit" disabled={loading} className="flex-1">
+            <div className="mt-4 grid items-center gap-4">
+              <Button type="submit" disabled={loading} className="w-full">
                 {t`Sign in`}
               </Button>
 

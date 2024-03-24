@@ -1,7 +1,9 @@
 import { t } from "@lingui/macro";
 import { ScrollArea, Skeleton } from "@reactive-resume/ui";
-import { cn } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
+import { useMemo } from "react";
+
+import { ListItem } from "./list-item";
 
 export const List = ({
   isLoading,
@@ -12,6 +14,26 @@ export const List = ({
   suggestions: { text: string; isSelected: boolean }[];
   handleSuggestionClick: (suggestion: string) => void;
 }) => {
+  const suggestionsList = useMemo(() => {
+    return suggestions?.length === 0 ? (
+      <motion.div
+        viewport={{ once: true }}
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0, transition: { delay: 0.1 } }}
+      >
+        {t`No suggestions found; try exploring alternative job titles in your search`}
+      </motion.div>
+    ) : (
+      suggestions?.map((suggestion, index) => (
+        <ListItem
+          handleSuggestionClick={handleSuggestionClick}
+          suggestion={suggestion}
+          key={suggestion.text || index}
+        />
+      ))
+    );
+  }, [suggestions, handleSuggestionClick]);
+
   return (
     <>
       <h3 className="text-lg">{t`Recommendations`}</h3>
@@ -23,37 +45,7 @@ export const List = ({
               <Skeleton className="mb-1 h-[90px] w-full" />
             </>
           ) : (
-            suggestions?.map((suggestion, index) => {
-              return (
-                <li
-                  className={cn(
-                    "mb-1",
-                    suggestion.isSelected ? "cursor-default" : "cursor-pointer",
-                  )}
-                  key={index}
-                  onClick={() => !suggestion.isSelected && handleSuggestionClick(suggestion.text)}
-                >
-                  <motion.div
-                    viewport={{ once: true }}
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0, transition: { delay: index * 0.1 } }}
-                  >
-                    <span
-                      className={cn(
-                        "flex rounded-lg p-3",
-                        suggestion.isSelected
-                          ? "bg-secondary"
-                          : "bg-secondary-accent hover:bg-secondary",
-                      )}
-                    >
-                      <span className="ml-2" title={suggestion.text}>
-                        {suggestion.text}
-                      </span>
-                    </span>
-                  </motion.div>
-                </li>
-              );
-            })
+            suggestionsList
           )}
         </ul>
       </ScrollArea>
