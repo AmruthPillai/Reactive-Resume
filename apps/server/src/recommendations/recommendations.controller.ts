@@ -3,7 +3,9 @@ import { PalmGenerateTextRequest } from "@reactive-resume/schema";
 
 import { PalmService } from "./palm/palm.service";
 import { RecommendationsService } from "./recommendations.service";
+import { ApiTags } from "@nestjs/swagger";
 
+@ApiTags("Recommendations")
 @Controller("recommendations")
 export class RecommendationsController {
   constructor(

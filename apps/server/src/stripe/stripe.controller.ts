@@ -22,7 +22,7 @@ import { Config } from "../config/schema";
 import { UtilsService } from "../utils/utils.service";
 import { StripeService } from "./stripe.service";
 
-@ApiTags("Stripe")
+@ApiTags("Payment")
 @Controller("stripe")
 export class StripeController {
   constructor(
