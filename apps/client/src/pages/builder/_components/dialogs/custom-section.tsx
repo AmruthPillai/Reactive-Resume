@@ -16,6 +16,7 @@ import {
 } from "@reactive-resume/ui";
 import { ResumeSections } from "@reactive-resume/utils";
 import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -37,6 +38,8 @@ export const CustomSectionDialog = () => {
     resolver: zodResolver(formSchema),
   });
 
+  const [pendingKeyword, setPendingKeyword] = useState("");
+
   if (!payload) return null;
 
   return (
@@ -44,6 +47,7 @@ export const CustomSectionDialog = () => {
       form={form}
       id={payload.id as DialogName}
       defaultValues={defaultCustomSection}
+      pendingKeyword={pendingKeyword}
     >
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <FormField
@@ -145,7 +149,7 @@ export const CustomSectionDialog = () => {
               <FormItem>
                 <FormLabel>{t`Keywords`}</FormLabel>
                 <FormControl>
-                  <BadgeInput {...field} />
+                  <BadgeInput {...field} setPendingKeyword={setPendingKeyword} />
                 </FormControl>
                 <FormDescription>
                   {t`You can add multiple keywords by separating them with a comma or pressing enter.`}

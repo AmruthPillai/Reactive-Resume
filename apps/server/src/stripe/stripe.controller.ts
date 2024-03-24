@@ -22,17 +22,6 @@ import { Config } from "../config/schema";
 import { UtilsService } from "../utils/utils.service";
 import { StripeService } from "./stripe.service";
 
-const relevantEvents = new Set([
-  "product.created",
-  "product.updated",
-  "price.created",
-  "price.updated",
-  "checkout.session.completed",
-  "customer.subscription.created",
-  "customer.subscription.updated",
-  "customer.subscription.deleted",
-]);
-
 @ApiTags("Stripe")
 @Controller("stripe")
 export class StripeController {

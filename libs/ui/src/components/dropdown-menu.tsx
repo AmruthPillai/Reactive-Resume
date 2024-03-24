@@ -31,7 +31,7 @@ export const DropdownMenuSubTrigger = forwardRef<
     {...props}
   >
     {children}
-    <CaretRight className="ml-auto h-4 w-4" />
+    <CaretRight className="ml-auto size-4" />
   </DropdownMenuPrimitive.SubTrigger>
 ));
 
@@ -109,9 +109,9 @@ export const DropdownMenuCheckboxItem = forwardRef<
     checked={checked}
     {...props}
   >
-    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+    <span className="absolute left-2 flex size-3.5 items-center justify-center">
       <DropdownMenuPrimitive.ItemIndicator>
-        <Check className="h-4 w-4" />
+        <Check className="size-4" />
       </DropdownMenuPrimitive.ItemIndicator>
     </span>
     {children}
@@ -132,7 +132,7 @@ export const DropdownMenuRadioItem = forwardRef<
     )}
     {...props}
   >
-    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+    <span className="absolute left-2 flex size-3.5 items-center justify-center">
       <DropdownMenuPrimitive.ItemIndicator>
         <DotOutline size={18} weight="fill" className="fill-current" />
       </DropdownMenuPrimitive.ItemIndicator>

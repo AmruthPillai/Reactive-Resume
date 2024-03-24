@@ -87,13 +87,13 @@ const Summary = () => {
       </div>
 
       <div className="mb-2 hidden items-center gap-x-2 text-center font-bold text-primary group-[.sidebar]:flex">
-        <div className="h-1.5 w-1.5 rounded-full border border-primary" />
+        <div className="size-1.5 rounded-full border border-primary" />
         <h4>{section.name}</h4>
-        <div className="h-1.5 w-1.5 rounded-full border border-primary" />
+        <div className="size-1.5 rounded-full border border-primary" />
       </div>
 
       <main className={cn("relative space-y-2", "border-l border-primary pl-4")}>
-        <div className="absolute left-[-4.5px] top-[8px] hidden h-[8px] w-[8px] rounded-full bg-primary group-[.main]:block" />
+        <div className="absolute left-[-4.5px] top-[8px] hidden size-[8px] rounded-full bg-primary group-[.main]:block" />
 
         <div
           className="wysiwyg"
@@ -170,9 +170,9 @@ const Section = <T,>({
       </div>
 
       <div className="mx-auto mb-2 hidden items-center gap-x-2 text-center font-bold text-primary group-[.sidebar]:flex">
-        <div className="h-1.5 w-1.5 rounded-full border border-primary" />
+        <div className="size-1.5 rounded-full border border-primary" />
         <h4>{section.name}</h4>
-        <div className="h-1.5 w-1.5 rounded-full border border-primary" />
+        <div className="size-1.5 rounded-full border border-primary" />
       </div>
 
       <div
@@ -210,7 +210,7 @@ const Section = <T,>({
 
                 {url !== undefined && <Link url={url} />}
 
-                <div className="absolute left-[-4.5px] top-px hidden h-[8px] w-[8px] rounded-full bg-primary group-[.main]:block" />
+                <div className="absolute left-[-4.5px] top-px hidden size-[8px] rounded-full bg-primary group-[.main]:block" />
               </div>
             );
           })}

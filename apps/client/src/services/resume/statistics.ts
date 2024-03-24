@@ -10,7 +10,7 @@ export const findResumeStatisticsById = async (data: { id: string }) => {
   return response.data;
 };
 
-export const useResumeStatistics = (id: string, enabled: boolean = false) => {
+export const useResumeStatistics = (id: string, enabled = false) => {
   const {
     error,
     isPending: loading,

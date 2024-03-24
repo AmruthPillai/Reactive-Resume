@@ -3,9 +3,15 @@ import { cn } from "@reactive-resume/utils";
 import { forwardRef, useState } from "react";
 
 import { Button } from "./button";
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "./command";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "./command";
 import { Popover, PopoverContent, PopoverTrigger } from "./popover";
-import { ScrollArea } from "./scroll-area";
 
 export interface ComboboxOption {
   value: string;
@@ -81,7 +87,7 @@ export const Combobox = forwardRef(
             </span>
             <CaretDown
               className={cn(
-                "ml-2 h-4 w-4 shrink-0 rotate-0 opacity-50 transition-transform",
+                "ml-2 size-4 shrink-0 rotate-0 opacity-50 transition-transform",
                 open && "rotate-180",
               )}
             />
@@ -93,43 +99,41 @@ export const Combobox = forwardRef(
               ref={ref}
               placeholder={props.searchPlaceholder ?? "Search for an option"}
             />
-            <CommandEmpty>{props.emptyText ?? "No results found"}</CommandEmpty>
-            <CommandGroup>
-              <ScrollArea orientation="vertical">
-                <div className="max-h-60">
-                  {props.options.map((option) => (
-                    <CommandItem
-                      key={option.value}
-                      value={option.value.toLowerCase().trim()}
-                      onSelect={(selectedValue) => {
-                        const option = props.options.find(
-                          (option) => option.value.toLowerCase().trim() === selectedValue,
-                        );
+            <CommandList>
+              <CommandEmpty>{props.emptyText ?? "No results found"}</CommandEmpty>
+              <CommandGroup>
+                {props.options.map((option) => (
+                  <CommandItem
+                    key={option.value}
+                    value={option.value.toLowerCase().trim()}
+                    onSelect={(selectedValue) => {
+                      const option = props.options.find(
+                        (option) => option.value.toLowerCase().trim() === selectedValue,
+                      );
 
-                        if (!option) return null;
+                      if (!option) return null;
 
-                        if (props.multiple) {
-                          handleMultipleSelect(props, option);
-                        } else {
-                          handleSingleSelect(props, option);
+                      if (props.multiple) {
+                        handleMultipleSelect(props, option);
+                      } else {
+                        handleSingleSelect(props, option);
 
-                          setOpen(false);
-                        }
-                      }}
-                    >
-                      <Check
-                        className={cn(
-                          "mr-2 h-4 w-4 opacity-0",
-                          !props.multiple && props.value === option.value && "opacity-100",
-                          props.multiple && props.value?.includes(option.value) && "opacity-100",
-                        )}
-                      />
-                      {option.label}
-                    </CommandItem>
-                  ))}
-                </div>
-              </ScrollArea>
-            </CommandGroup>
+                        setOpen(false);
+                      }
+                    }}
+                  >
+                    <Check
+                      className={cn(
+                        "mr-2 size-4 opacity-0",
+                        !props.multiple && props.value === option.value && "opacity-100",
+                        props.multiple && props.value?.includes(option.value) && "opacity-100",
+                      )}
+                    />
+                    {option.label}
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            </CommandList>
           </Command>
         </PopoverContent>
       </Popover>

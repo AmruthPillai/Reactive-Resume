@@ -48,7 +48,7 @@ export const BuilderPage = () => {
         src="/artboard/builder"
         className={cn(
           builder.type === Builder.ADVANCE && "mt-16 w-screen",
-          builder.type === Builder.SIMPLE && "h-full w-full",
+          builder.type === Builder.SIMPLE && "size-full",
         )}
         style={builder.type === Builder.ADVANCE ? { height: `calc(100vh - 64px)` } : {}}
       />

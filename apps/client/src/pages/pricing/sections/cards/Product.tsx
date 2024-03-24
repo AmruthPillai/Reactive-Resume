@@ -81,7 +81,7 @@ export const Product = ({ products }: Props) => {
                   <li className="flex items-center space-x-3">
                     {/* <!-- Icon --> */}
                     <svg
-                      className="h-5 w-5 shrink-0 text-green-500 dark:text-green-400"
+                      className="size-5 shrink-0 text-green-500 dark:text-green-400"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +97,7 @@ export const Product = ({ products }: Props) => {
                   <li className="flex items-center space-x-3">
                     {/* <!-- Icon --> */}
                     <svg
-                      className="h-5 w-5 shrink-0 text-green-500 dark:text-green-400"
+                      className="size-5 shrink-0 text-green-500 dark:text-green-400"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +113,7 @@ export const Product = ({ products }: Props) => {
                   <li className="flex items-center space-x-3">
                     {/* <!-- Icon --> */}
                     <svg
-                      className="h-5 w-5 shrink-0 text-green-500 dark:text-green-400"
+                      className="size-5 shrink-0 text-green-500 dark:text-green-400"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg"
@@ -133,7 +133,7 @@ export const Product = ({ products }: Props) => {
                   <li className="flex items-center space-x-3">
                     {/* <!-- Icon --> */}
                     <svg
-                      className="h-5 w-5 shrink-0 text-green-500 dark:text-green-400"
+                      className="size-5 shrink-0 text-green-500 dark:text-green-400"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg"
@@ -153,7 +153,7 @@ export const Product = ({ products }: Props) => {
                   <li className="flex items-center space-x-3">
                     {/* <!-- Icon --> */}
                     <svg
-                      className="h-5 w-5 shrink-0 text-green-500 dark:text-green-400"
+                      className="size-5 shrink-0 text-green-500 dark:text-green-400"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg"

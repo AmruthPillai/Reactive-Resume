@@ -187,6 +187,6 @@ model RecommendationSnippet {
   jobTitleId String
   jobTitle   JobTitle @relation(fields: [jobTitleId], references: [id], onDelete: Cascade)
 
-  @@index(fields: [jobTitleId, phrase])
   @@unique([jobTitleId, phrase, type])
+  @@index(fields: [jobTitleId, phrase])
 }

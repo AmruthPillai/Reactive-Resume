@@ -8,7 +8,7 @@ msgstr ""
 "Language: pl\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-01-04 00:08\n"
+"PO-Revision-Date: 2024-02-01 09:12\n"
 "Last-Translator: \n"
 "Language-Team: Polish\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
@@ -22,56 +22,68 @@ msgstr ""
 msgid "You have enabled two-factor authentication successfully."
 msgstr "Poprawnie aktywowano autentykacje 2FA."
 
-#: apps/client/src/pages/home/sections/features/index.tsx:57
+#: apps/client/src/pages/home/sections/keywords/index.tsx:49
 msgid "{templatesCount} resume templates to choose from"
 msgstr "{templatesCount} szablonów dostępnych"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:114
+#: apps/client/src/pages/builder/_components/sections/shared/section-options.tsx:115
 msgid "{value, plural, one {Column} other {Columns}}"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:20
+#: apps/client/src/pages/home/sections/faq/index.tsx:47
+msgid "<0><1>Stand out from the crowd: </1> Capture recruiter attention with a dynamic and interactive resume.</0><2><3>Increase interview rates: </3> Engage with recruiters and showcase your skills in a memorable way.</2><4><5>Get hired faster: </5> Optimize your resume for Applicant Tracking Systems (ATS) and land more interviews.</4><6><7>Build your brand: </7> Create a professional online presence that showcases your best assets.</6><8><9>Track your progress: </9> Gain valuable insights into your job search and make data-driven decisions.</8>"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/sections/information.tsx:20
 msgid "<0>I built Reactive Resume mostly by myself during my spare time, with a lot of help from other great open-source contributors.</0><1>If you like the app and want to support keeping it free forever, please donate whatever you can afford to give.</1>"
 msgstr "<0>Zbudowałem Reactive Resume głównie sam w wolnym czasie, z dużą pomocą innych wspaniałych twórców open-source.</0><1>Jeśli podoba ci się aplikacja i chcesz wesprzeć utrzymanie jej za darmo na zawsze, proszę przekazać darowiznę, na jaką możesz sobie pozwolić.</1>"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:51
+#: apps/client/src/pages/builder/_components/sections/information.tsx:51
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>Jestem pewny, że aplikacja nie jest idealna, ale chciałbym, aby taka była.</0><1>Jeśli wystąpią jakiekolwiek problemy podczas tworzenia CV lub masz pomysł, który pomógłby Tobie i innym użytkownikom w łatwiejszym tworzeniu CV, zgłoś problem w repozytorium lub wyślij mi e-mail w tej sprawie.</1>"
+
+#: apps/client/src/pages/dashboard/settings/_sections/payment.tsx:41
+msgid "<0>Manage your Payment related information.</0> You can cancel your subscription, Update your payment etc. You will be redirect to Stripe Portal."
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:126
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr "<0>Uwaga: </0>Korzystając z interfejsu API OpenAI, użytkownik przyjmuje do wiadomości i akceptuje <1>warunki użytkowania</1> i <2>politykę prywatności</2> określone przez OpenAI. Pamiętaj, że Reactive Resume nie ponosi żadnej odpowiedzialności za niewłaściwe lub nieautoryzowane korzystanie z usługi, a wszelkie wynikające z tego reperkusje lub zobowiązania spoczywają wyłącznie na użytkowniku."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:90
+#: apps/client/src/pages/home/sections/faq/index.tsx:80
+msgid "<0>OpenAI has been a game-changer for all of us. I cannot tell you how much ChatGPT has helped me in my everyday work and with the development of Reactive Resume. It only makes sense that you leverage what AI has to offer and let it help you build the perfect resume.</0><1>While most applications out there charge you a fee to use their AI services (rightfully so, because it isn't cheap), you can choose to enter your own OpenAI API key on the Settings page (under OpenAI Integration). <2>The key is stored in your browser's local storage</2>, which means that if you uninstall your browser, or even clear your data, the key is gone with it. All requests made to OpenAI are also sent directly to their service and does not hit the app servers at all.</1><3>The policy behind 'bring your own key' (BYOK) is <4>still being discussed</4> and probably might change over a period of time, but while it's available, I would keep the feature on the app.</3><5>You are free to turn off all AI features (and not be aware of it's existence) simply by not adding a key in the Settings page and still make use of all the useful features that Reactive Resume has to offer. I would even suggest you to take the extra step of using ChatGPT to write your content, and simply copy it over to Reactive Resume.</5>"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/sections/information.tsx:90
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
 msgstr "<0>Społeczność poświęciła wiele czasu na napisanie dokumentacji dla Reactive Resume i jestem pewien, że pomoże Ci ona rozpocząć pracę z aplikacją.</0><1>Istnieje również wiele przykładów, które pomogą Ci rozpocząć pracę, a także funkcje, o których możesz nie wiedzieć, które mogą pomóc Ci zbudować idealne CV.</1>"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:146
-msgid "<0>Two-factor authentication is currently disabled.</0> You can enable it by adding an authenticator app to your account."
-msgstr "<0>Uwierzytelnianie dwuskładnikowe jest obecnie wyłączone.</0> Można je włączyć, dodając do konta aplikację uwierzytelniającą."
+msgid "<0>Two-factoer authentication is currently disabled.</0> You can enable it by adding an authenticator app to your account."
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:139
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr "<0>Uwierzytelnianie dwuskładnikowe jest włączone.</0> Przy każdym logowaniu zostaniesz poproszony/a o wprowadzenie kodu."
 
-#: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/home/sections/hero/index.tsx:42
+#: apps/client/src/pages/home/sections/faq/index.tsx:198
+msgid "<0>We've got you covered! Get answers to all your frequently asked questions and unlock the power of this dynamic duo to land your dream job.</0><1>Unfortunately, this section is available only in English, as I do not want to burden translators with having to translate these large paragraphs of text.</1>"
+msgstr ""
+
+#: apps/client/src/pages/home/page.tsx:21
+#: apps/client/src/pages/pricing/page.tsx:17
 msgid "A free and open-source resume builder"
 msgstr "Darmowy kreator CV typu open-source"
 
-#: apps/client/src/pages/home/components/footer.tsx:20
-#: apps/client/src/pages/home/sections/hero/index.tsx:47
-msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
-msgstr "Darmowy i open-source'owy kreator CV, który upraszcza proces tworzenia, aktualizowania i udostępniania CV."
-
-#: apps/client/src/pages/builder/_components/toolbar.tsx:53
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
+#: apps/client/src/pages/builder/_components/sections/sharing.tsx:29
+#: apps/client/src/pages/builder/_layout/advance/_components/toolbar.tsx:56
+#: apps/client/src/pages/builder/_layout/simple/_components/toolbar.tsx:56
 msgid "A link has been copied to your clipboard."
 msgstr "Link został skopiowany do schowka."
 
-#: apps/client/src/components/copyright.tsx:29
-msgid "A passion project by <0>Amruth Pillai</0>"
-msgstr "Projekt realizowany z pasją przez <0>Amruth Pillai</0>"
+#: apps/client/src/pages/home/sections/faq/index.tsx:12
+msgid "A live resume is an interactive online document that goes beyond static text. It allows you to embed multimedia content, update achievements in real-time, and engage with recruiters in a dynamic way."
+msgstr ""
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:57
 msgid "A password reset link should have been sent to your inbox, if an account existed with the email you provided."
@@ -85,7 +97,7 @@ msgstr "CV z tym samym identyfikatorem już istnieje, proszę wybrać inną unik
 msgid "A user with this email address and/or username already exists."
 msgstr "Użytkownik o tym adresie e-mail i/lub nazwie użytkownika już istnieje."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:43
+#: apps/client/src/pages/builder/_components/sections/page.tsx:43
 msgid "A4"
 msgstr "A4"
 
@@ -98,51 +110,72 @@ msgstr "Akceptuje tylko pliki {accept}"
 msgid "Account"
 msgstr "Konto"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:124
+#: apps/client/src/pages/builder/_components/sections/custom/section.tsx:124
 msgid "Add a custom field"
 msgstr "Dodaj niestandardowe pole"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:108
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:147
+#: apps/client/src/pages/builder/_components/sections/shared/section-base.tsx:108
+#: apps/client/src/pages/builder/_components/sections/shared/section-base.tsx:147
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "Dodaj nowy element"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:68
+#: apps/client/src/pages/builder/_components/sections/shared/section-options.tsx:69
 msgid "Add a new item"
 msgstr "Dodaj nowy element"
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:79
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:196
+#: apps/client/src/pages/builder/_helper/section.tsx:58
+#: apps/client/src/pages/builder/_layout/advance/_components/sidebars/left/index.tsx:100
+#: apps/client/src/pages/builder/_layout/simple/_components/left/section-bar.tsx:94
 msgid "Add a new section"
 msgstr "Dodaj nową sekcję"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:269
+#: apps/client/src/pages/builder/_components/sections/layout.tsx:269
 msgid "Add New Page"
 msgstr "Dodaj nową stronę"
 
-#: apps/client/src/components/ai-actions.tsx:79
+#: apps/client/src/components/ai-actions.tsx:91
 msgid "AI"
 msgstr "AI"
+
+#: apps/client/src/services/palm/suggestions.ts:74
+msgid "AI did not return a valid JSON."
+msgstr ""
+
+#: apps/client/src/services/palm/change-tone.ts:35
+#: apps/client/src/services/palm/fix-grammar.ts:33
+#: apps/client/src/services/palm/improve-writing.ts:31
+#: apps/client/src/services/palm/suggestions.ts:66
+msgid "AI did not return any choices for your text."
+msgstr ""
+
+#: apps/client/src/pages/home/sections/keywords/index.tsx:42
+msgid "AI Integration"
+msgstr ""
 
 #: apps/client/src/pages/auth/register/page.tsx:74
 msgid "Already have an account?"
 msgstr "Posiadasz już konto?"
 
+#: apps/client/src/pages/home/sections/faq/index.tsx:30
+msgid "An AI resume builder uses artificial intelligence to help you create a professional and targeted resume. It can analyze your skills and experience, suggest relevant keywords, and provide personalized feedback."
+msgstr ""
+
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:144
 msgid "An error occurred while validating the file."
 msgstr "Wystąpił błąd podczas sprawdzania pliku."
 
-#: apps/client/src/pages/home/sections/features/index.tsx:135
+#: apps/client/src/pages/home/sections/keywords/index.tsx:97
 msgid "and many more..."
 msgstr "i wiele więcej..."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:57
+#: apps/client/src/pages/builder/_components/sections/sharing.tsx:57
 msgid "Anyone with the link can view and download the resume."
 msgstr "Każda osoba posiadająca link może wyświetlić i pobrać CV."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:54
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:30
+#: apps/client/src/pages/builder/_components/sections/sharing.tsx:30
+#: apps/client/src/pages/builder/_layout/advance/_components/toolbar.tsx:57
+#: apps/client/src/pages/builder/_layout/simple/_components/toolbar.tsx:57
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "Każda osoba posiadająca ten link może wyświetlić i pobrać CV. Udostępnij go na swoim profilu lub wyślij rekruterom."
 
@@ -150,11 +183,11 @@ msgstr "Każda osoba posiadająca ten link może wyświetlić i pobrać CV. Udos
 msgid "API Key"
 msgstr "Klucz API"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:115
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:125
 msgid "Are you sure you want to delete this item?"
 msgstr "Czy na pewno chcesz usunąć ten element?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:148
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:170
 msgid "Are you sure you want to delete your resume?"
 msgstr "Czy na pewno chcesz usunąć swoje CV?"
 
@@ -175,19 +208,19 @@ msgid "Are you sure?"
 msgstr "Na pewno?"
 
 #. For example, Computer Science or Business Administration
-#: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:73
+#: apps/client/src/pages/builder/_components/dialogs/education.tsx:78
 msgid "Area of Study"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:86
+#: apps/client/src/pages/builder/_components/sections/picture/options.tsx:86
 msgid "Aspect Ratio"
 msgstr "Współczynnik proporcji"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:51
+#: apps/client/src/pages/home/sections/keywords/index.tsx:43
 msgid "Available in {languagesCount} languages"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:53
+#: apps/client/src/pages/builder/_components/dialogs/awards.tsx:54
 msgid "Awarder"
 msgstr "Nagrodzony"
 
@@ -197,7 +230,7 @@ msgstr "Nagrodzony"
 msgid "Back"
 msgstr "Powrót"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:73
+#: apps/client/src/pages/builder/_components/sections/theme.tsx:73
 msgid "Background Color"
 msgstr "Kolor tła"
 
@@ -209,20 +242,21 @@ msgstr "Kod Zapasowy"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "Kody Zapasowe mogą zawierać wyłącznie małe litery lub cyfry i muszą mieć dokładnie 10 znaków."
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:56
+#: apps/client/src/pages/builder/_layout/advance/_components/sidebars/left/index.tsx:38
+#: apps/client/src/pages/builder/_layout/simple/_components/left/section-bar.tsx:33
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
 msgid "Basics"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:21
+#: apps/client/src/pages/builder/_components/sections/basics.tsx:22
 msgid "Basics"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:196
+#: apps/client/src/pages/builder/_components/sections/picture/options.tsx:196
 msgid "Border"
 msgstr "Obramowanie"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:129
+#: apps/client/src/pages/builder/_components/sections/picture/options.tsx:129
 msgid "Border Radius"
 msgstr "Zaokrąglenie"
 
@@ -230,24 +264,28 @@ msgstr "Zaokrąglenie"
 msgid "Built with"
 msgstr "Wykorzystane technologie"
 
-#: apps/client/src/components/copyright.tsx:27
+#: apps/client/src/pages/pricing/sections/cards/Product.tsx:182
+msgid "Buy Now"
+msgstr ""
+
 #: apps/client/src/pages/home/sections/contributors/index.tsx:20
 msgid "By the community, for the community."
 msgstr "Zbudowane przez społeczność dla społeczności."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:122
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:132
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:155
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:177
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:135
 msgid "Cancel"
 msgstr "Anuluj"
 
-#: apps/client/src/components/ai-actions.tsx:103
-#: apps/client/src/components/ai-actions.tsx:106
+#: apps/client/src/components/ai-actions.tsx:133
+#: apps/client/src/components/ai-actions.tsx:136
 msgid "Casual"
 msgstr "Nieformalnie"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:98
+#: apps/client/src/pages/builder/_layout/advance/_components/toolbar.tsx:117
+#: apps/client/src/pages/builder/_layout/simple/_components/toolbar.tsx:117
 msgid "Center Artboard"
 msgstr "Wyśrodkuj Obszar Roboczy"
 
@@ -256,11 +294,11 @@ msgstr "Wyśrodkuj Obszar Roboczy"
 msgid "Change Password"
 msgstr "Zmień hasło"
 
-#: apps/client/src/components/ai-actions.tsx:97
+#: apps/client/src/components/ai-actions.tsx:127
 msgid "Change Tone"
 msgstr "Zmień ton"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:207
 msgid "Changed your mind about the name? Give it a new one."
 msgstr "Zmieniłeś zdanie co do nazwy? Daj nową."
 
@@ -268,7 +306,11 @@ msgstr "Zmieniłeś zdanie co do nazwy? Daj nową."
 msgid "Check your email for the confirmation link to update your email address."
 msgstr "Sprawdź, czy w skrzynce e-mail znajduje się link potwierdzający umożliwiający aktualizację adresu e-mail."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:149
+#: apps/client/src/pages/home/sections/features/index.tsx:33
+msgid "Choose from over 10+ professional resume templates, designed for various industries and job titles."
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/sections/picture/options.tsx:149
 msgid "Circle"
 msgstr "Koło"
 
@@ -284,16 +326,16 @@ msgstr "Kod"
 msgid "Code must be exactly 6 digits long."
 msgstr "Kod musi mieć dokładnie 6 cyfr."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:108
+#: apps/client/src/pages/builder/_components/sections/shared/section-options.tsx:109
 msgid "Columns"
 msgstr "Kolumny"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:39
+#: apps/client/src/pages/builder/_components/dialogs/experience.tsx:44
 msgid "Company"
 msgstr "Firma"
 
-#: apps/client/src/components/ai-actions.tsx:115
-#: apps/client/src/components/ai-actions.tsx:118
+#: apps/client/src/components/ai-actions.tsx:145
+#: apps/client/src/components/ai-actions.tsx:148
 msgid "Confident"
 msgstr "Pewny siebie"
 
@@ -306,19 +348,21 @@ msgstr "Potwierdź Nowe Hasło"
 msgid "Continue"
 msgstr "Dalej"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:94
+#: apps/client/src/pages/builder/_components/sections/shared/section-list-item.tsx:106
+#: apps/client/src/pages/builder/_components/sections/shared/section-list-item.tsx:133
 msgid "Copy"
 msgstr "Kopiuj"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:132
+#: apps/client/src/pages/builder/_layout/advance/_components/toolbar.tsx:151
+#: apps/client/src/pages/builder/_layout/simple/_components/toolbar.tsx:151
 msgid "Copy Link to Resume"
 msgstr "Skopiuj link do CV"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:78
+#: apps/client/src/pages/builder/_components/sections/sharing.tsx:78
 msgid "Copy to Clipboard"
 msgstr "Skopiuj do Schowka"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:158
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:168
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
 msgid "Create"
 msgstr "Stwórz"
@@ -328,11 +372,11 @@ msgstr "Stwórz"
 msgid "Create a new account"
 msgstr "Stwórz nowe konto"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:146
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:156
 msgid "Create a new item"
 msgstr "Stwórz nowy element"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:177
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:199
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:24
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:19
 msgid "Create a new resume"
@@ -343,11 +387,11 @@ msgctxt "This is a link to create a new account"
 msgid "Create one now"
 msgstr "Stwórz teraz"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:258
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:297
 msgid "Create Sample Resume"
 msgstr "Stwórz przykładowe CV"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:62
+#: apps/client/src/pages/home/sections/keywords/index.tsx:54
 msgid "Custom resume sections"
 msgstr "Niestandardowe sekcje CV"
 
@@ -355,11 +399,11 @@ msgstr "Niestandardowe sekcje CV"
 msgid "Custom Section"
 msgstr "Sekcja niestandardowa"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:60
+#: apps/client/src/pages/home/sections/keywords/index.tsx:52
 msgid "Customisable colour palettes"
 msgstr "Konfigurowalne palety kolorów"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:61
+#: apps/client/src/pages/home/sections/keywords/index.tsx:53
 msgid "Customisable layouts"
 msgstr "Konfigurowalne układy"
 
@@ -371,21 +415,21 @@ msgstr "Niebezpieczna strefa"
 msgid "Dark"
 msgstr "Ciemny"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:67
-#: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:67
-#: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:67
+#: apps/client/src/pages/builder/_components/dialogs/awards.tsx:68
+#: apps/client/src/pages/builder/_components/dialogs/certifications.tsx:72
+#: apps/client/src/pages/builder/_components/dialogs/publications.tsx:72
 msgid "Date"
 msgstr "Data"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:81
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:85
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:110
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:72
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:72
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:80
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:67
 msgid "Date or Date Range"
 msgstr "Data lub zakres dat"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:124
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:134
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:157
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:148
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:134
@@ -398,15 +442,15 @@ msgstr "Usuń"
 msgid "Delete Account"
 msgstr "Usuń konto"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:67
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:71
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:58
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:66
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:53
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:55
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:63
 msgid "Description"
 msgstr "Opis"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:58
+#: apps/client/src/pages/home/sections/keywords/index.tsx:50
 msgid "Design single/multi page resumes"
 msgstr "Projektuj CV jedno/wielostronicowe"
 
@@ -425,7 +469,7 @@ msgstr "Wyłącz uwierzytelnianie dwuskładnikowe"
 msgid "Discard"
 msgstr "Odrzuć"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:110
+#: apps/client/src/pages/builder/_components/sections/information.tsx:110
 msgid "Documentation"
 msgstr "Dokumentacja"
 
@@ -433,7 +477,7 @@ msgstr "Dokumentacja"
 msgid "Don't have an account?"
 msgstr "Nie masz jeszcze konta?"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:88
+#: apps/client/src/pages/builder/_components/sections/information.tsx:88
 msgid "Don't know where to begin? Hit the docs!"
 msgstr "Nie wiesz od czego zacząć? Przejdź do dokumentów!"
 
@@ -441,28 +485,29 @@ msgstr "Nie wiesz od czego zacząć? Przejdź do dokumentów!"
 msgid "Don't see your language? <0>Help translate the app.</0>"
 msgstr "Nie widzisz swojego języka? <0>Pomóż w tłumaczeniu aplikacji.</0>"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:40
+#: apps/client/src/pages/builder/_components/sections/information.tsx:40
 msgid "Donate to Reactive Resume"
 msgstr "Przekaż darowiznę na rzecz Reactive Resume"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:56
+#: apps/client/src/pages/builder/_components/sections/export.tsx:56
 msgid "Download a JSON snapshot of your resume. This file can be used to import your resume in the future, or can even be shared with others to collaborate."
 msgstr "Proszę pobrać migawkę JSON swojego CV. Plik ten może zostać wykorzystany do zaimportowania Twojego CV w przyszłości, a nawet może zostać udostępniony innym osobom w celu współpracy."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:74
+#: apps/client/src/pages/builder/_components/sections/export.tsx:74
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "Pobierz plik PDF ze swoim CV. Plik ten można wykorzystać do wydrukowania CV, przesłania go rekruterom lub przesłania na portale pracy."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:144
+#: apps/client/src/pages/builder/_layout/advance/_components/toolbar.tsx:163
+#: apps/client/src/pages/builder/_layout/simple/_components/toolbar.tsx:163
 #: apps/client/src/pages/public/page.tsx:103
 msgid "Download PDF"
 msgstr "Pobierz PDF"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:58
+#: apps/client/src/pages/builder/_components/sections/statistics.tsx:58
 msgid "Downloads"
 msgstr "Pliki do pobrania"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:160
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:170
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:132
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:102
@@ -470,26 +515,31 @@ msgstr "Pliki do pobrania"
 msgid "Duplicate"
 msgstr "Duplikat"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:148
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:158
 msgid "Duplicate an existing item"
 msgstr "Duplikuj istniejący element"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:179
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:201
 msgid "Duplicate an existing resume"
 msgstr "Zduplikuj istniejące CV"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:90
+#: apps/client/src/pages/builder/_components/sections/shared/section-list-item.tsx:102
+#: apps/client/src/pages/builder/_components/sections/shared/section-list-item.tsx:129
 msgid "Edit"
 msgstr "Edytuj"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:174
+#: apps/client/src/pages/builder/_components/sections/picture/options.tsx:174
 msgid "Effects"
 msgstr "Efekty"
+
+#: apps/client/src/pages/home/components/footer.tsx:20
+msgid "Elevate Your Professional Story: Craft a Dynamic, AI-Powered Live Resume with Our Innovative Resume Builder."
+msgstr ""
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:82
 #: apps/client/src/pages/auth/login/page.tsx:84
 #: apps/client/src/pages/auth/register/page.tsx:148
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:50
+#: apps/client/src/pages/builder/_components/sections/basics.tsx:51
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:180
 msgid "Email"
 msgstr "E-mail"
@@ -497,6 +547,10 @@ msgstr "E-mail"
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:159
 msgid "Enable 2FA"
 msgstr "Włącz 2FA"
+
+#: apps/client/src/pages/home/sections/features/index.tsx:28
+msgid "Enhance your online profile and make it easier for employers to find and discover your talents."
+msgstr ""
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:67
 msgid "Enter a new password below, and make sure it's secure."
@@ -526,14 +580,31 @@ msgstr "Błędy"
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Reactive Resume has helped you. Your feedback and support are always welcome and much appreciated!"
 msgstr "Nawet jeśli nie jesteś w stanie finansowo wspomóc, nadal możesz mieć wpływ, dodając gwiazdkę na GitHubie, rozpowszechniając informacje wśród znajomych lub zostawiając krótką wiadomość, informując mnie, w jaki sposób Reactive Resume pomógł Ci. Twoja opinia i wsparcie zawsze są mile widziane i bardzo doceniane!"
 
-#: apps/client/src/pages/home/sections/templates/index.tsx:12
-msgid "Explore the templates available in Reactive Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
-msgstr "Przeglądaj szablony dostępne w Reactive Resume i przeglądaj CV utworzone za ich pomocą. Mogą również służyć jako przykłady, które pomogą w tworzeniu kolejnego CV."
+#: apps/client/src/pages/home/sections/keywords/index.tsx:70
+msgid "Experience the pinnacle of professional resume creation with our feature-rich Resume Builder. From multimedia integration to real-time updates, unlock a suite of sophisticated tools. Elevate your digital presence and career prospects with unparalleled features. Explore now for a distinguished resume that commands attention and enhances your professional standing."
+msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:79
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:40
+#: apps/client/src/pages/home/sections/features/index.tsx:17
+msgid "Expert Writing Tips"
+msgstr ""
+
+#: apps/client/src/pages/home/sections/features/index.tsx:48
+msgid "explore our <0/> awesome Features"
+msgstr ""
+
+#: apps/client/src/pages/home/sections/templates/index.tsx:9
+msgid "Explore our Powerful Resume Builder Templates"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/sections/export.tsx:40
+#: apps/client/src/pages/builder/_layout/advance/_components/sidebars/right/index.tsx:97
+#: apps/client/src/pages/builder/_layout/simple/_components/left/options.tsx:67
 msgid "Export"
 msgstr "Eksportuj"
+
+#: apps/client/src/pages/home/sections/features/index.tsx:32
+msgid "Extensive Template Library"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
 msgid "File"
@@ -543,31 +614,27 @@ msgstr "Plik"
 msgid "Filetype"
 msgstr "Typ pliku"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:40
-msgid "Finally,"
-msgstr ""
-
-#: apps/client/src/components/ai-actions.tsx:90
+#: apps/client/src/components/ai-actions.tsx:120
 msgid "Fix Spelling & Grammar"
 msgstr "Popraw pisownię i gramatykę"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:94
+#: apps/client/src/pages/builder/_components/sections/typography.tsx:94
 msgid "Font Family"
 msgstr "Czcionka"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:135
+#: apps/client/src/pages/builder/_components/sections/typography.tsx:135
 msgid "Font Size"
 msgstr "Rozmiar Czcionki"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:109
+#: apps/client/src/pages/builder/_components/sections/typography.tsx:109
 msgid "Font Subset"
 msgstr "Podzbiór czcionek"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:121
+#: apps/client/src/pages/builder/_components/sections/typography.tsx:121
 msgid "Font Variants"
 msgstr "Wariant Czcionki"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:30
+#: apps/client/src/pages/builder/_components/sections/notes.tsx:30
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr "Można tu na przykład zapisać informacje o firmach, do których wysłałeś to CV, lub linki do opisów stanowisk."
 
@@ -583,35 +650,43 @@ msgstr "Nie pamiętasz hasła?"
 msgid "Forgot your password?"
 msgstr "Nie pamiętasz hasła?"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:32
-#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:40
+#: apps/client/src/pages/builder/_components/sections/page.tsx:32
+#: apps/client/src/pages/builder/_components/sections/page.tsx:40
 msgid "Format"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:49
+#: apps/client/src/pages/builder/_components/sections/information.tsx:49
 msgid "Found a bug, or have an idea for a new feature?"
 msgstr "Znalazłeś błąd lub masz pomysł na nową funkcję?"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:46
-msgid "Free, forever"
-msgstr "Za darmo, na zawsze"
+#: apps/client/src/pages/pricing/sections/cards/Product.tsx:168
+msgid "Free updates: <0>6 months</0>"
+msgstr ""
 
-#: apps/client/src/components/ai-actions.tsx:121
-#: apps/client/src/components/ai-actions.tsx:124
+#: apps/client/src/components/ai-actions.tsx:151
+#: apps/client/src/components/ai-actions.tsx:154
 msgid "Friendly"
 msgstr "Przyjazny"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:31
+#: apps/client/src/pages/home/sections/templates/index.tsx:12
+msgid "Fuel your career success with our top-tier Resume Builder templates. Unleash the potential of your professional story, crafted with precision and innovation. Find the perfect template to make your resume stand out and climb the ranks in Google's search results. Elevate your career with a resume that leaves a lasting impression!"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/sections/basics.tsx:32
 msgid "Full Name"
 msgstr "Imię i nazwisko"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:201
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:223
 msgid "Generate a random title for your resume"
 msgstr "Wygeneruj losowy tytuł swojego CV"
 
-#: apps/client/src/pages/home/sections/hero/call-to-action.tsx:33
-msgid "Get Started"
-msgstr "Rozpocznij"
+#: apps/client/src/pages/home/sections/features/index.tsx:23
+msgid "Get personalized recommendations for relevant achievements, quantifiable results, and action verbs to showcase your impact and drive."
+msgstr ""
+
+#: apps/client/src/pages/home/sections/features/index.tsx:18
+msgid "Get real-time feedback and suggestions for improvement, from grammar and formatting checks to ensuring your resume is clear, concise, and impactful."
+msgstr ""
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:18
 msgid "GitHub"
@@ -621,7 +696,7 @@ msgstr "GitHub"
 msgid "GitHub Stars"
 msgstr "Gwiazdek na GitHub"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:186
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:208
 msgid "Give your old resume a new name."
 msgstr "Nadaj swojemu staremu CV nową nazwę."
 
@@ -634,7 +709,7 @@ msgstr "Przejdź do Pulpitu"
 msgid "Google"
 msgstr "Google"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:207
+#: apps/client/src/pages/builder/_components/sections/picture/options.tsx:207
 msgid "Grayscale"
 msgstr "Skala szarości"
 
@@ -642,7 +717,7 @@ msgstr "Skala szarości"
 msgid "Grid"
 msgstr "Siatka"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:41
+#: apps/client/src/pages/builder/_components/sections/basics.tsx:42
 msgid "Headline"
 msgstr "Nagłówek"
 
@@ -650,21 +725,25 @@ msgstr "Nagłówek"
 msgid "Here, you can update your account information such as your profile picture, name and username."
 msgstr "Tutaj możesz zaktualizować informacje o swoim koncie, takie jak zdjęcie profilowe, imię i nazwa użytkownika."
 
+#: apps/client/src/pages/dashboard/settings/_sections/payment.tsx:32
+msgid "Here, you can update your payment information such as your subscriptions."
+msgstr ""
+
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:62
 msgid "Here, you can update your profile to customize and personalize your experience."
 msgstr "Tutaj możesz zaktualizować swój profil, aby dostosować i spersonalizować swoje doświadczenia."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:76
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:82
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:90
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:185
 msgid "Hidden"
 msgstr "Ukryte"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:78
+#: apps/client/src/pages/builder/_components/sections/shared/section-options.tsx:79
 msgid "Hide"
 msgstr "Ukryj"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:179
+#: apps/client/src/pages/builder/_components/sections/typography.tsx:179
 msgid "Hide Icons"
 msgstr "Ukryj Ikony"
 
@@ -674,25 +753,37 @@ msgstr "Ukryj Ikony"
 msgid "Hold <0>Ctrl</0> to display your password temporarily."
 msgstr "Przytrzymaj <0>Ctrl</0> aby tymczasowo wyświetlić hasło."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:100
+#: apps/client/src/pages/builder/_components/sections/picture/options.tsx:100
 msgid "Horizontal"
 msgstr "Poziomo"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:67
+#: apps/client/src/pages/home/sections/keywords/index.tsx:59
 msgid "Host your resume publicly"
 msgstr "Udostępnij swoje CV publicznie"
+
+#: apps/client/src/pages/home/sections/faq/index.tsx:178
+msgid "How can I track who has viewed my live resume?"
+msgstr ""
+
+#: apps/client/src/pages/home/sections/faq/index.tsx:160
+msgid "How does the AI help me build a better resume?"
+msgstr ""
+
+#: apps/client/src/pages/home/sections/faq/index.tsx:77
+msgid "How does the OpenAI Integration work?"
+msgstr ""
+
+#: apps/client/src/pages/home/sections/faq/index.tsx:125
+msgid "How does your AI resume builder work?"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/testimonials/index.tsx:70
 msgid "I always love to hear from the users of Reactive Resume with feedback or support. Here are some of the messages I've received. If you have any feedback, feel free to drop me an email at <0>{email}</0>."
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:82
+#: apps/client/src/pages/builder/_components/dialogs/profiles.tsx:87
 msgid "Icon"
 msgstr "Ikona"
-
-#: apps/client/src/pages/home/sections/logo-cloud/index.tsx:47
-msgid "If this app has helped you with your job hunt, let me know by reaching out through <0>this contact form</0>."
-msgstr "Jeśli ta aplikacja pomogła Ci w poszukiwaniu pracy, daj mi znać, kontaktując się za pośrednictwem <0>tego formularza kontaktowego</0>."
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:126
 msgid "If you disable two-factor authentication, you will no longer be required to enter a verification code when logging in."
@@ -712,7 +803,7 @@ msgstr "Importuj"
 msgid "Import an existing resume"
 msgstr "Importuj istniejące CV"
 
-#: apps/client/src/components/ai-actions.tsx:85
+#: apps/client/src/components/ai-actions.tsx:115
 msgid "Improve Writing"
 msgstr "Popraw Pisanie"
 
@@ -728,16 +819,25 @@ msgstr "W tej sekcji możesz zmienić swoje hasło i włączyć/wyłączyć uwie
 msgid "In this section, you can delete your account and all the data associated to your user, but please keep in mind that <0>this action is irreversible</0>."
 msgstr "W tej sekcji możesz usunąć swoje konto i wszystkie dane powiązane z Twoim użytkownikiem, ale pamiętaj, że <0>ta czynność jest nieodwracalna</0>."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:83
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:122
+#: apps/client/src/pages/pricing/sections/cards/Product.tsx:95
+msgid "Individual configuration"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/sections/information.tsx:122
+#: apps/client/src/pages/builder/_layout/advance/_components/sidebars/right/index.tsx:107
+#: apps/client/src/pages/builder/_layout/simple/_components/left/options.tsx:77
 msgid "Information"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:39
+#: apps/client/src/pages/builder/_components/dialogs/education.tsx:44
 msgid "Institution"
 msgstr "Instytucja"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:53
+#: apps/client/src/pages/home/sections/faq/index.tsx:143
+msgid "Is my live resume publicly accessible?"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/dialogs/certifications.tsx:58
 msgid "Issuer"
 msgstr "Wydawca"
 
@@ -769,6 +869,11 @@ msgstr "Wygląda na to, że token weryfikacyjny, który podałeś, jest nieprawi
 msgid "It looks like your email address has already been verified."
 msgstr "Wygląda na to, że Twój adres e-mail został już zweryfikowany."
 
+#: apps/client/src/components/suggestions/search.tsx:21
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:263
+msgid "Job Title"
+msgstr ""
+
 #: apps/client/src/pages/auth/register/page.tsx:109
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
 msgid "John Doe"
@@ -784,19 +889,19 @@ msgctxt "Localized version of a placeholder email. For example, max.mustermann@e
 msgid "john.doe@example.com"
 msgstr "jan.kowalski@przyklad.pl"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:54
+#: apps/client/src/pages/builder/_components/sections/export.tsx:54
 msgid "JSON"
 msgstr "JSON"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:145
-#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:55
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:122
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:99
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:149
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:130
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:107
 msgid "Keywords"
 msgstr "Słowa Kluczowe"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:39
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:49
+#: apps/client/src/pages/builder/_components/sections/shared/url-input.tsx:39
+#: apps/client/src/pages/builder/_components/sections/shared/url-input.tsx:49
 msgid "Label"
 msgstr "Etykieta"
 
@@ -804,44 +909,41 @@ msgstr "Etykieta"
 msgid "Language"
 msgstr "Język"
 
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:116
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:194
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:149
 msgid "Last updated {lastUpdated}"
 msgstr "Ostatnio zaktualizowane {lastUpdated}"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:65
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:207
+#: apps/client/src/pages/builder/_components/sections/layout.tsx:207
+#: apps/client/src/pages/builder/_layout/advance/_components/sidebars/right/index.tsx:67
+#: apps/client/src/pages/builder/_layout/simple/_components/left/options.tsx:37
 msgid "Layout"
 msgstr "Układ"
 
-#: apps/client/src/pages/home/sections/hero/call-to-action.tsx:39
-msgid "Learn more"
-msgstr "Zobacz więcej"
-
-#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:44
+#: apps/client/src/pages/builder/_components/sections/page.tsx:44
 msgid "Letter"
 msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:64
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:69
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:77
 msgid "Level"
 msgstr "Poziom"
-
-#: apps/client/src/components/copyright.tsx:16
-msgid "Licensed under <0>MIT</0>"
-msgstr "Na licencji <0>MIT</0>"
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:81
 msgid "Light"
 msgstr "Jasny"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:69
+#: apps/client/src/pages/home/sections/keywords/index.tsx:61
 msgid "Light or dark theme"
 msgstr "Jasny lub ciemny motyw"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:152
+#: apps/client/src/pages/builder/_components/sections/typography.tsx:152
 msgid "Line Height"
 msgstr "Wysokość wiersza"
+
+#: apps/client/src/pages/auth/_components/social-auth.tsx:44
+msgid "LinkedIn"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:29
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:23
@@ -852,7 +954,7 @@ msgstr "LinkedIn, CV JSON itp."
 msgid "List"
 msgstr "Lista"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:95
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:99
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:83
@@ -860,13 +962,14 @@ msgid "Location"
 msgstr "Lokalizacja"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:51
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:142
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:121
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:222
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:122
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:192
 msgid "Lock"
 msgstr "Zablokuj"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:64
+#: apps/client/src/pages/home/sections/keywords/index.tsx:56
 msgid "Lock a resume to prevent editing"
 msgstr "Zablokuj CV, aby uniemożliwić edycję"
 
@@ -883,55 +986,60 @@ msgstr "Wyloguj"
 msgid "Lost your device?"
 msgstr "Utracono urządzenie?"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:255
+#: apps/client/src/pages/builder/_components/sections/layout.tsx:255
 msgid "Main"
 msgstr "Główne"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:59
+#: apps/client/src/pages/home/sections/keywords/index.tsx:51
 msgid "Manage multiple resumes"
 msgstr "Zarządzaj wieloma CV"
 
+#: apps/client/src/pages/dashboard/settings/_sections/payment.tsx:38
+#: apps/client/src/pages/dashboard/settings/_sections/payment.tsx:48
+msgid "Manage Subscription"
+msgstr ""
+
 #. The month and year should be uniform across all languages.
-#: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:71
-#: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:69
-#: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:69
+#: apps/client/src/pages/builder/_components/dialogs/awards.tsx:72
+#: apps/client/src/pages/builder/_components/dialogs/certifications.tsx:74
+#: apps/client/src/pages/builder/_components/dialogs/publications.tsx:74
 msgid "March 2023"
 msgstr "Marzec 2023"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:112
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:74
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:74
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:82
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:69
 msgid "March 2023 - Present"
 msgstr "Marzec 2023 – obecnie"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:50
+#: apps/client/src/pages/builder/_components/sections/page.tsx:50
 msgid "Margin"
 msgstr "Marginesy"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:48
-msgid "MIT License"
-msgstr "Licencja MIT"
-
 #: apps/client/src/pages/auth/register/page.tsx:106
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:53
-#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:40
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:57
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:48
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:44
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:52
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:41
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:43
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:152
 msgid "Name"
 msgstr "Nazwa"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:39
+#: apps/client/src/pages/builder/_components/dialogs/certifications.tsx:44
 msgctxt "Name of the Certification"
 msgid "Name"
 msgstr "Nazwa"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:39
+#: apps/client/src/pages/home/sections/faq/index.tsx:196
+msgid "Need help navigating the world of Live Resumes and AI Resume Builders?"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/dialogs/profiles.tsx:44
 msgid "Network"
 msgstr "Sieć"
 
@@ -939,20 +1047,25 @@ msgstr "Sieć"
 msgid "New Password"
 msgstr "Nowe Hasło"
 
+#: apps/client/src/pages/builder/_layout/simple/_components/left/section-area.tsx:85
+msgid "Next"
+msgstr ""
+
 #: apps/client/src/components/locale-combobox.tsx:43
 msgid "No results found"
 msgstr "Brak wyników"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:49
-msgid "No user tracking or advertising"
-msgstr "Brak śledzenia użytkowników i reklam"
+#: apps/client/src/pages/pricing/sections/cards/Product.tsx:111
+msgid "No setup, or hidden fees"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:131
 msgid "Note: This will make your account less secure."
 msgstr "Uwaga: Spowoduje to zmniejszenie bezpieczeństwa Twojego konta."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:80
-#: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:17
+#: apps/client/src/pages/builder/_components/sections/notes.tsx:17
+#: apps/client/src/pages/builder/_layout/advance/_components/sidebars/right/index.tsx:102
+#: apps/client/src/pages/builder/_layout/simple/_components/left/options.tsx:72
 msgid "Notes"
 msgstr "Notatki"
 
@@ -960,22 +1073,19 @@ msgstr "Notatki"
 msgid "One-Time Password"
 msgstr "Jednorazowe hasło"
 
-#: apps/client/src/components/ai-actions.tsx:56
+#: apps/client/src/components/ai-actions.tsx:67
 #: apps/client/src/libs/axios.ts:34
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:188
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "Ups, serwer zwrócił błąd."
 
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:124
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:83
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:204
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:84
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:174
 msgid "Open"
 msgstr "Otwórz"
-
-#: apps/client/src/pages/home/sections/features/index.tsx:47
-msgid "Open Source"
-msgstr "Open Source"
 
 #: apps/client/src/services/openai/change-tone.ts:30
 #: apps/client/src/services/openai/fix-grammar.ts:28
@@ -984,30 +1094,42 @@ msgid "OpenAI did not return any choices for your text."
 msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:52
-#: apps/client/src/pages/home/sections/features/index.tsx:52
 msgid "OpenAI Integration"
 msgstr "Integracja z OpenAI"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:169
+#: apps/client/src/pages/home/sections/features/index.tsx:27
+msgid "Optimize Your Online Presence"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/sections/page.tsx:67
+#: apps/client/src/pages/builder/_components/sections/typography.tsx:169
 msgid "Options"
 msgstr "Opcje"
 
-#: apps/client/src/pages/auth/layout.tsx:46
+#: apps/client/src/pages/auth/layout.tsx:47
 msgctxt "The user can either login with email/password, or continue with GitHub or Google."
 msgid "or continue with"
 msgstr "lub kontynuuj z"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:39
+#: apps/client/src/pages/builder/_components/dialogs/volunteer.tsx:44
 msgid "Organization"
 msgstr "Nazwa firmy"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:72
-#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:26
+#: apps/client/src/pages/home/sections/faq/index.tsx:129
+msgid "Our AI resume builder analyzes your information and provides personalized recommendations for content, keywords, and formatting. It also helps you optimize your resume for ATS and ensures it is professional and impactful."
+msgstr ""
+
+#: apps/client/src/pages/home/sections/faq/index.tsx:182
+msgid "Our Live Resume Analytics feature provides detailed reports on viewer engagement, including the number of views, time spent, and actions taken."
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/sections/page.tsx:26
+#: apps/client/src/pages/builder/_layout/advance/_components/sidebars/right/index.tsx:82
+#: apps/client/src/pages/builder/_layout/simple/_components/left/options.tsx:52
 msgid "Page"
 msgstr "Strona"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:237
+#: apps/client/src/pages/builder/_components/sections/layout.tsx:237
 msgid "Page {0}"
 msgstr "Strona {0}"
 
@@ -1018,19 +1140,23 @@ msgstr "Strona {0}"
 msgid "Password"
 msgstr "Hasło"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:72
+#: apps/client/src/pages/dashboard/settings/_sections/payment.tsx:30
+msgid "Payment"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/sections/export.tsx:72
 msgid "PDF"
 msgstr "PDF"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:63
+#: apps/client/src/pages/home/sections/keywords/index.tsx:55
 msgid "Personal notes for each resume"
 msgstr "Osobiste notatki do każdego CV"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:73
+#: apps/client/src/pages/builder/_components/sections/basics.tsx:74
 msgid "Phone"
 msgstr "Telefon"
 
-#: apps/client/src/pages/auth/layout.tsx:75
+#: apps/client/src/pages/auth/layout.tsx:76
 msgid "Photograph by Patrick Tomasso"
 msgstr "Zdjęcie: Patrick Tomasso"
 
@@ -1038,7 +1164,7 @@ msgstr "Zdjęcie: Patrick Tomasso"
 msgid "Pick any font from Google Fonts"
 msgstr "Wybierz dowolną czcionkę z Google Fonts"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/section.tsx:69
+#: apps/client/src/pages/builder/_components/sections/picture/section.tsx:69
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:120
 msgid "Picture"
 msgstr "Zdjęcie"
@@ -1055,33 +1181,41 @@ msgstr "Proszę wybrać typ pliku"
 msgid "Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app."
 msgstr "Przechowuj kody zapasowe w bezpiecznym miejscu. Możesz użyć jednego z tych jednorazowych kodów do zalogowania się, na wypadek utraty dostępu do aplikacji uwierzytelniającej."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:106
+#: apps/client/src/pages/builder/_components/sections/picture/options.tsx:106
 msgid "Portrait"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:54
+#: apps/client/src/pages/builder/_components/dialogs/experience.tsx:59
 msgctxt "Position held at a company, for example, Software Engineer"
 msgid "Position"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:53
+#: apps/client/src/pages/builder/_components/dialogs/volunteer.tsx:58
 msgid "Position"
 msgstr ""
 
-#: apps/client/src/pages/home/sections/features/index.tsx:97
-msgid "Powered by"
-msgstr "Napędzane przez"
-
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:98
+#: apps/client/src/pages/builder/_components/dialogs/profiles.tsx:103
 msgid "Powered by <0>Simple Icons</0>"
 msgstr "Napędzane przez <0>Simple Icons</0>"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:43
+#: apps/client/src/pages/pricing/sections/cards/Product.tsx:148
+msgid "Premium support: <0>6 months</0>"
+msgstr ""
+
+#: apps/client/src/pages/builder/_layout/simple/_components/left/section-area.tsx:75
+msgid "Previous"
+msgstr ""
+
+#: apps/client/src/pages/pricing/sections/cards/Product.tsx:32
+msgid "Pricing Plans"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/sections/theme.tsx:43
 msgid "Primary Color"
 msgstr ""
 
-#: apps/client/src/components/ai-actions.tsx:109
-#: apps/client/src/components/ai-actions.tsx:112
+#: apps/client/src/components/ai-actions.tsx:139
+#: apps/client/src/components/ai-actions.tsx:142
 msgid "Professional"
 msgstr "Profesjonalny"
 
@@ -1089,19 +1223,18 @@ msgstr "Profesjonalny"
 msgid "Profile"
 msgstr "Profil"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:55
+#: apps/client/src/pages/builder/_components/sections/sharing.tsx:55
 msgid "Public"
 msgstr "Publiczny"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:53
+#: apps/client/src/pages/builder/_components/dialogs/publications.tsx:58
 msgid "Publisher"
 msgstr "Publikujący"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:69
+#: apps/client/src/pages/builder/_components/sections/information.tsx:69
 msgid "Raise an issue"
 msgstr "Zgłoś problem"
 
-#: apps/client/src/components/copyright.tsx:38
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/login/page.tsx:55
@@ -1109,47 +1242,51 @@ msgstr "Zgłoś problem"
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
-#: apps/client/src/pages/builder/page.tsx:39
+#: apps/client/src/pages/builder/page.tsx:41
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
-#: apps/client/src/pages/dashboard/settings/page.tsx:16
+#: apps/client/src/pages/dashboard/settings/page.tsx:17
 #: apps/client/src/pages/home/components/footer.tsx:17
-#: apps/client/src/pages/home/page.tsx:24
+#: apps/client/src/pages/home/page.tsx:21
+#: apps/client/src/pages/pricing/page.tsx:17
 #: apps/client/src/pages/public/page.tsx:71
 #: apps/client/src/pages/public/page.tsx:93
 msgid "Reactive Resume"
 msgstr "Reactive Resume"
 
-#: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
-msgid "Reactive Resume has helped people land jobs at these great companies:"
-msgstr "Reactive Resume pomogło ludziom znaleźć pracę w tych wspaniałych firmach:"
-
 #: apps/client/src/pages/home/sections/support/index.tsx:12
 msgid "Reactive Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Reactive Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
 msgstr "Reactive Resume to darmowy i otwarty projekt, głównie stworzony przez mnie, i Wasze wsparcie byłoby bardzo docenione. Jeśli masz ochotę przyczynić się, i tylko jeśli możesz sobie na to pozwolić, rozważ wsparcie poprzez dowolną z wymienionych platform. Dodatkowo, darowizny dla Reactive Resume poprzez Open Collective są zwolnione z podatku, ponieważ projekt jest finansowo wspierany przez Open Collective Europe."
-
-#: apps/client/src/pages/home/sections/features/index.tsx:108
-msgid "Reactive Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
-msgstr "Reactive Resume to projekt będący pasją i efektem ponad 3 lat ciężkiej pracy, w wyniku którego pojawiło się wiele wielokrotnie powtarzanych pomysłów i funkcji, które zostały opracowane do (prawie) perfekcji."
 
 #: apps/client/src/pages/home/sections/contributors/index.tsx:22
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
 msgstr "Reactive Resume rozwija się dzięki tętniącej życiem społeczności. Projekt ten zawdzięcza swój postęp licznym osobom, które poświęciły swój czas i umiejętności. Poniżej przedstawiamy programistów, którzy ulepszyli jego funkcje w GitHubie, oraz lingwistów, których tłumaczenia w Crowdin udostępniły go szerszemu gronu odbiorców."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:72
+#: apps/client/src/pages/home/sections/features/index.tsx:37
+msgid "Real-Time Engagement Tracking"
+msgstr ""
+
+#: apps/client/src/components/suggestions/list.tsx:17
+msgid "Recommendations"
+msgstr ""
+
+#: apps/client/src/pages/builder/_layout/advance/_components/toolbar.tsx:85
+#: apps/client/src/pages/builder/_layout/simple/_components/toolbar.tsx:86
 msgid "Redo"
 msgstr "Ponów"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:98
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:129
+#: apps/client/src/pages/builder/_components/sections/shared/section-list-item.tsx:110
+#: apps/client/src/pages/builder/_components/sections/shared/section-list-item.tsx:137
+#: apps/client/src/pages/builder/_components/sections/shared/section-options.tsx:130
 msgid "Remove"
 msgstr "Usuń"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:241
+#: apps/client/src/pages/builder/_components/sections/layout.tsx:241
 msgid "Remove Page"
 msgstr "Usuń Stronę"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:83
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:128
+#: apps/client/src/pages/builder/_components/sections/shared/section-options.tsx:84
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:92
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:208
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:93
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:178
 msgid "Rename"
@@ -1159,11 +1296,11 @@ msgstr "Zmień Nazwę"
 msgid "Resend email confirmation link"
 msgstr "Wyślij ponownie link potwierdzający e-mail"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:124
+#: apps/client/src/pages/builder/_components/sections/shared/section-options.tsx:125
 msgid "Reset"
 msgstr "Zresetuj"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:210
+#: apps/client/src/pages/builder/_components/sections/layout.tsx:210
 msgid "Reset Layout"
 msgstr "Zresetuj Układ"
 
@@ -1172,7 +1309,8 @@ msgstr "Zresetuj Układ"
 msgid "Reset your password"
 msgstr "Zresetuj swoje hasło"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:92
+#: apps/client/src/pages/builder/_layout/advance/_components/toolbar.tsx:111
+#: apps/client/src/pages/builder/_layout/simple/_components/toolbar.tsx:111
 msgid "Reset Zoom"
 msgstr "Zresetuj Powiększenie"
 
@@ -1186,15 +1324,11 @@ msgstr "CV"
 msgid "Resumes Generated"
 msgstr "Wygenerowane CV"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:106
-msgid "Rich in features, not in pricing."
-msgstr ""
-
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:143
+#: apps/client/src/pages/builder/_components/sections/picture/options.tsx:143
 msgid "Rounded"
 msgstr "Zaokrąklony"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:159
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:169
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:125
@@ -1206,19 +1340,19 @@ msgid "Scan the QR code below with your authenticator app to setup 2FA on your a
 msgstr "Zeskanuj poniższy kod QR za pomocą aplikacji uwierzytelniającej, aby skonfigurować 2FA na swoim koncie."
 
 #. Score or honors for the degree, for example, CGPA or magna cum laude
-#: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:92
+#: apps/client/src/pages/builder/_components/dialogs/education.tsx:97
 msgid "Score"
 msgstr "Wynik"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:98
+#: apps/client/src/pages/builder/_components/sections/typography.tsx:98
 msgid "Search for a font family"
 msgstr "Wyszukaj czcionkę"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:113
+#: apps/client/src/pages/builder/_components/sections/typography.tsx:113
 msgid "Search for a font subset"
 msgstr "Wyszukaj podzbiór czcionek"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:126
+#: apps/client/src/pages/builder/_components/sections/typography.tsx:126
 msgid "Search for a font variant"
 msgstr "Wyszukaj wariant czcionki"
 
@@ -1226,7 +1360,7 @@ msgstr "Wyszukaj wariant czcionki"
 msgid "Search for a language"
 msgstr "Wyszukaj język"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:56
+#: apps/client/src/pages/home/sections/keywords/index.tsx:48
 msgid "Secure with two-factor authentication"
 msgstr ""
 
@@ -1234,22 +1368,22 @@ msgstr ""
 msgid "Security"
 msgstr "Bezpieczeństwo"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:50
-msgid "Self-host with Docker"
-msgstr "Samodzielny host z Dockerem"
+#: apps/client/src/pages/home/sections/features/index.tsx:38
+msgid "See how many recruiters have viewed your Live Resume, how long they spent on each section, and what actions they took."
+msgstr ""
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:98
 msgid "Send Email"
 msgstr "Wyślij E-mail"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:79
+#: apps/client/src/pages/builder/_components/sections/information.tsx:79
 msgid "Send me a message"
 msgstr "Wyślij mi wiadomość"
 
 #: apps/client/src/components/user-options.tsx:28
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
-#: apps/client/src/pages/dashboard/settings/page.tsx:16
-#: apps/client/src/pages/dashboard/settings/page.tsx:26
+#: apps/client/src/pages/dashboard/settings/page.tsx:17
+#: apps/client/src/pages/dashboard/settings/page.tsx:27
 msgid "Settings"
 msgstr "Ustawienia"
 
@@ -1257,24 +1391,25 @@ msgstr "Ustawienia"
 msgid "Setup two-factor authentication on your account"
 msgstr "Skonfiguruj uwierzytelnianie dwuskładnikowe na swoim koncie"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:73
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
+#: apps/client/src/pages/builder/_components/sections/sharing.tsx:39
+#: apps/client/src/pages/builder/_layout/advance/_components/sidebars/right/index.tsx:87
+#: apps/client/src/pages/builder/_layout/simple/_components/left/options.tsx:57
 msgid "Sharing"
 msgstr "Udostępnianie"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:78
+#: apps/client/src/pages/builder/_components/sections/shared/section-options.tsx:79
 msgid "Show"
 msgstr "Pokaż"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:78
+#: apps/client/src/pages/builder/_components/sections/page.tsx:78
 msgid "Show Break Line"
 msgstr "Pokaż linię przerwania"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:91
+#: apps/client/src/pages/builder/_components/sections/page.tsx:91
 msgid "Show Page Numbers"
 msgstr "Pokaż Numery Stron"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:256
+#: apps/client/src/pages/builder/_components/sections/layout.tsx:256
 msgid "Sidebar"
 msgstr "Pasek Boczny"
 
@@ -1293,17 +1428,21 @@ msgstr "Zaloguj się teraz"
 msgid "Sign in to your account"
 msgstr "Zaloguj się na swoje konto"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:55
+#: apps/client/src/pages/home/sections/keywords/index.tsx:47
 msgid "Sign in with Email"
 msgstr "Zaloguj się za pomocą adresu e-mail"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:53
+#: apps/client/src/pages/home/sections/keywords/index.tsx:44
 msgid "Sign in with GitHub"
 msgstr "Zaloguj się przez GitHub"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:54
+#: apps/client/src/pages/home/sections/keywords/index.tsx:45
 msgid "Sign in with Google"
 msgstr "Zaloguj się przez Google"
+
+#: apps/client/src/pages/home/sections/keywords/index.tsx:46
+msgid "Sign in with LinkedIn"
+msgstr ""
 
 #: apps/client/src/pages/auth/register/page.tsx:185
 msgid "Sign up"
@@ -1313,13 +1452,17 @@ msgstr "Zarejestruj się"
 msgid "Signups are currently disabled by the administrator."
 msgstr "Rejestracja jest obecnie wyłączona przez administratora."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:72
+#: apps/client/src/pages/builder/_components/sections/picture/options.tsx:72
 msgid "Size (in px)"
 msgstr "Rozmiar (w pikselach)"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:227
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:249
 msgid "Slug"
 msgstr "Krótka nazwa"
+
+#: apps/client/src/pages/home/sections/features/index.tsx:22
+msgid "Smart Content Suggestions"
+msgstr ""
 
 #: apps/client/src/services/errors/translate-error.ts:39
 msgid "Something went wrong while grabbing a preview your resume. Please try again later or raise an issue on GitHub."
@@ -1333,26 +1476,37 @@ msgstr "Coś poszło nie tak podczas drukowania Twojego CV. Spróbuj ponownie p�
 msgid "Something went wrong while processing your request. Please try again later or raise an issue on GitHub."
 msgstr "Coś poszło nie tak podczas pobierania podglądu CV. Spróbuj ponownie później lub zgłoś problem w GitHub."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:94
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:137
+#: apps/client/src/pages/builder/_components/sections/picture/options.tsx:94
+#: apps/client/src/pages/builder/_components/sections/picture/options.tsx:137
 msgid "Square"
 msgstr "Kwadrat"
+
+#: apps/client/src/pages/pricing/sections/cards/Product.tsx:34
+msgid ""
+"Start building for free, then add a site plan to go live. Account plans unlock\n"
+"additional features."
+msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:29
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:24
 msgid "Start building from scratch"
 msgstr "Zacznij tworzenie od zera"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:184
+#: apps/client/src/pages/home/sections/hero/call-to-action.tsx:33
+msgid "Start Building Your Live Resume Now"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:206
 msgid "Start building your resume by giving it a name."
 msgstr "Zacznij tworzyć swoje CV, nadając mu nazwę."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:76
-#: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:23
+#: apps/client/src/pages/builder/_components/sections/statistics.tsx:23
+#: apps/client/src/pages/builder/_layout/advance/_components/sidebars/right/index.tsx:92
+#: apps/client/src/pages/builder/_layout/simple/_components/left/options.tsx:62
 msgid "Statistics"
 msgstr "Statystyki"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:38
+#: apps/client/src/pages/builder/_components/sections/statistics.tsx:38
 msgid "Statistics are available only for public resumes."
 msgstr "Statystyki są dostępne tylko w przypadku CV publicznych."
 
@@ -1370,17 +1524,17 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:123
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:127
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:138
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:114
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:100
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:108
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:95
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:109
 msgid "Summary"
 msgstr "Podsumowanie"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:18
+#: apps/client/src/pages/builder/_components/sections/information.tsx:18
 msgid "Support the app by donating what you can!"
 msgstr "Wesprzyj aplikację, wpłacając dowolną kwotę!"
 
@@ -1388,7 +1542,7 @@ msgstr "Wesprzyj aplikację, wpłacając dowolną kwotę!"
 msgid "Supporting Reactive Resume"
 msgstr ""
 
-#: apps/client/src/pages/home/sections/features/index.tsx:65
+#: apps/client/src/pages/home/sections/keywords/index.tsx:57
 msgid "Supports A4/Letter page formats"
 msgstr "Obsługuje formaty stron A4/Letter"
 
@@ -1396,26 +1550,31 @@ msgstr "Obsługuje formaty stron A4/Letter"
 msgid "System"
 msgstr "System"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:62
-#: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
+#: apps/client/src/pages/pricing/sections/cards/Product.tsx:128
+msgid "Team size: <0>1 developer</0>"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/sections/template.tsx:19
+#: apps/client/src/pages/builder/_layout/advance/_components/sidebars/right/index.tsx:62
+#: apps/client/src/pages/builder/_layout/simple/_components/left/options.tsx:32
 msgid "Template"
 msgstr "Szablon"
-
-#: apps/client/src/pages/home/sections/templates/index.tsx:9
-msgid "Templates"
-msgstr "Szablony"
 
 #: apps/client/src/pages/home/sections/testimonials/index.tsx:68
 msgid "Testimonials"
 msgstr "Referencje"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:103
+#: apps/client/src/pages/builder/_components/sections/theme.tsx:103
 msgid "Text Color"
 msgstr "Kolor Tekstu"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:25
 msgid "That doesn't look like a valid OpenAI API key."
 msgstr "To nie wygląda na prawidłowy klucz API OpenAI."
+
+#: apps/client/src/pages/home/sections/faq/index.tsx:164
+msgid "The AI analyzes your skills and experience, suggests relevant keywords and phrases, provides feedback on writing style and formatting, and ensures your resume is optimized for ATS."
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
 msgid "The passwords you entered do not match."
@@ -1425,8 +1584,9 @@ msgstr "Wprowadzone hasła nie są zgodne."
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
 msgstr "CV, które chcesz zaktualizować, jest zablokowane. Odblokuj je, jeśli chcesz wprowadzić w nim jakiekolwiek zmiany."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:71
-#: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:20
+#: apps/client/src/pages/builder/_components/sections/theme.tsx:20
+#: apps/client/src/pages/builder/_layout/advance/_components/sidebars/right/index.tsx:77
+#: apps/client/src/pages/builder/_layout/simple/_components/left/options.tsx:47
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:73
 msgid "Theme"
 msgstr "Motyw"
@@ -1435,11 +1595,11 @@ msgstr "Motyw"
 msgid "There was an error connecting to the browser. Please make sure 'chrome' is running and reachable."
 msgstr "Wystąpił błąd podczas łączenia się z przeglądarką. Upewnij się, że „Chrome” jest uruchomiony i dostępny."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:117
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:127
 msgid "This action can be reverted by clicking on the undo button in the floating toolbar."
 msgstr "Tę czynność można cofnąć, klikając przycisk cofania na pływającym pasku narzędzi."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:150
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:172
 msgid "This action cannot be undone. This will permanently delete your resume and cannot be recovered."
 msgstr "Tej akcji nie można cofnąć. Spowoduje to trwałe usunięcie Twojego CV i nie będzie można go odzyskać."
 
@@ -1447,37 +1607,52 @@ msgstr "Tej akcji nie można cofnąć. Spowoduje to trwałe usunięcie Twojego C
 msgid "This email address is associated with an OAuth account. Please sign in with your OAuth provider."
 msgstr "Ten adres e-mail jest powiązany z kontem OAuth. Zaloguj się u swojego dostawcy OAuth."
 
-#: apps/client/src/pages/builder/_components/header.tsx:53
+#: apps/client/src/pages/builder/_layout/advance/_components/header.tsx:53
+#: apps/client/src/pages/builder/_layout/simple/_components/header.tsx:52
 msgid "This resume is locked, please unlock to make further changes."
 msgstr "To CV jest zablokowane. Odblokuj, aby wprowadzić dalsze zmiany."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:23
+#: apps/client/src/pages/builder/_components/sections/notes.tsx:23
 msgid "This section is reserved for your personal notes specific to this resume. The content here remains private and is not shared with anyone else."
 msgstr "Ta sekcja jest zarezerwowana na Twoje osobiste notatki dotyczące tego CV. Treść tutaj pozostaje prywatna i nie jest udostępniana nikomu innemu."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:215
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:268
+msgid "Tip: Enter Your Desired Job Title for Tailored Suggestions."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:237
 msgid "Tip: You can name the resume referring to the position you are applying for."
 msgstr "Wskazówka: Możesz nazwać CV nawiązując do stanowiska, na które aplikujesz."
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:39
+#: apps/client/src/pages/builder/_components/dialogs/awards.tsx:40
 msgctxt "Name of the Award"
 msgid "Title"
 msgstr "Tytuł"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:195
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:217
 msgid "Title"
 msgstr "Tytuł"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:106
+#: apps/client/src/pages/builder/_layout/advance/_components/toolbar.tsx:125
+#: apps/client/src/pages/builder/_layout/simple/_components/toolbar.tsx:125
 msgid "Toggle Page Break Line"
 msgstr "Przełącz Linię Podziału Strony"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:118
+#: apps/client/src/pages/builder/_layout/advance/_components/toolbar.tsx:137
+#: apps/client/src/pages/builder/_layout/simple/_components/toolbar.tsx:137
 msgid "Toggle Page Numbers"
 msgstr "Przełącz Numery Stron"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:68
+#: apps/client/src/pages/home/sections/keywords/index.tsx:60
 msgid "Track views and downloads"
+msgstr ""
+
+#: apps/client/src/pages/home/sections/hero/index.tsx:39
+msgid "Transform Your Career Journey with Live Resumes and AI Brilliance"
+msgstr ""
+
+#: apps/client/src/pages/home/sections/logo-cloud/index.tsx:38
+msgid "Trusted by Leading Brands: Explore How Our Builder Elevates Careers"
 msgstr ""
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
@@ -1499,25 +1674,28 @@ msgid "Type <0>delete</0> to confirm deleting your account."
 msgstr "Wpisz <0>delete</0>, aby potwierdzić usunięcie konta."
 
 #. For example, Bachelor's Degree or Master's Degree
-#: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:54
+#: apps/client/src/pages/builder/_components/dialogs/education.tsx:59
 msgid "Type of Study"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:68
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:66
+#: apps/client/src/pages/builder/_components/sections/typography.tsx:66
+#: apps/client/src/pages/builder/_layout/advance/_components/sidebars/right/index.tsx:72
+#: apps/client/src/pages/builder/_layout/simple/_components/left/options.tsx:42
 msgid "Typography"
 msgstr "Typografia"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:190
+#: apps/client/src/pages/builder/_components/sections/typography.tsx:190
 msgid "Underline Links"
 msgstr "Podkreśl Linki"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:66
+#: apps/client/src/pages/builder/_layout/advance/_components/toolbar.tsx:73
+#: apps/client/src/pages/builder/_layout/simple/_components/toolbar.tsx:74
 msgid "Undo"
 msgstr "Cofnij"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:52
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:137
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:111
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:217
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:112
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:187
 msgid "Unlock"
@@ -1527,15 +1705,19 @@ msgstr "Odblokuj"
 msgid "Unlocking a resume will allow you to make changes to it again."
 msgstr "Odblokowanie CV umożliwi ponowne wprowadzenie w nim zmian."
 
+#: apps/client/src/pages/home/sections/keywords/index.tsx:68
+msgid "Unrivaled Features in Our Advanced Resume Builder"
+msgstr ""
+
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:191
 msgid "Unverified"
 msgstr "Niezweryfikowany"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:147
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:157
 msgid "Update an existing item"
 msgstr "Zaktualizuj istniejący element"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:178
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:200
 msgid "Update an existing resume"
 msgstr "Zaktualizuj istniejące CV"
 
@@ -1543,11 +1725,11 @@ msgstr "Zaktualizuj istniejące CV"
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
 msgstr "Prześlij plik z jednego z akceptowanych źródeł, aby przeanalizować istniejące dane i zaimportować je do Reactive Resume w celu łatwiejszej edycji."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:73
+#: apps/client/src/pages/builder/_components/sections/sharing.tsx:73
 msgid "URL"
 msgstr "Link"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:56
+#: apps/client/src/pages/builder/_components/sections/shared/url-input.tsx:56
 msgid "URL must start with https://"
 msgstr "Link musi zaczynać się od https://"
 
@@ -1561,7 +1743,7 @@ msgid "User does not have an associated 'secrets' record. Please report this iss
 msgstr "Użytkownik nie ma powiązanego rekordu \"secrets\". Proszę zgłosić ten błąd na GitHub."
 
 #: apps/client/src/pages/auth/register/page.tsx:127
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:54
+#: apps/client/src/pages/builder/_components/dialogs/profiles.tsx:59
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
 msgid "Username"
 msgstr "Nazwa Użytkownika"
@@ -1578,7 +1760,7 @@ msgstr "Zweryfikuj"
 msgid "Validated"
 msgstr "Zatwierdzone"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:50
+#: apps/client/src/pages/builder/_components/sections/custom/section.tsx:50
 msgid "Value"
 msgstr "Wartość"
 
@@ -1595,15 +1777,12 @@ msgstr "Sprawdź, czy uwierzytelnianie dwuskładnikowe zostało poprawnie skonfi
 msgid "Verify your email address"
 msgstr "Zweryfikuj adres e-mail"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:26
-msgid "Version 4"
-msgstr "Wersja 4"
-
-#: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:51
+#: apps/client/src/pages/builder/_components/sections/statistics.tsx:51
 msgid "Views"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:86
+#: apps/client/src/pages/builder/_components/sections/shared/section-list-item.tsx:98
+#: apps/client/src/pages/builder/_components/sections/shared/section-list-item.tsx:125
 msgid "Visible"
 msgstr "Widoczny"
 
@@ -1613,11 +1792,11 @@ msgstr "Weryfikujemy Twój adres e-mail tylko po to, aby mieć pewność, że b�
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:81
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:109
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:113
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:124
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:68
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:86
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:94
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:67
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:95
@@ -1625,14 +1804,14 @@ msgstr "Weryfikujemy Twój adres e-mail tylko po to, aby mieć pewność, że b�
 msgid "Website"
 msgstr "Strona"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:34
-msgid "What's new in the latest version"
-msgstr "Co nowego w najnowszej wersji"
+#: apps/client/src/pages/home/sections/faq/index.tsx:44
+msgid "What are the benefits of using your website to build a live resume?"
+msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:150
-#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:60
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:127
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:104
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:154
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:135
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:112
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr "Możesz dodać wiele słów kluczowych, oddzielając je przecinkiem lub naciskając klawisz Enter."
 
@@ -1640,11 +1819,15 @@ msgstr "Możesz dodać wiele słów kluczowych, oddzielając je przecinkiem lub 
 msgid "You can also enter your username."
 msgstr "Możesz także wpisać swoją nazwę użytkownika."
 
+#: apps/client/src/pages/home/sections/faq/index.tsx:147
+msgid "You can choose whether to publish your live resume publicly or share it with specific individuals through private links."
+msgstr ""
+
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:54
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
 msgstr "Możesz skorzystać z interfejsu API OpenAI, aby pomóc w generowaniu treści lub ulepszaniu pisania podczas tworzenia CV."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:40
+#: apps/client/src/pages/builder/_components/sections/statistics.tsx:40
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
 msgstr "Możesz śledzić liczbę wyświetleń Twojego CV lub liczbę osób, które pobrały CV, włączając udostępnianie publiczne."
 
@@ -1681,11 +1864,12 @@ msgstr "Twój klucz API OpenAI nie został jeszcze ustawiony. Przejdź do ustawi
 msgid "Your password has been updated successfully."
 msgstr "Twoje hasło zostało pomyślnie zaktualizowane."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:80
+#: apps/client/src/pages/builder/_layout/advance/_components/toolbar.tsx:99
+#: apps/client/src/pages/builder/_layout/simple/_components/toolbar.tsx:99
 msgid "Zoom In"
 msgstr "Powiększ"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:86
+#: apps/client/src/pages/builder/_layout/advance/_components/toolbar.tsx:105
+#: apps/client/src/pages/builder/_layout/simple/_components/toolbar.tsx:105
 msgid "Zoom Out"
 msgstr "Pomniejsz"
-

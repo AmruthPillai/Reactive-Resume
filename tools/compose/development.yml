@@ -29,12 +29,12 @@ services:
     restart: unless-stopped
     command: server /data
     ports:
-      - ${STORAGE_PORT:-9000}:9000
+      - ${STORAGE_PORT:-9003}:9003
       - 9001:9001 # Minio Console (Optional)
     volumes:
       - minio_data:/data
     environment:
-      MINIO_ADDRESS: :9000
+      MINIO_ADDRESS: :9003
       MINIO_CONSOLE_ADDRESS: :9001
       MINIO_ROOT_USER: ${STORAGE_ACCESS_KEY:-minioadmin}
       MINIO_ROOT_PASSWORD: ${STORAGE_SECRET_KEY:-minioadmin}

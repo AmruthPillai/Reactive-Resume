@@ -50,7 +50,7 @@ export class AuthController {
     private readonly utils: UtilsService,
   ) {}
 
-  private async exchangeToken(id: string, email: string, isTwoFactorAuth: boolean = false) {
+  private async exchangeToken(id: string, email: string, isTwoFactorAuth = false) {
     try {
       const payload = payloadSchema.parse({ id, isTwoFactorAuth });
 
@@ -69,8 +69,8 @@ export class AuthController {
   private async handleAuthenticationResponse(
     user: UserWithSecrets,
     response: Response,
-    isTwoFactorAuth: boolean = false,
-    redirect: boolean = false,
+    isTwoFactorAuth = false,
+    redirect = false,
   ) {
     let status = "authenticated";
 

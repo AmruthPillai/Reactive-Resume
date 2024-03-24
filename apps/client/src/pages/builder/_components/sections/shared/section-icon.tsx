@@ -75,7 +75,7 @@ export const SectionIcon = ({ id, name, icon, ...props }: SectionIconProps) => {
 
   return (
     <Tooltip side="right" content={name ?? section.name}>
-      <Button size="icon" variant="ghost" className="h-8 w-8 rounded-full" {...props}>
+      <Button size="icon" variant="ghost" className="size-8 rounded-full" {...props}>
         {icon ?? getSectionIcon(id, { size: 14 })}
       </Button>
     </Tooltip>

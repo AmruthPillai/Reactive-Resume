@@ -64,7 +64,7 @@ export const SectionArea = () => {
       <div className="grid gap-y-6 p-6 @container/left">
         {SectionMapping[currentStep]}
 
-        <div className="grid grid-cols-3 gap-y-6">
+        <div className="grid grid-cols-3 gap-y-6 sm:mb-[100px]">
           {previousSection && (
             <Button
               className="col-span-1 gap-x-2"

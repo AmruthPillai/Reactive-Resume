@@ -55,10 +55,10 @@ export class ResumeService {
       },
     });
 
-    await Promise.all([
-      this.redis.del(`user:${userId}:resumes`),
-      this.redis.set(`user:${userId}:resume:${resume.id}`, JSON.stringify(resume)),
-    ]);
+    // await Promise.all([
+    //   this.redis.del(`user:${userId}:resumes`),
+    //   this.redis.set(`user:${userId}:resume:${resume.id}`, JSON.stringify(resume)),
+    // ]);
 
     return resume;
   }
@@ -77,50 +77,40 @@ export class ResumeService {
       },
     });
 
-    await Promise.all([
-      this.redis.del(`user:${userId}:resumes`),
-      this.redis.set(`user:${userId}:resume:${resume.id}`, JSON.stringify(resume)),
-    ]);
+    // await Promise.all([
+    //   this.redis.del(`user:${userId}:resumes`),
+    //   this.redis.set(`user:${userId}:resume:${resume.id}`, JSON.stringify(resume)),
+    // ]);
 
     return resume;
   }
 
   findAll(userId: string) {
-    return this.utils.getCachedOrSet(`user:${userId}:resumes`, () =>
-      this.prisma.resume.findMany({
-        select: {
-          id: true,
-          title: true,
-          slug: true,
-          jobTitle: true,
-          // data: true,
-          visibility: true,
-          locked: true,
-          userId: true,
-          createdAt: true,
-          updatedAt: true,
-          user: true,
-        },
-        where: { userId },
-        orderBy: { updatedAt: "desc" },
-      }),
-    );
+    return this.prisma.resume.findMany({
+      select: {
+        id: true,
+        title: true,
+        slug: true,
+        jobTitle: true,
+        // data: true,
+        visibility: true,
+        locked: true,
+        userId: true,
+        createdAt: true,
+        updatedAt: true,
+        user: true,
+      },
+      where: { userId },
+      orderBy: { updatedAt: "desc" },
+    });
   }
 
   findOne(id: string, userId?: string) {
     if (userId) {
-      return this.utils.getCachedOrSet(`user:${userId}:resume:${id}`, () =>
-        this.prisma.resume.findUniqueOrThrow({
-          where: { userId_id: { userId, id } },
-        }),
-      );
+      return this.prisma.resume.findUniqueOrThrow({ where: { userId_id: { userId, id } } });
     }
 
-    return this.utils.getCachedOrSet(`user:public:resume:${id}`, () =>
-      this.prisma.resume.findUniqueOrThrow({
-        where: { id },
-      }),
-    );
+    return this.prisma.resume.findUniqueOrThrow({ where: { id } });
   }
 
   async findOneStatistics(userId: string, id: string) {
@@ -165,12 +155,12 @@ export class ResumeService {
         where: { userId_id: { userId, id } },
       });
 
-      await Promise.all([
-        this.redis.set(`user:${userId}:resume:${id}`, JSON.stringify(resume)),
-        this.redis.del(`user:${userId}:resumes`),
-        this.redis.del(`user:${userId}:storage:resumes:${id}`),
-        this.redis.del(`user:${userId}:storage:previews:${id}`),
-      ]);
+      // await Promise.all([
+      //   this.redis.set(`user:${userId}:resume:${id}`, JSON.stringify(resume)),
+      //   this.redis.del(`user:${userId}:resumes`),
+      //   this.redis.del(`user:${userId}:storage:resumes:${id}`),
+      //   this.redis.del(`user:${userId}:storage:previews:${id}`),
+      // ]);
 
       return resume;
     } catch (error) {
@@ -187,10 +177,10 @@ export class ResumeService {
       where: { userId_id: { userId, id } },
     });
 
-    await Promise.all([
-      this.redis.set(`user:${userId}:resume:${id}`, JSON.stringify(resume)),
-      this.redis.del(`user:${userId}:resumes`),
-    ]);
+    // await Promise.all([
+    //   this.redis.set(`user:${userId}:resume:${id}`, JSON.stringify(resume)),
+    //   this.redis.del(`user:${userId}:resumes`),
+    // ]);
 
     return resume;
   }
@@ -198,8 +188,8 @@ export class ResumeService {
   async remove(userId: string, id: string) {
     await Promise.all([
       // Remove cached keys
-      this.redis.del(`user:${userId}:resumes`),
-      this.redis.del(`user:${userId}:resume:${id}`),
+      // this.redis.del(`user:${userId}:resumes`),
+      // this.redis.del(`user:${userId}:resume:${id}`),
 
       // Remove files in storage, and their cached keys
       this.storageService.deleteObject(userId, "resumes", id),

@@ -31,10 +31,12 @@ export class GitHubStrategy extends PassportStrategy(Strategy, "github") {
 
     let user: User | null = null;
 
-    if (!email) throw new BadRequestException();
+    if (!email || !username) throw new BadRequestException();
 
     try {
-      const user = await this.userService.findOneByIdentifier(email);
+      const user =
+        (await this.userService.findOneByIdentifier(email)) ||
+        (await this.userService.findOneByIdentifier(username));
 
       if (!user) throw new UnauthorizedException();
 
