@@ -35,8 +35,8 @@ export const KeyboardShortcut = ({
   return (
     <span
       className={cn(
-        "ml-auto scale-0 text-xs tracking-widest opacity-0 transition-[opacity]",
-        value && "scale-100 opacity-60",
+        "ml-auto text-xs tracking-widest transition-opacity",
+        value ? "scale-100 opacity-60" : "scale-0 opacity-0",
         className,
       )}
       {...props}
