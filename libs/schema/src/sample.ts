@@ -28,6 +28,7 @@ export const sampleResume: ResumeData = {
     summary: {
       name: "Summary",
       columns: 1,
+      separateLinks: true,
       visible: true,
       id: "summary",
       content:
@@ -36,6 +37,7 @@ export const sampleResume: ResumeData = {
     awards: {
       name: "Awards",
       columns: 1,
+      separateLinks: true,
       visible: true,
       id: "awards",
       items: [],
@@ -43,6 +45,7 @@ export const sampleResume: ResumeData = {
     certifications: {
       name: "Certifications",
       columns: 1,
+      separateLinks: true,
       visible: true,
       id: "certifications",
       items: [
@@ -75,6 +78,7 @@ export const sampleResume: ResumeData = {
     education: {
       name: "Education",
       columns: 1,
+      separateLinks: true,
       visible: true,
       id: "education",
       items: [
@@ -97,6 +101,7 @@ export const sampleResume: ResumeData = {
     experience: {
       name: "Experience",
       columns: 1,
+      separateLinks: true,
       visible: true,
       id: "experience",
       items: [
@@ -133,6 +138,7 @@ export const sampleResume: ResumeData = {
     volunteer: {
       name: "Volunteering",
       columns: 1,
+      separateLinks: true,
       visible: true,
       id: "volunteer",
       items: [],
@@ -140,6 +146,7 @@ export const sampleResume: ResumeData = {
     interests: {
       name: "Interests",
       columns: 1,
+      separateLinks: true,
       visible: true,
       id: "interests",
       items: [],
@@ -147,6 +154,7 @@ export const sampleResume: ResumeData = {
     languages: {
       name: "Languages",
       columns: 1,
+      separateLinks: true,
       visible: true,
       id: "languages",
       items: [],
@@ -154,6 +162,7 @@ export const sampleResume: ResumeData = {
     profiles: {
       name: "Profiles",
       columns: 1,
+      separateLinks: true,
       visible: true,
       id: "profiles",
       items: [
@@ -184,6 +193,7 @@ export const sampleResume: ResumeData = {
     projects: {
       name: "Projects",
       columns: 1,
+      separateLinks: true,
       visible: true,
       id: "projects",
       items: [
@@ -220,6 +230,7 @@ export const sampleResume: ResumeData = {
     publications: {
       name: "Publications",
       columns: 1,
+      separateLinks: true,
       visible: true,
       id: "publications",
       items: [],
@@ -227,6 +238,7 @@ export const sampleResume: ResumeData = {
     references: {
       name: "References",
       columns: 1,
+      separateLinks: true,
       visible: false,
       id: "references",
       items: [
@@ -246,6 +258,7 @@ export const sampleResume: ResumeData = {
     skills: {
       name: "Skills",
       columns: 1,
+      separateLinks: true,
       visible: true,
       id: "skills",
       items: [
