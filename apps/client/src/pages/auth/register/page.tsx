@@ -51,6 +51,8 @@ export const RegisterPage = () => {
   });
 
   const onSubmit = async (data: FormValues) => {
+    //email convert to lowecase
+    data.email = data.email.toLowerCase();
     try {
       await register(data);
 

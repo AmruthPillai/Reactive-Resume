@@ -35,6 +35,8 @@ export const ForgotPasswordPage = () => {
   });
 
   const onSubmit = async (data: FormValues) => {
+     //email convert to lowecase
+     data.email = data.email.toLowerCase();
     await forgotPassword(data);
 
     setSubmitted(true);
