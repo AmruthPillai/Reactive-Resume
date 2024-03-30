@@ -198,7 +198,7 @@ const Section = <T,>({
                     {url !== undefined && <Link url={url} />}
                   </div>
 
-                  <div className="absolute inset-y-0 -left-px border-l-[4px] border-primary group-[.sidebar]:hidden" />
+                  <div className="absolute inset-y-0 -left-px border-l-4 border-primary group-[.sidebar]:hidden" />
                 </div>
 
                 {summary !== undefined && !isEmptyString(summary) && (

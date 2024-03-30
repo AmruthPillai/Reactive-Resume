@@ -12,13 +12,13 @@ import {
   FormMessage,
   Input,
 } from "@reactive-resume/ui";
-import { ControllerRenderProps, useForm } from "react-hook-form";
+import { useCallback } from "react";
+import { useForm } from "react-hook-form";
+import { useDebounceValue } from "usehooks-ts";
 import { z } from "zod";
 
 import { SectionDialog } from "../sections/shared/section-dialog";
 import { URLInput } from "../sections/shared/url-input";
-import { useDebounceValue } from "usehooks-ts";
-import { useCallback } from "react";
 
 const formSchema = profileSchema;
 
@@ -30,7 +30,7 @@ export const ProfilesDialog = () => {
     resolver: zodResolver(formSchema),
   });
 
-  const [iconSrc, setIconSrc] = useDebounceValue("", 400)
+  const [iconSrc, setIconSrc] = useDebounceValue("", 400);
 
   const handleIconChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.value === "") {
@@ -39,8 +39,6 @@ export const ProfilesDialog = () => {
       setIconSrc(`https://cdn.simpleicons.org/${event.target.value}`);
     }
   }, []);
-
-
 
   return (
     <SectionDialog<FormValues> id="profiles" form={form} defaultValues={defaultProfile}>
@@ -97,17 +95,17 @@ export const ProfilesDialog = () => {
               <FormControl>
                 <div className="flex items-center gap-x-2">
                   <Avatar className="size-8 bg-white">
-                    {iconSrc && (
-                      <AvatarImage
-                        className="p-1.5"
-                        src={iconSrc}
-                      />
-                    )}
+                    {iconSrc && <AvatarImage className="p-1.5" src={iconSrc} />}
                   </Avatar>
-                  <Input {...field} id="iconSlug" placeholder="linkedin" onChange={(event) => {
-                    field.onChange(event)
-                    handleIconChange(event)
-                  }} />
+                  <Input
+                    {...field}
+                    id="iconSlug"
+                    placeholder="linkedin"
+                    onChange={(event) => {
+                      field.onChange(event);
+                      handleIconChange(event);
+                    }}
+                  />
                 </div>
               </FormControl>
               <FormMessage />
