@@ -38,7 +38,7 @@ const Header = () => {
           <p>{basics.headline}</p>
         </div>
 
-        <div className="text-text col-span-2 col-start-2 mt-10">
+        <div className="col-span-2 col-start-2 mt-10 text-foreground">
           <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-sm">
             {basics.location && (
               <>

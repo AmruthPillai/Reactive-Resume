@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        text: "var(--color-text)",
+        foreground: "var(--color-foreground)",
         primary: "var(--color-primary)",
         background: "var(--color-background)",
       },
@@ -23,6 +23,28 @@ module.exports = {
         loose: "calc(var(--line-height) + 0.5)",
       },
       spacing: { custom: "var(--margin)" },
+      typography: () => ({
+        foreground: {
+          css: {
+            "--tw-prose-body": "var(--color-foreground)",
+            "--tw-prose-headings": "var(--color-foreground)",
+            "--tw-prose-lead": "var(--color-foreground)",
+            "--tw-prose-links": "var(--color-foreground)",
+            "--tw-prose-bold": "var(--color-foreground)",
+            "--tw-prose-counters": "var(--color-foreground)",
+            "--tw-prose-bullets": "var(--color-foreground)",
+            "--tw-prose-hr": "var(--color-foreground)",
+            "--tw-prose-quotes": "var(--color-foreground)",
+            "--tw-prose-quote-borders": "var(--color-foreground)",
+            "--tw-prose-captions": "var(--color-foreground)",
+            "--tw-prose-code": "var(--color-foreground)",
+            "--tw-prose-pre-code": "var(--color-foreground)",
+            "--tw-prose-pre-bg": "var(--color-background)",
+            "--tw-prose-th-borders": "var(--color-foreground)",
+            "--tw-prose-td-borders": "var(--color-foreground)",
+          },
+        },
+      }),
     },
   },
   plugins: [require("@tailwindcss/typography")],
