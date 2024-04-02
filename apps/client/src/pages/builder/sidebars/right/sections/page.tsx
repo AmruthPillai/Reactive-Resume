@@ -19,7 +19,7 @@ export const PageSection = () => {
   const page = useResumeStore((state) => state.resume.data.metadata.page);
 
   return (
-    <section id="theme" className="grid gap-y-6">
+    <section id="page" className="grid gap-y-6">
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
           {getSectionIcon("page")}
