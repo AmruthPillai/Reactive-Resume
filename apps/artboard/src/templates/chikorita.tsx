@@ -508,7 +508,7 @@ export const Chikorita = ({ columns, isFirstPage = false }: TemplateProps) => {
       </div>
 
       <div className="sidebar p-custom group h-full space-y-4 bg-primary text-background"
-        style={{ height: "122vh" }}>
+        style={{ minHeight: "122vh" }}>
         {sidebar.map((section) => (
           <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
         ))}
