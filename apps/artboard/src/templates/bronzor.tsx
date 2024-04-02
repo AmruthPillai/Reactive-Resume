@@ -122,7 +122,7 @@ const Link = ({ url, icon, label, className }: LinkProps) => {
         href={url.href}
         target="_blank"
         rel="noreferrer noopener nofollow"
-        className={cn("inline-block", className)}
+        className={cn("inline-block max-w-64 truncate", className)}
       >
         {label || url.label || url.href}
       </a>
