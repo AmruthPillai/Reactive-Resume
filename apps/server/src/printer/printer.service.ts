@@ -192,6 +192,13 @@ export class PrinterService {
       await page.close();
       browser.disconnect();
 
+      const isDevelopment = this.configService.getOrThrow<string>("NODE_ENV") === "development";
+      const storagePort = this.configService.get<string>("STORAGE_PORT");
+
+      if (isDevelopment && storagePort) {
+        return resumeUrl.replace(":9000", `:${storagePort}`); // replace the port from the resumeurl with STORAGE_PORT
+      }
+
       return resumeUrl;
     } catch (error) {
       console.trace(error);
