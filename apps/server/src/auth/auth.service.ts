@@ -46,6 +46,10 @@ export class AuthService {
     }
   }
 
+  private getLowercase(input : string) : string {
+    return input.toLowerCase();
+  }
+
   generateToken(grantType: "access" | "refresh" | "reset" | "verification", payload?: Payload) {
     switch (grantType) {
       case "access":
@@ -95,6 +99,7 @@ export class AuthService {
 
   async register(registerDto: RegisterDto) {
     const hashedPassword = await this.hash(registerDto.password);
+    registerDto.email = this.getLowercase(registerDto.email);
 
     try {
       const user = await this.userService.create({
@@ -122,6 +127,7 @@ export class AuthService {
   }
 
   async authenticate({ identifier, password }: LoginDto) {
+    identifier = this.getLowercase(identifier);
     try {
       const user = await this.userService.findOneByIdentifier(identifier);
 
@@ -143,6 +149,7 @@ export class AuthService {
 
   // Password Reset Flows
   async forgotPassword(email: string) {
+    email = this.getLowercase(email)
     const token = this.generateToken("reset");
 
     await this.userService.updateByEmail(email, {
@@ -158,6 +165,7 @@ export class AuthService {
 
   async updatePassword(email: string, password: string) {
     const hashedPassword = await this.hash(password);
+    email = this.getLowercase(email);
 
     await this.userService.updateByEmail(email, {
       secrets: { update: { password: hashedPassword } },
