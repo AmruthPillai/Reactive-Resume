@@ -26,7 +26,7 @@ export const configSchema = z.object({
 
   // Mail Server
   MAIL_FROM: z.string().includes("@").optional().default("noreply@localhost"),
-  SMTP_URL: z.string().url().startsWith("smtp://").optional(),
+  SMTP_URL: z.string().url().refine(url => url.startsWith("smtp://") || url.startsWith("smtps://")).optional(),
 
   // Storage
   STORAGE_ENDPOINT: z.string(),
