@@ -2,5 +2,5 @@
   "$schema": "https://raw.githubusercontent.com/raineorshine/npm-check-updates/main/src/types/RunOptions.json",
   "upgrade": true,
   "install": "always",
-  "reject": ["@nestjs-modules/mailer"]
+  "reject": ["eslint", "@nestjs-modules/mailer"]
 }
