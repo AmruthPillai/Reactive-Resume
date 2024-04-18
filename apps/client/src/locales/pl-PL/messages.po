@@ -8,7 +8,7 @@ msgstr ""
 "Language: pl\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-04-10 13:43\n"
+"PO-Revision-Date: 2024-04-17 00:08\n"
 "Last-Translator: \n"
 "Language-Team: Polish\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
@@ -28,7 +28,7 @@ msgstr "{templatesCount} szablonów dostępnych"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:114
 msgid "{value, plural, one {Column} other {Columns}}"
-msgstr ""
+msgstr "{value, plural, one {Kolumna} few {Kolumny} many {Kolumny} other {Kolumny}}"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:20
 msgid "<0>I built Reactive Resume mostly by myself during my spare time, with a lot of help from other great open-source contributors.</0><1>If you like the app and want to support keeping it free forever, please donate whatever you can afford to give.</1>"
@@ -177,7 +177,7 @@ msgstr "Na pewno?"
 #. For example, Computer Science or Business Administration
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:73
 msgid "Area of Study"
-msgstr ""
+msgstr "Kierunek studiów"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:86
 msgid "Aspect Ratio"
@@ -185,7 +185,7 @@ msgstr "Współczynnik proporcji"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:51
 msgid "Available in {languagesCount} languages"
-msgstr ""
+msgstr "Dostępne w {languagesCount} językach"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:53
 msgid "Awarder"
@@ -212,11 +212,11 @@ msgstr "Kody Zapasowe mogą zawierać wyłącznie małe litery lub cyfry i musz�
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:56
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
 msgid "Basics"
-msgstr ""
+msgstr "Podstawy"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:21
 msgid "Basics"
-msgstr ""
+msgstr "Podstawy"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:196
 msgid "Border"
@@ -545,7 +545,7 @@ msgstr "Typ pliku"
 
 #: apps/client/src/pages/home/sections/hero/index.tsx:40
 msgid "Finally,"
-msgstr ""
+msgstr "Na koniec,"
 
 #: apps/client/src/components/ai-actions.tsx:90
 msgid "Fix Spelling & Grammar"
@@ -586,7 +586,7 @@ msgstr "Nie pamiętasz hasła?"
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:32
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:40
 msgid "Format"
-msgstr ""
+msgstr "Format"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:49
 msgid "Found a bug, or have an idea for a new feature?"
@@ -684,7 +684,7 @@ msgstr "Udostępnij swoje CV publicznie"
 
 #: apps/client/src/pages/home/sections/testimonials/index.tsx:70
 msgid "I always love to hear from the users of Reactive Resume with feedback or support. Here are some of the messages I've received. If you have any feedback, feel free to drop me an email at <0>{email}</0>."
-msgstr ""
+msgstr "Uwielbiam otrzymywać opinie lub feedback od użytkowników Reactive Resume. Oto niektóre wiadomości, które otrzymałem. Jeśli masz jakieś uwagi, napisz do mnie e-mail na adres <0>{email}</0>."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:94
 msgid "Icon"
@@ -731,7 +731,7 @@ msgstr "W tej sekcji możesz usunąć swoje konto i wszystkie dane powiązane z 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:83
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:122
 msgid "Information"
-msgstr ""
+msgstr "Informacje"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:39
 msgid "Institution"
@@ -820,7 +820,7 @@ msgstr "Zobacz więcej"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:44
 msgid "Letter"
-msgstr ""
+msgstr "List"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:64
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:77
@@ -981,7 +981,7 @@ msgstr "Open Source"
 #: apps/client/src/services/openai/fix-grammar.ts:28
 #: apps/client/src/services/openai/improve-writing.ts:28
 msgid "OpenAI did not return any choices for your text."
-msgstr ""
+msgstr "OpenAI nie zwróciło żadnych wyborów dla Twojego tekstu."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:52
 #: apps/client/src/pages/home/sections/features/index.tsx:52
@@ -1057,16 +1057,16 @@ msgstr "Przechowuj kody zapasowe w bezpiecznym miejscu. Możesz użyć jednego z
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:106
 msgid "Portrait"
-msgstr ""
+msgstr "Portret"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:54
 msgctxt "Position held at a company, for example, Software Engineer"
 msgid "Position"
-msgstr ""
+msgstr "Stanowisko"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:53
 msgid "Position"
-msgstr ""
+msgstr "Stanowisko"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:97
 msgid "Powered by"
@@ -1078,7 +1078,7 @@ msgstr "Napędzane przez <0>Simple Icons</0>"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:43
 msgid "Primary Color"
-msgstr ""
+msgstr "Główny kolor"
 
 #: apps/client/src/components/ai-actions.tsx:109
 #: apps/client/src/components/ai-actions.tsx:112
@@ -1188,7 +1188,7 @@ msgstr "Wygenerowane CV"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:106
 msgid "Rich in features, not in pricing."
-msgstr ""
+msgstr "Bogaty w funkcjonalności, nie w rozbudowany cennik."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:143
 msgid "Rounded"
@@ -1228,7 +1228,7 @@ msgstr "Wyszukaj język"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:56
 msgid "Secure with two-factor authentication"
-msgstr ""
+msgstr "Bezpieczeństwo dzięki uwierzytelnianiu dwuskładnikowemu"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:68
 msgid "Security"
@@ -1366,7 +1366,7 @@ msgstr "Przechowuj bezpiecznie swoje kody zapasowe"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
 msgid "Stored"
-msgstr ""
+msgstr "Przechowywane"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
@@ -1386,7 +1386,7 @@ msgstr "Wesprzyj aplikację, wpłacając dowolną kwotę!"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:9
 msgid "Supporting Reactive Resume"
-msgstr ""
+msgstr "Wspierający Reactive Resume"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:65
 msgid "Supports A4/Letter page formats"
@@ -1478,7 +1478,7 @@ msgstr "Przełącz Numery Stron"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:68
 msgid "Track views and downloads"
-msgstr ""
+msgstr "Śledź wyświetlenia i pobrania"
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/auth/verify-otp/page.tsx:57
@@ -1501,7 +1501,7 @@ msgstr "Wpisz <0>delete</0>, aby potwierdzić usunięcie konta."
 #. For example, Bachelor's Degree or Master's Degree
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:54
 msgid "Type of Study"
-msgstr ""
+msgstr "Uzyskane wykształcenie"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:68
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:66
@@ -1601,7 +1601,7 @@ msgstr "Wersja 4"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:51
 msgid "Views"
-msgstr ""
+msgstr "Wyświetlenia"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:86
 msgid "Visible"
