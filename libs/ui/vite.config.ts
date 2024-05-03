@@ -3,7 +3,7 @@
 import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 import react from "@vitejs/plugin-react-swc";
 import * as path from "path";
-import { defineConfig, searchForWorkspaceRoot, splitVendorChunkPlugin } from "vite";
+import { defineConfig, searchForWorkspaceRoot } from "vite";
 import dts from "vite-plugin-dts";
 
 export default defineConfig({
@@ -16,7 +16,6 @@ export default defineConfig({
   plugins: [
     react(),
     nxViteTsPaths(),
-    splitVendorChunkPlugin(),
     dts({
       entryRoot: "src",
       tsconfigPath: path.join(__dirname, "tsconfig.lib.json"),
@@ -24,6 +23,7 @@ export default defineConfig({
   ],
 
   build: {
+    emptyOutDir: true,
     lib: {
       entry: "src/index.ts",
       name: "ui",
