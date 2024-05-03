@@ -3,8 +3,7 @@ import { ConfigService } from "@nestjs/config";
 import { createId } from "@paralleldrive/cuid2";
 import { RedisService } from "@songkeys/nestjs-redis";
 import { Redis } from "ioredis";
-import { Client } from "minio";
-import { MinioService } from "nestjs-minio-client";
+import { MinioClient, MinioService } from "nestjs-minio-client";
 import sharp from "sharp";
 
 import { Config } from "../config/schema";
@@ -41,7 +40,7 @@ export class StorageService implements OnModuleInit {
   private readonly redis: Redis;
   private readonly logger = new Logger(StorageService.name);
 
-  private client: Client;
+  private client: MinioClient;
   private bucketName: string;
 
   private skipCreateBucket: boolean;
