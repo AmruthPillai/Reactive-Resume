@@ -8,7 +8,7 @@ msgstr ""
 "Language: ru\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-04-10 13:43\n"
+"PO-Revision-Date: 2024-05-03 18:51\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
@@ -59,7 +59,7 @@ msgstr "<0>Двухфакторная аутентификация включе�
 msgid "A free and open-source resume builder"
 msgstr "Бесплатный конструктор резюме с открытым исходным кодом"
 
-#: apps/client/src/pages/home/components/footer.tsx:20
+#: apps/client/src/pages/home/components/footer.tsx:21
 #: apps/client/src/pages/home/sections/hero/index.tsx:47
 msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "Бесплатный конструктор резюме с открытым исходным кодом, который упрощает процесс создания, обновления и публикации вашего резюме."
@@ -1080,6 +1080,10 @@ msgstr "Разработано с помощью <0>Simple Icons</0>"
 msgid "Primary Color"
 msgstr "Основной цвет"
 
+#: apps/client/src/pages/home/components/footer.tsx:45
+msgid "Privacy Policy"
+msgstr ""
+
 #: apps/client/src/components/ai-actions.tsx:109
 #: apps/client/src/components/ai-actions.tsx:112
 msgid "Professional"
@@ -1112,7 +1116,8 @@ msgstr "Поднять проблему"
 #: apps/client/src/pages/builder/page.tsx:39
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
-#: apps/client/src/pages/home/components/footer.tsx:17
+#: apps/client/src/pages/home/components/footer.tsx:18
+#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:9
 #: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/public/page.tsx:71
 #: apps/client/src/pages/public/page.tsx:93
