@@ -12,6 +12,7 @@ WORKDIR /app
 # --- Build Image ---
 FROM base AS build
 
+ARG NX_CLOUD_ACCESS_TOKEN
 ENV NX_CLOUD_ACCESS_TOKEN=$NX_CLOUD_ACCESS_TOKEN
 
 COPY .npmrc package.json pnpm-lock.yaml ./
