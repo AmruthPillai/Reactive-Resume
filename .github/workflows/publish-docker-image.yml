@@ -63,6 +63,12 @@ jobs:
             ${{ env.IMAGE }}
             ghcr.io/${{ env.IMAGE }}
 
+      - name: Prepare a unique name for Artifacts
+        id: artifact_name
+        run: |
+          name=$(echo -n "${{ matrix.platform }}" | sed -e 's/[ \t:\/\\"<>|*?]/-/g' -e 's/--*/-/g')
+          echo "name=$name" >> "$GITHUB_OUTPUT"
+
       - name: Build and Push by Digest
         uses: docker/build-push-action@v5.3.0
         id: build
@@ -83,7 +89,7 @@ jobs:
       - name: Upload Digest
         uses: actions/upload-artifact@v4.3.3
         with:
-          name: digests-${{ matrix.platform }}
+          name: digests-${{ steps.artifact_name.outputs.name }}
           path: /tmp/digests/*
           if-no-files-found: error
           retention-days: 1
