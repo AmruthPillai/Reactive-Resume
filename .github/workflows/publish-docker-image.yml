@@ -15,7 +15,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     outputs:
       version: ${{ steps.version.outputs.version }}
@@ -95,7 +95,7 @@ jobs:
           retention-days: 1
 
   merge:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     needs:
       - build
