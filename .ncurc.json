@@ -1,6 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/raineorshine/npm-check-updates/main/src/types/RunOptions.json",
+  "deep": true,
   "upgrade": true,
-  "install": "always",
-  "reject": ["eslint"]
+  "install": "never",
+  "reject": ["eslint", "@reactive-resume/*"]
 }

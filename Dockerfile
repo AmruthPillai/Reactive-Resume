@@ -5,7 +5,7 @@ ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 ARG NX_CLOUD_ACCESS_TOKEN
 
-RUN corepack enable
+RUN corepack enable pnpm && corepack prepare pnpm@9.0.6 --activate
 
 WORKDIR /app
 
@@ -34,6 +34,7 @@ COPY --chown=node:node --from=build /app/tools/prisma ./tools/prisma
 RUN pnpm run prisma:generate
 
 ENV TZ=UTC
+ENV PORT=3000
 ENV NODE_ENV=production
 
 EXPOSE 3000
