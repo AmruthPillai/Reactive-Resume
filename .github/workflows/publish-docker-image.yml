@@ -7,7 +7,7 @@ on:
       - "*"
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: "${{ github.workflow }}-${{ github.ref }}"
   cancel-in-progress: true
 
 env:
@@ -21,7 +21,7 @@ jobs:
       version: ${{ steps.version.outputs.version }}
 
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
         platform:
           - linux/amd64
@@ -68,8 +68,6 @@ jobs:
         id: build
         with:
           context: .
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
           platforms: ${{ matrix.platform }}
           labels: ${{ steps.meta.outputs.labels }}
           outputs: type=image,name=${{ env.IMAGE }},push-by-digest=true,name-canonical=true,push=true
