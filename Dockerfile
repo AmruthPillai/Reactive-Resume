@@ -15,7 +15,8 @@ FROM base AS build
 ENV NX_CLOUD_ACCESS_TOKEN=$NX_CLOUD_ACCESS_TOKEN
 
 COPY .npmrc package.json pnpm-lock.yaml ./
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+COPY ./tools/prisma /app/tools/prisma
+RUN pnpm install --frozen-lockfile
 
 COPY . .
 
@@ -24,10 +25,10 @@ RUN pnpm run build
 # --- Release Image ---
 FROM base AS release
 
-RUN apt update && apt install -y dumb-init --no-install-recommends
+RUN apt update && apt install -y dumb-init --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
 COPY --chown=node:node --from=build /app/.npmrc /app/package.json /app/pnpm-lock.yaml ./
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
+RUN pnpm install --prod --frozen-lockfile
 
 COPY --chown=node:node --from=build /app/dist ./dist
 COPY --chown=node:node --from=build /app/tools/prisma ./tools/prisma
