@@ -1,13 +1,13 @@
-name: Lint and Build
+name: Lint, Test and Build
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
   pull_request:
     branches:
       - main
-  workflow_dispatch:
 
 permissions:
   actions: read
@@ -30,16 +30,14 @@ jobs:
       number-of-agents: 1
       init-commands: |
         pnpm exec prisma generate
-        pnpm exec nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
-      parallel-commands: |
-        pnpm exec nx-cloud record -- pnpm exec nx format:check
+        pnpm exec nx-cloud start-ci-run --stop-agents-after="build" --agent-count=1
       parallel-commands-on-agents: |
-        pnpm exec nx affected --target=lint
-        pnpm exec nx affected --target=test
-        pnpm exec nx affected --target=build
+        pnpm exec nx-cloud record -- pnpm exec nx affected --target=lint
+        pnpm exec nx-cloud record -- pnpm exec nx affected --target=test
+        pnpm exec nx-cloud record -- pnpm exec nx affected --target=build
 
   agents:
     name: Nx Cloud - Agents
     uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.14.0
     with:
-      number-of-agents: 3
+      number-of-agents: 1
