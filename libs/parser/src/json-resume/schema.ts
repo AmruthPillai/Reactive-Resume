@@ -4,10 +4,7 @@ const urlSchema = z.literal("").or(z.string().url()).optional();
 
 const iso8601 = z
   .string()
-  .regex(
-    /^([1-2][0-9]{3}-[0-1][0-9]-[0-3][0-9]|[1-2][0-9]{3}-[0-1][0-9]|[1-2][0-9]{3})$/,
-    "ISO8601 Date Format",
-  );
+  .regex(/^([12]\d{3}-[01]\d-[0-3]\d|[12]\d{3}-[01]\d|[12]\d{3})$/, "ISO8601 Date Format");
 
 const locationSchema = z.object({
   address: z.string().optional(),

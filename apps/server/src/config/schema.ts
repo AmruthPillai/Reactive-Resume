@@ -6,9 +6,6 @@ export const configSchema = z.object({
   // Ports
   PORT: z.coerce.number().default(3000),
 
-  // Client URL (only for development environments)
-  __DEV__CLIENT_URL: z.string().url().optional(),
-
   // URLs
   PUBLIC_URL: z.string().url(),
   STORAGE_URL: z.string().url(),
@@ -43,23 +40,20 @@ export const configSchema = z.object({
     .string()
     .default("false")
     .transform((s) => s !== "false" && s !== "0"),
-  STORAGE_SKIP_CREATE_BUCKET: z
-    .string()
-    .default("false")
-    .transform((s) => s !== "false" && s !== "0"),
-
-  // Redis
-  REDIS_URL: z.string().url().startsWith("redis://").optional(),
 
   // Sentry
-  VITE_SENTRY_DSN: z.string().url().startsWith("https://").optional(),
+  SERVER_SENTRY_DSN: z.string().url().startsWith("https://").optional(),
 
   // Crowdin (Optional)
   CROWDIN_PROJECT_ID: z.coerce.number().optional(),
   CROWDIN_PERSONAL_TOKEN: z.string().optional(),
 
-  // Email (Optional)
+  // Flags (Optional)
   DISABLE_EMAIL_AUTH: z
+    .string()
+    .default("false")
+    .transform((s) => s !== "false" && s !== "0"),
+  SKIP_STORAGE_BUCKET_CHECK: z
     .string()
     .default("false")
     .transform((s) => s !== "false" && s !== "0"),

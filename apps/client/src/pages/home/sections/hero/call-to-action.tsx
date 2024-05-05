@@ -26,22 +26,18 @@ export const HeroCTA = () => {
     );
   }
 
-  if (!isLoggedIn) {
-    return (
-      <>
-        <Button asChild size="lg">
-          <Link to="/auth/login">{t`Get Started`}</Link>
-        </Button>
+  return (
+    <>
+      <Button asChild size="lg">
+        <Link to="/auth/login">{t`Get Started`}</Link>
+      </Button>
 
-        <Button asChild size="lg" variant="link">
-          <a href="https://docs.rxresu.me" target="_blank" rel="noopener noreferrer nofollow">
-            <Book className="mr-3" />
-            {t`Learn more`}
-          </a>
-        </Button>
-      </>
-    );
-  }
-
-  return null;
+      <Button asChild size="lg" variant="link">
+        <a href="https://docs.rxresu.me" target="_blank" rel="noopener noreferrer nofollow">
+          <Book className="mr-3" />
+          {t`Learn more`}
+        </a>
+      </Button>
+    </>
+  );
 };

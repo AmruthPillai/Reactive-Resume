@@ -3,7 +3,7 @@ export type Font = {
   category: string;
   subsets: string[];
   variants: string[];
-  files: { [key: string]: string };
+  files: Record<string, string>;
 };
 
 export const fonts: Font[] = [

@@ -2,10 +2,10 @@ import { LayoutLocator } from "./types";
 
 // Function to find a specific item in a layout
 export const findItemInLayout = (item: string, layout: string[][][]): LayoutLocator | null => {
-  for (let page = 0; page < layout.length; page++) {
-    for (let column = 0; column < layout[page].length; column++) {
-      for (let section = 0; section < layout[page][column].length; section++) {
-        if (layout[page][column][section] === item) {
+  for (const [page, element] of layout.entries()) {
+    for (const [column, element_] of element.entries()) {
+      for (const [section, element__] of element_.entries()) {
+        if (element__ === item) {
           return { page, column, section };
         }
       }
@@ -46,7 +46,7 @@ export const moveItemInLayout = (
     newLayout[target.page][target.column].splice(target.section, 0, item);
 
     return newLayout;
-  } catch (error) {
+  } catch {
     return layout;
   }
 };

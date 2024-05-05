@@ -76,7 +76,7 @@ export const SecuritySettings = () => {
           <AccordionTrigger>{t`Password`}</AccordionTrigger>
           <AccordionContent>
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-6 sm:grid-cols-2">
+              <form className="grid gap-6 sm:grid-cols-2" onSubmit={form.handleSubmit(onSubmit)}>
                 <FormField
                   name="password"
                   control={form.control}
@@ -101,7 +101,7 @@ export const SecuritySettings = () => {
                       </FormControl>
                       {fieldState.error && (
                         <FormDescription className="text-error-foreground">
-                          {fieldState.error?.message}
+                          {fieldState.error.message}
                         </FormDescription>
                       )}
                     </FormItem>
@@ -151,11 +151,21 @@ export const SecuritySettings = () => {
             )}
 
             {user?.twoFactorEnabled ? (
-              <Button variant="outline" onClick={() => open("delete")}>
+              <Button
+                variant="outline"
+                onClick={() => {
+                  open("delete");
+                }}
+              >
                 {t`Disable 2FA`}
               </Button>
             ) : (
-              <Button variant="outline" onClick={() => open("create")}>
+              <Button
+                variant="outline"
+                onClick={() => {
+                  open("create");
+                }}
+              >
                 {t`Enable 2FA`}
               </Button>
             )}

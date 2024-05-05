@@ -26,7 +26,7 @@ type FormValues = z.infer<typeof resetPasswordSchema>;
 export const ResetPasswordPage = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const token = searchParams.get("token") || "";
+  const token = searchParams.get("token") ?? "";
 
   const { resetPassword, loading } = useResetPassword();
 
@@ -43,7 +43,7 @@ export const ResetPasswordPage = () => {
       await resetPassword(data);
 
       navigate("/auth/login");
-    } catch (error) {
+    } catch {
       form.reset();
     }
   };

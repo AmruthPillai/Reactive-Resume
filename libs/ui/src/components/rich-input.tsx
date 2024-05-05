@@ -85,7 +85,7 @@ const InsertImageForm = ({ onInsert }: InsertImageProps) => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
+      <form className="space-y-3" onSubmit={form.handleSubmit(onSubmit)}>
         <p className="prose prose-sm prose-zinc dark:prose-invert">
           Insert an image from an external URL and use it on your resume.
         </p>
@@ -97,7 +97,7 @@ const InsertImageForm = ({ onInsert }: InsertImageProps) => {
             <FormItem>
               <FormLabel>URL</FormLabel>
               <FormControl>
-                <Input placeholder="http://..." {...field} />
+                <Input placeholder="https://..." {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -347,8 +347,8 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           size="sm"
           variant="ghost"
           className="px-2"
-          onClick={() => editor.chain().focus().liftListItem("listItem").run()}
           disabled={!editor.can().chain().focus().liftListItem("listItem").run()}
+          onClick={() => editor.chain().focus().liftListItem("listItem").run()}
         >
           <TextOutdent />
         </Button>
@@ -359,8 +359,8 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           size="sm"
           variant="ghost"
           className="px-2"
-          onClick={() => editor.chain().focus().sinkListItem("listItem").run()}
           disabled={!editor.can().chain().focus().sinkListItem("listItem").run()}
+          onClick={() => editor.chain().focus().sinkListItem("listItem").run()}
         >
           <TextIndent />
         </Button>
@@ -384,8 +384,8 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           size="sm"
           variant="ghost"
           className="px-2"
-          onClick={() => editor.chain().focus().setHardBreak().run()}
           disabled={!editor.can().chain().focus().setHardBreak().run()}
+          onClick={() => editor.chain().focus().setHardBreak().run()}
         >
           <KeyReturn />
         </Button>
@@ -396,8 +396,8 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           size="sm"
           variant="ghost"
           className="px-2"
-          onClick={() => editor.chain().focus().setHorizontalRule().run()}
           disabled={!editor.can().chain().focus().setHorizontalRule().run()}
+          onClick={() => editor.chain().focus().setHorizontalRule().run()}
         >
           <Minus />
         </Button>
@@ -430,18 +430,14 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
   );
 };
 
-interface RichInputProps
-  extends Omit<
-    EditorContentProps,
-    "ref" | "editor" | "content" | "value" | "onChange" | "className"
-  > {
+type RichInputProps = {
   content?: string;
   onChange?: (value: string) => void;
   hideToolbar?: boolean;
   className?: string;
   editorClassName?: string;
   footer?: (editor: Editor) => React.ReactNode;
-}
+} & Omit<EditorContentProps, "ref" | "editor" | "content" | "value" | "onChange" | "className">;
 
 export const RichInput = forwardRef<Editor, RichInputProps>(
   (

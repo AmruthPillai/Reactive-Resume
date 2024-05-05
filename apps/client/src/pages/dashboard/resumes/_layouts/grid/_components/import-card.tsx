@@ -11,7 +11,11 @@ export const ImportResumeCard = () => {
   const { open } = useDialog("import");
 
   return (
-    <BaseCard onClick={() => open("create")}>
+    <BaseCard
+      onClick={() => {
+        open("create");
+      }}
+    >
       <DownloadSimple size={64} weight="thin" />
 
       <div

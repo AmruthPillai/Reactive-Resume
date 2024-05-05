@@ -1,3 +1,4 @@
+import * as Sentry from "@sentry/react";
 import { createBrowserRouter, createRoutesFromElements, Navigate, Route } from "react-router-dom";
 
 import { BackupOtpPage } from "../pages/auth/backup-otp/page";
@@ -9,8 +10,7 @@ import { ResetPasswordPage } from "../pages/auth/reset-password/page";
 import { VerifyEmailPage } from "../pages/auth/verify-email/page";
 import { VerifyOtpPage } from "../pages/auth/verify-otp/page";
 import { BuilderLayout } from "../pages/builder/layout";
-import { BuilderPage } from "../pages/builder/page";
-import { builderLoader } from "../pages/builder/page";
+import { builderLoader, BuilderPage } from "../pages/builder/page";
 import { DashboardLayout } from "../pages/dashboard/layout";
 import { ResumesPage } from "../pages/dashboard/resumes/page";
 import { SettingsPage } from "../pages/dashboard/settings/page";
@@ -30,7 +30,7 @@ export const routes = createRoutesFromElements(
 
       <Route path="meta">
         <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
-        <Route index element={<Navigate to="/" replace />} />
+        <Route index element={<Navigate replace to="/" />} />
       </Route>
     </Route>
 
@@ -62,7 +62,7 @@ export const routes = createRoutesFromElements(
         <Route path="callback" loader={authLoader} />
       </Route>
 
-      <Route index element={<Navigate to="/auth/login" replace />} />
+      <Route index element={<Navigate replace to="/auth/login" />} />
     </Route>
 
     <Route path="dashboard">
@@ -71,7 +71,7 @@ export const routes = createRoutesFromElements(
           <Route path="resumes" element={<ResumesPage />} />
           <Route path="settings" element={<SettingsPage />} />
 
-          <Route index element={<Navigate to="/dashboard/resumes" replace />} />
+          <Route index element={<Navigate replace to="/dashboard/resumes" />} />
         </Route>
       </Route>
     </Route>
@@ -81,7 +81,7 @@ export const routes = createRoutesFromElements(
         <Route element={<BuilderLayout />}>
           <Route path=":id" loader={builderLoader} element={<BuilderPage />} />
 
-          <Route index element={<Navigate to="/dashboard/resumes" replace />} />
+          <Route index element={<Navigate replace to="/dashboard/resumes" />} />
         </Route>
       </Route>
     </Route>
@@ -93,4 +93,6 @@ export const routes = createRoutesFromElements(
   </Route>,
 );
 
-export const router = createBrowserRouter(routes);
+const sentryCreateBrowserRouter = Sentry.wrapCreateBrowserRouter(createBrowserRouter);
+
+export const router = sentryCreateBrowserRouter(routes);

@@ -25,7 +25,7 @@ export const ListView = () => {
       </motion.div>
 
       {loading &&
-        [...Array(4)].map((_, i) => (
+        Array.from({ length: 4 }).map((_, i) => (
           <div
             key={i}
             className="duration-300 animate-in fade-in"

@@ -188,11 +188,11 @@ export const LayoutSection = () => {
     // These should be appended to the first page of the new layout.
     const customSections: string[] = [];
 
-    layout.forEach((page) => {
-      page.forEach((column) => {
+    for (const page of layout) {
+      for (const column of page) {
         customSections.push(...column.filter((section) => section.startsWith("custom.")));
-      });
-    });
+      }
+    }
 
     if (customSections.length > 0) layoutCopy[0][0].push(...customSections);
 
@@ -218,10 +218,10 @@ export const LayoutSection = () => {
         {/* Pages */}
         <DndContext
           sensors={sensors}
+          collisionDetection={closestCenter}
           onDragEnd={onDragEnd}
           onDragStart={onDragStart}
           onDragCancel={onDragCancel}
-          collisionDetection={closestCenter}
         >
           {layout.map((page, pageIndex) => {
             const mainIndex = `${pageIndex}.0`;
@@ -243,7 +243,9 @@ export const LayoutSection = () => {
                         size="icon"
                         variant="ghost"
                         className="size-8"
-                        onClick={() => onRemovePage(pageIndex)}
+                        onClick={() => {
+                          onRemovePage(pageIndex);
+                        }}
                       >
                         <TrashSimple size={12} className="text-error" />
                       </Button>
@@ -260,7 +262,7 @@ export const LayoutSection = () => {
           })}
 
           <Portal>
-            <DragOverlay>{activeId && <Section id={activeId} isDragging />}</DragOverlay>
+            <DragOverlay>{activeId && <Section isDragging id={activeId} />}</DragOverlay>
           </Portal>
         </DndContext>
 

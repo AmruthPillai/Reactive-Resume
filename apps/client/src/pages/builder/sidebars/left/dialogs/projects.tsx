@@ -110,10 +110,12 @@ export const ProjectsDialog = () => {
                 <RichInput
                   {...field}
                   content={field.value}
-                  onChange={(value) => field.onChange(value)}
                   footer={(editor) => (
                     <AiActions value={editor.getText()} onChange={editor.commands.setContent} />
                   )}
+                  onChange={(value) => {
+                    field.onChange(value);
+                  }}
                 />
               </FormControl>
               <FormMessage />
@@ -141,8 +143,8 @@ export const ProjectsDialog = () => {
                 <AnimatePresence>
                   {field.value.map((item, index) => (
                     <motion.div
-                      layout
                       key={item}
+                      layout
                       initial={{ opacity: 0, y: -50 }}
                       animate={{ opacity: 1, y: 0, transition: { delay: index * 0.1 } }}
                       exit={{ opacity: 0, x: -50 }}

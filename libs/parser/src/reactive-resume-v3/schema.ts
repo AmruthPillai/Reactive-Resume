@@ -28,7 +28,7 @@ const basicsSchema = z.object({
     .optional(),
   birthdate: z.string().optional(),
   website: z.string().optional(),
-  profiles: z.array(profileSchema),
+  profiles: z.array(profileSchema).optional(),
   location: z.object({
     address: z.string().optional(),
     postalCode: z.string().optional(),
@@ -206,19 +206,21 @@ export const reactiveResumeV3Schema = z.object({
   public: z.boolean(),
   basics: basicsSchema,
   sections: z.object({
-    work: sectionSchema.extend({ items: z.array(workSchema) }),
-    awards: sectionSchema.extend({ items: z.array(awardSchema) }),
-    skills: sectionSchema.extend({ items: z.array(skillSchema) }),
-    projects: sectionSchema.extend({ items: z.array(projectSchema) }),
-    education: sectionSchema.extend({ items: z.array(educationSchema) }),
-    interests: sectionSchema.extend({ items: z.array(interestSchema) }),
-    languages: sectionSchema.extend({ items: z.array(languageSchema) }),
-    volunteer: sectionSchema.extend({ items: z.array(volunteerSchema) }),
-    references: sectionSchema.extend({ items: z.array(referenceSchema) }),
-    publications: sectionSchema.extend({ items: z.array(publicationSchema) }),
-    certifications: sectionSchema.extend({
-      items: z.array(certificationSchema),
-    }),
+    work: sectionSchema.extend({ items: z.array(workSchema) }).optional(),
+    awards: sectionSchema.extend({ items: z.array(awardSchema) }).optional(),
+    skills: sectionSchema.extend({ items: z.array(skillSchema) }).optional(),
+    projects: sectionSchema.extend({ items: z.array(projectSchema) }).optional(),
+    education: sectionSchema.extend({ items: z.array(educationSchema) }).optional(),
+    interests: sectionSchema.extend({ items: z.array(interestSchema) }).optional(),
+    languages: sectionSchema.extend({ items: z.array(languageSchema) }).optional(),
+    volunteer: sectionSchema.extend({ items: z.array(volunteerSchema) }).optional(),
+    references: sectionSchema.extend({ items: z.array(referenceSchema) }).optional(),
+    publications: sectionSchema.extend({ items: z.array(publicationSchema) }).optional(),
+    certifications: sectionSchema
+      .extend({
+        items: z.array(certificationSchema),
+      })
+      .optional(),
   }),
   metadata: metadataSchema,
 });

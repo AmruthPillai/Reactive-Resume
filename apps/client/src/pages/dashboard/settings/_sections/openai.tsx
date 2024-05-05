@@ -22,7 +22,7 @@ const formSchema = z.object({
   apiKey: z
     .string()
     // eslint-disable-next-line lingui/t-call-in-function
-    .regex(/^sk-[a-zA-Z0-9]+$/, t`That doesn't look like a valid OpenAI API key.`)
+    .regex(/^sk-[\dA-Za-z]+$/, t`That doesn't look like a valid OpenAI API key.`)
     .default(""),
 });
 
@@ -37,7 +37,7 @@ export const OpenAISettings = () => {
     defaultValues: { apiKey: apiKey ?? "" },
   });
 
-  const onSubmit = async ({ apiKey }: FormValues) => {
+  const onSubmit = ({ apiKey }: FormValues) => {
     setApiKey(apiKey);
   };
 
@@ -74,7 +74,7 @@ export const OpenAISettings = () => {
       </div>
 
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-6 sm:grid-cols-2">
+        <form className="grid gap-6 sm:grid-cols-2" onSubmit={form.handleSubmit(onSubmit)}>
           <FormField
             name="apiKey"
             control={form.control}

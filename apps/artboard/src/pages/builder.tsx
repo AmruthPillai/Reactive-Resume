@@ -38,11 +38,11 @@ export const BuilderLayout = () => {
 
   return (
     <TransformWrapper
+      ref={transformRef}
       centerOnInit
       maxScale={2}
       minScale={0.4}
       initialScale={0.8}
-      ref={transformRef}
       limitToBounds={false}
     >
       <TransformComponent
@@ -56,8 +56,8 @@ export const BuilderLayout = () => {
         <AnimatePresence>
           {layout.map((columns, pageIndex) => (
             <motion.div
-              layout
               key={pageIndex}
+              layout
               initial={{ opacity: 0, x: -200, y: 0 }}
               animate={{ opacity: 1, x: 0, transition: { delay: pageIndex * 0.3 } }}
               exit={{ opacity: 0, x: -200 }}

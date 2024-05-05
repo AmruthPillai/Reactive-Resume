@@ -16,7 +16,7 @@ export default defineConfig({
 
   server: {
     host: true,
-    port: +(process.env.__DEV__ARTBOARD_PORT ?? 6173),
+    port: 6173,
     fs: { allow: [searchForWorkspaceRoot(process.cwd())] },
   },
 

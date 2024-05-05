@@ -12,9 +12,18 @@ export const UserAvatar = ({ size = 36, className }: Props) => {
 
   if (!user) return null;
 
-  let picture: React.ReactNode = null;
+  let picture: React.ReactNode;
 
-  if (!user.picture) {
+  if (user.picture) {
+    picture = (
+      <img
+        alt={user.name}
+        src={user.picture}
+        className="rounded-full"
+        style={{ width: size, height: size }}
+      />
+    );
+  } else {
     const initials = getInitials(user.name);
 
     picture = (
@@ -24,15 +33,6 @@ export const UserAvatar = ({ size = 36, className }: Props) => {
       >
         {initials}
       </div>
-    );
-  } else {
-    picture = (
-      <img
-        alt={user.name}
-        src={user.picture}
-        className="rounded-full"
-        style={{ width: size, height: size }}
-      />
     );
   }
 

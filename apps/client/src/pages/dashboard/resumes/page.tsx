@@ -23,8 +23,10 @@ export const ResumesPage = () => {
 
       <Tabs
         value={layout}
-        onValueChange={(value) => setLayout(value as Layout)}
         className="space-y-4"
+        onValueChange={(value) => {
+          setLayout(value as Layout);
+        }}
       >
         <div className="flex items-center justify-between">
           <motion.h1

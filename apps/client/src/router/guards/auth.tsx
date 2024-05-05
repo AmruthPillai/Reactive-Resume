@@ -14,5 +14,5 @@ export const AuthGuard = () => {
     return <Outlet />;
   }
 
-  return <Navigate to={`/auth/login?redirect=${redirectTo}`} replace />;
+  return <Navigate replace to={`/auth/login?redirect=${redirectTo}`} />;
 };

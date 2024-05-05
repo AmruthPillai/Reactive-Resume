@@ -1,9 +1,10 @@
-import { Resume, User } from "@prisma/client";
+import { Resume, User as PrismaUser } from "@prisma/client";
 
 declare global {
   namespace Express {
+    // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
     interface Request {
-      user?: User;
+      user?: PrismaUser;
       payload?: {
         resume: Resume;
       };
