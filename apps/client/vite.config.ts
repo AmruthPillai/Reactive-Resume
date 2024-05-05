@@ -1,7 +1,7 @@
 /// <reference types='vitest' />
-
 import { lingui } from "@lingui/vite-plugin";
 import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
+import { sentryVitePlugin } from "@sentry/vite-plugin";
 import react from "@vitejs/plugin-react";
 import { defineConfig, searchForWorkspaceRoot } from "vite";
 
@@ -39,6 +39,10 @@ export default defineConfig({
     }),
     lingui(),
     nxViteTsPaths(),
+    sentryVitePlugin({
+      org: "reactive-resume",
+      project: "client",
+    }),
   ],
 
   test: {

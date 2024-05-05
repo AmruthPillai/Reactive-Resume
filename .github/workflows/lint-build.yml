@@ -27,15 +27,16 @@ jobs:
     uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.14.0
     with:
       main-branch-name: main
-      number-of-agents: 3
+      number-of-agents: 1
       init-commands: |
         pnpm exec prisma generate
         pnpm exec nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
       parallel-commands: |
         pnpm exec nx-cloud record -- pnpm exec nx format:check
       parallel-commands-on-agents: |
-        pnpm exec nx affected --target=lint --parallel=3
-        pnpm exec nx affected --target=build --parallel=3
+        pnpm exec nx affected --target=lint
+        pnpm exec nx affected --target=test
+        pnpm exec nx affected --target=build
 
   agents:
     name: Nx Cloud - Agents
