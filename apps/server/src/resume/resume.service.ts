@@ -45,7 +45,7 @@ export class ResumeService {
     });
   }
 
-  async import(userId: string, importResumeDto: ImportResumeDto) {
+  import(userId: string, importResumeDto: ImportResumeDto) {
     const randomTitle = generateRandomName();
 
     return this.prisma.resume.create({
