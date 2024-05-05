@@ -21,7 +21,7 @@ jobs:
       version: ${{ steps.version.outputs.version }}
 
     strategy:
-      fail-fast: true
+      max-parallel: 1
       matrix:
         platform:
           - linux/amd64
