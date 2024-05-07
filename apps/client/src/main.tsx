@@ -24,9 +24,9 @@ if (import.meta.env.VITE_CLIENT_SENTRY_DSN) {
       }),
       Sentry.replayIntegration(),
     ],
-    tracesSampleRate: 0.5,
-    replaysOnErrorSampleRate: 0.5,
-    replaysSessionSampleRate: 0.25,
+    tracesSampleRate: 1,
+    replaysOnErrorSampleRate: 1,
+    replaysSessionSampleRate: 1,
   });
 }
 

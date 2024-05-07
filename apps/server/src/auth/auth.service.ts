@@ -70,6 +70,12 @@ export class AuthService {
     }
   }
 
+  async setLastSignedIn(email: string) {
+    await this.userService.updateByEmail(email, {
+      secrets: { update: { lastSignedIn: new Date() } },
+    });
+  }
+
   async setRefreshToken(email: string, token: string | null) {
     await this.userService.updateByEmail(email, {
       secrets: {
@@ -129,6 +135,7 @@ export class AuthService {
       }
 
       await this.validatePassword(password, user.secrets.password);
+      await this.setLastSignedIn(user.email);
 
       return user;
     } catch {

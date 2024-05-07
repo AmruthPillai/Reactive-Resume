@@ -4,6 +4,7 @@
 declare const appVersion: string;
 
 interface ImportMetaEnv {
+  SENTRY_AUTH_TOKEN: string | undefined;
   VITE_CLIENT_SENTRY_DSN: string | undefined;
   VITE_DISABLE_SIGNUPS: string | undefined;
 }

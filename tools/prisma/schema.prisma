@@ -35,16 +35,16 @@ model User {
 }
 
 model Secrets {
-  id                   String    @id @default(cuid())
+  id                   String   @id @default(cuid())
   password             String?
-  lastSignedIn         DateTime?
+  lastSignedIn         DateTime @default(now())
   verificationToken    String?
   twoFactorSecret      String?
-  twoFactorBackupCodes String[]  @default([])
+  twoFactorBackupCodes String[] @default([])
   refreshToken         String?
-  resetToken           String?   @unique
-  userId               String    @unique
-  user                 User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  resetToken           String?  @unique
+  userId               String   @unique
+  user                 User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([userId, id])
 }
