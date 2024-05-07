@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/consistent-type-definitions */
+
 /// <reference types="vite/client" />
 
 declare const appVersion: string;

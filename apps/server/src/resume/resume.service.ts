@@ -126,7 +126,7 @@ export class ResumeService {
     }
   }
 
-  async lock(userId: string, id: string, set: boolean) {
+  lock(userId: string, id: string, set: boolean) {
     return this.prisma.resume.update({
       data: { locked: set },
       where: { userId_id: { userId, id } },

@@ -69,11 +69,11 @@ export class UserService {
     return user;
   }
 
-  async create(data: Prisma.UserCreateInput) {
+  create(data: Prisma.UserCreateInput) {
     return this.prisma.user.create({ data, include: { secrets: true } });
   }
 
-  async updateByEmail(email: string, data: Prisma.UserUpdateArgs["data"]) {
+  updateByEmail(email: string, data: Prisma.UserUpdateArgs["data"]) {
     return this.prisma.user.update({ where: { email }, data });
   }
 
