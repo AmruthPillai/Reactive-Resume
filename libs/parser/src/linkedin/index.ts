@@ -8,7 +8,6 @@ import {
   defaultProject,
   defaultResumeData,
   defaultSkill,
-  ResumeData,
   resumeDataSchema,
 } from "@reactive-resume/schema";
 import { extractUrl, Json, parseArrayLikeCSVEntry, parseCSV } from "@reactive-resume/utils";
@@ -58,7 +57,7 @@ export class LinkedInParser implements Parser<JSZip, LinkedIn> {
   }
 
   convert(data: LinkedIn) {
-    const result = JSON.parse(JSON.stringify(defaultResumeData)) as ResumeData;
+    const result = structuredClone(defaultResumeData);
 
     // Profile
     if (data.Profile && data.Profile.length > 0) {

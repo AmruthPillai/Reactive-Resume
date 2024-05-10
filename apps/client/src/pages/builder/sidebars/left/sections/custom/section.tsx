@@ -91,7 +91,7 @@ export const CustomFieldsSection = ({ className }: Props) => {
 
   const onChangeCustomField = (field: ICustomField) => {
     const index = customFields.findIndex((item) => item.id === field.id);
-    const newCustomFields = JSON.parse(JSON.stringify(customFields)) as ICustomField[];
+    const newCustomFields = structuredClone(customFields);
     newCustomFields[index] = field;
 
     setValue("basics.customFields", newCustomFields);

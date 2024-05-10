@@ -14,7 +14,6 @@ import {
   defaultResumeData,
   defaultSkill,
   defaultVolunteer,
-  ResumeData,
 } from "@reactive-resume/schema";
 import { isUrl, Json } from "@reactive-resume/utils";
 import { Schema } from "zod";
@@ -60,7 +59,7 @@ export class ReactiveResumeV3Parser implements Parser<Json, ReactiveResumeV3> {
   }
 
   convert(data: ReactiveResumeV3) {
-    const result = JSON.parse(JSON.stringify(defaultResumeData)) as ResumeData;
+    const result = structuredClone(defaultResumeData);
 
     // Basics
     result.basics.name = data.basics.name ?? "";
