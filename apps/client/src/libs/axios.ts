@@ -4,7 +4,7 @@ import _axios from "axios";
 import createAuthRefreshInterceptor from "axios-auth-refresh";
 import { redirect } from "react-router-dom";
 
-import { refresh } from "@/client/services/auth";
+import { refreshToken } from "@/client/services/auth";
 
 import { USER_KEY } from "../constants/query-keys";
 import { toast } from "../hooks/use-toast";
@@ -40,18 +40,12 @@ axios.interceptors.response.use(
 const axiosForRefresh = _axios.create({ baseURL: "/api", withCredentials: true });
 
 // Interceptor to handle expired access token errors
-const handleAuthError = async () => {
-  await refresh(axiosForRefresh);
-
-  await Promise.resolve();
-};
+const handleAuthError = () => refreshToken(axiosForRefresh);
 
 // Interceptor to handle expired refresh token errors
 const handleRefreshError = async () => {
-  void queryClient.invalidateQueries({ queryKey: USER_KEY });
+  await queryClient.invalidateQueries({ queryKey: USER_KEY });
   redirect("/auth/login");
-
-  await Promise.resolve();
 };
 
 // Intercept responses to check for 401 and 403 errors, refresh token and retry the request

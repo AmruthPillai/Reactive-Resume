@@ -8,7 +8,7 @@ msgstr ""
 "Language: tr\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-05-08 00:07\n"
+"PO-Revision-Date: 2024-05-10 08:43\n"
 "Last-Translator: \n"
 "Language-Team: Turkish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -726,7 +726,7 @@ msgstr "Bu bölümde şifrenizi değiştirebilir ve iki faktörlü kimlik doğru
 
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:64
 msgid "In this section, you can delete your account and all the data associated to your user, but please keep in mind that <0>this action is irreversible</0>."
-msgstr ""
+msgstr "Bu bölümde, hesabınızı ve kullanıcınızla ilişkili tüm verileri silebilirsiniz, ancak <0>bu işlemin geri alınamaz olduğunu</0> lütfen unutmayın."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:125
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
@@ -739,35 +739,35 @@ msgstr "Kurum"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:53
 msgid "Issuer"
-msgstr ""
+msgstr "İhraççı"
 
 #: apps/client/src/services/errors/translate-error.ts:7
 msgid "It doesn't look like a user exists with the credentials you provided."
-msgstr ""
+msgstr "Sağladığınız kimlik bilgilerine sahip bir kullanıcı varmış gibi görünmüyor."
 
 #: apps/client/src/services/errors/translate-error.ts:37
 msgid "It looks like the backup code you provided is invalid or used. Please try again."
-msgstr ""
+msgstr "Sağladığınız yedekleme kodu geçersiz veya kullanılmış gibi görünüyor. Lütfen tekrar deneyin."
 
 #: apps/client/src/services/errors/translate-error.ts:19
 msgid "It looks like the reset token you provided is invalid. Please try restarting the password reset process again."
-msgstr ""
+msgstr "Sağladığınız sıfırlama belirteci geçersiz gibi görünüyor. Lütfen şifre sıfırlama işlemini yeniden başlatmayı deneyin."
 
 #: apps/client/src/services/errors/translate-error.ts:46
 msgid "It looks like the resume you're looking for doesn't exist."
-msgstr ""
+msgstr "Görünüşe göre aradığınız özgeçmiş mevcut değil."
 
 #: apps/client/src/services/errors/translate-error.ts:34
 msgid "It looks like the two-factor authentication code you provided is invalid. Please try again."
-msgstr ""
+msgstr "Sağladığınız iki faktörlü kimlik doğrulama kodu geçersiz gibi görünüyor. Lütfen tekrar deneyin."
 
 #: apps/client/src/services/errors/translate-error.ts:22
 msgid "It looks like the verification token you provided is invalid. Please try restarting the verification process again."
-msgstr ""
+msgstr "Sağladığınız doğrulama belirteci geçersiz gibi görünüyor. Lütfen doğrulama işlemini yeniden başlatmayı deneyin."
 
 #: apps/client/src/services/errors/translate-error.ts:25
 msgid "It looks like your email address has already been verified."
-msgstr ""
+msgstr "E-posta adresiniz zaten doğrulanmış gibi görünüyor."
 
 #: apps/client/src/pages/auth/register/page.tsx:109
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
@@ -872,7 +872,7 @@ msgstr "Düzenlemeyi önlemek için bir özgeçmişi kilitle"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:43
 msgid "Locking a resume will prevent any further changes to it. This is useful when you have already shared your resume with someone and you don't want to accidentally make any changes to it."
-msgstr ""
+msgstr "Bir özgeçmişi kilitlemek, üzerinde daha fazla değişiklik yapılmasını engelleyecektir. Bu, özgeçmişinizi zaten biriyle paylaştıysanız ve yanlışlıkla üzerinde herhangi bir değişiklik yapmak istemiyorsanız kullanışlıdır."
 
 #: apps/client/src/components/user-options.tsx:38
 #: apps/client/src/pages/home/sections/hero/call-to-action.tsx:23
@@ -986,7 +986,7 @@ msgstr "OpenAI, metniniz için herhangi bir seçenek döndürmedi."
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:52
 #: apps/client/src/pages/home/sections/features/index.tsx:52
 msgid "OpenAI Integration"
-msgstr ""
+msgstr "OpenAI Entegrasyonu"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:168
@@ -1053,7 +1053,7 @@ msgstr "Lütfen bir dosya türü seçin"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:226
 msgid "Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app."
-msgstr ""
+msgstr "Lütfen yedek kodlarınızı güvenli bir yerde saklayın. Kimlik doğrulayıcı uygulamanıza erişiminizi kaybetmeniz durumunda oturum açmak için bu tek kullanımlık kodlardan birini kullanabilirsiniz."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:104
 msgid "Portrait"
@@ -1084,7 +1084,7 @@ msgstr "Birincil Renk"
 #: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
 #: apps/client/src/pages/home/meta/privacy-policy/page.tsx:23
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Gizlilik Politikası"
 
 #: apps/client/src/components/ai-actions.tsx:109
 #: apps/client/src/components/ai-actions.tsx:112
@@ -1128,19 +1128,19 @@ msgstr "Reactive Resume"
 
 #: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
 msgid "Reactive Resume has helped people land jobs at these great companies:"
-msgstr ""
+msgstr "Reactive Resume, insanların bu harika şirketlerde iş bulmalarına yardımcı oldu:"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:12
 msgid "Reactive Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Reactive Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
-msgstr ""
+msgstr "Reactive Resume, çoğunlukla benim tarafımdan hazırlanmış ücretsiz ve açık kaynaklı bir projedir ve desteğiniz çok takdir edilecektir. Eğer katkıda bulunmak istiyorsanız ve sadece gücünüz yetiyorsa, listelenen platformlardan herhangi biri aracılığıyla bağış yapmayı düşünün. Ayrıca, Open Collective aracılığıyla Reactive Resume'a yapılan bağışlar, proje mali olarak Open Collective Europe tarafından barındırıldığı için vergiden muaftır."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:107
 msgid "Reactive Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
-msgstr ""
+msgstr "Reaktif Özgeçmiş, 3 yılı aşkın bir süredir üzerinde çalışılan bir tutku projesidir ve bununla birlikte (neredeyse) mükemmel hale getirilmiş bir dizi yeniden yinelenen fikir ve özellik ortaya çıkmıştır."
 
 #: apps/client/src/pages/home/sections/contributors/index.tsx:22
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
-msgstr ""
+msgstr "Reaktif Özgeçmiş, canlı topluluğu sayesinde gelişiyor. Bu proje ilerlemesini, zamanlarını ve becerilerini adayan çok sayıda kişiye borçludur. Aşağıda, GitHub'daki özelliklerini geliştiren kodlayıcıları ve Crowdin'deki çevirileri daha geniş bir kitle için erişilebilir hale getiren dilbilimcileri kutluyoruz."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:79
 msgid "Redo"
@@ -1227,7 +1227,7 @@ msgstr "Yazı tipi alt kümesini arayın"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:125
 msgid "Search for a font variant"
-msgstr ""
+msgstr "Yazı tipi varyantı arama"
 
 #: apps/client/src/components/locale-combobox.tsx:41
 msgid "Search for a language"
@@ -1235,7 +1235,7 @@ msgstr "Dili arayın"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:56
 msgid "Secure with two-factor authentication"
-msgstr ""
+msgstr "İki faktörlü kimlik doğrulama ile güvende"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:68
 msgid "Security"
@@ -1262,7 +1262,7 @@ msgstr "Ayarlar"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:157
 msgid "Setup two-factor authentication on your account"
-msgstr ""
+msgstr "Hesabınızda iki faktörlü kimlik doğrulamayı ayarlayın"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:97
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
@@ -1275,7 +1275,7 @@ msgstr "Göster"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:78
 msgid "Show Break Line"
-msgstr ""
+msgstr "Ara Çizgiyi Göster"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:91
 msgid "Show Page Numbers"
@@ -1318,7 +1318,7 @@ msgstr "Kayıt ol"
 
 #: apps/client/src/pages/auth/register/page.tsx:85
 msgid "Signups are currently disabled by the administrator."
-msgstr ""
+msgstr "Kayıtlar şu anda yönetici tarafından devre dışı bırakılmıştır."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:70
 msgid "Size (in px)"
@@ -1330,15 +1330,15 @@ msgstr "Slug"
 
 #: apps/client/src/services/errors/translate-error.ts:55
 msgid "Something went wrong while grabbing a preview your resume. Please try again later or raise an issue on GitHub."
-msgstr ""
+msgstr "Özgeçmişinizin önizlemesini alırken bir şeyler ters gitti. Lütfen daha sonra tekrar deneyin veya GitHub'da bir sorun oluşturun."
 
 #: apps/client/src/services/errors/translate-error.ts:52
 msgid "Something went wrong while printing your resume. Please try again later or raise an issue on GitHub."
-msgstr ""
+msgstr "Özgeçmişinizi yazdırırken bir şeyler ters gitti. Lütfen daha sonra tekrar deneyin veya GitHub'da bir sorun oluşturun."
 
 #: apps/client/src/services/errors/translate-error.ts:58
 msgid "Something went wrong while processing your request. Please try again later or raise an issue on GitHub."
-msgstr ""
+msgstr "İsteğiniz işlenirken bir şeyler ters gitti. Lütfen daha sonra tekrar deneyin veya GitHub'da bir sorun oluşturun."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:92
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:135
@@ -1365,15 +1365,15 @@ msgstr "İstatistikler yalnızca herkese açık özgeçmişler için mevcuttur."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
 msgid "Store Locally"
-msgstr ""
+msgstr "Yerel Olarak Depolayın"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:160
 msgid "Store your backup codes securely"
-msgstr ""
+msgstr "Yedekleme kodlarınızı güvenle saklayın"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
 msgid "Stored"
-msgstr ""
+msgstr "Depolandı"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
@@ -1389,15 +1389,15 @@ msgstr "Özet"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:18
 msgid "Support the app by donating what you can!"
-msgstr ""
+msgstr "Elinizden geldiğince bağışta bulunarak uygulamayı destekleyin!"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:9
 msgid "Supporting Reactive Resume"
-msgstr ""
+msgstr "Reaktif Özgeçmişi Destekleme"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:65
 msgid "Supports A4/Letter page formats"
-msgstr ""
+msgstr "A4/Letter sayfa formatlarını destekler"
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:85
 msgid "System"
@@ -1444,27 +1444,27 @@ msgstr "Tarayıcıya bağlanırken bir hata oluştu. Lütfen 'chrome'un çalış
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:126
 msgid "This action can be reverted by clicking on the undo button in the floating toolbar."
-msgstr ""
+msgstr "Bu eylem, kayan araç çubuğundaki geri al düğmesine tıklanarak geri alınabilir."
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:150
 msgid "This action cannot be undone. This will permanently delete your resume and cannot be recovered."
-msgstr ""
+msgstr "Bu işlem geri alınamaz. Bu işlem özgeçmişinizi kalıcı olarak siler ve kurtarılamaz."
 
 #: apps/client/src/services/errors/translate-error.ts:16
 msgid "This email address is associated with an OAuth account. Please sign in with your OAuth provider."
-msgstr ""
+msgstr "Bu e-posta adresi bir OAuth hesabıyla ilişkilendirilmiştir. Lütfen OAuth sağlayıcınızla oturum açın."
 
 #: apps/client/src/pages/builder/_components/header.tsx:57
 msgid "This resume is locked, please unlock to make further changes."
-msgstr ""
+msgstr "Bu özgeçmiş kilitlidir, daha fazla değişiklik yapmak için lütfen kilidi açın."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:23
 msgid "This section is reserved for your personal notes specific to this resume. The content here remains private and is not shared with anyone else."
-msgstr ""
+msgstr "Bu bölüm, bu özgeçmişe özel kişisel notlarınız için ayrılmıştır. Buradaki içerik gizli kalır ve başka kimseyle paylaşılmaz."
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:215
 msgid "Tip: You can name the resume referring to the position you are applying for."
-msgstr ""
+msgstr "İpucu: Özgeçmişinizi başvurduğunuz pozisyona atıfta bulunarak adlandırabilirsiniz."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:39
 msgctxt "Name of the Award"
@@ -1477,43 +1477,43 @@ msgstr "Başlık"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:120
 msgid "Toggle Page Break Line"
-msgstr ""
+msgstr "Sayfa Sonu Satırını Değiştir"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:132
 msgid "Toggle Page Numbers"
-msgstr ""
+msgstr "Sayfa Numaralarını Değiştir"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:68
 msgid "Track views and downloads"
-msgstr ""
+msgstr "Görüntülemeleri ve indirmeleri takip edin"
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/auth/verify-otp/page.tsx:57
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:135
 msgid "Two-Factor Authentication"
-msgstr ""
+msgstr "İki Faktörlü Kimlik Doğrulama"
 
 #: apps/client/src/services/errors/translate-error.ts:31
 msgid "Two-factor authentication is already enabled for this account."
-msgstr ""
+msgstr "Bu hesap için iki faktörlü kimlik doğrulama zaten etkinleştirilmiştir."
 
 #: apps/client/src/services/errors/translate-error.ts:28
 msgid "Two-factor authentication is not enabled for this account."
-msgstr ""
+msgstr "Bu hesap için iki faktörlü kimlik doğrulama etkinleştirilmemiştir."
 
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:84
 msgid "Type <0>delete</0> to confirm deleting your account."
-msgstr ""
+msgstr "Hesabınızı silmeyi onaylamak için <0>delete</0> yazın."
 
 #. For example, Bachelor's Degree or Master's Degree
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:54
 msgid "Type of Study"
-msgstr ""
+msgstr "Çalışma Türü"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:76
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:65
 msgid "Typography"
-msgstr ""
+msgstr "Tipografi"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:189
 msgid "Underline Links"
@@ -1548,7 +1548,7 @@ msgstr "Mevcut bir özgeçmişi güncelle"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:214
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
-msgstr ""
+msgstr "Mevcut verileri ayrıştırmak ve daha kolay düzenleme için Reaktif Özgeçmiş'e aktarmak için kabul edilen kaynaklardan birinden bir dosya yükleyin."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:73
 msgid "URL"
@@ -1565,7 +1565,7 @@ msgstr "Yedek kodunuzu kullanın"
 
 #: apps/client/src/services/errors/translate-error.ts:13
 msgid "User does not have an associated 'secrets' record. Please report this issue on GitHub."
-msgstr ""
+msgstr "Kullanıcının ilişkili bir 'secrets' kaydı yok. Lütfen bu sorunu GitHub'da bildirin."
 
 #: apps/client/src/pages/auth/register/page.tsx:127
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:66
@@ -1604,7 +1604,7 @@ msgstr "E-posta adresinizi doğrulayın"
 
 #: apps/client/src/pages/home/sections/hero/index.tsx:26
 msgid "Version 4"
-msgstr ""
+msgstr "Sürüm 4"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:51
 msgid "Views"
@@ -1616,7 +1616,7 @@ msgstr "Görünür"
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:61
 msgid "We verify your email address only to ensure that we can send you a password reset link in case you forget your password."
-msgstr ""
+msgstr "E-posta adresinizi yalnızca şifrenizi unutmanız durumunda size bir şifre sıfırlama bağlantısı gönderebilmemizi sağlamak için doğruluyoruz."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:81
@@ -1641,7 +1641,7 @@ msgstr "En son sürümdeki yenilikler"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:137
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:114
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
-msgstr ""
+msgstr "Birden fazla anahtar kelimeyi virgülle ayırarak veya enter tuşuna basarak ekleyebilirsiniz."
 
 #: apps/client/src/pages/auth/login/page.tsx:88
 msgid "You can also enter your username."
@@ -1649,19 +1649,19 @@ msgstr "Kullanıcı adınızı da girebilirsiniz."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:54
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
-msgstr ""
+msgstr "İçerik oluşturmanıza yardımcı olması için OpenAI API'sinden yararlanabilir veya özgeçmişinizi oluştururken yazınızı geliştirebilirsiniz."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:40
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
-msgstr ""
+msgstr "Herkese açık paylaşımı etkinleştirerek özgeçmişinizin kaç görüntüleme aldığını veya kaç kişinin özgeçmişinizi indirdiğini takip edebilirsiniz."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:60
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
-msgstr ""
+msgstr "<0>Kendi OpenAI API anahtarınızı edinme seçen</0>eğiniz vardır. Bu anahtar, API'den uygun gördüğünüz şekilde yararlanmanızı sağlar. Alternatif olarak, Reaktif Özgeçmiş'teki yapay zeka özelliklerini tamamen devre dışı bırakmak isterseniz, anahtarı ayarlarınızdan kaldırabilirsiniz."
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:50
 msgid "You should have received an email from <0>Reactive Resume</0> with a link to verify your account."
-msgstr ""
+msgstr "<0>Reactive Resume</0> 'dan hesabınızı doğrulamak için bir bağlantı içeren bir e-posta almış olmalısınız."
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/forgot-password/page.tsx:54
@@ -1670,23 +1670,23 @@ msgstr "E-postanız var!"
 
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:52
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
-msgstr ""
+msgstr "Hesabınız ve tüm verileriniz başarıyla silindi. Güle güle!"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:116
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
-msgstr ""
+msgstr "API anahtarınız tarayıcının yerel depolama alanında güvenli bir şekilde saklanır ve yalnızca OpenAI'ye resmi SDK'ları aracılığıyla istekte bulunurken kullanılır. OpenAI'nin hizmetleriyle etkileşim dışında anahtarınızın herhangi bir harici sunucuya iletilmediğinden emin olabilirsiniz."
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:28
 msgid "Your email address has been verified successfully."
-msgstr ""
+msgstr "E-posta adresiniz başarıyla doğrulandı."
 
 #: apps/client/src/services/openai/client.ts:11
 msgid "Your OpenAI API Key has not been set yet. Please go to your account settings to enable OpenAI Integration."
-msgstr ""
+msgstr "OpenAI API Anahtarınız henüz ayarlanmadı. OpenAI Entegrasyonunu etkinleştirmek için lütfen hesap ayarlarınıza gidin."
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:59
 msgid "Your password has been updated successfully."
-msgstr ""
+msgstr "Parolanız başarıyla güncellendi."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:94
 msgid "Zoom In"
