@@ -21,7 +21,6 @@ jobs:
       version: ${{ steps.version.outputs.version }}
 
     strategy:
-      max-parallel: 1
       matrix:
         platform:
           - linux/amd64
@@ -53,10 +52,6 @@ jobs:
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3.3.0
-        with:
-          driver: cloud
-          version: "lab:latest"
-          endpoint: "amruthpillai/default"
 
       - name: Extract Docker Metadata
         id: meta
@@ -131,10 +126,6 @@ jobs:
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3.3.0
-        with:
-          driver: cloud
-          version: "lab:latest"
-          endpoint: "amruthpillai/default"
 
       - name: Extract Docker Metadata
         id: meta
@@ -161,3 +152,13 @@ jobs:
           repository: ${{ github.repository }}
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
+
+      - uses: sarisia/actions-status-discord@v1.14.3
+        if: always()
+        with:
+          username: ReleaseBot
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          status: ${{ job.status }}
+          title: "Release `${{ steps.meta.outputs.version }}`"
+          description: "A new version of Reactive Resume just dropped! 🚀"
+          url: "https://github.com/AmruthPillai/Reactive-Resume"
