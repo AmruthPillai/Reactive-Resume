@@ -163,7 +163,7 @@ export const LayoutSection = () => {
   };
 
   const onAddPage = () => {
-    const layoutCopy = structuredClone(layout);
+    const layoutCopy = JSON.parse(JSON.stringify(layout));
 
     layoutCopy.push([[], []]);
 
@@ -171,7 +171,7 @@ export const LayoutSection = () => {
   };
 
   const onRemovePage = (page: number) => {
-    const layoutCopy = structuredClone(layout);
+    const layoutCopy = JSON.parse(JSON.stringify(layout));
 
     layoutCopy[0][0].push(...layoutCopy[page][0]); // Main
     layoutCopy[0][1].push(...layoutCopy[page][1]); // Sidebar
@@ -182,7 +182,7 @@ export const LayoutSection = () => {
   };
 
   const onResetLayout = () => {
-    const layoutCopy = structuredClone(defaultMetadata.layout);
+    const layoutCopy = JSON.parse(JSON.stringify(defaultMetadata.layout));
 
     // Loop through all pages and columns, and get any sections that start with "custom."
     // These should be appended to the first page of the new layout.

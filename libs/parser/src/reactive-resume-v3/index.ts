@@ -59,7 +59,7 @@ export class ReactiveResumeV3Parser implements Parser<Json, ReactiveResumeV3> {
   }
 
   convert(data: ReactiveResumeV3) {
-    const result = structuredClone(defaultResumeData);
+    const result = JSON.parse(JSON.stringify(defaultResumeData));
 
     // Basics
     result.basics.name = data.basics.name ?? "";

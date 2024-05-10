@@ -57,7 +57,7 @@ export class JsonResumeParser implements Parser<Json, JsonResume> {
   }
 
   convert(data: JsonResume) {
-    const result = structuredClone(defaultResumeData);
+    const result = JSON.parse(JSON.stringify(defaultResumeData));
 
     // Basics
     result.basics.name = data.basics?.name ?? "";

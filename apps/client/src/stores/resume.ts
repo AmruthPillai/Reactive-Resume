@@ -35,7 +35,7 @@ export const useResumeStore = create<ResumeStore>()(
             state.resume.data = _set(state.resume.data, path, value);
           }
 
-          void debouncedUpdateResume(structuredClone(state.resume));
+          void debouncedUpdateResume(JSON.parse(JSON.stringify(state.resume)));
         });
       },
       addSection: () => {
@@ -51,7 +51,7 @@ export const useResumeStore = create<ResumeStore>()(
           state.resume.data.metadata.layout[lastPageIndex][0].push(`custom.${section.id}`);
           state.resume.data = _set(state.resume.data, `sections.custom.${section.id}`, section);
 
-          void debouncedUpdateResume(structuredClone(state.resume));
+          void debouncedUpdateResume(JSON.parse(JSON.stringify(state.resume)));
         });
       },
       removeSection: (sectionId: SectionKey) => {
@@ -63,7 +63,7 @@ export const useResumeStore = create<ResumeStore>()(
             // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
             delete state.resume.data.sections.custom[id];
 
-            void debouncedUpdateResume(structuredClone(state.resume));
+            void debouncedUpdateResume(JSON.parse(JSON.stringify(state.resume)));
           });
         }
       },

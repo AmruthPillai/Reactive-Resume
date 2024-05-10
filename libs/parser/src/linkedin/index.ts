@@ -57,7 +57,7 @@ export class LinkedInParser implements Parser<JSZip, LinkedIn> {
   }
 
   convert(data: LinkedIn) {
-    const result = structuredClone(defaultResumeData);
+    const result = JSON.parse(JSON.stringify(defaultResumeData));
 
     // Profile
     if (data.Profile && data.Profile.length > 0) {
