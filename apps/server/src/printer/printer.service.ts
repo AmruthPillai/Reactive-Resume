@@ -17,6 +17,8 @@ export class PrinterService {
 
   private readonly browserURL: string;
 
+  private readonly ignoreHTTPSErrors: boolean;
+
   constructor(
     private readonly configService: ConfigService<Config>,
     private readonly storageService: StorageService,
@@ -26,11 +28,15 @@ export class PrinterService {
     const chromeToken = this.configService.getOrThrow<string>("CHROME_TOKEN");
 
     this.browserURL = `${chromeUrl}?token=${chromeToken}`;
+    this.ignoreHTTPSErrors = this.configService.getOrThrow<boolean>("CHROME_IGNORE_HTTPS_ERRORS");
   }
 
   private async getBrowser() {
     try {
-      return await connect({ browserWSEndpoint: this.browserURL });
+      return await connect({
+        browserWSEndpoint: this.browserURL,
+        ignoreHTTPSErrors: this.ignoreHTTPSErrors,
+      });
     } catch (error) {
       throw new InternalServerErrorException(
         ErrorMessage.InvalidBrowserConnection,
