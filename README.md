@@ -76,6 +76,12 @@ Start creating your standout resume with Reactive Resume today!
 - GitHub/Google OAuth (for quickly authenticating users)
 - LinguiJS and Crowdin (for translation management and localization)
 
+## 🌐 Self Host
+
+self-host the application in less than 30 seconds
+
+[![](https://raw.githubusercontent.com/labring-actions/templates/main/Deploy-on-Sealos.svg)](https://cloud.sealos.io/?openapp=system-template%3FtemplateName%3DReactive-Resume)
+
 ## Star History
 
 <a href="https://star-history.com/#AmruthPillai/Reactive-Resume&Date">
