@@ -263,7 +263,7 @@ const Profiles = () => {
           ) : (
             <p>{item.username}</p>
           )}
-          <p className="text-sm">{item.network}</p>
+          {!item.icon && <p className="text-sm">{item.network}</p>}
         </div>
       )}
     </Section>
