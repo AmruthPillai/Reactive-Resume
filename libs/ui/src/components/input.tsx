@@ -1,9 +1,9 @@
 import { cn } from "@reactive-resume/utils";
 import { forwardRef } from "react";
 
-export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export type InputProps = {
   hasError?: boolean;
-}
+} & React.InputHTMLAttributes<HTMLInputElement>;
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, hasError = false, ...props }, ref) => (

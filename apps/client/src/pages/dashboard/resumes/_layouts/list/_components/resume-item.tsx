@@ -143,11 +143,11 @@ export const ResumeListItem = ({ resume }: Props) => {
         <HoverCard>
           <HoverCardTrigger>
             <BaseListItem
-              onClick={onOpen}
               className="group"
               title={resume.title}
               description={t`Last updated ${lastUpdated}`}
               end={dropdownMenu}
+              onClick={onOpen}
             />
           </HoverCardTrigger>
           <HoverCardContent align="end" className="p-0" sideOffset={-100} alignOffset={100}>
@@ -160,7 +160,7 @@ export const ResumeListItem = ({ resume }: Props) => {
                   loading="lazy"
                   alt={resume.title}
                   className="aspect-[1/1.4142] w-60 rounded-sm object-cover"
-                  src={`${url}?cache=${new Date().getTime()}`}
+                  src={`${url}?cache=${Date.now()}`}
                 />
               )}
             </AnimatePresence>
@@ -193,7 +193,7 @@ export const ResumeListItem = ({ resume }: Props) => {
           </ContextMenuItem>
         )}
         <ContextMenuSeparator />
-        <ContextMenuItem onClick={onDelete} className="text-error">
+        <ContextMenuItem className="text-error" onClick={onDelete}>
           <TrashSimple size={14} className="mr-2" />
           {t`Delete`}
         </ContextMenuItem>

@@ -34,7 +34,7 @@ export const RegisterPage = () => {
   const disableSignups = import.meta.env.VITE_DISABLE_SIGNUPS === "true";
 
   const { providers } = useAuthProviders();
-  const emailAuthDisabled = !providers || !providers.includes("email");
+  const emailAuthDisabled = !providers?.includes("email");
 
   const formRef = useRef<HTMLFormElement>(null);
   usePasswordToggle(formRef);
@@ -55,7 +55,7 @@ export const RegisterPage = () => {
       await register(data);
 
       navigate("/auth/verify-email");
-    } catch (error) {
+    } catch {
       form.reset();
     }
   };

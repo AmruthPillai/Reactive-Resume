@@ -1,9 +1,15 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t, Trans } from "@lingui/macro";
 import { useTheme } from "@reactive-resume/hooks";
-import { Button } from "@reactive-resume/ui";
-import { Combobox } from "@reactive-resume/ui";
-import { Form, FormDescription, FormField, FormItem, FormLabel } from "@reactive-resume/ui";
+import {
+  Button,
+  Combobox,
+  Form,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+} from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
@@ -36,7 +42,7 @@ export const ProfileSettings = () => {
   const onReset = () => {
     if (!user) return;
 
-    form.reset({ theme, locale: user.locale ?? "en-US" });
+    form.reset({ theme, locale: user.locale });
   };
 
   const onSubmit = async (data: FormValues) => {
@@ -64,7 +70,7 @@ export const ProfileSettings = () => {
       </div>
 
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-6 sm:grid-cols-2">
+        <form className="grid gap-6 sm:grid-cols-2" onSubmit={form.handleSubmit(onSubmit)}>
           <FormField
             name="theme"
             control={form.control}
@@ -75,12 +81,12 @@ export const ProfileSettings = () => {
                   <Combobox
                     {...field}
                     value={field.value}
-                    onValueChange={field.onChange}
                     options={[
                       { label: t`System`, value: "system" },
                       { label: t`Light`, value: "light" },
                       { label: t`Dark`, value: "dark" },
                     ]}
+                    onValueChange={field.onChange}
                   />
                 </div>
               </FormItem>

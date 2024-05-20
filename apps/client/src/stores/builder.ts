@@ -17,7 +17,7 @@ type Panel = {
   handle: PanelHandle;
 };
 
-interface BuilderState {
+type BuilderState = {
   frame: {
     ref: HTMLIFrameElement | null;
     setRef: (ref: HTMLIFrameElement | null) => void;
@@ -30,11 +30,11 @@ interface BuilderState {
     left: Panel;
     right: Panel;
   };
-}
+};
 
-interface BuilderActions {
+type BuilderActions = {
   toggle: (side: "left" | "right") => void;
-}
+};
 
 export const useBuilderStore = create<BuilderState & BuilderActions>()(
   immer((set) => ({

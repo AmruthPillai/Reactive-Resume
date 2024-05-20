@@ -91,7 +91,6 @@ export const FeaturesSection = () => {
             width={14}
             height={14}
           />
-          <img src="https://cdn.simpleicons.org/redis" alt="Redis" width={14} height={14} />
         </div>
       ),
       title: t`Powered by`,

@@ -30,31 +30,43 @@ export type MetadataKey =
 export const getSectionIcon = (id: MetadataKey, props: IconProps = {}) => {
   switch (id) {
     // Left Sidebar
-    case "notes":
+    case "notes": {
       return <Note size={18} {...props} />;
-    case "template":
+    }
+    case "template": {
       return <DiamondsFour size={18} {...props} />;
-    case "layout":
+    }
+    case "layout": {
       return <Layout size={18} {...props} />;
-    case "typography":
+    }
+    case "typography": {
       return <TextT size={18} {...props} />;
-    case "theme":
+    }
+    case "theme": {
       return <Palette size={18} {...props} />;
-    case "page":
+    }
+    case "page": {
       return <ReadCvLogo size={18} {...props} />;
-    case "locale":
+    }
+    case "locale": {
       return <Translate size={18} {...props} />;
-    case "sharing":
+    }
+    case "sharing": {
       return <ShareFat size={18} {...props} />;
-    case "statistics":
+    }
+    case "statistics": {
       return <TrendUp size={18} {...props} />;
-    case "export":
+    }
+    case "export": {
       return <DownloadSimple size={18} {...props} />;
-    case "information":
+    }
+    case "information": {
       return <Info size={18} {...props} />;
+    }
 
-    default:
+    default: {
       return null;
+    }
   }
 };
 

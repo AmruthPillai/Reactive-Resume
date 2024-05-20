@@ -5,12 +5,12 @@ const COLOR_SCHEME_QUERY = "(prefers-color-scheme: dark)";
 
 type Theme = "system" | "dark" | "light";
 
-interface UseThemeOutput {
+type UseThemeOutput = {
   theme: Theme;
   isDarkMode: boolean;
   toggleTheme: () => void;
   setTheme: Dispatch<SetStateAction<Theme>>;
-}
+};
 
 export const useTheme = (): UseThemeOutput => {
   const isDarkOS = useMediaQuery(COLOR_SCHEME_QUERY);
@@ -23,15 +23,18 @@ export const useTheme = (): UseThemeOutput => {
 
   useEffect(() => {
     switch (theme) {
-      case "light":
+      case "light": {
         setDarkMode(false);
         break;
-      case "system":
+      }
+      case "system": {
         setDarkMode(isDarkOS);
         break;
-      case "dark":
+      }
+      case "dark": {
         setDarkMode(true);
         break;
+      }
     }
   }, [theme, isDarkOS]);
 

@@ -23,15 +23,15 @@ async function bootstrap() {
 
   // Sentry
   // Error Reporting and Performance Monitoring
-  const sentryDsn = configService.get("VITE_SENTRY_DSN");
+  const sentryDsn = configService.get("SERVER_SENTRY_DSN");
 
   if (sentryDsn) {
     const express = app.getHttpAdapter().getInstance();
 
     Sentry.init({
       dsn: sentryDsn,
-      tracesSampleRate: 1.0,
-      profilesSampleRate: 1.0,
+      tracesSampleRate: 1,
+      profilesSampleRate: 1,
       integrations: [
         new Sentry.Integrations.Http({ tracing: true }),
         new Sentry.Integrations.Express({ app: express }),
@@ -76,11 +76,12 @@ async function bootstrap() {
   SwaggerModule.setup("docs", app, document);
 
   // Port
-  const port = configService.get<number>("PORT") || 3000;
+  const port = configService.get<number>("PORT") ?? 3000;
 
   await app.listen(port);
 
   Logger.log(`🚀 Server is up and running on port ${port}`, "Bootstrap");
 }
 
-bootstrap();
+// eslint-disable-next-line unicorn/prefer-top-level-await
+void bootstrap();

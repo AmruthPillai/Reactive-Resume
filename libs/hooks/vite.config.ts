@@ -1,9 +1,10 @@
 /// <reference types='vitest' />
 
+import path from "node:path";
+
 import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 import react from "@vitejs/plugin-react-swc";
-import * as path from "path";
-import { defineConfig, splitVendorChunkPlugin } from "vite";
+import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 
 export default defineConfig({
@@ -12,14 +13,14 @@ export default defineConfig({
   plugins: [
     react(),
     nxViteTsPaths(),
-    splitVendorChunkPlugin(),
     dts({
       entryRoot: "src",
-      tsconfigPath: path.join(__dirname, "tsconfig.lib.json"),
+      tsconfigPath: path.join(import.meta.dirname, "tsconfig.lib.json"),
     }),
   ],
 
   build: {
+    emptyOutDir: true,
     lib: {
       entry: "src/index.ts",
       name: "hooks",

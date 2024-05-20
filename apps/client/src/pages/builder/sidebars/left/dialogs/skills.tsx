@@ -83,7 +83,9 @@ export const SkillsDialog = () => {
                     max={5}
                     value={[field.value]}
                     orientation="horizontal"
-                    onValueChange={(value) => field.onChange(value[0])}
+                    onValueChange={(value) => {
+                      field.onChange(value[0]);
+                    }}
                   />
 
                   {field.value === 0 ? (
@@ -118,8 +120,8 @@ export const SkillsDialog = () => {
                 <AnimatePresence>
                   {field.value.map((item, index) => (
                     <motion.div
-                      layout
                       key={item}
+                      layout
                       initial={{ opacity: 0, y: -50 }}
                       animate={{ opacity: 1, y: 0, transition: { delay: index * 0.1 } }}
                       exit={{ opacity: 0, x: -50 }}
