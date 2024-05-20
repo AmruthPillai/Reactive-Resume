@@ -8,7 +8,7 @@ msgstr ""
 "Language: uk\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-05-10 08:43\n"
+"PO-Revision-Date: 2024-05-20 14:58\n"
 "Last-Translator: \n"
 "Language-Team: Ukrainian\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Crowdin-File: messages.po\n"
 "X-Crowdin-File-ID: 494\n"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:169
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:171
 msgid "You have enabled two-factor authentication successfully."
 msgstr "Ви успішно ввімкнули двофакторну автентифікацію."
 
@@ -98,7 +98,7 @@ msgstr "Приймаються тільки файли {accept}"
 msgid "Account"
 msgstr "Обліковий запис"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:133
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:159
 msgid "Add a custom field"
 msgstr "Додати поле"
 
@@ -158,7 +158,7 @@ msgstr "Ви впевнені, що бажаєте видалити цей ел�
 msgid "Are you sure you want to delete your resume?"
 msgstr "Ви впевнені, що бажаєте видалити цю версію?"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:123
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:125
 msgid "Are you sure you want to disable two-factor authentication?"
 msgstr "Ви впевнені, що хочете відключити двофакторну автентифікацію?"
 
@@ -193,7 +193,7 @@ msgstr "Квардер"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:98
 #: apps/client/src/pages/auth/forgot-password/page.tsx:100
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:241
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:243
 msgid "Back"
 msgstr "Назад"
 
@@ -238,7 +238,7 @@ msgstr "Спільнотою, для спільноти."
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:131
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:155
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:135
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
 msgid "Cancel"
 msgstr "Скасувати"
 
@@ -272,15 +272,15 @@ msgstr "Перевірте вашу електронну пошту з поси�
 msgid "Circle"
 msgstr "Коло"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:247
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:249
 msgid "Close"
 msgstr "Закрити"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:199
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:201
 msgid "Code"
 msgstr "Код"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:50
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:52
 msgid "Code must be exactly 6 digits long."
 msgstr "Код має містити рівно 6 цифр."
 
@@ -301,8 +301,8 @@ msgstr "Сповідь"
 msgid "Confirm New Password"
 msgstr "Підтвердити новий пароль"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:232
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:244
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:234
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:246
 msgid "Continue"
 msgstr "Продовжити"
 
@@ -410,7 +410,7 @@ msgstr "Опис"
 msgid "Design single/multi page resumes"
 msgstr "Дизайн одноразово/мульти-сторінки поновлюється"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:139
 msgid "Disable"
 msgstr "Вимкнути"
 
@@ -506,7 +506,11 @@ msgstr "Введіть новий пароль нижче та перекона�
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
 msgstr "Введіть один з 10 резервних кодів, які ви зберегли, коли увімкнена двофакторна автентифікація."
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:63
+msgid "Enter Phosphor Icon"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:170
 msgid "Enter the 6-digit code from your authenticator app to verify that 2FA has been setup correctly."
 msgstr "Введіть 6-значний код з програми автентифікації для підтвердження того, що 2FA була правильно налаштована."
 
@@ -687,6 +691,7 @@ msgid "I always love to hear from the users of Reactive Resume with feedback or 
 msgstr "Я завжди люблю дізнаватися від користувачів реактивного відновлення з зворотним зв'язком або підтримкою. Декілька повідомлень, які я отримав. Якщо у вас є зворотний зв'язок, то можете позбутися від мене листа з <0>{email}</0>."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:94
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:53
 msgid "Icon"
 msgstr "Іконка"
 
@@ -694,7 +699,7 @@ msgstr "Іконка"
 msgid "If this app has helped you with your job hunt, let me know by reaching out through <0>this contact form</0>."
 msgstr "Якщо цей додаток допоміг вам з полюванням по вашим завданням, повідомте мені, звертаючись до <0>форми контакту</0>."
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:126
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:128
 msgid "If you disable two-factor authentication, you will no longer be required to enter a verification code when logging in."
 msgstr "Якщо вимкнути двофакторну аутентифікацію, то більше не потрібно буде вводити код підтвердження при вході."
 
@@ -716,7 +721,7 @@ msgstr "Імпортувати існуючу резюме"
 msgid "Improve Writing"
 msgstr "Поліпшити написання"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:186
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:188
 msgid "In case you are unable to scan this QR Code, you can also copy-paste this link into your authenticator app."
 msgstr "Якщо ви не можете відсканувати цей QR-код, ви також можете скопіювати це посилання у свій додаток для авторизації."
 
@@ -921,7 +926,7 @@ msgstr "Ліцензія MIT"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:46
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:72
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:152
 msgid "Name"
 msgstr "Ім'я"
@@ -947,7 +952,7 @@ msgstr "Нічого не знайдено"
 msgid "No user tracking or advertising"
 msgstr "Немає відстеження або реклами користувача"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:131
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:133
 msgid "Note: This will make your account less secure."
 msgstr "Примітка: Це зробить ваш обліковий запис менш безпечним."
 
@@ -1051,7 +1056,7 @@ msgstr "Зверніть увагу на те, що цей крок є повн�
 msgid "Please select a file type"
 msgstr "Будь ласка, оберіть тип файлу"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:226
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:228
 msgid "Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app."
 msgstr "Зберігайте резервні коди в безпечному місці. Ви можете використовувати одноразово один з цих кодів для входу в систему, якщо ви втратите доступ до своєї програми авторизації."
 
@@ -1208,7 +1213,7 @@ msgstr "Округлі"
 msgid "Save Changes"
 msgstr "Зберегти зміни"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:166
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
 msgid "Scan the QR code below with your authenticator app to setup 2FA on your account."
 msgstr "Проскануйте QR-код внизу за допомогою програми автентифікації для налаштування 2FA у вашому обліковому записі."
 
@@ -1260,7 +1265,7 @@ msgstr "Надіслати мені повідомлення"
 msgid "Settings"
 msgstr "Налаштування"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:157
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:159
 msgid "Setup two-factor authentication on your account"
 msgstr "Налаштування двофакторної автентифікації в своєму обліковому записі"
 
@@ -1367,7 +1372,7 @@ msgstr "Статистика доступна лише для публічних
 msgid "Store Locally"
 msgstr "Зберігати локально"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:160
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:162
 msgid "Store your backup codes securely"
 msgstr "Безпечно зберігайте резервні коди"
 
@@ -1585,7 +1590,7 @@ msgstr "Validate"
 msgid "Validated"
 msgstr "Перевірено"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:55
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:81
 msgid "Value"
 msgstr "Цінність"
 
@@ -1593,7 +1598,7 @@ msgstr "Цінність"
 msgid "Verified"
 msgstr "Перевірено"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:159
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:161
 msgid "Verify that two-factor authentication has been setup correctly"
 msgstr "Переконайтеся, що двофакторна автентифікація була налаштована правильно"
 

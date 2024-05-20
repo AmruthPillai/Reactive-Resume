@@ -3,12 +3,12 @@ import { createId } from "@paralleldrive/cuid2";
 import { DotsSixVertical, Envelope, Plus, X } from "@phosphor-icons/react";
 import { CustomField as ICustomField } from "@reactive-resume/schema";
 import {
+  Button,
+  Input,
   Popover,
   PopoverContent,
   PopoverTrigger,
   Tooltip,
-  Button,
-  Input,
 } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { AnimatePresence, Reorder, useDragControls } from "framer-motion";
@@ -53,7 +53,7 @@ export const CustomField = ({ field, onChange, onRemove }: CustomFieldProps) => 
           <Tooltip content={t`Icon`}>
             <PopoverTrigger asChild>
               <Button size="icon" variant="ghost">
-                {field.icon ? <i className={`ph ph-${field.icon}`}></i> : <Envelope />}
+                {field.icon ? <i className={cn(`ph ph-${field.icon}`)} /> : <Envelope />}
               </Button>
             </PopoverTrigger>
           </Tooltip>
@@ -61,7 +61,9 @@ export const CustomField = ({ field, onChange, onRemove }: CustomFieldProps) => 
             <Input
               value={field.icon}
               placeholder={t`Enter Phosphor Icon`}
-              onChange={(event) => onChange({ ...field, icon: event.target.value })}
+              onChange={(event) => {
+                onChange({ ...field, icon: event.target.value });
+              }}
             />
           </PopoverContent>
         </Popover>

@@ -8,7 +8,7 @@ msgstr ""
 "Language: ko\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-05-10 08:43\n"
+"PO-Revision-Date: 2024-05-20 14:58\n"
 "Last-Translator: \n"
 "Language-Team: Korean\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Crowdin-File: messages.po\n"
 "X-Crowdin-File-ID: 494\n"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:169
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:171
 msgid "You have enabled two-factor authentication successfully."
 msgstr "이중 인증을 성공적으로 활성화했습니다."
 
@@ -98,7 +98,7 @@ msgstr "{accept} 파일만 허용됩니다."
 msgid "Account"
 msgstr "계정"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:133
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:159
 msgid "Add a custom field"
 msgstr "사용자 지정 필드 추가"
 
@@ -158,7 +158,7 @@ msgstr "이 항목을 삭제하시겠습니까?"
 msgid "Are you sure you want to delete your resume?"
 msgstr "이력서를 삭제하시겠습니까?"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:123
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:125
 msgid "Are you sure you want to disable two-factor authentication?"
 msgstr "이중 인증을 비활성화하시겠습니까?"
 
@@ -193,7 +193,7 @@ msgstr "수상자"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:98
 #: apps/client/src/pages/auth/forgot-password/page.tsx:100
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:241
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:243
 msgid "Back"
 msgstr "이전"
 
@@ -238,7 +238,7 @@ msgstr "By the community, for the community."
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:131
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:155
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:135
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
 msgid "Cancel"
 msgstr "취소"
 
@@ -272,15 +272,15 @@ msgstr "이메일에서 확인 링크를 확인하여 이메일 주소를 업데
 msgid "Circle"
 msgstr "서클"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:247
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:249
 msgid "Close"
 msgstr "닫기"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:199
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:201
 msgid "Code"
 msgstr "코드"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:50
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:52
 msgid "Code must be exactly 6 digits long."
 msgstr "코드는 정확히 6자리여야 합니다."
 
@@ -301,8 +301,8 @@ msgstr "자신감"
 msgid "Confirm New Password"
 msgstr "새 비밀번호 확인"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:232
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:244
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:234
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:246
 msgid "Continue"
 msgstr "계속하기"
 
@@ -410,7 +410,7 @@ msgstr "설명"
 msgid "Design single/multi page resumes"
 msgstr "단일/다중 페이지 이력서 디자인"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:139
 msgid "Disable"
 msgstr "비활성화"
 
@@ -506,7 +506,11 @@ msgstr "아래에 새 비밀번호를 입력하고 안전한지 확인하세요.
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
 msgstr "이중 인증을 활성화할 때 저장한 10개의 백업 코드 중 하나를 입력하세요."
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:63
+msgid "Enter Phosphor Icon"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:170
 msgid "Enter the 6-digit code from your authenticator app to verify that 2FA has been setup correctly."
 msgstr "인증 앱의 6자리 코드를 입력하여 2FA가 올바르게 설정되었는지 확인하세요."
 
@@ -687,6 +691,7 @@ msgid "I always love to hear from the users of Reactive Resume with feedback or 
 msgstr "저는 항상 반응형 이력서 사용자들로부터 피드백이나 지원을 받는 것을 좋아합니다. 다음은 제가 받은 메시지 중 일부입니다. 피드백이 있으시면 언제든지 다음 주소로 이메일을 보내주세요. <0>{email}</0>."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:94
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:53
 msgid "Icon"
 msgstr "아이콘"
 
@@ -694,7 +699,7 @@ msgstr "아이콘"
 msgid "If this app has helped you with your job hunt, let me know by reaching out through <0>this contact form</0>."
 msgstr "이 앱이 구직 활동에 도움이 되었다면 <0>이 문의 양식을</0> 통해 알려주세요."
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:126
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:128
 msgid "If you disable two-factor authentication, you will no longer be required to enter a verification code when logging in."
 msgstr "2단계 인증을 비활성화하면 로그인할 때 더 이상 인증 코드를 입력할 필요가 없습니다."
 
@@ -716,7 +721,7 @@ msgstr "기존 이력서 가져오기"
 msgid "Improve Writing"
 msgstr "글쓰기 향상"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:186
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:188
 msgid "In case you are unable to scan this QR Code, you can also copy-paste this link into your authenticator app."
 msgstr "이 QR 코드를 스캔할 수 없는 경우, 이 링크를 복사하여 인증 앱에 붙여넣을 수도 있습니다."
 
@@ -921,7 +926,7 @@ msgstr "MIT 라이선스"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:46
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:72
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:152
 msgid "Name"
 msgstr "이름"
@@ -947,7 +952,7 @@ msgstr "결과를 찾을 수 없습니다."
 msgid "No user tracking or advertising"
 msgstr "사용자 추적 또는 광고 없음"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:131
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:133
 msgid "Note: This will make your account less secure."
 msgstr "참고: 이렇게 하면 계정의 보안이 약해집니다."
 
@@ -1051,7 +1056,7 @@ msgstr "이 단계는 완전히 선택 사항이라는 점에 유의하세요."
 msgid "Please select a file type"
 msgstr "파일 유형을 선택하세요."
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:226
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:228
 msgid "Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app."
 msgstr "백업 코드를 안전한 곳에 보관하세요. 인증 앱에 액세스할 수 없는 경우 이 일회용 코드 중 하나를 사용하여 로그인할 수 있습니다."
 
@@ -1208,7 +1213,7 @@ msgstr "둥근"
 msgid "Save Changes"
 msgstr "변경 사항 저장"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:166
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
 msgid "Scan the QR code below with your authenticator app to setup 2FA on your account."
 msgstr "인증 앱으로 아래 QR 코드를 스캔하여 계정에 2FA를 설정하세요."
 
@@ -1260,7 +1265,7 @@ msgstr "메시지 보내기"
 msgid "Settings"
 msgstr "설정"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:157
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:159
 msgid "Setup two-factor authentication on your account"
 msgstr "계정에 2단계 인증 설정하기"
 
@@ -1367,7 +1372,7 @@ msgstr "통계는 공개 이력서에 대해서만 사용할 수 있습니다."
 msgid "Store Locally"
 msgstr "로컬 스토어"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:160
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:162
 msgid "Store your backup codes securely"
 msgstr "백업 코드를 안전하게 저장"
 
@@ -1585,7 +1590,7 @@ msgstr "유효성 검사"
 msgid "Validated"
 msgstr "유효성 검사"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:55
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:81
 msgid "Value"
 msgstr "가치"
 
@@ -1593,7 +1598,7 @@ msgstr "가치"
 msgid "Verified"
 msgstr "확인됨"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:159
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:161
 msgid "Verify that two-factor authentication has been setup correctly"
 msgstr "2단계 인증이 올바르게 설정되었는지 확인합니다."
 

@@ -8,7 +8,7 @@ msgstr ""
 "Language: it\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-05-10 08:43\n"
+"PO-Revision-Date: 2024-05-20 14:58\n"
 "Last-Translator: \n"
 "Language-Team: Italian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Crowdin-File: messages.po\n"
 "X-Crowdin-File-ID: 494\n"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:169
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:171
 msgid "You have enabled two-factor authentication successfully."
 msgstr "Hai abilitato l'autenticazione a due fattori con successo."
 
@@ -98,7 +98,7 @@ msgstr "Accetta solo {accept} file"
 msgid "Account"
 msgstr "Account"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:133
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:159
 msgid "Add a custom field"
 msgstr "Aggiungi un campo personalizzato"
 
@@ -158,7 +158,7 @@ msgstr "Sei sicuro di voler eliminare questo articolo?"
 msgid "Are you sure you want to delete your resume?"
 msgstr "Sei sicuro di voler eliminare il tuo curriculum?"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:123
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:125
 msgid "Are you sure you want to disable two-factor authentication?"
 msgstr "Sei sicuro di voler disattivare l'autenticazione a due fattori?"
 
@@ -193,7 +193,7 @@ msgstr "Premiatore"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:98
 #: apps/client/src/pages/auth/forgot-password/page.tsx:100
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:241
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:243
 msgid "Back"
 msgstr "Indietro"
 
@@ -238,7 +238,7 @@ msgstr "Dalla comunità, per la comunità."
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:131
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:155
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:135
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
 msgid "Cancel"
 msgstr "Annulla"
 
@@ -272,15 +272,15 @@ msgstr "Controlla la tua email per il collegamento di conferma per aggiornare il
 msgid "Circle"
 msgstr "Cerchio"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:247
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:249
 msgid "Close"
 msgstr "Chiudi"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:199
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:201
 msgid "Code"
 msgstr "Codice"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:50
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:52
 msgid "Code must be exactly 6 digits long."
 msgstr "Il codice deve essere lungo esattamente 6 cifre."
 
@@ -301,8 +301,8 @@ msgstr "Fiducioso"
 msgid "Confirm New Password"
 msgstr "Conferma nuova password"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:232
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:244
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:234
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:246
 msgid "Continue"
 msgstr "Continuare"
 
@@ -410,7 +410,7 @@ msgstr "Descrizione"
 msgid "Design single/multi page resumes"
 msgstr "Progetta curriculum a pagina singola/multipagina"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:139
 msgid "Disable"
 msgstr "Disabilita"
 
@@ -506,7 +506,11 @@ msgstr "Inserisca una nuova password qui sotto e si assicuri che sia sicura."
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
 msgstr "Inserisca uno dei 10 codici di backup che ha salvato quando ha attivato l'autenticazione a due fattori."
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:63
+msgid "Enter Phosphor Icon"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:170
 msgid "Enter the 6-digit code from your authenticator app to verify that 2FA has been setup correctly."
 msgstr "Inserisca il codice a 6 cifre dalla sua app Authenticator per verificare che il 2FA sia stato impostato correttamente."
 
@@ -687,6 +691,7 @@ msgid "I always love to hear from the users of Reactive Resume with feedback or 
 msgstr "Mi fa sempre piacere ricevere feedback o supporto dagli utenti di Reactive Resume. Ecco alcuni dei messaggi che ho ricevuto. Se hai commenti, non esitare a mandarmi un'e-mail a <0>{email}</0>."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:94
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:53
 msgid "Icon"
 msgstr "Icona"
 
@@ -694,7 +699,7 @@ msgstr "Icona"
 msgid "If this app has helped you with your job hunt, let me know by reaching out through <0>this contact form</0>."
 msgstr "Se questa app ti ha aiutato nella ricerca di lavoro, faccelo sapere contattandomi tramite <0>questo modulo di contatto</0>."
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:126
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:128
 msgid "If you disable two-factor authentication, you will no longer be required to enter a verification code when logging in."
 msgstr "Se disattivi l'autenticazione a due fattori, non ti verrà più richiesto di inserire un codice di verifica al momento dell'accesso."
 
@@ -716,7 +721,7 @@ msgstr "Importa un curriculum esistente"
 msgid "Improve Writing"
 msgstr "Migliora la scrittura"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:186
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:188
 msgid "In case you are unable to scan this QR Code, you can also copy-paste this link into your authenticator app."
 msgstr "Nel caso in cui non riuscisse a scansionare questo Codice QR, può anche copiare-incollare questo link nella sua app Authenticator."
 
@@ -921,7 +926,7 @@ msgstr "Licenza MIT"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:46
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:72
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:152
 msgid "Name"
 msgstr "Nome"
@@ -947,7 +952,7 @@ msgstr "Nessun risultato trovato"
 msgid "No user tracking or advertising"
 msgstr "Nessun tracciamento o pubblicità degli utenti"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:131
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:133
 msgid "Note: This will make your account less secure."
 msgstr "Nota: ciò renderà il tuo account meno sicuro."
 
@@ -1051,7 +1056,7 @@ msgstr "Tieni presente che questo passaggio è del tutto facoltativo."
 msgid "Please select a file type"
 msgstr "Seleziona un tipo di file"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:226
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:228
 msgid "Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app."
 msgstr "Conservi i codici di backup in un luogo sicuro. Può utilizzare uno di questi codici una tantum per effettuare il login nel caso in cui perdesse l'accesso alla sua app Authenticator."
 
@@ -1208,7 +1213,7 @@ msgstr "Arrotondato"
 msgid "Save Changes"
 msgstr "Salva le modifiche"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:166
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
 msgid "Scan the QR code below with your authenticator app to setup 2FA on your account."
 msgstr "Scansiona il codice QR qui sotto con la tua app di autenticazione per impostare 2FA sul tuo account."
 
@@ -1260,7 +1265,7 @@ msgstr "Inviami un messaggio"
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:157
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:159
 msgid "Setup two-factor authentication on your account"
 msgstr "Imposta l'autenticazione a due fattori sul tuo account"
 
@@ -1367,7 +1372,7 @@ msgstr "Le statistiche sono disponibili solo per i curriculum pubblici."
 msgid "Store Locally"
 msgstr "Conservare localmente"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:160
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:162
 msgid "Store your backup codes securely"
 msgstr "Archivia i tuoi codici di backup in modo sicuro"
 
@@ -1585,7 +1590,7 @@ msgstr "Convalida"
 msgid "Validated"
 msgstr "Convalidato"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:55
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:81
 msgid "Value"
 msgstr "Valore"
 
@@ -1593,7 +1598,7 @@ msgstr "Valore"
 msgid "Verified"
 msgstr "Verificato"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:159
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:161
 msgid "Verify that two-factor authentication has been setup correctly"
 msgstr "Verifica che l'autenticazione a due fattori sia stata impostata correttamente"
 

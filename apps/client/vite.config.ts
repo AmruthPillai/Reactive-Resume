@@ -5,7 +5,6 @@ import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 import { sentryVitePlugin } from "@sentry/vite-plugin";
 import react from "@vitejs/plugin-react";
 import { defineConfig, searchForWorkspaceRoot } from "vite";
-import { chunkSplitPlugin } from "vite-plugin-chunk-split";
 
 export default defineConfig({
   cacheDir: "../../node_modules/.vite/client",
@@ -41,9 +40,6 @@ export default defineConfig({
     }),
     lingui(),
     nxViteTsPaths(),
-    chunkSplitPlugin({
-      strategy: "unbundle",
-    }),
     sentryVitePlugin({
       disable: process.env.SENTRY_AUTH_TOKEN === undefined,
       org: "reactive-resume",

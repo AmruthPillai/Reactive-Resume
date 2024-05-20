@@ -3,7 +3,6 @@
 import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 import react from "@vitejs/plugin-react-swc";
 import { defineConfig, searchForWorkspaceRoot } from "vite";
-import { chunkSplitPlugin } from "vite-plugin-chunk-split";
 
 export default defineConfig({
   base: "/artboard/",
@@ -21,13 +20,7 @@ export default defineConfig({
     fs: { allow: [searchForWorkspaceRoot(process.cwd())] },
   },
 
-  plugins: [
-    react(),
-    nxViteTsPaths(),
-    chunkSplitPlugin({
-      strategy: "unbundle",
-    }),
-  ],
+  plugins: [react(), nxViteTsPaths()],
 
   resolve: {
     alias: {
