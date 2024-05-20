@@ -2,6 +2,8 @@ name: Sync Crowdin Translations
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: 0 0 * * * # everyday at midnight (UTC)
 
 jobs:
   sync:
