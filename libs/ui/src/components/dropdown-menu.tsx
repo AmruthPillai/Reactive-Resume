@@ -41,7 +41,7 @@ export const DropdownMenuSubContent = forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.SubContent>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.SubContent>
 >(({ className, ...props }, ref) => (
-  <DropdownMenuPrimitive.Portal>
+  <DropdownMenuPortal>
     <DropdownMenuPrimitive.SubContent
       ref={ref}
       className={cn(
@@ -50,7 +50,7 @@ export const DropdownMenuSubContent = forwardRef<
       )}
       {...props}
     />
-  </DropdownMenuPrimitive.Portal>
+  </DropdownMenuPortal>
 ));
 
 DropdownMenuSubContent.displayName = DropdownMenuPrimitive.SubContent.displayName;

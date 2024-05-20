@@ -81,7 +81,7 @@ export const languages: Language[] = [
     locale: "nl-NL",
   },
   {
-    id: "en",
+    id: "en-US",
     name: "English",
     editorCode: "en",
     locale: "en-US",
@@ -175,6 +175,12 @@ export const languages: Language[] = [
     name: "Lithuanian",
     editorCode: "lt",
     locale: "lt-LT",
+  },
+  {
+    id: "ms",
+    name: "Malay",
+    editorCode: "ms",
+    locale: "ms-MY",
   },
   {
     id: "ml-IN",

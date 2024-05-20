@@ -17,16 +17,20 @@ export const BuilderPage = () => {
   const title = useResumeStore((state) => state.resume.title);
 
   const updateResumeInFrame = useCallback(() => {
-    if (!frameRef || !frameRef.contentWindow) return;
+    if (!frameRef?.contentWindow) return;
     const message = { type: "SET_RESUME", payload: resume.data };
-    (() => frameRef.contentWindow.postMessage(message, "*"))();
+    (() => {
+      frameRef.contentWindow.postMessage(message, "*");
+    })();
   }, [frameRef, resume.data]);
 
   // Send resume data to iframe on initial load
   useEffect(() => {
     if (!frameRef) return;
     frameRef.addEventListener("load", updateResumeInFrame);
-    return () => frameRef.removeEventListener("load", updateResumeInFrame);
+    return () => {
+      frameRef.removeEventListener("load", updateResumeInFrame);
+    };
   }, [frameRef]);
 
   // Send resume data to iframe on change of resume data
@@ -53,7 +57,8 @@ export const BuilderPage = () => {
 
 export const builderLoader: LoaderFunction<ResumeDto> = async ({ params }) => {
   try {
-    const id = params.id as string;
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const id = params.id!;
 
     const resume = await queryClient.fetchQuery({
       queryKey: ["resume", { id }],
@@ -64,7 +69,7 @@ export const builderLoader: LoaderFunction<ResumeDto> = async ({ params }) => {
     useResumeStore.temporal.getState().clear();
 
     return resume;
-  } catch (error) {
+  } catch {
     return redirect("/dashboard");
   }
 };

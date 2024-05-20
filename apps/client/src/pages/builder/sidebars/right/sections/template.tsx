@@ -27,11 +27,13 @@ export const TemplateSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, transition: { delay: index * 0.1 } }}
               whileTap={{ scale: 0.98, transition: { duration: 0.1 } }}
-              onClick={() => setValue("metadata.template", template)}
               className={cn(
                 "relative cursor-pointer rounded-sm ring-primary transition-all hover:ring-2",
                 currentTemplate === template && "ring-2",
               )}
+              onClick={() => {
+                setValue("metadata.template", template);
+              }}
             >
               <img src={`/templates/jpg/${template}.jpg`} alt={template} className="rounded-sm" />
 

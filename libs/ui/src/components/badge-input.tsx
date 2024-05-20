@@ -47,7 +47,9 @@ export const BadgeInput = forwardRef<HTMLInputElement, BadgeInputProps>(
         ref={ref}
         value={label}
         onKeyDown={onKeyDown}
-        onChange={(event) => setLabel(event.target.value)}
+        onChange={(event) => {
+          setLabel(event.target.value);
+        }}
       />
     );
   },

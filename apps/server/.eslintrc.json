@@ -8,7 +8,10 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "rules": {}
+      "rules": {
+        // @typescript-eslint
+        "@typescript-eslint/no-extraneous-class": "off"
+      }
     },
     {
       "files": ["*.js", "*.jsx"],

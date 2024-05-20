@@ -40,7 +40,7 @@ export const VerifyOtpPage = () => {
       await verifyOtp(data);
 
       navigate("/dashboard");
-    } catch (error) {
+    } catch {
       form.reset();
     }
   };

@@ -8,5 +8,7 @@ export type ArtboardStore = {
 
 export const useArtboardStore = create<ArtboardStore>()((set) => ({
   resume: null as unknown as ResumeData,
-  setResume: (resume) => set({ resume }),
+  setResume: (resume) => {
+    set({ resume });
+  },
 }));

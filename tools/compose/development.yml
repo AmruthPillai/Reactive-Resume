@@ -7,7 +7,7 @@ version: "3.8"
 services:
   # Database (Postgres)
   postgres:
-    image: postgres:15-alpine
+    image: postgres:16-alpine
     restart: unless-stopped
     ports:
       - ${POSTGRES_PORT:-5432}:5432
@@ -30,7 +30,7 @@ services:
     command: server /data
     ports:
       - ${STORAGE_PORT:-9000}:9000
-      - 9001:9001 # Minio Console (Optional)
+      - "9001:9001" # Minio Console (Optional)
     volumes:
       - minio_data:/data
     environment:
@@ -52,17 +52,6 @@ services:
       EXIT_ON_HEALTH_FAILURE: true
       PRE_REQUEST_HEALTH_CHECK: true
 
-  # Redis (for cache & server session management)
-  redis:
-    image: redis:alpine
-    restart: unless-stopped
-    command: redis-server --requirepass ${REDIS_PASSWORD:-password}
-    ports:
-      - ${REDIS_PORT:-6379}:6379
-    volumes:
-      - redis_data:/data
-
 volumes:
   minio_data:
-  redis_data:
   postgres_data:

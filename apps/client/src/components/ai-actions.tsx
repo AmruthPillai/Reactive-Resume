@@ -54,7 +54,7 @@ export const AiActions = ({ value, onChange, className }: Props) => {
       toast({
         variant: "error",
         title: t`Oops, the server returned an error.`,
-        description: (error as Error)?.message,
+        description: (error as Error).message,
       });
     } finally {
       setLoading(false);

@@ -69,12 +69,7 @@ const IssuesCard = () => (
         <span className="line-clamp-1">{t`Raise an issue`}</span>
       </a>
 
-      <a
-        className={cn(buttonVariants({ size: "sm" }))}
-        href="mailto:hello@amruthpillai.com"
-        rel="noopener noreferrer nofollow"
-        target="_blank"
-      >
+      <a className={cn(buttonVariants({ size: "sm" }))} href="mailto:hello@amruthpillai.com">
         <EnvelopeSimpleOpen size={14} weight="bold" className="mr-2" />
         <span className="line-clamp-1">{t`Send me a message`}</span>
       </a>

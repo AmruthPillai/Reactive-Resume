@@ -2,7 +2,7 @@
 
 ## Getting the project set up locally
 
-There are a number of Docker Compose examples that are suitable for a wide variety of deployment strategies depending on your use-case. All of the examples can be found in the `tools/compose` folder.
+There are a number of Docker Compose examples that are suitable for a wide variety of deployment strategies depending on your use-case. All the examples can be found in the `tools/compose` folder.
 
 To run the development environment of the application locally on your computer, please follow these steps:
 
@@ -57,15 +57,13 @@ You can also visit `http://localhost:3000/api/health`, the health check endpoint
   "info": {
     "database": { "status": "up" },
     "storage": { "status": "up" },
-    "browser": { "status": "up", "version": "Chrome/119.0.6045.9" },
-    "redis": { "status": "up" }
+    "browser": { "status": "up", "version": "Chrome/119.0.6045.9" }
   },
   "error": {},
   "details": {
     "database": { "status": "up" },
     "storage": { "status": "up" },
-    "browser": { "status": "up", "version": "Chrome/119.0.6045.9" },
-    "redis": { "status": "up" }
+    "browser": { "status": "up", "version": "Chrome/119.0.6045.9" }
   }
 }
 ```

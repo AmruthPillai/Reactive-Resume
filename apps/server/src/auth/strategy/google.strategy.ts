@@ -1,8 +1,7 @@
-import { BadRequestException, Injectable, UnauthorizedException } from "@nestjs/common";
+import { BadRequestException, Injectable } from "@nestjs/common";
 import { PassportStrategy } from "@nestjs/passport";
 import { User } from "@prisma/client";
-import { processUsername } from "@reactive-resume/utils";
-import { ErrorMessage } from "@reactive-resume/utils";
+import { ErrorMessage, processUsername } from "@reactive-resume/utils";
 import { Profile, Strategy, StrategyOptions, VerifyCallback } from "passport-google-oauth20";
 
 import { UserService } from "@/server/user/user.service";
@@ -34,12 +33,14 @@ export class GoogleStrategy extends PassportStrategy(Strategy, "google") {
     if (!email) throw new BadRequestException();
 
     try {
-      const user = await this.userService.findOneByIdentifier(email);
+      const user =
+        (await this.userService.findOneByIdentifier(email)) ??
+        (username && (await this.userService.findOneByIdentifier(username)));
 
-      if (!user) throw new UnauthorizedException();
+      if (!user) throw new Error("User not found.");
 
       done(null, user);
-    } catch (error) {
+    } catch {
       try {
         user = await this.userService.create({
           email,
@@ -53,7 +54,7 @@ export class GoogleStrategy extends PassportStrategy(Strategy, "google") {
         });
 
         done(null, user);
-      } catch (error) {
+      } catch {
         throw new BadRequestException(ErrorMessage.UserAlreadyExists);
       }
     }

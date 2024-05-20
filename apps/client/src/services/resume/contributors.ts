@@ -34,7 +34,7 @@ export const useContributors = () => {
     queryFn: fetchCrowdinContributors,
   });
 
-  const error = githubError || crowdinError;
+  const error = githubError ?? crowdinError;
   const loading = githubLoading || crowdinLoading;
 
   return { github, crowdin, loading, error };

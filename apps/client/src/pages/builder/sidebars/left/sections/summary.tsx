@@ -11,6 +11,7 @@ import { SectionOptions } from "./shared/section-options";
 export const SummarySection = () => {
   const setValue = useResumeStore((state) => state.setValue);
   const section = useResumeStore(
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     (state) => state.resume.data.sections.summary ?? defaultSections.summary,
   );
 
@@ -30,10 +31,12 @@ export const SummarySection = () => {
       <main className={cn(!section.visible && "opacity-50")}>
         <RichInput
           content={section.content}
-          onChange={(value) => setValue("sections.summary.content", value)}
           footer={(editor) => (
             <AiActions value={editor.getText()} onChange={editor.commands.setContent} />
           )}
+          onChange={(value) => {
+            setValue("sections.summary.content", value);
+          }}
         />
       </main>
     </section>

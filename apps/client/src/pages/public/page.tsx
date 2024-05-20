@@ -12,6 +12,11 @@ import { ThemeSwitch } from "@/client/components/theme-switch";
 import { queryClient } from "@/client/libs/query-client";
 import { findResumeByUsernameSlug, usePrintResume } from "@/client/services/resume";
 
+const openInNewTab = (url: string) => {
+  const win = window.open(url, "_blank");
+  if (win) win.focus();
+};
+
 export const PublicResumePage = () => {
   const frameRef = useRef<HTMLIFrameElement>(null);
 
@@ -21,9 +26,11 @@ export const PublicResumePage = () => {
   const format = resume.metadata.page.format;
 
   const updateResumeInFrame = useCallback(() => {
-    if (!frameRef.current || !frameRef.current.contentWindow) return;
+    if (!frameRef.current?.contentWindow) return;
     const message = { type: "SET_RESUME", payload: resume };
-    (() => frameRef.current.contentWindow.postMessage(message, "*"))();
+    (() => {
+      frameRef.current.contentWindow.postMessage(message, "*");
+    })();
   }, [frameRef, resume]);
 
   useEffect(() => {
@@ -33,10 +40,10 @@ export const PublicResumePage = () => {
   }, [frameRef]);
 
   useEffect(() => {
-    if (!frameRef.current || !frameRef.current.contentWindow) return;
+    if (!frameRef.current?.contentWindow) return;
 
     const handleMessage = (event: MessageEvent) => {
-      if (!frameRef.current || !frameRef.current.contentWindow) return;
+      if (!frameRef.current?.contentWindow) return;
       if (event.origin !== window.location.origin) return;
 
       if (event.data.type === "PAGE_LOADED") {
@@ -56,11 +63,6 @@ export const PublicResumePage = () => {
   const onDownloadPdf = async () => {
     const { url } = await printResume({ id });
 
-    const openInNewTab = (url: string) => {
-      const win = window.open(url, "_blank");
-      if (win) win.focus();
-    };
-
     openInNewTab(url);
   };
 
@@ -77,9 +79,8 @@ export const PublicResumePage = () => {
         className="mx-auto mb-6 mt-16 overflow-hidden rounded shadow-xl print:m-0 print:shadow-none"
       >
         <iframe
-          title={title}
           ref={frameRef}
-          scrolling="no"
+          title={title}
           src="/artboard/preview"
           style={{ width: `${pageSizeMap[format].width}mm`, overflow: "hidden" }}
         />
@@ -112,16 +113,16 @@ export const PublicResumePage = () => {
 
 export const publicLoader: LoaderFunction<ResumeDto> = async ({ params }) => {
   try {
-    const username = params.username as string;
-    const slug = params.slug as string;
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const username = params.username!;
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const slug = params.slug!;
 
-    const resume = await queryClient.fetchQuery({
+    return await queryClient.fetchQuery({
       queryKey: ["resume", { username, slug }],
       queryFn: () => findResumeByUsernameSlug({ username, slug }),
     });
-
-    return resume;
-  } catch (error) {
+  } catch {
     return redirect("/");
   }
 };

@@ -74,8 +74,8 @@ export const InterestsDialog = () => {
                 <AnimatePresence>
                   {field.value.map((item, index) => (
                     <motion.div
-                      layout
                       key={item}
+                      layout
                       initial={{ opacity: 0, y: -50 }}
                       animate={{ opacity: 1, y: 0, transition: { delay: index * 0.1 } }}
                       exit={{ opacity: 0, x: -50 }}

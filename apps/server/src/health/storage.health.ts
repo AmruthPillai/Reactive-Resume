@@ -14,8 +14,8 @@ export class StorageHealthIndicator extends HealthIndicator {
       await this.storageService.bucketExists();
 
       return this.getStatus("storage", true);
-    } catch (error) {
-      return this.getStatus("storage", false, { message: error.message });
+    } catch (error: unknown) {
+      return this.getStatus("storage", false, { message: (error as Error).message });
     }
   }
 }

@@ -8,7 +8,7 @@ msgstr ""
 "Language: hi\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-03-22 10:29\n"
+"PO-Revision-Date: 2024-05-10 08:43\n"
 "Last-Translator: \n"
 "Language-Team: Hindi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -26,7 +26,7 @@ msgstr "आपने दो-कारक प्रमाणीकरण सफ�
 msgid "{templatesCount} resume templates to choose from"
 msgstr "चुनने के लिए {templatesCount} बायोडाटा टेम्प्लेट"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:114
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:126
 msgid "{value, plural, one {Column} other {Columns}}"
 msgstr "{value, plural, one {स्तंभ} other {स्तम्भ}}"
 
@@ -42,7 +42,7 @@ msgstr "<0>मुझे यकीन है कि ऐप पूर्ण नह
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr "<0>ध्यान दें:</0> OpenAI API का उपयोग करके, आप <1>उपयोग की शर्तों को स्वीकार करते हैं</1> और <2>गोपनीयता नीति</2> OpenAI द्वारा उल्लिखित। कृपया ध्यान दें कि रिएक्टिव रेज़्यूमे सेवा के किसी भी अनुचित या अनधिकृत उपयोग के लिए कोई ज़िम्मेदारी नहीं लेता है, और इसके परिणामस्वरूप होने वाले किसी भी परिणाम या देनदारियां पूरी तरह से उपयोगकर्ता पर निर्भर करती हैं।"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:90
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:85
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
 msgstr "<0>समुदाय ने रिएक्टिव रेज़्यूमे के लिए दस्तावेज़ लिखने में बहुत समय बिताया है, और मुझे यकीन है कि यह आपको ऐप के साथ शुरुआत करने में मदद करेगा।</0> <1>शुरुआत करने में आपकी मदद करने के लिए बहुत सारे उदाहरण भी हैं, और ऐसी विशेषताएं भी हैं जिनके बारे में आप नहीं जानते होंगे जो आपको अपना संपूर्ण बायोडाटा बनाने में मदद कर सकती हैं।</1>"
 
@@ -55,12 +55,12 @@ msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a
 msgstr "<0>दो-कारक प्रमाणीकरण सक्षम है।</0> हर बार साइन इन करने पर आपसे एक कोड दर्ज करने के लिए कहा जाएगा।"
 
 #: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/home/sections/hero/index.tsx:42
+#: apps/client/src/pages/home/sections/hero/index.tsx:40
 msgid "A free and open-source resume builder"
 msgstr "एक मुफ़्त और ओपन-सोर्स रेज़्युमे बिल्डर"
 
-#: apps/client/src/pages/home/components/footer.tsx:20
-#: apps/client/src/pages/home/sections/hero/index.tsx:47
+#: apps/client/src/pages/home/components/footer.tsx:21
+#: apps/client/src/pages/home/sections/hero/index.tsx:45
 msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "एक मुफ़्त और ओपन-सोर्स रेज़्यूमे बिल्डर जो आपके रेज़्यूमे को बनाने, अपडेट करने और साझा करने की प्रक्रिया को सरल बनाता है।"
 
@@ -77,11 +77,11 @@ msgstr "<0>अमृत पिल्लई</0> का एक जुनूनी 
 msgid "A password reset link should have been sent to your inbox, if an account existed with the email you provided."
 msgstr "यदि आपके द्वारा प्रदान किए गए ईमेल के साथ कोई खाता मौजूद है, तो एक पासवर्ड रीसेट लिंक आपके इनबॉक्स पर भेजा जाना चाहिए था।"
 
-#: apps/client/src/services/errors/translate-error.ts:31
+#: apps/client/src/services/errors/translate-error.ts:43
 msgid "A resume with this slug already exists, please pick a different unique identifier."
 msgstr "इस स्लग के साथ एक बायोडाटा पहले से मौजूद है, कृपया एक अलग विशिष्ट पहचानकर्ता चुनें।"
 
-#: apps/client/src/services/errors/translate-error.ts:9
+#: apps/client/src/services/errors/translate-error.ts:10
 msgid "A user with this email address and/or username already exists."
 msgstr "इस ईमेल पते और/या उपयोगकर्ता नाम वाला एक उपयोगकर्ता पहले से मौजूद है।"
 
@@ -90,7 +90,7 @@ msgid "A4"
 msgstr "ए4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:270
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:272
 msgid "Accepts only {accept} files"
 msgstr "केवल {accept} फ़ाइलें स्वीकार करता है"
 
@@ -98,26 +98,26 @@ msgstr "केवल {accept} फ़ाइलें स्वीकार कर
 msgid "Account"
 msgstr "खाता"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:124
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:133
 msgid "Add a custom field"
 msgstr "नया कस्टम फ़ील्ड जोड़ें"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:108
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:147
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:117
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:164
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "एक नया आइटम जोड़ें"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:68
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:80
 msgid "Add a new item"
 msgstr "एक नया आइटम जोड़ें"
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:79
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:196
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:146
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:263
 msgid "Add a new section"
 msgstr "एक नया अनुभाग जोड़ें"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:269
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:271
 msgid "Add New Page"
 msgstr "नया पेज जोड़ें"
 
@@ -129,11 +129,11 @@ msgstr "AI"
 msgid "Already have an account?"
 msgstr "क्या आपके पास पहले से एक खाता मौजूद है?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:144
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:146
 msgid "An error occurred while validating the file."
 msgstr "फ़ाइल बनाते समय कोई त्रुटि आई"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:135
+#: apps/client/src/pages/home/sections/features/index.tsx:134
 msgid "and many more..."
 msgstr "और भी कई..."
 
@@ -150,7 +150,7 @@ msgstr "इस लिंक वाला कोई भी व्यक्ति 
 msgid "API Key"
 msgstr "API कुंजी"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:125
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:124
 msgid "Are you sure you want to delete this item?"
 msgstr "क्या आप बाकई यह आइटम डिलीट करना चाहते हैं?"
 
@@ -179,21 +179,21 @@ msgstr "क्या आपको यकीन है?"
 msgid "Area of Study"
 msgstr "अध्ययन का क्षेत्र"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:86
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:84
 msgid "Aspect Ratio"
 msgstr "आकार अनुपात"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:51
 msgid "Available in {languagesCount} languages"
-msgstr ""
+msgstr "{languagesCount} भाषाओं में उपलब्ध है"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:53
 msgid "Awarder"
 msgstr "पुरस्कार देने वाला"
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:92
-#: apps/client/src/pages/auth/forgot-password/page.tsx:94
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:236
+#: apps/client/src/pages/auth/backup-otp/page.tsx:98
+#: apps/client/src/pages/auth/forgot-password/page.tsx:100
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:241
 msgid "Back"
 msgstr "पीछे"
 
@@ -209,7 +209,7 @@ msgstr "बैकअप कोड"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "बैकअप कोड में केवल छोटे अक्षर या संख्याएँ हो सकती हैं, और बिल्कुल 10 अक्षर होने चाहिए।"
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:56
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:55
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
 msgid "Basics"
 msgstr "बुनियादी"
@@ -218,15 +218,15 @@ msgstr "बुनियादी"
 msgid "Basics"
 msgstr "बुनियादी"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:196
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:194
 msgid "Border"
 msgstr "सीमा"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:129
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:127
 msgid "Border Radius"
 msgstr "सीमा त्रिज्या"
 
-#: apps/client/src/pages/public/page.tsx:91
+#: apps/client/src/pages/public/page.tsx:92
 msgid "Built with"
 msgstr "के साथ निर्मित"
 
@@ -235,7 +235,7 @@ msgstr "के साथ निर्मित"
 msgid "By the community, for the community."
 msgstr "समुदाय द्वारा, समुदाय के लिए."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:132
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:131
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:155
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:135
@@ -247,7 +247,7 @@ msgstr "रद्द करें"
 msgid "Casual"
 msgstr "साधारण"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:98
+#: apps/client/src/pages/builder/_components/toolbar.tsx:112
 msgid "Center Artboard"
 msgstr "केंद्र आर्टबोर्ड"
 
@@ -268,11 +268,11 @@ msgstr "नाम के बारे में आपका मन बदल �
 msgid "Check your email for the confirmation link to update your email address."
 msgstr "अपना ईमेल पता अपडेट करने के लिए पुष्टिकरण लिंक के लिए अपना ईमेल जांचें।"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:149
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:147
 msgid "Circle"
 msgstr "गोला"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:242
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:247
 msgid "Close"
 msgstr "बंद करे"
 
@@ -284,7 +284,7 @@ msgstr "कोड"
 msgid "Code must be exactly 6 digits long."
 msgstr "कोड बिल्कुल 6 अंक लंबा होना चाहिए."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:108
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:120
 msgid "Columns"
 msgstr "कॉलम"
 
@@ -302,7 +302,7 @@ msgid "Confirm New Password"
 msgstr "नए पासवर्ड की पुष्टि करें"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:232
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:239
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:244
 msgid "Continue"
 msgstr "जारी रखें"
 
@@ -310,7 +310,7 @@ msgstr "जारी रखें"
 msgid "Copy"
 msgstr "कॉपी करें"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:132
+#: apps/client/src/pages/builder/_components/toolbar.tsx:146
 msgid "Copy Link to Resume"
 msgstr "फिर से शुरू करने के लिए लिंक कॉपी करें"
 
@@ -318,7 +318,7 @@ msgstr "फिर से शुरू करने के लिए लिंक
 msgid "Copy to Clipboard"
 msgstr "क्लिपबोर्ड पर कॉपी करें"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:168
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:167
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
 msgid "Create"
 msgstr "बनाएँ"
@@ -328,13 +328,13 @@ msgstr "बनाएँ"
 msgid "Create a new account"
 msgstr "एक नया खाता बनाएँ"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:156
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:155
 msgid "Create a new item"
 msgstr "एक नया आइटम बनाएं"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:177
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:24
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:19
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:28
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:18
 msgid "Create a new resume"
 msgstr "नमूना बायोडाटा बनाएं"
 
@@ -367,7 +367,7 @@ msgstr "अनुकूलन योग्य लेआउट"
 msgid "Danger Zone"
 msgstr "खतरनाक क्षेत्र"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:82
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:87
 msgid "Dark"
 msgstr "गहरी"
 
@@ -377,15 +377,15 @@ msgstr "गहरी"
 msgid "Date"
 msgstr "दिनांक"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:85
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:110
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:72
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:80
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:67
 msgid "Date or Date Range"
-msgstr ""
+msgstr "तारीख या तारीख सीमा"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:134
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:133
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:157
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:148
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:134
@@ -398,7 +398,7 @@ msgstr "हटाएं"
 msgid "Delete Account"
 msgstr "खाता हटाएँ|"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:71
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:72
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:66
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:53
@@ -414,18 +414,18 @@ msgstr "सिंगल/मल्टी पेज बायोडाटा ड�
 msgid "Disable"
 msgstr "अक्षम करें"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:155
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:160
 msgid "Disable 2FA"
 msgstr "2FA निलम्बित करें"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:302
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:304
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:128
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:134
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
 msgid "Discard"
 msgstr "रद्द करें"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:110
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:105
 msgid "Documentation"
 msgstr "आलेख"
 
@@ -433,11 +433,11 @@ msgstr "आलेख"
 msgid "Don't have an account?"
 msgstr "आपका खाता नहीं है?"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:88
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:83
 msgid "Don't know where to begin? Hit the docs!"
 msgstr "पता नहीं कहाँ से शुरू करें? दस्तावेज़ पढ़ें"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:101
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:107
 msgid "Don't see your language? <0>Help translate the app.</0>"
 msgstr "अपनी भाषा नहीं देखते? <0>ऐप का अनुवाद करने में सहायता करें।</0>"
 
@@ -453,16 +453,16 @@ msgstr "अपने बायोडाटा का JSON स्नैपशॉ�
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "अपने बायोडाटा का एक पीडीएफ डाउनलोड करें। इस फ़ाइल का उपयोग आपके बायोडाटा को प्रिंट करने, भर्तीकर्ताओं को भेजने या नौकरी पोर्टल पर अपलोड करने के लिए किया जा सकता है।"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:144
-#: apps/client/src/pages/public/page.tsx:103
+#: apps/client/src/pages/builder/_components/toolbar.tsx:158
+#: apps/client/src/pages/public/page.tsx:104
 msgid "Download PDF"
-msgstr ""
+msgstr "डाउनलोड PDF"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:58
 msgid "Downloads"
 msgstr "डाउनलोड"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:170
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:169
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:132
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:102
@@ -470,7 +470,7 @@ msgstr "डाउनलोड"
 msgid "Duplicate"
 msgstr "प्रतिरूप"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:158
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:157
 msgid "Duplicate an existing item"
 msgstr "किसी मौजूदा आइटम का नक़ल बनाएं"
 
@@ -482,19 +482,19 @@ msgstr "किसी मौजूदा आइटम का नक़ल बन�
 msgid "Edit"
 msgstr "एडिट करें"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:174
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:172
 msgid "Effects"
 msgstr "प्रभाव"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:82
 #: apps/client/src/pages/auth/login/page.tsx:84
 #: apps/client/src/pages/auth/register/page.tsx:148
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:50
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:180
 msgid "Email"
 msgstr "ई-मेल"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:159
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:169
 msgid "Enable 2FA"
 msgstr "2FA चालू करें"
 
@@ -518,7 +518,7 @@ msgstr "नीचे आपके प्रमाणक ऐप द्वार�
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "अपना ईमेल पता दर्ज करें और यदि खाता मौजूद है तो हम आपको अपना पासवर्ड रीसेट करने के लिए एक लिंक भेजेंगे।"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:283
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:285
 msgid "Errors"
 msgstr "त्रुटि"
 
@@ -530,20 +530,20 @@ msgstr "भले ही आप वित्तीय रूप से योग
 msgid "Explore the templates available in Reactive Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
 msgstr "रिएक्टिव रेज़्यूमे में उपलब्ध टेम्पलेट्स का अन्वेषण करें और उनके साथ तैयार किए गए रेज़्यूमे देखें। वे आपके अगले बायोडाटा के निर्माण में मार्गदर्शन के लिए उदाहरण के रूप में भी काम कर सकते हैं।"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:79
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:111
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:40
 msgid "Export"
 msgstr "निर्यात"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:257
 msgid "File"
 msgstr "फ़ाइल"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:221
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:223
 msgid "Filetype"
 msgstr "फाइल का प्रकार"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:40
+#: apps/client/src/pages/home/sections/hero/index.tsx:38
 msgid "Finally,"
 msgstr "अंत में,"
 
@@ -551,23 +551,23 @@ msgstr "अंत में,"
 msgid "Fix Spelling & Grammar"
 msgstr "वर्तनी और व्याकरण ठीक करें"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:94
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:93
 msgid "Font Family"
 msgstr "फ़ॉन्ट फ़ैमिली"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:135
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:134
 msgid "Font Size"
 msgstr "फ़ॉन्ट आकार"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:109
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:108
 msgid "Font Subset"
 msgstr "फ़ॉन्ट उपसमुच्चय"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:121
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:120
 msgid "Font Variants"
 msgstr "फ़ॉन्ट प्रकार"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:30
+#: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:35
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr "उदाहरण के लिए, आपने किन कंपनियों को यह बायोडाटा भेजा है, इसकी जानकारी या नौकरी विवरण के लिंक यहां नोट किए जा सकते हैं।"
 
@@ -609,7 +609,7 @@ msgstr "पूरा नाम"
 msgid "Generate a random title for your resume"
 msgstr "अपने बायोडाटा के लिए एक यादृच्छिक शीर्षक बनाएं"
 
-#: apps/client/src/pages/home/sections/hero/call-to-action.tsx:33
+#: apps/client/src/pages/home/sections/hero/call-to-action.tsx:32
 msgid "Get Started"
 msgstr "प्रारंभ करें"
 
@@ -634,15 +634,15 @@ msgstr "डैशबोर्ड पर जाएँ"
 msgid "Google"
 msgstr "गूगल"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:207
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:205
 msgid "Grayscale"
 msgstr "ग्रेस्केल"
 
-#: apps/client/src/pages/dashboard/resumes/page.tsx:41
+#: apps/client/src/pages/dashboard/resumes/page.tsx:43
 msgid "Grid"
 msgstr "ग्रिड"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:41
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:43
 msgid "Headline"
 msgstr "शीर्षक"
 
@@ -650,21 +650,21 @@ msgstr "शीर्षक"
 msgid "Here, you can update your account information such as your profile picture, name and username."
 msgstr "यहां, आप अपने खाते की जानकारी जैसे अपनी प्रोफ़ाइल तस्वीर, नाम और उपयोगकर्ता नाम अपडेट कर सकते हैं।"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:62
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:68
 msgid "Here, you can update your profile to customize and personalize your experience."
 msgstr "यहां, आप अपने अनुभव को अनुकूलित और वैयक्तिकृत करने के लिए अपनी प्रोफ़ाइल को अपडेट कर सकते हैं।"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:76
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:90
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:185
+#: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:78
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:92
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:183
 msgid "Hidden"
 msgstr "छुपा हुआ"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:78
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:90
 msgid "Hide"
 msgstr "छुपायें"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:179
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:178
 msgid "Hide Icons"
 msgstr "ऑइकन छुपायें"
 
@@ -674,7 +674,7 @@ msgstr "ऑइकन छुपायें"
 msgid "Hold <0>Ctrl</0> to display your password temporarily."
 msgstr "<0>Ctrl दबाए रखें</0> अपना पासवर्ड अस्थायी रूप से प्रदर्शित करने के लिए।"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:100
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:98
 msgid "Horizontal"
 msgstr "क्षैतिज"
 
@@ -686,7 +686,7 @@ msgstr "अपना बायोडाटा सार्वजनिक रू
 msgid "I always love to hear from the users of Reactive Resume with feedback or support. Here are some of the messages I've received. If you have any feedback, feel free to drop me an email at <0>{email}</0>."
 msgstr "मुझे हमेशा रिएक्टिव रेज़्यूमे के उपयोगकर्ताओं से प्रतिक्रिया या समर्थन सुनना अच्छा लगता है। यहां कुछ संदेश हैं जो मुझे प्राप्त हुए हैं। यदि आपके पास कोई प्रतिक्रिया है, तो बेझिझक मुझे <0>{email} पर एक ईमेल भेजें</0>."
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:96
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:94
 msgid "Icon"
 msgstr "आइकॉन"
 
@@ -702,13 +702,13 @@ msgstr "यदि आप दो-कारक प्रमाणीकरण अ�
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "यदि आप बहुभाषी हैं, तो हमें ऐप को अधिक भाषाओं और समुदायों तक लाने में आपकी मदद पसंद आएगी। यदि आप सूची में अपनी भाषा नहीं देखते हैं तो चिंता न करें - बस GitHub पर मुझे बताएं, और मैं इसे शामिल करना सुनिश्चित करूंगा। आरंभ करने के लिए तैयार हैं? नीचे दिए गए लिंक पर क्लिक करके क्राउडिन पर अनुवाद शुरू करें।"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:309
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:311
 msgid "Import"
 msgstr "आयात"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:208
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:24
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:18
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:210
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
 msgstr "मौजूदा बायोडाटा आयात करें"
 
@@ -728,8 +728,8 @@ msgstr "इस अनुभाग में, आप अपना पासवर
 msgid "In this section, you can delete your account and all the data associated to your user, but please keep in mind that <0>this action is irreversible</0>."
 msgstr "इस अनुभाग में, आप अपना खाता और अपने उपयोगकर्ता से जुड़े सभी डेटा को हटा सकते हैं, लेकिन कृपया ध्यान रखें कि <0>यह कार्रवाई अपरिवर्तनीय है</0>."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:83
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:122
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:125
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
 msgid "Information"
 msgstr "जानकारी"
 
@@ -745,27 +745,27 @@ msgstr "ज़ारीकर्ता"
 msgid "It doesn't look like a user exists with the credentials you provided."
 msgstr "ऐसा नहीं लगता कि कोई उपयोगकर्ता आपके द्वारा प्रदान किए गए क्रेडेंशियल्स के साथ मौजूद है।"
 
-#: apps/client/src/services/errors/translate-error.ts:27
+#: apps/client/src/services/errors/translate-error.ts:37
 msgid "It looks like the backup code you provided is invalid or used. Please try again."
 msgstr "ऐसा लगता है कि आपके द्वारा प्रदान किया गया बैकअप कोड अमान्य है या उपयोग किया गया है। कृपया पुन: प्रयास करें।"
 
-#: apps/client/src/services/errors/translate-error.ts:15
+#: apps/client/src/services/errors/translate-error.ts:19
 msgid "It looks like the reset token you provided is invalid. Please try restarting the password reset process again."
 msgstr "ऐसा लगता है कि आपके द्वारा प्रदान किया गया रीसेट टोकन अमान्य है। कृपया पासवर्ड रीसेट प्रक्रिया को दोबारा शुरू करने का प्रयास करें।"
 
-#: apps/client/src/services/errors/translate-error.ts:33
+#: apps/client/src/services/errors/translate-error.ts:46
 msgid "It looks like the resume you're looking for doesn't exist."
 msgstr "ऐसा लगता है कि आप जिस बायोडाटा की तलाश कर रहे हैं वह मौजूद नहीं है।"
 
-#: apps/client/src/services/errors/translate-error.ts:25
+#: apps/client/src/services/errors/translate-error.ts:34
 msgid "It looks like the two-factor authentication code you provided is invalid. Please try again."
 msgstr "ऐसा लगता है कि आपके द्वारा प्रदान किया गया दो-कारक प्रमाणीकरण कोड अमान्य है। कृपया पुन: प्रयास करें।"
 
-#: apps/client/src/services/errors/translate-error.ts:17
+#: apps/client/src/services/errors/translate-error.ts:22
 msgid "It looks like the verification token you provided is invalid. Please try restarting the verification process again."
 msgstr "ऐसा लगता है कि आपके द्वारा प्रदान किया गया रीसेट टोकन अमान्य है। कृपया पासवर्ड रीसेट प्रक्रिया को दोबारा शुरू करने का प्रयास करें।"
 
-#: apps/client/src/services/errors/translate-error.ts:19
+#: apps/client/src/services/errors/translate-error.ts:25
 msgid "It looks like your email address has already been verified."
 msgstr "ऐसा लगता है कि आपका ईमेल पता पहले ही सत्यापित हो चुका है।"
 
@@ -788,33 +788,33 @@ msgstr "john.doe@example.com"
 msgid "JSON"
 msgstr "जेसन"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:149
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:152
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:130
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:107
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:132
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:109
 msgid "Keywords"
 msgstr "खोजशब्द:"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:39
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:49
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:41
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:51
 msgid "Label"
 msgstr "लेबल"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:95
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:101
 msgid "Language"
 msgstr "भाषा"
 
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:116
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:149
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:148
 msgid "Last updated {lastUpdated}"
 msgstr "अंतिम अद्यतन {lastUpdated}"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:65
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:69
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:207
 msgid "Layout"
 msgstr "लेआउट"
 
-#: apps/client/src/pages/home/sections/hero/call-to-action.tsx:39
+#: apps/client/src/pages/home/sections/hero/call-to-action.tsx:38
 msgid "Learn more"
 msgstr "अधिक जानें"
 
@@ -831,7 +831,7 @@ msgstr "स्तर"
 msgid "Licensed under <0>MIT</0>"
 msgstr "<0>एमआईटी के तहत लाइसेंस प्राप्त</0>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:81
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:86
 msgid "Light"
 msgstr "हल्का रंग"
 
@@ -839,23 +839,23 @@ msgstr "हल्का रंग"
 msgid "Light or dark theme"
 msgstr "प्रकाश या अंधेरा थीम"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:152
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:151
 msgid "Line Height"
 msgstr "पंक्ति ऊँचाई"
 
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:29
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:23
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:33
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:22
 msgid "LinkedIn, JSON Resume, etc."
 msgstr "लिंक्डइन, JSON बायोडाटा, आदि।"
 
-#: apps/client/src/pages/dashboard/resumes/page.tsx:45
+#: apps/client/src/pages/dashboard/resumes/page.tsx:47
 msgid "List"
 msgstr "सूची"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:99
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:83
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:93
 msgid "Location"
 msgstr "स्थान"
 
@@ -874,7 +874,7 @@ msgstr "संपादन को रोकने के लिए बायो�
 msgid "Locking a resume will prevent any further changes to it. This is useful when you have already shared your resume with someone and you don't want to accidentally make any changes to it."
 msgstr "बायोडाटा को लॉक करने से उसमें कोई और बदलाव नहीं हो सकेगा। यह तब उपयोगी होता है जब आपने अपना बायोडाटा पहले ही किसी के साथ साझा कर दिया हो और आप गलती से उसमें कोई बदलाव नहीं करना चाहते हों।"
 
-#: apps/client/src/components/user-options.tsx:34
+#: apps/client/src/components/user-options.tsx:38
 #: apps/client/src/pages/home/sections/hero/call-to-action.tsx:23
 msgid "Logout"
 msgstr "लॉगआउट"
@@ -883,7 +883,7 @@ msgstr "लॉगआउट"
 msgid "Lost your device?"
 msgstr "क्या आपका उपकरण खो गया?"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:255
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:257
 msgid "Main"
 msgstr "मुख्‍य"
 
@@ -914,14 +914,14 @@ msgid "MIT License"
 msgstr "मआईटी लाईसन्स"
 
 #: apps/client/src/pages/auth/register/page.tsx:106
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:57
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:58
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:48
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:52
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:43
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:46
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:152
 msgid "Name"
 msgstr "नाम"
@@ -931,7 +931,7 @@ msgctxt "Name of the Certification"
 msgid "Name"
 msgstr "नाम"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:53
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:51
 msgid "Network"
 msgstr "नेटवर्क"
 
@@ -951,7 +951,7 @@ msgstr "कोई उपयोगकर्ता ट्रैकिंग या
 msgid "Note: This will make your account less secure."
 msgstr "नोट: इससे आपका खाता कम सुरक्षित हो जाएगा."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:80
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:118
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:17
 msgid "Notes"
 msgstr "टिप्पणियाँ"
@@ -961,8 +961,8 @@ msgid "One-Time Password"
 msgstr "एक बारी पासवर्ड"
 
 #: apps/client/src/components/ai-actions.tsx:56
-#: apps/client/src/libs/axios.ts:34
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:188
+#: apps/client/src/libs/axios.ts:29
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:190
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "ओह, सर्वर ने एक त्रुटि लौटा दी।"
@@ -989,7 +989,7 @@ msgid "OpenAI Integration"
 msgstr "OpenAI एकीकरण"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:169
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:168
 msgid "Options"
 msgstr "विकल्प"
 
@@ -1002,7 +1002,7 @@ msgstr "या जारी रखें"
 msgid "Organization"
 msgstr "संगठन"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:90
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:26
 msgid "Page"
 msgstr "पृष्ठ"
@@ -1026,7 +1026,7 @@ msgstr "पीडीएफ"
 msgid "Personal notes for each resume"
 msgstr "प्रत्येक बायोडाटा के लिए व्यक्तिगत नोट्स"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:73
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:81
 msgid "Phone"
 msgstr "फ़ोन"
 
@@ -1047,7 +1047,7 @@ msgstr "चित्र"
 msgid "Please note that this step is completely optional."
 msgstr "कृपया ध्यान दें कि यह चरण पूरी तरह से वैकल्पिक है।"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:225
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:227
 msgid "Please select a file type"
 msgstr "कृपया एक फाइल चुनें"
 
@@ -1055,7 +1055,7 @@ msgstr "कृपया एक फाइल चुनें"
 msgid "Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app."
 msgstr "कृपया अपने बैकअप कोड को सुरक्षित स्थान पर संग्रहीत करें। यदि आप अपने प्रमाणक ऐप तक पहुंच खो देते हैं तो आप लॉगिन करने के लिए इन एक बार उपयोग कोड में से किसी एक का उपयोग कर सकते हैं।"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:106
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:104
 msgid "Portrait"
 msgstr "व्यक्तिचित्र"
 
@@ -1068,11 +1068,11 @@ msgstr "स्थान"
 msgid "Position"
 msgstr "स्थान"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:97
+#: apps/client/src/pages/home/sections/features/index.tsx:96
 msgid "Powered by"
 msgstr "द्वारा संचालित"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:115
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:113
 msgid "Powered by <0>Simple Icons</0>"
 msgstr "<0>सिंपल आइकॉन</0> द्वारा संचालित"
 
@@ -1080,12 +1080,18 @@ msgstr "<0>सिंपल आइकॉन</0> द्वारा संचा�
 msgid "Primary Color"
 msgstr "प्राथमिक रंग"
 
+#: apps/client/src/pages/home/components/footer.tsx:50
+#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
+#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:23
+msgid "Privacy Policy"
+msgstr "गोपनीयता नीति"
+
 #: apps/client/src/components/ai-actions.tsx:109
 #: apps/client/src/components/ai-actions.tsx:112
 msgid "Professional"
 msgstr "प्रोफेशनल"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:60
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:66
 msgid "Profile"
 msgstr "प्रोफ़ाइल"
 
@@ -1101,7 +1107,7 @@ msgstr "प्रकाशक"
 msgid "Raise an issue"
 msgstr "एक मुद्दा उठाओ"
 
-#: apps/client/src/components/copyright.tsx:38
+#: apps/client/src/components/copyright.tsx:35
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/login/page.tsx:55
@@ -1109,13 +1115,14 @@ msgstr "एक मुद्दा उठाओ"
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
-#: apps/client/src/pages/builder/page.tsx:39
+#: apps/client/src/pages/builder/page.tsx:43
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
-#: apps/client/src/pages/home/components/footer.tsx:17
+#: apps/client/src/pages/home/components/footer.tsx:18
+#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
 #: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/public/page.tsx:71
-#: apps/client/src/pages/public/page.tsx:93
+#: apps/client/src/pages/public/page.tsx:73
+#: apps/client/src/pages/public/page.tsx:94
 msgid "Reactive Resume"
 msgstr "रिएक्टिव रेज़्यूमे"
 
@@ -1127,7 +1134,7 @@ msgstr "रिएक्टिव रेज़्यूमे ने लोगो
 msgid "Reactive Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Reactive Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
 msgstr "रिएक्टिव रेज़्यूमे एक स्वतंत्र और ओपन-सोर्स प्रोजेक्ट है जिसे ज्यादातर मेरे द्वारा तैयार किया गया है, और आपके समर्थन की बहुत सराहना की जाएगी। यदि आप योगदान करने के इच्छुक हैं, और यदि आप इसे वहन कर सकते हैं, तो किसी भी सूचीबद्ध प्लेटफ़ॉर्म के माध्यम से दान करने पर विचार करें। इसके अतिरिक्त, ओपन कलेक्टिव के माध्यम से रिएक्टिव रेज़्यूमे में दान कर-मुक्त है, क्योंकि परियोजना को ओपन कलेक्टिव यूरोप द्वारा वित्तीय रूप से होस्ट किया गया है।"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:108
+#: apps/client/src/pages/home/sections/features/index.tsx:107
 msgid "Reactive Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
 msgstr "रिएक्टिव रेज़्युमे 3 वर्षों से अधिक की कड़ी मेहनत का एक जुनूनी प्रोजेक्ट है, और इसके साथ कई बार दोहराए गए विचार और विशेषताएं आती हैं जिन्हें (लगभग) पूर्णता के लिए बनाया गया है।"
 
@@ -1135,20 +1142,20 @@ msgstr "रिएक्टिव रेज़्युमे 3 वर्षो�
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
 msgstr "रिएक्टिव रेज़्यूमे अपने जीवंत समुदाय की बदौलत फलता-फूलता है। इस परियोजना की प्रगति का श्रेय उन असंख्य व्यक्तियों को जाता है जिन्होंने अपना समय और कौशल समर्पित किया है। नीचे, हम उन कोडर्स का जश्न मना रहे हैं जिन्होंने GitHub पर इसकी विशेषताओं को बढ़ाया है और उन भाषाविदों का जश्न मनाया है जिनके क्राउडिन पर अनुवादों ने इसे व्यापक दर्शकों के लिए सुलभ बना दिया है।"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:72
+#: apps/client/src/pages/builder/_components/toolbar.tsx:79
 msgid "Redo"
 msgstr "पुनः करें"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:98
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:129
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:141
 msgid "Remove"
 msgstr "हटाएं"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:241
 msgid "Remove Page"
-msgstr ""
+msgstr "हटाएँ पेज"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:83
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:95
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:128
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:93
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:178
@@ -1159,7 +1166,7 @@ msgstr "नाम बदलें"
 msgid "Resend email confirmation link"
 msgstr "ईमेल पुष्टिकरण लिंक पुनः भेजें"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:124
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:136
 msgid "Reset"
 msgstr "रीसेट"
 
@@ -1172,13 +1179,13 @@ msgstr "लेआउट रिसेट"
 msgid "Reset your password"
 msgstr "अपना पासवर्ड रीसेट करें"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:92
+#: apps/client/src/pages/builder/_components/toolbar.tsx:106
 msgid "Reset Zoom"
 msgstr "ज़ूम रीसेट करें"
 
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:86
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
-#: apps/client/src/pages/dashboard/resumes/page.tsx:35
+#: apps/client/src/pages/dashboard/resumes/page.tsx:37
 msgid "Resumes"
 msgstr "बायोडाटा"
 
@@ -1186,18 +1193,18 @@ msgstr "बायोडाटा"
 msgid "Resumes Generated"
 msgstr "बायोडाटा तैयार किया गया"
 
-#: apps/client/src/pages/home/sections/features/index.tsx:106
+#: apps/client/src/pages/home/sections/features/index.tsx:105
 msgid "Rich in features, not in pricing."
 msgstr "सुविधाओं से भरपूर, कीमत से नहीं।"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:143
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:141
 msgid "Rounded"
 msgstr "गोल"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:169
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:168
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:125
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:131
 msgid "Save Changes"
 msgstr "परिवर्तन सेव करें"
 
@@ -1210,19 +1217,19 @@ msgstr "अपने खाते पर 2FA सेटअप करने के
 msgid "Score"
 msgstr "अंक"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:98
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:97
 msgid "Search for a font family"
 msgstr "फ़ॉन्ट परिवार खोजें"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:113
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:112
 msgid "Search for a font subset"
 msgstr "फ़ॉन्ट उपसमुच्चय खोजें"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:126
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:125
 msgid "Search for a font variant"
 msgstr "फ़ॉन्ट प्रकार खोजें"
 
-#: apps/client/src/components/locale-combobox.tsx:42
+#: apps/client/src/components/locale-combobox.tsx:41
 msgid "Search for a language"
 msgstr "एक भाषा के लिए खोज करे"
 
@@ -1238,15 +1245,15 @@ msgstr "सुरक्षा"
 msgid "Self-host with Docker"
 msgstr "डॉकर के साथ स्व-मेज़बान"
 
-#: apps/client/src/pages/auth/forgot-password/page.tsx:98
+#: apps/client/src/pages/auth/forgot-password/page.tsx:104
 msgid "Send Email"
 msgstr "ईमेल भेजें"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:79
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
 msgid "Send me a message"
 msgstr "संदेश भेजें"
 
-#: apps/client/src/components/user-options.tsx:28
+#: apps/client/src/components/user-options.tsx:32
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
 #: apps/client/src/pages/dashboard/settings/page.tsx:26
@@ -1257,12 +1264,12 @@ msgstr "समायोजन"
 msgid "Setup two-factor authentication on your account"
 msgstr "अपने खाते पर दो-कारक प्रमाणीकरण सेट करें"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:73
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:97
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
 msgid "Sharing"
 msgstr "साझा करना"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:78
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:90
 msgid "Show"
 msgstr "दिखाएँ"
 
@@ -1274,11 +1281,11 @@ msgstr "ब्रेक लाइन दिखाएँ"
 msgid "Show Page Numbers"
 msgstr "पृष्ठ क्रमांक दिखाएँ"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:256
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:258
 msgid "Sidebar"
 msgstr "साइडबार"
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:96
+#: apps/client/src/pages/auth/backup-otp/page.tsx:102
 #: apps/client/src/pages/auth/login/page.tsx:116
 #: apps/client/src/pages/auth/verify-otp/page.tsx:92
 msgid "Sign in"
@@ -1311,9 +1318,9 @@ msgstr "रजिस्ट्रेशन"
 
 #: apps/client/src/pages/auth/register/page.tsx:85
 msgid "Signups are currently disabled by the administrator."
-msgstr ""
+msgstr "पंजीकरण वर्तमान में प्रशासक द्वारा अक्षम किया गया है।"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:72
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:70
 msgid "Size (in px)"
 msgstr "आकार (पीएक्स में)"
 
@@ -1321,25 +1328,25 @@ msgstr "आकार (पीएक्स में)"
 msgid "Slug"
 msgstr "काउंटर"
 
-#: apps/client/src/services/errors/translate-error.ts:39
+#: apps/client/src/services/errors/translate-error.ts:55
 msgid "Something went wrong while grabbing a preview your resume. Please try again later or raise an issue on GitHub."
 msgstr "आपके बायोडाटा का पूर्वावलोकन लेते समय कुछ गलत हो गया। कृपया बाद में पुनः प्रयास करें या GitHub पर कोई समस्या उठाएँ।"
 
-#: apps/client/src/services/errors/translate-error.ts:37
+#: apps/client/src/services/errors/translate-error.ts:52
 msgid "Something went wrong while printing your resume. Please try again later or raise an issue on GitHub."
 msgstr "आपके बायोडाटा का पूर्वावलोकन लेते समय कुछ गलत हो गया। कृपया बाद में पुनः प्रयास करें या GitHub पर कोई समस्या उठाएँ।"
 
-#: apps/client/src/services/errors/translate-error.ts:41
+#: apps/client/src/services/errors/translate-error.ts:58
 msgid "Something went wrong while processing your request. Please try again later or raise an issue on GitHub."
 msgstr "आपके बायोडाटा का पूर्वावलोकन लेते समय कुछ गलत हो गया। कृपया बाद में पुनः प्रयास करें या GitHub पर कोई समस्या उठाएँ।"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:94
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:137
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:92
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:135
 msgid "Square"
 msgstr "वर्ग"
 
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:29
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:24
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:33
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:23
 msgid "Start building from scratch"
 msgstr "शून्य से निर्माण शुरू करें"
 
@@ -1347,7 +1354,7 @@ msgstr "शून्य से निर्माण शुरू करें"
 msgid "Start building your resume by giving it a name."
 msgstr "अपना बायोडाटा एक नाम देकर बनाना शुरू करें।"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:76
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:104
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:23
 msgid "Statistics"
 msgstr "आंकड़े"
@@ -1370,7 +1377,7 @@ msgstr "संग्रहित"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:127
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:128
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:138
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:114
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:108
@@ -1392,7 +1399,7 @@ msgstr "रिएक्टिव रेज़्यूमे समर्थन"
 msgid "Supports A4/Letter page formats"
 msgstr "A4/लेटर पेज फॉर्मेट का समर्थन करता है"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:80
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:85
 msgid "System"
 msgstr "सिस्टम"
 
@@ -1421,21 +1428,21 @@ msgstr "यह वैध OpenAI API कुंजी की तरह नही�
 msgid "The passwords you entered do not match."
 msgstr "आपके द्वारा दर्ज किया गया पासवर्ड मेल नहीं खाता है।"
 
-#: apps/client/src/services/errors/translate-error.ts:35
+#: apps/client/src/services/errors/translate-error.ts:49
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
 msgstr "आप जिस बायोडाटा को अपडेट करना चाहते हैं वह लॉक है, यदि आप इसमें कोई बदलाव करना चाहते हैं तो कृपया अनलॉक करें।"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:71
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:83
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:20
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:73
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:79
 msgid "Theme"
 msgstr "थीम"
 
-#: apps/client/src/services/errors/translate-error.ts:29
+#: apps/client/src/services/errors/translate-error.ts:40
 msgid "There was an error connecting to the browser. Please make sure 'chrome' is running and reachable."
 msgstr "ब्राउज़र से कनेक्ट करने में त्रुटि हुई. कृपया सुनिश्चित करें कि 'क्रोम' चल रहा है और पहुंच योग्य है।"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:127
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:126
 msgid "This action can be reverted by clicking on the undo button in the floating toolbar."
 msgstr "फ़्लोटिंग टूलबार में पूर्ववत करें बटन पर क्लिक करके इस क्रिया को पूर्ववत किया जा सकता है।"
 
@@ -1443,11 +1450,11 @@ msgstr "फ़्लोटिंग टूलबार में पूर्व
 msgid "This action cannot be undone. This will permanently delete your resume and cannot be recovered."
 msgstr "इस एक्शन को वापस नहीं किया जा सकता। इससे आपका बायोडाटा स्थायी रूप से हट जाएगा और उसे पुनर्प्राप्त नहीं किया जा सकेगा।"
 
-#: apps/client/src/services/errors/translate-error.ts:13
+#: apps/client/src/services/errors/translate-error.ts:16
 msgid "This email address is associated with an OAuth account. Please sign in with your OAuth provider."
 msgstr "यह ईमेल पता OAuth खाते से संबद्ध है. कृपया अपने OAuth प्रदाता के साथ साइन इन करें।"
 
-#: apps/client/src/pages/builder/_components/header.tsx:53
+#: apps/client/src/pages/builder/_components/header.tsx:57
 msgid "This resume is locked, please unlock to make further changes."
 msgstr "यह बायोडाटा लॉक है, कृपया आगे बदलाव करने के लिए अनलॉक करें।"
 
@@ -1468,11 +1475,11 @@ msgstr "शीर्षक"
 msgid "Title"
 msgstr "शीर्षक"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:106
+#: apps/client/src/pages/builder/_components/toolbar.tsx:120
 msgid "Toggle Page Break Line"
 msgstr "पेज ब्रेक लाइन टॉगल करें"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:118
+#: apps/client/src/pages/builder/_components/toolbar.tsx:132
 msgid "Toggle Page Numbers"
 msgstr "पेज नंबर टॉगल करें"
 
@@ -1486,11 +1493,11 @@ msgstr "दृश्य और डाउनलोड ट्रैक करे�
 msgid "Two-Factor Authentication"
 msgstr "दो कारक प्रमाणीकरण"
 
-#: apps/client/src/services/errors/translate-error.ts:23
+#: apps/client/src/services/errors/translate-error.ts:31
 msgid "Two-factor authentication is already enabled for this account."
 msgstr "इस खाते के लिए दो-कारक प्रमाणीकरण पहले से ही सक्षम है।"
 
-#: apps/client/src/services/errors/translate-error.ts:21
+#: apps/client/src/services/errors/translate-error.ts:28
 msgid "Two-factor authentication is not enabled for this account."
 msgstr "इस खाते के लिए दो-कारक प्रमाणीकरण सक्षम नहीं है।"
 
@@ -1503,12 +1510,12 @@ msgstr "<0>हटाएं टाइप करें</0> अपना खात�
 msgid "Type of Study"
 msgstr "अध्ययन का प्रकार"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:68
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:66
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:76
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:65
 msgid "Typography"
 msgstr "टाइपोग्राफी"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:190
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:189
 msgid "Underline Links"
 msgstr "लिंक को रेखांकित करें"
 
@@ -1531,7 +1538,7 @@ msgstr "बायोडाटा को अनलॉक करने से आ�
 msgid "Unverified"
 msgstr "असत्यापित"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:157
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:156
 msgid "Update an existing item"
 msgstr "किसी मौजूदा आइटम का नक़ल बनाएं"
 
@@ -1539,7 +1546,7 @@ msgstr "किसी मौजूदा आइटम का नक़ल बन�
 msgid "Update an existing resume"
 msgstr "किसी मौजूदा आइटम का नक़ल बनाएं"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:212
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:214
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
 msgstr "मौजूदा डेटा को पार्स करने के लिए स्वीकृत स्रोतों में से किसी एक से फ़ाइल अपलोड करें और आसान संपादन के लिए इसे रिएक्टिव रेज़्यूमे में आयात करें।"
 
@@ -1547,7 +1554,7 @@ msgstr "मौजूदा डेटा को पार्स करने क�
 msgid "URL"
 msgstr "यूआरएल"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:56
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:60
 msgid "URL must start with https://"
 msgstr "यूआरएल https:// से शुरू होना चाहिए"
 
@@ -1556,12 +1563,12 @@ msgstr "यूआरएल https:// से शुरू होना चाह�
 msgid "Use your backup code"
 msgstr "एक बैकअप कोड उपयोग करें"
 
-#: apps/client/src/services/errors/translate-error.ts:11
+#: apps/client/src/services/errors/translate-error.ts:13
 msgid "User does not have an associated 'secrets' record. Please report this issue on GitHub."
 msgstr "उपयोगकर्ता के पास कोई संबद्ध 'रहस्य' रिकॉर्ड नहीं है. कृपया इस समस्या की रिपोर्ट GitHub पर करें।"
 
 #: apps/client/src/pages/auth/register/page.tsx:127
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:68
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:66
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
 msgid "Username"
 msgstr "उपयोगकर्ता नाम"
@@ -1570,15 +1577,15 @@ msgstr "उपयोगकर्ता नाम"
 msgid "Users Signed Up"
 msgstr "उपयोगकर्ता साइन अप"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:296
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:298
 msgid "Validate"
 msgstr "वैधीकृत करें"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:314
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:316
 msgid "Validated"
 msgstr "वैधीकृत करें"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:50
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:55
 msgid "Value"
 msgstr "मूल्य"
 
@@ -1613,26 +1620,26 @@ msgstr "हम आपके ईमेल पते को केवल यह �
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:81
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:113
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:114
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:124
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:100
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:82
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:80
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:94
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:67
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:95
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:63
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:69
 msgid "Website"
 msgstr "वेबसाइट"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:34
+#: apps/client/src/pages/home/sections/hero/index.tsx:32
 msgid "What's new in the latest version"
 msgstr "नवीनतम संस्करण में नया क्या है"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:154
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:157
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:135
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:112
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:137
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:114
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr "आप एकाधिक कीवर्ड को अल्पविराम से अलग करके या एंटर दबाकर जोड़ सकते हैं।"
 
@@ -1681,11 +1688,11 @@ msgstr "आपकी OpenAI API कुंजी अभी तक सेट न�
 msgid "Your password has been updated successfully."
 msgstr "आपका पासवर्ड बदला जा चुका है।"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:80
+#: apps/client/src/pages/builder/_components/toolbar.tsx:94
 msgid "Zoom In"
 msgstr "ज़ूम इन"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:86
+#: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "ज़ूम आउट"
 
