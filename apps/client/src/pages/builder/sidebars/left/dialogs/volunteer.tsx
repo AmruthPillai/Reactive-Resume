@@ -111,10 +111,12 @@ export const VolunteerDialog = () => {
                 <RichInput
                   {...field}
                   content={field.value}
-                  onChange={(value) => field.onChange(value)}
                   footer={(editor) => (
                     <AiActions value={editor.getText()} onChange={editor.commands.setContent} />
                   )}
+                  onChange={(value) => {
+                    field.onChange(value);
+                  }}
                 />
               </FormControl>
               <FormMessage />

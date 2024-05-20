@@ -10,6 +10,10 @@ import { BuilderToolbar } from "./_components/toolbar";
 import { LeftSidebar } from "./sidebars/left";
 import { RightSidebar } from "./sidebars/right";
 
+const onOpenAutoFocus = (event: Event) => {
+  event.preventDefault();
+};
+
 const OutletSlot = () => (
   <>
     <BuilderHeader />
@@ -33,8 +37,6 @@ export const BuilderLayout = () => {
   const leftHandle = useBuilderStore((state) => state.panel.left.handle);
   const rightHandle = useBuilderStore((state) => state.panel.right.handle);
 
-  const onOpenAutoFocus = (event: Event) => event.preventDefault();
-
   if (isDesktop) {
     return (
       <div className="relative size-full overflow-hidden">
@@ -43,8 +45,8 @@ export const BuilderLayout = () => {
             minSize={25}
             maxSize={45}
             defaultSize={30}
-            onResize={leftSetSize}
             className={cn("z-10 bg-background", !leftHandle.isDragging && "transition-[flex]")}
+            onResize={leftSetSize}
           >
             <LeftSidebar />
           </Panel>
@@ -63,8 +65,8 @@ export const BuilderLayout = () => {
             minSize={25}
             maxSize={45}
             defaultSize={30}
-            onResize={rightSetSize}
             className={cn("z-10 bg-background", !rightHandle.isDragging && "transition-[flex]")}
+            onResize={rightSetSize}
           >
             <RightSidebar />
           </Panel>
@@ -79,8 +81,8 @@ export const BuilderLayout = () => {
         <SheetContent
           side="left"
           showClose={false}
-          onOpenAutoFocus={onOpenAutoFocus}
           className="top-16 p-0 sm:max-w-xl"
+          onOpenAutoFocus={onOpenAutoFocus}
         >
           <LeftSidebar />
         </SheetContent>
@@ -92,8 +94,8 @@ export const BuilderLayout = () => {
         <SheetContent
           side="right"
           showClose={false}
-          onOpenAutoFocus={onOpenAutoFocus}
           className="top-16 p-0 sm:max-w-xl"
+          onOpenAutoFocus={onOpenAutoFocus}
         >
           <RightSidebar />
         </SheetContent>

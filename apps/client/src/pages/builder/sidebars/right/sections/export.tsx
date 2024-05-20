@@ -9,25 +9,25 @@ import { useResumeStore } from "@/client/stores/resume";
 
 import { getSectionIcon } from "../shared/section-icon";
 
+const onJsonExport = () => {
+  const { resume } = useResumeStore.getState();
+  const filename = `reactive_resume-${resume.id}.json`;
+  const resumeJSON = JSON.stringify(resume.data, null, 2);
+
+  saveAs(new Blob([resumeJSON], { type: "application/json" }), filename);
+};
+
+const openInNewTab = (url: string) => {
+  const win = window.open(url, "_blank");
+  if (win) win.focus();
+};
+
 export const ExportSection = () => {
   const { printResume, loading } = usePrintResume();
-
-  const onJsonExport = () => {
-    const { resume } = useResumeStore.getState();
-    const filename = `reactive_resume-${resume.id}.json`;
-    const resumeJSON = JSON.stringify(resume.data, null, 2);
-
-    saveAs(new Blob([resumeJSON], { type: "application/json" }), filename);
-  };
 
   const onPdfExport = async () => {
     const { resume } = useResumeStore.getState();
     const { url } = await printResume({ id: resume.id });
-
-    const openInNewTab = (url: string) => {
-      const win = window.open(url, "_blank");
-      if (win) win.focus();
-    };
 
     openInNewTab(url);
   };
@@ -43,11 +43,11 @@ export const ExportSection = () => {
 
       <main className="grid gap-y-4">
         <Card
-          onClick={onJsonExport}
           className={cn(
             buttonVariants({ variant: "ghost" }),
             "h-auto cursor-pointer flex-row items-center gap-x-5 px-4 pb-3 pt-1",
           )}
+          onClick={onJsonExport}
         >
           <FileJs size={22} />
           <CardContent className="flex-1">
@@ -59,12 +59,12 @@ export const ExportSection = () => {
         </Card>
 
         <Card
-          onClick={onPdfExport}
           className={cn(
             buttonVariants({ variant: "ghost" }),
             "h-auto cursor-pointer flex-row items-center gap-x-5 px-4 pb-3 pt-1",
             loading && "pointer-events-none cursor-progress opacity-75",
           )}
+          onClick={onPdfExport}
         >
           {loading ? <CircleNotch size={22} className="animate-spin" /> : <FilePdf size={22} />}
 

@@ -38,8 +38,8 @@ export const LocaleCombobox = ({ value, onValueChange }: Props) => {
     <Command shouldFilter={false}>
       <CommandInput
         value={search}
-        onValueChange={setSearch}
         placeholder={t`Search for a language`}
+        onValueChange={setSearch}
       />
       <CommandList>
         <CommandEmpty>{t`No results found`}</CommandEmpty>
@@ -48,10 +48,10 @@ export const LocaleCombobox = ({ value, onValueChange }: Props) => {
             <div className="max-h-60">
               {options.map(({ original }) => (
                 <CommandItem
-                  disabled={false}
                   key={original.locale}
+                  disabled={false}
                   value={original.locale.trim()}
-                  onSelect={async (selectedValue) => {
+                  onSelect={(selectedValue) => {
                     const result = options.find(
                       ({ original }) => original.locale.trim() === selectedValue,
                     );

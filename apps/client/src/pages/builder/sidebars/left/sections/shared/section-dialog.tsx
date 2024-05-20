@@ -46,7 +46,6 @@ export const SectionDialog = <T extends SectionItem>({
 
   const setValue = useResumeStore((state) => state.setValue);
   const section = useResumeStore((state) => {
-    if (!id) return null;
     return get(state.resume.data.sections, id);
   }) as SectionWithItem<T> | null;
 
@@ -59,7 +58,7 @@ export const SectionDialog = <T extends SectionItem>({
     if (isOpen) onReset();
   }, [isOpen, payload]);
 
-  const onSubmit = async (values: T) => {
+  const onSubmit = (values: T) => {
     if (!section) return;
 
     if (isCreate || isDuplicate) {

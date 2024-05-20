@@ -25,7 +25,7 @@ export const ContributorsSection = () => {
 
       {loading && (
         <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-3">
-          {Array(30)
+          {Array.from({ length: 30 })
             .fill(0)
             .map((_, index) => (
               <motion.div

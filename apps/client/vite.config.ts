@@ -2,14 +2,17 @@
 
 import { lingui } from "@lingui/vite-plugin";
 import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
+import { sentryVitePlugin } from "@sentry/vite-plugin";
 import react from "@vitejs/plugin-react";
-import { defineConfig, searchForWorkspaceRoot, splitVendorChunkPlugin } from "vite";
+import { defineConfig, searchForWorkspaceRoot } from "vite";
+import { chunkSplitPlugin } from "vite-plugin-chunk-split";
 
 export default defineConfig({
   cacheDir: "../../node_modules/.vite/client",
 
   build: {
     sourcemap: true,
+    emptyOutDir: true,
   },
 
   define: {
@@ -18,7 +21,7 @@ export default defineConfig({
 
   server: {
     host: true,
-    port: +(process.env.__DEV__CLIENT_PORT ?? 5173),
+    port: 5173,
     fs: { allow: [searchForWorkspaceRoot(process.cwd())] },
   },
 
@@ -38,7 +41,14 @@ export default defineConfig({
     }),
     lingui(),
     nxViteTsPaths(),
-    splitVendorChunkPlugin(),
+    chunkSplitPlugin({
+      strategy: "unbundle",
+    }),
+    sentryVitePlugin({
+      disable: process.env.SENTRY_AUTH_TOKEN === undefined,
+      org: "reactive-resume",
+      project: "client",
+    }),
   ],
 
   test: {

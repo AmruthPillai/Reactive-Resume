@@ -14,7 +14,7 @@ import { Config } from "@/server/config/schema";
     PrismaModule.forRootAsync({
       isGlobal: true,
       inject: [ConfigService],
-      useFactory: async (configService: ConfigService<Config>) => ({
+      useFactory: (configService: ConfigService<Config>) => ({
         prismaOptions: { datasourceUrl: configService.get("DATABASE_URL") },
         middlewares: [
           loggingMiddleware({

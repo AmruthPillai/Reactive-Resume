@@ -10,11 +10,9 @@ export const loginSchema = z
   })
   .refine(
     (value) => {
-      if (value.identifier.includes("@")) {
-        return z.string().email().parse(value.identifier);
-      } else {
-        return usernameSchema.parse(value.identifier);
-      }
+      return value.identifier.includes("@")
+        ? z.string().email().parse(value.identifier)
+        : usernameSchema.parse(value.identifier);
     },
     { message: "InvalidCredentials" },
   );

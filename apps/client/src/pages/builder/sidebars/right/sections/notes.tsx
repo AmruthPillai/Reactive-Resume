@@ -24,7 +24,12 @@ export const NotesSection = () => {
         </p>
 
         <div className="space-y-1.5">
-          <RichInput content={notes} onChange={(content) => setValue("metadata.notes", content)} />
+          <RichInput
+            content={notes}
+            onChange={(content) => {
+              setValue("metadata.notes", content);
+            }}
+          />
 
           <p className="text-xs leading-relaxed opacity-75">
             {t`For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here.`}

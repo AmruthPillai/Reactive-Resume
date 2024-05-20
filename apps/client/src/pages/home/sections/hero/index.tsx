@@ -26,8 +26,6 @@ export const HeroSection = () => (
           <Badge>{t`Version 4`}</Badge>
 
           <a
-            target="_blank"
-            rel="noreferrer"
             href="https://docs.rxresu.me/overview/features"
             className={cn(buttonVariants({ variant: "link" }), "space-x-2 text-left")}
           >

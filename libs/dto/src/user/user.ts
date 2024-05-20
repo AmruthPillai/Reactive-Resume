@@ -8,7 +8,7 @@ export const usernameSchema = z
   .string()
   .min(3)
   .max(255)
-  .regex(/^[a-z0-9._-]+$/, {
+  .regex(/^[\d._a-z-]+$/, {
     message:
       "Usernames can only contain lowercase letters, numbers, periods, hyphens, and underscores.",
   });

@@ -13,10 +13,10 @@ import {
 } from "./command";
 import { Popover, PopoverContent, PopoverTrigger } from "./popover";
 
-export interface ComboboxOption {
+export type ComboboxOption = {
   value: string;
   label: React.ReactNode;
-}
+};
 
 type ComboboxPropsSingle = {
   options: ComboboxOption[];

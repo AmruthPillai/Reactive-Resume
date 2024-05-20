@@ -18,7 +18,9 @@ export const BuilderHeader = () => {
   const leftPanelSize = useBuilderStore((state) => state.panel.left.size);
   const rightPanelSize = useBuilderStore((state) => state.panel.right.size);
 
-  const onToggle = (side: "left" | "right") => toggle(side);
+  const onToggle = (side: "left" | "right") => {
+    toggle(side);
+  };
 
   return (
     <div
@@ -33,7 +35,9 @@ export const BuilderHeader = () => {
           size="icon"
           variant="ghost"
           className="flex lg:hidden"
-          onClick={() => onToggle("left")}
+          onClick={() => {
+            onToggle("left");
+          }}
         >
           <SidebarSimple />
         </Button>
@@ -60,7 +64,9 @@ export const BuilderHeader = () => {
           size="icon"
           variant="ghost"
           className="flex lg:hidden"
-          onClick={() => onToggle("right")}
+          onClick={() => {
+            onToggle("right");
+          }}
         >
           <SidebarSimple className="-scale-x-100" />
         </Button>

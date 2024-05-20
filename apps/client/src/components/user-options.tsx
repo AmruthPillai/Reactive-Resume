@@ -24,7 +24,11 @@ export const UserOptions = ({ children }: Props) => {
       <DropdownMenuTrigger asChild>{children}</DropdownMenuTrigger>
 
       <DropdownMenuContent side="top" align="start" className="w-48">
-        <DropdownMenuItem onClick={() => navigate("/dashboard/settings")}>
+        <DropdownMenuItem
+          onClick={() => {
+            navigate("/dashboard/settings");
+          }}
+        >
           {t`Settings`}
           {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
           <KeyboardShortcut>⇧S</KeyboardShortcut>
