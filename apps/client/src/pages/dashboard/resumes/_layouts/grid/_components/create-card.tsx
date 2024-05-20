@@ -11,7 +11,11 @@ export const CreateResumeCard = () => {
   const { open } = useDialog("resume");
 
   return (
-    <BaseCard onClick={() => open("create")}>
+    <BaseCard
+      onClick={() => {
+        open("create");
+      }}
+    >
       <Plus size={64} weight="thin" />
 
       <div

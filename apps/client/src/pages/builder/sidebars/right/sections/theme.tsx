@@ -26,13 +26,13 @@ export const ThemeSection = () => {
           {colors.map((color) => (
             <div
               key={color}
-              onClick={() => {
-                setValue("metadata.theme.primary", color);
-              }}
               className={cn(
                 "flex size-6 cursor-pointer items-center justify-center rounded-full ring-primary ring-offset-1 ring-offset-background transition-shadow hover:ring-1",
                 theme.primary === color && "ring-1",
               )}
+              onClick={() => {
+                setValue("metadata.theme.primary", color);
+              }}
             >
               <div className="size-5 rounded-full" style={{ backgroundColor: color }} />
             </div>

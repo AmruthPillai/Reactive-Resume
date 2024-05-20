@@ -12,7 +12,6 @@ import {
   defaultResumeData,
   defaultSkill,
   defaultVolunteer,
-  ResumeData,
 } from "@reactive-resume/schema";
 import { Json } from "@reactive-resume/utils";
 import { Schema } from "zod";
@@ -33,19 +32,22 @@ export class JsonResumeParser implements Parser<Json, JsonResume> {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
 
+      // eslint-disable-next-line unicorn/prefer-add-event-listener
       reader.onload = () => {
         try {
           const result = JSON.parse(reader.result as string) as Json;
           resolve(result);
-        } catch (error) {
+        } catch {
           reject(new Error("Failed to parse JSON"));
         }
       };
 
+      // eslint-disable-next-line unicorn/prefer-add-event-listener
       reader.onerror = () => {
         reject(new Error("Failed to read the file"));
       };
 
+      // eslint-disable-next-line unicorn/prefer-blob-reading-methods
       reader.readAsText(file);
     });
   }
@@ -55,7 +57,7 @@ export class JsonResumeParser implements Parser<Json, JsonResume> {
   }
 
   convert(data: JsonResume) {
-    const result = JSON.parse(JSON.stringify(defaultResumeData)) as ResumeData;
+    const result = JSON.parse(JSON.stringify(defaultResumeData));
 
     // Basics
     result.basics.name = data.basics?.name ?? "";

@@ -8,7 +8,6 @@ import {
   defaultProject,
   defaultResumeData,
   defaultSkill,
-  ResumeData,
   resumeDataSchema,
 } from "@reactive-resume/schema";
 import { extractUrl, Json, parseArrayLikeCSVEntry, parseCSV } from "@reactive-resume/utils";
@@ -19,6 +18,11 @@ import { Parser } from "../interfaces/parser";
 import { LinkedIn, linkedInSchema } from "./schema";
 
 export * from "./schema";
+
+const avoidTooShort = (name: string, len: number) => {
+  if (!name || name.length < len) return "Unknown";
+  return name;
+};
 
 export class LinkedInParser implements Parser<JSZip, LinkedIn> {
   schema: Schema;
@@ -44,8 +48,7 @@ export class LinkedInParser implements Parser<JSZip, LinkedIn> {
       for (const key of Object.keys(linkedInSchema.shape)) {
         if (name.includes(key)) {
           const content = await file.async("text");
-          const jsonArray = await parseCSV(content);
-          result[key] = jsonArray;
+          result[key] = await parseCSV(content);
         }
       }
     }
@@ -54,12 +57,7 @@ export class LinkedInParser implements Parser<JSZip, LinkedIn> {
   }
 
   convert(data: LinkedIn) {
-    const result = JSON.parse(JSON.stringify(defaultResumeData)) as ResumeData;
-
-    const avoidTooShort = (name: string, len: number) => {
-      if (!name || name.length < len) return "Unknown";
-      return name;
-    };
+    const result = JSON.parse(JSON.stringify(defaultResumeData));
 
     // Profile
     if (data.Profile && data.Profile.length > 0) {
@@ -94,8 +92,8 @@ export class LinkedInParser implements Parser<JSZip, LinkedIn> {
     }
 
     // Positions
-    if (data["Positions"] && data["Positions"].length > 0) {
-      for (const position of data["Positions"]) {
+    if (data.Positions && data.Positions.length > 0) {
+      for (const position of data.Positions) {
         result.sections.experience.items.push({
           ...defaultExperience,
           id: createId(),
@@ -109,8 +107,8 @@ export class LinkedInParser implements Parser<JSZip, LinkedIn> {
     }
 
     // Education
-    if (data["Education"] && data["Education"].length > 0) {
-      for (const education of data["Education"]) {
+    if (data.Education && data.Education.length > 0) {
+      for (const education of data.Education) {
         result.sections.education.items.push({
           ...defaultEducation,
           id: createId(),
@@ -123,8 +121,8 @@ export class LinkedInParser implements Parser<JSZip, LinkedIn> {
     }
 
     // Skills
-    if (data["Skills"] && data["Skills"].length > 0) {
-      for (const skill of data["Skills"]) {
+    if (data.Skills && data.Skills.length > 0) {
+      for (const skill of data.Skills) {
         result.sections.skills.items.push({
           ...defaultSkill,
           id: createId(),
@@ -134,8 +132,8 @@ export class LinkedInParser implements Parser<JSZip, LinkedIn> {
     }
 
     // Languages
-    if (data["Languages"] && data["Languages"].length > 0) {
-      for (const language of data["Languages"]) {
+    if (data.Languages && data.Languages.length > 0) {
+      for (const language of data.Languages) {
         result.sections.languages.items.push({
           ...defaultLanguage,
           id: createId(),
@@ -146,8 +144,8 @@ export class LinkedInParser implements Parser<JSZip, LinkedIn> {
     }
 
     // Certifications
-    if (data["Certifications"] && data["Certifications"].length > 0) {
-      for (const certification of data["Certifications"]) {
+    if (data.Certifications && data.Certifications.length > 0) {
+      for (const certification of data.Certifications) {
         result.sections.certifications.items.push({
           ...defaultCertification,
           id: createId(),
@@ -160,8 +158,8 @@ export class LinkedInParser implements Parser<JSZip, LinkedIn> {
     }
 
     // Projects
-    if (data["Projects"] && data["Projects"].length > 0) {
-      for (const project of data["Projects"]) {
+    if (data.Projects && data.Projects.length > 0) {
+      for (const project of data.Projects) {
         result.sections.projects.items.push({
           ...defaultProject,
           id: createId(),

@@ -5,12 +5,10 @@ import { AxiosResponse } from "axios";
 import { axios } from "@/client/libs/axios";
 
 export const forgotPassword = async (data: ForgotPasswordDto) => {
-  const response = await axios.post<void, AxiosResponse<void>, ForgotPasswordDto>(
+  return axios.post<undefined, AxiosResponse<undefined>, ForgotPasswordDto>(
     "/auth/forgot-password",
     data,
   );
-
-  return response.data;
 };
 
 export const useForgotPassword = () => {

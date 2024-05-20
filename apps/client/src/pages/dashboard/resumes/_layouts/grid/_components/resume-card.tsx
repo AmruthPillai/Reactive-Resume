@@ -62,7 +62,7 @@ export const ResumeCard = ({ resume }: Props) => {
   return (
     <ContextMenu>
       <ContextMenuTrigger>
-        <BaseCard onClick={onOpen} className="space-y-0">
+        <BaseCard className="space-y-0" onClick={onOpen}>
           <AnimatePresence presenceAffectsLayout>
             {loading && (
               <motion.div
@@ -88,7 +88,7 @@ export const ResumeCard = ({ resume }: Props) => {
                 loading="lazy"
                 alt={resume.title}
                 className="size-full object-cover"
-                src={`${url}?cache=${new Date().getTime()}`}
+                src={`${url}?cache=${Date.now()}`}
               />
             )}
           </AnimatePresence>
@@ -143,7 +143,7 @@ export const ResumeCard = ({ resume }: Props) => {
           </ContextMenuItem>
         )}
         <ContextMenuSeparator />
-        <ContextMenuItem onClick={onDelete} className="text-error">
+        <ContextMenuItem className="text-error" onClick={onDelete}>
           <TrashSimple size={14} className="mr-2" />
           {t`Delete`}
         </ContextMenuItem>

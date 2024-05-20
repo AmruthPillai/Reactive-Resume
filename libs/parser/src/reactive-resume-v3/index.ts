@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { createId } from "@paralleldrive/cuid2";
 import {
   defaultAward,
@@ -13,7 +14,6 @@ import {
   defaultResumeData,
   defaultSkill,
   defaultVolunteer,
-  ResumeData,
 } from "@reactive-resume/schema";
 import { isUrl, Json } from "@reactive-resume/utils";
 import { Schema } from "zod";
@@ -34,19 +34,22 @@ export class ReactiveResumeV3Parser implements Parser<Json, ReactiveResumeV3> {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
 
+      // eslint-disable-next-line unicorn/prefer-add-event-listener
       reader.onload = () => {
         try {
           const result = JSON.parse(reader.result as string) as Json;
           resolve(result);
-        } catch (error) {
+        } catch {
           reject(new Error("Failed to parse JSON"));
         }
       };
 
+      // eslint-disable-next-line unicorn/prefer-add-event-listener
       reader.onerror = () => {
         reject(new Error("Failed to read the file"));
       };
 
+      // eslint-disable-next-line unicorn/prefer-blob-reading-methods
       reader.readAsText(file);
     });
   }
@@ -56,7 +59,7 @@ export class ReactiveResumeV3Parser implements Parser<Json, ReactiveResumeV3> {
   }
 
   convert(data: ReactiveResumeV3) {
-    const result = JSON.parse(JSON.stringify(defaultResumeData)) as ResumeData;
+    const result = JSON.parse(JSON.stringify(defaultResumeData));
 
     // Basics
     result.basics.name = data.basics.name ?? "";
@@ -70,7 +73,7 @@ export class ReactiveResumeV3Parser implements Parser<Json, ReactiveResumeV3> {
     result.basics.picture.url = isUrl(data.basics.photo.url) ? data.basics.photo.url! : "";
 
     // Profiles
-    if (data.basics.profiles) {
+    if (data.basics.profiles && data.basics.profiles.length > 0) {
       for (const profile of data.basics.profiles) {
         result.sections.profiles.items.push({
           ...defaultProfile,
@@ -84,7 +87,7 @@ export class ReactiveResumeV3Parser implements Parser<Json, ReactiveResumeV3> {
     }
 
     // Work
-    if (data.sections.work.items) {
+    if (data.sections.work?.items && data.sections.work.items.length > 0) {
       for (const work of data.sections.work.items) {
         if (!work) continue;
 
@@ -101,7 +104,7 @@ export class ReactiveResumeV3Parser implements Parser<Json, ReactiveResumeV3> {
     }
 
     // Awards
-    if (data.sections.awards.items) {
+    if (data.sections.awards?.items && data.sections.awards.items.length > 0) {
       for (const award of data.sections.awards.items) {
         if (!award) continue;
 
@@ -118,7 +121,7 @@ export class ReactiveResumeV3Parser implements Parser<Json, ReactiveResumeV3> {
     }
 
     // Skills
-    if (data.sections.skills.items) {
+    if (data.sections.skills?.items && data.sections.skills.items.length > 0) {
       for (const skill of data.sections.skills.items) {
         if (!skill) continue;
 
@@ -136,7 +139,7 @@ export class ReactiveResumeV3Parser implements Parser<Json, ReactiveResumeV3> {
     }
 
     // Projects
-    if (data.sections.projects.items) {
+    if (data.sections.projects?.items && data.sections.projects.items.length > 0) {
       for (const project of data.sections.projects.items) {
         if (!project) continue;
 
@@ -156,7 +159,7 @@ export class ReactiveResumeV3Parser implements Parser<Json, ReactiveResumeV3> {
     }
 
     // Education
-    if (data.sections.education.items) {
+    if (data.sections.education?.items && data.sections.education.items.length > 0) {
       for (const education of data.sections.education.items) {
         if (!education) continue;
 
@@ -175,7 +178,7 @@ export class ReactiveResumeV3Parser implements Parser<Json, ReactiveResumeV3> {
     }
 
     // Interests
-    if (data.sections.interests.items) {
+    if (data.sections.interests?.items && data.sections.interests.items.length > 0) {
       for (const interest of data.sections.interests.items) {
         if (!interest) continue;
 
@@ -191,7 +194,7 @@ export class ReactiveResumeV3Parser implements Parser<Json, ReactiveResumeV3> {
     }
 
     // Languages
-    if (data.sections.languages.items) {
+    if (data.sections.languages?.items && data.sections.languages.items.length > 0) {
       for (const language of data.sections.languages.items) {
         if (!language) continue;
 
@@ -206,7 +209,7 @@ export class ReactiveResumeV3Parser implements Parser<Json, ReactiveResumeV3> {
     }
 
     // Volunteer
-    if (data.sections.volunteer.items) {
+    if (data.sections.volunteer?.items && data.sections.volunteer.items.length > 0) {
       for (const volunteer of data.sections.volunteer.items) {
         if (!volunteer) continue;
 
@@ -223,7 +226,7 @@ export class ReactiveResumeV3Parser implements Parser<Json, ReactiveResumeV3> {
     }
 
     // References
-    if (data.sections.references.items) {
+    if (data.sections.references?.items && data.sections.references.items.length > 0) {
       for (const reference of data.sections.references.items) {
         if (!reference) continue;
 
@@ -238,7 +241,7 @@ export class ReactiveResumeV3Parser implements Parser<Json, ReactiveResumeV3> {
     }
 
     // Publications
-    if (data.sections.publications.items) {
+    if (data.sections.publications?.items && data.sections.publications.items.length > 0) {
       for (const publication of data.sections.publications.items) {
         if (!publication) continue;
 
@@ -254,7 +257,7 @@ export class ReactiveResumeV3Parser implements Parser<Json, ReactiveResumeV3> {
     }
 
     // Certifications
-    if (data.sections.certifications.items) {
+    if (data.sections.certifications?.items && data.sections.certifications.items.length > 0) {
       for (const certification of data.sections.certifications.items) {
         if (!certification) continue;
 

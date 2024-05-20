@@ -70,7 +70,7 @@ export const DangerZoneSettings = () => {
       </div>
 
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onDelete)} className="grid gap-6 sm:grid-cols-2">
+        <form className="grid gap-6 sm:grid-cols-2" onSubmit={form.handleSubmit(onDelete)}>
           <FormField
             name="deleteConfirm"
             control={form.control}

@@ -20,8 +20,13 @@ export const KeyboardShortcut = ({
   const { value, setValue } = useBoolean(defaultValue);
 
   useEffect(() => {
-    const onKeyDown = (e: KeyboardEvent) => e.key === "Control" && setValue(true);
-    const onKeyUp = (e: KeyboardEvent) => e.key === "Control" && setValue(false);
+    const onKeyDown = (e: KeyboardEvent) => {
+      e.key === "Control" && setValue(true);
+    };
+
+    const onKeyUp = (e: KeyboardEvent) => {
+      e.key === "Control" && setValue(false);
+    };
 
     document.addEventListener("keydown", onKeyDown);
     document.addEventListener("keyup", onKeyUp);

@@ -35,31 +35,46 @@ model User {
 }
 
 model Secrets {
-  id                   String    @id @default(cuid())
+  id                   String   @id @default(cuid())
   password             String?
-  lastSignedIn         DateTime?
+  lastSignedIn         DateTime @default(now())
   verificationToken    String?
   twoFactorSecret      String?
-  twoFactorBackupCodes String[]  @default([])
+  twoFactorBackupCodes String[] @default([])
   refreshToken         String?
-  resetToken           String?   @unique
-  userId               String    @unique
-  user                 User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  resetToken           String?  @unique
+  userId               String   @unique
+  user                 User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, id])
 }
 
 model Resume {
-  id         String     @id @default(cuid())
+  id         String      @id @default(cuid())
   title      String
   slug       String
-  data       Json       @default("{}")
-  visibility Visibility @default(private)
-  locked     Boolean    @default(false)
+  data       Json        @default("{}")
+  visibility Visibility  @default(private)
+  locked     Boolean     @default(false)
+  statistics Statistics?
   userId     String
-  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
-  createdAt  DateTime   @default(now())
-  updatedAt  DateTime   @updatedAt
+  user       User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
 
   @@unique([userId, id])
   @@unique([userId, slug])
   @@index(fields: [userId])
+}
+
+model Statistics {
+  id        String   @id @default(cuid())
+  views     Int      @default(0)
+  downloads Int      @default(0)
+  resumeId  String   @unique
+  resume    Resume   @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([resumeId, id])
 }

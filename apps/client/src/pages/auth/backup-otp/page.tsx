@@ -40,7 +40,7 @@ export const BackupOtpPage = () => {
       await backupOtp(data);
 
       navigate("/dashboard");
-    } catch (error) {
+    } catch {
       form.reset();
     }
   };
@@ -87,7 +87,13 @@ export const BackupOtpPage = () => {
             />
 
             <div className="mt-4 flex items-center gap-x-2">
-              <Button variant="link" className="px-5" onClick={() => navigate(-1)}>
+              <Button
+                variant="link"
+                className="px-5"
+                onClick={() => {
+                  navigate(-1);
+                }}
+              >
                 <ArrowLeft size={14} className="mr-2" />
                 <span>{t`Back`}</span>
               </Button>

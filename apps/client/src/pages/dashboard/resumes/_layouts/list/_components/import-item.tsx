@@ -12,7 +12,6 @@ export const ImportResumeListItem = () => {
   return (
     <BaseListItem
       start={<DownloadSimple size={18} />}
-      onClick={() => open("create")}
       title={
         <>
           <span>{t`Import an existing resume`}</span>
@@ -21,6 +20,9 @@ export const ImportResumeListItem = () => {
         </>
       }
       description={t`LinkedIn, JSON Resume, etc.`}
+      onClick={() => {
+        open("create");
+      }}
     />
   );
 };
