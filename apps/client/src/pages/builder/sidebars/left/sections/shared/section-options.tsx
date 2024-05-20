@@ -14,6 +14,7 @@ import { defaultSections, SectionKey, SectionWithItem } from "@reactive-resume/s
 import {
   Button,
   DropdownMenu,
+  DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
@@ -49,18 +50,27 @@ export const SectionOptions = ({ id }: Props) => {
   const onCreate = () => {
     open("create", { id });
   };
+
+  const toggleSeperateLinks = (checked: boolean) => {
+    setValue(`sections.${id}.separateLinks`, checked);
+  };
+
   const toggleVisibility = () => {
     setValue(`sections.${id}.visible`, !section.visible);
   };
+
   const onResetName = () => {
     setValue(`sections.${id}.name`, originalName);
   };
+
   const onChangeColumns = (value: string) => {
     setValue(`sections.${id}.columns`, Number(value));
   };
+
   const onResetItems = () => {
     setValue(`sections.${id}.items`, []);
   };
+
   const onRemove = () => {
     removeSection(id);
   };
@@ -79,7 +89,12 @@ export const SectionOptions = ({ id }: Props) => {
               <Plus />
               <span className="ml-2">{t`Add a new item`}</span>
             </DropdownMenuItem>
-
+            <DropdownMenuCheckboxItem
+              checked={section.separateLinks}
+              onCheckedChange={toggleSeperateLinks}
+            >
+              <span className="ml-0">{t`Separate Links`}</span>
+            </DropdownMenuCheckboxItem>
             <DropdownMenuSeparator />
           </>
         )}

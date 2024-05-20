@@ -26,13 +26,13 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v3.0.0
         with:
-          version: 9.1.0
+          version: 9.1.1
 
       - name: Setup Node.js
         uses: actions/setup-node@v4.0.2
         with:
           cache: "pnpm"
-          node-version: 20.12.2
+          node-version: 20.13.1
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
