@@ -163,7 +163,7 @@ export const LayoutSection = () => {
   };
 
   const onAddPage = () => {
-    const layoutCopy = JSON.parse(JSON.stringify(layout)) as string[][][];
+    const layoutCopy = JSON.parse(JSON.stringify(layout));
 
     layoutCopy.push([[], []]);
 
@@ -171,7 +171,7 @@ export const LayoutSection = () => {
   };
 
   const onRemovePage = (page: number) => {
-    const layoutCopy = JSON.parse(JSON.stringify(layout)) as string[][][];
+    const layoutCopy = JSON.parse(JSON.stringify(layout));
 
     layoutCopy[0][0].push(...layoutCopy[page][0]); // Main
     layoutCopy[0][1].push(...layoutCopy[page][1]); // Sidebar
@@ -182,17 +182,17 @@ export const LayoutSection = () => {
   };
 
   const onResetLayout = () => {
-    const layoutCopy = JSON.parse(JSON.stringify(defaultMetadata.layout)) as string[][][];
+    const layoutCopy = JSON.parse(JSON.stringify(defaultMetadata.layout));
 
     // Loop through all pages and columns, and get any sections that start with "custom."
     // These should be appended to the first page of the new layout.
     const customSections: string[] = [];
 
-    layout.forEach((page) => {
-      page.forEach((column) => {
+    for (const page of layout) {
+      for (const column of page) {
         customSections.push(...column.filter((section) => section.startsWith("custom.")));
-      });
-    });
+      }
+    }
 
     if (customSections.length > 0) layoutCopy[0][0].push(...customSections);
 
@@ -218,10 +218,10 @@ export const LayoutSection = () => {
         {/* Pages */}
         <DndContext
           sensors={sensors}
+          collisionDetection={closestCenter}
           onDragEnd={onDragEnd}
           onDragStart={onDragStart}
           onDragCancel={onDragCancel}
-          collisionDetection={closestCenter}
         >
           {layout.map((page, pageIndex) => {
             const mainIndex = `${pageIndex}.0`;
@@ -243,7 +243,9 @@ export const LayoutSection = () => {
                         size="icon"
                         variant="ghost"
                         className="size-8"
-                        onClick={() => onRemovePage(pageIndex)}
+                        onClick={() => {
+                          onRemovePage(pageIndex);
+                        }}
                       >
                         <TrashSimple size={12} className="text-error" />
                       </Button>
@@ -260,7 +262,7 @@ export const LayoutSection = () => {
           })}
 
           <Portal>
-            <DragOverlay>{activeId && <Section id={activeId} isDragging />}</DragOverlay>
+            <DragOverlay>{activeId && <Section isDragging id={activeId} />}</DragOverlay>
           </Portal>
         </DndContext>
 

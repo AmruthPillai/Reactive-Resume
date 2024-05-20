@@ -15,31 +15,44 @@ import { Rhyhorn } from "./rhyhorn";
 
 export const getTemplate = (template: Template) => {
   switch (template) {
-    case "azurill":
+    case "azurill": {
       return Azurill;
-    case "bronzor":
+    }
+    case "bronzor": {
       return Bronzor;
-    case "chikorita":
+    }
+    case "chikorita": {
       return Chikorita;
-    case "ditto":
+    }
+    case "ditto": {
       return Ditto;
-    case "gengar":
+    }
+    case "gengar": {
       return Gengar;
-    case "glalie":
+    }
+    case "glalie": {
       return Glalie;
-    case "kakuna":
+    }
+    case "kakuna": {
       return Kakuna;
-    case "leafish":
+    }
+    case "leafish": {
       return Leafish;
-    case "nosepass":
+    }
+    case "nosepass": {
       return Nosepass;
-    case "onyx":
+    }
+    case "onyx": {
       return Onyx;
-    case "pikachu":
+    }
+    case "pikachu": {
       return Pikachu;
-    case "rhyhorn":
+    }
+    case "rhyhorn": {
       return Rhyhorn;
-    default:
+    }
+    default: {
       return Onyx;
+    }
   }
 };

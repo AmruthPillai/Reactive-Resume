@@ -52,7 +52,7 @@ export class ContributorsService {
           avatar: data.avatarUrl,
         } satisfies ContributorDto;
       });
-    } catch (error) {
+    } catch {
       return [];
     }
   }

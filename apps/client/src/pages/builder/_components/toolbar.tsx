@@ -20,6 +20,11 @@ import { usePrintResume } from "@/client/services/resume";
 import { useBuilderStore } from "@/client/stores/builder";
 import { useResumeStore, useTemporalResumeStore } from "@/client/stores/resume";
 
+const openInNewTab = (url: string) => {
+  const win = window.open(url, "_blank");
+  if (win) win.focus();
+};
+
 export const BuilderToolbar = () => {
   const { toast } = useToast();
   const setValue = useResumeStore((state) => state.setValue);
@@ -35,11 +40,6 @@ export const BuilderToolbar = () => {
 
   const onPrint = async () => {
     const { url } = await printResume({ id });
-
-    const openInNewTab = (url: string) => {
-      const win = window.open(url, "_blank");
-      if (win) win.focus();
-    };
 
     openInNewTab(url);
   };
@@ -64,13 +64,27 @@ export const BuilderToolbar = () => {
     <motion.div className="fixed inset-x-0 bottom-0 mx-auto hidden py-6 text-center md:block">
       <div className="inline-flex items-center justify-center rounded-full bg-background px-4 shadow-xl">
         <Tooltip content={t`Undo`}>
-          <Button size="icon" variant="ghost" className="rounded-none" onClick={() => undo()}>
+          <Button
+            size="icon"
+            variant="ghost"
+            className="rounded-none"
+            onClick={() => {
+              undo();
+            }}
+          >
             <ArrowCounterClockwise />
           </Button>
         </Tooltip>
 
         <Tooltip content={t`Redo`}>
-          <Button size="icon" variant="ghost" className="rounded-none" onClick={() => redo()}>
+          <Button
+            size="icon"
+            variant="ghost"
+            className="rounded-none"
+            onClick={() => {
+              redo();
+            }}
+          >
             <ArrowClockwise />
           </Button>
         </Tooltip>
@@ -134,8 +148,8 @@ export const BuilderToolbar = () => {
             size="icon"
             variant="ghost"
             className="rounded-none"
-            onClick={onCopy}
             disabled={!isPublic}
+            onClick={onCopy}
           >
             <LinkSimple />
           </Button>
@@ -145,9 +159,9 @@ export const BuilderToolbar = () => {
           <Button
             size="icon"
             variant="ghost"
-            onClick={onPrint}
             disabled={loading}
             className="rounded-none"
+            onClick={onPrint}
           >
             {loading ? <CircleNotch className="animate-spin" /> : <FilePdf />}
           </Button>

@@ -50,6 +50,7 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
     }),
   );
 
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (!section) return null;
 
   const onDragEnd = (event: DragEndEvent) => {
@@ -66,10 +67,18 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
     }
   };
 
-  const onCreate = () => open("create", { id });
-  const onUpdate = (item: T) => open("update", { id, item });
-  const onDuplicate = (item: T) => open("duplicate", { id, item });
-  const onDelete = (item: T) => open("delete", { id, item });
+  const onCreate = () => {
+    open("create", { id });
+  };
+  const onUpdate = (item: T) => {
+    open("update", { id, item });
+  };
+  const onDuplicate = (item: T) => {
+    open("duplicate", { id, item });
+  };
+  const onDelete = (item: T) => {
+    open("delete", { id, item });
+  };
 
   const onToggleVisibility = (index: number) => {
     const visible = get(section, `items[${index}].visible`, true);
@@ -100,8 +109,8 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
         {section.items.length === 0 && (
           <Button
             variant="outline"
-            onClick={onCreate}
             className="gap-x-2 border-dashed py-6 leading-relaxed hover:bg-secondary-accent"
+            onClick={onCreate}
           >
             <Plus size={14} />
             <span className="font-medium">
@@ -115,23 +124,31 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
 
         <DndContext
           sensors={sensors}
-          onDragEnd={onDragEnd}
           collisionDetection={closestCenter}
           modifiers={[restrictToParentElement]}
+          onDragEnd={onDragEnd}
         >
           <SortableContext items={section.items} strategy={verticalListSortingStrategy}>
             <AnimatePresence>
               {section.items.map((item, index) => (
                 <SectionListItem
-                  id={item.id}
                   key={item.id}
+                  id={item.id}
                   visible={item.visible}
                   title={title(item as T)}
                   description={description?.(item as T)}
-                  onUpdate={() => onUpdate(item as T)}
-                  onDelete={() => onDelete(item as T)}
-                  onDuplicate={() => onDuplicate(item as T)}
-                  onToggleVisibility={() => onToggleVisibility(index)}
+                  onUpdate={() => {
+                    onUpdate(item as T);
+                  }}
+                  onDelete={() => {
+                    onDelete(item as T);
+                  }}
+                  onDuplicate={() => {
+                    onDuplicate(item as T);
+                  }}
+                  onToggleVisibility={() => {
+                    onToggleVisibility(index);
+                  }}
                 />
               ))}
             </AnimatePresence>

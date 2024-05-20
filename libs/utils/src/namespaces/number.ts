@@ -5,6 +5,6 @@ export const linearTransform = (
   outMin: number,
   outMax: number,
 ) => {
-  if (inMax === inMin) return value === inMax ? outMin : NaN;
+  if (inMax === inMin) return value === inMax ? outMin : Number.NaN;
   return ((value - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
 };

@@ -53,7 +53,7 @@ describe("kebabCase", () => {
 describe("generateRandomName", () => {
   it("generates a random name", () => {
     const name = generateRandomName();
-    expect(name).toMatch(/^[A-Z][a-z]+ [A-Z][a-z]+ [A-Z][a-z]+$/);
+    expect(name).toMatch(/^(?:[A-Z][a-z]+ ){2}[A-Z][a-z]+$/);
   });
 });
 

@@ -8,31 +8,21 @@ import { Prisma } from "@prisma/client";
 import { CreateResumeDto, ImportResumeDto, ResumeDto, UpdateResumeDto } from "@reactive-resume/dto";
 import { defaultResumeData, ResumeData } from "@reactive-resume/schema";
 import type { DeepPartial } from "@reactive-resume/utils";
-import { generateRandomName, kebabCase } from "@reactive-resume/utils";
-import { ErrorMessage } from "@reactive-resume/utils";
-import { RedisService } from "@songkeys/nestjs-redis";
+import { ErrorMessage, generateRandomName, kebabCase } from "@reactive-resume/utils";
 import deepmerge from "deepmerge";
-import Redis from "ioredis";
 import { PrismaService } from "nestjs-prisma";
 
 import { PrinterService } from "@/server/printer/printer.service";
 
 import { StorageService } from "../storage/storage.service";
-import { UtilsService } from "../utils/utils.service";
 
 @Injectable()
 export class ResumeService {
-  private readonly redis: Redis;
-
   constructor(
     private readonly prisma: PrismaService,
     private readonly printerService: PrinterService,
     private readonly storageService: StorageService,
-    private readonly redisService: RedisService,
-    private readonly utils: UtilsService,
-  ) {
-    this.redis = this.redisService.getClient();
-  }
+  ) {}
 
   async create(userId: string, createResumeDto: CreateResumeDto) {
     const { name, email, picture } = await this.prisma.user.findUniqueOrThrow({
@@ -44,7 +34,7 @@ export class ResumeService {
       basics: { name, email, picture: { url: picture ?? "" } },
     } satisfies DeepPartial<ResumeData>);
 
-    const resume = await this.prisma.resume.create({
+    return this.prisma.resume.create({
       data: {
         data,
         userId,
@@ -53,34 +43,20 @@ export class ResumeService {
         slug: createResumeDto.slug ?? kebabCase(createResumeDto.title),
       },
     });
-
-    // await Promise.all([
-    //   this.redis.del(`user:${userId}:resumes`),
-    //   this.redis.set(`user:${userId}:resume:${resume.id}`, JSON.stringify(resume)),
-    // ]);
-
-    return resume;
   }
 
-  async import(userId: string, importResumeDto: ImportResumeDto) {
+  import(userId: string, importResumeDto: ImportResumeDto) {
     const randomTitle = generateRandomName();
 
-    const resume = await this.prisma.resume.create({
+    return this.prisma.resume.create({
       data: {
         userId,
         visibility: "private",
         data: importResumeDto.data,
-        title: importResumeDto.title || randomTitle,
-        slug: importResumeDto.slug || kebabCase(randomTitle),
+        title: importResumeDto.title ?? randomTitle,
+        slug: importResumeDto.slug ?? kebabCase(randomTitle),
       },
     });
-
-    // await Promise.all([
-    //   this.redis.del(`user:${userId}:resumes`),
-    //   this.redis.set(`user:${userId}:resume:${resume.id}`, JSON.stringify(resume)),
-    // ]);
-
-    return resume;
   }
 
   findAll(userId: string) {
@@ -95,15 +71,16 @@ export class ResumeService {
     return this.prisma.resume.findUniqueOrThrow({ where: { id } });
   }
 
-  async findOneStatistics(userId: string, id: string) {
-    const result = await Promise.all([
-      this.redis.get(`user:${userId}:resume:${id}:views`),
-      this.redis.get(`user:${userId}:resume:${id}:downloads`),
-    ]);
+  async findOneStatistics(id: string) {
+    const result = await this.prisma.statistics.findFirst({
+      select: { views: true, downloads: true },
+      where: { resumeId: id },
+    });
 
-    const [views, downloads] = result.map((value) => Number(value) || 0);
-
-    return { views, downloads };
+    return {
+      views: result?.views ?? 0,
+      downloads: result?.downloads ?? 0,
+    };
   }
 
   async findOneByUsernameSlug(username: string, slug: string, userId?: string) {
@@ -112,7 +89,13 @@ export class ResumeService {
     });
 
     // Update statistics: increment the number of views by 1
-    if (!userId) await this.redis.incr(`user:${resume.userId}:resume:${resume.id}:views`);
+    if (!userId) {
+      await this.prisma.statistics.upsert({
+        where: { resumeId: resume.id },
+        create: { views: 1, downloads: 0, resumeId: resume.id },
+        update: { views: { increment: 1 } },
+      });
+    }
 
     return resume;
   }
@@ -126,7 +109,7 @@ export class ResumeService {
 
       if (locked) throw new BadRequestException(ErrorMessage.ResumeLocked);
 
-      const resume = await this.prisma.resume.update({
+      return await this.prisma.resume.update({
         data: {
           title: updateResumeDto.title,
           slug: updateResumeDto.slug,
@@ -135,15 +118,6 @@ export class ResumeService {
         },
         where: { userId_id: { userId, id } },
       });
-
-      // await Promise.all([
-      //   this.redis.set(`user:${userId}:resume:${id}`, JSON.stringify(resume)),
-      //   this.redis.del(`user:${userId}:resumes`),
-      //   this.redis.del(`user:${userId}:storage:resumes:${id}`),
-      //   this.redis.del(`user:${userId}:storage:previews:${id}`),
-      // ]);
-
-      return resume;
     } catch (error) {
       if (error.code === "P2025") {
         Logger.error(error);
@@ -152,26 +126,15 @@ export class ResumeService {
     }
   }
 
-  async lock(userId: string, id: string, set: boolean) {
-    const resume = await this.prisma.resume.update({
+  lock(userId: string, id: string, set: boolean) {
+    return this.prisma.resume.update({
       data: { locked: set },
       where: { userId_id: { userId, id } },
     });
-
-    // await Promise.all([
-    //   this.redis.set(`user:${userId}:resume:${id}`, JSON.stringify(resume)),
-    //   this.redis.del(`user:${userId}:resumes`),
-    // ]);
-
-    return resume;
   }
 
   async remove(userId: string, id: string) {
     await Promise.all([
-      // Remove cached keys
-      // this.redis.del(`user:${userId}:resumes`),
-      // this.redis.del(`user:${userId}:resume:${id}`),
-
       // Remove files in storage, and their cached keys
       this.storageService.deleteObject(userId, "resumes", id),
       this.storageService.deleteObject(userId, "previews", id),
@@ -184,7 +147,13 @@ export class ResumeService {
     const url = await this.printerService.printResume(resume);
 
     // Update statistics: increment the number of downloads by 1
-    if (!userId) await this.redis.incr(`user:${resume.userId}:resume:${resume.id}:downloads`);
+    if (!userId) {
+      await this.prisma.statistics.upsert({
+        where: { resumeId: resume.id },
+        create: { views: 0, downloads: 1, resumeId: resume.id },
+        update: { downloads: { increment: 1 } },
+      });
+    }
 
     return url;
   }

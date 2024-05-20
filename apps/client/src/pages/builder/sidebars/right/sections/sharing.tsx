@@ -73,7 +73,7 @@ export const SharingSection = () => {
               <Label htmlFor="resume-url">{t`URL`}</Label>
 
               <div className="flex gap-x-1.5">
-                <Input id="resume-url" readOnly value={url} className="flex-1" />
+                <Input readOnly id="resume-url" value={url} className="flex-1" />
 
                 <Tooltip content={t`Copy to Clipboard`}>
                   <Button size="icon" variant="ghost" onClick={onCopy}>

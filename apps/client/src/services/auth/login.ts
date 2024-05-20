@@ -28,7 +28,8 @@ export const useLogin = () => {
     mutationFn: login,
     onSuccess: (data) => {
       if (data.status === "2fa_required") {
-        return navigate("/auth/verify-otp");
+        navigate("/auth/verify-otp");
+        return;
       }
 
       setUser(data.user);

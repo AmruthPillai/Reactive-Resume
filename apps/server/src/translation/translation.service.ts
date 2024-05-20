@@ -56,7 +56,7 @@ export class TranslationService {
           locale: data.language.locale,
         } satisfies Language;
       });
-    } catch (error) {
+    } catch {
       return languages;
     }
   }

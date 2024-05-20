@@ -71,11 +71,11 @@ export const SectionListItem = ({
         <ContextMenu>
           <ContextMenuTrigger asChild>
             <div
-              onClick={onUpdate}
               className={cn(
                 "flex-1 cursor-context-menu p-4 hover:bg-secondary-accent",
                 !visible && "opacity-50",
               )}
+              onClick={onUpdate}
             >
               <h4 className="font-medium leading-relaxed">{title}</h4>
               {description && <p className="text-xs leading-relaxed opacity-50">{description}</p>}

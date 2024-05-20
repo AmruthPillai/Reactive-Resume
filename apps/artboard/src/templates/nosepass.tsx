@@ -98,9 +98,9 @@ const Summary = () => {
         </div>
 
         <div
+          dangerouslySetInnerHTML={{ __html: section.content }}
           className="wysiwyg"
           style={{ columns: section.columns }}
-          dangerouslySetInnerHTML={{ __html: section.content }}
         />
       </div>
     </section>
@@ -127,7 +127,7 @@ const Link = ({ url, icon, iconOnRight, label, className }: LinkProps) => {
         rel="noreferrer noopener nofollow"
         className={cn("inline-block", className)}
       >
-        {label || url.label || url.href}
+        {label ?? (url.label || url.href)}
       </a>
       {iconOnRight && (icon ?? <i className="ph ph-bold ph-link text-primary" />)}
     </div>
@@ -181,7 +181,7 @@ const Section = <T,>({
   summaryKey,
   keywordsKey,
 }: SectionProps<T>) => {
-  if (!section.visible || !section.items.length) return null;
+  if (!section.visible || section.items.length === 0) return null;
 
   return (
     <section id={section.id} className={cn("grid", dateKey !== undefined && "gap-y-4")}>
@@ -218,7 +218,7 @@ const Section = <T,>({
                     {url !== undefined && section.separateLinks && <Link url={url} />}
 
                     {summary !== undefined && !isEmptyString(summary) && (
-                      <div className="wysiwyg" dangerouslySetInnerHTML={{ __html: summary }} />
+                      <div dangerouslySetInnerHTML={{ __html: summary }} className="wysiwyg" />
                     )}
 
                     {keywords !== undefined && keywords.length > 0 && (
@@ -253,7 +253,7 @@ const Section = <T,>({
                     {url !== undefined && section.separateLinks && <Link url={url} />}
 
                     {summary !== undefined && !isEmptyString(summary) && (
-                      <div className="wysiwyg" dangerouslySetInnerHTML={{ __html: summary }} />
+                      <div dangerouslySetInnerHTML={{ __html: summary }} className="wysiwyg" />
                     )}
 
                     {keywords !== undefined && keywords.length > 0 && (
@@ -294,7 +294,7 @@ const Profiles = () => {
           ) : (
             <p>{item.username}</p>
           )}
-          <p className="text-sm">{item.network}</p>
+          {!item.icon && <p className="text-sm">{item.network}</p>}
         </div>
       )}
     </Section>
@@ -495,36 +495,50 @@ const Custom = ({ id }: { id: string }) => {
 
 const mapSectionToComponent = (section: SectionKey) => {
   switch (section) {
-    case "profiles":
+    case "profiles": {
       return <Profiles />;
-    case "summary":
+    }
+    case "summary": {
       return <Summary />;
-    case "experience":
+    }
+    case "experience": {
       return <Experience />;
-    case "education":
+    }
+    case "education": {
       return <Education />;
-    case "awards":
+    }
+    case "awards": {
       return <Awards />;
-    case "certifications":
+    }
+    case "certifications": {
       return <Certifications />;
-    case "skills":
+    }
+    case "skills": {
       return <Skills />;
-    case "interests":
+    }
+    case "interests": {
       return <Interests />;
-    case "publications":
+    }
+    case "publications": {
       return <Publications />;
-    case "volunteer":
+    }
+    case "volunteer": {
       return <Volunteer />;
-    case "languages":
+    }
+    case "languages": {
       return <Languages />;
-    case "projects":
+    }
+    case "projects": {
       return <Projects />;
-    case "references":
+    }
+    case "references": {
       return <References />;
-    default:
+    }
+    default: {
       if (section.startsWith("custom.")) return <Custom id={section.split(".")[1]} />;
 
       return null;
+    }
   }
 };
 
@@ -536,7 +550,7 @@ export const Nosepass = ({ columns, isFirstPage = false }: TemplateProps) => {
   return (
     <div className="p-custom space-y-6">
       <div className="flex items-center justify-between">
-        <img alt="Europass Logo" className="h-[42px]" src="https://i.imgur.com/eRK005p.png" />
+        <img alt="Europass Logo" className="h-[42px]" src="/assets/europass.png" />
 
         <p className="font-medium text-primary">Curriculum Vitae</p>
 

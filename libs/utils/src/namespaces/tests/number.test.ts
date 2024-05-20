@@ -42,7 +42,7 @@ describe("linearTransform", () => {
   it("returns NaN if input maximum equals input minimum", () => {
     const value = 5;
     const result = linearTransform(value, 0, 0, 0, 100);
-    expect(result).toBe(NaN);
+    expect(result).toBe(Number.NaN);
   });
 
   it("returns NaN if input range is zero (avoids division by zero)", () => {

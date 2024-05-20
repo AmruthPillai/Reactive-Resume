@@ -103,7 +103,7 @@ export const ResumeDialog = () => {
     if (isDelete) {
       if (!payload.item?.id) return;
 
-      await deleteResume({ id: payload.item?.id });
+      await deleteResume({ id: payload.item.id });
     }
 
     close();
@@ -131,7 +131,7 @@ export const ResumeDialog = () => {
 
     await duplicateResume({
       title: title || randomName,
-      slug: slug || kebabCase(randomName),
+      slug: slug ?? kebabCase(randomName),
       data: sampleResume,
     });
 

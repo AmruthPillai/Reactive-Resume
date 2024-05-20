@@ -1,8 +1,15 @@
 import { t } from "@lingui/macro";
 import { createId } from "@paralleldrive/cuid2";
-import { DotsSixVertical, Plus, X } from "@phosphor-icons/react";
+import { DotsSixVertical, Envelope, Plus, X } from "@phosphor-icons/react";
 import { CustomField as ICustomField } from "@reactive-resume/schema";
-import { Button, Input } from "@reactive-resume/ui";
+import {
+  Button,
+  Input,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  Tooltip,
+} from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { AnimatePresence, Reorder, useDragControls } from "framer-motion";
 
@@ -17,8 +24,9 @@ type CustomFieldProps = {
 export const CustomField = ({ field, onChange, onRemove }: CustomFieldProps) => {
   const controls = useDragControls();
 
-  const handleChange = (key: "icon" | "name" | "value", value: string) =>
+  const handleChange = (key: "icon" | "name" | "value", value: string) => {
     onChange({ ...field, [key]: value });
+  };
 
   return (
     <Reorder.Item
@@ -34,29 +42,56 @@ export const CustomField = ({ field, onChange, onRemove }: CustomFieldProps) => 
           size="icon"
           variant="link"
           className="shrink-0"
-          onPointerDown={(event) => controls.start(event)}
+          onPointerDown={(event) => {
+            controls.start(event);
+          }}
         >
           <DotsSixVertical />
         </Button>
+
+        <Popover>
+          <Tooltip content={t`Icon`}>
+            <PopoverTrigger asChild>
+              <Button size="icon" variant="ghost">
+                {field.icon ? <i className={cn(`ph ph-${field.icon}`)} /> : <Envelope />}
+              </Button>
+            </PopoverTrigger>
+          </Tooltip>
+          <PopoverContent className="p-1.5">
+            <Input
+              value={field.icon}
+              placeholder={t`Enter Phosphor Icon`}
+              onChange={(event) => {
+                onChange({ ...field, icon: event.target.value });
+              }}
+            />
+          </PopoverContent>
+        </Popover>
 
         <Input
           placeholder={t`Name`}
           value={field.name}
           className="!ml-0"
-          onChange={(event) => handleChange("name", event.target.value)}
+          onChange={(event) => {
+            handleChange("name", event.target.value);
+          }}
         />
 
         <Input
           placeholder={t`Value`}
           value={field.value}
-          onChange={(event) => handleChange("value", event.target.value)}
+          onChange={(event) => {
+            handleChange("value", event.target.value);
+          }}
         />
 
         <Button
           size="icon"
           variant="link"
           className="!ml-0 shrink-0"
-          onClick={() => onRemove(field.id)}
+          onClick={() => {
+            onRemove(field.id);
+          }}
         >
           <X />
         </Button>
@@ -82,7 +117,7 @@ export const CustomFieldsSection = ({ className }: Props) => {
 
   const onChangeCustomField = (field: ICustomField) => {
     const index = customFields.findIndex((item) => item.id === field.id);
-    const newCustomFields = JSON.parse(JSON.stringify(customFields)) as ICustomField[];
+    const newCustomFields = JSON.parse(JSON.stringify(customFields));
     newCustomFields[index] = field;
 
     setValue("basics.customFields", newCustomFields);
@@ -110,8 +145,8 @@ export const CustomFieldsSection = ({ className }: Props) => {
         >
           {customFields.map((field) => (
             <CustomField
-              field={field}
               key={field.id}
+              field={field}
               onChange={onChangeCustomField}
               onRemove={onRemoveCustomField}
             />

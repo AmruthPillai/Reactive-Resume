@@ -11,11 +11,24 @@
       "settings": {
         "tailwindcss": {
           "callees": ["cn", "clsx", "cva"],
-          "config": "tailwind.config.js"
+          "config": "tailwind.config.js",
+          "whitelist": ["ph", "ph-"]
         }
       },
       "plugins": ["lingui"],
       "rules": {
+        // react
+        "react/no-unescaped-entities": "off",
+        "react/jsx-sort-props": [
+          "error",
+          {
+            "reservedFirst": true,
+            "callbacksLast": true,
+            "shorthandFirst": true,
+            "noSortAlphabetically": true
+          }
+        ],
+
         // react-hooks
         "react-hooks/exhaustive-deps": "off",
 

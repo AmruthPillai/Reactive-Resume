@@ -15,7 +15,7 @@ export class RefreshStrategy extends PassportStrategy(Strategy, "refresh") {
     private readonly configService: ConfigService<Config>,
     private readonly authService: AuthService,
   ) {
-    const extractors = [(request: Request) => request?.cookies?.Refresh];
+    const extractors = [(request: Request) => request.cookies.Refresh];
 
     super({
       secretOrKey: configService.getOrThrow<string>("REFRESH_TOKEN_SECRET"),
@@ -26,7 +26,7 @@ export class RefreshStrategy extends PassportStrategy(Strategy, "refresh") {
   }
 
   async validate(request: Request, payload: Payload) {
-    const refreshToken = request.cookies?.Refresh;
+    const refreshToken = request.cookies.Refresh;
 
     return this.authService.validateRefreshToken(payload, refreshToken);
   }

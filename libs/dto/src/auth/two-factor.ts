@@ -4,8 +4,8 @@ import { z } from "nestjs-zod/z";
 export const twoFactorSchema = z.object({
   code: z
     .string()
-    .length(6)
-    .regex(/^[0-9]+$/, { message: "code must be a 6 digit number" }),
+    .length(6, { message: "Code must be a 6 digit number" })
+    .regex(/^\d+$/, { message: "Code must be a 6 digit number" }),
 });
 
 export class TwoFactorDto extends createZodDto(twoFactorSchema) {}

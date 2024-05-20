@@ -16,9 +16,10 @@ export class MailService {
 
     // If `SMTP_URL` is not set, log the email to the console
     if (!smtpUrl) {
-      return Logger.log(options, "MailService#sendEmail");
+      Logger.log(options, "MailService#sendEmail");
+      return;
     }
 
-    return await this.mailerService.sendMail(options);
+    return this.mailerService.sendMail(options);
   }
 }

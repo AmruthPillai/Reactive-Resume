@@ -2,7 +2,7 @@
 
 import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 import react from "@vitejs/plugin-react-swc";
-import { defineConfig, searchForWorkspaceRoot, splitVendorChunkPlugin } from "vite";
+import { defineConfig, searchForWorkspaceRoot } from "vite";
 
 export default defineConfig({
   base: "/artboard/",
@@ -11,15 +11,16 @@ export default defineConfig({
 
   build: {
     sourcemap: true,
+    emptyOutDir: true,
   },
 
   server: {
     host: true,
-    port: +(process.env.__DEV__ARTBOARD_PORT ?? 6173),
+    port: 6173,
     fs: { allow: [searchForWorkspaceRoot(process.cwd())] },
   },
 
-  plugins: [react(), nxViteTsPaths(), splitVendorChunkPlugin()],
+  plugins: [react(), nxViteTsPaths()],
 
   resolve: {
     alias: {

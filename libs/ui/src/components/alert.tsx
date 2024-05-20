@@ -4,9 +4,7 @@ import { forwardRef } from "react";
 
 import { alertVariants } from "../variants/alert";
 
-interface AlertProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof alertVariants> {}
+type AlertProps = React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>;
 
 export const Alert = forwardRef<HTMLDivElement, AlertProps>(
   ({ className, variant, ...props }, ref) => (
