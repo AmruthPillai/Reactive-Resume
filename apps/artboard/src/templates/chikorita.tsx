@@ -512,7 +512,7 @@ export const Chikorita = ({ columns, isFirstPage = false }: TemplateProps) => {
   const [main, sidebar] = columns;
 
   return (
-    <div className="grid h-full grid-cols-3">
+    <div className="grid min-h-[inherit] grid-cols-3">
       <div className="main p-custom group col-span-2 space-y-4">
         {isFirstPage && <Header />}
 
