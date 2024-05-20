@@ -39,7 +39,7 @@ export const ArtboardPage = () => {
       `${metadata.typography.lineHeight}`,
     );
 
-    document.documentElement.style.setProperty("--color-text", metadata.theme.text);
+    document.documentElement.style.setProperty("--color-foreground", metadata.theme.text);
     document.documentElement.style.setProperty("--color-primary", metadata.theme.primary);
     document.documentElement.style.setProperty("--color-background", metadata.theme.background);
   }, [metadata]);

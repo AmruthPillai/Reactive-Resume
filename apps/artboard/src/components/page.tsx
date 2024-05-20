@@ -20,7 +20,7 @@ export const Page = ({ mode = "preview", pageNumber, children }: Props) => {
   return (
     <div
       data-page={pageNumber}
-      className={cn("relative bg-white", mode === "builder" && "shadow-2xl")}
+      className={cn("relative bg-background text-foreground", mode === "builder" && "shadow-2xl")}
       style={{
         fontFamily,
         width: `${pageSizeMap[page.format].width * MM_TO_PX}px`,
