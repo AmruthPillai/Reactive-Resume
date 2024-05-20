@@ -1,5 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { t } from "@lingui/macro";
+import { i18n } from "@lingui/core";
+import { msg, t } from "@lingui/macro";
 import { QrCode } from "@phosphor-icons/react";
 import {
   Alert,
@@ -46,8 +47,9 @@ import { useDialog } from "@/client/stores/dialog";
 
 const formSchema = z.object({
   uri: z.literal("").or(z.string().optional()),
-  // eslint-disable-next-line lingui/t-call-in-function
-  code: z.literal("").or(z.string().regex(/^\d{6}$/, t`Code must be exactly 6 digits long.`)),
+  code: z
+    .literal("")
+    .or(z.string().regex(/^\d{6}$/, i18n._(msg`Code must be exactly 6 digits long.`))),
   backupCodes: z.array(z.string()),
 });
 
