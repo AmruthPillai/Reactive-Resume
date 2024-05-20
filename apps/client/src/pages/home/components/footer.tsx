@@ -1,5 +1,6 @@
 import { t } from "@lingui/macro";
 import { Separator } from "@reactive-resume/ui";
+import { Link } from "react-router-dom";
 
 import { Copyright } from "@/client/components/copyright";
 import { LocaleSwitch } from "@/client/components/locale-switch";
@@ -24,8 +25,11 @@ export const Footer = () => (
       </div>
 
       <div className="relative col-start-4 flex flex-col items-end justify-end">
-        <div className="mb-14">
-          <a href="https://www.digitalocean.com/?utm_medium=opensource&utm_source=Reactive-Resume">
+        <div className="mb-14 space-y-6 text-right">
+          <a
+            className="block"
+            href="https://www.digitalocean.com/?utm_medium=opensource&utm_source=Reactive-Resume"
+          >
             <img
               src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/PoweredByDO/DO_Powered_by_Badge_black.svg"
               alt="Powered by DigitalOcean"
@@ -39,6 +43,11 @@ export const Footer = () => (
               width="150px"
             />
           </a>
+
+          <Link
+            to="/meta/privacy-policy"
+            className="block text-sm font-medium"
+          >{t`Privacy Policy`}</Link>
         </div>
 
         <div className="absolute bottom-0 right-0 lg:space-x-2">

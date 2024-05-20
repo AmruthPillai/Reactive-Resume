@@ -26,13 +26,13 @@ export const ThemeSection = () => {
           {colors.map((color) => (
             <div
               key={color}
-              onClick={() => {
-                setValue("metadata.theme.primary", color);
-              }}
               className={cn(
                 "flex size-6 cursor-pointer items-center justify-center rounded-full ring-primary ring-offset-1 ring-offset-background transition-shadow hover:ring-1",
                 theme.primary === color && "ring-1",
               )}
+              onClick={() => {
+                setValue("metadata.theme.primary", color);
+              }}
             >
               <div className="size-5 rounded-full" style={{ backgroundColor: color }} />
             </div>
@@ -79,7 +79,7 @@ export const ThemeSection = () => {
                   style={{ backgroundColor: theme.background }}
                 />
               </PopoverTrigger>
-              <PopoverContent asChild className="rounded-lg border-none bg-transparent p-0">
+              <PopoverContent className="rounded-lg border-none bg-transparent p-0">
                 <HexColorPicker
                   color={theme.background}
                   onChange={(color) => {
@@ -109,7 +109,7 @@ export const ThemeSection = () => {
                   style={{ backgroundColor: theme.text }}
                 />
               </PopoverTrigger>
-              <PopoverContent asChild className="rounded-lg border-none bg-transparent p-0">
+              <PopoverContent className="rounded-lg border-none bg-transparent p-0">
                 <HexColorPicker
                   color={theme.text}
                   onChange={(color) => {

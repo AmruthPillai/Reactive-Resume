@@ -16,17 +16,19 @@ type Dialog<T = unknown> = {
   payload?: DialogPayload<T>;
 };
 
-interface DialogState {
+type DialogState = {
   dialog: Dialog | null;
-}
+};
 
-interface DialogActions {
+type DialogActions = {
   setDialog: <T>(dialog: Dialog<T> | null) => void;
-}
+};
 
 export const useDialogStore = create<DialogState & DialogActions>()((set) => ({
   dialog: null,
-  setDialog: (dialog) => set({ dialog }),
+  setDialog: (dialog) => {
+    set({ dialog });
+  },
 }));
 
 export const useDialog = <T = unknown>(name: DialogName) => {
@@ -39,8 +41,11 @@ export const useDialog = <T = unknown>(name: DialogName) => {
     isOpen: !!dialog,
     mode: dialog?.mode,
     payload: dialog?.payload as DialogPayload<T>,
-    open: (mode: DialogMode, payload?: DialogPayload<T>) =>
-      useDialogStore.setState({ dialog: { name, mode, payload } }),
-    close: () => useDialogStore.setState({ dialog: null }),
+    open: (mode: DialogMode, payload?: DialogPayload<T>) => {
+      useDialogStore.setState({ dialog: { name, mode, payload } });
+    },
+    close: () => {
+      useDialogStore.setState({ dialog: null });
+    },
   };
 };

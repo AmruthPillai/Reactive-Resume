@@ -8,6 +8,9 @@
       "extends": ["plugin:prettier/recommended"],
       "plugins": ["simple-import-sort", "unused-imports"],
       "rules": {
+        // eslint
+        "no-return-await": "off",
+
         // simple-import-sort
         "simple-import-sort/imports": "error",
         "simple-import-sort/exports": "error",
@@ -43,10 +46,38 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nx/typescript"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": "latest",
+        "project": ["tsconfig.*?.json"]
+      },
+      "extends": [
+        "plugin:@nx/typescript",
+        "plugin:@typescript-eslint/strict-type-checked",
+        "plugin:@typescript-eslint/stylistic-type-checked",
+        "plugin:unicorn/recommended"
+      ],
+      "plugins": ["@typescript-eslint", "unicorn"],
       "rules": {
         // typescript-eslint
-        "@typescript-eslint/no-unused-vars": "off"
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/return-await": "off",
+        "@typescript-eslint/no-unsafe-return": "off",
+        "@typescript-eslint/no-unsafe-argument": "off",
+        "@typescript-eslint/no-misused-promises": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/restrict-template-expressions": "off",
+        "@typescript-eslint/no-redundant-type-constituents": "off",
+        "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+
+        // unicorn
+        "unicorn/no-null": "off",
+        "unicorn/prevent-abbreviations": "off",
+        "unicorn/prefer-string-replace-all": "off",
+        "unicorn/prefer-structured-clone": "off"
       }
     },
     {

@@ -15,7 +15,7 @@ export class TwoFactorStrategy extends PassportStrategy(Strategy, "two-factor") 
     private readonly configService: ConfigService<Config>,
     private readonly userService: UserService,
   ) {
-    const extractors = [(request: Request) => request?.cookies?.Authentication];
+    const extractors = [(request: Request) => request.cookies.Authentication];
 
     super({
       secretOrKey: configService.get<string>("ACCESS_TOKEN_SECRET"),

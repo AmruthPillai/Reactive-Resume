@@ -93,9 +93,9 @@ const Summary = () => {
         <div className="absolute left-[-4.5px] top-[8px] hidden size-[8px] rounded-full bg-primary group-[.main]:block" />
 
         <div
+          dangerouslySetInnerHTML={{ __html: section.content }}
           className="wysiwyg"
           style={{ columns: section.columns }}
-          dangerouslySetInnerHTML={{ __html: section.content }}
         />
       </main>
     </section>
@@ -133,7 +133,7 @@ const Link = ({ url, icon, label, className }: LinkProps) => {
         rel="noreferrer noopener nofollow"
         className={cn("inline-block", className)}
       >
-        {label || url.label || url.href}
+        {label ?? (url.label || url.href)}
       </a>
     </div>
   );
@@ -158,7 +158,7 @@ const Section = <T,>({
   summaryKey,
   keywordsKey,
 }: SectionProps<T>) => {
-  if (!section.visible || !section.items.length) return null;
+  if (!section.visible || section.items.length === 0) return null;
 
   return (
     <section id={section.id} className="grid">
@@ -196,7 +196,7 @@ const Section = <T,>({
                 <div>{children?.(item as T)}</div>
 
                 {summary !== undefined && !isEmptyString(summary) && (
-                  <div className="wysiwyg" dangerouslySetInnerHTML={{ __html: summary }} />
+                  <div dangerouslySetInnerHTML={{ __html: summary }} className="wysiwyg" />
                 )}
 
                 {level !== undefined && level > 0 && <Rating level={level} />}
@@ -449,36 +449,50 @@ const Custom = ({ id }: { id: string }) => {
 
 const mapSectionToComponent = (section: SectionKey) => {
   switch (section) {
-    case "profiles":
+    case "profiles": {
       return <Profiles />;
-    case "summary":
+    }
+    case "summary": {
       return <Summary />;
-    case "experience":
+    }
+    case "experience": {
       return <Experience />;
-    case "education":
+    }
+    case "education": {
       return <Education />;
-    case "awards":
+    }
+    case "awards": {
       return <Awards />;
-    case "certifications":
+    }
+    case "certifications": {
       return <Certifications />;
-    case "skills":
+    }
+    case "skills": {
       return <Skills />;
-    case "interests":
+    }
+    case "interests": {
       return <Interests />;
-    case "publications":
+    }
+    case "publications": {
       return <Publications />;
-    case "volunteer":
+    }
+    case "volunteer": {
       return <Volunteer />;
-    case "languages":
+    }
+    case "languages": {
       return <Languages />;
-    case "projects":
+    }
+    case "projects": {
       return <Projects />;
-    case "references":
+    }
+    case "references": {
       return <References />;
-    default:
+    }
+    default: {
       if (section.startsWith("custom.")) return <Custom id={section.split(".")[1]} />;
 
       return null;
+    }
   }
 };
 

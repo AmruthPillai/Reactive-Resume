@@ -20,7 +20,10 @@ export const Providers = () => {
     };
 
     const resumeData = window.localStorage.getItem("resume");
-    if (resumeData) return setResume(JSON.parse(resumeData));
+    if (resumeData) {
+      setResume(JSON.parse(resumeData));
+      return;
+    }
 
     window.addEventListener("message", handleMessage);
 
@@ -34,6 +37,7 @@ export const Providers = () => {
   //   setResume(sampleResume);
   // }, [setResume]);
 
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (!resume) return null;
 
   return <Outlet />;

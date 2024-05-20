@@ -68,13 +68,15 @@ export const PictureSection = () => {
       <div className="flex w-full flex-col gap-y-1.5">
         <Label htmlFor="basics.picture.url">{t`Picture`}</Label>
         <div className="flex items-center gap-x-2">
-          <input hidden type="file" ref={inputRef} onChange={onSelectImage} />
+          <input ref={inputRef} hidden type="file" onChange={onSelectImage} />
 
           <Input
             id="basics.picture.url"
             placeholder="https://..."
             value={picture.url}
-            onChange={(event) => setValue("basics.picture.url", event.target.value)}
+            onChange={(event) => {
+              setValue("basics.picture.url", event.target.value);
+            }}
           />
 
           {isValidUrl && (

@@ -69,7 +69,9 @@ export const LanguagesDialog = () => {
                     min={0}
                     max={5}
                     value={[field.value]}
-                    onValueChange={(value) => field.onChange(value[0])}
+                    onValueChange={(value) => {
+                      field.onChange(value[0]);
+                    }}
                   />
 
                   {field.value === 0 ? (

@@ -39,26 +39,19 @@ export const ArtboardPage = () => {
       `${metadata.typography.lineHeight}`,
     );
 
-    document.documentElement.style.setProperty("--color-text", `${metadata.theme.text}`);
-    document.documentElement.style.setProperty("--color-primary", `${metadata.theme.primary}`);
-    document.documentElement.style.setProperty(
-      "--color-background",
-      `${metadata.theme.background}`,
-    );
+    document.documentElement.style.setProperty("--color-foreground", metadata.theme.text);
+    document.documentElement.style.setProperty("--color-primary", metadata.theme.primary);
+    document.documentElement.style.setProperty("--color-background", metadata.theme.background);
   }, [metadata]);
 
   // Typography Options
   useEffect(() => {
-    if (metadata.typography.hideIcons) {
-      document.querySelector("#root")!.classList.add("hide-icons");
-    } else {
-      document.querySelector("#root")!.classList.remove("hide-icons");
-    }
+    // eslint-disable-next-line unicorn/prefer-spread
+    const elements = Array.from(document.querySelectorAll(`[data-page]`));
 
-    if (metadata.typography.underlineLinks) {
-      document.querySelector("#root")!.classList.add("underline-links");
-    } else {
-      document.querySelector("#root")!.classList.remove("underline-links");
+    for (const el of elements) {
+      el.classList.toggle("hide-icons", metadata.typography.hideIcons);
+      el.classList.toggle("underline-links", metadata.typography.underlineLinks);
     }
   }, [metadata]);
 

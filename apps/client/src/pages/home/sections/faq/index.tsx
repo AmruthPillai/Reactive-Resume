@@ -58,11 +58,8 @@ const Question2 = () => (
     </AccordionTrigger>
     <AccordionContent className="prose max-w-none dark:prose-invert">
       <p>
-        It's not much honestly.{" "}
-        <a href="https://pillai.xyz/digitalocean" rel="noreferrer" target="_blank">
-          DigitalOcean
-        </a>{" "}
-        has graciously sponsored their infrastructure to allow me to host Reactive Resume on their
+        It's not much honestly. <a href="https://pillai.xyz/digitalocean">DigitalOcean</a> has
+        graciously sponsored their infrastructure to allow me to host Reactive Resume on their
         platform. There's only the fee I pay to dependent services to send emails, renew the domain,
         etc.
       </p>
@@ -76,16 +73,14 @@ const Question2 = () => (
       <p>
         But if you do feel like supporting the developer and the future development of Reactive
         Resume, please donate (<em>only if you have some extra money lying around</em>) on my{" "}
-        <a href="https://github.com/sponsors/AmruthPillai/" rel="noreferrer" target="_blank">
-          GitHub Sponsors page
-        </a>
-        . You can choose to donate one-time or sponsor a recurring donation.
+        <a href="https://github.com/sponsors/AmruthPillai/">GitHub Sponsors page</a>. You can choose
+        to donate one-time or sponsor a recurring donation.
       </p>
 
       <p>
         Alternatively, if you are in the US, or you are a part of a large educational institution or
         corporate organization, you can{" "}
-        <a href="https://opencollective.com/reactive-resume" rel="noreferrer" target="_blank">
+        <a href="https://opencollective.com/reactive-resume">
           support the project through Open Collective
         </a>
         . We are fiscally hosted through Open Collective Europe, which means your donations and
@@ -155,10 +150,10 @@ const Question4 = () => {
           {languages.map((language) => (
             <a
               key={language.id}
-              target="_blank"
-              rel="noreferrer"
               className="no-underline"
               href={`https://crowdin.com/translate/reactive-resume/all/en-${language.editorCode}`}
+              target="_blank"
+              rel="noreferrer"
             >
               <div className="relative bg-secondary-accent font-medium transition-colors hover:bg-primary hover:text-background">
                 <span className="px-2 py-1">{language.name}</span>
@@ -217,19 +212,6 @@ const Question5 = () => (
         <strong>The key is stored in your browser's local storage</strong>, which means that if you
         uninstall your browser, or even clear your data, the key is gone with it. All requests made
         to OpenAI are also sent directly to their service and does not hit the app servers at all.
-      </p>
-
-      <p>
-        The policy behind "bring your own key" (BYOK) is{" "}
-        <a
-          href="https://community.openai.com/t/openais-bring-your-own-key-policy/14538/46"
-          target="_blank"
-          rel="noreferrer"
-        >
-          still being discussed
-        </a>{" "}
-        and probably might change over a period of time, but while it's available, I would keep the
-        feature on the app.
       </p>
 
       <p>

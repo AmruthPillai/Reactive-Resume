@@ -33,7 +33,7 @@ export const VerifyEmailPage = () => {
 
     if (!token) return;
 
-    handleVerifyEmail(token);
+    void handleVerifyEmail(token);
   }, [token, navigate, verifyEmail]);
 
   return (

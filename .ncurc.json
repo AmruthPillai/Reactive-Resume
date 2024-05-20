@@ -1,0 +1,7 @@
+{
+  "$schema": "https://raw.githubusercontent.com/raineorshine/npm-check-updates/main/src/types/RunOptions.json",
+  "upgrade": true,
+  "install": "always",
+  "packageManager": "pnpm",
+  "reject": ["eslint", "vite-plugin-chunk-split", "@reactive-resume/*"]
+}

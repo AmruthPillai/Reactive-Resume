@@ -4,10 +4,6 @@ import { Strategy } from "passport";
 
 @Injectable()
 export class DummyStrategy extends PassportStrategy(Strategy, "dummy") {
-  constructor() {
-    super();
-  }
-
   authenticate() {
     this.fail();
   }

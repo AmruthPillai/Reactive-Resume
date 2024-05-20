@@ -30,7 +30,7 @@ export const LoginPage = () => {
   const { login, loading } = useLogin();
 
   const { providers } = useAuthProviders();
-  const emailAuthDisabled = !providers || !providers.includes("email");
+  const emailAuthDisabled = !providers?.includes("email");
 
   const formRef = useRef<HTMLFormElement>(null);
   usePasswordToggle(formRef);
@@ -43,7 +43,7 @@ export const LoginPage = () => {
   const onSubmit = async (data: FormValues) => {
     try {
       await login(data);
-    } catch (error) {
+    } catch {
       form.reset();
     }
   };

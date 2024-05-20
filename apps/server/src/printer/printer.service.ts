@@ -1,99 +1,94 @@
 import { HttpService } from "@nestjs/axios";
-import { InternalServerErrorException, Logger } from "@nestjs/common";
-import { Injectable } from "@nestjs/common";
+import { Injectable, InternalServerErrorException, Logger } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import fontkit from "@pdf-lib/fontkit";
 import { ResumeDto } from "@reactive-resume/dto";
-import { getFontUrls } from "@reactive-resume/utils";
-import { ErrorMessage } from "@reactive-resume/utils";
+import { ErrorMessage, getFontUrls } from "@reactive-resume/utils";
 import retry from "async-retry";
 import { PDFDocument } from "pdf-lib";
 import { connect } from "puppeteer";
 
 import { Config } from "../config/schema";
 import { StorageService } from "../storage/storage.service";
-import { UtilsService } from "../utils/utils.service";
 
 @Injectable()
 export class PrinterService {
   private readonly logger = new Logger(PrinterService.name);
 
-  private browserURL: string;
+  private readonly browserURL: string;
+
+  private readonly ignoreHTTPSErrors: boolean;
 
   constructor(
     private readonly configService: ConfigService<Config>,
     private readonly storageService: StorageService,
     private readonly httpService: HttpService,
-    private readonly utils: UtilsService,
   ) {
     const chromeUrl = this.configService.getOrThrow<string>("CHROME_URL");
     const chromeToken = this.configService.getOrThrow<string>("CHROME_TOKEN");
 
     this.browserURL = `${chromeUrl}?token=${chromeToken}`;
+    this.ignoreHTTPSErrors = this.configService.getOrThrow<boolean>("CHROME_IGNORE_HTTPS_ERRORS");
   }
 
   private async getBrowser() {
     try {
-      return await connect({ browserWSEndpoint: this.browserURL });
+      return await connect({
+        browserWSEndpoint: this.browserURL,
+        ignoreHTTPSErrors: this.ignoreHTTPSErrors,
+      });
     } catch (error) {
-      throw new InternalServerErrorException(ErrorMessage.InvalidBrowserConnection, error.message);
+      throw new InternalServerErrorException(
+        ErrorMessage.InvalidBrowserConnection,
+        (error as Error).message,
+      );
     }
   }
 
   async getVersion() {
     const browser = await this.getBrowser();
     const version = await browser.version();
-    browser.disconnect();
+    await browser.disconnect();
     return version;
   }
 
   async printResume(resume: ResumeDto) {
-    return this.utils.getCachedOrSet(
-      `user:${resume.userId}:storage:resumes:${resume.id}`,
-      async () => {
-        const start = performance.now();
+    const start = performance.now();
 
-        const url = await retry(() => this.generateResume(resume), {
-          retries: 3,
-          randomize: true,
-          onRetry: (_, attempt) => {
-            this.logger.log(`Retrying to print resume #${resume.id}, attempt #${attempt}`);
-          },
-        });
-
-        const duration = Number(performance.now() - start).toFixed(0);
-        const numPages = resume.data.metadata.layout.length;
-
-        this.logger.debug(`Chrome took ${duration}ms to print ${numPages} page(s)`);
-
-        return url;
+    const url = await retry<string | undefined>(() => this.generateResume(resume), {
+      retries: 3,
+      randomize: true,
+      onRetry: (_, attempt) => {
+        this.logger.log(`Retrying to print resume #${resume.id}, attempt #${attempt}`);
       },
-    );
+    });
+
+    const duration = Number(performance.now() - start).toFixed(0);
+    const numberPages = resume.data.metadata.layout.length;
+
+    this.logger.debug(`Chrome took ${duration}ms to print ${numberPages} page(s)`);
+
+    return url;
   }
 
   async printPreview(resume: ResumeDto) {
-    return this.utils.getCachedOrSet(
-      `user:${resume.userId}:storage:previews:${resume.id}`,
-      async () => {
-        const start = performance.now();
+    const start = performance.now();
 
-        const url = await retry(() => this.generatePreview(resume), {
-          retries: 3,
-          randomize: true,
-          onRetry: (_, attempt) => {
-            this.logger.log(
-              `Retrying to generate preview of resume #${resume.id}, attempt #${attempt}`,
-            );
-          },
-        });
-
-        const duration = Number(performance.now() - start).toFixed(0);
-
-        this.logger.debug(`Chrome took ${duration}ms to generate preview`);
-
-        return url;
+    const url = await retry(() => this.generatePreview(resume), {
+      retries: 3,
+      randomize: true,
+      onRetry: (_, attempt) => {
+        this.logger.log(
+          `Retrying to generate preview of resume #${resume.id}, attempt #${attempt}`,
+        );
       },
-    );
+    });
+
+    const duration = Number(performance.now() - start).toFixed(0);
+
+    this.logger.debug(`Chrome took ${duration}ms to generate preview`);
+
+    return url;
   }
 
   async generateResume(resume: ResumeDto) {
@@ -101,9 +96,10 @@ export class PrinterService {
       const browser = await this.getBrowser();
       const page = await browser.newPage();
 
-      let url = this.utils.getUrl();
       const publicUrl = this.configService.getOrThrow<string>("PUBLIC_URL");
       const storageUrl = this.configService.getOrThrow<string>("STORAGE_URL");
+
+      let url = publicUrl;
 
       if ([publicUrl, storageUrl].some((url) => url.includes("localhost"))) {
         // Switch client URL from `localhost` to `host.docker.internal` in development
@@ -117,15 +113,15 @@ export class PrinterService {
           if (request.url().startsWith(storageUrl)) {
             const modifiedUrl = request.url().replace("localhost", `host.docker.internal`);
 
-            request.continue({ url: modifiedUrl });
+            void request.continue({ url: modifiedUrl });
           } else {
-            request.continue();
+            void request.continue();
           }
         });
       }
 
       // Set the data of the resume to be printed in the browser's session storage
-      const numPages = resume.data.metadata.layout.length;
+      const numberPages = resume.data.metadata.layout.length;
 
       await page.evaluateOnNewDocument((data) => {
         window.localStorage.setItem("resume", JSON.stringify(data));
@@ -137,25 +133,27 @@ export class PrinterService {
 
       const processPage = async (index: number) => {
         const pageElement = await page.$(`[data-page="${index}"]`);
+        // eslint-disable-next-line unicorn/no-await-expression-member
         const width = (await (await pageElement?.getProperty("scrollWidth"))?.jsonValue()) ?? 0;
+        // eslint-disable-next-line unicorn/no-await-expression-member
         const height = (await (await pageElement?.getProperty("scrollHeight"))?.jsonValue()) ?? 0;
 
-        const tempHtml = await page.evaluate((element: HTMLDivElement) => {
+        const temporaryHtml = await page.evaluate((element: HTMLDivElement) => {
           const clonedElement = element.cloneNode(true) as HTMLDivElement;
-          const tempHtml = document.body.innerHTML;
-          document.body.innerHTML = `${clonedElement.outerHTML}`;
-          return tempHtml;
+          const temporaryHtml_ = document.body.innerHTML;
+          document.body.innerHTML = clonedElement.outerHTML;
+          return temporaryHtml_;
         }, pageElement);
 
         pagesBuffer.push(await page.pdf({ width, height, printBackground: true }));
 
-        await page.evaluate((tempHtml: string) => {
-          document.body.innerHTML = tempHtml;
-        }, tempHtml);
+        await page.evaluate((temporaryHtml_: string) => {
+          document.body.innerHTML = temporaryHtml_;
+        }, temporaryHtml);
       };
 
       // Loop through all the pages and print them, by first displaying them, printing the PDF and then hiding them back
-      for (let index = 1; index <= numPages; index++) {
+      for (let index = 1; index <= numberPages; index++) {
         await processPage(index);
       }
 
@@ -180,8 +178,8 @@ export class PrinterService {
       // Embed all the fonts in the PDF
       await Promise.all(fontsBuffer.map((buffer) => pdf.embedFont(buffer)));
 
-      for (let index = 0; index < pagesBuffer.length; index++) {
-        const page = await PDFDocument.load(pagesBuffer[index]);
+      for (const element of pagesBuffer) {
+        const page = await PDFDocument.load(element);
         const [copiedPage] = await pdf.copyPages(page, [0]);
         pdf.addPage(copiedPage);
       }
@@ -195,12 +193,12 @@ export class PrinterService {
         resume.userId,
         "resumes",
         buffer,
-        resume.id,
+        resume.title,
       );
 
       // Close all the pages and disconnect from the browser
       await page.close();
-      browser.disconnect();
+      await browser.disconnect();
 
       return resumeUrl;
     } catch (error) {
@@ -212,9 +210,10 @@ export class PrinterService {
     const browser = await this.getBrowser();
     const page = await browser.newPage();
 
-    let url = this.utils.getUrl();
     const publicUrl = this.configService.getOrThrow<string>("PUBLIC_URL");
     const storageUrl = this.configService.getOrThrow<string>("STORAGE_URL");
+
+    let url = publicUrl;
 
     if ([publicUrl, storageUrl].some((url) => url.includes("localhost"))) {
       // Switch client URL from `localhost` to `host.docker.internal` in development
@@ -228,9 +227,9 @@ export class PrinterService {
         if (request.url().startsWith(storageUrl)) {
           const modifiedUrl = request.url().replace("localhost", `host.docker.internal`);
 
-          request.continue({ url: modifiedUrl });
+          void request.continue({ url: modifiedUrl });
         } else {
-          request.continue();
+          void request.continue();
         }
       });
     }
@@ -258,7 +257,7 @@ export class PrinterService {
 
     // Close all the pages and disconnect from the browser
     await page.close();
-    browser.disconnect();
+    await browser.disconnect();
 
     return previewUrl;
   }

@@ -14,7 +14,7 @@ export class LocalStrategy extends PassportStrategy(Strategy, "local") {
   async validate(identifier: string, password: string) {
     try {
       return await this.authService.authenticate({ identifier, password });
-    } catch (error) {
+    } catch {
       throw new BadRequestException(ErrorMessage.InvalidCredentials);
     }
   }

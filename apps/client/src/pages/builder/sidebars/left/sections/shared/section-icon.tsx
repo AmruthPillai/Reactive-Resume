@@ -24,37 +24,52 @@ import { useResumeStore } from "@/client/stores/resume";
 export const getSectionIcon = (id: SectionKey, props: IconProps = {}) => {
   switch (id) {
     // Left Sidebar
-    case "basics":
+    case "basics": {
       return <User size={18} {...props} />;
-    case "summary":
+    }
+    case "summary": {
       return <Article size={18} {...props} />;
-    case "awards":
+    }
+    case "awards": {
       return <Medal size={18} {...props} />;
-    case "profiles":
+    }
+    case "profiles": {
       return <ShareNetwork size={18} {...props} />;
-    case "experience":
+    }
+    case "experience": {
       return <Briefcase size={18} {...props} />;
-    case "education":
+    }
+    case "education": {
       return <GraduationCap size={18} {...props} />;
-    case "certifications":
+    }
+    case "certifications": {
       return <Certificate size={18} {...props} />;
-    case "interests":
+    }
+    case "interests": {
       return <GameController size={18} {...props} />;
-    case "languages":
+    }
+    case "languages": {
       return <Translate size={18} {...props} />;
-    case "volunteer":
+    }
+    case "volunteer": {
       return <HandHeart size={18} {...props} />;
-    case "projects":
+    }
+    case "projects": {
       return <PuzzlePiece size={18} {...props} />;
-    case "publications":
+    }
+    case "publications": {
       return <Books size={18} {...props} />;
-    case "skills":
+    }
+    case "skills": {
       return <CompassTool size={18} {...props} />;
-    case "references":
+    }
+    case "references": {
       return <Users size={18} {...props} />;
+    }
 
-    default:
+    default: {
       return null;
+    }
   }
 };
 

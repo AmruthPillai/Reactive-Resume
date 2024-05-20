@@ -8,14 +8,14 @@ export const usernameSchema = z
   .string()
   .min(3)
   .max(255)
-  .regex(/^[a-z0-9._-]+$/, {
+  .regex(/^[\d._a-z-]+$/, {
     message:
       "Usernames can only contain lowercase letters, numbers, periods, hyphens, and underscores.",
   });
 
 export const userSchema = z.object({
   id: idSchema,
-  name: z.string().min(3).max(255),
+  name: z.string().min(1).max(255),
   picture: z.literal("").or(z.null()).or(z.string().url()),
   username: usernameSchema,
   email: z.string().email(),
