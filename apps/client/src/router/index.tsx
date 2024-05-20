@@ -1,4 +1,3 @@
-import * as Sentry from "@sentry/react";
 import { createBrowserRouter, createRoutesFromElements, Navigate, Route } from "react-router-dom";
 
 import { BackupOtpPage } from "../pages/auth/backup-otp/page";
@@ -93,6 +92,4 @@ export const routes = createRoutesFromElements(
   </Route>,
 );
 
-const sentryCreateBrowserRouter = Sentry.wrapCreateBrowserRouter(createBrowserRouter);
-
-export const router = sentryCreateBrowserRouter(routes);
+export const router = createBrowserRouter(routes);

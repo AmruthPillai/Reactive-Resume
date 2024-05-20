@@ -127,7 +127,7 @@ const Link = ({ url, icon, iconOnRight, label, className }: LinkProps) => {
 
   return (
     <div className="flex items-center gap-x-1.5">
-      {!iconOnRight && ( icon ?? <i className="ph ph-bold ph-link text-primary" />)}
+      {!iconOnRight && (icon ?? <i className="ph ph-bold ph-link text-primary" />)}
       <a
         href={url.href}
         target="_blank"
@@ -136,7 +136,7 @@ const Link = ({ url, icon, iconOnRight, label, className }: LinkProps) => {
       >
         {label ?? (url.label || url.href)}
       </a>
-      {iconOnRight && ( icon ?? <i className="ph ph-bold ph-link text-primary" />)}
+      {iconOnRight && (icon ?? <i className="ph ph-bold ph-link text-primary" />)}
     </div>
   );
 };
@@ -148,26 +148,18 @@ type LinkedEntityProps = {
   className?: string;
 };
 
-const LinkedEntity = ({ name, url, separateLinks, className}: LinkedEntityProps) => {
-  if (!separateLinks && isUrl(url.href)) {
-    return (
-      <Link
-        url={url}
-        label={name}
-        icon={
-          <i className="ph ph-bold ph-globe text-primary" />
-        }
-        iconOnRight={true}
-        className={className}
-      />
-    );
-  } else {
-    return (
-      <div className={className}>
-        {name}
-      </div>
-    );
-  }
+const LinkedEntity = ({ name, url, separateLinks, className }: LinkedEntityProps) => {
+  return !separateLinks && isUrl(url.href) ? (
+    <Link
+      url={url}
+      label={name}
+      icon={<i className="ph ph-bold ph-globe text-primary" />}
+      iconOnRight={true}
+      className={className}
+    />
+  ) : (
+    <div className={className}>{name}</div>
+  );
 };
 
 type SectionProps<T> = {
@@ -286,7 +278,12 @@ const Experience = () => {
     <Section<Experience> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
         <div>
-          <LinkedEntity name={item.company} url={item.url} separateLinks={section.separateLinks} className="font-bold"/>
+          <LinkedEntity
+            name={item.company}
+            url={item.url}
+            separateLinks={section.separateLinks}
+            className="font-bold"
+          />
           <div>{item.position}</div>
           <div>{item.location}</div>
           <div className="font-bold">{item.date}</div>
@@ -303,7 +300,12 @@ const Education = () => {
     <Section<Education> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
         <div>
-          <LinkedEntity name={item.institution} url={item.url} separateLinks={section.separateLinks} className="font-bold"/>
+          <LinkedEntity
+            name={item.institution}
+            url={item.url}
+            separateLinks={section.separateLinks}
+            className="font-bold"
+          />
           <div>{item.area}</div>
           <div>{item.score}</div>
           <div>{item.studyType}</div>
@@ -322,7 +324,7 @@ const Awards = () => {
       {(item) => (
         <div>
           <div className="font-bold">{item.title}</div>
-          <LinkedEntity name={item.awarder} url={item.url} separateLinks={section.separateLinks}/>
+          <LinkedEntity name={item.awarder} url={item.url} separateLinks={section.separateLinks} />
           <div className="font-bold">{item.date}</div>
         </div>
       )}
@@ -334,11 +336,11 @@ const Certifications = () => {
   const section = useArtboardStore((state) => state.resume.sections.certifications);
 
   return (
-    <Section<Certification> section={section} urlKey="url"  summaryKey="summary">
+    <Section<Certification> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
         <div>
           <div className="font-bold">{item.name}</div>
-          <LinkedEntity name={item.issuer} url={item.url} separateLinks={section.separateLinks}/>
+          <LinkedEntity name={item.issuer} url={item.url} separateLinks={section.separateLinks} />
           <div className="font-bold">{item.date}</div>
         </div>
       )}
@@ -378,7 +380,12 @@ const Publications = () => {
     <Section<Publication> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
         <div>
-          <LinkedEntity name={item.name} url={item.url} separateLinks={section.separateLinks} className="font-bold"/>
+          <LinkedEntity
+            name={item.name}
+            url={item.url}
+            separateLinks={section.separateLinks}
+            className="font-bold"
+          />
           <div>{item.publisher}</div>
           <div className="font-bold">{item.date}</div>
         </div>
@@ -394,7 +401,12 @@ const Volunteer = () => {
     <Section<Volunteer> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
         <div>
-          <LinkedEntity name={item.organization} url={item.url} separateLinks={section.separateLinks} className="font-bold"/>
+          <LinkedEntity
+            name={item.organization}
+            url={item.url}
+            separateLinks={section.separateLinks}
+            className="font-bold"
+          />
           <div>{item.position}</div>
           <div>{item.location}</div>
           <div className="font-bold">{item.date}</div>
@@ -427,7 +439,12 @@ const Projects = () => {
       {(item) => (
         <div>
           <div>
-            <LinkedEntity name={item.name} url={item.url} separateLinks={section.separateLinks} className="font-bold"/>
+            <LinkedEntity
+              name={item.name}
+              url={item.url}
+              separateLinks={section.separateLinks}
+              className="font-bold"
+            />
             <div>{item.description}</div>
 
             <div className="font-bold">{item.date}</div>
@@ -445,7 +462,12 @@ const References = () => {
     <Section<Reference> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
         <div>
-          <LinkedEntity name={item.name} url={item.url} separateLinks={section.separateLinks} className="font-bold"/>
+          <LinkedEntity
+            name={item.name}
+            url={item.url}
+            separateLinks={section.separateLinks}
+            className="font-bold"
+          />
           <div>{item.description}</div>
         </div>
       )}
@@ -466,7 +488,12 @@ const Custom = ({ id }: { id: string }) => {
       {(item) => (
         <div>
           <div>
-            <LinkedEntity name={item.name} url={item.url} separateLinks={section.separateLinks} className="font-bold"/>
+            <LinkedEntity
+              name={item.name}
+              url={item.url}
+              separateLinks={section.separateLinks}
+              className="font-bold"
+            />
             <div>{item.description}</div>
 
             <div className="font-bold">{item.date}</div>

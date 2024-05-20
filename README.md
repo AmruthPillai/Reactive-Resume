@@ -72,7 +72,6 @@ Start creating your standout resume with Reactive Resume today!
 - Minio (for object storage: to store avatars, resume PDFs and previews)
 - Browserless (for headless chrome, to print PDFs and generate previews)
 - SMTP Server (to send password recovery emails)
-- Sentry (for error tracing and performance monitoring)
 - GitHub/Google OAuth (for quickly authenticating users)
 - LinguiJS and Crowdin (for translation management and localization)
 
