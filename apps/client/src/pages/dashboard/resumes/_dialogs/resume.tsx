@@ -127,11 +127,10 @@ export const ResumeDialog = () => {
 
   const onCreateSample = async () => {
     const randomName = generateRandomName();
-    const { title, slug } = form.getValues();
 
     await duplicateResume({
-      title: title || randomName,
-      slug: slug ?? kebabCase(randomName),
+      title: randomName,
+      slug: kebabCase(randomName),
       data: sampleResume,
     });
 
