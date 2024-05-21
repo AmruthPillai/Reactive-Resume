@@ -1,4 +1,5 @@
 import * as Sentry from "@sentry/react";
+import { ClickToComponent } from "click-to-react-component";
 import { StrictMode, useEffect } from "react";
 import * as ReactDOM from "react-dom/client";
 import {
@@ -35,6 +36,7 @@ const root = ReactDOM.createRoot(document.querySelector("#root")!);
 
 root.render(
   <StrictMode>
+    {process.env.NODE_ENV === "development" ? <ClickToComponent /> : null}
     <RouterProvider router={router} />
   </StrictMode>,
 );
