@@ -52,6 +52,7 @@ export const PictureOptions = () => {
   }, [picture.aspectRatio]);
 
   const onAspectRatioChange = (value: AspectRatio) => {
+    if (!value) return 
     setValue("basics.picture.aspectRatio", stringToRatioMap[value]);
   };
 
@@ -117,6 +118,8 @@ export const PictureOptions = () => {
             id="picture.aspectRatio"
             value={picture.aspectRatio}
             onChange={(event) => {
+              if (!event.target.valueAsNumber) return 
+              if (isNaN(event.target.valueAsNumber)) return 
               setValue("basics.picture.aspectRatio", event.target.valueAsNumber);
             }}
           />
