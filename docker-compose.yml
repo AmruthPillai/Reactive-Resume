@@ -1,0 +1,39 @@
+version: "3.8"
+services:
+  server:
+    image: amruthpillai/reactive-resume:server-latest
+    restart: always
+    ports:
+      - "3100:3100"
+    environment:
+      - PUBLIC_URL=http://localhost:3000
+      - PUBLIC_SERVER_URL=http://localhost:3100
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - SECRET_KEY=change-me-to-something-secure  # Replace with a strong password
+      - JWT_SECRET=change-me-to-something-secure  # Replace with a strong password
+      - JWT_EXPIRY_TIME=604800
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  client:
+    image: amruthpillai/reactive-resume:client-latest
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+    environment:
+      - PUBLIC_URL=http://localhost:3000
+      - PUBLIC_SERVER_URL=http://localhost:3100
+  postgres:
+    image: postgres:alpine
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+
