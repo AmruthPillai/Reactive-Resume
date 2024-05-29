@@ -49,14 +49,13 @@ export class StorageService implements OnModuleInit {
     this.client = this.minioService.client;
     this.bucketName = this.configService.getOrThrow<string>("STORAGE_BUCKET");
 
-    const skipBucketCheck = this.configService.getOrThrow<boolean>("SKIP_STORAGE_BUCKET_CHECK");
+    const skipBucketCheck = this.configService.getOrThrow<boolean>("STORAGE_SKIP_BUCKET_CHECK");
 
     if (skipBucketCheck) {
-      this.logger.log("Skipping the verification of whether the storage bucket exists.");
-      this.logger.warn("Make sure that the following paths are publicly accessible: ");
-      this.logger.warn("- /pictures/*");
-      this.logger.warn("- /previews/*");
-      this.logger.warn("- /resumes/*");
+      this.logger.warn("Skipping the verification of whether the storage bucket exists.");
+      this.logger.warn(
+        "Make sure that the following paths are publicly accessible: `/{pictures,previews,resumes}/*`",
+      );
 
       return;
     }
