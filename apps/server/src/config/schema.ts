@@ -44,17 +44,21 @@ export const configSchema = z.object({
     .string()
     .default("false")
     .transform((s) => s !== "false" && s !== "0"),
+  STORAGE_SKIP_BUCKET_CHECK: z
+    .string()
+    .default("false")
+    .transform((s) => s !== "false" && s !== "0"),
 
   // Crowdin (Optional)
   CROWDIN_PROJECT_ID: z.coerce.number().optional(),
   CROWDIN_PERSONAL_TOKEN: z.string().optional(),
 
-  // Flags (Optional)
-  DISABLE_EMAIL_AUTH: z
+  // Feature Flags (Optional)
+  DISABLE_SIGNUPS: z
     .string()
     .default("false")
     .transform((s) => s !== "false" && s !== "0"),
-  SKIP_STORAGE_BUCKET_CHECK: z
+  DISABLE_EMAIL_AUTH: z
     .string()
     .default("false")
     .transform((s) => s !== "false" && s !== "0"),

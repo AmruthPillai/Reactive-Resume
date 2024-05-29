@@ -8,7 +8,7 @@ msgstr ""
 "Language: ro\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-05-20 14:58\n"
+"PO-Revision-Date: 2024-05-29 08:38\n"
 "Last-Translator: \n"
 "Language-Team: Romanian\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);\n"
@@ -26,7 +26,7 @@ msgstr "Ați activat cu succes autentificarea cu doi factori."
 msgid "{templatesCount} resume templates to choose from"
 msgstr "{templatesCount} șabloane de CV din care să alegeți"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:126
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:141
 msgid "{value, plural, one {Column} other {Columns}}"
 msgstr "{value, plural, one {Coloana} other {Coloane}}"
 
@@ -108,7 +108,7 @@ msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "Adaugă un element nou"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:80
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:90
 msgid "Add a new item"
 msgstr "Adaugă un element nou"
 
@@ -125,7 +125,7 @@ msgstr "Adaugă pagină nouă"
 msgid "AI"
 msgstr "AI"
 
-#: apps/client/src/pages/auth/register/page.tsx:74
+#: apps/client/src/pages/auth/register/page.tsx:71
 msgid "Already have an account?"
 msgstr "Aveți deja un cont?"
 
@@ -154,7 +154,7 @@ msgstr "Cheie API"
 msgid "Are you sure you want to delete this item?"
 msgstr "Sunteţi sigur că doriţi să ștergeți acest element?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:148
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:147
 msgid "Are you sure you want to delete your resume?"
 msgstr "Sigur doriți să vă ștergeți CV-ul?"
 
@@ -237,7 +237,7 @@ msgstr "Construit de comunitate, pentru comunitate."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:131
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:155
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:154
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
 msgid "Cancel"
 msgstr "Anulează"
@@ -260,7 +260,7 @@ msgstr "Schimbare parolă"
 msgid "Change Tone"
 msgstr "Schimbați Tonul"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:184
 msgid "Changed your mind about the name? Give it a new one."
 msgstr "Te-ai răzgândit in privința numelui? Dă-i unul nou."
 
@@ -284,7 +284,7 @@ msgstr "Cod"
 msgid "Code must be exactly 6 digits long."
 msgstr "Codul trebuie să fie format din exact 6 cifre."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:120
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:135
 msgid "Columns"
 msgstr "Coloane"
 
@@ -319,12 +319,12 @@ msgid "Copy to Clipboard"
 msgstr "Copiază în clipboard"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:167
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:242
 msgid "Create"
 msgstr "Creează"
 
-#: apps/client/src/pages/auth/register/page.tsx:67
-#: apps/client/src/pages/auth/register/page.tsx:72
+#: apps/client/src/pages/auth/register/page.tsx:64
+#: apps/client/src/pages/auth/register/page.tsx:69
 msgid "Create a new account"
 msgstr "Creează un cont nou"
 
@@ -332,7 +332,7 @@ msgstr "Creează un cont nou"
 msgid "Create a new item"
 msgstr "Creați un element nou"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:177
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:176
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:18
 msgid "Create a new resume"
@@ -343,7 +343,7 @@ msgctxt "This is a link to create a new account"
 msgid "Create one now"
 msgstr "Creați unul acum"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:258
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:257
 msgid "Create Sample Resume"
 msgstr "Creați un exemplu de CV"
 
@@ -386,7 +386,7 @@ msgid "Date or Date Range"
 msgstr "Interval dată sau dată"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:133
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:157
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:156
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:148
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:134
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:198
@@ -463,7 +463,7 @@ msgid "Downloads"
 msgstr "Descărcări"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:169
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:132
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:102
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:182
@@ -474,7 +474,7 @@ msgstr "Duplică"
 msgid "Duplicate an existing item"
 msgstr "Duplicați un element existent"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:179
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:178
 msgid "Duplicate an existing resume"
 msgstr "Duplicați un CV existent"
 
@@ -487,8 +487,8 @@ msgid "Effects"
 msgstr "Efecte"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:82
-#: apps/client/src/pages/auth/login/page.tsx:84
-#: apps/client/src/pages/auth/register/page.tsx:148
+#: apps/client/src/pages/auth/login/page.tsx:90
+#: apps/client/src/pages/auth/register/page.tsx:140
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:180
 msgid "Email"
@@ -579,7 +579,7 @@ msgstr "De exemplu, informații cu privire la companiile cărora le-ați trimis 
 msgid "Forget"
 msgstr "Uită"
 
-#: apps/client/src/pages/auth/login/page.tsx:120
+#: apps/client/src/pages/auth/login/page.tsx:126
 msgid "Forgot Password?"
 msgstr "Aţi uitat parola?"
 
@@ -609,7 +609,7 @@ msgstr "Prietenos"
 msgid "Full Name"
 msgstr "Numele Complet"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:201
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:200
 msgid "Generate a random title for your resume"
 msgstr "Generați un titlu aleatoriu pentru CV-ul dvs"
 
@@ -625,7 +625,7 @@ msgstr "GitHub"
 msgid "GitHub Stars"
 msgstr "Stele GitHub"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:186
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
 msgid "Give your old resume a new name."
 msgstr "Dă un nume reluat vechi."
 
@@ -664,7 +664,7 @@ msgstr "Aici, vă puteți actualiza profilul pentru a vă personaliza experienț
 msgid "Hidden"
 msgstr "Ascuns"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:90
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:105
 msgid "Hide"
 msgstr "Ascunde"
 
@@ -672,8 +672,8 @@ msgstr "Ascunde"
 msgid "Hide Icons"
 msgstr "Ascunde pictogramele"
 
-#: apps/client/src/pages/auth/login/page.tsx:104
-#: apps/client/src/pages/auth/register/page.tsx:174
+#: apps/client/src/pages/auth/login/page.tsx:110
+#: apps/client/src/pages/auth/register/page.tsx:166
 #: apps/client/src/pages/auth/reset-password/page.tsx:88
 msgid "Hold <0>Ctrl</0> to display your password temporarily."
 msgstr "Țineți apăsat <0>Ctrl</0> pentru a afișa parola temporar."
@@ -774,17 +774,17 @@ msgstr "Se pare că token-ul de verificare furnizat este invalid. Încercați s�
 msgid "It looks like your email address has already been verified."
 msgstr "Se pare că adresa dumneavoastră de e-mail a fost deja verificată."
 
-#: apps/client/src/pages/auth/register/page.tsx:109
+#: apps/client/src/pages/auth/register/page.tsx:101
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
 msgid "John Doe"
 msgstr "John Doe\n"
 
-#: apps/client/src/pages/auth/register/page.tsx:130
+#: apps/client/src/pages/auth/register/page.tsx:122
 msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
 msgid "john.doe"
 msgstr "john.doe"
 
-#: apps/client/src/pages/auth/register/page.tsx:151
+#: apps/client/src/pages/auth/register/page.tsx:143
 msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
 msgid "john.doe@example.com"
 msgstr "john.doe@example.com"
@@ -918,7 +918,7 @@ msgstr "Margine"
 msgid "MIT License"
 msgstr "Licență MIT"
 
-#: apps/client/src/pages/auth/register/page.tsx:106
+#: apps/client/src/pages/auth/register/page.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:58
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:48
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
@@ -1016,8 +1016,8 @@ msgstr "Pagină"
 msgid "Page {0}"
 msgstr "Pagina {0}"
 
-#: apps/client/src/pages/auth/login/page.tsx:99
-#: apps/client/src/pages/auth/register/page.tsx:169
+#: apps/client/src/pages/auth/login/page.tsx:105
+#: apps/client/src/pages/auth/register/page.tsx:161
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
 msgid "Password"
@@ -1116,7 +1116,7 @@ msgstr "Ridicați o problemă"
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/login/page.tsx:55
-#: apps/client/src/pages/auth/register/page.tsx:67
+#: apps/client/src/pages/auth/register/page.tsx:64
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
@@ -1152,7 +1152,7 @@ msgid "Redo"
 msgstr "Reface"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:98
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:141
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:156
 msgid "Remove"
 msgstr "Elimină"
 
@@ -1160,7 +1160,7 @@ msgstr "Elimină"
 msgid "Remove Page"
 msgstr "Elimină pagina"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:95
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:110
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:128
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:93
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:178
@@ -1171,7 +1171,7 @@ msgstr "Redenumire"
 msgid "Resend email confirmation link"
 msgstr "Retrimite link-ul de confirmare a e-mailului"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:136
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:151
 msgid "Reset"
 msgstr "Resetează"
 
@@ -1207,7 +1207,7 @@ msgid "Rounded"
 msgstr "Rotunjit"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:168
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:131
 msgid "Save Changes"
@@ -1258,6 +1258,10 @@ msgstr "Trimite email"
 msgid "Send me a message"
 msgstr "Trimite-mi un mesaj"
 
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:96
+msgid "Separate Links"
+msgstr ""
+
 #: apps/client/src/components/user-options.tsx:32
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
@@ -1274,7 +1278,7 @@ msgstr "Configurați autentificarea cu doi factori pentru contul dvs"
 msgid "Sharing"
 msgstr "Partajarea"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:90
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:105
 msgid "Show"
 msgstr "Arătați"
 
@@ -1291,12 +1295,12 @@ msgid "Sidebar"
 msgstr "Bară laterală"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:102
-#: apps/client/src/pages/auth/login/page.tsx:116
+#: apps/client/src/pages/auth/login/page.tsx:122
 #: apps/client/src/pages/auth/verify-otp/page.tsx:92
 msgid "Sign in"
 msgstr "Autentificare"
 
-#: apps/client/src/pages/auth/register/page.tsx:77
+#: apps/client/src/pages/auth/register/page.tsx:74
 msgid "Sign in now"
 msgstr "Conectați-vă acum"
 
@@ -1317,11 +1321,15 @@ msgstr "Conectați-vă cu GitHub"
 msgid "Sign in with Google"
 msgstr "Autentificare cu Google"
 
-#: apps/client/src/pages/auth/register/page.tsx:185
+#: apps/client/src/pages/auth/register/page.tsx:177
 msgid "Sign up"
 msgstr "Înscrie-te"
 
-#: apps/client/src/pages/auth/register/page.tsx:85
+#: apps/client/src/pages/auth/login/page.tsx:74
+msgid "Signing in via email is currently disabled by the administrator."
+msgstr ""
+
+#: apps/client/src/pages/auth/register/page.tsx:82
 msgid "Signups are currently disabled by the administrator."
 msgstr "Înscrierile sunt în prezent dezactivate de administrator."
 
@@ -1329,7 +1337,7 @@ msgstr "Înscrierile sunt în prezent dezactivate de administrator."
 msgid "Size (in px)"
 msgstr "Dimensiune (în pixeli)"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:227
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:226
 msgid "Slug"
 msgstr "Slug"
 
@@ -1355,7 +1363,7 @@ msgstr "Pătrat"
 msgid "Start building from scratch"
 msgstr "Începe construirea de la zero"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:184
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:183
 msgid "Start building your resume by giving it a name."
 msgstr "Începeți să vă creați CV-ul dându-i un nume."
 
@@ -1451,7 +1459,7 @@ msgstr "A apărut o eroare la conectarea la browser. Asigurați-vă că „chrom
 msgid "This action can be reverted by clicking on the undo button in the floating toolbar."
 msgstr "Această acțiune poate fi anulată făcând clic pe butonul de anulare din bara de instrumente plutitoare."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:150
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:149
 msgid "This action cannot be undone. This will permanently delete your resume and cannot be recovered."
 msgstr "Această acțiune nu poate fi anulată. Acest lucru va șterge definitiv CV-ul și nu poate fi recuperat."
 
@@ -1467,7 +1475,7 @@ msgstr "Acest CV este blocat, vă rugăm să deblocați pentru a face modificăr
 msgid "This section is reserved for your personal notes specific to this resume. The content here remains private and is not shared with anyone else."
 msgstr "Această secțiune este rezervată pentru notele dumneavoastră personale specifice acestui CV. Conținutul de aici rămâne privat și nu este partajat cu nimeni altcineva."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:215
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:214
 msgid "Tip: You can name the resume referring to the position you are applying for."
 msgstr "Sfat: Puteți denumi CV-ul în funcție de postul pentru care candidați."
 
@@ -1476,7 +1484,7 @@ msgctxt "Name of the Award"
 msgid "Title"
 msgstr "Titlu"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:195
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:194
 msgid "Title"
 msgstr "Titlu"
 
@@ -1547,7 +1555,7 @@ msgstr "Neverificat"
 msgid "Update an existing item"
 msgstr "Actualizarea unui element existent"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:178
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:177
 msgid "Update an existing resume"
 msgstr "Actualizați un CV existent"
 
@@ -1572,7 +1580,7 @@ msgstr "Utilizați codul de rezervă"
 msgid "User does not have an associated 'secrets' record. Please report this issue on GitHub."
 msgstr "Utilizatorul nu are o înregistrare asociată 'secrete'. Vă rugăm să raportați această problemă pe GitHub."
 
-#: apps/client/src/pages/auth/register/page.tsx:127
+#: apps/client/src/pages/auth/register/page.tsx:119
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:66
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
 msgid "Username"
@@ -1648,7 +1656,7 @@ msgstr "Ce este nou în cea mai recentă versiune"
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr "Puteți adăuga mai multe cuvinte cheie separându-le cu o virgulă sau apăsând enter."
 
-#: apps/client/src/pages/auth/login/page.tsx:88
+#: apps/client/src/pages/auth/login/page.tsx:94
 msgid "You can also enter your username."
 msgstr "Poți, de asemenea, să introduci numele de utilizator."
 

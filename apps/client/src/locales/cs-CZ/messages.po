@@ -8,7 +8,7 @@ msgstr ""
 "Language: cs\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-05-20 14:58\n"
+"PO-Revision-Date: 2024-05-29 08:38\n"
 "Last-Translator: \n"
 "Language-Team: Czech\n"
 "Plural-Forms: nplurals=4; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 3;\n"
@@ -26,7 +26,7 @@ msgstr "Úspěšně jste povolili dvou faktorové ověřování."
 msgid "{templatesCount} resume templates to choose from"
 msgstr "{templatesCount} šablon životopisů, ze kterých si můžete vybrat"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:126
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:141
 msgid "{value, plural, one {Column} other {Columns}}"
 msgstr "{value, plural, one {Sloupec} few {Sloupce} many {Sloupce} other {Sloupce}}"
 
@@ -108,7 +108,7 @@ msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "Přidat novou položku"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:80
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:90
 msgid "Add a new item"
 msgstr "Přidat novou položku"
 
@@ -125,7 +125,7 @@ msgstr "Přidat novou stránku"
 msgid "AI"
 msgstr "AI"
 
-#: apps/client/src/pages/auth/register/page.tsx:74
+#: apps/client/src/pages/auth/register/page.tsx:71
 msgid "Already have an account?"
 msgstr "Již máte účet?"
 
@@ -154,7 +154,7 @@ msgstr "API Key"
 msgid "Are you sure you want to delete this item?"
 msgstr "Opravdu chcete tuto položku odstranit?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:148
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:147
 msgid "Are you sure you want to delete your resume?"
 msgstr "Jste si jist, že chcete smazat tento životopis?"
 
@@ -237,7 +237,7 @@ msgstr "Vytvořeno komunitou pro komunitu."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:131
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:155
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:154
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
 msgid "Cancel"
 msgstr "Zrušit"
@@ -260,7 +260,7 @@ msgstr "Změnit heslo"
 msgid "Change Tone"
 msgstr "Změna tónu"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:184
 msgid "Changed your mind about the name? Give it a new one."
 msgstr "Změnil jste názor na jméno? Dejte mu nový."
 
@@ -284,7 +284,7 @@ msgstr "Kód"
 msgid "Code must be exactly 6 digits long."
 msgstr "Kód musí být přesně 6 číslic dlouhý."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:120
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:135
 msgid "Columns"
 msgstr "Sloupce"
 
@@ -319,12 +319,12 @@ msgid "Copy to Clipboard"
 msgstr "Zkopírovat do schránky"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:167
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:242
 msgid "Create"
 msgstr "Vytořit"
 
-#: apps/client/src/pages/auth/register/page.tsx:67
-#: apps/client/src/pages/auth/register/page.tsx:72
+#: apps/client/src/pages/auth/register/page.tsx:64
+#: apps/client/src/pages/auth/register/page.tsx:69
 msgid "Create a new account"
 msgstr "Vytvořit nový účet"
 
@@ -332,7 +332,7 @@ msgstr "Vytvořit nový účet"
 msgid "Create a new item"
 msgstr "Vytvořit novou položku"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:177
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:176
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:18
 msgid "Create a new resume"
@@ -343,7 +343,7 @@ msgctxt "This is a link to create a new account"
 msgid "Create one now"
 msgstr "Vytvořit nyní"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:258
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:257
 msgid "Create Sample Resume"
 msgstr "Vytvořit ukázkový životopis"
 
@@ -386,7 +386,7 @@ msgid "Date or Date Range"
 msgstr "Časový rozsah"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:133
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:157
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:156
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:148
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:134
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:198
@@ -463,7 +463,7 @@ msgid "Downloads"
 msgstr "Stažení"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:169
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:132
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:102
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:182
@@ -474,7 +474,7 @@ msgstr "Duplikovat"
 msgid "Duplicate an existing item"
 msgstr "Duplikovat existující položku"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:179
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:178
 msgid "Duplicate an existing resume"
 msgstr "Duplikujte existující životopis"
 
@@ -487,8 +487,8 @@ msgid "Effects"
 msgstr "Efekty"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:82
-#: apps/client/src/pages/auth/login/page.tsx:84
-#: apps/client/src/pages/auth/register/page.tsx:148
+#: apps/client/src/pages/auth/login/page.tsx:90
+#: apps/client/src/pages/auth/register/page.tsx:140
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:180
 msgid "Email"
@@ -579,7 +579,7 @@ msgstr "Například informace o tom, které společnosti, které jste zaslali te
 msgid "Forget"
 msgstr "Zapomenout"
 
-#: apps/client/src/pages/auth/login/page.tsx:120
+#: apps/client/src/pages/auth/login/page.tsx:126
 msgid "Forgot Password?"
 msgstr "Zapomněli jste heslo?"
 
@@ -609,7 +609,7 @@ msgstr "Přátelské"
 msgid "Full Name"
 msgstr "Celé jméno"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:201
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:200
 msgid "Generate a random title for your resume"
 msgstr "Vygenerovat náhodný název pro obnovení"
 
@@ -625,7 +625,7 @@ msgstr "GitHub"
 msgid "GitHub Stars"
 msgstr "GitHub Stars"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:186
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
 msgid "Give your old resume a new name."
 msgstr "Dejte svému starému obnovit nový název."
 
@@ -664,7 +664,7 @@ msgstr "Zde můžete aktualizovat svůj profil, abyste si mohli přizpůsobit a 
 msgid "Hidden"
 msgstr "Hidden"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:90
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:105
 msgid "Hide"
 msgstr "Skrýt"
 
@@ -672,8 +672,8 @@ msgstr "Skrýt"
 msgid "Hide Icons"
 msgstr "Skrýt ikony"
 
-#: apps/client/src/pages/auth/login/page.tsx:104
-#: apps/client/src/pages/auth/register/page.tsx:174
+#: apps/client/src/pages/auth/login/page.tsx:110
+#: apps/client/src/pages/auth/register/page.tsx:166
 #: apps/client/src/pages/auth/reset-password/page.tsx:88
 msgid "Hold <0>Ctrl</0> to display your password temporarily."
 msgstr "Podržte <0>Ctrl</0> pro dočasné zobrazení hesla."
@@ -774,17 +774,17 @@ msgstr "Vypadá to, že ověřovací token, který jste zadali, je neplatný. Zk
 msgid "It looks like your email address has already been verified."
 msgstr "Vypadá to, že vaše e-mailová adresa již byla ověřena."
 
-#: apps/client/src/pages/auth/register/page.tsx:109
+#: apps/client/src/pages/auth/register/page.tsx:101
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
 msgid "John Doe"
 msgstr "Jan Novák"
 
-#: apps/client/src/pages/auth/register/page.tsx:130
+#: apps/client/src/pages/auth/register/page.tsx:122
 msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
 msgid "john.doe"
 msgstr "john.doe"
 
-#: apps/client/src/pages/auth/register/page.tsx:151
+#: apps/client/src/pages/auth/register/page.tsx:143
 msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
 msgid "john.doe@example.com"
 msgstr "john.doe@example.com"
@@ -918,7 +918,7 @@ msgstr "Okraj"
 msgid "MIT License"
 msgstr "MIT licence"
 
-#: apps/client/src/pages/auth/register/page.tsx:106
+#: apps/client/src/pages/auth/register/page.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:58
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:48
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
@@ -1016,8 +1016,8 @@ msgstr "Stránka"
 msgid "Page {0}"
 msgstr "Stránka {0}"
 
-#: apps/client/src/pages/auth/login/page.tsx:99
-#: apps/client/src/pages/auth/register/page.tsx:169
+#: apps/client/src/pages/auth/login/page.tsx:105
+#: apps/client/src/pages/auth/register/page.tsx:161
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
 msgid "Password"
@@ -1116,7 +1116,7 @@ msgstr "Vyvolat problém"
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/login/page.tsx:55
-#: apps/client/src/pages/auth/register/page.tsx:67
+#: apps/client/src/pages/auth/register/page.tsx:64
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
@@ -1152,7 +1152,7 @@ msgid "Redo"
 msgstr "Znovu"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:98
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:141
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:156
 msgid "Remove"
 msgstr "Odebrat"
 
@@ -1160,7 +1160,7 @@ msgstr "Odebrat"
 msgid "Remove Page"
 msgstr "Odstranit stránku"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:95
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:110
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:128
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:93
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:178
@@ -1171,7 +1171,7 @@ msgstr "Přejmenovat"
 msgid "Resend email confirmation link"
 msgstr "Znovu odeslat odkaz pro potvrzení e-mailu"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:136
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:151
 msgid "Reset"
 msgstr "Reset"
 
@@ -1207,7 +1207,7 @@ msgid "Rounded"
 msgstr "Zaobleno"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:168
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:131
 msgid "Save Changes"
@@ -1258,6 +1258,10 @@ msgstr "Poslat e-mail"
 msgid "Send me a message"
 msgstr "Pošlete mi zprávu"
 
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:96
+msgid "Separate Links"
+msgstr ""
+
 #: apps/client/src/components/user-options.tsx:32
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
@@ -1274,7 +1278,7 @@ msgstr "Nastavení dvoufaktorového ověřování na vašem účtu"
 msgid "Sharing"
 msgstr "Sdílení"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:90
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:105
 msgid "Show"
 msgstr "Zobrazit"
 
@@ -1291,12 +1295,12 @@ msgid "Sidebar"
 msgstr "Sidebar"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:102
-#: apps/client/src/pages/auth/login/page.tsx:116
+#: apps/client/src/pages/auth/login/page.tsx:122
 #: apps/client/src/pages/auth/verify-otp/page.tsx:92
 msgid "Sign in"
 msgstr "Přihlásit se"
 
-#: apps/client/src/pages/auth/register/page.tsx:77
+#: apps/client/src/pages/auth/register/page.tsx:74
 msgid "Sign in now"
 msgstr "Přihlásit se nyní"
 
@@ -1317,11 +1321,15 @@ msgstr "Přihlásit se pomocí GitHub"
 msgid "Sign in with Google"
 msgstr "Přihlásit se pomocí Google"
 
-#: apps/client/src/pages/auth/register/page.tsx:185
+#: apps/client/src/pages/auth/register/page.tsx:177
 msgid "Sign up"
 msgstr "Zaregistrovat se"
 
-#: apps/client/src/pages/auth/register/page.tsx:85
+#: apps/client/src/pages/auth/login/page.tsx:74
+msgid "Signing in via email is currently disabled by the administrator."
+msgstr ""
+
+#: apps/client/src/pages/auth/register/page.tsx:82
 msgid "Signups are currently disabled by the administrator."
 msgstr "Registrace jsou v současné době zakázány správcem."
 
@@ -1329,7 +1337,7 @@ msgstr "Registrace jsou v současné době zakázány správcem."
 msgid "Size (in px)"
 msgstr "Velikost (v px)"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:227
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:226
 msgid "Slug"
 msgstr "Tag"
 
@@ -1355,7 +1363,7 @@ msgstr "Čtverec"
 msgid "Start building from scratch"
 msgstr "Začít budovat od začátku"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:184
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:183
 msgid "Start building your resume by giving it a name."
 msgstr "Začněte budovat svůj životopis zadáním jména."
 
@@ -1451,7 +1459,7 @@ msgstr "Došlo k chybě při připojování k prohlížeči. Ujistěte se, že '
 msgid "This action can be reverted by clicking on the undo button in the floating toolbar."
 msgstr "Tuto akci lze vrátit kliknutím na tlačítko zpět v plovoucím panelu nástrojů."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:150
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:149
 msgid "This action cannot be undone. This will permanently delete your resume and cannot be recovered."
 msgstr "Tuto akci nelze vrátit zpět. Tato akce bude trvale odstraněna a nelze ji obnovit."
 
@@ -1467,7 +1475,7 @@ msgstr "Tento pokračování je uzamčen, prosím odemkněte pro další změny.
 msgid "This section is reserved for your personal notes specific to this resume. The content here remains private and is not shared with anyone else."
 msgstr "Tato sekce je vyhrazena pro vaše osobní poznámky specifické pro toto obnovení. Obsah zde zůstává soukromý a není sdílen s nikým jiným."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:215
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:214
 msgid "Tip: You can name the resume referring to the position you are applying for."
 msgstr "Tip: Můžete pojmenovat pokračování odkazující na pozici, o kterou žádáte."
 
@@ -1476,7 +1484,7 @@ msgctxt "Name of the Award"
 msgid "Title"
 msgstr "Hlava 1 – Celkem"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:195
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:194
 msgid "Title"
 msgstr "Hlava 1 – Celkem"
 
@@ -1547,7 +1555,7 @@ msgstr "Neověřeno"
 msgid "Update an existing item"
 msgstr "Aktualizovat existující položku"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:178
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:177
 msgid "Update an existing resume"
 msgstr "Aktualizovat existující pokračování"
 
@@ -1572,7 +1580,7 @@ msgstr "Použijte svůj záložní kód"
 msgid "User does not have an associated 'secrets' record. Please report this issue on GitHub."
 msgstr "Uživatel nemá přidružený \"tajný záznam\". Prosím nahlaste tento problém na GitHubu."
 
-#: apps/client/src/pages/auth/register/page.tsx:127
+#: apps/client/src/pages/auth/register/page.tsx:119
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:66
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
 msgid "Username"
@@ -1648,7 +1656,7 @@ msgstr "Co je nového v nejnovější verzi"
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr "Můžete přidat více klíčových slov oddělením čárkou nebo stisknutím klávesy enter."
 
-#: apps/client/src/pages/auth/login/page.tsx:88
+#: apps/client/src/pages/auth/login/page.tsx:94
 msgid "You can also enter your username."
 msgstr "Můžete také zadat své uživatelské jméno."
 

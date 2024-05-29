@@ -8,7 +8,7 @@ msgstr ""
 "Language: ko\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-05-20 14:58\n"
+"PO-Revision-Date: 2024-05-29 08:38\n"
 "Last-Translator: \n"
 "Language-Team: Korean\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -26,7 +26,7 @@ msgstr "이중 인증을 성공적으로 활성화했습니다."
 msgid "{templatesCount} resume templates to choose from"
 msgstr "{templatesCount} 선택할 수 있는 이력서 템플릿"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:126
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:141
 msgid "{value, plural, one {Column} other {Columns}}"
 msgstr "{value, plural, one {칼럼} other {칼럼}}"
 
@@ -108,7 +108,7 @@ msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "새 항목 추가"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:80
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:90
 msgid "Add a new item"
 msgstr "새 항목 추가"
 
@@ -125,7 +125,7 @@ msgstr "새 페이지 추가"
 msgid "AI"
 msgstr "AI"
 
-#: apps/client/src/pages/auth/register/page.tsx:74
+#: apps/client/src/pages/auth/register/page.tsx:71
 msgid "Already have an account?"
 msgstr "이미 계정이 있으신가요?"
 
@@ -154,7 +154,7 @@ msgstr "API Key"
 msgid "Are you sure you want to delete this item?"
 msgstr "이 항목을 삭제하시겠습니까?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:148
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:147
 msgid "Are you sure you want to delete your resume?"
 msgstr "이력서를 삭제하시겠습니까?"
 
@@ -237,7 +237,7 @@ msgstr "By the community, for the community."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:131
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:155
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:154
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
 msgid "Cancel"
 msgstr "취소"
@@ -260,7 +260,7 @@ msgstr "비밀번호 변경"
 msgid "Change Tone"
 msgstr "톤 변경"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:184
 msgid "Changed your mind about the name? Give it a new one."
 msgstr "이름이 변경되었나요? 새 이름을 지어주세요."
 
@@ -284,7 +284,7 @@ msgstr "코드"
 msgid "Code must be exactly 6 digits long."
 msgstr "코드는 정확히 6자리여야 합니다."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:120
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:135
 msgid "Columns"
 msgstr "열"
 
@@ -319,12 +319,12 @@ msgid "Copy to Clipboard"
 msgstr "클립보드에 복사"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:167
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:242
 msgid "Create"
 msgstr "만들기"
 
-#: apps/client/src/pages/auth/register/page.tsx:67
-#: apps/client/src/pages/auth/register/page.tsx:72
+#: apps/client/src/pages/auth/register/page.tsx:64
+#: apps/client/src/pages/auth/register/page.tsx:69
 msgid "Create a new account"
 msgstr "새 계정 만들기"
 
@@ -332,7 +332,7 @@ msgstr "새 계정 만들기"
 msgid "Create a new item"
 msgstr "새 항목 만들기"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:177
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:176
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:18
 msgid "Create a new resume"
@@ -343,7 +343,7 @@ msgctxt "This is a link to create a new account"
 msgid "Create one now"
 msgstr "지금 만들기"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:258
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:257
 msgid "Create Sample Resume"
 msgstr "샘플 이력서 만들기"
 
@@ -386,7 +386,7 @@ msgid "Date or Date Range"
 msgstr "날짜 또는 날짜 범위"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:133
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:157
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:156
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:148
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:134
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:198
@@ -463,7 +463,7 @@ msgid "Downloads"
 msgstr "다운로드"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:169
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:132
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:102
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:182
@@ -474,7 +474,7 @@ msgstr "복제"
 msgid "Duplicate an existing item"
 msgstr "기존 항목 복제"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:179
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:178
 msgid "Duplicate an existing resume"
 msgstr "기존 이력서 복제"
 
@@ -487,8 +487,8 @@ msgid "Effects"
 msgstr "효과"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:82
-#: apps/client/src/pages/auth/login/page.tsx:84
-#: apps/client/src/pages/auth/register/page.tsx:148
+#: apps/client/src/pages/auth/login/page.tsx:90
+#: apps/client/src/pages/auth/register/page.tsx:140
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:180
 msgid "Email"
@@ -579,7 +579,7 @@ msgstr "예를 들어, 이력서를 보낸 회사에 대한 정보나 직무 설
 msgid "Forget"
 msgstr "잊어버림"
 
-#: apps/client/src/pages/auth/login/page.tsx:120
+#: apps/client/src/pages/auth/login/page.tsx:126
 msgid "Forgot Password?"
 msgstr "비밀번호를 잊으셨나요?"
 
@@ -609,7 +609,7 @@ msgstr "친절함"
 msgid "Full Name"
 msgstr "전체 이름"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:201
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:200
 msgid "Generate a random title for your resume"
 msgstr "이력서에 사용할 임의의 제목 생성"
 
@@ -625,7 +625,7 @@ msgstr "GitHub"
 msgid "GitHub Stars"
 msgstr "GitHub 스타"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:186
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
 msgid "Give your old resume a new name."
 msgstr "기존 이력서에 새 이름을 부여하세요."
 
@@ -664,7 +664,7 @@ msgstr "여기에서 프로필을 업데이트하여 사용자 환경을 맞춤 
 msgid "Hidden"
 msgstr "숨겨진"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:90
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:105
 msgid "Hide"
 msgstr "숨기기"
 
@@ -672,8 +672,8 @@ msgstr "숨기기"
 msgid "Hide Icons"
 msgstr "아이콘 숨기기"
 
-#: apps/client/src/pages/auth/login/page.tsx:104
-#: apps/client/src/pages/auth/register/page.tsx:174
+#: apps/client/src/pages/auth/login/page.tsx:110
+#: apps/client/src/pages/auth/register/page.tsx:166
 #: apps/client/src/pages/auth/reset-password/page.tsx:88
 msgid "Hold <0>Ctrl</0> to display your password temporarily."
 msgstr "비밀번호를 일시적으로 표시하려면 <0>Ctrl</0> 키를 누르고 있습니다."
@@ -774,17 +774,17 @@ msgstr "입력하신 인증 토큰이 유효하지 않은 것 같습니다. 인�
 msgid "It looks like your email address has already been verified."
 msgstr "이메일 주소가 이미 인증된 것 같습니다."
 
-#: apps/client/src/pages/auth/register/page.tsx:109
+#: apps/client/src/pages/auth/register/page.tsx:101
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
 msgid "John Doe"
 msgstr "신원 미상"
 
-#: apps/client/src/pages/auth/register/page.tsx:130
+#: apps/client/src/pages/auth/register/page.tsx:122
 msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
 msgid "john.doe"
 msgstr "john.doe"
 
-#: apps/client/src/pages/auth/register/page.tsx:151
+#: apps/client/src/pages/auth/register/page.tsx:143
 msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
 msgid "john.doe@example.com"
 msgstr "john.doe@example.com"
@@ -918,7 +918,7 @@ msgstr "마진"
 msgid "MIT License"
 msgstr "MIT 라이선스"
 
-#: apps/client/src/pages/auth/register/page.tsx:106
+#: apps/client/src/pages/auth/register/page.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:58
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:48
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
@@ -1016,8 +1016,8 @@ msgstr "페이지"
 msgid "Page {0}"
 msgstr "페이지 {0}"
 
-#: apps/client/src/pages/auth/login/page.tsx:99
-#: apps/client/src/pages/auth/register/page.tsx:169
+#: apps/client/src/pages/auth/login/page.tsx:105
+#: apps/client/src/pages/auth/register/page.tsx:161
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
 msgid "Password"
@@ -1116,7 +1116,7 @@ msgstr "문제 제기"
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/login/page.tsx:55
-#: apps/client/src/pages/auth/register/page.tsx:67
+#: apps/client/src/pages/auth/register/page.tsx:64
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
@@ -1152,7 +1152,7 @@ msgid "Redo"
 msgstr "다시 실행"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:98
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:141
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:156
 msgid "Remove"
 msgstr "제거"
 
@@ -1160,7 +1160,7 @@ msgstr "제거"
 msgid "Remove Page"
 msgstr "페이지 제거"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:95
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:110
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:128
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:93
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:178
@@ -1171,7 +1171,7 @@ msgstr "이름 바꾸기"
 msgid "Resend email confirmation link"
 msgstr "이메일 확인 링크 다시 보내기"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:136
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:151
 msgid "Reset"
 msgstr "초기화"
 
@@ -1207,7 +1207,7 @@ msgid "Rounded"
 msgstr "둥근"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:168
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:131
 msgid "Save Changes"
@@ -1258,6 +1258,10 @@ msgstr "이메일 보내기"
 msgid "Send me a message"
 msgstr "메시지 보내기"
 
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:96
+msgid "Separate Links"
+msgstr ""
+
 #: apps/client/src/components/user-options.tsx:32
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
@@ -1274,7 +1278,7 @@ msgstr "계정에 2단계 인증 설정하기"
 msgid "Sharing"
 msgstr "공유"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:90
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:105
 msgid "Show"
 msgstr "표시"
 
@@ -1291,12 +1295,12 @@ msgid "Sidebar"
 msgstr "사이드바"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:102
-#: apps/client/src/pages/auth/login/page.tsx:116
+#: apps/client/src/pages/auth/login/page.tsx:122
 #: apps/client/src/pages/auth/verify-otp/page.tsx:92
 msgid "Sign in"
 msgstr "로그인"
 
-#: apps/client/src/pages/auth/register/page.tsx:77
+#: apps/client/src/pages/auth/register/page.tsx:74
 msgid "Sign in now"
 msgstr "지금 로그인"
 
@@ -1317,11 +1321,15 @@ msgstr "GitHub로 로그인"
 msgid "Sign in with Google"
 msgstr "Google로 로그인"
 
-#: apps/client/src/pages/auth/register/page.tsx:185
+#: apps/client/src/pages/auth/register/page.tsx:177
 msgid "Sign up"
 msgstr "가입하기"
 
-#: apps/client/src/pages/auth/register/page.tsx:85
+#: apps/client/src/pages/auth/login/page.tsx:74
+msgid "Signing in via email is currently disabled by the administrator."
+msgstr ""
+
+#: apps/client/src/pages/auth/register/page.tsx:82
 msgid "Signups are currently disabled by the administrator."
 msgstr "현재 관리자에 의해 가입이 비활성화되어 있습니다."
 
@@ -1329,7 +1337,7 @@ msgstr "현재 관리자에 의해 가입이 비활성화되어 있습니다."
 msgid "Size (in px)"
 msgstr "크기(픽셀 단위)"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:227
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:226
 msgid "Slug"
 msgstr "슬러그"
 
@@ -1355,7 +1363,7 @@ msgstr "스퀘어"
 msgid "Start building from scratch"
 msgstr "처음부터 빌드 시작"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:184
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:183
 msgid "Start building your resume by giving it a name."
 msgstr "이름을 지정하여 이력서 작성을 시작하세요."
 
@@ -1451,7 +1459,7 @@ msgstr "브라우저에 연결하는 동안 오류가 발생했습니다. '크�
 msgid "This action can be reverted by clicking on the undo button in the floating toolbar."
 msgstr "플로팅 툴바에서 실행 취소 버튼을 클릭하면 이 작업을 되돌릴 수 있습니다."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:150
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:149
 msgid "This action cannot be undone. This will permanently delete your resume and cannot be recovered."
 msgstr "이 작업은 취소할 수 없습니다. 이렇게 하면 이력서가 영구적으로 삭제되며 복구할 수 없습니다."
 
@@ -1467,7 +1475,7 @@ msgstr "이 이력서는 잠겨 있으므로 추가 변경을 하려면 잠금�
 msgid "This section is reserved for your personal notes specific to this resume. The content here remains private and is not shared with anyone else."
 msgstr "이 섹션은 이 이력서와 관련된 개인 메모를 위해 마련된 공간입니다. 여기에 있는 콘텐츠는 비공개로 유지되며 다른 사람과 공유되지 않습니다."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:215
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:214
 msgid "Tip: You can name the resume referring to the position you are applying for."
 msgstr "팁: 이력서 이름에 지원하는 직책을 언급하는 이름을 붙일 수 있습니다."
 
@@ -1476,7 +1484,7 @@ msgctxt "Name of the Award"
 msgid "Title"
 msgstr "제목"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:195
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:194
 msgid "Title"
 msgstr "제목"
 
@@ -1547,7 +1555,7 @@ msgstr "확인되지 않음"
 msgid "Update an existing item"
 msgstr "기존 항목 업데이트"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:178
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:177
 msgid "Update an existing resume"
 msgstr "기존 이력서 업데이트"
 
@@ -1572,7 +1580,7 @@ msgstr "백업 코드 사용"
 msgid "User does not have an associated 'secrets' record. Please report this issue on GitHub."
 msgstr "사용자에게 연결된 '비밀' 레코드가 없습니다. 이 문제는 GitHub에서 신고해 주세요."
 
-#: apps/client/src/pages/auth/register/page.tsx:127
+#: apps/client/src/pages/auth/register/page.tsx:119
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:66
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
 msgid "Username"
@@ -1648,7 +1656,7 @@ msgstr "최신 버전의 새로운 기능"
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr "쉼표로 구분하거나 Enter 키를 눌러 여러 개의 키워드를 추가할 수 있습니다."
 
-#: apps/client/src/pages/auth/login/page.tsx:88
+#: apps/client/src/pages/auth/login/page.tsx:94
 msgid "You can also enter your username."
 msgstr "사용자 아이디를 입력할 수도 있습니다."
 
