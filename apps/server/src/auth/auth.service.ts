@@ -199,6 +199,14 @@ export class AuthService {
       providers.push("google");
     }
 
+    if (
+      this.configService.get("LINKEDIN_CLIENT_ID") &&
+      this.configService.get("LINKEDIN_CLIENT_SECRET") &&
+      this.configService.get("LINKEDIN_CALLBACK_URL")
+    ) {
+      providers.push("linkedin");
+    }
+
     return providers;
   }
 

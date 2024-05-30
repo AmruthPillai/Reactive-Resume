@@ -12,6 +12,7 @@ import { AuthService } from "./auth.service";
 import { DummyStrategy } from "./strategy/dummy.strategy";
 import { GitHubStrategy } from "./strategy/github.strategy";
 import { GoogleStrategy } from "./strategy/google.strategy";
+import { LinkedInStrategy } from "./strategy/linkedin.strategy";
 import { JwtStrategy } from "./strategy/jwt.strategy";
 import { LocalStrategy } from "./strategy/local.strategy";
 import { RefreshStrategy } from "./strategy/refresh.strategy";
@@ -58,6 +59,21 @@ export class AuthModule {
               const callbackURL = configService.getOrThrow("GOOGLE_CALLBACK_URL");
 
               return new GoogleStrategy(clientID, clientSecret, callbackURL, userService);
+            } catch {
+              return new DummyStrategy();
+            }
+          },
+        },
+        {
+          provide: LinkedInStrategy,
+          inject: [ConfigService, UserService],
+          useFactory: (configService: ConfigService<Config>, userService: UserService) => {
+            try {
+              const clientID = configService.getOrThrow("LINKEDIN_CLIENT_ID");
+              const clientSecret = configService.getOrThrow("LINKEDIN_CLIENT_SECRET");
+              const callbackURL = configService.getOrThrow("LINKEDIN_CALLBACK_URL");
+
+              return new LinkedInStrategy(clientID, clientSecret, callbackURL, userService);
             } catch {
               return new DummyStrategy();
             }

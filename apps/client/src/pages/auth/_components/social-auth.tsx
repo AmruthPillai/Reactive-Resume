@@ -32,6 +32,19 @@ export const SocialAuth = () => {
           </a>
         </Button>
       )}
+
+    {providers.includes("linkedin") && (
+        <Button
+          asChild
+          size="lg"
+          className="w-full !bg-[#4285F4] !text-white hover:!bg-[#4285F4]/80"
+        >
+          <a href="/api/auth/linkedin">
+            <GoogleLogo className="mr-3 size-4" />
+            {t`Linkedin`}
+          </a>
+        </Button>
+      )}
     </div>
   );
 };
