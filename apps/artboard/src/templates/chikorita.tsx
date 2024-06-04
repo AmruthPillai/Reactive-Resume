@@ -339,9 +339,6 @@ const Certifications = () => {
           <div className="text-left">
             <div className="font-bold">{item.name}</div>
             <LinkedEntity name={item.issuer} url={item.url} separateLinks={section.separateLinks} />
-          </div>
-
-          <div className="shrink-0 text-right">
             <div className="font-bold">{item.date}</div>
           </div>
         </div>
