@@ -338,11 +338,7 @@ const Certifications = () => {
         <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
             <div className="font-bold">{item.name}</div>
-            <div>{item.issuer}</div>
             <LinkedEntity name={item.issuer} url={item.url} separateLinks={section.separateLinks} />
-          </div>
-
-          <div className="shrink-0 text-right">
             <div className="font-bold">{item.date}</div>
           </div>
         </div>
