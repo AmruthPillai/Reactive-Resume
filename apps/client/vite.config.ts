@@ -3,13 +3,14 @@
 import { lingui } from "@lingui/vite-plugin";
 import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 import react from "@vitejs/plugin-react";
-import { defineConfig, searchForWorkspaceRoot, splitVendorChunkPlugin } from "vite";
+import { defineConfig, searchForWorkspaceRoot } from "vite";
 
 export default defineConfig({
   cacheDir: "../../node_modules/.vite/client",
 
   build: {
     sourcemap: true,
+    emptyOutDir: true,
   },
 
   define: {
@@ -18,7 +19,7 @@ export default defineConfig({
 
   server: {
     host: true,
-    port: +(process.env.__DEV__CLIENT_PORT ?? 5173),
+    port: 5173,
     fs: { allow: [searchForWorkspaceRoot(process.cwd())] },
   },
 
@@ -38,7 +39,6 @@ export default defineConfig({
     }),
     lingui(),
     nxViteTsPaths(),
-    splitVendorChunkPlugin(),
   ],
 
   test: {

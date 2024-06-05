@@ -19,7 +19,9 @@ export const Counter = ({ from, to }: CounterProps) => {
       },
     });
 
-    return () => controls.stop();
+    return () => {
+      controls.stop();
+    };
   }, [from, to, isInView]);
 
   return (

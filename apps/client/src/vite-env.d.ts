@@ -2,9 +2,7 @@
 
 declare const appVersion: string;
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface ImportMetaEnv {}
-
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 interface ImportMeta {
   readonly env: ImportMetaEnv;
 }

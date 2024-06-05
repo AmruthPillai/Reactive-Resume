@@ -31,7 +31,7 @@ describe("exclude", () => {
       age: 30,
       email: "alice@example.com",
     };
-    const keysToExclude: Array<keyof TestObject> = [];
+    const keysToExclude: (keyof TestObject)[] = [];
     const result = exclude(object, keysToExclude);
 
     expect(result).toEqual(object);

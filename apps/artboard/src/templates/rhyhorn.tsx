@@ -85,9 +85,9 @@ const Summary = () => {
       <h4 className="mb-2 border-b pb-0.5 text-sm font-bold">{section.name}</h4>
 
       <div
+        dangerouslySetInnerHTML={{ __html: section.content }}
         className="wysiwyg"
         style={{ columns: section.columns }}
-        dangerouslySetInnerHTML={{ __html: section.content }}
       />
     </section>
   );
@@ -109,25 +109,48 @@ const Rating = ({ level }: RatingProps) => (
 type LinkProps = {
   url: URL;
   icon?: React.ReactNode;
+  iconOnRight?: boolean;
   label?: string;
   className?: string;
 };
 
-const Link = ({ url, icon, label, className }: LinkProps) => {
+const Link = ({ url, icon, iconOnRight, label, className }: LinkProps) => {
   if (!isUrl(url.href)) return null;
 
   return (
     <div className="flex items-center gap-x-1.5">
-      {icon ?? <i className="ph ph-bold ph-link text-primary" />}
+      {!iconOnRight && (icon ?? <i className="ph ph-bold ph-link text-primary" />)}
       <a
         href={url.href}
         target="_blank"
         rel="noreferrer noopener nofollow"
         className={cn("inline-block", className)}
       >
-        {label || url.label || url.href}
+        {label ?? (url.label || url.href)}
       </a>
+      {iconOnRight && (icon ?? <i className="ph ph-bold ph-link text-primary" />)}
     </div>
+  );
+};
+
+type LinkedEntityProps = {
+  name: string;
+  url: URL;
+  separateLinks: boolean;
+  className?: string;
+};
+
+const LinkedEntity = ({ name, url, separateLinks, className }: LinkedEntityProps) => {
+  return !separateLinks && isUrl(url.href) ? (
+    <Link
+      url={url}
+      label={name}
+      icon={<i className="ph ph-bold ph-globe text-primary" />}
+      iconOnRight={true}
+      className={className}
+    />
+  ) : (
+    <div className={className}>{name}</div>
   );
 };
 
@@ -150,7 +173,7 @@ const Section = <T,>({
   summaryKey,
   keywordsKey,
 }: SectionProps<T>) => {
-  if (!section.visible || !section.items.length) return null;
+  if (!section.visible || section.items.length === 0) return null;
 
   return (
     <section id={section.id} className="grid">
@@ -172,11 +195,11 @@ const Section = <T,>({
               <div key={item.id} className={cn("space-y-2", className)}>
                 <div>
                   {children?.(item as T)}
-                  {url !== undefined && <Link url={url} />}
+                  {url !== undefined && section.separateLinks && <Link url={url} />}
                 </div>
 
                 {summary !== undefined && !isEmptyString(summary) && (
-                  <div className="wysiwyg" dangerouslySetInnerHTML={{ __html: summary }} />
+                  <div dangerouslySetInnerHTML={{ __html: summary }} className="wysiwyg" />
                 )}
 
                 {level !== undefined && level > 0 && <Rating level={level} />}
@@ -217,7 +240,7 @@ const Profiles = () => {
           ) : (
             <p>{item.username}</p>
           )}
-          <p className="text-sm">{item.network}</p>
+          {!item.icon && <p className="text-sm">{item.network}</p>}
         </div>
       )}
     </Section>
@@ -232,7 +255,12 @@ const Experience = () => {
       {(item) => (
         <div className="flex items-start justify-between">
           <div className="text-left">
-            <div className="font-bold">{item.company}</div>
+            <LinkedEntity
+              name={item.company}
+              url={item.url}
+              separateLinks={section.separateLinks}
+              className="font-bold"
+            />
             <div>{item.position}</div>
           </div>
 
@@ -254,7 +282,12 @@ const Education = () => {
       {(item) => (
         <div className="flex items-start justify-between">
           <div className="text-left">
-            <div className="font-bold">{item.institution}</div>
+            <LinkedEntity
+              name={item.institution}
+              url={item.url}
+              separateLinks={section.separateLinks}
+              className="font-bold"
+            />
             <div>{item.area}</div>
             <div>{item.score}</div>
           </div>
@@ -278,7 +311,11 @@ const Awards = () => {
         <div className="flex items-start justify-between">
           <div className="text-left">
             <div className="font-bold">{item.title}</div>
-            <div>{item.awarder}</div>
+            <LinkedEntity
+              name={item.awarder}
+              url={item.url}
+              separateLinks={section.separateLinks}
+            />
           </div>
 
           <div className="shrink-0 text-right">
@@ -299,7 +336,7 @@ const Certifications = () => {
         <div className="flex items-start justify-between">
           <div className="text-left">
             <div className="font-bold">{item.name}</div>
-            <div>{item.issuer}</div>
+            <LinkedEntity name={item.issuer} url={item.url} separateLinks={section.separateLinks} />
           </div>
 
           <div className="shrink-0 text-right">
@@ -344,7 +381,12 @@ const Publications = () => {
       {(item) => (
         <div className="flex items-start justify-between">
           <div className="text-left">
-            <div className="font-bold">{item.name}</div>
+            <LinkedEntity
+              name={item.name}
+              url={item.url}
+              separateLinks={section.separateLinks}
+              className="font-bold"
+            />
             <div>{item.publisher}</div>
           </div>
 
@@ -365,7 +407,12 @@ const Volunteer = () => {
       {(item) => (
         <div className="flex items-start justify-between">
           <div className="text-left">
-            <div className="font-bold">{item.organization}</div>
+            <LinkedEntity
+              name={item.organization}
+              url={item.url}
+              separateLinks={section.separateLinks}
+              className="font-bold"
+            />
             <div>{item.position}</div>
           </div>
 
@@ -402,7 +449,12 @@ const Projects = () => {
       {(item) => (
         <div className="flex items-start justify-between">
           <div className="text-left">
-            <div className="font-bold">{item.name}</div>
+            <LinkedEntity
+              name={item.name}
+              url={item.url}
+              separateLinks={section.separateLinks}
+              className="font-bold"
+            />
             <div>{item.description}</div>
           </div>
 
@@ -422,7 +474,12 @@ const References = () => {
     <Section<Reference> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
         <div>
-          <div className="font-bold">{item.name}</div>
+          <LinkedEntity
+            name={item.name}
+            url={item.url}
+            separateLinks={section.separateLinks}
+            className="font-bold"
+          />
           <div>{item.description}</div>
         </div>
       )}
@@ -443,7 +500,12 @@ const Custom = ({ id }: { id: string }) => {
       {(item) => (
         <div className="flex items-start justify-between">
           <div className="text-left">
-            <div className="font-bold">{item.name}</div>
+            <LinkedEntity
+              name={item.name}
+              url={item.url}
+              separateLinks={section.separateLinks}
+              className="font-bold"
+            />
             <div>{item.description}</div>
           </div>
 
@@ -459,36 +521,50 @@ const Custom = ({ id }: { id: string }) => {
 
 const mapSectionToComponent = (section: SectionKey) => {
   switch (section) {
-    case "profiles":
+    case "profiles": {
       return <Profiles />;
-    case "summary":
+    }
+    case "summary": {
       return <Summary />;
-    case "experience":
+    }
+    case "experience": {
       return <Experience />;
-    case "education":
+    }
+    case "education": {
       return <Education />;
-    case "awards":
+    }
+    case "awards": {
       return <Awards />;
-    case "certifications":
+    }
+    case "certifications": {
       return <Certifications />;
-    case "skills":
+    }
+    case "skills": {
       return <Skills />;
-    case "interests":
+    }
+    case "interests": {
       return <Interests />;
-    case "publications":
+    }
+    case "publications": {
       return <Publications />;
-    case "volunteer":
+    }
+    case "volunteer": {
       return <Volunteer />;
-    case "languages":
+    }
+    case "languages": {
       return <Languages />;
-    case "projects":
+    }
+    case "projects": {
       return <Projects />;
-    case "references":
+    }
+    case "references": {
       return <References />;
-    default:
+    }
+    default: {
       if (section.startsWith("custom.")) return <Custom id={section.split(".")[1]} />;
 
       return null;
+    }
   }
 };
 

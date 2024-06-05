@@ -2,8 +2,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import {
   ArrowClockwise,
   ArrowCounterClockwise,
-  Code,
-  CodeBlock,
+  Code as CodeIcon,
+  CodeBlock as CodeBlockIcon,
   HighlighterCircle,
   Image as ImageIcon,
   KeyReturn,
@@ -11,7 +11,7 @@ import {
   ListBullets,
   ListNumbers,
   Minus,
-  Paragraph,
+  Paragraph as ParagraphIcon,
   TextAlignCenter,
   TextAlignJustify,
   TextAlignLeft,
@@ -28,13 +28,27 @@ import {
 } from "@phosphor-icons/react";
 import { PopoverTrigger } from "@radix-ui/react-popover";
 import { cn } from "@reactive-resume/utils";
+import { Bold } from "@tiptap/extension-bold";
+import { BulletList } from "@tiptap/extension-bullet-list";
+import { Code } from "@tiptap/extension-code";
+import { CodeBlock } from "@tiptap/extension-code-block";
+import { Document } from "@tiptap/extension-document";
+import { HardBreak } from "@tiptap/extension-hard-break";
+import { Heading } from "@tiptap/extension-heading";
 import { Highlight } from "@tiptap/extension-highlight";
+import { History } from "@tiptap/extension-history";
+import { HorizontalRule } from "@tiptap/extension-horizontal-rule";
 import { Image } from "@tiptap/extension-image";
+import { Italic } from "@tiptap/extension-italic";
 import { Link } from "@tiptap/extension-link";
+import { ListItem } from "@tiptap/extension-list-item";
+import { OrderedList } from "@tiptap/extension-ordered-list";
+import { Paragraph } from "@tiptap/extension-paragraph";
+import { Strike } from "@tiptap/extension-strike";
+import { Text } from "@tiptap/extension-text";
 import { TextAlign } from "@tiptap/extension-text-align";
 import { Underline } from "@tiptap/extension-underline";
 import { Editor, EditorContent, EditorContentProps, useEditor } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
 import { forwardRef, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -71,7 +85,7 @@ const InsertImageForm = ({ onInsert }: InsertImageProps) => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
+      <form className="space-y-3" onSubmit={form.handleSubmit(onSubmit)}>
         <p className="prose prose-sm prose-zinc dark:prose-invert">
           Insert an image from an external URL and use it on your resume.
         </p>
@@ -83,7 +97,7 @@ const InsertImageForm = ({ onInsert }: InsertImageProps) => {
             <FormItem>
               <FormLabel>URL</FormLabel>
               <FormControl>
-                <Input placeholder="http://..." {...field} />
+                <Input placeholder="https://..." {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -204,7 +218,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           disabled={!editor.can().chain().focus().toggleCode().run()}
           onPressedChange={() => editor.chain().focus().toggleCode().run()}
         >
-          <Code />
+          <CodeIcon />
         </Toggle>
       </Tooltip>
 
@@ -215,7 +229,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           disabled={!editor.can().chain().focus().toggleCodeBlock().run()}
           onPressedChange={() => editor.chain().focus().toggleCodeBlock().run()}
         >
-          <CodeBlock />
+          <CodeBlockIcon />
         </Toggle>
       </Tooltip>
 
@@ -258,7 +272,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           pressed={editor.isActive("paragraph")}
           onPressedChange={() => editor.chain().focus().setParagraph().run()}
         >
-          <Paragraph />
+          <ParagraphIcon />
         </Toggle>
       </Tooltip>
 
@@ -333,8 +347,8 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           size="sm"
           variant="ghost"
           className="px-2"
-          onClick={() => editor.chain().focus().liftListItem("listItem").run()}
           disabled={!editor.can().chain().focus().liftListItem("listItem").run()}
+          onClick={() => editor.chain().focus().liftListItem("listItem").run()}
         >
           <TextOutdent />
         </Button>
@@ -345,8 +359,8 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           size="sm"
           variant="ghost"
           className="px-2"
-          onClick={() => editor.chain().focus().sinkListItem("listItem").run()}
           disabled={!editor.can().chain().focus().sinkListItem("listItem").run()}
+          onClick={() => editor.chain().focus().sinkListItem("listItem").run()}
         >
           <TextIndent />
         </Button>
@@ -370,8 +384,8 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           size="sm"
           variant="ghost"
           className="px-2"
-          onClick={() => editor.chain().focus().setHardBreak().run()}
           disabled={!editor.can().chain().focus().setHardBreak().run()}
+          onClick={() => editor.chain().focus().setHardBreak().run()}
         >
           <KeyReturn />
         </Button>
@@ -382,8 +396,8 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           size="sm"
           variant="ghost"
           className="px-2"
-          onClick={() => editor.chain().focus().setHorizontalRule().run()}
           disabled={!editor.can().chain().focus().setHorizontalRule().run()}
+          onClick={() => editor.chain().focus().setHorizontalRule().run()}
         >
           <Minus />
         </Button>
@@ -416,18 +430,14 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
   );
 };
 
-interface RichInputProps
-  extends Omit<
-    EditorContentProps,
-    "ref" | "editor" | "content" | "value" | "onChange" | "className"
-  > {
+type RichInputProps = {
   content?: string;
   onChange?: (value: string) => void;
   hideToolbar?: boolean;
   className?: string;
   editorClassName?: string;
   footer?: (editor: Editor) => React.ReactNode;
-}
+} & Omit<EditorContentProps, "ref" | "editor" | "content" | "value" | "onChange" | "className">;
 
 export const RichInput = forwardRef<Editor, RichInputProps>(
   (
@@ -436,7 +446,21 @@ export const RichInput = forwardRef<Editor, RichInputProps>(
   ) => {
     const editor = useEditor({
       extensions: [
-        StarterKit,
+        Document,
+        Text,
+        Bold,
+        Strike,
+        Italic,
+        Code,
+        CodeBlock,
+        Heading,
+        Paragraph,
+        ListItem,
+        BulletList,
+        OrderedList,
+        HardBreak,
+        History,
+        HorizontalRule,
         Image,
         Underline,
         Highlight,

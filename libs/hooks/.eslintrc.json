@@ -4,7 +4,19 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {}
+      "rules": {
+        // react
+        "react/no-unescaped-entities": "off",
+        "react/jsx-sort-props": [
+          "error",
+          {
+            "reservedFirst": true,
+            "callbacksLast": true,
+            "shorthandFirst": true,
+            "noSortAlphabetically": true
+          }
+        ]
+      }
     },
     {
       "files": ["*.ts", "*.tsx"],

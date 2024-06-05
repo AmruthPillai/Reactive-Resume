@@ -19,7 +19,7 @@ export const usePrintResume = () => {
   } = useMutation({
     mutationFn: printResume,
     onError: (error) => {
-      const message = error?.message;
+      const message = error.message;
 
       toast({
         variant: "error",

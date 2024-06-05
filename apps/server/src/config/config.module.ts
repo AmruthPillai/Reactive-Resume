@@ -8,7 +8,7 @@ import { configSchema } from "./schema";
     NestConfigModule.forRoot({
       isGlobal: true,
       expandVariables: true,
-      validate: configSchema.parse,
+      validate: (config) => configSchema.parse(config),
     }),
   ],
 })

@@ -24,17 +24,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { z } from "zod";
 
 import { useRegister } from "@/client/services/auth";
-import { useAuthProviders } from "@/client/services/auth/providers";
+import { useFeatureFlags } from "@/client/services/feature";
 
 type FormValues = z.infer<typeof registerSchema>;
 
 export const RegisterPage = () => {
   const navigate = useNavigate();
+  const { flags } = useFeatureFlags();
   const { register, loading } = useRegister();
-  const disableSignups = import.meta.env.VITE_DISABLE_SIGNUPS === "true";
-
-  const { providers } = useAuthProviders();
-  const emailAuthDisabled = !providers || !providers.includes("email");
 
   const formRef = useRef<HTMLFormElement>(null);
   usePasswordToggle(formRef);
@@ -55,7 +52,7 @@ export const RegisterPage = () => {
       await register(data);
 
       navigate("/auth/verify-email");
-    } catch (error) {
+    } catch {
       form.reset();
     }
   };
@@ -70,7 +67,7 @@ export const RegisterPage = () => {
 
       <div className="space-y-1.5">
         <h2 className="text-2xl font-semibold tracking-tight">{t`Create a new account`}</h2>
-        <h6 className={cn(emailAuthDisabled && "hidden")}>
+        <h6>
           <span className="opacity-75">{t`Already have an account?`}</span>
           <Button asChild variant="link" className="px-1.5">
             <Link to="/auth/login">
@@ -80,18 +77,13 @@ export const RegisterPage = () => {
         </h6>
       </div>
 
-      {disableSignups && (
+      {flags.isSignupsDisabled && (
         <Alert variant="error">
           <AlertTitle>{t`Signups are currently disabled by the administrator.`}</AlertTitle>
         </Alert>
       )}
 
-      <div
-        className={cn(
-          emailAuthDisabled && "hidden",
-          disableSignups && "pointer-events-none blur-sm",
-        )}
-      >
+      <div className={cn(flags.isSignupsDisabled && "pointer-events-none select-none blur-sm")}>
         <Form {...form}>
           <form
             ref={formRef}

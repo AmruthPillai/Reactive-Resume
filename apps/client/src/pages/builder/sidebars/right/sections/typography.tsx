@@ -2,8 +2,7 @@
 
 import { t } from "@lingui/macro";
 import { Button, Combobox, ComboboxOption, Label, Slider, Switch } from "@reactive-resume/ui";
-import { cn } from "@reactive-resume/utils";
-import { fonts } from "@reactive-resume/utils";
+import { cn, fonts } from "@reactive-resume/utils";
 import { useCallback, useEffect, useState } from "react";
 import webfontloader from "webfontloader";
 
@@ -36,14 +35,14 @@ export const TypographySection = () => {
   const setValue = useResumeStore((state) => state.setValue);
   const typography = useResumeStore((state) => state.resume.data.metadata.typography);
 
-  const loadFontSuggestions = useCallback(async () => {
-    fontSuggestions.forEach((font) => {
+  const loadFontSuggestions = useCallback(() => {
+    for (const font of fontSuggestions) {
       webfontloader.load({
         events: false,
         classes: false,
         google: { families: [font], text: font },
       });
-    });
+    }
   }, [fontSuggestions]);
 
   useEffect(() => {
@@ -75,15 +74,15 @@ export const TypographySection = () => {
               variant="outline"
               style={{ fontFamily: font }}
               disabled={typography.font.family === font}
+              className={cn(
+                "flex h-12 items-center justify-center overflow-hidden rounded border text-center text-sm ring-primary transition-colors hover:bg-secondary-accent focus:outline-none focus:ring-1 disabled:opacity-100",
+                typography.font.family === font && "ring-1",
+              )}
               onClick={() => {
                 setValue("metadata.typography.font.family", font);
                 setValue("metadata.typography.font.subset", "latin");
                 setValue("metadata.typography.font.variants", ["regular"]);
               }}
-              className={cn(
-                "flex h-12 items-center justify-center overflow-hidden rounded border text-center text-sm ring-primary transition-colors hover:bg-secondary-accent focus:outline-none focus:ring-1 disabled:opacity-100",
-                typography.font.family === font && "ring-1",
-              )}
             >
               {font}
             </Button>

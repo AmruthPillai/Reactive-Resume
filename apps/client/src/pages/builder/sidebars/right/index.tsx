@@ -60,28 +60,72 @@ export const RightSidebar = () => {
           <SectionIcon
             id="template"
             name={t`Template`}
-            onClick={() => scrollIntoView("#template")}
+            onClick={() => {
+              scrollIntoView("#template");
+            }}
           />
-          <SectionIcon id="layout" name={t`Layout`} onClick={() => scrollIntoView("#layout")} />
+          <SectionIcon
+            id="layout"
+            name={t`Layout`}
+            onClick={() => {
+              scrollIntoView("#layout");
+            }}
+          />
           <SectionIcon
             id="typography"
             name={t`Typography`}
-            onClick={() => scrollIntoView("#typography")}
+            onClick={() => {
+              scrollIntoView("#typography");
+            }}
           />
-          <SectionIcon id="theme" name={t`Theme`} onClick={() => scrollIntoView("#theme")} />
-          <SectionIcon id="page" name={t`Page`} onClick={() => scrollIntoView("#page")} />
-          <SectionIcon id="sharing" name={t`Sharing`} onClick={() => scrollIntoView("#sharing")} />
+          <SectionIcon
+            id="theme"
+            name={t`Theme`}
+            onClick={() => {
+              scrollIntoView("#theme");
+            }}
+          />
+          <SectionIcon
+            id="page"
+            name={t`Page`}
+            onClick={() => {
+              scrollIntoView("#page");
+            }}
+          />
+          <SectionIcon
+            id="sharing"
+            name={t`Sharing`}
+            onClick={() => {
+              scrollIntoView("#sharing");
+            }}
+          />
           <SectionIcon
             id="statistics"
             name={t`Statistics`}
-            onClick={() => scrollIntoView("#statistics")}
+            onClick={() => {
+              scrollIntoView("#statistics");
+            }}
           />
-          <SectionIcon id="export" name={t`Export`} onClick={() => scrollIntoView("#export")} />
-          <SectionIcon id="notes" name={t`Notes`} onClick={() => scrollIntoView("#notes")} />
+          <SectionIcon
+            id="export"
+            name={t`Export`}
+            onClick={() => {
+              scrollIntoView("#export");
+            }}
+          />
+          <SectionIcon
+            id="notes"
+            name={t`Notes`}
+            onClick={() => {
+              scrollIntoView("#notes");
+            }}
+          />
           <SectionIcon
             id="information"
             name={t`Information`}
-            onClick={() => scrollIntoView("#information")}
+            onClick={() => {
+              scrollIntoView("#information");
+            }}
           />
         </div>
 

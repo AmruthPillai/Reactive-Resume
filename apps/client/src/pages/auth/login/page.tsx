@@ -4,6 +4,8 @@ import { ArrowRight } from "@phosphor-icons/react";
 import { loginSchema } from "@reactive-resume/dto";
 import { usePasswordToggle } from "@reactive-resume/hooks";
 import {
+  Alert,
+  AlertTitle,
   Button,
   Form,
   FormControl,
@@ -22,15 +24,13 @@ import { Link } from "react-router-dom";
 import { z } from "zod";
 
 import { useLogin } from "@/client/services/auth";
-import { useAuthProviders } from "@/client/services/auth/providers";
+import { useFeatureFlags } from "@/client/services/feature";
 
 type FormValues = z.infer<typeof loginSchema>;
 
 export const LoginPage = () => {
   const { login, loading } = useLogin();
-
-  const { providers } = useAuthProviders();
-  const emailAuthDisabled = !providers || !providers.includes("email");
+  const { flags } = useFeatureFlags();
 
   const formRef = useRef<HTMLFormElement>(null);
   usePasswordToggle(formRef);
@@ -43,7 +43,7 @@ export const LoginPage = () => {
   const onSubmit = async (data: FormValues) => {
     try {
       await login(data);
-    } catch (error) {
+    } catch {
       form.reset();
     }
   };
@@ -58,7 +58,7 @@ export const LoginPage = () => {
 
       <div className="space-y-1.5">
         <h2 className="text-2xl font-semibold tracking-tight">{t`Sign in to your account`}</h2>
-        <h6 className={cn(emailAuthDisabled && "hidden")}>
+        <h6>
           <span className="opacity-75">{t`Don't have an account?`}</span>
           <Button asChild variant="link" className="px-1.5">
             <Link to="/auth/register">
@@ -69,7 +69,13 @@ export const LoginPage = () => {
         </h6>
       </div>
 
-      <div className={cn(emailAuthDisabled && "hidden")}>
+      {flags.isEmailAuthDisabled && (
+        <Alert variant="error">
+          <AlertTitle>{t`Signing in via email is currently disabled by the administrator.`}</AlertTitle>
+        </Alert>
+      )}
+
+      <div className={cn(flags.isEmailAuthDisabled && "pointer-events-none select-none blur-sm")}>
         <Form {...form}>
           <form
             ref={formRef}

@@ -34,11 +34,10 @@ export const SheetOverlay = forwardRef<
 
 SheetOverlay.displayName = SheetPrimitive.Overlay.displayName;
 
-export interface SheetContentProps
-  extends React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content>,
-    VariantProps<typeof sheetVariants> {
+export type SheetContentProps = {
   showClose?: boolean;
-}
+} & React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content> &
+  VariantProps<typeof sheetVariants>;
 
 export const SheetContent = forwardRef<
   React.ElementRef<typeof SheetPrimitive.Content>,

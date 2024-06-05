@@ -1,5 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { t } from "@lingui/macro";
+import { i18n } from "@lingui/core";
+import { msg, t } from "@lingui/macro";
 import { QrCode } from "@phosphor-icons/react";
 import {
   Alert,
@@ -38,7 +39,7 @@ import { queryClient } from "@/client/libs/query-client";
 import { useDisable2FA, useEnable2FA, useSetup2FA } from "@/client/services/auth";
 import { useDialog } from "@/client/stores/dialog";
 
-// We're using the pre-existing "mode" state to determine the stage of 2FA setup the user is in.
+// We're using the pre-existing "mode" state to determine the stage of 2FA set up the user is in.
 // - "create" mode is used to enable 2FA.
 // - "update" mode is used to verify 2FA, displaying a QR Code, once enabled.
 // - "duplicate" mode is used to display the backup codes after initial verification.
@@ -46,8 +47,9 @@ import { useDialog } from "@/client/stores/dialog";
 
 const formSchema = z.object({
   uri: z.literal("").or(z.string().optional()),
-  // eslint-disable-next-line lingui/t-call-in-function
-  code: z.literal("").or(z.string().regex(/^\d{6}$/, t`Code must be exactly 6 digits long.`)),
+  code: z
+    .literal("")
+    .or(z.string().regex(/^\d{6}$/, i18n._(msg`Code must be exactly 6 digits long.`))),
   backupCodes: z.array(z.string()),
 });
 
@@ -81,7 +83,7 @@ export const TwoFactorDialog = () => {
       form.setValue("uri", data.message);
     };
 
-    if (isCreate) initialize();
+    if (isCreate) void initialize();
   }, [isCreate]);
 
   const onSubmit = async (values: FormValues) => {
@@ -232,7 +234,12 @@ export const TwoFactorDialog = () => {
               {isCreate && <Button disabled={loading}>{t`Continue`}</Button>}
               {isUpdate && (
                 <>
-                  <Button variant="ghost" onClick={() => open("create")}>
+                  <Button
+                    variant="ghost"
+                    onClick={() => {
+                      open("create");
+                    }}
+                  >
                     {t`Back`}
                   </Button>
 

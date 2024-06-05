@@ -6,6 +6,7 @@ import { ContributorDto } from "@reactive-resume/dto";
 import { Config } from "../config/schema";
 
 type GitHubResponse = { id: number; login: string; html_url: string; avatar_url: string }[];
+
 type CrowdinContributorsResponse = {
   data: { data: { id: number; username: string; avatarUrl: string } }[];
 };
@@ -52,7 +53,7 @@ export class ContributorsService {
           avatar: data.avatarUrl,
         } satisfies ContributorDto;
       });
-    } catch (error) {
+    } catch {
       return [];
     }
   }

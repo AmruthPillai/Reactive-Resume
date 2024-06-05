@@ -14,7 +14,12 @@ import {
 import { ApiTags } from "@nestjs/swagger";
 import { User as UserEntity } from "@prisma/client";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
-import { CreateResumeDto, ImportResumeDto, ResumeDto, UpdateResumeDto } from "@reactive-resume/dto";
+import {
+  CreateResumeDto,
+  importResumeSchema,
+  ResumeDto,
+  UpdateResumeDto,
+} from "@reactive-resume/dto";
 import { resumeDataSchema } from "@reactive-resume/schema";
 import { ErrorMessage } from "@reactive-resume/utils";
 import { zodToJsonSchema } from "zod-to-json-schema";
@@ -23,7 +28,6 @@ import { User } from "@/server/user/decorators/user.decorator";
 
 import { OptionalGuard } from "../auth/guards/optional.guard";
 import { TwoFactorGuard } from "../auth/guards/two-factor.guard";
-import { UtilsService } from "../utils/utils.service";
 import { Resume } from "./decorators/resume.decorator";
 import { ResumeGuard } from "./guards/resume.guard";
 import { ResumeService } from "./resume.service";
@@ -31,18 +35,11 @@ import { ResumeService } from "./resume.service";
 @ApiTags("Resume")
 @Controller("resume")
 export class ResumeController {
-  constructor(
-    private readonly resumeService: ResumeService,
-    private readonly utils: UtilsService,
-  ) {}
+  constructor(private readonly resumeService: ResumeService) {}
 
   @Get("schema")
   getSchema() {
-    return this.utils.getCachedOrSet(
-      `resume:schema`,
-      () => zodToJsonSchema(resumeDataSchema),
-      1000 * 60 * 60 * 24, // 24 hours
-    );
+    return zodToJsonSchema(resumeDataSchema);
   }
 
   @Post()
@@ -62,9 +59,10 @@ export class ResumeController {
 
   @Post("import")
   @UseGuards(TwoFactorGuard)
-  async import(@User() user: UserEntity, @Body() importResumeDto: ImportResumeDto) {
+  async import(@User() user: UserEntity, @Body() importResumeDto: unknown) {
     try {
-      return await this.resumeService.import(user.id, importResumeDto);
+      const result = importResumeSchema.parse(importResumeDto);
+      return await this.resumeService.import(user.id, result);
     } catch (error) {
       if (error instanceof PrismaClientKnownRequestError && error.code === "P2002") {
         throw new BadRequestException(ErrorMessage.ResumeSlugAlreadyExists);
@@ -89,8 +87,8 @@ export class ResumeController {
 
   @Get(":id/statistics")
   @UseGuards(TwoFactorGuard)
-  findOneStatistics(@User("id") userId: string, @Param("id") id: string) {
-    return this.resumeService.findOneStatistics(userId, id);
+  findOneStatistics(@Param("id") id: string) {
+    return this.resumeService.findOneStatistics(id);
   }
 
   @Get("/public/:username/:slug")

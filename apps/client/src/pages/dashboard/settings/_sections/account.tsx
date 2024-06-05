@@ -108,7 +108,7 @@ export const AccountSettings = () => {
       </div>
 
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-6 sm:grid-cols-2">
+        <form className="grid gap-6 sm:grid-cols-2" onSubmit={form.handleSubmit(onSubmit)}>
           <FormField
             name="picture"
             control={form.control}
@@ -119,22 +119,22 @@ export const AccountSettings = () => {
                 <FormItem className="flex-1">
                   <FormLabel>{t`Picture`}</FormLabel>
                   <FormControl>
-                    <Input placeholder="https://..." {...field} value={field.value || ""} />
+                    <Input placeholder="https://..." {...field} value={field.value ?? ""} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
 
                 {!user.picture && (
                   <>
-                    <input hidden type="file" ref={inputRef} onChange={onSelectImage} />
+                    <input ref={inputRef} hidden type="file" onChange={onSelectImage} />
 
                     <motion.button
                       disabled={isUploading}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      onClick={() => inputRef.current?.click()}
                       className={cn(buttonVariants({ size: "icon", variant: "ghost" }))}
+                      onClick={() => inputRef.current?.click()}
                     >
                       <UploadSimple />
                     </motion.button>

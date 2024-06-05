@@ -39,20 +39,20 @@ export const ArtboardPage = () => {
       `${metadata.typography.lineHeight}`,
     );
 
-    document.documentElement.style.setProperty("--color-text", `${metadata.theme.text}`);
-    document.documentElement.style.setProperty("--color-primary", `${metadata.theme.primary}`);
-    document.documentElement.style.setProperty(
-      "--color-background",
-      `${metadata.theme.background}`,
-    );
+    document.documentElement.style.setProperty("--color-foreground", metadata.theme.text);
+    document.documentElement.style.setProperty("--color-primary", metadata.theme.primary);
+    document.documentElement.style.setProperty("--color-background", metadata.theme.background);
   }, [metadata]);
 
   // Typography Options
   useEffect(() => {
-    document.querySelectorAll(`[data-page]`).forEach((el) => {
+    // eslint-disable-next-line unicorn/prefer-spread
+    const elements = Array.from(document.querySelectorAll(`[data-page]`));
+
+    for (const el of elements) {
       el.classList.toggle("hide-icons", metadata.typography.hideIcons);
       el.classList.toggle("underline-links", metadata.typography.underlineLinks);
-    });
+    }
   }, [metadata]);
 
   return <Outlet />;

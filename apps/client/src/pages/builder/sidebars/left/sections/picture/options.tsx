@@ -47,22 +47,20 @@ export const PictureOptions = () => {
   const picture = useResumeStore((state) => state.resume.data.basics.picture);
 
   const aspectRatio = useMemo(() => {
-    const ratio = picture.aspectRatio?.toString() as keyof typeof ratioToStringMap;
+    const ratio = picture.aspectRatio.toString() as keyof typeof ratioToStringMap;
     return ratioToStringMap[ratio];
   }, [picture.aspectRatio]);
 
   const onAspectRatioChange = (value: AspectRatio) => {
-    if (!value) return;
     setValue("basics.picture.aspectRatio", stringToRatioMap[value]);
   };
 
   const borderRadius = useMemo(() => {
-    const radius = picture.borderRadius?.toString() as keyof typeof borderRadiusToStringMap;
+    const radius = picture.borderRadius.toString() as keyof typeof borderRadiusToStringMap;
     return borderRadiusToStringMap[radius];
   }, [picture.borderRadius]);
 
   const onBorderRadiusChange = (value: BorderRadius) => {
-    if (!value) return;
     setValue("basics.picture.borderRadius", stringToBorderRadiusMap[value]);
   };
 
@@ -88,8 +86,8 @@ export const PictureOptions = () => {
           <ToggleGroup
             type="single"
             value={aspectRatio}
-            onValueChange={onAspectRatioChange}
             className="flex items-center justify-center"
+            onValueChange={onAspectRatioChange}
           >
             <Tooltip content={t`Square`}>
               <ToggleGroupItem value="square">
@@ -119,7 +117,7 @@ export const PictureOptions = () => {
             id="picture.aspectRatio"
             value={picture.aspectRatio}
             onChange={(event) => {
-              setValue("basics.picture.aspectRatio", event.target.valueAsNumber ?? 0);
+              setValue("basics.picture.aspectRatio", event.target.valueAsNumber);
             }}
           />
         </div>
@@ -131,8 +129,8 @@ export const PictureOptions = () => {
           <ToggleGroup
             type="single"
             value={borderRadius}
-            onValueChange={onBorderRadiusChange}
             className="flex items-center justify-center"
+            onValueChange={onBorderRadiusChange}
           >
             <Tooltip content={t`Square`}>
               <ToggleGroupItem value="square">
@@ -162,7 +160,7 @@ export const PictureOptions = () => {
             id="picture.borderRadius"
             value={picture.borderRadius}
             onChange={(event) => {
-              setValue("basics.picture.borderRadius", event.target.valueAsNumber ?? 0);
+              setValue("basics.picture.borderRadius", event.target.valueAsNumber);
             }}
           />
         </div>

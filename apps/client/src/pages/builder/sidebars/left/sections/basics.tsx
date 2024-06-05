@@ -33,7 +33,9 @@ export const BasicsSection = () => {
             id="basics.name"
             value={basics.name}
             hasError={!basicsSchema.pick({ name: true }).safeParse({ name: basics.name }).success}
-            onChange={(event) => setValue("basics.name", event.target.value)}
+            onChange={(event) => {
+              setValue("basics.name", event.target.value);
+            }}
           />
         </div>
 
@@ -42,7 +44,9 @@ export const BasicsSection = () => {
           <Input
             id="basics.headline"
             value={basics.headline}
-            onChange={(event) => setValue("basics.headline", event.target.value)}
+            onChange={(event) => {
+              setValue("basics.headline", event.target.value);
+            }}
           />
         </div>
 
@@ -55,7 +59,9 @@ export const BasicsSection = () => {
             hasError={
               !basicsSchema.pick({ email: true }).safeParse({ email: basics.email }).success
             }
-            onChange={(event) => setValue("basics.email", event.target.value)}
+            onChange={(event) => {
+              setValue("basics.email", event.target.value);
+            }}
           />
         </div>
 
@@ -65,7 +71,9 @@ export const BasicsSection = () => {
             id="basics.url"
             value={basics.url}
             placeholder="https://example.com"
-            onChange={(value) => setValue("basics.url", value)}
+            onChange={(value) => {
+              setValue("basics.url", value);
+            }}
           />
         </div>
 
@@ -75,7 +83,9 @@ export const BasicsSection = () => {
             id="basics.phone"
             placeholder="+1 (123) 4567 7890"
             value={basics.phone}
-            onChange={(event) => setValue("basics.phone", event.target.value)}
+            onChange={(event) => {
+              setValue("basics.phone", event.target.value);
+            }}
           />
         </div>
 
@@ -84,7 +94,9 @@ export const BasicsSection = () => {
           <Input
             id="basics.location"
             value={basics.location}
-            onChange={(event) => setValue("basics.location", event.target.value)}
+            onChange={(event) => {
+              setValue("basics.location", event.target.value);
+            }}
           />
         </div>
 

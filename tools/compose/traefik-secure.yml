@@ -8,7 +8,7 @@ version: "3.8"
 services:
   # Database (Postgres)
   postgres:
-    image: postgres:15-alpine
+    image: postgres:16-alpine
     restart: unless-stopped
     volumes:
       - postgres_data:/var/lib/postgresql/data
@@ -56,21 +56,12 @@ services:
       - traefik.http.routers.printer.tls.certresolver=letsencrypt
       - traefik.http.services.printer.loadbalancer.server.port=3000
 
-  # Redis (for cache & server session management)
-  redis:
-    image: redis:alpine
-    restart: unless-stopped
-    command: redis-server --save 60 1 --loglevel warning --requirepass password
-    volumes:
-      - redis_data:/data
-
   app:
     image: amruthpillai/reactive-resume:latest
     restart: unless-stopped
     depends_on:
       - postgres
       - minio
-      - redis
       - chrome
     environment:
       # -- Environment Variables --
@@ -104,30 +95,25 @@ services:
       STORAGE_ACCESS_KEY: minioadmin
       STORAGE_SECRET_KEY: minioadmin
       STORAGE_USE_SSL: false
-
-      # -- Cache (Redis) --
-      REDIS_URL: redis://default:password@redis:6379
-
-      # -- Sentry --
-      # VITE_SENTRY_DSN: https://id.sentry.io # Optional
+      STORAGE_SKIP_BUCKET_CHECK: false
 
       # -- Crowdin (Optional) --
       # CROWDIN_PROJECT_ID:
       # CROWDIN_PERSONAL_TOKEN:
 
-      # -- Email (Optional) --
-      # DISABLE_EMAIL_AUTH: true
-      # VITE_DISABLE_SIGNUPS: true
+      # -- Feature Flags (Optional) --
+      # DISABLE_SIGNUPS: false
+      # DISABLE_EMAIL_AUTH: false
 
       # -- GitHub (Optional) --
-      GITHUB_CLIENT_ID: github_client_id
-      GITHUB_CLIENT_SECRET: github_client_secret
-      GITHUB_CALLBACK_URL: https://example.com/api/auth/github/callback
+      # GITHUB_CLIENT_ID: github_client_id
+      # GITHUB_CLIENT_SECRET: github_client_secret
+      # GITHUB_CALLBACK_URL: https://example.com/api/auth/github/callback
 
       # -- Google (Optional) --
-      GOOGLE_CLIENT_ID: google_client_id
-      GOOGLE_CLIENT_SECRET: google_client_secret
-      GOOGLE_CALLBACK_URL: https://example.com/api/auth/google/callback
+      # GOOGLE_CLIENT_ID: google_client_id
+      # GOOGLE_CLIENT_SECRET: google_client_secret
+      # GOOGLE_CALLBACK_URL: https://example.com/api/auth/google/callback
     labels:
       - traefik.enable=true
       - traefik.http.routers.app.rule=Host(`example.com`)
@@ -154,14 +140,13 @@ services:
       - --entrypoints.web.http.redirections.entrypoint.to=websecure
       - --entrypoints.web.http.redirections.entrypoint.scheme=https
     ports:
-      - 80:80
-      - 443:443
+      - "80:80"
+      - "443:443"
     volumes:
       - letsencrypt_data:/letsencrypt
       - /var/run/docker.sock:/var/run/docker.sock
 
 volumes:
   minio_data:
-  redis_data:
   postgres_data:
   letsencrypt_data:

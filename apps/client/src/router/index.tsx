@@ -9,12 +9,12 @@ import { ResetPasswordPage } from "../pages/auth/reset-password/page";
 import { VerifyEmailPage } from "../pages/auth/verify-email/page";
 import { VerifyOtpPage } from "../pages/auth/verify-otp/page";
 import { BuilderLayout } from "../pages/builder/layout";
-import { BuilderPage } from "../pages/builder/page";
-import { builderLoader } from "../pages/builder/page";
+import { builderLoader, BuilderPage } from "../pages/builder/page";
 import { DashboardLayout } from "../pages/dashboard/layout";
 import { ResumesPage } from "../pages/dashboard/resumes/page";
 import { SettingsPage } from "../pages/dashboard/settings/page";
 import { HomeLayout } from "../pages/home/layout";
+import { PrivacyPolicyPage } from "../pages/home/meta/privacy-policy/page";
 import { HomePage } from "../pages/home/page";
 import { publicLoader, PublicResumePage } from "../pages/public/page";
 import { Providers } from "../providers";
@@ -26,6 +26,11 @@ export const routes = createRoutesFromElements(
   <Route element={<Providers />}>
     <Route element={<HomeLayout />}>
       <Route path="/" element={<HomePage />} />
+
+      <Route path="meta">
+        <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route index element={<Navigate replace to="/" />} />
+      </Route>
     </Route>
 
     <Route path="auth">
@@ -56,7 +61,7 @@ export const routes = createRoutesFromElements(
         <Route path="callback" loader={authLoader} />
       </Route>
 
-      <Route index element={<Navigate to="/auth/login" replace />} />
+      <Route index element={<Navigate replace to="/auth/login" />} />
     </Route>
 
     <Route path="dashboard">
@@ -65,7 +70,7 @@ export const routes = createRoutesFromElements(
           <Route path="resumes" element={<ResumesPage />} />
           <Route path="settings" element={<SettingsPage />} />
 
-          <Route index element={<Navigate to="/dashboard/resumes" replace />} />
+          <Route index element={<Navigate replace to="/dashboard/resumes" />} />
         </Route>
       </Route>
     </Route>
@@ -75,7 +80,7 @@ export const routes = createRoutesFromElements(
         <Route element={<BuilderLayout />}>
           <Route path=":id" loader={builderLoader} element={<BuilderPage />} />
 
-          <Route index element={<Navigate to="/dashboard/resumes" replace />} />
+          <Route index element={<Navigate replace to="/dashboard/resumes" />} />
         </Route>
       </Route>
     </Route>
