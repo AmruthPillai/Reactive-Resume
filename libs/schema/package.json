@@ -9,6 +9,9 @@
     "access": "public"
   },
   "dependencies": {
-    "@reactive-resume/utils": "*"
+    "@reactive-resume/utils": "*",
+    "zod": "^3.23.8",
+    "@paralleldrive/cuid2": "^2.2.2",
+    "@swc/helpers": "~0.5.11"
   }
 }
