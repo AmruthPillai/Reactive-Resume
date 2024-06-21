@@ -27,7 +27,7 @@ export class AuthService {
     private readonly userService: UserService,
     private readonly mailService: MailService,
     private readonly jwtService: JwtService,
-  ) {}
+  ) { }
 
   private hash(password: string): Promise<string> {
     return bcryptjs.hash(password, 10);
@@ -197,6 +197,12 @@ export class AuthService {
       this.configService.get("GOOGLE_CALLBACK_URL")
     ) {
       providers.push("google");
+    }
+
+    if (
+      this.configService.get("OAUTH2_CLIENT_PROVIDER_OIDC_ISSUER")
+    ) {
+      providers.push("oidc")
     }
 
     return providers;

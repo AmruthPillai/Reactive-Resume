@@ -25,7 +25,8 @@ services:
 
   # Storage (for image uploads)
   minio:
-    image: minio/minio
+    # image: minio/minio
+    image: minio/minio:RELEASE.2024-06-13T22-53-53Z-cpuv1
     restart: unless-stopped
     command: server /data
     ports:

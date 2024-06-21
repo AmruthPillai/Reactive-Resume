@@ -72,6 +72,14 @@ export const configSchema = z.object({
   GOOGLE_CLIENT_ID: z.string().optional(),
   GOOGLE_CLIENT_SECRET: z.string().optional(),
   GOOGLE_CALLBACK_URL: z.string().url().optional(),
+
+  // Generic OIDC
+  OAUTH2_CLIENT_PROVIDER_OIDC_ISSUER: z.string().optional(),
+  OAUTH2_CLIENT_REGISTRATION_LOGIN_CLIENT_ID: z.string().optional(),
+  OAUTH2_CLIENT_REGISTRATION_LOGIN_CLIENT_SECRET: z.string().optional(),
+  OAUTH2_CLIENT_REGISTRATION_LOGIN_REDIRECT_URI: z.string().optional(),
+  OAUTH2_CLIENT_REGISTRATION_LOGIN_SCOPE: z.string().optional(),
+  SESSION_SECRET: z.string().optional()
 });
 
 export type Config = z.infer<typeof configSchema>;

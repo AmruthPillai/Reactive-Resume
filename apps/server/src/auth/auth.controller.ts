@@ -39,6 +39,7 @@ import { RefreshGuard } from "./guards/refresh.guard";
 import { TwoFactorGuard } from "./guards/two-factor.guard";
 import { getCookieOptions } from "./utils/cookie";
 import { payloadSchema } from "./utils/payload";
+import { OidcGuard } from "./guards/oidc.guard";
 
 @ApiTags("Authentication")
 @Controller("auth")
@@ -46,7 +47,7 @@ export class AuthController {
   constructor(
     private readonly authService: AuthService,
     private readonly configService: ConfigService,
-  ) {}
+  ) { }
 
   private async exchangeToken(id: string, email: string, isTwoFactorAuth = false) {
     try {
@@ -145,6 +146,23 @@ export class AuthController {
     @Res({ passthrough: true }) response: Response,
   ) {
     return this.handleAuthenticationResponse(user, response, false, true);
+  }
+
+  @ApiTags("OAuth", "OIDC")
+  @Get("oidc")
+  @UseGuards(OidcGuard)
+  oidcLogin() {
+    return;
+  }
+
+  @ApiTags("OAuth", "OIDC")
+  @Get("oidc/callback")
+  @UseGuards(OidcGuard)
+  async oidcCallback(
+    @User() user: UserWithSecrets,
+    @Res({ passthrough: true }) response: Response,
+  ) {
+    await this.handleAuthenticationResponse(user, response, false, true)
   }
 
   @Post("refresh")

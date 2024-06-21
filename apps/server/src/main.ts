@@ -6,6 +6,8 @@ import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
 import cookieParser from "cookie-parser";
 import helmet from "helmet";
 import { patchNestJsSwagger } from "nestjs-zod";
+import passport from 'passport'
+import session from 'express-session'
 
 import { AppModule } from "./app.module";
 import { Config } from "./config/schema";
@@ -20,6 +22,13 @@ async function bootstrap() {
 
   // Cookie Parser
   app.use(cookieParser());
+
+  if (process.env.SESSION_SECRET) {
+    // TODO: use actual session store
+    app.use(session({ secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: false }))
+    app.use(passport.initialize())
+    app.use(passport.session())
+  }
 
   // CORS
   app.enableCors({

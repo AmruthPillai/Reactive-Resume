@@ -16,13 +16,15 @@ import { JwtStrategy } from "./strategy/jwt.strategy";
 import { LocalStrategy } from "./strategy/local.strategy";
 import { RefreshStrategy } from "./strategy/refresh.strategy";
 import { TwoFactorStrategy } from "./strategy/two-factor.strategy";
+import { OidcStrategy, buildOpenIdClient } from "./strategy/oidc.strategy";
+import { SessionSerializer } from "./session.serializer";
 
 @Module({})
 export class AuthModule {
   static register(): DynamicModule {
     return {
       module: AuthModule,
-      imports: [PassportModule, JwtModule, UserModule, MailModule],
+      imports: [PassportModule.register({ session: true, defaultStrategy: 'oidc' }), JwtModule, UserModule, MailModule],
       controllers: [AuthController],
       providers: [
         AuthService,
@@ -63,6 +65,21 @@ export class AuthModule {
             }
           },
         },
+
+        {
+          provide: OidcStrategy,
+          inject: [UserService],
+          useFactory: async (userService: UserService) => {
+            try {
+              const client = await buildOpenIdClient()
+              return new OidcStrategy(client, userService)
+            }
+            catch {
+              return new DummyStrategy()
+            }
+          }
+        },
+        SessionSerializer,
       ],
       exports: [AuthService],
     };
