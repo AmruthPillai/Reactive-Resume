@@ -61,8 +61,9 @@ export const PictureOptions = () => {
     return borderRadiusToStringMap[radius];
   }, [picture.borderRadius]);
 
-  const onBorderRadiusChange = (value: BorderRadius) => {
-    setValue("basics.picture.borderRadius", stringToBorderRadiusMap[value]);
+  const onBorderRadiusChange = (value: string) => {
+    if (!value) return;
+    setValue("basics.picture.borderRadius", stringToBorderRadiusMap[value as BorderRadius]);
   };
 
   return (
