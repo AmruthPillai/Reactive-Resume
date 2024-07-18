@@ -105,6 +105,7 @@ export class PrinterService {
         // Switch client URL from `localhost` to `host.docker.internal` in development
         // This is required because the browser is running in a container and the client is running on the host machine.
         url = url.replace("localhost", "host.docker.internal");
+        url = url.replace("3000", "6173");
 
         await page.setRequestInterception(true);
 
