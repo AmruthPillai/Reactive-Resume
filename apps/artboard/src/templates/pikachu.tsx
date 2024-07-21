@@ -84,7 +84,13 @@ const Header = () => {
             <Fragment key={item.id}>
               <div className="flex items-center gap-x-1.5">
                 <i className={cn(`ph ph-bold ph-${item.icon}`)} />
-                <span>{[item.name, item.value].filter(Boolean).join(": ")}</span>
+                {isUrl(item.value) ? (
+                  <a href={item.value} target="_blank" rel="noreferrer noopener nofollow">
+                    {item.name || item.value}
+                  </a>
+                ) : (
+                  <span>{[item.name, item.value].filter(Boolean).join(": ")}</span>
+                )}
               </div>
               <div className="size-1 rounded-full bg-background last:hidden" />
             </Fragment>
