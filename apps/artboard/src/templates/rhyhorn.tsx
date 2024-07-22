@@ -66,7 +66,13 @@ const Header = () => {
               className="flex items-center gap-x-1.5 border-r pr-2 last:border-r-0 last:pr-0"
             >
               <i className={cn(`ph ph-bold ph-${item.icon}`, "text-primary")} />
-              <span>{[item.name, item.value].filter(Boolean).join(": ")}</span>
+              {isUrl(item.value) ? (
+                <a href={item.value} target="_blank" rel="noreferrer noopener nofollow">
+                  {item.name || item.value}
+                </a>
+              ) : (
+                <span>{[item.name, item.value].filter(Boolean).join(": ")}</span>
+              )}
             </div>
           ))}
         </div>
