@@ -37,13 +37,15 @@ services:
   # Chrome Browser (for printing and previews)
   chrome:
     image: ghcr.io/browserless/chromium:latest
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     restart: unless-stopped
     environment:
       TIMEOUT: 10000
       CONCURRENT: 10
       TOKEN: chrome_token
-      EXIT_ON_HEALTH_FAILURE: true
-      PRE_REQUEST_HEALTH_CHECK: true
+      EXIT_ON_HEALTH_FAILURE: 'true'
+      PRE_REQUEST_HEALTH_CHECK: 'true'
 
   app:
     image: amruthpillai/reactive-resume:latest
@@ -85,16 +87,16 @@ services:
       STORAGE_BUCKET: default
       STORAGE_ACCESS_KEY: minioadmin
       STORAGE_SECRET_KEY: minioadmin
-      STORAGE_USE_SSL: false
-      STORAGE_SKIP_BUCKET_CHECK: false
+      STORAGE_USE_SSL: 'false'
+      STORAGE_SKIP_BUCKET_CHECK: 'false'
 
       # -- Crowdin (Optional) --
       # CROWDIN_PROJECT_ID:
       # CROWDIN_PERSONAL_TOKEN:
 
       # -- Email (Optional) --
-      # DISABLE_SIGNUPS: false
-      # DISABLE_EMAIL_AUTH: false
+      # DISABLE_SIGNUPS: 'false'
+      # DISABLE_EMAIL_AUTH: 'false'
 
       # -- GitHub (Optional) --
       # GITHUB_CLIENT_ID: github_client_id
