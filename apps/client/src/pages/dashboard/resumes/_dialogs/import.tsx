@@ -100,9 +100,9 @@ export const ImportDialog = () => {
   }, [filetype]);
 
   const onValidate = async () => {
-    const { file, type } = formSchema.parse(form.getValues());
-
     try {
+      const { file, type } = formSchema.parse(form.getValues());
+
       if (type === ImportType["reactive-resume-json"]) {
         const parser = new ReactiveResumeParser();
         const data = await parser.readFile(file);

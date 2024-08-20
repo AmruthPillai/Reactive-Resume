@@ -14,7 +14,12 @@ import {
 import { ApiTags } from "@nestjs/swagger";
 import { User as UserEntity } from "@prisma/client";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
-import { CreateResumeDto, ImportResumeDto, ResumeDto, UpdateResumeDto } from "@reactive-resume/dto";
+import {
+  CreateResumeDto,
+  importResumeSchema,
+  ResumeDto,
+  UpdateResumeDto,
+} from "@reactive-resume/dto";
 import { resumeDataSchema } from "@reactive-resume/schema";
 import { ErrorMessage } from "@reactive-resume/utils";
 import { zodToJsonSchema } from "zod-to-json-schema";
@@ -54,9 +59,10 @@ export class ResumeController {
 
   @Post("import")
   @UseGuards(TwoFactorGuard)
-  async import(@User() user: UserEntity, @Body() importResumeDto: ImportResumeDto) {
+  async import(@User() user: UserEntity, @Body() importResumeDto: unknown) {
     try {
-      return await this.resumeService.import(user.id, importResumeDto);
+      const result = importResumeSchema.parse(importResumeDto);
+      return await this.resumeService.import(user.id, result);
     } catch (error) {
       if (error instanceof PrismaClientKnownRequestError && error.code === "P2002") {
         throw new BadRequestException(ErrorMessage.ResumeSlugAlreadyExists);

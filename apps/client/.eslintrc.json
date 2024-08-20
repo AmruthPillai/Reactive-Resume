@@ -11,7 +11,8 @@
       "settings": {
         "tailwindcss": {
           "callees": ["cn", "clsx", "cva"],
-          "config": "tailwind.config.js"
+          "config": "tailwind.config.js",
+          "whitelist": ["ph", "ph-"]
         }
       },
       "plugins": ["lingui"],

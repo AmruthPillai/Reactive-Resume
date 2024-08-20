@@ -8,7 +8,7 @@ msgstr ""
 "Language: el\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-05-10 08:43\n"
+"PO-Revision-Date: 2024-06-10 05:50\n"
 "Last-Translator: \n"
 "Language-Team: Greek\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Crowdin-File: messages.po\n"
 "X-Crowdin-File-ID: 494\n"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:169
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:171
 msgid "You have enabled two-factor authentication successfully."
 msgstr "Ενεργοποιήσατε τον έλεγχο ταυτότητας δύο παραγόντων με επιτυχία."
 
@@ -26,7 +26,7 @@ msgstr "Ενεργοποιήσατε τον έλεγχο ταυτότητας δ
 msgid "{templatesCount} resume templates to choose from"
 msgstr "{templatesCount} πρότυπα βιογραφικών για να διαλέξετε"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:126
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:141
 msgid "{value, plural, one {Column} other {Columns}}"
 msgstr "{value, plural, one {Στήλη} other {Στήλες}}"
 
@@ -98,7 +98,7 @@ msgstr "Δέχεται μόνο αρχεία {accept}"
 msgid "Account"
 msgstr "Λογαριασμός χρήστη"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:133
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:159
 msgid "Add a custom field"
 msgstr "Προσθέστε ένα προσαρμοσμένο πεδίο"
 
@@ -108,7 +108,7 @@ msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "Προσθήκη νέου αντικείμενου"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:80
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:90
 msgid "Add a new item"
 msgstr "Προσθήκη νέου αντικείμενου"
 
@@ -125,7 +125,7 @@ msgstr "Προσθήκη νέας σελίδας"
 msgid "AI"
 msgstr "ΤΝ"
 
-#: apps/client/src/pages/auth/register/page.tsx:74
+#: apps/client/src/pages/auth/register/page.tsx:71
 msgid "Already have an account?"
 msgstr "Έχεις ήδη λογαριασμό;"
 
@@ -154,11 +154,11 @@ msgstr "Kλειδί API"
 msgid "Are you sure you want to delete this item?"
 msgstr "Είστε σίγουροι ότι θέλετε να διαγράψετε αυτό το στοιχείο;"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:148
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:147
 msgid "Are you sure you want to delete your resume?"
 msgstr "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το βιογραφικό σημείωμα;"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:123
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:125
 msgid "Are you sure you want to disable two-factor authentication?"
 msgstr "Θέλετε σίγουρα να απενεργοποιήσετε την ταυτοποίηση δύο παραγόντων;"
 
@@ -179,7 +179,7 @@ msgstr "Είστε σίγουροι;"
 msgid "Area of Study"
 msgstr "Τομέας σπουδών"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:84
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:85
 msgid "Aspect Ratio"
 msgstr "Αναλογία διαστάσεων"
 
@@ -193,7 +193,7 @@ msgstr "Βραβευτής"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:98
 #: apps/client/src/pages/auth/forgot-password/page.tsx:100
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:241
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:243
 msgid "Back"
 msgstr "Πίσω"
 
@@ -218,11 +218,11 @@ msgstr "Βασικά στοιχεία"
 msgid "Basics"
 msgstr "Βασικά στοιχεία"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:194
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:197
 msgid "Border"
 msgstr "Περιγραμμα"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:127
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:130
 msgid "Border Radius"
 msgstr "Ακτίνα Περιγράμματος"
 
@@ -237,8 +237,8 @@ msgstr "Από την κοινότητα, για την κοινότητα."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:131
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:155
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:135
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:154
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
 msgid "Cancel"
 msgstr "Ακύρωση"
 
@@ -260,7 +260,7 @@ msgstr "Αλλαγή κωδικού πρόσβασης"
 msgid "Change Tone"
 msgstr "Αλλαγή τόνου"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:184
 msgid "Changed your mind about the name? Give it a new one."
 msgstr "Αλλάξατε γνώμη για το όνομα; Δώστε του ένα νέο."
 
@@ -268,23 +268,23 @@ msgstr "Αλλάξατε γνώμη για το όνομα; Δώστε του έ
 msgid "Check your email for the confirmation link to update your email address."
 msgstr "Ελέγξτε το email σας για τον σύνδεσμο επιβεβαίωσης για να ενημερώσετε τη διεύθυνση email σας."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:147
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:150
 msgid "Circle"
 msgstr "Κύκλος"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:247
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:249
 msgid "Close"
 msgstr "Κλείσιμο"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:199
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:201
 msgid "Code"
 msgstr "Κωδικός"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:50
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:52
 msgid "Code must be exactly 6 digits long."
 msgstr "Ο κωδικός πρέπει να είναι ακριβώς 6 ψηφία."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:120
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:135
 msgid "Columns"
 msgstr "Στήλες"
 
@@ -301,8 +301,8 @@ msgstr "Αυτοπεποίθηση"
 msgid "Confirm New Password"
 msgstr "Επιβεβαιώστε τον νέο κωδικό πρόσβασης"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:232
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:244
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:234
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:246
 msgid "Continue"
 msgstr "Συνέχεια"
 
@@ -319,12 +319,12 @@ msgid "Copy to Clipboard"
 msgstr "Αντιγραφή στο Πρόχειρο"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:167
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:242
 msgid "Create"
 msgstr "Δημιουργία"
 
-#: apps/client/src/pages/auth/register/page.tsx:67
-#: apps/client/src/pages/auth/register/page.tsx:72
+#: apps/client/src/pages/auth/register/page.tsx:64
+#: apps/client/src/pages/auth/register/page.tsx:69
 msgid "Create a new account"
 msgstr "Δημιουργία νέου λογαριασμού"
 
@@ -332,7 +332,7 @@ msgstr "Δημιουργία νέου λογαριασμού"
 msgid "Create a new item"
 msgstr "Δημιουργία νέου στοιχείου"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:177
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:176
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:18
 msgid "Create a new resume"
@@ -343,7 +343,7 @@ msgctxt "This is a link to create a new account"
 msgid "Create one now"
 msgstr "Δημιουργήστε ένα τώρα"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:258
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:257
 msgid "Create Sample Resume"
 msgstr "Δημιουργία νέου βιογραφικού σημειώματος"
 
@@ -386,7 +386,7 @@ msgid "Date or Date Range"
 msgstr "Ημερομηνία ή εύρος ημερομηνιών"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:133
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:157
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:156
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:148
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:134
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:198
@@ -410,7 +410,7 @@ msgstr "Περιγραφή"
 msgid "Design single/multi page resumes"
 msgstr "Σχεδιασμός μονοσέλιδων/πολυσέλιδων βιογραφικών σημειωμάτων"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:139
 msgid "Disable"
 msgstr "Απενεργοποίηση"
 
@@ -463,7 +463,7 @@ msgid "Downloads"
 msgstr "Λήψεις"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:169
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:132
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:102
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:182
@@ -474,7 +474,7 @@ msgstr "Αντίγραφο"
 msgid "Duplicate an existing item"
 msgstr "Αντιγραφή ενός υπάρχοντος στοιχείου"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:179
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:178
 msgid "Duplicate an existing resume"
 msgstr "Αντιγραφή ενός υπάρχοντος βιογραφικού σημειώματος"
 
@@ -482,13 +482,13 @@ msgstr "Αντιγραφή ενός υπάρχοντος βιογραφικού 
 msgid "Edit"
 msgstr "Τροποποίηση"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:172
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:175
 msgid "Effects"
 msgstr "Εφέ:"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:82
-#: apps/client/src/pages/auth/login/page.tsx:84
-#: apps/client/src/pages/auth/register/page.tsx:148
+#: apps/client/src/pages/auth/login/page.tsx:90
+#: apps/client/src/pages/auth/register/page.tsx:140
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:180
 msgid "Email"
@@ -506,7 +506,11 @@ msgstr "Εισάγετε έναν νέο κωδικό πρόσβασης παρ�
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
 msgstr "Εισάγετε έναν από τους 10 εφεδρικούς κωδικούς που αποθηκεύσατε όταν ενεργοποιήσατε τον έλεγχο ταυτότητας δύο παραγόντων."
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:63
+msgid "Enter Phosphor Icon"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:170
 msgid "Enter the 6-digit code from your authenticator app to verify that 2FA has been setup correctly."
 msgstr "Εισάγετε τον 6ψήφιο κωδικό από την εφαρμογή ελέγχου ταυτότητας για να επαληθεύσετε ότι η ρύθμιση 2FA έχει γίνει σωστά."
 
@@ -575,7 +579,7 @@ msgstr "Για παράδειγμα, πληροφορίες σχετικά με 
 msgid "Forget"
 msgstr "Ξεχάστε το"
 
-#: apps/client/src/pages/auth/login/page.tsx:120
+#: apps/client/src/pages/auth/login/page.tsx:126
 msgid "Forgot Password?"
 msgstr "Ξεχάσατε τον κωδικό πρόσβασης;"
 
@@ -605,7 +609,7 @@ msgstr "Φιλικό"
 msgid "Full Name"
 msgstr "Ονοματεπώνυμο"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:201
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:200
 msgid "Generate a random title for your resume"
 msgstr "Δημιουργήστε έναν τυχαίο τίτλο για το βιογραφικό σας"
 
@@ -621,7 +625,7 @@ msgstr "GitHub"
 msgid "GitHub Stars"
 msgstr "GitHub Stars"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:186
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
 msgid "Give your old resume a new name."
 msgstr "Δώστε στο παλιό σας βιογραφικό ένα νέο όνομα."
 
@@ -634,7 +638,7 @@ msgstr "Μετάβαση στον πίνακα εργαλείων (dashboard)"
 msgid "Google"
 msgstr "Google"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:205
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:208
 msgid "Grayscale"
 msgstr "Κλίμακα του Γκρι"
 
@@ -656,11 +660,11 @@ msgstr "Εδώ, μπορείτε να ενημερώσετε το προφίλ �
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:78
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:92
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:183
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:186
 msgid "Hidden"
 msgstr "Hidden"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:90
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:105
 msgid "Hide"
 msgstr "Απόκρυψη"
 
@@ -668,13 +672,13 @@ msgstr "Απόκρυψη"
 msgid "Hide Icons"
 msgstr "Απόκρυψη Εικονιδίων"
 
-#: apps/client/src/pages/auth/login/page.tsx:104
-#: apps/client/src/pages/auth/register/page.tsx:174
+#: apps/client/src/pages/auth/login/page.tsx:110
+#: apps/client/src/pages/auth/register/page.tsx:166
 #: apps/client/src/pages/auth/reset-password/page.tsx:88
 msgid "Hold <0>Ctrl</0> to display your password temporarily."
 msgstr "Κρατήστε <0>Ctrl</0> για να εμφανίσετε προσωρινά τον κωδικό πρόσβασής σας."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:98
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:99
 msgid "Horizontal"
 msgstr "Οριζόντια"
 
@@ -687,6 +691,7 @@ msgid "I always love to hear from the users of Reactive Resume with feedback or 
 msgstr "Πάντα μου αρέσει να ακούω από τους χρήστες του Reactive Βιογραφικού με ανατροφοδότηση ή υποστήριξη. Εδώ είναι μερικά από τα μηνύματα που έχω λάβει. Αν έχετε κάποια σχόλια, μη διστάσετε να μου στείλετε ένα email στο <0>{email}</0>."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:94
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:53
 msgid "Icon"
 msgstr "Εικονίδιο"
 
@@ -694,7 +699,7 @@ msgstr "Εικονίδιο"
 msgid "If this app has helped you with your job hunt, let me know by reaching out through <0>this contact form</0>."
 msgstr "Αν αυτή η εφαρμογή σας έχει βοηθήσει με το κυνήγι εργασιών σας, ενημερώστε με ώστε να φτάσω στο <0>αυτή τη φόρμα επικοινωνίας</0>."
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:126
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:128
 msgid "If you disable two-factor authentication, you will no longer be required to enter a verification code when logging in."
 msgstr "Εάν απενεργοποιήσετε τον έλεγχο ταυτότητας δύο παραγόντων, δεν θα απαιτείται πλέον να εισάγετε έναν κωδικό επαλήθευσης κατά τη σύνδεση."
 
@@ -716,7 +721,7 @@ msgstr "Εισαγωγή υπάρχουσας συνέχισης"
 msgid "Improve Writing"
 msgstr "Βελτίωση Εγγραφής"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:186
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:188
 msgid "In case you are unable to scan this QR Code, you can also copy-paste this link into your authenticator app."
 msgstr "Σε περίπτωση που δεν μπορείτε να σαρώσετε αυτόν τον κωδικό QR, μπορείτε επίσης να αντιγράψετε αυτόν τον σύνδεσμο στην εφαρμογή ελέγχου ταυτότητας."
 
@@ -769,17 +774,17 @@ msgstr "Φαίνεται ότι το διακριτικό επαλήθευσης
 msgid "It looks like your email address has already been verified."
 msgstr "Φαίνεται ότι η διεύθυνση ηλεκτρονικού ταχυδρομείου σας έχει ήδη επαληθευτεί."
 
-#: apps/client/src/pages/auth/register/page.tsx:109
+#: apps/client/src/pages/auth/register/page.tsx:101
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
 msgid "John Doe"
 msgstr "John Doe"
 
-#: apps/client/src/pages/auth/register/page.tsx:130
+#: apps/client/src/pages/auth/register/page.tsx:122
 msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
 msgid "john.doe"
 msgstr "john.doe"
 
-#: apps/client/src/pages/auth/register/page.tsx:151
+#: apps/client/src/pages/auth/register/page.tsx:143
 msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
 msgid "john.doe@example.com"
 msgstr "john.doe@example.com"
@@ -913,7 +918,7 @@ msgstr "Περιθώρια"
 msgid "MIT License"
 msgstr "MIT License"
 
-#: apps/client/src/pages/auth/register/page.tsx:106
+#: apps/client/src/pages/auth/register/page.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:58
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:48
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
@@ -921,7 +926,7 @@ msgstr "MIT License"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:46
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:72
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:152
 msgid "Name"
 msgstr "Ονομα"
@@ -947,7 +952,7 @@ msgstr "Δεν βρέθηκαν αποτελέσματα"
 msgid "No user tracking or advertising"
 msgstr "Καμία παρακολούθηση χρήστη ή διαφήμιση"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:131
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:133
 msgid "Note: This will make your account less secure."
 msgstr "Σημείωση: Αυτό θα καταστήσει το λογαριασμό σας λιγότερο ασφαλή."
 
@@ -1011,8 +1016,8 @@ msgstr "Σελίδα"
 msgid "Page {0}"
 msgstr "Σελίδα {0}"
 
-#: apps/client/src/pages/auth/login/page.tsx:99
-#: apps/client/src/pages/auth/register/page.tsx:169
+#: apps/client/src/pages/auth/login/page.tsx:105
+#: apps/client/src/pages/auth/register/page.tsx:161
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
 msgid "Password"
@@ -1051,11 +1056,11 @@ msgstr "Σημειώστε ότι αυτό το βήμα είναι εντελώ
 msgid "Please select a file type"
 msgstr "Παρακαλούμε επιλέξτε πρώτα τύπο αρχείου"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:226
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:228
 msgid "Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app."
 msgstr "Αποθηκεύστε τους εφεδρικούς κωδικούς σας σε ασφαλές μέρος. Μπορείτε να χρησιμοποιήσετε έναν από αυτούς τους κωδικούς εφάπαξ χρήσης για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ελέγχου ταυτότητας."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:104
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:105
 msgid "Portrait"
 msgstr "Πορτραίτο"
 
@@ -1111,7 +1116,7 @@ msgstr "Θέστε ένα θέμα"
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/login/page.tsx:55
-#: apps/client/src/pages/auth/register/page.tsx:67
+#: apps/client/src/pages/auth/register/page.tsx:64
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
@@ -1147,7 +1152,7 @@ msgid "Redo"
 msgstr "Επανάληψη"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:98
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:141
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:156
 msgid "Remove"
 msgstr "Αφαιρεση"
 
@@ -1155,7 +1160,7 @@ msgstr "Αφαιρεση"
 msgid "Remove Page"
 msgstr "Αφαίρεση σελίδας"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:95
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:110
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:128
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:93
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:178
@@ -1166,7 +1171,7 @@ msgstr "Μετονομασία"
 msgid "Resend email confirmation link"
 msgstr "Επανάληψη αποστολής συνδέσμου επιβεβαίωσης"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:136
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:151
 msgid "Reset"
 msgstr "Επαναφορά"
 
@@ -1197,18 +1202,18 @@ msgstr "Παραγόμενα βιογραφικά σημειώματα"
 msgid "Rich in features, not in pricing."
 msgstr "Πλούσιο σε χαρακτηριστικά, όχι σε τιμές."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:141
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:144
 msgid "Rounded"
 msgstr "Στρογγυλεμένο"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:168
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:131
 msgid "Save Changes"
 msgstr "Αποθήκευση Αλλαγών;"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:166
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
 msgid "Scan the QR code below with your authenticator app to setup 2FA on your account."
 msgstr "Σαρώστε τον παρακάτω κωδικό QR με την εφαρμογή ελέγχου ταυτότητας για να ρυθμίσετε τον 2FA στο λογαριασμό σας."
 
@@ -1253,6 +1258,10 @@ msgstr "Αποστολή Email"
 msgid "Send me a message"
 msgstr "Αποστολή μηνύματος"
 
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:96
+msgid "Separate Links"
+msgstr ""
+
 #: apps/client/src/components/user-options.tsx:32
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
@@ -1260,7 +1269,7 @@ msgstr "Αποστολή μηνύματος"
 msgid "Settings"
 msgstr "Ρυθμίσεις"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:157
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:159
 msgid "Setup two-factor authentication on your account"
 msgstr "Ρυθμίστε τον έλεγχο ταυτότητας δύο παραγόντων στο λογαριασμό σας"
 
@@ -1269,7 +1278,7 @@ msgstr "Ρυθμίστε τον έλεγχο ταυτότητας δύο παρ�
 msgid "Sharing"
 msgstr "Κοινοποίηση"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:90
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:105
 msgid "Show"
 msgstr "Εμφάνιση"
 
@@ -1286,12 +1295,12 @@ msgid "Sidebar"
 msgstr "Πλαϊνή μπάρα"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:102
-#: apps/client/src/pages/auth/login/page.tsx:116
+#: apps/client/src/pages/auth/login/page.tsx:122
 #: apps/client/src/pages/auth/verify-otp/page.tsx:92
 msgid "Sign in"
 msgstr "Σύνδεση"
 
-#: apps/client/src/pages/auth/register/page.tsx:77
+#: apps/client/src/pages/auth/register/page.tsx:74
 msgid "Sign in now"
 msgstr "Σύνδεση τώρα"
 
@@ -1312,19 +1321,23 @@ msgstr "Συνδεθείτε με το GitHub"
 msgid "Sign in with Google"
 msgstr "Συνδεθείτε μέσω του Google"
 
-#: apps/client/src/pages/auth/register/page.tsx:185
+#: apps/client/src/pages/auth/register/page.tsx:177
 msgid "Sign up"
 msgstr "Εγγραφείτε"
 
-#: apps/client/src/pages/auth/register/page.tsx:85
+#: apps/client/src/pages/auth/login/page.tsx:74
+msgid "Signing in via email is currently disabled by the administrator."
+msgstr ""
+
+#: apps/client/src/pages/auth/register/page.tsx:82
 msgid "Signups are currently disabled by the administrator."
 msgstr "Οι εγγραφές είναι προς το παρόν απενεργοποιημένες από τον διαχειριστή."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:70
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:71
 msgid "Size (in px)"
 msgstr "Μέγεθος (σε px)"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:227
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:226
 msgid "Slug"
 msgstr "Slug"
 
@@ -1340,8 +1353,8 @@ msgstr "Κάτι πήγε στραβά κατά την προεπισκόπησ�
 msgid "Something went wrong while processing your request. Please try again later or raise an issue on GitHub."
 msgstr "Κάτι πήγε στραβά κατά την προεπισκόπηση του βιογραφικού σας. Προσπαθήστε ξανά αργότερα ή αναφέρετε ένα ζήτημα στο GitHub."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:92
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:135
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:93
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:138
 msgid "Square"
 msgstr "Τετράγωνο"
 
@@ -1350,7 +1363,7 @@ msgstr "Τετράγωνο"
 msgid "Start building from scratch"
 msgstr "Ξεκινήστε να χτίζετε από το μηδέν"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:184
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:183
 msgid "Start building your resume by giving it a name."
 msgstr "Ξεκινήστε να φτιάχνετε το βιογραφικό σας δίνοντάς του ένα όνομα."
 
@@ -1367,7 +1380,7 @@ msgstr "Τα στατιστικά στοιχεία είναι διαθέσιμα
 msgid "Store Locally"
 msgstr "Αποθηκεύστε τοπικά"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:160
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:162
 msgid "Store your backup codes securely"
 msgstr "Αποθηκεύστε τους κωδικούς αντιγράφων ασφαλείας σας με ασφάλεια"
 
@@ -1446,7 +1459,7 @@ msgstr "Υπήρξε σφάλμα σύνδεσης με το πρόγραμμα 
 msgid "This action can be reverted by clicking on the undo button in the floating toolbar."
 msgstr "Αυτή η ενέργεια μπορεί να ανακληθεί κάνοντας κλικ στο κουμπί αναίρεσης στην κυμαινόμενη γραμμή εργαλείων."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:150
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:149
 msgid "This action cannot be undone. This will permanently delete your resume and cannot be recovered."
 msgstr "Αυτή η ενέργεια δεν μπορεί να αναιρεθεί. Αυτό θα διαγράψει μόνιμα το βιογραφικό σας και δεν θα μπορεί να ανακτηθεί."
 
@@ -1462,7 +1475,7 @@ msgstr "Αυτό το βιογραφικό σημείωμα είναι κλει�
 msgid "This section is reserved for your personal notes specific to this resume. The content here remains private and is not shared with anyone else."
 msgstr "Αυτή η ενότητα προορίζεται για τις προσωπικές σας σημειώσεις ειδικά για το συγκεκριμένο βιογραφικό σημείωμα. Το περιεχόμενο εδώ παραμένει ιδιωτικό και δεν κοινοποιείται σε κανέναν άλλον."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:215
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:214
 msgid "Tip: You can name the resume referring to the position you are applying for."
 msgstr "Συμβουλή: Μπορείτε να ονομάσετε το βιογραφικό σημείωμα ανάλογα με τη θέση για την οποία υποβάλλετε αίτηση."
 
@@ -1471,7 +1484,7 @@ msgctxt "Name of the Award"
 msgid "Title"
 msgstr "Τίτλος*"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:195
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:194
 msgid "Title"
 msgstr "Τίτλος*"
 
@@ -1542,7 +1555,7 @@ msgstr "Μη επαληθευμένο"
 msgid "Update an existing item"
 msgstr "Ενημέρωση ενός υπάρχοντος στοιχείου"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:178
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:177
 msgid "Update an existing resume"
 msgstr "Ενημέρωση ενός υπάρχοντος στοιχείου"
 
@@ -1567,7 +1580,7 @@ msgstr "Χρησιμοποιήστε τον εφεδρικό σας κωδικό
 msgid "User does not have an associated 'secrets' record. Please report this issue on GitHub."
 msgstr "Ο χρήστης δεν έχει συσχετισμένη εγγραφή \"secrets\". Αναφέρετε αυτό το ζήτημα στο GitHub."
 
-#: apps/client/src/pages/auth/register/page.tsx:127
+#: apps/client/src/pages/auth/register/page.tsx:119
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:66
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
 msgid "Username"
@@ -1585,7 +1598,7 @@ msgstr "Επικύρωση"
 msgid "Validated"
 msgstr "Επιβεβαιωμένο"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:55
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:81
 msgid "Value"
 msgstr "Αξία"
 
@@ -1593,7 +1606,7 @@ msgstr "Αξία"
 msgid "Verified"
 msgstr "Επαληθευμένο"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:159
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:161
 msgid "Verify that two-factor authentication has been setup correctly"
 msgstr "Επαληθεύστε ότι ο έλεγχος ταυτότητας δύο παραγόντων έχει ρυθμιστεί σωστά"
 
@@ -1643,7 +1656,7 @@ msgstr "Τι νέο υπάρχει στην τελευταία έκδοση"
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr "Μπορείτε να προσθέσετε πολλαπλές λέξεις-κλειδιά διαχωρίζοντάς τες με κόμμα ή πατώντας enter."
 
-#: apps/client/src/pages/auth/login/page.tsx:88
+#: apps/client/src/pages/auth/login/page.tsx:94
 msgid "You can also enter your username."
 msgstr "Μπορείτε επίσης να εισάγετε το όνομα χρήστη σας."
 

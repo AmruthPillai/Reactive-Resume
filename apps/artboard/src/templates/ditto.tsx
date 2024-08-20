@@ -38,7 +38,7 @@ const Header = () => {
           <p>{basics.headline}</p>
         </div>
 
-        <div className="text-text col-span-2 col-start-2 mt-10">
+        <div className="col-span-2 col-start-2 mt-10 text-foreground">
           <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-sm">
             {basics.location && (
               <>
@@ -82,7 +82,13 @@ const Header = () => {
               <Fragment key={item.id}>
                 <div className="flex items-center gap-x-1.5">
                   <i className={cn(`ph ph-bold ph-${item.icon}`, "text-primary")} />
-                  <span>{[item.name, item.value].filter(Boolean).join(": ")}</span>
+                  {isUrl(item.value) ? (
+                    <a href={item.value} target="_blank" rel="noreferrer noopener nofollow">
+                      {item.name || item.value}
+                    </a>
+                  ) : (
+                    <span>{[item.name, item.value].filter(Boolean).join(": ")}</span>
+                  )}
                 </div>
                 <div className="bg-text size-1 rounded-full last:hidden" />
               </Fragment>
@@ -128,16 +134,17 @@ const Rating = ({ level }: RatingProps) => (
 type LinkProps = {
   url: URL;
   icon?: React.ReactNode;
+  iconOnRight?: boolean;
   label?: string;
   className?: string;
 };
 
-const Link = ({ url, icon, label, className }: LinkProps) => {
+const Link = ({ url, icon, iconOnRight, label, className }: LinkProps) => {
   if (!isUrl(url.href)) return null;
 
   return (
     <div className="flex items-center gap-x-1.5">
-      {icon ?? <i className="ph ph-bold ph-link text-primary" />}
+      {!iconOnRight && (icon ?? <i className="ph ph-bold ph-link text-primary" />)}
       <a
         href={url.href}
         target="_blank"
@@ -146,7 +153,29 @@ const Link = ({ url, icon, label, className }: LinkProps) => {
       >
         {label ?? (url.label || url.href)}
       </a>
+      {iconOnRight && (icon ?? <i className="ph ph-bold ph-link text-primary" />)}
     </div>
+  );
+};
+
+type LinkedEntityProps = {
+  name: string;
+  url: URL;
+  separateLinks: boolean;
+  className?: string;
+};
+
+const LinkedEntity = ({ name, url, separateLinks, className }: LinkedEntityProps) => {
+  return !separateLinks && isUrl(url.href) ? (
+    <Link
+      url={url}
+      label={name}
+      icon={<i className="ph ph-bold ph-globe text-primary" />}
+      iconOnRight={true}
+      className={className}
+    />
+  ) : (
+    <div className={className}>{name}</div>
   );
 };
 
@@ -195,7 +224,7 @@ const Section = <T,>({
                 <div className="relative -ml-4 group-[.sidebar]:ml-0">
                   <div className="pl-4 group-[.sidebar]:pl-0">
                     {children?.(item as T)}
-                    {url !== undefined && <Link url={url} />}
+                    {url !== undefined && section.separateLinks && <Link url={url} />}
                   </div>
 
                   <div className="absolute inset-y-0 -left-px border-l-4 border-primary group-[.sidebar]:hidden" />
@@ -245,7 +274,7 @@ const Profiles = () => {
           ) : (
             <p>{item.username}</p>
           )}
-          <p className="text-sm">{item.network}</p>
+          {!item.icon && <p className="text-sm">{item.network}</p>}
         </div>
       )}
     </Section>
@@ -260,7 +289,12 @@ const Experience = () => {
       {(item) => (
         <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
-            <div className="font-bold">{item.company}</div>
+            <LinkedEntity
+              name={item.company}
+              url={item.url}
+              separateLinks={section.separateLinks}
+              className="font-bold"
+            />
             <div>{item.position}</div>
           </div>
 
@@ -282,7 +316,12 @@ const Education = () => {
       {(item) => (
         <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
-            <div className="font-bold">{item.institution}</div>
+            <LinkedEntity
+              name={item.institution}
+              url={item.url}
+              separateLinks={section.separateLinks}
+              className="font-bold"
+            />
             <div>{item.area}</div>
             <div>{item.score}</div>
           </div>
@@ -306,7 +345,11 @@ const Awards = () => {
         <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
             <div className="font-bold">{item.title}</div>
-            <div>{item.awarder}</div>
+            <LinkedEntity
+              name={item.awarder}
+              url={item.url}
+              separateLinks={section.separateLinks}
+            />
           </div>
 
           <div className="shrink-0 text-right">
@@ -327,7 +370,7 @@ const Certifications = () => {
         <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
             <div className="font-bold">{item.name}</div>
-            <div>{item.issuer}</div>
+            <LinkedEntity name={item.issuer} url={item.url} separateLinks={section.separateLinks} />
           </div>
 
           <div className="shrink-0 text-right">
@@ -372,7 +415,12 @@ const Publications = () => {
       {(item) => (
         <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
-            <div className="font-bold">{item.name}</div>
+            <LinkedEntity
+              name={item.name}
+              url={item.url}
+              separateLinks={section.separateLinks}
+              className="font-bold"
+            />
             <div>{item.publisher}</div>
           </div>
 
@@ -393,7 +441,12 @@ const Volunteer = () => {
       {(item) => (
         <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
-            <div className="font-bold">{item.organization}</div>
+            <LinkedEntity
+              name={item.organization}
+              url={item.url}
+              separateLinks={section.separateLinks}
+              className="font-bold"
+            />
             <div>{item.position}</div>
           </div>
 
@@ -430,7 +483,12 @@ const Projects = () => {
       {(item) => (
         <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
-            <div className="font-bold">{item.name}</div>
+            <LinkedEntity
+              name={item.name}
+              url={item.url}
+              separateLinks={section.separateLinks}
+              className="font-bold"
+            />
             <div>{item.description}</div>
           </div>
 
@@ -450,7 +508,12 @@ const References = () => {
     <Section<Reference> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
         <div>
-          <div className="font-bold">{item.name}</div>
+          <LinkedEntity
+            name={item.name}
+            url={item.url}
+            separateLinks={section.separateLinks}
+            className="font-bold"
+          />
           <div>{item.description}</div>
         </div>
       )}
@@ -471,7 +534,12 @@ const Custom = ({ id }: { id: string }) => {
       {(item) => (
         <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
-            <div className="font-bold">{item.name}</div>
+            <LinkedEntity
+              name={item.name}
+              url={item.url}
+              separateLinks={section.separateLinks}
+              className="font-bold"
+            />
             <div>{item.description}</div>
           </div>
 

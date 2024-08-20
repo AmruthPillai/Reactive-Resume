@@ -1,9 +1,7 @@
-ARG SENTRY_AUTH_TOKEN
 ARG NX_CLOUD_ACCESS_TOKEN
 
 # --- Base Image ---
 FROM node:lts-bullseye-slim AS base
-ARG SENTRY_AUTH_TOKEN
 ARG NX_CLOUD_ACCESS_TOKEN
 
 ENV PNPM_HOME="/pnpm"
@@ -15,7 +13,6 @@ WORKDIR /app
 
 # --- Build Image ---
 FROM base AS build
-ARG SENTRY_AUTH_TOKEN
 ARG NX_CLOUD_ACCESS_TOKEN
 
 COPY .npmrc package.json pnpm-lock.yaml ./
@@ -24,7 +21,6 @@ RUN pnpm install --frozen-lockfile
 
 COPY . .
 
-ENV SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN
 ENV NX_CLOUD_ACCESS_TOKEN=$NX_CLOUD_ACCESS_TOKEN
 
 RUN pnpm run build

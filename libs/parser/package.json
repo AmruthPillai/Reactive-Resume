@@ -10,6 +10,11 @@
   },
   "dependencies": {
     "@reactive-resume/schema": "*",
-    "@reactive-resume/utils": "*"
+    "@reactive-resume/utils": "*",
+    "nestjs-zod": "^3.0.0",
+    "zod": "^3.23.8",
+    "@paralleldrive/cuid2": "^2.2.2",
+    "jszip": "^3.10.1",
+    "@swc/helpers": "~0.5.11"
   }
 }

@@ -193,7 +193,7 @@ export class PrinterService {
         resume.userId,
         "resumes",
         buffer,
-        resume.id,
+        resume.title,
       );
 
       // Close all the pages and disconnect from the browser

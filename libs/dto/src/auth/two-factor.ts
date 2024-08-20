@@ -2,7 +2,10 @@ import { createZodDto } from "nestjs-zod/dto";
 import { z } from "nestjs-zod/z";
 
 export const twoFactorSchema = z.object({
-  code: z.string().length(6).regex(/^\d+$/, { message: "code must be a 6 digit number" }),
+  code: z
+    .string()
+    .length(6, { message: "Code must be a 6 digit number" })
+    .regex(/^\d+$/, { message: "Code must be a 6 digit number" }),
 });
 
 export class TwoFactorDto extends createZodDto(twoFactorSchema) {}

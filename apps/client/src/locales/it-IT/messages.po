@@ -8,7 +8,7 @@ msgstr ""
 "Language: it\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-05-10 08:43\n"
+"PO-Revision-Date: 2024-06-10 05:50\n"
 "Last-Translator: \n"
 "Language-Team: Italian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Crowdin-File: messages.po\n"
 "X-Crowdin-File-ID: 494\n"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:169
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:171
 msgid "You have enabled two-factor authentication successfully."
 msgstr "Hai abilitato l'autenticazione a due fattori con successo."
 
@@ -26,7 +26,7 @@ msgstr "Hai abilitato l'autenticazione a due fattori con successo."
 msgid "{templatesCount} resume templates to choose from"
 msgstr "{templatesCount} modelli di curriculum tra cui scegliere"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:126
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:141
 msgid "{value, plural, one {Column} other {Columns}}"
 msgstr "{value, plural, one {Colonna} other {Colonne}}"
 
@@ -98,7 +98,7 @@ msgstr "Accetta solo {accept} file"
 msgid "Account"
 msgstr "Account"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:133
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:159
 msgid "Add a custom field"
 msgstr "Aggiungi un campo personalizzato"
 
@@ -108,7 +108,7 @@ msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "Aggiungi nuovo elemento"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:80
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:90
 msgid "Add a new item"
 msgstr "Aggiungi nuovo elemento"
 
@@ -125,7 +125,7 @@ msgstr "Aggiungi una nuova pagina"
 msgid "AI"
 msgstr "IA"
 
-#: apps/client/src/pages/auth/register/page.tsx:74
+#: apps/client/src/pages/auth/register/page.tsx:71
 msgid "Already have an account?"
 msgstr "Ha già un account?"
 
@@ -154,11 +154,11 @@ msgstr "Chiave API"
 msgid "Are you sure you want to delete this item?"
 msgstr "Sei sicuro di voler eliminare questo articolo?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:148
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:147
 msgid "Are you sure you want to delete your resume?"
 msgstr "Sei sicuro di voler eliminare il tuo curriculum?"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:123
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:125
 msgid "Are you sure you want to disable two-factor authentication?"
 msgstr "Sei sicuro di voler disattivare l'autenticazione a due fattori?"
 
@@ -179,7 +179,7 @@ msgstr "Sei sicuro?"
 msgid "Area of Study"
 msgstr "Area di studio"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:84
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:85
 msgid "Aspect Ratio"
 msgstr "Rapporto Dimensioni"
 
@@ -193,7 +193,7 @@ msgstr "Premiatore"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:98
 #: apps/client/src/pages/auth/forgot-password/page.tsx:100
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:241
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:243
 msgid "Back"
 msgstr "Indietro"
 
@@ -218,11 +218,11 @@ msgstr "Basi"
 msgid "Basics"
 msgstr "Basi"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:194
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:197
 msgid "Border"
 msgstr "Bordo"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:127
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:130
 msgid "Border Radius"
 msgstr "Raggio del bordo"
 
@@ -237,8 +237,8 @@ msgstr "Dalla comunità, per la comunità."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:131
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:155
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:135
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:154
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
 msgid "Cancel"
 msgstr "Annulla"
 
@@ -260,7 +260,7 @@ msgstr "Cambia password"
 msgid "Change Tone"
 msgstr "Cambia tono"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:184
 msgid "Changed your mind about the name? Give it a new one."
 msgstr "Hai cambiato idea sul nome? Dagliene uno nuovo."
 
@@ -268,23 +268,23 @@ msgstr "Hai cambiato idea sul nome? Dagliene uno nuovo."
 msgid "Check your email for the confirmation link to update your email address."
 msgstr "Controlla la tua email per il collegamento di conferma per aggiornare il tuo indirizzo email."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:147
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:150
 msgid "Circle"
 msgstr "Cerchio"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:247
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:249
 msgid "Close"
 msgstr "Chiudi"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:199
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:201
 msgid "Code"
 msgstr "Codice"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:50
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:52
 msgid "Code must be exactly 6 digits long."
 msgstr "Il codice deve essere lungo esattamente 6 cifre."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:120
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:135
 msgid "Columns"
 msgstr "Colonne"
 
@@ -301,8 +301,8 @@ msgstr "Fiducioso"
 msgid "Confirm New Password"
 msgstr "Conferma nuova password"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:232
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:244
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:234
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:246
 msgid "Continue"
 msgstr "Continuare"
 
@@ -319,12 +319,12 @@ msgid "Copy to Clipboard"
 msgstr "Copia negli appunti"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:167
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:242
 msgid "Create"
 msgstr "Crea"
 
-#: apps/client/src/pages/auth/register/page.tsx:67
-#: apps/client/src/pages/auth/register/page.tsx:72
+#: apps/client/src/pages/auth/register/page.tsx:64
+#: apps/client/src/pages/auth/register/page.tsx:69
 msgid "Create a new account"
 msgstr "Crea un nuovo account"
 
@@ -332,7 +332,7 @@ msgstr "Crea un nuovo account"
 msgid "Create a new item"
 msgstr "Crea un nuovo elemento"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:177
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:176
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:18
 msgid "Create a new resume"
@@ -343,7 +343,7 @@ msgctxt "This is a link to create a new account"
 msgid "Create one now"
 msgstr "Creane uno ora"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:258
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:257
 msgid "Create Sample Resume"
 msgstr "Creare un campione di curriculum"
 
@@ -386,7 +386,7 @@ msgid "Date or Date Range"
 msgstr "Data o Intervallo di date"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:133
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:157
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:156
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:148
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:134
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:198
@@ -410,7 +410,7 @@ msgstr "Descrizione"
 msgid "Design single/multi page resumes"
 msgstr "Progetta curriculum a pagina singola/multipagina"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:139
 msgid "Disable"
 msgstr "Disabilita"
 
@@ -463,7 +463,7 @@ msgid "Downloads"
 msgstr "Downloads"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:169
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:132
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:102
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:182
@@ -474,7 +474,7 @@ msgstr "Duplica"
 msgid "Duplicate an existing item"
 msgstr "Duplica un elemento esistente"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:179
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:178
 msgid "Duplicate an existing resume"
 msgstr "Duplica un curriculum esistente"
 
@@ -482,13 +482,13 @@ msgstr "Duplica un curriculum esistente"
 msgid "Edit"
 msgstr "Modifica"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:172
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:175
 msgid "Effects"
 msgstr "Effetti"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:82
-#: apps/client/src/pages/auth/login/page.tsx:84
-#: apps/client/src/pages/auth/register/page.tsx:148
+#: apps/client/src/pages/auth/login/page.tsx:90
+#: apps/client/src/pages/auth/register/page.tsx:140
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:180
 msgid "Email"
@@ -506,7 +506,11 @@ msgstr "Inserisca una nuova password qui sotto e si assicuri che sia sicura."
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
 msgstr "Inserisca uno dei 10 codici di backup che ha salvato quando ha attivato l'autenticazione a due fattori."
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:63
+msgid "Enter Phosphor Icon"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:170
 msgid "Enter the 6-digit code from your authenticator app to verify that 2FA has been setup correctly."
 msgstr "Inserisca il codice a 6 cifre dalla sua app Authenticator per verificare che il 2FA sia stato impostato correttamente."
 
@@ -575,7 +579,7 @@ msgstr "Per esempio, qui si possono annotare le informazioni relative alle azien
 msgid "Forget"
 msgstr "Dimentica"
 
-#: apps/client/src/pages/auth/login/page.tsx:120
+#: apps/client/src/pages/auth/login/page.tsx:126
 msgid "Forgot Password?"
 msgstr "Password dimenticata?"
 
@@ -605,7 +609,7 @@ msgstr "Amichevole"
 msgid "Full Name"
 msgstr "Nome Completo"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:201
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:200
 msgid "Generate a random title for your resume"
 msgstr "Genera un titolo casuale per il tuo curriculum"
 
@@ -621,7 +625,7 @@ msgstr "GitHub"
 msgid "GitHub Stars"
 msgstr "Stelle di GitHub"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:186
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
 msgid "Give your old resume a new name."
 msgstr "Dai un nuovo nome al tuo vecchio curriculum."
 
@@ -634,7 +638,7 @@ msgstr "Vai alla dashboard"
 msgid "Google"
 msgstr "Google"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:205
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:208
 msgid "Grayscale"
 msgstr "Scala di grigi"
 
@@ -656,11 +660,11 @@ msgstr "Qui può aggiornare il suo profilo per personalizzare la sua esperienza.
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:78
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:92
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:183
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:186
 msgid "Hidden"
 msgstr "Nascosto"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:90
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:105
 msgid "Hide"
 msgstr "Nascondi"
 
@@ -668,13 +672,13 @@ msgstr "Nascondi"
 msgid "Hide Icons"
 msgstr "Nascondi icone"
 
-#: apps/client/src/pages/auth/login/page.tsx:104
-#: apps/client/src/pages/auth/register/page.tsx:174
+#: apps/client/src/pages/auth/login/page.tsx:110
+#: apps/client/src/pages/auth/register/page.tsx:166
 #: apps/client/src/pages/auth/reset-password/page.tsx:88
 msgid "Hold <0>Ctrl</0> to display your password temporarily."
 msgstr "Tieni premuto <0>Ctrl</0> per visualizzare temporaneamente la tua password."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:98
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:99
 msgid "Horizontal"
 msgstr "Orizzontale"
 
@@ -687,6 +691,7 @@ msgid "I always love to hear from the users of Reactive Resume with feedback or 
 msgstr "Mi fa sempre piacere ricevere feedback o supporto dagli utenti di Reactive Resume. Ecco alcuni dei messaggi che ho ricevuto. Se hai commenti, non esitare a mandarmi un'e-mail a <0>{email}</0>."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:94
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:53
 msgid "Icon"
 msgstr "Icona"
 
@@ -694,7 +699,7 @@ msgstr "Icona"
 msgid "If this app has helped you with your job hunt, let me know by reaching out through <0>this contact form</0>."
 msgstr "Se questa app ti ha aiutato nella ricerca di lavoro, faccelo sapere contattandomi tramite <0>questo modulo di contatto</0>."
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:126
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:128
 msgid "If you disable two-factor authentication, you will no longer be required to enter a verification code when logging in."
 msgstr "Se disattivi l'autenticazione a due fattori, non ti verrà più richiesto di inserire un codice di verifica al momento dell'accesso."
 
@@ -716,7 +721,7 @@ msgstr "Importa un curriculum esistente"
 msgid "Improve Writing"
 msgstr "Migliora la scrittura"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:186
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:188
 msgid "In case you are unable to scan this QR Code, you can also copy-paste this link into your authenticator app."
 msgstr "Nel caso in cui non riuscisse a scansionare questo Codice QR, può anche copiare-incollare questo link nella sua app Authenticator."
 
@@ -769,17 +774,17 @@ msgstr "Sembra che il token di verifica che hai fornito non sia valido. Prova a 
 msgid "It looks like your email address has already been verified."
 msgstr "Sembra che il tuo indirizzo email sia già stato verificato."
 
-#: apps/client/src/pages/auth/register/page.tsx:109
+#: apps/client/src/pages/auth/register/page.tsx:101
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
 msgid "John Doe"
 msgstr "Mario Rossi"
 
-#: apps/client/src/pages/auth/register/page.tsx:130
+#: apps/client/src/pages/auth/register/page.tsx:122
 msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
 msgid "john.doe"
 msgstr "mario. rossi"
 
-#: apps/client/src/pages/auth/register/page.tsx:151
+#: apps/client/src/pages/auth/register/page.tsx:143
 msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
 msgid "john.doe@example.com"
 msgstr "mario.rossi@esempio.it"
@@ -913,7 +918,7 @@ msgstr "Margine"
 msgid "MIT License"
 msgstr "Licenza MIT"
 
-#: apps/client/src/pages/auth/register/page.tsx:106
+#: apps/client/src/pages/auth/register/page.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:58
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:48
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
@@ -921,7 +926,7 @@ msgstr "Licenza MIT"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:46
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:72
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:152
 msgid "Name"
 msgstr "Nome"
@@ -947,7 +952,7 @@ msgstr "Nessun risultato trovato"
 msgid "No user tracking or advertising"
 msgstr "Nessun tracciamento o pubblicità degli utenti"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:131
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:133
 msgid "Note: This will make your account less secure."
 msgstr "Nota: ciò renderà il tuo account meno sicuro."
 
@@ -1011,8 +1016,8 @@ msgstr "Pagina"
 msgid "Page {0}"
 msgstr "Pagina {0}"
 
-#: apps/client/src/pages/auth/login/page.tsx:99
-#: apps/client/src/pages/auth/register/page.tsx:169
+#: apps/client/src/pages/auth/login/page.tsx:105
+#: apps/client/src/pages/auth/register/page.tsx:161
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
 msgid "Password"
@@ -1051,11 +1056,11 @@ msgstr "Tieni presente che questo passaggio è del tutto facoltativo."
 msgid "Please select a file type"
 msgstr "Seleziona un tipo di file"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:226
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:228
 msgid "Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app."
 msgstr "Conservi i codici di backup in un luogo sicuro. Può utilizzare uno di questi codici una tantum per effettuare il login nel caso in cui perdesse l'accesso alla sua app Authenticator."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:104
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:105
 msgid "Portrait"
 msgstr "Ritratto"
 
@@ -1111,7 +1116,7 @@ msgstr "Segnala un problema"
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/login/page.tsx:55
-#: apps/client/src/pages/auth/register/page.tsx:67
+#: apps/client/src/pages/auth/register/page.tsx:64
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
@@ -1147,7 +1152,7 @@ msgid "Redo"
 msgstr "Ritorna"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:98
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:141
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:156
 msgid "Remove"
 msgstr "Rimuovi"
 
@@ -1155,7 +1160,7 @@ msgstr "Rimuovi"
 msgid "Remove Page"
 msgstr "Rimuovi pagina"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:95
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:110
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:128
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:93
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:178
@@ -1166,7 +1171,7 @@ msgstr "Rinomina"
 msgid "Resend email confirmation link"
 msgstr "Rinvio del link di conferma dell'e-mail"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:136
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:151
 msgid "Reset"
 msgstr "Ripristina"
 
@@ -1197,18 +1202,18 @@ msgstr "Curriculi generati"
 msgid "Rich in features, not in pricing."
 msgstr "Ricco di funzionalità, non di prezzi."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:141
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:144
 msgid "Rounded"
 msgstr "Arrotondato"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:168
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:131
 msgid "Save Changes"
 msgstr "Salva le modifiche"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:166
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
 msgid "Scan the QR code below with your authenticator app to setup 2FA on your account."
 msgstr "Scansiona il codice QR qui sotto con la tua app di autenticazione per impostare 2FA sul tuo account."
 
@@ -1253,6 +1258,10 @@ msgstr "Invia email"
 msgid "Send me a message"
 msgstr "Inviami un messaggio"
 
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:96
+msgid "Separate Links"
+msgstr ""
+
 #: apps/client/src/components/user-options.tsx:32
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
@@ -1260,7 +1269,7 @@ msgstr "Inviami un messaggio"
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:157
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:159
 msgid "Setup two-factor authentication on your account"
 msgstr "Imposta l'autenticazione a due fattori sul tuo account"
 
@@ -1269,7 +1278,7 @@ msgstr "Imposta l'autenticazione a due fattori sul tuo account"
 msgid "Sharing"
 msgstr "Condivisione"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:90
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:105
 msgid "Show"
 msgstr "Mostra"
 
@@ -1286,12 +1295,12 @@ msgid "Sidebar"
 msgstr "Barra laterale"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:102
-#: apps/client/src/pages/auth/login/page.tsx:116
+#: apps/client/src/pages/auth/login/page.tsx:122
 #: apps/client/src/pages/auth/verify-otp/page.tsx:92
 msgid "Sign in"
 msgstr "Accedi"
 
-#: apps/client/src/pages/auth/register/page.tsx:77
+#: apps/client/src/pages/auth/register/page.tsx:74
 msgid "Sign in now"
 msgstr "Accedi ora"
 
@@ -1312,19 +1321,23 @@ msgstr "Accedi con GitHub"
 msgid "Sign in with Google"
 msgstr "Accedi con Google"
 
-#: apps/client/src/pages/auth/register/page.tsx:185
+#: apps/client/src/pages/auth/register/page.tsx:177
 msgid "Sign up"
 msgstr "Registrazione"
 
-#: apps/client/src/pages/auth/register/page.tsx:85
+#: apps/client/src/pages/auth/login/page.tsx:74
+msgid "Signing in via email is currently disabled by the administrator."
+msgstr ""
+
+#: apps/client/src/pages/auth/register/page.tsx:82
 msgid "Signups are currently disabled by the administrator."
 msgstr "Le registrazioni sono attualmente disabilitate dall'amministratore."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:70
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:71
 msgid "Size (in px)"
 msgstr "Dimensioni (in px)"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:227
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:226
 msgid "Slug"
 msgstr "Slug"
 
@@ -1340,8 +1353,8 @@ msgstr "Qualcosa è andato storto durante la stampa del tuo curriculum. Riprova 
 msgid "Something went wrong while processing your request. Please try again later or raise an issue on GitHub."
 msgstr "Qualcosa è andato storto durante l'elaborazione della tua richiesta. Riprova più tardi o solleva un problema su GitHub."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:92
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:135
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:93
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:138
 msgid "Square"
 msgstr "Quadrato"
 
@@ -1350,7 +1363,7 @@ msgstr "Quadrato"
 msgid "Start building from scratch"
 msgstr "Inizia a costruire da zero"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:184
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:183
 msgid "Start building your resume by giving it a name."
 msgstr "Inizia a costruire il tuo curriculum dandogli un nome."
 
@@ -1367,7 +1380,7 @@ msgstr "Le statistiche sono disponibili solo per i curriculum pubblici."
 msgid "Store Locally"
 msgstr "Conservare localmente"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:160
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:162
 msgid "Store your backup codes securely"
 msgstr "Archivia i tuoi codici di backup in modo sicuro"
 
@@ -1446,7 +1459,7 @@ msgstr "Si è verificato un errore durante la connessione al browser. Assicurati
 msgid "This action can be reverted by clicking on the undo button in the floating toolbar."
 msgstr "Questa azione può essere annullata cliccando sul pulsante Annulla nella barra degli strumenti fluttuante."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:150
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:149
 msgid "This action cannot be undone. This will permanently delete your resume and cannot be recovered."
 msgstr "Questa azione non può essere annullata. Ciò eliminerà definitivamente il tuo curriculum e non potrà essere recuperato."
 
@@ -1462,7 +1475,7 @@ msgstr "Questo curriculum è bloccato, sbloccalo per apportare ulteriori modific
 msgid "This section is reserved for your personal notes specific to this resume. The content here remains private and is not shared with anyone else."
 msgstr "Questa sezione è riservata alle tue note personali specifiche per questo curriculum. Il contenuto qui rimane privato e non è condiviso con nessun altro."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:215
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:214
 msgid "Tip: You can name the resume referring to the position you are applying for."
 msgstr "Suggerimento: puoi nominare il curriculum facendo riferimento alla posizione per la quale ti stai candidando."
 
@@ -1471,7 +1484,7 @@ msgctxt "Name of the Award"
 msgid "Title"
 msgstr "Titolo"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:195
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:194
 msgid "Title"
 msgstr "Titolo"
 
@@ -1542,7 +1555,7 @@ msgstr "Non verificato"
 msgid "Update an existing item"
 msgstr "Aggiorna un elemento esistente"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:178
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:177
 msgid "Update an existing resume"
 msgstr "Aggiorna un curriculum esistente"
 
@@ -1567,7 +1580,7 @@ msgstr "Usa il tuo codice di backup"
 msgid "User does not have an associated 'secrets' record. Please report this issue on GitHub."
 msgstr "L'utente non ha un record 'segreti' associato. La preghiamo di segnalare questo problema su GitHub."
 
-#: apps/client/src/pages/auth/register/page.tsx:127
+#: apps/client/src/pages/auth/register/page.tsx:119
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:66
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
 msgid "Username"
@@ -1585,7 +1598,7 @@ msgstr "Convalida"
 msgid "Validated"
 msgstr "Convalidato"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:55
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:81
 msgid "Value"
 msgstr "Valore"
 
@@ -1593,7 +1606,7 @@ msgstr "Valore"
 msgid "Verified"
 msgstr "Verificato"
 
-#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:159
+#: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:161
 msgid "Verify that two-factor authentication has been setup correctly"
 msgstr "Verifica che l'autenticazione a due fattori sia stata impostata correttamente"
 
@@ -1643,7 +1656,7 @@ msgstr "Cosa c'è di nuovo nell'ultima versione"
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr "Puoi aggiungere più parole chiave separandole con una virgola o premendo Invio."
 
-#: apps/client/src/pages/auth/login/page.tsx:88
+#: apps/client/src/pages/auth/login/page.tsx:94
 msgid "You can also enter your username."
 msgstr "Può anche inserire il suo nome utente."
 

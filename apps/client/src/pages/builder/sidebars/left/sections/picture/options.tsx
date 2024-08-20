@@ -51,8 +51,9 @@ export const PictureOptions = () => {
     return ratioToStringMap[ratio];
   }, [picture.aspectRatio]);
 
-  const onAspectRatioChange = (value: AspectRatio) => {
-    setValue("basics.picture.aspectRatio", stringToRatioMap[value]);
+  const onAspectRatioChange = (value: string) => {
+    if (!value) return;
+    setValue("basics.picture.aspectRatio", stringToRatioMap[value as AspectRatio]);
   };
 
   const borderRadius = useMemo(() => {
@@ -117,6 +118,8 @@ export const PictureOptions = () => {
             id="picture.aspectRatio"
             value={picture.aspectRatio}
             onChange={(event) => {
+              if (!event.target.valueAsNumber) return;
+              if (Number.isNaN(event.target.valueAsNumber)) return;
               setValue("basics.picture.aspectRatio", event.target.valueAsNumber);
             }}
           />

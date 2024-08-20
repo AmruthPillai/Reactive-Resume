@@ -22,7 +22,7 @@ const formSchema = z.object({
   apiKey: z
     .string()
     // eslint-disable-next-line lingui/t-call-in-function
-    .regex(/^sk-[\dA-Za-z]+$/, t`That doesn't look like a valid OpenAI API key.`)
+    .regex(/^sk-.+$/, t`That doesn't look like a valid OpenAI API key.`)
     .default(""),
 });
 

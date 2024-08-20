@@ -1,8 +1,15 @@
 import { t } from "@lingui/macro";
 import { createId } from "@paralleldrive/cuid2";
-import { DotsSixVertical, Plus, X } from "@phosphor-icons/react";
+import { DotsSixVertical, Envelope, Plus, X } from "@phosphor-icons/react";
 import { CustomField as ICustomField } from "@reactive-resume/schema";
-import { Button, Input } from "@reactive-resume/ui";
+import {
+  Button,
+  Input,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  Tooltip,
+} from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { AnimatePresence, Reorder, useDragControls } from "framer-motion";
 
@@ -41,6 +48,25 @@ export const CustomField = ({ field, onChange, onRemove }: CustomFieldProps) => 
         >
           <DotsSixVertical />
         </Button>
+
+        <Popover>
+          <Tooltip content={t`Icon`}>
+            <PopoverTrigger asChild>
+              <Button size="icon" variant="ghost">
+                {field.icon ? <i className={cn(`ph ph-${field.icon}`)} /> : <Envelope />}
+              </Button>
+            </PopoverTrigger>
+          </Tooltip>
+          <PopoverContent className="p-1.5">
+            <Input
+              value={field.icon}
+              placeholder={t`Enter Phosphor Icon`}
+              onChange={(event) => {
+                onChange({ ...field, icon: event.target.value });
+              }}
+            />
+          </PopoverContent>
+        </Popover>
 
         <Input
           placeholder={t`Name`}
