@@ -5,7 +5,13 @@ import {
   Logger,
 } from "@nestjs/common";
 import { Prisma } from "@prisma/client";
-import { CreateResumeDto, ImportResumeDto, ResumeDto, UpdateResumeDto } from "@reactive-resume/dto";
+import {
+  CreateAiResumeDto,
+  CreateResumeDto,
+  ImportResumeDto,
+  ResumeDto,
+  UpdateResumeDto,
+} from "@reactive-resume/dto";
 import { defaultResumeData, ResumeData } from "@reactive-resume/schema";
 import type { DeepPartial } from "@reactive-resume/utils";
 import { ErrorMessage, generateRandomName, kebabCase } from "@reactive-resume/utils";
@@ -23,6 +29,29 @@ export class ResumeService {
     private readonly printerService: PrinterService,
     private readonly storageService: StorageService,
   ) {}
+
+  async aiCreate(userId: string, createAiResumeDto: CreateAiResumeDto) {
+    const { name, email, picture } = await this.prisma.user.findUniqueOrThrow({
+      where: { id: userId },
+      select: { name: true, email: true, picture: true },
+    });
+
+    const data = deepmerge(defaultResumeData, {
+      basics: { name, email, picture: { url: picture ?? "" } },
+    } satisfies DeepPartial<ResumeData>);
+
+    const resume = this.prisma.resume.create({
+      data: {
+        data,
+        userId,
+        title: createAiResumeDto.title + " (AI)",
+        visibility: createAiResumeDto.visibility,
+        slug: createAiResumeDto.slug ?? kebabCase(createAiResumeDto.title),
+      },
+    });
+
+    return resume;
+  }
 
   async create(userId: string, createResumeDto: CreateResumeDto) {
     const { name, email, picture } = await this.prisma.user.findUniqueOrThrow({

@@ -3,7 +3,7 @@ import { create } from "zustand";
 
 export type DialogName = "resume" | "lock" | "import" | "two-factor" | "ai" | SectionKey;
 
-export type DialogMode = "create" | "update" | "duplicate" | "delete";
+export type DialogMode = "create" | "create-ai" | "update" | "duplicate" | "delete";
 
 export type DialogPayload<T = unknown> = {
   id: DialogName;

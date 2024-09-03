@@ -15,6 +15,7 @@ import { ApiTags } from "@nestjs/swagger";
 import { User as UserEntity } from "@prisma/client";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
 import {
+  CreateAiResumeDto,
   CreateResumeDto,
   importResumeSchema,
   ResumeDto,
@@ -40,6 +41,21 @@ export class ResumeController {
   @Get("schema")
   getSchema() {
     return zodToJsonSchema(resumeDataSchema);
+  }
+
+  @Post("create-ai")
+  @UseGuards(TwoFactorGuard)
+  async createAi(@User() user: UserEntity, @Body() createAiResumeDto: CreateAiResumeDto) {
+    try {
+      return await this.resumeService.aiCreate(user.id, createAiResumeDto);
+    } catch (error) {
+      if (error instanceof PrismaClientKnownRequestError && error.code === "P2002") {
+        throw new BadRequestException(ErrorMessage.ResumeSlugAlreadyExists);
+      }
+
+      Logger.error(error);
+      throw new InternalServerErrorException(error);
+    }
   }
 
   @Post()

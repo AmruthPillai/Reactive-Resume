@@ -8,13 +8,13 @@ import { useDialog } from "@/client/stores/dialog";
 import { BaseCard } from "./base-card";
 
 export const AiResumeCard = () => {
-  const { open } = useDialog("ai");
+  const { open } = useDialog("resume");
 
   return (
     <BaseCard
       withShineBorder
       onClick={() => {
-        open("create");
+        open("create-ai");
       }}
     >
       <MagicWand size={64} weight="thin" />

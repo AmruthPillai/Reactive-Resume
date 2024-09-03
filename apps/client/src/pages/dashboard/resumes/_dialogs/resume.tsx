@@ -38,7 +38,12 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { useCreateResume, useDeleteResume, useUpdateResume } from "@/client/services/resume";
+import {
+  useCreateAiResume,
+  useCreateResume,
+  useDeleteResume,
+  useUpdateResume,
+} from "@/client/services/resume";
 import { useImportResume } from "@/client/services/resume/import";
 import { useDialog } from "@/client/stores/dialog";
 
@@ -49,17 +54,20 @@ type FormValues = z.infer<typeof formSchema>;
 export const ResumeDialog = () => {
   const { isOpen, mode, payload, close } = useDialog<ResumeDto>("resume");
 
+  const isCreateAi = mode === "create-ai";
   const isCreate = mode === "create";
   const isUpdate = mode === "update";
   const isDelete = mode === "delete";
   const isDuplicate = mode === "duplicate";
 
+  const { createAiResume, loading: createAiLoading } = useCreateAiResume();
   const { createResume, loading: createLoading } = useCreateResume();
   const { updateResume, loading: updateLoading } = useUpdateResume();
   const { deleteResume, loading: deleteLoading } = useDeleteResume();
   const { importResume: duplicateResume, loading: duplicateLoading } = useImportResume();
 
-  const loading = createLoading || updateLoading || deleteLoading || duplicateLoading;
+  const loading =
+    createLoading || createAiLoading || updateLoading || deleteLoading || duplicateLoading;
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -76,6 +84,10 @@ export const ResumeDialog = () => {
   }, [form.watch("title")]);
 
   const onSubmit = async (values: FormValues) => {
+    if (isCreateAi) {
+      await createAiResume({ slug: values.slug, title: values.title, visibility: "private" });
+    }
+
     if (isCreate) {
       await createResume({ slug: values.slug, title: values.title, visibility: "private" });
     }
@@ -110,6 +122,7 @@ export const ResumeDialog = () => {
   };
 
   const onReset = () => {
+    if (isCreateAi) form.reset({ title: "", slug: "" });
     if (isCreate) form.reset({ title: "", slug: "" });
     if (isUpdate)
       form.reset({ id: payload.item?.id, title: payload.item?.title, slug: payload.item?.slug });
@@ -173,6 +186,7 @@ export const ResumeDialog = () => {
                 <div className="flex items-center space-x-2.5">
                   <Plus />
                   <h2>
+                    {isCreateAi && t`Create a resume with AI`}
                     {isCreate && t`Create a new resume`}
                     {isUpdate && t`Update an existing resume`}
                     {isDuplicate && t`Duplicate an existing resume`}
@@ -180,6 +194,7 @@ export const ResumeDialog = () => {
                 </div>
               </DialogTitle>
               <DialogDescription>
+                {isCreateAi && t`Let the AI do the work`}
                 {isCreate && t`Start building your resume by giving it a name.`}
                 {isUpdate && t`Changed your mind about the name? Give it a new one.`}
                 {isDuplicate && t`Give your old resume a new name.`}
@@ -196,7 +211,7 @@ export const ResumeDialog = () => {
                     <div className="flex items-center justify-between gap-x-2">
                       <Input {...field} className="flex-1" />
 
-                      {(isCreate || isDuplicate) && (
+                      {(isCreate || isCreateAi || isDuplicate) && (
                         <Tooltip content={t`Generate a random title for your resume`}>
                           <Button
                             size="icon"
@@ -237,8 +252,9 @@ export const ResumeDialog = () => {
                 <Button
                   type="submit"
                   disabled={loading}
-                  className={cn(isCreate && "rounded-r-none")}
+                  className={cn((isCreate || isCreateAi) && "rounded-r-none")}
                 >
+                  {isCreateAi && t`Create`}
                   {isCreate && t`Create`}
                   {isUpdate && t`Save Changes`}
                   {isDuplicate && t`Duplicate`}
