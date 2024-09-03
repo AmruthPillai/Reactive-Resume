@@ -1,12 +1,12 @@
 import { t } from "@lingui/macro";
-import { FadersHorizontal, ReadCvLogo } from "@phosphor-icons/react";
+import { CreditCard, FadersHorizontal, ReadCvLogo } from "@phosphor-icons/react";
 import { Button, KeyboardShortcut, Separator } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useKeyboardShortcut from "use-keyboard-shortcut";
 
-import { Copyright } from "@/client/components/copyright";
+// import { Copyright } from "@/client/components/copyright";
 import { Icon } from "@/client/components/icon";
 import { UserAvatar } from "@/client/components/user-avatar";
 import { UserOptions } from "@/client/components/user-options";
@@ -80,6 +80,11 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
     setOpen?.(false);
   });
 
+  useKeyboardShortcut(["shift", "b"], () => {
+    navigate("/dashboard/billing");
+    setOpen?.(false);
+  });
+
   const sidebarItems: SidebarItem[] = [
     {
       path: "/dashboard/resumes",
@@ -92,6 +97,12 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
       name: t`Settings`,
       shortcut: "⇧S",
       icon: <FadersHorizontal />,
+    },
+    {
+      path: "/dashboard/billing",
+      name: t`Billing`,
+      shortcut: "⇧B",
+      icon: <CreditCard />,
     },
   ];
 
@@ -124,7 +135,7 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
         </Button>
       </UserOptions>
 
-      <Copyright className="ml-2" />
+      {/* <Copyright className="ml-2" /> */}
     </div>
   );
 };

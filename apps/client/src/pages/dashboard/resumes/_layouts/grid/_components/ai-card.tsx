@@ -8,7 +8,7 @@ import { useDialog } from "@/client/stores/dialog";
 import { BaseCard } from "./base-card";
 
 export const AiResumeCard = () => {
-  const { open } = useDialog("import");
+  const { open } = useDialog("ai");
 
   return (
     <BaseCard
@@ -28,7 +28,7 @@ export const AiResumeCard = () => {
         <h4 className="line-clamp-1 font-medium">
           {t`Create a resume with AI`}
           {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
-          <KeyboardShortcut className="ml-2">^I</KeyboardShortcut>
+          <KeyboardShortcut className="ml-2">^K</KeyboardShortcut>
         </h4>
 
         <p className="line-clamp-1 text-xs opacity-75">{t`Let the AI do the work`}</p>

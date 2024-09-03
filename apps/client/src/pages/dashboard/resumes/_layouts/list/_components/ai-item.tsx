@@ -7,7 +7,7 @@ import { useDialog } from "@/client/stores/dialog";
 import { BaseListItem } from "./base-item";
 
 export const AiResumeListItem = () => {
-  const { open } = useDialog("import");
+  const { open } = useDialog("ai");
 
   return (
     <BaseListItem
@@ -16,7 +16,7 @@ export const AiResumeListItem = () => {
         <>
           <span>{t`Create a resume with AI`}</span>
           {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
-          <KeyboardShortcut className="ml-2">^I</KeyboardShortcut>
+          <KeyboardShortcut className="ml-2">^K</KeyboardShortcut>
         </>
       }
       description={t`Let the AI do the work`}
