@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { useResumes } from "@/client/services/resume";
 
+import { AiResumeCard } from "./_components/ai-card";
 import { BaseCard } from "./_components/base-card";
 import { CreateResumeCard } from "./_components/create-card";
 import { ImportResumeCard } from "./_components/import-card";
@@ -22,6 +23,13 @@ export const GridView = () => {
         animate={{ opacity: 1, x: 0, transition: { delay: 0.1 } }}
       >
         <ImportResumeCard />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0, transition: { delay: 0.2 } }}
+      >
+        <AiResumeCard />
       </motion.div>
 
       {loading &&
