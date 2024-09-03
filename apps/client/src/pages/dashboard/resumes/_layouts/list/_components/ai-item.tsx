@@ -7,7 +7,7 @@ import { useDialog } from "@/client/stores/dialog";
 import { BaseListItem } from "./base-item";
 
 export const AiResumeListItem = () => {
-  const { open } = useDialog("ai");
+  const { open } = useDialog("resume");
 
   return (
     <BaseListItem
@@ -21,7 +21,7 @@ export const AiResumeListItem = () => {
       }
       description={t`Let the AI do the work`}
       onClick={() => {
-        open("create");
+        open("create-ai");
       }}
     />
   );
