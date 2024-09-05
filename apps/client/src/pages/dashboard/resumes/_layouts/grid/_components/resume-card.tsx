@@ -30,7 +30,14 @@ type Props = {
 };
 
 export const ResumeCard = ({ resume }: Props) => {
-  const frameRef = useResumePreview(resume.data);
+  // Set the resume information with only the first page
+  const frameRef = useResumePreview({
+    ...resume.data,
+    metadata: {
+      ...resume.data.metadata,
+      layout: [resume.data.metadata.layout[0]],
+    },
+  });
 
   const navigate = useNavigate();
   const { open } = useDialog<ResumeDto>("resume");
@@ -67,6 +74,7 @@ export const ResumeCard = ({ resume }: Props) => {
               ref={frameRef}
               title={resume.title}
               src="/artboard/preview"
+              scrolling="no"
               style={{
                 height: "100%",
                 width: "100%",
