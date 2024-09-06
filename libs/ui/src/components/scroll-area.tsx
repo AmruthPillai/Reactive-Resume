@@ -7,6 +7,7 @@ export const ScrollArea = forwardRef<
   React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Root> & {
     hideScrollbar?: boolean;
     orientation?: "vertical" | "horizontal";
+    allowOverflow?: boolean;
   }
 >(
   (
@@ -14,6 +15,7 @@ export const ScrollArea = forwardRef<
       type = "scroll",
       orientation = "vertical",
       hideScrollbar = false,
+      allowOverflow = false,
       className,
       children,
       ...props
@@ -26,7 +28,10 @@ export const ScrollArea = forwardRef<
       className={cn("relative overflow-hidden", className)}
       {...props}
     >
-      <ScrollAreaPrimitive.Viewport className="size-full rounded-[inherit]">
+      <ScrollAreaPrimitive.Viewport
+        className="size-full rounded-[inherit]"
+        style={allowOverflow ? { overflowX: "visible", overflowY: "visible" } : {}}
+      >
         {children}
       </ScrollAreaPrimitive.Viewport>
       <ScrollBar orientation={orientation} className={cn(hideScrollbar && "opacity-0")} />
