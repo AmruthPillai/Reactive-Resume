@@ -82,17 +82,19 @@ const Header = () => {
 
 const Summary = () => {
   const section = useArtboardStore((state) => state.resume.sections.summary);
-
+  const primaryColor = useArtboardStore((state) => state.resume.metadata.theme.primary);
   if (!section.visible || isEmptyString(section.content)) return null;
 
   return (
-    <section id={section.id}>
-      <div
-        dangerouslySetInnerHTML={{ __html: section.content }}
-        className="wysiwyg"
-        style={{ columns: section.columns }}
-      />
-    </section>
+    <div className="p-custom space-y-4" style={{ backgroundColor: hexToRgb(primaryColor, 0.2) }}>
+      <section id={section.id}>
+        <div
+          dangerouslySetInnerHTML={{ __html: section.content }}
+          className="wysiwyg"
+          style={{ columns: section.columns }}
+        />
+      </section>
+    </div>
   );
 };
 
@@ -600,15 +602,7 @@ export const Gengar = ({ columns, isFirstPage = false }: TemplateProps) => {
       </div>
 
       <div className="main group col-span-2">
-        {isFirstPage && (
-          <div
-            className="p-custom space-y-4"
-            style={{ backgroundColor: hexToRgb(primaryColor, 0.2) }}
-          >
-            <Summary />
-          </div>
-        )}
-
+        {isFirstPage && <Summary />}
         <div className="p-custom space-y-4">
           {main.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
