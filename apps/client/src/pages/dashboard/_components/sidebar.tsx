@@ -53,10 +53,10 @@ const SidebarItem = ({ path, name, shortcut, icon, onClick }: SidebarItemProps) 
       onClick={onClick}
     >
       <Link to={path}>
-        <div className="mr-3">{icon}</div>
+        <div className="me-3">{icon}</div>
         <span>{name}</span>
-        {!isActive && <KeyboardShortcut className="ml-auto">{shortcut}</KeyboardShortcut>}
-        {isActive && <ActiveIndicator className="ml-auto" />}
+        {!isActive && <KeyboardShortcut className="ms-auto">{shortcut}</KeyboardShortcut>}
+        {isActive && <ActiveIndicator className="ms-auto" />}
       </Link>
     </Button>
   );
@@ -130,7 +130,7 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
 
       <UserOptions>
         <Button size="lg" variant="ghost" className="w-full justify-start px-3">
-          <UserAvatar size={24} className="mr-3" />
+          <UserAvatar size={24} className="me-3" />
           <span>{user?.name}</span>
         </Button>
       </UserOptions>

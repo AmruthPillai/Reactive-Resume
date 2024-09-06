@@ -40,11 +40,11 @@ export const ResumesPage = () => {
           <TabsList>
             <TabsTrigger value="grid" className="size-8 p-0 sm:h-8 sm:w-auto sm:px-4">
               <SquaresFour />
-              <span className="ml-2 hidden sm:block">{t`Grid`}</span>
+              <span className="ms-2 hidden sm:block">{t`Grid`}</span>
             </TabsTrigger>
             <TabsTrigger value="list" className="size-8 p-0 sm:h-8 sm:w-auto sm:px-4">
               <List />
-              <span className="ml-2 hidden sm:block">{t`List`}</span>
+              <span className="ms-2 hidden sm:block">{t`List`}</span>
             </TabsTrigger>
           </TabsList>
         </div>

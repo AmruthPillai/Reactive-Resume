@@ -41,7 +41,7 @@ export const DashboardLayout = () => {
         </div>
       </motion.div>
 
-      <main className="mx-6 my-4 lg:mx-8 lg:pl-[320px]">
+      <main className="mx-6 my-4 lg:mx-8 lg:ps-[320px]">
         <Outlet />
       </main>
     </div>
