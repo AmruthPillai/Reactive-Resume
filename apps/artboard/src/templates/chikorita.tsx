@@ -573,11 +573,11 @@ const mapSectionToComponent = (section: SectionKey) => {
   }
 };
 
-export const Chikorita = ({ columns, isFirstPage = false }: TemplateProps) => {
+export const Chikorita = ({ columns, isFirstPage = false, rtl = false }: TemplateProps) => {
   const [main, sidebar] = columns;
 
   return (
-    <div className="grid min-h-[inherit] grid-cols-3">
+    <div className="grid min-h-[inherit] grid-cols-3" dir={rtl ? "rtl" : "ltr"}>
       <div className="main p-custom group col-span-2 space-y-4">
         {isFirstPage && <Header />}
 

@@ -583,13 +583,13 @@ const mapSectionToComponent = (section: SectionKey) => {
   }
 };
 
-export const Glalie = ({ columns, isFirstPage = false }: TemplateProps) => {
+export const Glalie = ({ columns, isFirstPage = false, rtl = false }: TemplateProps) => {
   const [main, sidebar] = columns;
 
   const primaryColor = useArtboardStore((state) => state.resume.metadata.theme.primary);
 
   return (
-    <div className="grid min-h-[inherit] grid-cols-3">
+    <div className="grid min-h-[inherit] grid-cols-3" dir={rtl ? "rtl" : "ltr"}>
       <div
         className="sidebar p-custom group space-y-4"
         style={{ backgroundColor: hexToRgb(primaryColor, 0.2) }}

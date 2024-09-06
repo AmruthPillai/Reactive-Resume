@@ -519,11 +519,11 @@ const mapSectionToComponent = (section: SectionKey) => {
   }
 };
 
-export const Leafish = ({ columns, isFirstPage = false }: TemplateProps) => {
+export const Leafish = ({ columns, isFirstPage = false, rtl = false }: TemplateProps) => {
   const [main, sidebar] = columns;
 
   return (
-    <div>
+    <div dir={rtl ? "rtl" : "ltr"}>
       {isFirstPage && <Header />}
 
       <div className="p-custom grid grid-cols-2 items-start space-x-6">

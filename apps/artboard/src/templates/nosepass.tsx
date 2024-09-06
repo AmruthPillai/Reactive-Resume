@@ -577,13 +577,13 @@ const mapSectionToComponent = (section: SectionKey) => {
   }
 };
 
-export const Nosepass = ({ columns, isFirstPage = false }: TemplateProps) => {
+export const Nosepass = ({ columns, isFirstPage = false, rtl = false }: TemplateProps) => {
   const name = useArtboardStore((state) => state.resume.basics.name);
 
   const [main, sidebar] = columns;
 
   return (
-    <div className="p-custom space-y-6">
+    <div className="p-custom space-y-6" dir={rtl ? "rtl" : "ltr"}>
       <div className="flex items-center justify-between">
         <img alt="Europass Logo" className="h-[42px]" src="/assets/europass.png" />
 

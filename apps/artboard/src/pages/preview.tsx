@@ -9,6 +9,7 @@ import { getTemplate } from "../templates";
 export const PreviewLayout = () => {
   const layout = useArtboardStore((state) => state.resume.metadata.layout);
   const template = useArtboardStore((state) => state.resume.metadata.template as Template);
+  const rtl = useArtboardStore((state) => state.resume.metadata.page.rtl);
 
   const Template = useMemo(() => getTemplate(template), [template]);
 
@@ -16,7 +17,7 @@ export const PreviewLayout = () => {
     <>
       {layout.map((columns, pageIndex) => (
         <Page key={pageIndex} mode="preview" pageNumber={pageIndex + 1}>
-          <Template isFirstPage={pageIndex === 0} columns={columns as SectionKey[][]} />
+          <Template isFirstPage={pageIndex === 0} columns={columns as SectionKey[][]} rtl={rtl} />
         </Page>
       ))}
     </>

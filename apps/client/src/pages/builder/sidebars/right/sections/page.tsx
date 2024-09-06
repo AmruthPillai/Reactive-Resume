@@ -69,6 +69,19 @@ export const PageSection = () => {
           <div className="py-2">
             <div className="flex items-center gap-x-4">
               <Switch
+                id="metadata.page.rtl"
+                checked={page.rtl}
+                onCheckedChange={(checked) => {
+                  setValue("metadata.page.rtl", checked);
+                }}
+              />
+              <Label htmlFor="metadata.page.rtl">{t`Right to Left`}</Label>
+            </div>
+          </div>
+
+          <div className="py-2">
+            <div className="flex items-center gap-x-4">
+              <Switch
                 id="metadata.page.options.breakLine"
                 checked={page.options.breakLine}
                 onCheckedChange={(checked) => {

@@ -602,11 +602,11 @@ const mapSectionToComponent = (section: SectionKey) => {
   }
 };
 
-export const Ditto = ({ columns, isFirstPage = false }: TemplateProps) => {
+export const Ditto = ({ columns, isFirstPage = false, rtl = false }: TemplateProps) => {
   const [main, sidebar] = columns;
 
   return (
-    <div>
+    <div dir={rtl ? "rtl" : "ltr"}>
       {isFirstPage && (
         <div className="relative">
           <Header />

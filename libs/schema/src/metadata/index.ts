@@ -18,6 +18,7 @@ export const metadataSchema = z.object({
   page: z.object({
     margin: z.number().default(18),
     format: z.enum(["a4", "letter"]).default("a4"),
+    rtl: z.boolean().default(false),
     options: z.object({
       breakLine: z.boolean().default(true),
       pageNumbers: z.boolean().default(true),
@@ -56,6 +57,7 @@ export const defaultMetadata: Metadata = {
   page: {
     margin: 18,
     format: "a4",
+    rtl: true,
     options: {
       breakLine: true,
       pageNumbers: true,

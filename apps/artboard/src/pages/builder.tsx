@@ -12,6 +12,7 @@ export const BuilderLayout = () => {
   const transformRef = useRef<ReactZoomPanPinchRef>(null);
   const format = useArtboardStore((state) => state.resume.metadata.page.format);
   const layout = useArtboardStore((state) => state.resume.metadata.layout);
+  const rtl = useArtboardStore((state) => state.resume.metadata.page.rtl);
   const template = useArtboardStore((state) => state.resume.metadata.template as Template);
 
   const Template = useMemo(() => getTemplate(template), [template]);
@@ -63,7 +64,11 @@ export const BuilderLayout = () => {
               exit={{ opacity: 0, x: -200 }}
             >
               <Page mode="builder" pageNumber={pageIndex + 1}>
-                <Template isFirstPage={pageIndex === 0} columns={columns as SectionKey[][]} />
+                <Template
+                  isFirstPage={pageIndex === 0}
+                  columns={columns as SectionKey[][]}
+                  rtl={rtl}
+                />
               </Page>
             </motion.div>
           ))}

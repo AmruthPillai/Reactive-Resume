@@ -574,13 +574,13 @@ const mapSectionToComponent = (section: SectionKey) => {
   }
 };
 
-export const Gengar = ({ columns, isFirstPage = false }: TemplateProps) => {
+export const Gengar = ({ columns, isFirstPage = false, rtl = false }: TemplateProps) => {
   const [main, sidebar] = columns;
 
   const primaryColor = useArtboardStore((state) => state.resume.metadata.theme.primary);
 
   return (
-    <div className="grid min-h-[inherit] grid-cols-3">
+    <div className="grid min-h-[inherit] grid-cols-3" dir={rtl ? "rtl" : "ltr"}>
       <div
         className={cn(
           "sidebar group flex flex-col",

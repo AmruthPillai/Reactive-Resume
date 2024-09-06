@@ -525,11 +525,11 @@ const mapSectionToComponent = (section: SectionKey) => {
   }
 };
 
-export const Kakuna = ({ columns, isFirstPage = false }: TemplateProps) => {
+export const Kakuna = ({ columns, isFirstPage = false, rtl = false }: TemplateProps) => {
   const [main, sidebar] = columns;
 
   return (
-    <div className="p-custom space-y-4">
+    <div className="p-custom space-y-4" dir={rtl ? "rtl" : "ltr"}>
       {isFirstPage && <Header />}
 
       <div className="space-y-4">
