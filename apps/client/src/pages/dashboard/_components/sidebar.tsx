@@ -93,16 +93,16 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
       icon: <ReadCvLogo />,
     },
     {
-      path: "/dashboard/settings",
-      name: t`Settings`,
-      shortcut: "⇧S",
-      icon: <FadersHorizontal />,
-    },
-    {
       path: "/dashboard/billing",
       name: t`Billing`,
       shortcut: "⇧B",
       icon: <CreditCard />,
+    },
+    {
+      path: "/dashboard/settings",
+      name: t`Settings`,
+      shortcut: "⇧S",
+      icon: <FadersHorizontal />,
     },
   ];
 

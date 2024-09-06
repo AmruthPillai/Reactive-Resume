@@ -31,6 +31,12 @@ import {
   FormLabel,
   FormMessage,
   Input,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+  Textarea,
   Tooltip,
 } from "@reactive-resume/ui";
 import { cn, generateRandomName, kebabCase } from "@reactive-resume/utils";
@@ -47,12 +53,16 @@ import {
 import { useImportResume } from "@/client/services/resume/import";
 import { useDialog } from "@/client/stores/dialog";
 
-const formSchema = createResumeSchema.extend({ id: idSchema.optional() });
+const formSchema = createResumeSchema.extend({
+  id: idSchema.optional(),
+  existingResumeId: z.string().min(1).optional(),
+  jobDescription: z.string().min(1).optional(),
+});
 
 type FormValues = z.infer<typeof formSchema>;
 
 export const ResumeDialog = () => {
-  const { isOpen, mode, payload, close } = useDialog<ResumeDto>("resume");
+  const { isOpen, mode, payload, close } = useDialog<ResumeDto[]>("resume");
 
   const isCreateAi = mode === "create-ai";
   const isCreate = mode === "create";
@@ -71,7 +81,12 @@ export const ResumeDialog = () => {
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: { title: "", slug: "" },
+    defaultValues: {
+      title: "",
+      slug: "",
+      existingResumeId: "",
+      jobDescription: "",
+    },
   });
 
   useEffect(() => {
@@ -84,8 +99,15 @@ export const ResumeDialog = () => {
   }, [form.watch("title")]);
 
   const onSubmit = async (values: FormValues) => {
+    console.log("VALUES", values);
     if (isCreateAi) {
-      await createAiResume({ slug: values.slug, title: values.title, visibility: "private" });
+      await createAiResume({
+        slug: values.slug,
+        title: values.title,
+        visibility: "private",
+        existingResumeId: values.existingResumeId,
+        jobDescription: values.jobDescription,
+      });
     }
 
     if (isCreate) {
@@ -93,43 +115,60 @@ export const ResumeDialog = () => {
     }
 
     if (isUpdate) {
-      if (!payload.item?.id) return;
+      if (!payload.item?.[0].id) return;
 
       await updateResume({
-        ...payload.item,
+        ...payload.item[0],
         title: values.title,
         slug: values.slug,
       });
     }
 
     if (isDuplicate) {
-      if (!payload.item?.id) return;
+      if (!payload.item?.[0].id) return;
 
       await duplicateResume({
         title: values.title,
         slug: values.slug,
-        data: payload.item.data,
+        data: payload.item[0].data,
       });
     }
 
     if (isDelete) {
-      if (!payload.item?.id) return;
+      if (!payload.item?.[0].id) return;
 
-      await deleteResume({ id: payload.item.id });
+      await deleteResume({ id: payload.item[0].id });
     }
 
     close();
   };
 
   const onReset = () => {
-    if (isCreateAi) form.reset({ title: "", slug: "" });
+    if (isCreateAi)
+      form.reset({
+        title: "",
+        slug: "",
+        existingResumeId: "",
+        jobDescription: "",
+      });
     if (isCreate) form.reset({ title: "", slug: "" });
     if (isUpdate)
-      form.reset({ id: payload.item?.id, title: payload.item?.title, slug: payload.item?.slug });
+      form.reset({
+        id: payload.item?.[0]?.id,
+        title: payload.item?.[0]?.title,
+        slug: payload.item?.[0]?.slug,
+      });
     if (isDuplicate)
-      form.reset({ title: `${payload.item?.title} (Copy)`, slug: `${payload.item?.slug}-copy` });
+      form.reset({
+        title: `${payload.item?.[0]?.title} (Copy)`,
+        slug: `${payload.item?.[0]?.slug}-copy`,
+      });
     if (isDelete)
-      form.reset({ id: payload.item?.id, title: payload.item?.title, slug: payload.item?.slug });
+      form.reset({
+        id: payload.item?.[0]?.id,
+        title: payload.item?.[0]?.title,
+        slug: payload.item?.[0]?.slug,
+      });
   };
 
   const onGenerateRandomName = () => {
@@ -178,7 +217,7 @@ export const ResumeDialog = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={close}>
-      <DialogContent>
+      <DialogContent className="max-h-screen overflow-y-scroll">
         <Form {...form}>
           <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
             <DialogHeader>
@@ -247,6 +286,48 @@ export const ResumeDialog = () => {
               )}
             />
 
+            {isCreateAi && (
+              <>
+                <FormField
+                  name="existingResumeId"
+                  control={form.control}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>{t`Resume`}</FormLabel>
+                      <FormControl>
+                        <Select value={field.value} onValueChange={field.onChange}>
+                          <SelectTrigger>
+                            <SelectValue placeholder={t`Please select an existing resume`} />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {payload.item?.map((resume: ResumeDto) => (
+                              <SelectItem key={resume.id} value={resume.id}>
+                                {resume.title}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  name="jobDescription"
+                  control={form.control}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>{t`Job Description`}</FormLabel>
+                      <FormControl>
+                        <Textarea {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </>
+            )}
+
             <DialogFooter>
               <div className="flex items-center">
                 <Button
@@ -254,7 +335,7 @@ export const ResumeDialog = () => {
                   disabled={loading}
                   className={cn((isCreate || isCreateAi) && "rounded-r-none")}
                 >
-                  {isCreateAi && t`Create`}
+                  {isCreateAi && t`Genearte`}
                   {isCreate && t`Create`}
                   {isUpdate && t`Save Changes`}
                   {isDuplicate && t`Duplicate`}

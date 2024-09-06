@@ -3,6 +3,26 @@ import { z } from "zod";
 import { defaultUrl, urlSchema } from "../shared";
 import { customFieldSchema } from "./custom";
 
+export const leanBasicsSchema = z.object({
+  name: z.string(),
+  headline: z.string(),
+  email: z.literal("").or(z.string().email()),
+  phone: z.string(),
+  location: z.string(),
+  url: urlSchema,
+  picture: z.object({
+    url: z.string(),
+    size: z.number().default(64),
+    aspectRatio: z.number().default(1),
+    borderRadius: z.number().default(0),
+    effects: z.object({
+      hidden: z.boolean().default(false),
+      border: z.boolean().default(false),
+      grayscale: z.boolean().default(false),
+    }),
+  }),
+});
+
 // Schema
 export const basicsSchema = z.object({
   name: z.string(),

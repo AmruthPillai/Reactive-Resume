@@ -1,5 +1,6 @@
 import { t } from "@lingui/macro";
 import { MagicWand } from "@phosphor-icons/react";
+import { ResumeDto } from "@reactive-resume/dto";
 import { KeyboardShortcut } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 
@@ -7,14 +8,14 @@ import { useDialog } from "@/client/stores/dialog";
 
 import { BaseCard } from "./base-card";
 
-export const AiResumeCard = () => {
+export const AiResumeCard = ({ resumes }: { resumes: ResumeDto[] | undefined }) => {
   const { open } = useDialog("resume");
 
   return (
     <BaseCard
       withShineBorder
       onClick={() => {
-        open("create-ai");
+        open("create-ai", { id: "resume", item: resumes });
       }}
     >
       <MagicWand size={64} weight="thin" />

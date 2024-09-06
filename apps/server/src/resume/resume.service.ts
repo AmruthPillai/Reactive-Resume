@@ -1,3 +1,4 @@
+import { openai } from "@ai-sdk/openai";
 import {
   BadRequestException,
   Injectable,
@@ -12,9 +13,15 @@ import {
   ResumeDto,
   UpdateResumeDto,
 } from "@reactive-resume/dto";
-import { defaultResumeData, ResumeData } from "@reactive-resume/schema";
+import {
+  defaultResumeData,
+  leanBasicsSchema,
+  leanSectionsSchema,
+  ResumeData,
+} from "@reactive-resume/schema";
 import type { DeepPartial } from "@reactive-resume/utils";
 import { ErrorMessage, generateRandomName, kebabCase } from "@reactive-resume/utils";
+import { generateObject } from "ai";
 import deepmerge from "deepmerge";
 import { PrismaService } from "nestjs-prisma";
 
@@ -36,13 +43,50 @@ export class ResumeService {
       select: { name: true, email: true, picture: true },
     });
 
+    const existingResume =
+      createAiResumeDto.existingResumeId &&
+      (await this.prisma.resume.findUniqueOrThrow({
+        where: { userId_id: { userId, id: createAiResumeDto.existingResumeId } },
+      }));
+
+    const jobDescription = createAiResumeDto.jobDescription ?? "";
+
+    console.log("AI Resume Creation:", {
+      name,
+      email,
+      picture,
+      existingResume,
+      jobDescription,
+    });
+
+    const { object: basicsResult } = await generateObject({
+      model: openai("gpt-4o"),
+      system: "You generate a resume",
+      // here is a sample resume data (don't use data from here): ${JSON.stringify(defaultResumeData.basics)},
+      prompt: `Create a new resume from my existing resume for the job description., 
+      here is my current resume: ${JSON.stringify(existingResume)},
+      here is the job description: ${jobDescription}`,
+      schema: leanBasicsSchema,
+    });
+
+    const { object: sectionsResult } = await generateObject({
+      model: openai("gpt-4o"),
+      system: "You generate a resume",
+      // here is a sample resume data (don't use data from here): ${JSON.stringify(defaultResumeData.basics)},
+      prompt: `Create a new resume from my existing resume for the job description.,
+      here is my current resume: ${JSON.stringify(existingResume)}, 
+      here is the job description: ${jobDescription}`,
+      schema: leanSectionsSchema,
+    });
+
     const data = deepmerge(defaultResumeData, {
-      basics: { name, email, picture: { url: picture ?? "" } },
+      basics: { ...basicsResult, name, email, picture: { url: picture ?? "" } },
+      sections: { ...sectionsResult },
     } satisfies DeepPartial<ResumeData>);
 
     const resume = this.prisma.resume.create({
       data: {
-        data,
+        data: data,
         userId,
         title: createAiResumeDto.title + " (AI)",
         visibility: createAiResumeDto.visibility,

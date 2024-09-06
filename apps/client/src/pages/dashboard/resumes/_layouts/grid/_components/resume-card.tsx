@@ -30,7 +30,7 @@ type Props = {
 
 export const ResumeCard = ({ resume }: Props) => {
   const navigate = useNavigate();
-  const { open } = useDialog<ResumeDto>("resume");
+  const { open } = useDialog<ResumeDto[]>("resume");
   const { open: lockOpen } = useDialog<ResumeDto>("lock");
 
   const lastUpdated = dayjs().to(resume.updatedAt);
@@ -40,11 +40,11 @@ export const ResumeCard = ({ resume }: Props) => {
   };
 
   const onUpdate = () => {
-    open("update", { id: "resume", item: resume });
+    open("update", { id: "resume", item: [resume] });
   };
 
   const onDuplicate = () => {
-    open("duplicate", { id: "resume", item: resume });
+    open("duplicate", { id: "resume", item: [resume] });
   };
 
   const onLockChange = () => {
@@ -52,7 +52,7 @@ export const ResumeCard = ({ resume }: Props) => {
   };
 
   const onDelete = () => {
-    open("delete", { id: "resume", item: resume });
+    open("delete", { id: "resume", item: [resume] });
   };
 
   return (
