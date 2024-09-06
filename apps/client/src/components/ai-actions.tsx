@@ -71,19 +71,19 @@ export const AiActions = ({ value, onChange, className }: Props) => {
           variant="primary"
           className="-rotate-90 bg-background px-2 text-[10px] leading-[10px]"
         >
-          <MagicWand size={10} className="mr-1" />
+          <MagicWand size={10} className="me-1" />
           {t`AI`}
         </Badge>
       </div>
 
       <Button size="sm" variant="outline" disabled={!!loading} onClick={() => onClick("improve")}>
         {loading === "improve" ? <CircleNotch className="animate-spin" /> : <PenNib />}
-        <span className="ml-2 text-xs">{t`Improve Writing`}</span>
+        <span className="ms-2 text-xs">{t`Improve Writing`}</span>
       </Button>
 
       <Button size="sm" variant="outline" disabled={!!loading} onClick={() => onClick("fix")}>
         {loading === "fix" ? <CircleNotch className="animate-spin" /> : <Exam />}
-        <span className="ml-2 text-xs">{t`Fix Spelling & Grammar`}</span>
+        <span className="ms-2 text-xs">{t`Fix Spelling & Grammar`}</span>
       </Button>
 
       <DropdownMenu>
@@ -99,25 +99,25 @@ export const AiActions = ({ value, onChange, className }: Props) => {
             <span role="img" aria-label={t`Casual`}>
               🙂
             </span>
-            <span className="ml-2">{t`Casual`}</span>
+            <span className="ms-2">{t`Casual`}</span>
           </DropdownMenuItem>
           <DropdownMenuItem onClick={() => onClick("tone", "professional")}>
             <span role="img" aria-label={t`Professional`}>
               💼
             </span>
-            <span className="ml-2">{t`Professional`}</span>
+            <span className="ms-2">{t`Professional`}</span>
           </DropdownMenuItem>
           <DropdownMenuItem onClick={() => onClick("tone", "confident")}>
             <span role="img" aria-label={t`Confident`}>
               😎
             </span>
-            <span className="ml-2">{t`Confident`}</span>
+            <span className="ms-2">{t`Confident`}</span>
           </DropdownMenuItem>
           <DropdownMenuItem onClick={() => onClick("tone", "friendly")}>
             <span role="img" aria-label={t`Friendly`}>
               😊
             </span>
-            <span className="ml-2">{t`Friendly`}</span>
+            <span className="ms-2">{t`Friendly`}</span>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
