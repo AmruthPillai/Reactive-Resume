@@ -4,11 +4,16 @@ import { i18n } from "@lingui/core";
 import { detect, fromStorage, fromUrl } from "@lingui/detect-locale";
 import { I18nProvider } from "@lingui/react";
 import { languages } from "@reactive-resume/utils";
-import { useEffect } from "react";
+import React, { lazy, useEffect } from "react";
 
 import { defaultLocale, dynamicActivate } from "../libs/lingui";
 import { updateUser } from "../services/user";
 import { useAuthStore } from "../stores/auth";
+
+const RtlProvider = lazy(() => {
+  const comp = import("./rtl");
+  return comp;
+});
 
 type Props = {
   children: React.ReactNode;
@@ -29,7 +34,14 @@ export const LocaleProvider = ({ children }: Props) => {
     }
   }, [userLocale]);
 
-  return <I18nProvider i18n={i18n}>{children}</I18nProvider>;
+  return (
+    <I18nProvider i18n={i18n}>
+      <>
+        {userLocale === "he-IL" && <RtlProvider />}
+        {children}
+      </>
+    </I18nProvider>
+  );
 };
 
 export const changeLanguage = async (locale: string) => {
