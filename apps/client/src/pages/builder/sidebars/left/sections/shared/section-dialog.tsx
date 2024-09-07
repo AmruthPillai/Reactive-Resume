@@ -72,6 +72,8 @@ export const SectionDialog = <T extends SectionItem>({
           draft.push({ ...values, id: createId() });
         }),
       );
+
+      form.reset(defaultValues);
     }
 
     if (isUpdate) {
