@@ -205,7 +205,7 @@ const Section = <T,>({
 
   return (
     <section id={section.id} className="grid">
-      <h4 className="mb-2 border-b border-primary text-left font-bold text-primary">
+      <h4 className="mb-2 border-b border-primary text-start font-bold text-primary">
         {section.name}
       </h4>
 

@@ -30,8 +30,8 @@ const Header = () => {
 
   return (
     <div className="grid grid-cols-4 gap-x-6">
-      <div className="mt-1 space-y-2 text-right">
-        <Picture className="ml-auto" />
+      <div className="mt-1 space-y-2 text-end">
+        <Picture className="ms-auto" />
       </div>
 
       <div className="col-span-3 space-y-2">
@@ -95,14 +95,14 @@ const Summary = () => {
 
   return (
     <section id={section.id} className="grid grid-cols-4 gap-x-6">
-      <div className="text-right">
+      <div className="text-end">
         <h4 className="font-medium text-primary">{section.name}</h4>
       </div>
 
       <div className="col-span-3">
         <div className="relative">
           <hr className="mt-3 border-primary pb-3" />
-          <div className="absolute bottom-3 right-0 size-3 bg-primary" />
+          <div className="absolute bottom-3 end-0 size-3 bg-primary" />
         </div>
 
         <div
@@ -186,14 +186,14 @@ const Section = <T,>({
   return (
     <section id={section.id} className={cn("grid", dateKey !== undefined && "gap-y-4")}>
       <div className="grid grid-cols-4 gap-x-6">
-        <div className="text-right">
+        <div className="text-end">
           <h4 className="font-medium text-primary">{section.name}</h4>
         </div>
 
         <div className="col-span-3">
           <div className="relative">
             <hr className="mt-3 border-primary" />
-            <div className="absolute bottom-0 right-0 size-3 bg-primary" />
+            <div className="absolute bottom-0 end-0 size-3 bg-primary" />
           </div>
         </div>
       </div>
@@ -210,7 +210,7 @@ const Section = <T,>({
 
               return (
                 <Fragment key={item.id}>
-                  <div className="text-right font-medium text-primary">{date}</div>
+                  <div className="text-end font-medium text-primary">{date}</div>
 
                   <div className="col-span-3 space-y-1">
                     {children?.(item as T)}
