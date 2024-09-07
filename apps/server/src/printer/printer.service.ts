@@ -35,7 +35,7 @@ export class PrinterService {
     try {
       return await connect({
         browserWSEndpoint: this.browserURL,
-        ignoreHTTPSErrors: this.ignoreHTTPSErrors,
+        acceptInsecureCerts: this.ignoreHTTPSErrors,
       });
     } catch (error) {
       throw new InternalServerErrorException(
@@ -145,7 +145,9 @@ export class PrinterService {
           return temporaryHtml_;
         }, pageElement);
 
-        pagesBuffer.push(await page.pdf({ width, height, printBackground: true }));
+        const uint8array = await page.pdf({ width, height, printBackground: true });
+        const buffer = Buffer.from(uint8array);
+        pagesBuffer.push(buffer);
 
         await page.evaluate((temporaryHtml_: string) => {
           document.body.innerHTML = temporaryHtml_;
@@ -245,7 +247,8 @@ export class PrinterService {
 
     // Save the JPEG to storage and return the URL
     // Store the URL in cache for future requests, under the previously generated hash digest
-    const buffer = await page.screenshot({ quality: 80, type: "jpeg" });
+    const uint8array = await page.screenshot({ quality: 80, type: "jpeg" });
+    const buffer = Buffer.from(uint8array);
 
     // Generate a hash digest of the resume data, this hash will be used to check if the resume has been updated
     const previewUrl = await this.storageService.uploadObject(
