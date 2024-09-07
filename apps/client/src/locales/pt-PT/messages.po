@@ -8,7 +8,7 @@ msgstr ""
 "Language: pt\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-06-10 05:50\n"
+"PO-Revision-Date: 2024-09-02 10:08\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -387,9 +387,9 @@ msgstr "Data ou intervalo de datas"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:133
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:156
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:148
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:134
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:198
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:114
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:127
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:172
 msgid "Delete"
 msgstr "Apagar"
 
@@ -464,9 +464,9 @@ msgstr "Downloads"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:169
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:132
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:102
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:182
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:98
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:95
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:156
 msgid "Duplicate"
 msgstr "Duplicar"
 
@@ -809,8 +809,8 @@ msgstr "Rótulo"
 msgid "Language"
 msgstr "Idioma"
 
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:116
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:148
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:82
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:139
 msgid "Last updated {lastUpdated}"
 msgstr "Última atualização {lastUpdated}"
 
@@ -865,9 +865,9 @@ msgid "Location"
 msgstr "Localização"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:51
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:142
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:122
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:192
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:108
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:115
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:166
 msgid "Lock"
 msgstr "Bloquear"
 
@@ -972,9 +972,9 @@ msgstr "Senha de uso único"
 msgid "Oops, the server returned an error."
 msgstr "Desculpe, o servidor relatou um erro."
 
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:124
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:84
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:174
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:90
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:77
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:148
 msgid "Open"
 msgstr "Abrir"
 
@@ -1161,9 +1161,9 @@ msgid "Remove Page"
 msgstr "Remover página"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:110
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:128
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:93
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:178
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:94
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:86
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:152
 msgid "Rename"
 msgstr "Renomear"
 
@@ -1537,9 +1537,9 @@ msgid "Undo"
 msgstr "Desfazer"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:52
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:137
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:112
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:187
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:103
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:105
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:161
 msgid "Unlock"
 msgstr "Desbloquear"
 

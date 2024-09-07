@@ -41,6 +41,14 @@
               }
             ]
           }
+        ],
+
+        // prettier
+        "prettier/prettier": [
+          "warn",
+          {
+            "endOfLine": "auto"
+          }
         ]
       }
     },
