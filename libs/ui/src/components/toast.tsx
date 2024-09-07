@@ -15,7 +15,7 @@ export const ToastViewport = forwardRef<
   <ToastPrimitives.Viewport
     ref={ref}
     className={cn(
-      "fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]",
+      "fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:end-0 sm:top-auto sm:flex-col md:max-w-[420px]",
       className,
     )}
     {...props}
@@ -68,7 +68,7 @@ export const ToastClose = forwardRef<
   <ToastPrimitives.Close
     ref={ref}
     className={cn(
-      "absolute right-1 top-1 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-1 group-hover:opacity-100",
+      "absolute end-1 top-1 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-1 group-hover:opacity-100",
       "group/primary:text-primary group-hover/primary:text-primary-foreground group-focus/primary:ring-primary group-focus/primary:ring-offset-primary",
       "group/secondary:text-secondary group-hover/secondary:text-secondary-foreground group-focus/secondary:ring-secondary group-focus/secondary:ring-offset-secondary",
       "group/error:text-error group-hover/error:text-error-foreground group-focus/error:ring-error group-focus/error:ring-offset-error",

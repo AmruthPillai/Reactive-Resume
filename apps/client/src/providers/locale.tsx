@@ -37,7 +37,7 @@ export const LocaleProvider = ({ children }: Props) => {
   return (
     <I18nProvider i18n={i18n}>
       <>
-        {userLocale === "he-IL" && <RtlProvider />}
+        <React.Suspense fallback={null}>{userLocale === "he-IL" && <RtlProvider />}</React.Suspense>
         {children}
       </>
     </I18nProvider>

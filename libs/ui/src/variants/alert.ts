@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const alertVariants = cva(
-  "relative w-full rounded p-4 transition-colors [&>svg+div]:translate-y-[-4px] [&>svg]:absolute [&>svg]:left-3.5 [&>svg]:top-[18px] [&>svg~*]:pl-6",
+  "relative w-full rounded p-4 transition-colors [&>svg+div]:translate-y-[-4px] [&>svg]:absolute [&>svg]:start-3.5 [&>svg]:top-[18px] [&>svg~*]:pl-6",
   {
     variants: {
       variant: {
