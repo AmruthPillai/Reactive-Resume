@@ -38,7 +38,7 @@ const Header = () => {
           <div className="text-base">{basics.headline}</div>
         </div>
 
-        <div className="flex flex-col items-start gap-y-1.5 rounded border border-primary px-3 py-4 text-left text-sm">
+        <div className="flex flex-col items-start gap-y-1.5 rounded border border-primary px-3 py-4 text-start text-sm">
           {basics.location && (
             <div className="flex items-center gap-x-1.5">
               <i className="ph ph-bold ph-map-pin text-primary" />
@@ -110,7 +110,7 @@ const Rating = ({ level }: RatingProps) => {
         style={{ backgroundColor: hexToRgb(primaryColor, 0.4) }}
       />
       <div
-        className="absolute inset-y-0 left-0 h-2.5 w-full rounded-sm bg-primary"
+        className="absolute inset-y-0 start-0 h-2.5 w-full rounded-sm bg-primary"
         style={{ width: `${linearTransform(level, 0, 5, 0, 100)}%` }}
       />
     </div>
@@ -237,7 +237,7 @@ const Experience = () => {
     <Section<Experience> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
         <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
-          <div className="text-left">
+          <div className="text-start">
             <LinkedEntity
               name={item.company}
               url={item.url}
@@ -247,7 +247,7 @@ const Experience = () => {
             <div>{item.position}</div>
           </div>
 
-          <div className="shrink-0 text-right">
+          <div className="shrink-0 text-end">
             <div className="font-bold">{item.date}</div>
             <div>{item.location}</div>
           </div>
@@ -264,7 +264,7 @@ const Education = () => {
     <Section<Education> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
         <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
-          <div className="text-left">
+          <div className="text-start">
             <LinkedEntity
               name={item.institution}
               url={item.url}
@@ -275,7 +275,7 @@ const Education = () => {
             <div>{item.score}</div>
           </div>
 
-          <div className="shrink-0 text-right">
+          <div className="shrink-0 text-end">
             <div className="font-bold">{item.date}</div>
             <div>{item.studyType}</div>
           </div>
@@ -324,7 +324,7 @@ const Awards = () => {
     <Section<Award> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
         <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
-          <div className="text-left">
+          <div className="text-start">
             <div className="font-bold">{item.title}</div>
             <LinkedEntity
               name={item.awarder}
@@ -333,7 +333,7 @@ const Awards = () => {
             />
           </div>
 
-          <div className="shrink-0 text-right">
+          <div className="shrink-0 text-end">
             <div className="font-bold">{item.date}</div>
           </div>
         </div>
@@ -349,12 +349,12 @@ const Certifications = () => {
     <Section<Certification> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
         <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
-          <div className="text-left">
+          <div className="text-start">
             <div className="font-bold">{item.name}</div>
             <LinkedEntity name={item.issuer} url={item.url} separateLinks={section.separateLinks} />
           </div>
 
-          <div className="shrink-0 text-right">
+          <div className="shrink-0 text-end">
             <div className="font-bold">{item.date}</div>
           </div>
         </div>
@@ -395,7 +395,7 @@ const Publications = () => {
     <Section<Publication> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
         <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
-          <div className="text-left">
+          <div className="text-start">
             <LinkedEntity
               name={item.name}
               url={item.url}
@@ -405,7 +405,7 @@ const Publications = () => {
             <div>{item.publisher}</div>
           </div>
 
-          <div className="shrink-0 text-right">
+          <div className="shrink-0 text-end">
             <div className="font-bold">{item.date}</div>
           </div>
         </div>
@@ -421,7 +421,7 @@ const Volunteer = () => {
     <Section<Volunteer> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
         <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
-          <div className="text-left">
+          <div className="text-start">
             <LinkedEntity
               name={item.organization}
               url={item.url}
@@ -431,7 +431,7 @@ const Volunteer = () => {
             <div>{item.position}</div>
           </div>
 
-          <div className="shrink-0 text-right">
+          <div className="shrink-0 text-end">
             <div className="font-bold">{item.date}</div>
             <div>{item.location}</div>
           </div>
@@ -463,7 +463,7 @@ const Projects = () => {
     <Section<Project> section={section} urlKey="url" summaryKey="summary" keywordsKey="keywords">
       {(item) => (
         <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
-          <div className="text-left">
+          <div className="text-start">
             <LinkedEntity
               name={item.name}
               url={item.url}
@@ -473,7 +473,7 @@ const Projects = () => {
             <div>{item.description}</div>
           </div>
 
-          <div className="shrink-0 text-right">
+          <div className="shrink-0 text-end">
             <div className="font-bold">{item.date}</div>
           </div>
         </div>
@@ -514,7 +514,7 @@ const Custom = ({ id }: { id: string }) => {
     >
       {(item) => (
         <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
-          <div className="text-left">
+          <div className="text-start">
             <LinkedEntity
               name={item.name}
               url={item.url}
@@ -524,7 +524,7 @@ const Custom = ({ id }: { id: string }) => {
             <div>{item.description}</div>
           </div>
 
-          <div className="shrink-0 text-right">
+          <div className="shrink-0 text-end">
             <div className="font-bold">{item.date}</div>
             <div>{item.location}</div>
           </div>

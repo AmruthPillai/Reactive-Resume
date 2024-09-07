@@ -227,7 +227,7 @@ const Section = <T,>({
                     {url !== undefined && section.separateLinks && <Link url={url} />}
                   </div>
 
-                  <div className="absolute inset-y-0 -start-px border-l-4 border-primary group-[.sidebar]:hidden" />
+                  <div className="absolute inset-y-0 -start-px border-s-4 border-primary group-[.sidebar]:hidden" />
                 </div>
 
                 {summary !== undefined && !isEmptyString(summary) && (
@@ -240,7 +240,7 @@ const Section = <T,>({
                   <p className="text-sm">{keywords.join(", ")}</p>
                 )}
 
-                <div className="absolute inset-y-0 start-0 border-l border-primary group-[.sidebar]:hidden" />
+                <div className="absolute inset-y-0 start-0 border-s border-primary group-[.sidebar]:hidden" />
               </div>
             );
           })}
