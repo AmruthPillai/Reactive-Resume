@@ -205,7 +205,7 @@ export const ImportDialog = () => {
           <form className="space-y-4">
             <DialogHeader>
               <DialogTitle>
-                <div className="flex items-center space-x-2.5">
+                <div className="flex items-center gap-2.5">
                   <DownloadSimple />
                   <h2>{t`Import an existing resume`}</h2>
                 </div>
