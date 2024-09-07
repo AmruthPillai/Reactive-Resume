@@ -268,7 +268,7 @@ export const LayoutSection = () => {
 
         <Button variant="outline" className="ml-auto" onClick={onAddPage}>
           <Plus />
-          <span className="ml-2">{t`Add New Page`}</span>
+          <span className="ms-2">{t`Add New Page`}</span>
         </Button>
       </main>
     </section>

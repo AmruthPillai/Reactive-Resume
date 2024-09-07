@@ -14,7 +14,7 @@ export const SocialAuth = () => {
       {providers.includes("github") && (
         <Button asChild size="lg" className="w-full !bg-[#222] !text-white hover:!bg-[#222]/80">
           <a href="/api/auth/github">
-            <GithubLogo className="mr-3 size-4" />
+            <GithubLogo className="me-3 size-4" />
             {t`GitHub`}
           </a>
         </Button>
@@ -27,7 +27,7 @@ export const SocialAuth = () => {
           className="w-full !bg-[#4285F4] !text-white hover:!bg-[#4285F4]/80"
         >
           <a href="/api/auth/google">
-            <GoogleLogo className="mr-3 size-4" />
+            <GoogleLogo className="me-3 size-4" />
             {t`Google`}
           </a>
         </Button>

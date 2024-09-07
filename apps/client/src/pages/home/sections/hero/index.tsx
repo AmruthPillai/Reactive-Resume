@@ -27,7 +27,7 @@ export const HeroSection = () => (
 
           <a
             href="https://docs.rxresu.me/overview/features"
-            className={cn(buttonVariants({ variant: "link" }), "space-x-2 text-left")}
+            className={cn(buttonVariants({ variant: "link" }), "gap-2 text-left")}
           >
             <p>{t`What's new in the latest version`}</p>
             <ArrowRight />
@@ -50,7 +50,7 @@ export const HeroSection = () => (
         </div>
       </motion.div>
 
-      <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-20">
+      <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ms-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ms-20">
         <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
           <motion.div
             viewport={{ once: true }}

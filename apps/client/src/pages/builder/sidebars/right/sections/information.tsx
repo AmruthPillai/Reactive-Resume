@@ -94,7 +94,7 @@ const DocumentationCard = () => (
         </Trans>
       </CardDescription>
     </CardContent>
-    <CardFooter className="space-x-4">
+    <CardFooter className="gap-4">
       <a
         className={cn(buttonVariants({ size: "sm" }))}
         href="https://docs.rxresu.me/"

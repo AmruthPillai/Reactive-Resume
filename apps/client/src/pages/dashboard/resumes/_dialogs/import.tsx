@@ -312,7 +312,7 @@ export const ImportDialog = () => {
                     </Button>
 
                     <Button disabled type="button" variant="success">
-                      <Check size={16} weight="bold" className="mr-2" />
+                      <Check size={16} weight="bold" className="me-2" />
                       {t`Validated`}
                     </Button>
                   </>

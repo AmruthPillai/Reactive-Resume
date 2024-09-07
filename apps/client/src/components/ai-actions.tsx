@@ -1,14 +1,6 @@
 import { t } from "@lingui/macro";
+import { CaretDown, ChatTeardropText, CircleNotch, Exam, PenNib } from "@phosphor-icons/react";
 import {
-  CaretDown,
-  ChatTeardropText,
-  CircleNotch,
-  Exam,
-  MagicWand,
-  PenNib,
-} from "@phosphor-icons/react";
-import {
-  Badge,
   Button,
   DropdownMenu,
   DropdownMenuContent,
@@ -65,17 +57,6 @@ export const AiActions = ({ value, onChange, className }: Props) => {
         className,
       )}
     >
-      <div className="absolute -left-5 z-10">
-        <Badge
-          outline
-          variant="primary"
-          className="-rotate-90 bg-background px-2 text-[10px] leading-[10px]"
-        >
-          <MagicWand size={10} className="me-1" />
-          {t`AI`}
-        </Badge>
-      </div>
-
       <Button size="sm" variant="outline" disabled={!!loading} onClick={() => onClick("improve")}>
         {loading === "improve" ? <CircleNotch className="animate-spin" /> : <PenNib />}
         <span className="ms-2 text-xs">{t`Improve Writing`}</span>

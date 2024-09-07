@@ -37,7 +37,7 @@ export const CustomField = ({ field, onChange, onRemove }: CustomFieldProps) => 
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
     >
-      <div className="flex items-end justify-between space-x-2">
+      <div className="flex items-end justify-between gap-2">
         <Button
           size="icon"
           variant="link"

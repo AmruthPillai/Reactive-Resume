@@ -153,7 +153,7 @@ export const TwoFactorDialog = () => {
           <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
             <DialogHeader>
               <DialogTitle>
-                <div className="flex items-center space-x-2.5">
+                <div className="flex items-center gap-2.5">
                   <QrCode />
                   <h2>
                     {mode === "create" && t`Setup two-factor authentication on your account`}

@@ -28,10 +28,10 @@ export const AuthLayout = () => {
       <div className="relative flex w-full flex-col justify-center gap-y-8 px-12 sm:mx-auto sm:basis-[420px] sm:px-0 lg:basis-[480px] lg:px-12">
         <div className="flex items-center justify-between">
           <Link to="/" className="size-24">
-            <Logo className="-ml-3" size={96} />
+            <Logo className="-ms-3" size={96} />
           </Link>
 
-          <div className="right-0 space-x-2 text-right lg:absolute lg:p-12 lg:text-center">
+          <div className="right-0 gap-2 text-right lg:absolute lg:p-12 lg:text-center">
             <LocaleSwitch />
             <ThemeSwitch />
           </div>

@@ -48,7 +48,7 @@ export const BuilderLayout = () => {
     >
       <TransformComponent
         wrapperClass="!w-screen !h-screen"
-        contentClass="grid items-start justify-center space-x-12 pointer-events-none"
+        contentClass="grid items-start justify-center gap-12 pointer-events-none"
         contentStyle={{
           width: `${layout.length * (pageSizeMap[format].width * MM_TO_PX + 42)}px`,
           gridTemplateColumns: `repeat(${layout.length}, 1fr)`,

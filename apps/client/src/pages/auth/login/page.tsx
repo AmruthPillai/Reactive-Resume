@@ -63,7 +63,7 @@ export const LoginPage = () => {
           <Button asChild variant="link" className="px-1.5">
             <Link to="/auth/register">
               {t({ message: "Create one now", context: "This is a link to create a new account" })}{" "}
-              <ArrowRight className="ml-1" />
+              <ArrowRight className="ms-1" />
             </Link>
           </Button>
         </h6>

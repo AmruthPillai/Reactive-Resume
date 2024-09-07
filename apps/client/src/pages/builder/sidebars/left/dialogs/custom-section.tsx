@@ -175,7 +175,7 @@ export const CustomSectionDialog = () => {
                           field.onChange(field.value.filter((v) => item !== v));
                         }}
                       >
-                        <span className="mr-1">{item}</span>
+                        <span className="me-1">{item}</span>
                         <X size={12} weight="bold" />
                       </Badge>
                     </motion.div>

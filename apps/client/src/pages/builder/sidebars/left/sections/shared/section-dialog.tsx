@@ -147,7 +147,7 @@ export const SectionDialog = <T extends SectionItem>({
           <form className="space-y-6" onSubmit={form.handleSubmit(onSubmit)}>
             <DialogHeader>
               <DialogTitle>
-                <div className="flex items-center space-x-2.5">
+                <div className="flex items-center gap-2.5">
                   {isCreate && <Plus />}
                   {isUpdate && <PencilSimple />}
                   {isDuplicate && <CopySimple />}

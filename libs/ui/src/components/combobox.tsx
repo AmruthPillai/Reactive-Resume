@@ -74,7 +74,7 @@ export const Combobox = forwardRef(
           >
             <span className="line-clamp-1 text-left font-normal">
               {props.multiple && props.value && props.value.length > 0 && (
-                <span className="mr-2">{props.value.join(", ")}</span>
+                <span className="me-2">{props.value.join(", ")}</span>
               )}
 
               {!props.multiple &&
@@ -124,7 +124,7 @@ export const Combobox = forwardRef(
                   >
                     <Check
                       className={cn(
-                        "mr-2 size-4 opacity-0",
+                        "me-2 size-4 opacity-0",
                         !props.multiple && props.value === option.value && "opacity-100",
                         props.multiple && props.value?.includes(option.value) && "opacity-100",
                       )}

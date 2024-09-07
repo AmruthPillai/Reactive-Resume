@@ -29,7 +29,7 @@ const Header = () => {
   const basics = useArtboardStore((state) => state.resume.basics);
 
   return (
-    <div className="flex items-center space-x-4">
+    <div className="flex items-center gap-4">
       <Picture />
 
       <div className="space-y-0.5">

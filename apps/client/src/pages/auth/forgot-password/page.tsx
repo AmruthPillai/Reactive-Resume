@@ -96,7 +96,7 @@ export const ForgotPasswordPage = () => {
                   navigate(-1);
                 }}
               >
-                <ArrowLeft size={14} className="mr-2" />
+                <ArrowLeft size={14} className="me-2" />
                 <span>{t`Back`}</span>
               </Button>
 

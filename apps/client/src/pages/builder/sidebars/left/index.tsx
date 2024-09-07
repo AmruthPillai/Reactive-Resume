@@ -260,7 +260,7 @@ export const LeftSidebar = () => {
 
           <Button size="lg" variant="outline" onClick={addSection}>
             <PlusCircle />
-            <span className="ml-2">{t`Add a new section`}</span>
+            <span className="ms-2">{t`Add a new section`}</span>
           </Button>
         </div>
       </ScrollArea>

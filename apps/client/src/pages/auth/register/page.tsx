@@ -71,7 +71,7 @@ export const RegisterPage = () => {
           <span className="opacity-75">{t`Already have an account?`}</span>
           <Button asChild variant="link" className="px-1.5">
             <Link to="/auth/login">
-              {t`Sign in now`} <ArrowRight className="ml-1" />
+              {t`Sign in now`} <ArrowRight className="ms-1" />
             </Link>
           </Button>
         </h6>

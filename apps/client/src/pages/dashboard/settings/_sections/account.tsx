@@ -213,7 +213,7 @@ export const AccountSettings = () => {
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -10 }}
-                className="flex items-center space-x-2 self-center sm:col-start-2"
+                className="flex items-center gap-2 self-center sm:col-start-2"
               >
                 <Button type="submit" disabled={loading}>
                   {t`Save Changes`}

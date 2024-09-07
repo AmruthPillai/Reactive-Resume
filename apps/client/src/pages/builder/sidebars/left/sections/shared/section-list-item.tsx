@@ -87,15 +87,15 @@ export const SectionListItem = ({
             </ContextMenuCheckboxItem>
             <ContextMenuItem onClick={onUpdate}>
               <PencilSimple size={14} />
-              <span className="ml-2">{t`Edit`}</span>
+              <span className="ms-2">{t`Edit`}</span>
             </ContextMenuItem>
             <ContextMenuItem onClick={onDuplicate}>
               <CopySimple size={14} />
-              <span className="ml-2">{t`Copy`}</span>
+              <span className="ms-2">{t`Copy`}</span>
             </ContextMenuItem>
             <ContextMenuItem className="text-error" onClick={onDelete}>
               <TrashSimple size={14} />
-              <span className="ml-2">{t`Remove`}</span>
+              <span className="ms-2">{t`Remove`}</span>
             </ContextMenuItem>
           </ContextMenuContent>
         </ContextMenu>

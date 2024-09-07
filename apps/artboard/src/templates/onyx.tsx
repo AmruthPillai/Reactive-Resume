@@ -30,7 +30,7 @@ const Header = () => {
   const fontSize = useArtboardStore((state) => state.resume.metadata.typography.font.size);
 
   return (
-    <div className="flex items-center justify-between space-x-4 border-b border-primary pb-5">
+    <div className="flex items-center justify-between gap-4 border-b border-primary pb-5">
       <Picture />
 
       <div className="flex-1 space-y-2">

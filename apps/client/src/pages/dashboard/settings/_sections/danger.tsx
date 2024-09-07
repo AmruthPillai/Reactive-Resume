@@ -89,7 +89,7 @@ export const DangerZoneSettings = () => {
             )}
           />
 
-          <div className="flex items-center space-x-2 self-center">
+          <div className="flex items-center gap-2 self-center">
             <Button type="submit" variant="error" disabled={!form.formState.isValid || loading}>
               {count === 1 ? t`Are you sure?` : t`Delete Account`}
             </Button>

@@ -72,6 +72,7 @@ export const ProfileSettings = () => {
                 <div className="w-full">
                   <Combobox
                     {...field}
+                    searchPlaceholder={t`Search for an option`}
                     value={field.value}
                     options={[
                       { label: t`System`, value: "system" },
@@ -100,7 +101,7 @@ export const ProfileSettings = () => {
 
           <div
             className={cn(
-              "hidden items-center space-x-2 self-center sm:col-start-2",
+              "hidden items-center gap-2 self-center sm:col-start-2",
               form.formState.isDirty && "flex animate-in fade-in",
             )}
           >

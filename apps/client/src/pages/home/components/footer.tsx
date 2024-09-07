@@ -13,7 +13,7 @@ export const Footer = () => (
 
     <div className="container grid py-12 sm:grid-cols-3 lg:grid-cols-4">
       <div className="flex flex-col gap-y-2">
-        <Logo size={96} className="-ml-2" />
+        <Logo size={96} className="-ms-2" />
 
         <h2 className="text-xl font-medium">{t`Reactive Resume`}</h2>
 
@@ -50,7 +50,7 @@ export const Footer = () => (
           >{t`Privacy Policy`}</Link>
         </div>
 
-        <div className="absolute bottom-0 right-0 lg:space-x-2">
+        <div className="absolute bottom-0 right-0 lg:gap-2">
           <LocaleSwitch />
           <ThemeSwitch />
         </div>

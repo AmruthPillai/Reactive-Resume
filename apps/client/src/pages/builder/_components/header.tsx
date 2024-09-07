@@ -49,13 +49,13 @@ export const BuilderHeader = () => {
             </Link>
           </Button>
 
-          <span className="mr-2 text-xs opacity-40">{"/"}</span>
+          <span className="me-2 text-xs opacity-40">{"/"}</span>
 
           <h1 className="font-medium">{title}</h1>
 
           {locked && (
             <Tooltip content={t`This resume is locked, please unlock to make further changes.`}>
-              <Lock size={14} className="ml-2 opacity-75" />
+              <Lock size={14} className="ms-2 opacity-75" />
             </Tooltip>
           )}
         </div>

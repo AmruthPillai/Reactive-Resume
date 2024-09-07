@@ -69,7 +69,7 @@ export const FeaturesSection = () => {
     { icon: <CloudSun />, title: t`Light or dark theme` },
     {
       icon: (
-        <div className="flex items-center space-x-1">
+        <div className="flex items-center gap-1">
           <img src="https://cdn.simpleicons.org/react" alt="React" width={14} height={14} />
           <img src="https://cdn.simpleicons.org/vite" alt="Vite" width={14} height={14} />
           <img

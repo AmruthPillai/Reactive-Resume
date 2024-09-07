@@ -109,7 +109,7 @@ export const ProfilesDialog = () => {
                 </div>
               </FormControl>
               <FormMessage />
-              <FormDescription className="ml-10">
+              <FormDescription className="ms-10">
                 <Trans>
                   Powered by{" "}
                   <a

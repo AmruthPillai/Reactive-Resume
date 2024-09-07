@@ -65,7 +65,7 @@ export const VerifyEmailPage = () => {
       <Button asChild disabled={loading}>
         <Link to="/dashboard">
           {t`Go to Dashboard`}
-          <ArrowRight className="ml-2" />
+          <ArrowRight className="ms-2" />
         </Link>
       </Button>
     </div>

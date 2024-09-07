@@ -91,19 +91,19 @@ export const OpenAISettings = () => {
 
           <div
             className={cn(
-              "flex items-center space-x-2 self-end sm:col-start-2",
+              "flex items-center gap-2 self-end sm:col-start-2",
               !!form.formState.errors.apiKey && "self-center",
             )}
           >
             <Button type="submit" disabled={isEnabled || !form.formState.isDirty}>
-              {!isEnabled && <LockSimpleOpen className="mr-2" />}
-              {isEnabled && <LockSimple className="mr-2" />}
+              {!isEnabled && <LockSimpleOpen className="me-2" />}
+              {isEnabled && <LockSimple className="me-2" />}
               {isEnabled ? t`Stored` : t`Store Locally`}
             </Button>
 
             {isEnabled && (
               <Button type="reset" variant="ghost" onClick={onRemove}>
-                <TrashSimple className="mr-2" />
+                <TrashSimple className="me-2" />
                 {t`Forget`}
               </Button>
             )}

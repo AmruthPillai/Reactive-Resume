@@ -29,7 +29,7 @@ const Header = () => {
   const basics = useArtboardStore((state) => state.resume.basics);
 
   return (
-    <div className="p-custom relative grid grid-cols-3 space-x-4 pb-0">
+    <div className="p-custom relative grid grid-cols-3 gap-4 pb-0">
       <Picture className="mx-auto" />
 
       <div className="relative z-10 col-span-2 text-background">
@@ -221,7 +221,7 @@ const Section = <T,>({
                 key={item.id}
                 className={cn("relative space-y-2 pl-4 group-[.sidebar]:pl-0", className)}
               >
-                <div className="relative -ml-4 group-[.sidebar]:ml-0">
+                <div className="relative -ms-4 group-[.sidebar]:ml-0">
                   <div className="pl-4 group-[.sidebar]:pl-0">
                     {children?.(item as T)}
                     {url !== undefined && section.separateLinks && <Link url={url} />}

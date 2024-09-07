@@ -34,7 +34,7 @@ const Header = () => {
   return (
     <div>
       <div
-        className="p-custom flex items-center space-x-8"
+        className="p-custom flex items-center gap-8"
         style={{ backgroundColor: hexToRgb(primaryColor, 0.2) }}
       >
         <div className="space-y-3">
@@ -526,7 +526,7 @@ export const Leafish = ({ columns, isFirstPage = false, rtl = false }: TemplateP
     <div dir={rtl ? "rtl" : "ltr"}>
       {isFirstPage && <Header />}
 
-      <div className="p-custom grid grid-cols-2 items-start space-x-6">
+      <div className="p-custom grid grid-cols-2 items-start gap-6">
         <div className="grid gap-y-4">
           {main.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>

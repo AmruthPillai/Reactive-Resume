@@ -102,7 +102,7 @@ export const LocaleComboboxPopover = ({ value, onValueChange }: Props) => {
           className="w-full justify-between hover:bg-secondary/20 active:scale-100"
         >
           <span className="line-clamp-1 text-left font-normal">
-            {selected?.name} <span className="ml-1 text-xs opacity-50">({selected?.locale})</span>
+            {selected?.name} <span className="ms-1 text-xs opacity-50">({selected?.locale})</span>
           </span>
           <CaretDown
             className={cn(
