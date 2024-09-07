@@ -87,13 +87,13 @@ export const SectionOptions = ({ id }: Props) => {
           <>
             <DropdownMenuItem onClick={onCreate}>
               <Plus />
-              <span className="ml-2">{t`Add a new item`}</span>
+              <span className="ms-2">{t`Add a new item`}</span>
             </DropdownMenuItem>
             <DropdownMenuCheckboxItem
               checked={section.separateLinks}
               onCheckedChange={toggleSeperateLinks}
             >
-              <span className="ml-0">{t`Separate Links`}</span>
+              <span className="ms-0">{t`Separate Links`}</span>
             </DropdownMenuCheckboxItem>
             <DropdownMenuSeparator />
           </>
@@ -102,12 +102,12 @@ export const SectionOptions = ({ id }: Props) => {
         <DropdownMenuGroup>
           <DropdownMenuItem onClick={toggleVisibility}>
             {section.visible ? <Eye /> : <EyeSlash />}
-            <span className="ml-2">{section.visible ? t`Hide` : t`Show`}</span>
+            <span className="ms-2">{section.visible ? t`Hide` : t`Show`}</span>
           </DropdownMenuItem>
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>
               <PencilSimple />
-              <span className="ml-2">{t`Rename`}</span>
+              <span className="ms-2">{t`Rename`}</span>
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
               <div className="relative col-span-2">
@@ -121,7 +121,7 @@ export const SectionOptions = ({ id }: Props) => {
                 <Button
                   size="icon"
                   variant="link"
-                  className="absolute inset-y-0 right-0"
+                  className="absolute inset-y-0 end-0"
                   onClick={onResetName}
                 >
                   <ArrowCounterClockwise />
@@ -132,7 +132,7 @@ export const SectionOptions = ({ id }: Props) => {
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>
               <Columns />
-              <span className="ml-2">{t`Columns`}</span>
+              <span className="ms-2">{t`Columns`}</span>
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
               <DropdownMenuRadioGroup value={`${section.columns}`} onValueChange={onChangeColumns}>
@@ -148,12 +148,12 @@ export const SectionOptions = ({ id }: Props) => {
         <DropdownMenuSeparator />
         <DropdownMenuItem disabled={!hasItems} onClick={onResetItems}>
           <Broom />
-          <span className="ml-2">{t`Reset`}</span>
+          <span className="ms-2">{t`Reset`}</span>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem className="text-error" disabled={!isCustomSection} onClick={onRemove}>
           <TrashSimple />
-          <span className="ml-2">{t`Remove`}</span>
+          <span className="ms-2">{t`Remove`}</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

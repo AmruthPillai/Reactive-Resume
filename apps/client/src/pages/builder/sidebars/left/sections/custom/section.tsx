@@ -155,7 +155,7 @@ export const CustomFieldsSection = ({ className }: Props) => {
       </AnimatePresence>
 
       <Button variant="link" onClick={onAddCustomField}>
-        <Plus className="mr-2" />
+        <Plus className="me-2" />
         <span>{t`Add a custom field`}</span>
       </Button>
     </div>

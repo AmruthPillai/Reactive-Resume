@@ -46,10 +46,10 @@ export const RightSidebar = () => {
           <ExportSection />
           <Separator />
           <NotesSection />
-          <Separator />
-          <InformationSection />
-          <Separator />
-          <Copyright className="text-center" />
+          {/* <Separator /> */}
+          {/* <InformationSection /> */}
+          {/* <Separator /> */}
+          {/* <Copyright className="text-center" /> */}
         </div>
       </ScrollArea>
 

@@ -36,7 +36,7 @@ const DonateCard = () => (
         rel="noopener noreferrer nofollow"
         target="_blank"
       >
-        <HandHeart size={14} weight="bold" className="mr-2" />
+        <HandHeart size={14} weight="bold" className="me-2" />
         <span className="line-clamp-1">{t`Donate to Reactive Resume`}</span>
       </a>
     </CardFooter>
@@ -58,19 +58,19 @@ const IssuesCard = () => (
         </Trans>
       </CardDescription>
     </CardContent>
-    <CardFooter className="space-x-4">
+    <CardFooter className="gap-4">
       <a
         href="https://github.com/AmruthPillai/Reactive-Resume/issues/new/choose"
         className={cn(buttonVariants({ size: "sm" }))}
         rel="noopener noreferrer nofollow"
         target="_blank"
       >
-        <GithubLogo size={14} weight="bold" className="mr-2" />
+        <GithubLogo size={14} weight="bold" className="me-2" />
         <span className="line-clamp-1">{t`Raise an issue`}</span>
       </a>
 
       <a className={cn(buttonVariants({ size: "sm" }))} href="mailto:hello@amruthpillai.com">
-        <EnvelopeSimpleOpen size={14} weight="bold" className="mr-2" />
+        <EnvelopeSimpleOpen size={14} weight="bold" className="me-2" />
         <span className="line-clamp-1">{t`Send me a message`}</span>
       </a>
     </CardFooter>
@@ -101,7 +101,7 @@ const DocumentationCard = () => (
         target="_blank"
         rel="noopener noreferrer nofollow"
       >
-        <Book size={14} weight="bold" className="mr-2" />
+        <Book size={14} weight="bold" className="me-2" />
         <span className="line-clamp-1">{t`Documentation`}</span>
       </a>
     </CardFooter>

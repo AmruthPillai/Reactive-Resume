@@ -25,13 +25,13 @@ export const DropdownMenuSubTrigger = forwardRef<
     ref={ref}
     className={cn(
       "flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-secondary data-[state=open]:bg-secondary",
-      inset && "pl-8",
+      inset && "ps-8",
       className,
     )}
     {...props}
   >
     {children}
-    <CaretRight className="ml-auto size-4" />
+    <CaretRight className="ms-auto size-4" />
   </DropdownMenuPrimitive.SubTrigger>
 ));
 

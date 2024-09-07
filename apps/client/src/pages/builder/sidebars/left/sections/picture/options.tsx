@@ -175,7 +175,7 @@ export const PictureOptions = () => {
             <Label>{t`Effects`}</Label>
           </div>
           <div className="col-span-2 space-y-4">
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center gap-2">
               <Checkbox
                 id="picture.effects.hidden"
                 checked={picture.effects.hidden}
@@ -186,7 +186,7 @@ export const PictureOptions = () => {
               <Label htmlFor="picture.effects.hidden">{t`Hidden`}</Label>
             </div>
 
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center gap-2">
               <Checkbox
                 id="picture.effects.border"
                 checked={picture.effects.border}
@@ -197,7 +197,7 @@ export const PictureOptions = () => {
               <Label htmlFor="picture.effects.border">{t`Border`}</Label>
             </div>
 
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center gap-2">
               <Checkbox
                 id="picture.effects.grayscale"
                 checked={picture.effects.grayscale}
