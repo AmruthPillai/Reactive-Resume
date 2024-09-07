@@ -95,8 +95,8 @@ const Summary = () => {
         <div className="size-1.5 rounded-full border border-primary" />
       </div>
 
-      <main className={cn("relative space-y-2", "border-l border-primary pl-4")}>
-        <div className="absolute left-[-4.5px] top-[8px] hidden size-[8px] rounded-full bg-primary group-[.main]:block" />
+      <main className={cn("relative space-y-2", "border-s border-primary ps-4")}>
+        <div className="absolute start-[-4.5px] top-[8px] hidden size-[8px] rounded-full bg-primary group-[.main]:block" />
 
         <div
           dangerouslySetInnerHTML={{ __html: section.content }}
@@ -218,7 +218,7 @@ const Section = <T,>({
                 key={item.id}
                 className={cn(
                   "relative space-y-2",
-                  "border-primary group-[.main]:border-l group-[.main]:pl-4",
+                  "border-primary group-[.main]:border-s group-[.main]:ps-4",
                   className,
                 )}
               >
@@ -236,7 +236,7 @@ const Section = <T,>({
 
                 {url !== undefined && section.separateLinks && <Link url={url} />}
 
-                <div className="absolute left-[-4.5px] top-px hidden size-[8px] rounded-full bg-primary group-[.main]:block" />
+                <div className="absolute start-[-4.5px] top-px hidden size-[8px] rounded-full bg-primary group-[.main]:block" />
               </div>
             );
           })}
