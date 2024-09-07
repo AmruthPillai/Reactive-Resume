@@ -86,31 +86,31 @@ export const ResumeCard = ({ resume }: Props) => {
 
       <ContextMenuContent>
         <ContextMenuItem onClick={onOpen}>
-          <FolderOpen size={14} className="mr-2" />
+          <FolderOpen size={14} className="me-2" />
           {t`Open`}
         </ContextMenuItem>
         <ContextMenuItem onClick={onUpdate}>
-          <PencilSimple size={14} className="mr-2" />
+          <PencilSimple size={14} className="me-2" />
           {t`Rename`}
         </ContextMenuItem>
         <ContextMenuItem onClick={onDuplicate}>
-          <CopySimple size={14} className="mr-2" />
+          <CopySimple size={14} className="me-2" />
           {t`Duplicate`}
         </ContextMenuItem>
         {resume.locked ? (
           <ContextMenuItem onClick={onLockChange}>
-            <LockOpen size={14} className="mr-2" />
+            <LockOpen size={14} className="me-2" />
             {t`Unlock`}
           </ContextMenuItem>
         ) : (
           <ContextMenuItem onClick={onLockChange}>
-            <Lock size={14} className="mr-2" />
+            <Lock size={14} className="me-2" />
             {t`Lock`}
           </ContextMenuItem>
         )}
         <ContextMenuSeparator />
         <ContextMenuItem className="text-error" onClick={onDelete}>
-          <TrashSimple size={14} className="mr-2" />
+          <TrashSimple size={14} className="me-2" />
           {t`Delete`}
         </ContextMenuItem>
       </ContextMenuContent>
