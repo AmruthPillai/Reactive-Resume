@@ -14,6 +14,8 @@ type CrowdinResponse = {
   }[];
 };
 
+const supportedLanguagesAtTheMoment = new Set(["en-US", "he-IL"]);
+
 @Injectable()
 export class TranslationService {
   constructor(
@@ -57,7 +59,7 @@ export class TranslationService {
         } satisfies Language;
       });
     } catch {
-      return languages;
+      return languages.filter((lang) => supportedLanguagesAtTheMoment.has(lang.locale));
     }
   }
 }

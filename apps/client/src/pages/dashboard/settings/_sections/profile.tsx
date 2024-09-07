@@ -1,15 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { t, Trans } from "@lingui/macro";
+import { t } from "@lingui/macro";
 import { useTheme } from "@reactive-resume/hooks";
-import {
-  Button,
-  Combobox,
-  Form,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-} from "@reactive-resume/ui";
+import { Button, Combobox, Form, FormField, FormItem, FormLabel } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
@@ -102,21 +94,6 @@ export const ProfileSettings = () => {
                 <div className="w-full">
                   <LocaleComboboxPopover value={field.value} onValueChange={field.onChange} />
                 </div>
-                <FormDescription>
-                  <span>
-                    <Trans>
-                      Don't see your language?{" "}
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                        href="https://translate.rxresu.me/"
-                        className="font-medium underline underline-offset-2"
-                      >
-                        Help translate the app.
-                      </a>
-                    </Trans>
-                  </span>
-                </FormDescription>
               </FormItem>
             )}
           />

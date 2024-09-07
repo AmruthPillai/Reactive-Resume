@@ -63,12 +63,12 @@ export const LocaleCombobox = ({ value, onValueChange }: Props) => {
                 >
                   <Check
                     className={cn(
-                      "mr-2 size-4 opacity-0",
+                      "me-2 size-4 opacity-0",
                       value === original.locale && "opacity-100",
                     )}
                   />
                   {original.name}{" "}
-                  <span className="ml-1 text-xs opacity-50">({original.locale})</span>
+                  <span className="ms-1 text-xs opacity-50">({original.locale})</span>
                 </CommandItem>
               ))}
             </div>
@@ -106,7 +106,7 @@ export const LocaleComboboxPopover = ({ value, onValueChange }: Props) => {
           </span>
           <CaretDown
             className={cn(
-              "ml-2 size-4 shrink-0 rotate-0 opacity-50 transition-transform",
+              "ms-2 size-4 shrink-0 rotate-0 opacity-50 transition-transform",
               open && "rotate-180",
             )}
           />

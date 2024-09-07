@@ -93,7 +93,10 @@ export const AccountSettings = () => {
   const onResendVerificationEmail = async () => {
     const data = await resendVerificationEmail();
 
-    toast({ variant: "success", title: data.message });
+    toast({
+      variant: "success",
+      title: t`Check your email inbox`,
+    });
   };
 
   if (!user) return null;

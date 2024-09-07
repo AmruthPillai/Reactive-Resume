@@ -112,7 +112,7 @@ export const languages: Language[] = [
   },
   {
     id: "he",
-    name: "Hebrew",
+    name: "עברית",
     editorCode: "he",
     locale: "he-IL",
   },
