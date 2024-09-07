@@ -335,7 +335,7 @@ export const ResumeDialog = () => {
                   disabled={loading}
                   className={cn((isCreate || isCreateAi) && "rounded-r-none")}
                 >
-                  {isCreateAi && t`Genearte`}
+                  {isCreateAi && t`Create`}
                   {isCreate && t`Create`}
                   {isUpdate && t`Save Changes`}
                   {isDuplicate && t`Duplicate`}
