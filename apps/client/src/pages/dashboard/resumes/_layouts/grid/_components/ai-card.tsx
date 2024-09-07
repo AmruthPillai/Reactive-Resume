@@ -29,7 +29,7 @@ export const AiResumeCard = ({ resumes }: { resumes: ResumeDto[] | undefined }) 
         <h4 className="line-clamp-1 font-medium">
           {t`Create a resume with AI`}
           {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
-          <KeyboardShortcut className="ml-2">^K</KeyboardShortcut>
+          <KeyboardShortcut className="ms-2">^K</KeyboardShortcut>
         </h4>
 
         <p className="line-clamp-1 text-xs opacity-75">{t`Let the AI do the work`}</p>

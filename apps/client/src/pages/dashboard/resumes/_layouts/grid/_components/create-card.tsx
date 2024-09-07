@@ -27,7 +27,7 @@ export const CreateResumeCard = () => {
         <h4 className="font-medium">
           {t`Create a new resume`}
           {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
-          <KeyboardShortcut className="ml-2">^N</KeyboardShortcut>
+          <KeyboardShortcut className="ms-2">^N</KeyboardShortcut>
         </h4>
 
         <p className="text-xs opacity-75">{t`Start building from scratch`}</p>

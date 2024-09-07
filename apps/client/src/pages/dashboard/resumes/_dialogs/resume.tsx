@@ -222,7 +222,7 @@ export const ResumeDialog = () => {
           <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
             <DialogHeader>
               <DialogTitle>
-                <div className="flex items-center space-x-2.5">
+                <div className="flex items-center gap-2.5">
                   <Plus />
                   <h2>
                     {isCreateAi && t`Create a resume with AI`}
@@ -344,13 +344,13 @@ export const ResumeDialog = () => {
                 {isCreate && (
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <Button type="button" size="icon" className="rounded-l-none border-l">
+                      <Button type="button" size="icon" className="rounded-s-none border-s">
                         <CaretDown />
                       </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent side="right" align="center">
+                    <DropdownMenuContent side="bottom" align="center">
                       <DropdownMenuItem onClick={onCreateSample}>
-                        <Flask className="mr-2" />
+                        <Flask className="me-2" />
                         {t`Create Sample Resume`}
                       </DropdownMenuItem>
                     </DropdownMenuContent>

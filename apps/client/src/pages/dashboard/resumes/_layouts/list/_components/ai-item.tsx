@@ -17,7 +17,7 @@ export const AiResumeListItem = ({ resumes }: { resumes: ResumeDto[] | undefined
         <>
           <span>{t`Create a resume with AI`}</span>
           {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
-          <KeyboardShortcut className="ml-2">^K</KeyboardShortcut>
+          <KeyboardShortcut className="ms-2">^K</KeyboardShortcut>
         </>
       }
       description={t`Let the AI do the work`}

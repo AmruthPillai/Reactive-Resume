@@ -15,7 +15,7 @@ export const ImportResumeListItem = () => {
         <>
           <span>{t`Import an existing resume`}</span>
           {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
-          <KeyboardShortcut className="ml-2">^I</KeyboardShortcut>
+          <KeyboardShortcut className="ms-2">^I</KeyboardShortcut>
         </>
       }
       description={t`LinkedIn, JSON Resume, etc.`}

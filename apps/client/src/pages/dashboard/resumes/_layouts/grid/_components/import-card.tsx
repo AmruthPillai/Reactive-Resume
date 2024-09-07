@@ -27,7 +27,7 @@ export const ImportResumeCard = () => {
         <h4 className="line-clamp-1 font-medium">
           {t`Import an existing resume`}
           {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
-          <KeyboardShortcut className="ml-2">^I</KeyboardShortcut>
+          <KeyboardShortcut className="ms-2">^I</KeyboardShortcut>
         </h4>
 
         <p className="line-clamp-1 text-xs opacity-75">{t`LinkedIn, JSON Resume, etc.`}</p>

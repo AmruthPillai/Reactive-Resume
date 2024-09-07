@@ -17,7 +17,7 @@ export const CreateResumeListItem = () => {
         <>
           <span>{t`Create a new resume`}</span>
           {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
-          <KeyboardShortcut className="ml-2">^N</KeyboardShortcut>
+          <KeyboardShortcut className="ms-2">^N</KeyboardShortcut>
         </>
       }
       description={t`Start building from scratch`}
