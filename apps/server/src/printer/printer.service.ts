@@ -7,6 +7,7 @@ import { ErrorMessage, getFontUrls } from "@reactive-resume/utils";
 import retry from "async-retry";
 import { PDFDocument } from "pdf-lib";
 import { connect } from "puppeteer";
+import { firstValueFrom } from "rxjs";
 
 import { Config } from "../config/schema";
 import { StorageService } from "../storage/storage.service";
@@ -15,7 +16,9 @@ import { StorageService } from "../storage/storage.service";
 export class PrinterService {
   private readonly logger = new Logger(PrinterService.name);
 
-  private readonly browserURL: string;
+  private readonly chromeUrl: string;
+
+  private readonly chromeToken: string;
 
   private readonly ignoreHTTPSErrors: boolean;
 
@@ -24,20 +27,28 @@ export class PrinterService {
     private readonly storageService: StorageService,
     private readonly httpService: HttpService,
   ) {
-    const chromeUrl = this.configService.getOrThrow<string>("CHROME_URL");
-    const chromeToken = this.configService.getOrThrow<string>("CHROME_TOKEN");
-
-    this.browserURL = `${chromeUrl}?token=${chromeToken}`;
+    this.chromeUrl = this.configService.getOrThrow<string>("CHROME_URL");
+    this.chromeToken = this.configService.getOrThrow<string>("CHROME_TOKEN");
     this.ignoreHTTPSErrors = this.configService.getOrThrow<boolean>("CHROME_IGNORE_HTTPS_ERRORS");
   }
 
   private async getBrowser() {
+    let browserURL;
+
     try {
+      if (this.chromeUrl.endsWith("/json/version")) {
+        const res = await firstValueFrom(this.httpService.get(this.chromeUrl));
+        browserURL = `${res.data.webSocketDebuggerUrl}?token=${this.chromeToken}`;
+      } else {
+        browserURL = `${this.chromeUrl}?token=${this.chromeToken}`;
+      }
+
       return await connect({
-        browserWSEndpoint: this.browserURL,
+        browserWSEndpoint: browserURL,
         acceptInsecureCerts: this.ignoreHTTPSErrors,
       });
     } catch (error) {
+      console.debug("browserURL:", !browserURL);
       throw new InternalServerErrorException(
         ErrorMessage.InvalidBrowserConnection,
         (error as Error).message,
