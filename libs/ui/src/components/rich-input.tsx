@@ -71,7 +71,12 @@ const InsertImageForm = ({ onInsert }: InsertImageProps) => {
 
   return (
     <Form {...form}>
-      <form className="space-y-3" onSubmit={form.handleSubmit(onSubmit)}>
+      <form className="space-y-3" 
+      onSubmit={(e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        form.handleSubmit(onSubmit)();
+      }}>
         <p className="prose prose-sm prose-zinc dark:prose-invert">
           Insert an image from an external URL and use it on your resume.
         </p>
@@ -370,6 +375,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           size="sm"
           variant="ghost"
           className="px-2"
+          type="button"
           disabled={!editor.can().chain().focus().setHardBreak().run()}
           onClick={() => editor.chain().focus().setHardBreak().run()}
         >
@@ -382,6 +388,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           size="sm"
           variant="ghost"
           className="px-2"
+          type="button"
           disabled={!editor.can().chain().focus().setHorizontalRule().run()}
           onClick={() => editor.chain().focus().setHorizontalRule().run()}
         >
