@@ -32,6 +32,19 @@ model User {
   provider         Provider
   secrets          Secrets?
   resumes          Resume[]
+
+  subscription   Subscription? @relation(fields: [subscriptionId], references: [id])
+  subscriptionId String?
+}
+
+model Subscription {
+  id               String    @id @default(cuid())
+  customerId       String?
+  subscriptionId   String?
+  variantId        String?
+  currentPeriodEnd DateTime?
+
+  User User[]
 }
 
 model Secrets {
