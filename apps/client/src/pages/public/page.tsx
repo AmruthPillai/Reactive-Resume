@@ -91,7 +91,7 @@ export const PublicResumePage = () => {
           <Button size="sm" variant="ghost" className="gap-1.5 text-xs font-normal">
             <span>{t`Built with`}</span>
             <Icon size={12} />
-            <span>{t`Reactive Resume`}</span>
+            <span>{t`TechCV`}</span>
           </Button>
         </Link>
       </div>

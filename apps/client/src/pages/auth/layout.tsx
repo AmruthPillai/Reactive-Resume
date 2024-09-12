@@ -3,8 +3,8 @@ import { cn } from "@reactive-resume/utils";
 import { useMemo } from "react";
 import { Link, matchRoutes, Outlet, useLocation } from "react-router-dom";
 
+import { Icon } from "@/client/components/icon";
 import { LocaleSwitch } from "@/client/components/locale-switch";
-import { Logo } from "@/client/components/logo";
 import { ThemeSwitch } from "@/client/components/theme-switch";
 import { useAuthProviders } from "@/client/services/auth/providers";
 
@@ -27,8 +27,8 @@ export const AuthLayout = () => {
     <div className="flex h-screen w-screen">
       <div className="relative flex w-full flex-col justify-center gap-y-8 px-12 sm:mx-auto sm:basis-[420px] sm:px-0 lg:basis-[480px] lg:px-12">
         <div className="flex items-center justify-between">
-          <Link to="/" className="size-24">
-            <Logo className="-ms-3" size={96} />
+          <Link to="/" className="">
+            <Icon className="" size={32} />
           </Link>
 
           <div className="end-0 gap-2 text-end lg:absolute lg:p-12 lg:text-center">

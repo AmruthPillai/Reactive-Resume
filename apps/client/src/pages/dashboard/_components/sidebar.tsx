@@ -108,9 +108,9 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
 
   return (
     <div className="flex h-full flex-col gap-y-4">
-      <div className="ms-12 flex justify-center lg:ms-0">
+      <div className="ms-12 flex lg:ms-0">
         <Button asChild size="icon" variant="ghost" className="size-10 p-0">
-          <Link to="/">
+          <Link to="/dashboard">
             <Icon size={24} className="mx-auto hidden lg:block" />
           </Link>
         </Button>
