@@ -207,7 +207,7 @@ const Section = <T,>({
                 </div>
 
                 {summary !== undefined && !isEmptyString(summary) && (
-                  <div dangerouslySetInnerHTML={{ __html: summary }} className="wysiwyg" />
+                  <div dangerouslySetInnerHTML={{ __html: summary }}/>
                 )}
 
                 {level !== undefined && level > 0 && <Rating level={level} />}
