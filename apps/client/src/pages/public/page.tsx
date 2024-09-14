@@ -70,7 +70,7 @@ export const PublicResumePage = () => {
     <div>
       <Helmet>
         <title>
-          {title} - {t`Reactive Resume`}
+          {title} - {t`TechCV`}
         </title>
       </Helmet>
 

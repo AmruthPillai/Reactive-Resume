@@ -1,4 +1,4 @@
-# Contributing to Reactive Resume
+# Contributing to TechCV
 
 ## Getting the project set up locally
 

@@ -10,9 +10,9 @@ When it comes to features, there are many to mention, but some highlights includ
 
 When you make your resume publicly available, you are provided with a link that you can share with potential recruiters and employers. This change allows you to **track the number of views or downloads your resume has received**, so you can stay informed about when someone has checked out your resume.
 
-When it comes to **security**, you now have the option to protect your account with **two-factor authentication**. This means that whenever you log in to Reactive Resume, you will also need to enter a one-time code generated on your phone. This additional step ensures that only you have access to your account.
+When it comes to **security**, you now have the option to protect your account with **two-factor authentication**. This means that whenever you log in to TechCV, you will also need to enter a one-time code generated on your phone. This additional step ensures that only you have access to your account.
 
-From a **design** perspective, the motivation behind this is to ensure that Reactive Resume is taken more seriously and not perceived as just another subpar side-project, which is often associated with free software. My goal is to demonstrate that this is not the case, and that **free and open source software can be just as good**, if not better, than paid alternatives.
+From a **design** perspective, the motivation behind this is to ensure that TechCV is taken more seriously and not perceived as just another subpar side-project, which is often associated with free software. My goal is to demonstrate that this is not the case, and that **free and open source software can be just as good**, if not better, than paid alternatives.
 
 From a **self-hosting perspective**, it has never been simpler. Instead of running two separate services on your Docker (one for the client and one for the server) and struggling to establish communication between them, now you only need to pull a single image. Additionally, there are a few dependent services available on Docker (such as Postgres, Minio etc.) that you can also pull and have them all working together seamlessly.
 

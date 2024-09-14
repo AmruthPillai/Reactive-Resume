@@ -67,7 +67,7 @@ export const OpenAISettings = () => {
               obtain your own OpenAI API key
             </a>
             . This key empowers you to leverage the API as you see fit. Alternatively, if you wish
-            to disable the AI features in Reactive Resume altogether, you can simply remove the key
+            to disable the AI features in TechCV altogether, you can simply remove the key
             from your settings.
           </Trans>
         </p>
@@ -141,7 +141,7 @@ export const OpenAISettings = () => {
             >
               privacy policy
             </a>{" "}
-            outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any
+            outlined by OpenAI. Please note that TechCV bears no responsibility for any
             improper or unauthorized utilization of the service, and any resulting repercussions or
             liabilities solely rest on the user.
           </Trans>

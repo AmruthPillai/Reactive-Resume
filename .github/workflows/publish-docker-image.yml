@@ -159,5 +159,5 @@ jobs:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           status: ${{ job.status }}
           title: "Release `${{ steps.meta.outputs.version }}`"
-          description: "A new version of Reactive Resume just dropped! 🚀"
+          description: "A new version of TechCV just dropped! 🚀"
           url: "https://github.com/AmruthPillai/Reactive-Resume"
