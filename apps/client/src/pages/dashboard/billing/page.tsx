@@ -21,8 +21,14 @@ export const BillingPage = () => (
       </motion.h1>
 
       <ScrollArea hideScrollbar className="h-[calc(100vh-140px)] lg:h-[calc(100vh-88px)]">
-        <div className="space-y-6"></div>
+        <div className="space-y-6">
+          <Billing />
+        </div>
       </ScrollArea>
     </div>
   </>
 );
+
+export default function Billing() {
+  return <div className="space-y-6"></div>;
+}
