@@ -32,3 +32,18 @@ export const useUser = () => {
 
   return { user: user, loading, error };
 };
+
+export const useSubscription = () => {
+  const { user } = useUser();
+  const subscription = user?.subscription;
+
+  const isPro =
+    subscription?.currentPeriodEnd != null && new Date(subscription.currentPeriodEnd) > new Date();
+
+  return {
+    currentPeriodEnd: subscription?.currentPeriodEnd,
+    isCancelled: false,
+    isPro: isPro,
+    subscription: subscription,
+  };
+};
