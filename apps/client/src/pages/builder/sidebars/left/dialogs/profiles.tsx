@@ -12,7 +12,7 @@ import {
   FormMessage,
   Input,
 } from "@reactive-resume/ui";
-import { useCallback } from "react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDebounceValue } from "usehooks-ts";
 import { z } from "zod";
@@ -29,16 +29,18 @@ export const ProfilesDialog = () => {
     defaultValues: defaultProfile,
     resolver: zodResolver(formSchema),
   });
+  const formIconFieldValue = form.watch("icon");
 
-  const [iconSrc, setIconSrc] = useDebounceValue("", 400);
+  const [iconSrc, setIconSrc] = useDebounceValue(formIconFieldValue, 400);
 
-  const handleIconChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.value === "") {
+  useEffect(() => {
+    if (formIconFieldValue === "") {
       setIconSrc("");
+      return;
     } else {
-      setIconSrc(`https://cdn.simpleicons.org/${event.target.value}`);
+      setIconSrc(`https://cdn.simpleicons.org/${formIconFieldValue}`);
     }
-  }, []);
+  }, [formIconFieldValue]);
 
   return (
     <SectionDialog<FormValues> id="profiles" form={form} defaultValues={defaultProfile}>
@@ -97,15 +99,7 @@ export const ProfilesDialog = () => {
                   <Avatar className="size-8 bg-white">
                     {iconSrc && <AvatarImage className="p-1.5" src={iconSrc} />}
                   </Avatar>
-                  <Input
-                    {...field}
-                    id="iconSlug"
-                    placeholder="linkedin"
-                    onChange={(event) => {
-                      field.onChange(event);
-                      handleIconChange(event);
-                    }}
-                  />
+                  <Input {...field} id="iconSlug" placeholder="linkedin" />
                 </div>
               </FormControl>
               <FormMessage />
