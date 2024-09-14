@@ -19,32 +19,34 @@ enum Visibility {
 }
 
 model User {
-  id               String   @id @default(cuid())
+  id               String        @id @default(cuid())
   name             String
   picture          String?
-  username         String   @unique
-  email            String   @unique
-  locale           String   @default("en-US")
-  emailVerified    Boolean  @default(false)
-  twoFactorEnabled Boolean  @default(false)
-  createdAt        DateTime @default(now())
-  updatedAt        DateTime @updatedAt
+  username         String        @unique
+  email            String        @unique
+  locale           String        @default("en-US")
+  emailVerified    Boolean       @default(false)
+  twoFactorEnabled Boolean       @default(false)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
   provider         Provider
   secrets          Secrets?
   resumes          Resume[]
-
-  subscription   Subscription? @relation(fields: [subscriptionId], references: [id])
-  subscriptionId String?
+  subscription     Subscription?
 }
 
 model Subscription {
-  id               String    @id @default(cuid())
+  id String @id @default(cuid())
+
   customerId       String?
   subscriptionId   String?
   variantId        String?
   currentPeriodEnd DateTime?
 
-  User User[]
+  userId String @unique
+  User   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, id])
 }
 
 model Secrets {

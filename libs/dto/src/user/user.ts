@@ -3,6 +3,7 @@ import { createZodDto } from "nestjs-zod/dto";
 import { z } from "nestjs-zod/z";
 
 import { secretsSchema } from "../secrets";
+import { subscriptionSchema } from "../subscription";
 
 export const usernameSchema = z
   .string()
@@ -23,6 +24,7 @@ export const userSchema = z.object({
   emailVerified: z.boolean().default(false),
   twoFactorEnabled: z.boolean().default(false),
   provider: z.enum(["email", "github", "google"]).default("email"),
+  subscription: subscriptionSchema.nullable(),
   createdAt: z.date().or(z.dateString()),
   updatedAt: z.date().or(z.dateString()),
 });

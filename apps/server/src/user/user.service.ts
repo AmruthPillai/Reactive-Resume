@@ -15,7 +15,7 @@ export class UserService {
   async findOneById(id: string) {
     const user = await this.prisma.user.findUniqueOrThrow({
       where: { id },
-      include: { secrets: true },
+      include: { secrets: true, subscription: true },
     });
 
     if (!user.secrets) {
@@ -30,7 +30,7 @@ export class UserService {
       // First, find the user by email
       const user = await this.prisma.user.findUnique({
         where: { email: identifier },
-        include: { secrets: true },
+        include: { secrets: true, subscription: true },
       });
 
       // If the user exists, return it
@@ -40,7 +40,7 @@ export class UserService {
       // If the user doesn't exist, throw an error
       return this.prisma.user.findUnique({
         where: { username: identifier },
-        include: { secrets: true },
+        include: { secrets: true, subscription: true },
       });
     })(identifier);
 
@@ -52,7 +52,7 @@ export class UserService {
       // First, find the user by email
       const user = await this.prisma.user.findUnique({
         where: { email: identifier },
-        include: { secrets: true },
+        include: { secrets: true, subscription: true },
       });
 
       // If the user exists, return it
@@ -62,7 +62,7 @@ export class UserService {
       // If the user doesn't exist, throw an error
       return this.prisma.user.findUniqueOrThrow({
         where: { username: identifier },
-        include: { secrets: true },
+        include: { secrets: true, subscription: true },
       });
     })(identifier);
 
@@ -70,7 +70,7 @@ export class UserService {
   }
 
   create(data: Prisma.UserCreateInput) {
-    return this.prisma.user.create({ data, include: { secrets: true } });
+    return this.prisma.user.create({ data, include: { secrets: true, subscription: true } });
   }
 
   updateByEmail(email: string, data: Prisma.UserUpdateArgs["data"]) {
