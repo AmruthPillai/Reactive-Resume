@@ -14,6 +14,7 @@ import { BillingPage } from "../pages/dashboard/billing/page";
 import { DashboardLayout } from "../pages/dashboard/layout";
 import { ResumesPage } from "../pages/dashboard/resumes/page";
 import { SettingsPage } from "../pages/dashboard/settings/page";
+import { PaymentPage } from "../pages/payment/page";
 import { publicLoader, PublicResumePage } from "../pages/public/page";
 import { Providers } from "../providers";
 import { AuthGuard } from "./guards/auth";
@@ -83,6 +84,8 @@ export const routes = createRoutesFromElements(
     <Route path=":username">
       <Route path=":slug" loader={publicLoader} element={<PublicResumePage />} />
     </Route>
+
+    <Route path="payment" element={<PaymentPage />} />
   </Route>,
 );
 

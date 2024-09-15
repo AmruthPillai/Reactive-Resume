@@ -37,12 +37,11 @@ export const useSubscription = () => {
   const { user } = useUser();
   const subscription = user?.subscription;
 
-  const isPro =
-    subscription?.currentPeriodEnd != null && new Date(subscription.currentPeriodEnd) > new Date();
+  const isPro = subscription?.isPro;
+  const isCanceled = subscription?.isCanceled;
 
   return {
-    currentPeriodEnd: subscription?.currentPeriodEnd,
-    isCancelled: false,
+    isCancelled: isCanceled,
     isPro: isPro,
     subscription: subscription,
   };

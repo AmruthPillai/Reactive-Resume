@@ -72,6 +72,10 @@ export const configSchema = z.object({
   GOOGLE_CLIENT_ID: z.string().optional(),
   GOOGLE_CLIENT_SECRET: z.string().optional(),
   GOOGLE_CALLBACK_URL: z.string().url().optional(),
+
+  // SUMIT (Billing)
+  SUMIT_CUSTOMER_ID: z.string().optional(),
+  SUMIT_API_KEY: z.string().optional(),
 });
 
 export type Config = z.infer<typeof configSchema>;

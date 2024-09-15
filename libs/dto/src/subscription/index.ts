@@ -1,12 +1,13 @@
 import { createZodDto } from "nestjs-zod/dto";
 import { z } from "nestjs-zod/z";
 
+
 export const subscriptionSchema = z.object({
   id: z.string(),
   customerId: z.string().optional(),
-  subscriptionId: z.string().optional(),
-  variantId: z.string().optional(),
-  currentPeriodEnd: z.date().or(z.dateString()),
+  paymentId: z.string().optional(),
+  isCanceled: z.boolean().default(false),
+  isPro: z.boolean().default(false),
 });
 
 export class SubscriptionDto extends createZodDto(subscriptionSchema) {}

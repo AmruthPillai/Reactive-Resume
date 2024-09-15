@@ -38,7 +38,10 @@ export const BillingPage = () => {
 };
 
 const Billing = () => {
+  const { user } = useUser();
   const subscription = useSubscription();
+
+  if (user == null) return null;
 
   const freePlanPerks = [
     t`Access to all resume templates`,
@@ -78,7 +81,11 @@ const Billing = () => {
         {subscription.isPro ? (
           <ProCard onCancelSubscription={handleCancelSubscription} />
         ) : (
-          <FreeCard onUpgradeSubscription={handleUpgradeSubscription} />
+          <FreeCard
+            onUpgradeSubscription={() => {
+              handleUpgradeSubscription(user.id);
+            }}
+          />
         )}
       </section>
     </div>
@@ -118,8 +125,8 @@ const ProCard = ({ onCancelSubscription }: { onCancelSubscription: () => void })
   );
 };
 
-function handleUpgradeSubscription() {
-  const url = "https://pay.sumit.co.il/7avl6x/8olfvx/";
+function handleUpgradeSubscription(userId: string) {
+  const url = `https://pay.sumit.co.il/7avl6x/8olfvx?externalidentifier=${userId}&customerexternalidentifier=${userId}`;
   window.open(url, "_blank");
 }
 

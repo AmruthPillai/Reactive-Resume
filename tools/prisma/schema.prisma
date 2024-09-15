@@ -38,10 +38,10 @@ model User {
 model Subscription {
   id String @id @default(cuid())
 
-  customerId       String?
-  subscriptionId   String?
-  variantId        String?
-  currentPeriodEnd DateTime?
+  customerId String?
+  paymentId  String?
+  isCanceled Boolean @default(false)
+  isPro      Boolean @default(false)
 
   userId String @unique
   User   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
