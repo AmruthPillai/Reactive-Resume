@@ -9,18 +9,7 @@ type Props = {
 export const Logo = ({ size = 32, className }: Props) => {
   const { isDarkMode } = useTheme();
 
-  let src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
-
-  switch (isDarkMode) {
-    case false: {
-      src = "/logo/light.svg";
-      break;
-    }
-    case true: {
-      src = "/logo/dark.svg";
-      break;
-    }
-  }
+  const src: string = isDarkMode ? "/logo/dark.svg" : "/logo/light.svg";
 
   return (
     <img
