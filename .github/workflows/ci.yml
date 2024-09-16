@@ -24,11 +24,16 @@ jobs:
       - name: Deploy
         if: github.ref == 'refs/heads/main'
         uses: appleboy/ssh-action@v0.1.8
+        env: 
+          HOST: ${{ secrets.HOST }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PORT: ${{ secrets.PORT }}
+          PASSWORD: ${{ secrets.PASSWORD }}
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          port: ${{ secrets.PORT }}
-          password: ${{ secrets.PASSWORD }}
+          host: ${{ HOST }}
+          username: ${{ USERNAME }}
+          port: ${{ PORT }}
+          password: ${{ PASSWORD }}
           script: |
             echo "Stage 1: Go to git folder"
             cd Reactive-Resume
