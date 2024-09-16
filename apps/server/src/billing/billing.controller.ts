@@ -36,11 +36,14 @@ export class BillingController {
       PaymentID: body.extPaymentId,
     }); */
 
+    const customerPageUrl = sumitCustomerResult.data.Data.CustomerHistoryURL;
+
     const subscription = await this.billingService.upsertUserSubscription(body.userId, {
       customerId: body.extCustomerId ?? "",
       paymentId: body.extPaymentId ?? "",
       isCanceled: false,
       isPro: true,
+      customerPageUrl: customerPageUrl,
     });
 
     return subscription;

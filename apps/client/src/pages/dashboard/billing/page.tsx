@@ -4,6 +4,7 @@ import { Badge, Button, ScrollArea, Separator } from "@reactive-resume/ui";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 
+import { toast } from "@/client/hooks/use-toast";
 import { useSubscription, useUser } from "@/client/services/user";
 
 export const BillingPage = () => {
@@ -59,6 +60,23 @@ const Billing = () => {
 
   const perks = subscription.isPro ? proPlanPerks : freePlanPerks;
 
+  function handleUpgradeSubscription() {
+    if (user == null) return;
+    const url = `https://pay.sumit.co.il/7avl6x/8olfvx?externalidentifier=${user.id}&customerexternalidentifier=${user.id}`;
+    window.location.href = url;
+  }
+
+  function handleCancelSubscription() {
+    const customerPageUrl = subscription.subscription?.customerPageUrl;
+    if (customerPageUrl == null)
+      return toast({
+        variant: "error",
+        title: t`Error`,
+        description: t`Failed to cancel subscription`,
+      });
+    window.location.href = customerPageUrl;
+  }
+
   return (
     <div>
       <h3 className="flex items-center text-2xl font-bold leading-relaxed tracking-tight">
@@ -81,11 +99,7 @@ const Billing = () => {
         {subscription.isPro ? (
           <ProCard onCancelSubscription={handleCancelSubscription} />
         ) : (
-          <FreeCard
-            onUpgradeSubscription={() => {
-              handleUpgradeSubscription(user.id);
-            }}
-          />
+          <FreeCard onUpgradeSubscription={handleUpgradeSubscription} />
         )}
       </section>
     </div>
@@ -124,13 +138,3 @@ const ProCard = ({ onCancelSubscription }: { onCancelSubscription: () => void })
     </div>
   );
 };
-
-function handleUpgradeSubscription(userId: string) {
-  const url = `https://pay.sumit.co.il/7avl6x/8olfvx?externalidentifier=${userId}&customerexternalidentifier=${userId}`;
-  window.open(url, "_blank");
-}
-
-function handleCancelSubscription() {
-  const url = "https://pay.sumit.co.il/7avl6x/8olfvx/";
-  window.open(url, "_blank");
-}
