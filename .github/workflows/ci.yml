@@ -1,0 +1,55 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  cancel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
+
+  build:
+    environment: PRODUCTION
+    needs: cancel
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        if: github.ref == 'refs/heads/main'
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          password: ${{ secrets.PASSWORD }}
+          script: |
+            echo "Stage 1: Go to git folder"
+            cd Reactive-Resume
+
+            echo "Stage 2: Checkout to branch main"
+            git checkout main
+
+            echo "Stage 3: Pull code from branch main"
+            git pull origin main
+
+            echo "Stage 4: Build app from Dockfile"
+            docker build -t app-resume .
+
+            echo "Stage 5: Stop and remove old container"
+            docker stop app-resume || true && docker rm app-resume || true
+
+            echo "Stage 6: Run app"
+            docker run -d --env-file ./.env -p 3000:3000 --network reactive-resume_default --restart unless-stopped --name app-resume app-resume
+
+            echo "Stage 7: Remove old images"
+            docker image prune -af
+
+            echo "Done!"

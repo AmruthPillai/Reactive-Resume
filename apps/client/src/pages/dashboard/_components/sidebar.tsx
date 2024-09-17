@@ -100,7 +100,7 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
       <div className="ml-12 flex justify-center lg:ml-0">
         <Button asChild size="icon" variant="ghost" className="size-10 p-0">
           <Link to="/">
-            <Icon size={24} className="mx-auto hidden lg:block" />
+            <Icon size={48} className="mx-auto hidden lg:block" />
           </Link>
         </Button>
       </div>
@@ -124,7 +124,6 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
         </Button>
       </UserOptions>
 
-      <Copyright className="ml-2" />
     </div>
   );
 };
