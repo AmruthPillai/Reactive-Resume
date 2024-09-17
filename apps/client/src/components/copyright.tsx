@@ -32,7 +32,7 @@ export const Copyright = ({ className }: Props) => (
     </span>
 
     <span className="mt-4">
-      {t`Reactive Resume`} {"v" + appVersion}
+      {t`Talent Hub`} {"v" + appVersion}
     </span>
   </div>
 );

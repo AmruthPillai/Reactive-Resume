@@ -153,7 +153,7 @@ export class AuthService {
 
     const baseUrl = this.configService.get("PUBLIC_URL");
     const url = `${baseUrl}/auth/reset-password?token=${token}`;
-    const subject = "Reset your Reactive Resume password";
+    const subject = "Reset your Talent Hub password";
     const text = `Please click on the link below to reset your password:\n\n${url}`;
 
     await this.mailService.sendEmail({ to: email, subject, text });
@@ -249,7 +249,7 @@ export class AuthService {
     }
 
     const secret = authenticator.generateSecret();
-    const uri = authenticator.keyuri(email, "Reactive Resume", secret);
+    const uri = authenticator.keyuri(email, "Talent Hub", secret);
 
     await this.userService.updateByEmail(email, {
       secrets: { update: { twoFactorSecret: secret } },

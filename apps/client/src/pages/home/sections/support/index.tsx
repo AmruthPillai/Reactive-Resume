@@ -6,10 +6,10 @@ export const SupportSection = () => (
     className="relative space-y-12 bg-secondary-accent py-24 text-primary sm:py-32"
   >
     <div className="container space-y-6">
-      <h1 className="text-4xl font-bold">{t`Supporting Reactive Resume`}</h1>
+      <h1 className="text-4xl font-bold">{t`Supporting Talent Hub`}</h1>
 
       <p className="max-w-4xl leading-loose">
-        {t`Reactive Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Reactive Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe.`}
+        {t`Talent Hub is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Talent Hub through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe.`}
       </p>
 
       <div className="flex items-center gap-x-10">
@@ -75,7 +75,7 @@ export const SupportSection = () => (
       </div>
 
       <p className="max-w-4xl leading-loose">
-        {t`Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Reactive Resume has helped you. Your feedback and support are always welcome and much appreciated!`}
+        {t`Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Talent Hub has helped you. Your feedback and support are always welcome and much appreciated!`}
       </p>
     </div>
   </section>

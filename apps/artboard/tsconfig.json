@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
+    "declaration": true,
     "jsx": "react-jsx",
+    "forceConsistentCasingInFileNames": true,
+    "composite": true,
     "allowJs": false,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,

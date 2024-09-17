@@ -36,7 +36,7 @@ export const LogoCloudSection = () => (
   <section id="logo-cloud" className="relative py-24 sm:py-32">
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <p className="text-center text-lg leading-relaxed">
-        {t`Reactive Resume has helped people land jobs at these great companies:`}
+        {t`Talent Hub has helped people land jobs at these great companies:`}
       </p>
       <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
         {logoList.map((company) => (

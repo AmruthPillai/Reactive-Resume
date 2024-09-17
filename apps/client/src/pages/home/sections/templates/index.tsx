@@ -9,7 +9,7 @@ export const TemplatesSection = () => (
         <h2 className="text-4xl font-bold">{t`Templates`}</h2>
 
         <p className="leading-relaxed">
-          {t`Explore the templates available in Reactive Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume.`}
+          {t`Explore the templates available in Talent Hub and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume.`}
         </p>
       </div>
 

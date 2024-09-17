@@ -2,15 +2,15 @@ import { t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { Helmet } from "react-helmet-async";
 
-import { ContributorsSection } from "./sections/contributors";
-import { FAQSection } from "./sections/faq";
-import { FeaturesSection } from "./sections/features";
+// import { ContributorsSection } from "./sections/contributors";
+// import { FAQSection } from "./sections/faq";
+// import { FeaturesSection } from "./sections/features";
+// import { LogoCloudSection } from "./sections/logo-cloud";
+// import { StatisticsSection } from "./sections/statistics";
+// import { SupportSection } from "./sections/support";
+// import { TestimonialsSection } from "./sections/testimonials";
 import { HeroSection } from "./sections/hero";
-import { LogoCloudSection } from "./sections/logo-cloud";
-import { StatisticsSection } from "./sections/statistics";
-import { SupportSection } from "./sections/support";
 import { TemplatesSection } from "./sections/templates";
-import { TestimonialsSection } from "./sections/testimonials";
 
 export const HomePage = () => {
   const { i18n } = useLingui();
@@ -21,7 +21,7 @@ export const HomePage = () => {
         <html lang={i18n.locale} />
 
         <title>
-          {t`Reactive Resume`} - {t`Talent Resume`}
+          {t`Talent Hub`} - {t`Talent Resume`}
         </title>
 
         <meta
@@ -31,14 +31,14 @@ export const HomePage = () => {
       </Helmet>
 
       <HeroSection />
-      <LogoCloudSection />
-      <StatisticsSection />
-      <FeaturesSection />
+      {/* <LogoCloudSection /> */}
+      {/* <StatisticsSection /> */}
+      {/* <FeaturesSection /> */}
       <TemplatesSection />
-      <TestimonialsSection />
-      <SupportSection />
-      <FAQSection />
-      <ContributorsSection />
+      {/* <TestimonialsSection /> */}
+      {/* <SupportSection /> */}
+      {/* <FAQSection /> */}
+      {/* <ContributorsSection /> */}
     </main>
   );
 };

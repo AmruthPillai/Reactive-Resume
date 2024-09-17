@@ -61,7 +61,7 @@ export const RegisterPage = () => {
     <div className="space-y-8">
       <Helmet>
         <title>
-          {t`Create a new account`} - {t`Reactive Resume`}
+          {t`Create a new account`} - {t`Talent Hub`}
         </title>
       </Helmet>
 

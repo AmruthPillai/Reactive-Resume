@@ -12,12 +12,12 @@ export const Icon = ({ size = 32, className }: Props) => {
   let src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 
   switch (isDarkMode) {
-    case true: {
-      src = "/icon/dark.svg";
+    case false: {
+      src = "/icon/Icon_Dark.svg";
       break;
     }
-    case false: {
-      src = "/icon/light.svg";
+    case true: {
+      src = "/icon/Icon_Light.svg";
       break;
     }
   }
@@ -27,7 +27,7 @@ export const Icon = ({ size = 32, className }: Props) => {
       src={src}
       width={size}
       height={size}
-      alt="Reactive Resume"
+      alt="Talent Hub"
       className={cn("rounded-sm", className)}
     />
   );
