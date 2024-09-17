@@ -14,6 +14,9 @@ module.exports = {
         foreground: "var(--color-foreground)",
         primary: "var(--color-primary)",
         background: "var(--color-background)",
+        "tag-private": "#FFE6AF",
+        "tag-public": "#AFCDFF",
+        black: "#000000",
       },
       lineHeight: {
         tight: "calc(var(--line-height) - 0.5)",

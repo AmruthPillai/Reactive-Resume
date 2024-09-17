@@ -74,6 +74,15 @@ export const ResumeCard = ({ resume }: Props) => {
 
           <div
             className={cn(
+              "absolute top-2 right-2 px-5 py-1 rounded-md flex items-center justify-center",
+              resume.visibility === "public" ? "bg-tag-public" : "bg-tag-private",
+            )}
+          >
+            <p className="text-xs capitalize !text-black">{resume.visibility}</p>
+          </div>
+
+          <div
+            className={cn(
               "absolute inset-x-0 bottom-0 z-10 flex flex-col justify-end space-y-0.5 p-4 pt-12",
               "bg-gradient-to-t from-background/80 to-transparent",
             )}

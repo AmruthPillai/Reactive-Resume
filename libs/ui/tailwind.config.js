@@ -8,4 +8,11 @@ module.exports = {
     join(__dirname, "{src,pages,components,app}/**/*!(*.stories|*.spec).{ts,tsx,html}"),
     ...createGlobPatternsForDependencies(__dirname),
   ],
+  theme: {
+    colors: {
+      "tag-private": "#FFE6AF",
+      "tag-public": "#AFCDFF",
+      black: "#000000",
+    },
+  },
 };
