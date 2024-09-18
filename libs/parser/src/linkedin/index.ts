@@ -8,7 +8,6 @@ import {
   defaultProject,
   defaultResumeData,
   defaultSkill,
-  JobLocation,
   JobType,
   resumeDataSchema,
 } from "@reactive-resume/schema";
