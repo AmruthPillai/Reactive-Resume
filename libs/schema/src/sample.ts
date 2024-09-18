@@ -28,7 +28,7 @@ export const sampleResume: ResumeData = {
   workStatus: {
     openToWork: false,
     pricing: undefined,
-    jobType: JobType.onsite,
+    jobType: JobType.REMOTE,
     jobLocation: "",
   },
   sections: {

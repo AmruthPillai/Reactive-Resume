@@ -14,7 +14,6 @@ import {
   defaultResumeData,
   defaultSkill,
   defaultVolunteer,
-  JobLocation,
   JobType,
 } from "@reactive-resume/schema";
 import { isUrl, Json } from "@reactive-resume/utils";
@@ -77,7 +76,7 @@ export class ReactiveResumeV3Parser implements Parser<Json, ReactiveResumeV3> {
     //WorkStatus
     result.workStatus.openToWork = data.workStatus.openToWork ?? false;
     result.workStatus.pricing = data.workStatus.pricing ?? null;
-    result.workStatus.jobType = data.workStatus.jobType ?? JobType.remote;
+    result.workStatus.jobType = data.workStatus.jobType ?? JobType.REMOTE;
     result.workStatus.jobLocation = data.workStatus.jobLocation ?? "";
 
     // Profiles

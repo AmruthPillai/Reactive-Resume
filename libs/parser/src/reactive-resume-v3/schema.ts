@@ -52,7 +52,7 @@ const basicsSchema = z.object({
 const workStatusSchema = z.object({
   openToWork: z.boolean().default(false),
   pricing: z.number().optional(),
-  jobType: z.nativeEnum(JobType).default(JobType.onsite),
+  jobType: z.nativeEnum(JobType).default(JobType.REMOTE),
   jobLocation: z.string().default(""),
 });
 
