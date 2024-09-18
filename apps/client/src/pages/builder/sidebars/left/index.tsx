@@ -27,6 +27,7 @@ import { useResumeStore } from "@/client/stores/resume";
 import { BasicsSection } from "./sections/basics";
 import { SectionBase } from "./sections/shared/section-base";
 import { SectionIcon } from "./sections/shared/section-icon";
+import { WorkStatusSection } from "./sections/shared/work-status";
 import { SummarySection } from "./sections/summary";
 
 export const LeftSidebar = () => {
@@ -59,6 +60,12 @@ export const LeftSidebar = () => {
             })}
             onClick={() => {
               scrollIntoView("#basics");
+            }}
+          />
+          <SectionIcon
+            id="workStatus"
+            onClick={() => {
+              scrollIntoView("#workStatus");
             }}
           />
           <SectionIcon
@@ -163,6 +170,8 @@ export const LeftSidebar = () => {
       <ScrollArea orientation="vertical" className="h-screen flex-1 pb-16 lg:pb-0">
         <div ref={containterRef} className="grid gap-y-6 p-6 @container/left">
           <BasicsSection />
+          <Separator />
+          <WorkStatusSection />
           <Separator />
           <SummarySection />
           <Separator />

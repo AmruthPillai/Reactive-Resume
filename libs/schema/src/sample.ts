@@ -1,4 +1,5 @@
 import { ResumeData } from ".";
+import { JobType } from "./work-status";
 
 export const sampleResume: ResumeData = {
   basics: {
@@ -23,6 +24,12 @@ export const sampleResume: ResumeData = {
         grayscale: false,
       },
     },
+  },
+  workStatus: {
+    openToWork: false,
+    pricing: undefined,
+    jobType: JobType.REMOTE,
+    jobLocation: "",
   },
   sections: {
     summary: {

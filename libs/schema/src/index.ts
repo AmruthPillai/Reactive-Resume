@@ -3,12 +3,14 @@ import { z } from "zod";
 import { basicsSchema, defaultBasics } from "./basics";
 import { defaultMetadata, metadataSchema } from "./metadata";
 import { defaultSections, sectionsSchema } from "./sections";
+import { defaultWorkStatus, workStatusSchema } from "./work-status";
 
 // Schema
 export const resumeDataSchema = z.object({
   basics: basicsSchema,
   sections: sectionsSchema,
   metadata: metadataSchema,
+  workStatus: workStatusSchema,
 });
 
 // Type
@@ -19,6 +21,7 @@ export const defaultResumeData: ResumeData = {
   basics: defaultBasics,
   sections: defaultSections,
   metadata: defaultMetadata,
+  workStatus: defaultWorkStatus,
 };
 
 export * from "./basics";
@@ -26,3 +29,4 @@ export * from "./metadata";
 export * from "./sample";
 export * from "./sections";
 export * from "./shared";
+export * from "./work-status";

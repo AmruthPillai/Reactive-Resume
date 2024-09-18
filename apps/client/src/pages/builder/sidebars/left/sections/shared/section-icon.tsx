@@ -3,6 +3,7 @@ import {
   Books,
   Briefcase,
   Certificate,
+  CheckCircle,
   CompassTool,
   GameController,
   GraduationCap,
@@ -26,6 +27,9 @@ export const getSectionIcon = (id: SectionKey, props: IconProps = {}) => {
     // Left Sidebar
     case "basics": {
       return <User size={18} {...props} />;
+    }
+    case "workStatus": {
+      return <CheckCircle size={18} {...props}/>;
     }
     case "summary": {
       return <Article size={18} {...props} />;

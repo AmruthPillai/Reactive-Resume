@@ -54,13 +54,8 @@ msgstr "<0>การยืนยันตัวตนแบบสองขั้
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr "<0>การยืนยันตัวตนแบบสองขั้นตอนเปิดใช้งานแล้ว</0> คุณจะถูกขอให้กรอกรหัสทุกครั้งที่คุณเข้าสู่ระบบ"
 
-#: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/home/sections/hero/index.tsx:40
-msgid "Talent Resume"
-msgstr "แอปสร้างเรซูเม่ฟรีและโอเพนซอร์ส"
-
 #: apps/client/src/pages/home/components/footer.tsx:21
-#: apps/client/src/pages/home/sections/hero/index.tsx:45
+#: apps/client/src/pages/home/sections/hero/index.tsx:40
 msgid "A free resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "เครื่องมือสร้างเรซูเม่ฟรีและโอเพนซอร์สที่ทำให้กระบวนการสร้าง การปรับปรุง และการแชร์เรซูเม่ของคุณง่ายขึ้น"
 
@@ -112,8 +107,8 @@ msgstr "เพิ่มรายการใหม่"
 msgid "Add a new item"
 msgstr "เพิ่มรายการใหม่"
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:146
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:263
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:153
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:272
 msgid "Add a new section"
 msgstr "เพิ่มส่วนใหม่"
 
@@ -209,7 +204,7 @@ msgstr "รหัสสำรอง"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "รหัสสำรองอาจมีเฉพาะตัวอักษรพิมพ์เล็กหรือตัวเลขเท่านั้น และต้องมีจำนวนอักษร 10 ตัวเท่านั้น"
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:55
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:56
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
 msgid "Basics"
 msgstr "พื้นฐาน"
@@ -420,7 +415,7 @@ msgstr "ปิดใช้งาน 2FA"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:304
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:134
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
 msgid "Discard"
 msgstr "ยกเลิก"
@@ -436,10 +431,6 @@ msgstr "ยังไม่มีบัญชีเหรอ?"
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:83
 msgid "Don't know where to begin? Hit the docs!"
 msgstr "ไม่รู้จะเริ่มจากที่ไหนเหรอ? กดอ่านคู่มือเลย!"
-
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:107
-msgid "Don't see your language? <0>Help translate the app.</0>"
-msgstr "ไม่เห็นภาษาของคุณเหรอ? <0>ช่วยแปลแอป</0>"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:40
 msgid "Donate to Talent Hub"
@@ -530,6 +521,10 @@ msgstr "ข้อผิดพลาด"
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Talent Hub has helped you. Your feedback and support are always welcome and much appreciated!"
 msgstr "แม้ว่าคุณจะไม่อยู่ในฐานะที่จะบริจาคเงินได้ แต่คุณยังคงสามารถสร้างความแตกต่างได้ด้วยการติดดาวให้กับ GitHub repository นี้ กระจายข่าวให้เพื่อนของคุณ หรือส่งข้อความสั้นๆ เพื่อบอกให้ผมรู้ว่า Talent Hub ช่วยคุณได้อย่างไร ข้อเสนอแนะและการสนับสนุนของคุณ ผมยินดีน้อมรับและชื่นชมเสมอ!"
 
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:37
+msgid "Expected Pricing"
+msgstr ""
+
 #: apps/client/src/pages/home/sections/templates/index.tsx:12
 msgid "Explore the templates available in Talent Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
 msgstr "สำรวจเทมเพลตที่มีให้ใช้ใน Talent Hub และดูเรซูเม่ที่สร้างขึ้นจากเทมเพลตนั้น พวกมันยังสามารถเป็นตัวอย่างเพื่อช่วยในการสร้างเรซูเม่ของคุณต่อไป"
@@ -546,10 +541,6 @@ msgstr "ไฟล์"
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:223
 msgid "Filetype"
 msgstr "ประเภทไฟล์"
-
-#: apps/client/src/pages/home/sections/hero/index.tsx:38
-msgid "Finally,"
-msgstr "ในที่สุด"
 
 #: apps/client/src/components/ai-actions.tsx:90
 msgid "Fix Spelling & Grammar"
@@ -774,6 +765,14 @@ msgstr "ดูเหมือนว่าโทเค็นยืนยันต
 msgid "It looks like your email address has already been verified."
 msgstr "ดูเหมือนว่าที่อยู่อีเมลของคุณได้รับการยืนยันแล้ว"
 
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:74
+msgid "Job Location"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:52
+msgid "Job Type"
+msgstr ""
+
 #: apps/client/src/pages/auth/register/page.tsx:101
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
 msgid "John Doe"
@@ -982,6 +981,10 @@ msgstr "เปิด"
 msgid "Open Source"
 msgstr "โอเพนซอร์ส"
 
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:24
+msgid "Open To Work"
+msgstr ""
+
 #: apps/client/src/services/openai/change-tone.ts:30
 #: apps/client/src/services/openai/fix-grammar.ts:28
 #: apps/client/src/services/openai/improve-writing.ts:28
@@ -1056,6 +1059,14 @@ msgstr "โปรดทราบว่าขั้นตอนนี้ไม่
 msgid "Please select a file type"
 msgstr "กรุณาเลือกประเภทของไฟล์"
 
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:82
+msgid "Please select a job location"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:60
+msgid "Please select a job type"
+msgstr ""
+
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:228
 msgid "Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app."
 msgstr "กรุณาเก็บรหัสสำรองของคุณไว้ในที่ปลอดภัย คุณสามารถใช้รหัสผ่านใช้ครั้งเดียวพวกนี้เพื่อเข้าสู่ระบบได้ ในกรณีที่คุณสูญเสียการเข้าถึงแอปยืนยันตัวตนของคุณ"
@@ -1122,7 +1133,7 @@ msgstr "แจ้งปัญหา"
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/builder/page.tsx:43
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
-#: apps/client/src/pages/dashboard/settings/page.tsx:16
+#: apps/client/src/pages/dashboard/settings/page.tsx:14
 #: apps/client/src/pages/home/components/footer.tsx:18
 #: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
 #: apps/client/src/pages/home/page.tsx:24
@@ -1212,7 +1223,7 @@ msgstr "โค้งมน"
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:168
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:131
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:116
 msgid "Save Changes"
 msgstr "บันทึกการเปลี่ยนแปลง"
 
@@ -1267,8 +1278,8 @@ msgstr "แยกลิงก์"
 
 #: apps/client/src/components/user-options.tsx:32
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
-#: apps/client/src/pages/dashboard/settings/page.tsx:16
-#: apps/client/src/pages/dashboard/settings/page.tsx:26
+#: apps/client/src/pages/dashboard/settings/page.tsx:14
+#: apps/client/src/pages/dashboard/settings/page.tsx:24
 msgid "Settings"
 msgstr "การตั้งค่า"
 
@@ -1418,6 +1429,11 @@ msgstr "รองรับหน้ากระดาษแบบ A4/จดห�
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:85
 msgid "System"
 msgstr "ระบบ"
+
+#: apps/client/src/pages/home/page.tsx:24
+#: apps/client/src/pages/home/sections/hero/index.tsx:36
+msgid "Talent Resume"
+msgstr "แอปสร้างเรซูเม่ฟรีและโอเพนซอร์ส"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:62
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
@@ -1618,10 +1634,6 @@ msgstr "ตรวจสอบว่าได้ตั้งค่าการย
 msgid "Verify your email address"
 msgstr "ยืนยันที่อยู่อีเมลของคุณ"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:26
-msgid "Version 4"
-msgstr "เวอร์ชั่น 4"
-
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:51
 msgid "Views"
 msgstr "ยอดดู"
@@ -1648,9 +1660,9 @@ msgstr "เราตรวจสอบที่อยู่อีเมลขอ
 msgid "Website"
 msgstr "เว็บไซต์"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:32
-msgid "What's new in the latest version"
-msgstr "มีอะไรใหม่ในเวอร์ชั่นล่าสุด"
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:17
+msgid "Work Status"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:157
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
@@ -1711,4 +1723,3 @@ msgstr "ซูมเข้า"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "ซูมออก"
-

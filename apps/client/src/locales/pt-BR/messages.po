@@ -54,13 +54,8 @@ msgstr "<0>A autenticação de dois fatores está atualmente desativada.</0> Voc
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr "<0>A autenticação de dois fatores está habilitada.</0> Você será solicitado a inserir um código sempre que fizer login."
 
-#: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/home/sections/hero/index.tsx:40
-msgid "Talent Resume"
-msgstr "Um criador de currículos gratuito e de código aberto"
-
 #: apps/client/src/pages/home/components/footer.tsx:21
-#: apps/client/src/pages/home/sections/hero/index.tsx:45
+#: apps/client/src/pages/home/sections/hero/index.tsx:40
 msgid "A free resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "Um criador de currículos gratuito e de código aberto que simplifica o processo de criação, atualização e compartilhamento de seu currículo."
 
@@ -112,8 +107,8 @@ msgstr "Adicionar novo item"
 msgid "Add a new item"
 msgstr "Adicionar novo item"
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:146
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:263
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:153
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:272
 msgid "Add a new section"
 msgstr "Adicionar nova sessão"
 
@@ -209,7 +204,7 @@ msgstr "Código de Segurança"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "Os códigos de segurança só podem conter letras minúsculas ou números, e devem ter exatamente 10 caracteres."
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:55
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:56
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
 msgid "Basics"
 msgstr "Informações básicas"
@@ -420,7 +415,7 @@ msgstr "Desativar 2FA"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:304
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:134
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
 msgid "Discard"
 msgstr "Descartar"
@@ -436,10 +431,6 @@ msgstr "Não possui uma conta?"
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:83
 msgid "Don't know where to begin? Hit the docs!"
 msgstr "Não sabe por onde começar? Consulte os documentos!"
-
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:107
-msgid "Don't see your language? <0>Help translate the app.</0>"
-msgstr "Não está vendo seu idioma? <0>Ajude a traduzir o aplicativo.</0>"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:40
 msgid "Donate to Talent Hub"
@@ -530,6 +521,10 @@ msgstr "Erros"
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Talent Hub has helped you. Your feedback and support are always welcome and much appreciated!"
 msgstr "Mesmo que você não esteja em condições de contribuir financeiramente, você ainda pode fazer a diferença dando uma estrela ao repositório GitHub, divulgando para seus amigos ou enviando uma mensagem rápida para me contar como o Talent Hub ajudou você. Seu feedback e apoio são sempre bem-vindos e muito apreciados!"
 
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:37
+msgid "Expected Pricing"
+msgstr ""
+
 #: apps/client/src/pages/home/sections/templates/index.tsx:12
 msgid "Explore the templates available in Talent Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
 msgstr "Explore os modelos disponíveis no Talent Hub e veja os currículos criados com eles. Eles também podem servir como exemplos para ajudar a orientar a criação de seu próximo currículo."
@@ -546,10 +541,6 @@ msgstr "Arquivo"
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:223
 msgid "Filetype"
 msgstr "Tipo do arquivo"
-
-#: apps/client/src/pages/home/sections/hero/index.tsx:38
-msgid "Finally,"
-msgstr "Finalmente,"
 
 #: apps/client/src/components/ai-actions.tsx:90
 msgid "Fix Spelling & Grammar"
@@ -774,6 +765,14 @@ msgstr "Parece que o token de redefinição fornecido é inválido. Tente reinic
 msgid "It looks like your email address has already been verified."
 msgstr "Parece que seu endereço de e-mail já foi verificado."
 
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:74
+msgid "Job Location"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:52
+msgid "Job Type"
+msgstr ""
+
 #: apps/client/src/pages/auth/register/page.tsx:101
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
 msgid "John Doe"
@@ -982,6 +981,10 @@ msgstr "Abrir"
 msgid "Open Source"
 msgstr "Código Aberto"
 
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:24
+msgid "Open To Work"
+msgstr ""
+
 #: apps/client/src/services/openai/change-tone.ts:30
 #: apps/client/src/services/openai/fix-grammar.ts:28
 #: apps/client/src/services/openai/improve-writing.ts:28
@@ -1056,6 +1059,14 @@ msgstr "Por favor, note que esta etapa é completamente opcional."
 msgid "Please select a file type"
 msgstr "Por favor, selecione um tipo de arquivo"
 
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:82
+msgid "Please select a job location"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:60
+msgid "Please select a job type"
+msgstr ""
+
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:228
 msgid "Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app."
 msgstr "Guarde seus códigos de backup em um local seguro. Você pode usar um desses códigos de uso único para fazer login caso perca o acesso ao seu aplicativo autenticador."
@@ -1122,7 +1133,7 @@ msgstr "Aponte um problema"
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/builder/page.tsx:43
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
-#: apps/client/src/pages/dashboard/settings/page.tsx:16
+#: apps/client/src/pages/dashboard/settings/page.tsx:14
 #: apps/client/src/pages/home/components/footer.tsx:18
 #: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
 #: apps/client/src/pages/home/page.tsx:24
@@ -1212,7 +1223,7 @@ msgstr "Arredondado"
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:168
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:131
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:116
 msgid "Save Changes"
 msgstr "Salvar Alterações"
 
@@ -1267,8 +1278,8 @@ msgstr ""
 
 #: apps/client/src/components/user-options.tsx:32
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
-#: apps/client/src/pages/dashboard/settings/page.tsx:16
-#: apps/client/src/pages/dashboard/settings/page.tsx:26
+#: apps/client/src/pages/dashboard/settings/page.tsx:14
+#: apps/client/src/pages/dashboard/settings/page.tsx:24
 msgid "Settings"
 msgstr "Configurações"
 
@@ -1418,6 +1429,11 @@ msgstr "Suporta formatos de página A4 e carta"
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:85
 msgid "System"
 msgstr "Sistema"
+
+#: apps/client/src/pages/home/page.tsx:24
+#: apps/client/src/pages/home/sections/hero/index.tsx:36
+msgid "Talent Resume"
+msgstr "Um criador de currículos gratuito e de código aberto"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:62
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
@@ -1618,10 +1634,6 @@ msgstr "Verifique se a autenticação de dois fatores foi configurada corretamen
 msgid "Verify your email address"
 msgstr "Confirme seu endereço de email"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:26
-msgid "Version 4"
-msgstr "Versão 4"
-
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:51
 msgid "Views"
 msgstr "Visualizações"
@@ -1648,9 +1660,9 @@ msgstr "Verificamos seu endereço de e-mail apenas para garantir que possamos en
 msgid "Website"
 msgstr "Site"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:32
-msgid "What's new in the latest version"
-msgstr "O que há de novo na versão mais recente"
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:17
+msgid "Work Status"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:157
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
@@ -1711,4 +1723,3 @@ msgstr "Aumentar zoom"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "Diminuir o Zoom"
-

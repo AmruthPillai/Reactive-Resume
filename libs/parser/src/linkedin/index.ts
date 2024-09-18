@@ -8,6 +8,8 @@ import {
   defaultProject,
   defaultResumeData,
   defaultSkill,
+  JobLocation,
+  JobType,
   resumeDataSchema,
 } from "@reactive-resume/schema";
 import { extractUrl, Json, parseArrayLikeCSVEntry, parseCSV } from "@reactive-resume/utils";
@@ -83,6 +85,12 @@ export class LinkedInParser implements Parser<JSZip, LinkedIn> {
         });
       }
     }
+
+    //WorkStatus
+    result.workStatus.openToWork = false;
+    result.workStatus.pricing = null;
+    result.workStatus.jobType = JobType.REMOTE;
+    result.workStatus.jobLocation = "";
 
     // Email Addresses
     if (data["Email Addresses"] && data["Email Addresses"].length > 0) {

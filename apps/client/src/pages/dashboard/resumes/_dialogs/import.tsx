@@ -103,6 +103,8 @@ export const ImportDialog = () => {
     try {
       const { file, type } = formSchema.parse(form.getValues());
 
+      console.log(file, type)
+
       if (type === ImportType["reactive-resume-json"]) {
         const parser = new ReactiveResumeParser();
         const data = await parser.readFile(file);

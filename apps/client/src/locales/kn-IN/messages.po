@@ -54,13 +54,8 @@ msgstr "<0>ಎರಡು ಅಂಶದ ದೃಢೀಕರಣವನ್ನು ಪ್
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr "<0>ಎರಡು ಅಂಶದ ದೃಢೀಕರಣವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ.</0> ನೀವು ಸೈನ್ ಇನ್ ಮಾಡಿದಾಗಲೆಲ್ಲಾ ಕೋಡ್ ಅನ್ನು ನಮೂದಿಸಲು ನಿಮ್ಮನ್ನು ಕೇಳಲಾಗುತ್ತದೆ."
 
-#: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/home/sections/hero/index.tsx:40
-msgid "Talent Resume"
-msgstr "ಉಚಿತ ಮತ್ತು ಮೂಲ ಕೋಡ್ ತೆರೆದಿರುವ ರೇಜ಼ಮೈ ನಿರ್ಮಾಪಕ"
-
 #: apps/client/src/pages/home/components/footer.tsx:21
-#: apps/client/src/pages/home/sections/hero/index.tsx:45
+#: apps/client/src/pages/home/sections/hero/index.tsx:40
 msgid "A free resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "ನಿಮ್ಮ ರೆಸ್ಯೂಮ್ ಅನ್ನು ರಚಿಸುವ, ನವೀಕರಿಸುವ ಮತ್ತು ಹಂಚಿಕೊಳ್ಳುವ ಪ್ರಕ್ರಿಯೆಯನ್ನು ಸರಳಗೊಳಿಸುವ ಉಚಿತ ಮತ್ತು ಮುಕ್ತ-ಮೂಲ ಪುನರಾರಂಭ ಬಿಲ್ಡರ್."
 
@@ -112,8 +107,8 @@ msgstr "ಹೊಸ ಐಟಂ ಸೇರಿಸಿ"
 msgid "Add a new item"
 msgstr "ಹೊಸ ಐಟಂ ಸೇರಿಸಿ"
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:146
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:263
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:153
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:272
 msgid "Add a new section"
 msgstr "ಹೊಸ ವಿಭಾಗವನ್ನು ಸೇರಿಸಿ"
 
@@ -209,7 +204,7 @@ msgstr "ಬ್ಯಾಕಪ್ ಕೋಡ್"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "ಬ್ಯಾಕಪ್ ಕೋಡ್‌ಗಳು ಸಣ್ಣ ಅಕ್ಷರಗಳು ಅಥವಾ ಸಂಖ್ಯೆಗಳನ್ನು ಮಾತ್ರ ಹೊಂದಿರಬಹುದು ಮತ್ತು ನಿಖರವಾಗಿ 10 ಅಕ್ಷರಗಳಾಗಿರಬೇಕು."
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:55
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:56
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
 msgid "Basics"
 msgstr "ಸಾಮಾನ್ಯ"
@@ -420,7 +415,7 @@ msgstr "2FA ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:304
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:134
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
 msgid "Discard"
 msgstr "ತಿರಸ್ಕರಿಸು"
@@ -436,10 +431,6 @@ msgstr "ಖಾತೆ ಇಲ್ಲವೇ?"
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:83
 msgid "Don't know where to begin? Hit the docs!"
 msgstr "ಎಲ್ಲಿಂದ ಪ್ರಾರಂಭಿಸಬೇಕು ಎಂದು ತಿಳಿದಿಲ್ಲವೇ? ಡಾಕ್ಸ್ ಅನ್ನು ಬಳಸಿ!"
-
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:107
-msgid "Don't see your language? <0>Help translate the app.</0>"
-msgstr "ನಿಮ್ಮ ಭಾಷೆ ಕಾಣುತ್ತಿಲ್ಲವೇ? <0>ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಭಾಷಾಂತರಿಸಲು ಸಹಾಯ ಮಾಡಿ.</0>"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:40
 msgid "Donate to Talent Hub"
@@ -530,6 +521,10 @@ msgstr "ದೋಷಗಳು"
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Talent Hub has helped you. Your feedback and support are always welcome and much appreciated!"
 msgstr "ನೀವು ಆರ್ಥಿಕವಾಗಿ ಕೊಡುಗೆ ನೀಡುವ ಸ್ಥಿತಿಯಲ್ಲಿಲ್ಲದಿದ್ದರೂ ಸಹ, GitHub ರೆಪೊಸಿಟರಿಗೆ ನಕ್ಷತ್ರವನ್ನು ನೀಡುವ ಮೂಲಕ, ನಿಮ್ಮ ಸ್ನೇಹಿತರಿಗೆ ಸುದ್ದಿಯನ್ನು ಹರಡುವ ಮೂಲಕ ಅಥವಾ ರಿಯಾಕ್ಟಿವ್ ರೆಸ್ಯೂಮ್ ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಿದೆ ಎಂಬುದನ್ನು ನನಗೆ ತಿಳಿಸಲು ತ್ವರಿತ ಸಂದೇಶವನ್ನು ನೀಡುವ ಮೂಲಕ ನೀವು ಇನ್ನೂ ಬದಲಾವಣೆಯನ್ನು ಮಾಡಬಹುದು. ನಿಮ್ಮ ಪ್ರತಿಕ್ರಿಯೆ ಮತ್ತು ಬೆಂಬಲ ಯಾವಾಗಲೂ ಸ್ವಾಗತಾರ್ಹ ಮತ್ತು ಹೆಚ್ಚು ಮೆಚ್ಚುಗೆ!"
 
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:37
+msgid "Expected Pricing"
+msgstr ""
+
 #: apps/client/src/pages/home/sections/templates/index.tsx:12
 msgid "Explore the templates available in Talent Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
 msgstr "ಪ್ರತಿಕ್ರಿಯಾತ್ಮಕ ರೆಸ್ಯೂಮ್‌ ಲಭ್ಯವಿರುವ ಟೆಂಪ್ಲೇಟ್‌ಗಳನ್ನು ಅನ್ವೇಷಿಸಿ ಮತ್ತು ಅವರೊಂದಿಗೆ ರಚಿಸಲಾದ ರೆಸ್ಯೂಮ್‌ಗಳನ್ನು ವೀಕ್ಷಿಸಿ. ನಿಮ್ಮ ಮುಂದಿನ ರೆಸ್ಯೂಮ್‌ ರಚನೆಗೆ ಮಾರ್ಗದರ್ಶನ ನೀಡಲು ಅವರು ಉದಾಹರಣೆಗಳಾಗಿ ಕಾರ್ಯನಿರ್ವಹಿಸಬಹುದು."
@@ -546,10 +541,6 @@ msgstr "ಕಡತ"
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:223
 msgid "Filetype"
 msgstr "ಕಡತದ ವರ್ಗ"
-
-#: apps/client/src/pages/home/sections/hero/index.tsx:38
-msgid "Finally,"
-msgstr "ಅಂತಿಮವಾಗಿ,"
 
 #: apps/client/src/components/ai-actions.tsx:90
 msgid "Fix Spelling & Grammar"
@@ -774,6 +765,14 @@ msgstr "ನೀವು ಒದಗಿಸಿದ ಮರುಹೊಂದಿಸುವ ಟ
 msgid "It looks like your email address has already been verified."
 msgstr "ನಿಮ್ಮ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ಈಗಾಗಲೇ ಪರಿಶೀಲಿಸಿರುವಂತೆ ತೋರುತ್ತಿದೆ."
 
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:74
+msgid "Job Location"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:52
+msgid "Job Type"
+msgstr ""
+
 #: apps/client/src/pages/auth/register/page.tsx:101
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
 msgid "John Doe"
@@ -982,6 +981,10 @@ msgstr "ತೆರೆಯಿರಿ"
 msgid "Open Source"
 msgstr "ಮುಕ್ತ ಸಂಪನ್ಮೂಲ"
 
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:24
+msgid "Open To Work"
+msgstr ""
+
 #: apps/client/src/services/openai/change-tone.ts:30
 #: apps/client/src/services/openai/fix-grammar.ts:28
 #: apps/client/src/services/openai/improve-writing.ts:28
@@ -1056,6 +1059,14 @@ msgstr "ದಯವಿಟ್ಟು ಗಮನಿಸಿ ಈ ಹಂತವು ಸಂ�
 msgid "Please select a file type"
 msgstr "ದಯವಿಟ್ಟು ಒಂದು ಕಡತವನ್ನು ಆಯ್ಕೆ ಮಾಡಿ"
 
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:82
+msgid "Please select a job location"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:60
+msgid "Please select a job type"
+msgstr ""
+
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:228
 msgid "Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app."
 msgstr "ದಯವಿಟ್ಟು ನಿಮ್ಮ ಬ್ಯಾಕಪ್ ಕೋಡ್‌ಗಳನ್ನು ಸುರಕ್ಷಿತ ಸ್ಥಳದಲ್ಲಿ ಸಂಗ್ರಹಿಸಿ. ನಿಮ್ಮ ದೃಢೀಕರಣ ಅಪ್ಲಿಕೇಶನ್‌ಗೆ ನೀವು ಪ್ರವೇಶವನ್ನು ಕಳೆದುಕೊಂಡರೆ ಲಾಗಿನ್ ಮಾಡಲು ಈ ಒಂದು-ಬಾರಿಯ ಬಳಕೆಯ ಕೋಡ್‌ಗಳಲ್ಲಿ ಒಂದನ್ನು ನೀವು ಬಳಸಬಹುದು."
@@ -1122,7 +1133,7 @@ msgstr "ಒಂದು ಸಮಸ್ಯೆಯನ್ನು ಎತ್ತಿಕೊಳ�
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/builder/page.tsx:43
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
-#: apps/client/src/pages/dashboard/settings/page.tsx:16
+#: apps/client/src/pages/dashboard/settings/page.tsx:14
 #: apps/client/src/pages/home/components/footer.tsx:18
 #: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
 #: apps/client/src/pages/home/page.tsx:24
@@ -1212,7 +1223,7 @@ msgstr "ದುಂಡಾದ"
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:168
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:131
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:116
 msgid "Save Changes"
 msgstr "ಬದಲಾವಣೆಗಳನ್ನು ಉಳಿಸು"
 
@@ -1267,8 +1278,8 @@ msgstr ""
 
 #: apps/client/src/components/user-options.tsx:32
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
-#: apps/client/src/pages/dashboard/settings/page.tsx:16
-#: apps/client/src/pages/dashboard/settings/page.tsx:26
+#: apps/client/src/pages/dashboard/settings/page.tsx:14
+#: apps/client/src/pages/dashboard/settings/page.tsx:24
 msgid "Settings"
 msgstr "ಸೆಟ್ಟಿಂಗ್ಸಗಳು"
 
@@ -1418,6 +1429,11 @@ msgstr "A4/ಲೆಟರ್ ಪುಟ ಸ್ವರೂಪಗಳನ್ನು ಬೆ
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:85
 msgid "System"
 msgstr "ಸಿಸ್ಟಂ"
+
+#: apps/client/src/pages/home/page.tsx:24
+#: apps/client/src/pages/home/sections/hero/index.tsx:36
+msgid "Talent Resume"
+msgstr "ಉಚಿತ ಮತ್ತು ಮೂಲ ಕೋಡ್ ತೆರೆದಿರುವ ರೇಜ಼ಮೈ ನಿರ್ಮಾಪಕ"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:62
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
@@ -1618,10 +1634,6 @@ msgstr "ಎರಡು ಅಂಶಗಳ ದೃಢೀಕರಣವನ್ನು ಸರ
 msgid "Verify your email address"
 msgstr "ನಿಮ್ಮ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ಪರಿಶೀಲಿಸಿ"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:26
-msgid "Version 4"
-msgstr "ಆವೃತ್ತಿ 4"
-
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:51
 msgid "Views"
 msgstr "ವೀಕ್ಷಣೆಗಳು"
@@ -1648,9 +1660,9 @@ msgstr "ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ನೀವ
 msgid "Website"
 msgstr "ಜಾಲತಾಣ"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:32
-msgid "What's new in the latest version"
-msgstr "ಇತ್ತೀಚಿನ ಆವೃತ್ತಿಯಲ್ಲಿ ಹೊಸದೇನಿದೆ"
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:17
+msgid "Work Status"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:157
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
@@ -1711,4 +1723,3 @@ msgstr "ಗಾತ್ರ ಹಿಗ್ಗಿಸಿ"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "ಗಾತ್ರ ಕುಗ್ಗಿಸಿ"
-

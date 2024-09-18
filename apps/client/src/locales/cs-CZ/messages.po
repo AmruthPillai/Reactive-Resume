@@ -54,13 +54,8 @@ msgstr "<0>Dvoufaktorové ověřování je v současné době zakázáno.</0> M�
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr "<0>Je povoleno dvoufaktorové ověřování.</0> Při každém přihlášení budete vyzváni k zadání kódu."
 
-#: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/home/sections/hero/index.tsx:40
-msgid "Talent Resume"
-msgstr "Bezplatný nástroj pro tvorbu životopisů s otevřeným zdrojovým kódem"
-
 #: apps/client/src/pages/home/components/footer.tsx:21
-#: apps/client/src/pages/home/sections/hero/index.tsx:45
+#: apps/client/src/pages/home/sections/hero/index.tsx:40
 msgid "A free resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "Bezplatný nástroj pro tvorbu životopisů s otevřeným zdrojovým kódem, který zjednodušuje proces vytváření, aktualizace a sdílení životopisů."
 
@@ -112,8 +107,8 @@ msgstr "Přidat novou položku"
 msgid "Add a new item"
 msgstr "Přidat novou položku"
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:146
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:263
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:153
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:272
 msgid "Add a new section"
 msgstr "Přidat novou sekci"
 
@@ -209,7 +204,7 @@ msgstr "Záložní kód"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "Záložní kódy mohou obsahovat pouze malá písmena nebo číslice a musí mít přesně 10 znaků."
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:55
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:56
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
 msgid "Basics"
 msgstr "Základní"
@@ -420,7 +415,7 @@ msgstr "Zakázat 2FA"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:304
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:134
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
 msgid "Discard"
 msgstr "Zahodit"
@@ -436,10 +431,6 @@ msgstr "Nemáte účet?"
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:83
 msgid "Don't know where to begin? Hit the docs!"
 msgstr "Nevíte kde začínajet? Stiskněte dokumenty!"
-
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:107
-msgid "Don't see your language? <0>Help translate the app.</0>"
-msgstr "Nevidíte váš jazyk? <0>Pomozte s překladem aplikace.</0>"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:40
 msgid "Donate to Talent Hub"
@@ -530,6 +521,10 @@ msgstr "Chyby"
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Talent Hub has helped you. Your feedback and support are always welcome and much appreciated!"
 msgstr "I když nejste schopni přispět finančně, můžete změnit tím, že budete mít GitHubu hvězdu, šíří slovo svým přátelům nebo shazuje rychlou zprávu, aby mi dalo vědět, jak vám pomohl Talent Hub Vaše zpětná vazba a podpora jsou vždy vítány a oceňovány!"
 
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:37
+msgid "Expected Pricing"
+msgstr ""
+
 #: apps/client/src/pages/home/sections/templates/index.tsx:12
 msgid "Explore the templates available in Talent Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
 msgstr "Prozkoumejte šablony dostupné v Talent Hub a podívejte se na obnovení s nimi. Mohli by také sloužit jako příklady, které by pomohly řídit vytvoření vašeho dalšího životopisu."
@@ -546,10 +541,6 @@ msgstr "Soubor"
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:223
 msgid "Filetype"
 msgstr "Typ souboru"
-
-#: apps/client/src/pages/home/sections/hero/index.tsx:38
-msgid "Finally,"
-msgstr "Konečně"
 
 #: apps/client/src/components/ai-actions.tsx:90
 msgid "Fix Spelling & Grammar"
@@ -774,6 +765,14 @@ msgstr "Vypadá to, že ověřovací token, který jste zadali, je neplatný. Zk
 msgid "It looks like your email address has already been verified."
 msgstr "Vypadá to, že vaše e-mailová adresa již byla ověřena."
 
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:74
+msgid "Job Location"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:52
+msgid "Job Type"
+msgstr ""
+
 #: apps/client/src/pages/auth/register/page.tsx:101
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
 msgid "John Doe"
@@ -982,6 +981,10 @@ msgstr "Otevřít"
 msgid "Open Source"
 msgstr "Open Source"
 
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:24
+msgid "Open To Work"
+msgstr ""
+
 #: apps/client/src/services/openai/change-tone.ts:30
 #: apps/client/src/services/openai/fix-grammar.ts:28
 #: apps/client/src/services/openai/improve-writing.ts:28
@@ -1056,6 +1059,14 @@ msgstr "Vezměte prosím na vědomí, že tento krok je zcela nepovinný."
 msgid "Please select a file type"
 msgstr "Vyberte typ souboru"
 
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:82
+msgid "Please select a job location"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:60
+msgid "Please select a job type"
+msgstr ""
+
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:228
 msgid "Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app."
 msgstr "Prosím, uložte své záložní kódy do bezpečného umístění. Můžete použít jeden z těchto jednorázových kódů pro přihlášení v případě, že ztratíte přístup k vaší ověřovací aplikaci."
@@ -1122,7 +1133,7 @@ msgstr "Vyvolat problém"
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/builder/page.tsx:43
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
-#: apps/client/src/pages/dashboard/settings/page.tsx:16
+#: apps/client/src/pages/dashboard/settings/page.tsx:14
 #: apps/client/src/pages/home/components/footer.tsx:18
 #: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
 #: apps/client/src/pages/home/page.tsx:24
@@ -1212,7 +1223,7 @@ msgstr "Zaobleno"
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:168
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:131
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:116
 msgid "Save Changes"
 msgstr "Uložit změny"
 
@@ -1267,8 +1278,8 @@ msgstr ""
 
 #: apps/client/src/components/user-options.tsx:32
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
-#: apps/client/src/pages/dashboard/settings/page.tsx:16
-#: apps/client/src/pages/dashboard/settings/page.tsx:26
+#: apps/client/src/pages/dashboard/settings/page.tsx:14
+#: apps/client/src/pages/dashboard/settings/page.tsx:24
 msgid "Settings"
 msgstr "Nastavení"
 
@@ -1418,6 +1429,11 @@ msgstr "Podporuje A4/Letter formáty stránky"
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:85
 msgid "System"
 msgstr "Systém"
+
+#: apps/client/src/pages/home/page.tsx:24
+#: apps/client/src/pages/home/sections/hero/index.tsx:36
+msgid "Talent Resume"
+msgstr "Bezplatný nástroj pro tvorbu životopisů s otevřeným zdrojovým kódem"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:62
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
@@ -1618,10 +1634,6 @@ msgstr "Ověřte, že dvoufaktorové ověření bylo správně nastaveno"
 msgid "Verify your email address"
 msgstr "Ověřte svou e-mailovou adresu"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:26
-msgid "Version 4"
-msgstr "Verze 4"
-
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:51
 msgid "Views"
 msgstr "Zobrazení"
@@ -1648,9 +1660,9 @@ msgstr "Ověřujeme vaši e-mailovou adresu pouze proto, abychom se ujistili, ž
 msgid "Website"
 msgstr "Webová stránka"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:32
-msgid "What's new in the latest version"
-msgstr "Co je nového v nejnovější verzi"
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:17
+msgid "Work Status"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:157
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
@@ -1711,4 +1723,3 @@ msgstr "Přiblížit"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "Oddálit"
-

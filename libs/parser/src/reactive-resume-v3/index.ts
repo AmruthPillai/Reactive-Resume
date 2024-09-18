@@ -14,6 +14,7 @@ import {
   defaultResumeData,
   defaultSkill,
   defaultVolunteer,
+  JobType,
 } from "@reactive-resume/schema";
 import { isUrl, Json } from "@reactive-resume/utils";
 import { Schema } from "zod";
@@ -71,6 +72,12 @@ export class ReactiveResumeV3Parser implements Parser<Json, ReactiveResumeV3> {
       (typeof data.basics.summary === "string" ? data.basics.summary : data.basics.summary?.body) ??
       "";
     result.basics.picture.url = isUrl(data.basics.photo.url) ? data.basics.photo.url! : "";
+
+    //WorkStatus
+    result.workStatus.openToWork = data.workStatus.openToWork ?? false;
+    result.workStatus.pricing = data.workStatus.pricing ?? null;
+    result.workStatus.jobType = data.workStatus.jobType ?? JobType.REMOTE;
+    result.workStatus.jobLocation = data.workStatus.jobLocation ?? "";
 
     // Profiles
     if (data.basics.profiles && data.basics.profiles.length > 0) {
