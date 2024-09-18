@@ -16,8 +16,8 @@ export enum JobLocation {
 export const workStatusSchema = z.object({
   openToWork: z.boolean().default(false),
   pricing: z.number().optional(),
-  jobType: z.nativeEnum(JobType).default(JobType.remote),
-  jobLocation: z.nativeEnum(JobLocation).default(JobLocation.hanoi),
+  jobType: z.nativeEnum(JobType).default(JobType.onsite),
+  jobLocation: z.string().default(""),
 });
 
 // Type
@@ -26,7 +26,7 @@ export type WorkStatus = z.infer<typeof workStatusSchema>;
 // Defaults
 export const defaultWorkStatus: WorkStatus = {
   openToWork: false,
-  pricing: 0,
+  pricing: undefined,
   jobType: JobType.onsite,
-  jobLocation: JobLocation.hanoi,
+  jobLocation: "",
 };

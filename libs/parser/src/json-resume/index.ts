@@ -73,9 +73,9 @@ export class JsonResumeParser implements Parser<Json, JsonResume> {
 
     //WorkStatus
     result.workStatus.openToWork = false;
-    result.workStatus.pricing = 0;
+    result.workStatus.pricing = null;
     result.workStatus.jobType = JobType.remote;
-    result.workStatus.jobLocation = JobLocation.hanoi;
+    result.workStatus.jobLocation = "";
 
     // Profiles
     if (data.basics?.profiles) {

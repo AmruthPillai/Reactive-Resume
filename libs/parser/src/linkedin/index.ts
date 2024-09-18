@@ -88,9 +88,9 @@ export class LinkedInParser implements Parser<JSZip, LinkedIn> {
 
     //WorkStatus
     result.workStatus.openToWork = false;
-    result.workStatus.pricing = 0;
+    result.workStatus.pricing = null;
     result.workStatus.jobType = JobType.remote;
-    result.workStatus.jobLocation = JobLocation.hanoi;
+    result.workStatus.jobLocation = "";
 
     // Email Addresses
     if (data["Email Addresses"] && data["Email Addresses"].length > 0) {

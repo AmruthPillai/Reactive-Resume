@@ -1,13 +1,24 @@
 import { t } from "@lingui/macro";
-import { Input, Label, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Switch } from "@reactive-resume/ui";
+import {
+  Input,
+  Label,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+  Switch,
+} from "@reactive-resume/ui";
 
+import { useLocations } from "@/client/services/location/locations";
 import { useResumeStore } from "@/client/stores/resume";
 
-import { getSectionIcon } from "./shared/section-icon";
+import { getSectionIcon } from "./section-icon";
 
 export const WorkStatusSection = () => {
   const setValue = useResumeStore((state) => state.setValue);
   const workStatus = useResumeStore((state) => state.resume.data.workStatus);
+  const { locations, loading } = useLocations();
 
   return (
     <section id="workStatus" className="grid gap-y-6">
@@ -39,8 +50,8 @@ export const WorkStatusSection = () => {
                 <Input
                   id="workStatus.pricing"
                   type={"number"}
-                  className="relative text-right"
-                  value={Number(workStatus.pricing)}
+                  className="text-right"
+                  value={Number(workStatus.pricing).toString()}
                   onChange={(event) => {
                     setValue("workStatus.pricing", Number(event.target.value));
                   }}
@@ -83,11 +94,14 @@ export const WorkStatusSection = () => {
                 </SelectTrigger>
                 <SelectContent>
                   {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
-                  <SelectItem value="hanoi">Ha Noi</SelectItem>
+                  {/* <SelectItem value="hanoi">Ha Noi</SelectItem> */}
                   {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
-                  <SelectItem value="danang">Da Nang</SelectItem>
+                  {/* <SelectItem value="danang">Da Nang</SelectItem> */}
                   {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
-                  <SelectItem value="tpHCM">Tp Ho Chi Minh</SelectItem>
+                  {/* <SelectItem value="tpHCM">Tp Ho Chi Minh</SelectItem> */}
+                  {locations?.map((location) => (
+                    <SelectItem value={location.name}>{location.name}</SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </div>

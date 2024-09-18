@@ -75,14 +75,10 @@ export class ReactiveResumeV3Parser implements Parser<Json, ReactiveResumeV3> {
     result.basics.picture.url = isUrl(data.basics.photo.url) ? data.basics.photo.url! : "";
 
     //WorkStatus
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     result.workStatus.openToWork = data.workStatus.openToWork ?? false;
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-    result.workStatus.pricing = data.workStatus.pricing ?? 0;
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    result.workStatus.pricing = data.workStatus.pricing ?? null;
     result.workStatus.jobType = data.workStatus.jobType ?? JobType.remote;
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-    result.workStatus.jobLocation = data.workStatus.jobLocation ?? JobLocation.hanoi;
+    result.workStatus.jobLocation = data.workStatus.jobLocation ?? "";
 
     // Profiles
     if (data.basics.profiles && data.basics.profiles.length > 0) {

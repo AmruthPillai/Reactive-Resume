@@ -1,4 +1,4 @@
-import { JobLocation, JobType } from "@reactive-resume/schema";
+import { JobType } from "@reactive-resume/schema";
 import { z } from "zod";
 
 const dateSchema = z
@@ -51,9 +51,9 @@ const basicsSchema = z.object({
 
 const workStatusSchema = z.object({
   openToWork: z.boolean().default(false),
-  pricing: z.number().default(0),
+  pricing: z.number().optional(),
   jobType: z.nativeEnum(JobType).default(JobType.onsite),
-  jobLocation: z.nativeEnum(JobLocation).default(JobLocation.hanoi),
+  jobLocation: z.string().default(""),
 });
 
 const sectionSchema = z.object({

@@ -27,8 +27,8 @@ import { useResumeStore } from "@/client/stores/resume";
 import { BasicsSection } from "./sections/basics";
 import { SectionBase } from "./sections/shared/section-base";
 import { SectionIcon } from "./sections/shared/section-icon";
+import { WorkStatusSection } from "./sections/shared/work-status";
 import { SummarySection } from "./sections/summary";
-import { WorkStatusSection } from "./sections/workStatus";
 
 export const LeftSidebar = () => {
   const containterRef = useRef<HTMLDivElement | null>(null);

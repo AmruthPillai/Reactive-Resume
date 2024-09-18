@@ -3,7 +3,7 @@ import { z } from "zod";
 import { basicsSchema, defaultBasics } from "./basics";
 import { defaultMetadata, metadataSchema } from "./metadata";
 import { defaultSections, sectionsSchema } from "./sections";
-import { defaultWorkStatus, workStatusSchema } from "./workStatus";
+import { defaultWorkStatus, workStatusSchema } from "./work-status";
 
 // Schema
 export const resumeDataSchema = z.object({
@@ -29,4 +29,4 @@ export * from "./metadata";
 export * from "./sample";
 export * from "./sections";
 export * from "./shared";
-export * from "./workStatus";
+export * from "./work-status";
