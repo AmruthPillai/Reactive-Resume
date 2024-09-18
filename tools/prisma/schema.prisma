@@ -78,3 +78,8 @@ model Statistics {
 
   @@unique([resumeId, id])
 }
+
+model Locations {
+  id        String   @id @default(cuid())
+  name      String
+}

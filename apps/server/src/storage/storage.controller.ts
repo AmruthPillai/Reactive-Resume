@@ -1,6 +1,9 @@
 import {
   BadRequestException,
+  Body,
   Controller,
+  Get,
+  Post,
   Put,
   UploadedFile,
   UseGuards,
@@ -8,6 +11,7 @@ import {
 } from "@nestjs/common";
 import { FileInterceptor } from "@nestjs/platform-express";
 import { ApiTags } from "@nestjs/swagger";
+import { Prisma } from "@prisma/client";
 
 import { TwoFactorGuard } from "@/server/auth/guards/two-factor.guard";
 import { User } from "@/server/user/decorators/user.decorator";
@@ -30,5 +34,15 @@ export class StorageController {
     }
 
     return this.storageService.uploadObject(userId, "pictures", file.buffer, userId);
+  }
+
+  @Get("locations")
+  locations() {
+    return this.storageService.locations();
+  }
+
+  @Post("locations")
+  newLocations(@Body() data: Prisma.LocationsCreateInput) {
+    return this.storageService.newLocations(data);
   }
 }

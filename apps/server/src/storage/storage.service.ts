@@ -2,9 +2,11 @@ import { Injectable, InternalServerErrorException, Logger, OnModuleInit } from "
 import { ConfigService } from "@nestjs/config";
 import { createId } from "@paralleldrive/cuid2";
 import { MinioClient, MinioService } from "nestjs-minio-client";
+import { PrismaService } from "nestjs-prisma";
 import sharp from "sharp";
 
 import { Config } from "../config/schema";
+import { Prisma } from "@prisma/client";
 
 // Objects are stored under the following path in the bucket:
 // "<bucketName>/<userId>/<type>/<fileName>",
@@ -43,6 +45,7 @@ export class StorageService implements OnModuleInit {
   constructor(
     private readonly configService: ConfigService<Config>,
     private readonly minioService: MinioService,
+    private readonly prisma: PrismaService,
   ) {}
 
   async onModuleInit() {
@@ -174,5 +177,13 @@ export class StorageService implements OnModuleInit {
         `There was an error while deleting the folder at the specified path: ${this.bucketName}/${prefix}.`,
       );
     }
+  }
+  async locations() {
+    return await this.prisma.locations.findMany();
+  }
+  async newLocations(data: Prisma.LocationsCreateInput) {
+    return await this.prisma.locations.create({
+      data: data,
+    });
   }
 }
