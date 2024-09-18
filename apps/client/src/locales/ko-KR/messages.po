@@ -54,13 +54,8 @@ msgstr "<0>현재 2단계 인증은 비활성화되어 있습니다.</0> 계정�
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr "<0>2단계 인증이 활성화되었습니다.</0> 로그인할 때마다 코드를 입력하라는 메시지가 표시됩니다."
 
-#: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/home/sections/hero/index.tsx:40
-msgid "Talent Resume"
-msgstr "무료, 오픈 소스 이력서 작성 도구"
-
 #: apps/client/src/pages/home/components/footer.tsx:21
-#: apps/client/src/pages/home/sections/hero/index.tsx:45
+#: apps/client/src/pages/home/sections/hero/index.tsx:40
 msgid "A free resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "이력서 작성, 업데이트 및 공유를 간단하게 할 수 있는 무료 오픈 소스 이력서 작성 도구입니다."
 
@@ -112,8 +107,8 @@ msgstr "새 항목 추가"
 msgid "Add a new item"
 msgstr "새 항목 추가"
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:146
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:263
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:153
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:272
 msgid "Add a new section"
 msgstr "새 섹션 추가"
 
@@ -209,7 +204,7 @@ msgstr "백업 코드"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "백업 코드는 소문자 또는 숫자만 포함할 수 있으며 정확히 10자여야 합니다."
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:55
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:56
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
 msgid "Basics"
 msgstr "기본 사항"
@@ -420,7 +415,7 @@ msgstr "2FA 비활성화"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:304
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:134
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
 msgid "Discard"
 msgstr "폐기"
@@ -436,10 +431,6 @@ msgstr "계정이 없으신가요?"
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:83
 msgid "Don't know where to begin? Hit the docs!"
 msgstr "어디서부터 시작해야 할지 모르시겠어요? 문서를 시작하세요!"
-
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:107
-msgid "Don't see your language? <0>Help translate the app.</0>"
-msgstr "귀하의 언어가 표시되지 않습니까? <0>앱 번역을 도와주세요.</0>"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:40
 msgid "Donate to Reactive Resume"
@@ -530,6 +521,10 @@ msgstr "오류"
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Reactive Resume has helped you. Your feedback and support are always welcome and much appreciated!"
 msgstr "재정적으로 기여하지 않으셔도 GitHub 저장소에 별점을 주거나, 친구들에게 알리거나, Reactive Resume가 어떻게 도움이 되었는지 메시지로 알려주시면 더욱 발전 할 수 있습니다. 귀하의 피드백과 지원은 언제나 환영이며 많은 감사를 드립니다!"
 
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:37
+msgid "Expected Pricing"
+msgstr ""
+
 #: apps/client/src/pages/home/sections/templates/index.tsx:12
 msgid "Explore the templates available in Reactive Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
 msgstr "Reactive Resume 에서 사용할 수 있는 템플릿을 살펴보고 이 템플릿으로 만든 이력서를 확인하세요. 다음 이력서를 작성할 때 참고할 수 있는 예시로도 사용할 수 있습니다."
@@ -546,10 +541,6 @@ msgstr "파일"
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:223
 msgid "Filetype"
 msgstr "파일 유형"
-
-#: apps/client/src/pages/home/sections/hero/index.tsx:38
-msgid "Finally,"
-msgstr "마지막으로,"
 
 #: apps/client/src/components/ai-actions.tsx:90
 msgid "Fix Spelling & Grammar"
@@ -774,6 +765,14 @@ msgstr "입력하신 인증 토큰이 유효하지 않은 것 같습니다. 인�
 msgid "It looks like your email address has already been verified."
 msgstr "이메일 주소가 이미 인증된 것 같습니다."
 
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:74
+msgid "Job Location"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:52
+msgid "Job Type"
+msgstr ""
+
 #: apps/client/src/pages/auth/register/page.tsx:101
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
 msgid "John Doe"
@@ -982,6 +981,10 @@ msgstr "열기"
 msgid "Open Source"
 msgstr "오픈 소스"
 
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:24
+msgid "Open To Work"
+msgstr ""
+
 #: apps/client/src/services/openai/change-tone.ts:30
 #: apps/client/src/services/openai/fix-grammar.ts:28
 #: apps/client/src/services/openai/improve-writing.ts:28
@@ -1056,6 +1059,14 @@ msgstr "이 단계는 완전히 선택 사항이라는 점에 유의하세요."
 msgid "Please select a file type"
 msgstr "파일 유형을 선택하세요."
 
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:82
+msgid "Please select a job location"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:60
+msgid "Please select a job type"
+msgstr ""
+
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:228
 msgid "Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app."
 msgstr "백업 코드를 안전한 곳에 보관하세요. 인증 앱에 액세스할 수 없는 경우 이 일회용 코드 중 하나를 사용하여 로그인할 수 있습니다."
@@ -1122,7 +1133,7 @@ msgstr "문제 제기"
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/builder/page.tsx:43
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
-#: apps/client/src/pages/dashboard/settings/page.tsx:16
+#: apps/client/src/pages/dashboard/settings/page.tsx:14
 #: apps/client/src/pages/home/components/footer.tsx:18
 #: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
 #: apps/client/src/pages/home/page.tsx:24
@@ -1209,7 +1220,7 @@ msgstr "둥근"
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:168
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:131
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:116
 msgid "Save Changes"
 msgstr "변경 사항 저장"
 
@@ -1264,8 +1275,8 @@ msgstr ""
 
 #: apps/client/src/components/user-options.tsx:32
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
-#: apps/client/src/pages/dashboard/settings/page.tsx:16
-#: apps/client/src/pages/dashboard/settings/page.tsx:26
+#: apps/client/src/pages/dashboard/settings/page.tsx:14
+#: apps/client/src/pages/dashboard/settings/page.tsx:24
 msgid "Settings"
 msgstr "설정"
 
@@ -1415,6 +1426,11 @@ msgstr "A4/레터 페이지 형식 지원"
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:85
 msgid "System"
 msgstr "시스템"
+
+#: apps/client/src/pages/home/page.tsx:24
+#: apps/client/src/pages/home/sections/hero/index.tsx:36
+msgid "Talent Resume"
+msgstr "무료, 오픈 소스 이력서 작성 도구"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:62
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
@@ -1615,10 +1631,6 @@ msgstr "2단계 인증이 올바르게 설정되었는지 확인합니다."
 msgid "Verify your email address"
 msgstr "이메일 주소 확인"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:26
-msgid "Version 4"
-msgstr "버전 4"
-
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:51
 msgid "Views"
 msgstr "조회수"
@@ -1645,9 +1657,9 @@ msgstr "비밀번호를 잊어버린 경우 비밀번호 재설정 링크를 보
 msgid "Website"
 msgstr "웹사이트"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:32
-msgid "What's new in the latest version"
-msgstr "최신 버전의 새로운 기능"
+#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:17
+msgid "Work Status"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:157
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
@@ -1708,4 +1720,3 @@ msgstr "줌인"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "줌 아웃"
-

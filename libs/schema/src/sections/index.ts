@@ -90,7 +90,7 @@ export const sectionsSchema = z.object({
 export type Section = z.infer<typeof sectionSchema>;
 export type Sections = z.infer<typeof sectionsSchema>;
 
-export type SectionKey = "basics" | keyof Sections | `custom.${string}`;
+export type SectionKey = "basics" | keyof Sections | `custom.${string}` | "workStatus";
 export type SectionWithItem<T = unknown> = Sections[FilterKeys<Sections, { items: T[] }>];
 export type SectionItem = SectionWithItem["items"][number];
 export type CustomSectionGroup = z.infer<typeof customSchema>;

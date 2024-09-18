@@ -1,3 +1,4 @@
+import { JobLocation, JobType } from "@reactive-resume/schema";
 import { z } from "zod";
 
 const dateSchema = z
@@ -46,6 +47,13 @@ const basicsSchema = z.object({
       grayscale: z.boolean(),
     }),
   }),
+});
+
+const workStatusSchema = z.object({
+  openToWork: z.boolean().default(false),
+  pricing: z.number().default(0),
+  jobType: z.nativeEnum(JobType).default(JobType.onsite),
+  jobLocation: z.nativeEnum(JobLocation).default(JobLocation.hanoi),
 });
 
 const sectionSchema = z.object({
@@ -223,6 +231,7 @@ export const reactiveResumeV3Schema = z.object({
       .optional(),
   }),
   metadata: metadataSchema,
+  workStatus: workStatusSchema,
 });
 
 export type ReactiveResumeV3 = z.infer<typeof reactiveResumeV3Schema>;
