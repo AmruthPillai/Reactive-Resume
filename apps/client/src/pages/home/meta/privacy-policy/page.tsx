@@ -7,7 +7,7 @@ export const PrivacyPolicyPage = () => (
   <main className="relative isolate bg-background">
     <Helmet prioritizeSeoTags>
       <title>
-        {t`Privacy Policy`} - {t`Reactive Resume`}
+        {t`Privacy Policy`} - {t`Talent Hub`}
       </title>
 
       <meta
@@ -30,8 +30,8 @@ export const PrivacyPolicyPage = () => (
           <h2 className="mb-2">Introduction</h2>
           <p>
             This privacy policy outlines how we collect, use, and protect the personal information
-            you provide when using our web application. By accessing or using Reactive Resume, you
-            agree to the collection and use of information in accordance with this policy.
+            you provide when using our web application. By accessing or using Talent Hub, you agree
+            to the collection and use of information in accordance with this policy.
           </p>
         </li>
 
@@ -66,7 +66,7 @@ export const PrivacyPolicyPage = () => (
         <li>
           <h2 className="mb-2">Data Security</h2>
           <p>
-            Reactive Resume is committed to ensuring the security of your data. Our application and
+            Talent Hub is committed to ensuring the security of your data. Our application and
             database are hosted on a secure server from DigitalOcean, which has both SOC 2 and SOC 3
             compliance, ensuring that your data is protected with industry-standard security
             measures.

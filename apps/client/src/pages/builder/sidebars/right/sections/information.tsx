@@ -19,8 +19,8 @@ const DonateCard = () => (
       <CardDescription className="space-y-2">
         <Trans>
           <p>
-            I built Reactive Resume mostly by myself during my spare time, with a lot of help from
-            other great open-source contributors.
+            I built Talent Hub mostly by myself during my spare time, with a lot of help from other
+            great open-source contributors.
           </p>
           <p>
             If you like the app and want to support keeping it free forever, please donate whatever
@@ -37,7 +37,7 @@ const DonateCard = () => (
         target="_blank"
       >
         <HandHeart size={14} weight="bold" className="mr-2" />
-        <span className="line-clamp-1">{t`Donate to Reactive Resume`}</span>
+        <span className="line-clamp-1">{t`Donate to Talent Hub`}</span>
       </a>
     </CardFooter>
   </Card>
@@ -84,8 +84,8 @@ const DocumentationCard = () => (
       <CardDescription className="space-y-2">
         <Trans>
           <p>
-            The community has spent a lot of time writing the documentation for Reactive Resume, and
-            I'm sure it will help you get started with the app.
+            The community has spent a lot of time writing the documentation for Talent Hub, and I'm
+            sure it will help you get started with the app.
           </p>
           <p>
             There are also a lot of examples to help you get started, and features that you might

@@ -11,7 +11,7 @@ export const SettingsPage = () => (
   <>
     <Helmet>
       <title>
-        {t`Settings`} - {t`Reactive Resume`}
+        {t`Settings`} - {t`Talent Hub`}
       </title>
     </Helmet>
 

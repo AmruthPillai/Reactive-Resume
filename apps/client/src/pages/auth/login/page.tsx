@@ -52,7 +52,7 @@ export const LoginPage = () => {
     <div className="space-y-8">
       <Helmet>
         <title>
-          {t`Sign in to your account`} - {t`Reactive Resume`}
+          {t`Sign in to your account`} - {t`Talent Hub`}
         </title>
       </Helmet>
 

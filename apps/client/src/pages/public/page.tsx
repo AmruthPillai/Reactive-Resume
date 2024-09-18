@@ -7,7 +7,7 @@ import { useCallback, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, LoaderFunction, redirect, useLoaderData } from "react-router-dom";
 
-import { Icon } from "@/client/components/icon";
+// import { Icon } from "@/client/components/icon";
 import { ThemeSwitch } from "@/client/components/theme-switch";
 import { queryClient } from "@/client/libs/query-client";
 import { findResumeByUsernameSlug, usePrintResume } from "@/client/services/resume";
@@ -70,7 +70,7 @@ export const PublicResumePage = () => {
     <div>
       <Helmet>
         <title>
-          {title} - {t`Reactive Resume`}
+          {title} - {t`Talent Hub`}
         </title>
       </Helmet>
 
@@ -90,8 +90,8 @@ export const PublicResumePage = () => {
         <Link to="/">
           <Button size="sm" variant="ghost" className="space-x-1.5 text-xs font-normal">
             <span>{t`Built with`}</span>
-            <Icon size={12} />
-            <span>{t`Reactive Resume`}</span>
+            {/* <Icon size={12} /> */}
+            <span>{t`Talent Resume`}</span>
           </Button>
         </Link>
       </div>

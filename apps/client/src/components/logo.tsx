@@ -16,7 +16,7 @@ export const Logo = ({ size = 32, className }: Props) => {
       src={src}
       width={size}
       height={size}
-      alt="Reactive Resume"
+      alt="Talent Hub"
       className={cn("rounded-sm", className)}
     />
   );

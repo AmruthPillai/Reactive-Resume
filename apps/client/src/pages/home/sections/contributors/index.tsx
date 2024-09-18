@@ -19,7 +19,7 @@ export const ContributorsSection = () => {
       <div className="space-y-6 text-center">
         <h1 className="text-4xl font-bold">{t`By the community, for the community.`}</h1>
         <p className="mx-auto max-w-3xl leading-loose">
-          {t`Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience.`}
+          {t`Talent Hub thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience.`}
         </p>
       </div>
 

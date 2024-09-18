@@ -6,11 +6,11 @@ import { cn } from "@reactive-resume/utils";
 
 import { useLanguages } from "@/client/services/resume/translation";
 
-// Who are you, and why did you build Reactive Resume?
+// Who are you, and why did you build Talent Hub?
 const Question1 = () => (
   <AccordionItem value="1">
     <AccordionTrigger className="text-left leading-relaxed">
-      Who are you, and why did you build Reactive Resume?
+      Who are you, and why did you build Talent Hub?
     </AccordionTrigger>
     <AccordionContent className="prose max-w-none dark:prose-invert">
       <p>
@@ -28,40 +28,39 @@ const Question1 = () => (
 
       <p>
         While I could have charged everyone a hefty sum and retired even before I began, I decided
-        to build the first version of Reactive Resume in 2019. Since then, it's gone through
-        multiple iterations as I've learned a lot of better coding practices over the years.
+        to build the first version of Talent Hub in 2019. Since then, it's gone through multiple
+        iterations as I've learned a lot of better coding practices over the years.
       </p>
 
       <p>
-        At the time of writing, Reactive Resume is probably one of the only handful of resume
-        builders out there available to the world for free and without an annoying paywall at the
-        end. While being free is often associated with software that's not of good quality, I strive
-        to prove them wrong and build a product that people love using and are benefitted by it.
+        At the time of writing, Talent Hub is probably one of the only handful of resume builders
+        out there available to the world for free and without an annoying paywall at the end. While
+        being free is often associated with software that's not of good quality, I strive to prove
+        them wrong and build a product that people love using and are benefitted by it.
       </p>
 
       <p>
         My dream has always been to build something that at least a handful people use on a daily
-        basis, and I'm extremely proud to say that Reactive Resume, over it's years of development,
-        has <strong>helped over half a million people build their resume</strong>, and I hope it
-        only increases from here and reaches more people who are in need of a good resume to
-        kickstart their career.
+        basis, and I'm extremely proud to say that Talent Hub, over it's years of development, has{" "}
+        <strong>helped over half a million people build their resume</strong>, and I hope it only
+        increases from here and reaches more people who are in need of a good resume to kickstart
+        their career.
       </p>
     </AccordionContent>
   </AccordionItem>
 );
 
-// How much does it cost to run Reactive Resume?
+// How much does it cost to run Talent Hub?
 const Question2 = () => (
   <AccordionItem value="2">
     <AccordionTrigger className="text-left leading-relaxed">
-      How much does it cost to run Reactive Resume?
+      How much does it cost to run Talent Hub?
     </AccordionTrigger>
     <AccordionContent className="prose max-w-none dark:prose-invert">
       <p>
         It's not much honestly. <a href="https://pillai.xyz/digitalocean">DigitalOcean</a> has
-        graciously sponsored their infrastructure to allow me to host Reactive Resume on their
-        platform. There's only the fee I pay to dependent services to send emails, renew the domain,
-        etc.
+        graciously sponsored their infrastructure to allow me to host Talent Hub on their platform.
+        There's only the fee I pay to dependent services to send emails, renew the domain, etc.
       </p>
 
       <p>
@@ -111,8 +110,8 @@ const Question3 = () => (
         <strong>If you work in the media, are an influencer or have lots of friends</strong>, share
         the app with your circles and let them know so it can reach the people who need it the most.
         I'm also <a href="mailto:hello@amruthpillai.com">open to giving tech talks</a>, although
-        that's wishful thinking. But if you do mention Reactive Resume on your blog, let me know so
-        that I can link back to you here.
+        that's wishful thinking. But if you do mention Talent Hub on your blog, let me know so that
+        I can link back to you here.
       </p>
 
       <p>
@@ -131,18 +130,18 @@ const Question3 = () => (
   </AccordionItem>
 );
 
-// What languages are supported on Reactive Resume?
+// What languages are supported on Talent Hub?
 const Question4 = () => {
   const { languages } = useLanguages();
 
   return (
     <AccordionItem value="4">
       <AccordionTrigger className="text-left leading-relaxed">
-        What languages are supported on Reactive Resume?
+        What languages are supported on Talent Hub?
       </AccordionTrigger>
       <AccordionContent className="prose max-w-none dark:prose-invert">
         <p>
-          Here are the languages currently supported by Reactive Resume, along with their respective
+          Here are the languages currently supported by Talent Hub, along with their respective
           completion percentages.
         </p>
 
@@ -201,8 +200,8 @@ const Question5 = () => (
     <AccordionContent className="prose max-w-none dark:prose-invert">
       <p>
         OpenAI has been a game-changer for all of us. I cannot tell you how much ChatGPT has helped
-        me in my everyday work and with the development of Reactive Resume. It only makes sense that
-        you leverage what AI has to offer and let it help you build the perfect resume.
+        me in my everyday work and with the development of Talent Hub. It only makes sense that you
+        leverage what AI has to offer and let it help you build the perfect resume.
       </p>
 
       <p>
@@ -216,9 +215,9 @@ const Question5 = () => (
 
       <p>
         You are free to turn off all AI features (and not be aware of it's existence) simply by not
-        adding a key in the Settings page and still make use of all the useful features that
-        Reactive Resume has to offer. I would even suggest you to take the extra step of using
-        ChatGPT to write your content, and simply copy it over to Reactive Resume.
+        adding a key in the Settings page and still make use of all the useful features that Talent
+        Hub has to offer. I would even suggest you to take the extra step of using ChatGPT to write
+        your content, and simply copy it over to Talent Hub.
       </p>
     </AccordionContent>
   </AccordionItem>
@@ -231,7 +230,7 @@ export const FAQSection = () => (
         <h2 className="text-4xl font-bold">Frequently Asked Questions</h2>
 
         <p className="text-base leading-loose">
-          Here are some questions I often get asked about Reactive Resume.
+          Here are some questions I often get asked about Talent Hub.
         </p>
 
         <p className="text-sm leading-loose">
