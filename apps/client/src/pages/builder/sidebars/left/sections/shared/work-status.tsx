@@ -1,4 +1,5 @@
 import { t } from "@lingui/macro";
+import { JobType } from "@reactive-resume/schema";
 import {
   Input,
   Label,
@@ -72,11 +73,14 @@ export const WorkStatusSection = () => {
                 </SelectTrigger>
                 <SelectContent>
                   {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
-                  <SelectItem value="remote">Remote</SelectItem>
+                  {/* <SelectItem value="remote">Remote</SelectItem> */}
                   {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
-                  <SelectItem value="onsite">Onsite</SelectItem>
+                  {/* <SelectItem value="onsite">Onsite</SelectItem> */}
                   {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
-                  <SelectItem value="hybrid">Hybrid</SelectItem>
+                  {/* <SelectItem value="hybrid">Hybrid</SelectItem> */}
+                  {Object.values(JobType).map((type) => (
+                     <SelectItem value={type}>{type}</SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </div>
