@@ -1,7 +1,7 @@
 import { type Dispatch, type SetStateAction, useEffect, useState } from "react";
 import { useLocalStorage, useMediaQuery } from "usehooks-ts";
 
-const COLOR_SCHEME_QUERY = "(prefers-color-scheme: dark)";
+const COLOR_SCHEME_QUERY = "(prefers-color-scheme: light)";
 
 type Theme = "system" | "dark" | "light";
 
@@ -15,7 +15,7 @@ type UseThemeOutput = {
 export const useTheme = (): UseThemeOutput => {
   const isDarkOS = useMediaQuery(COLOR_SCHEME_QUERY);
   const [isDarkMode, setDarkMode] = useState<boolean>(isDarkOS);
-  const [theme, setTheme] = useLocalStorage<Theme>("theme", "system");
+  const [theme, setTheme] = useLocalStorage<Theme>("theme", "light");
 
   useEffect(() => {
     if (theme === "system") setDarkMode((prev) => !prev);
