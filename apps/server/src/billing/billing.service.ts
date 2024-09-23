@@ -16,4 +16,16 @@ export class BillingService {
       update: subscription,
     });
   }
+
+  async updateUserSubscriptionByCustomerId(
+    customerId: string,
+    subscription: Prisma.SubscriptionUpdateWithoutUserInput,
+  ) {
+    return this.prisma.subscription.update({
+      data: subscription,
+      where: {
+        customerId: customerId,
+      },
+    });
+  }
 }

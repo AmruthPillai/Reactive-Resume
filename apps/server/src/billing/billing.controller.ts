@@ -48,4 +48,37 @@ export class BillingController {
 
     return subscription;
   }
+
+  @Post("/cancel")
+  async cancel(@Body() body: BillingEntity[]) {
+    console.log(body);
+    return await this.billingService.updateUserSubscriptionByCustomerId(
+      String(body[0].Properties.Billing_Customer[0].ID),
+      {
+        isCanceled: true,
+        nextBillingDate: body[0].Properties.Billing_Date_NextBilling[0],
+      },
+    );
+  }
 }
+
+type BillingEntity = {
+  Folder: number;
+  EntityID: number;
+  Type: string;
+  Properties: BillingProperties;
+};
+
+type BillingProperties = {
+  Billing_StatusEnum: number[];
+  Billing_Date_NextBilling: string[];
+  Billing_Customer: BillingCustomer[];
+};
+
+type BillingCustomer = {
+  ID: number;
+  Name: string;
+  Version: number;
+  Status: number;
+  SchemaID: number;
+};
