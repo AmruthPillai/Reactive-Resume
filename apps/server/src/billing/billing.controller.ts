@@ -17,7 +17,7 @@ export class BillingController {
 
   @UseGuards(TwoFactorGuard)
   @Post("/subscribe")
-  async subscripbe(
+  async subscribe(
     @User() user: UserEntity,
     @Body() body: { userId: string; extCustomerId?: string; extPaymentId?: string },
   ) {
@@ -50,13 +50,13 @@ export class BillingController {
   }
 
   @Post("/cancel")
-  async cancel(@Body() body: BillingEntity[]) {
+  async cancel(@Body() body: BillingEntity) {
     console.log(body);
     return await this.billingService.updateUserSubscriptionByCustomerId(
-      String(body[0].Properties.Billing_Customer[0].ID),
+      String(body.Properties.Billing_Customer[0].ID),
       {
         isCanceled: true,
-        nextBillingDate: body[0].Properties.Billing_Date_NextBilling[0],
+        nextBillingDate: body.Properties.Billing_Date_NextBilling[0],
       },
     );
   }
