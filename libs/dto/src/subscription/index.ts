@@ -8,6 +8,7 @@ export const subscriptionSchema = z.object({
   isCanceled: z.boolean().default(false),
   isPro: z.boolean().default(false),
   customerPageUrl: z.string().optional().nullable(),
+  nextBillingDate: z.string().optional().nullable(),
 });
 
 export class SubscriptionDto extends createZodDto(subscriptionSchema) {}

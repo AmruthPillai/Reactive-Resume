@@ -77,6 +77,10 @@ const Billing = () => {
     window.location.href = customerPageUrl;
   }
 
+  const shouldShowCancelSubscription = subscription.isPro && !subscription.isCancelled;
+  const shouldShowUpgradeSubscription = !subscription.isPro;
+  const shouldShowResumeSubscription = subscription.isPro && subscription.isCancelled;
+
   return (
     <div>
       <h3 className="flex items-center text-2xl font-bold leading-relaxed tracking-tight">
@@ -96,9 +100,11 @@ const Billing = () => {
         <Separator className="my-4" />
 
         <h3 className="text-xl font-bold">{t`Manage Subscription`}</h3>
-        {subscription.isPro ? (
+        {shouldShowResumeSubscription && <CanceledCard nextBillingDate={"LALALA"} />}
+        {shouldShowCancelSubscription && (
           <ProCard onCancelSubscription={handleCancelSubscription} />
-        ) : (
+        )}
+        {shouldShowUpgradeSubscription && (
           <FreeCard onUpgradeSubscription={handleUpgradeSubscription} />
         )}
       </section>
@@ -135,6 +141,17 @@ const ProCard = ({ onCancelSubscription }: { onCancelSubscription: () => void })
           {t`Cancel Subscription`}
         </Button>
       </div>
+    </div>
+  );
+};
+
+const CanceledCard = ({ nextBillingDate }: { nextBillingDate: string }) => {
+  return (
+    <div>
+      <p className="mb-4 leading-relaxed opacity-75">
+        {t`Your subscription has been canceled, you can use premium features until the end of the billing cycle at`}{" "}
+        {nextBillingDate}
+      </p>
     </div>
   );
 };
