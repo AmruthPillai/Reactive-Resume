@@ -1,4 +1,5 @@
 import { openai } from "@ai-sdk/openai";
+import { HttpService } from "@nestjs/axios";
 import {
   BadRequestException,
   Injectable,
@@ -9,6 +10,7 @@ import { Prisma } from "@prisma/client";
 import {
   CreateAiResumeDto,
   CreateResumeDto,
+  ImportLinkedinDto,
   ImportResumeDto,
   ResumeDto,
   UpdateResumeDto,
@@ -33,6 +35,7 @@ import { StorageService } from "../storage/storage.service";
 export class ResumeService {
   constructor(
     private readonly prisma: PrismaService,
+    private readonly httpService: HttpService,
     private readonly printerService: PrinterService,
     private readonly storageService: StorageService,
   ) {}
@@ -63,7 +66,7 @@ export class ResumeService {
       model: openai("gpt-4o"),
       system: "You generate a resume",
       // here is a sample resume data (don't use data from here): ${JSON.stringify(defaultResumeData.basics)},
-      prompt: `Create a new resume from my existing resume for the job description., 
+      prompt: `Create a new resume from my existing resume for the job description.,
       here is my current resume: ${JSON.stringify(existingResume)},
       here is the job description: ${jobDescription}`,
       schema: leanBasicsSchema,
@@ -74,7 +77,7 @@ export class ResumeService {
       system: "You generate a resume",
       // here is a sample resume data (don't use data from here): ${JSON.stringify(defaultResumeData.basics)},
       prompt: `Create a new resume from my existing resume for the job description.,
-      here is my current resume: ${JSON.stringify(existingResume)}, 
+      here is my current resume: ${JSON.stringify(existingResume)},
       here is the job description: ${jobDescription}`,
       schema: leanSectionsSchema,
     });
@@ -130,6 +133,14 @@ export class ResumeService {
         slug: importResumeDto.slug ?? kebabCase(randomTitle),
       },
     });
+  }
+
+  async importLinkedin(userId: string, importLinkedinDto: ImportLinkedinDto) {
+    const scrapinApiKey = "sk_live_66f99a7e8ac17f07e526ba77_key_73s1bl1w6pc";
+    const linkedinScrapeURL = `https://api.scrapin.io/enrichment/profile?apikey=${scrapinApiKey}&linkedinUrl=${importLinkedinDto.linkedinURL}`;
+
+    const linkedinRes = await this.httpService.axiosRef.get(linkedinScrapeURL);
+    return linkedinRes.data;
   }
 
   findAll(userId: string) {
