@@ -1,4 +1,9 @@
-import { Injectable, InternalServerErrorException } from "@nestjs/common";
+import {
+  HttpException,
+  HttpStatus,
+  Injectable,
+  InternalServerErrorException,
+} from "@nestjs/common";
 import { Prisma } from "@prisma/client";
 import { ErrorMessage } from "@reactive-resume/utils";
 import { PrismaService } from "nestjs-prisma";
@@ -93,19 +98,17 @@ export class UserService {
    *
    */
 
-  async getRoles(identifier: string) {
-    let theUser = undefined;
-
+  async getRoles(identifier: string): Promise<string[]> {
     try {
-      theUser = await this.prisma.user.findFirstOrThrow({
-        where: {
-          OR: [{ id: identifier }, { email: identifier }],
-        },
-      });
+      return (
+        await this.prisma.user.findFirstOrThrow({
+          where: {
+            OR: [{ id: identifier }, { email: identifier }],
+          },
+        })
+      ).roles;
     } catch (error) {
-      throw new InternalServerErrorException();
+      throw new HttpException(error, HttpStatus.SERVICE_UNAVAILABLE);
     }
-
-    return theUser.roles;
   }
 }

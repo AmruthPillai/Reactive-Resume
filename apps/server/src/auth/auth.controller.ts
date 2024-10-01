@@ -2,7 +2,6 @@ import {
   BadRequestException,
   Body,
   Controller,
-  ForbiddenException,
   Get,
   HttpCode,
   InternalServerErrorException,
@@ -40,6 +39,9 @@ import { RefreshGuard } from "./guards/refresh.guard";
 import { TwoFactorGuard } from "./guards/two-factor.guard";
 import { getCookieOptions } from "./utils/cookie";
 import { payloadSchema } from "./utils/payload";
+import { RolesGuard } from "./guards/roles.guard";
+import { Role } from "./decorators/roles.decorator";
+import { Roles } from "./enums/roles.enum";
 
 @ApiTags("Authentication")
 @Controller("auth")
@@ -319,15 +321,9 @@ export class AuthController {
    * signin for admin
    */
   @Post("/sign_in")
-  @UseGuards(LocalGuard)
+  @Role(Roles.ADMIN)
+  @UseGuards(LocalGuard, RolesGuard)
   async signinAdmin(@User() user: UserWithSecrets, @Res({ passthrough: true }) response: Response) {
-    // check role
-    const isAdmin: boolean = await this.authService.hasRole(user.email, "admin");
-
-    if (!isAdmin) {
-      throw new ForbiddenException();
-    }
-
     return await this.handleAuthenticationResponse(user, response);
   }
 }
