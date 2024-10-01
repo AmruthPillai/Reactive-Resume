@@ -18,6 +18,11 @@ enum Visibility {
   private
 }
 
+enum Role {
+  user
+  admin
+}
+
 model User {
   id               String   @id @default(cuid())
   name             String
@@ -32,6 +37,7 @@ model User {
   provider         Provider
   secrets          Secrets?
   resumes          Resume[]
+  roles            Role[]   @default([user])
 }
 
 model Secrets {
@@ -80,6 +86,6 @@ model Statistics {
 }
 
 model Locations {
-  id        String   @id @default(cuid())
-  name      String
+  id   String @id @default(cuid())
+  name String
 }

@@ -39,6 +39,9 @@ import { RefreshGuard } from "./guards/refresh.guard";
 import { TwoFactorGuard } from "./guards/two-factor.guard";
 import { getCookieOptions } from "./utils/cookie";
 import { payloadSchema } from "./utils/payload";
+import { RolesGuard } from "./guards/roles.guard";
+import { Role } from "./decorators/roles.decorator";
+import { Roles } from "./enums/roles.enum";
 
 @ApiTags("Authentication")
 @Controller("auth")
@@ -312,5 +315,15 @@ export class AuthController {
     return {
       message: "You should have received a new email with a link to verify your email address.",
     };
+  }
+
+  /**
+   * signin for admin
+   */
+  @Post("/sign_in")
+  @Role(Roles.ADMIN)
+  @UseGuards(LocalGuard, RolesGuard)
+  async signinAdmin(@User() user: UserWithSecrets, @Res({ passthrough: true }) response: Response) {
+    return await this.handleAuthenticationResponse(user, response);
   }
 }

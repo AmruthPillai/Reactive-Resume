@@ -347,4 +347,13 @@ export class AuthService {
 
     return user as UserWithSecrets;
   }
+
+  /**
+   * check user has a specific role
+   */
+  async hasRole(identifier: string, role: string): Promise<boolean> {
+    const roles: string[] = await this.userService.getRoles(identifier);
+
+    return roles.includes(role);
+  }
 }
