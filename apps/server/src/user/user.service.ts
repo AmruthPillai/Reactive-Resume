@@ -86,4 +86,26 @@ export class UserService {
 
     return this.prisma.user.delete({ where: { id } });
   }
+
+  /**
+   *
+   * get roles by identifier(id or email)
+   *
+   */
+
+  async getRoles(identifier: string) {
+    let theUser = undefined;
+
+    try {
+      theUser = await this.prisma.user.findFirstOrThrow({
+        where: {
+          OR: [{ id: identifier }, { email: identifier }],
+        },
+      });
+    } catch (error) {
+      throw new InternalServerErrorException();
+    }
+
+    return theUser.roles;
+  }
 }

@@ -2,6 +2,7 @@ import {
   BadRequestException,
   Body,
   Controller,
+  ForbiddenException,
   Get,
   HttpCode,
   InternalServerErrorException,
@@ -312,5 +313,21 @@ export class AuthController {
     return {
       message: "You should have received a new email with a link to verify your email address.",
     };
+  }
+
+  /**
+   * signin for admin
+   */
+  @Post("/sign_in")
+  @UseGuards(LocalGuard)
+  async signinAdmin(@User() user: UserWithSecrets, @Res({ passthrough: true }) response: Response) {
+    // check role
+    const isAdmin: boolean = await this.authService.hasRole(user.email, "admin");
+
+    if (!isAdmin) {
+      throw new ForbiddenException();
+    }
+
+    return await this.handleAuthenticationResponse(user, response);
   }
 }
