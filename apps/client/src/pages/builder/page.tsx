@@ -36,6 +36,8 @@ export const BuilderPage = () => {
   // Send resume data to iframe on change of resume data
   useEffect(updateResumeInFrame, [resume.data]);
 
+  console.log(resume)
+
   return (
     <>
       <Helmet>

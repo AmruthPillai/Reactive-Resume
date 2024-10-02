@@ -54,7 +54,7 @@ msgstr "<0> احراز هویت دو مرحله‌ای در حال حاضر غی
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr "<0>احراز هویت دو عاملی فعال است.</0> در هر بار ورود، از شما خواسته می‌شود که یک کد وارد کنید."
 
-#: apps/client/src/pages/home/components/footer.tsx:21
+#: apps/client/src/pages/home/components/footer.tsx:24
 #: apps/client/src/pages/home/sections/hero/index.tsx:40
 msgid "A free resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "یک رزومه ساز رایگان و منبع باز که فرآیند ایجاد، به روز رسانی و به اشتراک گذاری رزومه شما را ساده می کند."
@@ -85,7 +85,7 @@ msgid "A4"
 msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:272
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:292
 msgid "Accepts only {accept} files"
 msgstr "فقط فایل های {accept} را می پذیرد"
 
@@ -124,7 +124,7 @@ msgstr "AI"
 msgid "Already have an account?"
 msgstr "درحال حاضر حساب کاربری دارید"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:146
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:159
 msgid "An error occurred while validating the file."
 msgstr "هنگام بارگیری فایل خطایی رخ داد."
 
@@ -382,7 +382,7 @@ msgstr "تاریخ دقیق یا محدوده تاریخ"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:133
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:156
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:114
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:123
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:127
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:172
 msgid "Delete"
@@ -413,7 +413,7 @@ msgstr "غیرفعال"
 msgid "Disable 2FA"
 msgstr "غیرفعالسازی ورود دو مرحله‌ای"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:304
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:324
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
@@ -455,7 +455,7 @@ msgstr "دانلود"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:169
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:98
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:107
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:95
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:156
 msgid "Duplicate"
@@ -513,7 +513,7 @@ msgstr "رمز عبور یکبار مصرف ارائه شده توسط برنا�
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "ایمیل خود را وارد کنید و ما یک لینک برای بازنشانی رمز عبور به شما ارسال خواهیم کرد اگر حساب وجود داشته باشد."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:285
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:305
 msgid "Errors"
 msgstr "خطاها"
 
@@ -521,7 +521,7 @@ msgstr "خطاها"
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Talent Hub has helped you. Your feedback and support are always welcome and much appreciated!"
 msgstr "حتی اگر قادر به کمک مالی نباشید، هنوز می‌توانید با به دادن یک ستاره در گیت هاب، گسترش خبر به دوستانتان یا ارسال یک پیام سریع برای من که چگونه Talent Hub به شما کمک کرده است، تفاوت ایجاد کنید. بازخورد و حمایت شما همیشه خوش‌آمدید و بسیار قدردانی می‌شود!"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:37
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:49
 msgid "Expected Pricing"
 msgstr ""
 
@@ -534,11 +534,11 @@ msgstr "قالب‌های موجود در Talent Hub را بررسی کرده و
 msgid "Export"
 msgstr "خروجی گرفتن"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:257
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:277
 msgid "File"
 msgstr "فایل"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:223
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:243
 msgid "Filetype"
 msgstr "نوع فایل"
 
@@ -698,11 +698,11 @@ msgstr "اگر احراز هویت دو عاملی را غیرفعال کنید�
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "اگر چندزبانه هستید، ما خیلی خوشحال می‌شویم که به کمک شما، اپ را به بیشتر زبان‌ها و اجتماع‌ها برسانیم. نگران نباشید اگر زبان خود را در لیست نمی‌بینید - فقط به من در گیت‌هاب پیام دهید و من اطمینان حاصل خواهم کرد که آن را اضافه کنم. آیا آماده‌اید که شروع کنید؟ با کلیک بر روی لینک، وارد ترجمه در Crowdin شوید."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:311
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:331
 msgid "Import"
 msgstr "وارد کردن"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:210
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:230
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -724,7 +724,6 @@ msgstr "در این بخش، شما می‌توانید رمز عبور خود �
 msgid "In this section, you can delete your account and all the data associated to your user, but please keep in mind that <0>this action is irreversible</0>."
 msgstr "در این بحث، شما می‌توانید حساب کاربری خود را و تمام داده‌های مرتبط با کاربر خود حذف کنید، اما لطفاً به خاطر داشته باشید که <0>این عملیات غیرقابل بازگشت</0> است."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:125
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
 msgid "Information"
 msgstr "اطلاعات"
@@ -765,11 +764,7 @@ msgstr "به نظر می رسد توکن تاییدیه که شما ارائه �
 msgid "It looks like your email address has already been verified."
 msgstr "به نظر می‌رسد آدرس ایمیل شما از قبلاً تأیید شده است."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:74
-msgid "Job Location"
-msgstr ""
-
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:52
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:64
 msgid "Job Type"
 msgstr ""
 
@@ -808,7 +803,7 @@ msgstr "عنوان"
 msgid "Language"
 msgstr "زبان"
 
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:82
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:91
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:139
 msgid "Last updated {lastUpdated}"
 msgstr "آخرین بروزرسانی {lastUpdated}"
@@ -864,7 +859,7 @@ msgid "Location"
 msgstr "موقعیت مکانی"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:51
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:108
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:117
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:115
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:166
 msgid "Lock"
@@ -966,12 +961,12 @@ msgstr "پسورد یکبار مصرف"
 
 #: apps/client/src/components/ai-actions.tsx:56
 #: apps/client/src/libs/axios.ts:29
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:190
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:210
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "اوه ، مشکلی در سرور پدید امد."
 
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:90
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:99
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:77
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:148
 msgid "Open"
@@ -981,7 +976,7 @@ msgstr "باز کردن"
 msgid "Open Source"
 msgstr "اوپن سورس"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:24
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:36
 msgid "Open To Work"
 msgstr ""
 
@@ -1055,16 +1050,16 @@ msgstr "تصویر"
 msgid "Please note that this step is completely optional."
 msgstr "لطفا توجه داشته باشید که این مرحله به طور کاملا اختیاری است."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:227
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:247
 msgid "Please select a file type"
 msgstr "لطفاً فرمت فایل را انتخاب کنید"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:82
-msgid "Please select a job location"
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:72
+msgid "Please select a job type"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:60
-msgid "Please select a job type"
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:97
+msgid "Please select a work location"
 msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:228
@@ -1096,7 +1091,6 @@ msgstr "ساخته شده توسط <0>Simple Icons</0>"
 msgid "Primary Color"
 msgstr "رنگ اصلی"
 
-#: apps/client/src/pages/home/components/footer.tsx:50
 #: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
 #: apps/client/src/pages/home/meta/privacy-policy/page.tsx:23
 msgid "Privacy Policy"
@@ -1123,44 +1117,6 @@ msgstr "منتشر کننده"
 msgid "Raise an issue"
 msgstr "ایجاد یک گزارش"
 
-#: apps/client/src/components/copyright.tsx:35
-#: apps/client/src/pages/auth/backup-otp/page.tsx:52
-#: apps/client/src/pages/auth/forgot-password/page.tsx:49
-#: apps/client/src/pages/auth/login/page.tsx:55
-#: apps/client/src/pages/auth/register/page.tsx:64
-#: apps/client/src/pages/auth/reset-password/page.tsx:60
-#: apps/client/src/pages/auth/verify-email/page.tsx:43
-#: apps/client/src/pages/auth/verify-otp/page.tsx:52
-#: apps/client/src/pages/builder/page.tsx:43
-#: apps/client/src/pages/dashboard/resumes/page.tsx:20
-#: apps/client/src/pages/dashboard/settings/page.tsx:14
-#: apps/client/src/pages/home/components/footer.tsx:18
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
-#: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/public/page.tsx:73
-#: apps/client/src/pages/public/page.tsx:94
-msgid "Talent Resume"
-msgstr ""
-
-msgid "Talent Hub"
-msgstr "Talent Hub"
-
-#: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
-msgid "Talent Hub has helped people land jobs at these great companies:"
-msgstr "Talent Hub به مردم در استخدام در این شرکت‌های بزرگ کمک کرده است:"
-
-#: apps/client/src/pages/home/sections/support/index.tsx:12
-msgid "Talent Hub is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Talent Hub through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
-msgstr "Talent Hub یک پروژه رایگان و اوپن سورس است که بیشتر توسط من ساخته شد، و حمایت شما بسیار قدردانی می شود. اگر مایل به همکاری هستید و تنها اگر امکان دارد، در نظر بگیرید که از طریق هر یک از پلتفرم های معرفی شده، دونیتی انجام دهید. به افزودنی، اهدایی به رزومه واکنشی از طریق Open Collective، معاف از مالیات است، زیرا این پروژه توسط Open Collective اروپا میزبانی مالی شده است."
-
-#: apps/client/src/pages/home/sections/features/index.tsx:107
-msgid "Talent Hub is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
-msgstr "Talent Hub یک پروژه‌ از روی علاقه است که نتیجه‌ی بیش از ۳ سال تلاش سخت است و در این مدت، ایده‌ها و ویژگی‌های مختلفی بارها و بارها بهبود یافته و تا (حد) کمال ساخته شده‌اند."
-
-#: apps/client/src/pages/home/sections/contributors/index.tsx:22
-msgid "Talent Hub thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
-msgstr "Talent Hub به دست جامعه پرانرژی خود زنده می‌ماند. این پروژه پیشرفت خود را به افراد بسیاری مدیون است که وقت و مهارت خود را اختصاص داده‌اند. در زیر، ما از برنامه‌نویسانی که ویژگی‌های آن را در GitHub بهبود داده‌اند و از مترجمانی که ترجمه‌های خود را در Crowdin ارائه داده‌اند بر خواهیم خواند که آن را برای مخاطبان بیشتر قابل دسترس کرده‌اند."
-
 #: apps/client/src/pages/builder/_components/toolbar.tsx:79
 msgid "Redo"
 msgstr "Redo"
@@ -1175,7 +1131,7 @@ msgid "Remove Page"
 msgstr "حذف صفحه"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:110
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:94
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:103
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:86
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:152
 msgid "Rename"
@@ -1430,8 +1386,43 @@ msgstr "پشتیبانی از فرمت‌های صفحه A4/Letter"
 msgid "System"
 msgstr "سامانه"
 
+#: apps/client/src/components/copyright.tsx:35
+#: apps/client/src/pages/auth/backup-otp/page.tsx:52
+#: apps/client/src/pages/auth/forgot-password/page.tsx:49
+#: apps/client/src/pages/auth/login/page.tsx:55
+#: apps/client/src/pages/auth/register/page.tsx:64
+#: apps/client/src/pages/auth/reset-password/page.tsx:60
+#: apps/client/src/pages/auth/verify-email/page.tsx:43
+#: apps/client/src/pages/auth/verify-otp/page.tsx:52
+#: apps/client/src/pages/builder/page.tsx:43
+#: apps/client/src/pages/dashboard/resumes/page.tsx:20
+#: apps/client/src/pages/dashboard/settings/page.tsx:14
+#: apps/client/src/pages/home/components/footer.tsx:21
+#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
+#: apps/client/src/pages/home/page.tsx:24
+#: apps/client/src/pages/public/page.tsx:73
+msgid "Talent Hub"
+msgstr "Talent Hub"
+
+#: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
+msgid "Talent Hub has helped people land jobs at these great companies:"
+msgstr "Talent Hub به مردم در استخدام در این شرکت‌های بزرگ کمک کرده است:"
+
+#: apps/client/src/pages/home/sections/support/index.tsx:12
+msgid "Talent Hub is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Talent Hub through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
+msgstr "Talent Hub یک پروژه رایگان و اوپن سورس است که بیشتر توسط من ساخته شد، و حمایت شما بسیار قدردانی می شود. اگر مایل به همکاری هستید و تنها اگر امکان دارد، در نظر بگیرید که از طریق هر یک از پلتفرم های معرفی شده، دونیتی انجام دهید. به افزودنی، اهدایی به رزومه واکنشی از طریق Open Collective، معاف از مالیات است، زیرا این پروژه توسط Open Collective اروپا میزبانی مالی شده است."
+
+#: apps/client/src/pages/home/sections/features/index.tsx:107
+msgid "Talent Hub is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
+msgstr "Talent Hub یک پروژه‌ از روی علاقه است که نتیجه‌ی بیش از ۳ سال تلاش سخت است و در این مدت، ایده‌ها و ویژگی‌های مختلفی بارها و بارها بهبود یافته و تا (حد) کمال ساخته شده‌اند."
+
+#: apps/client/src/pages/home/sections/contributors/index.tsx:22
+msgid "Talent Hub thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
+msgstr "Talent Hub به دست جامعه پرانرژی خود زنده می‌ماند. این پروژه پیشرفت خود را به افراد بسیاری مدیون است که وقت و مهارت خود را اختصاص داده‌اند. در زیر، ما از برنامه‌نویسانی که ویژگی‌های آن را در GitHub بهبود داده‌اند و از مترجمانی که ترجمه‌های خود را در Crowdin ارائه داده‌اند بر خواهیم خواند که آن را برای مخاطبان بیشتر قابل دسترس کرده‌اند."
+
 #: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/home/sections/hero/index.tsx:36
+#: apps/client/src/pages/public/page.tsx:94
 msgid "Talent Resume"
 msgstr "یک رزومه ساز رایگان و منبع باز"
 
@@ -1556,7 +1547,7 @@ msgid "Undo"
 msgstr "بازگردانی"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:52
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:103
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:112
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:105
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:161
 msgid "Unlock"
@@ -1578,7 +1569,7 @@ msgstr "به روزرسانی یک مورد موجود"
 msgid "Update an existing resume"
 msgstr "به روزرسانی یک رزومه موجود"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:214
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:234
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Talent Hub for easier editing."
 msgstr "آپلود یک فایل از یکی از منابع پذیرفته شده برای تجزیه و تحلیل داده های موجود و وارد کردن آن به Talent Hub برای ویرایش آسانتر."
 
@@ -1609,11 +1600,11 @@ msgstr "نام کاربری"
 msgid "Users Signed Up"
 msgstr "کاربران ثبت نام کرده‌اند"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:298
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:318
 msgid "Validate"
 msgstr "تأیید"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:316
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:336
 msgid "Validated"
 msgstr "تأییدشده"
 
@@ -1660,7 +1651,11 @@ msgstr "ما آدرس ایمیل شما را تأیید می کنیم تا فق�
 msgid "Website"
 msgstr "وب‎سایت"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:17
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:89
+msgid "Work Location"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:29
 msgid "Work Status"
 msgstr ""
 

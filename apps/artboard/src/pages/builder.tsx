@@ -16,6 +16,8 @@ export const BuilderLayout = () => {
 
   const Template = useMemo(() => getTemplate(template), [template]);
 
+  console.log(layout)
+
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
       if (event.origin !== window.location.origin) return;

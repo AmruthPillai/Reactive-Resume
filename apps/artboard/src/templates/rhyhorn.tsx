@@ -6,6 +6,7 @@ import {
   Education,
   Experience,
   Interest,
+  JobTypeMap,
   Language,
   Profile,
   Project,
@@ -24,6 +25,7 @@ import { Fragment } from "react";
 import { Picture } from "../components/picture";
 import { useArtboardStore } from "../store/artboard";
 import { TemplateProps } from "../types/template";
+import { ActiveIndicator } from "../components/circle";
 
 const Header = () => {
   const basics = useArtboardStore((state) => state.resume.basics);
@@ -95,6 +97,27 @@ const Summary = () => {
         className="wysiwyg"
         style={{ columns: section.columns }}
       />
+    </section>
+  );
+};
+
+const WorkStatus = () => {
+  const workStatus = useArtboardStore((state) => state.resume.workStatus);
+
+  return (
+    <section id="workStatus">
+      <h4 className="mb-2 border-b pb-0.5 text-sm font-bold">Work Status</h4>
+
+      <div className="">
+        <div className="flex w-[200px] items-center gap-4">
+          <p className="font-bold">
+            {workStatus.openToWork ? "Available For Work" : "Not Available For Work"}
+          </p>
+          <ActiveIndicator className={workStatus.openToWork ? "bg-green-500" : "bg-red-600"} />
+        </div>
+        {workStatus.openToWork && <div>{JobTypeMap[workStatus.jobType]}</div>}
+        {workStatus.openToWork && <div>{workStatus.jobLocation}</div>}
+      </div>
     </section>
   );
 };
@@ -580,7 +603,7 @@ export const Rhyhorn = ({ columns, isFirstPage = false }: TemplateProps) => {
   return (
     <div className="p-custom space-y-4">
       {isFirstPage && <Header />}
-
+      <WorkStatus />
       {main.map((section) => (
         <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
       ))}

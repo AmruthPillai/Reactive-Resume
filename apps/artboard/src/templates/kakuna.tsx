@@ -6,6 +6,7 @@ import {
   Education,
   Experience,
   Interest,
+  JobTypeMap,
   Language,
   Project,
   Publication,
@@ -20,6 +21,7 @@ import { cn, isEmptyString, isUrl } from "@reactive-resume/utils";
 import get from "lodash.get";
 import React, { Fragment } from "react";
 
+import { ActiveIndicator } from "../components/circle";
 import { Picture } from "../components/picture";
 import { useArtboardStore } from "../store/artboard";
 import { TemplateProps } from "../types/template";
@@ -101,6 +103,31 @@ const Header = () => {
         </div>
       )}
     </div>
+  );
+};
+
+const WorkStatus = () => {
+  const workStatus = useArtboardStore((state) => state.resume.workStatus);
+
+  return (
+    <section id="workStatus">
+      <h4 className="mb-2 border-b border-primary text-center font-bold text-primary">
+        Work Status
+      </h4>
+
+      <div className="flex items-start justify-between">
+        <div className="flex w-[200px] items-center gap-4">
+          <p className="font-bold">
+            {workStatus.openToWork ? "Available For Work" : "Not Available For Work"}
+          </p>
+          <ActiveIndicator className={workStatus.openToWork ? "bg-green-500" : "bg-red-600"} />
+        </div>
+        <div>
+          {workStatus.openToWork && <div className="font-bold">{JobTypeMap[workStatus.jobType]}</div>}
+          {workStatus.openToWork && <div>{workStatus.jobLocation}</div>}
+        </div>
+      </div>
+    </section>
   );
 };
 
@@ -533,6 +560,7 @@ export const Kakuna = ({ columns, isFirstPage = false }: TemplateProps) => {
       {isFirstPage && <Header />}
 
       <div className="space-y-4">
+        <WorkStatus />
         {main.map((section) => (
           <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
         ))}

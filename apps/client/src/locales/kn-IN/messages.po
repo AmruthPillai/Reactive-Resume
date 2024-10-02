@@ -54,7 +54,7 @@ msgstr "<0>ಎರಡು ಅಂಶದ ದೃಢೀಕರಣವನ್ನು ಪ್
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr "<0>ಎರಡು ಅಂಶದ ದೃಢೀಕರಣವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ.</0> ನೀವು ಸೈನ್ ಇನ್ ಮಾಡಿದಾಗಲೆಲ್ಲಾ ಕೋಡ್ ಅನ್ನು ನಮೂದಿಸಲು ನಿಮ್ಮನ್ನು ಕೇಳಲಾಗುತ್ತದೆ."
 
-#: apps/client/src/pages/home/components/footer.tsx:21
+#: apps/client/src/pages/home/components/footer.tsx:24
 #: apps/client/src/pages/home/sections/hero/index.tsx:40
 msgid "A free resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "ನಿಮ್ಮ ರೆಸ್ಯೂಮ್ ಅನ್ನು ರಚಿಸುವ, ನವೀಕರಿಸುವ ಮತ್ತು ಹಂಚಿಕೊಳ್ಳುವ ಪ್ರಕ್ರಿಯೆಯನ್ನು ಸರಳಗೊಳಿಸುವ ಉಚಿತ ಮತ್ತು ಮುಕ್ತ-ಮೂಲ ಪುನರಾರಂಭ ಬಿಲ್ಡರ್."
@@ -85,7 +85,7 @@ msgid "A4"
 msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:272
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:292
 msgid "Accepts only {accept} files"
 msgstr "{accept} ಫೈಲ್‌ಗಳನ್ನು ಮಾತ್ರ ಸ್ವೀಕರಿಸುತ್ತದೆ"
 
@@ -124,7 +124,7 @@ msgstr "AI"
 msgid "Already have an account?"
 msgstr "ಈಗಾಗಲೇ ಖಾತೆ ಹೊಂದಿದ್ದೀರ?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:146
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:159
 msgid "An error occurred while validating the file."
 msgstr "ಫೈಲ್ ಅನ್ನು ಮೌಲ್ಯೀಕರಿಸುವಾಗ ದೋಷ ಸಂಭವಿಸಿದೆ."
 
@@ -382,7 +382,7 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:133
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:156
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:114
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:123
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:127
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:172
 msgid "Delete"
@@ -413,7 +413,7 @@ msgstr "ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ"
 msgid "Disable 2FA"
 msgstr "2FA ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:304
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:324
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
@@ -455,7 +455,7 @@ msgstr "ಡೌನ್‌ಲೋಡ್‌ಗಳು"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:169
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:98
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:107
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:95
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:156
 msgid "Duplicate"
@@ -513,7 +513,7 @@ msgstr "ನಿಮ್ಮ ದೃಢೀಕರಣ ಅಪ್ಲಿಕೇಶನ್‌�
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "ನಿಮ್ಮ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ ಮತ್ತು ಖಾತೆಯು ಅಸ್ತಿತ್ವದಲ್ಲಿದ್ದರೆ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಮರುಹೊಂದಿಸಲು ನಾವು ನಿಮಗೆ ಲಿಂಕ್ ಅನ್ನು ಕಳುಹಿಸುತ್ತೇವೆ."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:285
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:305
 msgid "Errors"
 msgstr "ದೋಷಗಳು"
 
@@ -521,7 +521,7 @@ msgstr "ದೋಷಗಳು"
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Talent Hub has helped you. Your feedback and support are always welcome and much appreciated!"
 msgstr "ನೀವು ಆರ್ಥಿಕವಾಗಿ ಕೊಡುಗೆ ನೀಡುವ ಸ್ಥಿತಿಯಲ್ಲಿಲ್ಲದಿದ್ದರೂ ಸಹ, GitHub ರೆಪೊಸಿಟರಿಗೆ ನಕ್ಷತ್ರವನ್ನು ನೀಡುವ ಮೂಲಕ, ನಿಮ್ಮ ಸ್ನೇಹಿತರಿಗೆ ಸುದ್ದಿಯನ್ನು ಹರಡುವ ಮೂಲಕ ಅಥವಾ ರಿಯಾಕ್ಟಿವ್ ರೆಸ್ಯೂಮ್ ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಿದೆ ಎಂಬುದನ್ನು ನನಗೆ ತಿಳಿಸಲು ತ್ವರಿತ ಸಂದೇಶವನ್ನು ನೀಡುವ ಮೂಲಕ ನೀವು ಇನ್ನೂ ಬದಲಾವಣೆಯನ್ನು ಮಾಡಬಹುದು. ನಿಮ್ಮ ಪ್ರತಿಕ್ರಿಯೆ ಮತ್ತು ಬೆಂಬಲ ಯಾವಾಗಲೂ ಸ್ವಾಗತಾರ್ಹ ಮತ್ತು ಹೆಚ್ಚು ಮೆಚ್ಚುಗೆ!"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:37
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:49
 msgid "Expected Pricing"
 msgstr ""
 
@@ -534,11 +534,11 @@ msgstr "ಪ್ರತಿಕ್ರಿಯಾತ್ಮಕ ರೆಸ್ಯೂಮ್�
 msgid "Export"
 msgstr "ರಫ್ತು ಮಾಡು"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:257
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:277
 msgid "File"
 msgstr "ಕಡತ"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:223
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:243
 msgid "Filetype"
 msgstr "ಕಡತದ ವರ್ಗ"
 
@@ -698,11 +698,11 @@ msgstr "ನೀವು ಎರಡು ಅಂಶದ ದೃಢೀಕರಣವನ್ನ
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "ನೀವು ಬಹುಭಾಷಿಕರಾಗಿದ್ದರೆ, ಹೆಚ್ಚಿನ ಭಾಷೆಗಳು ಮತ್ತು ಸಮುದಾಯಗಳಿಗೆ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ತರಲು ನಿಮ್ಮ ಸಹಾಯವನ್ನು ನಾವು ಬಯಸುತ್ತೇವೆ. ಪಟ್ಟಿಯಲ್ಲಿ ನಿಮ್ಮ ಭಾಷೆಯನ್ನು ನೀವು ನೋಡದಿದ್ದರೆ ಚಿಂತಿಸಬೇಡಿ - GitHub ನಲ್ಲಿ ನನಗೆ ಪ್ರೋತ್ಸಾಹ ನೀಡಿ ಮತ್ತು ಅದನ್ನು ಸೇರಿಸಲು ನಾನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳುತ್ತೇನೆ. ಪ್ರಾರಂಭಿಸಲು ಸಿದ್ಧರಿದ್ದೀರಾ? ಕೆಳಗಿನ ಲಿಂಕ್ ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡುವ ಮೂಲಕ ಕ್ರೌಡಿನ್‌ನಲ್ಲಿ ಅನುವಾದಕ್ಕೆ ಹೋಗಿ."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:311
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:331
 msgid "Import"
 msgstr "ಆಮದು"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:210
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:230
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -724,7 +724,6 @@ msgstr "ಈ ವಿಭಾಗದಲ್ಲಿ, ನೀವು ನಿಮ್ಮ ಪಾ�
 msgid "In this section, you can delete your account and all the data associated to your user, but please keep in mind that <0>this action is irreversible</0>."
 msgstr "ಈ ವಿಭಾಗದಲ್ಲಿ, ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಮತ್ತು ನಿಮ್ಮ ಬಳಕೆದಾರರಿಗೆ ಸಂಬಂಧಿಸಿದ ಎಲ್ಲಾ ಡೇಟಾವನ್ನು ನೀವು ಅಳಿಸಬಹುದು, ಆದರೆ ದಯವಿಟ್ಟು <0>ಈ ಕ್ರಿಯೆಯನ್ನು ಬದಲಾಯಿಸಲಾಗುವುದಿಲ್ಲ</0> ಎಂಬುದನ್ನು ನೆನಪಿನಲ್ಲಿಡಿ."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:125
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
 msgid "Information"
 msgstr "ಮಾಹಿತಿ"
@@ -765,11 +764,7 @@ msgstr "ನೀವು ಒದಗಿಸಿದ ಮರುಹೊಂದಿಸುವ ಟ
 msgid "It looks like your email address has already been verified."
 msgstr "ನಿಮ್ಮ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ಈಗಾಗಲೇ ಪರಿಶೀಲಿಸಿರುವಂತೆ ತೋರುತ್ತಿದೆ."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:74
-msgid "Job Location"
-msgstr ""
-
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:52
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:64
 msgid "Job Type"
 msgstr ""
 
@@ -808,7 +803,7 @@ msgstr "ಲೇಬಲ್"
 msgid "Language"
 msgstr "ಭಾಷೆ"
 
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:82
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:91
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:139
 msgid "Last updated {lastUpdated}"
 msgstr "ಕೊನೆಯದಾಗಿ ನವೀಕರಿಸಲಾಗಿದೆ {lastUpdated}"
@@ -864,7 +859,7 @@ msgid "Location"
 msgstr "ಸ್ಥಳ"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:51
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:108
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:117
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:115
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:166
 msgid "Lock"
@@ -966,12 +961,12 @@ msgstr "ಒನ್-ಟೈಮ್ ಪಾಸ್‌ವರ್ಡ್"
 
 #: apps/client/src/components/ai-actions.tsx:56
 #: apps/client/src/libs/axios.ts:29
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:190
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:210
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "ಓಹ್, ಸರ್ವರ್ ದೋಷವನ್ನು ಹಿಂತಿರುಗಿಸಿದೆ."
 
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:90
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:99
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:77
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:148
 msgid "Open"
@@ -981,7 +976,7 @@ msgstr "ತೆರೆಯಿರಿ"
 msgid "Open Source"
 msgstr "ಮುಕ್ತ ಸಂಪನ್ಮೂಲ"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:24
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:36
 msgid "Open To Work"
 msgstr ""
 
@@ -1055,16 +1050,16 @@ msgstr "ಚಿತ್ರ"
 msgid "Please note that this step is completely optional."
 msgstr "ದಯವಿಟ್ಟು ಗಮನಿಸಿ ಈ ಹಂತವು ಸಂಪೂರ್ಣವಾಗಿ ಐಚ್ಛಿಕವಾಗಿದೆ."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:227
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:247
 msgid "Please select a file type"
 msgstr "ದಯವಿಟ್ಟು ಒಂದು ಕಡತವನ್ನು ಆಯ್ಕೆ ಮಾಡಿ"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:82
-msgid "Please select a job location"
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:72
+msgid "Please select a job type"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:60
-msgid "Please select a job type"
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:97
+msgid "Please select a work location"
 msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:228
@@ -1096,7 +1091,6 @@ msgstr "<0>ಸರಳ ಐಕಾನ್‌ಗಳಿಂದ</0> ನಡೆಸಲ್ಪ
 msgid "Primary Color"
 msgstr "ಪ್ರಾಥಮಿಕ ಬಣ್ಣ"
 
-#: apps/client/src/pages/home/components/footer.tsx:50
 #: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
 #: apps/client/src/pages/home/meta/privacy-policy/page.tsx:23
 msgid "Privacy Policy"
@@ -1123,44 +1117,6 @@ msgstr "ಪ್ರಕಾಶಕರು"
 msgid "Raise an issue"
 msgstr "ಒಂದು ಸಮಸ್ಯೆಯನ್ನು ಎತ್ತಿಕೊಳ್ಳಿ"
 
-#: apps/client/src/components/copyright.tsx:35
-#: apps/client/src/pages/auth/backup-otp/page.tsx:52
-#: apps/client/src/pages/auth/forgot-password/page.tsx:49
-#: apps/client/src/pages/auth/login/page.tsx:55
-#: apps/client/src/pages/auth/register/page.tsx:64
-#: apps/client/src/pages/auth/reset-password/page.tsx:60
-#: apps/client/src/pages/auth/verify-email/page.tsx:43
-#: apps/client/src/pages/auth/verify-otp/page.tsx:52
-#: apps/client/src/pages/builder/page.tsx:43
-#: apps/client/src/pages/dashboard/resumes/page.tsx:20
-#: apps/client/src/pages/dashboard/settings/page.tsx:14
-#: apps/client/src/pages/home/components/footer.tsx:18
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
-#: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/public/page.tsx:73
-#: apps/client/src/pages/public/page.tsx:94
-msgid "Talent Resume"
-msgstr ""
-
-msgid "Talent Hub"
-msgstr "ರಿಯಾಕ್ಟಿವ್ ರೆಸ್ಯೂಮೇ"
-
-#: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
-msgid "Talent Hub has helped people land jobs at these great companies:"
-msgstr "ರಿಯಾಕ್ಟಿವ್ ರೆಸ್ಯೂಮೇ ಈ ಮಹಾನ್ ಕಂಪನಿಗಳಲ್ಲಿ ಉದ್ಯೋಗಗಳನ್ನು ಪಡೆಯಲು ಜನರಿಗೆ ಸಹಾಯ ಮಾಡಿದೆ:"
-
-#: apps/client/src/pages/home/sections/support/index.tsx:12
-msgid "Talent Hub is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Talent Hub through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
-msgstr "ರಿಯಾಕ್ಟಿವ್ ರೆಸ್ಯೂಮೇನ್ನಿಂದ ಹೆಚ್ಚಾಗಿ ರಚಿಸಲಾದ ಉಚಿತ ಮತ್ತು ಮುಕ್ತ-ಮೂಲ ಯೋಜನೆಯಾಗಿದೆ ಮತ್ತು ನಿಮ್ಮ ಬೆಂಬಲವನ್ನು ಹೆಚ್ಚು ಪ್ರಶಂಸಿಸಲಾಗುತ್ತದೆ. ನೀವು ಕೊಡುಗೆ ನೀಡಲು ಒಲವು ತೋರುತ್ತಿದ್ದರೆ ಮತ್ತು ನೀವು ನಿಭಾಯಿಸಲು ಸಾಧ್ಯವಾದರೆ, ಪಟ್ಟಿ ಮಾಡಲಾದ ಯಾವುದೇ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್‌ಗಳ ಮೂಲಕ ದೇಣಿಗೆ ನೀಡಲು ಪರಿಗಣಿಸಿ. ಹೆಚ್ಚುವರಿಯಾಗಿ, ಓಪನ್ ಕಲೆಕ್ಟಿವ್ ಮೂಲಕ ರಿಯಾಕ್ಟಿವ್ ರೆಸ್ಯೂಮೇಗೆ ದೇಣಿಗೆಗಳು ತೆರಿಗೆ-ವಿನಾಯತಿಯನ್ನು ಹೊಂದಿವೆ, ಏಕೆಂದರೆ ಯೋಜನೆಯು ಓಪನ್ ಕಲೆಕ್ಟಿವ್ ಯುರೋಪ್‌ನಿಂದ ಆರ್ಥಿಕವಾಗಿ ಆಯೋಜಿಸಲ್ಪಟ್ಟಿದ."
-
-#: apps/client/src/pages/home/sections/features/index.tsx:107
-msgid "Talent Hub is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
-msgstr "ರಿಯಾಕ್ಟಿವ್ ರೆಸ್ಯೂಮೇ 3 ವರ್ಷಗಳ ಕಠಿಣ ಪರಿಶ್ರಮದ ಉತ್ಸಾಹದ ಯೋಜನೆಯಾಗಿದೆ ಮತ್ತು ಅದರೊಂದಿಗೆ (ಹತ್ತಿರ) ಪರಿಪೂರ್ಣತೆಗೆ ನಿರ್ಮಿಸಲಾದ ಹಲವಾರು ಮರು-ಪುನರಾವರ್ತಿತ ಆಲೋಚನೆಗಳು ಮತ್ತು ವೈಶಿಷ್ಟ್ಯಗಳು ಬರುತ್ತದೆ."
-
-#: apps/client/src/pages/home/sections/contributors/index.tsx:22
-msgid "Talent Hub thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
-msgstr "ರಿಯಾಕ್ಟಿವ್ ರೆಸ್ಯೂಮೇ ಅದರ ರೋಮಾಂಚಕ ಸಮುದಾಯಕ್ಕೆ ಧನ್ಯವಾದಗಳು. ಈ ಯೋಜನೆಯು ತಮ್ಮ ಸಮಯ ಮತ್ತು ಕೌಶಲ್ಯಗಳನ್ನು ಮೀಸಲಿಟ್ಟ ಹಲವಾರು ವ್ಯಕ್ತಿಗಳಿಗೆ ಅದರ ಪ್ರಗತಿಗೆ ಬದ್ಧವಾಗಿದೆ. ಕೆಳಗೆ, GitHub ನಲ್ಲಿ ಅದರ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ವರ್ಧಿಸಿದ ಕೋಡರ್‌ಗಳನ್ನು ಮತ್ತು ಕ್ರೌಡಿನ್‌ನಲ್ಲಿ ಭಾಷಾಂತರಿಸಿದ ಭಾಷಾಶಾಸ್ತ್ರಜ್ಞರನ್ನು ವಿಶಾಲ ಪ್ರೇಕ್ಷಕರಿಗೆ ಪ್ರವೇಶಿಸುವಂತೆ ನಾವು ಆಚರಿಸುತ್ತೇವೆ."
-
 #: apps/client/src/pages/builder/_components/toolbar.tsx:79
 msgid "Redo"
 msgstr "ಮತ್ತೆಮಾಡು"
@@ -1175,7 +1131,7 @@ msgid "Remove Page"
 msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:110
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:94
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:103
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:86
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:152
 msgid "Rename"
@@ -1430,8 +1386,43 @@ msgstr "A4/ಲೆಟರ್ ಪುಟ ಸ್ವರೂಪಗಳನ್ನು ಬೆ
 msgid "System"
 msgstr "ಸಿಸ್ಟಂ"
 
+#: apps/client/src/components/copyright.tsx:35
+#: apps/client/src/pages/auth/backup-otp/page.tsx:52
+#: apps/client/src/pages/auth/forgot-password/page.tsx:49
+#: apps/client/src/pages/auth/login/page.tsx:55
+#: apps/client/src/pages/auth/register/page.tsx:64
+#: apps/client/src/pages/auth/reset-password/page.tsx:60
+#: apps/client/src/pages/auth/verify-email/page.tsx:43
+#: apps/client/src/pages/auth/verify-otp/page.tsx:52
+#: apps/client/src/pages/builder/page.tsx:43
+#: apps/client/src/pages/dashboard/resumes/page.tsx:20
+#: apps/client/src/pages/dashboard/settings/page.tsx:14
+#: apps/client/src/pages/home/components/footer.tsx:21
+#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
+#: apps/client/src/pages/home/page.tsx:24
+#: apps/client/src/pages/public/page.tsx:73
+msgid "Talent Hub"
+msgstr "ರಿಯಾಕ್ಟಿವ್ ರೆಸ್ಯೂಮೇ"
+
+#: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
+msgid "Talent Hub has helped people land jobs at these great companies:"
+msgstr "ರಿಯಾಕ್ಟಿವ್ ರೆಸ್ಯೂಮೇ ಈ ಮಹಾನ್ ಕಂಪನಿಗಳಲ್ಲಿ ಉದ್ಯೋಗಗಳನ್ನು ಪಡೆಯಲು ಜನರಿಗೆ ಸಹಾಯ ಮಾಡಿದೆ:"
+
+#: apps/client/src/pages/home/sections/support/index.tsx:12
+msgid "Talent Hub is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Talent Hub through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
+msgstr "ರಿಯಾಕ್ಟಿವ್ ರೆಸ್ಯೂಮೇನ್ನಿಂದ ಹೆಚ್ಚಾಗಿ ರಚಿಸಲಾದ ಉಚಿತ ಮತ್ತು ಮುಕ್ತ-ಮೂಲ ಯೋಜನೆಯಾಗಿದೆ ಮತ್ತು ನಿಮ್ಮ ಬೆಂಬಲವನ್ನು ಹೆಚ್ಚು ಪ್ರಶಂಸಿಸಲಾಗುತ್ತದೆ. ನೀವು ಕೊಡುಗೆ ನೀಡಲು ಒಲವು ತೋರುತ್ತಿದ್ದರೆ ಮತ್ತು ನೀವು ನಿಭಾಯಿಸಲು ಸಾಧ್ಯವಾದರೆ, ಪಟ್ಟಿ ಮಾಡಲಾದ ಯಾವುದೇ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್‌ಗಳ ಮೂಲಕ ದೇಣಿಗೆ ನೀಡಲು ಪರಿಗಣಿಸಿ. ಹೆಚ್ಚುವರಿಯಾಗಿ, ಓಪನ್ ಕಲೆಕ್ಟಿವ್ ಮೂಲಕ ರಿಯಾಕ್ಟಿವ್ ರೆಸ್ಯೂಮೇಗೆ ದೇಣಿಗೆಗಳು ತೆರಿಗೆ-ವಿನಾಯತಿಯನ್ನು ಹೊಂದಿವೆ, ಏಕೆಂದರೆ ಯೋಜನೆಯು ಓಪನ್ ಕಲೆಕ್ಟಿವ್ ಯುರೋಪ್‌ನಿಂದ ಆರ್ಥಿಕವಾಗಿ ಆಯೋಜಿಸಲ್ಪಟ್ಟಿದ."
+
+#: apps/client/src/pages/home/sections/features/index.tsx:107
+msgid "Talent Hub is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
+msgstr "ರಿಯಾಕ್ಟಿವ್ ರೆಸ್ಯೂಮೇ 3 ವರ್ಷಗಳ ಕಠಿಣ ಪರಿಶ್ರಮದ ಉತ್ಸಾಹದ ಯೋಜನೆಯಾಗಿದೆ ಮತ್ತು ಅದರೊಂದಿಗೆ (ಹತ್ತಿರ) ಪರಿಪೂರ್ಣತೆಗೆ ನಿರ್ಮಿಸಲಾದ ಹಲವಾರು ಮರು-ಪುನರಾವರ್ತಿತ ಆಲೋಚನೆಗಳು ಮತ್ತು ವೈಶಿಷ್ಟ್ಯಗಳು ಬರುತ್ತದೆ."
+
+#: apps/client/src/pages/home/sections/contributors/index.tsx:22
+msgid "Talent Hub thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
+msgstr "ರಿಯಾಕ್ಟಿವ್ ರೆಸ್ಯೂಮೇ ಅದರ ರೋಮಾಂಚಕ ಸಮುದಾಯಕ್ಕೆ ಧನ್ಯವಾದಗಳು. ಈ ಯೋಜನೆಯು ತಮ್ಮ ಸಮಯ ಮತ್ತು ಕೌಶಲ್ಯಗಳನ್ನು ಮೀಸಲಿಟ್ಟ ಹಲವಾರು ವ್ಯಕ್ತಿಗಳಿಗೆ ಅದರ ಪ್ರಗತಿಗೆ ಬದ್ಧವಾಗಿದೆ. ಕೆಳಗೆ, GitHub ನಲ್ಲಿ ಅದರ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ವರ್ಧಿಸಿದ ಕೋಡರ್‌ಗಳನ್ನು ಮತ್ತು ಕ್ರೌಡಿನ್‌ನಲ್ಲಿ ಭಾಷಾಂತರಿಸಿದ ಭಾಷಾಶಾಸ್ತ್ರಜ್ಞರನ್ನು ವಿಶಾಲ ಪ್ರೇಕ್ಷಕರಿಗೆ ಪ್ರವೇಶಿಸುವಂತೆ ನಾವು ಆಚರಿಸುತ್ತೇವೆ."
+
 #: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/home/sections/hero/index.tsx:36
+#: apps/client/src/pages/public/page.tsx:94
 msgid "Talent Resume"
 msgstr "ಉಚಿತ ಮತ್ತು ಮೂಲ ಕೋಡ್ ತೆರೆದಿರುವ ರೇಜ಼ಮೈ ನಿರ್ಮಾಪಕ"
 
@@ -1556,7 +1547,7 @@ msgid "Undo"
 msgstr "ರದ್ದುಮಾಡು"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:52
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:103
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:112
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:105
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:161
 msgid "Unlock"
@@ -1578,7 +1569,7 @@ msgstr "ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ಐಟಂ ಅನ್ನ�
 msgid "Update an existing resume"
 msgstr "ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ರೆಸ್ಯೂಮ್ ಅನ್ನು ನವೀಕರಿಸಿ"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:214
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:234
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Talent Hub for easier editing."
 msgstr "ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ಡೇಟಾವನ್ನು ಪಾರ್ಸ್ ಮಾಡಲು ಮತ್ತು ಸುಲಭವಾಗಿ ಸಂಪಾದನೆಗಾಗಿ ಅದನ್ನು ರಿಯಾಕ್ಟಿವ್ ರೆಸ್ಯೂಮ್‌ಗೆ ಆಮದು ಮಾಡಿಕೊಳ್ಳಲು ಸ್ವೀಕರಿಸಿದ ಮೂಲಗಳಿಂದ ಫೈಲ್ ಅನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ."
 
@@ -1609,11 +1600,11 @@ msgstr "ಬಳಕೆದಾರರ ಹೆಸರು"
 msgid "Users Signed Up"
 msgstr "ಬಳಕೆದಾರನ್ನು ನೋಂದಾಯಿಸಲಾಗಿದೆ"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:298
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:318
 msgid "Validate"
 msgstr "ಮೌಲ್ಯೀಕರಿಸಿ"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:316
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:336
 msgid "Validated"
 msgstr "ಮೌಲ್ಯೀಕರಿಸಿ"
 
@@ -1660,7 +1651,11 @@ msgstr "ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ನೀವ
 msgid "Website"
 msgstr "ಜಾಲತಾಣ"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:17
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:89
+msgid "Work Location"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:29
 msgid "Work Status"
 msgstr ""
 

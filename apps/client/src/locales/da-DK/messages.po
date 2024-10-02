@@ -54,7 +54,7 @@ msgstr "<0>Tofaktorgodkendelse er i øjeblikket deaktiveret.</0> Du kan aktivere
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr "<0>Tofaktorgodkendelse er aktiveret.</0> Du bliver bedt om at indtaste en kode, hver gang du logger ind."
 
-#: apps/client/src/pages/home/components/footer.tsx:21
+#: apps/client/src/pages/home/components/footer.tsx:24
 #: apps/client/src/pages/home/sections/hero/index.tsx:40
 msgid "A free resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "En gratis og open-source CV-bygger, der forenkler processen med at oprette, opdatere og dele dit CV."
@@ -85,7 +85,7 @@ msgid "A4"
 msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:272
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:292
 msgid "Accepts only {accept} files"
 msgstr "Accepterer kun {accept} filer"
 
@@ -124,7 +124,7 @@ msgstr "AI"
 msgid "Already have an account?"
 msgstr "Har du allerede en bruger?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:146
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:159
 msgid "An error occurred while validating the file."
 msgstr "Der opstod en fejl under validering af filen."
 
@@ -382,7 +382,7 @@ msgstr "Dato eller datointerval"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:133
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:156
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:114
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:123
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:127
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:172
 msgid "Delete"
@@ -413,7 +413,7 @@ msgstr "Deaktivér"
 msgid "Disable 2FA"
 msgstr "Deaktivér 2FA"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:304
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:324
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
@@ -455,7 +455,7 @@ msgstr "Downloads"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:169
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:98
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:107
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:95
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:156
 msgid "Duplicate"
@@ -513,7 +513,7 @@ msgstr "Indtast engangsadgangskoden fra din authenticator app nedenfor."
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "Indtast din e-mailadresse, og vi sender dig et link til at nulstille din adgangskode, hvis kontoen eksisterer."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:285
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:305
 msgid "Errors"
 msgstr "Fejl"
 
@@ -521,7 +521,7 @@ msgstr "Fejl"
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Talent Hub has helped you. Your feedback and support are always welcome and much appreciated!"
 msgstr "Selvom du ikke er i stand til at bidrage økonomisk, kan du stadig gøre en forskel ved at give GitHub-lageret en stjerne, sprede budskabet til dine venner eller sende en hurtig besked for at fortælle mig, hvordan Talent Hub har hjulpet dig. Din feedback og støtte er altid velkommen og meget værdsat!"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:37
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:49
 msgid "Expected Pricing"
 msgstr ""
 
@@ -534,11 +534,11 @@ msgstr "Udforsk de tilgængelige skabeloner i Talent Hub og se de CV'er der er l
 msgid "Export"
 msgstr "Eksportér"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:257
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:277
 msgid "File"
 msgstr "Fil"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:223
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:243
 msgid "Filetype"
 msgstr "Filtype"
 
@@ -698,11 +698,11 @@ msgstr "Hvis du deaktiverer to-faktor godkendelse, skal du ikke længere indtast
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "Hvis du er flersproget, vil vi meget gerne have din hjælp til at bringe appen til flere sprog og samfund. Bare rolig, hvis du ikke kan se dit sprog på listen - bare giv mig besked på GitHub, så sørger jeg for at få det med. Er du klar til at komme i gang? Hop ind i oversættelse arbejdet hos Crowdin ved at klikke på linket nedenfor."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:311
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:331
 msgid "Import"
 msgstr "Importér"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:210
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:230
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -724,7 +724,6 @@ msgstr "I dette afsnit kan du ændre din adgangskode og aktivere/deaktivere to-f
 msgid "In this section, you can delete your account and all the data associated to your user, but please keep in mind that <0>this action is irreversible</0>."
 msgstr "I dette afsnit kan du slette din konto og alle de data, der er knyttet til din bruger, men husk, at <0>denne handling er uigenkaldelig</0>."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:125
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
 msgid "Information"
 msgstr "Information"
@@ -765,11 +764,7 @@ msgstr "Det ser ud til, at det verifikationstoken, du angav, er ugyldigt. Prøv 
 msgid "It looks like your email address has already been verified."
 msgstr "Det ser ud til, at din e-mailadresse allerede er blevet verificeret."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:74
-msgid "Job Location"
-msgstr ""
-
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:52
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:64
 msgid "Job Type"
 msgstr ""
 
@@ -808,7 +803,7 @@ msgstr "Label"
 msgid "Language"
 msgstr "Sprog"
 
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:82
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:91
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:139
 msgid "Last updated {lastUpdated}"
 msgstr "Sidst opdateret {lastUpdated}"
@@ -864,7 +859,7 @@ msgid "Location"
 msgstr "Beliggenhed"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:51
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:108
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:117
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:115
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:166
 msgid "Lock"
@@ -966,12 +961,12 @@ msgstr "Engangskodeord"
 
 #: apps/client/src/components/ai-actions.tsx:56
 #: apps/client/src/libs/axios.ts:29
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:190
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:210
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "Ups, serveren returnerede en fejl."
 
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:90
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:99
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:77
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:148
 msgid "Open"
@@ -981,7 +976,7 @@ msgstr "Åben"
 msgid "Open Source"
 msgstr "Åben kilde"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:24
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:36
 msgid "Open To Work"
 msgstr ""
 
@@ -1055,16 +1050,16 @@ msgstr "Billede"
 msgid "Please note that this step is completely optional."
 msgstr "Bemærk, at dette trin er helt valgfrit."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:227
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:247
 msgid "Please select a file type"
 msgstr "Vælg en filtype"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:82
-msgid "Please select a job location"
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:72
+msgid "Please select a job type"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:60
-msgid "Please select a job type"
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:97
+msgid "Please select a work location"
 msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:228
@@ -1096,7 +1091,6 @@ msgstr "Drevet af <0>Simple Icons</0>"
 msgid "Primary Color"
 msgstr "Primær farve"
 
-#: apps/client/src/pages/home/components/footer.tsx:50
 #: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
 #: apps/client/src/pages/home/meta/privacy-policy/page.tsx:23
 msgid "Privacy Policy"
@@ -1123,44 +1117,6 @@ msgstr "Udgiver"
 msgid "Raise an issue"
 msgstr "Løft et problem"
 
-#: apps/client/src/components/copyright.tsx:35
-#: apps/client/src/pages/auth/backup-otp/page.tsx:52
-#: apps/client/src/pages/auth/forgot-password/page.tsx:49
-#: apps/client/src/pages/auth/login/page.tsx:55
-#: apps/client/src/pages/auth/register/page.tsx:64
-#: apps/client/src/pages/auth/reset-password/page.tsx:60
-#: apps/client/src/pages/auth/verify-email/page.tsx:43
-#: apps/client/src/pages/auth/verify-otp/page.tsx:52
-#: apps/client/src/pages/builder/page.tsx:43
-#: apps/client/src/pages/dashboard/resumes/page.tsx:20
-#: apps/client/src/pages/dashboard/settings/page.tsx:14
-#: apps/client/src/pages/home/components/footer.tsx:18
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
-#: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/public/page.tsx:73
-#: apps/client/src/pages/public/page.tsx:94
-msgid "Talent Resume"
-msgstr ""
-
-msgid "Talent Hub"
-msgstr "Talent Hub"
-
-#: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
-msgid "Talent Hub has helped people land jobs at these great companies:"
-msgstr "Talent Hub har hjulpet folk med at få job hos disse fantastiske virksomheder:"
-
-#: apps/client/src/pages/home/sections/support/index.tsx:12
-msgid "Talent Hub is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Talent Hub through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
-msgstr "Talent Hub er et gratis open-source projekt, som hovedsageligt er lavet af mig, og din støtte vil blive værdsat. Hvis du har lyst til at bidrage, og kun hvis du har råd til det, kan du overveje at give en donation via en af de nævnte platforme. Derudover er donationer til Talent Hub gennem Open Collective skattefri, da projektet er finansielt hostet af Open Collective Europe."
-
-#: apps/client/src/pages/home/sections/features/index.tsx:107
-msgid "Talent Hub is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
-msgstr "Talent Hub er et passionsprojekt med over 3 års hårdt arbejde, og med det følger en række gentagne ideer og funktioner, der er blevet bygget til (næsten) perfektion."
-
-#: apps/client/src/pages/home/sections/contributors/index.tsx:22
-msgid "Talent Hub thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
-msgstr "Talent Hub trives takket være sit livlige fællesskab. Dette projekt skylder sin fremgang til adskillige personer, der har dedikeret deres tid og færdigheder. Nedenfor hylder vi de kodere, der har forbedret dets funktioner på GitHub, og de lingvister, hvis oversættelser på Crowdin har gjort det tilgængeligt for et bredere publikum."
-
 #: apps/client/src/pages/builder/_components/toolbar.tsx:79
 msgid "Redo"
 msgstr "Gentag"
@@ -1175,7 +1131,7 @@ msgid "Remove Page"
 msgstr "Fjern side"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:110
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:94
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:103
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:86
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:152
 msgid "Rename"
@@ -1430,8 +1386,43 @@ msgstr "Understøtter A4/Brev-sideformater"
 msgid "System"
 msgstr "System"
 
+#: apps/client/src/components/copyright.tsx:35
+#: apps/client/src/pages/auth/backup-otp/page.tsx:52
+#: apps/client/src/pages/auth/forgot-password/page.tsx:49
+#: apps/client/src/pages/auth/login/page.tsx:55
+#: apps/client/src/pages/auth/register/page.tsx:64
+#: apps/client/src/pages/auth/reset-password/page.tsx:60
+#: apps/client/src/pages/auth/verify-email/page.tsx:43
+#: apps/client/src/pages/auth/verify-otp/page.tsx:52
+#: apps/client/src/pages/builder/page.tsx:43
+#: apps/client/src/pages/dashboard/resumes/page.tsx:20
+#: apps/client/src/pages/dashboard/settings/page.tsx:14
+#: apps/client/src/pages/home/components/footer.tsx:21
+#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
+#: apps/client/src/pages/home/page.tsx:24
+#: apps/client/src/pages/public/page.tsx:73
+msgid "Talent Hub"
+msgstr "Talent Hub"
+
+#: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
+msgid "Talent Hub has helped people land jobs at these great companies:"
+msgstr "Talent Hub har hjulpet folk med at få job hos disse fantastiske virksomheder:"
+
+#: apps/client/src/pages/home/sections/support/index.tsx:12
+msgid "Talent Hub is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Talent Hub through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
+msgstr "Talent Hub er et gratis open-source projekt, som hovedsageligt er lavet af mig, og din støtte vil blive værdsat. Hvis du har lyst til at bidrage, og kun hvis du har råd til det, kan du overveje at give en donation via en af de nævnte platforme. Derudover er donationer til Talent Hub gennem Open Collective skattefri, da projektet er finansielt hostet af Open Collective Europe."
+
+#: apps/client/src/pages/home/sections/features/index.tsx:107
+msgid "Talent Hub is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
+msgstr "Talent Hub er et passionsprojekt med over 3 års hårdt arbejde, og med det følger en række gentagne ideer og funktioner, der er blevet bygget til (næsten) perfektion."
+
+#: apps/client/src/pages/home/sections/contributors/index.tsx:22
+msgid "Talent Hub thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
+msgstr "Talent Hub trives takket være sit livlige fællesskab. Dette projekt skylder sin fremgang til adskillige personer, der har dedikeret deres tid og færdigheder. Nedenfor hylder vi de kodere, der har forbedret dets funktioner på GitHub, og de lingvister, hvis oversættelser på Crowdin har gjort det tilgængeligt for et bredere publikum."
+
 #: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/home/sections/hero/index.tsx:36
+#: apps/client/src/pages/public/page.tsx:94
 msgid "Talent Resume"
 msgstr "En gratis og open-source CV-bygger"
 
@@ -1556,7 +1547,7 @@ msgid "Undo"
 msgstr "Fortryd"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:52
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:103
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:112
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:105
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:161
 msgid "Unlock"
@@ -1578,7 +1569,7 @@ msgstr "Opdater et eksisterende element"
 msgid "Update an existing resume"
 msgstr "Opdater et eksisterende CV"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:214
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:234
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Talent Hub for easier editing."
 msgstr "Upload en fil fra en af de accepterede kilder for at analysere eksisterende data og importere dem til Talent Hub for lettere redigering."
 
@@ -1609,11 +1600,11 @@ msgstr "Brugernavn"
 msgid "Users Signed Up"
 msgstr "Tilmeldte brugere"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:298
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:318
 msgid "Validate"
 msgstr "Valider"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:316
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:336
 msgid "Validated"
 msgstr "Valideret"
 
@@ -1660,7 +1651,11 @@ msgstr "Vi bekræfter kun din e-mailadresse for at sikre, at vi kan sende dig et
 msgid "Website"
 msgstr "Hjemmeside"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:17
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:89
+msgid "Work Location"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:29
 msgid "Work Status"
 msgstr ""
 

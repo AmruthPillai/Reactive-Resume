@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { JobType } from "@reactive-resume/schema";
+import { JobType, JobTypeMap } from "@reactive-resume/schema";
 import {
   Input,
   Label,
@@ -79,14 +79,14 @@ export const WorkStatusSection = () => {
                   {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
                   {/* <SelectItem value="hybrid">Hybrid</SelectItem> */}
                   {Object.values(JobType).map((type) => (
-                     <SelectItem value={type}>{type}</SelectItem>
+                    <SelectItem value={type}>{JobTypeMap[type]}</SelectItem>
                   ))}
                 </SelectContent>
               </Select>
             </div>
 
             <div className="space-y-1.5">
-              <Label htmlFor="workStatus.jobLocation">{t`Job Location`}</Label>
+              <Label htmlFor="workStatus.jobLocation">{t`Work Location`}</Label>
               <Select
                 value={workStatus.jobLocation}
                 onValueChange={(value) => {
@@ -94,7 +94,7 @@ export const WorkStatusSection = () => {
                 }}
               >
                 <SelectTrigger>
-                  <SelectValue placeholder={t`Please select a job location`} />
+                  <SelectValue placeholder={t`Please select a work location`} />
                 </SelectTrigger>
                 <SelectContent>
                   {/* eslint-disable-next-line lingui/no-unlocalized-strings */}

@@ -6,6 +6,7 @@ import {
   Education,
   Experience,
   Interest,
+  JobTypeMap,
   Language,
   Profile,
   Project,
@@ -24,6 +25,7 @@ import React, { Fragment } from "react";
 import { Picture } from "../components/picture";
 import { useArtboardStore } from "../store/artboard";
 import { TemplateProps } from "../types/template";
+import { ActiveIndicator } from "../components/circle";
 
 const Header = () => {
   const basics = useArtboardStore((state) => state.resume.basics);
@@ -78,8 +80,43 @@ const Header = () => {
   );
 };
 
+const WorkStatus = () => {
+  const workStatus = useArtboardStore((state) => state.resume.workStatus);
+
+  return (
+    <section id="workStatus">
+      <div className="mb-2 hidden font-bold text-primary group-[.main]:block">
+        <h4>Work Status</h4>
+      </div>
+
+      <div className="mb-2 hidden items-center gap-x-2 text-center font-bold text-primary group-[.sidebar]:flex">
+        <div className="size-1.5 rounded-full border border-primary" />
+        <h4>Work Status</h4>
+        <div className="size-1.5 rounded-full border border-primary" />
+      </div>
+
+      <main className={cn("relative space-y-2", "border-l border-primary pl-4")}>
+        <div className="absolute left-[-4.5px] top-[8px] hidden size-[8px] rounded-full bg-primary group-[.main]:block" />
+
+        <div className="flex items-center gap-4">
+          <p className="font-bold">
+            {workStatus.openToWork ? "Available For Work" : "Not Available For Work"}
+          </p>
+          <ActiveIndicator className={workStatus.openToWork ? "bg-green-500" : "bg-red-600"} />
+        </div>
+        {workStatus.openToWork && <div>{JobTypeMap[workStatus.jobType]}</div>}
+        {workStatus.openToWork && <div>{workStatus.jobLocation}</div>}
+      </main>
+    </section>
+  );
+};
+
 const Summary = () => {
   const section = useArtboardStore((state) => state.resume.sections.summary);
+  const workStatus = useArtboardStore((state) => state.resume.workStatus);
+
+  console.log(section)
+  console.log('>>>', workStatus)
 
   if (!section.visible || isEmptyString(section.content)) return null;
 
@@ -575,6 +612,7 @@ export const Azurill = ({ columns, isFirstPage = false }: TemplateProps) => {
         </div>
 
         <div className="main group col-span-2 space-y-4">
+          <WorkStatus />
           {main.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}

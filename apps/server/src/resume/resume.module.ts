@@ -3,6 +3,7 @@ import { Module } from "@nestjs/common";
 import { AuthModule } from "@/server/auth/auth.module";
 import { PrinterModule } from "@/server/printer/printer.module";
 
+import { GenaiService } from "../genai/genai.service";
 import { StorageModule } from "../storage/storage.module";
 import { ResumeController } from "./resume.controller";
 import { ResumeService } from "./resume.service";
@@ -10,7 +11,7 @@ import { ResumeService } from "./resume.service";
 @Module({
   imports: [AuthModule, PrinterModule, StorageModule],
   controllers: [ResumeController],
-  providers: [ResumeService],
+  providers: [ResumeService, GenaiService],
   exports: [ResumeService],
 })
 export class ResumeModule {}
