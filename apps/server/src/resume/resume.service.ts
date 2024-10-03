@@ -144,7 +144,6 @@ export class ResumeService {
   }
 
   async importLinkedin(userId: string, importLinkedinDto: ImportLinkedinDto) {
-    throw new BadRequestException("LinkedIn import is disabled");
     const SCRAPIN_API_KEY = this.configService.get<string>("SCRAPIN_API_KEY");
     const linkedinScrapeURL = `https://api.scrapin.io/enrichment/profile?apikey=${SCRAPIN_API_KEY}&linkedinUrl=${importLinkedinDto.linkedinURL}`;
     const linkedinRes = await this.httpService.axiosRef.get(linkedinScrapeURL);
