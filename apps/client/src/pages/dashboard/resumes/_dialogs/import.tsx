@@ -172,7 +172,7 @@ export const ImportDialog = () => {
   const onLinkedinImport = async () => {
     try {
       const { linkedinUrl } = formLinkedinSchema.parse(linkedinForm.getValues());
-      const data = await importLinkedinResume({ linkedinURL: linkedinUrl });
+      await importLinkedinResume({ linkedinURL: linkedinUrl });
       close();
     } catch (error) {
       if (error instanceof ZodError) {
