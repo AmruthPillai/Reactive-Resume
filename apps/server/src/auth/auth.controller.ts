@@ -106,9 +106,8 @@ export class AuthController {
   }
 
   @Post("login")
-  @ApiBody({ type: LoginDto })
   @UseGuards(LocalGuard)
-  async login(@User() user: UserWithSecrets, @Res({ passthrough: true }) response: Response) {
+  async login(@Body() loginDto: LoginDto, @User() user: UserWithSecrets, @Res({ passthrough: true }) response: Response) {
     return this.handleAuthenticationResponse(user, response);
   }
 
