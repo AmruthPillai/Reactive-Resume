@@ -57,7 +57,7 @@ export const defaultMetadata: Metadata = {
   page: {
     margin: 18,
     format: "a4",
-    rtl: true,
+    rtl: false,
     options: {
       breakLine: true,
       pageNumbers: true,

@@ -263,7 +263,7 @@ export const ImportDialog = () => {
                 <FormItem>
                   <FormLabel>{t`LinkedIn Profile URL`}</FormLabel>
                   <FormControl>
-                    <Input {...field} />
+                    <Input {...field} placeholder="https://www.linkedin.com/in/ryanroslansky/" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -274,7 +274,7 @@ export const ImportDialog = () => {
 
         <div className="flex justify-end gap-2">
           <Button type="button" disabled={loading} onClick={onLinkedinImport}>
-            {loading && <Spinner size={16} className="animate-spin" />}
+            {loading && <Spinner size={16} className="animate-spin me-2" />}
             {t`Import`}
           </Button>
         </div>
