@@ -54,7 +54,7 @@ msgstr "<0>Šiuo metu dviejų veiksnių autentifikavimas yra išjungtas.</0> Jį
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr "<0>Įjungtas dviejų veiksnių autentifikavimas.</0> Kiekvieną kartą prisijungdami turėsite įvesti kodą."
 
-#: apps/client/src/pages/home/components/footer.tsx:21
+#: apps/client/src/pages/home/components/footer.tsx:24
 #: apps/client/src/pages/home/sections/hero/index.tsx:40
 msgid "A free resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "Nemokama atvirojo kodo Cv kūrimo priemonė, supaprastinanti gyvenimo aprašymo kūrimo, atnaujinimo ir bendrinimo procesą."
@@ -85,7 +85,7 @@ msgid "A4"
 msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:272
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:292
 msgid "Accepts only {accept} files"
 msgstr "Priimami tik {accept} failai"
 
@@ -124,7 +124,7 @@ msgstr "AI"
 msgid "Already have an account?"
 msgstr "Jau turite paskyrą?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:146
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:159
 msgid "An error occurred while validating the file."
 msgstr "Patvirtinant failą įvyko klaida."
 
@@ -382,7 +382,7 @@ msgstr "Data arba datos intervalas"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:133
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:156
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:114
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:123
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:127
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:172
 msgid "Delete"
@@ -413,7 +413,7 @@ msgstr "Išjungti"
 msgid "Disable 2FA"
 msgstr "Išjungti 2FA"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:304
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:324
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
@@ -455,7 +455,7 @@ msgstr "Atsisiuntimai"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:169
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:98
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:107
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:95
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:156
 msgid "Duplicate"
@@ -513,7 +513,7 @@ msgstr "Toliau įveskite vienkartinį slaptažodį, kurį pateikė autentifikato
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "Įveskite savo el. pašto adresą ir mes atsiųsime jums nuorodą, kad iš naujo nustatytumėte slaptažodį, jei paskyra egzistuoja."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:285
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:305
 msgid "Errors"
 msgstr "Klaidos"
 
@@ -521,7 +521,7 @@ msgstr "Klaidos"
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Talent Hub has helped you. Your feedback and support are always welcome and much appreciated!"
 msgstr "Net jei negalite prisidėti finansiškai, vis tiek galite kažką pakeisti, suteikdami \"GitHub\" saugyklai žvaigždutę, paskleisdami žinią draugams arba parašydami trumpą žinutę ir pranešdami, kaip \"Talent Hub\" jums padėjo. Jūsų atsiliepimai ir parama visada laukiami ir labai vertinami!"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:37
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:49
 msgid "Expected Pricing"
 msgstr ""
 
@@ -534,11 +534,11 @@ msgstr "Išnagrinėkite \"Talent Hub\" esančius šablonus ir peržiūrėkite pa
 msgid "Export"
 msgstr "Eksportuoti"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:257
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:277
 msgid "File"
 msgstr "Failas"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:223
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:243
 msgid "Filetype"
 msgstr "Failo tipas"
 
@@ -698,11 +698,11 @@ msgstr "Jei išjungsite dviejų veiksnių autentifikavimą, prisijungiant nebere
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "Jei kalbate keliomis kalbomis, norėtume, kad padėtumėte programėlę įdiegti daugiau kalbų ir bendruomenių. Nesijaudinkite, jei sąraše nematote savo kalbos - tiesiog praneškite man apie tai \"GitHub\", ir aš pasirūpinsiu, kad ji būtų įtraukta. Ar esate pasiruošę pradėti? Pereikite prie vertimo \"Crowdin\" svetainėje spustelėję toliau pateiktą nuorodą."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:311
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:331
 msgid "Import"
 msgstr "Importas"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:210
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:230
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -724,7 +724,6 @@ msgstr "Šiame skyriuje galite pakeisti slaptažodį ir įjungti / išjungti dvi
 msgid "In this section, you can delete your account and all the data associated to your user, but please keep in mind that <0>this action is irreversible</0>."
 msgstr "Šiame skyriuje galite ištrinti savo paskyrą ir visus su naudotoju susijusius duomenis, tačiau nepamirškite, kad <0>šis veiksmas yra negrįžtamas</0>."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:125
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
 msgid "Information"
 msgstr "Informacija"
@@ -765,11 +764,7 @@ msgstr "Panašu, kad jūsų pateiktas patvirtinimo prieigos raktas yra neteising
 msgid "It looks like your email address has already been verified."
 msgstr "Atrodo, kad jūsų el. pašto adresas jau patikrintas."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:74
-msgid "Job Location"
-msgstr ""
-
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:52
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:64
 msgid "Job Type"
 msgstr ""
 
@@ -808,7 +803,7 @@ msgstr "Etiketė"
 msgid "Language"
 msgstr "Kalba"
 
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:82
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:91
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:139
 msgid "Last updated {lastUpdated}"
 msgstr "Paskutinį kartą atnaujinta {lastUpdated}"
@@ -864,7 +859,7 @@ msgid "Location"
 msgstr "Vieta"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:51
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:108
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:117
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:115
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:166
 msgid "Lock"
@@ -966,12 +961,12 @@ msgstr "Vienkartinis slaptažodis"
 
 #: apps/client/src/components/ai-actions.tsx:56
 #: apps/client/src/libs/axios.ts:29
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:190
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:210
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "Oi, serveris grąžino klaidą."
 
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:90
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:99
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:77
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:148
 msgid "Open"
@@ -981,7 +976,7 @@ msgstr "Atviras"
 msgid "Open Source"
 msgstr "Atviro kodo"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:24
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:36
 msgid "Open To Work"
 msgstr ""
 
@@ -1055,16 +1050,16 @@ msgstr "Paveikslėlis"
 msgid "Please note that this step is completely optional."
 msgstr "Atkreipkite dėmesį, kad šis veiksmas yra visiškai neprivalomas."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:227
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:247
 msgid "Please select a file type"
 msgstr "Pasirinkite failo tipą"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:82
-msgid "Please select a job location"
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:72
+msgid "Please select a job type"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:60
-msgid "Please select a job type"
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:97
+msgid "Please select a work location"
 msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:228
@@ -1096,7 +1091,6 @@ msgstr "Sukurta naudojant <0>Simple Icons</0>"
 msgid "Primary Color"
 msgstr "Pagrindinė spalva"
 
-#: apps/client/src/pages/home/components/footer.tsx:50
 #: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
 #: apps/client/src/pages/home/meta/privacy-policy/page.tsx:23
 msgid "Privacy Policy"
@@ -1123,44 +1117,6 @@ msgstr "Leidėjas"
 msgid "Raise an issue"
 msgstr "Iškelti problemą"
 
-#: apps/client/src/components/copyright.tsx:35
-#: apps/client/src/pages/auth/backup-otp/page.tsx:52
-#: apps/client/src/pages/auth/forgot-password/page.tsx:49
-#: apps/client/src/pages/auth/login/page.tsx:55
-#: apps/client/src/pages/auth/register/page.tsx:64
-#: apps/client/src/pages/auth/reset-password/page.tsx:60
-#: apps/client/src/pages/auth/verify-email/page.tsx:43
-#: apps/client/src/pages/auth/verify-otp/page.tsx:52
-#: apps/client/src/pages/builder/page.tsx:43
-#: apps/client/src/pages/dashboard/resumes/page.tsx:20
-#: apps/client/src/pages/dashboard/settings/page.tsx:14
-#: apps/client/src/pages/home/components/footer.tsx:18
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
-#: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/public/page.tsx:73
-#: apps/client/src/pages/public/page.tsx:94
-msgid "Talent Resume"
-msgstr ""
-
-msgid "Talent Hub"
-msgstr "\"Talent Hub\""
-
-#: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
-msgid "Talent Hub has helped people land jobs at these great companies:"
-msgstr "\"Talent Hub\" padėjo žmonėms gauti darbą šiose puikiose įmonėse:"
-
-#: apps/client/src/pages/home/sections/support/index.tsx:12
-msgid "Talent Hub is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Talent Hub through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
-msgstr "\"Talent Hub\" yra nemokamas atvirojo kodo projektas, kurį daugiausia sukūriau aš, ir jūsų parama būtų labai dėkinga. Jei esate linkęs prisidėti ir tik tuo atveju, jei galite sau tai leisti, apsvarstykite galimybę paaukoti per bet kurią iš išvardytų platformų. Be to, aukos Talent Hub per Open Collective yra neapmokestinamos, nes projektą fiskališkai organizuoja Open Collective Europe."
-
-#: apps/client/src/pages/home/sections/features/index.tsx:107
-msgid "Talent Hub is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
-msgstr "\"Talent Hub\" yra daugiau nei trejus metus trukusio sunkaus darbo projektas, o kartu su juo - daugybė pakartotinai įgyvendintų idėjų ir funkcijų, kurios buvo sukurtos iki (beveik) tobulumo."
-
-#: apps/client/src/pages/home/sections/contributors/index.tsx:22
-msgid "Talent Hub thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
-msgstr "\"Talent Hub\" klesti dėl savo gyvybingos bendruomenės. Šis projektas už savo pažangą skolingas daugybei žmonių, kurie skyrė savo laiką ir įgūdžius. Toliau džiaugiamės programuotojais, kurie tobulino funkcijas per GitHub, ir kalbininkus, kurių vertimai „Crowdin“ padarė jį prieinamą platesnei auditorijai."
-
 #: apps/client/src/pages/builder/_components/toolbar.tsx:79
 msgid "Redo"
 msgstr "Grąžinti"
@@ -1175,7 +1131,7 @@ msgid "Remove Page"
 msgstr "Pašalinti puslapį"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:110
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:94
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:103
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:86
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:152
 msgid "Rename"
@@ -1430,8 +1386,43 @@ msgstr "Palaikomi A4/laiško puslapių formatai"
 msgid "System"
 msgstr "Sistema"
 
+#: apps/client/src/components/copyright.tsx:35
+#: apps/client/src/pages/auth/backup-otp/page.tsx:52
+#: apps/client/src/pages/auth/forgot-password/page.tsx:49
+#: apps/client/src/pages/auth/login/page.tsx:55
+#: apps/client/src/pages/auth/register/page.tsx:64
+#: apps/client/src/pages/auth/reset-password/page.tsx:60
+#: apps/client/src/pages/auth/verify-email/page.tsx:43
+#: apps/client/src/pages/auth/verify-otp/page.tsx:52
+#: apps/client/src/pages/builder/page.tsx:43
+#: apps/client/src/pages/dashboard/resumes/page.tsx:20
+#: apps/client/src/pages/dashboard/settings/page.tsx:14
+#: apps/client/src/pages/home/components/footer.tsx:21
+#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
+#: apps/client/src/pages/home/page.tsx:24
+#: apps/client/src/pages/public/page.tsx:73
+msgid "Talent Hub"
+msgstr "\"Talent Hub\""
+
+#: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
+msgid "Talent Hub has helped people land jobs at these great companies:"
+msgstr "\"Talent Hub\" padėjo žmonėms gauti darbą šiose puikiose įmonėse:"
+
+#: apps/client/src/pages/home/sections/support/index.tsx:12
+msgid "Talent Hub is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Talent Hub through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
+msgstr "\"Talent Hub\" yra nemokamas atvirojo kodo projektas, kurį daugiausia sukūriau aš, ir jūsų parama būtų labai dėkinga. Jei esate linkęs prisidėti ir tik tuo atveju, jei galite sau tai leisti, apsvarstykite galimybę paaukoti per bet kurią iš išvardytų platformų. Be to, aukos Talent Hub per Open Collective yra neapmokestinamos, nes projektą fiskališkai organizuoja Open Collective Europe."
+
+#: apps/client/src/pages/home/sections/features/index.tsx:107
+msgid "Talent Hub is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
+msgstr "\"Talent Hub\" yra daugiau nei trejus metus trukusio sunkaus darbo projektas, o kartu su juo - daugybė pakartotinai įgyvendintų idėjų ir funkcijų, kurios buvo sukurtos iki (beveik) tobulumo."
+
+#: apps/client/src/pages/home/sections/contributors/index.tsx:22
+msgid "Talent Hub thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
+msgstr "\"Talent Hub\" klesti dėl savo gyvybingos bendruomenės. Šis projektas už savo pažangą skolingas daugybei žmonių, kurie skyrė savo laiką ir įgūdžius. Toliau džiaugiamės programuotojais, kurie tobulino funkcijas per GitHub, ir kalbininkus, kurių vertimai „Crowdin“ padarė jį prieinamą platesnei auditorijai."
+
 #: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/home/sections/hero/index.tsx:36
+#: apps/client/src/pages/public/page.tsx:94
 msgid "Talent Resume"
 msgstr "Nemokamas atvirojo kodo gyvenimo aprašymų kūrėjas"
 
@@ -1556,7 +1547,7 @@ msgid "Undo"
 msgstr "Anuliuoti"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:52
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:103
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:112
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:105
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:161
 msgid "Unlock"
@@ -1578,7 +1569,7 @@ msgstr "Atnaujinti esamą elementą"
 msgid "Update an existing resume"
 msgstr "Atnaujinti esamą gyvenimo aprašymą"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:214
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:234
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Talent Hub for easier editing."
 msgstr "Įkelkite failą iš vieno iš priimtų šaltinių, kad išanalizuoti esamus duomenis ir importuoti jį į \"Talent Hub\", kad būtų lengviau redaguoti."
 
@@ -1609,11 +1600,11 @@ msgstr "Vartotojo vardas"
 msgid "Users Signed Up"
 msgstr "Prisiregistravę vartotojai"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:298
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:318
 msgid "Validate"
 msgstr "Patvirtinti"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:316
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:336
 msgid "Validated"
 msgstr "Patvirtinta"
 
@@ -1660,7 +1651,11 @@ msgstr "Jūsų el. pašto adresą tikriname tik tam, kad galėtume atsiųsti sla
 msgid "Website"
 msgstr "Tinklalapis"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/workStatus.tsx:17
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:89
+msgid "Work Location"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:29
 msgid "Work Status"
 msgstr ""
 

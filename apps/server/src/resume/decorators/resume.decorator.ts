@@ -9,7 +9,7 @@ export const Resume = createParamDecorator(
     const request = ctx.switchToHttp().getRequest();
     const resume = request.payload?.resume as ResumeDto;
     const resumeData = data ? resume[data] : resume;
-    console.log(transformZodJson((resumeData as ResumeDto).data));
+    // console.log(transformZodJson((resumeData as ResumeDto).data));
     resumeDataSchema.parse(transformZodJson((resumeData as ResumeDto).data));
     return {
       ...(resumeData as ResumeDto),

@@ -1,10 +1,16 @@
 import { z } from "zod";
 
 export enum JobType {
-  "REMOTE" = "REMOTE",
-  "ONSITE" = "ONSITE",
-  "HYBRID" = "HYBRID",
+  REMOTE = "REMOTE",
+  ONSITE = "ONSITE",
+  HYBRID = "HYBRID",
 }
+
+export const JobTypeMap = {
+  REMOTE: "Remote",
+  ONSITE: "Onsite",
+  HYBRID: "Hybrid",
+};
 
 // Schema
 export const workStatusSchema = z.object({

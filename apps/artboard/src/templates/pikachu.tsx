@@ -6,6 +6,7 @@ import {
   Education,
   Experience,
   Interest,
+  JobTypeMap,
   Language,
   Profile,
   Project,
@@ -24,6 +25,7 @@ import { Fragment } from "react";
 import { Picture } from "../components/picture";
 import { useArtboardStore } from "../store/artboard";
 import { TemplateProps } from "../types/template";
+import { ActiveIndicator } from "../components/circle";
 
 const Header = () => {
   const basics = useArtboardStore((state) => state.resume.basics);
@@ -98,6 +100,29 @@ const Header = () => {
         </div>
       </div>
     </div>
+  );
+};
+
+const WorkStatus = () => {
+  const workStatus = useArtboardStore((state) => state.resume.workStatus);
+
+  return (
+    <section id="workStatus">
+      <h4 className="mb-2 border-b border-primary text-base font-bold">Work Status</h4>
+
+      <div className="flex items-start justify-between">
+        <div className="flex w-[200px] items-center gap-4">
+          <p className="font-bold">
+            {workStatus.openToWork ? "Available For Work" : "Not Available For Work"}
+          </p>
+          <ActiveIndicator className={workStatus.openToWork ? "bg-green-500" : "bg-red-600"} />
+        </div>
+        <div>
+          {workStatus.openToWork && <div className="font-bold">{JobTypeMap[workStatus.jobType]}</div>}
+          {workStatus.openToWork && <div>{workStatus.jobLocation}</div>}
+        </div>
+      </div>
+    </section>
   );
 };
 
@@ -623,7 +648,7 @@ export const Pikachu = ({ columns, isFirstPage = false }: TemplateProps) => {
 
       <div className="main group col-span-2 space-y-4">
         {isFirstPage && <Header />}
-
+        <WorkStatus />
         {main.map((section) => (
           <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
         ))}

@@ -6,6 +6,7 @@ import {
   JsonResumeParser,
   LinkedIn,
   LinkedInParser,
+  PdfResumeParser,
   ReactiveResumeParser,
   ReactiveResumeV3,
   ReactiveResumeV3Parser,
@@ -42,6 +43,7 @@ import { z, ZodError } from "zod";
 
 import { useToast } from "@/client/hooks/use-toast";
 import { useImportResume } from "@/client/services/resume/import";
+import { useImportPdfResume } from "@/client/services/resume/import-pdf";
 import { useDialog } from "@/client/stores/dialog";
 
 enum ImportType {
@@ -49,6 +51,7 @@ enum ImportType {
   "reactive-resume-v3-json" = "reactive-resume-v3-json",
   "json-resume-json" = "json-resume-json",
   "linkedin-data-export-zip" = "linkedin-data-export-zip",
+  "pdf-resume-file" = "pdf-resume-file",
 }
 
 const formSchema = z.object({
@@ -73,6 +76,7 @@ export const ImportDialog = () => {
   const { toast } = useToast();
   const { isOpen, close } = useDialog("import");
   const { importResume, loading } = useImportResume();
+  const { importPdfResume, loading: loadingPdf } = useImportPdfResume();
 
   const [validationResult, setValidationResult] = useState<ValidationResult | null>(null);
 
@@ -96,6 +100,7 @@ export const ImportDialog = () => {
   const accept = useMemo(() => {
     if (filetype.includes("json")) return ".json";
     if (filetype.includes("zip")) return ".zip";
+    if (filetype.includes("pdf")) return ".pdf";
     return "";
   }, [filetype]);
 
@@ -136,6 +141,14 @@ export const ImportDialog = () => {
 
         setValidationResult({ isValid: true, type, result });
       }
+
+      // if (type === ImportType["pdf-resume-file"]) {
+      //   const parser = new PdfResumeParser();
+      //   const data = await parser.readFile(file);
+      //   // const result = await parser.validate(data);
+      //   console.log(data)
+      //   // setValidationResult({ isValid: true, type, result });
+      // }
     } catch (error) {
       if (error instanceof ZodError) {
         setValidationResult({
@@ -185,6 +198,13 @@ export const ImportDialog = () => {
         await importResume({ data });
       }
 
+      if (type === ImportType["pdf-resume-file"]) {
+        // const parser = new LinkedInParser();
+        // const data = parser.convert(validationResult.result as LinkedIn);
+
+        // await importResume({ data });
+      }
+
       close();
     } catch (error: unknown) {
       toast({
@@ -199,6 +219,30 @@ export const ImportDialog = () => {
     form.reset();
     setValidationResult(null);
   };
+
+  const onImportPdf = async () => {
+    try {
+      const { file } = formSchema.parse(form.getValues());
+      const formData = new FormData();
+      console.log('pdf')
+      // throw new Error("Error");
+      formData.append("file", file);
+      await importPdfResume(formData);
+    } catch (error) {
+      if (error instanceof Error) {
+        console.log(error.message)
+        setValidationResult({
+          isValid: false,
+          errors: error.message,
+        });
+
+        toast({
+          variant: "error",
+          title: t`An error occurred while validating the file.`,
+        });
+      }
+    }
+  }
 
   return (
     <Dialog open={isOpen} onOpenChange={close}>
@@ -241,6 +285,8 @@ export const ImportDialog = () => {
                         <SelectItem value="linkedin-data-export-zip">
                           LinkedIn Data Export (.zip)
                         </SelectItem>
+                        {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
+                        <SelectItem value="pdf-resume-file">PDF Resume File (.pdf)</SelectItem>
                       </SelectContent>
                     </Select>
                   </FormControl>
@@ -293,28 +339,40 @@ export const ImportDialog = () => {
 
             <DialogFooter>
               <AnimatePresence presenceAffectsLayout>
-                {!validationResult && (
-                  <Button type="button" onClick={onValidate}>
-                    {t`Validate`}
+                {filetype === ImportType["pdf-resume-file"] ? (
+                  <Button
+                    type="button"
+                    disabled={loading || !form.getValues().file}
+                    onClick={onImportPdf}
+                  >
+                    {t`Import`}
                   </Button>
-                )}
-
-                {validationResult !== null && !validationResult.isValid && (
-                  <Button type="button" variant="secondary" onClick={onReset}>
-                    {t`Discard`}
-                  </Button>
-                )}
-
-                {validationResult !== null && validationResult.isValid && (
+                ) : (
                   <>
-                    <Button type="button" disabled={loading} onClick={onImport}>
-                      {t`Import`}
-                    </Button>
+                    {!validationResult && (
+                      <Button type="button" onClick={onValidate}>
+                        {t`Validate`}
+                      </Button>
+                    )}
 
-                    <Button disabled type="button" variant="success">
-                      <Check size={16} weight="bold" className="mr-2" />
-                      {t`Validated`}
-                    </Button>
+                    {validationResult !== null && !validationResult.isValid && (
+                      <Button type="button" variant="secondary" onClick={onReset}>
+                        {t`Discard`}
+                      </Button>
+                    )}
+
+                    {validationResult !== null && validationResult.isValid && (
+                      <>
+                        <Button type="button" disabled={loading} onClick={onImport}>
+                          {t`Import`}
+                        </Button>
+
+                        <Button disabled type="button" variant="success">
+                          <Check size={16} weight="bold" className="mr-2" />
+                          {t`Validated`}
+                        </Button>
+                      </>
+                    )}
                   </>
                 )}
               </AnimatePresence>
