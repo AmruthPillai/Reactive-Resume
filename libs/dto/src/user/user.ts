@@ -23,6 +23,7 @@ export const userSchema = z.object({
   emailVerified: z.boolean().default(false),
   twoFactorEnabled: z.boolean().default(false),
   provider: z.enum(["email", "github", "google"]).default("email"),
+  roles: z.array(z.enum(["user", "admin"])).default(["user"]),
   createdAt: z.date().or(z.dateString()),
   updatedAt: z.date().or(z.dateString()),
 });

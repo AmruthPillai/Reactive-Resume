@@ -6,4 +6,4 @@ import { ROLE_KEY } from "../constants/admin.constant";
  * admin decorator
  */
 
-export const Role = (role: Roles) => SetMetadata(ROLE_KEY, role);
+export const Role = (role: Roles[]) => SetMetadata(ROLE_KEY, role);

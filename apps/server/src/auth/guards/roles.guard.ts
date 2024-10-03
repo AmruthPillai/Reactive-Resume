@@ -4,6 +4,7 @@ import { AuthService } from "../auth.service";
 import { Roles } from "../enums/roles.enum";
 import { ROLE_KEY } from "../constants/admin.constant";
 import { Request } from "express";
+import { isArray } from "util";
 
 @Injectable()
 export class RolesGuard implements CanActivate {
@@ -18,7 +19,7 @@ export class RolesGuard implements CanActivate {
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
     // get require role
-    const requiredRoles: string = this.reflector.getAllAndOverride<Roles>(ROLE_KEY, [
+    const requiredRoles: Roles[] = this.reflector.getAllAndOverride<Roles[]>(ROLE_KEY, [
       context.getHandler(),
       context.getClass(),
     ]);
