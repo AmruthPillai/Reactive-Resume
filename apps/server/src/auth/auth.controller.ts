@@ -12,7 +12,7 @@ import {
   UseGuards,
 } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
-import { ApiTags } from "@nestjs/swagger";
+import { ApiBody, ApiTags } from "@nestjs/swagger";
 import {
   authResponseSchema,
   backupCodesSchema,
@@ -107,7 +107,7 @@ export class AuthController {
 
   @Post("login")
   @UseGuards(LocalGuard)
-  async login(@User() user: UserWithSecrets, @Res({ passthrough: true }) response: Response) {
+  async login(@Body() loginDto: LoginDto, @User() user: UserWithSecrets, @Res({ passthrough: true }) response: Response) {
     return this.handleAuthenticationResponse(user, response);
   }
 
