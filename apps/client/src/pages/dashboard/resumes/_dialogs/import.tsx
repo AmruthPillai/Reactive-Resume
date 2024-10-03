@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/macro";
-import { Check, DownloadSimple } from "@phosphor-icons/react";
+import { Check, DownloadSimple, Spinner } from "@phosphor-icons/react";
 import {
   JsonResume,
   JsonResumeParser,
@@ -34,6 +34,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
+  Separator,
 } from "@reactive-resume/ui";
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
@@ -42,6 +43,7 @@ import { z, ZodError } from "zod";
 
 import { useToast } from "@/client/hooks/use-toast";
 import { useImportResume } from "@/client/services/resume/import";
+import { useImportLinkedinResume } from "@/client/services/resume/import-linkedin";
 import { useDialog } from "@/client/stores/dialog";
 
 enum ImportType {
@@ -50,6 +52,15 @@ enum ImportType {
   "json-resume-json" = "json-resume-json",
   "linkedin-data-export-zip" = "linkedin-data-export-zip",
 }
+
+const formLinkedinSchema = z.object({
+  linkedinUrl: z
+    .string()
+    .url()
+    .refine((value) => value.includes("linkedin.com/in/")),
+});
+
+type FormLinkedinValues = z.infer<typeof formLinkedinSchema>;
 
 const formSchema = z.object({
   file: z.instanceof(File),
@@ -72,9 +83,18 @@ type ValidationResult =
 export const ImportDialog = () => {
   const { toast } = useToast();
   const { isOpen, close } = useDialog("import");
-  const { importResume, loading } = useImportResume();
+  const { importResume, loading: importLoading } = useImportResume();
+  const { importLinkedinResume, loading: importLinkedinLoading } = useImportLinkedinResume();
 
+  const loading = importLoading || importLinkedinLoading;
   const [validationResult, setValidationResult] = useState<ValidationResult | null>(null);
+
+  const linkedinForm = useForm<FormLinkedinValues>({
+    defaultValues: {
+      linkedinUrl: "",
+    },
+    resolver: zodResolver(formLinkedinSchema),
+  });
 
   const form = useForm<FormValues>({
     defaultValues: {
@@ -149,6 +169,27 @@ export const ImportDialog = () => {
     }
   };
 
+  const onLinkedinImport = async () => {
+    try {
+      const { linkedinUrl } = formLinkedinSchema.parse(linkedinForm.getValues());
+      const data = await importLinkedinResume({ linkedinURL: linkedinUrl });
+      close();
+    } catch (error) {
+      if (error instanceof ZodError) {
+        toast({
+          variant: "error",
+          title: t`An error occurred while validating the LinkedIn URL.`,
+        });
+      } else if (error instanceof Error) {
+        toast({
+          variant: "error",
+          title: t`Oops, the server returned an error.`,
+          description: error.message,
+        });
+      }
+    }
+  };
+
   const onImport = async () => {
     const { type } = formSchema.parse(form.getValues());
 
@@ -201,20 +242,47 @@ export const ImportDialog = () => {
   return (
     <Dialog open={isOpen} onOpenChange={close}>
       <DialogContent>
+        <DialogHeader>
+          <DialogTitle>
+            <div className="flex items-center gap-2.5">
+              <DownloadSimple />
+              <h2>{t`Import an existing resume`}</h2>
+            </div>
+          </DialogTitle>
+          <DialogDescription>
+            {t`Upload a file from one of the accepted sources to parse existing data and import it into TechCV for easier editing.`}
+          </DialogDescription>
+        </DialogHeader>
+
+        <Form {...linkedinForm}>
+          <form className="space-y-4">
+            <FormField
+              name="linkedinUrl"
+              control={linkedinForm.control}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t`LinkedIn Profile URL`}</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </form>
+        </Form>
+
+        <div className="flex justify-end gap-2">
+          <Button type="button" disabled={loading} onClick={onLinkedinImport}>
+            {loading && <Spinner size={16} className="animate-spin" />}
+            {t`Import`}
+          </Button>
+        </div>
+
+        <Separator />
+
         <Form {...form}>
           <form className="space-y-4">
-            <DialogHeader>
-              <DialogTitle>
-                <div className="flex items-center gap-2.5">
-                  <DownloadSimple />
-                  <h2>{t`Import an existing resume`}</h2>
-                </div>
-              </DialogTitle>
-              <DialogDescription>
-                {t`Upload a file from one of the accepted sources to parse existing data and import it into TechCV for easier editing.`}
-              </DialogDescription>
-            </DialogHeader>
-
             <FormField
               name="type"
               control={form.control}
@@ -228,13 +296,9 @@ export const ImportDialog = () => {
                       </SelectTrigger>
                       <SelectContent>
                         {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
-                        <SelectItem value="reactive-resume-json">
-                          TechCV (.json)
-                        </SelectItem>
+                        <SelectItem value="reactive-resume-json">TechCV (.json)</SelectItem>
                         {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
-                        <SelectItem value="reactive-resume-v3-json">
-                          TechCV v3 (.json)
-                        </SelectItem>
+                        <SelectItem value="reactive-resume-v3-json">TechCV v3 (.json)</SelectItem>
                         {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
                         <SelectItem value="json-resume-json">JSON Resume (.json)</SelectItem>
                         {/* eslint-disable-next-line lingui/no-unlocalized-strings */}

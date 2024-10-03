@@ -76,6 +76,9 @@ export const configSchema = z.object({
   // SUMIT (Billing)
   SUMIT_CUSTOMER_ID: z.string().optional(),
   SUMIT_API_KEY: z.string().optional(),
+
+  // SCRAPIN (LINKEDIN)
+  SCRAPIN_API_KEY: z.string().optional(),
 });
 
 export type Config = z.infer<typeof configSchema>;

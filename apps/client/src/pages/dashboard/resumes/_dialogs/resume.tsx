@@ -99,7 +99,6 @@ export const ResumeDialog = () => {
   }, [form.watch("title")]);
 
   const onSubmit = async (values: FormValues) => {
-    console.log("VALUES", values);
     if (isCreateAi) {
       await createAiResume({
         slug: values.slug,

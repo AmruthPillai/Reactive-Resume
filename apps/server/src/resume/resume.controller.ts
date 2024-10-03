@@ -9,7 +9,7 @@ import {
   Param,
   Patch,
   Post,
-  UseGuards
+  UseGuards,
 } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
 import { User as UserEntity } from "@prisma/client";
@@ -20,7 +20,7 @@ import {
   importLinkedinSchema,
   importResumeSchema,
   ResumeDto,
-  UpdateResumeDto
+  UpdateResumeDto,
 } from "@reactive-resume/dto";
 import { resumeDataSchema } from "@reactive-resume/schema";
 import { ErrorMessage } from "@reactive-resume/utils";
@@ -37,8 +37,7 @@ import { ResumeService } from "./resume.service";
 @ApiTags("Resume")
 @Controller("resume")
 export class ResumeController {
-  constructor(private readonly resumeService: ResumeService) {
-  }
+  constructor(private readonly resumeService: ResumeService) {}
 
   @Get("schema")
   getSchema() {
@@ -91,7 +90,7 @@ export class ResumeController {
     }
   }
 
-  @Post("import/linkedin")
+  @Post("import-linkedin")
   @UseGuards(TwoFactorGuard)
   async importLinkedin(@User() user: UserEntity, @Body() importLinkedinDto: unknown) {
     try {
@@ -130,7 +129,7 @@ export class ResumeController {
   findOneByUsernameSlug(
     @Param("username") username: string,
     @Param("slug") slug: string,
-    @User("id") userId: string
+    @User("id") userId: string,
   ) {
     return this.resumeService.findOneByUsernameSlug(username, slug, userId);
   }
@@ -140,7 +139,7 @@ export class ResumeController {
   update(
     @User() user: UserEntity,
     @Param("id") id: string,
-    @Body() updateResumeDto: UpdateResumeDto
+    @Body() updateResumeDto: UpdateResumeDto,
   ) {
     return this.resumeService.update(user.id, id, updateResumeDto);
   }
