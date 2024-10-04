@@ -107,7 +107,11 @@ export class AuthController {
 
   @Post("login")
   @UseGuards(LocalGuard)
-  async login(@Body() loginDto: LoginDto, @User() user: UserWithSecrets, @Res({ passthrough: true }) response: Response) {
+  async login(
+    @Body() loginDto: LoginDto,
+    @User() user: UserWithSecrets,
+    @Res({ passthrough: true }) response: Response,
+  ) {
     return this.handleAuthenticationResponse(user, response);
   }
 
@@ -171,10 +175,14 @@ export class AuthController {
     await this.authService.setRefreshToken(user.email, null);
 
     response.clearCookie("Authentication", {
+      httpOnly: true,
       sameSite: "none",
+      secure: (process.env.PUBLIC_URL ?? "").includes("https://"),
     });
     response.clearCookie("Refresh", {
       sameSite: "none",
+      httpOnly: true,
+      secure: (process.env.PUBLIC_URL ?? "").includes("https://"),
     });
 
     const data = messageSchema.parse({ message: "You have been logged out, tschüss!" });
