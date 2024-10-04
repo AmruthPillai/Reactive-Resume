@@ -170,8 +170,12 @@ export class AuthController {
   async logout(@User() user: UserWithSecrets, @Res({ passthrough: true }) response: Response) {
     await this.authService.setRefreshToken(user.email, null);
 
-    response.clearCookie("Authentication");
-    response.clearCookie("Refresh");
+    response.clearCookie("Authentication", {
+      sameSite: "none",
+    });
+    response.clearCookie("Refresh", {
+      sameSite: "none",
+    });
 
     const data = messageSchema.parse({ message: "You have been logged out, tschüss!" });
     response.status(200).send(data);
