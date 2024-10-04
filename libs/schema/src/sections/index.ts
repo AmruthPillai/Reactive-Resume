@@ -30,57 +30,6 @@ export const customSchema = sectionSchema.extend({
   items: z.array(customSectionSchema),
 });
 
-export const leanSectionsSchema = z.object({
-  summary: sectionSchema.extend({
-    id: z.literal("summary"),
-    content: z.string().default(""),
-  }),
-  awards: sectionSchema.extend({
-    id: z.literal("awards"),
-    items: z.array(awardSchema),
-  }),
-  certifications: sectionSchema.extend({
-    id: z.literal("certifications"),
-    items: z.array(certificationSchema),
-  }),
-  education: sectionSchema.extend({
-    id: z.literal("education"),
-    items: z.array(educationSchema),
-  }),
-  experience: sectionSchema.extend({
-    id: z.literal("experience"),
-    items: z.array(experienceSchema),
-  }),
-  volunteer: sectionSchema.extend({
-    id: z.literal("volunteer"),
-    items: z.array(volunteerSchema),
-  }),
-  interests: sectionSchema.extend({
-    id: z.literal("interests"),
-    items: z.array(interestSchema),
-  }),
-  languages: sectionSchema.extend({
-    id: z.literal("languages"),
-    items: z.array(languageSchema),
-  }),
-  projects: sectionSchema.extend({
-    id: z.literal("projects"),
-    items: z.array(projectSchema),
-  }),
-  publications: sectionSchema.extend({
-    id: z.literal("publications"),
-    items: z.array(publicationSchema),
-  }),
-  references: sectionSchema.extend({
-    id: z.literal("references"),
-    items: z.array(referenceSchema),
-  }),
-  skills: sectionSchema.extend({
-    id: z.literal("skills"),
-    items: z.array(skillSchema),
-  }),
-});
-
 export const sectionsSchema = z.object({
   summary: sectionSchema.extend({
     id: z.literal("summary"),
