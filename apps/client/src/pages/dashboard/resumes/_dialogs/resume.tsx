@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/macro";
-import { CaretDown, Flask, MagicWand, Plus } from "@phosphor-icons/react";
+import { CaretDown, Flask, MagicWand, Plus, Spinner } from "@phosphor-icons/react";
 import { createResumeSchema, ResumeDto } from "@reactive-resume/dto";
 import { idSchema, sampleResume } from "@reactive-resume/schema";
 import {
@@ -334,6 +334,7 @@ export const ResumeDialog = () => {
                   disabled={loading}
                   className={cn((isCreate || isCreateAi) && "rounded-r-none")}
                 >
+                  {loading && <Spinner className="me-2 animate-spin" />}
                   {isCreateAi && t`Create`}
                   {isCreate && t`Create`}
                   {isUpdate && t`Save Changes`}
