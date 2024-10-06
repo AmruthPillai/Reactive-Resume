@@ -73,6 +73,11 @@ export const configSchema = z.object({
   GOOGLE_CLIENT_SECRET: z.string().optional(),
   GOOGLE_CALLBACK_URL: z.string().url().optional(),
 
+  // LinkedIn (OAuth)
+  LINKEDIN_CLIENT_ID: z.string().optional(),
+  LINKEDIN_CLIENT_SECRET: z.string().optional(),
+  LINKEDIN_CALLBACK_URL: z.string().url().optional(),
+
   // SUMIT (Billing)
   SUMIT_CUSTOMER_ID: z.string().optional(),
   SUMIT_API_KEY: z.string().optional(),

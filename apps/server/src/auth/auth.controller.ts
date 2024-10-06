@@ -34,6 +34,7 @@ import { AuthService } from "./auth.service";
 import { GitHubGuard } from "./guards/github.guard";
 import { GoogleGuard } from "./guards/google.guard";
 import { JwtGuard } from "./guards/jwt.guard";
+import { LinkedinGuard } from "./guards/linkedin.guard";
 import { LocalGuard } from "./guards/local.guard";
 import { RefreshGuard } from "./guards/refresh.guard";
 import { TwoFactorGuard } from "./guards/two-factor.guard";
@@ -144,6 +145,25 @@ export class AuthController {
     @User() user: UserWithSecrets,
     @Res({ passthrough: true }) response: Response,
   ) {
+    return this.handleAuthenticationResponse(user, response, false, true);
+  }
+
+  @ApiTags("OAuth", "LinkedIn")
+  @Get("linkedin")
+  @UseGuards(LinkedinGuard)
+  linkedinLogin() {
+    return;
+  }
+
+  @ApiTags("OAuth", "LinkedIn")
+  @Get("linkedin/callback")
+  @UseGuards(LinkedinGuard)
+  async linkedinCallback(
+    @Query("state") state: string,
+    @User() user: UserWithSecrets,
+    @Res({ passthrough: true }) response: Response,
+  ) {
+    console.log("HAHAH", { state });
     return this.handleAuthenticationResponse(user, response, false, true);
   }
 

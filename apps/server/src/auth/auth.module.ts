@@ -1,3 +1,4 @@
+import { HttpModule, HttpService } from "@nestjs/axios";
 import { DynamicModule, Module } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { JwtModule } from "@nestjs/jwt";
@@ -13,6 +14,7 @@ import { DummyStrategy } from "./strategy/dummy.strategy";
 import { GitHubStrategy } from "./strategy/github.strategy";
 import { GoogleStrategy } from "./strategy/google.strategy";
 import { JwtStrategy } from "./strategy/jwt.strategy";
+import { LinkedinStrategy } from "./strategy/linkedin.strategy";
 import { LocalStrategy } from "./strategy/local.strategy";
 import { RefreshStrategy } from "./strategy/refresh.strategy";
 import { TwoFactorStrategy } from "./strategy/two-factor.strategy";
@@ -22,7 +24,7 @@ export class AuthModule {
   static register(): DynamicModule {
     return {
       module: AuthModule,
-      imports: [PassportModule, JwtModule, UserModule, MailModule],
+      imports: [PassportModule, JwtModule, UserModule, MailModule, HttpModule],
       controllers: [AuthController],
       providers: [
         AuthService,
@@ -58,6 +60,31 @@ export class AuthModule {
               const callbackURL = configService.getOrThrow("GOOGLE_CALLBACK_URL");
 
               return new GoogleStrategy(clientID, clientSecret, callbackURL, userService);
+            } catch {
+              return new DummyStrategy();
+            }
+          },
+        },
+        {
+          provide: LinkedinStrategy,
+          inject: [ConfigService, UserService, HttpService],
+          useFactory: (
+            configService: ConfigService<Config>,
+            userService: UserService,
+            httpService: HttpService,
+          ) => {
+            try {
+              const clientID = configService.getOrThrow("LINKEDIN_CLIENT_ID");
+              const clientSecret = configService.getOrThrow("LINKEDIN_CLIENT_SECRET");
+              const callbackURL = configService.getOrThrow("LINKEDIN_CALLBACK_URL");
+
+              return new LinkedinStrategy(
+                clientID,
+                clientSecret,
+                callbackURL,
+                userService,
+                httpService,
+              );
             } catch {
               return new DummyStrategy();
             }
