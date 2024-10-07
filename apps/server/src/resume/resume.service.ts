@@ -188,8 +188,9 @@ export class ResumeService {
 
   async convertPdfToString(filePath: string) {
     const dataBuffer = fs.readFileSync(filePath);
-    const data = await Pdf(dataBuffer);
-    return data.text;
+    // const data = await Pdf(dataBuffer);
+    // return data.text;
+    return "999999999";
   }
 
   async handleUpload(filename: string) {

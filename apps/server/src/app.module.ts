@@ -18,6 +18,8 @@ import { ResumeModule } from "./resume/resume.module";
 import { StorageModule } from "./storage/storage.module";
 import { TranslationModule } from "./translation/translation.module";
 import { UserModule } from "./user/user.module";
+import { AdminModule } from "./admin/admin.module";
+import { PaginationModule } from "./common/pagination/pagination.module";
 
 @Module({
   imports: [
@@ -37,7 +39,8 @@ import { UserModule } from "./user/user.module";
     FeatureModule,
     TranslationModule,
     ContributorsModule,
-
+    AdminModule,
+    PaginationModule,
     // Static Assets
     ServeStaticModule.forRoot({
       serveRoot: "/artboard",

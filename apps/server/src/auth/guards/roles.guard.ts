@@ -4,7 +4,7 @@ import { AuthService } from "../auth.service";
 import { Roles } from "../enums/roles.enum";
 import { ROLE_KEY } from "../constants/admin.constant";
 import { Request } from "express";
-import { isArray } from "util";
+import { UserWithSecrets } from "@reactive-resume/dto";
 
 @Injectable()
 export class RolesGuard implements CanActivate {
@@ -26,6 +26,13 @@ export class RolesGuard implements CanActivate {
 
     const request: Request = context.switchToHttp().getRequest();
 
+    const theUser: UserWithSecrets = request.user as UserWithSecrets;
+
+    if (theUser) {
+      return requiredRoles.some((role: Roles) => {
+        return theUser.roles.includes(role);
+      });
+    }
     // body (identifier , password)
     const body = request.body;
 

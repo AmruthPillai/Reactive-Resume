@@ -4,11 +4,12 @@ import {
   Injectable,
   InternalServerErrorException,
 } from "@nestjs/common";
-import { Prisma } from "@prisma/client";
+import { Prisma, PrismaClient } from "@prisma/client";
 import { ErrorMessage } from "@reactive-resume/utils";
 import { PrismaService } from "nestjs-prisma";
 
 import { StorageService } from "../storage/storage.service";
+import { Entities } from "../common/enums/Entities.enum";
 
 @Injectable()
 export class UserService {
