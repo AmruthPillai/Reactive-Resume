@@ -12,11 +12,11 @@ import {
   FormMessage,
   Input,
 } from "@reactive-resume/ui";
-import { useCallback } from "react";
+import axios from "axios";
+import { useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDebounceValue } from "usehooks-ts";
 import { z } from "zod";
-
 import { SectionDialog } from "../sections/shared/section-dialog";
 import { URLInput } from "../sections/shared/url-input";
 
@@ -31,14 +31,47 @@ export const ProfilesDialog = () => {
   });
 
   const [iconSrc, setIconSrc] = useDebounceValue("", 400);
+  const [searchText, setSearchText] = useDebounceValue("", 400);
+  const [iconList, setIconList] = useState([]);
+  const [suggestions, setSuggestions] = useState([]);
+
+  useEffect(() => {
+    async function fetchIcons() {
+      try {
+        const response = await axios.get(
+          "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/_data/simple-icons.json",
+        );
+        const titles = response.data.icons.map((element: any) => element.title);
+        setIconList(titles);
+      } catch (error) {
+        console.error("Error fetching icons:", error);
+      }
+    }
+    fetchIcons();
+  }, []);
+
+  useEffect(() => {
+    const filteredData = iconList.filter((icon: string) =>
+      icon.toLowerCase().includes(searchText.toLowerCase()),
+    );
+    setSuggestions(filteredData);
+  }, [searchText]);
 
   const handleIconChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.value === "") {
       setIconSrc("");
+      setSearchText("");
     } else {
+      setSearchText(event.target.value);
       setIconSrc(`https://cdn.simpleicons.org/${event.target.value}`);
     }
   }, []);
+
+  const handleSuggestionClick = (icon: string) => {
+    setIconSrc(`https://cdn.simpleicons.org/${icon}`);
+    form.setValue("icon", icon);
+    setSearchText("$");
+  };
 
   return (
     <SectionDialog<FormValues> id="profiles" form={form} defaultValues={defaultProfile}>
@@ -108,6 +141,21 @@ export const ProfilesDialog = () => {
                   />
                 </div>
               </FormControl>
+              <div className="pl-10">
+                {suggestions.length > 0 && (
+                  <ul className="border py-2 border-gray-300 h-40 overflow-y-scroll ">
+                    {suggestions.map((icon) => (
+                      <li
+                        className="p-1 cursor-pointer hover:bg-gray-200"
+                        key={icon}
+                        onClick={() => handleSuggestionClick(icon)}
+                      >
+                        {icon}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
               <FormMessage />
               <FormDescription className="ml-10">
                 <Trans>
