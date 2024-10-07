@@ -5,11 +5,9 @@ import { AxiosResponse } from "axios";
 import { axios } from "@/client/libs/axios";
 import { queryClient } from "@/client/libs/query-client";
 
-export const importPdfResume = async (data: FormData) => {
-  const response = await axios.post<ResumeDto, AxiosResponse<ResumeDto>>("/resume/upload", data, {
-    headers: {
-      "Content-Type": "multipart/form-data",
-    },
+export const importPdfResume = async (data: string) => {
+  const response = await axios.post<string, AxiosResponse<ResumeDto>>("/resume/upload", {
+    data,
   });
 
   return response.data;
@@ -23,9 +21,11 @@ export const useImportPdfResume = () => {
   } = useMutation({
     mutationFn: importPdfResume,
     onSuccess: (data) => {
+      console.log(data);
       queryClient.setQueryData<ResumeDto>(["resume", { id: data.id }], data);
 
       queryClient.setQueryData<ResumeDto[]>(["resumes"], (cache) => {
+        // console.log(cache);
         if (!cache) return [data];
         return [...cache, data];
       });

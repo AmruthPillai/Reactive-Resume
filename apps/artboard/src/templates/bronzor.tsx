@@ -89,13 +89,14 @@ const WorkStatus = () => {
         <h4 className="text-base font-bold">Work Status</h4>
       </div>
 
-      <div className="">
+      <div className="col-span-4">
         <div className="flex w-[200px] items-center gap-4">
           <p className="font-bold">
             {workStatus.openToWork ? "Available For Work" : "Not Available For Work"}
           </p>
           <ActiveIndicator className={workStatus.openToWork ? "bg-green-500" : "bg-red-600"} />
         </div>
+        {workStatus.openToWork && <div>{workStatus.pricing ? `$${workStatus.pricing}` : ""}</div>}
         {workStatus.openToWork && <div>{JobTypeMap[workStatus.jobType]}</div>}
         {workStatus.openToWork && <div>{workStatus.jobLocation}</div>}
       </div>
@@ -608,7 +609,7 @@ export const Bronzor = ({ columns, isFirstPage = false }: TemplateProps) => {
       {isFirstPage && <Header />}
 
       <div className="space-y-4">
-        <WorkStatus />
+        {isFirstPage && <WorkStatus />}
         {main.map((section) => (
           <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
         ))}

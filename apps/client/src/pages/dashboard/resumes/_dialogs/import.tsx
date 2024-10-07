@@ -6,7 +6,6 @@ import {
   JsonResumeParser,
   LinkedIn,
   LinkedInParser,
-  PdfResumeParser,
   ReactiveResumeParser,
   ReactiveResumeV3,
   ReactiveResumeV3Parser,
@@ -39,12 +38,21 @@ import {
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
+import pdfToText from "react-pdftotext";
 import { z, ZodError } from "zod";
 
 import { useToast } from "@/client/hooks/use-toast";
 import { useImportResume } from "@/client/services/resume/import";
 import { useImportPdfResume } from "@/client/services/resume/import-pdf";
 import { useDialog } from "@/client/stores/dialog";
+
+function extractText(file: File) {
+  try {
+    return pdfToText(file);
+  } catch (error) {
+    throw new Error((error as Error).message);
+  }
+}
 
 enum ImportType {
   "reactive-resume-json" = "reactive-resume-json",
@@ -63,16 +71,17 @@ type FormValues = z.infer<typeof formSchema>;
 
 type ValidationResult =
   | {
-      isValid: false;
-      errors: string;
-    }
+    isValid: false;
+    errors: string;
+  }
   | {
-      isValid: true;
-      type: ImportType;
-      result: ResumeData | ReactiveResumeV3 | LinkedIn | JsonResume;
-    };
+    isValid: true;
+    type: ImportType;
+    result: ResumeData | ReactiveResumeV3 | LinkedIn | JsonResume;
+  };
 
 export const ImportDialog = () => {
+  const [convertLoading, setConvertLoading] = useState(false);
   const { toast } = useToast();
   const { isOpen, close } = useDialog("import");
   const { importResume, loading } = useImportResume();
@@ -108,8 +117,6 @@ export const ImportDialog = () => {
     try {
       const { file, type } = formSchema.parse(form.getValues());
 
-      console.log(file, type)
-
       if (type === ImportType["reactive-resume-json"]) {
         const parser = new ReactiveResumeParser();
         const data = await parser.readFile(file);
@@ -141,14 +148,6 @@ export const ImportDialog = () => {
 
         setValidationResult({ isValid: true, type, result });
       }
-
-      // if (type === ImportType["pdf-resume-file"]) {
-      //   const parser = new PdfResumeParser();
-      //   const data = await parser.readFile(file);
-      //   // const result = await parser.validate(data);
-      //   console.log(data)
-      //   // setValidationResult({ isValid: true, type, result });
-      // }
     } catch (error) {
       if (error instanceof ZodError) {
         setValidationResult({
@@ -197,14 +196,6 @@ export const ImportDialog = () => {
 
         await importResume({ data });
       }
-
-      if (type === ImportType["pdf-resume-file"]) {
-        // const parser = new LinkedInParser();
-        // const data = parser.convert(validationResult.result as LinkedIn);
-
-        // await importResume({ data });
-      }
-
       close();
     } catch (error: unknown) {
       toast({
@@ -223,11 +214,11 @@ export const ImportDialog = () => {
   const onImportPdf = async () => {
     try {
       const { file } = formSchema.parse(form.getValues());
-      const formData = new FormData();
-      console.log('pdf')
-      // throw new Error("Error");
-      formData.append("file", file);
-      await importPdfResume(formData);
+      setConvertLoading(true);
+      const text = await extractText(file);
+      setConvertLoading(false);
+      await importPdfResume(text);
+      close();
     } catch (error) {
       if (error instanceof Error) {
         console.log(error.message)
@@ -331,7 +322,7 @@ export const ImportDialog = () => {
                 <Label className="text-error">{t`Errors`}</Label>
                 <ScrollArea orientation="vertical" className="h-[180px]">
                   <div className="whitespace-pre-wrap rounded bg-secondary-accent p-4 font-mono text-xs leading-relaxed">
-                    {JSON.stringify(JSON.parse(validationResult.errors), null, 4)}
+                    {form.getValues().type === ImportType["pdf-resume-file"] ? validationResult.errors : JSON.stringify(JSON.parse(validationResult.errors), null, 4)}
                   </div>
                 </ScrollArea>
               </div>
@@ -340,13 +331,27 @@ export const ImportDialog = () => {
             <DialogFooter>
               <AnimatePresence presenceAffectsLayout>
                 {filetype === ImportType["pdf-resume-file"] ? (
-                  <Button
-                    type="button"
-                    disabled={loading || !form.getValues().file}
-                    onClick={onImportPdf}
-                  >
-                    {t`Import`}
-                  </Button>
+                  <>
+                    {validationResult === null && (
+                      <>
+                        {(loadingPdf || convertLoading) ? (
+                          <Button type="button" disabled>
+                            {t`Loading...`}
+                          </Button>
+                        ) : (
+                          <Button type="button" disabled={!form.getValues().file} onClick={onImportPdf}>
+                            {t`Import`}
+                          </Button>
+                        )}
+                      </>
+                    )}
+
+                    {validationResult !== null && !validationResult.isValid && (
+                      <Button type="button" variant="secondary" onClick={onReset}>
+                        {t`Discard`}
+                      </Button>
+                    )}
+                  </>
                 ) : (
                   <>
                     {!validationResult && (

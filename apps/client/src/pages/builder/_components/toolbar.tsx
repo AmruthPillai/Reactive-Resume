@@ -46,6 +46,7 @@ export const BuilderToolbar = () => {
 
   const onCopy = async () => {
     const { url } = await printResume({ id });
+    console.log('>>>>',url)
     await navigator.clipboard.writeText(url);
 
     toast({
