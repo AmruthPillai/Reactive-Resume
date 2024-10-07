@@ -31,7 +31,7 @@ export const ProfilesDialog = () => {
   });
 
   const [iconSrc, setIconSrc] = useDebounceValue("", 400);
-  const [searchText, setSearchText] = useDebounceValue("", 400);
+  const [searchText, setSearchText] = useDebounceValue("", 300);
   const [iconList, setIconList] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
 
@@ -51,10 +51,14 @@ export const ProfilesDialog = () => {
   }, []);
 
   useEffect(() => {
-    const filteredData = iconList.filter((icon: string) =>
-      icon.toLowerCase().includes(searchText.toLowerCase()),
-    );
-    setSuggestions(filteredData);
+    if (searchText) {
+      const filteredData = iconList.filter((icon: string) =>
+        icon.toLowerCase().startsWith(searchText.toLowerCase()),
+      );
+      setSuggestions(filteredData);
+    } else {
+      setSuggestions([]);
+    }
   }, [searchText]);
 
   const handleIconChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
