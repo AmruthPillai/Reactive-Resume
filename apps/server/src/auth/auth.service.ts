@@ -19,7 +19,6 @@ import { Config } from "../config/schema";
 import { MailService } from "../mail/mail.service";
 import { UserService } from "../user/user.service";
 import { Payload } from "./utils/payload";
-import { Entities } from "../common/enums/Entities.enum";
 
 @Injectable()
 export class AuthService {

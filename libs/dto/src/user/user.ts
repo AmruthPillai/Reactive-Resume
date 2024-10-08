@@ -33,3 +33,5 @@ export class UserDto extends createZodDto(userSchema) {}
 export const userWithSecretsSchema = userSchema.merge(z.object({ secrets: secretsSchema }));
 
 export class UserWithSecrets extends createZodDto(userWithSecretsSchema) {}
+
+export class UserPartialInformation extends createZodDto(userWithSecretsSchema.partial()) {}

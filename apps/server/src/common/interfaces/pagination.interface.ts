@@ -1,5 +1,5 @@
-export interface PaginationInterface {
-  data: any[];
+export interface PaginationInterface<T> {
+  data: T[];
 
   meta: {
     itemPerPage: number;

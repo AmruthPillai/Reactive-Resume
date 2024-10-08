@@ -1,8 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { UserService } from "../user/user.service";
 import { PaginationDto } from "@reactive-resume/dto";
-import { PaginationService } from "../common/pagination/pagination.service";
-import { Entities } from "../common/enums/Entities.enum";
 
 @Injectable()
 export class AdminService {
@@ -11,9 +9,9 @@ export class AdminService {
    */
   constructor(
     /**
-     * inject pagination module
+     * inject user service
      */
-    private readonly paginationService: PaginationService,
+    private readonly userService: UserService,
   ) {}
 
   /**
@@ -21,6 +19,7 @@ export class AdminService {
    */
   async getAllUsers(paginationDto: PaginationDto) {
     // select data
+
     const select: object = {
       name: true,
       email: true,
@@ -31,14 +30,6 @@ export class AdminService {
       },
     };
 
-    let where: object = {};
-
-    if (paginationDto.searchKey && paginationDto.value) {
-      where = {
-        [paginationDto.searchKey]: paginationDto.value,
-      };
-    }
-
-    return this.paginationService.paginatedQuery(paginationDto, Entities.USER, where, select);
+    return this.userService.getAllUsers(paginationDto, select);
   }
 }

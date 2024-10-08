@@ -24,7 +24,7 @@ export class AdminController {
   /**
    * get all users
    */
-  @Get("/get-users")
+  @Get("/users")
   @Role([Roles.ADMIN])
   @UseGuards(TwoFactorGuard, RolesGuard)
   @ApiOperation({
@@ -35,8 +35,6 @@ export class AdminController {
     @Query() paginationDto: PaginationDto,
     @Query("page") page?: string,
     @Query("pageSize") pageSize?: string,
-    @Query("searchKey") key?: string,
-    @Query("value") value?: string,
   ) {
     return this.adminService.getAllUsers(paginationDto);
   }
