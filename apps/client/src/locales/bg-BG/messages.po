@@ -85,7 +85,7 @@ msgid "A4"
 msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:292
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:308
 msgid "Accepts only {accept} files"
 msgstr "Приема само файлове {accept}"
 
@@ -97,8 +97,8 @@ msgstr "Сметка"
 msgid "Add a custom field"
 msgstr "Добавяне на потребителско поле"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:117
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:164
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:119
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:166
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "Добавяне на нов елемент"
@@ -124,7 +124,8 @@ msgstr "AI"
 msgid "Already have an account?"
 msgstr "Вече имате акаунт?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:159
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:160
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:231
 msgid "An error occurred while validating the file."
 msgstr "Възникна грешка при валидирането на файла."
 
@@ -413,7 +414,8 @@ msgstr "Деактивиране на"
 msgid "Disable 2FA"
 msgstr "Деактивиране на 2FA"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:324
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:350
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:364
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
@@ -513,7 +515,7 @@ msgstr "Въведете еднократната парола, предоста
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "Въведете имейл адреса си и ние ще ви изпратим връзка за възстановяване на паролата, ако акаунтът съществува."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:305
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:321
 msgid "Errors"
 msgstr "Грешки"
 
@@ -534,11 +536,11 @@ msgstr "Разгледайте шаблоните, налични в Talent Hub,
 msgid "Export"
 msgstr "Експорт"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:277
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:293
 msgid "File"
 msgstr "Файл"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:243
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:259
 msgid "Filetype"
 msgstr "Тип на файла"
 
@@ -698,11 +700,12 @@ msgstr "Ако деактивирате двуфакторното удосто�
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "Ако владеете няколко езика, ще се радваме да ни помогнете да разпространим приложението на повече езици и общности. Не се притеснявайте, ако не виждате своя език в списъка - просто ми кажете в GitHub и аз ще се погрижа да го включа. Готови ли сте да започнете? Започнете да превеждате в Crowdin, като кликнете върху връзката по-долу."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:331
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:342
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:371
 msgid "Import"
 msgstr "Внос"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:230
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:246
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -851,6 +854,10 @@ msgstr "LinkedIn, JSON Resume и др."
 msgid "List"
 msgstr "Списък"
 
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:338
+msgid "Loading..."
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
@@ -961,7 +968,7 @@ msgstr "Еднократна парола"
 
 #: apps/client/src/components/ai-actions.tsx:56
 #: apps/client/src/libs/axios.ts:29
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:210
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:203
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "Упс, сървърът върна грешка."
@@ -1050,7 +1057,7 @@ msgstr "Снимка"
 msgid "Please note that this step is completely optional."
 msgstr "Моля, обърнете внимание, че тази стъпка не е задължителна."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:247
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:263
 msgid "Please select a file type"
 msgstr "Моля, изберете тип файл"
 
@@ -1394,7 +1401,7 @@ msgstr "Система"
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
-#: apps/client/src/pages/builder/page.tsx:43
+#: apps/client/src/pages/builder/page.tsx:45
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:14
 #: apps/client/src/pages/home/components/footer.tsx:21
@@ -1569,7 +1576,7 @@ msgstr "Актуализиране на съществуващ елемент"
 msgid "Update an existing resume"
 msgstr "Актуализиране на съществуваща автобиография"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:234
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:250
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Talent Hub for easier editing."
 msgstr "Качете файл от един от приетите източници, за да анализирате съществуващите данни и да ги импортирате в Talent Hub за по-лесно редактиране."
 
@@ -1600,11 +1607,11 @@ msgstr "Потребителско име"
 msgid "Users Signed Up"
 msgstr "Регистрирани потребители"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:318
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:358
 msgid "Validate"
 msgstr "Удостоверяване на"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:336
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:376
 msgid "Validated"
 msgstr "Утвърден"
 

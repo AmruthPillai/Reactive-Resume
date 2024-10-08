@@ -101,9 +101,9 @@ const WorkStatus = () => {
         </div>
         <div className="flex flex-col items-end">
           {workStatus.openToWork && (
-            <div>{JobTypeMap[workStatus.jobType]}</div>
+            <div>{`Job Type: ${JobTypeMap[workStatus.jobType]}`}</div>
           )}
-          {workStatus.openToWork && <div>{workStatus.jobLocation}</div>}
+          {workStatus.openToWork && <div>{workStatus.jobLocation&&`Work Location: ${workStatus.jobLocation}`}</div>}
         </div>
       </div>
     </section>

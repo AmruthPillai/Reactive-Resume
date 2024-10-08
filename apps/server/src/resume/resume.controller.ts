@@ -153,7 +153,7 @@ export class ResumeController {
   @Post("upload")
   @UseGuards(TwoFactorGuard)
   async upload(@Body() data: AnyObject, @User() user: UserEntity) {
-    return this.resumeService.upload(data.data, user.id);
+    return this.resumeService.upload(data.data.data, data.data.title, user.id);
     // return this.resumeService.upload(data.data, "cm163hj0q000210dr7ul5bjrn");
   }
 }

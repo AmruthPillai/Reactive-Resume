@@ -214,10 +214,15 @@ export const ImportDialog = () => {
   const onImportPdf = async () => {
     try {
       const { file } = formSchema.parse(form.getValues());
+      // console.log(file.name.split(".pdf")[0]);
+      // return;
       setConvertLoading(true);
       const text = await extractText(file);
       setConvertLoading(false);
-      await importPdfResume(text);
+      await importPdfResume({
+        data: text,
+        title: file.name.split(".pdf")[0],
+      });
       close();
     } catch (error) {
       if (error instanceof Error) {

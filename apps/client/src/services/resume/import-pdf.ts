@@ -5,7 +5,7 @@ import { AxiosResponse } from "axios";
 import { axios } from "@/client/libs/axios";
 import { queryClient } from "@/client/libs/query-client";
 
-export const importPdfResume = async (data: string) => {
+export const importPdfResume = async (data: { data: string; title: string }) => {
   const response = await axios.post<string, AxiosResponse<ResumeDto>>("/resume/upload", {
     data,
   });

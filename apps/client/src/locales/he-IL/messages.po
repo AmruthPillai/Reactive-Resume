@@ -85,7 +85,7 @@ msgid "A4"
 msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:292
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:308
 msgid "Accepts only {accept} files"
 msgstr "מקבל רק קובצי {accept}"
 
@@ -97,8 +97,8 @@ msgstr "חשבון"
 msgid "Add a custom field"
 msgstr "הוספת שדה מותאם אישית"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:117
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:164
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:119
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:166
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "הוספת פריט חדש"
@@ -124,7 +124,8 @@ msgstr "בינה מלאכותית"
 msgid "Already have an account?"
 msgstr "כבר יש לך חשבון?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:159
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:160
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:231
 msgid "An error occurred while validating the file."
 msgstr "אירעה שגיאה בתיקוף הקובץ."
 
@@ -413,7 +414,8 @@ msgstr "השבתה"
 msgid "Disable 2FA"
 msgstr "השבתת האימות הדו־שלבי"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:324
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:350
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:364
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
@@ -513,7 +515,7 @@ msgstr "נא למלא את הסיסמה החד־פעמית שסופקה על י�
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "נא למלא את כתובת הדוא״ל שלך ואנו נשלח לך קישור לאיפוס הסיסמה שלך אם החשבון קיים."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:305
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:321
 msgid "Errors"
 msgstr "שגיאות"
 
@@ -534,11 +536,11 @@ msgstr "אפשר לעיין בתבניות שזמינות ב־Talent Hub ולצ�
 msgid "Export"
 msgstr "ייצוא"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:277
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:293
 msgid "File"
 msgstr "קובץ"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:243
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:259
 msgid "Filetype"
 msgstr "סוג קובץ"
 
@@ -698,11 +700,12 @@ msgstr "השבתת אימות דו־שלבי תייתר את מילוי קוד �
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "איך האנגלית שלך? ושפות נוספות? נשמח לקבל את עזרתך בתרגום היישום לשפות וקהילות נוספות. אין מה לדאוג אם השפה שלך לא מופיעה ברשימה - כל שצריך לעשות הוא לפנות אלי ב־GitHub ואוודא שהיא תתווסף. אפשר להתחיל? ניתן לגשת למלאכת התרגום ב־Crowdin בלחיצה על הקישור שלהלן."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:331
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:342
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:371
 msgid "Import"
 msgstr "ייבוא"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:230
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:246
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -851,6 +854,10 @@ msgstr "LinkedIn,‏ JSON Resume וכו׳."
 msgid "List"
 msgstr "רשימה"
 
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:338
+msgid "Loading..."
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
@@ -961,7 +968,7 @@ msgstr "סיסמה חד־פעמית"
 
 #: apps/client/src/components/ai-actions.tsx:56
 #: apps/client/src/libs/axios.ts:29
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:210
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:203
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "אופס, השרת החזיר שגיאה."
@@ -1050,7 +1057,7 @@ msgstr "תמונה"
 msgid "Please note that this step is completely optional."
 msgstr "נא לשים לב שזה שלב רשות בלבד."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:247
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:263
 msgid "Please select a file type"
 msgstr "נא לבחור סוג קובץ"
 
@@ -1394,7 +1401,7 @@ msgstr "מערכת"
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
-#: apps/client/src/pages/builder/page.tsx:43
+#: apps/client/src/pages/builder/page.tsx:45
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:14
 #: apps/client/src/pages/home/components/footer.tsx:21
@@ -1569,7 +1576,7 @@ msgstr "עדכון פריט קיים"
 msgid "Update an existing resume"
 msgstr "עדכון קורות חיים קיימים"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:234
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:250
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Talent Hub for easier editing."
 msgstr "יש להעלות קובץ מאחד מהמקורות המוסכמים כדי לפענח נתונים קיימים ולייבא אותם לתוך Talent Hub להקלה על העריכה."
 
@@ -1600,11 +1607,11 @@ msgstr "שם משתמש"
 msgid "Users Signed Up"
 msgstr "משתמשים נרשמו"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:318
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:358
 msgid "Validate"
 msgstr "תיקוף"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:336
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:376
 msgid "Validated"
 msgstr "תקף"
 

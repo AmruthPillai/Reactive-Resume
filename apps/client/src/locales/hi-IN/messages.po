@@ -85,7 +85,7 @@ msgid "A4"
 msgstr "ए4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:292
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:308
 msgid "Accepts only {accept} files"
 msgstr "केवल {accept} फ़ाइलें स्वीकार करता है"
 
@@ -97,8 +97,8 @@ msgstr "खाता"
 msgid "Add a custom field"
 msgstr "नया कस्टम फ़ील्ड जोड़ें"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:117
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:164
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:119
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:166
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "एक नया आइटम जोड़ें"
@@ -124,7 +124,8 @@ msgstr "AI"
 msgid "Already have an account?"
 msgstr "क्या आपके पास पहले से एक खाता मौजूद है?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:159
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:160
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:231
 msgid "An error occurred while validating the file."
 msgstr "फ़ाइल बनाते समय कोई त्रुटि आई"
 
@@ -413,7 +414,8 @@ msgstr "अक्षम करें"
 msgid "Disable 2FA"
 msgstr "2FA निलम्बित करें"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:324
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:350
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:364
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
@@ -513,7 +515,7 @@ msgstr "नीचे आपके प्रमाणक ऐप द्वार�
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "अपना ईमेल पता दर्ज करें और यदि खाता मौजूद है तो हम आपको अपना पासवर्ड रीसेट करने के लिए एक लिंक भेजेंगे।"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:305
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:321
 msgid "Errors"
 msgstr "त्रुटि"
 
@@ -534,11 +536,11 @@ msgstr "रिएक्टिव रेज़्यूमे में उपल
 msgid "Export"
 msgstr "निर्यात"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:277
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:293
 msgid "File"
 msgstr "फ़ाइल"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:243
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:259
 msgid "Filetype"
 msgstr "फाइल का प्रकार"
 
@@ -698,11 +700,12 @@ msgstr "यदि आप दो-कारक प्रमाणीकरण अ�
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "यदि आप बहुभाषी हैं, तो हमें ऐप को अधिक भाषाओं और समुदायों तक लाने में आपकी मदद पसंद आएगी। यदि आप सूची में अपनी भाषा नहीं देखते हैं तो चिंता न करें - बस GitHub पर मुझे बताएं, और मैं इसे शामिल करना सुनिश्चित करूंगा। आरंभ करने के लिए तैयार हैं? नीचे दिए गए लिंक पर क्लिक करके क्राउडिन पर अनुवाद शुरू करें।"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:331
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:342
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:371
 msgid "Import"
 msgstr "आयात"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:230
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:246
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -851,6 +854,10 @@ msgstr "लिंक्डइन, JSON बायोडाटा, आदि।"
 msgid "List"
 msgstr "सूची"
 
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:338
+msgid "Loading..."
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
@@ -961,7 +968,7 @@ msgstr "एक बारी पासवर्ड"
 
 #: apps/client/src/components/ai-actions.tsx:56
 #: apps/client/src/libs/axios.ts:29
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:210
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:203
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "ओह, सर्वर ने एक त्रुटि लौटा दी।"
@@ -1050,7 +1057,7 @@ msgstr "चित्र"
 msgid "Please note that this step is completely optional."
 msgstr "कृपया ध्यान दें कि यह चरण पूरी तरह से वैकल्पिक है।"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:247
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:263
 msgid "Please select a file type"
 msgstr "कृपया एक फाइल चुनें"
 
@@ -1394,7 +1401,7 @@ msgstr "सिस्टम"
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
-#: apps/client/src/pages/builder/page.tsx:43
+#: apps/client/src/pages/builder/page.tsx:45
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:14
 #: apps/client/src/pages/home/components/footer.tsx:21
@@ -1569,7 +1576,7 @@ msgstr "किसी मौजूदा आइटम का नक़ल बन�
 msgid "Update an existing resume"
 msgstr "किसी मौजूदा आइटम का नक़ल बनाएं"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:234
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:250
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Talent Hub for easier editing."
 msgstr "मौजूदा डेटा को पार्स करने के लिए स्वीकृत स्रोतों में से किसी एक से फ़ाइल अपलोड करें और आसान संपादन के लिए इसे रिएक्टिव रेज़्यूमे में आयात करें।"
 
@@ -1600,11 +1607,11 @@ msgstr "उपयोगकर्ता नाम"
 msgid "Users Signed Up"
 msgstr "उपयोगकर्ता साइन अप"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:318
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:358
 msgid "Validate"
 msgstr "वैधीकृत करें"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:336
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:376
 msgid "Validated"
 msgstr "वैधीकृत करें"
 
