@@ -6,17 +6,12 @@ import { AnyObject } from "../types";
 import { transformInvalidType } from "./invalid-type";
 import { transformTooSmall } from "./too-small";
 
-function capitalizeFirstLetter(string: string) {
-  if (!string) return "";
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
 export const transformZodJson = (resume: unknown) => {
   // console.log(resume)
   const result = resumeDataSchema.safeParse(resume);
   let resumeData = resume;
   // console.log('>>>??',defaultResumeHandler);
-  console.log(result.error?.errors);
+  // console.log(result.error?.errors);
   // const result = tester.safeParse(test);
   if (!result.success) {
     // return result.error

@@ -33,15 +33,11 @@ export class PrinterService {
 
   private async getBrowser() {
     try {
-      console.log(this.browserURL, this.ignoreHTTPSErrors);
       return await connect({
         browserWSEndpoint: this.browserURL,
         acceptInsecureCerts: this.ignoreHTTPSErrors,
-        // ignoreHTTPSErrors: true,
-        // acceptInsecureCerts: this.ignoreHTTPSErrors,
       });
     } catch (error) {
-      console.log("errro");
       throw new InternalServerErrorException(
         ErrorMessage.InvalidBrowserConnection,
         (error as Error).message,

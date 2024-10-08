@@ -221,7 +221,6 @@ export const ImportDialog = () => {
       close();
     } catch (error) {
       if (error instanceof Error) {
-        console.log(error.message)
         setValidationResult({
           isValid: false,
           errors: error.message,

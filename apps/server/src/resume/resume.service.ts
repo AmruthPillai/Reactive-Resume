@@ -159,7 +159,6 @@ export class ResumeService {
 
   async printResume(resume: ResumeDto, userId?: string) {
     const url = await this.printerService.printResume(resume);
-    console.log(url);
     // Update statistics: increment the number of downloads by 1
     if (!userId) {
       await this.prisma.statistics.upsert({
@@ -178,9 +177,7 @@ export class ResumeService {
 
   async handleUpload(str: string) {
     const json = await this.genaiService.convertResumeToJson(str);
-    console.log(json);
     const data1 = JSON.parse(json);
-    // console.log(data1);
     const transformData = transformZodJson({
       ...data1,
       workStatus: defaultWorkStatus,
