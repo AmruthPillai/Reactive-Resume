@@ -137,14 +137,17 @@ const WorkStatus = () => {
       <h4 className="font-bold text-primary">Work Status</h4>
 
       <div className="flex justify-between items-start">
-        <div className="flex w-[200px] items-center gap-4">
-          <p className="font-bold">
-            {workStatus.openToWork ? "Available For Work" : "Not Available For Work"}
-          </p>
-          <ActiveIndicator className={workStatus.openToWork ? "bg-green-500" : "bg-red-600"} />
-        </div>
         <div>
-          {workStatus.openToWork && <div className="font-bold">{JobTypeMap[workStatus.jobType]}</div>}
+          <div className="flex w-[200px] items-center gap-4">
+            <p className="font-bold">
+              {workStatus.openToWork ? "Available For Work" : "Not Available For Work"}
+            </p>
+            <ActiveIndicator className={workStatus.openToWork ? "bg-green-500" : "bg-red-600"} />
+          </div>
+          {workStatus.openToWork && <div>{workStatus.pricing ? `$${workStatus.pricing}` : ""}</div>}
+        </div>
+        <div className="flex flex-col items-end">
+          {workStatus.openToWork && <div>{JobTypeMap[workStatus.jobType]}</div>}
           {workStatus.openToWork && <div>{workStatus.jobLocation}</div>}
         </div>
       </div>
@@ -598,8 +601,7 @@ export const Onyx = ({ columns, isFirstPage = false }: TemplateProps) => {
   return (
     <div className="p-custom space-y-4">
       {isFirstPage && <Header />}
-
-      <WorkStatus />
+      {isFirstPage && <WorkStatus />}
       {main.map((section) => (
         <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
       ))}

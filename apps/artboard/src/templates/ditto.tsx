@@ -116,6 +116,7 @@ const WorkStatus = () => {
           </p>
           <ActiveIndicator className={workStatus.openToWork ? "bg-green-500" : "bg-red-600"} />
         </div>
+        {workStatus.openToWork && <div>{workStatus.pricing ? `$${workStatus.pricing}` : ""}</div>}
         {workStatus.openToWork && <div>{JobTypeMap[workStatus.jobType]}</div>}
         {workStatus.openToWork && <div>{workStatus.jobLocation}</div>}
       </div>
@@ -645,7 +646,7 @@ export const Ditto = ({ columns, isFirstPage = false }: TemplateProps) => {
         </div>
 
         <div className="main p-custom group col-span-2 space-y-4">
-          <WorkStatus />
+          {isFirstPage && <WorkStatus />}
           {main.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}

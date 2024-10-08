@@ -254,14 +254,17 @@ const WorkStatus = () => {
       <h4 className="mb-2 border-b border-primary text-left font-bold text-primary">Work Status</h4>
 
       <div className="flex items-start justify-between">
-        <div className="flex w-[200px] items-center gap-4">
-          <p className="font-bold">
-            {workStatus.openToWork ? "Available For Work" : "Not Available For Work"}
-          </p>
-          <ActiveIndicator className={workStatus.openToWork ? "bg-green-500" : "bg-red-600"} />
-        </div>
         <div>
-          {workStatus.openToWork && <div className="font-bold">{JobTypeMap[workStatus.jobType]}</div>}
+          <div className="flex w-[200px] items-center gap-4">
+            <p className="font-bold">
+              {workStatus.openToWork ? "Available For Work" : "Not Available For Work"}
+            </p>
+            <ActiveIndicator className={workStatus.openToWork ? "bg-green-500" : "bg-red-600"} />
+          </div>
+          {workStatus.openToWork && <div>{workStatus.pricing ? `$${workStatus.pricing}` : ""}</div>}
+        </div>
+        <div className="flex flex-col items-end">
+          {workStatus.openToWork && <div>{JobTypeMap[workStatus.jobType]}</div>}
           {workStatus.openToWork && <div>{workStatus.jobLocation}</div>}
         </div>
       </div>
@@ -553,7 +556,7 @@ export const Leafish = ({ columns, isFirstPage = false }: TemplateProps) => {
 
       <div className="p-custom grid grid-cols-2 items-start space-x-6">
         <div className="grid gap-y-4">
-          <WorkStatus />
+          {isFirstPage && <WorkStatus />}
           {main.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}
