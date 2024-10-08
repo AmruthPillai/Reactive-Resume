@@ -29,18 +29,18 @@ export const transformZodJson = (resume: unknown) => {
     // console.log(resumeData);
   }
   // resumeData = resumeData as ResumeData;
-  const test = resumeData as ResumeData;
-  const sections = test.sections;
-  for (const section of Object.keys(sections)) {
-    if (section in test.sections) {
-      // const currentSection = test.sections[section];
-      // làm gì đó với currentSection
-    }
-  }
-  console.log({
-    ...test,
-    section: test.sections,
-  });
+  // const test = resumeData as ResumeData;
+  // const sections = test.sections;
+  // for (const section of Object.keys(sections)) {
+  //   if (section in test.sections) {
+  //     // const currentSection = test.sections[section];
+  //     // làm gì đó với currentSection
+  //   }
+  // }
+  // console.log({
+  //   ...test,
+  //   section: test.sections,
+  // });
   // const result2 = resumeDataSchema.safeParse(resumeData);
   // console.log('?>>', result2.error?.errors);
   // if (!result2.success) return result2.error;

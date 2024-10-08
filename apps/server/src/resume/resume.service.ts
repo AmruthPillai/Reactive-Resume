@@ -191,11 +191,20 @@ export class ResumeService {
 
   async upload(str: string, userId: string) {
     const data = await this.handleUpload(str);
-    const result = resumeDataSchema.safeParse(data);
-    // return data;
-    if (result.error?.errors)
+    let schemaData = data;
+    const result1 = resumeDataSchema.safeParse(data);
+    if (result1.error?.errors)
+      schemaData = {
+        ...(schemaData as ResumeData),
+        sections: {
+          ...(schemaData as ResumeData).sections,
+          custom: {},
+        },
+      };
+    const result2 = resumeDataSchema.safeParse(schemaData);
+    if (result2.error?.errors)
       throw new HttpException(
-        `The input data is invalid. Please try again.: \n${JSON.stringify(result.error.errors)}`,
+        `The input data is invalid. Please try again.: \n${JSON.stringify(result2.error.errors)}`,
         HttpStatus.BAD_REQUEST,
       );
     const randomTitle = generateRandomName();
