@@ -1,6 +1,7 @@
 import { Injectable } from "@nestjs/common";
-import { UserService } from "../user/user.service";
-import { PaginationDto } from "@reactive-resume/dto";
+import { PaginationDto, UserPartialInformation } from "@reactive-resume/dto";
+import { PrismaService } from "nestjs-prisma";
+import { PaginationInterface } from "../common/interfaces/pagination.interface";
 
 @Injectable()
 export class AdminService {
@@ -9,27 +10,49 @@ export class AdminService {
    */
   constructor(
     /**
-     * inject user service
+     * inject prisma service
      */
-    private readonly userService: UserService,
+    private readonly prisma: PrismaService,
   ) {}
 
   /**
    * get all users and pagination
    */
-  async getAllUsers(paginationDto: PaginationDto) {
-    // select data
+  async getAllUsers(
+    paginationDto: PaginationDto,
+  ): Promise<PaginationInterface<UserPartialInformation>> {
+    try {
+      const { page, pageSize } = paginationDto;
 
-    const select: object = {
-      name: true,
-      email: true,
-      _count: {
-        select: {
-          resumes: true,
+      // get users
+      const result = await Promise.all([
+        this.prisma.user.findMany({
+          take: pageSize,
+          skip: (page - 1) * pageSize,
+          select: {
+            name: true,
+            email: true,
+            _count: {
+              select: {
+                resumes: true,
+              },
+            },
+          },
+        }),
+        this.prisma.user.count(),
+      ]);
+
+      return {
+        data: result[0],
+        meta: {
+          currentPage: page,
+          itemPerPage: pageSize,
+          totalItem: result[1],
+          totalPage: Math.ceil(result[1] / pageSize),
         },
-      },
-    };
-
-    return this.userService.getAllUsers(paginationDto, select);
+      };
+    } catch (error) {
+      throw new Error("Error fetching users");
+    }
   }
 }

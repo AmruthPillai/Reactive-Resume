@@ -31,11 +31,7 @@ export class AdminController {
     description: "Get all users (name email number of cv)",
   })
   @UsePipes(ZodValidationPipe)
-  async GetUser(
-    @Query() paginationDto: PaginationDto,
-    @Query("page") page?: string,
-    @Query("pageSize") pageSize?: string,
-  ) {
+  async GetUser(@Query() paginationDto: PaginationDto) {
     return this.adminService.getAllUsers(paginationDto);
   }
 }
