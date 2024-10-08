@@ -106,11 +106,14 @@ const WorkStatus = () => {
       <h4 className="mb-2 border-b border-primary text-base font-bold">Work Status</h4>
 
       <div className="flex justify-between items-start">
-        <div className="flex w-[200px] items-center gap-4">
-          <p className="font-bold">
-            {workStatus.openToWork ? "Available For Work" : "Not Available For Work"}
-          </p>
-          <ActiveIndicator className={workStatus.openToWork ? "bg-green-500" : "bg-red-600"} />
+        <div>
+          <div className="flex w-[200px] items-center gap-4">
+            <p className="font-bold">
+              {workStatus.openToWork ? "Available For Work" : "Not Available For Work"}
+            </p>
+            <ActiveIndicator className={workStatus.openToWork ? "bg-green-500" : "bg-red-600"} />
+          </div>
+          {workStatus.openToWork && <div>{workStatus.pricing ? `$${workStatus.pricing}` : ""}</div>}
         </div>
         <div>
           {workStatus.openToWork && <div>{JobTypeMap[workStatus.jobType]}</div>}
@@ -635,7 +638,7 @@ export const Gengar = ({ columns, isFirstPage = false }: TemplateProps) => {
         )}
 
         <div className="p-custom space-y-4">
-          <WorkStatus />
+          {isFirstPage && <WorkStatus />}
           {main.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}

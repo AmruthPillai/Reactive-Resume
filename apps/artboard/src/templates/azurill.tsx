@@ -104,6 +104,7 @@ const WorkStatus = () => {
           </p>
           <ActiveIndicator className={workStatus.openToWork ? "bg-green-500" : "bg-red-600"} />
         </div>
+        {workStatus.openToWork && <div>{workStatus.pricing ? `$${workStatus.pricing}` : ""}</div>}
         {workStatus.openToWork && <div>{JobTypeMap[workStatus.jobType]}</div>}
         {workStatus.openToWork && <div>{workStatus.jobLocation}</div>}
       </main>
@@ -114,9 +115,6 @@ const WorkStatus = () => {
 const Summary = () => {
   const section = useArtboardStore((state) => state.resume.sections.summary);
   const workStatus = useArtboardStore((state) => state.resume.workStatus);
-
-  console.log(section)
-  console.log('>>>', workStatus)
 
   if (!section.visible || isEmptyString(section.content)) return null;
 
@@ -612,7 +610,7 @@ export const Azurill = ({ columns, isFirstPage = false }: TemplateProps) => {
         </div>
 
         <div className="main group col-span-2 space-y-4">
-          <WorkStatus />
+          {isFirstPage && <WorkStatus />}
           {main.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}
