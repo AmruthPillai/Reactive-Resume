@@ -1,4 +1,5 @@
 import {
+  BadRequestException,
   HttpException,
   HttpStatus,
   Injectable,
@@ -99,7 +100,6 @@ export class UserService {
    * get roles by identifier(id or email)
    *
    */
-
   async getRoles(identifier: string): Promise<string[]> {
     try {
       return (
@@ -122,46 +122,62 @@ export class UserService {
     select: object,
     where: object = {},
   ): Promise<PaginationInterface<UserPartialInformation>> {
-    // total records
-    const totalRecord: number = await this.prisma.user.count({ where: where });
+    try {
+      // total records
+      let totalRecord: number = 0;
 
-    // there is no record
-    if (totalRecord === 0) {
+      try {
+        totalRecord = await this.prisma.user.count({ where: where });
+      } catch (error) {
+        throw new BadRequestException(error);
+      }
+
+      // there is no record
+      if (totalRecord === 0) {
+        return {
+          data: [],
+          meta: {
+            currentPage: paginationDto.page,
+            itemPerPage: paginationDto.pageSize,
+            totalItem: 0,
+            totalPage: 0,
+          },
+        };
+      }
+
+      // total Page
+      const totalPage: number = Math.ceil(totalRecord / paginationDto.pageSize);
+
+      // set page require to 1 if it greater than totalPage
+      if (paginationDto.page > totalPage) {
+        paginationDto.page = 1;
+      }
+
+      // get all users
+      let users: UserPartialInformation[] = [];
+
+      try {
+        users = await this.prisma.user.findMany({
+          skip: (paginationDto.page - 1) * paginationDto.pageSize,
+          take: paginationDto.pageSize,
+          where: where,
+          select: select,
+        });
+      } catch (error) {
+        throw new BadRequestException(error);
+      }
+
       return {
-        data: [],
+        data: users,
         meta: {
           currentPage: paginationDto.page,
           itemPerPage: paginationDto.pageSize,
-          totalItem: 0,
-          totalPage: 0,
+          totalItem: totalRecord,
+          totalPage: totalPage,
         },
       };
+    } catch (error) {
+      throw new HttpException(error, HttpStatus.SERVICE_UNAVAILABLE);
     }
-
-    // total Page
-    const totalPage: number = Math.ceil(totalRecord / paginationDto.pageSize);
-
-    // set page require to 1 if it greater than totalPage
-    if (paginationDto.page > totalPage) {
-      paginationDto.page = 1;
-    }
-
-    // get all users
-    const users: UserPartialInformation[] = await this.prisma.user.findMany({
-      skip: (paginationDto.page - 1) * paginationDto.pageSize,
-      take: paginationDto.pageSize,
-      where: where,
-      select: select,
-    });
-
-    return {
-      data: users,
-      meta: {
-        currentPage: paginationDto.page,
-        itemPerPage: paginationDto.pageSize,
-        totalItem: totalRecord,
-        totalPage: totalPage,
-      },
-    };
   }
 }
