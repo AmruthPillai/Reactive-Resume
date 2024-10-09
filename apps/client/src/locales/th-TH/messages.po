@@ -85,7 +85,7 @@ msgid "A4"
 msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:292
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:308
 msgid "Accepts only {accept} files"
 msgstr "ยอมรับเฉพาะไฟล์ {accept}"
 
@@ -97,8 +97,8 @@ msgstr "บัญชี"
 msgid "Add a custom field"
 msgstr "เพิ่มช่องข้อมูลที่กำหนดเอง"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:117
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:164
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:119
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:166
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "เพิ่มรายการใหม่"
@@ -124,7 +124,8 @@ msgstr "AI"
 msgid "Already have an account?"
 msgstr "มีบัญชีแล้วใช่หรือไม่?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:159
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:160
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:231
 msgid "An error occurred while validating the file."
 msgstr "เกิดข้อผิดพลาดขณะตรวจสอบไฟล์"
 
@@ -413,7 +414,8 @@ msgstr "ปิดใช้งาน"
 msgid "Disable 2FA"
 msgstr "ปิดใช้งาน 2FA"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:324
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:350
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:364
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
@@ -513,7 +515,7 @@ msgstr "ป้อนรหัสผ่านแบบครั้งเดีย
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "ป้อนที่อยู่อีเมลของคุณ และเราจะส่งลิงก์ให้คุณรีเซ็ตรหัสผ่านหากบัญชีนั้นมีอยู่"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:305
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:321
 msgid "Errors"
 msgstr "ข้อผิดพลาด"
 
@@ -534,11 +536,11 @@ msgstr "สำรวจเทมเพลตที่มีให้ใช้ใ
 msgid "Export"
 msgstr "ส่งออก"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:277
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:293
 msgid "File"
 msgstr "ไฟล์"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:243
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:259
 msgid "Filetype"
 msgstr "ประเภทไฟล์"
 
@@ -698,11 +700,12 @@ msgstr "หากคุณปิดใช้งานการยืนยัน
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "หากคุณพูดได้หลายภาษา เรายินดีให้คุณช่วยเหลือโดยการนำแอปนี้มาทำให้เข้าถึงได้ในภาษาและชุมชนต่างๆ มากขึ้น ไม่ต้องกังวลหากคุณไม่เห็นภาษาของคุณในรายการ เพียงบอกผมทาง GitHub แล้วผมจะใส่ภาษานั้นไว้ด้วย พร้อมเริ่มหรือยัง? ข้ามไปแปลที่ Crowdin โดยคลิกลิงก์ด้านล่างได้เลย"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:331
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:342
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:371
 msgid "Import"
 msgstr "นําเข้า"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:230
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:246
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -851,6 +854,10 @@ msgstr "LinkedIn, เรซูเม่ JSON ฯลฯ"
 msgid "List"
 msgstr "รายการ"
 
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:338
+msgid "Loading..."
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
@@ -961,7 +968,7 @@ msgstr "รหัสผ่านครั้งเดียว"
 
 #: apps/client/src/components/ai-actions.tsx:56
 #: apps/client/src/libs/axios.ts:29
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:210
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:203
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "อุ๊ปส์ เซิร์ฟเวอร์ส่งข้อผิดพลาดมา"
@@ -1050,7 +1057,7 @@ msgstr "รูปภาพ"
 msgid "Please note that this step is completely optional."
 msgstr "โปรดทราบว่าขั้นตอนนี้ไม่จำเป็นต้องทำก็ได้"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:247
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:263
 msgid "Please select a file type"
 msgstr "กรุณาเลือกประเภทของไฟล์"
 
@@ -1394,7 +1401,7 @@ msgstr "ระบบ"
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
-#: apps/client/src/pages/builder/page.tsx:43
+#: apps/client/src/pages/builder/page.tsx:45
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:14
 #: apps/client/src/pages/home/components/footer.tsx:21
@@ -1569,7 +1576,7 @@ msgstr "อัปเดตรายการที่มีอยู่"
 msgid "Update an existing resume"
 msgstr "อัปเดตเรซูเม่ที่มีอยู่"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:234
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:250
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Talent Hub for easier editing."
 msgstr "อัปโหลดไฟล์จากแหล่งที่น่าเชื่อถือเพื่อวิเคราะห์ข้อมูลที่มีอยู่และนำเข้าไปยัง Talent Hub เพื่อให้แก้ไขได้ง่ายขึ้น"
 
@@ -1600,11 +1607,11 @@ msgstr "ชื่อผู้ใช้"
 msgid "Users Signed Up"
 msgstr "ผู้ใช้ที่ลงทะเบียน"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:318
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:358
 msgid "Validate"
 msgstr "ตรวจสอบ"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:336
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:376
 msgid "Validated"
 msgstr "ตรวจสอบแล้ว"
 

@@ -85,7 +85,7 @@ msgid "A4"
 msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:292
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:308
 msgid "Accepts only {accept} files"
 msgstr "فقط فایل های {accept} را می پذیرد"
 
@@ -97,8 +97,8 @@ msgstr "حساب"
 msgid "Add a custom field"
 msgstr "افزودن فیلد دلخواه"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:117
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:164
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:119
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:166
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "افزودن مورد جدید"
@@ -124,7 +124,8 @@ msgstr "AI"
 msgid "Already have an account?"
 msgstr "درحال حاضر حساب کاربری دارید"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:159
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:160
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:231
 msgid "An error occurred while validating the file."
 msgstr "هنگام بارگیری فایل خطایی رخ داد."
 
@@ -413,7 +414,8 @@ msgstr "غیرفعال"
 msgid "Disable 2FA"
 msgstr "غیرفعالسازی ورود دو مرحله‌ای"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:324
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:350
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:364
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
@@ -513,7 +515,7 @@ msgstr "رمز عبور یکبار مصرف ارائه شده توسط برنا�
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "ایمیل خود را وارد کنید و ما یک لینک برای بازنشانی رمز عبور به شما ارسال خواهیم کرد اگر حساب وجود داشته باشد."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:305
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:321
 msgid "Errors"
 msgstr "خطاها"
 
@@ -534,11 +536,11 @@ msgstr "قالب‌های موجود در Talent Hub را بررسی کرده و
 msgid "Export"
 msgstr "خروجی گرفتن"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:277
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:293
 msgid "File"
 msgstr "فایل"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:243
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:259
 msgid "Filetype"
 msgstr "نوع فایل"
 
@@ -698,11 +700,12 @@ msgstr "اگر احراز هویت دو عاملی را غیرفعال کنید�
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "اگر چندزبانه هستید، ما خیلی خوشحال می‌شویم که به کمک شما، اپ را به بیشتر زبان‌ها و اجتماع‌ها برسانیم. نگران نباشید اگر زبان خود را در لیست نمی‌بینید - فقط به من در گیت‌هاب پیام دهید و من اطمینان حاصل خواهم کرد که آن را اضافه کنم. آیا آماده‌اید که شروع کنید؟ با کلیک بر روی لینک، وارد ترجمه در Crowdin شوید."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:331
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:342
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:371
 msgid "Import"
 msgstr "وارد کردن"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:230
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:246
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -851,6 +854,10 @@ msgstr "لینکدین، JSON رزومه و غیره."
 msgid "List"
 msgstr "لیست"
 
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:338
+msgid "Loading..."
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
@@ -961,7 +968,7 @@ msgstr "پسورد یکبار مصرف"
 
 #: apps/client/src/components/ai-actions.tsx:56
 #: apps/client/src/libs/axios.ts:29
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:210
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:203
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "اوه ، مشکلی در سرور پدید امد."
@@ -1050,7 +1057,7 @@ msgstr "تصویر"
 msgid "Please note that this step is completely optional."
 msgstr "لطفا توجه داشته باشید که این مرحله به طور کاملا اختیاری است."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:247
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:263
 msgid "Please select a file type"
 msgstr "لطفاً فرمت فایل را انتخاب کنید"
 
@@ -1394,7 +1401,7 @@ msgstr "سامانه"
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
-#: apps/client/src/pages/builder/page.tsx:43
+#: apps/client/src/pages/builder/page.tsx:45
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:14
 #: apps/client/src/pages/home/components/footer.tsx:21
@@ -1569,7 +1576,7 @@ msgstr "به روزرسانی یک مورد موجود"
 msgid "Update an existing resume"
 msgstr "به روزرسانی یک رزومه موجود"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:234
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:250
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Talent Hub for easier editing."
 msgstr "آپلود یک فایل از یکی از منابع پذیرفته شده برای تجزیه و تحلیل داده های موجود و وارد کردن آن به Talent Hub برای ویرایش آسانتر."
 
@@ -1600,11 +1607,11 @@ msgstr "نام کاربری"
 msgid "Users Signed Up"
 msgstr "کاربران ثبت نام کرده‌اند"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:318
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:358
 msgid "Validate"
 msgstr "تأیید"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:336
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:376
 msgid "Validated"
 msgstr "تأییدشده"
 

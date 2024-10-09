@@ -261,11 +261,11 @@ const WorkStatus = () => {
             </p>
             <ActiveIndicator className={workStatus.openToWork ? "bg-green-500" : "bg-red-600"} />
           </div>
-          {workStatus.openToWork && <div>{workStatus.pricing ? `$${workStatus.pricing}` : ""}</div>}
+          {workStatus.openToWork && <div>{workStatus.pricing ? `Expected Pricing: $${workStatus.pricing}` : ""}</div>}
         </div>
         <div className="flex flex-col items-end">
-          {workStatus.openToWork && <div>{JobTypeMap[workStatus.jobType]}</div>}
-          {workStatus.openToWork && <div>{workStatus.jobLocation}</div>}
+          {workStatus.openToWork && <div>{`Job Type: ${JobTypeMap[workStatus.jobType]}`}</div>}
+          {workStatus.openToWork && <div>{workStatus.jobLocation&&`Work Location: ${workStatus.jobLocation}`}</div>}
         </div>
       </div>
     </section>

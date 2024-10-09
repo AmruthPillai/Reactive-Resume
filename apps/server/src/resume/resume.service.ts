@@ -186,7 +186,7 @@ export class ResumeService {
     return transformData;
   }
 
-  async upload(str: string, userId: string) {
+  async upload(str: string, title: string, userId: string) {
     const data = await this.handleUpload(str);
     let schemaData = data;
     const result1 = resumeDataSchema.safeParse(data);
@@ -204,14 +204,13 @@ export class ResumeService {
         `The input data is invalid. Please try again.: \n${JSON.stringify(result2.error.errors)}`,
         HttpStatus.BAD_REQUEST,
       );
-    const randomTitle = generateRandomName();
     return this.prisma.resume.create({
       data: {
         userId,
         visibility: "private",
         data: data as InputJsonValue,
-        title: randomTitle,
-        slug: kebabCase(randomTitle),
+        title: title,
+        slug: kebabCase(title),
       },
     });
   }

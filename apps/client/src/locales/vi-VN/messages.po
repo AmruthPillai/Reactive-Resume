@@ -85,7 +85,7 @@ msgid "A4"
 msgstr "Khổ giấy A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:292
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:308
 msgid "Accepts only {accept} files"
 msgstr "Chỉ chấp nhận tệp {accept}"
 
@@ -97,8 +97,8 @@ msgstr "Tài khoản"
 msgid "Add a custom field"
 msgstr "Thêm một trường tùy chỉnh"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:117
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:164
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:119
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:166
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "Thêm mục mới"
@@ -124,7 +124,8 @@ msgstr "AI"
 msgid "Already have an account?"
 msgstr "Bạn đã có tài khoản?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:159
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:160
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:231
 msgid "An error occurred while validating the file."
 msgstr "Đã xảy ra lỗi trong quá trình xác thực tập tin."
 
@@ -413,7 +414,8 @@ msgstr "Tắt"
 msgid "Disable 2FA"
 msgstr "Tắt xác thực 2FA"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:324
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:350
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:364
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
@@ -513,7 +515,7 @@ msgstr "Nhập mật khẩu một lần do ứng dụng xác thực của bạn 
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "Nhập địa chỉ email của bạn, chúng tôi sẽ gửi cho bạn một liên kết để đặt lại mật khẩu nếu tài khoản tồn tại."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:305
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:321
 msgid "Errors"
 msgstr "Lỗi"
 
@@ -534,11 +536,11 @@ msgstr "Khám phá các mẫu có sẵn trong Talent Hub và xem các sơ yếu 
 msgid "Export"
 msgstr "Xuất"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:277
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:293
 msgid "File"
 msgstr "Tệp"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:243
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:259
 msgid "Filetype"
 msgstr "Loại tệp"
 
@@ -698,11 +700,12 @@ msgstr "Nếu bạn tắt xác thực hai yếu tố, bạn sẽ không còn ph�
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "Nếu bạn sử dụng được nhiều ngôn ngữ, chúng tôi mong nhận được sự trợ giúp của bạn trong việc đưa ứng dụng đến với nhiều ngôn ngữ và cộng đồng hơn. Đừng lo lắng nếu bạn không thấy ngôn ngữ của mình trong danh sách - chỉ cần gửi lời cảm ơn cho tôi trên GitHub và tôi chắc chắn sẽ đưa ngôn ngữ đó vào. Sẵn sàng để bắt đầu? Chuyển sang bản dịch tại Crowdin bằng cách nhấp vào liên kết bên dưới."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:331
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:342
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:371
 msgid "Import"
 msgstr "Nhập"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:230
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:246
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -851,6 +854,10 @@ msgstr "LinkedIn, JSON Resume, hoặc tương tự."
 msgid "List"
 msgstr "Danh sách"
 
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:338
+msgid "Loading..."
+msgstr "Đang tải..."
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
@@ -961,7 +968,7 @@ msgstr "Mật khẩu sử dụng một lần"
 
 #: apps/client/src/components/ai-actions.tsx:56
 #: apps/client/src/libs/axios.ts:29
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:210
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:203
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "Rất tiếc, máy chủ đã trả về lỗi."
@@ -1050,7 +1057,7 @@ msgstr "Hình ảnh"
 msgid "Please note that this step is completely optional."
 msgstr "Xin lưu ý rằng bước này là hoàn toàn tùy chọn."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:247
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:263
 msgid "Please select a file type"
 msgstr "Vui lòng chọn loại tập tin"
 
@@ -1394,7 +1401,7 @@ msgstr "Hệ thống"
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
-#: apps/client/src/pages/builder/page.tsx:43
+#: apps/client/src/pages/builder/page.tsx:45
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:14
 #: apps/client/src/pages/home/components/footer.tsx:21
@@ -1569,7 +1576,7 @@ msgstr "Cập nhật một mục hiện có"
 msgid "Update an existing resume"
 msgstr "Cập nhật sơ yếu lý lịch hiện có"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:234
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:250
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Talent Hub for easier editing."
 msgstr "Tải tệp lên từ một trong các nguồn được chấp nhận để phân tích dữ liệu hiện có và nhập tệp đó vào Talent Hub để chỉnh sửa dễ dàng hơn."
 
@@ -1600,11 +1607,11 @@ msgstr "Tên Người Dùng"
 msgid "Users Signed Up"
 msgstr "Người dùng đã đăng ký"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:318
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:358
 msgid "Validate"
 msgstr "Xác thực"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:336
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:376
 msgid "Validated"
 msgstr "Đã xác thực"
 
