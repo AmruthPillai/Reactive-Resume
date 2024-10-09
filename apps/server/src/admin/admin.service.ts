@@ -45,7 +45,7 @@ export class AdminService {
   }
 
   /**
-   * function get Users
+   *  get Users
    */
   async getUsers(
     paginationDto: PaginationQueryDto,
@@ -71,7 +71,10 @@ export class AdminService {
             },
           },
         }),
-        this.prisma.user.count(),
+
+        this.prisma.user.count({
+          where: where,
+        }),
       ]);
 
       return {
