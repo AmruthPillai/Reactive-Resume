@@ -39,20 +39,9 @@ export class AdminController {
   @UseGuards(TwoFactorGuard, RolesGuard)
   @ApiOperation({
     summary: "get all users",
-    description: "Get all users (name email number of cv) param(page pageSize search )",
+    description: "Get all users (name email number of cv) param(page pageSize search)",
   })
   async getUsers(@Query() paginationDto: PaginationQueryDto) {
-    return this.adminService.getUsers(paginationDto);
-  }
-
-  /**
-   * search users
-   */
-  @Get("/search-user")
-  @Role([Roles.ADMIN])
-  @UseGuards(TwoFactorGuard, RolesGuard)
-  @ApiOperation({ summary: "Search users", description: "Search users (name/email)" })
-  async searchUsers(@Query() paginationDto: PaginationQueryDto) {
     return this.adminService.getUsers(
       paginationDto,
       this.adminService.getUserCondition(paginationDto),
