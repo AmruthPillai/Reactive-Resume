@@ -19,7 +19,6 @@ import {
   ForgotPasswordDto,
   LoginDto,
   messageSchema,
-  PaginationDto,
   RegisterDto,
   ResetPasswordDto,
   TwoFactorBackupDto,

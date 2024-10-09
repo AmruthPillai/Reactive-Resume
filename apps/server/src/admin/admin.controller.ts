@@ -1,15 +1,25 @@
-import { Controller, Get, Query, UseGuards, UsePipes } from "@nestjs/common";
-import { ApiOperation, ApiTags } from "@nestjs/swagger";
+import { Controller, Get, Query, UseGuards, UsePipes, ValidationPipe } from "@nestjs/common";
+import { ApiCookieAuth, ApiOperation, ApiProperty, ApiQuery, ApiTags } from "@nestjs/swagger";
 import { Roles } from "../auth/enums/roles.enum";
 import { Role } from "../auth/decorators/roles.decorator";
 import { TwoFactorGuard } from "../auth/guards/two-factor.guard";
 import { RolesGuard } from "../auth/guards/roles.guard";
 import { AdminService } from "./admin.service";
-import { PaginationDto } from "@reactive-resume/dto";
-import { ZodValidationPipe } from "nestjs-zod";
+import { PaginationQueryDto } from "./dtos/pagination.dto";
 
 @ApiTags("Admin")
 @Controller("admin")
+@UsePipes(
+  new ValidationPipe({
+    whitelist: true,
+    forbidNonWhitelisted: true,
+    transform: true,
+    transformOptions: {
+      enableImplicitConversion: true,
+    },
+  }),
+)
+@ApiCookieAuth()
 export class AdminController {
   /**
    * contructor
@@ -28,10 +38,22 @@ export class AdminController {
   @Role([Roles.ADMIN])
   @UseGuards(TwoFactorGuard, RolesGuard)
   @ApiOperation({
-    description: "Get all users (name email number of cv)",
+    summary: "get all users",
+    description: "Get all users (name email number of cv) param(page pageSize search )",
   })
-  @UsePipes(ZodValidationPipe)
-  async GetUser(@Query() paginationDto: PaginationDto) {
+  async getUsers(@Query() paginationDto: PaginationQueryDto) {
+    console.log(paginationDto instanceof PaginationQueryDto);
     return this.adminService.getAllUsers(paginationDto);
+  }
+
+  /**
+   * search users
+   */
+  @Get("/search-user")
+  @Role([Roles.ADMIN])
+  @UseGuards(TwoFactorGuard, RolesGuard)
+  @ApiOperation({ summary: "Search users", description: "Search users (name/email)" })
+  async searchUsers(@Query() paginationDto: PaginationQueryDto) {
+    return this.adminService.searchUser(paginationDto);
   }
 }
