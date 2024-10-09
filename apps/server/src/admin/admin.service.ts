@@ -20,7 +20,7 @@ export class AdminService {
   /**
    * get user conditon
    */
-  getUserCondition(pagination: PaginationQueryDto): Prisma.UserWhereInput {
+  private getUserCondition(pagination: PaginationQueryDto): Prisma.UserWhereInput {
     if (!pagination.search) {
       return {};
     }
@@ -49,10 +49,11 @@ export class AdminService {
    */
   async getUsers(
     paginationDto: PaginationQueryDto,
-    where: Prisma.UserWhereInput = {},
   ): Promise<PaginationInterface<UserPartialInformation>> {
     try {
       const { page, pageSize } = paginationDto;
+
+      const where: Prisma.UserWhereInput = this.getUserCondition(paginationDto);
 
       // get users
       const [data, countRecord] = await Promise.all([

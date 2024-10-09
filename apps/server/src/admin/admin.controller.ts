@@ -42,9 +42,6 @@ export class AdminController {
     description: "Get all users (name email number of cv) param(page pageSize search)",
   })
   async getUsers(@Query() paginationDto: PaginationQueryDto) {
-    return this.adminService.getUsers(
-      paginationDto,
-      this.adminService.getUserCondition(paginationDto),
-    );
+    return this.adminService.getUsers(paginationDto);
   }
 }
