@@ -20,7 +20,7 @@ export class AdminService {
   /**
    * get user conditon
    */
-  private getUserCondition(pagination: PaginationQueryDto): Prisma.UserWhereInput {
+  getUserCondition(pagination: PaginationQueryDto): Prisma.UserWhereInput {
     if (!pagination.search) {
       return {};
     }
@@ -47,7 +47,7 @@ export class AdminService {
   /**
    * function get Users
    */
-  private async getUsers(
+  async getUsers(
     paginationDto: PaginationQueryDto,
     where: Prisma.UserWhereInput = {},
   ): Promise<PaginationInterface<UserPartialInformation>> {
@@ -85,22 +85,5 @@ export class AdminService {
     } catch (error) {
       throw error;
     }
-  }
-
-  /**
-   * get all users and pagination
-   */
-  async getAllUsers(
-    paginationDto: PaginationQueryDto,
-  ): Promise<PaginationInterface<UserPartialInformation>> {
-    return this.getUsers(paginationDto);
-  }
-
-  /**
-   * Searh user
-   */
-  async searchUser(paginationDto: PaginationQueryDto) {
-    const where: Prisma.UserWhereInput = this.getUserCondition(paginationDto);
-    return this.getUsers(paginationDto, where);
   }
 }

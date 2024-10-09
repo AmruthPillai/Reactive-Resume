@@ -42,8 +42,7 @@ export class AdminController {
     description: "Get all users (name email number of cv) param(page pageSize search )",
   })
   async getUsers(@Query() paginationDto: PaginationQueryDto) {
-    console.log(paginationDto instanceof PaginationQueryDto);
-    return this.adminService.getAllUsers(paginationDto);
+    return this.adminService.getUsers(paginationDto);
   }
 
   /**
@@ -54,6 +53,9 @@ export class AdminController {
   @UseGuards(TwoFactorGuard, RolesGuard)
   @ApiOperation({ summary: "Search users", description: "Search users (name/email)" })
   async searchUsers(@Query() paginationDto: PaginationQueryDto) {
-    return this.adminService.searchUser(paginationDto);
+    return this.adminService.getUsers(
+      paginationDto,
+      this.adminService.getUserCondition(paginationDto),
+    );
   }
 }
