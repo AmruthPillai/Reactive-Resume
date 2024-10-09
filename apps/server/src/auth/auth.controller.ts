@@ -43,6 +43,7 @@ import { payloadSchema } from "./utils/payload";
 import { Role } from "./decorators/roles.decorator";
 import { Roles } from "./enums/roles.enum";
 import { RolesGuard } from "./guards/roles.guard";
+import { UseZodGuard } from "nestjs-zod";
 
 @ApiTags("Authentication")
 @Controller("auth")

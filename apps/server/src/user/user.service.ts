@@ -1,10 +1,11 @@
 import {
+  BadRequestException,
   HttpException,
   HttpStatus,
   Injectable,
   InternalServerErrorException,
 } from "@nestjs/common";
-import { Prisma } from "@prisma/client";
+import { Prisma, PrismaClient } from "@prisma/client";
 import { ErrorMessage } from "@reactive-resume/utils";
 import { PrismaService } from "nestjs-prisma";
 
@@ -97,7 +98,6 @@ export class UserService {
    * get roles by identifier(id or email)
    *
    */
-
   async getRoles(identifier: string): Promise<string[]> {
     try {
       return (
