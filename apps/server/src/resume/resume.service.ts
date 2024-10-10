@@ -21,6 +21,7 @@ import {
 import type { DeepPartial } from "@reactive-resume/utils";
 import { ErrorMessage, generateRandomName, kebabCase } from "@reactive-resume/utils";
 import deepmerge from "deepmerge";
+import JSON5 from "json5";
 import { PrismaService } from "nestjs-prisma";
 
 import { PrinterService } from "@/server/printer/printer.service";
@@ -177,7 +178,7 @@ export class ResumeService {
 
   async handleUpload(str: string) {
     const json = await this.genaiService.convertResumeToJson(str);
-    const data1 = JSON.parse(json);
+    const data1 = JSON5.parse(json);
     const transformData = transformZodJson({
       ...data1,
       workStatus: defaultWorkStatus,
@@ -208,7 +209,7 @@ export class ResumeService {
       data: {
         userId,
         visibility: "private",
-        data: data as InputJsonValue,
+        data: schemaData as InputJsonValue,
         title: title,
         slug: kebabCase(title),
       },
