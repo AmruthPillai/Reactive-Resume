@@ -1,4 +1,13 @@
-import { Controller, Get, Query, UseGuards, UsePipes, ValidationPipe } from "@nestjs/common";
+import {
+  Controller,
+  Get,
+  Header,
+  Query,
+  Res,
+  UseGuards,
+  UsePipes,
+  ValidationPipe,
+} from "@nestjs/common";
 import { ApiCookieAuth, ApiOperation, ApiProperty, ApiQuery, ApiTags } from "@nestjs/swagger";
 import { Roles } from "../auth/enums/roles.enum";
 import { Role } from "../auth/decorators/roles.decorator";
@@ -6,6 +15,7 @@ import { TwoFactorGuard } from "../auth/guards/two-factor.guard";
 import { RolesGuard } from "../auth/guards/roles.guard";
 import { AdminService } from "./admin.service";
 import { PaginationQueryDto } from "./dtos/pagination.dto";
+import { Response } from "express";
 
 @ApiTags("Admin")
 @Controller("admin")
@@ -43,5 +53,19 @@ export class AdminController {
   })
   async getUsers(@Query() paginationDto: PaginationQueryDto) {
     return this.adminService.getUsers(paginationDto);
+  }
+
+  /**
+   * download user
+   */
+  @Get("/users/download")
+  @Role([Roles.ADMIN])
+  @UseGuards(TwoFactorGuard, RolesGuard)
+  @ApiOperation({
+    summary: "download list users",
+  })
+  async downloadUser(@Res() res: Response) {
+    const file: string = await this.adminService.downLoadUser();
+    res.download(file);
   }
 }
