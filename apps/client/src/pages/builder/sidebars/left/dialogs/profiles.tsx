@@ -41,8 +41,30 @@ export const ProfilesDialog = () => {
         const response = await axios.get(
           "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/_data/simple-icons.json",
         );
-        const titles = response.data.icons.map((element: any) => element.title);
-        setIconList(titles);
+        const socialMediaKeywords = [
+          "facebook",
+          "twitter",
+          "instagram",
+          "linkedin",
+          "youtube",
+          "snapchat",
+          "tiktok",
+          "pinterest",
+          "whatsapp",
+          "discord",
+          "reddit",
+          "tumblr",
+          "telegram",
+          "twitch",
+          "weibo",
+        ];
+
+        const socialMediaIcons = response.data.icons
+          .filter((icon: any) => socialMediaKeywords.includes(icon.title.toLowerCase()))
+          .map((icon: any) => icon.title);
+
+        setIconList(socialMediaIcons);
+        setSuggestions(socialMediaIcons);
       } catch (error) {
         console.error("Error fetching icons:", error);
       }
@@ -57,7 +79,7 @@ export const ProfilesDialog = () => {
       );
       setSuggestions(filteredData);
     } else {
-      setSuggestions([]);
+      setSuggestions(iconList);
     }
   }, [searchText]);
 
