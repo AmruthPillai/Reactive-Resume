@@ -65,7 +65,12 @@ export class AdminController {
     summary: "download list users",
   })
   async downloadUser(@Res() res: Response) {
-    const file: string = await this.adminService.downLoadUser();
-    res.download(file);
+    const buffer = await this.adminService.downloadUsers();
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    );
+    res.attachment(`list-users${Date.now()}.xlsx`); // name file
+    res.end(buffer);
   }
 }

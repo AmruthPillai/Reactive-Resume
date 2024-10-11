@@ -4,10 +4,8 @@ import { PrismaService } from "nestjs-prisma";
 import { PaginationInterface } from "../common/interfaces/pagination.interface";
 import { Prisma } from "@prisma/client";
 import { PaginationQueryDto } from "./dtos/pagination.dto";
-import { Workbook, Worksheet } from "exceljs";
-import * as tmp from "tmp";
 import { UserCountResumes, UserWithCount } from "./interfaces/user.interface";
-import { NAMEFILE, POSTFIX, WORKSHEET } from "./constants/file.constant";
+import xlsx from "node-xlsx";
 
 @Injectable()
 export class AdminService {
@@ -96,9 +94,9 @@ export class AdminService {
   }
 
   /**
-   * download list users
+   * download users
    */
-  async downLoadUser(): Promise<string> {
+  async downloadUsers(): Promise<Buffer> {
     // get users data
     let data: UserWithCount[] = [];
 
@@ -135,44 +133,21 @@ export class AdminService {
       );
     });
 
-    //  create working book
-    const book: Workbook = new Workbook();
-
-    //  adding worksheet to workbook
-    const sheet: Worksheet = book.addWorksheet(WORKSHEET);
-
     // add header
     rows.unshift(Object.keys({ name: "", email: "", resumes: 0 } as UserCountResumes));
 
-    sheet.addRows(rows);
+    // style sheet
+    const sheetOptions = { "!cols": [{ wch: 50 }, { wch: 50 }, { wch: 50 }, { wch: 50 }] };
 
-    let file: string = await new Promise((resole, reject) => {
-      tmp.file(
-        {
-          discardDescriptor: true,
-          prefix: NAMEFILE,
-          postfix: POSTFIX,
-          mode: parseInt("0600", 8),
-        },
+    // create buffer
+    const buffer: Buffer = xlsx.build([
+      {
+        name: "list-user",
+        data: rows,
+        options: sheetOptions,
+      },
+    ]);
 
-        async (err, file) => {
-          if (err) {
-            throw err;
-          }
-
-          // writing temp file
-          book.xlsx
-            .writeFile(file)
-            .then((_) => {
-              resole(file);
-            })
-            .catch((err) => {
-              throw err;
-            });
-        },
-      );
-    });
-
-    return file;
+    return buffer;
   }
 }
