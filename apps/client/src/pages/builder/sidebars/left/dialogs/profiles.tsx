@@ -43,7 +43,7 @@ export const ProfilesDialog = () => {
         );
         const socialMediaKeywords = [
           "facebook",
-          "twitter",
+          "x",
           "instagram",
           "linkedin",
           "youtube",
@@ -57,6 +57,15 @@ export const ProfilesDialog = () => {
           "telegram",
           "twitch",
           "weibo",
+          "flickr",
+          "vimeo",
+          "tiktok",
+          "quora",
+          "foursquare",
+          "mixcloud",
+          "behance",
+          "dribbble",
+          "soundcloud",
         ];
 
         const socialMediaIcons = response.data.icons
