@@ -99,7 +99,7 @@ export const RegisterPage = () => {
                   <FormControl>
                     <Input
                       placeholder={t({
-                        message: "John Doe",
+                        message: "Nguyễn Văn A",
                         context:
                           "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish.",
                       })}
@@ -120,7 +120,7 @@ export const RegisterPage = () => {
                   <FormControl>
                     <Input
                       placeholder={t({
-                        message: "john.doe",
+                        message: "nguyenvana",
                         context:
                           "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish.",
                       })}
@@ -141,7 +141,7 @@ export const RegisterPage = () => {
                   <FormControl>
                     <Input
                       placeholder={t({
-                        message: "john.doe@example.com",
+                        message: "nguyenvana@example.com",
                         context:
                           "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish.",
                       })}
