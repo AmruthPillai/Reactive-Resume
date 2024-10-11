@@ -1,9 +1,11 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, NotFoundException } from "@nestjs/common";
 import { UserPartialInformation } from "@reactive-resume/dto";
 import { PrismaService } from "nestjs-prisma";
 import { PaginationInterface } from "../common/interfaces/pagination.interface";
 import { Prisma } from "@prisma/client";
 import { PaginationQueryDto } from "./dtos/pagination.dto";
+import { UserCountResumes, UserWithCount } from "./interfaces/user.interface";
+import xlsx from "node-xlsx";
 
 @Injectable()
 export class AdminService {
@@ -89,5 +91,63 @@ export class AdminService {
     } catch (error) {
       throw error;
     }
+  }
+
+  /**
+   * download users
+   */
+  async downloadUsers(): Promise<Buffer> {
+    // get users data
+    let data: UserWithCount[] = [];
+
+    try {
+      data = await this.prisma.user.findMany({
+        select: {
+          name: true,
+          email: true,
+          _count: {
+            select: {
+              resumes: true,
+            },
+          },
+        },
+      });
+    } catch (error) {
+      throw error;
+    }
+
+    if (data.length === 0) {
+      throw new NotFoundException("no user data found");
+    }
+
+    const rows = [];
+
+    // add data
+    data.forEach((item) => {
+      rows.push(
+        Object.values({
+          name: item.name,
+          email: item.email,
+          resumes: item._count.resumes,
+        } as UserCountResumes),
+      );
+    });
+
+    // add header
+    rows.unshift(Object.keys({ name: "", email: "", resumes: 0 } as UserCountResumes));
+
+    // style sheet
+    const sheetOptions = { "!cols": [{ wch: 50 }, { wch: 50 }, { wch: 50 }, { wch: 50 }] };
+
+    // create buffer
+    const buffer: Buffer = xlsx.build([
+      {
+        name: "list-user",
+        data: rows,
+        options: sheetOptions,
+      },
+    ]);
+
+    return buffer;
   }
 }
