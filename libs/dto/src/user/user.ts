@@ -13,12 +13,20 @@ export const usernameSchema = z
       "Usernames can only contain lowercase letters, numbers, periods, hyphens, and underscores.",
   });
 
+export const phoneSchema = z
+  .string()
+  .min(10)
+  .max(12)
+  .regex(/^\d+$/, { message: "Phone number must contain only digits." })
+  .optional();
+
 export const userSchema = z.object({
   id: idSchema,
   name: z.string().min(1).max(255),
   picture: z.literal("").or(z.null()).or(z.string().url()),
   username: usernameSchema,
   email: z.string().email(),
+  phone: phoneSchema,
   locale: z.string().default("en-US"),
   emailVerified: z.boolean().default(false),
   twoFactorEnabled: z.boolean().default(false),

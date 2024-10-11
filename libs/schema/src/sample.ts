@@ -3,9 +3,9 @@ import { JobType } from "./work-status";
 
 export const sampleResume: ResumeData = {
   basics: {
-    name: "John Doe",
+    name: "Nguyễn Văn A",
     headline: "Creative and Innovative Web Developer",
-    email: "john.doe@gmail.com",
+    email: "nguyenvana@gmail.com",
     phone: "(555) 123-4567",
     location: "Pleasantville, CA 94588",
     url: {

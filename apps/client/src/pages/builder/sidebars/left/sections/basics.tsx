@@ -54,7 +54,7 @@ export const BasicsSection = () => {
           <Label htmlFor="basics.email">{t`Email`}</Label>
           <Input
             id="basics.email"
-            placeholder="john.doe@example.com"
+            placeholder="nguyenvana@example.com"
             value={basics.email}
             hasError={
               !basicsSchema.pick({ email: true }).safeParse({ email: basics.email }).success
