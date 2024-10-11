@@ -64,7 +64,6 @@ export const ProfilesDialog = () => {
           .map((icon: any) => icon.title);
 
         setIconList(socialMediaIcons);
-        setSuggestions(socialMediaIcons);
       } catch (error) {
         console.error("Error fetching icons:", error);
       }
@@ -169,7 +168,7 @@ export const ProfilesDialog = () => {
               </FormControl>
               <div className="pl-10">
                 {suggestions.length > 0 && (
-                  <ul className="border py-2 border-gray-300 h-40 overflow-y-scroll ">
+                  <ul className="border py-2 px-2 border-gray-300 max-h-40 overflow-y-scroll ">
                     {suggestions.map((icon) => (
                       <li
                         className="p-1 cursor-pointer hover:bg-gray-200"
