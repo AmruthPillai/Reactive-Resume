@@ -40,7 +40,7 @@ async function bootstrap() {
   // Enable Shutdown Hooks
   app.enableShutdownHooks();
 
-  app.use(session({ secret: "itay-is-a-bit-geh" }));
+  app.use(session({ secret: "itay-is-a-bit-geh", resave: false, saveUninitialized: false }));
 
   // Swagger (OpenAPI Docs)
   // This can be accessed by visiting {SERVER_URL}/api/docs
