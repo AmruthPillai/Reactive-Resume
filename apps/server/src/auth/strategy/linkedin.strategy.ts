@@ -1,11 +1,11 @@
 import { HttpService } from "@nestjs/axios";
 import { BadRequestException, Injectable } from "@nestjs/common";
 import { PassportStrategy } from "@nestjs/passport";
-import { Profile, Strategy, StrategyOptionWithRequest } from "passport-linkedin-oauth2";
-
-import { UserService } from "@/server/user/user.service";
 import { User } from "@prisma/client";
 import { ErrorMessage, processUsername } from "@reactive-resume/utils";
+import { Strategy, StrategyOptionWithRequest } from "passport-linkedin-oauth2";
+
+import { UserService } from "@/server/user/user.service";
 
 @Injectable()
 export class LinkedinStrategy extends PassportStrategy(Strategy, "linkedin") {
