@@ -3,6 +3,8 @@
 import { t } from "@lingui/macro";
 
 import { openai } from "./client";
+import { useOpenAiStore } from "@/client/stores/openai";
+import { DEFAULT_MAX_TOKENS, DEFAULT_MODEL } from "@/client/constants/llm";
 
 const PROMPT = `You are an AI writing assistant specialized in writing copy for resumes.
 Do not return anything else except the text you improved. It should not begin with a newline. It should not have any prefix or suffix text.
@@ -17,10 +19,12 @@ type Mood = "casual" | "professional" | "confident" | "friendly";
 export const changeTone = async (text: string, mood: Mood) => {
   const prompt = PROMPT.replace("{mood}", mood).replace("{input}", text);
 
+  const { model, maxTokens } = useOpenAiStore.getState();
+
   const result = await openai().chat.completions.create({
     messages: [{ role: "user", content: prompt }],
-    model: "gpt-3.5-turbo",
-    max_tokens: 1024,
+    model: model ?? DEFAULT_MODEL,
+    max_tokens: maxTokens ?? DEFAULT_MAX_TOKENS,
     temperature: 0.5,
     stop: ['"""'],
     n: 1,
