@@ -4,18 +4,22 @@ import { ResumeDto } from "@reactive-resume/dto";
 import { KeyboardShortcut } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 
+import { useSubscription } from "@/client/services/user";
 import { useDialog } from "@/client/stores/dialog";
 
 import { BaseCard } from "./base-card";
 
 export const AiResumeCard = ({ resumes }: { resumes: ResumeDto[] | undefined }) => {
-  const { open } = useDialog("resume");
+  const subscription = useSubscription();
+  const { open: openPremium } = useDialog("premium");
+  const { open: openResume } = useDialog("resume");
 
   return (
     <BaseCard
       withShineBorder
       onClick={() => {
-        open("create-ai", { id: "resume", item: resumes });
+        if (subscription.isPro) openResume("create-ai", { id: "resume", item: resumes });
+        else openPremium("update");
       }}
     >
       <MagicWand size={64} weight="thin" />

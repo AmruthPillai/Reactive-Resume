@@ -1,3 +1,4 @@
+import { PremiumDialog } from "../components/premium-dialog";
 import { AwardsDialog } from "../pages/builder/sidebars/left/dialogs/awards";
 import { CertificationsDialog } from "../pages/builder/sidebars/left/dialogs/certifications";
 import { CustomSectionDialog } from "../pages/builder/sidebars/left/dialogs/custom-section";
@@ -33,6 +34,7 @@ export const DialogProvider = ({ children }: Props) => {
         <LockDialog />
         <ImportDialog />
         <TwoFactorDialog />
+        <PremiumDialog />
 
         {isResumeLoaded && (
           <>

@@ -14,6 +14,8 @@ import { toast } from "../hooks/use-toast";
 import { changeTone } from "../services/openai/change-tone";
 import { fixGrammar } from "../services/openai/fix-grammar";
 import { improveWriting } from "../services/openai/improve-writing";
+import { useSubscription } from "../services/user";
+import { useDialog } from "../stores/dialog";
 
 type Action = "improve" | "fix" | "tone";
 type Mood = "casual" | "professional" | "confident" | "friendly";
@@ -26,8 +28,15 @@ type Props = {
 
 export const AiActions = ({ value, onChange, className }: Props) => {
   const [loading, setLoading] = useState<Action | false>(false);
+  const subscription = useSubscription();
+  const { open: openPremium } = useDialog("premium");
 
   const onClick = async (action: Action, mood?: Mood) => {
+    if (!subscription.isPro) {
+      openPremium("update");
+      return;
+    }
+
     try {
       setLoading(action);
 

@@ -44,6 +44,7 @@ import { z, ZodError } from "zod";
 import { useToast } from "@/client/hooks/use-toast";
 import { useImportResume } from "@/client/services/resume/import";
 import { useImportLinkedinResume } from "@/client/services/resume/import-linkedin";
+import { useSubscription } from "@/client/services/user";
 import { useDialog } from "@/client/stores/dialog";
 
 enum ImportType {
@@ -85,6 +86,7 @@ export const ImportDialog = () => {
   const { isOpen, close } = useDialog("import");
   const { importResume, loading: importLoading } = useImportResume();
   const { importLinkedinResume, loading: importLinkedinLoading } = useImportLinkedinResume();
+  const subscription = useSubscription();
 
   const loading = importLoading || importLinkedinLoading;
   const [validationResult, setValidationResult] = useState<ValidationResult | null>(null);
@@ -271,13 +273,23 @@ export const ImportDialog = () => {
             />
           </form>
         </Form>
+        {!subscription.isPro && (
+          <div className="flex justify-end gap-2">
+            <Button type="button" disabled={loading} onClick={console.log}>
+              {loading && <Spinner size={16} className="me-2 animate-spin" />}
+              {t`Upgrade`}
+            </Button>
+          </div>
+        )}
 
-        <div className="flex justify-end gap-2">
-          <Button type="button" disabled={loading} onClick={onLinkedinImport}>
-            {loading && <Spinner size={16} className="animate-spin me-2" />}
-            {t`Import`}
-          </Button>
-        </div>
+        {subscription.isPro && (
+          <div className="flex justify-end gap-2">
+            <Button type="button" disabled={loading} onClick={onLinkedinImport}>
+              {loading && <Spinner size={16} className="me-2 animate-spin" />}
+              {t`Import`}
+            </Button>
+          </div>
+        )}
 
         <Separator />
 
