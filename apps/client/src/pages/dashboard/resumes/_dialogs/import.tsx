@@ -87,6 +87,7 @@ export const ImportDialog = () => {
   const { importResume, loading: importLoading } = useImportResume();
   const { importLinkedinResume, loading: importLinkedinLoading } = useImportLinkedinResume();
   const subscription = useSubscription();
+  const { open: openPremium } = useDialog("premium");
 
   const loading = importLoading || importLinkedinLoading;
   const [validationResult, setValidationResult] = useState<ValidationResult | null>(null);
@@ -275,7 +276,13 @@ export const ImportDialog = () => {
         </Form>
         {!subscription.isPro && (
           <div className="flex justify-end gap-2">
-            <Button type="button" disabled={loading} onClick={console.log}>
+            <Button
+              type="button"
+              disabled={loading}
+              onClick={() => {
+                openPremium("update");
+              }}
+            >
               {loading && <Spinner size={16} className="me-2 animate-spin" />}
               {t`Upgrade`}
             </Button>

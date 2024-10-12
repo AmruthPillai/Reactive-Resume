@@ -9,11 +9,13 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@reactive-resume/ui";
+import { useNavigate } from "react-router-dom";
 
 import { useDialog } from "@/client/stores/dialog";
 
 export const PremiumDialog = () => {
   const { isOpen, mode, payload, close } = useDialog<null>("premium");
+  const navigate = useNavigate();
 
   return (
     <AlertDialog open={isOpen} onOpenChange={close}>
@@ -27,7 +29,13 @@ export const PremiumDialog = () => {
 
         <AlertDialogFooter>
           <AlertDialogCancel>{t`Cancel`}</AlertDialogCancel>
-          <AlertDialogAction disabled={false} onClick={console.log}>
+          {/*  redirect to billing */}
+          <AlertDialogAction
+            disabled={false}
+            onClick={() => {
+              navigate("/dashboard/billing");
+            }}
+          >
             {t`Upgrade`} {" 🚀"}
           </AlertDialogAction>
         </AlertDialogFooter>
