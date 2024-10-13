@@ -38,7 +38,7 @@ msgstr "<0>Reactive Resumeは、素晴らしいオープンソースコントリ
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>このアプリは完璧ではないと思いますが、完璧にしたいと思っています。</0><1>もし履歴書作成中に問題に直面したり、あなたや他のユーザーがもっと簡単に履歴書を作成できるようなアイデアがあれば、リポジトリにissueを作成するか、私にメールを送ってください。</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:126
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr "<0>注意：</0>OpenAI APIを利用することにより、利用者はOpenAIの<1>利用規約と</1> <2>プライバシーポリシーに</2>同意したものとみなされます。Reactive Resumeは、サービスの不適切な利用や不正利用に対して一切の責任を負わず、その結果生じるいかなる影響や責任も利用者のみにあることにご注意ください。"
 
@@ -146,10 +146,6 @@ msgstr "リンクを知っている人は誰でも履歴書を表示してダウ
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "このリンクを知っている人は誰でも履歴書を表示してダウンロードできます。あなたのプロフィールで共有するか採用担当者と共有しましょう。"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:83
-msgid "API Key"
-msgstr "API キー"
-
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:124
 msgid "Are you sure you want to delete this item?"
 msgstr "このアイテムを削除してもよろしいですか？"
@@ -208,6 +204,10 @@ msgstr "バックアップコード"
 #: apps/client/src/pages/auth/backup-otp/page.tsx:80
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "バックアップコードは小文字のアルファベットまたは数字のみを含んだ10文字である必要があります。"
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:133
+msgid "Base URL"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:55
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
@@ -575,7 +575,7 @@ msgstr "Font Variants"
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr "例えば、どの会社にこの履歴書を送ったか、または仕事の説明へのリンクについての情報はここに記述することができる。"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:107
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:186
 msgid "Forget"
 msgstr "忘れた"
 
@@ -914,9 +914,17 @@ msgstr "2023年3月-現在"
 msgid "Margin"
 msgstr "マージン（マージン）"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:159
+msgid "Max Tokens"
+msgstr ""
+
 #: apps/client/src/pages/home/sections/features/index.tsx:48
 msgid "MIT License"
 msgstr "MIT ライセンス"
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:146
+msgid "Model"
+msgstr ""
 
 #: apps/client/src/pages/auth/register/page.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:58
@@ -961,6 +969,10 @@ msgstr "注意: これにより、アカウントの安全性が低下します�
 msgid "Notes"
 msgstr "メモ"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
+msgid "Ollama Integration"
+msgstr ""
+
 #: apps/client/src/pages/auth/verify-otp/page.tsx:82
 msgid "One-Time Password"
 msgstr "ワンタイムパスワード"
@@ -982,13 +994,17 @@ msgstr "開く"
 msgid "Open Source"
 msgstr "オープンソース"
 
-#: apps/client/src/services/openai/change-tone.ts:30
-#: apps/client/src/services/openai/fix-grammar.ts:28
-#: apps/client/src/services/openai/improve-writing.ts:28
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
+msgid "OpenAI / Ollama API Key"
+msgstr ""
+
+#: apps/client/src/services/openai/change-tone.ts:34
+#: apps/client/src/services/openai/fix-grammar.ts:32
+#: apps/client/src/services/openai/improve-writing.ts:32
 msgid "OpenAI did not return any choices for your text."
 msgstr "OpenAIはテキストの選択肢を返しませんでした。"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:52
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:77
 #: apps/client/src/pages/home/sections/features/index.tsx:52
 msgid "OpenAI Integration"
 msgstr "OpenAI 統合"
@@ -1213,6 +1229,14 @@ msgstr "四捨五入済み"
 msgid "Save Changes"
 msgstr "変更を保存"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+msgid "Save Locally"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+msgid "Saved"
+msgstr ""
+
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
 msgid "Scan the QR code below with your authenticator app to setup 2FA on your account."
 msgstr "以下のQRコードを認証アプリでスキャンし、アカウントに2FAを設定します。"
@@ -1376,17 +1400,9 @@ msgstr "統計情報"
 msgid "Statistics are available only for public resumes."
 msgstr "統計は公開履歴書に対してのみ利用可能です。"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
-msgid "Store Locally"
-msgstr "ローカルに保存"
-
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:162
 msgid "Store your backup codes securely"
 msgstr "バックアップコードを安全に保管してください"
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
-msgid "Stored"
-msgstr "保存済み"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
@@ -1433,9 +1449,13 @@ msgstr "Testimonials"
 msgid "Text Color"
 msgstr "テキストの色"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:25
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:26
 msgid "That doesn't look like a valid OpenAI API key."
 msgstr "有効な OpenAI API キーのようには見えません。"
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:30
+msgid "That doesn't look like a valid URL"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
 msgid "The passwords you entered do not match."
@@ -1660,7 +1680,11 @@ msgstr "複数のキーワードを追加するには、カンマで区切るか
 msgid "You can also enter your username."
 msgstr "ユーザー名を入力することもできます。"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:54
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:105
+msgid "You can integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
 msgstr "OpenAI API を使用して、コンテンツを生成したり、履歴書を作成したりする際に書き込みを改善したりできます。"
 
@@ -1668,7 +1692,7 @@ msgstr "OpenAI API を使用して、コンテンツを生成したり、履歴�
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
 msgstr "公開共有を有効にすることで、履歴書が受信した閲覧数や履歴書をダウンロードした人数を追跡できます。"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:60
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:85
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr "<0>あなた自身のOpenAI APIキー</0>を取得するオプションがあります。このキーは、あなたが適切にAPIを活用することを可能にします。 Reactive Resume で AI 機能を完全に無効にしたい場合は、設定からキーを削除することもできます。"
 
@@ -1685,7 +1709,7 @@ msgstr "メールを受け取りました！"
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
 msgstr "アカウントとすべてのデータが正常に削除されました。さようなら！"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:116
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:195
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "API キーはブラウザーのローカルストレージに安全に保存され、公式の SDK 経由で OpenAI へのリクエストを行う場合にのみ使用されます。 OpenAIのサービスと相互作用する場合を除き、キーが外部サーバーに送信されることはありませんのでご安心ください。"
 
@@ -1708,4 +1732,3 @@ msgstr "拡大"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "ズームアウト"
-
