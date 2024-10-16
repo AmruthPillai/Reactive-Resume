@@ -1,21 +1,22 @@
 import {
   Controller,
   Get,
-  Header,
+  Param,
   Query,
   Res,
   UseGuards,
   UsePipes,
   ValidationPipe,
 } from "@nestjs/common";
-import { ApiCookieAuth, ApiOperation, ApiProperty, ApiQuery, ApiTags } from "@nestjs/swagger";
+import { ApiCookieAuth, ApiOperation, ApiTags } from "@nestjs/swagger";
 import { Roles } from "../auth/enums/roles.enum";
 import { Role } from "../auth/decorators/roles.decorator";
 import { TwoFactorGuard } from "../auth/guards/two-factor.guard";
 import { RolesGuard } from "../auth/guards/roles.guard";
 import { AdminService } from "./admin.service";
-import { PaginationQueryDto } from "./dtos/pagination.dto";
+import { PaginationQueryDto, paginationQueyryResumeDto } from "./dtos/pagination.dto";
 import { Response } from "express";
+import { PATH_RESUME } from "./constant/path.constant";
 
 @ApiTags("Admin")
 @Controller("admin")
@@ -72,5 +73,31 @@ export class AdminController {
     );
     res.attachment(`list-users${Date.now()}.xlsx`); // name file
     res.end(buffer);
+  }
+
+  /**
+   * get list cv
+   */
+  @Get(PATH_RESUME)
+  @ApiOperation({
+    summary: "get list resumes",
+  })
+  @Role([Roles.ADMIN])
+  @UseGuards(TwoFactorGuard, RolesGuard)
+  async getListResumes(@Query() paginationDto: paginationQueyryResumeDto) {
+    return await this.adminService.getListResumes(paginationDto);
+  }
+
+  /**
+   * get a cv
+   */
+  @ApiOperation({
+    summary: "get a resume by id",
+  })
+  @Role([Roles.ADMIN])
+  @UseGuards(TwoFactorGuard, RolesGuard)
+  @Get(`/${PATH_RESUME}/:id/:slug`)
+  async getAResume(@Param("id") id: string, @Param("slug") slug: string) {
+    return await this.adminService.getAResume(id, slug);
   }
 }

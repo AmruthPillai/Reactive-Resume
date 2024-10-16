@@ -1,5 +1,7 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { IsInt, IsOptional, IsPositive, Max, Min } from "class-validator";
+import { Transform } from "class-transformer";
+import { BadRequestException } from "@nestjs/common";
 
 export class PaginationQueryDto {
   @ApiProperty({
@@ -32,4 +34,21 @@ export class PaginationQueryDto {
   })
   @IsOptional()
   search?: string;
+}
+
+export class paginationQueyryResumeDto extends PaginationQueryDto {
+  @ApiProperty({
+    description: "search open to work (true/false)",
+    example: false,
+    required: false,
+  })
+  @Transform(({ value }) => {
+    if (value != "false" && value != "true") {
+      throw new BadRequestException("openToWork must be true or false");
+    }
+
+    return value === "true";
+  })
+  @IsOptional()
+  openToWork?: string;
 }
