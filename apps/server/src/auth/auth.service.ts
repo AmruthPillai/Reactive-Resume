@@ -108,6 +108,7 @@ export class AuthService {
         username: registerDto.username,
         locale: registerDto.locale,
         provider: "email",
+        roles: ["user"],
         emailVerified: false, // Set to true if you don't want to verify user's email
         secrets: { create: { password: hashedPassword } },
       });
@@ -346,5 +347,16 @@ export class AuthService {
     });
 
     return user as UserWithSecrets;
+  }
+
+  /**
+   * check user has a specific role
+   */
+  async hasRole(identifier: string, role: string[]): Promise<boolean> {
+    const roles: string[] = await this.userService.getRoles(identifier);
+
+    return role.some((item: string) => {
+      return roles.includes(item);
+    });
   }
 }

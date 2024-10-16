@@ -89,7 +89,7 @@ export const LoginPage = () => {
                 <FormItem>
                   <FormLabel>{t`Email`}</FormLabel>
                   <FormControl>
-                    <Input placeholder="john.doe@example.com" {...field} />
+                    <Input placeholder="nguyenvana@example.com" {...field} />
                   </FormControl>
                   <FormDescription>{t`You can also enter your username.`}</FormDescription>
                   <FormMessage />

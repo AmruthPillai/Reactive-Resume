@@ -81,7 +81,7 @@ export const ForgotPasswordPage = () => {
                 <FormItem>
                   <FormLabel>{t`Email`}</FormLabel>
                   <FormControl>
-                    <Input placeholder="john.doe@example.com" {...field} />
+                    <Input placeholder="nguyenvana@example.com" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
