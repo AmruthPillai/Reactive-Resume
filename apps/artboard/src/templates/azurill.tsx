@@ -22,10 +22,10 @@ import { cn, isEmptyString, isUrl, linearTransform } from "@reactive-resume/util
 import get from "lodash.get";
 import React, { Fragment } from "react";
 
+import { ActiveIndicator } from "../components/circle";
 import { Picture } from "../components/picture";
 import { useArtboardStore } from "../store/artboard";
 import { TemplateProps } from "../types/template";
-import { ActiveIndicator } from "../components/circle";
 
 const Header = () => {
   const basics = useArtboardStore((state) => state.resume.basics);
@@ -104,9 +104,36 @@ const WorkStatus = () => {
           </p>
           <ActiveIndicator className={workStatus.openToWork ? "bg-green-500" : "bg-red-600"} />
         </div>
-        {workStatus.openToWork && <div>{workStatus.pricing ? `Expected Pricing: $${workStatus.pricing}` : ""}</div>}
-        {workStatus.openToWork && <div>{`Job Type: ${JobTypeMap[workStatus.jobType]}`}</div>}
-        {workStatus.openToWork && <div>{workStatus.jobLocation&&`Work Location: ${workStatus.jobLocation}`}</div>}
+        {workStatus.openToWork && (
+          <div>
+            {workStatus.pricing ? (
+              <p>
+                Expected Pricing: <b>${workStatus.pricing}</b>
+              </p>
+            ) : (
+              ""
+            )}
+          </div>
+        )}
+        {workStatus.openToWork && (
+          <div>
+            Job Type: <b>{JobTypeMap[workStatus.jobType]}</b>
+          </div>
+        )}
+        {workStatus.openToWork && (
+          <div>
+            {workStatus.jobLocation && (
+              <p>
+                Work Location:{" "}
+                <b>
+                  {workStatus.jobLocation === "Thành phố Hồ Chí Minh"
+                    ? "Tp. Hồ Chí Minh"
+                    : workStatus.jobLocation}
+                </b>
+              </p>
+            )}
+          </div>
+        )}
       </main>
     </section>
   );
@@ -134,7 +161,9 @@ const Summary = () => {
         <div className="absolute left-[-4.5px] top-[8px] hidden size-[8px] rounded-full bg-primary group-[.main]:block" />
 
         <div
-          dangerouslySetInnerHTML={{ __html: section.content }}
+          dangerouslySetInnerHTML={{
+            __html: section.content,
+          }}
           className="wysiwyg"
           style={{ columns: section.columns }}
         />

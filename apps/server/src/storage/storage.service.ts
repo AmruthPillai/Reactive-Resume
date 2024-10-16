@@ -1,12 +1,12 @@
 import { Injectable, InternalServerErrorException, Logger, OnModuleInit } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { createId } from "@paralleldrive/cuid2";
+import { Prisma } from "@prisma/client";
 import { MinioClient, MinioService } from "nestjs-minio-client";
 import { PrismaService } from "nestjs-prisma";
 import sharp from "sharp";
 
 import { Config } from "../config/schema";
-import { Prisma } from "@prisma/client";
 
 // Objects are stored under the following path in the bucket:
 // "<bucketName>/<userId>/<type>/<fileName>",
@@ -184,6 +184,24 @@ export class StorageService implements OnModuleInit {
   async newLocations(data: Prisma.LocationsCreateInput) {
     return await this.prisma.locations.create({
       data: data,
+    });
+  }
+  async deleteLocation(id: string) {
+    await this.prisma.locations.delete({
+      where: {
+        id: id,
+      },
+    });
+    return;
+  }
+  async updateLocation(id: string, data: string) {
+    return await this.prisma.locations.update({
+      where: {
+        id: id,
+      },
+      data: {
+        name: data,
+      },
     });
   }
 }

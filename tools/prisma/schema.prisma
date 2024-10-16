@@ -86,6 +86,6 @@ model Statistics {
 }
 
 model Locations {
-  id   String @id @default(cuid())
-  name String
+  id        String   @id @default(cuid())
+  name      String   @unique
 }
