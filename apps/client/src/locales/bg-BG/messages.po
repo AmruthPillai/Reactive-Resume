@@ -85,11 +85,11 @@ msgid "A4"
 msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:308
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:313
 msgid "Accepts only {accept} files"
 msgstr "Приема само файлове {accept}"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:104
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:107
 msgid "Account"
 msgstr "Сметка"
 
@@ -125,7 +125,7 @@ msgid "Already have an account?"
 msgstr "Вече имате акаунт?"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:160
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:231
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:236
 msgid "An error occurred while validating the file."
 msgstr "Възникна грешка при валидирането на файла."
 
@@ -260,7 +260,7 @@ msgstr "Промяна на тона"
 msgid "Changed your mind about the name? Give it a new one."
 msgstr "Променихте мнението си за името? Дайте му ново."
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:69
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:71
 msgid "Check your email for the confirmation link to update your email address."
 msgstr "Проверете имейла си за връзка за потвърждение, за да актуализирате имейл адреса си."
 
@@ -414,9 +414,9 @@ msgstr "Деактивиране на"
 msgid "Disable 2FA"
 msgstr "Деактивиране на 2FA"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:350
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:364
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:355
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:369
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:236
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
 msgid "Discard"
@@ -483,7 +483,7 @@ msgstr "Ефекти"
 #: apps/client/src/pages/auth/login/page.tsx:90
 #: apps/client/src/pages/auth/register/page.tsx:140
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:180
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:183
 msgid "Email"
 msgstr "Имейл"
 
@@ -515,7 +515,7 @@ msgstr "Въведете еднократната парола, предоста
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "Въведете имейл адреса си и ние ще ви изпратим връзка за възстановяване на паролата, ако акаунтът съществува."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:321
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:326
 msgid "Errors"
 msgstr "Грешки"
 
@@ -536,11 +536,11 @@ msgstr "Разгледайте шаблоните, налични в Talent Hub,
 msgid "Export"
 msgstr "Експорт"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:293
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:298
 msgid "File"
 msgstr "Файл"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:259
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:264
 msgid "Filetype"
 msgstr "Тип на файла"
 
@@ -643,7 +643,7 @@ msgstr "Мрежа"
 msgid "Headline"
 msgstr "Заглавие"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:106
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:109
 msgid "Here, you can update your account information such as your profile picture, name and username."
 msgstr "Тук можете да актуализирате информацията в профила си, например профилната си снимка, името и потребителското си име."
 
@@ -700,12 +700,12 @@ msgstr "Ако деактивирате двуфакторното удосто�
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "Ако владеете няколко езика, ще се радваме да ни помогнете да разпространим приложението на повече езици и общности. Не се притеснявайте, ако не виждате своя език в списъка - просто ми кажете в GitHub и аз ще се погрижа да го включа. Готови ли сте да започнете? Започнете да превеждате в Crowdin, като кликнете върху връзката по-долу."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:342
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:371
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:347
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:376
 msgid "Import"
 msgstr "Внос"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:246
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:251
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -770,21 +770,6 @@ msgstr "Изглежда, че имейл адресът ви вече е бил
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:64
 msgid "Job Type"
 msgstr ""
-
-#: apps/client/src/pages/auth/register/page.tsx:101
-msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
-msgid "Nguyễn Văn A"
-msgstr "Джон Доу"
-
-#: apps/client/src/pages/auth/register/page.tsx:122
-msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
-msgid "nguyenvana"
-msgstr "nguyenvana"
-
-#: apps/client/src/pages/auth/register/page.tsx:143
-msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
-msgid "nguyenvana@example.com"
-msgstr "nguyenvana@example.com"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:54
 msgid "JSON"
@@ -854,7 +839,7 @@ msgstr "LinkedIn, JSON Resume и др."
 msgid "List"
 msgstr "Списък"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:338
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:343
 msgid "Loading..."
 msgstr ""
 
@@ -928,7 +913,7 @@ msgstr "Лиценз MIT"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:72
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:152
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:155
 msgid "Name"
 msgstr "Име"
 
@@ -944,6 +929,21 @@ msgstr "Мрежа"
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:85
 msgid "New Password"
 msgstr "Нова парола"
+
+#: apps/client/src/pages/auth/register/page.tsx:101
+msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
+msgid "Nguyễn Văn A"
+msgstr "Джон Доу"
+
+#: apps/client/src/pages/auth/register/page.tsx:122
+msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
+msgid "nguyenvana"
+msgstr "nguyenvana"
+
+#: apps/client/src/pages/auth/register/page.tsx:143
+msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
+msgid "nguyenvana@example.com"
+msgstr "nguyenvana@example.com"
 
 #: apps/client/src/components/locale-combobox.tsx:45
 msgid "No results found"
@@ -1037,8 +1037,9 @@ msgid "Personal notes for each resume"
 msgstr "Лични бележки за всяко резюме"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:81
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:214
 msgid "Phone"
-msgstr "Телефон"
+msgstr ""
 
 #: apps/client/src/pages/auth/layout.tsx:76
 msgid "Photograph by Patrick Tomasso"
@@ -1049,7 +1050,7 @@ msgid "Pick any font from Google Fonts"
 msgstr "Изберете произволен шрифт от Google Fonts"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/section.tsx:69
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:120
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:123
 msgid "Picture"
 msgstr "Снимка"
 
@@ -1057,16 +1058,12 @@ msgstr "Снимка"
 msgid "Please note that this step is completely optional."
 msgstr "Моля, обърнете внимание, че тази стъпка не е задължителна."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:263
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:268
 msgid "Please select a file type"
 msgstr "Моля, изберете тип файл"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:72
 msgid "Please select a job type"
-msgstr ""
-
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:97
-msgid "Please select a work location"
 msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:228
@@ -1144,7 +1141,7 @@ msgstr "Премахване на страницата"
 msgid "Rename"
 msgstr "Преименуване на"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:198
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:201
 msgid "Resend email confirmation link"
 msgstr "Повторно изпращане на връзка за потвърждение на имейл"
 
@@ -1185,7 +1182,7 @@ msgstr "Заоблени"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:168
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:233
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:116
 msgid "Save Changes"
 msgstr "Запазване на промените"
@@ -1222,6 +1219,10 @@ msgstr "Сигурност с двуфакторно удостоверяван�
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:68
 msgid "Security"
 msgstr "Защита"
+
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:97
+msgid "Select"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:50
 msgid "Self-host with Docker"
@@ -1564,7 +1565,7 @@ msgstr "Отключване на"
 msgid "Unlocking a resume will allow you to make changes to it again."
 msgstr "Отключването на автобиографията ще ви позволи отново да правите промени в нея."
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:191
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:194
 msgid "Unverified"
 msgstr "Непроверен"
 
@@ -1576,7 +1577,7 @@ msgstr "Актуализиране на съществуващ елемент"
 msgid "Update an existing resume"
 msgstr "Актуализиране на съществуваща автобиография"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:250
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Talent Hub for easier editing."
 msgstr "Качете файл от един от приетите източници, за да анализирате съществуващите данни и да ги импортирате в Talent Hub за по-лесно редактиране."
 
@@ -1599,10 +1600,7 @@ msgstr "Потребителят няма свързан запис \"secrets\".
 
 #: apps/client/src/pages/auth/register/page.tsx:119
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:66
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
-msgid "Phone"
-msgstr ""
-
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:169
 msgid "Username"
 msgstr "Потребителско име"
 
@@ -1610,11 +1608,11 @@ msgstr "Потребителско име"
 msgid "Users Signed Up"
 msgstr "Регистрирани потребители"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:358
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:363
 msgid "Validate"
 msgstr "Удостоверяване на"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:376
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:381
 msgid "Validated"
 msgstr "Утвърден"
 
@@ -1622,7 +1620,7 @@ msgstr "Утвърден"
 msgid "Value"
 msgstr "Стойност"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:191
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:194
 msgid "Verified"
 msgstr "Проверено"
 

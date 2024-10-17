@@ -85,11 +85,11 @@ msgid "A4"
 msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:308
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:313
 msgid "Accepts only {accept} files"
 msgstr "仅接受 {accept} 文件"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:104
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:107
 msgid "Account"
 msgstr "账户"
 
@@ -125,7 +125,7 @@ msgid "Already have an account?"
 msgstr "已有账号？"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:160
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:231
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:236
 msgid "An error occurred while validating the file."
 msgstr "验证文件时发生错误。"
 
@@ -260,7 +260,7 @@ msgstr "改变语气"
 msgid "Changed your mind about the name? Give it a new one."
 msgstr "想改名字了？取个新名字吧。"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:69
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:71
 msgid "Check your email for the confirmation link to update your email address."
 msgstr "检查您的电子邮件中的确认链接以更新您的电子邮件地址。"
 
@@ -414,9 +414,9 @@ msgstr "禁用"
 msgid "Disable 2FA"
 msgstr "禁用双重身份验证"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:350
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:364
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:355
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:369
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:236
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
 msgid "Discard"
@@ -483,7 +483,7 @@ msgstr "效果"
 #: apps/client/src/pages/auth/login/page.tsx:90
 #: apps/client/src/pages/auth/register/page.tsx:140
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:180
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:183
 msgid "Email"
 msgstr "电子邮件"
 
@@ -515,7 +515,7 @@ msgstr "在下方输入您的身份验证应用程序提供的一次性密码。
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "输入您的电子邮件地址，如果该账户存在，我们会向您发送一个重置密码的链接。"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:321
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:326
 msgid "Errors"
 msgstr "错误"
 
@@ -536,11 +536,11 @@ msgstr "浏览 Talent Hub 提供的模板，并查看使用这些模板制作的
 msgid "Export"
 msgstr "导出"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:293
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:298
 msgid "File"
 msgstr "文件"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:259
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:264
 msgid "Filetype"
 msgstr "文件类型"
 
@@ -643,7 +643,7 @@ msgstr "网格"
 msgid "Headline"
 msgstr "标题"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:106
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:109
 msgid "Here, you can update your account information such as your profile picture, name and username."
 msgstr "在这里，您可以更新您的账户信息，比如资料图片、姓名和用户名。"
 
@@ -700,12 +700,12 @@ msgstr "如果您禁用双重身份验证，登录时将不再需要输入验证
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "如果您掌握多种语言，我们希望您能帮助我们将此应用程序推广到更多语言和社区。如果您在列表中没有看到您的语言，请不要担心——只需在 GitHub 上给我留言，我保证会将其包含在内。准备好开始了吗？点击下面的链接即可在 Crowdin 跳转到翻译。"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:342
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:371
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:347
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:376
 msgid "Import"
 msgstr "导入"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:246
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:251
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -770,21 +770,6 @@ msgstr "您的电子邮件地址似乎已被验证。"
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:64
 msgid "Job Type"
 msgstr ""
-
-#: apps/client/src/pages/auth/register/page.tsx:101
-msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
-msgid "Nguyễn Văn A"
-msgstr "张三"
-
-#: apps/client/src/pages/auth/register/page.tsx:122
-msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
-msgid "nguyenvana"
-msgstr "zhangsan"
-
-#: apps/client/src/pages/auth/register/page.tsx:143
-msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
-msgid "nguyenvana@example.com"
-msgstr "zhangsan@example.com"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:54
 msgid "JSON"
@@ -854,7 +839,7 @@ msgstr "LinkedIn、JSON 简历等"
 msgid "List"
 msgstr "列表"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:338
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:343
 msgid "Loading..."
 msgstr ""
 
@@ -928,7 +913,7 @@ msgstr "MIT 许可证"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:72
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:152
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:155
 msgid "Name"
 msgstr "名称"
 
@@ -944,6 +929,21 @@ msgstr "网络"
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:85
 msgid "New Password"
 msgstr "新密码"
+
+#: apps/client/src/pages/auth/register/page.tsx:101
+msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
+msgid "Nguyễn Văn A"
+msgstr "张三"
+
+#: apps/client/src/pages/auth/register/page.tsx:122
+msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
+msgid "nguyenvana"
+msgstr "zhangsan"
+
+#: apps/client/src/pages/auth/register/page.tsx:143
+msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
+msgid "nguyenvana@example.com"
+msgstr "zhangsan@example.com"
 
 #: apps/client/src/components/locale-combobox.tsx:45
 msgid "No results found"
@@ -1037,8 +1037,9 @@ msgid "Personal notes for each resume"
 msgstr "每份简历的个人注释"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:81
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:214
 msgid "Phone"
-msgstr "电话"
+msgstr ""
 
 #: apps/client/src/pages/auth/layout.tsx:76
 msgid "Photograph by Patrick Tomasso"
@@ -1049,7 +1050,7 @@ msgid "Pick any font from Google Fonts"
 msgstr "从谷歌字体中选择任意字体"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/section.tsx:69
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:120
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:123
 msgid "Picture"
 msgstr "图片"
 
@@ -1057,16 +1058,12 @@ msgstr "图片"
 msgid "Please note that this step is completely optional."
 msgstr "请注意，此步骤完全是可选的。"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:263
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:268
 msgid "Please select a file type"
 msgstr "请选择文件类型"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:72
 msgid "Please select a job type"
-msgstr ""
-
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:97
-msgid "Please select a work location"
 msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:228
@@ -1144,7 +1141,7 @@ msgstr "删除页面"
 msgid "Rename"
 msgstr "重命名"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:198
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:201
 msgid "Resend email confirmation link"
 msgstr "重新发送电子邮件确认链接"
 
@@ -1185,7 +1182,7 @@ msgstr "圆角"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:168
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:233
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:116
 msgid "Save Changes"
 msgstr "保存更改"
@@ -1222,6 +1219,10 @@ msgstr "使用双重身份验证保护"
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:68
 msgid "Security"
 msgstr "安全"
+
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:97
+msgid "Select"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:50
 msgid "Self-host with Docker"
@@ -1564,7 +1565,7 @@ msgstr "解锁"
 msgid "Unlocking a resume will allow you to make changes to it again."
 msgstr "解锁简历将允许您再次对其进行更改。"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:191
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:194
 msgid "Unverified"
 msgstr "未验证"
 
@@ -1576,7 +1577,7 @@ msgstr "更新现有项目"
 msgid "Update an existing resume"
 msgstr "更新现有简历"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:250
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Talent Hub for easier editing."
 msgstr "从接受的来源之一上传文件并解析，并将其导入到 Talent Hub 中以便于编辑。"
 
@@ -1599,10 +1600,7 @@ msgstr "用户没有关联的“秘密”记录。请在 GitHub 上报告此问�
 
 #: apps/client/src/pages/auth/register/page.tsx:119
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:66
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
-msgid "Phone"
-msgstr ""
-
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:169
 msgid "Username"
 msgstr "用户名"
 
@@ -1610,11 +1608,11 @@ msgstr "用户名"
 msgid "Users Signed Up"
 msgstr "用户注册"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:358
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:363
 msgid "Validate"
 msgstr "验证"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:376
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:381
 msgid "Validated"
 msgstr "已验证"
 
@@ -1622,7 +1620,7 @@ msgstr "已验证"
 msgid "Value"
 msgstr "值"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:191
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:194
 msgid "Verified"
 msgstr "已验证"
 

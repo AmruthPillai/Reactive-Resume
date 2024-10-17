@@ -85,11 +85,11 @@ msgid "A4"
 msgstr "ए4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:308
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:313
 msgid "Accepts only {accept} files"
 msgstr "केवल {accept} फ़ाइलें स्वीकार करता है"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:104
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:107
 msgid "Account"
 msgstr "खाता"
 
@@ -125,7 +125,7 @@ msgid "Already have an account?"
 msgstr "क्या आपके पास पहले से एक खाता मौजूद है?"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:160
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:231
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:236
 msgid "An error occurred while validating the file."
 msgstr "फ़ाइल बनाते समय कोई त्रुटि आई"
 
@@ -260,7 +260,7 @@ msgstr "तान बदलें"
 msgid "Changed your mind about the name? Give it a new one."
 msgstr "नाम के बारे में आपका मन बदल गया? इसे नया दे दो."
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:69
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:71
 msgid "Check your email for the confirmation link to update your email address."
 msgstr "अपना ईमेल पता अपडेट करने के लिए पुष्टिकरण लिंक के लिए अपना ईमेल जांचें।"
 
@@ -414,9 +414,9 @@ msgstr "अक्षम करें"
 msgid "Disable 2FA"
 msgstr "2FA निलम्बित करें"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:350
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:364
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:355
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:369
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:236
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
 msgid "Discard"
@@ -483,7 +483,7 @@ msgstr "प्रभाव"
 #: apps/client/src/pages/auth/login/page.tsx:90
 #: apps/client/src/pages/auth/register/page.tsx:140
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:180
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:183
 msgid "Email"
 msgstr "ई-मेल"
 
@@ -515,7 +515,7 @@ msgstr "नीचे आपके प्रमाणक ऐप द्वार�
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "अपना ईमेल पता दर्ज करें और यदि खाता मौजूद है तो हम आपको अपना पासवर्ड रीसेट करने के लिए एक लिंक भेजेंगे।"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:321
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:326
 msgid "Errors"
 msgstr "त्रुटि"
 
@@ -536,11 +536,11 @@ msgstr "रिएक्टिव रेज़्यूमे में उपल
 msgid "Export"
 msgstr "निर्यात"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:293
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:298
 msgid "File"
 msgstr "फ़ाइल"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:259
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:264
 msgid "Filetype"
 msgstr "फाइल का प्रकार"
 
@@ -643,7 +643,7 @@ msgstr "ग्रिड"
 msgid "Headline"
 msgstr "शीर्षक"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:106
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:109
 msgid "Here, you can update your account information such as your profile picture, name and username."
 msgstr "यहां, आप अपने खाते की जानकारी जैसे अपनी प्रोफ़ाइल तस्वीर, नाम और उपयोगकर्ता नाम अपडेट कर सकते हैं।"
 
@@ -700,12 +700,12 @@ msgstr "यदि आप दो-कारक प्रमाणीकरण अ�
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "यदि आप बहुभाषी हैं, तो हमें ऐप को अधिक भाषाओं और समुदायों तक लाने में आपकी मदद पसंद आएगी। यदि आप सूची में अपनी भाषा नहीं देखते हैं तो चिंता न करें - बस GitHub पर मुझे बताएं, और मैं इसे शामिल करना सुनिश्चित करूंगा। आरंभ करने के लिए तैयार हैं? नीचे दिए गए लिंक पर क्लिक करके क्राउडिन पर अनुवाद शुरू करें।"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:342
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:371
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:347
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:376
 msgid "Import"
 msgstr "आयात"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:246
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:251
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -770,21 +770,6 @@ msgstr "ऐसा लगता है कि आपका ईमेल पता
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:64
 msgid "Job Type"
 msgstr ""
-
-#: apps/client/src/pages/auth/register/page.tsx:101
-msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
-msgid "Nguyễn Văn A"
-msgstr "जॉन डो"
-
-#: apps/client/src/pages/auth/register/page.tsx:122
-msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
-msgid "nguyenvana"
-msgstr "जॉन डो"
-
-#: apps/client/src/pages/auth/register/page.tsx:143
-msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
-msgid "nguyenvana@example.com"
-msgstr "nguyenvana@example.com"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:54
 msgid "JSON"
@@ -854,7 +839,7 @@ msgstr "लिंक्डइन, JSON बायोडाटा, आदि।"
 msgid "List"
 msgstr "सूची"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:338
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:343
 msgid "Loading..."
 msgstr ""
 
@@ -928,7 +913,7 @@ msgstr "मआईटी लाईसन्स"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:72
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:152
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:155
 msgid "Name"
 msgstr "नाम"
 
@@ -944,6 +929,21 @@ msgstr "नेटवर्क"
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:85
 msgid "New Password"
 msgstr "नया पासवर्ड"
+
+#: apps/client/src/pages/auth/register/page.tsx:101
+msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
+msgid "Nguyễn Văn A"
+msgstr "जॉन डो"
+
+#: apps/client/src/pages/auth/register/page.tsx:122
+msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
+msgid "nguyenvana"
+msgstr "जॉन डो"
+
+#: apps/client/src/pages/auth/register/page.tsx:143
+msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
+msgid "nguyenvana@example.com"
+msgstr "nguyenvana@example.com"
 
 #: apps/client/src/components/locale-combobox.tsx:45
 msgid "No results found"
@@ -1037,8 +1037,9 @@ msgid "Personal notes for each resume"
 msgstr "प्रत्येक बायोडाटा के लिए व्यक्तिगत नोट्स"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:81
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:214
 msgid "Phone"
-msgstr "फ़ोन"
+msgstr ""
 
 #: apps/client/src/pages/auth/layout.tsx:76
 msgid "Photograph by Patrick Tomasso"
@@ -1049,7 +1050,7 @@ msgid "Pick any font from Google Fonts"
 msgstr "Google फ़ॉन्ट्स से कोई भी फ़ॉन्ट चुनें"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/section.tsx:69
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:120
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:123
 msgid "Picture"
 msgstr "चित्र"
 
@@ -1057,16 +1058,12 @@ msgstr "चित्र"
 msgid "Please note that this step is completely optional."
 msgstr "कृपया ध्यान दें कि यह चरण पूरी तरह से वैकल्पिक है।"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:263
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:268
 msgid "Please select a file type"
 msgstr "कृपया एक फाइल चुनें"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:72
 msgid "Please select a job type"
-msgstr ""
-
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:97
-msgid "Please select a work location"
 msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:228
@@ -1144,7 +1141,7 @@ msgstr "हटाएँ पेज"
 msgid "Rename"
 msgstr "नाम बदलें"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:198
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:201
 msgid "Resend email confirmation link"
 msgstr "ईमेल पुष्टिकरण लिंक पुनः भेजें"
 
@@ -1185,7 +1182,7 @@ msgstr "गोल"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:168
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:233
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:116
 msgid "Save Changes"
 msgstr "परिवर्तन सेव करें"
@@ -1222,6 +1219,10 @@ msgstr "दो-कारक प्रमाणीकरण के साथ स�
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:68
 msgid "Security"
 msgstr "सुरक्षा"
+
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:97
+msgid "Select"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:50
 msgid "Self-host with Docker"
@@ -1564,7 +1565,7 @@ msgstr "खोले"
 msgid "Unlocking a resume will allow you to make changes to it again."
 msgstr "बायोडाटा को अनलॉक करने से आप उसमें दोबारा बदलाव कर सकेंगे।"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:191
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:194
 msgid "Unverified"
 msgstr "असत्यापित"
 
@@ -1576,7 +1577,7 @@ msgstr "किसी मौजूदा आइटम का नक़ल बन�
 msgid "Update an existing resume"
 msgstr "किसी मौजूदा आइटम का नक़ल बनाएं"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:250
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Talent Hub for easier editing."
 msgstr "मौजूदा डेटा को पार्स करने के लिए स्वीकृत स्रोतों में से किसी एक से फ़ाइल अपलोड करें और आसान संपादन के लिए इसे रिएक्टिव रेज़्यूमे में आयात करें।"
 
@@ -1599,10 +1600,7 @@ msgstr "उपयोगकर्ता के पास कोई संबद�
 
 #: apps/client/src/pages/auth/register/page.tsx:119
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:66
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
-msgid "Phone"
-msgstr ""
-
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:169
 msgid "Username"
 msgstr "उपयोगकर्ता नाम"
 
@@ -1610,11 +1608,11 @@ msgstr "उपयोगकर्ता नाम"
 msgid "Users Signed Up"
 msgstr "उपयोगकर्ता साइन अप"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:358
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:363
 msgid "Validate"
 msgstr "वैधीकृत करें"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:376
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:381
 msgid "Validated"
 msgstr "वैधीकृत करें"
 
@@ -1622,7 +1620,7 @@ msgstr "वैधीकृत करें"
 msgid "Value"
 msgstr "मूल्य"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:191
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:194
 msgid "Verified"
 msgstr "सत्यापित"
 

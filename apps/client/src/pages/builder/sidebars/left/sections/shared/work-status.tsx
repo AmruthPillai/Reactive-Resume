@@ -94,7 +94,7 @@ export const WorkStatusSection = () => {
                 }}
               >
                 <SelectTrigger>
-                  <SelectValue placeholder={t`Please select a work location`} />
+                  <SelectValue placeholder={t`Select`} />
                 </SelectTrigger>
                 <SelectContent>
                   {/* eslint-disable-next-line lingui/no-unlocalized-strings */}

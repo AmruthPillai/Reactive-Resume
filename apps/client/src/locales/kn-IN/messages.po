@@ -85,11 +85,11 @@ msgid "A4"
 msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:308
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:313
 msgid "Accepts only {accept} files"
 msgstr "{accept} ಫೈಲ್‌ಗಳನ್ನು ಮಾತ್ರ ಸ್ವೀಕರಿಸುತ್ತದೆ"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:104
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:107
 msgid "Account"
 msgstr "ಖಾತೆಗಳು"
 
@@ -125,7 +125,7 @@ msgid "Already have an account?"
 msgstr "ಈಗಾಗಲೇ ಖಾತೆ ಹೊಂದಿದ್ದೀರ?"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:160
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:231
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:236
 msgid "An error occurred while validating the file."
 msgstr "ಫೈಲ್ ಅನ್ನು ಮೌಲ್ಯೀಕರಿಸುವಾಗ ದೋಷ ಸಂಭವಿಸಿದೆ."
 
@@ -260,7 +260,7 @@ msgstr "ಟೋನ್ ಬದಲಾಯಿಸಿ"
 msgid "Changed your mind about the name? Give it a new one."
 msgstr "ಹೆಸರಿನ ಬಗ್ಗೆ ನಿಮ್ಮ ಮನಸ್ಸನ್ನು ಬದಲಾಯಿಸಿದ್ದೀರಾ? ಹೊಸದನ್ನು ಕೊಡಿ."
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:69
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:71
 msgid "Check your email for the confirmation link to update your email address."
 msgstr "ನಿಮ್ಮ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ನವೀಕರಿಸಲು ದೃಢೀಕರಣ ಲಿಂಕ್‌ಗಾಗಿ ನಿಮ್ಮ ಇಮೇಲ್ ಅನ್ನು ಪರಿಶೀಲಿಸಿ."
 
@@ -414,9 +414,9 @@ msgstr "ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ"
 msgid "Disable 2FA"
 msgstr "2FA ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:350
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:364
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:355
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:369
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:236
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
 msgid "Discard"
@@ -483,7 +483,7 @@ msgstr "ಪರಿಣಾಮಗಳು"
 #: apps/client/src/pages/auth/login/page.tsx:90
 #: apps/client/src/pages/auth/register/page.tsx:140
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:180
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:183
 msgid "Email"
 msgstr "ಇಮೇಲ್"
 
@@ -515,7 +515,7 @@ msgstr "ನಿಮ್ಮ ದೃಢೀಕರಣ ಅಪ್ಲಿಕೇಶನ್‌�
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "ನಿಮ್ಮ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ ಮತ್ತು ಖಾತೆಯು ಅಸ್ತಿತ್ವದಲ್ಲಿದ್ದರೆ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಮರುಹೊಂದಿಸಲು ನಾವು ನಿಮಗೆ ಲಿಂಕ್ ಅನ್ನು ಕಳುಹಿಸುತ್ತೇವೆ."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:321
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:326
 msgid "Errors"
 msgstr "ದೋಷಗಳು"
 
@@ -536,11 +536,11 @@ msgstr "ಪ್ರತಿಕ್ರಿಯಾತ್ಮಕ ರೆಸ್ಯೂಮ್�
 msgid "Export"
 msgstr "ರಫ್ತು ಮಾಡು"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:293
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:298
 msgid "File"
 msgstr "ಕಡತ"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:259
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:264
 msgid "Filetype"
 msgstr "ಕಡತದ ವರ್ಗ"
 
@@ -643,7 +643,7 @@ msgstr "ಗ್ರಿಡ್"
 msgid "Headline"
 msgstr "ಶೀರ್ಷಿಕೆ"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:106
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:109
 msgid "Here, you can update your account information such as your profile picture, name and username."
 msgstr "ಇಲ್ಲಿ, ನಿಮ್ಮ ಪ್ರೊಫೈಲ್ ಚಿತ್ರ, ಹೆಸರು ಮತ್ತು ಬಳಕೆದಾರಹೆಸರು ಮುಂತಾದ ನಿಮ್ಮ ಖಾತೆ ಮಾಹಿತಿಯನ್ನು ನೀವು ನವೀಕರಿಸಬಹುದು."
 
@@ -700,12 +700,12 @@ msgstr "ನೀವು ಎರಡು ಅಂಶದ ದೃಢೀಕರಣವನ್ನ
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "ನೀವು ಬಹುಭಾಷಿಕರಾಗಿದ್ದರೆ, ಹೆಚ್ಚಿನ ಭಾಷೆಗಳು ಮತ್ತು ಸಮುದಾಯಗಳಿಗೆ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ತರಲು ನಿಮ್ಮ ಸಹಾಯವನ್ನು ನಾವು ಬಯಸುತ್ತೇವೆ. ಪಟ್ಟಿಯಲ್ಲಿ ನಿಮ್ಮ ಭಾಷೆಯನ್ನು ನೀವು ನೋಡದಿದ್ದರೆ ಚಿಂತಿಸಬೇಡಿ - GitHub ನಲ್ಲಿ ನನಗೆ ಪ್ರೋತ್ಸಾಹ ನೀಡಿ ಮತ್ತು ಅದನ್ನು ಸೇರಿಸಲು ನಾನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳುತ್ತೇನೆ. ಪ್ರಾರಂಭಿಸಲು ಸಿದ್ಧರಿದ್ದೀರಾ? ಕೆಳಗಿನ ಲಿಂಕ್ ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡುವ ಮೂಲಕ ಕ್ರೌಡಿನ್‌ನಲ್ಲಿ ಅನುವಾದಕ್ಕೆ ಹೋಗಿ."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:342
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:371
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:347
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:376
 msgid "Import"
 msgstr "ಆಮದು"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:246
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:251
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -770,21 +770,6 @@ msgstr "ನಿಮ್ಮ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ಈಗಾ
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:64
 msgid "Job Type"
 msgstr ""
-
-#: apps/client/src/pages/auth/register/page.tsx:101
-msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
-msgid "Nguyễn Văn A"
-msgstr "ಜಾನ್ ಡೋ"
-
-#: apps/client/src/pages/auth/register/page.tsx:122
-msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
-msgid "nguyenvana"
-msgstr "ಜಾನ್ ಡೋ"
-
-#: apps/client/src/pages/auth/register/page.tsx:143
-msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
-msgid "nguyenvana@example.com"
-msgstr "nguyenvana@example.com"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:54
 msgid "JSON"
@@ -854,7 +839,7 @@ msgstr "ಲಿಂಕ್ಡ್‌ಇನ್, JSON ರೆಸ್ಯೂಮ್, ಇತ
 msgid "List"
 msgstr "ಪಟ್ಟಿ"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:338
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:343
 msgid "Loading..."
 msgstr ""
 
@@ -928,7 +913,7 @@ msgstr "MIT ಪರವಾನಗಿ"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:72
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:152
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:155
 msgid "Name"
 msgstr "ಹೆಸರು"
 
@@ -944,6 +929,21 @@ msgstr "ನೆಟ್ವರ್ಕ್"
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:85
 msgid "New Password"
 msgstr "ಹೊಸ ಪಾಸ್ವರ್ಡ್"
+
+#: apps/client/src/pages/auth/register/page.tsx:101
+msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
+msgid "Nguyễn Văn A"
+msgstr "ಜಾನ್ ಡೋ"
+
+#: apps/client/src/pages/auth/register/page.tsx:122
+msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
+msgid "nguyenvana"
+msgstr "ಜಾನ್ ಡೋ"
+
+#: apps/client/src/pages/auth/register/page.tsx:143
+msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
+msgid "nguyenvana@example.com"
+msgstr "nguyenvana@example.com"
 
 #: apps/client/src/components/locale-combobox.tsx:45
 msgid "No results found"
@@ -1037,8 +1037,9 @@ msgid "Personal notes for each resume"
 msgstr "ಪ್ರತಿ ರೆಸ್ಯೂಮ್ ವೈಯಕ್ತಿಕ ಟಿಪ್ಪಣಿಗಳು"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:81
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:214
 msgid "Phone"
-msgstr "ದೂರವಾಣಿ"
+msgstr ""
 
 #: apps/client/src/pages/auth/layout.tsx:76
 msgid "Photograph by Patrick Tomasso"
@@ -1049,7 +1050,7 @@ msgid "Pick any font from Google Fonts"
 msgstr "Google ಫಾಂಟ್‌ಗಳಿಂದ ಯಾವುದೇ ಫಾಂಟ್ ಅನ್ನು ಆರಿಸಿ"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/section.tsx:69
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:120
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:123
 msgid "Picture"
 msgstr "ಚಿತ್ರ"
 
@@ -1057,16 +1058,12 @@ msgstr "ಚಿತ್ರ"
 msgid "Please note that this step is completely optional."
 msgstr "ದಯವಿಟ್ಟು ಗಮನಿಸಿ ಈ ಹಂತವು ಸಂಪೂರ್ಣವಾಗಿ ಐಚ್ಛಿಕವಾಗಿದೆ."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:263
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:268
 msgid "Please select a file type"
 msgstr "ದಯವಿಟ್ಟು ಒಂದು ಕಡತವನ್ನು ಆಯ್ಕೆ ಮಾಡಿ"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:72
 msgid "Please select a job type"
-msgstr ""
-
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:97
-msgid "Please select a work location"
 msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:228
@@ -1144,7 +1141,7 @@ msgstr ""
 msgid "Rename"
 msgstr "ಮರುಹೆಸರಿಸಿ"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:198
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:201
 msgid "Resend email confirmation link"
 msgstr "ಇಮೇಲ್ ದೃಢೀಕರಣ ಲಿಂಕ್ ಅನ್ನು ಮರುಕಳುಹಿಸಿ"
 
@@ -1185,7 +1182,7 @@ msgstr "ದುಂಡಾದ"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:168
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:233
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:116
 msgid "Save Changes"
 msgstr "ಬದಲಾವಣೆಗಳನ್ನು ಉಳಿಸು"
@@ -1222,6 +1219,10 @@ msgstr "ಎರಡು ಅಂಶದ ದೃಢೀಕರಣದೊಂದಿಗೆ ಸ
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:68
 msgid "Security"
 msgstr "ಭದ್ರತೆ"
+
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:97
+msgid "Select"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:50
 msgid "Self-host with Docker"
@@ -1564,7 +1565,7 @@ msgstr "ಅನಿರ್ಬಂಧಿಸಿ"
 msgid "Unlocking a resume will allow you to make changes to it again."
 msgstr "ರೆಸ್ಯೂಮ್ ಅನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡುವುದರಿಂದ ಅದರಲ್ಲಿ ಮತ್ತೆ ಬದಲಾವಣೆಗಳನ್ನು ಮಾಡಲು ನಿಮಗೆ ಅನುಮತಿಸುತ್ತದೆ."
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:191
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:194
 msgid "Unverified"
 msgstr "ಪರಿಶೀಲಿಸಲಾಗಿಲ್ಲ"
 
@@ -1576,7 +1577,7 @@ msgstr "ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ಐಟಂ ಅನ್ನ�
 msgid "Update an existing resume"
 msgstr "ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ರೆಸ್ಯೂಮ್ ಅನ್ನು ನವೀಕರಿಸಿ"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:250
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Talent Hub for easier editing."
 msgstr "ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ಡೇಟಾವನ್ನು ಪಾರ್ಸ್ ಮಾಡಲು ಮತ್ತು ಸುಲಭವಾಗಿ ಸಂಪಾದನೆಗಾಗಿ ಅದನ್ನು ರಿಯಾಕ್ಟಿವ್ ರೆಸ್ಯೂಮ್‌ಗೆ ಆಮದು ಮಾಡಿಕೊಳ್ಳಲು ಸ್ವೀಕರಿಸಿದ ಮೂಲಗಳಿಂದ ಫೈಲ್ ಅನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ."
 
@@ -1599,10 +1600,7 @@ msgstr "ಬಳಕೆದಾರರು ಸಂಬಂಧಿತ 'ರಹಸ್ಯ' ದ�
 
 #: apps/client/src/pages/auth/register/page.tsx:119
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:66
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
-msgid "Phone"
-msgstr ""
-
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:169
 msgid "Username"
 msgstr "ಬಳಕೆದಾರರ ಹೆಸರು"
 
@@ -1610,11 +1608,11 @@ msgstr "ಬಳಕೆದಾರರ ಹೆಸರು"
 msgid "Users Signed Up"
 msgstr "ಬಳಕೆದಾರನ್ನು ನೋಂದಾಯಿಸಲಾಗಿದೆ"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:358
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:363
 msgid "Validate"
 msgstr "ಮೌಲ್ಯೀಕರಿಸಿ"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:376
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:381
 msgid "Validated"
 msgstr "ಮೌಲ್ಯೀಕರಿಸಿ"
 
@@ -1622,7 +1620,7 @@ msgstr "ಮೌಲ್ಯೀಕರಿಸಿ"
 msgid "Value"
 msgstr "ಮೌಲ್ಯ"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:191
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:194
 msgid "Verified"
 msgstr "ಪರಿಶೀಲಿಸಲಾಗಿದೆ"
 
