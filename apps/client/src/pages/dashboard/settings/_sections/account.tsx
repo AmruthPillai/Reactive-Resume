@@ -41,6 +41,7 @@ export const AccountSettings = () => {
       name: "",
       username: "",
       email: "",
+      phone: "",
     },
   });
 
@@ -56,6 +57,7 @@ export const AccountSettings = () => {
       name: user.name,
       username: user.username,
       email: user.email,
+      phone: user.phone ?? "",
     });
   };
 
@@ -75,6 +77,7 @@ export const AccountSettings = () => {
       email: data.email,
       picture: data.picture,
       username: data.username,
+      phone: data.phone,
     });
 
     form.reset(data);
@@ -199,6 +202,20 @@ export const AccountSettings = () => {
                     </Button>
                   )}
                 </FormDescription>
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            name="phone"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{t`Phone`}</FormLabel>
+                <FormControl>
+                  <Input {...field} />
+                </FormControl>
+                <FormMessage />
               </FormItem>
             )}
           />

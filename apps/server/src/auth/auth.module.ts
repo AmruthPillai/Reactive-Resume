@@ -16,6 +16,7 @@ import { JwtStrategy } from "./strategy/jwt.strategy";
 import { LocalStrategy } from "./strategy/local.strategy";
 import { RefreshStrategy } from "./strategy/refresh.strategy";
 import { TwoFactorStrategy } from "./strategy/two-factor.strategy";
+import { RolesGuard } from "./guards/roles.guard";
 
 @Module({})
 export class AuthModule {
@@ -63,6 +64,7 @@ export class AuthModule {
             }
           },
         },
+        RolesGuard,
       ],
       exports: [AuthService],
     };

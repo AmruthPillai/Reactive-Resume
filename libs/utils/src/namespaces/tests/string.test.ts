@@ -12,7 +12,7 @@ import {
 
 describe("getInitials", () => {
   it("returns the initials of a name", () => {
-    expect(getInitials("John Doe")).toBe("JD");
+    expect(getInitials("Nguyễn Văn A")).toBe("JD");
     expect(getInitials("Mary Jane Watson")).toBe("MW");
   });
 });

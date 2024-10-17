@@ -12,11 +12,12 @@ import {
   UseGuards,
 } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
-import { ApiTags } from "@nestjs/swagger";
+import { ApiBody, ApiTags } from "@nestjs/swagger";
 import {
   authResponseSchema,
   backupCodesSchema,
   ForgotPasswordDto,
+  LoginDto,
   messageSchema,
   RegisterDto,
   ResetPasswordDto,
@@ -39,6 +40,10 @@ import { RefreshGuard } from "./guards/refresh.guard";
 import { TwoFactorGuard } from "./guards/two-factor.guard";
 import { getCookieOptions } from "./utils/cookie";
 import { payloadSchema } from "./utils/payload";
+import { Role } from "./decorators/roles.decorator";
+import { Roles } from "./enums/roles.enum";
+import { RolesGuard } from "./guards/roles.guard";
+import { UseZodGuard } from "nestjs-zod";
 
 @ApiTags("Authentication")
 @Controller("auth")
@@ -103,7 +108,11 @@ export class AuthController {
 
   @Post("login")
   @UseGuards(LocalGuard)
-  async login(@User() user: UserWithSecrets, @Res({ passthrough: true }) response: Response) {
+  async login(
+    @Body() loginDto: LoginDto,
+    @User() user: UserWithSecrets,
+    @Res({ passthrough: true }) response: Response,
+  ) {
     return this.handleAuthenticationResponse(user, response);
   }
 
@@ -166,8 +175,16 @@ export class AuthController {
   async logout(@User() user: UserWithSecrets, @Res({ passthrough: true }) response: Response) {
     await this.authService.setRefreshToken(user.email, null);
 
-    response.clearCookie("Authentication");
-    response.clearCookie("Refresh");
+    response.clearCookie("Authentication", {
+      httpOnly: true,
+      sameSite: "none",
+      secure: (process.env.PUBLIC_URL ?? "").includes("https://"),
+    });
+    response.clearCookie("Refresh", {
+      sameSite: "none",
+      httpOnly: true,
+      secure: (process.env.PUBLIC_URL ?? "").includes("https://"),
+    });
 
     const data = messageSchema.parse({ message: "You have been logged out, tschüss!" });
     response.status(200).send(data);

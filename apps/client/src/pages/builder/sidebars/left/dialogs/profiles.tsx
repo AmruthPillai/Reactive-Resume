@@ -65,7 +65,7 @@ export const ProfilesDialog = () => {
             <FormItem>
               <FormLabel>{t`Username`}</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="john.doe" />
+                <Input {...field} placeholder="nguyenvana" />
               </FormControl>
               <FormMessage />
             </FormItem>
