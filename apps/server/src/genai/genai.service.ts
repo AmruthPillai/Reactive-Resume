@@ -15,7 +15,7 @@ export class GenaiService {
   async convertResumeToJson(resumeText: string): Promise<any> {
     const prompt = `
         Chuyển Đổi Dữ Liệu Resume Dưới Đây Thành JSON Với Định Dạng Schema ( Zod ) Sau (Với Hàm createId() Từ "@paralleldrive/cuid2"):
-          (Chỉ Chuyển Đổi Thuộc Tính "basics" và "sections" Còn Bỏ Qua "metadata", Dữ Liệu Nào Không Có Thì Trả "", 0, true Tuỳ Loại Và Những Dữ Liệu Text Từ Section Nào Mà Không Có Trường Cụ Thể Trong Schema Đã Cho Thì Cho Hết Vào "summary" Của Item Section Đó)
+          (Chỉ Chuyển Đổi Thuộc Tính "basics" và "sections" Còn Bỏ Qua "metadata", Dữ Liệu Nào Không Có Thì Trả "", 0, true Tuỳ Loại Và Những Dữ Liệu Text Từ Section Nào Mà Không Có Trường Cụ Thể Trong Schema Đã Cho Thì Cho Hết Vào "summary" Của Item Section Đó - Các Tiêu Đề Trong "summary" Của Item Section Đó Được Bọc Trong <b></b> )
         ${JSON.stringify(zodToJsonSchema(resumeDataSchema))}
   
         Resume data:

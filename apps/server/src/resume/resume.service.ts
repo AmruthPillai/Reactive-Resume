@@ -1,5 +1,3 @@
-// eslint-disable-next-line unicorn/import-style
-
 import {
   BadRequestException,
   HttpException,
@@ -28,6 +26,7 @@ import { PrinterService } from "@/server/printer/printer.service";
 
 import { GenaiService } from "../genai/genai.service";
 import { StorageService } from "../storage/storage.service";
+import { toInnerHtml } from "./utils/to-html-inner";
 import { transformZodJson } from "./utils/transform-zod-json";
 
 @Injectable()
@@ -209,7 +208,7 @@ export class ResumeService {
       data: {
         userId,
         visibility: "private",
-        data: schemaData as InputJsonValue,
+        data: toInnerHtml(schemaData as ResumeData) as InputJsonValue,
         title: title,
         slug: kebabCase(title),
       },
