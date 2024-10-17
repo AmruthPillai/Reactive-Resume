@@ -148,7 +148,7 @@ const WorkStatus = () => {
             <div>
               {workStatus.pricing ? (
                 <p>
-                  Expected Pricing: <b>${workStatus.pricing}</b>
+                  <b>Expected Pricing:</b> ${workStatus.pricing}
                 </p>
               ) : (
                 ""
@@ -159,19 +159,17 @@ const WorkStatus = () => {
         <div className="flex flex-col items-end">
           {workStatus.openToWork && (
             <div>
-              Job Type: <b>{JobTypeMap[workStatus.jobType]}</b>
+              <b>Job Type:</b> {JobTypeMap[workStatus.jobType]}
             </div>
           )}
           {workStatus.openToWork && (
             <div>
               {workStatus.jobLocation && (
                 <p>
-                  Work Location:{" "}
-                  <b>
-                    {workStatus.jobLocation === "Thành phố Hồ Chí Minh"
-                      ? "Tp. Hồ Chí Minh"
-                      : workStatus.jobLocation}
-                  </b>
+                  <b>Work Location: </b>
+                  {workStatus.jobLocation === "Thành phố Hồ Chí Minh"
+                    ? "Tp. Hồ Chí Minh"
+                    : workStatus.jobLocation}
                 </p>
               )}
             </div>
