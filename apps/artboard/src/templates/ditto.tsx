@@ -22,10 +22,10 @@ import { cn, isEmptyString, isUrl } from "@reactive-resume/utils";
 import get from "lodash.get";
 import { Fragment } from "react";
 
+import { ActiveIndicator } from "../components/circle";
 import { Picture } from "../components/picture";
 import { useArtboardStore } from "../store/artboard";
 import { TemplateProps } from "../types/template";
-import { ActiveIndicator } from "../components/circle";
 
 const Header = () => {
   const basics = useArtboardStore((state) => state.resume.basics);
@@ -120,7 +120,7 @@ const WorkStatus = () => {
           <div>
             {workStatus.pricing ? (
               <p>
-                Expected Pricing: <b>${workStatus.pricing}</b>
+                <b>Expected Pricing:</b> ${workStatus.pricing}
               </p>
             ) : (
               ""
@@ -129,19 +129,17 @@ const WorkStatus = () => {
         )}
         {workStatus.openToWork && (
           <div>
-            Job Type: <b>{JobTypeMap[workStatus.jobType]}</b>
+            <b>Job Type:</b> {JobTypeMap[workStatus.jobType]}
           </div>
         )}
         {workStatus.openToWork && (
           <div>
             {workStatus.jobLocation && (
               <p>
-                Work Location:{" "}
-                <b>
-                  {workStatus.jobLocation === "Thành phố Hồ Chí Minh"
-                    ? "Tp. Hồ Chí Minh"
-                    : workStatus.jobLocation}
-                </b>
+                <b>Work Location: </b>
+                {workStatus.jobLocation === "Thành phố Hồ Chí Minh"
+                  ? "Tp. Hồ Chí Minh"
+                  : workStatus.jobLocation}
               </p>
             )}
           </div>
