@@ -400,7 +400,7 @@ const Education = () => {
             className="font-bold"
           />
           <div>{item.area}</div>
-          <div>{item.studyType}</div>
+          {/* <div>{item.studyType}</div> */}
           <div>{item.score}</div>
         </div>
       )}

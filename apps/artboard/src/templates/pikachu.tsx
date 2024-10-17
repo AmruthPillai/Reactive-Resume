@@ -389,7 +389,7 @@ const Education = () => {
 
           <div className="shrink-0 text-right group-[.sidebar]:text-left">
             <div className="font-bold">{item.date}</div>
-            <div>{item.studyType}</div>
+            {/* <div>{item.studyType}</div> */}
           </div>
         </div>
       )}

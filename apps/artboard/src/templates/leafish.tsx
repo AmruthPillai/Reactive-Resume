@@ -336,7 +336,7 @@ const Education = () => {
           />
           <div>{item.area}</div>
           <div>{item.score}</div>
-          <div>{item.studyType}</div>
+          {/* <div>{item.studyType}</div> */}
           <div className="font-bold">{item.date}</div>
         </div>
       )}

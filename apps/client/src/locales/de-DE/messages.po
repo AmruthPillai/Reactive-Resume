@@ -85,11 +85,11 @@ msgid "A4"
 msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:308
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:313
 msgid "Accepts only {accept} files"
 msgstr "Akzeptiert nur {accept}-Dateien"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:104
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:107
 msgid "Account"
 msgstr "Konto"
 
@@ -125,7 +125,7 @@ msgid "Already have an account?"
 msgstr "Hast du bereits ein Konto?"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:160
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:231
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:236
 msgid "An error occurred while validating the file."
 msgstr "Beim Überprüfen der Datei ist ein Fehler aufgetreten."
 
@@ -260,7 +260,7 @@ msgstr "Ausdrucksweise ändern"
 msgid "Changed your mind about the name? Give it a new one."
 msgstr "Der Name gefällt dir nicht mehr? Vergib einen neuen."
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:69
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:71
 msgid "Check your email for the confirmation link to update your email address."
 msgstr "Schau in deinem E-Mail-Postfach nach dem Bestätigungslink, um deine E-Mail-Adresse zu aktualisieren."
 
@@ -414,9 +414,9 @@ msgstr "Deaktivieren"
 msgid "Disable 2FA"
 msgstr "2FA deaktivieren"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:350
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:364
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:355
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:369
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:236
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
 msgid "Discard"
@@ -483,7 +483,7 @@ msgstr "Effekte"
 #: apps/client/src/pages/auth/login/page.tsx:90
 #: apps/client/src/pages/auth/register/page.tsx:140
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:180
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:183
 msgid "Email"
 msgstr "E-Mail"
 
@@ -515,7 +515,7 @@ msgstr "Gib den Einmalpasswort aus Deiner Authenticator-App unten ein."
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "Gib Deine E-Mail-Adresse ein und wir senden Dir einen Link zum Zurücksetzen des Passworts zu, sofern das Konto existiert."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:321
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:326
 msgid "Errors"
 msgstr "Fehler"
 
@@ -536,11 +536,11 @@ msgstr "Sieh dir die verfügbaren Vorlagen in Talent Hub an und betrachte die Le
 msgid "Export"
 msgstr "Exportieren"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:293
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:298
 msgid "File"
 msgstr "Datei"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:259
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:264
 msgid "Filetype"
 msgstr "Dateityp"
 
@@ -643,7 +643,7 @@ msgstr "Rasteransicht"
 msgid "Headline"
 msgstr "Überschrift"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:106
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:109
 msgid "Here, you can update your account information such as your profile picture, name and username."
 msgstr "Hier kannst du deine Kontoinformationen aktualisieren, wie zum Beispiel dein Profilbild, deinen Namen und deinen Benutzernamen."
 
@@ -700,12 +700,12 @@ msgstr "Wenn Du die Zwei-Faktor-Authentifizierung deaktivierst, musst Du beim An
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "Solltest Du mehrere Sprachen beherrschen, würden wir uns über Deine Unterstützung bei der Übersetzung der App in weitere Sprachen freuen. Solltest Du Deine Sprache nicht in der Liste finden, erstelle einfach ein Ticket auf GitHub. Ich kümmere mich dann darum, dass sie hinzugefügt wird. Bereit loszulegen? Starte mit der Übersetzung auf Crowdin, indem Du auf den untenstehenden Link klickst."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:342
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:371
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:347
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:376
 msgid "Import"
 msgstr "Importieren"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:246
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:251
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -770,21 +770,6 @@ msgstr "Deine E-Mail-Adresse wurde bereits bestätigt."
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:64
 msgid "Job Type"
 msgstr ""
-
-#: apps/client/src/pages/auth/register/page.tsx:101
-msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
-msgid "Nguyễn Văn A"
-msgstr "Max Mustermann"
-
-#: apps/client/src/pages/auth/register/page.tsx:122
-msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
-msgid "nguyenvana"
-msgstr "max.mustermann"
-
-#: apps/client/src/pages/auth/register/page.tsx:143
-msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
-msgid "nguyenvana@example.com"
-msgstr "max.mustermann@beispiel.de"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:54
 msgid "JSON"
@@ -854,7 +839,7 @@ msgstr "LinkedIn, Lebenslauf als JSON, etc."
 msgid "List"
 msgstr "Listenansicht"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:338
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:343
 msgid "Loading..."
 msgstr ""
 
@@ -928,7 +913,7 @@ msgstr "MIT Lizenz"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:72
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:152
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:155
 msgid "Name"
 msgstr "Name"
 
@@ -944,6 +929,21 @@ msgstr "Netzwerk"
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:85
 msgid "New Password"
 msgstr "Neues Passwort"
+
+#: apps/client/src/pages/auth/register/page.tsx:101
+msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
+msgid "Nguyễn Văn A"
+msgstr "Max Mustermann"
+
+#: apps/client/src/pages/auth/register/page.tsx:122
+msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
+msgid "nguyenvana"
+msgstr "max.mustermann"
+
+#: apps/client/src/pages/auth/register/page.tsx:143
+msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
+msgid "nguyenvana@example.com"
+msgstr "max.mustermann@beispiel.de"
 
 #: apps/client/src/components/locale-combobox.tsx:45
 msgid "No results found"
@@ -1037,8 +1037,9 @@ msgid "Personal notes for each resume"
 msgstr "Persönliche Notizen zu jedem Lebenslauf"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:81
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:214
 msgid "Phone"
-msgstr "Telefon"
+msgstr ""
 
 #: apps/client/src/pages/auth/layout.tsx:76
 msgid "Photograph by Patrick Tomasso"
@@ -1049,7 +1050,7 @@ msgid "Pick any font from Google Fonts"
 msgstr "Wähle beliebige Schriftarten von Google Fonts"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/section.tsx:69
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:120
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:123
 msgid "Picture"
 msgstr "Profilbild"
 
@@ -1057,16 +1058,12 @@ msgstr "Profilbild"
 msgid "Please note that this step is completely optional."
 msgstr "Dieser Schritt ist völlig optional."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:263
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:268
 msgid "Please select a file type"
 msgstr "Bitte wähle einen Dateityp"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:72
 msgid "Please select a job type"
-msgstr ""
-
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:97
-msgid "Please select a work location"
 msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:228
@@ -1144,7 +1141,7 @@ msgstr "Seite entfernen"
 msgid "Rename"
 msgstr "Umbenennen"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:198
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:201
 msgid "Resend email confirmation link"
 msgstr "Bestätigungs-E-Mail erneut senden"
 
@@ -1185,7 +1182,7 @@ msgstr "Abgerundet"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:168
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:233
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:116
 msgid "Save Changes"
 msgstr "Änderungen speichern"
@@ -1222,6 +1219,10 @@ msgstr "Abgesichert mit Zwei-Faktor-Authentifizierung"
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:68
 msgid "Security"
 msgstr "Sicherheit"
+
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:97
+msgid "Select"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:50
 msgid "Self-host with Docker"
@@ -1564,7 +1565,7 @@ msgstr "Entsperren"
 msgid "Unlocking a resume will allow you to make changes to it again."
 msgstr "Wenn Du Deinen Lebenslauf entsperrst, kannst Du wieder Änderungen daran vornehmen."
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:191
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:194
 msgid "Unverified"
 msgstr "Noch nicht verifiziert"
 
@@ -1576,7 +1577,7 @@ msgstr "Vorhandenen Eintrag verändern"
 msgid "Update an existing resume"
 msgstr "Vorhandenen Lebenslauf ändern"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:250
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Talent Hub for easier editing."
 msgstr "Lade eine Datei von einer der akzeptierten Quellen hoch, um die Daten zu analysieren. Nach erfolgreicherem Import kannst Du sie einfach in Talent Hub bearbeiten."
 
@@ -1599,10 +1600,7 @@ msgstr "Das Benutzerkonto hat keinen Eintrag für 'secrets'. Bitte melde dieses 
 
 #: apps/client/src/pages/auth/register/page.tsx:119
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:66
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
-msgid "Phone"
-msgstr ""
-
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:169
 msgid "Username"
 msgstr "Benutzername"
 
@@ -1610,11 +1608,11 @@ msgstr "Benutzername"
 msgid "Users Signed Up"
 msgstr "Registrierte Benutzer"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:358
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:363
 msgid "Validate"
 msgstr "Überprüfen"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:376
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:381
 msgid "Validated"
 msgstr "Überprüft"
 
@@ -1622,7 +1620,7 @@ msgstr "Überprüft"
 msgid "Value"
 msgstr "Wert"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:191
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:194
 msgid "Verified"
 msgstr "Verifiziert"
 
