@@ -14,9 +14,8 @@ import { Role } from "../auth/decorators/roles.decorator";
 import { TwoFactorGuard } from "../auth/guards/two-factor.guard";
 import { RolesGuard } from "../auth/guards/roles.guard";
 import { AdminService } from "./admin.service";
-import { PaginationQueryDto, paginationQueyryResumeDto } from "./dtos/pagination.dto";
+import { PaginationQueryDto, paginationQueryResumeDto } from "./dtos/pagination.dto";
 import { Response } from "express";
-import { PATH_RESUME } from "./constant/path.constant";
 
 @ApiTags("Admin")
 @Controller("admin")
@@ -78,26 +77,26 @@ export class AdminController {
   /**
    * get list cv
    */
-  @Get(PATH_RESUME)
+  @Get("/resumes")
+  @Role([Roles.ADMIN])
+  @UseGuards(TwoFactorGuard, RolesGuard)
   @ApiOperation({
     summary: "get list resumes",
   })
-  @Role([Roles.ADMIN])
-  @UseGuards(TwoFactorGuard, RolesGuard)
-  async getListResumes(@Query() paginationDto: paginationQueyryResumeDto) {
+  async getListResumes(@Query() paginationDto: paginationQueryResumeDto) {
     return await this.adminService.getListResumes(paginationDto);
   }
 
   /**
    * get a cv
    */
-  @ApiOperation({
-    summary: "get a resume by id",
-  })
+  @Get(`/resumes/:identify`)
   @Role([Roles.ADMIN])
   @UseGuards(TwoFactorGuard, RolesGuard)
-  @Get(`/${PATH_RESUME}/:id/:slug`)
-  async getAResume(@Param("id") id: string, @Param("slug") slug: string) {
-    return await this.adminService.getAResume(id, slug);
+  @ApiOperation({
+    summary: "get a resume by id or slug",
+  })
+  async findOneResume(@Param("identify") identify: string) {
+    return this.adminService.findOneResume(identify);
   }
 }
