@@ -1,20 +1,20 @@
 import {
   Controller,
   Get,
-  Header,
+  Param,
   Query,
   Res,
   UseGuards,
   UsePipes,
   ValidationPipe,
 } from "@nestjs/common";
-import { ApiCookieAuth, ApiOperation, ApiProperty, ApiQuery, ApiTags } from "@nestjs/swagger";
+import { ApiCookieAuth, ApiOperation, ApiTags } from "@nestjs/swagger";
 import { Roles } from "../auth/enums/roles.enum";
 import { Role } from "../auth/decorators/roles.decorator";
 import { TwoFactorGuard } from "../auth/guards/two-factor.guard";
 import { RolesGuard } from "../auth/guards/roles.guard";
 import { AdminService } from "./admin.service";
-import { PaginationQueryDto } from "./dtos/pagination.dto";
+import { PaginationQueryDto, paginationQueryResumeDto } from "./dtos/pagination.dto";
 import { Response } from "express";
 
 @ApiTags("Admin")
@@ -72,5 +72,31 @@ export class AdminController {
     );
     res.attachment(`list-users${Date.now()}.xlsx`); // name file
     res.end(buffer);
+  }
+
+  /**
+   * get list cv
+   */
+  @Get("/resumes")
+  @Role([Roles.ADMIN])
+  @UseGuards(TwoFactorGuard, RolesGuard)
+  @ApiOperation({
+    summary: "get list resumes",
+  })
+  async getListResumes(@Query() paginationDto: paginationQueryResumeDto) {
+    return await this.adminService.getListResumes(paginationDto);
+  }
+
+  /**
+   * get a cv
+   */
+  @Get(`/resumes/:identify`)
+  @Role([Roles.ADMIN])
+  @UseGuards(TwoFactorGuard, RolesGuard)
+  @ApiOperation({
+    summary: "get a resume by id or slug",
+  })
+  async findOneResume(@Param("identify") identify: string) {
+    return this.adminService.findOneResume(identify);
   }
 }

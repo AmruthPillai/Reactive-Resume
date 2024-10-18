@@ -1,5 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsInt, IsOptional, IsPositive, Max, Min } from "class-validator";
+import { IsBoolean, IsInt, IsOptional, IsPositive, Max, Min } from "class-validator";
+import { Transform } from "class-transformer";
 
 export class PaginationQueryDto {
   @ApiProperty({
@@ -32,4 +33,18 @@ export class PaginationQueryDto {
   })
   @IsOptional()
   search?: string;
+}
+
+export class paginationQueryResumeDto extends PaginationQueryDto {
+  @ApiProperty({
+    description: "search open to work (true/false)",
+    example: false,
+    required: false,
+  })
+  @Transform((val) => {
+    return val.obj?.openToWork === "true";
+  })
+  @IsBoolean()
+  @IsOptional()
+  openToWork?: boolean;
 }
