@@ -38,7 +38,7 @@ msgstr "<0>Zbudowałem Reactive Resume głównie sam w wolnym czasie, z dużą p
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>Jestem pewny, że aplikacja nie jest idealna, ale chciałbym, aby taka była.</0><1>Jeśli wystąpią jakiekolwiek problemy podczas tworzenia CV lub masz pomysł, który pomógłby Tobie i innym użytkownikom w łatwiejszym tworzeniu CV, zgłoś problem w repozytorium lub wyślij mi e-mail w tej sprawie.</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:126
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr "<0>Uwaga: </0>Korzystając z interfejsu API OpenAI, użytkownik przyjmuje do wiadomości i akceptuje <1>warunki użytkowania</1> i <2>politykę prywatności</2> określone przez OpenAI. Pamiętaj, że Reactive Resume nie ponosi żadnej odpowiedzialności za niewłaściwe lub nieautoryzowane korzystanie z usługi, a wszelkie wynikające z tego reperkusje lub zobowiązania spoczywają wyłącznie na użytkowniku."
 
@@ -146,10 +146,6 @@ msgstr "Każda osoba posiadająca link może wyświetlić i pobrać CV."
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "Każda osoba posiadająca ten link może wyświetlić i pobrać CV. Udostępnij go na swoim profilu lub wyślij rekruterom."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:83
-msgid "API Key"
-msgstr "Klucz API"
-
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:124
 msgid "Are you sure you want to delete this item?"
 msgstr "Czy na pewno chcesz usunąć ten element?"
@@ -208,6 +204,10 @@ msgstr "Kod Zapasowy"
 #: apps/client/src/pages/auth/backup-otp/page.tsx:80
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "Kody Zapasowe mogą zawierać wyłącznie małe litery lub cyfry i muszą mieć dokładnie 10 znaków."
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:133
+msgid "Base URL"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:55
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
@@ -575,7 +575,7 @@ msgstr "Wariant Czcionki"
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr "Można tu na przykład zapisać informacje o firmach, do których wysłałeś to CV, lub linki do opisów stanowisk."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:107
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:186
 msgid "Forget"
 msgstr "Zapomnij"
 
@@ -914,9 +914,17 @@ msgstr "Marzec 2023 – obecnie"
 msgid "Margin"
 msgstr "Marginesy"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:159
+msgid "Max Tokens"
+msgstr ""
+
 #: apps/client/src/pages/home/sections/features/index.tsx:48
 msgid "MIT License"
 msgstr "Licencja MIT"
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:146
+msgid "Model"
+msgstr ""
 
 #: apps/client/src/pages/auth/register/page.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:58
@@ -961,6 +969,10 @@ msgstr "Uwaga: Spowoduje to zmniejszenie bezpieczeństwa Twojego konta."
 msgid "Notes"
 msgstr "Notatki"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
+msgid "Ollama Integration"
+msgstr ""
+
 #: apps/client/src/pages/auth/verify-otp/page.tsx:82
 msgid "One-Time Password"
 msgstr "Jednorazowe hasło"
@@ -982,13 +994,17 @@ msgstr "Otwórz"
 msgid "Open Source"
 msgstr "Open Source"
 
-#: apps/client/src/services/openai/change-tone.ts:30
-#: apps/client/src/services/openai/fix-grammar.ts:28
-#: apps/client/src/services/openai/improve-writing.ts:28
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
+msgid "OpenAI / Ollama API Key"
+msgstr ""
+
+#: apps/client/src/services/openai/change-tone.ts:34
+#: apps/client/src/services/openai/fix-grammar.ts:32
+#: apps/client/src/services/openai/improve-writing.ts:32
 msgid "OpenAI did not return any choices for your text."
 msgstr "OpenAI nie zwróciło żadnych wyborów dla Twojego tekstu."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:52
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:77
 #: apps/client/src/pages/home/sections/features/index.tsx:52
 msgid "OpenAI Integration"
 msgstr "Integracja z OpenAI"
@@ -1213,6 +1229,14 @@ msgstr "Zaokrąklony"
 msgid "Save Changes"
 msgstr "Zapisz Zmiany"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+msgid "Save Locally"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+msgid "Saved"
+msgstr ""
+
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
 msgid "Scan the QR code below with your authenticator app to setup 2FA on your account."
 msgstr "Zeskanuj poniższy kod QR za pomocą aplikacji uwierzytelniającej, aby skonfigurować 2FA na swoim koncie."
@@ -1376,17 +1400,9 @@ msgstr "Statystyki"
 msgid "Statistics are available only for public resumes."
 msgstr "Statystyki są dostępne tylko w przypadku CV publicznych."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
-msgid "Store Locally"
-msgstr "Przechowuj Lokalnie"
-
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:162
 msgid "Store your backup codes securely"
 msgstr "Przechowuj bezpiecznie swoje kody zapasowe"
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
-msgid "Stored"
-msgstr "Przechowywane"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
@@ -1433,9 +1449,13 @@ msgstr "Referencje"
 msgid "Text Color"
 msgstr "Kolor Tekstu"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:25
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:26
 msgid "That doesn't look like a valid OpenAI API key."
 msgstr "To nie wygląda na prawidłowy klucz API OpenAI."
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:30
+msgid "That doesn't look like a valid URL"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
 msgid "The passwords you entered do not match."
@@ -1660,7 +1680,11 @@ msgstr "Możesz dodać wiele słów kluczowych, oddzielając je przecinkiem lub 
 msgid "You can also enter your username."
 msgstr "Możesz także wpisać swoją nazwę użytkownika."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:54
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:105
+msgid "You can integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
 msgstr "Możesz skorzystać z interfejsu API OpenAI, aby pomóc w generowaniu treści lub ulepszaniu pisania podczas tworzenia CV."
 
@@ -1668,7 +1692,7 @@ msgstr "Możesz skorzystać z interfejsu API OpenAI, aby pomóc w generowaniu tr
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
 msgstr "Możesz śledzić liczbę wyświetleń Twojego CV lub liczbę osób, które pobrały CV, włączając udostępnianie publiczne."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:60
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:85
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr "Masz możliwość <0>uzyskania własnego klucza API OpenAI</0>. Ten klucz umożliwia wykorzystanie interfejsu API według własnego uznania. Alternatywnie, jeśli chcesz całkowicie wyłączyć funkcje AI w Reactive Resume, możesz po prostu usunąć klucz ze swoich ustawień."
 
@@ -1685,7 +1709,7 @@ msgstr "Wysłaliśmy do Ciebie e-mail!"
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
 msgstr "Twoje konto i wszystkie dane zostały pomyślnie usunięte. Trzymaj się!"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:116
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:195
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "Twój klucz API jest bezpiecznie przechowywany w lokalnej pamięci przeglądarki i jest używany tylko podczas wysyłania żądań do OpenAI za pośrednictwem oficjalnego pakietu SDK. Możesz mieć pewność, że Twój klucz nie zostanie przesłany do żadnego serwera zewnętrznego, z wyjątkiem interakcji z usługami OpenAI."
 
@@ -1708,4 +1732,3 @@ msgstr "Powiększ"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "Pomniejsz"
-
