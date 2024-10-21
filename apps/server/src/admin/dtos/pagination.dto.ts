@@ -32,7 +32,7 @@ export class PaginationQueryDto {
     required: false,
   })
   @IsOptional()
-  search?: string;
+  search?: string = "";
 }
 
 export class paginationQueryResumeDto extends PaginationQueryDto {
