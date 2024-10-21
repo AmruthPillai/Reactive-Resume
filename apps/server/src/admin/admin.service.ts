@@ -164,82 +164,86 @@ export class AdminService {
    * create where resume condition
    */
   private getResumeConditon(paginationDto: paginationQueryResumeDto): Prisma.ResumeWhereInput {
-    let search = paginationDto.search;
+    try {
+      let search = paginationDto.search;
 
-    let userCondition: Prisma.ResumeWhereInput = {};
+      let userCondition: Prisma.ResumeWhereInput = {};
 
-    let resumeCondition: Prisma.ResumeWhereInput = {};
+      let resumeCondition: Prisma.ResumeWhereInput = {};
 
-    if (search) {
-      // user condtion
-      userCondition = {
-        user: {
+      if (search) {
+        // user condtion
+        userCondition = {
+          user: {
+            OR: [
+              {
+                name: {
+                  contains: search,
+                  mode: "insensitive",
+                },
+              },
+              {
+                email: {
+                  contains: search,
+                  mode: "insensitive",
+                },
+              },
+            ],
+          },
+        };
+
+        let slug: string = kebabCase(search);
+
+        // resume condition
+        resumeCondition = {
           OR: [
             {
-              name: {
+              title: {
                 contains: search,
                 mode: "insensitive",
               },
             },
             {
-              email: {
-                contains: search,
+              slug: {
+                contains: slug,
                 mode: "insensitive",
+              },
+            },
+            {
+              data: {
+                path: ["basics", "name"],
+                string_contains: search,
               },
             },
           ],
-        },
-      };
+        };
+      }
 
-      let slug: string = kebabCase(search);
+      // open to work condtion
+      const openToworkCondition: Prisma.ResumeWhereInput =
+        paginationDto.openToWork !== undefined
+          ? {
+              data: {
+                path: ["workStatus", "openToWork"],
+                equals: paginationDto.openToWork,
+              },
+            }
+          : {};
 
-      // resume condition
-      resumeCondition = {
-        OR: [
+      // combine conditions
+      const where: Prisma.ResumeWhereInput = {
+        AND: [
           {
-            title: {
-              contains: search,
-              mode: "insensitive",
-            },
+            OR: [userCondition, resumeCondition],
           },
-          {
-            slug: {
-              contains: slug ? slug : undefined,
-              mode: "insensitive",
-            },
-          },
-          {
-            data: {
-              path: ["basics", "name"],
-              string_contains: search,
-            },
-          },
+          openToworkCondition,
         ],
       };
+
+      return where;
+    } catch (error) {
+      throw error;
     }
-
-    // open to work condtion
-    const openToworkCondition: Prisma.ResumeWhereInput =
-      paginationDto.openToWork !== undefined
-        ? {
-            data: {
-              path: ["workStatus", "openToWork"],
-              equals: paginationDto.openToWork,
-            },
-          }
-        : {};
-
-    // combine conditions
-    const where: Prisma.ResumeWhereInput = {
-      AND: [
-        {
-          OR: [userCondition, resumeCondition],
-        },
-        openToworkCondition,
-      ],
-    };
-
-    return where;
   }
 
   /**
@@ -248,64 +252,69 @@ export class AdminService {
   async getListResumes(
     paginationDto: paginationQueryResumeDto,
   ): Promise<PaginationInterface<ResumeResponseInterface>> {
-    // where condtion
-    const where: Prisma.ResumeWhereInput = this.getResumeConditon(paginationDto);
+    try {
+      // where condtion
+      const where: Prisma.ResumeWhereInput = this.getResumeConditon(paginationDto);
 
-    // get page, pageSize
-    const { page, pageSize } = paginationDto;
+      // get page, pageSize
+      const { page, pageSize } = paginationDto;
 
-    const [rawData, count]: [ResumeRawDataInterface[], number] = await Promise.all([
-      // get resumes data
-      this.prisma.resume.findMany({
-        where: where,
-        skip: (page - 1) * pageSize,
-        take: pageSize,
-        select: {
-          id: true,
-          title: true,
-          slug: true,
-          data: true,
-          user: true,
+      const [rawData, count]: [ResumeRawDataInterface[], number] = await Promise.all([
+        // get resumes data
+        this.prisma.resume.findMany({
+          where: where,
+          skip: (page - 1) * pageSize,
+          take: pageSize,
+          select: {
+            id: true,
+            title: true,
+            slug: true,
+            data: true,
+            user: true,
+          },
+        }),
+
+        // count record
+        this.prisma.resume.count({
+          where: where,
+        }),
+      ]).catch((err) => {
+        throw err;
+      });
+
+      const data: ResumeResponseInterface[] = [];
+
+      // base URL
+      const protocol = this.req.headers["x-forwarded-proto"] || this.req.protocol;
+      const url: string = protocol + "://" + this.req.headers.host;
+      const newUrl: URL = new URL(this.req.url, url);
+      const baseUrl: string = `${newUrl.origin}${newUrl.pathname}/`;
+
+      // convert data to ResumeResponseInterface
+      rawData.forEach((item: ResumeRawDataInterface) => {
+        const dataResume = item.data as any;
+        data.push({
+          cvTitle: item.title,
+          nameCandidate: dataResume.basics.name,
+          openToWork: dataResume.workStatus.openToWork,
+          ownerName: item.user.name,
+          ownerEmail: item.user.email,
+          linkCv: `${baseUrl}${item.slug}`,
+        } as ResumeResponseInterface);
+      });
+
+      return {
+        data: data,
+        meta: {
+          currentPage: page,
+          itemPerPage: pageSize,
+          totalItem: count,
+          totalPage: Math.ceil(count / pageSize),
         },
-      }),
-
-      // count record
-      this.prisma.resume.count({
-        where: where,
-      }),
-    ]).catch((err) => {
-      throw err;
-    });
-
-    const data: ResumeResponseInterface[] = [];
-
-    // base URL
-    const url: string = this.req.protocol + "://" + this.req.headers.host;
-    const newUrl: URL = new URL(this.req.url, url);
-    const baseUrl: string = `${newUrl.origin}${newUrl.pathname}/`;
-
-    // convert data to ResumeResponseInterface
-    rawData.forEach((item: ResumeRawDataInterface) => {
-      const dataResume = item.data as any;
-      data.push({
-        cvTitle: item.title,
-        nameCandidate: dataResume.basics.name,
-        openToWork: dataResume.workStatus.openToWork,
-        ownerName: item.user.name,
-        ownerEmail: item.user.email,
-        linkCv: `${baseUrl}${item.slug}`,
-      } as ResumeResponseInterface);
-    });
-
-    return {
-      data: data,
-      meta: {
-        currentPage: page,
-        itemPerPage: pageSize,
-        totalItem: count,
-        totalPage: Math.ceil(count / pageSize),
-      },
-    };
+      };
+    } catch (error) {
+      throw error;
+    }
   }
 
   /**
