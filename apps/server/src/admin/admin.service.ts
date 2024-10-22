@@ -220,15 +220,15 @@ export class AdminService {
       }
 
       // open to work condtion
-      const openToworkCondition: Prisma.ResumeWhereInput =
-        paginationDto.openToWork !== undefined
-          ? {
-              data: {
-                path: ["workStatus", "openToWork"],
-                equals: paginationDto.openToWork,
-              },
-            }
-          : {};
+      let openToworkCondition: Prisma.ResumeWhereInput = {};
+      if (paginationDto.openToWork) {
+        openToworkCondition = {
+          data: {
+            path: ["workStatus", "openToWork"],
+            equals: paginationDto.openToWork == "yes" ? true : false,
+          },
+        };
+      }
 
       // combine conditions
       const where: Prisma.ResumeWhereInput = {
