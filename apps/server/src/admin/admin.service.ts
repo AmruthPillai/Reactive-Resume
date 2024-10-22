@@ -295,8 +295,8 @@ export class AdminService {
         const dataResume = item.data as any;
         data.push({
           cvTitle: item.title,
-          nameCandidate: dataResume.basics.name,
-          openToWork: dataResume.workStatus.openToWork,
+          nameCandidate: dataResume?.basics?.name ?? "",
+          openToWork: dataResume?.workStatus?.openToWork ?? false,
           ownerName: item.user.name,
           ownerEmail: item.user.email,
           linkCv: `${baseUrl}${item.slug}`,
