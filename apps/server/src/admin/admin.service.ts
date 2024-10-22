@@ -163,7 +163,10 @@ export class AdminService {
   /**
    * create where resume condition
    */
-  private getResumeConditon(paginationDto: paginationQueryResumeDto): Prisma.ResumeWhereInput {
+  private getResumeConditon(
+    paginationDto: paginationQueryResumeDto,
+    userIdentify: string = "",
+  ): Prisma.ResumeWhereInput {
     try {
       let search = paginationDto.search;
 
@@ -172,7 +175,7 @@ export class AdminService {
       let resumeCondition: Prisma.ResumeWhereInput = {};
 
       if (search) {
-        // user condtion
+        // user condition
         userCondition = {
           user: {
             OR: [
@@ -230,6 +233,23 @@ export class AdminService {
         };
       }
 
+      // resumes belong a owner condition
+      let belongOwnerCondition: Prisma.ResumeWhereInput = {};
+      if (userIdentify) {
+        belongOwnerCondition = {
+          OR: [
+            {
+              userId: userIdentify,
+            },
+            {
+              user: {
+                email: userIdentify,
+              },
+            },
+          ],
+        };
+      }
+
       // combine conditions
       const where: Prisma.ResumeWhereInput = {
         AND: [
@@ -237,6 +257,7 @@ export class AdminService {
             OR: [userCondition, resumeCondition],
           },
           openToworkCondition,
+          belongOwnerCondition,
         ],
       };
 
@@ -251,10 +272,11 @@ export class AdminService {
    */
   async getListResumes(
     paginationDto: paginationQueryResumeDto,
+    userIdentify: string = "",
   ): Promise<PaginationInterface<ResumeResponseInterface>> {
     try {
       // where condtion
-      const where: Prisma.ResumeWhereInput = this.getResumeConditon(paginationDto);
+      const where: Prisma.ResumeWhereInput = this.getResumeConditon(paginationDto, userIdentify);
 
       // get page, pageSize
       const { page, pageSize } = paginationDto;
@@ -288,7 +310,7 @@ export class AdminService {
       const protocol = this.req.headers["x-forwarded-proto"] || this.req.protocol;
       const url: string = protocol + "://" + this.req.headers.host;
       const newUrl: URL = new URL(this.req.url, url);
-      const baseUrl: string = `${newUrl.origin}${newUrl.pathname}/`;
+      const baseUrl: string = newUrl.origin + "/api/admin/resumes";
 
       // convert data to ResumeResponseInterface
       rawData.forEach((item: ResumeRawDataInterface) => {
@@ -299,7 +321,8 @@ export class AdminService {
           openToWork: dataResume?.workStatus?.openToWork ?? false,
           ownerName: item.user.name,
           ownerEmail: item.user.email,
-          linkCv: `${baseUrl}${item.slug}`,
+          linkCv: `${baseUrl}/${item.slug}`,
+          linkListCvOwner: `${baseUrl}/users/${item.user.id}`,
         } as ResumeResponseInterface);
       });
 
