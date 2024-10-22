@@ -99,20 +99,4 @@ export class AdminController {
   async findOneResume(@Param("identify") identify: string) {
     return this.adminService.findOneResume(identify);
   }
-
-  /**
-   * get list cv of an user
-   */
-  @Get(`/resumes/users/:identify`)
-  @Role([Roles.ADMIN])
-  @UseGuards(TwoFactorGuard, RolesGuard)
-  @ApiOperation({
-    summary: "get list resumes of an user",
-  })
-  async listResumesUser(
-    @Query() paginationDto: paginationQueryResumeDto,
-    @Param("identify") identify: string,
-  ) {
-    return this.adminService.getListResumes(paginationDto, identify);
-  }
 }

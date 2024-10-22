@@ -163,10 +163,7 @@ export class AdminService {
   /**
    * create where resume condition
    */
-  private getResumeConditon(
-    paginationDto: paginationQueryResumeDto,
-    userIdentify: string = "",
-  ): Prisma.ResumeWhereInput {
+  private getResumeConditon(paginationDto: paginationQueryResumeDto): Prisma.ResumeWhereInput {
     try {
       let search = paginationDto.search;
 
@@ -222,7 +219,7 @@ export class AdminService {
         };
       }
 
-      // open to work condtion
+      // open to work condition
       let openToworkCondition: Prisma.ResumeWhereInput = {};
       if (paginationDto.openToWork) {
         openToworkCondition = {
@@ -235,6 +232,7 @@ export class AdminService {
 
       // resumes belong a owner condition
       let belongOwnerCondition: Prisma.ResumeWhereInput = {};
+      const userIdentify = paginationDto.userIdentify;
       if (userIdentify) {
         belongOwnerCondition = {
           OR: [
@@ -272,11 +270,10 @@ export class AdminService {
    */
   async getListResumes(
     paginationDto: paginationQueryResumeDto,
-    userIdentify: string = "",
   ): Promise<PaginationInterface<ResumeResponseInterface>> {
     try {
       // where condtion
-      const where: Prisma.ResumeWhereInput = this.getResumeConditon(paginationDto, userIdentify);
+      const where: Prisma.ResumeWhereInput = this.getResumeConditon(paginationDto);
 
       // get page, pageSize
       const { page, pageSize } = paginationDto;
@@ -310,7 +307,7 @@ export class AdminService {
       const protocol = this.req.headers["x-forwarded-proto"] || this.req.protocol;
       const url: string = protocol + "://" + this.req.headers.host;
       const newUrl: URL = new URL(this.req.url, url);
-      const baseUrl: string = newUrl.origin + "/api/admin/resumes";
+      const baseUrl: string = `${newUrl.origin}${newUrl.pathname}`;
 
       // convert data to ResumeResponseInterface
       rawData.forEach((item: ResumeRawDataInterface) => {
@@ -322,7 +319,7 @@ export class AdminService {
           ownerName: item.user.name,
           ownerEmail: item.user.email,
           linkCv: `${baseUrl}/${item.slug}`,
-          linkListCvOwner: `${baseUrl}/users/${item.user.id}`,
+          linkListCvOwner: `${baseUrl}?userIdentify=${item.user.id}`,
         } as ResumeResponseInterface);
       });
 

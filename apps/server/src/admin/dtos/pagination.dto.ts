@@ -47,4 +47,12 @@ export class paginationQueryResumeDto extends PaginationQueryDto {
     EMPTY: "",
   })
   openToWork?: string = "";
+
+  @ApiProperty({
+    description: "user identify (email/id)",
+    example: "abc@gmail.com",
+    required: false,
+  })
+  @IsOptional()
+  userIdentify?: string = "";
 }
