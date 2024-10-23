@@ -165,7 +165,7 @@ export class AdminService {
    */
   private getResumeConditon(paginationDto: paginationQueryResumeDto): Prisma.ResumeWhereInput {
     try {
-      let search = paginationDto.search;
+      const { search, openToWork, userIdentify } = paginationDto;
 
       let userCondition: Prisma.ResumeWhereInput = {};
 
@@ -220,31 +220,21 @@ export class AdminService {
       }
 
       // open to work condition
-      let openToworkCondition: Prisma.ResumeWhereInput = {};
-      if (paginationDto.openToWork) {
-        openToworkCondition = {
+      let openToWorkCondition: Prisma.ResumeWhereInput = {};
+      if (openToWork) {
+        openToWorkCondition = {
           data: {
             path: ["workStatus", "openToWork"],
-            equals: paginationDto.openToWork == "yes" ? true : false,
+            equals: openToWork === "yes" ? true : false,
           },
         };
       }
 
       // resumes belong a owner condition
       let belongOwnerCondition: Prisma.ResumeWhereInput = {};
-      const userIdentify = paginationDto.userIdentify;
       if (userIdentify) {
         belongOwnerCondition = {
-          OR: [
-            {
-              userId: userIdentify,
-            },
-            {
-              user: {
-                email: userIdentify,
-              },
-            },
-          ],
+          userId: userIdentify,
         };
       }
 
@@ -254,7 +244,7 @@ export class AdminService {
           {
             OR: [userCondition, resumeCondition],
           },
-          openToworkCondition,
+          openToWorkCondition,
           belongOwnerCondition,
         ],
       };
