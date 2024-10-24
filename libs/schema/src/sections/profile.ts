@@ -20,8 +20,8 @@ export type Profile = z.infer<typeof profileSchema>;
 // Defaults
 export const defaultProfile: Profile = {
   ...defaultItem,
-  network: "",
-  username: "",
+  network: "?",
+  username: "?",
   icon: "",
   url: defaultUrl,
 };

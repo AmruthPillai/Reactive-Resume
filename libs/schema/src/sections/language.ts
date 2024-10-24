@@ -15,7 +15,7 @@ export type Language = z.infer<typeof languageSchema>;
 // Defaults
 export const defaultLanguage: Language = {
   ...defaultItem,
-  name: "",
+  name: "?",
   description: "",
   level: 1,
 };

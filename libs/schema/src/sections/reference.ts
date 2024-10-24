@@ -16,7 +16,7 @@ export type Reference = z.infer<typeof referenceSchema>;
 // Defaults
 export const defaultReference: Reference = {
   ...defaultItem,
-  name: "",
+  name: "?",
   description: "",
   summary: "",
   url: defaultUrl,

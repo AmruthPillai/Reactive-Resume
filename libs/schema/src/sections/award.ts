@@ -17,7 +17,7 @@ export type Award = z.infer<typeof awardSchema>;
 // Defaults
 export const defaultAward: Award = {
   ...defaultItem,
-  title: "",
+  title: "?",
   awarder: "",
   date: "",
   summary: "",

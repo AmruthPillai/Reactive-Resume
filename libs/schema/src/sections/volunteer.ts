@@ -18,7 +18,7 @@ export type Volunteer = z.infer<typeof volunteerSchema>;
 // Defaults
 export const defaultVolunteer: Volunteer = {
   ...defaultItem,
-  organization: "",
+  organization: "?",
   position: "",
   location: "",
   date: "",
