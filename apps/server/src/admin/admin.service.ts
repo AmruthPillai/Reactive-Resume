@@ -165,14 +165,14 @@ export class AdminService {
    */
   private getResumeConditon(paginationDto: paginationQueryResumeDto): Prisma.ResumeWhereInput {
     try {
-      let search = paginationDto.search;
+      const { search, openToWork, userIdentify } = paginationDto;
 
       let userCondition: Prisma.ResumeWhereInput = {};
 
       let resumeCondition: Prisma.ResumeWhereInput = {};
 
       if (search) {
-        // user condtion
+        // user condition
         userCondition = {
           user: {
             OR: [
@@ -219,14 +219,22 @@ export class AdminService {
         };
       }
 
-      // open to work condtion
-      let openToworkCondition: Prisma.ResumeWhereInput = {};
-      if (paginationDto.openToWork) {
-        openToworkCondition = {
+      // open to work condition
+      let openToWorkCondition: Prisma.ResumeWhereInput = {};
+      if (openToWork !== undefined) {
+        openToWorkCondition = {
           data: {
             path: ["workStatus", "openToWork"],
-            equals: paginationDto.openToWork == "yes" ? true : false,
+            equals: openToWork,
           },
+        };
+      }
+
+      // resumes belong a owner condition
+      let belongOwnerCondition: Prisma.ResumeWhereInput = {};
+      if (userIdentify) {
+        belongOwnerCondition = {
+          userId: userIdentify,
         };
       }
 
@@ -236,7 +244,8 @@ export class AdminService {
           {
             OR: [userCondition, resumeCondition],
           },
-          openToworkCondition,
+          openToWorkCondition,
+          belongOwnerCondition,
         ],
       };
 
@@ -288,7 +297,7 @@ export class AdminService {
       const protocol = this.req.headers["x-forwarded-proto"] || this.req.protocol;
       const url: string = protocol + "://" + this.req.headers.host;
       const newUrl: URL = new URL(this.req.url, url);
-      const baseUrl: string = `${newUrl.origin}${newUrl.pathname}/`;
+      const baseUrl: string = `${newUrl.origin}${newUrl.pathname}`;
 
       // convert data to ResumeResponseInterface
       rawData.forEach((item: ResumeRawDataInterface) => {
@@ -299,7 +308,8 @@ export class AdminService {
           openToWork: dataResume?.workStatus?.openToWork ?? false,
           ownerName: item.user.name,
           ownerEmail: item.user.email,
-          linkCv: `${baseUrl}${item.slug}`,
+          linkCv: `${baseUrl}/${item.slug}`,
+          linkListCvOwner: `${baseUrl}?userIdentify=${item.user.id}`,
         } as ResumeResponseInterface);
       });
 

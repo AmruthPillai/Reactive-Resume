@@ -8,6 +8,7 @@ export interface ResumeResponseInterface {
   ownerName: string;
   ownerEmail: string;
   linkCv: string;
+  linkListCvOwner: string;
 }
 
 export interface ResumeRawDataInterface {
