@@ -221,11 +221,11 @@ export class AdminService {
 
       // open to work condition
       let openToWorkCondition: Prisma.ResumeWhereInput = {};
-      if (openToWork) {
+      if (openToWork !== undefined) {
         openToWorkCondition = {
           data: {
             path: ["workStatus", "openToWork"],
-            equals: openToWork === "yes" ? true : false,
+            equals: openToWork,
           },
         };
       }
