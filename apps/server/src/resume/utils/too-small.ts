@@ -22,10 +22,6 @@ export const transformTooSmall = (
 
   if (remainingPath.length === 0) {
     const defaultStr = "?";
-    // console.log({
-    //   ...resume,
-    //   [key]: defaultStr.repeat(minLength),
-    // });
     return {
       ...resume,
       [key]: defaultStr.repeat(minLength),

@@ -245,6 +245,9 @@ importers:
       json5:
         specifier: 2.2.1
         version: 2.2.1
+      jsonrepair:
+        specifier: ^3.8.1
+        version: 3.8.1
       jszip:
         specifier: ^3.10.1
         version: 3.10.1
@@ -7798,6 +7801,10 @@ packages:
 
   jsonfile@6.1.0:
     resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
+
+  jsonrepair@3.8.1:
+    resolution: {integrity: sha512-5wnjaO53EJOhfLFY92nvBz2B9gqF9ql/D4HKUb1WOSBaqtVcAifFfmurblnhCJn/ySqKFA8U3n7nhGMAu/hEjQ==}
+    hasBin: true
 
   jsonwebtoken@9.0.2:
     resolution: {integrity: sha512-PRp66vJ865SSqOlgqS8hujT5U4AOgMfhrwYIuIhfKaoSCZcirrmASQr8CX7cUg+RMih+hgznrjp99o+W4pJLHQ==}
@@ -20419,6 +20426,8 @@ snapshots:
       universalify: 2.0.1
     optionalDependencies:
       graceful-fs: 4.2.11
+
+  jsonrepair@3.8.1: {}
 
   jsonwebtoken@9.0.2:
     dependencies:

@@ -2,6 +2,8 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { Injectable } from "@nestjs/common";
 import { resumeDataSchema } from "@reactive-resume/schema";
 import { zodToJsonSchema } from "zod-to-json-schema";
+
+import { AnyObject } from "../resume/types";
 // import { v4 as uuidv4 } from "uuid";
 
 @Injectable()
@@ -14,20 +16,28 @@ export class GenaiService {
 
   async convertResumeToJson(resumeText: string): Promise<any> {
     const prompt = `
-        Chuyển Đổi Dữ Liệu Resume Dưới Đây Thành JSON Với Định Dạng Schema ( Zod ) Sau (Với Hàm createId() Từ "@paralleldrive/cuid2"):
-          (Chỉ Chuyển Đổi Thuộc Tính "basics" và "sections" Còn Bỏ Qua "metadata", Dữ Liệu Nào Không Có Thì Trả "", 0, true Tuỳ Loại Và Những Dữ Liệu Text Từ Section Nào Mà Không Có Trường Cụ Thể Trong Schema Đã Cho Thì Cho Hết Vào "summary" Của Item Section Đó - Các Tiêu Đề Trong "summary" Của Item Section Đó Được Bọc Trong <b></b> )
-        ${JSON.stringify(zodToJsonSchema(resumeDataSchema))}
+        Chuyển Đổi Dữ Liệu Resume Dưới Đây Thành JSON Chính Xác Với Định Dạng Schema ( Zod ) Sau (Với Hàm createId() Từ "@paralleldrive/cuid2"):
+          (Những Dữ Liệu Text Từ Section Nào Mà Không Có Trường Cụ Thể Trong Schema Đã Cho Thì Cho Hết Vào "summary" Của Item Section Đó)
+        ${JSON.stringify({
+          ...zodToJsonSchema(resumeDataSchema),
+          properties: {
+            basics: (zodToJsonSchema(resumeDataSchema) as AnyObject).properties.basics,
+            sections: (zodToJsonSchema(resumeDataSchema) as AnyObject).properties.sections,
+          },
+          required: ["basics", "sections"],
+        })}
   
         Resume data:
         ${resumeText}
 
-        Return the output in valid JSON format. Ensure the JSON is properly formatted with correct syntax.
+        Return the output in valid JSON format. Ensure the JSON is properly formatted with correct syntax so that JSON.parse can be used.
       `;
 
     const model = this.genAI.getGenerativeModel({
       model: "gemini-1.5-flash",
       generationConfig: {
         responseMimeType: "application/json",
+        // responseSchema: zodToJsonSchema(resumeDataSchema) as ResponseSchema,
       },
     });
 

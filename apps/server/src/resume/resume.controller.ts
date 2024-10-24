@@ -32,6 +32,7 @@ import { Resume } from "./decorators/resume.decorator";
 import { ResumeGuard } from "./guards/resume.guard";
 import { ResumeService } from "./resume.service";
 import { AnyObject } from "./types";
+import { transformZodJson } from "./utils/transform-zod-json";
 
 @ApiTags("Resume")
 @Controller("resume")

@@ -14,6 +14,6 @@ export type Interest = z.infer<typeof interestSchema>;
 // Defaults
 export const defaultInterest: Interest = {
   ...defaultItem,
-  name: "",
+  name: "?",
   keywords: [],
 };

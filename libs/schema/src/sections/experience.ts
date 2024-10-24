@@ -18,7 +18,7 @@ export type Experience = z.infer<typeof experienceSchema>;
 // Defaults
 export const defaultExperience: Experience = {
   ...defaultItem,
-  company: "",
+  company: "?",
   position: "",
   location: "",
   date: "",

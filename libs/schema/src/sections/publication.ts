@@ -17,7 +17,7 @@ export type Publication = z.infer<typeof publicationSchema>;
 // Defaults
 export const defaultPublication: Publication = {
   ...defaultItem,
-  name: "",
+  name: "?",
   publisher: "",
   date: "",
   summary: "",

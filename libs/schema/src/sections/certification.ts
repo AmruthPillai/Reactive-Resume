@@ -17,7 +17,7 @@ export type Certification = z.infer<typeof certificationSchema>;
 // Defaults
 export const defaultCertification: Certification = {
   ...defaultItem,
-  name: "",
+  name: "?",
   issuer: "",
   date: "",
   summary: "",

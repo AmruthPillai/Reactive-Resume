@@ -18,7 +18,7 @@ export type Project = z.infer<typeof projectSchema>;
 // Defaults
 export const defaultProject: Project = {
   ...defaultItem,
-  name: "",
+  name: "?",
   description: "",
   date: "",
   summary: "",
