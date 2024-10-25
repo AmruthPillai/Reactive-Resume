@@ -29,21 +29,21 @@ import {
 } from "@reactive-resume/dto";
 import { ErrorMessage } from "@reactive-resume/utils";
 import type { Response } from "express";
+import { UseZodGuard } from "nestjs-zod";
 
 import { User } from "../user/decorators/user.decorator";
 import { AuthService } from "./auth.service";
+import { Role } from "./decorators/roles.decorator";
+import { Roles } from "./enums/roles.enum";
 import { GitHubGuard } from "./guards/github.guard";
 import { GoogleGuard } from "./guards/google.guard";
 import { JwtGuard } from "./guards/jwt.guard";
 import { LocalGuard } from "./guards/local.guard";
 import { RefreshGuard } from "./guards/refresh.guard";
+import { RolesGuard } from "./guards/roles.guard";
 import { TwoFactorGuard } from "./guards/two-factor.guard";
 import { getCookieOptions } from "./utils/cookie";
 import { payloadSchema } from "./utils/payload";
-import { Role } from "./decorators/roles.decorator";
-import { Roles } from "./enums/roles.enum";
-import { RolesGuard } from "./guards/roles.guard";
-import { UseZodGuard } from "nestjs-zod";
 
 @ApiTags("Authentication")
 @Controller("auth")

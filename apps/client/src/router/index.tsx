@@ -16,6 +16,7 @@ import { SettingsPage } from "../pages/dashboard/settings/page";
 import { HomeLayout } from "../pages/home/layout";
 import { PrivacyPolicyPage } from "../pages/home/meta/privacy-policy/page";
 import { HomePage } from "../pages/home/page";
+import { adminLoader, AdminViewResumePage } from "../pages/public/admin-page";
 import { publicLoader, PublicResumePage } from "../pages/public/page";
 import { Providers } from "../providers";
 import { AuthGuard } from "./guards/auth";
@@ -88,6 +89,10 @@ export const routes = createRoutesFromElements(
     {/* Public Routes */}
     <Route path=":username">
       <Route path=":slug" loader={publicLoader} element={<PublicResumePage />} />
+    </Route>
+
+    <Route path="admin/:username">
+      <Route path=":slug" loader={adminLoader} element={<AdminViewResumePage />} />
     </Route>
   </Route>,
 );
