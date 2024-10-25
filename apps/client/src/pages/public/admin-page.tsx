@@ -11,8 +11,8 @@ import { Link, LoaderFunction, redirect, useLoaderData } from "react-router-dom"
 import { ThemeSwitch } from "@/client/components/theme-switch";
 import { queryClient } from "@/client/libs/query-client";
 import {
-  // findResumeWithAdminKey,
-  findResumeByUsernameSlug,
+  findResumeWithAdminKey,
+  //   findResumeByUsernameSlug,
   usePrintResume,
 } from "@/client/services/resume";
 
@@ -118,6 +118,8 @@ export const AdminViewResumePage = () => {
 export const adminLoader: LoaderFunction<ResumeDto> = async ({ params, request: { url } }) => {
   try {
     const adminKey = new URL(url).searchParams.get("admin_key");
+    if (!adminKey) return redirect("/");
+
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const username = params.username!;
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -125,8 +127,8 @@ export const adminLoader: LoaderFunction<ResumeDto> = async ({ params, request: 
 
     return await queryClient.fetchQuery({
       queryKey: ["resume", { username, slug, adminKey }],
-      queryFn: () => findResumeByUsernameSlug({ username, slug }),
-      //   queryFn: () => findResumeWithAdminKey({ username, slug, key: adminKey }),
+      //   queryFn: () => findResumeByUsernameSlug({ username, slug }),
+      queryFn: () => findResumeWithAdminKey({ username, slug, key: adminKey }),
     });
   } catch {
     return redirect("/");
