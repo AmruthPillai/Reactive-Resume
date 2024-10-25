@@ -118,7 +118,7 @@ export const AdminViewResumePage = () => {
 export const adminLoader: LoaderFunction<ResumeDto> = async ({ params, request: { url } }) => {
   try {
     const adminKey = new URL(url).searchParams.get("admin_key");
-    if (!adminKey) return redirect("/");
+    // if (!adminKey) return redirect("/");
 
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const username = params.username!;
