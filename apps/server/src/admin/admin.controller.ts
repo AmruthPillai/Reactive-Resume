@@ -96,7 +96,7 @@ export class AdminController {
   /**
    * get a cv
    */
-  @Get(`/resumes/:identify`)
+  @Get(`/resume/:identify`)
   @Role([Roles.ADMIN])
   @UseGuards(TwoFactorGuard, RolesGuard)
   @ApiOperation({
@@ -109,7 +109,7 @@ export class AdminController {
   @ApiOperation({
     summary: "API clone from findOneByUsernameSlug(username, slug)  ",
   })
-  @Get("/resumes/:userName/:slug")
+  @Get("/resume/:userName/:slug")
   async adminfindOneByUsernameSlug(
     @Param("username") username: string,
     @Param("slug") slug: string,

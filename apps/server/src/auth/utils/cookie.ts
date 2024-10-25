@@ -6,7 +6,9 @@ export const getCookieOptions = (grantType: "access" | "refresh"): CookieOptions
     return {
       httpOnly: true,
       sameSite: "none",
-      secure: (process.env.PUBLIC_URL ?? "").includes("https://"),
+      secure:
+        (process.env.PUBLIC_URL ?? "").includes("https://") ||
+        process.env.PUBLIC_URL?.startsWith("http://localhost"),
       expires: new Date(Date.now() + 1000 * 60 * 15), // 15 minutes from now
     };
   }
@@ -15,7 +17,9 @@ export const getCookieOptions = (grantType: "access" | "refresh"): CookieOptions
   return {
     httpOnly: true,
     sameSite: "none",
-    secure: (process.env.PUBLIC_URL ?? "").includes("https://"),
+    secure:
+      (process.env.PUBLIC_URL ?? "").includes("https://") ||
+      process.env.PUBLIC_URL?.startsWith("http://localhost"),
     expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 2), // 2 days from now
   };
 };
