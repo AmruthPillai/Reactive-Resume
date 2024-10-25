@@ -19,7 +19,7 @@ export const findResumeWithAdminKey = async (data: {
   slug: string;
   key: string;
 }) => {
-  const response = await axios.get<ResumeDto>(`admin/resume/${data.username}/${data.slug}`, {
+  const response = await axios.get<ResumeDto>(`/admin/resume/${data.username}/${data.slug}`, {
     headers: {
       "X-Admin-Key": data.key,
     },
