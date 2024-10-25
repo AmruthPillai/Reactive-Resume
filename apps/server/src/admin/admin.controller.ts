@@ -16,6 +16,7 @@ import { RolesGuard } from "../auth/guards/roles.guard";
 import { AdminService } from "./admin.service";
 import { PaginationQueryDto, paginationQueryResumeDto } from "./dtos/pagination.dto";
 import { Response } from "express";
+import { ResumeService } from "../resume/resume.service";
 
 @ApiTags("Admin")
 @Controller("admin")
@@ -39,6 +40,11 @@ export class AdminController {
      * inject admin service
      */
     private readonly adminService: AdminService,
+
+    /**
+     * inject resumes service
+     */
+    private readonly resumeService: ResumeService,
   ) {}
 
   /**
@@ -98,5 +104,16 @@ export class AdminController {
   })
   async findOneResume(@Param("identify") identify: string) {
     return this.adminService.findOneResume(identify);
+  }
+
+  @ApiOperation({
+    summary: "API clone from findOneByUsernameSlug(username, slug)  ",
+  })
+  @Get("/resumes/:userName/:slug")
+  async adminfindOneByUsernameSlug(
+    @Param("username") username: string,
+    @Param("slug") slug: string,
+  ) {
+    return this.resumeService.findOneByUsernameSlug(username, slug);
   }
 }
