@@ -17,6 +17,7 @@ export const PremiumDialog = () => {
   const { isOpen, mode, payload, close } = useDialog<null>("premium");
   const navigate = useNavigate();
 
+  
   return (
     <AlertDialog open={isOpen} onOpenChange={close}>
       <AlertDialogContent>
