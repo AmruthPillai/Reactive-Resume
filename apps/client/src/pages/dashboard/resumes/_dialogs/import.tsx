@@ -36,7 +36,7 @@ import {
   SelectValue,
 } from "@reactive-resume/ui";
 import { AnimatePresence } from "framer-motion";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import pdfToText from "react-pdftotext";
 import { z, ZodError } from "zod";
@@ -69,16 +69,21 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>;
 
+type PdfResume = {
+  text: string;
+  title: string;
+};
+
 type ValidationResult =
   | {
-    isValid: false;
-    errors: string;
-  }
+      isValid: false;
+      errors: string;
+    }
   | {
-    isValid: true;
-    type: ImportType;
-    result: ResumeData | ReactiveResumeV3 | LinkedIn | JsonResume;
-  };
+      isValid: true;
+      type: ImportType;
+      result: ResumeData | ReactiveResumeV3 | LinkedIn | JsonResume | PdfResume;
+    };
 
 export const ImportDialog = () => {
   const [convertLoading, setConvertLoading] = useState(false);
@@ -86,6 +91,8 @@ export const ImportDialog = () => {
   const { isOpen, close } = useDialog("import");
   const { importResume, loading } = useImportResume();
   const { importPdfResume, loading: loadingPdf } = useImportPdfResume();
+  const textRef = useRef<string | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   const [validationResult, setValidationResult] = useState<ValidationResult | null>(null);
 
@@ -148,6 +155,21 @@ export const ImportDialog = () => {
 
         setValidationResult({ isValid: true, type, result });
       }
+
+      if (type === ImportType["pdf-resume-file"]) {
+        setConvertLoading(true);
+        const text = await extractText(file);
+        setValidationResult({
+          isValid: true,
+          type,
+          result: {
+            text,
+            title: file.name.split(".pdf")[0],
+          },
+        });
+        textRef.current = text;
+        setConvertLoading(false);
+      }
     } catch (error) {
       if (error instanceof ZodError) {
         setValidationResult({
@@ -196,8 +218,23 @@ export const ImportDialog = () => {
 
         await importResume({ data });
       }
+
+      if (type === ImportType["pdf-resume-file"]) {
+        await importPdfResume({
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          data: textRef.current!,
+          title: (validationResult.result as PdfResume).title,
+        });
+      }
       close();
     } catch (error: unknown) {
+      if (filetype === ImportType["pdf-resume-file"]) {
+        setValidationResult({
+          isValid: false,
+          errors: (error as Error).message,
+        });
+        return;
+      }
       toast({
         variant: "error",
         title: t`Oops, the server returned an error.`,
@@ -210,34 +247,6 @@ export const ImportDialog = () => {
     form.reset();
     setValidationResult(null);
   };
-
-  const onImportPdf = async () => {
-    try {
-      const { file } = formSchema.parse(form.getValues());
-      // console.log(file.name.split(".pdf")[0]);
-      // return;
-      setConvertLoading(true);
-      const text = await extractText(file);
-      setConvertLoading(false);
-      await importPdfResume({
-        data: text,
-        title: file.name.split(".pdf")[0],
-      });
-      close();
-    } catch (error) {
-      if (error instanceof Error) {
-        setValidationResult({
-          isValid: false,
-          errors: error.message,
-        });
-
-        toast({
-          variant: "error",
-          title: t`An error occurred while validating the file.`,
-        });
-      }
-    }
-  }
 
   return (
     <Dialog open={isOpen} onOpenChange={close}>
@@ -300,6 +309,9 @@ export const ImportDialog = () => {
                     <Input
                       key={`${accept}-${filetype}`}
                       type="file"
+                      disabled={
+                        validationResult?.isValid && filetype === ImportType["pdf-resume-file"]
+                      }
                       accept={accept}
                       onChange={(event) => {
                         if (!event.target.files?.length) return;
@@ -326,64 +338,65 @@ export const ImportDialog = () => {
                 <Label className="text-error">{t`Errors`}</Label>
                 <ScrollArea orientation="vertical" className="h-[180px]">
                   <div className="whitespace-pre-wrap rounded bg-secondary-accent p-4 font-mono text-xs leading-relaxed">
-                    {form.getValues().type === ImportType["pdf-resume-file"] ? validationResult.errors : JSON.stringify(JSON.parse(validationResult.errors), null, 4)}
+                    {form.getValues().type === ImportType["pdf-resume-file"]
+                      ? validationResult.errors
+                      : JSON.stringify(JSON.parse(validationResult.errors), null, 4)}
                   </div>
                 </ScrollArea>
               </div>
             )}
 
+            {validationResult?.isValid && filetype === ImportType["pdf-resume-file"] && (
+              <div className="mt-2 flex flex-col space-y-2">
+                <Label className="text-primary">{t`Modify`}</Label>
+                <textarea
+                  rows={5}
+                  className="text-black"
+                  defaultValue={(validationResult.result as PdfResume).text}
+                  disabled={loading || loadingPdf || convertLoading}
+                  onChange={(e) => (textRef.current = e.target.value)}
+                />
+              </div>
+            )}
+
             <DialogFooter>
               <AnimatePresence presenceAffectsLayout>
-                {filetype === ImportType["pdf-resume-file"] ? (
+                {!validationResult && (
+                  <Button
+                    type="button"
+                    disabled={loading || loadingPdf || convertLoading}
+                    onClick={onValidate}
+                  >
+                    {filetype === ImportType["pdf-resume-file"] ? t`Modify` : t`Validate`}
+                  </Button>
+                )}
+
+                {validationResult !== null && !validationResult.isValid && (
+                  <Button type="button" variant="secondary" onClick={onReset}>
+                    {t`Discard`}
+                  </Button>
+                )}
+
+                {validationResult !== null && validationResult.isValid && (
                   <>
-                    {validationResult === null && (
-                      <>
-                        {(loadingPdf || convertLoading) ? (
-                          <Button type="button" disabled>
-                            {t`Loading...`}
-                          </Button>
-                        ) : (
-                          <Button type="button" disabled={!form.getValues().file} onClick={onImportPdf}>
-                            {t`Import`}
-                          </Button>
-                        )}
-                      </>
-                    )}
+                    <Button
+                      type="button"
+                      disabled={loading || loadingPdf || convertLoading}
+                      onClick={onImport}
+                    >
+                      {loading || loadingPdf || convertLoading ? t`Loading...` : t`Import`}
+                    </Button>
 
-                    {validationResult !== null && !validationResult.isValid && (
-                      <Button type="button" variant="secondary" onClick={onReset}>
-                        {t`Discard`}
+                    {filetype !== ImportType["pdf-resume-file"] && (
+                      <Button disabled type="button" variant="success">
+                        <Check size={16} weight="bold" className="mr-2" />
+                        {t`Validated`}
                       </Button>
-                    )}
-                  </>
-                ) : (
-                  <>
-                    {!validationResult && (
-                      <Button type="button" onClick={onValidate}>
-                        {t`Validate`}
-                      </Button>
-                    )}
-
-                    {validationResult !== null && !validationResult.isValid && (
-                      <Button type="button" variant="secondary" onClick={onReset}>
-                        {t`Discard`}
-                      </Button>
-                    )}
-
-                    {validationResult !== null && validationResult.isValid && (
-                      <>
-                        <Button type="button" disabled={loading} onClick={onImport}>
-                          {t`Import`}
-                        </Button>
-
-                        <Button disabled type="button" variant="success">
-                          <Check size={16} weight="bold" className="mr-2" />
-                          {t`Validated`}
-                        </Button>
-                      </>
                     )}
                   </>
                 )}
+                {/* </>
+                )} */}
               </AnimatePresence>
             </DialogFooter>
           </form>
