@@ -85,7 +85,7 @@ msgid "A4"
 msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:313
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:325
 msgid "Accepts only {accept} files"
 msgstr "Accepterer kun {accept} filer"
 
@@ -124,8 +124,7 @@ msgstr "AI"
 msgid "Already have an account?"
 msgstr "Har du allerede en bruger?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:160
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:236
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:182
 msgid "An error occurred while validating the file."
 msgstr "Der opstod en fejl under validering af filen."
 
@@ -414,8 +413,7 @@ msgstr "Deaktivér"
 msgid "Disable 2FA"
 msgstr "Deaktivér 2FA"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:355
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:369
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:376
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:236
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
@@ -515,7 +513,7 @@ msgstr "Indtast engangsadgangskoden fra din authenticator app nedenfor."
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "Indtast din e-mailadresse, og vi sender dig et link til at nulstille din adgangskode, hvis kontoen eksisterer."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:326
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:338
 msgid "Errors"
 msgstr "Fejl"
 
@@ -536,11 +534,11 @@ msgstr "Udforsk de tilgængelige skabeloner i Talent Hub og se de CV'er der er l
 msgid "Export"
 msgstr "Eksportér"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:298
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:307
 msgid "File"
 msgstr "Fil"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:264
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:273
 msgid "Filetype"
 msgstr "Filtype"
 
@@ -700,12 +698,11 @@ msgstr "Hvis du deaktiverer to-faktor godkendelse, skal du ikke længere indtast
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "Hvis du er flersproget, vil vi meget gerne have din hjælp til at bringe appen til flere sprog og samfund. Bare rolig, hvis du ikke kan se dit sprog på listen - bare giv mig besked på GitHub, så sørger jeg for at få det med. Er du klar til at komme i gang? Hop ind i oversættelse arbejdet hos Crowdin ved at klikke på linket nedenfor."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:347
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:376
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:387
 msgid "Import"
 msgstr "Importér"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:251
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:260
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -839,7 +836,7 @@ msgstr "LinkedIn, JSON CV osv."
 msgid "List"
 msgstr "Liste"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:343
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:387
 msgid "Loading..."
 msgstr ""
 
@@ -903,6 +900,11 @@ msgstr "Margen"
 #: apps/client/src/pages/home/sections/features/index.tsx:48
 msgid "MIT License"
 msgstr "MIT-licens"
+
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:351
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:370
+msgid "Modify"
+msgstr ""
 
 #: apps/client/src/pages/auth/register/page.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:58
@@ -968,7 +970,7 @@ msgstr "Engangskodeord"
 
 #: apps/client/src/components/ai-actions.tsx:56
 #: apps/client/src/libs/axios.ts:29
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:203
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:240
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "Ups, serveren returnerede en fejl."
@@ -1058,7 +1060,7 @@ msgstr "Billede"
 msgid "Please note that this step is completely optional."
 msgstr "Bemærk, at dette trin er helt valgfrit."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:268
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:277
 msgid "Please select a file type"
 msgstr "Vælg en filtype"
 
@@ -1577,7 +1579,7 @@ msgstr "Opdater et eksisterende element"
 msgid "Update an existing resume"
 msgstr "Opdater et eksisterende CV"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:264
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Talent Hub for easier editing."
 msgstr "Upload en fil fra en af de accepterede kilder for at analysere eksisterende data og importere dem til Talent Hub for lettere redigering."
 
@@ -1608,11 +1610,11 @@ msgstr "Brugernavn"
 msgid "Users Signed Up"
 msgstr "Tilmeldte brugere"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:363
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:370
 msgid "Validate"
 msgstr "Valider"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:381
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:393
 msgid "Validated"
 msgstr "Valideret"
 

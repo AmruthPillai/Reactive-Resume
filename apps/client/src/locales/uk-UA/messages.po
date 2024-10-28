@@ -85,7 +85,7 @@ msgid "A4"
 msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:313
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:325
 msgid "Accepts only {accept} files"
 msgstr "Приймаються тільки файли {accept}"
 
@@ -124,8 +124,7 @@ msgstr "ШІ"
 msgid "Already have an account?"
 msgstr "Вже маєте обліковий запис?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:160
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:236
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:182
 msgid "An error occurred while validating the file."
 msgstr "Сталася помилка під час перевірки файлу."
 
@@ -414,8 +413,7 @@ msgstr "Вимкнути"
 msgid "Disable 2FA"
 msgstr "Вимкнути 2FA"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:355
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:369
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:376
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:236
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
@@ -515,7 +513,7 @@ msgstr "Введіть одноразовий пароль, що надаєть�
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "Введіть адресу електронної пошти, і ми надішлемо вам посилання для відновлення пароля, якщо такий обліковий запис існує."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:326
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:338
 msgid "Errors"
 msgstr "Помилки"
 
@@ -536,11 +534,11 @@ msgstr "Досліджуйте доступні шаблони в Talent Hub т�
 msgid "Export"
 msgstr "Експорт"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:298
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:307
 msgid "File"
 msgstr "Файл"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:264
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:273
 msgid "Filetype"
 msgstr "Тип файлу"
 
@@ -700,12 +698,11 @@ msgstr "Якщо вимкнути двофакторну аутентифіка�
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "Якщо ви багатомовні, ми будемо раді вашій допомозі залучити більше мов та спільнот. Не хвилюйтеся, якщо ви не бачите своєї мови в списку - просто дай мені вигук на GitHub, і я обов'язково включу його. Готові почати? Перейдіть до перекладу приблизно в Crowdin, натиснувши на посилання нижче."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:347
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:376
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:387
 msgid "Import"
 msgstr "Імпорт"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:251
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:260
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -839,7 +836,7 @@ msgstr "LinedIn, JSON відновлення і т.д."
 msgid "List"
 msgstr "Список"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:343
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:387
 msgid "Loading..."
 msgstr ""
 
@@ -903,6 +900,11 @@ msgstr "Відступ"
 #: apps/client/src/pages/home/sections/features/index.tsx:48
 msgid "MIT License"
 msgstr "Ліцензія MIT"
+
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:351
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:370
+msgid "Modify"
+msgstr ""
 
 #: apps/client/src/pages/auth/register/page.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:58
@@ -968,7 +970,7 @@ msgstr "Одноразовий пароль"
 
 #: apps/client/src/components/ai-actions.tsx:56
 #: apps/client/src/libs/axios.ts:29
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:203
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:240
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "Ой, сервер повернув помилку."
@@ -1058,7 +1060,7 @@ msgstr "Зображення"
 msgid "Please note that this step is completely optional."
 msgstr "Зверніть увагу на те, що цей крок є повністю необов'язковим."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:268
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:277
 msgid "Please select a file type"
 msgstr "Будь ласка, оберіть тип файлу"
 
@@ -1577,7 +1579,7 @@ msgstr "Оновити існуючий елемент"
 msgid "Update an existing resume"
 msgstr "Оновити існуючий резюме"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:264
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Talent Hub for easier editing."
 msgstr "Вивантажити файл з одного з прийнятих джерел до аналізу наявних даних і імпортувати його до Реактивного відродження для полегшення."
 
@@ -1608,11 +1610,11 @@ msgstr "Ім'я користувача"
 msgid "Users Signed Up"
 msgstr "Авторизація користувачів"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:363
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:370
 msgid "Validate"
 msgstr "Validate"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:381
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:393
 msgid "Validated"
 msgstr "Перевірено"
 

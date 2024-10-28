@@ -85,7 +85,7 @@ msgid "A4"
 msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:313
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:325
 msgid "Accepts only {accept} files"
 msgstr "Csak a következő fájlokat fogadja el: {accept}"
 
@@ -124,8 +124,7 @@ msgstr "AI"
 msgid "Already have an account?"
 msgstr "Van már fiókod?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:160
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:236
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:182
 msgid "An error occurred while validating the file."
 msgstr "Hiba történt a fájl ellenőrzése közben."
 
@@ -414,8 +413,7 @@ msgstr "Letiltás"
 msgid "Disable 2FA"
 msgstr "2FA Kikapcsolása"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:355
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:369
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:376
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:236
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
@@ -515,7 +513,7 @@ msgstr "Írja be az alábbiakban a hitelesítési alkalmazás által megadott eg
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "Adja meg e-mail címét, és küldünk egy linket a jelszó visszaállításához, ha a fiók létezik."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:326
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:338
 msgid "Errors"
 msgstr "Hibák"
 
@@ -536,11 +534,11 @@ msgstr "Fedezze fel a Reaktív önéletrajzban elérhető sablonokat, és tekint
 msgid "Export"
 msgstr "Exportálás"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:298
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:307
 msgid "File"
 msgstr "Fájl"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:264
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:273
 msgid "Filetype"
 msgstr "Fájltípus"
 
@@ -700,12 +698,11 @@ msgstr "Ha kikapcsolja a kétfaktoros hitelesítést, a bejelentkezéskor nem ke
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "Ha többnyelvű vagy, örülnénk, ha segítenél abban, hogy az alkalmazást még több nyelvre és közösségbe eljuttassuk. Ne aggódj, ha nem látod a nyelvedet a listán - csak szólj nekem a GitHubon, és gondoskodom róla, hogy felvegyük. Készen állsz az indulásra? Ugorj bele a fordításba a Crowdinon az alábbi linkre kattintva."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:347
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:376
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:387
 msgid "Import"
 msgstr "Importálás"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:251
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:260
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -839,7 +836,7 @@ msgstr "LinkedIn, JSON önéletrajz stb."
 msgid "List"
 msgstr "Lista"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:343
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:387
 msgid "Loading..."
 msgstr ""
 
@@ -903,6 +900,11 @@ msgstr "Margó"
 #: apps/client/src/pages/home/sections/features/index.tsx:48
 msgid "MIT License"
 msgstr "MIT Licenc"
+
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:351
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:370
+msgid "Modify"
+msgstr ""
 
 #: apps/client/src/pages/auth/register/page.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:58
@@ -968,7 +970,7 @@ msgstr "Egyszer használható jelszó"
 
 #: apps/client/src/components/ai-actions.tsx:56
 #: apps/client/src/libs/axios.ts:29
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:203
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:240
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "Hoppá, a szerver hibát jelzett."
@@ -1058,7 +1060,7 @@ msgstr "Fénykép"
 msgid "Please note that this step is completely optional."
 msgstr "Kérjük, vegye figyelembe, hogy ez a lépés teljesen opcionális."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:268
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:277
 msgid "Please select a file type"
 msgstr "Válasszon egy fájltípust"
 
@@ -1577,7 +1579,7 @@ msgstr "Meglévő elem frissítése"
 msgid "Update an existing resume"
 msgstr "Meglévő önéletrajz frissítése"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:264
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Talent Hub for easier editing."
 msgstr "Töltsön fel egy fájlt az egyik elfogadott forrásból a meglévő adatok elemzésére és importálására a Talent Hub alkalmazásba a könnyebb szerkesztés érdekében."
 
@@ -1608,11 +1610,11 @@ msgstr "Felhasználónév"
 msgid "Users Signed Up"
 msgstr "Regisztrált felhasználók"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:363
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:370
 msgid "Validate"
 msgstr "Érvényesítse a  címet."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:381
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:393
 msgid "Validated"
 msgstr "Érvényesített"
 
