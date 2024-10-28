@@ -1,15 +1,16 @@
 import { Inject, Injectable, NotFoundException } from "@nestjs/common";
-import { UserPartialInformation } from "@reactive-resume/dto";
-import { PrismaService } from "nestjs-prisma";
-import { PaginationInterface } from "../common/interfaces/pagination.interface";
-import { Prisma, Resume } from "@prisma/client";
-import { PaginationQueryDto, paginationQueryResumeDto } from "./dtos/pagination.dto";
-import { UserCountResumes, UserWithCount } from "./interfaces/user.interface";
-import xlsx from "node-xlsx";
-import { ResumeResponseInterface, ResumeRawDataInterface } from "./interfaces/resume.interface";
 import { REQUEST } from "@nestjs/core";
-import { Request } from "express";
+import { Prisma, Resume } from "@prisma/client";
+import { UserPartialInformation } from "@reactive-resume/dto";
 import { kebabCase } from "@reactive-resume/utils";
+import { Request } from "express";
+import { PrismaService } from "nestjs-prisma";
+import xlsx from "node-xlsx";
+
+import { PaginationInterface } from "../common/interfaces/pagination.interface";
+import { PaginationQueryDto, paginationQueryResumeDto } from "./dtos/pagination.dto";
+import { ResumeRawDataInterface, ResumeResponseInterface } from "./interfaces/resume.interface";
+import { UserCountResumes, UserWithCount } from "./interfaces/user.interface";
 
 @Injectable()
 export class AdminService {
@@ -73,6 +74,7 @@ export class AdminService {
           take: pageSize,
           skip: (page - 1) * pageSize,
           select: {
+            id: true,
             name: true,
             email: true,
             _count: {
@@ -98,6 +100,7 @@ export class AdminService {
         },
       };
     } catch (error) {
+      console.log("Failed to get users", error);
       throw error;
     }
   }
@@ -251,6 +254,7 @@ export class AdminService {
 
       return where;
     } catch (error) {
+      console.log("Failed to get resume condition", error);
       throw error;
     }
   }
@@ -287,14 +291,14 @@ export class AdminService {
         this.prisma.resume.count({
           where: where,
         }),
-      ]).catch((err) => {
-        throw err;
+      ]).catch((error: Prisma.PrismaClientKnownRequestError) => {
+        throw error;
       });
 
       const data: ResumeResponseInterface[] = [];
 
       // base URL
-      const protocol = this.req.headers["x-forwarded-proto"] || this.req.protocol;
+      const protocol = this.req.headers["x-forwarded-proto"] ?? this.req.protocol;
       const url: string = protocol + "://" + this.req.headers.host;
       const newUrl: URL = new URL(this.req.url, url);
       const baseUrl: string = `${newUrl.origin}${newUrl.pathname}`;
@@ -323,6 +327,7 @@ export class AdminService {
         },
       };
     } catch (error) {
+      console.log("Failed to get list resumes", error);
       throw error;
     }
   }
@@ -345,6 +350,7 @@ export class AdminService {
         },
       });
     } catch (error) {
+      console.log("Failed to find resume", error);
       throw error;
     }
   }

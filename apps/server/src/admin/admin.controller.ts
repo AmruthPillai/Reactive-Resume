@@ -9,14 +9,15 @@ import {
   ValidationPipe,
 } from "@nestjs/common";
 import { ApiCookieAuth, ApiOperation, ApiTags } from "@nestjs/swagger";
-import { Roles } from "../auth/enums/roles.enum";
+import { Response } from "express";
+
 import { Role } from "../auth/decorators/roles.decorator";
-import { TwoFactorGuard } from "../auth/guards/two-factor.guard";
+import { Roles } from "../auth/enums/roles.enum";
 import { RolesGuard } from "../auth/guards/roles.guard";
+import { TwoFactorGuard } from "../auth/guards/two-factor.guard";
+import { ResumeService } from "../resume/resume.service";
 import { AdminService } from "./admin.service";
 import { PaginationQueryDto, paginationQueryResumeDto } from "./dtos/pagination.dto";
-import { Response } from "express";
-import { ResumeService } from "../resume/resume.service";
 
 @ApiTags("Admin")
 @Controller("admin")
