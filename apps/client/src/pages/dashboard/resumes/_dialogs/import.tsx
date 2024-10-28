@@ -92,7 +92,7 @@ export const ImportDialog = () => {
   const { importResume, loading } = useImportResume();
   const { importPdfResume, loading: loadingPdf } = useImportPdfResume();
   const textRef = useRef<string | null>(null);
-  const inputRef = useRef<HTMLInputElement | null>(null);
+  const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
   const [validationResult, setValidationResult] = useState<ValidationResult | null>(null);
 
@@ -112,6 +112,12 @@ export const ImportDialog = () => {
     form.reset({ file: undefined, type: filetype });
     setValidationResult(null);
   }, [filetype]);
+
+  useEffect(() => {
+    if (validationResult?.isValid) {
+      inputRef.current?.focus();
+    }
+  }, [validationResult]);
 
   const accept = useMemo(() => {
     if (filetype.includes("json")) return ".json";
@@ -249,7 +255,8 @@ export const ImportDialog = () => {
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={close}>
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    <Dialog open={loadingPdf ? true : isOpen} onOpenChange={loadingPdf ? () => {} : close}>
       <DialogContent>
         <Form {...form}>
           <form className="space-y-4">
@@ -350,6 +357,7 @@ export const ImportDialog = () => {
               <div className="mt-2 flex flex-col space-y-2">
                 <Label className="text-primary">{t`Modify`}</Label>
                 <textarea
+                  ref={inputRef}
                   rows={5}
                   className="text-black"
                   defaultValue={(validationResult.result as PdfResume).text}
