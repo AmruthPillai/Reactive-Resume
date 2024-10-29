@@ -77,7 +77,7 @@ export const AccountSettings = () => {
       email: data.email,
       picture: data.picture,
       username: data.username,
-      phone: data.phone,
+      phone: data.phone ?? null,
     });
 
     form.reset(data);
@@ -213,7 +213,7 @@ export const AccountSettings = () => {
               <FormItem>
                 <FormLabel>{t`Phone`}</FormLabel>
                 <FormControl>
-                  <Input {...field} />
+                  <Input {...field} value={field.value ?? undefined} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

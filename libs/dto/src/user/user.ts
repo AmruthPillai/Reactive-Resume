@@ -18,7 +18,8 @@ export const phoneSchema = z
   .min(10)
   .max(12)
   .regex(/^\d+$/, { message: "Phone number must contain only digits." })
-  .optional();
+  .optional()
+  .or(z.null());
 
 export const userSchema = z.object({
   id: idSchema,

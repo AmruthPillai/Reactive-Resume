@@ -43,8 +43,6 @@ export const LoginPage = () => {
   const onSubmit = async (data: FormValues) => {
     try {
       await login(data);
-
-      window.location.reload();
     } catch {
       form.reset();
     }
