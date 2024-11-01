@@ -1,6 +1,17 @@
 import { t, Trans } from "@lingui/macro";
 import { Check } from "@phosphor-icons/react";
-import { Badge, Button, ScrollArea, Separator } from "@reactive-resume/ui";
+import {
+  Badge,
+  Button,
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+  ScrollArea,
+  Separator,
+} from "@reactive-resume/ui";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 
@@ -60,10 +71,15 @@ const Billing = () => {
 
   const perks = subscription.isPro ? proPlanPerks : freePlanPerks;
 
-  function handleUpgradeSubscription() {
+  function handleUpgradeSubscription(isLTD: boolean) {
     if (user == null) return;
-    const url = `https://pay.sumit.co.il/7avl6x/8olfvx?externalidentifier=${user.id}&customerexternalidentifier=${user.id}`;
-    window.location.href = url;
+    if (isLTD) {
+      const url = `https://pay.sumit.co.il/7avl6x/97q2xl/97q2xm/payment?externalidentifier=${user.id}&customerexternalidentifier=${user.id}`;
+      window.location.href = url;
+    } else {
+      const url = `https://pay.sumit.co.il/7avl6x/97q2xp/97q2xq/payment?externalidentifier=${user.id}&customerexternalidentifier=${user.id}`;
+      window.location.href = url;
+    }
   }
 
   function handleCancelSubscription() {
@@ -78,12 +94,10 @@ const Billing = () => {
   }
 
   const shouldShowCancelSubscription = subscription.isPro && !subscription.isCancelled;
-  const shouldShowUpgradeSubscription = !subscription.isPro;
-  const shouldShowResumeSubscription = subscription.isPro && subscription.isCancelled;
 
   return (
     <div>
-      <h3 className="flex items-center text-2xl font-bold leading-relaxed tracking-tight">
+      <h3 className="flex items-center text-lg font-semibold leading-relaxed tracking-tight">
         {t`Current Plan`}:
         <Badge variant="primary" className="ms-2">
           {subscription.isPro ? t`Pro` : t`Free`}
@@ -99,31 +113,16 @@ const Billing = () => {
 
         <Separator className="my-4" />
 
-        <h3 className="text-xl font-bold">{t`Manage Subscription`}</h3>
-        {shouldShowResumeSubscription && <CanceledCard nextBillingDate={"LALALA"} />}
+        <Component handleUpgradeSubscription={handleUpgradeSubscription} perks={proPlanPerks} />
+
         {shouldShowCancelSubscription && (
-          <ProCard onCancelSubscription={handleCancelSubscription} />
-        )}
-        {shouldShowUpgradeSubscription && (
-          <FreeCard onUpgradeSubscription={handleUpgradeSubscription} />
+          <>
+            <Separator className="my-4" />
+            <h3 className="text-xl font-bold">{t`Manage Subscription`}</h3>
+            <ProCard onCancelSubscription={handleCancelSubscription} />
+          </>
         )}
       </section>
-    </div>
-  );
-};
-
-const FreeCard = ({ onUpgradeSubscription }: { onUpgradeSubscription: () => void }) => {
-  return (
-    <div>
-      <p className="mb-4 leading-relaxed opacity-75">
-        <Trans>
-          You are currently in the <strong>Free plan</strong> You can upgrade to the Pro plan to
-          unlock more features
-        </Trans>
-      </p>
-      <div>
-        <Button onClick={onUpgradeSubscription}>{t`Upgrade to Pro`}</Button>
-      </div>
     </div>
   );
 };
@@ -145,13 +144,70 @@ const ProCard = ({ onCancelSubscription }: { onCancelSubscription: () => void })
   );
 };
 
-const CanceledCard = ({ nextBillingDate }: { nextBillingDate: string }) => {
+function Component({
+  handleUpgradeSubscription,
+  perks,
+}: {
+  handleUpgradeSubscription: (isLTD: boolean) => void;
+  perks: string[];
+}) {
   return (
-    <div>
-      <p className="mb-4 leading-relaxed opacity-75">
-        {t`Your subscription has been canceled, you can use premium features until the end of the billing cycle at`}{" "}
-        {nextBillingDate}
-      </p>
+    <div className="">
+      <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
+        <Card className="flex flex-col">
+          <CardHeader>
+            <CardTitle className="text-2xl">{t`Lifetime Deal`}</CardTitle>
+            <CardDescription>{t`Pay once, use forever`}</CardDescription>
+          </CardHeader>
+          <CardContent className="grow">
+            <p className="mb-4 text-4xl font-bold">$299</p>
+            {perks.map((perk, index) => (
+              <div key={index} className="flex items-center gap-2">
+                <Check size={12} className="text-green-500" />
+                <p>{perk}</p>
+              </div>
+            ))}
+          </CardContent>
+          <CardFooter>
+            <Button
+              className="w-full"
+              onClick={() => {
+                handleUpgradeSubscription(true);
+              }}
+            >
+              {t`Upgrade`}
+            </Button>
+          </CardFooter>
+        </Card>
+
+        <Card className="flex flex-col">
+          <CardHeader>
+            <CardTitle className="text-2xl">{t`Monthly Subscription`}</CardTitle>
+            <CardDescription>{t`Flexible month-to-month plan`}</CardDescription>
+          </CardHeader>
+          <CardContent className="grow">
+            <p className="mb-4 text-4xl font-bold">
+              $29<span className="text-xl font-normal">/{t`month`}</span>
+            </p>
+            {perks.map((perk, index) => (
+              <div key={index} className="flex items-center gap-2">
+                <Check size={12} className="text-green-500" />
+                <p>{perk}</p>
+              </div>
+            ))}
+          </CardContent>
+          <CardFooter>
+            <Button
+              className="w-full"
+              onClick={() => {
+                handleUpgradeSubscription(false);
+              }}
+            >
+              {t`Upgrade`}
+            </Button>
+          </CardFooter>
+        </Card>
+      </div>
     </div>
   );
-};
+}
