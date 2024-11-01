@@ -111,9 +111,12 @@ const Billing = () => {
           </div>
         ))}
 
-        <Separator className="my-4" />
-
-        <Component handleUpgradeSubscription={handleUpgradeSubscription} perks={proPlanPerks} />
+        {!shouldShowCancelSubscription && (
+          <>
+            <Separator className="my-4" />
+            <Component handleUpgradeSubscription={handleUpgradeSubscription} perks={proPlanPerks} />
+          </>
+        )}
 
         {shouldShowCancelSubscription && (
           <>
