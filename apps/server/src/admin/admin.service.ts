@@ -300,8 +300,8 @@ export class AdminService {
       // base URL
       const protocol = this.req.headers["x-forwarded-proto"] ?? this.req.protocol;
       const url: string = protocol + "://" + this.req.headers.host;
-      const newUrl: URL = new URL(this.req.url, url);
-      const baseUrl: string = `${newUrl.origin}${newUrl.pathname}`;
+      //   const newUrl: URL = new URL(this.req.url, url);
+      //   const baseUrl: string = `${newUrl.origin}${newUrl.pathname}`;
 
       // convert data to ResumeResponseInterface
       rawData.forEach((item: ResumeRawDataInterface) => {
@@ -310,10 +310,11 @@ export class AdminService {
           cvTitle: item.title,
           nameCandidate: dataResume?.basics?.name ?? "",
           openToWork: dataResume?.workStatus?.openToWork ?? false,
+          ownerId: item.user.id,
           ownerName: item.user.name,
           ownerEmail: item.user.email,
-          linkCv: `${baseUrl}/${item.slug}`,
-          linkListCvOwner: `${baseUrl}?userIdentify=${item.user.id}`,
+          ownerPhone: dataResume?.basics?.phone ?? "N/A",
+          linkCv: `${url}/admin/${item.slug}`,
         } as ResumeResponseInterface);
       });
 
