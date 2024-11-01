@@ -314,7 +314,7 @@ export class AdminService {
           ownerName: item.user.name,
           ownerEmail: item.user.email,
           ownerPhone: dataResume?.basics?.phone ?? "N/A",
-          linkCv: `${url}/admin/${item.slug}`,
+          linkCv: `${url}/admin/${item.user.username}/${item.slug}`,
         } as ResumeResponseInterface);
       });
 
