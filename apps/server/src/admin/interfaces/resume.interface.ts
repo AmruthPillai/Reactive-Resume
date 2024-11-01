@@ -5,10 +5,11 @@ export interface ResumeResponseInterface {
   cvTitle: string;
   nameCandidate: string;
   openToWork: boolean;
+  ownerId: string;
   ownerName: string;
   ownerEmail: string;
+  ownerPhone: string;
   linkCv: string;
-  linkListCvOwner: string;
 }
 
 export interface ResumeRawDataInterface {
