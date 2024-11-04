@@ -77,6 +77,7 @@ export class AdminService {
             id: true,
             name: true,
             email: true,
+            phone: true,
             _count: {
               select: {
                 resumes: true,
@@ -115,7 +116,9 @@ export class AdminService {
     try {
       data = await this.prisma.user.findMany({
         select: {
+          id: true,
           name: true,
+          phone: true,
           email: true,
           _count: {
             select: {
@@ -125,6 +128,7 @@ export class AdminService {
         },
       });
     } catch (error) {
+      console.log("Failed to donwload users", error);
       throw error;
     }
 
