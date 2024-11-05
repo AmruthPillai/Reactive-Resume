@@ -359,4 +359,21 @@ export class AdminService {
       throw error;
     }
   }
+
+  async findOneByUsernameSlug(username: string, slug: string, userId?: string) {
+    const resume = await this.prisma.resume.findFirstOrThrow({
+      where: { user: { username }, slug, visibility: "public" },
+    });
+
+    // Update statistics: increment the number of views by 1
+    if (!userId) {
+      await this.prisma.statistics.upsert({
+        where: { resumeId: resume.id },
+        create: { views: 1, downloads: 0, resumeId: resume.id },
+        update: { views: { increment: 1 } },
+      });
+    }
+
+    return resume;
+  }
 }
