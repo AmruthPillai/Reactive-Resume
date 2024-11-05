@@ -15,7 +15,7 @@ import { Role } from "../auth/decorators/roles.decorator";
 import { Roles } from "../auth/enums/roles.enum";
 import { RolesGuard } from "../auth/guards/roles.guard";
 import { TwoFactorGuard } from "../auth/guards/two-factor.guard";
-import { ResumeService } from "../resume/resume.service";
+// import { ResumeService } from "../resume/resume.service";
 import { AdminService } from "./admin.service";
 import { PaginationQueryDto, paginationQueryResumeDto } from "./dtos/pagination.dto";
 
@@ -45,7 +45,7 @@ export class AdminController {
     /**
      * inject resumes service
      */
-    private readonly resumeService: ResumeService,
+    // private readonly resumeService: ResumeService,
   ) {}
 
   /**
@@ -115,6 +115,6 @@ export class AdminController {
     @Param("username") username: string,
     @Param("slug") slug: string,
   ) {
-    return this.resumeService.findOneByUsernameSlug(username, slug);
+    return this.adminService.findOneByUsernameSlug(username, slug);
   }
 }
