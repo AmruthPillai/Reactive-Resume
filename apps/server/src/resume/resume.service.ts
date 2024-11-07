@@ -1,20 +1,16 @@
 import {
   BadRequestException,
-  HttpException,
-  HttpStatus,
   Injectable,
   InternalServerErrorException,
   Logger,
 } from "@nestjs/common";
 import { Prisma } from "@prisma/client";
-import { InputJsonValue } from "@prisma/client/runtime/library";
 import { CreateResumeDto, ImportResumeDto, ResumeDto, UpdateResumeDto } from "@reactive-resume/dto";
 import {
   defaultMetadata,
   defaultResumeData,
   defaultWorkStatus,
   ResumeData,
-  resumeDataSchema,
 } from "@reactive-resume/schema";
 import type { DeepPartial } from "@reactive-resume/utils";
 import { ErrorMessage, generateRandomName, kebabCase } from "@reactive-resume/utils";
@@ -26,7 +22,6 @@ import { PrinterService } from "@/server/printer/printer.service";
 
 import { GenaiService } from "../genai/genai.service";
 import { StorageService } from "../storage/storage.service";
-import { toInnerHtml } from "./utils/to-html-inner";
 import { transformZodJson } from "./utils/transform-zod-json";
 
 @Injectable()
@@ -60,15 +55,14 @@ export class ResumeService {
   }
 
   import(userId: string, importResumeDto: ImportResumeDto) {
-    const randomTitle = generateRandomName();
-
+    const title = generateRandomName();
     return this.prisma.resume.create({
       data: {
         userId,
         visibility: "private",
         data: importResumeDto.data,
-        title: importResumeDto.title ?? randomTitle,
-        slug: importResumeDto.slug ?? kebabCase(randomTitle),
+        title: importResumeDto.title ?? title,
+        slug: importResumeDto.slug ?? kebabCase(title),
       },
     });
   }
@@ -179,6 +173,7 @@ export class ResumeService {
     const json = await this.genaiService.convertResumeToJson(str);
     const repaired = jsonrepair(json);
     const data1 = JSON.parse(repaired);
+    return data1;
     const transformData = transformZodJson({
       ...data1,
       workStatus: defaultWorkStatus,
@@ -187,32 +182,33 @@ export class ResumeService {
     return transformData;
   }
 
-  async upload(str: string, title: string, userId: string) {
+  async upload(str: string, title: string, userId = "") {
     const data = await this.handleUpload(str);
-    let schemaData = data;
-    const result1 = resumeDataSchema.safeParse(data);
-    if (result1.error?.errors)
-      schemaData = {
-        ...(schemaData as ResumeData),
-        sections: {
-          ...(schemaData as ResumeData).sections,
-          custom: {},
-        },
-      };
-    const result2 = resumeDataSchema.safeParse(schemaData);
-    if (result2.error?.errors)
-      throw new HttpException(
-        `The input data is invalid. Please try again.: \n${JSON.stringify(result2.error.errors)}`,
-        HttpStatus.BAD_REQUEST,
-      );
-    return this.prisma.resume.create({
-      data: {
-        userId,
-        visibility: "private",
-        data: toInnerHtml(schemaData as ResumeData) as InputJsonValue,
-        title: title,
-        slug: kebabCase(title),
-      },
-    });
+    return data;
+    // let schemaData = data;
+    // const result1 = resumeDataSchema.safeParse(data);
+    // if (result1.error?.errors)
+    //   schemaData = {
+    //     ...(schemaData as ResumeData),
+    //     sections: {
+    //       ...(schemaData as ResumeData).sections,
+    //       custom: {},
+    //     },
+    //   };
+    // const result2 = resumeDataSchema.safeParse(schemaData);
+    // if (result2.error?.errors)
+    //   throw new HttpException(
+    //     `The input data is invalid. Please try again.: \n${JSON.stringify(result2.error.errors)}`,
+    //     HttpStatus.BAD_REQUEST,
+    //   );
+    // return this.prisma.resume.create({
+    //   data: {
+    //     userId,
+    //     visibility: "private",
+    //     data: toInnerHtml(schemaData as ResumeData) as InputJsonValue,
+    //     title: title,
+    //     slug: kebabCase(title),
+    //   },
+    // });
   }
 }

@@ -23,3 +23,11 @@ export const defaultCertification: Certification = {
   summary: "",
   url: defaultUrl,
 };
+
+export const defaultCertificationMapping: Omit<Certification, "visible" | "id"> = {
+  name: "?",
+  issuer: "",
+  date: "",
+  summary: "",
+  url: defaultUrl,
+};

@@ -27,3 +27,13 @@ export const defaultCustomSection: CustomSection = {
   keywords: [],
   url: defaultUrl,
 };
+
+export const defaultCustomMapping: Omit<CustomSection, "visible" | "id"> = {
+  name: "",
+  description: "",
+  date: "",
+  location: "",
+  summary: "",
+  keywords: [],
+  url: defaultUrl,
+};

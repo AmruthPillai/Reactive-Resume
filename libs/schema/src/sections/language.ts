@@ -19,3 +19,9 @@ export const defaultLanguage: Language = {
   description: "",
   level: 1,
 };
+
+export const defaultLanguageMapping: Omit<Language, "visible" | "id"> = {
+  name: "?",
+  description: "",
+  level: 1,
+};

@@ -25,3 +25,12 @@ export const defaultExperience: Experience = {
   summary: "",
   url: defaultUrl,
 };
+
+export const defaultExperienceMapping: Omit<Experience, "visible" | "id"> = {
+  company: "?",
+  position: "",
+  location: "",
+  date: "",
+  summary: "",
+  url: defaultUrl,
+};

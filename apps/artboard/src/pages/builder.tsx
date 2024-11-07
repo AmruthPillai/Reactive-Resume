@@ -16,7 +16,7 @@ export const BuilderLayout = () => {
 
   const Template = useMemo(() => getTemplate(template), [template]);
 
-  console.log(layout)
+  console.warn(template, Template)
 
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {

@@ -28,3 +28,13 @@ export const defaultEducation: Education = {
   summary: "",
   url: defaultUrl,
 };
+
+export const defaultEducationMapping: Omit<Education, "visible" | "id"> = {
+  institution: "?",
+  studyType: "",
+  area: "",
+  score: "",
+  date: "",
+  summary: "",
+  url: defaultUrl,
+};

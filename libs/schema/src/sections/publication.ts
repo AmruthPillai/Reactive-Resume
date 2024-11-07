@@ -23,3 +23,11 @@ export const defaultPublication: Publication = {
   summary: "",
   url: defaultUrl,
 };
+
+export const defaultPublicationMapping: Omit<Publication, "visible" | "id"> = {
+  name: "?",
+  publisher: "",
+  date: "",
+  summary: "",
+  url: defaultUrl,
+};
