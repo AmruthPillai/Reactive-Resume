@@ -25,3 +25,12 @@ export const defaultVolunteer: Volunteer = {
   summary: "",
   url: defaultUrl,
 };
+
+export const defaultVolunteerMapping: Omit<Volunteer, "visible" | "id"> = {
+  organization: "?",
+  position: "",
+  location: "",
+  date: "",
+  summary: "",
+  url: defaultUrl,
+};

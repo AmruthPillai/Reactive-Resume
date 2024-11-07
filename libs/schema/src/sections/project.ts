@@ -25,3 +25,12 @@ export const defaultProject: Project = {
   keywords: [],
   url: defaultUrl,
 };
+
+export const defaultProjectMapping: Omit<Project, "visible" | "id"> = {
+  name: "?",
+  description: "",
+  date: "",
+  summary: "",
+  keywords: [],
+  url: defaultUrl,
+};

@@ -23,3 +23,11 @@ export const defaultAward: Award = {
   summary: "",
   url: defaultUrl,
 };
+
+export const defaultAwardMapping: Omit<Award, "visible" | "id"> = {
+  title: "?",
+  awarder: "",
+  date: "",
+  summary: "",
+  url: defaultUrl,
+};

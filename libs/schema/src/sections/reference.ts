@@ -21,3 +21,10 @@ export const defaultReference: Reference = {
   summary: "",
   url: defaultUrl,
 };
+
+export const defaultReferenceMapping: Omit<Reference, "visible" | "id"> = {
+  name: "?",
+  description: "",
+  summary: "",
+  url: defaultUrl,
+};

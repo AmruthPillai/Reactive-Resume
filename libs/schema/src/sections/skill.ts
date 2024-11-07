@@ -21,3 +21,10 @@ export const defaultSkill: Skill = {
   level: 1,
   keywords: [],
 };
+
+export const defaultSkillMapping: Omit<Skill, "visible" | "id"> = {
+  name: "",
+  description: "",
+  level: 1,
+  keywords: [],
+};

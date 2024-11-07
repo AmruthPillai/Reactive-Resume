@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 import { defaultUrl, urlSchema } from "../shared";
-import { customFieldSchema } from "./custom";
+import { customFieldSchema, defaultCustomBasic } from "./custom";
 
 // Schema
 export const basicsSchema = z.object({
@@ -48,6 +48,16 @@ export const defaultBasics: Basics = {
       grayscale: false,
     },
   },
+};
+
+export const defaultBasicMapping = {
+  name: "",
+  headline: "",
+  email: "",
+  phone: "",
+  location: "",
+  url: defaultUrl,
+  customFields: defaultCustomBasic,
 };
 
 export * from "./custom";

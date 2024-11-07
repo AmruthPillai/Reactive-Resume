@@ -20,9 +20,8 @@ import {
   ResumeDto,
   UpdateResumeDto,
 } from "@reactive-resume/dto";
-import { resumeDataSchema } from "@reactive-resume/schema";
+import { defaultBasicMapping, defaultSectionsMapping } from "@reactive-resume/schema";
 import { ErrorMessage } from "@reactive-resume/utils";
-import { zodToJsonSchema } from "zod-to-json-schema";
 
 import { User } from "@/server/user/decorators/user.decorator";
 
@@ -31,8 +30,6 @@ import { TwoFactorGuard } from "../auth/guards/two-factor.guard";
 import { Resume } from "./decorators/resume.decorator";
 import { ResumeGuard } from "./guards/resume.guard";
 import { ResumeService } from "./resume.service";
-import { AnyObject } from "./types";
-import { transformZodJson } from "./utils/transform-zod-json";
 
 @ApiTags("Resume")
 @Controller("resume")
@@ -41,7 +38,17 @@ export class ResumeController {
 
   @Get("schema")
   getSchema() {
-    return zodToJsonSchema(resumeDataSchema);
+    const schema = {
+      basics: defaultBasicMapping,
+      sections: defaultSectionsMapping,
+    };
+    // return schema;
+    return {
+      basics: defaultBasicMapping,
+      sections: defaultSectionsMapping,
+    };
+    // return defaultResumeData;
+    // return zodToJsonSchema(resumeDataSchema);
   }
 
   @Post()
@@ -61,9 +68,10 @@ export class ResumeController {
 
   @Post("import")
   @UseGuards(TwoFactorGuard)
-  async import(@User() user: UserEntity, @Body() importResumeDto: unknown) {
+  async import(@User() user: UserEntity, @Body() data: unknown) {
     try {
-      const result = importResumeSchema.parse(importResumeDto);
+      console.log(data);
+      const result = importResumeSchema.parse(data);
       return await this.resumeService.import(user.id, result);
     } catch (error) {
       if (error instanceof PrismaClientKnownRequestError && error.code === "P2002") {
@@ -152,9 +160,8 @@ export class ResumeController {
   }
 
   @Post("upload")
-  @UseGuards(TwoFactorGuard)
-  async upload(@Body() data: AnyObject, @User() user: UserEntity) {
-    return this.resumeService.upload(data.data.data, data.data.title, user.id);
-    // return this.resumeService.upload(data.data, "cm163hj0q000210dr7ul5bjrn");
+  // @UseGuards(TwoFactorGuard)
+  async upload(@Body() { data }: { data: string }) {
+    return this.resumeService.upload(data);
   }
 }

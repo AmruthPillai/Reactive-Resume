@@ -2,19 +2,19 @@ import { FilterKeys } from "@reactive-resume/utils";
 import { z } from "zod";
 
 import { idSchema } from "../shared";
-import { awardSchema } from "./award";
-import { certificationSchema } from "./certification";
-import { customSectionSchema } from "./custom-section";
-import { educationSchema } from "./education";
-import { experienceSchema } from "./experience";
-import { interestSchema } from "./interest";
-import { languageSchema } from "./language";
-import { profileSchema } from "./profile";
-import { projectSchema } from "./project";
-import { publicationSchema } from "./publication";
-import { referenceSchema } from "./reference";
-import { skillSchema } from "./skill";
-import { volunteerSchema } from "./volunteer";
+import { awardSchema, defaultAward, defaultAwardMapping } from "./award";
+import { certificationSchema, defaultCertification, defaultCertificationMapping } from "./certification";
+import { customSectionSchema, defaultCustomMapping } from "./custom-section";
+import { defaultEducation, defaultEducationMapping, educationSchema } from "./education";
+import { defaultExperience, defaultExperienceMapping, experienceSchema } from "./experience";
+import { defaultInterest, defaultInterestMapping, interestSchema } from "./interest";
+import { defaultLanguage, defaultLanguageMapping, languageSchema } from "./language";
+import { defaultProfile, defaultProfileMapping, profileSchema } from "./profile";
+import { defaultProject, defaultProjectMapping, projectSchema } from "./project";
+import { defaultPublication, defaultPublicationMapping, publicationSchema } from "./publication";
+import { defaultReference, defaultReferenceMapping, referenceSchema } from "./reference";
+import { defaultSkill, defaultSkillMapping, skillSchema } from "./skill";
+import { defaultVolunteer, defaultVolunteerMapping, volunteerSchema } from "./volunteer";
 
 // Schema
 export const sectionSchema = z.object({
@@ -118,6 +118,23 @@ export const defaultSections: Sections = {
   references: { ...defaultSection, id: "references", name: "References", items: [] },
   skills: { ...defaultSection, id: "skills", name: "Skills", items: [] },
   custom: {},
+};
+
+export const defaultSectionsMapping = {
+  summary: { name: "Summary", content: "" },
+  awards: { name: "Awards", items: defaultAward },
+  certifications: { name: "Certifications", items: defaultCertification },
+  education: { name: "Education", items: defaultEducation },
+  experience: { name: "Experience", items: defaultExperience },
+  volunteer: { name: "Volunteering", items: defaultVolunteer },
+  interests: { name: "Interests", items: defaultInterest },
+  languages: { name: "Languages", items: defaultLanguage },
+  profiles: { name: "Profiles", items: defaultProfile },
+  projects: { name: "Projects", items: defaultProject },
+  publications: { name: "Publications", items: defaultPublication },
+  references: { name: "References", items: defaultReference },
+  skills: { name: "Skills", items: defaultSkill },
+  custom: defaultCustomMapping,
 };
 
 export * from "./award";

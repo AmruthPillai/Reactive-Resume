@@ -36,7 +36,7 @@ export class ReactiveResumeParser implements Parser<Json, ResumeData> {
   }
 
   validate(data: Json) {
-    console.log(data)
+    // console.log(data)
     return this.schema.parse(data) as ResumeData;
   }
 

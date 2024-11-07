@@ -17,3 +17,8 @@ export const defaultInterest: Interest = {
   name: "?",
   keywords: [],
 };
+
+export const defaultInterestMapping: Omit<Interest, "visible" | "id"> = {
+  name: "?",
+  keywords: [],
+};

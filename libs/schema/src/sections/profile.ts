@@ -25,3 +25,10 @@ export const defaultProfile: Profile = {
   icon: "",
   url: defaultUrl,
 };
+
+export const defaultProfileMapping: Omit<Profile, "visible" | "id"> = {
+  network: "?",
+  username: "?",
+  icon: "",
+  url: defaultUrl,
+};
