@@ -19,7 +19,6 @@ export type Education = z.infer<typeof educationSchema>;
 // Defaults
 export const defaultEducation: Education = {
   ...defaultItem,
-  id: "",
   institution: "?",
   studyType: "",
   area: "",
