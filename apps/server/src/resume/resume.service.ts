@@ -174,41 +174,10 @@ export class ResumeService {
     const repaired = jsonrepair(json);
     const data1 = JSON.parse(repaired);
     return data1;
-    const transformData = transformZodJson({
-      ...data1,
-      workStatus: defaultWorkStatus,
-      metadata: defaultMetadata,
-    });
-    return transformData;
   }
 
-  async upload(str: string, title: string, userId = "") {
+  async upload(str: string) {
     const data = await this.handleUpload(str);
     return data;
-    // let schemaData = data;
-    // const result1 = resumeDataSchema.safeParse(data);
-    // if (result1.error?.errors)
-    //   schemaData = {
-    //     ...(schemaData as ResumeData),
-    //     sections: {
-    //       ...(schemaData as ResumeData).sections,
-    //       custom: {},
-    //     },
-    //   };
-    // const result2 = resumeDataSchema.safeParse(schemaData);
-    // if (result2.error?.errors)
-    //   throw new HttpException(
-    //     `The input data is invalid. Please try again.: \n${JSON.stringify(result2.error.errors)}`,
-    //     HttpStatus.BAD_REQUEST,
-    //   );
-    // return this.prisma.resume.create({
-    //   data: {
-    //     userId,
-    //     visibility: "private",
-    //     data: toInnerHtml(schemaData as ResumeData) as InputJsonValue,
-    //     title: title,
-    //     slug: kebabCase(title),
-    //   },
-    // });
   }
 }
