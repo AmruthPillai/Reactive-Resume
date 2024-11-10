@@ -19,6 +19,7 @@ export * from "./input";
 export * from "./label";
 export * from "./popover";
 export * from "./portal";
+export * from "./progress";
 export * from "./resizable-panel";
 export * from "./rich-input";
 export * from "./scroll-area";

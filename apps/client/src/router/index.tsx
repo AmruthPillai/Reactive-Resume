@@ -14,6 +14,7 @@ import { BillingPage } from "../pages/dashboard/billing/page";
 import { DashboardLayout } from "../pages/dashboard/layout";
 import { ResumesPage } from "../pages/dashboard/resumes/page";
 import { SettingsPage } from "../pages/dashboard/settings/page";
+import { LinkedinOnboardingPage } from "../pages/onboarding/linkedin/page";
 import { PaymentPage } from "../pages/payment/page";
 import { publicLoader, PublicResumePage } from "../pages/public/page";
 import { Providers } from "../providers";
@@ -25,6 +26,12 @@ export const routes = createRoutesFromElements(
   <Route element={<Providers />}>
     <Route>
       <Route index element={<Navigate replace to="/dashboard/resumes" />} />
+    </Route>
+
+    <Route path="onboarding">
+      <Route element={<GuestGuard />}>
+        <Route path="linkedin" element={<LinkedinOnboardingPage />} />
+      </Route>
     </Route>
 
     <Route path="auth">
