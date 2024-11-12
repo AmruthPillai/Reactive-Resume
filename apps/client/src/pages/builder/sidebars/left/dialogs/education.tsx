@@ -29,8 +29,10 @@ export const EducationDialog = () => {
   });
 
   return (
-    <SectionDialog<FormValues> id="education" form={form} defaultValues={defaultEducation}>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    <SectionDialog<FormValues> id="education" form={form} defaultValues={defaultEducation}
+    
+    >
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 "> 
         <FormField
           name="institution"
           control={form.control}
@@ -131,6 +133,7 @@ export const EducationDialog = () => {
         />
 
         <FormField
+        
           name="summary"
           control={form.control}
           render={({ field }) => (
@@ -143,6 +146,7 @@ export const EducationDialog = () => {
                   footer={(editor) => (
                     <AiActions value={editor.getText()} onChange={editor.commands.setContent} />
                   )}
+                  className="overflow-auto resize-none h-20 max-h-40"
                   onChange={(value) => {
                     field.onChange(value);
                   }}
