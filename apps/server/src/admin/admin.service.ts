@@ -76,6 +76,7 @@ export class AdminService {
           select: {
             id: true,
             name: true,
+            picture: true,
             email: true,
             phone: true,
             _count: {
