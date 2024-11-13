@@ -315,6 +315,7 @@ export class AdminService {
           nameCandidate: dataResume?.basics?.name ?? "",
           openToWork: dataResume?.workStatus?.openToWork ?? false,
           ownerId: item.user.id,
+          ownerAvatar: item.user.picture,
           ownerName: item.user.name,
           ownerEmail: item.user.email,
           ownerPhone: dataResume?.basics?.phone ?? "N/A",
