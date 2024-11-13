@@ -74,6 +74,22 @@ Start creating your standout resume with Reactive Resume today!
 - SMTP Server (to send password recovery emails)
 - GitHub/Google OAuth (for quickly authenticating users)
 - LinguiJS and Crowdin (for translation management and localization)
+  
+## Installation
+
+To install and run Reactive Resume locally:
+
+Clone the repository: 
+git clone https://github.com/AmruthPillai/Reactive-Resume.git
+
+Change into the directory: 
+cd Reactive-Resume
+
+Install dependencies: 
+npm install
+
+Run the application: 
+npm start
 
 ## Star History
 
@@ -85,9 +101,21 @@ Start creating your standout resume with Reactive Resume today!
   </picture>
 </a>
 
+## Contributing
+
+We welcome contributions! Please see the [Contributing Guidelines](/CONTRIBUTING.md) for details.
+
+## Changelog
+
+See the [CHANGELOG](/CHANGELOG.md) for details on recent updates and version history.
+
 ## License
 
 Reactive Resume is packaged and distributed using the [MIT License](/LICENSE.md) which allows for commercial use, distribution, modification and private use provided that all copies of the software contain the same license and copyright.
+
+## Acknowledgments
+
+Special thanks to the community and all contributors for their support and contributions.
 
 _By the community, for the community._  
 A passion project by [Amruth Pillai](https://www.amruthpillai.com/)
