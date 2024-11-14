@@ -2,6 +2,9 @@
 import { CheckCircle, Spinner } from "@phosphor-icons/react";
 import { Button, Input, Progress, Textarea } from "@reactive-resume/ui";
 import { SetStateAction, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import { createOnboardingLinkedin } from "@/client/services/onboarding";
 
 const steps = [
   {
@@ -30,6 +33,14 @@ export function LinkedinOnboardingPage() {
   const [currentStep, setCurrentStep] = useState(0);
   const [linkedinUrl, setLinkedinUrl] = useState("");
   const [jobDescription, setJobDescription] = useState("");
+  const [resultId, setResultId] = useState<string>();
+  const navigate = useNavigate();
+  const handleCreateOnboardingLinkedin = async () => {
+    const result = await createOnboardingLinkedin({ linkedinUrl, jobDescription });
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+    setResultId(result.id);
+    setCurrentStep(steps.length - 1);
+  };
 
   useEffect(() => {
     if (currentStep === 1) {
@@ -41,16 +52,14 @@ export function LinkedinOnboardingPage() {
       };
     }
     if (currentStep === 3) {
-      const timer = setTimeout(() => {
-        setCurrentStep(4);
-      }, 3000);
-      return () => {
-        clearTimeout(timer);
-      };
+      void handleCreateOnboardingLinkedin();
     }
   }, [currentStep]);
 
   const handleNext = () => {
+    if (currentStep === steps.length - 1) {
+      navigate(`/auth/login?onboardingLinkedinId=${resultId}`);
+    }
     if (currentStep < steps.length - 1) {
       setCurrentStep(currentStep + 1);
     }
@@ -125,17 +134,16 @@ export function LinkedinOnboardingPage() {
           </div>
 
           <div className="flex justify-between">
-            <Button
-              variant="outline"
-              disabled={currentStep === 0 || currentStep === 1 || currentStep === 3}
-              onClick={handlePrevious}
-            >
-              אחורה
-            </Button>
-            <Button
-              disabled={currentStep === 1 || currentStep === 3 || currentStep === steps.length - 1}
-              onClick={handleNext}
-            >
+            {currentStep <= 3 && (
+              <Button
+                variant="outline"
+                disabled={currentStep === 0 || currentStep === 1 || currentStep === 3}
+                onClick={handlePrevious}
+              >
+                אחורה
+              </Button>
+            )}
+            <Button disabled={currentStep === 1 || currentStep === 3} onClick={handleNext}>
               {currentStep === steps.length - 1 ? "התחברות" : "הבא"}
             </Button>
           </div>
