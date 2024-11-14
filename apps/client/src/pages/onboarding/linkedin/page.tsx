@@ -1,29 +1,28 @@
 /* eslint-disable lingui/no-unlocalized-strings */
-import { ArrowRight, CheckCircle, Spinner } from "@phosphor-icons/react";
-import { Button } from "@reactive-resume/ui";
-import { Input, Progress, Textarea } from "@reactive-resume/ui";
+import { CheckCircle, Spinner } from "@phosphor-icons/react";
+import { Button, Input, Progress, Textarea } from "@reactive-resume/ui";
 import { SetStateAction, useEffect, useState } from "react";
 
 const steps = [
   {
-    title: "Welcome",
-    description: "Let's create an amazing resume tailored just for you!",
+    title: "שלום 🎉",
+    description: "רוצה ליצור קורות חיים מושלמים ומותאמים לתחום שאתה עובד בו?",
   },
   {
-    title: "Analyzing",
-    description: "We're analyzing your LinkedIn profile...",
+    title: "מנתח 🧠",
+    description: "אנחנו מנתחים את הפרופיל שלך בלינקדאין...",
   },
   {
-    title: "Job Description",
-    description: "Let's tailor your resume to the job you want.",
+    title: "תיאור משרה 📝",
+    description: "מה תיאור המשרה שאתה רוצה להשיג?",
   },
   {
-    title: "Creating",
-    description: "Our AI is crafting your perfect resume...",
+    title: "יוצר 🔥",
+    description: "הבינה המלאכותית שלנו יוצרת את הקורות חיים המושלמים שלך...",
   },
   {
-    title: "Complete",
-    description: "Your resume is ready! Let's get you logged in.",
+    title: "סיום 🚀",
+    description: "הקורות חיים המושלמים שלך מוכנים להורדה. רק נותר להתחבר למערכת!",
   },
 ];
 
@@ -66,10 +65,16 @@ export function LinkedinOnboardingPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-purple-50 to-indigo-100 p-4">
+    <div
+      className="flex min-h-screen items-center justify-center bg-gradient-to-br from-purple-50 to-indigo-100 p-4"
+      dir="rtl"
+    >
       <div className="w-full max-w-md">
         <div className="space-y-6 rounded-2xl bg-white p-8 shadow-xl">
-          <Progress value={((currentStep + 1) / steps.length) * 100} className="w-full" />
+          <Progress
+            value={((currentStep + 1) / steps.length) * 100}
+            className="w-full rotate-180"
+          />
 
           <div key={currentStep} className="space-y-4">
             <h2 className="text-3xl font-bold text-gray-800">{steps[currentStep].title}</h2>
@@ -79,7 +84,7 @@ export function LinkedinOnboardingPage() {
               <div className="space-y-4">
                 <Input
                   type="text"
-                  placeholder="Enter your LinkedIn URL"
+                  placeholder="https://www.linkedin.com/in/your-profile"
                   value={linkedinUrl}
                   onChange={(e: { target: { value: SetStateAction<string> } }) => {
                     setLinkedinUrl(e.target.value);
@@ -97,7 +102,7 @@ export function LinkedinOnboardingPage() {
             {currentStep === 2 && (
               <div className="space-y-4">
                 <Textarea
-                  placeholder="Paste the job description here"
+                  placeholder="תדביק את תיאור המשרה שאתה רוצה להשיג כאן"
                   value={jobDescription}
                   rows={6}
                   onChange={(e: { target: { value: SetStateAction<string> } }) => {
@@ -116,13 +121,7 @@ export function LinkedinOnboardingPage() {
               </div>
             )}
 
-            {currentStep === 4 && (
-              <div className="space-y-4">
-                <p className="text-center text-gray-600">
-                  Your personalized resume is ready! Log in to view and download it.
-                </p>
-              </div>
-            )}
+            {currentStep === 4 && <div className="space-y-4"></div>}
           </div>
 
           <div className="flex justify-between">
@@ -131,14 +130,13 @@ export function LinkedinOnboardingPage() {
               disabled={currentStep === 0 || currentStep === 1 || currentStep === 3}
               onClick={handlePrevious}
             >
-              Previous
+              אחורה
             </Button>
             <Button
               disabled={currentStep === 1 || currentStep === 3 || currentStep === steps.length - 1}
               onClick={handleNext}
             >
-              {currentStep === steps.length - 1 ? "Login" : "Next"}
-              <ArrowRight className="ml-2 size-4" />
+              {currentStep === steps.length - 1 ? "התחברות" : "הבא"}
             </Button>
           </div>
         </div>
@@ -146,8 +144,10 @@ export function LinkedinOnboardingPage() {
         {currentStep === steps.length - 1 && (
           <div className="mt-8 text-center">
             <CheckCircle className="mx-auto size-12 text-green-500" />
-            <p className="mt-2 text-xl font-semibold text-gray-800">Your Resume is Ready!</p>
-            <p className="mt-1 text-gray-600">Log in to view and download your tailored resume.</p>
+            <p className="mt-2 text-xl font-semibold text-gray-800">הקורות חיים שלך מוכנים!</p>
+            <p className="mt-1 text-gray-600">
+              התחבר כדי לצפות ולהוריד את הקורות חיים המותאמים לך.
+            </p>
           </div>
         )}
       </div>
