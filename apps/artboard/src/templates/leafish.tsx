@@ -527,13 +527,13 @@ export const Leafish = ({ columns, isFirstPage = false }: TemplateProps) => {
       {isFirstPage && <Header />}
 
       <div className="p-custom grid grid-cols-2 items-start space-x-6">
-        <div className="grid gap-y-4">
+        <div className={cn("grid gap-y-4", sidebar.length === 0 && "col-span-2")}>
           {main.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}
         </div>
 
-        <div className="grid gap-y-4">
+        <div className={cn("grid gap-y-4", sidebar.length === 0 && "hidden")}>
           {sidebar.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}

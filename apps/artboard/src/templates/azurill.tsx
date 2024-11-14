@@ -574,7 +574,7 @@ export const Azurill = ({ columns, isFirstPage = false }: TemplateProps) => {
           ))}
         </div>
 
-        <div className="main group col-span-2 space-y-4">
+        <div className={cn("main group space-y-4", sidebar.length !== 0 ? "col-span-2" : "col-span-3")}>
           {main.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}
