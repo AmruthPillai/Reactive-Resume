@@ -3,8 +3,8 @@ import { z } from "nestjs-zod/z";
 
 export const subscriptionSchema = z.object({
   id: z.string(),
-  customerId: z.string().optional(),
-  paymentId: z.string().optional(),
+  customerId: z.string().optional().nullable(),
+  paymentId: z.string().optional().nullable(),
   isCanceled: z.boolean().default(false),
   isPro: z.boolean().default(false),
   customerPageUrl: z.string().optional().nullable(),
