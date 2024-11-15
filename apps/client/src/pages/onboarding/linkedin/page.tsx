@@ -66,7 +66,7 @@ export function LinkedinOnboardingPage() {
   };
 
   useEffect(() => {
-    void changeLanguage("he-IL");
+    window.localStorage.setItem("locale", "he-IL");
     if (currentStep === 1) {
       const timer = setTimeout(() => {
         setCurrentStep(2);
