@@ -20,6 +20,7 @@ import dayjs from "dayjs";
 import { AnimatePresence, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
+import { useResumePreview } from "@/client/services/resume/preview";
 import { useDialog } from "@/client/stores/dialog";
 
 import { BaseCard } from "./base-card";
@@ -29,6 +30,14 @@ type Props = {
 };
 
 export const ResumeCard = ({ resume }: Props) => {
+  const frameRef = useResumePreview({
+    ...resume.data,
+    metadata: {
+      ...resume.data.metadata,
+      layout: [resume.data.metadata.layout[0]],
+    },
+  });
+
   const navigate = useNavigate();
   const { open } = useDialog<ResumeDto[]>("resume");
   const { open: lockOpen } = useDialog<ResumeDto>("lock");
@@ -59,6 +68,19 @@ export const ResumeCard = ({ resume }: Props) => {
     <ContextMenu>
       <ContextMenuTrigger>
         <BaseCard className="space-y-0" onClick={onOpen}>
+          <AnimatePresence presenceAffectsLayout>
+            <iframe
+              ref={frameRef}
+              title={resume.title}
+              src="/artboard/preview"
+              scrolling="no"
+              style={{
+                height: "90%",
+                width: "90%",
+                zoom: 0.35,
+              }}
+            />
+          </AnimatePresence>
           <AnimatePresence>
             {resume.locked && (
               <motion.div
@@ -73,6 +95,7 @@ export const ResumeCard = ({ resume }: Props) => {
           </AnimatePresence>
 
           <div
+            style={{ height: "100%" }}
             className={cn(
               "absolute inset-x-0 bottom-0 z-10 flex flex-col justify-end space-y-0.5 p-4 pt-12",
               "bg-gradient-to-t from-background/80 to-transparent",
