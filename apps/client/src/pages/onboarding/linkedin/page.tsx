@@ -5,8 +5,6 @@ import { SetStateAction, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { createOnboardingLinkedin } from "@/client/services/onboarding";
-import { useLocalStorage } from "usehooks-ts";
-import { changeLanguage } from "@/client/providers/locale";
 
 const steps = [
   {
