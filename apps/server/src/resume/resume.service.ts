@@ -162,6 +162,7 @@ export class ResumeService {
       data: {
         data: data,
         userId,
+        lockedPremium: true,
         title: createAiResumeDto.title + " (AI)",
         visibility: createAiResumeDto.visibility,
         slug: createAiResumeDto.slug ?? kebabCase(createAiResumeDto.title),
@@ -200,6 +201,7 @@ export class ResumeService {
         userId,
         visibility: "private",
         data: importResumeDto.data,
+        lockedPremium: importResumeDto.lockedPremium,
         title: importResumeDto.title ?? randomTitle,
         slug: importResumeDto.slug ?? kebabCase(randomTitle),
       },
@@ -212,8 +214,7 @@ export class ResumeService {
     const linkedinRes = await this.httpService.axiosRef.get(linkedinScrapeURL);
 
     const resume = scrapinToResume(linkedinRes.data);
-    const currentDateTime = new Date().toISOString();
-    const randomTitle = "My LinkedIn Resume " + currentDateTime;
+    const randomTitle = `LinkedIn (${new Date().toLocaleDateString()})`;
 
     const data = deepmerge(defaultResumeData, {
       basics: resume.basics,

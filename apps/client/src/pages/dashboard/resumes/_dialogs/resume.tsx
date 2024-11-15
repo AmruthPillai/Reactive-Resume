@@ -126,9 +126,11 @@ export const ResumeDialog = () => {
     if (isDuplicate) {
       if (!payload.item?.[0].id) return;
 
+      console.log(payload.item[0].lockedPremium);
       await duplicateResume({
         title: values.title,
         slug: values.slug,
+        lockedPremium: payload.item[0].lockedPremium,
         data: payload.item[0].data,
       });
     }

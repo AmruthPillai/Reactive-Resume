@@ -7,6 +7,7 @@ export const importResumeSchema = z.object({
   title: z.string().optional(),
   slug: z.string().min(1).transform(kebabCase).optional(),
   visibility: z.enum(["public", "private"]).default("private").optional(),
+  lockedPremium: z.boolean().default(false).optional(),
   data: resumeDataSchema,
 });
 

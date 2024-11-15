@@ -21,6 +21,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 import { useResumePreview } from "@/client/services/resume/preview";
+import { useSubscription } from "@/client/services/user";
 import { useDialog } from "@/client/stores/dialog";
 
 import { BaseCard } from "./base-card";
@@ -41,11 +42,19 @@ export const ResumeCard = ({ resume }: Props) => {
   const navigate = useNavigate();
   const { open } = useDialog<ResumeDto[]>("resume");
   const { open: lockOpen } = useDialog<ResumeDto>("lock");
+  const subscription = useSubscription();
+  const { open: openPremium } = useDialog("premium");
+
+  const shouldShowPremiumLock = resume.lockedPremium && !subscription.isPro;
 
   const lastUpdated = dayjs().to(resume.updatedAt);
 
-  const onOpen = () => {
-    navigate(`/builder/${resume.id}`);
+  const onOpen = (isPremiumLocked: boolean) => {
+    if (isPremiumLocked) {
+      openPremium("update");
+    } else {
+      navigate(`/builder/${resume.id}`);
+    }
   };
 
   const onUpdate = () => {
@@ -67,7 +76,13 @@ export const ResumeCard = ({ resume }: Props) => {
   return (
     <ContextMenu>
       <ContextMenuTrigger>
-        <BaseCard className="space-y-0" onClick={onOpen}>
+        <BaseCard
+          className="space-y-0"
+          withShineBorder={shouldShowPremiumLock}
+          onClick={() => {
+            onOpen(shouldShowPremiumLock);
+          }}
+        >
           <AnimatePresence presenceAffectsLayout>
             <iframe
               ref={frameRef}
@@ -94,6 +109,19 @@ export const ResumeCard = ({ resume }: Props) => {
             )}
           </AnimatePresence>
 
+          <AnimatePresence>
+            {shouldShowPremiumLock && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="absolute inset-0 flex items-center justify-center bg-background/75 backdrop-blur-sm"
+              >
+                <Lock size={42} />
+              </motion.div>
+            )}
+          </AnimatePresence>
+
           <div
             style={{ height: "100%" }}
             className={cn(
@@ -108,7 +136,11 @@ export const ResumeCard = ({ resume }: Props) => {
       </ContextMenuTrigger>
 
       <ContextMenuContent>
-        <ContextMenuItem onClick={onOpen}>
+        <ContextMenuItem
+          onClick={() => {
+            onOpen(shouldShowPremiumLock);
+          }}
+        >
           <FolderOpen size={14} className="me-2" />
           {t`Open`}
         </ContextMenuItem>

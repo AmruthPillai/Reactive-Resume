@@ -3,8 +3,7 @@ import { CreditCard, FadersHorizontal, ReadCvLogo } from "@phosphor-icons/react"
 import { Button, KeyboardShortcut, Separator } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import useKeyboardShortcut from "use-keyboard-shortcut";
+import { Link, useLocation } from "react-router-dom";
 
 // import { Copyright } from "@/client/components/copyright";
 import { Icon } from "@/client/components/icon";
@@ -68,40 +67,21 @@ type SidebarProps = {
 
 export const Sidebar = ({ setOpen }: SidebarProps) => {
   const { user } = useUser();
-  const navigate = useNavigate();
-
-  useKeyboardShortcut(["shift", "r"], () => {
-    navigate("/dashboard/resumes");
-    setOpen?.(false);
-  });
-
-  useKeyboardShortcut(["shift", "s"], () => {
-    navigate("/dashboard/settings");
-    setOpen?.(false);
-  });
-
-  useKeyboardShortcut(["shift", "b"], () => {
-    navigate("/dashboard/billing");
-    setOpen?.(false);
-  });
 
   const sidebarItems: SidebarItem[] = [
     {
       path: "/dashboard/resumes",
       name: t`Resumes`,
-      shortcut: "⇧R",
       icon: <ReadCvLogo />,
     },
     {
       path: "/dashboard/billing",
       name: t`Billing`,
-      shortcut: "⇧B",
       icon: <CreditCard />,
     },
     {
       path: "/dashboard/settings",
       name: t`Settings`,
-      shortcut: "⇧S",
       icon: <FadersHorizontal />,
     },
   ];

@@ -39,10 +39,10 @@ model User {
 model Subscription {
   id String @id @default(cuid())
 
-  customerId      String?   @unique
+  customerId      String? @unique
   paymentId       String?
-  isCanceled      Boolean   @default(false)
-  isPro           Boolean   @default(false)
+  isCanceled      Boolean @default(false)
+  isPro           Boolean @default(false)
   customerPageUrl String?
   nextBillingDate String?
 
@@ -55,11 +55,11 @@ model Subscription {
 model OnboardingLinkedin {
   id String @id @default(cuid())
 
-  linkedinUrl    String 
+  linkedinUrl    String
   jobDescription String
 
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Secrets {
@@ -78,17 +78,18 @@ model Secrets {
 }
 
 model Resume {
-  id         String      @id @default(cuid())
-  title      String
-  slug       String
-  data       Json        @default("{}")
-  visibility Visibility  @default(private)
-  locked     Boolean     @default(false)
-  statistics Statistics?
-  userId     String
-  user       User        @relation(fields: [userId], references: [id], onDelete: Cascade)
-  createdAt  DateTime    @default(now())
-  updatedAt  DateTime    @updatedAt
+  id            String      @id @default(cuid())
+  title         String
+  slug          String
+  data          Json        @default("{}")
+  visibility    Visibility  @default(private)
+  locked        Boolean     @default(false)
+  lockedPremium Boolean     @default(false)
+  statistics    Statistics?
+  userId        String
+  user          User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
 
   @@unique([userId, id])
   @@unique([userId, slug])
