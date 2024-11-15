@@ -93,7 +93,7 @@ const Billing = () => {
     window.location.href = customerPageUrl;
   }
 
-  const shouldShowCancelSubscription = subscription.isPro && !subscription.isCancelled;
+  const shouldShowCancelSubscription = subscription.isPro;
 
   return (
     <div>
