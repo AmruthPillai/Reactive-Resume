@@ -5,6 +5,8 @@ import { SetStateAction, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { createOnboardingLinkedin } from "@/client/services/onboarding";
+import { useLocalStorage } from "usehooks-ts";
+import { changeLanguage } from "@/client/providers/locale";
 
 const steps = [
   {
@@ -29,12 +31,33 @@ const steps = [
   },
 ];
 
+export const isValidLinkedinUrl = (url: string): boolean => {
+  // Basic LinkedIn URL validation
+  const linkedinUrlPattern = /^https:\/\/(www\.)?linkedin\.com\/in\/[\w-]+\/?$/i;
+
+  try {
+    const urlObj = new URL(url);
+    return linkedinUrlPattern.test(urlObj.href);
+  } catch {
+    return false;
+  }
+};
+
+const isLinkedinUrlValid = (url: string) => {
+  return isValidLinkedinUrl(url);
+};
+
+const isJobDescriptionValid = (description: string) => {
+  return description.trim().length >= 10; // Require at least 10 characters
+};
+
 export function LinkedinOnboardingPage() {
   const [currentStep, setCurrentStep] = useState(0);
   const [linkedinUrl, setLinkedinUrl] = useState("");
   const [jobDescription, setJobDescription] = useState("");
   const [resultId, setResultId] = useState<string>();
   const navigate = useNavigate();
+
   const handleCreateOnboardingLinkedin = async () => {
     const result = await createOnboardingLinkedin({ linkedinUrl, jobDescription });
     await new Promise((resolve) => setTimeout(resolve, 3000));
@@ -43,6 +66,7 @@ export function LinkedinOnboardingPage() {
   };
 
   useEffect(() => {
+    void changeLanguage("he-IL");
     if (currentStep === 1) {
       const timer = setTimeout(() => {
         setCurrentStep(2);
@@ -58,8 +82,20 @@ export function LinkedinOnboardingPage() {
 
   const handleNext = () => {
     if (currentStep === steps.length - 1) {
-      navigate(`/auth/login?onboardingLinkedinId=${resultId}`);
+      localStorage.setItem("onboardingLinkedinId", resultId ?? "");
+      navigate(`/auth/login`);
+      return;
     }
+
+    // Add validation checks
+    if (currentStep === 0 && !isLinkedinUrlValid(linkedinUrl)) {
+      return; // Prevent proceeding if LinkedIn URL is invalid
+    }
+
+    if (currentStep === 2 && !isJobDescriptionValid(jobDescription)) {
+      return; // Prevent proceeding if job description is too short
+    }
+
     if (currentStep < steps.length - 1) {
       setCurrentStep(currentStep + 1);
     }
@@ -99,6 +135,9 @@ export function LinkedinOnboardingPage() {
                     setLinkedinUrl(e.target.value);
                   }}
                 />
+                {linkedinUrl && !isLinkedinUrlValid(linkedinUrl) && (
+                  <p className="text-sm text-red-500">נא להזין כתובת LinkedIn תקינה</p>
+                )}
               </div>
             )}
 
@@ -118,6 +157,9 @@ export function LinkedinOnboardingPage() {
                     setJobDescription(e.target.value);
                   }}
                 />
+                {jobDescription && !isJobDescriptionValid(jobDescription) && (
+                  <p className="text-sm text-red-500">נא להזין תיאור משרה של לפחות 10 תווים</p>
+                )}
               </div>
             )}
 
@@ -143,7 +185,15 @@ export function LinkedinOnboardingPage() {
                 אחורה
               </Button>
             )}
-            <Button disabled={currentStep === 1 || currentStep === 3} onClick={handleNext}>
+            <Button
+              disabled={
+                currentStep === 1 ||
+                currentStep === 3 ||
+                (currentStep === 0 && !isLinkedinUrlValid(linkedinUrl)) ||
+                (currentStep === 2 && !isJobDescriptionValid(jobDescription))
+              }
+              onClick={handleNext}
+            >
               {currentStep === steps.length - 1 ? "התחברות" : "הבא"}
             </Button>
           </div>
