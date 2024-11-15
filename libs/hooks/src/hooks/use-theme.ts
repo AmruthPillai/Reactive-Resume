@@ -49,9 +49,11 @@ export const useTheme = (): UseThemeOutput => {
   }
 
   return {
-    theme,
-    setTheme,
-    isDarkMode,
-    toggleTheme,
+    theme: "light",
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    setTheme: () => {},
+    isDarkMode: false,
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    toggleTheme: () => {},
   };
 };

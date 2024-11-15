@@ -8,6 +8,7 @@ export type DialogName =
   | "two-factor"
   | "ai"
   | "premium"
+  | "onboarding-ai"
   | SectionKey;
 
 export type DialogMode = "create" | "create-ai" | "update" | "duplicate" | "delete";

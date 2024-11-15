@@ -15,4 +15,11 @@ export class OnboardingService {
     });
     return onboardingLinkedin;
   }
+
+  async getOnboardingLinkedin(id: string) {
+    const onboardingLinkedin = await this.prisma.onboardingLinkedin.findUnique({
+      where: { id },
+    });
+    return onboardingLinkedin;
+  }
 }

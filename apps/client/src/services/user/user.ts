@@ -1,4 +1,4 @@
-import { UserDto } from "@reactive-resume/dto";
+import { OnboardingLinkedinDto, UserDto } from "@reactive-resume/dto";
 import { useQuery } from "@tanstack/react-query";
 import { AxiosResponse } from "axios";
 import { useEffect } from "react";
@@ -45,4 +45,11 @@ export const useSubscription = () => {
     isPro: isPro,
     subscription: subscription,
   };
+};
+
+export const fetchOnboardingLinkedin = async (onboardingLinkedinId: string) => {
+  const response = await axios.get<OnboardingLinkedinDto>(
+    `/onboarding/linkedin/${onboardingLinkedinId}`,
+  );
+  return response.data;
 };

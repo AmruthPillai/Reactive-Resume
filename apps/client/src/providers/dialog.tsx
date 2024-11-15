@@ -14,6 +14,7 @@ import { SkillsDialog } from "../pages/builder/sidebars/left/dialogs/skills";
 import { VolunteerDialog } from "../pages/builder/sidebars/left/dialogs/volunteer";
 import { ImportDialog } from "../pages/dashboard/resumes/_dialogs/import";
 import { LockDialog } from "../pages/dashboard/resumes/_dialogs/lock";
+import { OnboardingAiDialog } from "../pages/dashboard/resumes/_dialogs/onboarding-ai";
 import { ResumeDialog } from "../pages/dashboard/resumes/_dialogs/resume";
 import { TwoFactorDialog } from "../pages/dashboard/settings/_dialogs/two-factor";
 import { useResumeStore } from "../stores/resume";
@@ -35,6 +36,7 @@ export const DialogProvider = ({ children }: Props) => {
         <ImportDialog />
         <TwoFactorDialog />
         <PremiumDialog />
+        <OnboardingAiDialog />
 
         {isResumeLoaded && (
           <>
