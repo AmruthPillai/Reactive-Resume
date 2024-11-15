@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Navigate, Outlet, useLocation, useNavigate } from "react-router-dom";
 
-import { useUser } from "@/client/services/user";
+import {  useUser } from "@/client/services/user";
 
 export const AuthGuard = () => {
   const location = useLocation();
@@ -13,10 +13,15 @@ export const AuthGuard = () => {
 
   useEffect(() => {
     const redirectAfterLogin = localStorage.getItem("redirectAfterLogin");
-
+    const onboardingLinkedinId = localStorage.getItem("onboardingLinkedinId");
     if (redirectAfterLogin && !loading) {
       localStorage.removeItem("redirectAfterLogin");
       navigate(redirectAfterLogin);
+    }
+
+    if (user && !loading && onboardingLinkedinId) {
+      // update user with onboardingLinkedinId
+      //updateUser({ onboardingLinkedinId });
     }
   }, [loading]);
 

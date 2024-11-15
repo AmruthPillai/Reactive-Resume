@@ -44,7 +44,7 @@ model Subscription {
   isCanceled      Boolean   @default(false)
   isPro           Boolean   @default(false)
   customerPageUrl String?
-  nextBillingDate DateTime?
+  nextBillingDate String?
 
   userId String @unique
   User   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
