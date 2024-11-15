@@ -63,7 +63,7 @@ export const ProfileSettings = () => {
 
       <Form {...form}>
         <form className="grid gap-6 sm:grid-cols-2" onSubmit={form.handleSubmit(onSubmit)}>
-          <FormField
+         {/*  <FormField
             name="theme"
             control={form.control}
             render={({ field }) => (
@@ -84,7 +84,7 @@ export const ProfileSettings = () => {
                 </div>
               </FormItem>
             )}
-          />
+          /> */}
 
           <FormField
             name="locale"

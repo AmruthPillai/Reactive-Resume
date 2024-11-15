@@ -10,6 +10,7 @@ type Props = {
 export const ThemeSwitch = ({ size = 20 }: Props) => {
   const { theme, toggleTheme } = useTheme();
 
+  return <div></div>;
   return (
     <Button size="icon" variant="ghost" onClick={toggleTheme}>
       <div className="cursor-pointer overflow-hidden" style={{ width: size, height: size }}>
