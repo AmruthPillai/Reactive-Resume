@@ -66,7 +66,6 @@ export const OnboardingAiDialog = () => {
 
   useEffect(() => {
     const onboardingLinkedinId = localStorage.getItem("onboardingLinkedinId");
-    console.log(onboardingLinkedinId);
     if (onboardingLinkedinId) {
       void fetchOnboardingLinkedin(onboardingLinkedinId).then((data) => {
         form.reset({

@@ -78,7 +78,7 @@ export const ResumeCard = ({ resume }: Props) => {
       <ContextMenuTrigger>
         <BaseCard
           className="space-y-0"
-          withShineBorder={shouldShowPremiumLock}
+          withShineBorder={resume.lockedPremium}
           onClick={() => {
             onOpen(shouldShowPremiumLock);
           }}

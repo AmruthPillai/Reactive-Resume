@@ -65,14 +65,6 @@ export class ResumeService {
 
     const jobDescription = createAiResumeDto.jobDescription ?? "";
 
-    console.log("AI Resume Creation:", {
-      name,
-      email,
-      picture,
-      existingResume,
-      jobDescription,
-    });
-
     const newResumeData = existingResume.data;
     const existingSkills = existingResume.data.sections.skills;
     const existingSummary = existingResume.data.sections.summary;

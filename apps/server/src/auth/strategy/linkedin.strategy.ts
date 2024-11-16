@@ -34,7 +34,6 @@ export class LinkedinStrategy extends PassportStrategy(Strategy, "linkedin") {
     profile: any,
     done: (err?: string | Error | null, user?: Express.User, info?: unknown) => void,
   ) {
-    console.log("profile", profile);
     const { displayName, email, picture } = profile;
     let user: User | null = null;
 

@@ -163,7 +163,6 @@ export class AuthController {
     @User() user: UserWithSecrets,
     @Res({ passthrough: true }) response: Response,
   ) {
-    console.log("HAHAH", { state });
     return this.handleAuthenticationResponse(user, response, false, true);
   }
 

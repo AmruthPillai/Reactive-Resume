@@ -51,7 +51,6 @@ export class BillingController {
 
   @Post("/cancel")
   async cancel(@Body() body: BillingEntity) {
-    console.log(body);
     return await this.billingService.updateUserSubscriptionByCustomerId(
       String(body.Properties.Billing_Customer[0].ID),
       {
