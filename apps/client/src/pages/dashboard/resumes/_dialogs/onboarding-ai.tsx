@@ -98,7 +98,7 @@ export const OnboardingAiDialog = () => {
       existingResumeId: resume.id,
       jobDescription: values.jobDescription,
     });
-    
+
     localStorage.removeItem("onboardingLinkedinId");
 
     close();
