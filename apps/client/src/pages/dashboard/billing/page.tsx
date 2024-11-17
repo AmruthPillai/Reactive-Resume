@@ -56,20 +56,27 @@ const Billing = () => {
   if (user == null) return null;
 
   const freePlanPerks = [
-    t`Access to all resume templates`,
-    t`Export as PDF`,
-    t`Unlimited resumes`,
-    t`Basic support`,
+    t`Create stylish and impressive resumes for any job`,
+    t`Access to a wide variety of professional designs`,
+    t`Manual and simple resume editing`,
+    t`Option to download a high-quality PDF file`,
+    t`User-friendly interface with smart editing tools`,
   ];
 
-  const proPlanPerks = [
-    t`Access to all resume templates`,
-    t`Export as PDF`,
-    t`Unlimited resumes`,
-    t`Priority support`,
+  const monthlyPlanPerks = [
+    t`Create stylish and impressive resumes for any job`,
+    t`Access to a wide variety of professional designs`,
+    t`Manual and simple resume editing`,
+    t`Option to download a high-quality PDF file`,
+    t`User-friendly interface with smart editing tools`,
+    t`Create personalized resumes using AI`,
+    t`Precise tailoring for specific jobs based on job description analysis`,
+    t`Access to all advanced designs and features`,
+    t`Continuous updates and system upgrades`,
+    t`Fast technical support at every stage`,
   ];
 
-  const perks = subscription.isPro ? proPlanPerks : freePlanPerks;
+  const perks = subscription.isPro ? monthlyPlanPerks : freePlanPerks;
 
   function handleUpgradeSubscription(isLTD: boolean) {
     if (user == null) return;
@@ -114,7 +121,7 @@ const Billing = () => {
         {!shouldShowCancelSubscription && (
           <>
             <Separator className="my-4" />
-            <Component handleUpgradeSubscription={handleUpgradeSubscription} perks={proPlanPerks} />
+            <Component handleUpgradeSubscription={handleUpgradeSubscription} perks={monthlyPlanPerks} />
           </>
         )}
 
@@ -163,7 +170,7 @@ function Component({
             <CardDescription>{t`Pay once, use forever`}</CardDescription>
           </CardHeader>
           <CardContent className="grow">
-            <p className="mb-4 text-4xl font-bold">$299</p>
+            <p className="mb-4 text-4xl font-bold">₪399.9</p>
             {perks.map((perk, index) => (
               <div key={index} className="flex items-center gap-2">
                 <Check size={12} className="text-green-500" />
@@ -190,7 +197,7 @@ function Component({
           </CardHeader>
           <CardContent className="grow">
             <p className="mb-4 text-4xl font-bold">
-              $29<span className="text-xl font-normal">/{t`month`}</span>
+              ₪99.9<span className="text-xl font-normal">/{t`month`}</span>
             </p>
             {perks.map((perk, index) => (
               <div key={index} className="flex items-center gap-2">
