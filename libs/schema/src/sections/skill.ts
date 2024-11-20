@@ -6,7 +6,13 @@ import { defaultItem, itemSchema } from "../shared";
 export const skillSchema = itemSchema.extend({
   name: z.string(),
   description: z.string(),
-  level: z.number().min(0).max(5).default(1),
+  level: z
+    .union([z.number(), z.string()])
+    .transform((val) => (typeof val === "string" ? Number.parseFloat(val) : val))
+    .refine((val) => typeof val === "number" && val >= 0 && val <= 5, {
+      message: "Level must be a number between 0 and 5",
+    })
+    .default(1),
   keywords: z.array(z.string()).default([]),
 });
 
