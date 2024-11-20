@@ -15,6 +15,9 @@ export default defineConfig({
 
   define: {
     appVersion: JSON.stringify(process.env.npm_package_version),
+    VITE_NOCODB_TOKEN: JSON.stringify(process.env.VITE_NOCODB_TOKEN),
+    VITE_JOB_TABLE: JSON.stringify(process.env.VITE_JOB_TABLE),
+    VITE_JOB_VIEW_1: JSON.stringify(process.env.VITE_JOB_VIEW_1),
   },
 
   server: {
