@@ -159,6 +159,39 @@ export class ResumeController {
     }
   }
 
+  // @UseInterceptors(
+  //   FileInterceptor("file", {
+  //     storage: diskStorage({
+  //       destination: "./uploads",
+  //       filename: (req, file, callback) => {
+  //         console.log("daw");
+  //         // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+  //         const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+  //         const ext = path.extname(file.originalname);
+  //         const filename = `${file.fieldname}-${uniqueSuffix}${ext}`;
+  //         callback(null, filename);
+  //       },
+  //     }),
+  //     limits: { fileSize: 1000 * 1000 * 5 },
+  //     fileFilter: (req, file, cb) => {
+  //       if (file.mimetype === "application/pdf") {
+  //         cb(null, true);
+  //       } else {
+  //         cb(new BadRequestException("Invalid file type, only images are allowed!"), false);
+  //       }
+  //     },
+  //   }),
+  // )
+  // @Post("upload")
+  // // @UseGuards(TwoFactorGuard)
+  // upload(@UploadedFile() file: Express.Multer.File) {
+  //   console.log(file);
+  //   console.log(path.join(process.cwd(), "uploads", file.filename).split("/").join("/"));
+  //   const filePath = path.join(process.cwd(), "uploads", file.filename).split("/").join("/");
+  //   return this.resumeService.upload1(filePath);
+  //   // return this.resumeService.upload(data);
+  // }
+
   @Post("upload")
   // @UseGuards(TwoFactorGuard)
   async upload(@Body() { data }: { data: string }) {

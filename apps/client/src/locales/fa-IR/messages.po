@@ -85,7 +85,7 @@ msgid "A4"
 msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:325
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:881
 msgid "Accepts only {accept} files"
 msgstr "فقط فایل های {accept} را می پذیرد"
 
@@ -124,7 +124,9 @@ msgstr "AI"
 msgid "Already have an account?"
 msgstr "درحال حاضر حساب کاربری دارید"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:182
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:420
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:643
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:693
 msgid "An error occurred while validating the file."
 msgstr "هنگام بارگیری فایل خطایی رخ داد."
 
@@ -144,6 +146,14 @@ msgstr "از این پیوند همه می توانند رزومه را مشاه
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:83
 msgid "API Key"
 msgstr "کلید API"
+
+#: apps/client/src/pages/dashboard/jobs/_layouts/grid/_components/job-card.tsx:52
+msgid "Apply"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/jobs/_dialogs/job.tsx:48
+msgid "Apply Now"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:124
 msgid "Are you sure you want to delete this item?"
@@ -382,7 +392,7 @@ msgstr "تاریخ دقیق یا محدوده تاریخ"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:133
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:156
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:123
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:124
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:127
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:172
 msgid "Delete"
@@ -405,6 +415,10 @@ msgstr "توضیحات"
 msgid "Design single/multi page resumes"
 msgstr "طراحی رزومه تک / چند صفحه‌ای"
 
+#: apps/client/src/pages/dashboard/jobs/_layouts/grid/_components/job-card.tsx:48
+msgid "Detail"
+msgstr ""
+
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:139
 msgid "Disable"
 msgstr "غیرفعال"
@@ -413,7 +427,8 @@ msgstr "غیرفعال"
 msgid "Disable 2FA"
 msgstr "غیرفعالسازی ورود دو مرحله‌ای"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:376
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:556
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:934
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:236
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
@@ -455,7 +470,7 @@ msgstr "دانلود"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:169
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:107
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:108
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:95
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:156
 msgid "Duplicate"
@@ -513,7 +528,8 @@ msgstr "رمز عبور یکبار مصرف ارائه شده توسط برنا�
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "ایمیل خود را وارد کنید و ما یک لینک برای بازنشانی رمز عبور به شما ارسال خواهیم کرد اگر حساب وجود داشته باشد."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:338
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:479
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:894
 msgid "Errors"
 msgstr "خطاها"
 
@@ -534,11 +550,15 @@ msgstr "قالب‌های موجود در Talent Hub را بررسی کرده و
 msgid "Export"
 msgstr "خروجی گرفتن"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:307
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:516
+msgid "Field"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:863
 msgid "File"
 msgstr "فایل"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:273
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:830
 msgid "Filetype"
 msgstr "نوع فایل"
 
@@ -633,6 +653,7 @@ msgstr "گوگل"
 msgid "Grayscale"
 msgstr "سیاه‌وسفید"
 
+#: apps/client/src/pages/dashboard/jobs/page.tsx:43
 #: apps/client/src/pages/dashboard/resumes/page.tsx:43
 msgid "Grid"
 msgstr "جدول"
@@ -698,11 +719,12 @@ msgstr "اگر احراز هویت دو عاملی را غیرفعال کنید�
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "اگر چندزبانه هستید، ما خیلی خوشحال می‌شویم که به کمک شما، اپ را به بیشتر زبان‌ها و اجتماع‌ها برسانیم. نگران نباشید اگر زبان خود را در لیست نمی‌بینید - فقط به من در گیت‌هاب پیام دهید و من اطمینان حاصل خواهم کرد که آن را اضافه کنم. آیا آماده‌اید که شروع کنید؟ با کلیک بر روی لینک، وارد ترجمه در Crowdin شوید."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:387
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:563
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:947
 msgid "Import"
 msgstr "وارد کردن"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:260
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:818
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -764,8 +786,16 @@ msgstr "به نظر می رسد توکن تاییدیه که شما ارائه �
 msgid "It looks like your email address has already been verified."
 msgstr "به نظر می‌رسد آدرس ایمیل شما از قبلاً تأیید شده است."
 
+#: apps/client/src/pages/dashboard/jobs/_dialogs/job.tsx:38
+msgid "Job Description"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/work-status.tsx:64
 msgid "Job Type"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/_components/sidebar.tsx:97
+msgid "Jobs"
 msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:54
@@ -788,7 +818,7 @@ msgstr "عنوان"
 msgid "Language"
 msgstr "زبان"
 
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:91
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:92
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:139
 msgid "Last updated {lastUpdated}"
 msgstr "آخرین بروزرسانی {lastUpdated}"
@@ -832,11 +862,18 @@ msgstr "فاصله‌ی بین خطوط"
 msgid "LinkedIn, JSON Resume, etc."
 msgstr "لینکدین، JSON رزومه و غیره."
 
+#: apps/client/src/pages/dashboard/jobs/page.tsx:47
 #: apps/client/src/pages/dashboard/resumes/page.tsx:47
 msgid "List"
 msgstr "لیست"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:387
+#: apps/client/src/pages/dashboard/jobs/page.tsx:20
+#: apps/client/src/pages/dashboard/jobs/page.tsx:37
+msgid "List Jobs"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:947
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:963
 msgid "Loading..."
 msgstr ""
 
@@ -848,7 +885,7 @@ msgid "Location"
 msgstr "موقعیت مکانی"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:51
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:117
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:118
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:115
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:166
 msgid "Lock"
@@ -879,6 +916,14 @@ msgstr "اصلی"
 msgid "Manage multiple resumes"
 msgstr "مدیریت چند رزومه"
 
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:518
+msgid "Map"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:513
+msgid "Mapping"
+msgstr ""
+
 #. The month and year should be uniform across all languages.
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:71
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:69
@@ -901,8 +946,8 @@ msgstr "حاشیه"
 msgid "MIT License"
 msgstr "مجور MIT"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:351
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:370
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:909
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:928
 msgid "Modify"
 msgstr ""
 
@@ -970,12 +1015,14 @@ msgstr "پسورد یکبار مصرف"
 
 #: apps/client/src/components/ai-actions.tsx:56
 #: apps/client/src/libs/axios.ts:29
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:240
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:448
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:745
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:767
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "اوه ، مشکلی در سرور پدید امد."
 
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:99
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:100
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:77
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:148
 msgid "Open"
@@ -1060,7 +1107,7 @@ msgstr "تصویر"
 msgid "Please note that this step is completely optional."
 msgstr "لطفا توجه داشته باشید که این مرحله به طور کاملا اختیاری است."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:277
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:834
 msgid "Please select a file type"
 msgstr "لطفاً فرمت فایل را انتخاب کنید"
 
@@ -1084,6 +1131,11 @@ msgstr "موقعیت شغلی"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:53
 msgid "Position"
 msgstr "موقعیت شغلی"
+
+#: apps/client/src/pages/dashboard/jobs/_layouts/grid/_components/job-card.tsx:36
+#: apps/client/src/pages/dashboard/jobs/_layouts/list/_components/job-item.tsx:25
+msgid "Posted {postedTime}"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:96
 msgid "Powered by"
@@ -1137,7 +1189,7 @@ msgid "Remove Page"
 msgstr "حذف صفحه"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:110
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:103
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:104
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:86
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:152
 msgid "Rename"
@@ -1164,7 +1216,11 @@ msgstr "تنظیم مجدد رمز عبور"
 msgid "Reset Zoom"
 msgstr "ریست بزرگنمایی"
 
-#: apps/client/src/pages/dashboard/_components/sidebar.tsx:86
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:464
+msgid "Resume Mapping"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/_components/sidebar.tsx:91
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/resumes/page.tsx:37
 msgid "Resumes"
@@ -1214,6 +1270,10 @@ msgstr "جستجو برای فونت"
 msgid "Search for a language"
 msgstr "جستجو برای زبان"
 
+#: apps/client/src/pages/dashboard/jobs/page.tsx:52
+msgid "Search for job"
+msgstr ""
+
 #: apps/client/src/pages/home/sections/features/index.tsx:56
 msgid "Secure with two-factor authentication"
 msgstr "امن با احراز هویت دو عاملی"
@@ -1243,7 +1303,7 @@ msgid "Separate Links"
 msgstr "جداسازی لینک‌ها"
 
 #: apps/client/src/components/user-options.tsx:32
-#: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
+#: apps/client/src/pages/dashboard/_components/sidebar.tsx:103
 #: apps/client/src/pages/dashboard/settings/page.tsx:14
 #: apps/client/src/pages/dashboard/settings/page.tsx:24
 msgid "Settings"
@@ -1404,7 +1464,8 @@ msgstr "سامانه"
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
-#: apps/client/src/pages/builder/page.tsx:45
+#: apps/client/src/pages/builder/page.tsx:48
+#: apps/client/src/pages/dashboard/jobs/page.tsx:20
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:14
 #: apps/client/src/pages/home/components/footer.tsx:21
@@ -1435,6 +1496,10 @@ msgstr "Talent Hub به دست جامعه پرانرژی خود زنده می‌
 #: apps/client/src/pages/public/page.tsx:94
 msgid "Talent Resume"
 msgstr "یک رزومه ساز رایگان و منبع باز"
+
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:532
+msgid "Techhub Output"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:62
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
@@ -1520,6 +1585,10 @@ msgstr "تغییر وضعیت شماره صفحات"
 msgid "Track views and downloads"
 msgstr "بررسی تعداد بازدیدها و دانلود‌ها"
 
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:963
+msgid "Transform"
+msgstr ""
+
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/auth/verify-otp/page.tsx:57
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:135
@@ -1557,7 +1626,7 @@ msgid "Undo"
 msgstr "بازگردانی"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:52
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:112
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:113
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:105
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:161
 msgid "Unlock"
@@ -1579,7 +1648,7 @@ msgstr "به روزرسانی یک مورد موجود"
 msgid "Update an existing resume"
 msgstr "به روزرسانی یک رزومه موجود"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:264
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:822
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Talent Hub for easier editing."
 msgstr "آپلود یک فایل از یکی از منابع پذیرفته شده برای تجزیه و تحلیل داده های موجود و وارد کردن آن به Talent Hub برای ویرایش آسانتر."
 
@@ -1610,11 +1679,13 @@ msgstr "نام کاربری"
 msgid "Users Signed Up"
 msgstr "کاربران ثبت نام کرده‌اند"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:370
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:548
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:928
 msgid "Validate"
 msgstr "تأیید"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:393
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:568
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:952
 msgid "Validated"
 msgstr "تأییدشده"
 
@@ -1708,6 +1779,10 @@ msgstr "حساب شما و تمام داده‌های شما با موفقیت �
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:116
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "کلید API شما به صورت ایمن در حافظه مرورگر دستگاه ذخیره می شود و تنها هنگام ارسال درخواست به OpenAI از طریق SDK رسمی آنها استفاده می شود. اطمینان حاصل کنید که کلید شما به هیچ سرور خارجی انتقال داده نمی شود مگر اینکه برای تعامل با خدمات OpenAI استفاده شود."
+
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:490
+msgid "Your CV Data"
+msgstr ""
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:28
 msgid "Your email address has been verified successfully."

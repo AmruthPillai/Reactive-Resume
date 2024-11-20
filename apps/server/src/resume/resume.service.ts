@@ -6,12 +6,7 @@ import {
 } from "@nestjs/common";
 import { Prisma } from "@prisma/client";
 import { CreateResumeDto, ImportResumeDto, ResumeDto, UpdateResumeDto } from "@reactive-resume/dto";
-import {
-  defaultMetadata,
-  defaultResumeData,
-  defaultWorkStatus,
-  ResumeData,
-} from "@reactive-resume/schema";
+import { defaultResumeData, ResumeData } from "@reactive-resume/schema";
 import type { DeepPartial } from "@reactive-resume/utils";
 import { ErrorMessage, generateRandomName, kebabCase } from "@reactive-resume/utils";
 import deepmerge from "deepmerge";
@@ -22,7 +17,6 @@ import { PrinterService } from "@/server/printer/printer.service";
 
 import { GenaiService } from "../genai/genai.service";
 import { StorageService } from "../storage/storage.service";
-import { transformZodJson } from "./utils/transform-zod-json";
 
 @Injectable()
 export class ResumeService {
@@ -173,11 +167,17 @@ export class ResumeService {
     const json = await this.genaiService.convertResumeToJson(str);
     const repaired = jsonrepair(json);
     const data1 = JSON.parse(repaired);
-    return data1;
+    console.log(repaired);
+    return repaired;
   }
 
   async upload(str: string) {
     const data = await this.handleUpload(str);
     return data;
   }
+
+  // async upload1(fileName: string) {
+  //   const data = await this.genaiService.convertResumeToJson(fileName);
+  //   return JSON.parse(data);
+  // }
 }

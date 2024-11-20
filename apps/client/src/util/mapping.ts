@@ -9,6 +9,7 @@ import {
   defaultResumeData,
   defaultSectionsMapping,
 } from "@reactive-resume/schema";
+import cloneDeep from "lodash.clonedeep";
 
 // eslint-disable-next-line @typescript-eslint/consistent-indexed-object-style, @typescript-eslint/no-explicit-any
 type AnyObject = { [key: string]: any };
@@ -95,15 +96,24 @@ export const getValues = (keyStr: string, data: AnyObject) => {
   const keyArr = keyStr.split(".");
   let keyMap = data;
 
+  // console.log("WTF", keyStr, data);
+
   for (const key of keyArr) {
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-    if (!keyMap) return null;
+    if (!keyMap || (Array.isArray(keyMap) && keyMap.length === 0)) return null;
+    // if (!keyMap) return null;
     keyMap = Array.isArray(keyMap) ? keyMap[0][key] : keyMap[key];
   }
   return keyMap;
 };
 
-export const setValues = (keyStr: string, value: AnyObject | AnyObject[], data: AnyObject) => {
+export const setValues = (
+  keyStr: string,
+  value: string | string[] | AnyObject | AnyObject[],
+  data: AnyObject,
+) => {
+  console.warn("II", keyStr, value, data);
+  // if (!value) return;
   const keyArr = keyStr.split(".");
   let keyMap = data;
   for (let i = 0; i < keyArr.length - 1; i++) {
@@ -196,27 +206,151 @@ export function reverseKeyValue(obj: Record<string, string>, data: AnyObject): N
   return result;
 }
 
-const splitPathArray = (keyStr: string) => {
+export const splitPathArray = (keyStr: string, data1: unknown = defaultResumeData) => {
+  let data = cloneDeep(data1);
   let i = 0;
   let pathArray = keyStr.split(".").filter((str) => !!str);
-  let data = defaultResumeData;
   // console.log(">>>>>?--1", keyStr, data)
   for (i; i < pathArray.length; i++) {
-    if (isListItem(data)) break;
+    if (Array.isArray(data)) break;
     data = (data as AnyObject)[pathArray[i]];
     // console.log(">>>>>?--0.5", keyStr, data)
   }
-  // console.log(">>>>>?--0", keyStr, data)
-
-  // console.log(">>>>>?-1", keyStr, {
-  //   arrayPath: keyStr.split(".").slice(0, i).join("."),
-  //   remainingPath: keyStr.split(".").slice(i).join("."),
-  // })
   return {
     arrayPath: keyStr.split(".").slice(0, i).join("."),
     remainingPath: keyStr.split(".").slice(i).join("."),
   };
 };
+
+// export const mappingValue = (
+//   data: AnyObject,
+//   mappingCode: {
+//     [K in keyof typeof data]: string;
+//   },
+// ) => {
+//   const objCode = reverseKeyValue(mappingCode, data);
+//   // console.warn(JSON.stringify(data))
+//   let dataRtn = JSON.parse(JSON.stringify(defaultResumeData));
+//   const defaultResumeMapping = {
+//     basics: defaultBasicMapping,
+//     sections: defaultSectionsMapping,
+//   };
+//   console.log("WTFH", mappingCode);
+//   for (const key of Object.keys(objCode)) {
+//     // console.log('>>>>>?', key)
+//     if (typeof getValues(key, data) !== "string") {
+//     }
+//     console.log("WTH", getValues(key, data));
+//     if (typeof getValues(key, data) === "string") {
+//       const { remainingPath, arrayPath } = splitPathArray((objCode as AnyObject)[key]);
+//       if (remainingPath) {
+//         let schemaItem = getValues(arrayPath, defaultResumeMapping);
+//         console.log(key, schemaItem, ">>>??");
+//         (schemaItem as AnyObject)[remainingPath] = getValues(key, data);
+//         setValues(arrayPath, schemaItem as AnyObject, dataRtn);
+//       } else {
+//         setValues((objCode as AnyObject)[key], getValues(key, data) as AnyObject[], dataRtn);
+//       }
+//       // console.log('>>>', remainingPath, arrayPath, getValues(key, data))
+//     } else if (Array.isArray(data[key]) && typeof data[key][0] === "string") {
+//       const { remainingPath, arrayPath } = splitPathArray((objCode as AnyObject)[key]);
+//       if (!remainingPath) {
+//         continue;
+//       }
+//       const items = data[key].map((item) => {
+//         let schemaItem = getValues(arrayPath, defaultResumeMapping);
+//         setValues(remainingPath, item, schemaItem as AnyObject);
+//         return JSON.parse(JSON.stringify(schemaItem));
+//       });
+//       setValues(arrayPath, items, dataRtn);
+//     } else if (
+//       Array.isArray(data[key]) &&
+//       typeof data[key][0] === "object" &&
+//       data[key][0] !== null &&
+//       !Array.isArray(data[key][0])
+//     ) {
+//       // console.log('>>>???', key, objCode[key])
+//       let itemsSave = {};
+//       for (const item of data[key]) {
+//         let memoItem = {};
+//         console.log(">>>>>?1", data[key]);
+//         for (const keyIn of Object.keys(objCode[key])) {
+//           const { remainingPath, arrayPath } = splitPathArray((objCode[key] as AnyObject)[keyIn]);
+//           console.log(">>>>>?1.5", remainingPath);
+//           if (!remainingPath) break;
+//           if (!(memoItem as AnyObject)[arrayPath])
+//             (memoItem as AnyObject)[arrayPath] = getValues(arrayPath, defaultResumeMapping);
+//           const value = item[keyIn];
+//           // (memoItem as AnyObject)[arrayPath][remainingPath] = value;
+//           setValues(remainingPath, value, (memoItem as AnyObject)[arrayPath]);
+//           console.log(">>>>>?2", memoItem);
+//         }
+//         for (const keyArray of Object.keys(memoItem)) {
+//           if ((itemsSave as AnyObject)[keyArray]) {
+//             (itemsSave as AnyObject)[keyArray].push(
+//               JSON.parse(JSON.stringify((memoItem as AnyObject)[keyArray])),
+//             );
+//           } else {
+//             (itemsSave as AnyObject)[keyArray] = [
+//               JSON.parse(JSON.stringify((memoItem as AnyObject)[keyArray])),
+//             ];
+//           }
+//           // console.log('>>>>>?1', item)
+//         }
+//         // console.log('------->>>>>?', memoItem)
+//       }
+//       for (const keyMap of Object.keys(itemsSave)) {
+//         setValues(keyMap, (itemsSave as AnyObject)[keyMap], dataRtn);
+//       }
+//       // console.log(itemsSave)
+//     }
+//   }
+//   // console.log('>>>>>?', dataRtn, mappingCode)
+//   return dataRtn;
+// };
+
+export function transformingCode(obj: Record<string, string>, data: AnyObject): AnyObject {
+  const result: AnyObject = {};
+
+  for (const [originalKey, value] of Object.entries(obj)) {
+    // console.log(originalKey, value)
+    const parts = value.split(".");
+    const current = result;
+    let i;
+
+    for (i = 0; i < parts.length; i++) {
+      const partialValue = parts.slice(0, i + 1).join(".");
+      const valueData = getValues(partialValue, data);
+      if (
+        Array.isArray(valueData) &&
+        typeof valueData[0] === "object" &&
+        valueData[0] !== null &&
+        !Array.isArray(valueData[0])
+      ) {
+        break;
+      }
+    }
+
+    if (i < parts.length) {
+      const nestedKey = parts.slice(0, i + 1).join(".");
+      const remainingKey = parts.slice(i + 1).join(".");
+      // console.log(nestedKey, remainingKey)
+
+      const { arrayPath, remainingPath } = splitPathArray(originalKey);
+      if (!current[nestedKey]) {
+        current[nestedKey] = [arrayPath, {}];
+      }
+      // (current[nestedKey] as NestedObject)[remainingKey || value] = originalKey;
+      (current[nestedKey] as AnyObject[])[1][remainingKey || value] = remainingPath;
+      // (current[nestedKey] as any[])[1][remainingKey || value] = originalKey;
+      // console.log(current[nestedKey])
+    } else {
+      current[value] = originalKey;
+    }
+  }
+
+  return result;
+}
 
 export const mappingValue = (
   data: AnyObject,
@@ -224,79 +358,101 @@ export const mappingValue = (
     [K in keyof typeof data]: string;
   },
 ) => {
-  const objCode = reverseKeyValue(mappingCode, data);
-  // console.warn(JSON.stringify(data))
-  let dataRtn = JSON.parse(JSON.stringify(defaultResumeData));
-  const defaultResumeMapping = {
-    basics: defaultBasicMapping,
-    sections: defaultSectionsMapping,
-  };
-  console.log(defaultResumeMapping)
-  for (const key of Object.keys(objCode)) {
-    // console.log('>>>>>?', key)
-    if (typeof data[key] === "string") {
-      const { remainingPath, arrayPath } = splitPathArray((objCode as AnyObject)[key]);
-      if (remainingPath) {
-        let schemaItem = getValues(arrayPath, defaultResumeMapping);
-        console.log(key, schemaItem, ">>>??");
-        (schemaItem as AnyObject)[remainingPath] = getValues(key, data);
-        setValues(arrayPath, schemaItem as AnyObject, dataRtn);
-      } else {
-        setValues((objCode as AnyObject)[key], getValues(key, data) as AnyObject[], dataRtn);
-      }
-      // console.log('>>>', remainingPath, arrayPath, getValues(key, data))
-    } else if (Array.isArray(data[key]) && typeof data[key][0] === "string") {
-      const { remainingPath, arrayPath } = splitPathArray((objCode as AnyObject)[key]);
-      if (!remainingPath) {
-        continue;
-      }
-      const items = data[key].map((item) => {
-        let schemaItem = getValues(arrayPath, defaultResumeMapping);
-        setValues(remainingPath, item, schemaItem as AnyObject);
-        return JSON.parse(JSON.stringify(schemaItem));
-      });
-      setValues(arrayPath, items, dataRtn);
-    } else if (
-      Array.isArray(data[key]) &&
-      typeof data[key][0] === "object" &&
-      data[key][0] !== null &&
-      !Array.isArray(data[key][0])
-    ) {
-      // console.log('>>>???', key, objCode[key])
-      let itemsSave = {};
-      for (const item of data[key]) {
-        let memoItem = {};
-        console.log(">>>>>?1", data[key]);
-        for (const keyIn of Object.keys(objCode[key])) {
-          const { remainingPath, arrayPath } = splitPathArray((objCode[key] as AnyObject)[keyIn]);
-          console.log(">>>>>?1.5", remainingPath);
-          if (!remainingPath) break;
-          if (!(memoItem as AnyObject)[arrayPath])
-            (memoItem as AnyObject)[arrayPath] = getValues(arrayPath, defaultResumeMapping);
-          const value = item[keyIn];
-          (memoItem as AnyObject)[arrayPath][remainingPath] = value;
-          console.log(">>>>>?2", memoItem);
+  try {
+    // console.warn(JSON.stringify(mappingCode), JSON.stringify(data));
+    //   const defaultResumeMapping = {
+    //     basics: defaultBasicMapping,
+    //     sections: defaultSectionsMapping,
+    //   };
+    //   const dataRtn = cloneDeep(defaultResumeData);
+    //   const objCode = transformingCode(mappingCode, data);
+    //   for (const [originalKey, value] of Object.entries(objCode)) {
+    //     // console.log(value)
+    //     if (typeof value === "string") {
+    //       const { arrayPath, remainingPath } = splitPathArray(value);
+    //       if (!remainingPath) {
+    //         const valueInPath = getValues(originalKey, data) as unknown as string;
+    //         setValues(value, valueInPath, dataRtn);
+    //         continue;
+    //       }
+    //       const schemaItem = getValues(arrayPath, defaultResumeMapping) as unknown as string;
+    //       const valueInPath = getValues(originalKey, data) as unknown as string;
+    //       // console.log(schemaItem, valueInPath)
+    //       setValues(remainingPath, valueInPath, schemaItem as unknown as AnyObject);
+    //       setValues(arrayPath, schemaItem, dataRtn);
+    //     } else if (Array.isArray(value)) {
+    //       // console.log(originalKey, value)
+    //       const schemaItem = getValues(value[0], defaultResumeMapping);
+    //       const arrayValue = getValues(originalKey, data) as unknown[];
+    //       const arrayItem = [];
+    //       for (const itemValue of arrayValue) {
+    //         let defaultItem = cloneDeep(schemaItem);
+    //         for (const [rjsPath, thPath] of Object.entries(value[1])) {
+    //           const valueInPath = getValues(rjsPath, itemValue as AnyObject) as unknown as string;
+    //           const defaultValue = getValues(
+    //             // eslint-disable-next-line unicorn/prefer-spread
+    //             (value[0] as string).concat(".", thPath as string),
+    //             defaultResumeMapping,
+    //           );
+    //           // console.log("???>>", rjsPath, thPath, valueInPath, defaultValue, (value[0] as string).concat(".", thPath as string))
+    //           if (Array.isArray(valueInPath) && !Array.isArray(defaultValue))
+    //             return defaultResumeMapping;
+    //           if (Array.isArray(defaultValue) && !Array.isArray(valueInPath))
+    //             return defaultResumeMapping;
+    //           setValues(thPath as string, valueInPath, defaultItem as AnyObject);
+    //         }
+    //         arrayItem.push(cloneDeep(defaultItem));
+    //       }
+    //       console.warn("i", arrayItem);
+    //       // console.log(">>>", value[0])
+    //       // console.log("WTF1", value[0], arrayItem);
+    //       setValues(value[0], arrayItem as unknown as string[], dataRtn);
+    //       console.warn("III", dataRtn);
+    //     }
+    //   }
+    //   console.log("WTF12", dataRtn);
+    //   return dataRtn;
+    // } catch {
+    //   return defaultResumeData;
+    // }
+
+    const defaultResumeMapping = {
+      basics: defaultBasicMapping,
+      sections: defaultSectionsMapping,
+    };
+
+    const resultData = cloneDeep(defaultResumeData);
+    const transformedMapping = transformingCode(mappingCode, data);
+
+    for (const [originalKey, value] of Object.entries(transformedMapping)) {
+      if (typeof value === "string") {
+        const { arrayPath, remainingPath } = splitPathArray(value);
+        const valueInPath = getValues(originalKey, data);
+
+        if (remainingPath) {
+          const schemaItem = getValues(arrayPath, defaultResumeMapping);
+          setValues(remainingPath, valueInPath as unknown as string, schemaItem as AnyObject);
+          setValues(arrayPath, schemaItem as AnyObject[], resultData);
+        } else {
+          setValues(value, valueInPath as unknown as string, resultData);
         }
-        for (const keyArray of Object.keys(memoItem)) {
-          if ((itemsSave as AnyObject)[keyArray]) {
-            (itemsSave as AnyObject)[keyArray].push(
-              JSON.parse(JSON.stringify((memoItem as AnyObject)[keyArray])),
-            );
-          } else {
-            (itemsSave as AnyObject)[keyArray] = [
-              JSON.parse(JSON.stringify((memoItem as AnyObject)[keyArray])),
-            ];
+      } else if (Array.isArray(value)) {
+        const schemaItem = getValues(value[0], defaultResumeMapping);
+        const arrayValue = getValues(originalKey, data) as unknown[];
+
+        const arrayItem = arrayValue.map((itemValue) => {
+          const defaultItem = cloneDeep(schemaItem);
+          for (const [rjsPath, thPath] of Object.entries(value[1])) {
+            const valueInPath = getValues(rjsPath, itemValue as AnyObject);
+            setValues(thPath as string, valueInPath as unknown as string, defaultItem as AnyObject);
           }
-          // console.log('>>>>>?1', item)
-        }
-        // console.log('------->>>>>?', memoItem)
+          return defaultItem;
+        });
+        setValues(value[0], arrayItem, resultData);
       }
-      for (const keyMap of Object.keys(itemsSave)) {
-        setValues(keyMap, (itemsSave as AnyObject)[keyMap], dataRtn);
-      }
-      // console.log(itemsSave)
     }
+    return resultData;
+  } catch {
+    return defaultResumeData;
   }
-  // console.log('>>>>>?', dataRtn, mappingCode)
-  return dataRtn;
 };

@@ -13,7 +13,7 @@ import { queryClient } from "@/client/libs/query-client";
 //   return response.data;
 // };
 
-type AnyObject = Record<string, unknown>;
+type AnyObject = Record<string, string>;
 
 export const importPdfResume = async (data: string) => {
   const response = await axios.post<string, AxiosResponse<AnyObject>>("/resume/upload", {
