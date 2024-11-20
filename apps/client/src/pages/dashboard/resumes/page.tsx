@@ -12,6 +12,7 @@ type Layout = "grid" | "list";
 
 export const ResumesPage = () => {
   const [layout, setLayout] = useState<Layout>("grid");
+  console.log(process.env.VITE_JOB_TABLE ?? "error")
 
   return (
     <>
