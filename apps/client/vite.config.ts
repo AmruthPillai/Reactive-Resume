@@ -41,6 +41,10 @@ export default defineConfig({
     nxViteTsPaths(),
   ],
 
+  worker: {
+    plugins: () => [nxViteTsPaths()],
+  },
+
   test: {
     globals: true,
     environment: "jsdom",

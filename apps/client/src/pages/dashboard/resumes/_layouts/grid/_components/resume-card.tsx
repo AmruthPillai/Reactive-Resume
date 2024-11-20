@@ -73,8 +73,9 @@ export const ResumeCard = ({ resume }: Props) => {
           </AnimatePresence>
 
           <div
+            // eslint-disable-next-line tailwindcss/no-custom-classname
             className={cn(
-              "absolute top-2 right-2 px-5 py-1 rounded-md flex items-center justify-center",
+              "absolute right-2 top-2 flex items-center justify-center rounded-md px-5 py-1",
               resume.visibility === "public" ? "bg-tag-public" : "bg-tag-private",
             )}
           >
