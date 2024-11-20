@@ -386,6 +386,9 @@ importers:
       usehooks-ts:
         specifier: ^3.1.0
         version: 3.1.0(react@18.3.1)
+      vite-plugin-environment:
+        specifier: ^1.1.3
+        version: 1.1.3(vite@5.4.2(@types/node@22.5.2)(less@4.1.3)(sass@1.71.1)(stylus@0.59.0)(terser@5.29.1))
       webfontloader:
         specifier: ^1.6.28
         version: 1.6.28
@@ -11083,6 +11086,11 @@ packages:
     peerDependenciesMeta:
       vite:
         optional: true
+
+  vite-plugin-environment@1.1.3:
+    resolution: {integrity: sha512-9LBhB0lx+2lXVBEWxFZC+WO7PKEyE/ykJ7EPWCq95NEcCpblxamTbs5Dm3DLBGzwODpJMEnzQywJU8fw6XGGGA==}
+    peerDependencies:
+      vite: '>= 2.7'
 
   vite@5.4.2:
     resolution: {integrity: sha512-dDrQTRHp5C1fTFzcSaMxjk6vdpKvT+2/mIdE07Gw2ykehT49O0z/VHS3zZ8iV/Gh8BJJKHWOe5RjaNrW5xf/GA==}
@@ -24389,6 +24397,10 @@ snapshots:
       - '@types/node'
       - rollup
       - supports-color
+
+  vite-plugin-environment@1.1.3(vite@5.4.2(@types/node@22.5.2)(less@4.1.3)(sass@1.71.1)(stylus@0.59.0)(terser@5.29.1)):
+    dependencies:
+      vite: 5.4.2(@types/node@22.5.2)(less@4.1.3)(sass@1.71.1)(stylus@0.59.0)(terser@5.29.1)
 
   vite@5.4.2(@types/node@22.5.2)(less@4.1.3)(sass@1.71.1)(stylus@0.59.0)(terser@5.29.1):
     dependencies:

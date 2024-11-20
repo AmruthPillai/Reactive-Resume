@@ -163,7 +163,7 @@ export const SectionDialog = <T extends SectionItem>({
             {children}
 
             <DialogFooter>
-              <Button type="submit">
+              <Button type="submit" onClick={() => {console.log(form.getValues())}}>
                 {isCreate && t`Create`}
                 {isUpdate && t`Save Changes`}
                 {isDuplicate && t`Duplicate`}

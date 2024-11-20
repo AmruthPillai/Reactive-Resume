@@ -84,7 +84,8 @@ export const SkillsDialog = () => {
                     value={[field.value]}
                     orientation="horizontal"
                     onValueChange={(value) => {
-                      field.onChange(value[0]);
+                      console.log(field)
+                      field.onChange(+value[0]);
                     }}
                   />
 
