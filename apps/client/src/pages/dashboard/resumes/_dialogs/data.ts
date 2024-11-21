@@ -243,8 +243,10 @@ export const defaultMappingCode = {
   "sections.publications.items.url.href": "publications.url",
   "sections.publications.items.summary": "publications.summary",
   "sections.skills.items.name": "skills.name",
+  "sections.skills.items.description": "skills.level",
   "sections.skills.items.keywords": "skills.keywords",
   "sections.languages.items.name": "languages.language",
+  "sections.languages.items.description": "languages.fluency",
   "sections.interests.items.name": "interests.name",
   "sections.interests.items.keywords": "interests.keywords",
   "sections.references.items.name": "references.name",
@@ -253,4 +255,5 @@ export const defaultMappingCode = {
   "sections.projects.items.date": "projects.startDate",
   "sections.projects.items.description": "projects.description",
   "sections.projects.items.url.href": "projects.url",
+  "sections.projects.items.summary": "projects.highlights",
 };
