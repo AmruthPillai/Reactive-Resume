@@ -8,7 +8,7 @@ export const skillSchema = itemSchema.extend({
   description: z.string(),
   level: z
     .union([z.number(), z.string()])
-    .transform((val) => (typeof val === "string" ? Number.parseFloat(val) : val))
+    .transform((val) => (typeof val === "string" ? Number.parseInt(val) : val))
     .refine((val) => typeof val === "number" && val >= 0 && val <= 5, {
       message: "Level must be a number between 0 and 5",
     })

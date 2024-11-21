@@ -389,11 +389,11 @@ export const mappingValue = (
     //         let defaultItem = cloneDeep(schemaItem);
     //         for (const [rjsPath, thPath] of Object.entries(value[1])) {
     //           const valueInPath = getValues(rjsPath, itemValue as AnyObject) as unknown as string;
-    //           const defaultValue = getValues(
-    //             // eslint-disable-next-line unicorn/prefer-spread
-    //             (value[0] as string).concat(".", thPath as string),
-    //             defaultResumeMapping,
-    //           );
+              // const defaultValue = getValues(
+              //   // eslint-disable-next-line unicorn/prefer-spread
+              //   (value[0] as string).concat(".", thPath as string),
+              //   defaultResumeMapping,
+              // );
     //           // console.log("???>>", rjsPath, thPath, valueInPath, defaultValue, (value[0] as string).concat(".", thPath as string))
     //           if (Array.isArray(valueInPath) && !Array.isArray(defaultValue))
     //             return defaultResumeMapping;
@@ -444,7 +444,19 @@ export const mappingValue = (
           const defaultItem = cloneDeep(schemaItem);
           for (const [rjsPath, thPath] of Object.entries(value[1])) {
             const valueInPath = getValues(rjsPath, itemValue as AnyObject);
-            setValues(thPath as string, valueInPath as unknown as string, defaultItem as AnyObject);
+            const defaultValue = getValues(
+              // eslint-disable-next-line unicorn/prefer-spread
+              (value[0] as string).concat(".", thPath as string),
+              defaultResumeMapping,
+            );
+            if (typeof defaultValue === "string" && Array.isArray(valueInPath))
+              setValues(thPath as string, valueInPath.join("\n"), defaultItem as AnyObject);
+            else
+              setValues(
+                thPath as string,
+                valueInPath as unknown as string,
+                defaultItem as AnyObject,
+              );
           }
           return defaultItem;
         });

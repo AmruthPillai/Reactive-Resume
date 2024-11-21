@@ -66,11 +66,11 @@ const schema: Schema = {
         url: {
           type: SchemaType.STRING,
           description: "External link of the candidate (Empty if no information available)",
-          example: "",
+          example: "(URL must start with https://)",
         },
         summary: {
           type: SchemaType.STRING,
-          description: "Summary of the candidate (Empty if no information available)",
+          description: String.raw`Summary of the candidate (New line using \n)`,
           example: "",
         },
         location: {
@@ -123,7 +123,7 @@ const schema: Schema = {
               },
               url: {
                 type: SchemaType.STRING,
-                description: "Link to the candidate's profile page",
+                description: "Link to the candidate's profile page (URL must start with https://)",
               },
             },
           },
@@ -147,7 +147,7 @@ const schema: Schema = {
           },
           url: {
             type: SchemaType.STRING,
-            description: "The official website of the company",
+            description: "The official website of the company (URL must start with https://)",
           },
           startDate: {
             type: SchemaType.STRING,
@@ -159,8 +159,7 @@ const schema: Schema = {
           },
           summary: {
             type: SchemaType.STRING,
-            description:
-              "A brief description of the candidate's overall responsibilities, tasks, and contributions in the role",
+            description: String.raw`A brief description of the candidate's overall responsibilities, tasks, and contributions in the role (New line using \n)`,
           },
           highlights: {
             type: SchemaType.ARRAY,
@@ -198,7 +197,8 @@ const schema: Schema = {
           },
           url: {
             type: SchemaType.STRING,
-            description: "The official website link of the organization",
+            description:
+              "The official website link of the organization (URL must start with https://)",
           },
           startDate: {
             type: SchemaType.STRING,
@@ -210,8 +210,7 @@ const schema: Schema = {
           },
           summary: {
             type: SchemaType.STRING,
-            description:
-              "A brief description of the candidate's duties, responsibilities, and contributions during their volunteer role or any other information about volunteer of the candidate",
+            description: String.raw`A brief description of the candidate's duties, responsibilities, and contributions during their volunteer role or any other information about volunteer of the candidate (New line using \n)`,
           },
           highlights: {
             type: SchemaType.ARRAY,
@@ -246,7 +245,8 @@ const schema: Schema = {
           },
           url: {
             type: SchemaType.STRING,
-            description: "The official website of the educational institution",
+            description:
+              "The official website of the educational institution (URL must start with https://)",
           },
           area: {
             type: SchemaType.STRING,
@@ -303,7 +303,7 @@ const schema: Schema = {
           },
           summary: {
             type: SchemaType.STRING,
-            description: "A brief description or context of the award",
+            description: String.raw`A brief description or context of the award (New line using \n)`,
           },
         },
       },
@@ -329,7 +329,8 @@ const schema: Schema = {
           },
           url: {
             type: SchemaType.STRING,
-            description: "The link to more information or the certificate itself",
+            description:
+              "The link to more information or the certificate itself (URL must start with https://)",
           },
         },
       },
@@ -355,11 +356,11 @@ const schema: Schema = {
           },
           url: {
             type: SchemaType.STRING,
-            description: "The link to the publication",
+            description: "The link to the publication (URL must start with https://)",
           },
           summary: {
             type: SchemaType.STRING,
-            description: "A brief summary of the publication",
+            description: String.raw`A brief summary of the publication (New line using \n)`,
           },
         },
       },
@@ -467,7 +468,7 @@ const schema: Schema = {
           },
           description: {
             type: SchemaType.STRING,
-            description: "Any remaining information in the candidate's project section",
+            description: "Description of the project",
           },
           highlights: {
             type: SchemaType.ARRAY,
@@ -478,7 +479,8 @@ const schema: Schema = {
           },
           url: {
             type: SchemaType.STRING,
-            description: "The link to the project or more information about it",
+            description:
+              "The link to the project or more information about it (URL must start with https://)",
           },
         },
       },
@@ -498,7 +500,7 @@ export class GenaiService {
 
   async convertResumeToJson(str: string): Promise<any> {
     const prompt = `
-      Lọc Ra Các Trường Phù Hợp Tương Ứng Với Dữ Liệu Resume Sau Và Những Trường Được Required Mà Không Có Dữ Liệu Thì Trả Về Chuỗi Rỗng Hoặc Mảng Rỗng (Lưu Ý Là Lấy Tất Cả Các Dữ Liệu Có Thể Trong Resume, Tất Cả Những Thông Tin Nào Không Có Trường Cụ Thể Hãy Điền Vào description Hoặc summary Của Mục Đó):
+      Lọc Ra Các Trường Phù Hợp Tương Ứng Với Dữ Liệu Resume Sau Và Những Trường Được Required Mà Không Có Dữ Liệu Thì Trả Về Chuỗi Rỗng Hoặc Mảng Rỗng (Lưu Ý Là Lấy Tất Cả Các Dữ Liệu Có Thể Trong Resume):
       Resume Text: ${str}
       Return the output in valid JSON format. Ensure the JSON is properly formatted with correct syntax so that JSON.parse can be used.
     `;
