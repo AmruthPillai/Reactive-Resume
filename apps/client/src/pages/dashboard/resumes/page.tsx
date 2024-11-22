@@ -12,7 +12,8 @@ type Layout = "grid" | "list";
 
 export const ResumesPage = () => {
   const [layout, setLayout] = useState<Layout>("grid");
-  console.log(process.env.REACT_APP_JOB_TABLE ?? "error")
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+  console.log(VITE_JOB_TABLE ?? "error")
 
   return (
     <>
