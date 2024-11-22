@@ -113,7 +113,7 @@ export const setValues = (
   data: AnyObject,
 ) => {
   console.warn("II", keyStr, value, data);
-  if (typeof value === "string" && !value) return;
+  if (typeof value === "string" && (!value || value === "string")) return;
   const keyArr = keyStr.split(".");
   let keyMap = data;
   for (let i = 0; i < keyArr.length - 1; i++) {

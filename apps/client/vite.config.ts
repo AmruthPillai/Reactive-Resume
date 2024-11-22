@@ -4,7 +4,6 @@ import { lingui } from "@lingui/vite-plugin";
 import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 import react from "@vitejs/plugin-react";
 import { defineConfig, loadEnv, searchForWorkspaceRoot } from "vite";
-import EnvironmentPlugin from "vite-plugin-environment";
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
@@ -19,6 +18,9 @@ export default defineConfig(({ mode }) => {
 
     define: {
       appVersion: JSON.stringify(process.env.npm_package_version),
+      VITE_NOCODB_TOKEN: JSON.stringify(process.env.VITE_NOCODB_TOKEN),
+      VITE_JOB_TABLE: JSON.stringify(process.env.VITE_JOB_TABLE),
+      VITE_JOB_VIEW_1: JSON.stringify(process.env.VITE_JOB_VIEW_1),
       // "process.env": env,
     },
 
@@ -42,7 +44,7 @@ export default defineConfig(({ mode }) => {
           plugins: ["macros"],
         },
       }),
-      EnvironmentPlugin("all"),
+      // EnvironmentPlugin("all"),
       lingui(),
       nxViteTsPaths(),
     ],

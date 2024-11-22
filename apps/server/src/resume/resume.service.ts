@@ -17,6 +17,7 @@ import { PrinterService } from "@/server/printer/printer.service";
 
 import { GenaiService } from "../genai/genai.service";
 import { StorageService } from "../storage/storage.service";
+import { toInnerHtml } from "./utils/to-html-inner";
 
 @Injectable()
 export class ResumeService {
@@ -50,11 +51,12 @@ export class ResumeService {
 
   import(userId: string, importResumeDto: ImportResumeDto) {
     const title = generateRandomName();
+    const data = importResumeDto.title ? toInnerHtml(importResumeDto.data) : importResumeDto;
     return this.prisma.resume.create({
       data: {
         userId,
         visibility: "private",
-        data: importResumeDto.data,
+        data: data as Prisma.InputJsonValue,
         title: importResumeDto.title ?? title,
         slug: importResumeDto.slug ?? kebabCase(title),
       },
