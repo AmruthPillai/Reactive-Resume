@@ -13,13 +13,12 @@ type Layout = "grid" | "list";
 export const ResumesPage = () => {
   const [layout, setLayout] = useState<Layout>("grid");
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-  console.log(VITE_JOB_TABLE ?? "error")
 
   return (
     <>
       <Helmet>
         <title>
-          {t`Resumes`} - {t`Talent Hub`}
+          {t`Resumes`} - {t`Talent Hub`} - {"v" + appVersion}
         </title>
       </Helmet>
 

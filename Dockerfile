@@ -41,9 +41,6 @@ RUN pnpm run prisma:generate
 ENV TZ=UTC
 ENV PORT=3000
 ENV NODE_ENV=production
-ENV VITE_JOB_TABLE=m1ltea9bo7dtruq
-ENV VITE_JOB_VIEW_1=vwhymtc52dohvlxm
-ENV VITE_NOCODB_TOKEN=PJEkGTlTlSye3FE5O4FcpxsOj0p9L92zSXNhiOTp
 
 EXPOSE 3000
 

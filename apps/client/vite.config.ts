@@ -3,11 +3,9 @@
 import { lingui } from "@lingui/vite-plugin";
 import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 import react from "@vitejs/plugin-react";
-import { defineConfig, loadEnv, searchForWorkspaceRoot } from "vite";
+import { defineConfig, searchForWorkspaceRoot } from "vite";
 
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd(), "");
-
   return {
     cacheDir: "../../node_modules/.vite/client",
 
@@ -18,10 +16,9 @@ export default defineConfig(({ mode }) => {
 
     define: {
       appVersion: JSON.stringify(process.env.npm_package_version),
-      VITE_NOCODB_TOKEN: JSON.stringify(process.env.VITE_NOCODB_TOKEN),
-      VITE_JOB_TABLE: JSON.stringify(process.env.VITE_JOB_TABLE),
-      VITE_JOB_VIEW_1: JSON.stringify(process.env.VITE_JOB_VIEW_1),
-      // "process.env": env,
+      nocodbToken: JSON.stringify(process.env.VITE_NOCODB_TOKEN),
+      jobTable: JSON.stringify(process.env.VITE_JOB_TABLE),
+      jobView1: JSON.stringify(process.env.VITE_JOB_VIEW_1),
     },
 
     server: {
