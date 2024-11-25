@@ -1,9 +1,15 @@
 import { CookieOptions } from "express";
 
-export const getCookieOptions = (grantType: "access" | "refresh"): CookieOptions => {
+export const getCookieOptions = (
+  grantType: "access" | "refresh",
+  isAdminRequest = false,
+): CookieOptions => {
   // Options For Access Token
   if (grantType === "access") {
     return {
+      domain: isAdminRequest
+        ? "https://reactive-resume-admin-antdesign-pro.vercel.app/"
+        : undefined,
       httpOnly: true,
       sameSite: "none",
       secure: (process.env.PUBLIC_URL ?? "").includes("https://"),
@@ -13,6 +19,7 @@ export const getCookieOptions = (grantType: "access" | "refresh"): CookieOptions
 
   // Options For Refresh Token
   return {
+    domain: isAdminRequest ? "https://reactive-resume-admin-antdesign-pro.vercel.app/" : undefined,
     httpOnly: true,
     sameSite: "none",
     secure: (process.env.PUBLIC_URL ?? "").includes("https://"),
