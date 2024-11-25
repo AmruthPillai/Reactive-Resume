@@ -108,7 +108,7 @@ export class AuthController {
   async login(
     @User() user: UserWithSecrets,
     @Res({ passthrough: true }) response: Response,
-    @Param("isAdminRequest") isAdminRequest = false,
+    @Param("isAdminRequest") { isAdminRequest = false },
   ) {
     return this.handleAuthenticationResponse(user, response, false, false, isAdminRequest);
   }
@@ -155,8 +155,12 @@ export class AuthController {
 
   @Post("refresh")
   @UseGuards(RefreshGuard)
-  async refresh(@User() user: UserWithSecrets, @Res({ passthrough: true }) response: Response) {
-    return this.handleAuthenticationResponse(user, response, true);
+  async refresh(
+    @User() user: UserWithSecrets,
+    @Res({ passthrough: true }) response: Response,
+    @Param() { isAdminRequest = false },
+  ) {
+    return this.handleAuthenticationResponse(user, response, true, false, isAdminRequest);
   }
 
   @Patch("password")
@@ -172,7 +176,7 @@ export class AuthController {
   async logout(
     @User() user: UserWithSecrets,
     @Res({ passthrough: true }) response: Response,
-    @Param() isAdminRequest = false,
+    @Param() { isAdminRequest = false },
   ) {
     await this.authService.setRefreshToken(user.email, null);
 
