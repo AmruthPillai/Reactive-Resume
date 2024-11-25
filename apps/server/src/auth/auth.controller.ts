@@ -5,6 +5,7 @@ import {
   Get,
   HttpCode,
   InternalServerErrorException,
+  Param,
   Patch,
   Post,
   Query,
@@ -17,7 +18,6 @@ import {
   authResponseSchema,
   backupCodesSchema,
   ForgotPasswordDto,
-  LoginDto,
   messageSchema,
   RegisterDto,
   ResetPasswordDto,
@@ -70,6 +70,7 @@ export class AuthController {
     response: Response,
     isTwoFactorAuth = false,
     redirect = false,
+    isAdminRequest = false,
   ) {
     let status = "authenticated";
 
@@ -82,8 +83,8 @@ export class AuthController {
       isTwoFactorAuth,
     );
 
-    response.cookie("Authentication", accessToken, getCookieOptions("access"));
-    response.cookie("Refresh", refreshToken, getCookieOptions("refresh"));
+    response.cookie("Authentication", accessToken, getCookieOptions("access", isAdminRequest));
+    response.cookie("Refresh", refreshToken, getCookieOptions("refresh", isAdminRequest));
 
     if (user.twoFactorEnabled && !isTwoFactorAuth) status = "2fa_required";
 
@@ -105,11 +106,11 @@ export class AuthController {
   @Post("login")
   @UseGuards(LocalGuard)
   async login(
-    @Body() loginDto: LoginDto,
+    @Param("isAdminRequest") isAdminRequest: boolean,
     @User() user: UserWithSecrets,
     @Res({ passthrough: true }) response: Response,
   ) {
-    return this.handleAuthenticationResponse(user, response);
+    return this.handleAuthenticationResponse(user, response, false, false, isAdminRequest);
   }
 
   @Get("providers")
@@ -168,15 +169,25 @@ export class AuthController {
 
   @Post("logout")
   @UseGuards(TwoFactorGuard)
-  async logout(@User() user: UserWithSecrets, @Res({ passthrough: true }) response: Response) {
+  async logout(
+    @User() user: UserWithSecrets,
+    @Res({ passthrough: true }) response: Response,
+    @Param() isAdminRequest = false,
+  ) {
     await this.authService.setRefreshToken(user.email, null);
 
     response.clearCookie("Authentication", {
+      domain: isAdminRequest
+        ? "https://reactive-resume-admin-antdesign-pro.vercel.app/"
+        : undefined,
       httpOnly: true,
       sameSite: "none",
       secure: (this.configService.get("PUBLIC_URL") ?? "").includes("https://"),
     });
     response.clearCookie("Refresh", {
+      domain: isAdminRequest
+        ? "https://reactive-resume-admin-antdesign-pro.vercel.app/"
+        : undefined,
       sameSite: "none",
       httpOnly: true,
       secure: (this.configService.get("PUBLIC_URL") ?? "").includes("https://"),
