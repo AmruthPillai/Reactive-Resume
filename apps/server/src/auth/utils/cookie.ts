@@ -2,7 +2,7 @@ import { CookieOptions } from "express";
 
 export const getCookieOptions = (
   grantType: "access" | "refresh",
-  isAdminRequest = false,
+  isAdminRequest?: boolean,
 ): CookieOptions => {
   // Options For Access Token
   if (grantType === "access") {

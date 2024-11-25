@@ -61,6 +61,7 @@ export class AuthController {
 
       return { accessToken, refreshToken };
     } catch (error) {
+      console.log("goes here");
       throw new InternalServerErrorException(error, ErrorMessage.SomethingWentWrong);
     }
   }
@@ -70,7 +71,7 @@ export class AuthController {
     response: Response,
     isTwoFactorAuth = false,
     redirect = false,
-    isAdminRequest = false,
+    isAdminRequest?: boolean,
   ) {
     let status = "authenticated";
 
@@ -108,9 +109,12 @@ export class AuthController {
   async login(
     @User() user: UserWithSecrets,
     @Res({ passthrough: true }) response: Response,
-    @Param("isAdminRequest") { isAdminRequest = false },
+    @Param("isAdminRequest")
+    params?: {
+      isAdminRequest?: boolean;
+    },
   ) {
-    return this.handleAuthenticationResponse(user, response, false, false, isAdminRequest);
+    return this.handleAuthenticationResponse(user, response, false, false, params?.isAdminRequest);
   }
 
   @Get("providers")
@@ -158,9 +162,12 @@ export class AuthController {
   async refresh(
     @User() user: UserWithSecrets,
     @Res({ passthrough: true }) response: Response,
-    @Param() { isAdminRequest = false },
+    @Param("isAdminRequest")
+    params?: {
+      isAdminRequest?: boolean;
+    },
   ) {
-    return this.handleAuthenticationResponse(user, response, true, false, isAdminRequest);
+    return this.handleAuthenticationResponse(user, response, true, false, params?.isAdminRequest);
   }
 
   @Patch("password")
@@ -176,12 +183,15 @@ export class AuthController {
   async logout(
     @User() user: UserWithSecrets,
     @Res({ passthrough: true }) response: Response,
-    @Param() { isAdminRequest = false },
+    @Param("isAdminRequest")
+    params?: {
+      isAdminRequest?: boolean;
+    },
   ) {
     await this.authService.setRefreshToken(user.email, null);
 
     response.clearCookie("Authentication", {
-      domain: isAdminRequest
+      domain: params?.isAdminRequest
         ? (this.configService.get("CMS_URL") ?? "https://localhost:8000")
         : undefined,
       httpOnly: true,
@@ -189,7 +199,7 @@ export class AuthController {
       secure: (this.configService.get("PUBLIC_URL") ?? "").includes("https://"),
     });
     response.clearCookie("Refresh", {
-      domain: isAdminRequest
+      domain: params?.isAdminRequest
         ? (this.configService.get("CMS_URL") ?? "https://localhost:8000")
         : undefined,
       sameSite: "none",
