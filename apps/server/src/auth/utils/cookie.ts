@@ -7,9 +7,7 @@ export const getCookieOptions = (
   // Options For Access Token
   if (grantType === "access") {
     return {
-      domain: isAdminRequest
-        ? "https://reactive-resume-admin-antdesign-pro.vercel.app/"
-        : undefined,
+      domain: isAdminRequest ? (process.env.CMS_URL ?? "https://localhost:8000") : undefined,
       httpOnly: true,
       sameSite: "none",
       secure: (process.env.PUBLIC_URL ?? "").includes("https://"),
@@ -19,7 +17,7 @@ export const getCookieOptions = (
 
   // Options For Refresh Token
   return {
-    domain: isAdminRequest ? "https://reactive-resume-admin-antdesign-pro.vercel.app/" : undefined,
+    domain: isAdminRequest ? (process.env.CMS_URL ?? "https://localhost:8000") : undefined,
     httpOnly: true,
     sameSite: "none",
     secure: (process.env.PUBLIC_URL ?? "").includes("https://"),

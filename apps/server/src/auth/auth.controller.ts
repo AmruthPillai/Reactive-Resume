@@ -106,9 +106,9 @@ export class AuthController {
   @Post("login")
   @UseGuards(LocalGuard)
   async login(
-    @Param("isAdminRequest") isAdminRequest: boolean,
     @User() user: UserWithSecrets,
     @Res({ passthrough: true }) response: Response,
+    @Param("isAdminRequest") isAdminRequest = false,
   ) {
     return this.handleAuthenticationResponse(user, response, false, false, isAdminRequest);
   }
@@ -178,7 +178,7 @@ export class AuthController {
 
     response.clearCookie("Authentication", {
       domain: isAdminRequest
-        ? "https://reactive-resume-admin-antdesign-pro.vercel.app/"
+        ? (this.configService.get("CMS_URL") ?? "https://localhost:8000")
         : undefined,
       httpOnly: true,
       sameSite: "none",
@@ -186,7 +186,7 @@ export class AuthController {
     });
     response.clearCookie("Refresh", {
       domain: isAdminRequest
-        ? "https://reactive-resume-admin-antdesign-pro.vercel.app/"
+        ? (this.configService.get("CMS_URL") ?? "https://localhost:8000")
         : undefined,
       sameSite: "none",
       httpOnly: true,
