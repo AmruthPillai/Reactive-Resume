@@ -12,7 +12,7 @@ import {
   UseGuards,
 } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
-import { ApiBody, ApiTags } from "@nestjs/swagger";
+import { ApiTags } from "@nestjs/swagger";
 import {
   authResponseSchema,
   backupCodesSchema,
@@ -29,18 +29,14 @@ import {
 } from "@reactive-resume/dto";
 import { ErrorMessage } from "@reactive-resume/utils";
 import type { Response } from "express";
-import { UseZodGuard } from "nestjs-zod";
 
 import { User } from "../user/decorators/user.decorator";
 import { AuthService } from "./auth.service";
-import { Role } from "./decorators/roles.decorator";
-import { Roles } from "./enums/roles.enum";
 import { GitHubGuard } from "./guards/github.guard";
 import { GoogleGuard } from "./guards/google.guard";
 import { JwtGuard } from "./guards/jwt.guard";
 import { LocalGuard } from "./guards/local.guard";
 import { RefreshGuard } from "./guards/refresh.guard";
-import { RolesGuard } from "./guards/roles.guard";
 import { TwoFactorGuard } from "./guards/two-factor.guard";
 import { getCookieOptions } from "./utils/cookie";
 import { payloadSchema } from "./utils/payload";
@@ -178,12 +174,12 @@ export class AuthController {
     response.clearCookie("Authentication", {
       httpOnly: true,
       sameSite: "none",
-      secure: (process.env.PUBLIC_URL ?? "").includes("https://"),
+      secure: (this.configService.get("PUBLIC_URL") ?? "").includes("https://"),
     });
     response.clearCookie("Refresh", {
       sameSite: "none",
       httpOnly: true,
-      secure: (process.env.PUBLIC_URL ?? "").includes("https://"),
+      secure: (this.configService.get("PUBLIC_URL") ?? "").includes("https://"),
     });
 
     const data = messageSchema.parse({ message: "You have been logged out, tschüss!" });
