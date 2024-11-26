@@ -85,7 +85,7 @@ msgid "A4"
 msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:881
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:781
 msgid "Accepts only {accept} files"
 msgstr "Yalnızca {accept} dosyalarını kabul eder"
 
@@ -124,9 +124,9 @@ msgstr "Yapay Zeka"
 msgid "Already have an account?"
 msgstr "Zaten bir hesabınız mı var?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:420
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:643
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:693
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:320
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:543
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:593
 msgid "An error occurred while validating the file."
 msgstr "Dosya doğrulanırken bir hata oluştu."
 
@@ -147,11 +147,11 @@ msgstr "Bu bağlantıya sahip herkes özgeçmişi görüntüleyebilir ve indireb
 msgid "API Key"
 msgstr "API Anahtarı"
 
-#: apps/client/src/pages/dashboard/jobs/_layouts/grid/_components/job-card.tsx:52
+#: apps/client/src/pages/dashboard/jobs/_layouts/grid/_components/job-card.tsx:55
 msgid "Apply"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/jobs/_dialogs/job.tsx:48
+#: apps/client/src/pages/dashboard/jobs/_dialogs/job.tsx:71
 msgid "Apply Now"
 msgstr ""
 
@@ -415,7 +415,7 @@ msgstr "Açıklama"
 msgid "Design single/multi page resumes"
 msgstr "Tek/çok sayfalı özgeçmiş tasarlayın"
 
-#: apps/client/src/pages/dashboard/jobs/_layouts/grid/_components/job-card.tsx:48
+#: apps/client/src/pages/dashboard/jobs/_layouts/grid/_components/job-card.tsx:51
 msgid "Detail"
 msgstr ""
 
@@ -427,8 +427,8 @@ msgstr "Devre dışı bırak"
 msgid "Disable 2FA"
 msgstr "2FA'yı devre dışı bırak"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:556
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:934
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:456
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:834
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:236
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
@@ -528,8 +528,8 @@ msgstr "Kimlik doğrulayıcı uygulamanız tarafından sağlanan tek kullanıml�
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "E-posta adresinizi girin, hesabınız mevcutsa şifrenizi sıfırlamanız için size bir bağlantı göndereceğiz."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:479
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:894
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:379
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:794
 msgid "Errors"
 msgstr "Hatalar"
 
@@ -550,15 +550,15 @@ msgstr "Talent Hub'da bulunan şablonları keşfedin ve bunlarla hazırlanmış 
 msgid "Export"
 msgstr "Dışa aktar"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:516
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:416
 msgid "Field"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:863
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:763
 msgid "File"
 msgstr "Dosya"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:830
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:730
 msgid "Filetype"
 msgstr "Dosya türü"
 
@@ -654,7 +654,7 @@ msgid "Grayscale"
 msgstr "Gri tonlamalı"
 
 #: apps/client/src/pages/dashboard/jobs/page.tsx:43
-#: apps/client/src/pages/dashboard/resumes/page.tsx:43
+#: apps/client/src/pages/dashboard/resumes/page.tsx:45
 msgid "Grid"
 msgstr "Izgara"
 
@@ -671,7 +671,7 @@ msgid "Here, you can update your profile to customize and personalize your exper
 msgstr "Burada, deneyiminizi özelleştirmek ve kişiselleştirmek için profilinizi güncelleyebilirsiniz."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:78
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:92
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:93
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:186
 msgid "Hidden"
 msgstr "Gizli"
@@ -719,12 +719,12 @@ msgstr "İki faktörlü kimlik doğrulamayı devre dışı bırakırsanız, otur
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "Çok dilliyseniz, uygulamayı daha fazla dile ve topluluğa ulaştırmak için yardımınızı çok isteriz. Dilinizi listede göremiyorsanız endişelenmeyin - GitHub'da bana seslenin, ben de ekleyeceğimden emin olun. Başlamaya hazır mısınız? Aşağıdaki bağlantıya tıklayarak Crowdin'de çeviriye başlayın."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:563
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:947
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:463
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:847
 msgid "Import"
 msgstr "İçe Aktar"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:818
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:718
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -786,7 +786,7 @@ msgstr "Sağladığınız doğrulama belirteci geçersiz gibi görünüyor. Lüt
 msgid "It looks like your email address has already been verified."
 msgstr "E-posta adresiniz zaten doğrulanmış gibi görünüyor."
 
-#: apps/client/src/pages/dashboard/jobs/_dialogs/job.tsx:38
+#: apps/client/src/pages/dashboard/jobs/_dialogs/job.tsx:46
 msgid "Job Description"
 msgstr ""
 
@@ -805,7 +805,7 @@ msgstr "JSON"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:152
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:132
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:109
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:110
 msgid "Keywords"
 msgstr "Anahtar Kelimeler"
 
@@ -863,7 +863,7 @@ msgid "LinkedIn, JSON Resume, etc."
 msgstr "LinkedIn, JSON Özgeçmiş, vb."
 
 #: apps/client/src/pages/dashboard/jobs/page.tsx:47
-#: apps/client/src/pages/dashboard/resumes/page.tsx:47
+#: apps/client/src/pages/dashboard/resumes/page.tsx:49
 msgid "List"
 msgstr "Liste"
 
@@ -872,8 +872,8 @@ msgstr "Liste"
 msgid "List Jobs"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:947
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:963
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:847
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:863
 msgid "Loading..."
 msgstr ""
 
@@ -916,11 +916,11 @@ msgstr "Ana Sayfa"
 msgid "Manage multiple resumes"
 msgstr "Birden fazla özgeçmişi yönetin"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:518
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:418
 msgid "Map"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:513
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:413
 msgid "Mapping"
 msgstr ""
 
@@ -946,8 +946,8 @@ msgstr "Kenar Boşlukları"
 msgid "MIT License"
 msgstr "MIT Lisansı"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:909
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:928
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:809
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:828
 msgid "Modify"
 msgstr ""
 
@@ -1015,9 +1015,9 @@ msgstr "Tek Kullanımlık Şifre"
 
 #: apps/client/src/components/ai-actions.tsx:56
 #: apps/client/src/libs/axios.ts:29
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:448
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:745
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:767
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:348
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:645
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:667
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "Hata! Sunucu bir hata döndürdü."
@@ -1107,7 +1107,7 @@ msgstr "Resim"
 msgid "Please note that this step is completely optional."
 msgstr "Bu adımın tamamen isteğe bağlı olduğunu lütfen unutmayın."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:834
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:734
 msgid "Please select a file type"
 msgstr "Lütfen bir dosya türü seçin"
 
@@ -1216,13 +1216,13 @@ msgstr "Şifrenizi sıfırlayın"
 msgid "Reset Zoom"
 msgstr "Yakınlaştırmayı Sıfırla"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:464
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:364
 msgid "Resume Mapping"
 msgstr ""
 
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:91
-#: apps/client/src/pages/dashboard/resumes/page.tsx:20
-#: apps/client/src/pages/dashboard/resumes/page.tsx:37
+#: apps/client/src/pages/dashboard/resumes/page.tsx:22
+#: apps/client/src/pages/dashboard/resumes/page.tsx:39
 msgid "Resumes"
 msgstr "Özgeçmişler"
 
@@ -1466,7 +1466,7 @@ msgstr "Sistem"
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/builder/page.tsx:48
 #: apps/client/src/pages/dashboard/jobs/page.tsx:20
-#: apps/client/src/pages/dashboard/resumes/page.tsx:20
+#: apps/client/src/pages/dashboard/resumes/page.tsx:22
 #: apps/client/src/pages/dashboard/settings/page.tsx:14
 #: apps/client/src/pages/home/components/footer.tsx:21
 #: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
@@ -1497,7 +1497,11 @@ msgstr "Reaktif Özgeçmiş, canlı topluluğu sayesinde gelişiyor. Bu proje il
 msgid "Talent Resume"
 msgstr "Ücretsiz ve açık kaynak cv oluşturucu"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:532
+#: apps/client/src/pages/dashboard/jobs/_dialogs/job.tsx:59
+msgid "Tech Stack"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:432
 msgid "Techhub Output"
 msgstr ""
 
@@ -1585,7 +1589,7 @@ msgstr "Sayfa Numaralarını Değiştir"
 msgid "Track views and downloads"
 msgstr "Görüntülemeleri ve indirmeleri takip edin"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:963
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:863
 msgid "Transform"
 msgstr ""
 
@@ -1648,7 +1652,7 @@ msgstr "Mevcut bir öğeyi güncelle"
 msgid "Update an existing resume"
 msgstr "Mevcut bir özgeçmişi güncelle"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:822
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:722
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Talent Hub for easier editing."
 msgstr "Mevcut verileri ayrıştırmak ve daha kolay düzenleme için Reaktif Özgeçmiş'e aktarmak için kabul edilen kaynaklardan birinden bir dosya yükleyin."
 
@@ -1679,13 +1683,13 @@ msgstr "Kullanıcı adı"
 msgid "Users Signed Up"
 msgstr "Kaydolan Kullanıcılar"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:548
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:928
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:448
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:828
 msgid "Validate"
 msgstr "Doğrula"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:568
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:952
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:468
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:852
 msgid "Validated"
 msgstr "Doğrulanmış"
 
@@ -1743,7 +1747,7 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:157
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:137
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:114
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:115
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr "Birden fazla anahtar kelimeyi virgülle ayırarak veya enter tuşuna basarak ekleyebilirsiniz."
 
@@ -1780,7 +1784,7 @@ msgstr "Hesabınız ve tüm verileriniz başarıyla silindi. Güle güle!"
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "API anahtarınız tarayıcının yerel depolama alanında güvenli bir şekilde saklanır ve yalnızca OpenAI'ye resmi SDK'ları aracılığıyla istekte bulunurken kullanılır. OpenAI'nin hizmetleriyle etkileşim dışında anahtarınızın herhangi bir harici sunucuya iletilmediğinden emin olabilirsiniz."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:490
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:390
 msgid "Your CV Data"
 msgstr ""
 

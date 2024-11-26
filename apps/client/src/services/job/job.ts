@@ -4,6 +4,8 @@ import { JOBS_KEY } from "@/client/constants/query-keys";
 
 // process.env.GENAI_API_KEY ?? ""
 
+type AnyObject = Record<string, string>;
+
 export type IJob = {
   Id: number;
   title: string;
@@ -13,6 +15,7 @@ export type IJob = {
   CreatedAt: string;
   UpdatedAt: string;
   _nc_m2m_job_apply_jobs: unknown[];
+  _nc_m2m_job_tech_stacks: AnyObject[];
   job_applies: number;
 };
 

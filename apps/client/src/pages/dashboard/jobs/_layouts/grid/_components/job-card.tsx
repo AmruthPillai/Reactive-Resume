@@ -35,9 +35,12 @@ const JobCard = ({ job }: { job: IJob }) => {
               )}
             >{t`Posted ${postedTime}`}</p>
             <h4 className="line-clamp-2 text-lg font-semibold">{job.title}</h4>
-            <p className="line-clamp-6 sm:line-clamp-2 lg:line-clamp-3 2xl:line-clamp-4">
-              {job.description}
-            </p>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: job.description,
+              }}
+              className="line-clamp-6 sm:line-clamp-2 lg:line-clamp-3 2xl:line-clamp-4"
+            />
           </div>
           <div className="flex w-full justify-center gap-3 border-t-2 border-[inherit] py-3">
             <Button

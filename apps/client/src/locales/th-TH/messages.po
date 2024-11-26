@@ -85,7 +85,7 @@ msgid "A4"
 msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:881
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:781
 msgid "Accepts only {accept} files"
 msgstr "ยอมรับเฉพาะไฟล์ {accept}"
 
@@ -124,9 +124,9 @@ msgstr "AI"
 msgid "Already have an account?"
 msgstr "มีบัญชีแล้วใช่หรือไม่?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:420
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:643
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:693
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:320
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:543
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:593
 msgid "An error occurred while validating the file."
 msgstr "เกิดข้อผิดพลาดขณะตรวจสอบไฟล์"
 
@@ -147,11 +147,11 @@ msgstr "ทุกคนที่มีลิงค์นี้สามารถ
 msgid "API Key"
 msgstr "API Key"
 
-#: apps/client/src/pages/dashboard/jobs/_layouts/grid/_components/job-card.tsx:52
+#: apps/client/src/pages/dashboard/jobs/_layouts/grid/_components/job-card.tsx:55
 msgid "Apply"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/jobs/_dialogs/job.tsx:48
+#: apps/client/src/pages/dashboard/jobs/_dialogs/job.tsx:71
 msgid "Apply Now"
 msgstr ""
 
@@ -415,7 +415,7 @@ msgstr "รายละเอียด"
 msgid "Design single/multi page resumes"
 msgstr "ออกแบบเรซูเม่หน้าเดียว/หลายหน้า"
 
-#: apps/client/src/pages/dashboard/jobs/_layouts/grid/_components/job-card.tsx:48
+#: apps/client/src/pages/dashboard/jobs/_layouts/grid/_components/job-card.tsx:51
 msgid "Detail"
 msgstr ""
 
@@ -427,8 +427,8 @@ msgstr "ปิดใช้งาน"
 msgid "Disable 2FA"
 msgstr "ปิดใช้งาน 2FA"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:556
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:934
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:456
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:834
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:236
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
@@ -528,8 +528,8 @@ msgstr "ป้อนรหัสผ่านแบบครั้งเดีย
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "ป้อนที่อยู่อีเมลของคุณ และเราจะส่งลิงก์ให้คุณรีเซ็ตรหัสผ่านหากบัญชีนั้นมีอยู่"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:479
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:894
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:379
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:794
 msgid "Errors"
 msgstr "ข้อผิดพลาด"
 
@@ -550,15 +550,15 @@ msgstr "สำรวจเทมเพลตที่มีให้ใช้ใ
 msgid "Export"
 msgstr "ส่งออก"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:516
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:416
 msgid "Field"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:863
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:763
 msgid "File"
 msgstr "ไฟล์"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:830
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:730
 msgid "Filetype"
 msgstr "ประเภทไฟล์"
 
@@ -654,7 +654,7 @@ msgid "Grayscale"
 msgstr "ขาวดำ"
 
 #: apps/client/src/pages/dashboard/jobs/page.tsx:43
-#: apps/client/src/pages/dashboard/resumes/page.tsx:43
+#: apps/client/src/pages/dashboard/resumes/page.tsx:45
 msgid "Grid"
 msgstr "ตาราง"
 
@@ -671,7 +671,7 @@ msgid "Here, you can update your profile to customize and personalize your exper
 msgstr "คุณสามารถอัปเดตโปรไฟล์เพื่อปรับแต่งประสบการณ์ของคุณได้ที่นี่"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:78
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:92
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:93
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:186
 msgid "Hidden"
 msgstr "ซ่อนไว้"
@@ -719,12 +719,12 @@ msgstr "หากคุณปิดใช้งานการยืนยัน
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "หากคุณพูดได้หลายภาษา เรายินดีให้คุณช่วยเหลือโดยการนำแอปนี้มาทำให้เข้าถึงได้ในภาษาและชุมชนต่างๆ มากขึ้น ไม่ต้องกังวลหากคุณไม่เห็นภาษาของคุณในรายการ เพียงบอกผมทาง GitHub แล้วผมจะใส่ภาษานั้นไว้ด้วย พร้อมเริ่มหรือยัง? ข้ามไปแปลที่ Crowdin โดยคลิกลิงก์ด้านล่างได้เลย"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:563
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:947
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:463
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:847
 msgid "Import"
 msgstr "นําเข้า"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:818
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:718
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -786,7 +786,7 @@ msgstr "ดูเหมือนว่าโทเค็นยืนยันต
 msgid "It looks like your email address has already been verified."
 msgstr "ดูเหมือนว่าที่อยู่อีเมลของคุณได้รับการยืนยันแล้ว"
 
-#: apps/client/src/pages/dashboard/jobs/_dialogs/job.tsx:38
+#: apps/client/src/pages/dashboard/jobs/_dialogs/job.tsx:46
 msgid "Job Description"
 msgstr ""
 
@@ -805,7 +805,7 @@ msgstr "JSON"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:152
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:132
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:109
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:110
 msgid "Keywords"
 msgstr "คีย์เวิร์ด"
 
@@ -863,7 +863,7 @@ msgid "LinkedIn, JSON Resume, etc."
 msgstr "LinkedIn, เรซูเม่ JSON ฯลฯ"
 
 #: apps/client/src/pages/dashboard/jobs/page.tsx:47
-#: apps/client/src/pages/dashboard/resumes/page.tsx:47
+#: apps/client/src/pages/dashboard/resumes/page.tsx:49
 msgid "List"
 msgstr "รายการ"
 
@@ -872,8 +872,8 @@ msgstr "รายการ"
 msgid "List Jobs"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:947
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:963
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:847
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:863
 msgid "Loading..."
 msgstr ""
 
@@ -916,11 +916,11 @@ msgstr "ส่วนหลัก"
 msgid "Manage multiple resumes"
 msgstr "จัดการเรซูเม่หลายฉบับ"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:518
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:418
 msgid "Map"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:513
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:413
 msgid "Mapping"
 msgstr ""
 
@@ -946,8 +946,8 @@ msgstr "ระยะขอบ"
 msgid "MIT License"
 msgstr "ใบอนุญาต MIT"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:909
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:928
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:809
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:828
 msgid "Modify"
 msgstr ""
 
@@ -1015,9 +1015,9 @@ msgstr "รหัสผ่านครั้งเดียว"
 
 #: apps/client/src/components/ai-actions.tsx:56
 #: apps/client/src/libs/axios.ts:29
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:448
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:745
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:767
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:348
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:645
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:667
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "อุ๊ปส์ เซิร์ฟเวอร์ส่งข้อผิดพลาดมา"
@@ -1107,7 +1107,7 @@ msgstr "รูปภาพ"
 msgid "Please note that this step is completely optional."
 msgstr "โปรดทราบว่าขั้นตอนนี้ไม่จำเป็นต้องทำก็ได้"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:834
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:734
 msgid "Please select a file type"
 msgstr "กรุณาเลือกประเภทของไฟล์"
 
@@ -1216,13 +1216,13 @@ msgstr "รีเซ็ตรหัสผ่านของคุณ"
 msgid "Reset Zoom"
 msgstr "รีเซ็ตการซูม"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:464
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:364
 msgid "Resume Mapping"
 msgstr ""
 
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:91
-#: apps/client/src/pages/dashboard/resumes/page.tsx:20
-#: apps/client/src/pages/dashboard/resumes/page.tsx:37
+#: apps/client/src/pages/dashboard/resumes/page.tsx:22
+#: apps/client/src/pages/dashboard/resumes/page.tsx:39
 msgid "Resumes"
 msgstr "เรซูเม่"
 
@@ -1466,7 +1466,7 @@ msgstr "ระบบ"
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/builder/page.tsx:48
 #: apps/client/src/pages/dashboard/jobs/page.tsx:20
-#: apps/client/src/pages/dashboard/resumes/page.tsx:20
+#: apps/client/src/pages/dashboard/resumes/page.tsx:22
 #: apps/client/src/pages/dashboard/settings/page.tsx:14
 #: apps/client/src/pages/home/components/footer.tsx:21
 #: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
@@ -1497,7 +1497,11 @@ msgstr "Talent Hub ประสบความสำเร็จได้ด้�
 msgid "Talent Resume"
 msgstr "แอปสร้างเรซูเม่ฟรีและโอเพนซอร์ส"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:532
+#: apps/client/src/pages/dashboard/jobs/_dialogs/job.tsx:59
+msgid "Tech Stack"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:432
 msgid "Techhub Output"
 msgstr ""
 
@@ -1585,7 +1589,7 @@ msgstr "เปิด-ปิดเลขหน้า"
 msgid "Track views and downloads"
 msgstr "ติดตามยอดดูและยอดดาวน์โหลด"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:963
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:863
 msgid "Transform"
 msgstr ""
 
@@ -1648,7 +1652,7 @@ msgstr "อัปเดตรายการที่มีอยู่"
 msgid "Update an existing resume"
 msgstr "อัปเดตเรซูเม่ที่มีอยู่"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:822
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:722
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Talent Hub for easier editing."
 msgstr "อัปโหลดไฟล์จากแหล่งที่น่าเชื่อถือเพื่อวิเคราะห์ข้อมูลที่มีอยู่และนำเข้าไปยัง Talent Hub เพื่อให้แก้ไขได้ง่ายขึ้น"
 
@@ -1679,13 +1683,13 @@ msgstr "ชื่อผู้ใช้"
 msgid "Users Signed Up"
 msgstr "ผู้ใช้ที่ลงทะเบียน"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:548
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:928
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:448
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:828
 msgid "Validate"
 msgstr "ตรวจสอบ"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:568
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:952
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:468
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:852
 msgid "Validated"
 msgstr "ตรวจสอบแล้ว"
 
@@ -1743,7 +1747,7 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:157
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:137
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:114
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:115
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr "คุณสามารถเพิ่มคีย์เวิร์ดได้หลายคำโดยคั่นด้วยเครื่องหมายจุลภาคหรือกด Enter"
 
@@ -1780,7 +1784,7 @@ msgstr "บัญชีของคุณและข้อมูลทั้ง
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "คีย์ API ของคุณถูกจัดเก็บไว้อย่างปลอดภัยในพื้นที่จัดเก็บภายในเบราว์เซอร์ และจะเรียกใช้เมื่อมีการส่งคำขอไปยัง OpenAI ผ่านทาง SDK ทางการเท่านั้น ขอให้มั่นใจได้ว่าคีย์ของคุณจะไม่ถูกส่งไปยังเซิร์ฟเวอร์ภายนอกใดๆ ยกเว้นเมื่อมีการโต้ตอบกับบริการของ OpenAI"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:490
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:390
 msgid "Your CV Data"
 msgstr ""
 
