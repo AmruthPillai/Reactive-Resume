@@ -18,12 +18,12 @@ export type IJob = {
 
 export const fetchJobs = async (): Promise<IJob[]> => {
   const response = await fetch(
-    `https://app.nocodb.com/api/v2/tables/${jobTable}/records?viewId=${jobView1}&where=%28status%2Ceq%2Copen%29&limit=25&shuffle=0&offset=0`,
+    `https://app.nocodb.com/api/v2/tables/${process.env.NX_PUBLIC_JOB_TABLE}/records?viewId=${process.env.NX_PUBLIC_JOB_VIEW_1}&where=%28status%2Ceq%2Copen%29&limit=25&shuffle=0&offset=0`,
     {
       // mode: "no-cors",
       headers: {
         Accept: "application/json",
-        "xc-token": nocodbToken,
+        "xc-token": process.env.NX_PUBLIC_NOCODB_TOKEN ?? "",
         "Access-Control-Allow-Origin": "*",
       },
     },
