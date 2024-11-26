@@ -27,7 +27,9 @@ async function bootstrap() {
     credentials: true,
     origin: isProduction
       ? ["https://cv.techhub.asia", "https://reactive-resume-admin-antdesign-pro.vercel.app"]
-      : false,
+      : true,
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
   });
 
   // Helmet - enabled only in production
