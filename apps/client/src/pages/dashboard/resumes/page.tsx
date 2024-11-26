@@ -13,7 +13,8 @@ type Layout = "grid" | "list";
 export const ResumesPage = () => {
   const [layout, setLayout] = useState<Layout>("grid");
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-
+  console.log(process.env);
+  console.log(JSON.stringify(process.env));
   return (
     <>
       <Helmet>
