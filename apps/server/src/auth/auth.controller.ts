@@ -183,16 +183,16 @@ export class AuthController {
     await this.authService.setRefreshToken(user.email, null);
 
     response.clearCookie("Authentication", {
-      domain: isAdminRequest ? (this.configService.get("CMS_URL") ?? "localhost") : undefined,
+      path: isAdminRequest ? "/api/admin" : "/api",
       httpOnly: true,
-      secure: (this.configService.get("PUBLIC_URL") ?? "").includes("https://"),
-      sameSite: this.configService.get("NODE_ENV") === "production" ? "none" : "lax",
+      secure: true,
+      sameSite: "none"
     });
     response.clearCookie("Refresh", {
-      domain: isAdminRequest ? (this.configService.get("CMS_URL") ?? "localhost") : undefined,
+      path: isAdminRequest ? "/api/admin" : "/api",
       httpOnly: true,
-      sameSite: this.configService.get("NODE_ENV") === "production" ? "none" : "lax",
-      secure: (this.configService.get("PUBLIC_URL") ?? "").includes("https://"),
+      secure: true,
+      sameSite: "none"
     });
 
     const data = messageSchema.parse({ message: "You have been logged out, tschüss!" });
