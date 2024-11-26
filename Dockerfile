@@ -22,6 +22,9 @@ RUN pnpm install --frozen-lockfile
 COPY . .
 
 ENV NX_CLOUD_ACCESS_TOKEN=$NX_CLOUD_ACCESS_TOKEN
+ENV NX_PUBLIC_JOB_TABLE=m1ltea9bo7dtruq
+ENV NX_PUBLIC_JOB_VIEW_1=vwhymtc52dohvlxm
+ENV NX_PUBLIC_NOCODB_TOKEN=PJEkGTlTlSye3FE5O4FcpxsOj0p9L92zSXNhiOTp
 
 RUN pnpm run build
 
