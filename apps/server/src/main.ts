@@ -21,14 +21,15 @@ async function bootstrap() {
   // Cookie Parser
   app.use(cookieParser());
 
+  const isProduction = (configService.get<string>("NODE_ENV") ?? "development") === "production";
   // CORS
   app.enableCors({
     credentials: true,
-    origin: process.env.NODE_ENV === "production",
+    origin: isProduction,
   });
 
   // Helmet - enabled only in production
-  if (process.env.NODE_ENV === "production") {
+  if (isProduction) {
     app.use(helmet({ contentSecurityPolicy: false }));
   }
 

@@ -7,9 +7,9 @@ export const getCookieOptions = (
   // Options For Access Token
   if (grantType === "access") {
     return {
-      domain: isAdminRequest ? (process.env.CMS_URL ?? "https://localhost:8000") : undefined,
+      domain: isAdminRequest ? (process.env.CMS_URL ?? "localhost") : undefined,
       httpOnly: true,
-      sameSite: "none",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       secure: (process.env.PUBLIC_URL ?? "").includes("https://"),
       expires: new Date(Date.now() + 1000 * 60 * 15), // 15 minutes from now
     };
@@ -17,9 +17,9 @@ export const getCookieOptions = (
 
   // Options For Refresh Token
   return {
-    domain: isAdminRequest ? (process.env.CMS_URL ?? "https://localhost:8000") : undefined,
+    domain: isAdminRequest ? (process.env.CMS_URL ?? "localhost") : undefined,
     httpOnly: true,
-    sameSite: "none",
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
     secure: (process.env.PUBLIC_URL ?? "").includes("https://"),
     expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 2), // 2 days from now
   };
