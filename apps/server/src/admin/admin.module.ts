@@ -1,4 +1,4 @@
-import { MiddlewareConsumer, Module, NestModule } from "@nestjs/common";
+import { MiddlewareConsumer, Module, NestModule, RequestMethod } from "@nestjs/common";
 
 import { AuthModule } from "../auth/auth.module";
 import { AuthenticationMiddleware } from "../middleware/authentication.middleware";
@@ -13,8 +13,12 @@ import { AdminService } from "./admin.service";
   providers: [AdminService],
   exports: [],
 })
+// export class AdminModule {}
 export class AdminModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(AuthenticationMiddleware).forRoutes("*");
+    consumer.apply(AuthenticationMiddleware).forRoutes({
+      path: "/api/admin/*",
+      method: RequestMethod.ALL,
+    });
   }
 }

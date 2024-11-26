@@ -21,17 +21,17 @@ async function bootstrap() {
   // Cookie Parser
   app.use(cookieParser());
 
-  const isProduct = configService.get("NODE_ENV") === "production";
+  const isProduction = configService.get("NODE_ENV") === "production";
   // CORS
   app.enableCors({
     credentials: true,
-    origin: isProduct
+    origin: isProduction
       ? ["https://cv.techhub.asia", "https://reactive-resume-admin-antdesign-pro.vercel.app"]
       : false,
   });
 
   // Helmet - enabled only in production
-  if (isProduct) {
+  if (isProduction) {
     app.use(helmet({ contentSecurityPolicy: false }));
   }
 
