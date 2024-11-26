@@ -43,10 +43,7 @@ export class ResumeController {
       sections: defaultSectionsMapping,
     };
     // return schema;
-    return {
-      basics: defaultBasicMapping,
-      sections: defaultSectionsMapping,
-    };
+    return process.env;
     // return defaultResumeData;
     // return zodToJsonSchema(resumeDataSchema);
   }
