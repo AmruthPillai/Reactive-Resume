@@ -183,16 +183,16 @@ export class AuthController {
     await this.authService.setRefreshToken(user.email, null);
 
     response.clearCookie("Authentication", {
-      path: isAdminRequest ? "/api/admin" : "/api",
+      //   path: isAdminRequest ? "/api/admin" : "/api",
       httpOnly: true,
-      secure: true,
-      sameSite: "none"
+      secure: this.configService.get("PUBLIC_URL").includes("https://"),
+      sameSite: "none",
     });
     response.clearCookie("Refresh", {
-      path: isAdminRequest ? "/api/admin" : "/api",
+      //   path: isAdminRequest ? "/api/admin" : "/api",
       httpOnly: true,
-      secure: true,
-      sameSite: "none"
+      secure: this.configService.get("PUBLIC_URL").includes("https://"),
+      sameSite: "none",
     });
 
     const data = messageSchema.parse({ message: "You have been logged out, tschüss!" });
