@@ -85,7 +85,7 @@ msgid "A4"
 msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:881
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:781
 msgid "Accepts only {accept} files"
 msgstr "Приймаються тільки файли {accept}"
 
@@ -124,9 +124,9 @@ msgstr "ШІ"
 msgid "Already have an account?"
 msgstr "Вже маєте обліковий запис?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:420
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:643
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:693
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:320
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:543
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:593
 msgid "An error occurred while validating the file."
 msgstr "Сталася помилка під час перевірки файлу."
 
@@ -147,11 +147,11 @@ msgstr "Усі, хто має це посилання можуть перегл�
 msgid "API Key"
 msgstr "Ключ API"
 
-#: apps/client/src/pages/dashboard/jobs/_layouts/grid/_components/job-card.tsx:52
+#: apps/client/src/pages/dashboard/jobs/_layouts/grid/_components/job-card.tsx:55
 msgid "Apply"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/jobs/_dialogs/job.tsx:48
+#: apps/client/src/pages/dashboard/jobs/_dialogs/job.tsx:71
 msgid "Apply Now"
 msgstr ""
 
@@ -415,7 +415,7 @@ msgstr "Опис"
 msgid "Design single/multi page resumes"
 msgstr "Дизайн одноразово/мульти-сторінки поновлюється"
 
-#: apps/client/src/pages/dashboard/jobs/_layouts/grid/_components/job-card.tsx:48
+#: apps/client/src/pages/dashboard/jobs/_layouts/grid/_components/job-card.tsx:51
 msgid "Detail"
 msgstr ""
 
@@ -427,8 +427,8 @@ msgstr "Вимкнути"
 msgid "Disable 2FA"
 msgstr "Вимкнути 2FA"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:556
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:934
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:456
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:834
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:236
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
@@ -528,8 +528,8 @@ msgstr "Введіть одноразовий пароль, що надаєть�
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "Введіть адресу електронної пошти, і ми надішлемо вам посилання для відновлення пароля, якщо такий обліковий запис існує."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:479
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:894
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:379
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:794
 msgid "Errors"
 msgstr "Помилки"
 
@@ -550,15 +550,15 @@ msgstr "Досліджуйте доступні шаблони в Talent Hub т�
 msgid "Export"
 msgstr "Експорт"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:516
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:416
 msgid "Field"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:863
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:763
 msgid "File"
 msgstr "Файл"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:830
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:730
 msgid "Filetype"
 msgstr "Тип файлу"
 
@@ -654,7 +654,7 @@ msgid "Grayscale"
 msgstr "Grayscale"
 
 #: apps/client/src/pages/dashboard/jobs/page.tsx:43
-#: apps/client/src/pages/dashboard/resumes/page.tsx:43
+#: apps/client/src/pages/dashboard/resumes/page.tsx:45
 msgid "Grid"
 msgstr "Сітка"
 
@@ -671,7 +671,7 @@ msgid "Here, you can update your profile to customize and personalize your exper
 msgstr "Тут ви можете оновити свій профіль, щоб налаштувати і персоналізувати свій досвід."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:78
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:92
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:93
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:186
 msgid "Hidden"
 msgstr "Hidden"
@@ -719,12 +719,12 @@ msgstr "Якщо вимкнути двофакторну аутентифіка�
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "Якщо ви багатомовні, ми будемо раді вашій допомозі залучити більше мов та спільнот. Не хвилюйтеся, якщо ви не бачите своєї мови в списку - просто дай мені вигук на GitHub, і я обов'язково включу його. Готові почати? Перейдіть до перекладу приблизно в Crowdin, натиснувши на посилання нижче."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:563
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:947
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:463
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:847
 msgid "Import"
 msgstr "Імпорт"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:818
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:718
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -786,7 +786,7 @@ msgstr "Схоже, що вказаний вами маркер підтверд
 msgid "It looks like your email address has already been verified."
 msgstr "Схоже, що ваша адреса електронної пошти вже перевірена."
 
-#: apps/client/src/pages/dashboard/jobs/_dialogs/job.tsx:38
+#: apps/client/src/pages/dashboard/jobs/_dialogs/job.tsx:46
 msgid "Job Description"
 msgstr ""
 
@@ -805,7 +805,7 @@ msgstr "JSON"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:152
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:132
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:109
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:110
 msgid "Keywords"
 msgstr "Ключові слова"
 
@@ -863,7 +863,7 @@ msgid "LinkedIn, JSON Resume, etc."
 msgstr "LinedIn, JSON відновлення і т.д."
 
 #: apps/client/src/pages/dashboard/jobs/page.tsx:47
-#: apps/client/src/pages/dashboard/resumes/page.tsx:47
+#: apps/client/src/pages/dashboard/resumes/page.tsx:49
 msgid "List"
 msgstr "Список"
 
@@ -872,8 +872,8 @@ msgstr "Список"
 msgid "List Jobs"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:947
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:963
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:847
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:863
 msgid "Loading..."
 msgstr ""
 
@@ -916,11 +916,11 @@ msgstr "Основне"
 msgid "Manage multiple resumes"
 msgstr "Керування багатьма резюме"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:518
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:418
 msgid "Map"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:513
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:413
 msgid "Mapping"
 msgstr ""
 
@@ -946,8 +946,8 @@ msgstr "Відступ"
 msgid "MIT License"
 msgstr "Ліцензія MIT"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:909
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:928
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:809
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:828
 msgid "Modify"
 msgstr ""
 
@@ -1015,9 +1015,9 @@ msgstr "Одноразовий пароль"
 
 #: apps/client/src/components/ai-actions.tsx:56
 #: apps/client/src/libs/axios.ts:29
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:448
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:745
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:767
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:348
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:645
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:667
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "Ой, сервер повернув помилку."
@@ -1107,7 +1107,7 @@ msgstr "Зображення"
 msgid "Please note that this step is completely optional."
 msgstr "Зверніть увагу на те, що цей крок є повністю необов'язковим."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:834
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:734
 msgid "Please select a file type"
 msgstr "Будь ласка, оберіть тип файлу"
 
@@ -1216,13 +1216,13 @@ msgstr "Відновити ваш пароль"
 msgid "Reset Zoom"
 msgstr "Reset Zoom"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:464
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:364
 msgid "Resume Mapping"
 msgstr ""
 
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:91
-#: apps/client/src/pages/dashboard/resumes/page.tsx:20
-#: apps/client/src/pages/dashboard/resumes/page.tsx:37
+#: apps/client/src/pages/dashboard/resumes/page.tsx:22
+#: apps/client/src/pages/dashboard/resumes/page.tsx:39
 msgid "Resumes"
 msgstr "Резюме"
 
@@ -1466,7 +1466,7 @@ msgstr "Система"
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/builder/page.tsx:48
 #: apps/client/src/pages/dashboard/jobs/page.tsx:20
-#: apps/client/src/pages/dashboard/resumes/page.tsx:20
+#: apps/client/src/pages/dashboard/resumes/page.tsx:22
 #: apps/client/src/pages/dashboard/settings/page.tsx:14
 #: apps/client/src/pages/home/components/footer.tsx:21
 #: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
@@ -1497,7 +1497,11 @@ msgstr "Репер процвітає завдяки яскравому спів
 msgid "Talent Resume"
 msgstr "Безкоштовний і відкритий код відновлення"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:532
+#: apps/client/src/pages/dashboard/jobs/_dialogs/job.tsx:59
+msgid "Tech Stack"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:432
 msgid "Techhub Output"
 msgstr ""
 
@@ -1585,7 +1589,7 @@ msgstr "Перемкнути номери сторінок"
 msgid "Track views and downloads"
 msgstr "Перегляд треків та завантажень"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:963
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:863
 msgid "Transform"
 msgstr ""
 
@@ -1648,7 +1652,7 @@ msgstr "Оновити існуючий елемент"
 msgid "Update an existing resume"
 msgstr "Оновити існуючий резюме"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:822
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:722
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Talent Hub for easier editing."
 msgstr "Вивантажити файл з одного з прийнятих джерел до аналізу наявних даних і імпортувати його до Реактивного відродження для полегшення."
 
@@ -1679,13 +1683,13 @@ msgstr "Ім'я користувача"
 msgid "Users Signed Up"
 msgstr "Авторизація користувачів"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:548
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:928
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:448
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:828
 msgid "Validate"
 msgstr "Validate"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:568
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:952
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:468
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:852
 msgid "Validated"
 msgstr "Перевірено"
 
@@ -1743,7 +1747,7 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:157
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:137
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:114
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:115
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr "Ви можете додати декілька ключових слів, розділивши їх комою або натиснувши Enter."
 
@@ -1780,7 +1784,7 @@ msgstr "Ваш обліковий запис і всі ваші дані бул�
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "Ваш ключ API надійно зберігається в локальній пам'яті браузера і використовує лише при обробці запитів до OpenAI через свій офіційний SDK. Решту запевнили, що ваш ключ не передається на будь-який зовнішній сервер, за винятком взаємодії з сервісами OpenAI."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:490
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:390
 msgid "Your CV Data"
 msgstr ""
 

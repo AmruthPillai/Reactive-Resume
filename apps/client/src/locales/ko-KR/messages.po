@@ -85,7 +85,7 @@ msgid "A4"
 msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:881
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:781
 msgid "Accepts only {accept} files"
 msgstr "{accept} 파일만 허용됩니다."
 
@@ -124,9 +124,9 @@ msgstr "AI"
 msgid "Already have an account?"
 msgstr "이미 계정이 있으신가요?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:420
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:643
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:693
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:320
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:543
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:593
 msgid "An error occurred while validating the file."
 msgstr "파일의 유효성을 검사하는 동안 오류가 발생했습니다."
 
@@ -147,11 +147,11 @@ msgstr "이 링크가 있는 사람은 누구나 이력서를 보고 다운로�
 msgid "API Key"
 msgstr "API Key"
 
-#: apps/client/src/pages/dashboard/jobs/_layouts/grid/_components/job-card.tsx:52
+#: apps/client/src/pages/dashboard/jobs/_layouts/grid/_components/job-card.tsx:55
 msgid "Apply"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/jobs/_dialogs/job.tsx:48
+#: apps/client/src/pages/dashboard/jobs/_dialogs/job.tsx:71
 msgid "Apply Now"
 msgstr ""
 
@@ -415,7 +415,7 @@ msgstr "설명"
 msgid "Design single/multi page resumes"
 msgstr "단일/다중 페이지 이력서 디자인"
 
-#: apps/client/src/pages/dashboard/jobs/_layouts/grid/_components/job-card.tsx:48
+#: apps/client/src/pages/dashboard/jobs/_layouts/grid/_components/job-card.tsx:51
 msgid "Detail"
 msgstr ""
 
@@ -427,8 +427,8 @@ msgstr "비활성화"
 msgid "Disable 2FA"
 msgstr "2FA 비활성화"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:556
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:934
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:456
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:834
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:236
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:119
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
@@ -528,8 +528,8 @@ msgstr "인증 앱에서 제공한 일회용 비밀번호를 아래에 입력합
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "이메일 주소를 입력하시면 계정이 존재하는 경우 비밀번호를 재설정할 수 있는 링크를 보내드립니다."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:479
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:894
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:379
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:794
 msgid "Errors"
 msgstr "오류"
 
@@ -550,15 +550,15 @@ msgstr "Talent Hub 에서 사용할 수 있는 템플릿을 살펴보고 이 템
 msgid "Export"
 msgstr "내보내기"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:516
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:416
 msgid "Field"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:863
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:763
 msgid "File"
 msgstr "파일"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:830
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:730
 msgid "Filetype"
 msgstr "파일 유형"
 
@@ -654,7 +654,7 @@ msgid "Grayscale"
 msgstr "그레이 스케일"
 
 #: apps/client/src/pages/dashboard/jobs/page.tsx:43
-#: apps/client/src/pages/dashboard/resumes/page.tsx:43
+#: apps/client/src/pages/dashboard/resumes/page.tsx:45
 msgid "Grid"
 msgstr "그리드"
 
@@ -671,7 +671,7 @@ msgid "Here, you can update your profile to customize and personalize your exper
 msgstr "여기에서 프로필을 업데이트하여 사용자 환경을 맞춤 설정하고 개인화할 수 있습니다."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:78
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:92
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:93
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:186
 msgid "Hidden"
 msgstr "숨겨진"
@@ -719,12 +719,12 @@ msgstr "2단계 인증을 비활성화하면 로그인할 때 더 이상 인증 
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "다국어를 사용하는 경우 더 많은 언어와 커뮤니티에 앱을 제공할 수 있도록 도와주시면 감사하겠습니다. 목록에 귀하의 언어가 없더라도 걱정하지 마시고 GitHub에 알려주시면 포함할 수 있도록 하겠습니다. 시작할 준비가 되셨나요? 아래 링크를 클릭하여 Crowdin에서 번역을 시작하세요."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:563
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:947
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:463
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:847
 msgid "Import"
 msgstr "가져오기"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:818
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:718
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -786,7 +786,7 @@ msgstr "입력하신 인증 토큰이 유효하지 않은 것 같습니다. 인�
 msgid "It looks like your email address has already been verified."
 msgstr "이메일 주소가 이미 인증된 것 같습니다."
 
-#: apps/client/src/pages/dashboard/jobs/_dialogs/job.tsx:38
+#: apps/client/src/pages/dashboard/jobs/_dialogs/job.tsx:46
 msgid "Job Description"
 msgstr ""
 
@@ -805,7 +805,7 @@ msgstr "JSON"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:152
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:132
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:109
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:110
 msgid "Keywords"
 msgstr "키워드"
 
@@ -863,7 +863,7 @@ msgid "LinkedIn, JSON Resume, etc."
 msgstr "LinkedIn, JSON 이력서 등"
 
 #: apps/client/src/pages/dashboard/jobs/page.tsx:47
-#: apps/client/src/pages/dashboard/resumes/page.tsx:47
+#: apps/client/src/pages/dashboard/resumes/page.tsx:49
 msgid "List"
 msgstr "목록"
 
@@ -872,8 +872,8 @@ msgstr "목록"
 msgid "List Jobs"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:947
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:963
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:847
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:863
 msgid "Loading..."
 msgstr ""
 
@@ -916,11 +916,11 @@ msgstr "메인"
 msgid "Manage multiple resumes"
 msgstr "여러 이력서 관리"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:518
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:418
 msgid "Map"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:513
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:413
 msgid "Mapping"
 msgstr ""
 
@@ -946,8 +946,8 @@ msgstr "마진"
 msgid "MIT License"
 msgstr "MIT 라이선스"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:909
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:928
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:809
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:828
 msgid "Modify"
 msgstr ""
 
@@ -1015,9 +1015,9 @@ msgstr "일회용 비밀번호"
 
 #: apps/client/src/components/ai-actions.tsx:56
 #: apps/client/src/libs/axios.ts:29
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:448
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:745
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:767
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:348
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:645
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:667
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "서버에서 오류를 반환했습니다."
@@ -1107,7 +1107,7 @@ msgstr "사진"
 msgid "Please note that this step is completely optional."
 msgstr "이 단계는 완전히 선택 사항이라는 점에 유의하세요."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:834
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:734
 msgid "Please select a file type"
 msgstr "파일 유형을 선택하세요."
 
@@ -1216,13 +1216,13 @@ msgstr "비밀번호 재설정"
 msgid "Reset Zoom"
 msgstr "줌 초기화"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:464
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:364
 msgid "Resume Mapping"
 msgstr ""
 
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:91
-#: apps/client/src/pages/dashboard/resumes/page.tsx:20
-#: apps/client/src/pages/dashboard/resumes/page.tsx:37
+#: apps/client/src/pages/dashboard/resumes/page.tsx:22
+#: apps/client/src/pages/dashboard/resumes/page.tsx:39
 msgid "Resumes"
 msgstr "이력서"
 
@@ -1466,7 +1466,7 @@ msgstr "시스템"
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/builder/page.tsx:48
 #: apps/client/src/pages/dashboard/jobs/page.tsx:20
-#: apps/client/src/pages/dashboard/resumes/page.tsx:20
+#: apps/client/src/pages/dashboard/resumes/page.tsx:22
 #: apps/client/src/pages/dashboard/settings/page.tsx:14
 #: apps/client/src/pages/home/components/footer.tsx:21
 #: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
@@ -1497,7 +1497,11 @@ msgstr "리액티브 이력서는 활기찬 커뮤니티 덕분에 번창하고 
 msgid "Talent Resume"
 msgstr "무료, 오픈 소스 이력서 작성 도구"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:532
+#: apps/client/src/pages/dashboard/jobs/_dialogs/job.tsx:59
+msgid "Tech Stack"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:432
 msgid "Techhub Output"
 msgstr ""
 
@@ -1585,7 +1589,7 @@ msgstr "페이지 번호 토글"
 msgid "Track views and downloads"
 msgstr "조회수 및 다운로드 추적"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:963
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:863
 msgid "Transform"
 msgstr ""
 
@@ -1648,7 +1652,7 @@ msgstr "기존 항목 업데이트"
 msgid "Update an existing resume"
 msgstr "기존 이력서 업데이트"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:822
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:722
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Talent Hub for easier editing."
 msgstr "허용된 소스 중 하나에서 파일을 업로드하여 기존 데이터를 구문 분석하고 이를 반응형 이력서로 가져와서 쉽게 편집할 수 있습니다."
 
@@ -1679,13 +1683,13 @@ msgstr "사용자 이름"
 msgid "Users Signed Up"
 msgstr "가입한 사용자 수"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:548
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:928
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:448
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:828
 msgid "Validate"
 msgstr "유효성 검사"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:568
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:952
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:468
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:852
 msgid "Validated"
 msgstr "유효성 검사"
 
@@ -1743,7 +1747,7 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:157
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:137
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:114
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:115
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr "쉼표로 구분하거나 Enter 키를 눌러 여러 개의 키워드를 추가할 수 있습니다."
 
@@ -1780,7 +1784,7 @@ msgstr "계정과 모든 데이터가 성공적으로 삭제되었습니다. 안
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "API 키는 브라우저의 로컬 저장소에 안전하게 저장되며 공식 SDK를 통해 OpenAI에 요청할 때만 활용됩니다. OpenAI의 서비스와 상호작용할 때를 제외하고는 키가 외부 서버로 전송되지 않으니 안심하세요."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:490
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:390
 msgid "Your CV Data"
 msgstr ""
 

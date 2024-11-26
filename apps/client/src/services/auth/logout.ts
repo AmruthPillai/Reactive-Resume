@@ -18,10 +18,19 @@ export const useLogout = () => {
     onSuccess: () => {
       setUser(null);
       queryClient.setQueryData(["user"], null);
+      // queryClient.setQueryData([""], null);
+      queryClient.removeQueries({
+        queryKey: ["resumes"],
+      });
+      // queryClient.clear();
     },
     onError: () => {
       setUser(null);
       queryClient.setQueryData(["user"], null);
+      queryClient.removeQueries({
+        queryKey: ["resumes"],
+      });
+      // queryClient.clear();
     },
   });
 

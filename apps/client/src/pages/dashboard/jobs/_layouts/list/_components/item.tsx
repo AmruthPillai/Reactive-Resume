@@ -3,7 +3,7 @@ import { cn } from "@reactive-resume/utils";
 type Props = {
   title?: React.ReactNode;
   time?: string;
-  description?: React.ReactNode;
+  description?: string;
   className?: string;
   onClick?: () => void;
 };
@@ -20,7 +20,13 @@ export const BaseListItem = ({ title, time, description, className, onClick }: P
       <div className="flex flex-col gap-2 space-x-4">
         <h4 className="line-clamp-1 truncate text-2xl font-semibold">{title}</h4>
         <p className="!m-0 text-sm font-thin opacity-75">{time}</p>
-        <p className="!m-0 line-clamp-5 pt-2 text-base">{description}</p>
+        <div
+          dangerouslySetInnerHTML={{
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            __html: description!,
+          }}
+          className="!m-0 line-clamp-5 pt-2 text-base"
+        />
       </div>
     </div>
   </div>
