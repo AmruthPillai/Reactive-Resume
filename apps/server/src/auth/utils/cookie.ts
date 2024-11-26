@@ -8,7 +8,7 @@ export const getCookieOptions = (
     httpOnly: true,
     sameSite: "none",
     secure: (process.env.PUBLIC_URL ?? "").includes("https://"),
-    path: isAdminRequest ? "/api/admin" : "/api", // Changed paths to match API routes
+    // path: isAdminRequest ? "/api/admin" : "/api",
   };
 
   // Options For Access Token
