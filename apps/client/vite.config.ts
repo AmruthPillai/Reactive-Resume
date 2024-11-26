@@ -19,6 +19,7 @@ export default defineConfig(({ mode }) => {
       nocodbToken: JSON.stringify(process.env.VITE_NOCODB_TOKEN),
       jobTable: JSON.stringify(process.env.VITE_JOB_TABLE),
       jobView1: JSON.stringify(process.env.VITE_JOB_VIEW_1),
+      "process.env": process.env,
     },
 
     server: {

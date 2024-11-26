@@ -161,12 +161,20 @@ export const schemaMappingData = [
     path: "sections.skills.items.name",
   },
   {
+    name: "Skill Description",
+    path: "sections.skills.items.description",
+  },
+  {
     name: "Skill Keywords",
     path: "sections.skills.items.keywords",
   },
   {
     name: "Language",
     path: "sections.languages.items.name",
+  },
+  {
+    name: "Language Description",
+    path: "sections.languages.items.description",
   },
   {
     name: "Interest Name",
@@ -187,6 +195,10 @@ export const schemaMappingData = [
   {
     name: "Project Name",
     path: "sections.projects.items.name",
+  },
+  {
+    name: "Project Summary",
+    path: "sections.projects.items.summary",
   },
   {
     name: "Project Date",
