@@ -5,7 +5,6 @@ import {
   Get,
   HttpCode,
   InternalServerErrorException,
-  Param,
   Patch,
   Post,
   Query,
@@ -84,6 +83,8 @@ export class AuthController {
       isTwoFactorAuth,
     );
 
+    // console.log("isAdminRequest", isAdminRequest, getCookieOptions("access", isAdminRequest));
+
     response.cookie("Authentication", accessToken, getCookieOptions("access", isAdminRequest));
     response.cookie("Refresh", refreshToken, getCookieOptions("refresh", isAdminRequest));
 
@@ -109,12 +110,9 @@ export class AuthController {
   async login(
     @User() user: UserWithSecrets,
     @Res({ passthrough: true }) response: Response,
-    @Param("isAdminRequest")
-    params?: {
-      isAdminRequest?: boolean;
-    },
+    @Query("isAdminRequest") isAdminRequest?: boolean,
   ) {
-    return this.handleAuthenticationResponse(user, response, false, false, params?.isAdminRequest);
+    return this.handleAuthenticationResponse(user, response, false, false, isAdminRequest);
   }
 
   @Get("providers")
@@ -162,12 +160,9 @@ export class AuthController {
   async refresh(
     @User() user: UserWithSecrets,
     @Res({ passthrough: true }) response: Response,
-    @Param("isAdminRequest")
-    params?: {
-      isAdminRequest?: boolean;
-    },
+    @Query("isAdminRequest") isAdminRequest?: boolean,
   ) {
-    return this.handleAuthenticationResponse(user, response, true, false, params?.isAdminRequest);
+    return this.handleAuthenticationResponse(user, response, true, false, isAdminRequest);
   }
 
   @Patch("password")
@@ -183,27 +178,20 @@ export class AuthController {
   async logout(
     @User() user: UserWithSecrets,
     @Res({ passthrough: true }) response: Response,
-    @Param("isAdminRequest")
-    params?: {
-      isAdminRequest?: boolean;
-    },
+    @Query("isAdminRequest") isAdminRequest?: boolean,
   ) {
     await this.authService.setRefreshToken(user.email, null);
 
     response.clearCookie("Authentication", {
-      domain: params?.isAdminRequest
-        ? (this.configService.get("CMS_URL") ?? "https://localhost:8000")
-        : undefined,
+      domain: isAdminRequest ? (this.configService.get("CMS_URL") ?? "localhost") : undefined,
       httpOnly: true,
-      sameSite: "none",
       secure: (this.configService.get("PUBLIC_URL") ?? "").includes("https://"),
+      sameSite: this.configService.get("NODE_ENV") === "production" ? "none" : "lax",
     });
     response.clearCookie("Refresh", {
-      domain: params?.isAdminRequest
-        ? (this.configService.get("CMS_URL") ?? "https://localhost:8000")
-        : undefined,
-      sameSite: "none",
+      domain: isAdminRequest ? (this.configService.get("CMS_URL") ?? "localhost") : undefined,
       httpOnly: true,
+      sameSite: this.configService.get("NODE_ENV") === "production" ? "none" : "lax",
       secure: (this.configService.get("PUBLIC_URL") ?? "").includes("https://"),
     });
 
