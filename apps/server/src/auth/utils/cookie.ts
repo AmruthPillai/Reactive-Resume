@@ -7,7 +7,7 @@ export const getCookieOptions = (
   const baseOptions: CookieOptions = {
     httpOnly: true,
     sameSite: "none",
-    secure: true,
+    secure: (process.env.PUBLIC_URL ?? "").includes("https://"),
     path: isAdminRequest ? "/api/admin" : "/api", // Changed paths to match API routes
   };
 
