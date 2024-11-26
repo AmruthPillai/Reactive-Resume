@@ -1,10 +1,11 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/dot-notation */
 import { Injectable, NestMiddleware, UnauthorizedException } from "@nestjs/common";
+import { NextFunction, Request, Response } from "express";
 
 @Injectable()
 export class AuthenticationMiddleware implements NestMiddleware {
-  use(req: any, res: any, next: () => void) {
+  use(req: Request, res: Response, next: NextFunction): void {
+    console.log(req);
     const isAdminRequest = req.path.startsWith("/admin"); // Identify if it's an admin request
 
     // Access appropriate cookies
@@ -16,8 +17,8 @@ export class AuthenticationMiddleware implements NestMiddleware {
     }
 
     // Attach the token and admin flag to the request object for later use
-    req.token = authCookie;
-    req.isAdminRequest = isAdminRequest;
+    // req.token = authCookie;
+    // req.isAdminRequest = isAdminRequest;
 
     next();
   }
