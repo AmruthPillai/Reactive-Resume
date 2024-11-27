@@ -11,7 +11,7 @@ type Props = {
 export const BaseListItem = ({ title, time, description, className, onClick }: Props) => (
   <div
     className={cn(
-      "flex cursor-pointer items-center rounded p-4 transition-colors hover:bg-secondary/30",
+      "flex cursor-pointer items-center rounded-md bg-secondary/50 p-4 transition-colors hover:bg-secondary/30",
       className,
     )}
     onClick={onClick}

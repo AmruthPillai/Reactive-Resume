@@ -9,6 +9,7 @@ import {
 } from "@reactive-resume/ui";
 import { AnimatePresence } from "framer-motion";
 import React from "react";
+import { useDarkMode } from "usehooks-ts";
 
 import { IJob } from "@/client/services/job/job";
 import { useTechStacks } from "@/client/services/job/tech-stack";
@@ -17,11 +18,11 @@ import { useDialog } from "@/client/stores/dialog";
 const DescriptionJobDialog = () => {
   const { isOpen, close, payload } = useDialog("job");
   const { techStacks } = useTechStacks();
-  console.log(techStacks)
+  const { isDarkMode } = useDarkMode();
 
   const findTitle = (id: number) => {
-    return techStacks?.find(ts => ts.Id === id)?.title;
-  }
+    return techStacks?.find((ts) => ts.Id === id)?.title;
+  };
 
   return (
     <Dialog
@@ -44,22 +45,28 @@ const DescriptionJobDialog = () => {
           </DialogHeader>
           <div className="flex flex-col gap-4">
             <h4 className="font-bold">{t`Job Description`}</h4>
-            <ScrollArea orientation="vertical" className="bg-secondary-accent">
+            <ScrollArea orientation="vertical">
               <div
                 dangerouslySetInnerHTML={{
                   __html: (payload.item as IJob).description,
                 }}
-                className="h-[180px] whitespace-pre-wrap rounded p-4 font-mono text-xs leading-relaxed"
+                className="h-[180px] whitespace-pre-wrap rounded p-4 pl-0 font-mono text-xs leading-relaxed"
               />
               {/* {(payload.item as IJob).description}
               </div> */}
             </ScrollArea>
           </div>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-3">
             <h4 className="font-bold">{t`Tech Stack`}</h4>
             <div className="flex gap-2">
               {(payload.item as IJob)._nc_m2m_job_tech_stacks.map((ts) => (
-                <div className="rounded-full bg-secondary px-6 py-1">
+                <div
+                  className="rounded-full px-6 py-1"
+                  style={{
+                    border: `1px solid ${isDarkMode ? "white" : "#0057FF"}`,
+                    backgroundColor: isDarkMode ? "rgba(255, 255, 255, 0.1)" : "#e6efff",
+                  }}
+                >
                   {findTitle(ts.tech_stack_id as unknown as number)}
                 </div>
               ))}
