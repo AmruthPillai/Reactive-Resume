@@ -46,7 +46,7 @@ export const ListView = () => {
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0, transition: { delay: (index + 2) * 0.1 } }}
                 exit={{ opacity: 0, filter: "blur(8px)", transition: { duration: 0.5 } }}
-                className="shadow-md"
+                // className="shadow-md"
               >
                 <JobItem job={job} />
               </motion.div>
