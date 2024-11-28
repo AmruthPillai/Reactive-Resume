@@ -1,17 +1,17 @@
 import { t } from "@lingui/macro";
-import { List, SquaresFour } from "@phosphor-icons/react";
-import { Input, ScrollArea, Tabs, TabsContent, TabsList, TabsTrigger } from "@reactive-resume/ui";
+// import { List, SquaresFour } from "@phosphor-icons/react";
+import { Input, ScrollArea, Tabs, TabsContent } from "@reactive-resume/ui";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 
-import { GridView } from "./_layouts/grid";
+// import { GridView } from "./_layouts/grid";
 import { ListView } from "./_layouts/list";
 
 type Layout = "grid" | "list";
 
 export const JobsPage = () => {
-  const [layout, setLayout] = useState<Layout>("grid");
+  const [layout, setLayout] = useState<Layout>("list");
 
   return (
     <>
@@ -37,7 +37,7 @@ export const JobsPage = () => {
             {t`List Jobs`}
           </motion.h1>
 
-          <TabsList>
+          {/* <TabsList>
             <TabsTrigger value="grid" className="size-8 p-0 sm:h-8 sm:w-auto sm:px-4">
               <SquaresFour />
               <span className="ml-2 hidden sm:block">{t`Grid`}</span>
@@ -46,15 +46,15 @@ export const JobsPage = () => {
               <List />
               <span className="ml-2 hidden sm:block">{t`List`}</span>
             </TabsTrigger>
-          </TabsList>
+          </TabsList> */}
         </div>
 
         <Input placeholder={t`Search for job`} className="w-3/5 rounded-xl" />
-
-        <ScrollArea className="h-[calc(100vh-140px)] lg:h-[calc(100vh-88px)]">
-          <TabsContent value="grid">
+        {/* className="h-[calc(100vh-140px)] lg:h-[calc(100vh-88px)]" */}
+        <ScrollArea>
+          {/* <TabsContent value="grid">
             <GridView />
-          </TabsContent>
+          </TabsContent> */}
           <TabsContent value="list">
             <ListView />
           </TabsContent>

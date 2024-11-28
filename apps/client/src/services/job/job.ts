@@ -19,6 +19,19 @@ export type IJob = {
   job_applies: number;
 };
 
+export const defaultJob: IJob = {
+  Id: 0,
+  title: "",
+  job_code: "",
+  description: "",
+  status: "",
+  CreatedAt: "",
+  UpdatedAt: "",
+  _nc_m2m_job_apply_jobs: [],
+  _nc_m2m_job_tech_stacks: [],
+  job_applies: 0,
+};
+
 export const fetchJobs = async (): Promise<IJob[]> => {
   const response = await fetch(
     `https://app.nocodb.com/api/v2/tables/${process.env.NX_PUBLIC_JOB_TABLE}/records?viewId=${process.env.NX_PUBLIC_JOB_VIEW_1}&where=%28status%2Ceq%2Copen%29&limit=25&shuffle=0&offset=0`,
