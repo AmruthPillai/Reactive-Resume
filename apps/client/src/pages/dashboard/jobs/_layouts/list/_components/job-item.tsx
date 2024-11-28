@@ -23,6 +23,7 @@ export const JobItem = ({ job }: { job: IJob }) => {
           className="group"
           title={job.title}
           time={t`Posted ${postedTime}`}
+          techStackArray={job._nc_m2m_job_tech_stacks}
           description={job.description}
           onClick={onDescription}
         />
