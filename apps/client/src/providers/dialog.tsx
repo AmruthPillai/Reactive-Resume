@@ -11,7 +11,8 @@ import { PublicationsDialog } from "../pages/builder/sidebars/left/dialogs/publi
 import { ReferencesDialog } from "../pages/builder/sidebars/left/dialogs/references";
 import { SkillsDialog } from "../pages/builder/sidebars/left/dialogs/skills";
 import { VolunteerDialog } from "../pages/builder/sidebars/left/dialogs/volunteer";
-import DescriptionJobDialog from "../pages/dashboard/jobs/_dialogs/job";
+import { ApplyJobDialog } from "../pages/dashboard/jobs/_dialogs/apply-job";
+import { DescriptionJobDialog } from "../pages/dashboard/jobs/_dialogs/job";
 import { ImportDialog } from "../pages/dashboard/resumes/_dialogs/import";
 import { LockDialog } from "../pages/dashboard/resumes/_dialogs/lock";
 import { ResumeDialog } from "../pages/dashboard/resumes/_dialogs/resume";
@@ -34,6 +35,7 @@ export const DialogProvider = ({ children }: Props) => {
         <LockDialog />
         <ImportDialog />
         <DescriptionJobDialog />
+        <ApplyJobDialog />
         <TwoFactorDialog />
 
         {isResumeLoaded && (

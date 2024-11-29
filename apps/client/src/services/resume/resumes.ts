@@ -11,7 +11,7 @@ export const fetchResumes = async () => {
   return response.data;
 };
 
-export const useResumes = () => {
+export const useResumes = (enabled = true) => {
   const {
     error,
     isPending: loading,
@@ -19,6 +19,7 @@ export const useResumes = () => {
   } = useQuery({
     queryKey: RESUMES_KEY,
     queryFn: fetchResumes,
+    enabled,
   });
 
   return { resumes, loading, error };

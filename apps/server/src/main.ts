@@ -25,9 +25,10 @@ async function bootstrap() {
   // CORS
   app.enableCors({
     credentials: true,
-    origin: isProduction
-      ? ["https://cv.techhub.asia", "https://reactive-resume-admin-antdesign-pro.vercel.app"]
-      : true,
+    // origin: isProduction
+    //   ? ["https://cv.techhub.asia", "https://reactive-resume-admin-antdesign-pro.vercel.app"]
+    //   : true,
+    origin: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
   });

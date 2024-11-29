@@ -1,7 +1,14 @@
 import { SectionKey } from "@reactive-resume/schema";
 import { create } from "zustand";
 
-export type DialogName = "resume" | "job" | "lock" | "import" | "two-factor" | SectionKey;
+export type DialogName =
+  | "resume"
+  | "job"
+  | "apply-job"
+  | "lock"
+  | "import"
+  | "two-factor"
+  | SectionKey;
 
 export type DialogMode = "create" | "update" | "duplicate" | "delete" | "description";
 
