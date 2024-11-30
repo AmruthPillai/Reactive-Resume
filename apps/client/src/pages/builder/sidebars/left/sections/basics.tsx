@@ -18,7 +18,7 @@ export const BasicsSection = () => {
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
           {getSectionIcon("basics")}
-          <h2 className="line-clamp-1 text-3xl font-bold">{t`Basics`}</h2>
+          <h2 className="line-clamp-1 text-2xl  font-bold lg:text-3xl">{t`Basics`}</h2>
         </div>
       </header>
 
@@ -27,7 +27,7 @@ export const BasicsSection = () => {
           <PictureSection />
         </div>
 
-        <div className="space-y-1.5 sm:col-span-2">
+        <div className="space-y-4 sm:col-span-2">
           <Label htmlFor="basics.name">{t`Full Name`}</Label>
           <Input
             id="basics.name"
