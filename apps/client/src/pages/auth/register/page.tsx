@@ -49,6 +49,10 @@ export const RegisterPage = () => {
 
   const onSubmit = async (data: FormValues) => {
     try {
+      if (typeof data?.email === 'string') {
+        const lowerCaseIdentifier = data.email.toLowerCase();
+        data.email = lowerCaseIdentifier;
+      }
       await register(data);
 
       navigate("/auth/verify-email");

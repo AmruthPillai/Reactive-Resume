@@ -42,6 +42,10 @@ export const LoginPage = () => {
 
   const onSubmit = async (data: FormValues) => {
     try {
+      if (typeof data?.identifier === 'string') {
+        const lowerCaseIdentifier = data.identifier.toLowerCase();
+        data.identifier = lowerCaseIdentifier;
+      }
       await login(data);
     } catch {
       form.reset();
