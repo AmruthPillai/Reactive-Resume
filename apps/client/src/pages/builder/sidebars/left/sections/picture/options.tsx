@@ -57,7 +57,7 @@ export const PictureOptions = () => {
   };
 
   const borderRadius = useMemo(() => {
-    const radius = picture.borderRadius.toString() as keyof typeof borderRadiusToStringMap;
+    const radius = picture.borderRadius?.toString() as keyof typeof borderRadiusToStringMap;
     return borderRadiusToStringMap[radius];
   }, [picture.borderRadius]);
 
