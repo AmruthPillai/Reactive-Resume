@@ -1,0 +1,40 @@
+#!/bin/bash
+
+mkdir -p clientABFiles
+rm -rf clientABFiles/*
+
+declare -A file_counts
+
+copy_file() {
+    local file=$1
+    local relative_path=${file#./}
+    local base_name=$(basename "${file%.*}")
+
+    if [[ -v "file_counts[$base_name]" ]]; then
+        file_counts[$base_name]=$((file_counts[$base_name] + 1))
+        dest_file="clientABFiles/${base_name}_${file_counts[$base_name]}.txt"
+    else
+        file_counts[$base_name]=1
+        dest_file="clientABFiles/${base_name}.txt"
+    fi
+
+    # Add the path comment at the beginning of the new file
+    {
+        echo "// File: client/$relative_path"
+        cat "$file"
+    } > "$dest_file"
+}
+
+find ./src -type f | while read -r file; do
+    copy_file "$file"
+done
+
+if [ -f "./prisma/schema.prisma" ]; then
+    copy_file "./prisma/schema.prisma"
+fi
+
+git add ABFiles
+
+echo "Files copied from src to ABFiles, paths added as comments, and extensions changed to .txt"
+echo "prisma/schema.prisma has been included if it exists"
+echo "Files with the same name have been numbered to avoid conflicts"

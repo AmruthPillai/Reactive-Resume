@@ -26,3 +26,4 @@ export * from "./metadata";
 export * from "./sample";
 export * from "./sections";
 export * from "./shared";
+export * from "./portfolio";
