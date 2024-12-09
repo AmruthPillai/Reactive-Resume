@@ -135,7 +135,9 @@ export class StorageService implements OnModuleInit {
           .toBuffer();
       }
 
-      await this.client.putObject(this.bucketName, filepath, buffer, metadata);
+      const bufferSize = buffer.length;
+
+      await this.client.putObject(this.bucketName, filepath, buffer, bufferSize, metadata);
 
       return url;
     } catch {

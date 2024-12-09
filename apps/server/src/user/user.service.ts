@@ -70,6 +70,7 @@ export class UserService {
   }
 
   create(data: Prisma.UserCreateInput) {
+    data = { ...data, email: data.email.toLowerCase() };
     return this.prisma.user.create({ data, include: { secrets: true } });
   }
 

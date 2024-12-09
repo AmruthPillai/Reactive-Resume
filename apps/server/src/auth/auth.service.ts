@@ -128,6 +128,7 @@ export class AuthService {
 
   async authenticate({ identifier, password }: LoginDto) {
     try {
+      identifier = identifier.toLowerCase();
       const user = await this.userService.findOneByIdentifierOrThrow(identifier);
 
       if (!user.secrets?.password) {
