@@ -1,32 +1,55 @@
+// apps/artboard/src/components/picture.tsx
 import { cn, isUrl } from "@reactive-resume/utils";
-
 import { useArtboardStore } from "../store/artboard";
 
 type PictureProps = {
+  url?: string;
+  effects?: {
+    hidden?: boolean;
+    border?: boolean;
+    grayscale?: boolean;
+  };
+  size?: number;
+  aspectRatio?: number;
+  borderRadius?: number;
   className?: string;
 };
 
-export const Picture = ({ className }: PictureProps) => {
-  const picture = useArtboardStore((state) => state.resume.basics.picture);
+export const Picture = ({ 
+  url,
+  effects,
+  size,
+  aspectRatio,
+  borderRadius,
+  className 
+}: PictureProps) => {
+  const resumePicture = useArtboardStore((state) => state.resume.basics.picture);
   const fontSize = useArtboardStore((state) => state.resume.metadata.typography.font.size);
 
-  if (!isUrl(picture.url) || picture.effects.hidden) return null;
+  // Use provided props or fall back to resume picture props
+  const pictureUrl = url || resumePicture.url;
+  const pictureEffects = effects || resumePicture.effects;
+  const pictureSize = size || resumePicture.size;
+  const pictureAspectRatio = aspectRatio || resumePicture.aspectRatio;
+  const pictureBorderRadius = borderRadius || resumePicture.borderRadius;
+
+  if (!isUrl(pictureUrl) || pictureEffects.hidden) return null;
 
   return (
     <img
-      src={picture.url}
+      src={pictureUrl}
       alt="Profile"
       className={cn(
         "relative z-20 object-cover",
-        picture.effects.border && "border-primary",
-        picture.effects.grayscale && "grayscale",
+        pictureEffects.border && "border-primary",
+        pictureEffects.grayscale && "grayscale",
         className,
       )}
       style={{
-        maxWidth: `${picture.size}px`,
-        aspectRatio: `${picture.aspectRatio}`,
-        borderRadius: `${picture.borderRadius}px`,
-        borderWidth: `${picture.effects.border ? fontSize / 3 : 0}px`,
+        maxWidth: `${pictureSize}px`,
+        aspectRatio: `${pictureAspectRatio}`,
+        borderRadius: `${pictureBorderRadius}px`,
+        borderWidth: `${pictureEffects.border ? fontSize / 3 : 0}px`,
       }}
     />
   );

@@ -21,6 +21,7 @@ import { Providers } from "../providers";
 import { AuthGuard } from "./guards/auth";
 import { GuestGuard } from "./guards/guest";
 import { authLoader } from "./loaders/auth";
+import { PortfoliosPage } from "../pages/dashboard/portfolios/page";
 
 export const routes = createRoutesFromElements(
   <Route element={<Providers />}>
@@ -68,6 +69,7 @@ export const routes = createRoutesFromElements(
       <Route element={<AuthGuard />}>
         <Route element={<DashboardLayout />}>
           <Route path="resumes" element={<ResumesPage />} />
+          <Route path="portfolios" element={<PortfoliosPage />} />
           <Route path="settings" element={<SettingsPage />} />
 
           <Route index element={<Navigate replace to="/dashboard/resumes" />} />

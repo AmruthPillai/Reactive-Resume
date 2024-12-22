@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { useBuilderStore } from "@/client/stores/builder";
 import { useResumeStore } from "@/client/stores/resume";
 
-export const BuilderHeader = () => {
+export const BuilderHeader = ({ mode }: { mode: "resume" | "portfolio" }) => {
   const title = useResumeStore((state) => state.resume.title);
   const locked = useResumeStore((state) => state.resume.locked);
 
@@ -24,13 +24,13 @@ export const BuilderHeader = () => {
 
   return (
     <div
-      style={{ left: `${leftPanelSize}%`, right: `${rightPanelSize}%` }}
-      className={cn(
-        "fixed inset-x-0 top-0 z-[60] h-16 bg-secondary-accent/50 backdrop-blur-lg lg:z-20",
-        !isDragging && "transition-[left,right]",
-      )}
-    >
-      <div className="flex h-full items-center justify-between px-4">
+    style={{ left: `${leftPanelSize}%`, right: `${rightPanelSize}%` }}
+    className={cn(
+      "fixed inset-x-0 top-0 z-[60] h-16 bg-secondary-accent/50 backdrop-blur-lg lg:z-20",
+      !isDragging && "transition-[left,right]",
+    )}
+  >
+       <div className="flex h-full items-center justify-between px-4">
         <Button
           size="icon"
           variant="ghost"
@@ -51,7 +51,9 @@ export const BuilderHeader = () => {
 
           <span className="mr-2 text-xs opacity-40">{"/"}</span>
 
-          <h1 className="font-medium">{title}</h1>
+          <h1 className="font-medium">
+          {title} ({mode === "resume" ? t`Resume` : t`Portfolio`})
+        </h1>
 
           {locked && (
             <Tooltip content={t`This resume is locked, please unlock to make further changes.`}>

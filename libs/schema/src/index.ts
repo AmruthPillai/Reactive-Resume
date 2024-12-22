@@ -11,6 +11,29 @@ export const resumeDataSchema = z.object({
   metadata: metadataSchema,
 });
 
+export const portfolioTemplatesList = [
+  {
+    id: "minimal",
+    name: "Minimal",
+    description: "A clean and minimal portfolio template",
+    thumbnail: "minimal.jpg",
+  },
+  {
+    id: "modern",
+    name: "Modern",
+    description: "A modern and professional portfolio template",
+    thumbnail: "modern.jpg",
+  },
+  {
+    id: "creative",
+    name: "Creative",
+    description: "A creative and unique portfolio template",
+    thumbnail: "creative.jpg",
+  },
+  // Add more templates here
+] as const;
+
+export type PortfolioTemplate = typeof portfolioTemplatesList[number]["id"];
 // Type
 export type ResumeData = z.infer<typeof resumeDataSchema>;
 
