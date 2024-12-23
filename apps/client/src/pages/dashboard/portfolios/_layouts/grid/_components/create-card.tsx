@@ -7,8 +7,8 @@ import { useDialog } from "@/client/stores/dialog";
 
 import { BaseCard } from "./base-card";
 
-export const CreateResumeCard = () => {
-  const { open } = useDialog("resume");
+export const CreatePortfolioCard = () => {
+  const { open } = useDialog("portfolio");
 
   return (
     <BaseCard
@@ -25,7 +25,7 @@ export const CreateResumeCard = () => {
         )}
       >
         <h4 className="font-medium">
-          {t`Create a new resume`}
+          {t`Create a new portfolio`}
           {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
           <KeyboardShortcut className="ml-2">^N</KeyboardShortcut>
         </h4>

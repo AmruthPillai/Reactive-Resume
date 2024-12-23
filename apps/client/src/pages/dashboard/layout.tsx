@@ -8,7 +8,6 @@ import { Sidebar } from "./_components/sidebar";
 
 export const DashboardLayout = () => {
   const [open, setOpen] = useState(false);
-
   return (
     <div>
       <div className="sticky top-0 z-50 flex items-center justify-between p-4 pb-0 lg:hidden">

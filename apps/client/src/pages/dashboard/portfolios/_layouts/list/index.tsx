@@ -1,27 +1,19 @@
 import { sortByDate } from "@reactive-resume/utils";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { useResumes } from "@/client/services/resume";
+import { usePortfolios } from "@/client/services/portfolio";
 
 import { BaseListItem } from "./_components/base-item";
-import { CreateResumeListItem } from "./_components/create-item";
-import { ImportResumeListItem } from "./_components/import-item";
-import { ResumeListItem } from "./_components/resume-item";
+import { CreatePortfolioListItem } from "./_components/create-item";
+import { PortfolioListItem } from "./_components/portfolio-item";
 
 export const ListView = () => {
-  const { resumes, loading } = useResumes();
+  const { portfolios, loading } = usePortfolios();
 
   return (
     <div className="grid gap-y-2">
       <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }}>
-        <CreateResumeListItem />
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0, transition: { delay: 0.1 } }}
-      >
-        <ImportResumeListItem />
+        <CreatePortfolioListItem />
       </motion.div>
 
       {loading &&
@@ -35,18 +27,18 @@ export const ListView = () => {
           </div>
         ))}
 
-      {resumes && (
+      {portfolios && (
         <AnimatePresence>
-          {resumes
+          {portfolios
             .sort((a, b) => sortByDate(a, b, "updatedAt"))
-            .map((resume, index) => (
+            .map((portfolio, index) => (
               <motion.div
-                key={resume.id}
+                key={portfolio.id}
                 initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0, transition: { delay: (index + 2) * 0.1 } }}
+                animate={{ opacity: 1, y: 0, transition: { delay: (index + 1) * 0.1 } }}
                 exit={{ opacity: 0, filter: "blur(8px)", transition: { duration: 0.5 } }}
               >
-                <ResumeListItem resume={resume} />
+                <PortfolioListItem portfolio={portfolio} />
               </motion.div>
             ))}
         </AnimatePresence>

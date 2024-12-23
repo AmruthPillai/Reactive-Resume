@@ -1,27 +1,17 @@
 import { sortByDate } from "@reactive-resume/utils";
 import { AnimatePresence, motion } from "framer-motion";
-
-import { useResumes } from "@/client/services/resume";
-
+import { usePortfolios } from "@/client/services/portfolio";
 import { BaseCard } from "./_components/base-card";
-import { CreateResumeCard } from "./_components/create-card";
-import { ImportResumeCard } from "./_components/import-card";
-import { ResumeCard } from "./_components/resume-card";
+import { CreatePortfolioCard } from "./_components/create-card";
+import { PortfolioCard } from "./_components/portfolio-card";
 
 export const GridView = () => {
-  const { resumes, loading } = useResumes();
+  const { portfolios, loading } = usePortfolios();
 
   return (
     <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
       <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }}>
-        <CreateResumeCard />
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0, transition: { delay: 0.1 } }}
-      >
-        <ImportResumeCard />
+        <CreatePortfolioCard />
       </motion.div>
 
       {loading &&
@@ -35,19 +25,19 @@ export const GridView = () => {
           </div>
         ))}
 
-      {resumes && (
+      {portfolios && (
         <AnimatePresence>
-          {resumes
+          {portfolios
             .sort((a, b) => sortByDate(a, b, "updatedAt"))
-            .map((resume, index) => (
+            .map((portfolio, index) => (
               <motion.div
-                key={resume.id}
+                key={portfolio.id}
                 layout
                 initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0, transition: { delay: (index + 2) * 0.1 } }}
+                animate={{ opacity: 1, x: 0, transition: { delay: (index + 1) * 0.1 } }}
                 exit={{ opacity: 0, filter: "blur(8px)", transition: { duration: 0.5 } }}
               >
-                <ResumeCard resume={resume} />
+                <PortfolioCard portfolio={portfolio} />
               </motion.div>
             ))}
         </AnimatePresence>

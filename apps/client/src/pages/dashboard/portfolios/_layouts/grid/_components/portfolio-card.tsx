@@ -1,3 +1,4 @@
+// client/src/pages/dashboard/portfolios/_layouts/grid/_components/portfolio-card.tsx
 import { t } from "@lingui/macro";
 import {
   CopySimple,
@@ -7,7 +8,7 @@ import {
   PencilSimple,
   TrashSimple,
 } from "@phosphor-icons/react";
-import { ResumeDto } from "@reactive-resume/dto";
+import { PortfolioDto } from "@reactive-resume/dto";
 import {
   ContextMenu,
   ContextMenuContent,
@@ -25,42 +26,42 @@ import { useDialog } from "@/client/stores/dialog";
 import { BaseCard } from "./base-card";
 
 type Props = {
-  resume: ResumeDto;
+  portfolio: PortfolioDto;
 };
 
-export const ResumeCard = ({ resume }: Props) => {
+export const PortfolioCard = ({ portfolio }: Props) => {
   const navigate = useNavigate();
-  const { open } = useDialog<ResumeDto>("resume");
-  const { open: lockOpen } = useDialog<ResumeDto>("lock");
+  const { open } = useDialog<PortfolioDto>("portfolio");
+  const { open: lockOpen } = useDialog<PortfolioDto>("lock");
 
-  const lastUpdated = dayjs().to(resume.updatedAt);
+  const lastUpdated = dayjs().to(portfolio.updatedAt);
 
   const onOpen = () => {
-    navigate(`/builder/${resume.id}`);
+    navigate(`/builder/${portfolio.id}?mode=portfolio`);
   };
 
   const onUpdate = () => {
-    open("update", { id: "resume", item: resume });
+    open("update", { id: "portfolio", item: portfolio });
   };
 
   const onDuplicate = () => {
-    open("duplicate", { id: "resume", item: resume });
+    open("duplicate", { id: "portfolio", item: portfolio });
   };
 
   const onLockChange = () => {
-    lockOpen(resume.locked ? "update" : "create", { id: "lock", item: resume });
+    lockOpen(portfolio.locked ? "update" : "create", { id: "lock", item: portfolio });
   };
 
   const onDelete = () => {
-    open("delete", { id: "resume", item: resume });
+    open("delete", { id: "portfolio", item: portfolio });
   };
 
   return (
     <ContextMenu>
       <ContextMenuTrigger>
-        <BaseCard className="space-y-0" onClick={onOpen}>
+        <BaseCard onClick={onOpen}>
           <AnimatePresence>
-            {resume.locked && (
+            {portfolio.locked && (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -78,7 +79,7 @@ export const ResumeCard = ({ resume }: Props) => {
               "bg-gradient-to-t from-background/80 to-transparent",
             )}
           >
-            <h4 className="line-clamp-2 font-medium">{resume.title}</h4>
+            <h4 className="line-clamp-2 font-medium">{portfolio.title}</h4>
             <p className="line-clamp-1 text-xs opacity-75">{t`Last updated ${lastUpdated}`}</p>
           </div>
         </BaseCard>
@@ -97,7 +98,7 @@ export const ResumeCard = ({ resume }: Props) => {
           <CopySimple size={14} className="mr-2" />
           {t`Duplicate`}
         </ContextMenuItem>
-        {resume.locked ? (
+        {portfolio.locked ? (
           <ContextMenuItem onClick={onLockChange}>
             <LockOpen size={14} className="mr-2" />
             {t`Unlock`}
