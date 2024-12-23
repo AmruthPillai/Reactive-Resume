@@ -8,7 +8,7 @@ msgstr ""
 "Language: hi\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-06-10 05:50\n"
+"PO-Revision-Date: 2024-09-02 10:08\n"
 "Last-Translator: \n"
 "Language-Team: Hindi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -38,7 +38,7 @@ msgstr "<0>मैंने अपने खाली समय के दौर�
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>मुझे यकीन है कि ऐप पूर्ण नहीं है, लेकिन मैं चाहूंगा कि ऐसा हो।</0> <1>यदि आपको अपना बायोडाटा बनाते समय किसी समस्या का सामना करना पड़ा है, या आपके पास कोई विचार है जो आपको और अन्य उपयोगकर्ताओं को अपना बायोडाटा अधिक आसानी से बनाने में मदद करेगा, तो रिपोजिटरी पर समस्या छोड़ें या इसके बारे में मुझे एक ईमेल भेजें।</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:126
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr "<0>ध्यान दें:</0> OpenAI API का उपयोग करके, आप <1>उपयोग की शर्तों को स्वीकार करते हैं</1> और <2>गोपनीयता नीति</2> OpenAI द्वारा उल्लिखित। कृपया ध्यान दें कि रिएक्टिव रेज़्यूमे सेवा के किसी भी अनुचित या अनधिकृत उपयोग के लिए कोई ज़िम्मेदारी नहीं लेता है, और इसके परिणामस्वरूप होने वाले किसी भी परिणाम या देनदारियां पूरी तरह से उपयोगकर्ता पर निर्भर करती हैं।"
 
@@ -146,10 +146,6 @@ msgstr "लिंक वाला कोई भी व्यक्ति बा�
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "इस लिंक वाला कोई भी व्यक्ति बायोडाटा देख और डाउनलोड कर सकता है। इसे अपनी प्रोफ़ाइल पर या भर्तीकर्ताओं के साथ साझा करें।"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:83
-msgid "API Key"
-msgstr "API कुंजी"
-
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:124
 msgid "Are you sure you want to delete this item?"
 msgstr "क्या आप बाकई यह आइटम डिलीट करना चाहते हैं?"
@@ -208,6 +204,10 @@ msgstr "बैकअप कोड"
 #: apps/client/src/pages/auth/backup-otp/page.tsx:80
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "बैकअप कोड में केवल छोटे अक्षर या संख्याएँ हो सकती हैं, और बिल्कुल 10 अक्षर होने चाहिए।"
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:133
+msgid "Base URL"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:55
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
@@ -387,9 +387,9 @@ msgstr "तारीख या तारीख सीमा"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:133
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:156
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:148
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:134
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:198
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:114
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:127
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:172
 msgid "Delete"
 msgstr "हटाएं"
 
@@ -464,9 +464,9 @@ msgstr "डाउनलोड"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:169
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:132
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:102
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:182
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:98
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:95
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:156
 msgid "Duplicate"
 msgstr "प्रतिरूप"
 
@@ -575,7 +575,7 @@ msgstr "फ़ॉन्ट प्रकार"
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr "उदाहरण के लिए, आपने किन कंपनियों को यह बायोडाटा भेजा है, इसकी जानकारी या नौकरी विवरण के लिंक यहां नोट किए जा सकते हैं।"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:107
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:186
 msgid "Forget"
 msgstr "हटाएं"
 
@@ -809,8 +809,8 @@ msgstr "लेबल"
 msgid "Language"
 msgstr "भाषा"
 
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:116
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:148
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:82
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:139
 msgid "Last updated {lastUpdated}"
 msgstr "अंतिम अद्यतन {lastUpdated}"
 
@@ -865,9 +865,9 @@ msgid "Location"
 msgstr "स्थान"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:51
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:142
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:122
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:192
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:108
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:115
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:166
 msgid "Lock"
 msgstr "लॉक करें"
 
@@ -914,9 +914,17 @@ msgstr "मार्च 2023 - वर्तमान"
 msgid "Margin"
 msgstr "अंतर"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:159
+msgid "Max Tokens"
+msgstr ""
+
 #: apps/client/src/pages/home/sections/features/index.tsx:48
 msgid "MIT License"
 msgstr "मआईटी लाईसन्स"
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:146
+msgid "Model"
+msgstr ""
 
 #: apps/client/src/pages/auth/register/page.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:58
@@ -961,6 +969,10 @@ msgstr "नोट: इससे आपका खाता कम सुरक्
 msgid "Notes"
 msgstr "टिप्पणियाँ"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
+msgid "Ollama Integration"
+msgstr ""
+
 #: apps/client/src/pages/auth/verify-otp/page.tsx:82
 msgid "One-Time Password"
 msgstr "एक बारी पासवर्ड"
@@ -972,9 +984,9 @@ msgstr "एक बारी पासवर्ड"
 msgid "Oops, the server returned an error."
 msgstr "ओह, सर्वर ने एक त्रुटि लौटा दी।"
 
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:124
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:84
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:174
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:90
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:77
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:148
 msgid "Open"
 msgstr "खोलें"
 
@@ -982,13 +994,17 @@ msgstr "खोलें"
 msgid "Open Source"
 msgstr "खुला स्त्रोत"
 
-#: apps/client/src/services/openai/change-tone.ts:30
-#: apps/client/src/services/openai/fix-grammar.ts:28
-#: apps/client/src/services/openai/improve-writing.ts:28
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
+msgid "OpenAI / Ollama API Key"
+msgstr ""
+
+#: apps/client/src/services/openai/change-tone.ts:34
+#: apps/client/src/services/openai/fix-grammar.ts:32
+#: apps/client/src/services/openai/improve-writing.ts:32
 msgid "OpenAI did not return any choices for your text."
 msgstr "OpenAI ने आपके टेक्स्ट के लिए कोई विकल्प नहीं लौटाया।"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:52
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:77
 #: apps/client/src/pages/home/sections/features/index.tsx:52
 msgid "OpenAI Integration"
 msgstr "OpenAI एकीकरण"
@@ -1161,9 +1177,9 @@ msgid "Remove Page"
 msgstr "हटाएँ पेज"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:110
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:128
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:93
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:178
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:94
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:86
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:152
 msgid "Rename"
 msgstr "नाम बदलें"
 
@@ -1212,6 +1228,14 @@ msgstr "गोल"
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:131
 msgid "Save Changes"
 msgstr "परिवर्तन सेव करें"
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+msgid "Save Locally"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+msgid "Saved"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
 msgid "Scan the QR code below with your authenticator app to setup 2FA on your account."
@@ -1376,17 +1400,9 @@ msgstr "आंकड़े"
 msgid "Statistics are available only for public resumes."
 msgstr "आँकड़े केवल सार्वजनिक बायोडाटा के लिए उपलब्ध हैं।"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
-msgid "Store Locally"
-msgstr "स्थानीय रूप से स्टोर करें"
-
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:162
 msgid "Store your backup codes securely"
 msgstr "अपने बैकअप कोड सुरक्षित रूप से संग्रहीत करें"
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
-msgid "Stored"
-msgstr "संग्रहित"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
@@ -1433,9 +1449,13 @@ msgstr "प्रशंसापत्र"
 msgid "Text Color"
 msgstr "अक्षरों का रंग"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:25
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:26
 msgid "That doesn't look like a valid OpenAI API key."
 msgstr "यह वैध OpenAI API कुंजी की तरह नहीं दिखता है।"
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:30
+msgid "That doesn't look like a valid URL"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
 msgid "The passwords you entered do not match."
@@ -1537,9 +1557,9 @@ msgid "Undo"
 msgstr "वापस लाएं"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:52
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:137
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:112
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:187
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:103
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:105
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:161
 msgid "Unlock"
 msgstr "खोले"
 
@@ -1660,7 +1680,11 @@ msgstr "आप एकाधिक कीवर्ड को अल्पवि�
 msgid "You can also enter your username."
 msgstr "आप अपना उपयोगकर्ता नाम भी दर्ज कर सकते हैं."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:54
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:105
+msgid "You can integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
 msgstr "आप सामग्री तैयार करने में मदद के लिए या अपना बायोडाटा बनाते समय अपने लेखन को बेहतर बनाने के लिए OpenAI API का उपयोग कर सकते हैं।"
 
@@ -1668,7 +1692,7 @@ msgstr "आप सामग्री तैयार करने में म�
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
 msgstr "आप सार्वजनिक साझाकरण को सक्षम करके यह ट्रैक कर सकते हैं कि आपके बायोडाटा को कितने बार देखा गया है, या कितने लोगों ने बायोडाटा डाउनलोड किया है।"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:60
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:85
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr "आपके पास <0>अपनी स्वयं की OpenAI API कुंजी प्राप्त करने का विकल्प है</0>. यह कुंजी आपको अपनी इच्छानुसार एपीआई का लाभ उठाने का अधिकार देती है। वैकल्पिक रूप से, यदि आप रिएक्टिव रेज़्यूमे में एआई सुविधाओं को पूरी तरह से अक्षम करना चाहते हैं, तो आप बस अपनी सेटिंग्स से कुंजी को हटा सकते हैं।"
 
@@ -1685,7 +1709,7 @@ msgstr "आपको मेल प्राप्त हुआ है"
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
 msgstr "आपका खाता और आपका सारा डेटा सफलतापूर्वक हटा दिया गया है। अलविदा!"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:116
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:195
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "आपकी एपीआई कुंजी ब्राउज़र के स्थानीय भंडारण में सुरक्षित रूप से संग्रहीत है और इसका उपयोग केवल उनके आधिकारिक एसडीके के माध्यम से OpenAI से अनुरोध करते समय किया जाता है। निश्चिंत रहें कि आपकी कुंजी OpenAI की सेवाओं के साथ इंटरैक्ट करने के अलावा किसी भी बाहरी सर्वर पर प्रसारित नहीं होती है।"
 
@@ -1708,4 +1732,3 @@ msgstr "ज़ूम इन"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "ज़ूम आउट"
-

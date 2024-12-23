@@ -24,14 +24,16 @@ export class ContributorsService {
     );
     const data = response.data as GitHubResponse;
 
-    return data.map((user) => {
-      return {
-        id: user.id,
-        name: user.login,
-        url: user.html_url,
-        avatar: user.avatar_url,
-      } satisfies ContributorDto;
-    });
+    return data
+      .filter((_, index) => index <= 20)
+      .map((user) => {
+        return {
+          id: user.id,
+          name: user.login,
+          url: user.html_url,
+          avatar: user.avatar_url,
+        } satisfies ContributorDto;
+      });
   }
 
   async fetchCrowdinContributors() {
@@ -45,14 +47,16 @@ export class ContributorsService {
       );
       const { data } = response.data as CrowdinContributorsResponse;
 
-      return data.map(({ data }) => {
-        return {
-          id: data.id,
-          name: data.username,
-          url: `https://crowdin.com/profile/${data.username}`,
-          avatar: data.avatarUrl,
-        } satisfies ContributorDto;
-      });
+      return data
+        .filter((_, index) => index <= 20)
+        .map(({ data }) => {
+          return {
+            id: data.id,
+            name: data.username,
+            url: `https://crowdin.com/profile/${data.username}`,
+            avatar: data.avatarUrl,
+          } satisfies ContributorDto;
+        });
     } catch {
       return [];
     }

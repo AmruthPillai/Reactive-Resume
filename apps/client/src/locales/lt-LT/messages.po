@@ -8,7 +8,7 @@ msgstr ""
 "Language: lt\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-06-10 05:50\n"
+"PO-Revision-Date: 2024-09-02 10:08\n"
 "Last-Translator: \n"
 "Language-Team: Lithuanian\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && (n%100>19 || n%100<11) ? 0 : (n%10>=2 && n%10<=9) && (n%100>19 || n%100<11) ? 1 : n%1!=0 ? 2: 3);\n"
@@ -38,7 +38,7 @@ msgstr "<0>\"Reactive Resume\" sukūriau daugiausia vienas, laisvalaikiu, daug p
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>Esu įsitikinęs, kad programa nėra tobula, bet norėčiau, kad ji tokia būtų.</0><1>Jei kurdami gyvenimo aprašymą susidūrėte su kokiomis nors problemomis arba turite idėją, kuri padėtų jums ir kitiems naudotojams lengviau kurti gyvenimo aprašymą, parašykite apie tai saugykloje arba atsiųskite man el. laišką.</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:126
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr "<0>Pastaba: </0>naudodamiesi \"OpenAI\" API pripažįstate ir sutinkate su \"OpenAI\" nustatytomis <1>naudojimo sąlygomis</1> ir <2>privatumo politika</2>. Atkreipkite dėmesį, kad \"Reactive Resume\" neprisiima jokios atsakomybės už netinkamą ar neleistiną paslaugos naudojimą, o bet kokios iš to kylančios pasekmės ar atsakomybė tenka tik naudotojui."
 
@@ -146,10 +146,6 @@ msgstr "Bet kuris nuorodą turintis asmuo gali peržiūrėti ir atsisiųsti gyve
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "Kiekvienas, pasinaudojęs šia nuoroda, gali peržiūrėti ir atsisiųsti gyvenimo aprašymą. Pasidalykite juo savo profilyje arba su įdarbintojais."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:83
-msgid "API Key"
-msgstr "API raktas"
-
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:124
 msgid "Are you sure you want to delete this item?"
 msgstr "Ar tikrai norite ištrinti šį elementą?"
@@ -208,6 +204,10 @@ msgstr "Atsarginis kodas"
 #: apps/client/src/pages/auth/backup-otp/page.tsx:80
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "Atsarginius kodus gali sudaryti tik mažosios raidės arba skaičiai, juos turi sudaryti tiksliai 10 simbolių."
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:133
+msgid "Base URL"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:55
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
@@ -387,9 +387,9 @@ msgstr "Data arba datos intervalas"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:133
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:156
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:148
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:134
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:198
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:114
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:127
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:172
 msgid "Delete"
 msgstr "Ištrinti"
 
@@ -464,9 +464,9 @@ msgstr "Atsisiuntimai"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:169
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:132
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:102
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:182
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:98
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:95
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:156
 msgid "Duplicate"
 msgstr "Dublikatas"
 
@@ -508,7 +508,7 @@ msgstr "Įveskite vieną iš 10 atsarginių kodų, kuriuos išsaugojote įjungę
 
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:63
 msgid "Enter Phosphor Icon"
-msgstr ""
+msgstr "Įveskite „Phosphor“ piktogramą"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:170
 msgid "Enter the 6-digit code from your authenticator app to verify that 2FA has been setup correctly."
@@ -575,7 +575,7 @@ msgstr "Šrifto variantai"
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr "Pavyzdžiui, čia galima įrašyti informaciją apie tai, kurioms įmonėms siuntėte šį gyvenimo aprašymą, arba nuorodas į darbo aprašymus."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:107
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:186
 msgid "Forget"
 msgstr "Pamirškite"
 
@@ -809,8 +809,8 @@ msgstr "Etiketė"
 msgid "Language"
 msgstr "Kalba"
 
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:116
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:148
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:82
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:139
 msgid "Last updated {lastUpdated}"
 msgstr "Paskutinį kartą atnaujinta {lastUpdated}"
 
@@ -865,9 +865,9 @@ msgid "Location"
 msgstr "Vieta"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:51
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:142
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:122
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:192
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:108
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:115
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:166
 msgid "Lock"
 msgstr "Užrakinti"
 
@@ -914,9 +914,17 @@ msgstr "2023 m. kovo mėn. - dabartis"
 msgid "Margin"
 msgstr "Paraštė"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:159
+msgid "Max Tokens"
+msgstr ""
+
 #: apps/client/src/pages/home/sections/features/index.tsx:48
 msgid "MIT License"
 msgstr "MIT licencija"
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:146
+msgid "Model"
+msgstr ""
 
 #: apps/client/src/pages/auth/register/page.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:58
@@ -961,6 +969,10 @@ msgstr "Pastaba: dėl to jūsų paskyra taps mažiau saugi."
 msgid "Notes"
 msgstr "Pastabos"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
+msgid "Ollama Integration"
+msgstr ""
+
 #: apps/client/src/pages/auth/verify-otp/page.tsx:82
 msgid "One-Time Password"
 msgstr "Vienkartinis slaptažodis"
@@ -972,9 +984,9 @@ msgstr "Vienkartinis slaptažodis"
 msgid "Oops, the server returned an error."
 msgstr "Oi, serveris grąžino klaidą."
 
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:124
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:84
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:174
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:90
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:77
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:148
 msgid "Open"
 msgstr "Atviras"
 
@@ -982,13 +994,17 @@ msgstr "Atviras"
 msgid "Open Source"
 msgstr "Atviro kodo"
 
-#: apps/client/src/services/openai/change-tone.ts:30
-#: apps/client/src/services/openai/fix-grammar.ts:28
-#: apps/client/src/services/openai/improve-writing.ts:28
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
+msgid "OpenAI / Ollama API Key"
+msgstr ""
+
+#: apps/client/src/services/openai/change-tone.ts:34
+#: apps/client/src/services/openai/fix-grammar.ts:32
+#: apps/client/src/services/openai/improve-writing.ts:32
 msgid "OpenAI did not return any choices for your text."
 msgstr "\"OpenAI\" nepateikė jokių jūsų teksto pasirinkimų."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:52
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:77
 #: apps/client/src/pages/home/sections/features/index.tsx:52
 msgid "OpenAI Integration"
 msgstr "\"OpenAI\" integracija"
@@ -1161,9 +1177,9 @@ msgid "Remove Page"
 msgstr "Pašalinti puslapį"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:110
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:128
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:93
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:178
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:94
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:86
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:152
 msgid "Rename"
 msgstr "Pervadinti"
 
@@ -1213,6 +1229,14 @@ msgstr "Suapvalintas"
 msgid "Save Changes"
 msgstr "Išsaugoti pakeitimus"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+msgid "Save Locally"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+msgid "Saved"
+msgstr ""
+
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
 msgid "Scan the QR code below with your authenticator app to setup 2FA on your account."
 msgstr "Norėdami savo paskyroje nustatyti 2FA, nuskaitykite toliau pateiktą QR kodą naudodami autentifikatoriaus programą."
@@ -1260,7 +1284,7 @@ msgstr "Siųskite man žinutę"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:96
 msgid "Separate Links"
-msgstr ""
+msgstr "Kitos nuorodos"
 
 #: apps/client/src/components/user-options.tsx:32
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
@@ -1327,7 +1351,7 @@ msgstr "Registruotis"
 
 #: apps/client/src/pages/auth/login/page.tsx:74
 msgid "Signing in via email is currently disabled by the administrator."
-msgstr ""
+msgstr "Šiuo metu administratorius išjungė prisijungimą el. paštu."
 
 #: apps/client/src/pages/auth/register/page.tsx:82
 msgid "Signups are currently disabled by the administrator."
@@ -1376,17 +1400,9 @@ msgstr "Statistika"
 msgid "Statistics are available only for public resumes."
 msgstr "Statistika prieinama tik viešiems gyvenimo aprašymams."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
-msgid "Store Locally"
-msgstr "Saugoti lokaliai"
-
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:162
 msgid "Store your backup codes securely"
 msgstr "Saugiai saugokite atsarginių kopijų kodus"
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
-msgid "Stored"
-msgstr "Saugoma"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
@@ -1433,9 +1449,13 @@ msgstr "Atsiliepimai"
 msgid "Text Color"
 msgstr "Teksto spalva"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:25
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:26
 msgid "That doesn't look like a valid OpenAI API key."
 msgstr "Tai neatrodo kaip galiojantis \"OpenAI\" API raktas."
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:30
+msgid "That doesn't look like a valid URL"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
 msgid "The passwords you entered do not match."
@@ -1537,9 +1557,9 @@ msgid "Undo"
 msgstr "Anuliuoti"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:52
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:137
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:112
-#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:187
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:103
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:105
+#: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:161
 msgid "Unlock"
 msgstr "Atrakinti"
 
@@ -1660,7 +1680,11 @@ msgstr "Galite pridėti kelis raktinius žodžius, atskirdami juos kableliu arba
 msgid "You can also enter your username."
 msgstr "Taip pat galite įvesti savo vartotojo vardą."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:54
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:105
+msgid "You can integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
 msgstr "Galite naudoti OpenAI API, kad padėtumėte generuoti turinį arba patobulinti savo rašymą kurdami savo CV."
 
@@ -1668,7 +1692,7 @@ msgstr "Galite naudoti OpenAI API, kad padėtumėte generuoti turinį arba patob
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
 msgstr "Įjungę viešą bendrinimą galite stebėti, kiek peržiūrų sulaukė jūsų gyvenimo aprašymas arba kiek žmonių jį atsisiuntė."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:60
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:85
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr "Galite <0>gauti savo \"OpenAI\" API raktą</0>. Šis raktas suteikia jums teisę naudoti API, kaip jums atrodo tinkama. Arba, jei norite visiškai išjungti dirbtinio intelekto funkcijas programoje \"Reactive Resume\", galite tiesiog pašalinti raktą iš savo nustatymų."
 
@@ -1685,7 +1709,7 @@ msgstr "Gavote laišką!"
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
 msgstr "Jūsų paskyra ir visi duomenys buvo sėkmingai ištrinti. Viso gero!"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:116
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:195
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "Jūsų API raktas saugiai saugomas naršyklės vietinėje saugykloje ir naudojamas tik teikiant užklausas \"OpenAI\" per oficialų SDK. Galite būti tikri, kad jūsų raktas nėra perduodamas jokiam išoriniam serveriui, išskyrus atvejus, kai sąveikaujama su \"OpenAI\" paslaugomis."
 
@@ -1708,4 +1732,3 @@ msgstr "Priartinti"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "Tolinti"
-

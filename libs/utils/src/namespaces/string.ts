@@ -4,7 +4,7 @@ import { LayoutLocator, SortablePayload } from "./types";
 
 export const getInitials = (name: string) => {
   // eslint-disable-next-line unicorn/better-regex
-  const regex = new RegExp(/(\p{L}{1})\p{L}+/, "gu");
+  const regex = new RegExp(/(\p{L}{1})\p{L}+/gu);
   const initials = [...name.matchAll(regex)];
 
   return ((initials.shift()?.[1] ?? "") + (initials.pop()?.[1] ?? "")).toUpperCase();
@@ -26,7 +26,7 @@ export const isEmptyString = (string: string) => {
 export const extractUrl = (string: string) => {
   const urlRegex = /https?:\/\/[^\n ]+/i;
 
-  const result = string.match(urlRegex);
+  const result = urlRegex.exec(string);
   return result ? result[0] : null;
 };
 
@@ -35,7 +35,7 @@ export const kebabCase = (string?: string | null) => {
 
   return (
     string
-      .match(/[A-Z]{2,}(?=[A-Z][a-z]+\d*|\b)|[A-Z]?[a-z]+\d*|[A-Z]|\d+/g)
+      .match(/[A-Z]{2,}(?=[A-Z][a-z]+\d*|\b)|[A-Z]?[a-z]+\d*|[A-Z]|\d+/gu)
       ?.join("-")
       .toLowerCase() ?? ""
   );
