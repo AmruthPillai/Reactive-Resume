@@ -92,7 +92,7 @@ const Header = () => {
                       width={fontSize}
                       height={fontSize}
                       alt={item.network}
-                      src={`https://cdn.simpleicons.org/${item.icon}`}
+                      src={item.icon.startsWith('http') ? item.icon : `https://cdn.simpleicons.org/${item.icon}`}
                     />
                   }
                 />
