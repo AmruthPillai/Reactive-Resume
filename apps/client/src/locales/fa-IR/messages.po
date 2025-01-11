@@ -8,7 +8,7 @@ msgstr ""
 "Language: fa\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-09-02 10:08\n"
+"PO-Revision-Date: 2025-01-11 11:27\n"
 "Last-Translator: \n"
 "Language-Team: Persian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -38,7 +38,7 @@ msgstr "<0>من Reactive Resume را بیشتر در اوقات فراغت خو�
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>مطمئنم که برنامه بی‌نقص نیست، اما دوست دارم که باشد.</0> <1>اگر موقع ایجاد رزومه خودتان با مشکلی مواجه شدید یا ایده‌ای دارید که به شما و سایر کاربران در ساختن راحت‌تر رزومه کمک می‌کند، در گیت‌هاب پروژه یک issue ایجاد کنید یا به من ایمیل بفرستید.</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:208
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr "<0>توجه:</0> با استفاده از امکانات OpenAI API، <1>شرایط استفاده را تایید می‌کنید و می‌پذیرید</1> و <2>خط مشی رازداری</2> را که توسط OpenAI مشخص شده است. لطفاً توجه داشته باشید که Reactive Resume هیچ مسئولیتی در قبال هرگونه استفاده نادرست یا غیرمجاز از سرویس ندارد و هرگونه عواقب یا تعهدات ناشی از آن صرفاً بر عهده کاربر است."
 
@@ -205,7 +205,7 @@ msgstr "کد پشتیبان"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "کدهای پشتیبان فقط باید شامل حروف کوچک یا اعداد و دقیقاً 10 کاراکتر باشند."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:133
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:134
 msgid "Base URL"
 msgstr ""
 
@@ -575,7 +575,7 @@ msgstr "انواع فونت"
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr "برای مثال، اطلاعات مربوط به شرکت‌هایی که این رزومه را به آن‌ها ارسال کرده‌اید یا لینک‌هایی به توضیحات شغلی می‌توانند در اینجا یادداشت شوند."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:186
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:189
 msgid "Forget"
 msgstr "فراموش کردن"
 
@@ -914,7 +914,7 @@ msgstr "مارس 2023 - حال حاضر"
 msgid "Margin"
 msgstr "حاشیه"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:159
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:160
 msgid "Max Tokens"
 msgstr ""
 
@@ -922,7 +922,7 @@ msgstr ""
 msgid "MIT License"
 msgstr "مجور MIT"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:146
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:147
 msgid "Model"
 msgstr ""
 
@@ -969,7 +969,7 @@ msgstr "توجه: این باعث کاهش امنیت حساب کاربری شم
 msgid "Notes"
 msgstr "یادداشت‌ها"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:102
 msgid "Ollama Integration"
 msgstr ""
 
@@ -994,17 +994,17 @@ msgstr "باز کردن"
 msgid "Open Source"
 msgstr "اوپن سورس"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:121
 msgid "OpenAI / Ollama API Key"
 msgstr ""
 
-#: apps/client/src/services/openai/change-tone.ts:34
-#: apps/client/src/services/openai/fix-grammar.ts:32
-#: apps/client/src/services/openai/improve-writing.ts:32
+#: apps/client/src/services/openai/change-tone.ts:35
+#: apps/client/src/services/openai/fix-grammar.ts:33
+#: apps/client/src/services/openai/improve-writing.ts:33
 msgid "OpenAI did not return any choices for your text."
 msgstr "OpenAI نتوانست هیچ پیشنهادی برای متن شما ارائه دهد."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:77
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:78
 #: apps/client/src/pages/home/sections/features/index.tsx:52
 msgid "OpenAI Integration"
 msgstr "ادغام با OpenAI"
@@ -1229,11 +1229,11 @@ msgstr "گردشده"
 msgid "Save Changes"
 msgstr "ذخیرهٔ تغییرات"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Save Locally"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Saved"
 msgstr ""
 
@@ -1448,14 +1448,6 @@ msgstr "رضایت ها"
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:103
 msgid "Text Color"
 msgstr "رنگ متن"
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:26
-msgid "That doesn't look like a valid OpenAI API key."
-msgstr "این API OpenAI معتبر به نظر نمی رسد."
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:30
-msgid "That doesn't look like a valid URL"
-msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
 msgid "The passwords you entered do not match."
@@ -1680,11 +1672,11 @@ msgstr "شما می‌توانید کلمات متعددی را با جداکر�
 msgid "You can also enter your username."
 msgstr "شما همچنین می‌توانید نام کاربری خود را وارد کنید."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:105
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:106
 msgid "You can integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:80
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
 msgstr "شما می توانید از API OpenAI استفاده کنید تا به شما در تولید محتوا کمک کند یا نوشتن شما را بهتر کند در حالی که رزومه خود را تنظیم می کنید."
 
@@ -1692,7 +1684,7 @@ msgstr "شما می توانید از API OpenAI استفاده کنید تا ب
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
 msgstr "شما می‌توانید تعداد بازدید‌های رزومه خود را یا تعداد افرادی که رزومه را با فعال کردن اشتراک عمومی دانلود کرده‌اند، بررسی کنید."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:85
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:86
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr "شما قادر به <0>دریافت کلید API اختصاصی OpenAI خودتان هستید</0>. این کلید به شما این امکان را می دهد که از API به دلخواه خود استفاده کنید. به عنوان یک گزینه دیگر، اگر می خواهید قابلیت های هوش مصنوعی در Reactive Resume را کاملاً غیرفعال کنید، می توانید به سادگی این کلید را از تنظیمات خود حذف کنید."
 
@@ -1709,7 +1701,7 @@ msgstr "شما ایمیل دریافت کردید"
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
 msgstr "حساب شما و تمام داده‌های شما با موفقیت حذف شد. خدانگهدار!"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:195
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:198
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "کلید API شما به صورت ایمن در حافظه مرورگر دستگاه ذخیره می شود و تنها هنگام ارسال درخواست به OpenAI از طریق SDK رسمی آنها استفاده می شود. اطمینان حاصل کنید که کلید شما به هیچ سرور خارجی انتقال داده نمی شود مگر اینکه برای تعامل با خدمات OpenAI استفاده شود."
 
@@ -1732,3 +1724,4 @@ msgstr "بزرگ‌نمایی"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "کوچک‌نمایی"
+

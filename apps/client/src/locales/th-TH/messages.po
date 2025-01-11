@@ -8,7 +8,7 @@ msgstr ""
 "Language: th\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-09-02 10:08\n"
+"PO-Revision-Date: 2025-01-11 11:27\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:171
 msgid "You have enabled two-factor authentication successfully."
-msgstr "คุณได้เปิดการยืนยันตัวตนแบบสองขั้นตอนสำเร็จแล้ว"
+msgstr "เปิดใช้งานการยืนยันตัวตนแบบสองปัจจัย (2FA) สำเร็จ"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:57
 msgid "{templatesCount} resume templates to choose from"
@@ -38,7 +38,7 @@ msgstr "<0>ผมสร้าง Reactive Resume ด้วยตัวเอง�
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>ผมมั่นใจว่าแอปยังไม่สมบูรณ์ดี แต่ผมก็อยากให้มันเป็นอย่างนั้น</0><1>ถ้าคุณเจอปัญหาใดๆ ระหว่างที่สร้างเรซูเม่ หรือมีไอเดียดีๆ ที่จะช่วยให้คุณและคนอื่นๆ สร้างเรซูเม่ได้ง่ายขึ้น ให้เปิด issue มาที่ repository ของแอปหรือส่งอีเมลหาผมได้เลยครับ</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:208
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr "<0>หมายเหตุ: </0>การใช้ OpenAI API หมายความว่า คุณรับรู้และยอมรับ<1>ข้อกำหนดการใช้บริการ</1>และ<2>นโยบายความเป็นส่วนตัว</2>ของ OpenAI โปรดทราบว่า Reactive Resume ไม่รับผิดชอบการใช้บริการที่ไม่เหมาะสมหรือไม่ได้รับการอนุญาต และความรับผิดชอบเป็นของผู้ใช้แต่เพียงผู้เดียว"
 
@@ -205,9 +205,9 @@ msgstr "รหัสสำรอง"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "รหัสสำรองอาจมีเฉพาะตัวอักษรพิมพ์เล็กหรือตัวเลขเท่านั้น และต้องมีจำนวนอักษร 10 ตัวเท่านั้น"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:133
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:134
 msgid "Base URL"
-msgstr ""
+msgstr "Base URL"
 
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:55
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
@@ -575,7 +575,7 @@ msgstr "รูปแบบฟอนต์"
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr "ตัวอย่างเช่น ข้อมูลเกี่ยวกับบริษัทที่คุณส่งเรซูเม่นี้ให้หรือลิงก์ไปยังรายละเอียดงานสามารถเขียนไว้ได้ที่นี่"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:186
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:189
 msgid "Forget"
 msgstr "ลืม"
 
@@ -914,17 +914,17 @@ msgstr "มีนาคม 2566 - ปัจจุบัน"
 msgid "Margin"
 msgstr "ระยะขอบ"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:159
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:160
 msgid "Max Tokens"
-msgstr ""
+msgstr "Max Tokens"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:48
 msgid "MIT License"
 msgstr "ใบอนุญาต MIT"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:146
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:147
 msgid "Model"
-msgstr ""
+msgstr "โมเดล"
 
 #: apps/client/src/pages/auth/register/page.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:58
@@ -969,9 +969,9 @@ msgstr "หมายเหตุ: บัญชีของคุณจะปล�
 msgid "Notes"
 msgstr "โน้ต"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:102
 msgid "Ollama Integration"
-msgstr ""
+msgstr "การเชื่อมต่อ Ollama"
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:82
 msgid "One-Time Password"
@@ -994,17 +994,17 @@ msgstr "เปิด"
 msgid "Open Source"
 msgstr "โอเพนซอร์ส"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:121
 msgid "OpenAI / Ollama API Key"
-msgstr ""
+msgstr "ไม่พบ API Key กรุณาระบุ API Key ที่ถูกต้อง"
 
-#: apps/client/src/services/openai/change-tone.ts:34
-#: apps/client/src/services/openai/fix-grammar.ts:32
-#: apps/client/src/services/openai/improve-writing.ts:32
+#: apps/client/src/services/openai/change-tone.ts:35
+#: apps/client/src/services/openai/fix-grammar.ts:33
+#: apps/client/src/services/openai/improve-writing.ts:33
 msgid "OpenAI did not return any choices for your text."
 msgstr "OpenAI ไม่ได้ส่งตัวเลือกใดๆ ให้กับข้อความของคุณ"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:77
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:78
 #: apps/client/src/pages/home/sections/features/index.tsx:52
 msgid "OpenAI Integration"
 msgstr "การใช้ระบบ OpenAI"
@@ -1229,13 +1229,13 @@ msgstr "โค้งมน"
 msgid "Save Changes"
 msgstr "บันทึกการเปลี่ยนแปลง"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Save Locally"
-msgstr ""
+msgstr "บันทึกในเบราว์เซอร์"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Saved"
-msgstr ""
+msgstr "บันทึกสำเร็จ"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
 msgid "Scan the QR code below with your authenticator app to setup 2FA on your account."
@@ -1448,14 +1448,6 @@ msgstr "คำรับรอง"
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:103
 msgid "Text Color"
 msgstr "สีตัวอักษร"
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:26
-msgid "That doesn't look like a valid OpenAI API key."
-msgstr "ดูเหมือนว่านั่นจะไม่ใช่คีย์ API ของ OpenAI ที่ถูกต้อง"
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:30
-msgid "That doesn't look like a valid URL"
-msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
 msgid "The passwords you entered do not match."
@@ -1680,11 +1672,11 @@ msgstr "คุณสามารถเพิ่มคีย์เวิร์ด
 msgid "You can also enter your username."
 msgstr "คุณสามารถป้อนชื่อผู้ใช้ของคุณได้ด้วย"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:105
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:106
 msgid "You can integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens."
-msgstr ""
+msgstr "คุณสามารถเชื่อมต่อกับ Ollama เลือกโมเดลและตั้งค่า max tokens ได้โดยตั้งค่า API Key `sk-1234567890abcdef` และ ตั้งค่าBase URL เป็น URL Ollama ของคุณ เช่น `http://localhost:11434/v1`"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:80
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
 msgstr "คุณสามารถใช้ OpenAI API เพื่อช่วยคุณสร้างเนื้อหาหรือปรับปรุงการเขียนของคุณขณะที่เขียนเรซูเม่ได้"
 
@@ -1692,7 +1684,7 @@ msgstr "คุณสามารถใช้ OpenAI API เพื่อช่ว
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
 msgstr "คุณสามารถติดตามยอดดูเรซูเม่ของคุณได้ หรือดูว่ามีคนดาวน์โหลดเรซูเม่ที่เปิดเป็นสาธารณะไว้กี่คน"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:85
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:86
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr "คุณมีตัวเลือกในการ<0>ขอคีย์ OpenAI API ของคุณเอง</0> คีย์นี้ช่วยให้คุณใช้ประโยชน์จาก API ได้ตามที่คุณต้องการ กลับกัน หากคุณต้องการปิดการใช้งานคุณสมบัติ AI ใน Reactive Resume โดยสิ้นเชิง คุณแค่ลบคีย์ออกจากการตั้งค่าของคุณได้เลย"
 
@@ -1709,7 +1701,7 @@ msgstr "เมลเข้าแล้ว!"
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
 msgstr "บัญชีของคุณและข้อมูลทั้งหมดของคุณถูกลบเรียบร้อยแล้ว ลาก่อนนะ!"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:195
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:198
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "คีย์ API ของคุณถูกจัดเก็บไว้อย่างปลอดภัยในพื้นที่จัดเก็บภายในเบราว์เซอร์ และจะเรียกใช้เมื่อมีการส่งคำขอไปยัง OpenAI ผ่านทาง SDK ทางการเท่านั้น ขอให้มั่นใจได้ว่าคีย์ของคุณจะไม่ถูกส่งไปยังเซิร์ฟเวอร์ภายนอกใดๆ ยกเว้นเมื่อมีการโต้ตอบกับบริการของ OpenAI"
 
@@ -1732,3 +1724,4 @@ msgstr "ซูมเข้า"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "ซูมออก"
+

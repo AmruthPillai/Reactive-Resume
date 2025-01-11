@@ -8,7 +8,7 @@ msgstr ""
 "Language: vi\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-09-02 10:08\n"
+"PO-Revision-Date: 2025-01-11 11:27\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -38,7 +38,7 @@ msgstr "<0>Tôi xây dựng Reactive Resume trong thời gian rảnh rỗi với
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>Tôi chắc chắn rằng ứng dụng này không hoàn hảo nhưng tôi muốn nó như vậy.</0> <1>Nếu bạn gặp phải bất kỳ vấn đề nào khi tạo sơ yếu lý lịch của mình hoặc có ý tưởng có thể giúp bạn và những người dùng khác tạo sơ yếu lý lịch của bạn dễ dàng hơn, hãy gửi vấn đề đó vào kho lưu trữ hoặc gửi email cho tôi về vấn đề đó.</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:208
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr "<0>Lưu ý:</0> Bằng cách sử dụng API OpenAI, bạn thừa nhận và chấp nhận <1>điều khoản sử dụng</1> và <2>chính sách quyền riêng tư</2> được phác thảo bởi OpenAI. Xin lưu ý rằng Reactive Resume không chịu trách nhiệm đối với bất kỳ việc sử dụng dịch vụ không đúng cách hoặc trái phép nào và mọi hậu quả hoặc trách nhiệm pháp lý phát sinh chỉ thuộc về người dùng."
 
@@ -205,7 +205,7 @@ msgstr "Mã Backup"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "Mã backup chỉ có thể chứa chữ cái viết thường hoặc số và phải có chính xác 10 ký tự."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:133
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:134
 msgid "Base URL"
 msgstr ""
 
@@ -575,7 +575,7 @@ msgstr "Biến thể Font"
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr "Ví dụ: thông tin về công ty bạn đã gửi bản lý lịch này đến hoặc các liên kết đến mô tả công việc có thể được ghi lại ở đây."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:186
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:189
 msgid "Forget"
 msgstr "Quên"
 
@@ -914,7 +914,7 @@ msgstr "03/2023 - Hiện tại"
 msgid "Margin"
 msgstr "Lề"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:159
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:160
 msgid "Max Tokens"
 msgstr ""
 
@@ -922,7 +922,7 @@ msgstr ""
 msgid "MIT License"
 msgstr "Giấy phép MIT"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:146
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:147
 msgid "Model"
 msgstr ""
 
@@ -969,7 +969,7 @@ msgstr "Lưu ý: Điều này sẽ làm cho tài khoản của bạn ít an toà
 msgid "Notes"
 msgstr "Ghi chú"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:102
 msgid "Ollama Integration"
 msgstr ""
 
@@ -994,17 +994,17 @@ msgstr "Mở"
 msgid "Open Source"
 msgstr "Mã nguồn mở"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:121
 msgid "OpenAI / Ollama API Key"
 msgstr ""
 
-#: apps/client/src/services/openai/change-tone.ts:34
-#: apps/client/src/services/openai/fix-grammar.ts:32
-#: apps/client/src/services/openai/improve-writing.ts:32
+#: apps/client/src/services/openai/change-tone.ts:35
+#: apps/client/src/services/openai/fix-grammar.ts:33
+#: apps/client/src/services/openai/improve-writing.ts:33
 msgid "OpenAI did not return any choices for your text."
 msgstr "OpenAI không trả về bất kỳ phản hồi nào cho văn bản của bạn."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:77
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:78
 #: apps/client/src/pages/home/sections/features/index.tsx:52
 msgid "OpenAI Integration"
 msgstr "Tích hợp OpenAI"
@@ -1229,11 +1229,11 @@ msgstr "Làm tròn"
 msgid "Save Changes"
 msgstr "Lưu thay đổi"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Save Locally"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Saved"
 msgstr ""
 
@@ -1448,14 +1448,6 @@ msgstr "Lời nhận xét"
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:103
 msgid "Text Color"
 msgstr "Màu chữ"
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:26
-msgid "That doesn't look like a valid OpenAI API key."
-msgstr "Có vẻ như đó không phải là Key API OpenAI hợp lệ."
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:30
-msgid "That doesn't look like a valid URL"
-msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
 msgid "The passwords you entered do not match."
@@ -1680,11 +1672,11 @@ msgstr "Bạn có thể thêm nhiều từ khóa bằng cách phân tách chúng
 msgid "You can also enter your username."
 msgstr "Bạn cũng có thể nhập tên người dùng của bạn."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:105
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:106
 msgid "You can integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:80
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
 msgstr "Bạn có thể sử dụng API OpenAI để giúp bạn tạo nội dung hoặc cải thiện khả năng viết của mình trong khi soạn sơ yếu lý lịch."
 
@@ -1692,7 +1684,7 @@ msgstr "Bạn có thể sử dụng API OpenAI để giúp bạn tạo nội dun
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
 msgstr "Bạn có thể theo dõi số lượt xem sơ yếu lý lịch của bạn hoặc số người đã tải xuống bằng cách bật chia sẻ công khai."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:85
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:86
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr "Bạn có tùy chọn <0>lấy Key API OpenAI của bạn</0>. Key này cho phép bạn tận dụng API phù hợp với bạn. Ngoài ra, nếu bạn muốn tắt hoàn toàn các tính năng AI trong Reactive Resume, bạn chỉ cần xóa Key khỏi cài đặt của mình."
 
@@ -1709,7 +1701,7 @@ msgstr "Bạn vừa nhận thư!"
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
 msgstr "Tài khoản của bạn và tất cả dữ liệu của bạn đã được xóa thành công. Tạm biệt!"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:195
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:198
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "Key API của bạn được lưu trữ an toàn trong bộ nhớ cục bộ của trình duyệt và chỉ được sử dụng khi gửi yêu cầu tới OpenAI thông qua SDK chính thức của họ. Hãy yên tâm rằng Key của bạn không được truyền đến bất kỳ máy chủ bên ngoài nào ngoại trừ khi tương tác với các dịch vụ của OpenAI."
 
@@ -1732,3 +1724,4 @@ msgstr "Phóng to"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "Thu nhỏ"
+

@@ -8,7 +8,7 @@ msgstr ""
 "Language: el\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-09-02 10:08\n"
+"PO-Revision-Date: 2025-01-11 11:27\n"
 "Last-Translator: \n"
 "Language-Team: Greek\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -38,7 +38,7 @@ msgstr "<0>Κατασκεύασα το Reactive Resume κυρίως μόνος �
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>Είμαι βέβαιος ότι η εφαρμογή δεν είναι τέλεια, αλλά θα ήθελα να είναι. </0><1>Αν αντιμετωπίσατε προβλήματα κατά τη δημιουργία του βιογραφικού σας, ή έχετε κάποια ιδέα που μπορεί να βοηθήσει εσάς ή άλλους για να δημιουργήσετε το βιογραφικό πιο εύκολα, στείλτε μου ένα email σχετικά με αυτό. </1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:208
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr "<0>Σημείωση: </0>Χρησιμοποιώντας το API του OpenAI, αναγνωρίζετε και αποδέχεστε τους <1>όρους χρήσης</1> και την <2>πολιτική απορρήτου</2> που περιγράφονται από το OpenAI. Σημειώστε ότι η Reactive Resume δεν φέρει καμία ευθύνη για οποιαδήποτε ακατάλληλη ή μη εξουσιοδοτημένη χρήση της υπηρεσίας, και οποιεσδήποτε επακόλουθες επιπτώσεις ή ευθύνες βαρύνουν αποκλειστικά τον χρήστη."
 
@@ -205,9 +205,9 @@ msgstr "Εφεδρικός κωδικός"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "Οι κωδικοί αντιγράφων ασφαλείας μπορούν να περιέχουν μόνο πεζά γράμματα ή αριθμούς και πρέπει να είναι ακριβώς 10 χαρακτήρες."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:133
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:134
 msgid "Base URL"
-msgstr ""
+msgstr "https://rxresu.me/builder/cm23wdob830tdmtv5iyuvprzz"
 
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:55
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
@@ -575,7 +575,7 @@ msgstr "Παραλλαγές γραμματοσειράς"
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr "Για παράδειγμα, πληροφορίες σχετικά με τις εταιρείες στις οποίες στείλατε το βιογραφικό σας ή τους συνδέσμους προς τις περιγραφές θέσεων εργασίας μπορούν να σημειωθούν εδώ."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:186
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:189
 msgid "Forget"
 msgstr "Ξεχάστε το"
 
@@ -914,7 +914,7 @@ msgstr "Μάρτιος 2023 - Παρόν"
 msgid "Margin"
 msgstr "Περιθώρια"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:159
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:160
 msgid "Max Tokens"
 msgstr ""
 
@@ -922,7 +922,7 @@ msgstr ""
 msgid "MIT License"
 msgstr "MIT License"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:146
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:147
 msgid "Model"
 msgstr ""
 
@@ -969,7 +969,7 @@ msgstr "Σημείωση: Αυτό θα καταστήσει το λογαρια
 msgid "Notes"
 msgstr "Σημειώσεις"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:102
 msgid "Ollama Integration"
 msgstr ""
 
@@ -994,17 +994,17 @@ msgstr "Άνοιγμα"
 msgid "Open Source"
 msgstr "Ανοικτού Κώδικα"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:121
 msgid "OpenAI / Ollama API Key"
 msgstr ""
 
-#: apps/client/src/services/openai/change-tone.ts:34
-#: apps/client/src/services/openai/fix-grammar.ts:32
-#: apps/client/src/services/openai/improve-writing.ts:32
+#: apps/client/src/services/openai/change-tone.ts:35
+#: apps/client/src/services/openai/fix-grammar.ts:33
+#: apps/client/src/services/openai/improve-writing.ts:33
 msgid "OpenAI did not return any choices for your text."
 msgstr "Το OpenAI δεν επέστρεψε καμία επιλογή για το κείμενό σας."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:77
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:78
 #: apps/client/src/pages/home/sections/features/index.tsx:52
 msgid "OpenAI Integration"
 msgstr "Ενσωμάτωση OpenAI"
@@ -1229,11 +1229,11 @@ msgstr "Στρογγυλεμένο"
 msgid "Save Changes"
 msgstr "Αποθήκευση Αλλαγών;"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Save Locally"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Saved"
 msgstr ""
 
@@ -1448,14 +1448,6 @@ msgstr "Αναφορές πελατών"
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:103
 msgid "Text Color"
 msgstr "Χρώματα κειμένου"
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:26
-msgid "That doesn't look like a valid OpenAI API key."
-msgstr "Αυτό δεν μοιάζει με έγκυρο κλειδί API του OpenAI."
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:30
-msgid "That doesn't look like a valid URL"
-msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
 msgid "The passwords you entered do not match."
@@ -1680,11 +1672,11 @@ msgstr "Μπορείτε να προσθέσετε πολλαπλές λέξει
 msgid "You can also enter your username."
 msgstr "Μπορείτε επίσης να εισάγετε το όνομα χρήστη σας."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:105
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:106
 msgid "You can integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:80
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
 msgstr "Μπορείτε να χρησιμοποιήσετε το OpenAI API για να σας βοηθήσει να δημιουργήσετε περιεχόμενο, ή να βελτιώσετε το γράψιμό σας, ενώ συνθέτετε το βιογραφικό σας."
 
@@ -1692,7 +1684,7 @@ msgstr "Μπορείτε να χρησιμοποιήσετε το OpenAI API γ�
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
 msgstr "Μπορείτε να παρακολουθείτε τον αριθμό των προβολών που έχει λάβει το βιογραφικό σας, ή πόσοι άνθρωποι έχουν κατεβάσει το βιογραφικό ενεργοποιώντας την κοινή χρήση του κοινού."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:85
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:86
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr "Έχετε την επιλογή <0>αποκτήστε το δικό σας κλειδί OpenAI API</0>. Αυτό το κλειδί σας δίνει τη δυνατότητα να αξιοποιήσετε το API όπως σας φαίνεται κατάλληλο. Εναλλακτικά, αν θέλετε να απενεργοποιήσετε τις λειτουργίες τεχνητής νοημοσύνης στο Reume ενεργό συνολικά, μπορείτε απλά να αφαιρέσετε το κλειδί από τις ρυθμίσεις σας."
 
@@ -1709,7 +1701,7 @@ msgstr "Έχετε email!"
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
 msgstr "Ο λογαριασμός σας και όλα τα δεδομένα σας έχουν διαγραφεί επιτυχώς. Goodbye!"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:195
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:198
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "Το κλειδί API σας αποθηκεύεται με ασφάλεια στον τοπικό αποθηκευτικό χώρο του προγράμματος περιήγησης και χρησιμοποιείται μόνο όταν κάνει αιτήσεις στο OpenAI μέσω του επίσημου SDK. Να είστε βέβαιοι ότι το κλειδί σας δεν μεταδίδεται σε κανέναν εξωτερικό διακομιστή εκτός όταν αλληλεπιδρά με τις υπηρεσίες του OpenAI."
 
@@ -1732,3 +1724,4 @@ msgstr "Μεγέθυνση"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "Σμίκρυνση"
+

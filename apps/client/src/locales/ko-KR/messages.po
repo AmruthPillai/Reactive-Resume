@@ -8,7 +8,7 @@ msgstr ""
 "Language: ko\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-09-02 10:08\n"
+"PO-Revision-Date: 2025-01-11 11:27\n"
 "Last-Translator: \n"
 "Language-Team: Korean\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:171
 msgid "You have enabled two-factor authentication successfully."
-msgstr "이중 인증을 성공적으로 활성화했습니다."
+msgstr "2단계 인증을 성공적으로 사용 설정했습니다."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:57
 msgid "{templatesCount} resume templates to choose from"
@@ -38,7 +38,7 @@ msgstr "<0>저는 여가 시간에 다른 훌륭한 오픈소스 기여자들의
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>앱이 완벽하지는 않겠지만, 앞으로 더 나아지기를 바랍니다.</0><1>이력서를 작성하는 동안 문제가 발생했거나 다른 사용자가 이력서를 더 쉽게 작성하는 데 도움이 될 만한 아이디어가 있다면 리포지토리에 문제를 등록하거나 저에게 이메일을 보내주세요.</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:208
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr "<0>참고: </0>OpenAI API를 이용함으로써 귀하는 OpenAI가 명시한 <1>이용약관</1> 및 <2>개인정보 보호정책을</2> 인정하고 이에 동의하는 것입니다. 리액티브 이력서는 서비스의 부적절하거나 무단 사용에 대해 어떠한 책임도 지지 않으며, 그로 인한 모든 영향이나 책임은 전적으로 사용자에게 있다는 점에 유의하시기 바랍니다."
 
@@ -205,7 +205,7 @@ msgstr "백업 코드"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "백업 코드는 소문자 또는 숫자만 포함할 수 있으며 정확히 10자여야 합니다."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:133
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:134
 msgid "Base URL"
 msgstr ""
 
@@ -575,7 +575,7 @@ msgstr "글꼴 변형"
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr "예를 들어, 이력서를 보낸 회사에 대한 정보나 직무 설명에 대한 링크를 여기에 기록할 수 있습니다."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:186
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:189
 msgid "Forget"
 msgstr "잊어버림"
 
@@ -914,7 +914,7 @@ msgstr "2023년 3월 - 현재"
 msgid "Margin"
 msgstr "마진"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:159
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:160
 msgid "Max Tokens"
 msgstr ""
 
@@ -922,7 +922,7 @@ msgstr ""
 msgid "MIT License"
 msgstr "MIT 라이선스"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:146
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:147
 msgid "Model"
 msgstr ""
 
@@ -969,7 +969,7 @@ msgstr "참고: 이렇게 하면 계정의 보안이 약해집니다."
 msgid "Notes"
 msgstr "참고"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:102
 msgid "Ollama Integration"
 msgstr ""
 
@@ -994,17 +994,17 @@ msgstr "열기"
 msgid "Open Source"
 msgstr "오픈 소스"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:121
 msgid "OpenAI / Ollama API Key"
 msgstr ""
 
-#: apps/client/src/services/openai/change-tone.ts:34
-#: apps/client/src/services/openai/fix-grammar.ts:32
-#: apps/client/src/services/openai/improve-writing.ts:32
+#: apps/client/src/services/openai/change-tone.ts:35
+#: apps/client/src/services/openai/fix-grammar.ts:33
+#: apps/client/src/services/openai/improve-writing.ts:33
 msgid "OpenAI did not return any choices for your text."
 msgstr "OpenAI가 텍스트에 대한 선택 항목을 반환하지 않았습니다."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:77
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:78
 #: apps/client/src/pages/home/sections/features/index.tsx:52
 msgid "OpenAI Integration"
 msgstr "OpenAI 통합"
@@ -1229,11 +1229,11 @@ msgstr "둥근"
 msgid "Save Changes"
 msgstr "변경 사항 저장"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Save Locally"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Saved"
 msgstr ""
 
@@ -1284,7 +1284,7 @@ msgstr "메시지 보내기"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:96
 msgid "Separate Links"
-msgstr ""
+msgstr "별도의 링크"
 
 #: apps/client/src/components/user-options.tsx:32
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
@@ -1448,14 +1448,6 @@ msgstr "사용 후기"
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:103
 msgid "Text Color"
 msgstr "텍스트 색상"
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:26
-msgid "That doesn't look like a valid OpenAI API key."
-msgstr "유효한 OpenAI API 키가 아닌 것 같습니다."
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:30
-msgid "That doesn't look like a valid URL"
-msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
 msgid "The passwords you entered do not match."
@@ -1680,11 +1672,11 @@ msgstr "쉼표로 구분하거나 Enter 키를 눌러 여러 개의 키워드를
 msgid "You can also enter your username."
 msgstr "사용자 아이디를 입력할 수도 있습니다."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:105
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:106
 msgid "You can integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:80
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
 msgstr "OpenAI API를 사용하여 콘텐츠를 생성하거나 이력서를 작성하는 동안 글쓰기를 개선할 수 있습니다."
 
@@ -1692,7 +1684,7 @@ msgstr "OpenAI API를 사용하여 콘텐츠를 생성하거나 이력서를 작
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
 msgstr "공개 공유를 활성화하여 이력서가 조회된 횟수 또는 이력서를 다운로드한 사람의 수를 추적할 수 있습니다."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:85
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:86
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr "자신만의 <0>OpenAI API 키를 얻을</0> 수 있는 옵션이 있습니다. 이 키를 사용하면 원하는 대로 API를 활용할 수 있습니다. 또는 반응형 이력서에서 AI 기능을 완전히 비활성화하려면 설정에서 키를 제거하기만 하면 됩니다."
 
@@ -1709,7 +1701,7 @@ msgstr "메일이 도착했습니다!"
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
 msgstr "계정과 모든 데이터가 성공적으로 삭제되었습니다. 안녕히 계세요!"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:195
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:198
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "API 키는 브라우저의 로컬 저장소에 안전하게 저장되며 공식 SDK를 통해 OpenAI에 요청할 때만 활용됩니다. OpenAI의 서비스와 상호작용할 때를 제외하고는 키가 외부 서버로 전송되지 않으니 안심하세요."
 
@@ -1732,3 +1724,4 @@ msgstr "줌인"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "줌 아웃"
+

@@ -8,7 +8,7 @@ msgstr ""
 "Language: da\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-09-02 10:08\n"
+"PO-Revision-Date: 2025-01-11 11:27\n"
 "Last-Translator: \n"
 "Language-Team: Danish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -38,7 +38,7 @@ msgstr "<0>Jeg byggede Reactive Resume for det meste af mig selv i min fritid, m
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>Jeg er sikker på, at appen ikke er perfekt, men det er mit mål.</0> <1>Hvis du stødte på problemer, mens du oprettede dit CV, eller har en idé, der ville hjælpe dig og andre brugere med at oprette dit CV lettere, så skriv et problem på github-repo eller send mig en e-mail om det.</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:208
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr "<0>Bemærk:</0> Ved at bruge OpenAI API'en anerkender og accepterer du <1>brugsbetingelserne</1> og <2>privatlivspolitik</2> skitseret af OpenAI. Bemærk venligst at Reactive Resume ikke bærer noget ansvar for ukorrekt eller uautoriseret brug af tjenesten, og eventuelle følgevirkninger eller ansvar påhviler udelukkende brugeren."
 
@@ -205,7 +205,7 @@ msgstr "Backup kode"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "Backup-koder må kun indeholde små bogstaver eller tal og skal bestå af nøjagtigt 10 tegn."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:133
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:134
 msgid "Base URL"
 msgstr ""
 
@@ -575,7 +575,7 @@ msgstr "Skrifttype-varianter"
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr "For eksempel kan oplysninger om hvilke virksomheder du har sendt dette CV til eller links til jobbeskrivelserne noteres her."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:186
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:189
 msgid "Forget"
 msgstr "Glem"
 
@@ -914,7 +914,7 @@ msgstr "Marts 2023 - nutid"
 msgid "Margin"
 msgstr "Margen"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:159
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:160
 msgid "Max Tokens"
 msgstr ""
 
@@ -922,7 +922,7 @@ msgstr ""
 msgid "MIT License"
 msgstr "MIT-licens"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:146
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:147
 msgid "Model"
 msgstr ""
 
@@ -969,7 +969,7 @@ msgstr "Bemærk: Dette vil gøre din konto mindre sikker."
 msgid "Notes"
 msgstr "Noter"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:102
 msgid "Ollama Integration"
 msgstr ""
 
@@ -994,17 +994,17 @@ msgstr "Åben"
 msgid "Open Source"
 msgstr "Åben kilde"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:121
 msgid "OpenAI / Ollama API Key"
 msgstr ""
 
-#: apps/client/src/services/openai/change-tone.ts:34
-#: apps/client/src/services/openai/fix-grammar.ts:32
-#: apps/client/src/services/openai/improve-writing.ts:32
+#: apps/client/src/services/openai/change-tone.ts:35
+#: apps/client/src/services/openai/fix-grammar.ts:33
+#: apps/client/src/services/openai/improve-writing.ts:33
 msgid "OpenAI did not return any choices for your text."
 msgstr "OpenAI returnerede ikke nogen valgmuligheder for din tekst."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:77
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:78
 #: apps/client/src/pages/home/sections/features/index.tsx:52
 msgid "OpenAI Integration"
 msgstr "OpenAI-integration"
@@ -1229,11 +1229,11 @@ msgstr "Afrundet"
 msgid "Save Changes"
 msgstr "Gem ændringer"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Save Locally"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Saved"
 msgstr ""
 
@@ -1448,14 +1448,6 @@ msgstr "Udtalelser"
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:103
 msgid "Text Color"
 msgstr "Tekstfarve"
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:26
-msgid "That doesn't look like a valid OpenAI API key."
-msgstr "Det ligner ikke en gyldig OpenAI API-nøgle."
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:30
-msgid "That doesn't look like a valid URL"
-msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
 msgid "The passwords you entered do not match."
@@ -1680,11 +1672,11 @@ msgstr "Du kan tilføje flere søgeord ved at adskille dem med et komma eller tr
 msgid "You can also enter your username."
 msgstr "Du kan også indtaste dit brugernavn."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:105
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:106
 msgid "You can integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:80
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
 msgstr "Du kan gøre brug af OpenAI API til at hjælpe dig med at generere indhold eller forbedre din skrivning, mens du skriver dit CV."
 
@@ -1692,7 +1684,7 @@ msgstr "Du kan gøre brug af OpenAI API til at hjælpe dig med at generere indho
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
 msgstr "Du kan spore antallet af visninger, dit CV har fået, eller hvor mange der har downloadet CV'et ved at aktivere offentlig deling."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:85
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:86
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr "Du har mulighed for at <0>få din egen OpenAI API-nøgle</0>. Denne nøgle giver dig mulighed for at udnytte API'en, som det passer dig. Alternativt, hvis du ønsker at deaktivere AI-funktionerne i Reactive Resume helt, kan du blot fjerne nøglen fra dine indstillinger."
 
@@ -1709,7 +1701,7 @@ msgstr "Du har post!"
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
 msgstr "Din konto og alle dine data er blevet slettet. Vi siger farvel!"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:195
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:198
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "Din API-nøgle gemmes sikkert i browserens lokale lager og bruges kun, når du sender anmodninger til OpenAI via deres officielle SDK. Du kan være sikker på, at din nøgle ikke overføres til nogen ekstern server, undtagen når du interagerer med OpenAI's tjenester."
 
@@ -1732,3 +1724,4 @@ msgstr "Zoom ind"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "Zoom ud"
+

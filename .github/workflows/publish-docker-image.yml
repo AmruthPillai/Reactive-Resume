@@ -24,7 +24,7 @@ jobs:
       matrix:
         platform:
           - linux/amd64
-          - linux/arm64
+          # - linux/arm64 # Uncomment this if you want to build for ARM64, disabled by default due to slower build times
 
     steps:
       - name: Checkout Repository

@@ -8,7 +8,7 @@ msgstr ""
 "Language: fi\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-09-02 10:08\n"
+"PO-Revision-Date: 2025-01-11 11:27\n"
 "Last-Translator: \n"
 "Language-Team: Finnish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -38,7 +38,7 @@ msgstr "<0>Rakensin Reaktiivisen ansioluettelon pääasiassa itse vapaa-ajallani
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>Olen varma, että sovellus ei ole täydellinen, mutta haluaisin sen olevan.</0><1>Jos kohtaat ongelmia luodessasi ansioluetteloasi tai sinulla on idea, joka auttaisi sinua ja muita käyttäjiä luomaan ansioluetteloasi helpommin, ilmoita ongelmasta repositoriossa tai lähetä minulle sähköpostia asiasta.</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:208
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr "<0>Huom:</0> Hyödyntämällä OpenAI API:a, tunnustat ja hyväksyt OpenAI:n määrittelemät <1>käyttöehdot</1> ja <2>tietosuojakäytännöt</2>. Huomaa, että Reaktiivinen ansioluettelo ei ota vastuuta palvelun epäasianmukaisesta tai luvattomasta käytöstä aiheutuvista seurauksista tai vastuista, jotka lankeavat yksinomaan käyttäjälle."
 
@@ -205,7 +205,7 @@ msgstr "Varmuuskoodi"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "Varmuuskoodit voivat sisältää vain pieniä kirjaimia tai numeroita, ja niiden on oltava tarkalleen 10 merkkiä."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:133
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:134
 msgid "Base URL"
 msgstr ""
 
@@ -575,7 +575,7 @@ msgstr "Fonttivariantit"
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr "Esimerkiksi tietoja siitä, mihin yrityksiin lähetit tämän ansioluettelon tai linkit työpaikkailmoituksiin, voidaan kirjata tänne."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:186
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:189
 msgid "Forget"
 msgstr "Unohda"
 
@@ -914,7 +914,7 @@ msgstr "Maaliskuu 2023 - Tähän asti"
 msgid "Margin"
 msgstr "Marginaali"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:159
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:160
 msgid "Max Tokens"
 msgstr ""
 
@@ -922,7 +922,7 @@ msgstr ""
 msgid "MIT License"
 msgstr "MIT-lisenssi"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:146
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:147
 msgid "Model"
 msgstr ""
 
@@ -969,7 +969,7 @@ msgstr "Huom: Tämä tekee tilisi vähemmän turvalliseksi."
 msgid "Notes"
 msgstr "Muistiinpanot"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:102
 msgid "Ollama Integration"
 msgstr ""
 
@@ -994,17 +994,17 @@ msgstr "Avaa"
 msgid "Open Source"
 msgstr "Avoin lähdekoodi"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:121
 msgid "OpenAI / Ollama API Key"
 msgstr ""
 
-#: apps/client/src/services/openai/change-tone.ts:34
-#: apps/client/src/services/openai/fix-grammar.ts:32
-#: apps/client/src/services/openai/improve-writing.ts:32
+#: apps/client/src/services/openai/change-tone.ts:35
+#: apps/client/src/services/openai/fix-grammar.ts:33
+#: apps/client/src/services/openai/improve-writing.ts:33
 msgid "OpenAI did not return any choices for your text."
 msgstr "OpenAI ei palauttanut mitään valintoja tekstillesi."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:77
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:78
 #: apps/client/src/pages/home/sections/features/index.tsx:52
 msgid "OpenAI Integration"
 msgstr "OpenAI-integrointi"
@@ -1229,11 +1229,11 @@ msgstr "Pyöristetty"
 msgid "Save Changes"
 msgstr "Tallenna muutokset"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Save Locally"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Saved"
 msgstr ""
 
@@ -1448,14 +1448,6 @@ msgstr "Asiakaspalautteet"
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:103
 msgid "Text Color"
 msgstr "Tekstin väri"
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:26
-msgid "That doesn't look like a valid OpenAI API key."
-msgstr "Tuo ei näytä kelvolliselta OpenAI API -avaimelta."
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:30
-msgid "That doesn't look like a valid URL"
-msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
 msgid "The passwords you entered do not match."
@@ -1680,11 +1672,11 @@ msgstr "Voit lisätä useita avainsanoja erottelemalla ne pilkulla tai painamall
 msgid "You can also enter your username."
 msgstr "Voit myös syöttää käyttäjänimesi."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:105
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:106
 msgid "You can integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:80
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
 msgstr "Voit käyttää OpenAI API:a auttamaan sinua sisällön luomisessa tai parantamaan kirjoittamistasi laatimalla ansioluettelosi."
 
@@ -1692,7 +1684,7 @@ msgstr "Voit käyttää OpenAI API:a auttamaan sinua sisällön luomisessa tai p
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
 msgstr "Voit seurata, kuinka monta katselukertaa ansioluettelosi on saanut tai kuinka monta henkilöä on ladannut ansioluettelosi mahdollistamalla julkisen jakamisen."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:85
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:86
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr "Sinulla on mahdollisuus <0>hankkia oma OpenAI API-avain</0>. Tämä avain antaa sinulle mahdollisuuden hyödyntää API:a haluamallasi tavalla. Vaihtoehtoisesti, jos haluat poistaa tekoälyominaisuudet kokonaan Reactive Resumesta, voit yksinkertaisesti poistaa avaimen asetuksistasi."
 
@@ -1709,7 +1701,7 @@ msgstr "Sinulle on tullut postia!"
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
 msgstr "Tilisi ja kaikki tietosi on poistettu onnistuneesti. Hyvästi!"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:195
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:198
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "API-avaimesi säilytetään turvallisesti selaimen paikallisessa tallennustilassa ja sitä käytetään vain tehdessäsi pyyntöjä OpenAI:lle heidän virallisen SDK:n kautta. Ole huoleti, että avaintasi ei lähetetä ulkoiselle palvelimelle, paitsi kun vuorovaikutuksessa OpenAI-palveluiden kanssa."
 
@@ -1732,3 +1724,4 @@ msgstr "Lähennä"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "Loitonna"
+
