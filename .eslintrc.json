@@ -9,6 +9,7 @@
       "plugins": ["simple-import-sort", "unused-imports"],
       "rules": {
         // eslint
+        "no-console": "error",
         "no-return-await": "off",
 
         // simple-import-sort

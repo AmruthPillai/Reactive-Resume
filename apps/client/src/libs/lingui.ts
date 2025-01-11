@@ -18,6 +18,7 @@ export async function dynamicActivate(locale: string) {
       dayjs.locale(await dayjsLocales[locale]());
     }
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error(error);
   }
 }

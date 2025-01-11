@@ -204,6 +204,7 @@ export class PrinterService {
 
       return resumeUrl;
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.trace(error);
     }
   }
