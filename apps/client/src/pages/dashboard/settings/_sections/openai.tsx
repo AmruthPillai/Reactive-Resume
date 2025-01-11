@@ -16,18 +16,19 @@ import { cn } from "@reactive-resume/utils";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { useOpenAiStore } from "@/client/stores/openai";
 import { DEFAULT_MAX_TOKENS, DEFAULT_MODEL } from "@/client/constants/llm";
+import { useOpenAiStore } from "@/client/stores/openai";
 
 const formSchema = z.object({
   apiKey: z
     .string()
-    // eslint-disable-next-line lingui/t-call-in-function
-    .regex(/^sk-.+$/, t`That doesn't look like a valid OpenAI API key.`)
+    // eslint-disable-next-line lingui/no-unlocalized-strings
+    .regex(/^sk-.+$/, "That doesn't look like a valid OpenAI API key.")
     .default(""),
   baseURL: z
     .string()
-    .regex(/https?:\/\/[^\/]+\/?v1$/, t`That doesn't look like a valid URL`)
+    // eslint-disable-next-line lingui/no-unlocalized-strings
+    .regex(/https?:\/\/[^/]+\/?v1$/, "That doesn't look like a valid URL")
     .default(""),
   model: z.string().default(DEFAULT_MODEL),
   maxTokens: z.number().default(DEFAULT_MAX_TOKENS),
@@ -162,7 +163,9 @@ export const OpenAISettings = () => {
                     type="number"
                     placeholder={`${DEFAULT_MAX_TOKENS}`}
                     {...field}
-                    onChange={(e) => field.onChange(e.target.valueAsNumber)}
+                    onChange={(e) => {
+                      field.onChange(e.target.valueAsNumber);
+                    }}
                   />
                 </FormControl>
                 <FormMessage />

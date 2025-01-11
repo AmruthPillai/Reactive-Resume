@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+
 import { DEFAULT_MAX_TOKENS, DEFAULT_MODEL } from "../constants/llm";
 
 type OpenAIStore = {
