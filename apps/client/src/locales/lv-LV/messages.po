@@ -8,7 +8,7 @@ msgstr ""
 "Language: lv\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-09-02 10:08\n"
+"PO-Revision-Date: 2024-10-13 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Latvian\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2;\n"
@@ -38,7 +38,7 @@ msgstr "<0>Reactive Resume izveidoju galvenokārt pats savā brīvajā laikā, a
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>Esmu pārliecināts, ka lietotne nav perfekta, bet es gribētu, lai tā tāda būtu.</0><1>Ja, veidojot CV, saskārāties ar kādām problēmām vai jums ir ideja, kas palīdzētu jums un citiem lietotājiem vieglāk veidot CV, ierakstiet par to jautājumu repozitorijā vai sūtiet man e-pastu.</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:126
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr "<0>Piezīme: </0>Izmantojot OpenAI API, jūs atzīstat un piekrītat OpenAI noteiktajiem <1>lietošanas noteikumiem</1> un <2>privātuma politikai</2>. Lūdzu, ņemiet vērā, ka Reactive Resume neuzņemas nekādu atbildību par jebkādu nepareizu vai neatļautu pakalpojuma izmantošanu, un visas no tā izrietošās sekas vai atbildība gulstas tikai uz lietotāju."
 
@@ -146,10 +146,6 @@ msgstr "Ikviens, kam ir saite, var apskatīt un lejupielādēt CV."
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "Ikviens, kam ir šī saite, var apskatīt un lejupielādēt CV. Kopīgojiet to savā profilā vai ar personāla atlases speciālistiem."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:83
-msgid "API Key"
-msgstr "API atslēga"
-
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:124
 msgid "Are you sure you want to delete this item?"
 msgstr "Vai esat pārliecināts, ka vēlaties dzēst šo objektu?"
@@ -208,6 +204,10 @@ msgstr "Rezerves kopijas kods"
 #: apps/client/src/pages/auth/backup-otp/page.tsx:80
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "Rezerves kopiju kodos drīkst būt tikai mazie burti vai cipari, un tiem jābūt tieši 10 rakstzīmēm."
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:133
+msgid "Base URL"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:55
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
@@ -575,7 +575,7 @@ msgstr "Fontu varianti"
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr "Piemēram, šeit var norādīt informāciju par to, kuriem uzņēmumiem nosūtījāt šo CV, vai saites uz darba aprakstiem."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:107
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:186
 msgid "Forget"
 msgstr "Aizmirstiet"
 
@@ -914,9 +914,17 @@ msgstr "2023. gada marts - klāt"
 msgid "Margin"
 msgstr "Rezerve"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:159
+msgid "Max Tokens"
+msgstr ""
+
 #: apps/client/src/pages/home/sections/features/index.tsx:48
 msgid "MIT License"
 msgstr "MIT licence"
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:146
+msgid "Model"
+msgstr ""
 
 #: apps/client/src/pages/auth/register/page.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:58
@@ -961,6 +969,10 @@ msgstr "Piezīme: Tādējādi jūsu konts kļūs mazāk drošs."
 msgid "Notes"
 msgstr "Piezīmes"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
+msgid "Ollama Integration"
+msgstr ""
+
 #: apps/client/src/pages/auth/verify-otp/page.tsx:82
 msgid "One-Time Password"
 msgstr "Vienreizēja parole"
@@ -982,13 +994,17 @@ msgstr "Atvērt"
 msgid "Open Source"
 msgstr "Atvērtā pirmkoda programmatūra"
 
-#: apps/client/src/services/openai/change-tone.ts:30
-#: apps/client/src/services/openai/fix-grammar.ts:28
-#: apps/client/src/services/openai/improve-writing.ts:28
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
+msgid "OpenAI / Ollama API Key"
+msgstr ""
+
+#: apps/client/src/services/openai/change-tone.ts:34
+#: apps/client/src/services/openai/fix-grammar.ts:32
+#: apps/client/src/services/openai/improve-writing.ts:32
 msgid "OpenAI did not return any choices for your text."
 msgstr "OpenAI neatgrieza nevienu jūsu teksta izvēli."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:52
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:77
 #: apps/client/src/pages/home/sections/features/index.tsx:52
 msgid "OpenAI Integration"
 msgstr "OpenAI integrācija"
@@ -1213,6 +1229,14 @@ msgstr "Noapaļots"
 msgid "Save Changes"
 msgstr "Izmaiņu saglabāšana"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+msgid "Save Locally"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+msgid "Saved"
+msgstr ""
+
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
 msgid "Scan the QR code below with your authenticator app to setup 2FA on your account."
 msgstr "Noskenējiet tālāk norādīto QR kodu, izmantojot autentifikatora lietotni, lai savā kontā iestatītu 2FA."
@@ -1376,17 +1400,9 @@ msgstr "Statistika"
 msgid "Statistics are available only for public resumes."
 msgstr "Statistika ir pieejama tikai par publiskiem CV."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
-msgid "Store Locally"
-msgstr "Veikals uz vietas"
-
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:162
 msgid "Store your backup codes securely"
 msgstr "Droši uzglabājiet dublējuma kodus"
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
-msgid "Stored"
-msgstr "Uzglabāts"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
@@ -1433,9 +1449,13 @@ msgstr "Atsauksmes"
 msgid "Text Color"
 msgstr "Teksta krāsa"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:25
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:26
 msgid "That doesn't look like a valid OpenAI API key."
 msgstr "Tas neizskatās pēc derīgas OpenAI API atslēgas."
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:30
+msgid "That doesn't look like a valid URL"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
 msgid "The passwords you entered do not match."
@@ -1660,7 +1680,11 @@ msgstr "Varat pievienot vairākus atslēgvārdus, atdalot tos ar komatu vai nosp
 msgid "You can also enter your username."
 msgstr "Varat arī ievadīt savu lietotājvārdu."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:54
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:105
+msgid "You can integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
 msgstr "Varat izmantot OpenAI API, lai palīdzētu jums ģenerēt saturu vai uzlabot rakstīšanu, veidojot CV."
 
@@ -1668,7 +1692,7 @@ msgstr "Varat izmantot OpenAI API, lai palīdzētu jums ģenerēt saturu vai uzl
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
 msgstr "Iespējot publisko kopīgošanu, varat sekot līdzi tam, cik skatījumu ir saņemts jūsu CV vai cik daudz cilvēku ir lejupielādējuši CV."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:60
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:85
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr "Jums ir iespēja <0>iegūt savu OpenAI API atslēgu</0>. Šī atslēga ļauj jums izmantot API pēc saviem ieskatiem. Ja vēlaties pilnībā atslēgt mākslīgā intelekta funkcijas Reactive Resume, varat arī vienkārši no iestatījumiem noņemt atslēgu."
 
@@ -1685,7 +1709,7 @@ msgstr "Jūs esat saņēmis pastu!"
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
 msgstr "Jūsu konts un visi dati ir veiksmīgi dzēsti. Uz redzēšanos!"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:116
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:195
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "Jūsu API atslēga tiek droši glabāta pārlūkprogrammas lokālajā atmiņā un tiek izmantota tikai tad, kad tiek veikti pieprasījumi OpenAI, izmantojot oficiālo SDK. Esiet droši, ka jūsu atslēga netiek pārsūtīta nevienam ārējam serverim, izņemot gadījumus, kad notiek mijiedarbība ar OpenAI pakalpojumiem."
 

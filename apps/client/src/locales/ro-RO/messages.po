@@ -8,7 +8,7 @@ msgstr ""
 "Language: ro\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-09-02 10:08\n"
+"PO-Revision-Date: 2024-10-20 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Romanian\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);\n"
@@ -32,7 +32,7 @@ msgstr "{value, plural, one {Coloana} other {Coloane}}"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:20
 msgid "<0>I built Reactive Resume mostly by myself during my spare time, with a lot of help from other great open-source contributors.</0><1>If you like the app and want to support keeping it free forever, please donate whatever you can afford to give.</1>"
-msgstr "<0>Am construit Resume Reactiv mai ales de mine în timpul liber, cu mult ajutor din partea altor mari colaboratori open-source. /0><1>Dacă vă place aplicația și doriți să susțineți să o păstrați gratuit pentru totdeauna, vă rugăm să donați orice vă puteți permite, să oferiți.</1>"
+msgstr "<0>Am construit Reactive Resume în mare parte de unul singur, în timpul meu liber, cu mult ajutor din partea altor mari colaboratori open-source. /0><1>Dacă vă place aplicația și doriți să susțineți să o păstrați gratuit pentru totdeauna, vă rugăm să donați orice vă puteți permite să oferiți.</1>"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:51
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
@@ -777,9 +777,7 @@ msgstr "Se pare că adresa dumneavoastră de e-mail a fost deja verificată."
 #: apps/client/src/pages/auth/register/page.tsx:101
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
 msgid "John Doe"
-msgstr ""
-"John Doe\n"
-""
+msgstr "John Doe\n"
 
 #: apps/client/src/pages/auth/register/page.tsx:122
 msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
@@ -1734,3 +1732,4 @@ msgstr "Mărire în"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "Micșorare"
+

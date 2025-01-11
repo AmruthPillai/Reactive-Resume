@@ -8,7 +8,7 @@ msgstr ""
 "Language: th\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-09-02 10:08\n"
+"PO-Revision-Date: 2024-11-24 00:11\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:171
 msgid "You have enabled two-factor authentication successfully."
-msgstr "คุณได้เปิดการยืนยันตัวตนแบบสองขั้นตอนสำเร็จแล้ว"
+msgstr "เปิดใช้งานการยืนยันตัวตนแบบสองปัจจัย (2FA) สำเร็จ"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:57
 msgid "{templatesCount} resume templates to choose from"
@@ -207,7 +207,7 @@ msgstr "รหัสสำรองอาจมีเฉพาะตัวอั
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:133
 msgid "Base URL"
-msgstr ""
+msgstr "Base URL"
 
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:55
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
@@ -916,7 +916,7 @@ msgstr "ระยะขอบ"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:159
 msgid "Max Tokens"
-msgstr ""
+msgstr "Max Tokens"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:48
 msgid "MIT License"
@@ -924,7 +924,7 @@ msgstr "ใบอนุญาต MIT"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:146
 msgid "Model"
-msgstr ""
+msgstr "โมเดล"
 
 #: apps/client/src/pages/auth/register/page.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:58
@@ -971,7 +971,7 @@ msgstr "โน้ต"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
 msgid "Ollama Integration"
-msgstr ""
+msgstr "การเชื่อมต่อ Ollama"
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:82
 msgid "One-Time Password"
@@ -996,7 +996,7 @@ msgstr "โอเพนซอร์ส"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
 msgid "OpenAI / Ollama API Key"
-msgstr ""
+msgstr "ไม่พบ API Key กรุณาระบุ API Key ที่ถูกต้อง"
 
 #: apps/client/src/services/openai/change-tone.ts:34
 #: apps/client/src/services/openai/fix-grammar.ts:32
@@ -1231,11 +1231,11 @@ msgstr "บันทึกการเปลี่ยนแปลง"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
 msgid "Save Locally"
-msgstr ""
+msgstr "บันทึกในเบราว์เซอร์"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
 msgid "Saved"
-msgstr ""
+msgstr "บันทึกสำเร็จ"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
 msgid "Scan the QR code below with your authenticator app to setup 2FA on your account."
@@ -1455,7 +1455,7 @@ msgstr "ดูเหมือนว่านั่นจะไม่ใช่ค
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:30
 msgid "That doesn't look like a valid URL"
-msgstr ""
+msgstr "URL ไม่ถูกต้อง"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
 msgid "The passwords you entered do not match."
@@ -1682,7 +1682,7 @@ msgstr "คุณสามารถป้อนชื่อผู้ใช้ข
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:105
 msgid "You can integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens."
-msgstr ""
+msgstr "คุณสามารถเชื่อมต่อกับ Ollama เลือกโมเดลและตั้งค่า max tokens ได้โดยตั้งค่า API Key `sk-1234567890abcdef` และ ตั้งค่าBase URL เป็น URL Ollama ของคุณ เช่น `http://localhost:11434/v1`"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
@@ -1732,3 +1732,4 @@ msgstr "ซูมเข้า"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "ซูมออก"
+

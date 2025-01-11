@@ -8,7 +8,7 @@ msgstr ""
 "Language: pt\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-09-02 10:08\n"
+"PO-Revision-Date: 2024-11-14 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:171
 msgid "You have enabled two-factor authentication successfully."
-msgstr "Ativou a autenticação de dois fatores com êxito."
+msgstr "Ativou a autenticação de dois fatores com sucesso."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:57
 msgid "{templatesCount} resume templates to choose from"
@@ -75,7 +75,7 @@ msgstr "Um projeto de paixão de <0>Amruth Pillai</0>"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:57
 msgid "A password reset link should have been sent to your inbox, if an account existed with the email you provided."
-msgstr "Um link para redefinir a senha foi enviado para a sua caixa de entrada, se existir uma conta com o e-mail que forneceu."
+msgstr "Um link de redefinição de palavra-passe será enviado para o seu email, caso exista uma conta com o e-mail que introduziu."
 
 #: apps/client/src/services/errors/translate-error.ts:43
 msgid "A resume with this slug already exists, please pick a different unique identifier."
@@ -119,7 +119,7 @@ msgstr "Adicionar uma nova secção"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:271
 msgid "Add New Page"
-msgstr "Adicionar Página"
+msgstr "Adicionar Nova Página"
 
 #: apps/client/src/components/ai-actions.tsx:79
 msgid "AI"
@@ -144,7 +144,7 @@ msgstr "Qualquer pessoa com o link pode ver e descarregar o currículo."
 #: apps/client/src/pages/builder/_components/toolbar.tsx:54
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:30
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
-msgstr "Qualquer pessoa com o link pode ver e descarregar o currículo. Partilhe-o no seu perfil ou com recrutadores."
+msgstr "Qualquer pessoa com o link pode ver e descarregar o currículo. Partilhe no seu perfil ou com recrutadores."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:124
 msgid "Are you sure you want to delete this item?"
@@ -508,7 +508,7 @@ msgstr "Digite um dos 10 códigos de backup que guardou quando ativou a autentic
 
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:63
 msgid "Enter Phosphor Icon"
-msgstr ""
+msgstr "Inserir o ícone Phosphor"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:170
 msgid "Enter the 6-digit code from your authenticator app to verify that 2FA has been setup correctly."
@@ -916,7 +916,7 @@ msgstr "Margem"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:159
 msgid "Max Tokens"
-msgstr ""
+msgstr "Máximo de Tokens"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:48
 msgid "MIT License"
@@ -924,7 +924,7 @@ msgstr "Licença MIT"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:146
 msgid "Model"
-msgstr ""
+msgstr "Modelo"
 
 #: apps/client/src/pages/auth/register/page.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:58
@@ -971,7 +971,7 @@ msgstr "Notas"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
 msgid "Ollama Integration"
-msgstr ""
+msgstr "Integração Ollama"
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:82
 msgid "One-Time Password"
@@ -996,7 +996,7 @@ msgstr "Código Aberto"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
 msgid "OpenAI / Ollama API Key"
-msgstr ""
+msgstr "Chave da API OpenAI / Ollama"
 
 #: apps/client/src/services/openai/change-tone.ts:34
 #: apps/client/src/services/openai/fix-grammar.ts:32
@@ -1231,11 +1231,11 @@ msgstr "Salvar Alterações"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
 msgid "Save Locally"
-msgstr ""
+msgstr "Guardar Localmente"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
 msgid "Saved"
-msgstr ""
+msgstr "Guardado"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
 msgid "Scan the QR code below with your authenticator app to setup 2FA on your account."
@@ -1284,7 +1284,7 @@ msgstr "Envie-me uma mensagem"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:96
 msgid "Separate Links"
-msgstr ""
+msgstr "Separação de ligações"
 
 #: apps/client/src/components/user-options.tsx:32
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
@@ -1351,7 +1351,7 @@ msgstr "Registar"
 
 #: apps/client/src/pages/auth/login/page.tsx:74
 msgid "Signing in via email is currently disabled by the administrator."
-msgstr ""
+msgstr "Iniciar sessão via endereço eletrónico está atualmente desabilitado pelo administrador."
 
 #: apps/client/src/pages/auth/register/page.tsx:82
 msgid "Signups are currently disabled by the administrator."
@@ -1455,7 +1455,7 @@ msgstr "Isso não parece uma chave válida de API da OpenAI."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:30
 msgid "That doesn't look like a valid URL"
-msgstr ""
+msgstr "Não é um URL válido"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
 msgid "The passwords you entered do not match."
@@ -1682,7 +1682,7 @@ msgstr "Você também pode inserir seu nome de usuário."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:105
 msgid "You can integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens."
-msgstr ""
+msgstr "Pode integrar com o Ollama simplesmente definindo a chave API para `sk-1234567890abcdef` e o URL base para o URL do Ollama, exemplo: `http://localhost:11434/v1`. Também pode escolher modelos e definir o máximo de tokens."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
@@ -1732,3 +1732,4 @@ msgstr "Ampliar"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "Afastar"
+

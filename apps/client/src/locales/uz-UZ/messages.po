@@ -8,7 +8,7 @@ msgstr ""
 "Language: uz\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-09-02 10:08\n"
+"PO-Revision-Date: 2024-11-22 00:11\n"
 "Last-Translator: \n"
 "Language-Team: Uzbek\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -38,7 +38,7 @@ msgstr ""
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:126
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr ""
 
@@ -146,10 +146,6 @@ msgstr "Ushbu havolaga ega bo'lgan ixtiyoriy shaxs tarjimai holni ko'rishi va yu
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "Ushbu havolaga ega bo'lgan ixtiyoriy shaxs tarjimai holni ko'rishi va yuklab olishi mumkin. Uni hisobingizda yoki ish beruvchilar bilan ulashing."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:83
-msgid "API Key"
-msgstr "API kalit"
-
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:124
 msgid "Are you sure you want to delete this item?"
 msgstr "Haqiqatan ham buni oʻchirmoqchimisiz?"
@@ -208,6 +204,10 @@ msgstr "Zaxira kodi"
 #: apps/client/src/pages/auth/backup-otp/page.tsx:80
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "Zaxira kodlari faqat kichik harflar yoki raqamlardan iborat bo'lishi mumkin va aynan 10 belgidan iborat bo'lishi kerak."
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:133
+msgid "Base URL"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:55
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
@@ -537,15 +537,15 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:111
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:40
 msgid "Export"
-msgstr ""
+msgstr "Eksport"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:257
 msgid "File"
-msgstr ""
+msgstr "Fayl"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:223
 msgid "Filetype"
-msgstr ""
+msgstr "Fayl turi"
 
 #: apps/client/src/pages/home/sections/hero/index.tsx:38
 msgid "Finally,"
@@ -575,17 +575,17 @@ msgstr ""
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:107
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:186
 msgid "Forget"
 msgstr ""
 
 #: apps/client/src/pages/auth/login/page.tsx:126
 msgid "Forgot Password?"
-msgstr ""
+msgstr "Parolni unutdingizmi?"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:68
 msgid "Forgot your password?"
-msgstr ""
+msgstr "Parolingizni unutdingizmi?"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:32
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:40
@@ -598,7 +598,7 @@ msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:46
 msgid "Free, forever"
-msgstr ""
+msgstr "Bepul, har doim"
 
 #: apps/client/src/components/ai-actions.tsx:121
 #: apps/client/src/components/ai-actions.tsx:124
@@ -615,7 +615,7 @@ msgstr ""
 
 #: apps/client/src/pages/home/sections/hero/call-to-action.tsx:32
 msgid "Get Started"
-msgstr ""
+msgstr "Boshlash"
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:18
 msgid "GitHub"
@@ -662,11 +662,11 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:92
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:186
 msgid "Hidden"
-msgstr ""
+msgstr "Yashirilgan"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:105
 msgid "Hide"
-msgstr ""
+msgstr "Yashirish"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:178
 msgid "Hide Icons"
@@ -736,7 +736,7 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:125
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
 msgid "Information"
-msgstr ""
+msgstr "Ma'lumot"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:39
 msgid "Institution"
@@ -777,17 +777,17 @@ msgstr ""
 #: apps/client/src/pages/auth/register/page.tsx:101
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
 msgid "John Doe"
-msgstr ""
+msgstr "Azizov Aziz"
 
 #: apps/client/src/pages/auth/register/page.tsx:122
 msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
 msgid "john.doe"
-msgstr ""
+msgstr "aziz.azizov"
 
 #: apps/client/src/pages/auth/register/page.tsx:143
 msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
 msgid "john.doe@example.com"
-msgstr ""
+msgstr "aziz.azizov@pochta.uz"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:54
 msgid "JSON"
@@ -798,7 +798,7 @@ msgstr "JSON"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:132
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:109
 msgid "Keywords"
-msgstr ""
+msgstr "Kalit so’zlar"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:41
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:51
@@ -914,8 +914,16 @@ msgstr ""
 msgid "Margin"
 msgstr ""
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:159
+msgid "Max Tokens"
+msgstr ""
+
 #: apps/client/src/pages/home/sections/features/index.tsx:48
 msgid "MIT License"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:146
+msgid "Model"
 msgstr ""
 
 #: apps/client/src/pages/auth/register/page.tsx:98
@@ -961,6 +969,10 @@ msgstr "Eslatma: Bu sizning hisobingiz xavfsizligini kamaytiradi."
 msgid "Notes"
 msgstr "Eslatmalar"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
+msgid "Ollama Integration"
+msgstr ""
+
 #: apps/client/src/pages/auth/verify-otp/page.tsx:82
 msgid "One-Time Password"
 msgstr "Bir martalik parol"
@@ -982,13 +994,17 @@ msgstr "Ochiq"
 msgid "Open Source"
 msgstr ""
 
-#: apps/client/src/services/openai/change-tone.ts:30
-#: apps/client/src/services/openai/fix-grammar.ts:28
-#: apps/client/src/services/openai/improve-writing.ts:28
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
+msgid "OpenAI / Ollama API Key"
+msgstr ""
+
+#: apps/client/src/services/openai/change-tone.ts:34
+#: apps/client/src/services/openai/fix-grammar.ts:32
+#: apps/client/src/services/openai/improve-writing.ts:32
 msgid "OpenAI did not return any choices for your text."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:52
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:77
 #: apps/client/src/pages/home/sections/features/index.tsx:52
 msgid "OpenAI Integration"
 msgstr ""
@@ -1192,7 +1208,7 @@ msgstr ""
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/resumes/page.tsx:37
 msgid "Resumes"
-msgstr ""
+msgstr "Rezyumelar"
 
 #: apps/client/src/pages/home/sections/statistics/index.tsx:14
 msgid "Resumes Generated"
@@ -1211,7 +1227,15 @@ msgstr ""
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:131
 msgid "Save Changes"
-msgstr ""
+msgstr "O'zgarishlarni saqlash"
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+msgid "Save Locally"
+msgstr "Mahalliy saqlash"
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+msgid "Saved"
+msgstr "Saqlandi"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
 msgid "Scan the QR code below with your authenticator app to setup 2FA on your account."
@@ -1376,16 +1400,8 @@ msgstr ""
 msgid "Statistics are available only for public resumes."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
-msgid "Store Locally"
-msgstr ""
-
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:162
 msgid "Store your backup codes securely"
-msgstr ""
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
-msgid "Stored"
 msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
@@ -1433,8 +1449,12 @@ msgstr ""
 msgid "Text Color"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:25
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:26
 msgid "That doesn't look like a valid OpenAI API key."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:30
+msgid "That doesn't look like a valid URL"
 msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
@@ -1660,7 +1680,11 @@ msgstr ""
 msgid "You can also enter your username."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:54
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:105
+msgid "You can integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
 msgstr ""
 
@@ -1668,7 +1692,7 @@ msgstr ""
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:60
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:85
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr ""
 
@@ -1685,7 +1709,7 @@ msgstr ""
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:116
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:195
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr ""
 

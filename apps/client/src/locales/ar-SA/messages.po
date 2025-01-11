@@ -8,7 +8,7 @@ msgstr ""
 "Language: ar\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-09-02 10:08\n"
+"PO-Revision-Date: 2024-10-21 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Arabic\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
@@ -207,7 +207,7 @@ msgstr "قد تحتوي رموز النسخ الاحتياطي على أحرف �
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:133
 msgid "Base URL"
-msgstr ""
+msgstr "الرابط الأساسي"
 
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:55
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
@@ -916,7 +916,7 @@ msgstr "هامش"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:159
 msgid "Max Tokens"
-msgstr ""
+msgstr "الحد الأقصى للرموز"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:48
 msgid "MIT License"
@@ -924,7 +924,7 @@ msgstr "رخصة MIT"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:146
 msgid "Model"
-msgstr ""
+msgstr "الموديل"
 
 #: apps/client/src/pages/auth/register/page.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:58
@@ -971,7 +971,7 @@ msgstr "ملاحظات"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
 msgid "Ollama Integration"
-msgstr ""
+msgstr "التكامل مع أولاما"
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:82
 msgid "One-Time Password"
@@ -996,7 +996,7 @@ msgstr "مفتوح المصدر"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
 msgid "OpenAI / Ollama API Key"
-msgstr ""
+msgstr "OpenAI / Ollama مفتاح"
 
 #: apps/client/src/services/openai/change-tone.ts:34
 #: apps/client/src/services/openai/fix-grammar.ts:32
@@ -1231,11 +1231,11 @@ msgstr "حفظ التّغييرات"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
 msgid "Save Locally"
-msgstr ""
+msgstr "الحفظ في الجهاز (محلياً)"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
 msgid "Saved"
-msgstr ""
+msgstr "تم الحفظ"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
 msgid "Scan the QR code below with your authenticator app to setup 2FA on your account."
@@ -1284,7 +1284,7 @@ msgstr "أرسل لي رسالة"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:96
 msgid "Separate Links"
-msgstr ""
+msgstr "روابط منفصلة"
 
 #: apps/client/src/components/user-options.tsx:32
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
@@ -1351,7 +1351,7 @@ msgstr "تسجيل الدخول"
 
 #: apps/client/src/pages/auth/login/page.tsx:74
 msgid "Signing in via email is currently disabled by the administrator."
-msgstr ""
+msgstr "تسجيل الدخول عبر البريد الإلكتروني معطل حالياً من قبل المسؤول."
 
 #: apps/client/src/pages/auth/register/page.tsx:82
 msgid "Signups are currently disabled by the administrator."
@@ -1455,7 +1455,7 @@ msgstr "هذا لا يبدو وكأنه مفتاح API OpenAI صالح."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:30
 msgid "That doesn't look like a valid URL"
-msgstr ""
+msgstr "هذا لا يبدو رابط صحيح"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
 msgid "The passwords you entered do not match."
@@ -1682,7 +1682,7 @@ msgstr "يمكنك أيضًا إدخال اسم المستخدم الخاص بك
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:105
 msgid "You can integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens."
-msgstr ""
+msgstr "يمكنك التكامل مع Ollama ببساطة عن طريق تعيين مفتاح واجهة برمجة التطبيقات على 'ssk-1234567867890abcdef' وعنوان URL الأساسي إلى عنوان URL الخاص ب Ollama، أي 'http://localhost:11434/v1'. يمكنك أيضًا انتقاء واختيار النماذج وتعيين الحد الأقصى للرموز."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
@@ -1732,3 +1732,4 @@ msgstr "تكبير في"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "تكبير خارج"
+

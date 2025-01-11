@@ -8,7 +8,7 @@ msgstr ""
 "Language: zh\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-09-02 10:08\n"
+"PO-Revision-Date: 2024-12-25 00:09\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -24,7 +24,7 @@ msgstr "您已成功启用双重身份认证。"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:57
 msgid "{templatesCount} resume templates to choose from"
-msgstr "{templatesCount} 可供选择的简历模板"
+msgstr "{templatesCount} 个简历模板可供选择"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:141
 msgid "{value, plural, one {Column} other {Columns}}"
@@ -207,7 +207,7 @@ msgstr "备份码只包含小写字母或数字，而且必须正好是 10 个�
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:133
 msgid "Base URL"
-msgstr ""
+msgstr "基础 URL"
 
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:55
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
@@ -266,7 +266,7 @@ msgstr "想改名字了？取个新名字吧。"
 
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:69
 msgid "Check your email for the confirmation link to update your email address."
-msgstr "检查您的电子邮件中的确认链接以更新您的电子邮件地址。"
+msgstr "检查您收件箱中的确认链接，以更新您的电子邮件地址。"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:150
 msgid "Circle"
@@ -916,7 +916,7 @@ msgstr "边距"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:159
 msgid "Max Tokens"
-msgstr ""
+msgstr "最大 Token 数"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:48
 msgid "MIT License"
@@ -924,7 +924,7 @@ msgstr "MIT 许可证"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:146
 msgid "Model"
-msgstr ""
+msgstr "模型"
 
 #: apps/client/src/pages/auth/register/page.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:58
@@ -971,7 +971,7 @@ msgstr "注释"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
 msgid "Ollama Integration"
-msgstr ""
+msgstr "Ollama 集成"
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:82
 msgid "One-Time Password"
@@ -996,7 +996,7 @@ msgstr "开源"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
 msgid "OpenAI / Ollama API Key"
-msgstr ""
+msgstr "OpenAI / Ollama API 密钥"
 
 #: apps/client/src/services/openai/change-tone.ts:34
 #: apps/client/src/services/openai/fix-grammar.ts:32
@@ -1030,7 +1030,7 @@ msgstr "页面"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:237
 msgid "Page {0}"
-msgstr "第{0} 页"
+msgstr "第 {0} 页"
 
 #: apps/client/src/pages/auth/login/page.tsx:105
 #: apps/client/src/pages/auth/register/page.tsx:161
@@ -1231,11 +1231,11 @@ msgstr "保存更改"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
 msgid "Save Locally"
-msgstr ""
+msgstr "保存到本地"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
 msgid "Saved"
-msgstr ""
+msgstr "已保存"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
 msgid "Scan the QR code below with your authenticator app to setup 2FA on your account."
@@ -1351,7 +1351,7 @@ msgstr "注册"
 
 #: apps/client/src/pages/auth/login/page.tsx:74
 msgid "Signing in via email is currently disabled by the administrator."
-msgstr "湖南大学毕业"
+msgstr "目前管理员已禁用电子邮件登录。"
 
 #: apps/client/src/pages/auth/register/page.tsx:82
 msgid "Signups are currently disabled by the administrator."
@@ -1455,7 +1455,7 @@ msgstr "这看起来不像有效的 OpenAI API 密钥。"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:30
 msgid "That doesn't look like a valid URL"
-msgstr ""
+msgstr "这看起来不像一个有效的 URL"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
 msgid "The passwords you entered do not match."
@@ -1641,7 +1641,7 @@ msgstr "第 4 版"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:51
 msgid "Views"
-msgstr "视图"
+msgstr "查看"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:86
 msgid "Visible"
@@ -1682,7 +1682,7 @@ msgstr "您还可以输入您的用户名。"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:105
 msgid "You can integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens."
-msgstr ""
+msgstr "您只需将 API 密钥设置为 `sk-1234567890abcdef`，将基础 URL 设置为您的 Ollama URL（即 `http://localhost:11434/v1`），即可与 Ollama 集成。您还可以选择模型并设置最大 Token 数量。"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
@@ -1732,3 +1732,4 @@ msgstr "放大"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "缩小"
+

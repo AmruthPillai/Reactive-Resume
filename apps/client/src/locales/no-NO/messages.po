@@ -8,7 +8,7 @@ msgstr ""
 "Language: no\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-09-02 10:08\n"
+"PO-Revision-Date: 2024-11-05 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Norwegian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -207,7 +207,7 @@ msgstr "Sikkerhetskopi-koder kan bare inneholde små bokstaver eller tall, og m�
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:133
 msgid "Base URL"
-msgstr ""
+msgstr "Basis-URL"
 
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:55
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
@@ -916,7 +916,7 @@ msgstr "Margin"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:159
 msgid "Max Tokens"
-msgstr ""
+msgstr "Maks antall tegn"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:48
 msgid "MIT License"
@@ -924,7 +924,7 @@ msgstr "MIT-lisens"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:146
 msgid "Model"
-msgstr ""
+msgstr "Modell"
 
 #: apps/client/src/pages/auth/register/page.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:58
@@ -971,7 +971,7 @@ msgstr "Notater"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
 msgid "Ollama Integration"
-msgstr ""
+msgstr "Ollama integrasjon"
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:82
 msgid "One-Time Password"
@@ -996,7 +996,7 @@ msgstr "Åpen Kildekode"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
 msgid "OpenAI / Ollama API Key"
-msgstr ""
+msgstr "OpenAI / Ollama API nøkkel"
 
 #: apps/client/src/services/openai/change-tone.ts:34
 #: apps/client/src/services/openai/fix-grammar.ts:32
@@ -1231,11 +1231,11 @@ msgstr "Lagre Endringer"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
 msgid "Save Locally"
-msgstr ""
+msgstr "Lagre lokalt"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
 msgid "Saved"
-msgstr ""
+msgstr "Lagret"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
 msgid "Scan the QR code below with your authenticator app to setup 2FA on your account."
@@ -1284,7 +1284,7 @@ msgstr "Send meg en melding"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:96
 msgid "Separate Links"
-msgstr ""
+msgstr "Separate lenker"
 
 #: apps/client/src/components/user-options.tsx:32
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
@@ -1351,7 +1351,7 @@ msgstr "Registrer deg"
 
 #: apps/client/src/pages/auth/login/page.tsx:74
 msgid "Signing in via email is currently disabled by the administrator."
-msgstr ""
+msgstr "Innlogging via e-post er for øyeblikket deaktivert av administratoren."
 
 #: apps/client/src/pages/auth/register/page.tsx:82
 msgid "Signups are currently disabled by the administrator."
@@ -1455,7 +1455,7 @@ msgstr "Det ser ikke ut som en gyldig OpenAI API-nøkkel."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:30
 msgid "That doesn't look like a valid URL"
-msgstr ""
+msgstr "Det ser ikke ut som en gyldig nettadresse"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
 msgid "The passwords you entered do not match."
@@ -1682,7 +1682,7 @@ msgstr "Du kan også skrive inn brukernavnet ditt."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:105
 msgid "You can integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens."
-msgstr ""
+msgstr "Du kan integrere med Ollama ved å sette API nøkkelen til `sk-1234567890abcdef` og Basis-lenken til Ollama lenken din, f.eks. `http://localhost:11434/v1`. Du kan også velge modeller og sette maks antall tegn."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
@@ -1732,3 +1732,4 @@ msgstr "Zoom inn"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "Zoom ut"
+

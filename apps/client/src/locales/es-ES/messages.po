@@ -8,7 +8,7 @@ msgstr ""
 "Language: es\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-09-02 10:08\n"
+"PO-Revision-Date: 2024-12-14 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -207,7 +207,7 @@ msgstr "Los códigos de respaldo solo pueden contener letras minúsculas o núme
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:133
 msgid "Base URL"
-msgstr ""
+msgstr "URL base"
 
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:55
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
@@ -916,7 +916,7 @@ msgstr "Margen"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:159
 msgid "Max Tokens"
-msgstr ""
+msgstr "Máximo de tokens"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:48
 msgid "MIT License"
@@ -924,7 +924,7 @@ msgstr "Licencia MIT"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:146
 msgid "Model"
-msgstr ""
+msgstr "Modelo"
 
 #: apps/client/src/pages/auth/register/page.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:58
@@ -971,7 +971,7 @@ msgstr "Notas"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
 msgid "Ollama Integration"
-msgstr ""
+msgstr "Integración con Ollama"
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:82
 msgid "One-Time Password"
@@ -996,7 +996,7 @@ msgstr "Código Abierto"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
 msgid "OpenAI / Ollama API Key"
-msgstr ""
+msgstr "Clave API de OpenAI / Ollama"
 
 #: apps/client/src/services/openai/change-tone.ts:34
 #: apps/client/src/services/openai/fix-grammar.ts:32
@@ -1231,11 +1231,11 @@ msgstr "Guardar cambios"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
 msgid "Save Locally"
-msgstr ""
+msgstr "Guardar localmente"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
 msgid "Saved"
-msgstr ""
+msgstr "Guardado"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
 msgid "Scan the QR code below with your authenticator app to setup 2FA on your account."
@@ -1451,11 +1451,11 @@ msgstr "Color del texto"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:26
 msgid "That doesn't look like a valid OpenAI API key."
-msgstr "Eso no parece una clave de API de OpenAI válida."
+msgstr "Eso no parece una clave API de OpenAI válida."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:30
 msgid "That doesn't look like a valid URL"
-msgstr ""
+msgstr "Esta URL no es válida"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
 msgid "The passwords you entered do not match."
@@ -1682,7 +1682,7 @@ msgstr "También puedes ingresar tu nombre de usuario."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:105
 msgid "You can integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens."
-msgstr ""
+msgstr "Puedes integrar Ollama configurando la clave API a `sk-1234567890abcdef` y la URL base a tu URL de Ollama i.e. `http://localhost:11434/v1`. También puedes elegir y elegir modelos y establecer el máximo de tokens."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
@@ -1694,7 +1694,7 @@ msgstr "Puedes hacer un seguimiento del número de visitas que ha recibido tu cu
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:85
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
-msgstr "Tiene la opción de <0>obtener su propia clave de la API de OpenAI</0>. Esta clave le permite aprovechar la API como mejor le parezca. Alternativamente, si desea desactivar por completo las funciones de IA en la Reanudación Reactiva, puede simplemente eliminar la clave de su configuración."
+msgstr "Tiene la opción de <0>obtener su propia clave API de OpenAI</0>. Esta clave le permite aprovechar la API como mejor le convenga. Alternativamente, si desea desactivar por completo las funciones de IA en Reactive Resume, puede simplemente eliminar la clave de su configuración."
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:50
 msgid "You should have received an email from <0>Reactive Resume</0> with a link to verify your account."
@@ -1711,7 +1711,7 @@ msgstr "Tu cuenta y todos tus datos han sido eliminados con éxito. ¡Adiós!"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:195
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
-msgstr "Su clave de API se almacena de manera segura en el almacenamiento local del navegador y solo se utiliza al realizar peticiones a OpenAI a través de su SDK oficial. Tenga la seguridad de que su clave no se transmite a ningún servidor externo a excepción de los servicios de OpenAI."
+msgstr "Su clave API se almacena de manera segura en el almacenamiento local del navegador y solo se utiliza al realizar peticiones a OpenAI a través de su SDK oficial. Tenga la seguridad de que su clave no se transmite a ningún servidor externo a excepción de los servicios de OpenAI."
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:28
 msgid "Your email address has been verified successfully."
@@ -1719,7 +1719,7 @@ msgstr "Tu dirección de correo electrónico se ha verificado con éxito."
 
 #: apps/client/src/services/openai/client.ts:11
 msgid "Your OpenAI API Key has not been set yet. Please go to your account settings to enable OpenAI Integration."
-msgstr "Tu clave de API OpenAI aún no ha sido configurada. Por favor, ve a la configuración de tu cuenta para habilitar la integración de OpenAI."
+msgstr "Su clave API de OpenAI aún no ha sido configurada. Por favor, vaya a la configuración de su cuenta para habilitar la integración de OpenAI."
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:59
 msgid "Your password has been updated successfully."
@@ -1732,3 +1732,4 @@ msgstr "Aumentar"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "Disminuir"
+
