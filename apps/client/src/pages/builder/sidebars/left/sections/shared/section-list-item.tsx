@@ -3,11 +3,12 @@ import { CSS } from "@dnd-kit/utilities";
 import { t } from "@lingui/macro";
 import { CopySimple, DotsSixVertical, PencilSimple, TrashSimple } from "@phosphor-icons/react";
 import {
-  ContextMenu,
-  ContextMenuCheckboxItem,
-  ContextMenuContent,
-  ContextMenuItem,
-  ContextMenuTrigger,
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
 } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
@@ -68,8 +69,8 @@ export const SectionListItem = ({
         </div>
 
         {/* List Item */}
-        <ContextMenu>
-          <ContextMenuTrigger asChild>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
             <div
               className={cn(
                 "flex-1 cursor-context-menu p-4 hover:bg-secondary-accent",
@@ -80,25 +81,26 @@ export const SectionListItem = ({
               <h4 className="font-medium leading-relaxed">{title}</h4>
               {description && <p className="text-xs leading-relaxed opacity-50">{description}</p>}
             </div>
-          </ContextMenuTrigger>
-          <ContextMenuContent>
-            <ContextMenuCheckboxItem checked={visible} onCheckedChange={onToggleVisibility}>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuCheckboxItem checked={visible} onCheckedChange={onToggleVisibility}>
               <span className="-ml-0.5">{t`Visible`}</span>
-            </ContextMenuCheckboxItem>
-            <ContextMenuItem onClick={onUpdate}>
+            </DropdownMenuCheckboxItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem onClick={onUpdate}>
               <PencilSimple size={14} />
               <span className="ml-2">{t`Edit`}</span>
-            </ContextMenuItem>
-            <ContextMenuItem onClick={onDuplicate}>
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={onDuplicate}>
               <CopySimple size={14} />
               <span className="ml-2">{t`Copy`}</span>
-            </ContextMenuItem>
-            <ContextMenuItem className="text-error" onClick={onDelete}>
+            </DropdownMenuItem>
+            <DropdownMenuItem className="text-error" onClick={onDelete}>
               <TrashSimple size={14} />
               <span className="ml-2">{t`Remove`}</span>
-            </ContextMenuItem>
-          </ContextMenuContent>
-        </ContextMenu>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
     </motion.section>
   );

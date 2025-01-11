@@ -1,6 +1,7 @@
 import { t } from "@lingui/macro";
 import { createId } from "@paralleldrive/cuid2";
 import { CopySimple, PencilSimple, Plus } from "@phosphor-icons/react";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { SectionItem, SectionWithItem } from "@reactive-resume/schema";
 import {
   AlertDialog,
@@ -14,6 +15,7 @@ import {
   Button,
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -158,6 +160,10 @@ export const SectionDialog = <T extends SectionItem>({
                   </h2>
                 </div>
               </DialogTitle>
+
+              <VisuallyHidden>
+                <DialogDescription />
+              </VisuallyHidden>
             </DialogHeader>
 
             {children}

@@ -117,7 +117,13 @@ export const ExperienceDialog = () => {
                   {...field}
                   content={field.value}
                   footer={(editor) => (
-                    <AiActions value={editor.getText()} onChange={editor.commands.setContent} />
+                    <AiActions
+                      value={editor.getText()}
+                      onChange={(value) => {
+                        editor.commands.setContent(value, true);
+                        field.onChange(value);
+                      }}
+                    />
                   )}
                   onChange={(value) => {
                     field.onChange(value);

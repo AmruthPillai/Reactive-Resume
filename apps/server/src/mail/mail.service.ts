@@ -14,6 +14,8 @@ export class MailService {
   async sendEmail(options: ISendMailOptions) {
     const smtpUrl = this.configService.get("SMTP_URL");
 
+    console.log(smtpUrl);
+
     // If `SMTP_URL` is not set, log the email to the console
     if (!smtpUrl) {
       Logger.log(options, "MailService#sendEmail");

@@ -12,7 +12,6 @@ import {
   FormMessage,
   Input,
 } from "@reactive-resume/ui";
-import { cn } from "@reactive-resume/utils";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -29,6 +28,7 @@ const formSchema = z.object({
     .string()
     // eslint-disable-next-line lingui/no-unlocalized-strings
     .regex(/https?:\/\/[^/]+\/?v1$/, "That doesn't look like a valid URL")
+    .or(z.literal(""))
     .default(""),
   model: z.string().default(DEFAULT_MODEL),
   maxTokens: z.number().default(DEFAULT_MAX_TOKENS),
@@ -39,7 +39,8 @@ type FormValues = z.infer<typeof formSchema>;
 export const OpenAISettings = () => {
   const { apiKey, setApiKey, baseURL, setBaseURL, model, setModel, maxTokens, setMaxTokens } =
     useOpenAiStore();
-  const isEnabled = !!apiKey || !!baseURL || !!model || !!maxTokens;
+
+  const isEnabled = !!apiKey;
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -75,7 +76,7 @@ export const OpenAISettings = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h3 className="text-2xl font-bold leading-relaxed tracking-tight">{t`OpenAI Integration`}</h3>
+        <h3 className="text-2xl font-bold leading-relaxed tracking-tight">{t`OpenAI/Ollama Integration`}</h3>
         <p className="leading-relaxed opacity-75">
           {t`You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume.`}
         </p>
@@ -97,16 +98,13 @@ export const OpenAISettings = () => {
             from your settings.
           </Trans>
         </p>
-      </div>
 
-      <h3 className="text-2xl font-bold leading-relaxed tracking-tight">{t`Ollama Integration`}</h3>
-
-      <div className="prose prose-sm prose-zinc max-w-full dark:prose-invert">
         <p>
           <Trans>
-            You can integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and
-            the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and
-            choose models and set the max tokens.
+            You can also integrate with Ollama simply by setting the API key to
+            `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e.
+            `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens
+            as per your preference.
           </Trans>
         </p>
       </div>
@@ -118,7 +116,7 @@ export const OpenAISettings = () => {
             control={form.control}
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t`OpenAI / Ollama API Key`}</FormLabel>
+                <FormLabel>{t`OpenAI/Ollama API Key`}</FormLabel>
                 <FormControl>
                   <Input type="password" placeholder="sk-..." {...field} />
                 </FormControl>
@@ -172,12 +170,7 @@ export const OpenAISettings = () => {
               </FormItem>
             )}
           />
-          <div
-            className={cn(
-              "flex items-center space-x-2 self-end sm:col-start-2",
-              !!form.formState.errors.apiKey && "self-center",
-            )}
-          >
+          <div className="flex items-center space-x-2 self-end sm:col-start-2">
             <Button type="submit" disabled={!form.formState.isValid}>
               {isEnabled && <FloppyDisk className="mr-2" />}
               {isEnabled ? t`Saved` : t`Save Locally`}
