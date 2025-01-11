@@ -51,7 +51,7 @@ export const ProfilesDialog = () => {
               <FormLabel>{t`Network`}</FormLabel>
               <FormControl>
                 {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
-                <Input {...field} placeholder="LinkedIn" />
+                <Input {...field} placeholder="GitHub" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -79,7 +79,7 @@ export const ProfilesDialog = () => {
             <FormItem className="sm:col-span-2">
               <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
-                <URLInput {...field} placeholder="https://linkedin.com/in/johndoe" />
+                <URLInput {...field} placeholder="https://github.com/johndoe" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -100,7 +100,7 @@ export const ProfilesDialog = () => {
                   <Input
                     {...field}
                     id="iconSlug"
-                    placeholder="linkedin"
+                    placeholder="github"
                     onChange={(event) => {
                       field.onChange(event);
                       handleIconChange(event);

@@ -40,7 +40,7 @@ importers:
         version: 4.11.3(react@18.3.1)
       '@nestjs-modules/mailer':
         specifier: ^2.0.2
-        version: 2.0.2(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(nodemailer@6.9.14)
+        version: 2.0.2(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1)(nodemailer@6.9.14)
       '@nestjs/axios':
         specifier: ^3.0.3
         version: 3.0.3(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(axios@1.7.7)(rxjs@7.8.1)
@@ -64,13 +64,13 @@ importers:
         version: 10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1)
       '@nestjs/serve-static':
         specifier: ^4.0.2
-        version: 4.0.2(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(express@4.19.2)
+        version: 4.0.2(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1)(express@4.19.2)
       '@nestjs/swagger':
         specifier: ^7.4.0
-        version: 7.4.0(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)
+        version: 7.4.0(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1)(reflect-metadata@0.2.2)
       '@nestjs/terminus':
         specifier: ^10.2.3
-        version: 10.2.3(@nestjs/axios@3.0.3(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(axios@1.7.7)(rxjs@7.8.1))(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@prisma/client@5.19.0(prisma@5.19.0))(reflect-metadata@0.2.2)(rxjs@7.8.1)
+        version: 10.2.3(@nestjs/axios@3.0.3(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(axios@1.7.7)(rxjs@7.8.1))(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1)(@prisma/client@5.19.0(prisma@5.19.0))(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@paralleldrive/cuid2':
         specifier: ^2.2.2
         version: 2.2.2
@@ -152,6 +152,9 @@ importers:
       '@radix-ui/react-tooltip':
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@18.3.0)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@radix-ui/react-visually-hidden':
+        specifier: ^1.1.1
+        version: 1.1.1(@types/react-dom@18.3.0)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@swc/helpers':
         specifier: ^0.5.12
         version: 0.5.12
@@ -247,16 +250,16 @@ importers:
         version: 8.0.1
       nest-raven:
         specifier: ^10.1.0
-        version: 10.1.0(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@sentry/node@8.2.1)(graphql@16.8.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
+        version: 10.1.0(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1)(@sentry/node@8.2.1)(graphql@16.8.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       nestjs-minio-client:
         specifier: ^2.2.0
-        version: 2.2.0(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))
+        version: 2.2.0(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1)
       nestjs-prisma:
         specifier: ^0.23.0
         version: 0.23.0(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@prisma/client@5.19.0(prisma@5.19.0))(chokidar@3.6.0)(prisma@5.19.0)
       nestjs-zod:
         specifier: ^3.0.0
-        version: 3.0.0(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/swagger@7.4.0(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2))(zod@3.23.8)
+        version: 3.0.0(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1)(@nestjs/swagger@7.4.0(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1)(reflect-metadata@0.2.2))(zod@3.23.8)
       nodemailer:
         specifier: ^6.9.14
         version: 6.9.14
@@ -389,7 +392,7 @@ importers:
         version: 10.1.4(chokidar@3.6.0)(typescript@5.5.4)
       '@nestjs/testing':
         specifier: ^10.4.1
-        version: 10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1))
+        version: 10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1)(@nestjs/platform-express@10.4.1)
       '@nx/eslint':
         specifier: ^19.6.4
         version: 19.6.4(@babel/traverse@7.25.4)(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12))(@types/node@22.5.2)(@zkochan/js-yaml@0.0.7)(eslint@8.57.0)(nx@19.6.4(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12)))
@@ -413,7 +416,7 @@ importers:
         version: 19.6.4(@babel/traverse@7.25.4)(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12))(@types/node@22.5.2)(@zkochan/js-yaml@0.0.7)(eslint@8.57.0)(nx@19.6.4(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12)))(typescript@5.5.4)(vue-tsc@2.0.29(typescript@5.5.4))(webpack@5.97.1(@swc/core@1.7.22(@swc/helpers@0.5.12)))
       '@nx/vite':
         specifier: ^19.6.4
-        version: 19.6.4(@babel/traverse@7.25.4)(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12))(@types/node@22.5.2)(nx@19.6.4(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12)))(typescript@5.5.4)(vite@5.4.6(@types/node@22.5.2)(less@4.1.3)(sass@1.71.1)(stylus@0.59.0)(terser@5.29.1))(vitest@2.0.5(@types/node@22.5.2)(@vitest/ui@2.0.5)(jsdom@25.0.0)(less@4.1.3)(sass@1.71.1)(stylus@0.59.0)(terser@5.29.1))
+        version: 19.6.4(@babel/traverse@7.25.4)(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12))(@types/node@22.5.2)(nx@19.6.4(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12)))(typescript@5.5.4)(vite@5.4.6(@types/node@22.5.2)(less@4.1.3)(sass@1.71.1)(stylus@0.59.0)(terser@5.29.1))(vitest@2.0.5)
       '@nx/web':
         specifier: ^19.6.4
         version: 19.6.4(@babel/traverse@7.25.4)(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12))(@types/node@22.5.2)(nx@19.6.4(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12)))(typescript@5.5.4)
@@ -530,7 +533,7 @@ importers:
         version: 3.7.0(@swc/helpers@0.5.12)(vite@5.4.6(@types/node@22.5.2)(less@4.1.3)(sass@1.71.1)(stylus@0.59.0)(terser@5.29.1))
       '@vitest/coverage-v8':
         specifier: ^2.0.5
-        version: 2.0.5(vitest@2.0.5(@types/node@22.5.2)(@vitest/ui@2.0.5)(jsdom@25.0.0)(less@4.1.3)(sass@1.71.1)(stylus@0.59.0)(terser@5.29.1))
+        version: 2.0.5(vitest@2.0.5)
       '@vitest/ui':
         specifier: ^2.0.5
         version: 2.0.5(vitest@2.0.5)
@@ -3096,6 +3099,15 @@ packages:
       '@types/react':
         optional: true
 
+  '@radix-ui/react-compose-refs@1.1.1':
+    resolution: {integrity: sha512-Y9VzoRDSJtgFMUCoiZBDVo084VQ5hfpXxVE+NgkdNsjiDBByiImMZKKhxMwCbdHvhlENG6a833CbFkOQvTricw==}
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+
   '@radix-ui/react-context-menu@2.2.1':
     resolution: {integrity: sha512-wvMKKIeb3eOrkJ96s722vcidZ+2ZNfcYZWBPRHIB1VWrF+fiF851Io6LX0kmK5wTDQFKdulCCKJk2c3SBaQHvA==}
     peerDependencies:
@@ -3406,6 +3418,19 @@ packages:
       '@types/react-dom':
         optional: true
 
+  '@radix-ui/react-primitive@2.0.1':
+    resolution: {integrity: sha512-sHCWTtxwNn3L3fH8qAfnF3WbUZycW93SM1j3NFDzXBiz8D6F5UTTy8G1+WFEaiCdvCVRJWj6N2R4Xq6HdiHmDg==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+
   '@radix-ui/react-roving-focus@1.1.0':
     resolution: {integrity: sha512-EA6AMGeq9AEeQDeSH0aZgG198qkfHSbvWTf1HvoDmOB5bBG/qTxjYMWUKMnYiV6J/iP/J8MEFSuB2zRU2n7ODA==}
     peerDependencies:
@@ -3482,6 +3507,15 @@ packages:
 
   '@radix-ui/react-slot@1.1.0':
     resolution: {integrity: sha512-FUCf5XMfmW4dtYl69pdS4DbxKy8nj4M7SafBgPllysxmdachynNflAdp/gCsnYWNDnge6tI9onzMp5ARYc1KNw==}
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+
+  '@radix-ui/react-slot@1.1.1':
+    resolution: {integrity: sha512-RApLLOcINYJA+dMVbOju7MYv1Mb2EBp2nH4HdDzXTSyaR5optlm6Otrz1euW3HbdOR8UmmFK06TD+A9frYWv+g==}
     peerDependencies:
       '@types/react': '*'
       react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
@@ -3668,6 +3702,19 @@ packages:
 
   '@radix-ui/react-visually-hidden@1.1.0':
     resolution: {integrity: sha512-N8MDZqtgCgG5S3aV60INAB475osJousYpZ4cTJ2cFbMpdHS5Y6loLTH8LPtkj2QN0x93J30HT/M3qJXM0+lyeQ==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+
+  '@radix-ui/react-visually-hidden@1.1.1':
+    resolution: {integrity: sha512-vVfA2IZ9q/J+gEamvj761Oq1FpWgCDaNOOIfbPVp2MVPLEomUr5+Vf7kJGwQ24YxZSlQVar7Bes8kyTo5Dshpg==}
     peerDependencies:
       '@types/react': '*'
       '@types/react-dom': '*'
@@ -13185,7 +13232,7 @@ snapshots:
       '@emnapi/runtime': 1.2.0
       '@tybys/wasm-util': 0.9.0
 
-  '@nestjs-modules/mailer@2.0.2(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(nodemailer@6.9.14)':
+  '@nestjs-modules/mailer@2.0.2(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1)(nodemailer@6.9.14)':
     dependencies:
       '@css-inline/css-inline': 0.14.1
       '@nestjs/common': 10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1)
@@ -13243,7 +13290,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@nestjs/graphql@12.1.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(graphql@16.8.1)(reflect-metadata@0.2.2)':
+  '@nestjs/graphql@12.1.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1)(graphql@16.8.1)(reflect-metadata@0.2.2)':
     dependencies:
       '@graphql-tools/merge': 9.0.1(graphql@16.8.1)
       '@graphql-tools/schema': 10.0.2(graphql@16.8.1)
@@ -13317,7 +13364,7 @@ snapshots:
     transitivePeerDependencies:
       - chokidar
 
-  '@nestjs/serve-static@4.0.2(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(express@4.19.2)':
+  '@nestjs/serve-static@4.0.2(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1)(express@4.19.2)':
     dependencies:
       '@nestjs/common': 10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@nestjs/core': 10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
@@ -13325,7 +13372,7 @@ snapshots:
     optionalDependencies:
       express: 4.19.2
 
-  '@nestjs/swagger@7.4.0(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)':
+  '@nestjs/swagger@7.4.0(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1)(reflect-metadata@0.2.2)':
     dependencies:
       '@microsoft/tsdoc': 0.15.0
       '@nestjs/common': 10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1)
@@ -13337,7 +13384,7 @@ snapshots:
       reflect-metadata: 0.2.2
       swagger-ui-dist: 5.17.14
 
-  '@nestjs/terminus@10.2.3(@nestjs/axios@3.0.3(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(axios@1.7.7)(rxjs@7.8.1))(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@prisma/client@5.19.0(prisma@5.19.0))(reflect-metadata@0.2.2)(rxjs@7.8.1)':
+  '@nestjs/terminus@10.2.3(@nestjs/axios@3.0.3(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(axios@1.7.7)(rxjs@7.8.1))(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1)(@prisma/client@5.19.0(prisma@5.19.0))(reflect-metadata@0.2.2)(rxjs@7.8.1)':
     dependencies:
       '@nestjs/common': 10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@nestjs/core': 10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
@@ -13349,7 +13396,7 @@ snapshots:
       '@nestjs/axios': 3.0.3(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(axios@1.7.7)(rxjs@7.8.1)
       '@prisma/client': 5.19.0(prisma@5.19.0)
 
-  '@nestjs/testing@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1))':
+  '@nestjs/testing@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1)(@nestjs/platform-express@10.4.1)':
     dependencies:
       '@nestjs/common': 10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@nestjs/core': 10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
@@ -13514,9 +13561,9 @@ snapshots:
       - '@swc/core'
       - debug
 
-  '@nrwl/vite@19.6.4(@babel/traverse@7.25.4)(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12))(@types/node@22.5.2)(nx@19.6.4(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12)))(typescript@5.5.4)(vite@5.4.6(@types/node@22.5.2)(less@4.1.3)(sass@1.71.1)(stylus@0.59.0)(terser@5.29.1))(vitest@2.0.5(@types/node@22.5.2)(@vitest/ui@2.0.5)(jsdom@25.0.0)(less@4.1.3)(sass@1.71.1)(stylus@0.59.0)(terser@5.29.1))':
+  '@nrwl/vite@19.6.4(@babel/traverse@7.25.4)(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12))(@types/node@22.5.2)(nx@19.6.4(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12)))(typescript@5.5.4)(vite@5.4.6(@types/node@22.5.2)(less@4.1.3)(sass@1.71.1)(stylus@0.59.0)(terser@5.29.1))(vitest@2.0.5)':
     dependencies:
-      '@nx/vite': 19.6.4(@babel/traverse@7.25.4)(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12))(@types/node@22.5.2)(nx@19.6.4(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12)))(typescript@5.5.4)(vite@5.4.6(@types/node@22.5.2)(less@4.1.3)(sass@1.71.1)(stylus@0.59.0)(terser@5.29.1))(vitest@2.0.5(@types/node@22.5.2)(@vitest/ui@2.0.5)(jsdom@25.0.0)(less@4.1.3)(sass@1.71.1)(stylus@0.59.0)(terser@5.29.1))
+      '@nx/vite': 19.6.4(@babel/traverse@7.25.4)(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12))(@types/node@22.5.2)(nx@19.6.4(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12)))(typescript@5.5.4)(vite@5.4.6(@types/node@22.5.2)(less@4.1.3)(sass@1.71.1)(stylus@0.59.0)(terser@5.29.1))(vitest@2.0.5)
     transitivePeerDependencies:
       - '@babel/traverse'
       - '@swc-node/register'
@@ -13907,9 +13954,9 @@ snapshots:
       - vue-tsc
       - webpack
 
-  '@nx/vite@19.6.4(@babel/traverse@7.25.4)(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12))(@types/node@22.5.2)(nx@19.6.4(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12)))(typescript@5.5.4)(vite@5.4.6(@types/node@22.5.2)(less@4.1.3)(sass@1.71.1)(stylus@0.59.0)(terser@5.29.1))(vitest@2.0.5(@types/node@22.5.2)(@vitest/ui@2.0.5)(jsdom@25.0.0)(less@4.1.3)(sass@1.71.1)(stylus@0.59.0)(terser@5.29.1))':
+  '@nx/vite@19.6.4(@babel/traverse@7.25.4)(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12))(@types/node@22.5.2)(nx@19.6.4(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12)))(typescript@5.5.4)(vite@5.4.6(@types/node@22.5.2)(less@4.1.3)(sass@1.71.1)(stylus@0.59.0)(terser@5.29.1))(vitest@2.0.5)':
     dependencies:
-      '@nrwl/vite': 19.6.4(@babel/traverse@7.25.4)(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12))(@types/node@22.5.2)(nx@19.6.4(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12)))(typescript@5.5.4)(vite@5.4.6(@types/node@22.5.2)(less@4.1.3)(sass@1.71.1)(stylus@0.59.0)(terser@5.29.1))(vitest@2.0.5(@types/node@22.5.2)(@vitest/ui@2.0.5)(jsdom@25.0.0)(less@4.1.3)(sass@1.71.1)(stylus@0.59.0)(terser@5.29.1))
+      '@nrwl/vite': 19.6.4(@babel/traverse@7.25.4)(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12))(@types/node@22.5.2)(nx@19.6.4(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12)))(typescript@5.5.4)(vite@5.4.6(@types/node@22.5.2)(less@4.1.3)(sass@1.71.1)(stylus@0.59.0)(terser@5.29.1))(vitest@2.0.5)
       '@nx/devkit': 19.6.4(nx@19.6.4(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12)))
       '@nx/js': 19.6.4(@babel/traverse@7.25.4)(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12))(@types/node@22.5.2)(nx@19.6.4(@swc-node/register@1.10.9(@swc/core@1.7.22(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.22(@swc/helpers@0.5.12)))(typescript@5.5.4)
       '@phenomnomnominal/tsquery': 5.0.1(typescript@5.5.4)
@@ -14548,6 +14595,12 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.3.5
 
+  '@radix-ui/react-compose-refs@1.1.1(@types/react@18.3.5)(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+    optionalDependencies:
+      '@types/react': 18.3.5
+
   '@radix-ui/react-context-menu@2.2.1(@types/react-dom@18.3.0)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@radix-ui/primitive': 1.1.0
@@ -14872,6 +14925,15 @@ snapshots:
       '@types/react': 18.3.5
       '@types/react-dom': 18.3.0
 
+  '@radix-ui/react-primitive@2.0.1(@types/react-dom@18.3.0)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@radix-ui/react-slot': 1.1.1(@types/react@18.3.5)(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    optionalDependencies:
+      '@types/react': 18.3.5
+      '@types/react-dom': 18.3.0
+
   '@radix-ui/react-roving-focus@1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@radix-ui/primitive': 1.1.0
@@ -14974,6 +15036,13 @@ snapshots:
   '@radix-ui/react-slot@1.1.0(@types/react@18.3.5)(react@18.3.1)':
     dependencies:
       '@radix-ui/react-compose-refs': 1.1.0(@types/react@18.3.5)(react@18.3.1)
+      react: 18.3.1
+    optionalDependencies:
+      '@types/react': 18.3.5
+
+  '@radix-ui/react-slot@1.1.1(@types/react@18.3.5)(react@18.3.1)':
+    dependencies:
+      '@radix-ui/react-compose-refs': 1.1.1(@types/react@18.3.5)(react@18.3.1)
       react: 18.3.1
     optionalDependencies:
       '@types/react': 18.3.5
@@ -15154,6 +15223,15 @@ snapshots:
   '@radix-ui/react-visually-hidden@1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@radix-ui/react-primitive': 2.0.0(@types/react-dom@18.3.0)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    optionalDependencies:
+      '@types/react': 18.3.5
+      '@types/react-dom': 18.3.0
+
+  '@radix-ui/react-visually-hidden@1.1.1(@types/react-dom@18.3.0)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@radix-ui/react-primitive': 2.0.1(@types/react-dom@18.3.0)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
     optionalDependencies:
@@ -16340,7 +16418,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitest/coverage-v8@2.0.5(vitest@2.0.5(@types/node@22.5.2)(@vitest/ui@2.0.5)(jsdom@25.0.0)(less@4.1.3)(sass@1.71.1)(stylus@0.59.0)(terser@5.29.1))':
+  '@vitest/coverage-v8@2.0.5(vitest@2.0.5)':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
@@ -21086,13 +21164,13 @@ snapshots:
 
   neo-async@2.6.2: {}
 
-  nest-raven@10.1.0(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@sentry/node@8.2.1)(graphql@16.8.1)(reflect-metadata@0.2.2)(rxjs@7.8.1):
+  nest-raven@10.1.0(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1)(@sentry/node@8.2.1)(graphql@16.8.1)(reflect-metadata@0.2.2)(rxjs@7.8.1):
     dependencies:
       '@nestjs/common': 10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@sentry/node': 8.2.1
       rxjs: 7.8.1
     optionalDependencies:
-      '@nestjs/graphql': 12.1.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(graphql@16.8.1)(reflect-metadata@0.2.2)
+      '@nestjs/graphql': 12.1.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1)(graphql@16.8.1)(reflect-metadata@0.2.2)
     transitivePeerDependencies:
       - '@apollo/subgraph'
       - '@nestjs/core'
@@ -21104,7 +21182,7 @@ snapshots:
       - ts-morph
       - utf-8-validate
 
-  nestjs-minio-client@2.2.0(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)):
+  nestjs-minio-client@2.2.0(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1):
     dependencies:
       '@nestjs/common': 10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@nestjs/core': 10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
@@ -21123,14 +21201,14 @@ snapshots:
     transitivePeerDependencies:
       - chokidar
 
-  nestjs-zod@3.0.0(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/swagger@7.4.0(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2))(zod@3.23.8):
+  nestjs-zod@3.0.0(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1)(@nestjs/swagger@7.4.0(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1)(reflect-metadata@0.2.2))(zod@3.23.8):
     dependencies:
       merge-deep: 3.0.3
       zod: 3.23.8
     optionalDependencies:
       '@nestjs/common': 10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@nestjs/core': 10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
-      '@nestjs/swagger': 7.4.0(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)
+      '@nestjs/swagger': 7.4.0(@nestjs/common@10.4.1(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.1)(reflect-metadata@0.2.2)
 
   netmask@2.0.2: {}
 

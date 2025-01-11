@@ -204,7 +204,10 @@ export class PrinterService {
 
       return resumeUrl;
     } catch (error) {
-      console.trace(error);
+      throw new InternalServerErrorException(
+        ErrorMessage.ResumePrinterError,
+        (error as Error).message,
+      );
     }
   }
 
