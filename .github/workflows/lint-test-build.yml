@@ -13,30 +13,36 @@ on:
     branches:
       - main
 
-permissions:
-  actions: read
-  contents: read
-
 jobs:
   main:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4.2.2
+      - name: Checkout Repository
+        uses: actions/checkout@v4.2.2
         with:
-          fetch-depth: 0
+          fetch-depth: 2
 
-      - uses: pnpm/action-setup@v4.0.0
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4.0.0
 
-      - run: pnpm dlx nx-cloud start-ci-run --distribute-on="4 linux-medium-js" --stop-agents-after="build"
-
-      - uses: actions/setup-node@v4.1.0
+      - name: Setup Node.js
+        uses: actions/setup-node@v4.1.0
         with:
-          node-version: 22
           cache: "pnpm"
+          node-version: 22
 
-      - run: pnpm install --frozen-lockfile
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
 
-      - uses: nrwl/nx-set-shas@v4.1.2
+      - name: Lint
+        run: pnpm run lint
 
-      - run: pnpm exec nx affected -t lint format:check test build
+      - name: Format
+        run: pnpm run format:check
+
+      - name: Test
+        run: pnpm run test
+
+      - name: Build
+        run: pnpm run build
