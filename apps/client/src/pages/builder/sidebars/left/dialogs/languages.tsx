@@ -59,7 +59,7 @@ export const LanguagesDialog = () => {
         <FormField
           name="level"
           control={form.control}
-          render={({ field }) => (
+          render={({ field: { onChange, ...field } }) => (
             <FormItem className="sm:col-span-2">
               <FormLabel>{t`Level`}</FormLabel>
               <FormControl className="py-2">
@@ -70,7 +70,7 @@ export const LanguagesDialog = () => {
                     max={5}
                     value={[field.value]}
                     onValueChange={(value) => {
-                      field.onChange(value[0]);
+                      onChange(value[0]);
                     }}
                   />
 

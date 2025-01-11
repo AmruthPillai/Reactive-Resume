@@ -72,7 +72,7 @@ export const SkillsDialog = () => {
         <FormField
           name="level"
           control={form.control}
-          render={({ field }) => (
+          render={({ field: { onChange, ...field } }) => (
             <FormItem className="sm:col-span-2">
               <FormLabel>{t`Level`}</FormLabel>
               <FormControl className="py-2">
@@ -84,7 +84,7 @@ export const SkillsDialog = () => {
                     value={[field.value]}
                     orientation="horizontal"
                     onValueChange={(value) => {
-                      field.onChange(value[0]);
+                      onChange(value[0]);
                     }}
                   />
 
