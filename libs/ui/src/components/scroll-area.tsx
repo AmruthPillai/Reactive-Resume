@@ -5,9 +5,9 @@ import { forwardRef } from "react";
 export const ScrollArea = forwardRef<
   React.ElementRef<typeof ScrollAreaPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Root> & {
+    allowOverflow?: boolean;
     hideScrollbar?: boolean;
     orientation?: "vertical" | "horizontal";
-    allowOverflow?: boolean;
   }
 >(
   (
@@ -29,8 +29,7 @@ export const ScrollArea = forwardRef<
       {...props}
     >
       <ScrollAreaPrimitive.Viewport
-        className="size-full rounded-[inherit]"
-        style={allowOverflow ? { overflowX: "visible", overflowY: "visible" } : {}}
+        className={cn("size-full rounded-[inherit]", allowOverflow && "!overflow-visible")}
       >
         {children}
       </ScrollAreaPrimitive.Viewport>

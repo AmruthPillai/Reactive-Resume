@@ -50,8 +50,8 @@ export const ResumesPage = () => {
         </div>
 
         <ScrollArea
+          allowOverflow
           className="h-[calc(100vh-140px)] overflow-visible lg:h-[calc(100vh-88px)]"
-          allowOverflow={true}
         >
           <TabsContent value="grid">
             <GridView />
