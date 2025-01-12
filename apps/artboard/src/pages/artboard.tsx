@@ -55,5 +55,11 @@ export const ArtboardPage = () => {
     }
   }, [metadata]);
 
-  return <Outlet />;
+  return (
+    <>
+      {metadata.css.visible && <style lang="css">{`[data-page] { ${metadata.css.value} }`}</style>}
+
+      <Outlet />
+    </>
+  );
 };

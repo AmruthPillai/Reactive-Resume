@@ -150,6 +150,17 @@ export class PrinterService {
           return temporaryHtml_;
         }, pageElement);
 
+        // Apply custom CSS if enabled
+        const css = resume.data.metadata.css;
+
+        if (css.visible) {
+          await page.evaluate((cssValue: string) => {
+            const styleTag = document.createElement("style");
+            styleTag.textContent = cssValue;
+            document.head.append(styleTag);
+          }, css.value);
+        }
+
         const uint8array = await page.pdf({ width, height, printBackground: true });
         const buffer = Buffer.from(uint8array);
         pagesBuffer.push(buffer);

@@ -12,7 +12,7 @@ export const metadataSchema = z.object({
   template: z.string().default("rhyhorn"),
   layout: z.array(z.array(z.array(z.string()))).default(defaultLayout), // pages -> columns -> sections
   css: z.object({
-    value: z.string().default(".section {\n\toutline: 1px solid #000;\n\toutline-offset: 4px;\n}"),
+    value: z.string().default("* {\n\toutline: 1px solid #000;\n\toutline-offset: 4px;\n}"),
     visible: z.boolean().default(false),
   }),
   page: z.object({
@@ -50,7 +50,7 @@ export const defaultMetadata: Metadata = {
   template: "rhyhorn",
   layout: defaultLayout,
   css: {
-    value: ".section {\n\toutline: 1px solid #000;\n\toutline-offset: 4px;\n}",
+    value: "* {\n\toutline: 1px solid #000;\n\toutline-offset: 4px;\n}",
     visible: false,
   },
   page: {
