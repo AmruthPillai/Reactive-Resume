@@ -20,6 +20,7 @@ import { cn, hexToRgb, isEmptyString, isUrl } from "@reactive-resume/utils";
 import get from "lodash.get";
 import React, { Fragment } from "react";
 
+import { BrandIcon } from "../components/brand-icon";
 import { Picture } from "../components/picture";
 import { useArtboardStore } from "../store/artboard";
 import { TemplateProps } from "../types/template";
@@ -29,7 +30,6 @@ const Header = () => {
   const section = useArtboardStore((state) => state.resume.sections.summary);
   const profiles = useArtboardStore((state) => state.resume.sections.profiles);
   const primaryColor = useArtboardStore((state) => state.resume.metadata.theme.primary);
-  const fontSize = useArtboardStore((state) => state.resume.metadata.typography.font.size);
 
   return (
     <div>
@@ -102,15 +102,7 @@ const Header = () => {
                     url={item.url}
                     label={item.username}
                     className="text-sm"
-                    icon={
-                      <img
-                        className="ph"
-                        width={fontSize}
-                        height={fontSize}
-                        alt={item.network}
-                        src={`https://cdn.simpleicons.org/${item.icon}`}
-                      />
-                    }
+                    icon={<BrandIcon slug={item.icon} />}
                   />
                 </div>
               ))}
