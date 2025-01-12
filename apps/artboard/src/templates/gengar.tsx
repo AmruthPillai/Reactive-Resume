@@ -84,6 +84,7 @@ const Header = () => {
 const Summary = () => {
   const section = useArtboardStore((state) => state.resume.sections.summary);
   const primaryColor = useArtboardStore((state) => state.resume.metadata.theme.primary);
+
   if (!section.visible || isEmptyString(section.content)) return null;
 
   return (
