@@ -58,7 +58,7 @@ We may update this Privacy Policy periodically to reflect changes in our practic
 
 **9. Contact Us**
 
-If you have any questions, concerns, or requests regarding this Privacy Policy or your personal information, please contact us at \[insert contact email].
+If you have any questions, concerns, or requests regarding this Privacy Policy or your personal information, please contact us at hello@amruthpillai.com.
 
 Thank you for trusting Reactive Resume with your personal information. We are committed to protecting your privacy and providing you with a valuable resume-building experience.
 
