@@ -128,7 +128,8 @@ const Link = ({ url, icon, iconOnRight, label, className }: LinkProps) => {
 
   return (
     <div className="flex items-center gap-x-1.5">
-      {!iconOnRight && (icon ?? <i className="ph ph-bold ph-link text-primary" />)}
+      {!iconOnRight &&
+        (icon ?? <i className="ph ph-bold ph-link text-primary group-[.sidebar]:text-white" />)}
       <a
         href={url.href}
         target="_blank"
@@ -137,7 +138,8 @@ const Link = ({ url, icon, iconOnRight, label, className }: LinkProps) => {
       >
         {label ?? (url.label || url.href)}
       </a>
-      {iconOnRight && (icon ?? <i className="ph ph-bold ph-link text-primary" />)}
+      {iconOnRight &&
+        (icon ?? <i className="ph ph-bold ph-link text-primary group-[.sidebar]:text-white" />)}
     </div>
   );
 };
@@ -208,7 +210,10 @@ const Section = <T,>({
                 </div>
 
                 {summary !== undefined && !isEmptyString(summary) && (
-                  <div dangerouslySetInnerHTML={{ __html: summary }} className="wysiwyg" />
+                  <div
+                    dangerouslySetInnerHTML={{ __html: summary }}
+                    className="wysiwyg group-[.sidebar]:prose-invert"
+                  />
                 )}
 
                 {level !== undefined && level > 0 && <Rating level={level} />}
