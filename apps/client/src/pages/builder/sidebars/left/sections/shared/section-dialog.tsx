@@ -149,7 +149,7 @@ export const SectionDialog = <T extends SectionItem>({
         <Form {...form}>
           <ScrollArea>
             <form
-              className=" max-h-[60vh] space-y-6 lg:max-h-fit"
+              className="max-h-[60vh] space-y-6 lg:max-h-fit"
               onSubmit={form.handleSubmit(onSubmit)}
             >
               <DialogHeader>
@@ -165,7 +165,7 @@ export const SectionDialog = <T extends SectionItem>({
                     </h2>
                   </div>
                 </DialogTitle>
-                
+
                 <VisuallyHidden>
                   <DialogDescription />
                 </VisuallyHidden>

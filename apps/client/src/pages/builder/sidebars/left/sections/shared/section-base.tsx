@@ -100,7 +100,7 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
         <div className="flex items-center gap-x-4">
           {getSectionIcon(id)}
 
-          <h2 className="line-clamp-1  text-2xl font-bold lg:text-3xl">{section.name}</h2>
+          <h2 className="line-clamp-1 text-2xl font-bold lg:text-3xl">{section.name}</h2>
         </div>
 
         <div className="flex items-center gap-x-2">
