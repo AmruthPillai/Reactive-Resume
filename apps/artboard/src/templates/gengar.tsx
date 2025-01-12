@@ -587,7 +587,7 @@ export const Gengar = ({ columns, isFirstPage = false }: TemplateProps) => {
         </div>
       </div>
 
-      <div className="main group col-span-2">
+      <div className={cn("main group", sidebar.length !== 0 ? "col-span-2" : "col-span-3")}>
         {isFirstPage && (
           <div
             className="p-custom space-y-4"
