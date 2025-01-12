@@ -20,7 +20,7 @@ export const SummarySection = () => {
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
           {getSectionIcon("summary")}
-          <h2 className="line-clamp-1 text-3xl font-bold">{section.name}</h2>
+          <h2 className="line-clamp-1 text-2xl font-bold lg:text-3xl">{section.name}</h2>
         </div>
 
         <div className="flex items-center gap-x-2">
@@ -32,7 +32,13 @@ export const SummarySection = () => {
         <RichInput
           content={section.content}
           footer={(editor) => (
-            <AiActions value={editor.getText()} onChange={editor.commands.setContent} />
+            <AiActions
+              value={editor.getText()}
+              onChange={(value) => {
+                editor.commands.setContent(value, true);
+                setValue("sections.summary.content", value);
+              }}
+            />
           )}
           onChange={(value) => {
             setValue("sections.summary.content", value);

@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t, Trans } from "@lingui/macro";
-import { LockSimple, LockSimpleOpen, TrashSimple } from "@phosphor-icons/react";
+import { FloppyDisk, TrashSimple } from "@phosphor-icons/react";
 import {
   Alert,
   Button,
@@ -12,44 +12,71 @@ import {
   FormMessage,
   Input,
 } from "@reactive-resume/ui";
-import { cn } from "@reactive-resume/utils";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
+import { DEFAULT_MAX_TOKENS, DEFAULT_MODEL } from "@/client/constants/llm";
 import { useOpenAiStore } from "@/client/stores/openai";
 
 const formSchema = z.object({
   apiKey: z
     .string()
-    // eslint-disable-next-line lingui/t-call-in-function
-    .regex(/^sk-.+$/, t`That doesn't look like a valid OpenAI API key.`)
+    // eslint-disable-next-line lingui/no-unlocalized-strings
+    .regex(/^sk-.+$/, "That doesn't look like a valid OpenAI API key.")
     .default(""),
+  baseURL: z
+    .string()
+    // eslint-disable-next-line lingui/no-unlocalized-strings
+    .regex(/https?:\/\/[^/]+\/?v1$/, "That doesn't look like a valid URL")
+    .or(z.literal(""))
+    .default(""),
+  model: z.string().default(DEFAULT_MODEL),
+  maxTokens: z.number().default(DEFAULT_MAX_TOKENS),
 });
 
 type FormValues = z.infer<typeof formSchema>;
 
 export const OpenAISettings = () => {
-  const { apiKey, setApiKey } = useOpenAiStore();
+  const { apiKey, setApiKey, baseURL, setBaseURL, model, setModel, maxTokens, setMaxTokens } =
+    useOpenAiStore();
+
   const isEnabled = !!apiKey;
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: { apiKey: apiKey ?? "" },
+    defaultValues: {
+      apiKey: apiKey ?? "",
+      baseURL: baseURL ?? "",
+      model: model ?? DEFAULT_MODEL,
+      maxTokens: maxTokens ?? DEFAULT_MAX_TOKENS,
+    },
   });
 
-  const onSubmit = ({ apiKey }: FormValues) => {
+  const onSubmit = ({ apiKey, baseURL, model, maxTokens }: FormValues) => {
     setApiKey(apiKey);
+    if (baseURL) {
+      setBaseURL(baseURL);
+    }
+    if (model) {
+      setModel(model);
+    }
+    if (maxTokens) {
+      setMaxTokens(maxTokens);
+    }
   };
 
   const onRemove = () => {
     setApiKey(null);
-    form.reset({ apiKey: "" });
+    setBaseURL(null);
+    setModel(DEFAULT_MODEL);
+    setMaxTokens(DEFAULT_MAX_TOKENS);
+    form.reset({ apiKey: "", baseURL: "", model: DEFAULT_MODEL, maxTokens: DEFAULT_MAX_TOKENS });
   };
 
   return (
     <div className="space-y-6">
       <div>
-        <h3 className="text-2xl font-bold leading-relaxed tracking-tight">{t`OpenAI Integration`}</h3>
+        <h3 className="text-2xl font-bold leading-relaxed tracking-tight">{t`OpenAI/Ollama Integration`}</h3>
         <p className="leading-relaxed opacity-75">
           {t`You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume.`}
         </p>
@@ -71,6 +98,15 @@ export const OpenAISettings = () => {
             from your settings.
           </Trans>
         </p>
+
+        <p>
+          <Trans>
+            You can also integrate with Ollama simply by setting the API key to
+            `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e.
+            `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens
+            as per your preference.
+          </Trans>
+        </p>
       </div>
 
       <Form {...form}>
@@ -80,25 +116,64 @@ export const OpenAISettings = () => {
             control={form.control}
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t`API Key`}</FormLabel>
+                <FormLabel>{t`OpenAI/Ollama API Key`}</FormLabel>
                 <FormControl>
-                  <Input type="password" placeholder="sk-..." {...field} disabled={isEnabled} />
+                  <Input type="password" placeholder="sk-..." {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-
-          <div
-            className={cn(
-              "flex items-center space-x-2 self-end sm:col-start-2",
-              !!form.formState.errors.apiKey && "self-center",
+          <FormField
+            name="baseURL"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{t`Base URL`}</FormLabel>
+                <FormControl>
+                  <Input type="text" placeholder="http://localhost:11434/v1" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
             )}
-          >
-            <Button type="submit" disabled={isEnabled || !form.formState.isDirty}>
-              {!isEnabled && <LockSimpleOpen className="mr-2" />}
-              {isEnabled && <LockSimple className="mr-2" />}
-              {isEnabled ? t`Stored` : t`Store Locally`}
+          />
+          <FormField
+            name="model"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{t`Model`}</FormLabel>
+                <FormControl>
+                  <Input type="text" placeholder={DEFAULT_MODEL} {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            name="maxTokens"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{t`Max Tokens`}</FormLabel>
+                <FormControl>
+                  <Input
+                    type="number"
+                    placeholder={`${DEFAULT_MAX_TOKENS}`}
+                    {...field}
+                    onChange={(e) => {
+                      field.onChange(e.target.valueAsNumber);
+                    }}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <div className="flex items-center space-x-2 self-end sm:col-start-2">
+            <Button type="submit" disabled={!form.formState.isValid}>
+              {isEnabled && <FloppyDisk className="mr-2" />}
+              {isEnabled ? t`Saved` : t`Save Locally`}
             </Button>
 
             {isEnabled && (

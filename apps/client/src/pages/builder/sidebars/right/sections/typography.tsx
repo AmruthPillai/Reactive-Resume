@@ -58,15 +58,15 @@ export const TypographySection = () => {
   }, [typography.font.family]);
 
   return (
-    <section id="typography" className="grid gap-y-6">
+    <section id="typography" className="grid gap-y-8">
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
           {getSectionIcon("typography")}
-          <h2 className="line-clamp-1 text-3xl font-bold">{t`Typography`}</h2>
+          <h2 className="line-clamp-1 text-2xl font-bold lg:text-3xl">{t`Typography`}</h2>
         </div>
       </header>
 
-      <main className="grid gap-y-4">
+      <main className="grid gap-y-6">
         <div className="grid grid-cols-2 gap-4">
           {fontSuggestions.map((font) => (
             <Button
@@ -75,7 +75,7 @@ export const TypographySection = () => {
               style={{ fontFamily: font }}
               disabled={typography.font.family === font}
               className={cn(
-                "flex h-12 items-center justify-center overflow-hidden rounded border text-center text-sm ring-primary transition-colors hover:bg-secondary-accent focus:outline-none focus:ring-1 disabled:opacity-100",
+                "flex h-12 items-center justify-center overflow-hidden rounded border text-center text-xs ring-primary transition-colors hover:bg-secondary-accent focus:outline-none focus:ring-1 disabled:opacity-100 lg:text-sm",
                 typography.font.family === font && "ring-1",
               )}
               onClick={() => {
@@ -167,7 +167,7 @@ export const TypographySection = () => {
         <div className="space-y-1.5">
           <Label>{t`Options`}</Label>
 
-          <div className="flex items-center gap-x-4 py-2">
+          <div className="flex items-center gap-x-4 py-1">
             <Switch
               id="metadata.typography.hideIcons"
               checked={typography.hideIcons}
@@ -178,7 +178,7 @@ export const TypographySection = () => {
             <Label htmlFor="metadata.typography.hideIcons">{t`Hide Icons`}</Label>
           </div>
 
-          <div className="flex items-center gap-x-4 py-2">
+          <div className="flex items-center gap-x-4 py-1">
             <Switch
               id="metadata.typography.underlineLinks"
               checked={typography.underlineLinks}

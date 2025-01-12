@@ -24,7 +24,7 @@ services:
 
   # Storage (for image uploads)
   minio:
-    image: minio/minio
+    image: minio/minio:latest
     restart: unless-stopped
     command: server /data
     volumes:
@@ -41,7 +41,7 @@ services:
 
   # Chrome Browser (for printing and previews)
   chrome:
-    image: ghcr.io/browserless/chromium:latest
+    image: ghcr.io/browserless/chromium:v2.18.0 # Upgrading to newer versions causes issues
     restart: unless-stopped
     environment:
       TIMEOUT: 10000

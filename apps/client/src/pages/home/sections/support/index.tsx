@@ -51,7 +51,7 @@ export const SupportSection = () => (
         </a>
         <a href="https://paypal.me/amruthde" rel="noreferrer noopener nofollow" target="_blank">
           {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
-          <img src="/support-logos/paypal.svg" className=" max-h-[28px]" alt="PayPal" />
+          <img src="/support-logos/paypal.svg" className="max-h-[28px]" alt="PayPal" />
         </a>
       </div>
 

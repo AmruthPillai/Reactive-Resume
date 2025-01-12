@@ -3,7 +3,6 @@ import { t, Trans } from "@lingui/macro";
 import { defaultProfile, profileSchema } from "@reactive-resume/schema";
 import {
   Avatar,
-  AvatarImage,
   FormControl,
   FormDescription,
   FormField,
@@ -12,10 +11,10 @@ import {
   FormMessage,
   Input,
 } from "@reactive-resume/ui";
-import { useCallback } from "react";
 import { useForm } from "react-hook-form";
-import { useDebounceValue } from "usehooks-ts";
 import { z } from "zod";
+
+import { BrandIcon } from "@/client/components/brand-icon";
 
 import { SectionDialog } from "../sections/shared/section-dialog";
 import { URLInput } from "../sections/shared/url-input";
@@ -30,16 +29,6 @@ export const ProfilesDialog = () => {
     resolver: zodResolver(formSchema),
   });
 
-  const [iconSrc, setIconSrc] = useDebounceValue("", 400);
-
-  const handleIconChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.value === "") {
-      setIconSrc("");
-    } else {
-      setIconSrc(`https://cdn.simpleicons.org/${event.target.value}`);
-    }
-  }, []);
-
   return (
     <SectionDialog<FormValues> id="profiles" form={form} defaultValues={defaultProfile}>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -51,7 +40,7 @@ export const ProfilesDialog = () => {
               <FormLabel>{t`Network`}</FormLabel>
               <FormControl>
                 {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
-                <Input {...field} placeholder="LinkedIn" />
+                <Input {...field} placeholder="GitHub" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -79,7 +68,7 @@ export const ProfilesDialog = () => {
             <FormItem className="sm:col-span-2">
               <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
-                <URLInput {...field} placeholder="https://linkedin.com/in/johndoe" />
+                <URLInput {...field} placeholder="https://github.com/johndoe" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -94,18 +83,10 @@ export const ProfilesDialog = () => {
               <FormLabel htmlFor="iconSlug">{t`Icon`}</FormLabel>
               <FormControl>
                 <div className="flex items-center gap-x-2">
-                  <Avatar className="size-8 bg-white">
-                    {iconSrc && <AvatarImage className="p-1.5" src={iconSrc} />}
+                  <Avatar className="size-8 bg-white p-1.5">
+                    <BrandIcon slug={field.value} />
                   </Avatar>
-                  <Input
-                    {...field}
-                    id="iconSlug"
-                    placeholder="linkedin"
-                    onChange={(event) => {
-                      field.onChange(event);
-                      handleIconChange(event);
-                    }}
-                  />
+                  <Input {...field} placeholder="github" onChange={field.onChange} />
                 </div>
               </FormControl>
               <FormMessage />

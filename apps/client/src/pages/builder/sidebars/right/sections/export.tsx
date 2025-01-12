@@ -37,7 +37,7 @@ export const ExportSection = () => {
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
           {getSectionIcon("export")}
-          <h2 className="line-clamp-1 text-3xl font-bold">{t`Export`}</h2>
+          <h2 className="line-clamp-1 text-2xl font-bold lg:text-3xl">{t`Export`}</h2>
         </div>
       </header>
 

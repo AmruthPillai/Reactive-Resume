@@ -35,7 +35,7 @@ export class PrinterService {
     try {
       return await connect({
         browserWSEndpoint: this.browserURL,
-        ignoreHTTPSErrors: this.ignoreHTTPSErrors,
+        acceptInsecureCerts: this.ignoreHTTPSErrors,
       });
     } catch (error) {
       throw new InternalServerErrorException(
@@ -101,17 +101,22 @@ export class PrinterService {
 
       let url = publicUrl;
 
-      if ([publicUrl, storageUrl].some((url) => url.includes("localhost"))) {
-        // Switch client URL from `localhost` to `host.docker.internal` in development
+      if ([publicUrl, storageUrl].some((url) => /https?:\/\/localhost(:\d+)?/.test(url))) {
+        // Switch client URL from `http[s]://localhost[:port]` to `http[s]://host.docker.internal[:port]` in development
         // This is required because the browser is running in a container and the client is running on the host machine.
-        url = url.replace("localhost", "host.docker.internal");
+        url = url.replace(
+          /localhost(:\d+)?/,
+          (_match, port) => `host.docker.internal${port ?? ""}`,
+        );
 
         await page.setRequestInterception(true);
 
         // Intercept requests of `localhost` to `host.docker.internal` in development
         page.on("request", (request) => {
           if (request.url().startsWith(storageUrl)) {
-            const modifiedUrl = request.url().replace("localhost", `host.docker.internal`);
+            const modifiedUrl = request
+              .url()
+              .replace(/localhost(:\d+)?/, (_match, port) => `host.docker.internal${port ?? ""}`);
 
             void request.continue({ url: modifiedUrl });
           } else {
@@ -145,7 +150,9 @@ export class PrinterService {
           return temporaryHtml_;
         }, pageElement);
 
-        pagesBuffer.push(await page.pdf({ width, height, printBackground: true }));
+        const uint8array = await page.pdf({ width, height, printBackground: true });
+        const buffer = Buffer.from(uint8array);
+        pagesBuffer.push(buffer);
 
         await page.evaluate((temporaryHtml_: string) => {
           document.body.innerHTML = temporaryHtml_;
@@ -202,7 +209,10 @@ export class PrinterService {
 
       return resumeUrl;
     } catch (error) {
-      console.trace(error);
+      throw new InternalServerErrorException(
+        ErrorMessage.ResumePrinterError,
+        (error as Error).message,
+      );
     }
   }
 
@@ -215,17 +225,19 @@ export class PrinterService {
 
     let url = publicUrl;
 
-    if ([publicUrl, storageUrl].some((url) => url.includes("localhost"))) {
-      // Switch client URL from `localhost` to `host.docker.internal` in development
+    if ([publicUrl, storageUrl].some((url) => /https?:\/\/localhost(:\d+)?/.test(url))) {
+      // Switch client URL from `http[s]://localhost[:port]` to `http[s]://host.docker.internal[:port]` in development
       // This is required because the browser is running in a container and the client is running on the host machine.
-      url = url.replace("localhost", "host.docker.internal");
+      url = url.replace(/localhost(:\d+)?/, (_match, port) => `host.docker.internal${port ?? ""}`);
 
       await page.setRequestInterception(true);
 
       // Intercept requests of `localhost` to `host.docker.internal` in development
       page.on("request", (request) => {
         if (request.url().startsWith(storageUrl)) {
-          const modifiedUrl = request.url().replace("localhost", `host.docker.internal`);
+          const modifiedUrl = request
+            .url()
+            .replace(/localhost(:\d+)?/, (_match, port) => `host.docker.internal${port ?? ""}`);
 
           void request.continue({ url: modifiedUrl });
         } else {
@@ -245,7 +257,8 @@ export class PrinterService {
 
     // Save the JPEG to storage and return the URL
     // Store the URL in cache for future requests, under the previously generated hash digest
-    const buffer = await page.screenshot({ quality: 80, type: "jpeg" });
+    const uint8array = await page.screenshot({ quality: 80, type: "jpeg" });
+    const buffer = Buffer.from(uint8array);
 
     // Generate a hash digest of the resume data, this hash will be used to check if the resume has been updated
     const previewUrl = await this.storageService.uploadObject(

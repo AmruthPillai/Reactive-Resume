@@ -1,4 +1,4 @@
-import { t } from "@lingui/macro";
+import { t, Trans } from "@lingui/macro";
 import { createId } from "@paralleldrive/cuid2";
 import { DotsSixVertical, Envelope, Plus, X } from "@phosphor-icons/react";
 import { CustomField as ICustomField } from "@reactive-resume/schema";
@@ -37,10 +37,10 @@ export const CustomField = ({ field, onChange, onRemove }: CustomFieldProps) => 
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
     >
-      <div className="flex items-end justify-between space-x-2">
+      <div className="flex items-end justify-between">
         <Button
           size="icon"
-          variant="link"
+          variant="ghost"
           className="shrink-0"
           onPointerDown={(event) => {
             controls.start(event);
@@ -52,12 +52,12 @@ export const CustomField = ({ field, onChange, onRemove }: CustomFieldProps) => 
         <Popover>
           <Tooltip content={t`Icon`}>
             <PopoverTrigger asChild>
-              <Button size="icon" variant="ghost">
+              <Button size="icon" variant="ghost" className="shrink-0">
                 {field.icon ? <i className={cn(`ph ph-${field.icon}`)} /> : <Envelope />}
               </Button>
             </PopoverTrigger>
           </Tooltip>
-          <PopoverContent className="p-1.5">
+          <PopoverContent side="bottom" align="start" className="flex flex-col gap-y-1.5 p-1.5">
             <Input
               value={field.icon}
               placeholder={t`Enter Phosphor Icon`}
@@ -65,19 +65,35 @@ export const CustomField = ({ field, onChange, onRemove }: CustomFieldProps) => 
                 onChange({ ...field, icon: event.target.value });
               }}
             />
+
+            <p className="text-xs opacity-80">
+              <Trans>
+                Visit{" "}
+                <a
+                  href="https://phosphoricons.com/"
+                  target="_blank"
+                  className="underline"
+                  rel="noopener noreferrer nofollow"
+                >
+                  Phosphor Icons
+                </a>{" "}
+                for a list of available icons
+              </Trans>
+            </p>
           </PopoverContent>
         </Popover>
 
         <Input
+          className="mx-2"
           placeholder={t`Name`}
           value={field.name}
-          className="!ml-0"
           onChange={(event) => {
             handleChange("name", event.target.value);
           }}
         />
 
         <Input
+          className="mx-2"
           placeholder={t`Value`}
           value={field.value}
           onChange={(event) => {
@@ -87,8 +103,8 @@ export const CustomField = ({ field, onChange, onRemove }: CustomFieldProps) => 
 
         <Button
           size="icon"
-          variant="link"
-          className="!ml-0 shrink-0"
+          variant="ghost"
+          className="shrink-0"
           onClick={() => {
             onRemove(field.id);
           }}
@@ -111,7 +127,7 @@ export const CustomFieldsSection = ({ className }: Props) => {
   const onAddCustomField = () => {
     setValue("basics.customFields", [
       ...customFields,
-      { id: createId(), icon: "", name: "", value: "" },
+      { id: createId(), icon: "envelope", name: "", value: "" },
     ]);
   };
 

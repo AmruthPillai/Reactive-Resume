@@ -70,12 +70,15 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
   const onCreate = () => {
     open("create", { id });
   };
+
   const onUpdate = (item: T) => {
     open("update", { id, item });
   };
+
   const onDuplicate = (item: T) => {
     open("duplicate", { id, item });
   };
+
   const onDelete = (item: T) => {
     open("delete", { id, item });
   };
@@ -97,7 +100,7 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
         <div className="flex items-center gap-x-4">
           {getSectionIcon(id)}
 
-          <h2 className="line-clamp-1 text-3xl font-bold">{section.name}</h2>
+          <h2 className="line-clamp-1 text-2xl font-bold lg:text-3xl">{section.name}</h2>
         </div>
 
         <div className="flex items-center gap-x-2">
@@ -158,7 +161,11 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
 
       {section.items.length > 0 && (
         <footer className="flex items-center justify-end">
-          <Button variant="outline" className="ml-auto gap-x-2" onClick={onCreate}>
+          <Button
+            variant="outline"
+            className="ml-auto gap-x-2 text-xs lg:text-sm"
+            onClick={onCreate}
+          >
             <Plus />
             <span>
               {t({

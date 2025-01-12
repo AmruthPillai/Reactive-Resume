@@ -21,6 +21,7 @@ import { cn, hexToRgb, isEmptyString, isUrl, linearTransform } from "@reactive-r
 import get from "lodash.get";
 import { Fragment } from "react";
 
+import { BrandIcon } from "../components/brand-icon";
 import { Picture } from "../components/picture";
 import { useArtboardStore } from "../store/artboard";
 import { TemplateProps } from "../types/template";
@@ -287,26 +288,13 @@ const Education = () => {
 
 const Profiles = () => {
   const section = useArtboardStore((state) => state.resume.sections.profiles);
-  const fontSize = useArtboardStore((state) => state.resume.metadata.typography.font.size);
 
   return (
     <Section<Profile> section={section}>
       {(item) => (
         <div>
           {isUrl(item.url.href) ? (
-            <Link
-              url={item.url}
-              label={item.username}
-              icon={
-                <img
-                  className="ph"
-                  width={fontSize}
-                  height={fontSize}
-                  alt={item.network}
-                  src={`https://cdn.simpleicons.org/${item.icon}`}
-                />
-              }
-            />
+            <Link url={item.url} label={item.username} icon={<BrandIcon slug={item.icon} />} />
           ) : (
             <p>{item.username}</p>
           )}
@@ -591,7 +579,7 @@ export const Glalie = ({ columns, isFirstPage = false }: TemplateProps) => {
   return (
     <div className="grid min-h-[inherit] grid-cols-3">
       <div
-        className="sidebar p-custom group space-y-4"
+        className={cn("sidebar p-custom group space-y-4", sidebar.length === 0 && "hidden")}
         style={{ backgroundColor: hexToRgb(primaryColor, 0.2) }}
       >
         {isFirstPage && <Header />}
@@ -601,7 +589,12 @@ export const Glalie = ({ columns, isFirstPage = false }: TemplateProps) => {
         ))}
       </div>
 
-      <div className="main p-custom group col-span-2 space-y-4">
+      <div
+        className={cn(
+          "main p-custom group space-y-4",
+          sidebar.length > 0 ? "col-span-2" : "col-span-3",
+        )}
+      >
         {main.map((section) => (
           <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
         ))}

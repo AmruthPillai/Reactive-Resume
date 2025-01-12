@@ -9,7 +9,7 @@ To run the development environment of the application locally on your computer, 
 #### Requirements
 
 - Docker (with Docker Compose)
-- Node.js 18 or higher (with pnpm)
+- Node.js 20 or higher (with pnpm)
 
 ### 1. Fork and Clone the Repository
 

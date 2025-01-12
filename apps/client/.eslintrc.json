@@ -12,11 +12,14 @@
         "tailwindcss": {
           "callees": ["cn", "clsx", "cva"],
           "config": "tailwind.config.js",
-          "whitelist": ["ph", "ph-"]
+          "whitelist": ["ph", "ph\\-.*", "si", "si\\-.*"]
         }
       },
       "plugins": ["lingui"],
       "rules": {
+        // eslint
+        "@typescript-eslint/no-require-imports": "off",
+
         // react
         "react/no-unescaped-entities": "off",
         "react/jsx-sort-props": [

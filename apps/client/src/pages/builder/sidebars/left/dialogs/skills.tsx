@@ -88,10 +88,10 @@ export const SkillsDialog = () => {
                     }}
                   />
 
-                  {field.value === 0 ? (
-                    <span className="text-base font-bold">{t`Hidden`}</span>
-                  ) : (
+                  {field.value > 0 ? (
                     <span className="text-base font-bold">{field.value}</span>
+                  ) : (
+                    <span className="text-base font-bold">{t`Hidden`}</span>
                   )}
                 </div>
               </FormControl>

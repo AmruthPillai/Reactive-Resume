@@ -1,7 +1,7 @@
 import { SectionKey } from "@reactive-resume/schema";
 import { pageSizeMap, Template } from "@reactive-resume/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ReactZoomPanPinchRef, TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
 
 import { MM_TO_PX, Page } from "../components/page";
@@ -13,6 +13,8 @@ export const BuilderLayout = () => {
   const format = useArtboardStore((state) => state.resume.metadata.page.format);
   const layout = useArtboardStore((state) => state.resume.metadata.layout);
   const template = useArtboardStore((state) => state.resume.metadata.template as Template);
+
+  const [wheelPanning, setWheelPanning] = useState(true);
 
   const Template = useMemo(() => getTemplate(template), [template]);
 
@@ -26,6 +28,9 @@ export const BuilderLayout = () => {
       if (event.data.type === "RESET_VIEW") {
         transformRef.current?.resetTransform(0);
         setTimeout(() => transformRef.current?.centerView(0.8, 0), 10);
+      }
+      if (event.data.type === "TOGGLE_PAN_MODE") {
+        setWheelPanning(event.data.panMode);
       }
     };
 
@@ -44,6 +49,12 @@ export const BuilderLayout = () => {
       minScale={0.4}
       initialScale={0.8}
       limitToBounds={false}
+      panning={{
+        wheelPanning: wheelPanning,
+      }}
+      wheel={{
+        wheelDisabled: wheelPanning,
+      }}
     >
       <TransformComponent
         wrapperClass="!w-screen !h-screen"
