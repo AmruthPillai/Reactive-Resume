@@ -21,6 +21,7 @@ import { cn, hexToRgb, isEmptyString, isUrl } from "@reactive-resume/utils";
 import get from "lodash.get";
 import { Fragment } from "react";
 
+import { BrandIcon } from "../components/brand-icon";
 import { Picture } from "../components/picture";
 import { useArtboardStore } from "../store/artboard";
 import { TemplateProps } from "../types/template";
@@ -82,17 +83,19 @@ const Header = () => {
 
 const Summary = () => {
   const section = useArtboardStore((state) => state.resume.sections.summary);
-
+  const primaryColor = useArtboardStore((state) => state.resume.metadata.theme.primary);
   if (!section.visible || isEmptyString(section.content)) return null;
 
   return (
-    <section id={section.id}>
-      <div
-        dangerouslySetInnerHTML={{ __html: section.content }}
-        className="wysiwyg"
-        style={{ columns: section.columns }}
-      />
-    </section>
+    <div className="p-custom space-y-4" style={{ backgroundColor: hexToRgb(primaryColor, 0.2) }}>
+      <section id={section.id}>
+        <div
+          dangerouslySetInnerHTML={{ __html: section.content }}
+          className="wysiwyg"
+          style={{ columns: section.columns }}
+        />
+      </section>
+    </div>
   );
 };
 
@@ -226,26 +229,13 @@ const Section = <T,>({
 
 const Profiles = () => {
   const section = useArtboardStore((state) => state.resume.sections.profiles);
-  const fontSize = useArtboardStore((state) => state.resume.metadata.typography.font.size);
 
   return (
     <Section<Profile> section={section}>
       {(item) => (
         <div>
           {isUrl(item.url.href) ? (
-            <Link
-              url={item.url}
-              label={item.username}
-              icon={
-                <img
-                  className="ph"
-                  width={fontSize}
-                  height={fontSize}
-                  alt={item.network}
-                  src={`https://cdn.simpleicons.org/${item.icon}`}
-                />
-              }
-            />
+            <Link url={item.url} label={item.username} icon={<BrandIcon slug={item.icon} />} />
           ) : (
             <p>{item.username}</p>
           )}
@@ -599,15 +589,8 @@ export const Gengar = ({ columns, isFirstPage = false }: TemplateProps) => {
         </div>
       </div>
 
-      <div className="main group col-span-2">
-        {isFirstPage && (
-          <div
-            className="p-custom space-y-4"
-            style={{ backgroundColor: hexToRgb(primaryColor, 0.2) }}
-          >
-            <Summary />
-          </div>
-        )}
+      <div className={cn("main group", sidebar.length > 0 ? "col-span-2" : "col-span-3")}>
+        {isFirstPage && <Summary />}
 
         <div className="p-custom space-y-4">
           {main.map((section) => (

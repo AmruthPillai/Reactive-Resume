@@ -9,11 +9,11 @@ import {
 } from "@phosphor-icons/react";
 import { ResumeDto } from "@reactive-resume/dto";
 import {
-  ContextMenu,
-  ContextMenuContent,
-  ContextMenuItem,
-  ContextMenuSeparator,
-  ContextMenuTrigger,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
 } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import dayjs from "dayjs";
@@ -33,6 +33,7 @@ export const ResumeCard = ({ resume }: Props) => {
   const { open } = useDialog<ResumeDto>("resume");
   const { open: lockOpen } = useDialog<ResumeDto>("lock");
 
+  const template = resume.data.metadata.template;
   const lastUpdated = dayjs().to(resume.updatedAt);
 
   const onOpen = () => {
@@ -56,9 +57,9 @@ export const ResumeCard = ({ resume }: Props) => {
   };
 
   return (
-    <ContextMenu>
-      <ContextMenuTrigger>
-        <BaseCard className="space-y-0" onClick={onOpen}>
+    <DropdownMenu>
+      <DropdownMenuTrigger className="text-left">
+        <BaseCard className="cursor-context-menu space-y-0">
           <AnimatePresence>
             {resume.locked && (
               <motion.div
@@ -81,39 +82,45 @@ export const ResumeCard = ({ resume }: Props) => {
             <h4 className="line-clamp-2 font-medium">{resume.title}</h4>
             <p className="line-clamp-1 text-xs opacity-75">{t`Last updated ${lastUpdated}`}</p>
           </div>
-        </BaseCard>
-      </ContextMenuTrigger>
 
-      <ContextMenuContent>
-        <ContextMenuItem onClick={onOpen}>
+          <img
+            src={`/templates/jpg/${template}.jpg`}
+            alt={template}
+            className="rounded-sm opacity-80"
+          />
+        </BaseCard>
+      </DropdownMenuTrigger>
+
+      <DropdownMenuContent>
+        <DropdownMenuItem onClick={onOpen}>
           <FolderOpen size={14} className="mr-2" />
           {t`Open`}
-        </ContextMenuItem>
-        <ContextMenuItem onClick={onUpdate}>
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={onUpdate}>
           <PencilSimple size={14} className="mr-2" />
           {t`Rename`}
-        </ContextMenuItem>
-        <ContextMenuItem onClick={onDuplicate}>
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={onDuplicate}>
           <CopySimple size={14} className="mr-2" />
           {t`Duplicate`}
-        </ContextMenuItem>
+        </DropdownMenuItem>
         {resume.locked ? (
-          <ContextMenuItem onClick={onLockChange}>
+          <DropdownMenuItem onClick={onLockChange}>
             <LockOpen size={14} className="mr-2" />
             {t`Unlock`}
-          </ContextMenuItem>
+          </DropdownMenuItem>
         ) : (
-          <ContextMenuItem onClick={onLockChange}>
+          <DropdownMenuItem onClick={onLockChange}>
             <Lock size={14} className="mr-2" />
             {t`Lock`}
-          </ContextMenuItem>
+          </DropdownMenuItem>
         )}
-        <ContextMenuSeparator />
-        <ContextMenuItem className="text-error" onClick={onDelete}>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem className="text-error" onClick={onDelete}>
           <TrashSimple size={14} className="mr-2" />
           {t`Delete`}
-        </ContextMenuItem>
-      </ContextMenuContent>
-    </ContextMenu>
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };

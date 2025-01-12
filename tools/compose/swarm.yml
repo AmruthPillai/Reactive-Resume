@@ -28,7 +28,7 @@ services:
 
   # Storage (for image uploads)
   minio:
-    image: minio/minio
+    image: minio/minio:latest
     command: server /data
     networks:
       - reactive_resume_network
@@ -50,7 +50,7 @@ services:
 
   # Chrome Browser (for printing and previews)
   chrome:
-    image: ghcr.io/browserless/chromium:latest
+    image: ghcr.io/browserless/chromium:v2.18.0 # Upgrading to newer versions causes issues
     networks:
       - reactive_resume_network
     environment:

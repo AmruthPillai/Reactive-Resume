@@ -17,7 +17,8 @@ export async function dynamicActivate(locale: string) {
     if (dayjsLocales[locale]) {
       dayjs.locale(await dayjsLocales[locale]());
     }
-  } catch (error) {
-    console.error(error);
+  } catch {
+    // eslint-disable-next-line lingui/no-unlocalized-strings
+    throw new Error(`Failed to load messages for locale: ${locale}`);
   }
 }

@@ -1,3 +1,6 @@
 {
-  "printWidth": 100
+  "printWidth": 100,
+  "endOfLine": "auto",
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindFunctions": ["cn", "cva"]
 }

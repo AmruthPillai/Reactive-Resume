@@ -12,6 +12,9 @@
         }
       },
       "rules": {
+        // eslint
+        "@typescript-eslint/no-require-imports": "off",
+
         // react
         "react/no-unescaped-entities": "off",
         "react/jsx-sort-props": [

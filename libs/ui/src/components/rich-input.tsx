@@ -28,27 +28,13 @@ import {
 } from "@phosphor-icons/react";
 import { PopoverTrigger } from "@radix-ui/react-popover";
 import { cn } from "@reactive-resume/utils";
-import { Bold } from "@tiptap/extension-bold";
-import { BulletList } from "@tiptap/extension-bullet-list";
-import { Code } from "@tiptap/extension-code";
-import { CodeBlock } from "@tiptap/extension-code-block";
-import { Document } from "@tiptap/extension-document";
-import { HardBreak } from "@tiptap/extension-hard-break";
-import { Heading } from "@tiptap/extension-heading";
 import { Highlight } from "@tiptap/extension-highlight";
-import { History } from "@tiptap/extension-history";
-import { HorizontalRule } from "@tiptap/extension-horizontal-rule";
 import { Image } from "@tiptap/extension-image";
-import { Italic } from "@tiptap/extension-italic";
 import { Link } from "@tiptap/extension-link";
-import { ListItem } from "@tiptap/extension-list-item";
-import { OrderedList } from "@tiptap/extension-ordered-list";
-import { Paragraph } from "@tiptap/extension-paragraph";
-import { Strike } from "@tiptap/extension-strike";
-import { Text } from "@tiptap/extension-text";
 import { TextAlign } from "@tiptap/extension-text-align";
 import { Underline } from "@tiptap/extension-underline";
 import { Editor, EditorContent, EditorContentProps, useEditor } from "@tiptap/react";
+import { StarterKit } from "@tiptap/starter-kit";
 import { forwardRef, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -154,7 +140,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
         <Toggle
           size="sm"
           pressed={editor.isActive("bold")}
-          disabled={!editor.can().chain().focus().toggleBold().run()}
+          disabled={!editor.can().chain().toggleBold().run()}
           onPressedChange={() => editor.chain().focus().toggleBold().run()}
         >
           <TextB />
@@ -446,31 +432,12 @@ export const RichInput = forwardRef<Editor, RichInputProps>(
   ) => {
     const editor = useEditor({
       extensions: [
-        Document,
-        Text,
-        Bold,
-        Strike,
-        Italic,
-        Code,
-        CodeBlock,
-        Heading,
-        Paragraph,
-        ListItem,
-        BulletList,
-        OrderedList,
-        HardBreak,
-        History,
-        HorizontalRule,
+        StarterKit,
         Image,
         Underline,
         Highlight,
-        Link.extend({
-          inclusive: false,
-          addKeyboardShortcuts: () => ({
-            "Mod-k": () => setLink(),
-          }),
-        }).configure({ openOnClick: false }),
         TextAlign.configure({ types: ["heading", "paragraph"] }),
+        Link.extend({ inclusive: false }).configure({ openOnClick: false }),
       ],
       editorProps: {
         attributes: {
@@ -484,24 +451,6 @@ export const RichInput = forwardRef<Editor, RichInputProps>(
       parseOptions: { preserveWhitespace: "full" },
       onUpdate: ({ editor }) => onChange?.(editor.getHTML()),
     });
-
-    const setLink = useCallback(() => {
-      if (!editor) return false;
-
-      const previousUrl = editor.getAttributes("link").href;
-      const url = window.prompt("URL", previousUrl);
-
-      // cancelled
-      if (url === null) return false;
-
-      // empty
-      if (url === "") {
-        return editor.chain().focus().extendMarkRange("link").unsetLink().run();
-      }
-
-      // update link
-      return editor.chain().focus().extendMarkRange("link").setLink({ href: url }).run();
-    }, [editor]);
 
     if (!editor) {
       return (

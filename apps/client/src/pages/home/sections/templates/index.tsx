@@ -42,7 +42,7 @@ export const TemplatesSection = () => (
                 alt={template}
                 loading="lazy"
                 src={`/templates/jpg/${template}.jpg`}
-                className=" aspect-[1/1.4142] h-[400px] rounded object-cover lg:h-[600px]"
+                className="aspect-[1/1.4142] h-[400px] rounded object-cover lg:h-[600px]"
               />
             </motion.a>
           ))}

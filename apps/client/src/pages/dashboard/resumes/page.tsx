@@ -49,7 +49,10 @@ export const ResumesPage = () => {
           </TabsList>
         </div>
 
-        <ScrollArea className="h-[calc(100vh-140px)] lg:h-[calc(100vh-88px)]">
+        <ScrollArea
+          allowOverflow
+          className="h-[calc(100vh-140px)] overflow-visible lg:h-[calc(100vh-88px)]"
+        >
           <TabsContent value="grid">
             <GridView />
           </TabsContent>

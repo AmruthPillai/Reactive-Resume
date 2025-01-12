@@ -29,6 +29,6 @@ export class StorageController {
       );
     }
 
-    return this.storageService.uploadObject(userId, "pictures", file.buffer, userId);
+    return this.storageService.uploadObject(userId, "pictures", file.buffer, file.filename);
   }
 }
