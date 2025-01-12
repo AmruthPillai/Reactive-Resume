@@ -204,7 +204,7 @@ export const LayoutSection = () => {
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
           {getSectionIcon("layout")}
-          <h2 className="line-clamp-1 text-3xl font-bold">{t`Layout`}</h2>
+          <h2 className="line-clamp-1 text-2xl  font-bold lg:text-3xl">{t`Layout`}</h2>
         </div>
 
         <Tooltip content={t`Reset Layout`}>
@@ -268,7 +268,7 @@ export const LayoutSection = () => {
 
         <Button variant="outline" className="ml-auto" onClick={onAddPage}>
           <Plus />
-          <span className="ml-2">{t`Add New Page`}</span>
+          <span className="ml-2 text-xs lg:text-sm">{t`Add New Page`}</span>
         </Button>
       </main>
     </section>

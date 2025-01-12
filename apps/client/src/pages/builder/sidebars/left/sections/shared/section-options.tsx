@@ -82,7 +82,7 @@ export const SectionOptions = ({ id }: Props) => {
           <List weight="bold" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-48">
+      <DropdownMenuContent className="mr-4 w-48 ">
         {hasItems && (
           <>
             <DropdownMenuItem onClick={onCreate}>

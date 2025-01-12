@@ -23,11 +23,11 @@ export const PageSection = () => {
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
           {getSectionIcon("page")}
-          <h2 className="line-clamp-1 text-3xl font-bold">{t`Page`}</h2>
+          <h2 className="line-clamp-1  text-2xl  font-bold lg:text-3xl">{t`Page`}</h2>
         </div>
       </header>
 
-      <main className="grid gap-y-4">
+      <main className="grid gap-y-6">
         <div className="space-y-1.5">
           <Label>{t`Format`}</Label>
           <Select

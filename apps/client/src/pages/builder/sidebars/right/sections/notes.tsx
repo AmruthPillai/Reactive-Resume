@@ -14,7 +14,7 @@ export const NotesSection = () => {
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
           {getSectionIcon("notes")}
-          <h2 className="line-clamp-1 text-3xl font-bold">{t`Notes`}</h2>
+          <h2 className="line-clamp-1 text-2xl  font-bold lg:text-3xl">{t`Notes`}</h2>
         </div>
       </header>
 

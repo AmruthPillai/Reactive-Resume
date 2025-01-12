@@ -20,7 +20,7 @@ export const StatisticsSection = () => {
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
           {getSectionIcon("statistics")}
-          <h2 className="line-clamp-1 text-3xl font-bold">{t`Statistics`}</h2>
+          <h2 className="line-clamp-1 text-2xl  font-bold lg:text-3xl">{t`Statistics`}</h2>
         </div>
       </header>
 
