@@ -7,4 +7,4 @@ export const pageSizeMap = {
     width: 216,
     height: 279,
   },
-};
+} as const;

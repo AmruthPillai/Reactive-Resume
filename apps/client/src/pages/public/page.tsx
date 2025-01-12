@@ -5,7 +5,7 @@ import { Button } from "@reactive-resume/ui";
 import { pageSizeMap } from "@reactive-resume/utils";
 import { useCallback, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link, LoaderFunction, redirect, useLoaderData } from "react-router-dom";
+import { Link, LoaderFunction, redirect, useLoaderData } from "react-router";
 
 import { Icon } from "@/client/components/icon";
 import { ThemeSwitch } from "@/client/components/theme-switch";
@@ -22,8 +22,8 @@ export const PublicResumePage = () => {
 
   const { printResume, loading } = usePrintResume();
 
-  const { id, title, data: resume } = useLoaderData() as ResumeDto;
-  const format = resume.metadata.page.format;
+  const { id, title, data: resume } = useLoaderData();
+  const format = resume.metadata.page.format as keyof typeof pageSizeMap;
 
   const updateResumeInFrame = useCallback(() => {
     if (!frameRef.current?.contentWindow) return;

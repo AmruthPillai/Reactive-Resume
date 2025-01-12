@@ -1,6 +1,6 @@
 import { t } from "@lingui/macro";
 import { Separator } from "@reactive-resume/ui";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 import { Copyright } from "@/client/components/copyright";
 import { LocaleSwitch } from "@/client/components/locale-switch";

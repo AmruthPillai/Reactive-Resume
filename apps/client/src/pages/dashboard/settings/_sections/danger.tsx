@@ -11,7 +11,7 @@ import {
   Input,
 } from "@reactive-resume/ui";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { useCounter } from "usehooks-ts";
 import { z } from "zod";
 
@@ -52,7 +52,7 @@ export const DangerZoneSettings = () => {
         title: t`Your account and all your data has been deleted successfully. Goodbye!`,
       });
 
-      navigate("/");
+      void navigate("/");
     }
   };
 

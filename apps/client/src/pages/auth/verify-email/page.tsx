@@ -3,7 +3,7 @@ import { ArrowRight, Info, SealCheck } from "@phosphor-icons/react";
 import { Alert, AlertDescription, AlertTitle, Button } from "@reactive-resume/ui";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router";
 
 import { useToast } from "@/client/hooks/use-toast";
 import { queryClient } from "@/client/libs/query-client";
@@ -28,7 +28,7 @@ export const VerifyEmailPage = () => {
         title: t`Your email address has been verified successfully.`,
       });
 
-      navigate("/dashboard/resumes", { replace: true });
+      void navigate("/dashboard/resumes", { replace: true });
     };
 
     if (!token) return;

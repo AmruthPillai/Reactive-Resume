@@ -20,7 +20,7 @@ import { cn } from "@reactive-resume/utils";
 import { useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router";
 import { z } from "zod";
 
 import { useRegister } from "@/client/services/auth";
@@ -51,7 +51,7 @@ export const RegisterPage = () => {
     try {
       await register(data);
 
-      navigate("/auth/verify-email");
+      void navigate("/auth/verify-email");
     } catch {
       form.reset();
     }

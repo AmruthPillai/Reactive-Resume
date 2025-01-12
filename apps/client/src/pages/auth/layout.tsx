@@ -1,7 +1,7 @@
 import { t } from "@lingui/macro";
 import { cn } from "@reactive-resume/utils";
 import { useMemo } from "react";
-import { Link, matchRoutes, Outlet, useLocation } from "react-router-dom";
+import { Link, matchRoutes, Outlet, useLocation } from "react-router";
 
 import { LocaleSwitch } from "@/client/components/locale-switch";
 import { Logo } from "@/client/components/logo";

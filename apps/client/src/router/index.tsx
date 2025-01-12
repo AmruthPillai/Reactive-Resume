@@ -1,4 +1,4 @@
-import { createBrowserRouter, createRoutesFromElements, Navigate, Route } from "react-router-dom";
+import { createBrowserRouter, createRoutesFromElements, Navigate, Route } from "react-router";
 
 import { BackupOtpPage } from "../pages/auth/backup-otp/page";
 import { ForgotPasswordPage } from "../pages/auth/forgot-password/page";
@@ -23,7 +23,8 @@ import { GuestGuard } from "./guards/guest";
 import { authLoader } from "./loaders/auth";
 
 export const routes = createRoutesFromElements(
-  <Route element={<Providers />}>
+  // eslint-disable-next-line lingui/no-unlocalized-strings
+  <Route element={<Providers />} hydrateFallbackElement={<div>Loading...</div>}>
     <Route element={<HomeLayout />}>
       <Route path="/" element={<HomePage />} />
 

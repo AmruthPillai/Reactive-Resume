@@ -1,5 +1,5 @@
 import { useEffect, useMemo } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet } from "react-router";
 import webfontloader from "webfontloader";
 
 import { useArtboardStore } from "../store/artboard";

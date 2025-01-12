@@ -20,7 +20,7 @@ import { cn } from "@reactive-resume/utils";
 import { useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { z } from "zod";
 
 import { useLogin } from "@/client/services/auth";

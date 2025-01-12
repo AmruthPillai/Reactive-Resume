@@ -3,7 +3,7 @@ import { FadersHorizontal, ReadCvLogo } from "@phosphor-icons/react";
 import { Button, KeyboardShortcut, Separator } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router";
 import useKeyboardShortcut from "use-keyboard-shortcut";
 
 import { Copyright } from "@/client/components/copyright";
@@ -71,12 +71,12 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
   const navigate = useNavigate();
 
   useKeyboardShortcut(["shift", "r"], () => {
-    navigate("/dashboard/resumes");
+    void navigate("/dashboard/resumes");
     setOpen?.(false);
   });
 
   useKeyboardShortcut(["shift", "s"], () => {
-    navigate("/dashboard/settings");
+    void navigate("/dashboard/settings");
     setOpen?.(false);
   });
 

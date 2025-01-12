@@ -7,7 +7,7 @@ import {
   DropdownMenuTrigger,
   KeyboardShortcut,
 } from "@reactive-resume/ui";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 import { useLogout } from "../services/auth";
 
@@ -26,7 +26,7 @@ export const UserOptions = ({ children }: Props) => {
       <DropdownMenuContent side="top" align="start" className="w-48">
         <DropdownMenuItem
           onClick={() => {
-            navigate("/dashboard/settings");
+            void navigate("/dashboard/settings");
           }}
         >
           {t`Settings`}

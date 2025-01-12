@@ -1,7 +1,7 @@
 import { AuthResponseDto, LoginDto } from "@reactive-resume/dto";
 import { useMutation } from "@tanstack/react-query";
 import { AxiosResponse } from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 import { axios } from "@/client/libs/axios";
 import { queryClient } from "@/client/libs/query-client";
@@ -28,7 +28,7 @@ export const useLogin = () => {
     mutationFn: login,
     onSuccess: (data) => {
       if (data.status === "2fa_required") {
-        navigate("/auth/verify-otp");
+        void navigate("/auth/verify-otp");
         return;
       }
 

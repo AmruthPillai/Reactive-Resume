@@ -17,7 +17,7 @@ import {
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { z } from "zod";
 
 import { useForgotPassword } from "@/client/services/auth";
@@ -93,7 +93,7 @@ export const ForgotPasswordPage = () => {
                 variant="link"
                 className="px-5"
                 onClick={() => {
-                  navigate(-1);
+                  void navigate(-1);
                 }}
               >
                 <ArrowLeft size={14} className="mr-2" />

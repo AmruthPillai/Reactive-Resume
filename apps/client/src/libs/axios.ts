@@ -2,7 +2,7 @@ import { t } from "@lingui/macro";
 import { deepSearchAndParseDates, ErrorMessage } from "@reactive-resume/utils";
 import _axios from "axios";
 import createAuthRefreshInterceptor from "axios-auth-refresh";
-import { redirect } from "react-router-dom";
+import { redirect } from "react-router";
 
 import { refreshToken } from "@/client/services/auth";
 

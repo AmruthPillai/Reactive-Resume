@@ -43,7 +43,7 @@ import { useCreateResume, useDeleteResume, useUpdateResume } from "@/client/serv
 import { useImportResume } from "@/client/services/resume/import";
 import { useDialog } from "@/client/stores/dialog";
 
-const formSchema = createResumeSchema.extend({ id: idSchema.optional() });
+const formSchema = createResumeSchema.extend({ id: idSchema.optional(), slug: z.string() });
 
 type FormValues = z.infer<typeof formSchema>;
 

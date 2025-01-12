@@ -1,5 +1,5 @@
 import { ScrollArea } from "@reactive-resume/ui";
-import { Outlet } from "react-router-dom";
+import { Outlet } from "react-router";
 
 import { Footer } from "./components/footer";
 import { Header } from "./components/header";

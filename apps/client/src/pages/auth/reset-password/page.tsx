@@ -16,7 +16,7 @@ import {
 import { useEffect, useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router";
 import { z } from "zod";
 
 import { useResetPassword } from "@/client/services/auth";
@@ -42,7 +42,7 @@ export const ResetPasswordPage = () => {
     try {
       await resetPassword(data);
 
-      navigate("/auth/login");
+      void navigate("/auth/login");
     } catch {
       form.reset();
     }
@@ -50,7 +50,7 @@ export const ResetPasswordPage = () => {
 
   // Redirect the user to the forgot password page if the token is not present.
   useEffect(() => {
-    if (!token) navigate("/auth/forgot-password");
+    if (!token) void navigate("/auth/forgot-password");
   }, [token, navigate]);
 
   return (
