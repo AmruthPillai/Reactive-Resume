@@ -2,6 +2,7 @@ import { t } from "@lingui/macro";
 import {
   ArrowClockwise,
   ArrowCounterClockwise,
+  ArrowsOutCardinal,
   CircleNotch,
   ClockClockwise,
   CubeFocus,
@@ -9,6 +10,7 @@ import {
   Hash,
   LineSegment,
   LinkSimple,
+  MagnifyingGlass,
   MagnifyingGlassMinus,
   MagnifyingGlassPlus,
 } from "@phosphor-icons/react";
@@ -19,6 +21,7 @@ import { useToast } from "@/client/hooks/use-toast";
 import { usePrintResume } from "@/client/services/resume";
 import { useBuilderStore } from "@/client/stores/builder";
 import { useResumeStore, useTemporalResumeStore } from "@/client/stores/resume";
+import { useState } from "react";
 
 const openInNewTab = (url: string) => {
   const win = window.open(url, "_blank");
@@ -31,6 +34,7 @@ export const BuilderToolbar = () => {
   const undo = useTemporalResumeStore((state) => state.undo);
   const redo = useTemporalResumeStore((state) => state.redo);
   const frameRef = useBuilderStore((state) => state.frame.ref);
+  const [panMode, setPanMode] = useState<boolean>(true);
 
   const id = useResumeStore((state) => state.resume.id);
   const isPublic = useResumeStore((state) => state.resume.visibility === "public");
@@ -59,6 +63,10 @@ export const BuilderToolbar = () => {
   const onZoomOut = () => frameRef?.contentWindow?.postMessage({ type: "ZOOM_OUT" }, "*");
   const onResetView = () => frameRef?.contentWindow?.postMessage({ type: "RESET_VIEW" }, "*");
   const onCenterView = () => frameRef?.contentWindow?.postMessage({ type: "CENTER_VIEW" }, "*");
+  const onTogglePanMode = () => {
+    setPanMode(!panMode); // local button state
+    frameRef?.contentWindow?.postMessage({ type: "TOGGLE_PAN_MODE", panMode: !panMode }, "*"); // toggle artboard state
+  };
 
   return (
     <motion.div className="fixed inset-x-0 bottom-0 mx-auto hidden py-6 text-center md:block">
@@ -87,6 +95,20 @@ export const BuilderToolbar = () => {
           >
             <ArrowClockwise />
           </Button>
+        </Tooltip>
+
+        <Separator orientation="vertical" className="h-9" />
+
+        <Tooltip
+          content={
+            panMode
+              ? t`Scroll to Pan (Click to switch to Zoom)`
+              : t`Scroll to Zoom (Click to switch to Pan)`
+          }
+        >
+          <Toggle className="rounded-none" pressed={panMode} onPressedChange={onTogglePanMode}>
+            {panMode ? <ArrowsOutCardinal /> : <MagnifyingGlass />}
+          </Toggle>
         </Tooltip>
 
         <Separator orientation="vertical" className="h-9" />
