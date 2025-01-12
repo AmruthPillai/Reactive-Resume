@@ -101,17 +101,17 @@ export class PrinterService {
 
       let url = publicUrl;
 
-      if ([publicUrl, storageUrl].some((url) => url.includes("localhost"))) {
-        // Switch client URL from `localhost` to `host.docker.internal` in development
+      if ([publicUrl, storageUrl].some((url) => /https?:\/\/localhost(:\d+)?/.test(url))) {
+        // Switch client URL from `http[s]://localhost[:port]` to `http[s]://host.docker.internal[:port]` in development
         // This is required because the browser is running in a container and the client is running on the host machine.
-        url = url.replace("localhost", "host.docker.internal");
-
+        url = url.replace(/localhost(:\d+)?/, "host.docker.internal");
+        
         await page.setRequestInterception(true);
 
         // Intercept requests of `localhost` to `host.docker.internal` in development
         page.on("request", (request) => {
           if (request.url().startsWith(storageUrl)) {
-            const modifiedUrl = request.url().replace("localhost", `host.docker.internal`);
+            const modifiedUrl = request.url().replace(/localhost(:\d+)?/, "host.docker.internal");
 
             void request.continue({ url: modifiedUrl });
           } else {
