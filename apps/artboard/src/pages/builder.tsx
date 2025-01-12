@@ -9,12 +9,13 @@ import { useArtboardStore } from "../store/artboard";
 import { getTemplate } from "../templates";
 
 export const BuilderLayout = () => {
-  const transformRef = useRef<ReactZoomPanPinchRef>(null);
-  const format = useArtboardStore((state) => state.resume.metadata.page.format);
-  const layout = useArtboardStore((state) => state.resume.metadata.layout);
-  const template = useArtboardStore((state) => state.resume.metadata.template as Template);
-
   const [wheelPanning, setWheelPanning] = useState(true);
+
+  const transformRef = useRef<ReactZoomPanPinchRef>(null);
+
+  const layout = useArtboardStore((state) => state.resume.metadata.layout);
+  const format = useArtboardStore((state) => state.resume.metadata.page.format);
+  const template = useArtboardStore((state) => state.resume.metadata.template as Template);
 
   const Template = useMemo(() => getTemplate(template), [template]);
 
@@ -49,12 +50,8 @@ export const BuilderLayout = () => {
       minScale={0.4}
       initialScale={0.8}
       limitToBounds={false}
-      panning={{
-        wheelPanning: wheelPanning,
-      }}
-      wheel={{
-        wheelDisabled: wheelPanning,
-      }}
+      wheel={{ wheelDisabled: wheelPanning }}
+      panning={{ wheelPanning: wheelPanning }}
     >
       <TransformComponent
         wrapperClass="!w-screen !h-screen"

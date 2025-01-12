@@ -16,12 +16,12 @@ import {
 } from "@phosphor-icons/react";
 import { Button, Separator, Toggle, Tooltip } from "@reactive-resume/ui";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 import { useToast } from "@/client/hooks/use-toast";
 import { usePrintResume } from "@/client/services/resume";
 import { useBuilderStore } from "@/client/stores/builder";
 import { useResumeStore, useTemporalResumeStore } from "@/client/stores/resume";
-import { useState } from "react";
 
 const openInNewTab = (url: string) => {
   const win = window.open(url, "_blank");
@@ -30,11 +30,13 @@ const openInNewTab = (url: string) => {
 
 export const BuilderToolbar = () => {
   const { toast } = useToast();
+
+  const [panMode, setPanMode] = useState<boolean>(true);
+
   const setValue = useResumeStore((state) => state.setValue);
   const undo = useTemporalResumeStore((state) => state.undo);
   const redo = useTemporalResumeStore((state) => state.redo);
   const frameRef = useBuilderStore((state) => state.frame.ref);
-  const [panMode, setPanMode] = useState<boolean>(true);
 
   const id = useResumeStore((state) => state.resume.id);
   const isPublic = useResumeStore((state) => state.resume.visibility === "public");
@@ -64,8 +66,8 @@ export const BuilderToolbar = () => {
   const onResetView = () => frameRef?.contentWindow?.postMessage({ type: "RESET_VIEW" }, "*");
   const onCenterView = () => frameRef?.contentWindow?.postMessage({ type: "CENTER_VIEW" }, "*");
   const onTogglePanMode = () => {
-    setPanMode(!panMode); // local button state
-    frameRef?.contentWindow?.postMessage({ type: "TOGGLE_PAN_MODE", panMode: !panMode }, "*"); // toggle artboard state
+    setPanMode(!panMode);
+    frameRef?.contentWindow?.postMessage({ type: "TOGGLE_PAN_MODE", panMode: !panMode }, "*");
   };
 
   return (
@@ -99,13 +101,7 @@ export const BuilderToolbar = () => {
 
         <Separator orientation="vertical" className="h-9" />
 
-        <Tooltip
-          content={
-            panMode
-              ? t`Scroll to Pan (Click to switch to Zoom)`
-              : t`Scroll to Zoom (Click to switch to Pan)`
-          }
-        >
+        <Tooltip content={panMode ? t`Scroll to Pan` : t`Scroll to Zoom`}>
           <Toggle className="rounded-none" pressed={panMode} onPressedChange={onTogglePanMode}>
             {panMode ? <ArrowsOutCardinal /> : <MagnifyingGlass />}
           </Toggle>
