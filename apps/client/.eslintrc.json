@@ -3,11 +3,14 @@
   "ignorePatterns": ["!**/*"],
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "files": ["*.ts", "*.tsx"],
       "extends": [
         "plugin:tailwindcss/recommended",
         "plugin:@tanstack/eslint-plugin-query/recommended"
       ],
+      "parserOptions": {
+        "projectService": "./apps/client/tsconfig.json"
+      },
       "settings": {
         "tailwindcss": {
           "callees": ["cn", "clsx", "cva"],
@@ -39,8 +42,59 @@
         "lingui/no-unlocalized-strings": [
           2,
           {
-            "ignoreFunction": ["cn"],
-            "ignoreAttribute": ["alt"]
+            "ignore": [
+              // Ignore strings which are a single "word" (no spaces)
+              // and doesn't start with an uppercase letter
+              "^(?![A-Z])\\S+$",
+              // Ignore UPPERCASE literals
+              // Example: const test = "FOO"
+              "^[A-Z0-9_-]+$"
+            ],
+            "ignoreNames": [
+              // Ignore matching className (case-insensitive)
+              { "regex": { "pattern": "className", "flags": "i" } },
+              // Ignore UPPERCASE names
+              // Example: test.FOO = "ola!"
+              { "regex": { "pattern": "^[A-Z0-9_-]+$" } },
+              "id",
+              "src",
+              "srcSet",
+              "styleName",
+              "placeholder",
+              "alt",
+              "type",
+              "width",
+              "height",
+              "displayName",
+              "Authorization"
+            ],
+            "ignoreFunctions": [
+              "cn",
+              "cva",
+              "track",
+              "Error",
+              "console.*",
+              "*headers.set",
+              "*.addEventListener",
+              "*.removeEventListener",
+              "*.postMessage",
+              "*.getElementById",
+              "*.dispatch",
+              "*.commit",
+              "*.includes",
+              "*.indexOf",
+              "*.endsWith",
+              "*.startsWith",
+              "require"
+            ],
+            // Following settings require typed linting https://typescript-eslint.io/getting-started/typed-linting/
+            "useTsTypes": true,
+            "ignoreMethodsOnTypes": [
+              // Ignore specified methods on Map and Set types
+              "Map.get",
+              "Map.has",
+              "Set.has"
+            ]
           }
         ],
         "lingui/t-call-in-function": 2,

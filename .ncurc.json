@@ -1,7 +1,14 @@
 {
   "$schema": "https://raw.githubusercontent.com/raineorshine/npm-check-updates/main/src/types/RunOptions.json",
   "upgrade": true,
+  "target": "minor",
   "install": "always",
   "packageManager": "pnpm",
-  "reject": ["eslint", "eslint-plugin-unused-imports", "@reactive-resume/*"]
+  "reject": [
+    "eslint",
+    "@swc/*",
+    "@swc-node/*",
+    "@reactive-resume/*",
+    "eslint-plugin-unused-imports"
+  ]
 }

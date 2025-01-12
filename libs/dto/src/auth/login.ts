@@ -1,12 +1,12 @@
 import { createZodDto } from "nestjs-zod/dto";
-import { z } from "nestjs-zod/z";
+import { z } from "zod";
 
 import { usernameSchema } from "../user";
 
 export const loginSchema = z
   .object({
     identifier: z.string().transform((value) => value.toLowerCase()),
-    password: z.password().min(6),
+    password: z.string().min(6),
   })
   .refine(
     (value) => {

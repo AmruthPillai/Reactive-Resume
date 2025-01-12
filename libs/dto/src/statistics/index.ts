@@ -1,5 +1,5 @@
 import { createZodDto } from "nestjs-zod/dto";
-import { z } from "nestjs-zod/z";
+import { z } from "zod";
 
 export const statisticsSchema = z.object({
   views: z.number().int().default(0),
