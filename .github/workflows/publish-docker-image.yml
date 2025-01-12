@@ -153,7 +153,7 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Deploy the latest image on rxresu.me
-        run: curl -Xk POST ${{ secrets.SERVICE_WEBHOOK }}
+        run: curl -kX POST ${{ secrets.SERVICE_WEBHOOK }}
 
       - name: Inform about the release on Discord
         uses: sarisia/actions-status-discord@v1.14.3
