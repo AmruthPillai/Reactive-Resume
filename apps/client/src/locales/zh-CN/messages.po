@@ -8,7 +8,7 @@ msgstr ""
 "Language: zh\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-01-11 11:27\n"
+"PO-Revision-Date: 2025-01-12 12:13\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -38,7 +38,7 @@ msgstr "<0>我花费了大量业余时间，独立开发了 Reactive Resume，�
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>我知道这个应用程序并不完美，但我希望它能日趋完善。</0> <1>如果您在创建简历时遇到任何问题，或者有有助于您和其他用户更轻松地创建简历的想法，请在仓库中提出问题或向我发送有关的电子邮件。</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:208
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:201
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr "<0>注意：</0>使用 OpenAI API 即表示您承认并接受 OpenAI 的<1>使用条款</1>和<2>隐私政策</2>。请注意，Reactive Resume 对任何不当或未经授权的服务使用不承担任何责任，由此产生的任何影响或责任仅由用户承担。"
 
@@ -98,12 +98,12 @@ msgstr "仅接受 {accept} 文件"
 msgid "Account"
 msgstr "账户"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:159
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:175
 msgid "Add a custom field"
 msgstr "添加自定义字段"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:117
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:164
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:120
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:167
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "增加一项"
@@ -146,7 +146,7 @@ msgstr "任何人都可以通过此链接查看或下载简历。"
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "任何人都可以通过此链接查看或下载简历。您可以在个人资料中附上此链接，或分享给招聘人员。"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:124
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:126
 msgid "Are you sure you want to delete this item?"
 msgstr "您确定要删除此项目吗？"
 
@@ -205,7 +205,7 @@ msgstr "备份码"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "备份码只包含小写字母或数字，而且必须正好是 10 个字符。"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:134
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:132
 msgid "Base URL"
 msgstr "基础 URL"
 
@@ -235,7 +235,7 @@ msgstr "构建于"
 msgid "By the community, for the community."
 msgstr "来自社区，服务社区。"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:131
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:133
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:154
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
@@ -306,7 +306,7 @@ msgstr "确认新密码"
 msgid "Continue"
 msgstr "继续"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:94
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:96
 msgid "Copy"
 msgstr "复制"
 
@@ -318,7 +318,7 @@ msgstr "复制链接到简历"
 msgid "Copy to Clipboard"
 msgstr "复制到剪贴板"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:167
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:173
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:242
 msgid "Create"
 msgstr "创建"
@@ -328,7 +328,7 @@ msgstr "创建"
 msgid "Create a new account"
 msgstr "创建账户"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:155
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:157
 msgid "Create a new item"
 msgstr "创建新条目"
 
@@ -385,9 +385,9 @@ msgstr "日期"
 msgid "Date or Date Range"
 msgstr "日期或日期范围"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:133
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:135
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:156
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:114
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:121
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:127
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:172
 msgid "Delete"
@@ -462,15 +462,15 @@ msgstr "下载 PDF"
 msgid "Downloads"
 msgstr "下载"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:169
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:175
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:98
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:105
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:95
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:156
 msgid "Duplicate"
 msgstr "复制"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:157
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:159
 msgid "Duplicate an existing item"
 msgstr "复制现有项目"
 
@@ -478,7 +478,7 @@ msgstr "复制现有项目"
 msgid "Duplicate an existing resume"
 msgstr "复制现有简历"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:90
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:92
 msgid "Edit"
 msgstr "编辑"
 
@@ -575,7 +575,7 @@ msgstr "字体变体"
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr "例如，您可以在此处注明您发送给的公司或者职位描述的链接。"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:189
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:182
 msgid "Forget"
 msgstr "遗弃"
 
@@ -658,8 +658,8 @@ msgstr "在这里，您可以更新您的账户信息，比如资料图片、姓
 msgid "Here, you can update your profile to customize and personalize your experience."
 msgstr "在这里，您可以更新个人资料，定制个性化的体验。"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:78
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:92
+#: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:80
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:94
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:186
 msgid "Hidden"
 msgstr "隐藏"
@@ -690,7 +690,7 @@ msgstr "公开展示您的简历"
 msgid "I always love to hear from the users of Reactive Resume with feedback or support. Here are some of the messages I've received. If you have any feedback, feel free to drop me an email at <0>{email}</0>."
 msgstr "我们十分欢迎用户对于 Reactive Resume 的反馈和支持。这是我们收到的一些信息，如果您有任何反馈，请随时发送邮件至 <0>{email}</0>。"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:94
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:83
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:53
 msgid "Icon"
 msgstr "图标"
@@ -793,9 +793,9 @@ msgstr "zhangsan@example.com"
 msgid "JSON"
 msgstr "JSON"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:152
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:158
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:132
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:138
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:109
 msgid "Keywords"
 msgstr "关键词"
@@ -809,7 +809,7 @@ msgstr "标签"
 msgid "Language"
 msgstr "语言"
 
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:82
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:83
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:139
 msgid "Last updated {lastUpdated}"
 msgstr "最后更新 {lastUpdated}"
@@ -865,7 +865,7 @@ msgid "Location"
 msgstr "位置"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:51
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:108
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:115
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:115
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:166
 msgid "Lock"
@@ -914,7 +914,7 @@ msgstr "2023 年 3 月至今"
 msgid "Margin"
 msgstr "边距"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:160
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:158
 msgid "Max Tokens"
 msgstr "最大 Token 数"
 
@@ -922,7 +922,7 @@ msgstr "最大 Token 数"
 msgid "MIT License"
 msgstr "MIT 许可证"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:147
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:145
 msgid "Model"
 msgstr "模型"
 
@@ -934,7 +934,7 @@ msgstr "模型"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:72
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:88
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:152
 msgid "Name"
 msgstr "名称"
@@ -944,7 +944,7 @@ msgctxt "Name of the Certification"
 msgid "Name"
 msgstr "名称"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:51
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:40
 msgid "Network"
 msgstr "网络"
 
@@ -969,10 +969,6 @@ msgstr "注意：这会降低您账户的安全性。"
 msgid "Notes"
 msgstr "注释"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:102
-msgid "Ollama Integration"
-msgstr "Ollama 集成"
-
 #: apps/client/src/pages/auth/verify-otp/page.tsx:82
 msgid "One-Time Password"
 msgstr "一次性密码"
@@ -984,7 +980,7 @@ msgstr "一次性密码"
 msgid "Oops, the server returned an error."
 msgstr "糟糕，服务器返回错误。"
 
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:90
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:97
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:77
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:148
 msgid "Open"
@@ -994,20 +990,23 @@ msgstr "打开"
 msgid "Open Source"
 msgstr "开源"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:121
-msgid "OpenAI / Ollama API Key"
-msgstr "OpenAI / Ollama API 密钥"
-
 #: apps/client/src/services/openai/change-tone.ts:35
 #: apps/client/src/services/openai/fix-grammar.ts:33
 #: apps/client/src/services/openai/improve-writing.ts:33
 msgid "OpenAI did not return any choices for your text."
 msgstr "OpenAI 没有为您的文本返回任何选项。"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:78
 #: apps/client/src/pages/home/sections/features/index.tsx:52
 msgid "OpenAI Integration"
 msgstr "集成 OpenAI"
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:119
+msgid "OpenAI/Ollama API Key"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
+msgid "OpenAI/Ollama Integration"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:168
@@ -1093,7 +1092,7 @@ msgstr "职位"
 msgid "Powered by"
 msgstr "技术支持："
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:113
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:94
 msgid "Powered by <0>Simple Icons</0>"
 msgstr "由 <0>Simple Icons</0> 支持"
 
@@ -1167,7 +1166,7 @@ msgstr "Reactive Resume 的蓬勃发展得益于其充满活力的社区。这�
 msgid "Redo"
 msgstr "恢复"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:98
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:156
 msgid "Remove"
 msgstr "移除"
@@ -1177,7 +1176,7 @@ msgid "Remove Page"
 msgstr "删除页面"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:110
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:94
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:101
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:86
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:152
 msgid "Rename"
@@ -1222,18 +1221,18 @@ msgstr "物美价廉。"
 msgid "Rounded"
 msgstr "圆角"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:168
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:174
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:131
 msgid "Save Changes"
 msgstr "保存更改"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:176
 msgid "Save Locally"
 msgstr "保存到本地"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:176
 msgid "Saved"
 msgstr "已保存"
 
@@ -1467,7 +1466,7 @@ msgstr "主题"
 msgid "There was an error connecting to the browser. Please make sure 'chrome' is running and reachable."
 msgstr "连接浏览器时出现错误。请确保谷歌浏览器正在运行并可连接。"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:126
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:128
 msgid "This action can be reverted by clicking on the undo button in the floating toolbar."
 msgstr "单击浮动工具栏中的撤消按钮即可恢复此操作。"
 
@@ -1549,7 +1548,7 @@ msgid "Undo"
 msgstr "撤销"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:52
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:103
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:110
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:105
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:161
 msgid "Unlock"
@@ -1563,7 +1562,7 @@ msgstr "解锁简历将允许您再次对其进行更改。"
 msgid "Unverified"
 msgstr "未验证"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:156
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:158
 msgid "Update an existing item"
 msgstr "更新现有项目"
 
@@ -1593,7 +1592,7 @@ msgid "User does not have an associated 'secrets' record. Please report this iss
 msgstr "用户没有关联的“秘密”记录。请在 GitHub 上报告此问题。"
 
 #: apps/client/src/pages/auth/register/page.tsx:119
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:66
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:55
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
 msgid "Username"
 msgstr "用户名"
@@ -1610,7 +1609,7 @@ msgstr "验证"
 msgid "Validated"
 msgstr "已验证"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:81
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:97
 msgid "Value"
 msgstr "值"
 
@@ -1635,9 +1634,13 @@ msgstr "第 4 版"
 msgid "Views"
 msgstr "查看"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:86
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:87
 msgid "Visible"
 msgstr "可见"
+
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:70
+msgid "Visit <0>Phosphor Icons</0> for a list of available icons"
+msgstr ""
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:61
 msgid "We verify your email address only to ensure that we can send you a password reset link in case you forget your password."
@@ -1648,7 +1651,7 @@ msgstr "我们验证您的电子邮件地址只是为了确保在您忘记密码
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:114
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:124
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:100
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:80
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:69
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:94
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:67
@@ -1661,9 +1664,9 @@ msgstr "网站"
 msgid "What's new in the latest version"
 msgstr "最新版本的新功能"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:157
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:163
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:137
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:143
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:114
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr "您可以通过用逗号或回车分隔来添加多个关键字。"
@@ -1672,11 +1675,11 @@ msgstr "您可以通过用逗号或回车分隔来添加多个关键字。"
 msgid "You can also enter your username."
 msgstr "您还可以输入您的用户名。"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:106
-msgid "You can integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens."
-msgstr "您只需将 API 密钥设置为 `sk-1234567890abcdef`，将基础 URL 设置为您的 Ollama URL（即 `http://localhost:11434/v1`），即可与 Ollama 集成。您还可以选择模型并设置最大 Token 数量。"
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:103
+msgid "You can also integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens as per your preference."
+msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:80
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:81
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
 msgstr "您可以利用 OpenAI API 来帮助您生成内容，或在撰写简历时提高写作水平。"
 
@@ -1684,7 +1687,7 @@ msgstr "您可以利用 OpenAI API 来帮助您生成内容，或在撰写简历
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
 msgstr "您可以跟踪简历的浏览量，或通过启用公开共享功能跟踪有多少人下载了简历。"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:86
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:87
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr "您可以选择<0>获取您自己的 OpenAI API 密钥</0>，此密钥使您能够根据需要使用 API。或者，如果您希望完全禁用 Reactive Resume 中的 AI 功能，只需从设置中删除密钥即可。"
 
@@ -1701,7 +1704,7 @@ msgstr "您有新邮件！"
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
 msgstr "已成功删除您的账户和所有数据。再见！"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:198
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:191
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "您的 API 密钥安全地存储在浏览器的本地存储中，并且仅会在通过官方 SDK 向 OpenAI 发出请求时使用。请放心，除非与 OpenAI 进行服务交互，否则您的密钥不会传输到任何外部服务器。"
 
