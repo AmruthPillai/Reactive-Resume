@@ -566,7 +566,12 @@ export const Chikorita = ({ columns, isFirstPage = false }: TemplateProps) => {
 
   return (
     <div className="grid min-h-[inherit] grid-cols-3">
-      <div className={cn("main p-custom group space-y-4", sidebar.length !== 0 ? "col-span-2" : "col-span-3")}>
+      <div
+        className={cn(
+          "main p-custom group space-y-4",
+          sidebar.length > 0 ? "col-span-2" : "col-span-3",
+        )}
+      >
         {isFirstPage && <Header />}
 
         {main.map((section) => (
@@ -574,7 +579,12 @@ export const Chikorita = ({ columns, isFirstPage = false }: TemplateProps) => {
         ))}
       </div>
 
-      <div className={cn("sidebar p-custom group h-full space-y-4 bg-primary text-background", sidebar.length === 0 && "hidden")}>
+      <div
+        className={cn(
+          "sidebar p-custom group h-full space-y-4 bg-primary text-background",
+          sidebar.length === 0 && "hidden",
+        )}
+      >
         {sidebar.map((section) => (
           <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
         ))}
