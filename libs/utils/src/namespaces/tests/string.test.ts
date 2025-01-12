@@ -6,7 +6,6 @@ import {
   getInitials,
   isEmptyString,
   isUrl,
-  kebabCase,
   processUsername,
 } from "../string";
 
@@ -37,16 +36,6 @@ describe("extractUrl", () => {
   it("extracts a URL from a string", () => {
     expect(extractUrl("Visit https://example.com today!")).toBe("https://example.com");
     expect(extractUrl("No URL here.")).toBeNull();
-  });
-});
-
-describe("kebabCase", () => {
-  it("converts a string to kebab-case", () => {
-    expect(kebabCase("fooBar")).toBe("foo-bar");
-    expect(kebabCase("Foo Bar")).toBe("foo-bar");
-    expect(kebabCase("foo_bar")).toBe("foo-bar");
-    expect(kebabCase("")).toBe("");
-    expect(kebabCase(null)).toBe("");
   });
 });
 

@@ -209,6 +209,8 @@ export class PrinterService {
 
       return resumeUrl;
     } catch (error) {
+      this.logger.error(error);
+
       throw new InternalServerErrorException(
         ErrorMessage.ResumePrinterError,
         (error as Error).message,

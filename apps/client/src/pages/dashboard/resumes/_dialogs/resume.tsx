@@ -33,7 +33,8 @@ import {
   Input,
   Tooltip,
 } from "@reactive-resume/ui";
-import { cn, generateRandomName, kebabCase } from "@reactive-resume/utils";
+import { cn, generateRandomName } from "@reactive-resume/utils";
+import slugify from "@sindresorhus/slugify";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -71,7 +72,7 @@ export const ResumeDialog = () => {
   }, [isOpen, payload]);
 
   useEffect(() => {
-    const slug = kebabCase(form.watch("title"));
+    const slug = slugify(form.watch("title"));
     form.setValue("slug", slug);
   }, [form.watch("title")]);
 
@@ -122,7 +123,7 @@ export const ResumeDialog = () => {
   const onGenerateRandomName = () => {
     const name = generateRandomName();
     form.setValue("title", name);
-    form.setValue("slug", kebabCase(name));
+    form.setValue("slug", slugify(name));
   };
 
   const onCreateSample = async () => {
@@ -130,7 +131,7 @@ export const ResumeDialog = () => {
 
     await duplicateResume({
       title: randomName,
-      slug: kebabCase(randomName),
+      slug: slugify(randomName),
       data: sampleResume,
     });
 

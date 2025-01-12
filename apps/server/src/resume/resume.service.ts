@@ -8,7 +8,8 @@ import { Prisma } from "@prisma/client";
 import { CreateResumeDto, ImportResumeDto, ResumeDto, UpdateResumeDto } from "@reactive-resume/dto";
 import { defaultResumeData, ResumeData } from "@reactive-resume/schema";
 import type { DeepPartial } from "@reactive-resume/utils";
-import { ErrorMessage, generateRandomName, kebabCase } from "@reactive-resume/utils";
+import { ErrorMessage, generateRandomName } from "@reactive-resume/utils";
+import slugify from "@sindresorhus/slugify";
 import deepmerge from "deepmerge";
 import { PrismaService } from "nestjs-prisma";
 
@@ -40,7 +41,7 @@ export class ResumeService {
         userId,
         title: createResumeDto.title,
         visibility: createResumeDto.visibility,
-        slug: createResumeDto.slug ?? kebabCase(createResumeDto.title),
+        slug: createResumeDto.slug ?? slugify(createResumeDto.title),
       },
     });
   }
@@ -54,7 +55,7 @@ export class ResumeService {
         visibility: "private",
         data: importResumeDto.data,
         title: importResumeDto.title ?? randomTitle,
-        slug: importResumeDto.slug ?? kebabCase(randomTitle),
+        slug: importResumeDto.slug ?? slugify(randomTitle),
       },
     });
   }

@@ -30,17 +30,6 @@ export const extractUrl = (string: string) => {
   return result ? result[0] : null;
 };
 
-export const kebabCase = (string?: string | null) => {
-  if (!string) return "";
-
-  return (
-    string
-      .match(/[A-Z]{2,}(?=[A-Z][a-z]+\d*|\b)|[A-Z]?[a-z]+\d*|[A-Z]|\d+/gu)
-      ?.join("-")
-      .toLowerCase() ?? ""
-  );
-};
-
 export const generateRandomName = () => {
   return uniqueNamesGenerator({
     dictionaries: [adjectives, adjectives, animals],

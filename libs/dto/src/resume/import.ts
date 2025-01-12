@@ -1,11 +1,15 @@
 import { resumeDataSchema } from "@reactive-resume/schema";
-import { kebabCase } from "@reactive-resume/utils";
+import slugify from "@sindresorhus/slugify";
 import { createZodDto } from "nestjs-zod/dto";
 import { z } from "zod";
 
 export const importResumeSchema = z.object({
   title: z.string().optional(),
-  slug: z.string().min(1).transform(kebabCase).optional(),
+  slug: z
+    .string()
+    .min(1)
+    .transform((value) => slugify(value))
+    .optional(),
   visibility: z.enum(["public", "private"]).default("private").optional(),
   data: resumeDataSchema,
 });

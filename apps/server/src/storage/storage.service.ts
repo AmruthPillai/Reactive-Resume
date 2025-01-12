@@ -1,6 +1,7 @@
 import { Injectable, InternalServerErrorException, Logger, OnModuleInit } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { createId } from "@paralleldrive/cuid2";
+import slugify from "@sindresorhus/slugify";
 import { MinioClient, MinioService } from "nestjs-minio-client";
 import sharp from "sharp";
 
@@ -116,14 +117,19 @@ export class StorageService implements OnModuleInit {
   ) {
     const extension = type === "resumes" ? "pdf" : "jpg";
     const storageUrl = this.configService.getOrThrow<string>("STORAGE_URL");
-    const filepath = `${userId}/${type}/${filename}.${extension}`;
+
+    let normalizedFilename = slugify(filename);
+    if (!normalizedFilename) normalizedFilename = createId();
+
+    const filepath = `${userId}/${type}/${normalizedFilename}.${extension}`;
     const url = `${storageUrl}/${filepath}`;
+
     const metadata =
       extension === "jpg"
         ? { "Content-Type": "image/jpeg" }
         : {
             "Content-Type": "application/pdf",
-            "Content-Disposition": `attachment; filename=${filename}.${extension}`,
+            "Content-Disposition": `attachment; filename=${normalizedFilename}.${extension}`,
           };
 
     try {
