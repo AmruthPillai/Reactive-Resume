@@ -119,6 +119,7 @@ export const RegisterPage = () => {
                   <FormLabel>{t`Username`}</FormLabel>
                   <FormControl>
                     <Input
+                      className="lowercase"
                       placeholder={t({
                         message: "john.doe",
                         context:
@@ -140,6 +141,7 @@ export const RegisterPage = () => {
                   <FormLabel>{t`Email`}</FormLabel>
                   <FormControl>
                     <Input
+                      className="lowercase"
                       placeholder={t({
                         message: "john.doe@example.com",
                         context:

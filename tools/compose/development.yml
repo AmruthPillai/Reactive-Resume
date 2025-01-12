@@ -1,5 +1,3 @@
-version: "3.8"
-
 # In this Docker Compose example, we only fire up the services required for local development.
 # This is not advised for production use as it exposes ports to the database insecurely.
 # If you're looking for a production-ready Docker Compose file, check out the `traefik.yml` file.
@@ -23,9 +21,22 @@ services:
       timeout: 5s
       retries: 5
 
+  # Adminer (for database management)
+  adminer:
+    image: shyim/adminerevo:latest
+    restart: unless-stopped
+    ports:
+      - 5555:8080
+    environment:
+      ADMINER_DEFAULT_DRIVER: pgsql
+      ADMINER_DEFAULT_SERVER: postgres
+      ADMINER_DEFAULT_USER: ${POSTGRES_USER:-postgres}
+      ADMINER_DEFAULT_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      ADMINER_DEFAULT_DB: ${POSTGRES_DB:-postgres}
+
   # Storage (for image uploads)
   minio:
-    image: minio/minio
+    image: minio/minio:latest
     restart: unless-stopped
     command: server /data
     ports:
@@ -41,7 +52,7 @@ services:
 
   # Chrome Browser (for printing and previews)
   chrome:
-    image: ghcr.io/browserless/chromium:latest
+    image: ghcr.io/browserless/chromium:v2.18.0 # Upgrading to newer versions causes issues
     restart: unless-stopped
     ports:
       - ${CHROME_PORT:-8080}:3000

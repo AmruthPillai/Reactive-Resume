@@ -152,7 +152,11 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
-      - uses: sarisia/actions-status-discord@v1.14.3
+      - name: Deploy the latest image on rxresu.me
+        run: curl -X POST ${{ secrets.SERVICE_WEBHOOK }}
+
+      - name: Inform about the release on Discord
+        uses: sarisia/actions-status-discord@v1.14.3
         if: always()
         with:
           username: ReleaseBot

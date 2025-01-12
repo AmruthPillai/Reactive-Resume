@@ -1,5 +1,3 @@
-version: "3.8"
-
 # In this Docker Compose example, it assumes that you maintain a reverse proxy externally (or chose not to).
 # The only two exposed ports here are from minio (:9000) and the app itself (:3000).
 # If these ports are changed, ensure that the env vars passed to the app are also changed accordingly.
@@ -23,7 +21,7 @@ services:
 
   # Storage (for image uploads)
   minio:
-    image: minio/minio
+    image: minio/minio:latest
     restart: unless-stopped
     command: server /data
     ports:
@@ -36,7 +34,7 @@ services:
 
   # Chrome Browser (for printing and previews)
   chrome:
-    image: ghcr.io/browserless/chromium:latest
+    image: ghcr.io/browserless/chromium:v2.18.0 # Upgrading to newer versions causes issues
     restart: unless-stopped
     environment:
       TIMEOUT: 10000

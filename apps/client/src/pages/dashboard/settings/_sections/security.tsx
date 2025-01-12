@@ -84,7 +84,7 @@ export const SecuritySettings = () => {
                     <FormItem>
                       <FormLabel>{t`New Password`}</FormLabel>
                       <FormControl>
-                        <Input type="password" {...field} />
+                        <Input type="password" autoComplete="new-password" {...field} />
                       </FormControl>
                     </FormItem>
                   )}
@@ -97,7 +97,7 @@ export const SecuritySettings = () => {
                     <FormItem>
                       <FormLabel>{t`Confirm New Password`}</FormLabel>
                       <FormControl>
-                        <Input type="password" {...field} />
+                        <Input type="password" autoComplete="new-password" {...field} />
                       </FormControl>
                       {fieldState.error && (
                         <FormDescription className="text-error-foreground">

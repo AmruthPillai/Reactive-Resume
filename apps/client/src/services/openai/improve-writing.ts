@@ -2,9 +2,10 @@
 
 import { t } from "@lingui/macro";
 
-import { openai } from "./client";
-import { useOpenAiStore } from "@/client/stores/openai";
 import { DEFAULT_MAX_TOKENS, DEFAULT_MODEL } from "@/client/constants/llm";
+import { useOpenAiStore } from "@/client/stores/openai";
+
+import { openai } from "./client";
 
 const PROMPT = `You are an AI writing assistant specialized in writing copy for resumes.
 Do not return anything else except the text you improved. It should not begin with a newline. It should not have any prefix or suffix text.

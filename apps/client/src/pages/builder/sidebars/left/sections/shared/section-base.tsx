@@ -70,12 +70,15 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
   const onCreate = () => {
     open("create", { id });
   };
+
   const onUpdate = (item: T) => {
     open("update", { id, item });
   };
+
   const onDuplicate = (item: T) => {
     open("duplicate", { id, item });
   };
+
   const onDelete = (item: T) => {
     open("delete", { id, item });
   };

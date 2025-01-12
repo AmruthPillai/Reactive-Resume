@@ -8,7 +8,7 @@ msgstr ""
 "Language: he\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-09-02 10:08\n"
+"PO-Revision-Date: 2025-01-12 12:13\n"
 "Last-Translator: \n"
 "Language-Team: Hebrew\n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3;\n"
@@ -38,7 +38,7 @@ msgstr "<0>בניתי את Reactive Resume בעיקר בעצמי בזמן הפנ
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>אין לי ספק שהיישום רחוק מלהיות מושלם אבל אני חותר לכך שיהיה כזה.</0><1>אם נתקלת בבעיות במהלך יצירת קורות החיים שלך או שיש לך רעיון שיכול לסייע לך ולמשתמשים אחרים ביצירת קורות חיים יותר בקלות, אפשר לדוח על הצעה/תקלה במאגר הקוד או לשלוח לי הודעה על כך בדוא״ל.</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:201
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr "<0>לתשומת ליבך: </0>עצם השימוש ב־API של OpenAI מהווה הכרה והסכמה ל<1>תנאי השימוש</1> ול<2>מדיניות הפרטיות</2> שנקבעו על ידי OpenAI. נא לשים לב ש־Reactive Resume אינו אחראי במקרים של שימוש לא הולם או לא מורשה בשירות, לרבות השלכות נגזרות או התחייבויות שחלות באופן בלעדי על המשתמש."
 
@@ -98,12 +98,12 @@ msgstr "מקבל רק קובצי {accept}"
 msgid "Account"
 msgstr "חשבון"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:159
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:175
 msgid "Add a custom field"
 msgstr "הוספת שדה מותאם אישית"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:117
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:164
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:120
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:167
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "הוספת פריט חדש"
@@ -146,7 +146,7 @@ msgstr "לכל מי שיש את הקישור יש אפשרות להוריד את
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "כל מי שמחזיק בקישור הזה יכול לצפות ולהוריד את קורות החיים. אפשר לשתף אותם בפרופיל שלך או עם מגייסים ומגייסות."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:124
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:126
 msgid "Are you sure you want to delete this item?"
 msgstr "למחוק את הפריט הזה?"
 
@@ -205,7 +205,7 @@ msgstr "קוד גיבוי"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "קודים למטרות גיבוי יכולים להכיל רק אותיות לטיניות קטנות או מספרים והם חייבים להיות באורך של 10 תווים בדיוק."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:133
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:132
 msgid "Base URL"
 msgstr ""
 
@@ -235,7 +235,7 @@ msgstr "נבנה עם"
 msgid "By the community, for the community."
 msgstr "על ידי הקהילה ועבורה."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:131
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:133
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:154
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
@@ -306,7 +306,7 @@ msgstr "אישור הסיסמה החדשה"
 msgid "Continue"
 msgstr "המשך"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:94
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:96
 msgid "Copy"
 msgstr "העתקה"
 
@@ -318,7 +318,7 @@ msgstr "העתקת הקישור לקורות החיים"
 msgid "Copy to Clipboard"
 msgstr "העתקה ללוח הגזירים"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:167
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:173
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:242
 msgid "Create"
 msgstr "יצירה"
@@ -328,7 +328,7 @@ msgstr "יצירה"
 msgid "Create a new account"
 msgstr "יצירת חשבון חדש"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:155
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:157
 msgid "Create a new item"
 msgstr "יצירת פריט חדש"
 
@@ -385,9 +385,9 @@ msgstr "תאריך"
 msgid "Date or Date Range"
 msgstr "תאריך או טווח תאריכים"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:133
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:135
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:156
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:114
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:121
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:127
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:172
 msgid "Delete"
@@ -462,15 +462,15 @@ msgstr "הורדת PDF"
 msgid "Downloads"
 msgstr "הורדות"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:169
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:175
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:98
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:105
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:95
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:156
 msgid "Duplicate"
 msgstr "שכפול"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:157
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:159
 msgid "Duplicate an existing item"
 msgstr "שכפול פריט קיים"
 
@@ -478,7 +478,7 @@ msgstr "שכפול פריט קיים"
 msgid "Duplicate an existing resume"
 msgstr "שכפול קורות חיים קיימים"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:90
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:92
 msgid "Edit"
 msgstr "עריכה"
 
@@ -575,7 +575,7 @@ msgstr "הגווני גופן"
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr "למשל, מידע לגבי לאילו חברות שלחת את קורות החיים האלה או את תיאורי התפקיד אפשר לתעד כאן."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:186
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:182
 msgid "Forget"
 msgstr "לשכוח"
 
@@ -658,8 +658,8 @@ msgstr "כאן אפשר לעדכן את פרטי החשבון שלך כגון ת
 msgid "Here, you can update your profile to customize and personalize your experience."
 msgstr "כאן אפשר לעדכן את הפרופיל שלך כדי להתאים ולהפוך את החוויה שלך לאישית יותר."
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:78
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:92
+#: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:80
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:94
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:186
 msgid "Hidden"
 msgstr "מוסתר"
@@ -690,7 +690,7 @@ msgstr "אחסון ציבורי של קורות החיים שלך"
 msgid "I always love to hear from the users of Reactive Resume with feedback or support. Here are some of the messages I've received. If you have any feedback, feel free to drop me an email at <0>{email}</0>."
 msgstr "תמיד מעניין אותי לשמוע ממשתמשי Reactive Resume בנוגע למשוב שלהם. הנה חלק מההודעות שקיבלתי. אם יש לך משוב, אשמח לקבל ממך הודעה בדוא״ל אל <0>{email}</0>."
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:94
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:83
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:53
 msgid "Icon"
 msgstr "סמל"
@@ -793,9 +793,9 @@ msgstr "israel.israeli@israel.gov.il"
 msgid "JSON"
 msgstr "JSON"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:152
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:158
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:132
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:138
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:109
 msgid "Keywords"
 msgstr "מילות מפתח"
@@ -809,7 +809,7 @@ msgstr "תווית"
 msgid "Language"
 msgstr "שפה"
 
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:82
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:83
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:139
 msgid "Last updated {lastUpdated}"
 msgstr "העדכון האחרון היה ב־{lastUpdated}"
@@ -865,7 +865,7 @@ msgid "Location"
 msgstr "מקום"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:51
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:108
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:115
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:115
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:166
 msgid "Lock"
@@ -914,7 +914,7 @@ msgstr "מרץ 2023 - כרגע"
 msgid "Margin"
 msgstr "מרווח"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:159
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:158
 msgid "Max Tokens"
 msgstr ""
 
@@ -922,7 +922,7 @@ msgstr ""
 msgid "MIT License"
 msgstr "רישיון MIT"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:146
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:145
 msgid "Model"
 msgstr ""
 
@@ -934,7 +934,7 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:72
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:88
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:152
 msgid "Name"
 msgstr "שם"
@@ -944,7 +944,7 @@ msgctxt "Name of the Certification"
 msgid "Name"
 msgstr "שם"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:51
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:40
 msgid "Network"
 msgstr "רשת"
 
@@ -969,10 +969,6 @@ msgstr "לתשומת ליבך: זה ישפר את ההגנה על החשבון �
 msgid "Notes"
 msgstr "הערות"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:101
-msgid "Ollama Integration"
-msgstr ""
-
 #: apps/client/src/pages/auth/verify-otp/page.tsx:82
 msgid "One-Time Password"
 msgstr "סיסמה חד־פעמית"
@@ -984,7 +980,7 @@ msgstr "סיסמה חד־פעמית"
 msgid "Oops, the server returned an error."
 msgstr "אופס, השרת החזיר שגיאה."
 
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:90
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:97
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:77
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:148
 msgid "Open"
@@ -994,20 +990,23 @@ msgstr "פתיחה"
 msgid "Open Source"
 msgstr "קוד פתוח"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
-msgid "OpenAI / Ollama API Key"
-msgstr ""
-
-#: apps/client/src/services/openai/change-tone.ts:34
-#: apps/client/src/services/openai/fix-grammar.ts:32
-#: apps/client/src/services/openai/improve-writing.ts:32
+#: apps/client/src/services/openai/change-tone.ts:35
+#: apps/client/src/services/openai/fix-grammar.ts:33
+#: apps/client/src/services/openai/improve-writing.ts:33
 msgid "OpenAI did not return any choices for your text."
 msgstr "OpenAI לא החזיר אפשרויות לטקסט שלך."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:77
 #: apps/client/src/pages/home/sections/features/index.tsx:52
 msgid "OpenAI Integration"
 msgstr "שילוב מול OpenAI"
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:119
+msgid "OpenAI/Ollama API Key"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
+msgid "OpenAI/Ollama Integration"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:168
@@ -1093,7 +1092,7 @@ msgstr "תפקיד"
 msgid "Powered by"
 msgstr "מופעל על גבי"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:113
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:94
 msgid "Powered by <0>Simple Icons</0>"
 msgstr "נעזר ב־<0>Simple Icons</0>"
 
@@ -1167,7 +1166,7 @@ msgstr "מיזם Reactive Resume משגשג בזכות הקהילה התוססת
 msgid "Redo"
 msgstr "ביצוע מחדש"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:98
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:156
 msgid "Remove"
 msgstr "הסרה"
@@ -1177,7 +1176,7 @@ msgid "Remove Page"
 msgstr "הסרת עמוד"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:110
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:94
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:101
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:86
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:152
 msgid "Rename"
@@ -1222,18 +1221,18 @@ msgstr "עשיר ביכולות, לא בממון."
 msgid "Rounded"
 msgstr "מעוגל"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:168
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:174
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:131
 msgid "Save Changes"
 msgstr "שמירת שינויים"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:176
 msgid "Save Locally"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:180
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:176
 msgid "Saved"
 msgstr ""
 
@@ -1449,14 +1448,6 @@ msgstr "המלצות"
 msgid "Text Color"
 msgstr "צבע כתב"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:26
-msgid "That doesn't look like a valid OpenAI API key."
-msgstr "זה לא נראה כמו מפתח API תקף של OpenAI."
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:30
-msgid "That doesn't look like a valid URL"
-msgstr ""
-
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
 msgid "The passwords you entered do not match."
 msgstr "הסיסמאות שמילאת לא זהות."
@@ -1475,7 +1466,7 @@ msgstr "ערכת עיצוב"
 msgid "There was an error connecting to the browser. Please make sure 'chrome' is running and reachable."
 msgstr "קרתה תקלה בחיבור לדפדפן. נא לוודא ש־‚chrome’ פעיל ונגיש."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:126
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:128
 msgid "This action can be reverted by clicking on the undo button in the floating toolbar."
 msgstr "אפשר לחזור אחורה מהפעולה הזאת על ידי לחיצה על כפתור ההחזרה בסרגל הכלים המרחף."
 
@@ -1557,7 +1548,7 @@ msgid "Undo"
 msgstr "החזרה"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:52
-#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:103
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:110
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:105
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:161
 msgid "Unlock"
@@ -1571,7 +1562,7 @@ msgstr "שחרור קורות חיים יאפשר לערוך בו שינויים
 msgid "Unverified"
 msgstr "לא מאומת"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:156
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:158
 msgid "Update an existing item"
 msgstr "עדכון פריט קיים"
 
@@ -1601,7 +1592,7 @@ msgid "User does not have an associated 'secrets' record. Please report this iss
 msgstr "למשתמש אין רשומת ‚סודות’ (secrets) משויכת אליו. נא לדווח על התקלה הזאת ב־GitHub."
 
 #: apps/client/src/pages/auth/register/page.tsx:119
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:66
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:55
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
 msgid "Username"
 msgstr "שם משתמש"
@@ -1618,7 +1609,7 @@ msgstr "תיקוף"
 msgid "Validated"
 msgstr "תקף"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:81
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:97
 msgid "Value"
 msgstr "ערך"
 
@@ -1643,9 +1634,13 @@ msgstr "גרסה 4"
 msgid "Views"
 msgstr "צפיות"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:86
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:87
 msgid "Visible"
 msgstr "גלוי"
+
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:70
+msgid "Visit <0>Phosphor Icons</0> for a list of available icons"
+msgstr ""
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:61
 msgid "We verify your email address only to ensure that we can send you a password reset link in case you forget your password."
@@ -1656,7 +1651,7 @@ msgstr "אנו מאמתים את כתובת הדוא״ל שלך רק כדי לו
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:114
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:124
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:100
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:80
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:69
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:94
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:67
@@ -1669,9 +1664,9 @@ msgstr "אתר אינטרנט"
 msgid "What's new in the latest version"
 msgstr "מה חדש בגרסה העדכנית"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:157
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:163
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
-#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:137
+#: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:143
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:114
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr "אפשר להוסיף מספר מילות מפתח על ידי הפרדתן בפסיק או בלחיצה על Enter."
@@ -1680,11 +1675,11 @@ msgstr "אפשר להוסיף מספר מילות מפתח על ידי הפרד�
 msgid "You can also enter your username."
 msgstr "אפשר גם למלא את שם המשתמש שלך."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:105
-msgid "You can integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens."
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:103
+msgid "You can also integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens as per your preference."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:81
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
 msgstr "אפשר להשתמש ב־API של OpenAI כדי לסייע לך לייצא תוכן, או לשפר את הכתיבה שלך בעת כתיבת קורות החיים שלך."
 
@@ -1692,7 +1687,7 @@ msgstr "אפשר להשתמש ב־API של OpenAI כדי לסייע לך ליי�
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
 msgstr "אפשר לעקוב אחר מספר הצפיות או אחר ההורדות של קורות החיים על ידי הפעלת שיתוף ציבורי."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:85
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:87
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr "יש לך אפשרות <0>לקבל מפתח API משלך ל־OpenAI</0>. המפתח הזה מאפשר לך למנף את ה־API כפי שנראה לך לנכון. לחלופין, כדי להשבית את אפשרויות הבינה המלאכותית לחלוטין ב־Reactive Resume, אפשר פשוט להסיר את המפתח מההגדרות שלך."
 
@@ -1709,7 +1704,7 @@ msgstr "קיבלת הודעה!"
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
 msgstr "החשבון וכל הנתונים שלך נמחקו בהצלחה. להתראות ובהצלחה!"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:195
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:191
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "מפתח ה־API שלך מאוחסן בדפדפן מקומית ונעשה בו שימוש רק בעת שליחת בקשות ל־OpenAI דרך ה־SDK הרשמי שלהם. אנו מתחייבים שהמפתח שלך לא מועבר לשרת חיצוני מלבד למטרות תפעול השירותים של OpenAI."
 
@@ -1732,3 +1727,4 @@ msgstr "התקרבות"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:100
 msgid "Zoom Out"
 msgstr "התרחקות"
+

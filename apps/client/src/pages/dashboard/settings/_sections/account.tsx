@@ -151,7 +151,7 @@ export const AccountSettings = () => {
               <FormItem>
                 <FormLabel>{t`Name`}</FormLabel>
                 <FormControl>
-                  <Input {...field} />
+                  <Input autoComplete="name" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -165,7 +165,7 @@ export const AccountSettings = () => {
               <FormItem>
                 <FormLabel>{t`Username`}</FormLabel>
                 <FormControl>
-                  <Input {...field} />
+                  <Input autoComplete="username" className="lowercase" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -179,7 +179,7 @@ export const AccountSettings = () => {
               <FormItem>
                 <FormLabel>{t`Email`}</FormLabel>
                 <FormControl>
-                  <Input type="email" {...field} />
+                  <Input type="email" autoComplete="email" className="lowercase" {...field} />
                 </FormControl>
                 <FormDescription
                   className={cn(

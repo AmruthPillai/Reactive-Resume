@@ -89,7 +89,12 @@ export const LoginPage = () => {
                 <FormItem>
                   <FormLabel>{t`Email`}</FormLabel>
                   <FormControl>
-                    <Input placeholder="john.doe@example.com" {...field} />
+                    <Input
+                      autoComplete="email"
+                      className="lowercase"
+                      placeholder="john.doe@example.com"
+                      {...field}
+                    />
                   </FormControl>
                   <FormDescription>{t`You can also enter your username.`}</FormDescription>
                   <FormMessage />
@@ -104,7 +109,7 @@ export const LoginPage = () => {
                 <FormItem>
                   <FormLabel>{t`Password`}</FormLabel>
                   <FormControl>
-                    <Input type="password" {...field} />
+                    <Input type="password" autoComplete="password" {...field} />
                   </FormControl>
                   <FormDescription>
                     <Trans>

@@ -19,33 +19,30 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 2
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v3.0.0
+        uses: pnpm/action-setup@v4.0.0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4.0.2
+        uses: actions/setup-node@v4.1.0
         with:
           cache: "pnpm"
-          node-version: 20.17.0
+          node-version: 22
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
 
       - name: Lint
-        run: pnpm lint
+        run: pnpm run lint
 
       - name: Format
-        run: pnpm format:check
+        run: pnpm run format:check
 
       - name: Test
-        run: pnpm test
+        run: pnpm run test
 
       - name: Build
-        run: pnpm build
-        env:
-          NODE_ENV: production
-          NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
+        run: pnpm run build

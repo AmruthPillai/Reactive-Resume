@@ -81,7 +81,7 @@ export const VerifyOtpPage = () => {
                 <FormItem>
                   <FormLabel>{t`One-Time Password`}</FormLabel>
                   <FormControl>
-                    <Input placeholder="123456" {...field} />
+                    <Input placeholder="123456" autoComplete="one-time-code" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
