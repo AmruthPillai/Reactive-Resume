@@ -1,6 +1,7 @@
 import { defaultResumeData, idSchema, resumeDataSchema } from "@reactive-resume/schema";
+import { dateSchema } from "@reactive-resume/utils";
 import { createZodDto } from "nestjs-zod/dto";
-import { z } from "nestjs-zod/z";
+import { z } from "zod";
 
 import { userSchema } from "../user";
 
@@ -13,8 +14,8 @@ export const resumeSchema = z.object({
   locked: z.boolean().default(false),
   userId: idSchema,
   user: userSchema.optional(),
-  createdAt: z.date().or(z.dateString()),
-  updatedAt: z.date().or(z.dateString()),
+  createdAt: dateSchema,
+  updatedAt: dateSchema,
 });
 
 export class ResumeDto extends createZodDto(resumeSchema) {}

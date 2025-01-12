@@ -1,5 +1,5 @@
 import { createZodDto } from "nestjs-zod/dto";
-import { z } from "nestjs-zod/z";
+import { z } from "zod";
 
 export const messageSchema = z.object({ message: z.string() });
 

@@ -1,5 +1,5 @@
 import { createZodDto } from "nestjs-zod/dto";
-import { z } from "nestjs-zod/z";
+import { z } from "zod";
 
 const authProvidersSchema = z.array(z.enum(["email", "github", "google"]));
 

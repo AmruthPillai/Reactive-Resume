@@ -18,7 +18,7 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { t, Trans } from "@lingui/macro";
+import { t } from "@lingui/macro";
 import { ArrowCounterClockwise, DotsSixVertical, Plus, TrashSimple } from "@phosphor-icons/react";
 import { defaultMetadata } from "@reactive-resume/schema";
 import { Button, Portal, Tooltip } from "@reactive-resume/ui";
@@ -92,9 +92,7 @@ type SectionProps = {
 };
 
 const Section = ({ id, isDragging = false }: SectionProps) => {
-  const name = useResumeStore((state) =>
-    get(state.resume.data.sections, `${id}.name`, id),
-  ) as string;
+  const name = useResumeStore((state) => get(state.resume.data.sections, `${id}.name`, id));
 
   return (
     <div
@@ -229,13 +227,12 @@ export const LayoutSection = () => {
 
             const main = page[0];
             const sidebar = page[1];
+            const pageNumber = pageIndex + 1;
 
             return (
               <div key={pageIndex} className="rounded border p-3 pb-4">
                 <div className="flex items-center justify-between">
-                  <p className="mb-3 text-xs font-bold">
-                    <Trans>Page {pageIndex + 1}</Trans>
-                  </p>
+                  <p className="mb-3 text-xs font-bold">{t`Page ${pageNumber}`}</p>
 
                   {pageIndex !== 0 && (
                     <Tooltip content={t`Remove Page`}>

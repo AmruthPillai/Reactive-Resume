@@ -114,7 +114,7 @@ export class ResumeService {
           title: updateResumeDto.title,
           slug: updateResumeDto.slug,
           visibility: updateResumeDto.visibility,
-          data: updateResumeDto.data as unknown as Prisma.JsonObject,
+          data: updateResumeDto.data as Prisma.JsonObject,
         },
         where: { userId_id: { userId, id } },
       });
