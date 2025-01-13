@@ -1,6 +1,6 @@
-import { FilterKeys } from "@reactive-resume/utils";
 import { z } from "zod";
 
+import { FilterKeys } from "../shared";
 import { idSchema } from "../shared";
 import { awardSchema } from "./award";
 import { certificationSchema } from "./certification";

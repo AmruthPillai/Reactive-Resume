@@ -1,4 +1,4 @@
-import { ResumeData } from ".";
+import { ResumeData } from "./index";
 
 export const sampleResume: ResumeData = {
   basics: {
