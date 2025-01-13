@@ -1,5 +1,3 @@
-// import "prismjs/themes/prism.min.css";
-
 import { t } from "@lingui/macro";
 import { useTheme } from "@reactive-resume/hooks";
 import { Label, Switch } from "@reactive-resume/ui";
