@@ -296,6 +296,9 @@ importers:
       prisma:
         specifier: ^5.22.0
         version: 5.22.0
+      prismjs:
+        specifier: ^1.29.0
+        version: 1.29.0
       puppeteer:
         specifier: ^23.11.1
         version: 23.11.1(typescript@5.7.3)
@@ -326,6 +329,9 @@ importers:
       react-router:
         specifier: ^7.1.1
         version: 7.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-simple-code-editor:
+        specifier: ^0.14.1
+        version: 0.14.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-zoom-pan-pinch:
         specifier: ^3.6.1
         version: 3.6.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -507,6 +513,9 @@ importers:
       '@types/passport-local':
         specifier: ^1.0.38
         version: 1.0.38
+      '@types/prismjs':
+        specifier: ^1.26.5
+        version: 1.26.5
       '@types/react':
         specifier: ^18.3.18
         version: 18.3.18
@@ -4404,6 +4413,9 @@ packages:
 
   '@types/pg@8.6.1':
     resolution: {integrity: sha512-1Kc4oAGzAl7uqUStZCDvaLFqZrW9qWSjXOmBfdgyBP5La7Us6Mg4GBvRlSoaZMhQF/zSj1C8CtKMBkoiT8eL8w==}
+
+  '@types/prismjs@1.26.5':
+    resolution: {integrity: sha512-AUZTa7hQ2KY5L7AmtSiqxlhWxb4ina0yd8hNbl4TWuqnv/pFP0nDMb3YrfSBf4hJVGLh2YEIBfKaBW/9UEl6IQ==}
 
   '@types/prop-types@15.7.11':
     resolution: {integrity: sha512-ga8y9v9uyeiLdpKddhxYQkxNDrfvuPrlFb0N1qnZZByvcElJaXthF1UhvCh9TLWJBEHeNtdnbysW7Y6Uq8CVng==}
@@ -9398,6 +9410,10 @@ packages:
     engines: {node: '>=16.13'}
     hasBin: true
 
+  prismjs@1.29.0:
+    resolution: {integrity: sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==}
+    engines: {node: '>=6'}
+
   proc-log@3.0.0:
     resolution: {integrity: sha512-++Vn7NS4Xf9NacaU9Xq3URUuqZETPsf8L4j5/ckhaRYsfPeRyzGw+iDjFhV/Jr3uNmTvvddEJFWh5R1gRgUH8A==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
@@ -9692,6 +9708,12 @@ packages:
     peerDependenciesMeta:
       react-dom:
         optional: true
+
+  react-simple-code-editor@0.14.1:
+    resolution: {integrity: sha512-BR5DtNRy+AswWJECyA17qhUDvrrCZ6zXOCfkQY5zSmb96BVUbpVAv03WpcjcwtCwiLbIANx3gebHOcXYn1EHow==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
 
   react-style-singleton@2.2.1:
     resolution: {integrity: sha512-ZWj0fHEMyWkHzKYUr2Bs/4zU6XLmq9HsgBURm7g5pAVfyn49DgUiNgY2d4lXRlYSiCif9YBGpQleewkcqddc7g==}
@@ -16161,6 +16183,8 @@ snapshots:
       pg-protocol: 1.7.0
       pg-types: 2.2.0
 
+  '@types/prismjs@1.26.5': {}
+
   '@types/prop-types@15.7.11': {}
 
   '@types/pug@2.0.10':
@@ -22313,6 +22337,8 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
+  prismjs@1.29.0: {}
+
   proc-log@3.0.0: {}
 
   process-nextick-args@2.0.1: {}
@@ -22710,6 +22736,11 @@ snapshots:
       set-cookie-parser: 2.7.1
       turbo-stream: 2.4.0
     optionalDependencies:
+      react-dom: 18.3.1(react@18.3.1)
+
+  react-simple-code-editor@0.14.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
   react-style-singleton@2.2.1(@types/react@18.3.18)(react@18.3.1):

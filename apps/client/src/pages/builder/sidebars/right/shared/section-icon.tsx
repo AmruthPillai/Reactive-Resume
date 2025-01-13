@@ -1,4 +1,5 @@
 import {
+  Code,
   DiamondsFour,
   DownloadSimple,
   IconProps,
@@ -19,6 +20,7 @@ export type MetadataKey =
   | "layout"
   | "typography"
   | "theme"
+  | "css"
   | "page"
   | "locale"
   | "sharing"
@@ -44,6 +46,9 @@ export const getSectionIcon = (id: MetadataKey, props: IconProps = {}) => {
     }
     case "theme": {
       return <Palette size={18} {...props} />;
+    }
+    case "css": {
+      return <Code size={18} {...props} />;
     }
     case "page": {
       return <ReadCvLogo size={18} {...props} />;

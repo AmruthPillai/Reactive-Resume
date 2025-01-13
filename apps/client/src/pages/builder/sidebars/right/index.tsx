@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { Copyright } from "@/client/components/copyright";
 import { ThemeSwitch } from "@/client/components/theme-switch";
 
+import { CssSection } from "./sections/css";
 import { ExportSection } from "./sections/export";
 import { InformationSection } from "./sections/information";
 import { LayoutSection } from "./sections/layout";
@@ -36,6 +37,8 @@ export const RightSidebar = () => {
           <TypographySection />
           <Separator />
           <ThemeSection />
+          <Separator />
+          <CssSection />
           <Separator />
           <PageSection />
           <Separator />
@@ -83,6 +86,13 @@ export const RightSidebar = () => {
             name={t`Theme`}
             onClick={() => {
               scrollIntoView("#theme");
+            }}
+          />
+          <SectionIcon
+            id="css"
+            name={t`Custom CSS`}
+            onClick={() => {
+              scrollIntoView("#css");
             }}
           />
           <SectionIcon
