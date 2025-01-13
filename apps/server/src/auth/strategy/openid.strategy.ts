@@ -37,7 +37,7 @@ export class OpenIDStrategy extends PassportStrategy(Strategy, "openid") {
   ) {
     const { displayName, emails, photos, username } = profile;
 
-    const email = emails?.[0].value ?? `${username}@github.com`;
+    const email = emails?.[0].value ?? `${username}@openid.com`;
     const picture = photos?.[0].value;
 
     let user: User | null = null;
@@ -45,11 +45,11 @@ export class OpenIDStrategy extends PassportStrategy(Strategy, "openid") {
     if (!email) throw new BadRequestException(ErrorMessage.InvalidCredentials);
 
     try {
-      const user =
+      user =
         (await this.userService.findOneByIdentifier(email)) ??
-        (username && (await this.userService.findOneByIdentifier(username)));
+        (username ? await this.userService.findOneByIdentifier(username) : null);
 
-      if (!user) throw new Error(ErrorMessage.InvalidCredentials);
+      if (!user) throw new BadRequestException(ErrorMessage.InvalidCredentials);
 
       done(null, user);
     } catch {

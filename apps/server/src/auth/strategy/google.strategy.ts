@@ -33,11 +33,11 @@ export class GoogleStrategy extends PassportStrategy(Strategy, "google") {
     if (!email) throw new BadRequestException(ErrorMessage.InvalidCredentials);
 
     try {
-      const user =
+      user =
         (await this.userService.findOneByIdentifier(email)) ??
-        (username && (await this.userService.findOneByIdentifier(username)));
+        (username ? await this.userService.findOneByIdentifier(username) : null);
 
-      if (!user) throw new Error(ErrorMessage.InvalidCredentials);
+      if (!user) throw new BadRequestException(ErrorMessage.InvalidCredentials);
 
       done(null, user);
     } catch {
