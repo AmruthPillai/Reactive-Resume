@@ -8,7 +8,7 @@ msgstr ""
 "Language: fa\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-01-12 12:13\n"
+"PO-Revision-Date: 2025-01-13 00:39\n"
 "Last-Translator: \n"
 "Language-Team: Persian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -64,7 +64,7 @@ msgstr "یک رزومه ساز رایگان و منبع باز"
 msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "یک رزومه ساز رایگان و منبع باز که فرآیند ایجاد، به روز رسانی و به اشتراک گذاری رزومه شما را ساده می کند."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:53
+#: apps/client/src/pages/builder/_components/toolbar.tsx:59
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
 msgid "A link has been copied to your clipboard."
 msgstr "لینک در کلیپ بورد شما کپی شده است."
@@ -103,7 +103,7 @@ msgid "Add a custom field"
 msgstr "افزودن فیلد دلخواه"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:120
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:167
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:171
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "افزودن مورد جدید"
@@ -117,7 +117,7 @@ msgstr "افزودن مورد جدید"
 msgid "Add a new section"
 msgstr "یک بخش جدید اضافه کنید"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:271
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:268
 msgid "Add New Page"
 msgstr "افزودن برگهٔ تازه"
 
@@ -141,16 +141,20 @@ msgstr "- و خیلی چیزهای دیگر..."
 msgid "Anyone with the link can view and download the resume."
 msgstr "هر کسی که لینک را داشته باشد می تواند رزومه را مشاهده و دانلود کند."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:54
+#: apps/client/src/pages/builder/_components/toolbar.tsx:60
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:30
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "از این پیوند همه می توانند رزومه را مشاهده و دانلود کنند. آن را در نمایه خود یا با استخدام کنندگان به اشتراک بگذارید."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:126
+#: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:41
+msgid "Apply Custom CSS"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:127
 msgid "Are you sure you want to delete this item?"
 msgstr "از حذف این مورد مطمئن هستید؟"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:147
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:148
 msgid "Are you sure you want to delete your resume?"
 msgstr "آیا مطمئن هستید که می خواهید رزومه خود را حذف کنید؟"
 
@@ -175,7 +179,7 @@ msgstr "آیا مطمئن هستید؟"
 msgid "Area of Study"
 msgstr "زمینه مطالعاتی"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:85
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:86
 msgid "Aspect Ratio"
 msgstr "نسبت تصویر"
 
@@ -187,7 +191,7 @@ msgstr "در {languagesCount} زبان موجود است"
 msgid "Awarder"
 msgstr "جایزه دهنده"
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:98
+#: apps/client/src/pages/auth/backup-otp/page.tsx:99
 #: apps/client/src/pages/auth/forgot-password/page.tsx:100
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:243
 msgid "Back"
@@ -201,7 +205,7 @@ msgstr "رنگ پس‌زمینه"
 msgid "Backup Code"
 msgstr "کد پشتیبان"
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:80
+#: apps/client/src/pages/auth/backup-otp/page.tsx:81
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "کدهای پشتیبان فقط باید شامل حروف کوچک یا اعداد و دقیقاً 10 کاراکتر باشند."
 
@@ -218,11 +222,11 @@ msgstr "مبانی"
 msgid "Basics"
 msgstr "مبانی"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:197
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:198
 msgid "Border"
 msgstr "حاشیه"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:130
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:131
 msgid "Border Radius"
 msgstr "شعاع حاشیه"
 
@@ -235,9 +239,9 @@ msgstr "ساخته شده با"
 msgid "By the community, for the community."
 msgstr "توسط جامعه، برای جامعه."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:133
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:134
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:154
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:155
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
 msgid "Cancel"
 msgstr "انصراف"
@@ -247,7 +251,7 @@ msgstr "انصراف"
 msgid "Casual"
 msgstr "غیررسمی"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:112
+#: apps/client/src/pages/builder/_components/toolbar.tsx:130
 msgid "Center Artboard"
 msgstr "Center Artboard"
 
@@ -260,7 +264,7 @@ msgstr "تغییر رمز عبور"
 msgid "Change Tone"
 msgstr "تغییر لحن"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:184
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
 msgid "Changed your mind about the name? Give it a new one."
 msgstr "نظرت درباره نام عوض شد؟ یک نام جدید بده."
 
@@ -268,7 +272,7 @@ msgstr "نظرت درباره نام عوض شد؟ یک نام جدید بده."
 msgid "Check your email for the confirmation link to update your email address."
 msgstr "ایمیل خود را برای لینک تایید جهت به‌روزرسانی ایمیل بررسی کنید."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:150
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:151
 msgid "Circle"
 msgstr "دایره"
 
@@ -310,7 +314,7 @@ msgstr "ادامه"
 msgid "Copy"
 msgstr "کپی"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:146
+#: apps/client/src/pages/builder/_components/toolbar.tsx:164
 msgid "Copy Link to Resume"
 msgstr "کپی لینک به رزومه"
 
@@ -318,8 +322,8 @@ msgstr "کپی لینک به رزومه"
 msgid "Copy to Clipboard"
 msgstr "کپی به کلیپ‌بورد"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:173
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:242
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:178
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
 msgid "Create"
 msgstr "ایجاد"
 
@@ -328,11 +332,11 @@ msgstr "ایجاد"
 msgid "Create a new account"
 msgstr "ایجاد یک حساب جدید"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:157
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:162
 msgid "Create a new item"
 msgstr "ساخت آیتم جدید"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:176
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:177
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:18
 msgid "Create a new resume"
@@ -343,9 +347,14 @@ msgctxt "This is a link to create a new account"
 msgid "Create one now"
 msgstr "اکنون یکی ایجاد کنید"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:257
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:258
 msgid "Create Sample Resume"
 msgstr "ایجاد نمونه رزومه"
+
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:93
+#: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:28
+msgid "Custom CSS"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:62
 msgid "Custom resume sections"
@@ -385,8 +394,8 @@ msgstr "تاریخ"
 msgid "Date or Date Range"
 msgstr "تاریخ دقیق یا محدوده تاریخ"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:135
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:156
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:136
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:157
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:121
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:127
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:172
@@ -453,7 +462,7 @@ msgstr "دریافت یک کپی به صورت JSON از رزومه خود. ای
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "دریافت یک پی‌دی‌اف از رزومه‌ی خود. این فایل می‌تواند برای چاپ رزومه‌ی شما، ارسال آن به کارفرمایان، یا آپلود آن در پورتال‌های کاریابی استفاده شود."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:158
+#: apps/client/src/pages/builder/_components/toolbar.tsx:176
 #: apps/client/src/pages/public/page.tsx:104
 msgid "Download PDF"
 msgstr "دربافت پی‌دی‌اف"
@@ -462,19 +471,19 @@ msgstr "دربافت پی‌دی‌اف"
 msgid "Downloads"
 msgstr "دانلود"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:175
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:180
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:105
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:95
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:156
 msgid "Duplicate"
 msgstr "کپی کردن"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:159
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:164
 msgid "Duplicate an existing item"
 msgstr "کپی یک مورد موجود"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:178
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:179
 msgid "Duplicate an existing resume"
 msgstr "کپی یک رزومه موجود"
 
@@ -482,13 +491,13 @@ msgstr "کپی یک رزومه موجود"
 msgid "Edit"
 msgstr "ویرایش"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:175
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:176
 msgid "Effects"
 msgstr "جلوه‌ها"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:82
 #: apps/client/src/pages/auth/login/page.tsx:90
-#: apps/client/src/pages/auth/register/page.tsx:140
+#: apps/client/src/pages/auth/register/page.tsx:141
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:180
 msgid "Email"
@@ -534,7 +543,7 @@ msgstr "حتی اگر قادر به کمک مالی نباشید، هنوز می
 msgid "Explore the templates available in Reactive Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
 msgstr "قالب‌های موجود در Reactive Resume را بررسی کرده و رزومه‌های تولید شده با آنها را مشاهده کنید. آنها همچنین می‌توانند به عنوان نمونه‌ها برای کمک در هدایت ایجاد رزومه بعدی شما خدمت کنند."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:111
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:121
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:40
 msgid "Export"
 msgstr "خروجی گرفتن"
@@ -579,7 +588,7 @@ msgstr "برای مثال، اطلاعات مربوط به شرکت‌هایی �
 msgid "Forget"
 msgstr "فراموش کردن"
 
-#: apps/client/src/pages/auth/login/page.tsx:126
+#: apps/client/src/pages/auth/login/page.tsx:131
 msgid "Forgot Password?"
 msgstr "گذرواژه را فراموش کرده اید؟"
 
@@ -609,7 +618,7 @@ msgstr "دوستانه"
 msgid "Full Name"
 msgstr "نام و نام خانوادگی"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:200
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:201
 msgid "Generate a random title for your resume"
 msgstr "یک عنوان تصادفی برای رزومه خود ایجاد کنید"
 
@@ -625,7 +634,7 @@ msgstr "گیت هاب"
 msgid "GitHub Stars"
 msgstr "ستاره های گیت هاب"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:186
 msgid "Give your old resume a new name."
 msgstr "به رزومه قدیمی خود یک نام جدید بدهید."
 
@@ -638,7 +647,7 @@ msgstr "رفتن به داشبورد"
 msgid "Google"
 msgstr "گوگل"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:208
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:209
 msgid "Grayscale"
 msgstr "سیاه‌وسفید"
 
@@ -660,7 +669,7 @@ msgstr "در اینجا می‌توانید پروفایل خود را به‌ر
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:80
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:94
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:186
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:187
 msgid "Hidden"
 msgstr "پنهان"
 
@@ -672,13 +681,13 @@ msgstr "پنهان کردن"
 msgid "Hide Icons"
 msgstr "آیکون‌ها را پنهان کن"
 
-#: apps/client/src/pages/auth/login/page.tsx:110
-#: apps/client/src/pages/auth/register/page.tsx:166
+#: apps/client/src/pages/auth/login/page.tsx:115
+#: apps/client/src/pages/auth/register/page.tsx:168
 #: apps/client/src/pages/auth/reset-password/page.tsx:88
 msgid "Hold <0>Ctrl</0> to display your password temporarily."
 msgstr "برای نمایش رمز عبور خود به طور موقت <0>Ctrl</0> را فشار دهید."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:99
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:100
 msgid "Horizontal"
 msgstr "افقی"
 
@@ -733,7 +742,7 @@ msgstr "در این بخش، شما می‌توانید رمز عبور خود �
 msgid "In this section, you can delete your account and all the data associated to your user, but please keep in mind that <0>this action is irreversible</0>."
 msgstr "در این بحث، شما می‌توانید حساب کاربری خود را و تمام داده‌های مرتبط با کاربر خود حذف کنید، اما لطفاً به خاطر داشته باشید که <0>این عملیات غیرقابل بازگشت</0> است."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:125
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:135
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
 msgid "Information"
 msgstr "اطلاعات"
@@ -779,12 +788,12 @@ msgctxt "Localized version of a placeholder name. For example, Max Mustermann in
 msgid "John Doe"
 msgstr "John Doe"
 
-#: apps/client/src/pages/auth/register/page.tsx:122
+#: apps/client/src/pages/auth/register/page.tsx:123
 msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
 msgid "john.doe"
 msgstr "john.doe"
 
-#: apps/client/src/pages/auth/register/page.tsx:143
+#: apps/client/src/pages/auth/register/page.tsx:145
 msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
 msgid "john.doe@example.com"
 msgstr "john.doe@example.com"
@@ -814,8 +823,8 @@ msgstr "زبان"
 msgid "Last updated {lastUpdated}"
 msgstr "آخرین بروزرسانی {lastUpdated}"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:69
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:207
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:205
 msgid "Layout"
 msgstr "چیدمان"
 
@@ -888,7 +897,7 @@ msgstr "خروج"
 msgid "Lost your device?"
 msgstr "دستگاه خود را گم کرده اید؟"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:257
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:254
 msgid "Main"
 msgstr "اصلی"
 
@@ -964,7 +973,7 @@ msgstr "بدون ردیابی کاربر یا تبلیغات"
 msgid "Note: This will make your account less secure."
 msgstr "توجه: این باعث کاهش امنیت حساب کاربری شما می شود."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:118
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:128
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:17
 msgid "Notes"
 msgstr "یادداشت‌ها"
@@ -1022,17 +1031,17 @@ msgstr "یا ادامه با"
 msgid "Organization"
 msgstr "سازمان"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:90
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:100
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:26
 msgid "Page"
 msgstr "صفحه"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:237
-msgid "Page {0}"
-msgstr "صفحه {0}"
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:235
+msgid "Page {pageNumber}"
+msgstr ""
 
-#: apps/client/src/pages/auth/login/page.tsx:105
-#: apps/client/src/pages/auth/register/page.tsx:161
+#: apps/client/src/pages/auth/login/page.tsx:110
+#: apps/client/src/pages/auth/register/page.tsx:163
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
 msgid "Password"
@@ -1075,7 +1084,7 @@ msgstr "لطفاً فرمت فایل را انتخاب کنید"
 msgid "Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app."
 msgstr "لطفاً کدهای پشتیبان خود را در یک مکان امن ذخیره کنید. می توانید از یکی از این کدهای یک بار استفاده برای ورود به حساب خود استفاده کنید در صورتی که دسترسی به برنامه auchenticator خود را از دست بدهید."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:105
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:106
 msgid "Portrait"
 msgstr "تصویر"
 
@@ -1162,7 +1171,7 @@ msgstr "Reactive Resume یک پروژه‌ از روی علاقه است که ن
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
 msgstr "Reactive Resume به دست جامعه پرانرژی خود زنده می‌ماند. این پروژه پیشرفت خود را به افراد بسیاری مدیون است که وقت و مهارت خود را اختصاص داده‌اند. در زیر، ما از برنامه‌نویسانی که ویژگی‌های آن را در GitHub بهبود داده‌اند و از مترجمانی که ترجمه‌های خود را در Crowdin ارائه داده‌اند بر خواهیم خواند که آن را برای مخاطبان بیشتر قابل دسترس کرده‌اند."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:79
+#: apps/client/src/pages/builder/_components/toolbar.tsx:89
 msgid "Redo"
 msgstr "Redo"
 
@@ -1171,7 +1180,7 @@ msgstr "Redo"
 msgid "Remove"
 msgstr "حذف"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:241
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:238
 msgid "Remove Page"
 msgstr "حذف صفحه"
 
@@ -1190,7 +1199,7 @@ msgstr "ارسال مجدد لینک تأیید ایمیل"
 msgid "Reset"
 msgstr "ریست"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:210
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:208
 msgid "Reset Layout"
 msgstr "ریست طرح"
 
@@ -1199,7 +1208,7 @@ msgstr "ریست طرح"
 msgid "Reset your password"
 msgstr "تنظیم مجدد رمز عبور"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:106
+#: apps/client/src/pages/builder/_components/toolbar.tsx:124
 msgid "Reset Zoom"
 msgstr "ریست بزرگنمایی"
 
@@ -1217,12 +1226,12 @@ msgstr "رزومه های به‌وجود آمده"
 msgid "Rich in features, not in pricing."
 msgstr "پر از امکانات، بدون قیمت بالا"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:144
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:145
 msgid "Rounded"
 msgstr "گردشده"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:174
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:179
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:131
 msgid "Save Changes"
@@ -1244,6 +1253,14 @@ msgstr "اسکن کد QR زیر با برنامه‌ی authenticator خود بر
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:92
 msgid "Score"
 msgstr "امتیاز"
+
+#: apps/client/src/pages/builder/_components/toolbar.tsx:104
+msgid "Scroll to Pan"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/toolbar.tsx:104
+msgid "Scroll to Zoom"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:97
 msgid "Search for a font family"
@@ -1296,7 +1313,7 @@ msgstr "تنظیمات"
 msgid "Setup two-factor authentication on your account"
 msgstr "راه‌اندازی تأیید هویت دو مرحله‌ای بر روی حساب کاربری خود"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:97
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:107
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
 msgid "Sharing"
 msgstr "اشتراک‌گذاری"
@@ -1313,12 +1330,12 @@ msgstr "نمایش خط بین صفحه"
 msgid "Show Page Numbers"
 msgstr "نمایش شماره صفحه"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:258
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:255
 msgid "Sidebar"
 msgstr "نوار کناری"
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:102
-#: apps/client/src/pages/auth/login/page.tsx:122
+#: apps/client/src/pages/auth/backup-otp/page.tsx:103
+#: apps/client/src/pages/auth/login/page.tsx:127
 #: apps/client/src/pages/auth/verify-otp/page.tsx:92
 msgid "Sign in"
 msgstr "ورود"
@@ -1344,7 +1361,7 @@ msgstr "ورود با GitHub"
 msgid "Sign in with Google"
 msgstr "ورود با گوگل"
 
-#: apps/client/src/pages/auth/register/page.tsx:177
+#: apps/client/src/pages/auth/register/page.tsx:179
 msgid "Sign up"
 msgstr "عضويت"
 
@@ -1356,11 +1373,11 @@ msgstr "ورود از طریق ایمیل در حال حاضر توسط مدیر
 msgid "Signups are currently disabled by the administrator."
 msgstr "ورود در حال حاضر توسط مدیر غیرفعال شده است."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:71
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:72
 msgid "Size (in px)"
 msgstr "اندازه (به پیکسل)"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:226
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:227
 msgid "Slug"
 msgstr "نام یکتا"
 
@@ -1376,8 +1393,8 @@ msgstr "هنگام دریافت رزومه شما مشکلی پیش آمد. لط
 msgid "Something went wrong while processing your request. Please try again later or raise an issue on GitHub."
 msgstr "هنگام پردازش درخواست شما یک مشکل پیش آمد. لطفا بعدا دوباره تلاش کنید یا مشکل را در گیت‌هاب گزارش کنید."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:93
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:138
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:94
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:139
 msgid "Square"
 msgstr "مربعی"
 
@@ -1386,11 +1403,11 @@ msgstr "مربعی"
 msgid "Start building from scratch"
 msgstr "شروع ساختن از ابتدا"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:183
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:184
 msgid "Start building your resume by giving it a name."
 msgstr "شروع به ساخت رزومه خود با دادن یک نام به آن کنید."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:104
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:114
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:23
 msgid "Statistics"
 msgstr "آمارها"
@@ -1431,7 +1448,7 @@ msgstr "پشتیبانی از فرمت‌های صفحه A4/Letter"
 msgid "System"
 msgstr "سامانه"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:62
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:65
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
 msgid "Template"
 msgstr "قالب"
@@ -1456,7 +1473,7 @@ msgstr "رمز عبورهایی که وارد کرده‌اید مطابقت ن�
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
 msgstr "رزومه‌ای که می‌خواهید به‌روزرسانی کنید قفل شده است، لطفاً اگر می‌خواهید تغییری در آن انجام دهید آن را باز کنید."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:83
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:86
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:20
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:79
 msgid "Theme"
@@ -1466,11 +1483,11 @@ msgstr "تم"
 msgid "There was an error connecting to the browser. Please make sure 'chrome' is running and reachable."
 msgstr "خطا در اتصال به مرورگر رخ داد. لطفاً مطمئن شوید که 'chrome' در حال اجرا و قابل دسترس است."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:128
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:129
 msgid "This action can be reverted by clicking on the undo button in the floating toolbar."
 msgstr "این عملیات می تواند با کلیک بر روی دکمه بازگردانی در نوار ابزار شناور بازگشت پیدا کند."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:149
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:150
 msgid "This action cannot be undone. This will permanently delete your resume and cannot be recovered."
 msgstr "این عملیات قابل بازگشت نیست. این عملیات به طور دائمی رزومه شما را حذف خواهد کرد و غیرقابل بازیابی است."
 
@@ -1486,7 +1503,7 @@ msgstr "این رزومه قفل شده است، لطفاً برای ایجاد 
 msgid "This section is reserved for your personal notes specific to this resume. The content here remains private and is not shared with anyone else."
 msgstr "این بخش برای یادداشت‌های شخصی شما مخصوص این رزومه اختصاص داده شده است. محتوای اینجا خصوصی است و با هیچ کس دیگری به اشتراک گذاشته نمی شود."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:214
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:215
 msgid "Tip: You can name the resume referring to the position you are applying for."
 msgstr "نکته: می توانید رزومه خود را با اشاره به موقعیت شغلی که بیشتر برای آن درخواست داده اید نامگذاری کنید."
 
@@ -1495,15 +1512,15 @@ msgctxt "Name of the Award"
 msgid "Title"
 msgstr "عنوان"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:194
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:195
 msgid "Title"
 msgstr "عنوان"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:120
+#: apps/client/src/pages/builder/_components/toolbar.tsx:138
 msgid "Toggle Page Break Line"
 msgstr "تغییر خط بین صفحه"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:132
+#: apps/client/src/pages/builder/_components/toolbar.tsx:150
 msgid "Toggle Page Numbers"
 msgstr "تغییر وضعیت شماره صفحات"
 
@@ -1534,7 +1551,7 @@ msgstr "برای تأیید حذف حساب کاربری خود <0>delete</0> ر
 msgid "Type of Study"
 msgstr "نوع تحصیلات"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:76
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:79
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:65
 msgid "Typography"
 msgstr "تایپوگرافی"
@@ -1543,7 +1560,7 @@ msgstr "تایپوگرافی"
 msgid "Underline Links"
 msgstr "زیر پیوند‌ها خط بکش"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:66
+#: apps/client/src/pages/builder/_components/toolbar.tsx:76
 msgid "Undo"
 msgstr "بازگردانی"
 
@@ -1562,11 +1579,11 @@ msgstr "باز کردن قفل یک رزومه به شما امکان تغییر
 msgid "Unverified"
 msgstr "تأیید نشده"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:158
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:163
 msgid "Update an existing item"
 msgstr "به روزرسانی یک مورد موجود"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:177
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:178
 msgid "Update an existing resume"
 msgstr "به روزرسانی یک رزومه موجود"
 
@@ -1671,7 +1688,7 @@ msgstr "چه خبر در آخرین نسخه"
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr "شما می‌توانید کلمات متعددی را با جداکردن آن‌ها با یک کاما یا فشردن کلید اینتر اضافه کنید."
 
-#: apps/client/src/pages/auth/login/page.tsx:94
+#: apps/client/src/pages/auth/login/page.tsx:99
 msgid "You can also enter your username."
 msgstr "شما همچنین می‌توانید نام کاربری خود را وارد کنید."
 
@@ -1720,11 +1737,11 @@ msgstr "کلید API OpenAI شما هنوز تنظیم نشده است. لطفا
 msgid "Your password has been updated successfully."
 msgstr "رمز عبور شما با موفقیت به روز شد."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:94
+#: apps/client/src/pages/builder/_components/toolbar.tsx:112
 msgid "Zoom In"
 msgstr "بزرگ‌نمایی"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:100
+#: apps/client/src/pages/builder/_components/toolbar.tsx:118
 msgid "Zoom Out"
 msgstr "کوچک‌نمایی"
 

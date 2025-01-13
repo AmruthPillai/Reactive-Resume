@@ -8,7 +8,7 @@ msgstr ""
 "Language: kn\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-01-12 12:13\n"
+"PO-Revision-Date: 2025-01-13 00:39\n"
 "Last-Translator: \n"
 "Language-Team: Kannada\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -64,7 +64,7 @@ msgstr "ಉಚಿತ ಮತ್ತು ಮೂಲ ಕೋಡ್ ತೆರೆದಿ�
 msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "ನಿಮ್ಮ ರೆಸ್ಯೂಮ್ ಅನ್ನು ರಚಿಸುವ, ನವೀಕರಿಸುವ ಮತ್ತು ಹಂಚಿಕೊಳ್ಳುವ ಪ್ರಕ್ರಿಯೆಯನ್ನು ಸರಳಗೊಳಿಸುವ ಉಚಿತ ಮತ್ತು ಮುಕ್ತ-ಮೂಲ ಪುನರಾರಂಭ ಬಿಲ್ಡರ್."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:53
+#: apps/client/src/pages/builder/_components/toolbar.tsx:59
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
 msgid "A link has been copied to your clipboard."
 msgstr "ನಿಮ್ಮ ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ಲಿಂಕ್ ಅನ್ನು ನಕಲಿಸಲಾಗಿದೆ."
@@ -103,7 +103,7 @@ msgid "Add a custom field"
 msgstr "ಕಸ್ಟಮ್ ಕ್ಷೇತ್ರವನ್ನು ಸೇರಿಸಿ"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:120
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:167
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:171
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "ಹೊಸ ಐಟಂ ಸೇರಿಸಿ"
@@ -117,7 +117,7 @@ msgstr "ಹೊಸ ಐಟಂ ಸೇರಿಸಿ"
 msgid "Add a new section"
 msgstr "ಹೊಸ ವಿಭಾಗವನ್ನು ಸೇರಿಸಿ"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:271
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:268
 msgid "Add New Page"
 msgstr "ಹೊಸ ಪುಟವನ್ನು ಸೇರಿಸಿ"
 
@@ -141,16 +141,20 @@ msgstr "ಮತ್ತು ಇನ್ನೂ ಅನೇಕ..."
 msgid "Anyone with the link can view and download the resume."
 msgstr "ಲಿಂಕ್ ಹೊಂದಿರುವ ಯಾರಾದರೂ ರೆಸ್ಯೂಮ್ ಅನ್ನು ವೀಕ್ಷಿಸಬಹುದು ಮತ್ತು ಡೌನ್‌ಲೋಡ್ ಮಾಡಬಹುದು."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:54
+#: apps/client/src/pages/builder/_components/toolbar.tsx:60
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:30
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "ಈ ಲಿಂಕ್ ಹೊಂದಿರುವ ಯಾರಾದರೂ ರೆಸ್ಯೂಮ್ ಅನ್ನು ವೀಕ್ಷಿಸಬಹುದು ಮತ್ತು ಡೌನ್‌ಲೋಡ್ ಮಾಡಬಹುದು. ಅದನ್ನು ನಿಮ್ಮ ಪ್ರೊಫೈಲ್‌ನಲ್ಲಿ ಅಥವಾ ನೇಮಕಾತಿದಾರರೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳಿ."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:126
+#: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:41
+msgid "Apply Custom CSS"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:127
 msgid "Are you sure you want to delete this item?"
 msgstr "ಈ ಐಟಂ ಅನ್ನು ಅಳಿಸಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:147
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:148
 msgid "Are you sure you want to delete your resume?"
 msgstr "ನಿಮ್ಮ ರೆಸ್ಯೂಮ್ ಅನ್ನು ಅಳಿಸಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?"
 
@@ -175,7 +179,7 @@ msgstr "ನೀವು ಖಚಿತವಾಗಿರುವಿರಾ?"
 msgid "Area of Study"
 msgstr "ಅಧ್ಯಯನದ ಕ್ಷೇತ್ರ"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:85
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:86
 msgid "Aspect Ratio"
 msgstr "ಆಕಾರ ಅನುಪಾತ"
 
@@ -187,7 +191,7 @@ msgstr ""
 msgid "Awarder"
 msgstr "ಪ್ರಶಸ್ತಿದಾರ"
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:98
+#: apps/client/src/pages/auth/backup-otp/page.tsx:99
 #: apps/client/src/pages/auth/forgot-password/page.tsx:100
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:243
 msgid "Back"
@@ -201,7 +205,7 @@ msgstr "ಹಿನ್ನೆಲೆ ಬಣ್ಣ"
 msgid "Backup Code"
 msgstr "ಬ್ಯಾಕಪ್ ಕೋಡ್"
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:80
+#: apps/client/src/pages/auth/backup-otp/page.tsx:81
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "ಬ್ಯಾಕಪ್ ಕೋಡ್‌ಗಳು ಸಣ್ಣ ಅಕ್ಷರಗಳು ಅಥವಾ ಸಂಖ್ಯೆಗಳನ್ನು ಮಾತ್ರ ಹೊಂದಿರಬಹುದು ಮತ್ತು ನಿಖರವಾಗಿ 10 ಅಕ್ಷರಗಳಾಗಿರಬೇಕು."
 
@@ -218,11 +222,11 @@ msgstr "ಸಾಮಾನ್ಯ"
 msgid "Basics"
 msgstr "ಸಾಮಾನ್ಯ"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:197
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:198
 msgid "Border"
 msgstr "ಅಂಚುಗಳು"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:130
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:131
 msgid "Border Radius"
 msgstr "ಗಡಿ ತ್ರಿಜ್ಯ"
 
@@ -235,9 +239,9 @@ msgstr "ಇದರೊಂದಿಗೆ ನಿರ್ಮಿಸಲಾಗಿದೆ"
 msgid "By the community, for the community."
 msgstr "ಸಮುದಾಯದಿಂದ, ಸಮುದಾಯಕ್ಕಾಗಿ."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:133
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:134
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:154
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:155
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
 msgid "Cancel"
 msgstr "ರದ್ದುಮಾಡಿ"
@@ -247,7 +251,7 @@ msgstr "ರದ್ದುಮಾಡಿ"
 msgid "Casual"
 msgstr "ಸಾಂದರ್ಭಿಕ"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:112
+#: apps/client/src/pages/builder/_components/toolbar.tsx:130
 msgid "Center Artboard"
 msgstr "ಸೆಂಟರ್ ಆರ್ಟ್ಬೋರ್ಡ್"
 
@@ -260,7 +264,7 @@ msgstr "ಗುಪ್ತಪದವನ್ನು ಬದಲಾಯಿಸು"
 msgid "Change Tone"
 msgstr "ಟೋನ್ ಬದಲಾಯಿಸಿ"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:184
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
 msgid "Changed your mind about the name? Give it a new one."
 msgstr "ಹೆಸರಿನ ಬಗ್ಗೆ ನಿಮ್ಮ ಮನಸ್ಸನ್ನು ಬದಲಾಯಿಸಿದ್ದೀರಾ? ಹೊಸದನ್ನು ಕೊಡಿ."
 
@@ -268,7 +272,7 @@ msgstr "ಹೆಸರಿನ ಬಗ್ಗೆ ನಿಮ್ಮ ಮನಸ್ಸನ್
 msgid "Check your email for the confirmation link to update your email address."
 msgstr "ನಿಮ್ಮ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ನವೀಕರಿಸಲು ದೃಢೀಕರಣ ಲಿಂಕ್‌ಗಾಗಿ ನಿಮ್ಮ ಇಮೇಲ್ ಅನ್ನು ಪರಿಶೀಲಿಸಿ."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:150
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:151
 msgid "Circle"
 msgstr "ವೃತ್ತ"
 
@@ -310,7 +314,7 @@ msgstr "ಮುಂದುವರಿಸಿ"
 msgid "Copy"
 msgstr "ನಕಲು ಮಾಡಿ"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:146
+#: apps/client/src/pages/builder/_components/toolbar.tsx:164
 msgid "Copy Link to Resume"
 msgstr "ರೆಸ್ಯೂಮ್‌ ಲಿಂಕ್ ಅನ್ನು ನಕಲಿಸಿ"
 
@@ -318,8 +322,8 @@ msgstr "ರೆಸ್ಯೂಮ್‌ ಲಿಂಕ್ ಅನ್ನು ನಕಲಿ
 msgid "Copy to Clipboard"
 msgstr "ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ನಕಲಿಸಿ"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:173
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:242
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:178
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
 msgid "Create"
 msgstr "ರಚಿಸಿ"
 
@@ -328,11 +332,11 @@ msgstr "ರಚಿಸಿ"
 msgid "Create a new account"
 msgstr "ಹೊಸ ಖಾತೆಯನ್ನು ರಚಿಸಿ"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:157
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:162
 msgid "Create a new item"
 msgstr "ಹೊಸ ಐಟಂ ರಚಿಸಿ"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:176
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:177
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:18
 msgid "Create a new resume"
@@ -343,9 +347,14 @@ msgctxt "This is a link to create a new account"
 msgid "Create one now"
 msgstr "ಇದೀಗ ಒಂದನ್ನು ರಚಿಸಿ"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:257
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:258
 msgid "Create Sample Resume"
 msgstr "ಮಾದರಿ ರೆಸ್ಯೂಮ್‌ ರಚಿಸಿ"
+
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:93
+#: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:28
+msgid "Custom CSS"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:62
 msgid "Custom resume sections"
@@ -385,8 +394,8 @@ msgstr "ದಿನಾಂಕ"
 msgid "Date or Date Range"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:135
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:156
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:136
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:157
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:121
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:127
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:172
@@ -453,7 +462,7 @@ msgstr "ನಿಮ್ಮ ರೆಸ್ಯೂಮ್‌ನ JSON ಸ್ನ್ಯಾ�
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "ನಿಮ್ಮ ರೆಸ್ಯೂಮ್‌ನ PDF ಅನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ. ನಿಮ್ಮ ರೆಸ್ಯೂಮ್ ಅನ್ನು ಪ್ರಿಂಟ್ ಮಾಡಲು, ನೇಮಕಾತಿ ಮಾಡುವವರಿಗೆ ಕಳುಹಿಸಲು ಅಥವಾ ಜಾಬ್ ಪೋರ್ಟಲ್‌ಗಳಲ್ಲಿ ಅಪ್‌ಲೋಡ್ ಮಾಡಲು ಈ ಫೈಲ್ ಅನ್ನು ಬಳಸಬಹುದು."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:158
+#: apps/client/src/pages/builder/_components/toolbar.tsx:176
 #: apps/client/src/pages/public/page.tsx:104
 msgid "Download PDF"
 msgstr ""
@@ -462,19 +471,19 @@ msgstr ""
 msgid "Downloads"
 msgstr "ಡೌನ್‌ಲೋಡ್‌ಗಳು"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:175
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:180
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:105
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:95
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:156
 msgid "Duplicate"
 msgstr "ನಕಲು"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:159
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:164
 msgid "Duplicate an existing item"
 msgstr "ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ಐಟಂ ಅನ್ನು ನಕಲು ಮಾಡಿ"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:178
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:179
 msgid "Duplicate an existing resume"
 msgstr "ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ರೆಸ್ಯೂಮ್ ಅನ್ನು ನಕಲು ಮಾಡಿ"
 
@@ -482,13 +491,13 @@ msgstr "ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ರೆಸ್ಯೂಮ�
 msgid "Edit"
 msgstr "ತಿದ್ದು"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:175
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:176
 msgid "Effects"
 msgstr "ಪರಿಣಾಮಗಳು"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:82
 #: apps/client/src/pages/auth/login/page.tsx:90
-#: apps/client/src/pages/auth/register/page.tsx:140
+#: apps/client/src/pages/auth/register/page.tsx:141
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:180
 msgid "Email"
@@ -534,7 +543,7 @@ msgstr "ನೀವು ಆರ್ಥಿಕವಾಗಿ ಕೊಡುಗೆ ನೀಡ
 msgid "Explore the templates available in Reactive Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
 msgstr "ಪ್ರತಿಕ್ರಿಯಾತ್ಮಕ ರೆಸ್ಯೂಮ್‌ ಲಭ್ಯವಿರುವ ಟೆಂಪ್ಲೇಟ್‌ಗಳನ್ನು ಅನ್ವೇಷಿಸಿ ಮತ್ತು ಅವರೊಂದಿಗೆ ರಚಿಸಲಾದ ರೆಸ್ಯೂಮ್‌ಗಳನ್ನು ವೀಕ್ಷಿಸಿ. ನಿಮ್ಮ ಮುಂದಿನ ರೆಸ್ಯೂಮ್‌ ರಚನೆಗೆ ಮಾರ್ಗದರ್ಶನ ನೀಡಲು ಅವರು ಉದಾಹರಣೆಗಳಾಗಿ ಕಾರ್ಯನಿರ್ವಹಿಸಬಹುದು."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:111
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:121
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:40
 msgid "Export"
 msgstr "ರಫ್ತು ಮಾಡು"
@@ -579,7 +588,7 @@ msgstr "ಉದಾಹರಣೆಗೆ, ನೀವು ಈ ರೆಸ್ಯೂಮ್ �
 msgid "Forget"
 msgstr "ಮರೆತುಬಿಡಿ"
 
-#: apps/client/src/pages/auth/login/page.tsx:126
+#: apps/client/src/pages/auth/login/page.tsx:131
 msgid "Forgot Password?"
 msgstr "ಪಾಸ್ವರ್ಡ್ ಮರೆತಿರಾ?"
 
@@ -609,7 +618,7 @@ msgstr "ಸ್ನೇಹಪರ"
 msgid "Full Name"
 msgstr "ಪೂರ್ಣ ಹೆಸರು"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:200
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:201
 msgid "Generate a random title for your resume"
 msgstr "ನಿಮ್ಮ ಪುನರಾರಂಭಕ್ಕಾಗಿ ಯಾದೃಚ್ಛಿಕ ಶೀರ್ಷಿಕೆಯನ್ನು ರಚಿಸಿ"
 
@@ -625,7 +634,7 @@ msgstr "Github"
 msgid "GitHub Stars"
 msgstr "GitHub ಸ್ಟಾರ್ಸ್"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:186
 msgid "Give your old resume a new name."
 msgstr "ನಿಮ್ಮ ಹಳೆಯ ರೆಸ್ಯೂಮೇಗೆ ಹೊಸ ಹೆಸರನ್ನು ನೀಡಿ."
 
@@ -638,7 +647,7 @@ msgstr "ಡ್ಯಾಶ್ಬೋರ್ಡ್ಗೆ ಹೋಗಿ"
 msgid "Google"
 msgstr "ಗೂಗಲ್"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:208
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:209
 msgid "Grayscale"
 msgstr "ಗ್ರೇಸ್ಕೇಲ್"
 
@@ -660,7 +669,7 @@ msgstr "ಇಲ್ಲಿ, ನಿಮ್ಮ ಅನುಭವವನ್ನು ಕಸ�
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:80
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:94
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:186
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:187
 msgid "Hidden"
 msgstr "ಮರೆಮಾಡಲಾಗಿದೆ"
 
@@ -672,13 +681,13 @@ msgstr "ಮರೆಮಾಡಿ"
 msgid "Hide Icons"
 msgstr "ಐಕಾನ್‌ಗಳನ್ನು ಮರೆಮಾಡಿ"
 
-#: apps/client/src/pages/auth/login/page.tsx:110
-#: apps/client/src/pages/auth/register/page.tsx:166
+#: apps/client/src/pages/auth/login/page.tsx:115
+#: apps/client/src/pages/auth/register/page.tsx:168
 #: apps/client/src/pages/auth/reset-password/page.tsx:88
 msgid "Hold <0>Ctrl</0> to display your password temporarily."
 msgstr "ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ತಾತ್ಕಾಲಿಕವಾಗಿ ಪ್ರದರ್ಶಿಸಲು <0>Ctrl</0> ಅನ್ನು ಹಿಡಿದುಕೊಳ್ಳಿ."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:99
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:100
 msgid "Horizontal"
 msgstr "ಸಮತಲ"
 
@@ -733,7 +742,7 @@ msgstr "ಈ ವಿಭಾಗದಲ್ಲಿ, ನೀವು ನಿಮ್ಮ ಪಾ�
 msgid "In this section, you can delete your account and all the data associated to your user, but please keep in mind that <0>this action is irreversible</0>."
 msgstr "ಈ ವಿಭಾಗದಲ್ಲಿ, ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಮತ್ತು ನಿಮ್ಮ ಬಳಕೆದಾರರಿಗೆ ಸಂಬಂಧಿಸಿದ ಎಲ್ಲಾ ಡೇಟಾವನ್ನು ನೀವು ಅಳಿಸಬಹುದು, ಆದರೆ ದಯವಿಟ್ಟು <0>ಈ ಕ್ರಿಯೆಯನ್ನು ಬದಲಾಯಿಸಲಾಗುವುದಿಲ್ಲ</0> ಎಂಬುದನ್ನು ನೆನಪಿನಲ್ಲಿಡಿ."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:125
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:135
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
 msgid "Information"
 msgstr "ಮಾಹಿತಿ"
@@ -779,12 +788,12 @@ msgctxt "Localized version of a placeholder name. For example, Max Mustermann in
 msgid "John Doe"
 msgstr "ಜಾನ್ ಡೋ"
 
-#: apps/client/src/pages/auth/register/page.tsx:122
+#: apps/client/src/pages/auth/register/page.tsx:123
 msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
 msgid "john.doe"
 msgstr "ಜಾನ್ ಡೋ"
 
-#: apps/client/src/pages/auth/register/page.tsx:143
+#: apps/client/src/pages/auth/register/page.tsx:145
 msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
 msgid "john.doe@example.com"
 msgstr "john.doe@example.com"
@@ -814,8 +823,8 @@ msgstr "ಭಾಷೆ"
 msgid "Last updated {lastUpdated}"
 msgstr "ಕೊನೆಯದಾಗಿ ನವೀಕರಿಸಲಾಗಿದೆ {lastUpdated}"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:69
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:207
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:205
 msgid "Layout"
 msgstr "ಲೇಔಟ್‌"
 
@@ -888,7 +897,7 @@ msgstr "ಲಾಗ್ ಔಟ್"
 msgid "Lost your device?"
 msgstr "ನಿಮ್ಮ ಸಾಧನವನ್ನು ಕಳೆದುಕೊಂಡಿರುವಿರಾ?"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:257
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:254
 msgid "Main"
 msgstr "ಮುಖ್ಯ"
 
@@ -964,7 +973,7 @@ msgstr "ಬಳಕೆದಾರರ ಟ್ರ್ಯಾಕಿಂಗ್ ಅಥವಾ 
 msgid "Note: This will make your account less secure."
 msgstr "ಗಮನಿಸಿ: ಇದು ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಕಡಿಮೆ ಸುರಕ್ಷಿತಗೊಳಿಸುತ್ತದೆ."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:118
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:128
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:17
 msgid "Notes"
 msgstr "ಟಿಪ್ಪಣಿಗಳು"
@@ -1022,17 +1031,17 @@ msgstr "ಅಥವಾ ಮುಂದುವರಿಸಿ"
 msgid "Organization"
 msgstr "ಸಂಸ್ಥೆ"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:90
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:100
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:26
 msgid "Page"
 msgstr "ಪುಟ"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:237
-msgid "Page {0}"
-msgstr "ಪುಟ {0}"
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:235
+msgid "Page {pageNumber}"
+msgstr ""
 
-#: apps/client/src/pages/auth/login/page.tsx:105
-#: apps/client/src/pages/auth/register/page.tsx:161
+#: apps/client/src/pages/auth/login/page.tsx:110
+#: apps/client/src/pages/auth/register/page.tsx:163
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
 msgid "Password"
@@ -1075,7 +1084,7 @@ msgstr "ದಯವಿಟ್ಟು ಒಂದು ಕಡತವನ್ನು ಆಯ್
 msgid "Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app."
 msgstr "ದಯವಿಟ್ಟು ನಿಮ್ಮ ಬ್ಯಾಕಪ್ ಕೋಡ್‌ಗಳನ್ನು ಸುರಕ್ಷಿತ ಸ್ಥಳದಲ್ಲಿ ಸಂಗ್ರಹಿಸಿ. ನಿಮ್ಮ ದೃಢೀಕರಣ ಅಪ್ಲಿಕೇಶನ್‌ಗೆ ನೀವು ಪ್ರವೇಶವನ್ನು ಕಳೆದುಕೊಂಡರೆ ಲಾಗಿನ್ ಮಾಡಲು ಈ ಒಂದು-ಬಾರಿಯ ಬಳಕೆಯ ಕೋಡ್‌ಗಳಲ್ಲಿ ಒಂದನ್ನು ನೀವು ಬಳಸಬಹುದು."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:105
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:106
 msgid "Portrait"
 msgstr "ಭಾವ ಚಿತ್ರ"
 
@@ -1162,7 +1171,7 @@ msgstr "ರಿಯಾಕ್ಟಿವ್ ರೆಸ್ಯೂಮೇ 3 ವರ್ಷ�
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
 msgstr "ರಿಯಾಕ್ಟಿವ್ ರೆಸ್ಯೂಮೇ ಅದರ ರೋಮಾಂಚಕ ಸಮುದಾಯಕ್ಕೆ ಧನ್ಯವಾದಗಳು. ಈ ಯೋಜನೆಯು ತಮ್ಮ ಸಮಯ ಮತ್ತು ಕೌಶಲ್ಯಗಳನ್ನು ಮೀಸಲಿಟ್ಟ ಹಲವಾರು ವ್ಯಕ್ತಿಗಳಿಗೆ ಅದರ ಪ್ರಗತಿಗೆ ಬದ್ಧವಾಗಿದೆ. ಕೆಳಗೆ, GitHub ನಲ್ಲಿ ಅದರ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ವರ್ಧಿಸಿದ ಕೋಡರ್‌ಗಳನ್ನು ಮತ್ತು ಕ್ರೌಡಿನ್‌ನಲ್ಲಿ ಭಾಷಾಂತರಿಸಿದ ಭಾಷಾಶಾಸ್ತ್ರಜ್ಞರನ್ನು ವಿಶಾಲ ಪ್ರೇಕ್ಷಕರಿಗೆ ಪ್ರವೇಶಿಸುವಂತೆ ನಾವು ಆಚರಿಸುತ್ತೇವೆ."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:79
+#: apps/client/src/pages/builder/_components/toolbar.tsx:89
 msgid "Redo"
 msgstr "ಮತ್ತೆಮಾಡು"
 
@@ -1171,7 +1180,7 @@ msgstr "ಮತ್ತೆಮಾಡು"
 msgid "Remove"
 msgstr "ತೆಗೆದುಹಾಕಿ"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:241
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:238
 msgid "Remove Page"
 msgstr ""
 
@@ -1190,7 +1199,7 @@ msgstr "ಇಮೇಲ್ ದೃಢೀಕರಣ ಲಿಂಕ್ ಅನ್ನು �
 msgid "Reset"
 msgstr "ಮರುಹೊಂದಿಸಿ"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:210
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:208
 msgid "Reset Layout"
 msgstr "ಲೇಔಟ್ ಅನ್ನು ಮರುಹೊಂದಿಸಿ"
 
@@ -1199,7 +1208,7 @@ msgstr "ಲೇಔಟ್ ಅನ್ನು ಮರುಹೊಂದಿಸಿ"
 msgid "Reset your password"
 msgstr "ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಮರುಹೊಂದಿಸಿ"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:106
+#: apps/client/src/pages/builder/_components/toolbar.tsx:124
 msgid "Reset Zoom"
 msgstr "ಜೂಮ್ ಮರುಹೊಂದಿಸಿ"
 
@@ -1217,12 +1226,12 @@ msgstr "ರೆಸ್ಯೂಮ್‌ಗಳನ್ನು ರಚಿಸಲಾಗಿ�
 msgid "Rich in features, not in pricing."
 msgstr "ವೈಶಿಷ್ಟ್ಯಗಳಲ್ಲಿ ಸಮೃದ್ಧವಾಗಿದೆ, ಬೆಲೆಯಲ್ಲಿ ಅಲ್ಲ."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:144
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:145
 msgid "Rounded"
 msgstr "ದುಂಡಾದ"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:174
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:179
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:131
 msgid "Save Changes"
@@ -1244,6 +1253,14 @@ msgstr "ನಿಮ್ಮ ಖಾತೆಯಲ್ಲಿ 2FA ಸೆಟಪ್ ಮಾ�
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:92
 msgid "Score"
 msgstr "ಅಂಕ"
+
+#: apps/client/src/pages/builder/_components/toolbar.tsx:104
+msgid "Scroll to Pan"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/toolbar.tsx:104
+msgid "Scroll to Zoom"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:97
 msgid "Search for a font family"
@@ -1296,7 +1313,7 @@ msgstr "ಸೆಟ್ಟಿಂಗ್ಸಗಳು"
 msgid "Setup two-factor authentication on your account"
 msgstr "ನಿಮ್ಮ ಖಾತೆಯಲ್ಲಿ ಎರಡು ಅಂಶದ ದೃಢೀಕರಣವನ್ನು ಹೊಂದಿಸಿ"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:97
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:107
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
 msgid "Sharing"
 msgstr "ಹಂಚಿಕೆ"
@@ -1313,12 +1330,12 @@ msgstr "ಪುಟ ಕೊನೆ ಗೊಳ್ಳುವ ಚಿನ್ನೇ ತೋ�
 msgid "Show Page Numbers"
 msgstr "ಪುಟ ಸಂಖ್ಯೆಗಳನ್ನು ತೋರಿಸಿ"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:258
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:255
 msgid "Sidebar"
 msgstr "ಪಾರ್ಶ್ವಪಟ್ಟಿ"
 
-#: apps/client/src/pages/auth/backup-otp/page.tsx:102
-#: apps/client/src/pages/auth/login/page.tsx:122
+#: apps/client/src/pages/auth/backup-otp/page.tsx:103
+#: apps/client/src/pages/auth/login/page.tsx:127
 #: apps/client/src/pages/auth/verify-otp/page.tsx:92
 msgid "Sign in"
 msgstr "ಸೈನ್ ಇನ್ ಮಾಡಿ"
@@ -1344,7 +1361,7 @@ msgstr "GitHub ನೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ"
 msgid "Sign in with Google"
 msgstr "Google ನೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ"
 
-#: apps/client/src/pages/auth/register/page.tsx:177
+#: apps/client/src/pages/auth/register/page.tsx:179
 msgid "Sign up"
 msgstr "ಖಾತೇ ರಚಿಸಿ"
 
@@ -1356,11 +1373,11 @@ msgstr ""
 msgid "Signups are currently disabled by the administrator."
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:71
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:72
 msgid "Size (in px)"
 msgstr "ಗಾತ್ರ (px ನಲ್ಲಿ)"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:226
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:227
 msgid "Slug"
 msgstr "ಸ್ಲಗ್"
 
@@ -1376,8 +1393,8 @@ msgstr "ನಿಮ್ಮ ರೆಸ್ಯೂಮ್ ಅನ್ನು ಮುದ್ರ
 msgid "Something went wrong while processing your request. Please try again later or raise an issue on GitHub."
 msgstr "ನಿಮ್ಮ ವಿನಂತಿಯನ್ನು ಪ್ರಕ್ರಿಯೆಗೊಳಿಸುವಾಗ ಏನೋ ತಪ್ಪಾಗಿದೆ. ದಯವಿಟ್ಟು ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ ಅಥವಾ GitHub ನಲ್ಲಿ ಸಮಸ್ಯೆಯನ್ನು ಎತ್ತಿಕೊಳ್ಳಿ."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:93
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:138
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:94
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:139
 msgid "Square"
 msgstr "ಚೌಕ"
 
@@ -1386,11 +1403,11 @@ msgstr "ಚೌಕ"
 msgid "Start building from scratch"
 msgstr "ಮೊದಲಿನಿಂದ ನಿರ್ಮಿಸಲು ಪ್ರಾರಂಭಿಸಿ"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:183
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:184
 msgid "Start building your resume by giving it a name."
 msgstr "ಹೆಸರನ್ನು ನೀಡುವ ಮೂಲಕ ನಿಮ್ಮ ರೆಸ್ಯೂಮ್ ಅನ್ನು ನಿರ್ಮಿಸಲು ಪ್ರಾರಂಭಿಸಿ."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:104
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:114
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:23
 msgid "Statistics"
 msgstr "ಅಂಕಿಅಂಶಗಳು"
@@ -1431,7 +1448,7 @@ msgstr "A4/ಲೆಟರ್ ಪುಟ ಸ್ವರೂಪಗಳನ್ನು ಬೆ
 msgid "System"
 msgstr "ಸಿಸ್ಟಂ"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:62
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:65
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
 msgid "Template"
 msgstr "ಮಾದರಿ"
@@ -1456,7 +1473,7 @@ msgstr "ನೀವು ನಮೂದಿಸಿದ ಪಾಸ್‌ವರ್ಡ್‌�
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
 msgstr "ನೀವು ನವೀಕರಿಸಲು ಬಯಸುವ ರೆಸ್ಯೂಮ್ ಲಾಕ್ ಆಗಿದೆ, ನೀವು ಅದರಲ್ಲಿ ಯಾವುದೇ ಬದಲಾವಣೆಗಳನ್ನು ಮಾಡಲು ಬಯಸಿದರೆ ದಯವಿಟ್ಟು ಅನ್‌ಲಾಕ್ ಮಾಡಿ."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:83
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:86
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:20
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:79
 msgid "Theme"
@@ -1466,11 +1483,11 @@ msgstr "ಥೀಮ್"
 msgid "There was an error connecting to the browser. Please make sure 'chrome' is running and reachable."
 msgstr "ಬ್ರೌಸರ್‌ಗೆ ಸಂಪರ್ಕಿಸುವಲ್ಲಿ ದೋಷ ಕಂಡುಬಂದಿದೆ. ದಯವಿಟ್ಟು 'ಕ್ರೋಮ್' ಚಾಲನೆಯಲ್ಲಿದೆ ಮತ್ತು ತಲುಪಬಹುದೆಂದು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:128
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:129
 msgid "This action can be reverted by clicking on the undo button in the floating toolbar."
 msgstr "ಫ್ಲೋಟಿಂಗ್ ಟೂಲ್‌ಬಾರ್‌ನಲ್ಲಿರುವ ರದ್ದುಗೊಳಿಸು ಬಟನ್ ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡುವ ಮೂಲಕ ಈ ಕ್ರಿಯೆಯನ್ನು ಹಿಂತಿರುಗಿಸಬಹುದು."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:149
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:150
 msgid "This action cannot be undone. This will permanently delete your resume and cannot be recovered."
 msgstr "ಈ ಕ್ರಿಯೆಯನ್ನು ರದ್ದುಗೊಳಿಸಲಾಗುವುದಿಲ್ಲ. ಇದು ನಿಮ್ಮ ರೆಸ್ಯೂಮ್ ಅನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸುತ್ತದೆ ಮತ್ತು ಮರುಪಡೆಯಲು ಸಾಧ್ಯವಿಲ್ಲ."
 
@@ -1486,7 +1503,7 @@ msgstr "ಈ ಪುನರಾರಂಭವನ್ನು ಲಾಕ್ ಮಾಡಲಾ
 msgid "This section is reserved for your personal notes specific to this resume. The content here remains private and is not shared with anyone else."
 msgstr "ಈ ವಿಭಾಗವನ್ನೂ ನಿರ್ದಿಷ್ಟವಾದ ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ಟಿಪ್ಪಣಿಗಳಿಗಾಗಿ ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ. ಇಲ್ಲಿರುವ ವಿಷಯವು ಖಾಸಗಿಯಾಗಿ ಉಳಿಯುತ್ತದೆ ಮತ್ತು ಬೇರೆಯವರೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳಲಾಗುವುದಿಲ್ಲ."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:214
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:215
 msgid "Tip: You can name the resume referring to the position you are applying for."
 msgstr "ಸಲಹೆ: ನೀವು ಅರ್ಜಿ ಸಲ್ಲಿಸುತ್ತಿರುವ ಸ್ಥಾನವನ್ನು ಉಲ್ಲೇಖಿಸಿ ನೀವು ರೆಸ್ಯೂಮ್‌ ಹೆಸರಿಸಬಹುದು."
 
@@ -1495,15 +1512,15 @@ msgctxt "Name of the Award"
 msgid "Title"
 msgstr "ಶೀರ್ಷಿಕೆ"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:194
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:195
 msgid "Title"
 msgstr "ಶೀರ್ಷಿಕೆ"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:120
+#: apps/client/src/pages/builder/_components/toolbar.tsx:138
 msgid "Toggle Page Break Line"
 msgstr "ಪುಟ ಬ್ರೇಕ್ ಲೈನ್ ಅನ್ನು ಟಾಗಲ್ ಮಾಡಿ"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:132
+#: apps/client/src/pages/builder/_components/toolbar.tsx:150
 msgid "Toggle Page Numbers"
 msgstr "ಪುಟ ಸಂಖ್ಯೆಗಳನ್ನು ಟಾಗಲ್ ಮಾಡಿ"
 
@@ -1534,7 +1551,7 @@ msgstr "ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಅಳಿಸುವುದನ�
 msgid "Type of Study"
 msgstr "ಅಧ್ಯಯನದ ಪ್ರಕಾರ"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:76
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:79
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:65
 msgid "Typography"
 msgstr "ಮುದ್ರಣಕಲೆ"
@@ -1543,7 +1560,7 @@ msgstr "ಮುದ್ರಣಕಲೆ"
 msgid "Underline Links"
 msgstr "ಲಿಂಕ್‌ಗಳನ್ನು ಅಂಡರ್‌ಲೈನ್ ಮಾಡಿ"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:66
+#: apps/client/src/pages/builder/_components/toolbar.tsx:76
 msgid "Undo"
 msgstr "ರದ್ದುಮಾಡು"
 
@@ -1562,11 +1579,11 @@ msgstr "ರೆಸ್ಯೂಮ್ ಅನ್ನು ಅನ್‌ಲಾಕ್ ಮಾ
 msgid "Unverified"
 msgstr "ಪರಿಶೀಲಿಸಲಾಗಿಲ್ಲ"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:158
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:163
 msgid "Update an existing item"
 msgstr "ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ಐಟಂ ಅನ್ನು ನವೀಕರಿಸಿ"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:177
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:178
 msgid "Update an existing resume"
 msgstr "ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ರೆಸ್ಯೂಮ್ ಅನ್ನು ನವೀಕರಿಸಿ"
 
@@ -1671,7 +1688,7 @@ msgstr "ಇತ್ತೀಚಿನ ಆವೃತ್ತಿಯಲ್ಲಿ ಹೊಸ�
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr "ಅಲ್ಪವಿರಾಮದಿಂದ ಬೇರ್ಪಡಿಸುವ ಮೂಲಕ ಅಥವಾ ಎಂಟರ್ ಒತ್ತುವ ಮೂಲಕ ನೀವು ಬಹು ಕೀವರ್ಡ್‌ಗಳನ್ನು ಸೇರಿಸಬಹುದು."
 
-#: apps/client/src/pages/auth/login/page.tsx:94
+#: apps/client/src/pages/auth/login/page.tsx:99
 msgid "You can also enter your username."
 msgstr "ನಿಮ್ಮ ಬಳಕೆದಾರಹೆಸರನ್ನು ಸಹ ನೀವು ನಮೂದಿಸಬಹುದು."
 
@@ -1720,11 +1737,11 @@ msgstr "ನಿಮ್ಮ OpenAI API ಕೀಯನ್ನು ಇನ್ನೂ ಹೊ�
 msgid "Your password has been updated successfully."
 msgstr "ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಯಶಸ್ವಿಯಾಗಿ ನವೀಕರಿಸಲಾಗಿದೆ."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:94
+#: apps/client/src/pages/builder/_components/toolbar.tsx:112
 msgid "Zoom In"
 msgstr "ಗಾತ್ರ ಹಿಗ್ಗಿಸಿ"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:100
+#: apps/client/src/pages/builder/_components/toolbar.tsx:118
 msgid "Zoom Out"
 msgstr "ಗಾತ್ರ ಕುಗ್ಗಿಸಿ"
 
