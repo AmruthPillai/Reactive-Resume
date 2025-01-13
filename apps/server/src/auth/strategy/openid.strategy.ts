@@ -2,30 +2,42 @@ import { BadRequestException, Injectable } from "@nestjs/common";
 import { PassportStrategy } from "@nestjs/passport";
 import { User } from "@prisma/client";
 import { ErrorMessage, processUsername } from "@reactive-resume/utils";
-import { Profile, Strategy, StrategyOptions, VerifyCallback } from "passport-google-oauth20";
+import { Profile, Strategy, StrategyOptions } from "passport-openidconnect";
 
 import { UserService } from "@/server/user/user.service";
 
 @Injectable()
-export class GoogleStrategy extends PassportStrategy(Strategy, "google") {
+export class OpenIDStrategy extends PassportStrategy(Strategy, "openid") {
   constructor(
+    readonly authorizationURL: string,
+    readonly callbackURL: string,
     readonly clientID: string,
     readonly clientSecret: string,
-    readonly callbackURL: string,
+    readonly issuer: string,
+    readonly tokenURL: string,
+    readonly userInfoURL: string,
     private readonly userService: UserService,
   ) {
-    super({ clientID, clientSecret, callbackURL, scope: ["email", "profile"] } as StrategyOptions);
+    super({
+      authorizationURL,
+      callbackURL,
+      clientID,
+      clientSecret,
+      issuer,
+      tokenURL,
+      userInfoURL,
+      scope: "openid email profile",
+    } as StrategyOptions);
   }
 
   async validate(
-    _accessToken: string,
-    _refreshToken: string,
+    issuer: unknown,
     profile: Profile,
-    done: VerifyCallback,
+    done: (err?: string | Error | null, user?: Express.User, info?: unknown) => void,
   ) {
     const { displayName, emails, photos, username } = profile;
 
-    const email = emails?.[0].value ?? `${username}@google.com`;
+    const email = emails?.[0].value ?? `${username}@openid.com`;
     const picture = photos?.[0].value;
 
     let user: User | null = null;
@@ -47,7 +59,7 @@ export class GoogleStrategy extends PassportStrategy(Strategy, "google") {
           picture,
           locale: "en-US",
           name: displayName,
-          provider: "google",
+          provider: "openid",
           emailVerified: true, // auto-verify emails
           username: processUsername(username ?? email.split("@")[0]),
           secrets: { create: {} },

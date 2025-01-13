@@ -4,6 +4,7 @@ import { NestFactory } from "@nestjs/core";
 import { NestExpressApplication } from "@nestjs/platform-express";
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
 import cookieParser from "cookie-parser";
+import session from "express-session";
 import helmet from "helmet";
 import { patchNestJsSwagger } from "nestjs-zod";
 
@@ -20,6 +21,16 @@ async function bootstrap() {
 
   // Cookie Parser
   app.use(cookieParser());
+
+  // Session
+  app.use(
+    session({
+      resave: false,
+      saveUninitialized: false,
+      secret: configService.getOrThrow("ACCESS_TOKEN_SECRET"),
+      cookie: { httpOnly: true, secure: process.env.NODE_ENV === "production" },
+    }),
+  );
 
   // CORS
   app.enableCors({

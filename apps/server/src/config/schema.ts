@@ -63,15 +63,24 @@ export const configSchema = z.object({
     .default("false")
     .transform((s) => s !== "false" && s !== "0"),
 
-  // GitHub (OAuth)
+  // GitHub (OAuth, Optional)
   GITHUB_CLIENT_ID: z.string().optional(),
   GITHUB_CLIENT_SECRET: z.string().optional(),
   GITHUB_CALLBACK_URL: z.string().url().optional(),
 
-  // Google (OAuth)
+  // Google (OAuth, Optional)
   GOOGLE_CLIENT_ID: z.string().optional(),
   GOOGLE_CLIENT_SECRET: z.string().optional(),
   GOOGLE_CALLBACK_URL: z.string().url().optional(),
+
+  // OpenID (Optional)
+  OPENID_AUTHORIZATION_URL: z.string().url().optional(),
+  OPENID_CALLBACK_URL: z.string().url().optional(),
+  OPENID_CLIENT_ID: z.string().optional(),
+  OPENID_CLIENT_SECRET: z.string().optional(),
+  OPENID_ISSUER: z.string().optional(),
+  OPENID_TOKEN_URL: z.string().url().optional(),
+  OPENID_USER_INFO_URL: z.string().url().optional(),
 });
 
 export type Config = z.infer<typeof configSchema>;

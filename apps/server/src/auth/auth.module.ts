@@ -14,6 +14,7 @@ import { GitHubStrategy } from "./strategy/github.strategy";
 import { GoogleStrategy } from "./strategy/google.strategy";
 import { JwtStrategy } from "./strategy/jwt.strategy";
 import { LocalStrategy } from "./strategy/local.strategy";
+import { OpenIDStrategy } from "./strategy/openid.strategy";
 import { RefreshStrategy } from "./strategy/refresh.strategy";
 import { TwoFactorStrategy } from "./strategy/two-factor.strategy";
 
@@ -58,6 +59,35 @@ export class AuthModule {
               const callbackURL = configService.getOrThrow("GOOGLE_CALLBACK_URL");
 
               return new GoogleStrategy(clientID, clientSecret, callbackURL, userService);
+            } catch {
+              return new DummyStrategy();
+            }
+          },
+        },
+
+        {
+          provide: OpenIDStrategy,
+          inject: [ConfigService, UserService],
+          useFactory: (configService: ConfigService<Config>, userService: UserService) => {
+            try {
+              const authorizationURL = configService.getOrThrow("OPENID_AUTHORIZATION_URL");
+              const callbackURL = configService.getOrThrow("OPENID_CALLBACK_URL");
+              const clientID = configService.getOrThrow("OPENID_CLIENT_ID");
+              const clientSecret = configService.getOrThrow("OPENID_CLIENT_SECRET");
+              const issuer = configService.getOrThrow("OPENID_ISSUER");
+              const tokenURL = configService.getOrThrow("OPENID_TOKEN_URL");
+              const userInfoURL = configService.getOrThrow("OPENID_USER_INFO_URL");
+
+              return new OpenIDStrategy(
+                authorizationURL,
+                callbackURL,
+                clientID,
+                clientSecret,
+                issuer,
+                tokenURL,
+                userInfoURL,
+                userService,
+              );
             } catch {
               return new DummyStrategy();
             }
