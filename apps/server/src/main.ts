@@ -28,6 +28,7 @@ async function bootstrap() {
       resave: false,
       saveUninitialized: false,
       secret: configService.getOrThrow("ACCESS_TOKEN_SECRET"),
+      cookie: { httpOnly: true, secure: process.env.NODE_ENV === "production" },
     }),
   );
 
