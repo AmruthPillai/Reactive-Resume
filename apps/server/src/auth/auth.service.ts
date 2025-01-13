@@ -199,6 +199,14 @@ export class AuthService {
       providers.push("google");
     }
 
+    if (
+      this.configService.get("OPENID_CLIENT_ID") &&
+      this.configService.get("OPENID_CLIENT_SECRET") &&
+      this.configService.get("OPENID_CALLBACK_URL")
+    ) {
+      providers.push("openid");
+    }
+
     return providers;
   }
 

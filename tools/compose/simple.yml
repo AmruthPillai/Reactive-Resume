@@ -106,6 +106,15 @@ services:
       # GOOGLE_CLIENT_SECRET: google_client_secret
       # GOOGLE_CALLBACK_URL: http://localhost:3000/api/auth/google/callback
 
+      # -- OpenID (Optional) --
+      # OPENID_AUTHORIZATION_URL:
+      # OPENID_CALLBACK_URL: http://localhost:3000/api/auth/openid/callback
+      # OPENID_CLIENT_ID:
+      # OPENID_CLIENT_SECRET:
+      # OPENID_ISSUER:
+      # OPENID_TOKEN_URL:
+      # OPENID_USER_INFO_URL:
+
 volumes:
   minio_data:
   postgres_data:
