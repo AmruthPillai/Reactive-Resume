@@ -11,7 +11,7 @@ import {
   Slider,
 } from "@reactive-resume/ui";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
+import type { z } from "zod";
 
 import { SectionDialog } from "../sections/shared/section-dialog";
 

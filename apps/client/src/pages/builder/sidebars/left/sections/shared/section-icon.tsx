@@ -1,3 +1,4 @@
+import type { IconProps } from "@phosphor-icons/react";
 import {
   Article,
   Books,
@@ -7,7 +8,6 @@ import {
   GameController,
   GraduationCap,
   HandHeart,
-  IconProps,
   Medal,
   PuzzlePiece,
   ShareNetwork,
@@ -15,8 +15,10 @@ import {
   User,
   Users,
 } from "@phosphor-icons/react";
-import { defaultSection, SectionKey, SectionWithItem } from "@reactive-resume/schema";
-import { Button, ButtonProps, Tooltip } from "@reactive-resume/ui";
+import type { SectionKey, SectionWithItem } from "@reactive-resume/schema";
+import { defaultSection } from "@reactive-resume/schema";
+import type { ButtonProps } from "@reactive-resume/ui";
+import { Button, Tooltip } from "@reactive-resume/ui";
 import get from "lodash.get";
 
 import { useResumeStore } from "@/client/stores/resume";

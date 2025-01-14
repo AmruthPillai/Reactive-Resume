@@ -1,6 +1,6 @@
-import { ResumeData } from "@reactive-resume/schema";
-import { ZodDto } from "nestjs-zod/dto";
-import { Schema } from "zod";
+import type { ResumeData } from "@reactive-resume/schema";
+import type { ZodDto } from "nestjs-zod/dto";
+import type { Schema } from "zod";
 
 export type Parser<Data = unknown, T = ZodDto, Result = ResumeData> = {
   schema?: Schema;

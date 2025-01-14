@@ -1,6 +1,6 @@
-import { ResetPasswordDto } from "@reactive-resume/dto";
+import type { ResetPasswordDto } from "@reactive-resume/dto";
 import { useMutation } from "@tanstack/react-query";
-import { AxiosResponse } from "axios";
+import type { AxiosResponse } from "axios";
 
 import { axios } from "@/client/libs/axios";
 

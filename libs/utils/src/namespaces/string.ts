@@ -1,6 +1,6 @@
 import { adjectives, animals, uniqueNamesGenerator } from "unique-names-generator";
 
-import { LayoutLocator, SortablePayload } from "./types";
+import type { LayoutLocator, SortablePayload } from "./types";
 
 export const getInitials = (name: string) => {
   // eslint-disable-next-line unicorn/better-regex

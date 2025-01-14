@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { UrlDto } from "@reactive-resume/dto";
+import type { UrlDto } from "@reactive-resume/dto";
 import { useMutation } from "@tanstack/react-query";
 
 import { toast } from "@/client/hooks/use-toast";

@@ -2,7 +2,7 @@ import { t } from "@lingui/macro";
 import { createId } from "@paralleldrive/cuid2";
 import { CopySimple, PencilSimple, Plus } from "@phosphor-icons/react";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import { SectionItem, SectionWithItem } from "@reactive-resume/schema";
+import type { SectionItem, SectionWithItem } from "@reactive-resume/schema";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -25,9 +25,10 @@ import {
 import { produce } from "immer";
 import get from "lodash.get";
 import { useEffect } from "react";
-import { UseFormReturn } from "react-hook-form";
+import type { UseFormReturn } from "react-hook-form";
 
-import { DialogName, useDialog } from "@/client/stores/dialog";
+import type { DialogName } from "@/client/stores/dialog";
+import { useDialog } from "@/client/stores/dialog";
 import { useResumeStore } from "@/client/stores/resume";
 
 type Props<T extends SectionItem> = {

@@ -1,5 +1,7 @@
-import { authResponseSchema, UserDto } from "@reactive-resume/dto";
-import { LoaderFunction, redirect } from "react-router";
+import type { UserDto } from "@reactive-resume/dto";
+import { authResponseSchema } from "@reactive-resume/dto";
+import type { LoaderFunction } from "react-router";
+import { redirect } from "react-router";
 
 import { USER_KEY } from "@/client/constants/query-keys";
 import { queryClient } from "@/client/libs/query-client";

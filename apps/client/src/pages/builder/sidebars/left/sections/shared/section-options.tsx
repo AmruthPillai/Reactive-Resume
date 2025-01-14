@@ -10,7 +10,8 @@ import {
   Plus,
   TrashSimple,
 } from "@phosphor-icons/react";
-import { defaultSections, SectionKey, SectionWithItem } from "@reactive-resume/schema";
+import type { SectionKey, SectionWithItem } from "@reactive-resume/schema";
+import { defaultSections } from "@reactive-resume/schema";
 import {
   Button,
   DropdownMenu,

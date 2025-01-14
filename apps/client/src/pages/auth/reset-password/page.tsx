@@ -17,7 +17,7 @@ import { useEffect, useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { useNavigate, useSearchParams } from "react-router";
-import { z } from "zod";
+import type { z } from "zod";
 
 import { useResetPassword } from "@/client/services/auth";
 

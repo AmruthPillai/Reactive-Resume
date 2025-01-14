@@ -1,5 +1,5 @@
 import { MagnifyingGlass } from "@phosphor-icons/react";
-import { DialogProps } from "@radix-ui/react-dialog";
+import type { DialogProps } from "@radix-ui/react-dialog";
 import { cn } from "@reactive-resume/utils";
 import { Command as CommandPrimitive } from "cmdk";
 import { forwardRef } from "react";

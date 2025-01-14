@@ -1,7 +1,8 @@
 import { CloudSun, Moon, Sun } from "@phosphor-icons/react";
 import { useTheme } from "@reactive-resume/hooks";
 import { Button } from "@reactive-resume/ui";
-import { motion, Variants } from "framer-motion";
+import type { Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import { useMemo } from "react";
 
 type Props = {

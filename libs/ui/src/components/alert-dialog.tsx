@@ -3,7 +3,7 @@ import { cn } from "@reactive-resume/utils";
 import { forwardRef } from "react";
 
 import { buttonVariants } from "../variants/button";
-import { ButtonProps } from "./button";
+import type { ButtonProps } from "./button";
 
 export const AlertDialog = AlertDialogPrimitive.Root;
 

@@ -1,5 +1,6 @@
 import { t } from "@lingui/macro";
-import { deepSearchAndParseDates, ErrorMessage } from "@reactive-resume/utils";
+import type { ErrorMessage } from "@reactive-resume/utils";
+import { deepSearchAndParseDates } from "@reactive-resume/utils";
 import _axios from "axios";
 import createAuthRefreshInterceptor from "axios-auth-refresh";
 import { redirect } from "react-router";
