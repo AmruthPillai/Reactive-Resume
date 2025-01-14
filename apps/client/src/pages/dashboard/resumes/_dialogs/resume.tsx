@@ -86,7 +86,7 @@ export const ResumeDialog = () => {
       if (!payload.item?.id) return;
 
       await updateResume({
-        ...payload.item,
+        id: payload.item.id,
         title: values.title,
         slug: values.slug,
       });
