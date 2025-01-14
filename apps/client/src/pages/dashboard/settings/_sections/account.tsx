@@ -1,7 +1,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/macro";
 import { Check, UploadSimple, Warning } from "@phosphor-icons/react";
-import { UpdateUserDto, updateUserSchema } from "@reactive-resume/dto";
+import type { UpdateUserDto } from "@reactive-resume/dto";
+import { updateUserSchema } from "@reactive-resume/dto";
 import {
   Button,
   buttonVariants,

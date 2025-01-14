@@ -1,6 +1,6 @@
 import { t } from "@lingui/macro";
 import { Plus, PlusCircle } from "@phosphor-icons/react";
-import {
+import type {
   Award,
   Certification,
   CustomSection,

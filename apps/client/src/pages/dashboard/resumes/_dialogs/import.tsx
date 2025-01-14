@@ -1,16 +1,14 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/macro";
 import { Check, DownloadSimple } from "@phosphor-icons/react";
+import type { JsonResume, LinkedIn, ReactiveResumeV3 } from "@reactive-resume/parser";
 import {
-  JsonResume,
   JsonResumeParser,
-  LinkedIn,
   LinkedInParser,
   ReactiveResumeParser,
-  ReactiveResumeV3,
   ReactiveResumeV3Parser,
 } from "@reactive-resume/parser";
-import { ResumeData } from "@reactive-resume/schema";
+import type { ResumeData } from "@reactive-resume/schema";
 import {
   Button,
   Dialog,

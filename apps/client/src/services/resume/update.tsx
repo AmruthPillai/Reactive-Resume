@@ -1,6 +1,6 @@
-import { ResumeDto, UpdateResumeDto } from "@reactive-resume/dto";
+import type { ResumeDto, UpdateResumeDto } from "@reactive-resume/dto";
 import { useMutation } from "@tanstack/react-query";
-import { AxiosResponse } from "axios";
+import type { AxiosResponse } from "axios";
 import debounce from "lodash.debounce";
 
 import { axios } from "@/client/libs/axios";

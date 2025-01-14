@@ -1,6 +1,6 @@
-import { ResumeDto } from "@reactive-resume/dto";
+import type { ResumeDto } from "@reactive-resume/dto";
 import { useQuery } from "@tanstack/react-query";
-import { AxiosResponse } from "axios";
+import type { AxiosResponse } from "axios";
 
 import { RESUMES_KEY } from "@/client/constants/query-keys";
 import { axios } from "@/client/libs/axios";

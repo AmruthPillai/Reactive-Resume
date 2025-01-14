@@ -1,6 +1,6 @@
-import { MessageDto } from "@reactive-resume/dto";
+import type { MessageDto } from "@reactive-resume/dto";
 import { useMutation } from "@tanstack/react-query";
-import { AxiosResponse } from "axios";
+import type { AxiosResponse } from "axios";
 
 import { axios } from "@/client/libs/axios";
 

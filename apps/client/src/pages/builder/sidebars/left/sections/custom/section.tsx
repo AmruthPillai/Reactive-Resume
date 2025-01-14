@@ -1,7 +1,7 @@
 import { t, Trans } from "@lingui/macro";
 import { createId } from "@paralleldrive/cuid2";
 import { DotsSixVertical, Envelope, Plus, X } from "@phosphor-icons/react";
-import { CustomField as ICustomField } from "@reactive-resume/schema";
+import type { CustomField as ICustomField } from "@reactive-resume/schema";
 import {
   Button,
   Input,

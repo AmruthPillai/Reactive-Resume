@@ -12,7 +12,7 @@ import {
   Input,
 } from "@reactive-resume/ui";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
+import type { z } from "zod";
 
 import { BrandIcon } from "@/client/components/brand-icon";
 

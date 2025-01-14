@@ -15,11 +15,13 @@ import {
   defaultSkill,
   defaultVolunteer,
 } from "@reactive-resume/schema";
-import { isUrl, Json } from "@reactive-resume/utils";
-import { Schema } from "zod";
+import type { Json } from "@reactive-resume/utils";
+import { isUrl } from "@reactive-resume/utils";
+import type { Schema } from "zod";
 
-import { Parser } from "../interfaces/parser";
-import { ReactiveResumeV3, reactiveResumeV3Schema } from "./schema";
+import type { Parser } from "../interfaces/parser";
+import type { ReactiveResumeV3 } from "./schema";
+import { reactiveResumeV3Schema } from "./schema";
 
 export * from "./schema";
 

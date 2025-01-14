@@ -1,10 +1,8 @@
+import type { DragEndEvent, DragOverEvent, DragStartEvent } from "@dnd-kit/core";
 import {
   closestCenter,
   DndContext,
-  DragEndEvent,
-  DragOverEvent,
   DragOverlay,
-  DragStartEvent,
   KeyboardSensor,
   PointerSensor,
   useDroppable,
@@ -22,13 +20,8 @@ import { t } from "@lingui/macro";
 import { ArrowCounterClockwise, DotsSixVertical, Plus, TrashSimple } from "@phosphor-icons/react";
 import { defaultMetadata } from "@reactive-resume/schema";
 import { Button, Portal, Tooltip } from "@reactive-resume/ui";
-import {
-  cn,
-  LayoutLocator,
-  moveItemInLayout,
-  parseLayoutLocator,
-  SortablePayload,
-} from "@reactive-resume/utils";
+import type { LayoutLocator, SortablePayload } from "@reactive-resume/utils";
+import { cn, moveItemInLayout, parseLayoutLocator } from "@reactive-resume/utils";
 import get from "lodash.get";
 import { useState } from "react";
 

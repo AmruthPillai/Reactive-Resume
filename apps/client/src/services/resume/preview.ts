@@ -1,4 +1,4 @@
-import { UrlDto } from "@reactive-resume/dto";
+import type { UrlDto } from "@reactive-resume/dto";
 import { useQuery } from "@tanstack/react-query";
 
 import { RESUME_PREVIEW_KEY } from "@/client/constants/query-keys";

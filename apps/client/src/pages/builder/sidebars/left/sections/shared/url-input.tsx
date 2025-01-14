@@ -1,6 +1,7 @@
 import { t } from "@lingui/macro";
 import { Tag } from "@phosphor-icons/react";
-import { URL, urlSchema } from "@reactive-resume/schema";
+import type { URL } from "@reactive-resume/schema";
+import { urlSchema } from "@reactive-resume/schema";
 import {
   Button,
   Input,

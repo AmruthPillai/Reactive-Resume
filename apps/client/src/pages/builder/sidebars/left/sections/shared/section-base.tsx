@@ -1,7 +1,7 @@
+import type { DragEndEvent } from "@dnd-kit/core";
 import {
   closestCenter,
   DndContext,
-  DragEndEvent,
   KeyboardSensor,
   PointerSensor,
   useSensor,
@@ -16,7 +16,7 @@ import {
 } from "@dnd-kit/sortable";
 import { t } from "@lingui/macro";
 import { Plus } from "@phosphor-icons/react";
-import { SectionItem, SectionKey, SectionWithItem } from "@reactive-resume/schema";
+import type { SectionItem, SectionKey, SectionWithItem } from "@reactive-resume/schema";
 import { Button } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { AnimatePresence, motion } from "framer-motion";

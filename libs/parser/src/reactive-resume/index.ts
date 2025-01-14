@@ -1,8 +1,9 @@
-import { ResumeData, resumeDataSchema } from "@reactive-resume/schema";
-import { Json } from "@reactive-resume/utils";
-import { Schema } from "zod";
+import type { ResumeData } from "@reactive-resume/schema";
+import { resumeDataSchema } from "@reactive-resume/schema";
+import type { Json } from "@reactive-resume/utils";
+import type { Schema } from "zod";
 
-import { Parser } from "../interfaces/parser";
+import type { Parser } from "../interfaces/parser";
 
 export class ReactiveResumeParser implements Parser<Json, ResumeData> {
   schema: Schema;

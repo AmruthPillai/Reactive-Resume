@@ -1,8 +1,10 @@
-import { SectionKey } from "@reactive-resume/schema";
-import { pageSizeMap, Template } from "@reactive-resume/utils";
+import type { SectionKey } from "@reactive-resume/schema";
+import type { Template } from "@reactive-resume/utils";
+import { pageSizeMap } from "@reactive-resume/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ReactZoomPanPinchRef, TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
+import type { ReactZoomPanPinchRef } from "react-zoom-pan-pinch";
+import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
 
 import { MM_TO_PX, Page } from "../components/page";
 import { useArtboardStore } from "../store/artboard";

@@ -1,4 +1,4 @@
-import { LayoutLocator } from "./types";
+import type { LayoutLocator } from "./types";
 
 // Function to find a specific item in a layout
 export const findItemInLayout = (item: string, layout: string[][][]): LayoutLocator | null => {

@@ -1,11 +1,12 @@
 import { t } from "@lingui/macro";
 import { CircleNotch, FilePdf } from "@phosphor-icons/react";
-import { ResumeDto } from "@reactive-resume/dto";
+import type { ResumeDto } from "@reactive-resume/dto";
 import { Button } from "@reactive-resume/ui";
 import { pageSizeMap } from "@reactive-resume/utils";
 import { useCallback, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link, LoaderFunction, redirect, useLoaderData } from "react-router";
+import type { LoaderFunction } from "react-router";
+import { Link, redirect, useLoaderData } from "react-router";
 
 import { Icon } from "@/client/components/icon";
 import { ThemeSwitch } from "@/client/components/theme-switch";

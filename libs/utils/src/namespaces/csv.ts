@@ -1,6 +1,6 @@
 import Papa from "papaparse";
 
-import { Json } from "./types";
+import type { Json } from "./types";
 
 export const parseCSV = async (string: string) => {
   return new Promise<Json[]>((resolve, reject) => {

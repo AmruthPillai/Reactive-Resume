@@ -10,12 +10,14 @@ import {
   defaultSkill,
   resumeDataSchema,
 } from "@reactive-resume/schema";
-import { extractUrl, Json, parseArrayLikeCSVEntry, parseCSV } from "@reactive-resume/utils";
+import type { Json } from "@reactive-resume/utils";
+import { extractUrl, parseArrayLikeCSVEntry, parseCSV } from "@reactive-resume/utils";
 import * as JSZip from "jszip";
-import { Schema } from "zod";
+import type { Schema } from "zod";
 
-import { Parser } from "../interfaces/parser";
-import { LinkedIn, linkedInSchema } from "./schema";
+import type { Parser } from "../interfaces/parser";
+import type { LinkedIn } from "./schema";
+import { linkedInSchema } from "./schema";
 
 export * from "./schema";
 

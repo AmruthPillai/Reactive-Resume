@@ -1,4 +1,4 @@
-import { StatisticsDto } from "@reactive-resume/dto";
+import type { StatisticsDto } from "@reactive-resume/dto";
 import { useQuery } from "@tanstack/react-query";
 
 import { RESUME_KEY } from "@/client/constants/query-keys";
