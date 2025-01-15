@@ -1,3 +1,4 @@
+import type { Config as UniqueNamesConfig } from "unique-names-generator";
 import { adjectives, animals, uniqueNamesGenerator } from "unique-names-generator";
 
 import type { LayoutLocator, SortablePayload } from "./types";
@@ -30,12 +31,13 @@ export const extractUrl = (string: string) => {
   return result ? result[0] : null;
 };
 
-export const generateRandomName = () => {
+export const generateRandomName = (options?: Omit<UniqueNamesConfig, "dictionaries">) => {
   return uniqueNamesGenerator({
     dictionaries: [adjectives, adjectives, animals],
     style: "capital",
     separator: " ",
     length: 3,
+    ...options,
   });
 };
 

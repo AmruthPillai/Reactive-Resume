@@ -1,5 +1,6 @@
-import { BadRequestException, Injectable } from "@nestjs/common";
+import { BadRequestException, Injectable, Logger } from "@nestjs/common";
 import { PassportStrategy } from "@nestjs/passport";
+import { createId } from "@paralleldrive/cuid2";
 import { User } from "@prisma/client";
 import { ErrorMessage, processUsername } from "@reactive-resume/utils";
 import { Profile, Strategy, StrategyOptions } from "passport-github2";
@@ -46,15 +47,17 @@ export class GitHubStrategy extends PassportStrategy(Strategy, "github") {
           email,
           picture,
           locale: "en-US",
-          name: displayName,
           provider: "github",
+          name: displayName || createId(),
           emailVerified: true, // auto-verify emails
           username: processUsername(username ?? email.split("@")[0]),
           secrets: { create: {} },
         });
 
         done(null, user);
-      } catch {
+      } catch (error) {
+        Logger.error(error);
+
         throw new BadRequestException(ErrorMessage.UserAlreadyExists);
       }
     }

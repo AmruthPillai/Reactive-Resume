@@ -1,7 +1,7 @@
-import { BadRequestException, Injectable } from "@nestjs/common";
+import { BadRequestException, Injectable, Logger } from "@nestjs/common";
 import { PassportStrategy } from "@nestjs/passport";
 import { User } from "@prisma/client";
-import { ErrorMessage, processUsername } from "@reactive-resume/utils";
+import { ErrorMessage, generateRandomName, processUsername } from "@reactive-resume/utils";
 import { Profile, Strategy, StrategyOptions } from "passport-openidconnect";
 
 import { UserService } from "@/server/user/user.service";
@@ -14,6 +14,7 @@ export class OpenIDStrategy extends PassportStrategy(Strategy, "openid") {
     readonly clientID: string,
     readonly clientSecret: string,
     readonly issuer: string,
+    readonly scope: string,
     readonly tokenURL: string,
     readonly userInfoURL: string,
     private readonly userService: UserService,
@@ -24,20 +25,21 @@ export class OpenIDStrategy extends PassportStrategy(Strategy, "openid") {
       clientID,
       clientSecret,
       issuer,
+      scope,
       tokenURL,
       userInfoURL,
-      scope: "openid email profile",
     } as StrategyOptions);
   }
 
   async validate(
-    issuer: unknown,
+    _issuer: unknown,
     profile: Profile,
     done: (err?: string | Error | null, user?: Express.User, info?: unknown) => void,
   ) {
     const { displayName, emails, photos, username } = profile;
 
-    const email = emails?.[0].value ?? `${username}@openid.com`;
+    const uniqueId = generateRandomName({ length: 2, style: "lowerCase", separator: "-" });
+    const email = emails?.[0].value ?? `${username ?? uniqueId}@openid.com`;
     const picture = photos?.[0].value;
 
     let user: User | null = null;
@@ -58,15 +60,17 @@ export class OpenIDStrategy extends PassportStrategy(Strategy, "openid") {
           email,
           picture,
           locale: "en-US",
-          name: displayName,
           provider: "openid",
+          name: displayName || uniqueId,
           emailVerified: true, // auto-verify emails
           username: processUsername(username ?? email.split("@")[0]),
           secrets: { create: {} },
         });
 
         done(null, user);
-      } catch {
+      } catch (error) {
+        Logger.error(error);
+
         throw new BadRequestException(ErrorMessage.UserAlreadyExists);
       }
     }

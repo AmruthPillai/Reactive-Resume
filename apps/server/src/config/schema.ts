@@ -74,11 +74,13 @@ export const configSchema = z.object({
   GOOGLE_CALLBACK_URL: z.string().url().optional(),
 
   // OpenID (Optional)
+  VITE_OPENID_NAME: z.string().optional(),
   OPENID_AUTHORIZATION_URL: z.string().url().optional(),
   OPENID_CALLBACK_URL: z.string().url().optional(),
   OPENID_CLIENT_ID: z.string().optional(),
   OPENID_CLIENT_SECRET: z.string().optional(),
   OPENID_ISSUER: z.string().optional(),
+  OPENID_SCOPE: z.string().optional(),
   OPENID_TOKEN_URL: z.string().url().optional(),
   OPENID_USER_INFO_URL: z.string().url().optional(),
 });

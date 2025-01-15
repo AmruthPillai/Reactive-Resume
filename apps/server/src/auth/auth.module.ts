@@ -75,6 +75,7 @@ export class AuthModule {
               const clientID = configService.getOrThrow("OPENID_CLIENT_ID");
               const clientSecret = configService.getOrThrow("OPENID_CLIENT_SECRET");
               const issuer = configService.getOrThrow("OPENID_ISSUER");
+              const scope = configService.getOrThrow("OPENID_SCOPE");
               const tokenURL = configService.getOrThrow("OPENID_TOKEN_URL");
               const userInfoURL = configService.getOrThrow("OPENID_USER_INFO_URL");
 
@@ -84,6 +85,7 @@ export class AuthModule {
                 clientID,
                 clientSecret,
                 issuer,
+                scope,
                 tokenURL,
                 userInfoURL,
                 userService,

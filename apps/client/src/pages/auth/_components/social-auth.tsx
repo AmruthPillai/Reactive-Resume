@@ -41,7 +41,7 @@ export const SocialAuth = () => {
         >
           <a href="/api/auth/openid">
             <Fingerprint className="mr-3 size-4" />
-            {t`OpenID`}
+            {import.meta.env.VITE_OPENID_NAME}
           </a>
         </Button>
       )}
