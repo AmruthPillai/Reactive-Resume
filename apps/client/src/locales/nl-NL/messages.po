@@ -8,7 +8,7 @@ msgstr ""
 "Language: nl\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-01-13 15:03\n"
+"PO-Revision-Date: 2025-01-17 21:32\n"
 "Last-Translator: \n"
 "Language-Team: Dutch\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -26,7 +26,7 @@ msgstr "U hebt tweefactorauthenticatie succesvol ingeschakeld."
 msgid "{templatesCount} resume templates to choose from"
 msgstr "{templatesCount} CV-sjablonen om uit te kiezen"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:141
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:142
 msgid "{value, plural, one {Column} other {Columns}}"
 msgstr "{value, plural, one {Kolom} other {Kolommen}}"
 
@@ -90,11 +90,11 @@ msgid "A4"
 msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:272
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:270
 msgid "Accepts only {accept} files"
 msgstr "Accepteert alleen {accept} bestanden"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:104
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:105
 msgid "Account"
 msgstr "Account"
 
@@ -108,7 +108,7 @@ msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "Een nieuw item toevoegen"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:90
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:91
 msgid "Add a new item"
 msgstr "Een nieuw item toevoegen"
 
@@ -117,7 +117,7 @@ msgstr "Een nieuw item toevoegen"
 msgid "Add a new section"
 msgstr "Een nieuwe sectie toevoegen"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:268
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:261
 msgid "Add New Page"
 msgstr "Eigen Pagina toevoegen"
 
@@ -129,7 +129,7 @@ msgstr "AI"
 msgid "Already have an account?"
 msgstr "Heeft u al een account?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:146
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:144
 msgid "An error occurred while validating the file."
 msgstr "Er is een fout opgetreden tijdens het valideren van het bestand."
 
@@ -150,11 +150,11 @@ msgstr "Iedereen met deze link kan het CV bekijken en downloaden. Deel het op je
 msgid "Apply Custom CSS"
 msgstr "Aangepaste CSS toepassen"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:127
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:128
 msgid "Are you sure you want to delete this item?"
 msgstr "Weet u zeker dat u dit item wilt verwijderen?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:148
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:149
 msgid "Are you sure you want to delete your resume?"
 msgstr "Weet u zeker dat u uw cv wilt verwijderen?"
 
@@ -179,7 +179,7 @@ msgstr "Weet je het zeker?"
 msgid "Area of Study"
 msgstr "Studierichting"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:86
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:79
 msgid "Aspect Ratio"
 msgstr "Verhouding"
 
@@ -222,15 +222,15 @@ msgstr "Basisgegevens"
 msgid "Basics"
 msgstr "Basisgegevens"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:198
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:191
 msgid "Border"
 msgstr "Rand"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:131
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:124
 msgid "Border Radius"
 msgstr "Grensradius"
 
-#: apps/client/src/pages/public/page.tsx:92
+#: apps/client/src/pages/public/page.tsx:93
 msgid "Built with"
 msgstr "Ontwikkeld met"
 
@@ -239,9 +239,9 @@ msgstr "Ontwikkeld met"
 msgid "By the community, for the community."
 msgstr "Door de gemeenschap, voor de gemeenschap."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:134
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:135
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:155
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:156
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
 msgid "Cancel"
 msgstr "Annuleren"
@@ -264,15 +264,15 @@ msgstr "Wachtwoord Wijzigen"
 msgid "Change Tone"
 msgstr "Wijzig Toon"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:186
 msgid "Changed your mind about the name? Give it a new one."
 msgstr "Ben je van gedachten veranderd over de naam? Geef het een nieuwe."
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:69
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:70
 msgid "Check your email for the confirmation link to update your email address."
 msgstr "Controleer uw e-mail voor de bevestigingslink om uw e-mailadres bij te werken."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:151
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:144
 msgid "Circle"
 msgstr "Cirkel"
 
@@ -288,7 +288,7 @@ msgstr "Code"
 msgid "Code must be exactly 6 digits long."
 msgstr "De code moet exact 6 cijfers lang zijn."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:135
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:136
 msgid "Columns"
 msgstr "Kolommen"
 
@@ -322,8 +322,8 @@ msgstr "Link naar CV Kopiëren"
 msgid "Copy to Clipboard"
 msgstr "Naar Klembord Kopiëren"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:178
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:179
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
 msgid "Create"
 msgstr "Aanmaken"
 
@@ -332,11 +332,11 @@ msgstr "Aanmaken"
 msgid "Create a new account"
 msgstr "Maak een nieuw account aan"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:162
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:163
 msgid "Create a new item"
 msgstr "Maak een nieuw item aan"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:177
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:178
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:18
 msgid "Create a new resume"
@@ -347,7 +347,7 @@ msgctxt "This is a link to create a new account"
 msgid "Create one now"
 msgstr "Maak er nu één aan"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:258
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:259
 msgid "Create Sample Resume"
 msgstr "Maak een Voorbeeld CV aan"
 
@@ -360,7 +360,7 @@ msgstr "Aangepaste CSS"
 msgid "Custom resume sections"
 msgstr "Aangepaste CV-secties"
 
-#: apps/client/src/stores/resume.ts:45
+#: apps/client/src/stores/resume.ts:47
 msgid "Custom Section"
 msgstr "Aangepaste Sectie"
 
@@ -386,7 +386,7 @@ msgstr "Donker"
 msgid "Date"
 msgstr "Datum"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:86
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:110
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:72
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:80
@@ -394,8 +394,8 @@ msgstr "Datum"
 msgid "Date or Date Range"
 msgstr "Datum of Datumbereik"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:136
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:157
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:137
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:158
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:121
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:127
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:172
@@ -407,7 +407,7 @@ msgstr "Verwijderen"
 msgid "Delete Account"
 msgstr "Account Verwijderen"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:72
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:73
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:66
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:53
@@ -427,8 +427,8 @@ msgstr "Deactiveer"
 msgid "Disable 2FA"
 msgstr "Deactiveer 2FA"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:304
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:302
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:220
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:134
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
 msgid "Discard"
@@ -463,7 +463,7 @@ msgid "Download a PDF of your resume. This file can be used to print your resume
 msgstr "Download een PDF van uw CV. Dit bestand kan worden gebruikt om uw CV af te drukken, naar recruiters te sturen of te uploaden op vacaturesites."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:176
-#: apps/client/src/pages/public/page.tsx:104
+#: apps/client/src/pages/public/page.tsx:105
 msgid "Download PDF"
 msgstr "Download PDF"
 
@@ -471,19 +471,19 @@ msgstr "Download PDF"
 msgid "Downloads"
 msgstr "Downloads"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:180
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:181
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:246
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:105
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:95
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:156
 msgid "Duplicate"
 msgstr "Dupliceer"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:164
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:165
 msgid "Duplicate an existing item"
 msgstr "Een bestaand item dupliceren"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:179
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:180
 msgid "Duplicate an existing resume"
 msgstr "Een bestaand cv dupliceren"
 
@@ -491,7 +491,7 @@ msgstr "Een bestaand cv dupliceren"
 msgid "Edit"
 msgstr "Wijzigen"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:176
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:169
 msgid "Effects"
 msgstr "Effecten"
 
@@ -499,7 +499,7 @@ msgstr "Effecten"
 #: apps/client/src/pages/auth/login/page.tsx:90
 #: apps/client/src/pages/auth/register/page.tsx:141
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:180
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:181
 msgid "Email"
 msgstr "E-mail"
 
@@ -531,7 +531,7 @@ msgstr "Voer hieronder het eenmalige wachtwoord in dat u van uw authenticator-ap
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "Voer uw e-mailadres in en wij sturen u een link om uw wachtwoord opnieuw in te stellen als het account bestaat."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:285
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:283
 msgid "Errors"
 msgstr "Fouten"
 
@@ -548,11 +548,11 @@ msgstr "Ontdek de sjablonen die beschikbaar zijn in Reactive Resume en bekijk de
 msgid "Export"
 msgstr "Exporteren"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:257
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
 msgid "File"
 msgstr "Bestand"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:223
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:221
 msgid "Filetype"
 msgstr "Bestandstype"
 
@@ -564,19 +564,19 @@ msgstr "Tenslotte,"
 msgid "Fix Spelling & Grammar"
 msgstr "Spelling en Grammatica Verbeteren"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:93
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:94
 msgid "Font Family"
 msgstr "Lettertype Familie"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:134
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:135
 msgid "Font Size"
 msgstr "Tekengrootte"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:108
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:109
 msgid "Font Subset"
 msgstr "Lettertype Subset"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:120
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:121
 msgid "Font Variants"
 msgstr "Lettertypevarianten"
 
@@ -618,7 +618,7 @@ msgstr "Gebruiksvriendelijk"
 msgid "Full Name"
 msgstr "Volledige Naam"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:201
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:202
 msgid "Generate a random title for your resume"
 msgstr "Genereer een willekeurige titel voor uw CV"
 
@@ -634,7 +634,7 @@ msgstr "GitHub"
 msgid "GitHub Stars"
 msgstr "GitHub Sterren"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:186
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:187
 msgid "Give your old resume a new name."
 msgstr "Geef uw oude CV een nieuwe naam."
 
@@ -647,7 +647,7 @@ msgstr "Ga naar het Dashboard"
 msgid "Google"
 msgstr "Google"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:209
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:202
 msgid "Grayscale"
 msgstr "Grijswaarden"
 
@@ -659,7 +659,7 @@ msgstr "Raster"
 msgid "Headline"
 msgstr "Titel"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:106
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:107
 msgid "Here, you can update your account information such as your profile picture, name and username."
 msgstr "Hier kunt u uw account informatie bijwerken, zoals uw profielfoto, naam en gebruikersnaam."
 
@@ -669,15 +669,15 @@ msgstr "Hier kunt u uw profiel bijwerken om uw ervaring aan te passen en te pers
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:80
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:94
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:187
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:180
 msgid "Hidden"
 msgstr "Verborgen"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:105
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:106
 msgid "Hide"
 msgstr "Verbergen"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:178
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:179
 msgid "Hide Icons"
 msgstr "Pictogrammen Verbergen"
 
@@ -687,7 +687,7 @@ msgstr "Pictogrammen Verbergen"
 msgid "Hold <0>Ctrl</0> to display your password temporarily."
 msgstr "Houd <0>Ctrl</0> ingedrukt om uw wachtwoord tijdelijk weer te geven."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:100
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:93
 msgid "Horizontal"
 msgstr "Horizontaal"
 
@@ -716,11 +716,11 @@ msgstr "Als u verificatie op basis van twee factoren uitschakelt, hoeft u niet l
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "Als u meertalig bent, zouden we uw hulp erg op prijs stellen om de app naar meer talen en gemeenschappen te brengen. Maakt u zich geen zorgen als u uw taal niet op de lijst ziet staan - geef me gewoon een shout-out op GitHub, en ik zal ervoor zorgen dat uw taal wordt toegevoegd. Klaar om te beginnen? Ga aan de slag met vertalen bij Crowdin door op de onderstaande link te klikken."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:311
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:309
 msgid "Import"
 msgstr "Importeren"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:210
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:208
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -802,15 +802,15 @@ msgstr "jan.janssen@example.com"
 msgid "JSON"
 msgstr "JSON"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:158
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:159
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:138
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:109
 msgid "Keywords"
 msgstr "Sleutelwoorden"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:41
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:51
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:42
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:52
 msgid "Label"
 msgstr "Label"
 
@@ -824,7 +824,7 @@ msgid "Last updated {lastUpdated}"
 msgstr "Laatst bijgewerkt {lastUpdated}"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:72
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:205
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
 msgid "Layout"
 msgstr "Layout"
 
@@ -853,7 +853,7 @@ msgstr "Licht"
 msgid "Light or dark theme"
 msgstr "Licht of donker thema"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:151
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:152
 msgid "Line Height"
 msgstr "Regelafstand"
 
@@ -866,7 +866,7 @@ msgstr "LinkedIn, JSON CV, enz."
 msgid "List"
 msgstr "Lijst"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:100
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:93
@@ -897,7 +897,7 @@ msgstr "Uitloggen"
 msgid "Lost your device?"
 msgstr "Bent u uw apparaat kwijt?"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:254
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:247
 msgid "Main"
 msgstr "Algemeen"
 
@@ -936,7 +936,7 @@ msgid "Model"
 msgstr "Model"
 
 #: apps/client/src/pages/auth/register/page.tsx:98
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:58
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:59
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:48
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:52
@@ -944,7 +944,7 @@ msgstr "Model"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:88
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:152
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:153
 msgid "Name"
 msgstr "Naam"
 
@@ -983,8 +983,8 @@ msgid "One-Time Password"
 msgstr "Eenmalig Wachtwoord"
 
 #: apps/client/src/components/ai-actions.tsx:56
-#: apps/client/src/libs/axios.ts:29
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:190
+#: apps/client/src/libs/axios.ts:30
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:188
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "Oeps, de server gaf een fout."
@@ -1017,12 +1017,8 @@ msgstr "OpenAI/Ollama API sleutel"
 msgid "OpenAI/Ollama Integration"
 msgstr "OpenAI/Ollama Integratie"
 
-#: apps/client/src/pages/auth/_components/social-auth.tsx:44
-msgid "OpenID"
-msgstr ""
-
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:168
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:169
 msgid "Options"
 msgstr "Opties"
 
@@ -1040,7 +1036,7 @@ msgstr "Organisatie"
 msgid "Page"
 msgstr "Pagina"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:235
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:228
 msgid "Page {pageNumber}"
 msgstr "Pagina {pageNumber}"
 
@@ -1072,7 +1068,7 @@ msgid "Pick any font from Google Fonts"
 msgstr "Kies een lettertype uit Google Fonts"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/section.tsx:69
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:120
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:121
 msgid "Picture"
 msgstr "Foto"
 
@@ -1080,7 +1076,7 @@ msgstr "Foto"
 msgid "Please note that this step is completely optional."
 msgstr "Let op: deze stap is volledig optioneel."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:227
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:225
 msgid "Please select a file type"
 msgstr "Selecteer een bestandstype"
 
@@ -1088,7 +1084,7 @@ msgstr "Selecteer een bestandstype"
 msgid "Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app."
 msgstr "Bewaar uw back-upcodes op een veilige plaats. U kunt één van deze codes gebruiken om in te loggen in het geval dat u toegang tot uw authenticatie-app verliest."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:106
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:99
 msgid "Portrait"
 msgstr "Staand"
 
@@ -1148,14 +1144,14 @@ msgstr "Probleem aankaarten"
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
-#: apps/client/src/pages/builder/page.tsx:43
+#: apps/client/src/pages/builder/page.tsx:44
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
 #: apps/client/src/pages/home/components/footer.tsx:18
 #: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
 #: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/public/page.tsx:73
-#: apps/client/src/pages/public/page.tsx:94
+#: apps/client/src/pages/public/page.tsx:74
+#: apps/client/src/pages/public/page.tsx:95
 msgid "Reactive Resume"
 msgstr "Reactive Resume"
 
@@ -1180,30 +1176,30 @@ msgid "Redo"
 msgstr "Opnieuw"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:100
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:156
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:157
 msgid "Remove"
 msgstr "Verwijderen"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:238
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:231
 msgid "Remove Page"
 msgstr "Pagina verwijderen"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:110
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:111
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:101
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:86
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:152
 msgid "Rename"
 msgstr "Hernoemen"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:198
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:199
 msgid "Resend email confirmation link"
 msgstr "Bevestigingslink opnieuw verzenden"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:151
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:152
 msgid "Reset"
 msgstr "Resetten"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:208
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:201
 msgid "Reset Layout"
 msgstr "Lay-out Resetten"
 
@@ -1230,13 +1226,13 @@ msgstr "CV's Gegenereerd"
 msgid "Rich in features, not in pricing."
 msgstr "Rijk aan functies, niet aan prijzen."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:145
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:138
 msgid "Rounded"
 msgstr "Afgeronde hoeken"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:179
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:180
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:217
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:131
 msgid "Save Changes"
 msgstr "Wijzigingen Opslaan"
@@ -1266,15 +1262,15 @@ msgstr "Scroll naar Pan"
 msgid "Scroll to Zoom"
 msgstr "Scroll naar zoom"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:97
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:98
 msgid "Search for a font family"
 msgstr "Een lettertypefamilie zoeken"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:112
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:113
 msgid "Search for a font subset"
 msgstr "Zoek naar een lettertype subset"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:125
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:126
 msgid "Search for a font variant"
 msgstr "Zoeken naar een lettertype-variant"
 
@@ -1302,7 +1298,7 @@ msgstr "E-mail Verzenden"
 msgid "Send me a message"
 msgstr "Stuur mij een bericht"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:96
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:97
 msgid "Separate Links"
 msgstr "Gescheiden links"
 
@@ -1322,7 +1318,7 @@ msgstr "Stel tweestapsverificatie in voor uw account"
 msgid "Sharing"
 msgstr "Delen"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:105
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:106
 msgid "Show"
 msgstr "Weergeven"
 
@@ -1334,7 +1330,7 @@ msgstr "Toon breuklijn"
 msgid "Show Page Numbers"
 msgstr "Paginanummers Weergeven"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:255
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:248
 msgid "Sidebar"
 msgstr "Zijbalk"
 
@@ -1377,11 +1373,11 @@ msgstr "Aanmelden via e-mail is momenteel uitgeschakeld door de beheerder."
 msgid "Signups are currently disabled by the administrator."
 msgstr "Aanmeldingen zijn momenteel uitgeschakeld door de beheerder."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:72
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:65
 msgid "Size (in px)"
 msgstr "Afmeting (in px)"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:227
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:228
 msgid "Slug"
 msgstr "Korte naam"
 
@@ -1397,8 +1393,8 @@ msgstr "Er is iets misgegaan bij het afdrukken van je cv. Probeer het later nog 
 msgid "Something went wrong while processing your request. Please try again later or raise an issue on GitHub."
 msgstr "Er is iets misgegaan tijdens het verwerken van uw verzoek. Probeer het later opnieuw of stel een probleem op GitHub."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:94
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:139
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:87
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:132
 msgid "Square"
 msgstr "Vierkant"
 
@@ -1407,7 +1403,7 @@ msgstr "Vierkant"
 msgid "Start building from scratch"
 msgstr "Begin vanaf nul"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:184
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
 msgid "Start building your resume by giving it a name."
 msgstr "Begin het opstellen van uw CV door het een naam te geven."
 
@@ -1426,7 +1422,7 @@ msgstr "Bewaar uw back-upcodes veilig"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:128
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:129
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:138
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:114
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:108
@@ -1487,11 +1483,11 @@ msgstr "Thema"
 msgid "There was an error connecting to the browser. Please make sure 'chrome' is running and reachable."
 msgstr "Er is een fout opgetreden bij het verbinden met de browser. Zorg ervoor dat 'chrome' actief en bereikbaar is."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:129
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:130
 msgid "This action can be reverted by clicking on the undo button in the floating toolbar."
 msgstr "Deze actie kan u terugdraaien door op de knop 'Ongedaan maken' in de zwevende werkbalk te klikken."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:150
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:151
 msgid "This action cannot be undone. This will permanently delete your resume and cannot be recovered."
 msgstr "Deze actie kan niet ongedaan worden gemaakt. Dit zal uw CV permanent verwijderen en kan niet hersteld worden."
 
@@ -1507,7 +1503,7 @@ msgstr "Deze CV is vergrendeld. Ontgrendel het om verdere wijzigingen aan te bre
 msgid "This section is reserved for your personal notes specific to this resume. The content here remains private and is not shared with anyone else."
 msgstr "Dit gedeelte is gereserveerd voor uw persoonlijke aantekeningen die specifiek zijn voor deze CV. De inhoud blijft privé en wordt met niemand anders gedeeld."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:215
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:216
 msgid "Tip: You can name the resume referring to the position you are applying for."
 msgstr "Tip: U kunt de CV een naam geven die verwijst naar de functie waarvoor u solliciteert."
 
@@ -1516,7 +1512,7 @@ msgctxt "Name of the Award"
 msgid "Title"
 msgstr "Titel"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:195
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:196
 msgid "Title"
 msgstr "Titel"
 
@@ -1556,11 +1552,11 @@ msgid "Type of Study"
 msgstr "Soort studie"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:79
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:65
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:66
 msgid "Typography"
 msgstr "Typografie"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:189
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:190
 msgid "Underline Links"
 msgstr "Links Onderstrepen"
 
@@ -1579,19 +1575,19 @@ msgstr "Ontgrendelen"
 msgid "Unlocking a resume will allow you to make changes to it again."
 msgstr "Als je een CV ontgrendelt, kun je er opnieuw wijzigingen in aanbrengen."
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:191
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:192
 msgid "Unverified"
 msgstr "Niet geverifiëerd"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:163
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:164
 msgid "Update an existing item"
 msgstr "Een bestaand item bijwerken"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:178
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:179
 msgid "Update an existing resume"
 msgstr "Een bestaande CV bijwerken"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:214
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:212
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
 msgstr "Upload een bestand van één van de geaccepteerde bronnen om bestaande gegevens te verwerken en te importeren in Reactieve Resume zodat u deze makkelijker kunt bewerken."
 
@@ -1599,7 +1595,7 @@ msgstr "Upload een bestand van één van de geaccepteerde bronnen om bestaande g
 msgid "URL"
 msgstr "URL"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:60
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:61
 msgid "URL must start with https://"
 msgstr "URL moet beginnen met https://"
 
@@ -1614,7 +1610,7 @@ msgstr "De gebruiker heeft geen geassocieerde 'secrets' record. Gelieve dit prob
 
 #: apps/client/src/pages/auth/register/page.tsx:119
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:55
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:167
 msgid "Username"
 msgstr "Gebruikersnaam"
 
@@ -1622,11 +1618,11 @@ msgstr "Gebruikersnaam"
 msgid "Users Signed Up"
 msgstr "Gebruikers Aangemeld"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:298
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:296
 msgid "Validate"
 msgstr "Valideren"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:316
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:314
 msgid "Validated"
 msgstr "Gevalideerd"
 
@@ -1634,7 +1630,7 @@ msgstr "Gevalideerd"
 msgid "Value"
 msgstr "Waarde"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:191
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:192
 msgid "Verified"
 msgstr "Geverifiëerd"
 
@@ -1669,7 +1665,7 @@ msgstr "Wij verifiëren uw e-mailadres enkel om ervoor te zorgen dat wij u een l
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:81
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:114
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:115
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:124
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:69
@@ -1685,7 +1681,7 @@ msgstr "Website"
 msgid "What's new in the latest version"
 msgstr "Wat is er nieuw in de laatste versie"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:163
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:164
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:143
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:114

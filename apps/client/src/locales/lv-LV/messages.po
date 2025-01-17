@@ -8,7 +8,7 @@ msgstr ""
 "Language: lv\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-01-13 15:03\n"
+"PO-Revision-Date: 2025-01-17 21:32\n"
 "Last-Translator: \n"
 "Language-Team: Latvian\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2;\n"
@@ -26,7 +26,7 @@ msgstr "Jūs esat veiksmīgi aktivizējis divu faktoru autentifikāciju."
 msgid "{templatesCount} resume templates to choose from"
 msgstr "{templatesCount} CV veidnes, no kurām izvēlēties"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:141
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:142
 msgid "{value, plural, one {Column} other {Columns}}"
 msgstr "{value, plural, one {Kolonna} other {Kolonnas}}"
 
@@ -90,11 +90,11 @@ msgid "A4"
 msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:272
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:270
 msgid "Accepts only {accept} files"
 msgstr "Pieņem tikai {accept} failus"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:104
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:105
 msgid "Account"
 msgstr "Konts"
 
@@ -108,7 +108,7 @@ msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "Pievienot jaunu elementu"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:90
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:91
 msgid "Add a new item"
 msgstr "Pievienot jaunu elementu"
 
@@ -117,7 +117,7 @@ msgstr "Pievienot jaunu elementu"
 msgid "Add a new section"
 msgstr "Pievienot jaunu sadaļu"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:268
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:261
 msgid "Add New Page"
 msgstr "Pievienot jaunu lapu"
 
@@ -129,7 +129,7 @@ msgstr "AI"
 msgid "Already have an account?"
 msgstr "Jums jau ir konts?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:146
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:144
 msgid "An error occurred while validating the file."
 msgstr "Faila validēšanas laikā notika kļūda."
 
@@ -150,11 +150,11 @@ msgstr "Ikviens, kam ir šī saite, var apskatīt un lejupielādēt CV. Kopīgoj
 msgid "Apply Custom CSS"
 msgstr "Pielāgotā CSS piemērošana"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:127
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:128
 msgid "Are you sure you want to delete this item?"
 msgstr "Vai esat pārliecināts, ka vēlaties dzēst šo objektu?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:148
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:149
 msgid "Are you sure you want to delete your resume?"
 msgstr "Vai esat pārliecināts, ka vēlaties dzēst savu CV?"
 
@@ -179,7 +179,7 @@ msgstr "Vai esat pārliecināts?"
 msgid "Area of Study"
 msgstr "Studiju joma"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:86
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:79
 msgid "Aspect Ratio"
 msgstr "Aspekta attiecība"
 
@@ -222,15 +222,15 @@ msgstr "Pamati"
 msgid "Basics"
 msgstr "Pamati"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:198
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:191
 msgid "Border"
 msgstr "Robeža"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:131
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:124
 msgid "Border Radius"
 msgstr "Robežu rādiuss"
 
-#: apps/client/src/pages/public/page.tsx:92
+#: apps/client/src/pages/public/page.tsx:93
 msgid "Built with"
 msgstr "Izgatavots ar"
 
@@ -239,9 +239,9 @@ msgstr "Izgatavots ar"
 msgid "By the community, for the community."
 msgstr "Sabiedrība - sabiedrībai un sabiedrībai."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:134
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:135
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:155
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:156
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
 msgid "Cancel"
 msgstr "Atcelt"
@@ -264,15 +264,15 @@ msgstr "Mainīt paroli"
 msgid "Change Tone"
 msgstr "Mainīt toni"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:186
 msgid "Changed your mind about the name? Give it a new one."
 msgstr "Vai esat mainījis domas par nosaukumu? Dodiet tam jaunu nosaukumu."
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:69
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:70
 msgid "Check your email for the confirmation link to update your email address."
 msgstr "Pārbaudiet savu e-pasta vēstuli, lai saņemtu apstiprinājuma saiti e-pasta adreses atjaunināšanai."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:151
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:144
 msgid "Circle"
 msgstr "Aplis"
 
@@ -288,7 +288,7 @@ msgstr "Kods"
 msgid "Code must be exactly 6 digits long."
 msgstr "Kodam jābūt tieši 6 ciparu garam."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:135
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:136
 msgid "Columns"
 msgstr "Kolonnas"
 
@@ -322,8 +322,8 @@ msgstr "Kopēt saiti uz CV"
 msgid "Copy to Clipboard"
 msgstr "Kopēt uz starpliktuvi"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:178
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:179
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
 msgid "Create"
 msgstr "Izveidot"
 
@@ -332,11 +332,11 @@ msgstr "Izveidot"
 msgid "Create a new account"
 msgstr "Izveidot jaunu kontu"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:162
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:163
 msgid "Create a new item"
 msgstr "Izveidot jaunu elementu"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:177
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:178
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:18
 msgid "Create a new resume"
@@ -347,7 +347,7 @@ msgctxt "This is a link to create a new account"
 msgid "Create one now"
 msgstr "Izveidojiet to tagad"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:258
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:259
 msgid "Create Sample Resume"
 msgstr "Izveidot parauga CV"
 
@@ -360,7 +360,7 @@ msgstr "Pielāgotais CSS"
 msgid "Custom resume sections"
 msgstr "Pielāgotas CV sadaļas"
 
-#: apps/client/src/stores/resume.ts:45
+#: apps/client/src/stores/resume.ts:47
 msgid "Custom Section"
 msgstr "Pielāgotā sadaļa"
 
@@ -386,7 +386,7 @@ msgstr "Tumšs"
 msgid "Date"
 msgstr "Datums"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:86
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:110
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:72
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:80
@@ -394,8 +394,8 @@ msgstr "Datums"
 msgid "Date or Date Range"
 msgstr "Datums vai datuma diapazons"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:136
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:157
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:137
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:158
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:121
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:127
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:172
@@ -407,7 +407,7 @@ msgstr "Dzēst"
 msgid "Delete Account"
 msgstr "Konta dzēšana"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:72
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:73
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:66
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:53
@@ -427,8 +427,8 @@ msgstr "Atslēgt"
 msgid "Disable 2FA"
 msgstr "2FA atspējošana"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:304
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:302
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:220
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:134
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
 msgid "Discard"
@@ -463,7 +463,7 @@ msgid "Download a PDF of your resume. This file can be used to print your resume
 msgstr "Lejupielādējiet savu CV PDF formātā. Šo failu var izmantot, lai izdrukātu savu CV, nosūtītu to personāla atlases speciālistiem vai augšupielādētu darba portālos."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:176
-#: apps/client/src/pages/public/page.tsx:104
+#: apps/client/src/pages/public/page.tsx:105
 msgid "Download PDF"
 msgstr "Lejupielādēt PDF"
 
@@ -471,19 +471,19 @@ msgstr "Lejupielādēt PDF"
 msgid "Downloads"
 msgstr "Lejupielādes"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:180
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:181
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:246
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:105
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:95
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:156
 msgid "Duplicate"
 msgstr "Dublikāts"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:164
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:165
 msgid "Duplicate an existing item"
 msgstr "Esoša vienuma dublēšana"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:179
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:180
 msgid "Duplicate an existing resume"
 msgstr "Esoša CV dublēšana"
 
@@ -491,7 +491,7 @@ msgstr "Esoša CV dublēšana"
 msgid "Edit"
 msgstr "Rediģēt"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:176
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:169
 msgid "Effects"
 msgstr "Ietekme"
 
@@ -499,7 +499,7 @@ msgstr "Ietekme"
 #: apps/client/src/pages/auth/login/page.tsx:90
 #: apps/client/src/pages/auth/register/page.tsx:141
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:180
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:181
 msgid "Email"
 msgstr "E-pasts"
 
@@ -531,7 +531,7 @@ msgstr "Tālāk ievadiet vienreizējo paroli, ko nodrošina autentifikatora liet
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "Ievadiet savu e-pasta adresi, un mēs jums nosūtīsim saiti, lai atjaunotu paroli, ja konts ir izveidots."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:285
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:283
 msgid "Errors"
 msgstr "Kļūdas"
 
@@ -548,11 +548,11 @@ msgstr "Iepazīstieties ar Reactive Resume pieejamajām veidnēm un apskatiet ar
 msgid "Export"
 msgstr "Eksportēt"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:257
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
 msgid "File"
 msgstr "Failu"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:223
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:221
 msgid "Filetype"
 msgstr "Failu tips"
 
@@ -564,19 +564,19 @@ msgstr "Visbeidzot,"
 msgid "Fix Spelling & Grammar"
 msgstr "Labot pareizrakstību un gramatiku"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:93
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:94
 msgid "Font Family"
 msgstr "Fontu ģimene"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:134
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:135
 msgid "Font Size"
 msgstr "Fonta lielums"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:108
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:109
 msgid "Font Subset"
 msgstr "Fontu apakškomplekts"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:120
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:121
 msgid "Font Variants"
 msgstr "Fontu varianti"
 
@@ -618,7 +618,7 @@ msgstr "Draudzīgs"
 msgid "Full Name"
 msgstr "Pilns nosaukums"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:201
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:202
 msgid "Generate a random title for your resume"
 msgstr "Izveidojiet nejaušu CV virsrakstu"
 
@@ -634,7 +634,7 @@ msgstr "GitHub"
 msgid "GitHub Stars"
 msgstr "GitHub Stars"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:186
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:187
 msgid "Give your old resume a new name."
 msgstr "Dodiet savam vecajam CV jaunu nosaukumu."
 
@@ -647,7 +647,7 @@ msgstr "Dodieties uz paneli"
 msgid "Google"
 msgstr "Google"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:209
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:202
 msgid "Grayscale"
 msgstr "Sarkanās krāsas"
 
@@ -659,7 +659,7 @@ msgstr "Tīkls"
 msgid "Headline"
 msgstr "Virsraksts"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:106
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:107
 msgid "Here, you can update your account information such as your profile picture, name and username."
 msgstr "Šeit varat atjaunināt konta informāciju, piemēram, profila attēlu, vārdu un lietotājvārdu."
 
@@ -669,15 +669,15 @@ msgstr "Šeit varat atjaunināt savu profilu, lai pielāgotu un personalizētu s
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:80
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:94
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:187
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:180
 msgid "Hidden"
 msgstr "Slēptais"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:105
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:106
 msgid "Hide"
 msgstr "Paslēpt"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:178
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:179
 msgid "Hide Icons"
 msgstr "Slēpt ikonas"
 
@@ -687,7 +687,7 @@ msgstr "Slēpt ikonas"
 msgid "Hold <0>Ctrl</0> to display your password temporarily."
 msgstr "Lai uz laiku parādītu paroli, turiet nospiestu <0>taustiņu Ctrl</0>."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:100
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:93
 msgid "Horizontal"
 msgstr "Horizontālā"
 
@@ -716,11 +716,11 @@ msgstr "Ja atspējosiet divu faktoru autentifikāciju, jums vairs nebūs jāieva
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "Ja protat vairākas valodas, mēs priecātos par jūsu palīdzību, lai lietotne būtu pieejama vairāk valodās un kopienās. Neuztraucieties, ja neredzat savu valodu sarakstā - vienkārši paziņojiet man par to GitHub, un es to iekļausim. Esat gatavs sākt? Pārejiet uz tulkošanu Crowdin vietnē, noklikšķinot uz saites zemāk."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:311
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:309
 msgid "Import"
 msgstr "Importēt"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:210
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:208
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -802,15 +802,15 @@ msgstr "john.doe@example.com"
 msgid "JSON"
 msgstr "JSON"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:158
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:159
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:138
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:109
 msgid "Keywords"
 msgstr "Atslēgas vārdi"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:41
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:51
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:42
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:52
 msgid "Label"
 msgstr "Etiķete"
 
@@ -824,7 +824,7 @@ msgid "Last updated {lastUpdated}"
 msgstr "Pēdējo reizi atjaunināts {lastUpdated}"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:72
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:205
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
 msgid "Layout"
 msgstr "Izkārtojums"
 
@@ -853,7 +853,7 @@ msgstr "Gaisma"
 msgid "Light or dark theme"
 msgstr "Gaišs vai tumšs temats"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:151
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:152
 msgid "Line Height"
 msgstr "Līnijas augstums"
 
@@ -866,7 +866,7 @@ msgstr "LinkedIn, JSON CV u. c."
 msgid "List"
 msgstr "Saraksts"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:100
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:93
@@ -897,7 +897,7 @@ msgstr "Izrakstīšanās"
 msgid "Lost your device?"
 msgstr "Vai esat pazaudējis ierīci?"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:254
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:247
 msgid "Main"
 msgstr "Galvenais"
 
@@ -936,7 +936,7 @@ msgid "Model"
 msgstr "Modelis"
 
 #: apps/client/src/pages/auth/register/page.tsx:98
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:58
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:59
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:48
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:52
@@ -944,7 +944,7 @@ msgstr "Modelis"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:88
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:152
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:153
 msgid "Name"
 msgstr "Nosaukums"
 
@@ -983,8 +983,8 @@ msgid "One-Time Password"
 msgstr "Vienreizēja parole"
 
 #: apps/client/src/components/ai-actions.tsx:56
-#: apps/client/src/libs/axios.ts:29
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:190
+#: apps/client/src/libs/axios.ts:30
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:188
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "Ak, serveris atdeva kļūdu."
@@ -1017,12 +1017,8 @@ msgstr "OpenAI/Ollama API atslēga"
 msgid "OpenAI/Ollama Integration"
 msgstr "OpenAI/Ollama integrācija"
 
-#: apps/client/src/pages/auth/_components/social-auth.tsx:44
-msgid "OpenID"
-msgstr ""
-
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:168
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:169
 msgid "Options"
 msgstr "Iespējas"
 
@@ -1040,7 +1036,7 @@ msgstr "Organizācija"
 msgid "Page"
 msgstr "Lapa"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:235
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:228
 msgid "Page {pageNumber}"
 msgstr "Lapa {pageNumber}"
 
@@ -1072,7 +1068,7 @@ msgid "Pick any font from Google Fonts"
 msgstr "Izvēlieties jebkuru fontu no Google Fonts"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/section.tsx:69
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:120
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:121
 msgid "Picture"
 msgstr "Attēls"
 
@@ -1080,7 +1076,7 @@ msgstr "Attēls"
 msgid "Please note that this step is completely optional."
 msgstr "Lūdzu, ņemiet vērā, ka šis solis nav obligāts."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:227
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:225
 msgid "Please select a file type"
 msgstr "Lūdzu, izvēlieties faila veidu"
 
@@ -1088,7 +1084,7 @@ msgstr "Lūdzu, izvēlieties faila veidu"
 msgid "Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app."
 msgstr "Rezerves kodus glabājiet drošā vietā. Jūs varat izmantot vienu no šiem vienreizējās lietošanas kodiem, lai pieteiktos gadījumā, ja zaudējat piekļuvi autentifikatora lietotnei."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:106
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:99
 msgid "Portrait"
 msgstr "Portrets"
 
@@ -1148,14 +1144,14 @@ msgstr "Izvirzīt jautājumu"
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
-#: apps/client/src/pages/builder/page.tsx:43
+#: apps/client/src/pages/builder/page.tsx:44
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
 #: apps/client/src/pages/home/components/footer.tsx:18
 #: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
 #: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/public/page.tsx:73
-#: apps/client/src/pages/public/page.tsx:94
+#: apps/client/src/pages/public/page.tsx:74
+#: apps/client/src/pages/public/page.tsx:95
 msgid "Reactive Resume"
 msgstr "Reaktīvais CV"
 
@@ -1180,30 +1176,30 @@ msgid "Redo"
 msgstr "Pārtaisīt"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:100
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:156
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:157
 msgid "Remove"
 msgstr "Noņemt"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:238
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:231
 msgid "Remove Page"
 msgstr "Noņemt lapu"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:110
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:111
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:101
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:86
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:152
 msgid "Rename"
 msgstr "Pārdēvēt"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:198
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:199
 msgid "Resend email confirmation link"
 msgstr "Atkārtoti nosūtīt e-pasta apstiprinājuma saiti"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:151
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:152
 msgid "Reset"
 msgstr "Atiestatīt"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:208
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:201
 msgid "Reset Layout"
 msgstr "Izkārtojuma atiestatīšana"
 
@@ -1230,13 +1226,13 @@ msgstr "Izveidotie CV"
 msgid "Rich in features, not in pricing."
 msgstr "Bagātīgas funkcijas, bet ne cenas."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:145
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:138
 msgid "Rounded"
 msgstr "Noapaļots"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:179
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:180
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:217
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:131
 msgid "Save Changes"
 msgstr "Izmaiņu saglabāšana"
@@ -1266,15 +1262,15 @@ msgstr "Ritiniet uz Pan"
 msgid "Scroll to Zoom"
 msgstr "Ritiniet, lai palielinātu"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:97
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:98
 msgid "Search for a font family"
 msgstr "Meklēt fontu saimi"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:112
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:113
 msgid "Search for a font subset"
 msgstr "Meklēt fontu apakškopu"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:125
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:126
 msgid "Search for a font variant"
 msgstr "Meklēt fonta variantu"
 
@@ -1302,7 +1298,7 @@ msgstr "Sūtīt e-pastu"
 msgid "Send me a message"
 msgstr "Nosūtiet man ziņu"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:96
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:97
 msgid "Separate Links"
 msgstr "Atsevišķas saites"
 
@@ -1322,7 +1318,7 @@ msgstr "Divu faktoru autentifikācijas iestatīšana kontā"
 msgid "Sharing"
 msgstr "Koplietošana"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:105
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:106
 msgid "Show"
 msgstr "Rādīt"
 
@@ -1334,7 +1330,7 @@ msgstr "Rādīt pārtraukuma līniju"
 msgid "Show Page Numbers"
 msgstr "Rādīt lappušu numurus"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:255
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:248
 msgid "Sidebar"
 msgstr "Sānu josla"
 
@@ -1377,11 +1373,11 @@ msgstr "Pašlaik administrators ir atspējojis pierakstīšanos, izmantojot e-pa
 msgid "Signups are currently disabled by the administrator."
 msgstr "Pašlaik administrators ir atspējojis reģistrēšanos."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:72
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:65
 msgid "Size (in px)"
 msgstr "Izmērs (px)"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:227
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:228
 msgid "Slug"
 msgstr "Slug"
 
@@ -1397,8 +1393,8 @@ msgstr "Jūsu CV drukāšanas laikā kaut kas ir noticis nepareizi. Lūdzu, mē�
 msgid "Something went wrong while processing your request. Please try again later or raise an issue on GitHub."
 msgstr "Apstrādājot jūsu pieprasījumu, kaut kas ir noticis nepareizi. Lūdzu, mēģiniet vēlreiz vēlāk vai uzdodiet jautājumu GitHub."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:94
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:139
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:87
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:132
 msgid "Square"
 msgstr "Kvadrāts"
 
@@ -1407,7 +1403,7 @@ msgstr "Kvadrāts"
 msgid "Start building from scratch"
 msgstr "Uzsākt būvniecību no nulles"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:184
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
 msgid "Start building your resume by giving it a name."
 msgstr "Sāciet veidot savu CV, piešķirot tam nosaukumu."
 
@@ -1426,7 +1422,7 @@ msgstr "Droši uzglabājiet dublējuma kodus"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:128
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:129
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:138
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:114
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:108
@@ -1487,11 +1483,11 @@ msgstr "Tēma"
 msgid "There was an error connecting to the browser. Please make sure 'chrome' is running and reachable."
 msgstr "Notika kļūda, savienojoties ar pārlūkprogrammu. Lūdzu, pārliecinieties, vai darbojas \"chrome\" un vai tas ir sasniedzams."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:129
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:130
 msgid "This action can be reverted by clicking on the undo button in the floating toolbar."
 msgstr "Šo darbību var atcelt, noklikšķinot uz pogas atsaukt peldošajā rīkjoslā."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:150
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:151
 msgid "This action cannot be undone. This will permanently delete your resume and cannot be recovered."
 msgstr "Šo darbību nevar atcelt. Tas neatgriezeniski izdzēsīs jūsu CV, un to nevarēs atjaunot."
 
@@ -1507,7 +1503,7 @@ msgstr "Šis CV ir bloķēts, lūdzu, atbloķējiet, lai veiktu turpmākas izmai
 msgid "This section is reserved for your personal notes specific to this resume. The content here remains private and is not shared with anyone else."
 msgstr "Šī sadaļa ir paredzēta jūsu personīgajām piezīmēm, kas attiecas uz šo CV. Saturs šeit ir privāts un netiek izpausts nevienam citam."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:215
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:216
 msgid "Tip: You can name the resume referring to the position you are applying for."
 msgstr "Padoms: CV var nosaukt, atsaucoties uz amatu, uz kuru piesakāties."
 
@@ -1516,7 +1512,7 @@ msgctxt "Name of the Award"
 msgid "Title"
 msgstr "Nosaukums"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:195
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:196
 msgid "Title"
 msgstr "Nosaukums"
 
@@ -1556,11 +1552,11 @@ msgid "Type of Study"
 msgstr "Pētījuma veids"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:79
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:65
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:66
 msgid "Typography"
 msgstr "Tipogrāfija"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:189
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:190
 msgid "Underline Links"
 msgstr "Pasvītrot saites"
 
@@ -1579,19 +1575,19 @@ msgstr "Atbloķēt"
 msgid "Unlocking a resume will allow you to make changes to it again."
 msgstr "Atbloķējot CV, tajā atkal varēsiet veikt izmaiņas."
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:191
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:192
 msgid "Unverified"
 msgstr "Nepārbaudīts"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:163
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:164
 msgid "Update an existing item"
 msgstr "Atjaunināt esošu elementu"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:178
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:179
 msgid "Update an existing resume"
 msgstr "Esoša CV atjaunināšana"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:214
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:212
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
 msgstr "Augšupielādējiet failu no kāda no pieņemtajiem avotiem, lai analizētu esošos datus un importētu tos Reactive Resume, lai atvieglotu rediģēšanu."
 
@@ -1599,7 +1595,7 @@ msgstr "Augšupielādējiet failu no kāda no pieņemtajiem avotiem, lai analiz�
 msgid "URL"
 msgstr "URL"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:60
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:61
 msgid "URL must start with https://"
 msgstr "URL jāsākas ar https://"
 
@@ -1614,7 +1610,7 @@ msgstr "Lietotājam nav saistītā ieraksta \"noslēpumi\". Lūdzu, ziņojiet pa
 
 #: apps/client/src/pages/auth/register/page.tsx:119
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:55
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:167
 msgid "Username"
 msgstr "Lietotājvārds"
 
@@ -1622,11 +1618,11 @@ msgstr "Lietotājvārds"
 msgid "Users Signed Up"
 msgstr "Reģistrētie lietotāji"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:298
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:296
 msgid "Validate"
 msgstr "Apstiprināt"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:316
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:314
 msgid "Validated"
 msgstr "Apstiprināts"
 
@@ -1634,7 +1630,7 @@ msgstr "Apstiprināts"
 msgid "Value"
 msgstr "Vērtība"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:191
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:192
 msgid "Verified"
 msgstr "Pārbaudīts"
 
@@ -1669,7 +1665,7 @@ msgstr "Mēs pārbaudām jūsu e-pasta adresi tikai tādēļ, lai nodrošinātu,
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:81
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:114
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:115
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:124
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:69
@@ -1685,7 +1681,7 @@ msgstr "Tīmekļa vietne"
 msgid "What's new in the latest version"
 msgstr "Jaunumi jaunākajā versijā"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:163
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:164
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:143
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:114

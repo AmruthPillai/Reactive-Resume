@@ -8,7 +8,7 @@ msgstr ""
 "Language: sv\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-01-13 15:03\n"
+"PO-Revision-Date: 2025-01-17 21:32\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -26,7 +26,7 @@ msgstr "Du har aktiverat tvåfaktorsautentisering utan problem."
 msgid "{templatesCount} resume templates to choose from"
 msgstr "{templatesCount} CV-mallar att välja mellan"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:141
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:142
 msgid "{value, plural, one {Column} other {Columns}}"
 msgstr "{value, plural, one {Kolumn} other {Kolumner}}"
 
@@ -90,11 +90,11 @@ msgid "A4"
 msgstr "A4"
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:272
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:270
 msgid "Accepts only {accept} files"
 msgstr "Accepterar endast {accept} filer"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:104
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:105
 msgid "Account"
 msgstr "Konto"
 
@@ -108,7 +108,7 @@ msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "Lägg till ett nytt objekt"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:90
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:91
 msgid "Add a new item"
 msgstr "Lägg till ett nytt objekt"
 
@@ -117,7 +117,7 @@ msgstr "Lägg till ett nytt objekt"
 msgid "Add a new section"
 msgstr "Lägg till ett nytt avsnitt"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:268
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:261
 msgid "Add New Page"
 msgstr "Lägg till ny sida"
 
@@ -129,7 +129,7 @@ msgstr "AI"
 msgid "Already have an account?"
 msgstr "Har du redan ett konto?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:146
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:144
 msgid "An error occurred while validating the file."
 msgstr "Ett fel inträffade när filen validerades."
 
@@ -150,11 +150,11 @@ msgstr "Alla som har den här länken kan se och ladda ner CV:t. Dela det på di
 msgid "Apply Custom CSS"
 msgstr "Tillämpa anpassad CSS"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:127
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:128
 msgid "Are you sure you want to delete this item?"
 msgstr "Är du säker på att du vill ta bort detta objekt?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:148
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:149
 msgid "Are you sure you want to delete your resume?"
 msgstr "Är du säker på att du vill ta bort ditt CV?"
 
@@ -179,7 +179,7 @@ msgstr "Är du säker på det?"
 msgid "Area of Study"
 msgstr "Utbildning"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:86
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:79
 msgid "Aspect Ratio"
 msgstr "Bildförhållande"
 
@@ -222,15 +222,15 @@ msgstr "Grunderna"
 msgid "Basics"
 msgstr "Grunderna"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:198
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:191
 msgid "Border"
 msgstr "Ram"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:131
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:124
 msgid "Border Radius"
 msgstr "Gränsradie"
 
-#: apps/client/src/pages/public/page.tsx:92
+#: apps/client/src/pages/public/page.tsx:93
 msgid "Built with"
 msgstr "Byggt med"
 
@@ -239,9 +239,9 @@ msgstr "Byggt med"
 msgid "By the community, for the community."
 msgstr "Av gemenskapen, för gemenskapen."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:134
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:135
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:155
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:156
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
 msgid "Cancel"
 msgstr "Avbryt"
@@ -264,15 +264,15 @@ msgstr "Ändra lösenord"
 msgid "Change Tone"
 msgstr "Ändra ton"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:186
 msgid "Changed your mind about the name? Give it a new one."
 msgstr "Ändrade du dig angående namnet? Ge det ett nytt."
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:69
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:70
 msgid "Check your email for the confirmation link to update your email address."
 msgstr "Kontrollera din e-post för bekräftelselänken för att uppdatera din e-postadress."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:151
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:144
 msgid "Circle"
 msgstr "Cirkel"
 
@@ -288,7 +288,7 @@ msgstr "Kod"
 msgid "Code must be exactly 6 digits long."
 msgstr "Koden måste vara exakt 6 siffror lång."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:135
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:136
 msgid "Columns"
 msgstr "Kolumner"
 
@@ -322,8 +322,8 @@ msgstr "Kopiera länken till CV:t"
 msgid "Copy to Clipboard"
 msgstr "Kopiera till urklipp"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:178
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:243
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:179
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
 msgid "Create"
 msgstr "Skapa"
 
@@ -332,11 +332,11 @@ msgstr "Skapa"
 msgid "Create a new account"
 msgstr "Skapa ett nytt konto"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:162
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:163
 msgid "Create a new item"
 msgstr "Skapa ett nytt objekt"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:177
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:178
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:18
 msgid "Create a new resume"
@@ -347,7 +347,7 @@ msgctxt "This is a link to create a new account"
 msgid "Create one now"
 msgstr "Skapa ett nu"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:258
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:259
 msgid "Create Sample Resume"
 msgstr "Skapa ett exempel på CV"
 
@@ -360,7 +360,7 @@ msgstr "Anpassad CSS"
 msgid "Custom resume sections"
 msgstr "Anpassade CV-avsnitt"
 
-#: apps/client/src/stores/resume.ts:45
+#: apps/client/src/stores/resume.ts:47
 msgid "Custom Section"
 msgstr "Anpassat avsnitt"
 
@@ -386,7 +386,7 @@ msgstr "Mörk"
 msgid "Date"
 msgstr "Datum"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:86
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:110
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:72
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:80
@@ -394,8 +394,8 @@ msgstr "Datum"
 msgid "Date or Date Range"
 msgstr "Datum eller datumintervall"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:136
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:157
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:137
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:158
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:121
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:127
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:172
@@ -407,7 +407,7 @@ msgstr "Radera"
 msgid "Delete Account"
 msgstr "Radera konto"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:72
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:73
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:66
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:53
@@ -427,8 +427,8 @@ msgstr "Inaktivera"
 msgid "Disable 2FA"
 msgstr "Inaktivera 2FA"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:304
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:302
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:220
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:134
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
 msgid "Discard"
@@ -463,7 +463,7 @@ msgid "Download a PDF of your resume. This file can be used to print your resume
 msgstr "Ladda ner en PDF av ditt CV. Den här filen kan användas för att skriva ut ditt CV, skicka det till rekryterare eller ladda upp på jobbportaler."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:176
-#: apps/client/src/pages/public/page.tsx:104
+#: apps/client/src/pages/public/page.tsx:105
 msgid "Download PDF"
 msgstr "Ladda ner PDF"
 
@@ -471,19 +471,19 @@ msgstr "Ladda ner PDF"
 msgid "Downloads"
 msgstr "Nedladdningar"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:180
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:181
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:246
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:105
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:95
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:156
 msgid "Duplicate"
 msgstr "Duplicera"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:164
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:165
 msgid "Duplicate an existing item"
 msgstr "Duplicera ett befintligt objekt"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:179
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:180
 msgid "Duplicate an existing resume"
 msgstr "Duplicera ett befintligt CV"
 
@@ -491,7 +491,7 @@ msgstr "Duplicera ett befintligt CV"
 msgid "Edit"
 msgstr "Redigera"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:176
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:169
 msgid "Effects"
 msgstr "Effekter"
 
@@ -499,7 +499,7 @@ msgstr "Effekter"
 #: apps/client/src/pages/auth/login/page.tsx:90
 #: apps/client/src/pages/auth/register/page.tsx:141
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:180
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:181
 msgid "Email"
 msgstr "E-post"
 
@@ -531,7 +531,7 @@ msgstr "Ange engångslösenordet från din autentiseringsapp nedan."
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
 msgstr "Ange din e-postadress så skickar vi en länk för att återställa ditt lösenord om kontot finns."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:285
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:283
 msgid "Errors"
 msgstr "Fel"
 
@@ -548,11 +548,11 @@ msgstr "Utforska mallarna som är tillgängliga i Reactive Resume och se de CV s
 msgid "Export"
 msgstr "Exportera"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:257
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
 msgid "File"
 msgstr "Fil"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:223
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:221
 msgid "Filetype"
 msgstr "Filtyp"
 
@@ -564,19 +564,19 @@ msgstr "Äntligen,"
 msgid "Fix Spelling & Grammar"
 msgstr "Fixa stavning och grammatik"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:93
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:94
 msgid "Font Family"
 msgstr "Typsnittsfamilj"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:134
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:135
 msgid "Font Size"
 msgstr "Textstorlek"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:108
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:109
 msgid "Font Subset"
 msgstr "Typsnittsundergrupp"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:120
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:121
 msgid "Font Variants"
 msgstr "Typsnittsvarianter"
 
@@ -618,7 +618,7 @@ msgstr "Vänlig"
 msgid "Full Name"
 msgstr "Fullständigt namn"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:201
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:202
 msgid "Generate a random title for your resume"
 msgstr "Skapa en slumpmässig titel för ditt CV"
 
@@ -634,7 +634,7 @@ msgstr "GitHub"
 msgid "GitHub Stars"
 msgstr "GitHub Stars"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:186
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:187
 msgid "Give your old resume a new name."
 msgstr "Ge ditt gamla CV ett nytt namn."
 
@@ -647,7 +647,7 @@ msgstr "Gå till dashboard"
 msgid "Google"
 msgstr "Google"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:209
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:202
 msgid "Grayscale"
 msgstr "Gråskala"
 
@@ -659,7 +659,7 @@ msgstr "Rutnät"
 msgid "Headline"
 msgstr "Rubrik"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:106
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:107
 msgid "Here, you can update your account information such as your profile picture, name and username."
 msgstr "Här kan du uppdatera din kontoinformation såsom din profilbild, namn och användarnamn."
 
@@ -669,15 +669,15 @@ msgstr "Här kan du uppdatera din profil för att anpassa och personifiera din u
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:80
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:94
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:187
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:180
 msgid "Hidden"
 msgstr "Dolt"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:105
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:106
 msgid "Hide"
 msgstr "Dölj"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:178
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:179
 msgid "Hide Icons"
 msgstr "Dölj ikoner"
 
@@ -687,7 +687,7 @@ msgstr "Dölj ikoner"
 msgid "Hold <0>Ctrl</0> to display your password temporarily."
 msgstr "Håll ned <0>Ctrl</0> för att visa ditt lösenord tillfälligt."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:100
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:93
 msgid "Horizontal"
 msgstr "Horisontell"
 
@@ -716,11 +716,11 @@ msgstr "Om du inaktiverar tvåfaktorsautentisering kommer du inte längre att be
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "Om du är flerspråkig skulle vi älska din hjälp med att föra appen till fler språk och gemenskaper. Oroa dig inte om du inte ser ditt språk på listan - ge mig bara en shout-out på GitHub, så ska jag se till att inkludera det. Redo att komma igång? Hoppa till översättning på Crowdin genom att klicka på länken nedan."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:311
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:309
 msgid "Import"
 msgstr "Importera"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:210
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:208
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
@@ -802,15 +802,15 @@ msgstr "sven.svensson@example.com"
 msgid "JSON"
 msgstr "JSON"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:158
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:159
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:138
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:109
 msgid "Keywords"
 msgstr "Nyckelord"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:41
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:51
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:42
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:52
 msgid "Label"
 msgstr "Etikett"
 
@@ -824,7 +824,7 @@ msgid "Last updated {lastUpdated}"
 msgstr "Senast uppdaterad {lastUpdated}"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:72
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:205
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
 msgid "Layout"
 msgstr "Layout"
 
@@ -853,7 +853,7 @@ msgstr "Ljus"
 msgid "Light or dark theme"
 msgstr "Ljust eller mörkt tema"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:151
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:152
 msgid "Line Height"
 msgstr "Radavstånd"
 
@@ -866,7 +866,7 @@ msgstr "LinkedIn, JSON CV, osv."
 msgid "List"
 msgstr "Lista"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:100
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:93
@@ -897,7 +897,7 @@ msgstr "Logga ut"
 msgid "Lost your device?"
 msgstr "Har du tappat bort din enhet?"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:254
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:247
 msgid "Main"
 msgstr "Huvud"
 
@@ -936,7 +936,7 @@ msgid "Model"
 msgstr "Modell"
 
 #: apps/client/src/pages/auth/register/page.tsx:98
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:58
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:59
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:48
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:52
@@ -944,7 +944,7 @@ msgstr "Modell"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:88
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:152
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:153
 msgid "Name"
 msgstr "Namn"
 
@@ -983,8 +983,8 @@ msgid "One-Time Password"
 msgstr "Engångslösenord"
 
 #: apps/client/src/components/ai-actions.tsx:56
-#: apps/client/src/libs/axios.ts:29
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:190
+#: apps/client/src/libs/axios.ts:30
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:188
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "Hoppsan, servern returnerade ett fel."
@@ -1017,12 +1017,8 @@ msgstr "OpenAI/Ollama API-nyckel"
 msgid "OpenAI/Ollama Integration"
 msgstr "OpenAI/Ollama-integrering"
 
-#: apps/client/src/pages/auth/_components/social-auth.tsx:44
-msgid "OpenID"
-msgstr ""
-
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:168
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:169
 msgid "Options"
 msgstr "Inställningar"
 
@@ -1040,7 +1036,7 @@ msgstr "Organisation"
 msgid "Page"
 msgstr "Sida"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:235
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:228
 msgid "Page {pageNumber}"
 msgstr "Sidan {pageNumber}"
 
@@ -1072,7 +1068,7 @@ msgid "Pick any font from Google Fonts"
 msgstr "Välj valfritt typsnitt från Google Fonts"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/section.tsx:69
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:120
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:121
 msgid "Picture"
 msgstr "Bild"
 
@@ -1080,7 +1076,7 @@ msgstr "Bild"
 msgid "Please note that this step is completely optional."
 msgstr "Observera att detta steg är helt valfritt."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:227
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:225
 msgid "Please select a file type"
 msgstr "Välj en filtyp"
 
@@ -1088,7 +1084,7 @@ msgstr "Välj en filtyp"
 msgid "Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app."
 msgstr "Vänligen förvara dina reservkoder på en säker plats. Du kan använda en av dessa engångskoder för att logga in om du förlorar åtkomsten till din autentiseringsapp."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:106
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:99
 msgid "Portrait"
 msgstr "Porträtt"
 
@@ -1148,14 +1144,14 @@ msgstr "Lyfta en fråga"
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
-#: apps/client/src/pages/builder/page.tsx:43
+#: apps/client/src/pages/builder/page.tsx:44
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
 #: apps/client/src/pages/home/components/footer.tsx:18
 #: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
 #: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/public/page.tsx:73
-#: apps/client/src/pages/public/page.tsx:94
+#: apps/client/src/pages/public/page.tsx:74
+#: apps/client/src/pages/public/page.tsx:95
 msgid "Reactive Resume"
 msgstr "Reactive Resume"
 
@@ -1180,30 +1176,30 @@ msgid "Redo"
 msgstr "Gör om"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:100
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:156
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:157
 msgid "Remove"
 msgstr "Ta bort"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:238
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:231
 msgid "Remove Page"
 msgstr "Ta bort sida"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:110
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:111
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:101
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:86
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:152
 msgid "Rename"
 msgstr "Döp om"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:198
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:199
 msgid "Resend email confirmation link"
 msgstr "Skicka e-postbekräftelselänk igen"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:151
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:152
 msgid "Reset"
 msgstr "Återställ"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:208
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:201
 msgid "Reset Layout"
 msgstr "Återställ layout"
 
@@ -1230,13 +1226,13 @@ msgstr "Genererade CV"
 msgid "Rich in features, not in pricing."
 msgstr "Rik på funktioner, inte på priser."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:145
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:138
 msgid "Rounded"
 msgstr "Avrundad"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:179
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:216
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:180
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:217
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:131
 msgid "Save Changes"
 msgstr "Spara ändringar"
@@ -1266,15 +1262,15 @@ msgstr "Bläddra till Pan"
 msgid "Scroll to Zoom"
 msgstr "Bläddra till Zoom"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:97
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:98
 msgid "Search for a font family"
 msgstr "Sök efter en typsnittsfamilj"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:112
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:113
 msgid "Search for a font subset"
 msgstr "Sök efter en typsnittsundergrupp"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:125
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:126
 msgid "Search for a font variant"
 msgstr "Sök efter en typsnittsvariant"
 
@@ -1302,7 +1298,7 @@ msgstr "Skicka e-post"
 msgid "Send me a message"
 msgstr "Skicka ett meddelande till mig"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:96
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:97
 msgid "Separate Links"
 msgstr "Separera Länkar"
 
@@ -1322,7 +1318,7 @@ msgstr "Ställ in tvåfaktorsautentisering på ditt konto"
 msgid "Sharing"
 msgstr "Delning"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:105
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:106
 msgid "Show"
 msgstr "Visa"
 
@@ -1334,7 +1330,7 @@ msgstr "Visa radbrytning"
 msgid "Show Page Numbers"
 msgstr "Visa sidnummer"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:255
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:248
 msgid "Sidebar"
 msgstr "Sidofält"
 
@@ -1377,11 +1373,11 @@ msgstr "Just nu är inloggning via e-mejladress avstängt av administratören."
 msgid "Signups are currently disabled by the administrator."
 msgstr "Registreringar är för närvarande inaktiverade av administratören."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:72
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:65
 msgid "Size (in px)"
 msgstr "Storlek (i px)"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:227
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:228
 msgid "Slug"
 msgstr "Slugg"
 
@@ -1397,8 +1393,8 @@ msgstr "Något gick fel när ditt CV skulle skrivas ut. Försök igen senare ell
 msgid "Something went wrong while processing your request. Please try again later or raise an issue on GitHub."
 msgstr "Något gick fel när din begäran bearbetades. Försök igen senare eller ta upp ett problem på GitHub."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:94
-#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:139
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:87
+#: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:132
 msgid "Square"
 msgstr "Fyrkant"
 
@@ -1407,7 +1403,7 @@ msgstr "Fyrkant"
 msgid "Start building from scratch"
 msgstr "Börja bygga från början"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:184
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
 msgid "Start building your resume by giving it a name."
 msgstr "Börja bygga ditt CV genom att ge det ett namn."
 
@@ -1426,7 +1422,7 @@ msgstr "Lagra dina reservkoder säkert"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:128
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:129
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:138
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:114
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:108
@@ -1487,11 +1483,11 @@ msgstr "Tema"
 msgid "There was an error connecting to the browser. Please make sure 'chrome' is running and reachable."
 msgstr "Det gick inte att ansluta till webbläsaren. Se till att \"chrome\" körs och kan nås."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:129
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:130
 msgid "This action can be reverted by clicking on the undo button in the floating toolbar."
 msgstr "Denna åtgärd kan återställas genom att klicka på ångra-knappen i det flytande verktygsfältet."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:150
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:151
 msgid "This action cannot be undone. This will permanently delete your resume and cannot be recovered."
 msgstr "Denna åtgärd kan inte ångras. Detta kommer att radera ditt CV permanent och kan inte återställas."
 
@@ -1507,7 +1503,7 @@ msgstr "Detta CV är låst, vänligen lås upp för att göra ytterligare ändri
 msgid "This section is reserved for your personal notes specific to this resume. The content here remains private and is not shared with anyone else."
 msgstr "Det här avsnittet är reserverat för dina personliga anteckningar som är specifika för detta CV. Innehållet här förblir privat och delas inte med någon annan."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:215
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:216
 msgid "Tip: You can name the resume referring to the position you are applying for."
 msgstr "Tips: Du kan namnge CV:t som refererar till den tjänst du söker."
 
@@ -1516,7 +1512,7 @@ msgctxt "Name of the Award"
 msgid "Title"
 msgstr "Titel"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:195
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:196
 msgid "Title"
 msgstr "Titel"
 
@@ -1556,11 +1552,11 @@ msgid "Type of Study"
 msgstr "Typ av studie"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:79
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:65
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:66
 msgid "Typography"
 msgstr "Typografi"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:189
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:190
 msgid "Underline Links"
 msgstr "Understryk länkar"
 
@@ -1579,19 +1575,19 @@ msgstr "Lås upp"
 msgid "Unlocking a resume will allow you to make changes to it again."
 msgstr "Genom att låsa upp ett CV kan du göra ändringar i det igen."
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:191
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:192
 msgid "Unverified"
 msgstr "Ej verifierat"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:163
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:164
 msgid "Update an existing item"
 msgstr "Uppdatera ett befintligt objekt"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:178
+#: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:179
 msgid "Update an existing resume"
 msgstr "Uppdatera ett befintligt CV"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:214
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:212
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
 msgstr "Ladda upp en fil från en av de godkända källorna för att analysera befintlig data och importera den till Reactive Resume för enklare redigering."
 
@@ -1599,7 +1595,7 @@ msgstr "Ladda upp en fil från en av de godkända källorna för att analysera b
 msgid "URL"
 msgstr "URL"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:60
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:61
 msgid "URL must start with https://"
 msgstr "URL måste börja med https://"
 
@@ -1614,7 +1610,7 @@ msgstr "Användaren har inte en associerad 'secrets'-post. Vänligen rapportera 
 
 #: apps/client/src/pages/auth/register/page.tsx:119
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:55
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:167
 msgid "Username"
 msgstr "Användarnamn"
 
@@ -1622,11 +1618,11 @@ msgstr "Användarnamn"
 msgid "Users Signed Up"
 msgstr "Registrerade användare"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:298
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:296
 msgid "Validate"
 msgstr "Validera"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:316
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:314
 msgid "Validated"
 msgstr "Validerad"
 
@@ -1634,7 +1630,7 @@ msgstr "Validerad"
 msgid "Value"
 msgstr "Värde"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:191
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:192
 msgid "Verified"
 msgstr "Verified"
 
@@ -1669,7 +1665,7 @@ msgstr "Vi verifierar din e-postadress endast för att säkerställa att vi kan 
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:81
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:114
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:115
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:124
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:69
@@ -1685,7 +1681,7 @@ msgstr "Webbplats"
 msgid "What's new in the latest version"
 msgstr "Vad är nytt i den senaste versionen"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:163
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:164
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:143
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:114
