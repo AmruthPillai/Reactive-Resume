@@ -6,7 +6,6 @@ Here's a brief overview of the tech stack that's used to build Reactive Resume.
 * [NestJS](https://nestjs.com/), as the backend
 * [PostgreSQL](https://www.postgresql.org/), as the primary database
 * [Prisma ORM](https://www.prisma.io/), as the interface between the server and the database
-* [Redis](https://redis.io/), mostly for caching, but also used to track resume statistics
 * [Minio](https://min.io/), an open-source S3 alternative to store objects
 * [Browserless](https://www.browserless.io/), an open-source docker image that allows to run headless Chrome as a separate service
 
