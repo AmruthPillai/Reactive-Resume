@@ -27,7 +27,7 @@ const formSchema = z.object({
   baseURL: z
     .string()
     // eslint-disable-next-line lingui/no-unlocalized-strings
-    .regex(/https?:\/\/[^/]+\/?v1$/, "That doesn't look like a valid URL")
+    .regex(/^https?:\/\/[^/]+\/?$/, "That doesn't look like a valid URL")
     .or(z.literal(""))
     .default(""),
   model: z.string().default(DEFAULT_MODEL),

@@ -14,8 +14,8 @@ export const openai = () => {
 
   if (baseURL) {
     return new OpenAI({
-      baseURL,
       apiKey,
+      baseURL,
       dangerouslyAllowBrowser: true,
     });
   }
