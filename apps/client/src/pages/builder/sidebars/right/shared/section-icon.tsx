@@ -16,7 +16,7 @@ import {
 import type { ButtonProps } from "@reactive-resume/ui";
 import { Button, Tooltip } from "@reactive-resume/ui";
 
-export type MetadataKey =
+type MetadataKey =
   | "template"
   | "layout"
   | "typography"
@@ -30,7 +30,7 @@ export type MetadataKey =
   | "notes"
   | "information";
 
-export const getSectionIcon = (id: MetadataKey, props: IconProps = {}) => {
+const getSectionIcon = (id: MetadataKey, props: IconProps = {}) => {
   switch (id) {
     // Left Sidebar
     case "notes": {
@@ -76,16 +76,17 @@ export const getSectionIcon = (id: MetadataKey, props: IconProps = {}) => {
   }
 };
 
-type SectionIconProps = ButtonProps & {
+type SectionIconProps = Omit<ButtonProps, "size"> & {
   id: MetadataKey;
   name: string;
+  size?: number;
   icon?: React.ReactNode;
 };
 
-export const SectionIcon = ({ id, name, icon, ...props }: SectionIconProps) => (
+export const SectionIcon = ({ id, name, icon, size = 14, ...props }: SectionIconProps) => (
   <Tooltip side="left" content={name}>
     <Button size="icon" variant="ghost" className="size-8 rounded-full" {...props}>
-      {icon ?? getSectionIcon(id, { size: 14 })}
+      {icon ?? getSectionIcon(id, { size })}
     </Button>
   </Tooltip>
 );

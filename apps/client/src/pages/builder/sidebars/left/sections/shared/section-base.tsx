@@ -25,7 +25,7 @@ import get from "lodash.get";
 import { useDialog } from "@/client/stores/dialog";
 import { useResumeStore } from "@/client/stores/resume";
 
-import { getSectionIcon } from "./section-icon";
+import { SectionIcon } from "./section-icon";
 import { SectionListItem } from "./section-list-item";
 import { SectionOptions } from "./section-options";
 
@@ -98,8 +98,7 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
     >
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
-          {getSectionIcon(id)}
-
+          <SectionIcon id={id} size={18} />
           <h2 className="line-clamp-1 text-2xl font-bold lg:text-3xl">{section.name}</h2>
         </div>
 

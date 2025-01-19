@@ -7,7 +7,7 @@ import CodeEditor from "react-simple-code-editor";
 
 import { useResumeStore } from "@/client/stores/resume";
 
-import { getSectionIcon } from "../shared/section-icon";
+import { SectionIcon } from "../shared/section-icon";
 
 export const CssSection = () => {
   const { isDarkMode } = useTheme();
@@ -24,7 +24,7 @@ export const CssSection = () => {
 
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
-          {getSectionIcon("css")}
+          <SectionIcon id="css" size={18} name={t`Custom CSS`} />
           <h2 className="line-clamp-1 text-2xl font-bold lg:text-3xl">{t`Custom CSS`}</h2>
         </div>
       </header>

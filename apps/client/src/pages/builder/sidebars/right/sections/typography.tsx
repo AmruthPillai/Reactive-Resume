@@ -9,7 +9,7 @@ import webfontloader from "webfontloader";
 
 import { useResumeStore } from "@/client/stores/resume";
 
-import { getSectionIcon } from "../shared/section-icon";
+import { SectionIcon } from "../shared/section-icon";
 
 const fontSuggestions = [
   "Open Sans",
@@ -62,7 +62,7 @@ export const TypographySection = () => {
     <section id="typography" className="grid gap-y-8">
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
-          {getSectionIcon("typography")}
+          <SectionIcon id="typography" size={18} name={t`Typography`} />
           <h2 className="line-clamp-1 text-2xl font-bold lg:text-3xl">{t`Typography`}</h2>
         </div>
       </header>

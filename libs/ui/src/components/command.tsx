@@ -1,10 +1,7 @@
 import { MagnifyingGlass } from "@phosphor-icons/react";
-import type { DialogProps } from "@radix-ui/react-dialog";
 import { cn } from "@reactive-resume/utils";
 import { Command as CommandPrimitive } from "cmdk";
 import { forwardRef } from "react";
-
-import { Dialog, DialogContent } from "./dialog";
 
 export const Command = forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
@@ -18,18 +15,6 @@ export const Command = forwardRef<
 ));
 
 Command.displayName = CommandPrimitive.displayName;
-
-type CommandDialogProps = DialogProps;
-
-export const CommandDialog = ({ children, ...props }: CommandDialogProps) => (
-  <Dialog {...props}>
-    <DialogContent className="overflow-hidden p-0">
-      <Command className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-secondary [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:size-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:size-5">
-        {children}
-      </Command>
-    </DialogContent>
-  </Dialog>
-);
 
 export const CommandInput = forwardRef<
   React.ElementRef<typeof CommandPrimitive.Input>,

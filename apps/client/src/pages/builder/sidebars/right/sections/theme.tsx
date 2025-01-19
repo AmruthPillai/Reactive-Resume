@@ -6,7 +6,7 @@ import { HexColorPicker } from "react-colorful";
 import { colors } from "@/client/constants/colors";
 import { useResumeStore } from "@/client/stores/resume";
 
-import { getSectionIcon } from "../shared/section-icon";
+import { SectionIcon } from "../shared/section-icon";
 
 export const ThemeSection = () => {
   const setValue = useResumeStore((state) => state.setValue);
@@ -16,7 +16,7 @@ export const ThemeSection = () => {
     <section id="theme" className="grid gap-y-6">
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
-          {getSectionIcon("theme")}
+          <SectionIcon id="theme" size={18} name={t`Theme`} />
           <h2 className="line-clamp-1 text-2xl font-bold lg:text-3xl">{t`Theme`}</h2>
         </div>
       </header>

@@ -77,7 +77,7 @@ export const PublicResumePage = () => {
 
       <div
         style={{ width: `${pageSizeMap[format].width}mm` }}
-        className="mx-auto mb-6 mt-16 overflow-hidden rounded shadow-xl print:m-0 print:shadow-none"
+        className="overflow-hidden rounded shadow-xl sm:mx-auto sm:mb-6 sm:mt-16 print:m-0 print:shadow-none"
       >
         <iframe
           ref={frameRef}
@@ -87,7 +87,7 @@ export const PublicResumePage = () => {
         />
       </div>
 
-      <div className="flex justify-center py-10 opacity-50 print:hidden">
+      <div className="hidden justify-center py-10 opacity-50 sm:flex print:hidden">
         <Link to="/">
           <Button size="sm" variant="ghost" className="space-x-1.5 text-xs font-normal">
             <span>{t`Built with`}</span>
@@ -97,7 +97,7 @@ export const PublicResumePage = () => {
         </Link>
       </div>
 
-      <div className="fixed bottom-5 right-5 print:hidden">
+      <div className="fixed bottom-5 right-5 hidden sm:block print:hidden">
         <div className="flex items-center gap-x-4">
           <Button variant="outline" className="gap-x-2 rounded-full" onClick={onDownloadPdf}>
             {loading ? <CircleNotch size={16} className="animate-spin" /> : <FilePdf size={16} />}

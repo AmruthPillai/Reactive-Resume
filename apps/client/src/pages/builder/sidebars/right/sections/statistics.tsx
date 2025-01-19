@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useResumeStatistics } from "@/client/services/resume";
 import { useResumeStore } from "@/client/stores/resume";
 
-import { getSectionIcon } from "../shared/section-icon";
+import { SectionIcon } from "../shared/section-icon";
 
 export const StatisticsSection = () => {
   const id = useResumeStore((state) => state.resume.id);
@@ -19,7 +19,7 @@ export const StatisticsSection = () => {
     <section id="statistics" className="grid gap-y-6">
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
-          {getSectionIcon("statistics")}
+          <SectionIcon id="statistics" size={18} name={t`Statistics`} />
           <h2 className="line-clamp-1 text-2xl font-bold lg:text-3xl">{t`Statistics`}</h2>
         </div>
       </header>
