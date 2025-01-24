@@ -8,6 +8,10 @@
   @apply border-current;
 }
 
+body {
+  overflow: hidden;
+}
+
 #root {
   @apply antialiased;
 }

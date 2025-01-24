@@ -39,14 +39,14 @@ services:
 
   # Chrome Browser (for printing and previews)
   chrome:
-    image: ghcr.io/browserless/chromium:v2.18.0 # Upgrading to newer versions causes issues
+    image: ghcr.io/browserless/chromium:latest
     restart: unless-stopped
     environment:
-      TIMEOUT: 10000
-      CONCURRENT: 10
+      HEALTH: "true"
       TOKEN: chrome_token
-      EXIT_ON_HEALTH_FAILURE: "true"
-      PRE_REQUEST_HEALTH_CHECK: "true"
+      PROXY_HOST: "printer.example.com"
+      PROXY_PORT: 443
+      PROXY_SSL: "true"
 
   app:
     image: amruthpillai/reactive-resume:latest

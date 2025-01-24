@@ -1,6 +1,8 @@
 import { useEffect } from "react";
+import { HelmetProvider } from "react-helmet-async";
 import { Outlet } from "react-router";
 
+import { helmetContext } from "../constants/helmet";
 import { useArtboardStore } from "../store/artboard";
 
 export const Providers = () => {
@@ -32,13 +34,12 @@ export const Providers = () => {
     };
   }, [setResume]);
 
-  // Only for testing, in production this will be fetched from window.postMessage
-  // useEffect(() => {
-  //   setResume(sampleResume);
-  // }, [setResume]);
-
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (!resume) return null;
 
-  return <Outlet />;
+  return (
+    <HelmetProvider context={helmetContext}>
+      <Outlet />
+    </HelmetProvider>
+  );
 };

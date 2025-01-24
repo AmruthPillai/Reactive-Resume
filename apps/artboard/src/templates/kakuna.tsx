@@ -17,6 +17,7 @@ import { Education, Experience, Volunteer } from "@reactive-resume/schema";
 import { cn, isEmptyString, isUrl } from "@reactive-resume/utils";
 import get from "lodash.get";
 import React, { Fragment } from "react";
+import sanitizeHtml from "sanitize-html";
 
 import { BrandIcon } from "../components/brand-icon";
 import { Picture } from "../components/picture";
@@ -108,9 +109,9 @@ const Summary = () => {
       </h4>
 
       <div
-        dangerouslySetInnerHTML={{ __html: section.content }}
-        className="wysiwyg"
+        dangerouslySetInnerHTML={{ __html: sanitizeHtml(section.content) }}
         style={{ columns: section.columns }}
+        className="wysiwyg"
       />
     </section>
   );
@@ -221,7 +222,10 @@ const Section = <T,>({
                 <div>{children?.(item as T)}</div>
 
                 {summary !== undefined && !isEmptyString(summary) && (
-                  <div dangerouslySetInnerHTML={{ __html: summary }} className="wysiwyg" />
+                  <div
+                    dangerouslySetInnerHTML={{ __html: sanitizeHtml(summary) }}
+                    className="wysiwyg"
+                  />
                 )}
 
                 {level !== undefined && level > 0 && <Rating level={level} />}

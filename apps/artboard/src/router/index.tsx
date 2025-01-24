@@ -6,7 +6,7 @@ import { PreviewLayout } from "../pages/preview";
 import { Providers } from "../providers";
 
 export const routes = createRoutesFromChildren(
-  <Route element={<Providers />} hydrateFallbackElement={<div>Loading...</div>}>
+  <Route element={<Providers />}>
     <Route path="artboard" element={<ArtboardPage />}>
       <Route path="builder" element={<BuilderLayout />} />
       <Route path="preview" element={<PreviewLayout />} />

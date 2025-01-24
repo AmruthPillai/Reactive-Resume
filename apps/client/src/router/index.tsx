@@ -22,8 +22,7 @@ import { GuestGuard } from "./guards/guest";
 import { authLoader } from "./loaders/auth";
 
 export const routes = createRoutesFromElements(
-  // eslint-disable-next-line lingui/no-unlocalized-strings
-  <Route element={<Providers />} hydrateFallbackElement={<div>Loading...</div>}>
+  <Route element={<Providers />}>
     <Route element={<HomeLayout />}>
       <Route path="/" element={<HomePage />} />
     </Route>

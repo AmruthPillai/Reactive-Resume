@@ -1,6 +1,7 @@
 import { useEffect, useMemo } from "react";
 import { Helmet } from "react-helmet-async";
 import { Outlet } from "react-router";
+import sanitizeHtml from "sanitize-html";
 import webfontloader from "webfontloader";
 
 import { useArtboardStore } from "../store/artboard";
@@ -61,8 +62,11 @@ export const ArtboardPage = () => {
     <>
       <Helmet>
         <title>{name} | Reactive Resume</title>
-
-        {metadata.css.visible && <style lang="css">{metadata.css.value}</style>}
+        {metadata.css.visible && (
+          <style id="custom-css" lang="css">
+            {sanitizeHtml(metadata.css.value)}
+          </style>
+        )}
       </Helmet>
 
       <Outlet />

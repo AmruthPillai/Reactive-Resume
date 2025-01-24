@@ -18,12 +18,12 @@ export const BuilderPage = () => {
   const title = useResumeStore((state) => state.resume.title);
 
   const updateResumeInFrame = useCallback(() => {
-    if (!frameRef?.contentWindow) return;
     const message = { type: "SET_RESUME", payload: resume.data };
-    (() => {
-      frameRef.contentWindow.postMessage(message, "*");
-    })();
-  }, [frameRef, resume.data]);
+
+    setImmediate(() => {
+      frameRef?.contentWindow?.postMessage(message, "*");
+    });
+  }, [frameRef?.contentWindow, resume.data]);
 
   // Send resume data to iframe on initial load
   useEffect(() => {

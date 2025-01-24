@@ -52,16 +52,16 @@ services:
 
   # Chrome Browser (for printing and previews)
   chrome:
-    image: ghcr.io/browserless/chromium:v2.18.0 # Upgrading to newer versions causes issues
+    image: ghcr.io/browserless/chromium:latest
     restart: unless-stopped
     ports:
       - ${CHROME_PORT:-8080}:3000
     environment:
-      TIMEOUT: 10000
-      CONCURRENT: 10
+      HEALTH: "true"
       TOKEN: ${CHROME_TOKEN:-chrome_token}
-      EXIT_ON_HEALTH_FAILURE: "true"
-      PRE_REQUEST_HEALTH_CHECK: "true"
+      PROXY_HOST: "localhost"
+      PROXY_PORT: ${CHROME_PORT:-8080}
+      PROXY_SSL: "false"
 
 volumes:
   minio_data:

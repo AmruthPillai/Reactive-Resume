@@ -34,16 +34,16 @@ services:
 
   # Chrome Browser (for printing and previews)
   chrome:
-    image: ghcr.io/browserless/chromium:v2.18.0 # Upgrading to newer versions causes issues
+    image: ghcr.io/browserless/chromium:latest
     restart: unless-stopped
     extra_hosts:
       - "host.docker.internal:host-gateway"
     environment:
-      TIMEOUT: 10000
-      CONCURRENT: 10
+      HEALTH: "true"
       TOKEN: chrome_token
-      EXIT_ON_HEALTH_FAILURE: "true"
-      PRE_REQUEST_HEALTH_CHECK: "true"
+      PROXY_HOST: "chrome"
+      PROXY_PORT: 3000
+      PROXY_SSL: "false"
 
   app:
     image: amruthpillai/reactive-resume:latest
