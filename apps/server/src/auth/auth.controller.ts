@@ -173,8 +173,11 @@ export class AuthController {
 
   @Patch("password")
   @UseGuards(TwoFactorGuard)
-  async updatePassword(@User("email") email: string, @Body() { password }: UpdatePasswordDto) {
-    await this.authService.updatePassword(email, password);
+  async updatePassword(
+    @User("email") email: string,
+    @Body() { currentPassword, newPassword }: UpdatePasswordDto,
+  ) {
+    await this.authService.updatePassword(email, currentPassword, newPassword);
 
     return { message: "Your password has been successfully updated." };
   }

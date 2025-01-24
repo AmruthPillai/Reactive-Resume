@@ -159,11 +159,19 @@ export class AuthService {
     await this.mailService.sendEmail({ to: email, subject, text });
   }
 
-  async updatePassword(email: string, password: string) {
-    const hashedPassword = await this.hash(password);
+  async updatePassword(email: string, currentPassword: string, newPassword: string) {
+    const user = await this.userService.findOneByIdentifierOrThrow(email);
+
+    if (!user.secrets?.password) {
+      throw new BadRequestException(ErrorMessage.OAuthUser);
+    }
+
+    await this.validatePassword(currentPassword, user.secrets.password);
+
+    const newHashedPassword = await this.hash(newPassword);
 
     await this.userService.updateByEmail(email, {
-      secrets: { update: { password: hashedPassword } },
+      secrets: { update: { password: newHashedPassword } },
     });
   }
 

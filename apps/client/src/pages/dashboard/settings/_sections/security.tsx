@@ -8,10 +8,10 @@ import {
   Button,
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
+  FormMessage,
   Input,
 } from "@reactive-resume/ui";
 import { AnimatePresence, motion } from "framer-motion";
@@ -23,16 +23,10 @@ import { useUpdatePassword } from "@/client/services/auth";
 import { useUser } from "@/client/services/user";
 import { useDialog } from "@/client/stores/dialog";
 
-const formSchema = z
-  .object({
-    password: z.string().min(6),
-    confirmPassword: z.string().min(6),
-  })
-  .refine((data) => data.password === data.confirmPassword, {
-    path: ["confirmPassword"],
-    // eslint-disable-next-line lingui/t-call-in-function
-    message: t`The passwords you entered do not match.`,
-  });
+const formSchema = z.object({
+  currentPassword: z.string().min(6),
+  newPassword: z.string().min(6),
+});
 
 type FormValues = z.infer<typeof formSchema>;
 
@@ -44,15 +38,18 @@ export const SecuritySettings = () => {
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: { password: "", confirmPassword: "" },
+    defaultValues: { currentPassword: "", newPassword: "" },
   });
 
   const onReset = () => {
-    form.reset({ password: "", confirmPassword: "" });
+    form.reset({ currentPassword: "", newPassword: "" });
   };
 
   const onSubmit = async (data: FormValues) => {
-    await updatePassword({ password: data.password });
+    await updatePassword({
+      currentPassword: data.currentPassword,
+      newPassword: data.newPassword,
+    });
 
     toast({
       variant: "success",
@@ -78,32 +75,29 @@ export const SecuritySettings = () => {
             <Form {...form}>
               <form className="grid gap-6 sm:grid-cols-2" onSubmit={form.handleSubmit(onSubmit)}>
                 <FormField
-                  name="password"
+                  name="currentPassword"
                   control={form.control}
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>{t`New Password`}</FormLabel>
+                      <FormLabel>{t`Current Password`}</FormLabel>
                       <FormControl>
-                        <Input type="password" autoComplete="new-password" {...field} />
+                        <Input type="password" autoComplete="current-password" {...field} />
                       </FormControl>
+                      <FormMessage />
                     </FormItem>
                   )}
                 />
 
                 <FormField
-                  name="confirmPassword"
+                  name="newPassword"
                   control={form.control}
                   render={({ field, fieldState }) => (
                     <FormItem>
-                      <FormLabel>{t`Confirm New Password`}</FormLabel>
+                      <FormLabel>{t`New Password`}</FormLabel>
                       <FormControl>
                         <Input type="password" autoComplete="new-password" {...field} />
                       </FormControl>
-                      {fieldState.error && (
-                        <FormDescription className="text-error-foreground">
-                          {fieldState.error.message}
-                        </FormDescription>
-                      )}
+                      <FormMessage />
                     </FormItem>
                   )}
                 />
