@@ -8,7 +8,7 @@ msgstr ""
 "Language: zh\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-01-17 21:32\n"
+"PO-Revision-Date: 2025-01-24 20:14\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -46,11 +46,11 @@ msgstr "<0>注意：</0>使用 OpenAI API 即表示您承認並接受<1>使用�
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
 msgstr "<0>社群花了大量時間編寫 Reactive Resume 的文檔，我相信它將幫助您開始使用該應用程式。</0> <1>還有很多範例可以幫助您入門，以及您可能不知道的功能可以幫助您建立完美的履歷。</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:146
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:140
 msgid "<0>Two-factor authentication is currently disabled.</0> You can enable it by adding an authenticator app to your account."
 msgstr "<0>目前已停用雙因子驗證。</0> 您可以透過驗證器應用程式的新增來啟用它。"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:139
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:133
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr "<0>已啟用雙因子驗證。</0>每次登入時，系統都會要求您輸入驗證碼。"
 
@@ -102,8 +102,8 @@ msgstr "帳號"
 msgid "Add a custom field"
 msgstr "新增自訂欄位"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:120
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:171
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:119
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:170
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "新增項目"
@@ -256,7 +256,7 @@ msgid "Center Artboard"
 msgstr "中心畫板"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:121
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
 msgid "Change Password"
 msgstr "更改密碼"
 
@@ -300,10 +300,6 @@ msgstr "公司"
 #: apps/client/src/components/ai-actions.tsx:118
 msgid "Confident"
 msgstr "自信"
-
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:98
-msgid "Confirm New Password"
-msgstr "確認新密碼"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:234
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:246
@@ -351,7 +347,12 @@ msgstr "立即建立"
 msgid "Create Sample Resume"
 msgstr "建立履歷表範本"
 
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
+msgid "Current Password"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:93
+#: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:27
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:28
 msgid "Custom CSS"
 msgstr "自訂 CSS"
@@ -423,14 +424,14 @@ msgstr "設計單頁/多頁履歷表"
 msgid "Disable"
 msgstr "停用"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:160
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:154
 msgid "Disable 2FA"
 msgstr "停用雙因子驗證（2FA）"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:302
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:220
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:134
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:118
 msgid "Discard"
 msgstr "放棄"
 
@@ -503,7 +504,7 @@ msgstr "效果"
 msgid "Email"
 msgstr "電子郵件"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:169
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:163
 msgid "Enable 2FA"
 msgstr "啟用雙因子驗證"
 
@@ -544,6 +545,7 @@ msgid "Explore the templates available in Reactive Resume and view the resumes c
 msgstr "探索反應式履歷中提供的範本並查看用它們製作的履歷。它們還可以作為範例來幫助指導您下一份簡歷的創建。"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:121
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:39
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:40
 msgid "Export"
 msgstr "導出"
@@ -734,7 +736,7 @@ msgstr "改善寫作"
 msgid "In case you are unable to scan this QR Code, you can also copy-paste this link into your authenticator app."
 msgstr "如果您無法掃描此 QR 代碼，也可以將此連結複製貼到您的驗證器應用程式中。"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:70
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:67
 msgid "In this section, you can change your password and enable/disable two-factor authentication."
 msgstr "在這部份，您可以變更密碼和啟用/停用雙因子驗證。"
 
@@ -743,6 +745,7 @@ msgid "In this section, you can delete your account and all the data associated 
 msgstr "在這部分，您可以刪除您的帳戶以及與您的使用者相關的所有資料，但請記住 <0>此動作是不可逆的</0>。"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:135
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:116
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
 msgid "Information"
 msgstr "詳細資訊"
@@ -824,6 +827,7 @@ msgid "Last updated {lastUpdated}"
 msgstr "最後更新 {lastUpdated}"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:197
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
 msgid "Layout"
 msgstr "版面配置"
@@ -957,7 +961,7 @@ msgstr "名稱"
 msgid "Network"
 msgstr "網路"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:85
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:96
 msgid "New Password"
 msgstr "新密碼"
 
@@ -974,6 +978,7 @@ msgid "Note: This will make your account less secure."
 msgstr "注意：這會降低您帳戶的安全性。"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:128
+#: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:16
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:17
 msgid "Notes"
 msgstr "注意事項"
@@ -1032,6 +1037,7 @@ msgid "Organization"
 msgstr "組織"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:100
+#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:25
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:26
 msgid "Page"
 msgstr "頁"
@@ -1043,7 +1049,7 @@ msgstr "頁面 {pageNumber}"
 #: apps/client/src/pages/auth/login/page.tsx:110
 #: apps/client/src/pages/auth/register/page.tsx:163
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:73
 msgid "Password"
 msgstr "密碼"
 
@@ -1110,8 +1116,6 @@ msgid "Primary Color"
 msgstr "主要顏色"
 
 #: apps/client/src/pages/home/components/footer.tsx:50
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:23
 msgid "Privacy Policy"
 msgstr "隱私政策"
 
@@ -1148,7 +1152,6 @@ msgstr "提出問題"
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
 #: apps/client/src/pages/home/components/footer.tsx:18
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
 #: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/public/page.tsx:74
 #: apps/client/src/pages/public/page.tsx:95
@@ -1282,7 +1285,7 @@ msgstr "搜尋語言"
 msgid "Secure with two-factor authentication"
 msgstr "透過雙因子驗證確保安全"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:68
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:65
 msgid "Security"
 msgstr "安全性"
 
@@ -1314,6 +1317,7 @@ msgid "Setup two-factor authentication on your account"
 msgstr "在您的帳戶上設定雙因子驗證"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:107
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:38
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
 msgid "Sharing"
 msgstr "分享"
@@ -1408,6 +1412,7 @@ msgid "Start building your resume by giving it a name."
 msgstr "為您的履歷命名，開始建立您的履歷。"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:114
+#: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:22
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:23
 msgid "Statistics"
 msgstr "統計資料"
@@ -1449,6 +1454,7 @@ msgid "System"
 msgstr "系統"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:65
+#: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:18
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
 msgid "Template"
 msgstr "範本"
@@ -1465,15 +1471,12 @@ msgstr "用戶評價"
 msgid "Text Color"
 msgstr "字型色彩"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
-msgid "The passwords you entered do not match."
-msgstr "您輸入的密碼不符。"
-
 #: apps/client/src/services/errors/translate-error.ts:49
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
 msgstr "您要更新的履歷已鎖定，若要對其進行任何變更，請解除鎖定。"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:86
+#: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:19
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:20
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:79
 msgid "Theme"
@@ -1530,7 +1533,7 @@ msgstr "追蹤檢視與下載"
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/auth/verify-otp/page.tsx:57
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:135
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:129
 msgid "Two-Factor Authentication"
 msgstr "雙因子驗證"
 
@@ -1552,6 +1555,7 @@ msgid "Type of Study"
 msgstr "研究類型"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:79
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:65
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:66
 msgid "Typography"
 msgstr "字體樣式"
@@ -1733,7 +1737,7 @@ msgstr "您的電子郵件地址已成功驗證。"
 msgid "Your OpenAI API Key has not been set yet. Please go to your account settings to enable OpenAI Integration."
 msgstr "您的 OpenAI API 密鑰尚未設定。請前往您的帳戶設定啟用 OpenAI 整合。"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:59
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:56
 msgid "Your password has been updated successfully."
 msgstr "您的密碼已成功更新。"
 

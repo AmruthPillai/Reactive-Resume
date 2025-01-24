@@ -8,7 +8,7 @@ msgstr ""
 "Language: lv\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-01-17 21:32\n"
+"PO-Revision-Date: 2025-01-24 20:14\n"
 "Last-Translator: \n"
 "Language-Team: Latvian\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2;\n"
@@ -46,11 +46,11 @@ msgstr "<0>Piezīme: </0>Izmantojot OpenAI API, jūs atzīstat un piekrītat Ope
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
 msgstr "<0>Kopiena ir pavadījusi daudz laika, rakstot Reactive Resume dokumentāciju, un esmu pārliecināts, ka tā palīdzēs jums sākt strādāt ar šo programmu.</0><1>Tur ir arī daudz piemēru, kas palīdzēs jums sākt darbu, un funkcijas, par kurām jūs, iespējams, nezināt un kuras varētu palīdzēt jums izveidot perfektu CV.</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:146
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:140
 msgid "<0>Two-factor authentication is currently disabled.</0> You can enable it by adding an authenticator app to your account."
 msgstr "<0>Divu faktoru autentifikācija pašlaik ir atspējota.</0> To var aktivizēt, pievienojot savam kontam autentifikatora lietotni."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:139
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:133
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr "<0>Ir iespējota divu faktoru autentifikācija.</0> Katru reizi, kad pierakstīsieties, jums būs jāievada kods."
 
@@ -102,8 +102,8 @@ msgstr "Konts"
 msgid "Add a custom field"
 msgstr "Pielāgotā lauka pievienošana"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:120
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:171
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:119
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:170
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "Pievienot jaunu elementu"
@@ -256,7 +256,7 @@ msgid "Center Artboard"
 msgstr "Centrs Artboard"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:121
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
 msgid "Change Password"
 msgstr "Mainīt paroli"
 
@@ -300,10 +300,6 @@ msgstr "Uzņēmums"
 #: apps/client/src/components/ai-actions.tsx:118
 msgid "Confident"
 msgstr "Pārliecināts"
-
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:98
-msgid "Confirm New Password"
-msgstr "Jaunās paroles apstiprināšana"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:234
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:246
@@ -351,7 +347,12 @@ msgstr "Izveidojiet to tagad"
 msgid "Create Sample Resume"
 msgstr "Izveidot parauga CV"
 
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
+msgid "Current Password"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:93
+#: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:27
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:28
 msgid "Custom CSS"
 msgstr "Pielāgotais CSS"
@@ -423,14 +424,14 @@ msgstr "Vienas/vairāku lappušu CV dizains"
 msgid "Disable"
 msgstr "Atslēgt"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:160
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:154
 msgid "Disable 2FA"
 msgstr "2FA atspējošana"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:302
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:220
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:134
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:118
 msgid "Discard"
 msgstr "Izmest"
 
@@ -503,7 +504,7 @@ msgstr "Ietekme"
 msgid "Email"
 msgstr "E-pasts"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:169
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:163
 msgid "Enable 2FA"
 msgstr "Ieslēgt 2FA"
 
@@ -544,6 +545,7 @@ msgid "Explore the templates available in Reactive Resume and view the resumes c
 msgstr "Iepazīstieties ar Reactive Resume pieejamajām veidnēm un apskatiet ar tām izstrādātos CV. Tie var kalpot arī kā piemēri, kas palīdzēs jums izveidot nākamo CV."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:121
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:39
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:40
 msgid "Export"
 msgstr "Eksportēt"
@@ -734,7 +736,7 @@ msgstr "Uzlabot rakstīšanu"
 msgid "In case you are unable to scan this QR Code, you can also copy-paste this link into your authenticator app."
 msgstr "Ja nevarat skenēt šo QR kodu, varat arī kopēt un ielīmēt šo saiti autentifikatora lietotnē."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:70
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:67
 msgid "In this section, you can change your password and enable/disable two-factor authentication."
 msgstr "Šajā sadaļā varat mainīt paroli un iespējot/izslēgt divu faktoru autentifikāciju."
 
@@ -743,6 +745,7 @@ msgid "In this section, you can delete your account and all the data associated 
 msgstr "Šajā sadaļā varat dzēst savu kontu un visus ar lietotāju saistītos datus, taču ņemiet vērā, ka <0>šī darbība ir neatgriezeniska</0>."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:135
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:116
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
 msgid "Information"
 msgstr "Informācija"
@@ -824,6 +827,7 @@ msgid "Last updated {lastUpdated}"
 msgstr "Pēdējo reizi atjaunināts {lastUpdated}"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:197
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
 msgid "Layout"
 msgstr "Izkārtojums"
@@ -957,7 +961,7 @@ msgstr "Nosaukums"
 msgid "Network"
 msgstr "Tīkls"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:85
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:96
 msgid "New Password"
 msgstr "Jauna parole"
 
@@ -974,6 +978,7 @@ msgid "Note: This will make your account less secure."
 msgstr "Piezīme: Tādējādi jūsu konts kļūs mazāk drošs."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:128
+#: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:16
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:17
 msgid "Notes"
 msgstr "Piezīmes"
@@ -1032,6 +1037,7 @@ msgid "Organization"
 msgstr "Organizācija"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:100
+#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:25
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:26
 msgid "Page"
 msgstr "Lapa"
@@ -1043,7 +1049,7 @@ msgstr "Lapa {pageNumber}"
 #: apps/client/src/pages/auth/login/page.tsx:110
 #: apps/client/src/pages/auth/register/page.tsx:163
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:73
 msgid "Password"
 msgstr "Parole"
 
@@ -1110,8 +1116,6 @@ msgid "Primary Color"
 msgstr "Primārā krāsa"
 
 #: apps/client/src/pages/home/components/footer.tsx:50
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:23
 msgid "Privacy Policy"
 msgstr "Konfidencialitātes politika"
 
@@ -1148,7 +1152,6 @@ msgstr "Izvirzīt jautājumu"
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
 #: apps/client/src/pages/home/components/footer.tsx:18
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
 #: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/public/page.tsx:74
 #: apps/client/src/pages/public/page.tsx:95
@@ -1282,7 +1285,7 @@ msgstr "Meklēt valodu"
 msgid "Secure with two-factor authentication"
 msgstr "Droša ar divu faktoru autentifikāciju"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:68
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:65
 msgid "Security"
 msgstr "Drošība"
 
@@ -1314,6 +1317,7 @@ msgid "Setup two-factor authentication on your account"
 msgstr "Divu faktoru autentifikācijas iestatīšana kontā"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:107
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:38
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
 msgid "Sharing"
 msgstr "Koplietošana"
@@ -1408,6 +1412,7 @@ msgid "Start building your resume by giving it a name."
 msgstr "Sāciet veidot savu CV, piešķirot tam nosaukumu."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:114
+#: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:22
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:23
 msgid "Statistics"
 msgstr "Statistika"
@@ -1449,6 +1454,7 @@ msgid "System"
 msgstr "Sistēma"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:65
+#: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:18
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
 msgid "Template"
 msgstr "Šablons"
@@ -1465,15 +1471,12 @@ msgstr "Atsauksmes"
 msgid "Text Color"
 msgstr "Teksta krāsa"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
-msgid "The passwords you entered do not match."
-msgstr "Ievadītās paroles nesakrīt."
-
 #: apps/client/src/services/errors/translate-error.ts:49
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
 msgstr "CV, kuru vēlaties atjaunināt, ir bloķēts, lūdzu, atbloķējiet to, ja vēlaties tajā veikt izmaiņas."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:86
+#: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:19
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:20
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:79
 msgid "Theme"
@@ -1530,7 +1533,7 @@ msgstr "Skatījumu un lejupielāžu izsekošana"
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/auth/verify-otp/page.tsx:57
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:135
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:129
 msgid "Two-Factor Authentication"
 msgstr "Divu faktoru autentifikācija"
 
@@ -1552,6 +1555,7 @@ msgid "Type of Study"
 msgstr "Pētījuma veids"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:79
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:65
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:66
 msgid "Typography"
 msgstr "Tipogrāfija"
@@ -1733,7 +1737,7 @@ msgstr "Jūsu e-pasta adrese ir veiksmīgi pārbaudīta."
 msgid "Your OpenAI API Key has not been set yet. Please go to your account settings to enable OpenAI Integration."
 msgstr "Jūsu OpenAI API atslēga vēl nav iestatīta. Lūdzu, dodieties uz sava konta iestatījumiem, lai iespējotu OpenAI integrāciju."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:59
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:56
 msgid "Your password has been updated successfully."
 msgstr "Jūsu parole ir veiksmīgi atjaunināta."
 

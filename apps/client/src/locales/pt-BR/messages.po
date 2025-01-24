@@ -8,7 +8,7 @@ msgstr ""
 "Language: pt\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-01-17 21:32\n"
+"PO-Revision-Date: 2025-01-24 20:14\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese, Brazilian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -46,11 +46,11 @@ msgstr "<0>Nota:</0> Ao utilizar a API OpenAI, você reconhece e aceita os <1>te
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
 msgstr "<0>A comunidade passou muito tempo escrevendo a documentação do Reactive Resume e tenho certeza de que isso ajudará você a começar a usar o aplicativo.</0> <1>Também há muitos exemplos para ajudá-lo a começar e recursos que você talvez não conheça e que podem ajudá-lo a construir seu currículo perfeito.</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:146
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:140
 msgid "<0>Two-factor authentication is currently disabled.</0> You can enable it by adding an authenticator app to your account."
 msgstr "<0>A autenticação de dois fatores está atualmente desativada.</0> Você pode habilitá-la adicionando um aplicativo autenticador à sua conta."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:139
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:133
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr "<0>A autenticação de dois fatores está habilitada.</0> Você será solicitado a inserir um código sempre que fizer login."
 
@@ -102,8 +102,8 @@ msgstr "Conta"
 msgid "Add a custom field"
 msgstr "Adicionar campo customizado"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:120
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:171
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:119
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:170
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "Adicionar novo item"
@@ -256,7 +256,7 @@ msgid "Center Artboard"
 msgstr "Centralizar prancheta"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:121
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
 msgid "Change Password"
 msgstr "Alterar a senha"
 
@@ -300,10 +300,6 @@ msgstr "Empresa"
 #: apps/client/src/components/ai-actions.tsx:118
 msgid "Confident"
 msgstr "Confiante"
-
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:98
-msgid "Confirm New Password"
-msgstr "Confirmar Nova Senha"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:234
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:246
@@ -351,7 +347,12 @@ msgstr "Criar um agora"
 msgid "Create Sample Resume"
 msgstr "Criar currículo de exemplo"
 
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
+msgid "Current Password"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:93
+#: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:27
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:28
 msgid "Custom CSS"
 msgstr "CSS personalizado"
@@ -423,14 +424,14 @@ msgstr "Crie currículos de uma ou várias páginas"
 msgid "Disable"
 msgstr "Desabilitar"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:160
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:154
 msgid "Disable 2FA"
 msgstr "Desativar 2FA"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:302
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:220
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:134
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:118
 msgid "Discard"
 msgstr "Descartar"
 
@@ -503,7 +504,7 @@ msgstr "Efeitos"
 msgid "Email"
 msgstr "Email"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:169
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:163
 msgid "Enable 2FA"
 msgstr "Ativar 2FA"
 
@@ -544,6 +545,7 @@ msgid "Explore the templates available in Reactive Resume and view the resumes c
 msgstr "Explore os modelos disponíveis no Reactive Resume e veja os currículos criados com eles. Eles também podem servir como exemplos para ajudar a orientar a criação de seu próximo currículo."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:121
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:39
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:40
 msgid "Export"
 msgstr "Exportar"
@@ -734,7 +736,7 @@ msgstr "Melhorar a escrita"
 msgid "In case you are unable to scan this QR Code, you can also copy-paste this link into your authenticator app."
 msgstr "Caso você não consiga escanear este código QR, você também pode copiar e colar este link no seu aplicativo de autenticação."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:70
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:67
 msgid "In this section, you can change your password and enable/disable two-factor authentication."
 msgstr "Nesta seção, você pode alterar sua senha e ativar/desativar a autenticação de dois fatores."
 
@@ -743,6 +745,7 @@ msgid "In this section, you can delete your account and all the data associated 
 msgstr "Nesta seção você pode excluir sua conta e todos os dados associados ao seu usuário, mas lembre-se de que <0>esta ação é irreversível</0>."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:135
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:116
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
 msgid "Information"
 msgstr "Informações"
@@ -824,6 +827,7 @@ msgid "Last updated {lastUpdated}"
 msgstr "Última atualização {lastUpdated}"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:197
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
 msgid "Layout"
 msgstr "Layout"
@@ -957,7 +961,7 @@ msgstr "Nome"
 msgid "Network"
 msgstr "Rede"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:85
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:96
 msgid "New Password"
 msgstr "Nova Senha"
 
@@ -974,6 +978,7 @@ msgid "Note: This will make your account less secure."
 msgstr "Observação: Esta ação tornará sua conta menos segura."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:128
+#: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:16
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:17
 msgid "Notes"
 msgstr "Anotações"
@@ -1032,6 +1037,7 @@ msgid "Organization"
 msgstr "Organização"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:100
+#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:25
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:26
 msgid "Page"
 msgstr "Página"
@@ -1043,7 +1049,7 @@ msgstr "Página {pageNumber}"
 #: apps/client/src/pages/auth/login/page.tsx:110
 #: apps/client/src/pages/auth/register/page.tsx:163
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:73
 msgid "Password"
 msgstr "Senha"
 
@@ -1110,8 +1116,6 @@ msgid "Primary Color"
 msgstr "Cor Primária"
 
 #: apps/client/src/pages/home/components/footer.tsx:50
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:23
 msgid "Privacy Policy"
 msgstr "Política de Privacidade"
 
@@ -1148,7 +1152,6 @@ msgstr "Aponte um problema"
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
 #: apps/client/src/pages/home/components/footer.tsx:18
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
 #: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/public/page.tsx:74
 #: apps/client/src/pages/public/page.tsx:95
@@ -1282,7 +1285,7 @@ msgstr "Selecionar idioma"
 msgid "Secure with two-factor authentication"
 msgstr "Protegido com autenticação em dois fatores"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:68
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:65
 msgid "Security"
 msgstr "Segurança"
 
@@ -1314,6 +1317,7 @@ msgid "Setup two-factor authentication on your account"
 msgstr "Configure a autenticação de dois fatores em sua conta"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:107
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:38
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
 msgid "Sharing"
 msgstr "Compartilhamento"
@@ -1408,6 +1412,7 @@ msgid "Start building your resume by giving it a name."
 msgstr "Comece a construir seu currículo dando um nome ao arquivo."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:114
+#: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:22
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:23
 msgid "Statistics"
 msgstr "Estatísticas"
@@ -1449,6 +1454,7 @@ msgid "System"
 msgstr "Sistema"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:65
+#: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:18
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
 msgid "Template"
 msgstr "Modelo"
@@ -1465,15 +1471,12 @@ msgstr "Depoimentos"
 msgid "Text Color"
 msgstr "Cor do texto"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
-msgid "The passwords you entered do not match."
-msgstr "As senhas informadas não são iguais."
-
 #: apps/client/src/services/errors/translate-error.ts:49
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
 msgstr "O currículo que você deseja atualizar está bloqueado. Desbloqueie-o antes de fazer alguma alteração nele."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:86
+#: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:19
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:20
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:79
 msgid "Theme"
@@ -1530,7 +1533,7 @@ msgstr "Acompanhe visualizações e downloads"
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/auth/verify-otp/page.tsx:57
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:135
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:129
 msgid "Two-Factor Authentication"
 msgstr "Autenticação de Dois Fatores"
 
@@ -1552,6 +1555,7 @@ msgid "Type of Study"
 msgstr "Tipo de Formação"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:79
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:65
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:66
 msgid "Typography"
 msgstr "Tipografia"
@@ -1733,7 +1737,7 @@ msgstr "Seu endereço de e-mail foi verificado com sucesso."
 msgid "Your OpenAI API Key has not been set yet. Please go to your account settings to enable OpenAI Integration."
 msgstr "Sua chave de API OpenAI ainda não foi definida. Acesse as configurações da sua conta para ativar a integração com a OpenAI."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:59
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:56
 msgid "Your password has been updated successfully."
 msgstr "Sua senha foi atualizada com sucesso."
 

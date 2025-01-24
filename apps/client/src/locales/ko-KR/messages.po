@@ -8,7 +8,7 @@ msgstr ""
 "Language: ko\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-01-17 21:32\n"
+"PO-Revision-Date: 2025-01-24 20:14\n"
 "Last-Translator: \n"
 "Language-Team: Korean\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -46,11 +46,11 @@ msgstr "<0>참고: </0>OpenAI API를 이용함으로써 귀하는 OpenAI가 명�
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
 msgstr "<0>커뮤니티에서 반응형 이력서 문서를 작성하는 데 많은 시간을 투자했으며, 이 문서가 앱을 시작하는 데 도움이 될 것이라고 확신합니다.</0><1>또한 시작하는 데 도움이 되는 많은 예시와 완벽한 이력서를 만드는 데 도움이 될 수 있는 미처 몰랐던 기능도 많이 있습니다.</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:146
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:140
 msgid "<0>Two-factor authentication is currently disabled.</0> You can enable it by adding an authenticator app to your account."
 msgstr "<0>현재 2단계 인증은 비활성화되어 있습니다.</0> 계정에 인증 앱을 추가하여 사용하도록 설정할 수 있습니다."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:139
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:133
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr "<0>2단계 인증이 활성화되었습니다.</0> 로그인할 때마다 코드를 입력하라는 메시지가 표시됩니다."
 
@@ -102,8 +102,8 @@ msgstr "계정"
 msgid "Add a custom field"
 msgstr "사용자 지정 필드 추가"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:120
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:171
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:119
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:170
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "새 항목 추가"
@@ -256,7 +256,7 @@ msgid "Center Artboard"
 msgstr "중앙 아트보드"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:121
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
 msgid "Change Password"
 msgstr "비밀번호 변경"
 
@@ -300,10 +300,6 @@ msgstr "회사"
 #: apps/client/src/components/ai-actions.tsx:118
 msgid "Confident"
 msgstr "자신감"
-
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:98
-msgid "Confirm New Password"
-msgstr "새 비밀번호 확인"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:234
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:246
@@ -351,7 +347,12 @@ msgstr "지금 만들기"
 msgid "Create Sample Resume"
 msgstr "샘플 이력서 만들기"
 
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
+msgid "Current Password"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:93
+#: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:27
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:28
 msgid "Custom CSS"
 msgstr "사용자 정의 CSS"
@@ -423,14 +424,14 @@ msgstr "단일/다중 페이지 이력서 디자인"
 msgid "Disable"
 msgstr "비활성화"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:160
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:154
 msgid "Disable 2FA"
 msgstr "2FA 비활성화"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:302
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:220
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:134
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:118
 msgid "Discard"
 msgstr "폐기"
 
@@ -503,7 +504,7 @@ msgstr "효과"
 msgid "Email"
 msgstr "이메일"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:169
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:163
 msgid "Enable 2FA"
 msgstr "2단계 인증 활성화"
 
@@ -544,6 +545,7 @@ msgid "Explore the templates available in Reactive Resume and view the resumes c
 msgstr "Reactive Resume 에서 사용할 수 있는 템플릿을 살펴보고 이 템플릿으로 만든 이력서를 확인하세요. 다음 이력서를 작성할 때 참고할 수 있는 예시로도 사용할 수 있습니다."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:121
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:39
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:40
 msgid "Export"
 msgstr "내보내기"
@@ -734,7 +736,7 @@ msgstr "글쓰기 향상"
 msgid "In case you are unable to scan this QR Code, you can also copy-paste this link into your authenticator app."
 msgstr "이 QR 코드를 스캔할 수 없는 경우, 이 링크를 복사하여 인증 앱에 붙여넣을 수도 있습니다."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:70
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:67
 msgid "In this section, you can change your password and enable/disable two-factor authentication."
 msgstr "이 섹션에서는 비밀번호를 변경하고 2단계 인증을 활성화/비활성화할 수 있습니다."
 
@@ -743,6 +745,7 @@ msgid "In this section, you can delete your account and all the data associated 
 msgstr "이 섹션에서는 계정 및 사용자와 관련된 모든 데이터를 삭제할 수 있지만, <0>이 작업은 되돌릴 수</0> 없다는 점에 유의하세요."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:135
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:116
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
 msgid "Information"
 msgstr "정보"
@@ -824,6 +827,7 @@ msgid "Last updated {lastUpdated}"
 msgstr "마지막 업데이트 {lastUpdated}"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:197
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
 msgid "Layout"
 msgstr "레이아웃"
@@ -957,7 +961,7 @@ msgstr "이름"
 msgid "Network"
 msgstr "네트워크"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:85
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:96
 msgid "New Password"
 msgstr "새 비밀번호"
 
@@ -974,6 +978,7 @@ msgid "Note: This will make your account less secure."
 msgstr "참고: 이렇게 하면 계정의 보안이 약해집니다."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:128
+#: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:16
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:17
 msgid "Notes"
 msgstr "참고"
@@ -1032,6 +1037,7 @@ msgid "Organization"
 msgstr "조직"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:100
+#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:25
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:26
 msgid "Page"
 msgstr "페이지"
@@ -1043,7 +1049,7 @@ msgstr "페이지 {pageNumber}"
 #: apps/client/src/pages/auth/login/page.tsx:110
 #: apps/client/src/pages/auth/register/page.tsx:163
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:73
 msgid "Password"
 msgstr "비밀번호"
 
@@ -1110,8 +1116,6 @@ msgid "Primary Color"
 msgstr "기본 색상"
 
 #: apps/client/src/pages/home/components/footer.tsx:50
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:23
 msgid "Privacy Policy"
 msgstr "개인정보 보호정책"
 
@@ -1148,7 +1152,6 @@ msgstr "문제 제기"
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
 #: apps/client/src/pages/home/components/footer.tsx:18
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
 #: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/public/page.tsx:74
 #: apps/client/src/pages/public/page.tsx:95
@@ -1282,7 +1285,7 @@ msgstr "언어 검색"
 msgid "Secure with two-factor authentication"
 msgstr "2단계 인증으로 보안 유지"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:68
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:65
 msgid "Security"
 msgstr "보안"
 
@@ -1314,6 +1317,7 @@ msgid "Setup two-factor authentication on your account"
 msgstr "계정에 2단계 인증 설정하기"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:107
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:38
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
 msgid "Sharing"
 msgstr "공유"
@@ -1408,6 +1412,7 @@ msgid "Start building your resume by giving it a name."
 msgstr "이름을 지정하여 이력서 작성을 시작하세요."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:114
+#: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:22
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:23
 msgid "Statistics"
 msgstr "통계"
@@ -1449,6 +1454,7 @@ msgid "System"
 msgstr "시스템"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:65
+#: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:18
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
 msgid "Template"
 msgstr "템플릿"
@@ -1465,15 +1471,12 @@ msgstr "사용 후기"
 msgid "Text Color"
 msgstr "텍스트 색상"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
-msgid "The passwords you entered do not match."
-msgstr "입력한 비밀번호가 일치하지 않습니다."
-
 #: apps/client/src/services/errors/translate-error.ts:49
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
 msgstr "업데이트하려는 이력서가 잠겨 있으므로 변경하려면 잠금을 해제하세요."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:86
+#: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:19
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:20
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:79
 msgid "Theme"
@@ -1530,7 +1533,7 @@ msgstr "조회수 및 다운로드 추적"
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/auth/verify-otp/page.tsx:57
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:135
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:129
 msgid "Two-Factor Authentication"
 msgstr "2단계 인증"
 
@@ -1552,6 +1555,7 @@ msgid "Type of Study"
 msgstr "학습 유형"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:79
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:65
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:66
 msgid "Typography"
 msgstr "타이포그래피"
@@ -1733,7 +1737,7 @@ msgstr "이메일 주소가 성공적으로 확인되었습니다."
 msgid "Your OpenAI API Key has not been set yet. Please go to your account settings to enable OpenAI Integration."
 msgstr "OpenAI API 키가 아직 설정되지 않았습니다. 계정 설정으로 이동하여 OpenAI 연동을 활성화하세요."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:59
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:56
 msgid "Your password has been updated successfully."
 msgstr "비밀번호가 성공적으로 업데이트되었습니다."
 

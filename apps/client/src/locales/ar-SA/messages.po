@@ -8,7 +8,7 @@ msgstr ""
 "Language: ar\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-01-17 21:32\n"
+"PO-Revision-Date: 2025-01-24 20:14\n"
 "Last-Translator: \n"
 "Language-Team: Arabic\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
@@ -46,11 +46,11 @@ msgstr "<0>ملاحظة: </0>، باستخدام API OpenAI ، فإنك تقر �
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
 msgstr "<0>لقد قضى المجتمع الكثير من الوقت في كتابة الوثائق للاستئناف التفاعلي، وأنا متأكد من أنه سيساعدك على البدء في التطبيق. /0><1>هناك أيضا الكثير من الأمثلة لمساعدتك على البدء، والمميزات التي قد لا تعرفها عن أيها يمكن أن تساعدك على بناء مستأنفتك المثالية. /1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:146
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:140
 msgid "<0>Two-factor authentication is currently disabled.</0> You can enable it by adding an authenticator app to your account."
 msgstr "<0>المصادقة الثنائية معطلة حاليا.</0> يمكنك تفعيلها عن طريق إضافة تطبيق مصادقة إلى حسابك."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:139
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:133
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr "<0>المصادقة الثنائية عامل مفعل.</0> سوف يطلب منك إدخال رمز في كل مرة تقوم فيها بتسجيل الدخول."
 
@@ -102,8 +102,8 @@ msgstr "حساب"
 msgid "Add a custom field"
 msgstr "أضافه حقل مخصص"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:120
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:171
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:119
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:170
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "إضافة عنصر جديد"
@@ -256,7 +256,7 @@ msgid "Center Artboard"
 msgstr "التوسيط إلى اللوحة"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:121
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
 msgid "Change Password"
 msgstr "تغيير كلمة المرور"
 
@@ -300,10 +300,6 @@ msgstr "الشركة"
 #: apps/client/src/components/ai-actions.tsx:118
 msgid "Confident"
 msgstr "واثق"
-
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:98
-msgid "Confirm New Password"
-msgstr "تأكيد كلمة المرور الجديدة"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:234
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:246
@@ -351,7 +347,12 @@ msgstr "قم بإنشاء واحدة الآن"
 msgid "Create Sample Resume"
 msgstr "إنشاء نموذج السيرة الذاتية"
 
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
+msgid "Current Password"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:93
+#: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:27
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:28
 msgid "Custom CSS"
 msgstr "CSS مخصص"
@@ -423,14 +424,14 @@ msgstr "تصميم السيرة الذاتية بصفحة واحدة/متعدد�
 msgid "Disable"
 msgstr "تعطيل"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:160
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:154
 msgid "Disable 2FA"
 msgstr "تعطيل المصادقة الثنائية 2FA"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:302
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:220
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:134
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:118
 msgid "Discard"
 msgstr "تجاهل"
 
@@ -503,7 +504,7 @@ msgstr "المؤثرات"
 msgid "Email"
 msgstr "البريد الإلكتروني"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:169
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:163
 msgid "Enable 2FA"
 msgstr "تمكين المصادقة الثنائية (2FA)"
 
@@ -544,6 +545,7 @@ msgid "Explore the templates available in Reactive Resume and view the resumes c
 msgstr "استكشف القوالب المتاحة في Resume التفاعلي وعرض الاستئنافات التي تمت صياغتها معهم. ويمكنها أيضا أن تكون أمثلة للمساعدة في توجيه عملية إنشاء مستأنفتك المقبلة."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:121
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:39
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:40
 msgid "Export"
 msgstr "تصدير"
@@ -734,7 +736,7 @@ msgstr "تحسين الكتابة"
 msgid "In case you are unable to scan this QR Code, you can also copy-paste this link into your authenticator app."
 msgstr "في حال كنت غير قادر على مسح رمز QR هذا، يمكنك أيضًا نسخ ولصق هذا الرابط في تطبيق المصادقة الخاص بك."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:70
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:67
 msgid "In this section, you can change your password and enable/disable two-factor authentication."
 msgstr "في هذا القسم، يمكنك تغيير كلمة المرور الخاصة بك وتمكين/تعطيل المصادقة ذات العاملين."
 
@@ -743,6 +745,7 @@ msgid "In this section, you can delete your account and all the data associated 
 msgstr "في هذا القسم، يمكنك حذف حسابك وجميع البيانات المرتبطة بالمستخدم الخاص بك، ولكن يرجى مراعاة أن <0>هذا الإجراء لا رجعة فيه</0>."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:135
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:116
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
 msgid "Information"
 msgstr "المعلومات"
@@ -824,6 +827,7 @@ msgid "Last updated {lastUpdated}"
 msgstr "آخر تحديث {lastUpdated}"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:197
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
 msgid "Layout"
 msgstr "التصميم"
@@ -957,7 +961,7 @@ msgstr "الاسم"
 msgid "Network"
 msgstr "الشبكة"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:85
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:96
 msgid "New Password"
 msgstr "كلمة مرور جديدة"
 
@@ -974,6 +978,7 @@ msgid "Note: This will make your account less secure."
 msgstr "ملاحظة: هذا سيجعل حسابك أقل أمانًا."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:128
+#: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:16
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:17
 msgid "Notes"
 msgstr "ملاحظات"
@@ -1032,6 +1037,7 @@ msgid "Organization"
 msgstr "الشركة"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:100
+#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:25
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:26
 msgid "Page"
 msgstr "صفحة"
@@ -1043,7 +1049,7 @@ msgstr "الصفحة {pageNumber}"
 #: apps/client/src/pages/auth/login/page.tsx:110
 #: apps/client/src/pages/auth/register/page.tsx:163
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:73
 msgid "Password"
 msgstr "كلمة المرور"
 
@@ -1110,8 +1116,6 @@ msgid "Primary Color"
 msgstr "اللون الأساسي"
 
 #: apps/client/src/pages/home/components/footer.tsx:50
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:23
 msgid "Privacy Policy"
 msgstr "سياسة الخصوصية"
 
@@ -1148,7 +1152,6 @@ msgstr "طرح مشكلة"
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
 #: apps/client/src/pages/home/components/footer.tsx:18
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
 #: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/public/page.tsx:74
 #: apps/client/src/pages/public/page.tsx:95
@@ -1282,7 +1285,7 @@ msgstr "ابحث عن لغة"
 msgid "Secure with two-factor authentication"
 msgstr "أمّن بالمصادقة الثنائية"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:68
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:65
 msgid "Security"
 msgstr "الأمان"
 
@@ -1314,6 +1317,7 @@ msgid "Setup two-factor authentication on your account"
 msgstr "أعدّ المصادقة الثنائية على حسابك"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:107
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:38
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
 msgid "Sharing"
 msgstr "المشاركة"
@@ -1408,6 +1412,7 @@ msgid "Start building your resume by giving it a name."
 msgstr "ابدأ في بناء مستأنفتك عن طريق إعطائها اسماً."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:114
+#: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:22
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:23
 msgid "Statistics"
 msgstr "الإحصائيات"
@@ -1449,6 +1454,7 @@ msgid "System"
 msgstr "النظام"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:65
+#: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:18
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
 msgid "Template"
 msgstr "قالب"
@@ -1465,15 +1471,12 @@ msgstr "الشهادات"
 msgid "Text Color"
 msgstr "لون النص"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
-msgid "The passwords you entered do not match."
-msgstr "كلمات المرور التي أدخلتها غير متطابقة."
-
 #: apps/client/src/services/errors/translate-error.ts:49
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
 msgstr "تم تأمين الاستئناف الذي تريد تحديثه، يرجى إلغاء قفل إذا كنت ترغب في إجراء أي تغييرات عليه."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:86
+#: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:19
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:20
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:79
 msgid "Theme"
@@ -1530,7 +1533,7 @@ msgstr "تتبع وجهات النظر والتنزيلات"
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/auth/verify-otp/page.tsx:57
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:135
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:129
 msgid "Two-Factor Authentication"
 msgstr "المصادقة الثنائية"
 
@@ -1552,6 +1555,7 @@ msgid "Type of Study"
 msgstr "نوع الدراسة"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:79
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:65
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:66
 msgid "Typography"
 msgstr "الطبقات"
@@ -1733,7 +1737,7 @@ msgstr "تم التحقق من عنوان البريد الإلكتروني ال
 msgid "Your OpenAI API Key has not been set yet. Please go to your account settings to enable OpenAI Integration."
 msgstr "لم يتم تعيين مفتاح API OpenAI الخاص بك بعد. يرجى الذهاب إلى إعدادات الحساب الخاص بك لتمكين تكامل OpenAI."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:59
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:56
 msgid "Your password has been updated successfully."
 msgstr "تم تحديث كلمة المرور الخاصة بك بنجاح."
 

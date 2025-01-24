@@ -8,7 +8,7 @@ msgstr ""
 "Language: sk\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-01-17 21:32\n"
+"PO-Revision-Date: 2025-01-24 20:14\n"
 "Last-Translator: \n"
 "Language-Team: Slovak\n"
 "Plural-Forms: nplurals=4; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 3;\n"
@@ -46,11 +46,11 @@ msgstr "<0>Poznámka: </0>Používaním rozhrania API OpenAI beriete na vedomie 
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
 msgstr "<0>Komunita strávila veľa času písaním dokumentácie k aplikácii Reactive Resume a som si istý, že vám pomôže začať pracovať s aplikáciou.</0><1>Je tu aj veľa príkladov, ktoré vám pomôžu začať, a funkcií, o ktorých možno neviete a ktoré by vám mohli pomôcť vytvoriť dokonalý životopis.</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:146
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:140
 msgid "<0>Two-factor authentication is currently disabled.</0> You can enable it by adding an authenticator app to your account."
 msgstr "<0>Dvojfaktorové overovanie je v súčasnosti vypnuté.</0> Môžete ho povoliť pridaním aplikácie autentifikátora do svojho konta."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:139
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:133
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr "<0>Dvojfaktorové overovanie je povolené.</0> Pri každom prihlásení budete požiadaní o zadanie kódu."
 
@@ -102,8 +102,8 @@ msgstr "Účet"
 msgid "Add a custom field"
 msgstr "Pridanie vlastného poľa"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:120
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:171
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:119
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:170
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "Pridanie novej položky"
@@ -256,7 +256,7 @@ msgid "Center Artboard"
 msgstr "Stredová umelecká doska"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:121
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
 msgid "Change Password"
 msgstr "Zmena hesla"
 
@@ -300,10 +300,6 @@ msgstr "Spoločnosť"
 #: apps/client/src/components/ai-actions.tsx:118
 msgid "Confident"
 msgstr "Sebavedomé"
-
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:98
-msgid "Confirm New Password"
-msgstr "Potvrdenie nového hesla"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:234
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:246
@@ -351,7 +347,12 @@ msgstr "Vytvorte si ho teraz"
 msgid "Create Sample Resume"
 msgstr "Vytvorenie vzorového životopisu"
 
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
+msgid "Current Password"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:93
+#: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:27
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:28
 msgid "Custom CSS"
 msgstr "Vlastné CSS"
@@ -423,14 +424,14 @@ msgstr "Navrhovanie jednostranných/ viacstranových životopisov"
 msgid "Disable"
 msgstr "Zakázať"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:160
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:154
 msgid "Disable 2FA"
 msgstr "Zakázanie funkcie 2FA"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:302
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:220
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:134
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:118
 msgid "Discard"
 msgstr "Vyradiť"
 
@@ -503,7 +504,7 @@ msgstr "Účinky"
 msgid "Email"
 msgstr "E-mail"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:169
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:163
 msgid "Enable 2FA"
 msgstr "Povolenie 2FA"
 
@@ -544,6 +545,7 @@ msgid "Explore the templates available in Reactive Resume and view the resumes c
 msgstr "Preskúmajte šablóny dostupné v Reactive Resume a prezrite si životopisy, ktoré boli pomocou nich vytvorené. Môžu vám poslúžiť aj ako príklady, ktoré vám pomôžu pri tvorbe vášho ďalšieho životopisu."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:121
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:39
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:40
 msgid "Export"
 msgstr "Export"
@@ -734,7 +736,7 @@ msgstr "Zlepšiť písanie"
 msgid "In case you are unable to scan this QR Code, you can also copy-paste this link into your authenticator app."
 msgstr "Ak sa vám nepodarí naskenovať tento kód QR, môžete toto prepojenie skopírovať a vložiť do aplikácie autentifikátora."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:70
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:67
 msgid "In this section, you can change your password and enable/disable two-factor authentication."
 msgstr "V tejto časti môžete zmeniť heslo a povoliť/povoliť dvojfaktorové overovanie."
 
@@ -743,6 +745,7 @@ msgid "In this section, you can delete your account and all the data associated 
 msgstr "V tejto časti môžete vymazať svoje konto a všetky údaje priradené k používateľovi, ale nezabudnite, že <0>táto akcia je nezvratná</0>."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:135
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:116
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
 msgid "Information"
 msgstr "Informácie"
@@ -824,6 +827,7 @@ msgid "Last updated {lastUpdated}"
 msgstr "Posledná aktualizácia {lastUpdated}"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:197
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
 msgid "Layout"
 msgstr "Rozloženie"
@@ -957,7 +961,7 @@ msgstr "Názov"
 msgid "Network"
 msgstr "Sieť"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:85
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:96
 msgid "New Password"
 msgstr "Nové heslo"
 
@@ -974,6 +978,7 @@ msgid "Note: This will make your account less secure."
 msgstr "Poznámka: Tým sa vaše konto stane menej bezpečným."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:128
+#: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:16
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:17
 msgid "Notes"
 msgstr "Poznámky"
@@ -1032,6 +1037,7 @@ msgid "Organization"
 msgstr "Organizácia"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:100
+#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:25
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:26
 msgid "Page"
 msgstr "Strana"
@@ -1043,7 +1049,7 @@ msgstr "Strana {pageNumber}"
 #: apps/client/src/pages/auth/login/page.tsx:110
 #: apps/client/src/pages/auth/register/page.tsx:163
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:73
 msgid "Password"
 msgstr "Heslo"
 
@@ -1110,8 +1116,6 @@ msgid "Primary Color"
 msgstr "Primárna farba"
 
 #: apps/client/src/pages/home/components/footer.tsx:50
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:23
 msgid "Privacy Policy"
 msgstr "Zásady ochrany osobných údajov"
 
@@ -1148,7 +1152,6 @@ msgstr "Upozorniť na problém"
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
 #: apps/client/src/pages/home/components/footer.tsx:18
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
 #: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/public/page.tsx:74
 #: apps/client/src/pages/public/page.tsx:95
@@ -1282,7 +1285,7 @@ msgstr "Vyhľadávanie jazyka"
 msgid "Secure with two-factor authentication"
 msgstr "Zabezpečenie pomocou dvojfaktorového overovania"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:68
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:65
 msgid "Security"
 msgstr "Zabezpečenie"
 
@@ -1314,6 +1317,7 @@ msgid "Setup two-factor authentication on your account"
 msgstr "Nastavenie dvojfaktorového overovania na svojom konte"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:107
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:38
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
 msgid "Sharing"
 msgstr "Zdieľanie"
@@ -1408,6 +1412,7 @@ msgid "Start building your resume by giving it a name."
 msgstr "Svoj životopis začnite tvoriť tak, že mu dáte meno."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:114
+#: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:22
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:23
 msgid "Statistics"
 msgstr "Štatistika"
@@ -1449,6 +1454,7 @@ msgid "System"
 msgstr "Systém"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:65
+#: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:18
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
 msgid "Template"
 msgstr "Šablóna"
@@ -1465,15 +1471,12 @@ msgstr "Skúsenosti"
 msgid "Text Color"
 msgstr "Farba textu"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
-msgid "The passwords you entered do not match."
-msgstr "Zadané heslá sa nezhodujú."
-
 #: apps/client/src/services/errors/translate-error.ts:49
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
 msgstr "Životopis, ktorý chcete aktualizovať, je uzamknutý, ak v ňom chcete vykonať akékoľvek zmeny, odomknite ho."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:86
+#: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:19
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:20
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:79
 msgid "Theme"
@@ -1530,7 +1533,7 @@ msgstr "Sledovanie zobrazení a stiahnutí"
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/auth/verify-otp/page.tsx:57
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:135
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:129
 msgid "Two-Factor Authentication"
 msgstr "Dvojfaktorové overovanie"
 
@@ -1552,6 +1555,7 @@ msgid "Type of Study"
 msgstr "Typ štúdie"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:79
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:65
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:66
 msgid "Typography"
 msgstr "Typografia"
@@ -1733,7 +1737,7 @@ msgstr "Vaša e-mailová adresa bola úspešne overená."
 msgid "Your OpenAI API Key has not been set yet. Please go to your account settings to enable OpenAI Integration."
 msgstr "Váš kľúč API OpenAI ešte nebol nastavený. Prejdite do nastavení svojho účtu a povoľte integráciu OpenAI."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:59
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:56
 msgid "Your password has been updated successfully."
 msgstr "Vaše heslo bolo úspešne aktualizované."
 

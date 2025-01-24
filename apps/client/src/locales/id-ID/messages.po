@@ -8,7 +8,7 @@ msgstr ""
 "Language: id\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-01-17 21:32\n"
+"PO-Revision-Date: 2025-01-24 20:14\n"
 "Last-Translator: \n"
 "Language-Team: Indonesian\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -46,11 +46,11 @@ msgstr "<0>Catatan: </0>Dengan menggunakan API OpenAI, Anda mengakui dan menerim
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
 msgstr "<0>Komunitas ini telah menghabiskan banyak waktu untuk menulis dokumentasi untuk Reactive Resume, dan saya yakin ini akan membantu Anda mulai menggunakan aplikasi ini.</0><1>Ada juga banyak contoh untuk membantu Anda memulai, dan fitur-fitur yang mungkin tidak Anda ketahui yang dapat membantu Anda membuat resume yang sempurna.</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:146
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:140
 msgid "<0>Two-factor authentication is currently disabled.</0> You can enable it by adding an authenticator app to your account."
 msgstr "<0>Autentikasi dua faktor saat ini dinonaktifkan.</0> Anda dapat mengaktifkannya dengan menambahkan aplikasi pengautentikasi ke akun Anda."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:139
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:133
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr "<0>Autentikasi dua faktor diaktifkan.</0> Anda akan diminta untuk memasukkan kode setiap kali masuk."
 
@@ -102,8 +102,8 @@ msgstr "Akun"
 msgid "Add a custom field"
 msgstr "Tambahkan kolom kustom"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:120
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:171
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:119
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:170
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "Tambah item baru"
@@ -256,7 +256,7 @@ msgid "Center Artboard"
 msgstr "Papan Seni Tengah"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:121
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
 msgid "Change Password"
 msgstr "Ubah Kata Sandi"
 
@@ -300,10 +300,6 @@ msgstr "Perusahaan"
 #: apps/client/src/components/ai-actions.tsx:118
 msgid "Confident"
 msgstr "Percaya diri"
-
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:98
-msgid "Confirm New Password"
-msgstr "Konfirmasi Kata Sandi Baru"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:234
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:246
@@ -351,7 +347,12 @@ msgstr "Buat satu sekarang"
 msgid "Create Sample Resume"
 msgstr "Buat Contoh Resume"
 
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
+msgid "Current Password"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:93
+#: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:27
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:28
 msgid "Custom CSS"
 msgstr "CSS khusus"
@@ -423,14 +424,14 @@ msgstr "Desain resume satu / beberapa halaman"
 msgid "Disable"
 msgstr "Nonaktifkan"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:160
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:154
 msgid "Disable 2FA"
 msgstr "Nonaktifkan 2FA"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:302
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:220
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:134
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:118
 msgid "Discard"
 msgstr "Buang"
 
@@ -503,7 +504,7 @@ msgstr "Efek"
 msgid "Email"
 msgstr "Email"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:169
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:163
 msgid "Enable 2FA"
 msgstr "Aktifkan 2FA"
 
@@ -544,6 +545,7 @@ msgid "Explore the templates available in Reactive Resume and view the resumes c
 msgstr "Jelajahi templat yang tersedia di Reactive Resume dan melihat resume yang dibuat dengan templat tersebut. Templat ini juga dapat digunakan sebagai contoh untuk membantu dalam pembuatan resume Anda."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:121
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:39
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:40
 msgid "Export"
 msgstr "Ekspor"
@@ -734,7 +736,7 @@ msgstr "Meningkatkan kualitasPenulisan"
 msgid "In case you are unable to scan this QR Code, you can also copy-paste this link into your authenticator app."
 msgstr "Jika Anda tidak dapat memindai Kode QR ini, Anda juga dapat menyalin dan tempel tautan ini ke dalam aplikasi autentikator Anda."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:70
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:67
 msgid "In this section, you can change your password and enable/disable two-factor authentication."
 msgstr "Pada bagian ini, Anda dapat mengubah kata sandi dan mengaktifkan/menonaktifkan autentikasi dua faktor."
 
@@ -743,6 +745,7 @@ msgid "In this section, you can delete your account and all the data associated 
 msgstr "Pada bagian ini, Anda dapat menghapus akun dan semua data yang terkait dengan pengguna Anda, tetapi harap diingat bahwa <0>tindakan ini tidak dapat dibatalkan</0>."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:135
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:116
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
 msgid "Information"
 msgstr "Informasi"
@@ -824,6 +827,7 @@ msgid "Last updated {lastUpdated}"
 msgstr "Terakhir diperbarui {lastUpdated}"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:197
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
 msgid "Layout"
 msgstr "Tata letak"
@@ -957,7 +961,7 @@ msgstr "Nama"
 msgid "Network"
 msgstr "Jaringan"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:85
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:96
 msgid "New Password"
 msgstr "Kata Sandi Baru"
 
@@ -974,6 +978,7 @@ msgid "Note: This will make your account less secure."
 msgstr "Catatan: Hal ini akan membuat akun Anda kurang aman."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:128
+#: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:16
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:17
 msgid "Notes"
 msgstr "Catatan"
@@ -1032,6 +1037,7 @@ msgid "Organization"
 msgstr "Organisasi"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:100
+#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:25
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:26
 msgid "Page"
 msgstr "Halaman"
@@ -1043,7 +1049,7 @@ msgstr "Halaman {pageNumber}"
 #: apps/client/src/pages/auth/login/page.tsx:110
 #: apps/client/src/pages/auth/register/page.tsx:163
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:73
 msgid "Password"
 msgstr "Kata sandi"
 
@@ -1110,8 +1116,6 @@ msgid "Primary Color"
 msgstr "Warna Primer"
 
 #: apps/client/src/pages/home/components/footer.tsx:50
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:23
 msgid "Privacy Policy"
 msgstr "Kebijakan Privasi"
 
@@ -1148,7 +1152,6 @@ msgstr "Mengajukan masalah"
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
 #: apps/client/src/pages/home/components/footer.tsx:18
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
 #: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/public/page.tsx:74
 #: apps/client/src/pages/public/page.tsx:95
@@ -1282,7 +1285,7 @@ msgstr "Mencari bahasa"
 msgid "Secure with two-factor authentication"
 msgstr "Aman dengan autentikasi dua faktor"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:68
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:65
 msgid "Security"
 msgstr "Keamanan"
 
@@ -1314,6 +1317,7 @@ msgid "Setup two-factor authentication on your account"
 msgstr "Menyiapkan autentikasi dua faktor di akun Anda"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:107
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:38
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
 msgid "Sharing"
 msgstr "Berbagi"
@@ -1408,6 +1412,7 @@ msgid "Start building your resume by giving it a name."
 msgstr "Mulailah membuat resume Anda dengan memberikan nama."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:114
+#: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:22
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:23
 msgid "Statistics"
 msgstr "Statistik"
@@ -1449,6 +1454,7 @@ msgid "System"
 msgstr "Sistem"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:65
+#: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:18
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
 msgid "Template"
 msgstr "Templat"
@@ -1465,15 +1471,12 @@ msgstr "Testimonial"
 msgid "Text Color"
 msgstr "Warna Teks"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
-msgid "The passwords you entered do not match."
-msgstr "Kata sandi yang Anda masukkan tidak cocok."
-
 #: apps/client/src/services/errors/translate-error.ts:49
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
 msgstr "Resume yang ingin Anda perbarui terkunci, silakan buka kuncinya jika Anda ingin melakukan perubahan."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:86
+#: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:19
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:20
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:79
 msgid "Theme"
@@ -1530,7 +1533,7 @@ msgstr "Melacak tampilan dan unduhan"
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/auth/verify-otp/page.tsx:57
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:135
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:129
 msgid "Two-Factor Authentication"
 msgstr "Autentikasi Dua Faktor"
 
@@ -1552,6 +1555,7 @@ msgid "Type of Study"
 msgstr "Jenis Studi"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:79
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:65
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:66
 msgid "Typography"
 msgstr "Tipografi"
@@ -1733,7 +1737,7 @@ msgstr "Alamat email Anda telah berhasil diverifikasi."
 msgid "Your OpenAI API Key has not been set yet. Please go to your account settings to enable OpenAI Integration."
 msgstr "Kunci API OpenAI Anda belum ditetapkan. Silakan buka pengaturan akun Anda untuk mengaktifkan Integrasi OpenAI."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:59
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:56
 msgid "Your password has been updated successfully."
 msgstr "Kata sandi Anda telah berhasil diperbarui."
 

@@ -8,7 +8,7 @@ msgstr ""
 "Language: th\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-01-17 21:32\n"
+"PO-Revision-Date: 2025-01-24 20:14\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -46,11 +46,11 @@ msgstr "<0>หมายเหตุ: </0>การใช้ OpenAI API หมา
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
 msgstr "<0>ชุมชนของเราใช้เวลามากในการเขียนคู่มือใช้งาน Reactive Resume ขึ้นมา และผมมั่นใจว่าคู่มือจะช่วยให้คุณเริ่มใช้งานแอปได้สะดวกขึ้น</0><1>นอกจากนี้ ยังมีตัวอย่างอีกเยอะมากเพื่อให้คุณเริ่มใช้งานเป็น และฟีเจอร์ที่คุณอาจไม่รู้มาก่อน ซึ่งจะช่วยทำให้คุณสร้างเรซูเม่ที่สมบูรณ์แบบออกมาได้</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:146
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:140
 msgid "<0>Two-factor authentication is currently disabled.</0> You can enable it by adding an authenticator app to your account."
 msgstr "<0>การยืนยันตัวตนแบบสองขั้นตอนยังไม่ได้เปิดใช้งาน</0> คุณสามารถเปิดใช้งานได้โดยการเพิ่มแอปยืนยันตัวตนลงในบัญชีของคุณ"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:139
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:133
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr "<0>การยืนยันตัวตนแบบสองขั้นตอนเปิดใช้งานแล้ว</0> คุณจะถูกขอให้กรอกรหัสทุกครั้งที่คุณเข้าสู่ระบบ"
 
@@ -102,8 +102,8 @@ msgstr "บัญชี"
 msgid "Add a custom field"
 msgstr "เพิ่มช่องข้อมูลที่กำหนดเอง"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:120
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:171
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:119
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:170
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "เพิ่มรายการใหม่"
@@ -256,7 +256,7 @@ msgid "Center Artboard"
 msgstr "จัดหน้าไว้ตรงกลาง"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:121
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
 msgid "Change Password"
 msgstr "เปลี่ยนรหัสผ่าน"
 
@@ -300,10 +300,6 @@ msgstr "บริษัท"
 #: apps/client/src/components/ai-actions.tsx:118
 msgid "Confident"
 msgstr "มั่นใจ"
-
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:98
-msgid "Confirm New Password"
-msgstr "ยืนยันรหัสผ่านใหม่"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:234
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:246
@@ -351,7 +347,12 @@ msgstr "สร้างตอนนี้เลย"
 msgid "Create Sample Resume"
 msgstr "สร้างเรซูเม่ตัวอย่าง"
 
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
+msgid "Current Password"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:93
+#: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:27
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:28
 msgid "Custom CSS"
 msgstr ""
@@ -423,14 +424,14 @@ msgstr "ออกแบบเรซูเม่หน้าเดียว/ห�
 msgid "Disable"
 msgstr "ปิดใช้งาน"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:160
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:154
 msgid "Disable 2FA"
 msgstr "ปิดใช้งาน 2FA"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:302
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:220
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:134
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:118
 msgid "Discard"
 msgstr "ยกเลิก"
 
@@ -503,7 +504,7 @@ msgstr "เอฟเฟกต์"
 msgid "Email"
 msgstr "อีเมล"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:169
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:163
 msgid "Enable 2FA"
 msgstr "เปิดใช้งาน 2FA"
 
@@ -544,6 +545,7 @@ msgid "Explore the templates available in Reactive Resume and view the resumes c
 msgstr "สำรวจเทมเพลตที่มีให้ใช้ใน Reactive Resume และดูเรซูเม่ที่สร้างขึ้นจากเทมเพลตนั้น พวกมันยังสามารถเป็นตัวอย่างเพื่อช่วยในการสร้างเรซูเม่ของคุณต่อไป"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:121
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:39
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:40
 msgid "Export"
 msgstr "ส่งออก"
@@ -734,7 +736,7 @@ msgstr "ปรับปรุงการเขียน"
 msgid "In case you are unable to scan this QR Code, you can also copy-paste this link into your authenticator app."
 msgstr "ในกรณีที่คุณไม่สามารถสแกนโค้ด QR นี้ได้ คุณสามารถคัดลอกและวางลิงก์นี้ลงในแอปยืนยันตัวตนของคุณได้"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:70
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:67
 msgid "In this section, you can change your password and enable/disable two-factor authentication."
 msgstr "ในส่วนนี้ คุณสามารถเปลี่ยนรหัสผ่านของคุณและเปิด/ปิดการใช้งานการยืนยันตัวตนแบบสองขั้นตอนได้"
 
@@ -743,6 +745,7 @@ msgid "In this section, you can delete your account and all the data associated 
 msgstr "ในส่วนนี้ คุณสามารถลบบัญชีของคุณและข้อมูลทั้งหมดที่เกี่ยวข้องกับผู้ใช้ของคุณได้ แต่โปรดจำไว้ว่า <0>การทำเช่นนี้ไม่สามารถย้อนคืนข้อมูลได้</0>"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:135
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:116
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
 msgid "Information"
 msgstr "ข้อมูล"
@@ -824,6 +827,7 @@ msgid "Last updated {lastUpdated}"
 msgstr "อัปเดตล่าสุด {lastUpdated}"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:197
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
 msgid "Layout"
 msgstr "เค้าโครง"
@@ -957,7 +961,7 @@ msgstr "ชื่อ"
 msgid "Network"
 msgstr "ชื่อเว็บไซต์"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:85
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:96
 msgid "New Password"
 msgstr "รหัสผ่านใหม่"
 
@@ -974,6 +978,7 @@ msgid "Note: This will make your account less secure."
 msgstr "หมายเหตุ: บัญชีของคุณจะปลอดภัยน้อยลงหากทำเช่นนี้"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:128
+#: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:16
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:17
 msgid "Notes"
 msgstr "โน้ต"
@@ -1032,6 +1037,7 @@ msgid "Organization"
 msgstr "องค์กร"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:100
+#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:25
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:26
 msgid "Page"
 msgstr "หน้า"
@@ -1043,7 +1049,7 @@ msgstr ""
 #: apps/client/src/pages/auth/login/page.tsx:110
 #: apps/client/src/pages/auth/register/page.tsx:163
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:73
 msgid "Password"
 msgstr "รหัสผ่าน"
 
@@ -1110,8 +1116,6 @@ msgid "Primary Color"
 msgstr "สีหลัก"
 
 #: apps/client/src/pages/home/components/footer.tsx:50
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:23
 msgid "Privacy Policy"
 msgstr "นโยบายความเป็นส่วนตัว"
 
@@ -1148,7 +1152,6 @@ msgstr "แจ้งปัญหา"
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
 #: apps/client/src/pages/home/components/footer.tsx:18
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
 #: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/public/page.tsx:74
 #: apps/client/src/pages/public/page.tsx:95
@@ -1282,7 +1285,7 @@ msgstr "ค้นหาภาษา"
 msgid "Secure with two-factor authentication"
 msgstr "รักษาความปลอดภัยด้วยการยืนยันตัวตนสองขั้นตอน"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:68
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:65
 msgid "Security"
 msgstr "ความปลอดภัย"
 
@@ -1314,6 +1317,7 @@ msgid "Setup two-factor authentication on your account"
 msgstr "ตั้งค่าการยืนยันตัวตนแบบสองขั้นตอนบนบัญชีของคุณ"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:107
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:38
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
 msgid "Sharing"
 msgstr "การแชร์"
@@ -1408,6 +1412,7 @@ msgid "Start building your resume by giving it a name."
 msgstr "เริ่มสร้างเรซูเม่ของคุณด้วยการตั้งชื่อ"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:114
+#: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:22
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:23
 msgid "Statistics"
 msgstr "สถิติ"
@@ -1449,6 +1454,7 @@ msgid "System"
 msgstr "ระบบ"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:65
+#: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:18
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
 msgid "Template"
 msgstr "เทมเพลต"
@@ -1465,15 +1471,12 @@ msgstr "คำรับรอง"
 msgid "Text Color"
 msgstr "สีตัวอักษร"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
-msgid "The passwords you entered do not match."
-msgstr "คุณกรอกรหัสผ่านไม่ตรงกัน"
-
 #: apps/client/src/services/errors/translate-error.ts:49
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
 msgstr "เรซูเม่ที่คุณต้องการอัปเดตถูกล็อกแล้ว โปรดปลดล็อกหากคุณต้องการทำการเปลี่ยนแปลงใดๆ กับเรซูเม่นั้น"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:86
+#: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:19
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:20
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:79
 msgid "Theme"
@@ -1530,7 +1533,7 @@ msgstr "ติดตามยอดดูและยอดดาวน์โห
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/auth/verify-otp/page.tsx:57
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:135
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:129
 msgid "Two-Factor Authentication"
 msgstr "การยืนยันตัวตนแบบสองขั้นตอน"
 
@@ -1552,6 +1555,7 @@ msgid "Type of Study"
 msgstr "ระดับการศึกษา"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:79
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:65
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:66
 msgid "Typography"
 msgstr "แบบอักษร"
@@ -1733,7 +1737,7 @@ msgstr "ที่อยู่อีเมลของคุณได้รับ
 msgid "Your OpenAI API Key has not been set yet. Please go to your account settings to enable OpenAI Integration."
 msgstr "คีย์ API ของ OpenAI ของคุณยังไม่ได้ตั้งค่า โปรดไปที่การตั้งค่าบัญชีของคุณเพื่อเปิดใช้งานการใช้ระบบ OpenAI"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:59
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:56
 msgid "Your password has been updated successfully."
 msgstr "รหัสผ่านของคุณได้รับการอัปเดตเรียบร้อยแล้ว"
 

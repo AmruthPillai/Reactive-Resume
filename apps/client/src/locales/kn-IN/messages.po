@@ -8,7 +8,7 @@ msgstr ""
 "Language: kn\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-01-17 21:32\n"
+"PO-Revision-Date: 2025-01-24 20:14\n"
 "Last-Translator: \n"
 "Language-Team: Kannada\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -46,11 +46,11 @@ msgstr "<0>ಗಮನಿಸಿ:</0> OpenAI API ಅನ್ನು ಬಳಸುವ �
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
 msgstr "<0>ಪ್ರತಿಕ್ರಿಯಾತ್ಮಕ ಪುನರಾರಂಭಕ್ಕಾಗಿ ದಸ್ತಾವೇಜನ್ನು ಬರೆಯಲು ಸಮುದಾಯವು ಸಾಕಷ್ಟು ಸಮಯವನ್ನು ಕಳೆದಿದೆ ಮತ್ತು ಅಪ್ಲಿಕೇಶನ್‌ನೊಂದಿಗೆ ಪ್ರಾರಂಭಿಸಲು ಇದು ನಿಮಗೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ ಎಂದು ನನಗೆ ಖಾತ್ರಿಯಿದೆ.</0> <1>ಪ್ರಾರಂಭಿಸಲು ನಿಮಗೆ ಸಹಾಯ ಮಾಡಲು ಸಾಕಷ್ಟು ಉದಾಹರಣೆಗಳಿವೆ ಮತ್ತು ನಿಮಗೆ ತಿಳಿದಿಲ್ಲದ ವೈಶಿಷ್ಟ್ಯಗಳು ನಿಮ್ಮ ಪರಿಪೂರ್ಣ ಪುನರಾರಂಭವನ್ನು ನಿರ್ಮಿಸಲು ನಿಮಗೆ ಸಹಾಯ ಮಾಡುತ್ತವೆ.</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:146
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:140
 msgid "<0>Two-factor authentication is currently disabled.</0> You can enable it by adding an authenticator app to your account."
 msgstr "<0>ಎರಡು ಅಂಶದ ದೃಢೀಕರಣವನ್ನು ಪ್ರಸ್ತುತ ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ.</0> ನಿಮ್ಮ ಖಾತೆಗೆ ದೃಢೀಕರಣ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಸೇರಿಸುವ ಮೂಲಕ ನೀವು ಅದನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಬಹುದು."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:139
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:133
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr "<0>ಎರಡು ಅಂಶದ ದೃಢೀಕರಣವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ.</0> ನೀವು ಸೈನ್ ಇನ್ ಮಾಡಿದಾಗಲೆಲ್ಲಾ ಕೋಡ್ ಅನ್ನು ನಮೂದಿಸಲು ನಿಮ್ಮನ್ನು ಕೇಳಲಾಗುತ್ತದೆ."
 
@@ -102,8 +102,8 @@ msgstr "ಖಾತೆಗಳು"
 msgid "Add a custom field"
 msgstr "ಕಸ್ಟಮ್ ಕ್ಷೇತ್ರವನ್ನು ಸೇರಿಸಿ"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:120
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:171
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:119
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:170
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "ಹೊಸ ಐಟಂ ಸೇರಿಸಿ"
@@ -256,7 +256,7 @@ msgid "Center Artboard"
 msgstr "ಸೆಂಟರ್ ಆರ್ಟ್ಬೋರ್ಡ್"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:121
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
 msgid "Change Password"
 msgstr "ಗುಪ್ತಪದವನ್ನು ಬದಲಾಯಿಸು"
 
@@ -300,10 +300,6 @@ msgstr "ಕಂಪನಿ"
 #: apps/client/src/components/ai-actions.tsx:118
 msgid "Confident"
 msgstr "ಆತ್ಮವಿಶ್ವಾಸ"
-
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:98
-msgid "Confirm New Password"
-msgstr "ಹೊಸ ಗುಪ್ತಪದವನ್ನು ದೃಢೀಕರಿಸಿ"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:234
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:246
@@ -351,7 +347,12 @@ msgstr "ಇದೀಗ ಒಂದನ್ನು ರಚಿಸಿ"
 msgid "Create Sample Resume"
 msgstr "ಮಾದರಿ ರೆಸ್ಯೂಮ್‌ ರಚಿಸಿ"
 
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
+msgid "Current Password"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:93
+#: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:27
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:28
 msgid "Custom CSS"
 msgstr ""
@@ -423,14 +424,14 @@ msgstr "ಏಕ/ಬಹು ಪುಟ ರೆಸ್ಯೂಮ್‌ಗಳನ್ನು
 msgid "Disable"
 msgstr "ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:160
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:154
 msgid "Disable 2FA"
 msgstr "2FA ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:302
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:220
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:134
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:118
 msgid "Discard"
 msgstr "ತಿರಸ್ಕರಿಸು"
 
@@ -503,7 +504,7 @@ msgstr "ಪರಿಣಾಮಗಳು"
 msgid "Email"
 msgstr "ಇಮೇಲ್"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:169
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:163
 msgid "Enable 2FA"
 msgstr "2FA ಸಕ್ರಿಯಗೊಳಿಸಿ"
 
@@ -544,6 +545,7 @@ msgid "Explore the templates available in Reactive Resume and view the resumes c
 msgstr "ಪ್ರತಿಕ್ರಿಯಾತ್ಮಕ ರೆಸ್ಯೂಮ್‌ ಲಭ್ಯವಿರುವ ಟೆಂಪ್ಲೇಟ್‌ಗಳನ್ನು ಅನ್ವೇಷಿಸಿ ಮತ್ತು ಅವರೊಂದಿಗೆ ರಚಿಸಲಾದ ರೆಸ್ಯೂಮ್‌ಗಳನ್ನು ವೀಕ್ಷಿಸಿ. ನಿಮ್ಮ ಮುಂದಿನ ರೆಸ್ಯೂಮ್‌ ರಚನೆಗೆ ಮಾರ್ಗದರ್ಶನ ನೀಡಲು ಅವರು ಉದಾಹರಣೆಗಳಾಗಿ ಕಾರ್ಯನಿರ್ವಹಿಸಬಹುದು."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:121
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:39
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:40
 msgid "Export"
 msgstr "ರಫ್ತು ಮಾಡು"
@@ -734,7 +736,7 @@ msgstr "ಬರವಣಿಗೆಯನ್ನು ಸುಧಾರಿಸಿ"
 msgid "In case you are unable to scan this QR Code, you can also copy-paste this link into your authenticator app."
 msgstr "ಈ QR ಕೋಡ್ ಅನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡಲು ನಿಮಗೆ ಸಾಧ್ಯವಾಗದಿದ್ದರೆ, ನೀವು ಈ ಲಿಂಕ್ ಅನ್ನು ನಿಮ್ಮ ದೃಢೀಕರಣ ಅಪ್ಲಿಕೇಶನ್‌ಗೆ ನಕಲಿಸಬಹುದು."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:70
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:67
 msgid "In this section, you can change your password and enable/disable two-factor authentication."
 msgstr "ಈ ವಿಭಾಗದಲ್ಲಿ, ನೀವು ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಬದಲಾಯಿಸಬಹುದು ಮತ್ತು ಎರಡು ಅಂಶಗಳ ದೃಢೀಕರಣವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಬಹುದು/ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಬಹುದು."
 
@@ -743,6 +745,7 @@ msgid "In this section, you can delete your account and all the data associated 
 msgstr "ಈ ವಿಭಾಗದಲ್ಲಿ, ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಮತ್ತು ನಿಮ್ಮ ಬಳಕೆದಾರರಿಗೆ ಸಂಬಂಧಿಸಿದ ಎಲ್ಲಾ ಡೇಟಾವನ್ನು ನೀವು ಅಳಿಸಬಹುದು, ಆದರೆ ದಯವಿಟ್ಟು <0>ಈ ಕ್ರಿಯೆಯನ್ನು ಬದಲಾಯಿಸಲಾಗುವುದಿಲ್ಲ</0> ಎಂಬುದನ್ನು ನೆನಪಿನಲ್ಲಿಡಿ."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:135
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:116
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
 msgid "Information"
 msgstr "ಮಾಹಿತಿ"
@@ -824,6 +827,7 @@ msgid "Last updated {lastUpdated}"
 msgstr "ಕೊನೆಯದಾಗಿ ನವೀಕರಿಸಲಾಗಿದೆ {lastUpdated}"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:197
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
 msgid "Layout"
 msgstr "ಲೇಔಟ್‌"
@@ -957,7 +961,7 @@ msgstr "ಹೆಸರು"
 msgid "Network"
 msgstr "ನೆಟ್ವರ್ಕ್"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:85
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:96
 msgid "New Password"
 msgstr "ಹೊಸ ಪಾಸ್ವರ್ಡ್"
 
@@ -974,6 +978,7 @@ msgid "Note: This will make your account less secure."
 msgstr "ಗಮನಿಸಿ: ಇದು ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಕಡಿಮೆ ಸುರಕ್ಷಿತಗೊಳಿಸುತ್ತದೆ."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:128
+#: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:16
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:17
 msgid "Notes"
 msgstr "ಟಿಪ್ಪಣಿಗಳು"
@@ -1032,6 +1037,7 @@ msgid "Organization"
 msgstr "ಸಂಸ್ಥೆ"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:100
+#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:25
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:26
 msgid "Page"
 msgstr "ಪುಟ"
@@ -1043,7 +1049,7 @@ msgstr ""
 #: apps/client/src/pages/auth/login/page.tsx:110
 #: apps/client/src/pages/auth/register/page.tsx:163
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:73
 msgid "Password"
 msgstr "ಗುಪ್ತಪದ"
 
@@ -1110,8 +1116,6 @@ msgid "Primary Color"
 msgstr "ಪ್ರಾಥಮಿಕ ಬಣ್ಣ"
 
 #: apps/client/src/pages/home/components/footer.tsx:50
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:23
 msgid "Privacy Policy"
 msgstr ""
 
@@ -1148,7 +1152,6 @@ msgstr "ಒಂದು ಸಮಸ್ಯೆಯನ್ನು ಎತ್ತಿಕೊಳ�
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
 #: apps/client/src/pages/home/components/footer.tsx:18
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
 #: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/public/page.tsx:74
 #: apps/client/src/pages/public/page.tsx:95
@@ -1282,7 +1285,7 @@ msgstr "ಭಾಷೆಗಾಗಿ ಹುಡುಕಿ"
 msgid "Secure with two-factor authentication"
 msgstr "ಎರಡು ಅಂಶದ ದೃಢೀಕರಣದೊಂದಿಗೆ ಸುರಕ್ಷಿತ"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:68
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:65
 msgid "Security"
 msgstr "ಭದ್ರತೆ"
 
@@ -1314,6 +1317,7 @@ msgid "Setup two-factor authentication on your account"
 msgstr "ನಿಮ್ಮ ಖಾತೆಯಲ್ಲಿ ಎರಡು ಅಂಶದ ದೃಢೀಕರಣವನ್ನು ಹೊಂದಿಸಿ"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:107
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:38
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
 msgid "Sharing"
 msgstr "ಹಂಚಿಕೆ"
@@ -1408,6 +1412,7 @@ msgid "Start building your resume by giving it a name."
 msgstr "ಹೆಸರನ್ನು ನೀಡುವ ಮೂಲಕ ನಿಮ್ಮ ರೆಸ್ಯೂಮ್ ಅನ್ನು ನಿರ್ಮಿಸಲು ಪ್ರಾರಂಭಿಸಿ."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:114
+#: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:22
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:23
 msgid "Statistics"
 msgstr "ಅಂಕಿಅಂಶಗಳು"
@@ -1449,6 +1454,7 @@ msgid "System"
 msgstr "ಸಿಸ್ಟಂ"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:65
+#: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:18
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
 msgid "Template"
 msgstr "ಮಾದರಿ"
@@ -1465,15 +1471,12 @@ msgstr "ಪ್ರಶಂಸಾಪತ್ರಗಳು"
 msgid "Text Color"
 msgstr "ಅಕ್ಷರದ ಬಣ್ಣ"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
-msgid "The passwords you entered do not match."
-msgstr "ನೀವು ನಮೂದಿಸಿದ ಪಾಸ್‌ವರ್ಡ್‌ಗಳು ಹೊಂದಿಕೆಯಾಗುತ್ತಿಲ್ಲ."
-
 #: apps/client/src/services/errors/translate-error.ts:49
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
 msgstr "ನೀವು ನವೀಕರಿಸಲು ಬಯಸುವ ರೆಸ್ಯೂಮ್ ಲಾಕ್ ಆಗಿದೆ, ನೀವು ಅದರಲ್ಲಿ ಯಾವುದೇ ಬದಲಾವಣೆಗಳನ್ನು ಮಾಡಲು ಬಯಸಿದರೆ ದಯವಿಟ್ಟು ಅನ್‌ಲಾಕ್ ಮಾಡಿ."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:86
+#: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:19
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:20
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:79
 msgid "Theme"
@@ -1530,7 +1533,7 @@ msgstr "ವೀಕ್ಷಣೆಗಳು ಮತ್ತು ಡೌನ್‌ಲೋಡ�
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/auth/verify-otp/page.tsx:57
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:135
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:129
 msgid "Two-Factor Authentication"
 msgstr "ಎರಡು ಅಂಶಗಳ ದೃಢೀಕರಣ"
 
@@ -1552,6 +1555,7 @@ msgid "Type of Study"
 msgstr "ಅಧ್ಯಯನದ ಪ್ರಕಾರ"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:79
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:65
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:66
 msgid "Typography"
 msgstr "ಮುದ್ರಣಕಲೆ"
@@ -1733,7 +1737,7 @@ msgstr "ನಿಮ್ಮ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ಯಶಸ
 msgid "Your OpenAI API Key has not been set yet. Please go to your account settings to enable OpenAI Integration."
 msgstr "ನಿಮ್ಮ OpenAI API ಕೀಯನ್ನು ಇನ್ನೂ ಹೊಂದಿಸಲಾಗಿಲ್ಲ. OpenAI ಇಂಟಿಗ್ರೇಶನ್ ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲು ದಯವಿಟ್ಟು ನಿಮ್ಮ ಖಾತೆಯ ಸೆಟ್ಟಿಂಗ್‌ಗಳಿಗೆ ಹೋಗಿ."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:59
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:56
 msgid "Your password has been updated successfully."
 msgstr "ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಯಶಸ್ವಿಯಾಗಿ ನವೀಕರಿಸಲಾಗಿದೆ."
 

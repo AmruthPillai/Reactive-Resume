@@ -8,7 +8,7 @@ msgstr ""
 "Language: fa\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-01-17 21:32\n"
+"PO-Revision-Date: 2025-01-24 20:14\n"
 "Last-Translator: \n"
 "Language-Team: Persian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -46,11 +46,11 @@ msgstr "<0>توجه:</0> با استفاده از امکانات OpenAI API، <1
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
 msgstr "<0>جامعه Reactive Resume زمان زیادی را صرف نوشتن مستندات کرده است، و من مطمئن هستم که به شما در شروع کار با برنامه کمک خواهد کرد.</0> <1>همچنین مثال‌ها و تمپلت‌های زیادی وجود دارد که به شما در شروع کار کمک می‌کند، و شاید این مثال‌ها در شناخت امکاناتی که ممکن است در روند ساختن رزومه ندانید مفید باشند.</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:146
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:140
 msgid "<0>Two-factor authentication is currently disabled.</0> You can enable it by adding an authenticator app to your account."
 msgstr "<0> احراز هویت دو مرحله‌ای در حال حاضر غیرفعال است.</0> می توانید با نصب یک اپلیکیشن احراز هویت (مثل Google Authenticator یا Microsoft Authenticator) و افزودن آن به حساب خود، ورود دو مرحله‌ای را فعال کنید."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:139
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:133
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr "<0>احراز هویت دو عاملی فعال است.</0> در هر بار ورود، از شما خواسته می‌شود که یک کد وارد کنید."
 
@@ -102,8 +102,8 @@ msgstr "حساب"
 msgid "Add a custom field"
 msgstr "افزودن فیلد دلخواه"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:120
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:171
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:119
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:170
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "افزودن مورد جدید"
@@ -256,7 +256,7 @@ msgid "Center Artboard"
 msgstr "Center Artboard"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:121
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
 msgid "Change Password"
 msgstr "تغییر رمز عبور"
 
@@ -300,10 +300,6 @@ msgstr "شرکت"
 #: apps/client/src/components/ai-actions.tsx:118
 msgid "Confident"
 msgstr "مطمئن"
-
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:98
-msgid "Confirm New Password"
-msgstr "تایید گذرواژه جدید"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:234
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:246
@@ -351,7 +347,12 @@ msgstr "اکنون یکی ایجاد کنید"
 msgid "Create Sample Resume"
 msgstr "ایجاد نمونه رزومه"
 
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
+msgid "Current Password"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:93
+#: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:27
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:28
 msgid "Custom CSS"
 msgstr ""
@@ -423,14 +424,14 @@ msgstr "طراحی رزومه تک / چند صفحه‌ای"
 msgid "Disable"
 msgstr "غیرفعال"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:160
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:154
 msgid "Disable 2FA"
 msgstr "غیرفعالسازی ورود دو مرحله‌ای"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:302
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:220
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:134
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:124
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:118
 msgid "Discard"
 msgstr "صرف‌نظر"
 
@@ -503,7 +504,7 @@ msgstr "جلوه‌ها"
 msgid "Email"
 msgstr "ایمیل"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:169
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:163
 msgid "Enable 2FA"
 msgstr "فعالسازی ورود دو مرحله‌ای"
 
@@ -544,6 +545,7 @@ msgid "Explore the templates available in Reactive Resume and view the resumes c
 msgstr "قالب‌های موجود در Reactive Resume را بررسی کرده و رزومه‌های تولید شده با آنها را مشاهده کنید. آنها همچنین می‌توانند به عنوان نمونه‌ها برای کمک در هدایت ایجاد رزومه بعدی شما خدمت کنند."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:121
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:39
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:40
 msgid "Export"
 msgstr "خروجی گرفتن"
@@ -734,7 +736,7 @@ msgstr "بهبود بخشیدن نگارش"
 msgid "In case you are unable to scan this QR Code, you can also copy-paste this link into your authenticator app."
 msgstr "در صورت عدم توانایی شما برای اسکن این کد QR، می‌توانید همچنین این لینک را به برنامه authenticator خود کپی و پیست کنید."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:70
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:67
 msgid "In this section, you can change your password and enable/disable two-factor authentication."
 msgstr "در این بخش، شما می‌توانید رمز عبور خود را تغییر دهید و احراز هویت دو عاملی را فعال یا غیرفعال کنید."
 
@@ -743,6 +745,7 @@ msgid "In this section, you can delete your account and all the data associated 
 msgstr "در این بحث، شما می‌توانید حساب کاربری خود را و تمام داده‌های مرتبط با کاربر خود حذف کنید، اما لطفاً به خاطر داشته باشید که <0>این عملیات غیرقابل بازگشت</0> است."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:135
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:116
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
 msgid "Information"
 msgstr "اطلاعات"
@@ -824,6 +827,7 @@ msgid "Last updated {lastUpdated}"
 msgstr "آخرین بروزرسانی {lastUpdated}"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:197
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
 msgid "Layout"
 msgstr "چیدمان"
@@ -957,7 +961,7 @@ msgstr "نام"
 msgid "Network"
 msgstr "شبکه"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:85
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:96
 msgid "New Password"
 msgstr "رمز عبور جدید"
 
@@ -974,6 +978,7 @@ msgid "Note: This will make your account less secure."
 msgstr "توجه: این باعث کاهش امنیت حساب کاربری شما می شود."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:128
+#: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:16
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:17
 msgid "Notes"
 msgstr "یادداشت‌ها"
@@ -1032,6 +1037,7 @@ msgid "Organization"
 msgstr "سازمان"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:100
+#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:25
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:26
 msgid "Page"
 msgstr "صفحه"
@@ -1043,7 +1049,7 @@ msgstr ""
 #: apps/client/src/pages/auth/login/page.tsx:110
 #: apps/client/src/pages/auth/register/page.tsx:163
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:76
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:73
 msgid "Password"
 msgstr "رمز عبور"
 
@@ -1110,8 +1116,6 @@ msgid "Primary Color"
 msgstr "رنگ اصلی"
 
 #: apps/client/src/pages/home/components/footer.tsx:50
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:23
 msgid "Privacy Policy"
 msgstr "سیاست حفظ حریم شخصی"
 
@@ -1148,7 +1152,6 @@ msgstr "ایجاد یک گزارش"
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
 #: apps/client/src/pages/home/components/footer.tsx:18
-#: apps/client/src/pages/home/meta/privacy-policy/page.tsx:10
 #: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/public/page.tsx:74
 #: apps/client/src/pages/public/page.tsx:95
@@ -1282,7 +1285,7 @@ msgstr "جستجو برای زبان"
 msgid "Secure with two-factor authentication"
 msgstr "امن با احراز هویت دو عاملی"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:68
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:65
 msgid "Security"
 msgstr "امنیت"
 
@@ -1314,6 +1317,7 @@ msgid "Setup two-factor authentication on your account"
 msgstr "راه‌اندازی تأیید هویت دو مرحله‌ای بر روی حساب کاربری خود"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:107
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:38
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
 msgid "Sharing"
 msgstr "اشتراک‌گذاری"
@@ -1408,6 +1412,7 @@ msgid "Start building your resume by giving it a name."
 msgstr "شروع به ساخت رزومه خود با دادن یک نام به آن کنید."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:114
+#: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:22
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:23
 msgid "Statistics"
 msgstr "آمارها"
@@ -1449,6 +1454,7 @@ msgid "System"
 msgstr "سامانه"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:65
+#: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:18
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
 msgid "Template"
 msgstr "قالب"
@@ -1465,15 +1471,12 @@ msgstr "رضایت ها"
 msgid "Text Color"
 msgstr "رنگ متن"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:34
-msgid "The passwords you entered do not match."
-msgstr "رمز عبورهایی که وارد کرده‌اید مطابقت ندارند."
-
 #: apps/client/src/services/errors/translate-error.ts:49
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
 msgstr "رزومه‌ای که می‌خواهید به‌روزرسانی کنید قفل شده است، لطفاً اگر می‌خواهید تغییری در آن انجام دهید آن را باز کنید."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:86
+#: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:19
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:20
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:79
 msgid "Theme"
@@ -1530,7 +1533,7 @@ msgstr "بررسی تعداد بازدیدها و دانلود‌ها"
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/auth/verify-otp/page.tsx:57
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:135
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:129
 msgid "Two-Factor Authentication"
 msgstr "احراز هویت دو مرحله‌ای"
 
@@ -1552,6 +1555,7 @@ msgid "Type of Study"
 msgstr "نوع تحصیلات"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:79
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:65
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:66
 msgid "Typography"
 msgstr "تایپوگرافی"
@@ -1733,7 +1737,7 @@ msgstr "آدرس ایمیل شما با موفقیت تأیید شد."
 msgid "Your OpenAI API Key has not been set yet. Please go to your account settings to enable OpenAI Integration."
 msgstr "کلید API OpenAI شما هنوز تنظیم نشده است. لطفاً به تنظیمات حساب کاربری خود بروید تا امکان ادغام OpenAI را فعال کنید."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:59
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:56
 msgid "Your password has been updated successfully."
 msgstr "رمز عبور شما با موفقیت به روز شد."
 
