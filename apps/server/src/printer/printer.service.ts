@@ -1,9 +1,8 @@
 import { HttpService } from "@nestjs/axios";
 import { Injectable, InternalServerErrorException, Logger } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
-import fontkit from "@pdf-lib/fontkit";
 import { ResumeDto } from "@reactive-resume/dto";
-import { ErrorMessage, getFontUrls } from "@reactive-resume/utils";
+import { ErrorMessage } from "@reactive-resume/utils";
 import retry from "async-retry";
 import { PDFDocument } from "pdf-lib";
 import { connect } from "puppeteer";
@@ -150,7 +149,7 @@ export class PrinterService {
           return temporaryHtml_;
         }, pageElement);
 
-        // Apply custom CSS if enabled
+        // Apply custom CSS, if enabled
         const css = resume.data.metadata.css;
 
         if (css.visible) {
@@ -177,24 +176,6 @@ export class PrinterService {
 
       // Using 'pdf-lib', merge all the pages from their buffers into a single PDF
       const pdf = await PDFDocument.create();
-      pdf.registerFontkit(fontkit);
-
-      // Get information about fonts used in the resume from the metadata
-      const fontData = resume.data.metadata.typography.font;
-      const fontUrls = getFontUrls(fontData.family, fontData.variants);
-
-      // Load all the fonts from the URLs using HttpService
-      const responses = await Promise.all(
-        fontUrls.map((url) =>
-          this.httpService.axiosRef.get(url, {
-            responseType: "arraybuffer",
-          }),
-        ),
-      );
-      const fontsBuffer = responses.map((response) => response.data as ArrayBuffer);
-
-      // Embed all the fonts in the PDF
-      await Promise.all(fontsBuffer.map((buffer) => pdf.embedFont(buffer)));
 
       for (const element of pagesBuffer) {
         const page = await PDFDocument.load(element);

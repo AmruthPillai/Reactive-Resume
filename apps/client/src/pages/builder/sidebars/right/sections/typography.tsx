@@ -11,23 +11,28 @@ import { useResumeStore } from "@/client/stores/resume";
 
 import { SectionIcon } from "../shared/section-icon";
 
+const localFonts = ["Arial", "Cambria", "Garamond", "Times New Roman"];
+
 const fontSuggestions = [
-  "Open Sans",
-  "Merriweather",
-  "Roboto Condensed",
-  "Playfair Display",
-  "Lato",
-  "Lora",
-  "PT Sans",
-  "PT Serif",
+  ...localFonts,
   "IBM Plex Sans",
   "IBM Plex Serif",
+  "Lato",
+  "Lora",
+  "Merriweather",
+  "Open Sans",
+  "Playfair Display",
+  "PT Sans",
+  "PT Serif",
+  "Roboto Condensed",
 ];
 
-const families: ComboboxOption[] = fonts.map((font) => ({
+const families = fonts.map((font) => ({
   value: font.family,
   label: font.family,
-}));
+})) satisfies ComboboxOption[];
+
+families.push(...localFonts.map((font) => ({ value: font, label: font })));
 
 export const TypographySection = () => {
   const [subsets, setSubsets] = useState<ComboboxOption[]>([]);
@@ -52,10 +57,14 @@ export const TypographySection = () => {
 
   useEffect(() => {
     const subsets = fonts.find((font) => font.family === typography.font.family)?.subsets ?? [];
-    setSubsets(subsets.map((subset) => ({ value: subset, label: subset })));
+    if (subsets.length > 0) {
+      setSubsets(subsets.map((subset) => ({ value: subset, label: subset })));
+    }
 
     const variants = fonts.find((font) => font.family === typography.font.family)?.variants ?? [];
-    setVariants(variants.map((variant) => ({ value: variant, label: variant })));
+    if (variants.length > 0) {
+      setVariants(variants.map((variant) => ({ value: variant, label: variant })));
+    }
   }, [typography.font.family]);
 
   return (
@@ -69,31 +78,33 @@ export const TypographySection = () => {
 
       <main className="grid gap-y-6">
         <div className="grid grid-cols-2 gap-4">
-          {fontSuggestions.map((font) => (
-            <Button
-              key={font}
-              variant="outline"
-              style={{ fontFamily: font }}
-              disabled={typography.font.family === font}
-              className={cn(
-                "flex h-12 items-center justify-center overflow-hidden rounded border text-center text-xs ring-primary transition-colors hover:bg-secondary-accent focus:outline-none focus:ring-1 disabled:opacity-100 lg:text-sm",
-                typography.font.family === font && "ring-1",
-              )}
-              onClick={() => {
-                setValue("metadata.typography.font.family", font);
-                setValue("metadata.typography.font.subset", "latin");
-                setValue("metadata.typography.font.variants", ["regular"]);
-              }}
-            >
-              {font}
-            </Button>
-          ))}
+          {fontSuggestions
+            .sort((a, b) => a.localeCompare(b))
+            .map((font) => (
+              <Button
+                key={font}
+                variant="outline"
+                style={{ fontFamily: font }}
+                disabled={typography.font.family === font}
+                className={cn(
+                  "flex h-12 items-center justify-center overflow-hidden rounded border text-center text-xs ring-primary transition-colors hover:bg-secondary-accent focus:outline-none focus:ring-1 disabled:opacity-100 lg:text-sm",
+                  typography.font.family === font && "ring-1",
+                )}
+                onClick={() => {
+                  setValue("metadata.typography.font.family", font);
+                  setValue("metadata.typography.font.subset", "latin");
+                  setValue("metadata.typography.font.variants", ["regular"]);
+                }}
+              >
+                {font}
+              </Button>
+            ))}
         </div>
 
         <div className="space-y-1.5">
           <Label>{t`Font Family`}</Label>
           <Combobox
-            options={families}
+            options={families.sort((a, b) => a.label.localeCompare(b.label))}
             value={typography.font.family}
             searchPlaceholder={t`Search for a font family`}
             onValueChange={(value) => {
