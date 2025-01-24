@@ -8,7 +8,7 @@ msgstr ""
 "Language: uk\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-01-24 20:14\n"
+"PO-Revision-Date: 2025-01-24 23:49\n"
 "Last-Translator: \n"
 "Language-Team: Ukrainian\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
@@ -464,7 +464,6 @@ msgid "Download a PDF of your resume. This file can be used to print your resume
 msgstr "Завантажте PDF вашого резюме. Цей файл може використовуватись для друку резюме, відправте його рекрутерам або завантажте на робочі портали."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:176
-#: apps/client/src/pages/public/page.tsx:105
 msgid "Download PDF"
 msgstr "Завантажити в PDF"
 
@@ -566,19 +565,19 @@ msgstr "Нарешті,"
 msgid "Fix Spelling & Grammar"
 msgstr "Fix Spelling & Grammar"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:94
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:105
 msgid "Font Family"
 msgstr "Шрифт"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:135
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:146
 msgid "Font Size"
 msgstr "Розмір шрифту"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:109
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:120
 msgid "Font Subset"
 msgstr "Підмножина шрифту"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:121
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:132
 msgid "Font Variants"
 msgstr "Font Variants"
 
@@ -679,7 +678,7 @@ msgstr "Hidden"
 msgid "Hide"
 msgstr "Приховати"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:179
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:190
 msgid "Hide Icons"
 msgstr "Приховати іконки"
 
@@ -857,7 +856,7 @@ msgstr "Світла"
 msgid "Light or dark theme"
 msgstr "Світла або темна тема"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:152
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:163
 msgid "Line Height"
 msgstr "Висота лінії"
 
@@ -1023,7 +1022,7 @@ msgid "OpenAI/Ollama Integration"
 msgstr "Інтеграція OpenAI/Ollama"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:169
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:180
 msgid "Options"
 msgstr "Опції"
 
@@ -1265,15 +1264,15 @@ msgstr "Прокрутіть до Панорамування"
 msgid "Scroll to Zoom"
 msgstr "Прокрутіть, щоб збільшити"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:98
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:109
 msgid "Search for a font family"
 msgstr "Пошук сімейства шрифтів"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:113
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:124
 msgid "Search for a font subset"
 msgstr "Пошук підмножини шрифтів"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:126
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:137
 msgid "Search for a font variant"
 msgstr "Пошук варіанту шрифту"
 
@@ -1555,12 +1554,12 @@ msgid "Type of Study"
 msgstr "Вид навчання"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:79
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:65
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:66
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:74
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:75
 msgid "Typography"
 msgstr "Типографія"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:190
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:201
 msgid "Underline Links"
 msgstr "Підкреслювати посилання"
 

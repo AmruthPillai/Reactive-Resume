@@ -8,7 +8,7 @@ msgstr ""
 "Language: pl\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-01-24 20:14\n"
+"PO-Revision-Date: 2025-01-24 23:49\n"
 "Last-Translator: \n"
 "Language-Team: Polish\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
@@ -464,7 +464,6 @@ msgid "Download a PDF of your resume. This file can be used to print your resume
 msgstr "Pobierz plik PDF ze swoim CV. Plik ten można wykorzystać do wydrukowania CV, przesłania go rekruterom lub przesłania na portale pracy."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:176
-#: apps/client/src/pages/public/page.tsx:105
 msgid "Download PDF"
 msgstr "Pobierz PDF"
 
@@ -566,19 +565,19 @@ msgstr "Na koniec,"
 msgid "Fix Spelling & Grammar"
 msgstr "Popraw pisownię i gramatykę"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:94
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:105
 msgid "Font Family"
 msgstr "Czcionka"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:135
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:146
 msgid "Font Size"
 msgstr "Rozmiar Czcionki"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:109
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:120
 msgid "Font Subset"
 msgstr "Podzbiór czcionek"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:121
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:132
 msgid "Font Variants"
 msgstr "Wariant Czcionki"
 
@@ -679,7 +678,7 @@ msgstr "Ukryte"
 msgid "Hide"
 msgstr "Ukryj"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:179
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:190
 msgid "Hide Icons"
 msgstr "Ukryj Ikony"
 
@@ -857,7 +856,7 @@ msgstr "Jasny"
 msgid "Light or dark theme"
 msgstr "Jasny lub ciemny motyw"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:152
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:163
 msgid "Line Height"
 msgstr "Wysokość wiersza"
 
@@ -1023,7 +1022,7 @@ msgid "OpenAI/Ollama Integration"
 msgstr "Integracja OpenAI/Ollama"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:169
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:180
 msgid "Options"
 msgstr "Opcje"
 
@@ -1265,15 +1264,15 @@ msgstr "Przewiń do Pan"
 msgid "Scroll to Zoom"
 msgstr "Przewiń, aby powiększyć"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:98
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:109
 msgid "Search for a font family"
 msgstr "Wyszukaj czcionkę"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:113
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:124
 msgid "Search for a font subset"
 msgstr "Wyszukaj podzbiór czcionek"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:126
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:137
 msgid "Search for a font variant"
 msgstr "Wyszukaj wariant czcionki"
 
@@ -1555,12 +1554,12 @@ msgid "Type of Study"
 msgstr "Uzyskane wykształcenie"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:79
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:65
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:66
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:74
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:75
 msgid "Typography"
 msgstr "Typografia"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:190
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:201
 msgid "Underline Links"
 msgstr "Podkreśl Linki"
 
