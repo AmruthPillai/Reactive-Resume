@@ -17,25 +17,41 @@ export const BuilderPage = () => {
   const resume = useResumeStore((state) => state.resume);
   const title = useResumeStore((state) => state.resume.title);
 
-  const updateResumeInFrame = useCallback(() => {
-    const message = { type: "SET_RESUME", payload: resume.data };
-
+  const syncResumeToArtboard = useCallback(() => {
     setImmediate(() => {
-      frameRef?.contentWindow?.postMessage(message, "*");
+      if (!frameRef?.contentWindow) return;
+      const message = { type: "SET_RESUME", payload: resume.data };
+      frameRef.contentWindow.postMessage(message, "*");
     });
   }, [frameRef?.contentWindow, resume.data]);
 
   // Send resume data to iframe on initial load
   useEffect(() => {
     if (!frameRef) return;
-    frameRef.addEventListener("load", updateResumeInFrame);
+
+    frameRef.addEventListener("load", syncResumeToArtboard);
+
     return () => {
-      frameRef.removeEventListener("load", updateResumeInFrame);
+      frameRef.removeEventListener("load", syncResumeToArtboard);
+    };
+  }, [frameRef]);
+
+  // Persistently check if iframe has loaded using setInterval
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (frameRef?.contentWindow?.document.readyState === "complete") {
+        syncResumeToArtboard();
+        clearInterval(interval);
+      }
+    }, 100);
+
+    return () => {
+      clearInterval(interval);
     };
   }, [frameRef]);
 
   // Send resume data to iframe on change of resume data
-  useEffect(updateResumeInFrame, [resume.data]);
+  useEffect(syncResumeToArtboard, [resume.data]);
 
   return (
     <>

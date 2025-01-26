@@ -15,10 +15,9 @@ import type {
   URL,
 } from "@reactive-resume/schema";
 import { Education, Experience, Volunteer } from "@reactive-resume/schema";
-import { cn, hexToRgb, isEmptyString, isUrl } from "@reactive-resume/utils";
+import { cn, hexToRgb, isEmptyString, isUrl, sanitize } from "@reactive-resume/utils";
 import get from "lodash.get";
 import { Fragment } from "react";
-import sanitizeHtml from "sanitize-html";
 
 import { BrandIcon } from "../components/brand-icon";
 import { Picture } from "../components/picture";
@@ -90,7 +89,7 @@ const Summary = () => {
     <div className="p-custom space-y-4" style={{ backgroundColor: hexToRgb(primaryColor, 0.2) }}>
       <section id={section.id}>
         <div
-          dangerouslySetInnerHTML={{ __html: sanitizeHtml(section.content) }}
+          dangerouslySetInnerHTML={{ __html: sanitize(section.content) }}
           style={{ columns: section.columns }}
           className="wysiwyg"
         />
@@ -212,7 +211,7 @@ const Section = <T,>({
 
                 {summary !== undefined && !isEmptyString(summary) && (
                   <div
-                    dangerouslySetInnerHTML={{ __html: sanitizeHtml(summary) }}
+                    dangerouslySetInnerHTML={{ __html: sanitize(summary) }}
                     className="wysiwyg"
                   />
                 )}

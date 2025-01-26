@@ -15,10 +15,9 @@ import type {
   URL,
 } from "@reactive-resume/schema";
 import { Education, Experience, Volunteer } from "@reactive-resume/schema";
-import { cn, isEmptyString, isUrl, linearTransform } from "@reactive-resume/utils";
+import { cn, isEmptyString, isUrl, linearTransform, sanitize } from "@reactive-resume/utils";
 import get from "lodash.get";
 import React, { Fragment } from "react";
-import sanitizeHtml from "sanitize-html";
 
 import { BrandIcon } from "../components/brand-icon";
 import { Picture } from "../components/picture";
@@ -99,7 +98,7 @@ const Summary = () => {
         <div className="absolute left-[-4.5px] top-[8px] hidden size-[8px] rounded-full bg-primary group-[.main]:block" />
 
         <div
-          dangerouslySetInnerHTML={{ __html: sanitizeHtml(section.content) }}
+          dangerouslySetInnerHTML={{ __html: sanitize(section.content) }}
           style={{ columns: section.columns }}
           className="wysiwyg"
         />
@@ -226,7 +225,7 @@ const Section = <T,>({
 
                 {summary !== undefined && !isEmptyString(summary) && (
                   <div
-                    dangerouslySetInnerHTML={{ __html: sanitizeHtml(summary) }}
+                    dangerouslySetInnerHTML={{ __html: sanitize(summary) }}
                     className="wysiwyg"
                   />
                 )}

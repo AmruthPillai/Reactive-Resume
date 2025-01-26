@@ -43,6 +43,8 @@ export const TypographySection = () => {
 
   const loadFontSuggestions = useCallback(() => {
     for (const font of fontSuggestions) {
+      if (localFonts.includes(font)) continue;
+
       webfontloader.load({
         events: false,
         classes: false,

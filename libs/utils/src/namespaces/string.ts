@@ -1,3 +1,4 @@
+import sanitizeHtml from "sanitize-html";
 import type { Config as UniqueNamesConfig } from "unique-names-generator";
 import { adjectives, animals, uniqueNamesGenerator } from "unique-names-generator";
 
@@ -54,4 +55,18 @@ export const parseLayoutLocator = (payload: SortablePayload | null): LayoutLocat
   const [page, column] = payload.containerId.split(".").map(Number);
 
   return { page, column, section };
+};
+
+export const sanitize = (html: string, options?: sanitizeHtml.IOptions) => {
+  return sanitizeHtml(html, {
+    ...options,
+    allowedAttributes: {
+      ...options?.allowedAttributes,
+      "*": ["class", "style"],
+    },
+    allowedStyles: {
+      ...options?.allowedStyles,
+      "*": { "text-align": [/^left$/, /^right$/, /^center$/, /^justify$/] },
+    },
+  });
 };
