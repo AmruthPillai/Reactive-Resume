@@ -19,19 +19,20 @@ enum Visibility {
 }
 
 model User {
-  id               String   @id @default(cuid())
+  id               String      @id @default(cuid())
   name             String
   picture          String?
-  username         String   @unique
-  email            String   @unique
-  locale           String   @default("en-US")
-  emailVerified    Boolean  @default(false)
-  twoFactorEnabled Boolean  @default(false)
-  createdAt        DateTime @default(now())
-  updatedAt        DateTime @updatedAt
+  username         String      @unique
+  email            String      @unique
+  locale           String      @default("en-US")
+  emailVerified    Boolean     @default(false)
+  twoFactorEnabled Boolean     @default(false)
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
   provider         Provider
   secrets          Secrets?
   resumes          Resume[]
+  portfolios       Portfolio[]
 }
 
 model Secrets {
@@ -42,7 +43,7 @@ model Secrets {
   twoFactorSecret      String?
   twoFactorBackupCodes String[] @default([])
   refreshToken         String?
-  resetToken           String?  @unique
+  resetToken          String?   @unique
   userId               String   @unique
   user                 User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -67,6 +68,24 @@ model Resume {
   @@index(fields: [userId])
 }
 
+model Portfolio {
+  id         String              @id @default(cuid())
+  title      String
+  slug       String
+  data       Json                @default("{}")
+  visibility Visibility          @default(private)
+  locked     Boolean             @default(false)
+  statistics PortfolioStatistics?
+  userId     String
+  user       User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt  DateTime            @default(now())
+  updatedAt  DateTime            @updatedAt
+
+  @@unique([userId, id])
+  @@unique([userId, slug])
+  @@index(fields: [userId])
+}
+
 model Statistics {
   id        String   @id @default(cuid())
   views     Int      @default(0)
@@ -77,4 +96,15 @@ model Statistics {
   updatedAt DateTime @updatedAt
 
   @@unique([resumeId, id])
+}
+
+model PortfolioStatistics {
+  id          String    @id @default(cuid())
+  views       Int       @default(0)
+  portfolioId String    @unique
+  portfolio   Portfolio @relation(fields: [portfolioId], references: [id], onDelete: Cascade)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@unique([portfolioId, id])
 }
