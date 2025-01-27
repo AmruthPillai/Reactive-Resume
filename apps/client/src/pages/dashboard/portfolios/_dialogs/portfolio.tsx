@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/macro";
-import { Plus, CopySimple, TrashSimple } from "@phosphor-icons/react";
+import { CopySimple, PencilSimple, Plus } from "@phosphor-icons/react";
 import { createPortfolioSchema, PortfolioDto } from "@reactive-resume/dto";
 import {
   AlertDialog,
@@ -26,11 +26,16 @@ import {
   FormMessage,
   Input,
 } from "@reactive-resume/ui";
+import { kebabCase } from "@reactive-resume/utils";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { useCreatePortfolio, useDeletePortfolio, useUpdatePortfolio } from "@/client/services/portfolio";
+import {
+  useCreatePortfolio,
+  useDeletePortfolio,
+  useUpdatePortfolio,
+} from "@/client/services/portfolio";
 import { useDialog } from "@/client/stores/dialog";
 
 const formSchema = createPortfolioSchema;
@@ -80,16 +85,6 @@ export const PortfolioDialog = () => {
       });
     }
 
-    if (isDuplicate) {
-      if (!payload.item?.id) return;
-
-      await createPortfolio({
-        title: values.title,
-        slug: values.slug,
-        data: payload.item.data,
-      });
-    }
-
     if (isDelete) {
       if (!payload.item?.id) return;
 
@@ -101,12 +96,10 @@ export const PortfolioDialog = () => {
 
   const onReset = () => {
     if (isCreate) form.reset({ title: "", slug: "" });
-    if (isUpdate)
-      form.reset({ id: payload.item?.id, title: payload.item?.title, slug: payload.item?.slug });
+    if (isUpdate) form.reset({ title: payload.item?.title, slug: payload.item?.slug });
     if (isDuplicate)
       form.reset({ title: `${payload.item?.title} (Copy)`, slug: `${payload.item?.slug}-copy` });
-    if (isDelete)
-      form.reset({ id: payload.item?.id, title: payload.item?.title, slug: payload.item?.slug });
+    if (isDelete) form.reset({ title: payload.item?.title, slug: payload.item?.slug });
   };
 
   if (isDelete) {
