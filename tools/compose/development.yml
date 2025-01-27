@@ -13,6 +13,8 @@ services:
       - ${POSTGRES_PORT:-5432}:5432
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - RR_network
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-postgres}
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
@@ -30,9 +32,11 @@ services:
     command: server /data
     ports:
       - ${STORAGE_PORT:-9000}:9000
-      - "9001:9001" # Minio Console (Optional)
+      - "${SERVICE_PORT:-9001}:9001" # Minio Console (Optional)
     volumes:
       - minio_data:/data
+    networks:
+      - RR_network
     environment:
       MINIO_ADDRESS: :9000
       MINIO_CONSOLE_ADDRESS: :9001
@@ -51,7 +55,12 @@ services:
       TOKEN: ${CHROME_TOKEN:-chrome_token}
       EXIT_ON_HEALTH_FAILURE: true
       PRE_REQUEST_HEALTH_CHECK: true
-
+    networks:
+      - RR_network
 volumes:
   minio_data:
   postgres_data:
+
+networks:
+  RR_network:
+    driver: bridge
