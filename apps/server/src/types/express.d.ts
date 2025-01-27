@@ -8,7 +8,7 @@ declare global {
       user?: PrismaUser;
       payload?: {
         resume?: Resume;
-        portfolio?: Portfolio; // Add this line
+        portfolio?: Portfolio; // Add portfolio to payload
       };
     }
   }
