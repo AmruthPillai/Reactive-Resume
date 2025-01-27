@@ -6,7 +6,7 @@ import {
   Logger,
 } from "@nestjs/common";
 import { Prisma } from "@prisma/client";
-import { CreatePortfolioDto, ImportPortfolioDto, UpdatePortfolioDto } from "@reactive-resume/dto";
+import { CreatePortfolioDto, UpdatePortfolioDto } from "@reactive-resume/dto";
 import { ErrorMessage, kebabCase } from "@reactive-resume/utils";
 import { PrismaService } from "nestjs-prisma";
 
@@ -107,17 +107,5 @@ export class PortfolioService {
     await this.storageService.deleteObject(userId, "previews", id);
 
     return this.prisma.portfolio.delete({ where: { userId_id: { userId, id } } });
-  }
-
-  async import(userId: string, importPortfolioDto: ImportPortfolioDto) {
-    return this.prisma.portfolio.create({
-      data: {
-        userId,
-        data: importPortfolioDto.data as unknown as Prisma.JsonObject,
-        title: importPortfolioDto.title ?? "Imported Portfolio",
-        slug: importPortfolioDto.slug ?? "imported-portfolio",
-        visibility: importPortfolioDto.visibility ?? "private",
-      },
-    });
   }
 }

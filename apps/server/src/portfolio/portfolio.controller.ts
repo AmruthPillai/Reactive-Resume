@@ -14,12 +14,7 @@ import {
 import { ApiTags } from "@nestjs/swagger";
 import { User as UserEntity } from "@prisma/client";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
-import {
-  CreatePortfolioDto,
-  ImportPortfolioDto,
-  PortfolioDto,
-  UpdatePortfolioDto,
-} from "@reactive-resume/dto";
+import { CreatePortfolioDto, PortfolioDto, UpdatePortfolioDto } from "@reactive-resume/dto";
 import { ErrorMessage } from "@reactive-resume/utils";
 
 import { OptionalGuard } from "../auth/guards/optional.guard";
@@ -133,17 +128,6 @@ export class PortfolioController {
   async remove(@User() user: UserEntity, @Param("id") id: string) {
     try {
       return await this.portfolioService.remove(user.id, id);
-    } catch (error) {
-      this.logger.error(error);
-      throw new InternalServerErrorException(error);
-    }
-  }
-
-  @Post("import")
-  @UseGuards(TwoFactorGuard)
-  async import(@User() user: UserEntity, @Body() importPortfolioDto: ImportPortfolioDto) {
-    try {
-      return await this.portfolioService.import(user.id, importPortfolioDto);
     } catch (error) {
       this.logger.error(error);
       throw new InternalServerErrorException(error);
