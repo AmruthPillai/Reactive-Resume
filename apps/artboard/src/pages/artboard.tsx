@@ -64,7 +64,7 @@ export const ArtboardPage = () => {
         <title>{name} | Reactive Resume</title>
         {metadata.css.visible && (
           <style id="custom-css" lang="css">
-            {sanitize(metadata.css.value)}
+            {metadata.css.value}
           </style>
         )}
       </Helmet>
