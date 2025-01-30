@@ -9,11 +9,11 @@
     "access": "public"
   },
   "peerDependencies": {
-    "zod": "^3.23.8",
     "@paralleldrive/cuid2": "^2.2.2",
-    "@swc/helpers": "^0.5.15"
+    "@swc/helpers": "^0.5.15",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@swc/helpers": "~0.5.11"
+    "@swc/helpers": "~0.5.15"
   }
 }

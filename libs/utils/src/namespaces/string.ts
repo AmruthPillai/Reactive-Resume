@@ -63,8 +63,8 @@ export const sanitize = (html: string, options?: sanitizeHtml.IOptions) => {
     allowedAttributes: {
       ...options?.allowedAttributes,
       "*": ["class", "style"],
-      "a": ["href", "target"],
-      "img": ["src", "alt"],
+      a: ["href", "target"],
+      img: ["src", "alt"],
     },
     allowedStyles: {
       ...options?.allowedStyles,
