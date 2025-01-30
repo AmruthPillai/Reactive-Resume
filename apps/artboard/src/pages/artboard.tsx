@@ -1,4 +1,3 @@
-import { sanitize } from "@reactive-resume/utils";
 import { useEffect, useMemo } from "react";
 import { Helmet } from "react-helmet-async";
 import { Outlet } from "react-router";
@@ -64,7 +63,7 @@ export const ArtboardPage = () => {
         <title>{name} | Reactive Resume</title>
         {metadata.css.visible && (
           <style id="custom-css" lang="css">
-            {sanitize(metadata.css.value)}
+            {metadata.css.value}
           </style>
         )}
       </Helmet>
