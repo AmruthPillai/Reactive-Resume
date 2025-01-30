@@ -22,12 +22,12 @@ const formSchema = z.object({
   apiKey: z
     .string()
     // eslint-disable-next-line lingui/no-unlocalized-strings
-    .min(1, "API key cannot be empty.") //allow api keys like hf-.. and gsk_..
+    .min(1, "API key cannot be empty.")
     .default(""),
   baseURL: z
     .string()
     // eslint-disable-next-line lingui/no-unlocalized-strings
-    .regex(/^https?:\/\/[^\s]+$/, "That doesn't look like a valid URL") //allow different openai compatible endpoints like https://api.groq.com/openai/v1 and https://api-inference.huggingface.co/v1/
+    .regex(/^https?:\/\/\S+$/, "That doesn't look like a valid URL")
     .or(z.literal(""))
     .default(""),
   model: z.string().default(DEFAULT_MODEL),

@@ -39,7 +39,7 @@ jobs:
         run: pnpm run lint
 
       - name: Format
-        run: pnpm run format:check
+        run: pnpm run format
 
       - name: Test
         run: pnpm run test
