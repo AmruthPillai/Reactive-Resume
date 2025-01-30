@@ -61,7 +61,7 @@ export const sanitize = (html: string, options?: sanitizeHtml.IOptions) => {
   return sanitizeHtml(html, {
     ...options,
     allowedTags: [
-      ...options?.allowedTags,
+      ...(options?.allowedTags ?? []),
       // default tags (https://www.npmjs.com/package/sanitize-html#default-options)
       "address", "article", "aside", "footer", "header", "h1", "h2", "h3", "h4",
       "h5", "h6", "hgroup", "main", "nav", "section", "blockquote", "dd", "div",
