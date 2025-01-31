@@ -20,9 +20,10 @@ import { Providers } from "../providers";
 import { AuthGuard } from "./guards/auth";
 import { GuestGuard } from "./guards/guest";
 import { authLoader } from "./loaders/auth";
+import { ErrorPage } from "../pages/public/error";
 
 export const routes = createRoutesFromElements(
-  <Route element={<Providers />}>
+  <Route element={<Providers />} errorElement={<ErrorPage />}>
     <Route element={<HomeLayout />}>
       <Route path="/" element={<HomePage />} />
     </Route>
