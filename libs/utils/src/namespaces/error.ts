@@ -19,5 +19,6 @@ export enum ErrorMessage {
   PortfolioLocked = "PortfolioLocked",
   ResumePrinterError = "ResumePrinterError",
   ResumePreviewError = "ResumePreviewError",
+  PortfolioPreviewError = "PortfolioPreviewError",
   SomethingWentWrong = "SomethingWentWrong",
 }

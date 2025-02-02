@@ -9,6 +9,7 @@ import { ProfilesDialog } from "../pages/builder/sidebars/left/dialogs/profiles"
 import { ProjectsDialog } from "../pages/builder/sidebars/left/dialogs/projects";
 import { PublicationsDialog } from "../pages/builder/sidebars/left/dialogs/publications";
 import { ReferencesDialog } from "../pages/builder/sidebars/left/dialogs/references";
+import { PortfolioDialog } from "../pages/dashboard/portfolios/_dialogs/portfolio";
 import { SkillsDialog } from "../pages/builder/sidebars/left/dialogs/skills";
 import { VolunteerDialog } from "../pages/builder/sidebars/left/dialogs/volunteer";
 import { ImportDialog } from "../pages/dashboard/resumes/_dialogs/import";
@@ -30,6 +31,7 @@ export const DialogProvider = ({ children }: Props) => {
 
       <div id="dialog-root">
         <ResumeDialog />
+        <PortfolioDialog />
         <LockDialog />
         <ImportDialog />
         <TwoFactorDialog />

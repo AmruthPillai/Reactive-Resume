@@ -6,23 +6,22 @@ export const defaultLayout = [
     ["skills", "interests", "certifications", "awards", "publications", "languages"],
   ],
 ];
-export type PortfolioLayoutType = 'stack' | 'grid' | 'masonry' | 'fullwidth';
-
+export type PortfolioLayoutType = "stack" | "grid" | "masonry" | "fullwidth";
 
 // Define the layout types
 export const portfolioLayoutConfigSchema = z.object({
   spacing: z.number().default(4),
   columns: z.number().min(1).max(4).default(1),
-  maxWidth: z.string().default('1200px'),
+  maxWidth: z.string().default("1200px"),
 });
 
 export const portfolioNavigationSchema = z.object({
-  style: z.enum(['fixed', 'sticky', 'floating']).default('fixed'),
+  style: z.enum(["fixed", "sticky", "floating"]).default("fixed"),
   transparent: z.boolean().default(false),
   showOnScroll: z.boolean().default(true),
 });
 export const portfolioLayoutSchema = z.object({
-  type: z.enum(['stack', 'grid', 'masonry', 'fullwidth']).default('stack'),
+  type: z.enum(["stack", "grid", "masonry", "fullwidth"]).default("stack"),
   sections: z.array(z.string()),
   config: portfolioLayoutConfigSchema,
 });
@@ -99,9 +98,7 @@ export const defaultMetadata: Metadata = {
   notes: "",
 };
 
-
 // Extend the existing metadata schema for portfolios
-
 
 // Portfolio specific metadata
 export const portfolioMetadataSchema = metadataSchema.extend({

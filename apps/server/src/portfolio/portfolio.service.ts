@@ -36,8 +36,13 @@ export class PortfolioService {
 
   findOne(id: string, userId?: string) {
     if (userId) {
+      Logger.log(
+        "DEBUG: userId",
+        this.prisma.portfolio.findUniqueOrThrow({ where: { userId_id: { userId, id } } }),
+      );
       return this.prisma.portfolio.findUniqueOrThrow({ where: { userId_id: { userId, id } } });
     }
+    Logger.log("userId", this.prisma.portfolio.findUniqueOrThrow({ where: { id } }));
 
     return this.prisma.portfolio.findUniqueOrThrow({ where: { id } });
   }

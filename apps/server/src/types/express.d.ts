@@ -7,8 +7,9 @@ declare global {
     interface Request {
       user?: PrismaUser;
       payload?: {
-        resume?: Resume;
         portfolio?: Portfolio; // Add portfolio to payload
+
+        resume?: Resume;
       };
     }
   }

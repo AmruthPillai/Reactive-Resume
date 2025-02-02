@@ -3,6 +3,7 @@ import { ErrorMessage } from "@reactive-resume/utils";
 
 export const translateError = (error: ErrorMessage) => {
   switch (error) {
+    // Authentication Errors
     case ErrorMessage.InvalidCredentials: {
       return t`It doesn't look like a user exists with the credentials you provided.`;
     }
@@ -15,6 +16,8 @@ export const translateError = (error: ErrorMessage) => {
     case ErrorMessage.OAuthUser: {
       return t`This email address is associated with an OAuth account. Please sign in with your OAuth provider.`;
     }
+
+    // Reset & Verification Errors
     case ErrorMessage.InvalidResetToken: {
       return t`It looks like the reset token you provided is invalid. Please try restarting the password reset process again.`;
     }
@@ -24,6 +27,8 @@ export const translateError = (error: ErrorMessage) => {
     case ErrorMessage.EmailAlreadyVerified: {
       return t`It looks like your email address has already been verified.`;
     }
+
+    // Two-Factor Authentication Errors
     case ErrorMessage.TwoFactorNotEnabled: {
       return t`Two-factor authentication is not enabled for this account.`;
     }
@@ -36,9 +41,13 @@ export const translateError = (error: ErrorMessage) => {
     case ErrorMessage.InvalidTwoFactorBackupCode: {
       return t`It looks like the backup code you provided is invalid or used. Please try again.`;
     }
+
+    // Browser Connection Error
     case ErrorMessage.InvalidBrowserConnection: {
       return t`There was an error connecting to the browser. Please make sure 'chrome' is running and reachable.`;
     }
+
+    // Resume Errors
     case ErrorMessage.ResumeSlugAlreadyExists: {
       return t`A resume with this slug already exists, please pick a different unique identifier.`;
     }
@@ -54,6 +63,22 @@ export const translateError = (error: ErrorMessage) => {
     case ErrorMessage.ResumePreviewError: {
       return t`Something went wrong while grabbing a preview your resume. Please try again later or raise an issue on GitHub.`;
     }
+
+    // Portfolio Errors
+    case ErrorMessage.PortfolioSlugAlreadyExists: {
+      return t`A portfolio with this slug already exists, please pick a different unique identifier.`;
+    }
+    case ErrorMessage.PortfolioNotFound: {
+      return t`It looks like the portfolio you're looking for doesn't exist.`;
+    }
+    case ErrorMessage.PortfolioLocked: {
+      return t`The portfolio you want to update is locked, please unlock if you wish to make any changes to it.`;
+    }
+    case ErrorMessage.PortfolioPreviewError: {
+      return t`Something went wrong while generating a preview of your portfolio. Please try again later or raise an issue on GitHub.`;
+    }
+
+    // Generic Error
     case ErrorMessage.SomethingWentWrong: {
       return t`Something went wrong while processing your request. Please try again later or raise an issue on GitHub.`;
     }

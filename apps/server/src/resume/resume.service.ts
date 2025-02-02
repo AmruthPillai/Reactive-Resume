@@ -65,9 +65,13 @@ export class ResumeService {
 
   findOne(id: string, userId?: string) {
     if (userId) {
+      Logger.log(
+        "DEBUG: userId",
+        this.prisma.portfolio.findUniqueOrThrow({ where: { userId_id: { userId, id } } }),
+      );
       return this.prisma.resume.findUniqueOrThrow({ where: { userId_id: { userId, id } } });
     }
-
+    Logger.log("DEBUG: userId", this.prisma.resume.findUniqueOrThrow({ where: { id } }));
     return this.prisma.resume.findUniqueOrThrow({ where: { id } });
   }
 

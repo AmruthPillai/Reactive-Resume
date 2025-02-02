@@ -1,7 +1,8 @@
 import { z } from "zod";
-import { portfolioBasicsSchema, defaultPortfolioBasics } from "./basics";
-import { portfolioSectionsSchema, defaultPortfolioSections } from "./sections";
+
 import { defaultMetadata, metadataSchema } from "../metadata";
+import { defaultPortfolioBasics,portfolioBasicsSchema } from "./basics";
+import { defaultPortfolioSections,portfolioSectionsSchema } from "./sections";
 
 export const portfolioDataSchema = z.object({
   basics: portfolioBasicsSchema,

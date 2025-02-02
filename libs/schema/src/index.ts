@@ -46,7 +46,7 @@ export const defaultResumeData: ResumeData = {
 
 export * from "./basics";
 export * from "./metadata";
+export * from "./portfolio";
 export * from "./sample";
 export * from "./sections";
 export * from "./shared";
-export * from "./portfolio";
