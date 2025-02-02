@@ -1,4 +1,4 @@
-import { idSchema, portfolioDataSchema } from "@reactive-resume/schema";
+import { defaultPortfolioData, idSchema, portfolioDataSchema } from "@reactive-resume/schema";
 import { createZodDto } from "nestjs-zod/dto";
 import { z } from "nestjs-zod/z";
 
@@ -8,7 +8,7 @@ export const portfolioSchema = z.object({
   id: idSchema,
   title: z.string(),
   slug: z.string(),
-  data: portfolioDataSchema,
+  data: portfolioDataSchema.default(defaultPortfolioData),
   visibility: z.enum(["private", "public"]).default("private"),
   locked: z.boolean().default(false),
   userId: idSchema,
