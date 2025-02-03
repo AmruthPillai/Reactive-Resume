@@ -33,6 +33,8 @@ export const userSchema = z.object({
 
 export class UserDto extends createZodDto(userSchema) {}
 
-export const userWithSecretsSchema = userSchema.merge(z.object({ secrets: secretsSchema }));
+export const userWithSecretsSchema = userSchema.merge(
+  z.object({ secrets: secretsSchema.nullable().default(null) }),
+);
 
 export class UserWithSecrets extends createZodDto(userWithSecretsSchema) {}

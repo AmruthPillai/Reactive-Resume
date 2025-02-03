@@ -39,7 +39,7 @@ export class OpenIDStrategy extends PassportStrategy(Strategy, "openid") {
     const { displayName, emails, photos, username } = profile;
 
     const uniqueId = generateRandomName({ length: 2, style: "lowerCase", separator: "-" });
-    const email = emails?.[0].value ?? `${username ?? uniqueId}@openid.com`;
+    const email = (emails?.[0].value ?? `${username ?? uniqueId}@openid.com`).toLocaleLowerCase();
     const picture = photos?.[0].value;
 
     let user: User | null = null;

@@ -1,5 +1,6 @@
 import { Injectable, InternalServerErrorException } from "@nestjs/common";
-import { Prisma } from "@prisma/client";
+import { Prisma, User } from "@prisma/client";
+import { UserWithSecrets } from "@reactive-resume/dto";
 import { ErrorMessage } from "@reactive-resume/utils";
 import { PrismaService } from "nestjs-prisma";
 
@@ -12,7 +13,7 @@ export class UserService {
     private readonly storageService: StorageService,
   ) {}
 
-  async findOneById(id: string) {
+  async findOneById(id: string): Promise<UserWithSecrets> {
     const user = await this.prisma.user.findUniqueOrThrow({
       where: { id },
       include: { secrets: true },
@@ -25,7 +26,7 @@ export class UserService {
     return user;
   }
 
-  async findOneByIdentifier(identifier: string) {
+  async findOneByIdentifier(identifier: string): Promise<UserWithSecrets | null> {
     const user = await (async (identifier: string) => {
       // First, find the user by email
       const user = await this.prisma.user.findUnique({
@@ -47,7 +48,7 @@ export class UserService {
     return user;
   }
 
-  async findOneByIdentifierOrThrow(identifier: string) {
+  async findOneByIdentifierOrThrow(identifier: string): Promise<UserWithSecrets> {
     const user = await (async (identifier: string) => {
       // First, find the user by email
       const user = await this.prisma.user.findUnique({
@@ -69,21 +70,25 @@ export class UserService {
     return user;
   }
 
-  create(data: Prisma.UserCreateInput) {
+  create(data: Prisma.UserCreateInput): Promise<UserWithSecrets> {
     return this.prisma.user.create({ data, include: { secrets: true } });
   }
 
-  updateByEmail(email: string, data: Prisma.UserUpdateArgs["data"]) {
+  updateByEmail(email: string, data: Prisma.UserUpdateArgs["data"]): Promise<User> {
     return this.prisma.user.update({ where: { email }, data });
   }
 
-  async updateByResetToken(resetToken: string, data: Prisma.SecretsUpdateArgs["data"]) {
+  async updateByResetToken(
+    resetToken: string,
+    data: Prisma.SecretsUpdateArgs["data"],
+  ): Promise<void> {
     await this.prisma.secrets.update({ where: { resetToken }, data });
   }
 
-  async deleteOneById(id: string) {
-    await this.storageService.deleteFolder(id);
-
-    return this.prisma.user.delete({ where: { id } });
+  async deleteOneById(id: string): Promise<void> {
+    await Promise.all([
+      this.storageService.deleteFolder(id),
+      this.prisma.user.delete({ where: { id } }),
+    ]);
   }
 }

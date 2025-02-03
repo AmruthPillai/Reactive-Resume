@@ -26,7 +26,7 @@ export class GoogleStrategy extends PassportStrategy(Strategy, "google") {
   ) {
     const { displayName, emails, photos, username } = profile;
 
-    const email = emails?.[0].value ?? `${username}@google.com`;
+    const email = (emails?.[0].value ?? `${username}@google.com`).toLocaleLowerCase();
     const picture = photos?.[0].value;
 
     let user: User | null = null;

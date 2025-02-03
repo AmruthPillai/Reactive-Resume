@@ -15,7 +15,7 @@ type Props = {
 };
 
 export const LocaleProvider = ({ children }: Props) => {
-  const userLocale = useAuthStore((state) => state.user?.locale);
+  const userLocale = useAuthStore((state) => state.user?.locale ?? defaultLocale);
 
   useEffect(() => {
     const detectedLocale =
