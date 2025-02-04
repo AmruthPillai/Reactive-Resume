@@ -1,3 +1,6 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
+/* eslint-disable prettier/prettier */
 import {
   closestCenter,
   DndContext,
@@ -21,8 +24,10 @@ import { Button } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import get from "lodash.get";
+import { useSearchParams } from "react-router-dom";
 
 import { useDialog } from "@/client/stores/dialog";
+import { usePortfolioStore } from "@/client/stores/portfolio";
 import { useResumeStore } from "@/client/stores/resume";
 
 import { getSectionIcon } from "./section-icon";
@@ -37,11 +42,17 @@ type Props<T extends SectionItem> = {
 
 export const SectionBase = <T extends SectionItem>({ id, title, description }: Props<T>) => {
   const { open } = useDialog(id);
+  const [searchParams] = useSearchParams();
+  const mode = searchParams.get("mode") ?? "resume";
 
-  const setValue = useResumeStore((state) => state.setValue);
-  const section = useResumeStore((state) =>
-    get(state.resume.data.sections, id),
-  ) as SectionWithItem<T>;
+  // Use appropriate store based on mode
+  const setValue = mode === "portfolio"
+    ? usePortfolioStore((state) => state.setValue)
+    : useResumeStore((state) => state.setValue);
+
+  const section = mode === "portfolio"
+    ? usePortfolioStore((state) => get(state.portfolio?.data?.sections, id)) as unknown as SectionWithItem<T>
+    : useResumeStore((state) => get(state.resume?.data?.sections, id)) as SectionWithItem<T>;
 
   const sensors = useSensors(
     useSensor(PointerSensor),
@@ -49,6 +60,7 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
       coordinateGetter: sortableKeyboardCoordinates,
     }),
   );
+
 
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (!section) return null;

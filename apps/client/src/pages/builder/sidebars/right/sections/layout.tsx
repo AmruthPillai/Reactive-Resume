@@ -101,11 +101,16 @@ const Section = ({ id, isDragging = false }: SectionProps) => {
   const [searchParams] = useSearchParams();
   const mode = searchParams.get("mode") ?? "resume";
 
-  // Get section name based on mode
-  const name =
-    mode === "portfolio"
-      ? usePortfolioStore((state) => get(state.portfolio?.data?.sections, `${id}.name`, id))
-      : useResumeStore((state) => get(state.resume?.data?.sections, `${id}.name`, id));
+  // Get section name based on mode with null checks
+  const name = mode === "portfolio"
+    ? usePortfolioStore((state) => {
+        const sections = state.portfolio?.data?.sections;
+        return sections ? get(sections, `${id}.name`, id) : id;
+      })
+    : useResumeStore((state) => {
+        const sections = state.resume?.data?.sections;
+        return sections ? get(sections, `${id}.name`, id) : id;
+      });
 
   return (
     <div
@@ -116,7 +121,7 @@ const Section = ({ id, isDragging = false }: SectionProps) => {
     >
       <div className="flex items-center gap-x-2">
         <DotsSixVertical size={12} weight="bold" />
-        <p className="flex-1 truncate text-xs font-medium">{name || id}</p>
+        <p className="flex-1 truncate text-xs font-medium">{name}</p>
       </div>
     </div>
   );

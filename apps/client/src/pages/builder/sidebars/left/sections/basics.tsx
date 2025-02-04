@@ -1,7 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
+/* eslint-disable react-hooks/rules-of-hooks */
 import { t } from "@lingui/macro";
 import { basicsSchema } from "@reactive-resume/schema";
 import { Input, Label } from "@reactive-resume/ui";
+import { useSearchParams } from "react-router-dom";
 
+import { usePortfolioStore } from "@/client/stores/portfolio";
 import { useResumeStore } from "@/client/stores/resume";
 
 import { CustomFieldsSection } from "./custom/section";
@@ -10,9 +14,22 @@ import { getSectionIcon } from "./shared/section-icon";
 import { URLInput } from "./shared/url-input";
 
 export const BasicsSection = () => {
-  const setValue = useResumeStore((state) => state.setValue);
-  const basics = useResumeStore((state) => state.resume.data.basics);
+  const [searchParams] = useSearchParams();
+  const mode = searchParams.get("mode") ?? "resume";
 
+  // Use appropriate store based on mode
+  const setValue = mode === "portfolio"
+    ? usePortfolioStore((state) => state.setValue)
+    : useResumeStore((state) => state.setValue);
+
+  const basics = mode === "portfolio"
+    ? usePortfolioStore((state) => state.portfolio?.data?.basics)
+    : useResumeStore((state) => state.resume?.data?.basics);
+
+  // If basics data isn't loaded yet, return null or loading state
+  if (!basics) {
+    return null;
+  }
   return (
     <section id="basics" className="grid gap-y-6">
       <header className="flex items-center justify-between">

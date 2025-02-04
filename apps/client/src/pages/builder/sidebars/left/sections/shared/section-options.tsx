@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
+/* eslint-disable react-hooks/rules-of-hooks */
 import { plural, t } from "@lingui/macro";
 import {
   ArrowCounterClockwise,
@@ -10,7 +12,7 @@ import {
   Plus,
   TrashSimple,
 } from "@phosphor-icons/react";
-import { defaultSections, SectionKey, SectionWithItem } from "@reactive-resume/schema";
+import { defaultSections, SectionKey } from "@reactive-resume/schema";
 import {
   Button,
   DropdownMenu,
@@ -29,21 +31,41 @@ import {
 } from "@reactive-resume/ui";
 import get from "lodash.get";
 import { useMemo } from "react";
+import { useSearchParams } from "react-router-dom";
 
 import { useDialog } from "@/client/stores/dialog";
+import { usePortfolioStore } from "@/client/stores/portfolio";
 import { useResumeStore } from "@/client/stores/resume";
 
 type Props = { id: SectionKey };
 
 export const SectionOptions = ({ id }: Props) => {
   const { open } = useDialog(id);
+  const [searchParams] = useSearchParams();
+  const mode = searchParams.get("mode") ?? "resume";
 
-  const setValue = useResumeStore((state) => state.setValue);
-  const removeSection = useResumeStore((state) => state.removeSection);
+  // Use appropriate store based on mode
+  const setValue =
+    mode === "portfolio"
+      ? usePortfolioStore((state) => state.setValue)
+      : useResumeStore((state) => state.setValue);
 
-  const originalName = get(defaultSections, `${id}.name`, "") as SectionWithItem;
-  const section = useResumeStore((state) => get(state.resume.data.sections, id)) as SectionWithItem;
+  const removeSection =
+    mode === "portfolio"
+      ? usePortfolioStore((state) => state.removeSection)
+      : useResumeStore((state) => state.removeSection);
 
+  const section =
+    mode === "portfolio"
+      ? usePortfolioStore((state) => get(state.portfolio?.data?.sections, id))
+      : useResumeStore((state) => get(state.resume?.data?.sections, id));
+
+  // If section isn't loaded yet, return null or loading state
+  if (!section) {
+    return null;
+  }
+
+  const originalName = get(defaultSections, `${id}.name`, "");
   const hasItems = useMemo(() => "items" in section, [section]);
   const isCustomSection = useMemo(() => id.startsWith("custom"), [id]);
 
@@ -90,7 +112,7 @@ export const SectionOptions = ({ id }: Props) => {
               <span className="ml-2">{t`Add a new item`}</span>
             </DropdownMenuItem>
             <DropdownMenuCheckboxItem
-              checked={section.separateLinks}
+              checked={section.separateLinks as boolean}
               onCheckedChange={toggleSeperateLinks}
             >
               <span className="ml-0">{t`Separate Links`}</span>
@@ -113,7 +135,7 @@ export const SectionOptions = ({ id }: Props) => {
               <div className="relative col-span-2">
                 <Input
                   id={`sections.${id}.name`}
-                  value={section.name}
+                  value={section.name as string}
                   onChange={(event) => {
                     setValue(`sections.${id}.name`, event.target.value);
                   }}

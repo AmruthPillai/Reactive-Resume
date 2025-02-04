@@ -1,10 +1,11 @@
 import { z } from "zod";
-import { defaultUrl, urlSchema } from "../shared";
+
 import { customFieldSchema } from "../basics/custom";
+import { defaultUrl, urlSchema } from "../shared";
 
 export const portfolioBasicsSchema = z.object({
   name: z.string(),
-  tagline: z.string(),
+  headline: z.string(),
   email: z.literal("").or(z.string().email()),
   phone: z.string(),
   location: z.string(),
@@ -36,7 +37,7 @@ export type PortfolioBasics = z.infer<typeof portfolioBasicsSchema>;
 
 export const defaultPortfolioBasics: PortfolioBasics = {
   name: "",
-  tagline: "",
+  headline: "",
   email: "",
   phone: "",
   location: "",
