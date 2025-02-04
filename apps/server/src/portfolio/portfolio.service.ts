@@ -1,4 +1,3 @@
-// server/src/portfolio/portfolio.service.ts
 import {
   BadRequestException,
   Injectable,
@@ -11,9 +10,12 @@ import { ErrorMessage, kebabCase } from "@reactive-resume/utils";
 import { PrismaService } from "nestjs-prisma";
 
 import { StorageService } from "../storage/storage.service";
+import { defaultPortfolioData } from "@reactive-resume/schema";
 
 @Injectable()
 export class PortfolioService {
+  private readonly logger = new Logger(PortfolioService.name);
+
   constructor(
     private readonly prisma: PrismaService,
     private readonly storageService: StorageService,
@@ -26,6 +28,7 @@ export class PortfolioService {
         title: createPortfolioDto.title,
         slug: createPortfolioDto.slug ?? kebabCase(createPortfolioDto.title),
         visibility: createPortfolioDto.visibility,
+        data: defaultPortfolioData, // Add default portfolio data structure
       },
     });
   }
@@ -36,13 +39,8 @@ export class PortfolioService {
 
   findOne(id: string, userId?: string) {
     if (userId) {
-      Logger.log(
-        "DEBUG: userId",
-        this.prisma.portfolio.findUniqueOrThrow({ where: { userId_id: { userId, id } } }),
-      );
       return this.prisma.portfolio.findUniqueOrThrow({ where: { userId_id: { userId, id } } });
     }
-    Logger.log("userId", this.prisma.portfolio.findUniqueOrThrow({ where: { id } }));
 
     return this.prisma.portfolio.findUniqueOrThrow({ where: { id } });
   }
@@ -95,9 +93,10 @@ export class PortfolioService {
       });
     } catch (error) {
       if (error.code === "P2025") {
-        Logger.error(error);
+        this.logger.error(error);
         throw new InternalServerErrorException(error);
       }
+      throw error;
     }
   }
 

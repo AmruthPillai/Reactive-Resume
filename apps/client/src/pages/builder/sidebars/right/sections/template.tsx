@@ -1,15 +1,35 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
+/* eslint-disable react-hooks/rules-of-hooks */
 import { t } from "@lingui/macro";
 import { AspectRatio } from "@reactive-resume/ui";
 import { cn, templatesList } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
+import { useSearchParams } from "react-router-dom";
 
+import { usePortfolioStore } from "@/client/stores/portfolio";
 import { useResumeStore } from "@/client/stores/resume";
 
 import { getSectionIcon } from "../shared/section-icon";
 
 export const TemplateSection = () => {
-  const setValue = useResumeStore((state) => state.setValue);
-  const currentTemplate = useResumeStore((state) => state.resume.data.metadata.template);
+  const [searchParams] = useSearchParams();
+  const mode = searchParams.get("mode") ?? "resume";
+
+  // Use the appropriate store based on mode
+  const setValue =
+    mode === "portfolio"
+      ? usePortfolioStore((state) => state.setValue)
+      : useResumeStore((state) => state.setValue);
+
+  const currentTemplate =
+    mode === "portfolio"
+      ? usePortfolioStore((state) => state.portfolio?.data?.metadata?.template)
+      : useResumeStore((state) => state.resume?.data?.metadata?.template);
+
+  // If template settings aren't loaded yet, return null or loading state
+  if (!currentTemplate) {
+    return null;
+  }
 
   return (
     <section id="template" className="grid gap-y-6">

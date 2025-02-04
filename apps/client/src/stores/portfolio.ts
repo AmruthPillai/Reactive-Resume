@@ -1,6 +1,7 @@
 import { t } from "@lingui/macro";
 import { createId } from "@paralleldrive/cuid2";
 import { PortfolioDto } from "@reactive-resume/dto";
+import { defaultPortfolioData } from "@reactive-resume/schema";
 import _set from "lodash.set";
 import { temporal, TemporalState } from "zundo";
 import { create } from "zustand";
@@ -11,7 +12,9 @@ import { useStoreWithEqualityFn } from "zustand/traditional";
 import { debouncedUpdatePortfolio } from "../services/portfolio";
 
 type PortfolioStore = {
-  portfolio: PortfolioDto;
+  portfolio: PortfolioDto & {
+    data: typeof defaultPortfolioData;
+  };
 
   // Actions
   setValue: (path: string, value: unknown) => void;
@@ -24,7 +27,17 @@ type PortfolioStore = {
 export const usePortfolioStore = create<PortfolioStore>()(
   temporal(
     immer((set) => ({
-      portfolio: {} as PortfolioDto,
+      portfolio: {
+        id: "",
+        userId: "",
+        title: "",
+        slug: "",
+        visibility: "private",
+        locked: false,
+        data: defaultPortfolioData,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
       setValue: (path, value) => {
         set((state) => {
           if (path === "visibility") {
@@ -48,7 +61,11 @@ export const usePortfolioStore = create<PortfolioStore>()(
         set((state) => {
           const lastPageIndex = state.portfolio.data.metadata.layout.length - 1;
           state.portfolio.data.metadata.layout[lastPageIndex][0].push(`custom.${section.id}`);
-          state.portfolio.data = _set(state.portfolio.data, `sections.custom.${section.id}`, section);
+          state.portfolio.data = _set(
+            state.portfolio.data,
+            `sections.custom.${section.id}`,
+            section,
+          );
 
           void debouncedUpdatePortfolio(JSON.parse(JSON.stringify(state.portfolio)));
         });
@@ -59,10 +76,8 @@ export const usePortfolioStore = create<PortfolioStore>()(
 
           set((state) => {
             // Remove from layout
-            state.portfolio.data.metadata.layout = state.portfolio.data.metadata.layout.map(page =>
-              page.map(column =>
-                column.filter(item => item !== sectionId)
-              )
+            state.portfolio.data.metadata.layout = state.portfolio.data.metadata.layout.map(
+              (page) => page.map((column) => column.filter((item) => item !== sectionId)),
             );
 
             // Remove section data

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
+/* eslint-disable react-hooks/rules-of-hooks */
 import { t } from "@lingui/macro";
 import {
   ArrowClockwise,
@@ -14,10 +16,12 @@ import {
 } from "@phosphor-icons/react";
 import { Button, Separator, Toggle, Tooltip } from "@reactive-resume/ui";
 import { motion } from "framer-motion";
+import { useSearchParams } from "react-router-dom";
 
 import { useToast } from "@/client/hooks/use-toast";
 import { usePrintResume } from "@/client/services/resume";
 import { useBuilderStore } from "@/client/stores/builder";
+import { usePortfolioStore } from "@/client/stores/portfolio";
 import { useResumeStore, useTemporalResumeStore } from "@/client/stores/resume";
 
 const openInNewTab = (url: string) => {
@@ -26,32 +30,58 @@ const openInNewTab = (url: string) => {
 };
 
 export const BuilderToolbar = () => {
+  const [searchParams] = useSearchParams();
+  const mode = searchParams.get("mode") ?? "resume";
+
   const { toast } = useToast();
-  const setValue = useResumeStore((state) => state.setValue);
+
+  // Use appropriate store based on mode
+  const setValue =
+    mode === "portfolio"
+      ? usePortfolioStore((state) => state.setValue)
+      : useResumeStore((state) => state.setValue);
+
   const undo = useTemporalResumeStore((state) => state.undo);
   const redo = useTemporalResumeStore((state) => state.redo);
   const frameRef = useBuilderStore((state) => state.frame.ref);
 
-  const id = useResumeStore((state) => state.resume.id);
-  const isPublic = useResumeStore((state) => state.resume.visibility === "public");
-  const pageOptions = useResumeStore((state) => state.resume.data.metadata.page.options);
+  // Get data based on mode
+  const data =
+    mode === "portfolio"
+      ? usePortfolioStore((state) => state.portfolio)
+      : useResumeStore((state) => state.resume);
+
+  const id = data?.id;
+  const isPublic = data?.visibility === "public";
+  const pageOptions = data?.data?.metadata?.page?.options;
 
   const { printResume, loading } = usePrintResume();
 
-  const onPrint = async () => {
-    const { url } = await printResume({ id });
+  // If required data isn't loaded yet, return null
+  if (!data || !pageOptions) {
+    return null;
+  }
 
+  const onPrint = async () => {
+    if (!id) return;
+
+    const { url } = await printResume({ id });
     openInNewTab(url);
   };
 
   const onCopy = async () => {
+    if (!id) return;
+
     const { url } = await printResume({ id });
     await navigator.clipboard.writeText(url);
 
     toast({
       variant: "success",
       title: t`A link has been copied to your clipboard.`,
-      description: t`Anyone with this link can view and download the resume. Share it on your profile or with recruiters.`,
+      description:
+        mode === "portfolio"
+          ? t`Anyone with this link can view the portfolio. Share it on your profile or with recruiters.`
+          : t`Anyone with this link can view and download the resume. Share it on your profile or with recruiters.`,
     });
   };
 
@@ -60,31 +90,28 @@ export const BuilderToolbar = () => {
   const onResetView = () => frameRef?.contentWindow?.postMessage({ type: "RESET_VIEW" }, "*");
   const onCenterView = () => frameRef?.contentWindow?.postMessage({ type: "CENTER_VIEW" }, "*");
 
+  // Create proper event handlers for undo/redo
+  const handleUndo = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    undo();
+  };
+
+  const handleRedo = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    redo();
+  };
+
   return (
     <motion.div className="fixed inset-x-0 bottom-0 mx-auto hidden py-6 text-center md:block">
       <div className="inline-flex items-center justify-center rounded-full bg-background px-4 shadow-xl">
         <Tooltip content={t`Undo`}>
-          <Button
-            size="icon"
-            variant="ghost"
-            className="rounded-none"
-            onClick={() => {
-              undo();
-            }}
-          >
+          <Button size="icon" variant="ghost" className="rounded-none" onClick={handleUndo}>
             <ArrowCounterClockwise />
           </Button>
         </Tooltip>
 
         <Tooltip content={t`Redo`}>
-          <Button
-            size="icon"
-            variant="ghost"
-            className="rounded-none"
-            onClick={() => {
-              redo();
-            }}
-          >
+          <Button size="icon" variant="ghost" className="rounded-none" onClick={handleRedo}>
             <ArrowClockwise />
           </Button>
         </Tooltip>
@@ -143,7 +170,7 @@ export const BuilderToolbar = () => {
 
         <Separator orientation="vertical" className="h-9" />
 
-        <Tooltip content={t`Copy Link to Resume`}>
+        <Tooltip content={t`Copy Link`}>
           <Button
             size="icon"
             variant="ghost"

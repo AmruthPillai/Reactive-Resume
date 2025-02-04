@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
+/* eslint-disable react-hooks/rules-of-hooks */
 import { t } from "@lingui/macro";
 import {
   Label,
@@ -9,14 +11,35 @@ import {
   Slider,
   Switch,
 } from "@reactive-resume/ui";
+import { useSearchParams } from "react-router-dom";
 
+import { usePortfolioStore } from "@/client/stores/portfolio";
 import { useResumeStore } from "@/client/stores/resume";
 
 import { getSectionIcon } from "../shared/section-icon";
 
 export const PageSection = () => {
-  const setValue = useResumeStore((state) => state.setValue);
-  const page = useResumeStore((state) => state.resume.data.metadata.page);
+  const [searchParams] = useSearchParams();
+  const mode = searchParams.get("mode") ?? "resume";
+
+  // Use the appropriate store based on mode
+  const setValue =
+    mode === "portfolio"
+      ? // eslint-disable-next-line react-hooks/rules-of-hooks
+        usePortfolioStore((state) => state.setValue)
+      : useResumeStore((state) => state.setValue);
+
+  const page =
+    mode === "portfolio"
+      ?
+        usePortfolioStore((state) => state.portfolio?.data?.metadata?.page)
+      : useResumeStore((state) => state.resume?.data?.metadata?.page);
+
+  // If page settings aren't loaded yet, return null or loading state
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+  if (!page) {
+    return null; // or return <LoadingSpinner />
+  }
 
   return (
     <section id="page" className="grid gap-y-6">

@@ -38,18 +38,16 @@ export const BuilderPage = () => {
 
   // Send resume data to iframe on change of resume data
   useEffect(updateResumeInFrame, [resume.data]);
-
+  const titleString = title || t`Untitled`;
   return (
     <>
       <Helmet>
-        <title>
-          {title} - {t`Reactive Resume`}
-        </title>
+        <title>{`${titleString} - ${t`Reactive Resume`}`}</title>
       </Helmet>
 
       <iframe
         ref={setFrameRef}
-        title={resume.id}
+        title={titleString}
         src="/artboard/builder"
         className="mt-16 w-screen"
         style={{ height: `calc(100vh - 64px)` }}

@@ -24,8 +24,10 @@ export class PortfolioGuard implements CanActivate {
         request.payload = { portfolio };
       }
 
-      // If the portfolio is private and the user is authenticated and is the owner of the portfolio, attach the portfolio to the request payload.
-      // Else, if either the user is not authenticated or is not the owner of the portfolio, throw a 404 error.
+      // If the portfolio is private and the user is authenticated and is the owner of the portfolio,
+      // attach the portfolio to the request payload.
+      // Else, if either the user is not authenticated or is not the owner of the portfolio,
+      // throw a 404 error.
       if (portfolio.visibility === "private") {
         if (user && user.id === portfolio.userId) {
           request.payload = { portfolio };

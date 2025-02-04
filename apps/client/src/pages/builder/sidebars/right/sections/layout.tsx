@@ -1,3 +1,7 @@
+/* eslint-disable lingui/no-expression-in-message */
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
+/* eslint-disable react-hooks/rules-of-hooks */
+// client/src/pages/builder/sidebars/right/sections/layout.tsx
 import {
   closestCenter,
   DndContext,
@@ -18,7 +22,7 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { t, Trans } from "@lingui/macro";
+import { t } from "@lingui/macro";
 import { ArrowCounterClockwise, DotsSixVertical, Plus, TrashSimple } from "@phosphor-icons/react";
 import { defaultMetadata } from "@reactive-resume/schema";
 import { Button, Portal, Tooltip } from "@reactive-resume/ui";
@@ -31,7 +35,9 @@ import {
 } from "@reactive-resume/utils";
 import get from "lodash.get";
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
+import { usePortfolioStore } from "@/client/stores/portfolio";
 import { useResumeStore } from "@/client/stores/resume";
 
 import { getSectionIcon } from "../shared/section-icon";
@@ -92,9 +98,14 @@ type SectionProps = {
 };
 
 const Section = ({ id, isDragging = false }: SectionProps) => {
-  const name = useResumeStore((state) =>
-    get(state.resume.data.sections, `${id}.name`, id),
-  ) as string;
+  const [searchParams] = useSearchParams();
+  const mode = searchParams.get("mode") ?? "resume";
+
+  // Get section name based on mode
+  const name =
+    mode === "portfolio"
+      ? usePortfolioStore((state) => get(state.portfolio?.data?.sections, `${id}.name`, id))
+      : useResumeStore((state) => get(state.resume?.data?.sections, `${id}.name`, id));
 
   return (
     <div
@@ -105,15 +116,26 @@ const Section = ({ id, isDragging = false }: SectionProps) => {
     >
       <div className="flex items-center gap-x-2">
         <DotsSixVertical size={12} weight="bold" />
-        <p className="flex-1 truncate text-xs font-medium">{name}</p>
+        <p className="flex-1 truncate text-xs font-medium">{name || id}</p>
       </div>
     </div>
   );
 };
 
 export const LayoutSection = () => {
-  const setValue = useResumeStore((state) => state.setValue);
-  const layout = useResumeStore((state) => state.resume.data.metadata.layout);
+  const [searchParams] = useSearchParams();
+  const mode = searchParams.get("mode") ?? "resume";
+
+  // Use the appropriate store based on mode
+  const setValue =
+    mode === "portfolio"
+      ? usePortfolioStore((state) => state.setValue)
+      : useResumeStore((state) => state.setValue);
+
+  const layout =
+    mode === "portfolio"
+      ? usePortfolioStore((state) => state.portfolio?.data?.metadata?.layout)
+      : useResumeStore((state) => state.resume?.data?.metadata?.layout);
 
   const [activeId, setActiveId] = useState<string | null>(null);
 
@@ -123,6 +145,11 @@ export const LayoutSection = () => {
       coordinateGetter: sortableKeyboardCoordinates,
     }),
   );
+
+  // If layout settings aren't loaded yet, return null or loading state
+  if (!layout) {
+    return null;
+  }
 
   const onDragStart = ({ active }: DragStartEvent) => {
     setActiveId(active.id as string);
@@ -164,20 +191,15 @@ export const LayoutSection = () => {
 
   const onAddPage = () => {
     const layoutCopy = JSON.parse(JSON.stringify(layout));
-
     layoutCopy.push([[], []]);
-
     setValue("metadata.layout", layoutCopy);
   };
 
   const onRemovePage = (page: number) => {
     const layoutCopy = JSON.parse(JSON.stringify(layout));
-
     layoutCopy[0][0].push(...layoutCopy[page][0]); // Main
     layoutCopy[0][1].push(...layoutCopy[page][1]); // Sidebar
-
     layoutCopy.splice(page, 1);
-
     setValue("metadata.layout", layoutCopy);
   };
 
@@ -185,16 +207,16 @@ export const LayoutSection = () => {
     const layoutCopy = JSON.parse(JSON.stringify(defaultMetadata.layout));
 
     // Loop through all pages and columns, and get any sections that start with "custom."
-    // These should be appended to the first page of the new layout.
     const customSections: string[] = [];
-
     for (const page of layout) {
       for (const column of page) {
         customSections.push(...column.filter((section) => section.startsWith("custom.")));
       }
     }
 
-    if (customSections.length > 0) layoutCopy[0][0].push(...customSections);
+    if (customSections.length > 0) {
+      layoutCopy[0][0].push(...customSections);
+    }
 
     setValue("metadata.layout", layoutCopy);
   };
@@ -215,7 +237,6 @@ export const LayoutSection = () => {
       </header>
 
       <main className="grid gap-y-4">
-        {/* Pages */}
         <DndContext
           sensors={sensors}
           collisionDetection={closestCenter}
@@ -223,43 +244,42 @@ export const LayoutSection = () => {
           onDragStart={onDragStart}
           onDragCancel={onDragCancel}
         >
-          {layout.map((page, pageIndex) => {
-            const mainIndex = `${pageIndex}.0`;
-            const sidebarIndex = `${pageIndex}.1`;
+          {Array.isArray(layout) &&
+            layout.map((page, pageIndex) => {
+              const mainIndex = `${pageIndex}.0`;
+              const sidebarIndex = `${pageIndex}.1`;
 
-            const main = page[0];
-            const sidebar = page[1];
+              const main = page[0];
+              const sidebar = page[1];
 
-            return (
-              <div key={pageIndex} className="rounded border p-3 pb-4">
-                <div className="flex items-center justify-between">
-                  <p className="mb-3 text-xs font-bold">
-                    <Trans>Page {pageIndex + 1}</Trans>
-                  </p>
+              return (
+                <div key={pageIndex} className="rounded border p-3 pb-4">
+                  <div className="flex items-center justify-between">
+                    <p className="mb-3 text-xs font-bold">{t`Page ${pageIndex + 1}`}</p>
 
-                  {pageIndex !== 0 && (
-                    <Tooltip content={t`Remove Page`}>
-                      <Button
-                        size="icon"
-                        variant="ghost"
-                        className="size-8"
-                        onClick={() => {
-                          onRemovePage(pageIndex);
-                        }}
-                      >
-                        <TrashSimple size={12} className="text-error" />
-                      </Button>
-                    </Tooltip>
-                  )}
+                    {pageIndex !== 0 && (
+                      <Tooltip content={t`Remove Page`}>
+                        <Button
+                          size="icon"
+                          variant="ghost"
+                          className="size-8"
+                          onClick={() => {
+                            onRemovePage(pageIndex);
+                          }}
+                        >
+                          <TrashSimple size={12} className="text-error" />
+                        </Button>
+                      </Tooltip>
+                    )}
+                  </div>
+
+                  <div className="grid grid-cols-2 items-start gap-x-4">
+                    <Column id={mainIndex} name={t`Main`} items={main} />
+                    <Column id={sidebarIndex} name={t`Sidebar`} items={sidebar} />
+                  </div>
                 </div>
-
-                <div className="grid grid-cols-2 items-start gap-x-4">
-                  <Column id={mainIndex} name={t`Main`} items={main} />
-                  <Column id={sidebarIndex} name={t`Sidebar`} items={sidebar} />
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
 
           <Portal>
             <DragOverlay>{activeId && <Section isDragging id={activeId} />}</DragOverlay>

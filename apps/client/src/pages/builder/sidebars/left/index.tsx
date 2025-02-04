@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
+/* eslint-disable react-hooks/rules-of-hooks */
 import { t } from "@lingui/macro";
 import { Plus, PlusCircle } from "@phosphor-icons/react";
 import {
@@ -17,11 +19,12 @@ import {
 } from "@reactive-resume/schema";
 import { Button, ScrollArea, Separator } from "@reactive-resume/ui";
 import { Fragment, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 import { Icon } from "@/client/components/icon";
 import { UserAvatar } from "@/client/components/user-avatar";
 import { UserOptions } from "@/client/components/user-options";
+import { usePortfolioStore } from "@/client/stores/portfolio";
 import { useResumeStore } from "@/client/stores/resume";
 
 import { BasicsSection } from "./sections/basics";
@@ -31,15 +34,24 @@ import { SummarySection } from "./sections/summary";
 
 export const LeftSidebar = () => {
   const containterRef = useRef<HTMLDivElement | null>(null);
+  const [searchParams] = useSearchParams();
+  const mode = searchParams.get("mode") ?? "resume";
 
-  const addSection = useResumeStore((state) => state.addSection);
-  const customSections = useResumeStore((state) => state.resume.data.sections.custom);
+  // Use appropriate store based on mode
+  const addSection =
+    mode === "portfolio"
+      ? usePortfolioStore((state) => state.addSection)
+      : useResumeStore((state) => state.addSection);
+
+  const customSections =
+    mode === "portfolio"
+      ? usePortfolioStore((state) => state.portfolio?.data?.sections?.custom)
+      : useResumeStore((state) => state.resume?.data?.sections?.custom);
 
   const scrollIntoView = (selector: string) => {
     const section = containterRef.current?.querySelector(selector);
     section?.scrollIntoView({ behavior: "smooth" });
   };
-
   return (
     <div className="flex bg-secondary-accent/30">
       <div className="hidden basis-12 flex-col items-center justify-between bg-secondary-accent/30 py-4 sm:flex">

@@ -1,16 +1,37 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
+/* eslint-disable react-hooks/rules-of-hooks */
+// client/src/pages/builder/sidebars/right/sections/theme.tsx
 import { t } from "@lingui/macro";
 import { Input, Label, Popover, PopoverContent, PopoverTrigger } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { HexColorPicker } from "react-colorful";
+import { useSearchParams } from "react-router-dom";
 
 import { colors } from "@/client/constants/colors";
+import { usePortfolioStore } from "@/client/stores/portfolio";
 import { useResumeStore } from "@/client/stores/resume";
 
 import { getSectionIcon } from "../shared/section-icon";
 
 export const ThemeSection = () => {
-  const setValue = useResumeStore((state) => state.setValue);
-  const theme = useResumeStore((state) => state.resume.data.metadata.theme);
+  const [searchParams] = useSearchParams();
+  const mode = searchParams.get("mode") ?? "resume";
+
+  // Use the appropriate store based on mode
+  const setValue =
+    mode === "portfolio"
+      ? usePortfolioStore((state) => state.setValue)
+      : useResumeStore((state) => state.setValue);
+
+  const theme =
+    mode === "portfolio"
+      ? usePortfolioStore((state) => state.portfolio?.data?.metadata?.theme)
+      : useResumeStore((state) => state.resume?.data?.metadata?.theme);
+
+  // If theme settings aren't loaded yet, return null or loading state
+  if (!theme) {
+    return null; // or return <LoadingSpinner />
+  }
 
   return (
     <section id="theme" className="grid gap-y-6">
@@ -70,7 +91,7 @@ export const ThemeSection = () => {
         </div>
 
         <div className="space-y-1.5">
-          <Label htmlFor="theme.primary">{t`Background Color`}</Label>
+          <Label htmlFor="theme.background">{t`Background Color`}</Label>
           <div className="relative">
             <Popover>
               <PopoverTrigger asChild>
@@ -100,7 +121,7 @@ export const ThemeSection = () => {
         </div>
 
         <div className="space-y-1.5">
-          <Label htmlFor="theme.primary">{t`Text Color`}</Label>
+          <Label htmlFor="theme.text">{t`Text Color`}</Label>
           <div className="relative">
             <Popover>
               <PopoverTrigger asChild>

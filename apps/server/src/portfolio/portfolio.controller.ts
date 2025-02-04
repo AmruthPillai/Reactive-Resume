@@ -14,7 +14,11 @@ import {
 import { ApiTags } from "@nestjs/swagger";
 import { User as UserEntity } from "@prisma/client";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
-import { CreatePortfolioDto, PortfolioDto, UpdatePortfolioDto } from "@reactive-resume/dto";
+import {
+  CreatePortfolioDto,
+  PortfolioDto,
+  UpdatePortfolioDto,
+} from "@reactive-resume/dto";
 import { ErrorMessage } from "@reactive-resume/utils";
 
 import { OptionalGuard } from "../auth/guards/optional.guard";

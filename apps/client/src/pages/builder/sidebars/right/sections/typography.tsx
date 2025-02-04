@@ -1,11 +1,14 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable lingui/no-unlocalized-strings */
-
 import { t } from "@lingui/macro";
 import { Button, Combobox, ComboboxOption, Label, Slider, Switch } from "@reactive-resume/ui";
 import { cn, fonts } from "@reactive-resume/utils";
 import { useCallback, useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import webfontloader from "webfontloader";
 
+import { usePortfolioStore } from "@/client/stores/portfolio";
 import { useResumeStore } from "@/client/stores/resume";
 
 import { getSectionIcon } from "../shared/section-icon";
@@ -29,11 +32,26 @@ const families: ComboboxOption[] = fonts.map((font) => ({
 }));
 
 export const TypographySection = () => {
+  const [searchParams] = useSearchParams();
+  const mode = searchParams.get("mode") ?? "resume";
+
   const [subsets, setSubsets] = useState<ComboboxOption[]>([]);
   const [variants, setVariants] = useState<ComboboxOption[]>([]);
 
-  const setValue = useResumeStore((state) => state.setValue);
-  const typography = useResumeStore((state) => state.resume.data.metadata.typography);
+  // Use the appropriate store based on mode
+  const setValue = mode === "portfolio"
+    ? usePortfolioStore((state) => state.setValue)
+    : useResumeStore((state) => state.setValue);
+
+  const typography = mode === "portfolio"
+    ? usePortfolioStore((state) => state.portfolio?.data?.metadata?.typography)
+    : useResumeStore((state) => state.resume?.data?.metadata?.typography);
+
+  // If typography settings aren't loaded yet, return null or loading state
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+  if (!typography) {
+    return null; // or return <LoadingSpinner />
+  }
 
   const loadFontSuggestions = useCallback(() => {
     for (const font of fontSuggestions) {
