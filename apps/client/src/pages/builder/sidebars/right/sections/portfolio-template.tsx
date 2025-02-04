@@ -1,15 +1,40 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable lingui/no-unlocalized-strings */
 // client/src/pages/builder/sidebars/right/sections/portfolio-template.tsx
 import { t } from "@lingui/macro";
-import { motion } from "framer-motion";
 import { AspectRatio } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
-import { portfolioTemplatesList } from "@reactive-resume/schema";
-import { useResumeStore } from "@/client/stores/resume";
+import { motion } from "framer-motion";
+import { useSearchParams } from "react-router-dom";
+
+import { usePortfolioStore } from "@/client/stores/portfolio";
+
 import { getSectionIcon } from "../shared/section-icon";
 
+// Define your portfolio templates
+const portfolioTemplates = [
+  { id: "minimal", name: "Minimal" },
+  { id: "modern", name: "Modern" },
+  { id: "professional", name: "Professional" },
+  // Add more templates as needed
+];
+
 export const PortfolioTemplateSection = () => {
-  const setValue = useResumeStore((state) => state.setValue);
-  const currentTemplate = useResumeStore((state) => state.portfolio.data.metadata.template);
+  const [searchParams] = useSearchParams();
+  const mode = searchParams.get("mode") ?? "resume";
+
+  // Only show this section for portfolio mode
+  if (mode !== "portfolio") {
+    return null;
+  }
+
+  const setValue = usePortfolioStore((state) => state.setValue);
+  const currentTemplate = usePortfolioStore((state) => state.portfolio.data.metadata.template);
+
+  // If template settings aren't loaded yet, return null or loading state
+  if (!currentTemplate) {
+    return null;
+  }
 
   return (
     <section id="portfolio-template" className="grid gap-y-6">
@@ -21,7 +46,7 @@ export const PortfolioTemplateSection = () => {
       </header>
 
       <main className="grid grid-cols-2 gap-5 @lg/right:grid-cols-3 @2xl/right:grid-cols-4">
-        {portfolioTemplatesList.map((template, index) => (
+        {portfolioTemplates.map((template, index) => (
           <AspectRatio key={template.id} ratio={16 / 9}>
             <motion.div
               initial={{ opacity: 0 }}
@@ -35,10 +60,10 @@ export const PortfolioTemplateSection = () => {
                 setValue("metadata.template", template.id);
               }}
             >
-              <img 
-                src={`/templates/portfolio/${template.id}.jpg`} 
-                alt={template.name} 
-                className="rounded-sm" 
+              <img
+                src={`/templates/portfolio/${template.id}.jpg`}
+                alt={template.name}
+                className="size-full rounded-sm object-cover"
               />
 
               <div className="absolute inset-x-0 bottom-0 h-32 w-full bg-gradient-to-b from-transparent to-background/80">

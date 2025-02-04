@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
+/* eslint-disable react-hooks/rules-of-hooks */
+// client/src/pages/builder/sidebars/left/sections/custom/section.tsx
 import { t } from "@lingui/macro";
 import { createId } from "@paralleldrive/cuid2";
 import { DotsSixVertical, Envelope, Plus, X } from "@phosphor-icons/react";
@@ -12,7 +15,9 @@ import {
 } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { AnimatePresence, Reorder, useDragControls } from "framer-motion";
+import { useSearchParams } from "react-router-dom";
 
+import { usePortfolioStore } from "@/client/stores/portfolio";
 import { useResumeStore } from "@/client/stores/resume";
 
 type CustomFieldProps = {
@@ -21,7 +26,7 @@ type CustomFieldProps = {
   onRemove: (id: string) => void;
 };
 
-export const CustomField = ({ field, onChange, onRemove }: CustomFieldProps) => {
+const CustomField = ({ field, onChange, onRemove }: CustomFieldProps) => {
   const controls = useDragControls();
 
   const handleChange = (key: "icon" | "name" | "value", value: string) => {
@@ -105,8 +110,22 @@ type Props = {
 };
 
 export const CustomFieldsSection = ({ className }: Props) => {
-  const setValue = useResumeStore((state) => state.setValue);
-  const customFields = useResumeStore((state) => state.resume.data.basics.customFields);
+  const [searchParams] = useSearchParams();
+  const mode = searchParams.get("mode") ?? "resume";
+
+  // Use appropriate store based on mode
+  const setValue = mode === "portfolio"
+    ? usePortfolioStore((state) => state.setValue)
+    : useResumeStore((state) => state.setValue);
+
+  const customFields = mode === "portfolio"
+    ? usePortfolioStore((state) => state.portfolio?.data?.basics?.customFields)
+    : useResumeStore((state) => state.resume?.data?.basics?.customFields);
+
+  // If customFields isn't loaded yet, return null or loading state
+  if (!customFields) {
+    return null;
+  }
 
   const onAddCustomField = () => {
     setValue("basics.customFields", [

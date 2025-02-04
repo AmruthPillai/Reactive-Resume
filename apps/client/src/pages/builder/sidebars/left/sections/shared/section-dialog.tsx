@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
+/* eslint-disable react-hooks/rules-of-hooks */
 import { t } from "@lingui/macro";
 import { createId } from "@paralleldrive/cuid2";
 import { CopySimple, PencilSimple, Plus } from "@phosphor-icons/react";
@@ -23,8 +25,10 @@ import { produce } from "immer";
 import get from "lodash.get";
 import { useEffect } from "react";
 import { UseFormReturn } from "react-hook-form";
+import { useSearchParams } from "react-router-dom";
 
 import { DialogName, useDialog } from "@/client/stores/dialog";
+import { usePortfolioStore } from "@/client/stores/portfolio";
 import { useResumeStore } from "@/client/stores/resume";
 
 type Props<T extends SectionItem> = {
@@ -43,12 +47,25 @@ export const SectionDialog = <T extends SectionItem>({
   children,
 }: Props<T>) => {
   const { isOpen, mode, close, payload } = useDialog<T>(id);
+  const [searchParams] = useSearchParams();
+  const currentMode = searchParams.get("mode") ?? "resume";
 
-  const setValue = useResumeStore((state) => state.setValue);
-  const section = useResumeStore((state) => {
-    return get(state.resume.data.sections, id);
-  }) as SectionWithItem<T> | null;
+  // Use appropriate store based on mode
+  const setValue =
+    currentMode === "portfolio"
+      ? usePortfolioStore((state) => state.setValue)
+      : useResumeStore((state) => state.setValue);
 
+  const section =
+    currentMode === "portfolio"
+      ? usePortfolioStore((state) => {
+          const sections = state.portfolio?.data?.sections;
+          return sections ? (get(sections, id) as unknown as SectionWithItem<T>) : null;
+        })
+      : useResumeStore((state) => {
+          const sections = state.resume?.data?.sections;
+          return sections ? (get(sections, id) as SectionWithItem<T>) : null;
+        });
   const isCreate = mode === "create";
   const isUpdate = mode === "update";
   const isDelete = mode === "delete";

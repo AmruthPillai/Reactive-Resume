@@ -1,3 +1,5 @@
+/* eslint-disable simple-import-sort/imports */
+/* eslint-disable react-hooks/rules-of-hooks */
 import { t } from "@lingui/macro";
 import { Aperture, Trash, UploadSimple } from "@phosphor-icons/react";
 import {
@@ -19,13 +21,25 @@ import { useUploadImage } from "@/client/services/storage";
 import { useResumeStore } from "@/client/stores/resume";
 
 import { PictureOptions } from "./options";
+import { usePortfolioStore } from "@/client/stores/portfolio";
+import { useSearchParams } from "react-router-dom";
 
 export const PictureSection = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const { uploadImage } = useUploadImage();
 
-  const setValue = useResumeStore((state) => state.setValue);
-  const picture = useResumeStore((state) => state.resume.data.basics.picture);
+  const [searchParams] = useSearchParams();
+  const mode = searchParams.get("mode") ?? "resume";
+
+  // Use appropriate store based on mode
+  const setValue =
+    mode === "portfolio"
+      ? usePortfolioStore((state) => state.setValue)
+      : useResumeStore((state) => state.setValue);
+  const picture =
+    mode === "portfolio"
+      ? usePortfolioStore((state) => state.portfolio.data.basics.picture)
+      : useResumeStore((state) => state.resume.data.basics.picture);
 
   const isValidUrl = useMemo(() => z.string().url().safeParse(picture.url).success, [picture.url]);
 

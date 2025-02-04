@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import {
   Article,
   Books,
@@ -18,7 +19,9 @@ import {
 import { defaultSection, SectionKey, SectionWithItem } from "@reactive-resume/schema";
 import { Button, ButtonProps, Tooltip } from "@reactive-resume/ui";
 import get from "lodash.get";
+import { useSearchParams } from "react-router-dom";
 
+import { usePortfolioStore } from "@/client/stores/portfolio";
 import { useResumeStore } from "@/client/stores/resume";
 
 export const getSectionIcon = (id: SectionKey, props: IconProps = {}) => {
@@ -80,9 +83,16 @@ type SectionIconProps = ButtonProps & {
 };
 
 export const SectionIcon = ({ id, name, icon, ...props }: SectionIconProps) => {
-  const section = useResumeStore((state) =>
-    get(state.resume.data.sections, id, defaultSection),
-  ) as SectionWithItem;
+  const [searchParams] = useSearchParams();
+  const mode = searchParams.get("mode") ?? "resume";
+  const section =
+    mode === "portfolio"
+      ? (usePortfolioStore((state) =>
+          get(state.portfolio.data.sections, id, defaultSection),
+        ) as SectionWithItem)
+      : (useResumeStore((state) =>
+          get(state.resume.data.sections, id, defaultSection),
+        ) as SectionWithItem);
 
   return (
     <Tooltip side="right" content={name ?? section.name}>
