@@ -148,7 +148,7 @@ export const TypographySection = () => {
           <Label>{t`Font Size`}</Label>
           <div className="flex items-center gap-x-4 py-1">
             <Slider
-              min={12}
+              min={6}
               max={18}
               step={0.05}
               value={[typography.font.size]}
