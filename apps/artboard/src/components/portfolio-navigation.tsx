@@ -1,13 +1,14 @@
 // portfolio-navigation.tsx
 import { PortfolioNavigation as IPortfolioNavigation } from "@reactive-resume/schema";
 import { cn } from "@reactive-resume/utils";
-import { useArtboardStore } from "../store/artboard";
 import { useEffect, useState } from "react";
+
+import { useArtboardStore } from "../store/artboard";
 
 export const PortfolioNavigation: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  
+
   const navigation = useArtboardStore<IPortfolioNavigation>(
     (state) => state.portfolio.metadata.navigation
   );

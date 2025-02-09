@@ -1,30 +1,26 @@
-// artboard/src/templates/portfolio/registry.tsx
 import { PortfolioTemplate } from "./types";
 import { MinimalTemplate } from "./minimal";
 // import { ModernTemplate } from "./modern";
-// import { CreativeTemplate } from "./creative";
+// import { ProfessionalTemplate } from "./professional";
 
-export const portfolioTemplates: PortfolioTemplate[] = [
-  {
+export const portfolioTemplates: Record<string, PortfolioTemplate> = {
+  minimal: {
     id: "minimal",
     name: "Minimal",
-    preview: "/templates/portfolio/minimal.jpg",
     component: MinimalTemplate,
   },
-//   {
-//     id: "modern",
-//     name: "Modern",
-//     preview: "/templates/portfolio/modern.jpg",
-//     component: ModernTemplate,
-//   },
-//   {
-//     id: "creative",
-//     name: "Creative",
-//     preview: "/templates/portfolio/creative.jpg",
-//     component: CreativeTemplate,
-//   },
-];
+// modern: {
+ //   id: "modern",
+  //  name: "Modern",
+   // component: ModernTemplate,
+ // },
+ // professional: {
+   // id: "professional",
+   // name: "Professional",
+    //component: ProfessionalTemplate,
+ // }, 
+};
 
 export const getPortfolioTemplate = (id: string) => {
-  return portfolioTemplates.find((template) => template.id === id) ?? portfolioTemplates[0];
+  return portfolioTemplates[id]?.component;
 };

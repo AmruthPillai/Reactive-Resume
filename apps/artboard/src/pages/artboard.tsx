@@ -1,12 +1,27 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
+/* eslint-disable react-hooks/rules-of-hooks */
+// artboard/src/pages/artboard.tsx
 import { useEffect, useMemo } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useSearchParams } from "react-router-dom";
 import webfontloader from "webfontloader";
 
 import { useArtboardStore } from "../store/artboard";
 
 export const ArtboardPage = () => {
-  const metadata = useArtboardStore((state) => state.resume.metadata);
+  const [searchParams] = useSearchParams();
+  const mode = searchParams.get("mode") ?? "resume";
 
+  // Get metadata based on mode with null checks
+  const metadata = useArtboardStore((state) => {
+    if (mode === "portfolio") {
+      return state.portfolio.metadata;
+    }
+    return state.resume.metadata;
+  });
+
+
+
+  // Create font string for Google Fonts
   const fontString = useMemo(() => {
     const family = metadata.typography.font.family;
     const variants = metadata.typography.font.variants.join(",");
@@ -15,6 +30,7 @@ export const ArtboardPage = () => {
     return `${family}:${variants}:${subset}`;
   }, [metadata.typography.font]);
 
+  // Load fonts and notify parent when page is ready
   useEffect(() => {
     webfontloader.load({
       google: { families: [fontString] },
@@ -27,11 +43,14 @@ export const ArtboardPage = () => {
     });
   }, [fontString]);
 
-  // Font Size & Line Height
+  // Set up CSS variables and styles
   useEffect(() => {
+
+    // Font Size & Line Height
     document.documentElement.style.setProperty("font-size", `${metadata.typography.font.size}px`);
     document.documentElement.style.setProperty("line-height", `${metadata.typography.lineHeight}`);
 
+    // Page margins and typography
     document.documentElement.style.setProperty("--margin", `${metadata.page.margin}px`);
     document.documentElement.style.setProperty("--font-size", `${metadata.typography.font.size}px`);
     document.documentElement.style.setProperty(
@@ -39,6 +58,7 @@ export const ArtboardPage = () => {
       `${metadata.typography.lineHeight}`,
     );
 
+    // Theme colors
     document.documentElement.style.setProperty("--color-foreground", metadata.theme.text);
     document.documentElement.style.setProperty("--color-primary", metadata.theme.primary);
     document.documentElement.style.setProperty("--color-background", metadata.theme.background);
@@ -46,6 +66,8 @@ export const ArtboardPage = () => {
 
   // Typography Options
   useEffect(() => {
+    if (!metadata) return;
+
     // eslint-disable-next-line unicorn/prefer-spread
     const elements = Array.from(document.querySelectorAll(`[data-page]`));
 

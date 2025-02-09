@@ -1,4 +1,3 @@
-// artboard/src/templates/portfolio/minimal/components/hero.tsx
 import { cn } from "@reactive-resume/utils";
 import { Picture } from "../../../../components/picture";
 

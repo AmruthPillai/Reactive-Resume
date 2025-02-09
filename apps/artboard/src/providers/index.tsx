@@ -1,44 +1,70 @@
 import { useEffect } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useSearchParams } from "react-router-dom";
 
 import { useArtboardStore } from "../store/artboard";
 
 export const Providers = () => {
-  const resume = useArtboardStore((state) => state.resume);
+  const [searchParams] = useSearchParams();
+  const mode = searchParams.get("mode") ?? "resume";
+
   const setResume = useArtboardStore((state) => state.setResume);
+  const setPortfolio = useArtboardStore((state) => state.setPortfolio);
+  const setMode = useArtboardStore((state) => state.setMode);
 
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
       if (event.origin !== window.location.origin) return;
 
-      if (event.data.type === "SET_RESUME") setResume(event.data.payload);
-      if (event.data.type === "SET_THEME") {
-        event.data.payload === "dark"
-          ? document.documentElement.classList.add("dark")
-          : document.documentElement.classList.remove("dark");
+      switch (event.data.type) {
+        case "SET_RESUME": {
+          setResume(event.data.payload);
+          break;
+        }
+        case "SET_PORTFOLIO": {
+          setPortfolio(event.data.payload);
+          break;
+        }
+        case "SET_THEME": {
+          event.data.payload === "dark"
+            ? document.documentElement.classList.add("dark")
+            : document.documentElement.classList.remove("dark");
+          break;
+        }
       }
     };
 
-    const resumeData = window.localStorage.getItem("resume");
-    if (resumeData) {
-      setResume(JSON.parse(resumeData));
-      return;
+    // Set mode based on URL parameter
+    setMode(mode as "resume" | "portfolio");
+
+    // Try to load data from localStorage first (for development/testing)
+    if (mode === "portfolio") {
+      const portfolioData = window.localStorage.getItem("portfolio");
+      if (portfolioData) {
+        setPortfolio(JSON.parse(portfolioData));
+        return;
+      }
+    } else {
+      const resumeData = window.localStorage.getItem("resume");
+      if (resumeData) {
+        setResume(JSON.parse(resumeData));
+        return;
+      }
     }
 
+    // Listen for messages from parent window
     window.addEventListener("message", handleMessage);
 
     return () => {
       window.removeEventListener("message", handleMessage);
     };
-  }, [setResume]);
+  }, [setResume, setPortfolio, setMode, mode]);
 
-  // Only for testing, in production this will be fetched from window.postMessage
-  // useEffect(() => {
-  //   setResume(sampleResume);
-  // }, [setResume]);
+  // Verify that required data is loaded
+  const resume = useArtboardStore((state) => state.resume);
+  const portfolio = useArtboardStore((state) => state.portfolio);
 
-  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-  if (!resume) return null;
+  const isDataLoaded = mode === "portfolio" ? portfolio : resume;
+
 
   return <Outlet />;
 };

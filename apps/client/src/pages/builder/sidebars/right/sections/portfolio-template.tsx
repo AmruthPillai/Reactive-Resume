@@ -1,9 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable lingui/no-unlocalized-strings */
-// client/src/pages/builder/sidebars/right/sections/portfolio-template.tsx
 import { t } from "@lingui/macro";
 import { AspectRatio } from "@reactive-resume/ui";
-import { cn } from "@reactive-resume/utils";
+import { cn, portfolioTemplatesList } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
 import { useSearchParams } from "react-router-dom";
 
@@ -11,13 +9,6 @@ import { usePortfolioStore } from "@/client/stores/portfolio";
 
 import { getSectionIcon } from "../shared/section-icon";
 
-// Define your portfolio templates
-const portfolioTemplates = [
-  { id: "minimal", name: "Minimal" },
-  { id: "modern", name: "Modern" },
-  { id: "professional", name: "Professional" },
-  // Add more templates as needed
-];
 
 export const PortfolioTemplateSection = () => {
   const [searchParams] = useSearchParams();
@@ -46,29 +37,29 @@ export const PortfolioTemplateSection = () => {
       </header>
 
       <main className="grid grid-cols-2 gap-5 @lg/right:grid-cols-3 @2xl/right:grid-cols-4">
-        {portfolioTemplates.map((template, index) => (
-          <AspectRatio key={template.id} ratio={16 / 9}>
+        {portfolioTemplatesList.map((template, index) => (
+          <AspectRatio key={template} ratio={16 / 9}>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, transition: { delay: index * 0.1 } }}
               whileTap={{ scale: 0.98, transition: { duration: 0.1 } }}
               className={cn(
                 "relative cursor-pointer rounded-sm ring-primary transition-all hover:ring-2",
-                currentTemplate === template.id && "ring-2",
+                currentTemplate === template && "ring-2",
               )}
               onClick={() => {
-                setValue("metadata.template", template.id);
+                setValue("metadata.template", template);
               }}
             >
               <img
-                src={`/templates/portfolio/${template.id}.jpg`}
-                alt={template.name}
+                src={`/templates/portfolio/${template}.jpg`}
+                alt={template}
                 className="size-full rounded-sm object-cover"
               />
 
               <div className="absolute inset-x-0 bottom-0 h-32 w-full bg-gradient-to-b from-transparent to-background/80">
                 <p className="absolute inset-x-0 bottom-2 text-center font-bold text-primary">
-                  {template.name}
+                  {template}
                 </p>
               </div>
             </motion.div>

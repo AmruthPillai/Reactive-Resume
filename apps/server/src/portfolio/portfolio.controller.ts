@@ -14,11 +14,7 @@ import {
 import { ApiTags } from "@nestjs/swagger";
 import { User as UserEntity } from "@prisma/client";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
-import {
-  CreatePortfolioDto,
-  PortfolioDto,
-  UpdatePortfolioDto,
-} from "@reactive-resume/dto";
+import { CreatePortfolioDto, PortfolioDto, UpdatePortfolioDto } from "@reactive-resume/dto";
 import { ErrorMessage } from "@reactive-resume/utils";
 
 import { OptionalGuard } from "../auth/guards/optional.guard";
@@ -85,12 +81,7 @@ export class PortfolioController {
     @Param("slug") slug: string,
     @User("id") userId: string,
   ) {
-    try {
-      return await this.portfolioService.findOneByUsernameSlug(username, slug, userId);
-    } catch (error) {
-      this.logger.error(error);
-      throw new InternalServerErrorException(error);
-    }
+    return this.portfolioService.findOneByUsernameSlug(username, slug, userId);
   }
 
   @Patch(":id")

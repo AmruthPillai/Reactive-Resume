@@ -1,5 +1,5 @@
-// apps/artboard/src/components/picture.tsx
 import { cn, isUrl } from "@reactive-resume/utils";
+
 import { useArtboardStore } from "../store/artboard";
 
 type PictureProps = {
@@ -15,23 +15,23 @@ type PictureProps = {
   className?: string;
 };
 
-export const Picture = ({ 
+export const Picture = ({
   url,
   effects,
   size,
   aspectRatio,
   borderRadius,
-  className 
+  className
 }: PictureProps) => {
   const resumePicture = useArtboardStore((state) => state.resume.basics.picture);
   const fontSize = useArtboardStore((state) => state.resume.metadata.typography.font.size);
 
   // Use provided props or fall back to resume picture props
-  const pictureUrl = url || resumePicture.url;
-  const pictureEffects = effects || resumePicture.effects;
-  const pictureSize = size || resumePicture.size;
-  const pictureAspectRatio = aspectRatio || resumePicture.aspectRatio;
-  const pictureBorderRadius = borderRadius || resumePicture.borderRadius;
+  const pictureUrl = url ?? resumePicture.url;
+  const pictureEffects = effects ?? resumePicture.effects;
+  const pictureSize = size ?? resumePicture.size;
+  const pictureAspectRatio = aspectRatio ?? resumePicture.aspectRatio;
+  const pictureBorderRadius = borderRadius ?? resumePicture.borderRadius;
 
   if (!isUrl(pictureUrl) || pictureEffects.hidden) return null;
 

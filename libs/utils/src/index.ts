@@ -8,6 +8,7 @@ export * from "./namespaces/language";
 export * from "./namespaces/number";
 export * from "./namespaces/object";
 export * from "./namespaces/page";
+export * from "./namespaces/portfolio";
 export * from "./namespaces/promise";
 export * from "./namespaces/string";
 export * from "./namespaces/style";

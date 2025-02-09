@@ -1,26 +1,33 @@
-// @reactive-resume/schema/src/portfolio/metadata.ts
 import { z } from "zod";
 
+import { metadataSchema } from ".";
+
 // Layout Types
-export const portfolioLayoutTypeSchema = z.enum(['stack', 'grid', 'masonry', 'fullwidth']);
+export const portfolioLayoutTypeSchema = z.enum(["stack", "grid", "masonry", "fullwidth"]);
 export type PortfolioLayoutType = z.infer<typeof portfolioLayoutTypeSchema>;
 
 // Portfolio Layout Config
 export const portfolioLayoutConfigSchema = z.object({
   columns: z.number().min(1).max(4).default(3),
   spacing: z.number().min(0).max(32).default(16),
-  maxWidth: z.string().default('1200px'),
+  maxWidth: z.string().default("1200px"),
+});
+
+export const portfolioNavigationSchema = z.object({
+  style: z.enum(["fixed", "sticky", "floating"]).default("fixed"),
+  transparent: z.boolean().default(false),
+  showOnScroll: z.boolean().default(true),
 });
 
 // Portfolio Layout
 export const portfolioLayoutSchema = z.object({
-  type: portfolioLayoutTypeSchema.default('stack'),
+  type: portfolioLayoutTypeSchema.default("stack"),
   sections: z.array(z.string()),
   config: portfolioLayoutConfigSchema,
 });
 
 // Portfolio Metadata Schema
-export const portfolioMetadataSchema = z.object({
+export const portfolioMetaSchema = z.object({
   template: z.string().default("minimal"),
   layout: portfolioLayoutSchema,
   css: z.object({
@@ -54,14 +61,26 @@ export const portfolioMetadataSchema = z.object({
   notes: z.string().default(""),
 });
 
+// Portfolio specific metadata
+export const portfolioMetadataSchema = metadataSchema.extend({
+  layout: portfolioLayoutSchema,
+  navigation: portfolioNavigationSchema,
+});
+
 // Types
 export type PortfolioMetadata = z.infer<typeof portfolioMetadataSchema>;
 export type PortfolioLayoutConfig = z.infer<typeof portfolioLayoutConfigSchema>;
 export type PortfolioLayout = z.infer<typeof portfolioLayoutSchema>;
+export type PortfolioNavigation = z.infer<typeof portfolioNavigationSchema>;
 
 // Default Portfolio Metadata
 export const defaultPortfolioMetadata: PortfolioMetadata = {
   template: "minimal",
+  navigation: {
+    style: "fixed",
+    transparent: true,
+    showOnScroll: true,
+  },
   layout: {
     type: "stack",
     sections: [],

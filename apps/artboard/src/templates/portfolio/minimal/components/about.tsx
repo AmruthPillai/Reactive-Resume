@@ -1,10 +1,9 @@
-// artboard/src/templates/portfolio/minimal/components/about.tsx
 import { cn } from "@reactive-resume/utils";
 import { Picture } from "../../../../components/picture";
 
 interface AboutProps {
   name: string;
-  tagline: string;
+  headline: string;
   picture: {
     url: string;
     effects: {
@@ -25,7 +24,7 @@ interface AboutProps {
 
 export const About: React.FC<AboutProps> = ({
   name,
-  tagline,
+  headline,
   picture,
   banner,
 }) => {
@@ -61,7 +60,7 @@ export const About: React.FC<AboutProps> = ({
 
           {/* Name & Tagline */}
           <h1 className="mb-4 text-4xl font-bold">{name}</h1>
-          <p className="text-xl opacity-75">{tagline}</p>
+          <p className="text-xl opacity-75">{headline}</p>
         </div>
       </div>
     </section>

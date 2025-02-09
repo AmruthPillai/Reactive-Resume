@@ -1,6 +1,7 @@
 // portfolio-layout.tsx
-import { PortfolioLayoutType, PortfolioLayoutConfig } from "@reactive-resume/schema";
+import { PortfolioLayoutConfig, PortfolioLayoutType } from "@reactive-resume/schema";
 import { cn } from "@reactive-resume/utils";
+
 import { useArtboardStore } from "../store/artboard";
 
 type PortfolioLayoutProps = {
@@ -16,13 +17,9 @@ const layoutStyles: Record<PortfolioLayoutType, string> = {
   fullwidth: "w-full",
 };
 
-export const PortfolioLayout: React.FC<PortfolioLayoutProps> = ({
-  type,
-  children,
-  className,
-}) => {
+export const PortfolioLayout: React.FC<PortfolioLayoutProps> = ({ type, children, className }) => {
   const config = useArtboardStore<PortfolioLayoutConfig>(
-    (state) => state.portfolio.metadata.layout.config
+    (state) => state.portfolio.metadata.config
   );
 
   return (
@@ -31,7 +28,7 @@ export const PortfolioLayout: React.FC<PortfolioLayoutProps> = ({
       style={{
         gap: `${config.spacing * 0.25}rem`,
         maxWidth: config.maxWidth,
-        gridTemplateColumns: type === 'grid' ? `repeat(${config.columns}, 1fr)` : undefined,
+        gridTemplateColumns: type === "grid" ? `repeat(${config.columns}, 1fr)` : undefined,
       }}
     >
       {children}

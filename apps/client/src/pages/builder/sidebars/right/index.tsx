@@ -1,6 +1,7 @@
 import { t } from "@lingui/macro";
 import { ScrollArea, Separator } from "@reactive-resume/ui";
 import { useRef } from "react";
+import { useSearchParams } from "react-router-dom";
 
 import { Copyright } from "@/client/components/copyright";
 import { ThemeSwitch } from "@/client/components/theme-switch";
@@ -10,6 +11,7 @@ import { InformationSection } from "./sections/information";
 import { LayoutSection } from "./sections/layout";
 import { NotesSection } from "./sections/notes";
 import { PageSection } from "./sections/page";
+import { PortfolioTemplateSection } from "./sections/portfolio-template";
 import { SharingSection } from "./sections/sharing";
 import { StatisticsSection } from "./sections/statistics";
 import { TemplateSection } from "./sections/template";
@@ -19,6 +21,8 @@ import { SectionIcon } from "./shared/section-icon";
 
 export const RightSidebar = () => {
   const containterRef = useRef<HTMLDivElement | null>(null);
+  const [searchParams] = useSearchParams();
+  const mode = searchParams.get("mode") ?? "resume";
 
   const scrollIntoView = (selector: string) => {
     const section = containterRef.current?.querySelector(selector);
@@ -29,8 +33,7 @@ export const RightSidebar = () => {
     <div className="flex bg-secondary-accent/30">
       <ScrollArea orientation="vertical" className="h-screen flex-1 pb-16 lg:pb-0">
         <div ref={containterRef} className="grid gap-y-6 p-6 @container/right">
-          <TemplateSection />
-          <Separator />
+          {mode === "portfolio" ? <PortfolioTemplateSection /> : <TemplateSection />} <Separator />
           <LayoutSection />
           <Separator />
           <TypographySection />

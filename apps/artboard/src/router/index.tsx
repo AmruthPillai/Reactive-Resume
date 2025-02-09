@@ -10,6 +10,7 @@ export const routes = createRoutesFromChildren(
     <Route path="artboard" element={<ArtboardPage />}>
       <Route path="builder" element={<BuilderLayout />} />
       <Route path="preview" element={<PreviewLayout />} />
+      <Route path="portfolio/preview" element={<PreviewLayout />} />{" "}
     </Route>
   </Route>,
 );
