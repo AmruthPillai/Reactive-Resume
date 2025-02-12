@@ -1,5 +1,6 @@
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["relationJoins"]
 }
 
 datasource db {
@@ -107,6 +108,7 @@ enum SectionFormat {
 model Section {
   id        String        @id @default(cuid())
   format    SectionFormat
+  userID    String
   data      Json          @default("{}")
   updatedAt DateTime      @updatedAt
 
