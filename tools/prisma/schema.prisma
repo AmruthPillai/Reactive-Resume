@@ -33,6 +33,10 @@ model User {
   provider         Provider
   secrets          Secrets?
   resumes          Resume[]
+
+  TeamsMapping TeamsMapping[]
+
+  CompanyMapping CompanyMapping[]
 }
 
 model Secrets {
@@ -63,6 +67,9 @@ model Resume {
   createdAt  DateTime    @default(now())
   updatedAt  DateTime    @updatedAt
 
+  SectionCVMapping SectionCVMapping[]
+  TeamsMapping     TeamsMapping[]
+
   @@unique([userId, id])
   @@unique([userId, slug])
   @@index(fields: [userId])
@@ -78,4 +85,93 @@ model Statistics {
   updatedAt DateTime @updatedAt
 
   @@unique([resumeId, id])
+}
+
+enum SectionFormat {
+  Basics
+  Profiles
+  Experience
+  Education
+  Skills
+  Languages
+  Awards
+  Certifications
+  Interests
+  Projects
+  Publications
+  Volunteering
+  References
+  Custom
+}
+
+model Section {
+  id        String        @id @default(cuid())
+  format    SectionFormat
+  data      Json          @default("{}")
+  updatedAt DateTime      @updatedAt
+
+  SectionCVMapping SectionCVMapping[]
+}
+
+model SectionCVMapping {
+  id        String  @id @default(cuid())
+  seciondID String  @unique
+  section   Section @relation(fields: [seciondID], references: [id], onDelete: Cascade)
+  resumeID  String  @unique
+  resume    Resume  @relation(fields: [resumeID], references: [id], onDelete: Cascade)
+  order     Int
+
+  @@unique([resumeID, order])
+}
+
+model Team {
+  id        String   @id @default(cuid())
+  name      String
+  //Owner of the team
+  userID    String
+  updatedAt DateTime @updatedAt
+
+  TeamsMapping TeamsMapping[]
+
+  @@unique([name, userID])
+}
+
+model TeamsMapping {
+  id       String  @id @default(cuid())
+  teamID   String
+  team     Team    @relation(fields: [teamID], references: [id], onDelete: Cascade)
+  userID   String
+  user     User    @relation(fields: [userID], references: [id], onDelete: Cascade)
+  resumeID String?
+  resume   Resume? @relation(fields: [resumeID], references: [id], onDelete: Cascade)
+
+  @@unique([teamID, userID])
+}
+
+model CompanyMapping {
+  id        String  @id @default(cuid())
+  userID    String
+  user      User    @relation(fields: [userID], references: [id], onDelete: Cascade)
+  companyID String
+  company   Company @relation(fields: [companyID], references: [id], onDelete: Cascade)
+  roleID    String?
+  role      Role?   @relation(fields: [roleID], references: [id], onDelete: Cascade)
+
+  @@unique([userID, companyID])
+}
+
+model Company {
+  id        String   @id @default(cuid())
+  name      String
+  updatedAt DateTime @updatedAt
+
+  CompanyMapping CompanyMapping[]
+}
+
+model Role {
+  id        String   @id @default(cuid())
+  name      String
+  updatedAt DateTime @updatedAt
+
+  CompanyMapping CompanyMapping[]
 }
