@@ -24,6 +24,31 @@ export const sectionSchema = z.object({
   visible: z.boolean().default(true),
 });
 
+const sectionDataSchema = z.object({
+  title: z.string(),
+  content: z.string(),
+});
+
+// Example: Combine `sectionSchema` with `sectionDataSchema`
+export const sectionSchemaWithData = sectionSchema.extend({
+  data: sectionDataSchema,
+  format: z.enum([
+    "Basics",
+    "Profiles",
+    "Experience",
+    "Education",
+    "Skills",
+    "Languages",
+    "Awards",
+    "Certifications",
+    "Interests",
+    "Projects",
+    "Publications",
+    "Volunteering",
+    "References",
+    "Custom",
+  ]),
+});
 // Schema
 export const customSchema = sectionSchema.extend({
   id: idSchema,
