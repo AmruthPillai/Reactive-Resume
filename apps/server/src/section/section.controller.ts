@@ -1,4 +1,4 @@
-import { Controller, Get, Param, UseGuards } from "@nestjs/common";
+import { Controller, Get, UseGuards } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
 import { User as UserEntity } from "@prisma/client";
 import { sectionSchemaWithData } from "@reactive-resume/schema";
@@ -18,8 +18,9 @@ export class SectionController {
     return zodToJsonSchema(sectionSchemaWithData);
   }
 
-  @Get(":userId")
-  findAll(@Param("userId") userId: string) {
-    return this.sectionService.findAll(userId);
+  @Get()
+  @UseGuards(TwoFactorGuard)
+  findAll(@User() user: UserEntity) {
+    return this.sectionService.findAll(user.id);
   }
 }

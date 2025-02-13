@@ -1,4 +1,4 @@
-import type { ResumeDto } from "@reactive-resume/dto";
+import type { SectionDto } from "@reactive-resume/dto";
 import { useQuery } from "@tanstack/react-query";
 import type { AxiosResponse } from "axios";
 
@@ -6,7 +6,7 @@ import { SECTIONS_KEY } from "@/client/constants/query-keys";
 import { axios } from "@/client/libs/axios";
 
 export const fetchSections = async () => {
-  const response = await axios.get<SectionDto[], AxiosResponse<ResumeDto[]>>("/section");
+  const response = await axios.get<SectionDto[], AxiosResponse<SectionDto[]>>("/section");
 
   return response.data;
 };
