@@ -1,6 +1,6 @@
-import { Controller, Get, Param, UseGuards } from "@nestjs/common";
+import {Body, Controller, Get, InternalServerErrorException, Logger, Param, Post, UseGuards} from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
-import { User as UserEntity } from "@prisma/client";
+import {Prisma, User as UserEntity} from "@prisma/client";
 import { sectionSchemaWithData } from "@reactive-resume/schema";
 import zodToJsonSchema from "zod-to-json-schema";
 
@@ -21,5 +21,16 @@ export class SectionController {
   @Get(":userId")
   findAll(@Param("userId") userId: string) {
     return this.sectionService.findAll(userId);
+  }
+
+  @Post()
+  async createSection( @Body() newSection: Prisma.SectionCreateInput) {
+    try {
+
+      return await this.sectionService.createSection( newSection);
+    } catch (error) {
+      Logger.error(error);
+      throw new InternalServerErrorException(error);
+    }
   }
 }
