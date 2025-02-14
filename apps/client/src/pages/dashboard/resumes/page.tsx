@@ -2,8 +2,11 @@ import { t } from "@lingui/macro";
 import { List, SquaresFour } from "@phosphor-icons/react";
 import { ScrollArea, Tabs, TabsContent, TabsList, TabsTrigger } from "@reactive-resume/ui";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
+
+import { useSections } from "@/client/services/section/sections";
+import { useSectionsStore } from "@/client/stores/section";
 
 import { GridView } from "./_layouts/grid";
 import { ListView } from "./_layouts/list";
@@ -12,6 +15,14 @@ type Layout = "grid" | "list";
 
 export const ResumesPage = () => {
   const [layout, setLayout] = useState<Layout>("grid");
+  const setSections = useSectionsStore((state) => state.setSections);
+  const { sections, loading } = useSections();
+
+  useEffect(() => {
+    if (!loading && sections) {
+      setSections(sections);
+    }
+  }, [sections, loading, setSections]);
 
   return (
     <>
