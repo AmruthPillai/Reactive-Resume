@@ -76,6 +76,9 @@ export const SectionDialog = <T extends SectionItem>({
           draft.push({ ...values, id: createId() });
         }),
       );
+
+      console.log("values", values);
+
     }
 
     if (isUpdate) {
