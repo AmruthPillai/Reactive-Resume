@@ -2,7 +2,7 @@ import { t } from "@lingui/macro";
 import { createId } from "@paralleldrive/cuid2";
 import { CopySimple, PencilSimple, Plus } from "@phosphor-icons/react";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import type { SectionItem, SectionWithItem } from "@reactive-resume/schema";
+import { Award, SectionItem, SectionWithItem } from "@reactive-resume/schema";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -30,6 +30,8 @@ import type { UseFormReturn } from "react-hook-form";
 import type { DialogName } from "@/client/stores/dialog";
 import { useDialog } from "@/client/stores/dialog";
 import { useResumeStore } from "@/client/stores/resume";
+import { CreateSectionDto, SectionFormat } from "../../../../../../../../../libs/dto/src/section";
+import { createSection } from "@/client/services/section/create";
 
 type Props<T extends SectionItem> = {
   id: DialogName;
@@ -65,7 +67,23 @@ export const SectionDialog = <T extends SectionItem>({
   const onSubmit = (values: T) => {
     if (!section) return;
 
+    const sectionFormat: SectionFormat = SectionFormat[section.name as keyof typeof SectionFormat];
+    let data: string = "{";
+    for (const [key, value] of Object.entries(values)) {
+      if (key.toString() === "id") continue;
+      data += `${key}: ${value}`;
+    }
+    data += "}";
+
     if (isCreate || isDuplicate) {
+      const createdDto = createSection({
+        id: values.id,
+        format: sectionFormat,
+        userId: "userId",
+        data: data,
+      });
+      console.log("Created", createdDto);
+
       if (pendingKeyword && "keywords" in values) {
         values.keywords.push(pendingKeyword);
       }
@@ -78,7 +96,6 @@ export const SectionDialog = <T extends SectionItem>({
       );
 
       console.log("values", values);
-
     }
 
     if (isUpdate) {

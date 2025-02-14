@@ -21,4 +21,8 @@ export class SectionService {
       throw new InternalServerErrorException(error);
     }
   }
+
+  deleteSection(id: string) {
+    this.prisma.section.delete({ where: { id } });
+  }
 }

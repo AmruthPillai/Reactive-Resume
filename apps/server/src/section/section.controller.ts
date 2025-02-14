@@ -1,4 +1,14 @@
-import {Body, Controller, Get, InternalServerErrorException, Logger, Param, Post, UseGuards} from "@nestjs/common";
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  InternalServerErrorException,
+  Logger,
+  Param,
+  Post,
+  UseGuards
+} from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
 import {Prisma, User as UserEntity} from "@prisma/client";
 import { sectionSchemaWithData } from "@reactive-resume/schema";
@@ -32,5 +42,9 @@ export class SectionController {
       Logger.error(error);
       throw new InternalServerErrorException(error);
     }
+  }
+  @Delete(":id")
+  deleteSection(@Param("id") id: string) {
+
   }
 }
