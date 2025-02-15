@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
 /* eslint-disable react-hooks/rules-of-hooks */
-// artboard/src/pages/artboard.tsx
+import { defaultMetadata, defaultPortfolioMetadata } from "@reactive-resume/schema";
 import { useEffect, useMemo } from "react";
 import { Outlet, useSearchParams } from "react-router-dom";
 import webfontloader from "webfontloader";
@@ -11,15 +11,13 @@ export const ArtboardPage = () => {
   const [searchParams] = useSearchParams();
   const mode = searchParams.get("mode") ?? "resume";
 
-  // Get metadata based on mode with null checks
+  // Get metadata with fallback to defaults
   const metadata = useArtboardStore((state) => {
     if (mode === "portfolio") {
-      return state.portfolio.metadata;
+      return state.portfolio?.metadata ?? defaultPortfolioMetadata;
     }
-    return state.resume.metadata;
+    return state.resume?.metadata ?? defaultMetadata;
   });
-
-
 
   // Create font string for Google Fonts
   const fontString = useMemo(() => {
@@ -45,7 +43,6 @@ export const ArtboardPage = () => {
 
   // Set up CSS variables and styles
   useEffect(() => {
-
     // Font Size & Line Height
     document.documentElement.style.setProperty("font-size", `${metadata.typography.font.size}px`);
     document.documentElement.style.setProperty("line-height", `${metadata.typography.lineHeight}`);
@@ -66,8 +63,6 @@ export const ArtboardPage = () => {
 
   // Typography Options
   useEffect(() => {
-    if (!metadata) return;
-
     // eslint-disable-next-line unicorn/prefer-spread
     const elements = Array.from(document.querySelectorAll(`[data-page]`));
 

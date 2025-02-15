@@ -1,7 +1,5 @@
 import { z } from "zod";
 
-import { metadataSchema } from ".";
-
 // Layout Types
 export const portfolioLayoutTypeSchema = z.enum(["stack", "grid", "masonry", "fullwidth"]);
 export type PortfolioLayoutType = z.infer<typeof portfolioLayoutTypeSchema>;
@@ -13,12 +11,6 @@ export const portfolioLayoutConfigSchema = z.object({
   maxWidth: z.string().default("1200px"),
 });
 
-export const portfolioNavigationSchema = z.object({
-  style: z.enum(["fixed", "sticky", "floating"]).default("fixed"),
-  transparent: z.boolean().default(false),
-  showOnScroll: z.boolean().default(true),
-});
-
 // Portfolio Layout
 export const portfolioLayoutSchema = z.object({
   type: portfolioLayoutTypeSchema.default("stack"),
@@ -26,14 +18,18 @@ export const portfolioLayoutSchema = z.object({
   config: portfolioLayoutConfigSchema,
 });
 
+// Portfolio Navigation
+export const portfolioNavigationSchema = z.object({
+  style: z.enum(["fixed", "sticky", "floating"]).default("fixed"),
+  transparent: z.boolean().default(false),
+  showOnScroll: z.boolean().default(true),
+});
+
 // Portfolio Metadata Schema
-export const portfolioMetaSchema = z.object({
+export const portfolioMetadataSchema = z.object({
   template: z.string().default("minimal"),
   layout: portfolioLayoutSchema,
-  css: z.object({
-    value: z.string().default(""),
-    visible: z.boolean().default(false),
-  }),
+  navigation: portfolioNavigationSchema,
   theme: z.object({
     background: z.string().default("#ffffff"),
     text: z.string().default("#000000"),
@@ -50,6 +46,10 @@ export const portfolioMetaSchema = z.object({
     hideIcons: z.boolean().default(false),
     underlineLinks: z.boolean().default(true),
   }),
+  css: z.object({
+    value: z.string().default(""),
+    visible: z.boolean().default(false),
+  }),
   page: z.object({
     margin: z.number().default(18),
     format: z.enum(["a4", "letter"]).default("a4"),
@@ -61,26 +61,15 @@ export const portfolioMetaSchema = z.object({
   notes: z.string().default(""),
 });
 
-// Portfolio specific metadata
-export const portfolioMetadataSchema = metadataSchema.extend({
-  layout: portfolioLayoutSchema,
-  navigation: portfolioNavigationSchema,
-});
-
 // Types
-export type PortfolioMetadata = z.infer<typeof portfolioMetadataSchema>;
 export type PortfolioLayoutConfig = z.infer<typeof portfolioLayoutConfigSchema>;
 export type PortfolioLayout = z.infer<typeof portfolioLayoutSchema>;
 export type PortfolioNavigation = z.infer<typeof portfolioNavigationSchema>;
+export type PortfolioMetadata = z.infer<typeof portfolioMetadataSchema>;
 
-// Default Portfolio Metadata
+// Default values
 export const defaultPortfolioMetadata: PortfolioMetadata = {
   template: "minimal",
-  navigation: {
-    style: "fixed",
-    transparent: true,
-    showOnScroll: true,
-  },
   layout: {
     type: "stack",
     sections: [],
@@ -90,9 +79,10 @@ export const defaultPortfolioMetadata: PortfolioMetadata = {
       maxWidth: "1200px",
     },
   },
-  css: {
-    value: "",
-    visible: false,
+  navigation: {
+    style: "fixed",
+    transparent: false,
+    showOnScroll: true,
   },
   theme: {
     background: "#ffffff",
@@ -109,6 +99,10 @@ export const defaultPortfolioMetadata: PortfolioMetadata = {
     lineHeight: 1.6,
     hideIcons: false,
     underlineLinks: true,
+  },
+  css: {
+    value: "",
+    visible: false,
   },
   page: {
     margin: 18,

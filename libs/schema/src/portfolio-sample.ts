@@ -3,7 +3,7 @@ import { PortfolioData } from ".";
 export const samplePortfolio: PortfolioData = {
   basics: {
     name: "John Doe",
-    tagline: "Creative Developer & Designer",
+    headline: "Creative Developer & Designer",
     email: "john.doe@gmail.com",
     phone: "(555) 123-4567",
     location: "San Francisco, CA",
@@ -31,22 +31,26 @@ export const samplePortfolio: PortfolioData = {
         parallax: true,
       },
     },
-    about: "<p>Creative developer with 5+ years of experience in building impactful digital experiences. Passionate about creating beautiful, functional, and user-friendly websites and applications. Specializing in modern web technologies and design systems.</p>",
+    about:
+      "<p>Creative developer with 5+ years of experience in building impactful digital experiences. Passionate about creating beautiful, functional, and user-friendly websites and applications. Specializing in modern web technologies and design systems.</p>",
   },
   sections: {
     about: {
       id: "about",
       name: "About",
       columns: 1,
+      separateLinks: true,
       visible: true,
       fullWidth: true,
-      content: "<p>I am a full-stack developer with a passion for building beautiful, functional, and user-friendly applications. With over 5 years of experience in web development, I have worked on various projects ranging from small business websites to large-scale enterprise applications.</p><p>My expertise includes front-end development with React, Vue, and Angular, as well as back-end development with Node.js and Python. I am also experienced in database design, API development, and cloud infrastructure.</p>",
+      content:
+        "<p>I am a full-stack developer with a passion for building beautiful, functional, and user-friendly applications. With over 5 years of experience in web development, I have worked on various projects ranging from small business websites to large-scale enterprise applications.</p><p>My expertise includes front-end development with React, Vue, and Angular, as well as back-end development with Node.js and Python. I am also experienced in database design, API development, and cloud infrastructure.</p>",
     },
     showcase: {
       id: "showcase",
       name: "Featured Projects",
       columns: 2,
       visible: true,
+      separateLinks: true,
       fullWidth: false,
       items: [
         {
@@ -59,7 +63,7 @@ export const samplePortfolio: PortfolioData = {
           images: [
             "https://i.imgur.com/image1.jpg",
             "https://i.imgur.com/image2.jpg",
-            "https://i.imgur.com/image3.jpg"
+            "https://i.imgur.com/image3.jpg",
           ],
           technologies: ["React", "Node.js", "MongoDB", "AWS"],
           date: "2023",
@@ -75,49 +79,13 @@ export const samplePortfolio: PortfolioData = {
           description: "Real-time analytics dashboard for social media management",
           type: "website",
           thumbnail: "https://i.imgur.com/thumbnail2.jpg",
-          images: [
-            "https://i.imgur.com/image4.jpg",
-            "https://i.imgur.com/image5.jpg"
-          ],
+          images: ["https://i.imgur.com/image4.jpg", "https://i.imgur.com/image5.jpg"],
           technologies: ["Vue.js", "Firebase", "D3.js"],
           date: "2022",
           url: {
             label: "View Dashboard",
             href: "https://project2.com",
           },
-        },
-      ],
-    },
-    skillset: {
-      id: "skillset",
-      name: "Skills & Expertise",
-      columns: 3,
-      visible: true,
-      fullWidth: false,
-      items: [
-        {
-          id: "skill1",
-          visible: true,
-          name: "Frontend Development",
-          description: "Building responsive web applications",
-          level: 5,
-          keywords: ["React", "Vue", "Angular", "TypeScript", "Tailwind CSS"],
-        },
-        {
-          id: "skill2",
-          visible: true,
-          name: "Backend Development",
-          description: "Server-side applications and APIs",
-          level: 4,
-          keywords: ["Node.js", "Python", "PostgreSQL", "REST APIs", "GraphQL"],
-        },
-        {
-          id: "skill3",
-          visible: true,
-          name: "DevOps & Cloud",
-          description: "Cloud infrastructure and deployment",
-          level: 4,
-          keywords: ["AWS", "Docker", "CI/CD", "Kubernetes"],
         },
       ],
     },

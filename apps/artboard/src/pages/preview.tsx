@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { SectionKey } from "@reactive-resume/schema";
-import { Template } from "@reactive-resume/utils";
+import { PortfolioTemplate, Template } from "@reactive-resume/utils";
 import { useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 
@@ -14,24 +15,27 @@ export const PreviewLayout = () => {
   const [searchParams] = useSearchParams();
   const mode = searchParams.get("mode") ?? "resume";
 
-  const layout = useArtboardStore((state) => state.resume.metadata.layout);
-  const portfolioData = useArtboardStore((state) => state.portfolio);
+  // Get data with null checks
   const resumeData = useArtboardStore((state) => state.resume);
+  const portfolioData = useArtboardStore((state) => state.portfolio);
 
+  // Get layout and template based on mode
+  const layout =
+    mode === "portfolio" ? portfolioData.metadata.layout.sections : resumeData.metadata.layout;
+  console.log("layout", layout);
   const template =
     mode === "portfolio"
-      ? portfolioData.metadata.template
+      ? (portfolioData.metadata.template as PortfolioTemplate)
       : (resumeData.metadata.template as Template);
 
   const TemplateComponent = useMemo(() => {
     if (mode === "portfolio") {
-      return getPortfolioTemplate(template);
+      return getPortfolioTemplate(template as PortfolioTemplate);
     }
     return getTemplate(template as Template);
   }, [template, mode]);
 
-  // if (!TemplateComponent) return null;
-
+  // Portfolio Preview
   if (mode === "portfolio") {
     const PortfolioTemplate = TemplateComponent as React.ComponentType<PortfolioTemplateProps>;
     return (
@@ -44,7 +48,7 @@ export const PreviewLayout = () => {
   const ResumeTemplate = TemplateComponent as React.ComponentType<TemplateProps>;
   return (
     <>
-      {layout.map((columns, pageIndex) => (
+      {layout.map((columns, pageIndex: number) => (
         <Page key={pageIndex} mode="preview" pageNumber={pageIndex + 1}>
           <ResumeTemplate isFirstPage={pageIndex === 0} columns={columns as SectionKey[][]} />
         </Page>

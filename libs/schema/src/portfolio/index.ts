@@ -1,13 +1,14 @@
+// @reactive-resume/schema/src/portfolio/index.ts
 import { z } from "zod";
 
-import { defaultMetadata, metadataSchema } from "../metadata";
-import { defaultPortfolioBasics,portfolioBasicsSchema } from "./basics";
-import { defaultPortfolioSections,portfolioSectionsSchema } from "./sections";
+import { defaultPortfolioMetadata, portfolioMetadataSchema } from "../metadata";
+import { defaultPortfolioBasics, portfolioBasicsSchema } from "./basics";
+import { defaultPortfolioSections, portfolioSectionsSchema } from "./sections";
 
 export const portfolioDataSchema = z.object({
   basics: portfolioBasicsSchema,
   sections: portfolioSectionsSchema,
-  metadata: metadataSchema,
+  metadata: portfolioMetadataSchema,
 });
 
 export type PortfolioData = z.infer<typeof portfolioDataSchema>;
@@ -15,10 +16,7 @@ export type PortfolioData = z.infer<typeof portfolioDataSchema>;
 export const defaultPortfolioData: PortfolioData = {
   basics: defaultPortfolioBasics,
   sections: defaultPortfolioSections,
-  metadata: {
-    ...defaultMetadata,
-    template: "minimal", // Default portfolio template
-  },
+  metadata: defaultPortfolioMetadata,
 };
 
 export * from "./basics";
