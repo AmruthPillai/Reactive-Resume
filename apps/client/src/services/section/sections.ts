@@ -6,7 +6,7 @@ import { SECTIONS_KEY } from "@/client/constants/query-keys";
 import { axios } from "@/client/libs/axios";
 
 export const fetchSections = async () => {
-  const response = await axios.get<SectionDto[], AxiosResponse<SectionDto[]>>("/section");
+  const response = await axios.get<SectionDto[], AxiosResponse<SectionDto[]>>("/sectionItem");
 
   return response.data;
 };

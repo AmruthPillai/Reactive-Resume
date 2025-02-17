@@ -34,7 +34,7 @@ model User {
   provider         Provider
   secrets          Secrets?
   resumes          Resume[]
-  sections        Section[]
+  sections         SectionItem[] // Updated to reference SectionItem
 
   TeamsMapping TeamsMapping[]
 
@@ -69,7 +69,7 @@ model Resume {
   createdAt  DateTime    @default(now())
   updatedAt  DateTime    @updatedAt
 
-  SectionCVMapping SectionCVMapping[]
+  SectionItemCVMapping SectionItemCVMapping[] // Updated to reference SectionItemCVMapping
   TeamsMapping     TeamsMapping[]
 
   @@unique([userId, id])
@@ -106,7 +106,7 @@ enum SectionFormat {
   Custom
 }
 
-model Section {
+model SectionItem {
   id        String        @id @default(cuid())
   format    SectionFormat
   userId    String
@@ -114,16 +114,16 @@ model Section {
   data      Json          @default("{}")
   updatedAt DateTime      @updatedAt
 
-  SectionCVMapping SectionCVMapping[]
+  SectionItemCVMapping SectionItemCVMapping[] // Updated to reference SectionItemCVMapping
 
   @@index(fields: [userId])
 }
 
-model SectionCVMapping {
+model SectionItemCVMapping {
   id        String  @id @default(cuid())
-  sectionId String  @unique
-  section   Section @relation(fields: [sectionId], references: [id], onDelete: Cascade)
-  resumeId  String  @unique
+  sectionId String
+  section   SectionItem @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  resumeId  String
   resume    Resume  @relation(fields: [resumeId], references: [id], onDelete: Cascade)
   order     Int
 

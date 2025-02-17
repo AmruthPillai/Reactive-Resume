@@ -55,7 +55,7 @@ export const LeftSidebar = () => {
             name={t({
               message: "Basics",
               context:
-                "The basics section of a resume consists of User's Picture, Full Name, Location etc.",
+                "The basics sectionItem of a resume consists of User's Picture, Full Name, Location etc.",
             })}
             onClick={() => {
               scrollIntoView("#basics");
@@ -148,7 +148,7 @@ export const LeftSidebar = () => {
             onClick={() => {
               addSection();
               // eslint-disable-next-line lingui/no-unlocalized-strings
-              scrollIntoView("& > section:last-of-type");
+              scrollIntoView("& > sectionItem:last-of-type");
             }}
           />
         </div>
