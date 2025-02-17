@@ -4,12 +4,14 @@ import {
   Get,
   InternalServerErrorException,
   Logger,
+  Param,
+  Patch,
   Post,
   UseGuards,
 } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
 import { User as UserEntity } from "@prisma/client";
-import { CreateSectionDto } from "@reactive-resume/dto";
+import { CreateSectionDto, UpdateSectionDto } from "@reactive-resume/dto";
 import { sectionSchemaWithData } from "@reactive-resume/schema";
 import zodToJsonSchema from "zod-to-json-schema";
 
@@ -49,4 +51,19 @@ export class SectionItemController {
   }
 
 
+
+  @Patch(":id")
+  @UseGuards(TwoFactorGuard)
+  async update(
+    @User() user: UserEntity,
+    @Param("id") id: string,
+    @Body() updateSectionDto: UpdateSectionDto,
+  ) {
+    try {
+      return await this.sectionService.updateSection(user.id, id, updateSectionDto);
+    } catch (error) {
+      Logger.error(error);
+      throw new InternalServerErrorException(error);
+    }
+  }
 }
