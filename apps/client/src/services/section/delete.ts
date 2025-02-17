@@ -1,4 +1,5 @@
-﻿import {  DeleteSectionDto } from "../../../../../libs/dto/src/section";
+﻿import type { DeleteSectionDto } from "@reactive-resume/dto";
+
 import { axios } from "@/client/libs/axios";
 
 export const deleteSection = async (data: DeleteSectionDto) => {

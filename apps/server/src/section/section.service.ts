@@ -40,9 +40,9 @@ export class SectionService {
     }
   }
 
-  async deleteSection(id: string) {
+  async deleteSection(userId: string, id: string) {
     try {
-      return await this.prisma.section.delete({ where: { id } });
+      return await this.prisma.section.delete({ where: { userId_id: { userId, id } } });
     } catch (error) {
       Logger.error(error);
       throw new InternalServerErrorException(error);

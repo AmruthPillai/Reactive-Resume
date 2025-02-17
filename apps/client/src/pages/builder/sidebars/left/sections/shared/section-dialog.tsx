@@ -28,7 +28,7 @@ import get from "lodash.get";
 import { useEffect } from "react";
 import type { UseFormReturn } from "react-hook-form";
 
-import { updateSection } from "@/client/services/section";
+import { deleteSection, updateSection } from "@/client/services/section";
 import { createSection } from "@/client/services/section/create";
 import type { DialogName } from "@/client/stores/dialog";
 import { useDialog } from "@/client/stores/dialog";
@@ -121,6 +121,10 @@ export const SectionDialog = <T extends SectionItem>({
 
     if (isDelete) {
       if (!payload.item?.id) return;
+
+      await deleteSection({
+        id: values.id,
+      });
 
       setValue(
         `sections.${id}.items`,
