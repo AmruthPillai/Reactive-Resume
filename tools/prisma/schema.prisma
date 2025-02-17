@@ -116,6 +116,7 @@ model Section {
 
   SectionCVMapping SectionCVMapping[]
 
+  @@unique([userId, id])
   @@index(fields: [userId])
 }
 

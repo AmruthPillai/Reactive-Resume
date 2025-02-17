@@ -47,5 +47,6 @@ export class SectionController {
   }
 
   @Delete(":id")
+  @UseGuards(TwoFactorGuard)
   delete(@Param("id") id: string) {}
 }
