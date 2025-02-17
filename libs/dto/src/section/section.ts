@@ -1,4 +1,4 @@
-﻿import { defaultResumeData, idSchema, resumeDataSchema } from "@reactive-resume/schema";
+import { defaultResumeData, idSchema, resumeDataSchema } from "@reactive-resume/schema";
 import { dateSchema } from "@reactive-resume/utils";
 import { createZodDto } from "nestjs-zod/dto";
 import { z } from "zod";
