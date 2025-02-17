@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Delete,
   Get,
   InternalServerErrorException,
   Logger,
@@ -61,6 +62,17 @@ export class SectionItemController {
   ) {
     try {
       return await this.sectionService.updateSection(user.id, id, updateSectionDto);
+    } catch (error) {
+      Logger.error(error);
+      throw new InternalServerErrorException(error);
+    }
+  }
+
+  @Delete(":id")
+  @UseGuards(TwoFactorGuard)
+  async delete(@User() user: UserEntity, @Param("id") id: string) {
+    try {
+      return await this.sectionService.deleteSection(user.id, id);
     } catch (error) {
       Logger.error(error);
       throw new InternalServerErrorException(error);

@@ -1,4 +1,5 @@
-﻿import { DeleteDto } from "../../../../../libs/dto/src/section";
+import { DeleteDto } from "../../../../../libs/dto/src/section";
+
 import { axios } from "@/client/libs/axios";
 
 export const deleteSection = async (data: DeleteDto) => {
