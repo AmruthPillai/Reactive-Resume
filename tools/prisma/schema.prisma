@@ -21,20 +21,20 @@ enum Visibility {
 }
 
 model User {
-  id               String   @id @default(cuid())
+  id               String    @id @default(cuid())
   name             String
   picture          String?
-  username         String   @unique
-  email            String   @unique
-  locale           String   @default("en-US")
-  emailVerified    Boolean  @default(false)
-  twoFactorEnabled Boolean  @default(false)
-  createdAt        DateTime @default(now())
-  updatedAt        DateTime @updatedAt
+  username         String    @unique
+  email            String    @unique
+  locale           String    @default("en-US")
+  emailVerified    Boolean   @default(false)
+  twoFactorEnabled Boolean   @default(false)
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
   provider         Provider
   secrets          Secrets?
   resumes          Resume[]
-  sections        Section[]
+  sections         Section[]
 
   TeamsMapping TeamsMapping[]
 
@@ -90,20 +90,20 @@ model Statistics {
 }
 
 enum SectionFormat {
-  Basics
-  Profiles
-  Experience
-  Education
-  Skills
-  Languages
-  Awards
-  Certifications
-  Interests
-  Projects
-  Publications
-  Volunteering
-  References
-  Custom
+  basics
+  profiles
+  experience
+  education
+  skills
+  languages
+  awards
+  certifications
+  interests
+  projects
+  publications
+  volunteering
+  references
+  custom
 }
 
 model Section {

@@ -5,8 +5,22 @@ import { SectionFormat } from "./section";
 
 export const createSectionSchema = z.object({
   id: idSchema,
-  format: z.nativeEnum(SectionFormat),
-  userId: idSchema,
+  format: z.enum([
+    "basics",
+    "profiles",
+    "experience",
+    "education",
+    "skills",
+    "languages",
+    "awards",
+    "certifications",
+    "interests",
+    "projects",
+    "publications",
+    "volunteering",
+    "references",
+    "custom",
+  ]),
   data: z.string(),
 });
 

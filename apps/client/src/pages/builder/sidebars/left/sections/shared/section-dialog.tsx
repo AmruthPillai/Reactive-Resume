@@ -64,25 +64,31 @@ export const SectionDialog = <T extends SectionItem>({
     if (isOpen) onReset();
   }, [isOpen, payload]);
 
-  const onSubmit = (values: T) => {
+  const onSubmit = async (values: T) => {
     if (!section) return;
 
     const sectionFormat: SectionFormat = SectionFormat[section.name as keyof typeof SectionFormat];
     let data: string = "{";
     for (const [key, value] of Object.entries(values)) {
+      if (data !== "{") data += ", ";
+      console.log(key, value.toString());
       if (key.toString() === "id") continue;
-      data += `${key}: ${value}`;
+
+      data += `${key}: ${value.toString()}`;
     }
     data += "}";
 
     if (isCreate || isDuplicate) {
-      const createdDto = createSection({
+      console.log("Created", {
         id: values.id,
         format: sectionFormat,
-        userId: "userId",
         data: data,
       });
-      console.log("Created", createdDto);
+      await createSection({
+        id: values.id,
+        format: sectionFormat,
+        data: data,
+      });
 
       if (pendingKeyword && "keywords" in values) {
         values.keywords.push(pendingKeyword);
@@ -94,8 +100,6 @@ export const SectionDialog = <T extends SectionItem>({
           draft.push({ ...values, id: createId() });
         }),
       );
-
-      console.log("values", values);
     }
 
     if (isUpdate) {
