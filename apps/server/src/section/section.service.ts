@@ -32,7 +32,7 @@ export class SectionService {
         data: {
           data: updateSectionDto.data,
         },
-        where: { userId_id: { userId, id} },
+        where: { userId_id: { userId, id } },
       });
     } catch (error) {
       Logger.error(error);
@@ -42,7 +42,7 @@ export class SectionService {
 
   async deleteSection(id: string) {
     try {
-      this.prisma.section.delete({ where: { id } });
+      return await this.prisma.section.delete({ where: { id } });
     } catch (error) {
       Logger.error(error);
       throw new InternalServerErrorException(error);

@@ -2,7 +2,7 @@ import { defaultResumeData, idSchema, resumeDataSchema } from "@reactive-resume/
 import { dateSchema } from "@reactive-resume/utils";
 import { createZodDto } from "nestjs-zod/dto";
 import { z } from "zod";
-import { userSchema } from "@reactive-resume/dto";
+import { userSchema } from "../user";
 
 export enum SectionFormat {
   Basics= "basics",
