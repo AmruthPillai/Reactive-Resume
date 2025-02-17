@@ -11,14 +11,8 @@ export const resumeDataSchema = z.object({
   metadata: metadataSchema,
 });
 
-export const sectionDataSchema = z.object({
-
-});
-
 // Type
 export type ResumeData = z.infer<typeof resumeDataSchema>;
-
-export type SectionData = z.infer<typeof sectionDataSchema>;
 
 // Defaults
 export const defaultResumeData: ResumeData = {
@@ -26,10 +20,6 @@ export const defaultResumeData: ResumeData = {
   sections: defaultSections,
   metadata: defaultMetadata,
 };
-
-export const defaultSectionData: SectionData = {
-  data: "{}",
-}
 
 export * from "./basics";
 export * from "./metadata";

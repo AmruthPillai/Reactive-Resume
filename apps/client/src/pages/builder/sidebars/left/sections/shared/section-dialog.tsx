@@ -2,7 +2,8 @@ import { t } from "@lingui/macro";
 import { createId } from "@paralleldrive/cuid2";
 import { CopySimple, PencilSimple, Plus } from "@phosphor-icons/react";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import { Award, SectionItem, SectionWithItem } from "@reactive-resume/schema";
+import { SectionFormat } from "@reactive-resume/dto";
+import type { SectionItem, SectionWithItem } from "@reactive-resume/schema";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -27,11 +28,10 @@ import get from "lodash.get";
 import { useEffect } from "react";
 import type { UseFormReturn } from "react-hook-form";
 
+import { createSection } from "@/client/services/section/create";
 import type { DialogName } from "@/client/stores/dialog";
 import { useDialog } from "@/client/stores/dialog";
 import { useResumeStore } from "@/client/stores/resume";
-import { CreateSectionDto, SectionFormat } from "../../../../../../../../../libs/dto/src/section";
-import { createSection } from "@/client/services/section/create";
 
 type Props<T extends SectionItem> = {
   id: DialogName;
@@ -68,22 +68,14 @@ export const SectionDialog = <T extends SectionItem>({
     if (!section) return;
 
     const sectionFormat: SectionFormat = SectionFormat[section.name as keyof typeof SectionFormat];
-    let data: string = "{";
-    for (const [key, value] of Object.entries(values)) {
-      if (data !== "{") data += ", ";
-      console.log(key, value.toString());
-      if (key.toString() === "id") continue;
+    const result = Object.entries(values)
+      .filter(([key]) => key !== "id")
+      .map(([key, value]) => `${key.toString()}: ${value.toString()}`)
+      .join(", ");
 
-      data += `${key}: ${value.toString()}`;
-    }
-    data += "}";
+    const data = "{ " + result + " }";
 
     if (isCreate || isDuplicate) {
-      console.log("Created", {
-        id: values.id,
-        format: sectionFormat,
-        data: data,
-      });
       await createSection({
         id: values.id,
         format: sectionFormat,
