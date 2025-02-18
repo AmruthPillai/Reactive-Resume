@@ -1,6 +1,15 @@
-import { Controller, Get, UseGuards } from "@nestjs/common";
+import {
+  Body,
+  Controller,
+  Get,
+  InternalServerErrorException,
+  Logger,
+  Post,
+  UseGuards,
+} from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
 import { User as UserEntity } from "@prisma/client";
+import { CreateSectionDto } from "@reactive-resume/dto";
 import { sectionSchemaWithData } from "@reactive-resume/schema";
 import zodToJsonSchema from "zod-to-json-schema";
 
@@ -24,6 +33,16 @@ export class SectionItemController {
     return this.sectionItemService.findAll(user.id);
   }
 
+  @Post()
+  @UseGuards(TwoFactorGuard)
+  async create(@User() user: UserEntity, @Body() createSectionDto: CreateSectionDto) {
+    try {
+      return await this.sectionService.createSection(user.id, createSectionDto);
+    } catch (error) {
+      Logger.error(error);
+      throw new InternalServerErrorException(error);
+    }
+  }
   @Get("/hello")
   hello() {
     return "Hello World!";

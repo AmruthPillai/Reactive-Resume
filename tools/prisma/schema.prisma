@@ -21,16 +21,16 @@ enum Visibility {
 }
 
 model User {
-  id               String   @id @default(cuid())
+  id               String        @id @default(cuid())
   name             String
   picture          String?
-  username         String   @unique
-  email            String   @unique
-  locale           String   @default("en-US")
-  emailVerified    Boolean  @default(false)
-  twoFactorEnabled Boolean  @default(false)
-  createdAt        DateTime @default(now())
-  updatedAt        DateTime @updatedAt
+  username         String        @unique
+  email            String        @unique
+  locale           String        @default("en-US")
+  emailVerified    Boolean       @default(false)
+  twoFactorEnabled Boolean       @default(false)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
   provider         Provider
   secrets          Secrets?
   resumes          Resume[]
@@ -70,7 +70,7 @@ model Resume {
   updatedAt  DateTime    @updatedAt
 
   SectionItemCVMapping SectionItemCVMapping[] // Updated to reference SectionItemCVMapping
-  TeamsMapping     TeamsMapping[]
+  TeamsMapping         TeamsMapping[]
 
   @@unique([userId, id])
   @@unique([userId, slug])
@@ -90,20 +90,20 @@ model Statistics {
 }
 
 enum SectionFormat {
-  Basics
-  Profiles
-  Experience
-  Education
-  Skills
-  Languages
-  Awards
-  Certifications
-  Interests
-  Projects
-  Publications
-  Volunteering
-  References
-  Custom
+  basics
+  profiles
+  experience
+  education
+  skills
+  languages
+  awards
+  certifications
+  interests
+  projects
+  publications
+  volunteering
+  references
+  custom
 }
 
 model SectionItem {
@@ -116,15 +116,16 @@ model SectionItem {
 
   SectionItemCVMapping SectionItemCVMapping[] // Updated to reference SectionItemCVMapping
 
+  @@unique([userId, id])
   @@index(fields: [userId])
 }
 
 model SectionItemCVMapping {
-  id        String  @id @default(cuid())
+  id        String      @id @default(cuid())
   sectionId String
   section   SectionItem @relation(fields: [sectionId], references: [id], onDelete: Cascade)
   resumeId  String
-  resume    Resume  @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  resume    Resume      @relation(fields: [resumeId], references: [id], onDelete: Cascade)
   order     Int
 
   @@unique([resumeId, order])

@@ -2,6 +2,7 @@ import { t } from "@lingui/macro";
 import { createId } from "@paralleldrive/cuid2";
 import { CopySimple, PencilSimple, Plus } from "@phosphor-icons/react";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import { SectionFormat } from "@reactive-resume/dto";
 import type { SectionItem, SectionWithItem } from "@reactive-resume/schema";
 import {
   AlertDialog,
@@ -27,6 +28,7 @@ import get from "lodash.get";
 import { useEffect } from "react";
 import type { UseFormReturn } from "react-hook-form";
 
+import { createSection } from "@/client/services/section/create";
 import type { DialogName } from "@/client/stores/dialog";
 import { useDialog } from "@/client/stores/dialog";
 import { useResumeStore } from "@/client/stores/resume";
@@ -37,6 +39,19 @@ type Props<T extends SectionItem> = {
   defaultValues: T;
   pendingKeyword?: string;
   children: React.ReactNode;
+};
+
+const getStringFromValues = (values: object): string => {
+  const result = Object.entries(values)
+    .filter(([key]) => key !== "id")
+    .map(([key, value]) => {
+      if (typeof value === "object") return `${key.toString()}: ${getStringFromValues(value)}`;
+
+      return `${key.toString()}: ${value.toString()}`;
+    })
+    .join(", ");
+
+  return "{ " + result + " }";
 };
 
 export const SectionDialog = <T extends SectionItem>({
@@ -62,10 +77,20 @@ export const SectionDialog = <T extends SectionItem>({
     if (isOpen) onReset();
   }, [isOpen, payload]);
 
-  const onSubmit = (values: T) => {
+  const onSubmit = async (values: T) => {
     if (!section) return;
 
+    const sectionFormat: SectionFormat = SectionFormat[section.name as keyof typeof SectionFormat];
+
+    const data = getStringFromValues(values);
+
     if (isCreate || isDuplicate) {
+      await createSection({
+        id: values.id,
+        format: sectionFormat,
+        data: data,
+      });
+
       if (pendingKeyword && "keywords" in values) {
         values.keywords.push(pendingKeyword);
       }

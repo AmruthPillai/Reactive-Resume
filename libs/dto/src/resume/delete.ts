@@ -2,8 +2,8 @@ import { idSchema } from "@reactive-resume/schema";
 import { createZodDto } from "nestjs-zod/dto";
 import { z } from "zod";
 
-export const deleteResumeSchema = z.object({
+export const deleteSchema = z.object({
   id: idSchema,
 });
 
-export class DeleteResumeDto extends createZodDto(deleteResumeSchema) {}
+export class DeleteDto extends createZodDto(deleteSchema) {}

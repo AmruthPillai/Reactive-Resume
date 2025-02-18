@@ -1,5 +1,6 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, InternalServerErrorException, Logger } from "@nestjs/common";
 import { PrismaService } from "nestjs-prisma";
+import { CreateSectionDto, DeleteDto } from "@reactive-resume/dto";
 
 @Injectable()
 export class SectionItemService {
@@ -7,5 +8,21 @@ export class SectionItemService {
 
   findAll(userId: string) {
     return this.prisma.sectionItem.findMany({ where: { userId }, orderBy: { updatedAt: "desc" } });
+  }
+
+  async createSection(userId: string, createSectionDto: CreateSectionDto) {
+    try {
+      // Create the new section
+      return await this.prisma.section.create({
+        data: {
+          data: createSectionDto.data,
+          format: createSectionDto.format,
+          userId: userId,
+        },
+      });
+    } catch (error) {
+      Logger.error(error);
+      throw new InternalServerErrorException(error);
+    }
   }
 }
