@@ -62,7 +62,7 @@ export class SectionItemController {
     @Body() updateSectionDto: UpdateSectionDto
   ) {
     try {
-      return await this.sectionService.updateSection(user.id, id, updateSectionDto);
+      return await this.sectionItemService.updateSection(user.id, id, updateSectionDto);
     } catch (error) {
       Logger.error(error);
       throw new InternalServerErrorException(error);
