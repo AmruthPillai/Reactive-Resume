@@ -15,12 +15,12 @@ import zodToJsonSchema from "zod-to-json-schema";
 
 import { TwoFactorGuard } from "../auth/guards/two-factor.guard";
 import { User } from "../user/decorators/user.decorator";
-import { SectionService } from "./section.service";
+import { SectionItemService } from "./sectionItem.service";
 
-@ApiTags("Section")
-@Controller("section")
-export class SectionController {
-  constructor(private readonly sectionService: SectionService) {}
+@ApiTags("SectionItem")
+@Controller("sectionItem")
+export class SectionItemController {
+  constructor(private readonly sectionItemService: SectionItemService) {}
 
   @Get("schema")
   getSchema() {
@@ -30,7 +30,7 @@ export class SectionController {
   @Get()
   @UseGuards(TwoFactorGuard)
   findAll(@User() user: UserEntity) {
-    return this.sectionService.findAll(user.id);
+    return this.sectionItemService.findAll(user.id);
   }
 
   @Post()
@@ -43,4 +43,10 @@ export class SectionController {
       throw new InternalServerErrorException(error);
     }
   }
+  @Get("/hello")
+  hello() {
+    return "Hello World!";
+  }
+
+
 }

@@ -3,11 +3,11 @@ import { PrismaService } from "nestjs-prisma";
 import { CreateSectionDto, DeleteDto } from "@reactive-resume/dto";
 
 @Injectable()
-export class SectionService {
+export class SectionItemService {
   constructor(private readonly prisma: PrismaService) {}
 
   findAll(userId: string) {
-    return this.prisma.section.findMany({ where: { userId }, orderBy: { updatedAt: "desc" } });
+    return this.prisma.sectionItem.findMany({ where: { userId }, orderBy: { updatedAt: "desc" } });
   }
 
   async createSection(userId: string, createSectionDto: CreateSectionDto) {

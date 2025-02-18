@@ -15,7 +15,7 @@ import { HealthModule } from "./health/health.module";
 import { MailModule } from "./mail/mail.module";
 import { PrinterModule } from "./printer/printer.module";
 import { ResumeModule } from "./resume/resume.module";
-import { SectionModule } from "./section/section.module";
+import { SectionItemModule } from "./sectionItem/sectionItem.module";
 import { StorageModule } from "./storage/storage.module";
 import { TranslationModule } from "./translation/translation.module";
 import { UserModule } from "./user/user.module";
@@ -38,7 +38,7 @@ import { UserModule } from "./user/user.module";
     FeatureModule,
     TranslationModule,
     ContributorsModule,
-    SectionModule,
+    SectionItemModule,
 
     // Static Assets
     ServeStaticModule.forRoot({

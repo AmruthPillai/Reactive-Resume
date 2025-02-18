@@ -21,20 +21,20 @@ enum Visibility {
 }
 
 model User {
-  id               String    @id @default(cuid())
+  id               String        @id @default(cuid())
   name             String
   picture          String?
-  username         String    @unique
-  email            String    @unique
-  locale           String    @default("en-US")
-  emailVerified    Boolean   @default(false)
-  twoFactorEnabled Boolean   @default(false)
-  createdAt        DateTime  @default(now())
-  updatedAt        DateTime  @updatedAt
+  username         String        @unique
+  email            String        @unique
+  locale           String        @default("en-US")
+  emailVerified    Boolean       @default(false)
+  twoFactorEnabled Boolean       @default(false)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
   provider         Provider
   secrets          Secrets?
   resumes          Resume[]
-  sections         Section[]
+  sections         SectionItem[] // Updated to reference SectionItem
 
   TeamsMapping TeamsMapping[]
 
@@ -69,8 +69,8 @@ model Resume {
   createdAt  DateTime    @default(now())
   updatedAt  DateTime    @updatedAt
 
-  SectionCVMapping SectionCVMapping[]
-  TeamsMapping     TeamsMapping[]
+  SectionItemCVMapping SectionItemCVMapping[] // Updated to reference SectionItemCVMapping
+  TeamsMapping         TeamsMapping[]
 
   @@unique([userId, id])
   @@unique([userId, slug])
@@ -106,7 +106,7 @@ enum SectionFormat {
   custom
 }
 
-model Section {
+model SectionItem {
   id        String        @id @default(cuid())
   format    SectionFormat
   userId    String
@@ -114,18 +114,18 @@ model Section {
   data      Json          @default("{}")
   updatedAt DateTime      @updatedAt
 
-  SectionCVMapping SectionCVMapping[]
+  SectionItemCVMapping SectionItemCVMapping[] // Updated to reference SectionItemCVMapping
 
   @@unique([userId, id])
   @@index(fields: [userId])
 }
 
-model SectionCVMapping {
-  id        String  @id @default(cuid())
-  sectionId String  @unique
-  section   Section @relation(fields: [sectionId], references: [id], onDelete: Cascade)
-  resumeId  String  @unique
-  resume    Resume  @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+model SectionItemCVMapping {
+  id        String      @id @default(cuid())
+  sectionId String
+  section   SectionItem @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  resumeId  String
+  resume    Resume      @relation(fields: [resumeId], references: [id], onDelete: Cascade)
   order     Int
 
   @@unique([resumeId, order])
