@@ -109,6 +109,7 @@ export class AuthService {
         locale: registerDto.locale,
         provider: "email",
         emailVerified: false, // Set to true if you don't want to verify user's email
+        profileResumeId: null,
         secrets: { create: { password: hashedPassword } },
       });
 

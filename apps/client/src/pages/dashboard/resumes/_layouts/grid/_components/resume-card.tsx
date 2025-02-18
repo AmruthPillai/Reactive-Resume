@@ -60,6 +60,11 @@ export const ResumeCard = ({ resume }: Props) => {
     <DropdownMenu>
       <DropdownMenuTrigger className="text-left">
         <BaseCard className="cursor-context-menu space-y-0">
+          {/* Star Banner */}
+          <div className="absolute right-0 top-0 bg-orange-500 px-3 py-2 text-xs font-bold text-white shadow-lg">
+            {t`★ Special`}
+          </div>
+
           <AnimatePresence>
             {resume.locked && (
               <motion.div
