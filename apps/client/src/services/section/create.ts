@@ -1,9 +1,9 @@
 import { axios } from "@/client/libs/axios";
-import { CreateSectionDto, SectionDto } from "@reactive-resume/dto";
+import { CreateSectionDto, SectionItemDto } from "@reactive-resume/dto";
 import { AxiosResponse } from "axios";
 
 export const createSection = async (data: CreateSectionDto) => {
-  const response = await axios.post<SectionDto, AxiosResponse<SectionDto>, CreateSectionDto>(
+  const response = await axios.post<SectionItemDto, AxiosResponse<SectionItemDto>, CreateSectionDto>(
     "/section",
     data,
   );

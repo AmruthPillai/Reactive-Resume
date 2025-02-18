@@ -32,6 +32,7 @@ import { createSection } from "@/client/services/section/create";
 import type { DialogName } from "@/client/stores/dialog";
 import { useDialog } from "@/client/stores/dialog";
 import { useResumeStore } from "@/client/stores/resume";
+import { updateSectionItem } from "@/client/services/section";
 
 type Props<T extends SectionItem> = {
   id: DialogName;
@@ -85,11 +86,12 @@ export const SectionDialog = <T extends SectionItem>({
     const data = getStringFromValues(values);
 
     if (isCreate || isDuplicate) {
-      await createSection({
-        id: values.id,
+      const dto = await createSection({
         format: sectionFormat,
         data: data,
       });
+
+      values.id = dto.id;
 
       if (pendingKeyword && "keywords" in values) {
         values.keywords.push(pendingKeyword);
@@ -98,13 +100,18 @@ export const SectionDialog = <T extends SectionItem>({
       setValue(
         `sections.${id}.items`,
         produce(section.items, (draft: T[]): void => {
-          draft.push({ ...values, id: createId() });
+          draft.push({ ...values, id: dto.id });
         }),
       );
     }
 
     if (isUpdate) {
       if (!payload.item?.id) return;
+
+      await updateSectionItem({
+        id: values.id,
+        data: data,
+      });
 
       if (pendingKeyword && "keywords" in values) {
         values.keywords.push(pendingKeyword);
