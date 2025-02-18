@@ -41,6 +41,19 @@ type Props<T extends SectionItem> = {
   children: React.ReactNode;
 };
 
+const getStringFromValues = (values: object): string => {
+  const result = Object.entries(values)
+    .filter(([key]) => key !== "id")
+    .map(([key, value]) => {
+      if (typeof value === "object") return `${key.toString()}: ${getStringFromValues(value)}`;
+
+      return `${key.toString()}: ${value.toString()}`;
+    })
+    .join(", ");
+
+  return "{ " + result + " }";
+};
+
 export const SectionDialog = <T extends SectionItem>({
   id,
   form,
@@ -68,12 +81,9 @@ export const SectionDialog = <T extends SectionItem>({
     if (!section) return;
 
     const sectionFormat: SectionFormat = SectionFormat[section.name as keyof typeof SectionFormat];
-    const result = Object.entries(values)
-      .filter(([key]) => key !== "id")
-      .map(([key, value]) => `${key.toString()}: ${value.toString()}`)
-      .join(", ");
 
-    const data = "{ " + result + " }";
+    const data = getStringFromValues(values);
+    console.log(data);
 
     if (isCreate || isDuplicate) {
       await createSection({

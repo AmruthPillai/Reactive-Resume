@@ -1,12 +1,12 @@
-import type { DeleteResumeDto, ResumeDto } from "@reactive-resume/dto";
+import type { DeleteDto, ResumeDto } from "@reactive-resume/dto";
 import { useMutation } from "@tanstack/react-query";
 import type { AxiosResponse } from "axios";
 
 import { axios } from "@/client/libs/axios";
 import { queryClient } from "@/client/libs/query-client";
 
-export const deleteResume = async (data: DeleteResumeDto) => {
-  const response = await axios.delete<ResumeDto, AxiosResponse<ResumeDto>, DeleteResumeDto>(
+export const deleteResume = async (data: DeleteDto) => {
+  const response = await axios.delete<ResumeDto, AxiosResponse<ResumeDto>, DeleteDto>(
     `/resume/${data.id}`,
   );
 
