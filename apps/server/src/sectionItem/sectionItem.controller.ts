@@ -12,7 +12,7 @@ import {
 } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
 import { User as UserEntity } from "@prisma/client";
-import { CreateSectionDto, UpdateSectionDto } from "@reactive-resume/dto";
+import { CreateSectionDto, UpdateSectionItemDto } from "@reactive-resume/dto";
 import { sectionSchemaWithData } from "@reactive-resume/schema";
 import zodToJsonSchema from "zod-to-json-schema";
 
@@ -59,7 +59,7 @@ export class SectionItemController {
   async update(
     @User() user: UserEntity,
     @Param("id") id: string,
-    @Body() updateSectionDto: UpdateSectionDto
+    @Body() updateSectionDto: UpdateSectionItemDto
   ) {
     try {
       return await this.sectionItemService.updateSection(user.id, id, updateSectionDto);

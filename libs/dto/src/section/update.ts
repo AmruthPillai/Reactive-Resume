@@ -4,4 +4,4 @@ import { sectionSchema } from "./section";
 
 export const updateSectionSchema = sectionSchema.partial();
 
-export class UpdateSectionDto extends createZodDto(updateSectionSchema) {}
+export class UpdateSectionItemDto extends createZodDto(updateSectionSchema) {}

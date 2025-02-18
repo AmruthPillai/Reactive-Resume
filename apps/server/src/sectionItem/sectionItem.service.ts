@@ -1,6 +1,6 @@
 import { Injectable, InternalServerErrorException, Logger } from "@nestjs/common";
 import { PrismaService } from "nestjs-prisma";
-import { CreateSectionDto, UpdateSectionDto } from "@reactive-resume/dto";
+import { CreateSectionDto, UpdateSectionItemDto } from "@reactive-resume/dto";
 
 @Injectable()
 export class SectionItemService {
@@ -26,7 +26,7 @@ export class SectionItemService {
     }
   }
 
-  async updateSection(userId: string, id: string, updateSectionDto: UpdateSectionDto) {
+  async updateSection(userId: string, id: string, updateSectionDto: UpdateSectionItemDto) {
     try {
       return await this.prisma.sectionItem.update({
         data: {

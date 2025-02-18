@@ -32,7 +32,7 @@ import { createSection } from "@/client/services/section/create";
 import type { DialogName } from "@/client/stores/dialog";
 import { useDialog } from "@/client/stores/dialog";
 import { useResumeStore } from "@/client/stores/resume";
-import { updateSection } from "@/client/services/section";
+import { updateSectionItem } from "@/client/services/section";
 
 type Props<T extends SectionItem> = {
   id: DialogName;
@@ -108,7 +108,7 @@ export const SectionDialog = <T extends SectionItem>({
     if (isUpdate) {
       if (!payload.item?.id) return;
 
-      await updateSection({
+      await updateSectionItem({
         id: values.id,
         data: data,
       });
