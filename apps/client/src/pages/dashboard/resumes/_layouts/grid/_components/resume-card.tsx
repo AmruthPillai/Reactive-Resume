@@ -121,7 +121,7 @@ export const ResumeCard = ({ resume }: Props) => {
         </DropdownMenuItem>
         <DropdownMenuItem onClick={onSetDefault}>
           <FolderOpen size={14} className="mr-2" />
-          {t`Set as default`}
+          {t`Set as profile`}
         </DropdownMenuItem>
         {resume.locked ? (
           <DropdownMenuItem onClick={onLockChange}>
