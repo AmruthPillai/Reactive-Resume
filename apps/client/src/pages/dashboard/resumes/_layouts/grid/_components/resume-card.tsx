@@ -16,10 +16,13 @@ import {
   DropdownMenuTrigger,
 } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
+import { useQueryClient } from "@tanstack/react-query";
 import dayjs from "dayjs";
 import { AnimatePresence, motion } from "framer-motion";
 import { useNavigate } from "react-router";
 
+import { setDefault } from "@/client/services/resume";
+import { useAuthStore } from "@/client/stores/auth";
 import { useDialog } from "@/client/stores/dialog";
 
 import { BaseCard } from "./base-card";
@@ -32,6 +35,8 @@ export const ResumeCard = ({ resume }: Props) => {
   const navigate = useNavigate();
   const { open } = useDialog<ResumeDto>("resume");
   const { open: lockOpen } = useDialog<ResumeDto>("lock");
+  const { user } = useAuthStore();
+  const queryClient = useQueryClient();
 
   const template = resume.data.metadata.template;
   const lastUpdated = dayjs().to(resume.updatedAt);
@@ -42,6 +47,12 @@ export const ResumeCard = ({ resume }: Props) => {
 
   const onUpdate = () => {
     open("update", { id: "resume", item: resume });
+  };
+
+  const onSetDefault = async () => {
+    if (!user) return;
+    await setDefault({ resumeId: resume.id, userId: user.id });
+    await queryClient.invalidateQueries({ queryKey: ["user"] });
   };
 
   const onDuplicate = () => {
@@ -60,11 +71,6 @@ export const ResumeCard = ({ resume }: Props) => {
     <DropdownMenu>
       <DropdownMenuTrigger className="text-left">
         <BaseCard className="cursor-context-menu space-y-0">
-          {/* Star Banner */}
-          <div className="absolute right-0 top-0 bg-orange-500 px-3 py-2 text-xs font-bold text-white shadow-lg">
-            {t`★ Special`}
-          </div>
-
           <AnimatePresence>
             {resume.locked && (
               <motion.div
@@ -77,13 +83,17 @@ export const ResumeCard = ({ resume }: Props) => {
               </motion.div>
             )}
           </AnimatePresence>
-
           <div
             className={cn(
               "absolute inset-x-0 bottom-0 z-10 flex flex-col justify-end space-y-0.5 p-4 pt-12",
               "bg-gradient-to-t from-background/80 to-transparent",
             )}
           >
+            {resume.id === user?.profileResumeId && (
+              <div className="absolute right-1 top-6 rounded border border-gray-700 bg-black px-2 py-1 text-xs font-bold text-white shadow-md">
+                {t`★ Profile`}
+              </div>
+            )}
             <h4 className="line-clamp-2 font-medium">{resume.title}</h4>
             <p className="line-clamp-1 text-xs opacity-75">{t`Last updated ${lastUpdated}`}</p>
           </div>
@@ -108,6 +118,10 @@ export const ResumeCard = ({ resume }: Props) => {
         <DropdownMenuItem onClick={onDuplicate}>
           <CopySimple size={14} className="mr-2" />
           {t`Duplicate`}
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={onSetDefault}>
+          <FolderOpen size={14} className="mr-2" />
+          {t`Set as default`}
         </DropdownMenuItem>
         {resume.locked ? (
           <DropdownMenuItem onClick={onLockChange}>
