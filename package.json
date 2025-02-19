@@ -28,6 +28,7 @@
     "prisma:generate": "pnpm exec prisma generate",
     "prisma:migrate": "pnpm exec prisma migrate deploy",
     "prisma:migrate:dev": "pnpm exec prisma migrate dev",
+    "prisma:migrate:reset": "pnpm exec prisma migrate reset",
     "messages:extract": "pnpm exec lingui extract --clean --overwrite"
   },
   "devDependencies": {
