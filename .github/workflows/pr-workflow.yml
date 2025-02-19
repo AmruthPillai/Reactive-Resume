@@ -12,53 +12,77 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/checkout@v4.2.2
         with:
-          node-version: '14'
+          fetch-depth: 2
 
-      - name: Install dependencies
-        run: npm install
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4.0.0
+        with:
+          version: latest
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4.1.0
+        with:
+          cache: "pnpm"
+          node-version: 22
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
 
       - name: Generate Prisma Client
-        run: npx prisma generate
+        run: pnpm prisma generate
 
   migrate:
     runs-on: ubuntu-latest
     needs: setup-environment
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/checkout@v4.2.2
         with:
-          node-version: '14'
+          fetch-depth: 2
 
-      - name: Install dependencies
-        run: npm install
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4.0.0
+        with:
+          version: latest
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4.1.0
+        with:
+          cache: "pnpm"
+          node-version: 22
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
 
       - name: Run Prisma Migrate with SQLite
         run: |
           export DATABASE_URL="file:./dev.db"
-          npx prisma migrate dev --name init
+          pnpm prisma migrate dev --name init
 
   test:
     runs-on: ubuntu-latest
     needs: [setup-environment, migrate]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/checkout@v4.2.2
         with:
-          node-version: '14'
+          fetch-depth: 2
 
-      - name: Install dependencies
-        run: npm install
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4.0.0
+        with:
+          version: latest
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4.1.0
+        with:
+          cache: "pnpm"
+          node-version: 22
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
 
       - name: Run Vite Tests
-        run: npm run test
+        run: pnpm run test
