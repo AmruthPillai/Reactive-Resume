@@ -32,6 +32,7 @@ import { createSectionItem } from "@/client/services/section/create";
 import type { DialogName } from "@/client/stores/dialog";
 import { useDialog } from "@/client/stores/dialog";
 import { useResumeStore } from "@/client/stores/resume";
+import { updateSectionItem } from "@/client/services/section";
 
 type Props<T extends SectionItem> = {
   id: DialogName;

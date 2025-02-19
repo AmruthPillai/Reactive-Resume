@@ -8,7 +8,7 @@ import {
   Param,
   Patch,
   Post,
-  UseGuards,
+  UseGuards
 } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
 import { User as UserEntity } from "@prisma/client";
@@ -20,10 +20,12 @@ import { TwoFactorGuard } from "../auth/guards/two-factor.guard";
 import { User } from "../user/decorators/user.decorator";
 import { SectionItemService } from "./sectionItem.service";
 
+
 @ApiTags("SectionItem")
 @Controller("sectionItem")
 export class SectionItemController {
-  constructor(private readonly sectionItemService: SectionItemService) {}
+  constructor(private readonly sectionItemService: SectionItemService) {
+  }
 
   @Get("schema")
   getSchema() {
@@ -46,6 +48,7 @@ export class SectionItemController {
       throw new InternalServerErrorException(error);
     }
   }
+
   @Get("/hello")
   hello() {
     return "Hello World!";
