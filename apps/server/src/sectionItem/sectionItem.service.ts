@@ -1,6 +1,6 @@
 import { Injectable, InternalServerErrorException, Logger } from "@nestjs/common";
 import { PrismaService } from "nestjs-prisma";
-import { CreateSectionDto, UpdateSectionItemDto } from "@reactive-resume/dto";
+import { CreateSectionItemDto, UpdateSectionItemDto, DeleteDto } from "@reactive-resume/dto";
 
 @Injectable()
 export class SectionItemService {
@@ -10,7 +10,7 @@ export class SectionItemService {
     return this.prisma.sectionItem.findMany({ where: { userId }, orderBy: { updatedAt: "desc" } });
   }
 
-  async createSection(userId: string, createSectionDto: CreateSectionDto) {
+  async createSectionItem(userId: string, createSectionDto: CreateSectionItemDto) {
     try {
       // Create the new section
       return await this.prisma.sectionItem.create({
@@ -26,7 +26,7 @@ export class SectionItemService {
     }
   }
 
-  async updateSection(userId: string, id: string, updateSectionDto: UpdateSectionItemDto) {
+  async updateSectionItem(userId: string, id: string, updateSectionDto: UpdateSectionItemDto) {
     try {
       return await this.prisma.sectionItem.update({
         data: {
@@ -40,7 +40,7 @@ export class SectionItemService {
     }
   }
 
-  async deleteSection(id: string) {
+  async deleteSectionItem(id: string) {
     try {
       return await this.prisma.sectionItem.delete({ where: { id } });
     } catch (error) {

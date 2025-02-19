@@ -28,11 +28,11 @@ import get from "lodash.get";
 import { useEffect } from "react";
 import type { UseFormReturn } from "react-hook-form";
 
-import { createSection } from "@/client/services/section/create";
+import { deleteSectionItem, updateSectionItem } from "@/client/services/section";
+import { createSectionItem } from "@/client/services/section/create";
 import type { DialogName } from "@/client/stores/dialog";
 import { useDialog } from "@/client/stores/dialog";
 import { useResumeStore } from "@/client/stores/resume";
-import { updateSectionItem } from "@/client/services/section";
 
 type Props<T extends SectionItem> = {
   id: DialogName;
@@ -82,11 +82,11 @@ export const SectionDialog = <T extends SectionItem>({
     if (!section) return;
 
     const sectionFormat: SectionFormat = SectionFormat[section.name as keyof typeof SectionFormat];
-
     const data = getStringFromValues(values);
 
     if (isCreate || isDuplicate) {
-      const dto = await createSection({
+
+      const dto = await createSectionItem({
         format: sectionFormat,
         data: data,
       });
@@ -129,6 +129,10 @@ export const SectionDialog = <T extends SectionItem>({
 
     if (isDelete) {
       if (!payload.item?.id) return;
+
+      await deleteSectionItem({
+        id: values.id,
+      });
 
       setValue(
         `sections.${id}.items`,
