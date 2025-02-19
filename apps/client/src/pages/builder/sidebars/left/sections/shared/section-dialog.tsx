@@ -27,12 +27,12 @@ import { produce } from "immer";
 import get from "lodash.get";
 import { useEffect } from "react";
 import type { UseFormReturn } from "react-hook-form";
+
 import { deleteSectionItem, updateSectionItem } from "@/client/services/section";
 import { createSectionItem } from "@/client/services/section/create";
 import type { DialogName } from "@/client/stores/dialog";
 import { useDialog } from "@/client/stores/dialog";
 import { useResumeStore } from "@/client/stores/resume";
-import { updateSectionItem } from "@/client/services/section";
 
 type Props<T extends SectionItem> = {
   id: DialogName;
