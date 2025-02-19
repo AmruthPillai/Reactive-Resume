@@ -148,4 +148,16 @@ export class ResumeController {
       throw new InternalServerErrorException(error);
     }
   }
+
+  @Patch(":id/setDefault")
+  @UseGuards(TwoFactorGuard)
+  async setDefault(@User() user: UserEntity, @Param("id") id: string) {
+    try {
+      await this.resumeService.setDefault(user.id, id);
+      return { message: "Resume set as profile successfully" };
+    } catch (error) {
+      Logger.error(error);
+      throw new InternalServerErrorException(error);
+    }
+  }
 }

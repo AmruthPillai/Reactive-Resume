@@ -162,4 +162,11 @@ export class ResumeService {
   printPreview(resume: ResumeDto) {
     return this.printerService.printPreview(resume);
   }
+
+  async setDefault(userId: string, resumeId: string) {
+    await this.prisma.user.update({
+      where: { id: userId },
+      data: { profileResumeId: resumeId },
+    });
+  }
 }
