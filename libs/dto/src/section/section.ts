@@ -30,4 +30,4 @@ export const sectionSchema = z.object({
   updatedAt: dateSchema,
 });
 
-export class SectionDto extends createZodDto(sectionSchema) {}
+export class SectionItemDto extends createZodDto(sectionSchema) {}

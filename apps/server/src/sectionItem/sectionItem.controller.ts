@@ -12,7 +12,7 @@ import {
 } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
 import { User as UserEntity } from "@prisma/client";
-import { CreateSectionDto, UpdateSectionDto } from "@reactive-resume/dto";
+import { CreateSectionItemDto, UpdateSectionItemDto } from "@reactive-resume/dto";
 import { sectionSchemaWithData } from "@reactive-resume/schema";
 import zodToJsonSchema from "zod-to-json-schema";
 
@@ -38,9 +38,9 @@ export class SectionItemController {
 
   @Post()
   @UseGuards(TwoFactorGuard)
-  async create(@User() user: UserEntity, @Body() createSectionDto: CreateSectionDto) {
+  async create(@User() user: UserEntity, @Body() createSectionDto: CreateSectionItemDto) {
     try {
-      return await this.sectionService.createSection(user.id, createSectionDto);
+      return await this.sectionItemService.createSectionItem(user.id, createSectionDto);
     } catch (error) {
       Logger.error(error);
       throw new InternalServerErrorException(error);
@@ -51,17 +51,15 @@ export class SectionItemController {
     return "Hello World!";
   }
 
-
-
   @Patch(":id")
   @UseGuards(TwoFactorGuard)
   async update(
     @User() user: UserEntity,
     @Param("id") id: string,
-    @Body() updateSectionDto: UpdateSectionDto,
+    @Body() updateSectionDto: UpdateSectionItemDto,
   ) {
     try {
-      return await this.sectionService.updateSection(user.id, id, updateSectionDto);
+      return await this.sectionItemService.updateSectionItem(user.id, id, updateSectionDto);
     } catch (error) {
       Logger.error(error);
       throw new InternalServerErrorException(error);
@@ -72,7 +70,7 @@ export class SectionItemController {
   @UseGuards(TwoFactorGuard)
   async delete(@User() user: UserEntity, @Param("id") id: string) {
     try {
-      return await this.sectionService.deleteSection(user.id, id);
+      return await this.sectionItemService.deleteSectionItem(id);
     } catch (error) {
       Logger.error(error);
       throw new InternalServerErrorException(error);

@@ -1,12 +1,13 @@
-import type { SectionDto, UpdateSectionDto } from "@reactive-resume/dto";
+import type { SectionItemDto, UpdateSectionItemDto } from "@reactive-resume/dto";
 import type { AxiosResponse } from "axios";
 
 import { axios } from "@/client/libs/axios";
 
-export const updateSection = async (data: UpdateSectionDto) => {
-  const response = await axios.patch<SectionDto, AxiosResponse<SectionDto>, UpdateSectionDto>(
-    `/section/${data.id}`,
-    data,
-  );
-  return response.data as UpdateSectionDto;
+export const updateSectionItem = async (data: UpdateSectionItemDto) => {
+  const response = await axios.patch<
+    SectionItemDto,
+    AxiosResponse<SectionItemDto>,
+    UpdateSectionItemDto
+  >(`/sectionItem/${data.id}`, data);
+  return response.data as UpdateSectionItemDto;
 };

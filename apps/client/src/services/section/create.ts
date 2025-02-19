@@ -1,11 +1,11 @@
-import type { CreateSectionDto, SectionDto } from "@reactive-resume/dto";
+import type { CreateSectionItemDto, SectionItemDto } from "@reactive-resume/dto";
 import type { AxiosResponse } from "axios";
 
 import { axios } from "@/client/libs/axios";
 
-export const createSection = async (data: CreateSectionDto) => {
-  const response = await axios.post<SectionDto, AxiosResponse<SectionDto>, CreateSectionDto>(
-    "/section",
+export const createSectionItem = async (data: CreateSectionItemDto) => {
+  const response = await axios.post<SectionItemDto, AxiosResponse<SectionItemDto>, CreateSectionItemDto>(
+    "/sectionItem",
     data,
   );
   return response.data;

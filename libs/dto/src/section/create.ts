@@ -21,4 +21,4 @@ export const createSectionSchema = z.object({
   data: z.string(),
 });
 
-export class CreateSectionDto extends createZodDto(createSectionSchema) {}
+export class CreateSectionItemDto extends createZodDto(createSectionSchema) {}
