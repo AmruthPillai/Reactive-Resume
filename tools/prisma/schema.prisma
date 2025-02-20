@@ -127,6 +127,9 @@ model WorkItem {
   date                  Json?
   updatedAt             DateTime                @updatedAt
   ResumeWorkItemMapping ResumeWorkItemMapping[]
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
 }
 
 model AwardItem {
@@ -140,6 +143,9 @@ model AwardItem {
   date                   String?
   updatedAt              DateTime                 @updatedAt
   ResumeAwardItemMapping ResumeAwardItemMapping[]
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
 }
 
 model SkillItem {
@@ -152,6 +158,9 @@ model SkillItem {
   levelNum               Int?
   updatedAt              DateTime                 @updatedAt
   ResumeSkillItemMapping ResumeSkillItemMapping[]
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
 }
 
 model ProjectItem {
@@ -166,6 +175,9 @@ model ProjectItem {
   date                     Json?
   updatedAt                DateTime                   @updatedAt
   ResumeProjectItemMapping ResumeProjectItemMapping[]
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
 }
 
 model EducationItem {
@@ -182,6 +194,9 @@ model EducationItem {
   date                       Json?
   updatedAt                  DateTime                     @updatedAt
   ResumeEducationItemMapping ResumeEducationItemMapping[]
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
 }
 
 model InterestItem {
@@ -192,6 +207,9 @@ model InterestItem {
   keywords                  Json?
   updatedAt                 DateTime                    @updatedAt
   ResumeInterestItemMapping ResumeInterestItemMapping[]
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
 }
 
 model LanguageItem {
@@ -203,6 +221,9 @@ model LanguageItem {
   levelNum                  Int?
   updatedAt                 DateTime                    @updatedAt
   ResumeLanguageItemMapping ResumeLanguageItemMapping[]
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
 }
 
 model VolunteerItem {
@@ -216,6 +237,9 @@ model VolunteerItem {
   date                       Json?
   updatedAt                  DateTime                     @updatedAt
   ResumeVolunteerItemMapping ResumeVolunteerItemMapping[]
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
 }
 
 model ReferenceItem {
@@ -229,6 +253,9 @@ model ReferenceItem {
   relationship               String?
   updatedAt                  DateTime                     @updatedAt
   ResumeReferenceItemMapping ResumeReferenceItemMapping[]
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
 }
 
 model PublicationItem {
@@ -242,6 +269,9 @@ model PublicationItem {
   date                         Json?
   updatedAt                    DateTime                       @updatedAt
   ResumePublicationItemMapping ResumePublicationItemMapping[]
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
 }
 
 model CertificationItem {
@@ -255,6 +285,9 @@ model CertificationItem {
   date                           Json?
   updatedAt                      DateTime                         @updatedAt
   ResumeCertificationItemMapping ResumeCertificationItemMapping[]
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
 }
 
 model ProfileItem {
@@ -266,6 +299,9 @@ model ProfileItem {
   username                 String?
   updatedAt                DateTime                   @updatedAt
   ResumeProfileItemMapping ResumeProfileItemMapping[]
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
 }
 
 model BasicsItem {
@@ -284,6 +320,9 @@ model BasicsItem {
   photo                   Json?
   updatedAt               DateTime                  @updatedAt
   ResumeBasicsItemMapping ResumeBasicsItemMapping[]
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
 }
 
 model ResumeProfileItemMapping {

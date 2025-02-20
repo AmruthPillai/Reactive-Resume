@@ -456,6 +456,84 @@ CREATE UNIQUE INDEX "Statistics_resumeId_key" ON "Statistics"("resumeId");
 CREATE UNIQUE INDEX "Statistics_resumeId_id_key" ON "Statistics"("resumeId", "id");
 
 -- CreateIndex
+CREATE INDEX "WorkItem_userId_idx" ON "WorkItem"("userId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "WorkItem_userId_id_key" ON "WorkItem"("userId", "id");
+
+-- CreateIndex
+CREATE INDEX "AwardItem_userId_idx" ON "AwardItem"("userId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "AwardItem_userId_id_key" ON "AwardItem"("userId", "id");
+
+-- CreateIndex
+CREATE INDEX "SkillItem_userId_idx" ON "SkillItem"("userId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "SkillItem_userId_id_key" ON "SkillItem"("userId", "id");
+
+-- CreateIndex
+CREATE INDEX "ProjectItem_userId_idx" ON "ProjectItem"("userId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "ProjectItem_userId_id_key" ON "ProjectItem"("userId", "id");
+
+-- CreateIndex
+CREATE INDEX "EducationItem_userId_idx" ON "EducationItem"("userId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "EducationItem_userId_id_key" ON "EducationItem"("userId", "id");
+
+-- CreateIndex
+CREATE INDEX "InterestItem_userId_idx" ON "InterestItem"("userId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "InterestItem_userId_id_key" ON "InterestItem"("userId", "id");
+
+-- CreateIndex
+CREATE INDEX "LanguageItem_userId_idx" ON "LanguageItem"("userId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "LanguageItem_userId_id_key" ON "LanguageItem"("userId", "id");
+
+-- CreateIndex
+CREATE INDEX "VolunteerItem_userId_idx" ON "VolunteerItem"("userId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "VolunteerItem_userId_id_key" ON "VolunteerItem"("userId", "id");
+
+-- CreateIndex
+CREATE INDEX "ReferenceItem_userId_idx" ON "ReferenceItem"("userId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "ReferenceItem_userId_id_key" ON "ReferenceItem"("userId", "id");
+
+-- CreateIndex
+CREATE INDEX "PublicationItem_userId_idx" ON "PublicationItem"("userId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "PublicationItem_userId_id_key" ON "PublicationItem"("userId", "id");
+
+-- CreateIndex
+CREATE INDEX "CertificationItem_userId_idx" ON "CertificationItem"("userId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "CertificationItem_userId_id_key" ON "CertificationItem"("userId", "id");
+
+-- CreateIndex
+CREATE INDEX "ProfileItem_userId_idx" ON "ProfileItem"("userId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "ProfileItem_userId_id_key" ON "ProfileItem"("userId", "id");
+
+-- CreateIndex
+CREATE INDEX "BasicsItem_userId_idx" ON "BasicsItem"("userId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "BasicsItem_userId_id_key" ON "BasicsItem"("userId", "id");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "ResumeProfileItemMapping_resumeId_order_key" ON "ResumeProfileItemMapping"("resumeId", "order");
 
 -- CreateIndex
