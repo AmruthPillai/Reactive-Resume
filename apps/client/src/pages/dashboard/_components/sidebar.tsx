@@ -73,7 +73,7 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
   const navigate = useNavigate();
 
   useKeyboardShortcut(["shift", "p"], () => {
-    // @ts-ignore
+    // @ts-expect-error User possible undefined. We expect it isn't.
     void navigate("/publicprofile/" + user.username);
     setOpen?.(false);
   });
@@ -90,7 +90,7 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
 
   const sidebarItems: SidebarItem[] = [
     {
-      // @ts-ignore
+      // @ts-expect-error User possible undefined. We expect it isn't.
       path: "/publicprofile/" + user.username,
       name: t`Profile Page`,
       shortcut: "⇧P",
