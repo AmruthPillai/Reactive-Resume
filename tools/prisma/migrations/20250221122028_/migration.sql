@@ -2,7 +2,7 @@
 CREATE TYPE "Provider" AS ENUM ('email', 'github', 'google', 'openid');
 
 -- CreateEnum
-CREATE TYPE "Visibility" AS ENUM ('publicpage', 'private');
+CREATE TYPE "Visibility" AS ENUM ('public', 'private');
 
 -- CreateEnum
 CREATE TYPE "SectionFormat" AS ENUM ('basics', 'profiles', 'experience', 'education', 'skills', 'languages', 'awards', 'certifications', 'interests', 'projects', 'publications', 'volunteering', 'references', 'custom');

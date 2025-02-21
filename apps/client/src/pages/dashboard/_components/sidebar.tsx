@@ -11,6 +11,7 @@ import { Icon } from "@/client/components/icon";
 import { UserAvatar } from "@/client/components/user-avatar";
 import { UserOptions } from "@/client/components/user-options";
 import { useUser } from "@/client/services/user";
+import { useAuthStore } from "@/client/stores/auth";
 
 type Props = {
   className?: string;
@@ -40,6 +41,7 @@ type SidebarItemProps = SidebarItem & {
 
 const SidebarItem = ({ path, name, shortcut, icon, onClick }: SidebarItemProps) => {
   const isActive = useLocation().pathname === path;
+  const { user } = useAuthStore();
 
   return (
     <Button
@@ -71,7 +73,8 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
   const navigate = useNavigate();
 
   useKeyboardShortcut(["shift", "p"], () => {
-    void navigate("/dashboard/publicprofilepage");
+    // @ts-ignore
+    void navigate("/publicprofile/" + user.username);
     setOpen?.(false);
   });
 
@@ -87,7 +90,8 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
 
   const sidebarItems: SidebarItem[] = [
     {
-      path: "/dashboard/publicprofilepage",
+      // @ts-ignore
+      path: "/publicprofile/" + user.username,
       name: t`Profile Page`,
       shortcut: "⇧P",
       icon: <UserAvatar />,

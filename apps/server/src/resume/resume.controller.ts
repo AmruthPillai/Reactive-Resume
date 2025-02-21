@@ -102,6 +102,17 @@ export class ResumeController {
     return this.resumeService.findOneByUsernameSlug(username, slug, userId);
   }
 
+  @Get("public:username")
+  @UseGuards(OptionalGuard)
+  async publicProfileResume(@Param("username") username: string) {
+    try {
+      await this.resumeService.findOnePublicByUsername(username);
+    } catch (error) {
+      Logger.error(error);
+      throw new InternalServerErrorException(error);
+    }
+  }
+
   @Patch(":id")
   @UseGuards(TwoFactorGuard)
   update(

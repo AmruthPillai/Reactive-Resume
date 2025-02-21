@@ -39,7 +39,8 @@ model User {
   TeamsMapping TeamsMapping[]
 
   CompanyMapping CompanyMapping[]
-  profileResumeId  String?
+
+  profileResumeId String?
 }
 
 model Secrets {

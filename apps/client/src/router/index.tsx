@@ -1,8 +1,11 @@
 import { createBrowserRouter, createRoutesFromElements, Navigate, Route } from "react-router";
 
 import { ErrorPage } from "@/client/pages/dashboard/publicpage/error";
-import { publicLoader, PublicResumePage } from "@/client/pages/dashboard/publicpage/page";
-import { PublicProfilePage } from "@/client/pages/profilepage/page";
+import {
+  publicLoader,
+  publicProfileLoader,
+  PublicResumePage,
+} from "@/client/pages/dashboard/publicpage/page";
 
 import { BackupOtpPage } from "../pages/auth/backup-otp/page";
 import { ForgotPasswordPage } from "../pages/auth/forgot-password/page";
@@ -62,10 +65,12 @@ export const routes = createRoutesFromElements(
         <Route index element={<Navigate replace to="/auth/login" />} />
       </Route>
 
-      <Route path="dashboard">
-        <Route element={<AuthGuard />}>
-          <Route element={<DashboardLayout />}>
-            <Route path="publicprofilepage" element={<PublicProfilePage />} />
+      <Route element={<DashboardLayout />}>
+        <Route path="publicprofile">
+          <Route path=":username" loader={publicProfileLoader} element={<PublicResumePage />} />
+        </Route>
+        <Route path="dashboard">
+          <Route element={<AuthGuard />}>
             <Route path="resumes" element={<ResumesPage />} />
             <Route path="settings" element={<SettingsPage />} />
 

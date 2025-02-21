@@ -14,6 +14,12 @@ export const findResumeByUsernameSlug = async (data: { username: string; slug: s
   return response.data;
 };
 
+export const findPublicProfileResume = async (username: string) => {
+  const response = await axios.get<ResumeDto>(`/resume/public/${username}`);
+
+  return response.data;
+};
+
 export const setDefault = async (data: { resumeId: string; userId: string }) => {
   const response = await axios.patch(`/resume/${data.resumeId}/setDefault`, {
     userId: data.userId,
