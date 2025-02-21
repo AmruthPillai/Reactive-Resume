@@ -70,6 +70,11 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
   const { user } = useUser();
   const navigate = useNavigate();
 
+  useKeyboardShortcut(["shift", "p"], () => {
+    void navigate("/dashboard/publicprofilepage");
+    setOpen?.(false);
+  });
+
   useKeyboardShortcut(["shift", "r"], () => {
     void navigate("/dashboard/resumes");
     setOpen?.(false);
@@ -81,6 +86,12 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
   });
 
   const sidebarItems: SidebarItem[] = [
+    {
+      path: "/dashboard/publicprofilepage",
+      name: t`Profile Page`,
+      shortcut: "⇧P",
+      icon: <UserAvatar />,
+    },
     {
       path: "/dashboard/resumes",
       name: t`Resumes`,

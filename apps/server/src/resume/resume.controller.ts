@@ -82,6 +82,7 @@ export class ResumeController {
   @Get(":id")
   @UseGuards(TwoFactorGuard, ResumeGuard)
   findOne(@Resume() resume: ResumeDto) {
+    console.log(resume.id);
     return resume;
   }
 
@@ -91,7 +92,7 @@ export class ResumeController {
     return this.resumeService.findOneStatistics(id);
   }
 
-  @Get("/public/:username/:slug")
+  @Get("/publicpage/:username/:slug")
   @UseGuards(OptionalGuard)
   findOneByUsernameSlug(
     @Param("username") username: string,
