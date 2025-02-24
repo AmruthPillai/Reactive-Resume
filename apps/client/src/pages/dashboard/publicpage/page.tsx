@@ -11,7 +11,7 @@ import { Link, redirect, useLoaderData } from "react-router";
 import { Icon } from "@/client/components/icon";
 import { ThemeSwitch } from "@/client/components/theme-switch";
 import { queryClient } from "@/client/libs/query-client";
-import { findPublicProfileResume, findResumeByUsernameSlug, usePrintResume } from "@/client/services/resume";
+import { findResumeByUsernameSlug, usePrintResume } from "@/client/services/resume";
 
 const openInNewTab = (url: string) => {
   const win = window.open(url, "_blank");
@@ -120,20 +120,6 @@ export const publicLoader: LoaderFunction<ResumeDto> = async ({ params }) => {
     return await queryClient.fetchQuery({
       queryKey: ["resume", { username, slug }],
       queryFn: () => findResumeByUsernameSlug({ username, slug }),
-    });
-  } catch {
-    return redirect("/");
-  }
-};
-
-export const publicProfileLoader: LoaderFunction<ResumeDto> = async ({ params }) => {
-  try {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    const username = params.username!;
-
-    return await queryClient.fetchQuery({
-      queryKey: ["resume", { username }],
-      queryFn: () => findPublicProfileResume(username),
     });
   } catch {
     return redirect("/");

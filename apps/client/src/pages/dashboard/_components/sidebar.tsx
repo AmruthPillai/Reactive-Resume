@@ -88,28 +88,6 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
     setOpen?.(false);
   });
 
-  const sidebarItems: SidebarItem[] = [
-    {
-      // @ts-expect-error User possible undefined. We expect it isn't.
-      path: "/publicprofile/" + user.username,
-      name: t`Profile Page`,
-      shortcut: "⇧P",
-      icon: <UserAvatar />,
-    },
-    {
-      path: "/dashboard/resumes",
-      name: t`Resumes`,
-      shortcut: "⇧R",
-      icon: <ReadCvLogo />,
-    },
-    {
-      path: "/dashboard/settings",
-      name: t`Settings`,
-      shortcut: "⇧S",
-      icon: <FadersHorizontal />,
-    },
-  ];
-
   return (
     <div className="flex h-full flex-col gap-y-4">
       <div className="ml-12 flex justify-center lg:ml-0">
@@ -123,7 +101,42 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
       <Separator className="opacity-50" />
 
       <div className="grid gap-y-2">
-        {sidebarItems.map((item) => (
+        {(user === undefined
+          ? [
+              {
+                path: "/dashboard/resumes",
+                name: t`Resumes`,
+                shortcut: "⇧R",
+                icon: <ReadCvLogo />,
+              },
+              {
+                path: "/dashboard/settings",
+                name: t`Settings`,
+                shortcut: "⇧S",
+                icon: <FadersHorizontal />,
+              },
+            ]
+          : [
+              {
+                path: "/publicprofile/" + user.username,
+                name: t`Profile Page`,
+                shortcut: "⇧P",
+                icon: <UserAvatar />,
+              },
+              {
+                path: "/dashboard/resumes",
+                name: t`Resumes`,
+                shortcut: "⇧R",
+                icon: <ReadCvLogo />,
+              },
+              {
+                path: "/dashboard/settings",
+                name: t`Settings`,
+                shortcut: "⇧S",
+                icon: <FadersHorizontal />,
+              },
+            ]
+        ).map((item) => (
           <SidebarItem {...item} key={item.path} onClick={() => setOpen?.(false)} />
         ))}
       </div>

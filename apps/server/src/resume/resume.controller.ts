@@ -82,7 +82,6 @@ export class ResumeController {
   @Get(":id")
   @UseGuards(TwoFactorGuard, ResumeGuard)
   findOne(@Resume() resume: ResumeDto) {
-    console.log(resume.id);
     return resume;
   }
 
@@ -102,11 +101,11 @@ export class ResumeController {
     return this.resumeService.findOneByUsernameSlug(username, slug, userId);
   }
 
-  @Get("public:username")
+  @Get("public/:username")
   @UseGuards(OptionalGuard)
   async publicProfileResume(@Param("username") username: string) {
     try {
-      await this.resumeService.findOnePublicByUsername(username);
+      return await this.resumeService.findOnePublicByUsername(username);
     } catch (error) {
       Logger.error(error);
       throw new InternalServerErrorException(error);
