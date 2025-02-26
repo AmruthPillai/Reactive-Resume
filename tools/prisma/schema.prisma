@@ -156,6 +156,7 @@ model SkillItem {
   userId                 String
   user                   User                     @relation(fields: [userId], references: [id], onDelete: Cascade)
   name                   String?
+  description            String?
   level                  Int?
   keywords               Json?
   levelNum               Int?
@@ -195,6 +196,7 @@ model EducationItem {
   summary                    String?
   url                        Json?
   date                       String?
+  studyType                  String?
   updatedAt                  DateTime                     @updatedAt
   ResumeEducationItemMapping ResumeEducationItemMapping[]
 
@@ -239,6 +241,7 @@ model VolunteerItem {
   url                        Json?
   summary                    String?
   date                       String?
+  location                   String?
   updatedAt                  DateTime                     @updatedAt
   ResumeVolunteerItemMapping ResumeVolunteerItemMapping[]
 
@@ -251,9 +254,11 @@ model ReferenceItem {
   userId                     String
   user                       User                         @relation(fields: [userId], references: [id], onDelete: Cascade)
   name                       String?
+  description                String?
   email                      String?
   phone                      String?
   summary                    String?
+  url                        Json?
   relationship               String?
   updatedAt                  DateTime                     @updatedAt
   ResumeReferenceItemMapping ResumeReferenceItemMapping[]
@@ -303,8 +308,8 @@ model ProfileItem {
   username                 String?
   updatedAt                DateTime                   @updatedAt
   icon                     String?
+  description              String?
   ResumeProfileItemMapping ResumeProfileItemMapping[]
-
   @@unique([userId, id])
   @@index(fields: [userId])
 }
@@ -341,6 +346,7 @@ model CustomItem {
   website                 String?
   summary                 Json?
   keywords                Json?
+  url                     Json?
   updatedAt               DateTime                  @updatedAt
   ResumeCustomItemMapping ResumeCustomItemMapping[]
 

@@ -68,7 +68,13 @@ export const SectionDialog = <T extends SectionItem>({
   const onSubmit = async (values: T) => {
     if (!section) return;
 
-    const sectionFormat: SectionFormat = SectionFormat[section.name as keyof typeof SectionFormat];
+    let sectionName = section.name;
+    if (sectionName === "Custom Section") {
+      // eslint-disable-next-line lingui/no-unlocalized-strings
+      sectionName = "Custom";
+    }
+
+    const sectionFormat: SectionFormat = SectionFormat[sectionName as keyof typeof SectionFormat];
 
     if (isCreate || isDuplicate) {
       const dto = await createSectionItem({

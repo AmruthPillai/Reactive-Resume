@@ -2,6 +2,7 @@
   awardSchema,
   basicsSchema,
   certificationSchema,
+  customSectionSchema,
   educationSchema,
   experienceSchema,
   interestSchema,
@@ -35,7 +36,6 @@ export const createSectionSchema = z.object({
 
   data: z.union([
     basicsSchema,
-    profileSchema,
     experienceSchema,
     educationSchema,
     skillSchema,
@@ -47,6 +47,7 @@ export const createSectionSchema = z.object({
     publicationSchema,
     volunteerSchema,
     referenceSchema,
+    customSectionSchema,
   ]),
 });
 

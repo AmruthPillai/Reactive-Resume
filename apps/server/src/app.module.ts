@@ -53,10 +53,12 @@ import { UserModule } from "./user/user.module";
     }),
   ],
   providers: [
-    {
-      provide: APP_PIPE,
-      useClass: ZodValidationPipe,
-    },
+    // TODO - Re-Implement ZodValidationPipe. It broke the publisher and volunteer section creations because it restructed the data while between the back- and frontend.
+
+    // {
+    //   provide: APP_PIPE,
+    //   useClass: ZodValidationPipe,
+    // },
     {
       provide: APP_INTERCEPTOR,
       useValue: new RavenInterceptor({

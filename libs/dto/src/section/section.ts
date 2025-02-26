@@ -1,4 +1,4 @@
-import { idSchema } from "@reactive-resume/schema";
+import { customSectionSchema, idSchema } from "@reactive-resume/schema";
 import {
   awardSchema,
   basicsSchema,
@@ -43,7 +43,6 @@ export const sectionSchema = z.object({
   user: userSchema,
   data: z.union([
     basicsSchema,
-    profileSchema,
     experienceSchema,
     educationSchema,
     skillSchema,
@@ -55,6 +54,7 @@ export const sectionSchema = z.object({
     publicationSchema,
     volunteerSchema,
     referenceSchema,
+    customSectionSchema,
   ]),
   updatedAt: dateSchema,
 });
