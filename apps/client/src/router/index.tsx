@@ -1,5 +1,7 @@
 import { createBrowserRouter, createRoutesFromElements, Navigate, Route } from "react-router";
 
+import { CompanyPage } from "@/client/pages/dashboard/companies/page";
+
 import { BackupOtpPage } from "../pages/auth/backup-otp/page";
 import { ForgotPasswordPage } from "../pages/auth/forgot-password/page";
 import { AuthLayout } from "../pages/auth/layout";
@@ -63,6 +65,7 @@ export const routes = createRoutesFromElements(
       <Route path="dashboard">
         <Route element={<AuthGuard />}>
           <Route element={<DashboardLayout />}>
+            <Route path="companies" element={<CompanyPage />} />
             <Route path="resumes" element={<ResumesPage />} />
             <Route path="settings" element={<SettingsPage />} />
 

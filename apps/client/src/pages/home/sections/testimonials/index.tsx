@@ -57,7 +57,7 @@ const testimonials: Testimonial[][] = [
     {
       name: "M. Fritza",
       quote:
-        "Hello sir, I just wanted to write a thank you message for developing RxResume. It's easy to use, intuitive and it's much more practical than many others that made you pay up after spending an hour to create your CV. I'll be sure to buy you a coffee after I get my first job. I wish you everything best in life!",
+        "Hello sir, I just wanted to write a thank you message for developing RxResume. It's easy to use, intuitive and it's much more practical than many others that made you pay up after spending an hour to create.ts your CV. I'll be sure to buy you a coffee after I get my first job. I wish you everything best in life!",
     },
   ],
 ];

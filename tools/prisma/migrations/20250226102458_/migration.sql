@@ -72,7 +72,7 @@ CREATE TABLE "WorkItem" (
     "position" TEXT,
     "url" TEXT,
     "summary" TEXT,
-    "date" JSONB,
+    "date" TEXT,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "WorkItem_pkey" PRIMARY KEY ("id")
@@ -114,7 +114,7 @@ CREATE TABLE "ProjectItem" (
     "summary" TEXT,
     "description" TEXT,
     "keywords" JSONB,
-    "date" JSONB,
+    "date" TEXT,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "ProjectItem_pkey" PRIMARY KEY ("id")
@@ -131,7 +131,7 @@ CREATE TABLE "EducationItem" (
     "courses" JSONB,
     "summary" TEXT,
     "url" TEXT,
-    "date" JSONB,
+    "date" TEXT,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "EducationItem_pkey" PRIMARY KEY ("id")
@@ -168,7 +168,7 @@ CREATE TABLE "VolunteerItem" (
     "position" TEXT,
     "url" TEXT,
     "summary" TEXT,
-    "date" JSONB,
+    "date" TEXT,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "VolunteerItem_pkey" PRIMARY KEY ("id")
@@ -196,7 +196,7 @@ CREATE TABLE "PublicationItem" (
     "publisher" TEXT,
     "url" TEXT,
     "summary" TEXT,
-    "date" JSONB,
+    "date" TEXT,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "PublicationItem_pkey" PRIMARY KEY ("id")
@@ -210,7 +210,7 @@ CREATE TABLE "CertificationItem" (
     "issuer" TEXT,
     "url" TEXT,
     "summary" TEXT,
-    "date" JSONB,
+    "date" TEXT,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "CertificationItem_pkey" PRIMARY KEY ("id")
@@ -411,6 +411,7 @@ CREATE TABLE "CompanyMapping" (
 CREATE TABLE "Company" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
+    "ownerId" TEXT NOT NULL,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "Company_pkey" PRIMARY KEY ("id")
@@ -581,6 +582,9 @@ CREATE UNIQUE INDEX "TeamsMapping_teamId_userId_key" ON "TeamsMapping"("teamId",
 -- CreateIndex
 CREATE UNIQUE INDEX "CompanyMapping_userId_companyId_key" ON "CompanyMapping"("userId", "companyId");
 
+-- CreateIndex
+CREATE UNIQUE INDEX "Company_name_key" ON "Company"("name");
+
 -- AddForeignKey
 ALTER TABLE "Secrets" ADD CONSTRAINT "Secrets_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
@@ -724,3 +728,6 @@ ALTER TABLE "CompanyMapping" ADD CONSTRAINT "CompanyMapping_companyId_fkey" FORE
 
 -- AddForeignKey
 ALTER TABLE "CompanyMapping" ADD CONSTRAINT "CompanyMapping_roleId_fkey" FOREIGN KEY ("roleId") REFERENCES "Role"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Company" ADD CONSTRAINT "Company_ownerId_fkey" FOREIGN KEY ("ownerId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;

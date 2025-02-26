@@ -10,3 +10,5 @@ export const RESUMES_KEY: QueryKey = ["resumes"];
 export const RESUME_PREVIEW_KEY: QueryKey = ["resume", "preview"];
 
 export const SECTIONS_KEY: QueryKey = ["sections"];
+
+export const COMPANIES_KEY: QueryKey = ["companies"];

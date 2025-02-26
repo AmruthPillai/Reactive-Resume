@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { FadersHorizontal, ReadCvLogo } from "@phosphor-icons/react";
+import { BuildingApartment, FadersHorizontal, ReadCvLogo } from "@phosphor-icons/react";
 import { Button, KeyboardShortcut, Separator } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
@@ -80,6 +80,11 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
     setOpen?.(false);
   });
 
+  useKeyboardShortcut(["shift", "c"], () => {
+    void navigate("/dashboard/companies");
+    setOpen?.(false);
+  });
+
   const sidebarItems: SidebarItem[] = [
     {
       path: "/dashboard/resumes",
@@ -92,6 +97,12 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
       name: t`Settings`,
       shortcut: "⇧S",
       icon: <FadersHorizontal />,
+    },
+    {
+      path: "/dashboard/companies",
+      name: t`Companies`,
+      shortcut: "⇧C",
+      icon: <BuildingApartment />,
     },
   ];
 

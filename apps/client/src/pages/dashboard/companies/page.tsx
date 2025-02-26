@@ -2,36 +2,24 @@ import { t } from "@lingui/macro";
 import { List, SquaresFour } from "@phosphor-icons/react";
 import { ScrollArea, Tabs, TabsContent, TabsList, TabsTrigger } from "@reactive-resume/ui";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 
-import { useSections } from "@/client/services/section/sections";
-import { useSectionsStore } from "@/client/stores/section";
-
-import { ResumeGridView } from "./_layouts/grid";
-import { ResumeListView } from "./_layouts/list";
+import { CompanyGridView } from "@/client/pages/dashboard/companies/_layouts/grid";
+import { CompanyListView } from "@/client/pages/dashboard/companies/_layouts/list";
 
 type Layout = "grid" | "list";
 
-export const ResumesPage = () => {
+export const CompanyPage = () => {
   const [layout, setLayout] = useState<Layout>("grid");
-  const setSections = useSectionsStore((state) => state.setSections);
-  const { sections, loading } = useSections();
-
-  useEffect(() => {
-    if (!loading && sections) {
-      setSections(sections);
-    }
-  }, [sections, loading, setSections]);
 
   return (
-    <>
+    <div>
       <Helmet>
         <title>
-          {t`Resumes`} - {t`Reactive Resume`}
+          {t`Companies`} - {t`Reactive Resume`}
         </title>
       </Helmet>
-
       <Tabs
         value={layout}
         className="space-y-4"
@@ -45,7 +33,7 @@ export const ResumesPage = () => {
             animate={{ opacity: 1, x: 0 }}
             className="text-4xl font-bold tracking-tight"
           >
-            {t`Resumes`}
+            {t`Companies`}
           </motion.h1>
 
           <TabsList>
@@ -65,13 +53,13 @@ export const ResumesPage = () => {
           className="h-[calc(100vh-140px)] overflow-visible lg:h-[calc(100vh-88px)]"
         >
           <TabsContent value="grid">
-            <ResumeGridView />
+            <CompanyGridView />
           </TabsContent>
           <TabsContent value="list">
-            <ResumeListView />
+            <CompanyListView />
           </TabsContent>
         </ScrollArea>
       </Tabs>
-    </>
+    </div>
   );
 };

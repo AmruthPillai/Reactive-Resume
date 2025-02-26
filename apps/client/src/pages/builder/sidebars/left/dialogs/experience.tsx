@@ -53,7 +53,7 @@ export const ExperienceDialog = () => {
               <FormLabel>
                 {t({
                   message: "Position",
-                  context: "Position held at a company, for example, Software Engineer",
+                  context: "Position held at a company.ts.ts, for example, Software Engineer",
                 })}
               </FormLabel>
               <FormControl>
