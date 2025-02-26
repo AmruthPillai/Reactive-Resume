@@ -33,6 +33,7 @@ import { createSectionItem } from "@/client/services/section/create";
 import type { DialogName } from "@/client/stores/dialog";
 import { useDialog } from "@/client/stores/dialog";
 import { useResumeStore } from "@/client/stores/resume";
+import { getSectionNameFromId } from "@/client/utils/section-names";
 
 type Props<T extends SectionItem> = {
   id: DialogName;
@@ -145,6 +146,8 @@ export const SectionDialog = <T extends SectionItem>({
     if (isDelete) form.reset({ ...defaultValues, ...payload.item });
   };
 
+  const sectionType = getSectionNameFromId(id);
+
   if (isDelete) {
     return (
       <AlertDialog open={isOpen} onOpenChange={close}>
@@ -187,7 +190,7 @@ export const SectionDialog = <T extends SectionItem>({
                     {isUpdate && <PencilSimple />}
                     {isDuplicate && <CopySimple />}
                     <h2>
-                      {isCreate && t`Create a new item`}
+                      {isCreate && t`Create ${sectionType} item`}
                       {isUpdate && t`Update an existing item`}
                       {isDuplicate && t`Duplicate an existing item`}
                     </h2>
