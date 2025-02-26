@@ -102,7 +102,7 @@ const Header = () => {
 const Summary = () => {
   const section = useArtboardStore((state) => state.resume.sections.summary);
 
-  if (!section.visible || isEmptyString(section.content)) return null;
+  if (isEmptyString(section.content)) return null;
 
   return (
     <section id={section.id}>
@@ -197,7 +197,7 @@ const Section = <T,>({
   summaryKey,
   keywordsKey,
 }: SectionProps<T>) => {
-  if (!section.visible || section.items.length === 0) return null;
+  if (section.items.length === 0) return null;
 
   return (
     <section id={section.id} className="grid">
@@ -207,45 +207,40 @@ const Section = <T,>({
         className="grid gap-x-6 gap-y-3"
         style={{ gridTemplateColumns: `repeat(${section.columns}, 1fr)` }}
       >
-        {section.items
-          .filter((item) => item.visible)
-          .map((item) => {
-            const url = (urlKey && get(item, urlKey)) as URL | undefined;
-            const level = (levelKey && get(item, levelKey, 0)) as number | undefined;
-            const summary = (summaryKey && get(item, summaryKey, "")) as string | undefined;
-            const keywords = (keywordsKey && get(item, keywordsKey, [])) as string[] | undefined;
+        {section.items.map((item) => {
+          const url = (urlKey && get(item, urlKey)) as URL | undefined;
+          const level = (levelKey && get(item, levelKey, 0)) as number | undefined;
+          const summary = (summaryKey && get(item, summaryKey, "")) as string | undefined;
+          const keywords = (keywordsKey && get(item, keywordsKey, [])) as string[] | undefined;
 
-            return (
-              <div
-                key={item.id}
-                className={cn("relative space-y-2 pl-4 group-[.sidebar]:pl-0", className)}
-              >
-                <div className="relative -ml-4 group-[.sidebar]:ml-0">
-                  <div className="pl-4 group-[.sidebar]:pl-0">
-                    {children?.(item as T)}
-                    {url !== undefined && section.separateLinks && <Link url={url} />}
-                  </div>
-
-                  <div className="absolute inset-y-0 -left-px border-l-4 border-primary group-[.sidebar]:hidden" />
+          return (
+            <div
+              key={item.id}
+              className={cn("relative space-y-2 pl-4 group-[.sidebar]:pl-0", className)}
+            >
+              <div className="relative -ml-4 group-[.sidebar]:ml-0">
+                <div className="pl-4 group-[.sidebar]:pl-0">
+                  {children?.(item as T)}
+                  {url !== undefined && section.separateLinks && <Link url={url} />}
                 </div>
 
-                {summary !== undefined && !isEmptyString(summary) && (
-                  <div
-                    dangerouslySetInnerHTML={{ __html: sanitize(summary) }}
-                    className="wysiwyg"
-                  />
-                )}
-
-                {level !== undefined && level > 0 && <Rating level={level} />}
-
-                {keywords !== undefined && keywords.length > 0 && (
-                  <p className="text-sm">{keywords.join(", ")}</p>
-                )}
-
-                <div className="absolute inset-y-0 left-0 border-l border-primary group-[.sidebar]:hidden" />
+                <div className="absolute inset-y-0 -left-px border-l-4 border-primary group-[.sidebar]:hidden" />
               </div>
-            );
-          })}
+
+              {summary !== undefined && !isEmptyString(summary) && (
+                <div dangerouslySetInnerHTML={{ __html: sanitize(summary) }} className="wysiwyg" />
+              )}
+
+              {level !== undefined && level > 0 && <Rating level={level} />}
+
+              {keywords !== undefined && keywords.length > 0 && (
+                <p className="text-sm">{keywords.join(", ")}</p>
+              )}
+
+              <div className="absolute inset-y-0 left-0 border-l border-primary group-[.sidebar]:hidden" />
+            </div>
+          );
+        })}
       </div>
     </section>
   );

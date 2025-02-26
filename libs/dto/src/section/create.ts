@@ -1,4 +1,18 @@
-﻿import { createZodDto } from "nestjs-zod/dto";
+﻿import {
+  awardSchema,
+  basicsSchema,
+  certificationSchema,
+  educationSchema,
+  experienceSchema,
+  interestSchema,
+  languageSchema,
+  profileSchema,
+  publicationSchema,
+  referenceSchema,
+  skillSchema,
+  volunteerSchema,
+} from "@reactive-resume/schema";
+import { createZodDto } from "nestjs-zod/dto";
 import { z } from "zod";
 
 export const createSectionSchema = z.object({
@@ -18,7 +32,22 @@ export const createSectionSchema = z.object({
     "references",
     "custom",
   ]),
-  data: z.string(),
+
+  data: z.union([
+    basicsSchema,
+    profileSchema,
+    experienceSchema,
+    educationSchema,
+    skillSchema,
+    languageSchema,
+    awardSchema,
+    certificationSchema,
+    interestSchema,
+    profileSchema,
+    publicationSchema,
+    volunteerSchema,
+    referenceSchema,
+  ]),
 });
 
 export class CreateSectionItemDto extends createZodDto(createSectionSchema) {}
