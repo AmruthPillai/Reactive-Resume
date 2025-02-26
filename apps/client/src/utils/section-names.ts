@@ -11,6 +11,7 @@ export enum SectionNames {
   references = "Reference",
   volunteer = "Volunteering",
   summary = "Summary",
+  awards = "Award",
   custom = "Custom",
 }
 
