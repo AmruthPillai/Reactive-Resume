@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { FadersHorizontal, ReadCvLogo } from "@phosphor-icons/react";
+import { FadersHorizontal, GithubLogo, ReadCvLogo } from "@phosphor-icons/react";
 import { Button, KeyboardShortcut, Separator } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
@@ -88,6 +88,22 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
     setOpen?.(false);
   });
 
+
+  const sidebarItems: SidebarItem[] = [
+    {
+      path: "/dashboard/resumes",
+      name: t`Resumes`,
+      shortcut: "⇧R",
+      icon: <ReadCvLogo size={20}/>,
+    },
+    {
+      path: "/dashboard/settings",
+      name: t`Settings`,
+      shortcut: "⇧S",
+      icon: <FadersHorizontal size={20}/>,
+    },
+  ];
+
   return (
     <div className="flex h-full flex-col gap-y-4">
       <div className="ml-12 flex justify-center lg:ml-0">
@@ -97,9 +113,7 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
           </Link>
         </Button>
       </div>
-
       <Separator className="opacity-50" />
-
       <div className="grid gap-y-2">
         {(user === undefined
           ? [
@@ -140,18 +154,29 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
           <SidebarItem {...item} key={item.path} onClick={() => setOpen?.(false)} />
         ))}
       </div>
-
       <div className="flex-1" />
-
       <Separator className="opacity-50" />
-
+      <Button
+        className="w-full justify-start px-3"
+        variant="ghost"
+        onClick={() => {
+          const win = window.open(
+            "https://github.com/The-Elite-Task-Force/EZ-CV/discussions",
+            "_blank",
+          );
+          win?.focus();
+        }}
+      >
+        {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
+        {<GithubLogo  size={20} />} Bugs, Feedback and Discussions
+      </Button>
+      <Separator className="opacity-50" />
       <UserOptions>
         <Button size="lg" variant="ghost" className="w-full justify-start px-3">
           <UserAvatar size={24} className="mr-3" />
           <span>{user?.name}</span>
         </Button>
       </UserOptions>
-
       <Copyright className="ml-2" />
     </div>
   );
