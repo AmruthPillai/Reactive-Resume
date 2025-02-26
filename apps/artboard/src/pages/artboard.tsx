@@ -61,11 +61,12 @@ export const ArtboardPage = () => {
     <>
       <Helmet>
         <title>{name} | Reactive Resume</title>
-        {metadata.css.visible && (
-          <style id="custom-css" lang="css">
-            {metadata.css.value}
-          </style>
-        )}
+        {/* {metadata.css.visible && (
+        <style id="custom-css" lang="css">
+          {metadata.css.value}
+        </style>
+        )}  */}
+        {/* OBS */}
       </Helmet>
 
       <Outlet />

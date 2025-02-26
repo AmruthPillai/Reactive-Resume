@@ -76,20 +76,18 @@ const Header = () => {
         ))}
       </div>
 
-      {profiles.visible && profiles.items.length > 0 && (
+      {profiles.items.length > 0 && (
         <div className="flex items-center gap-x-3 gap-y-0.5">
-          {profiles.items
-            .filter((item) => item.visible)
-            .map((item) => (
-              <div key={item.id} className="flex items-center gap-x-2">
-                <Link
-                  url={item.url}
-                  label={item.username}
-                  className="text-sm"
-                  icon={<BrandIcon slug={item.icon} />}
-                />
-              </div>
-            ))}
+          {profiles.items.map((item) => (
+            <div key={item.id} className="flex items-center gap-x-2">
+              <Link
+                url={item.url}
+                label={item.username}
+                className="text-sm"
+                icon={<BrandIcon slug={item.icon} />}
+              />
+            </div>
+          ))}
         </div>
       )}
     </div>
@@ -99,7 +97,7 @@ const Header = () => {
 const Summary = () => {
   const section = useArtboardStore((state) => state.resume.sections.summary);
 
-  if (!section.visible || isEmptyString(section.content)) return null;
+  if (isEmptyString(section.content)) return null;
 
   return (
     <section id={section.id}>
@@ -196,7 +194,7 @@ const Section = <T,>({
   summaryKey,
   keywordsKey,
 }: SectionProps<T>) => {
-  if (!section.visible || section.items.length === 0) return null;
+  if (section.items.length === 0) return null;
 
   return (
     <section id={section.id} className="grid">
@@ -208,35 +206,30 @@ const Section = <T,>({
         className="grid gap-x-6 gap-y-3"
         style={{ gridTemplateColumns: `repeat(${section.columns}, 1fr)` }}
       >
-        {section.items
-          .filter((item) => item.visible)
-          .map((item) => {
-            const url = (urlKey && get(item, urlKey)) as URL | undefined;
-            const level = (levelKey && get(item, levelKey, 0)) as number | undefined;
-            const summary = (summaryKey && get(item, summaryKey, "")) as string | undefined;
-            const keywords = (keywordsKey && get(item, keywordsKey, [])) as string[] | undefined;
+        {section.items.map((item) => {
+          const url = (urlKey && get(item, urlKey)) as URL | undefined;
+          const level = (levelKey && get(item, levelKey, 0)) as number | undefined;
+          const summary = (summaryKey && get(item, summaryKey, "")) as string | undefined;
+          const keywords = (keywordsKey && get(item, keywordsKey, [])) as string[] | undefined;
 
-            return (
-              <div key={item.id} className={cn("space-y-2", className)}>
-                <div>{children?.(item as T)}</div>
+          return (
+            <div key={item.id} className={cn("space-y-2", className)}>
+              <div>{children?.(item as T)}</div>
 
-                {summary !== undefined && !isEmptyString(summary) && (
-                  <div
-                    dangerouslySetInnerHTML={{ __html: sanitize(summary) }}
-                    className="wysiwyg"
-                  />
-                )}
+              {summary !== undefined && !isEmptyString(summary) && (
+                <div dangerouslySetInnerHTML={{ __html: sanitize(summary) }} className="wysiwyg" />
+              )}
 
-                {level !== undefined && level > 0 && <Rating level={level} />}
+              {level !== undefined && level > 0 && <Rating level={level} />}
 
-                {keywords !== undefined && keywords.length > 0 && (
-                  <p className="text-sm">{keywords.join(", ")}</p>
-                )}
+              {keywords !== undefined && keywords.length > 0 && (
+                <p className="text-sm">{keywords.join(", ")}</p>
+              )}
 
-                {url !== undefined && section.separateLinks && <Link url={url} />}
-              </div>
-            );
-          })}
+              {url !== undefined && section.separateLinks && <Link url={url} />}
+            </div>
+          );
+        })}
       </div>
     </section>
   );

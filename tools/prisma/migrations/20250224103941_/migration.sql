@@ -72,7 +72,7 @@ CREATE TABLE "WorkItem" (
     "position" TEXT,
     "url" TEXT,
     "summary" TEXT,
-    "date" JSONB,
+    "date" TEXT,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "WorkItem_pkey" PRIMARY KEY ("id")
@@ -114,7 +114,7 @@ CREATE TABLE "ProjectItem" (
     "summary" TEXT,
     "description" TEXT,
     "keywords" JSONB,
-    "date" JSONB,
+    "date" TEXT,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "ProjectItem_pkey" PRIMARY KEY ("id")
@@ -131,7 +131,7 @@ CREATE TABLE "EducationItem" (
     "courses" JSONB,
     "summary" TEXT,
     "url" TEXT,
-    "date" JSONB,
+    "date" TEXT,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "EducationItem_pkey" PRIMARY KEY ("id")
@@ -168,7 +168,7 @@ CREATE TABLE "VolunteerItem" (
     "position" TEXT,
     "url" TEXT,
     "summary" TEXT,
-    "date" JSONB,
+    "date" TEXT,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "VolunteerItem_pkey" PRIMARY KEY ("id")
@@ -196,7 +196,7 @@ CREATE TABLE "PublicationItem" (
     "publisher" TEXT,
     "url" TEXT,
     "summary" TEXT,
-    "date" JSONB,
+    "date" TEXT,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "PublicationItem_pkey" PRIMARY KEY ("id")
@@ -210,7 +210,7 @@ CREATE TABLE "CertificationItem" (
     "issuer" TEXT,
     "url" TEXT,
     "summary" TEXT,
-    "date" JSONB,
+    "date" TEXT,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "CertificationItem_pkey" PRIMARY KEY ("id")
