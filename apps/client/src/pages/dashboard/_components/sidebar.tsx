@@ -1,6 +1,5 @@
 import { t } from "@lingui/macro";
-import { BuildingApartment, FadersHorizontal, ReadCvLogo } from "@phosphor-icons/react";
-import { FadersHorizontal, GithubLogo, ReadCvLogo } from "@phosphor-icons/react";
+import { BuildingApartment, FadersHorizontal, GithubLogo, ReadCvLogo } from "@phosphor-icons/react";
 import { Button, KeyboardShortcut, Separator } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
@@ -99,13 +98,13 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
       path: "/dashboard/resumes",
       name: t`Resumes`,
       shortcut: "⇧R",
-      icon: <ReadCvLogo size={20}/>,
+      icon: <ReadCvLogo size={20} />,
     },
     {
       path: "/dashboard/settings",
       name: t`Settings`,
       shortcut: "⇧S",
-      icon: <FadersHorizontal size={20}/>,
+      icon: <FadersHorizontal size={20} />,
     },
     {
       path: "/dashboard/companies",
@@ -179,7 +178,7 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
         }}
       >
         {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
-        {<GithubLogo  size={20} />} Bugs, Feedback and Discussions
+        {<GithubLogo size={20} />} Bugs, Feedback and Discussions
       </Button>
       <Separator className="opacity-50" />
       <UserOptions>
