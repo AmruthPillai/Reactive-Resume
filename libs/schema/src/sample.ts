@@ -29,7 +29,7 @@ export const sampleResume: ResumeData = {
       name: "Summary",
       columns: 1,
       separateLinks: true,
-      visible: true,
+
       id: "summary",
       content:
         "<p>Innovative Web Developer with 5 years of experience in building impactful and user-friendly websites and applications. Specializes in <strong>front-end technologies</strong> and passionate about modern web standards and cutting-edge development techniques. Proven track record of leading successful projects from concept to deployment.</p>",
@@ -38,7 +38,7 @@ export const sampleResume: ResumeData = {
       name: "Awards",
       columns: 1,
       separateLinks: true,
-      visible: true,
+
       id: "awards",
       items: [],
     },
@@ -46,12 +46,12 @@ export const sampleResume: ResumeData = {
       name: "Certifications",
       columns: 1,
       separateLinks: true,
-      visible: true,
+
       id: "certifications",
       items: [
         {
           id: "spdhh9rrqi1gvj0yqnbqunlo",
-          visible: true,
+
           name: "Full-Stack Web Development",
           issuer: "CodeAcademy",
           date: "2020",
@@ -63,7 +63,7 @@ export const sampleResume: ResumeData = {
         },
         {
           id: "n838rddyqv47zexn6cxauwqp",
-          visible: true,
+
           name: "AWS Certified Developer",
           issuer: "Amazon Web Services",
           date: "2019",
@@ -79,12 +79,12 @@ export const sampleResume: ResumeData = {
       name: "Education",
       columns: 1,
       separateLinks: true,
-      visible: true,
+
       id: "education",
       items: [
         {
           id: "yo3p200zo45c6cdqc6a2vtt3",
-          visible: true,
+
           institution: "University of California",
           studyType: "Bachelor's in Computer Science",
           area: "Berkeley, CA",
@@ -102,12 +102,12 @@ export const sampleResume: ResumeData = {
       name: "Experience",
       columns: 1,
       separateLinks: true,
-      visible: true,
+
       id: "experience",
       items: [
         {
           id: "lhw25d7gf32wgdfpsktf6e0x",
-          visible: true,
+
           company: "Creative Solutions Inc.",
           position: "Senior Web Developer",
           location: "San Francisco, CA",
@@ -121,7 +121,7 @@ export const sampleResume: ResumeData = {
         },
         {
           id: "r6543lil53ntrxmvel53gbtm",
-          visible: true,
+
           company: "TechAdvancers",
           position: "Web Developer",
           location: "San Jose, CA",
@@ -139,7 +139,7 @@ export const sampleResume: ResumeData = {
       name: "Volunteering",
       columns: 1,
       separateLinks: true,
-      visible: true,
+
       id: "volunteer",
       items: [],
     },
@@ -147,7 +147,7 @@ export const sampleResume: ResumeData = {
       name: "Interests",
       columns: 1,
       separateLinks: true,
-      visible: true,
+
       id: "interests",
       items: [],
     },
@@ -155,7 +155,7 @@ export const sampleResume: ResumeData = {
       name: "Languages",
       columns: 1,
       separateLinks: true,
-      visible: true,
+
       id: "languages",
       items: [],
     },
@@ -163,12 +163,12 @@ export const sampleResume: ResumeData = {
       name: "Profiles",
       columns: 1,
       separateLinks: true,
-      visible: true,
+
       id: "profiles",
       items: [
         {
           id: "cnbk5f0aeqvhx69ebk7hktwd",
-          visible: true,
+
           network: "LinkedIn",
           username: "johndoe",
           icon: "linkedin",
@@ -179,7 +179,7 @@ export const sampleResume: ResumeData = {
         },
         {
           id: "ukl0uecvzkgm27mlye0wazlb",
-          visible: true,
+
           network: "GitHub",
           username: "johndoe",
           icon: "github",
@@ -194,12 +194,12 @@ export const sampleResume: ResumeData = {
       name: "Projects",
       columns: 1,
       separateLinks: true,
-      visible: true,
+
       id: "projects",
       items: [
         {
           id: "yw843emozcth8s1ubi1ubvlf",
-          visible: true,
+
           name: "E-Commerce Platform",
           description: "Project Lead",
           date: "",
@@ -213,7 +213,7 @@ export const sampleResume: ResumeData = {
         },
         {
           id: "ncxgdjjky54gh59iz2t1xi1v",
-          visible: true,
+
           name: "Interactive Dashboard",
           description: "Frontend Developer",
           date: "",
@@ -231,7 +231,7 @@ export const sampleResume: ResumeData = {
       name: "Publications",
       columns: 1,
       separateLinks: true,
-      visible: true,
+
       id: "publications",
       items: [],
     },
@@ -239,12 +239,12 @@ export const sampleResume: ResumeData = {
       name: "References",
       columns: 1,
       separateLinks: true,
-      visible: false,
+
       id: "references",
       items: [
         {
           id: "f2sv5z0cce6ztjl87yuk8fak",
-          visible: true,
+
           name: "Available upon request",
           description: "",
           summary: "",
@@ -259,12 +259,12 @@ export const sampleResume: ResumeData = {
       name: "Skills",
       columns: 1,
       separateLinks: true,
-      visible: true,
+
       id: "skills",
       items: [
         {
           id: "hn0keriukh6c0ojktl9gsgjm",
-          visible: true,
+
           name: "Web Technologies",
           description: "Advanced",
           level: 0,
@@ -272,7 +272,7 @@ export const sampleResume: ResumeData = {
         },
         {
           id: "r8c3y47vykausqrgmzwg5pur",
-          visible: true,
+
           name: "Web Frameworks",
           description: "Intermediate",
           level: 0,
@@ -280,7 +280,7 @@ export const sampleResume: ResumeData = {
         },
         {
           id: "b5l75aseexqv17quvqgh73fe",
-          visible: true,
+
           name: "Tools",
           description: "Intermediate",
           level: 0,
@@ -309,7 +309,6 @@ export const sampleResume: ResumeData = {
     ],
     css: {
       value: "* {\n\toutline: 1px solid #000;\n\toutline-offset: 4px;\n}",
-      visible: false,
     },
     page: {
       margin: 14,

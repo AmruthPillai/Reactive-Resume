@@ -107,7 +107,7 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
         </div>
       </header>
 
-      <main className={cn("grid transition-opacity", !section.visible && "opacity-50")}>
+      <main className={cn("grid transition-opacity")}>
         {section.items.length === 0 && (
           <Button
             variant="outline"
@@ -136,7 +136,6 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
                 <SectionListItem
                   key={item.id}
                   id={item.id}
-                  visible={item.visible}
                   title={title(item as T)}
                   description={description?.(item as T)}
                   onUpdate={() => {

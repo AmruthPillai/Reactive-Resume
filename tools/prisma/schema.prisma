@@ -21,26 +21,40 @@ enum Visibility {
 }
 
 model User {
-  id               String        @id @default(cuid())
+  id               String   @id @default(cuid())
   name             String
   picture          String?
-  username         String        @unique
-  email            String        @unique
-  locale           String        @default("en-US")
-  emailVerified    Boolean       @default(false)
-  twoFactorEnabled Boolean       @default(false)
-  createdAt        DateTime      @default(now())
-  updatedAt        DateTime      @updatedAt
+  username         String   @unique
+  email            String   @unique
+  locale           String   @default("en-US")
+  emailVerified    Boolean  @default(false)
+  twoFactorEnabled Boolean  @default(false)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
   provider         Provider
   secrets          Secrets?
   resumes          Resume[]
-  sections         SectionItem[] // Updated to reference SectionItem
 
-  TeamsMapping TeamsMapping[]
-
+  TeamsMapping   TeamsMapping[]
   CompanyMapping CompanyMapping[]
 
   profileResumeId String?
+
+  // Section references
+  basics         BasicsItem[]
+  profiles       ProfileItem[]
+  experiences    WorkItem[]
+  education      EducationItem[]
+  skills         SkillItem[]
+  languages      LanguageItem[]
+  awards         AwardItem[]
+  certifications CertificationItem[]
+  interests      InterestItem[]
+  projects       ProjectItem[]
+  publications   PublicationItem[]
+  volunteering   VolunteerItem[]
+  references     ReferenceItem[]
+  custom         CustomItem[]
 }
 
 model Secrets {
@@ -71,8 +85,21 @@ model Resume {
   createdAt  DateTime    @default(now())
   updatedAt  DateTime    @updatedAt
 
-  SectionItemCVMapping SectionItemCVMapping[] // Updated to reference SectionItemCVMapping
-  TeamsMapping         TeamsMapping[]
+  TeamsMapping                   TeamsMapping[]
+  ResumeProfileItemMapping       ResumeProfileItemMapping[]
+  ResumeBasicsItemMapping        ResumeBasicsItemMapping[]
+  ResumeWorkItemMapping          ResumeWorkItemMapping[]
+  ResumeAwardItemMapping         ResumeAwardItemMapping[]
+  ResumeSkillItemMapping         ResumeSkillItemMapping[]
+  ResumeProjectItemMapping       ResumeProjectItemMapping[]
+  ResumeEducationItemMapping     ResumeEducationItemMapping[]
+  ResumeInterestItemMapping      ResumeInterestItemMapping[]
+  ResumeLanguageItemMapping      ResumeLanguageItemMapping[]
+  ResumeVolunteerItemMapping     ResumeVolunteerItemMapping[]
+  ResumeReferenceItemMapping     ResumeReferenceItemMapping[]
+  ResumePublicationItemMapping   ResumePublicationItemMapping[]
+  ResumeCertificationItemMapping ResumeCertificationItemMapping[]
+  ResumeCustomItemMapping        ResumeCustomItemMapping[]
 
   @@unique([userId, id])
   @@unique([userId, slug])
@@ -91,44 +118,392 @@ model Statistics {
   @@unique([resumeId, id])
 }
 
-enum SectionFormat {
-  basics
-  profiles
-  experience
-  education
-  skills
-  languages
-  awards
-  certifications
-  interests
-  projects
-  publications
-  volunteering
-  references
-  custom
+model WorkItem {
+  id                    String                  @id @default(cuid())
+  userId                String
+  user                  User                    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name                  String?
+  position              String?
+  url                   Json?
+  summary               String?
+  date                  String?
+  updatedAt             DateTime                @updatedAt
+  company               String?
+  location              String?
+  ResumeWorkItemMapping ResumeWorkItemMapping[]
+  @@unique([userId, id])
+  @@index(fields: [userId])
 }
 
-model SectionItem {
-  id        String        @id @default(cuid())
-  format    SectionFormat
-  userId    String
-  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
-  data      Json          @default("{}")
-  updatedAt DateTime      @updatedAt
-
-  SectionItemCVMapping SectionItemCVMapping[] // Updated to reference SectionItemCVMapping
+model AwardItem {
+  id                     String                   @id @default(cuid())
+  userId                 String
+  user                   User                     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title                  String?
+  awarder                String?
+  url                    Json?
+  summary                String?
+  date                   String?
+  updatedAt              DateTime                 @updatedAt
+  ResumeAwardItemMapping ResumeAwardItemMapping[]
 
   @@unique([userId, id])
   @@index(fields: [userId])
 }
 
-model SectionItemCVMapping {
-  id        String      @id @default(cuid())
-  sectionId String
-  section   SectionItem @relation(fields: [sectionId], references: [id], onDelete: Cascade)
-  resumeId  String
-  resume    Resume      @relation(fields: [resumeId], references: [id], onDelete: Cascade)
-  order     Int
+model SkillItem {
+  id                     String                   @id @default(cuid())
+  userId                 String
+  user                   User                     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name                   String?
+  description            String?
+  level                  Int?
+  keywords               Json?
+  levelNum               Int?
+  updatedAt              DateTime                 @updatedAt
+  ResumeSkillItemMapping ResumeSkillItemMapping[]
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
+}
+
+model ProjectItem {
+  id                       String                     @id @default(cuid())
+  userId                   String
+  user                     User                       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name                     String?
+  url                      Json?
+  summary                  String?
+  description              String?
+  keywords                 Json?
+  date                     String?
+  updatedAt                DateTime                   @updatedAt
+  ResumeProjectItemMapping ResumeProjectItemMapping[]
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
+}
+
+model EducationItem {
+  id                         String                       @id @default(cuid())
+  userId                     String
+  user                       User                         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  institution                String?
+  area                       String?
+  degree                     String?
+  score                      String?
+  courses                    Json?
+  summary                    String?
+  url                        Json?
+  date                       String?
+  studyType                  String?
+  updatedAt                  DateTime                     @updatedAt
+  ResumeEducationItemMapping ResumeEducationItemMapping[]
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
+}
+
+model InterestItem {
+  id                        String                      @id @default(cuid())
+  userId                    String
+  user                      User                        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name                      String?
+  keywords                  Json?
+  updatedAt                 DateTime                    @updatedAt
+  ResumeInterestItemMapping ResumeInterestItemMapping[]
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
+}
+
+model LanguageItem {
+  id                        String                      @id @default(cuid())
+  userId                    String
+  user                      User                        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name                      String?
+  description               String?
+  level                     Int?
+  levelNum                  Int?
+  updatedAt                 DateTime                    @updatedAt
+  ResumeLanguageItemMapping ResumeLanguageItemMapping[]
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
+}
+
+model VolunteerItem {
+  id                         String                       @id @default(cuid())
+  userId                     String
+  user                       User                         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  organization               String?
+  position                   String?
+  url                        Json?
+  summary                    String?
+  date                       String?
+  location                   String?
+  updatedAt                  DateTime                     @updatedAt
+  ResumeVolunteerItemMapping ResumeVolunteerItemMapping[]
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
+}
+
+model ReferenceItem {
+  id                         String                       @id @default(cuid())
+  userId                     String
+  user                       User                         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name                       String?
+  description                String?
+  email                      String?
+  phone                      String?
+  summary                    String?
+  url                        Json?
+  relationship               String?
+  updatedAt                  DateTime                     @updatedAt
+  ResumeReferenceItemMapping ResumeReferenceItemMapping[]
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
+}
+
+model PublicationItem {
+  id                           String                         @id @default(cuid())
+  userId                       String
+  user                         User                           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name                         String?
+  publisher                    String?
+  url                          Json?
+  summary                      String?
+  date                         String?
+  updatedAt                    DateTime                       @updatedAt
+  ResumePublicationItemMapping ResumePublicationItemMapping[]
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
+}
+
+model CertificationItem {
+  id                             String                           @id @default(cuid())
+  userId                         String
+  user                           User                             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name                           String?
+  issuer                         String?
+  url                            Json?
+  summary                        String?
+  date                           String?
+  updatedAt                      DateTime                         @updatedAt
+  ResumeCertificationItemMapping ResumeCertificationItemMapping[]
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
+}
+
+model ProfileItem {
+  id                       String                     @id @default(cuid())
+  userId                   String
+  user                     User                       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  network                  String?
+  url                      Json?
+  username                 String?
+  updatedAt                DateTime                   @updatedAt
+  icon                     String?
+  description              String?
+  ResumeProfileItemMapping ResumeProfileItemMapping[]
+  @@unique([userId, id])
+  @@index(fields: [userId])
+}
+
+model BasicsItem {
+  id                      String                    @id @default(cuid())
+  userId                  String
+  user                    User                      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name                    String?
+  email                   String?
+  phone                   String?
+  headline                String?
+  summary                 Json?
+  birthdate               String?
+  website                 String?
+  profiles                Json?
+  location                String?
+  photo                   Json?
+  updatedAt               DateTime                  @updatedAt
+  ResumeBasicsItemMapping ResumeBasicsItemMapping[]
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
+}
+
+model CustomItem {
+  id                      String                    @id @default(cuid())
+  userId                  String
+  user                    User                      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name                    String?
+  description             String?
+  location                String?
+  date                    String?
+  website                 String?
+  summary                 Json?
+  keywords                Json?
+  url                     Json?
+  updatedAt               DateTime                  @updatedAt
+  ResumeCustomItemMapping ResumeCustomItemMapping[]
+
+  @@unique([userId, id])
+  @@index(fields: [userId])
+}
+
+model ResumeProfileItemMapping {
+  id            String      @id @default(cuid())
+  resumeId      String
+  profileItemId String
+  resume        Resume      @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  profileItem   ProfileItem @relation(fields: [profileItemId], references: [id], onDelete: Cascade)
+  order         Int
+
+  @@unique([resumeId, order])
+}
+
+model ResumeBasicsItemMapping {
+  id           String     @id @default(cuid())
+  resumeId     String
+  basicsItemId String
+  resume       Resume     @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  basicsItem   BasicsItem @relation(fields: [basicsItemId], references: [id], onDelete: Cascade)
+  order        Int
+
+  @@unique([resumeId, order])
+}
+
+model ResumeWorkItemMapping {
+  id         String   @id @default(cuid())
+  resumeId   String
+  workItemId String
+  resume     Resume   @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  workItem   WorkItem @relation(fields: [workItemId], references: [id], onDelete: Cascade)
+  order      Int
+
+  @@unique([resumeId, order])
+}
+
+model ResumeAwardItemMapping {
+  id          String    @id @default(cuid())
+  resumeId    String
+  awardItemId String
+  resume      Resume    @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  awardItem   AwardItem @relation(fields: [awardItemId], references: [id], onDelete: Cascade)
+  order       Int
+
+  @@unique([resumeId, order])
+}
+
+model ResumeSkillItemMapping {
+  id          String    @id @default(cuid())
+  resumeId    String
+  skillItemId String
+  resume      Resume    @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  skillItem   SkillItem @relation(fields: [skillItemId], references: [id], onDelete: Cascade)
+  order       Int
+
+  @@unique([resumeId, order])
+}
+
+model ResumeProjectItemMapping {
+  id            String      @id @default(cuid())
+  resumeId      String
+  projectItemId String
+  resume        Resume      @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  projectItem   ProjectItem @relation(fields: [projectItemId], references: [id], onDelete: Cascade)
+  order         Int
+
+  @@unique([resumeId, order])
+}
+
+model ResumeEducationItemMapping {
+  id              String        @id @default(cuid())
+  resumeId        String
+  educationItemId String
+  resume          Resume        @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  educationItem   EducationItem @relation(fields: [educationItemId], references: [id], onDelete: Cascade)
+  order           Int
+  
+  @@unique([resumeId, order])
+}
+
+model ResumeInterestItemMapping {
+  id             String       @id @default(cuid())
+  resumeId       String
+  interestItemId String
+  resume         Resume       @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  interestItem   InterestItem @relation(fields: [interestItemId], references: [id], onDelete: Cascade)
+  order          Int
+
+  @@unique([resumeId, order])
+}
+
+model ResumeLanguageItemMapping {
+  id             String       @id @default(cuid())
+  resumeId       String
+  languageItemId String
+  resume         Resume       @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  languageItem   LanguageItem @relation(fields: [languageItemId], references: [id], onDelete: Cascade)
+  order          Int
+
+  @@unique([resumeId, order])
+}
+
+model ResumeVolunteerItemMapping {
+  id              String        @id @default(cuid())
+  resumeId        String
+  volunteerItemId String
+  resume          Resume        @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  volunteerItem   VolunteerItem @relation(fields: [volunteerItemId], references: [id], onDelete: Cascade)
+  order           Int
+
+  @@unique([resumeId, order])
+}
+
+model ResumeReferenceItemMapping {
+  id              String        @id @default(cuid())
+  resumeId        String
+  referenceItemId String
+  resume          Resume        @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  referenceItem   ReferenceItem @relation(fields: [referenceItemId], references: [id], onDelete: Cascade)
+  order           Int
+
+  @@unique([resumeId, order])
+}
+
+model ResumePublicationItemMapping {
+  id                String          @id @default(cuid())
+  resumeId          String
+  publicationItemId String
+  resume            Resume          @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  publicationItem   PublicationItem @relation(fields: [publicationItemId], references: [id], onDelete: Cascade)
+  order             Int
+
+  @@unique([resumeId, order])
+}
+
+model ResumeCertificationItemMapping {
+  id                  String            @id @default(cuid())
+  resumeId            String
+  certificationItemId String
+  resume              Resume            @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  certificationItem   CertificationItem @relation(fields: [certificationItemId], references: [id], onDelete: Cascade)
+  order               Int
+
+  @@unique([resumeId, order])
+}
+
+model ResumeCustomItemMapping {
+  id                  String            @id @default(cuid())
+  resumeId            String
+  customItemId        String
+  resume              Resume            @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  customItem   CustomItem @relation(fields: [customItemId], references: [id], onDelete: Cascade)
+  order               Int
 
   @@unique([resumeId, order])
 }

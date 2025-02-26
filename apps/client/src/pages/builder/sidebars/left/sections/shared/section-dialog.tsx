@@ -42,19 +42,6 @@ type Props<T extends SectionItem> = {
   children: React.ReactNode;
 };
 
-const getStringFromValues = (values: object): string => {
-  const result = Object.entries(values)
-    .filter(([key]) => key !== "id")
-    .map(([key, value]) => {
-      if (typeof value === "object") return `${key.toString()}: ${getStringFromValues(value)}`;
-
-      return `${key.toString()}: ${value.toString()}`;
-    })
-    .join(", ");
-
-  return "{ " + result + " }";
-};
-
 export const SectionDialog = <T extends SectionItem>({
   id,
   form,
@@ -81,14 +68,18 @@ export const SectionDialog = <T extends SectionItem>({
   const onSubmit = async (values: T) => {
     if (!section) return;
 
-    const sectionFormat: SectionFormat = SectionFormat[section.name as keyof typeof SectionFormat];
-    const data = getStringFromValues(values);
+    let sectionName = section.name;
+    if (sectionName === "Custom Section") {
+      // eslint-disable-next-line lingui/no-unlocalized-strings
+      sectionName = "Custom";
+    }
+
+    const sectionFormat: SectionFormat = SectionFormat[sectionName as keyof typeof SectionFormat];
 
     if (isCreate || isDuplicate) {
-
       const dto = await createSectionItem({
         format: sectionFormat,
-        data: data,
+        data: values,
       });
 
       values.id = dto.id;
@@ -110,7 +101,7 @@ export const SectionDialog = <T extends SectionItem>({
 
       await updateSectionItem({
         id: values.id,
-        data: data,
+        data: values,
       });
 
       if (pendingKeyword && "keywords" in values) {
