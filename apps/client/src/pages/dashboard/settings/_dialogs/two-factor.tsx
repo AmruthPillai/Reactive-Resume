@@ -40,7 +40,7 @@ import { useDisable2FA, useEnable2FA, useSetup2FA } from "@/client/services/auth
 import { useDialog } from "@/client/stores/dialog";
 
 // We're using the pre-existing "mode" state to determine the stage of 2FA set up the user is in.
-// - "create.ts" mode is used to enable 2FA.
+// - "create" mode is used to enable 2FA.
 // - "update" mode is used to verify 2FA, displaying a QR Code, once enabled.
 // - "duplicate" mode is used to display the backup codes after initial verification.
 // - "delete" mode is used to disable 2FA.
