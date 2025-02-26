@@ -1,6 +1,9 @@
 import { createBrowserRouter, createRoutesFromElements, Navigate, Route } from "react-router";
 
 import { CompanyPage } from "@/client/pages/dashboard/companies/page";
+import { ErrorPage } from "@/client/pages/dashboard/publicpage/error";
+import { publicLoader, PublicResumePage } from "@/client/pages/dashboard/publicpage/page";
+import { publicProfileLoader, PublicProfilePage } from "@/client/pages/profilepage/page";
 
 import { BackupOtpPage } from "../pages/auth/backup-otp/page";
 import { ForgotPasswordPage } from "../pages/auth/forgot-password/page";
@@ -17,8 +20,6 @@ import { ResumesPage } from "../pages/dashboard/resumes/page";
 import { SettingsPage } from "../pages/dashboard/settings/page";
 import { HomeLayout } from "../pages/home/layout";
 import { HomePage } from "../pages/home/page";
-import { ErrorPage } from "../pages/public/error";
-import { publicLoader, PublicResumePage } from "../pages/public/page";
 import { Providers } from "../providers";
 import { AuthGuard } from "./guards/auth";
 import { GuestGuard } from "./guards/guest";

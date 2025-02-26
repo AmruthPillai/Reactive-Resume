@@ -144,6 +144,18 @@ export class ResumeService {
     return this.prisma.resume.delete({ where: { userId_id: { userId, id } } });
   }
 
+  async findOnePublicByUsername(username: string) {
+    const user = await this.prisma.user.findUniqueOrThrow({
+      where: { username },
+    });
+
+    if (user.profileResumeId == null) throw new BadRequestException(ErrorMessage.NOPUBLICRESUME);
+
+    return await this.prisma.resume.findUniqueOrThrow({
+      where: { id: user.profileResumeId },
+    });
+  }
+
   async printResume(resume: ResumeDto, userId?: string) {
     const url = await this.printerService.printResume(resume);
 

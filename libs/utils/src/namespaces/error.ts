@@ -18,4 +18,5 @@ export enum ErrorMessage {
   ResumePreviewError = "ResumePreviewError",
   SomethingWentWrong = "SomethingWentWrong",
   CompanyNameAlreadyExists = "CompanyNameAlreadyExists",
+  NOPUBLICRESUME = "NoPublicResume",
 }

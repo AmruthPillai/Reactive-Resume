@@ -4,6 +4,8 @@ import type { AxiosResponse } from "axios";
 
 import { RESUMES_KEY } from "@/client/constants/query-keys";
 import { axios } from "@/client/libs/axios";
+import { queryClient } from "@/client/libs/query-client";
+import { findResumeById } from "@/client/services/resume/resume";
 
 export const fetchResumes = async () => {
   const response = await axios.get<ResumeDto[], AxiosResponse<ResumeDto[]>>("/resume");
