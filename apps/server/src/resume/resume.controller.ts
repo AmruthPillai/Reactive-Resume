@@ -91,7 +91,7 @@ export class ResumeController {
     return this.resumeService.findOneStatistics(id);
   }
 
-  @Get("/public/:username/:slug")
+  @Get("/publicpage/:username/:slug")
   @UseGuards(OptionalGuard)
   findOneByUsernameSlug(
     @Param("username") username: string,
@@ -99,6 +99,17 @@ export class ResumeController {
     @User("id") userId: string,
   ) {
     return this.resumeService.findOneByUsernameSlug(username, slug, userId);
+  }
+
+  @Get("public/:username")
+  @UseGuards(OptionalGuard)
+  async publicProfileResume(@Param("username") username: string) {
+    try {
+      return await this.resumeService.findOnePublicByUsername(username);
+    } catch (error) {
+      Logger.error(error);
+      throw new InternalServerErrorException(error);
+    }
   }
 
   @Patch(":id")

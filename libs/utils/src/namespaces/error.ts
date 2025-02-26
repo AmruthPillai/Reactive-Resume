@@ -17,4 +17,5 @@ export enum ErrorMessage {
   ResumePrinterError = "ResumePrinterError",
   ResumePreviewError = "ResumePreviewError",
   SomethingWentWrong = "SomethingWentWrong",
+  NOPUBLICRESUME = "NoPublicResume",
 }

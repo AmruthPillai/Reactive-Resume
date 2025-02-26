@@ -11,6 +11,7 @@ import { Icon } from "@/client/components/icon";
 import { UserAvatar } from "@/client/components/user-avatar";
 import { UserOptions } from "@/client/components/user-options";
 import { useUser } from "@/client/services/user";
+import { useAuthStore } from "@/client/stores/auth";
 
 type Props = {
   className?: string;
@@ -40,6 +41,7 @@ type SidebarItemProps = SidebarItem & {
 
 const SidebarItem = ({ path, name, shortcut, icon, onClick }: SidebarItemProps) => {
   const isActive = useLocation().pathname === path;
+  const { user } = useAuthStore();
 
   return (
     <Button
@@ -70,6 +72,12 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
   const { user } = useUser();
   const navigate = useNavigate();
 
+  useKeyboardShortcut(["shift", "p"], () => {
+    // @ts-expect-error User possible undefined. We expect it isn't.
+    void navigate("/publicprofile/" + user.username);
+    setOpen?.(false);
+  });
+
   useKeyboardShortcut(["shift", "r"], () => {
     void navigate("/dashboard/resumes");
     setOpen?.(false);
@@ -79,6 +87,7 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
     void navigate("/dashboard/settings");
     setOpen?.(false);
   });
+
 
   const sidebarItems: SidebarItem[] = [
     {
@@ -106,7 +115,42 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
       </div>
       <Separator className="opacity-50" />
       <div className="grid gap-y-2">
-        {sidebarItems.map((item) => (
+        {(user === undefined
+          ? [
+              {
+                path: "/dashboard/resumes",
+                name: t`Resumes`,
+                shortcut: "⇧R",
+                icon: <ReadCvLogo />,
+              },
+              {
+                path: "/dashboard/settings",
+                name: t`Settings`,
+                shortcut: "⇧S",
+                icon: <FadersHorizontal />,
+              },
+            ]
+          : [
+              {
+                path: "/publicprofile/" + user.username,
+                name: t`Profile Page`,
+                shortcut: "⇧P",
+                icon: <UserAvatar />,
+              },
+              {
+                path: "/dashboard/resumes",
+                name: t`Resumes`,
+                shortcut: "⇧R",
+                icon: <ReadCvLogo />,
+              },
+              {
+                path: "/dashboard/settings",
+                name: t`Settings`,
+                shortcut: "⇧S",
+                icon: <FadersHorizontal />,
+              },
+            ]
+        ).map((item) => (
           <SidebarItem {...item} key={item.path} onClick={() => setOpen?.(false)} />
         ))}
       </div>

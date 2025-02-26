@@ -19,7 +19,7 @@ export class ResumeGuard implements CanActivate {
         user ? user.id : undefined,
       );
 
-      // First check if the resume is public, if yes, attach the resume to the request payload.
+      // First check if the resume is publicpage, if yes, attach the resume to the request payload.
       if (resume.visibility === "public") {
         request.payload = { resume };
       }
