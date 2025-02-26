@@ -1,4 +1,18 @@
 import { idSchema } from "@reactive-resume/schema";
+import {
+  awardSchema,
+  basicsSchema,
+  certificationSchema,
+  educationSchema,
+  experienceSchema,
+  interestSchema,
+  languageSchema,
+  profileSchema,
+  publicationSchema,
+  referenceSchema,
+  skillSchema,
+  volunteerSchema,
+} from "@reactive-resume/schema";
 import { dateSchema } from "@reactive-resume/utils";
 import { createZodDto } from "nestjs-zod/dto";
 import { z } from "zod";
@@ -27,7 +41,21 @@ export const sectionSchema = z.object({
   format: z.nativeEnum(SectionFormat),
   userId: idSchema,
   user: userSchema,
-  data: z.string(),
+  data: z.union([
+    basicsSchema,
+    profileSchema,
+    experienceSchema,
+    educationSchema,
+    skillSchema,
+    languageSchema,
+    awardSchema,
+    certificationSchema,
+    interestSchema,
+    profileSchema,
+    publicationSchema,
+    volunteerSchema,
+    referenceSchema,
+  ]),
   updatedAt: dateSchema,
 });
 
