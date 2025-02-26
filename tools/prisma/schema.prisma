@@ -128,8 +128,9 @@ model WorkItem {
   summary               String?
   date                  String?
   updatedAt             DateTime                @updatedAt
+  company               String?
+  location              String?
   ResumeWorkItemMapping ResumeWorkItemMapping[]
-
   @@unique([userId, id])
   @@index(fields: [userId])
 }
@@ -219,6 +220,7 @@ model LanguageItem {
   userId                    String
   user                      User                        @relation(fields: [userId], references: [id], onDelete: Cascade)
   name                      String?
+  description               String?
   level                     Int?
   levelNum                  Int?
   updatedAt                 DateTime                    @updatedAt
@@ -300,6 +302,7 @@ model ProfileItem {
   url                      Json?
   username                 String?
   updatedAt                DateTime                   @updatedAt
+  icon                     String?
   ResumeProfileItemMapping ResumeProfileItemMapping[]
 
   @@unique([userId, id])

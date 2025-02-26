@@ -90,7 +90,7 @@ const Header = () => {
 const Summary = () => {
   const section = useArtboardStore((state) => state.resume.sections.summary);
 
-  if (!section.visible || isEmptyString(section.content)) return null;
+  if (isEmptyString(section.content)) return null;
 
   return (
     <section id={section.id} className="grid grid-cols-4 gap-x-6">
@@ -180,7 +180,7 @@ const Section = <T,>({
   summaryKey,
   keywordsKey,
 }: SectionProps<T>) => {
-  if (!section.visible || section.items.length === 0) return null;
+  if (section.items.length === 0) return null;
 
   return (
     <section id={section.id} className={cn("grid", dateKey !== undefined && "gap-y-4")}>
@@ -199,37 +199,35 @@ const Section = <T,>({
 
       {dateKey !== undefined && (
         <div className="grid grid-cols-4 gap-x-6 gap-y-4">
-          {section.items
-            .filter((item) => item.visible)
-            .map((item) => {
-              const url = (urlKey && get(item, urlKey)) as URL | undefined;
-              const date = (dateKey && get(item, dateKey, "")) as string | undefined;
-              const summary = (summaryKey && get(item, summaryKey, "")) as string | undefined;
-              const keywords = (keywordsKey && get(item, keywordsKey, [])) as string[] | undefined;
+          {section.items.map((item) => {
+            const url = (urlKey && get(item, urlKey)) as URL | undefined;
+            const date = (dateKey && get(item, dateKey, "")) as string | undefined;
+            const summary = (summaryKey && get(item, summaryKey, "")) as string | undefined;
+            const keywords = (keywordsKey && get(item, keywordsKey, [])) as string[] | undefined;
 
-              return (
-                <Fragment key={item.id}>
-                  <div className="text-right font-medium text-primary">{date}</div>
+            return (
+              <Fragment key={item.id}>
+                <div className="text-right font-medium text-primary">{date}</div>
 
-                  <div className="col-span-3 space-y-1">
-                    {children?.(item as T)}
+                <div className="col-span-3 space-y-1">
+                  {children?.(item as T)}
 
-                    {url !== undefined && section.separateLinks && <Link url={url} />}
+                  {url !== undefined && section.separateLinks && <Link url={url} />}
 
-                    {summary !== undefined && !isEmptyString(summary) && (
-                      <div
-                        dangerouslySetInnerHTML={{ __html: sanitize(summary) }}
-                        className="wysiwyg"
-                      />
-                    )}
+                  {summary !== undefined && !isEmptyString(summary) && (
+                    <div
+                      dangerouslySetInnerHTML={{ __html: sanitize(summary) }}
+                      className="wysiwyg"
+                    />
+                  )}
 
-                    {keywords !== undefined && keywords.length > 0 && (
-                      <p className="text-sm">{keywords.join(", ")}</p>
-                    )}
-                  </div>
-                </Fragment>
-              );
-            })}
+                  {keywords !== undefined && keywords.length > 0 && (
+                    <p className="text-sm">{keywords.join(", ")}</p>
+                  )}
+                </div>
+              </Fragment>
+            );
+          })}
         </div>
       )}
 
@@ -239,34 +237,30 @@ const Section = <T,>({
             className="col-span-3 col-start-2 grid gap-x-6 gap-y-3"
             style={{ gridTemplateColumns: `repeat(${section.columns}, 1fr)` }}
           >
-            {section.items
-              .filter((item) => item.visible)
-              .map((item) => {
-                const url = (urlKey && get(item, urlKey)) as URL | undefined;
-                const summary = (summaryKey && get(item, summaryKey, "")) as string | undefined;
-                const keywords = (keywordsKey && get(item, keywordsKey, [])) as
-                  | string[]
-                  | undefined;
+            {section.items.map((item) => {
+              const url = (urlKey && get(item, urlKey)) as URL | undefined;
+              const summary = (summaryKey && get(item, summaryKey, "")) as string | undefined;
+              const keywords = (keywordsKey && get(item, keywordsKey, [])) as string[] | undefined;
 
-                return (
-                  <div key={item.id}>
-                    {children?.(item as T)}
+              return (
+                <div key={item.id}>
+                  {children?.(item as T)}
 
-                    {url !== undefined && section.separateLinks && <Link url={url} />}
+                  {url !== undefined && section.separateLinks && <Link url={url} />}
 
-                    {summary !== undefined && !isEmptyString(summary) && (
-                      <div
-                        dangerouslySetInnerHTML={{ __html: sanitize(summary) }}
-                        className="wysiwyg"
-                      />
-                    )}
+                  {summary !== undefined && !isEmptyString(summary) && (
+                    <div
+                      dangerouslySetInnerHTML={{ __html: sanitize(summary) }}
+                      className="wysiwyg"
+                    />
+                  )}
 
-                    {keywords !== undefined && keywords.length > 0 && (
-                      <p className="text-sm">{keywords.join(", ")}</p>
-                    )}
-                  </div>
-                );
-              })}
+                  {keywords !== undefined && keywords.length > 0 && (
+                    <p className="text-sm">{keywords.join(", ")}</p>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       )}
