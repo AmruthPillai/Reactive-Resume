@@ -13,7 +13,6 @@ export const metadataSchema = z.object({
   layout: z.array(z.array(z.array(z.string()))).default(defaultLayout), // pages -> columns -> sections
   css: z.object({
     value: z.string().default("* {\n\toutline: 1px solid #000;\n\toutline-offset: 4px;\n}"),
-    visible: z.boolean().default(false),
   }),
   page: z.object({
     margin: z.number().default(18),
@@ -51,7 +50,6 @@ export const defaultMetadata: Metadata = {
   layout: defaultLayout,
   css: {
     value: "* {\n\toutline: 1px solid #000;\n\toutline-offset: 4px;\n}",
-    visible: false,
   },
   page: {
     margin: 18,

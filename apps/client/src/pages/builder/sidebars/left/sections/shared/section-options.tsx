@@ -57,7 +57,7 @@ export const SectionOptions = ({ id }: Props) => {
   };
 
   const toggleVisibility = () => {
-    setValue(`sections.${id}.visible`, !section.visible);
+    // setValue(`sections.${id}.visible`, !section.visible);
   };
 
   const onResetName = () => {
@@ -99,11 +99,11 @@ export const SectionOptions = ({ id }: Props) => {
             <DropdownMenuSeparator />
           </>
         )}
-
+        {/* TODO - Fix true statement with visibility check */}
         <DropdownMenuGroup>
           <DropdownMenuItem onClick={toggleVisibility}>
-            {section.visible ? <Eye /> : <EyeSlash />}
-            <span className="ml-2">{section.visible ? t`Hide` : t`Show`}</span>
+            {true ? <Eye /> : <EyeSlash />}
+            <span className="ml-2">{true ? t`Hide` : t`Show`}</span>
           </DropdownMenuItem>
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>

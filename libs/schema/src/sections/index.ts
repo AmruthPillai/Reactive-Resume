@@ -21,7 +21,6 @@ export const sectionSchema = z.object({
   name: z.string(),
   columns: z.number().min(1).max(5).default(1),
   separateLinks: z.boolean().default(true),
-  visible: z.boolean().default(true),
 });
 
 const sectionDataSchema = z.object({
@@ -125,7 +124,6 @@ export const defaultSection: Section = {
   name: "",
   columns: 1,
   separateLinks: true,
-  visible: true,
 };
 
 export const defaultSections: Sections = {

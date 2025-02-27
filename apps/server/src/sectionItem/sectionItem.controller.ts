@@ -8,11 +8,11 @@ import {
   Param,
   Patch,
   Post,
-  UseGuards
+  UseGuards,
 } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
 import { User as UserEntity } from "@prisma/client";
-import { CreateSectionItemDto, UpdateSectionItemDto } from "@reactive-resume/dto";
+import { CreateSectionItemDto, SectionFormat, UpdateSectionItemDto } from "@reactive-resume/dto";
 import { sectionSchemaWithData } from "@reactive-resume/schema";
 import zodToJsonSchema from "zod-to-json-schema";
 
@@ -20,12 +20,10 @@ import { TwoFactorGuard } from "../auth/guards/two-factor.guard";
 import { User } from "../user/decorators/user.decorator";
 import { SectionItemService } from "./sectionItem.service";
 
-
 @ApiTags("SectionItem")
 @Controller("sectionItem")
 export class SectionItemController {
-  constructor(private readonly sectionItemService: SectionItemService) {
-  }
+  constructor(private readonly sectionItemService: SectionItemService) {}
 
   @Get("schema")
   getSchema() {
@@ -71,9 +69,9 @@ export class SectionItemController {
 
   @Delete(":id")
   @UseGuards(TwoFactorGuard)
-  async delete(@User() user: UserEntity, @Param("id") id: string) {
+  async delete(@User() user: UserEntity, @Param("id") id: string, @Body() format: SectionFormat) {
     try {
-      return await this.sectionItemService.deleteSectionItem(id);
+      return await this.sectionItemService.deleteSectionItem(format, id);
     } catch (error) {
       Logger.error(error);
       throw new InternalServerErrorException(error);
