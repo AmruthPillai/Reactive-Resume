@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { BuildingApartment, FadersHorizontal, ReadCvLogo, GithubLogo } from "@phosphor-icons/react";
+import { BuildingApartment, FadersHorizontal, GithubLogo,ReadCvLogo } from "@phosphor-icons/react";
 import { Button, KeyboardShortcut, Separator } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
