@@ -1,18 +1,14 @@
 import { t } from "@lingui/macro";
 import { CircleNotch, FilePdf } from "@phosphor-icons/react";
-import type { ResumeDto } from "@reactive-resume/dto";
 import { Button } from "@reactive-resume/ui";
 import { pageSizeMap } from "@reactive-resume/utils";
-import React, { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet-async";
-import type { LoaderFunction } from "react-router";
 import { Link, useLoaderData } from "react-router";
-import { redirect } from "react-router";
 
 import { Icon } from "@/client/components/icon";
 import { ThemeSwitch } from "@/client/components/theme-switch";
-import { queryClient } from "@/client/libs/query-client";
-import { findPublicProfileResume, usePrintResume } from "@/client/services/resume";
+import { usePrintResume } from "@/client/services/resume";
 
 const openInNewTab = (url: string) => {
   const win = window.open(url, "_blank");
@@ -109,18 +105,4 @@ export const PublicProfilePage = () => {
       </div>
     </div>
   );
-};
-
-export const publicProfileLoader: LoaderFunction<ResumeDto> = async ({ params }) => {
-  try {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    const username = params.username!;
-
-    return await queryClient.fetchQuery({
-      queryKey: ["resume", { username }],
-      queryFn: () => findPublicProfileResume(username),
-    });
-  } catch {
-    return redirect("/dashboard");
-  }
 };
