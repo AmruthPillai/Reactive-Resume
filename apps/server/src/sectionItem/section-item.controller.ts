@@ -18,7 +18,7 @@ import zodToJsonSchema from "zod-to-json-schema";
 
 import { TwoFactorGuard } from "../auth/guards/two-factor.guard";
 import { User } from "../user/decorators/user.decorator";
-import { SectionItemService } from "./sectionItem.service";
+import { SectionItemService } from "./section-item.service";
 
 @ApiTags("SectionItem")
 @Controller("sectionItem")
