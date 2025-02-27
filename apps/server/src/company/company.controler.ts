@@ -68,7 +68,7 @@ export class CompanyController {
   @UseGuards(TwoFactorGuard)
   delete(@User() user: UserEntity, @Param("id") id: string) {
     try {
-      return this.companyService.delete(id);
+      return this.companyService.delete(user.id, id);
     } catch (error) {
       Logger.log(error);
       throw new InternalServerErrorException(error);

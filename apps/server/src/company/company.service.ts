@@ -28,9 +28,9 @@ export class CompanyService {
     });
   }
 
-  async delete(id: string) {
+  async delete(user: string, id: string) {
     return this.prisma.company.delete({
-      where: { id },
+      where: { id, ownerId: user },
     });
   }
 }
