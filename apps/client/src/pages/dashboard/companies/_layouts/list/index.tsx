@@ -1,27 +1,18 @@
 import { sortByDate } from "@reactive-resume/utils";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { useResumes } from "@/client/services/resume";
+import { CompanyListItem } from "@/client/pages/dashboard/companies/_layouts/list/_components/company-item";
+import { CreateCompanyListItem } from "@/client/pages/dashboard/companies/_layouts/list/_components/create-item";
+import { BaseListItem } from "@/client/pages/dashboard/resumes/_layouts/list/_components/base-item";
+import { useCompanies } from "@/client/services/company/company";
 
-import { BaseListItem } from "./_components/base-item";
-import { CreateResumeListItem } from "./_components/create-item";
-import { ImportResumeListItem } from "./_components/import-item";
-import { ResumeListItem } from "./_components/resume-item";
-
-export const ResumeListView = () => {
-  const { resumes, loading } = useResumes();
+export const CompanyListView = () => {
+  const { companies, loading } = useCompanies();
 
   return (
     <div className="grid gap-y-2">
       <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }}>
-        <CreateResumeListItem />
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0, transition: { delay: 0.1 } }}
-      >
-        <ImportResumeListItem />
+        <CreateCompanyListItem />
       </motion.div>
 
       {loading &&
@@ -35,18 +26,18 @@ export const ResumeListView = () => {
           </div>
         ))}
 
-      {resumes && (
+      {companies && (
         <AnimatePresence>
-          {resumes
+          {companies
             .sort((a, b) => sortByDate(a, b, "updatedAt"))
-            .map((resume, index) => (
+            .map((company, index) => (
               <motion.div
-                key={resume.id}
+                key={company.id}
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0, transition: { delay: (index + 2) * 0.1 } }}
                 exit={{ opacity: 0, filter: "blur(8px)", transition: { duration: 0.5 } }}
               >
-                <ResumeListItem resume={resume} />
+                <CompanyListItem company={company} />
               </motion.div>
             ))}
         </AnimatePresence>

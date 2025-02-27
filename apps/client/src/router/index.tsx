@@ -1,5 +1,6 @@
 import { createBrowserRouter, createRoutesFromElements, Navigate, Route } from "react-router";
 
+import { CompanyPage } from "@/client/pages/dashboard/companies/page";
 import { ErrorPage } from "@/client/pages/dashboard/publicpage/error";
 import { publicLoader, PublicResumePage } from "@/client/pages/dashboard/publicpage/page";
 import { publicProfileLoader, PublicProfilePage } from "@/client/pages/profilepage/page";
@@ -62,12 +63,10 @@ export const routes = createRoutesFromElements(
         <Route index element={<Navigate replace to="/auth/login" />} />
       </Route>
 
-      <Route element={<DashboardLayout />}>
-        <Route path="publicprofile">
-          <Route path=":username" loader={publicProfileLoader} element={<PublicProfilePage />} />
-        </Route>
-        <Route path="dashboard">
-          <Route element={<AuthGuard />}>
+      <Route path="dashboard">
+        <Route element={<AuthGuard />}>
+          <Route element={<DashboardLayout />}>
+            <Route path="companies" element={<CompanyPage />} />
             <Route path="resumes" element={<ResumesPage />} />
             <Route path="settings" element={<SettingsPage />} />
 

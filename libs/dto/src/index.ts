@@ -7,3 +7,4 @@ export * from "./secrets";
 export * from "./section";
 export * from "./statistics";
 export * from "./user";
+export * from "./company"

@@ -55,6 +55,7 @@ model User {
   volunteering   VolunteerItem[]
   references     ReferenceItem[]
   custom         CustomItem[]
+  Company        Company[]
 }
 
 model Secrets {
@@ -131,6 +132,7 @@ model WorkItem {
   company               String?
   location              String?
   ResumeWorkItemMapping ResumeWorkItemMapping[]
+
   @@unique([userId, id])
   @@index(fields: [userId])
 }
@@ -427,7 +429,7 @@ model ResumeEducationItemMapping {
   resume          Resume        @relation(fields: [resumeId], references: [id], onDelete: Cascade)
   educationItem   EducationItem @relation(fields: [educationItemId], references: [id], onDelete: Cascade)
   order           Int
-  
+
   @@unique([resumeId, order])
 }
 
@@ -498,12 +500,12 @@ model ResumeCertificationItemMapping {
 }
 
 model ResumeCustomItemMapping {
-  id                  String            @id @default(cuid())
-  resumeId            String
-  customItemId        String
-  resume              Resume            @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+  id           String     @id @default(cuid())
+  resumeId     String
+  customItemId String
+  resume       Resume     @relation(fields: [resumeId], references: [id], onDelete: Cascade)
   customItem   CustomItem @relation(fields: [customItemId], references: [id], onDelete: Cascade)
-  order               Int
+  order        Int
 
   @@unique([resumeId, order])
 }
@@ -546,7 +548,9 @@ model CompanyMapping {
 
 model Company {
   id        String   @id @default(cuid())
-  name      String
+  name      String   @unique
+  ownerId   String
+  owner     User     @relation(fields: [ownerId], references: [id], onDelete: Cascade)
   updatedAt DateTime @updatedAt
 
   CompanyMapping CompanyMapping[]

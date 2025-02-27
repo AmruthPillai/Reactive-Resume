@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { FadersHorizontal, GithubLogo, ReadCvLogo } from "@phosphor-icons/react";
+import { BuildingApartment, FadersHorizontal, GithubLogo, ReadCvLogo } from "@phosphor-icons/react";
 import { Button, KeyboardShortcut, Separator } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
@@ -88,21 +88,44 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
     setOpen?.(false);
   });
 
-
-  const sidebarItems: SidebarItem[] = [
+  useKeyboardShortcut(["shift", "c"], () => {
+    void navigate("/dashboard/companies");
+    setOpen?.(false);
+  });
+  // Define all SideBar Items that are NOT needed to be seen when logged in here
+  const commonSideBarItems: SidebarItem[] = [
     {
       path: "/dashboard/resumes",
       name: t`Resumes`,
       shortcut: "⇧R",
-      icon: <ReadCvLogo size={20}/>,
+      icon: <ReadCvLogo size={20} />,
     },
     {
       path: "/dashboard/settings",
       name: t`Settings`,
       shortcut: "⇧S",
-      icon: <FadersHorizontal size={20}/>,
+      icon: <FadersHorizontal size={20} />,
+    },
+    {
+      path: "/dashboard/companies",
+      name: t`Companies`,
+      shortcut: "⇧C",
+      icon: <BuildingApartment />,
     },
   ];
+  // Define all SideBar Items that ARE needed to be logged in to be seen here
+  let userSideBarItems: SidebarItem[] = [];
+  if (user !== undefined) {
+    userSideBarItems = [
+      {
+        path: "/publicprofile/" + user.username,
+        name: t`Profile Page`,
+        shortcut: "⇧P",
+        icon: <UserAvatar />,
+      },
+      ...commonSideBarItems,
+    ];
+  }
 
   return (
     <div className="flex h-full flex-col gap-y-4">
@@ -115,42 +138,7 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
       </div>
       <Separator className="opacity-50" />
       <div className="grid gap-y-2">
-        {(user === undefined
-          ? [
-              {
-                path: "/dashboard/resumes",
-                name: t`Resumes`,
-                shortcut: "⇧R",
-                icon: <ReadCvLogo />,
-              },
-              {
-                path: "/dashboard/settings",
-                name: t`Settings`,
-                shortcut: "⇧S",
-                icon: <FadersHorizontal />,
-              },
-            ]
-          : [
-              {
-                path: "/publicprofile/" + user.username,
-                name: t`Profile Page`,
-                shortcut: "⇧P",
-                icon: <UserAvatar />,
-              },
-              {
-                path: "/dashboard/resumes",
-                name: t`Resumes`,
-                shortcut: "⇧R",
-                icon: <ReadCvLogo />,
-              },
-              {
-                path: "/dashboard/settings",
-                name: t`Settings`,
-                shortcut: "⇧S",
-                icon: <FadersHorizontal />,
-              },
-            ]
-        ).map((item) => (
+        {(user === undefined ? commonSideBarItems : userSideBarItems).map((item) => (
           <SidebarItem {...item} key={item.path} onClick={() => setOpen?.(false)} />
         ))}
       </div>
@@ -168,7 +156,7 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
         }}
       >
         {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
-        {<GithubLogo  size={20} />} Bugs, Feedback and Discussions
+        {<GithubLogo size={20} />} Bugs, Feedback and Discussions
       </Button>
       <Separator className="opacity-50" />
       <UserOptions>
