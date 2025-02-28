@@ -16,12 +16,14 @@ import {
 } from "@dnd-kit/sortable";
 import { t } from "@lingui/macro";
 import { Plus } from "@phosphor-icons/react";
+//import { SectionFormat } from "@reactive-resume/dto";
 import type { SectionItem, SectionKey, SectionWithItem } from "@reactive-resume/schema";
 import { Button } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import get from "lodash.get";
 
+//import { linkResumeToItem } from "@/client/services/resume";
 import { useDialog } from "@/client/stores/dialog";
 import { useResumeStore } from "@/client/stores/resume";
 
@@ -42,6 +44,8 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
   const section = useResumeStore((state) =>
     get(state.resume.data.sections, id),
   ) as SectionWithItem<T>;
+
+  //const resumeId = useResumeStore((state) => state.resume.id);
 
   const sensors = useSensors(
     useSensor(PointerSensor),
@@ -87,6 +91,14 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
     const visible = get(section, `items[${index}].visible`, true);
     setValue(`sections.${id}.items[${index}].visible`, !visible);
   };
+
+  /*const onLinkItemToResume = async (item: T) => {
+    await linkResumeToItem(resumeId, {
+      format: SectionFormat.Education,
+      itemId: item.id,
+      order: 1,
+    });
+  };*/ // Not sure where to use the function
 
   return (
     <motion.section

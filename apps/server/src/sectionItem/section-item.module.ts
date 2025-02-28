@@ -2,8 +2,8 @@ import { Module } from "@nestjs/common";
 
 import { AuthModule } from "@/server/auth/auth.module";
 
-import { SectionItemController } from "./sectionItem.controller";
-import { SectionItemService } from "./sectionItem.service";
+import { SectionItemController } from "./section-item.controller";
+import { SectionItemService } from "./section-item.service";
 
 @Module({
   imports: [AuthModule],

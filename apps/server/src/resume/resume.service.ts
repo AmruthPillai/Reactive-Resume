@@ -5,7 +5,14 @@ import {
   Logger,
 } from "@nestjs/common";
 import { Prisma } from "@prisma/client";
-import { CreateResumeDto, ImportResumeDto, ResumeDto, UpdateResumeDto } from "@reactive-resume/dto";
+import {
+  CreateResumeDto,
+  ImportResumeDto,
+  LinkResumeToItemDto,
+  ResumeDto,
+  SectionFormat,
+  UpdateResumeDto,
+} from "@reactive-resume/dto";
 import { defaultResumeData, ResumeData } from "@reactive-resume/schema";
 import type { DeepPartial } from "@reactive-resume/utils";
 import { ErrorMessage, generateRandomName } from "@reactive-resume/utils";
@@ -180,5 +187,89 @@ export class ResumeService {
       where: { id: userId },
       data: { profileResumeId: resumeId },
     });
+  }
+
+  async linkResumeToItem(linkDTO: LinkResumeToItemDto, format: SectionFormat) {
+    const { resumeId, itemId, order } = linkDTO;
+    try {
+      switch (format) {
+        case SectionFormat.Basics: {
+          return await this.prisma.resumeBasicsItemMapping.create({
+            data: { resumeId, basicsItemId: itemId, order },
+          });
+        }
+        case SectionFormat.Profiles: {
+          return await this.prisma.resumeProfileItemMapping.create({
+            data: { resumeId, profileItemId: itemId, order },
+          });
+        }
+        case SectionFormat.Experience: {
+          return await this.prisma.resumeWorkItemMapping.create({
+            data: { resumeId, workItemId: itemId, order },
+          });
+        }
+        case SectionFormat.Education: {
+          return await this.prisma.resumeEducationItemMapping.create({
+            data: { resumeId, educationItemId: itemId, order },
+          });
+        }
+        case SectionFormat.Skills: {
+          return await this.prisma.resumeSkillItemMapping.create({
+            data: { resumeId, skillItemId: itemId, order },
+          });
+        }
+        case SectionFormat.Languages: {
+          return await this.prisma.resumeLanguageItemMapping.create({
+            data: { resumeId, languageItemId: itemId, order },
+          });
+        }
+        case SectionFormat.Awards: {
+          return await this.prisma.resumeAwardItemMapping.create({
+            data: { resumeId, awardItemId: itemId, order },
+          });
+        }
+        case SectionFormat.Certifications: {
+          return await this.prisma.resumeCertificationItemMapping.create({
+            data: { resumeId, certificationItemId: itemId, order },
+          });
+        }
+        case SectionFormat.Interests: {
+          return await this.prisma.resumeInterestItemMapping.create({
+            data: { resumeId, interestItemId: itemId, order },
+          });
+        }
+        case SectionFormat.Projects: {
+          return await this.prisma.resumeProjectItemMapping.create({
+            data: { resumeId, projectItemId: itemId, order },
+          });
+        }
+        case SectionFormat.Publications: {
+          return await this.prisma.resumePublicationItemMapping.create({
+            data: { resumeId, publicationItemId: itemId, order },
+          });
+        }
+        case SectionFormat.Volunteering: {
+          return await this.prisma.resumeVolunteerItemMapping.create({
+            data: { resumeId, volunteerItemId: itemId, order },
+          });
+        }
+        case SectionFormat.References: {
+          return await this.prisma.resumeReferenceItemMapping.create({
+            data: { resumeId, referenceItemId: itemId, order },
+          });
+        }
+        case SectionFormat.Custom: {
+          return await this.prisma.resumeCustomItemMapping.create({
+            data: { resumeId, customItemId: itemId, order },
+          });
+        }
+        default: {
+          throw new Error("Invalid section type");
+        }
+      }
+    } catch (error) {
+      Logger.error(error);
+      throw new InternalServerErrorException(error);
+    }
   }
 }
