@@ -17,6 +17,7 @@ import { HealthModule } from "./health/health.module";
 import { MailModule } from "./mail/mail.module";
 import { PrinterModule } from "./printer/printer.module";
 import { ResumeModule } from "./resume/resume.module";
+import { SearchModule } from "./search/search.module";
 import { SectionItemModule } from "./sectionItem/section-item.module";
 import { StorageModule } from "./storage/storage.module";
 import { TranslationModule } from "./translation/translation.module";
@@ -41,6 +42,7 @@ import { UserModule } from "./user/user.module";
     TranslationModule,
     ContributorsModule,
     SectionItemModule,
+    SearchModule,
     CompanyModule,
 
     // Static Assets

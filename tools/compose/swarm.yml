@@ -7,7 +7,7 @@ version: "3.8"
 services:
   # Database (Postgres)
   postgres:
-    image: postgres:16-alpine
+    image: pgvector/pgvector:pg16
     networks:
       - reactive_resume_network
     volumes:

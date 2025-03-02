@@ -183,7 +183,7 @@ export class ResumeService {
   }
 
   async setDefault(userId: string, resumeId: string) {
-    await this.prisma.user.update({
+    return await this.prisma.user.update({
       where: { id: userId },
       data: { profileResumeId: resumeId },
     });

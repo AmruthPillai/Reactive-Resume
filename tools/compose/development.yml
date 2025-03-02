@@ -5,7 +5,7 @@
 services:
   # Database (Postgres)
   postgres:
-    image: postgres:16-alpine
+    image: pgvector/pgvector:pg16
     restart: unless-stopped
     ports:
       - ${POSTGRES_PORT:-5432}:5432

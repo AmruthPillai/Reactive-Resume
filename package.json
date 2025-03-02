@@ -29,7 +29,7 @@
     "prisma:migrate": "pnpm exec prisma migrate deploy",
     "prisma:migrate:dev": "pnpm exec prisma migrate dev",
     "prisma:migrate:reset": "pnpm exec prisma migrate reset",
-    "prisma:all": "del-cli tools/prisma/migrations/*/ && pnpm exec prisma generate && pnpm exec prisma migrate reset && pnpm exec prisma migrate dev",
+    "prisma:all": "del-cli tools/prisma/migrations/*/ && pnpm exec prisma generate && pnpm exec prisma migrate reset && pnpm exec prisma migrate dev && node tools/scripts/apply-vector-migration.js",
     "messages:extract": "pnpm exec lingui extract --clean --overwrite"
   },
   "devDependencies": {
@@ -197,6 +197,7 @@
     "cookie-parser": "^1.4.7",
     "dayjs": "^1.11.13",
     "deepmerge": "^4.3.1",
+    "dotenv": "^16.4.7",
     "express-session": "^1.18.1",
     "file-saver": "^2.0.5",
     "framer-motion": "^11.18.2",
@@ -223,6 +224,7 @@
     "passport-local": "^1.0.0",
     "passport-openidconnect": "^0.1.2",
     "pdf-lib": "^1.17.1",
+    "pg": "^8.13.3",
     "prisma": "^5.22.0",
     "prismjs": "^1.29.0",
     "puppeteer": "^23.11.1",

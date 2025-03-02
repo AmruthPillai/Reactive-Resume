@@ -29,6 +29,7 @@ import { User } from "@/server/user/decorators/user.decorator";
 
 import { OptionalGuard } from "../auth/guards/optional.guard";
 import { TwoFactorGuard } from "../auth/guards/two-factor.guard";
+import { SearchService } from "../search/search.service";
 import { Resume } from "./decorators/resume.decorator";
 import { ResumeGuard } from "./guards/resume.guard";
 import { ResumeService } from "./resume.service";
@@ -36,7 +37,10 @@ import { ResumeService } from "./resume.service";
 @ApiTags("Resume")
 @Controller("resume")
 export class ResumeController {
-  constructor(private readonly resumeService: ResumeService) {}
+  constructor(
+    private readonly resumeService: ResumeService,
+    private readonly searchService: SearchService,
+  ) {}
 
   @Get("schema")
   getSchema() {
@@ -165,7 +169,13 @@ export class ResumeController {
   @UseGuards(TwoFactorGuard)
   async setDefault(@User() user: UserEntity, @Param("id") id: string) {
     try {
-      await this.resumeService.setDefault(user.id, id);
+      const resume = this.resumeService.setDefault(user.id, id);
+      try {
+        await this.searchService.updateSearchIndex(user);
+      } catch (error) {
+        Logger.error(error);
+        throw new InternalServerErrorException(error);
+      }
       return { message: "Resume set as profile successfully" };
     } catch (error) {
       Logger.error(error);

@@ -1,5 +1,11 @@
 import { t } from "@lingui/macro";
-import { BuildingApartment, FadersHorizontal, GithubLogo, ReadCvLogo } from "@phosphor-icons/react";
+import {
+  BuildingApartment,
+  FadersHorizontal,
+  GithubLogo,
+  MagnifyingGlass,
+  ReadCvLogo,
+} from "@phosphor-icons/react";
 import { Button, KeyboardShortcut, Separator } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
@@ -92,6 +98,7 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
     void navigate("/dashboard/companies");
     setOpen?.(false);
   });
+
   // Define all SideBar Items that are NOT needed to be seen when logged in here
   const commonSideBarItems: SidebarItem[] = [
     {
@@ -105,6 +112,12 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
       name: t`Settings`,
       shortcut: "⇧S",
       icon: <FadersHorizontal size={20} />,
+    },
+    {
+      path: "/dashboard/search",
+      name: t`Search`,
+      shortcut: "⇧F",
+      icon: <MagnifyingGlass />,
     },
     {
       path: "/dashboard/companies",

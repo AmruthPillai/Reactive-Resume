@@ -8,7 +8,7 @@ version: "3.8"
 services:
   # Database (Postgres)
   postgres:
-    image: postgres:16-alpine
+    image: pgvector/pgvector:pg16
     restart: unless-stopped
     volumes:
       - postgres_data:/var/lib/postgresql/data
