@@ -16,6 +16,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      //If adding new paths also add them in vitest.config.ts
       "@/artboard/*": ["apps/artboard/src/*"],
       "@/client/*": ["apps/client/src/*"],
       "@/server/*": ["apps/server/src/*"],

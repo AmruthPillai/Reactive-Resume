@@ -169,7 +169,7 @@ export class ResumeController {
   @UseGuards(TwoFactorGuard)
   async setDefault(@User() user: UserEntity, @Param("id") id: string) {
     try {
-      const resume = this.resumeService.setDefault(user.id, id);
+      await this.resumeService.setDefault(user.id, id);
       try {
         await this.searchService.updateSearchIndex(user);
       } catch (error) {

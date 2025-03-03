@@ -15,7 +15,8 @@
   },
   "scripts": {
     "dev": "nx run-many -t serve",
-    "test": "pnpm vitest run",
+    "test": "pnpm vitest --config ./vitest.config.ts run",
+    "testCov": "pnpm vitest --config ./vitest.config.ts --coverage.enabled=true run",
     "prebuild": "pnpm prisma:generate",
     "build": "nx run-many -t build",
     "prestart": "pnpm prisma:migrate",
