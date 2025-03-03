@@ -1,4 +1,4 @@
-import { Injectable, InternalServerErrorException } from "@nestjs/common";
+import { Injectable, InternalServerErrorException, Logger } from "@nestjs/common";
 import { User as UserEntity } from "@prisma/client";
 import { SearchResultDto } from "@reactive-resume/dto";
 import { PrismaService } from "nestjs-prisma";
@@ -28,18 +28,24 @@ export class SearchService {
     }
   }
 
-  async searchUsers(searchQuery: string, totalResults: number) {
+  async searchUsers(searchQuery: string, totalResults: number): Promise<SearchResultDto[]> {
     try {
       // Get the embedding for the search query
       const searchQueryEmbedding = await this.getEmbedding(searchQuery);
-
-      const searchResults: { userId: string }[] = await this.prisma.$queryRaw`
-        SELECT "userId"
-        FROM searchIndex
-        WHERE embedding < - > ${searchQueryEmbedding}::vector < 1
-        ORDER BY embedding <-> ${searchQueryEmbedding}::vector
+      let searchResults: { userId: string }[];
+      try {
+        searchResults = await this.prisma.$queryRaw`
+          SELECT "userId"
+          FROM searchIndex
+          WHERE embedding <-> ${searchQueryEmbedding}::vector < 1
+          ORDER BY embedding <-> ${searchQueryEmbedding}::vector
           LIMIT ${Number(totalResults)};
-      `;
+        `;
+      } catch (queryError) {
+        throw new InternalServerErrorException(
+          `Failed to execute search query: ${queryError.message}`,
+        );
+      }
 
       // Extract user IDs from the search results
       const userIds = searchResults.map((result: { userId: string }) => result.userId);
