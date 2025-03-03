@@ -34,6 +34,19 @@ export const URLInput = forwardRef<HTMLInputElement, Props>(
             hasError={hasError}
             placeholder={placeholder}
             onChange={(event) => {
+              const https = "https://";
+              if (event.target.value.length > 0) {
+                for (let i = 0; i < https.length; i++) {
+                  const subString = https.slice(0, https.length - i);
+                  if (event.target.value.includes(subString, 0)) {
+                    event.target.value = event.target.value.slice(https.length - i);
+                  }
+                }
+              }
+              if (!event.target.value.includes(https, 0)) {
+                event.target.value = https + event.target.value;
+              }
+
               onChange({ ...value, href: event.target.value });
             }}
           />
