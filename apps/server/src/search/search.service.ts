@@ -8,14 +8,10 @@ import OpenAI from "openai";
 export class SearchService {
   openai: OpenAI;
 
-  createOpenAI(): OpenAI {
-    return new OpenAI({
+  constructor(private readonly prisma: PrismaService) {
+    this.openai = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
     });
-  }
-
-  constructor(private readonly prisma: PrismaService) {
-    this.openai = this.createOpenAI();
   }
 
   // Function to get the embedding for a given text
