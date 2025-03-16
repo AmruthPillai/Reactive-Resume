@@ -19,6 +19,7 @@ type ResumeStore = {
 
   // Actions
   setValue: (path: string, value: unknown) => void;
+  setValues: (payload: { path: string, value: unknown }[]) => void;
 
   // Custom Section Actions
   addSection: () => void;
@@ -34,6 +35,15 @@ export const useResumeStore = create<ResumeStore>()(
           if (path === "visibility") {
             state.resume.visibility = value as "public" | "private";
           } else {
+            state.resume.data = _set(state.resume.data, path, value);
+          }
+
+          void debouncedUpdateResume(JSON.parse(JSON.stringify(state.resume)));
+        });
+      },
+      setValues: (payload: { path: string; value: unknown }[]) => {
+        set((state) => {
+          for (const { path, value } of payload) {
             state.resume.data = _set(state.resume.data, path, value);
           }
 
