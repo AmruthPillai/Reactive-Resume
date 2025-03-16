@@ -12,7 +12,7 @@ import {
 } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
-import { useMemo, useRef } from "react";
+import { useMemo, useRef, useState } from "react";
 import { z } from "zod";
 
 import { useUploadImage } from "@/client/services/storage";
@@ -21,6 +21,7 @@ import { useResumeStore } from "@/client/stores/resume";
 import { PictureOptions } from "./options";
 
 export const PictureSection = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const { uploadImage } = useUploadImage();
 
@@ -45,6 +46,10 @@ export const PictureSection = () => {
     } else {
       inputRef.current?.click();
     }
+  };
+
+  const handleOpen = () => {
+    setIsOpen(!isOpen);
   };
 
   return (
@@ -80,7 +85,7 @@ export const PictureSection = () => {
           />
 
           {isValidUrl && (
-            <Popover>
+            <Popover open={isOpen} onOpenChange={handleOpen}>
               <PopoverTrigger asChild>
                 <motion.button
                   initial={{ opacity: 0 }}
@@ -92,7 +97,7 @@ export const PictureSection = () => {
                 </motion.button>
               </PopoverTrigger>
               <PopoverContent className="w-[360px]">
-                <PictureOptions />
+                <PictureOptions handleOpen={handleOpen} />
               </PopoverContent>
             </Popover>
           )}

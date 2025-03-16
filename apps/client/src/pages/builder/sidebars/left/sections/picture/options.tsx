@@ -1,6 +1,14 @@
 import { t } from "@lingui/macro";
-import type { AspectRatio } from "@reactive-resume/ui";
-import { Checkbox, Input, Label, ToggleGroup, ToggleGroupItem, Tooltip } from "@reactive-resume/ui";
+import {
+  Button,
+  Checkbox,
+  Input,
+  Label,
+  ToggleGroup,
+  ToggleGroupItem,
+  Tooltip,
+} from "@reactive-resume/ui";
+import type { FormEvent } from "react";
 import { useMemo } from "react";
 
 import { useResumeStore } from "@/client/stores/resume";
@@ -18,25 +26,28 @@ const ratioToStringMap = {
   "1.33": "horizontal",
 } as const;
 
-type AspectRatio = keyof typeof stringToRatioMap;
-
 // Border Radius Helpers
 const stringToBorderRadiusMap = {
   square: 0,
   rounded: 6,
-  circle: 9999,
+  circle: 9998,
 };
 
 const borderRadiusToStringMap = {
   "0": "square",
   "6": "rounded",
-  "9999": "circle",
+  "9998": "circle",
 };
 
+type AspectRatioType = keyof typeof stringToRatioMap;
 type BorderRadius = keyof typeof stringToBorderRadiusMap;
+type PictureOptionsProps = {
+  handleOpen: () => void;
+};
 
-export const PictureOptions = () => {
+export const PictureOptions = ({ handleOpen }: PictureOptionsProps) => {
   const setValue = useResumeStore((state) => state.setValue);
+  const setValues = useResumeStore((state) => state.setValues);
   const picture = useResumeStore((state) => state.resume.data.basics.picture);
 
   const aspectRatio = useMemo(() => {
@@ -44,34 +55,55 @@ export const PictureOptions = () => {
     return ratioToStringMap[ratio];
   }, [picture.aspectRatio]);
 
-  const onAspectRatioChange = (value: string) => {
-    if (!value) return;
-    setValue("basics.picture.aspectRatio", stringToRatioMap[value as AspectRatio]);
-  };
-
   const borderRadius = useMemo(() => {
     const radius = picture.borderRadius.toString() as keyof typeof borderRadiusToStringMap;
     return borderRadiusToStringMap[radius];
   }, [picture.borderRadius]);
 
-  const onBorderRadiusChange = (value: string) => {
+  const onBorderRadiusChange = (value: BorderRadius | "") => {
     if (!value) return;
-    setValue("basics.picture.borderRadius", stringToBorderRadiusMap[value as BorderRadius]);
+    setValue("basics.picture.borderRadius", stringToBorderRadiusMap[value]);
+  };
+
+  const onAspectRatioChange = (value: AspectRatioType | "") => {
+    if (!value) return;
+    setValue("basics.picture.aspectRatio", stringToRatioMap[value]);
+  };
+
+  const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.target as HTMLFormElement);
+    const payload = [
+      {
+        path: "basics.picture.borderRadius",
+        value: Number(formData.get("borderRadius")),
+      },
+      {
+        path: "basics.picture.aspectRatio",
+        value: Number(formData.get("aspectRatio")),
+      },
+      {
+        path: "basics.picture.size",
+        value: Number(formData.get("size")),
+      },
+    ];
+    setValues(payload);
+    handleOpen();
   };
 
   return (
-    <div className="flex flex-col gap-y-5">
+    <form className="flex flex-col gap-y-5" onSubmit={handleFormSubmit}>
       <div className="grid grid-cols-3 items-center gap-x-6">
         <Label htmlFor="picture.size">{t`Size (in px)`}</Label>
         <Input
+          min={0}
+          max={128}
           type="number"
           id="picture.size"
           placeholder="128"
-          value={picture.size}
+          defaultValue={picture.size}
           className="col-span-2"
-          onChange={(event) => {
-            setValue("basics.picture.size", event.target.valueAsNumber);
-          }}
+          name={"size"}
         />
       </div>
 
@@ -85,37 +117,34 @@ export const PictureOptions = () => {
             onValueChange={onAspectRatioChange}
           >
             <Tooltip content={t`Square`}>
-              <ToggleGroupItem value="square">
+              <ToggleGroupItem value="square" type="button">
                 <div className="size-3 border border-foreground" />
               </ToggleGroupItem>
             </Tooltip>
 
             <Tooltip content={t`Horizontal`}>
-              <ToggleGroupItem value="horizontal">
+              <ToggleGroupItem value="horizontal" type="button">
                 <div className="h-2 w-3 border border-foreground" />
               </ToggleGroupItem>
             </Tooltip>
 
             <Tooltip content={t`Portrait`}>
-              <ToggleGroupItem value="portrait">
+              <ToggleGroupItem value="portrait" type="button">
                 <div className="h-3 w-2 border border-foreground" />
               </ToggleGroupItem>
             </Tooltip>
           </ToggleGroup>
 
           <Input
+            key={picture.aspectRatio}
             min={0.1}
             max={2}
             step={0.05}
             type="number"
             className="w-[60px]"
             id="picture.aspectRatio"
-            value={picture.aspectRatio}
-            onChange={(event) => {
-              if (!event.target.valueAsNumber) return;
-              if (Number.isNaN(event.target.valueAsNumber)) return;
-              setValue("basics.picture.aspectRatio", event.target.valueAsNumber);
-            }}
+            defaultValue={picture.aspectRatio}
+            name={"aspectRatio"}
           />
         </div>
       </div>
@@ -130,35 +159,34 @@ export const PictureOptions = () => {
             onValueChange={onBorderRadiusChange}
           >
             <Tooltip content={t`Square`}>
-              <ToggleGroupItem value="square">
+              <ToggleGroupItem value="square" type="button">
                 <div className="size-3 border border-foreground" />
               </ToggleGroupItem>
             </Tooltip>
 
             <Tooltip content={t`Rounded`}>
-              <ToggleGroupItem value="rounded">
+              <ToggleGroupItem value="rounded" type="button">
                 <div className="size-3 rounded-sm border border-foreground" />
               </ToggleGroupItem>
             </Tooltip>
 
             <Tooltip content={t`Circle`}>
-              <ToggleGroupItem value="circle">
+              <ToggleGroupItem value="circle" type="button">
                 <div className="size-3 rounded-full border border-foreground" />
               </ToggleGroupItem>
             </Tooltip>
           </ToggleGroup>
 
           <Input
+            key={picture.borderRadius}
             min={0}
             step={2}
-            max={9999}
+            max={9998}
             type="number"
             className="w-[60px]"
             id="picture.borderRadius"
-            value={picture.borderRadius}
-            onChange={(event) => {
-              setValue("basics.picture.borderRadius", event.target.valueAsNumber);
-            }}
+            defaultValue={picture.borderRadius}
+            name={"borderRadius"}
           />
         </div>
       </div>
@@ -204,6 +232,7 @@ export const PictureOptions = () => {
           </div>
         </div>
       </div>
-    </div>
+      <Button>{t`Save`}</Button>
+    </form>
   );
 };
