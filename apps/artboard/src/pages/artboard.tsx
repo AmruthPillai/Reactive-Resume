@@ -5,6 +5,13 @@ import webfontloader from "webfontloader";
 
 import { useArtboardStore } from "../store/artboard";
 
+const pageLoadedEvent = () => {
+  const width = window.document.body.offsetWidth;
+  const height = window.document.body.offsetHeight;
+  const message = { type: "PAGE_LOADED", payload: { width, height } };
+  window.postMessage(message, "*");
+};
+
 export const ArtboardPage = () => {
   const name = useArtboardStore((state) => state.resume.basics.name);
   const metadata = useArtboardStore((state) => state.resume.metadata);
@@ -21,12 +28,13 @@ export const ArtboardPage = () => {
     webfontloader.load({
       google: { families: [fontString] },
       active: () => {
-        const width = window.document.body.offsetWidth;
-        const height = window.document.body.offsetHeight;
-        const message = { type: "PAGE_LOADED", payload: { width, height } };
-        window.postMessage(message, "*");
+        pageLoadedEvent();
       },
     });
+    if (fontString.includes("Arial")) {
+      pageLoadedEvent();
+      return;
+    }
   }, [fontString]);
 
   // Font Size & Line Height
