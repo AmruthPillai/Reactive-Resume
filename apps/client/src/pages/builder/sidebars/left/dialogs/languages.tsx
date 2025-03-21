@@ -9,6 +9,7 @@ import {
   FormMessage,
   Input,
   Slider,
+  Switch,
 } from "@reactive-resume/ui";
 import { useForm } from "react-hook-form";
 import type { z } from "zod";
@@ -81,6 +82,25 @@ export const LanguagesDialog = () => {
                   )}
                 </div>
               </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          name="singleLine"
+          control={form.control}
+          render={({ field }) => (
+            <FormItem className="flex items-center gap-x-4 space-y-0 sm:col-span-2">
+              <FormControl>
+                <Switch
+                  checked={field.value}
+                  onCheckedChange={(checked) => {
+                    field.onChange((field.value = checked));
+                  }}
+                />
+              </FormControl>
+              <FormLabel>{t`Display name and description in one line`}</FormLabel>
               <FormMessage />
             </FormItem>
           )}
