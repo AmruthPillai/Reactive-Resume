@@ -427,7 +427,12 @@ const Languages = () => {
   return (
     <Section<Language> section={section} levelKey="level">
       {(item) => (
-        <div className="space-y-0.5">
+        <div
+          className={cn(
+            "space-y-0.5",
+            item.singleLine ? "flex flex-row items-center space-x-2" : "",
+          )}
+        >
           <div className="font-bold">{item.name}</div>
           <div>{item.description}</div>
         </div>
