@@ -24,6 +24,10 @@ const formSchema = interestSchema;
 
 type FormValues = z.infer<typeof formSchema>;
 
+const handleDragOver = (e: React.DragEvent) => {
+  e.preventDefault();
+};
+
 export const InterestsDialog = () => {
   const form = useForm<FormValues>({
     defaultValues: defaultInterest,
@@ -32,9 +36,6 @@ export const InterestsDialog = () => {
 
   const [pendingKeyword, setPendingKeyword] = useState("");
   const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
-  const handleDragOver = (e: React.DragEvent) => {
-    e.preventDefault();
-  };
 
   const handleDrop = (
     e: React.DragEvent,
