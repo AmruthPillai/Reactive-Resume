@@ -1,17 +1,16 @@
-import type { CreateResumeDto, ResumeDto } from "@reactive-resume/dto";
 import { useMutation } from "@tanstack/react-query";
-import type { AxiosResponse } from "axios";
+import type { Resume, Database } from "@reactive-resume/schema";
 
-import { axios } from "@/client/libs/axios";
+import { RESUME_KEY, RESUMES_KEY } from "@/client/constants/query-keys";
+import { resumes as resumeClient } from "@/client/lib/supabase";
 import { queryClient } from "@/client/libs/query-client";
 
-export const createResume = async (data: CreateResumeDto) => {
-  const response = await axios.post<ResumeDto, AxiosResponse<ResumeDto>, CreateResumeDto>(
-    "/resume",
-    data,
-  );
+// Define the input type based on Supabase schema
+type CreateResumeInput = Database["public"]["Tables"]["resumes"]["Insert"];
 
-  return response.data;
+export const createResume = async (data: CreateResumeInput): Promise<Resume> => {
+  const response = await resumeClient.create(data);
+  return response as Resume;
 };
 
 export const useCreateResume = () => {
@@ -19,14 +18,17 @@ export const useCreateResume = () => {
     error,
     isPending: loading,
     mutateAsync: createResumeFn,
-  } = useMutation({
+  } = useMutation<Resume, Error, CreateResumeInput>({ // Specify types for useMutation
     mutationFn: createResume,
     onSuccess: (data) => {
-      queryClient.setQueryData<ResumeDto>(["resume", { id: data.id }], data);
+      // Update the cache for the specific resume
+      queryClient.setQueryData<Resume>([RESUME_KEY, { id: data.id }], data);
 
-      queryClient.setQueryData<ResumeDto[]>(["resumes"], (cache) => {
+      // Update the cache for the list of resumes
+      queryClient.setQueryData<Resume[]>([RESUMES_KEY], (cache) => {
         if (!cache) return [data];
-        return [...cache, data];
+        // Add the new resume to the beginning of the list
+        return [data, ...cache];
       });
     },
   });

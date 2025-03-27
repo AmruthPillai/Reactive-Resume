@@ -1,14 +1,14 @@
-import type { ResumeDto } from "@reactive-resume/dto";
 import { useQuery } from "@tanstack/react-query";
-import type { AxiosResponse } from "axios";
+import type { Resume } from "@reactive-resume/schema";
 
 import { RESUMES_KEY } from "@/client/constants/query-keys";
-import { axios } from "@/client/libs/axios";
+import { resumes as resumeClient } from "@/client/lib/supabase";
 
-export const fetchResumes = async () => {
-  const response = await axios.get<ResumeDto[], AxiosResponse<ResumeDto[]>>("/resume");
-
-  return response.data;
+export const fetchResumes = async (): Promise<Resume[]> => {
+  const data = await resumeClient.list();
+  // Ensure the returned data matches the expected Resume[] type
+  // Supabase might return slightly different structure, adjust if needed
+  return data as Resume[];
 };
 
 export const useResumes = () => {
@@ -16,7 +16,7 @@ export const useResumes = () => {
     error,
     isPending: loading,
     data: resumes,
-  } = useQuery({
+  } = useQuery<Resume[], Error>({ // Specify types for useQuery
     queryKey: RESUMES_KEY,
     queryFn: fetchResumes,
   });

@@ -2,53 +2,36 @@ import { t } from "@lingui/macro";
 import type { ErrorMessage } from "@reactive-resume/utils";
 import { deepSearchAndParseDates } from "@reactive-resume/utils";
 import _axios from "axios";
-import createAuthRefreshInterceptor from "axios-auth-refresh";
-import { redirect } from "react-router";
 
-import { refreshToken } from "@/client/services/auth";
-
-import { USER_KEY } from "../constants/query-keys";
 import { toast } from "../hooks/use-toast";
 import { translateError } from "../services/errors/translate-error";
-import { queryClient } from "./query-client";
 
-export const axios = _axios.create({ baseURL: "/api", withCredentials: true });
+// Base URL points to the PDF service
+const baseURL = import.meta.env.VITE_API_URL || "/api";
+
+export const axios = _axios.create({ baseURL, withCredentials: false }); // No credentials needed for PDF service? Verify this.
 
 // Intercept responses to transform ISO dates to JS date objects
 axios.interceptors.response.use(
   (response) => {
+    // Assuming the PDF service might return dates, keep this for now
     const transformedResponse = deepSearchAndParseDates(response.data, ["createdAt", "updatedAt"]);
     return { ...response, data: transformedResponse };
   },
   (error) => {
-    const message = error.response?.data.message as ErrorMessage;
-    const description = translateError(message);
+    // Basic error handling for PDF service calls
+    const message = error.response?.data?.message as ErrorMessage | string | undefined;
+    const description = message ? translateError(message) : t`An unknown error occurred while contacting the PDF service.`;
 
-    if (description) {
-      toast({
-        variant: "error",
-        title: t`Oops, the server returned an error.`,
-        description,
-      });
-    }
+    toast({
+      variant: "error",
+      title: t`PDF Service Error`,
+      description,
+    });
 
-    return Promise.reject(new Error(message));
+    // Reject with a generic error or the specific message if available
+    return Promise.reject(new Error(typeof message === 'string' ? message : 'PDF Service Error'));
   },
 );
 
-// Create another instance to handle failed refresh tokens
-// Reference: https://github.com/Flyrell/axios-auth-refresh/issues/191
-const axiosForRefresh = _axios.create({ baseURL: "/api", withCredentials: true });
-
-// Interceptor to handle expired access token errors
-const handleAuthError = () => refreshToken(axiosForRefresh);
-
-// Interceptor to handle expired refresh token errors
-const handleRefreshError = async () => {
-  await queryClient.invalidateQueries({ queryKey: USER_KEY });
-  redirect("/auth/login");
-};
-
-// Intercept responses to check for 401 and 403 errors, refresh token and retry the request
-createAuthRefreshInterceptor(axios, handleAuthError, { statusCodes: [401, 403] });
-createAuthRefreshInterceptor(axiosForRefresh, handleRefreshError);
+// Removed auth refresh interceptors as auth is handled by Supabase

@@ -2,113 +2,59 @@ import { Injectable, InternalServerErrorException, Logger, OnModuleInit } from "
 import { ConfigService } from "@nestjs/config";
 import { createId } from "@paralleldrive/cuid2";
 import slugify from "@sindresorhus/slugify";
-import { MinioClient, MinioService } from "nestjs-minio-client";
+import { createClient } from '@supabase/supabase-js';
 import sharp from "sharp";
 
 import { Config } from "../config/schema";
 
-// Objects are stored under the following path in the bucket:
-// "<bucketName>/<userId>/<type>/<fileName>",
-// where `userId` is a unique identifier (cuid) for the user,
+// Objects are stored under the following path in the storage:
+// "<type>/<userId>/<fileName>",
 // where `type` can either be "pictures", "previews" or "resumes",
+// where `userId` is a unique identifier (cuid) for the user,
 // and where `fileName` is a unique identifier (cuid) for the file.
 
 type ImageUploadType = "pictures" | "previews";
 type DocumentUploadType = "resumes";
 export type UploadType = ImageUploadType | DocumentUploadType;
 
-const PUBLIC_ACCESS_POLICY = {
-  Version: "2012-10-17",
-  Statement: [
-    {
-      Sid: "PublicAccess",
-      Effect: "Allow",
-      Action: ["s3:GetObject"],
-      Principal: { AWS: ["*"] },
-      Resource: [
-        "arn:aws:s3:::{{bucketName}}/*/pictures/*",
-        "arn:aws:s3:::{{bucketName}}/*/previews/*",
-        "arn:aws:s3:::{{bucketName}}/*/resumes/*",
-      ],
-    },
-  ],
-} as const;
-
 @Injectable()
 export class StorageService implements OnModuleInit {
   private readonly logger = new Logger(StorageService.name);
-
-  private client: MinioClient;
-  private bucketName: string;
+  private supabase;
 
   constructor(
     private readonly configService: ConfigService<Config>,
-    private readonly minioService: MinioService,
-  ) {}
-
-  async onModuleInit() {
-    this.client = this.minioService.client;
-    this.bucketName = this.configService.getOrThrow<string>("STORAGE_BUCKET");
-
-    const skipBucketCheck = this.configService.getOrThrow<boolean>("STORAGE_SKIP_BUCKET_CHECK");
-
-    if (skipBucketCheck) {
-      this.logger.warn("Skipping the verification of whether the storage bucket exists.");
-      this.logger.warn(
-        "Make sure that the following paths are publicly accessible: `/{pictures,previews,resumes}/*`",
-      );
-
-      return;
-    }
-
-    try {
-      // Create a storage bucket if it doesn't exist
-      // if it exists, log that we were able to connect to the storage service
-      const bucketExists = await this.client.bucketExists(this.bucketName);
-
-      if (bucketExists) {
-        this.logger.log("Successfully connected to the storage service.");
-      } else {
-        const bucketPolicy = JSON.stringify(PUBLIC_ACCESS_POLICY).replace(
-          /{{bucketName}}/g,
-          this.bucketName,
-        );
-
-        try {
-          await this.client.makeBucket(this.bucketName);
-        } catch {
-          throw new InternalServerErrorException(
-            "There was an error while creating the storage bucket.",
-          );
-        }
-
-        try {
-          await this.client.setBucketPolicy(this.bucketName, bucketPolicy);
-        } catch {
-          throw new InternalServerErrorException(
-            "There was an error while applying the policy to the storage bucket.",
-          );
-        }
-
-        this.logger.log(
-          "A new storage bucket has been created and the policy has been applied successfully.",
-        );
-      }
-    } catch (error) {
-      throw new InternalServerErrorException(error);
-    }
+  ) {
+    const supabaseUrl = this.configService.getOrThrow<string>("SUPABASE_URL");
+    const supabaseKey = this.configService.getOrThrow<string>("SUPABASE_SERVICE_ROLE_KEY");
+    
+    this.supabase = createClient(supabaseUrl, supabaseKey);
   }
 
-  async bucketExists(): Promise<true> {
-    const exists = await this.client.bucketExists(this.bucketName);
+  async onModuleInit() {
+    try {
+      // Verify connection by attempting to get bucket info
+      const { data: buckets } = await this.supabase.storage.listBuckets();
+      
+      // Check if required buckets exist, create them if they don't
+      const requiredBuckets = ['pictures', 'previews', 'resumes'];
+      
+      for (const bucket of requiredBuckets) {
+        if (!buckets?.find(b => b.name === bucket)) {
+          const { error } = await this.supabase.storage.createBucket(bucket, {
+            public: true,
+            fileSizeLimit: bucket === 'resumes' ? '10MB' : '5MB'
+          });
+          
+          if (error) throw error;
+        }
+      }
 
-    if (!exists) {
-      throw new InternalServerErrorException(
-        "There was an error while checking if the storage bucket exists.",
-      );
+      this.logger.log("Successfully connected to Supabase Storage.");
+    } catch (error) {
+      this.logger.error("Failed to initialize Supabase Storage:", error);
+      throw new InternalServerErrorException("Storage initialization failed");
     }
-
-    return exists;
   }
 
   async uploadObject(
@@ -118,65 +64,76 @@ export class StorageService implements OnModuleInit {
     filename: string = createId(),
   ): Promise<string> {
     const extension = type === "resumes" ? "pdf" : "jpg";
-    const storageUrl = this.configService.getOrThrow<string>("STORAGE_URL");
-
+    
     let normalizedFilename = slugify(filename);
     if (!normalizedFilename) normalizedFilename = createId();
 
-    const filepath = `${userId}/${type}/${normalizedFilename}.${extension}`;
-    const url = `${storageUrl}/${filepath}`;
-
-    const metadata =
-      extension === "jpg"
-        ? { "Content-Type": "image/jpeg" }
-        : {
-            "Content-Type": "application/pdf",
-            "Content-Disposition": `attachment; filename=${normalizedFilename}.${extension}`,
-          };
+    const filepath = `${userId}/${normalizedFilename}.${extension}`;
 
     try {
       if (extension === "jpg") {
-        // If the uploaded file is an image, use sharp to resize the image to a maximum width/height of 600px
+        // If the uploaded file is an image, resize it
         buffer = await sharp(buffer)
           .resize({ width: 600, height: 600, fit: sharp.fit.outside })
           .jpeg({ quality: 80 })
           .toBuffer();
       }
 
-      await this.client.putObject(this.bucketName, filepath, buffer, metadata);
+      const { error: uploadError, data } = await this.supabase.storage
+        .from(type)
+        .upload(filepath, buffer, {
+          contentType: extension === "jpg" ? "image/jpeg" : "application/pdf",
+          upsert: true
+        });
 
-      return url;
-    } catch {
+      if (uploadError) throw uploadError;
+
+      const { data: { publicUrl } } = this.supabase.storage
+        .from(type)
+        .getPublicUrl(filepath);
+
+      return publicUrl;
+    } catch (error) {
+      this.logger.error("File upload failed:", error);
       throw new InternalServerErrorException("There was an error while uploading the file.");
     }
   }
 
   async deleteObject(userId: string, type: UploadType, filename: string): Promise<void> {
     const extension = type === "resumes" ? "pdf" : "jpg";
-    const path = `${userId}/${type}/${filename}.${extension}`;
+    const path = `${userId}/${filename}.${extension}`;
 
     try {
-      await this.client.removeObject(this.bucketName, path);
-    } catch {
+      const { error } = await this.supabase.storage
+        .from(type)
+        .remove([path]);
+
+      if (error) throw error;
+    } catch (error) {
       throw new InternalServerErrorException(
         `There was an error while deleting the document at the specified path: ${path}.`,
       );
     }
   }
 
-  async deleteFolder(prefix: string): Promise<void> {
-    const objectsList = [];
-    const objectsStream = this.client.listObjectsV2(this.bucketName, prefix, true);
-
-    for await (const object of objectsStream) {
-      objectsList.push(object.name);
-    }
-
+  async deleteFolder(userId: string, type: UploadType): Promise<void> {
     try {
-      await this.client.removeObjects(this.bucketName, objectsList);
-    } catch {
+      const { data: files } = await this.supabase.storage
+        .from(type)
+        .list(userId);
+
+      if (!files?.length) return;
+
+      const filePaths = files.map(file => `${userId}/${file.name}`);
+      
+      const { error } = await this.supabase.storage
+        .from(type)
+        .remove(filePaths);
+
+      if (error) throw error;
+    } catch (error) {
       throw new InternalServerErrorException(
-        `There was an error while deleting the folder at the specified path: ${this.bucketName}/${prefix}.`,
+        `There was an error while deleting the folder for user: ${userId} in ${type}.`,
       );
     }
   }

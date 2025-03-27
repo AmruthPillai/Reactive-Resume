@@ -1,7 +1,8 @@
-import type { ResumeDto } from "@reactive-resume/dto";
 import { useMutation } from "@tanstack/react-query";
+import type { Resume } from "@reactive-resume/schema";
 
-import { axios } from "@/client/libs/axios";
+import { RESUME_KEY, RESUMES_KEY } from "@/client/constants/query-keys";
+import { resumes as resumeClient } from "@/client/lib/supabase";
 import { queryClient } from "@/client/libs/query-client";
 
 type LockResumeArgs = {
@@ -9,20 +10,22 @@ type LockResumeArgs = {
   set: boolean;
 };
 
-export const lockResume = async ({ id, set }: LockResumeArgs) => {
-  const response = await axios.patch(`/resume/${id}/lock`, { set });
+export const lockResume = async ({ id, set }: LockResumeArgs): Promise<Resume> => {
+  const updatedResume = await resumeClient.update(id, { locked: set });
 
-  queryClient.setQueryData<ResumeDto>(["resume", { id: response.data.id }], response.data);
+  // Update the cache for the specific resume
+  queryClient.setQueryData<Resume>([RESUME_KEY, { id }], updatedResume as Resume);
 
-  queryClient.setQueryData<ResumeDto[]>(["resumes"], (cache) => {
-    if (!cache) return [response.data];
+  // Update the cache for the list of resumes
+  queryClient.setQueryData<Resume[]>([RESUMES_KEY], (cache) => {
+    if (!cache) return [updatedResume as Resume];
     return cache.map((resume) => {
-      if (resume.id === response.data.id) return response.data;
+      if (resume.id === id) return updatedResume as Resume;
       return resume;
     });
   });
 
-  return response.data;
+  return updatedResume as Resume;
 };
 
 export const useLockResume = () => {
@@ -30,8 +33,9 @@ export const useLockResume = () => {
     error,
     isPending: loading,
     mutateAsync: lockResumeFn,
-  } = useMutation({
+  } = useMutation<Resume, Error, LockResumeArgs>({ // Specify types for useMutation
     mutationFn: lockResume,
+    // onSuccess is handled within lockResume function for immediate cache update
   });
 
   return { lockResume: lockResumeFn, loading, error };

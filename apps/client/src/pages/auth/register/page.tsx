@@ -1,11 +1,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t, Trans } from "@lingui/macro";
 import { ArrowRight } from "@phosphor-icons/react";
-import { registerSchema } from "@reactive-resume/dto";
 import { usePasswordToggle } from "@reactive-resume/hooks";
 import {
-  Alert,
-  AlertTitle,
   Button,
   Form,
   FormControl,
@@ -16,28 +13,36 @@ import {
   FormMessage,
   Input,
 } from "@reactive-resume/ui";
-import { cn } from "@reactive-resume/utils";
 import { useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router";
-import type { z } from "zod";
+import { Link, useNavigate } from "react-router-dom";
+import { z } from "zod";
 
-import { useRegister } from "@/client/services/auth";
-import { useFeatureFlags } from "@/client/services/feature";
+import { useAuth } from "@/client/hooks/use-auth";
+import { useToast } from "@/client/hooks/use-toast";
 
-type FormValues = z.infer<typeof registerSchema>;
+// Define the schema locally for Supabase signup
+const registerFormSchema = z.object({
+  name: z.string().min(1),
+  username: z.string().min(3).regex(/^[a-z0-9_]+$/, { message: t`Username must be lowercase letters, numbers, or underscores.` }),
+  email: z.string().email(),
+  password: z.string().min(6, { message: t`Password must be at least 6 characters long` }),
+  locale: z.string().default("en-US"), // Default locale
+});
+
+type FormValues = z.infer<typeof registerFormSchema>;
 
 export const RegisterPage = () => {
   const navigate = useNavigate();
-  const { flags } = useFeatureFlags();
-  const { register, loading } = useRegister();
+  const { toast } = useToast();
+  const { signUp, isLoading } = useAuth();
 
   const formRef = useRef<HTMLFormElement>(null);
   usePasswordToggle(formRef);
 
   const form = useForm<FormValues>({
-    resolver: zodResolver(registerSchema),
+    resolver: zodResolver(registerFormSchema),
     defaultValues: {
       name: "",
       username: "",
@@ -49,11 +54,32 @@ export const RegisterPage = () => {
 
   const onSubmit = async (data: FormValues) => {
     try {
-      await register(data);
+      await signUp(data.email, data.password, {
+        data: {
+          name: data.name,
+          username: data.username,
+          locale: data.locale,
+        },
+      });
 
-      void navigate("/auth/verify-email");
-    } catch {
-      form.reset();
+      // Show success message, Supabase handles email verification
+      toast({
+        title: t`Account Created`,
+        description: t`Please check your email to verify your account.`,
+      });
+
+      // Navigate to a confirmation page or login
+      navigate("/auth/login");
+    } catch (error: any) {
+      // Handle error (e.g., show toast notification)
+      toast({
+        variant: "error",
+        title: t`Signup Failed`,
+        description: error.message || t`An unexpected error occurred.`,
+      });
+      console.error("Signup failed:", error);
+      // Optionally reset parts of the form, e.g., password
+      form.reset({ ...data, password: "" });
     }
   };
 
@@ -77,13 +103,8 @@ export const RegisterPage = () => {
         </h6>
       </div>
 
-      {flags.isSignupsDisabled && (
-        <Alert variant="error">
-          <AlertTitle>{t`Signups are currently disabled by the administrator.`}</AlertTitle>
-        </Alert>
-      )}
-
-      <div className={cn(flags.isSignupsDisabled && "pointer-events-none select-none blur-sm")}>
+      {/* Removed signup disabled check - handled by Supabase settings */}
+      <div>
         <Form {...form}>
           <form
             ref={formRef}
@@ -162,7 +183,7 @@ export const RegisterPage = () => {
                 <FormItem>
                   <FormLabel>{t`Password`}</FormLabel>
                   <FormControl>
-                    <Input type="password" {...field} />
+                    <Input type="password" autoComplete="new-password" {...field} />
                   </FormControl>
                   <FormDescription>
                     <Trans>
@@ -175,7 +196,7 @@ export const RegisterPage = () => {
               )}
             />
 
-            <Button disabled={loading} className="mt-4 w-full">
+            <Button disabled={isLoading} className="mt-4 w-full">
               {t`Sign up`}
             </Button>
           </form>

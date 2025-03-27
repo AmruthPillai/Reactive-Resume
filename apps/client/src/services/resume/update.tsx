@@ -1,30 +1,34 @@
-import type { ResumeDto, UpdateResumeDto } from "@reactive-resume/dto";
 import { useMutation } from "@tanstack/react-query";
-import type { AxiosResponse } from "axios";
 import debounce from "lodash.debounce";
+import type { Resume, Database } from "@reactive-resume/schema";
 
-import { axios } from "@/client/libs/axios";
+import { RESUME_KEY, RESUMES_KEY } from "@/client/constants/query-keys";
+import { resumes as resumeClient } from "@/client/lib/supabase";
 import { queryClient } from "@/client/libs/query-client";
 
-export const updateResume = async (data: UpdateResumeDto) => {
-  const response = await axios.patch<ResumeDto, AxiosResponse<ResumeDto>, UpdateResumeDto>(
-    `/resume/${data.id}`,
-    data,
-  );
+// Define the input type based on Supabase schema
+type UpdateResumeInput = Database["public"]["Tables"]["resumes"]["Update"] & { id: string };
 
-  queryClient.setQueryData<ResumeDto>(["resume", { id: response.data.id }], response.data);
+export const updateResume = async (data: UpdateResumeInput): Promise<Resume> => {
+  const { id, ...updateData } = data;
+  const updatedResume = await resumeClient.update(id, updateData);
 
-  queryClient.setQueryData<ResumeDto[]>(["resumes"], (cache) => {
-    if (!cache) return [response.data];
+  // Update the cache for the specific resume
+  queryClient.setQueryData<Resume>([RESUME_KEY, { id }], updatedResume as Resume);
+
+  // Update the cache for the list of resumes
+  queryClient.setQueryData<Resume[]>([RESUMES_KEY], (cache) => {
+    if (!cache) return [updatedResume as Resume];
     return cache.map((resume) => {
-      if (resume.id === response.data.id) return response.data;
+      if (resume.id === id) return updatedResume as Resume;
       return resume;
     });
   });
 
-  return response.data;
+  return updatedResume as Resume;
 };
 
+// Keep the debounced version
 export const debouncedUpdateResume = debounce(updateResume, 500);
 
 export const useUpdateResume = () => {
@@ -32,8 +36,9 @@ export const useUpdateResume = () => {
     error,
     isPending: loading,
     mutateAsync: updateResumeFn,
-  } = useMutation({
+  } = useMutation<Resume, Error, UpdateResumeInput>({ // Specify types for useMutation
     mutationFn: updateResume,
+    // onSuccess is handled within updateResume function for immediate cache update
   });
 
   return { updateResume: updateResumeFn, loading, error };

@@ -1,0 +1,25 @@
+[build]
+  command = "pnpm build"
+  publish = "dist/apps/client" # Main client app directory
+  environment = { NODE_VERSION = "18" }
+
+[[redirects]]
+  from = "/api/*"
+  to = "YOUR_PDF_SERVICE_URL/:splat" # Replace with your actual PDF service URL
+  status = 200
+  force = true # Ensure this proxy rule takes precedence
+
+[[redirects]]
+  from = "/artboard/*"
+  to = "/index.html" # Serve artboard assets from the main deployment
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[dev]
+  command = "pnpm dev" # Command to run the dev server
+  targetPort = 5173 # Default Vite port for client
+  publish = "dist/apps/client" # Directory to serve locally
