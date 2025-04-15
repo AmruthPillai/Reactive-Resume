@@ -153,8 +153,8 @@ importers:
         specifier: ^1.1.1
         version: 1.1.1(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@sindresorhus/slugify':
-        specifier: ^2.2.1
-        version: 2.2.1
+        specifier: ^1.1.2
+        version: 1.1.2
       '@swc/helpers':
         specifier: ^0.5.15
         version: 0.5.15
@@ -323,6 +323,9 @@ importers:
       react-hook-form:
         specifier: ^7.54.2
         version: 7.54.2(react@18.3.1)
+      react-image-crop:
+        specifier: ^11.0.7
+        version: 11.0.7(react@18.3.1)
       react-parallax-tilt:
         specifier: ^1.7.277
         version: 1.7.277(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -3878,13 +3881,13 @@ packages:
     resolution: {integrity: sha512-t09vSN3MdfsyCHoFcTRCH/iUtG7OJ0CsjzB8cjAmKc/va/kIgeDI/TxsigdncE/4be734m0cvIYwNaV4i2XqAw==}
     engines: {node: '>=10'}
 
-  '@sindresorhus/slugify@2.2.1':
-    resolution: {integrity: sha512-MkngSCRZ8JdSOCHRaYd+D01XhvU3Hjy6MGl06zhOk614hp9EOAp5gIkBeQg7wtmxpitU6eAL4kdiRMcJa2dlrw==}
-    engines: {node: '>=12'}
+  '@sindresorhus/slugify@1.1.2':
+    resolution: {integrity: sha512-V9nR/W0Xd9TSGXpZ4iFUcFGhuOJtZX82Fzxj1YISlbSgKvIiNa7eLEZrT0vAraPOt++KHauIVNYgGRgjc13dXA==}
+    engines: {node: '>=10'}
 
-  '@sindresorhus/transliterate@1.6.0':
-    resolution: {integrity: sha512-doH1gimEu3A46VX6aVxpHTeHrytJAG6HgdxntYnCFiIFHEM/ZGpG8KiZGBChchjQmG0XFIBL552kBTjVcMZXwQ==}
-    engines: {node: '>=12'}
+  '@sindresorhus/transliterate@0.1.2':
+    resolution: {integrity: sha512-5/kmIOY9FF32nicXH+5yLNTX4NJ4atl7jRgqAJuIn/iyDFXBktOKDxCvyGE/EzmF4ngSUvjXxQUQlQiZ5lfw+w==}
+    engines: {node: '>=10'}
 
   '@sinonjs/commons@3.0.1':
     resolution: {integrity: sha512-K3mCHKQ9sVh8o1C9cxkwxaOmXoAMlDxC1mYyHrjqOWEcBjYr76t96zL2zlj5dUGZ3HSw240X1qgH3Mjf1yJWpQ==}
@@ -7960,6 +7963,9 @@ packages:
   lodash.debounce@4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
 
+  lodash.deburr@4.1.0:
+    resolution: {integrity: sha512-m/M1U1f3ddMCs6Hq2tAsYThTBDaAKFDX3dwDo97GEYzamXi9SqUpjWi/Rrj/gf3X2n8ktwgZrlP1z6E3v/IExQ==}
+
   lodash.get@4.4.2:
     resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
     deprecated: This package is deprecated. Use the optional chaining (?.) operator instead.
@@ -9559,6 +9565,11 @@ packages:
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
+
+  react-image-crop@11.0.7:
+    resolution: {integrity: sha512-ZciKWHDYzmm366JDL18CbrVyjnjH0ojufGDmScfS4ZUqLHg4nm6ATY+K62C75W4ZRNt4Ii+tX0bSjNk9LQ2xzQ==}
+    peerDependencies:
+      react: '>=16.13.1'
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -15294,14 +15305,15 @@ snapshots:
 
   '@sindresorhus/is@4.6.0': {}
 
-  '@sindresorhus/slugify@2.2.1':
+  '@sindresorhus/slugify@1.1.2':
     dependencies:
-      '@sindresorhus/transliterate': 1.6.0
-      escape-string-regexp: 5.0.0
+      '@sindresorhus/transliterate': 0.1.2
+      escape-string-regexp: 4.0.0
 
-  '@sindresorhus/transliterate@1.6.0':
+  '@sindresorhus/transliterate@0.1.2':
     dependencies:
-      escape-string-regexp: 5.0.0
+      escape-string-regexp: 2.0.0
+      lodash.deburr: 4.1.0
 
   '@sinonjs/commons@3.0.1':
     dependencies:
@@ -20280,6 +20292,8 @@ snapshots:
 
   lodash.debounce@4.0.8: {}
 
+  lodash.deburr@4.1.0: {}
+
   lodash.get@4.4.2: {}
 
   lodash.includes@4.3.0: {}
@@ -22240,6 +22254,10 @@ snapshots:
       shallowequal: 1.1.0
 
   react-hook-form@7.54.2(react@18.3.1):
+    dependencies:
+      react: 18.3.1
+
+  react-image-crop@11.0.7(react@18.3.1):
     dependencies:
       react: 18.3.1
 

@@ -27,7 +27,8 @@
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "server:build"
+        "buildTarget": "server:build",
+        "runtimeArgs": ["--experimental-specifier-resolution=node"]
       },
       "configurations": {
         "development": {
