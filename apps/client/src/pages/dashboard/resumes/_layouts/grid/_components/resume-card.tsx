@@ -22,6 +22,7 @@ import { useNavigate } from "react-router";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { useDialog } from "@/client/stores/dialog";
+import { useScroll } from "./scroll-context";
 
 import { BaseCard } from "./base-card";
 
@@ -36,29 +37,22 @@ export const ResumeCard = ({ resume }: Props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const { isScrolling } = useScroll();
 
   const template = resume.data.metadata.template;
   const lastUpdated = dayjs().to(resume.updatedAt);
-
-  // Global scroll handler that closes all dropdowns
-  useEffect(() => {
-    const handleScroll = () => {
-      setDropdownOpen(false);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Handle hover with delay to prevent accidental triggers
   const handleMouseEnter = useCallback(() => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
-    timeoutRef.current = setTimeout(() => {
-      setDropdownOpen(true);
-    }, 200); // 200ms delay before showing dropdown
-  }, []);
+    if (!isScrolling) {
+      timeoutRef.current = setTimeout(() => {
+        setDropdownOpen(true);
+      }, 200); // 200ms delay before showing dropdown
+    }
+  }, [isScrolling]);
 
   const handleMouseLeave = useCallback(() => {
     if (timeoutRef.current) {
