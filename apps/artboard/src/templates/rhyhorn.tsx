@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import type {
   Award,
   Certification,
@@ -13,6 +14,7 @@ import type {
   SectionWithItem,
   Skill,
   URL,
+  URLWithBind,
 } from "@reactive-resume/schema";
 import { Education, Experience, Volunteer } from "@reactive-resume/schema";
 import { cn, isEmptyString, isUrl, sanitize } from "@reactive-resume/utils";
@@ -159,6 +161,63 @@ const LinkedEntity = ({ name, url, separateLinks, className }: LinkedEntityProps
   );
 };
 
+type LinkWithBind = {
+  url: URLWithBind;
+  label?: string;
+  icon?: React.ReactNode;
+  iconOnRight?: boolean;
+  className?: string;
+};
+
+const LinkWithBind = ({ url, label, icon, iconOnRight, className }: LinkWithBind) => {
+  if (!isUrl(url.href)) return null;
+
+  return (
+    <div className="flex items-center gap-x-1.5">
+      {!iconOnRight && (icon ?? <i className="ph ph-bold ph-link text-primary" />)}
+      {url.bind ? (
+        <a
+          href={url.href}
+          target="_blank"
+          rel="noreferrer noopener nofollow"
+          className={cn("inline-block", className)}
+        >
+          {label ?? (url.label || url.href)}
+        </a>
+      ) : (
+        <span className={cn("inline-block", className)}>{label ?? (url.label || url.href)}</span>
+      )}
+      {iconOnRight && (icon ?? <i className="ph ph-bold ph-link text-primary" />)}
+    </div>
+  );
+};
+
+type LinkedEntityWithBindProps = {
+  name: string;
+  url: URLWithBind;
+  separateLinks: boolean;
+  className?: string;
+};
+
+const LinkedEntityWithBind = ({
+  name,
+  url,
+  separateLinks,
+  className,
+}: LinkedEntityWithBindProps) => {
+  return separateLinks && isUrl(url.href) ? (
+    <LinkWithBind
+      url={url}
+      label={name}
+      icon={<i className="ph ph-bold ph-globe text-primary" />}
+      iconOnRight={true}
+      className={className}
+    />
+  ) : (
+    <div className={className}>{name}</div>
+  );
+};
+
 type SectionProps<T> = {
   section: SectionWithItem<T> | CustomSectionGroup;
   children?: (item: T) => React.ReactNode;
@@ -200,7 +259,9 @@ const Section = <T,>({
               <div key={item.id} className={cn("space-y-2", className)}>
                 <div>
                   {children?.(item as T)}
-                  {url !== undefined && section.separateLinks && <Link url={url} />}
+                  {url &&
+                    section.separateLinks &&
+                    (!("bind" in url) || !url.bind) && <Link url={url} />}
                 </div>
 
                 {summary !== undefined && !isEmptyString(summary) && (
@@ -277,7 +338,7 @@ const Education = () => {
       {(item) => (
         <div className="flex items-start justify-between">
           <div className="text-left">
-            <LinkedEntity
+            <LinkedEntityWithBind
               name={item.institution}
               url={item.url}
               separateLinks={section.separateLinks}

@@ -16,7 +16,7 @@ import type { z } from "zod";
 import { AiActions } from "@/client/components/ai-actions";
 
 import { SectionDialog } from "../sections/shared/section-dialog";
-import { URLInput } from "../sections/shared/url-input";
+import { URLBind } from "../sections/shared/url-bind";
 
 const formSchema = educationSchema;
 
@@ -123,7 +123,7 @@ export const EducationDialog = () => {
             <FormItem className="sm:col-span-2">
               <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
-                <URLInput {...field} />
+                <URLBind {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
