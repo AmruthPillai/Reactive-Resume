@@ -17,7 +17,7 @@ import type {
 import { Education, Experience, Volunteer } from "@reactive-resume/schema";
 import { cn, isEmptyString, isUrl, sanitize } from "@reactive-resume/utils";
 import get from "lodash.get";
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 
 import { BrandIcon } from "../components/brand-icon";
 import { Picture } from "../components/picture";
@@ -288,6 +288,7 @@ const Experience = () => {
           </div>
 
           <div className="shrink-0 text-right">
+            <div>{item.companyDescription}</div>
             <div className="font-bold">{item.date}</div>
             <div>{item.location}</div>
           </div>

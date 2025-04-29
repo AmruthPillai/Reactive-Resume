@@ -279,6 +279,7 @@ const Experience = () => {
             separateLinks={section.separateLinks}
             className="font-bold"
           />
+          <div>{item.companyDescription}</div>
           <div>{item.position}</div>
           <div>{item.location}</div>
           <div className="font-bold">{item.date}</div>

@@ -106,6 +106,23 @@ export const ExperienceDialog = () => {
           )}
         />
 
+
+        <FormField
+          name="companyDescription"
+          control={form.control}
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{t`Company Description`}</FormLabel>
+              <FormControl>
+                <Input {...field}/>
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+
+
         <FormField
           name="summary"
           control={form.control}
@@ -134,6 +151,7 @@ export const ExperienceDialog = () => {
             </FormItem>
           )}
         />
+
       </div>
     </SectionDialog>
   );
