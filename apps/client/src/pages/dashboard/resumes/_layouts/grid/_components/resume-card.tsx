@@ -55,10 +55,19 @@ export const ResumeCard = ({ resume }: Props) => {
 
     setIsTouchDevice(checkTouch());
 
+    const handleScroll = () => {
+      if (isTouchDevice && isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isTouchDevice, isOpen]);
 
   const handleMouseEnter = () => {
     if (isTouchDevice) return;
