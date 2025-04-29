@@ -87,7 +87,9 @@ export const ResumeCard = ({ resume }: Props) => {
       timerRef.current = null;
     }
 
-    setIsOpen(false);
+    timerRef.current = setTimeout(() => {
+      setIsOpen(false);
+    }, 200);
   };
 
   const handleCardClick = (e: React.MouseEvent) => {
