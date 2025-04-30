@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { defaultItem, defaultUrl, itemSchema, urlSchema } from "../shared";
+import { defaultItem, defaultUrlWithBind, itemSchema, urlWithBindSchema } from "../shared";
 
 // Schema
 export const educationSchema = itemSchema.extend({
@@ -10,7 +10,7 @@ export const educationSchema = itemSchema.extend({
   score: z.string(),
   date: z.string(),
   summary: z.string(),
-  url: urlSchema,
+  url: urlWithBindSchema,
 });
 
 // Type
@@ -26,5 +26,5 @@ export const defaultEducation: Education = {
   score: "",
   date: "",
   summary: "",
-  url: defaultUrl,
+  url: defaultUrlWithBind,
 };

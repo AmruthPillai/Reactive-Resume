@@ -94,6 +94,7 @@ export const sampleResume: ResumeData = {
           url: {
             label: "",
             href: "",
+            bind: false,
           },
         },
       ],
