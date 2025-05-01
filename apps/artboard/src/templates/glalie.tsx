@@ -24,7 +24,7 @@ import {
   sanitize,
 } from "@reactive-resume/utils";
 import get from "lodash.get";
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 
 import { BrandIcon } from "../components/brand-icon";
 import { Picture } from "../components/picture";
@@ -253,6 +253,7 @@ const Experience = () => {
               separateLinks={section.separateLinks}
               className="font-bold"
             />
+            <div>{item.companyDescription}</div>
             <div>{item.position}</div>
           </div>
 
