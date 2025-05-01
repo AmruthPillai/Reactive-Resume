@@ -29,7 +29,6 @@ export const ExperienceDialog = () => {
   });
   const MAX_DESCRIPTION_LENGTH = 50;
 
-
   return (
     <SectionDialog<FormValues> id="experience" form={form} defaultValues={defaultExperience}>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -95,13 +94,28 @@ export const ExperienceDialog = () => {
         />
 
         <FormField
-          name="url"
+          name="companyDescription"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="sm:col-span-2">
-              <FormLabel>{t`Website`}</FormLabel>
+            <FormItem>
+              <FormLabel>
+                <div className="flex justify-between items-center w-full">
+                  <span>{t`Company Description`}</span>
+                  <span className="text-sm text-muted-foreground">
+            {field.value?.length ?? 0}/{MAX_DESCRIPTION_LENGTH}
+          </span>
+                </div>
+              </FormLabel>
               <FormControl>
-                <URLInput {...field} />
+                <Input
+                  {...field}
+                  maxLength={MAX_DESCRIPTION_LENGTH}
+                  onChange={(e) => {
+                    if (e.target.value.length <= MAX_DESCRIPTION_LENGTH) {
+                      field.onChange(e.target.value);
+                    }
+                  }}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -110,26 +124,13 @@ export const ExperienceDialog = () => {
 
 
         <FormField
-          name="companyDescription"
+          name="url"
           control={form.control}
           render={({ field }) => (
-            <FormItem>
-              <FormLabel>{t`Company Mission`}</FormLabel>
+            <FormItem className="sm:col-span-2">
+              <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
-                <>
-                  <Input
-                    {...field}
-                    maxLength={MAX_DESCRIPTION_LENGTH}
-                    onChange={(e) => {
-                      if (e.target.value.length <= MAX_DESCRIPTION_LENGTH) {
-                        field.onChange(e.target.value);
-                      }
-                    }}
-                  />
-                  <p className="text-sm text-muted-foreground mt-1 text-right">
-                    {field.value?.length ?? 0}/{MAX_DESCRIPTION_LENGTH}
-                  </p>
-                </>
+                <URLInput {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

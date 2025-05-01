@@ -25,7 +25,6 @@ export const defaultExperience: Experience = {
   location: "",
   date: "",
   summary: "",
-  url: defaultUrl,
   companyDescription: "",
+  url: defaultUrl,
 };
-
