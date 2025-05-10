@@ -28,6 +28,8 @@ import {
 import { cn, languages, templatesList } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
 
+import PoweredByIcons from "@/client/components/powered-by-icons";
+
 type Feature = {
   icon: React.ReactNode;
   title: string;
@@ -67,35 +69,7 @@ export const FeaturesSection = () => {
     { icon: <GoogleChromeLogo />, title: t`Host your resume publicly` },
     { icon: <Eye />, title: t`Track views and downloads` },
     { icon: <CloudSun />, title: t`Light or dark theme` },
-    {
-      icon: (
-        <div className="flex items-center space-x-1">
-          <img src="https://cdn.simpleicons.org/react" alt="React" width={14} height={14} />
-          <img src="https://cdn.simpleicons.org/vite" alt="Vite" width={14} height={14} />
-          <img
-            src="https://cdn.simpleicons.org/tailwindcss"
-            alt="TailwindCSS"
-            width={14}
-            height={14}
-          />
-          <img src="https://cdn.simpleicons.org/nestjs" alt="NestJS" width={14} height={14} />
-          <img
-            src="https://cdn.simpleicons.org/googlechrome"
-            alt="Google Chrome"
-            width={14}
-            height={14}
-          />
-          <img
-            src="https://cdn.simpleicons.org/postgresql"
-            alt="PostgreSQL"
-            width={14}
-            height={14}
-          />
-        </div>
-      ),
-      title: t`Powered by`,
-      className: "flex-row-reverse",
-    },
+    { icon: <PoweredByIcons />, title: t`Powered by`, className: "flex-row-reverse" },
   ];
 
   return (
