@@ -1,4 +1,4 @@
-import { POWERED_BY_ICONS_DATA } from "../constants/powered-by-icons";
+import { POWERED_BY_ICONS_DATA } from "../data/powered-by-icons";
 
 const PoweredByIcons = () => {
   return (
