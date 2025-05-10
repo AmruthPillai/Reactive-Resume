@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { CloudSun, Moon, Sun } from "@phosphor-icons/react";
 import { useTheme } from "@reactive-resume/hooks";
 import { Button } from "@reactive-resume/ui";
@@ -25,9 +26,9 @@ export const ThemeSwitch = ({ size = 20, className }: Props) => {
     <Button size="icon" variant="ghost" className={className} onClick={toggleTheme}>
       <div className="cursor-pointer overflow-hidden" style={{ width: size, height: size }}>
         <motion.div animate={theme} variants={variants} className="flex">
-          <Sun size={size} className="shrink-0" />
-          <CloudSun size={size} className="shrink-0" />
-          <Moon size={size} className="shrink-0" />
+          <Sun size={size} className="shrink-0" aria-label={t`Switch to Light Mode`} />
+          <CloudSun size={size} className="shrink-0" aria-label={t`Use System Theme`} />
+          <Moon size={size} className="shrink-0" aria-label={t`Switch to Dark Mode`} />
         </motion.div>
       </div>
     </Button>
