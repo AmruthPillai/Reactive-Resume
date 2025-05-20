@@ -162,20 +162,39 @@ type LinkedEntityProps = {
   url: URL;
   separateLinks: boolean;
   className?: string;
+  isCertification?: boolean;
 };
 
-const LinkedEntity = ({ name, url, separateLinks, className }: LinkedEntityProps) => {
-  return !separateLinks && isUrl(url.href) ? (
-    <Link
-      url={url}
-      label={name}
-      icon={<i className="ph ph-bold ph-globe text-primary" />}
-      iconOnRight={true}
-      className={className}
-    />
-  ) : (
-    <div className={className}>{name}</div>
-  );
+const LinkedEntity = ({ name, url, separateLinks, className, isCertification }: LinkedEntityProps) => {
+  if (!separateLinks && isUrl(url.href)) {
+    return (
+      <Link
+        url={url}
+        label={name}
+        icon={<i className="ph ph-bold ph-globe text-primary" />}
+        iconOnRight={true}
+        className={className}
+      />
+    );
+  }
+
+  if (isCertification && isUrl(url.href)) {
+    return (
+      <div className={className}>
+        <span>{name}</span>
+        <a 
+          href={url.href} 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ml-1.5 hover:underline"
+        >
+          (View Certificate)
+        </a>
+      </div>
+    );
+  }
+
+  return <div className={className}>{name}</div>;
 };
 
 type SectionProps<T> = {
@@ -198,6 +217,8 @@ const Section = <T,>({
   keywordsKey,
 }: SectionProps<T>) => {
   if (!section.visible || section.items.length === 0) return null;
+
+  const isCertificationsSection = section.id === "certifications";
 
   return (
     <section id={section.id} className="grid">
@@ -223,7 +244,7 @@ const Section = <T,>({
                 <div className="relative -ml-4 group-[.sidebar]:ml-0">
                   <div className="pl-4 group-[.sidebar]:pl-0">
                     {children?.(item as T)}
-                    {url !== undefined && section.separateLinks && <Link url={url} />}
+                    {!isCertificationsSection && url !== undefined && section.separateLinks && <Link url={url} />}
                   </div>
 
                   <div className="absolute inset-y-0 -left-px border-l-4 border-primary group-[.sidebar]:hidden" />
@@ -359,7 +380,12 @@ const Certifications = () => {
         <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
             <div className="font-bold">{item.name}</div>
-            <LinkedEntity name={item.issuer} url={item.url} separateLinks={section.separateLinks} />
+            <LinkedEntity 
+              name={item.issuer} 
+              url={item.url} 
+              separateLinks={section.separateLinks}
+              isCertification={true}
+            />
           </div>
 
           <div className="shrink-0 text-right">
