@@ -181,22 +181,6 @@ type LinkedEntityProps = {
 };
 
 const LinkedEntity = ({ name, url, separateLinks, className, isCertification }: LinkedEntityProps) => {
-  if (!separateLinks && isUrl(url.href)) {
-    return (
-      <div className={cn("flex items-center gap-x-1.5", className)}>
-        <i className="ph ph-bold ph-globe text-primary group-[.summary]:text-background" />
-        <a 
-          href={url.href} 
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:underline"
-        >
-          {isCertification ? "View Certificate" : (url.label || url.href)}
-        </a>
-      </div>
-    );
-  }
-
   if (isCertification && isUrl(url.href)) {
     return (
       <div className={cn("flex items-center gap-x-1.5", className)}>
@@ -208,6 +192,22 @@ const LinkedEntity = ({ name, url, separateLinks, className, isCertification }: 
           className="ml-1.5 hover:underline"
         >
           (View Certificate)
+        </a>
+      </div>
+    );
+  }
+
+  if (!separateLinks && isUrl(url.href)) {
+    return (
+      <div className={cn("flex items-center gap-x-1.5", className)}>
+        <i className="ph ph-bold ph-globe text-primary group-[.summary]:text-background" />
+        <a 
+          href={url.href} 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline"
+        >
+          {url.label || url.href}
         </a>
       </div>
     );

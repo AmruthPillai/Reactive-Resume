@@ -161,7 +161,7 @@ const LinkedEntity = ({ name, url, separateLinks, className, isCertification }: 
           rel="noopener noreferrer"
           className="hover:underline"
         >
-          {isCertification ? "Certification URL" : (url.label || url.href)}
+          {isCertification ? "View Certificate" : (url.label || url.href)}
         </a>
       </div>
     );
