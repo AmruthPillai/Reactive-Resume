@@ -76,7 +76,7 @@ export const OpenAISettings = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h3 className="text-2xl font-bold leading-relaxed tracking-tight">{t`OpenAI/Ollama Integration`}</h3>
+        <h3 className="text-2xl font-bold leading-relaxed tracking-tight">{t`OpenAI/OpenWebUI Integration`}</h3>
         <p className="leading-relaxed opacity-75">
           {t`You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume.`}
         </p>
