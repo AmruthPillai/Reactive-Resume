@@ -101,10 +101,10 @@ export const OpenAISettings = () => {
 
         <p>
           <Trans>
-            You can also integrate with Ollama simply by setting the API key to
-            `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e.
-            `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens
-            as per your preference.
+            You can also integrate with OpenWebUI to use with your local AI. This still requires an HTTPS connection.
+            Get an API / Access Token from OpenWebUI and input into . Set the OpenWebUI URL as follows
+            `https://openwebui.example.com/api` or `https://localhost:11434/api`, as long as it is an HTTPS connection.
+            You can also pick and choose models and set the max tokens as per your preference. Use a model such as `llama3.2:latest`.
           </Trans>
         </p>
       </div>
@@ -116,7 +116,7 @@ export const OpenAISettings = () => {
             control={form.control}
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t`OpenAI/Ollama API Key`}</FormLabel>
+                <FormLabel>{t`OpenAI/OpenWebUI API Key`}</FormLabel>
                 <FormControl>
                   <Input type="password" placeholder="sk-..." {...field} />
                 </FormControl>
@@ -131,7 +131,7 @@ export const OpenAISettings = () => {
               <FormItem>
                 <FormLabel>{t`Base URL`}</FormLabel>
                 <FormControl>
-                  <Input type="text" placeholder="http://localhost:11434/v1" {...field} />
+                  <Input type="text" placeholder="https://localhost:11434/api or https://ai.example.com/api" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
