@@ -6,17 +6,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: it\n"
-"Project-Id-Version: reactive-resume\n"
+"Project-Id-Version: lazymedia-reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-02-03 09:13\n"
+"PO-Revision-Date: 2025-06-16 04:47\n"
 "Last-Translator: \n"
 "Language-Team: Italian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: reactive-resume\n"
-"X-Crowdin-Project-ID: 503410\n"
+"X-Crowdin-Project: lazymedia-reactive-resume\n"
+"X-Crowdin-Project-ID: 799944\n"
 "X-Crowdin-Language: it\n"
-"X-Crowdin-File: messages.po\n"
-"X-Crowdin-File-ID: 494\n"
+"X-Crowdin-File: /main/messages.po\n"
+"X-Crowdin-File-ID: 4\n"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:171
 msgid "You have enabled two-factor authentication successfully."
@@ -87,7 +87,7 @@ msgstr "Esiste già un utente con questo indirizzo email e/o nome utente."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:43
 msgid "A4"
-msgstr "A4"
+msgstr ""
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:270
@@ -96,7 +96,7 @@ msgstr "Accetta solo {accept} file"
 
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:105
 msgid "Account"
-msgstr "Account"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:175
 msgid "Add a custom field"
@@ -477,7 +477,7 @@ msgstr "Scarica PDF"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:58
 msgid "Downloads"
-msgstr "Downloads"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:181
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:246
@@ -509,7 +509,7 @@ msgstr "Effetti"
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:181
 msgid "Email"
-msgstr "Email"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:163
 msgid "Enable 2FA"
@@ -563,7 +563,7 @@ msgstr "Esporta"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
 msgid "File"
-msgstr "File"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:221
 msgid "Filetype"
@@ -641,7 +641,7 @@ msgstr "Per iniziare"
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:18
 msgid "GitHub"
-msgstr "GitHub"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/statistics/index.tsx:12
 msgid "GitHub Stars"
@@ -662,7 +662,7 @@ msgstr ""
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:31
 msgid "Google"
-msgstr "Google"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:202
 msgid "Grayscale"
@@ -818,7 +818,7 @@ msgstr "mario.rossi@esempio.it"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:54
 msgid "JSON"
-msgstr "JSON"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:159
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
@@ -1017,7 +1017,7 @@ msgstr "Apri"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:47
 msgid "Open Source"
-msgstr "Open Source"
+msgstr ""
 
 #: apps/client/src/services/openai/change-tone.ts:35
 #: apps/client/src/services/openai/fix-grammar.ts:33
@@ -1066,11 +1066,11 @@ msgstr "Pagina {pageNumber}"
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:73
 msgid "Password"
-msgstr "Password"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:72
 msgid "PDF"
-msgstr "PDF"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:63
 msgid "Personal notes for each resume"
@@ -1171,7 +1171,7 @@ msgstr "Segnala un problema"
 #: apps/client/src/pages/public/page.tsx:74
 #: apps/client/src/pages/public/page.tsx:95
 msgid "Reactive Resume"
-msgstr "Reactive Resume"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
 msgid "Reactive Resume has helped people land jobs at these great companies:"
@@ -1398,7 +1398,7 @@ msgstr "Dimensioni (in px)"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:228
 msgid "Slug"
-msgstr "Slug"
+msgstr ""
 
 #: apps/client/src/services/errors/translate-error.ts:55
 msgid "Something went wrong while grabbing a preview your resume. Please try again later or raise an issue on GitHub."
@@ -1620,7 +1620,7 @@ msgstr "Carichi un file da una delle fonti accettate per analizzare i dati esist
 
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:73
 msgid "URL"
-msgstr "URL"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:61
 msgid "URL must start with https://"

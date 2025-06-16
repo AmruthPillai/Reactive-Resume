@@ -6,17 +6,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: hu\n"
-"Project-Id-Version: reactive-resume\n"
+"Project-Id-Version: lazymedia-reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-02-03 09:13\n"
+"PO-Revision-Date: 2025-06-16 04:47\n"
 "Last-Translator: \n"
 "Language-Team: Hungarian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: reactive-resume\n"
-"X-Crowdin-Project-ID: 503410\n"
+"X-Crowdin-Project: lazymedia-reactive-resume\n"
+"X-Crowdin-Project-ID: 799944\n"
 "X-Crowdin-Language: hu\n"
-"X-Crowdin-File: messages.po\n"
-"X-Crowdin-File-ID: 494\n"
+"X-Crowdin-File: /main/messages.po\n"
+"X-Crowdin-File-ID: 4\n"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:171
 msgid "You have enabled two-factor authentication successfully."
@@ -28,7 +28,7 @@ msgstr "{templatesCount} önéletrajz sablon közül választhat"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:142
 msgid "{value, plural, one {Column} other {Columns}}"
-msgstr "{value, plural, one {Column} other {Columns}}"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:20
 msgid "<0>I built Reactive Resume mostly by myself during my spare time, with a lot of help from other great open-source contributors.</0><1>If you like the app and want to support keeping it free forever, please donate whatever you can afford to give.</1>"
@@ -87,7 +87,7 @@ msgstr "Ezzel az e-mail címmel és/vagy felhasználónévvel már létezik egy 
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:43
 msgid "A4"
-msgstr "A4"
+msgstr ""
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:270
@@ -123,7 +123,7 @@ msgstr "Új oldal hozzáadása"
 
 #: apps/client/src/components/ai-actions.tsx:79
 msgid "AI"
-msgstr "AI"
+msgstr ""
 
 #: apps/client/src/pages/auth/register/page.tsx:71
 msgid "Already have an account?"
@@ -641,7 +641,7 @@ msgstr "Kezdjünk bele"
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:18
 msgid "GitHub"
-msgstr "GitHub"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/statistics/index.tsx:12
 msgid "GitHub Stars"
@@ -662,7 +662,7 @@ msgstr ""
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:31
 msgid "Google"
-msgstr "Google"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:202
 msgid "Grayscale"
@@ -818,7 +818,7 @@ msgstr "gipsz.jakab@example.com"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:54
 msgid "JSON"
-msgstr "JSON"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:159
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
@@ -1070,7 +1070,7 @@ msgstr "Jelszó"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:72
 msgid "PDF"
-msgstr "PDF"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:63
 msgid "Personal notes for each resume"
@@ -1120,7 +1120,7 @@ msgstr "Pozíció"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:96
 msgid "Powered by"
-msgstr "Powered by"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:94
 msgid "Powered by <0>Simple Icons</0>"
@@ -1191,7 +1191,7 @@ msgstr "A Reactive Resume élénk közösségének köszönhetően virágzik. Ez
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:89
 msgid "Redo"
-msgstr "Redo"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:157
@@ -1215,7 +1215,7 @@ msgstr "E-mail megerősítő link újraküldése"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:152
 msgid "Reset"
-msgstr "Reset"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:201
 msgid "Reset Layout"
@@ -1270,7 +1270,7 @@ msgstr "Szkennelje be az alábbi QR-kódot a hitelesítési alkalmazással a 2FA
 #. Score or honors for the degree, for example, CGPA or magna cum laude
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:92
 msgid "Score"
-msgstr "Score"
+msgstr ""
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:104
 msgid "Scroll to Pan"
@@ -1589,7 +1589,7 @@ msgstr "Linkek aláhúzása"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:76
 msgid "Undo"
-msgstr "Undo"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:52
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:110
@@ -1620,7 +1620,7 @@ msgstr "Töltsön fel egy fájlt az egyik elfogadott forrásból a meglévő ada
 
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:73
 msgid "URL"
-msgstr "URL"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:61
 msgid "URL must start with https://"

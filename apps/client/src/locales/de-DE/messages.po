@@ -6,17 +6,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: de\n"
-"Project-Id-Version: reactive-resume\n"
+"Project-Id-Version: lazymedia-reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-02-03 09:13\n"
+"PO-Revision-Date: 2025-06-16 04:46\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: reactive-resume\n"
-"X-Crowdin-Project-ID: 503410\n"
+"X-Crowdin-Project: lazymedia-reactive-resume\n"
+"X-Crowdin-Project-ID: 799944\n"
 "X-Crowdin-Language: de\n"
-"X-Crowdin-File: messages.po\n"
-"X-Crowdin-File-ID: 494\n"
+"X-Crowdin-File: /main/messages.po\n"
+"X-Crowdin-File-ID: 4\n"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:171
 msgid "You have enabled two-factor authentication successfully."
@@ -87,7 +87,7 @@ msgstr "Ein Benutzer mit dieser E-Mail-Adresse und/oder Benutzernamen existiert 
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:43
 msgid "A4"
-msgstr "A4"
+msgstr ""
 
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:270
@@ -123,7 +123,7 @@ msgstr "Neue Seite hinzufügen"
 
 #: apps/client/src/components/ai-actions.tsx:79
 msgid "AI"
-msgstr "AI"
+msgstr ""
 
 #: apps/client/src/pages/auth/register/page.tsx:71
 msgid "Already have an account?"
@@ -290,7 +290,7 @@ msgstr "Schließen"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:201
 msgid "Code"
-msgstr "Code"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:52
 msgid "Code must be exactly 6 digits long."
@@ -477,7 +477,7 @@ msgstr "PDF herunterladen"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:58
 msgid "Downloads"
-msgstr "Downloads"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:181
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:246
@@ -641,11 +641,11 @@ msgstr "Jetzt loslegen"
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:18
 msgid "GitHub"
-msgstr "GitHub"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/statistics/index.tsx:12
 msgid "GitHub Stars"
-msgstr "GitHub Stars"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:187
 msgid "Give your old resume a new name."
@@ -662,7 +662,7 @@ msgstr ""
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:31
 msgid "Google"
-msgstr "Google"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:202
 msgid "Grayscale"
@@ -706,7 +706,7 @@ msgstr "Halte <0>STRG</0> gedrückt, um dein Passwort temporär anzuzeigen."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:93
 msgid "Horizontal"
-msgstr "Horizontal"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:67
 msgid "Host your resume publicly"
@@ -818,7 +818,7 @@ msgstr "max.mustermann@beispiel.de"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:54
 msgid "JSON"
-msgstr "JSON"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:159
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
@@ -845,7 +845,7 @@ msgstr "Letzte Aktualisierung: {lastUpdated}"
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:197
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
 msgid "Layout"
-msgstr "Layout"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/hero/call-to-action.tsx:38
 msgid "Learn more"
@@ -944,7 +944,7 @@ msgstr "Außenabstand"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:158
 msgid "Max Tokens"
-msgstr "Max Tokens"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:48
 msgid "MIT License"
@@ -952,7 +952,7 @@ msgstr "MIT Lizenz"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:145
 msgid "Model"
-msgstr "Model"
+msgstr ""
 
 #: apps/client/src/pages/auth/register/page.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:59
@@ -965,12 +965,12 @@ msgstr "Model"
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:88
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:153
 msgid "Name"
-msgstr "Name"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:39
 msgctxt "Name of the Certification"
 msgid "Name"
-msgstr "Name"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:40
 msgid "Network"
@@ -1017,7 +1017,7 @@ msgstr "Öffnen"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:47
 msgid "Open Source"
-msgstr "Open Source"
+msgstr ""
 
 #: apps/client/src/services/openai/change-tone.ts:35
 #: apps/client/src/services/openai/fix-grammar.ts:33
@@ -1027,7 +1027,7 @@ msgstr "OpenAI hat keine Auswahl für deinen Text zurückgegeben."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:52
 msgid "OpenAI Integration"
-msgstr "OpenAI Integration"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:119
 msgid "OpenAI/Ollama API Key"
@@ -1035,7 +1035,7 @@ msgstr "OpenAI/Ollama API-Schlüssel"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
 msgid "OpenAI/Ollama Integration"
-msgstr "OpenAI/Ollama Integration"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:182
@@ -1070,7 +1070,7 @@ msgstr "Passwort"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:72
 msgid "PDF"
-msgstr "PDF"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:63
 msgid "Personal notes for each resume"
@@ -1112,19 +1112,19 @@ msgstr "Hochformat"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:54
 msgctxt "Position held at a company, for example, Software Engineer"
 msgid "Position"
-msgstr "Position"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:53
 msgid "Position"
-msgstr "Position"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:96
 msgid "Powered by"
-msgstr "Powered by"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:94
 msgid "Powered by <0>Simple Icons</0>"
-msgstr "Powered by <0>Simple Icons</0>"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:43
 msgid "Primary Color"
@@ -1171,7 +1171,7 @@ msgstr "Problem melden"
 #: apps/client/src/pages/public/page.tsx:74
 #: apps/client/src/pages/public/page.tsx:95
 msgid "Reactive Resume"
-msgstr "Reactive Resume"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
 msgid "Reactive Resume has helped people land jobs at these great companies:"
@@ -1318,7 +1318,7 @@ msgstr "Schick mir eine Nachricht"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:97
 msgid "Separate Links"
-msgstr "Separate Links"
+msgstr ""
 
 #: apps/client/src/components/user-options.tsx:32
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
@@ -1466,7 +1466,7 @@ msgstr "Unterstützt die Seitenformate A4 / Letter"
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:85
 msgid "System"
-msgstr "System"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:65
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:18
@@ -1620,7 +1620,7 @@ msgstr "Lade eine Datei von einer der akzeptierten Quellen hoch, um die Daten zu
 
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:73
 msgid "URL"
-msgstr "URL"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:61
 msgid "URL must start with https://"
@@ -1672,7 +1672,7 @@ msgstr "Bestätige deine E-Mail-Adresse"
 
 #: apps/client/src/pages/home/sections/hero/index.tsx:26
 msgid "Version 4"
-msgstr "Version 4"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:51
 msgid "Views"
