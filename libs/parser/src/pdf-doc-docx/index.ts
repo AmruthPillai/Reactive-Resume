@@ -17,47 +17,48 @@ import type { Json } from "@reactive-resume/utils";
 import type { Schema } from "zod";
 
 import type { Parser } from "../interfaces/parser";
-import type { JsonResume } from "./schema";
-import { jsonResumeSchema } from "./schema";
+import type { pdfResume } from "./schema";
+import { pdfResumeSchema } from "./schema";
 
 export * from "./schema";
 
-export class JsonResumeParser implements Parser<Json, JsonResume> {
+export class PdfResumeParser implements Parser<Json, pdfResume> {
   schema: Schema;
 
   constructor() {
-    this.schema = jsonResumeSchema;
+    this.schema = pdfResumeSchema;
   }
 
-  readFile(file: File): Promise<Json> {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
+  private async callConversionService(file: File): Promise<Json> {
+    const formData = new FormData();
+    formData.append("file", file);
 
-      // eslint-disable-next-line unicorn/prefer-add-event-listener
-      reader.onload = () => {
-        try {
-          const result = JSON.parse(reader.result as string) as Json;
-          resolve(result);
-        } catch {
-          reject(new Error("Failed to parse JSON"));
-        }
-      };
-
-      // eslint-disable-next-line unicorn/prefer-add-event-listener
-      reader.onerror = () => {
-        reject(new Error("Failed to read the file"));
-      };
-
-      // eslint-disable-next-line unicorn/prefer-blob-reading-methods
-      reader.readAsText(file);
+    // Ensure the conversion service is running at the specified URL
+    const response = await fetch("http://127.0.0.1:8000/extract-pdf-text", {
+      method: "POST",
+      body: formData,
     });
+
+    if (!response.ok) {
+      throw new Error(`Conversion API error: ${response.status} ${response.statusText}`);
+    }
+
+    return (await response.json()) as Json;
+  }
+
+  async readFile(file: File): Promise<Json> {
+    const result = await this.callConversionService(file);
+    if (typeof result !== "object") {
+      throw new TypeError("Invalid response from conversion service");
+    }
+    return result;
   }
 
   validate(data: Json) {
-    return this.schema.parse(data) as JsonResume;
+    return this.schema.parse(data) as pdfResume;
   }
 
-  convert(data: JsonResume) {
+  convert(data: pdfResume) {
     const result = JSON.parse(JSON.stringify(defaultResumeData));
     // Basics
     result.basics.name = data.basics?.name ?? "";
@@ -75,6 +76,7 @@ export class JsonResumeParser implements Parser<Json, JsonResume> {
         result.sections.profiles.items.push({
           ...defaultProfile,
           id: createId(),
+
           icon: profile.network?.toLocaleLowerCase() ?? "",
           network: profile.network ?? "",
           username: profile.username ?? "",
@@ -220,7 +222,6 @@ export class JsonResumeParser implements Parser<Json, JsonResume> {
         });
       }
     }
-
     return result;
   }
 }

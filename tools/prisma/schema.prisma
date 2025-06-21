@@ -54,6 +54,7 @@ model Resume {
   id         String      @id @default(cuid())
   title      String
   slug       String
+  description String    @default("")
   data       Json        @default("{}")
   visibility Visibility  @default(private)
   locked     Boolean     @default(false)

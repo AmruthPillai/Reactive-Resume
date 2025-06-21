@@ -14,6 +14,7 @@ export const createResumeSchema = z.object({
       return slug;
     })
     .optional(),
+  description: z.string().optional(),
   visibility: z.enum(["public", "private"]).default("private"),
 });
 

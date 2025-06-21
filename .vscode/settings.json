@@ -5,5 +5,20 @@
   "tailwindCSS.experimental.classRegex": [
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-  ]
+  ],
+
+  // Prettier for HTML and other web files
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Python: Use Black
+  "python.formatting.provider": "black",
+  "[python]": {
+    "editor.formatOnSave": true
+  },
+
+  // General auto-format on save
+  "editor.formatOnSave": true
 }
