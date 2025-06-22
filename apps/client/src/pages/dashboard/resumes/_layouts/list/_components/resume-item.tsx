@@ -6,6 +6,7 @@ import {
   Lock,
   LockOpen,
   PencilSimple,
+  Sparkle,
   TrashSimple,
 } from "@phosphor-icons/react";
 import type { ResumeDto } from "@reactive-resume/dto";
@@ -170,6 +171,10 @@ export const ResumeListItem = ({ resume }: Props) => {
         <ContextMenuItem className="text-error" onClick={onDelete}>
           <TrashSimple size={14} className="mr-2" />
           {t`Delete`}
+        </ContextMenuItem>
+        <ContextMenuItem className="text-blue-500" onClick={onDelete}>
+          <Sparkle size={14} className="mr-2" />
+          {t`AI-Powered Tailoring`}
         </ContextMenuItem>
       </ContextMenuContent>
     </ContextMenu>

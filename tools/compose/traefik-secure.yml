@@ -57,7 +57,7 @@ services:
       - traefik.http.services.printer.loadbalancer.server.port=3000
 
   app:
-    image: amruthpillai/reactive-resume:latest
+    image: kaviharjani/reactive-resume:latest
     restart: unless-stopped
     depends_on:
       - postgres

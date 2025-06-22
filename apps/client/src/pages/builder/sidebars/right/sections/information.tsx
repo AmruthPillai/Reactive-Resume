@@ -60,7 +60,7 @@ const IssuesCard = () => (
     </CardContent>
     <CardFooter className="space-x-4">
       <a
-        href="https://github.com/AmruthPillai/Reactive-Resume/issues/new/choose"
+        href="https://github.com/kaviharjani/Reactive-Resume/issues/new/choose"
         className={cn(buttonVariants({ size: "sm" }))}
         rel="noopener noreferrer nofollow"
         target="_blank"
@@ -69,7 +69,7 @@ const IssuesCard = () => (
         <span className="line-clamp-1">{t`Raise an issue`}</span>
       </a>
 
-      <a className={cn(buttonVariants({ size: "sm" }))} href="mailto:hello@amruthpillai.com">
+      <a className={cn(buttonVariants({ size: "sm" }))} href="mailto:hello@kaviharjani.com">
         <EnvelopeSimpleOpen size={14} weight="bold" className="mr-2" />
         <span className="line-clamp-1">{t`Send me a message`}</span>
       </a>

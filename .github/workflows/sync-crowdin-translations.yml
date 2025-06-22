@@ -7,7 +7,7 @@ on:
 
 jobs:
   sync:
-    if: github.repository == 'AmruthPillai/Reactive-Resume'
+    if: github.repository == 'kaviharjani/Reactive-Resume'
     runs-on: ubuntu-latest
 
     steps:

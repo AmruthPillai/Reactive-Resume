@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  IMAGE: amruthpillai/reactive-resume
+  IMAGE: kaviharjani/reactive-resume
 
 jobs:
   build:
@@ -164,4 +164,4 @@ jobs:
           status: ${{ job.status }}
           title: "Release `${{ steps.meta.outputs.version }}`"
           description: "A new version of Reactive Resume just dropped! 🚀"
-          url: "https://github.com/AmruthPillai/Reactive-Resume"
+          url: "https://github.com/kaviharjani/Reactive-Resume"
