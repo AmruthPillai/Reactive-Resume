@@ -27,7 +27,6 @@ import {
   FormMessage,
   Input,
   Label,
-  RichInput,
   ScrollArea,
   Select,
   SelectContent,
@@ -35,9 +34,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@reactive-resume/ui";
+import axios from "axios";
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+// Import react-json-view and its default styles
+import ReactJson from "react-json-view";
 import { z, ZodError } from "zod";
 
 import { useToast } from "@/client/hooks/use-toast";
@@ -52,14 +54,18 @@ enum ImportType {
   "pdf-docx-doc" = "pdf-docx-doc",
 }
 
+// Updated schema: aiParsedJson is now `any` to hold a JSON object directly
 const formSchema = z.object({
   file: z.instanceof(File).optional(),
   type: z.nativeEnum(ImportType),
-  aiParsedJson: z.string().optional(),
+  aiParsedJson: z.any().optional(),
 });
 
 type FormValues = z.infer<typeof formSchema>;
-
+type SummarizeResponse = {
+  output: string;
+  elapsed_seconds: number;
+};
 type ValidationResult =
   | {
       isValid: false;
@@ -71,13 +77,7 @@ type ValidationResult =
       result: ResumeData | ReactiveResumeV3 | LinkedIn | JsonResume | pdfResume;
     };
 
-function stripHtmlTags(html: string): string {
-  if (typeof window === "undefined") {
-    return html.replace(/<[^>]*>/g, "");
-  }
-  const doc = new DOMParser().parseFromString(html, "text/html");
-  return doc.body.textContent ?? "";
-}
+// The stripHtmlTags function is no longer needed with react-json-view
 
 export const ImportDialog = () => {
   const { toast } = useToast();
@@ -85,10 +85,13 @@ export const ImportDialog = () => {
   const { importResume, loading } = useImportResume();
 
   const [validationResult, setValidationResult] = useState<ValidationResult | null>(null);
+  const [summarisedErrors, setSummarisedErrors] = useState<string | null>(null);
   const [showParsedJson, setShowParsedJson] = useState(false);
+  const [showSummarizedError, setShowSummarizedError] = useState(false);
   const form = useForm<FormValues>({
     defaultValues: {
       type: ImportType["reactive-resume-json"],
+      aiParsedJson: null, // Default to null for an object
     },
     resolver: zodResolver(formSchema),
   });
@@ -104,11 +107,54 @@ export const ImportDialog = () => {
   }, [isOpen]);
 
   useEffect(() => {
-    form.reset({ file: undefined, type: filetype, aiParsedJson: "" });
+    form.reset({ file: undefined, type: filetype, aiParsedJson: null });
     setValidationResult(null);
     setShowParsedJson(false); // Reset visibility when filetype changes
   }, [filetype]);
 
+  const summarizeErrorViaAi = async (): Promise<string> => {
+    try {
+      if (validationResult?.isValid === false && validationResult.errors) {
+        const aiParsedJsonString = JSON.stringify(aiParsedJsonValue, null, 2);
+        const response = await axios.post<SummarizeResponse>(
+          "http://localhost:8000/generate-json",
+          {
+            system_prompt: t`Summarize the following error message clearly and suggest what might have gone wrong or how to fix it with ${aiParsedJsonString}.`,
+            input_text: Array.isArray(validationResult.errors)
+              ? validationResult.errors.join("\n")
+              : String(validationResult.errors),
+          },
+        );
+        return response.data.output;
+      }
+    } catch {
+      return t`Could not summarize error. Please try again.`;
+    }
+    return t`No error to summarize.`;
+  };
+
+  useEffect(() => {
+    const handleSummarize = async () => {
+      if (validationResult) {
+        if (validationResult.isValid) {
+          setSummarisedErrors(null);
+        } else {
+          try {
+            const summary = await summarizeErrorViaAi();
+            setSummarisedErrors(summary);
+          } catch (error: unknown) {
+            setSummarisedErrors(
+              t`An error occurred while parsing validation: ` +
+                (error instanceof Error ? error.message : t`unknown error`),
+            );
+          }
+        }
+      } else {
+        setSummarisedErrors(null);
+      }
+    };
+    void handleSummarize();
+  }, [validationResult]);
   function getAccept(filetype: ImportType | string) {
     switch (filetype) {
       case "reactive-resume-json":
@@ -143,11 +189,10 @@ export const ImportDialog = () => {
         throw new Error(t`No data returned from AI parsing.`);
       }
 
-      // Assuming your AI returns data in a format convertible to ResumeData
-      const parsedJsonString = JSON.stringify(response, null, 2);
-      form.setValue("aiParsedJson", parsedJsonString);
-      setShowParsedJson(true); // Show the text area with parsed JSON
-      setValidationResult(null); // Reset validation when new AI data arrives
+      // Set the JSON object directly into the form state
+      form.setValue("aiParsedJson", response);
+      setShowParsedJson(true);
+      setValidationResult(null);
 
       toast({
         variant: "success",
@@ -157,56 +202,39 @@ export const ImportDialog = () => {
     } catch (error) {
       toast({
         variant: "error",
-        title: t`Failed to parse file with AI.`,
+        title: t`Failed to parse file with AI. Please try again.`,
         description: error instanceof Error ? error.message : undefined,
       });
-      form.setValue("aiParsedJson", ""); // Clear the field on error
+      form.setValue("aiParsedJson", null);
       setShowParsedJson(false);
     }
   };
 
-  const onValidate = async (dataToValidate?: string) => {
+  const onValidate = async (dataToValidate?: object) => {
     try {
       const { file, type } = form.getValues();
       let data: any;
 
       if (dataToValidate) {
-        // If dataToValidate is provided (from the textarea)
-
-        if (dataToValidate) {
-          // If dataToValidate is provided (from the textarea)
-          // Check if it's already an object (e.g., if passed directly from another function)
-          // or if it's a string that needs parsing.
-          if (typeof dataToValidate === "string") {
-            // Attempt to parse the string. This is the most common case for textarea content.
-            data = JSON.parse(dataToValidate);
-          } else if (typeof dataToValidate === "object" && dataToValidate !== null) {
-            // If it's already a non-null object, use it directly.
-            data = dataToValidate;
-          } else {
-            // Handle cases like dataToValidate being null, undefined, or a non-parseable type
-            throw new Error("Invalid data format for validation.");
-          }
-        }
+        // If dataToValidate is provided (from the JSON editor), use it directly
+        data = dataToValidate;
       } else if (file) {
         // Otherwise, use the uploaded file
         switch (type) {
           case ImportType["reactive-resume-json"]: {
             const parser = new ReactiveResumeParser();
             data = await parser.readFile(file);
-
             break;
           }
+          // ... (other file reading cases remain the same)
           case ImportType["reactive-resume-v3-json"]: {
             const parser = new ReactiveResumeV3Parser();
             data = await parser.readFile(file);
-
             break;
           }
           case ImportType["json-resume-json"]: {
             const parser = new JsonResumeParser();
             data = await parser.readFile(file);
-
             break;
           }
           case ImportType["linkedin-data-export-zip"]: {
@@ -215,63 +243,49 @@ export const ImportDialog = () => {
             break;
           }
           case ImportType["pdf-docx-doc"]: {
-            // For PDF/DOCX, the validation often happens after AI parsing
-            // We'll rely on the `dataToValidate` path for this.
             toast({
               variant: "warning",
-              // eslint-disable-next-line lingui/text-restrictions
-              title: t`Please use the "Parse with AI" button for PDF/Word documents first.`,
+              title: t`Please use the 'Parse with AI' button for PDF/Word documents first.`,
             });
             return;
           }
-          // No default
         }
       } else {
-        // No file and no dataToValidate
         setValidationResult({
           isValid: false,
-          // eslint-disable-next-line lingui/no-unlocalized-strings
-          errors: JSON.stringify({ message: "No file uploaded or data to validate." }),
+          errors: JSON.stringify({ message: t`No file or data to validate.` }),
         });
-        toast({
-          variant: "error",
-          title: t`No file or data to validate.`,
-        });
+        toast({ variant: "error", title: t`No file or data to validate.` });
         return;
       }
 
       let result: ResumeData | ReactiveResumeV3 | LinkedIn | JsonResume | pdfResume;
 
-      // Determine the parser based on the selected type
+      // ... (validation logic remains largely the same)
       switch (type) {
         case ImportType["reactive-resume-json"]: {
           const parser = new ReactiveResumeParser();
           result = parser.validate(data);
-
           break;
         }
         case ImportType["reactive-resume-v3-json"]: {
           const parser = new ReactiveResumeV3Parser();
           result = parser.validate(data);
-
           break;
         }
         case ImportType["json-resume-json"]: {
           const parser = new JsonResumeParser();
           result = parser.validate(data);
-
           break;
         }
         case ImportType["linkedin-data-export-zip"]: {
           const parser = new LinkedInParser();
           result = await parser.validate(data);
-
           break;
         }
         case ImportType["pdf-docx-doc"]: {
-          // For PDF/DOCX after AI parsing, we treat it as pdfResume for validation
           const parser = new PdfResumeParser();
-          result = await parser.validate(data as pdfResume);
+          result = parser.validate(data as pdfResume);
           break;
         }
         default: {
@@ -280,27 +294,18 @@ export const ImportDialog = () => {
       }
 
       setValidationResult({ isValid: true, type, result });
-      toast({
-        variant: "success",
-        title: t`Validation successful!`,
-      });
+      toast({ variant: "success", title: t`Validation successful!` });
     } catch (error) {
+      // ... (error handling remains the same)
       if (error instanceof ZodError) {
-        setValidationResult({
-          isValid: false,
-          errors: error.toString(),
-        });
-
+        setValidationResult({ isValid: false, errors: error.toString() });
         toast({
           variant: "error",
           title: t`An error occurred while validating the file.`,
           description: error.message,
         });
       } else if (error instanceof Error) {
-        setValidationResult({
-          isValid: false,
-          errors: JSON.stringify({ message: error.message }),
-        });
+        setValidationResult({ isValid: false, errors: JSON.stringify({ message: error.message }) });
         toast({
           variant: "error",
           title: t`An error occurred during validation.`,
@@ -309,40 +314,32 @@ export const ImportDialog = () => {
       } else {
         setValidationResult({
           isValid: false,
-          // eslint-disable-next-line lingui/no-unlocalized-strings
-          errors: JSON.stringify({ message: "An unknown error occurred during validation." }),
+          errors: JSON.stringify({ message: t`An unknown error occurred.` }),
         });
-        toast({
-          variant: "error",
-          title: t`An unknown error occurred.`,
-        });
+        toast({ variant: "error", title: t`An unknown error occurred.` });
       }
     }
   };
 
   const onImport = async () => {
-    // We now rely on the 'aiParsedJson' field if it's visible, otherwise fall back to file
     const { type, aiParsedJson, file } = form.getValues();
 
     if (!validationResult?.isValid) {
-      toast({
-        variant: "error",
-        title: t`Please validate the data first.`,
-      });
+      toast({ variant: "error", title: t`Please validate the data first.` });
       return;
     }
 
     try {
-      let dataToConvert: any;
-      if (showParsedJson && aiParsedJson) {
-        dataToConvert = JSON.parse(aiParsedJson);
-      } else if (file) {
-        // This path is less likely now if AI parsing is involved for PDF/DOCX
-        // but kept for other direct JSON imports.
+      // Use the JSON object directly if it exists, otherwise read from file
+      let dataToConvert: any = showParsedJson && aiParsedJson ? aiParsedJson : null;
+
+      if (!dataToConvert && file) {
+        // Fallback to reading file if aiParsedJson isn't available
         if (type === ImportType["reactive-resume-json"]) {
           const parser = new ReactiveResumeParser();
           dataToConvert = await parser.readFile(file);
-        } else if (type === ImportType["reactive-resume-v3-json"]) {
+        } // ... other file types
+        else if (type === ImportType["reactive-resume-v3-json"]) {
           const parser = new ReactiveResumeV3Parser();
           dataToConvert = await parser.readFile(file);
         } else if (type === ImportType["json-resume-json"]) {
@@ -352,45 +349,40 @@ export const ImportDialog = () => {
           const parser = new LinkedInParser();
           dataToConvert = await parser.readFile(file);
         }
-      } else {
-        toast({
-          variant: "error",
-          title: t`No data available to import.`,
-        });
+      }
+
+      if (!dataToConvert) {
+        toast({ variant: "error", title: t`No data available to import.` });
         return;
       }
 
       let finalResumeData: ResumeData;
 
+      // ... (conversion logic remains the same)
       switch (type) {
         case ImportType["reactive-resume-json"]: {
           const parser = new ReactiveResumeParser();
           finalResumeData = parser.convert(dataToConvert as ResumeData);
-
           break;
         }
         case ImportType["reactive-resume-v3-json"]: {
           const parser = new ReactiveResumeV3Parser();
           finalResumeData = parser.convert(dataToConvert as ReactiveResumeV3);
-
           break;
         }
         case ImportType["json-resume-json"]: {
           const parser = new JsonResumeParser();
           finalResumeData = parser.convert(dataToConvert as JsonResume);
-
           break;
         }
         case ImportType["linkedin-data-export-zip"]: {
           const parser = new LinkedInParser();
           finalResumeData = parser.convert(dataToConvert as LinkedIn);
-
           break;
         }
         case ImportType["pdf-docx-doc"]: {
           const parser = new PdfResumeParser();
           finalResumeData = parser.convert(dataToConvert as pdfResume);
-
           break;
         }
         default: {
@@ -413,7 +405,7 @@ export const ImportDialog = () => {
     form.reset({
       type: ImportType["reactive-resume-json"],
       file: undefined,
-      aiParsedJson: "",
+      aiParsedJson: null,
     });
     setValidationResult(null);
     setShowParsedJson(false);
@@ -421,9 +413,9 @@ export const ImportDialog = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={close}>
-      <DialogContent className="max-w-xl">
+      <DialogContent className="max-w-2xl">
         {" "}
-        {/* Adjusted max-width for better display of JSON */}
+        {/* Increased width for better JSON view */}
         <Form {...form}>
           <form className="space-y-4">
             <DialogHeader>
@@ -450,21 +442,16 @@ export const ImportDialog = () => {
                         <SelectValue placeholder={t`Please select a file type`} />
                       </SelectTrigger>
                       <SelectContent>
-                        {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
                         <SelectItem value="reactive-resume-json">
                           Reactive Resume (.json)
                         </SelectItem>
-                        {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
                         <SelectItem value="reactive-resume-v3-json">
                           Reactive Resume v3 (.json)
                         </SelectItem>
-                        {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
                         <SelectItem value="json-resume-json">JSON Resume (.json)</SelectItem>
-                        {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
                         <SelectItem value="linkedin-data-export-zip">
                           LinkedIn Data Export (.zip)
                         </SelectItem>
-                        {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
                         <SelectItem value="pdf-docx-doc">
                           PDF / Word Documents (.pdf, .doc, .docx)
                         </SelectItem>
@@ -490,28 +477,18 @@ export const ImportDialog = () => {
                       onChange={(event) => {
                         if (!event.target.files?.length) return;
                         field.onChange(event.target.files[0]);
-                        // If a file is selected, hide the parsed JSON until AI processes it
                         setShowParsedJson(false);
-                        form.setValue("aiParsedJson", "");
+                        form.setValue("aiParsedJson", null);
                         setValidationResult(null);
                       }}
                     />
                   </FormControl>
                   <FormMessage />
-                  {accept && (
-                    <FormDescription>
-                      {t({
-                        message: `Accepts only ${accept} files`,
-                        comment:
-                          "Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.",
-                      })}
-                    </FormDescription>
-                  )}
+                  {accept && <FormDescription>{t`Accepts only ${accept} files`}</FormDescription>}
                 </FormItem>
               )}
             />
 
-            {/* New section to display AI parsed JSON */}
             {filetype === ImportType["pdf-docx-doc"] && form.watch("file") && (
               <Button
                 type="button"
@@ -521,7 +498,7 @@ export const ImportDialog = () => {
                     void onParseWithAI(file);
                   }
                 }}
-                disabled={loading} // Disable if parsing is in progress
+                disabled={loading}
               >
                 {t`Parse with AI`}
               </Button>
@@ -540,6 +517,7 @@ export const ImportDialog = () => {
               </Button>
             )}
 
+            {/* Section to display AI parsed JSON using react-json-view */}
             {showParsedJson && (
               <FormField
                 name="aiParsedJson"
@@ -548,18 +526,28 @@ export const ImportDialog = () => {
                   <FormItem>
                     <FormLabel>{t`AI Parsed JSON`}</FormLabel>
                     <FormControl>
-                      <RichInput
-                        {...field}
-                        content={aiParsedJsonValue}
-                        onChange={(htmlValue: string) => {
-                          const plainTextValue = stripHtmlTags(htmlValue);
-                          field.onChange(plainTextValue);
-                          setValidationResult(null); // Reset validation when user edits
-                        }}
-                        rows={10} // Adjust rows as needed
-                        placeholder={t`Review and amend the AI parsed JSON here...`}
-                        className="font-mono text-xs"
-                      />
+                      <div className="rounded-sm border p-2">
+                        <ReactJson
+                          src={field.value ?? {}} // Provide a default empty object
+                          name={false}
+                          theme="google" // A clean default theme
+                          iconStyle="triangle"
+                          displayDataTypes={false}
+                          style={{ maxHeight: "400px", overflowY: "auto" }}
+                          onEdit={(edit) => {
+                            field.onChange(edit.updated_src);
+                            setValidationResult(null);
+                          }}
+                          onAdd={(add) => {
+                            field.onChange(add.updated_src);
+                            setValidationResult(null);
+                          }}
+                          onDelete={(del) => {
+                            field.onChange(del.updated_src);
+                            setValidationResult(null);
+                          }}
+                        />
+                      </div>
                     </FormControl>
                     <FormDescription>
                       {t`Review the AI-generated JSON. You can amend it directly here before validating and importing.`}
@@ -571,19 +559,30 @@ export const ImportDialog = () => {
             )}
 
             {validationResult?.isValid === false && (
-              <div className="space-y-2">
-                <Label className="text-error">{t`Errors`}</Label>
-                <ScrollArea orientation="vertical" className="h-[180px]">
-                  <div className="whitespace-pre-wrap rounded bg-secondary-accent p-4 font-mono text-xs leading-relaxed">
-                    {JSON.stringify(JSON.parse(validationResult.errors), null, 4)}
-                  </div>
-                </ScrollArea>
+              <div>
+                <div className="flex w-full justify-between space-y-2">
+                  <Label className="text-error">{t`Errors`}</Label>
+                  <Button
+                    type="button"
+                    onClick={() => {
+                      setShowSummarizedError((prev) => !prev);
+                    }}
+                  >{t`Summarize`}</Button>
+                </div>
+                <div>
+                  <ScrollArea orientation="vertical" className="h-[180px]">
+                    <div className="whitespace-pre-wrap rounded bg-secondary-accent p-4 font-mono text-xs leading-relaxed">
+                      {showSummarizedError
+                        ? summarisedErrors
+                        : JSON.stringify(JSON.parse(validationResult.errors), null, 4)}
+                    </div>
+                  </ScrollArea>
+                </div>
               </div>
             )}
 
             <DialogFooter>
               <AnimatePresence presenceAffectsLayout>
-                {/* Conditionally render Validate button */}
                 {(!showParsedJson && !validationResult) ||
                 (showParsedJson && !validationResult && aiParsedJsonValue) ||
                 (showParsedJson &&
@@ -591,6 +590,7 @@ export const ImportDialog = () => {
                   !validationResult.isValid &&
                   aiParsedJsonValue) ? (
                   <Button
+                    className={aiParsedJsonValue ? "bg-primary" : "bg-secondary"}
                     type="button"
                     disabled={
                       loading ||
@@ -599,9 +599,9 @@ export const ImportDialog = () => {
                     }
                     onClick={() => {
                       if (showParsedJson && aiParsedJsonValue) {
-                        void onValidate(aiParsedJsonValue); // Validate the textarea content
+                        void onValidate(aiParsedJsonValue);
                       } else {
-                        void onValidate(); // Validate the uploaded file
+                        void onValidate();
                       }
                     }}
                   >
@@ -610,17 +610,12 @@ export const ImportDialog = () => {
                 ) : null}
 
                 {validationResult !== null && !validationResult.isValid && (
-                  <Button type="button" variant="secondary" onClick={onReset}>
-                    {t`Discard`}
-                  </Button>
+                  <Button type="button" variant="secondary" onClick={onReset}>{t`Discard`}</Button>
                 )}
 
                 {validationResult !== null && validationResult.isValid && (
                   <>
-                    <Button type="button" disabled={loading} onClick={onImport}>
-                      {t`Import`}
-                    </Button>
-
+                    <Button type="button" disabled={loading} onClick={onImport}>{t`Import`}</Button>
                     <Button disabled type="button" variant="success">
                       <Check size={16} weight="bold" className="mr-2" />
                       {t`Validated`}
