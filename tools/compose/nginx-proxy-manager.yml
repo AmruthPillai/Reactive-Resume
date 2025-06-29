@@ -49,7 +49,7 @@ services:
       PROXY_SSL: "true"
 
   app:
-    image: amruthpillai/reactive-resume:latest
+    image: kaviharjani/reactive-resume:latest
     restart: unless-stopped
     depends_on:
       - postgres

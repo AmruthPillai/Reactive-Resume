@@ -1,0 +1,104 @@
+{
+  "basics": {
+    "name": "Kavi Harjani",
+    "headline": "Python Web Developer & AWS-Certified Solution Architect",
+    "email": "kavi_harjani@hotmail.com",
+    "phone": "+65 8429 3447",
+    "location": {
+      "address": "Singapore, Singapore"
+    },
+    "url": "https://www.linkedin.com/in/kaviharjani/",
+    "customFields": [],
+    "picture": {
+      "url": "",
+      "size": 120,
+      "aspectRatio": 1,
+      "borderRadius": 0,
+      "effects": {
+        "hidden": false,
+        "border": false,
+        "grayscale": false
+      }
+    }
+  },
+  "sections": {
+    "summary": {
+      "name": "Summary",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "summary",
+      "content": "<p>Accomplished Python web developer with 5+ years of hands-on experience in backend development, API design, and cloud architecture. AWS-certified and proficient in modern technologies like FastAPI, Flask, Django, Docker, and Kubernetes.</p>"
+    },
+    "experience": {
+      "name": "Experience",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "experience",
+      "items": [
+        {
+          "id": "dbs2024",
+          "visible": true,
+          "company": "DBS Bank",
+          "position": "Software Developer",
+          "location": "Singapore",
+          "date": "March 2024 - Present",
+          "summary": "<ul><li>Developed tools to automate network device tracking.</li><li>Optimized SQL queries for efficiency.</li></ul>"
+        },
+        {
+          "id": "peppo2023",
+          "visible": true,
+          "company": "Peppo Technologies Pvt Ltd",
+          "position": "Senior Software Engineer",
+          "location": "",
+          "date": "Feb 2023 - Mar 2024",
+          "summary": "<ul><li>Led development for WhatsApp E-Invoicing system with AWS ECS, Fargate, RDS, and Elastic Cache.</li><li>Developed Backstreet Boys Food event website with secure Razorpay payments.</li><li>Built a Voucher API service to enhance user engagement.</li></ul>"
+        }
+      ]
+    },
+    "education": {
+      "name": "Education",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "education",
+      "items": [
+        {
+          "id": "aws2023",
+          "visible": true,
+          "institution": "Amazon Web Services",
+          "studyType": "AWS Certified Solutions Architect – Associate",
+          "date": "Sep 2023",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        }
+      ]
+    },
+    "skills": {
+      "name": "Skills",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "skills",
+      "items": [
+        {
+          "id": "backend",
+          "visible": true,
+          "name": "Backend Development",
+          "description": "Advanced",
+          "keywords": ["Django", "Flask", "FastAPI", "SQLAlchemy"]
+        },
+        {
+          "id": "cloud",
+          "visible": true,
+          "name": "Cloud & DevOps",
+          "description": "Expert",
+          "keywords": ["AWS", "Docker", "Kubernetes", "GitHub Actions"]
+        }
+      ]
+    }
+  }
+}

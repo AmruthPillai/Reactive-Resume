@@ -16,4 +16,4 @@ From a **design** perspective, the motivation behind this is to ensure that Reac
 
 From a **self-hosting perspective**, it has never been simpler. Instead of running two separate services on your Docker (one for the client and one for the server) and struggling to establish communication between them, now you only need to pull a single image. Additionally, there are a few dependent services available on Docker (such as Postgres, Minio etc.) that you can also pull and have them all working together seamlessly.
 
-I'm excited for you to try out the app, as I've spent months building it to perfection. If you enjoy the experience of building your resume using the app, please consider supporting by [becoming a GitHub Sponsor](https://github.com/sponsors/AmruthPillai).
+I'm excited for you to try out the app, as I've spent months building it to perfection. If you enjoy the experience of building your resume using the app, please consider supporting by [becoming a GitHub Sponsor](https://github.com/sponsors/kaviharjani).

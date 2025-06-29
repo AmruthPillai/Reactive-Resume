@@ -49,7 +49,7 @@ export const LogoCloudSection = () => (
           <a
             target="_blank"
             rel="noopener noreferrer nofollow"
-            href="https://www.amruthpillai.com/#contact"
+            href="https://www.kaviharjani.com/#contact"
             className={cn(buttonVariants({ variant: "link" }), "p-0")}
           >
             this contact form

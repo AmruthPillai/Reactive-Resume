@@ -42,6 +42,7 @@ export class ResumeService {
         title: createResumeDto.title,
         visibility: createResumeDto.visibility,
         slug: createResumeDto.slug ?? slugify(createResumeDto.title),
+        description: createResumeDto.description ?? "",
       },
     });
   }

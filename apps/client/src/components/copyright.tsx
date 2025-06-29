@@ -18,7 +18,7 @@ export const Copyright = ({ className }: Props) => (
         <a
           target="_blank"
           rel="noopener noreferrer nofollow"
-          href="https://github.com/AmruthPillai/Reactive-Resume/blob/main/LICENSE.md"
+          href="https://github.com/kaviharjani/Reactive-Resume/blob/main/LICENSE.md"
         >
           MIT
         </a>
@@ -27,7 +27,7 @@ export const Copyright = ({ className }: Props) => (
     <span>{t`By the community, for the community.`}</span>
     <span>
       <Trans>
-        A passion project by <a href="https://www.amruthpillai.com/">Amruth Pillai</a>
+        A passion project by <a href="https://www.kaviharjani.com/">Kavi Harjani</a>
       </Trans>
     </span>
 

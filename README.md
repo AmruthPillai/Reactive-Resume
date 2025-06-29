@@ -1,8 +1,8 @@
 ![Reactive Resume](https://i.imgur.com/FFc4nyZ.jpg)
 
-![App Version](https://img.shields.io/github/package-json/version/AmruthPillai/Reactive-Resume?label=version)
-[![Docker Pulls](https://img.shields.io/docker/pulls/amruthpillai/reactive-resume)](https://hub.docker.com/repository/docker/amruthpillai/reactive-resume)
-[![GitHub Sponsors](https://img.shields.io/github/sponsors/AmruthPillai)](https://github.com/sponsors/AmruthPillai)
+![App Version](https://img.shields.io/github/package-json/version/kaviharjani/Reactive-Resume?label=version)
+[![Docker Pulls](https://img.shields.io/docker/pulls/kaviharjani/reactive-resume)](https://hub.docker.com/repository/docker/kaviharjani/reactive-resume)
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/kaviharjani)](https://github.com/sponsors/kaviharjani)
 [![Crowdin](https://badges.crowdin.net/reactive-resume/localized.svg)](https://crowdin.com/project/reactive-resume)
 [![Discord](https://img.shields.io/discord/1173518977851473940?label=discord&link=https%3A%2F%2Fdiscord.gg%2FhzwkZbyvUW)](https://discord.gg/hzwkZbyvUW)
 
@@ -77,11 +77,11 @@ Start creating your standout resume with Reactive Resume today!
 
 ## Star History
 
-<a href="https://star-history.com/#AmruthPillai/Reactive-Resume&Date">
+<a href="https://star-history.com/#kaviharjani/Reactive-Resume&Date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=AmruthPillai/Reactive-Resume&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=AmruthPillai/Reactive-Resume&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=AmruthPillai/Reactive-Resume&type=Date" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=kaviharjani/Reactive-Resume&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=kaviharjani/Reactive-Resume&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=kaviharjani/Reactive-Resume&type=Date" />
   </picture>
 </a>
 
@@ -90,7 +90,7 @@ Start creating your standout resume with Reactive Resume today!
 Reactive Resume is packaged and distributed using the [MIT License](/LICENSE.md) which allows for commercial use, distribution, modification and private use provided that all copies of the software contain the same license and copyright.
 
 _By the community, for the community._  
-A passion project by [Amruth Pillai](https://www.amruthpillai.com/)
+A passion project by [Kavi Harjani](https://www.kaviharjani.com/)
 
 <p>
   <a href="https://www.digitalocean.com/?utm_medium=opensource&utm_source=Reactive-Resume">

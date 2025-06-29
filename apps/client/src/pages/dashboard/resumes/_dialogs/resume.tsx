@@ -32,6 +32,7 @@ import {
   FormLabel,
   FormMessage,
   Input,
+  RichInput,
   Tooltip,
 } from "@reactive-resume/ui";
 import { cn, generateRandomName } from "@reactive-resume/utils";
@@ -44,7 +45,7 @@ import { useCreateResume, useDeleteResume, useUpdateResume } from "@/client/serv
 import { useImportResume } from "@/client/services/resume/import";
 import { useDialog } from "@/client/stores/dialog";
 
-const formSchema = createResumeSchema.extend({ id: idSchema.optional(), slug: z.string() });
+const formSchema = createResumeSchema.extend({ id: idSchema.optional(), slug: z.string(), description: z.string().optional() });
 
 type FormValues = z.infer<typeof formSchema>;
 
@@ -65,7 +66,7 @@ export const ResumeDialog = () => {
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: { title: "", slug: "" },
+    defaultValues: { title: "", slug: "", description: "" },
   });
 
   useEffect(() => {
@@ -79,7 +80,7 @@ export const ResumeDialog = () => {
 
   const onSubmit = async (values: FormValues) => {
     if (isCreate) {
-      await createResume({ slug: values.slug, title: values.title, visibility: "private" });
+      await createResume({ slug: values.slug, title: values.title, visibility: "private", description: values.description });
     }
 
     if (isUpdate) {
@@ -112,7 +113,7 @@ export const ResumeDialog = () => {
   };
 
   const onReset = () => {
-    if (isCreate) form.reset({ title: "", slug: "" });
+    if (isCreate) form.reset({ title: "", slug: "", description: "" });
     if (isUpdate)
       form.reset({ id: payload.item?.id, title: payload.item?.title, slug: payload.item?.slug });
     if (isDuplicate)
@@ -228,6 +229,20 @@ export const ResumeDialog = () => {
                   <FormLabel>{t`Slug`}</FormLabel>
                   <FormControl>
                     <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              name="description"
+              control={form.control}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t`Job Description`}</FormLabel>
+                  <FormControl>
+                    <RichInput {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
