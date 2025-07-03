@@ -8,7 +8,7 @@ msgstr ""
 "Language: uk\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-02-03 09:13\n"
+"PO-Revision-Date: 2025-04-01 00:12\n"
 "Last-Translator: \n"
 "Language-Team: Ukrainian\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:171
 msgid "You have enabled two-factor authentication successfully."
-msgstr "Ви успішно ввімкнули двофакторну аутентифікацію."
+msgstr "Ви успішно ввімкнули двофакторну автентифікацію."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:57
 msgid "{templatesCount} resume templates to choose from"
@@ -28,19 +28,19 @@ msgstr "{templatesCount} шаблонів резюме на вибір"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:142
 msgid "{value, plural, one {Column} other {Columns}}"
-msgstr "{value, plural, one {Колонка} other {Стовпчики}}"
+msgstr "{value, plural, one {Стовпчик} few {Стовпці} many {Стовпців} other {Стовпців}}"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:20
 msgid "<0>I built Reactive Resume mostly by myself during my spare time, with a lot of help from other great open-source contributors.</0><1>If you like the app and want to support keeping it free forever, please donate whatever you can afford to give.</1>"
-msgstr "<0>Я створив Reactive Resume здебільшого сам у вільний час, з великою допомогою інших чудових розробників з відкритим вихідним кодом.</0><1>Якщо вам подобається додаток і ви хочете, щоб він залишався безкоштовним назавжди, будь ласка, пожертвуйте будь-яку суму, яку ви можете собі дозволити.</1>"
+msgstr "<0>Я створив Reactive Resume у свій вільний час здебільшого самотужки за значної підтримки інших учасників опен-сорс спільноти.</0><1>Якщо вам подобається додаток й ви бажаєте, щоб доступ до нього і надалі був безплатним, будь ласка, розгляньте можливість зробити пожертву на його підтримку.</1>"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:51
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
-msgstr "<0>Я впевнений, що додаток не ідеальний, але я хотів би, щоб він був ідеальним.</0><1>Якщо ви зіткнулися з будь-якими проблемами при створенні резюме, або у вас є ідея, яка допоможе вам та іншим користувачам легше створювати резюме, напишіть про це в репозиторій або надішліть мені листа на електронну пошту.</1>"
+msgstr "<0>Я впевнений, що додаток не ідеальний, але я хотів би, щоб він був таким.</0><1>Якщо ви зіткнулися з будь-якими проблемами під час створення резюме, або у вас є ідея, яка полегшить процес створення резюме, повідомте про це в репозиторій або надішліть мені листа на електронну пошту.</1>"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:201
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
-msgstr "<0>Примітка: </0>Використовуючи OpenAI API, ви визнаєте і приймаєте <1>умови використання</1> і <2>політику конфіденційності</2>, викладені OpenAI. Зверніть увагу, що Reactive Resume не несе відповідальності за будь-яке неналежне або несанкціоноване використання сервісу, і будь-які наслідки або зобов'язання, що випливають з цього, покладаються виключно на користувача."
+msgstr "<0>Зауважте: </0>Використовуючи OpenAI API, ви підтвердуєте свою згоду з <1>умовами використання</1> та <2>політикою конфіденційності</2> OpenAI. Зверніть увагу, що Reactive Resume не несе відповідальності за будь-яке неналежне або несанкціоноване використання сервісу, а всі можливі наслідки чи відповідальність за такі дії буде лежати виключно на користувачеві."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:85
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
@@ -48,21 +48,21 @@ msgstr "<0>Спільнота витратила багато часу на на
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:140
 msgid "<0>Two-factor authentication is currently disabled.</0> You can enable it by adding an authenticator app to your account."
-msgstr "<0>Двофакторна аутентифікація наразі вимкнена.</0> Ви можете увімкнути її, додавши програму авторизації до вашого облікового запису."
+msgstr "<0>Двофакторну автентифікацію вимкнено.</0> Для її активації додайте до свого облікового запису ваш автентифікатор."
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:133
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
-msgstr "<0>Двофакторна аутентифікація ввімкнена.</0> Вам буде запропоновано ввести код при кожному вході в систему."
+msgstr "<0>Двофакторну автентифікацію увімкнено.</0> Тепер, щоб увійти до облікового запису ви матимете вводити код."
 
 #: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/home/sections/hero/index.tsx:40
 msgid "A free and open-source resume builder"
-msgstr "Безкоштовний конструктор резюме з відкритим вихідним кодом"
+msgstr "Безплатний конструктор резюме з відкритим вихідним кодом"
 
 #: apps/client/src/pages/home/components/footer.tsx:21
 #: apps/client/src/pages/home/sections/hero/index.tsx:45
 msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
-msgstr "Безкоштовний конструктор резюме з відкритим вихідним кодом, який спрощує процес створення, оновлення та поширення вашого резюме."
+msgstr "Безплатний конструктор резюме з відкритим вихідним кодом, який спрощує процес створення, оновлення та поширення вашого резюме."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:59
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
@@ -71,15 +71,15 @@ msgstr "Посилання скопійовано до буфера обміну
 
 #: apps/client/src/components/copyright.tsx:29
 msgid "A passion project by <0>Amruth Pillai</0>"
-msgstr "Пристрасний проект <0>Амрут Піллай</0>"
+msgstr "Ідейний проєкт <0>Амрута Піллая</0>"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:57
 msgid "A password reset link should have been sent to your inbox, if an account existed with the email you provided."
-msgstr "Посилання для зміни пароля повинно бути надіслано на вашу поштову скриньку, якщо обліковий запис існує з наданою електронною поштою."
+msgstr "Посилання для зміни паролю має надійти на вашу електронну адресу, якщо обліковий запис із вказаною поштовою скринькою існує."
 
 #: apps/client/src/services/errors/translate-error.ts:43
 msgid "A resume with this slug already exists, please pick a different unique identifier."
-msgstr "Резюме з цим кулем вже існує, будь ласка, оберіть інший унікальний ідентифікатор."
+msgstr "Резюме з таким унікальним ідентифікатором уже існує. Будь ласка, оберіть інший."
 
 #: apps/client/src/services/errors/translate-error.ts:10
 msgid "A user with this email address and/or username already exists."
@@ -106,11 +106,11 @@ msgstr "Додати кастомне поле"
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:170
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
-msgstr "Додайте новий елемент"
+msgstr "Додати новий елемент"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:91
 msgid "Add a new item"
-msgstr "Додайте новий елемент"
+msgstr "Додати новий елемент"
 
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:146
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:263
@@ -131,15 +131,15 @@ msgstr "Вже маєте обліковий запис?"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:144
 msgid "An error occurred while validating the file."
-msgstr "Сталася помилка під час перевірки файлу."
+msgstr "Виникла помилка під час перевірки файлу."
 
 #: apps/client/src/pages/public/error.tsx:23
 msgid "An internal server error occurred."
-msgstr ""
+msgstr "Виникла внутрішня помилка сервера."
 
 #: apps/client/src/pages/public/error.tsx:32
 msgid "An unexpected error occurred."
-msgstr ""
+msgstr "Сталася неочікувана помилка."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:134
 msgid "and many more..."
@@ -147,12 +147,12 @@ msgstr "та багато іншого..."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:57
 msgid "Anyone with the link can view and download the resume."
-msgstr "Будь-хто, хто має посилання, може переглянути та завантажити резюме."
+msgstr "Будь-хто, хто матиме посилання, зможе переглянути та завантажити резюме."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:60
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:30
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
-msgstr "Будь-хто за цим посиланням може переглянути та завантажити резюме. Поділіться ним у своєму профілі або з рекрутерами."
+msgstr "Будь-хто з посиланням може переглянути резюме. Поділіться ним у профілі або з рекрутерами."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:41
 msgid "Apply Custom CSS"
@@ -160,23 +160,23 @@ msgstr "Застосувати користувацький CSS"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:128
 msgid "Are you sure you want to delete this item?"
-msgstr "Ви впевнені, що ви хочете видалити цей елемент?"
+msgstr "Ви впевнені, що бажаєте видалити цей елемент?"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:149
 msgid "Are you sure you want to delete your resume?"
-msgstr "Ви впевнені, що хочете видалити своє резюме?"
+msgstr "Ви впевнені, що бажаєте видалити своє резюме?"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:125
 msgid "Are you sure you want to disable two-factor authentication?"
-msgstr "Ви впевнені, що хочете вимкнути двоетапну перевірку?"
+msgstr "Ви впевнені, що бажаєте вимкнути двоетапну перевірку?"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:38
 msgid "Are you sure you want to lock this resume?"
-msgstr "Ви впевнені, що хочете заблокувати це резюме?"
+msgstr "Ви впевнені, що бажаєте заблокувати це резюме?"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:39
 msgid "Are you sure you want to unlock this resume?"
-msgstr "Ви впевнені, що хочете розблокувати це резюме?"
+msgstr "Ви впевнені, що бажаєте розблокувати це резюме?"
 
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:94
 msgid "Are you sure?"
@@ -185,7 +185,7 @@ msgstr "Ви впевнені?"
 #. For example, Computer Science or Business Administration
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:73
 msgid "Area of Study"
-msgstr "Область вивчення"
+msgstr "Освітня програма"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:79
 msgid "Aspect Ratio"
@@ -193,11 +193,11 @@ msgstr "Співвідношення сторін"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:51
 msgid "Available in {languagesCount} languages"
-msgstr "Доступні {languagesCount} мовами"
+msgstr "Доступно {languagesCount} мовами"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:53
 msgid "Awarder"
-msgstr "Квардер"
+msgstr "Ким видано"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:99
 #: apps/client/src/pages/auth/forgot-password/page.tsx:100
@@ -207,7 +207,7 @@ msgstr "Назад"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:73
 msgid "Background Color"
-msgstr "Колір фону"
+msgstr "Колір тла"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:75
 msgid "Backup Code"
@@ -215,7 +215,7 @@ msgstr "Резервний код"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:81
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
-msgstr "Резервні коди можуть містити тільки малі букви або цифри, і повинні бути точно 10 символів."
+msgstr "Резервні коди може містити тільки цифри чи літери малого регістру, загальною довжиною рівно у 10 символів."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:132
 msgid "Base URL"
@@ -232,15 +232,15 @@ msgstr "Основи"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:191
 msgid "Border"
-msgstr "Border"
+msgstr "Рамка"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:124
 msgid "Border Radius"
-msgstr "Радіус обрамлення"
+msgstr "Округлення кутів"
 
 #: apps/client/src/pages/public/page.tsx:93
 msgid "Built with"
-msgstr "Побудований з"
+msgstr "Створено за допомогою"
 
 #: apps/client/src/components/copyright.tsx:27
 #: apps/client/src/pages/home/sections/contributors/index.tsx:20
@@ -257,11 +257,11 @@ msgstr "Скасувати"
 #: apps/client/src/components/ai-actions.tsx:103
 #: apps/client/src/components/ai-actions.tsx:106
 msgid "Casual"
-msgstr "Довільний"
+msgstr "Неформальний"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:130
 msgid "Center Artboard"
-msgstr "Центр обкладинки"
+msgstr "Центрувати"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
@@ -270,19 +270,19 @@ msgstr "Змінити пароль"
 
 #: apps/client/src/components/ai-actions.tsx:97
 msgid "Change Tone"
-msgstr "Змінити сигнал"
+msgstr "Змінити тон"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:186
 msgid "Changed your mind about the name? Give it a new one."
-msgstr "Змінив свою думку про ім'я? Роздай йому новий."
+msgstr "Передумали щодо назви? Дайте йому нову."
 
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:70
 msgid "Check your email for the confirmation link to update your email address."
-msgstr "Перевірте вашу електронну пошту з посиланням для підтвердження для оновлення вашої електронної пошти."
+msgstr "Перевірте вашу електронну пошту, щоб отримати посилання для підтвердження зміни електронної адреси."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:144
 msgid "Circle"
-msgstr "Коло"
+msgstr "Кругле"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:249
 msgid "Close"
@@ -294,7 +294,7 @@ msgstr "Код"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:52
 msgid "Code must be exactly 6 digits long."
-msgstr "Код має містити рівно 6 цифр."
+msgstr "Код має складатися рівно з 6 цифр."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:136
 msgid "Columns"
@@ -307,7 +307,7 @@ msgstr "Компанія"
 #: apps/client/src/components/ai-actions.tsx:115
 #: apps/client/src/components/ai-actions.tsx:118
 msgid "Confident"
-msgstr "Сповідь"
+msgstr "Впевнений"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:234
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:246
@@ -320,7 +320,7 @@ msgstr "Скопіювати"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:164
 msgid "Copy Link to Resume"
-msgstr "Скопіювати посилання до резюме"
+msgstr "Скопіювати посилання на резюме"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:78
 msgid "Copy to Clipboard"
@@ -353,11 +353,11 @@ msgstr "Створити зараз"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:259
 msgid "Create Sample Resume"
-msgstr "Створити зразок резюме"
+msgstr "Створити шаблон резюме"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
 msgid "Current Password"
-msgstr ""
+msgstr "Поточний пароль"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:93
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:27
@@ -387,7 +387,7 @@ msgstr "Небезпечна зона"
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:87
 msgid "Dark"
-msgstr "Темний"
+msgstr "Темна"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:67
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:67
@@ -401,7 +401,7 @@ msgstr "Дата"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:67
 msgid "Date or Date Range"
-msgstr "Дата або проміжок часу"
+msgstr "Дата або період"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:137
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:158
@@ -426,7 +426,7 @@ msgstr "Опис"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:58
 msgid "Design single/multi page resumes"
-msgstr "Дизайн одноразово/мульти-сторінки поновлюється"
+msgstr "Дизайн односторінкових/багатосторінкових резюме"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:139
 msgid "Disable"
@@ -441,7 +441,7 @@ msgstr "Вимкнути 2FA"
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:134
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:118
 msgid "Discard"
-msgstr "Відкинути"
+msgstr "Відхилити"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:105
 msgid "Documentation"
@@ -449,27 +449,27 @@ msgstr "Документація"
 
 #: apps/client/src/pages/auth/login/page.tsx:62
 msgid "Don't have an account?"
-msgstr "Немає облікового запису?"
+msgstr "Ще не зареєстровані?"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:83
 msgid "Don't know where to begin? Hit the docs!"
-msgstr "Не знаєш, де розпочати? Натисни документації!"
+msgstr "Не знаєте з чого розпочати? Перегляньте документацію!"
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:107
 msgid "Don't see your language? <0>Help translate the app.</0>"
-msgstr "Не бачите свою мову? <0>Допоможіть перекласти програму.</0>"
+msgstr "Не бачите своєї мови? <0>Допоможіть перекласти додаток.</0>"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:40
 msgid "Donate to Reactive Resume"
-msgstr "Пожертвувати на реактивний режим відновлення"
+msgstr "Пожертвувати на Reactive Resume"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:56
 msgid "Download a JSON snapshot of your resume. This file can be used to import your resume in the future, or can even be shared with others to collaborate."
-msgstr "Завантажте JSON-знімок з вашої резюмки. Цей файл може використовуватися для імпорту резюме в майбутньому або ж навіть може бути доступний для співпраці з іншими."
+msgstr "Завантажте JSON версію свого резюме. У майбутньому дані з цього файлу можна буде імпортувати або навіть передати іншим для співпраці."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:74
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
-msgstr "Завантажте PDF вашого резюме. Цей файл може використовуватись для друку резюме, відправте його рекрутерам або завантажте на робочі портали."
+msgstr "Завантажте своє резюме у форматі PDF. Цей файл можна роздрукувати, надіслати рекрутерам або завантажити на сайти з пошуку роботи."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:176
 msgid "Download PDF"
@@ -489,11 +489,11 @@ msgstr "Дублювати"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:165
 msgid "Duplicate an existing item"
-msgstr "Дублювати існуючий елемент"
+msgstr "Дублювати наявний елемент"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:180
 msgid "Duplicate an existing resume"
-msgstr "Дублювати існуючу резюме"
+msgstr "Дублювати наявне резюме"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:92
 msgid "Edit"
@@ -509,7 +509,7 @@ msgstr "Ефекти"
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:181
 msgid "Email"
-msgstr "Пошта"
+msgstr "Ел. пошта"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:163
 msgid "Enable 2FA"
@@ -517,31 +517,31 @@ msgstr "Увімкнути 2FA"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:67
 msgid "Enter a new password below, and make sure it's secure."
-msgstr "Введіть новий пароль нижче та переконайтеся, що він безпечний."
+msgstr "Введіть новий пароль нижче та переконайтеся, що він надійний."
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:59
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
-msgstr "Введіть один з 10 резервних кодів, які ви зберегли, коли увімкнена двофакторна автентифікація."
+msgstr "Введіть один з 10 резервних кодів, які ви зберегли, коли увімкнули двофакторну автентифікацію."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:63
 msgid "Enter Phosphor Icon"
-msgstr "Введіть значок фосфору"
+msgstr "Долучіть іконку Phosphor"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:170
 msgid "Enter the 6-digit code from your authenticator app to verify that 2FA has been setup correctly."
-msgstr "Введіть 6-значний код з програми автентифікації для підтвердження того, що 2FA була правильно налаштована."
+msgstr "Введіть 6-значний код з вашого автентифікатора, щоб переконатися у правильній роботі 2FA."
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:60
 msgid "Enter the one-time password provided by your authenticator app below."
-msgstr "Введіть одноразовий пароль, що надається вашим додатком автентифікації нижче."
+msgstr "Введіть нижче одноразовий пароль, що надається вашим автентифікатором."
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:70
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
-msgstr "Введіть адресу електронної пошти, і ми надішлемо вам посилання для відновлення пароля, якщо такий обліковий запис існує."
+msgstr "Введіть свою електронну адресу, і якщо ваш обліковий запис існує ми надішлемо вам посилання для відновлення паролю."
 
 #: apps/client/src/pages/public/error.tsx:46
 msgid "Error {statusCode}"
-msgstr ""
+msgstr "Помилка {statusCode}"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:283
 msgid "Errors"
@@ -549,11 +549,11 @@ msgstr "Помилки"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:78
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Reactive Resume has helped you. Your feedback and support are always welcome and much appreciated!"
-msgstr "Навіть якщо ви не в змозі фінансувати свій внесок, ви все одно можете внести різницю, надавши GitHub репозиторій, а зірочку, поширення слова вашим друзям, або швидке повідомлення, щоб дати мені знати, як реактивний резюме допоміг вам. Ваш відгук і підтримка завжди вітаються, і дуже цінуються!"
+msgstr "Навіть якщо ви не можете підтримати проєкт фінансово, ви все одно можете зробити свій внесок – поставте зірку репозиторію на GitHub, розкажіть про нього друзям або напишіть мені коротке повідомлення про те, як Reactive Resume вам допоміг. Ваші відгуки та підтримка завжди вітаються і дуже цінуються!"
 
 #: apps/client/src/pages/home/sections/templates/index.tsx:12
 msgid "Explore the templates available in Reactive Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
-msgstr "Досліджуйте доступні шаблони в Reactive Resume та перегляньте оновлення, зроблені з ними. Вони також можуть стати прикладами керівництва вашого наступного резюме."
+msgstr "Ознайомтеся з шаблонами, доступними в Reactive Resume, і перегляньте резюме, створені за їх допомогою. Вони також можуть слугувати прикладами для створення вашого наступного резюме."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:121
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:39
@@ -575,7 +575,7 @@ msgstr "Нарешті,"
 
 #: apps/client/src/components/ai-actions.tsx:90
 msgid "Fix Spelling & Grammar"
-msgstr "Fix Spelling & Grammar"
+msgstr "Виправити орфографію та граматику"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:107
 msgid "Font Family"
@@ -587,19 +587,19 @@ msgstr "Розмір шрифту"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:122
 msgid "Font Subset"
-msgstr "Підмножина шрифту"
+msgstr "Підгрупа шрифтів"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:134
 msgid "Font Variants"
-msgstr "Font Variants"
+msgstr "Варіант шрифту"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:35
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
-msgstr "Наприклад, інформація про компанії, до яких компаній ви відправили резюме або посилання на опис роботи, може бути відзначена тут."
+msgstr "Наприклад, тут можна зазначити інформацію про те, в які компанії ви надсилали це резюме, або посилання на описи вакансій."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:182
 msgid "Forget"
-msgstr "Забути"
+msgstr "Видалити"
 
 #: apps/client/src/pages/auth/login/page.tsx:131
 msgid "Forgot Password?"
@@ -616,28 +616,28 @@ msgstr "Формат"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:49
 msgid "Found a bug, or have an idea for a new feature?"
-msgstr "Знайшли помилку чи маємо ідею для нової функції?"
+msgstr "Знайшли помилку чи маєте ідею для нової функції?"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:46
 msgid "Free, forever"
-msgstr "Вільно, назавжди"
+msgstr "Назавжди безплатний"
 
 #: apps/client/src/components/ai-actions.tsx:121
 #: apps/client/src/components/ai-actions.tsx:124
 msgid "Friendly"
-msgstr "Товариський"
+msgstr "Дружній"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:31
 msgid "Full Name"
-msgstr "Ім’я і прізвище"
+msgstr "Повне ім'я"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:202
 msgid "Generate a random title for your resume"
-msgstr "Створити випадкову назву для резюме"
+msgstr "Згенеруйте випадкову назву для вашого резюме"
 
 #: apps/client/src/pages/home/sections/hero/call-to-action.tsx:32
 msgid "Get Started"
-msgstr "Початок роботи"
+msgstr "Почати роботу"
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:18
 msgid "GitHub"
@@ -645,28 +645,28 @@ msgstr "GitHub"
 
 #: apps/client/src/pages/home/sections/statistics/index.tsx:12
 msgid "GitHub Stars"
-msgstr "GitHub Stars"
+msgstr "Зірок на GitHub"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:187
 msgid "Give your old resume a new name."
-msgstr "Дайте своє старе поновити нове ім'я."
+msgstr "Дайте старому резюме нове ім'я."
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:67
 #: apps/client/src/pages/home/sections/hero/call-to-action.tsx:18
 msgid "Go to Dashboard"
-msgstr "Перейти на головну панель"
+msgstr "Перейти до дашборду"
 
 #: apps/client/src/pages/public/error.tsx:55
 msgid "Go to home"
-msgstr ""
+msgstr "На домашню сторінку"
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:31
 msgid "Google"
-msgstr "Гугл"
+msgstr "Google"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:202
 msgid "Grayscale"
-msgstr "Grayscale"
+msgstr "Монохром"
 
 #: apps/client/src/pages/dashboard/resumes/page.tsx:43
 msgid "Grid"
@@ -678,17 +678,17 @@ msgstr "Заголовок"
 
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:107
 msgid "Here, you can update your account information such as your profile picture, name and username."
-msgstr "Тут ви можете оновити відомості про обліковий запис, такі як зображення вашого профілю, ім'я та ім'я користувача."
+msgstr "Тут ви можете оновити інформацію про свій обліковий запис, наприклад зображення профілю, його назву та ваше ім'я."
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:68
 msgid "Here, you can update your profile to customize and personalize your experience."
-msgstr "Тут ви можете оновити свій профіль, щоб налаштувати і персоналізувати свій досвід."
+msgstr "Тут ви можете змінити свій профіль і налаштувати його під себе."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:80
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:94
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:180
 msgid "Hidden"
-msgstr "Hidden"
+msgstr "Приховати"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:106
 msgid "Hide"
@@ -702,19 +702,19 @@ msgstr "Приховати іконки"
 #: apps/client/src/pages/auth/register/page.tsx:168
 #: apps/client/src/pages/auth/reset-password/page.tsx:88
 msgid "Hold <0>Ctrl</0> to display your password temporarily."
-msgstr "Утримуйте <0>Ctrl</0> для тимчасового відображення пароля."
+msgstr "Утримуйте <0>Ctrl</0>, щоб тимчасово показати пароль."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:93
 msgid "Horizontal"
-msgstr "Горизонтально"
+msgstr "Горизонтальна орієнтація"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:67
 msgid "Host your resume publicly"
-msgstr "Проведіть Вашу резюме публічно"
+msgstr "Можливість зробити резюме публічним"
 
 #: apps/client/src/pages/home/sections/testimonials/index.tsx:70
 msgid "I always love to hear from the users of Reactive Resume with feedback or support. Here are some of the messages I've received. If you have any feedback, feel free to drop me an email at <0>{email}</0>."
-msgstr "Я завжди люблю дізнаватися від користувачів реактивного відновлення з зворотним зв'язком або підтримкою. Декілька повідомлень, які я отримав. Якщо у вас є зворотний зв'язок, то можете позбутися від мене листа з <0>{email}</0>."
+msgstr "Мені завжди приємно отримувати відгуки та підтримку від користувачів Reactive Resume. Нижче розміщено деякі з повідомлень, які я отримав. Якщо ви маєте заувагу чи пропозицію, сміливо пишіть на <0>{email}</0>."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:83
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:53
@@ -723,15 +723,15 @@ msgstr "Іконка"
 
 #: apps/client/src/pages/home/sections/logo-cloud/index.tsx:47
 msgid "If this app has helped you with your job hunt, let me know by reaching out through <0>this contact form</0>."
-msgstr "Якщо цей додаток допоміг вам з полюванням по вашим завданням, повідомте мені, звертаючись до <0>форми контакту</0>."
+msgstr "Якщо цей додаток допоміг вам у пошуку роботи, відгукніться, повідомивши мене через <0>цю контактну форму</0>."
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:128
 msgid "If you disable two-factor authentication, you will no longer be required to enter a verification code when logging in."
-msgstr "Якщо вимкнути двофакторну аутентифікацію, то більше не потрібно буде вводити код підтвердження при вході."
+msgstr "Якщо ви вимкнете двофакторну автентифікацію, вам більше не потрібно буде вводити код підтвердження при вході в систему."
 
 #: apps/client/src/pages/home/sections/support/index.tsx:59
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
-msgstr "Якщо ви багатомовні, ми будемо раді вашій допомозі залучити більше мов та спільнот. Не хвилюйтеся, якщо ви не бачите своєї мови в списку - просто дай мені вигук на GitHub, і я обов'язково включу його. Готові почати? Перейдіть до перекладу приблизно в Crowdin, натиснувши на посилання нижче."
+msgstr "Якщо ви володієте кількома мовами, ми будемо раді вашій допомозі в поширенні додатку на більшу кількість мов та спільнот. Не хвилюйтеся, якщо ви не бачите своєї мови у списку - просто напишіть мені на GitHub, і я обов'язково додам її. Готові розпочати? Долучайтеся до перекладу на Crowdin за посиланням нижче."
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:309
 msgid "Import"
@@ -741,61 +741,61 @@ msgstr "Імпорт"
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
-msgstr "Імпортувати існуючу резюме"
+msgstr "Імпортувати наявне резюме"
 
 #: apps/client/src/components/ai-actions.tsx:85
 msgid "Improve Writing"
-msgstr "Поліпшити написання"
+msgstr "Поліпшити написане"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:188
 msgid "In case you are unable to scan this QR Code, you can also copy-paste this link into your authenticator app."
-msgstr "Якщо ви не можете відсканувати цей QR-код, ви також можете скопіювати це посилання у свій додаток для авторизації."
+msgstr "Якщо ви не можете просканувати цей QR-код, тоді скопіюйте це посилання у свій автентифікатор."
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:67
 msgid "In this section, you can change your password and enable/disable two-factor authentication."
-msgstr "У цьому розділі ви можете змінити свій пароль і увімкнути або вимкнути двофакторну автентифікацію."
+msgstr "У цьому розділі ви можете змінити пароль і ввімкнути/вимкнути двофакторну автентифікацію."
 
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:64
 msgid "In this section, you can delete your account and all the data associated to your user, but please keep in mind that <0>this action is irreversible</0>."
-msgstr "У цьому розділі ви можете видалити свій обліковий запис і всі дані, пов’язані з вашим користувачем, але майте на увазі, що <0>ця дія незворотна</0>."
+msgstr "У цьому розділі ви можете видалити свій обліковий запис і всі дані, пов'язані з ним, однак, будь ласка, майте на увазі, що <0>ця дія є незворотною</0>."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:135
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:116
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
 msgid "Information"
-msgstr "Інформація про нас"
+msgstr "Важлива інформація"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:39
 msgid "Institution"
-msgstr "Установа"
+msgstr "Освітня установа"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:53
 msgid "Issuer"
-msgstr "Емітент"
+msgstr "Ким видано"
 
 #: apps/client/src/services/errors/translate-error.ts:7
 msgid "It doesn't look like a user exists with the credentials you provided."
-msgstr "Схоже, користувач не існує з наданими обліковими даними."
+msgstr "Не вдалося знайти користувача з наданими вами даними для входу."
 
 #: apps/client/src/services/errors/translate-error.ts:37
 msgid "It looks like the backup code you provided is invalid or used. Please try again."
-msgstr "Схоже, вказаний вами резервний код, є недійсним або використаний. Спробуйте ще раз."
+msgstr "Резервний код, який ви надали, є недійсним або використаним. Будь ласка, спробуйте ще раз."
 
 #: apps/client/src/services/errors/translate-error.ts:19
 msgid "It looks like the reset token you provided is invalid. Please try restarting the password reset process again."
-msgstr "Схоже, що токен скидання є невірним. Спробуйте перезапустити процес скидання пароля знову."
+msgstr "Токен для скидання пароля, який ви надали, є недійсним. Будь ласка, спробуйте розпочати процес верифікації заново."
 
 #: apps/client/src/services/errors/translate-error.ts:46
 msgid "It looks like the resume you're looking for doesn't exist."
-msgstr "Здається, ніби резюме, якого ви шукаєте, не існує."
+msgstr "Схоже, що резюме, яке ви шукаєте, не існує."
 
 #: apps/client/src/services/errors/translate-error.ts:34
 msgid "It looks like the two-factor authentication code you provided is invalid. Please try again."
-msgstr "Схоже, що двофакторний код автентифікації є недійсним. Будь ласка, спробуйте ще раз."
+msgstr "Схоже, що наданий вами код двофакторної автентифікації є недійсним. Будь ласка, спробуйте ще раз."
 
 #: apps/client/src/services/errors/translate-error.ts:22
 msgid "It looks like the verification token you provided is invalid. Please try restarting the verification process again."
-msgstr "Схоже, що вказаний вами маркер підтвердження є недійсним. Спробуйте перезапустити процес верифікації знову."
+msgstr "Токен для перевірки, який ви надали, є недійсним. Будь ласка, спробуйте розпочати процес верифікації заново."
 
 #: apps/client/src/services/errors/translate-error.ts:25
 msgid "It looks like your email address has already been verified."
@@ -804,17 +804,17 @@ msgstr "Схоже, що ваша адреса електронної пошти
 #: apps/client/src/pages/auth/register/page.tsx:101
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
 msgid "John Doe"
-msgstr "Джон Доу"
+msgstr "Тарас Шевченко"
 
 #: apps/client/src/pages/auth/register/page.tsx:123
 msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
 msgid "john.doe"
-msgstr "джон-дое"
+msgstr "taras.shevchenko"
 
 #: apps/client/src/pages/auth/register/page.tsx:145
 msgctxt "Localized version of a placeholder email. For example, max.mustermann@example.de in German or jan.kowalski@example.pl in Polish."
 msgid "john.doe@example.com"
-msgstr "john.doe@example.com"
+msgstr "taras.shevchenko@example.com"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:54
 msgid "JSON"
@@ -834,12 +834,12 @@ msgstr "Мітка"
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:101
 msgid "Language"
-msgstr "Мова:"
+msgstr "Мова"
 
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:83
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:139
 msgid "Last updated {lastUpdated}"
-msgstr "Востаннє оновлено {lastUpdated}"
+msgstr "Останнє оновлення {lastUpdated}"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:72
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:197
@@ -853,16 +853,16 @@ msgstr "Дізнатися більше"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:44
 msgid "Letter"
-msgstr "Лист"
+msgstr "Letter"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:64
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:77
 msgid "Level"
-msgstr "Рівень"
+msgstr "Рівень володіння"
 
 #: apps/client/src/components/copyright.tsx:16
 msgid "Licensed under <0>MIT</0>"
-msgstr "Ліцензовано до <0>MIT</0>"
+msgstr "Ліцензія <0>MIT</0>"
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:86
 msgid "Light"
@@ -874,12 +874,12 @@ msgstr "Світла або темна тема"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:165
 msgid "Line Height"
-msgstr "Висота лінії"
+msgstr "Інтервал між рядками"
 
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:33
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:22
 msgid "LinkedIn, JSON Resume, etc."
-msgstr "LinedIn, JSON відновлення і т.д."
+msgstr "LinkedIn, JSON-резюме тощо."
 
 #: apps/client/src/pages/dashboard/resumes/page.tsx:47
 msgid "List"
@@ -890,53 +890,53 @@ msgstr "Список"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:93
 msgid "Location"
-msgstr "Місцезнаходження"
+msgstr "Місцеперебування"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:51
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:115
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:115
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:166
 msgid "Lock"
-msgstr "Зачинити"
+msgstr "Заблокувати"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:64
 msgid "Lock a resume to prevent editing"
-msgstr "Заблокувати резюме для запобігання редагуванню"
+msgstr "Заблокуйте резюме, щоб запобігти редагуванню"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:43
 msgid "Locking a resume will prevent any further changes to it. This is useful when you have already shared your resume with someone and you don't want to accidentally make any changes to it."
-msgstr "Блокування резюме запобігає подальшим змінам. Це дуже корисно, коли ви вже поділилися резюмом і тому ви не хочете щось змінювати."
+msgstr "Блокування резюме унеможливить будь-які подальші зміни в ньому. Це корисно, якщо ви вже поділилися з кимось своїм резюме і не хочете випадково внести до нього зміни."
 
 #: apps/client/src/components/user-options.tsx:38
 #: apps/client/src/pages/home/sections/hero/call-to-action.tsx:23
 msgid "Logout"
-msgstr "Вихід із системи"
+msgstr "Вийти"
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:64
 msgid "Lost your device?"
-msgstr "Прогубили ваш пристрій?"
+msgstr "Загубили свій пристрій?"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:247
 msgid "Main"
-msgstr "Основне"
+msgstr "Основний блок"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:59
 msgid "Manage multiple resumes"
-msgstr "Керування багатьма резюме"
+msgstr "Керуйте кількома резюме"
 
 #. The month and year should be uniform across all languages.
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:71
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:69
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:69
 msgid "March 2023"
-msgstr "2023 березня"
+msgstr "Березень 2023"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:112
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:74
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:103
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:69
 msgid "March 2023 - Present"
-msgstr "березня 2023 - Представлений"
+msgstr "Березень 2023 - По нині"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:50
 msgid "Margin"
@@ -944,7 +944,7 @@ msgstr "Відступ"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:158
 msgid "Max Tokens"
-msgstr "Максимальна кількість токенів"
+msgstr "Максимум токенів"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:48
 msgid "MIT License"
@@ -965,12 +965,12 @@ msgstr "Модель"
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:88
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:153
 msgid "Name"
-msgstr "Ім'я"
+msgstr "Назва"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:39
 msgctxt "Name of the Certification"
 msgid "Name"
-msgstr "Ім'я"
+msgstr "Назва"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:40
 msgid "Network"
@@ -986,11 +986,11 @@ msgstr "Нічого не знайдено"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:49
 msgid "No user tracking or advertising"
-msgstr "Немає відстеження або реклами користувача"
+msgstr "Без трекінгу користувачів і реклами"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:133
 msgid "Note: This will make your account less secure."
-msgstr "Примітка: Це зробить ваш обліковий запис менш безпечним."
+msgstr "Зауважте: Це зробить ваш обліковий запис менш захищеним."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:128
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:16
@@ -1007,35 +1007,35 @@ msgstr "Одноразовий пароль"
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:188
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
-msgstr "Ой, сервер повернув помилку."
+msgstr "Йой, сервер повернув помилку."
 
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:97
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:77
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:148
 msgid "Open"
-msgstr "Відкриті"
+msgstr "Відкрити"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:47
 msgid "Open Source"
-msgstr "Відкритий вихідний код"
+msgstr "Опен-сорс"
 
 #: apps/client/src/services/openai/change-tone.ts:35
 #: apps/client/src/services/openai/fix-grammar.ts:33
 #: apps/client/src/services/openai/improve-writing.ts:33
 msgid "OpenAI did not return any choices for your text."
-msgstr "OpenAI не вернув жодного вибору вашого тексту."
+msgstr "OpenAI не повернув жодних варіантів для вашого тексту."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:52
 msgid "OpenAI Integration"
-msgstr "Інтеграція OpenAI"
+msgstr "Інтеграція з OpenAI"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:119
 msgid "OpenAI/Ollama API Key"
-msgstr "Ключ API OpenAI/Ollama"
+msgstr "API-ключ OpenAI або Ollama"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
 msgid "OpenAI/Ollama Integration"
-msgstr "Інтеграція OpenAI/Ollama"
+msgstr "Інтеграція з OpenAI/Ollama"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:182
@@ -1045,7 +1045,7 @@ msgstr "Опції"
 #: apps/client/src/pages/auth/layout.tsx:47
 msgctxt "The user can either login with email/password, or continue with GitHub or Google."
 msgid "or continue with"
-msgstr "або продовжіть з"
+msgstr "або"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:39
 msgid "Organization"
@@ -1070,23 +1070,23 @@ msgstr "Пароль"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:72
 msgid "PDF"
-msgstr "Файл pdf"
+msgstr "PDF"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:63
 msgid "Personal notes for each resume"
-msgstr "Особисті нотатки для кожного резюме"
+msgstr "Персональні нотатки для кожного резюме"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:81
 msgid "Phone"
-msgstr "Телефон"
+msgstr "Номер телефону"
 
 #: apps/client/src/pages/auth/layout.tsx:76
 msgid "Photograph by Patrick Tomasso"
-msgstr "Фотографія Патріка Томассо"
+msgstr "Фото: Patrick Tomasso"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:66
 msgid "Pick any font from Google Fonts"
-msgstr "Вибрати будь-який шрифт з шрифтів Google"
+msgstr "Виберіть будь-який шрифт з Google Fonts"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/section.tsx:69
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:121
@@ -1095,7 +1095,7 @@ msgstr "Зображення"
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:59
 msgid "Please note that this step is completely optional."
-msgstr "Зверніть увагу на те, що цей крок є повністю необов'язковим."
+msgstr "Зверніть увагу, що цей крок можна пропустити."
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:225
 msgid "Please select a file type"
@@ -1103,7 +1103,7 @@ msgstr "Будь ласка, оберіть тип файлу"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:228
 msgid "Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app."
-msgstr "Зберігайте резервні коди в безпечному місці. Ви можете використовувати одноразово один з цих кодів для входу в систему, якщо ви втратите доступ до своєї програми авторизації."
+msgstr "Будь ласка, зберігайте свої резервні коди в безпечному місці. Ви можете використовувати один з цих одноразових кодів для входу в додаток, якщо втратите доступ до автентифікатора."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:99
 msgid "Portrait"
@@ -1112,19 +1112,19 @@ msgstr "Вертикальна орієнтація"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:54
 msgctxt "Position held at a company, for example, Software Engineer"
 msgid "Position"
-msgstr "Позиція"
+msgstr "Посада"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:53
 msgid "Position"
-msgstr "Позиція"
+msgstr "Посада"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:96
 msgid "Powered by"
-msgstr "Працює на"
+msgstr "Powered by"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:94
 msgid "Powered by <0>Simple Icons</0>"
-msgstr "Працює на основі <0>Simple Icons</0>"
+msgstr "Powered by <0>Simple Icons</0>"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:43
 msgid "Primary Color"
@@ -1137,23 +1137,23 @@ msgstr "Політика конфіденційності"
 #: apps/client/src/components/ai-actions.tsx:109
 #: apps/client/src/components/ai-actions.tsx:112
 msgid "Professional"
-msgstr "Професіонал"
+msgstr "Професійний"
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:66
 msgid "Profile"
-msgstr "Анкета"
+msgstr "Профіль"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:55
 msgid "Public"
-msgstr "Загальнодоступна"
+msgstr "Загальнодоступність"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:53
 msgid "Publisher"
-msgstr "Автор"
+msgstr "Видавець"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:69
 msgid "Raise an issue"
-msgstr "Підняти проблему"
+msgstr "Порушити проблему"
 
 #: apps/client/src/components/copyright.tsx:35
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
@@ -1171,27 +1171,27 @@ msgstr "Підняти проблему"
 #: apps/client/src/pages/public/page.tsx:74
 #: apps/client/src/pages/public/page.tsx:95
 msgid "Reactive Resume"
-msgstr "Реактивний резюме"
+msgstr "Reactive Resume"
 
 #: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
 msgid "Reactive Resume has helped people land jobs at these great companies:"
-msgstr "Реактивний резюме допоміг людям наземні роботи у цих великих компаніях:"
+msgstr "Reactive Resume допоміг людям знайти роботу в цих чудових компаніях:"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:12
 msgid "Reactive Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Reactive Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
-msgstr "Реактивний резюме є безкоштовним проектом, створений мною з відкритим вихідним кодом, і ваша підтримка буде високо оцінена. Якщо ви маєте намір зробити внесок лише в тому випадку, якщо ви можете дозволити собі пожертвувати, порахуйте можливість зробити пожертву на будь-якій з перерахованих платформ. Крім того, пожертвування на реактивний резюме через Відкритий Колективник податків звільняються, оскільки проект проводиться фіскально хостингом Відкритої Колективної Європи."
+msgstr "Reactive Resume — це безплатний опен-сорс проєкт, створений здебільшого мною, і я оціню будь-яку вашу підтримку. Якщо ви хочете зробити пожертву, і маєте таку можливість, розгляньте можливість зробити донат на підтримку проєкту користуючись посиланнями нижче. Майте на увазі, що пожертви на Reactive Resume через Open Collective не оподатковуються завдяки підтримці Open Collective Europe."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:107
 msgid "Reactive Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
-msgstr "Реактивний резюме - це проект пристрасті понад 3 роки наполегливої праці, разом з цим виникає низка реалістичних ідей та особливостей, які були побудовані до досконалості."
+msgstr "Reactive Resume — це добродійний проєкт, над яким я сумлінно працював понад 3 роки, у результаті чого тут з’явилася безліч удосконалень та функцій, які були доведені (майже) до ідеалу."
 
 #: apps/client/src/pages/home/sections/contributors/index.tsx:22
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
-msgstr "Репер процвітає завдяки яскравому співтовариству. Цей проект завдячує досягненню численних осіб, які присвячували свій час та навичкам. Белов ми відзначаємо програмісти, які поліпшили його функції на GitHub і лінгвістів, які переклади яких на Crowdin стали доступними широкій аудиторії."
+msgstr "Reactive Resume процвітає завдяки своїй активній спільноті. Цей проєкт завдячує своїм розвитком численним особам, які присвятили йому свій час і навички. Нижче ми хочемо відмітити розробників, які покращували його функції на GitHub та лінгвістів, чиї переклади на Crowdin зробили проєкт доступнішим більшій кількості осіб."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:89
 msgid "Redo"
-msgstr "Повторити дію"
+msgstr "Виконати знову"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:157
@@ -1211,11 +1211,11 @@ msgstr "Перейменувати"
 
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:199
 msgid "Resend email confirmation link"
-msgstr "Надіслати посилання підтвердження по електронній пошті ще раз"
+msgstr "Відправити підтвердження на пошту ще раз"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:152
 msgid "Reset"
-msgstr "Reset"
+msgstr "Скинути"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:201
 msgid "Reset Layout"
@@ -1224,11 +1224,11 @@ msgstr "Скинути макет"
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/reset-password/page.tsx:65
 msgid "Reset your password"
-msgstr "Відновити ваш пароль"
+msgstr "Скинути пароль"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:124
 msgid "Reset Zoom"
-msgstr "Reset Zoom"
+msgstr "Скинути масштаб"
 
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:86
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
@@ -1238,15 +1238,15 @@ msgstr "Резюме"
 
 #: apps/client/src/pages/home/sections/statistics/index.tsx:14
 msgid "Resumes Generated"
-msgstr "Згенеровано продовжень"
+msgstr "Створених резюме"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:105
 msgid "Rich in features, not in pricing."
-msgstr "Багаті функції не в ціні."
+msgstr "Багатий функціями, а не ціною."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:138
 msgid "Rounded"
-msgstr "Округлі"
+msgstr "Округле"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:180
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
@@ -1265,28 +1265,28 @@ msgstr "Збережено"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
 msgid "Scan the QR code below with your authenticator app to setup 2FA on your account."
-msgstr "Проскануйте QR-код внизу за допомогою програми автентифікації для налаштування 2FA у вашому обліковому записі."
+msgstr "Проскануйте QR-код нижче за допомогою автентифікатора, щоб налаштувати 2FA у вашому обліковому записі."
 
 #. Score or honors for the degree, for example, CGPA or magna cum laude
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:92
 msgid "Score"
-msgstr "Рахунок"
+msgstr "Оцінка"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:104
 msgid "Scroll to Pan"
-msgstr "Прокрутіть до Панорамування"
+msgstr "Коліщатко для огляду"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:104
 msgid "Scroll to Zoom"
-msgstr "Прокрутіть, щоб збільшити"
+msgstr "Коліщатко для збільшення"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:111
 msgid "Search for a font family"
-msgstr "Пошук сімейства шрифтів"
+msgstr "Пошук шрифту"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:126
 msgid "Search for a font subset"
-msgstr "Пошук підмножини шрифтів"
+msgstr "Пошук підмножини шрифту"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:139
 msgid "Search for a font variant"
@@ -1294,11 +1294,11 @@ msgstr "Пошук варіанту шрифту"
 
 #: apps/client/src/components/locale-combobox.tsx:41
 msgid "Search for a language"
-msgstr "Шукати мову"
+msgstr "Пошук мови"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:56
 msgid "Secure with two-factor authentication"
-msgstr "Безпека за допомогою двофакторної аутентифікації"
+msgstr "Захист за допомогою двофакторної автентифікації"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:65
 msgid "Security"
@@ -1306,7 +1306,7 @@ msgstr "Безпека"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:50
 msgid "Self-host with Docker"
-msgstr "Самоприймач із Docker"
+msgstr "Самостійний хостинг з Docker"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:104
 msgid "Send Email"
@@ -1314,11 +1314,11 @@ msgstr "Надіслати ел. листа"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
 msgid "Send me a message"
-msgstr "Надіслати мені повідомлення"
+msgstr "Написати мені"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:97
 msgid "Separate Links"
-msgstr "Окремі посилання"
+msgstr "Посилання окремо"
 
 #: apps/client/src/components/user-options.tsx:32
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
@@ -1329,13 +1329,13 @@ msgstr "Налаштування"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:159
 msgid "Setup two-factor authentication on your account"
-msgstr "Налаштування двофакторної автентифікації в своєму обліковому записі"
+msgstr "Налаштувати двофакторну автентифікацію"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:107
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:38
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
 msgid "Sharing"
-msgstr "Спільне використання"
+msgstr "Поширити"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:106
 msgid "Show"
@@ -1343,15 +1343,15 @@ msgstr "Показати"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:78
 msgid "Show Break Line"
-msgstr "Показувати рядок Перерви"
+msgstr "Показувати розрив сторінки"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:91
 msgid "Show Page Numbers"
-msgstr "Показати номери сторінок"
+msgstr "Показувати номер сторінок"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:248
 msgid "Sidebar"
-msgstr "Sidebar"
+msgstr "Бічна панель"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:103
 #: apps/client/src/pages/auth/login/page.tsx:127
@@ -1390,7 +1390,7 @@ msgstr "Вхід через електронну пошту наразі від�
 
 #: apps/client/src/pages/auth/register/page.tsx:82
 msgid "Signups are currently disabled by the administrator."
-msgstr "Реєстрація в даний час вимкнена адміністратором."
+msgstr "Наразі можливість реєстрації відключена адміністратором."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:65
 msgid "Size (in px)"
@@ -1398,33 +1398,33 @@ msgstr "Розмір (у пікселях)"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:228
 msgid "Slug"
-msgstr "Мітка"
+msgstr "Посилання"
 
 #: apps/client/src/services/errors/translate-error.ts:55
 msgid "Something went wrong while grabbing a preview your resume. Please try again later or raise an issue on GitHub."
-msgstr "Щось пішло не так під час захоплення попереднього перегляду. Будь ласка, спробуйте ще раз пізніше або підніміть проблему на GitHub."
+msgstr "Щось пішло не так під час отримання прев'ю вашого резюме. Спробуйте пізніше або підніміть проблему на GitHub."
 
 #: apps/client/src/services/errors/translate-error.ts:52
 msgid "Something went wrong while printing your resume. Please try again later or raise an issue on GitHub."
-msgstr "Щось пішло не так під час друку вашої резюме. Будь ласка, спробуйте пізніше або доведіть проблему на GitHub."
+msgstr "Щось пішло не так під час друку вашого резюме. Спробуйте пізніше або підніміть проблему на GitHub."
 
 #: apps/client/src/services/errors/translate-error.ts:58
 msgid "Something went wrong while processing your request. Please try again later or raise an issue on GitHub."
-msgstr "Щось пішло не так під час обробки вашого запиту. Будь ласка, спробуйте ще раз пізніше або підняте проблему на GitHub."
+msgstr "Щось пішло не так під час обробки вашого запиту. Спробуйте пізніше або підніміть проблему на GitHub."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:132
 msgid "Square"
-msgstr "Квадрат"
+msgstr "Квадратне"
 
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:33
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:23
 msgid "Start building from scratch"
-msgstr "Почати будівництво з нуля"
+msgstr "Створити все з нуля"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
 msgid "Start building your resume by giving it a name."
-msgstr "Почніть будувати резюме, поставивши його назву."
+msgstr "Почніть створення резюме з назви."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:114
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:22
@@ -1434,11 +1434,11 @@ msgstr "Статистика"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:38
 msgid "Statistics are available only for public resumes."
-msgstr "Статистика доступна лише для публічних поновлень."
+msgstr "Статистика доступна лише для загальнодоступних резюме."
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:162
 msgid "Store your backup codes securely"
-msgstr "Безпечно зберігайте резервні коди"
+msgstr "Зберігайте резервні коди в безпеці"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
@@ -1450,19 +1450,19 @@ msgstr "Безпечно зберігайте резервні коди"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:109
 msgid "Summary"
-msgstr "Summary"
+msgstr "Загальні відомості"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:18
 msgid "Support the app by donating what you can!"
-msgstr "Підтримайте додаток, пожертвувавши те, що ви можете!"
+msgstr "Підтримайте додаток пожертвою на довільну суму!"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:9
 msgid "Supporting Reactive Resume"
-msgstr "Оновлення передплати з реактивного"
+msgstr "Підтримка Reactive Resume"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:65
 msgid "Supports A4/Letter page formats"
-msgstr "Підтримує формати сторінки A4/Letter"
+msgstr "Підтримує формати A4/Letter"
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:85
 msgid "System"
@@ -1488,15 +1488,15 @@ msgstr "Колір тексту"
 
 #: apps/client/src/pages/public/error.tsx:17
 msgid "The page you're looking for doesn't exist."
-msgstr ""
+msgstr "Сторінка, яку ви шукаєте не існує."
 
 #: apps/client/src/pages/public/error.tsx:29
 msgid "The request was invalid."
-msgstr ""
+msgstr "Неправильний запит."
 
 #: apps/client/src/services/errors/translate-error.ts:49
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
-msgstr "Продовжуючи, ви хочете оновити було заблоковано, будь ласка розблокуйте якщо хочете внести будь-які зміни до нього."
+msgstr "Резюме, яке ви хочете оновити заблоковано, будь ласка, розблокуйте його, якщо бажаєте внести зміни до нього."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:86
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:19
@@ -1507,31 +1507,31 @@ msgstr "Тема"
 
 #: apps/client/src/services/errors/translate-error.ts:40
 msgid "There was an error connecting to the browser. Please make sure 'chrome' is running and reachable."
-msgstr "Помилка підключення до браузера. Будь ласка, переконайтеся, що 'chrome' працює і доступний."
+msgstr "Не вдалося під'єднатися до браузера. Будь ласка, переконайтеся, що 'Chrome' запущений і доступний."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:130
 msgid "This action can be reverted by clicking on the undo button in the floating toolbar."
-msgstr "Цю дію можна буде відкотити, натиснувши на кнопку скасувати в плаваючій панелі інструментів."
+msgstr "Щоб скасувати цю дію, просто натисніть \"Скасувати\" на плаваючій панелі інструментів."
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:151
 msgid "This action cannot be undone. This will permanently delete your resume and cannot be recovered."
-msgstr "Цю дію скасувати не можна. Ця дія остаточно видалить продовження та не може бути відновлена."
+msgstr "Ця дія не може бути скасована. Вона призведе до остаточного видалення вашого резюме, і воно не підлягатиме відновленню."
 
 #: apps/client/src/services/errors/translate-error.ts:16
 msgid "This email address is associated with an OAuth account. Please sign in with your OAuth provider."
-msgstr "Ця адреса електронної пошти пов'язана з обліковим записом OAuth. Будь ласка, увійдіть до вашого провайдера OAuth."
+msgstr "Ця електронна адреса пов'язана з обліковим записом OAuth. Будь ласка, увійдіть за допомогою свого провайдера OAuth."
 
 #: apps/client/src/pages/builder/_components/header.tsx:57
 msgid "This resume is locked, please unlock to make further changes."
-msgstr "Ця резюме заблокована, будь ласка розблокуйте щоб внести подальші зміни."
+msgstr "Це резюме заблоковано, будь ласка, розблокуйте його, щоб внести зміни."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:23
 msgid "This section is reserved for your personal notes specific to this resume. The content here remains private and is not shared with anyone else."
-msgstr "Цей розділ зарезервований для ваших особистих нотаток, особливих для даної резюме. Тут вміст залишається приватним і не поширюється ні з ким іншим."
+msgstr "Тут можна зберігати персональні нотатки щодо цього резюме. Їхній вміст буде приватним і не розкриватиметься іншим."
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:216
 msgid "Tip: You can name the resume referring to the position you are applying for."
-msgstr "Порада: Ви можете назвати резюме посиланнями на позицію, на яку ви заявляєте."
+msgstr "Порада: Ви можете назвати резюме відповідно до посади, на яку претендуєте."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:39
 msgctxt "Name of the Award"
@@ -1544,15 +1544,15 @@ msgstr "Назва"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:138
 msgid "Toggle Page Break Line"
-msgstr "Перемкнути відображення рядка розриву сторінки"
+msgstr "Перемкнути показ рядка розриву сторінки"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:150
 msgid "Toggle Page Numbers"
-msgstr "Перемкнути номери сторінок"
+msgstr "Перемкнути показ номеру сторінки"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:68
 msgid "Track views and downloads"
-msgstr "Перегляд треків та завантажень"
+msgstr "Відстеження кількості переглядів та завантажень"
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/auth/verify-otp/page.tsx:57
@@ -1562,26 +1562,26 @@ msgstr "Двофакторна автентифікація"
 
 #: apps/client/src/services/errors/translate-error.ts:31
 msgid "Two-factor authentication is already enabled for this account."
-msgstr "Двофакторна аутентифікація вже увімкнена для цього облікового запису."
+msgstr "Двофакторна автентифікація для цього облікового запису вже ввімкнена."
 
 #: apps/client/src/services/errors/translate-error.ts:28
 msgid "Two-factor authentication is not enabled for this account."
-msgstr "Двофакторна аутентифікація для цього облікового запису не активна."
+msgstr "Двофакторна автентифікація для цього облікового запису не ввімкнена."
 
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:84
 msgid "Type <0>delete</0> to confirm deleting your account."
-msgstr "Натисніть <0>видалити</0> щоб підтвердити видалення облікового запису."
+msgstr "Введіть <0>видалити</0>, щоб підтвердити видалення облікового запису."
 
 #. For example, Bachelor's Degree or Master's Degree
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:54
 msgid "Type of Study"
-msgstr "Вид навчання"
+msgstr "Ступінь освіти"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:79
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:76
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:77
 msgid "Typography"
-msgstr "Типографія"
+msgstr "Форматування"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:203
 msgid "Underline Links"
@@ -1600,40 +1600,40 @@ msgstr "Розблокувати"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:44
 msgid "Unlocking a resume will allow you to make changes to it again."
-msgstr "Розблокування резюме дозволить вам вносити зміни до нього."
+msgstr "Розблокування резюме дозволить вам знову вносити зміни до нього."
 
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:192
 msgid "Unverified"
-msgstr "Неперевірений"
+msgstr "Непідтверджена"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:164
 msgid "Update an existing item"
-msgstr "Оновити існуючий елемент"
+msgstr "Оновити наявний елемент"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:179
 msgid "Update an existing resume"
-msgstr "Оновити існуючий резюме"
+msgstr "Оновити наявне резюме"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:212
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
-msgstr "Вивантажити файл з одного з прийнятих джерел до аналізу наявних даних і імпортувати його до Реактивного відродження для полегшення."
+msgstr "Завантажити файл з одного із підтримуваних джерел, щоб розпізнати наявні дані та імпортувати їх у Reactive Resume для зручного редагування."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:73
 msgid "URL"
-msgstr "Адреса"
+msgstr "URL-адреса"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:61
 msgid "URL must start with https://"
-msgstr "URL-адреса має починатися з https://"
+msgstr "URL-адреса повинна починатися з https://"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/backup-otp/page.tsx:57
 msgid "Use your backup code"
-msgstr "Використовуйте резервний код"
+msgstr "Використайте резервний код"
 
 #: apps/client/src/services/errors/translate-error.ts:13
 msgid "User does not have an associated 'secrets' record. Please report this issue on GitHub."
-msgstr "Користувач не має пов'язаного з цим запису секретів. Будь ласка, повідомте про цю проблему на GitHub."
+msgstr "У користувача немає пов’язаного запису 'secrets'. Будь ласка, повідомте про цю проблему на GitHub."
 
 #: apps/client/src/pages/auth/register/page.tsx:119
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:55
@@ -1643,23 +1643,23 @@ msgstr "Ім'я користувача"
 
 #: apps/client/src/pages/home/sections/statistics/index.tsx:13
 msgid "Users Signed Up"
-msgstr "Авторизація користувачів"
+msgstr "Зареєстрованих користувачів"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:296
 msgid "Validate"
-msgstr "Validate"
+msgstr "Підтвердити"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:314
 msgid "Validated"
-msgstr "Перевірено"
+msgstr "Підтверджено"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:97
 msgid "Value"
-msgstr "Цінність"
+msgstr "Значення"
 
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:192
 msgid "Verified"
-msgstr "Перевірено"
+msgstr "Підтверджено"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:161
 msgid "Verify that two-factor authentication has been setup correctly"
@@ -1668,7 +1668,7 @@ msgstr "Переконайтеся, що двофакторна автентиф
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-email/page.tsx:48
 msgid "Verify your email address"
-msgstr "Перевірте свою електронну адресу"
+msgstr "Підтвердьте адресу електронної пошти"
 
 #: apps/client/src/pages/home/sections/hero/index.tsx:26
 msgid "Version 4"
@@ -1676,7 +1676,7 @@ msgstr "Версія 4"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:51
 msgid "Views"
-msgstr "Перегляди"
+msgstr "Переглядів"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:87
 msgid "Visible"
@@ -1684,11 +1684,11 @@ msgstr "Видимий"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:70
 msgid "Visit <0>Phosphor Icons</0> for a list of available icons"
-msgstr "Відвідайте розділ <0>Фосфорні пі</0> ктограми, щоб переглянути список доступних піктограм"
+msgstr "Відвідайте <0>Phosphor Icons</0>, щоб переглянути список доступних іконок"
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:61
 msgid "We verify your email address only to ensure that we can send you a password reset link in case you forget your password."
-msgstr "Підтверджуємо вашу електронну адресу лише для того, щоб ми могли відправити вам посилання для зміни пароля."
+msgstr "Ми перевіряємо вашу електронну адресу лише для того, щоб мати змогу надіслати посилання для скидання пароля, якщо ви його забудете."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:81
@@ -1702,7 +1702,7 @@ msgstr "Підтверджуємо вашу електронну адресу л
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:95
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:69
 msgid "Website"
-msgstr "Вебсторінка"
+msgstr "Вебсайт"
 
 #: apps/client/src/pages/home/sections/hero/index.tsx:32
 msgid "What's new in the latest version"
@@ -1710,7 +1710,7 @@ msgstr "Що нового в останній версії"
 
 #: apps/client/src/pages/public/error.tsx:26
 msgid "You are not authorized to access this page."
-msgstr ""
+msgstr "Ви не авторизовані для доступу до цієї сторінки."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:164
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
@@ -1725,27 +1725,27 @@ msgstr "Також ви можете ввести своє ім'я корист�
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:103
 msgid "You can also integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens as per your preference."
-msgstr "Ви також можете інтегруватися з Ollama, просто встановивши ключ API на `sk-1234567890abcdef` і базову URL-адресу на вашу URL-адресу Ollama, тобто `http://localhost:11434/v1`. Ви також можете обирати моделі та встановлювати максимальну кількість токенів відповідно до ваших уподобань."
+msgstr "Ви можете інтегруватися з Ollama, просто встановивши ключ API на `sk-1234567890abcdef` і базову URL-адресу на вашу URL-адресу Ollama, тобто `http://localhost:11434/v1`. Ви також можете на свій розсуд обрати модель та встановити максимальну кількість токенів."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:81
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
-msgstr "Ви можете використовувати OpenAI API, щоб допомогти вам згенерувати контент, або покращити свій запис під час створення свого резюме."
+msgstr "Ви можете використовувати OpenAI API для створення контенту або покращення тексту під час створення резюме."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:40
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
-msgstr "Ви можете відслідковувати кількість переглядів, які ви подали або як багато людей завантажили резюме, дозволяючи спільне поширення."
+msgstr "Ви можете відстежувати кількість переглядів і завантажень вашого резюме, увімкнувши публічний доступ."
 
 #: apps/client/src/pages/public/error.tsx:20
 msgid "You don't have permission to access this page."
-msgstr ""
+msgstr "Ви не маєте дозволу на доступ до цієї сторінки."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:87
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
-msgstr "У вас є можливість <0>отримати власний ключ API OpenAI </0>. Цей ключ дає вам можливість використовувати API як ви бачите на підході. Або ж, якщо ви хочете вимкнути функцію ШІ в самих умовах реактивного відновлення, ви можете просто видалити ключ у ваших налаштуваннях."
+msgstr "У вас є можливість <0>отримати власний ключ OpenAI API</0>. Цей ключ дозволить вам використовувати API на власний розсуд. Крім того, якщо ви хочете повністю вимкнути функції штучного інтелекту в Reactive Resume, ви можете просто видалити ключ з налаштувань."
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:50
 msgid "You should have received an email from <0>Reactive Resume</0> with a link to verify your account."
-msgstr "Ви мали отримати електронний лист від <0>Реактивного відновлення</0> з посиланням для підтвердження вашого облікового запису."
+msgstr "Ви повинні були отримати лист від <0>Reactive Resume</0> з посиланням для верифікації вашого облікового запису."
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/forgot-password/page.tsx:54
@@ -1754,19 +1754,19 @@ msgstr "Ви отримали листа!"
 
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:52
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
-msgstr "Ваш обліковий запис і всі ваші дані було успішно видалено."
+msgstr "Ваш обліковий запис і всі пов'язані дані видалено. Дякуємо, що були з нами!"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:191
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
-msgstr "Ваш ключ API надійно зберігається в локальній пам'яті браузера і використовує лише при обробці запитів до OpenAI через свій офіційний SDK. Решту запевнили, що ваш ключ не передається на будь-який зовнішній сервер, за винятком взаємодії з сервісами OpenAI."
+msgstr "Ваш ключ API надійно зберігається в локальному сховищі браузера і використовується тільки при запитах до OpenAI через їх офіційний SDK. Будьте впевнені, що ваш ключ не передається жодному зовнішньому серверу, окрім як при взаємодії з сервісами OpenAI."
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:28
 msgid "Your email address has been verified successfully."
-msgstr "Вашу адресу електронної пошти було успішно підтверджено."
+msgstr "Адресу вашої електронної пошти було успішно підтверджено."
 
 #: apps/client/src/services/openai/client.ts:11
 msgid "Your OpenAI API Key has not been set yet. Please go to your account settings to enable OpenAI Integration."
-msgstr "Ваш ключ OpenAI API ще не встановлено. Будь ласка, перейдіть до параметрів облікового запису, щоб увімкнути інтеграцію OpenAI."
+msgstr "Ваш ключ OpenAI API ще не встановлено. Будь ласка, перейдіть до налаштувань вашого облікового запису, щоб увімкнути інтеграцію з OpenAI."
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:56
 msgid "Your password has been updated successfully."

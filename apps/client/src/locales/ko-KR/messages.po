@@ -8,7 +8,7 @@ msgstr ""
 "Language: ko\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-02-03 09:13\n"
+"PO-Revision-Date: 2025-03-07 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Korean\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -135,11 +135,11 @@ msgstr "파일의 유효성을 검사하는 동안 오류가 발생했습니다.
 
 #: apps/client/src/pages/public/error.tsx:23
 msgid "An internal server error occurred."
-msgstr ""
+msgstr "내부 서버 오류가 발생했습니다."
 
 #: apps/client/src/pages/public/error.tsx:32
 msgid "An unexpected error occurred."
-msgstr ""
+msgstr "예기치 않은 오류가 발생했습니다."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:134
 msgid "and many more..."
@@ -240,12 +240,12 @@ msgstr "둥근모서리"
 
 #: apps/client/src/pages/public/page.tsx:93
 msgid "Built with"
-msgstr "Built with"
+msgstr "사용한 소프트웨어"
 
 #: apps/client/src/components/copyright.tsx:27
 #: apps/client/src/pages/home/sections/contributors/index.tsx:20
 msgid "By the community, for the community."
-msgstr "By the community, for the community."
+msgstr "커뮤니티의, 커뮤니티를 위한, 커뮤니티에 의한."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:135
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
@@ -357,7 +357,7 @@ msgstr "샘플 이력서 만들기"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
 msgid "Current Password"
-msgstr ""
+msgstr "현재 비밀번호"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:93
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:27
@@ -387,7 +387,7 @@ msgstr "위험 구역"
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:87
 msgid "Dark"
-msgstr "Dark"
+msgstr "다크"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:67
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:67
@@ -541,7 +541,7 @@ msgstr "이메일 주소를 입력하시면 계정이 존재하는 경우 비밀
 
 #: apps/client/src/pages/public/error.tsx:46
 msgid "Error {statusCode}"
-msgstr ""
+msgstr "오류 {statusCode}"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:283
 msgid "Errors"
@@ -658,7 +658,7 @@ msgstr "대시보드로 이동"
 
 #: apps/client/src/pages/public/error.tsx:55
 msgid "Go to home"
-msgstr ""
+msgstr "홈으로 이동"
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:31
 msgid "Google"
@@ -1488,11 +1488,11 @@ msgstr "텍스트 색상"
 
 #: apps/client/src/pages/public/error.tsx:17
 msgid "The page you're looking for doesn't exist."
-msgstr ""
+msgstr "요청하신 페이지는 존재하지 않습니다."
 
 #: apps/client/src/pages/public/error.tsx:29
 msgid "The request was invalid."
-msgstr ""
+msgstr "요청이 유효하지 않습니다."
 
 #: apps/client/src/services/errors/translate-error.ts:49
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
@@ -1710,7 +1710,7 @@ msgstr "최신 버전의 새로운 기능"
 
 #: apps/client/src/pages/public/error.tsx:26
 msgid "You are not authorized to access this page."
-msgstr ""
+msgstr "이 페이지에 접근할 권한이 없습니다."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:164
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
@@ -1737,7 +1737,7 @@ msgstr "공개 공유를 활성화하여 이력서가 조회된 횟수 또는 �
 
 #: apps/client/src/pages/public/error.tsx:20
 msgid "You don't have permission to access this page."
-msgstr ""
+msgstr "이 페이지에 접근할 권한이 없습니다."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:87
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
