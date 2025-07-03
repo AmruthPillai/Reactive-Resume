@@ -8,7 +8,7 @@ msgstr ""
 "Language: th\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-02-03 09:13\n"
+"PO-Revision-Date: 2025-05-21 00:11\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:171
 msgid "You have enabled two-factor authentication successfully."
-msgstr "เปิดใช้งานการยืนยันตัวตนแบบสองปัจจัย (2FA) สำเร็จ"
+msgstr "เปิดใช้งานการยืนยันตัวตนแบบสองปัจจัยสำเร็จ"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:57
 msgid "{templatesCount} resume templates to choose from"
@@ -135,11 +135,11 @@ msgstr "เกิดข้อผิดพลาดขณะตรวจสอบ
 
 #: apps/client/src/pages/public/error.tsx:23
 msgid "An internal server error occurred."
-msgstr ""
+msgstr "เกิดข้อผิดพลาดภายในเซิร์ฟเวอร์"
 
 #: apps/client/src/pages/public/error.tsx:32
 msgid "An unexpected error occurred."
-msgstr ""
+msgstr "เกิดข้อผิดพลาดที่ไม่คาดคิด"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:134
 msgid "and many more..."
@@ -156,7 +156,7 @@ msgstr "ทุกคนที่มีลิงค์นี้สามารถ
 
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:41
 msgid "Apply Custom CSS"
-msgstr ""
+msgstr "ใช้งาน CSS ที่กำหนดเอง"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:128
 msgid "Are you sure you want to delete this item?"
@@ -357,13 +357,13 @@ msgstr "สร้างเรซูเม่ตัวอย่าง"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
 msgid "Current Password"
-msgstr ""
+msgstr "รหัสผ่านเดิม"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:93
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:27
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:28
 msgid "Custom CSS"
-msgstr ""
+msgstr "CSS ที่กำหนดเอง"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:62
 msgid "Custom resume sections"
@@ -541,7 +541,7 @@ msgstr "ป้อนที่อยู่อีเมลของคุณ แ�
 
 #: apps/client/src/pages/public/error.tsx:46
 msgid "Error {statusCode}"
-msgstr ""
+msgstr "Error {statusCode}"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:283
 msgid "Errors"
@@ -658,7 +658,7 @@ msgstr "ไปที่แดชบอร์ด"
 
 #: apps/client/src/pages/public/error.tsx:55
 msgid "Go to home"
-msgstr ""
+msgstr "กลับหน้าแรก"
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:31
 msgid "Google"
@@ -1031,11 +1031,11 @@ msgstr "การใช้ระบบ OpenAI"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:119
 msgid "OpenAI/Ollama API Key"
-msgstr ""
+msgstr "API คีย์ของ OpenAI/Ollama"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
 msgid "OpenAI/Ollama Integration"
-msgstr ""
+msgstr "การเชื่อมต่อ OpenAI/Ollama"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:182
@@ -1059,7 +1059,7 @@ msgstr "หน้า"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:228
 msgid "Page {pageNumber}"
-msgstr ""
+msgstr "หน้า {pageNumber}"
 
 #: apps/client/src/pages/auth/login/page.tsx:110
 #: apps/client/src/pages/auth/register/page.tsx:163
@@ -1274,11 +1274,11 @@ msgstr "เกรด"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:104
 msgid "Scroll to Pan"
-msgstr ""
+msgstr "เลื่อนเพื่อขยับ"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:104
 msgid "Scroll to Zoom"
-msgstr ""
+msgstr "เลื่อนเพื่อซูม"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:111
 msgid "Search for a font family"
@@ -1488,11 +1488,11 @@ msgstr "สีตัวอักษร"
 
 #: apps/client/src/pages/public/error.tsx:17
 msgid "The page you're looking for doesn't exist."
-msgstr ""
+msgstr "ไม่มีหน้าที่คุณกำลังมองหาอยู่"
 
 #: apps/client/src/pages/public/error.tsx:29
 msgid "The request was invalid."
-msgstr ""
+msgstr "คำขอที่ส่งไปผิดพลาด"
 
 #: apps/client/src/services/errors/translate-error.ts:49
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
@@ -1684,7 +1684,7 @@ msgstr "มองเห็นได้"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:70
 msgid "Visit <0>Phosphor Icons</0> for a list of available icons"
-msgstr ""
+msgstr "ไปที่ <0>Phosphor Icons</0> เพื่อดูรายการไอคอนที่ใช้ได้"
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:61
 msgid "We verify your email address only to ensure that we can send you a password reset link in case you forget your password."
@@ -1710,7 +1710,7 @@ msgstr "มีอะไรใหม่ในเวอร์ชั่นล่า
 
 #: apps/client/src/pages/public/error.tsx:26
 msgid "You are not authorized to access this page."
-msgstr ""
+msgstr "คุณไม่มีสิทธิเข้าถึงหน้านี้"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:164
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
@@ -1725,7 +1725,7 @@ msgstr "คุณสามารถป้อนชื่อผู้ใช้ข
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:103
 msgid "You can also integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens as per your preference."
-msgstr ""
+msgstr "คุณสามารถเชื่อมกับ Ollama โดยการตั้งค่า API คีย์ เป็น `sk-1234567890abcdef` และ URL ที่จะไปยัง Ollama URL ของคุณ เช่น `http://localhost:11434/v1` นอกจากนี้คุณยังสามารถเลือกโมเดลและตั้งค่าโทเค็นใช้งานสูงสุดที่คุณต้องการได้"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:81
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
@@ -1737,7 +1737,7 @@ msgstr "คุณสามารถติดตามยอดดูเรซู
 
 #: apps/client/src/pages/public/error.tsx:20
 msgid "You don't have permission to access this page."
-msgstr ""
+msgstr "คุณไม่ได้รับอนุญาตให้เข้าถึงหน้านี้"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:87
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."

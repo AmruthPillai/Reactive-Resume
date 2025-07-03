@@ -1,9 +1,11 @@
 {
   "css.validate": false,
-  "vitest.disableWorkspaceWarning": true,
   "typescript.tsdk": "node_modules/typescript/lib",
   "tailwindCSS.experimental.classRegex": [
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ],
+  "i18n-ally.localesPaths": [
+    "apps/client/src/locales"
   ]
 }
