@@ -212,7 +212,7 @@ const Section = <T,>({
   summaryKey,
   keywordsKey,
 }: SectionProps<T>) => {
-  if (!section.visible || section.items.length === 0) return null;
+  if (!section.visible || section.items.filter((item) => item.visible).length === 0) return null;
 
   return (
     <section id={section.id} className="grid">
