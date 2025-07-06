@@ -143,20 +143,43 @@ type LinkedEntityProps = {
   url: URL;
   separateLinks: boolean;
   className?: string;
+  isCertification?: boolean;
 };
 
-const LinkedEntity = ({ name, url, separateLinks, className }: LinkedEntityProps) => {
-  return !separateLinks && isUrl(url.href) ? (
-    <Link
-      url={url}
-      label={name}
-      icon={<i className="ph ph-bold ph-globe text-primary" />}
-      iconOnRight={true}
-      className={className}
-    />
-  ) : (
-    <div className={className}>{name}</div>
-  );
+const LinkedEntity = ({ name, url, separateLinks, className, isCertification }: LinkedEntityProps) => {
+  if (!separateLinks && isUrl(url.href)) {
+    return (
+      <div className={cn("flex items-center gap-x-1.5", className)}>
+        <i className="ph ph-bold ph-globe text-primary" />
+        <a 
+          href={url.href} 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline"
+        >
+          {isCertification ? "View Certificate" : (url.label || url.href)}
+        </a>
+      </div>
+    );
+  }
+
+  if (isCertification && isUrl(url.href)) {
+    return (
+      <div className={cn("flex items-center gap-x-1.5", className)}>
+        <span>{name}</span>
+        <a 
+          href={url.href} 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ml-1.5 hover:underline"
+        >
+          (View Certificate)
+        </a>
+      </div>
+    );
+  }
+
+  return <div className={className}>{name}</div>;
 };
 
 type SectionProps<T> = {
@@ -180,6 +203,8 @@ const Section = <T,>({
 }: SectionProps<T>) => {
   if (!section.visible || section.items.length === 0) return null;
 
+  const isCertificationsSection = section.id === "certifications";
+
   return (
     <section id={section.id} className="grid">
       <h4 className="mb-2 border-b pb-0.5 text-sm font-bold">{section.name}</h4>
@@ -200,7 +225,9 @@ const Section = <T,>({
               <div key={item.id} className={cn("space-y-2", className)}>
                 <div>
                   {children?.(item as T)}
-                  {url !== undefined && section.separateLinks && <Link url={url} />}
+                  {!isCertificationsSection && url !== undefined && section.separateLinks && (
+                    <Link url={url} />
+                  )}
                 </div>
 
                 {summary !== undefined && !isEmptyString(summary) && (
@@ -331,10 +358,12 @@ const Certifications = () => {
         <div className="flex items-start justify-between">
           <div className="text-left">
             <div className="font-bold">{item.name}</div>
-            <LinkedEntity name={item.issuer} url={item.url} separateLinks={section.separateLinks} />
-          </div>
-
-          <div className="shrink-0 text-right">
+            <LinkedEntity 
+              name={item.issuer} 
+              url={item.url} 
+              separateLinks={section.separateLinks}
+              isCertification={true}
+            />
             <div className="font-bold">{item.date}</div>
           </div>
         </div>

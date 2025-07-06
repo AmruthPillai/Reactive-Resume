@@ -146,20 +146,39 @@ type LinkedEntityProps = {
   url: URL;
   separateLinks: boolean;
   className?: string;
+  isCertification?: boolean;
 };
 
-const LinkedEntity = ({ name, url, separateLinks, className }: LinkedEntityProps) => {
-  return !separateLinks && isUrl(url.href) ? (
-    <Link
-      url={url}
-      label={name}
-      icon={<i className="ph ph-bold ph-globe text-primary" />}
-      iconOnRight={true}
-      className={className}
-    />
-  ) : (
-    <div className={className}>{name}</div>
-  );
+const LinkedEntity = ({ name, url, separateLinks, className, isCertification }: LinkedEntityProps) => {
+  if (!separateLinks && isUrl(url.href)) {
+    return (
+      <Link
+        url={url}
+        label={name}
+        icon={<i className="ph ph-bold ph-globe text-primary" />}
+        iconOnRight={true}
+        className={className}
+      />
+    );
+  }
+
+  if (isCertification && isUrl(url.href)) {
+    return (
+      <div className={className}>
+        <span>{name}</span>
+        <a 
+          href={url.href} 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ml-1.5 hover:underline"
+        >
+          (View Certificate)
+        </a>
+      </div>
+    );
+  }
+
+  return <div className={className}>{name}</div>;
 };
 
 type SectionProps<T> = {
@@ -181,6 +200,8 @@ const Section = <T,>({
   keywordsKey,
 }: SectionProps<T>) => {
   if (!section.visible || section.items.length === 0) return null;
+
+  const isCertificationsSection = section.id === "certifications";
 
   return (
     <section id={section.id} className={cn("grid", dateKey !== undefined && "gap-y-4")}>
@@ -214,7 +235,7 @@ const Section = <T,>({
                   <div className="col-span-3 space-y-1">
                     {children?.(item as T)}
 
-                    {url !== undefined && section.separateLinks && <Link url={url} />}
+                    {!isCertificationsSection && url !== undefined && section.separateLinks && <Link url={url} />}
 
                     {summary !== undefined && !isEmptyString(summary) && (
                       <div
@@ -252,7 +273,7 @@ const Section = <T,>({
                   <div key={item.id}>
                     {children?.(item as T)}
 
-                    {url !== undefined && section.separateLinks && <Link url={url} />}
+                    {!isCertificationsSection && url !== undefined && section.separateLinks && <Link url={url} />}
 
                     {summary !== undefined && !isEmptyString(summary) && (
                       <div
@@ -359,7 +380,12 @@ const Certifications = () => {
       {(item) => (
         <div>
           <div className="font-bold">{item.name}</div>
-          <LinkedEntity name={item.issuer} url={item.url} separateLinks={section.separateLinks} />
+          <LinkedEntity 
+            name={item.issuer} 
+            url={item.url} 
+            separateLinks={section.separateLinks}
+            isCertification={true}
+          />
         </div>
       )}
     </Section>
