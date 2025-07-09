@@ -23,4 +23,4 @@ export const parseCSV = async (string: string) => {
  * @returns
  */
 export const parseArrayLikeCSVEntry = (csvEntry: string) =>
-  csvEntry.replace(/^\[/, "").replace(/$]/, "").split(",");
+  csvEntry.replace(/^\[/, "").replace(/\]$/, "").split(",");
