@@ -438,7 +438,7 @@ const Languages = () => {
   return (
     <Section<Language> section={section} levelKey="level">
       {(item) => (
-        <div>
+        <div className={item.singleLine ? "flex flex-row items-center space-x-2" : ""}>
           <div className="font-bold">{item.name}</div>
           <div>{item.description}</div>
         </div>
