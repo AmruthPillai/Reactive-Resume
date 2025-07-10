@@ -9,6 +9,11 @@ import {
   FormMessage,
   Input,
   RichInput,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
 } from "@reactive-resume/ui";
 import { useForm } from "react-hook-form";
 import type { z } from "zod";
@@ -39,6 +44,32 @@ export const ExperienceDialog = () => {
               <FormLabel>{t`Company`}</FormLabel>
               <FormControl>
                 <Input {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          name="typeOfEmployment"
+          control={form.control}
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{t`Type of Employment`}</FormLabel>
+              <FormControl>
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder={t`Select Type of Employment`} />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value="full-time">{t`Full-time`}</SelectItem>
+                    <SelectItem value="part-time">{t`Part-time`}</SelectItem>
+                    <SelectItem value="contract">{t`Contract`}</SelectItem>
+                    <SelectItem value="internship">{t`Internship`}</SelectItem>
+                  </SelectContent>
+                </Select>
               </FormControl>
               <FormMessage />
             </FormItem>

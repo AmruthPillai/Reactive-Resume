@@ -257,7 +257,9 @@ const Experience = () => {
               separateLinks={section.separateLinks}
               className="font-bold"
             />
-            <div>{item.position}</div>
+            <div>
+              {item.position} {item.typeOfEmployment ? `(${item.typeOfEmployment})` : ""}
+            </div>
           </div>
 
           <div className="shrink-0 text-right">
