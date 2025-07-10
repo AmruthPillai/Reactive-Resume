@@ -57,12 +57,10 @@ export const ExperienceDialog = () => {
             <FormItem>
               <FormLabel>{t`Type of Employment`}</FormLabel>
               <FormControl>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
-                  <FormControl>
-                    <SelectTrigger>
-                      <SelectValue placeholder={t`Select Type of Employment`} />
-                    </SelectTrigger>
-                  </FormControl>
+                <Select defaultValue={field.value} onValueChange={field.onChange}>
+                  <SelectTrigger>
+                    <SelectValue placeholder={t`Select Type of Employment`} />
+                  </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="n/a">{t`N/A`}</SelectItem>
                     <SelectItem value="full-time">{t`Full-time`}</SelectItem>
