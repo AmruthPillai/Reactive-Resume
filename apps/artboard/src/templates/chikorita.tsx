@@ -244,7 +244,6 @@ const Experience = () => {
             <div>
               {item.position} {item.typeOfEmployment !== "n/a" ? `(${item.typeOfEmployment})` : ""}
             </div>
-            <div>{item.location}</div>
           </div>
 
           <div className="shrink-0 text-right">
