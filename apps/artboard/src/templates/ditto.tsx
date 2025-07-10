@@ -285,7 +285,7 @@ const Experience = () => {
               className="font-bold"
             />
             <div>
-              {item.position} {item.typeOfEmployment ? `(${item.typeOfEmployment})` : ""}
+              {item.position} {item.typeOfEmployment !== "n/a" ? `(${item.typeOfEmployment})` : ""}
             </div>
           </div>
 
