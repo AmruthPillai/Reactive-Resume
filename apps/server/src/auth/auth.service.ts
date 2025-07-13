@@ -98,7 +98,7 @@ export class AuthService {
     if (payload.isTwoFactorAuth) return user;
   }
 
-  async register(registerDto: RegisterDto) {
+  async register(registerDto: RegisterDto): Promise<UserWithSecrets> {
     const hashedPassword = await this.hash(registerDto.password);
 
     try {
@@ -115,7 +115,7 @@ export class AuthService {
       // Do not `await` this function, otherwise the user will have to wait for the email to be sent before the response is returned
       void this.sendVerificationEmail(user.email);
 
-      return user as UserWithSecrets;
+      return user;
     } catch (error) {
       if (error instanceof PrismaClientKnownRequestError && error.code === "P2002") {
         throw new BadRequestException(ErrorMessage.UserAlreadyExists);
@@ -346,7 +346,7 @@ export class AuthService {
     return user;
   }
 
-  async useBackup2FACode(email: string, code: string) {
+  async useBackup2FACode(email: string, code: string): Promise<UserWithSecrets> {
     const user = await this.userService.findOneByIdentifierOrThrow(email);
 
     // If the user doesn't have 2FA enabled, or does not have a 2FA secret set, throw an error
@@ -366,6 +366,6 @@ export class AuthService {
       secrets: { update: { twoFactorBackupCodes: backupCodes } },
     });
 
-    return user as UserWithSecrets;
+    return user;
   }
 }

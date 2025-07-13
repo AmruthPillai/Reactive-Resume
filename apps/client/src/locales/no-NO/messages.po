@@ -8,7 +8,7 @@ msgstr ""
 "Language: no\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-02-03 09:13\n"
+"PO-Revision-Date: 2025-04-30 00:11\n"
 "Last-Translator: \n"
 "Language-Team: Norwegian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:171
 msgid "You have enabled two-factor authentication successfully."
-msgstr "Du har aktivert tofaktorautentisering."
+msgstr "Du har aktivert to-faktor autentisering."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:57
 msgid "{templatesCount} resume templates to choose from"
@@ -135,11 +135,11 @@ msgstr "Det oppstod en feil under validering av filen."
 
 #: apps/client/src/pages/public/error.tsx:23
 msgid "An internal server error occurred."
-msgstr ""
+msgstr "Det oppstod en intern server feil."
 
 #: apps/client/src/pages/public/error.tsx:32
 msgid "An unexpected error occurred."
-msgstr ""
+msgstr "En uventet feil har oppstått."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:134
 msgid "and many more..."
@@ -156,7 +156,7 @@ msgstr "Alle som har denne lenken kan se og laste ned CVen. Del den på profilen
 
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:41
 msgid "Apply Custom CSS"
-msgstr ""
+msgstr "Bruk egendefinert CSS"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:128
 msgid "Are you sure you want to delete this item?"
@@ -357,13 +357,13 @@ msgstr "Opprett Eksempel-CV"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
 msgid "Current Password"
-msgstr ""
+msgstr "Nåværende passord"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:93
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:27
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:28
 msgid "Custom CSS"
-msgstr ""
+msgstr "Tilpasset CSS"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:62
 msgid "Custom resume sections"
@@ -541,7 +541,7 @@ msgstr "Skriv inn e-postadressen din, så sender vi deg en lenke for å tilbakes
 
 #: apps/client/src/pages/public/error.tsx:46
 msgid "Error {statusCode}"
-msgstr ""
+msgstr "Feil {statusCode}"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:283
 msgid "Errors"
@@ -658,7 +658,7 @@ msgstr "Gå til Kontrollpanelet"
 
 #: apps/client/src/pages/public/error.tsx:55
 msgid "Go to home"
-msgstr ""
+msgstr "Gå til hjem"
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:31
 msgid "Google"
@@ -1013,7 +1013,7 @@ msgstr "Oops, serveren returnerte en feil."
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:77
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:148
 msgid "Open"
-msgstr "Åpen"
+msgstr "Åpne"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:47
 msgid "Open Source"
@@ -1031,11 +1031,11 @@ msgstr "OpenAI-integrasjon"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:119
 msgid "OpenAI/Ollama API Key"
-msgstr ""
+msgstr "OpenAI/Ollama API-nøkkel"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
 msgid "OpenAI/Ollama Integration"
-msgstr ""
+msgstr "OpenAI/Ollama integrasjon"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:182
@@ -1059,7 +1059,7 @@ msgstr "Side"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:228
 msgid "Page {pageNumber}"
-msgstr ""
+msgstr "Side {pageNumber}"
 
 #: apps/client/src/pages/auth/login/page.tsx:110
 #: apps/client/src/pages/auth/register/page.tsx:163
@@ -1274,11 +1274,11 @@ msgstr "Poengsum"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:104
 msgid "Scroll to Pan"
-msgstr ""
+msgstr "Rull for å panorere"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:104
 msgid "Scroll to Zoom"
-msgstr ""
+msgstr "Scroll for å zoome"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:111
 msgid "Search for a font family"
@@ -1488,11 +1488,11 @@ msgstr "Tekstfarge"
 
 #: apps/client/src/pages/public/error.tsx:17
 msgid "The page you're looking for doesn't exist."
-msgstr ""
+msgstr "Siden du leter etter finnes ikke."
 
 #: apps/client/src/pages/public/error.tsx:29
 msgid "The request was invalid."
-msgstr ""
+msgstr "Forespørselen var ugyldig."
 
 #: apps/client/src/services/errors/translate-error.ts:49
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
@@ -1684,7 +1684,7 @@ msgstr "Synlig"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:70
 msgid "Visit <0>Phosphor Icons</0> for a list of available icons"
-msgstr ""
+msgstr "Besøk <0>Fosfor Icons</0> for en liste over tilgjengelige ikoner"
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:61
 msgid "We verify your email address only to ensure that we can send you a password reset link in case you forget your password."
@@ -1710,7 +1710,7 @@ msgstr "Hva er nytt i den nyeste versjonen"
 
 #: apps/client/src/pages/public/error.tsx:26
 msgid "You are not authorized to access this page."
-msgstr ""
+msgstr "Du har ikke adgang til denne siden."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:164
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
@@ -1725,7 +1725,7 @@ msgstr "Du kan også skrive inn brukernavnet ditt."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:103
 msgid "You can also integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens as per your preference."
-msgstr ""
+msgstr "Du kan også integrere med Ollama ved å sette API-nøkkelen til `sk-1234567890abcdef` og Base URL til din Ollama URL, i. `http://localhost:11434/v1`. Du kan også velge modeller og angi maks tokens i henhold til dine innstillinger."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:81
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
@@ -1737,7 +1737,7 @@ msgstr "Du kan spore antall visninger CV-en din har mottatt, eller hvor mange pe
 
 #: apps/client/src/pages/public/error.tsx:20
 msgid "You don't have permission to access this page."
-msgstr ""
+msgstr "Du har ikke tilgang til denne siden."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:87
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
