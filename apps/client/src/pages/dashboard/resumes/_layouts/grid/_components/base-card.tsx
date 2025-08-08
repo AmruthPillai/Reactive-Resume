@@ -13,7 +13,7 @@ type Props = {
 
 export const BaseCard = forwardRef<HTMLDivElement, Props>(
   ({ children, className, onClick }, ref) => (
-    <Tilt {...defaultTiltProps}>
+    <Tilt {...defaultTiltProps} style={{ touchAction: 'auto' }}>
       <Card
         ref={ref}
         className={cn(
