@@ -8,7 +8,7 @@ msgstr ""
 "Language: zh\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-03-26 00:10\n"
+"PO-Revision-Date: 2025-08-08 00:12\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -215,7 +215,7 @@ msgstr "备份码"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:81
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
-msgstr "备份码只包含小写字母或数字，而且必须正好是 10 个字符。"
+msgstr "备份码只能由小写字母或数字组成，并且字符数量只能等于10个。"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:132
 msgid "Base URL"
@@ -261,7 +261,7 @@ msgstr "非正式的"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:130
 msgid "Center Artboard"
-msgstr "中心画板"
+msgstr "将画板移动到屏幕中心"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
@@ -457,7 +457,7 @@ msgstr "不知道从哪里开始？点击文档！"
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:107
 msgid "Don't see your language? <0>Help translate the app.</0>"
-msgstr "没有看到您的语言？ <0>帮助翻译应用程序。</0>"
+msgstr "翻译缺失或不正确？ <0>帮我们翻译此应用程序。</0>"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:40
 msgid "Donate to Reactive Resume"
@@ -465,15 +465,15 @@ msgstr "为 Reactive Resume 捐款"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:56
 msgid "Download a JSON snapshot of your resume. This file can be used to import your resume in the future, or can even be shared with others to collaborate."
-msgstr "下载简历的 JSON 快照。该文件可用于您以后导入简历，甚至可以共享与其他人进行协作。"
+msgstr "保存简历为JSON数据表。JSON数据表可按照属性分开保存你的内容，此类文件可用于快速导入信息到新简历中，也可以用于共享与协作。"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:74
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
-msgstr "下载您的 PDF 版本简历。该文件可用于您打印简历、发送给招聘人员或上传到招聘网站。"
+msgstr "保存简历为PDF文档。PDF文档是用于打印机识别的基础文件，可用于在打印机上打印简历、发送简历给招聘人员或者向招聘平台上传对应类型的文档。"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:176
 msgid "Download PDF"
-msgstr "下载 PDF"
+msgstr "下载为 PDF 文档"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:58
 msgid "Downloads"
@@ -517,11 +517,11 @@ msgstr "启用双重身份验证"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:67
 msgid "Enter a new password below, and make sure it's secure."
-msgstr "在下方输入确保安全的新密码。"
+msgstr "请在下方输入新的密码，确保你的密码难以被他人知晓或破解。"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:59
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
-msgstr "输入在启用双重身份验证时保存的 10 个备用代码之一。"
+msgstr "请输入先前绑定身份验证应用时所获取的其中一条备用密码，一般情况下你所获取的备用密码可能会有10条。"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:63
 msgid "Enter Phosphor Icon"
@@ -533,7 +533,7 @@ msgstr "输入验证应用程序中的 6 位数字代码，验证双重身份验
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:60
 msgid "Enter the one-time password provided by your authenticator app below."
-msgstr "在下方输入您的身份验证应用程序提供的一次性密码。"
+msgstr "请在下方输入由身份验证应用提供的动态密码。"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:70
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
@@ -541,7 +541,7 @@ msgstr "输入您的电子邮件地址，如果该账户存在，我们会向您
 
 #: apps/client/src/pages/public/error.tsx:46
 msgid "Error {statusCode}"
-msgstr "错误，错误码为：{statusCode}"
+msgstr "发现错误，本次错误码：{statusCode}"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:283
 msgid "Errors"
@@ -688,7 +688,7 @@ msgstr "在这里，您可以更新个人资料，定制个性化的体验。"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:94
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:180
 msgid "Hidden"
-msgstr "隐藏"
+msgstr "不展示"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:106
 msgid "Hide"
@@ -1274,11 +1274,11 @@ msgstr "分数"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:104
 msgid "Scroll to Pan"
-msgstr "滚动到平移"
+msgstr "鼠标滚轮用于上下移动"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:104
 msgid "Scroll to Zoom"
-msgstr "滚动放大"
+msgstr "鼠标滚轮用于缩放"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:111
 msgid "Search for a font family"
@@ -1318,7 +1318,7 @@ msgstr "给我发消息"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:97
 msgid "Separate Links"
-msgstr "你好"
+msgstr "分离链接"
 
 #: apps/client/src/components/user-options.tsx:32
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
@@ -1624,7 +1624,7 @@ msgstr "URL"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:61
 msgid "URL must start with https://"
-msgstr "URL 需要以 https:// 开头"
+msgstr "请以 “https://” 的格式填入完整URL链接。"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/backup-otp/page.tsx:57
