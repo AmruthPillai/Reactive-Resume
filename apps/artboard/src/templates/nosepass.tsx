@@ -306,7 +306,9 @@ const Experience = () => {
             separateLinks={section.separateLinks}
             className="font-bold"
           />
-          <div>{item.position}</div>
+          <div>
+            {item.position} {item.typeOfEmployment !== "n/a" ? `(${item.typeOfEmployment})` : ""}
+          </div>
           <div>{item.location}</div>
         </div>
       )}
