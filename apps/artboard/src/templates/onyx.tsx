@@ -162,9 +162,26 @@ type LinkedEntityProps = {
   url: URL;
   separateLinks: boolean;
   className?: string;
+  isCertification?: boolean;
 };
 
-const LinkedEntity = ({ name, url, separateLinks, className }: LinkedEntityProps) => {
+const LinkedEntity = ({ name, url, separateLinks, className, isCertification }: LinkedEntityProps) => {
+  if (isCertification && isUrl(url.href)) {
+    return (
+      <div className={className}>
+        <span>{name}</span>
+        <a 
+          href={url.href} 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ml-1.5 hover:underline"
+        >
+          (View Certificate)
+        </a>
+      </div>
+    );
+  }
+
   return !separateLinks && isUrl(url.href) ? (
     <Link
       url={url}
@@ -199,6 +216,8 @@ const Section = <T,>({
 }: SectionProps<T>) => {
   if (!section.visible || section.items.length === 0) return null;
 
+  const isCertificationsSection = section.id === "certifications";
+
   return (
     <section id={section.id} className="grid">
       <h4 className="font-bold text-primary">{section.name}</h4>
@@ -219,7 +238,9 @@ const Section = <T,>({
               <div key={item.id} className={cn("space-y-2", className)}>
                 <div>
                   {children?.(item as T)}
-                  {url !== undefined && section.separateLinks && <Link url={url} />}
+                  {!isCertificationsSection && url !== undefined && section.separateLinks && (
+                    <Link url={url} />
+                  )}
                 </div>
 
                 {summary !== undefined && !isEmptyString(summary) && (
@@ -331,7 +352,12 @@ const Certifications = () => {
         <div className="flex items-start justify-between">
           <div className="text-left">
             <div className="font-bold">{item.name}</div>
-            <LinkedEntity name={item.issuer} url={item.url} separateLinks={section.separateLinks} />
+            <LinkedEntity 
+              name={item.issuer} 
+              url={item.url} 
+              separateLinks={section.separateLinks}
+              isCertification={true}
+            />
           </div>
 
           <div className="shrink-0 text-right">
