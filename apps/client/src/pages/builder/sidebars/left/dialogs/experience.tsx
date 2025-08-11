@@ -27,6 +27,7 @@ export const ExperienceDialog = () => {
     defaultValues: defaultExperience,
     resolver: zodResolver(formSchema),
   });
+  const MAX_DESCRIPTION_LENGTH = 50;
 
   return (
     <SectionDialog<FormValues> id="experience" form={form} defaultValues={defaultExperience}>
@@ -93,6 +94,36 @@ export const ExperienceDialog = () => {
         />
 
         <FormField
+          name="companyDescription"
+          control={form.control}
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>
+                <div className="flex justify-between items-center w-full">
+                  <span>{t`Company Description`}</span>
+                  <span className="text-sm text-muted-foreground">
+            {field.value?.length ?? 0}/{MAX_DESCRIPTION_LENGTH}
+          </span>
+                </div>
+              </FormLabel>
+              <FormControl>
+                <Input
+                  {...field}
+                  maxLength={MAX_DESCRIPTION_LENGTH}
+                  onChange={(e) => {
+                    if (e.target.value.length <= MAX_DESCRIPTION_LENGTH) {
+                      field.onChange(e.target.value);
+                    }
+                  }}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+
+        <FormField
           name="url"
           control={form.control}
           render={({ field }) => (
@@ -105,6 +136,8 @@ export const ExperienceDialog = () => {
             </FormItem>
           )}
         />
+
+
 
         <FormField
           name="summary"
@@ -134,6 +167,7 @@ export const ExperienceDialog = () => {
             </FormItem>
           )}
         />
+
       </div>
     </SectionDialog>
   );
