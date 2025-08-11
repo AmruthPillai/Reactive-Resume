@@ -118,7 +118,7 @@ export const FeaturesSection = () => {
                   whileInView={{ opacity: 1, x: 0, transition: { delay: index * 0.1 } }}
                 >
                   {feature.icon}
-                  <h4>{feature.title}</h4>
+                  <h3>{feature.title}</h3>
                 </motion.div>
               ))}
 
