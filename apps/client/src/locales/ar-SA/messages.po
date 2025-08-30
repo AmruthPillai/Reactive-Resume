@@ -8,7 +8,7 @@ msgstr ""
 "Language: ar\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-05-14 00:11\n"
+"PO-Revision-Date: 2025-08-03 00:13\n"
 "Last-Translator: \n"
 "Language-Team: Arabic\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
@@ -20,11 +20,11 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:171
 msgid "You have enabled two-factor authentication successfully."
-msgstr "لقد فعلت المصادقة الثنائية بنجاح."
+msgstr "لقد تم تفعيل المصادقة الثنائية بنجاح."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:57
 msgid "{templatesCount} resume templates to choose from"
-msgstr "{templatesCount} قوالب السيرة الذاتية للاختيار من بينها"
+msgstr "{templatesCount} قوالب سيرة ذاتية لتختار من بينها"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:142
 msgid "{value, plural, one {Column} other {Columns}}"
@@ -32,11 +32,11 @@ msgstr "{value, plural, one {العمود} other {الأعمدة}}"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:20
 msgid "<0>I built Reactive Resume mostly by myself during my spare time, with a lot of help from other great open-source contributors.</0><1>If you like the app and want to support keeping it free forever, please donate whatever you can afford to give.</1>"
-msgstr "<0>قمت ببناء مستأنف تفاعلي في الغالب بنفسي خلال وقت فراغي، مع الكثير من المساعدة من المساهمين الكبار في المصدر المفتوح. /0><1>إذا كنت تعجبك التطبيق وترغب في دعم بقائه مجاناً إلى الأبد، يرجى التبرع بكل ما يمكنك منحه.</1>"
+msgstr "<0>بنيتُ ريأكتف رسومي في الغالب بنفسي خلال وقت فراغي، مع الكثير من المساعدة من المساهمين الكبار في المصدر المفتوح. /0><1>إذا كنت تعجبك التطبيق وترغب في دعم بقائه مجاناً إلى الأبد، يرجى التبرع بكل ما يمكنك منحه.</1>"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:51
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
-msgstr "<0>أنا متأكد من أن التطبيق ليس مثالياً، لكنني أود أن يكون كذلك. /0><1>إذا واجهت أي مشاكل أثناء إنشاء مستأنفتك ، أو لديها فكرة من شأنها أن تساعدك والمستخدمين الآخرين في إنشاء استئنافك بسهولة أكبر، أسقط مشكلة على المستودع أو أرسل لي رسالة بريد إلكتروني عن ذلك. /1>"
+msgstr "<0>أنا متأكد من أن التطبيق ليس مثالياً، لكنني أود أن يكون كذلك. /0><1>إذا واجهتك أي مشاكل أثناء إنشاء سيرتك الذاتية، أو لديك فكرة من شأنها أن تساعدك والمستخدمين الآخرين في إنشاء سيرتك الذاتية بسهولة أكبر، أنشئ تَذْكِرَة على المستودع أو أرسل لي رسالة بريد إلكتروني عن ذلك. /1>"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:201
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
@@ -44,7 +44,7 @@ msgstr "<0>ملاحظة: </0>، باستخدام API OpenAI ، فإنك تقر �
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:85
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
-msgstr "<0>لقد قضى المجتمع الكثير من الوقت في كتابة الوثائق للاستئناف التفاعلي، وأنا متأكد من أنه سيساعدك على البدء في التطبيق. /0><1>هناك أيضا الكثير من الأمثلة لمساعدتك على البدء، والمميزات التي قد لا تعرفها عن أيها يمكن أن تساعدك على بناء مستأنفتك المثالية. /1>"
+msgstr "<0>لقد قضى المجتمع الكثير من الوقت في كتابة التوثيق والشرح لريأكتف ريسومي، وأنا متأكد من أنه سيساعدك على البَدْء في التطبيق. /0><1>هناك أيضا الكثير من الأمثلة لمساعدتك على البَدْء، والمميزات التي قد لا تعرفها عن أيها يمكن أن تساعدك على بناء سيرتك الذاتية المثالية. /1>"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:140
 msgid "<0>Two-factor authentication is currently disabled.</0> You can enable it by adding an authenticator app to your account."
@@ -79,7 +79,7 @@ msgstr "من المفترض أن يتم إرسال رابط إعادة تعيي�
 
 #: apps/client/src/services/errors/translate-error.ts:43
 msgid "A resume with this slug already exists, please pick a different unique identifier."
-msgstr "السيرة الذاتية التي تحتوي على هذه العبارة موجودة بالفعل، يرجى اختيار معرف فريد مختلف."
+msgstr "السيرة الذاتية التي تحتوي على هذه العبارة موجودة سلفًا، يرجى اختيار معرف فريد مختلف."
 
 #: apps/client/src/services/errors/translate-error.ts:10
 msgid "A user with this email address and/or username already exists."
@@ -135,7 +135,7 @@ msgstr "حدث خطأ أثناء التحقق من صحة الملف."
 
 #: apps/client/src/pages/public/error.tsx:23
 msgid "An internal server error occurred."
-msgstr ""
+msgstr "حدث خطأ داخلي في الخادم."
 
 #: apps/client/src/pages/public/error.tsx:32
 msgid "An unexpected error occurred."
