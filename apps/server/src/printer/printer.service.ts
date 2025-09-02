@@ -127,11 +127,13 @@ export class PrinterService {
       // Set the data of the resume to be printed in the browser's session storage
       const numberPages = resume.data.metadata.layout.length;
 
-      await page.evaluateOnNewDocument((data) => {
+      await page.goto(`${url}/artboard/preview`, { waitUntil: "networkidle0" });
+
+      await page.evaluate((data) => {
         window.localStorage.setItem("resume", JSON.stringify(data));
       }, resume.data);
 
-      await page.goto(`${url}/artboard/preview`, { waitUntil: "networkidle0" });
+      await page.reload({ waitUntil: "load" });
 
       const pagesBuffer: Buffer[] = [];
 
