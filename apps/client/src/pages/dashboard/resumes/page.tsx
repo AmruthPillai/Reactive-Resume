@@ -18,21 +18,20 @@ const VALID_LAYOUT_VALUES = Object.values(Layout);
 const LOCAL_STORAGE_LAYOUT_KEY = "layout";
 
 export const ResumesPage = () => {
-  const [layout, setLayout] = useState<Layout>(() => {
-    if (typeof window !== "undefined") {
-      const storedLayout = localStorage.getItem(LOCAL_STORAGE_LAYOUT_KEY);
-      if (storedLayout && VALID_LAYOUT_VALUES.includes(storedLayout as Layout)) {
-        return storedLayout as Layout;
-      }
-    }
-    return Layout.Grid;
-  });
+  const [layout, setLayout] = useState<Layout>(Layout.Grid);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem(LOCAL_STORAGE_LAYOUT_KEY, layout);
+    if (typeof window === "undefined") return;
+
+    try {
+      const storedLayout = localStorage.getItem(LOCAL_STORAGE_LAYOUT_KEY);
+      if (storedLayout && VALID_LAYOUT_VALUES.includes(storedLayout as Layout)) {
+        setLayout(storedLayout as Layout);
+      }
+    } catch {
+      return;
     }
-  }, [layout]);
+  }, []);
 
   return (
     <>
@@ -47,6 +46,11 @@ export const ResumesPage = () => {
         className="space-y-4"
         onValueChange={(value) => {
           setLayout(value as Layout);
+          try {
+            localStorage.setItem(LOCAL_STORAGE_LAYOUT_KEY, value);
+          } catch {
+            return;
+          }
         }}
       >
         <div className="flex items-center justify-between">
