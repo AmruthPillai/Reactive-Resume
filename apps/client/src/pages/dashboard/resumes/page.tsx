@@ -21,8 +21,6 @@ export const ResumesPage = () => {
   const [layout, setLayout] = useState<Layout>(Layout.Grid);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-
     try {
       const storedLayout = localStorage.getItem(LOCAL_STORAGE_LAYOUT_KEY);
       if (storedLayout && VALID_LAYOUT_VALUES.includes(storedLayout as Layout)) {
