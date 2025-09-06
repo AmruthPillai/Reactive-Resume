@@ -2,16 +2,37 @@ import { t } from "@lingui/macro";
 import { List, SquaresFour } from "@phosphor-icons/react";
 import { ScrollArea, Tabs, TabsContent, TabsList, TabsTrigger } from "@reactive-resume/ui";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 
 import { GridView } from "./_layouts/grid";
 import { ListView } from "./_layouts/list";
 
-type Layout = "grid" | "list";
+enum Layout {
+  Grid = "grid",
+  List = "list",
+}
+
+const VALID_LAYOUT_VALUES = Object.values(Layout);
+
+const LOCAL_STORAGE_LAYOUT_KEY = "layout";
 
 export const ResumesPage = () => {
-  const [layout, setLayout] = useState<Layout>("grid");
+  const [layout, setLayout] = useState<Layout>(() => {
+    if (typeof window !== "undefined") {
+      const storedLayout = localStorage.getItem(LOCAL_STORAGE_LAYOUT_KEY);
+      if (storedLayout && VALID_LAYOUT_VALUES.includes(storedLayout as Layout)) {
+        return storedLayout as Layout;
+      }
+    }
+    return Layout.Grid;
+  });
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem(LOCAL_STORAGE_LAYOUT_KEY, layout);
+    }
+  }, [layout]);
 
   return (
     <>
@@ -38,11 +59,11 @@ export const ResumesPage = () => {
           </motion.h1>
 
           <TabsList>
-            <TabsTrigger value="grid" className="size-8 p-0 sm:h-8 sm:w-auto sm:px-4">
+            <TabsTrigger value={Layout.Grid} className="size-8 p-0 sm:h-8 sm:w-auto sm:px-4">
               <SquaresFour />
               <span className="ml-2 hidden sm:block">{t`Grid`}</span>
             </TabsTrigger>
-            <TabsTrigger value="list" className="size-8 p-0 sm:h-8 sm:w-auto sm:px-4">
+            <TabsTrigger value={Layout.List} className="size-8 p-0 sm:h-8 sm:w-auto sm:px-4">
               <List />
               <span className="ml-2 hidden sm:block">{t`List`}</span>
             </TabsTrigger>
@@ -53,10 +74,10 @@ export const ResumesPage = () => {
           allowOverflow
           className="h-[calc(100vh-140px)] overflow-visible lg:h-[calc(100vh-88px)]"
         >
-          <TabsContent value="grid">
+          <TabsContent value={Layout.Grid}>
             <GridView />
           </TabsContent>
-          <TabsContent value="list">
+          <TabsContent value={Layout.List}>
             <ListView />
           </TabsContent>
         </ScrollArea>
