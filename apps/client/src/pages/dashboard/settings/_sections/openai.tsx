@@ -127,7 +127,7 @@ export const OpenAISettings = () => {
           <Trans>
             You can also integrate with Azure OpenAI by enabling the "Use Azure OpenAI" checkbox
             and setting the Resource URL to your Azure OpenAI resource (e.g.,
-            `https://your-resource.openai.azure.com`). Set the deployment name in the Model field
+            <code>https://your-resource.openai.azure.com</code>). Set the deployment name in the Model field
             and specify the appropriate API version for your Azure deployment.
           </Trans>
         </p>
@@ -135,8 +135,8 @@ export const OpenAISettings = () => {
         <p>
           <Trans>
             You can also integrate with Ollama simply by setting the API key to
-            `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e.
-            `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens
+            <code>sk-1234567890abcdef</code> and the Base URL to your Ollama URL, i.e.
+            <code>http://localhost:11434/v1</code>. You can also pick and choose models and set the max tokens
             as per your preference.
           </Trans>
         </p>
@@ -228,8 +228,10 @@ export const OpenAISettings = () => {
               <FormItem className="flex flex-row items-center space-x-3 space-y-0">
                 <FormControl>
                   <Checkbox
-                    checked={field.value}
-                    onCheckedChange={field.onChange}
+                    checked={!!field.value}
+                    onCheckedChange={(value) => {
+                      field.onChange(Boolean(value));
+                    }}
                   />
                 </FormControl>
                 <div className="space-y-1 leading-none">

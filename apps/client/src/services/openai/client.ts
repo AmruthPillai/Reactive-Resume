@@ -14,21 +14,15 @@ export const openai = () => {
 
   if (isAzure) {
     if (!baseURL) {
-      throw new Error(
-        t`Azure OpenAI Base URL is required when using Azure OpenAI.`,
-      );
+      throw new Error(t`Azure OpenAI Base URL is required when using Azure OpenAI.`);
     }
 
     if (!model) {
-      throw new Error(
-        t`Azure OpenAI deployment name (model) is required when using Azure OpenAI.`,
-      );
+      throw new Error(t`Azure OpenAI deployment name (model) is required when using Azure OpenAI.`);
+    }
 
-      if (!azureApiVersion) {
-        throw new Error(
-          t`Azure OpenAI API version is required when using Azure OpenAI.`,
-        );
-      }
+    if (!azureApiVersion) {
+      throw new Error(t`Azure OpenAI API version is required when using Azure OpenAI.`);
     }
 
     // Construct Azure OpenAI URL: https://your-resource.openai.azure.com/openai/deployments/your-deployment
