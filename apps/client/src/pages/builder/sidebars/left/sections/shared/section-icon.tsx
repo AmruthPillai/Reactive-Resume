@@ -1,19 +1,19 @@
 import type { IconProps } from "@phosphor-icons/react";
 import {
-  Article,
-  Books,
-  Briefcase,
-  Certificate,
-  CompassTool,
-  GameController,
-  GraduationCap,
-  HandHeart,
-  Medal,
-  PuzzlePiece,
-  ShareNetwork,
-  Translate,
-  User,
-  Users,
+  ArticleIcon,
+  BooksIcon,
+  BriefcaseIcon,
+  CertificateIcon,
+  CompassToolIcon,
+  GameControllerIcon,
+  GraduationCapIcon,
+  HandHeartIcon,
+  MedalIcon,
+  PuzzlePieceIcon,
+  ShareNetworkIcon,
+  TranslateIcon,
+  UserIcon,
+  UsersIcon,
 } from "@phosphor-icons/react";
 import type { SectionKey, SectionWithItem } from "@reactive-resume/schema";
 import { defaultSection } from "@reactive-resume/schema";
@@ -27,46 +27,46 @@ const getSectionIcon = (id: SectionKey, props: IconProps = {}) => {
   switch (id) {
     // Left Sidebar
     case "basics": {
-      return <User size={18} {...props} />;
+      return <UserIcon size={18} {...props} />;
     }
     case "summary": {
-      return <Article size={18} {...props} />;
+      return <ArticleIcon size={18} {...props} />;
     }
     case "awards": {
-      return <Medal size={18} {...props} />;
+      return <MedalIcon size={18} {...props} />;
     }
     case "profiles": {
-      return <ShareNetwork size={18} {...props} />;
+      return <ShareNetworkIcon size={18} {...props} />;
     }
     case "experience": {
-      return <Briefcase size={18} {...props} />;
+      return <BriefcaseIcon size={18} {...props} />;
     }
     case "education": {
-      return <GraduationCap size={18} {...props} />;
+      return <GraduationCapIcon size={18} {...props} />;
     }
     case "certifications": {
-      return <Certificate size={18} {...props} />;
+      return <CertificateIcon size={18} {...props} />;
     }
     case "interests": {
-      return <GameController size={18} {...props} />;
+      return <GameControllerIcon size={18} {...props} />;
     }
     case "languages": {
-      return <Translate size={18} {...props} />;
+      return <TranslateIcon size={18} {...props} />;
     }
     case "volunteer": {
-      return <HandHeart size={18} {...props} />;
+      return <HandHeartIcon size={18} {...props} />;
     }
     case "projects": {
-      return <PuzzlePiece size={18} {...props} />;
+      return <PuzzlePieceIcon size={18} {...props} />;
     }
     case "publications": {
-      return <Books size={18} {...props} />;
+      return <BooksIcon size={18} {...props} />;
     }
     case "skills": {
-      return <CompassTool size={18} {...props} />;
+      return <CompassToolIcon size={18} {...props} />;
     }
     case "references": {
-      return <Users size={18} {...props} />;
+      return <UsersIcon size={18} {...props} />;
     }
 
     default: {

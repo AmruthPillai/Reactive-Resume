@@ -1,7 +1,12 @@
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { t } from "@lingui/macro";
-import { CopySimple, DotsSixVertical, PencilSimple, TrashSimple } from "@phosphor-icons/react";
+import {
+  CopySimpleIcon,
+  DotsSixVerticalIcon,
+  PencilSimpleIcon,
+  TrashSimpleIcon,
+} from "@phosphor-icons/react";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -65,7 +70,7 @@ export const SectionListItem = ({
             !isDragging && "hover:bg-secondary",
           )}
         >
-          <DotsSixVertical weight="bold" size={12} />
+          <DotsSixVerticalIcon weight="bold" size={12} />
         </div>
 
         {/* List Item */}
@@ -88,15 +93,15 @@ export const SectionListItem = ({
             </DropdownMenuCheckboxItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={onUpdate}>
-              <PencilSimple size={14} />
+              <PencilSimpleIcon size={14} />
               <span className="ml-2">{t`Edit`}</span>
             </DropdownMenuItem>
             <DropdownMenuItem onClick={onDuplicate}>
-              <CopySimple size={14} />
+              <CopySimpleIcon size={14} />
               <span className="ml-2">{t`Copy`}</span>
             </DropdownMenuItem>
             <DropdownMenuItem className="text-error" onClick={onDelete}>
-              <TrashSimple size={14} />
+              <TrashSimpleIcon size={14} />
               <span className="ml-2">{t`Remove`}</span>
             </DropdownMenuItem>
           </DropdownMenuContent>

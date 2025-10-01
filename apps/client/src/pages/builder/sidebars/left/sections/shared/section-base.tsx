@@ -15,7 +15,7 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { t } from "@lingui/macro";
-import { Plus } from "@phosphor-icons/react";
+import { PlusIcon } from "@phosphor-icons/react";
 import type { SectionItem, SectionKey, SectionWithItem } from "@reactive-resume/schema";
 import { Button } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
@@ -114,7 +114,7 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
             className="gap-x-2 border-dashed py-6 leading-relaxed hover:bg-secondary-accent"
             onClick={onCreate}
           >
-            <Plus size={14} />
+            <PlusIcon size={14} />
             <span className="font-medium">
               {t({
                 message: "Add a new item",
@@ -165,7 +165,7 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
             className="ml-auto gap-x-2 text-xs lg:text-sm"
             onClick={onCreate}
           >
-            <Plus />
+            <PlusIcon />
             <span>
               {t({
                 message: "Add a new item",

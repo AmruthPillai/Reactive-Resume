@@ -26,10 +26,7 @@ export const Footer = () => (
 
       <div className="relative col-start-4 flex flex-col items-end justify-end">
         <div className="mb-14 space-y-6 text-right">
-          <a
-            className="block"
-            href="https://www.digitalocean.com/?utm_medium=opensource&utm_source=Reactive-Resume"
-          >
+          <a className="block" href="https://m.do.co/c/ceae1fff245e">
             <img
               src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/PoweredByDO/DO_Powered_by_Badge_black.svg"
               alt="Powered by DigitalOcean"

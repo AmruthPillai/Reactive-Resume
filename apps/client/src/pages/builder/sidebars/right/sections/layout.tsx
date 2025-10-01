@@ -17,7 +17,12 @@ import {
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { t } from "@lingui/macro";
-import { ArrowCounterClockwise, DotsSixVertical, Plus, TrashSimple } from "@phosphor-icons/react";
+import {
+  ArrowCounterClockwiseIcon,
+  DotsSixVerticalIcon,
+  PlusIcon,
+  TrashSimpleIcon,
+} from "@phosphor-icons/react";
 import { defaultMetadata } from "@reactive-resume/schema";
 import { Button, Portal, Tooltip } from "@reactive-resume/ui";
 import type { LayoutLocator, SortablePayload } from "@reactive-resume/utils";
@@ -95,7 +100,7 @@ const Section = ({ id, isDragging = false }: SectionProps) => {
       )}
     >
       <div className="flex items-center gap-x-2">
-        <DotsSixVertical size={12} weight="bold" />
+        <DotsSixVerticalIcon size={12} weight="bold" />
         <p className="flex-1 truncate text-xs font-medium">{name}</p>
       </div>
     </div>
@@ -200,7 +205,7 @@ export const LayoutSection = () => {
 
         <Tooltip content={t`Reset Layout`}>
           <Button size="icon" variant="ghost" onClick={onResetLayout}>
-            <ArrowCounterClockwise />
+            <ArrowCounterClockwiseIcon />
           </Button>
         </Tooltip>
       </header>
@@ -237,7 +242,7 @@ export const LayoutSection = () => {
                           onRemovePage(pageIndex);
                         }}
                       >
-                        <TrashSimple size={12} className="text-error" />
+                        <TrashSimpleIcon size={12} className="text-error" />
                       </Button>
                     </Tooltip>
                   )}
@@ -257,7 +262,7 @@ export const LayoutSection = () => {
         </DndContext>
 
         <Button variant="outline" className="ml-auto" onClick={onAddPage}>
-          <Plus />
+          <PlusIcon />
           <span className="ml-2 text-xs lg:text-sm">{t`Add New Page`}</span>
         </Button>
       </main>

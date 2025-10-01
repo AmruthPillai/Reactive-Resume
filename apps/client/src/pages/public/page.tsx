@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { CircleNotch, FilePdf } from "@phosphor-icons/react";
+import { CircleNotchIcon, FilePdfIcon } from "@phosphor-icons/react";
 import type { ResumeDto } from "@reactive-resume/dto";
 import { Button } from "@reactive-resume/ui";
 import { pageSizeMap } from "@reactive-resume/utils";
@@ -100,7 +100,11 @@ export const PublicResumePage = () => {
       <div className="fixed bottom-5 right-5 z-0 hidden sm:block print:hidden">
         <div className="flex flex-col items-center gap-y-2">
           <Button size="icon" variant="ghost" onClick={onDownloadPdf}>
-            {loading ? <CircleNotch size={20} className="animate-spin" /> : <FilePdf size={20} />}
+            {loading ? (
+              <CircleNotchIcon size={20} className="animate-spin" />
+            ) : (
+              <FilePdfIcon size={20} />
+            )}
           </Button>
 
           <ThemeSwitch />

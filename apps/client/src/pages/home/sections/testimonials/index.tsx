@@ -2,7 +2,7 @@
 /* eslint-disable lingui/no-unlocalized-strings */
 
 import { t, Trans } from "@lingui/macro";
-import { Quotes } from "@phosphor-icons/react";
+import { QuotesIcon } from "@phosphor-icons/react";
 import { cn } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
 
@@ -92,7 +92,7 @@ export const TestimonialsSection = () => (
                 index > 0 && "hidden lg:block",
               )}
             >
-              <Quotes size={64} className="absolute -right-3 bottom-0 opacity-20" />
+              <QuotesIcon size={64} className="absolute -right-3 bottom-0 opacity-20" />
               <blockquote className="italic leading-relaxed">
                 &ldquo;{testimonial.quote}&rdquo;
               </blockquote>

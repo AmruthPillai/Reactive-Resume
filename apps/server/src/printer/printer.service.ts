@@ -62,7 +62,7 @@ export class PrinterService {
       },
     });
 
-    const duration = Number(performance.now() - start).toFixed(0);
+    const duration = +(performance.now() - start).toFixed(0);
     const numberPages = resume.data.metadata.layout.length;
 
     this.logger.debug(`Chrome took ${duration}ms to print ${numberPages} page(s)`);
@@ -83,7 +83,7 @@ export class PrinterService {
       },
     });
 
-    const duration = Number(performance.now() - start).toFixed(0);
+    const duration = +(performance.now() - start).toFixed(0);
 
     this.logger.debug(`Chrome took ${duration}ms to generate preview`);
 
@@ -127,11 +127,33 @@ export class PrinterService {
       // Set the data of the resume to be printed in the browser's session storage
       const numberPages = resume.data.metadata.layout.length;
 
-      await page.evaluateOnNewDocument((data) => {
+      await page.goto(`${url}/artboard/preview`, { waitUntil: "domcontentloaded" });
+
+      await page.evaluate((data) => {
         window.localStorage.setItem("resume", JSON.stringify(data));
       }, resume.data);
 
-      await page.goto(`${url}/artboard/preview`, { waitUntil: "networkidle0" });
+      await Promise.all([
+        page.reload({ waitUntil: "load" }),
+        // Wait until first page is present before proceeding
+        page.waitForSelector('[data-page="1"]', { timeout: 15_000 }),
+      ]);
+
+      if (resume.data.basics.picture.url) {
+        await page.waitForSelector('img[alt="Profile"]');
+        await page.evaluate(() =>
+          Promise.all(
+            // eslint-disable-next-line unicorn/prefer-spread
+            Array.from(document.images).map((img) => {
+              if (img.complete) return Promise.resolve();
+              return new Promise((resolve) => {
+                // eslint-disable-next-line unicorn/prefer-add-event-listener
+                img.onload = img.onerror = resolve;
+              });
+            }),
+          ),
+        );
+      }
 
       const pagesBuffer: Buffer[] = [];
 

@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/macro";
-import { Check, UploadSimple, Warning } from "@phosphor-icons/react";
+import { CheckIcon, UploadSimpleIcon, WarningIcon } from "@phosphor-icons/react";
 import type { UpdateUserDto } from "@reactive-resume/dto";
 import { updateUserSchema } from "@reactive-resume/dto";
 import {
@@ -137,7 +137,7 @@ export const AccountSettings = () => {
                       className={cn(buttonVariants({ size: "icon", variant: "ghost" }))}
                       onClick={() => inputRef.current?.click()}
                     >
-                      <UploadSimple />
+                      <UploadSimpleIcon />
                     </motion.button>
                   </>
                 )}
@@ -188,7 +188,7 @@ export const AccountSettings = () => {
                     user.emailVerified ? "text-success-accent" : "text-warning-accent",
                   )}
                 >
-                  {user.emailVerified ? <Check size={12} /> : <Warning size={12} />}
+                  {user.emailVerified ? <CheckIcon size={12} /> : <WarningIcon size={12} />}
                   {user.emailVerified ? t`Verified` : t`Unverified`}
                   {!user.emailVerified && (
                     <Button

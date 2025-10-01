@@ -58,7 +58,7 @@ const Question2 = () => (
     </AccordionTrigger>
     <AccordionContent className="prose max-w-none dark:prose-invert">
       <p>
-        It's not much honestly. <a href="https://pillai.xyz/digitalocean">DigitalOcean</a> has
+        It's not much honestly. <a href="https://m.do.co/c/ceae1fff245e">DigitalOcean</a> has
         graciously sponsored their infrastructure to allow me to host Reactive Resume on their
         platform. There's only the fee I pay to dependent services to send emails, renew the domain,
         etc.

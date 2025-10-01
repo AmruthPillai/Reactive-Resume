@@ -1,6 +1,6 @@
 import { t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
-import { Translate } from "@phosphor-icons/react";
+import { TranslateIcon } from "@phosphor-icons/react";
 import { Button, Popover, PopoverContent, PopoverTrigger } from "@reactive-resume/ui";
 import { useState } from "react";
 
@@ -15,7 +15,7 @@ export const LocaleSwitch = () => {
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button size="icon" variant="ghost" aria-label={t`Change Language`}>
-          <Translate size={20} />
+          <TranslateIcon size={20} />
         </Button>
       </PopoverTrigger>
       <PopoverContent align="end" className="p-0">

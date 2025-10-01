@@ -1,14 +1,14 @@
 import { plural, t } from "@lingui/macro";
 import {
-  ArrowCounterClockwise,
-  Broom,
-  Columns,
-  Eye,
-  EyeSlash,
-  List,
-  PencilSimple,
-  Plus,
-  TrashSimple,
+  ArrowCounterClockwiseIcon,
+  BroomIcon,
+  ColumnsIcon,
+  EyeIcon,
+  EyeSlashIcon,
+  ListIcon,
+  PencilSimpleIcon,
+  PlusIcon,
+  TrashSimpleIcon,
 } from "@phosphor-icons/react";
 import type { SectionKey, SectionWithItem } from "@reactive-resume/schema";
 import { defaultSections } from "@reactive-resume/schema";
@@ -80,14 +80,14 @@ export const SectionOptions = ({ id }: Props) => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon">
-          <List weight="bold" />
+          <ListIcon weight="bold" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="mr-4 w-48">
         {hasItems && (
           <>
             <DropdownMenuItem onClick={onCreate}>
-              <Plus />
+              <PlusIcon />
               <span className="ml-2">{t`Add a new item`}</span>
             </DropdownMenuItem>
             <DropdownMenuCheckboxItem
@@ -102,12 +102,12 @@ export const SectionOptions = ({ id }: Props) => {
 
         <DropdownMenuGroup>
           <DropdownMenuItem onClick={toggleVisibility}>
-            {section.visible ? <Eye /> : <EyeSlash />}
+            {section.visible ? <EyeIcon /> : <EyeSlashIcon />}
             <span className="ml-2">{section.visible ? t`Hide` : t`Show`}</span>
           </DropdownMenuItem>
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>
-              <PencilSimple />
+              <PencilSimpleIcon />
               <span className="ml-2">{t`Rename`}</span>
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
@@ -125,14 +125,14 @@ export const SectionOptions = ({ id }: Props) => {
                   className="absolute inset-y-0 right-0"
                   onClick={onResetName}
                 >
-                  <ArrowCounterClockwise />
+                  <ArrowCounterClockwiseIcon />
                 </Button>
               </div>
             </DropdownMenuSubContent>
           </DropdownMenuSub>
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>
-              <Columns />
+              <ColumnsIcon />
               <span className="ml-2">{t`Columns`}</span>
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
@@ -148,12 +148,12 @@ export const SectionOptions = ({ id }: Props) => {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem disabled={!hasItems} onClick={onResetItems}>
-          <Broom />
+          <BroomIcon />
           <span className="ml-2">{t`Reset`}</span>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem className="text-error" disabled={!isCustomSection} onClick={onRemove}>
-          <TrashSimple />
+          <TrashSimpleIcon />
           <span className="ml-2">{t`Remove`}</span>
         </DropdownMenuItem>
       </DropdownMenuContent>

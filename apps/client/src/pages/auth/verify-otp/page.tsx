@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/macro";
-import { ArrowRight } from "@phosphor-icons/react";
+import { ArrowRightIcon } from "@phosphor-icons/react";
 import { twoFactorSchema } from "@reactive-resume/dto";
 import { usePasswordToggle } from "@reactive-resume/hooks";
 import {
@@ -61,7 +61,7 @@ export const VerifyOtpPage = () => {
           </span>
           <Button asChild variant="link" className="px-1.5">
             <Link to="/auth/backup-otp">
-              {t`Lost your device?`} <ArrowRight className="ml-1" />
+              {t`Lost your device?`} <ArrowRightIcon className="ml-1" />
             </Link>
           </Button>
         </h6>

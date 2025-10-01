@@ -5,7 +5,9 @@
   "install": "always",
   "packageManager": "pnpm",
   "reject": [
+    "nx",
     "eslint",
+    "@nx/*",
     "@swc/*",
     "@swc-node/*",
     "@reactive-resume/*",

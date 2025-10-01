@@ -91,7 +91,7 @@ export const SecuritySettings = () => {
                 <FormField
                   name="newPassword"
                   control={form.control}
-                  render={({ field, fieldState }) => (
+                  render={({ field }) => (
                     <FormItem>
                       <FormLabel>{t`New Password`}</FormLabel>
                       <FormControl>
