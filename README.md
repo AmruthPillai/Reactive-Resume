@@ -3,9 +3,9 @@
     <img alt="Warp Sponsorship" width="400" src="https://github.com/warpdotdev/brand-assets/blob/main/Github/Sponsor/Warp-Github-LG-03.png?raw=true" />
   </a>
 
-### [Warp, built for coding with multiple AI agents.](https://www.warp.dev/vim)
+### [Warp, built for coding with multiple AI agents.](https://www.warp.dev/Reactive-Resume)
 
-[Available for MacOS, Linux, & Windows](https://www.warp.dev/vim)<br>
+[Available for MacOS, Linux, & Windows](https://www.warp.dev/Reactive-Resume)<br>
 
 ---
 
