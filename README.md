@@ -106,7 +106,7 @@ _By the community, for the community._
 A passion project by [Amruth Pillai](https://www.amruthpillai.com/)
 
 <p>
-  <a href="https://www.digitalocean.com/?utm_medium=opensource&utm_source=Reactive-Resume">
+  <a href="https://m.do.co/c/ceae1fff245e">
     <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/PoweredByDO/DO_Powered_by_Badge_blue.svg" width="200px">
   </a>
 </p>
