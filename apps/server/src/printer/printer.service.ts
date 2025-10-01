@@ -62,7 +62,7 @@ export class PrinterService {
       },
     });
 
-    const duration = Number(performance.now() - start).toFixed(0);
+    const duration = +(performance.now() - start).toFixed(0);
     const numberPages = resume.data.metadata.layout.length;
 
     this.logger.debug(`Chrome took ${duration}ms to print ${numberPages} page(s)`);
@@ -83,7 +83,7 @@ export class PrinterService {
       },
     });
 
-    const duration = Number(performance.now() - start).toFixed(0);
+    const duration = +(performance.now() - start).toFixed(0);
 
     this.logger.debug(`Chrome took ${duration}ms to generate preview`);
 

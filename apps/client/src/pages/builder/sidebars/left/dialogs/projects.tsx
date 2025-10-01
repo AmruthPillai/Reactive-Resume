@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/macro";
-import { X } from "@phosphor-icons/react";
+import { XIcon } from "@phosphor-icons/react";
 import { defaultProject, projectSchema } from "@reactive-resume/schema";
 import {
   Badge,
@@ -186,7 +186,7 @@ export const ProjectsDialog = () => {
                     >
                       <Badge className="cursor-move">
                         <span className="mr-1">{item}</span>
-                        <X
+                        <XIcon
                           className="cursor-pointer"
                           size={12}
                           weight="bold"

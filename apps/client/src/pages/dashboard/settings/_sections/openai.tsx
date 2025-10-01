@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t, Trans } from "@lingui/macro";
-import { FloppyDisk, TrashSimple } from "@phosphor-icons/react";
+import { FloppyDiskIcon, TrashSimpleIcon } from "@phosphor-icons/react";
 import {
   Alert,
   Button,
@@ -172,13 +172,13 @@ export const OpenAISettings = () => {
           />
           <div className="flex items-center space-x-2 self-end sm:col-start-2">
             <Button type="submit" disabled={!form.formState.isValid}>
-              {isEnabled && <FloppyDisk className="mr-2" />}
+              {isEnabled && <FloppyDiskIcon className="mr-2" />}
               {isEnabled ? t`Saved` : t`Save Locally`}
             </Button>
 
             {isEnabled && (
               <Button type="reset" variant="ghost" onClick={onRemove}>
-                <TrashSimple className="mr-2" />
+                <TrashSimpleIcon className="mr-2" />
                 {t`Forget`}
               </Button>
             )}

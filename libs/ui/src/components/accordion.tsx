@@ -1,4 +1,4 @@
-import { CaretDown } from "@phosphor-icons/react";
+import { CaretDownIcon } from "@phosphor-icons/react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { cn } from "@reactive-resume/utils";
 import { forwardRef } from "react";
@@ -28,7 +28,7 @@ export const AccordionTrigger = forwardRef<
       {...props}
     >
       {children}
-      <CaretDown className="size-4 shrink-0 transition-transform duration-200" />
+      <CaretDownIcon className="size-4 shrink-0 transition-transform duration-200" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));

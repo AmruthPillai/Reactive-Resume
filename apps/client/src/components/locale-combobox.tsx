@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { CaretDown, Check } from "@phosphor-icons/react";
+import { CaretDownIcon, CheckIcon } from "@phosphor-icons/react";
 import {
   Button,
   Command,
@@ -61,7 +61,7 @@ export const LocaleCombobox = ({ value, onValueChange }: Props) => {
                     onValueChange(result.original.locale);
                   }}
                 >
-                  <Check
+                  <CheckIcon
                     className={cn(
                       "mr-2 size-4 opacity-0",
                       value === original.locale && "opacity-100",
@@ -104,7 +104,7 @@ export const LocaleComboboxPopover = ({ value, onValueChange }: Props) => {
           <span className="line-clamp-1 text-left font-normal">
             {selected?.name} <span className="ml-1 text-xs opacity-50">({selected?.locale})</span>
           </span>
-          <CaretDown
+          <CaretDownIcon
             className={cn(
               "ml-2 size-4 shrink-0 rotate-0 opacity-50 transition-transform",
               open && "rotate-180",

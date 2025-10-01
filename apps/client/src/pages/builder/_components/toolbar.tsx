@@ -1,18 +1,18 @@
 import { t } from "@lingui/macro";
 import {
-  ArrowClockwise,
-  ArrowCounterClockwise,
-  ArrowsOutCardinal,
-  CircleNotch,
-  ClockClockwise,
-  CubeFocus,
-  FilePdf,
-  Hash,
-  LineSegment,
-  LinkSimple,
-  MagnifyingGlass,
-  MagnifyingGlassMinus,
-  MagnifyingGlassPlus,
+  ArrowClockwiseIcon,
+  ArrowCounterClockwiseIcon,
+  ArrowsOutCardinalIcon,
+  CircleNotchIcon,
+  ClockClockwiseIcon,
+  CubeFocusIcon,
+  FilePdfIcon,
+  HashIcon,
+  LineSegmentIcon,
+  LinkSimpleIcon,
+  MagnifyingGlassIcon,
+  MagnifyingGlassMinusIcon,
+  MagnifyingGlassPlusIcon,
 } from "@phosphor-icons/react";
 import { Button, Separator, Toggle, Tooltip } from "@reactive-resume/ui";
 import { motion } from "framer-motion";
@@ -82,7 +82,7 @@ export const BuilderToolbar = () => {
               undo();
             }}
           >
-            <ArrowCounterClockwise />
+            <ArrowCounterClockwiseIcon />
           </Button>
         </Tooltip>
 
@@ -95,7 +95,7 @@ export const BuilderToolbar = () => {
               redo();
             }}
           >
-            <ArrowClockwise />
+            <ArrowClockwiseIcon />
           </Button>
         </Tooltip>
 
@@ -103,7 +103,7 @@ export const BuilderToolbar = () => {
 
         <Tooltip content={panMode ? t`Scroll to Pan` : t`Scroll to Zoom`}>
           <Toggle className="rounded-none" pressed={panMode} onPressedChange={onTogglePanMode}>
-            {panMode ? <ArrowsOutCardinal /> : <MagnifyingGlass />}
+            {panMode ? <ArrowsOutCardinalIcon /> : <MagnifyingGlassIcon />}
           </Toggle>
         </Tooltip>
 
@@ -111,25 +111,25 @@ export const BuilderToolbar = () => {
 
         <Tooltip content={t`Zoom In`}>
           <Button size="icon" variant="ghost" className="rounded-none" onClick={onZoomIn}>
-            <MagnifyingGlassPlus />
+            <MagnifyingGlassPlusIcon />
           </Button>
         </Tooltip>
 
         <Tooltip content={t`Zoom Out`}>
           <Button size="icon" variant="ghost" className="rounded-none" onClick={onZoomOut}>
-            <MagnifyingGlassMinus />
+            <MagnifyingGlassMinusIcon />
           </Button>
         </Tooltip>
 
         <Tooltip content={t`Reset Zoom`}>
           <Button size="icon" variant="ghost" className="rounded-none" onClick={onResetView}>
-            <ClockClockwise />
+            <ClockClockwiseIcon />
           </Button>
         </Tooltip>
 
         <Tooltip content={t`Center Artboard`}>
           <Button size="icon" variant="ghost" className="rounded-none" onClick={onCenterView}>
-            <CubeFocus />
+            <CubeFocusIcon />
           </Button>
         </Tooltip>
 
@@ -143,7 +143,7 @@ export const BuilderToolbar = () => {
               setValue("metadata.page.options.breakLine", pressed);
             }}
           >
-            <LineSegment />
+            <LineSegmentIcon />
           </Toggle>
         </Tooltip>
 
@@ -155,7 +155,7 @@ export const BuilderToolbar = () => {
               setValue("metadata.page.options.pageNumbers", pressed);
             }}
           >
-            <Hash />
+            <HashIcon />
           </Toggle>
         </Tooltip>
 
@@ -169,7 +169,7 @@ export const BuilderToolbar = () => {
             disabled={!isPublic}
             onClick={onCopy}
           >
-            <LinkSimple />
+            <LinkSimpleIcon />
           </Button>
         </Tooltip>
 
@@ -181,7 +181,7 @@ export const BuilderToolbar = () => {
             className="rounded-none"
             onClick={onPrint}
           >
-            {loading ? <CircleNotch className="animate-spin" /> : <FilePdf />}
+            {loading ? <CircleNotchIcon className="animate-spin" /> : <FilePdfIcon />}
           </Button>
         </Tooltip>
       </div>

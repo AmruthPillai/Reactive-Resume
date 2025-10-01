@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { List, SquaresFour } from "@phosphor-icons/react";
+import { ListIcon, SquaresFourIcon } from "@phosphor-icons/react";
 import { ScrollArea, Tabs, TabsContent, TabsList, TabsTrigger } from "@reactive-resume/ui";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -39,11 +39,11 @@ export const ResumesPage = () => {
 
           <TabsList>
             <TabsTrigger value="grid" className="size-8 p-0 sm:h-8 sm:w-auto sm:px-4">
-              <SquaresFour />
+              <SquaresFourIcon />
               <span className="ml-2 hidden sm:block">{t`Grid`}</span>
             </TabsTrigger>
             <TabsTrigger value="list" className="size-8 p-0 sm:h-8 sm:w-auto sm:px-4">
-              <List />
+              <ListIcon />
               <span className="ml-2 hidden sm:block">{t`List`}</span>
             </TabsTrigger>
           </TabsList>

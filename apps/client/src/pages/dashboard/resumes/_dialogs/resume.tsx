@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/macro";
-import { CaretDown, Flask, MagicWand, Plus } from "@phosphor-icons/react";
+import { CaretDownIcon, FlaskIcon, MagicWandIcon, PlusIcon } from "@phosphor-icons/react";
 import type { ResumeDto } from "@reactive-resume/dto";
 import { createResumeSchema } from "@reactive-resume/dto";
 import { idSchema, sampleResume } from "@reactive-resume/schema";
@@ -173,7 +173,7 @@ export const ResumeDialog = () => {
             <DialogHeader>
               <DialogTitle>
                 <div className="flex items-center space-x-2.5">
-                  <Plus />
+                  <PlusIcon />
                   <h2>
                     {isCreate && t`Create a new resume`}
                     {isUpdate && t`Update an existing resume`}
@@ -206,7 +206,7 @@ export const ResumeDialog = () => {
                             variant="outline"
                             onClick={onGenerateRandomName}
                           >
-                            <MagicWand />
+                            <MagicWandIcon />
                           </Button>
                         </Tooltip>
                       )}
@@ -250,12 +250,12 @@ export const ResumeDialog = () => {
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Button type="button" size="icon" className="rounded-l-none border-l">
-                        <CaretDown />
+                        <CaretDownIcon />
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent side="right" align="center">
                       <DropdownMenuItem onClick={onCreateSample}>
-                        <Flask className="mr-2" />
+                        <FlaskIcon className="mr-2" />
                         {t`Create Sample Resume`}
                       </DropdownMenuItem>
                     </DropdownMenuContent>

@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t, Trans } from "@lingui/macro";
-import { ArrowRight } from "@phosphor-icons/react";
+import { ArrowRightIcon } from "@phosphor-icons/react";
 import { loginSchema } from "@reactive-resume/dto";
 import { usePasswordToggle } from "@reactive-resume/hooks";
 import {
@@ -63,7 +63,7 @@ export const LoginPage = () => {
           <Button asChild variant="link" className="px-1.5">
             <Link to="/auth/register">
               {t({ message: "Create one now", context: "This is a link to create a new account" })}{" "}
-              <ArrowRight className="ml-1" />
+              <ArrowRightIcon className="ml-1" />
             </Link>
           </Button>
         </h6>

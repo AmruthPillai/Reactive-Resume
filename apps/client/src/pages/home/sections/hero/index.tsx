@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { ArrowRight } from "@phosphor-icons/react";
+import { ArrowRightIcon } from "@phosphor-icons/react";
 import { Badge, buttonVariants } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
@@ -30,7 +30,7 @@ export const HeroSection = () => (
             className={cn(buttonVariants({ variant: "link" }), "space-x-2 text-left")}
           >
             <p>{t`What's new in the latest version`}</p>
-            <ArrowRight />
+            <ArrowRightIcon />
           </a>
         </div>
 

@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { FadersHorizontal, ReadCvLogo } from "@phosphor-icons/react";
+import { FadersHorizontalIcon, ReadCvLogoIcon } from "@phosphor-icons/react";
 import { Button, KeyboardShortcut, Separator } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
@@ -85,13 +85,13 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
       path: "/dashboard/resumes",
       name: t`Resumes`,
       shortcut: "⇧R",
-      icon: <ReadCvLogo />,
+      icon: <ReadCvLogoIcon />,
     },
     {
       path: "/dashboard/settings",
       name: t`Settings`,
       shortcut: "⇧S",
-      icon: <FadersHorizontal />,
+      icon: <FadersHorizontalIcon />,
     },
   ];
 

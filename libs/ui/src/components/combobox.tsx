@@ -1,4 +1,4 @@
-import { CaretDown, Check } from "@phosphor-icons/react";
+import { CaretDownIcon, CheckIcon } from "@phosphor-icons/react";
 import { cn } from "@reactive-resume/utils";
 import { forwardRef, useState } from "react";
 
@@ -85,7 +85,7 @@ export const Combobox = forwardRef(
               {!props.value ||
                 (props.value.length === 0 && (props.selectPlaceholder ?? "Select an option"))}
             </span>
-            <CaretDown
+            <CaretDownIcon
               className={cn(
                 "ml-2 size-4 shrink-0 rotate-0 opacity-50 transition-transform",
                 open && "rotate-180",
@@ -122,7 +122,7 @@ export const Combobox = forwardRef(
                       }
                     }}
                   >
-                    <Check
+                    <CheckIcon
                       className={cn(
                         "mr-2 size-4 opacity-0",
                         !props.multiple && props.value === option.value && "opacity-100",

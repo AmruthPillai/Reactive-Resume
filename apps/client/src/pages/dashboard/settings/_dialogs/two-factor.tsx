@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { i18n } from "@lingui/core";
 import { msg, t } from "@lingui/macro";
-import { QrCode } from "@phosphor-icons/react";
+import { QrCodeIcon } from "@phosphor-icons/react";
 import {
   Alert,
   AlertDescription,
@@ -154,7 +154,7 @@ export const TwoFactorDialog = () => {
             <DialogHeader>
               <DialogTitle>
                 <div className="flex items-center space-x-2.5">
-                  <QrCode />
+                  <QrCodeIcon />
                   <h2>
                     {mode === "create" && t`Setup two-factor authentication on your account`}
                     {mode === "update" &&

@@ -1,4 +1,4 @@
-import { CaretRight, Check } from "@phosphor-icons/react";
+import { CaretRightIcon, CheckIcon } from "@phosphor-icons/react";
 import * as ContextMenuPrimitive from "@radix-ui/react-context-menu";
 import { cn } from "@reactive-resume/utils";
 import { forwardRef } from "react";
@@ -31,7 +31,7 @@ export const ContextMenuSubTrigger = forwardRef<
     {...props}
   >
     {children}
-    <CaretRight className="ml-auto size-4" />
+    <CaretRightIcon className="ml-auto size-4" />
   </ContextMenuPrimitive.SubTrigger>
 ));
 
@@ -105,7 +105,7 @@ export const ContextMenuCheckboxItem = forwardRef<
   >
     <span className="absolute left-2 flex size-4 items-center justify-center">
       <ContextMenuPrimitive.ItemIndicator>
-        <Check size={14} />
+        <CheckIcon size={14} />
       </ContextMenuPrimitive.ItemIndicator>
     </span>
     {children}
@@ -128,7 +128,7 @@ export const ContextMenuRadioItem = forwardRef<
   >
     <span className="absolute left-2 flex size-4 items-center justify-center">
       <ContextMenuPrimitive.ItemIndicator>
-        <Check size={14} className="fill-current" />
+        <CheckIcon size={14} className="fill-current" />
       </ContextMenuPrimitive.ItemIndicator>
     </span>
     {children}

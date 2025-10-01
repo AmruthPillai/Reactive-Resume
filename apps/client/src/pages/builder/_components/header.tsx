@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { HouseSimple, Lock, SidebarSimple } from "@phosphor-icons/react";
+import { HouseSimpleIcon, LockIcon, SidebarSimpleIcon } from "@phosphor-icons/react";
 import { Button, Tooltip } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { Link } from "react-router";
@@ -39,13 +39,13 @@ export const BuilderHeader = () => {
             onToggle("left");
           }}
         >
-          <SidebarSimple />
+          <SidebarSimpleIcon />
         </Button>
 
         <div className="flex items-center justify-center gap-x-1 lg:mx-auto">
           <Button asChild size="icon" variant="ghost">
             <Link to="/dashboard/resumes">
-              <HouseSimple />
+              <HouseSimpleIcon />
             </Link>
           </Button>
 
@@ -55,7 +55,7 @@ export const BuilderHeader = () => {
 
           {locked && (
             <Tooltip content={t`This resume is locked, please unlock to make further changes.`}>
-              <Lock size={14} className="ml-2 opacity-75" />
+              <LockIcon size={14} className="ml-2 opacity-75" />
             </Tooltip>
           )}
         </div>
@@ -68,7 +68,7 @@ export const BuilderHeader = () => {
             onToggle("right");
           }}
         >
-          <SidebarSimple className="-scale-x-100" />
+          <SidebarSimpleIcon className="-scale-x-100" />
         </Button>
       </div>
     </div>

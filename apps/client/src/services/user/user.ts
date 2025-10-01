@@ -11,7 +11,7 @@ export const fetchUser = async () => {
     "/user/me",
   );
 
-  return response.data;
+  return response.data ?? null;
 };
 
 export const useUser = () => {

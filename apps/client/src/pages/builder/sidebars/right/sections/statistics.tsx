@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { Info } from "@phosphor-icons/react";
+import { InfoIcon } from "@phosphor-icons/react";
 import { Alert, AlertDescription, AlertTitle } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { AnimatePresence, motion } from "framer-motion";
@@ -34,7 +34,7 @@ export const StatisticsSection = () => {
               exit={{ opacity: 0, y: -50, filter: "blur(10px)" }}
             >
               <Alert variant="info">
-                <Info size={18} />
+                <InfoIcon size={18} />
                 <AlertTitle>{t`Statistics are available only for public resumes.`}</AlertTitle>
                 <AlertDescription className="text-xs leading-relaxed">
                   {t`You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing.`}

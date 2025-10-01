@@ -1,30 +1,30 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
-  ArrowClockwise,
-  ArrowCounterClockwise,
-  Code as CodeIcon,
-  CodeBlock as CodeBlockIcon,
-  HighlighterCircle,
-  Image as ImageIcon,
-  KeyReturn,
-  LinkSimple,
-  ListBullets,
-  ListNumbers,
-  Minus,
-  Paragraph as ParagraphIcon,
-  TextAlignCenter,
-  TextAlignJustify,
-  TextAlignLeft,
-  TextAlignRight,
-  TextAUnderline,
-  TextB,
-  TextHOne,
-  TextHThree,
-  TextHTwo,
-  TextIndent,
-  TextItalic,
-  TextOutdent,
-  TextStrikethrough,
+  ArrowClockwiseIcon,
+  ArrowCounterClockwiseIcon,
+  CodeBlockIcon as CodeBlockIconImport,
+  CodeIcon as CodeIconImport,
+  HighlighterCircleIcon,
+  ImageIcon as ImageIconImport,
+  KeyReturnIcon,
+  LinkSimpleIcon,
+  ListBulletsIcon,
+  ListNumbersIcon,
+  MinusIcon,
+  ParagraphIcon as ParagraphIconImport,
+  TextAlignCenterIcon,
+  TextAlignJustifyIcon,
+  TextAlignLeftIcon,
+  TextAlignRightIcon,
+  TextAUnderlineIcon,
+  TextBIcon,
+  TextHOneIcon,
+  TextHThreeIcon,
+  TextHTwoIcon,
+  TextIndentIcon,
+  TextItalicIcon,
+  TextOutdentIcon,
+  TextStrikethroughIcon,
 } from "@phosphor-icons/react";
 import { PopoverTrigger } from "@radix-ui/react-popover";
 import { cn } from "@reactive-resume/utils";
@@ -153,7 +153,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           disabled={!editor.can().chain().toggleBold().run()}
           onPressedChange={() => editor.chain().focus().toggleBold().run()}
         >
-          <TextB />
+          <TextBIcon />
         </Toggle>
       </Tooltip>
 
@@ -165,7 +165,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           disabled={!editor.can().chain().focus().toggleItalic().run()}
           onPressedChange={() => editor.chain().focus().toggleItalic().run()}
         >
-          <TextItalic />
+          <TextItalicIcon />
         </Toggle>
       </Tooltip>
 
@@ -177,7 +177,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           disabled={!editor.can().chain().focus().toggleStrike().run()}
           onPressedChange={() => editor.chain().focus().toggleStrike().run()}
         >
-          <TextStrikethrough />
+          <TextStrikethroughIcon />
         </Toggle>
       </Tooltip>
 
@@ -189,7 +189,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           disabled={!editor.can().chain().focus().toggleUnderline().run()}
           onPressedChange={() => editor.chain().focus().toggleUnderline().run()}
         >
-          <TextAUnderline />
+          <TextAUnderlineIcon />
         </Toggle>
       </Tooltip>
 
@@ -201,13 +201,13 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           disabled={!editor.can().chain().focus().toggleHighlight().run()}
           onPressedChange={() => editor.chain().focus().toggleHighlight().run()}
         >
-          <HighlighterCircle />
+          <HighlighterCircleIcon />
         </Toggle>
       </Tooltip>
 
       <Tooltip content="Hyperlink">
         <Button type="button" size="sm" variant="ghost" className="px-2" onClick={setLink}>
-          <LinkSimple />
+          <LinkSimpleIcon />
         </Button>
       </Tooltip>
 
@@ -219,7 +219,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           disabled={!editor.can().chain().focus().toggleCode().run()}
           onPressedChange={() => editor.chain().focus().toggleCode().run()}
         >
-          <CodeIcon />
+          <CodeIconImport />
         </Toggle>
       </Tooltip>
 
@@ -231,7 +231,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           disabled={!editor.can().chain().focus().toggleCodeBlock().run()}
           onPressedChange={() => editor.chain().focus().toggleCodeBlock().run()}
         >
-          <CodeBlockIcon />
+          <CodeBlockIconImport />
         </Toggle>
       </Tooltip>
 
@@ -243,7 +243,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           disabled={!editor.can().chain().focus().toggleHeading({ level: 1 }).run()}
           onPressedChange={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
         >
-          <TextHOne />
+          <TextHOneIcon />
         </Toggle>
       </Tooltip>
 
@@ -255,7 +255,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           disabled={!editor.can().chain().focus().toggleHeading({ level: 2 }).run()}
           onPressedChange={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
         >
-          <TextHTwo />
+          <TextHTwoIcon />
         </Toggle>
       </Tooltip>
 
@@ -267,7 +267,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           disabled={!editor.can().chain().focus().toggleHeading({ level: 3 }).run()}
           onPressedChange={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
         >
-          <TextHThree />
+          <TextHThreeIcon />
         </Toggle>
       </Tooltip>
 
@@ -278,7 +278,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           pressed={editor.isActive("paragraph")}
           onPressedChange={() => editor.chain().focus().setParagraph().run()}
         >
-          <ParagraphIcon />
+          <ParagraphIconImport />
         </Toggle>
       </Tooltip>
 
@@ -290,7 +290,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           disabled={!editor.can().chain().focus().setTextAlign("left").run()}
           onPressedChange={() => editor.chain().focus().setTextAlign("left").run()}
         >
-          <TextAlignLeft />
+          <TextAlignLeftIcon />
         </Toggle>
       </Tooltip>
 
@@ -302,7 +302,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           disabled={!editor.can().chain().focus().setTextAlign("center").run()}
           onPressedChange={() => editor.chain().focus().setTextAlign("center").run()}
         >
-          <TextAlignCenter />
+          <TextAlignCenterIcon />
         </Toggle>
       </Tooltip>
 
@@ -314,7 +314,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           disabled={!editor.can().chain().focus().setTextAlign("right").run()}
           onPressedChange={() => editor.chain().focus().setTextAlign("right").run()}
         >
-          <TextAlignRight />
+          <TextAlignRightIcon />
         </Toggle>
       </Tooltip>
 
@@ -326,7 +326,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           disabled={!editor.can().chain().focus().setTextAlign("justify").run()}
           onPressedChange={() => editor.chain().focus().setTextAlign("justify").run()}
         >
-          <TextAlignJustify />
+          <TextAlignJustifyIcon />
         </Toggle>
       </Tooltip>
 
@@ -338,7 +338,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           disabled={!editor.can().chain().focus().toggleBulletList().run()}
           onPressedChange={() => editor.chain().focus().toggleBulletList().run()}
         >
-          <ListBullets />
+          <ListBulletsIcon />
         </Toggle>
       </Tooltip>
 
@@ -350,7 +350,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           disabled={!editor.can().chain().focus().toggleOrderedList().run()}
           onPressedChange={() => editor.chain().focus().toggleOrderedList().run()}
         >
-          <ListNumbers />
+          <ListNumbersIcon />
         </Toggle>
       </Tooltip>
 
@@ -363,7 +363,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           disabled={!editor.can().chain().focus().liftListItem("listItem").run()}
           onClick={() => editor.chain().focus().liftListItem("listItem").run()}
         >
-          <TextOutdent />
+          <TextOutdentIcon />
         </Button>
       </Tooltip>
 
@@ -376,7 +376,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           disabled={!editor.can().chain().focus().sinkListItem("listItem").run()}
           onClick={() => editor.chain().focus().sinkListItem("listItem").run()}
         >
-          <TextIndent />
+          <TextIndentIcon />
         </Button>
       </Tooltip>
 
@@ -384,7 +384,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
         <Tooltip content="Insert Image">
           <PopoverTrigger asChild>
             <Button type="button" size="sm" variant="ghost" className="px-2">
-              <ImageIcon />
+              <ImageIconImport />
             </Button>
           </PopoverTrigger>
         </Tooltip>
@@ -402,7 +402,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           disabled={!editor.can().chain().focus().setHardBreak().run()}
           onClick={() => editor.chain().focus().setHardBreak().run()}
         >
-          <KeyReturn />
+          <KeyReturnIcon />
         </Button>
       </Tooltip>
 
@@ -415,7 +415,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           disabled={!editor.can().chain().focus().setHorizontalRule().run()}
           onClick={() => editor.chain().focus().setHorizontalRule().run()}
         >
-          <Minus />
+          <MinusIcon />
         </Button>
       </Tooltip>
 
@@ -428,7 +428,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           disabled={!editor.can().undo()}
           onClick={() => editor.chain().focus().undo().run()}
         >
-          <ArrowCounterClockwise />
+          <ArrowCounterClockwiseIcon />
         </Button>
       </Tooltip>
 
@@ -441,7 +441,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           disabled={!editor.can().redo()}
           onClick={() => editor.chain().focus().redo().run()}
         >
-          <ArrowClockwise />
+          <ArrowClockwiseIcon />
         </Button>
       </Tooltip>
     </div>

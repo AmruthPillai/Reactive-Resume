@@ -1,11 +1,11 @@
 import { t } from "@lingui/macro";
 import {
-  CopySimple,
-  FolderOpen,
-  Lock,
-  LockOpen,
-  PencilSimple,
-  TrashSimple,
+  CopySimpleIcon,
+  FolderOpenIcon,
+  LockIcon,
+  LockOpenIcon,
+  PencilSimpleIcon,
+  TrashSimpleIcon,
 } from "@phosphor-icons/react";
 import type { ResumeDto } from "@reactive-resume/dto";
 import {
@@ -68,7 +68,7 @@ export const ResumeCard = ({ resume }: Props) => {
                 exit={{ opacity: 0 }}
                 className="absolute inset-0 flex items-center justify-center bg-background/75 backdrop-blur-sm"
               >
-                <Lock size={42} />
+                <LockIcon size={42} />
               </motion.div>
             )}
           </AnimatePresence>
@@ -93,31 +93,31 @@ export const ResumeCard = ({ resume }: Props) => {
 
       <DropdownMenuContent>
         <DropdownMenuItem onClick={onOpen}>
-          <FolderOpen size={14} className="mr-2" />
+          <FolderOpenIcon size={14} className="mr-2" />
           {t`Open`}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={onUpdate}>
-          <PencilSimple size={14} className="mr-2" />
+          <PencilSimpleIcon size={14} className="mr-2" />
           {t`Rename`}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={onDuplicate}>
-          <CopySimple size={14} className="mr-2" />
+          <CopySimpleIcon size={14} className="mr-2" />
           {t`Duplicate`}
         </DropdownMenuItem>
         {resume.locked ? (
           <DropdownMenuItem onClick={onLockChange}>
-            <LockOpen size={14} className="mr-2" />
+            <LockOpenIcon size={14} className="mr-2" />
             {t`Unlock`}
           </DropdownMenuItem>
         ) : (
           <DropdownMenuItem onClick={onLockChange}>
-            <Lock size={14} className="mr-2" />
+            <LockIcon size={14} className="mr-2" />
             {t`Lock`}
           </DropdownMenuItem>
         )}
         <DropdownMenuSeparator />
         <DropdownMenuItem className="text-error" onClick={onDelete}>
-          <TrashSimple size={14} className="mr-2" />
+          <TrashSimpleIcon size={14} className="mr-2" />
           {t`Delete`}
         </DropdownMenuItem>
       </DropdownMenuContent>

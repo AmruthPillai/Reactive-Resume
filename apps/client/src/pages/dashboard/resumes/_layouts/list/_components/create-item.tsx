@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { Plus } from "@phosphor-icons/react";
+import { PlusIcon } from "@phosphor-icons/react";
 import type { ResumeDto } from "@reactive-resume/dto";
 import { KeyboardShortcut } from "@reactive-resume/ui";
 
@@ -12,7 +12,7 @@ export const CreateResumeListItem = () => {
 
   return (
     <BaseListItem
-      start={<Plus size={18} />}
+      start={<PlusIcon size={18} />}
       title={
         <>
           <span>{t`Create a new resume`}</span>

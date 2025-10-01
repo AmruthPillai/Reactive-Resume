@@ -1,5 +1,5 @@
 import { t, Trans } from "@lingui/macro";
-import { ArrowRight, Info, SealCheck } from "@phosphor-icons/react";
+import { ArrowRightIcon, InfoIcon, SealCheckIcon } from "@phosphor-icons/react";
 import { Alert, AlertDescription, AlertTitle, Button } from "@reactive-resume/ui";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
@@ -24,7 +24,7 @@ export const VerifyEmailPage = () => {
 
       toast({
         variant: "success",
-        icon: <SealCheck size={16} weight="bold" />,
+        icon: <SealCheckIcon size={16} weight="bold" />,
         title: t`Your email address has been verified successfully.`,
       });
 
@@ -55,7 +55,7 @@ export const VerifyEmailPage = () => {
       </div>
 
       <Alert variant="info">
-        <Info size={18} />
+        <InfoIcon size={18} />
         <AlertTitle>{t`Please note that this step is completely optional.`}</AlertTitle>
         <AlertDescription>
           {t`We verify your email address only to ensure that we can send you a password reset link in case you forget your password.`}
@@ -65,7 +65,7 @@ export const VerifyEmailPage = () => {
       <Button asChild disabled={loading}>
         <Link to="/dashboard">
           {t`Go to Dashboard`}
-          <ArrowRight className="ml-2" />
+          <ArrowRightIcon className="ml-2" />
         </Link>
       </Button>
     </div>

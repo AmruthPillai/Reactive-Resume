@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { CopySimple } from "@phosphor-icons/react";
+import { CopySimpleIcon } from "@phosphor-icons/react";
 import { Button, Input, Label, Switch, Tooltip } from "@reactive-resume/ui";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -77,7 +77,7 @@ export const SharingSection = () => {
 
                 <Tooltip content={t`Copy to Clipboard`}>
                   <Button size="icon" variant="ghost" onClick={onCopy}>
-                    <CopySimple />
+                    <CopySimpleIcon />
                   </Button>
                 </Tooltip>
               </div>
