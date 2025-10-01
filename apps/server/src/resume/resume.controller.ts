@@ -20,8 +20,9 @@ import {
   ResumeDto,
   UpdateResumeDto,
 } from "@reactive-resume/dto";
-import { resumeDataSchema } from "@reactive-resume/schema";
+import { ResumeData, resumeDataSchema } from "@reactive-resume/schema";
 import { ErrorMessage } from "@reactive-resume/utils";
+import set from "lodash.set";
 import { zodToJsonSchema } from "zod-to-json-schema";
 
 import { User } from "@/server/user/decorators/user.decorator";
@@ -93,12 +94,17 @@ export class ResumeController {
 
   @Get("/public/:username/:slug")
   @UseGuards(OptionalGuard)
-  findOneByUsernameSlug(
+  async findOneByUsernameSlug(
     @Param("username") username: string,
     @Param("slug") slug: string,
     @User("id") userId: string,
   ) {
-    return this.resumeService.findOneByUsernameSlug(username, slug, userId);
+    const resume = await this.resumeService.findOneByUsernameSlug(username, slug, userId);
+
+    // Hide private notes from public resume API responses
+    set(resume.data as ResumeData, "metadata.notes", undefined);
+
+    return resume;
   }
 
   @Patch(":id")
