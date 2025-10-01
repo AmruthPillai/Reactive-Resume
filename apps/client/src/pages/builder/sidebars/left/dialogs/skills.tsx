@@ -25,6 +25,10 @@ const formSchema = skillSchema;
 
 type FormValues = z.infer<typeof formSchema>;
 
+const handleDragOver = (e: React.DragEvent) => {
+  e.preventDefault();
+};
+
 export const SkillsDialog = () => {
   const form = useForm<FormValues>({
     defaultValues: defaultSkill,
@@ -32,6 +36,23 @@ export const SkillsDialog = () => {
   });
 
   const [pendingKeyword, setPendingKeyword] = useState("");
+  const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
+
+  const handleDrop = (
+    e: React.DragEvent,
+    dropIndex: number,
+    field: { value: string[]; onChange: (value: string[]) => void },
+  ) => {
+    e.preventDefault();
+    if (draggedIndex === null) return;
+
+    const newKeywords = [...field.value];
+    const [draggedItem] = newKeywords.splice(draggedIndex, 1);
+    newKeywords.splice(dropIndex, 0, draggedItem);
+
+    field.onChange(newKeywords);
+    setDraggedIndex(null);
+  };
 
   return (
     <SectionDialog<FormValues>
@@ -122,9 +143,17 @@ export const SkillsDialog = () => {
                     <motion.div
                       key={item}
                       layout
+                      draggable
                       initial={{ opacity: 0, y: -50 }}
                       animate={{ opacity: 1, y: 0, transition: { delay: index * 0.1 } }}
                       exit={{ opacity: 0, x: -50 }}
+                      onDragStart={() => {
+                        setDraggedIndex(index);
+                      }}
+                      onDragOver={handleDragOver}
+                      onDrop={(e) => {
+                        handleDrop(e, index, field);
+                      }}
                     >
                       <Badge
                         className="cursor-pointer"
