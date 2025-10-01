@@ -23,4 +23,5 @@ export const parseCSV = async (string: string) => {
  * @returns
  */
 export const parseArrayLikeCSVEntry = (csvEntry: string) =>
+  // eslint-disable-next-line unicorn/better-regex
   csvEntry.replace(/^\[/, "").replace(/\]$/, "").split(",");

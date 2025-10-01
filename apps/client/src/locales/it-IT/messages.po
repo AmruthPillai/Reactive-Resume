@@ -8,7 +8,7 @@ msgstr ""
 "Language: it\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-10-01 09:15\n"
+"PO-Revision-Date: 2025-10-01 09:40\n"
 "Last-Translator: \n"
 "Language-Team: Italian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -201,15 +201,15 @@ msgstr "Premiatore"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:258
 msgid "Azure API Version"
-msgstr ""
+msgstr "Versione Azure API"
 
 #: apps/client/src/services/openai/client.ts:18
 msgid "Azure OpenAI Base URL, deployment name (model), and API version are required when using Azure OpenAI."
-msgstr ""
+msgstr "Azure OpenAI Base URL, nome di distribuzione (modello) e versione API sono necessari quando si utilizza Azure OpenAI."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Azure OpenAI Resource URL"
-msgstr ""
+msgstr "Url Risorsa OpenAI Azure"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:99
 #: apps/client/src/pages/auth/forgot-password/page.tsx:100
@@ -277,7 +277,7 @@ msgstr "Cartella Centrata"
 
 #: apps/client/src/components/locale-switch.tsx:17
 msgid "Change Language"
-msgstr ""
+msgstr "Cambia Lingua"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
@@ -411,7 +411,7 @@ msgstr "Scuro"
 msgid "Date"
 msgstr "Data"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:87
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:109
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:110
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:72
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:101
@@ -434,13 +434,13 @@ msgstr "Elimina account"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
 msgid "Deployment Name"
-msgstr ""
+msgstr "Nome Distribuzione"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:73
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:95
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:53
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:63
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:84
 msgid "Description"
 msgstr "Descrizione"
 
@@ -688,7 +688,7 @@ msgstr "Google"
 msgid "Grayscale"
 msgstr "Scala di grigi"
 
-#: apps/client/src/pages/dashboard/resumes/page.tsx:43
+#: apps/client/src/pages/dashboard/resumes/page.tsx:45
 msgid "Grid"
 msgstr "Griglia"
 
@@ -705,7 +705,7 @@ msgid "Here, you can update your profile to customize and personalize your exper
 msgstr "Qui può aggiornare il suo profilo per personalizzare la sua esperienza."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:80
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:94
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:115
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:180
 msgid "Hidden"
 msgstr "Nascosto"
@@ -840,10 +840,10 @@ msgstr "mario.rossi@esempio.it"
 msgid "JSON"
 msgstr "JSON"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:159
-#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:181
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:84
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:159
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:109
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:130
 msgid "Keywords"
 msgstr "Parole chiave"
 
@@ -876,7 +876,7 @@ msgid "Letter"
 msgstr "Lettera"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:64
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:77
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:98
 msgid "Level"
 msgstr "Livello"
 
@@ -901,11 +901,11 @@ msgstr "Altezza linea"
 msgid "LinkedIn, JSON Resume, etc."
 msgstr "LinkedIn, curriculum JSON, ecc."
 
-#: apps/client/src/pages/dashboard/resumes/page.tsx:47
+#: apps/client/src/pages/dashboard/resumes/page.tsx:49
 msgid "List"
 msgstr "Lista"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:101
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:123
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:93
@@ -975,13 +975,13 @@ msgid "Model"
 msgstr "Modello"
 
 #: apps/client/src/pages/auth/register/page.tsx:98
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:59
-#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:48
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:81
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:69
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:73
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:70
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:88
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:153
 msgid "Name"
@@ -1051,7 +1051,7 @@ msgstr "Integrazione OpenAI"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
 msgid "OpenAI/Azure OpenAI/Ollama Integration"
-msgstr ""
+msgstr "Integrazione OpenAI/Azure OpenAI/Ollama"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:169
 msgid "OpenAI/Ollama API Key"
@@ -1184,7 +1184,7 @@ msgstr "Segnala un problema"
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/builder/page.tsx:60
-#: apps/client/src/pages/dashboard/resumes/page.tsx:20
+#: apps/client/src/pages/dashboard/resumes/page.tsx:22
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
 #: apps/client/src/pages/home/components/footer.tsx:18
 #: apps/client/src/pages/home/page.tsx:24
@@ -1251,8 +1251,8 @@ msgid "Reset Zoom"
 msgstr "Ripristina zoom"
 
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:86
-#: apps/client/src/pages/dashboard/resumes/page.tsx:20
-#: apps/client/src/pages/dashboard/resumes/page.tsx:37
+#: apps/client/src/pages/dashboard/resumes/page.tsx:22
+#: apps/client/src/pages/dashboard/resumes/page.tsx:39
 msgid "Resumes"
 msgstr "Curricula"
 
@@ -1462,7 +1462,7 @@ msgstr "Archivia i tuoi codici di backup in modo sicuro"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:129
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:151
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:138
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:114
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:129
@@ -1486,11 +1486,11 @@ msgstr "Supporta i formati di pagina A4/Letter"
 
 #: apps/client/src/components/theme-switch.tsx:31
 msgid "Switch to Dark Mode"
-msgstr ""
+msgstr "Passa alla modalità scura"
 
 #: apps/client/src/components/theme-switch.tsx:29
 msgid "Switch to Light Mode"
-msgstr ""
+msgstr "Passa alla modalità luce"
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:85
 msgid "System"
@@ -1656,11 +1656,11 @@ msgstr "L'URL deve iniziare con https://"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:247
 msgid "Use Azure OpenAI"
-msgstr ""
+msgstr "Usa Azure OpenAI"
 
 #: apps/client/src/components/theme-switch.tsx:30
 msgid "Use System Theme"
-msgstr ""
+msgstr "Usa Tema Di Sistema"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/backup-otp/page.tsx:57
@@ -1728,7 +1728,7 @@ msgstr "Verifichiamo il suo indirizzo e-mail solo per assicurarci di poterle inv
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:81
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:115
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:137
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:124
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:69
@@ -1748,10 +1748,10 @@ msgstr "Cosa c'è di nuovo nell'ultima versione"
 msgid "You are not authorized to access this page."
 msgstr "Non sei autorizzato ad accedere a questa pagina."
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:164
-#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:186
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:89
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:164
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:114
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:135
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr "Puoi aggiungere più parole chiave separandole con una virgola o premendo Invio."
 
@@ -1761,15 +1761,15 @@ msgstr "Può anche inserire il suo nome utente."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:144
 msgid "You can also integrate with Azure OpenAI by enabling the <0>Use Azure OpenAI</0> checkbox and setting the Resource URL to your Azure OpenAI resource: <1>https://your-resource.openai.azure.com</1>. Set the deployment name in the Model field and specify the appropriate API version for your Azure deployment."
-msgstr ""
+msgstr "Puoi anche integrarti con Azure OpenAI abilitando la casella di controllo <0>Usa Azure OpenAI</0> e impostando l'URL delle risorse sulla tua risorsa Azure OpenAI: <1>https://your-resource. penai.azure.com</1>. Impostare il nome di distribuzione nel campo Modello e specificare la versione API appropriata per la distribuzione Azure."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:153
 msgid "You can also integrate with Ollama simply by setting the API key to<0>sk-1234567890abcdef</0> and the Base URL to your Ollama URL, i.e.<1>http://localhost:11434/v1</1>. You can also pick and choose models and set the max tokens as per your preference."
-msgstr ""
+msgstr "Puoi anche integrarti con Ollama semplicemente impostando la chiave API a<0>sk-1234567890abcdef</0> e l'URL di base al tuo URL Ollama, i. .<1>http://localhost:11434/v1</1>. Puoi anche scegliere i modelli e impostare i token massimi secondo le tue preferenze."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:122
 msgid "You can make use of the OpenAI API, Azure OpenAI, or Ollama to help you generate content, or improve your writing while composing your resume."
-msgstr ""
+msgstr "Puoi utilizzare l'API OpenAI, Azure OpenAI, o Ollama per aiutarti a generare contenuti o migliorare la tua scrittura durante la composizione del tuo curriculum."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:40
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."

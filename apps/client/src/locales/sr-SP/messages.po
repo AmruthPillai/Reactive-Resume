@@ -8,7 +8,7 @@ msgstr ""
 "Language: sr\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-10-01 09:15\n"
+"PO-Revision-Date: 2025-10-01 09:32\n"
 "Last-Translator: \n"
 "Language-Team: Serbian (Cyrillic)\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
@@ -411,7 +411,7 @@ msgstr "Тамна"
 msgid "Date"
 msgstr "Датум"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:87
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:109
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:110
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:72
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:101
@@ -436,11 +436,11 @@ msgstr "Обриши налог"
 msgid "Deployment Name"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:73
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:95
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:53
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:63
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:84
 msgid "Description"
 msgstr "Опис"
 
@@ -688,7 +688,7 @@ msgstr "Google"
 msgid "Grayscale"
 msgstr "Сиви тонови"
 
-#: apps/client/src/pages/dashboard/resumes/page.tsx:43
+#: apps/client/src/pages/dashboard/resumes/page.tsx:45
 msgid "Grid"
 msgstr "Мрежа"
 
@@ -705,7 +705,7 @@ msgid "Here, you can update your profile to customize and personalize your exper
 msgstr "Овде можете ажурирати свој профил да бисте прилагодили и персонализовали своје корисничко искуство."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:80
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:94
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:115
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:180
 msgid "Hidden"
 msgstr "Сакривено"
@@ -840,10 +840,10 @@ msgstr ""
 msgid "JSON"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:159
-#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:181
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:84
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:159
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:109
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:130
 msgid "Keywords"
 msgstr ""
 
@@ -876,7 +876,7 @@ msgid "Letter"
 msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:64
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:77
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:98
 msgid "Level"
 msgstr "Ниво"
 
@@ -901,11 +901,11 @@ msgstr ""
 msgid "LinkedIn, JSON Resume, etc."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/page.tsx:47
+#: apps/client/src/pages/dashboard/resumes/page.tsx:49
 msgid "List"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:101
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:123
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:93
@@ -975,13 +975,13 @@ msgid "Model"
 msgstr ""
 
 #: apps/client/src/pages/auth/register/page.tsx:98
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:59
-#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:48
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:81
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:69
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:73
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:70
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:88
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:153
 msgid "Name"
@@ -1184,7 +1184,7 @@ msgstr ""
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/builder/page.tsx:60
-#: apps/client/src/pages/dashboard/resumes/page.tsx:20
+#: apps/client/src/pages/dashboard/resumes/page.tsx:22
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
 #: apps/client/src/pages/home/components/footer.tsx:18
 #: apps/client/src/pages/home/page.tsx:24
@@ -1251,8 +1251,8 @@ msgid "Reset Zoom"
 msgstr ""
 
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:86
-#: apps/client/src/pages/dashboard/resumes/page.tsx:20
-#: apps/client/src/pages/dashboard/resumes/page.tsx:37
+#: apps/client/src/pages/dashboard/resumes/page.tsx:22
+#: apps/client/src/pages/dashboard/resumes/page.tsx:39
 msgid "Resumes"
 msgstr ""
 
@@ -1462,7 +1462,7 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:129
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:151
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:138
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:114
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:129
@@ -1728,7 +1728,7 @@ msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:81
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:115
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:137
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:124
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:69
@@ -1748,10 +1748,10 @@ msgstr ""
 msgid "You are not authorized to access this page."
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:164
-#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:186
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:89
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:164
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:114
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:135
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr ""
 

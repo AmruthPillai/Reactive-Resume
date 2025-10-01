@@ -8,7 +8,7 @@ msgstr ""
 "Language: el\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-10-01 09:15\n"
+"PO-Revision-Date: 2025-10-01 09:40\n"
 "Last-Translator: \n"
 "Language-Team: Greek\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -135,11 +135,11 @@ msgstr "Προέκυψε σφάλμα κατά την αποστολή του α
 
 #: apps/client/src/pages/public/error.tsx:23
 msgid "An internal server error occurred."
-msgstr ""
+msgstr "Παρουσιάστηκε ένα εσωτερικό σφάλμα διακομιστή."
 
 #: apps/client/src/pages/public/error.tsx:32
 msgid "An unexpected error occurred."
-msgstr ""
+msgstr "Παρουσιάστηκε μη αναμενόμενο σφάλμα."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:134
 msgid "and many more..."
@@ -201,15 +201,15 @@ msgstr "Βραβευτής"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:258
 msgid "Azure API Version"
-msgstr ""
+msgstr "Azure Έκδοση Api"
 
 #: apps/client/src/services/openai/client.ts:18
 msgid "Azure OpenAI Base URL, deployment name (model), and API version are required when using Azure OpenAI."
-msgstr ""
+msgstr "Azure OpenAI Base URL, όνομα ανάπτυξης (μοντέλο) και έκδοση API απαιτούνται όταν χρησιμοποιείτε το Azure OpenAI."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Azure OpenAI Resource URL"
-msgstr ""
+msgstr "Url Πόρου Azure OpenAI"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:99
 #: apps/client/src/pages/auth/forgot-password/page.tsx:100
@@ -277,7 +277,7 @@ msgstr "Κεντράρισμα Πίνακα"
 
 #: apps/client/src/components/locale-switch.tsx:17
 msgid "Change Language"
-msgstr ""
+msgstr "Αλλαγή Γλώσσας"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
@@ -373,7 +373,7 @@ msgstr "Δημιουργία νέου βιογραφικού σημειώματ�
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
 msgid "Current Password"
-msgstr ""
+msgstr "Τρέχων Κωδικός Πρόσβασης"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:93
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:27
@@ -411,7 +411,7 @@ msgstr "Σκούρο"
 msgid "Date"
 msgstr "Ημερομηνία"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:87
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:109
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:110
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:72
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:101
@@ -434,13 +434,13 @@ msgstr "Διαγραφή Λογαριασμού"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
 msgid "Deployment Name"
-msgstr ""
+msgstr "Όνομα Εφαρμογής"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:73
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:95
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:53
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:63
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:84
 msgid "Description"
 msgstr "Περιγραφή"
 
@@ -561,7 +561,7 @@ msgstr "Εισάγετε τη διεύθυνση ηλεκτρονικού ταχ
 
 #: apps/client/src/pages/public/error.tsx:46
 msgid "Error {statusCode}"
-msgstr ""
+msgstr "Σφάλμα {statusCode}"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:283
 msgid "Errors"
@@ -678,7 +678,7 @@ msgstr "Μετάβαση στον πίνακα εργαλείων (dashboard)"
 
 #: apps/client/src/pages/public/error.tsx:55
 msgid "Go to home"
-msgstr ""
+msgstr "Μετάβαση στην αρχική"
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:31
 msgid "Google"
@@ -688,7 +688,7 @@ msgstr "Google"
 msgid "Grayscale"
 msgstr "Κλίμακα του Γκρι"
 
-#: apps/client/src/pages/dashboard/resumes/page.tsx:43
+#: apps/client/src/pages/dashboard/resumes/page.tsx:45
 msgid "Grid"
 msgstr "Πλέγμα"
 
@@ -705,7 +705,7 @@ msgid "Here, you can update your profile to customize and personalize your exper
 msgstr "Εδώ, μπορείτε να ενημερώσετε το προφίλ σας για να προσαρμόσετε και να εξατομικεύσετε την εμπειρία σας."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:80
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:94
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:115
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:180
 msgid "Hidden"
 msgstr "Hidden"
@@ -840,10 +840,10 @@ msgstr "john.doe@example.com"
 msgid "JSON"
 msgstr "JSON"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:159
-#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:181
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:84
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:159
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:109
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:130
 msgid "Keywords"
 msgstr "Λέξεις-κλειδιά"
 
@@ -876,7 +876,7 @@ msgid "Letter"
 msgstr "Γράμμα"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:64
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:77
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:98
 msgid "Level"
 msgstr "Επίπεδο"
 
@@ -901,11 +901,11 @@ msgstr "Ύψος Γραμμής"
 msgid "LinkedIn, JSON Resume, etc."
 msgstr "LinkedIn, JSON Βιογραφικό, κλπ."
 
-#: apps/client/src/pages/dashboard/resumes/page.tsx:47
+#: apps/client/src/pages/dashboard/resumes/page.tsx:49
 msgid "List"
 msgstr "Λίστα"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:101
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:123
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:93
@@ -975,13 +975,13 @@ msgid "Model"
 msgstr "Μοντέλο"
 
 #: apps/client/src/pages/auth/register/page.tsx:98
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:59
-#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:48
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:81
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:69
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:73
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:70
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:88
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:153
 msgid "Name"
@@ -1051,7 +1051,7 @@ msgstr "Ενσωμάτωση OpenAI"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
 msgid "OpenAI/Azure OpenAI/Ollama Integration"
-msgstr ""
+msgstr "OpenAI/Azure OpenAI/Ollama Integration"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:169
 msgid "OpenAI/Ollama API Key"
@@ -1184,7 +1184,7 @@ msgstr "Θέστε ένα θέμα"
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/builder/page.tsx:60
-#: apps/client/src/pages/dashboard/resumes/page.tsx:20
+#: apps/client/src/pages/dashboard/resumes/page.tsx:22
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
 #: apps/client/src/pages/home/components/footer.tsx:18
 #: apps/client/src/pages/home/page.tsx:24
@@ -1251,8 +1251,8 @@ msgid "Reset Zoom"
 msgstr "Επαναφορά μεγένθυνσης"
 
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:86
-#: apps/client/src/pages/dashboard/resumes/page.tsx:20
-#: apps/client/src/pages/dashboard/resumes/page.tsx:37
+#: apps/client/src/pages/dashboard/resumes/page.tsx:22
+#: apps/client/src/pages/dashboard/resumes/page.tsx:39
 msgid "Resumes"
 msgstr "Βιογραφικά σημειώματα"
 
@@ -1462,7 +1462,7 @@ msgstr "Αποθηκεύστε τους κωδικούς αντιγράφων α
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:129
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:151
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:138
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:114
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:129
@@ -1486,11 +1486,11 @@ msgstr "Υποστηρίζει μορφές σελίδων A4/Letter"
 
 #: apps/client/src/components/theme-switch.tsx:31
 msgid "Switch to Dark Mode"
-msgstr ""
+msgstr "Εναλλαγή σε σκοτεινή λειτουργία"
 
 #: apps/client/src/components/theme-switch.tsx:29
 msgid "Switch to Light Mode"
-msgstr ""
+msgstr "Εναλλαγή σε λειτουργία φωτός"
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:85
 msgid "System"
@@ -1516,11 +1516,11 @@ msgstr "Χρώματα κειμένου"
 
 #: apps/client/src/pages/public/error.tsx:17
 msgid "The page you're looking for doesn't exist."
-msgstr ""
+msgstr "Η σελίδα που ψάχνετε δεν υπάρχει."
 
 #: apps/client/src/pages/public/error.tsx:29
 msgid "The request was invalid."
-msgstr ""
+msgstr "Το αίτημα δεν ήταν έγκυρο."
 
 #: apps/client/src/services/errors/translate-error.ts:49
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
@@ -1656,11 +1656,11 @@ msgstr "Η διεύθυνση URL πρέπει να αρχίζει με https://
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:247
 msgid "Use Azure OpenAI"
-msgstr ""
+msgstr "Χρήση Azure OpenAI"
 
 #: apps/client/src/components/theme-switch.tsx:30
 msgid "Use System Theme"
-msgstr ""
+msgstr "Χρήση Θέματος Συστήματος"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/backup-otp/page.tsx:57
@@ -1728,7 +1728,7 @@ msgstr "Επαληθεύουμε τη διεύθυνση email σας μόνο �
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:81
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:115
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:137
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:124
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:69
@@ -1746,12 +1746,12 @@ msgstr "Τι νέο υπάρχει στην τελευταία έκδοση"
 
 #: apps/client/src/pages/public/error.tsx:26
 msgid "You are not authorized to access this page."
-msgstr ""
+msgstr "Δεν είστε εξουσιοδοτημένοι να έχετε πρόσβαση σε αυτή τη σελίδα."
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:164
-#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:186
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:89
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:164
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:114
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:135
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr "Μπορείτε να προσθέσετε πολλαπλές λέξεις-κλειδιά διαχωρίζοντάς τες με κόμμα ή πατώντας enter."
 
@@ -1761,15 +1761,15 @@ msgstr "Μπορείτε επίσης να εισάγετε το όνομα χρ
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:144
 msgid "You can also integrate with Azure OpenAI by enabling the <0>Use Azure OpenAI</0> checkbox and setting the Resource URL to your Azure OpenAI resource: <1>https://your-resource.openai.azure.com</1>. Set the deployment name in the Model field and specify the appropriate API version for your Azure deployment."
-msgstr ""
+msgstr "Μπορείτε επίσης να ενσωματώσετε με το Azure OpenAI ενεργοποιώντας το πλαίσιο ελέγχου <0>Χρήση Azure OpenAI</0> και ορίζοντας τη διεύθυνση URL του πόρου στο Azure OpenAI πόρος: <1>https://your-resource. penai.azure.com</1>. Ορίστε το όνομα ανάπτυξης στο πεδίο Μοντέλο και καθορίστε την κατάλληλη έκδοση API για την ανάπτυξη του Azure."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:153
 msgid "You can also integrate with Ollama simply by setting the API key to<0>sk-1234567890abcdef</0> and the Base URL to your Ollama URL, i.e.<1>http://localhost:11434/v1</1>. You can also pick and choose models and set the max tokens as per your preference."
-msgstr ""
+msgstr "Μπορείτε επίσης να ενσωματώσετε με την Ollama απλά με τη ρύθμιση του κλειδιού API στο<0>sk-1234567890abcdef</0> και το URL βάσης στο Ollama URL, i. .<1>http://localhost:11434/v1</1>. Μπορείτε επίσης να επιλέξετε μοντέλα και να ορίσετε τις μέγιστες μάρκες σύμφωνα με τις προτιμήσεις σας."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:122
 msgid "You can make use of the OpenAI API, Azure OpenAI, or Ollama to help you generate content, or improve your writing while composing your resume."
-msgstr ""
+msgstr "Μπορείτε να χρησιμοποιήσετε το OpenAI API, το Azure OpenAI, ή το Ollama για να σας βοηθήσει να δημιουργήσετε περιεχόμενο, ή να βελτιώσετε το γράψιμό σας ενώ συνθέτετε το βιογραφικό σας."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:40
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
@@ -1777,7 +1777,7 @@ msgstr "Μπορείτε να παρακολουθείτε τον αριθμό �
 
 #: apps/client/src/pages/public/error.tsx:20
 msgid "You don't have permission to access this page."
-msgstr ""
+msgstr "Δεν έχετε δικαίωμα πρόσβασης σε αυτή τη σελίδα."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:128
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."

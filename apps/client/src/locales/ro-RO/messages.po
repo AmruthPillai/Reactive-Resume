@@ -8,7 +8,7 @@ msgstr ""
 "Language: ro\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-10-01 09:15\n"
+"PO-Revision-Date: 2025-10-01 09:40\n"
 "Last-Translator: \n"
 "Language-Team: Romanian\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);\n"
@@ -135,11 +135,11 @@ msgstr "A apărut o eroare în timpul validării fișierului."
 
 #: apps/client/src/pages/public/error.tsx:23
 msgid "An internal server error occurred."
-msgstr ""
+msgstr "A apărut o eroare internă de server."
 
 #: apps/client/src/pages/public/error.tsx:32
 msgid "An unexpected error occurred."
-msgstr ""
+msgstr "A apărut o eroare neașteptată."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:134
 msgid "and many more..."
@@ -201,15 +201,15 @@ msgstr "Atribuire"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:258
 msgid "Azure API Version"
-msgstr ""
+msgstr "Versiune API Azure"
 
 #: apps/client/src/services/openai/client.ts:18
 msgid "Azure OpenAI Base URL, deployment name (model), and API version are required when using Azure OpenAI."
-msgstr ""
+msgstr "Azure OpenAI Base URL, deployment name (model), și versiunea API sunt necesare atunci când utilizați Azure OpenAI."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Azure OpenAI Resource URL"
-msgstr ""
+msgstr "URL resurse OpenAI Azure"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:99
 #: apps/client/src/pages/auth/forgot-password/page.tsx:100
@@ -277,7 +277,7 @@ msgstr "Centrează Artboard"
 
 #: apps/client/src/components/locale-switch.tsx:17
 msgid "Change Language"
-msgstr ""
+msgstr "Schimbă limba"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
@@ -373,7 +373,7 @@ msgstr "Creați un exemplu de CV"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
 msgid "Current Password"
-msgstr ""
+msgstr "Parola curentă"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:93
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:27
@@ -411,7 +411,7 @@ msgstr "Întunecat"
 msgid "Date"
 msgstr "Dată"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:87
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:109
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:110
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:72
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:101
@@ -434,13 +434,13 @@ msgstr "Șterge Contul"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
 msgid "Deployment Name"
-msgstr ""
+msgstr "Nume de desfășurare"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:73
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:95
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:53
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:63
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:84
 msgid "Description"
 msgstr "Descriere"
 
@@ -561,7 +561,7 @@ msgstr "Introdu adresa ta de e-mail și îți vom trimite un link pentru a-ți r
 
 #: apps/client/src/pages/public/error.tsx:46
 msgid "Error {statusCode}"
-msgstr ""
+msgstr "{statusCode} erori"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:283
 msgid "Errors"
@@ -678,7 +678,7 @@ msgstr "Du-te la tabloul de bord"
 
 #: apps/client/src/pages/public/error.tsx:55
 msgid "Go to home"
-msgstr ""
+msgstr "Mergi la casă"
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:31
 msgid "Google"
@@ -688,7 +688,7 @@ msgstr "Google"
 msgid "Grayscale"
 msgstr "Grayscale"
 
-#: apps/client/src/pages/dashboard/resumes/page.tsx:43
+#: apps/client/src/pages/dashboard/resumes/page.tsx:45
 msgid "Grid"
 msgstr "Grilă"
 
@@ -705,7 +705,7 @@ msgid "Here, you can update your profile to customize and personalize your exper
 msgstr "Aici, vă puteți actualiza profilul pentru a vă personaliza experiența."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:80
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:94
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:115
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:180
 msgid "Hidden"
 msgstr "Ascuns"
@@ -840,10 +840,10 @@ msgstr "john.doe@example.com"
 msgid "JSON"
 msgstr "JSON"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:159
-#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:181
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:84
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:159
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:109
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:130
 msgid "Keywords"
 msgstr "Cuvinte cheie"
 
@@ -876,7 +876,7 @@ msgid "Letter"
 msgstr "Scrisoare"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:64
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:77
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:98
 msgid "Level"
 msgstr "Nivel"
 
@@ -901,11 +901,11 @@ msgstr "Înălțimea liniei"
 msgid "LinkedIn, JSON Resume, etc."
 msgstr "LinkedIn, Reluare JSON etc."
 
-#: apps/client/src/pages/dashboard/resumes/page.tsx:47
+#: apps/client/src/pages/dashboard/resumes/page.tsx:49
 msgid "List"
 msgstr "Listă"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:101
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:123
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:93
@@ -975,13 +975,13 @@ msgid "Model"
 msgstr "Model"
 
 #: apps/client/src/pages/auth/register/page.tsx:98
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:59
-#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:48
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:81
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:69
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:73
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:70
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:88
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:153
 msgid "Name"
@@ -1051,7 +1051,7 @@ msgstr "Integrare OpenAI"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
 msgid "OpenAI/Azure OpenAI/Ollama Integration"
-msgstr ""
+msgstr "Integrarea OpenAI/Azure OpenAI/Ollama"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:169
 msgid "OpenAI/Ollama API Key"
@@ -1184,7 +1184,7 @@ msgstr "Ridicați o problemă"
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/builder/page.tsx:60
-#: apps/client/src/pages/dashboard/resumes/page.tsx:20
+#: apps/client/src/pages/dashboard/resumes/page.tsx:22
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
 #: apps/client/src/pages/home/components/footer.tsx:18
 #: apps/client/src/pages/home/page.tsx:24
@@ -1251,8 +1251,8 @@ msgid "Reset Zoom"
 msgstr "Resetați zoomul"
 
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:86
-#: apps/client/src/pages/dashboard/resumes/page.tsx:20
-#: apps/client/src/pages/dashboard/resumes/page.tsx:37
+#: apps/client/src/pages/dashboard/resumes/page.tsx:22
+#: apps/client/src/pages/dashboard/resumes/page.tsx:39
 msgid "Resumes"
 msgstr "CV-uri"
 
@@ -1462,7 +1462,7 @@ msgstr "Stocați codurile de rezervă în siguranță"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:129
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:151
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:138
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:114
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:129
@@ -1486,11 +1486,11 @@ msgstr "Suportă formatele paginii A4/Scrisoarea"
 
 #: apps/client/src/components/theme-switch.tsx:31
 msgid "Switch to Dark Mode"
-msgstr ""
+msgstr "Comută la Modul Întunecat"
 
 #: apps/client/src/components/theme-switch.tsx:29
 msgid "Switch to Light Mode"
-msgstr ""
+msgstr "Comutați la Modul Lumină"
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:85
 msgid "System"
@@ -1516,11 +1516,11 @@ msgstr "Culoare text"
 
 #: apps/client/src/pages/public/error.tsx:17
 msgid "The page you're looking for doesn't exist."
-msgstr ""
+msgstr "Pagina pe care o cauţi nu există."
 
 #: apps/client/src/pages/public/error.tsx:29
 msgid "The request was invalid."
-msgstr ""
+msgstr "Cererea a fost invalidă."
 
 #: apps/client/src/services/errors/translate-error.ts:49
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
@@ -1656,11 +1656,11 @@ msgstr "Adresa URL trebuie să înceapă cu https://"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:247
 msgid "Use Azure OpenAI"
-msgstr ""
+msgstr "Folosește Azure OpenAI"
 
 #: apps/client/src/components/theme-switch.tsx:30
 msgid "Use System Theme"
-msgstr ""
+msgstr "Folosește tema sistemului"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/backup-otp/page.tsx:57
@@ -1728,7 +1728,7 @@ msgstr "Vă verificăm adresa de e-mail numai pentru a ne asigura că vă putem 
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:81
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:115
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:137
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:124
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:69
@@ -1746,12 +1746,12 @@ msgstr "Ce este nou în cea mai recentă versiune"
 
 #: apps/client/src/pages/public/error.tsx:26
 msgid "You are not authorized to access this page."
-msgstr ""
+msgstr "Nu sunteți autorizat să accesați această pagină."
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:164
-#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:186
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:89
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:164
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:114
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:135
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr "Puteți adăuga mai multe cuvinte cheie separându-le cu o virgulă sau apăsând enter."
 
@@ -1761,15 +1761,15 @@ msgstr "Poți, de asemenea, să introduci numele de utilizator."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:144
 msgid "You can also integrate with Azure OpenAI by enabling the <0>Use Azure OpenAI</0> checkbox and setting the Resource URL to your Azure OpenAI resource: <1>https://your-resource.openai.azure.com</1>. Set the deployment name in the Model field and specify the appropriate API version for your Azure deployment."
-msgstr ""
+msgstr "Poți de asemenea să integrezi cu Azure OpenAI prin activarea casetei de selectare Azure OpenAI</0> și setarea URL-ului de resurse pentru resursa OpenAI Azure: <1>https://your-resource. penai.azure.com</1>. Setați numele de implementare în câmpul Model și specificați versiunea API adecvată pentru implementarea Azore."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:153
 msgid "You can also integrate with Ollama simply by setting the API key to<0>sk-1234567890abcdef</0> and the Base URL to your Ollama URL, i.e.<1>http://localhost:11434/v1</1>. You can also pick and choose models and set the max tokens as per your preference."
-msgstr ""
+msgstr "De asemenea, puteți integra cu Ollama pur și simplu setând API key la<0>sk-1234567890abcdef</0> și URL-ul de bază la Ollama URL, i. .<1>http://localhost:11434/v1</1>. Poți, de asemenea, alege modele și seta token-urile maxime conform preferinței tale."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:122
 msgid "You can make use of the OpenAI API, Azure OpenAI, or Ollama to help you generate content, or improve your writing while composing your resume."
-msgstr ""
+msgstr "Puteți utiliza OpenAI API, Azure OpenAI sau Ollama pentru a vă ajuta să generați conținut sau să vă îmbunătățiți scrisul în timp ce compuneți reluarea."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:40
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
@@ -1777,7 +1777,7 @@ msgstr "Puteți urmări numărul de vizualizări pe care le-a primit CV-ul dvs. 
 
 #: apps/client/src/pages/public/error.tsx:20
 msgid "You don't have permission to access this page."
-msgstr ""
+msgstr "Nu aveţi permisiunea de a accesa această pagină."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:128
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."

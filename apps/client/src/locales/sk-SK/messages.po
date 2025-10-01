@@ -8,7 +8,7 @@ msgstr ""
 "Language: sk\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-10-01 09:15\n"
+"PO-Revision-Date: 2025-10-01 09:40\n"
 "Last-Translator: \n"
 "Language-Team: Slovak\n"
 "Plural-Forms: nplurals=4; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 3;\n"
@@ -135,11 +135,11 @@ msgstr "Pri overovaní súboru došlo k chybe."
 
 #: apps/client/src/pages/public/error.tsx:23
 msgid "An internal server error occurred."
-msgstr ""
+msgstr "Vyskytla sa interná chyba servera."
 
 #: apps/client/src/pages/public/error.tsx:32
 msgid "An unexpected error occurred."
-msgstr ""
+msgstr "Vyskytla sa neočakávaná chyba."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:134
 msgid "and many more..."
@@ -201,15 +201,15 @@ msgstr "Udeľovateľ"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:258
 msgid "Azure API Version"
-msgstr ""
+msgstr "Verzia rozhrania Azure API"
 
 #: apps/client/src/services/openai/client.ts:18
 msgid "Azure OpenAI Base URL, deployment name (model), and API version are required when using Azure OpenAI."
-msgstr ""
+msgstr "Pri používaní Azure OpenAI sa vyžaduje základná adresa URL, názov nasadenia (model) a verzia API."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Azure OpenAI Resource URL"
-msgstr ""
+msgstr "Adresa URL zdroja Azure OpenAI"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:99
 #: apps/client/src/pages/auth/forgot-password/page.tsx:100
@@ -277,7 +277,7 @@ msgstr "Stredová umelecká doska"
 
 #: apps/client/src/components/locale-switch.tsx:17
 msgid "Change Language"
-msgstr ""
+msgstr "Zmena jazyka"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
@@ -373,7 +373,7 @@ msgstr "Vytvorenie vzorového životopisu"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
 msgid "Current Password"
-msgstr ""
+msgstr "Aktuálne heslo"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:93
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:27
@@ -411,7 +411,7 @@ msgstr "Dark"
 msgid "Date"
 msgstr "Dátum"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:87
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:109
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:110
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:72
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:101
@@ -434,13 +434,13 @@ msgstr "Odstrániť účet"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
 msgid "Deployment Name"
-msgstr ""
+msgstr "Názov nasadenia"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:73
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:95
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:53
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:63
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:84
 msgid "Description"
 msgstr "Popis"
 
@@ -561,7 +561,7 @@ msgstr "Zadajte svoju e-mailovú adresu a my vám pošleme odkaz na obnovenie he
 
 #: apps/client/src/pages/public/error.tsx:46
 msgid "Error {statusCode}"
-msgstr ""
+msgstr "Chyba {statusCode}"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:283
 msgid "Errors"
@@ -678,7 +678,7 @@ msgstr "Prejsť na prístrojový panel"
 
 #: apps/client/src/pages/public/error.tsx:55
 msgid "Go to home"
-msgstr ""
+msgstr "Prejsť na domov"
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:31
 msgid "Google"
@@ -688,7 +688,7 @@ msgstr "Google"
 msgid "Grayscale"
 msgstr "Odtiene sivej"
 
-#: apps/client/src/pages/dashboard/resumes/page.tsx:43
+#: apps/client/src/pages/dashboard/resumes/page.tsx:45
 msgid "Grid"
 msgstr "Sieť"
 
@@ -705,7 +705,7 @@ msgid "Here, you can update your profile to customize and personalize your exper
 msgstr "Tu môžete aktualizovať svoj profil a prispôsobiť si ho."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:80
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:94
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:115
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:180
 msgid "Hidden"
 msgstr "Skryté"
@@ -840,10 +840,10 @@ msgstr "john.doe@example.com"
 msgid "JSON"
 msgstr "JSON"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:159
-#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:63
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:181
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:84
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:159
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:109
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:130
 msgid "Keywords"
 msgstr "Kľúčové slová"
 
@@ -876,7 +876,7 @@ msgid "Letter"
 msgstr "List"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:64
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:77
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:98
 msgid "Level"
 msgstr "Úroveň"
 
@@ -901,11 +901,11 @@ msgstr "Výška riadku"
 msgid "LinkedIn, JSON Resume, etc."
 msgstr "LinkedIn, JSON Resume atď."
 
-#: apps/client/src/pages/dashboard/resumes/page.tsx:47
+#: apps/client/src/pages/dashboard/resumes/page.tsx:49
 msgid "List"
 msgstr "Zoznam"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:101
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:123
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:93
@@ -975,13 +975,13 @@ msgid "Model"
 msgstr "Model"
 
 #: apps/client/src/pages/auth/register/page.tsx:98
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:59
-#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:48
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:81
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:69
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:36
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:73
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:70
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:88
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:153
 msgid "Name"
@@ -1051,7 +1051,7 @@ msgstr "Integrácia OpenAI"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
 msgid "OpenAI/Azure OpenAI/Ollama Integration"
-msgstr ""
+msgstr "Integrácia OpenAI/Azure OpenAI/Ollama"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:169
 msgid "OpenAI/Ollama API Key"
@@ -1184,7 +1184,7 @@ msgstr "Upozorniť na problém"
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/builder/page.tsx:60
-#: apps/client/src/pages/dashboard/resumes/page.tsx:20
+#: apps/client/src/pages/dashboard/resumes/page.tsx:22
 #: apps/client/src/pages/dashboard/settings/page.tsx:16
 #: apps/client/src/pages/home/components/footer.tsx:18
 #: apps/client/src/pages/home/page.tsx:24
@@ -1251,8 +1251,8 @@ msgid "Reset Zoom"
 msgstr "Obnovenie priblíženia"
 
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:86
-#: apps/client/src/pages/dashboard/resumes/page.tsx:20
-#: apps/client/src/pages/dashboard/resumes/page.tsx:37
+#: apps/client/src/pages/dashboard/resumes/page.tsx:22
+#: apps/client/src/pages/dashboard/resumes/page.tsx:39
 msgid "Resumes"
 msgstr "Životopisy"
 
@@ -1462,7 +1462,7 @@ msgstr "Bezpečné ukladanie záložných kódov"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:129
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:151
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:138
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:114
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:129
@@ -1486,11 +1486,11 @@ msgstr "Podporuje formáty strán A4/Letter"
 
 #: apps/client/src/components/theme-switch.tsx:31
 msgid "Switch to Dark Mode"
-msgstr ""
+msgstr "Prepnutie do tmavého režimu"
 
 #: apps/client/src/components/theme-switch.tsx:29
 msgid "Switch to Light Mode"
-msgstr ""
+msgstr "Prepnutie do režimu svetla"
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:85
 msgid "System"
@@ -1516,11 +1516,11 @@ msgstr "Farba textu"
 
 #: apps/client/src/pages/public/error.tsx:17
 msgid "The page you're looking for doesn't exist."
-msgstr ""
+msgstr "Stránka, ktorú hľadáte, neexistuje."
 
 #: apps/client/src/pages/public/error.tsx:29
 msgid "The request was invalid."
-msgstr ""
+msgstr "Žiadosť bola neplatná."
 
 #: apps/client/src/services/errors/translate-error.ts:49
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
@@ -1656,11 +1656,11 @@ msgstr "Adresa URL musí začínať https://"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:247
 msgid "Use Azure OpenAI"
-msgstr ""
+msgstr "Používanie Azure OpenAI"
 
 #: apps/client/src/components/theme-switch.tsx:30
 msgid "Use System Theme"
-msgstr ""
+msgstr "Použitie systémovej témy"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/backup-otp/page.tsx:57
@@ -1728,7 +1728,7 @@ msgstr "Vašu e-mailovú adresu overujeme len preto, aby sme vám mohli poslať 
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:81
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:115
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:137
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:124
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:69
@@ -1746,12 +1746,12 @@ msgstr "Novinky v najnovšej verzii"
 
 #: apps/client/src/pages/public/error.tsx:26
 msgid "You are not authorized to access this page."
-msgstr ""
+msgstr "Nemáte oprávnenie na prístup na túto stránku."
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:164
-#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
+#: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:186
+#: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:89
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:164
-#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:114
+#: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:135
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
 msgstr "Môžete pridať viacero kľúčových slov tak, že ich oddelíte čiarkou alebo stlačíte kláves enter."
 
@@ -1761,15 +1761,15 @@ msgstr "Môžete tiež zadať svoje používateľské meno."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:144
 msgid "You can also integrate with Azure OpenAI by enabling the <0>Use Azure OpenAI</0> checkbox and setting the Resource URL to your Azure OpenAI resource: <1>https://your-resource.openai.azure.com</1>. Set the deployment name in the Model field and specify the appropriate API version for your Azure deployment."
-msgstr ""
+msgstr "Môžete sa tiež integrovať s Azure OpenAI tak, že začiarknete políčko <0>Použiť Azure OpenAI</0> a nastavíte adresu URL zdroja na váš zdroj Azure OpenAI: <1>https://your-resource.openai.azure.com</1>. Nastavte názov nasadenia v poli Model a zadajte príslušnú verziu API pre vaše nasadenie Azure."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:153
 msgid "You can also integrate with Ollama simply by setting the API key to<0>sk-1234567890abcdef</0> and the Base URL to your Ollama URL, i.e.<1>http://localhost:11434/v1</1>. You can also pick and choose models and set the max tokens as per your preference."
-msgstr ""
+msgstr "Môžete sa tiež integrovať so službou Ollama jednoduchým nastavením kľúča API<0>tosk-1234567890abcdef</0> a základnej adresy URL na vašu adresu URL Ollama, t. j.<1>http://localhost:11434/v1.</1> Môžete si tiež vybrať modely a nastaviť maximálne tokeny podľa vašich preferencií."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:122
 msgid "You can make use of the OpenAI API, Azure OpenAI, or Ollama to help you generate content, or improve your writing while composing your resume."
-msgstr ""
+msgstr "Môžete využiť rozhranie API OpenAI, Azure OpenAI alebo Ollama, ktoré vám pomôžu pri vytváraní obsahu, alebo zlepšiť písanie pri písaní životopisu."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:40
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
@@ -1777,7 +1777,7 @@ msgstr "Ak povolíte verejné zdieľanie, môžete sledovať počet zobrazení v
 
 #: apps/client/src/pages/public/error.tsx:20
 msgid "You don't have permission to access this page."
-msgstr ""
+msgstr "Nemáte oprávnenie na prístup na túto stránku."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:128
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
