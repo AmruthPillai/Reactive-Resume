@@ -5,7 +5,7 @@ type BrandIconProps = {
 };
 
 export const BrandIcon = forwardRef<HTMLImageElement, BrandIconProps>(({ slug }, ref) => {
-  if (slug === "linkedin") {
+  if (slug.toLowerCase() === "linkedin") {
     return (
       <img
         ref={ref}
