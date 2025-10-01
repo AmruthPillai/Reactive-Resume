@@ -1,6 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
 
-import { RESUMES_KEY, USER_KEY } from "@/client/constants/query-keys";
 import { axios } from "@/client/libs/axios";
 import { queryClient } from "@/client/libs/query-client";
 import { useAuthStore } from "@/client/stores/auth";
@@ -18,13 +17,11 @@ export const useLogout = () => {
     mutationFn: logout,
     onSuccess: () => {
       setUser(null);
-      queryClient.setQueryData(USER_KEY, null);
-      queryClient.setQueryData(RESUMES_KEY, null);
+      queryClient.clear();
     },
     onError: () => {
       setUser(null);
-      queryClient.setQueryData(USER_KEY, null);
-      queryClient.setQueryData(RESUMES_KEY, null);
+      queryClient.clear();
     },
   });
 

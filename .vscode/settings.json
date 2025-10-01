@@ -1,9 +1,9 @@
 {
   "css.validate": false,
-  "typescript.tsdk": "node_modules/typescript/lib",
+  "i18n-ally.localesPaths": ["apps/client/src/locales"],
   "tailwindCSS.experimental.classRegex": [
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ],
-  "i18n-ally.localesPaths": ["apps/client/src/locales"]
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
