@@ -2,8 +2,8 @@ import { t } from "@lingui/macro";
 import { ListIcon, SquaresFourIcon } from "@phosphor-icons/react";
 import { ScrollArea, Tabs, TabsContent, TabsList, TabsTrigger } from "@reactive-resume/ui";
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { useLocalStorage } from "usehooks-ts";
 
 import { GridView } from "./_layouts/grid";
 import { ListView } from "./_layouts/list";
@@ -11,7 +11,9 @@ import { ListView } from "./_layouts/list";
 type Layout = "grid" | "list";
 
 export const ResumesPage = () => {
-  const [layout, setLayout] = useState<Layout>("grid");
+  const [layout, setLayout] = useLocalStorage<Layout>("dashboard-layout", "grid", {
+    initializeWithValue: true,
+  });
 
   return (
     <>
