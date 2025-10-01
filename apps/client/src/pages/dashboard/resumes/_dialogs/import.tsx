@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/macro";
-import { Check, DownloadSimple } from "@phosphor-icons/react";
+import { CheckIcon, DownloadSimpleIcon } from "@phosphor-icons/react";
 import type { JsonResume, LinkedIn, ReactiveResumeV3 } from "@reactive-resume/parser";
 import {
   JsonResumeParser,
@@ -204,7 +204,7 @@ export const ImportDialog = () => {
             <DialogHeader>
               <DialogTitle>
                 <div className="flex items-center space-x-2.5">
-                  <DownloadSimple />
+                  <DownloadSimpleIcon />
                   <h2>{t`Import an existing resume`}</h2>
                 </div>
               </DialogTitle>
@@ -310,7 +310,7 @@ export const ImportDialog = () => {
                     </Button>
 
                     <Button disabled type="button" variant="success">
-                      <Check size={16} weight="bold" className="mr-2" />
+                      <CheckIcon size={16} weight="bold" className="mr-2" />
                       {t`Validated`}
                     </Button>
                   </>

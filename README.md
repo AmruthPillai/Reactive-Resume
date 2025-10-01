@@ -1,4 +1,15 @@
-![Reactive Resume](https://i.imgur.com/FFc4nyZ.jpg)
+<div align="center" markdown="1">
+  <a href="https://go.warp.dev/Reactive-Resume">
+    <img alt="Warp Sponsorship" width="400" src="https://github.com/warpdotdev/brand-assets/blob/main/Github/Sponsor/Warp-Github-LG-03.png?raw=true" />
+  </a>
+
+### [Warp, built for coding with multiple AI agents.](https://go.warp.dev/Reactive-Resume)
+
+[Available for MacOS, Linux, & Windows](https://go.warp.dev/Reactive-Resume)<br>
+
+---
+
+<img alt="Reactive Resume" width="800" src="https://i.imgur.com/FFc4nyZ.jpg" />
 
 ![App Version](https://img.shields.io/github/package-json/version/AmruthPillai/Reactive-Resume?label=version)
 [![Docker Pulls](https://img.shields.io/docker/pulls/amruthpillai/reactive-resume)](https://hub.docker.com/repository/docker/amruthpillai/reactive-resume)
@@ -11,6 +22,8 @@
 A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume.
 
 ### [Go to App](https://rxresu.me/) | [Docs](https://docs.rxresu.me/)
+
+</div>
 
 ## Description
 
@@ -93,7 +106,7 @@ _By the community, for the community._
 A passion project by [Amruth Pillai](https://www.amruthpillai.com/)
 
 <p>
-  <a href="https://www.digitalocean.com/?utm_medium=opensource&utm_source=Reactive-Resume">
+  <a href="https://m.do.co/c/ceae1fff245e">
     <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/PoweredByDO/DO_Powered_by_Badge_blue.svg" width="200px">
   </a>
 </p>

@@ -1,4 +1,4 @@
-import { X } from "@phosphor-icons/react";
+import { XIcon } from "@phosphor-icons/react";
 import * as ToastPrimitives from "@radix-ui/react-toast";
 import { cn } from "@reactive-resume/utils";
 import { type VariantProps } from "class-variance-authority";
@@ -80,7 +80,7 @@ export const ToastClose = forwardRef<
     toast-close=""
     {...props}
   >
-    <X className="size-4" />
+    <XIcon className="size-4" />
   </ToastPrimitives.Close>
 ));
 

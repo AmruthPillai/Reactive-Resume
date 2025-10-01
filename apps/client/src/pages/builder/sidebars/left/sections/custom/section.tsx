@@ -1,6 +1,6 @@
 import { t, Trans } from "@lingui/macro";
 import { createId } from "@paralleldrive/cuid2";
-import { DotsSixVertical, Envelope, Plus, X } from "@phosphor-icons/react";
+import { DotsSixVerticalIcon, EnvelopeIcon, PlusIcon, XIcon } from "@phosphor-icons/react";
 import type { CustomField as ICustomField } from "@reactive-resume/schema";
 import {
   Button,
@@ -46,14 +46,14 @@ export const CustomField = ({ field, onChange, onRemove }: CustomFieldProps) => 
             controls.start(event);
           }}
         >
-          <DotsSixVertical />
+          <DotsSixVerticalIcon />
         </Button>
 
         <Popover>
           <Tooltip content={t`Icon`}>
             <PopoverTrigger asChild>
               <Button size="icon" variant="ghost" className="shrink-0">
-                {field.icon ? <i className={cn(`ph ph-${field.icon}`)} /> : <Envelope />}
+                {field.icon ? <i className={cn(`ph ph-${field.icon}`)} /> : <EnvelopeIcon />}
               </Button>
             </PopoverTrigger>
           </Tooltip>
@@ -109,7 +109,7 @@ export const CustomField = ({ field, onChange, onRemove }: CustomFieldProps) => 
             onRemove(field.id);
           }}
         >
-          <X />
+          <XIcon />
         </Button>
       </div>
     </Reorder.Item>
@@ -171,7 +171,7 @@ export const CustomFieldsSection = ({ className }: Props) => {
       </AnimatePresence>
 
       <Button variant="link" onClick={onAddCustomField}>
-        <Plus className="mr-2" />
+        <PlusIcon className="mr-2" />
         <span>{t`Add a custom field`}</span>
       </Button>
     </div>

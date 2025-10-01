@@ -1,4 +1,4 @@
-import { MagnifyingGlass } from "@phosphor-icons/react";
+import { MagnifyingGlassIcon } from "@phosphor-icons/react";
 import { cn } from "@reactive-resume/utils";
 import { Command as CommandPrimitive } from "cmdk";
 import { forwardRef } from "react";
@@ -21,7 +21,7 @@ export const CommandInput = forwardRef<
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
 >(({ className, ...props }, ref) => (
   <div className="flex items-center border-b px-3" cmdk-input-wrapper="">
-    <MagnifyingGlass size={16} className="mr-1 shrink-0 opacity-50" />
+    <MagnifyingGlassIcon size={16} className="mr-1 shrink-0 opacity-50" />
     <CommandPrimitive.Input
       ref={ref}
       className={cn(

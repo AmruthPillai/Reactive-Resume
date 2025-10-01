@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { Tag } from "@phosphor-icons/react";
+import { TagIcon } from "@phosphor-icons/react";
 import type { URL } from "@reactive-resume/schema";
 import { urlSchema } from "@reactive-resume/schema";
 import {
@@ -42,7 +42,7 @@ export const URLInput = forwardRef<HTMLInputElement, Props>(
             <Tooltip content={t`Label`}>
               <PopoverTrigger asChild>
                 <Button size="icon" variant="ghost">
-                  <Tag />
+                  <TagIcon />
                 </Button>
               </PopoverTrigger>
             </Tooltip>

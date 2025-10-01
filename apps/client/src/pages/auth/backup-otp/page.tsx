@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/macro";
-import { ArrowLeft } from "@phosphor-icons/react";
+import { ArrowLeftIcon } from "@phosphor-icons/react";
 import { twoFactorBackupSchema } from "@reactive-resume/dto";
 import { usePasswordToggle } from "@reactive-resume/hooks";
 import {
@@ -95,7 +95,7 @@ export const BackupOtpPage = () => {
                   void navigate(-1);
                 }}
               >
-                <ArrowLeft size={14} className="mr-2" />
+                <ArrowLeftIcon size={14} className="mr-2" />
                 <span>{t`Back`}</span>
               </Button>
 

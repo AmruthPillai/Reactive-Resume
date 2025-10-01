@@ -1,6 +1,6 @@
 import { t } from "@lingui/macro";
 import { createId } from "@paralleldrive/cuid2";
-import { CopySimple, PencilSimple, Plus } from "@phosphor-icons/react";
+import { CopySimpleIcon, PencilSimpleIcon, PlusIcon } from "@phosphor-icons/react";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import type { SectionItem, SectionWithItem } from "@reactive-resume/schema";
 import {
@@ -156,9 +156,9 @@ export const SectionDialog = <T extends SectionItem>({
               <DialogHeader>
                 <DialogTitle>
                   <div className="flex items-center space-x-2.5">
-                    {isCreate && <Plus />}
-                    {isUpdate && <PencilSimple />}
-                    {isDuplicate && <CopySimple />}
+                    {isCreate && <PlusIcon />}
+                    {isUpdate && <PencilSimpleIcon />}
+                    {isDuplicate && <CopySimpleIcon />}
                     <h2>
                       {isCreate && t`Create a new item`}
                       {isUpdate && t`Update an existing item`}

@@ -1,9 +1,10 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t, Trans } from "@lingui/macro";
-import { FloppyDisk, TrashSimple } from "@phosphor-icons/react";
+import { FloppyDiskIcon, TrashSimpleIcon } from "@phosphor-icons/react";
 import {
   Alert,
   Button,
+  Checkbox,
   Form,
   FormControl,
   FormField,
@@ -15,7 +16,11 @@ import {
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { DEFAULT_MAX_TOKENS, DEFAULT_MODEL } from "@/client/constants/llm";
+import {
+  DEFAULT_AZURE_API_VERSION,
+  DEFAULT_MAX_TOKENS,
+  DEFAULT_MODEL,
+} from "@/client/constants/llm";
 import { useOpenAiStore } from "@/client/stores/openai";
 
 const formSchema = z.object({
@@ -32,13 +37,27 @@ const formSchema = z.object({
     .default(""),
   model: z.string().default(DEFAULT_MODEL),
   maxTokens: z.number().default(DEFAULT_MAX_TOKENS),
+  isAzure: z.boolean().default(false),
+  azureApiVersion: z.string().default(DEFAULT_AZURE_API_VERSION),
 });
 
 type FormValues = z.infer<typeof formSchema>;
 
 export const OpenAISettings = () => {
-  const { apiKey, setApiKey, baseURL, setBaseURL, model, setModel, maxTokens, setMaxTokens } =
-    useOpenAiStore();
+  const {
+    apiKey,
+    setApiKey,
+    baseURL,
+    setBaseURL,
+    model,
+    setModel,
+    maxTokens,
+    setMaxTokens,
+    isAzure,
+    setIsAzure,
+    azureApiVersion,
+    setAzureApiVersion,
+  } = useOpenAiStore();
 
   const isEnabled = !!apiKey;
 
@@ -49,11 +68,21 @@ export const OpenAISettings = () => {
       baseURL: baseURL ?? "",
       model: model ?? DEFAULT_MODEL,
       maxTokens: maxTokens ?? DEFAULT_MAX_TOKENS,
+      isAzure,
+      azureApiVersion: azureApiVersion ?? DEFAULT_AZURE_API_VERSION,
     },
   });
 
-  const onSubmit = ({ apiKey, baseURL, model, maxTokens }: FormValues) => {
+  const onSubmit = ({
+    apiKey,
+    baseURL,
+    model,
+    maxTokens,
+    isAzure,
+    azureApiVersion,
+  }: FormValues) => {
     setApiKey(apiKey);
+    setIsAzure(isAzure);
     if (baseURL) {
       setBaseURL(baseURL);
     }
@@ -63,6 +92,9 @@ export const OpenAISettings = () => {
     if (maxTokens) {
       setMaxTokens(maxTokens);
     }
+    if (azureApiVersion) {
+      setAzureApiVersion(azureApiVersion);
+    }
   };
 
   const onRemove = () => {
@@ -70,15 +102,24 @@ export const OpenAISettings = () => {
     setBaseURL(null);
     setModel(DEFAULT_MODEL);
     setMaxTokens(DEFAULT_MAX_TOKENS);
-    form.reset({ apiKey: "", baseURL: "", model: DEFAULT_MODEL, maxTokens: DEFAULT_MAX_TOKENS });
+    setIsAzure(false);
+    setAzureApiVersion(DEFAULT_AZURE_API_VERSION);
+    form.reset({
+      apiKey: "",
+      baseURL: "",
+      model: DEFAULT_MODEL,
+      maxTokens: DEFAULT_MAX_TOKENS,
+      isAzure: false,
+      azureApiVersion: DEFAULT_AZURE_API_VERSION,
+    });
   };
 
   return (
     <div className="space-y-6">
       <div>
-        <h3 className="text-2xl font-bold leading-relaxed tracking-tight">{t`OpenAI/Ollama Integration`}</h3>
+        <h3 className="text-2xl font-bold leading-relaxed tracking-tight">{t`OpenAI/Azure OpenAI/Ollama Integration`}</h3>
         <p className="leading-relaxed opacity-75">
-          {t`You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume.`}
+          {t`You can make use of the OpenAI API, Azure OpenAI, or Ollama to help you generate content, or improve your writing while composing your resume.`}
         </p>
       </div>
 
@@ -101,10 +142,19 @@ export const OpenAISettings = () => {
 
         <p>
           <Trans>
+            You can also integrate with Azure OpenAI by enabling the <code>Use Azure OpenAI</code>{" "}
+            checkbox and setting the Resource URL to your Azure OpenAI resource:{" "}
+            <code>https://your-resource.openai.azure.com</code>. Set the deployment name in the
+            Model field and specify the appropriate API version for your Azure deployment.
+          </Trans>
+        </p>
+
+        <p>
+          <Trans>
             You can also integrate with Ollama simply by setting the API key to
-            `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e.
-            `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens
-            as per your preference.
+            <code>sk-1234567890abcdef</code> and the Base URL to your Ollama URL, i.e.
+            <code>http://localhost:11434/v1</code>. You can also pick and choose models and set the
+            max tokens as per your preference.
           </Trans>
         </p>
       </div>
@@ -129,9 +179,19 @@ export const OpenAISettings = () => {
             control={form.control}
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t`Base URL`}</FormLabel>
+                <FormLabel>
+                  {form.watch("isAzure") ? t`Azure OpenAI Resource URL` : t`Base URL`}
+                </FormLabel>
                 <FormControl>
-                  <Input type="text" placeholder="http://localhost:11434/v1" {...field} />
+                  <Input
+                    type="text"
+                    placeholder={
+                      form.watch("isAzure")
+                        ? "https://your-resource.openai.azure.com"
+                        : "http://localhost:11434/v1"
+                    }
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -142,7 +202,7 @@ export const OpenAISettings = () => {
             control={form.control}
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t`Model`}</FormLabel>
+                <FormLabel>{form.watch("isAzure") ? t`Deployment Name` : t`Model`}</FormLabel>
                 <FormControl>
                   <Input type="text" placeholder={DEFAULT_MODEL} {...field} />
                 </FormControl>
@@ -170,15 +230,53 @@ export const OpenAISettings = () => {
               </FormItem>
             )}
           />
+          <FormField
+            name="isAzure"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem className="flex flex-row items-center space-x-3 space-y-0">
+                <FormControl>
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={(value) => {
+                      field.onChange(Boolean(value));
+                    }}
+                  />
+                </FormControl>
+                <div className="space-y-1 leading-none">
+                  <FormLabel>{t`Use Azure OpenAI`}</FormLabel>
+                </div>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            name="azureApiVersion"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem className={form.watch("isAzure") ? "" : "opacity-50"}>
+                <FormLabel>{t`Azure API Version`}</FormLabel>
+                <FormControl>
+                  <Input
+                    type="text"
+                    placeholder={DEFAULT_AZURE_API_VERSION}
+                    disabled={!form.watch("isAzure")}
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           <div className="flex items-center space-x-2 self-end sm:col-start-2">
             <Button type="submit" disabled={!form.formState.isValid}>
-              {isEnabled && <FloppyDisk className="mr-2" />}
+              {isEnabled && <FloppyDiskIcon className="mr-2" />}
               {isEnabled ? t`Saved` : t`Save Locally`}
             </Button>
 
             {isEnabled && (
               <Button type="reset" variant="ghost" onClick={onRemove}>
-                <TrashSimple className="mr-2" />
+                <TrashSimpleIcon className="mr-2" />
                 {t`Forget`}
               </Button>
             )}

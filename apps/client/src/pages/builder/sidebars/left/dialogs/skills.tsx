@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/macro";
-import { X } from "@phosphor-icons/react";
+import { XIcon } from "@phosphor-icons/react";
 import { defaultSkill, skillSchema } from "@reactive-resume/schema";
 import {
   Badge,
@@ -133,7 +133,7 @@ export const SkillsDialog = () => {
                         }}
                       >
                         <span className="mr-1">{item}</span>
-                        <X size={12} weight="bold" />
+                        <XIcon size={12} weight="bold" />
                       </Badge>
                     </motion.div>
                   ))}

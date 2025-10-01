@@ -1,11 +1,11 @@
 import { t } from "@lingui/macro";
 import {
-  CaretDown,
-  ChatTeardropText,
-  CircleNotch,
-  Exam,
-  MagicWand,
-  PenNib,
+  CaretDownIcon,
+  ChatTeardropTextIcon,
+  CircleNotchIcon,
+  ExamIcon,
+  MagicWandIcon,
+  PenNibIcon,
 } from "@phosphor-icons/react";
 import {
   Badge,
@@ -75,27 +75,31 @@ export const AiActions = ({ value, onChange, className }: Props) => {
           variant="primary"
           className="-rotate-90 bg-background px-2 text-[10px] leading-[10px]"
         >
-          <MagicWand size={10} className="mr-1" />
+          <MagicWandIcon size={10} className="mr-1" />
           {t`AI`}
         </Badge>
       </div>
 
       <Button size="sm" variant="outline" disabled={!!loading} onClick={() => onClick("improve")}>
-        {loading === "improve" ? <CircleNotch className="animate-spin" /> : <PenNib />}
+        {loading === "improve" ? <CircleNotchIcon className="animate-spin" /> : <PenNibIcon />}
         <span className="ml-2 text-xs">{t`Improve Writing`}</span>
       </Button>
 
       <Button size="sm" variant="outline" disabled={!!loading} onClick={() => onClick("fix")}>
-        {loading === "fix" ? <CircleNotch className="animate-spin" /> : <Exam />}
+        {loading === "fix" ? <CircleNotchIcon className="animate-spin" /> : <ExamIcon />}
         <span className="ml-2 text-xs">{t`Fix Spelling & Grammar`}</span>
       </Button>
 
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button size="sm" variant="outline" disabled={!!loading}>
-            {loading === "tone" ? <CircleNotch className="animate-spin" /> : <ChatTeardropText />}
+            {loading === "tone" ? (
+              <CircleNotchIcon className="animate-spin" />
+            ) : (
+              <ChatTeardropTextIcon />
+            )}
             <span className="mx-2 text-xs">{t`Change Tone`}</span>
-            <CaretDown />
+            <CaretDownIcon />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>

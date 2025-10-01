@@ -1,17 +1,17 @@
 import type { IconProps } from "@phosphor-icons/react";
 import {
-  Code,
-  DiamondsFour,
-  DownloadSimple,
-  Info,
-  Layout,
-  Note,
-  Palette,
-  ReadCvLogo,
-  ShareFat,
-  TextT,
-  Translate,
-  TrendUp,
+  CodeIcon,
+  DiamondsFourIcon,
+  DownloadSimpleIcon,
+  InfoIcon,
+  LayoutIcon,
+  NoteIcon,
+  PaletteIcon,
+  ReadCvLogoIcon,
+  ShareFatIcon,
+  TextTIcon,
+  TranslateIcon,
+  TrendUpIcon,
 } from "@phosphor-icons/react";
 import type { ButtonProps } from "@reactive-resume/ui";
 import { Button, Tooltip } from "@reactive-resume/ui";
@@ -34,40 +34,40 @@ const getSectionIcon = (id: MetadataKey, props: IconProps = {}) => {
   switch (id) {
     // Left Sidebar
     case "notes": {
-      return <Note size={18} {...props} />;
+      return <NoteIcon size={18} {...props} />;
     }
     case "template": {
-      return <DiamondsFour size={18} {...props} />;
+      return <DiamondsFourIcon size={18} {...props} />;
     }
     case "layout": {
-      return <Layout size={18} {...props} />;
+      return <LayoutIcon size={18} {...props} />;
     }
     case "typography": {
-      return <TextT size={18} {...props} />;
+      return <TextTIcon size={18} {...props} />;
     }
     case "theme": {
-      return <Palette size={18} {...props} />;
+      return <PaletteIcon size={18} {...props} />;
     }
     case "css": {
-      return <Code size={18} {...props} />;
+      return <CodeIcon size={18} {...props} />;
     }
     case "page": {
-      return <ReadCvLogo size={18} {...props} />;
+      return <ReadCvLogoIcon size={18} {...props} />;
     }
     case "locale": {
-      return <Translate size={18} {...props} />;
+      return <TranslateIcon size={18} {...props} />;
     }
     case "sharing": {
-      return <ShareFat size={18} {...props} />;
+      return <ShareFatIcon size={18} {...props} />;
     }
     case "statistics": {
-      return <TrendUp size={18} {...props} />;
+      return <TrendUpIcon size={18} {...props} />;
     }
     case "export": {
-      return <DownloadSimple size={18} {...props} />;
+      return <DownloadSimpleIcon size={18} {...props} />;
     }
     case "information": {
-      return <Info size={18} {...props} />;
+      return <InfoIcon size={18} {...props} />;
     }
 
     default: {

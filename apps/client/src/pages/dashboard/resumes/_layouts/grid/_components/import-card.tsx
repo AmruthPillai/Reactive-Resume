@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { DownloadSimple } from "@phosphor-icons/react";
+import { DownloadSimpleIcon } from "@phosphor-icons/react";
 import { KeyboardShortcut } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 
@@ -16,7 +16,7 @@ export const ImportResumeCard = () => {
         open("create");
       }}
     >
-      <DownloadSimple size={64} weight="thin" />
+      <DownloadSimpleIcon size={64} weight="thin" />
 
       <div
         className={cn(

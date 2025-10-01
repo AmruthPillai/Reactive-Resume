@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { DownloadSimple } from "@phosphor-icons/react";
+import { DownloadSimpleIcon } from "@phosphor-icons/react";
 import { KeyboardShortcut } from "@reactive-resume/ui";
 
 import { useDialog } from "@/client/stores/dialog";
@@ -11,7 +11,7 @@ export const ImportResumeListItem = () => {
 
   return (
     <BaseListItem
-      start={<DownloadSimple size={18} />}
+      start={<DownloadSimpleIcon size={18} />}
       title={
         <>
           <span>{t`Import an existing resume`}</span>

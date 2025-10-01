@@ -1,4 +1,4 @@
-import { CaretRight, Check, DotOutline } from "@phosphor-icons/react";
+import { CaretRightIcon, CheckIcon, DotOutlineIcon } from "@phosphor-icons/react";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { cn } from "@reactive-resume/utils";
 import { forwardRef } from "react";
@@ -31,7 +31,7 @@ export const DropdownMenuSubTrigger = forwardRef<
     {...props}
   >
     {children}
-    <CaretRight className="ml-auto size-4" />
+    <CaretRightIcon className="ml-auto size-4" />
   </DropdownMenuPrimitive.SubTrigger>
 ));
 
@@ -111,7 +111,7 @@ export const DropdownMenuCheckboxItem = forwardRef<
   >
     <span className="absolute left-2 flex size-3.5 items-center justify-center">
       <DropdownMenuPrimitive.ItemIndicator>
-        <Check className="size-4" />
+        <CheckIcon className="size-4" />
       </DropdownMenuPrimitive.ItemIndicator>
     </span>
     {children}
@@ -134,7 +134,7 @@ export const DropdownMenuRadioItem = forwardRef<
   >
     <span className="absolute left-2 flex size-3.5 items-center justify-center">
       <DropdownMenuPrimitive.ItemIndicator>
-        <DotOutline size={18} weight="fill" className="fill-current" />
+        <DotOutlineIcon size={18} weight="fill" className="fill-current" />
       </DropdownMenuPrimitive.ItemIndicator>
     </span>
     {children}

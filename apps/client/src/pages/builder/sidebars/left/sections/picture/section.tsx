@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { Aperture, Trash, UploadSimple } from "@phosphor-icons/react";
+import { ApertureIcon, TrashIcon, UploadSimpleIcon } from "@phosphor-icons/react";
 import {
   Avatar,
   AvatarImage,
@@ -56,11 +56,11 @@ export const PictureSection = () => {
 
         {isValidUrl ? (
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center rounded-full bg-background/30 opacity-0 transition-opacity group-hover:opacity-100">
-            <Trash size={16} weight="bold" />
+            <TrashIcon size={16} weight="bold" />
           </div>
         ) : (
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center rounded-full bg-background/30 opacity-0 transition-opacity group-hover:opacity-100">
-            <UploadSimple size={16} weight="bold" />
+            <UploadSimpleIcon size={16} weight="bold" />
           </div>
         )}
       </div>
@@ -88,7 +88,7 @@ export const PictureSection = () => {
                   exit={{ opacity: 0 }}
                   className={cn(buttonVariants({ size: "icon", variant: "ghost" }))}
                 >
-                  <Aperture />
+                  <ApertureIcon />
                 </motion.button>
               </PopoverTrigger>
               <PopoverContent className="w-[360px]">

@@ -1,4 +1,4 @@
-import { SidebarSimple } from "@phosphor-icons/react";
+import { SidebarSimpleIcon } from "@phosphor-icons/react";
 import { Button, Sheet, SheetClose, SheetContent, SheetTrigger } from "@reactive-resume/ui";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -15,14 +15,14 @@ export const DashboardLayout = () => {
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
             <Button size="icon" variant="ghost" className="bg-background">
-              <SidebarSimple />
+              <SidebarSimpleIcon />
             </Button>
           </SheetTrigger>
 
           <SheetContent showClose={false} side="left" className="focus-visible:outline-none">
             <SheetClose asChild className="absolute left-4 top-4">
               <Button size="icon" variant="ghost">
-                <SidebarSimple />
+                <SidebarSimpleIcon />
               </Button>
             </SheetClose>
 
