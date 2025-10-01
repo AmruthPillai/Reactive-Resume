@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-import { DEFAULT_MAX_TOKENS, DEFAULT_MODEL, DEFAULT_AZURE_API_VERSION } from "../constants/llm";
+import { DEFAULT_AZURE_API_VERSION, DEFAULT_MAX_TOKENS, DEFAULT_MODEL } from "../constants/llm";
 
 type OpenAIStore = {
   baseURL: string | null;
