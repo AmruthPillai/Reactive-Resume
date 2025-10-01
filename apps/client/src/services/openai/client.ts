@@ -13,40 +13,25 @@ export const openai = () => {
   }
 
   if (isAzure) {
-    if (!baseURL) {
-      throw new Error(t`Azure OpenAI Base URL is required when using Azure OpenAI.`);
+    if (!baseURL || !model || !azureApiVersion) {
+      throw new Error(
+        t`Azure OpenAI Base URL, deployment name (model), and API version are required when using Azure OpenAI.`,
+      );
     }
 
-    if (!model) {
-      throw new Error(t`Azure OpenAI deployment name (model) is required when using Azure OpenAI.`);
-    }
-
-    if (!azureApiVersion) {
-      throw new Error(t`Azure OpenAI API version is required when using Azure OpenAI.`);
-    }
-
-    // Construct Azure OpenAI URL: https://your-resource.openai.azure.com/openai/deployments/your-deployment
-    const azureBaseURL = baseURL.endsWith('/') ? baseURL.slice(0, -1) : baseURL;
-    const constructedURL = `${azureBaseURL}/openai/deployments/${model}`;
+    const azureBaseURL = baseURL.replace(/\/$/, "");
 
     return new OpenAI({
       apiKey,
-      baseURL: constructedURL,
-      defaultQuery: { "api-version": azureApiVersion ?? undefined },
-      dangerouslyAllowBrowser: true,
-    });
-  }
-
-  if (baseURL) {
-    return new OpenAI({
-      apiKey,
-      baseURL,
+      baseURL: `${azureBaseURL}/openai/deployments/${model}`,
+      defaultQuery: { "api-version": azureApiVersion },
       dangerouslyAllowBrowser: true,
     });
   }
 
   return new OpenAI({
     apiKey,
+    baseURL,
     dangerouslyAllowBrowser: true,
   });
 };

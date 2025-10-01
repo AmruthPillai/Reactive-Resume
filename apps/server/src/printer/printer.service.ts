@@ -145,7 +145,7 @@ export class PrinterService {
           Promise.all(
             // eslint-disable-next-line unicorn/prefer-spread
             Array.from(document.images).map((img) => {
-              if (img.complete) return;
+              if (img.complete) return Promise.resolve();
               return new Promise((resolve) => {
                 // eslint-disable-next-line unicorn/prefer-add-event-listener
                 img.onload = img.onerror = resolve;
