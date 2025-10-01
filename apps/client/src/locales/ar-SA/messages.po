@@ -8,7 +8,7 @@ msgstr ""
 "Language: ar\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-10-01 07:47\n"
+"PO-Revision-Date: 2025-10-01 09:15\n"
 "Last-Translator: \n"
 "Language-Team: Arabic\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
@@ -30,19 +30,19 @@ msgstr "{templatesCount} قوالب سيرة ذاتية لتختار من بين
 msgid "{value, plural, one {Column} other {Columns}}"
 msgstr "{value, plural, one {العمود} other {الأعمدة}}"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:20
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:25
 msgid "<0>I built Reactive Resume mostly by myself during my spare time, with a lot of help from other great open-source contributors.</0><1>If you like the app and want to support keeping it free forever, please donate whatever you can afford to give.</1>"
 msgstr "<0>بنيتُ ريأكتف رسومي في الغالب بنفسي خلال وقت فراغي، مع الكثير من المساعدة من المساهمين الكبار في المصدر المفتوح. /0><1>إذا كنت تعجبك التطبيق وترغب في دعم بقائه مجاناً إلى الأبد، يرجى التبرع بكل ما يمكنك منحه.</1>"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:51
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:56
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>أنا متأكد من أن التطبيق ليس مثالياً، لكنني أود أن يكون كذلك. /0><1>إذا واجهتك أي مشاكل أثناء إنشاء سيرتك الذاتية، أو لديك فكرة من شأنها أن تساعدك والمستخدمين الآخرين في إنشاء سيرتك الذاتية بسهولة أكبر، أنشئ تَذْكِرَة على المستودع أو أرسل لي رسالة بريد إلكتروني عن ذلك. /1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:201
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:299
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr "<0>ملاحظة: </0>، باستخدام API OpenAI ، فإنك تقر وتقبل شروط الاستخدام <1></1> و<2>سياسة الخصوصية </2> التي أوجزها OpenAI. يرجى ملاحظة أن الاستئناف التفاعلي لا يتحمل أي مسؤولية عن أي استخدام غير سليم أو غير مأذون به للخدمة، ويقع أي انعكاسات أو التزامات ناجمة عن ذلك على عاتق المستعمل وحده."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:85
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:90
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
 msgstr "<0>لقد قضى المجتمع الكثير من الوقت في كتابة التوثيق والشرح لريأكتف ريسومي، وأنا متأكد من أنه سيساعدك على البَدْء في التطبيق. /0><1>هناك أيضا الكثير من الأمثلة لمساعدتك على البَدْء، والمميزات التي قد لا تعرفها عن أيها يمكن أن تساعدك على بناء سيرتك الذاتية المثالية. /1>"
 
@@ -117,7 +117,7 @@ msgstr "إضافة عنصر جديد"
 msgid "Add a new section"
 msgstr "إضافة قسم جديد"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:261
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:266
 msgid "Add New Page"
 msgstr "إضافة صفحة جديدة"
 
@@ -199,6 +199,18 @@ msgstr "متوفر في {languagesCount} لغات"
 msgid "Awarder"
 msgstr "إنجازات"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:258
+msgid "Azure API Version"
+msgstr ""
+
+#: apps/client/src/services/openai/client.ts:18
+msgid "Azure OpenAI Base URL, deployment name (model), and API version are required when using Azure OpenAI."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
+msgid "Azure OpenAI Resource URL"
+msgstr ""
+
 #: apps/client/src/pages/auth/backup-otp/page.tsx:99
 #: apps/client/src/pages/auth/forgot-password/page.tsx:100
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:243
@@ -217,7 +229,7 @@ msgstr "رمز النسخ الاحتياطي"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "قد تحتوي رموز النسخ الاحتياطي على أحرف أو أرقام صغيرة فقط، ويجب أن تكون بالضبط 10 أحرف."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:132
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Base URL"
 msgstr "الرابط الأساسي"
 
@@ -254,8 +266,8 @@ msgstr "من قبل المجتمع، من أجل المجتمع."
 msgid "Cancel"
 msgstr "إلغاء"
 
-#: apps/client/src/components/ai-actions.tsx:103
-#: apps/client/src/components/ai-actions.tsx:106
+#: apps/client/src/components/ai-actions.tsx:107
+#: apps/client/src/components/ai-actions.tsx:110
 msgid "Casual"
 msgstr "عادي"
 
@@ -263,12 +275,16 @@ msgstr "عادي"
 msgid "Center Artboard"
 msgstr "التوسيط إلى اللوحة"
 
+#: apps/client/src/components/locale-switch.tsx:17
+msgid "Change Language"
+msgstr ""
+
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
 msgid "Change Password"
 msgstr "تغيير كلمة المرور"
 
-#: apps/client/src/components/ai-actions.tsx:97
+#: apps/client/src/components/ai-actions.tsx:101
 msgid "Change Tone"
 msgstr "تغيير التأثير"
 
@@ -304,8 +320,8 @@ msgstr "أعمدة"
 msgid "Company"
 msgstr "الشركة"
 
-#: apps/client/src/components/ai-actions.tsx:115
-#: apps/client/src/components/ai-actions.tsx:118
+#: apps/client/src/components/ai-actions.tsx:119
+#: apps/client/src/components/ai-actions.tsx:122
 msgid "Confident"
 msgstr "واثق"
 
@@ -314,7 +330,7 @@ msgstr "واثق"
 msgid "Continue"
 msgstr "استمر"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:96
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:101
 msgid "Copy"
 msgstr "نسخ"
 
@@ -416,6 +432,10 @@ msgstr "حذف"
 msgid "Delete Account"
 msgstr "حذف الحساب"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
+msgid "Deployment Name"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:73
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:87
@@ -443,7 +463,7 @@ msgstr "تعطيل المصادقة الثنائية 2FA"
 msgid "Discard"
 msgstr "تجاهل"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:105
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:110
 msgid "Documentation"
 msgstr "إرشادات الإستخدام"
 
@@ -451,7 +471,7 @@ msgstr "إرشادات الإستخدام"
 msgid "Don't have an account?"
 msgstr "ليس لديك حساب؟"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:83
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:88
 msgid "Don't know where to begin? Hit the docs!"
 msgstr "لا تعرف من أين تبدأ؟ راجع الارشادات!"
 
@@ -459,7 +479,7 @@ msgstr "لا تعرف من أين تبدأ؟ راجع الارشادات!"
 msgid "Don't see your language? <0>Help translate the app.</0>"
 msgstr "ألا ترى لغتك؟ <0>ساعدنا في ترجمة التطبيق.</0>"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:40
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:45
 msgid "Donate to Reactive Resume"
 msgstr "تبرع لـReactive Resume"
 
@@ -467,7 +487,7 @@ msgstr "تبرع لـReactive Resume"
 msgid "Download a JSON snapshot of your resume. This file can be used to import your resume in the future, or can even be shared with others to collaborate."
 msgstr "قم بتنزيل لقطة JSON لاستئنافك. يمكن استخدام هذا الملف لاستيراد استئنافك في المستقبل، أو يمكن حتى مشاركته مع الآخرين للتعاون."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:74
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:78
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "قم بتنزيل ملف PDF الخاص باستعادتك. يمكن استخدام هذا الملف لطباعة استعادتك، أو إرساله إلى القائمين بالتجنيد، أو تحميله على بوابات العمل."
 
@@ -495,7 +515,7 @@ msgstr "استنسخ عنصرًا موجودًا"
 msgid "Duplicate an existing resume"
 msgstr "استنسخ سيرة ذاتية موجودة"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:92
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:97
 msgid "Edit"
 msgstr "عدّل"
 
@@ -597,7 +617,7 @@ msgstr "متغير الخط"
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr "فعلى سبيل المثال، يمكن الإشارة هنا إلى المعلومات المتعلقة بالشركات التي أرسلتها لاستئناف العمل أو الروابط مع توصيفات الوظائف."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:182
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:280
 msgid "Forget"
 msgstr "نسيان"
 
@@ -614,7 +634,7 @@ msgstr "أنسيت كلمة مرورك؟"
 msgid "Format"
 msgstr "الصيغة"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:49
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:54
 msgid "Found a bug, or have an idea for a new feature?"
 msgstr "هل وجدت خطأ، أم لديك فكرة لميزة جديدة؟"
 
@@ -622,8 +642,8 @@ msgstr "هل وجدت خطأ، أم لديك فكرة لميزة جديدة؟"
 msgid "Free, forever"
 msgstr "مجاني، للأبد"
 
-#: apps/client/src/components/ai-actions.tsx:121
-#: apps/client/src/components/ai-actions.tsx:124
+#: apps/client/src/components/ai-actions.tsx:125
+#: apps/client/src/components/ai-actions.tsx:128
 msgid "Friendly"
 msgstr "ودود"
 
@@ -760,8 +780,8 @@ msgid "In this section, you can delete your account and all the data associated 
 msgstr "في هذا القسم، يمكنك حذف حسابك وجميع البيانات المرتبطة بالمستخدم الخاص بك، ولكن يرجى مراعاة أن <0>هذا الإجراء لا رجعة فيه</0>."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:135
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:116
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:121
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:122
 msgid "Information"
 msgstr "المعلومات"
 
@@ -842,8 +862,8 @@ msgid "Last updated {lastUpdated}"
 msgstr "آخر تحديث {lastUpdated}"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:72
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:197
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:202
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:203
 msgid "Layout"
 msgstr "التصميم"
 
@@ -916,7 +936,7 @@ msgstr "تسجيل الخروج"
 msgid "Lost your device?"
 msgstr "أفقدت جهازك؟"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:247
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:252
 msgid "Main"
 msgstr "رئيسي"
 
@@ -942,7 +962,7 @@ msgstr "مارس 2023 - حتى الآن"
 msgid "Margin"
 msgstr "هامش"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:158
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:218
 msgid "Max Tokens"
 msgstr "الحد الأقصى للرموز"
 
@@ -950,7 +970,7 @@ msgstr "الحد الأقصى للرموز"
 msgid "MIT License"
 msgstr "رخصة MIT"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:145
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
 msgid "Model"
 msgstr "الموديل"
 
@@ -1029,13 +1049,13 @@ msgstr "لم يُرجع OpenAI أي اختيارات للنص الخاص بك."
 msgid "OpenAI Integration"
 msgstr "تكامل مع OpenAI"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:119
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
+msgid "OpenAI/Azure OpenAI/Ollama Integration"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:169
 msgid "OpenAI/Ollama API Key"
 msgstr "مفتاح OpenAI/Ollama API"
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
-msgid "OpenAI/Ollama Integration"
-msgstr "تكامل OpenAI/Ollama"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:182
@@ -1057,7 +1077,7 @@ msgstr "الشركة"
 msgid "Page"
 msgstr "صفحة"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:228
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:233
 msgid "Page {pageNumber}"
 msgstr "الصفحة {pageNumber}"
 
@@ -1068,7 +1088,7 @@ msgstr "الصفحة {pageNumber}"
 msgid "Password"
 msgstr "كلمة المرور"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:76
 msgid "PDF"
 msgstr "PDF"
 
@@ -1134,8 +1154,8 @@ msgstr "اللون الأساسي"
 msgid "Privacy Policy"
 msgstr "سياسة الخصوصية"
 
-#: apps/client/src/components/ai-actions.tsx:109
-#: apps/client/src/components/ai-actions.tsx:112
+#: apps/client/src/components/ai-actions.tsx:113
+#: apps/client/src/components/ai-actions.tsx:116
 msgid "Professional"
 msgstr "مهني"
 
@@ -1151,7 +1171,7 @@ msgstr "عامة"
 msgid "Publisher"
 msgstr "الناشر"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:69
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
 msgid "Raise an issue"
 msgstr "طرح مشكلة"
 
@@ -1193,12 +1213,12 @@ msgstr "إعادة التفاعل تزدهر بفضل مجتمعها النشط.
 msgid "Redo"
 msgstr "إعادة"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:100
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:105
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:157
 msgid "Remove"
 msgstr "إزالة"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:231
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:236
 msgid "Remove Page"
 msgstr "إزالة الصفحة"
 
@@ -1217,7 +1237,7 @@ msgstr "إعادة إرسال رابط تأكيد البريد الإلكترو�
 msgid "Reset"
 msgstr "إعادة تعيين"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:201
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:206
 msgid "Reset Layout"
 msgstr "إعادة تعيين التصميم"
 
@@ -1255,11 +1275,11 @@ msgstr "مدوّر"
 msgid "Save Changes"
 msgstr "حفظ التّغييرات"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:176
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:274
 msgid "Save Locally"
 msgstr "الحفظ في الجهاز (محلياً)"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:176
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:274
 msgid "Saved"
 msgstr "تم الحفظ"
 
@@ -1312,7 +1332,7 @@ msgstr "الاستضافة الذاتية مع Docker"
 msgid "Send Email"
 msgstr "إرسال بريد إلكتروني"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:79
 msgid "Send me a message"
 msgstr "أرسل لي رسالة"
 
@@ -1349,7 +1369,7 @@ msgstr "إظهار الخط الفاصل"
 msgid "Show Page Numbers"
 msgstr "إظهار أرقام الصفحات"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:248
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:253
 msgid "Sidebar"
 msgstr "الشريط الجانبي"
 
@@ -1452,7 +1472,7 @@ msgstr "تخزين رموز النسخ الاحتياطي الخاص بك بشك
 msgid "Summary"
 msgstr "Summary"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:18
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:23
 msgid "Support the app by donating what you can!"
 msgstr "دعم التطبيق عن طريق التبرع بما يمكنك!"
 
@@ -1463,6 +1483,14 @@ msgstr "دعم الإستئناف"
 #: apps/client/src/pages/home/sections/features/index.tsx:65
 msgid "Supports A4/Letter page formats"
 msgstr "يدعم تنسيقات صفحة A4/رسالة"
+
+#: apps/client/src/components/theme-switch.tsx:31
+msgid "Switch to Dark Mode"
+msgstr ""
+
+#: apps/client/src/components/theme-switch.tsx:29
+msgid "Switch to Light Mode"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:85
 msgid "System"
@@ -1626,6 +1654,14 @@ msgstr "الرابط"
 msgid "URL must start with https://"
 msgstr "عنوان URL يجب أن يبدأ بـ https://"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:247
+msgid "Use Azure OpenAI"
+msgstr ""
+
+#: apps/client/src/components/theme-switch.tsx:30
+msgid "Use System Theme"
+msgstr ""
+
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/backup-otp/page.tsx:57
 msgid "Use your backup code"
@@ -1678,7 +1714,7 @@ msgstr "الإصدار 4"
 msgid "Views"
 msgstr "المشاهدات"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:87
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:92
 msgid "Visible"
 msgstr "مرئي"
 
@@ -1723,13 +1759,17 @@ msgstr "يمكنك إضافة عدة كلمات مفتاحية عن طريق ف�
 msgid "You can also enter your username."
 msgstr "يمكنك أيضًا إدخال اسم المستخدم الخاص بك."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:103
-msgid "You can also integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens as per your preference."
-msgstr "يمكنك أيضًا التكامل مع Ollama ببساطة عن طريق تعيين مفتاح واجهة برمجة التطبيقات على 'ssk-1234567867890abcdef' وعنوان URL الأساسي إلى عنوان URL الخاص ب Ollama، أي 'http://localhost:11434/v1'. يمكنك أيضًا انتقاء واختيار النماذج وتعيين الحد الأقصى للرموز المميزة حسب تفضيلاتك."
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:144
+msgid "You can also integrate with Azure OpenAI by enabling the <0>Use Azure OpenAI</0> checkbox and setting the Resource URL to your Azure OpenAI resource: <1>https://your-resource.openai.azure.com</1>. Set the deployment name in the Model field and specify the appropriate API version for your Azure deployment."
+msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:81
-msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
-msgstr "يمكنك استخدام واجهة برمجة تطبيقات OpenAI لمساعدتك في إنشاء المحتوى، أو تحسين الكتابة الخاصة بك أثناء تشكيل استعادتك."
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:153
+msgid "You can also integrate with Ollama simply by setting the API key to<0>sk-1234567890abcdef</0> and the Base URL to your Ollama URL, i.e.<1>http://localhost:11434/v1</1>. You can also pick and choose models and set the max tokens as per your preference."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:122
+msgid "You can make use of the OpenAI API, Azure OpenAI, or Ollama to help you generate content, or improve your writing while composing your resume."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:40
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
@@ -1739,7 +1779,7 @@ msgstr "يمكنك تتبع عدد المشاهدات التي استلمتها 
 msgid "You don't have permission to access this page."
 msgstr "ليس لديك الصلاحية للوصول إلى هذه الصفحة."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:87
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:128
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr "لديك خيار <0>الحصول على مفتاح API OpenAI الخاص بك </0>. هذا المفتاح يمكّنك من استخدام API كما تراه مناسباً. بدلاً من ذلك، إذا كنت ترغب في تعطيل ميزات الذكاء الاصطناعي في الاستئناف التفاعلي تماماً، يمكنك ببساطة إزالة المفتاح من الإعدادات الخاصة بك."
 
@@ -1756,7 +1796,7 @@ msgstr "لديك بريد!"
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
 msgstr "تم حذف حسابك وجميع بياناتك بنجاح. جيد!"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:191
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:289
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "يتم تخزين مفتاح API الخاص بك بشكل آمن في التخزين المحلي للمتصفح ويتم استخدامه فقط عند تقديم طلبات إلى OpenAI عن طريق SDK الرسمية الخاصة بهم. تأكد من أن المفتاح الخاص بك لا يتم إرساله إلى أي خادم خارجي إلا عند التفاعل مع خدمات OpenAI."
 

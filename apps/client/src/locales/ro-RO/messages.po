@@ -8,7 +8,7 @@ msgstr ""
 "Language: ro\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-10-01 07:47\n"
+"PO-Revision-Date: 2025-10-01 09:15\n"
 "Last-Translator: \n"
 "Language-Team: Romanian\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);\n"
@@ -30,19 +30,19 @@ msgstr "{templatesCount} șabloane de CV din care să alegeți"
 msgid "{value, plural, one {Column} other {Columns}}"
 msgstr "{value, plural, one {Coloana} other {Coloane}}"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:20
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:25
 msgid "<0>I built Reactive Resume mostly by myself during my spare time, with a lot of help from other great open-source contributors.</0><1>If you like the app and want to support keeping it free forever, please donate whatever you can afford to give.</1>"
 msgstr "<0>Am construit Reactive Resume în mare parte de unul singur, în timpul meu liber, cu mult ajutor din partea altor mari colaboratori open-source. /0><1>Dacă vă place aplicația și doriți să susțineți să o păstrați gratuit pentru totdeauna, vă rugăm să donați orice vă puteți permite să oferiți.</1>"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:51
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:56
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>Sunt sigur că aplicația nu este perfectă, dar aș vrea să fie. /0><1>Dacă v-ați confruntat cu probleme în timp ce creați reluarea, sau aveți o idee care v-ar ajuta pe voi și pe alți utilizatori să vă creați mai ușor reluarea, plasează o problemă în depozit sau trimite-mi un e-mail despre ea. /1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:201
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:299
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr "<0>Notă: </0>Utilizând API-ul OpenAI, confirmaţi şi acceptaţi termenii de utilizare </1> şi <2>politica de confidenţialitate</2> subliniaţi de OpenAI. Vă rugăm să reţineţi că Resume Reactiv nu are nici o responsabilitate pentru utilizarea incorectă sau neautorizată a serviciului, şi orice repercusiuni sau pasive care decurg exclusiv din acestea sunt suportate de utilizator."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:85
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:90
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
 msgstr "<0>Comunitatea a petrecut mult timp scriind documentația pentru reactivarea reactivă; și sunt sigur că te va ajuta să începi cu aplicația. /0><1>Există, de asemenea, o mulțime de exemple pentru a vă ajuta să începeți, și caracteristici despre care s-ar putea să nu știți care te-ar putea ajuta să construiești reluarea perfectă. /1>"
 
@@ -117,7 +117,7 @@ msgstr "Adaugă un element nou"
 msgid "Add a new section"
 msgstr "Adaugă o nouă secţiune"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:261
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:266
 msgid "Add New Page"
 msgstr "Adaugă pagină nouă"
 
@@ -199,6 +199,18 @@ msgstr "Disponibil în {languagesCount} limbi"
 msgid "Awarder"
 msgstr "Atribuire"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:258
+msgid "Azure API Version"
+msgstr ""
+
+#: apps/client/src/services/openai/client.ts:18
+msgid "Azure OpenAI Base URL, deployment name (model), and API version are required when using Azure OpenAI."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
+msgid "Azure OpenAI Resource URL"
+msgstr ""
+
 #: apps/client/src/pages/auth/backup-otp/page.tsx:99
 #: apps/client/src/pages/auth/forgot-password/page.tsx:100
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:243
@@ -217,7 +229,7 @@ msgstr "Cod de rezervă"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "Codurile de rezervă pot conține doar litere mici sau cifre și trebuie să aibă exact 10 caractere."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:132
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Base URL"
 msgstr "URL de bază"
 
@@ -254,8 +266,8 @@ msgstr "Construit de comunitate, pentru comunitate."
 msgid "Cancel"
 msgstr "Anulează"
 
-#: apps/client/src/components/ai-actions.tsx:103
-#: apps/client/src/components/ai-actions.tsx:106
+#: apps/client/src/components/ai-actions.tsx:107
+#: apps/client/src/components/ai-actions.tsx:110
 msgid "Casual"
 msgstr "Cazual"
 
@@ -263,12 +275,16 @@ msgstr "Cazual"
 msgid "Center Artboard"
 msgstr "Centrează Artboard"
 
+#: apps/client/src/components/locale-switch.tsx:17
+msgid "Change Language"
+msgstr ""
+
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
 msgid "Change Password"
 msgstr "Schimbare parolă"
 
-#: apps/client/src/components/ai-actions.tsx:97
+#: apps/client/src/components/ai-actions.tsx:101
 msgid "Change Tone"
 msgstr "Schimbați Tonul"
 
@@ -304,8 +320,8 @@ msgstr "Coloane"
 msgid "Company"
 msgstr "Companie"
 
-#: apps/client/src/components/ai-actions.tsx:115
-#: apps/client/src/components/ai-actions.tsx:118
+#: apps/client/src/components/ai-actions.tsx:119
+#: apps/client/src/components/ai-actions.tsx:122
 msgid "Confident"
 msgstr "Confidențialitate"
 
@@ -314,7 +330,7 @@ msgstr "Confidențialitate"
 msgid "Continue"
 msgstr "Continuă"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:96
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:101
 msgid "Copy"
 msgstr "Copiază"
 
@@ -416,6 +432,10 @@ msgstr "Șterge"
 msgid "Delete Account"
 msgstr "Șterge Contul"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
+msgid "Deployment Name"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:73
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:87
@@ -443,7 +463,7 @@ msgstr "Dezactivează 2FA"
 msgid "Discard"
 msgstr "Renunțați"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:105
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:110
 msgid "Documentation"
 msgstr "Documentație"
 
@@ -451,7 +471,7 @@ msgstr "Documentație"
 msgid "Don't have an account?"
 msgstr "Nu ai un cont?"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:83
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:88
 msgid "Don't know where to begin? Hit the docs!"
 msgstr "Nu știi de unde să începi? Atacă documentele!"
 
@@ -459,7 +479,7 @@ msgstr "Nu știi de unde să începi? Atacă documentele!"
 msgid "Don't see your language? <0>Help translate the app.</0>"
 msgstr "Nu vezi limba ta? <0>Ajută-ne să traducem aplicația.</0>"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:40
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:45
 msgid "Donate to Reactive Resume"
 msgstr "Donează pentru Reactivare Reluare"
 
@@ -467,7 +487,7 @@ msgstr "Donează pentru Reactivare Reluare"
 msgid "Download a JSON snapshot of your resume. This file can be used to import your resume in the future, or can even be shared with others to collaborate."
 msgstr "Descărcați un instantaneu JSON al CV-ului dvs. Acest fișier poate fi folosit pentru a vă importa CV-ul în viitor sau poate fi chiar partajat cu alții pentru a colabora."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:74
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:78
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "Descărcați un PDF al CV-ului dvs. Acest fișier poate fi folosit pentru a vă imprima CV-ul, pentru a-l trimite recrutorilor sau pentru a încărca pe portalurile de locuri de muncă."
 
@@ -495,7 +515,7 @@ msgstr "Duplicați un element existent"
 msgid "Duplicate an existing resume"
 msgstr "Duplicați un CV existent"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:92
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:97
 msgid "Edit"
 msgstr "Editare"
 
@@ -597,7 +617,7 @@ msgstr "Variante de font"
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr "De exemplu, informații cu privire la companiile cărora le-ați trimis acest CV sau link-urile către fișele posturilor pot fi notate aici."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:182
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:280
 msgid "Forget"
 msgstr "Uită"
 
@@ -614,7 +634,7 @@ msgstr "V-ați uitat parola?"
 msgid "Format"
 msgstr "Format"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:49
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:54
 msgid "Found a bug, or have an idea for a new feature?"
 msgstr "Ați găsit o eroare sau aveți o idee pentru o funcție nouă?"
 
@@ -622,8 +642,8 @@ msgstr "Ați găsit o eroare sau aveți o idee pentru o funcție nouă?"
 msgid "Free, forever"
 msgstr "Gratuit pentru totdeauna"
 
-#: apps/client/src/components/ai-actions.tsx:121
-#: apps/client/src/components/ai-actions.tsx:124
+#: apps/client/src/components/ai-actions.tsx:125
+#: apps/client/src/components/ai-actions.tsx:128
 msgid "Friendly"
 msgstr "Prietenos"
 
@@ -760,8 +780,8 @@ msgid "In this section, you can delete your account and all the data associated 
 msgstr "În această secțiune, vă puteți șterge contul si toate datele asociate utilizatorului dumneavoastră, dar aveți în vedere că <0>această acțiune este ireversibilă</0>."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:135
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:116
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:121
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:122
 msgid "Information"
 msgstr "Informație"
 
@@ -842,8 +862,8 @@ msgid "Last updated {lastUpdated}"
 msgstr "Ultima actualizare {lastUpdated}"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:72
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:197
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:202
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:203
 msgid "Layout"
 msgstr "Aspect"
 
@@ -916,7 +936,7 @@ msgstr "Deconectare"
 msgid "Lost your device?"
 msgstr "Ți-ai pierdut dispozitivul?"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:247
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:252
 msgid "Main"
 msgstr "Principal"
 
@@ -942,7 +962,7 @@ msgstr "Martie 2023 - Prezent"
 msgid "Margin"
 msgstr "Margine"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:158
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:218
 msgid "Max Tokens"
 msgstr "Jetoane maxime"
 
@@ -950,7 +970,7 @@ msgstr "Jetoane maxime"
 msgid "MIT License"
 msgstr "Licență MIT"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:145
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
 msgid "Model"
 msgstr "Model"
 
@@ -1029,13 +1049,13 @@ msgstr "OpenAI nu a returnat nicio alegere pentru textul dvs."
 msgid "OpenAI Integration"
 msgstr "Integrare OpenAI"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:119
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
+msgid "OpenAI/Azure OpenAI/Ollama Integration"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:169
 msgid "OpenAI/Ollama API Key"
 msgstr "Cheie API OpenAI/Ollama"
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
-msgid "OpenAI/Ollama Integration"
-msgstr "Integrarea OpenAI/Ollama"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:182
@@ -1057,7 +1077,7 @@ msgstr "Organizație"
 msgid "Page"
 msgstr "Pagină"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:228
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:233
 msgid "Page {pageNumber}"
 msgstr "Pagina {pageNumber}"
 
@@ -1068,7 +1088,7 @@ msgstr "Pagina {pageNumber}"
 msgid "Password"
 msgstr "Parolă"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:76
 msgid "PDF"
 msgstr "PDF"
 
@@ -1134,8 +1154,8 @@ msgstr "Culoare primară"
 msgid "Privacy Policy"
 msgstr "Politica de confidenţialitate"
 
-#: apps/client/src/components/ai-actions.tsx:109
-#: apps/client/src/components/ai-actions.tsx:112
+#: apps/client/src/components/ai-actions.tsx:113
+#: apps/client/src/components/ai-actions.tsx:116
 msgid "Professional"
 msgstr "Profesional"
 
@@ -1151,7 +1171,7 @@ msgstr "Public"
 msgid "Publisher"
 msgstr "Editor"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:69
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
 msgid "Raise an issue"
 msgstr "Ridicați o problemă"
 
@@ -1193,12 +1213,12 @@ msgstr "Reactiv Resume prosperă datorită comunității sale dinamice. Acest pr
 msgid "Redo"
 msgstr "Reface"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:100
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:105
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:157
 msgid "Remove"
 msgstr "Elimină"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:231
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:236
 msgid "Remove Page"
 msgstr "Elimină pagina"
 
@@ -1217,7 +1237,7 @@ msgstr "Retrimite link-ul de confirmare a e-mailului"
 msgid "Reset"
 msgstr "Resetează"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:201
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:206
 msgid "Reset Layout"
 msgstr "Resetează Layout"
 
@@ -1255,11 +1275,11 @@ msgstr "Rotunjit"
 msgid "Save Changes"
 msgstr "Salvează Modificările"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:176
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:274
 msgid "Save Locally"
 msgstr "Salvați la nivel local"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:176
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:274
 msgid "Saved"
 msgstr "Salvat"
 
@@ -1312,7 +1332,7 @@ msgstr "Self-host cu Docker"
 msgid "Send Email"
 msgstr "Trimite email"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:79
 msgid "Send me a message"
 msgstr "Trimite-mi un mesaj"
 
@@ -1349,7 +1369,7 @@ msgstr "Arată linia de întrerupere"
 msgid "Show Page Numbers"
 msgstr "Arată numerele de pagină"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:248
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:253
 msgid "Sidebar"
 msgstr "Bară laterală"
 
@@ -1452,7 +1472,7 @@ msgstr "Stocați codurile de rezervă în siguranță"
 msgid "Summary"
 msgstr "Sumar"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:18
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:23
 msgid "Support the app by donating what you can!"
 msgstr "Sprijină aplicația donând cât poți!"
 
@@ -1463,6 +1483,14 @@ msgstr "Continuare suport pentru reactivare"
 #: apps/client/src/pages/home/sections/features/index.tsx:65
 msgid "Supports A4/Letter page formats"
 msgstr "Suportă formatele paginii A4/Scrisoarea"
+
+#: apps/client/src/components/theme-switch.tsx:31
+msgid "Switch to Dark Mode"
+msgstr ""
+
+#: apps/client/src/components/theme-switch.tsx:29
+msgid "Switch to Light Mode"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:85
 msgid "System"
@@ -1626,6 +1654,14 @@ msgstr "URL"
 msgid "URL must start with https://"
 msgstr "Adresa URL trebuie să înceapă cu https://"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:247
+msgid "Use Azure OpenAI"
+msgstr ""
+
+#: apps/client/src/components/theme-switch.tsx:30
+msgid "Use System Theme"
+msgstr ""
+
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/backup-otp/page.tsx:57
 msgid "Use your backup code"
@@ -1678,7 +1714,7 @@ msgstr "Versiunea 4"
 msgid "Views"
 msgstr "Vizualizări"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:87
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:92
 msgid "Visible"
 msgstr "Vizibil"
 
@@ -1723,13 +1759,17 @@ msgstr "Puteți adăuga mai multe cuvinte cheie separându-le cu o virgulă sau 
 msgid "You can also enter your username."
 msgstr "Poți, de asemenea, să introduci numele de utilizator."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:103
-msgid "You can also integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens as per your preference."
-msgstr "De asemenea, vă puteți integra cu Ollama prin simpla setare a cheii API la `sk-1234567890abcdef` și a URL-ului de bază la URL-ul Ollama, adică `http://localhost:11434/v1`. De asemenea, puteți alege modelele și puteți seta numărul maxim de jetoane în funcție de preferințele dvs."
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:144
+msgid "You can also integrate with Azure OpenAI by enabling the <0>Use Azure OpenAI</0> checkbox and setting the Resource URL to your Azure OpenAI resource: <1>https://your-resource.openai.azure.com</1>. Set the deployment name in the Model field and specify the appropriate API version for your Azure deployment."
+msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:81
-msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
-msgstr "Puteți folosi API-ul OpenAI pentru a vă ajuta să generați conținut sau să vă îmbunătățiți scrisul în timp ce vă compuneți CV-ul."
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:153
+msgid "You can also integrate with Ollama simply by setting the API key to<0>sk-1234567890abcdef</0> and the Base URL to your Ollama URL, i.e.<1>http://localhost:11434/v1</1>. You can also pick and choose models and set the max tokens as per your preference."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:122
+msgid "You can make use of the OpenAI API, Azure OpenAI, or Ollama to help you generate content, or improve your writing while composing your resume."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:40
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
@@ -1739,7 +1779,7 @@ msgstr "Puteți urmări numărul de vizualizări pe care le-a primit CV-ul dvs. 
 msgid "You don't have permission to access this page."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:87
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:128
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr "Aveți opțiunea de a vă obține propria cheie API OpenAI. Această cheie vă permite să utilizați API-ul după cum doriți. Alternativ, dacă doriţi să dezactivaţi caracteristicile AI în Reactiv Resume complet, puteţi pur şi simplu elimina cheia din setări."
 
@@ -1756,7 +1796,7 @@ msgstr "Ai primit e-mail!"
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
 msgstr "Contul și toate datele dvs. au fost șterse cu succes. La revedere!"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:191
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:289
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "API-ul dvs. este stocat în siguranță în spațiul de stocare local al browser-ului și este utilizat numai atunci când faceți cereri către OpenAI prin intermediul SDK-ului lor oficial. Asigurați-vă că cheia dvs. nu este transmisă către niciun server extern cu excepția cazului în care interacționați cu serviciile OpenAI."
 

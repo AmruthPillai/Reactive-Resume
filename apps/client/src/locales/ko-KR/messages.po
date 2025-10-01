@@ -8,7 +8,7 @@ msgstr ""
 "Language: ko\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-10-01 07:47\n"
+"PO-Revision-Date: 2025-10-01 09:15\n"
 "Last-Translator: \n"
 "Language-Team: Korean\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -30,19 +30,19 @@ msgstr "{templatesCount} 선택할 수 있는 이력서 템플릿"
 msgid "{value, plural, one {Column} other {Columns}}"
 msgstr "{value, plural, one {칼럼} other {칼럼}}"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:20
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:25
 msgid "<0>I built Reactive Resume mostly by myself during my spare time, with a lot of help from other great open-source contributors.</0><1>If you like the app and want to support keeping it free forever, please donate whatever you can afford to give.</1>"
 msgstr "<0>저는 여가 시간에 다른 훌륭한 오픈소스 기여자들의 많은 도움을 받아 대부분 혼자서 Reactive Resume를 만들었습니다.</0><1>이 앱이 마음에 드시고 영원히 무료로 유지되도록 지원하고 싶으시다면 기부할 수 있는 만큼 기부해 주세요.</1>"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:51
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:56
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>앱이 완벽하지는 않겠지만, 앞으로 더 나아지기를 바랍니다.</0><1>이력서를 작성하는 동안 문제가 발생했거나 다른 사용자가 이력서를 더 쉽게 작성하는 데 도움이 될 만한 아이디어가 있다면 리포지토리에 문제를 등록하거나 저에게 이메일을 보내주세요.</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:201
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:299
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr "<0>참고: </0>OpenAI API를 이용함으로써 귀하는 OpenAI가 명시한 <1>이용약관</1> 및 <2>개인정보 보호정책을</2> 인정하고 이에 동의하는 것입니다. 리액티브 이력서는 서비스의 부적절하거나 무단 사용에 대해 어떠한 책임도 지지 않으며, 그로 인한 모든 영향이나 책임은 전적으로 사용자에게 있다는 점에 유의하시기 바랍니다."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:85
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:90
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
 msgstr "<0>커뮤니티에서 반응형 이력서 문서를 작성하는 데 많은 시간을 투자했으며, 이 문서가 앱을 시작하는 데 도움이 될 것이라고 확신합니다.</0><1>또한 시작하는 데 도움이 되는 많은 예시와 완벽한 이력서를 만드는 데 도움이 될 수 있는 미처 몰랐던 기능도 많이 있습니다.</1>"
 
@@ -117,7 +117,7 @@ msgstr "새 항목 추가"
 msgid "Add a new section"
 msgstr "새 섹션 추가"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:261
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:266
 msgid "Add New Page"
 msgstr "새 페이지 추가"
 
@@ -199,6 +199,18 @@ msgstr "{languagesCount} 언어 제공"
 msgid "Awarder"
 msgstr "수상자"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:258
+msgid "Azure API Version"
+msgstr ""
+
+#: apps/client/src/services/openai/client.ts:18
+msgid "Azure OpenAI Base URL, deployment name (model), and API version are required when using Azure OpenAI."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
+msgid "Azure OpenAI Resource URL"
+msgstr ""
+
 #: apps/client/src/pages/auth/backup-otp/page.tsx:99
 #: apps/client/src/pages/auth/forgot-password/page.tsx:100
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:243
@@ -217,7 +229,7 @@ msgstr "백업 코드"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "백업 코드는 소문자 또는 숫자만 포함할 수 있으며 정확히 10자여야 합니다."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:132
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Base URL"
 msgstr "기본 URL"
 
@@ -254,8 +266,8 @@ msgstr "커뮤니티의, 커뮤니티를 위한, 커뮤니티에 의한."
 msgid "Cancel"
 msgstr "취소"
 
-#: apps/client/src/components/ai-actions.tsx:103
-#: apps/client/src/components/ai-actions.tsx:106
+#: apps/client/src/components/ai-actions.tsx:107
+#: apps/client/src/components/ai-actions.tsx:110
 msgid "Casual"
 msgstr "캐주얼"
 
@@ -263,12 +275,16 @@ msgstr "캐주얼"
 msgid "Center Artboard"
 msgstr "중앙 아트보드"
 
+#: apps/client/src/components/locale-switch.tsx:17
+msgid "Change Language"
+msgstr ""
+
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
 msgid "Change Password"
 msgstr "비밀번호 변경"
 
-#: apps/client/src/components/ai-actions.tsx:97
+#: apps/client/src/components/ai-actions.tsx:101
 msgid "Change Tone"
 msgstr "톤 변경"
 
@@ -304,8 +320,8 @@ msgstr "열"
 msgid "Company"
 msgstr "회사"
 
-#: apps/client/src/components/ai-actions.tsx:115
-#: apps/client/src/components/ai-actions.tsx:118
+#: apps/client/src/components/ai-actions.tsx:119
+#: apps/client/src/components/ai-actions.tsx:122
 msgid "Confident"
 msgstr "자신감"
 
@@ -314,7 +330,7 @@ msgstr "자신감"
 msgid "Continue"
 msgstr "계속하기"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:96
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:101
 msgid "Copy"
 msgstr "복사"
 
@@ -416,6 +432,10 @@ msgstr "삭제"
 msgid "Delete Account"
 msgstr "계정 삭제"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
+msgid "Deployment Name"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:73
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:87
@@ -443,7 +463,7 @@ msgstr "2FA 비활성화"
 msgid "Discard"
 msgstr "폐기"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:105
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:110
 msgid "Documentation"
 msgstr "문서"
 
@@ -451,7 +471,7 @@ msgstr "문서"
 msgid "Don't have an account?"
 msgstr "계정이 없으신가요?"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:83
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:88
 msgid "Don't know where to begin? Hit the docs!"
 msgstr "어디서부터 시작해야 할지 모르시겠어요? 문서를 시작하세요!"
 
@@ -459,7 +479,7 @@ msgstr "어디서부터 시작해야 할지 모르시겠어요? 문서를 시작
 msgid "Don't see your language? <0>Help translate the app.</0>"
 msgstr "귀하의 언어가 표시되지 않습니까? <0>앱 번역을 도와주세요.</0>"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:40
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:45
 msgid "Donate to Reactive Resume"
 msgstr "이 프로젝트에 기부하기"
 
@@ -467,7 +487,7 @@ msgstr "이 프로젝트에 기부하기"
 msgid "Download a JSON snapshot of your resume. This file can be used to import your resume in the future, or can even be shared with others to collaborate."
 msgstr "이력서의 JSON 스냅샷을 다운로드하세요. 이 파일은 나중에 이력서를 가져오는 데 사용할 수 있으며, 공동 작업을 위해 다른 사람과 공유할 수도 있습니다."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:74
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:78
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "이력서 PDF를 다운로드하세요. 이 파일은 이력서를 인쇄하거나 채용 담당자에게 보내거나 취업 포털에 업로드하는 데 사용할 수 있습니다."
 
@@ -495,7 +515,7 @@ msgstr "기존 항목 복제"
 msgid "Duplicate an existing resume"
 msgstr "기존 이력서 복제"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:92
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:97
 msgid "Edit"
 msgstr "수정"
 
@@ -597,7 +617,7 @@ msgstr "글꼴 변형"
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr "예를 들어, 이력서를 보낸 회사에 대한 정보나 직무 설명에 대한 링크를 여기에 기록할 수 있습니다."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:182
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:280
 msgid "Forget"
 msgstr "잊어버림"
 
@@ -614,7 +634,7 @@ msgstr "비밀번호를 잊으셨나요?"
 msgid "Format"
 msgstr "형식"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:49
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:54
 msgid "Found a bug, or have an idea for a new feature?"
 msgstr "버그를 발견했거나 새로운 기능에 대한 아이디어가 있으신가요?"
 
@@ -622,8 +642,8 @@ msgstr "버그를 발견했거나 새로운 기능에 대한 아이디어가 있
 msgid "Free, forever"
 msgstr "영원히 무료"
 
-#: apps/client/src/components/ai-actions.tsx:121
-#: apps/client/src/components/ai-actions.tsx:124
+#: apps/client/src/components/ai-actions.tsx:125
+#: apps/client/src/components/ai-actions.tsx:128
 msgid "Friendly"
 msgstr "친절함"
 
@@ -760,8 +780,8 @@ msgid "In this section, you can delete your account and all the data associated 
 msgstr "이 섹션에서는 계정 및 사용자와 관련된 모든 데이터를 삭제할 수 있지만, <0>이 작업은 되돌릴 수</0> 없다는 점에 유의하세요."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:135
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:116
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:121
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:122
 msgid "Information"
 msgstr "정보"
 
@@ -842,8 +862,8 @@ msgid "Last updated {lastUpdated}"
 msgstr "마지막 업데이트 {lastUpdated}"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:72
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:197
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:202
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:203
 msgid "Layout"
 msgstr "레이아웃"
 
@@ -916,7 +936,7 @@ msgstr "로그아웃"
 msgid "Lost your device?"
 msgstr "기기를 분실하셨나요?"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:247
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:252
 msgid "Main"
 msgstr "메인"
 
@@ -942,7 +962,7 @@ msgstr "2023년 3월 - 현재"
 msgid "Margin"
 msgstr "마진"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:158
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:218
 msgid "Max Tokens"
 msgstr "최대 토큰"
 
@@ -950,7 +970,7 @@ msgstr "최대 토큰"
 msgid "MIT License"
 msgstr "MIT 라이선스"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:145
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
 msgid "Model"
 msgstr "모델"
 
@@ -1029,13 +1049,13 @@ msgstr "OpenAI가 텍스트에 대한 선택 항목을 반환하지 않았습니
 msgid "OpenAI Integration"
 msgstr "OpenAI 통합"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:119
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
+msgid "OpenAI/Azure OpenAI/Ollama Integration"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:169
 msgid "OpenAI/Ollama API Key"
 msgstr "OpenAI/올라마 API 키"
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
-msgid "OpenAI/Ollama Integration"
-msgstr "OpenAI/올라마 통합"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:182
@@ -1057,7 +1077,7 @@ msgstr "조직"
 msgid "Page"
 msgstr "페이지"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:228
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:233
 msgid "Page {pageNumber}"
 msgstr "페이지 {pageNumber}"
 
@@ -1068,7 +1088,7 @@ msgstr "페이지 {pageNumber}"
 msgid "Password"
 msgstr "비밀번호"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:76
 msgid "PDF"
 msgstr "PDF"
 
@@ -1134,8 +1154,8 @@ msgstr "기본 색상"
 msgid "Privacy Policy"
 msgstr "개인정보 보호정책"
 
-#: apps/client/src/components/ai-actions.tsx:109
-#: apps/client/src/components/ai-actions.tsx:112
+#: apps/client/src/components/ai-actions.tsx:113
+#: apps/client/src/components/ai-actions.tsx:116
 msgid "Professional"
 msgstr "전문가"
 
@@ -1151,7 +1171,7 @@ msgstr "공개"
 msgid "Publisher"
 msgstr "게시자"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:69
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
 msgid "Raise an issue"
 msgstr "문제 제기"
 
@@ -1193,12 +1213,12 @@ msgstr "리액티브 이력서는 활기찬 커뮤니티 덕분에 번창하고 
 msgid "Redo"
 msgstr "다시 실행"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:100
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:105
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:157
 msgid "Remove"
 msgstr "제거"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:231
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:236
 msgid "Remove Page"
 msgstr "페이지 제거"
 
@@ -1217,7 +1237,7 @@ msgstr "이메일 확인 링크 다시 보내기"
 msgid "Reset"
 msgstr "초기화"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:201
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:206
 msgid "Reset Layout"
 msgstr "레이아웃 재설정"
 
@@ -1255,11 +1275,11 @@ msgstr "둥근"
 msgid "Save Changes"
 msgstr "변경 사항 저장"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:176
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:274
 msgid "Save Locally"
 msgstr "로컬에 저장"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:176
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:274
 msgid "Saved"
 msgstr "저장됨"
 
@@ -1312,7 +1332,7 @@ msgstr "Docker를 사용한 셀프 호스트"
 msgid "Send Email"
 msgstr "이메일 보내기"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:79
 msgid "Send me a message"
 msgstr "메시지 보내기"
 
@@ -1349,7 +1369,7 @@ msgstr "나누기 줄 표시"
 msgid "Show Page Numbers"
 msgstr "페이지 번호 표시"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:248
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:253
 msgid "Sidebar"
 msgstr "사이드바"
 
@@ -1452,7 +1472,7 @@ msgstr "백업 코드를 안전하게 저장"
 msgid "Summary"
 msgstr "요약"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:18
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:23
 msgid "Support the app by donating what you can!"
 msgstr "가능한 금액을 기부하여 앱을 지원하세요!"
 
@@ -1463,6 +1483,14 @@ msgstr "반응형 이력서 지원"
 #: apps/client/src/pages/home/sections/features/index.tsx:65
 msgid "Supports A4/Letter page formats"
 msgstr "A4/레터 페이지 형식 지원"
+
+#: apps/client/src/components/theme-switch.tsx:31
+msgid "Switch to Dark Mode"
+msgstr ""
+
+#: apps/client/src/components/theme-switch.tsx:29
+msgid "Switch to Light Mode"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:85
 msgid "System"
@@ -1626,6 +1654,14 @@ msgstr "URL"
 msgid "URL must start with https://"
 msgstr "URL은 https:// 로 시작해야 합니다."
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:247
+msgid "Use Azure OpenAI"
+msgstr ""
+
+#: apps/client/src/components/theme-switch.tsx:30
+msgid "Use System Theme"
+msgstr ""
+
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/backup-otp/page.tsx:57
 msgid "Use your backup code"
@@ -1678,7 +1714,7 @@ msgstr "버전 4"
 msgid "Views"
 msgstr "조회수"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:87
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:92
 msgid "Visible"
 msgstr "가시성"
 
@@ -1723,13 +1759,17 @@ msgstr "쉼표로 구분하거나 Enter 키를 눌러 여러 개의 키워드를
 msgid "You can also enter your username."
 msgstr "사용자 아이디를 입력할 수도 있습니다."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:103
-msgid "You can also integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens as per your preference."
-msgstr "API 키를 `sk-1234567890abcdef`로 설정하고 기본 URL을 `http://localhost:11434/v1`과 같은 Ollama URL로 설정하여 Ollama와 통합할 수도 있습니다. 원하는 대로 모델을 선택하고 최대 토큰을 설정할 수도 있습니다."
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:144
+msgid "You can also integrate with Azure OpenAI by enabling the <0>Use Azure OpenAI</0> checkbox and setting the Resource URL to your Azure OpenAI resource: <1>https://your-resource.openai.azure.com</1>. Set the deployment name in the Model field and specify the appropriate API version for your Azure deployment."
+msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:81
-msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
-msgstr "OpenAI API를 사용하여 콘텐츠를 생성하거나 이력서를 작성하는 동안 글쓰기를 개선할 수 있습니다."
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:153
+msgid "You can also integrate with Ollama simply by setting the API key to<0>sk-1234567890abcdef</0> and the Base URL to your Ollama URL, i.e.<1>http://localhost:11434/v1</1>. You can also pick and choose models and set the max tokens as per your preference."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:122
+msgid "You can make use of the OpenAI API, Azure OpenAI, or Ollama to help you generate content, or improve your writing while composing your resume."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:40
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
@@ -1739,7 +1779,7 @@ msgstr "공개 공유를 활성화하여 이력서가 조회된 횟수 또는 �
 msgid "You don't have permission to access this page."
 msgstr "이 페이지에 접근할 권한이 없습니다."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:87
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:128
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr "자신만의 <0>OpenAI API 키를 얻을</0> 수 있는 옵션이 있습니다. 이 키를 사용하면 원하는 대로 API를 활용할 수 있습니다. 또는 반응형 이력서에서 AI 기능을 완전히 비활성화하려면 설정에서 키를 제거하기만 하면 됩니다."
 
@@ -1756,7 +1796,7 @@ msgstr "메일이 도착했습니다!"
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
 msgstr "계정과 모든 데이터가 성공적으로 삭제되었습니다. 안녕히 계세요!"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:191
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:289
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "API 키는 브라우저의 로컬 저장소에 안전하게 저장되며 공식 SDK를 통해 OpenAI에 요청할 때만 활용됩니다. OpenAI의 서비스와 상호작용할 때를 제외하고는 키가 외부 서버로 전송되지 않으니 안심하세요."
 

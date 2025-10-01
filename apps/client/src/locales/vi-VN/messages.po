@@ -8,7 +8,7 @@ msgstr ""
 "Language: vi\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-10-01 07:47\n"
+"PO-Revision-Date: 2025-10-01 09:15\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -30,19 +30,19 @@ msgstr "{templatesCount} mẫu sơ yếu lý lịch để lựa chọn"
 msgid "{value, plural, one {Column} other {Columns}}"
 msgstr "{value, plural, other {Cột}}"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:20
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:25
 msgid "<0>I built Reactive Resume mostly by myself during my spare time, with a lot of help from other great open-source contributors.</0><1>If you like the app and want to support keeping it free forever, please donate whatever you can afford to give.</1>"
 msgstr "<0>Tôi xây dựng Reactive Resume trong thời gian rảnh rỗi với sự trợ giúp tuyệt vời từ những cộng tác viên nguồn mở.</0> <1>Nếu bạn thích ứng dụng này và muốn hỗ trợ giữ miễn phí trọn đời, hãy quyên góp những gì bạn cảm thấy hài lòng.</1>"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:51
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:56
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>Tôi chắc chắn rằng ứng dụng này không hoàn hảo nhưng tôi muốn nó như vậy.</0> <1>Nếu bạn gặp phải bất kỳ vấn đề nào khi tạo sơ yếu lý lịch của mình hoặc có ý tưởng có thể giúp bạn và những người dùng khác tạo sơ yếu lý lịch của bạn dễ dàng hơn, hãy gửi vấn đề đó vào kho lưu trữ hoặc gửi email cho tôi về vấn đề đó.</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:201
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:299
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr "<0>Lưu ý:</0> Bằng cách sử dụng API OpenAI, bạn thừa nhận và chấp nhận <1>điều khoản sử dụng</1> và <2>chính sách quyền riêng tư</2> được phác thảo bởi OpenAI. Xin lưu ý rằng Reactive Resume không chịu trách nhiệm đối với bất kỳ việc sử dụng dịch vụ không đúng cách hoặc trái phép nào và mọi hậu quả hoặc trách nhiệm pháp lý phát sinh chỉ thuộc về người dùng."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:85
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:90
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
 msgstr "<0>Cộng đồng đã dành rất nhiều thời gian để viết tài liệu về Reactive Resume, tôi chắc chắn tài liệu này sẽ giúp bạn mới bắt đầu sử dụng ứng dụng.</0> <1>Ngoài ra cũng còn có rất nhiều ví dụ khác giúp bạn sử dụng các tính năng mà bạn có thể chưa biết để có thể giúp bạn xây dựng sơ yếu lý lịch hoàn hảo của mình.</1>"
 
@@ -117,7 +117,7 @@ msgstr "Thêm mục mới"
 msgid "Add a new section"
 msgstr "Thêm một phần mới"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:261
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:266
 msgid "Add New Page"
 msgstr "Thêm một trang mới"
 
@@ -199,6 +199,18 @@ msgstr "Hỗ trợ {languagesCount} ngôn ngữ"
 msgid "Awarder"
 msgstr "Bên trao giải"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:258
+msgid "Azure API Version"
+msgstr ""
+
+#: apps/client/src/services/openai/client.ts:18
+msgid "Azure OpenAI Base URL, deployment name (model), and API version are required when using Azure OpenAI."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
+msgid "Azure OpenAI Resource URL"
+msgstr ""
+
 #: apps/client/src/pages/auth/backup-otp/page.tsx:99
 #: apps/client/src/pages/auth/forgot-password/page.tsx:100
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:243
@@ -217,7 +229,7 @@ msgstr "Mã Backup"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "Mã backup chỉ có thể chứa chữ cái viết thường hoặc số và phải có chính xác 10 ký tự."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:132
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Base URL"
 msgstr ""
 
@@ -254,8 +266,8 @@ msgstr "Bởi cộng đồng, vì cộng đồng."
 msgid "Cancel"
 msgstr "Hủy"
 
-#: apps/client/src/components/ai-actions.tsx:103
-#: apps/client/src/components/ai-actions.tsx:106
+#: apps/client/src/components/ai-actions.tsx:107
+#: apps/client/src/components/ai-actions.tsx:110
 msgid "Casual"
 msgstr "Thông thường"
 
@@ -263,12 +275,16 @@ msgstr "Thông thường"
 msgid "Center Artboard"
 msgstr "Trung Tâm Bảng Vẽ"
 
+#: apps/client/src/components/locale-switch.tsx:17
+msgid "Change Language"
+msgstr ""
+
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
 msgid "Change Password"
 msgstr "Thay đổi mật khẩu"
 
-#: apps/client/src/components/ai-actions.tsx:97
+#: apps/client/src/components/ai-actions.tsx:101
 msgid "Change Tone"
 msgstr "Thay Đổi Tông"
 
@@ -304,8 +320,8 @@ msgstr "Cột"
 msgid "Company"
 msgstr "Công ty"
 
-#: apps/client/src/components/ai-actions.tsx:115
-#: apps/client/src/components/ai-actions.tsx:118
+#: apps/client/src/components/ai-actions.tsx:119
+#: apps/client/src/components/ai-actions.tsx:122
 msgid "Confident"
 msgstr "Tự tin"
 
@@ -314,7 +330,7 @@ msgstr "Tự tin"
 msgid "Continue"
 msgstr "Tiếp tục"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:96
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:101
 msgid "Copy"
 msgstr "Sao chép"
 
@@ -416,6 +432,10 @@ msgstr "Xóa"
 msgid "Delete Account"
 msgstr "Xóa tài khoản"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
+msgid "Deployment Name"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:73
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:87
@@ -443,7 +463,7 @@ msgstr "Tắt xác thực 2FA"
 msgid "Discard"
 msgstr "Hủy"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:105
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:110
 msgid "Documentation"
 msgstr "Tài liệu"
 
@@ -451,7 +471,7 @@ msgstr "Tài liệu"
 msgid "Don't have an account?"
 msgstr "Chưa có tài khoản?"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:83
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:88
 msgid "Don't know where to begin? Hit the docs!"
 msgstr "Không biết bắt đầu từ đâu? Hãy truy cập tài liệu!"
 
@@ -459,7 +479,7 @@ msgstr "Không biết bắt đầu từ đâu? Hãy truy cập tài liệu!"
 msgid "Don't see your language? <0>Help translate the app.</0>"
 msgstr "Không thấy ngôn ngữ của bạn? <0>Giúp dịch ứng dụng.</0>"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:40
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:45
 msgid "Donate to Reactive Resume"
 msgstr "Đóng góp cho Reactive Resume"
 
@@ -467,7 +487,7 @@ msgstr "Đóng góp cho Reactive Resume"
 msgid "Download a JSON snapshot of your resume. This file can be used to import your resume in the future, or can even be shared with others to collaborate."
 msgstr "Tải xuống bản JSON sơ yếu lý lịch của bạn. Tệp này có thể được sử dụng để nhập hồ sơ của bạn trong tương lai, hoặc thậm chí có thể được chia sẻ với người khác để cộng tác."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:74
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:78
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "Tải xuống bản PDF sơ yếu lý lịch của bạn. Tệp này có thể được sử dụng để in sơ yếu lý lịch của bạn, gửi cho nhà tuyển dụng hoặc tải lên các cổng thông tin việc làm."
 
@@ -495,7 +515,7 @@ msgstr "Sao chép một mục hiện có"
 msgid "Duplicate an existing resume"
 msgstr "Sao chép sơ yếu lý lịch hiện có"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:92
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:97
 msgid "Edit"
 msgstr "Chỉnh sửa"
 
@@ -597,7 +617,7 @@ msgstr "Biến thể Font"
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr "Ví dụ: thông tin về công ty bạn đã gửi bản lý lịch này đến hoặc các liên kết đến mô tả công việc có thể được ghi lại ở đây."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:182
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:280
 msgid "Forget"
 msgstr "Quên"
 
@@ -614,7 +634,7 @@ msgstr "Bạn quên mật khẩu?"
 msgid "Format"
 msgstr "Định dạng"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:49
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:54
 msgid "Found a bug, or have an idea for a new feature?"
 msgstr "Tìm thấy lỗi hoặc có ý tưởng tính năng mới?"
 
@@ -622,8 +642,8 @@ msgstr "Tìm thấy lỗi hoặc có ý tưởng tính năng mới?"
 msgid "Free, forever"
 msgstr "Miễn phí mãi mãi"
 
-#: apps/client/src/components/ai-actions.tsx:121
-#: apps/client/src/components/ai-actions.tsx:124
+#: apps/client/src/components/ai-actions.tsx:125
+#: apps/client/src/components/ai-actions.tsx:128
 msgid "Friendly"
 msgstr "Thân thiện"
 
@@ -760,8 +780,8 @@ msgid "In this section, you can delete your account and all the data associated 
 msgstr "Trong phần này, bạn có thể xóa tài khoản của mình và tất cả dữ liệu được liên kết với người dùng của bạn, nhưng xin lưu ý rằng <0>hành động này không thể đảo ngược</0>."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:135
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:116
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:121
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:122
 msgid "Information"
 msgstr "Thông tin"
 
@@ -842,8 +862,8 @@ msgid "Last updated {lastUpdated}"
 msgstr "Cập nhật lần cuối {lastUpdated}"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:72
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:197
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:202
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:203
 msgid "Layout"
 msgstr "Bố cục"
 
@@ -916,7 +936,7 @@ msgstr "Đăng xuất"
 msgid "Lost your device?"
 msgstr "Bạn bị mất thiết bị?"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:247
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:252
 msgid "Main"
 msgstr "Chính"
 
@@ -942,7 +962,7 @@ msgstr "03/2023 - Hiện tại"
 msgid "Margin"
 msgstr "Lề"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:158
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:218
 msgid "Max Tokens"
 msgstr ""
 
@@ -950,7 +970,7 @@ msgstr ""
 msgid "MIT License"
 msgstr "Giấy phép MIT"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:145
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
 msgid "Model"
 msgstr ""
 
@@ -1029,12 +1049,12 @@ msgstr "OpenAI không trả về bất kỳ phản hồi nào cho văn bản c�
 msgid "OpenAI Integration"
 msgstr "Tích hợp OpenAI"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:119
-msgid "OpenAI/Ollama API Key"
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
+msgid "OpenAI/Azure OpenAI/Ollama Integration"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
-msgid "OpenAI/Ollama Integration"
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:169
+msgid "OpenAI/Ollama API Key"
 msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
@@ -1057,7 +1077,7 @@ msgstr "Tổ chức"
 msgid "Page"
 msgstr "Trang"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:228
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:233
 msgid "Page {pageNumber}"
 msgstr ""
 
@@ -1068,7 +1088,7 @@ msgstr ""
 msgid "Password"
 msgstr "Mật khẩu"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:76
 msgid "PDF"
 msgstr "PDF"
 
@@ -1134,8 +1154,8 @@ msgstr "Màu chủ đạo"
 msgid "Privacy Policy"
 msgstr "Chính sách Bảo mật"
 
-#: apps/client/src/components/ai-actions.tsx:109
-#: apps/client/src/components/ai-actions.tsx:112
+#: apps/client/src/components/ai-actions.tsx:113
+#: apps/client/src/components/ai-actions.tsx:116
 msgid "Professional"
 msgstr "Chuyên nghiệp"
 
@@ -1151,7 +1171,7 @@ msgstr "Công khai"
 msgid "Publisher"
 msgstr "Nhà xuất bản"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:69
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
 msgid "Raise an issue"
 msgstr "Đưa ra một vấn đề"
 
@@ -1193,12 +1213,12 @@ msgstr "Reactive Resume phát triển mạnh nhờ cộng đồng sôi động. 
 msgid "Redo"
 msgstr "Làm lại"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:100
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:105
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:157
 msgid "Remove"
 msgstr "Xóa"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:231
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:236
 msgid "Remove Page"
 msgstr "Xóa trang"
 
@@ -1217,7 +1237,7 @@ msgstr "Gửi lại email xác minh"
 msgid "Reset"
 msgstr "Thiết lập lại"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:201
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:206
 msgid "Reset Layout"
 msgstr "Đặt lại bố cục"
 
@@ -1255,11 +1275,11 @@ msgstr "Làm tròn"
 msgid "Save Changes"
 msgstr "Lưu thay đổi"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:176
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:274
 msgid "Save Locally"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:176
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:274
 msgid "Saved"
 msgstr ""
 
@@ -1312,7 +1332,7 @@ msgstr "Tự dựng với Docker"
 msgid "Send Email"
 msgstr "Gửi Email"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:79
 msgid "Send me a message"
 msgstr "Gửi tin nhắn cho tôi"
 
@@ -1349,7 +1369,7 @@ msgstr "Hiển thị đường ngắt"
 msgid "Show Page Numbers"
 msgstr "Hiển thị số trang"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:248
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:253
 msgid "Sidebar"
 msgstr "Thanh bên"
 
@@ -1452,7 +1472,7 @@ msgstr "Lưu trữ mã dự phòng của bạn một cách an toàn"
 msgid "Summary"
 msgstr "Tóm tắt"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:18
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:23
 msgid "Support the app by donating what you can!"
 msgstr "Hãy ủng hộ ứng dụng bằng cách quyên góp những gì bạn có thể!"
 
@@ -1463,6 +1483,14 @@ msgstr "Ủng hộ Reactive Resume"
 #: apps/client/src/pages/home/sections/features/index.tsx:65
 msgid "Supports A4/Letter page formats"
 msgstr "Hỗ trợ định dạng trang A4/Letter"
+
+#: apps/client/src/components/theme-switch.tsx:31
+msgid "Switch to Dark Mode"
+msgstr ""
+
+#: apps/client/src/components/theme-switch.tsx:29
+msgid "Switch to Light Mode"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:85
 msgid "System"
@@ -1626,6 +1654,14 @@ msgstr "URL"
 msgid "URL must start with https://"
 msgstr "URL cần bắt đầu với https://"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:247
+msgid "Use Azure OpenAI"
+msgstr ""
+
+#: apps/client/src/components/theme-switch.tsx:30
+msgid "Use System Theme"
+msgstr ""
+
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/backup-otp/page.tsx:57
 msgid "Use your backup code"
@@ -1678,7 +1714,7 @@ msgstr "Phiên bản 4"
 msgid "Views"
 msgstr "Lượt xem"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:87
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:92
 msgid "Visible"
 msgstr "Hiện"
 
@@ -1723,13 +1759,17 @@ msgstr "Bạn có thể thêm nhiều từ khóa bằng cách phân tách chúng
 msgid "You can also enter your username."
 msgstr "Bạn cũng có thể nhập tên người dùng của bạn."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:103
-msgid "You can also integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens as per your preference."
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:144
+msgid "You can also integrate with Azure OpenAI by enabling the <0>Use Azure OpenAI</0> checkbox and setting the Resource URL to your Azure OpenAI resource: <1>https://your-resource.openai.azure.com</1>. Set the deployment name in the Model field and specify the appropriate API version for your Azure deployment."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:81
-msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
-msgstr "Bạn có thể sử dụng API OpenAI để giúp bạn tạo nội dung hoặc cải thiện khả năng viết của mình trong khi soạn sơ yếu lý lịch."
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:153
+msgid "You can also integrate with Ollama simply by setting the API key to<0>sk-1234567890abcdef</0> and the Base URL to your Ollama URL, i.e.<1>http://localhost:11434/v1</1>. You can also pick and choose models and set the max tokens as per your preference."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:122
+msgid "You can make use of the OpenAI API, Azure OpenAI, or Ollama to help you generate content, or improve your writing while composing your resume."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:40
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
@@ -1739,7 +1779,7 @@ msgstr "Bạn có thể theo dõi số lượt xem sơ yếu lý lịch của b�
 msgid "You don't have permission to access this page."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:87
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:128
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr "Bạn có tùy chọn <0>lấy Key API OpenAI của bạn</0>. Key này cho phép bạn tận dụng API phù hợp với bạn. Ngoài ra, nếu bạn muốn tắt hoàn toàn các tính năng AI trong Reactive Resume, bạn chỉ cần xóa Key khỏi cài đặt của mình."
 
@@ -1756,7 +1796,7 @@ msgstr "Bạn vừa nhận thư!"
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
 msgstr "Tài khoản của bạn và tất cả dữ liệu của bạn đã được xóa thành công. Tạm biệt!"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:191
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:289
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "Key API của bạn được lưu trữ an toàn trong bộ nhớ cục bộ của trình duyệt và chỉ được sử dụng khi gửi yêu cầu tới OpenAI thông qua SDK chính thức của họ. Hãy yên tâm rằng Key của bạn không được truyền đến bất kỳ máy chủ bên ngoài nào ngoại trừ khi tương tác với các dịch vụ của OpenAI."
 

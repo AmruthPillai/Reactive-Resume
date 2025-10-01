@@ -8,7 +8,7 @@ msgstr ""
 "Language: ms\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-10-01 07:47\n"
+"PO-Revision-Date: 2025-10-01 09:15\n"
 "Last-Translator: \n"
 "Language-Team: Malay\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -30,19 +30,19 @@ msgstr "{templatesCount} templat resume yang dapat dipilih"
 msgid "{value, plural, one {Column} other {Columns}}"
 msgstr "{value, plural, other {Ruangan}}"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:20
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:25
 msgid "<0>I built Reactive Resume mostly by myself during my spare time, with a lot of help from other great open-source contributors.</0><1>If you like the app and want to support keeping it free forever, please donate whatever you can afford to give.</1>"
 msgstr "<0>Saya membina Reaktif Resume kebanyakannya sendiri semasa masa lapang saya, dengan banyak bantuan dari penyumbang sumber terbuka yang hebat lain.</0><1>Jika anda menyukai aplikasi ini dan ingin menyokong untuk memastikan ia kekal percuma selamanya, sila derma apa sahaja yang anda mampu untuk memberi.</1>"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:51
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:56
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>Saya yakin aplikasi ini tidak sempurna, tetapi saya ingin ia menjadi sempurna.</0><1>Jika anda menghadapi sebarang isu semasa membuat resume anda, atau mempunyai idea yang boleh membantu anda dan pengguna lain dalam membuat resume anda dengan lebih mudah, sila berikan isu di repository atau hantar saya emel mengenainya.</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:201
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:299
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr "<0>Nota: </0>Dengan menggunakan API OpenAI, anda mengakui dan menerima <1>terma penggunaan</1> dan <2>dasar privasi</2> yang digariskan oleh OpenAI. Sila ambil perhatian bahawa Reactive Resume tidak bertanggungjawab atas sebarang penggunaan perkhidmatan yang tidak betul atau tidak dibenarkan, dan sebarang akibat atau liabiliti yang timbul semata-mata bergantung kepada pengguna."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:85
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:90
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
 msgstr "<0>Masyarakat telah banyak menghabiskan masa menulis dokumentasi untuk Resume Reaktif, dan saya yakin ia akan membantu anda memulakan dengan aplikasi.</0><1>Juga terdapat banyak contoh untuk membantu anda memulakan, dan ciri-ciri yang mungkin anda tidak tahu tentang yang boleh membantu anda membina resume yang sempurna.</1>"
 
@@ -117,7 +117,7 @@ msgstr "Tambah item baru"
 msgid "Add a new section"
 msgstr "Tambah bahagian baru"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:261
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:266
 msgid "Add New Page"
 msgstr "Tambah Halaman Baru"
 
@@ -199,6 +199,18 @@ msgstr "Boleh didapati dalam {languagesCount} bahasa"
 msgid "Awarder"
 msgstr "Pemberi Anugerah"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:258
+msgid "Azure API Version"
+msgstr ""
+
+#: apps/client/src/services/openai/client.ts:18
+msgid "Azure OpenAI Base URL, deployment name (model), and API version are required when using Azure OpenAI."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
+msgid "Azure OpenAI Resource URL"
+msgstr ""
+
 #: apps/client/src/pages/auth/backup-otp/page.tsx:99
 #: apps/client/src/pages/auth/forgot-password/page.tsx:100
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:243
@@ -217,7 +229,7 @@ msgstr "Kod Sandaran"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "Kod Sandaran mungkin mengandungi huruf kecil atau nombor sahaja, dan mesti tepat 10 aksara."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:132
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Base URL"
 msgstr "Pautan Asas"
 
@@ -254,8 +266,8 @@ msgstr "Oleh komuniti, untuk komuniti."
 msgid "Cancel"
 msgstr "Batal"
 
-#: apps/client/src/components/ai-actions.tsx:103
-#: apps/client/src/components/ai-actions.tsx:106
+#: apps/client/src/components/ai-actions.tsx:107
+#: apps/client/src/components/ai-actions.tsx:110
 msgid "Casual"
 msgstr "Kasual"
 
@@ -263,12 +275,16 @@ msgstr "Kasual"
 msgid "Center Artboard"
 msgstr "Papan Seni Tengah"
 
+#: apps/client/src/components/locale-switch.tsx:17
+msgid "Change Language"
+msgstr ""
+
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
 msgid "Change Password"
 msgstr "Tukar Kata Laluan"
 
-#: apps/client/src/components/ai-actions.tsx:97
+#: apps/client/src/components/ai-actions.tsx:101
 msgid "Change Tone"
 msgstr "Tukar Tone"
 
@@ -304,8 +320,8 @@ msgstr "Kolum"
 msgid "Company"
 msgstr "Syarikat"
 
-#: apps/client/src/components/ai-actions.tsx:115
-#: apps/client/src/components/ai-actions.tsx:118
+#: apps/client/src/components/ai-actions.tsx:119
+#: apps/client/src/components/ai-actions.tsx:122
 msgid "Confident"
 msgstr "Keyakinan"
 
@@ -314,7 +330,7 @@ msgstr "Keyakinan"
 msgid "Continue"
 msgstr "Teruskan"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:96
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:101
 msgid "Copy"
 msgstr "Salin"
 
@@ -416,6 +432,10 @@ msgstr "Padam"
 msgid "Delete Account"
 msgstr "Padam Akaun"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
+msgid "Deployment Name"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:73
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:87
@@ -443,7 +463,7 @@ msgstr "Matikan 2FA"
 msgid "Discard"
 msgstr "Buang"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:105
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:110
 msgid "Documentation"
 msgstr "Dokumentasi"
 
@@ -451,7 +471,7 @@ msgstr "Dokumentasi"
 msgid "Don't have an account?"
 msgstr "Tidak mempunyai akaun?"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:83
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:88
 msgid "Don't know where to begin? Hit the docs!"
 msgstr "Tidak tahu di mana hendak bermula? Ketuk dokumen!"
 
@@ -459,7 +479,7 @@ msgstr "Tidak tahu di mana hendak bermula? Ketuk dokumen!"
 msgid "Don't see your language? <0>Help translate the app.</0>"
 msgstr "Jangan lihat bahasa anda? <0>Bantu terjemahkan aplikasi ini.</0>"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:40
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:45
 msgid "Donate to Reactive Resume"
 msgstr "Derma kepada Reaktif Resume"
 
@@ -467,7 +487,7 @@ msgstr "Derma kepada Reaktif Resume"
 msgid "Download a JSON snapshot of your resume. This file can be used to import your resume in the future, or can even be shared with others to collaborate."
 msgstr "Muat turun 'snapshot' JSON resume anda. Fail ini boleh digunakan untuk mengimport resume anda di masa depan, atau boleh dikongsi dengan orang lain untuk bekerjasama."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:74
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:78
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "Muat turunkan PDF resume anda. Fail ini boleh digunakan untuk mencetak resume anda, menghantarkannya kepada perekrut, atau memuat naik ke portal pekerjaan."
 
@@ -495,7 +515,7 @@ msgstr "Duplikat item yang sedia ada"
 msgid "Duplicate an existing resume"
 msgstr "Duplikat resume sedia ada"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:92
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:97
 msgid "Edit"
 msgstr "Edit"
 
@@ -597,7 +617,7 @@ msgstr "Varian Fon"
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr "Sebagai contoh, maklumat mengenai syarikat-syarikat yang anda hantar resume ini atau pautan-pautan ke huraian pekerjaan boleh dicatatkan di sini."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:182
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:280
 msgid "Forget"
 msgstr "Lupakan"
 
@@ -614,7 +634,7 @@ msgstr "Lupa kata laluan anda?"
 msgid "Format"
 msgstr "Format"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:49
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:54
 msgid "Found a bug, or have an idea for a new feature?"
 msgstr "Jumpa bug, atau ada idea untuk ciri baru?"
 
@@ -622,8 +642,8 @@ msgstr "Jumpa bug, atau ada idea untuk ciri baru?"
 msgid "Free, forever"
 msgstr "Percuma, selamanya"
 
-#: apps/client/src/components/ai-actions.tsx:121
-#: apps/client/src/components/ai-actions.tsx:124
+#: apps/client/src/components/ai-actions.tsx:125
+#: apps/client/src/components/ai-actions.tsx:128
 msgid "Friendly"
 msgstr "Mesra"
 
@@ -760,8 +780,8 @@ msgid "In this section, you can delete your account and all the data associated 
 msgstr "Dalam bahagian ini, anda boleh memadam akaun anda dan semua data yang berkaitan dengan pengguna anda, tetapi sila ambil perhatian bahawa <0>tindakan ini tidak dapat dikembalikan</0>."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:135
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:116
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:121
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:122
 msgid "Information"
 msgstr "Maklumat"
 
@@ -842,8 +862,8 @@ msgid "Last updated {lastUpdated}"
 msgstr "Terakhir dikemaskini {lastUpdated}"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:72
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:197
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:202
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:203
 msgid "Layout"
 msgstr "Tataletak"
 
@@ -916,7 +936,7 @@ msgstr "Log keluar"
 msgid "Lost your device?"
 msgstr "Hilang peranti anda?"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:247
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:252
 msgid "Main"
 msgstr "Utama"
 
@@ -942,7 +962,7 @@ msgstr "Mac 2023 - Sekarang"
 msgid "Margin"
 msgstr "Margin"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:158
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:218
 msgid "Max Tokens"
 msgstr "Tanda-tanda terbesar"
 
@@ -950,7 +970,7 @@ msgstr "Tanda-tanda terbesar"
 msgid "MIT License"
 msgstr "Lesen MIT"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:145
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
 msgid "Model"
 msgstr "Modal"
 
@@ -1029,12 +1049,12 @@ msgstr "OpenAI tidak mengembalikan pilihan apa pun untuk teks anda."
 msgid "OpenAI Integration"
 msgstr "Integrasi OpenAI"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:119
-msgid "OpenAI/Ollama API Key"
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
+msgid "OpenAI/Azure OpenAI/Ollama Integration"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
-msgid "OpenAI/Ollama Integration"
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:169
+msgid "OpenAI/Ollama API Key"
 msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
@@ -1057,7 +1077,7 @@ msgstr "Organisasi"
 msgid "Page"
 msgstr "Halaman"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:228
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:233
 msgid "Page {pageNumber}"
 msgstr ""
 
@@ -1068,7 +1088,7 @@ msgstr ""
 msgid "Password"
 msgstr "Kata Laluan"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:76
 msgid "PDF"
 msgstr "PDF"
 
@@ -1134,8 +1154,8 @@ msgstr "Warna Utama"
 msgid "Privacy Policy"
 msgstr "Dasar Privasi"
 
-#: apps/client/src/components/ai-actions.tsx:109
-#: apps/client/src/components/ai-actions.tsx:112
+#: apps/client/src/components/ai-actions.tsx:113
+#: apps/client/src/components/ai-actions.tsx:116
 msgid "Professional"
 msgstr "Profesional"
 
@@ -1151,7 +1171,7 @@ msgstr "Awam"
 msgid "Publisher"
 msgstr "Penerbit"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:69
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
 msgid "Raise an issue"
 msgstr "Timbulkan isu"
 
@@ -1193,12 +1213,12 @@ msgstr "Reactive Resume berkembang pesat berkat komuniti yang aktif. Projek ini 
 msgid "Redo"
 msgstr "Buat semula"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:100
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:105
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:157
 msgid "Remove"
 msgstr "Keluarkan"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:231
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:236
 msgid "Remove Page"
 msgstr "Buang Halaman"
 
@@ -1217,7 +1237,7 @@ msgstr "Kirim semula pautan pengesahan emel"
 msgid "Reset"
 msgstr "Tetapkan Semula"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:201
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:206
 msgid "Reset Layout"
 msgstr "Tetapkan Susunan Semula"
 
@@ -1255,11 +1275,11 @@ msgstr "Bulat"
 msgid "Save Changes"
 msgstr "Simpan Perubahan"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:176
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:274
 msgid "Save Locally"
 msgstr "Simpan di dalam computer"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:176
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:274
 msgid "Saved"
 msgstr "Disimpan"
 
@@ -1312,7 +1332,7 @@ msgstr "Taja sendiri dengan Docker"
 msgid "Send Email"
 msgstr "Hantar Email"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:79
 msgid "Send me a message"
 msgstr "Hantar saya mesej"
 
@@ -1349,7 +1369,7 @@ msgstr "Tunjukkan Garis Pemisah"
 msgid "Show Page Numbers"
 msgstr "Paparkan Nombor Halaman"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:248
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:253
 msgid "Sidebar"
 msgstr "Panel Sisi"
 
@@ -1452,7 +1472,7 @@ msgstr "Simpan kod sandaran anda dengan selamat"
 msgid "Summary"
 msgstr "Ringkasan"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:18
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:23
 msgid "Support the app by donating what you can!"
 msgstr "Menyokong aplikasi dengan menderma sebanyak yang anda mampu!"
 
@@ -1463,6 +1483,14 @@ msgstr "Sokongan Resume Reaktif"
 #: apps/client/src/pages/home/sections/features/index.tsx:65
 msgid "Supports A4/Letter page formats"
 msgstr "Mendukung format halaman A4/Surat"
+
+#: apps/client/src/components/theme-switch.tsx:31
+msgid "Switch to Dark Mode"
+msgstr ""
+
+#: apps/client/src/components/theme-switch.tsx:29
+msgid "Switch to Light Mode"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:85
 msgid "System"
@@ -1626,6 +1654,14 @@ msgstr "URL"
 msgid "URL must start with https://"
 msgstr "URL mesti bermula dengan https://"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:247
+msgid "Use Azure OpenAI"
+msgstr ""
+
+#: apps/client/src/components/theme-switch.tsx:30
+msgid "Use System Theme"
+msgstr ""
+
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/backup-otp/page.tsx:57
 msgid "Use your backup code"
@@ -1678,7 +1714,7 @@ msgstr "Versi 4"
 msgid "Views"
 msgstr "Pandangan"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:87
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:92
 msgid "Visible"
 msgstr "Kelihatan"
 
@@ -1723,13 +1759,17 @@ msgstr "Anda boleh menambah beberapa kata kunci dengan memisahkan mereka dengan 
 msgid "You can also enter your username."
 msgstr "Anda juga boleh memasukkan nama pengguna anda."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:103
-msgid "You can also integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens as per your preference."
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:144
+msgid "You can also integrate with Azure OpenAI by enabling the <0>Use Azure OpenAI</0> checkbox and setting the Resource URL to your Azure OpenAI resource: <1>https://your-resource.openai.azure.com</1>. Set the deployment name in the Model field and specify the appropriate API version for your Azure deployment."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:81
-msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
-msgstr "Anda boleh menggunakan API OpenAI untuk membantu anda menghasilkan kandungan, atau meningkatkan penulisan anda semasa menyusun resume anda."
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:153
+msgid "You can also integrate with Ollama simply by setting the API key to<0>sk-1234567890abcdef</0> and the Base URL to your Ollama URL, i.e.<1>http://localhost:11434/v1</1>. You can also pick and choose models and set the max tokens as per your preference."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:122
+msgid "You can make use of the OpenAI API, Azure OpenAI, or Ollama to help you generate content, or improve your writing while composing your resume."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:40
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
@@ -1739,7 +1779,7 @@ msgstr "Anda boleh mengesan jumlah paparan resume anda telah diterima, atau bera
 msgid "You don't have permission to access this page."
 msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:87
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:128
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr "Anda mempunyai pilihan untuk <0>mendapatkan kunci API OpenAI anda sendiri</0>. Kunci ini membolehkan anda menggunakan API sebagaimana yang anda lihat sesuai. Atau, jika anda ingin menyahdayakan ciri-ciri KI dalam Resume Reaktif sepenuhnya, anda boleh membuang kunci itu dari tetapan anda."
 
@@ -1756,7 +1796,7 @@ msgstr "Anda telah menerima emel!"
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
 msgstr "Akaun dan semua data anda telah berjaya dipadam. Selamat tinggal!"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:191
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:289
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "Kunci API anda disimpan dengan selamat dalam storan tempatan pelayar dan hanya digunakan apabila membuat permintaan kepada OpenAI melalui SDK rasmi mereka. Kita yakin bahawa kunci anda tidak dihantar ke mana-mana pelayan luar kecuali semasa berinteraksi dengan perkhidmatan OpenAI."
 

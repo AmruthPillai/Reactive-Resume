@@ -8,7 +8,7 @@ msgstr ""
 "Language: no\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-10-01 07:47\n"
+"PO-Revision-Date: 2025-10-01 09:15\n"
 "Last-Translator: \n"
 "Language-Team: Norwegian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -30,19 +30,19 @@ msgstr "{templatesCount} CV-maler å velge mellom"
 msgid "{value, plural, one {Column} other {Columns}}"
 msgstr "{value, plural, one {Kolonne} other {Kolonner}}"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:20
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:25
 msgid "<0>I built Reactive Resume mostly by myself during my spare time, with a lot of help from other great open-source contributors.</0><1>If you like the app and want to support keeping it free forever, please donate whatever you can afford to give.</1>"
 msgstr "<0>Jeg bygde Reactive Resume for det meste alene på fritiden, med mye hjelp fra andre gode bidragsytere med åpen kildekode.</0> <1>Hvis du liker appen og ønsker å støtte å holde den gratis for alltid, vennligst doner det du har råd til å gi.</1>"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:51
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:56
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>Jeg er sikker på at appen ikke er perfekt, men jeg vil gjerne at den skal være det.</0><1>Hvis du har møtt på noen problemer mens du lagde CV-en din, eller har en idé som ville hjulpet deg selv eller andre brukere med å lage CV-en din mer enkelt, legg inn et problem på GitHub Repository eller send meg en e-post om det.</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:201
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:299
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr "<0>Merk:</0> Ved å bruke OpenAI API, erkjenner og godtar du <1>bruksvilkårene</1> og <2>personvernreglene</2> skissert av OpenAI. Vær oppmerksom på at Reactive Resume ikke har noe ansvar for feil eller uautorisert bruk av tjenesten, og eventuelle følgevirkninger eller ansvar hviler utelukkende på brukeren."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:85
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:90
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
 msgstr "<0>Fellesskapet har brukt mye tid på å skrive dokumentasjonen for Reactive Resume, og jeg er sikker på at det vil hjelpe deg med å komme i gang med appen.</0><1>Det er også mange eksempler som hjelper deg med å komme i gang, og funksjoner du kanskje ikke visste om som kan hjelpe deg med å skape din perfekte CV.</1>"
 
@@ -117,7 +117,7 @@ msgstr "Legg til nytt element"
 msgid "Add a new section"
 msgstr "Legg til ny seksjon"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:261
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:266
 msgid "Add New Page"
 msgstr "Legg til ny side"
 
@@ -199,6 +199,18 @@ msgstr "Tilgjengelig på {languagesCount} språk"
 msgid "Awarder"
 msgstr "Priser"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:258
+msgid "Azure API Version"
+msgstr ""
+
+#: apps/client/src/services/openai/client.ts:18
+msgid "Azure OpenAI Base URL, deployment name (model), and API version are required when using Azure OpenAI."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
+msgid "Azure OpenAI Resource URL"
+msgstr ""
+
 #: apps/client/src/pages/auth/backup-otp/page.tsx:99
 #: apps/client/src/pages/auth/forgot-password/page.tsx:100
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:243
@@ -217,7 +229,7 @@ msgstr "Sikkerhetskopi-kode"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "Sikkerhetskopi-koder kan bare inneholde små bokstaver eller tall, og må være nøyaktig 10 tegn."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:132
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Base URL"
 msgstr "Basis-URL"
 
@@ -254,8 +266,8 @@ msgstr "Av fellesskapet, for fellesskapet."
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: apps/client/src/components/ai-actions.tsx:103
-#: apps/client/src/components/ai-actions.tsx:106
+#: apps/client/src/components/ai-actions.tsx:107
+#: apps/client/src/components/ai-actions.tsx:110
 msgid "Casual"
 msgstr "Uformell"
 
@@ -263,12 +275,16 @@ msgstr "Uformell"
 msgid "Center Artboard"
 msgstr "Sentrer Kunstbrett"
 
+#: apps/client/src/components/locale-switch.tsx:17
+msgid "Change Language"
+msgstr ""
+
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
 msgid "Change Password"
 msgstr "Bytt Passord"
 
-#: apps/client/src/components/ai-actions.tsx:97
+#: apps/client/src/components/ai-actions.tsx:101
 msgid "Change Tone"
 msgstr "Endre Tone"
 
@@ -304,8 +320,8 @@ msgstr "Kolonner"
 msgid "Company"
 msgstr "Firma"
 
-#: apps/client/src/components/ai-actions.tsx:115
-#: apps/client/src/components/ai-actions.tsx:118
+#: apps/client/src/components/ai-actions.tsx:119
+#: apps/client/src/components/ai-actions.tsx:122
 msgid "Confident"
 msgstr "Selvsikker"
 
@@ -314,7 +330,7 @@ msgstr "Selvsikker"
 msgid "Continue"
 msgstr "Fortsett"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:96
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:101
 msgid "Copy"
 msgstr "Kopier"
 
@@ -416,6 +432,10 @@ msgstr "Slett"
 msgid "Delete Account"
 msgstr "Slett Konto"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
+msgid "Deployment Name"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:73
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:87
@@ -443,7 +463,7 @@ msgstr "Deaktiver 2FA"
 msgid "Discard"
 msgstr "Forkast"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:105
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:110
 msgid "Documentation"
 msgstr "Dokumentasjon"
 
@@ -451,7 +471,7 @@ msgstr "Dokumentasjon"
 msgid "Don't have an account?"
 msgstr "Har du ikke en konto?"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:83
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:88
 msgid "Don't know where to begin? Hit the docs!"
 msgstr "Vet du ikke hvor du skal begynne? Trykk på dokumentene!"
 
@@ -459,7 +479,7 @@ msgstr "Vet du ikke hvor du skal begynne? Trykk på dokumentene!"
 msgid "Don't see your language? <0>Help translate the app.</0>"
 msgstr "Ser du ikke språket ditt? <0>Hjelp med å oversette appen.</0>"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:40
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:45
 msgid "Donate to Reactive Resume"
 msgstr "Doner til Reactive Resume"
 
@@ -467,7 +487,7 @@ msgstr "Doner til Reactive Resume"
 msgid "Download a JSON snapshot of your resume. This file can be used to import your resume in the future, or can even be shared with others to collaborate."
 msgstr "Last ned et JSON-øyeblikksbilde av CV-en din. Denne filen kan brukes til å importere CV-en din i fremtiden, eller kan til og med deles med andre for å samarbeide."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:74
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:78
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "Last ned en PDF av CV-en din. Denne filen kan brukes til å skrive ut CV-en din, sende den til rekrutterere eller laste opp på jobbportaler."
 
@@ -495,7 +515,7 @@ msgstr "Dupliser et eksisterende element"
 msgid "Duplicate an existing resume"
 msgstr "Dupliser en eksisterende CV"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:92
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:97
 msgid "Edit"
 msgstr "Rediger"
 
@@ -597,7 +617,7 @@ msgstr "Skriftvarianter"
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr "For eksempel kan du notere informasjon om hvilke selskaper du har sendt denne CV-en til eller lenkene til stillingsbeskrivelsene her."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:182
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:280
 msgid "Forget"
 msgstr "Glem"
 
@@ -614,7 +634,7 @@ msgstr "Glemt ditt passord?"
 msgid "Format"
 msgstr "Format"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:49
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:54
 msgid "Found a bug, or have an idea for a new feature?"
 msgstr "Funnet en feil, eller har en idé til en ny funksjon?"
 
@@ -622,8 +642,8 @@ msgstr "Funnet en feil, eller har en idé til en ny funksjon?"
 msgid "Free, forever"
 msgstr "Gratis, for alltid"
 
-#: apps/client/src/components/ai-actions.tsx:121
-#: apps/client/src/components/ai-actions.tsx:124
+#: apps/client/src/components/ai-actions.tsx:125
+#: apps/client/src/components/ai-actions.tsx:128
 msgid "Friendly"
 msgstr "Vennlig"
 
@@ -760,8 +780,8 @@ msgid "In this section, you can delete your account and all the data associated 
 msgstr "I denne delen kan du slette kontoen din og alle data knyttet til brukeren din, men husk at <0>denne handlingen er irreversibel</0>."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:135
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:116
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:121
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:122
 msgid "Information"
 msgstr "Informasjon"
 
@@ -842,8 +862,8 @@ msgid "Last updated {lastUpdated}"
 msgstr "Sist oppdatert {lastUpdated}"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:72
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:197
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:202
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:203
 msgid "Layout"
 msgstr "Utforming"
 
@@ -916,7 +936,7 @@ msgstr "Logg ut"
 msgid "Lost your device?"
 msgstr "Mistet enheten din?"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:247
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:252
 msgid "Main"
 msgstr "Hoved"
 
@@ -942,7 +962,7 @@ msgstr "Mars 2023 - Nåværende"
 msgid "Margin"
 msgstr "Margin"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:158
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:218
 msgid "Max Tokens"
 msgstr "Maks antall tegn"
 
@@ -950,7 +970,7 @@ msgstr "Maks antall tegn"
 msgid "MIT License"
 msgstr "MIT-lisens"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:145
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
 msgid "Model"
 msgstr "Modell"
 
@@ -1029,13 +1049,13 @@ msgstr "OpenAI returnerte ingen valg for teksten din."
 msgid "OpenAI Integration"
 msgstr "OpenAI-integrasjon"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:119
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
+msgid "OpenAI/Azure OpenAI/Ollama Integration"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:169
 msgid "OpenAI/Ollama API Key"
 msgstr "OpenAI/Ollama API-nøkkel"
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
-msgid "OpenAI/Ollama Integration"
-msgstr "OpenAI/Ollama integrasjon"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:182
@@ -1057,7 +1077,7 @@ msgstr "Organisasjon"
 msgid "Page"
 msgstr "Side"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:228
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:233
 msgid "Page {pageNumber}"
 msgstr "Side {pageNumber}"
 
@@ -1068,7 +1088,7 @@ msgstr "Side {pageNumber}"
 msgid "Password"
 msgstr "Passord"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:76
 msgid "PDF"
 msgstr "PDF"
 
@@ -1134,8 +1154,8 @@ msgstr "Hovedfarge"
 msgid "Privacy Policy"
 msgstr "Retningslinjer for personvern"
 
-#: apps/client/src/components/ai-actions.tsx:109
-#: apps/client/src/components/ai-actions.tsx:112
+#: apps/client/src/components/ai-actions.tsx:113
+#: apps/client/src/components/ai-actions.tsx:116
 msgid "Professional"
 msgstr "Profesjonell"
 
@@ -1151,7 +1171,7 @@ msgstr "Offentlig"
 msgid "Publisher"
 msgstr "Utgiver"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:69
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
 msgid "Raise an issue"
 msgstr "Ta opp et problem"
 
@@ -1193,12 +1213,12 @@ msgstr "Reactive Resume trives takket være sitt pulserende fellesskap. Dette pr
 msgid "Redo"
 msgstr "Gjør om"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:100
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:105
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:157
 msgid "Remove"
 msgstr "Fjern"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:231
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:236
 msgid "Remove Page"
 msgstr "Fjern Side"
 
@@ -1217,7 +1237,7 @@ msgstr "Send e-post bekreftelselenken på nytt"
 msgid "Reset"
 msgstr "Tilbakestill"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:201
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:206
 msgid "Reset Layout"
 msgstr "Tilbakestill oppsett"
 
@@ -1255,11 +1275,11 @@ msgstr "Avrundet"
 msgid "Save Changes"
 msgstr "Lagre Endringer"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:176
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:274
 msgid "Save Locally"
 msgstr "Lagre lokalt"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:176
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:274
 msgid "Saved"
 msgstr "Lagret"
 
@@ -1312,7 +1332,7 @@ msgstr "Selv-vert med Docker"
 msgid "Send Email"
 msgstr "Send E-post"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:79
 msgid "Send me a message"
 msgstr "Send meg en melding"
 
@@ -1349,7 +1369,7 @@ msgstr "Vis bruddlinje"
 msgid "Show Page Numbers"
 msgstr "Vis sidetall"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:248
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:253
 msgid "Sidebar"
 msgstr "Sidepanel"
 
@@ -1452,7 +1472,7 @@ msgstr "Lagre reservekodene dine sikkert"
 msgid "Summary"
 msgstr "Sammendrag"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:18
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:23
 msgid "Support the app by donating what you can!"
 msgstr "Støtt appen ved å donere det du kan!"
 
@@ -1463,6 +1483,14 @@ msgstr "Støtter Reactive Resume"
 #: apps/client/src/pages/home/sections/features/index.tsx:65
 msgid "Supports A4/Letter page formats"
 msgstr "Støtter A4/Brev sideformater"
+
+#: apps/client/src/components/theme-switch.tsx:31
+msgid "Switch to Dark Mode"
+msgstr ""
+
+#: apps/client/src/components/theme-switch.tsx:29
+msgid "Switch to Light Mode"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:85
 msgid "System"
@@ -1626,6 +1654,14 @@ msgstr "URL"
 msgid "URL must start with https://"
 msgstr "URL må starte med https://"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:247
+msgid "Use Azure OpenAI"
+msgstr ""
+
+#: apps/client/src/components/theme-switch.tsx:30
+msgid "Use System Theme"
+msgstr ""
+
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/backup-otp/page.tsx:57
 msgid "Use your backup code"
@@ -1678,7 +1714,7 @@ msgstr "Versjon 4"
 msgid "Views"
 msgstr "Visninger"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:87
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:92
 msgid "Visible"
 msgstr "Synlig"
 
@@ -1723,13 +1759,17 @@ msgstr "Du kan legge til flere nøkkelord ved å skille dem med et komma eller t
 msgid "You can also enter your username."
 msgstr "Du kan også skrive inn brukernavnet ditt."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:103
-msgid "You can also integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens as per your preference."
-msgstr "Du kan også integrere med Ollama ved å sette API-nøkkelen til `sk-1234567890abcdef` og Base URL til din Ollama URL, i. `http://localhost:11434/v1`. Du kan også velge modeller og angi maks tokens i henhold til dine innstillinger."
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:144
+msgid "You can also integrate with Azure OpenAI by enabling the <0>Use Azure OpenAI</0> checkbox and setting the Resource URL to your Azure OpenAI resource: <1>https://your-resource.openai.azure.com</1>. Set the deployment name in the Model field and specify the appropriate API version for your Azure deployment."
+msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:81
-msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
-msgstr "Du kan bruke OpenAI API for å hjelpe deg med å generere innhold, eller forbedre skrivingen din mens du skriver din CV."
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:153
+msgid "You can also integrate with Ollama simply by setting the API key to<0>sk-1234567890abcdef</0> and the Base URL to your Ollama URL, i.e.<1>http://localhost:11434/v1</1>. You can also pick and choose models and set the max tokens as per your preference."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:122
+msgid "You can make use of the OpenAI API, Azure OpenAI, or Ollama to help you generate content, or improve your writing while composing your resume."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:40
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
@@ -1739,7 +1779,7 @@ msgstr "Du kan spore antall visninger CV-en din har mottatt, eller hvor mange pe
 msgid "You don't have permission to access this page."
 msgstr "Du har ikke tilgang til denne siden."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:87
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:128
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr "Du har muligheten til å <0>skaffe din egen OpenAI API-nøkkel</0>. Denne nøkkelen gir deg mulighet til å utnytte API-en slik det passer deg. Alternativt, hvis du ønsker å deaktivere KI-funksjonene i Reactive Resume helt, kan du ganske enkelt fjerne nøkkelen fra innstillingene dine."
 
@@ -1756,7 +1796,7 @@ msgstr "Du har fått e-post!"
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
 msgstr "Kontoen din og alle dataene dine er slettet. Ha det bra!"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:191
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:289
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "API-nøkkelen din er trygt lagret i nettleserens lokale lagring og brukes kun når du sender forespørsler til OpenAI via deres offisielle SDK. Du kan være trygg på at nøkkelen din ikke overføres til noen ekstern server bortsett fra når du samhandler med OpenAI's tjenester."
 

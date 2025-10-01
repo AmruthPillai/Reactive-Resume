@@ -8,7 +8,7 @@ msgstr ""
 "Language: uk\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-10-01 07:47\n"
+"PO-Revision-Date: 2025-10-01 09:15\n"
 "Last-Translator: \n"
 "Language-Team: Ukrainian\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
@@ -30,19 +30,19 @@ msgstr "{templatesCount} шаблонів резюме на вибір"
 msgid "{value, plural, one {Column} other {Columns}}"
 msgstr "{value, plural, one {Стовпчик} few {Стовпці} many {Стовпців} other {Стовпців}}"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:20
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:25
 msgid "<0>I built Reactive Resume mostly by myself during my spare time, with a lot of help from other great open-source contributors.</0><1>If you like the app and want to support keeping it free forever, please donate whatever you can afford to give.</1>"
 msgstr "<0>Я створив Reactive Resume у свій вільний час здебільшого самотужки за значної підтримки інших учасників опен-сорс спільноти.</0><1>Якщо вам подобається додаток й ви бажаєте, щоб доступ до нього і надалі був безплатним, будь ласка, розгляньте можливість зробити пожертву на його підтримку.</1>"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:51
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:56
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>Я впевнений, що додаток не ідеальний, але я хотів би, щоб він був таким.</0><1>Якщо ви зіткнулися з будь-якими проблемами під час створення резюме, або у вас є ідея, яка полегшить процес створення резюме, повідомте про це в репозиторій або надішліть мені листа на електронну пошту.</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:201
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:299
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr "<0>Зауважте: </0>Використовуючи OpenAI API, ви підтвердуєте свою згоду з <1>умовами використання</1> та <2>політикою конфіденційності</2> OpenAI. Зверніть увагу, що Reactive Resume не несе відповідальності за будь-яке неналежне або несанкціоноване використання сервісу, а всі можливі наслідки чи відповідальність за такі дії буде лежати виключно на користувачеві."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:85
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:90
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
 msgstr "<0>Спільнота витратила багато часу на написання документації для Reactive Resume, і я впевнений, що вона допоможе вам почати роботу з додатком.</0><1>У ній також є багато прикладів, які допоможуть вам розпочати роботу, а також функції, про які ви, можливо, не знали, але які допоможуть вам створити ідеальне резюме.</1>"
 
@@ -117,7 +117,7 @@ msgstr "Додати новий елемент"
 msgid "Add a new section"
 msgstr "Додати новий розділ"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:261
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:266
 msgid "Add New Page"
 msgstr "Додати нову сторінку"
 
@@ -199,6 +199,18 @@ msgstr "Доступно {languagesCount} мовами"
 msgid "Awarder"
 msgstr "Ким видано"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:258
+msgid "Azure API Version"
+msgstr ""
+
+#: apps/client/src/services/openai/client.ts:18
+msgid "Azure OpenAI Base URL, deployment name (model), and API version are required when using Azure OpenAI."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
+msgid "Azure OpenAI Resource URL"
+msgstr ""
+
 #: apps/client/src/pages/auth/backup-otp/page.tsx:99
 #: apps/client/src/pages/auth/forgot-password/page.tsx:100
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:243
@@ -217,7 +229,7 @@ msgstr "Резервний код"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "Резервні коди може містити тільки цифри чи літери малого регістру, загальною довжиною рівно у 10 символів."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:132
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Base URL"
 msgstr "Базова URL-адреса"
 
@@ -254,8 +266,8 @@ msgstr "Спільнотою, для спільноти."
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: apps/client/src/components/ai-actions.tsx:103
-#: apps/client/src/components/ai-actions.tsx:106
+#: apps/client/src/components/ai-actions.tsx:107
+#: apps/client/src/components/ai-actions.tsx:110
 msgid "Casual"
 msgstr "Неформальний"
 
@@ -263,12 +275,16 @@ msgstr "Неформальний"
 msgid "Center Artboard"
 msgstr "Центрувати"
 
+#: apps/client/src/components/locale-switch.tsx:17
+msgid "Change Language"
+msgstr ""
+
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
 msgid "Change Password"
 msgstr "Змінити пароль"
 
-#: apps/client/src/components/ai-actions.tsx:97
+#: apps/client/src/components/ai-actions.tsx:101
 msgid "Change Tone"
 msgstr "Змінити тон"
 
@@ -304,8 +320,8 @@ msgstr "Стовпці"
 msgid "Company"
 msgstr "Компанія"
 
-#: apps/client/src/components/ai-actions.tsx:115
-#: apps/client/src/components/ai-actions.tsx:118
+#: apps/client/src/components/ai-actions.tsx:119
+#: apps/client/src/components/ai-actions.tsx:122
 msgid "Confident"
 msgstr "Впевнений"
 
@@ -314,7 +330,7 @@ msgstr "Впевнений"
 msgid "Continue"
 msgstr "Продовжити"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:96
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:101
 msgid "Copy"
 msgstr "Скопіювати"
 
@@ -416,6 +432,10 @@ msgstr "Видалити"
 msgid "Delete Account"
 msgstr "Видалити обліковий запис"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
+msgid "Deployment Name"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:73
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:87
@@ -443,7 +463,7 @@ msgstr "Вимкнути 2FA"
 msgid "Discard"
 msgstr "Відхилити"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:105
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:110
 msgid "Documentation"
 msgstr "Документація"
 
@@ -451,7 +471,7 @@ msgstr "Документація"
 msgid "Don't have an account?"
 msgstr "Ще не зареєстровані?"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:83
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:88
 msgid "Don't know where to begin? Hit the docs!"
 msgstr "Не знаєте з чого розпочати? Перегляньте документацію!"
 
@@ -459,7 +479,7 @@ msgstr "Не знаєте з чого розпочати? Перегляньте
 msgid "Don't see your language? <0>Help translate the app.</0>"
 msgstr "Не бачите своєї мови? <0>Допоможіть перекласти додаток.</0>"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:40
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:45
 msgid "Donate to Reactive Resume"
 msgstr "Пожертвувати на Reactive Resume"
 
@@ -467,7 +487,7 @@ msgstr "Пожертвувати на Reactive Resume"
 msgid "Download a JSON snapshot of your resume. This file can be used to import your resume in the future, or can even be shared with others to collaborate."
 msgstr "Завантажте JSON версію свого резюме. У майбутньому дані з цього файлу можна буде імпортувати або навіть передати іншим для співпраці."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:74
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:78
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "Завантажте своє резюме у форматі PDF. Цей файл можна роздрукувати, надіслати рекрутерам або завантажити на сайти з пошуку роботи."
 
@@ -495,7 +515,7 @@ msgstr "Дублювати наявний елемент"
 msgid "Duplicate an existing resume"
 msgstr "Дублювати наявне резюме"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:92
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:97
 msgid "Edit"
 msgstr "Редагувати"
 
@@ -597,7 +617,7 @@ msgstr "Варіант шрифту"
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr "Наприклад, тут можна зазначити інформацію про те, в які компанії ви надсилали це резюме, або посилання на описи вакансій."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:182
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:280
 msgid "Forget"
 msgstr "Видалити"
 
@@ -614,7 +634,7 @@ msgstr "Забули свій пароль?"
 msgid "Format"
 msgstr "Формат"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:49
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:54
 msgid "Found a bug, or have an idea for a new feature?"
 msgstr "Знайшли помилку чи маєте ідею для нової функції?"
 
@@ -622,8 +642,8 @@ msgstr "Знайшли помилку чи маєте ідею для нової
 msgid "Free, forever"
 msgstr "Назавжди безплатний"
 
-#: apps/client/src/components/ai-actions.tsx:121
-#: apps/client/src/components/ai-actions.tsx:124
+#: apps/client/src/components/ai-actions.tsx:125
+#: apps/client/src/components/ai-actions.tsx:128
 msgid "Friendly"
 msgstr "Дружній"
 
@@ -760,8 +780,8 @@ msgid "In this section, you can delete your account and all the data associated 
 msgstr "У цьому розділі ви можете видалити свій обліковий запис і всі дані, пов'язані з ним, однак, будь ласка, майте на увазі, що <0>ця дія є незворотною</0>."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:135
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:116
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:121
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:122
 msgid "Information"
 msgstr "Важлива інформація"
 
@@ -842,8 +862,8 @@ msgid "Last updated {lastUpdated}"
 msgstr "Останнє оновлення {lastUpdated}"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:72
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:197
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:202
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:203
 msgid "Layout"
 msgstr "Макет"
 
@@ -916,7 +936,7 @@ msgstr "Вийти"
 msgid "Lost your device?"
 msgstr "Загубили свій пристрій?"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:247
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:252
 msgid "Main"
 msgstr "Основний блок"
 
@@ -942,7 +962,7 @@ msgstr "Березень 2023 - По нині"
 msgid "Margin"
 msgstr "Відступ"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:158
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:218
 msgid "Max Tokens"
 msgstr "Максимум токенів"
 
@@ -950,7 +970,7 @@ msgstr "Максимум токенів"
 msgid "MIT License"
 msgstr "Ліцензія MIT"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:145
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
 msgid "Model"
 msgstr "Модель"
 
@@ -1029,13 +1049,13 @@ msgstr "OpenAI не повернув жодних варіантів для ва
 msgid "OpenAI Integration"
 msgstr "Інтеграція з OpenAI"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:119
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
+msgid "OpenAI/Azure OpenAI/Ollama Integration"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:169
 msgid "OpenAI/Ollama API Key"
 msgstr "API-ключ OpenAI або Ollama"
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
-msgid "OpenAI/Ollama Integration"
-msgstr "Інтеграція з OpenAI/Ollama"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:182
@@ -1057,7 +1077,7 @@ msgstr "Організація"
 msgid "Page"
 msgstr "Сторінка"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:228
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:233
 msgid "Page {pageNumber}"
 msgstr "Сторінка {pageNumber}"
 
@@ -1068,7 +1088,7 @@ msgstr "Сторінка {pageNumber}"
 msgid "Password"
 msgstr "Пароль"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:76
 msgid "PDF"
 msgstr "PDF"
 
@@ -1134,8 +1154,8 @@ msgstr "Основний колір"
 msgid "Privacy Policy"
 msgstr "Політика конфіденційності"
 
-#: apps/client/src/components/ai-actions.tsx:109
-#: apps/client/src/components/ai-actions.tsx:112
+#: apps/client/src/components/ai-actions.tsx:113
+#: apps/client/src/components/ai-actions.tsx:116
 msgid "Professional"
 msgstr "Професійний"
 
@@ -1151,7 +1171,7 @@ msgstr "Загальнодоступність"
 msgid "Publisher"
 msgstr "Видавець"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:69
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
 msgid "Raise an issue"
 msgstr "Порушити проблему"
 
@@ -1193,12 +1213,12 @@ msgstr "Reactive Resume процвітає завдяки своїй актив�
 msgid "Redo"
 msgstr "Виконати знову"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:100
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:105
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:157
 msgid "Remove"
 msgstr "Видалити"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:231
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:236
 msgid "Remove Page"
 msgstr "Видалити сторінку"
 
@@ -1217,7 +1237,7 @@ msgstr "Відправити підтвердження на пошту ще р�
 msgid "Reset"
 msgstr "Скинути"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:201
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:206
 msgid "Reset Layout"
 msgstr "Скинути макет"
 
@@ -1255,11 +1275,11 @@ msgstr "Округле"
 msgid "Save Changes"
 msgstr "Зберегти зміни"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:176
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:274
 msgid "Save Locally"
 msgstr "Зберегти локально"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:176
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:274
 msgid "Saved"
 msgstr "Збережено"
 
@@ -1312,7 +1332,7 @@ msgstr "Самостійний хостинг з Docker"
 msgid "Send Email"
 msgstr "Надіслати ел. листа"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:79
 msgid "Send me a message"
 msgstr "Написати мені"
 
@@ -1349,7 +1369,7 @@ msgstr "Показувати розрив сторінки"
 msgid "Show Page Numbers"
 msgstr "Показувати номер сторінок"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:248
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:253
 msgid "Sidebar"
 msgstr "Бічна панель"
 
@@ -1452,7 +1472,7 @@ msgstr "Зберігайте резервні коди в безпеці"
 msgid "Summary"
 msgstr "Загальні відомості"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:18
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:23
 msgid "Support the app by donating what you can!"
 msgstr "Підтримайте додаток пожертвою на довільну суму!"
 
@@ -1463,6 +1483,14 @@ msgstr "Підтримка Reactive Resume"
 #: apps/client/src/pages/home/sections/features/index.tsx:65
 msgid "Supports A4/Letter page formats"
 msgstr "Підтримує формати A4/Letter"
+
+#: apps/client/src/components/theme-switch.tsx:31
+msgid "Switch to Dark Mode"
+msgstr ""
+
+#: apps/client/src/components/theme-switch.tsx:29
+msgid "Switch to Light Mode"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:85
 msgid "System"
@@ -1626,6 +1654,14 @@ msgstr "URL-адреса"
 msgid "URL must start with https://"
 msgstr "URL-адреса повинна починатися з https://"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:247
+msgid "Use Azure OpenAI"
+msgstr ""
+
+#: apps/client/src/components/theme-switch.tsx:30
+msgid "Use System Theme"
+msgstr ""
+
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/backup-otp/page.tsx:57
 msgid "Use your backup code"
@@ -1678,7 +1714,7 @@ msgstr "Версія 4"
 msgid "Views"
 msgstr "Переглядів"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:87
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:92
 msgid "Visible"
 msgstr "Видимий"
 
@@ -1723,13 +1759,17 @@ msgstr "Ви можете додати декілька ключових слі�
 msgid "You can also enter your username."
 msgstr "Також ви можете ввести своє ім'я користувача."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:103
-msgid "You can also integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens as per your preference."
-msgstr "Ви можете інтегруватися з Ollama, просто встановивши ключ API на `sk-1234567890abcdef` і базову URL-адресу на вашу URL-адресу Ollama, тобто `http://localhost:11434/v1`. Ви також можете на свій розсуд обрати модель та встановити максимальну кількість токенів."
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:144
+msgid "You can also integrate with Azure OpenAI by enabling the <0>Use Azure OpenAI</0> checkbox and setting the Resource URL to your Azure OpenAI resource: <1>https://your-resource.openai.azure.com</1>. Set the deployment name in the Model field and specify the appropriate API version for your Azure deployment."
+msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:81
-msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
-msgstr "Ви можете використовувати OpenAI API для створення контенту або покращення тексту під час створення резюме."
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:153
+msgid "You can also integrate with Ollama simply by setting the API key to<0>sk-1234567890abcdef</0> and the Base URL to your Ollama URL, i.e.<1>http://localhost:11434/v1</1>. You can also pick and choose models and set the max tokens as per your preference."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:122
+msgid "You can make use of the OpenAI API, Azure OpenAI, or Ollama to help you generate content, or improve your writing while composing your resume."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:40
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
@@ -1739,7 +1779,7 @@ msgstr "Ви можете відстежувати кількість перег
 msgid "You don't have permission to access this page."
 msgstr "Ви не маєте дозволу на доступ до цієї сторінки."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:87
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:128
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr "У вас є можливість <0>отримати власний ключ OpenAI API</0>. Цей ключ дозволить вам використовувати API на власний розсуд. Крім того, якщо ви хочете повністю вимкнути функції штучного інтелекту в Reactive Resume, ви можете просто видалити ключ з налаштувань."
 
@@ -1756,7 +1796,7 @@ msgstr "Ви отримали листа!"
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
 msgstr "Ваш обліковий запис і всі пов'язані дані видалено. Дякуємо, що були з нами!"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:191
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:289
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "Ваш ключ API надійно зберігається в локальному сховищі браузера і використовується тільки при запитах до OpenAI через їх офіційний SDK. Будьте впевнені, що ваш ключ не передається жодному зовнішньому серверу, окрім як при взаємодії з сервісами OpenAI."
 

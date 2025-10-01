@@ -8,7 +8,7 @@ msgstr ""
 "Language: ja\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-10-01 07:47\n"
+"PO-Revision-Date: 2025-10-01 09:15\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -30,19 +30,19 @@ msgstr "{templatesCount} 個のテンプレートから選択できます"
 msgid "{value, plural, one {Column} other {Columns}}"
 msgstr "{value, plural, other {列}}"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:20
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:25
 msgid "<0>I built Reactive Resume mostly by myself during my spare time, with a lot of help from other great open-source contributors.</0><1>If you like the app and want to support keeping it free forever, please donate whatever you can afford to give.</1>"
 msgstr "<0>Reactive Resumeは、素晴らしいオープンソースコントリビューターの助けを借りながら、空き時間に作りました。</0><1>もし、このアプリを気に入り、永久に無料で使い続けたいと思った方は、寄付をお願いします。</1>"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:51
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:56
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>このアプリは完璧ではないと思いますが、完璧にしたいと思っています。</0><1>もし履歴書作成中に問題に直面したり、あなたや他のユーザーがもっと簡単に履歴書を作成できるようなアイデアがあれば、リポジトリにissueを作成するか、私にメールを送ってください。</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:201
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:299
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
 msgstr "<0>注意：</0>OpenAI APIを利用することにより、利用者はOpenAIの<1>利用規約と</1> <2>プライバシーポリシーに</2>同意したものとみなされます。Reactive Resumeは、サービスの不適切な利用や不正利用に対して一切の責任を負わず、その結果生じるいかなる影響や責任も利用者のみにあることにご注意ください。"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:85
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:90
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
 msgstr "<0>コミュニティはReactive Resumeのドキュメントを作成することに多くの時間を費やしました。</0><1>また、使い始めるのに役立つ例や、完璧な履歴書を作成するのに役立つあなたが知らないかもしれない機能もたくさんあります。</1>"
 
@@ -117,7 +117,7 @@ msgstr "アイテムを追加"
 msgid "Add a new section"
 msgstr "セクションを追加"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:261
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:266
 msgid "Add New Page"
 msgstr "ページを追加"
 
@@ -199,6 +199,18 @@ msgstr "{languagesCount} 言語で利用可能"
 msgid "Awarder"
 msgstr "受賞者"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:258
+msgid "Azure API Version"
+msgstr ""
+
+#: apps/client/src/services/openai/client.ts:18
+msgid "Azure OpenAI Base URL, deployment name (model), and API version are required when using Azure OpenAI."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
+msgid "Azure OpenAI Resource URL"
+msgstr ""
+
 #: apps/client/src/pages/auth/backup-otp/page.tsx:99
 #: apps/client/src/pages/auth/forgot-password/page.tsx:100
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:243
@@ -217,7 +229,7 @@ msgstr "バックアップコード"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "バックアップコードは小文字のアルファベットまたは数字のみを含んだ10文字である必要があります。"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:132
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:183
 msgid "Base URL"
 msgstr "ベースURL"
 
@@ -254,8 +266,8 @@ msgstr "コミュニティによるコミュニティのための。"
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: apps/client/src/components/ai-actions.tsx:103
-#: apps/client/src/components/ai-actions.tsx:106
+#: apps/client/src/components/ai-actions.tsx:107
+#: apps/client/src/components/ai-actions.tsx:110
 msgid "Casual"
 msgstr "カジュアル"
 
@@ -263,12 +275,16 @@ msgstr "カジュアル"
 msgid "Center Artboard"
 msgstr "中央のアート"
 
+#: apps/client/src/components/locale-switch.tsx:17
+msgid "Change Language"
+msgstr ""
+
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
 msgid "Change Password"
 msgstr "パスワードを変更"
 
-#: apps/client/src/components/ai-actions.tsx:97
+#: apps/client/src/components/ai-actions.tsx:101
 msgid "Change Tone"
 msgstr "トーンを変更"
 
@@ -304,8 +320,8 @@ msgstr "カラム"
 msgid "Company"
 msgstr "会社名"
 
-#: apps/client/src/components/ai-actions.tsx:115
-#: apps/client/src/components/ai-actions.tsx:118
+#: apps/client/src/components/ai-actions.tsx:119
+#: apps/client/src/components/ai-actions.tsx:122
 msgid "Confident"
 msgstr "自信があります"
 
@@ -314,7 +330,7 @@ msgstr "自信があります"
 msgid "Continue"
 msgstr "続ける"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:96
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:101
 msgid "Copy"
 msgstr "コピー"
 
@@ -416,6 +432,10 @@ msgstr "削除する"
 msgid "Delete Account"
 msgstr "アカウントを削除する"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
+msgid "Deployment Name"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:73
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:87
@@ -443,7 +463,7 @@ msgstr "2段階認証を無効にする"
 msgid "Discard"
 msgstr "破棄する"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:105
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:110
 msgid "Documentation"
 msgstr "ドキュメンテーション"
 
@@ -451,7 +471,7 @@ msgstr "ドキュメンテーション"
 msgid "Don't have an account?"
 msgstr "アカウントをお持ちでないですか？"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:83
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:88
 msgid "Don't know where to begin? Hit the docs!"
 msgstr "どこから始めたらいいかわからない？ドキュメントをヒット！"
 
@@ -459,7 +479,7 @@ msgstr "どこから始めたらいいかわからない？ドキュメントを
 msgid "Don't see your language? <0>Help translate the app.</0>"
 msgstr "あなたの言語が表示されませんか？<0>アプリの翻訳を手伝ってください。</0>"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:40
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:45
 msgid "Donate to Reactive Resume"
 msgstr "Reactive Resume に寄付する"
 
@@ -467,7 +487,7 @@ msgstr "Reactive Resume に寄付する"
 msgid "Download a JSON snapshot of your resume. This file can be used to import your resume in the future, or can even be shared with others to collaborate."
 msgstr "履歴書の JSON スナップショットをダウンロードします。 このファイルは、将来的に履歴書をインポートしたり、他の人と共有して共同作業を行うことができます。"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:74
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:78
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "履歴書のPDFをダウンロードします。このファイルは履歴書の印刷、採用担当者への送信、ジョブポータルへのアップロードに使用できます。"
 
@@ -495,7 +515,7 @@ msgstr "既存のアイテムを複製"
 msgid "Duplicate an existing resume"
 msgstr "既存の履歴書を複製"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:92
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:97
 msgid "Edit"
 msgstr "編集"
 
@@ -597,7 +617,7 @@ msgstr "Font Variants"
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
 msgstr "例えば、どの会社にこの履歴書を送ったか、または仕事の説明へのリンクについての情報はここに記述することができる。"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:182
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:280
 msgid "Forget"
 msgstr "忘れた"
 
@@ -614,7 +634,7 @@ msgstr "パスワードをお忘れですか？"
 msgid "Format"
 msgstr "書式"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:49
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:54
 msgid "Found a bug, or have an idea for a new feature?"
 msgstr "バグを見つけたり、新しい機能を考えたりしましたか?"
 
@@ -622,8 +642,8 @@ msgstr "バグを見つけたり、新しい機能を考えたりしましたか
 msgid "Free, forever"
 msgstr "無料、永久に"
 
-#: apps/client/src/components/ai-actions.tsx:121
-#: apps/client/src/components/ai-actions.tsx:124
+#: apps/client/src/components/ai-actions.tsx:125
+#: apps/client/src/components/ai-actions.tsx:128
 msgid "Friendly"
 msgstr "フレンドリーな"
 
@@ -760,8 +780,8 @@ msgid "In this section, you can delete your account and all the data associated 
 msgstr "このセクションでは、アカウントとユーザーに関連付けられているすべてのデータを削除できます。 しかし、このアクションは <0>不可逆</0>であることに留意してください。"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:135
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:116
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:121
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:122
 msgid "Information"
 msgstr "情報"
 
@@ -842,8 +862,8 @@ msgid "Last updated {lastUpdated}"
 msgstr "最終更新 {lastUpdated}"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:72
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:197
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:202
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:203
 msgid "Layout"
 msgstr "レイアウト"
 
@@ -916,7 +936,7 @@ msgstr "ログアウト"
 msgid "Lost your device?"
 msgstr "デバイスを紛失しましたか？"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:247
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:252
 msgid "Main"
 msgstr "メイン"
 
@@ -942,7 +962,7 @@ msgstr "2023年3月-現在"
 msgid "Margin"
 msgstr "マージン（マージン）"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:158
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:218
 msgid "Max Tokens"
 msgstr "最大トークン"
 
@@ -950,7 +970,7 @@ msgstr "最大トークン"
 msgid "MIT License"
 msgstr "MIT ライセンス"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:145
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:205
 msgid "Model"
 msgstr "モデル"
 
@@ -1029,13 +1049,13 @@ msgstr "OpenAIはテキストの選択肢を返しませんでした。"
 msgid "OpenAI Integration"
 msgstr "OpenAI 統合"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:119
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:120
+msgid "OpenAI/Azure OpenAI/Ollama Integration"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:169
 msgid "OpenAI/Ollama API Key"
 msgstr "OpenAI/OllamaのAPIキー"
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
-msgid "OpenAI/Ollama Integration"
-msgstr "OpenAIとOllamaの統合"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:182
@@ -1057,7 +1077,7 @@ msgstr "組織"
 msgid "Page"
 msgstr "ページ"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:228
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:233
 msgid "Page {pageNumber}"
 msgstr "ページ {pageNumber}"
 
@@ -1068,7 +1088,7 @@ msgstr "ページ {pageNumber}"
 msgid "Password"
 msgstr "パスワード"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:76
 msgid "PDF"
 msgstr "PDF"
 
@@ -1134,8 +1154,8 @@ msgstr "プライマリ色"
 msgid "Privacy Policy"
 msgstr "プライバシーポリシー"
 
-#: apps/client/src/components/ai-actions.tsx:109
-#: apps/client/src/components/ai-actions.tsx:112
+#: apps/client/src/components/ai-actions.tsx:113
+#: apps/client/src/components/ai-actions.tsx:116
 msgid "Professional"
 msgstr "プロフェッショナル"
 
@@ -1151,7 +1171,7 @@ msgstr "公開"
 msgid "Publisher"
 msgstr "発行者"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:69
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
 msgid "Raise an issue"
 msgstr "課題を上げる"
 
@@ -1193,12 +1213,12 @@ msgstr "Reactive Resume は、その活気に満ちたコミュニティのお�
 msgid "Redo"
 msgstr "Redo"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:100
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:105
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:157
 msgid "Remove"
 msgstr "削除"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:231
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:236
 msgid "Remove Page"
 msgstr "ページを削除"
 
@@ -1217,7 +1237,7 @@ msgstr "メール確認リンクを再送信する"
 msgid "Reset"
 msgstr "リセット"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:201
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:206
 msgid "Reset Layout"
 msgstr "レイアウトをリセット"
 
@@ -1255,11 +1275,11 @@ msgstr "四捨五入済み"
 msgid "Save Changes"
 msgstr "変更を保存"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:176
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:274
 msgid "Save Locally"
 msgstr "地元で節約する"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:176
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:274
 msgid "Saved"
 msgstr "保存"
 
@@ -1312,7 +1332,7 @@ msgstr "Dockerを使ったセルフホスト"
 msgid "Send Email"
 msgstr "メールを送信"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:79
 msgid "Send me a message"
 msgstr "メッセージを送る"
 
@@ -1349,7 +1369,7 @@ msgstr "改行を表示"
 msgid "Show Page Numbers"
 msgstr "ページ番号を表示"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:248
+#: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:253
 msgid "Sidebar"
 msgstr "Sidebar"
 
@@ -1452,7 +1472,7 @@ msgstr "バックアップコードを安全に保管してください"
 msgid "Summary"
 msgstr "Summary"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:18
+#: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:23
 msgid "Support the app by donating what you can!"
 msgstr "できることを寄付してアプリをサポートしましょう！"
 
@@ -1463,6 +1483,14 @@ msgstr "リアクティブレジュームをサポート"
 #: apps/client/src/pages/home/sections/features/index.tsx:65
 msgid "Supports A4/Letter page formats"
 msgstr "A4/レターページ形式に対応"
+
+#: apps/client/src/components/theme-switch.tsx:31
+msgid "Switch to Dark Mode"
+msgstr ""
+
+#: apps/client/src/components/theme-switch.tsx:29
+msgid "Switch to Light Mode"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:85
 msgid "System"
@@ -1626,6 +1654,14 @@ msgstr "URL"
 msgid "URL must start with https://"
 msgstr "URLはhttps:// で始まる必要があります"
 
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:247
+msgid "Use Azure OpenAI"
+msgstr ""
+
+#: apps/client/src/components/theme-switch.tsx:30
+msgid "Use System Theme"
+msgstr ""
+
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/backup-otp/page.tsx:57
 msgid "Use your backup code"
@@ -1678,7 +1714,7 @@ msgstr "バージョン4"
 msgid "Views"
 msgstr "ビュー"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:87
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:92
 msgid "Visible"
 msgstr "表示"
 
@@ -1723,13 +1759,17 @@ msgstr "複数のキーワードを追加するには、カンマで区切るか
 msgid "You can also enter your username."
 msgstr "ユーザー名を入力することもできます。"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:103
-msgid "You can also integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens as per your preference."
-msgstr "APIキーを`sk-1234567890abcdef`に設定し、ベースURLをOllamaのURL、つまり`http://localhost:11434/v1`に設定するだけで、Ollamaと統合することもできます。また、好みに応じてモデルを選択し、最大トークンを設定することもできます。"
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:144
+msgid "You can also integrate with Azure OpenAI by enabling the <0>Use Azure OpenAI</0> checkbox and setting the Resource URL to your Azure OpenAI resource: <1>https://your-resource.openai.azure.com</1>. Set the deployment name in the Model field and specify the appropriate API version for your Azure deployment."
+msgstr ""
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:81
-msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
-msgstr "OpenAI API を使用して、コンテンツを生成したり、履歴書を作成したりする際に書き込みを改善したりできます。"
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:153
+msgid "You can also integrate with Ollama simply by setting the API key to<0>sk-1234567890abcdef</0> and the Base URL to your Ollama URL, i.e.<1>http://localhost:11434/v1</1>. You can also pick and choose models and set the max tokens as per your preference."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:122
+msgid "You can make use of the OpenAI API, Azure OpenAI, or Ollama to help you generate content, or improve your writing while composing your resume."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:40
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
@@ -1739,7 +1779,7 @@ msgstr "公開共有を有効にすることで、履歴書が受信した閲覧
 msgid "You don't have permission to access this page."
 msgstr "このページにアクセスする権限はありません。"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:87
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:128
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
 msgstr "<0>あなた自身のOpenAI APIキー</0>を取得するオプションがあります。このキーは、あなたが適切にAPIを活用することを可能にします。 Reactive Resume で AI 機能を完全に無効にしたい場合は、設定からキーを削除することもできます。"
 
@@ -1756,7 +1796,7 @@ msgstr "メールを受け取りました！"
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
 msgstr "アカウントとすべてのデータが正常に削除されました。さようなら！"
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:191
+#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:289
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "API キーはブラウザーのローカルストレージに安全に保存され、公式の SDK 経由で OpenAI へのリクエストを行う場合にのみ使用されます。 OpenAIのサービスと相互作用する場合を除き、キーが外部サーバーに送信されることはありませんのでご安心ください。"
 
