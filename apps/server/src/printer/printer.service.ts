@@ -139,8 +139,6 @@ export class PrinterService {
         page.waitForSelector('[data-page="1"]', { timeout: 15_000 }),
       ]);
 
-      await page.waitForNetworkIdle({ idleTime: 500, timeout: 15_000 });
-
       const pagesBuffer: Buffer[] = [];
 
       const processPage = async (index: number) => {
