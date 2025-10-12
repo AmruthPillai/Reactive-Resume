@@ -118,6 +118,8 @@ export const sampleResume: ResumeData = {
             label: "",
             href: "https://creativesolutions.inc/",
           },
+          // type: "onsite",
+          type: "On-Site",
         },
         {
           id: "r6543lil53ntrxmvel53gbtm",

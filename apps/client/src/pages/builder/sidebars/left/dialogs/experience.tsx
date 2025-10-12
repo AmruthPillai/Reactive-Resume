@@ -9,6 +9,12 @@ import {
   FormMessage,
   Input,
   RichInput,
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
 } from "@reactive-resume/ui";
 import { useForm } from "react-hook-form";
 import type { z } from "zod";
@@ -96,10 +102,37 @@ export const ExperienceDialog = () => {
           name="url"
           control={form.control}
           render={({ field }) => (
-            <FormItem className="sm:col-span-2">
+            <FormItem className="">
               <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
                 <URLInput {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          name="type"
+          control={form.control}
+          render={({ field }) => (
+            <FormItem className="">
+              <FormLabel>
+                {t({ message: `Work Type`, context: "Type of employment (e.g. Onsite, Remote)" })}
+              </FormLabel>
+              <FormControl>
+                <Select {...field} value={field.value || "On-Site"} onValueChange={field.onChange}>
+                  <SelectTrigger>
+                    <SelectValue>{field.value}</SelectValue>
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectGroup>
+                      <SelectItem value="On-Site">{t`On-Site`}</SelectItem>
+                      <SelectItem value="Remote">{t`Remote`}</SelectItem>
+                      <SelectItem value="Hybrid">{t`Hybrid`}</SelectItem>
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
               </FormControl>
               <FormMessage />
             </FormItem>

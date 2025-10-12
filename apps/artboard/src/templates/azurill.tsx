@@ -280,7 +280,12 @@ const Experience = () => {
             className="font-bold"
           />
           <div>{item.position}</div>
-          <div>{item.location}</div>
+          <div className="flex items-center gap-2 text-sm text-gray-800">
+            <span>{item.location}</span>
+            <span className="inline-block aspect-square h-1.5 rounded-full bg-black" />
+            <span>{item.type}</span>
+          </div>
+
           <div className="font-bold">{item.date}</div>
         </div>
       )}

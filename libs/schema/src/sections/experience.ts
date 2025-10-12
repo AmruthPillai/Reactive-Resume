@@ -10,6 +10,8 @@ export const experienceSchema = itemSchema.extend({
   date: z.string(),
   summary: z.string(),
   url: urlSchema,
+  type: z.enum(["On-Site", "Remote", "Hybrid"]).default("On-Site").optional(),
+  // type: z.enum(["onsite", "remote", "hybrid"]).default("onsite").optional(),
 });
 
 // Type
@@ -24,4 +26,6 @@ export const defaultExperience: Experience = {
   date: "",
   summary: "",
   url: defaultUrl,
+  type: "On-Site",
+  // type: "onsite",
 };
