@@ -120,6 +120,7 @@ export const sampleResume: ResumeData = {
           },
           // type: "onsite",
           type: "On-Site",
+          employmentType: "Full-Time",
         },
         {
           id: "r6543lil53ntrxmvel53gbtm",
@@ -134,6 +135,8 @@ export const sampleResume: ResumeData = {
             label: "",
             href: "https://techadvancers.com/",
           },
+          type: "Remote",
+          employmentType: "none",
         },
       ],
     },
