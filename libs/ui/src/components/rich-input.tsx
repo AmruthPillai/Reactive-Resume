@@ -151,6 +151,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           type="button"
           pressed={editor.isActive("bold")}
           disabled={!editor.can().chain().toggleBold().run()}
+          className={editor.isActive("bold") ? "bg-secondary" : undefined}
           onPressedChange={() => editor.chain().focus().toggleBold().run()}
         >
           <TextBIcon />
@@ -163,6 +164,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           type="button"
           pressed={editor.isActive("italic")}
           disabled={!editor.can().chain().focus().toggleItalic().run()}
+          className={editor.isActive("italic") ? "bg-secondary" : undefined}
           onPressedChange={() => editor.chain().focus().toggleItalic().run()}
         >
           <TextItalicIcon />
@@ -175,6 +177,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           type="button"
           pressed={editor.isActive("strike")}
           disabled={!editor.can().chain().focus().toggleStrike().run()}
+          className={editor.isActive("strike") ? "bg-secondary" : undefined}
           onPressedChange={() => editor.chain().focus().toggleStrike().run()}
         >
           <TextStrikethroughIcon />
@@ -187,6 +190,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           type="button"
           pressed={editor.isActive("underline")}
           disabled={!editor.can().chain().focus().toggleUnderline().run()}
+          className={editor.isActive("underline") ? "bg-secondary" : undefined}
           onPressedChange={() => editor.chain().focus().toggleUnderline().run()}
         >
           <TextAUnderlineIcon />
@@ -199,6 +203,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           type="button"
           pressed={editor.isActive("highlight")}
           disabled={!editor.can().chain().focus().toggleHighlight().run()}
+          className={editor.isActive("highlight") ? "bg-secondary" : undefined}
           onPressedChange={() => editor.chain().focus().toggleHighlight().run()}
         >
           <HighlighterCircleIcon />
@@ -217,6 +222,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           type="button"
           pressed={editor.isActive("code")}
           disabled={!editor.can().chain().focus().toggleCode().run()}
+          className={editor.isActive("code") ? "bg-secondary" : undefined}
           onPressedChange={() => editor.chain().focus().toggleCode().run()}
         >
           <CodeIconImport />
@@ -229,6 +235,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           type="button"
           pressed={editor.isActive("codeBlock")}
           disabled={!editor.can().chain().focus().toggleCodeBlock().run()}
+          className={editor.isActive("codeBlock") ? "bg-secondary" : undefined}
           onPressedChange={() => editor.chain().focus().toggleCodeBlock().run()}
         >
           <CodeBlockIconImport />
@@ -241,6 +248,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           type="button"
           pressed={editor.isActive("heading", { level: 1 })}
           disabled={!editor.can().chain().focus().toggleHeading({ level: 1 }).run()}
+          className={editor.isActive("heading", { level: 1 }) ? "bg-secondary" : undefined}
           onPressedChange={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
         >
           <TextHOneIcon />
@@ -253,6 +261,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           type="button"
           pressed={editor.isActive("heading", { level: 2 })}
           disabled={!editor.can().chain().focus().toggleHeading({ level: 2 }).run()}
+          className={editor.isActive("heading", { level: 2 }) ? "bg-secondary" : undefined}
           onPressedChange={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
         >
           <TextHTwoIcon />
@@ -265,6 +274,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           type="button"
           pressed={editor.isActive("heading", { level: 3 })}
           disabled={!editor.can().chain().focus().toggleHeading({ level: 3 }).run()}
+          className={editor.isActive("heading", { level: 3 }) ? "bg-secondary" : undefined}
           onPressedChange={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
         >
           <TextHThreeIcon />
@@ -276,6 +286,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           size="sm"
           type="button"
           pressed={editor.isActive("paragraph")}
+          className={editor.isActive("paragraph") ? "bg-secondary" : undefined}
           onPressedChange={() => editor.chain().focus().setParagraph().run()}
         >
           <ParagraphIconImport />
@@ -288,6 +299,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           type="button"
           pressed={editor.isActive({ textAlign: "left" })}
           disabled={!editor.can().chain().focus().setTextAlign("left").run()}
+          className={editor.isActive({ textAlign: "left" }) ? "bg-secondary" : undefined}
           onPressedChange={() => editor.chain().focus().setTextAlign("left").run()}
         >
           <TextAlignLeftIcon />
@@ -300,6 +312,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           type="button"
           pressed={editor.isActive({ textAlign: "center" })}
           disabled={!editor.can().chain().focus().setTextAlign("center").run()}
+          className={editor.isActive({ textAlign: "center" }) ? "bg-secondary" : undefined}
           onPressedChange={() => editor.chain().focus().setTextAlign("center").run()}
         >
           <TextAlignCenterIcon />
@@ -312,6 +325,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           type="button"
           pressed={editor.isActive({ textAlign: "right" })}
           disabled={!editor.can().chain().focus().setTextAlign("right").run()}
+          className={editor.isActive({ textAlign: "right" }) ? "bg-secondary" : undefined}
           onPressedChange={() => editor.chain().focus().setTextAlign("right").run()}
         >
           <TextAlignRightIcon />
@@ -324,6 +338,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           type="button"
           pressed={editor.isActive({ textAlign: "justify" })}
           disabled={!editor.can().chain().focus().setTextAlign("justify").run()}
+          className={editor.isActive({ textAlign: "justify" }) ? "bg-secondary" : undefined}
           onPressedChange={() => editor.chain().focus().setTextAlign("justify").run()}
         >
           <TextAlignJustifyIcon />
@@ -336,6 +351,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           type="button"
           pressed={editor.isActive("bulletList")}
           disabled={!editor.can().chain().focus().toggleBulletList().run()}
+          className={editor.isActive("bulletList") ? "bg-secondary" : undefined}
           onPressedChange={() => editor.chain().focus().toggleBulletList().run()}
         >
           <ListBulletsIcon />
@@ -348,6 +364,7 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           type="button"
           pressed={editor.isActive("orderedList")}
           disabled={!editor.can().chain().focus().toggleOrderedList().run()}
+          className={editor.isActive("orderedList") ? "bg-secondary" : undefined}
           onPressedChange={() => editor.chain().focus().toggleOrderedList().run()}
         >
           <ListNumbersIcon />
