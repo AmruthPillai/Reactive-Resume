@@ -281,7 +281,7 @@ const Experience = () => {
           />
           <div className="flex items-center gap-2">
             <span>{item.position}</span>
-            {item.employmentType !== "none" && (
+            {item.employmentType && item.employmentType !== "none" && (
               <>
                 <span className="inline-block aspect-square h-1.5 rounded-full bg-black" />
                 <span>{item.employmentType}</span>
@@ -290,7 +290,7 @@ const Experience = () => {
           </div>
           <div className="flex items-center gap-2 text-sm text-gray-800">
             <span>{item.location}</span>
-            {item.type !== "none" && (
+            {item.type && item.type !== "none" && (
               <>
                 <span className="inline-block aspect-square h-1.5 rounded-full bg-black" />
                 <span>{item.type}</span>

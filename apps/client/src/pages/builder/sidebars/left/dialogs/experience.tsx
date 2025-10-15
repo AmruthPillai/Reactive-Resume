@@ -111,7 +111,7 @@ export const ExperienceDialog = () => {
             <FormItem className="">
               <FormLabel>
                 {t({
-                  message: `Work Type`,
+                  message: `Employment Type`,
                   context: "Type of employment (e.g. Full-Time, Internship)",
                 })}
               </FormLabel>

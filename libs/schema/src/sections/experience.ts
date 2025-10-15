@@ -22,9 +22,8 @@ export const experienceSchema = itemSchema.extend({
   date: z.string(),
   summary: z.string(),
   url: urlSchema,
-  type: workTypeEnum.optional().default("On-Site"),
-  employmentType: employmentTypeEnum.optional().default("Full-Time"),
-  // type: z.enum(["onsite", "remote", "hybrid"]).default("onsite").optional(),
+  type: workTypeEnum.optional(),
+  employmentType: employmentTypeEnum.optional(),
 });
 
 // Type
