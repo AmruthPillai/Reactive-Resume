@@ -152,14 +152,12 @@ export const ExperienceDialog = () => {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectGroup>
-                      <SelectGroup>
-                        {workTypeEnum.options.map((type) => (
-                          // eslint-disable-next-line react/jsx-no-comment-textnodes
-                          <SelectItem key={type} value={type}>
-                            {t`${type}`}
-                          </SelectItem>
-                        ))}
-                      </SelectGroup>
+                      {workTypeEnum.options.map((type) => (
+                        // eslint-disable-next-line react/jsx-no-comment-textnodes
+                        <SelectItem key={type} value={type}>
+                          {t`${type}`}
+                        </SelectItem>
+                      ))}
                     </SelectGroup>
                   </SelectContent>
                 </Select>

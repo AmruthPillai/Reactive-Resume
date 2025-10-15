@@ -259,7 +259,7 @@ const Experience = () => {
             <span>{item.position}</span>
             {item.employmentType && item.employmentType !== "none" && (
               <>
-                <span className="inline-block aspect-square h-1 rounded-full bg-black" />
+                <span className="inline-block aspect-square h-1.5 rounded-full bg-primary" />
                 <span>{item.employmentType}</span>
               </>
             )}
@@ -268,7 +268,7 @@ const Experience = () => {
             <span>{item.location}</span>
             {item.workType && item.workType !== "none" && (
               <>
-                <span className="inline-block aspect-square h-1 rounded-full bg-black" />
+                <span className="inline-block aspect-square h-1.5 rounded-full bg-primary" />
                 <span>{item.workType}</span>
               </>
             )}

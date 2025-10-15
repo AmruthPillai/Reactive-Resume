@@ -38,6 +38,6 @@ export const defaultExperience: Experience = {
   date: "",
   summary: "",
   url: defaultUrl,
-  workType: "On-Site",
-  employmentType: "Full-Time",
+  workType: "none",
+  employmentType: "none",
 };
