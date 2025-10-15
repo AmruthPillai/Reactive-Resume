@@ -271,9 +271,9 @@ const Experience = () => {
           <div className="shrink-0 text-right">
             <div className="font-bold">{item.date}</div>
             <div className="flex items-center gap-2">
-              {item.type && item.type !== "none" && (
+              {item.workType && item.workType !== "none" && (
                 <>
-                  <span>{item.type}</span>
+                  <span>{item.workType}</span>
                   <span className="inline-block aspect-square h-1 rounded-full bg-black" />
                 </>
               )}

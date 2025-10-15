@@ -138,7 +138,7 @@ export const ExperienceDialog = () => {
         />
 
         <FormField
-          name="type"
+          name="workType"
           control={form.control}
           render={({ field }) => (
             <FormItem className="">

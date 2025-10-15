@@ -22,7 +22,7 @@ export const experienceSchema = itemSchema.extend({
   date: z.string(),
   summary: z.string(),
   url: urlSchema,
-  type: workTypeEnum.optional(),
+  workType: workTypeEnum.optional(),
   employmentType: employmentTypeEnum.optional(),
 });
 
@@ -38,7 +38,6 @@ export const defaultExperience: Experience = {
   date: "",
   summary: "",
   url: defaultUrl,
-  type: "On-Site",
+  workType: "On-Site",
   employmentType: "Full-Time",
-  // type: "onsite",
 };
