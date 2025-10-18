@@ -531,6 +531,7 @@ const mapSectionToComponent = (section: SectionKey) => {
     case "education": {
       return <Education />;
     }
+    
     case "summary": {
       return <Summary />;
     }
