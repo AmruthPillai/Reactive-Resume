@@ -531,6 +531,11 @@ const mapSectionToComponent = (section: SectionKey) => {
     case "education": {
       return <Education />;
     }
+    
+    case "summary": {
+      return <Summary />;
+    }
+
     case "awards": {
       return <Awards />;
     }
@@ -592,8 +597,6 @@ export const Gengar = ({ columns, isFirstPage = false }: TemplateProps) => {
       </div>
 
       <div className={cn("main group", sidebar.length > 0 ? "col-span-2" : "col-span-3")}>
-        {isFirstPage && <Summary />}
-
         <div className="p-custom space-y-4">
           {main.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
