@@ -23,6 +23,10 @@ type ResumeStore = {
   // Custom Section Actions
   addSection: () => void;
   removeSection: (sectionId: SectionKey) => void;
+
+  collapsedSections: Record<string, boolean>;
+  toggleSectionCollapsed: (id: string) => void;
+  setSectionCollapsed: (id: string, collapsed: boolean) => void;
 };
 
 export const useResumeStore = create<ResumeStore>()(
@@ -68,6 +72,19 @@ export const useResumeStore = create<ResumeStore>()(
             void debouncedUpdateResume(JSON.parse(JSON.stringify(state.resume)));
           });
         }
+      },
+      collapsedSections: {},
+
+      toggleSectionCollapsed: (id) => {
+        set((state) => {
+          state.collapsedSections[id] = !state.collapsedSections[id];
+        });
+      },
+
+      setSectionCollapsed: (id, collapsed) => {
+        set((state) => {
+          state.collapsedSections[id] = collapsed;
+        });
       },
     })),
     {
