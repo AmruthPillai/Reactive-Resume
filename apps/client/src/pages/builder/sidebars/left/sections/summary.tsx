@@ -19,7 +19,7 @@ export const SummarySection = () => {
   );
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   const collapsed = useResumeStore((state) => state.collapsedSections.summary ?? false);
-  const toogleSectionCollapse = useResumeStore((state) => state.toggleSectionCollapsed);
+  const toggleSectionCollapse = useResumeStore((state) => state.toggleSectionCollapsed);
 
   return (
     <section id="summary" className="grid gap-y-6">
@@ -29,7 +29,7 @@ export const SummarySection = () => {
             className="text-gray-500 transition-colors hover:text-gray-700"
             aria-label={collapsed ? t`Expand section` : t`Collapse section`}
             onClick={() => {
-              toogleSectionCollapse("summary");
+              toggleSectionCollapse("summary");
             }}
           >
             {collapsed ? <CaretRightIcon size={18} /> : <CaretDownIcon size={18} />}
