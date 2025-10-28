@@ -1,5 +1,6 @@
 /* eslint-disable lingui/no-single-variables-to-translate */
 import { zodResolver } from "@hookform/resolvers/zod";
+import { i18n } from "@lingui/core";
 import { t } from "@lingui/macro";
 import {
   defaultExperience,
@@ -26,6 +27,7 @@ import { useForm } from "react-hook-form";
 import type { z } from "zod";
 
 import { AiActions } from "@/client/components/ai-actions";
+import { getEmploymentTypeLabels, getWorkTypeLabels } from "@/client/locales/enums";
 
 import { SectionDialog } from "../sections/shared/section-dialog";
 import { URLInput } from "../sections/shared/url-input";
@@ -109,23 +111,18 @@ export const ExperienceDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="">
-              <FormLabel>
-                {t({
-                  message: `Employment Type`,
-                  context: "Type of employment (e.g. Full-Time, Internship)",
-                })}
-              </FormLabel>
+              <FormLabel>{t`Employment Type`}</FormLabel>
               <FormControl>
                 <Select {...field} value={field.value ?? "none"} onValueChange={field.onChange}>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select Employment Type" />
+                    <SelectValue placeholder={t`Select Employment Type`} />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectGroup>
                       {employmentTypeEnum.options.map((type) => (
                         // eslint-disable-next-line react/jsx-no-comment-textnodes
                         <SelectItem key={type} value={type}>
-                          {t`${type}`}
+                          {i18n._(getEmploymentTypeLabels()[type])}
                         </SelectItem>
                       ))}
                     </SelectGroup>
@@ -142,20 +139,18 @@ export const ExperienceDialog = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem className="">
-              <FormLabel>
-                {t({ message: `Work Type`, context: "Type of Work (e.g. Onsite, Remote)" })}
-              </FormLabel>
+              <FormLabel>{t`Work Type`}</FormLabel>
               <FormControl>
                 <Select {...field} value={field.value ?? "On-Site"} onValueChange={field.onChange}>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select Work Type" />
+                    <SelectValue placeholder={t`Select Work Type`} />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectGroup>
                       {workTypeEnum.options.map((type) => (
                         // eslint-disable-next-line react/jsx-no-comment-textnodes
                         <SelectItem key={type} value={type}>
-                          {t`${type}`}
+                          {i18n._(getWorkTypeLabels()[type])}
                         </SelectItem>
                       ))}
                     </SelectGroup>

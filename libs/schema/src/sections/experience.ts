@@ -14,6 +14,9 @@ export const employmentTypeEnum = z.enum([
   "none",
 ]);
 
+export type WorkTypeEnum = z.infer<typeof workTypeEnum>;
+export type EmploymentTypeEnum = z.infer<typeof employmentTypeEnum>;
+
 // Schema
 export const experienceSchema = itemSchema.extend({
   company: z.string().min(1),
