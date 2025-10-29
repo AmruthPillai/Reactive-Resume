@@ -17,6 +17,7 @@ export const getWorkTypeLabels = (): Record<WorkTypeEnum, string> => ({
   Remote: t`Remote`,
   Hybrid: t`Hybrid`,
   none: t`Not specified`,
+  other: t`Other`,
 });
 
 export const getEmploymentTypeLabels = (): Record<EmploymentTypeEnum, string> => ({
@@ -28,4 +29,5 @@ export const getEmploymentTypeLabels = (): Record<EmploymentTypeEnum, string> =>
   Temporary: t`Temporary`,
   Volunteer: t`Volunteer`,
   none: t`Not specified`,
+  other: t`Other`,
 });
