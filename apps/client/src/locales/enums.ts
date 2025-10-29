@@ -9,25 +9,25 @@ This file is all about creating helpful helper functions for translating employm
 * - Client-side functions can, which means you can get proper localisation and easily update the language.
 */
 
-import { i18n } from "@lingui/core";
+import { t } from "@lingui/macro";
 import type { EmploymentTypeEnum, WorkTypeEnum } from "@reactive-resume/schema";
 
 export const getWorkTypeLabels = (): Record<WorkTypeEnum, string> => ({
-  "On-Site": i18n._("On-Site"),
-  Remote: i18n._("Remote"),
-  Hybrid: i18n._("Hybrid"),
-  none: i18n._("Not specified"),
-  other: i18n._("Other"),
+  "On-Site": t`On-Site`,
+  Remote: t`Remote`,
+  Hybrid: t`Hybrid`,
+  none: t`Not specified`,
+  other: t`Other`,
 });
 
 export const getEmploymentTypeLabels = (): Record<EmploymentTypeEnum, string> => ({
-  "Full-Time": i18n._("Full-Time"),
-  "Part-Time": i18n._("Part-Time"),
-  Internship: i18n._("Internship"),
-  Contract: i18n._("Contract"),
-  Freelance: i18n._("Freelance"),
-  Temporary: i18n._("Temporary"),
-  Volunteer: i18n._("Volunteer"),
-  none: i18n._("Not specified"),
-  other: i18n._("Other"),
+  "Full-Time": t`Full-Time`,
+  "Part-Time": t`Part-Time`,
+  Internship: t`Internship`,
+  Contract: t`Contract`,
+  Freelance: t`Freelance`,
+  Temporary: t`Temporary`,
+  Volunteer: t`Volunteer`,
+  none: t`Not specified`,
+  other: t`Other`,
 });
