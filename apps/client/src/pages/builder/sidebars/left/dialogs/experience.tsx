@@ -130,6 +130,27 @@ export const ExperienceDialog = () => {
                 </Select>
               </FormControl>
               <FormMessage />
+
+              {/* Show input when "Other" is selected */}
+              {field.value === "other" && (
+                <FormField
+                  name="customEmploymentType"
+                  control={form.control}
+                  render={({ field }) => (
+                    <FormItem className="pt-2">
+                      <FormLabel>{t`Specify Other Employment Type`}</FormLabel>
+                      <FormControl>
+                        <Input
+                          {...field}
+                          value={typeof field.value === "string" ? field.value : ""}
+                          placeholder={t`Enter custom employment type`}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              )}
             </FormItem>
           )}
         />
@@ -158,6 +179,27 @@ export const ExperienceDialog = () => {
                 </Select>
               </FormControl>
               <FormMessage />
+
+              {/* Show input when "Other" is selected */}
+              {field.value === "other" && (
+                <FormField
+                  name="customWorkType"
+                  control={form.control}
+                  render={({ field }) => (
+                    <FormItem className="pt-2">
+                      <FormLabel>{t`Specify Other Work Type`}</FormLabel>
+                      <FormControl>
+                        <Input
+                          {...field}
+                          value={typeof field.value === "string" ? field.value : ""}
+                          placeholder={t`Enter custom Work type`}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              )}
             </FormItem>
           )}
         />

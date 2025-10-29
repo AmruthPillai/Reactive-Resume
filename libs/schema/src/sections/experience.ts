@@ -2,7 +2,7 @@ import { z } from "zod";
 
 import { defaultItem, defaultUrl, itemSchema, urlSchema } from "../shared";
 
-export const workTypeEnum = z.enum(["On-Site", "Remote", "Hybrid", "none"]);
+export const workTypeEnum = z.enum(["On-Site", "Remote", "Hybrid", "none", "other"]);
 export const employmentTypeEnum = z.enum([
   "Full-Time",
   "Part-Time",
@@ -12,6 +12,7 @@ export const employmentTypeEnum = z.enum([
   "Temporary",
   "Volunteer",
   "none",
+  "other",
 ]);
 
 export type WorkTypeEnum = z.infer<typeof workTypeEnum>;
@@ -27,6 +28,8 @@ export const experienceSchema = itemSchema.extend({
   url: urlSchema,
   workType: workTypeEnum.optional(),
   employmentType: employmentTypeEnum.optional(),
+  customEmploymentType: z.string().optional(),
+  customWorkType: z.string().optional(),
 });
 
 // Type

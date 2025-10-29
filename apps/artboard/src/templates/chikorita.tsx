@@ -246,7 +246,11 @@ const Experience = () => {
               {item.employmentType && item.employmentType !== "none" && (
                 <>
                   <span className="inline-block aspect-square h-1.5 rounded-full bg-primary" />
-                  <span>{item.employmentType}</span>
+                  <span>
+                    {item.employmentType === "other" && item.customEmploymentType
+                      ? item.customEmploymentType
+                      : item.employmentType}{" "}
+                  </span>
                 </>
               )}
             </div>
@@ -257,7 +261,11 @@ const Experience = () => {
             <div className="flex items-center gap-2">
               {item.workType && item.workType !== "none" && (
                 <>
-                  <span>{item.workType}</span>
+                  <span>
+                    {item.workType === "other" && item.customWorkType
+                      ? item.customWorkType
+                      : item.workType}{" "}
+                  </span>
                   <span className="inline-block aspect-square h-1.5 rounded-full bg-primary" />
                 </>
               )}
