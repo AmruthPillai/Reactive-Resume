@@ -1,3 +1,4 @@
+import { i18n } from "@lingui/core";
 import type {
   Award,
   Certification,
@@ -18,6 +19,7 @@ import { Education, Experience, Volunteer } from "@reactive-resume/schema";
 import { cn, isEmptyString, isUrl, sanitize } from "@reactive-resume/utils";
 import get from "lodash.get";
 import { Fragment } from "react";
+import { getEmploymentTypeLabels, getWorkTypeLabels } from "../../../client/src/locales/enums";
 
 import { BrandIcon } from "../components/brand-icon";
 import { Picture } from "../components/picture";
@@ -290,9 +292,9 @@ const Experience = () => {
                 <>
                   <span className="inline-block aspect-square h-1.5 rounded-full bg-primary" />
                   <span>
-                    {item.employmentType === "other" && item.customEmploymentType
-                      ? item.customEmploymentType
-                      : item.employmentType}{" "}
+                    {item.employmentType === "other"
+                      ? item.customEmploymentType || i18n._(getEmploymentTypeLabels().other)
+                      : i18n._(getEmploymentTypeLabels()[item.employmentType])}
                   </span>
                 </>
               )}
@@ -305,9 +307,9 @@ const Experience = () => {
               {item.workType && item.workType !== "none" && (
                 <>
                   <span>
-                    {item.workType === "other" && item.customWorkType
-                      ? item.customWorkType
-                      : item.workType}{" "}
+                    {item.workType === "other"
+                      ? item.customWorkType || i18n._(getWorkTypeLabels().other)
+                      : i18n._(getWorkTypeLabels()[item.workType])}
                   </span>
                   <span className="inline-block aspect-square h-1.5 rounded-full bg-primary" />
                 </>

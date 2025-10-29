@@ -113,7 +113,17 @@ export const ExperienceDialog = () => {
             <FormItem className="">
               <FormLabel>{t`Employment Type`}</FormLabel>
               <FormControl>
-                <Select {...field} value={field.value ?? "none"} onValueChange={field.onChange}>
+                <Select
+                  {...field}
+                  value={field.value ?? "none"}
+                  onValueChange={(val) => {
+                    field.onChange(val);
+                    if (val !== "other") {
+                      // clear custom employment type if not "other"
+                      form.setValue("customEmploymentType", "");
+                    }
+                  }}
+                >
                   <SelectTrigger>
                     <SelectValue placeholder={t`Select Employment Type`} />
                   </SelectTrigger>
@@ -162,7 +172,16 @@ export const ExperienceDialog = () => {
             <FormItem className="">
               <FormLabel>{t`Work Type`}</FormLabel>
               <FormControl>
-                <Select {...field} value={field.value ?? "none"} onValueChange={field.onChange}>
+                <Select
+                  {...field}
+                  value={field.value ?? "none"}
+                  onValueChange={(val) => {
+                    field.onChange(val);
+                    if (val !== "other") {
+                      form.setValue("customWorkType", "");
+                    }
+                  }}
+                >
                   <SelectTrigger>
                     <SelectValue placeholder={t`Select Work Type`} />
                   </SelectTrigger>
