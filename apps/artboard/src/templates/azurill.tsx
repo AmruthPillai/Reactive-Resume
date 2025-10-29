@@ -1,4 +1,3 @@
-import { i18n } from "@lingui/core";
 import type {
   Award,
   Certification,
@@ -24,7 +23,6 @@ import { BrandIcon } from "../components/brand-icon";
 import { Picture } from "../components/picture";
 import { useArtboardStore } from "../store/artboard";
 import type { TemplateProps } from "../types/template";
-import { getEmploymentTypeLabels, getWorkTypeLabels } from "../../../client/src/locales/enums";
 
 const Header = () => {
   const basics = useArtboardStore((state) => state.resume.basics);
@@ -287,9 +285,9 @@ const Experience = () => {
               <>
                 <span className="inline-block aspect-square h-1.5 rounded-full bg-black" />
                 <span>
-                  {item.employmentType === "other"
-                    ? item.customEmploymentType || i18n._(getEmploymentTypeLabels().other)
-                    : i18n._(getEmploymentTypeLabels()[item.employmentType])}
+                  {item.employmentType === "other" && item.customEmploymentType
+                    ? item.customEmploymentType
+                    : item.employmentType}{" "}
                 </span>
               </>
             )}
@@ -300,9 +298,9 @@ const Experience = () => {
               <>
                 <span className="inline-block aspect-square h-1.5 rounded-full bg-black" />
                 <span>
-                  {item.workType === "other"
-                    ? item.customWorkType || i18n._(getWorkTypeLabels().other)
-                    : i18n._(getWorkTypeLabels()[item.workType])}
+                  {item.workType === "other" && item.customWorkType
+                    ? item.customWorkType
+                    : item.workType}{" "}
                 </span>
               </>
             )}

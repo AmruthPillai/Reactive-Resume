@@ -27,7 +27,7 @@ import { useForm } from "react-hook-form";
 import type { z } from "zod";
 
 import { AiActions } from "@/client/components/ai-actions";
-import { getEmploymentTypeLabels, getWorkTypeLabels } from "@/client/locales/enums";
+import { useEmploymentTypeLabels, useWorkTypeLabels } from "@/client/locales/enums";
 
 import { SectionDialog } from "../sections/shared/section-dialog";
 import { URLInput } from "../sections/shared/url-input";
@@ -41,6 +41,9 @@ export const ExperienceDialog = () => {
     defaultValues: defaultExperience,
     resolver: zodResolver(formSchema),
   });
+
+  const employmentTypeLabels = useEmploymentTypeLabels();
+  const workTypeLabels = useWorkTypeLabels();
 
   return (
     <SectionDialog<FormValues> id="experience" form={form} defaultValues={defaultExperience}>
@@ -132,7 +135,7 @@ export const ExperienceDialog = () => {
                       {employmentTypeEnum.options.map((type) => (
                         // eslint-disable-next-line react/jsx-no-comment-textnodes
                         <SelectItem key={type} value={type}>
-                          {i18n._(getEmploymentTypeLabels()[type])}
+                          {i18n._(employmentTypeLabels[type])}
                         </SelectItem>
                       ))}
                     </SelectGroup>
@@ -190,7 +193,7 @@ export const ExperienceDialog = () => {
                       {workTypeEnum.options.map((type) => (
                         // eslint-disable-next-line react/jsx-no-comment-textnodes
                         <SelectItem key={type} value={type}>
-                          {i18n._(getWorkTypeLabels()[type])}
+                          {i18n._(workTypeLabels[type])}
                         </SelectItem>
                       ))}
                     </SelectGroup>

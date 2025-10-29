@@ -1,6 +1,3 @@
-import { i18n } from "@lingui/core";
-import { getEmploymentTypeLabels, getWorkTypeLabels } from "../../../client/src/locales/enums";
-
 import type {
   Award,
   Certification,
@@ -260,8 +257,8 @@ const Experience = () => {
                 <span className="inline-block aspect-square h-1.5 rounded-full bg-primary" />
                 <span>
                   {item.employmentType === "other"
-                    ? item.customEmploymentType || i18n._(getEmploymentTypeLabels().other)
-                    : i18n._(getEmploymentTypeLabels()[item.employmentType])}
+                    ? item.customEmploymentType
+                    : item.employmentType}
                 </span>
               </>
             )}
@@ -271,11 +268,7 @@ const Experience = () => {
             {item.workType && item.workType !== "none" && (
               <>
                 <span className="inline-block aspect-square h-1.5 rounded-full bg-primary" />
-                <span>
-                  {item.workType === "other"
-                    ? item.customWorkType || i18n._(getWorkTypeLabels().other)
-                    : i18n._(getWorkTypeLabels()[item.workType])}
-                </span>
+                <span>{item.workType === "other" ? item.customWorkType : item.workType}</span>
               </>
             )}
           </div>
