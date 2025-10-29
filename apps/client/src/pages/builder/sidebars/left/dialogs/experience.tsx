@@ -141,7 +141,7 @@ export const ExperienceDialog = () => {
             <FormItem className="">
               <FormLabel>{t`Work Type`}</FormLabel>
               <FormControl>
-                <Select {...field} value={field.value ?? "On-Site"} onValueChange={field.onChange}>
+                <Select {...field} value={field.value ?? "none"} onValueChange={field.onChange}>
                   <SelectTrigger>
                     <SelectValue placeholder={t`Select Work Type`} />
                   </SelectTrigger>
