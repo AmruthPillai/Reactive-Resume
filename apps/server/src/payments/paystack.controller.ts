@@ -23,7 +23,7 @@ export class PaystackController {
 
   // GET /api/paystack/verify?reference=REF&userId=UID&sku=templates10&amountKES=100
   @Get("verify")
-  @Throttle(10, 60)
+  @Throttle({ verify: { ttl: 60, limit: 10 } })
   async verify(@Query() q: any) {
     const { reference, userId, sku, amountKES } = q;
     const v = await this.svc.verify(reference);
@@ -56,7 +56,7 @@ export class PaystackController {
 
   @Post("webhook")
   @HttpCode(200)
-  @Throttle(120, 60)
+  @Throttle({ webhook: { ttl: 60, limit: 120 } })
   async webhook(
     @Headers("x-paystack-signature") sig: string,
     @Req() req: Request & { rawBody?: Buffer },

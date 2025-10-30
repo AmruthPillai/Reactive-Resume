@@ -25,8 +25,14 @@ import { AiModule } from "./ai/ai.module";
 
 @Module({
   imports: [
-    // Rate limiting
-    ThrottlerModule.forRoot([{ ttl: 60, limit: 60 }]),
+    // Rate limiting (named groups for v6)
+    ThrottlerModule.forRoot([
+      { name: "default", ttl: 60, limit: 60 },
+      { name: "account", ttl: 60, limit: 30 },
+      { name: "verify", ttl: 60, limit: 10 },
+      { name: "webhook", ttl: 60, limit: 120 },
+      { name: "ai", ttl: 1, limit: 1 },
+    ]),
     // Core Modules
     ConfigModule,
     DatabaseModule,

@@ -11,7 +11,7 @@ export class AccountController {
 
   @Get("entitlements")
   @UseGuards(TwoFactorGuard)
-  @Throttle(30, 60)
+  @Throttle({ account: { ttl: 60, limit: 30 } })
   async entitlements(@User("id") userId: string) {
     const user = await this.prisma.user.findUniqueOrThrow({
       where: { id: userId },
@@ -22,7 +22,7 @@ export class AccountController {
 
   @Get("billing")
   @UseGuards(TwoFactorGuard)
-  @Throttle(15, 60)
+  @Throttle({ account: { ttl: 60, limit: 30 } })
   async billing(@User("id") userId: string) {
     const [entitlements, payments] = await Promise.all([
       this.prisma.user.findUniqueOrThrow({

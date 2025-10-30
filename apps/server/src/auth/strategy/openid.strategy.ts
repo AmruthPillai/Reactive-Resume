@@ -1,6 +1,5 @@
 import { BadRequestException, Injectable, Logger } from "@nestjs/common";
 import { PassportStrategy } from "@nestjs/passport";
-import { User } from "@prisma/client";
 import { ErrorMessage, generateRandomName, processUsername } from "@reactive-resume/utils";
 import { Profile, Strategy, StrategyOptions } from "passport-openidconnect";
 
@@ -42,7 +41,7 @@ export class OpenIDStrategy extends PassportStrategy(Strategy, "openid") {
     const email = (emails?.[0].value ?? `${username ?? uniqueId}@openid.com`).toLocaleLowerCase();
     const picture = photos?.[0].value;
 
-    let user: User | null = null;
+    let user: Express.User | null = null;
 
     if (!email) throw new BadRequestException(ErrorMessage.InvalidCredentials);
 

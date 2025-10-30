@@ -1,4 +1,4 @@
-import { Body, Controller, Post, UseGuards } from "@nestjs/common";
+﻿import { Body, Controller, Post, UseGuards } from "@nestjs/common";
 import { Throttle } from "@nestjs/throttler";
 
 import { TwoFactorGuard } from "@/server/auth/guards/two-factor.guard";
@@ -14,7 +14,7 @@ export class AiController {
 
   @Post("rewrite")
   @UseGuards(TwoFactorGuard)
-  @Throttle(1, 1)
+  @Throttle({ ai: { ttl: 1, limit: 1 } })
   async rewrite(@User("id") userId: string, @Body() body: any) {
     const text: string = String(body?.text ?? "").slice(0, 2000);
     const mode: Mode | undefined = body?.mode;

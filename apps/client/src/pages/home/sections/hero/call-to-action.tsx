@@ -29,13 +29,13 @@ export const HeroCTA = () => {
   return (
     <>
       <Button asChild size="lg">
-        <Link to="/auth/login">{t`Get Started`}</Link>
+        <Link to="/auth/register">{t`Start Free`}</Link>
       </Button>
 
       <Button asChild size="lg" variant="link">
-        <a href="https://docs.rxresu.me" target="_blank" rel="noopener noreferrer nofollow">
+        <a href="#pricing">
           <BookIcon className="mr-3" />
-          {t`Learn more`}
+          {t`See Plans`}
         </a>
       </Button>
     </>

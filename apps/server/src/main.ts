@@ -4,7 +4,7 @@ import { NestFactory } from "@nestjs/core";
 import type { NestExpressApplication } from "@nestjs/platform-express";
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
 import cookieParser from "cookie-parser";
-import bodyParser from "body-parser";
+import { json as expressJson, raw as expressRaw } from "express";
 import session from "express-session";
 import helmet from "helmet";
 import { patchNestJsSwagger } from "nestjs-zod";
@@ -44,7 +44,9 @@ async function bootstrap() {
 
   // Raw body for Paystack webhook signature verification
   // Note: global prefix is 'api', so full path is /api/paystack/webhook
-  app.use("/api/paystack/webhook", bodyParser.raw({ type: "*/*" }));
+  app.use("/api/paystack/webhook", expressRaw({ type: "*/*" }));
+  // JSON body parser for the rest
+  app.use(expressJson());
 
   // Helmet - enabled only in production
   if (isHTTPS) app.use(helmet({ contentSecurityPolicy: false }));

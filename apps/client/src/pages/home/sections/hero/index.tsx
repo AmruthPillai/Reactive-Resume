@@ -23,26 +23,24 @@ export const HeroSection = () => (
         whileInView={{ opacity: 1, x: 0 }}
       >
         <div className="hidden items-center gap-x-4 sm:flex">
-          <Badge>{t`Version 4`}</Badge>
+          <Badge>{t`Kenya Ready`}</Badge>
 
-          <a
-            href="https://docs.rxresu.me/overview/features"
-            className={cn(buttonVariants({ variant: "link" }), "space-x-2 text-left")}
+          <div className={cn(buttonVariants({ variant: "link" }), "space-x-2 text-left pointer-events-none")}
           >
-            <p>{t`What's new in the latest version`}</p>
+            <p className="opacity-80">{t`Powered by Paystack & OpenAI`}</p>
             <ArrowRightIcon />
-          </a>
+          </div>
         </div>
 
         <div className="mt-10 space-y-2">
-          <h6 className="text-base font-bold tracking-wide">{t`Finally,`}</h6>
+          <h6 className="text-base font-bold tracking-wide text-[#00A859]">{t`Stand out`}</h6>
           <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-            {t`A free and open-source resume builder`}
+            {t`Create a Professional Kenyan CV in Minutes`}
           </h1>
         </div>
 
         <p className="prose prose-base prose-zinc mt-6 text-lg leading-8 dark:prose-invert">
-          {t`A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume.`}
+          {t`Start free. Upgrade anytime with M-PESA or Card. Build ATS-friendly CVs and cover letters fast with modern templates and AI writing.`}
         </p>
 
         <div className="mt-10 flex items-center gap-x-8">
@@ -62,7 +60,7 @@ export const HeroSection = () => (
                 width={3600}
                 height={2078}
                 src="/screenshots/builder.jpg"
-                alt="Reactive Resume - Screenshot - Builder Screen"
+                alt="CV Builder - Screenshot - Builder Screen"
                 className="w-[76rem] rounded-lg bg-background/5 shadow-2xl ring-1 ring-foreground/10"
               />
             </Tilt>

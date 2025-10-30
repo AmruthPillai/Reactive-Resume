@@ -1,7 +1,6 @@
 import { BadRequestException, Injectable, Logger } from "@nestjs/common";
 import { PassportStrategy } from "@nestjs/passport";
 import { createId } from "@paralleldrive/cuid2";
-import { User } from "@prisma/client";
 import { ErrorMessage, processUsername } from "@reactive-resume/utils";
 import { Profile, Strategy, StrategyOptions, VerifyCallback } from "passport-google-oauth20";
 
@@ -29,7 +28,7 @@ export class GoogleStrategy extends PassportStrategy(Strategy, "google") {
     const email = (emails?.[0].value ?? `${username}@google.com`).toLocaleLowerCase();
     const picture = photos?.[0].value;
 
-    let user: User | null = null;
+    let user: Express.User | null = null;
 
     if (!email) throw new BadRequestException(ErrorMessage.InvalidCredentials);
 
