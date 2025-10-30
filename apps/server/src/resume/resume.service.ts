@@ -1,5 +1,6 @@
 import {
   BadRequestException,
+  ForbiddenException,
   Injectable,
   InternalServerErrorException,
   Logger,
@@ -145,6 +146,53 @@ export class ResumeService {
   }
 
   async printResume(resume: ResumeDto, userId?: string) {
+    // Guard premium template export and apply daily quotas for owner
+    if (userId && resume.userId === userId) {
+      // Daily quota: allow up to 5 exports/day without 2FA; beyond that require 2FA
+      const today = new Date();
+      today.setUTCHours(0, 0, 0, 0);
+      const key = { userId_date: { userId, date: today } } as const;
+      const usage = await this.prisma.usage.findUnique({ where: key });
+      const prints = usage?.prints ?? 0;
+      if (prints >= 5) {
+        const user = await this.prisma.user.findUniqueOrThrow({
+          where: { id: userId },
+          select: { twoFactorEnabled: true },
+        });
+        if (!user.twoFactorEnabled) {
+          throw new ForbiddenException(
+            "Daily export limit reached. Enable 2FA to continue exporting today.",
+          );
+        }
+      }
+
+      await this.prisma.usage.upsert({
+        where: key,
+        update: { prints: { increment: 1 } },
+        create: { userId, date: today, prints: 1, aiCalls: 0 },
+      });
+
+      const template = (resume.data as any)?.metadata?.template as string | undefined;
+      const premiumTemplates = new Set([
+        "twoColumn",
+        "elegant",
+        "ngosKenya",
+        "pscKenya",
+        "telcoPro",
+        "bankingATS",
+      ]);
+      if (template && premiumTemplates.has(template)) {
+        const user = await this.prisma.user.findUniqueOrThrow({
+          where: { id: userId },
+          select: { plan: true, templatesCap: true },
+        });
+        const entitled = user.plan === "lifetime" || (user.templatesCap ?? 0) >= 10;
+        if (!entitled) {
+          throw new ForbiddenException("Template is premium and not unlocked");
+        }
+      }
+    }
+
     const url = await this.printerService.printResume(resume);
 
     // Update statistics: increment the number of downloads by 1

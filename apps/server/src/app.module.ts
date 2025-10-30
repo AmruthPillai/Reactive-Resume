@@ -1,7 +1,8 @@
 import path from "node:path";
 
 import { HttpException, Module } from "@nestjs/common";
-import { APP_INTERCEPTOR, APP_PIPE } from "@nestjs/core";
+import { APP_GUARD, APP_INTERCEPTOR, APP_PIPE } from "@nestjs/core";
+import { ThrottlerGuard, ThrottlerModule } from "@nestjs/throttler";
 import { ServeStaticModule } from "@nestjs/serve-static";
 import { RavenInterceptor, RavenModule } from "nest-raven";
 import { ZodValidationPipe } from "nestjs-zod";
@@ -18,9 +19,14 @@ import { ResumeModule } from "./resume/resume.module";
 import { StorageModule } from "./storage/storage.module";
 import { TranslationModule } from "./translation/translation.module";
 import { UserModule } from "./user/user.module";
+import { PaystackModule } from "./payments/paystack.module";
+import { AccountModule } from "./account/account.module";
+import { AiModule } from "./ai/ai.module";
 
 @Module({
   imports: [
+    // Rate limiting
+    ThrottlerModule.forRoot([{ ttl: 60, limit: 60 }]),
     // Core Modules
     ConfigModule,
     DatabaseModule,
@@ -37,6 +43,9 @@ import { UserModule } from "./user/user.module";
     FeatureModule,
     TranslationModule,
     ContributorsModule,
+    PaystackModule,
+    AccountModule,
+    AiModule,
 
     // Static Assets
     ServeStaticModule.forRoot({
@@ -51,6 +60,10 @@ import { UserModule } from "./user/user.module";
     }),
   ],
   providers: [
+    {
+      provide: APP_GUARD,
+      useClass: ThrottlerGuard,
+    },
     {
       provide: APP_PIPE,
       useClass: ZodValidationPipe,

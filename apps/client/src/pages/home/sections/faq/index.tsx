@@ -192,33 +192,28 @@ const Question4 = () => {
   );
 };
 
-// How does the OpenAI Integration work?
+// How do the AI features work?
 const Question5 = () => (
   <AccordionItem value="5">
     <AccordionTrigger className="text-left leading-relaxed">
-      How does the OpenAI Integration work?
+      How do the AI features work?
     </AccordionTrigger>
     <AccordionContent className="prose max-w-none dark:prose-invert">
       <p>
-        OpenAI has been a game-changer for all of us. I cannot tell you how much ChatGPT has helped
-        me in my everyday work and with the development of Reactive Resume. It only makes sense that
-        you leverage what AI has to offer and let it help you build the perfect resume.
+        AI can be a helpful assistant while writing resumes and cover letters. In Reactive Resume,
+        the AI tools help you improve wording, fix grammar, and adjust tone so your content reads
+        clearly and professionally.
       </p>
 
       <p>
-        While most applications out there charge you a fee to use their AI services (rightfully so,
-        because it isn't cheap), you can choose to enter your own OpenAI API key on the Settings
-        page (under OpenAI Integration).{" "}
-        <strong>The key is stored in your browser's local storage</strong>, which means that if you
-        uninstall your browser, or even clear your data, the key is gone with it. All requests made
-        to OpenAI are also sent directly to their service and does not hit the app servers at all.
+        AI access is included with the AI Add‑on and Lifetime plans. Requests are processed securely
+        on our servers, and daily usage limits apply.
       </p>
 
       <p>
-        You are free to turn off all AI features (and not be aware of it's existence) simply by not
-        adding a key in the Settings page and still make use of all the useful features that
-        Reactive Resume has to offer. I would even suggest you to take the extra step of using
-        ChatGPT to write your content, and simply copy it over to Reactive Resume.
+        If you prefer not to use AI, that’s fine too — all other features of Reactive Resume work
+        just as well without it. We don’t store your text longer than necessary to process a
+        request, and we never share your personal keys.
       </p>
     </AccordionContent>
   </AccordionItem>

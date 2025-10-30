@@ -8,6 +8,7 @@ import {
   Patch,
   Post,
   Query,
+  Req,
   Res,
   UseGuards,
 } from "@nestjs/common";
@@ -49,7 +50,12 @@ export class AuthController {
     private readonly configService: ConfigService,
   ) {}
 
-  private async exchangeToken(id: string, email: string, isTwoFactorAuth = false) {
+  private async exchangeToken(
+    id: string,
+    email: string,
+    isTwoFactorAuth = false,
+    req?: import("express").Request,
+  ) {
     try {
       const payload = payloadSchema.parse({ id, isTwoFactorAuth });
 
@@ -58,6 +64,15 @@ export class AuthController {
 
       // Set Refresh Token in Database
       await this.authService.setRefreshToken(email, refreshToken);
+
+      // Create session (max 2)
+      await this.authService.createSession(id, refreshToken, {
+        userAgent: req?.headers["user-agent"] as string | undefined,
+        ip:
+          ((req?.headers["x-forwarded-for"] as string | undefined)?.split(",")[0]?.trim() as
+            | string
+            | undefined) || (req as any)?.ip,
+      });
 
       return { accessToken, refreshToken };
     } catch (error) {
@@ -70,6 +85,7 @@ export class AuthController {
     response: Response,
     isTwoFactorAuth = false,
     redirect = false,
+    req?: import("express").Request,
   ) {
     let status = "authenticated";
 
@@ -80,6 +96,7 @@ export class AuthController {
       user.id,
       user.email,
       isTwoFactorAuth,
+      req,
     );
 
     response.cookie("Authentication", accessToken, getCookieOptions("access"));
@@ -96,16 +113,24 @@ export class AuthController {
   }
 
   @Post("register")
-  async register(@Body() registerDto: RegisterDto, @Res({ passthrough: true }) response: Response) {
+  async register(
+    @Body() registerDto: RegisterDto,
+    @Res({ passthrough: true }) response: Response,
+    @Req() req: import("express").Request,
+  ) {
     const user = await this.authService.register(registerDto);
 
-    return this.handleAuthenticationResponse(user, response);
+    return this.handleAuthenticationResponse(user, response, false, false, req);
   }
 
   @Post("login")
   @UseGuards(LocalGuard)
-  async login(@User() user: UserWithSecrets, @Res({ passthrough: true }) response: Response) {
-    return this.handleAuthenticationResponse(user, response);
+  async login(
+    @User() user: UserWithSecrets,
+    @Res({ passthrough: true }) response: Response,
+    @Req() req: import("express").Request,
+  ) {
+    return this.handleAuthenticationResponse(user, response, false, false, req);
   }
 
   @Get("providers")
@@ -127,8 +152,9 @@ export class AuthController {
   async githubCallback(
     @User() user: UserWithSecrets,
     @Res({ passthrough: true }) response: Response,
+    @Req() req: import("express").Request,
   ) {
-    return this.handleAuthenticationResponse(user, response, false, true);
+    return this.handleAuthenticationResponse(user, response, false, true, req);
   }
 
   @ApiTags("OAuth", "Google")
@@ -144,8 +170,9 @@ export class AuthController {
   async googleCallback(
     @User() user: UserWithSecrets,
     @Res({ passthrough: true }) response: Response,
+    @Req() req: import("express").Request,
   ) {
-    return this.handleAuthenticationResponse(user, response, false, true);
+    return this.handleAuthenticationResponse(user, response, false, true, req);
   }
 
   @ApiTags("OAuth", "OpenID")
@@ -161,8 +188,9 @@ export class AuthController {
   async openidCallback(
     @User() user: UserWithSecrets,
     @Res({ passthrough: true }) response: Response,
+    @Req() req: import("express").Request,
   ) {
-    return this.handleAuthenticationResponse(user, response, false, true);
+    return this.handleAuthenticationResponse(user, response, false, true, req);
   }
 
   @Post("refresh")
@@ -211,10 +239,11 @@ export class AuthController {
     @User("email") email: string,
     @Body() { code }: TwoFactorDto,
     @Res({ passthrough: true }) response: Response,
+    @Req() req: import("express").Request,
   ) {
     const { backupCodes } = await this.authService.enable2FA(email, code);
 
-    const { accessToken, refreshToken } = await this.exchangeToken(id, email, true);
+    const { accessToken, refreshToken } = await this.exchangeToken(id, email, true, req);
 
     response.cookie("Authentication", accessToken, getCookieOptions("access"));
     response.cookie("Refresh", refreshToken, getCookieOptions("refresh"));
@@ -241,10 +270,11 @@ export class AuthController {
     @User() user: UserWithSecrets,
     @Body() { code }: TwoFactorDto,
     @Res({ passthrough: true }) response: Response,
+    @Req() req: import("express").Request,
   ) {
     await this.authService.verify2FACode(user.email, code);
 
-    const { accessToken, refreshToken } = await this.exchangeToken(user.id, user.email, true);
+    const { accessToken, refreshToken } = await this.exchangeToken(user.id, user.email, true, req);
 
     response.cookie("Authentication", accessToken, getCookieOptions("access"));
     response.cookie("Refresh", refreshToken, getCookieOptions("refresh"));
@@ -261,10 +291,11 @@ export class AuthController {
     @User("email") email: string,
     @Body() { code }: TwoFactorBackupDto,
     @Res({ passthrough: true }) response: Response,
+    @Req() req: import("express").Request,
   ) {
     const user = await this.authService.useBackup2FACode(email, code);
 
-    return this.handleAuthenticationResponse(user, response, true);
+    return this.handleAuthenticationResponse(user, response, true, false, req);
   }
 
   // Password Recovery Flows

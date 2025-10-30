@@ -6,10 +6,14 @@ import { motion } from "framer-motion";
 import { useResumeStore } from "@/client/stores/resume";
 
 import { SectionIcon } from "../shared/section-icon";
+import { TEMPLATE_META } from "@/client/data/templatesMeta";
+import { useEntitlements } from "@/client/services/account/account";
+import { Link } from "react-router";
 
 export const TemplateSection = () => {
   const setValue = useResumeStore((state) => state.setValue);
   const currentTemplate = useResumeStore((state) => state.resume.data.metadata.template);
+  const { data: entitlements } = useEntitlements();
 
   return (
     <section id="template" className="grid gap-y-6">
@@ -32,7 +36,11 @@ export const TemplateSection = () => {
                 currentTemplate === template && "ring-2",
               )}
               onClick={() => {
-                setValue("metadata.template", template);
+                const meta = TEMPLATE_META[template];
+                const lifetime = entitlements?.plan === "lifetime";
+                const cap = entitlements?.templatesCap ?? 0;
+                const allowed = lifetime || cap >= (meta?.requiredCap ?? 1);
+                if (allowed) setValue("metadata.template", template);
               }}
             >
               <img src={`/templates/jpg/${template}.jpg`} alt={template} className="rounded-sm" />
@@ -42,6 +50,28 @@ export const TemplateSection = () => {
                   {template}
                 </p>
               </div>
+
+              {/* Lock overlay */}
+              {(() => {
+                const meta = TEMPLATE_META[template];
+                const lifetime = entitlements?.plan === "lifetime";
+                const cap = entitlements?.templatesCap ?? 0;
+                const allowed = lifetime || cap >= (meta?.requiredCap ?? 1);
+                if (allowed) return null;
+                return (
+                  <div className="absolute inset-0 flex items-center justify-center rounded-sm bg-black/40">
+                    <div className="text-center">
+                      <div className="mb-2 font-semibold text-white">{t`Premium Template`}</div>
+                      <Link
+                        to="/pricing"
+                        className="rounded bg-primary px-3 py-1 text-sm font-semibold text-primary-foreground"
+                      >
+                        {t`Unlock (KES 100)`}
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })()}
             </motion.div>
           </AspectRatio>
         ))}

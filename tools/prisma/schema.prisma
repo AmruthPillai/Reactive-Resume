@@ -33,6 +33,13 @@ model User {
   provider         Provider
   secrets          Secrets?
   resumes          Resume[]
+  // Freemium entitlements
+  plan             String   @default("free") // free | lifetime
+  hasAI            Boolean  @default(false)
+  templatesCap     Int      @default(3)
+  payments         Payment[]
+  sessions         Session[]
+  usages           Usage[]
 }
 
 model Secrets {
@@ -78,4 +85,47 @@ model Statistics {
   updatedAt DateTime @updatedAt
 
   @@unique([resumeId, id])
+}
+
+/// Daily usage counters per user
+model Usage {
+  id       String   @id @default(cuid())
+  userId   String
+  date     DateTime
+  prints   Int      @default(0)
+  aiCalls  Int      @default(0)
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, date])
+}
+
+/// Payment records for Paystack transactions and audit
+model Payment {
+  id         String   @id @default(cuid())
+  userId     String
+  reference  String   @unique
+  sku        String   // templates10 | ai_addon | lifetime
+  amountKES  Int
+  currency   String   @default("KES")
+  status     String   // initialized | success | failed | refunded
+  rawEvent   Json?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+/// Refresh-token backed sessions (max 2 per user)
+model Session {
+  id         String   @id @default(cuid())
+  userId     String
+  tokenHash  String   @unique
+  userAgent  String?
+  ip         String?
+  createdAt  DateTime @default(now())
+  lastUsedAt DateTime @default(now())
+
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, lastUsedAt])
 }

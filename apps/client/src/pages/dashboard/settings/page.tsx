@@ -4,10 +4,11 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 
 import { AccountSettings } from "./_sections/account";
+import { BillingSettings } from "./_sections/billing";
 import { DangerZoneSettings } from "./_sections/danger";
-import { OpenAISettings } from "./_sections/openai";
 import { ProfileSettings } from "./_sections/profile";
 import { SecuritySettings } from "./_sections/security";
+import { SessionsSettings } from "./_sections/sessions";
 
 export const SettingsPage = () => (
   <>
@@ -30,11 +31,13 @@ export const SettingsPage = () => (
         <div className="space-y-6">
           <AccountSettings />
           <Separator />
+          <BillingSettings />
+          <Separator />
+          <SessionsSettings />
+          <Separator />
           <SecuritySettings />
           <Separator />
           <ProfileSettings />
-          <Separator />
-          <OpenAISettings />
           <Separator />
           <DangerZoneSettings />
         </div>

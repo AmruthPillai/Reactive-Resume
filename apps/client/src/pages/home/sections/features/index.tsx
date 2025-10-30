@@ -49,7 +49,7 @@ export const FeaturesSection = () => {
     { icon: <ProhibitIcon />, title: t`No user tracking or advertising` },
     { icon: <CloudIcon />, title: t`Self-host with Docker` },
     { icon: <TranslateIcon />, title: t`Available in ${languagesCount} languages` },
-    { icon: <BrainIcon />, title: t`OpenAI Integration` },
+    { icon: <BrainIcon />, title: t`AI Writing Assistant` },
     { icon: <GithubLogoIcon />, title: t`Sign in with GitHub` },
     { icon: <GoogleLogoIcon />, title: t`Sign in with Google` },
     { icon: <EnvelopeSimpleIcon />, title: t`Sign in with Email` },

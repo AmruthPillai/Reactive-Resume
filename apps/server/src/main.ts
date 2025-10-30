@@ -4,6 +4,7 @@ import { NestFactory } from "@nestjs/core";
 import type { NestExpressApplication } from "@nestjs/platform-express";
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
 import cookieParser from "cookie-parser";
+import bodyParser from "body-parser";
 import session from "express-session";
 import helmet from "helmet";
 import { patchNestJsSwagger } from "nestjs-zod";
@@ -16,6 +17,7 @@ patchNestJsSwagger();
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
     logger: process.env.NODE_ENV === "development" ? ["debug"] : ["error", "warn", "log"],
+    rawBody: true,
   });
 
   const configService = app.get(ConfigService<Config>);
@@ -39,6 +41,10 @@ async function bootstrap() {
 
   // CORS
   app.enableCors({ credentials: true, origin: isHTTPS });
+
+  // Raw body for Paystack webhook signature verification
+  // Note: global prefix is 'api', so full path is /api/paystack/webhook
+  app.use("/api/paystack/webhook", bodyParser.raw({ type: "*/*" }));
 
   // Helmet - enabled only in production
   if (isHTTPS) app.use(helmet({ contentSecurityPolicy: false }));

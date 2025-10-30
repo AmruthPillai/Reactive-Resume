@@ -18,6 +18,7 @@ import { HomePage } from "../pages/home/page";
 import { ErrorPage } from "../pages/public/error";
 import { publicLoader, PublicResumePage } from "../pages/public/page";
 import { Providers } from "../providers";
+import { PricingPage } from "../features/payments/PricingPage";
 import { AuthGuard } from "./guards/auth";
 import { GuestGuard } from "./guards/guest";
 import { authLoader } from "./loaders/auth";
@@ -27,6 +28,7 @@ export const routes = createRoutesFromElements(
     <Route errorElement={<ErrorPage />}>
       <Route element={<HomeLayout />}>
         <Route path="/" element={<HomePage />} />
+        <Route path="/pricing" element={<PricingPage />} />
       </Route>
 
       <Route path="auth">

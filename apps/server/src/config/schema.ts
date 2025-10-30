@@ -49,6 +49,11 @@ export const configSchema = z.object({
     .default("false")
     .transform((s) => s !== "false" && s !== "0"),
 
+  // Paystack (Payments)
+  PAYSTACK_PUBLIC_KEY: z.string(),
+  PAYSTACK_SECRET_KEY: z.string(),
+  PAYSTACK_BASE_URL: z.string().url().default("https://api.paystack.co"),
+
   // Crowdin (Optional)
   CROWDIN_PROJECT_ID: z.coerce.number().optional(),
   CROWDIN_PERSONAL_TOKEN: z.string().optional(),
@@ -83,6 +88,13 @@ export const configSchema = z.object({
   OPENID_SCOPE: z.string().optional(),
   OPENID_TOKEN_URL: z.string().url().optional(),
   OPENID_USER_INFO_URL: z.string().url().optional(),
+
+  // AI (server-side proxy)
+  OPENAI_API_KEY: z.string().optional(),
+  AI_MODEL: z.string().optional().default("gpt-4o-mini"),
+  AI_MAX_DAILY_FREE: z.coerce.number().optional().default(0),
+  AI_MAX_DAILY_ADDON: z.coerce.number().optional().default(200),
+  AI_MAX_DAILY_LIFETIME: z.coerce.number().optional().default(300),
 });
 
 export type Config = z.infer<typeof configSchema>;

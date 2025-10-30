@@ -1,4 +1,4 @@
-import { randomBytes } from "node:crypto";
+import { createHash, randomBytes } from "node:crypto";
 
 import {
   BadRequestException,
@@ -14,6 +14,7 @@ import { AuthProvidersDto, LoginDto, RegisterDto, UserWithSecrets } from "@react
 import { ErrorMessage } from "@reactive-resume/utils";
 import * as bcryptjs from "bcryptjs";
 import { authenticator } from "otplib";
+import { PrismaService } from "nestjs-prisma";
 
 import { Config } from "../config/schema";
 import { MailService } from "../mail/mail.service";
@@ -27,7 +28,12 @@ export class AuthService {
     private readonly userService: UserService,
     private readonly mailService: MailService,
     private readonly jwtService: JwtService,
+    private readonly prisma: PrismaService,
   ) {}
+
+  private hashToken(token: string) {
+    return createHash("sha256").update(token).digest("hex");
+  }
 
   private hash(password: string): Promise<string> {
     return bcryptjs.hash(password, 10);
@@ -87,14 +93,42 @@ export class AuthService {
     });
   }
 
+  async createSession(userId: string, refreshToken: string, meta?: { userAgent?: string; ip?: string }) {
+    const tokenHash = this.hashToken(refreshToken);
+
+    await this.prisma.session.create({
+      data: {
+        userId,
+        tokenHash,
+        userAgent: meta?.userAgent,
+        ip: meta?.ip,
+      },
+    });
+
+    // Enforce max 2 sessions: keep most recent 2
+    const sessions = await this.prisma.session.findMany({
+      where: { userId },
+      orderBy: { createdAt: "desc" },
+      skip: 2,
+      take: 100,
+      select: { id: true },
+    });
+    if (sessions.length > 0) {
+      await this.prisma.session.deleteMany({ where: { id: { in: sessions.map((s) => s.id) } } });
+    }
+  }
+
   async validateRefreshToken(payload: Payload, token: string) {
     const user = await this.userService.findOneById(payload.id);
-    const storedRefreshToken = user.secrets?.refreshToken;
-
-    if (!storedRefreshToken || storedRefreshToken !== token) throw new ForbiddenException();
+    const tokenHash = this.hashToken(token);
+    const session = await this.prisma.session.findUnique({ where: { tokenHash } });
+    if (!session || session.userId !== user.id) {
+      throw new ForbiddenException();
+    }
+    // Touch lastUsedAt
+    await this.prisma.session.update({ where: { tokenHash }, data: { lastUsedAt: new Date() } });
 
     if (!user.twoFactorEnabled) return user;
-
     if (payload.isTwoFactorAuth) return user;
   }
 

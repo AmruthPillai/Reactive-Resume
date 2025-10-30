@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Outlet } from "react-router";
 
 import { Sidebar } from "./_components/sidebar";
+import { Paid2faNudge } from "@/client/components/paid-2fa-nudge";
 
 export const DashboardLayout = () => {
   const [open, setOpen] = useState(false);
@@ -42,6 +43,7 @@ export const DashboardLayout = () => {
       </motion.div>
 
       <main className="mx-6 my-4 lg:mx-8 lg:pl-[320px]">
+        <Paid2faNudge />
         <Outlet />
       </main>
     </div>

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router";
+import { Button } from "@reactive-resume/ui";
 
 import { Logo } from "@/client/components/logo";
 
@@ -19,7 +20,11 @@ export const Header = () => (
           <Logo size={48} />
         </Link>
 
-        <div />
+        <div>
+          <Button asChild size="sm" variant="outline">
+            <Link to="/pricing">Pricing</Link>
+          </Button>
+        </div>
       </div>
     </div>
   </motion.header>
