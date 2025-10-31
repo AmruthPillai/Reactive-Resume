@@ -1,58 +1,89 @@
 import { t } from "@lingui/macro";
 import {
   BrainIcon,
-  CheckCircleIcon,
-  CurrencyDollarSimpleIcon,
   LayoutIcon,
   LockIcon,
-  IconContext,
+  DeviceMobileIcon,
+  CloudArrowUpIcon,
+  CurrencyCircleDollarIcon,
 } from "@phosphor-icons/react";
-import { cn } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
 
 type Feature = {
   icon: React.ReactNode;
   title: string;
-  className?: string;
+  description: string;
 };
-
-const featureLabel = cn(
-  "flex cursor-default items-center justify-center gap-x-2 rounded bg-secondary px-4 py-3 text-sm font-medium leading-none text-primary transition-colors hover:bg-primary hover:text-background",
-);
 
 export const FeaturesSection = () => {
   const features: Feature[] = [
-    { icon: <LayoutIcon />, title: t`Modern Templates` },
-    { icon: <BrainIcon />, title: t`AI Writing Assistant` },
-    { icon: <CurrencyDollarSimpleIcon />, title: t`Affordable Plans (from KES 100)` },
-    { icon: <LockIcon />, title: t`Secure & Private` },
+    {
+      icon: <LayoutIcon size={32} weight="duotone" />,
+      title: t`Professional Templates`,
+      description: t`ATS-optimized designs that get past screening systems and impress recruiters`,
+    },
+    {
+      icon: <BrainIcon size={32} weight="duotone" />,
+      title: t`AI-Powered Writing`,
+      description: t`Smart suggestions to improve your content, fix grammar, and enhance tone`,
+    },
+    {
+      icon: <DeviceMobileIcon size={32} weight="duotone" />,
+      title: t`Mobile Friendly`,
+      description: t`Create and edit your CV from any device, anywhere, anytime`,
+    },
+    {
+      icon: <CurrencyCircleDollarIcon size={32} weight="duotone" />,
+      title: t`M-PESA Integration`,
+      description: t`Pay easily with M-PESA or card. Transparent pricing from KES 100`,
+    },
+    {
+      icon: <CloudArrowUpIcon size={32} weight="duotone" />,
+      title: t`Auto-Save & Sync`,
+      description: t`Never lose your work. Changes save automatically across all devices`,
+    },
+    {
+      icon: <LockIcon size={32} weight="duotone" />,
+      title: t`Private & Secure`,
+      description: t`Your data is encrypted and protected. Delete anytime, no questions asked`,
+    },
   ];
 
   return (
-    <section id="features" className="relative bg-secondary-accent py-24 sm:py-32">
-      <div className="container">
-        <div className="space-y-6 leading-loose">
-          <h2 className="text-4xl font-bold">{t`Everything you need to get hired`}</h2>
-          <p className="max-w-4xl text-base leading-relaxed">
-            {t`Job-ready designs optimized for Kenyan employers, instant AI help for rephrasing and grammar, simple pricing with M-PESA, and privacy-first by design.`}
+    <section id="features" className="relative bg-secondary/20 py-24 sm:py-32 lg:py-40">
+      <div className="container px-4 sm:px-6 lg:px-8">
+        {/* Section Header - Centered */}
+        <div className="mx-auto max-w-3xl text-center mb-16 lg:mb-24">
+          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl mb-6">
+            {t`Everything you need to get hired`}
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed sm:text-xl">
+            {t`Professional tools designed specifically for the Kenyan job market`}
           </p>
+        </div>
 
-          <IconContext.Provider value={{ size: 14, weight: "bold" }}>
-            <div className="!mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  viewport={{ once: true }}
-                  initial={{ opacity: 0, x: -50 }}
-                  className={cn(featureLabel, feature.className)}
-                  whileInView={{ opacity: 1, x: 0, transition: { delay: index * 0.1 } }}
-                >
-                  {feature.icon}
-                  <h3>{feature.title}</h3>
-                </motion.div>
-              ))}
-            </div>
-          </IconContext.Provider>
+        {/* Features Grid - 2 columns on mobile/tablet, 4 on desktop */}
+        <div className="mx-auto max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0, transition: { delay: index * 0.1, duration: 0.5 } }}
+              className="text-center"
+            >
+              {/* Icon */}
+              <div className="mb-4 inline-flex text-info">
+                {feature.icon}
+              </div>
+
+              {/* Content */}
+              <h3 className="text-lg font-bold mb-2">{feature.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {feature.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

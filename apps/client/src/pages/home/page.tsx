@@ -3,7 +3,6 @@ import { useLingui } from "@lingui/react";
 import { Helmet } from "react-helmet-async";
 
 import { FAQSection } from "./sections/faq";
-import { FeaturesSection } from "./sections/features";
 import { HeroSection } from "./sections/hero";
 import { TestimonialsSection } from "./sections/testimonials";
 import { PricingSection } from "./sections/pricing";
@@ -64,7 +63,6 @@ export const HomePage = () => {
       </Helmet>
 
       <HeroSection />
-      <FeaturesSection />
       <WhatWeOfferSection />
       <PricingSection />
       <HowItWorksSection />

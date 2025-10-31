@@ -71,7 +71,7 @@ export const PublicResumePage = () => {
     <div>
       <Helmet>
         <title>
-          {title} - {t`Reactive Resume`}
+          {title} - {t`CV Builder`}
         </title>
       </Helmet>
 
@@ -92,7 +92,7 @@ export const PublicResumePage = () => {
           <Button size="sm" variant="ghost" className="space-x-1.5 text-xs font-normal">
             <span>{t`Built with`}</span>
             <Icon size={12} />
-            <span>{t`Reactive Resume`}</span>
+            <span>{t`CV Builder`}</span>
           </Button>
         </Link>
       </div>

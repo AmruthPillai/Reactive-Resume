@@ -83,21 +83,31 @@ const faqs: QA[] = [
 ];
 
 export const FAQSection = () => (
-  <section id="faq" className="container relative py-24 sm:py-32">
-    <div className="grid gap-12 lg:grid-cols-3">
-      <div className="space-y-6">
-        <h2 className="text-4xl font-bold">{t`Frequently Asked Questions`}</h2>
-        <p className="text-base leading-loose">
-          {t`Everything you need to know about plans, AI, payments, and data privacy.`}
+  <section id="faq" className="relative py-24 sm:py-32 lg:py-40 bg-background">
+    <div className="container px-4 sm:px-6 lg:px-8">
+      {/* Section Header - Centered */}
+      <div className="mx-auto max-w-3xl text-center mb-16 lg:mb-24">
+        <h2 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl mb-6">
+          {t`Frequently Asked Questions`}
+        </h2>
+        <p className="text-lg text-muted-foreground leading-relaxed sm:text-xl">
+          {t`Got questions? We've got answers. Find everything you need to know about pricing, features, payments, and privacy.`}
         </p>
       </div>
 
-      <div className="col-span-2">
-        <Accordion collapsible type="single">
+      {/* FAQ Accordion */}
+      <div className="mx-auto max-w-3xl">
+        <Accordion collapsible type="single" className="space-y-4">
           {faqs.map((item, i) => (
-            <AccordionItem key={i} value={String(i + 1)}>
-              <AccordionTrigger className="text-left leading-relaxed">{item.q}</AccordionTrigger>
-              <AccordionContent className="prose max-w-none dark:prose-invert">
+            <AccordionItem
+              key={i}
+              value={String(i + 1)}
+              className="border-2 border-border/50 rounded-xl px-6 bg-background hover:border-primary/50 transition-colors"
+            >
+              <AccordionTrigger className="text-left font-bold py-5 hover:no-underline text-base">
+                {item.q}
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground leading-relaxed pb-5">
                 {item.a}
               </AccordionContent>
             </AccordionItem>

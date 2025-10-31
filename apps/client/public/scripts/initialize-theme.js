@@ -1,13 +1,14 @@
 (function initializeTheme() {
   try {
-    if (
-      localStorage.theme === "dark" ||
-      // eslint-disable-next-line lingui/no-unlocalized-strings
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
+    // Default to light mode unless user explicitly chose dark
+    if (localStorage.theme === "dark") {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
+      // Set light as default if no preference exists
+      if (!localStorage.theme) {
+        localStorage.theme = "light";
+      }
     }
   } catch {
     // pass

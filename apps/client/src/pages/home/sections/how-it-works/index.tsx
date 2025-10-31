@@ -1,29 +1,60 @@
 import { t } from "@lingui/macro";
-import { CheckCircleIcon, NumberCircleOneIcon, NumberCircleTwoIcon, NumberCircleThreeIcon } from "@phosphor-icons/react";
+import { UserCirclePlusIcon, PencilLineIcon, DownloadIcon, ArrowRightIcon } from "@phosphor-icons/react";
+import { motion } from "framer-motion";
+
+const steps = [
+  {
+    icon: <UserCirclePlusIcon size={28} weight="bold" />,
+    title: t`Sign up for free`,
+    description: t`Create your account in under 30 seconds with email or social login`,
+  },
+  {
+    icon: <PencilLineIcon size={28} weight="bold" />,
+    title: t`Build your CV`,
+    description: t`Choose a template, fill in your details, and let AI help you write better content`,
+  },
+  {
+    icon: <DownloadIcon size={28} weight="bold" />,
+    title: t`Download & apply`,
+    description: t`Export as PDF, share online, or upgrade for premium templates and features`,
+  },
+];
 
 export const HowItWorksSection = () => (
-  <section id="how-it-works" className="relative py-24 sm:py-32 bg-secondary-accent">
-    <div className="container">
-      <div className="space-y-2 text-center">
-        <h2 className="text-4xl font-bold">{t`How it works`}</h2>
-        <p className="opacity-80">{t`Three simple steps to your job-ready CV`}</p>
+  <section id="how-it-works" className="relative py-24 sm:py-32 lg:py-40 bg-secondary/20">
+    <div className="container px-4 sm:px-6 lg:px-8">
+      {/* Section Header */}
+      <div className="mx-auto max-w-3xl text-center mb-16 lg:mb-24">
+        <h2 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl mb-6">
+          {t`Get started in 3 simple steps`}
+        </h2>
+        <p className="text-lg text-muted-foreground leading-relaxed sm:text-xl">
+          {t`Creating a professional CV has never been this easy`}
+        </p>
       </div>
-      <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
-        <div className="rounded-lg bg-background p-6 shadow-sm">
-          <NumberCircleOneIcon size={28} className="text-[#00A859]" />
-          <h3 className="mt-3 text-lg font-semibold">{t`Sign Up Free`}</h3>
-          <p className="mt-1 text-sm opacity-80">{t`Create your account in seconds`}</p>
-        </div>
-        <div className="rounded-lg bg-background p-6 shadow-sm">
-          <NumberCircleTwoIcon size={28} className="text-[#00A859]" />
-          <h3 className="mt-3 text-lg font-semibold">{t`Choose a Template`}</h3>
-          <p className="mt-1 text-sm opacity-80">{t`Customize your details easily`}</p>
-        </div>
-        <div className="rounded-lg bg-background p-6 shadow-sm">
-          <NumberCircleThreeIcon size={28} className="text-[#00A859]" />
-          <h3 className="mt-3 text-lg font-semibold">{t`Download or Upgrade`}</h3>
-          <p className="mt-1 text-sm opacity-80">{t`Export your CV or unlock premium templates anytime`}</p>
-        </div>
+
+      {/* Steps Grid - Simple centered layout without cards */}
+      <div className="mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+        {steps.map((step, index) => (
+          <motion.div
+            key={index}
+            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0, transition: { delay: index * 0.2, duration: 0.5 } }}
+            className="text-center"
+          >
+            {/* Icon Circle */}
+            <div className="mx-auto mb-6 inline-flex h-20 w-20 items-center justify-center rounded-full bg-info text-info-foreground">
+              {step.icon}
+            </div>
+
+            {/* Content */}
+            <h3 className="text-xl font-bold mb-3">{step.title}</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              {step.description}
+            </p>
+          </motion.div>
+        ))}
       </div>
     </div>
   </section>

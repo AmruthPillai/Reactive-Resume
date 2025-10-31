@@ -1,52 +1,107 @@
 import { t } from "@lingui/macro";
 import {
-  BrainIcon,
-  FileIcon,
-  LayoutIcon,
-  LockIcon,
-  GoogleChromeLogoIcon,
-  CloudIcon,
-  CurrencyDollarSimpleIcon,
-  SwatchesIcon,
-  FolderIcon,
-  TextAaIcon,
+  SparkleIcon,
+  DevicesIcon,
+  ShareNetworkIcon,
+  ShieldCheckIcon,
 } from "@phosphor-icons/react";
-import { Card, CardContent } from "@reactive-resume/ui";
+import { motion } from "framer-motion";
 
-type Offer = { icon: React.ReactNode; title: string; desc: string };
+type Offer = {
+  icon: React.ReactNode;
+  title: string;
+  desc: string;
+  features: string[];
+};
 
 const items: Offer[] = [
-  { icon: <LayoutIcon />, title: t`ATS-friendly templates`, desc: t`Clean, modern designs that pass applicant tracking systems.` },
-  { icon: <BrainIcon />, title: t`AI writing help`, desc: t`Rephrase bullets, fix grammar, and improve tone instantly.` },
-  { icon: <FileIcon />, title: t`PDF export`, desc: t`Download polished PDFs ready to share with recruiters.` },
-  { icon: <GoogleChromeLogoIcon />, title: t`Public share link`, desc: t`Host and share your resume online in one click.` },
-  { icon: <FolderIcon />, title: t`Multiple resumes`, desc: t`Create versions tailored to different roles and companies.` },
-  { icon: <SwatchesIcon />, title: t`Custom styles`, desc: t`Adjust colors and layout to match your personal brand.` },
-  { icon: <TextAaIcon />, title: t`Google Fonts`, desc: t`Choose from a wide range of professional typefaces.` },
-  { icon: <LockIcon />, title: t`Privacy-first`, desc: t`Your data stays secure. Delete your account anytime.` },
-  { icon: <CurrencyDollarSimpleIcon />, title: t`M-PESA & card`, desc: t`Simple local payments powered by Paystack.` },
-  { icon: <CloudIcon />, title: t`Auto-save`, desc: t`Your work saves as you type, across devices.` },
+  {
+    icon: <SparkleIcon size={40} weight="duotone" />,
+    title: t`Smart CV Builder`,
+    desc: t`Create professional CVs with intelligent tools`,
+    features: [
+      t`ATS-optimized templates`,
+      t`AI writing assistance`,
+      t`Custom styling & fonts`,
+      t`Real-time preview`,
+    ],
+  },
+  {
+    icon: <DevicesIcon size={40} weight="duotone" />,
+    title: t`Work Anywhere`,
+    desc: t`Access your CVs from any device, anytime`,
+    features: [
+      t`Cloud auto-save`,
+      t`Mobile responsive`,
+      t`Multiple CV versions`,
+      t`Cross-device sync`,
+    ],
+  },
+  {
+    icon: <ShareNetworkIcon size={40} weight="duotone" />,
+    title: t`Share & Export`,
+    desc: t`Download or share your CV with ease`,
+    features: [
+      t`PDF downloads`,
+      t`Public share links`,
+      t`Print-ready format`,
+      t`Instant updates`,
+    ],
+  },
+  {
+    icon: <ShieldCheckIcon size={40} weight="duotone" />,
+    title: t`Safe & Secure`,
+    desc: t`Your data is private and always protected`,
+    features: [
+      t`Encrypted storage`,
+      t`M-PESA payments`,
+      t`No data sharing`,
+      t`Delete anytime`,
+    ],
+  },
 ];
 
 export const WhatWeOfferSection = () => (
-  <section id="what-we-offer" className="relative bg-secondary-accent py-24 sm:py-32">
-    <div className="container">
-      <div className="space-y-2 text-center">
-        <h2 className="text-4xl font-bold">{t`What we offer`}</h2>
-        <p className="opacity-80">{t`All the tools you need to craft a standout Kenyan CV`}</p>
+  <section id="what-we-offer" className="relative bg-background py-24 sm:py-32 lg:py-40">
+    <div className="container px-4 sm:px-6 lg:px-8">
+      {/* Section Header - Centered */}
+      <div className="mx-auto max-w-3xl text-center mb-16 lg:mb-24">
+        <h2 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl mb-6">
+          {t`What we offer`}
+        </h2>
+        <p className="text-lg text-muted-foreground leading-relaxed sm:text-xl">
+          {t`All the tools you need to craft a standout Kenyan CV`}
+        </p>
       </div>
 
-      <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Cards Grid - 4 cards (2x2) with white cards on white background */}
+      <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
         {items.map((item, idx) => (
-          <Card key={idx}>
-            <CardContent className="flex items-start gap-3 p-5">
-              <div className="mt-1 text-[#00A859]">{item.icon}</div>
-              <div>
-                <h3 className="text-base font-semibold">{item.title}</h3>
-                <p className="mt-1 text-sm opacity-80">{item.desc}</p>
-              </div>
-            </CardContent>
-          </Card>
+          <motion.div
+            key={idx}
+            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0, transition: { delay: idx * 0.1, duration: 0.5 } }}
+          >
+            <div className="h-full rounded-2xl border-2 border-border/50 bg-background p-8 transition-all hover:border-info/50 hover:shadow-lg">
+              {/* Icon */}
+              <div className="mb-6 inline-flex text-info">{item.icon}</div>
+
+              {/* Title & Description */}
+              <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
+              <p className="text-muted-foreground mb-6">{item.desc}</p>
+
+              {/* Features List */}
+              <ul className="space-y-2">
+                {item.features.map((feature, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <span className="text-info mt-0.5">✓</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
         ))}
       </div>
     </div>

@@ -28,15 +28,12 @@ export const HeroCTA = () => {
 
   return (
     <>
-      <Button asChild size="lg">
-        <Link to="/auth/register">{t`Start Free`}</Link>
+      <Button asChild size="lg" className="px-8 bg-info hover:bg-info-accent text-info-foreground">
+        <Link to="/auth/register">{t`Get Started Free`}</Link>
       </Button>
 
-      <Button asChild size="lg" variant="link">
-        <a href="#pricing">
-          <BookIcon className="mr-3" />
-          {t`See Plans`}
-        </a>
+      <Button asChild size="lg" variant="outline">
+        <a href="#pricing">{t`View Pricing`}</a>
       </Button>
     </>
   );
