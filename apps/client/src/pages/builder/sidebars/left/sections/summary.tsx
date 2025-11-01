@@ -36,7 +36,8 @@ export const SummarySection = () => {
               value={editor.getText()}
               onChange={(value) => {
                 editor.commands.setContent(value, true);
-                setValue("sections.summary.content", value);
+                const html = editor.getHTML();
+                setValue("sections.summary.content", html);
               }}
             />
           )}

@@ -9,6 +9,7 @@ export const secretsSchema = z.object({
   twoFactorSecret: z.string().nullable(),
   twoFactorBackupCodes: z.array(z.string()).default([]),
   refreshToken: z.string().nullable(),
+  googleDriveRefreshToken: z.string().nullable(),
   resetToken: z.string().nullable(),
   userId: idSchema,
 });

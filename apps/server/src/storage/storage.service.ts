@@ -120,7 +120,7 @@ export class StorageService implements OnModuleInit {
     const extension = type === "resumes" ? "pdf" : "jpg";
     const storageUrl = this.configService.getOrThrow<string>("STORAGE_URL");
 
-    let normalizedFilename = slugify(filename);
+    let normalizedFilename = slugify(filename).slice(0, 100);
     if (!normalizedFilename) normalizedFilename = createId();
 
     const filepath = `${userId}/${type}/${normalizedFilename}.${extension}`;
@@ -129,10 +129,7 @@ export class StorageService implements OnModuleInit {
     const metadata =
       extension === "jpg"
         ? { "Content-Type": "image/jpeg" }
-        : {
-            "Content-Type": "application/pdf",
-            "Content-Disposition": `attachment; filename=${normalizedFilename}.${extension}`,
-          };
+        : { "Content-Type": "application/pdf" };
 
     try {
       if (extension === "jpg") {

@@ -10,6 +10,7 @@ import {
   Patch,
   Post,
   UseGuards,
+  StreamableFile,
 } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
 import { User as UserEntity } from "@prisma/client";
@@ -24,6 +25,7 @@ import { ResumeData, resumeDataSchema } from "@reactive-resume/schema";
 import { ErrorMessage } from "@reactive-resume/utils";
 import set from "lodash.set";
 import { zodToJsonSchema } from "zod-to-json-schema";
+import slugify from "@sindresorhus/slugify";
 
 import { User } from "@/server/user/decorators/user.decorator";
 
@@ -148,6 +150,39 @@ export class ResumeController {
     try {
       const url = await this.resumeService.printPreview(resume);
 
+      return { url };
+    } catch (error) {
+      Logger.error(error);
+      throw new InternalServerErrorException(error);
+    }
+  }
+
+  @Get("/export/:id/docx")
+  @UseGuards(OptionalGuard, ResumeGuard)
+  async exportDocx(@User("id") userId: string | undefined, @Resume() resume: ResumeDto) {
+    try {
+      const buffer = await this.resumeService.exportDocx(resume, userId);
+      const filename = `${slugify(resume.title || "resume")}.docx`;
+
+      return new StreamableFile(buffer, {
+        type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        disposition: `attachment; filename="${filename}"`,
+        length: buffer.length,
+      });
+    } catch (error) {
+      Logger.error(error);
+      throw new InternalServerErrorException(error);
+    }
+  }
+
+  @Get("/export/:id/gdoc")
+  @UseGuards(TwoFactorGuard, ResumeGuard)
+  async exportGoogleDoc(
+    @User("id") userId: string | undefined,
+    @Resume() resume: ResumeDto,
+  ) {
+    try {
+      const url = await this.resumeService.exportGoogleDoc(resume, userId);
       return { url };
     } catch (error) {
       Logger.error(error);

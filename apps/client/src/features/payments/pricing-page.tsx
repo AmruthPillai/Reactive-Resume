@@ -1,9 +1,9 @@
 import { t } from "@lingui/macro";
+import { CheckIcon } from "@phosphor-icons/react";
 import { Badge } from "@reactive-resume/ui";
 import { Helmet } from "react-helmet-async";
-import { CheckIcon } from "@phosphor-icons/react";
 
-import { CheckoutButton } from "./CheckoutButton";
+import { CheckoutButton } from "./checkout-button";
 
 export const PricingPage = () => (
   <>
@@ -35,7 +35,7 @@ export const PricingPage = () => (
               <div className="mb-1">
                 <span className="text-5xl font-bold">0</span>
               </div>
-              <p className="text-sm text-muted-foreground">{t`KES • Forever`}</p>
+              <p className="text-sm text-muted-foreground">{t`KES  Forever`}</p>
             </div>
             <ul className="mb-8 space-y-3 flex-1">
               <li className="flex items-start gap-3">
@@ -66,7 +66,7 @@ export const PricingPage = () => (
               <div className="mb-1">
                 <span className="text-5xl font-bold">100</span>
               </div>
-              <p className="text-sm text-muted-foreground">{t`KES • One-time`}</p>
+              <p className="text-sm text-muted-foreground">{t`KES  One-time`}</p>
             </div>
             <ul className="mb-8 space-y-3 flex-1">
               <li className="flex items-start gap-3">
@@ -95,12 +95,16 @@ export const PricingPage = () => (
               <div className="mb-1">
                 <span className="text-5xl font-bold">500</span>
               </div>
-              <p className="text-sm text-muted-foreground">{t`KES • One-time`}</p>
+              <p className="text-sm text-muted-foreground">{t`KES  One-time`}</p>
             </div>
             <ul className="mb-8 space-y-3 flex-1">
               <li className="flex items-start gap-3">
                 <CheckIcon size={20} weight="bold" className="text-info shrink-0 mt-0.5" />
-                <span className="text-sm font-medium">{t`Everything in Free`}</span>
+                <span className="text-sm font-medium">{t`Everything in Templates`}</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckIcon size={20} weight="bold" className="text-info shrink-0 mt-0.5" />
+                <span className="text-sm font-medium">{t`10 premium templates`}</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckIcon size={20} weight="bold" className="text-info shrink-0 mt-0.5" />
@@ -125,7 +129,7 @@ export const PricingPage = () => (
               <div className="mb-1">
                 <span className="text-5xl font-bold">1,000</span>
               </div>
-              <p className="text-sm text-muted-foreground">{t`KES • One-time`}</p>
+              <p className="text-sm text-muted-foreground">{t`KES  One-time`}</p>
             </div>
             <ul className="mb-8 space-y-3 flex-1">
               <li className="flex items-start gap-3">

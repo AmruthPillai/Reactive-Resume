@@ -54,6 +54,12 @@ export const translateError = (error: ErrorMessage) => {
     case ErrorMessage.ResumePreviewError: {
       return t`Something went wrong while grabbing a preview your resume. Please try again later or raise an issue on GitHub.`;
     }
+    case ErrorMessage.GoogleDriveNotConnected: {
+      return t`Connect your Google Drive to export directly as a Google Doc.`;
+    }
+    case ErrorMessage.GoogleDriveExportError: {
+      return t`Only the owner can export this resume to Google Docs.`;
+    }
     case ErrorMessage.SomethingWentWrong: {
       return t`Something went wrong while processing your request. Please try again later or raise an issue on GitHub.`;
     }

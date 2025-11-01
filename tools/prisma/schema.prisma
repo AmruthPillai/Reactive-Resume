@@ -50,6 +50,7 @@ model Secrets {
   twoFactorSecret      String?
   twoFactorBackupCodes String[] @default([])
   refreshToken         String?
+  googleDriveRefreshToken String?
   resetToken           String?  @unique
   userId               String   @unique
   user                 User     @relation(fields: [userId], references: [id], onDelete: Cascade)

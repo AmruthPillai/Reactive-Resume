@@ -7,9 +7,15 @@ import { List, X } from "@phosphor-icons/react";
 
 import { Logo } from "@/client/components/logo";
 import { ThemeSwitch } from "@/client/components/theme-switch";
+import { UserOptions } from "@/client/components/user-options";
+import { UserAvatar } from "@/client/components/user-avatar";
+import { useUser } from "@/client/services/user";
+import { useLogout } from "@/client/services/auth";
 
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { user } = useUser();
+  const { logout } = useLogout();
 
   return (
     <motion.header
@@ -47,24 +53,43 @@ export const Header = () => {
             >
               {t`FAQ`}
             </a>
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="text-foreground/70 hover:text-foreground transition-colors"
               aria-label={t`Contact`}
             >
               {t`Contact`}
-            </a>
+            </Link>
           </nav>
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center gap-x-3">
             <ThemeSwitch />
-            <Button asChild size="sm" variant="ghost" className="font-medium">
-              <Link to="/auth/login">{t`Sign In`}</Link>
-            </Button>
-            <Button asChild size="sm" className="font-medium bg-info hover:bg-info-accent text-info-foreground">
-              <Link to="/auth/register">{t`Start Free`}</Link>
-            </Button>
+            {user ? (
+              <>
+                <Button asChild size="sm" variant="ghost" className="font-medium">
+                  <Link to="/dashboard/resumes">{t`Dashboard`}</Link>
+                </Button>
+                <UserOptions>
+                  <Button size="sm" variant="ghost" className="p-0 h-9 w-9 rounded-full">
+                    <UserAvatar size={28} />
+                  </Button>
+                </UserOptions>
+              </>
+            ) : (
+              <>
+                <Button asChild size="sm" variant="ghost" className="font-medium">
+                  <Link to="/auth/login">{t`Sign In`}</Link>
+                </Button>
+                <Button
+                  asChild
+                  size="sm"
+                  className="font-medium bg-info hover:bg-info-accent text-info-foreground"
+                >
+                  <Link to="/auth/register">{t`Start Free`}</Link>
+                </Button>
+              </>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -145,24 +170,60 @@ export const Header = () => {
                     >
                       {t`FAQ`}
                     </a>
-                    <a
-                      href="#contact"
+                    <Link
+                      to="/contact"
                       onClick={() => setMobileMenuOpen(false)}
                       className="text-base font-normal text-foreground hover:text-foreground transition-colors"
                     >
                       {t`Contact`}
-                    </a>
+                    </Link>
                   </nav>
                 </div>
 
                 {/* Drawer Footer - Action Buttons */}
                 <div className="px-6 pb-6 space-y-3">
-                  <Button asChild variant="outline" className="w-full font-medium justify-center h-11">
-                    <Link to="/auth/login" onClick={() => setMobileMenuOpen(false)}>{t`Sign In`}</Link>
-                  </Button>
-                  <Button asChild className="w-full font-medium justify-center h-11 bg-success hover:bg-success-accent text-success-foreground">
-                    <Link to="/auth/register" onClick={() => setMobileMenuOpen(false)}>{t`Start Free`}</Link>
-                  </Button>
+                  {user ? (
+                    <>
+                      <Button
+                        asChild
+                        variant="outline"
+                        className="w-full font-medium justify-center h-11"
+                      >
+                        <Link to="/dashboard/resumes" onClick={() => setMobileMenuOpen(false)}>
+                          {t`Dashboard`}
+                        </Link>
+                      </Button>
+                      <Button
+                        className="w-full font-medium justify-center h-11 bg-destructive hover:bg-destructive/90 text-destructive-foreground"
+                        onClick={() => {
+                          void logout();
+                          setMobileMenuOpen(false);
+                        }}
+                      >
+                        {t`Logout`}
+                      </Button>
+                    </>
+                  ) : (
+                    <>
+                      <Button
+                        asChild
+                        variant="outline"
+                        className="w-full font-medium justify-center h-11"
+                      >
+                        <Link to="/auth/login" onClick={() => setMobileMenuOpen(false)}>
+                          {t`Sign In`}
+                        </Link>
+                      </Button>
+                      <Button
+                        asChild
+                        className="w-full font-medium justify-center h-11 bg-success hover:bg-success-accent text-success-foreground"
+                      >
+                        <Link to="/auth/register" onClick={() => setMobileMenuOpen(false)}>
+                          {t`Start Free`}
+                        </Link>
+                      </Button>
+                    </>
+                  )}
                 </div>
               </div>
             </motion.div>

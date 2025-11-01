@@ -16,5 +16,7 @@ export enum ErrorMessage {
   ResumeLocked = "ResumeLocked",
   ResumePrinterError = "ResumePrinterError",
   ResumePreviewError = "ResumePreviewError",
+  GoogleDriveNotConnected = "GoogleDriveNotConnected",
+  GoogleDriveExportError = "GoogleDriveExportError",
   SomethingWentWrong = "SomethingWentWrong",
 }

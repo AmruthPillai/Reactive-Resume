@@ -1,6 +1,6 @@
 import { t } from "@lingui/macro";
 import { Badge } from "@reactive-resume/ui";
-import { CheckoutButton } from "@/client/features/payments/CheckoutButton";
+import { CheckoutButton } from "@/client/features/payments/checkout-button";
 import { CheckIcon } from "@phosphor-icons/react";
 
 export const PricingSection = () => (
@@ -90,7 +90,11 @@ export const PricingSection = () => (
           <ul className="mb-8 space-y-3 flex-1">
             <li className="flex items-start gap-3">
               <CheckIcon size={20} weight="bold" className="text-info shrink-0 mt-0.5" />
-              <span className="text-sm font-medium">{t`Everything in Free`}</span>
+              <span className="text-sm font-medium">{t`Everything in Templates`}</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckIcon size={20} weight="bold" className="text-info shrink-0 mt-0.5" />
+              <span className="text-sm font-medium">{t`10 premium templates`}</span>
             </li>
             <li className="flex items-start gap-3">
               <CheckIcon size={20} weight="bold" className="text-info shrink-0 mt-0.5" />

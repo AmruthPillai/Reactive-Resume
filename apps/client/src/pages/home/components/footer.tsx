@@ -31,14 +31,14 @@ export const Footer = () => (
         <a href="#faq" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
           {t`FAQ`}
         </a>
-        <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+        <Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
           {t`Contact`}
-        </a>
+        </Link>
       </nav>
 
       {/* Social Icons & Switches - Centered row */}
       <div className="flex justify-center items-center gap-4 mb-10">
-        <LocaleSwitch />
+        {/* <LocaleSwitch /> */}
         <ThemeSwitch />
       </div>
 

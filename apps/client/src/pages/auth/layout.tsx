@@ -3,7 +3,6 @@ import { cn } from "@reactive-resume/utils";
 import { useMemo } from "react";
 import { Link, matchRoutes, Outlet, useLocation } from "react-router";
 
-import { LocaleSwitch } from "@/client/components/locale-switch";
 import { Logo } from "@/client/components/logo";
 import { ThemeSwitch } from "@/client/components/theme-switch";
 import { useAuthProviders } from "@/client/services/auth/providers";
@@ -32,7 +31,7 @@ export const AuthLayout = () => {
           </Link>
 
           <div className="right-0 space-x-2 text-right lg:absolute lg:p-12 lg:text-center">
-            <LocaleSwitch />
+            {/* <LocaleSwitch /> */}
             <ThemeSwitch />
           </div>
         </div>
@@ -64,18 +63,8 @@ export const AuthLayout = () => {
           height={1080}
           alt="Open books on a table"
           className="h-screen w-full object-cover object-center"
-          src="/backgrounds/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg"
+          src="/backgrounds/cv-builder-banner.webp"
         />
-
-        <div className="absolute bottom-5 right-5 z-10 bg-primary/30 px-4 py-2 text-xs font-medium text-primary-foreground backdrop-blur-sm">
-          <a
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-            href="https://unsplash.com/photos/Oaqk7qqNh_c"
-          >
-            {t`Photograph by Patrick Tomasso`}
-          </a>
-        </div>
       </div>
     </div>
   );

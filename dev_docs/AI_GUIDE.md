@@ -81,7 +81,7 @@ apps/
 ```bash
 # OpenAI
 OPENAI_API_KEY=sk-xxxx
-AI_MODEL=gpt-4o-mini
+AI_MODEL=gpt-5-mini
 AI_MAX_DAILY_FREE=0
 AI_MAX_DAILY_ADDON=200
 AI_MAX_DAILY_LIFETIME=300
@@ -143,9 +143,9 @@ export class AiService {
     ---`;
 
     const response = await this.openai.chat.completions.create({
-      model: process.env.AI_MODEL ?? "gpt-4o-mini",
+      model: process.env.AI_MODEL ?? "gpt-5-mini",
       temperature: 0.4,
-      max_tokens: 300,
+      max_completion_tokens: 600,
       messages: [
         { role: "system", content: "You are a helpful career assistant." },
         { role: "user", content: prompt },
@@ -266,7 +266,7 @@ Fetch `/api/account/ai-usage` to show:
 | Daily limits | 200 (AI add-on), 300 (Lifetime)                       |
 | Max tokens   | 300 output tokens per call                            |
 | Rate limit   | 1 req/sec per user                                    |
-| Model        | `gpt-4o-mini` (cheap and fast)                        |
+| Model        | `gpt-5-mini` (cheap and fast)                        |
 | Logging      | Log tokens + latency                                  |
 | Cache        | Optional Redis hash to reuse identical prompts (24 h) |
 
@@ -332,7 +332,7 @@ Together, these make large-scale sharing uneconomical.
 * Never commit API keys.
 * Keep all AI code in `apps/server/src/ai/` (merge-safe).
 * Review monthly token usage.
-* Tune temperature/max_tokens for cost.
+* Tune temperature/max_completion_tokens for cost.
 * Log model version in each request.
 * Encourage code reviews on rate-limit logic.
 

@@ -1,8 +1,10 @@
 import { t } from "@lingui/macro";
 import { Button, Separator } from "@reactive-resume/ui";
+import { Link } from "react-router";
 import dayjs from "dayjs";
+import { CheckIcon } from "@phosphor-icons/react";
 
-import { CheckoutButton } from "@/client/features/payments/CheckoutButton";
+import { CheckoutButton } from "@/client/features/payments/checkout-button";
 import { useBilling } from "@/client/services/account/account";
 
 export const BillingSettings = () => {
@@ -39,17 +41,96 @@ export const BillingSettings = () => {
         )}
       </div>
 
-      {/* Upgrade Options */}
+      {/* Upgrade Options (aligned with homepage #pricing) */}
       <div className="rounded border p-4">
         <h3 className="mb-2 text-lg font-semibold">{t`Upgrade Options`}</h3>
         <p className="mb-4 text-sm text-muted-foreground">
-          {t`Upgrade your experience — affordable, one-time plans for Kenyan job seekers.`}
+          {t`One-time upgrades. No subscriptions. Same options as on the homepage.`}
         </p>
-        <div className="grid gap-3 sm:grid-cols-3">
-          <CheckoutButton sku="templates10" label={t`10 Templates — KES 100`} />
-          <CheckoutButton sku="ai_addon" label={t`AI Add-on — KES 500`} />
-          <CheckoutButton sku="lifetime" label={t`Lifetime — KES 1,000`} />
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Templates */}
+          <div className="rounded-lg border p-4 flex flex-col">
+            <div className="mb-2">
+              <div className="text-base font-semibold">{t`Templates`}</div>
+              <div className="text-xs text-muted-foreground">{t`KES 100 · One-time`}</div>
+            </div>
+            <ul className="mb-4 space-y-2 text-sm">
+              <li className="flex items-start gap-2">
+                <CheckIcon size={18} weight="bold" className="text-info mt-0.5" />
+                <span>{t`Everything in Free`}</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckIcon size={18} weight="bold" className="text-info mt-0.5" />
+                <span>{t`10 premium templates`}</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckIcon size={18} weight="bold" className="text-info mt-0.5" />
+                <span>{t`Advanced customization`}</span>
+              </li>
+            </ul>
+            <CheckoutButton sku="templates10" label={t`Get Templates`} />
+          </div>
+
+          {/* AI Power */}
+          <div className="rounded-lg border p-4 flex flex-col">
+            <div className="mb-2">
+              <div className="text-base font-semibold">{t`AI Power`}</div>
+              <div className="text-xs text-muted-foreground">{t`KES 500 · One-time`}</div>
+            </div>
+            <ul className="mb-4 space-y-2 text-sm">
+              <li className="flex items-start gap-2">
+                <CheckIcon size={18} weight="bold" className="text-info mt-0.5" />
+                <span className="font-medium">{t`Everything in Templates`}</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckIcon size={18} weight="bold" className="text-info mt-0.5" />
+                <span className="font-medium">{t`10 premium templates`}</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckIcon size={18} weight="bold" className="text-info mt-0.5" />
+                <span className="font-medium">{t`AI writing assistant`}</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckIcon size={18} weight="bold" className="text-info mt-0.5" />
+                <span className="font-medium">{t`Grammar & tone fixes`}</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckIcon size={18} weight="bold" className="text-info mt-0.5" />
+                <span className="font-medium">{t`Content suggestions`}</span>
+              </li>
+            </ul>
+            <CheckoutButton sku="ai_addon" label={t`Get AI Access`} />
+          </div>
+
+          {/* Lifetime */}
+          <div className="rounded-lg border p-4 flex flex-col">
+            <div className="mb-2">
+              <div className="text-base font-semibold">{t`Lifetime`}</div>
+              <div className="text-xs text-muted-foreground">{t`KES 1,000 · One-time`}</div>
+            </div>
+            <ul className="mb-4 space-y-2 text-sm">
+              <li className="flex items-start gap-2">
+                <CheckIcon size={18} weight="bold" className="text-info mt-0.5" />
+                <span>{t`All 13 templates`}</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckIcon size={18} weight="bold" className="text-info mt-0.5" />
+                <span>{t`AI forever`}</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckIcon size={18} weight="bold" className="text-info mt-0.5" />
+                <span>{t`All future updates`}</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckIcon size={18} weight="bold" className="text-info mt-0.5" />
+                <span>{t`Priority support`}</span>
+              </li>
+            </ul>
+            <CheckoutButton sku="lifetime" label={t`Get Lifetime Access`} />
+          </div>
         </div>
+
         <Separator className="my-4" />
         <div className="text-xs text-muted-foreground">
           {t`Powered by Paystack (M-PESA, Card, Apple Pay). Secure payment processing.`}
@@ -95,10 +176,9 @@ export const BillingSettings = () => {
       <div className="flex items-center gap-3 text-sm text-muted-foreground">
         <span>{t`Need help with a payment?`}</span>
         <Button asChild size="sm" variant="outline">
-          <a href="mailto:support@cvkenya.co">{t`Contact Support`}</a>
+          <Link to="/contact">{t`Contact Support`}</Link>
         </Button>
       </div>
     </section>
   );
 };
-

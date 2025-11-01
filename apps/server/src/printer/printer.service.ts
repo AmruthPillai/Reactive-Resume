@@ -6,6 +6,7 @@ import { ErrorMessage } from "@reactive-resume/utils";
 import retry from "async-retry";
 import { PDFDocument } from "pdf-lib";
 import { connect } from "puppeteer";
+import HtmlToDocx from "@turbodocx/html-to-docx";
 
 import { Config } from "../config/schema";
 import { StorageService } from "../storage/storage.service";
@@ -88,6 +89,156 @@ export class PrinterService {
     this.logger.debug(`Chrome took ${duration}ms to generate preview`);
 
     return url;
+  }
+
+  async buildResumeHtml(resume: ResumeDto): Promise<string> {
+    const browser = await this.getBrowser();
+    const page = await browser.newPage();
+
+    const publicUrl = this.configService.getOrThrow<string>("PUBLIC_URL");
+    const storageUrl = this.configService.getOrThrow<string>("STORAGE_URL");
+
+    let url = publicUrl;
+
+    if ([publicUrl, storageUrl].some((u) => /https?:\/\/localhost(:\d+)?/.test(u))) {
+      url = url.replace(/localhost(:\d+)?/, (_match, port) => `host.docker.internal${port ?? ""}`);
+
+      await page.setRequestInterception(true);
+
+      page.on("request", (request) => {
+        if (request.url().startsWith(storageUrl)) {
+          const modifiedUrl = request
+            .url()
+            .replace(/localhost(:\d+)?/, (_match, port) => `host.docker.internal${port ?? ""}`);
+          void request.continue({ url: modifiedUrl });
+        } else {
+          void request.continue();
+        }
+      });
+    }
+
+    await page.goto(`${url}/artboard/preview`, { waitUntil: "domcontentloaded" });
+    await page.evaluate((data) => {
+      window.localStorage.setItem("resume", JSON.stringify(data));
+    }, resume.data);
+
+    await Promise.all([
+      page.reload({ waitUntil: "load" }),
+      page.waitForSelector('[data-page="1"]', { timeout: 15_000 }),
+    ]);
+
+    const numberPages = resume.data.metadata.layout.length;
+
+    const inDocumentStyles = await page.evaluate(() =>
+      Array.from(document.querySelectorAll("style"))
+        .map((s) => s.textContent ?? "")
+        .join("\n"),
+    );
+
+    // Also collect any linked stylesheets and inline them, so downstream
+    // converters (Docx/Google Docs) have the full CSS available.
+    const linkedStyles = await page.evaluate(async () => {
+      const links = Array.from(document.querySelectorAll('link[rel="stylesheet"]')) as HTMLLinkElement[];
+      const texts = await Promise.all(
+        links.map(async (link) => {
+          try {
+            const res = await fetch(link.href);
+            return await res.text();
+          } catch {
+            return "";
+          }
+        }),
+      );
+      return texts.join("\n");
+    });
+
+    // Capture runtime CSS variables and root font settings applied by the artboard
+    const rootRuntimeStyles = await page.evaluate(() => {
+      const root = document.documentElement;
+      const computed = getComputedStyle(root);
+      const vars = [
+        "--margin",
+        "--font-size",
+        "--line-height",
+        "--color-foreground",
+        "--color-primary",
+        "--color-background",
+      ];
+
+      const lines = [
+        `font-size: ${computed.getPropertyValue("font-size")}`,
+        `line-height: ${computed.getPropertyValue("line-height")}`,
+        ...vars.map((v) => `${v}: ${computed.getPropertyValue(v)}`),
+      ];
+
+      return `:root{${lines.join("; ")}}`;
+    });
+
+    const baseStyles = [inDocumentStyles, linkedStyles, rootRuntimeStyles]
+      .filter(Boolean)
+      .join("\n");
+    const css = resume.data.metadata.css;
+    let combinedStyles = css?.visible && css?.value ? `${baseStyles}\n${css.value}` : baseStyles;
+
+    // Best-effort resolve CSS custom properties used by Tailwind config
+    // since some converters (Docx/GDocs) have limited support for CSS vars.
+    const varValues = await page.evaluate(() => {
+      const root = document.documentElement;
+      const computed = getComputedStyle(root);
+      const keys = [
+        "--margin",
+        "--font-size",
+        "--line-height",
+        "--color-foreground",
+        "--color-primary",
+        "--color-background",
+      ];
+      return Object.fromEntries(keys.map((k) => [k, computed.getPropertyValue(k).trim()]));
+    });
+
+    const replaceVar = (cssText: string, name: string, value?: string) =>
+      value ? cssText.replace(new RegExp(`var\\(\\s*${name}\\s*\\)`, "g"), value) : cssText;
+
+    combinedStyles = replaceVar(combinedStyles, "--margin", varValues["--margin"]);
+    combinedStyles = replaceVar(combinedStyles, "--font-size", varValues["--font-size"]);
+    combinedStyles = replaceVar(combinedStyles, "--line-height", varValues["--line-height"]);
+    combinedStyles = replaceVar(combinedStyles, "--color-foreground", varValues["--color-foreground"]);
+    combinedStyles = replaceVar(combinedStyles, "--color-primary", varValues["--color-primary"]);
+    combinedStyles = replaceVar(combinedStyles, "--color-background", varValues["--color-background"]);
+
+    const pagesHtml: string[] = [];
+    for (let index = 1; index <= numberPages; index++) {
+      const pageElement = await page.$(`[data-page="${index}"]`);
+      const html = await page.evaluate((el: HTMLDivElement) => el.outerHTML, pageElement);
+      pagesHtml.push(html);
+    }
+
+    await page.close();
+    await browser.disconnect();
+
+    const docHtml = `<!doctype html><html><head><meta charset="utf-8"><style>${combinedStyles}</style></head><body>` +
+      pagesHtml.join('<div style="page-break-before: always"></div>') +
+      `</body></html>`;
+
+    return docHtml;
+  }
+
+  async exportDocx(resume: ResumeDto) {
+    try {
+      const docHtml = await this.buildResumeHtml(resume);
+
+      const arrayBuffer = await HtmlToDocx(docHtml, null, {
+        pageNumber: false,
+      });
+
+      return Buffer.from(arrayBuffer as ArrayBuffer);
+    } catch (error) {
+      this.logger.error(error);
+      throw new InternalServerErrorException(
+        ErrorMessage.ResumePrinterError,
+        (error as Error).message,
+      );
+    }
   }
 
   async generateResume(resume: ResumeDto) {

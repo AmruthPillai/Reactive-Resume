@@ -77,6 +77,12 @@ export const configSchema = z.object({
   GOOGLE_CLIENT_ID: z.string().optional(),
   GOOGLE_CLIENT_SECRET: z.string().optional(),
   GOOGLE_CALLBACK_URL: z.string().url().optional(),
+  GOOGLE_DRIVE_CALLBACK_URL: z.string().url().optional(),
+
+  // Google Drive (Service Account for Docs export, Optional)
+  GOOGLE_SERVICE_ACCOUNT_EMAIL: z.string().optional(),
+  GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY: z.string().optional(),
+  GOOGLE_DRIVE_PARENT_FOLDER_ID: z.string().optional(),
 
   // OpenID (Optional)
   VITE_OPENID_NAME: z.string().optional(),

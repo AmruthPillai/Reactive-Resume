@@ -93,7 +93,8 @@ export const ProfileSettings = () => {
             )}
           />
 
-          <FormField
+{/* Language selector hidden - English only */}
+          {/* <FormField
             name="locale"
             control={form.control}
             render={({ field }) => (
@@ -119,7 +120,7 @@ export const ProfileSettings = () => {
                 </FormDescription>
               </FormItem>
             )}
-          />
+          /> */}
 
           <div
             className={cn(

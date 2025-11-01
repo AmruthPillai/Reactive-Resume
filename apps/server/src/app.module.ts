@@ -22,6 +22,8 @@ import { UserModule } from "./user/user.module";
 import { PaystackModule } from "./payments/paystack.module";
 import { AccountModule } from "./account/account.module";
 import { AiModule } from "./ai/ai.module";
+import { GoogleDriveModule } from "./integrations/google-drive/google-drive.module";
+import { ContactModule } from "./contact/contact.module";
 
 @Module({
   imports: [
@@ -52,6 +54,8 @@ import { AiModule } from "./ai/ai.module";
     PaystackModule,
     AccountModule,
     AiModule,
+    GoogleDriveModule,
+    ContactModule,
 
     // Static Assets
     ServeStaticModule.forRoot({

@@ -19,8 +19,9 @@ import { ErrorPage } from "../pages/public/error";
 import { publicLoader, PublicResumePage } from "../pages/public/page";
 import { TermsOfServicePage } from "../pages/public/terms";
 import { PrivacyPolicyPage } from "../pages/public/privacy";
+import { ContactUsPage } from "../pages/public/contact";
 import { Providers } from "../providers";
-import { PricingPage } from "../features/payments/PricingPage";
+import { PricingPage } from "../features/payments/pricing-page";
 import { AuthGuard } from "./guards/auth";
 import { GuestGuard } from "./guards/guest";
 import { authLoader } from "./loaders/auth";
@@ -33,6 +34,7 @@ export const routes = createRoutesFromElements(
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/terms" element={<TermsOfServicePage />} />
         <Route path="/privacy" element={<PrivacyPolicyPage />} />
+        <Route path="/contact" element={<ContactUsPage />} />
       </Route>
 
       <Route path="auth">

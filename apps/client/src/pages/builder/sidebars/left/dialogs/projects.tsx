@@ -136,7 +136,7 @@ export const ProjectsDialog = () => {
                       value={editor.getText()}
                       onChange={(value) => {
                         editor.commands.setContent(value, true);
-                        field.onChange(value);
+                        field.onChange(editor.getHTML());
                       }}
                     />
                   )}

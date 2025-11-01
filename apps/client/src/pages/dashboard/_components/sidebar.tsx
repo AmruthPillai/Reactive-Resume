@@ -7,7 +7,7 @@ import { Link, useLocation, useNavigate } from "react-router";
 import useKeyboardShortcut from "use-keyboard-shortcut";
 
 import { Copyright } from "@/client/components/copyright";
-import { Icon } from "@/client/components/icon";
+import { Logo } from "@/client/components/logo";
 import { UserAvatar } from "@/client/components/user-avatar";
 import { UserOptions } from "@/client/components/user-options";
 import { useUser } from "@/client/services/user";
@@ -100,7 +100,7 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
       <div className="ml-12 flex justify-center lg:ml-0">
         <Button asChild size="icon" variant="ghost" className="size-10 p-0">
           <Link to="/">
-            <Icon size={24} className="mx-auto hidden lg:block" />
+            <Logo size={24} className="mx-auto hidden lg:block" />
           </Link>
         </Button>
       </div>

@@ -68,7 +68,7 @@ export class PaystackService {
       case "ai_addon":
         await this.prisma.user.update({
           where: { id: userId },
-          data: { hasAI: true },
+          data: { hasAI: true, templatesCap: 10 },
         });
         break;
       default:
