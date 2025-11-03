@@ -205,6 +205,8 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
         </Toggle>
       </Tooltip>
 
+      <div className="my-auto h-5 w-px bg-border" />
+
       <Tooltip content="Hyperlink">
         <Button type="button" size="sm" variant="ghost" className="px-2" onClick={setLink}>
           <LinkSimpleIcon />
@@ -234,6 +236,8 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           <CodeBlockIconImport />
         </Toggle>
       </Tooltip>
+
+      <div className="my-auto h-5 w-px bg-border" />
 
       <Tooltip content="Heading 1">
         <Toggle
@@ -282,6 +286,8 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
         </Toggle>
       </Tooltip>
 
+      <div className="my-auto h-5 w-px bg-border" />
+
       <Tooltip content="Align Left">
         <Toggle
           size="sm"
@@ -329,6 +335,8 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           <TextAlignJustifyIcon />
         </Toggle>
       </Tooltip>
+
+      <div className="my-auto h-5 w-px bg-border" />
 
       <Tooltip content="Bullet List">
         <Toggle
@@ -380,6 +388,8 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
         </Button>
       </Tooltip>
 
+      <div className="my-auto h-5 w-px bg-border" />
+
       <Popover>
         <Tooltip content="Insert Image">
           <PopoverTrigger asChild>
@@ -418,6 +428,8 @@ const Toolbar = ({ editor }: { editor: Editor }) => {
           <MinusIcon />
         </Button>
       </Tooltip>
+
+      <div className="my-auto h-5 w-px bg-border" />
 
       <Tooltip content="Undo">
         <Button
