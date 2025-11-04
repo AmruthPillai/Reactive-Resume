@@ -35,6 +35,9 @@ export const LeftSidebar = () => {
   const addSection = useResumeStore((state) => state.addSection);
   const customSections = useResumeStore((state) => state.resume.data.sections.custom);
 
+  const expandAllSections = useResumeStore((state) => state.expandAllSections);
+  const collapseAllSections = useResumeStore((state) => state.collapseAllSections);
+
   const scrollIntoView = (selector: string) => {
     const section = containterRef.current?.querySelector(selector);
     section?.scrollIntoView({ behavior: "smooth" });
@@ -258,10 +261,17 @@ export const LeftSidebar = () => {
 
           <Separator />
 
-          <Button size="lg" variant="outline" onClick={addSection}>
-            <PlusCircleIcon />
-            <span className="ml-2">{t`Add a new section`}</span>
-          </Button>
+          <div className="flex flex-col gap-4">
+            <Button size="lg" variant="outline" onClick={addSection}>
+              <PlusCircleIcon />
+              <span className="ml-2">{t`Add a new section`}</span>
+            </Button>
+
+            <div className="grid gap-4 md:grid-cols-2">
+              <Button variant="outline" onClick={expandAllSections}>{t`Expand All`}</Button>
+              <Button variant="outline" onClick={collapseAllSections}>{t`Collapse All`}</Button>
+            </div>
+          </div>
         </div>
       </ScrollArea>
     </div>

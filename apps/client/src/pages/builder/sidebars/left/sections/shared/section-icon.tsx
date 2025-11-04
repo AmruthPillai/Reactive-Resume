@@ -23,7 +23,7 @@ import get from "lodash.get";
 
 import { useResumeStore } from "@/client/stores/resume";
 
-const getSectionIcon = (id: SectionKey, props: IconProps = {}) => {
+export const getSectionIcon = (id: SectionKey, props: IconProps = {}) => {
   switch (id) {
     // Left Sidebar
     case "basics": {

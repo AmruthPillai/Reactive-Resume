@@ -102,8 +102,8 @@ msgstr "Account"
 msgid "Add a custom field"
 msgstr "Add a custom field"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:119
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:170
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:150
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:203
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "Add a new item"
@@ -112,8 +112,8 @@ msgstr "Add a new item"
 msgid "Add a new item"
 msgstr "Add a new item"
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:146
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:263
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:149
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:267
 msgid "Add a new section"
 msgstr "Add a new section"
 
@@ -233,12 +233,12 @@ msgstr "Backup Codes may contain only lowercase letters or numbers, and must be 
 msgid "Base URL"
 msgstr "Base URL"
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:55
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:58
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
 msgid "Basics"
 msgstr "Basics"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:21
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:43
 msgid "Basics"
 msgstr "Basics"
 
@@ -311,6 +311,16 @@ msgstr "Code"
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:52
 msgid "Code must be exactly 6 digits long."
 msgstr "Code must be exactly 6 digits long."
+
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:272
+msgid "Collapse All"
+msgstr "Collapse All"
+
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:30
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:115
+#: apps/client/src/pages/builder/sidebars/left/sections/summary.tsx:33
+msgid "Collapse section"
+msgstr "Collapse section"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:136
 msgid "Columns"
@@ -385,7 +395,7 @@ msgstr "Custom CSS"
 msgid "Custom resume sections"
 msgstr "Custom resume sections"
 
-#: apps/client/src/stores/resume.ts:47
+#: apps/client/src/stores/resume.ts:53
 msgid "Custom Section"
 msgstr "Custom Section"
 
@@ -526,7 +536,7 @@ msgstr "Effects"
 #: apps/client/src/pages/auth/forgot-password/page.tsx:82
 #: apps/client/src/pages/auth/login/page.tsx:90
 #: apps/client/src/pages/auth/register/page.tsx:141
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:81
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:181
 msgid "Email"
 msgstr "Email"
@@ -570,6 +580,16 @@ msgstr "Errors"
 #: apps/client/src/pages/home/sections/support/index.tsx:78
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Reactive Resume has helped you. Your feedback and support are always welcome and much appreciated!"
 msgstr "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Reactive Resume has helped you. Your feedback and support are always welcome and much appreciated!"
+
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:271
+msgid "Expand All"
+msgstr "Expand All"
+
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:30
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:115
+#: apps/client/src/pages/builder/sidebars/left/sections/summary.tsx:33
+msgid "Expand section"
+msgstr "Expand section"
 
 #: apps/client/src/pages/home/sections/templates/index.tsx:12
 msgid "Explore the templates available in Reactive Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
@@ -647,7 +667,7 @@ msgstr "Free, forever"
 msgid "Friendly"
 msgstr "Friendly"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:31
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:56
 msgid "Full Name"
 msgstr "Full Name"
 
@@ -692,7 +712,7 @@ msgstr "Grayscale"
 msgid "Grid"
 msgstr "Grid"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:43
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:70
 msgid "Headline"
 msgstr "Headline"
 
@@ -908,7 +928,7 @@ msgstr "List"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:123
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:93
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:120
 msgid "Location"
 msgstr "Location"
 
@@ -1096,7 +1116,7 @@ msgstr "PDF"
 msgid "Personal notes for each resume"
 msgstr "Personal notes for each resume"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:81
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:108
 msgid "Phone"
 msgstr "Phone"
 
@@ -1736,7 +1756,7 @@ msgstr "We verify your email address only to ensure that we can send you a passw
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:67
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:95
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:69
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:96
 msgid "Website"
 msgstr "Website"
 

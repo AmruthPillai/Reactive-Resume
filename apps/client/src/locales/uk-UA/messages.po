@@ -102,8 +102,8 @@ msgstr "Обліковка"
 msgid "Add a custom field"
 msgstr "Додати кастомне поле"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:119
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:170
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:150
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:203
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "Додати новий елемент"
@@ -112,8 +112,8 @@ msgstr "Додати новий елемент"
 msgid "Add a new item"
 msgstr "Додати новий елемент"
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:146
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:263
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:149
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:267
 msgid "Add a new section"
 msgstr "Додати новий розділ"
 
@@ -233,12 +233,12 @@ msgstr "Резервні коди може містити тільки цифр�
 msgid "Base URL"
 msgstr "Базова URL-адреса"
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:55
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:58
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
 msgid "Basics"
 msgstr "Основи"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:21
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:43
 msgid "Basics"
 msgstr "Основи"
 
@@ -311,6 +311,16 @@ msgstr "Код"
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:52
 msgid "Code must be exactly 6 digits long."
 msgstr "Код має складатися рівно з 6 цифр."
+
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:272
+msgid "Collapse All"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:30
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:115
+#: apps/client/src/pages/builder/sidebars/left/sections/summary.tsx:33
+msgid "Collapse section"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:136
 msgid "Columns"
@@ -385,7 +395,7 @@ msgstr "Кастомний CSS"
 msgid "Custom resume sections"
 msgstr "Користувацькі розділи резюме"
 
-#: apps/client/src/stores/resume.ts:47
+#: apps/client/src/stores/resume.ts:53
 msgid "Custom Section"
 msgstr "Користувацький розділ"
 
@@ -526,7 +536,7 @@ msgstr "Ефекти"
 #: apps/client/src/pages/auth/forgot-password/page.tsx:82
 #: apps/client/src/pages/auth/login/page.tsx:90
 #: apps/client/src/pages/auth/register/page.tsx:141
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:81
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:181
 msgid "Email"
 msgstr "Ел. пошта"
@@ -570,6 +580,16 @@ msgstr "Помилки"
 #: apps/client/src/pages/home/sections/support/index.tsx:78
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Reactive Resume has helped you. Your feedback and support are always welcome and much appreciated!"
 msgstr "Навіть якщо ви не можете підтримати проєкт фінансово, ви все одно можете зробити свій внесок – поставте зірку репозиторію на GitHub, розкажіть про нього друзям або напишіть мені коротке повідомлення про те, як Reactive Resume вам допоміг. Ваші відгуки та підтримка завжди вітаються і дуже цінуються!"
+
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:271
+msgid "Expand All"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:30
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:115
+#: apps/client/src/pages/builder/sidebars/left/sections/summary.tsx:33
+msgid "Expand section"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/templates/index.tsx:12
 msgid "Explore the templates available in Reactive Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
@@ -647,7 +667,7 @@ msgstr "Назавжди безплатний"
 msgid "Friendly"
 msgstr "Дружній"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:31
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:56
 msgid "Full Name"
 msgstr "Повне ім'я"
 
@@ -692,7 +712,7 @@ msgstr "Монохром"
 msgid "Grid"
 msgstr "Сітка"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:43
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:70
 msgid "Headline"
 msgstr "Заголовок"
 
@@ -908,7 +928,7 @@ msgstr "Список"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:123
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:93
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:120
 msgid "Location"
 msgstr "Місцеперебування"
 
@@ -1096,7 +1116,7 @@ msgstr "PDF"
 msgid "Personal notes for each resume"
 msgstr "Персональні нотатки для кожного резюме"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:81
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:108
 msgid "Phone"
 msgstr "Номер телефону"
 
@@ -1736,7 +1756,7 @@ msgstr "Ми перевіряємо вашу електронну адресу �
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:67
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:95
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:69
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:96
 msgid "Website"
 msgstr "Вебсайт"
 
@@ -1819,4 +1839,3 @@ msgstr "Збільшити"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:118
 msgid "Zoom Out"
 msgstr "Зменшити"
-
