@@ -15,19 +15,27 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { t } from "@lingui/macro";
-import { CaretDownIcon, CaretRightIcon, PlusIcon } from "@phosphor-icons/react";
+import { CaretRightIcon, PlusIcon } from "@phosphor-icons/react";
 import type { SectionItem, SectionKey, SectionWithItem } from "@reactive-resume/schema";
 import { Button } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
+import type { MotionProps } from "framer-motion";
 import { AnimatePresence, motion } from "framer-motion";
 import get from "lodash.get";
 
 import { useDialog } from "@/client/stores/dialog";
 import { useResumeStore } from "@/client/stores/resume";
 
-import { SectionIcon } from "./section-icon";
+import { getSectionIcon } from "./section-icon";
 import { SectionListItem } from "./section-list-item";
 import { SectionOptions } from "./section-options";
+
+export const sectionVariants: MotionProps = {
+  initial: { height: 0, opacity: 0 },
+  animate: { height: "auto", opacity: 1 },
+  exit: { height: 0, opacity: 0 },
+  transition: { duration: 0.25, ease: "easeInOut" },
+};
 
 type Props<T extends SectionItem> = {
   id: SectionKey;
@@ -39,7 +47,7 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
   const { open } = useDialog(id);
 
   const collapsed = useResumeStore((state) => state.collapsedSections[id] ?? false);
-  const toggleSectionCollapse = useResumeStore((state) => state.toggleSectionCollapsed);
+  const toggleCollapseSection = useResumeStore((state) => state.toggleCollapseSection);
 
   const setValue = useResumeStore((state) => state.setValue);
   const section = useResumeStore(
@@ -101,18 +109,23 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
     >
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-2">
-          <button
-            className="text-gray-500 transition-colors hover:text-gray-700"
+          <Button
+            size="icon"
+            variant="ghost"
             aria-label={collapsed ? t`Expand section` : t`Collapse section`}
             onClick={() => {
-              toggleSectionCollapse(id);
+              toggleCollapseSection(id);
             }}
           >
-            {collapsed ? <CaretRightIcon size={18} /> : <CaretDownIcon size={18} />}
-          </button>
+            <CaretRightIcon
+              size={18}
+              className={cn("transition-transform", !collapsed && "rotate-90")}
+            />
+          </Button>
 
-          <SectionIcon id={id} size={18} />
-          <h2 className="line-clamp-1 text-2xl font-bold lg:text-3xl">{section.name}</h2>
+          {getSectionIcon(id, { size: 18 })}
+
+          <h2 className="ml-2 line-clamp-1 text-2xl font-bold lg:text-3xl">{section.name}</h2>
         </div>
 
         <div className="flex items-center gap-x-2">
@@ -122,14 +135,7 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
 
       <AnimatePresence initial={false}>
         {!collapsed && (
-          <motion.div
-            key="content"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="overflow-hidden"
-          >
+          <motion.div key={`${id}-content`} {...sectionVariants} className="overflow-hidden">
             <main className={cn("grid transition-opacity", !section.visible && "opacity-50")}>
               {section.items.length === 0 && (
                 <Button

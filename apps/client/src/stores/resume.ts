@@ -24,9 +24,11 @@ type ResumeStore = {
   addSection: () => void;
   removeSection: (sectionId: SectionKey) => void;
 
-  collapsedSections: Record<string, boolean>;
-  toggleSectionCollapsed: (id: string) => void;
-  setSectionCollapsed: (id: string, collapsed: boolean) => void;
+  // Section Collapsed/Expanded State
+  collapsedSections: Record<string, boolean | undefined>;
+  toggleCollapseSection: (id: string) => void;
+  expandAllSections: () => void;
+  collapseAllSections: () => void;
 };
 
 export const useResumeStore = create<ResumeStore>()(
@@ -74,16 +76,27 @@ export const useResumeStore = create<ResumeStore>()(
         }
       },
       collapsedSections: {},
-
-      toggleSectionCollapsed: (id) => {
+      toggleCollapseSection: (id) => {
         set((state) => {
           state.collapsedSections[id] = !state.collapsedSections[id];
         });
       },
-
-      setSectionCollapsed: (id, collapsed) => {
+      expandAllSections: () => {
         set((state) => {
-          state.collapsedSections[id] = collapsed;
+          state.collapsedSections = {};
+        });
+      },
+      collapseAllSections: () => {
+        set((state) => {
+          const collapsed: Record<string, boolean> = { basics: true };
+          for (const section of Object.keys(state.resume.data.sections)) {
+            collapsed[section] = true;
+          }
+          // Add any custom sections to the collapsed state
+          for (const section of Object.keys(state.resume.data.sections.custom)) {
+            collapsed[`custom.${section}`] = true;
+          }
+          state.collapsedSections = collapsed;
         });
       },
     })),
