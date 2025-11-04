@@ -5,7 +5,7 @@ import { ResumeDto } from "@reactive-resume/dto";
 import { ErrorMessage } from "@reactive-resume/utils";
 import retry from "async-retry";
 import { PDFDocument } from "pdf-lib";
-import { connect } from "puppeteer";
+import { connect } from "puppeteer-core";
 
 import { Config } from "../config/schema";
 import { StorageService } from "../storage/storage.service";
