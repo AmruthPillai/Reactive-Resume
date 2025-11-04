@@ -126,13 +126,13 @@ const Link = ({ url, icon, iconOnRight, label, className }: LinkProps) => {
   if (!isUrl(url.href)) return null;
 
   return (
-    <div className="flex items-center gap-x-1.5">
+    <div className="flex items-center gap-x-1.5 break-all">
       {!iconOnRight && (icon ?? <i className="ph ph-bold ph-link text-primary" />)}
       <a
         href={url.href}
         target="_blank"
         rel="noreferrer noopener nofollow"
-        className={cn("inline-block", className)}
+        className={cn("line-clamp-1 max-w-fit", className)}
       >
         {label ?? (url.label || url.href)}
       </a>
@@ -575,7 +575,7 @@ export const Nosepass = ({ columns, isFirstPage = false }: TemplateProps) => {
   const [main, sidebar] = columns;
 
   return (
-    <div className="p-custom space-y-6">
+    <div className="space-y-6 p-custom">
       <div className="flex items-center justify-between">
         <img alt="Europass Logo" className="h-[42px]" src="/assets/europass.png" />
 

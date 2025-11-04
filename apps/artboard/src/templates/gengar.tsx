@@ -28,7 +28,7 @@ const Header = () => {
   const basics = useArtboardStore((state) => state.resume.basics);
 
   return (
-    <div className="p-custom space-y-4 bg-primary text-background">
+    <div className="space-y-4 bg-primary p-custom text-background">
       <Picture className="border-background" />
 
       <div>
@@ -86,7 +86,7 @@ const Summary = () => {
   if (!section.visible || isEmptyString(section.content)) return null;
 
   return (
-    <div className="p-custom space-y-4" style={{ backgroundColor: hexToRgb(primaryColor, 0.2) }}>
+    <div className="space-y-4 p-custom" style={{ backgroundColor: hexToRgb(primaryColor, 0.2) }}>
       <section id={section.id}>
         <div
           dangerouslySetInnerHTML={{ __html: sanitize(section.content) }}
@@ -123,7 +123,7 @@ const Link = ({ url, icon, iconOnRight, label, className }: LinkProps) => {
   if (!isUrl(url.href)) return null;
 
   return (
-    <div className="flex items-center gap-x-1.5">
+    <div className="flex items-center gap-x-1.5 break-all">
       {!iconOnRight &&
         (icon ?? (
           <i className="ph ph-bold ph-link text-primary group-[.sidebar]:text-background" />
@@ -132,7 +132,7 @@ const Link = ({ url, icon, iconOnRight, label, className }: LinkProps) => {
         href={url.href}
         target="_blank"
         rel="noreferrer noopener nofollow"
-        className={cn("inline-block", className)}
+        className={cn("line-clamp-1 max-w-fit", className)}
       >
         {label ?? (url.label || url.href)}
       </a>
@@ -531,7 +531,7 @@ const mapSectionToComponent = (section: SectionKey) => {
     case "education": {
       return <Education />;
     }
-    
+
     case "summary": {
       return <Summary />;
     }
@@ -587,7 +587,7 @@ export const Gengar = ({ columns, isFirstPage = false }: TemplateProps) => {
         {isFirstPage && <Header />}
 
         <div
-          className="p-custom flex-1 space-y-4"
+          className="flex-1 space-y-4 p-custom"
           style={{ backgroundColor: hexToRgb(primaryColor, 0.2) }}
         >
           {sidebar.map((section) => (
@@ -597,7 +597,7 @@ export const Gengar = ({ columns, isFirstPage = false }: TemplateProps) => {
       </div>
 
       <div className={cn("main group", sidebar.length > 0 ? "col-span-2" : "col-span-3")}>
-        <div className="p-custom space-y-4">
+        <div className="space-y-4 p-custom">
           {main.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}

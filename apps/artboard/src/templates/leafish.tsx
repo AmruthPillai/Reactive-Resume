@@ -32,7 +32,7 @@ const Header = () => {
   return (
     <div>
       <div
-        className="p-custom flex items-center space-x-8"
+        className="flex items-center space-x-8 p-custom"
         style={{ backgroundColor: hexToRgb(primaryColor, 0.2) }}
       >
         <div className="space-y-3">
@@ -51,7 +51,7 @@ const Header = () => {
         <Picture />
       </div>
 
-      <div className="p-custom space-y-3" style={{ backgroundColor: hexToRgb(primaryColor, 0.4) }}>
+      <div className="space-y-3 p-custom" style={{ backgroundColor: hexToRgb(primaryColor, 0.4) }}>
         <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5 text-sm">
           {basics.location && (
             <div className="flex items-center gap-x-1.5">
@@ -136,13 +136,13 @@ const Link = ({ url, icon, iconOnRight, label, className }: LinkProps) => {
   if (!isUrl(url.href)) return null;
 
   return (
-    <div className="flex items-center gap-x-1.5">
+    <div className="flex items-center gap-x-1.5 break-all">
       {!iconOnRight && (icon ?? <i className="ph ph-bold ph-link text-primary" />)}
       <a
         href={url.href}
         target="_blank"
         rel="noreferrer noopener nofollow"
-        className={cn("inline-block", className)}
+        className={cn("line-clamp-1 max-w-fit", className)}
       >
         {label ?? (url.label || url.href)}
       </a>
@@ -519,7 +519,7 @@ export const Leafish = ({ columns, isFirstPage = false }: TemplateProps) => {
     <div>
       {isFirstPage && <Header />}
 
-      <div className="p-custom grid grid-cols-2 items-start space-x-6">
+      <div className="grid grid-cols-2 items-start space-x-6 p-custom">
         <div className={cn("grid gap-y-4", sidebar.length === 0 && "col-span-2")}>
           {main.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>

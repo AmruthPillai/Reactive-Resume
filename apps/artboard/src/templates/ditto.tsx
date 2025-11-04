@@ -28,7 +28,7 @@ const Header = () => {
   const basics = useArtboardStore((state) => state.resume.basics);
 
   return (
-    <div className="p-custom relative grid grid-cols-3 space-x-4 pb-0">
+    <div className="relative grid grid-cols-3 space-x-4 p-custom pb-0">
       <Picture className="mx-auto" />
 
       <div className="relative z-10 col-span-2 text-background">
@@ -142,13 +142,13 @@ const Link = ({ url, icon, iconOnRight, label, className }: LinkProps) => {
   if (!isUrl(url.href)) return null;
 
   return (
-    <div className="flex items-center gap-x-1.5">
+    <div className="flex items-center gap-x-1.5 break-all">
       {!iconOnRight && (icon ?? <i className="ph ph-bold ph-link text-primary" />)}
       <a
         href={url.href}
         target="_blank"
         rel="noreferrer noopener nofollow"
-        className={cn("inline-block", className)}
+        className={cn("line-clamp-1 max-w-fit", className)}
       >
         {label ?? (url.label || url.href)}
       </a>
@@ -604,7 +604,7 @@ export const Ditto = ({ columns, isFirstPage = false }: TemplateProps) => {
       )}
 
       <div className="grid grid-cols-3">
-        <div className="sidebar p-custom group space-y-4">
+        <div className="sidebar group space-y-4 p-custom">
           {sidebar.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}
@@ -612,7 +612,7 @@ export const Ditto = ({ columns, isFirstPage = false }: TemplateProps) => {
 
         <div
           className={cn(
-            "main p-custom group space-y-4",
+            "main group space-y-4 p-custom",
             sidebar.length > 0 ? "col-span-2" : "col-span-3",
           )}
         >

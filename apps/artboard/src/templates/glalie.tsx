@@ -135,14 +135,14 @@ const Link = ({ url, icon, iconOnRight, label, className }: LinkProps) => {
   if (!isUrl(url.href)) return null;
 
   return (
-    <div className="flex items-center gap-x-1.5">
+    <div className="flex items-center gap-x-1.5 break-all">
       {!iconOnRight &&
         (icon ?? <i className="ph ph-bold ph-link text-primary group-[.sidebar]:text-primary" />)}
       <a
         href={url.href}
         target="_blank"
         rel="noreferrer noopener nofollow"
-        className={cn("inline-block", className)}
+        className={cn("line-clamp-1 max-w-fit", className)}
       >
         {label ?? (url.label || url.href)}
       </a>
@@ -587,7 +587,7 @@ export const Glalie = ({ columns, isFirstPage = false }: TemplateProps) => {
   return (
     <div className="grid min-h-[inherit] grid-cols-3">
       <div
-        className={cn("sidebar p-custom group space-y-4", sidebar.length === 0 && "hidden")}
+        className={cn("sidebar group space-y-4 p-custom", sidebar.length === 0 && "hidden")}
         style={{ backgroundColor: hexToRgb(primaryColor, 0.2) }}
       >
         {isFirstPage && <Header />}
@@ -599,7 +599,7 @@ export const Glalie = ({ columns, isFirstPage = false }: TemplateProps) => {
 
       <div
         className={cn(
-          "main p-custom group space-y-4",
+          "main group space-y-4 p-custom",
           sidebar.length > 0 ? "col-span-2" : "col-span-3",
         )}
       >

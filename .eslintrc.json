@@ -5,7 +5,6 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "extends": ["plugin:prettier/recommended"],
       "plugins": ["simple-import-sort", "unused-imports"],
       "rules": {
         // eslint
@@ -41,14 +40,6 @@
                 "onlyDependOnLibsWithTags": ["*"]
               }
             ]
-          }
-        ],
-
-        // prettier
-        "prettier/prettier": [
-          "warn",
-          {
-            "endOfLine": "auto"
           }
         ]
       }
