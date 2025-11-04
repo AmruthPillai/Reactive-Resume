@@ -44,10 +44,10 @@ import { Button } from "./button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "./form";
 import { Input } from "./input";
 import { Popover, PopoverContent } from "./popover";
+import { ScrollArea } from "./scroll-area";
 import { Skeleton } from "./skeleton";
 import { Toggle } from "./toggle";
 import { Tooltip } from "./tooltip";
-import { ScrollArea } from "./scroll-area";
 
 const InsertImageFormSchema = z.object({
   src: z.string(),
@@ -527,18 +527,18 @@ export const RichInput = forwardRef<Editor, RichInputProps>(
       <div>
         {!hideToolbar && <Toolbar editor={editor} />}
 
-        <ScrollArea orientation="vertical" className="rounded-sm border px-3 py-2">
+        <ScrollArea orientation="vertical" className="rounded-sm border p-3 pt-0">
           <EditorContent
             editor={editor}
             className={cn(
-              "grid min-h-[160px] w-full bg-transparent text-sm placeholder:opacity-80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:cursor-not-allowed disabled:opacity-50",
+              "grid min-h-[140px] w-full bg-transparent text-sm placeholder:opacity-80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:cursor-not-allowed disabled:opacity-50",
               hideToolbar && "pt-2",
               className,
             )}
             {...props}
           />
         </ScrollArea>
-        
+
         {footer?.(editor)}
       </div>
     );
