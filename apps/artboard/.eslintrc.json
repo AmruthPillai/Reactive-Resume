@@ -4,13 +4,6 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "extends": ["plugin:tailwindcss/recommended"],
-      "settings": {
-        "tailwindcss": {
-          "callees": ["cn", "clsx", "cva"],
-          "config": "tailwind.config.js"
-        }
-      },
       "rules": {
         // eslint
         "@typescript-eslint/no-require-imports": "off",
@@ -28,10 +21,7 @@
         ],
 
         // react-hooks
-        "react-hooks/exhaustive-deps": "off",
-
-        // tailwindcss
-        "tailwindcss/no-custom-classname": "off"
+        "react-hooks/exhaustive-deps": "off"
       }
     },
     {

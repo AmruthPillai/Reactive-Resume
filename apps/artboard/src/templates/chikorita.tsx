@@ -125,14 +125,14 @@ const Link = ({ url, icon, iconOnRight, label, className }: LinkProps) => {
   if (!isUrl(url.href)) return null;
 
   return (
-    <div className="flex items-center gap-x-1.5">
+    <div className="flex items-center gap-x-1.5 break-all">
       {!iconOnRight &&
         (icon ?? <i className="ph ph-bold ph-link text-primary group-[.sidebar]:text-white" />)}
       <a
         href={url.href}
         target="_blank"
         rel="noreferrer noopener nofollow"
-        className={cn("inline-block", className)}
+        className={cn("line-clamp-1 max-w-fit", className)}
       >
         {label ?? (url.label || url.href)}
       </a>
@@ -571,7 +571,7 @@ export const Chikorita = ({ columns, isFirstPage = false }: TemplateProps) => {
     <div className="grid min-h-[inherit] grid-cols-3">
       <div
         className={cn(
-          "main p-custom group space-y-4",
+          "main group space-y-4 p-custom",
           sidebar.length > 0 ? "col-span-2" : "col-span-3",
         )}
       >
@@ -584,7 +584,7 @@ export const Chikorita = ({ columns, isFirstPage = false }: TemplateProps) => {
 
       <div
         className={cn(
-          "sidebar p-custom group h-full space-y-4 bg-primary text-background",
+          "sidebar group h-full space-y-4 bg-primary p-custom text-background",
           sidebar.length === 0 && "hidden",
         )}
       >

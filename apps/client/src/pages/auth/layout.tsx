@@ -23,7 +23,6 @@ export const AuthLayout = () => {
   const hideDivider = !providers.includes("email") || providers.length === 1;
 
   return (
-    // eslint-disable-next-line tailwindcss/enforces-shorthand -- size-screen not implemented yet
     <div className="flex h-screen w-screen">
       <div className="relative flex w-full flex-col justify-center gap-y-8 px-12 sm:mx-auto sm:basis-[420px] sm:px-0 lg:basis-[480px] lg:px-12">
         <div className="flex items-center justify-between">

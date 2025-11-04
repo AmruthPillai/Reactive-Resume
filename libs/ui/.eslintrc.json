@@ -4,13 +4,6 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "extends": ["plugin:tailwindcss/recommended"],
-      "settings": {
-        "tailwindcss": {
-          "callees": ["cn", "clsx", "cva"],
-          "config": "tailwind.config.js"
-        }
-      },
       "rules": {
         // eslint
         "@typescript-eslint/no-require-imports": "off",

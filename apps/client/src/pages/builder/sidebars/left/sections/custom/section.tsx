@@ -53,7 +53,11 @@ export const CustomField = ({ field, onChange, onRemove }: CustomFieldProps) => 
           <Tooltip content={t`Icon`}>
             <PopoverTrigger asChild>
               <Button size="icon" variant="ghost" className="shrink-0">
-                {field.icon ? <i className={cn(`ph ph-${field.icon}`)} /> : <EnvelopeIcon />}
+                {field.icon ? (
+                  <i className={cn(`ph ph-bold ph-${field.icon}`)} />
+                ) : (
+                  <EnvelopeIcon />
+                )}
               </Button>
             </PopoverTrigger>
           </Tooltip>

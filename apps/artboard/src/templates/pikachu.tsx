@@ -126,15 +126,11 @@ const Rating = ({ level }: RatingProps) => (
       <i
         key={index}
         className={cn(
-          "ph ph-diamond text-primary",
+          "ph ph-bold ph-diamond text-primary",
           level > index && "ph-fill",
           level <= index && "ph-bold",
         )}
       />
-      // <div
-      //   key={index}
-      //   className={cn("h-2 w-4 border border-primary", level > index && "bg-primary")}
-      // />
     ))}
   </div>
 );
@@ -151,7 +147,7 @@ const Link = ({ url, icon, iconOnRight, label, className }: LinkProps) => {
   if (!isUrl(url.href)) return null;
 
   return (
-    <div className="flex items-center gap-x-1.5">
+    <div className="flex items-center gap-x-1.5 break-all">
       {!iconOnRight &&
         (icon ?? (
           <i className="ph ph-bold ph-link text-primary group-[.summary]:text-background" />
@@ -160,7 +156,7 @@ const Link = ({ url, icon, iconOnRight, label, className }: LinkProps) => {
         href={url.href}
         target="_blank"
         rel="noreferrer noopener nofollow"
-        className={cn("inline-block", className)}
+        className={cn("line-clamp-1 max-w-fit", className)}
       >
         {label ?? (url.label || url.href)}
       </a>
@@ -601,7 +597,7 @@ export const Pikachu = ({ columns, isFirstPage = false }: TemplateProps) => {
   const [main, sidebar] = columns;
 
   return (
-    <div className="p-custom grid grid-cols-3 space-x-6">
+    <div className="grid grid-cols-3 space-x-6 p-custom">
       <div className="sidebar group space-y-4">
         {isFirstPage && <Picture className="w-full !max-w-none" />}
 
