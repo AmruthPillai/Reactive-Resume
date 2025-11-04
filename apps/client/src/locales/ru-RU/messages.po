@@ -8,7 +8,7 @@ msgstr ""
 "Language: ru\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-10-01 09:40\n"
+"PO-Revision-Date: 2025-11-04 14:22\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
@@ -102,8 +102,8 @@ msgstr "Аккаунт"
 msgid "Add a custom field"
 msgstr "Добавьте настраиваемое поле"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:119
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:170
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:150
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:203
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "Добавить новый элемент"
@@ -112,8 +112,8 @@ msgstr "Добавить новый элемент"
 msgid "Add a new item"
 msgstr "Добавить новый элемент"
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:146
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:263
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:149
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:267
 msgid "Add a new section"
 msgstr "Добавить новый раздел"
 
@@ -233,12 +233,12 @@ msgstr "Резервные коды могут содержать только �
 msgid "Base URL"
 msgstr "Базовый URL"
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:55
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:58
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
 msgid "Basics"
 msgstr "Основы"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:21
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:43
 msgid "Basics"
 msgstr "Основы"
 
@@ -311,6 +311,16 @@ msgstr "Код"
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:52
 msgid "Code must be exactly 6 digits long."
 msgstr "Код должен состоять ровно из 6 цифр."
+
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:272
+msgid "Collapse All"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:30
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:115
+#: apps/client/src/pages/builder/sidebars/left/sections/summary.tsx:33
+msgid "Collapse section"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:136
 msgid "Columns"
@@ -385,7 +395,7 @@ msgstr "Пользовательский CSS"
 msgid "Custom resume sections"
 msgstr "Пользовательские разделы резюме"
 
-#: apps/client/src/stores/resume.ts:47
+#: apps/client/src/stores/resume.ts:53
 msgid "Custom Section"
 msgstr "Пользовательский раздел"
 
@@ -526,7 +536,7 @@ msgstr "Эффекты"
 #: apps/client/src/pages/auth/forgot-password/page.tsx:82
 #: apps/client/src/pages/auth/login/page.tsx:90
 #: apps/client/src/pages/auth/register/page.tsx:141
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:81
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:181
 msgid "Email"
 msgstr "Эл. почта"
@@ -570,6 +580,16 @@ msgstr "Ошибки"
 #: apps/client/src/pages/home/sections/support/index.tsx:78
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Reactive Resume has helped you. Your feedback and support are always welcome and much appreciated!"
 msgstr "Даже если вы не вы не можете внести вклад в проект финансово, вы все равно можете помочь проекту, поставив звезду репозиторию на GitHub, рассказав друзьям или оставив короткое сообщение, чтобы я узнал, как именно Reactive Resume помог вам. Ваши отзывы и поддержка всегда приветствуются и очень ценятся!"
+
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:271
+msgid "Expand All"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:30
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:115
+#: apps/client/src/pages/builder/sidebars/left/sections/summary.tsx:33
+msgid "Expand section"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/templates/index.tsx:12
 msgid "Explore the templates available in Reactive Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
@@ -647,7 +667,7 @@ msgstr "Бесплатно, навсегда"
 msgid "Friendly"
 msgstr "Дружелюбно"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:31
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:56
 msgid "Full Name"
 msgstr "Полное имя"
 
@@ -692,7 +712,7 @@ msgstr "Монохром"
 msgid "Grid"
 msgstr "Плитка"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:43
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:70
 msgid "Headline"
 msgstr "Заголовок"
 
@@ -908,7 +928,7 @@ msgstr "Список"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:123
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:93
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:120
 msgid "Location"
 msgstr "Местоположение"
 
@@ -1096,7 +1116,7 @@ msgstr "PDF"
 msgid "Personal notes for each resume"
 msgstr "Личные заметки для каждого резюме"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:81
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:108
 msgid "Phone"
 msgstr "Телефон"
 
@@ -1736,7 +1756,7 @@ msgstr "Мы подтверждаем ваш адрес эл. почты, тол
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:67
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:95
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:69
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:96
 msgid "Website"
 msgstr "Сайт"
 

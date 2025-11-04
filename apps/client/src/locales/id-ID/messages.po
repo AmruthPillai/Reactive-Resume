@@ -8,7 +8,7 @@ msgstr ""
 "Language: id\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-10-01 09:40\n"
+"PO-Revision-Date: 2025-11-04 14:22\n"
 "Last-Translator: \n"
 "Language-Team: Indonesian\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -102,8 +102,8 @@ msgstr "Akun"
 msgid "Add a custom field"
 msgstr "Tambahkan kolom kustom"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:119
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:170
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:150
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:203
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "Tambah item baru"
@@ -112,8 +112,8 @@ msgstr "Tambah item baru"
 msgid "Add a new item"
 msgstr "Tambah item baru"
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:146
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:263
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:149
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:267
 msgid "Add a new section"
 msgstr "Tambahkan bagian baru"
 
@@ -233,12 +233,12 @@ msgstr "Kode Cadangan hanya boleh berisi huruf kecil atau angka, dan harus tepat
 msgid "Base URL"
 msgstr "URL dasar"
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:55
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:58
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
 msgid "Basics"
 msgstr "Dasar-dasar"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:21
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:43
 msgid "Basics"
 msgstr "Dasar-dasar"
 
@@ -311,6 +311,16 @@ msgstr "Kode"
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:52
 msgid "Code must be exactly 6 digits long."
 msgstr "Kode harus terdiri dari 6 digit."
+
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:272
+msgid "Collapse All"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:30
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:115
+#: apps/client/src/pages/builder/sidebars/left/sections/summary.tsx:33
+msgid "Collapse section"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:136
 msgid "Columns"
@@ -385,7 +395,7 @@ msgstr "CSS khusus"
 msgid "Custom resume sections"
 msgstr "Bagian resume khusus"
 
-#: apps/client/src/stores/resume.ts:47
+#: apps/client/src/stores/resume.ts:53
 msgid "Custom Section"
 msgstr "Bagian Khusus"
 
@@ -526,7 +536,7 @@ msgstr "Efek"
 #: apps/client/src/pages/auth/forgot-password/page.tsx:82
 #: apps/client/src/pages/auth/login/page.tsx:90
 #: apps/client/src/pages/auth/register/page.tsx:141
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:81
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:181
 msgid "Email"
 msgstr "Email"
@@ -570,6 +580,16 @@ msgstr "Kesalahan"
 #: apps/client/src/pages/home/sections/support/index.tsx:78
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Reactive Resume has helped you. Your feedback and support are always welcome and much appreciated!"
 msgstr "Meskipun Anda belum bisa berkontribusi secara finansial, Anda masih bisa berkontribusi dengan cara memberikan bintang pada repositori GitHub, menyebarkannya ke teman-teman Anda, atau mengirimkan pesan singkat kepada saya bagaimana Reactive Resume telah membantu Anda. Umpan balik dan dukungan Anda selalu diterima dan sangat kami hargai!"
+
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:271
+msgid "Expand All"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:30
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:115
+#: apps/client/src/pages/builder/sidebars/left/sections/summary.tsx:33
+msgid "Expand section"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/templates/index.tsx:12
 msgid "Explore the templates available in Reactive Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
@@ -647,7 +667,7 @@ msgstr "Gratis, selamanya"
 msgid "Friendly"
 msgstr "Ramah"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:31
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:56
 msgid "Full Name"
 msgstr "Nama Lengkap"
 
@@ -692,7 +712,7 @@ msgstr "Skala abu-abu"
 msgid "Grid"
 msgstr "Grid"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:43
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:70
 msgid "Headline"
 msgstr "Judul"
 
@@ -908,7 +928,7 @@ msgstr "Daftar"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:123
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:93
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:120
 msgid "Location"
 msgstr "Lokasi"
 
@@ -1096,7 +1116,7 @@ msgstr "PDF"
 msgid "Personal notes for each resume"
 msgstr "Catatan pribadi untuk setiap resume"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:81
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:108
 msgid "Phone"
 msgstr "Telepon"
 
@@ -1736,7 +1756,7 @@ msgstr "Kami memverifikasi alamat email Anda hanya untuk memastikan bahwa kami d
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:67
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:95
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:69
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:96
 msgid "Website"
 msgstr "Situs web"
 

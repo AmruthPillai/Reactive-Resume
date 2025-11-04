@@ -8,7 +8,7 @@ msgstr ""
 "Language: kn\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-10-01 09:32\n"
+"PO-Revision-Date: 2025-11-04 14:22\n"
 "Last-Translator: \n"
 "Language-Team: Kannada\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -102,8 +102,8 @@ msgstr "ಖಾತೆಗಳು"
 msgid "Add a custom field"
 msgstr "ಕಸ್ಟಮ್ ಕ್ಷೇತ್ರವನ್ನು ಸೇರಿಸಿ"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:119
-#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:170
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:150
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:203
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
 msgstr "ಹೊಸ ಐಟಂ ಸೇರಿಸಿ"
@@ -112,8 +112,8 @@ msgstr "ಹೊಸ ಐಟಂ ಸೇರಿಸಿ"
 msgid "Add a new item"
 msgstr "ಹೊಸ ಐಟಂ ಸೇರಿಸಿ"
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:146
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:263
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:149
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:267
 msgid "Add a new section"
 msgstr "ಹೊಸ ವಿಭಾಗವನ್ನು ಸೇರಿಸಿ"
 
@@ -233,12 +233,12 @@ msgstr "ಬ್ಯಾಕಪ್ ಕೋಡ್‌ಗಳು ಸಣ್ಣ ಅಕ್ಷ
 msgid "Base URL"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:55
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:58
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
 msgid "Basics"
 msgstr "ಸಾಮಾನ್ಯ"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:21
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:43
 msgid "Basics"
 msgstr "ಸಾಮಾನ್ಯ"
 
@@ -311,6 +311,16 @@ msgstr "ಕೋಡ್"
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:52
 msgid "Code must be exactly 6 digits long."
 msgstr "ಕೋಡ್ ನಿಖರವಾಗಿ 6 ಅಂಕೆಗಳನ್ನು ಹೊಂದಿರಬೇಕು."
+
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:272
+msgid "Collapse All"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:30
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:115
+#: apps/client/src/pages/builder/sidebars/left/sections/summary.tsx:33
+msgid "Collapse section"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:136
 msgid "Columns"
@@ -385,7 +395,7 @@ msgstr ""
 msgid "Custom resume sections"
 msgstr "ಕಸ್ಟಮ್ ಪುನರಾರಂಭ ವಿಭಾಗಗಳು"
 
-#: apps/client/src/stores/resume.ts:47
+#: apps/client/src/stores/resume.ts:53
 msgid "Custom Section"
 msgstr "ಕಸ್ಟಮ್ ವಿಭಾಗ"
 
@@ -526,7 +536,7 @@ msgstr "ಪರಿಣಾಮಗಳು"
 #: apps/client/src/pages/auth/forgot-password/page.tsx:82
 #: apps/client/src/pages/auth/login/page.tsx:90
 #: apps/client/src/pages/auth/register/page.tsx:141
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:81
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:181
 msgid "Email"
 msgstr "ಇಮೇಲ್"
@@ -570,6 +580,16 @@ msgstr "ದೋಷಗಳು"
 #: apps/client/src/pages/home/sections/support/index.tsx:78
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Reactive Resume has helped you. Your feedback and support are always welcome and much appreciated!"
 msgstr "ನೀವು ಆರ್ಥಿಕವಾಗಿ ಕೊಡುಗೆ ನೀಡುವ ಸ್ಥಿತಿಯಲ್ಲಿಲ್ಲದಿದ್ದರೂ ಸಹ, GitHub ರೆಪೊಸಿಟರಿಗೆ ನಕ್ಷತ್ರವನ್ನು ನೀಡುವ ಮೂಲಕ, ನಿಮ್ಮ ಸ್ನೇಹಿತರಿಗೆ ಸುದ್ದಿಯನ್ನು ಹರಡುವ ಮೂಲಕ ಅಥವಾ ರಿಯಾಕ್ಟಿವ್ ರೆಸ್ಯೂಮ್ ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಿದೆ ಎಂಬುದನ್ನು ನನಗೆ ತಿಳಿಸಲು ತ್ವರಿತ ಸಂದೇಶವನ್ನು ನೀಡುವ ಮೂಲಕ ನೀವು ಇನ್ನೂ ಬದಲಾವಣೆಯನ್ನು ಮಾಡಬಹುದು. ನಿಮ್ಮ ಪ್ರತಿಕ್ರಿಯೆ ಮತ್ತು ಬೆಂಬಲ ಯಾವಾಗಲೂ ಸ್ವಾಗತಾರ್ಹ ಮತ್ತು ಹೆಚ್ಚು ಮೆಚ್ಚುಗೆ!"
+
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:271
+msgid "Expand All"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:30
+#: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:115
+#: apps/client/src/pages/builder/sidebars/left/sections/summary.tsx:33
+msgid "Expand section"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/templates/index.tsx:12
 msgid "Explore the templates available in Reactive Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
@@ -647,7 +667,7 @@ msgstr "ಉಚಿತ ಶಾಶ್ವತವಾಗಿ"
 msgid "Friendly"
 msgstr "ಸ್ನೇಹಪರ"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:31
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:56
 msgid "Full Name"
 msgstr "ಪೂರ್ಣ ಹೆಸರು"
 
@@ -692,7 +712,7 @@ msgstr "ಗ್ರೇಸ್ಕೇಲ್"
 msgid "Grid"
 msgstr "ಗ್ರಿಡ್"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:43
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:70
 msgid "Headline"
 msgstr "ಶೀರ್ಷಿಕೆ"
 
@@ -908,7 +928,7 @@ msgstr "ಪಟ್ಟಿ"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:123
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:93
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:120
 msgid "Location"
 msgstr "ಸ್ಥಳ"
 
@@ -1096,7 +1116,7 @@ msgstr "PDF"
 msgid "Personal notes for each resume"
 msgstr "ಪ್ರತಿ ರೆಸ್ಯೂಮ್ ವೈಯಕ್ತಿಕ ಟಿಪ್ಪಣಿಗಳು"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:81
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:108
 msgid "Phone"
 msgstr "ದೂರವಾಣಿ"
 
@@ -1736,7 +1756,7 @@ msgstr "ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ನೀವ
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:67
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:95
-#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:69
+#: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:96
 msgid "Website"
 msgstr "ಜಾಲತಾಣ"
 

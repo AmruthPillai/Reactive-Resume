@@ -37,17 +37,21 @@ Start creating your standout resume with Reactive Resume today!
 
 ## Templates
 
-| Azurill                                                      | Bronzor                                                     | Chikorita                                                   |
-| ------------------------------------------------------------ | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| <img src="https://i.imgur.com/jKgo04C.jpeg" width="200px" /> | <img src="https://i.imgur.com/DFNQZP2.jpg" width="200px" /> | <img src="https://i.imgur.com/Dwv8Y7f.jpg" width="200px" /> |
+| Azurill                                                                 | Bronzor                                                                 | Chikorita                                                                 |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| <img src="./apps/client/public/templates/jpg/azurill.jpg" width="200px" /> | <img src="./apps/client/public/templates/jpg/bronzor.jpg" width="200px" /> | <img src="./apps/client/public/templates/jpg/chikorita.jpg" width="200px" /> |
 
-| Ditto                                                       | Kakuna                                                      | Nosepass                                                    |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| <img src="https://i.imgur.com/6c5lASL.jpg" width="200px" /> | <img src="https://i.imgur.com/268ML3t.jpg" width="200px" /> | <img src="https://i.imgur.com/npRLsPS.jpg" width="200px" /> |
+| Ditto                                                                | Gengar                                                                 | Glalie                                                                 |
+| -------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| <img src="./apps/client/public/templates/jpg/ditto.jpg" width="200px" /> | <img src="./apps/client/public/templates/jpg/gengar.jpg" width="200px" /> | <img src="./apps/client/public/templates/jpg/glalie.jpg" width="200px" /> |
 
-| Onyx                                                        | Pikachu                                                     | Rhyhorn                                                     |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| <img src="https://i.imgur.com/cxplXOW.jpg" width="200px" /> | <img src="https://i.imgur.com/Y9f7qsh.jpg" width="200px" /> | <img src="https://i.imgur.com/h4kQxy2.jpg" width="200px" /> |
+| Kakuna                                                                 | Leafish                                                                 | Nosepass                                                                 |
+| ---------------------------------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| <img src="./apps/client/public/templates/jpg/kakuna.jpg" width="200px" /> | <img src="./apps/client/public/templates/jpg/leafish.jpg" width="200px" /> | <img src="./apps/client/public/templates/jpg/nosepass.jpg" width="200px" /> |
+
+| Onyx                                                                | Pikachu                                                                 | Rhyhorn                                                                 |
+| ------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| <img src="./apps/client/public/templates/jpg/onyx.jpg" width="200px" /> | <img src="./apps/client/public/templates/jpg/pikachu.jpg" width="200px" /> | <img src="./apps/client/public/templates/jpg/rhyhorn.jpg" width="200px" /> |
 
 ## Features
 
