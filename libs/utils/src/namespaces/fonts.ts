@@ -6,6 +6,10 @@ export type Font = {
   files: Record<string, string>;
 };
 
+export const localFonts = ["Arial", "Cambria", "Garamond", "Times New Roman"];
+export const isLocalFont = (family: string): boolean =>
+  localFonts.some((f) => f.toLowerCase() === family.toLowerCase());
+
 export const fonts: Font[] = [
   {
     family: "Roboto",
