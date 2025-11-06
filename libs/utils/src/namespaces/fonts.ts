@@ -6,6 +6,21 @@ export type Font = {
   files: Record<string, string>;
 };
 
+/**
+ * Known system fonts we consider available locally without fetching from Google Fonts.
+ * Extend this list when adding more system-safe families to the app.
+ */
+export const localFonts = ["Arial", "Cambria", "Garamond", "Times New Roman"];
+
+/**
+ * Checks whether a font family is a local/system font.
+ *
+ * Input: font family name (case-insensitive)
+ * Output: true if present in localFonts, otherwise false
+ */
+export const isLocalFont = (family: string): boolean =>
+  localFonts.some((f) => f.toLowerCase() === family.toLowerCase());
+
 export const fonts: Font[] = [
   {
     family: "Roboto",

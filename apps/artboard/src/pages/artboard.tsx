@@ -1,3 +1,4 @@
+import { isLocalFont } from "@reactive-resume/utils";
 import { useEffect, useMemo } from "react";
 import { Helmet } from "react-helmet-async";
 import { Outlet } from "react-router";
@@ -18,6 +19,18 @@ export const ArtboardPage = () => {
   }, [metadata.typography.font]);
 
   useEffect(() => {
+    const family = metadata.typography.font.family;
+    if (isLocalFont(family)) {
+      let frame = 0;
+      frame = requestAnimationFrame(() => {
+        const width = window.document.body.offsetWidth;
+        const height = window.document.body.offsetHeight;
+        const message = { type: "PAGE_LOADED", payload: { width, height } };
+        window.postMessage(message, "*");
+      });
+      return () => { cancelAnimationFrame(frame); };
+    }
+
     webfontloader.load({
       google: { families: [fontString] },
       active: () => {
