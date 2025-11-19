@@ -2,7 +2,7 @@ import type { DeleteFolderDto, FolderDto, ResumeDto } from "@reactive-resume/dto
 import { useMutation } from "@tanstack/react-query";
 import type { AxiosResponse } from "axios";
 
-import { RESUMES_KEY } from "@/client/constants/query-keys";
+import { FOLDERS_KEY, RESUMES_KEY } from "@/client/constants/query-keys";
 import { axios } from "@/client/libs/axios";
 import { queryClient } from "@/client/libs/query-client";
 
@@ -28,21 +28,21 @@ export const useDeleteFolder = () => {
   } = useMutation({
     mutationFn: deleteFolder,
     onSuccess: async (data, variables) => {
-      const folderData = queryClient.getQueryData<FolderDto>(["folder", { id: data.id }]);
+      const folderQueryKey = ["folder", { id: data.id }] as const;
+
+      const folderData = queryClient.getQueryData<FolderDto>(folderQueryKey);
       const resumesInFolder = folderData?.resumes || [];
 
-      queryClient.removeQueries({ queryKey: ["folder", data.id] });
-
-      queryClient.setQueryData<FolderDto[]>(["folders"], (cache) => {
+      queryClient.setQueryData<FolderDto[]>([FOLDERS_KEY], (cache) => {
         if (!cache) return [];
         return cache.filter((folder) => folder.id !== data.id);
       });
 
       if (!variables.isDeleteResumes) {
-        resumesInFolder.forEach((resume) => {
+        for (const resume of resumesInFolder) {
           const updatedResume = Object.assign({}, resume, { folderId: null });
           updateResumeInCache(updatedResume);
-        });
+        }
       }
     },
   });
