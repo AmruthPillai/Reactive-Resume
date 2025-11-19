@@ -7,8 +7,12 @@ import { useFolder } from "@/client/services/folder";
 
 export default function FolderResumesGridView() {
   const { id } = useParams<{ id: string }>();
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const { folder } = useFolder(id!);
+  
+  if (!id) {
+    return <div>Folder not found</div>;
+  }
+  
+  const { folder } = useFolder(id);
   const resumes = folder?.resumes;
 
   return (
