@@ -1,10 +1,10 @@
 import { t } from "@lingui/macro";
 import {
-  DotsThreeVertical,
-  Folder,
-  FolderOpen,
-  PencilSimple,
-  TrashSimple,
+  DotsThreeVerticalIcon,
+  FolderIcon,
+  FolderOpenIcon,
+  PencilSimpleIcon,
+  TrashSimpleIcon,
 } from "@phosphor-icons/react";
 import type { FolderDto } from "@reactive-resume/dto";
 import {
@@ -17,6 +17,7 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@reactive-resume/ui";
 import dayjs from "dayjs";
@@ -52,7 +53,7 @@ export const FolderListItem = ({ folder }: Props) => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="aspect-square">
         <Button size="icon" variant="ghost">
-          <DotsThreeVertical />
+          <DotsThreeVerticalIcon />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
@@ -62,7 +63,7 @@ export const FolderListItem = ({ folder }: Props) => {
             onOpen();
           }}
         >
-          <FolderOpen size={14} className="mr-2" />
+          <FolderOpenIcon size={14} className="mr-2" />
           {t`Open`}
         </DropdownMenuItem>
         <DropdownMenuItem
@@ -71,11 +72,11 @@ export const FolderListItem = ({ folder }: Props) => {
             onUpdate();
           }}
         >
-          <PencilSimple size={14} className="mr-2" />
+          <PencilSimpleIcon size={14} className="mr-2" />
           {t`Rename`}
         </DropdownMenuItem>
 
-        <ContextMenuSeparator />
+        <DropdownMenuSeparator />
         <DropdownMenuItem
           className="text-error"
           onClick={(event) => {
@@ -83,7 +84,7 @@ export const FolderListItem = ({ folder }: Props) => {
             onDelete();
           }}
         >
-          <TrashSimple size={14} className="mr-2" />
+          <TrashSimpleIcon size={14} className="mr-2" />
           {t`Delete`}
         </DropdownMenuItem>
       </DropdownMenuContent>
@@ -95,7 +96,7 @@ export const FolderListItem = ({ folder }: Props) => {
       <ContextMenuTrigger className="even:bg-secondary/20">
         <BaseListItem
           className="group"
-          start={<Folder size={18} weight="fill" />}
+          start={<FolderIcon size={18} weight="fill" />}
           title={folder.name}
           description={t`Last updated ${lastUpdated}`}
           end={dropdownMenu}
@@ -105,16 +106,16 @@ export const FolderListItem = ({ folder }: Props) => {
 
       <ContextMenuContent>
         <ContextMenuItem onClick={onOpen}>
-          <FolderOpen size={14} className="mr-2" />
+          <FolderOpenIcon size={14} className="mr-2" />
           {t`Open`}
         </ContextMenuItem>
         <ContextMenuItem onClick={onUpdate}>
-          <PencilSimple size={14} className="mr-2" />
+          <PencilSimpleIcon size={14} className="mr-2" />
           {t`Rename`}
         </ContextMenuItem>
         <ContextMenuSeparator />
         <ContextMenuItem className="text-error" onClick={onDelete}>
-          <TrashSimple size={14} className="mr-2" />
+          <TrashSimpleIcon size={14} className="mr-2" />
           {t`Delete`}
         </ContextMenuItem>
       </ContextMenuContent>
