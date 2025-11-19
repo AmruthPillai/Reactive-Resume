@@ -13,7 +13,7 @@ export const resumeSchema = z.object({
   visibility: z.enum(["private", "public"]).default("private"),
   locked: z.boolean().default(false),
   userId: idSchema,
-  folderId: idSchema,
+  folderId: idSchema.optional(),
   user: userSchema.optional(),
   createdAt: dateSchema,
   updatedAt: dateSchema,
