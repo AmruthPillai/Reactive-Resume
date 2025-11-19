@@ -4,6 +4,7 @@ import {
   Delete,
   Get,
   Param,
+  ParseBoolPipe,
   Patch,
   Post,
   Query,
@@ -61,7 +62,7 @@ export class FolderController {
   @UseGuards(TwoFactorGuard)
   remove(
     @Param("id") id: string,
-    @Query("isDeleteResumes") isDeleteResumes: boolean,
+    @Query("isDeleteResumes", ParseBoolPipe) isDeleteResumes: boolean,
     @User() user: UserEntity,
   ) {
     return this.folderService.remove(id, user.id, isDeleteResumes);
