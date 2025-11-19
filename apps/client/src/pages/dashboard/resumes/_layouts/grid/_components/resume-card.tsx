@@ -1,5 +1,6 @@
 import { t } from "@lingui/macro";
 import {
+  ArrowSquareRightIcon,
   CopySimpleIcon,
   FolderOpenIcon,
   LockIcon,
@@ -56,6 +57,10 @@ export const ResumeCard = ({ resume }: Props) => {
     open("delete", { id: "resume", item: resume });
   };
 
+  const onMoveResume = () => {
+    open("move-resume", { id: "resume", item: resume });
+  };
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="text-left">
@@ -103,6 +108,10 @@ export const ResumeCard = ({ resume }: Props) => {
         <DropdownMenuItem onClick={onDuplicate}>
           <CopySimpleIcon size={14} className="mr-2" />
           {t`Duplicate`}
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={onMoveResume}>
+          <ArrowSquareRightIcon size={14} className="mr-2" />
+          {t`Move to folder`}
         </DropdownMenuItem>
         {resume.locked ? (
           <DropdownMenuItem onClick={onLockChange}>

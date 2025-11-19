@@ -1,5 +1,6 @@
 import { t } from "@lingui/macro";
 import {
+  ArrowSquareRightIcon,
   CopySimpleIcon,
   DotsThreeVerticalIcon,
   FolderOpenIcon,
@@ -51,6 +52,10 @@ export const ResumeListItem = ({ resume }: Props) => {
     open("duplicate", { id: "resume", item: resume });
   };
 
+  const onMoveResume = () => {
+    open("move-resume", { id: "resume", item: resume });
+  };
+
   const onLockChange = () => {
     lockOpen(resume.locked ? "update" : "create", { id: "lock", item: resume });
   };
@@ -93,6 +98,15 @@ export const ResumeListItem = ({ resume }: Props) => {
         >
           <CopySimpleIcon size={14} className="mr-2" />
           {t`Duplicate`}
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={(event) => {
+            event.stopPropagation();
+            onMoveResume();
+          }}
+        >
+          <ArrowSquareRightIcon size={14} className="mr-2" />
+          {t`Move to Folder`}
         </DropdownMenuItem>
         {resume.locked ? (
           <DropdownMenuItem
@@ -154,6 +168,10 @@ export const ResumeListItem = ({ resume }: Props) => {
         <ContextMenuItem onClick={onDuplicate}>
           <CopySimpleIcon size={14} className="mr-2" />
           {t`Duplicate`}
+        </ContextMenuItem>
+        <ContextMenuItem onClick={onMoveResume}>
+          <ArrowSquareRightIcon size={14} className="mr-2" />
+          {t`Move to Folder`}
         </ContextMenuItem>
         {resume.locked ? (
           <ContextMenuItem onClick={onLockChange}>

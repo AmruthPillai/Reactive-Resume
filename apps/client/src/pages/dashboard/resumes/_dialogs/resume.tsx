@@ -1,6 +1,12 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/macro";
-import { CaretDownIcon, FlaskIcon, MagicWandIcon, PlusIcon } from "@phosphor-icons/react";
+import {
+  CaretDownIcon,
+  FlaskIcon,
+  FolderIcon,
+  MagicWandIcon,
+  PlusIcon,
+} from "@phosphor-icons/react";
 import type { ResumeDto } from "@reactive-resume/dto";
 import { createResumeSchema } from "@reactive-resume/dto";
 import { idSchema, sampleResume } from "@reactive-resume/schema";
@@ -40,6 +46,8 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
+import { useFolders } from "@/client/services/folder";
+import { useMoveResumeToFolder } from "@/client/services/folder/move-resume";
 import { useCreateResume, useDeleteResume, useUpdateResume } from "@/client/services/resume";
 import { useImportResume } from "@/client/services/resume/import";
 import { useDialog } from "@/client/stores/dialog";
@@ -55,13 +63,21 @@ export const ResumeDialog = () => {
   const isUpdate = mode === "update";
   const isDelete = mode === "delete";
   const isDuplicate = mode === "duplicate";
+  const isMoveResumeToFolder = mode === "move-resume";
 
+  const { folders } = useFolders(isOpen && isMoveResumeToFolder);
   const { createResume, loading: createLoading } = useCreateResume();
   const { updateResume, loading: updateLoading } = useUpdateResume();
   const { deleteResume, loading: deleteLoading } = useDeleteResume();
+  const { moveResumeToFolder, loading: moveResumeToFolderLoading } = useMoveResumeToFolder();
   const { importResume: duplicateResume, loading: duplicateLoading } = useImportResume();
 
-  const loading = createLoading || updateLoading || deleteLoading || duplicateLoading;
+  const loading =
+    createLoading ||
+    updateLoading ||
+    deleteLoading ||
+    duplicateLoading ||
+    moveResumeToFolderLoading;
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -121,6 +137,17 @@ export const ResumeDialog = () => {
       form.reset({ id: payload.item?.id, title: payload.item?.title, slug: payload.item?.slug });
   };
 
+  const onMoveToFolder = async (folderId: string) => {
+    if (!payload.item?.id) return;
+
+    await moveResumeToFolder({
+      resumeId: payload.item.id,
+      id: folderId,
+    });
+
+    close();
+  };
+
   const onGenerateRandomName = () => {
     const name = generateRandomName();
     form.setValue("title", name);
@@ -162,6 +189,39 @@ export const ResumeDialog = () => {
           </Form>
         </AlertDialogContent>
       </AlertDialog>
+    );
+  }
+
+  if (isMoveResumeToFolder) {
+    return (
+      <Dialog open={isOpen} onOpenChange={close}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>{t`Move Resume to Folder`}</DialogTitle>
+            <DialogDescription>{t`Click on a folder to move this resume into.`}</DialogDescription>
+          </DialogHeader>
+
+          <div className="grid h-64 gap-2 space-y-2 overflow-scroll">
+            {folders?.map((folder) => (
+              <Button
+                key={folder.id}
+                size="lg"
+                variant="ghost"
+                className={cn(
+                  "h-auto justify-start gap-2 px-4 py-3",
+                  payload.item?.folderId === folder.id &&
+                    "pointer-events-none bg-secondary/50 text-secondary-foreground",
+                )}
+                disabled={payload.item?.folderId === folder.id || loading}
+                onClick={() => onMoveToFolder(folder.id)}
+              >
+                <FolderIcon size={18} weight="fill" />
+                <span>{folder.name}</span>
+              </Button>
+            ))}
+          </div>
+        </DialogContent>
+      </Dialog>
     );
   }
 
