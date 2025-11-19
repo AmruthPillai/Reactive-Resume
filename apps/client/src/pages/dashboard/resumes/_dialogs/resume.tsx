@@ -224,7 +224,7 @@ export const ResumeDialog = () => {
             ) : (
               <DialogDescription>
                 {t`No folders available yet. Please create one on the folders page`}{" "}
-                <Link to={"dashboard/folders"} className="underline">
+                <Link to="/dashboard/folders" className="underline">
                   {t`Click here`}
                 </Link>
               </DialogDescription>
