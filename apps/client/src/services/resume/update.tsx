@@ -1,3 +1,4 @@
+import type { FolderDto } from "@reactive-resume/dto";
 import type { ResumeDto, UpdateResumeDto } from "@reactive-resume/dto";
 import { useMutation } from "@tanstack/react-query";
 import type { AxiosResponse } from "axios";
@@ -34,6 +35,18 @@ export const useUpdateResume = () => {
     mutateAsync: updateResumeFn,
   } = useMutation({
     mutationFn: updateResume,
+    onSuccess: (data) => {
+      if (data.folderId) {
+        queryClient.setQueryData<FolderDto>(["folder", { id: data.folderId }], (cache) => {
+          if (!cache) return cache;
+          if (!cache.resumes) return cache;
+
+          return Object.assign({}, cache, {
+            resumes: cache.resumes.map((resume) => (resume.id === data.id ? data : resume)),
+          });
+        });
+      }
+    },
   });
 
   return { updateResume: updateResumeFn, loading, error };

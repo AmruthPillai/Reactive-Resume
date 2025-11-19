@@ -1,4 +1,4 @@
-import type { DeleteResumeDto, ResumeDto } from "@reactive-resume/dto";
+import type { DeleteResumeDto, FolderDto, ResumeDto } from "@reactive-resume/dto";
 import { useMutation } from "@tanstack/react-query";
 import type { AxiosResponse } from "axios";
 
@@ -25,8 +25,20 @@ export const useDeleteResume = () => {
 
       queryClient.setQueryData<ResumeDto[]>(["resumes"], (cache) => {
         if (!cache) return [];
-        return cache.filter((resume) => resume.id !== data.id);
+        const filtered = cache.filter((resume) => resume.id !== data.id);
+        return filtered;
       });
+
+      if (data.folderId) {
+        queryClient.setQueryData<FolderDto>(["folder", { id: data.folderId }], (cache) => {
+          if (!cache) return cache;
+          if (!cache.resumes) return cache;
+
+          return Object.assign({}, cache, {
+            resumes: cache.resumes.filter((resume) => resume.id !== data.id),
+          });
+        });
+      }
     },
   });
 
