@@ -61,7 +61,7 @@ export const FolderDialog = () => {
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: { name: "" },
+    defaultValues: { name: "", isDeleteResumes: false },
   });
   const { setValue, watch } = form;
 
@@ -90,7 +90,8 @@ export const FolderDialog = () => {
   const onReset = () => {
     if (isCreate) form.reset({ name: "" });
     if (isUpdate) form.reset({ id: payload.item?.id, name: payload.item?.name });
-    if (isDelete) form.reset({ id: payload.item?.id, name: payload.item?.name });
+    if (isDelete)
+      form.reset({ id: payload.item?.id, name: payload.item?.name, isDeleteResumes: false });
   };
 
   if (isDelete) {
