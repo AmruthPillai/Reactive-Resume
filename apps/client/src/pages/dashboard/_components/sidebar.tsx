@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { FadersHorizontalIcon, Folder, ReadCvLogoIcon } from "@phosphor-icons/react";
+import { FadersHorizontalIcon, FolderIcon, ReadCvLogoIcon } from "@phosphor-icons/react";
 import { Button, KeyboardShortcut, Separator } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
@@ -96,7 +96,7 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
       path: "/dashboard/folders",
       name: t`Folders`,
       shortcut: "⇧F",
-      icon: <Folder />,
+      icon: <FolderIcon />,
     },
     {
       path: "/dashboard/settings",
