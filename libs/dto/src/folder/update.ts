@@ -1,9 +1,9 @@
+import { idSchema } from "@reactive-resume/schema";
 import { createZodDto } from "nestjs-zod/dto";
-
-import { resumeSchema } from "../resume";
-import { folderSchema } from "./folder";
+import z from "zod";
 
 const updateFolderSchema = z.object({
+  id: idSchema.optional(),
   name: z.string().min(1).optional(),
 });
 
