@@ -51,6 +51,7 @@ import { useMoveResumeToFolder } from "@/client/services/folder/move-resume";
 import { useCreateResume, useDeleteResume, useUpdateResume } from "@/client/services/resume";
 import { useImportResume } from "@/client/services/resume/import";
 import { useDialog } from "@/client/stores/dialog";
+import { Link } from "react-router";
 
 const formSchema = createResumeSchema.extend({ id: idSchema.optional(), slug: z.string() });
 
@@ -201,24 +202,33 @@ export const ResumeDialog = () => {
             <DialogDescription>{t`Click on a folder to move this resume into.`}</DialogDescription>
           </DialogHeader>
 
-          <div className="grid h-64 gap-2 space-y-2 overflow-scroll">
-            {folders?.map((folder) => (
-              <Button
-                key={folder.id}
-                size="lg"
-                variant="ghost"
-                className={cn(
-                  "h-auto justify-start gap-2 px-4 py-3",
-                  payload.item?.folderId === folder.id &&
-                    "pointer-events-none bg-secondary/50 text-secondary-foreground",
-                )}
-                disabled={payload.item?.folderId === folder.id || loading}
-                onClick={() => onMoveToFolder(folder.id)}
-              >
-                <FolderIcon size={18} weight="fill" />
-                <span>{folder.name}</span>
-              </Button>
-            ))}
+          <div className="flex h-64 flex-col gap-2 space-y-2 overflow-scroll">
+            {folders && folders?.length > 0 ? (
+              folders.map((folder) => (
+                <Button
+                  key={folder.id}
+                  size="lg"
+                  variant="ghost"
+                  className={cn(
+                    "h-12 justify-start gap-2 px-4 py-3",
+                    payload.item?.folderId === folder.id &&
+                      "pointer-events-none bg-secondary/50 text-secondary-foreground",
+                  )}
+                  disabled={payload.item?.folderId === folder.id || loading}
+                  onClick={() => onMoveToFolder(folder.id)}
+                >
+                  <FolderIcon size={18} weight="fill" />
+                  <span>{folder.name}</span>
+                </Button>
+              ))
+            ) : (
+              <DialogDescription>
+                {t`No folders available yet. Please create one on the folders page`}{" "}
+                <Link to={"dashboard/folders"} className="underline">
+                  {t`Click here`}
+                </Link>
+              </DialogDescription>
+            )}
           </div>
         </DialogContent>
       </Dialog>
