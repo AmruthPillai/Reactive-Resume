@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { ForbiddenException, Injectable } from "@nestjs/common";
 import {
   CreateFolderDto,
   MoveResumeToFolderDto,
@@ -38,6 +38,7 @@ export class FolderService {
     });
 
     const folders = await this.prisma.folder.findMany({
+      where: { userId },
       include: {
         _count: {
           select: {
@@ -58,15 +59,16 @@ export class FolderService {
     return { ...restFolder, resumesCount };
   }
 
-  async findOne(id: string) {
-    return await this.prisma.folder.findUnique({
+  async findOne(userId: string, id: string) {
+    const folder = await this.prisma.folder.findUnique({
       where: {
-        id,
+        userId_id: { userId, id },
       },
       include: {
         resumes: true,
       },
     });
+    return folder;
   }
 
   async update(userId: string, id: string, updateFolderDto: UpdateFolderDto) {
@@ -125,7 +127,12 @@ export class FolderService {
       });
       mappedSourceFolder = this.mapFolderResumesCount(updatedSourceFolder);
     }
-
+    const resume = await this.prisma.resume.findUnique({
+      where: { userId_id: { userId, id: resumeId } },
+    });
+    if (!resume) {
+      throw new ForbiddenException();
+    }
     const targetFolder = await this.prisma.folder.update({
       where: { userId_id: { userId, id } },
       data: {
@@ -158,16 +165,14 @@ export class FolderService {
 
   async remove(id: string, userId: string, isDeleteResumes: boolean) {
     if (isDeleteResumes) {
-      const folder = await this.findOne(id);
+      const folder = await this.findOne(userId, id);
       const resumes = folder?.resumes ?? [];
       await Promise.allSettled(
         resumes.map((resume) => this.resumesService.remove(userId, resume.id)),
       );
     }
     return await this.prisma.folder.delete({
-      where: {
-        id,
-      },
+      where: { userId_id: { userId, id } },
     });
   }
 }
