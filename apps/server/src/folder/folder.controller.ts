@@ -34,8 +34,9 @@ export class FolderController {
   }
 
   @Get(":id")
-  findOne(@Param("id") id: string) {
-    return this.folderService.findOne(id);
+  @UseGuards(TwoFactorGuard)
+  findOne(@User() user: UserEntity, @Param("id") id: string) {
+    return this.folderService.findOne(user.id, id);
   }
 
   @Patch(":id")
