@@ -1,10 +1,10 @@
 import { t } from "@lingui/macro";
 import { List, SquaresFour } from "@phosphor-icons/react";
-import { ScrollArea, Tabs, TabsContent, TabsList, TabsTrigger } from "@reactive-resume/ui";
+import { Button, ScrollArea, Tabs, TabsContent, TabsList, TabsTrigger } from "@reactive-resume/ui";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 
 import { useFolder } from "@/client/services/folder";
 
@@ -18,7 +18,6 @@ export const FolderDetailsPage = () => {
   const { id } = useParams<{ id: string }>();
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const { folder, loading } = useFolder(id!);
-
   if (loading) {
     return (
       <div className="flex items-center justify-between">
@@ -35,11 +34,39 @@ export const FolderDetailsPage = () => {
     );
   }
 
+  if (!loading && !folder) {
+    return (
+      <>
+        <Helmet>
+          <title>{t`Folder Not Found`}</title>
+        </Helmet>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="flex flex-col items-start gap-4 bg-background p-6 shadow-sm"
+        >
+          <div className="space-y-1">
+            <h1 className="text-3xl font-semibold tracking-tight">{t`Folder not found`}</h1>
+            <p className="text-muted-foreground text-sm">
+              {t`The folder you're looking for doesn't exist or has been removed.`}
+            </p>
+          </div>
+
+          <Button asChild className="inline-block pt-2">
+            <Link to="/dashboard/folders">{t`Go to folders`}</Link>
+          </Button>
+        </motion.div>
+      </>
+    );
+  }
+
+  const name = folder?.name;
+
   return (
     <>
       <Helmet>
         <title>
-          {t`Folder`} - {folder?.name}
+          {t`Folder`} - {name}
         </title>
       </Helmet>
       <Tabs
