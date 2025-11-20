@@ -51,7 +51,13 @@ export const FolderListItem = ({ folder }: Props) => {
 
   const dropdownMenu = (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild className="aspect-square">
+      <DropdownMenuTrigger
+        asChild
+        className="aspect-square"
+        onClick={(event) => {
+          event.stopPropagation();
+        }}
+      >
         <Button size="icon" variant="ghost">
           <DotsThreeVerticalIcon />
         </Button>
