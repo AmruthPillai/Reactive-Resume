@@ -27,13 +27,13 @@ export const useDeleteFolder = () => {
     mutateAsync: deleteFolderFn,
   } = useMutation({
     mutationFn: deleteFolder,
-    onSuccess: async (data, variables) => {
+    onSuccess: (data, variables) => {
       const folderQueryKey = ["folder", { id: data.id }] as const;
 
       const folderData = queryClient.getQueryData<FolderDto>(folderQueryKey);
-      const resumesInFolder = folderData?.resumes || [];
+      const resumesInFolder = folderData?.resumes ?? [];
 
-      queryClient.setQueryData<FolderDto[]>([FOLDERS_KEY], (cache) => {
+      queryClient.setQueryData<FolderDto[]>(FOLDERS_KEY, (cache) => {
         if (!cache) return [];
         return cache.filter((folder) => folder.id !== data.id);
       });
