@@ -1,10 +1,5 @@
-import { ForbiddenException, Injectable } from "@nestjs/common";
-import {
-  CreateFolderDto,
-  MoveResumeToFolderDto,
-  ResumeDto,
-  UpdateFolderDto,
-} from "@reactive-resume/dto";
+import { Injectable } from "@nestjs/common";
+import { CreateFolderDto, MoveResumeToFolderDto, UpdateFolderDto } from "@reactive-resume/dto";
 import { PrismaService } from "nestjs-prisma";
 
 import { ResumeService } from "../resume/resume.service";
@@ -92,6 +87,10 @@ export class FolderService {
     const resumeId = moveResumeDto.resumeId;
     let mappedSourceFolder;
 
+    await this.prisma.resume.findUniqueOrThrow({
+      where: { userId_id: { userId, id: resumeId } },
+    });
+
     const sourceFolder = await this.prisma.folder.findFirst({
       where: {
         userId,
@@ -123,12 +122,7 @@ export class FolderService {
       });
       mappedSourceFolder = this.mapFolderResumesCount(updatedSourceFolder);
     }
-    const resume = await this.prisma.resume.findUnique({
-      where: { userId_id: { userId, id: resumeId } },
-    });
-    if (!resume) {
-      throw new ForbiddenException();
-    }
+
     const targetFolder = await this.prisma.folder.update({
       where: { userId_id: { userId, id } },
       data: {
@@ -146,17 +140,6 @@ export class FolderService {
     const mappedTargetFolder = this.mapFolderResumesCount(targetFolder);
 
     return { sourceFolder: mappedSourceFolder, targetFolder: mappedTargetFolder };
-  }
-
-  private getResumesIds(resumes?: Partial<ResumeDto>[]) {
-    if (!Array.isArray(resumes) || resumes.length === 0) {
-      return [];
-    }
-    const resume = resumes.map((resume) => ({
-      id: resume.id,
-    }));
-
-    return resume;
   }
 
   async remove(id: string, userId: string, isDeleteResumes: boolean) {
