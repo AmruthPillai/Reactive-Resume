@@ -1,8 +1,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/macro";
-import { Plus } from "@phosphor-icons/react";
+import { PlusIcon } from "@phosphor-icons/react";
 import type { FolderDto } from "@reactive-resume/dto";
-import { folderSchema } from "@reactive-resume/dto";
+import { createFolderSchema } from "@reactive-resume/dto";
 import { idSchema } from "@reactive-resume/schema";
 import {
   AlertDialog,
@@ -39,7 +39,7 @@ import { z } from "zod";
 import { useCreateFolder, useDeleteFolder, useUpdateFolder } from "@/client/services/folder";
 import { useDialog } from "@/client/stores/dialog";
 
-const formSchema = folderSchema.extend({
+const formSchema = createFolderSchema.extend({
   id: idSchema.optional(),
   isDeleteResumes: z.boolean().optional(),
 });
@@ -71,7 +71,7 @@ export const FolderDialog = () => {
 
   const onSubmit = async (values: FormValues) => {
     if (isCreate) {
-      await createFolder({ name: values.name, resumes: values.resumes });
+      await createFolder({ name: values.name });
     }
     if (isUpdate) {
       if (!payload.item?.id) return;
@@ -151,7 +151,7 @@ export const FolderDialog = () => {
             <DialogHeader>
               <DialogTitle>
                 <div className="flex items-center space-x-2.5">
-                  <Plus />
+                  <PlusIcon />
                   <h2>
                     {isCreate && t`Create a new folder`}
                     {isUpdate && t`Update an existing folder`}

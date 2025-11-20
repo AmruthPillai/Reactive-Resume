@@ -20,14 +20,10 @@ export class FolderService {
     await this.prisma.user.findUniqueOrThrow({
       where: { id: userId },
     });
-
     return this.prisma.folder.create({
       data: {
         userId,
         name: createFolderDto.name,
-        resumes: {
-          connect: this.getResumesIds(createFolderDto.resumes),
-        },
       },
     });
   }
@@ -171,6 +167,7 @@ export class FolderService {
         resumes.map((resume) => this.resumesService.remove(userId, resume.id)),
       );
     }
+
     return await this.prisma.folder.delete({
       where: { userId_id: { userId, id } },
     });
