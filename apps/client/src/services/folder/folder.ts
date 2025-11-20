@@ -17,6 +17,7 @@ export const useFolder = (id: string) => {
   } = useQuery({
     queryKey: ["folder", { id }],
     queryFn: () => findFolderById({ id }),
+    enabled: Boolean(id),
   });
 
   return { folder, loading, error };

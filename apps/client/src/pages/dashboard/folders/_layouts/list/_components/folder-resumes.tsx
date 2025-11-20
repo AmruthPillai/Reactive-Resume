@@ -1,15 +1,13 @@
+import type { FolderDto } from "@reactive-resume/dto";
 import { sortByDate } from "@reactive-resume/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import { useParams } from "react-router";
 
 import { ResumeListItem } from "@/client/pages/dashboard/resumes/_layouts/list/_components/resume-item";
-import { useFolder } from "@/client/services/folder";
-
-export default function FolderResumesListView() {
-  const { id } = useParams<{ id: string }>();
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const { folder } = useFolder(id!);
-  const resumes = folder?.resumes;
+type Props = {
+  folder: FolderDto;
+};
+export default function FolderResumesListView({ folder }: Props) {
+  const resumes = folder.resumes;
   return (
     <div className="grid gap-y-2">
       {resumes && (

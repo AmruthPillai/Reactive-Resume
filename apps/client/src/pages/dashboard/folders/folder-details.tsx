@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { List, SquaresFour } from "@phosphor-icons/react";
+import { ListIcon, SquaresFourIcon } from "@phosphor-icons/react";
 import { Button, ScrollArea, Tabs, TabsContent, TabsList, TabsTrigger } from "@reactive-resume/ui";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -16,8 +16,9 @@ type Layout = "grid" | "list";
 export const FolderDetailsPage = () => {
   const [layout, setLayout] = useState<Layout>("grid");
   const { id } = useParams<{ id: string }>();
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const { folder, loading } = useFolder(id!);
+
+  const { folder, loading } = useFolder(id ?? "");
+
   if (loading) {
     return (
       <div className="flex items-center justify-between">
@@ -34,7 +35,7 @@ export const FolderDetailsPage = () => {
     );
   }
 
-  if (!loading && !folder) {
+  if (!folder) {
     return (
       <>
         <Helmet>
@@ -60,7 +61,7 @@ export const FolderDetailsPage = () => {
     );
   }
 
-  const name = folder?.name;
+  const name = folder.name;
 
   return (
     <>
@@ -82,16 +83,16 @@ export const FolderDetailsPage = () => {
             animate={{ opacity: 1, x: 0 }}
             className="text-4xl font-bold tracking-tight"
           >
-            {t`Folder:`} {folder?.name}
+            {t`Folder:`} {name}
           </motion.h1>
 
           <TabsList>
             <TabsTrigger value="grid" className="size-8 p-0 sm:h-8 sm:w-auto sm:px-4">
-              <SquaresFour />
+              <SquaresFourIcon />
               <span className="ml-2 hidden sm:block">{t`Grid`}</span>
             </TabsTrigger>
             <TabsTrigger value="list" className="size-8 p-0 sm:h-8 sm:w-auto sm:px-4">
-              <List />
+              <ListIcon />
               <span className="ml-2 hidden sm:block">{t`List`}</span>
             </TabsTrigger>
           </TabsList>
@@ -102,10 +103,10 @@ export const FolderDetailsPage = () => {
           className="h-[calc(100vh-140px)] overflow-visible lg:h-[calc(100vh-88px)]"
         >
           <TabsContent value="grid">
-            <FolderResumesGridView />
+            <FolderResumesGridView folder={folder} />
           </TabsContent>
           <TabsContent value="list">
-            <FolderResumesListView />
+            <FolderResumesListView folder={folder} />
           </TabsContent>
         </ScrollArea>
       </Tabs>

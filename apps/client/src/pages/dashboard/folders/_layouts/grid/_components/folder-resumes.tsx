@@ -1,19 +1,13 @@
+import type { FolderDto } from "@reactive-resume/dto";
 import { sortByDate } from "@reactive-resume/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import { useParams } from "react-router";
 
 import { ResumeCard } from "@/client/pages/dashboard/resumes/_layouts/grid/_components/resume-card";
-import { useFolder } from "@/client/services/folder";
-
-export default function FolderResumesGridView() {
-  const { id } = useParams<{ id: string }>();
-  
-  if (!id) {
-    return <div>Folder not found</div>;
-  }
-  
-  const { folder } = useFolder(id);
-  const resumes = folder?.resumes;
+type Props = {
+  folder: FolderDto;
+};
+export default function FolderResumesGridView({ folder }: Props) {
+  const resumes = folder.resumes;
 
   return (
     <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
