@@ -40,7 +40,7 @@ export const usePasswordToggle = (formRef: React.RefObject<HTMLElement | null>) 
     };
   }, [formRef]);
 
-  // Hide Password when loosing focus (e.g. unlocking password manager)
+  // Hide Password when losing focus (e.g. unlocking password manager)
   useEffect(() => {
     const hidePassword = () => {
       formRef.current
