@@ -8,6 +8,11 @@ export const usePasswordToggle = (formRef: React.RefObject<HTMLElement | null>) 
         formRef.current
           ?.querySelector<HTMLInputElement>('input[name="password"]')
           ?.setAttribute("type", "text");
+      } else if (event.key === "v" && (event.ctrlKey || event.metaKey)) {
+        // unless Ctrl+V is pressed => don't show pasted password
+        formRef.current
+          ?.querySelector<HTMLInputElement>('input[name="password"]')
+          ?.setAttribute("type", "password");
       }
     };
 
