@@ -9,6 +9,8 @@ export const Providers = () => {
   const resume = useArtboardStore((state) => state.resume);
   const setResume = useArtboardStore((state) => state.setResume);
 
+  // Listen for postMessage events to update resume data
+  // This is used by the builder's iframe communication
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
       if (event.origin !== window.location.origin) return;
@@ -20,14 +22,11 @@ export const Providers = () => {
     return () => {
       window.removeEventListener("message", handleMessage, false);
     };
-  }, []);
+  }, [setResume]);
 
-  useEffect(() => {
-    const resumeData = window.localStorage.getItem("resume");
-
-    if (resumeData) setResume(JSON.parse(resumeData));
-  }, [window.localStorage.getItem("resume")]);
-
+  // The store initializes from localStorage synchronously, so resume
+  // should be available on the first render when localStorage has data.
+  // Only return null if there's truly no resume data available.
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (!resume) return null;
 
