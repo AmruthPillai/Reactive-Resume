@@ -143,10 +143,10 @@ export class PrinterService {
 
       const processPage = async (index: number) => {
         const pageElement = await page.$(`[data-page="${index}"]`);
-        // eslint-disable-next-line unicorn/no-await-expression-member
-        const width = (await (await pageElement?.getProperty("scrollWidth"))?.jsonValue()) ?? 0;
-        // eslint-disable-next-line unicorn/no-await-expression-member
-        const height = (await (await pageElement?.getProperty("scrollHeight"))?.jsonValue()) ?? 0;
+        const widthProperty = await pageElement?.getProperty("scrollWidth");
+        const width = (await widthProperty?.jsonValue()) ?? 0;
+        const heightProperty = await pageElement?.getProperty("scrollHeight");
+        const height = (await heightProperty?.jsonValue()) ?? 0;
 
         const temporaryHtml = await page.evaluate((element: HTMLDivElement) => {
           const clonedElement = element.cloneNode(true) as HTMLDivElement;

@@ -5,8 +5,7 @@ import { adjectives, animals, uniqueNamesGenerator } from "unique-names-generato
 import type { LayoutLocator, SortablePayload } from "./types";
 
 export const getInitials = (name: string) => {
-  // eslint-disable-next-line unicorn/better-regex
-  const regex = new RegExp(/(\p{L}{1})\p{L}+/gu);
+  const regex = /(\p{L}{1})\p{L}+/gu;
   const initials = [...name.matchAll(regex)];
 
   return ((initials.shift()?.[1] ?? "") + (initials.pop()?.[1] ?? "")).toUpperCase();
