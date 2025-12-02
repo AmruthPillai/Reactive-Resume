@@ -134,6 +134,12 @@ export const LoginPage = () => {
           </form>
         </Form>
       </div>
+
+      <div className="flex items-center justify-center">
+        <Button asChild variant="link">
+          <Link to="/guest">{t`Continue as guest`}</Link>
+        </Button>
+      </div>
     </div>
   );
 };

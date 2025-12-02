@@ -4,6 +4,7 @@ import { buttonVariants, Card, CardContent, CardDescription, CardTitle } from "@
 import { cn } from "@reactive-resume/utils";
 import { saveAs } from "file-saver";
 
+import { useToast } from "@/client/hooks/use-toast";
 import { usePrintResume } from "@/client/services/resume/print";
 import { useResumeStore } from "@/client/stores/resume";
 
@@ -23,9 +24,20 @@ const openInNewTab = (url: string) => {
 };
 
 export const ExportSection = () => {
+  const { toast } = useToast();
+  const isGuest = useResumeStore((state) => state.isGuest);
   const { printResume, loading } = usePrintResume();
 
   const onPdfExport = async () => {
+    if (isGuest) {
+      toast({
+        variant: "info",
+        title: t`Sign in to download a PDF`,
+        description: t`As a guest, your resume is only stored in this session. Create an account or sign in to enable PDF downloads.`,
+      });
+      return;
+    }
+
     const { resume } = useResumeStore.getState();
     const { url } = await printResume({ id: resume.id });
 

@@ -15,6 +15,8 @@ import { ResumesPage } from "../pages/dashboard/resumes/page";
 import { SettingsPage } from "../pages/dashboard/settings/page";
 import { HomeLayout } from "../pages/home/layout";
 import { HomePage } from "../pages/home/page";
+import { GuestLandingPage } from "../pages/guest/landing";
+import { GuestBuilderPage } from "../pages/guest/page";
 import { ErrorPage } from "../pages/public/error";
 import { publicLoader, PublicResumePage } from "../pages/public/page";
 import { Providers } from "../providers";
@@ -68,6 +70,13 @@ export const routes = createRoutesFromElements(
 
             <Route index element={<Navigate replace to="/dashboard/resumes" />} />
           </Route>
+        </Route>
+      </Route>
+
+      <Route path="guest">
+        <Route index element={<GuestLandingPage />} />
+        <Route element={<BuilderLayout />}>
+          <Route path="builder" element={<GuestBuilderPage />} />
         </Route>
       </Route>
 

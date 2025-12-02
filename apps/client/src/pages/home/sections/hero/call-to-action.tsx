@@ -32,6 +32,10 @@ export const HeroCTA = () => {
         <Link to="/auth/login">{t`Get Started`}</Link>
       </Button>
 
+      <Button asChild size="lg" variant="outline">
+        <Link to="/guest">{t`Continue as guest`}</Link>
+      </Button>
+
       <Button asChild size="lg" variant="link">
         <a href="https://docs.rxresu.me" target="_blank" rel="noopener noreferrer nofollow">
           <BookIcon className="mr-3" />

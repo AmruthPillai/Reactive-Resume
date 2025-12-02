@@ -34,6 +34,7 @@ export const BuilderToolbar = () => {
   const [panMode, setPanMode] = useState<boolean>(true);
 
   const setValue = useResumeStore((state) => state.setValue);
+  const isGuest = useResumeStore((state) => state.isGuest);
   const undo = useTemporalResumeStore((state) => state.undo);
   const redo = useTemporalResumeStore((state) => state.redo);
   const frameRef = useBuilderStore((state) => state.frame.ref);
@@ -45,12 +46,30 @@ export const BuilderToolbar = () => {
   const { printResume, loading } = usePrintResume();
 
   const onPrint = async () => {
+    if (isGuest) {
+      toast({
+        variant: "info",
+        title: t`Sign in to download a PDF`,
+        description: t`As a guest, your resume is only stored in this session. Create an account or sign in to enable PDF downloads.`,
+      });
+      return;
+    }
+
     const { url } = await printResume({ id });
 
     openInNewTab(url);
   };
 
   const onCopy = async () => {
+    if (isGuest) {
+      toast({
+        variant: "info",
+        title: t`Sign in to share your resume`,
+        description: t`Create an account or sign in to generate a shareable link for your resume.`,
+      });
+      return;
+    }
+
     const { url } = await printResume({ id });
     await navigator.clipboard.writeText(url);
 
@@ -166,7 +185,7 @@ export const BuilderToolbar = () => {
             size="icon"
             variant="ghost"
             className="rounded-none"
-            disabled={!isPublic}
+            disabled={!isPublic || isGuest}
             onClick={onCopy}
           >
             <LinkSimpleIcon />
@@ -177,7 +196,7 @@ export const BuilderToolbar = () => {
           <Button
             size="icon"
             variant="ghost"
-            disabled={loading}
+            disabled={loading || isGuest}
             className="rounded-none"
             onClick={onPrint}
           >

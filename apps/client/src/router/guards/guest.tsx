@@ -6,7 +6,7 @@ export const GuestGuard = () => {
   const isLoggedIn = useAuthStore((state) => !!state.user);
 
   const [searchParams] = useSearchParams();
-  const redirect = searchParams.get("redirect") ?? "/dashboard";
+  const redirect = searchParams.get("redirect") ?? "/dashboard/resumes";
 
   if (isLoggedIn) {
     return <Navigate to={redirect} />;

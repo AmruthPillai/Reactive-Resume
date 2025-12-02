@@ -2,7 +2,7 @@ import { t } from "@lingui/macro";
 import { createId } from "@paralleldrive/cuid2";
 import type { ResumeDto } from "@reactive-resume/dto";
 import type { CustomSectionGroup, SectionKey } from "@reactive-resume/schema";
-import { defaultSection } from "@reactive-resume/schema";
+import { defaultResumeData, defaultSection } from "@reactive-resume/schema";
 import { removeItemInLayout } from "@reactive-resume/utils";
 import _set from "lodash.set";
 import type { TemporalState } from "zundo";
@@ -16,6 +16,7 @@ import { debouncedUpdateResume } from "../services/resume";
 
 type ResumeStore = {
   resume: ResumeDto;
+  isGuest: boolean;
 
   // Actions
   setValue: (path: string, value: unknown) => void;
@@ -34,7 +35,19 @@ type ResumeStore = {
 export const useResumeStore = create<ResumeStore>()(
   temporal(
     immer((set) => ({
-      resume: {} as ResumeDto,
+      resume: {
+        id: "",
+        title: "",
+        slug: "",
+        data: structuredClone(defaultResumeData),
+        visibility: "private",
+        locked: false,
+        userId: "",
+        user: undefined,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      } as ResumeDto,
+      isGuest: false,
       setValue: (path, value) => {
         set((state) => {
           if (path === "visibility") {
@@ -43,7 +56,9 @@ export const useResumeStore = create<ResumeStore>()(
             state.resume.data = _set(state.resume.data, path, value);
           }
 
-          void debouncedUpdateResume(structuredClone(state.resume));
+          if (!state.isGuest) {
+            void debouncedUpdateResume(structuredClone(state.resume));
+          }
         });
       },
       addSection: () => {
@@ -59,7 +74,9 @@ export const useResumeStore = create<ResumeStore>()(
           state.resume.data.metadata.layout[lastPageIndex][0].push(`custom.${section.id}`);
           state.resume.data = _set(state.resume.data, `sections.custom.${section.id}`, section);
 
-          void debouncedUpdateResume(structuredClone(state.resume));
+          if (!state.isGuest) {
+            void debouncedUpdateResume(structuredClone(state.resume));
+          }
         });
       },
       removeSection: (sectionId: SectionKey) => {
@@ -71,7 +88,9 @@ export const useResumeStore = create<ResumeStore>()(
             // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
             delete state.resume.data.sections.custom[id];
 
-            void debouncedUpdateResume(structuredClone(state.resume));
+            if (!state.isGuest) {
+              void debouncedUpdateResume(structuredClone(state.resume));
+            }
           });
         }
       },
