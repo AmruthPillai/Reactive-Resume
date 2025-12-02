@@ -1,7 +1,7 @@
 import type {
   Award,
   Certification,
-  CustomSection,
+  CustomSection as CustomSectionType,
   CustomSectionGroup,
   Interest,
   Language,
@@ -256,7 +256,7 @@ export const CustomSection = ({ id }: { id: string }) => {
   const section = useArtboardStore((state) => state.resume.sections.custom[id]);
 
   return (
-    <Section<CustomSection>
+    <Section<CustomSectionType>
       section={section}
       urlKey="url"
       summaryKey="summary"

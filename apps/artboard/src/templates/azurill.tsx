@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { cn } from "@reactive-resume/utils";
 
 import { useArtboardStore } from "../store/artboard";
 import type { TemplateProps } from "../types/template";

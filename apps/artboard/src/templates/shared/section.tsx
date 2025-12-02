@@ -53,7 +53,7 @@ const Link = ({ url, icon, iconOnRight, label, className }: LinkProps) => {
       >
         {label ?? (url.label || url.href)}
       </a>
-      {iconOnRight && (icon ?? <i className="ph ph-bold ph-link text-primary" />}
+      {iconOnRight && (icon ?? <i className="ph ph-bold ph-link text-primary" />)}
     </div>
   );
 };
@@ -65,7 +65,7 @@ type LinkedEntityProps = {
   className?: string;
 };
 
-const LinkedEntity = ({ name, url, separateLinks, className }: LinkedEntityProps) => {
+export const LinkedEntity = ({ name, url, separateLinks, className }: LinkedEntityProps) => {
   return !separateLinks && isUrl(url.href) ? (
     <Link
       url={url}

@@ -4,6 +4,8 @@ import { useArtboardStore } from "../store/artboard";
 import type { TemplateProps } from "../types/template";
 import { cn, isUrl, isEmptyString, sanitize } from "@reactive-resume/utils";
 
+import { mapSectionToComponent } from "./shared";
+
 // Use shared components but override summary for Ditto-specific styling
 const mapSectionToComponentDitto = (section: string) => {
   if (section === "summary") {
