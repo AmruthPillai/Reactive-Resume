@@ -61,10 +61,14 @@ export class UserService {
 
       // Otherwise, find the user by username
       // If the user doesn't exist, throw an error
-      return this.prisma.user.findUniqueOrThrow({
-        where: { username: identifier },
-        include: { secrets: true },
-      });
+      try {
+        return await this.prisma.user.findUniqueOrThrow({
+          where: { username: identifier },
+          include: { secrets: true },
+        });
+      } catch {
+        throw new Error(ErrorMessage.UserNotFound);
+      }
     })(identifier);
 
     return user;
@@ -90,5 +94,22 @@ export class UserService {
       this.storageService.deleteFolder(id),
       this.prisma.user.delete({ where: { id } }),
     ]);
+  }
+
+  async findOneByUsername(username: string): Promise<User | null> {
+    return this.prisma.user.findUnique({ where: { username } });
+  }
+
+  async findOneByUsernameOrThrow(username: string): Promise<User> {
+    const user = await this.findOneByUsername(username);
+    if (!user) {
+      throw new Error(ErrorMessage.UserNotFound);
+    }
+    return user;
+  }
+
+  async isUsernameAvailable(username: string): Promise<boolean> {
+    const user = await this.findOneByUsername(username);
+    return !user;
   }
 }

@@ -54,7 +54,7 @@ export class TokenService {
         secret: this.configService.getOrThrow("REFRESH_TOKEN_SECRET"),
       });
     } catch {
-      throw new Error("Invalid refresh token");
+      throw new Error(ErrorMessage.InvalidRefreshToken);
     }
   }
 }

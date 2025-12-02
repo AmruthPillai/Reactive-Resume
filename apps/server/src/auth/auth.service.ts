@@ -28,17 +28,17 @@ export class AuthService {
   generateToken(grantType: "access" | "refresh" | "reset" | "verification", payload?: Payload) {
     switch (grantType) {
       case "access":
-        if (!payload) throw new Error("InvalidTokenPayload");
+        if (!payload) throw new Error(ErrorMessage.InvalidTokenPayload);
         return this.tokenService.generateAccessToken(payload);
       case "refresh":
-        if (!payload) throw new Error("InvalidTokenPayload");
+        if (!payload) throw new Error(ErrorMessage.InvalidTokenPayload);
         return this.tokenService.generateRefreshToken(payload);
       case "reset":
         return this.tokenService.generateResetToken();
       case "verification":
         return this.tokenService.generateVerificationToken();
       default:
-        throw new Error("InvalidTokenGrantType");
+        throw new Error(ErrorMessage.InvalidTokenGrantType);
     }
   }
 
@@ -64,7 +64,7 @@ export class AuthService {
     const user = await this.userService.findOneById(payload.id);
     const storedRefreshToken = user.secrets?.refreshToken;
 
-    if (!storedRefreshToken || storedRefreshToken !== token) throw new Error("Invalid refresh token");
+    if (!storedRefreshToken || storedRefreshToken !== token) throw new Error(ErrorMessage.InvalidRefreshToken);
 
     if (!user.twoFactorEnabled) return user;
 
