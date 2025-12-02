@@ -22,12 +22,12 @@ import { defaultItem, defaultUrl, itemSchema, urlSchema } from "../shared";
  * );
  * ```
  */
-export function createSectionSchema<T extends string>(
-  fields: Record<T, z.ZodTypeAny>,
-  requiredField?: T,
+export function createSectionSchema<T extends Record<string, z.ZodTypeAny>>(
+  fields: T,
+  requiredField?: string,
 ) {
   // Create base fields that all sections share
-  const baseFields = {
+  const baseFields: Record<string, z.ZodTypeAny> = {
     // Common fields present in all section items
     date: z.string(),
     summary: z.string(),
@@ -39,7 +39,11 @@ export function createSectionSchema<T extends string>(
 
   // If a required field is specified, make it required with min(1) validation
   if (requiredField && baseFields[requiredField]) {
-    baseFields[requiredField] = baseFields[requiredField].min(1);
+    const field = baseFields[requiredField];
+    // Type guard to check if it's a ZodString
+    if (field._def?.typeName === "ZodString") {
+      baseFields[requiredField] = (field as z.ZodString).min(1);
+    }
   }
 
   // Create the schema by extending itemSchema with all fields
