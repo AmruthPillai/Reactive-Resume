@@ -4,6 +4,20 @@ import { adjectives, animals, uniqueNamesGenerator } from "unique-names-generato
 
 import type { LayoutLocator, SortablePayload } from "./types";
 
+/**
+ * Extracts initials from a full name.
+ * Takes the first letter of each word and returns them as uppercase.
+ *
+ * @param name - The full name to extract initials from
+ * @returns The initials in uppercase (e.g., "John Doe" → "JD")
+ *
+ * @example
+ * ```typescript
+ * getInitials("John Doe"); // "JD"
+ * getInitials("Mary Jane Smith"); // "MS"
+ * getInitials("John"); // "J"
+ * ```
+ */
 export const getInitials = (name: string) => {
   const regex = /(\p{L}{1})\p{L}+/gu;
   const initials = [...name.matchAll(regex)];
@@ -11,6 +25,20 @@ export const getInitials = (name: string) => {
   return ((initials.shift()?.[1] ?? "") + (initials.pop()?.[1] ?? "")).toUpperCase();
 };
 
+/**
+ * Checks if a string is a valid HTTP/HTTPS URL.
+ *
+ * @param string - The string to check
+ * @returns True if the string is a valid URL, false otherwise
+ *
+ * @example
+ * ```typescript
+ * isUrl("https://example.com"); // true
+ * isUrl("http://localhost:3000"); // true
+ * isUrl("not a url"); // false
+ * isUrl(null); // false
+ * ```
+ */
 export const isUrl = (string: string | null | undefined) => {
   if (!string) return false;
 

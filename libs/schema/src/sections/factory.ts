@@ -9,6 +9,18 @@ import { defaultItem, defaultUrl, itemSchema, urlSchema } from "../shared";
  * @param fields - Additional fields specific to this section type
  * @param requiredField - Optional field that should be required (adds min(1) validation)
  * @returns A complete section schema with common fields plus the provided fields
+ *
+ * @example
+ * ```typescript
+ * const experienceSchema = createSectionSchema(
+ *   {
+ *     company: z.string(),
+ *     position: z.string(),
+ *     location: z.string(),
+ *   },
+ *   "company" // Make company required
+ * );
+ * ```
  */
 export function createSectionSchema<T extends string>(
   fields: Record<T, z.ZodTypeAny>,
@@ -40,6 +52,15 @@ export function createSectionSchema<T extends string>(
  *
  * @param defaults - Default values for section-specific fields
  * @returns Complete default object including common field defaults
+ *
+ * @example
+ * ```typescript
+ * const defaultExperience = createSectionDefaults({
+ *   company: "",
+ *   position: "",
+ *   location: "",
+ * });
+ * ```
  */
 export function createSectionDefaults<T extends Record<string, unknown>>(
   defaults: T,

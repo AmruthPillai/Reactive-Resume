@@ -1,3 +1,18 @@
+/**
+ * Centralized error message enum for consistent error handling across the application.
+ * Used by both client and server to provide user-friendly error messages.
+ *
+ * @example
+ * ```typescript
+ * // Server-side usage
+ * throw new BadRequestException(ErrorMessage.InvalidCredentials);
+ *
+ * // Client-side usage
+ * if (error.message === ErrorMessage.UserAlreadyExists) {
+ *   showError("This email is already registered");
+ * }
+ * ```
+ */
 export enum ErrorMessage {
   InvalidCredentials = "InvalidCredentials",
   UserAlreadyExists = "UserAlreadyExists",

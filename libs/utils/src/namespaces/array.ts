@@ -1,6 +1,19 @@
 import type { LayoutLocator } from "./types";
 
-// Function to find a specific item in a layout
+/**
+ * Finds a specific item in a resume layout structure.
+ *
+ * @param item - The item identifier to search for
+ * @param layout - The 3D layout array [page][column][section]
+ * @returns The location of the item or null if not found
+ *
+ * @example
+ * ```typescript
+ * const layout = [[["summary", "experience"]]];
+ * const location = findItemInLayout("experience", layout);
+ * // Returns: { page: 0, column: 0, section: 1 }
+ * ```
+ */
 export const findItemInLayout = (item: string, layout: string[][][]): LayoutLocator | null => {
   for (const [page, element] of layout.entries()) {
     for (const [column, element_] of element.entries()) {
@@ -15,7 +28,21 @@ export const findItemInLayout = (item: string, layout: string[][][]): LayoutLoca
   return null;
 };
 
-// Function to remove a specific item in a layout
+/**
+ * Removes a specific item from a resume layout structure.
+ *
+ * @param item - The item identifier to remove
+ * @param layout - The 3D layout array (modified in place)
+ * @returns The previous location of the item or null if not found
+ *
+ * @example
+ * ```typescript
+ * const layout = [[["summary", "experience"]]];
+ * const location = removeItemInLayout("experience", layout);
+ * // layout becomes: [[["summary"]]]
+ * // Returns: { page: 0, column: 0, section: 1 }
+ * ```
+ */
 export const removeItemInLayout = (item: string, layout: string[][][]): LayoutLocator | null => {
   const locator = findItemInLayout(item, layout);
 
@@ -26,7 +53,24 @@ export const removeItemInLayout = (item: string, layout: string[][][]): LayoutLo
   return locator;
 };
 
-// Function to move an item within a layout
+/**
+ * Moves an item from one position to another within a resume layout structure.
+ *
+ * @param source - The current location of the item
+ * @param destination - The target location for the item
+ * @param layout - The 3D layout array (modified in place)
+ * @returns True if the move was successful, false otherwise
+ *
+ * @example
+ * ```typescript
+ * const layout = [[["summary", "experience"], ["skills"]]];
+ * const success = moveItemInLayout(
+ *   { page: 0, column: 0, section: 1 }, // experience
+ *   { page: 0, column: 1, section: 0 }, // before skills
+ *   layout
+ * );
+ * ```
+ */
 export const moveItemInLayout = (
   current: LayoutLocator,
   target: LayoutLocator,
