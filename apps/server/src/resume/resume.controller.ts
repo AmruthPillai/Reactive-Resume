@@ -40,7 +40,7 @@ export class ResumeController {
 
   @Get("schema")
   getSchema() {
-    return zodToJsonSchema(resumeDataSchema);
+    return zodToJsonSchema(resumeDataSchema as any);
   }
 
   @Post()

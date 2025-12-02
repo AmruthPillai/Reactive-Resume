@@ -117,6 +117,7 @@ describe("StorageService", () => {
         mockConfig.STORAGE_BUCKET,
         expect.stringContaining(`${userId}/${type}/`),
         expect.any(Buffer),
+        expect.any(Number),
         expect.objectContaining({ "Content-Type": "image/jpeg" })
       );
 
@@ -136,6 +137,7 @@ describe("StorageService", () => {
         mockConfig.STORAGE_BUCKET,
         `${userId}/${type}/avatar.jpg`,
         expect.any(Buffer),
+        expect.any(Number),
         expect.objectContaining({ "Content-Type": "image/jpeg" })
       );
 
@@ -154,6 +156,7 @@ describe("StorageService", () => {
         mockConfig.STORAGE_BUCKET,
         expect.stringContaining(`${userId}/${type}/`),
         pdfBuffer,
+        expect.any(Number),
         expect.objectContaining({
           "Content-Type": "application/pdf",
           "Content-Disposition": expect.stringContaining("attachment; filename=")

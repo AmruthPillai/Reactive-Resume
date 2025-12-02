@@ -46,7 +46,7 @@ export class UserController {
           email: updateUserDto.email,
         });
 
-        await this.authService.sendVerificationEmail(updateUserDto.email);
+        await this.authService.resendVerificationEmail(updateUserDto.email);
 
         email = updateUserDto.email;
       }
