@@ -84,7 +84,7 @@ describe("moveItemInLayout", () => {
       [["item1"], ["item2"]],
       [["item3"], ["item4"]],
     ];
-    const layoutCopy = JSON.parse(JSON.stringify(layout));
+    const layoutCopy = structuredClone(layout);
     const current = { page: 0, column: 1, section: 0 };
     const target = { page: 1, column: 0, section: 1 };
 

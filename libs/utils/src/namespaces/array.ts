@@ -34,7 +34,7 @@ export const moveItemInLayout = (
 ): string[][][] => {
   try {
     // Create a deep copy of the layout to avoid mutating the original array
-    const newLayout = JSON.parse(JSON.stringify(layout));
+    const newLayout = structuredClone(layout);
 
     // Get the item from the current location
     const item = newLayout[current.page][current.column][current.section];
