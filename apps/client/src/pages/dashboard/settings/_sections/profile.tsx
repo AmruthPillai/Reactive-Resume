@@ -100,7 +100,7 @@ export const ProfileSettings = () => {
               <FormItem>
                 <FormLabel>{t`Language`}</FormLabel>
                 <div className="w-full">
-                  <LocaleComboboxPopover value={field.value} onValueChange={field.onChange} />
+                  <LocaleComboboxPopover value={field.value ?? ""} onValueChange={field.onChange} />
                 </div>
                 <FormDescription>
                   <span>

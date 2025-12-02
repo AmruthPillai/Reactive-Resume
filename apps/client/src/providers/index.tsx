@@ -17,12 +17,12 @@ import { Toaster } from "./toaster";
  */
 function composeProviders(...providers: React.FC<{ children: React.ReactNode }>[]) {
   return providers.reduce(
-    (Prev, Curr) => ({ children }) => (
+    (Prev, Curr) => ({ children }: { children: React.ReactNode }) => (
       <Prev>
         <Curr>{children}</Curr>
       </Prev>
     ),
-    ({ children }) => <>{children}</>
+    ({ children }: { children: React.ReactNode }) => <>{children}</>
   );
 }
 

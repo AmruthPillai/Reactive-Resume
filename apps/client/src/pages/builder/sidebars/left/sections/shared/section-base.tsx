@@ -161,7 +161,7 @@ export const SectionBase = <T extends SectionItem>({ id, title, description }: P
                 modifiers={[restrictToParentElement]}
                 onDragEnd={onDragEnd}
               >
-                <SortableContext items={section.items} strategy={verticalListSortingStrategy}>
+                <SortableContext items={section.items.map((item) => item.id)} strategy={verticalListSortingStrategy}>
                   <AnimatePresence>
                     {section.items.map((item, index) => (
                       <SectionListItem
