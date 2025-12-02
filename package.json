@@ -4,7 +4,7 @@
   "version": "4.5.5",
   "license": "MIT",
   "private": true,
-  "packageManager": "pnpm@10.20.0",
+  "packageManager": "bun@1.1.0",
   "author": {
     "name": "Amruth Pillai",
     "url": "https://amruthpillai.com",
@@ -16,18 +16,18 @@
   },
   "scripts": {
     "dev": "nx run-many -t serve",
-    "test": "pnpm vitest run",
-    "prebuild": "pnpm prisma:generate",
+    "test": "bun run vitest run",
+    "prebuild": "bun run prisma:generate",
     "build": "nx run-many -t build",
-    "prestart": "pnpm prisma:migrate",
+    "prestart": "bun run prisma:migrate",
     "start": "node dist/apps/server/main",
     "lint": "nx run-many -t lint",
     "lint:fix": "nx run-many -t lint --fix",
     "crowdin:sync": "crowdin push && crowdin pull",
-    "prisma:generate": "pnpm exec prisma generate",
-    "prisma:migrate": "pnpm exec prisma migrate deploy",
-    "prisma:migrate:dev": "pnpm exec prisma migrate dev",
-    "messages:extract": "pnpm exec lingui extract --clean --overwrite"
+    "prisma:generate": "bunx prisma generate",
+    "prisma:migrate": "bunx prisma migrate deploy",
+    "prisma:migrate:dev": "bunx prisma migrate dev",
+    "messages:extract": "bunx lingui extract --clean --overwrite"
   },
   "devDependencies": {
     "@babel/core": "^7.28.5",
