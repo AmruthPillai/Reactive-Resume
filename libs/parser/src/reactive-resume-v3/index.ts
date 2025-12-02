@@ -97,7 +97,7 @@ export class ReactiveResumeV3Parser implements Parser<Json, ReactiveResumeV3> {
           position: work.position ?? "",
           summary: work.summary ?? "",
           date: `${work.date?.start} - ${work.date?.end}`,
-          url: { ...defaultExperience.url, href: isUrl(work.url) ? work.url! : "" },
+          url: { ...defaultExperience["url"], href: isUrl(work.url) ? work.url! : "" },
         });
       }
     }
@@ -114,7 +114,7 @@ export class ReactiveResumeV3Parser implements Parser<Json, ReactiveResumeV3> {
           awarder: award.awarder ?? "",
           date: award.date ?? "",
           summary: award.summary ?? "",
-          url: { ...defaultAward.url, href: isUrl(award.url) ? award.url! : "" },
+          url: { ...defaultAward["url"], href: isUrl(award.url) ? award.url! : "" },
         });
       }
     }
@@ -152,7 +152,7 @@ export class ReactiveResumeV3Parser implements Parser<Json, ReactiveResumeV3> {
           keywords: Array.isArray(project.keywords)
             ? (project.keywords.filter(Boolean) as string[])
             : [],
-          url: { ...defaultProject.url, href: isUrl(project.url) ? project.url! : "" },
+          url: { ...defaultProject["url"], href: isUrl(project.url) ? project.url! : "" },
         });
       }
     }
@@ -171,7 +171,7 @@ export class ReactiveResumeV3Parser implements Parser<Json, ReactiveResumeV3> {
           score: education.score ?? "",
           summary: education.summary ?? "",
           date: `${education.date?.start} - ${education.date?.end}`,
-          url: { ...defaultEducation.url, href: isUrl(education.url) ? education.url! : "" },
+          url: { ...defaultEducation["url"], href: isUrl(education.url) ? education.url! : "" },
         });
       }
     }

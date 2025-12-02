@@ -167,7 +167,7 @@ export class LinkedInParser implements Parser<JSZip, LinkedIn> {
           id: createId(),
           name: project.Title,
           description: project.Description,
-          url: { ...defaultProject.url, href: project.Url ?? "" },
+          url: { ...defaultProject["url"], href: project.Url ?? "" },
           date: `${project["Started On"]} - ${project["Finished On"] ?? "Present"}`,
         });
       }
