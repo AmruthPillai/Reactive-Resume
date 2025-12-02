@@ -18,6 +18,8 @@ export default defineConfig({
     host: true,
     port: 6173,
     fs: { allow: [searchForWorkspaceRoot(process.cwd())] },
+    // Allow requests from Docker containers using host.docker.internal
+    allowedHosts: ["localhost", "host.docker.internal"],
   },
 
   plugins: [react(), nxViteTsPaths()],
