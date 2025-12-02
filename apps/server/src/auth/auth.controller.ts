@@ -30,6 +30,7 @@ import { ErrorMessage } from "@reactive-resume/utils";
 import type { Response } from "express";
 
 import { User } from "../user/decorators/user.decorator";
+import { UserService } from "../user/user.service";
 import { AuthService } from "./auth.service";
 import { GitHubGuard } from "./guards/github.guard";
 import { GoogleGuard } from "./guards/google.guard";
@@ -46,6 +47,7 @@ import { payloadSchema } from "./utils/payload";
 export class AuthController {
   constructor(
     private readonly authService: AuthService,
+    private readonly userService: UserService,
     private readonly configService: ConfigService,
   ) {}
 
@@ -262,7 +264,11 @@ export class AuthController {
     @Body() { code }: TwoFactorBackupDto,
     @Res({ passthrough: true }) response: Response,
   ) {
-    const user = await this.authService.useBackup2FACode(email, code);
+    const isValid = await this.authService.verifyBackupCode(email, code);
+    if (!isValid) {
+      throw new BadRequestException(ErrorMessage.InvalidTwoFactorBackupCode);
+    }
+    const user = await this.userService.findOneByIdentifierOrThrow(email);
 
     return this.handleAuthenticationResponse(user, response, true);
   }
@@ -328,7 +334,7 @@ export class AuthController {
       throw new BadRequestException(ErrorMessage.EmailAlreadyVerified);
     }
 
-    await this.authService.sendVerificationEmail(email);
+    await this.authService.resendVerificationEmail(email);
 
     return {
       message: "You should have received a new email with a link to verify your email address.",
