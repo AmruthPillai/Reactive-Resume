@@ -11,22 +11,35 @@ import { LocaleProvider } from "./locale";
 import { ThemeProvider } from "./theme";
 import { Toaster } from "./toaster";
 
-export const Providers = () => (
-  <LocaleProvider>
-    <HelmetProvider context={helmetContext}>
-      <QueryClientProvider client={queryClient}>
-        <AuthRefreshProvider>
-          <ThemeProvider>
-            <TooltipProvider>
-              <DialogProvider>
-                <Outlet />
+/**
+ * Composes multiple React providers into a single component.
+ * Reduces nesting complexity by composing providers from right to left.
+ */
+function composeProviders(...providers: React.FC<{ children: React.ReactNode }>[]) {
+  return providers.reduce(
+    (Prev, Curr) => ({ children }) => (
+      <Prev>
+        <Curr>{children}</Curr>
+      </Prev>
+    ),
+    ({ children }) => <>{children}</>
+  );
+}
 
-                <Toaster />
-              </DialogProvider>
-            </TooltipProvider>
-          </ThemeProvider>
-        </AuthRefreshProvider>
-      </QueryClientProvider>
-    </HelmetProvider>
-  </LocaleProvider>
+// Create a composed provider that includes all application providers
+const ComposedProviders = composeProviders(
+  LocaleProvider,
+  ({ children }) => <HelmetProvider context={helmetContext}>{children}</HelmetProvider>,
+  ({ children }) => <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>,
+  AuthRefreshProvider,
+  ThemeProvider,
+  TooltipProvider,
+  DialogProvider,
+);
+
+export const Providers = () => (
+  <ComposedProviders>
+    <Outlet />
+    <Toaster />
+  </ComposedProviders>
 );
