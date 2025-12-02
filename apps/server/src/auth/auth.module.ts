@@ -9,6 +9,13 @@ import { UserModule } from "../user/user.module";
 import { UserService } from "../user/user.service";
 import { AuthController } from "./auth.controller";
 import { AuthService } from "./auth.service";
+import { AuthenticationService } from "./services/authentication.service";
+import { EmailVerificationService } from "./services/email-verification.service";
+import { OAuthProvidersService } from "./services/oauth-providers.service";
+import { PasswordService } from "./services/password.service";
+import { RegistrationService } from "./services/registration.service";
+import { TokenService } from "./services/token.service";
+import { TwoFactorService } from "./services/two-factor.service";
 import { DummyStrategy } from "./strategy/dummy.strategy";
 import { GitHubStrategy } from "./strategy/github.strategy";
 import { GoogleStrategy } from "./strategy/google.strategy";
@@ -27,6 +34,13 @@ export class AuthModule {
       controllers: [AuthController],
       providers: [
         AuthService,
+        AuthenticationService,
+        RegistrationService,
+        PasswordService,
+        EmailVerificationService,
+        TwoFactorService,
+        TokenService,
+        OAuthProvidersService,
         LocalStrategy,
         JwtStrategy,
         RefreshStrategy,

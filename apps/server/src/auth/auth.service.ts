@@ -1,75 +1,48 @@
-import { randomBytes } from "node:crypto";
-
-import {
-  BadRequestException,
-  ForbiddenException,
-  Injectable,
-  InternalServerErrorException,
-  Logger,
-} from "@nestjs/common";
-import { ConfigService } from "@nestjs/config";
-import { JwtService } from "@nestjs/jwt";
-import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
+import { Injectable } from "@nestjs/common";
 import { AuthProvidersDto, LoginDto, RegisterDto, UserWithSecrets } from "@reactive-resume/dto";
-import { ErrorMessage } from "@reactive-resume/utils";
-import * as bcryptjs from "bcryptjs";
-import { authenticator } from "otplib";
 
-import { Config } from "../config/schema";
-import { MailService } from "../mail/mail.service";
 import { UserService } from "../user/user.service";
+import { AuthenticationService } from "./services/authentication.service";
+import { EmailVerificationService } from "./services/email-verification.service";
+import { OAuthProvidersService } from "./services/oauth-providers.service";
+import { PasswordService } from "./services/password.service";
+import { RegistrationService } from "./services/registration.service";
+import { TokenService } from "./services/token.service";
+import { TwoFactorService } from "./services/two-factor.service";
 import { Payload } from "./utils/payload";
 
 @Injectable()
 export class AuthService {
   constructor(
-    private readonly configService: ConfigService<Config>,
     private readonly userService: UserService,
-    private readonly mailService: MailService,
-    private readonly jwtService: JwtService,
+    private readonly authenticationService: AuthenticationService,
+    private readonly registrationService: RegistrationService,
+    private readonly passwordService: PasswordService,
+    private readonly emailVerificationService: EmailVerificationService,
+    private readonly twoFactorService: TwoFactorService,
+    private readonly tokenService: TokenService,
+    private readonly oauthProvidersService: OAuthProvidersService,
   ) {}
 
-  private hash(password: string): Promise<string> {
-    return bcryptjs.hash(password, 10);
-  }
-
-  private compare(password: string, hash: string): Promise<boolean> {
-    return bcryptjs.compare(password, hash);
-  }
-
-  private async validatePassword(password: string, hashedPassword: string) {
-    const isValid = await this.compare(password, hashedPassword);
-
-    if (!isValid) {
-      throw new BadRequestException(ErrorMessage.InvalidCredentials);
-    }
-  }
-
+  // Token generation methods
   generateToken(grantType: "access" | "refresh" | "reset" | "verification", payload?: Payload) {
     switch (grantType) {
-      case "access": {
-        if (!payload) throw new InternalServerErrorException("InvalidTokenPayload");
-        return this.jwtService.sign(payload, {
-          secret: this.configService.getOrThrow("ACCESS_TOKEN_SECRET"),
-          expiresIn: "15m", // 15 minutes
-        });
-      }
-
-      case "refresh": {
-        if (!payload) throw new InternalServerErrorException("InvalidTokenPayload");
-        return this.jwtService.sign(payload, {
-          secret: this.configService.getOrThrow("REFRESH_TOKEN_SECRET"),
-          expiresIn: "2d", // 2 days
-        });
-      }
-
+      case "access":
+        if (!payload) throw new Error("InvalidTokenPayload");
+        return this.tokenService.generateAccessToken(payload);
+      case "refresh":
+        if (!payload) throw new Error("InvalidTokenPayload");
+        return this.tokenService.generateRefreshToken(payload);
       case "reset":
-      case "verification": {
-        return randomBytes(32).toString("base64url");
-      }
+        return this.tokenService.generateResetToken();
+      case "verification":
+        return this.tokenService.generateVerificationToken();
+      default:
+        throw new Error("InvalidTokenGrantType");
     }
   }
 
+  // User session management
   async setLastSignedIn(email: string) {
     await this.userService.updateByEmail(email, {
       secrets: { update: { lastSignedIn: new Date() } },
@@ -91,32 +64,70 @@ export class AuthService {
     const user = await this.userService.findOneById(payload.id);
     const storedRefreshToken = user.secrets?.refreshToken;
 
-    if (!storedRefreshToken || storedRefreshToken !== token) throw new ForbiddenException();
+    if (!storedRefreshToken || storedRefreshToken !== token) throw new Error("Invalid refresh token");
 
     if (!user.twoFactorEnabled) return user;
 
     if (payload.isTwoFactorAuth) return user;
   }
 
+  // User registration and authentication
   async register(registerDto: RegisterDto): Promise<UserWithSecrets> {
-    const hashedPassword = await this.hash(registerDto.password);
+    return this.registrationService.register(registerDto);
+  }
 
-    try {
-      const user = await this.userService.create({
-        name: registerDto.name,
-        email: registerDto.email,
-        username: registerDto.username,
-        locale: registerDto.locale,
-        provider: "email",
-        emailVerified: false, // Set to true if you don't want to verify user's email
-        secrets: { create: { password: hashedPassword } },
-      });
+  async authenticate(loginDto: LoginDto): Promise<UserWithSecrets> {
+    return this.authenticationService.authenticate(loginDto);
+  }
 
-      // Do not `await` this function, otherwise the user will have to wait for the email to be sent before the response is returned
-      void this.sendVerificationEmail(user.email);
+  // Password management
+  async forgotPassword(email: string) {
+    return this.passwordService.forgotPassword(email);
+  }
 
-      return user;
-    } catch (error) {
+  async resetPassword(token: string, password: string) {
+    return this.passwordService.resetPassword(token, password);
+  }
+
+  async updatePassword(userId: string, currentPassword: string, newPassword: string) {
+    return this.passwordService.updatePassword(userId, currentPassword, newPassword);
+  }
+
+  // Email verification
+  async verifyEmail(id: string, token: string) {
+    return this.emailVerificationService.verifyEmail(id, token);
+  }
+
+  async resendVerificationEmail(email: string) {
+    return this.emailVerificationService.resendVerificationEmail(email);
+  }
+
+  // Two-factor authentication
+  async setup2FASecret(email: string) {
+    return this.twoFactorService.setup2FASecret(email);
+  }
+
+  async enable2FA(email: string, code: string) {
+    return this.twoFactorService.enable2FA(email, code);
+  }
+
+  async disable2FA(email: string) {
+    return this.twoFactorService.disable2FA(email);
+  }
+
+  async verify2FACode(email: string, code: string) {
+    return this.twoFactorService.verify2FACode(email, code);
+  }
+
+  async verifyBackupCode(email: string, code: string) {
+    return this.twoFactorService.verifyBackupCode(email, code);
+  }
+
+  // OAuth providers
+  getAuthProviders(): AuthProvidersDto {
+    return this.oauthProvidersService.getAuthProviders();
+  }
+}
       if (error instanceof PrismaClientKnownRequestError && error.code === "P2002") {
         throw new BadRequestException(ErrorMessage.UserAlreadyExists);
       }
