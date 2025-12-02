@@ -1,6 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
 import { ConfigService } from "@nestjs/config";
+import { ErrorMessage } from "@reactive-resume/utils";
 
 import { Config } from "../../config/schema";
 import { Payload } from "../utils/payload";
