@@ -1,25 +1,21 @@
 import { z } from "zod";
 
-import { defaultItem, defaultUrl, itemSchema, urlSchema } from "../shared";
+import { createSectionDefaults, createSectionSchema } from "./factory";
 
 // Schema
-export const awardSchema = itemSchema.extend({
-  title: z.string().min(1),
-  awarder: z.string(),
-  date: z.string(),
-  summary: z.string(),
-  url: urlSchema,
-});
+export const awardSchema = createSectionSchema(
+  {
+    title: z.string(),
+    awarder: z.string(),
+  },
+  "title", // Make title required
+);
 
 // Type
 export type Award = z.infer<typeof awardSchema>;
 
 // Defaults
-export const defaultAward: Award = {
-  ...defaultItem,
+export const defaultAward: Award = createSectionDefaults({
   title: "",
   awarder: "",
-  date: "",
-  summary: "",
-  url: defaultUrl,
-};
+});

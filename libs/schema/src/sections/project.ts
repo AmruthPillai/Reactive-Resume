@@ -1,27 +1,23 @@
 import { z } from "zod";
 
-import { defaultItem, defaultUrl, itemSchema, urlSchema } from "../shared";
+import { createSectionDefaults, createSectionSchema } from "./factory";
 
 // Schema
-export const projectSchema = itemSchema.extend({
-  name: z.string().min(1),
-  description: z.string(),
-  date: z.string(),
-  summary: z.string(),
-  keywords: z.array(z.string()).default([]),
-  url: urlSchema,
-});
+export const projectSchema = createSectionSchema(
+  {
+    name: z.string(),
+    description: z.string(),
+    keywords: z.array(z.string()).default([]),
+  },
+  "name", // Make name required
+);
 
 // Type
 export type Project = z.infer<typeof projectSchema>;
 
 // Defaults
-export const defaultProject: Project = {
-  ...defaultItem,
+export const defaultProject: Project = createSectionDefaults({
   name: "",
   description: "",
-  date: "",
-  summary: "",
   keywords: [],
-  url: defaultUrl,
-};
+});

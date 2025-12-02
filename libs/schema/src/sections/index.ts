@@ -121,6 +121,7 @@ export const defaultSections: Sections = {
 };
 
 export * from "./award";
+export * from "./factory";
 export * from "./certification";
 export * from "./custom-section";
 export * from "./education";
