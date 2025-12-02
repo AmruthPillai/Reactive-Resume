@@ -80,7 +80,7 @@ export const CertificationsDialog = () => {
             <FormItem>
               <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
-                <URLInput {...field} placeholder="https://udemy.com/certificate/UC-..." />
+                <URLInput {...field} value={field.value ?? { href: "", label: "" }} placeholder="https://udemy.com/certificate/UC-..." />
               </FormControl>
               <FormMessage />
             </FormItem>

@@ -114,7 +114,7 @@ export const ProjectsDialog = () => {
             <FormItem>
               <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
-                <URLInput {...field} placeholder="https://rxresu.me" />
+                <URLInput {...field} value={field.value ?? { href: "", label: "" }} placeholder="https://rxresu.me" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -158,7 +158,7 @@ export const ProjectsDialog = () => {
               <FormItem>
                 <FormLabel>{t`Keywords`}</FormLabel>
                 <FormControl>
-                  <BadgeInput {...field} setPendingKeyword={setPendingKeyword} />
+                  <BadgeInput {...field} value={field.value ?? []} setPendingKeyword={setPendingKeyword} />
                 </FormControl>
                 <FormDescription>
                   {t`You can add multiple keywords by separating them with a comma or pressing enter.`}
@@ -168,7 +168,7 @@ export const ProjectsDialog = () => {
 
               <div className="flex flex-wrap items-center gap-x-2 gap-y-3">
                 <AnimatePresence>
-                  {field.value.map((item, index) => (
+                  {(field.value ?? []).map((item: string, index: number) => (
                     <motion.div
                       key={item}
                       layout
@@ -191,7 +191,7 @@ export const ProjectsDialog = () => {
                           size={12}
                           weight="bold"
                           onClick={() => {
-                            field.onChange(field.value.filter((v) => item !== v));
+                            field.onChange((field.value ?? []).filter((v: string) => item !== v));
                           }}
                         />
                       </Badge>

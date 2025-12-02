@@ -94,7 +94,7 @@ export const VolunteerDialog = () => {
             <FormItem className="sm:col-span-2">
               <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
-                <URLInput {...field} />
+                <URLInput {...field} value={field.value ?? { href: "", label: "" }} />
               </FormControl>
               <FormMessage />
             </FormItem>

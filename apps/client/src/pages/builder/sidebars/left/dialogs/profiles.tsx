@@ -68,7 +68,7 @@ export const ProfilesDialog = () => {
             <FormItem className="sm:col-span-2">
               <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
-                <URLInput {...field} placeholder="https://github.com/johndoe" />
+                <URLInput {...field} value={field.value ?? { href: "", label: "" }} placeholder="https://github.com/johndoe" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -84,7 +84,7 @@ export const ProfilesDialog = () => {
               <FormControl>
                 <div className="flex items-center gap-x-2">
                   <Avatar className="size-8 bg-white p-1.5">
-                    <BrandIcon slug={field.value} />
+                    <BrandIcon slug={field.value ?? ""} />
                   </Avatar>
                   <Input {...field} placeholder="github" onChange={field.onChange} />
                 </div>

@@ -49,12 +49,12 @@ export const CustomSectionDialog = () => {
   const handleDrop = (
     e: React.DragEvent,
     dropIndex: number,
-    field: { value: string[]; onChange: (value: string[]) => void },
+    field: { value: string[] | undefined; onChange: (value: string[]) => void },
   ) => {
     e.preventDefault();
     if (draggedIndex === null) return;
 
-    const newKeywords = [...field.value];
+    const newKeywords = [...(field.value ?? [])];
     const [draggedItem] = newKeywords.splice(draggedIndex, 1);
     newKeywords.splice(dropIndex, 0, draggedItem);
 
@@ -136,7 +136,7 @@ export const CustomSectionDialog = () => {
             <FormItem className="sm:col-span-2">
               <FormLabel>{t`Website`}</FormLabel>
               <FormControl>
-                <URLInput {...field} />
+                <URLInput {...field} value={field.value ?? { href: "", label: "" }} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -180,7 +180,7 @@ export const CustomSectionDialog = () => {
               <FormItem>
                 <FormLabel>{t`Keywords`}</FormLabel>
                 <FormControl>
-                  <BadgeInput {...field} setPendingKeyword={setPendingKeyword} />
+                  <BadgeInput {...field} value={field.value ?? []} setPendingKeyword={setPendingKeyword} />
                 </FormControl>
                 <FormDescription>
                   {t`You can add multiple keywords by separating them with a comma or pressing enter.`}
@@ -190,7 +190,7 @@ export const CustomSectionDialog = () => {
 
               <div className="flex flex-wrap items-center gap-x-2 gap-y-3">
                 <AnimatePresence>
-                  {field.value.map((item, index) => (
+                  {(field.value ?? []).map((item, index) => (
                     <motion.div
                       key={item}
                       layout
@@ -209,7 +209,7 @@ export const CustomSectionDialog = () => {
                       <Badge
                         className="cursor-pointer"
                         onClick={() => {
-                          field.onChange(field.value.filter((v) => item !== v));
+                          field.onChange((field.value ?? []).filter((v) => item !== v));
                         }}
                       >
                         <span className="mr-1">{item}</span>

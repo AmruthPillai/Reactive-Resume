@@ -68,14 +68,14 @@ export const LanguagesDialog = () => {
                     {...field}
                     min={0}
                     max={5}
-                    value={[field.value]}
+                    value={[field.value ?? 0]}
                     onValueChange={(value) => {
                       field.onChange(value[0]);
                     }}
                   />
 
-                  {field.value > 0 ? (
-                    <span className="text-base font-bold">{field.value}</span>
+                  {(field.value ?? 0) > 0 ? (
+                    <span className="text-base font-bold">{field.value ?? 0}</span>
                   ) : (
                     <span className="text-base font-bold">{t`Hidden`}</span>
                   )}

@@ -41,12 +41,12 @@ export const SkillsDialog = () => {
   const handleDrop = (
     e: React.DragEvent,
     dropIndex: number,
-    field: { value: string[]; onChange: (value: string[]) => void },
+    field: { value: string[] | undefined; onChange: (value: string[]) => void },
   ) => {
     e.preventDefault();
     if (draggedIndex === null) return;
 
-    const newKeywords = [...field.value];
+    const newKeywords = [...(field.value ?? [])];
     const [draggedItem] = newKeywords.splice(draggedIndex, 1);
     newKeywords.splice(dropIndex, 0, draggedItem);
 
@@ -102,15 +102,15 @@ export const SkillsDialog = () => {
                     {...field}
                     min={0}
                     max={5}
-                    value={[field.value]}
+                    value={[field.value ?? 0]}
                     orientation="horizontal"
                     onValueChange={(value) => {
                       field.onChange(value[0]);
                     }}
                   />
 
-                  {field.value > 0 ? (
-                    <span className="text-base font-bold">{field.value}</span>
+                  {(field.value ?? 0) > 0 ? (
+                    <span className="text-base font-bold">{field.value ?? 0}</span>
                   ) : (
                     <span className="text-base font-bold">{t`Hidden`}</span>
                   )}
@@ -129,7 +129,7 @@ export const SkillsDialog = () => {
               <FormItem>
                 <FormLabel>{t`Keywords`}</FormLabel>
                 <FormControl>
-                  <BadgeInput {...field} setPendingKeyword={setPendingKeyword} />
+                  <BadgeInput {...field} value={field.value ?? []} setPendingKeyword={setPendingKeyword} />
                 </FormControl>
                 <FormDescription>
                   {t`You can add multiple keywords by separating them with a comma or pressing enter.`}
@@ -139,7 +139,7 @@ export const SkillsDialog = () => {
 
               <div className="flex flex-wrap items-center gap-x-2 gap-y-3">
                 <AnimatePresence>
-                  {field.value.map((item, index) => (
+                  {(field.value ?? []).map((item, index) => (
                     <motion.div
                       key={item}
                       layout
@@ -152,13 +152,13 @@ export const SkillsDialog = () => {
                       }}
                       onDragOver={handleDragOver}
                       onDrop={(e) => {
-                        handleDrop(e, index, field);
+                        handleDrop(e, index, { value: field.value ?? [], onChange: field.onChange });
                       }}
                     >
                       <Badge
                         className="cursor-pointer"
                         onClick={() => {
-                          field.onChange(field.value.filter((v) => item !== v));
+                          field.onChange((field.value ?? []).filter((v) => item !== v));
                         }}
                       >
                         <span className="mr-1">{item}</span>
