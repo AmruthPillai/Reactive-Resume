@@ -13,7 +13,7 @@ export const SocialAuth = () => {
     <div className="grid grid-cols-2 gap-4">
       {providers.includes("github") && (
         <Button asChild size="lg" className="w-full !bg-[#222] !text-white hover:!bg-[#222]/80">
-          <a href="/api/auth/github">
+          <a href="/api/v1/auth/github">
             <GithubLogoIcon className="mr-3 size-4" />
             {t`GitHub`}
           </a>
@@ -26,7 +26,7 @@ export const SocialAuth = () => {
           size="lg"
           className="w-full !bg-[#4285F4] !text-white hover:!bg-[#4285F4]/80"
         >
-          <a href="/api/auth/google">
+          <a href="/api/v1/auth/google">
             <GoogleLogoIcon className="mr-3 size-4" />
             {t`Google`}
           </a>
@@ -39,7 +39,7 @@ export const SocialAuth = () => {
           size="lg"
           className="w-full !bg-[#dc2626] !text-white hover:!bg-[#dc2626]/80"
         >
-          <a href="/api/auth/openid">
+          <a href="/api/v1/auth/openid">
             <FingerprintIcon className="mr-3 size-4" />
             {import.meta.env.VITE_OPENID_NAME}
           </a>

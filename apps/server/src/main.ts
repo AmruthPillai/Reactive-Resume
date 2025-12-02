@@ -44,14 +44,14 @@ async function bootstrap() {
   if (isHTTPS) app.use(helmet({ contentSecurityPolicy: false }));
 
   // Global Prefix
-  const globalPrefix = "api";
+  const globalPrefix = "api/v1";
   app.setGlobalPrefix(globalPrefix);
 
   // Enable Shutdown Hooks
   app.enableShutdownHooks();
 
   // Swagger (OpenAPI Docs)
-  // This can be accessed by visiting {SERVER_URL}/api/docs
+  // This can be accessed by visiting {SERVER_URL}/api/v1/docs
   const config = new DocumentBuilder()
     .setTitle("Reactive Resume")
     .setDescription(
