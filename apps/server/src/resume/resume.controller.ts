@@ -129,6 +129,19 @@ export class ResumeController {
     return this.resumeService.remove(user.id, id);
   }
 
+  @Post("/print/guest")
+  @UseGuards(OptionalGuard)
+  async printGuestResume(@Body() resume: ResumeDto) {
+    try {
+      const url = await this.resumeService.printResume(resume, undefined);
+
+      return { url };
+    } catch (error) {
+      Logger.error(error);
+      throw new InternalServerErrorException(error);
+    }
+  }
+
   @Get("/print/:id")
   @UseGuards(OptionalGuard, ResumeGuard)
   async printResume(@User("id") userId: string | undefined, @Resume() resume: ResumeDto) {

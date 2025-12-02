@@ -46,18 +46,15 @@ export const BuilderToolbar = () => {
   const { printResume, loading } = usePrintResume();
 
   const onPrint = async () => {
+    const { resume } = useResumeStore.getState();
+
     if (isGuest) {
-      toast({
-        variant: "info",
-        title: t`Sign in to download a PDF`,
-        description: t`As a guest, your resume is only stored in this session. Create an account or sign in to enable PDF downloads.`,
-      });
-      return;
+      const { url } = await printResume({ resume });
+      openInNewTab(url);
+    } else {
+      const { url } = await printResume({ id });
+      openInNewTab(url);
     }
-
-    const { url } = await printResume({ id });
-
-    openInNewTab(url);
   };
 
   const onCopy = async () => {
@@ -196,7 +193,7 @@ export const BuilderToolbar = () => {
           <Button
             size="icon"
             variant="ghost"
-            disabled={loading || isGuest}
+            disabled={loading}
             className="rounded-none"
             onClick={onPrint}
           >

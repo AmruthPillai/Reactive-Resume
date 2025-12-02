@@ -148,7 +148,8 @@ export class ResumeService {
     const url = await this.printerService.printResume(resume);
 
     // Update statistics: increment the number of downloads by 1
-    if (!userId) {
+    // Skip statistics for guest resumes (they don't exist in the database)
+    if (!userId && resume.id !== "guest") {
       await this.prisma.statistics.upsert({
         where: { resumeId: resume.id },
         create: { views: 0, downloads: 1, resumeId: resume.id },

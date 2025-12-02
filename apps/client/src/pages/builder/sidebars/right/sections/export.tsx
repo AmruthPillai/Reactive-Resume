@@ -29,19 +29,15 @@ export const ExportSection = () => {
   const { printResume, loading } = usePrintResume();
 
   const onPdfExport = async () => {
-    if (isGuest) {
-      toast({
-        variant: "info",
-        title: t`Sign in to download a PDF`,
-        description: t`As a guest, your resume is only stored in this session. Create an account or sign in to enable PDF downloads.`,
-      });
-      return;
-    }
-
     const { resume } = useResumeStore.getState();
-    const { url } = await printResume({ id: resume.id });
 
-    openInNewTab(url);
+    if (isGuest) {
+      const { url } = await printResume({ resume });
+      openInNewTab(url);
+    } else {
+      const { url } = await printResume({ id: resume.id });
+      openInNewTab(url);
+    }
   };
 
   return (

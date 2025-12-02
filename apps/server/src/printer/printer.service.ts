@@ -124,20 +124,36 @@ export class PrinterService {
         });
       }
 
-      // Set the data of the resume to be printed in the browser's session storage
+      // Set the data of the resume to be printed
       const numberPages = resume.data.metadata.layout.length;
 
-      await page.goto(`${url}/artboard/preview`, { waitUntil: "domcontentloaded" });
-
-      await page.evaluate((data) => {
+      // Set resume data in localStorage before navigating to the page
+      // This ensures the data is available when the page loads
+      await page.evaluateOnNewDocument((data) => {
         window.localStorage.setItem("resume", JSON.stringify(data));
       }, resume.data);
 
-      await Promise.all([
-        page.reload({ waitUntil: "load" }),
-        // Wait until first page is present before proceeding
-        page.waitForSelector('[data-page="1"]', { timeout: 15_000 }),
-      ]);
+      await page.goto(`${url}/artboard/preview`, { waitUntil: "networkidle0" });
+
+      // Also send postMessage after page load to ensure the Providers component picks it up
+      await page.evaluate((data) => {
+        window.postMessage({ type: "SET_RESUME", payload: data }, window.location.origin);
+      }, resume.data);
+
+      // Wait for the resume to be loaded and rendered
+      // The Providers component reads from localStorage and sets the resume in the store
+      // We need to wait for both the localStorage data and the rendered page element
+      await page.waitForFunction(
+        () => {
+          const resumeData = window.localStorage.getItem("resume");
+          if (!resumeData) return false;
+          
+          // Check if the page element exists (indicating React has rendered)
+          const pageElement = document.querySelector('[data-page="1"]');
+          return pageElement !== null;
+        },
+        { timeout: 30_000 },
+      );
 
       const pagesBuffer: Buffer[] = [];
 
