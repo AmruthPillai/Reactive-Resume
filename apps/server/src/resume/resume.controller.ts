@@ -99,10 +99,14 @@ export class ResumeController {
     @Param("slug") slug: string,
     @User("id") userId: string,
   ) {
-    const resume = await this.resumeService.findOneByUsernameSlug(username, slug, userId);
+    const resume = await this.resumeService.findOneByUsernameSlug(username, slug);
 
     // Hide private notes from public resume API responses
     set(resume.data as ResumeData, "metadata.notes", undefined);
+
+    if (!userId) {
+      await this.resumeService.incrementViewCountForOne(resume.id);
+    }
 
     return resume;
   }
