@@ -103,7 +103,7 @@ export const SharingSection = () => {
 
               <div className="space-y-1.5">
                 <Label htmlFor="resume-raw-json-url" className="space-y-1">
-                  <p>{t`Raw Json URL`}</p>
+                  <p>{t`Raw JSON URL`}</p>
                   <p className="text-xs opacity-60">{t`For advanced users! Does not count towards resume statistics.`}</p>
                 </Label>
 
