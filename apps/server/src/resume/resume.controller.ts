@@ -100,8 +100,7 @@ export class ResumeController {
   ) {
     const resume = await this.resumeService.findOneByUsernameSlug(username, slug);
 
-    // Hide private notes from public resume API responses
-    set(resume.data as ResumeData, "metadata.notes", undefined);
+    redactPrivateNotes(resume as ResumeDto);
 
     return resume;
   }
@@ -115,8 +114,7 @@ export class ResumeController {
   ) {
     const resume = await this.resumeService.findOneByUsernameSlug(username, slug);
 
-    // Hide private notes from public resume API responses
-    set(resume.data as ResumeData, "metadata.notes", undefined);
+    redactPrivateNotes(resume as ResumeDto);
 
     if (!userId) {
       await this.resumeService.incrementViewCountForOne(resume.id);
@@ -172,4 +170,8 @@ export class ResumeController {
       throw new InternalServerErrorException(error);
     }
   }
+}
+
+function redactPrivateNotes(resume: ResumeDto) {
+  set(resume.data, "metadata.notes", undefined);
 }
