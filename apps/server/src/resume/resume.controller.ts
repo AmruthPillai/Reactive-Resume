@@ -20,7 +20,7 @@ import {
   ResumeDto,
   UpdateResumeDto,
 } from "@reactive-resume/dto";
-import { ResumeData, resumeDataSchema } from "@reactive-resume/schema";
+import { resumeDataSchema } from "@reactive-resume/schema";
 import { ErrorMessage } from "@reactive-resume/utils";
 import set from "lodash.set";
 import { zodToJsonSchema } from "zod-to-json-schema";
