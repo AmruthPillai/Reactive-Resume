@@ -90,6 +90,9 @@ export class PrinterService {
     return url;
   }
 
+  // --------------------
+  // Stable generateResume with dynamic viewport
+  // --------------------
   async generateResume(resume: ResumeDto) {
     try {
       const browser = await this.getBrowser();
@@ -107,7 +110,7 @@ export class PrinterService {
           /localhost(:\d+)?/,
           (_match, port) => `host.docker.internal${port ?? ""}`,
         );
-
+		
         await page.setRequestInterception(true);
 
         // Intercept requests of `localhost` to `host.docker.internal` in development
@@ -124,68 +127,57 @@ export class PrinterService {
         });
       }
 
-      // Set the data of the resume to be printed in the browser's session storage
-      const numberPages = resume.data.metadata.layout.length;
-
-      await page.goto(`${url}/artboard/preview`, { waitUntil: "domcontentloaded" });
-
-      await page.evaluate((data) => {
+      // Set resume data in localStorage before navigation to avoid reload
+      await page.evaluateOnNewDocument((data) => {
         window.localStorage.setItem("resume", JSON.stringify(data));
       }, resume.data);
 
-      await Promise.all([
-        page.reload({ waitUntil: "load" }),
-        // Wait until first page is present before proceeding
-        page.waitForSelector('[data-page="1"]', { timeout: 15_000 }),
-      ]);
+      // Initial viewport (temporary, will be adjusted dynamically per page)
+      await page.setViewport({ width: 794, height: 1123 });
 
+      // Single navigation without reload
+      await page.goto(`${url}/artboard/preview`, { waitUntil: "networkidle0" });
+
+      // Wait for a stable DOM state
+      await page.waitForSelector('[data-page="1"]', { timeout: 15_000 });
+
+      const numberPages = resume.data.metadata.layout.length;
       const pagesBuffer: Buffer[] = [];
 
       const processPage = async (index: number) => {
         const pageElement = await page.$(`[data-page="${index}"]`);
-        // eslint-disable-next-line unicorn/no-await-expression-member
-        const width = (await (await pageElement?.getProperty("scrollWidth"))?.jsonValue()) ?? 0;
-        // eslint-disable-next-line unicorn/no-await-expression-member
-        const height = (await (await pageElement?.getProperty("scrollHeight"))?.jsonValue()) ?? 0;
+        if (!pageElement) throw new Error(`Page ${index} not found`);
 
-        const temporaryHtml = await page.evaluate((element: HTMLDivElement) => {
-          const clonedElement = element.cloneNode(true) as HTMLDivElement;
-          const temporaryHtml_ = document.body.innerHTML;
-          document.body.innerHTML = clonedElement.outerHTML;
-          return temporaryHtml_;
-        }, pageElement);
+        // --------------------
+        // DYNAMIC VIEWPORT ADJUSTMENT
+        // Measure the element size and set viewport to match
+        // This prevents Frame Detach errors and ensures exact PDF rendering
+        // --------------------
+        const width = (await (await pageElement.getProperty("scrollWidth")).jsonValue()) as number;
+        const height = (await (await pageElement.getProperty("scrollHeight")).jsonValue()) as number;
+        await page.setViewport({ width, height });
 
-        // Apply custom CSS, if enabled
+        // Apply CSS without replacing the DOM
         const css = resume.data.metadata.css;
-
         if (css.visible) {
-          await page.evaluate((cssValue: string) => {
-            const styleTag = document.createElement("style");
-            styleTag.textContent = cssValue;
-            document.head.append(styleTag);
-          }, css.value);
+          await page.addStyleTag({ content: css.value });
         }
 
+        // Render PDF of the current page
         const uint8array = await page.pdf({ width, height, printBackground: true });
-        const buffer = Buffer.from(uint8array);
-        pagesBuffer.push(buffer);
-
-        await page.evaluate((temporaryHtml_: string) => {
-          document.body.innerHTML = temporaryHtml_;
-        }, temporaryHtml);
+        pagesBuffer.push(Buffer.from(uint8array));
       };
 
-      // Loop through all the pages and print them, by first displaying them, printing the PDF and then hiding them back
+      // Process all pages sequentially
       for (let index = 1; index <= numberPages; index++) {
         await processPage(index);
       }
 
-      // Using 'pdf-lib', merge all the pages from their buffers into a single PDF
+      // Merge all page buffers into a single PDF
       const pdf = await PDFDocument.create();
-
       for (const element of pagesBuffer) {
-        const page = await PDFDocument.load(element);
-        const [copiedPage] = await pdf.copyPages(page, [0]);
+        const doc = await PDFDocument.load(element);
+        const [copiedPage] = await pdf.copyPages(doc, [0]);
         pdf.addPage(copiedPage);
       }
 
@@ -201,14 +193,12 @@ export class PrinterService {
         resume.title,
       );
 
-      // Close all the pages and disconnect from the browser
       await page.close();
       await browser.disconnect();
 
       return resumeUrl;
     } catch (error) {
       this.logger.error(error);
-
       throw new InternalServerErrorException(
         ErrorMessage.ResumePrinterError,
         (error as Error).message,
@@ -216,6 +206,9 @@ export class PrinterService {
     }
   }
 
+  // --------------------
+  // Stable generatePreview
+  // --------------------
   async generatePreview(resume: ResumeDto) {
     const browser = await this.getBrowser();
     const page = await browser.newPage();
@@ -227,6 +220,7 @@ export class PrinterService {
 
     if ([publicUrl, storageUrl].some((url) => /https?:\/\/localhost(:\d+)?/.test(url))) {
       // Switch client URL from `http[s]://localhost[:port]` to `http[s]://host.docker.internal[:port]` in development
+
       // This is required because the browser is running in a container and the client is running on the host machine.
       url = url.replace(/localhost(:\d+)?/, (_match, port) => `host.docker.internal${port ?? ""}`);
 
@@ -251,12 +245,16 @@ export class PrinterService {
       window.localStorage.setItem("resume", JSON.stringify(data));
     }, resume.data);
 
+    // Initial viewport (temporary)
     await page.setViewport({ width: 794, height: 1123 });
 
+    // Single navigation without reload
     await page.goto(`${url}/artboard/preview`, { waitUntil: "networkidle0" });
 
-    // Save the JPEG to storage and return the URL
-    // Store the URL in cache for future requests, under the previously generated hash digest
+    // Wait for a stable DOM state
+    await page.waitForSelector('[data-page="1"]', { timeout: 15_000 });
+
+    // Take a screenshot of the full preview
     const uint8array = await page.screenshot({ quality: 80, type: "jpeg" });
     const buffer = Buffer.from(uint8array);
 
