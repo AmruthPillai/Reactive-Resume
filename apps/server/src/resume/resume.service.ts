@@ -84,21 +84,19 @@ export class ResumeService {
     };
   }
 
-  async findOneByUsernameSlug(username: string, slug: string, userId?: string) {
-    const resume = await this.prisma.resume.findFirstOrThrow({
+  async findOneByUsernameSlug(username: string, slug: string) {
+    return await this.prisma.resume.findFirstOrThrow({
       where: { user: { username }, slug, visibility: "public" },
     });
+  }
 
+  async incrementViewCountForOne(resumeId: string) {
     // Update statistics: increment the number of views by 1
-    if (!userId) {
-      await this.prisma.statistics.upsert({
-        where: { resumeId: resume.id },
-        create: { views: 1, downloads: 0, resumeId: resume.id },
-        update: { views: { increment: 1 } },
-      });
-    }
-
-    return resume;
+    await this.prisma.statistics.upsert({
+      where: { resumeId },
+      create: { views: 1, downloads: 0, resumeId },
+      update: { views: { increment: 1 } },
+    });
   }
 
   async update(userId: string, id: string, updateResumeDto: UpdateResumeDto) {

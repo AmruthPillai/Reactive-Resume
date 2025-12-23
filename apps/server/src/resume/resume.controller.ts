@@ -20,7 +20,7 @@ import {
   ResumeDto,
   UpdateResumeDto,
 } from "@reactive-resume/dto";
-import { ResumeData, resumeDataSchema } from "@reactive-resume/schema";
+import { resumeDataSchema } from "@reactive-resume/schema";
 import { ErrorMessage } from "@reactive-resume/utils";
 import set from "lodash.set";
 import { zodToJsonSchema } from "zod-to-json-schema";
@@ -92,6 +92,19 @@ export class ResumeController {
     return this.resumeService.findOneStatistics(id);
   }
 
+  @Get("/public/:username/:slug/stealthily")
+  @UseGuards(OptionalGuard)
+  async findOneByUsernameSlugStealthily(
+    @Param("username") username: string,
+    @Param("slug") slug: string,
+  ) {
+    const resume = await this.resumeService.findOneByUsernameSlug(username, slug);
+
+    redactPrivateNotes(resume as ResumeDto);
+
+    return resume;
+  }
+
   @Get("/public/:username/:slug")
   @UseGuards(OptionalGuard)
   async findOneByUsernameSlug(
@@ -99,10 +112,13 @@ export class ResumeController {
     @Param("slug") slug: string,
     @User("id") userId: string,
   ) {
-    const resume = await this.resumeService.findOneByUsernameSlug(username, slug, userId);
+    const resume = await this.resumeService.findOneByUsernameSlug(username, slug);
 
-    // Hide private notes from public resume API responses
-    set(resume.data as ResumeData, "metadata.notes", undefined);
+    redactPrivateNotes(resume as ResumeDto);
+
+    if (!userId) {
+      await this.resumeService.incrementViewCountForOne(resume.id);
+    }
 
     return resume;
   }
@@ -154,4 +170,8 @@ export class ResumeController {
       throw new InternalServerErrorException(error);
     }
   }
+}
+
+function redactPrivateNotes(resume: ResumeDto) {
+  set(resume.data, "metadata.notes", undefined);
 }
