@@ -33,6 +33,7 @@ model User {
   provider         Provider
   secrets          Secrets?
   resumes          Resume[]
+  folders          Folder[]
 }
 
 model Secrets {
@@ -62,9 +63,26 @@ model Resume {
   user       User        @relation(fields: [userId], references: [id], onDelete: Cascade)
   createdAt  DateTime    @default(now())
   updatedAt  DateTime    @updatedAt
+  Folder     Folder?     @relation(fields: [folderId], references: [id])
+  folderId   String?
 
   @@unique([userId, id])
   @@unique([userId, slug])
+  @@unique([folderId, id])
+  @@index(fields: [userId])
+  @@index(fields: [folderId])
+}
+
+model Folder {
+  id        String   @id @default(cuid())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  resumes   Resume[]
+  User      User?    @relation(fields: [userId], references: [id])
+  userId    String?
+
+  @@unique([userId, id])
   @@index(fields: [userId])
 }
 

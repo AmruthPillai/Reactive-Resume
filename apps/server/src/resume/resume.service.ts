@@ -61,7 +61,10 @@ export class ResumeService {
   }
 
   findAll(userId: string) {
-    return this.prisma.resume.findMany({ where: { userId }, orderBy: { updatedAt: "desc" } });
+    return this.prisma.resume.findMany({
+      where: { userId, folderId: null },
+      orderBy: { updatedAt: "desc" },
+    });
   }
 
   findOne(id: string, userId?: string) {
