@@ -8,6 +8,11 @@ export const usePasswordToggle = (formRef: React.RefObject<HTMLElement | null>) 
         formRef.current
           ?.querySelector<HTMLInputElement>('input[name="password"]')
           ?.setAttribute("type", "text");
+      } else if ((event.key === "v" || event.key === "V") && (event.ctrlKey || event.metaKey)) {
+        // unless Ctrl+V is pressed => don't show pasted password
+        formRef.current
+          ?.querySelector<HTMLInputElement>('input[name="password"]')
+          ?.setAttribute("type", "password");
       }
     };
 
@@ -32,6 +37,20 @@ export const usePasswordToggle = (formRef: React.RefObject<HTMLElement | null>) 
 
     return () => {
       window.removeEventListener("keyup", onKeyUp);
+    };
+  }, [formRef]);
+
+  // Hide Password when losing focus (e.g. unlocking password manager)
+  useEffect(() => {
+    const hidePassword = () => {
+      formRef.current
+        ?.querySelector<HTMLInputElement>('input[name="password"]')
+        ?.setAttribute("type", "password");
+    };
+
+    window.addEventListener("blur", hidePassword);
+    return () => {
+      window.removeEventListener("blur", hidePassword);
     };
   }, [formRef]);
 
