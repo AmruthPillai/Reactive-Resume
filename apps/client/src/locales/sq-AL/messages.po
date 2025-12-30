@@ -64,8 +64,9 @@ msgstr "Një ndërtues i CV-së falas dhe open source"
 msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "Një ndërtues i CV-së, falas dhe open-source që thjeshtëson procesin e krijimit, përditësimit dhe shpërndarjes së CV-së tuaj."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:59
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
+#: apps/client/src/pages/builder/_components/toolbar.tsx:60
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:31
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:41
 msgid "A link has been copied to your clipboard."
 msgstr "Një link është kopjuar në clipboard."
 
@@ -98,7 +99,7 @@ msgstr "Prano vetëm skedarët {accept}"
 msgid "Account"
 msgstr "Llogaria"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:175
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:179
 msgid "Add a custom field"
 msgstr "Shto një fushë të personalizuar"
 
@@ -145,12 +146,16 @@ msgstr ""
 msgid "and many more..."
 msgstr "dhe shume te tjera..."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:57
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:69
 msgid "Anyone with the link can view and download the resume."
 msgstr "Çdokush që ka linkun mund të shikojë dhe shkarkojë CV-në."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:60
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:30
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:42
+msgid "Anyone with this link can view and download the json data of the resume. This link will not count towards the resume view count."
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/toolbar.tsx:61
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:32
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "Çdokush që ka këtë link mund ta shikojë dhe shkarkojë CV-në. Shprëndani atë në profilin tuaj ose me rekrutuesit."
 
@@ -271,7 +276,7 @@ msgstr "Anulo"
 msgid "Casual"
 msgstr "Jo formale"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:130
+#: apps/client/src/pages/builder/_components/toolbar.tsx:131
 msgid "Center Artboard"
 msgstr "Centro panelin"
 
@@ -344,11 +349,12 @@ msgstr "Vazhdo"
 msgid "Copy"
 msgstr "Kopjo"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:164
+#: apps/client/src/pages/builder/_components/toolbar.tsx:177
 msgid "Copy Link to Resume"
 msgstr "Kopjo linkun e CV-së"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:78
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:96
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:118
 msgid "Copy to Clipboard"
 msgstr "Kopjo në Clipboard"
 
@@ -501,7 +507,7 @@ msgstr "Shkarkoni një CV-në tuaj në formatin JSON. Ky skedar mund të përdor
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "Shkarkoni CV-në tuaj si PDF. Ky skedar mund të përdoret për të printuar CV-në tuaj, për ta dërguar te rekrutuesit ose për ta ngarkuar në portalet e punës."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:176
+#: apps/client/src/pages/builder/_components/toolbar.tsx:189
 msgid "Download PDF"
 msgstr "Shkarko PDF"
 
@@ -553,7 +559,7 @@ msgstr "Zgjedh një fjalëkalim të ri. Sigurohuni që të jetë i sigurtë."
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
 msgstr "Jep një nga 10 koded rezervë që i keni ruajtur gjatë aktivizimit të vërtetimit me dy faktorë."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:63
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:67
 msgid "Enter Phosphor Icon"
 msgstr ""
 
@@ -632,6 +638,10 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:134
 msgid "Font Variants"
 msgstr "Varianti i germave"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:107
+msgid "For advanced users! Does not count towards resume statistics."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:35
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
@@ -1002,7 +1012,7 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:70
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:88
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:92
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:153
 msgid "Name"
 msgstr "Emri"
@@ -1082,7 +1092,7 @@ msgstr ""
 msgid "Options"
 msgstr "Mundësitë"
 
-#: apps/client/src/pages/auth/layout.tsx:47
+#: apps/client/src/pages/auth/layout.tsx:46
 msgctxt "The user can either login with email/password, or continue with GitHub or Google."
 msgid "or continue with"
 msgstr "ose vazhdoni me"
@@ -1099,6 +1109,10 @@ msgstr "Faqja"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:233
 msgid "Page {pageNumber}"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:105
+msgid "Paginate PDF (multi-page)"
 msgstr ""
 
 #: apps/client/src/pages/auth/login/page.tsx:110
@@ -1120,7 +1134,7 @@ msgstr "Shënime personale për çdo CV"
 msgid "Phone"
 msgstr "Telefoni"
 
-#: apps/client/src/pages/auth/layout.tsx:76
+#: apps/client/src/pages/auth/layout.tsx:75
 msgid "Photograph by Patrick Tomasso"
 msgstr "Fotografi nga Patrick Tomasso"
 
@@ -1183,7 +1197,7 @@ msgstr "Profesional"
 msgid "Profile"
 msgstr "Profili"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:55
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:67
 msgid "Public"
 msgstr "Publik"
 
@@ -1194,6 +1208,10 @@ msgstr "Botues"
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
 msgid "Raise an issue"
 msgstr "Krijo një Issue në GitHub"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:106
+msgid "Raw JSON URL"
+msgstr ""
 
 #: apps/client/src/components/copyright.tsx:35
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
@@ -1229,7 +1247,7 @@ msgstr ""
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:89
+#: apps/client/src/pages/builder/_components/toolbar.tsx:90
 msgid "Redo"
 msgstr "Ribëj"
 
@@ -1266,7 +1284,7 @@ msgstr ""
 msgid "Reset your password"
 msgstr "Rivendosni fjalëkalimin tuaj"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:124
+#: apps/client/src/pages/builder/_components/toolbar.tsx:125
 msgid "Reset Zoom"
 msgstr "Kthe madhësinë si në fillim"
 
@@ -1312,11 +1330,11 @@ msgstr "Skanoni kodin e mëposhtëm QR me aplikacionin tuaj authenticator për t
 msgid "Score"
 msgstr "Vlerësimi"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:104
+#: apps/client/src/pages/builder/_components/toolbar.tsx:105
 msgid "Scroll to Pan"
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:104
+#: apps/client/src/pages/builder/_components/toolbar.tsx:105
 msgid "Scroll to Zoom"
 msgstr ""
 
@@ -1372,8 +1390,8 @@ msgid "Setup two-factor authentication on your account"
 msgstr "Konfiguro vërtetimin me dy faktorë në llogarinë tuaj"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:107
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:38
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:50
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:51
 msgid "Sharing"
 msgstr "Shpërndarja"
 
@@ -1590,11 +1608,15 @@ msgstr "Titulli"
 msgid "Title"
 msgstr "Titulli"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:138
+#: apps/client/src/pages/builder/_components/toolbar.tsx:163
+msgid "Toggle Multi‑page PDF"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/toolbar.tsx:139
 msgid "Toggle Page Break Line"
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:150
+#: apps/client/src/pages/builder/_components/toolbar.tsx:151
 msgid "Toggle Page Numbers"
 msgstr "Aktivizo/çaktivizo numrat e faqeve"
 
@@ -1635,7 +1657,7 @@ msgstr "Tipografia"
 msgid "Underline Links"
 msgstr "Nënvizoni linket"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:76
+#: apps/client/src/pages/builder/_components/toolbar.tsx:77
 msgid "Undo"
 msgstr "Zhbëj"
 
@@ -1666,7 +1688,7 @@ msgstr "Përditësoni një CV ekzistuese"
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
 msgstr "Analizo të dhënat ekzistuese dhe importoj ato në Reactive Resume për modifikim më të lehtë duke ngarkuar një skedar nga një prej burimeve të pranuara."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:73
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:86
 msgid "URL"
 msgstr "Linku"
 
@@ -1709,7 +1731,7 @@ msgstr "Valido"
 msgid "Validated"
 msgstr "U validua"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:97
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:101
 msgid "Value"
 msgstr "Vlera"
 
@@ -1738,7 +1760,7 @@ msgstr "Shikime"
 msgid "Visible"
 msgstr "E dukshme"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:70
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:74
 msgid "Visit <0>Phosphor Icons</0> for a list of available icons"
 msgstr ""
 
@@ -1832,11 +1854,10 @@ msgstr "Çelësi juaj OpenAI API nuk është konfiguruar ende. Ju lutem shkoni t
 msgid "Your password has been updated successfully."
 msgstr "Fjalëkalimi juaj u përditësua."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:112
+#: apps/client/src/pages/builder/_components/toolbar.tsx:113
 msgid "Zoom In"
 msgstr "Zmadho"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:118
+#: apps/client/src/pages/builder/_components/toolbar.tsx:119
 msgid "Zoom Out"
 msgstr "Zvogëlo"
-

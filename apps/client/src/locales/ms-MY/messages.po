@@ -64,8 +64,9 @@ msgstr "Pembina resume Percuma dan sumber terbuka"
 msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "Sebuah pembina resume percuma dan sumber terbuka yang menyederhanakan proses mencipta, mengemaskini, dan berkongsi resume anda."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:59
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
+#: apps/client/src/pages/builder/_components/toolbar.tsx:60
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:31
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:41
 msgid "A link has been copied to your clipboard."
 msgstr "Pautan telah disalin ke papan keratan anda."
 
@@ -98,7 +99,7 @@ msgstr "Hanya menerima fail {accept}"
 msgid "Account"
 msgstr "Akaun"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:175
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:179
 msgid "Add a custom field"
 msgstr "Tambahkan medan tersuai"
 
@@ -145,12 +146,16 @@ msgstr ""
 msgid "and many more..."
 msgstr "dan banyak lagi..."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:57
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:69
 msgid "Anyone with the link can view and download the resume."
 msgstr "Sesiapa yang mempunyai pautan boleh melihat dan muat turun resume."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:60
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:30
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:42
+msgid "Anyone with this link can view and download the json data of the resume. This link will not count towards the resume view count."
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/toolbar.tsx:61
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:32
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "Sesiapa dengan pautan ini boleh melihat dan memuat turun resume. Kongsi pada profil anda atau dengan perekrut."
 
@@ -271,7 +276,7 @@ msgstr "Batal"
 msgid "Casual"
 msgstr "Kasual"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:130
+#: apps/client/src/pages/builder/_components/toolbar.tsx:131
 msgid "Center Artboard"
 msgstr "Papan Seni Tengah"
 
@@ -344,11 +349,12 @@ msgstr "Teruskan"
 msgid "Copy"
 msgstr "Salin"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:164
+#: apps/client/src/pages/builder/_components/toolbar.tsx:177
 msgid "Copy Link to Resume"
 msgstr "Salin Pautan ke Resume"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:78
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:96
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:118
 msgid "Copy to Clipboard"
 msgstr "Salin ke Papan Keratan"
 
@@ -501,7 +507,7 @@ msgstr "Muat turun 'snapshot' JSON resume anda. Fail ini boleh digunakan untuk m
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "Muat turunkan PDF resume anda. Fail ini boleh digunakan untuk mencetak resume anda, menghantarkannya kepada perekrut, atau memuat naik ke portal pekerjaan."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:176
+#: apps/client/src/pages/builder/_components/toolbar.tsx:189
 msgid "Download PDF"
 msgstr "Muat turun PDF"
 
@@ -553,7 +559,7 @@ msgstr "Masukkan kata laluan baru di bawah, dan pastikan ia selamat."
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
 msgstr "Masukkan salah satu daripada kod sandaran 10 yang anda simpan apabila anda mengaktifkan pengesahan dua faktor."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:63
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:67
 msgid "Enter Phosphor Icon"
 msgstr "Masukkan Ikon Fosfor"
 
@@ -632,6 +638,10 @@ msgstr "Subset Fon"
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:134
 msgid "Font Variants"
 msgstr "Varian Fon"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:107
+msgid "For advanced users! Does not count towards resume statistics."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:35
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
@@ -1002,7 +1012,7 @@ msgstr "Modal"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:70
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:88
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:92
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:153
 msgid "Name"
 msgstr "Nama"
@@ -1082,7 +1092,7 @@ msgstr ""
 msgid "Options"
 msgstr "Pilihan"
 
-#: apps/client/src/pages/auth/layout.tsx:47
+#: apps/client/src/pages/auth/layout.tsx:46
 msgctxt "The user can either login with email/password, or continue with GitHub or Google."
 msgid "or continue with"
 msgstr "atau teruskan dengan"
@@ -1099,6 +1109,10 @@ msgstr "Halaman"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:233
 msgid "Page {pageNumber}"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:105
+msgid "Paginate PDF (multi-page)"
 msgstr ""
 
 #: apps/client/src/pages/auth/login/page.tsx:110
@@ -1120,7 +1134,7 @@ msgstr "Nota peribadi untuk setiap resume"
 msgid "Phone"
 msgstr "Telefon"
 
-#: apps/client/src/pages/auth/layout.tsx:76
+#: apps/client/src/pages/auth/layout.tsx:75
 msgid "Photograph by Patrick Tomasso"
 msgstr "Gambar oleh Patrick Tomasso"
 
@@ -1183,7 +1197,7 @@ msgstr "Profesional"
 msgid "Profile"
 msgstr "Profil"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:55
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:67
 msgid "Public"
 msgstr "Awam"
 
@@ -1194,6 +1208,10 @@ msgstr "Penerbit"
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
 msgid "Raise an issue"
 msgstr "Timbulkan isu"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:106
+msgid "Raw JSON URL"
+msgstr ""
 
 #: apps/client/src/components/copyright.tsx:35
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
@@ -1229,7 +1247,7 @@ msgstr "Reactive Resume adalah projek minat selama lebih daripada 3 tahun kerja 
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
 msgstr "Reactive Resume berkembang pesat berkat komuniti yang aktif. Projek ini berhutang kepada ramai individu yang telah mendedikasikan masa dan kemahiran mereka. Di bawah ini, kami merayakan coder yang telah meningkatkan ciri-ciri projek ini di GitHub dan penterjemah yang telah menterjemahkan di Crowdin untuk membolehkannya diakses oleh audiens yang lebih luas."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:89
+#: apps/client/src/pages/builder/_components/toolbar.tsx:90
 msgid "Redo"
 msgstr "Buat semula"
 
@@ -1266,7 +1284,7 @@ msgstr "Tetapkan Susunan Semula"
 msgid "Reset your password"
 msgstr "Tetapkan semula kata laluan anda"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:124
+#: apps/client/src/pages/builder/_components/toolbar.tsx:125
 msgid "Reset Zoom"
 msgstr "Tetap Semula Zoom"
 
@@ -1312,11 +1330,11 @@ msgstr "Imbas kod QR di bawah dengan aplikasi pengesah anda untuk setup 2FA pada
 msgid "Score"
 msgstr "Markah"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:104
+#: apps/client/src/pages/builder/_components/toolbar.tsx:105
 msgid "Scroll to Pan"
 msgstr ""
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:104
+#: apps/client/src/pages/builder/_components/toolbar.tsx:105
 msgid "Scroll to Zoom"
 msgstr ""
 
@@ -1372,8 +1390,8 @@ msgid "Setup two-factor authentication on your account"
 msgstr "Tetapkan pengesah dua faktor pada akaun anda"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:107
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:38
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:50
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:51
 msgid "Sharing"
 msgstr " Berkongsi"
 
@@ -1590,11 +1608,15 @@ msgstr "Tajuk"
 msgid "Title"
 msgstr "Tajuk"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:138
+#: apps/client/src/pages/builder/_components/toolbar.tsx:163
+msgid "Toggle Multi‑page PDF"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/toolbar.tsx:139
 msgid "Toggle Page Break Line"
 msgstr "Baris Putus Halaman Toggle"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:150
+#: apps/client/src/pages/builder/_components/toolbar.tsx:151
 msgid "Toggle Page Numbers"
 msgstr "Papar Nombor Halaman"
 
@@ -1635,7 +1657,7 @@ msgstr "Tipografi"
 msgid "Underline Links"
 msgstr "Garis Bawah Pautan"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:76
+#: apps/client/src/pages/builder/_components/toolbar.tsx:77
 msgid "Undo"
 msgstr "Undurkan"
 
@@ -1666,7 +1688,7 @@ msgstr "Kemas kini resume sedia ada"
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
 msgstr "Muat naik fail dari salah satu sumber yang diterima untuk menganalisis data sedia ada dan import ke Reactive Resume untuk penyuntingan yang lebih mudah."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:73
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:86
 msgid "URL"
 msgstr "URL"
 
@@ -1709,7 +1731,7 @@ msgstr "Sahkan"
 msgid "Validated"
 msgstr "Disahkan"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:97
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:101
 msgid "Value"
 msgstr "Nilai"
 
@@ -1738,7 +1760,7 @@ msgstr "Pandangan"
 msgid "Visible"
 msgstr "Kelihatan"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:70
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:74
 msgid "Visit <0>Phosphor Icons</0> for a list of available icons"
 msgstr ""
 
@@ -1832,11 +1854,10 @@ msgstr "Kunci API OpenAI anda belum ditetapkan. Sila pergi ke tetapan akaun anda
 msgid "Your password has been updated successfully."
 msgstr "Kata laluan anda telah berjaya dikemas kini."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:112
+#: apps/client/src/pages/builder/_components/toolbar.tsx:113
 msgid "Zoom In"
 msgstr "Zum dalam"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:118
+#: apps/client/src/pages/builder/_components/toolbar.tsx:119
 msgid "Zoom Out"
 msgstr "Zum keluar"
-

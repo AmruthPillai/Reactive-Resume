@@ -2,7 +2,7 @@ import { HttpService } from "@nestjs/axios";
 import { Injectable, InternalServerErrorException, Logger } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { ResumeDto } from "@reactive-resume/dto";
-import { ErrorMessage } from "@reactive-resume/utils";
+import { ErrorMessage, MM_TO_PX, pageSizeMap } from "@reactive-resume/utils";
 import retry from "async-retry";
 import { PDFDocument } from "pdf-lib";
 import { connect } from "puppeteer-core";
@@ -125,7 +125,8 @@ export class PrinterService {
       }
 
       // Set the data of the resume to be printed in the browser's session storage
-      const numberPages = resume.data.metadata.layout.length;
+      const format = resume.data.metadata.page.format;
+      const shouldPaginatePdf = resume.data.metadata.page.options.paginate;
 
       await page.goto(`${url}/artboard/preview`, { waitUntil: "domcontentloaded" });
 
@@ -139,46 +140,110 @@ export class PrinterService {
         page.waitForSelector('[data-page="1"]', { timeout: 15_000 }),
       ]);
 
+      await page.evaluate(() => document.fonts.ready);
+      // eslint-disable-next-line unicorn/prefer-spread
+      await page.waitForFunction(() => Array.from(document.images).every((img) => img.complete));
+
       const pagesBuffer: Buffer[] = [];
 
-      const processPage = async (index: number) => {
-        const pageElement = await page.$(`[data-page="${index}"]`);
-        // eslint-disable-next-line unicorn/no-await-expression-member
-        const width = (await (await pageElement?.getProperty("scrollWidth"))?.jsonValue()) ?? 0;
+      const printPageHeight = Math.ceil(MM_TO_PX * pageSizeMap[format].height);
+      const printPageWidth = Math.ceil(MM_TO_PX * pageSizeMap[format].width);
+
+      // Loop through all the pages and print them by slicing the long page into fixed-height chunks
+      const processPages = async () => {
+        const pageElement = await page.$(`[data-page="1"]`);
         // eslint-disable-next-line unicorn/no-await-expression-member
         const height = (await (await pageElement?.getProperty("scrollHeight"))?.jsonValue()) ?? 0;
 
-        const temporaryHtml = await page.evaluate((element: HTMLDivElement) => {
-          const clonedElement = element.cloneNode(true) as HTMLDivElement;
-          const temporaryHtml_ = document.body.innerHTML;
-          document.body.innerHTML = clonedElement.outerHTML;
-          return temporaryHtml_;
-        }, pageElement);
+        const numberOfPages = Math.ceil(height / printPageHeight);
+        for (let index = 1; index <= numberOfPages; index++) {
+          const offset = (index - 1) * printPageHeight;
 
-        // Apply custom CSS, if enabled
-        const css = resume.data.metadata.css;
+          const temporaryHtml = await page.evaluate(
+            (
+              element: HTMLDivElement,
+              offset_: number,
+              printPageHeight_: number,
+              printPageWidth_: number,
+            ) => {
+              const originalHtml = document.body.innerHTML;
 
-        if (css.visible) {
-          await page.evaluate((cssValue: string) => {
-            const styleTag = document.createElement("style");
-            styleTag.textContent = cssValue;
-            document.head.append(styleTag);
-          }, css.value);
+              const clonedElement = element.cloneNode(true) as HTMLDivElement;
+
+              const wrapper = document.createElement("div");
+              wrapper.id = "__clip-wrapper";
+              wrapper.style.width = `${printPageWidth_}px`;
+              wrapper.style.height = `${printPageHeight_}px`;
+              wrapper.style.overflow = "hidden";
+
+              const container = document.createElement("div");
+              container.id = "__clip-container";
+              container.style.transform = `translateY(-${offset_}px)`;
+              container.append(clonedElement);
+
+              wrapper.append(container);
+
+              document.body.innerHTML = "";
+              document.body.append(wrapper);
+
+              return originalHtml;
+            },
+            pageElement,
+            offset,
+            printPageHeight,
+            printPageWidth,
+          );
+
+          // Apply custom CSS, if enabled
+          const css = resume.data.metadata.css;
+
+          if (css.visible) {
+            await page.evaluate((cssValue: string) => {
+              const styleTag = document.createElement("style");
+              styleTag.textContent = cssValue;
+              document.head.append(styleTag);
+            }, css.value);
+          }
+
+          await page.setViewport({ width: printPageWidth, height: printPageHeight });
+
+          const uint8array = await page.pdf({
+            width: `${printPageWidth}px`,
+            height: `${printPageHeight}px`,
+            margin: { top: "0px", right: "0px", bottom: "0px", left: "0px" },
+            printBackground: true,
+            preferCSSPageSize: true,
+          });
+
+          const buffer = Buffer.from(uint8array);
+          pagesBuffer.push(buffer);
+
+          await page.evaluate((originalHtml: string) => {
+            document.body.innerHTML = originalHtml;
+          }, temporaryHtml);
         }
-
-        const uint8array = await page.pdf({ width, height, printBackground: true });
-        const buffer = Buffer.from(uint8array);
-        pagesBuffer.push(buffer);
-
-        await page.evaluate((temporaryHtml_: string) => {
-          document.body.innerHTML = temporaryHtml_;
-        }, temporaryHtml);
       };
 
-      // Loop through all the pages and print them, by first displaying them, printing the PDF and then hiding them back
-      for (let index = 1; index <= numberPages; index++) {
-        await processPage(index);
-      }
+      const processSinglePagePdf = async () => {
+        const pageElement = await page.$(`[data-page="1"]`);
+        const fullHeight =
+          // eslint-disable-next-line unicorn/no-await-expression-member
+          (await (await pageElement?.getProperty("scrollHeight"))?.jsonValue()) ?? 0;
+
+        await page.setViewport({ width: printPageWidth, height: Math.ceil(fullHeight) });
+
+        const uint8array = await page.pdf({
+          width: `${printPageWidth}px`,
+          height: `${Math.ceil(fullHeight)}px`,
+          margin: { top: "0px", right: "0px", bottom: "0px", left: "0px" },
+          printBackground: true,
+          preferCSSPageSize: true,
+        });
+
+        pagesBuffer.push(Buffer.from(uint8array));
+      };
+
+      await (shouldPaginatePdf ? processPages() : processSinglePagePdf());
 
       // Using 'pdf-lib', merge all the pages from their buffers into a single PDF
       const pdf = await PDFDocument.create();

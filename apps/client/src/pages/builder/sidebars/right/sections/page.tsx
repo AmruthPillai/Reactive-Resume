@@ -91,6 +91,21 @@ export const PageSection = () => {
               <Label htmlFor="metadata.page.options.pageNumbers">{t`Show Page Numbers`}</Label>
             </div>
           </div>
+
+          <div className="py-2">
+            <div className="flex items-center gap-x-4">
+              <Switch
+                id="metadata.page.options.paginate"
+                checked={page.options.paginate}
+                onCheckedChange={(checked) => {
+                  setValue("metadata.page.options.paginate", checked);
+                }}
+              />
+              <Label htmlFor="metadata.page.options.paginate">
+                {t`Paginate PDF (multi-page)`}
+              </Label>
+            </div>
+          </div>
         </div>
       </main>
     </section>

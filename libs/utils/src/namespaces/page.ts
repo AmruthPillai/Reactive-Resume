@@ -8,3 +8,5 @@ export const pageSizeMap = {
     height: 279,
   },
 } as const;
+
+export const MM_TO_PX = 3.78;

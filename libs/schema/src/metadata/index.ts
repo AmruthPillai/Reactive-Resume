@@ -21,6 +21,7 @@ export const metadataSchema = z.object({
     options: z.object({
       breakLine: z.boolean().default(true),
       pageNumbers: z.boolean().default(true),
+      paginate: z.boolean().default(true),
     }),
   }),
   theme: z.object({
@@ -59,6 +60,7 @@ export const defaultMetadata: Metadata = {
     options: {
       breakLine: true,
       pageNumbers: true,
+      paginate: true,
     },
   },
   theme: {

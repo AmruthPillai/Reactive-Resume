@@ -64,8 +64,9 @@ msgstr "免费开源的简历生成器"
 msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "一款免费开源的简历生成器，可简化创建、更新和共享简历的过程。"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:59
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
+#: apps/client/src/pages/builder/_components/toolbar.tsx:60
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:31
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:41
 msgid "A link has been copied to your clipboard."
 msgstr "已将链接复制至剪贴板"
 
@@ -98,7 +99,7 @@ msgstr "仅接受 {accept} 文件"
 msgid "Account"
 msgstr "账户"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:175
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:179
 msgid "Add a custom field"
 msgstr "添加自定义字段"
 
@@ -145,12 +146,16 @@ msgstr "发生了一个意料之外的错误。"
 msgid "and many more..."
 msgstr "还有更多…"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:57
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:69
 msgid "Anyone with the link can view and download the resume."
 msgstr "任何人都可以通过此链接查看或下载简历。"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:60
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:30
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:42
+msgid "Anyone with this link can view and download the json data of the resume. This link will not count towards the resume view count."
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/toolbar.tsx:61
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:32
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "任何人都可以通过此链接查看或下载简历。您可以在个人资料中附上此链接，或分享给招聘人员。"
 
@@ -271,7 +276,7 @@ msgstr "取消"
 msgid "Casual"
 msgstr "非正式的"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:130
+#: apps/client/src/pages/builder/_components/toolbar.tsx:131
 msgid "Center Artboard"
 msgstr "将画板移动到屏幕中心"
 
@@ -344,11 +349,12 @@ msgstr "继续"
 msgid "Copy"
 msgstr "复制"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:164
+#: apps/client/src/pages/builder/_components/toolbar.tsx:177
 msgid "Copy Link to Resume"
 msgstr "复制链接到简历"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:78
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:96
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:118
 msgid "Copy to Clipboard"
 msgstr "复制到剪贴板"
 
@@ -501,7 +507,7 @@ msgstr "保存简历为JSON数据表。JSON数据表可按照属性分开保存�
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "保存简历为PDF文档。PDF文档是用于打印机识别的基础文件，可用于在打印机上打印简历、发送简历给招聘人员或者向招聘平台上传对应类型的文档。"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:176
+#: apps/client/src/pages/builder/_components/toolbar.tsx:189
 msgid "Download PDF"
 msgstr "下载为 PDF 文档"
 
@@ -553,7 +559,7 @@ msgstr "请在下方输入新的密码，确保你的密码难以被他人知晓
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
 msgstr "请输入先前绑定身份验证应用时所获取的其中一条备用密码，一般情况下你所获取的备用密码可能会有10条。"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:63
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:67
 msgid "Enter Phosphor Icon"
 msgstr "输入 Phosphor 图标"
 
@@ -632,6 +638,10 @@ msgstr "字体子集"
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:134
 msgid "Font Variants"
 msgstr "字体变体"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:107
+msgid "For advanced users! Does not count towards resume statistics."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:35
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
@@ -1002,7 +1012,7 @@ msgstr "模型"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:70
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:88
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:92
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:153
 msgid "Name"
 msgstr "名称"
@@ -1082,7 +1092,7 @@ msgstr "OpenAI/Ollama API 密钥"
 msgid "Options"
 msgstr "设置"
 
-#: apps/client/src/pages/auth/layout.tsx:47
+#: apps/client/src/pages/auth/layout.tsx:46
 msgctxt "The user can either login with email/password, or continue with GitHub or Google."
 msgid "or continue with"
 msgstr "通过以下方式继续"
@@ -1100,6 +1110,10 @@ msgstr "页面"
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:233
 msgid "Page {pageNumber}"
 msgstr "页面 {pageNumber}"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:105
+msgid "Paginate PDF (multi-page)"
+msgstr ""
 
 #: apps/client/src/pages/auth/login/page.tsx:110
 #: apps/client/src/pages/auth/register/page.tsx:163
@@ -1120,7 +1134,7 @@ msgstr "每份简历的个人注释"
 msgid "Phone"
 msgstr "电话"
 
-#: apps/client/src/pages/auth/layout.tsx:76
+#: apps/client/src/pages/auth/layout.tsx:75
 msgid "Photograph by Patrick Tomasso"
 msgstr "摄影：帕特里克-托马索"
 
@@ -1183,7 +1197,7 @@ msgstr "专业的"
 msgid "Profile"
 msgstr "个人资料"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:55
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:67
 msgid "Public"
 msgstr "公开"
 
@@ -1194,6 +1208,10 @@ msgstr "发布者"
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
 msgid "Raise an issue"
 msgstr "提出问题"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:106
+msgid "Raw JSON URL"
+msgstr ""
 
 #: apps/client/src/components/copyright.tsx:35
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
@@ -1229,7 +1247,7 @@ msgstr "Reactive Resume 是一个历经 3 年多艰苦努力的热情项目，�
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
 msgstr "Reactive Resume 的蓬勃发展得益于其充满活力的社区。这个项目的进步要归功于无数奉献了时间和技能的个人。下面，我们要向在 GitHub 上增强其功能的程序员和在 Crowdin 上进行翻译的语言学家表示敬意，他们的翻译让更多人了解了 Reactive Resume。"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:89
+#: apps/client/src/pages/builder/_components/toolbar.tsx:90
 msgid "Redo"
 msgstr "恢复"
 
@@ -1266,7 +1284,7 @@ msgstr "重置布局"
 msgid "Reset your password"
 msgstr "重置密码"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:124
+#: apps/client/src/pages/builder/_components/toolbar.tsx:125
 msgid "Reset Zoom"
 msgstr "重置缩放"
 
@@ -1312,11 +1330,11 @@ msgstr "使用身份验证应用扫描下方的二维码，为您的账户设置
 msgid "Score"
 msgstr "分数"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:104
+#: apps/client/src/pages/builder/_components/toolbar.tsx:105
 msgid "Scroll to Pan"
 msgstr "鼠标滚轮用于上下移动"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:104
+#: apps/client/src/pages/builder/_components/toolbar.tsx:105
 msgid "Scroll to Zoom"
 msgstr "鼠标滚轮用于缩放"
 
@@ -1372,8 +1390,8 @@ msgid "Setup two-factor authentication on your account"
 msgstr "为您的账户设置双重身份验证"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:107
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:38
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:50
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:51
 msgid "Sharing"
 msgstr "分享中"
 
@@ -1590,11 +1608,15 @@ msgstr "标题"
 msgid "Title"
 msgstr "标题"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:138
+#: apps/client/src/pages/builder/_components/toolbar.tsx:163
+msgid "Toggle Multi‑page PDF"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/toolbar.tsx:139
 msgid "Toggle Page Break Line"
 msgstr "切换分页线"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:150
+#: apps/client/src/pages/builder/_components/toolbar.tsx:151
 msgid "Toggle Page Numbers"
 msgstr "切换页码"
 
@@ -1635,7 +1657,7 @@ msgstr "排版"
 msgid "Underline Links"
 msgstr "下划线链接"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:76
+#: apps/client/src/pages/builder/_components/toolbar.tsx:77
 msgid "Undo"
 msgstr "撤销"
 
@@ -1666,7 +1688,7 @@ msgstr "更新现有简历"
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
 msgstr "从接受的来源之一上传文件并解析，并将其导入到 Reactive Resume 中以便于编辑。"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:73
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:86
 msgid "URL"
 msgstr "URL"
 
@@ -1709,7 +1731,7 @@ msgstr "验证"
 msgid "Validated"
 msgstr "已验证"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:97
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:101
 msgid "Value"
 msgstr "值"
 
@@ -1738,7 +1760,7 @@ msgstr "查看"
 msgid "Visible"
 msgstr "可见"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:70
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:74
 msgid "Visit <0>Phosphor Icons</0> for a list of available icons"
 msgstr "访问<0>Phosphor 图标</0>，查看可用图标列表"
 
@@ -1832,11 +1854,10 @@ msgstr "您的 OpenAI API 密钥尚未设置。请进入账户设置启用 OpenA
 msgid "Your password has been updated successfully."
 msgstr "您的密码已成功更新。"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:112
+#: apps/client/src/pages/builder/_components/toolbar.tsx:113
 msgid "Zoom In"
 msgstr "放大"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:118
+#: apps/client/src/pages/builder/_components/toolbar.tsx:119
 msgid "Zoom Out"
 msgstr "缩小"
-

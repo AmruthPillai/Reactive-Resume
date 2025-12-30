@@ -64,8 +64,9 @@ msgstr "Bezplatný nástroj na tvorbu životopisov s otvoreným zdrojovým kódo
 msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "Bezplatný nástroj na tvorbu životopisov s otvoreným zdrojovým kódom, ktorý zjednodušuje proces vytvárania, aktualizácie a zdieľania životopisu."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:59
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
+#: apps/client/src/pages/builder/_components/toolbar.tsx:60
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:31
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:41
 msgid "A link has been copied to your clipboard."
 msgstr "Odkaz bol skopírovaný do schránky."
 
@@ -98,7 +99,7 @@ msgstr "Prijíma iba súbory {accept}"
 msgid "Account"
 msgstr "Účet"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:175
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:179
 msgid "Add a custom field"
 msgstr "Pridanie vlastného poľa"
 
@@ -145,12 +146,16 @@ msgstr "Vyskytla sa neočakávaná chyba."
 msgid "and many more..."
 msgstr "a mnoho ďalších..."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:57
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:69
 msgid "Anyone with the link can view and download the resume."
 msgstr "Každý, kto má k dispozícii toto prepojenie, si môže životopis pozrieť a stiahnuť."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:60
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:30
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:42
+msgid "Anyone with this link can view and download the json data of the resume. This link will not count towards the resume view count."
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/toolbar.tsx:61
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:32
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "Životopis si môže pozrieť a stiahnuť každý, kto má k dispozícii toto prepojenie. Zdieľajte ho na svojom profile alebo s náborovými pracovníkmi."
 
@@ -271,7 +276,7 @@ msgstr "Zrušiť"
 msgid "Casual"
 msgstr "Príležitostné"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:130
+#: apps/client/src/pages/builder/_components/toolbar.tsx:131
 msgid "Center Artboard"
 msgstr "Stredová umelecká doska"
 
@@ -344,11 +349,12 @@ msgstr "Pokračovať"
 msgid "Copy"
 msgstr "Kopírovať"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:164
+#: apps/client/src/pages/builder/_components/toolbar.tsx:177
 msgid "Copy Link to Resume"
 msgstr "Kopírovať prepojenie na životopis"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:78
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:96
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:118
 msgid "Copy to Clipboard"
 msgstr "Kopírovanie do schránky"
 
@@ -501,7 +507,7 @@ msgstr "Stiahnite si snímku JSON svojho životopisu. Tento súbor môžete pou�
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "Stiahnite si svoj životopis vo formáte PDF. Tento súbor môžete použiť na vytlačenie svojho životopisu, poslať ho náborovým pracovníkom alebo nahrať na pracovné portály."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:176
+#: apps/client/src/pages/builder/_components/toolbar.tsx:189
 msgid "Download PDF"
 msgstr "Stiahnuť PDF"
 
@@ -553,7 +559,7 @@ msgstr "Nižšie zadajte nové heslo a uistite sa, že je bezpečné."
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
 msgstr "Zadajte jeden z 10 záložných kódov, ktoré ste uložili pri zapnutí dvojfaktorového overovania."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:63
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:67
 msgid "Enter Phosphor Icon"
 msgstr "Zadajte ikonu fosforu"
 
@@ -632,6 +638,10 @@ msgstr "Podskupina písiem"
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:134
 msgid "Font Variants"
 msgstr "Varianty písma"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:107
+msgid "For advanced users! Does not count towards resume statistics."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:35
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
@@ -1002,7 +1012,7 @@ msgstr "Model"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:70
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:88
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:92
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:153
 msgid "Name"
 msgstr "Názov"
@@ -1082,7 +1092,7 @@ msgstr "Kľúč API OpenAI/Ollama"
 msgid "Options"
 msgstr "Možnosti"
 
-#: apps/client/src/pages/auth/layout.tsx:47
+#: apps/client/src/pages/auth/layout.tsx:46
 msgctxt "The user can either login with email/password, or continue with GitHub or Google."
 msgid "or continue with"
 msgstr "alebo pokračovať s"
@@ -1100,6 +1110,10 @@ msgstr "Strana"
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:233
 msgid "Page {pageNumber}"
 msgstr "Strana {pageNumber}"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:105
+msgid "Paginate PDF (multi-page)"
+msgstr ""
 
 #: apps/client/src/pages/auth/login/page.tsx:110
 #: apps/client/src/pages/auth/register/page.tsx:163
@@ -1120,7 +1134,7 @@ msgstr "Osobné poznámky ku každému životopisu"
 msgid "Phone"
 msgstr "Telefón"
 
-#: apps/client/src/pages/auth/layout.tsx:76
+#: apps/client/src/pages/auth/layout.tsx:75
 msgid "Photograph by Patrick Tomasso"
 msgstr "Fotografia: Patrick Tomasso"
 
@@ -1183,7 +1197,7 @@ msgstr "Profesionálne"
 msgid "Profile"
 msgstr "Profil"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:55
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:67
 msgid "Public"
 msgstr "Verejnosť"
 
@@ -1194,6 +1208,10 @@ msgstr "Vydavateľ"
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
 msgid "Raise an issue"
 msgstr "Upozorniť na problém"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:106
+msgid "Raw JSON URL"
+msgstr ""
 
 #: apps/client/src/components/copyright.tsx:35
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
@@ -1229,7 +1247,7 @@ msgstr "Reactive Resume je vášnivý projekt, na ktorom sa usilovne pracovalo v
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
 msgstr "Reactive Resume sa darí vďaka živej komunite. Tento projekt vďačí za svoj pokrok mnohým jednotlivcom, ktorí mu venovali svoj čas a zručnosti. Nižšie oslavujeme programátorov, ktorí vylepšili jeho funkcie na GitHube, a lingvistov, ktorých preklady na Crowdin ho sprístupnili širšiemu publiku."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:89
+#: apps/client/src/pages/builder/_components/toolbar.tsx:90
 msgid "Redo"
 msgstr "Redo"
 
@@ -1266,7 +1284,7 @@ msgstr "Obnovenie rozloženia"
 msgid "Reset your password"
 msgstr "Obnovenie hesla"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:124
+#: apps/client/src/pages/builder/_components/toolbar.tsx:125
 msgid "Reset Zoom"
 msgstr "Obnovenie priblíženia"
 
@@ -1312,11 +1330,11 @@ msgstr "Naskenujte nižšie uvedený kód QR pomocou aplikácie autentifikátora
 msgid "Score"
 msgstr "Skóre"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:104
+#: apps/client/src/pages/builder/_components/toolbar.tsx:105
 msgid "Scroll to Pan"
 msgstr "Posuňte sa na Pan"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:104
+#: apps/client/src/pages/builder/_components/toolbar.tsx:105
 msgid "Scroll to Zoom"
 msgstr "Posúvanie na zväčšenie"
 
@@ -1372,8 +1390,8 @@ msgid "Setup two-factor authentication on your account"
 msgstr "Nastavenie dvojfaktorového overovania na svojom konte"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:107
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:38
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:50
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:51
 msgid "Sharing"
 msgstr "Zdieľanie"
 
@@ -1590,11 +1608,15 @@ msgstr "Názov"
 msgid "Title"
 msgstr "Názov"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:138
+#: apps/client/src/pages/builder/_components/toolbar.tsx:163
+msgid "Toggle Multi‑page PDF"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/toolbar.tsx:139
 msgid "Toggle Page Break Line"
 msgstr "Prepínanie riadku prelomu stránky"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:150
+#: apps/client/src/pages/builder/_components/toolbar.tsx:151
 msgid "Toggle Page Numbers"
 msgstr "Prepínanie čísiel strán"
 
@@ -1635,7 +1657,7 @@ msgstr "Typografia"
 msgid "Underline Links"
 msgstr "Podčiarknite odkazy"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:76
+#: apps/client/src/pages/builder/_components/toolbar.tsx:77
 msgid "Undo"
 msgstr "Zrušiť"
 
@@ -1666,7 +1688,7 @@ msgstr "Aktualizácia existujúceho životopisu"
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
 msgstr "Nahrajte súbor z jedného z akceptovaných zdrojov, aby ste mohli analyzovať existujúce údaje a importovať ich do aplikácie Reactive Resume na jednoduchšie úpravy."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:73
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:86
 msgid "URL"
 msgstr "ADRESA URL"
 
@@ -1709,7 +1731,7 @@ msgstr "Overenie"
 msgid "Validated"
 msgstr "Overené"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:97
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:101
 msgid "Value"
 msgstr "Hodnota"
 
@@ -1738,7 +1760,7 @@ msgstr "Zobrazenia"
 msgid "Visible"
 msgstr "Viditeľné"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:70
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:74
 msgid "Visit <0>Phosphor Icons</0> for a list of available icons"
 msgstr "Zoznam dostupných ikon nájdete na stránke <0>Ikony fosforu</0>"
 
@@ -1832,11 +1854,10 @@ msgstr "Váš kľúč API OpenAI ešte nebol nastavený. Prejdite do nastavení 
 msgid "Your password has been updated successfully."
 msgstr "Vaše heslo bolo úspešne aktualizované."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:112
+#: apps/client/src/pages/builder/_components/toolbar.tsx:113
 msgid "Zoom In"
 msgstr "Priblíženie"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:118
+#: apps/client/src/pages/builder/_components/toolbar.tsx:119
 msgid "Zoom Out"
 msgstr "Zväčšenie a zmenšenie"
-

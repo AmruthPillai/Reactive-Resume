@@ -64,8 +64,9 @@ msgstr "Un constructor de CV-uri gratuit și open-source"
 msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "Un constructor de reluare gratuit și open-source care simplifică procesul de creare, actualizare și partajare reluare."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:59
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
+#: apps/client/src/pages/builder/_components/toolbar.tsx:60
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:31
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:41
 msgid "A link has been copied to your clipboard."
 msgstr "Un link a fost copiat în clipboard."
 
@@ -98,7 +99,7 @@ msgstr "Acceptă doar fișiere {accept}"
 msgid "Account"
 msgstr "Cont"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:175
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:179
 msgid "Add a custom field"
 msgstr "Adăugarea unui câmp particularizat"
 
@@ -145,12 +146,16 @@ msgstr "A apărut o eroare neașteptată."
 msgid "and many more..."
 msgstr "si multe altele..."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:57
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:69
 msgid "Anyone with the link can view and download the resume."
 msgstr "Oricine are linkul poate vizualiza și descărca CV-ul."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:60
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:30
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:42
+msgid "Anyone with this link can view and download the json data of the resume. This link will not count towards the resume view count."
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/toolbar.tsx:61
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:32
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "Oricine are acest link poate vizualiza și descărca CV-ul. Distribuiți-l pe profilul dvs. sau cu recrutorii."
 
@@ -271,7 +276,7 @@ msgstr "Anulează"
 msgid "Casual"
 msgstr "Cazual"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:130
+#: apps/client/src/pages/builder/_components/toolbar.tsx:131
 msgid "Center Artboard"
 msgstr "Centrează Artboard"
 
@@ -344,11 +349,12 @@ msgstr "Continuă"
 msgid "Copy"
 msgstr "Copiază"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:164
+#: apps/client/src/pages/builder/_components/toolbar.tsx:177
 msgid "Copy Link to Resume"
 msgstr "Copiază link-ul pentru a relua"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:78
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:96
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:118
 msgid "Copy to Clipboard"
 msgstr "Copiază în clipboard"
 
@@ -501,7 +507,7 @@ msgstr "Descărcați un instantaneu JSON al CV-ului dvs. Acest fișier poate fi 
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "Descărcați un PDF al CV-ului dvs. Acest fișier poate fi folosit pentru a vă imprima CV-ul, pentru a-l trimite recrutorilor sau pentru a încărca pe portalurile de locuri de muncă."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:176
+#: apps/client/src/pages/builder/_components/toolbar.tsx:189
 msgid "Download PDF"
 msgstr "Descarcă PDF-ul"
 
@@ -553,7 +559,7 @@ msgstr "Introdu o nouă parolă mai jos și asigură-te că este sigură."
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
 msgstr "Introduceți unul dintre cele 10 coduri de rezervă pe care le-ați salvat când ați activat autentificarea cu doi factori."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:63
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:67
 msgid "Enter Phosphor Icon"
 msgstr "Introduceți pictograma Phosphor"
 
@@ -632,6 +638,10 @@ msgstr "Subset de fonturi"
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:134
 msgid "Font Variants"
 msgstr "Variante de font"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:107
+msgid "For advanced users! Does not count towards resume statistics."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:35
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
@@ -844,7 +854,9 @@ msgstr "Se pare că adresa dumneavoastră de e-mail a fost deja verificată."
 #: apps/client/src/pages/auth/register/page.tsx:101
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
 msgid "John Doe"
-msgstr "John Doe\n"
+msgstr ""
+"John Doe\n"
+""
 
 #: apps/client/src/pages/auth/register/page.tsx:123
 msgctxt "Localized version of a placeholder username. For example, max.mustermann in German or jan.kowalski in Polish."
@@ -1002,7 +1014,7 @@ msgstr "Model"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:70
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:88
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:92
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:153
 msgid "Name"
 msgstr "Nume"
@@ -1082,7 +1094,7 @@ msgstr "Cheie API OpenAI/Ollama"
 msgid "Options"
 msgstr "Opțiuni"
 
-#: apps/client/src/pages/auth/layout.tsx:47
+#: apps/client/src/pages/auth/layout.tsx:46
 msgctxt "The user can either login with email/password, or continue with GitHub or Google."
 msgid "or continue with"
 msgstr "sau continuați cu"
@@ -1100,6 +1112,10 @@ msgstr "Pagină"
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:233
 msgid "Page {pageNumber}"
 msgstr "Pagina {pageNumber}"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:105
+msgid "Paginate PDF (multi-page)"
+msgstr ""
 
 #: apps/client/src/pages/auth/login/page.tsx:110
 #: apps/client/src/pages/auth/register/page.tsx:163
@@ -1120,7 +1136,7 @@ msgstr "Note personale pentru fiecare CV"
 msgid "Phone"
 msgstr "Telefon"
 
-#: apps/client/src/pages/auth/layout.tsx:76
+#: apps/client/src/pages/auth/layout.tsx:75
 msgid "Photograph by Patrick Tomasso"
 msgstr "Fotografie de Patrick Tomasso"
 
@@ -1183,7 +1199,7 @@ msgstr "Profesional"
 msgid "Profile"
 msgstr "Profil"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:55
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:67
 msgid "Public"
 msgstr "Public"
 
@@ -1194,6 +1210,10 @@ msgstr "Editor"
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
 msgid "Raise an issue"
 msgstr "Ridicați o problemă"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:106
+msgid "Raw JSON URL"
+msgstr ""
 
 #: apps/client/src/components/copyright.tsx:35
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
@@ -1229,7 +1249,7 @@ msgstr "Resume Reactiv este un proiect pasional de peste 3 ani de muncă asiduă
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
 msgstr "Reactiv Resume prosperă datorită comunității sale dinamice. Acest proiect își datorează progresul unui număr mare de persoane care și-au dedicat timpul și abilitățile. Mai jos sărbătorim codătorii care și-au îmbunătățit caracteristicile pe GitHub și pe lingviștii ale căror traduceri pe Crowdin au făcut-o accesibilă unui public mai larg."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:89
+#: apps/client/src/pages/builder/_components/toolbar.tsx:90
 msgid "Redo"
 msgstr "Reface"
 
@@ -1266,7 +1286,7 @@ msgstr "Resetează Layout"
 msgid "Reset your password"
 msgstr "Resetați-vă parola"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:124
+#: apps/client/src/pages/builder/_components/toolbar.tsx:125
 msgid "Reset Zoom"
 msgstr "Resetați zoomul"
 
@@ -1312,11 +1332,11 @@ msgstr "Scanați codul QR de mai jos cu aplicația dvs. de autentificare pentru 
 msgid "Score"
 msgstr "Scor"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:104
+#: apps/client/src/pages/builder/_components/toolbar.tsx:105
 msgid "Scroll to Pan"
 msgstr "Derulați la Pan"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:104
+#: apps/client/src/pages/builder/_components/toolbar.tsx:105
 msgid "Scroll to Zoom"
 msgstr "Derulați pentru a mări"
 
@@ -1372,8 +1392,8 @@ msgid "Setup two-factor authentication on your account"
 msgstr "Configurați autentificarea cu doi factori pentru contul dvs"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:107
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:38
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:50
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:51
 msgid "Sharing"
 msgstr "Partajarea"
 
@@ -1590,11 +1610,15 @@ msgstr "Titlu"
 msgid "Title"
 msgstr "Titlu"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:138
+#: apps/client/src/pages/builder/_components/toolbar.tsx:163
+msgid "Toggle Multi‑page PDF"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/toolbar.tsx:139
 msgid "Toggle Page Break Line"
 msgstr "Comută linia de spargere a paginii"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:150
+#: apps/client/src/pages/builder/_components/toolbar.tsx:151
 msgid "Toggle Page Numbers"
 msgstr "Comută numerele de pagină"
 
@@ -1635,7 +1659,7 @@ msgstr "Tipografie"
 msgid "Underline Links"
 msgstr "Subliniază link-urile"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:76
+#: apps/client/src/pages/builder/_components/toolbar.tsx:77
 msgid "Undo"
 msgstr "Anulează"
 
@@ -1666,7 +1690,7 @@ msgstr "Actualizați un CV existent"
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
 msgstr "Încărcați un fișier dintr-una dintre sursele acceptate pentru a analiza datele existente și importați-l în Reactive Resume pentru o editare mai ușoară."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:73
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:86
 msgid "URL"
 msgstr "URL"
 
@@ -1709,7 +1733,7 @@ msgstr "Validează"
 msgid "Validated"
 msgstr "Validat"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:97
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:101
 msgid "Value"
 msgstr "Valoare"
 
@@ -1738,7 +1762,7 @@ msgstr "Vizualizări"
 msgid "Visible"
 msgstr "Vizibil"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:70
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:74
 msgid "Visit <0>Phosphor Icons</0> for a list of available icons"
 msgstr "Vizitați <0>Phosphor Icons</0> pentru o listă a pictogramelor disponibile"
 
@@ -1832,11 +1856,10 @@ msgstr "Cheia Dumneavoastră API OpenAI nu a fost încă stabilită. Mergeţi la
 msgid "Your password has been updated successfully."
 msgstr "Parola dumneavoastră a fost actualizată cu succes."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:112
+#: apps/client/src/pages/builder/_components/toolbar.tsx:113
 msgid "Zoom In"
 msgstr "Mărire în"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:118
+#: apps/client/src/pages/builder/_components/toolbar.tsx:119
 msgid "Zoom Out"
 msgstr "Micșorare"
-
