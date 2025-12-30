@@ -14,7 +14,7 @@ import type {
   Skill,
   URL,
 } from "@reactive-resume/schema";
-import { Education, Experience, Volunteer } from "@reactive-resume/schema";
+import { Education as EducationSchema, Experience as ExperienceSchema, Volunteer as VolunteerSchema } from "@reactive-resume/schema";
 import { cn, hexToRgb, isEmptyString, isUrl, sanitize } from "@reactive-resume/utils";
 import get from "lodash.get";
 import { Fragment } from "react";
@@ -248,11 +248,11 @@ const Profiles = () => {
   );
 };
 
-const Experience = () => {
+const ExperienceSection = () => {
   const section = useArtboardStore((state) => state.resume.sections.experience);
 
   return (
-    <Section<Experience> section={section} urlKey="url" summaryKey="summary">
+    <Section<ExperienceSchema> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
         <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
@@ -275,11 +275,11 @@ const Experience = () => {
   );
 };
 
-const Education = () => {
+const EducationSection = () => {
   const section = useArtboardStore((state) => state.resume.sections.education);
 
   return (
-    <Section<Education> section={section} urlKey="url" summaryKey="summary">
+    <Section<EducationSchema> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
         <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
@@ -400,11 +400,11 @@ const Publications = () => {
   );
 };
 
-const Volunteer = () => {
+const VolunteerSection = () => {
   const section = useArtboardStore((state) => state.resume.sections.volunteer);
 
   return (
-    <Section<Volunteer> section={section} urlKey="url" summaryKey="summary">
+    <Section<VolunteerSchema> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
         <div className="flex items-start justify-between group-[.sidebar]:flex-col group-[.sidebar]:items-start">
           <div className="text-left">
@@ -526,10 +526,10 @@ const mapSectionToComponent = (section: SectionKey) => {
       return <Profiles />;
     }
     case "experience": {
-      return <Experience />;
+      return <ExperienceSection />;
     }
     case "education": {
-      return <Education />;
+      return <EducationSection />;
     }
 
     case "summary": {
@@ -552,7 +552,7 @@ const mapSectionToComponent = (section: SectionKey) => {
       return <Publications />;
     }
     case "volunteer": {
-      return <Volunteer />;
+      return <VolunteerSection />;
     }
     case "languages": {
       return <Languages />;
