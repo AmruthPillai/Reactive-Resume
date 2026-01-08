@@ -187,7 +187,7 @@ const Section = <T,>({
   if (!section.visible || section.items.filter((item) => item.visible).length === 0) return null;
 
   return (
-    <section id={section.id} className="grid">
+    <section id={section.id} className="my-custom grid px-custom">
       <h4 className="mb-2 border-b border-primary text-base font-bold">{section.name}</h4>
 
       <div
@@ -586,10 +586,7 @@ export const Gengar = ({ columns, isFirstPage = false }: TemplateProps) => {
       >
         {isFirstPage && <Header />}
 
-        <div
-          className="flex-1 space-y-4 p-custom"
-          style={{ backgroundColor: hexToRgb(primaryColor, 0.2) }}
-        >
+        <div className="flex-1" style={{ backgroundColor: hexToRgb(primaryColor, 0.2) }}>
           {sidebar.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}
@@ -597,11 +594,9 @@ export const Gengar = ({ columns, isFirstPage = false }: TemplateProps) => {
       </div>
 
       <div className={cn("main group", sidebar.length > 0 ? "col-span-2" : "col-span-3")}>
-        <div className="space-y-4 p-custom">
-          {main.map((section) => (
-            <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
-          ))}
-        </div>
+        {main.map((section) => (
+          <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
+        ))}
       </div>
     </div>
   );
