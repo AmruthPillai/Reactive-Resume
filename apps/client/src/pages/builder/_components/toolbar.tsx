@@ -7,6 +7,7 @@ import {
   ClockClockwiseIcon,
   CubeFocusIcon,
   FilePdfIcon,
+  FilesIcon,
   HashIcon,
   LineSegmentIcon,
   LinkSimpleIcon,
@@ -156,6 +157,18 @@ export const BuilderToolbar = () => {
             }}
           >
             <HashIcon />
+          </Toggle>
+        </Tooltip>
+
+        <Tooltip content={t`Toggle Multi‑page PDF`}>
+          <Toggle
+            className="rounded-none"
+            pressed={pageOptions.paginate}
+            onPressedChange={(pressed) => {
+              setValue("metadata.page.options.paginate", pressed);
+            }}
+          >
+            <FilesIcon />
           </Toggle>
         </Tooltip>
 

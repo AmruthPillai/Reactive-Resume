@@ -64,8 +64,9 @@ msgstr "En gratis og åpen kildekode CV-bygger"
 msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "En gratis og åpen kildekode CV-bygger som forenkler prosessen med å lage, oppdatere og dele din CV."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:59
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
+#: apps/client/src/pages/builder/_components/toolbar.tsx:60
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:31
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:41
 msgid "A link has been copied to your clipboard."
 msgstr "Koblingen har blitt kopiert til utklippstavlen."
 
@@ -98,7 +99,7 @@ msgstr "Godtar kun {accept} filer"
 msgid "Account"
 msgstr "Konto"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:175
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:179
 msgid "Add a custom field"
 msgstr "Legg til egendefinert felt"
 
@@ -145,12 +146,16 @@ msgstr "En uventet feil har oppstått."
 msgid "and many more..."
 msgstr "og mange flere..."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:57
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:69
 msgid "Anyone with the link can view and download the resume."
 msgstr "Alle med linken kan se og laste ned CV-en."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:60
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:30
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:42
+msgid "Anyone with this link can view and download the json data of the resume. This link will not count towards the resume view count."
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/toolbar.tsx:61
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:32
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "Alle som har denne lenken kan se og laste ned CVen. Del den på profilen din eller med rekrutterere."
 
@@ -271,7 +276,7 @@ msgstr "Avbryt"
 msgid "Casual"
 msgstr "Uformell"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:130
+#: apps/client/src/pages/builder/_components/toolbar.tsx:131
 msgid "Center Artboard"
 msgstr "Sentrer Kunstbrett"
 
@@ -344,11 +349,12 @@ msgstr "Fortsett"
 msgid "Copy"
 msgstr "Kopier"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:164
+#: apps/client/src/pages/builder/_components/toolbar.tsx:177
 msgid "Copy Link to Resume"
 msgstr "Kopier Lenke til CV"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:78
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:96
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:118
 msgid "Copy to Clipboard"
 msgstr "Kopier til utklipstavlen"
 
@@ -501,7 +507,7 @@ msgstr "Last ned et JSON-øyeblikksbilde av CV-en din. Denne filen kan brukes ti
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "Last ned en PDF av CV-en din. Denne filen kan brukes til å skrive ut CV-en din, sende den til rekrutterere eller laste opp på jobbportaler."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:176
+#: apps/client/src/pages/builder/_components/toolbar.tsx:189
 msgid "Download PDF"
 msgstr "Last ned PDF"
 
@@ -553,7 +559,7 @@ msgstr "Skriv inn et nytt passord nedenfor, og sørg for at det er sikkert."
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
 msgstr "Skriv inn en av de 10 sikkerhetskopikodene du lagret da du aktiverte tofaktorautentisering."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:63
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:67
 msgid "Enter Phosphor Icon"
 msgstr "Skriv inn Fosfor ikon"
 
@@ -632,6 +638,10 @@ msgstr "Skriftdelsett"
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:134
 msgid "Font Variants"
 msgstr "Skriftvarianter"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:107
+msgid "For advanced users! Does not count towards resume statistics."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:35
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
@@ -1002,7 +1012,7 @@ msgstr "Modell"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:70
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:88
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:92
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:153
 msgid "Name"
 msgstr "Navn"
@@ -1082,7 +1092,7 @@ msgstr "OpenAI/Ollama API-nøkkel"
 msgid "Options"
 msgstr "Innstillinger"
 
-#: apps/client/src/pages/auth/layout.tsx:47
+#: apps/client/src/pages/auth/layout.tsx:46
 msgctxt "The user can either login with email/password, or continue with GitHub or Google."
 msgid "or continue with"
 msgstr "eller fortsett med"
@@ -1100,6 +1110,10 @@ msgstr "Side"
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:233
 msgid "Page {pageNumber}"
 msgstr "Side {pageNumber}"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:105
+msgid "Paginate PDF (multi-page)"
+msgstr ""
 
 #: apps/client/src/pages/auth/login/page.tsx:110
 #: apps/client/src/pages/auth/register/page.tsx:163
@@ -1120,7 +1134,7 @@ msgstr "Personlige notater for hver CV"
 msgid "Phone"
 msgstr "Telefon"
 
-#: apps/client/src/pages/auth/layout.tsx:76
+#: apps/client/src/pages/auth/layout.tsx:75
 msgid "Photograph by Patrick Tomasso"
 msgstr "Fotografi av Patrick Tomasso"
 
@@ -1183,7 +1197,7 @@ msgstr "Profesjonell"
 msgid "Profile"
 msgstr "Profil"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:55
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:67
 msgid "Public"
 msgstr "Offentlig"
 
@@ -1194,6 +1208,10 @@ msgstr "Utgiver"
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
 msgid "Raise an issue"
 msgstr "Ta opp et problem"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:106
+msgid "Raw JSON URL"
+msgstr ""
 
 #: apps/client/src/components/copyright.tsx:35
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
@@ -1229,7 +1247,7 @@ msgstr "Reactive Resume er et lidenskapsprosjekt på over 3 års hardt arbeid, o
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
 msgstr "Reactive Resume trives takket være sitt pulserende fellesskap. Dette prosjektet skylder sin fremgang takket være mange personer som har dedikert sin tid og ferdigheter. Nedenfor feirer vi koderne som har forbedret funksjonene på GitHub og lingvistene som med sine oversettelser på Crowdin har gjort det tilgjengelig for et bredere publikum."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:89
+#: apps/client/src/pages/builder/_components/toolbar.tsx:90
 msgid "Redo"
 msgstr "Gjør om"
 
@@ -1266,7 +1284,7 @@ msgstr "Tilbakestill oppsett"
 msgid "Reset your password"
 msgstr "Tilbakestill ditt passord"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:124
+#: apps/client/src/pages/builder/_components/toolbar.tsx:125
 msgid "Reset Zoom"
 msgstr "Tilbakestill zoom"
 
@@ -1312,11 +1330,11 @@ msgstr "Skann QR-koden nedenfor med autentiseringsappen din for å konfigurere 2
 msgid "Score"
 msgstr "Poengsum"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:104
+#: apps/client/src/pages/builder/_components/toolbar.tsx:105
 msgid "Scroll to Pan"
 msgstr "Rull for å panorere"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:104
+#: apps/client/src/pages/builder/_components/toolbar.tsx:105
 msgid "Scroll to Zoom"
 msgstr "Scroll for å zoome"
 
@@ -1372,8 +1390,8 @@ msgid "Setup two-factor authentication on your account"
 msgstr "Sett opp totrinnsverifisering på kontoen din"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:107
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:38
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:50
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:51
 msgid "Sharing"
 msgstr "Deling"
 
@@ -1590,11 +1608,15 @@ msgstr "Tittel"
 msgid "Title"
 msgstr "Tittel"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:138
+#: apps/client/src/pages/builder/_components/toolbar.tsx:163
+msgid "Toggle Multi‑page PDF"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/toolbar.tsx:139
 msgid "Toggle Page Break Line"
 msgstr "Veksle på sideskiftlinje"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:150
+#: apps/client/src/pages/builder/_components/toolbar.tsx:151
 msgid "Toggle Page Numbers"
 msgstr "Veksle sidetall"
 
@@ -1635,7 +1657,7 @@ msgstr "Typografi"
 msgid "Underline Links"
 msgstr "Understrek koblinger"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:76
+#: apps/client/src/pages/builder/_components/toolbar.tsx:77
 msgid "Undo"
 msgstr "Angre"
 
@@ -1666,7 +1688,7 @@ msgstr "Oppdater en eksisterende CV"
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
 msgstr "Last opp en fil fra en av de aksepterte kildene for å analysere eksisterende data og importere den til Reactive Resume for enklere redigering."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:73
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:86
 msgid "URL"
 msgstr "URL"
 
@@ -1709,7 +1731,7 @@ msgstr "Valider"
 msgid "Validated"
 msgstr "Validert"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:97
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:101
 msgid "Value"
 msgstr "Verdi"
 
@@ -1738,7 +1760,7 @@ msgstr "Visninger"
 msgid "Visible"
 msgstr "Synlig"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:70
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:74
 msgid "Visit <0>Phosphor Icons</0> for a list of available icons"
 msgstr "Besøk <0>Fosfor Icons</0> for en liste over tilgjengelige ikoner"
 
@@ -1832,11 +1854,10 @@ msgstr "Din OpenAI API-nøkkel er ikke angitt ennå. Gå til kontoinnstillingene
 msgid "Your password has been updated successfully."
 msgstr "Passordet ditt har blitt oppdatert."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:112
+#: apps/client/src/pages/builder/_components/toolbar.tsx:113
 msgid "Zoom In"
 msgstr "Zoom inn"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:118
+#: apps/client/src/pages/builder/_components/toolbar.tsx:119
 msgid "Zoom Out"
 msgstr "Zoom ut"
-

@@ -64,8 +64,9 @@ msgstr "แอปสร้างเรซูเม่ฟรีและโอเ
 msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "เครื่องมือสร้างเรซูเม่ฟรีและโอเพนซอร์สที่ทำให้กระบวนการสร้าง การปรับปรุง และการแชร์เรซูเม่ของคุณง่ายขึ้น"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:59
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
+#: apps/client/src/pages/builder/_components/toolbar.tsx:60
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:31
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:41
 msgid "A link has been copied to your clipboard."
 msgstr "ลิงก์ถูกคัดลอกไปยังคลิปบอร์ดแล้ว"
 
@@ -98,7 +99,7 @@ msgstr "ยอมรับเฉพาะไฟล์ {accept}"
 msgid "Account"
 msgstr "บัญชี"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:175
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:179
 msgid "Add a custom field"
 msgstr "เพิ่มช่องข้อมูลที่กำหนดเอง"
 
@@ -145,12 +146,16 @@ msgstr "เกิดข้อผิดพลาดที่ไม่คาดค
 msgid "and many more..."
 msgstr "และอีกมากมายๆ..."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:57
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:69
 msgid "Anyone with the link can view and download the resume."
 msgstr "ทุกคนที่มีลิงก์สามารถดูและดาวน์โหลดเรซูเม่ได้"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:60
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:30
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:42
+msgid "Anyone with this link can view and download the json data of the resume. This link will not count towards the resume view count."
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/toolbar.tsx:61
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:32
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "ทุกคนที่มีลิงค์นี้สามารถดูและดาวน์โหลดเรซูเม่ได้ แชร์ไปยังโปรไฟล์ของคุณหรือฝ่ายสรรหาบุคลากรได้"
 
@@ -271,7 +276,7 @@ msgstr "ยกเลิก"
 msgid "Casual"
 msgstr "สบายๆ"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:130
+#: apps/client/src/pages/builder/_components/toolbar.tsx:131
 msgid "Center Artboard"
 msgstr "จัดหน้าไว้ตรงกลาง"
 
@@ -344,11 +349,12 @@ msgstr "ทำต่อ"
 msgid "Copy"
 msgstr "คัดลอก"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:164
+#: apps/client/src/pages/builder/_components/toolbar.tsx:177
 msgid "Copy Link to Resume"
 msgstr "คัดลอกลิงก์ไปยังเรซูเม่"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:78
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:96
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:118
 msgid "Copy to Clipboard"
 msgstr "คัดลอกไปยังคลิปบอร์ด"
 
@@ -501,7 +507,7 @@ msgstr "ดาวน์โหลดสแน็ปช็อต JSON ของเ
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "ดาวน์โหลด PDF เรซูเม่ของคุณ ไฟล์นี้สามารถใช้เพื่อพิมพ์เรซูเม่ของคุณ ส่งให้ผู้สรรหาบุคลากร หรืออัพโหลดบนพอร์ทัลรับสมัครงาน"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:176
+#: apps/client/src/pages/builder/_components/toolbar.tsx:189
 msgid "Download PDF"
 msgstr "ดาวน์โหลด PDF"
 
@@ -553,7 +559,7 @@ msgstr "ป้อนรหัสผ่านใหม่ด้านล่าง
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
 msgstr "ป้อนหนึ่งในรหัสสำรอง 10 รหัสที่คุณบันทึกไว้เมื่อคุณเปิดใช้งานการยืนยันตัวตนแบบสองขั้นตอน"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:63
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:67
 msgid "Enter Phosphor Icon"
 msgstr "ใส่ชื่อ Phosphor Icon"
 
@@ -632,6 +638,10 @@ msgstr "ฟอนต์ย่อย"
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:134
 msgid "Font Variants"
 msgstr "รูปแบบฟอนต์"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:107
+msgid "For advanced users! Does not count towards resume statistics."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:35
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
@@ -1002,7 +1012,7 @@ msgstr "โมเดล"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:70
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:88
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:92
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:153
 msgid "Name"
 msgstr "ชื่อ"
@@ -1082,7 +1092,7 @@ msgstr "API คีย์ของ OpenAI/Ollama"
 msgid "Options"
 msgstr "การตั้งค่า"
 
-#: apps/client/src/pages/auth/layout.tsx:47
+#: apps/client/src/pages/auth/layout.tsx:46
 msgctxt "The user can either login with email/password, or continue with GitHub or Google."
 msgid "or continue with"
 msgstr "หรือดำเนินการต่อด้วย"
@@ -1100,6 +1110,10 @@ msgstr "หน้า"
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:233
 msgid "Page {pageNumber}"
 msgstr "หน้า {pageNumber}"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:105
+msgid "Paginate PDF (multi-page)"
+msgstr ""
 
 #: apps/client/src/pages/auth/login/page.tsx:110
 #: apps/client/src/pages/auth/register/page.tsx:163
@@ -1120,7 +1134,7 @@ msgstr "โน้ตส่วนตัวสำหรับแต่ละเร
 msgid "Phone"
 msgstr "เบอร์"
 
-#: apps/client/src/pages/auth/layout.tsx:76
+#: apps/client/src/pages/auth/layout.tsx:75
 msgid "Photograph by Patrick Tomasso"
 msgstr "ภาพถ่ายโดย Patrick Tomasso"
 
@@ -1183,7 +1197,7 @@ msgstr "มืออาชีพ"
 msgid "Profile"
 msgstr "โปรไฟล์"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:55
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:67
 msgid "Public"
 msgstr "สาธารณะ"
 
@@ -1194,6 +1208,10 @@ msgstr "สำนักพิมพ์"
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
 msgid "Raise an issue"
 msgstr "แจ้งปัญหา"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:106
+msgid "Raw JSON URL"
+msgstr ""
 
 #: apps/client/src/components/copyright.tsx:35
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
@@ -1229,7 +1247,7 @@ msgstr "Reactive Resume เป็นโครงการขับเคลื�
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
 msgstr "Reactive Resume ประสบความสำเร็จได้ด้วยชุมชนที่มีชีวิตชีวา โครงการนี้เกิดจากความคืบหน้าของคนจำนวนมากที่อุทิศเวลาและทักษะของตนมาช่วย ด้านล่างนี้ เรามายินดีให้กับนักพัฒนาที่ได้ปรับปรุงฟีเจอร์บน GitHub และนักแปลที่ทำการแปลบน Crowdin ให้ผู้คนสามารถเข้าถึงได้มากขึ้นในวงกว้าง"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:89
+#: apps/client/src/pages/builder/_components/toolbar.tsx:90
 msgid "Redo"
 msgstr "ทำใหม่"
 
@@ -1266,7 +1284,7 @@ msgstr "รีเซ็ตเค้าโครง"
 msgid "Reset your password"
 msgstr "รีเซ็ตรหัสผ่านของคุณ"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:124
+#: apps/client/src/pages/builder/_components/toolbar.tsx:125
 msgid "Reset Zoom"
 msgstr "รีเซ็ตการซูม"
 
@@ -1312,11 +1330,11 @@ msgstr "สแกนโค้ด QR ด้านล่างด้วยแอ�
 msgid "Score"
 msgstr "เกรด"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:104
+#: apps/client/src/pages/builder/_components/toolbar.tsx:105
 msgid "Scroll to Pan"
 msgstr "เลื่อนเพื่อขยับ"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:104
+#: apps/client/src/pages/builder/_components/toolbar.tsx:105
 msgid "Scroll to Zoom"
 msgstr "เลื่อนเพื่อซูม"
 
@@ -1372,8 +1390,8 @@ msgid "Setup two-factor authentication on your account"
 msgstr "ตั้งค่าการยืนยันตัวตนแบบสองขั้นตอนบนบัญชีของคุณ"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:107
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:38
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:50
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:51
 msgid "Sharing"
 msgstr "การแชร์"
 
@@ -1590,11 +1608,15 @@ msgstr "ชื่อ"
 msgid "Title"
 msgstr "ชื่อ"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:138
+#: apps/client/src/pages/builder/_components/toolbar.tsx:163
+msgid "Toggle Multi‑page PDF"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/toolbar.tsx:139
 msgid "Toggle Page Break Line"
 msgstr "เปิด/ปิดบรรทัดแบ่งหน้า"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:150
+#: apps/client/src/pages/builder/_components/toolbar.tsx:151
 msgid "Toggle Page Numbers"
 msgstr "เปิด-ปิดเลขหน้า"
 
@@ -1635,7 +1657,7 @@ msgstr "แบบอักษร"
 msgid "Underline Links"
 msgstr "ขีดเส้นใต้ลิงก์"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:76
+#: apps/client/src/pages/builder/_components/toolbar.tsx:77
 msgid "Undo"
 msgstr "เลิกทำ"
 
@@ -1666,7 +1688,7 @@ msgstr "อัปเดตเรซูเม่ที่มีอยู่"
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
 msgstr "อัปโหลดไฟล์จากแหล่งที่น่าเชื่อถือเพื่อวิเคราะห์ข้อมูลที่มีอยู่และนำเข้าไปยัง Reactive Resume เพื่อให้แก้ไขได้ง่ายขึ้น"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:73
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:86
 msgid "URL"
 msgstr "URL"
 
@@ -1709,7 +1731,7 @@ msgstr "ตรวจสอบ"
 msgid "Validated"
 msgstr "ตรวจสอบแล้ว"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:97
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:101
 msgid "Value"
 msgstr "ค่า"
 
@@ -1738,7 +1760,7 @@ msgstr "ยอดดู"
 msgid "Visible"
 msgstr "มองเห็นได้"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:70
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:74
 msgid "Visit <0>Phosphor Icons</0> for a list of available icons"
 msgstr "ไปที่ <0>Phosphor Icons</0> เพื่อดูรายการไอคอนที่ใช้ได้"
 
@@ -1832,11 +1854,10 @@ msgstr "คีย์ API ของ OpenAI ของคุณยังไม่�
 msgid "Your password has been updated successfully."
 msgstr "รหัสผ่านของคุณได้รับการอัปเดตเรียบร้อยแล้ว"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:112
+#: apps/client/src/pages/builder/_components/toolbar.tsx:113
 msgid "Zoom In"
 msgstr "ซูมเข้า"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:118
+#: apps/client/src/pages/builder/_components/toolbar.tsx:119
 msgid "Zoom Out"
 msgstr "ซูมออก"
-

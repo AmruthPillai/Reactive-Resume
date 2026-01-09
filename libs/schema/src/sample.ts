@@ -317,6 +317,7 @@ export const sampleResume: ResumeData = {
       options: {
         breakLine: true,
         pageNumbers: true,
+        paginate: true,
       },
     },
     theme: {

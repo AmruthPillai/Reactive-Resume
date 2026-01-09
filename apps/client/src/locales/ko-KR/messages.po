@@ -64,8 +64,9 @@ msgstr "무료, 오픈 소스 이력서 작성 도구"
 msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "이력서 작성, 업데이트 및 공유를 간단하게 할 수 있는 무료 오픈 소스 이력서 작성 도구입니다."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:59
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
+#: apps/client/src/pages/builder/_components/toolbar.tsx:60
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:31
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:41
 msgid "A link has been copied to your clipboard."
 msgstr "링크가 클립보드에 복사되었습니다."
 
@@ -98,7 +99,7 @@ msgstr "{accept} 파일만 허용됩니다."
 msgid "Account"
 msgstr "계정"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:175
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:179
 msgid "Add a custom field"
 msgstr "사용자 지정 필드 추가"
 
@@ -145,12 +146,16 @@ msgstr "예기치 않은 오류가 발생했습니다."
 msgid "and many more..."
 msgstr "그 외 기타 등등!"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:57
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:69
 msgid "Anyone with the link can view and download the resume."
 msgstr "링크가 있는 사람은 누구나 이력서를 보고 다운로드할 수 있습니다."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:60
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:30
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:42
+msgid "Anyone with this link can view and download the json data of the resume. This link will not count towards the resume view count."
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/toolbar.tsx:61
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:32
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "이 링크가 있는 사람은 누구나 이력서를 보고 다운로드할 수 있습니다. 프로필이나 채용 담당자에 공유해 보세요."
 
@@ -271,7 +276,7 @@ msgstr "취소"
 msgid "Casual"
 msgstr "캐주얼"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:130
+#: apps/client/src/pages/builder/_components/toolbar.tsx:131
 msgid "Center Artboard"
 msgstr "중앙 아트보드"
 
@@ -344,11 +349,12 @@ msgstr "계속하기"
 msgid "Copy"
 msgstr "복사"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:164
+#: apps/client/src/pages/builder/_components/toolbar.tsx:177
 msgid "Copy Link to Resume"
 msgstr "이력서 링크 복사"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:78
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:96
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:118
 msgid "Copy to Clipboard"
 msgstr "클립보드에 복사"
 
@@ -501,7 +507,7 @@ msgstr "이력서의 JSON 스냅샷을 다운로드하세요. 이 파일은 나�
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "이력서 PDF를 다운로드하세요. 이 파일은 이력서를 인쇄하거나 채용 담당자에게 보내거나 취업 포털에 업로드하는 데 사용할 수 있습니다."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:176
+#: apps/client/src/pages/builder/_components/toolbar.tsx:189
 msgid "Download PDF"
 msgstr "PDF 다운로드"
 
@@ -553,7 +559,7 @@ msgstr "아래에 새 비밀번호를 입력하고 안전한지 확인하세요.
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
 msgstr "이중 인증을 활성화할 때 저장한 10개의 백업 코드 중 하나를 입력하세요."
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:63
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:67
 msgid "Enter Phosphor Icon"
 msgstr "형광체 아이콘 입력"
 
@@ -632,6 +638,10 @@ msgstr "글꼴 하위 집합"
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:134
 msgid "Font Variants"
 msgstr "글꼴 변형"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:107
+msgid "For advanced users! Does not count towards resume statistics."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:35
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
@@ -1002,7 +1012,7 @@ msgstr "모델"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:70
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:88
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:92
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:153
 msgid "Name"
 msgstr "이름"
@@ -1082,7 +1092,7 @@ msgstr "OpenAI/올라마 API 키"
 msgid "Options"
 msgstr "옵션"
 
-#: apps/client/src/pages/auth/layout.tsx:47
+#: apps/client/src/pages/auth/layout.tsx:46
 msgctxt "The user can either login with email/password, or continue with GitHub or Google."
 msgid "or continue with"
 msgstr "또는"
@@ -1100,6 +1110,10 @@ msgstr "페이지"
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:233
 msgid "Page {pageNumber}"
 msgstr "페이지 {pageNumber}"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:105
+msgid "Paginate PDF (multi-page)"
+msgstr ""
 
 #: apps/client/src/pages/auth/login/page.tsx:110
 #: apps/client/src/pages/auth/register/page.tsx:163
@@ -1120,7 +1134,7 @@ msgstr "각 이력서에 대한 개인 메모"
 msgid "Phone"
 msgstr "전화"
 
-#: apps/client/src/pages/auth/layout.tsx:76
+#: apps/client/src/pages/auth/layout.tsx:75
 msgid "Photograph by Patrick Tomasso"
 msgstr "사진: 패트릭 토마소"
 
@@ -1183,7 +1197,7 @@ msgstr "전문가"
 msgid "Profile"
 msgstr "프로필"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:55
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:67
 msgid "Public"
 msgstr "공개"
 
@@ -1194,6 +1208,10 @@ msgstr "게시자"
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
 msgid "Raise an issue"
 msgstr "문제 제기"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:106
+msgid "Raw JSON URL"
+msgstr ""
 
 #: apps/client/src/components/copyright.tsx:35
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
@@ -1229,7 +1247,7 @@ msgstr "반응형 이력서는 3년이 넘는 기간 동안의 노력으로 완�
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
 msgstr "리액티브 이력서는 활기찬 커뮤니티 덕분에 번창하고 있습니다. 이 프로젝트가 발전할 수 있었던 것은 시간과 기술을 기부해 주신 수많은 분들 덕분입니다. 아래에서는 GitHub에서 기능을 개선한 코더와 Crowdin에서 번역을 통해 더 많은 사람들이 이용할 수 있게 해준 언어학자들을 축하합니다."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:89
+#: apps/client/src/pages/builder/_components/toolbar.tsx:90
 msgid "Redo"
 msgstr "다시 실행"
 
@@ -1266,7 +1284,7 @@ msgstr "레이아웃 재설정"
 msgid "Reset your password"
 msgstr "비밀번호 재설정"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:124
+#: apps/client/src/pages/builder/_components/toolbar.tsx:125
 msgid "Reset Zoom"
 msgstr "줌 초기화"
 
@@ -1312,11 +1330,11 @@ msgstr "인증 앱으로 아래 QR 코드를 스캔하여 계정에 2FA를 설�
 msgid "Score"
 msgstr "점수"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:104
+#: apps/client/src/pages/builder/_components/toolbar.tsx:105
 msgid "Scroll to Pan"
 msgstr "팬으로 스크롤"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:104
+#: apps/client/src/pages/builder/_components/toolbar.tsx:105
 msgid "Scroll to Zoom"
 msgstr "줌으로 스크롤"
 
@@ -1372,8 +1390,8 @@ msgid "Setup two-factor authentication on your account"
 msgstr "계정에 2단계 인증 설정하기"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:107
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:38
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:50
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:51
 msgid "Sharing"
 msgstr "공유"
 
@@ -1590,11 +1608,15 @@ msgstr "제목"
 msgid "Title"
 msgstr "제목"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:138
+#: apps/client/src/pages/builder/_components/toolbar.tsx:163
+msgid "Toggle Multi‑page PDF"
+msgstr ""
+
+#: apps/client/src/pages/builder/_components/toolbar.tsx:139
 msgid "Toggle Page Break Line"
 msgstr "페이지 나누기 줄 전환"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:150
+#: apps/client/src/pages/builder/_components/toolbar.tsx:151
 msgid "Toggle Page Numbers"
 msgstr "페이지 번호 토글"
 
@@ -1635,7 +1657,7 @@ msgstr "타이포그래피"
 msgid "Underline Links"
 msgstr "밑줄 링크"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:76
+#: apps/client/src/pages/builder/_components/toolbar.tsx:77
 msgid "Undo"
 msgstr "실행 취소"
 
@@ -1666,7 +1688,7 @@ msgstr "기존 이력서 업데이트"
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
 msgstr "허용된 소스 중 하나에서 파일을 업로드하여 기존 데이터를 구문 분석하고 이를 반응형 이력서로 가져와서 쉽게 편집할 수 있습니다."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:73
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:86
 msgid "URL"
 msgstr "URL"
 
@@ -1709,7 +1731,7 @@ msgstr "유효성 검사"
 msgid "Validated"
 msgstr "유효성 검사"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:97
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:101
 msgid "Value"
 msgstr "가치"
 
@@ -1738,7 +1760,7 @@ msgstr "조회수"
 msgid "Visible"
 msgstr "가시성"
 
-#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:70
+#: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:74
 msgid "Visit <0>Phosphor Icons</0> for a list of available icons"
 msgstr "사용 가능한 아이콘 목록을 보려면 <0>형광체 아이콘을</0> 방문하세요."
 
@@ -1832,11 +1854,10 @@ msgstr "OpenAI API 키가 아직 설정되지 않았습니다. 계정 설정으�
 msgid "Your password has been updated successfully."
 msgstr "비밀번호가 성공적으로 업데이트되었습니다."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:112
+#: apps/client/src/pages/builder/_components/toolbar.tsx:113
 msgid "Zoom In"
 msgstr "줌인"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:118
+#: apps/client/src/pages/builder/_components/toolbar.tsx:119
 msgid "Zoom Out"
 msgstr "줌 아웃"
-
