@@ -10,11 +10,15 @@ import { getTemplate } from "../templates";
 
 export const BuilderLayout = () => {
   const transformRef = useRef<ReactZoomPanPinchRef>(null);
-  const format = useArtboardStore((state) => state.resume.metadata.page.format);
-  const layout = useArtboardStore((state) => state.resume.metadata.layout);
-  const template = useArtboardStore((state) => state.resume.metadata.template as Template);
+  // Read the full resume object (may be null while loading)
+  const resumeData = useArtboardStore((state) => state.resume);
 
-  const Template = useMemo(() => getTemplate(template), [template]);
+  // Resolve template key safely so hooks run in the same order every render.
+  const templateKey = (resumeData?.metadata.template as Template) ?? null;
+  const Template = useMemo(() => {
+    if (!templateKey) return () => null;
+    return getTemplate(templateKey);
+  }, [templateKey]);
 
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
@@ -35,6 +39,12 @@ export const BuilderLayout = () => {
       window.removeEventListener("message", handleMessage);
     };
   }, [transformRef]);
+
+  // If resume data isn't available yet, render nothing (hooks already executed)
+  if (!resumeData) return null;
+
+  const format = resumeData.metadata.page.format;
+  const layout = resumeData.metadata.layout;
 
   return (
     <TransformWrapper

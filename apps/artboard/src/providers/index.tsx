@@ -15,6 +15,32 @@ export const Providers = () => {
   useEffect(() => {
     setMode(mode);
 
+    const fetchPortfolio = async () => {
+      try {
+        const id = searchParams.get("id");
+        const username = searchParams.get("username");
+        const slug = searchParams.get("slug");
+
+        let res: Response | null = null;
+
+        if (username && slug) {
+          res = await fetch(`/api/portfolio/public/${encodeURIComponent(username)}/${encodeURIComponent(slug)}`);
+        } else if (id) {
+          res = await fetch(`/api/portfolio/${encodeURIComponent(id)}`);
+        }
+
+        if (res && res.ok) {
+          const data = await res.json();
+          // response will be a PortfolioDto; set the nested `data` field into artboard store
+          setPortfolio(data.data || data);
+        }
+      } catch (err) {
+        // silently ignore — artboard can still render defaults or receive postMessage
+        // eslint-disable-next-line no-console
+        console.debug("Failed to fetch portfolio for artboard", err);
+      }
+    };
+
     const handleMessage = (event: MessageEvent) => {
       if (event.origin !== window.location.origin) return;
 
@@ -39,6 +65,8 @@ export const Providers = () => {
     // Initialize with schema defaults
     if (mode === "portfolio") {
       setPortfolio(defaultPortfolioData);
+      // Try to fetch real portfolio if query params provided
+      void fetchPortfolio();
     } else {
       setResume(defaultResumeData);
     }

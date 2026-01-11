@@ -15,7 +15,9 @@ import { Config } from "@/server/config/schema";
       isGlobal: true,
       inject: [ConfigService],
       useFactory: (configService: ConfigService<Config>) => ({
-        prismaOptions: { datasourceUrl: configService.get("DATABASE_URL") },
+        prismaOptions: {
+          datasources: { db: { url: configService.get("DATABASE_URL") } },
+        },
         middlewares: [
           loggingMiddleware({
             logLevel: "debug", // only in development
