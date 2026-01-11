@@ -8,7 +8,7 @@ msgstr ""
 "Language: zh\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-11-04 14:22\n"
+"PO-Revision-Date: 2026-01-05 00:13\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -40,7 +40,7 @@ msgstr "<0>我知道这个应用程序并不完美，但我希望它能日趋完
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:299
 msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
-msgstr "<0>注意：</0>使用 OpenAI API 即表示您承认并接受 OpenAI 的<1>使用条款</1>和<2>隐私政策</2>。请注意，Reactive Resume 对任何不当或未经授权的服务使用不承担任何责任，由此产生的任何影响或责任仅由用户承担。"
+msgstr "<0>注意：</0>使用 OpenAI API 即表示您理解并同意 OpenAI 的<1>使用条款</1>和<2>隐私政策</2>。与此同时，Reactive Resume 不会对用户越权或非法的使用行为承担任何责任，由此产生的任何影响或司法责任均由用户全程负责。"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:90
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
@@ -48,21 +48,21 @@ msgstr "<0>社区花费了大量时间编写 Reactive Resume 的文档，我相�
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:140
 msgid "<0>Two-factor authentication is currently disabled.</0> You can enable it by adding an authenticator app to your account."
-msgstr "<0>现已禁用双重身份验证。</0>您可以将身份验证程序添加到您的账户来启用。"
+msgstr "<0>您已停用2FA双重身份验证。</0>如果您愿意，随时可通过你的2FA应用程序再次激活2FA验证。"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:133
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
-msgstr "<0>已启用双重身份验证。</0>您在每次登录时都需要输入验证码。"
+msgstr "<0>您已激活2FA双重身份验证。</0>账户名与密码验证成功后，您还需要输入2FA的动态验证码以完成登录。"
 
 #: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/home/sections/hero/index.tsx:40
 msgid "A free and open-source resume builder"
-msgstr "免费开源的简历生成器"
+msgstr "一款免费、开源的简历生成器"
 
 #: apps/client/src/pages/home/components/footer.tsx:21
 #: apps/client/src/pages/home/sections/hero/index.tsx:45
 msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
-msgstr "一款免费开源的简历生成器，可简化创建、更新和共享简历的过程。"
+msgstr "一款免费开源的简历生成器，可简化创建、更新和分享简历的过程。"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:59
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
@@ -123,7 +123,7 @@ msgstr "添加新页面"
 
 #: apps/client/src/components/ai-actions.tsx:79
 msgid "AI"
-msgstr "AI"
+msgstr "AI（人工智能）"
 
 #: apps/client/src/pages/auth/register/page.tsx:71
 msgid "Already have an account?"
@@ -147,7 +147,7 @@ msgstr "还有更多…"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:57
 msgid "Anyone with the link can view and download the resume."
-msgstr "任何人都可以通过此链接查看或下载简历。"
+msgstr "访问此链接的任何人均可查看并下载简历。"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:60
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:30
@@ -156,7 +156,7 @@ msgstr "任何人都可以通过此链接查看或下载简历。您可以在个
 
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:41
 msgid "Apply Custom CSS"
-msgstr "应用自定义 CSS"
+msgstr "应用自定义CSS样式表"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:128
 msgid "Are you sure you want to delete this item?"
@@ -164,19 +164,19 @@ msgstr "您确定要删除此项目吗？"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:149
 msgid "Are you sure you want to delete your resume?"
-msgstr "您确定要删除您的简历吗？"
+msgstr "您确定要删除这一份简历吗？"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:125
 msgid "Are you sure you want to disable two-factor authentication?"
-msgstr "您确定要关闭双重认证吗？"
+msgstr "您确定要停用2FA双重认证吗？"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:38
 msgid "Are you sure you want to lock this resume?"
-msgstr "您确定要锁定此简历吗？"
+msgstr "您确定要锁定这一份简历吗？"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:39
 msgid "Are you sure you want to unlock this resume?"
-msgstr "您确定要解锁此简历吗？"
+msgstr "您确定要解锁这一份简历吗？"
 
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:94
 msgid "Are you sure?"
@@ -257,7 +257,7 @@ msgstr "构建于"
 #: apps/client/src/components/copyright.tsx:27
 #: apps/client/src/pages/home/sections/contributors/index.tsx:20
 msgid "By the community, for the community."
-msgstr "来自社区，服务社区。"
+msgstr "由社群贡献，为社群服务。"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:135
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
@@ -294,7 +294,7 @@ msgstr "想改名字了？取个新名字吧。"
 
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:70
 msgid "Check your email for the confirmation link to update your email address."
-msgstr "检查您收件箱中的确认链接，以更新您的电子邮件地址。"
+msgstr "请检查您的电子邮件收件箱，通常会存在一条链接用于确认更新电邮地址。"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:144
 msgid "Circle"
@@ -314,13 +314,13 @@ msgstr "验证码必须是 6 位数字。"
 
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:272
 msgid "Collapse All"
-msgstr ""
+msgstr "折叠所有项目"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:30
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:115
 #: apps/client/src/pages/builder/sidebars/left/sections/summary.tsx:33
 msgid "Collapse section"
-msgstr ""
+msgstr "折叠已选中项目"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:136
 msgid "Columns"
@@ -389,7 +389,7 @@ msgstr "当前密码"
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:27
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:28
 msgid "Custom CSS"
-msgstr "自定义 CSS"
+msgstr "自定义CSS样式"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:62
 msgid "Custom resume sections"
@@ -464,7 +464,7 @@ msgstr "禁用"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:154
 msgid "Disable 2FA"
-msgstr "禁用双重身份验证"
+msgstr "禁用2FA双重身份验证"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:302
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:220
@@ -483,7 +483,7 @@ msgstr "还没有账户？"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:88
 msgid "Don't know where to begin? Hit the docs!"
-msgstr "不知道从哪里开始？点击文档！"
+msgstr "不知道怎么用吗？欢迎查阅说明文档！"
 
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:107
 msgid "Don't see your language? <0>Help translate the app.</0>"
@@ -543,7 +543,7 @@ msgstr "电子邮件"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:163
 msgid "Enable 2FA"
-msgstr "启用双重身份验证"
+msgstr "启用2FA双重身份验证"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:67
 msgid "Enter a new password below, and make sure it's secure."
@@ -551,7 +551,7 @@ msgstr "请在下方输入新的密码，确保你的密码难以被他人知晓
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:59
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
-msgstr "请输入先前绑定身份验证应用时所获取的其中一条备用密码，一般情况下你所获取的备用密码可能会有10条。"
+msgstr "请输入先前绑定2FA身份验证应用时所获取的其中一条备用密码，一般情况下，先前绑定结束可能会获得10条一次性备用密码。"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:63
 msgid "Enter Phosphor Icon"
@@ -559,7 +559,7 @@ msgstr "输入 Phosphor 图标"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:170
 msgid "Enter the 6-digit code from your authenticator app to verify that 2FA has been setup correctly."
-msgstr "输入验证应用程序中的 6 位数字代码，验证双重身份验证设置是否正确。"
+msgstr "输入2FA身份验证应用程序中的 6 位数字代码，用于核对2FA密钥是否匹配。"
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:60
 msgid "Enter the one-time password provided by your authenticator app below."
@@ -567,7 +567,7 @@ msgstr "请在下方输入由身份验证应用提供的动态密码。"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:70
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
-msgstr "输入您的电子邮件地址，如果该账户存在，我们会向您发送一个重置密码的链接。"
+msgstr "输入您想要重新设定密码的电子邮件地址，如果输入的电邮地址已绑定账户，将会为该地址发送密码重置链接。"
 
 #: apps/client/src/pages/public/error.tsx:46
 msgid "Error {statusCode}"
@@ -583,17 +583,17 @@ msgstr "如果不方便在经济上进行支持，您也可以给 GitHub 仓库�
 
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:271
 msgid "Expand All"
-msgstr ""
+msgstr "展开所有项目"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:30
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:115
 #: apps/client/src/pages/builder/sidebars/left/sections/summary.tsx:33
 msgid "Expand section"
-msgstr ""
+msgstr "展开已选中项目"
 
 #: apps/client/src/pages/home/sections/templates/index.tsx:12
 msgid "Explore the templates available in Reactive Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
-msgstr "浏览 Reactive Resume 提供的模板，并查看使用这些模板制作的简历。您可以将它们为范例来创建下一份简历。"
+msgstr "探索由 Reactive Resume 提供的简历模板，您可以查阅模板并以此创建您的简历，不存在额外创建条件限制。"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:121
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:39
@@ -611,7 +611,7 @@ msgstr "文件类型"
 
 #: apps/client/src/pages/home/sections/hero/index.tsx:38
 msgid "Finally,"
-msgstr "最后，"
+msgstr "恭候您的光临！"
 
 #: apps/client/src/components/ai-actions.tsx:90
 msgid "Fix Spelling & Grammar"
@@ -619,7 +619,7 @@ msgstr "修正拼写和语法"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:107
 msgid "Font Family"
-msgstr "字体库"
+msgstr "字体系列"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:148
 msgid "Font Size"
@@ -627,7 +627,7 @@ msgstr "字号"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:122
 msgid "Font Subset"
-msgstr "字体子集"
+msgstr "当前系列的字体"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:134
 msgid "Font Variants"
@@ -639,7 +639,7 @@ msgstr "例如，您可以在此处注明您发送给的公司或者职位描述
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:280
 msgid "Forget"
-msgstr "遗弃"
+msgstr "舍弃此OpenAI密钥"
 
 #: apps/client/src/pages/auth/login/page.tsx:131
 msgid "Forgot Password?"
@@ -656,7 +656,7 @@ msgstr "格式"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:54
 msgid "Found a bug, or have an idea for a new feature?"
-msgstr "发现错误，或者有新功能的想法？"
+msgstr "想要为新功能提议？还是报告存在的问题？"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:46
 msgid "Free, forever"
@@ -685,7 +685,7 @@ msgstr "GitHub"
 
 #: apps/client/src/pages/home/sections/statistics/index.tsx:12
 msgid "GitHub Stars"
-msgstr "GitHub 点赞数"
+msgstr "GitHub项目收藏数"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:187
 msgid "Give your old resume a new name."
@@ -742,7 +742,7 @@ msgstr "隐藏图标"
 #: apps/client/src/pages/auth/register/page.tsx:168
 #: apps/client/src/pages/auth/reset-password/page.tsx:88
 msgid "Hold <0>Ctrl</0> to display your password temporarily."
-msgstr "按住<0>Ctrl</0>可暂时显示您的密码。"
+msgstr "按住<0>Ctrl</0>键可临时显示密码。"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:93
 msgid "Horizontal"
@@ -754,7 +754,7 @@ msgstr "公开展示您的简历"
 
 #: apps/client/src/pages/home/sections/testimonials/index.tsx:70
 msgid "I always love to hear from the users of Reactive Resume with feedback or support. Here are some of the messages I've received. If you have any feedback, feel free to drop me an email at <0>{email}</0>."
-msgstr "我们十分欢迎用户对于 Reactive Resume 的反馈和支持。这是我们收到的一些信息，如果您有任何反馈，请随时发送邮件至 <0>{email}</0>。"
+msgstr "我们十分欢迎用户对 Reactive Resume 提供反馈和支持。以下为我们接收并精选的消息，如果您有任何反馈或建议，可随时发送邮件至 <0>{email}</0>。"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:83
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:53
@@ -767,11 +767,11 @@ msgstr "如果此应用对您的求职有所帮助，请通过<0>此联系表</0
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:128
 msgid "If you disable two-factor authentication, you will no longer be required to enter a verification code when logging in."
-msgstr "如果您禁用双重身份验证，登录时将不再需要输入验证码。"
+msgstr "如果您禁用2FA双重身份验证，登录时将不再需要输入验证码。"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:59
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
-msgstr "如果您掌握多种语言，我们希望您能帮助我们将此应用程序推广到更多语言和社区。如果您在列表中没有看到您的语言，请不要担心——只需在 GitHub 上给我留言，我保证会将其包含在内。准备好开始了吗？点击下面的链接即可在 Crowdin 跳转到翻译。"
+msgstr "如果您掌握多种语言，欢迎您积极帮助我们提供更多语言或社区的本地化文本！如果您在列表中没有看到您最熟悉的语言，无须担心——只需在 GitHub 项目中给我们留言，我们会优先发布翻译请求！迫不及待参与贡献吗？点击下面的链接即可访问 Crowdin 翻译项目页面！"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:309
 msgid "Import"
@@ -797,7 +797,8 @@ msgstr "在此部分中，您可以更改密码并启用/禁用双重身份验�
 
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:64
 msgid "In this section, you can delete your account and all the data associated to your user, but please keep in mind that <0>this action is irreversible</0>."
-msgstr "在此部分中，您可以删除您的账户以及与您关联的所有数据，但请记住<0>此操作是不可逆的</0>。"
+msgstr "您可以在此功能区删除当前账户，删除范围将包括账户数据和登录凭据。\n"
+"警告：<0>账户删除操作一经执行，不可撤销</0>。"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:135
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:121
@@ -1375,7 +1376,7 @@ msgstr "为您的账户设置双重身份验证"
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:38
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
 msgid "Sharing"
-msgstr "分享中"
+msgstr "发布与分享"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:106
 msgid "Show"
