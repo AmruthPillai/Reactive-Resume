@@ -152,8 +152,6 @@ export const LayoutSection = () => {
   if (missingSections.length > 0) {
     const newLayout = JSON.parse(JSON.stringify(layout));
 
-    // Add all missing sections to the Main Column (Index 0) to ensure visibility
-    // You can also append to Sidebar (Index 1) if preferred, but Main is specific to text-heavy
     newLayout[0][0].push(...missingSections);
 
     setValue("metadata.layout", newLayout);
