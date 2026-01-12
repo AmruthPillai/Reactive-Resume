@@ -1,5 +1,6 @@
 import type { Template } from "@reactive-resume/utils";
 
+import { Arceus } from "./arceus";
 import { Azurill } from "./azurill";
 import { Bronzor } from "./bronzor";
 import { Chikorita } from "./chikorita";
@@ -15,6 +16,9 @@ import { Rhyhorn } from "./rhyhorn";
 
 export const getTemplate = (template: Template) => {
   switch (template) {
+    case "arceus": {
+      return Arceus;
+    }
     case "azurill": {
       return Azurill;
     }

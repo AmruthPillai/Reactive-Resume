@@ -2,6 +2,7 @@ import { z } from "zod";
 
 import type { FilterKeys } from "../shared";
 import { idSchema } from "../shared";
+import { accomplishmentSchema } from "./accomplishment";
 import { awardSchema } from "./award";
 import { certificationSchema } from "./certification";
 import { customSectionSchema } from "./custom-section";
@@ -34,6 +35,17 @@ export const sectionsSchema = z.object({
   summary: sectionSchema.extend({
     id: z.literal("summary"),
     content: z.string().default(""),
+  }),
+  accomplishments: sectionSchema.extend({
+    id: z.literal("accomplishments"),
+    items: z.array(accomplishmentSchema),
+  }).default({
+    name: "Accomplishments",
+    columns: 1,
+    separateLinks: true,
+    visible: true,
+    id: "accomplishments",
+    items: [],
   }),
   awards: sectionSchema.extend({
     id: z.literal("awards"),
@@ -105,6 +117,7 @@ export const defaultSection: Section = {
 
 export const defaultSections: Sections = {
   summary: { ...defaultSection, id: "summary", name: "Summary", content: "" },
+  accomplishments: { ...defaultSection, id: "accomplishments", name: "Accomplishments", items: [] },
   awards: { ...defaultSection, id: "awards", name: "Awards", items: [] },
   certifications: { ...defaultSection, id: "certifications", name: "Certifications", items: [] },
   education: { ...defaultSection, id: "education", name: "Education", items: [] },
@@ -120,6 +133,7 @@ export const defaultSections: Sections = {
   custom: {},
 };
 
+export * from "./accomplishment";
 export * from "./award";
 export * from "./certification";
 export * from "./custom-section";

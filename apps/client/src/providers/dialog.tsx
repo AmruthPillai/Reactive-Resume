@@ -1,3 +1,4 @@
+import { AccomplishmentsDialog } from "../pages/builder/sidebars/left/dialogs/accomplishments";
 import { AwardsDialog } from "../pages/builder/sidebars/left/dialogs/awards";
 import { CertificationsDialog } from "../pages/builder/sidebars/left/dialogs/certifications";
 import { CustomSectionDialog } from "../pages/builder/sidebars/left/dialogs/custom-section";
@@ -47,6 +48,7 @@ export const DialogProvider = ({ children }: Props) => {
             <PublicationsDialog />
             <VolunteerDialog />
             <SkillsDialog />
+            <AccomplishmentsDialog />
             <ReferencesDialog />
             <CustomSectionDialog />
           </>

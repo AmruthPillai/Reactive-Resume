@@ -7,6 +7,7 @@ import { customFieldSchema } from "./custom";
 export const basicsSchema = z.object({
   name: z.string(),
   headline: z.string(),
+  tagline: z.string().default(""),
   email: z.literal("").or(z.string().email()),
   phone: z.string(),
   location: z.string(),
@@ -32,6 +33,7 @@ export type Basics = z.infer<typeof basicsSchema>;
 export const defaultBasics: Basics = {
   name: "",
   headline: "",
+  tagline: "",
   email: "",
   phone: "",
   location: "",

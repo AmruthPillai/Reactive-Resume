@@ -66,6 +66,7 @@ export const BasicsSection = () => {
                 />
               </div>
 
+
               <div className="space-y-1.5 sm:col-span-2">
                 <Label htmlFor="basics.headline">{t`Headline`}</Label>
                 <Input
@@ -73,6 +74,17 @@ export const BasicsSection = () => {
                   value={basics.headline}
                   onChange={(event) => {
                     setValue("basics.headline", event.target.value);
+                  }}
+                />
+              </div>
+
+              <div className="space-y-1.5 sm:col-span-2">
+                <Label htmlFor="basics.tagline">{t`Tagline`}</Label>
+                <Input
+                  id="basics.tagline"
+                  value={basics.tagline || ""}
+                  onChange={(event) => {
+                    setValue("basics.tagline", event.target.value);
                   }}
                 />
               </div>

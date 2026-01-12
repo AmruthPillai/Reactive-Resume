@@ -1,6 +1,7 @@
 import { t } from "@lingui/macro";
 import { PlusCircleIcon, PlusIcon } from "@phosphor-icons/react";
 import type {
+  Accomplishment,
   Award,
   Certification,
   CustomSection,
@@ -98,6 +99,12 @@ export const LeftSidebar = () => {
             id="languages"
             onClick={() => {
               scrollIntoView("#languages");
+            }}
+          />
+          <SectionIcon
+            id="accomplishments"
+            onClick={() => {
+              scrollIntoView("#accomplishments");
             }}
           />
           <SectionIcon
@@ -200,6 +207,11 @@ export const LeftSidebar = () => {
             id="languages"
             title={(item) => item.name}
             description={(item) => item.description}
+          />
+          <Separator />
+          <SectionBase<Accomplishment>
+            id="accomplishments"
+            title={(item) => item.name}
           />
           <Separator />
           <SectionBase<Award>

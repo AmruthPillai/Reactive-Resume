@@ -4,6 +4,7 @@ export const sampleResume: ResumeData = {
   basics: {
     name: "John Doe",
     headline: "Creative and Innovative Web Developer",
+    tagline: "",
     email: "john.doe@gmail.com",
     phone: "(555) 123-4567",
     location: "Pleasantville, CA 94588",
@@ -33,6 +34,14 @@ export const sampleResume: ResumeData = {
       id: "summary",
       content:
         "<p>Innovative Web Developer with 5 years of experience in building impactful and user-friendly websites and applications. Specializes in <strong>front-end technologies</strong> and passionate about modern web standards and cutting-edge development techniques. Proven track record of leading successful projects from concept to deployment.</p>",
+    },
+    accomplishments: {
+      name: "Accomplishments",
+      columns: 1,
+      separateLinks: true,
+      visible: true,
+      id: "accomplishments",
+      items: [],
     },
     awards: {
       name: "Awards",
@@ -304,6 +313,7 @@ export const sampleResume: ResumeData = {
           "awards",
           "volunteer",
           "publications",
+          "accomplishments",
         ],
       ],
     ],

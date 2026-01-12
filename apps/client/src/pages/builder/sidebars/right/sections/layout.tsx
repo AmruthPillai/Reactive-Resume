@@ -28,7 +28,7 @@ import { Button, Portal, Tooltip } from "@reactive-resume/ui";
 import type { LayoutLocator, SortablePayload } from "@reactive-resume/utils";
 import { cn, moveItemInLayout, parseLayoutLocator } from "@reactive-resume/utils";
 import get from "lodash.get";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useResumeStore } from "@/client/stores/resume";
 
@@ -110,6 +110,54 @@ const Section = ({ id, isDragging = false }: SectionProps) => {
 export const LayoutSection = () => {
   const setValue = useResumeStore((state) => state.setValue);
   const layout = useResumeStore((state) => state.resume.data.metadata.layout);
+  const sections = useResumeStore((state) => state.resume.data.sections);
+
+  const flatLayout = layout.flat(2);
+  const missingSections: string[] = [];
+
+  // Standard Sections
+  const standardSections = [
+    "summary",
+    "profiles",
+    "experience",
+    "education",
+    "skills",
+    "languages",
+    "accomplishments",
+    "awards",
+    "certifications",
+    "interests",
+    "projects",
+    "publications",
+    "volunteer",
+    "references",
+  ];
+
+  for (const sectionId of standardSections) {
+    if (sections[sectionId as keyof typeof sections] && !flatLayout.includes(sectionId)) {
+      missingSections.push(sectionId);
+    }
+  }
+
+  // Custom Sections
+  if (sections.custom) {
+    Object.values(sections.custom).forEach((customSection) => {
+      const key = `custom.${customSection.id}`;
+      if (!flatLayout.includes(key)) {
+        missingSections.push(key);
+      }
+    });
+  }
+
+  if (missingSections.length > 0) {
+    const newLayout = JSON.parse(JSON.stringify(layout));
+
+    // Add all missing sections to the Main Column (Index 0) to ensure visibility
+    // You can also append to Sidebar (Index 1) if preferred, but Main is specific to text-heavy
+    newLayout[0][0].push(...missingSections);
+
+    setValue("metadata.layout", newLayout);
+  }
 
   const [activeId, setActiveId] = useState<string | null>(null);
 

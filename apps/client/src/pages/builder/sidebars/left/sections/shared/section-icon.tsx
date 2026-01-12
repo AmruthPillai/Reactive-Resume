@@ -12,6 +12,8 @@ import {
   PuzzlePieceIcon,
   ShareNetworkIcon,
   TranslateIcon,
+  TagIcon,
+  StarIcon,
   UserIcon,
   UsersIcon,
 } from "@phosphor-icons/react";
@@ -67,6 +69,12 @@ export const getSectionIcon = (id: SectionKey, props: IconProps = {}) => {
     }
     case "references": {
       return <UsersIcon size={18} {...props} />;
+    }
+    case "accomplishments": {
+      return <StarIcon size={18} {...props} />;
+    }
+    case "tagline": {
+      return <TagIcon size={18} {...props} />;
     }
 
     default: {
