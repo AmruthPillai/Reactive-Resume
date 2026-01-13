@@ -662,9 +662,10 @@ export const Arceus = ({ columns, isFirstPage = false }: TemplateProps) => {
                 <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
             ))}
 
-            {sidebar.map((section) => (
-                <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
-            ))}
+            {sidebar &&
+                sidebar.map((section) => (
+                    <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
+                ))}
         </div>
     );
 };

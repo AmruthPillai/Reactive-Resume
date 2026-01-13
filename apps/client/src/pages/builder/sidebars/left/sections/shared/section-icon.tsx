@@ -12,7 +12,6 @@ import {
   PuzzlePieceIcon,
   ShareNetworkIcon,
   TranslateIcon,
-  TagIcon,
   StarIcon,
   UserIcon,
   UsersIcon,
