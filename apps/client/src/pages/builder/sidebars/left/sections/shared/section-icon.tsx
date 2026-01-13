@@ -73,9 +73,7 @@ export const getSectionIcon = (id: SectionKey, props: IconProps = {}) => {
     case "accomplishments": {
       return <StarIcon size={18} {...props} />;
     }
-    case "tagline": {
-      return <TagIcon size={18} {...props} />;
-    }
+
 
     default: {
       return null;
