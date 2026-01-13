@@ -15,7 +15,7 @@ import type {
     Skill,
     URL,
 } from "@reactive-resume/schema";
-import { Education, Experience, Volunteer } from "@reactive-resume/schema";
+import type { Education as EducationType, Experience as ExperienceType, Volunteer as VolunteerType } from "@reactive-resume/schema";
 import { cn, isEmptyString, isUrl, sanitize } from "@reactive-resume/utils";
 import get from "lodash.get";
 import { Fragment } from "react";
@@ -292,7 +292,7 @@ const Experience = () => {
     const section = useArtboardStore((state) => state.resume.sections.experience);
 
     return (
-        <Section<Experience> section={section} urlKey="url" summaryKey="summary">
+        <Section<ExperienceType> section={section} urlKey="url" summaryKey="summary">
             {(item) => (
                 <div className="flex items-start justify-between">
                     <div className="text-left">
@@ -319,7 +319,7 @@ const Education = () => {
     const section = useArtboardStore((state) => state.resume.sections.education);
 
     return (
-        <Section<Education> section={section} urlKey="url" summaryKey="summary">
+        <Section<EducationType> section={section} urlKey="url" summaryKey="summary">
             {(item) => (
                 <div className="flex items-start justify-between">
                     <div className="text-left">
@@ -460,7 +460,7 @@ const Volunteer = () => {
     const section = useArtboardStore((state) => state.resume.sections.volunteer);
 
     return (
-        <Section<Volunteer> section={section} urlKey="url" summaryKey="summary">
+        <Section<VolunteerType> section={section} urlKey="url" summaryKey="summary">
             {(item) => (
                 <div className="flex items-start justify-between">
                     <div className="text-left">
@@ -560,6 +560,8 @@ const Accomplishments = () => {
 
 const Custom = ({ id }: { id: string }) => {
     const section = useArtboardStore((state) => state.resume.sections.custom[id]);
+
+    if (!section) return null;
 
     const isTagline = section.name.toLowerCase() === "tagline";
 

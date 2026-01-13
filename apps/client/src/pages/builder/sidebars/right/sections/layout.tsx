@@ -112,50 +112,54 @@ export const LayoutSection = () => {
   const layout = useResumeStore((state) => state.resume.data.metadata.layout);
   const sections = useResumeStore((state) => state.resume.data.sections);
 
-  const flatLayout = layout.flat(2);
-  const missingSections: string[] = [];
+  useEffect(() => {
+    const flatLayout = layout.flat(2);
+    const missingSections: string[] = [];
 
-  // Standard Sections
-  const standardSections = [
-    "summary",
-    "profiles",
-    "experience",
-    "education",
-    "skills",
-    "languages",
-    "accomplishments",
-    "awards",
-    "certifications",
-    "interests",
-    "projects",
-    "publications",
-    "volunteer",
-    "references",
-  ];
+    // Standard Sections
+    const standardSections = [
+      "summary",
+      "profiles",
+      "experience",
+      "education",
+      "skills",
+      "languages",
+      "accomplishments",
+      "awards",
+      "certifications",
+      "interests",
+      "projects",
+      "publications",
+      "volunteer",
+      "references",
+    ];
 
-  for (const sectionId of standardSections) {
-    if (sections[sectionId as keyof typeof sections] && !flatLayout.includes(sectionId)) {
-      missingSections.push(sectionId);
-    }
-  }
-
-  // Custom Sections
-  if (sections.custom) {
-    Object.values(sections.custom).forEach((customSection) => {
-      const key = `custom.${customSection.id}`;
-      if (!flatLayout.includes(key)) {
-        missingSections.push(key);
+    for (const sectionId of standardSections) {
+      if (sections[sectionId as keyof typeof sections] && !flatLayout.includes(sectionId)) {
+        missingSections.push(sectionId);
       }
-    });
-  }
+    }
 
-  if (missingSections.length > 0) {
-    const newLayout = JSON.parse(JSON.stringify(layout));
+    // Custom Sections
+    if (sections.custom) {
+      Object.values(sections.custom).forEach((customSection) => {
+        const key = `custom.${customSection.id}`;
+        if (!flatLayout.includes(key)) {
+          missingSections.push(key);
+        }
+      });
+    }
 
-    newLayout[0][0].push(...missingSections);
+    if (missingSections.length > 0) {
+      const newLayout = JSON.parse(JSON.stringify(layout));
 
-    setValue("metadata.layout", newLayout);
-  }
+      // Add all missing sections to the Main Column (Index 0) to ensure visibility
+      // You can also append to Sidebar (Index 1) if preferred, but Main is specific to text-heavy
+      newLayout[0][0].push(...missingSections);
+
+      setValue("metadata.layout", newLayout);
+    }
+  }, [layout, sections, setValue]);
 
   const [activeId, setActiveId] = useState<string | null>(null);
 
